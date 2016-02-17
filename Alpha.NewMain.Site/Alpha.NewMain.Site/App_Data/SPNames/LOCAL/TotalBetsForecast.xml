@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Functions>
+  <Function Name="TotalBetsForecast">
+    <Setting Key="Age_NewTotalBetsForeCast_Main" SpName="Age_NewTotalBetsForeCast_Main" DbName="DBAGE.bodb02.BODBDownlineNet">
+      <Mapping ObjectProperty="WinLossFirstColumn" DataField="COL1" />
+      <Mapping ObjectProperty="WinLossSecondColumn" DataField="COL2" />
+      <Mapping ObjectProperty="WinLossThirdColumn" DataField="COL3" />
+      <Mapping ObjectProperty="FirstColumnName" DataField="ColumnName1" />
+      <Mapping ObjectProperty="SecondColumnName" DataField="ColumnName2" />
+      <Mapping ObjectProperty="ThirdColumnName" DataField="ColumnName3" />
+    </Setting>
+    <Setting Key="Age_NewTotalBetsForeCast_EventSel" SpName="Age_NewTotalBetsForeCast_EventSel" DbName="DBAGE.bodb02.BODBDownlineNet" />
+    <Setting Key="Age_NewTotalBetsForeCast_GetMatchInfo" SpName="Age_NewTotalBetsForeCast_GetMatchInfo" DbName="DBAGE.bodb02.BODBDownlineNet" />
+  </Function>
+</Functions>
