@@ -1,0 +1,21 @@
+﻿@import 'Variables_Level3.scss';
+
+.header {
+    background: $text-color none repeat scroll 0 0;
+}
+
+.content-left .menu li {
+    background: $text-color none repeat scroll 0 0;
+}
+
+.header-right-top {
+    background: $background-color url($header-background) no-repeat scroll 0 0;
+}
+
+.c-Primary {
+    color: $text-color;
+}
+
+.content-left .menu li.active a {
+    color: $text-color;
+}

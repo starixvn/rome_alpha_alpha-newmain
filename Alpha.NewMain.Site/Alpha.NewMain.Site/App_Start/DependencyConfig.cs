@@ -7,6 +7,10 @@
     using Fanex.Data.Repository;
     using Handlers;
     using MediatR;
+    using Repositories;
+    using Repositories.Impl;
+    using Services;
+    using Services.Impl;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
@@ -57,16 +61,18 @@
 
         private static void RegisterCrossCuttingConcerns(Container container)
         {
-            ////container.Register(() => CacheService.CreateInstance(CacheType.MemoryCache), Lifestyle.Singleton);
         }
 
         private static void RegisterServices(Container container)
         {
+            container.Register<IDashboardService, DashboardService>(Lifestyle.Scoped);
+            container.Register<IFileUploadService, FileUploadService>(Lifestyle.Scoped);
         }
 
         private static void RegisterDataAccesses(Container container)
         {
             container.Register<IDynamicRepository, DynamicRepository>(Lifestyle.Scoped);
+            container.Register<IDashboardRepository, DashboardRepository>(Lifestyle.Scoped);
         }
     }
 }

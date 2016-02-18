@@ -1,0 +1,21 @@
+﻿.top-message {
+    cursor: pointer;
+}
+
+.display-none {
+    display: none;
+}
+
+#popup_top {
+    .button-close {
+        width: 14px;
+        height: 14px;
+        border: none;
+        content: url("../Images/icon_close.jpg");
+    }
+
+    .popup-content {
+        height: 60px;
+        width: auto;
+    }
+}

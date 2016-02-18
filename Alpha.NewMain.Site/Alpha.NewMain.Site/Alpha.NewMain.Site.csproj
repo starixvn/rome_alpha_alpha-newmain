@@ -105,6 +105,7 @@
       <HintPath>..\packages\EnterpriseLibrary.Unity.5.0.414.0\lib\net40\Microsoft.Practices.Unity.Interception.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -194,21 +195,45 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\SPNames\LOCAL\TotalBetsForecast.xml" />
-    <Content Include="App_Data\SPNames\PRO\TotalBetsForecast.xml" />
-    <Content Include="App_Data\SPNames\UAT\TotalBetsForecast.xml" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\PRO\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\UAT\DBAGE.bodb_AGE.xml" />
+    <Content Include="Content\Images\icon_user_default.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\CustomerProfile\Scripts\ViewProfile.js" />
+    <Content Include="Views\CustomerProfile\Styles\css\CustomerProfile.css" />
+    <Content Include="Views\CustomerProfile\Styles\Images\profileTooltip_bg.png" />
+    <Content Include="Views\CustomerProfile\Styles\Images\profileTooltip_left.png" />
+    <Content Include="Views\CustomerProfile\Styles\Images\profileTooltip_right.png" />
+    <Content Include="Views\CustomerProfile\Styles\Images\tooltip_bg.png" />
+    <Content Include="Views\CustomerProfile\Styles\Images\tooltip_left.png" />
+    <Content Include="Views\CustomerProfile\Styles\Images\tooltip_right.png" />
+    <Content Include="Views\Main\Scripts\Dashboard.js" />
+    <Content Include="Views\Main\Styles\css\Dashboard.css" />
+    <Content Include="Views\Main\Styles\Images\headerbg_2.jpg" />
+    <Content Include="Views\Main\Styles\Images\headerbg_3.jpg" />
+    <Content Include="Views\Main\Styles\Images\headerbg_4.jpg" />
+    <Content Include="Views\Main\Styles\Images\icon_close.jpg" />
+    <Content Include="Views\Main\Styles\Images\profileTooltip_bg.png" />
+    <Content Include="Views\Main\Styles\Images\profileTooltip_left.png" />
+    <Content Include="Views\Main\Styles\Images\profileTooltip_right.png" />
+    <Content Include="Views\Main\Styles\Images\sprite_01.png" />
+    <Content Include="Views\Main\Styles\Images\tooltip_bg.png" />
+    <Content Include="Views\Main\Styles\Images\tooltip_left.png" />
+    <Content Include="Views\Main\Styles\Images\tooltip_right.png" />
+    <Content Include="Views\Main\Styles\css\LevelCustomStyle2.css" />
+    <Content Include="Views\Main\Styles\css\LevelCustomStyle3.css" />
+    <Content Include="Views\Main\Styles\css\LevelCustomStyle4.css" />
+    <Content Include="Views\Main\Styles\css\page.css" />
+    <Content Include="Views\Main\Styles\sass\Variables_Level2.scss" />
+    <Content Include="Views\Main\Styles\sass\LevelCustomStyle4.scss" />
+    <Content Include="Views\Main\Styles\sass\LevelCustomStyle3.scss" />
+    <Content Include="Views\CustomerProfile\ViewProfile.cshtml" />
+    <None Include="Views\Main\Styles\sass\LevelCustomStyle2.scss" />
     <Content Include="Web.config" />
+    <Content Include="Views\Main\Styles\sass\Variables_Level4.scss" />
+    <Content Include="Views\Main\Styles\sass\Variables_Level3.scss" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -282,18 +307,39 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\CssRewriteUrlTransformWrapper.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Criteria\CustomerProfile\ViewProfileCriteria.cs" />
+    <Compile Include="Extensions\SecretExtension.cs" />
+    <Compile Include="Extensions\SessionExtension.cs" />
+    <Compile Include="Handlers\CustomerProfileHandler.cs" />
+    <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
+    <Compile Include="Models\Views\CustomerProfile\ProfilePictureModel.cs" />
+    <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
+    <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Handlers\MainHandler.cs" />
+    <Compile Include="Models\Dtos\LanguageModel.cs" />
     <Compile Include="Models\Requests\MainIndexQuery.cs" />
     <Compile Include="Models\Views\MainIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Impl\DashboardRepository.cs" />
+    <Compile Include="Services\AppSettings.cs" />
+    <Compile Include="Services\IDashboardService.cs" />
+    <Compile Include="Services\IFileUploadService.cs" />
+    <Compile Include="Services\Impl\DashboardService.cs" />
+    <Compile Include="Services\Impl\FileUploadService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -304,7 +350,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -312,8 +357,22 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\Dtos\" />
+    <EmbeddedResource Include="App_GlobalResources\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Resources.th-TH.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Resources.vi-VN.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Resources.zh-TW.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Resources.ja-JP.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\Resources.ko-KR.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

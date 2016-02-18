@@ -1,16 +1,27 @@
 ﻿namespace Alpha.NewMain.Site.Handlers
 {
-    using System;
     using MediatR;
     using Models.Requests;
     using Models.Views;
+    using Services;
 
     public class MainHandler :
         IRequestHandler<MainIndexQuery, MainIndexViewModel>
     {
+        private readonly IDashboardService _dashboardService;
+        public MainHandler(IDashboardService dashboardService)
+        {
+            _dashboardService = dashboardService;
+        }
+
         public MainIndexViewModel Handle(MainIndexQuery message)
         {
-            return new MainIndexViewModel();
+            var result = new MainIndexViewModel
+            {
+                Languages = _dashboardService.GetLanguages()
+            };
+
+            return result;
         }
     }
 }

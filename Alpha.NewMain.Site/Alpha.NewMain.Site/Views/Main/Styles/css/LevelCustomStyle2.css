@@ -1,0 +1,19 @@
+﻿.header {
+  background: #37587d none repeat scroll 0 0;
+}
+
+.content-left .menu li {
+  background: #37587d none repeat scroll 0 0;
+}
+
+.header-right-top {
+  background: #516e8e url("../Images/headerbg_2.jpg") no-repeat scroll 0 0;
+}
+
+.c-Primary {
+  color: #37587d;
+}
+
+.content-left .menu li.active a {
+  color: #37587d;
+}
