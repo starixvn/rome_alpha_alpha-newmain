@@ -56,6 +56,18 @@
       <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CasinoLibrary, Version=1.0.2.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CasinoSetting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoSetting.1.0.0.0\lib\net40\CasinoSetting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CasinoUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoUtility.1.2.9.0\lib\net40\CasinoUtility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Couchbase, Version=1.0.0.0, Culture=neutral, PublicKeyToken=81137140da4e57ef, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Caching.1.0.404.95\lib\net40\Couchbase.dll</HintPath>
       <Private>True</Private>
@@ -82,6 +94,10 @@
     </Reference>
     <Reference Include="Fanex.CustomerSetting.Client40, Version=1.0.2.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.CustomerSetting.1.0.2.5\lib\net40\Fanex.CustomerSetting.Client40.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.CustomerSetting.Module.Casino, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\Fanex.CustomerSetting.Module.Casino.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.CustomerSetting.Module.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -124,16 +140,40 @@
       <HintPath>..\packages\Fanex.Razorbill.Security.3.0.0.2\lib\net40\Fanex.Razorbill.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="HandHistoryLibrary, Version=1.0.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HandHistoryLibrary.1.0.0.43\lib\net40\HandHistoryLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IBCCrypt, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Crypt.1.1.0.0\lib\net40\IBCCrypt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IBCDBLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.DBLibrary.1.0.0.0\lib\net40\IBCDBLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="IBCFile, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.File.1.0.0\lib\net40\IBCFile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ILogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HandHistoryLibrary.1.0.0.43\lib\net40\ILogger.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.1.9.1.5\lib\net40\Ionic.Zip.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <HintPath>..\packages\HandHistoryLibrary.1.0.0.43\lib\net40\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MediatR, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MediatR.2.0.2\lib\net45\MediatR.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=3.1.0.0, Culture=neutral">
+      <HintPath>..\packages\HandHistoryLibrary.1.0.0.43\lib\net40\Microsoft.ApplicationBlocks.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -174,8 +214,16 @@
       <HintPath>..\packages\MvcPager.1.5.0.28157\lib\net40\MvcPager.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NetUtility, Version=1.0.4199.22106, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HandHistoryLibrary.1.0.0.43\lib\net40\NetUtility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nini, Version=1.1.0.0, Culture=neutral, PublicKeyToken=691faec150a7fa7b, processorArchitecture=MSIL">
+      <HintPath>..\packages\HandHistoryLibrary.1.0.0.43\lib\net40\Nini.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RemotingRef, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -202,20 +250,56 @@
       <HintPath>..\packages\SPSRemoting.1.0.0\lib\net40\SPSRemoting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sunplus.Agent.Model.Auth, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.0.1\lib\net40\Sunplus.Agent.Model.Auth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.0.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.0.7\lib\net40\Sunplus.Agent.Model.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.1\lib\net40\Sunplus.Agent.Model.Casino.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Agent.Model.DataAccessLibrary, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.DataAccessLibrary.3.0.0.1\lib\net40\Sunplus.Agent.Model.DataAccessLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Definitions, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Definitions.3.0.0.4\lib\net40\Sunplus.Agent.Model.Definitions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sunplus.Agent.Model.IpFormatter, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.IpFormatter.3.0.0.1\lib\net40\Sunplus.Agent.Model.IpFormatter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Sunplus.Agent.Model.RemotingRef, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.RemotingRef.3.0.0.2\lib\net40\Sunplus.Agent.Model.RemotingRef.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sunplus.Agent.Model.SecurityCode, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.SecurityCode.3.0.0.1\lib\net40\Sunplus.Agent.Model.SecurityCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Sunplus.Agent.Utilities, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Utilities.3.0.0.2\lib\net40\Sunplus.Agent.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Core.Common, Version=1.1.4505.19054, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Core.Common.1.1.4505.19054\lib\net40\Sunplus.Core.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.AOP, Version=1.0.4218.28561, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Libraries.AOP.1.0.4218.28561\lib\net40\Sunplus.Libraries.AOP.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.APILogger, Version=1.0.4218.28561, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Libraries.APILogger.1.0.4218.28561\lib\net40\Sunplus.Libraries.APILogger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.ThirdPartyTestData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Libraries.ThirdPartyTestData.1.0.0.0\lib\net40\Sunplus.Libraries.ThirdPartyTestData.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http">
@@ -287,9 +371,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PagesAccess.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\PRO\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\UAT\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\UAT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Themes\Apo\Security\howtouse.css" />
     <Content Include="App_Themes\Apo\Security\howtouse.min.css" />
     <Content Include="App_Themes\Apo\Security\images\bg_buttonsite.jpg" />
@@ -334,6 +422,7 @@
     <Content Include="Views\Main\Scripts\Dashboard.js" />
     <Content Include="Views\Main\Scripts\Header.js" />
     <Content Include="Views\Main\Styles\css\Dashboard.css" />
+    <Content Include="Views\Main\Styles\css\LeftMenu.css" />
     <Content Include="Views\Main\Styles\css\PopupMessage.css" />
     <Content Include="Views\Main\Styles\Images\headerbg_2.jpg" />
     <Content Include="Views\Main\Styles\Images\headerbg_3.jpg" />
@@ -426,6 +515,7 @@
     <None Include="Web.proi7.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
     <None Include="Web.uati1.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -434,6 +524,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\LeftPanel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeftPanel.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_GlobalResources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -443,17 +538,22 @@
     <Compile Include="App_Start\CssRewriteUrlTransformWrapper.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Constants\RoleDescriptionConstant.cs" />
+    <Compile Include="Constants\SubMenuIndexConstant.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Criteria\CustomerProfile\ViewProfileCriteria.cs" />
     <Compile Include="Extensions\SecretExtension.cs" />
     <Compile Include="Extensions\SessionExtension.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
+    <Compile Include="Models\Dtos\BusinessException.cs" />
+    <Compile Include="Models\Dtos\MenuModel.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
     <Compile Include="Models\Views\CustomerProfile\ProfilePictureModel.cs" />
     <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
+    <Compile Include="Models\Views\LeftMenuViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -489,13 +589,23 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LeftPanel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.ja-JP.resx" />
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.ko-KR.resx" />
     <EmbeddedResource Include="App_GlobalResources\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.th-TH.resx" />
     <EmbeddedResource Include="App_GlobalResources\Resources.th-TH.resx" />
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.vi-VN.resx" />
     <EmbeddedResource Include="App_GlobalResources\Resources.vi-VN.resx" />
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-CN.resx" />
     <EmbeddedResource Include="App_GlobalResources\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-TW.resx" />
     <EmbeddedResource Include="App_GlobalResources\Resources.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,7 @@
     using Alpha.NewMain.Site.Models.Dtos;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
+    using Models.Views;
     using Models.Views.CustomerProfile;
 
     public interface IDashboardService
@@ -25,5 +26,7 @@
         string GetMainPage();
 
         bool IsMainPageFromCookie();
+
+        LeftMenuViewModel GetLeftMenu();
     }
 }

@@ -23,10 +23,12 @@
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/bootstrap-material-design.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/ripples.min.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/iconMoon/style.css">
+    <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/Iconalpha/style.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/reset.css">
     <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/page.css">
     <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/Dashboard.css">
     <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/PopupMessage.css">
+    <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/LeftMenu.css">
     <link type="text/css" rel="stylesheet" href="~/Views/CustomerProfile/Styles/css/CustomerProfile.css">
     <link type="text/css" rel="stylesheet" href="~/@("Views/Main/Styles/css/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
 </head>
@@ -60,6 +62,7 @@
                             }
                         </ul>
                     </li>
+                    <li><span class="icon icon-swap-horizontal opacity-80" title="@Resources.OldView"></span><span class="txt-top">@Resources.OldView</span></li>
                     <li>
                         <span class="icon icon-squares opacity-80 top-right-menu"></span>
                         <ul class="list-setting">
@@ -87,10 +90,39 @@
                     <div class="email-box private-message"><span class="icon icon-message c-Primary"></span><span class="value">0</span></div>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="content">
+        <div class="content-left">
+            <div class="mainmenu">
+                <ul class="menu">
+                    <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
+                    @if (Model.LeftMenu.ShowAccountInfo)
+                    {
+                        <li class="accountinfo"><a href="javascript:;">@Resources.accountInfo</a></li>
+                    }
+                </ul>
+                <div class="extra-box">
+                    <span class="icon icon-extra icon-dots"></span>
+                </div>
+            </div>
+            <div class="mainmenu-container panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                @foreach (var menu in Model.LeftMenu.MenuList)
+                {
+                    <div class="@(menu.ShowSubMenu ? string.Empty: "list-menu") panel panel-default">
+                        <div class="menu-item  panel-heading" role="tab" id="heading-@menu.Id">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-@menu.Id" aria-expanded="true" aria-controls="collapse-@menu.Id">
+                                <span class="txt-item pull-left"><span class="icon icon-@menu.Id"></span>@menu.Title</span>
+                                @if (menu.SubMenu != null && menu.SubMenu.Count > 0)
+                                {
+                                    <span class="pull-right icon-arrow-right"></span>
+                                }
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
         <div class="content-right">
             <iframe src="@mainPage" frameborder="0" id="@contentFrame" scrolling="auto"
                     name="main" marginwidth="0" marginheight="0" allowtransparency="yes" class="iframe-content"></iframe>

@@ -211,4 +211,13 @@
   <data name="SecurityCode" xml:space="preserve">
     <value>Security Code</value>
   </data>
+  <data name="OldView" xml:space="preserve">
+    <value>Old View</value>
+  </data>
+  <data name="accountInfo" xml:space="preserve">
+    <value>계정정보</value>
+  </data>
+  <data name="mainMenu" xml:space="preserve">
+    <value>메인 메뉴</value>
+  </data>
 </root>

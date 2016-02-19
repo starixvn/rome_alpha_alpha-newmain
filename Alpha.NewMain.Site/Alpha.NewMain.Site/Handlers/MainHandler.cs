@@ -28,7 +28,8 @@
                 CookieCurrentURLKey = _dashboardService.GetCookieCurrentURL(),
                 BaseUrl = _dashboardService.GetBaseUrl(),
                 MainPage = _dashboardService.GetMainPage(),
-                IsMainPageFromCookie = _dashboardService.IsMainPageFromCookie()
+                IsMainPageFromCookie = _dashboardService.IsMainPageFromCookie(),
+                LeftMenu = _dashboardService.GetLeftMenu()
             };
 
             return result;

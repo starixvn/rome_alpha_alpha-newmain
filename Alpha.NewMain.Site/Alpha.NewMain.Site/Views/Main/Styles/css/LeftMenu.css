@@ -1,0 +1,13 @@
+﻿.icon-0::before {
+    content: "\e906";
+}
+
+.icon-1::before {
+    content: "\e908";
+}
+.icon-2::before {
+    content: "\e904";
+}
+.icon-3::before {
+    content: "\e905";
+}

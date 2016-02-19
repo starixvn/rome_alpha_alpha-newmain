@@ -2,12 +2,14 @@
 {
     using System.Collections.Generic;
     using System.Data;
+    using System.Web;
     using Alpha.NewMain.Site.Models.Dtos;
     using Criteria.CustomerProfile;
     using Fanex.Common;
     using Fanex.Data;
     using Models.Views.CustomerProfile;
-
+    using Sunplus.Agent.Model.BL.Definitions;
+    using Sunplus.Agent.Model.Entities;
     public class DashboardRepository : IDashboardRepository
     {
         public List<LanguageModel> GetLanguages()
@@ -74,6 +76,23 @@
             }
 
             return avatar;
+        }
+
+        public SiteMapNode GetSiteMapNode()
+        {
+            SiteMapNode rootNode = SiteMap.RootNode;
+            var roleId = UserSession.Current.RoleId;
+            switch (roleId)
+            {
+                case (int)UserTypes.Agent:
+                    return rootNode.ChildNodes[0];
+                case (int)UserTypes.Master:
+                    return rootNode.ChildNodes[1];
+                case (int)UserTypes.Super:
+                    return rootNode.ChildNodes[2];
+                default:
+                    throw new BusinessException("Invalid role id for customer " + UserSession.Current.CustId + ": " + roleId);
+            }
         }
     }
 }

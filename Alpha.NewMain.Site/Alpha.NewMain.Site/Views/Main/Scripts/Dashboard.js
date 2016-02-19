@@ -87,6 +87,9 @@ var DashboardManager = function () {
         jQuery(".iframe-content").load(function () {
             self.setURL();
         });
+        jQuery(".icon-swap-horizontal").click(function () {
+            top.location = rootUrl + self.getMainSitePath() + "Index.aspx";
+        });
 
         setTimeout(self.getMessages, 500);
         setTimeout(self.reCheckin, 30000);

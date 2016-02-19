@@ -61,6 +61,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Info.
+        /// </summary>
+        public static string accountInfo {
+            get {
+                return ResourceManager.GetString("accountInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin.
         /// </summary>
         public static string admin {
@@ -139,6 +148,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string introNickname {
             get {
                 return ResourceManager.GetString("introNickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main menu.
+        /// </summary>
+        public static string mainMenu {
+            get {
+                return ResourceManager.GetString("mainMenu", resourceCulture);
             }
         }
         
@@ -256,6 +274,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string nickname {
             get {
                 return ResourceManager.GetString("nickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old View.
+        /// </summary>
+        public static string OldView {
+            get {
+                return ResourceManager.GetString("OldView", resourceCulture);
             }
         }
         

@@ -3,10 +3,12 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Text.RegularExpressions;
     using System.Web;
     using System.Xml;
     using Alpha.NewMain.Site.Repositories;
     using App_GlobalResources;
+    using Constants;
     using Criteria.CustomerProfile;
     using Extensions;
     using Fanex.Age.UI;
@@ -18,12 +20,17 @@
     using Models.Dtos;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
+    using Models.Views;
     using Models.Views.CustomerProfile;
+    using Sunplus.Agent.Model.BL.Authorization;
+    using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Common;
     using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Model.Entities.Permission;
     using Sunplus.Agent.Utilities;
     using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
+    using SiteServices = Alpha.NewMain.Site.Services;
 
     public class DashboardService : IDashboardService
     {
@@ -267,6 +274,44 @@
                 !currentURLCookie.Value.Contains("SecurityCode");
         }
 
+        public LeftMenuViewModel GetLeftMenu()
+        {
+            var pageAccess = UserSession.Current.SubPageAccess;
+            var siteNode = _repository.GetSiteMapNode();
+            var leftMenu = new LeftMenuViewModel
+            {
+                ShowAccountInfo = pageAccess.ViewMemberInfo,
+                MenuList = new List<MenuModel>()
+            };
+
+            if (!siteNode.HasChildNodes)
+            {
+                return leftMenu;
+            }
+
+            var isSubAcc = UserSession.Current.IsSubAcc;
+            var subMenuCount = siteNode.ChildNodes.Count;
+            for (int i = 0; i < subMenuCount; i++)
+            {
+                var canViewMenu = CanViewMenu(i, isSubAcc, pageAccess);
+                if (!canViewMenu)
+                {
+                    continue;
+                }
+
+                var subMenu = siteNode.ChildNodes[i];
+                var showSubMenu = subMenu.GetAttribute("expand") == "true";
+                if (!subMenu.HasChildNodes)
+                {
+                    continue;
+                }
+
+                leftMenu.MenuList.Add(GetMenu(subMenu, i, showSubMenu));
+            }
+
+            return leftMenu;
+        }
+
         private string GenerateImage(ProfilePictureModel avatar)
         {
             try
@@ -283,6 +328,153 @@
             }
 
             return "data:image/jpeg;base64," + string.Empty;
+        }
+
+        private bool CanViewMenu(int menuIndex, bool isSubAcc, PageAccess pageAccess)
+        {
+            var deniedView = (menuIndex == SubMenuIndexConstant.TotalBets && !pageAccess.ViewTotalBets) ||
+                (menuIndex == SubMenuIndexConstant.Forecast && !pageAccess.ViewTotalBets) ||
+                (menuIndex == SubMenuIndexConstant.MemberInfo && !pageAccess.ViewMemberInfo) ||
+                (menuIndex == SubMenuIndexConstant.Reports && !pageAccess.ViewReports) ||
+                (menuIndex == SubMenuIndexConstant.Charts && !pageAccess.ViewReports);
+            return !isSubAcc || !deniedView;
+        }
+
+        private MenuModel GetMenu(SiteMapNode subMenu, int index, bool showSubMenu)
+        {
+            var menu = new MenuModel
+            {
+                Id = index,
+                ShowSubMenu = showSubMenu,
+                Title = GetLeftPanelResource(subMenu.Title),
+                SubMenu = new List<MenuModel>()
+            };
+
+            var isSubAcc = UserSession.Current.IsSubAcc;
+            var authorize = new AuthorizationBO(UserSession.Current.NetSessionId);
+            var itemCount = subMenu.ChildNodes.Count;
+            for (var j = 0; j < itemCount; j++)
+            {
+                SiteMapNode item = subMenu.ChildNodes[j];
+                var isDeniedView = IsDeniedViewSubMenu(isSubAcc, item, authorize);
+                if (isDeniedView)
+                {
+                    continue;
+                }
+
+                menu.SubMenu.Add(GetMenuItem(item, j, index));
+            }
+
+            return menu;
+        }
+
+        private string GetLeftPanelResource(string key)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(key))
+                {
+                    return string.Empty;
+                }
+
+                object val = LeftPanel.ResourceManager.GetString(key);
+                if (val != null)
+                {
+                    return val.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Data["CUR-CULTURE"] = System.Threading.Thread.CurrentThread.CurrentCulture;
+                ex.Data["RESOURKEY"] = key;
+                Logs.Write(ex);
+            }
+
+            return string.Empty;
+        }
+
+        private bool IsDeniedViewSubMenu(bool isSubAcc, SiteMapNode subMenu, AuthorizationBO authorize)
+        {
+            return (isSubAcc && subMenu.Description == RoleDescriptionConstant.SubAcc) ||
+                !authorize.AuthorizeUrl(0, 0, false, subMenu.GetAttribute("href")) ||
+                (!UserPermission.IsShowRacing && subMenu.Description == RoleDescriptionConstant.HorseRacing) ||
+                (UserSession.Current.IsDisabledFI && subMenu.Description == RoleDescriptionConstant.Financial) ||
+                (!UserPermission.IsShowCasino && (subMenu.Description == RoleDescriptionConstant.Casino)) ||
+                (!UserPermission.IsShowBingoReport && subMenu.Description == RoleDescriptionConstant.Bingo) ||
+                (!UserPermission.IsShowNumberGame && subMenu.Title == RoleDescriptionConstant.NumberGame) ||
+                (!UserPermission.IsShowLiveCasino && subMenu.Title == RoleDescriptionConstant.LiveCasino) ||
+                (!UserSession.Current.IsShowConsolidatedReport && subMenu.Title == RoleDescriptionConstant.ConsolidatedReport) ||
+                (UserSession.Current.CustId != SiteServices.AppSettings.CustIdFoobet && subMenu.Title.Contains("lblFoobet")) ||
+                (subMenu.Title.Contains("MemberWinLimit") && !UserSession.Current.IsLiveCasinoSync && UserSession.Current.IsHideGoldDeluxe);
+        }
+
+        private MenuModel GetMenuItem(SiteMapNode menuItem, int index, int parentIndex)
+        {
+            var menu = new MenuModel();
+            var title = menuItem.Title;
+            var bettypeId = 0;
+            if (title.Contains("bettype") && Int32.TryParse(title.Substring(7), out bettypeId))
+            {
+                menu.Title = CacheRef.GetBettype(bettypeId);
+            }
+            else
+            {
+                menu.Title = GetLeftPanelResource(menuItem.Title);
+            }
+
+            if (title.Contains("lblStatement"))
+            {
+                menu.Url = "../" + (menuItem.GetAttribute("href").Replace("custidParam", UserSession.Current.CustId.ToString()));
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(menuItem.GetAttribute("microSite")))
+                {
+                    var microSiteSettingKey = menuItem.GetAttribute("microSiteNameSettingKey");
+                    var microSiteName = AppSettings.GetValue(microSiteSettingKey);
+                    var microSiteUrl = HttpContext.Current.Response.ApplyAppPathModifier(menuItem.GetAttribute("href"));
+                    microSiteUrl = Regex.Replace(microSiteUrl, HttpRuntime.AppDomainAppVirtualPath, microSiteName, RegexOptions.IgnoreCase);
+                    menu.Url = microSiteUrl;
+                }
+                else
+                {
+                    menu.Url = "../" + menuItem.GetAttribute("href");
+                }
+            }
+
+            menu.IsImportant = title.Contains("lblMonitor") && !CheckingLastsBetMonitoringFunctionStatus();
+            return menu;
+        }
+
+        private bool CheckingLastsBetMonitoringFunctionStatus()
+        {
+            if (UserSession.Current.IsInternal)
+            {
+                return true;
+            }
+
+            var isEnableMonitoringBetsList = SiteServices.AppSettings.EnableBetsListMonitoring;
+            if (isEnableMonitoringBetsList)
+            {
+                return true;
+            }
+
+            var usersAlwaysToAccessThisFunction = SiteServices.AppSettings.UsersAlwaysAllowAccessBetsListMonitoring;
+            if (string.IsNullOrEmpty(usersAlwaysToAccessThisFunction))
+            {
+                return false;
+            }
+
+            var customerIdArray = usersAlwaysToAccessThisFunction.Split(',');
+            for (int i = 0; i < customerIdArray.Length; i++)
+            {
+                if (UserSession.Current.CustId == Converter.ToInt(customerIdArray[i]))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

@@ -204,4 +204,13 @@
   <data name="SecurityCode" xml:space="preserve">
     <value>Mã bảo mật</value>
   </data>
+  <data name="OldView" xml:space="preserve">
+    <value>Old View</value>
+  </data>
+  <data name="accountInfo" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="mainMenu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
 </root>

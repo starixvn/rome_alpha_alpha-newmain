@@ -211,4 +211,13 @@
   <data name="SecurityCode" xml:space="preserve">
     <value>保安碼</value>
   </data>
+  <data name="OldView" xml:space="preserve">
+    <value>Old View</value>
+  </data>
+  <data name="accountInfo" xml:space="preserve">
+    <value>用戶資料</value>
+  </data>
+  <data name="mainMenu" xml:space="preserve">
+    <value>主要目錄</value>
+  </data>
 </root>
