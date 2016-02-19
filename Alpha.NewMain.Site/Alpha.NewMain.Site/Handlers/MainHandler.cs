@@ -1,12 +1,16 @@
 ﻿namespace Alpha.NewMain.Site.Handlers
 {
+    using System.Web;
     using MediatR;
+    using Models.Dtos;
     using Models.Requests;
     using Models.Views;
     using Services;
+    using Sunplus.Agent.Model.Entities;
 
     public class MainHandler :
-        IRequestHandler<MainIndexQuery, MainIndexViewModel>
+        IRequestHandler<MainIndexQuery, MainIndexViewModel>,
+        IRequestHandler<ChangeLanguageQuery, ResultModel>
     {
         private readonly IDashboardService _dashboardService;
         public MainHandler(IDashboardService dashboardService)
@@ -18,10 +22,21 @@
         {
             var result = new MainIndexViewModel
             {
-                Languages = _dashboardService.GetLanguages()
+                Languages = _dashboardService.GetLanguages(),
+                MonthNames = _dashboardService.GetMonthNames(),
+                HotMessages = _dashboardService.GetHotMessages(),
+                CookieCurrentURLKey = _dashboardService.GetCookieCurrentURL(),
+                BaseUrl = _dashboardService.GetBaseUrl(),
+                MainPage = _dashboardService.GetMainPage(),
+                IsMainPageFromCookie = _dashboardService.IsMainPageFromCookie()
             };
 
             return result;
+        }
+
+        public ResultModel Handle(ChangeLanguageQuery message)
+        {
+            return _dashboardService.ChangeLanguage(message);
         }
     }
 }

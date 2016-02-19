@@ -7,6 +7,8 @@
         private const string HYPHEN = "_";
         private const string IsDefaultAvatarKey = "IsDefaultAvatar";
         private const string BinaryAvatarKey = "BinaryAvatar";
+        private const string LanguageKey = "Language";
+        private const string DefaultLanguage = "en-US";
 
         private static object GetProperty(string key)
         {
@@ -43,6 +45,15 @@
             set
             {
                 SetProperty(BinaryAvatarKey, value);
+            }
+        }
+
+        public static string Language
+        {
+            get
+            {
+                object value = GetProperty(LanguageKey);
+                return (null == value) ? DefaultLanguage : value as string;
             }
         }
     }

@@ -7,7 +7,7 @@
     using MediatR;
     using Models.Requests.CustomerProfile;
     using Sunplus.Agent.Model.Entities;
-
+    using Utils;
     public class CustomerProfileController : Controller
     {
         private IMediator _mediator;
@@ -51,6 +51,7 @@
 
         public ActionResult ViewProfile(ViewProfileQuery query)
         {
+            LanguageUtil.SetLanguage();
             _custId = UserSession.Current.CustId;
             query.CustId = _custId;
             var result = _mediator.Send(query);

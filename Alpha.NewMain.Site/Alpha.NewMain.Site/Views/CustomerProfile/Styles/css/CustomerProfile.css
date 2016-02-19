@@ -111,3 +111,10 @@
         font-family: Arial,Tahoma,helvetica,sans-serif;
         line-height: 14px;
     }
+    
+#logoProfileImg.collapse-image {
+    width: 100%;
+}
+
+.header-left-logo {
+}

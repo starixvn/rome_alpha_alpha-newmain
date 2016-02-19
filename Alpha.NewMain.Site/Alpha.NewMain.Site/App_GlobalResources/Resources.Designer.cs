@@ -70,6 +70,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AM.
+        /// </summary>
+        public static string AM {
+            get {
+                return ResourceManager.GetString("AM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click here.
         /// </summary>
         public static string clickHere {
@@ -97,6 +106,33 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact Us.
+        /// </summary>
+        public static string ContactUs {
+            get {
+                return ResourceManager.GetString("ContactUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile picture.
+        /// </summary>
+        public static string EditProfilePicture {
+            get {
+                return ResourceManager.GetString("EditProfilePicture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;Dear customers! Now you can login with your own nickname&lt;/div&gt;
         ///&lt;div&gt;... more secure and personalized.&lt;/div&gt;.
         /// </summary>
@@ -107,11 +143,137 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jan.
+        /// </summary>
+        public static string monthName1 {
+            get {
+                return ResourceManager.GetString("monthName1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oct.
+        /// </summary>
+        public static string monthName10 {
+            get {
+                return ResourceManager.GetString("monthName10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nov.
+        /// </summary>
+        public static string monthName11 {
+            get {
+                return ResourceManager.GetString("monthName11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dec.
+        /// </summary>
+        public static string monthName12 {
+            get {
+                return ResourceManager.GetString("monthName12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Feb.
+        /// </summary>
+        public static string monthName2 {
+            get {
+                return ResourceManager.GetString("monthName2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mar.
+        /// </summary>
+        public static string monthName3 {
+            get {
+                return ResourceManager.GetString("monthName3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apr.
+        /// </summary>
+        public static string monthName4 {
+            get {
+                return ResourceManager.GetString("monthName4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to May.
+        /// </summary>
+        public static string monthName5 {
+            get {
+                return ResourceManager.GetString("monthName5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jun.
+        /// </summary>
+        public static string monthName6 {
+            get {
+                return ResourceManager.GetString("monthName6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jul.
+        /// </summary>
+        public static string monthName7 {
+            get {
+                return ResourceManager.GetString("monthName7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aug.
+        /// </summary>
+        public static string monthName8 {
+            get {
+                return ResourceManager.GetString("monthName8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sept.
+        /// </summary>
+        public static string monthName9 {
+            get {
+                return ResourceManager.GetString("monthName9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nickname.
         /// </summary>
         public static string nickname {
             get {
                 return ResourceManager.GetString("nickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string password {
+            get {
+                return ResourceManager.GetString("password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PM.
+        /// </summary>
+        public static string PM {
+            get {
+                return ResourceManager.GetString("PM", resourceCulture);
             }
         }
         
@@ -133,6 +295,24 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string ProfileLoginTip {
             get {
                 return ResourceManager.GetString("ProfileLoginTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Security Code.
+        /// </summary>
+        public static string SecurityCode {
+            get {
+                return ResourceManager.GetString("SecurityCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, You don&apos;t have permission to access this page..
+        /// </summary>
+        public static string strNotAccessPage {
+            get {
+                return ResourceManager.GetString("strNotAccessPage", resourceCulture);
             }
         }
         

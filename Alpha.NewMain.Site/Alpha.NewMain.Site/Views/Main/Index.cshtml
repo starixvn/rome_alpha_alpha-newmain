@@ -6,7 +6,11 @@
 @{
     Layout = "";
     var contentSite = AppSettings.ContentSite;
+    var mainSite = AppSettings.MainSite;
     var currentUserSession = UserSession.Current;
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+    var contentFrame = "main";
+    var mainPage = Model.IsMainPageFromCookie ? Model.MainPage : "../" + mainSite + "/" + Model.MainPage;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -22,14 +26,15 @@
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/reset.css">
     <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/page.css">
     <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/Dashboard.css">
+    <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/PopupMessage.css">
     <link type="text/css" rel="stylesheet" href="~/Views/CustomerProfile/Styles/css/CustomerProfile.css">
-    <link type="text/css" rel="stylesheet" href="@("Views/Main/Styles/css/LevelCustomStyle" + currentUserSession.RoleId+ ".css")">
+    <link type="text/css" rel="stylesheet" href="~/@("Views/Main/Styles/css/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
 </head>
 <body>
     <div id="popup-top" class="display-none">
         <div id="popup-line">
             <a class="top-message">
-                <img class="button-close" alt="@Resources.close" title="@Resources.close" />
+                <img src="~/Views/Main/Styles/Images/icon_close.jpg" class="button-close" alt="@Resources.close" title="@Resources.close" />
             </a>
         </div>
         <div class="popup-content">
@@ -46,40 +51,78 @@
                 <ul class="list-top">
                     <li><span class="icon icon-time opacity-80"></span><span class="txt-top" id="clock"></span></li>
                     <li>
-                        <span class="icon icon-flag language-selector langFlag_<%= currentUserSession.LangKey.ToLower() %>"></span>
+                        <span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>
                         <span class="language-text language-selector"></span>
                         <ul class="list-language">
-                            <li class="en-US"><a href="javascript:ChangeLang('en-US')">English</a></li>
-                            <li class="zh-TW"><a href="javascript:ChangeLang('zh-TW')">繁體中文</a></li>
-                            <li class="zh-CN"><a href="javascript:ChangeLang('zh-CN')">简体中文</a></li>
-                            <li class="ja-JP"><a href="javascript:ChangeLang('ja-JP')">日本語</a></li>
-                            <li class="th-TH"><a href="javascript:ChangeLang('th-TH')">ภาษาไทย</a></li>
-                            <li class="ko-KR"><a href="javascript:ChangeLang('ko-KR')">한국어</a></li>
-                            <li class="vi-VN"><a href="javascript:ChangeLang('vi-VN')">Tiếng Việt</a></li>
+                            @foreach (var language in Model.Languages)
+                            {
+                                <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
+                            }
                         </ul>
                     </li>
                     <li>
                         <span class="icon icon-squares opacity-80 top-right-menu"></span>
                         <ul class="list-setting">
-                            <li><a href="_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span><%= Resources.HowToUse.Help %></a></li>
-                            <li><a href="javascript:Change2Menu('Company/ContactUs/Index')"><span class="icon icon-contactus"></span><%= Resources.Lang.ContactUs %></a></li>
-                            <li><a href="ContextualCustomer/ProfilePicture?custId=<%= currentUserSession.CustId %>" target="<%= contentFrame %>"><span class="icon icon-profilepic"></span><%= Resources.ProfilePicture.EditProfilePicture %></a></li>
-                            <li><a href="javascript:Change2Menu('_MemberInfo/ChangePassword/ChangePassword.aspx')"><span class="icon icon-lock"></span><%= Resources.Lang.password %></a></li>
-                            <li><a href="javascript:Change2Menu('Security/SecurityCode/ChangeSecurityCode')"><span class="icon icon-sercuritycode"></span><%= Resources.Lang.SecurityCode %></a></li>
+                            <li><a href="/@mainSite/_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@mainSite/Company/ContactUs/Index')"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
+                            <li><a href="/@mainSite/ContextualCustomer/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@mainSite/_MemberInfo/ChangePassword/ChangePassword.aspx')"><span class="icon icon-lock"></span>@Resources.password</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@mainSite/Security/SecurityCode/ChangeSecurityCode')"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                         </ul>
                     </li>
                     <li><span class="icon icon-logout opacity-80"></span></li>
                 </ul>
             </div>
+            <div class="header-right-bottom">
+                <div class="live-status">
+                    <span class="icon icon-home c-Primary"></span>
+                    <div id="text-news-out">
+                        <span id="scroller">
+                            <span id="live-message" class="maquee live-message"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="botom-right">
+                    <span class="icon icon-add c-Primary special-message"></span>
+                    <div class="email-box private-message"><span class="icon icon-message c-Primary"></span><span class="value">0</span></div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <iframe src="" frameborder="0" id="main" scrolling="auto"
-            name="main" width="100%" height="100%" marginwidth="0" marginheight="0" allowtransparency="yes" class="iframe-content"></iframe>
+    <div class="content">
+        <div class="content-right">
+            <iframe src="@mainPage" frameborder="0" id="@contentFrame" scrolling="auto"
+                    name="main" marginwidth="0" marginheight="0" allowtransparency="yes" class="iframe-content"></iframe>
+        </div>
+    </div>
 
     <script type="text/javascript" src="/@contentSite/libs/jquery/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="~/Views/CustomerProfile/Scripts/ViewProfile.js"></script>
+    <script type="text/javascript" src="~/Views/Main/Scripts/Core.js"></script>
+    <script type="text/javascript" src="~/Views/Main/Scripts/Header.js"></script>
     <script type="text/javascript" src="~/Views/Main/Scripts/Dashboard.js"></script>
     <script type="text/javascript">
+        var rootUrl = '@Url.Content("~")';
+        var mainSite = '@mainSite';
+        var contentFrame = "@contentFrame";
+        var _resources = {
+            language: '@currentUserSession.Language',
+            onUserId: '@currentUserSession.OnUserId',
+            cookieCurrentURLKey: '@Model.CookieCurrentURLKey',
+            baseUrl: '@Model.BaseUrl',
+            msgList: @Html.Raw(serializer.Serialize(Model.HotMessages)),
+
+            months:@Html.Raw(serializer.Serialize(Model.MonthNames)),
+            year: @DateTime.Now.Year,
+            month:@DateTime.Now.Month,
+            day:@DateTime.Now.Day,
+            hrs:@DateTime.Now.Hour,
+            min:@DateTime.Now.Minute,
+            sec:@DateTime.Now.Second,
+            PM:'@Resources.PM',
+            AM:'@Resources.AM'
+        };
 
     </script>
 </body>

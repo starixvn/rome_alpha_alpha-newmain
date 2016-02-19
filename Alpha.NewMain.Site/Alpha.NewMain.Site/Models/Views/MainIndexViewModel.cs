@@ -6,5 +6,17 @@
     public class MainIndexViewModel
     {
         public List<LanguageModel> Languages { get; set; }
+
+        public List<string> MonthNames { get; set; }
+
+        public List<string> HotMessages { get; set; }
+
+        public string CookieCurrentURLKey { get; set; }
+
+        public string BaseUrl { get; set; }
+
+        public string MainPage { get; set; }
+
+        public bool IsMainPageFromCookie { get; set; }
     }
 }

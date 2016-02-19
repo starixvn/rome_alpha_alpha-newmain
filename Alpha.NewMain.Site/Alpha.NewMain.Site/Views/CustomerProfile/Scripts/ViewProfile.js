@@ -41,7 +41,7 @@ var CustomerProfile = function () {
     };
 
     self.loadCustomerProfile = function () {
-        var url = "CustomerProfile/ViewProfile";
+        var url = rootUrl + "CustomerProfile/ViewProfile";
         var xmlhttp;
 
         if (window.XMLHttpRequest) {
