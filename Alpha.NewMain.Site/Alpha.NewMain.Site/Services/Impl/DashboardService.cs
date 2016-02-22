@@ -280,6 +280,7 @@
             var siteNode = _repository.GetSiteMapNode();
             var leftMenu = new LeftMenuViewModel
             {
+                IsShowMenu = IsShowLeftMenu(),
                 ShowAccountInfo = pageAccess.ViewMemberInfo,
                 MenuList = new List<MenuModel>()
             };
@@ -301,7 +302,7 @@
 
                 var subMenu = siteNode.ChildNodes[i];
                 var showSubMenu = subMenu.GetAttribute("expand") == "true";
-                if (!subMenu.HasChildNodes)
+                if (!subMenu.HasChildNodes && subMenu.GetAttribute("href") == null)
                 {
                     continue;
                 }
@@ -347,7 +348,9 @@
                 Id = index,
                 ShowSubMenu = showSubMenu,
                 Title = GetLeftPanelResource(subMenu.Title),
-                SubMenu = new List<MenuModel>()
+                Url = subMenu.GetAttribute("href"),
+                SubMenu = new List<MenuModel>(),
+                ResourceKey = subMenu.Title
             };
 
             var isSubAcc = UserSession.Current.IsSubAcc;
@@ -404,7 +407,7 @@
                 (!UserPermission.IsShowNumberGame && subMenu.Title == RoleDescriptionConstant.NumberGame) ||
                 (!UserPermission.IsShowLiveCasino && subMenu.Title == RoleDescriptionConstant.LiveCasino) ||
                 (!UserSession.Current.IsShowConsolidatedReport && subMenu.Title == RoleDescriptionConstant.ConsolidatedReport) ||
-                (UserSession.Current.CustId != SiteServices.AppSettings.CustIdFoobet && subMenu.Title.Contains("lblFoobet")) ||
+                (UserSession.Current.CustId != SiteServices.AppSettings.CustIdFoobet && subMenu.Title.Contains("foobet")) ||
                 (subMenu.Title.Contains("MemberWinLimit") && !UserSession.Current.IsLiveCasinoSync && UserSession.Current.IsHideGoldDeluxe);
         }
 
@@ -422,7 +425,7 @@
                 menu.Title = GetLeftPanelResource(menuItem.Title);
             }
 
-            if (title.Contains("lblStatement"))
+            if (title.Contains("statement"))
             {
                 menu.Url = "../" + (menuItem.GetAttribute("href").Replace("custidParam", UserSession.Current.CustId.ToString()));
             }
@@ -442,7 +445,7 @@
                 }
             }
 
-            menu.IsImportant = title.Contains("lblMonitor") && !CheckingLastsBetMonitoringFunctionStatus();
+            menu.IsImportant = title.Contains("monitor") && !CheckingLastsBetMonitoringFunctionStatus();
             return menu;
         }
 
@@ -475,6 +478,30 @@
             }
 
             return false;
+        }
+
+        private bool IsShowLeftMenu()
+        {
+            if (!UserSession.Current.IsLogged || UserSession.Current.IsPasswordExpired)
+            {
+                return false;
+            }
+
+            var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+            var newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
+            if (newFlowOfSC)
+            {
+                return false;
+            }
+
+            var oldStatus = UserSession.Current.SecurityCodeResult;
+            if (!securityCodeSession.IsInternal &&
+                (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

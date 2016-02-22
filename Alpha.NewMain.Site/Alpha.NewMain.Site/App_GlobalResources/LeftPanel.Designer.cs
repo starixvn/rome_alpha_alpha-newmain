@@ -61,6 +61,24 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agent List.
+        /// </summary>
+        public static string agentList {
+            get {
+                return ResourceManager.GetString("agentList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Agent Outstanding.
+        /// </summary>
+        public static string agentOutstanding {
+            get {
+                return ResourceManager.GetString("agentOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent Win Loss.
         /// </summary>
         public static string agentwinloss {
@@ -75,6 +93,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string agentwinlostdetail {
             get {
                 return ResourceManager.GetString("agentwinlostdetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Announcements.
+        /// </summary>
+        public static string announcements {
+            get {
+                return ResourceManager.GetString("announcements", resourceCulture);
             }
         }
         
@@ -106,6 +133,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancelled Bets.
+        /// </summary>
+        public static string cancelledBets {
+            get {
+                return ResourceManager.GetString("cancelledBets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Casino Position Taking (%).
         /// </summary>
         public static string casinoPositionTaking {
@@ -120,6 +156,24 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string charts {
             get {
                 return ResourceManager.GetString("charts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commission By Bet Type.
+        /// </summary>
+        public static string commissionByBettype {
+            get {
+                return ResourceManager.GetString("commissionByBettype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Racing Commission.
+        /// </summary>
+        public static string commssionhorseracing {
+            get {
+                return ResourceManager.GetString("commssionhorseracing", resourceCulture);
             }
         }
         
@@ -142,6 +196,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credit.
+        /// </summary>
+        public static string credit {
+            get {
+                return ResourceManager.GetString("credit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credit/Balance.
         /// </summary>
         public static string creditbalance {
@@ -160,11 +223,38 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Setting.
+        /// </summary>
+        public static string customerSetting {
+            get {
+                return ResourceManager.GetString("customerSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daily Winloss Analysis.
         /// </summary>
         public static string dailywinlossanalysisreport {
             get {
                 return ResourceManager.GetString("dailywinlossanalysisreport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FB Financial.
+        /// </summary>
+        public static string foobet {
+            get {
+                return ResourceManager.GetString("foobet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forecast.
+        /// </summary>
+        public static string forecast {
+            get {
+                return ResourceManager.GetString("forecast", resourceCulture);
             }
         }
         
@@ -183,6 +273,24 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string fthttotalgoal {
             get {
                 return ResourceManager.GetString("fthttotalgoal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home/Draw/Away No Bet.
+        /// </summary>
+        public static string homeDrawAwayNoBet {
+            get {
+                return ResourceManager.GetString("homeDrawAwayNoBet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Handicap/Over Under/Live.
+        /// </summary>
+        public static string HOUL {
+            get {
+                return ResourceManager.GetString("HOUL", resourceCulture);
             }
         }
         
@@ -214,245 +322,29 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Agent List.
+        ///   Looks up a localized string similar to Login.
         /// </summary>
-        public static string lblAgentList {
+        public static string login {
             get {
-                return ResourceManager.GetString("lblAgentList", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Agent Outstanding.
-        /// </summary>
-        public static string lblAgentOutstanding {
-            get {
-                return ResourceManager.GetString("lblAgentOutstanding", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cancelled Bets.
-        /// </summary>
-        public static string lblCancelledBets {
-            get {
-                return ResourceManager.GetString("lblCancelledBets", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Commission By Bet Type.
-        /// </summary>
-        public static string lblCommissionByBettype {
-            get {
-                return ResourceManager.GetString("lblCommissionByBettype", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Racing Commission.
-        /// </summary>
-        public static string lblcommssionhorseracing {
-            get {
-                return ResourceManager.GetString("lblcommssionhorseracing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FB Financial.
-        /// </summary>
-        public static string lblFoobet {
-            get {
-                return ResourceManager.GetString("lblFoobet", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Forecast.
-        /// </summary>
-        public static string lblForecast {
-            get {
-                return ResourceManager.GetString("lblForecast", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Home/Draw/Away No Bet.
-        /// </summary>
-        public static string lblHomeDrawAwayNoBet {
-            get {
-                return ResourceManager.GetString("lblHomeDrawAwayNoBet", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Handicap/Over Under/Live.
-        /// </summary>
-        public static string lblHOUL {
-            get {
-                return ResourceManager.GetString("lblHOUL", resourceCulture);
+                return ResourceManager.GetString("login", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Master Agent List.
         /// </summary>
-        public static string lblMasterList {
+        public static string masterList {
             get {
-                return ResourceManager.GetString("lblMasterList", resourceCulture);
+                return ResourceManager.GetString("masterList", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Master Outstanding.
         /// </summary>
-        public static string lblMasterOutstanding {
+        public static string masterOutstanding {
             get {
-                return ResourceManager.GetString("lblMasterOutstanding", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Match Win Loss Detail.
-        /// </summary>
-        public static string lblMatchWinLostDetail {
-            get {
-                return ResourceManager.GetString("lblMatchWinLostDetail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Member Commission.
-        /// </summary>
-        public static string lblMemberCommission {
-            get {
-                return ResourceManager.GetString("lblMemberCommission", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MEMBER INFORMATION.
-        /// </summary>
-        public static string lblMemberInfo {
-            get {
-                return ResourceManager.GetString("lblMemberInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Member Outstanding.
-        /// </summary>
-        public static string lblMemberOutstanding {
-            get {
-                return ResourceManager.GetString("lblMemberOutstanding", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Member Win Loss.
-        /// </summary>
-        public static string lblMemberWinLoss {
-            get {
-                return ResourceManager.GetString("lblMemberWinLoss", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Last Bets Monitoring.
-        /// </summary>
-        public static string lblMonitor {
-            get {
-                return ResourceManager.GetString("lblMonitor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to New Agent.
-        /// </summary>
-        public static string lblNewAgent {
-            get {
-                return ResourceManager.GetString("lblNewAgent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to New Master.
-        /// </summary>
-        public static string lblNewMaster {
-            get {
-                return ResourceManager.GetString("lblNewMaster", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to New Member.
-        /// </summary>
-        public static string lblNewMember {
-            get {
-                return ResourceManager.GetString("lblNewMember", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Outright.
-        /// </summary>
-        public static string lblOutRight {
-            get {
-                return ResourceManager.GetString("lblOutRight", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Position Taking (%).
-        /// </summary>
-        public static string lblPositionTaking {
-            get {
-                return ResourceManager.GetString("lblPositionTaking", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Real Time Bingo Win Loss.
-        /// </summary>
-        public static string lblRealTimeBingoWinloss {
-            get {
-                return ResourceManager.GetString("lblRealTimeBingoWinloss", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Real Time Casino Win Loss.
-        /// </summary>
-        public static string lblRealTimeCSWinloss {
-            get {
-                return ResourceManager.GetString("lblRealTimeCSWinloss", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Score Map.
-        /// </summary>
-        public static string lblScoreMap {
-            get {
-                return ResourceManager.GetString("lblScoreMap", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Statement.
-        /// </summary>
-        public static string lblStatement {
-            get {
-                return ResourceManager.GetString("lblStatement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Win Loss By Bet Type.
-        /// </summary>
-        public static string lblWinLossByBettype {
-            get {
-                return ResourceManager.GetString("lblWinLossByBettype", resourceCulture);
+                return ResourceManager.GetString("masterOutstanding", resourceCulture);
             }
         }
         
@@ -484,11 +376,56 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Match Win Loss Detail.
+        /// </summary>
+        public static string matchWinLostDetail {
+            get {
+                return ResourceManager.GetString("matchWinLostDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Member Commission.
+        /// </summary>
+        public static string memberCommission {
+            get {
+                return ResourceManager.GetString("memberCommission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MEMBER INFORMATION.
+        /// </summary>
+        public static string memberInfo {
+            get {
+                return ResourceManager.GetString("memberInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Member Outstanding.
+        /// </summary>
+        public static string memberOutstanding {
+            get {
+                return ResourceManager.GetString("memberOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Member Win Limit.
         /// </summary>
         public static string MemberWinLimit {
             get {
                 return ResourceManager.GetString("MemberWinLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Member Win Loss.
+        /// </summary>
+        public static string memberWinLoss {
+            get {
+                return ResourceManager.GetString("memberWinLoss", resourceCulture);
             }
         }
         
@@ -511,11 +448,56 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last Bets Monitoring.
+        /// </summary>
+        public static string monitor {
+            get {
+                return ResourceManager.GetString("monitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monthly Winloss Analysis.
         /// </summary>
         public static string monthlywinlossanalysisreport {
             get {
                 return ResourceManager.GetString("monthlywinlossanalysisreport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Agent.
+        /// </summary>
+        public static string newAgent {
+            get {
+                return ResourceManager.GetString("newAgent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Master.
+        /// </summary>
+        public static string newMaster {
+            get {
+                return ResourceManager.GetString("newMaster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Member.
+        /// </summary>
+        public static string newMember {
+            get {
+                return ResourceManager.GetString("newMember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string normal {
+            get {
+                return ResourceManager.GetString("normal", resourceCulture);
             }
         }
         
@@ -538,11 +520,56 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Outright.
+        /// </summary>
+        public static string outRight {
+            get {
+                return ResourceManager.GetString("outRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parlay.
         /// </summary>
         public static string parlay {
             get {
                 return ResourceManager.GetString("parlay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Message.
+        /// </summary>
+        public static string personalMessage {
+            get {
+                return ResourceManager.GetString("personalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position Taking (%).
+        /// </summary>
+        public static string positionTaking {
+            get {
+                return ResourceManager.GetString("positionTaking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Real Time Bingo Win Loss.
+        /// </summary>
+        public static string realTimeBingoWinloss {
+            get {
+                return ResourceManager.GetString("realTimeBingoWinloss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Real Time Casino Win Loss.
+        /// </summary>
+        public static string realTimeCSWinloss {
+            get {
+                return ResourceManager.GetString("realTimeCSWinloss", resourceCulture);
             }
         }
         
@@ -565,11 +592,47 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Score Map.
+        /// </summary>
+        public static string scoreMap {
+            get {
+                return ResourceManager.GetString("scoreMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special.
+        /// </summary>
+        public static string special {
+            get {
+                return ResourceManager.GetString("special", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sport Consolidated Report.
         /// </summary>
         public static string sportconsolidatedreport {
             get {
                 return ResourceManager.GetString("sportconsolidatedreport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statement.
+        /// </summary>
+        public static string statement {
+            get {
+                return ResourceManager.GetString("statement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string status {
+            get {
+                return ResourceManager.GetString("status", resourceCulture);
             }
         }
         
@@ -592,11 +655,56 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transfer.
+        /// </summary>
+        public static string transfer {
+            get {
+                return ResourceManager.GetString("transfer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Log.
+        /// </summary>
+        public static string viewLog {
+            get {
+                return ResourceManager.GetString("viewLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Win Loss Analysis.
         /// </summary>
         public static string winlossanalysis {
             get {
                 return ResourceManager.GetString("winlossanalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Loss Analysis Chart.
+        /// </summary>
+        public static string winLossAnalysisChart {
+            get {
+                return ResourceManager.GetString("winLossAnalysisChart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Loss By Bet Type.
+        /// </summary>
+        public static string winLossByBettype {
+            get {
+                return ResourceManager.GetString("winLossByBettype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your statistics.
+        /// </summary>
+        public static string yourStatistics {
+            get {
+                return ResourceManager.GetString("yourStatistics", resourceCulture);
             }
         }
     }

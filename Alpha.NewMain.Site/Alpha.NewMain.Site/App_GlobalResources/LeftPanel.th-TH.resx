@@ -168,85 +168,85 @@
   <data name="lbl1x2" xml:space="preserve">
     <value>ราคาพูล</value>
   </data>
-  <data name="lblAgentList" xml:space="preserve">
+  <data name="agentList" xml:space="preserve">
     <value>รายชื่อ เอเจนต์</value>
   </data>
-  <data name="lblAgentOutstanding" xml:space="preserve">
+  <data name="agentOutstanding" xml:space="preserve">
     <value>เอเย่นต์ยอดคงค้าง</value>
   </data>
-  <data name="lblCancelledBets" xml:space="preserve">
+  <data name="cancelledBets" xml:space="preserve">
     <value>ยกเลิกการวางเดิมพัน</value>
   </data>
-  <data name="lblCommissionByBettype" xml:space="preserve">
+  <data name="commissionByBettype" xml:space="preserve">
     <value>คอมมิชั่นจากประเภทพนัน</value>
   </data>
-  <data name="lblcommssionhorseracing" xml:space="preserve">
+  <data name="commssionhorseracing" xml:space="preserve">
     <value>คอมมิสชั่นการแข่งขันม้า</value>
   </data>
-  <data name="lblFoobet" xml:space="preserve">
+  <data name="foobet" xml:space="preserve">
     <value>FB การเงิน</value>
   </data>
-  <data name="lblForecast" xml:space="preserve">
+  <data name="forecast" xml:space="preserve">
     <value>การทำนายผลล่วงหน้า</value>
   </data>
-  <data name="lblHomeDrawAwayNoBet" xml:space="preserve">
+  <data name="homeDrawAwayNoBet" xml:space="preserve">
     <value>Home/Draw/Away No Bet</value>
   </data>
-  <data name="lblHOUL" xml:space="preserve">
+  <data name="HOUL" xml:space="preserve">
     <value>ราคาต่อรอง / สูง ต่ำ / เกมส์สด</value>
   </data>
-  <data name="lblMasterList" xml:space="preserve">
+  <data name="masterList" xml:space="preserve">
     <value>รายชื่อตัวแทนหลัก</value>
   </data>
-  <data name="lblMasterOutstanding" xml:space="preserve">
+  <data name="masterOutstanding" xml:space="preserve">
     <value>การเดิมพันที่ยังไม่สิ้นสุดของ Master</value>
   </data>
-  <data name="lblMatchWinLostDetail" xml:space="preserve">
+  <data name="matchWinLostDetail" xml:space="preserve">
     <value>รายละเอียดการได้หรือเสีย</value>
   </data>
-  <data name="lblMemberCommission" xml:space="preserve">
+  <data name="memberCommission" xml:space="preserve">
     <value>คอมมิชชั่นของสมาชิก</value>
   </data>
-  <data name="lblMemberInfo" xml:space="preserve">
+  <data name="memberInfo" xml:space="preserve">
     <value>ข้อมูลสมาชิก</value>
   </data>
-  <data name="lblMemberOutstanding" xml:space="preserve">
+  <data name="memberOutstanding" xml:space="preserve">
     <value>การเดิมพันที่ยังไม่สิ้นสุดของ สมาชิก</value>
   </data>
-  <data name="lblMemberWinLoss" xml:space="preserve">
+  <data name="memberWinLoss" xml:space="preserve">
     <value>สมาชิก (ชนะ แพ้)</value>
   </data>
-  <data name="lblMonitor" xml:space="preserve">
+  <data name="monitor" xml:space="preserve">
     <value>ตรวจสอบเดิมพันสุดท้าย</value>
   </data>
-  <data name="lblNewAgent" xml:space="preserve">
+  <data name="newAgent" xml:space="preserve">
     <value>Agent ใหม่</value>
   </data>
-  <data name="lblNewMaster" xml:space="preserve">
+  <data name="newMaster" xml:space="preserve">
     <value>ตัวแทนหลักรายใหม่</value>
   </data>
-  <data name="lblNewMember" xml:space="preserve">
+  <data name="newMember" xml:space="preserve">
     <value>สมาชิกใหม่</value>
   </data>
-  <data name="lblOutRight" xml:space="preserve">
+  <data name="outRight" xml:space="preserve">
     <value>ทายผลผู้ชนะ</value>
   </data>
-  <data name="lblPositionTaking" xml:space="preserve">
+  <data name="positionTaking" xml:space="preserve">
     <value>เปอร์เซ็นที่รับความเสี่ยง</value>
   </data>
-  <data name="lblRealTimeBingoWinloss" xml:space="preserve">
+  <data name="realTimeBingoWinloss" xml:space="preserve">
     <value>บิงโกแพ้ชนะเวลาจริง</value>
   </data>
-  <data name="lblRealTimeCSWinloss" xml:space="preserve">
+  <data name="realTimeCSWinloss" xml:space="preserve">
     <value>ยอดได้เสียเวลาจริงในคาสิโน</value>
   </data>
-  <data name="lblScoreMap" xml:space="preserve">
+  <data name="scoreMap" xml:space="preserve">
     <value>กระดานผล</value>
   </data>
-  <data name="lblStatement" xml:space="preserve">
+  <data name="statement" xml:space="preserve">
     <value>บัญชี</value>
   </data>
-  <data name="lblWinLossByBettype" xml:space="preserve">
+  <data name="winLossByBettype" xml:space="preserve">
     <value>ชนะ แพ้ โดยชนิดของการวางเดิมพัน</value>
   </data>
   <data name="masterwinloss" xml:space="preserve">
@@ -296,5 +296,41 @@
   </data>
   <data name="winlossanalysis" xml:space="preserve">
     <value>การวิเคราะห์ ผล แพ้ ชนะ</value>
+  </data>
+  <data name="announcements" xml:space="preserve">
+    <value>Announcements</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>เครดิต</value>
+  </data>
+  <data name="customerSetting" xml:space="preserve">
+    <value>บันทึกการผิดสัญญา</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>เข้าระบบ</value>
+  </data>
+  <data name="normal" xml:space="preserve">
+    <value>ธรรมดา</value>
+  </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>ข้อความส่วนตัว</value>
+  </data>
+  <data name="special" xml:space="preserve">
+    <value>Special</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
+  <data name="transfer" xml:space="preserve">
+    <value>ตั้งค่าใหม่</value>
+  </data>
+  <data name="viewLog" xml:space="preserve">
+    <value>ดูบันทึก</value>
+  </data>
+  <data name="yourStatistics" xml:space="preserve">
+    <value>สถิติของคุณ</value>
+  </data>
+  <data name="winLossAnalysisChart" xml:space="preserve">
+    <value>Win Loss Analysis Chart</value>
   </data>
 </root>

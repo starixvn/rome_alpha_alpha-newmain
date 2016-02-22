@@ -48,3 +48,7 @@
 .langFlag_vi {
     background: rgba(0, 0, 0, 0) url("../../../../../contents/img/flags/flag_vn.png") no-repeat scroll 0 0;
 }
+
+.old-view-text{
+    cursor: pointer;
+}

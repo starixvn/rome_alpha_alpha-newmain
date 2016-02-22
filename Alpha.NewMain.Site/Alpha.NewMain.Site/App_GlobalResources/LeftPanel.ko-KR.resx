@@ -168,85 +168,85 @@
   <data name="lbl1x2" xml:space="preserve">
     <value>승/무/패</value>
   </data>
-  <data name="lblAgentList" xml:space="preserve">
+  <data name="agentList" xml:space="preserve">
     <value>에이전트 목록</value>
   </data>
-  <data name="lblAgentOutstanding" xml:space="preserve">
+  <data name="agentOutstanding" xml:space="preserve">
     <value>에이전트 아웃스텐딩</value>
   </data>
-  <data name="lblCancelledBets" xml:space="preserve">
+  <data name="cancelledBets" xml:space="preserve">
     <value>취소된 배팅</value>
   </data>
-  <data name="lblCommissionByBettype" xml:space="preserve">
+  <data name="commissionByBettype" xml:space="preserve">
     <value>배팅 종류에 따른 수수료</value>
   </data>
-  <data name="lblcommssionhorseracing" xml:space="preserve">
+  <data name="commssionhorseracing" xml:space="preserve">
     <value>경마 수수료</value>
   </data>
-  <data name="lblFoobet" xml:space="preserve">
+  <data name="foobet" xml:space="preserve">
     <value>FB 금융</value>
   </data>
-  <data name="lblForecast" xml:space="preserve">
+  <data name="forecast" xml:space="preserve">
     <value>예상</value>
   </data>
-  <data name="lblHomeDrawAwayNoBet" xml:space="preserve">
+  <data name="homeDrawAwayNoBet" xml:space="preserve">
     <value>Home/Draw/Away No Bet</value>
   </data>
-  <data name="lblHOUL" xml:space="preserve">
+  <data name="HOUL" xml:space="preserve">
     <value>핸디캡/초과 미만/생중계</value>
   </data>
-  <data name="lblMasterList" xml:space="preserve">
+  <data name="masterList" xml:space="preserve">
     <value>마스터 에이전트 목록</value>
   </data>
-  <data name="lblMasterOutstanding" xml:space="preserve">
+  <data name="masterOutstanding" xml:space="preserve">
     <value>마스터 대기 포인트</value>
   </data>
-  <data name="lblMatchWinLostDetail" xml:space="preserve">
+  <data name="matchWinLostDetail" xml:space="preserve">
     <value>경기 승 패 상세보기</value>
   </data>
-  <data name="lblMemberCommission" xml:space="preserve">
+  <data name="memberCommission" xml:space="preserve">
     <value>회원 수수료</value>
   </data>
-  <data name="lblMemberInfo" xml:space="preserve">
+  <data name="memberInfo" xml:space="preserve">
     <value>회원 정보</value>
   </data>
-  <data name="lblMemberOutstanding" xml:space="preserve">
+  <data name="memberOutstanding" xml:space="preserve">
     <value>회원 아웃스텐딩</value>
   </data>
-  <data name="lblMemberWinLoss" xml:space="preserve">
+  <data name="memberWinLoss" xml:space="preserve">
     <value>회원 승리 패배</value>
   </data>
-  <data name="lblMonitor" xml:space="preserve">
+  <data name="monitor" xml:space="preserve">
     <value>마지막베팅내역</value>
   </data>
-  <data name="lblNewAgent" xml:space="preserve">
+  <data name="newAgent" xml:space="preserve">
     <value>새로운 에이전트</value>
   </data>
-  <data name="lblNewMaster" xml:space="preserve">
+  <data name="newMaster" xml:space="preserve">
     <value>새로운 마스터</value>
   </data>
-  <data name="lblNewMember" xml:space="preserve">
+  <data name="newMember" xml:space="preserve">
     <value>새로운 회원</value>
   </data>
-  <data name="lblOutRight" xml:space="preserve">
+  <data name="outRight" xml:space="preserve">
     <value>순위,승자 등</value>
   </data>
-  <data name="lblPositionTaking" xml:space="preserve">
+  <data name="positionTaking" xml:space="preserve">
     <value>포지션 테이킹(%)</value>
   </data>
-  <data name="lblRealTimeBingoWinloss" xml:space="preserve">
+  <data name="realTimeBingoWinloss" xml:space="preserve">
     <value>실시간 빙고 승리/패배</value>
   </data>
-  <data name="lblRealTimeCSWinloss" xml:space="preserve">
+  <data name="realTimeCSWinloss" xml:space="preserve">
     <value>실시간 카지노 승패</value>
   </data>
-  <data name="lblScoreMap" xml:space="preserve">
+  <data name="scoreMap" xml:space="preserve">
     <value>라이브스코어</value>
   </data>
-  <data name="lblStatement" xml:space="preserve">
+  <data name="statement" xml:space="preserve">
     <value>기록</value>
   </data>
-  <data name="lblWinLossByBettype" xml:space="preserve">
+  <data name="winLossByBettype" xml:space="preserve">
     <value>배팅 종류별 승리 패배</value>
   </data>
   <data name="masterwinloss" xml:space="preserve">
@@ -296,5 +296,41 @@
   </data>
   <data name="winlossanalysis" xml:space="preserve">
     <value>승리/패배 분석</value>
+  </data>
+  <data name="announcements" xml:space="preserve">
+    <value>Announcements</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>포인트</value>
+  </data>
+  <data name="customerSetting" xml:space="preserve">
+    <value>회원설정</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="normal" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>개인 메세지</value>
+  </data>
+  <data name="special" xml:space="preserve">
+    <value>Special</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>상황</value>
+  </data>
+  <data name="transfer" xml:space="preserve">
+    <value>전송</value>
+  </data>
+  <data name="viewLog" xml:space="preserve">
+    <value>로그인 보기</value>
+  </data>
+  <data name="yourStatistics" xml:space="preserve">
+    <value>통계</value>
+  </data>
+  <data name="winLossAnalysisChart" xml:space="preserve">
+    <value>Win Loss Analysis Chart</value>
   </data>
 </root>

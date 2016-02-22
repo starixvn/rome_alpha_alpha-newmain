@@ -90,6 +90,67 @@ var DashboardManager = function () {
         jQuery(".icon-swap-horizontal").click(function () {
             top.location = rootUrl + self.getMainSitePath() + "Index.aspx";
         });
+        jQuery(".old-view-text").click(function () {
+            top.location = rootUrl + self.getMainSitePath() + "Index.aspx";
+        });
+
+        $(".mainmenu-container .parent-menu").click(function () {
+            var $this = $(this);
+            var isCollapsed = $this.hasClass("collapsed");
+            var menuGroup = $this.attr("data-menugroup");
+            var subMenu = $('.mainmenu-container .sub-menu[data-menugroup="' + menuGroup + '"]');
+            subMenu.toggle('fast', function () {
+                $(this).toggleClass('collapse');
+            });
+
+            if (isCollapsed) {
+                $this.removeClass("collapsed");
+            } else {
+                $this.addClass("collapsed");
+            }
+        });
+
+        $('.content-left').hover(
+            function () {
+                if ($(this).parent().hasClass('collapsed')) {
+                    $('.accountinfo-container .row').each(function () {
+                        $(this).css('display', 'block');
+                    });
+                    $('.icon-accinfo').css('display', 'none');
+                    $('.header').removeClass('collapsed');
+                    $("#logoProfileImg").removeClass("collapse-image");
+                }
+            },
+            function () {
+                if ($(this).parent().hasClass('collapsed')) {
+                    if ($('.accountinfo-container').css('display') == 'block') {
+                        $('.icon-accinfo').css('display', 'block');
+                        $('.accountinfo-container .row').each(function () {
+                            $(this).css('display', 'none');
+                        });
+                    }
+                    $('.header').addClass('collapsed');
+                    $("#logoProfileImg").addClass("collapse-image");
+                }
+            }
+        );
+
+        $('.menu li').click(function () {
+            var $this = $(this);
+            var cla = $(this).attr('class');
+            if ($this.hasClass('mainmenu')) {
+                $('.menu li').removeClass('active');
+                $(this).addClass('active');
+                $('.mainmenu-container').css('display', 'block');
+                $('.accountinfo-container').css('display', 'none');
+            }
+            else if ($this.hasClass('accountinfo')) {
+                $('.menu li').removeClass('active');
+                $(this).addClass('active');
+                $('.accountinfo-container').css('display', 'block');
+                $('.mainmenu-container').css('display', 'none');
+            }
+        });
 
         setTimeout(self.getMessages, 500);
         setTimeout(self.reCheckin, 30000);
@@ -444,6 +505,5 @@ var DashboardManager = function () {
         setCookie(_resources.cookieCurrentURLKey, currentURL, 1);
     };
 };
-
 
 var dashboardManager = new DashboardManager();

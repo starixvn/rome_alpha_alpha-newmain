@@ -168,85 +168,85 @@
   <data name="lbl1x2" xml:space="preserve">
     <value>1 X 2</value>
   </data>
-  <data name="lblAgentList" xml:space="preserve">
+  <data name="agentList" xml:space="preserve">
     <value>代理</value>
   </data>
-  <data name="lblAgentOutstanding" xml:space="preserve">
+  <data name="agentOutstanding" xml:space="preserve">
     <value>代理未結束交易</value>
   </data>
-  <data name="lblCancelledBets" xml:space="preserve">
+  <data name="cancelledBets" xml:space="preserve">
     <value>已刪除/作廢注單</value>
   </data>
-  <data name="lblCommissionByBettype" xml:space="preserve">
+  <data name="commissionByBettype" xml:space="preserve">
     <value>投注產品分類佣金</value>
   </data>
-  <data name="lblcommssionhorseracing" xml:space="preserve">
+  <data name="commssionhorseracing" xml:space="preserve">
     <value>賽馬佣金</value>
   </data>
-  <data name="lblFoobet" xml:space="preserve">
+  <data name="foobet" xml:space="preserve">
     <value>FB金融</value>
   </data>
-  <data name="lblForecast" xml:space="preserve">
+  <data name="forecast" xml:space="preserve">
     <value>預測</value>
   </data>
-  <data name="lblHomeDrawAwayNoBet" xml:space="preserve">
+  <data name="homeDrawAwayNoBet" xml:space="preserve">
     <value>Home/Draw/Away No Bet</value>
   </data>
-  <data name="lblHOUL" xml:space="preserve">
+  <data name="HOUL" xml:space="preserve">
     <value>亞洲盤/大小盤/滾球</value>
   </data>
-  <data name="lblMasterList" xml:space="preserve">
+  <data name="masterList" xml:space="preserve">
     <value>總代理名單</value>
   </data>
-  <data name="lblMasterOutstanding" xml:space="preserve">
+  <data name="masterOutstanding" xml:space="preserve">
     <value>總代理未結束交易</value>
   </data>
-  <data name="lblMatchWinLostDetail" xml:space="preserve">
+  <data name="matchWinLostDetail" xml:space="preserve">
     <value>輸贏報告資料</value>
   </data>
-  <data name="lblMemberCommission" xml:space="preserve">
+  <data name="memberCommission" xml:space="preserve">
     <value>會員佣金</value>
   </data>
-  <data name="lblMemberInfo" xml:space="preserve">
+  <data name="memberInfo" xml:space="preserve">
     <value>會員資料</value>
   </data>
-  <data name="lblMemberOutstanding" xml:space="preserve">
+  <data name="memberOutstanding" xml:space="preserve">
     <value>會員未結束交易</value>
   </data>
-  <data name="lblMemberWinLoss" xml:space="preserve">
+  <data name="memberWinLoss" xml:space="preserve">
     <value>會員輸贏</value>
   </data>
-  <data name="lblMonitor" xml:space="preserve">
+  <data name="monitor" xml:space="preserve">
     <value>最後投注監測</value>
   </data>
-  <data name="lblNewAgent" xml:space="preserve">
+  <data name="newAgent" xml:space="preserve">
     <value>新增代理</value>
   </data>
-  <data name="lblNewMaster" xml:space="preserve">
+  <data name="newMaster" xml:space="preserve">
     <value>新增總代理</value>
   </data>
-  <data name="lblNewMember" xml:space="preserve">
+  <data name="newMember" xml:space="preserve">
     <value>新增会员</value>
   </data>
-  <data name="lblOutRight" xml:space="preserve">
+  <data name="outRight" xml:space="preserve">
     <value>優勝冠軍</value>
   </data>
-  <data name="lblPositionTaking" xml:space="preserve">
+  <data name="positionTaking" xml:space="preserve">
     <value>佔成數%</value>
   </data>
-  <data name="lblRealTimeBingoWinloss" xml:space="preserve">
+  <data name="realTimeBingoWinloss" xml:space="preserve">
     <value>即時賓果贏輸</value>
   </data>
-  <data name="lblRealTimeCSWinloss" xml:space="preserve">
+  <data name="realTimeCSWinloss" xml:space="preserve">
     <value>即時娛樂場贏輸</value>
   </data>
-  <data name="lblScoreMap" xml:space="preserve">
+  <data name="scoreMap" xml:space="preserve">
     <value>盈利預測圖</value>
   </data>
-  <data name="lblStatement" xml:space="preserve">
+  <data name="statement" xml:space="preserve">
     <value>帳目</value>
   </data>
-  <data name="lblWinLossByBettype" xml:space="preserve">
+  <data name="winLossByBettype" xml:space="preserve">
     <value>投注類別輸贏</value>
   </data>
   <data name="masterwinloss" xml:space="preserve">
@@ -296,5 +296,41 @@
   </data>
   <data name="winlossanalysis" xml:space="preserve">
     <value>輸贏分析</value>
+  </data>
+  <data name="announcements" xml:space="preserve">
+    <value>Announcements</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>信用額度</value>
+  </data>
+  <data name="customerSetting" xml:space="preserve">
+    <value>默认日志</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>登入</value>
+  </data>
+  <data name="normal" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>個人訊息</value>
+  </data>
+  <data name="special" xml:space="preserve">
+    <value>Special</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="transfer" xml:space="preserve">
+    <value>轉帳</value>
+  </data>
+  <data name="viewLog" xml:space="preserve">
+    <value>察看日志</value>
+  </data>
+  <data name="yourStatistics" xml:space="preserve">
+    <value>您的統計</value>
+  </data>
+  <data name="winLossAnalysisChart" xml:space="preserve">
+    <value>Win Loss Analysis Chart</value>
   </data>
 </root>

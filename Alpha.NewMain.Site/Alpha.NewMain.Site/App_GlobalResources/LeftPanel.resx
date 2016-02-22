@@ -168,85 +168,85 @@
   <data name="lbl1x2" xml:space="preserve">
     <value>1 X 2</value>
   </data>
-  <data name="lblAgentList" xml:space="preserve">
+  <data name="agentList" xml:space="preserve">
     <value>Agent List</value>
   </data>
-  <data name="lblAgentOutstanding" xml:space="preserve">
+  <data name="agentOutstanding" xml:space="preserve">
     <value>Agent Outstanding</value>
   </data>
-  <data name="lblCancelledBets" xml:space="preserve">
+  <data name="cancelledBets" xml:space="preserve">
     <value>Cancelled Bets</value>
   </data>
-  <data name="lblCommissionByBettype" xml:space="preserve">
+  <data name="commissionByBettype" xml:space="preserve">
     <value>Commission By Bet Type</value>
   </data>
-  <data name="lblcommssionhorseracing" xml:space="preserve">
+  <data name="commssionhorseracing" xml:space="preserve">
     <value>Racing Commission</value>
   </data>
-  <data name="lblFoobet" xml:space="preserve">
+  <data name="foobet" xml:space="preserve">
     <value>FB Financial</value>
   </data>
-  <data name="lblForecast" xml:space="preserve">
+  <data name="forecast" xml:space="preserve">
     <value>Forecast</value>
   </data>
-  <data name="lblHomeDrawAwayNoBet" xml:space="preserve">
+  <data name="homeDrawAwayNoBet" xml:space="preserve">
     <value>Home/Draw/Away No Bet</value>
   </data>
-  <data name="lblHOUL" xml:space="preserve">
+  <data name="HOUL" xml:space="preserve">
     <value>Handicap/Over Under/Live</value>
   </data>
-  <data name="lblMasterList" xml:space="preserve">
+  <data name="masterList" xml:space="preserve">
     <value>Master Agent List</value>
   </data>
-  <data name="lblMasterOutstanding" xml:space="preserve">
+  <data name="masterOutstanding" xml:space="preserve">
     <value>Master Outstanding</value>
   </data>
-  <data name="lblMatchWinLostDetail" xml:space="preserve">
+  <data name="matchWinLostDetail" xml:space="preserve">
     <value>Match Win Loss Detail</value>
   </data>
-  <data name="lblMemberCommission" xml:space="preserve">
+  <data name="memberCommission" xml:space="preserve">
     <value>Member Commission</value>
   </data>
-  <data name="lblMemberInfo" xml:space="preserve">
+  <data name="memberInfo" xml:space="preserve">
     <value>MEMBER INFORMATION</value>
   </data>
-  <data name="lblMemberOutstanding" xml:space="preserve">
+  <data name="memberOutstanding" xml:space="preserve">
     <value>Member Outstanding</value>
   </data>
-  <data name="lblMemberWinLoss" xml:space="preserve">
+  <data name="memberWinLoss" xml:space="preserve">
     <value>Member Win Loss</value>
   </data>
-  <data name="lblMonitor" xml:space="preserve">
+  <data name="monitor" xml:space="preserve">
     <value>Last Bets Monitoring</value>
   </data>
-  <data name="lblNewAgent" xml:space="preserve">
+  <data name="newAgent" xml:space="preserve">
     <value>New Agent</value>
   </data>
-  <data name="lblNewMaster" xml:space="preserve">
+  <data name="newMaster" xml:space="preserve">
     <value>New Master</value>
   </data>
-  <data name="lblNewMember" xml:space="preserve">
+  <data name="newMember" xml:space="preserve">
     <value>New Member</value>
   </data>
-  <data name="lblOutRight" xml:space="preserve">
+  <data name="outRight" xml:space="preserve">
     <value>Outright</value>
   </data>
-  <data name="lblPositionTaking" xml:space="preserve">
+  <data name="positionTaking" xml:space="preserve">
     <value>Position Taking (%)</value>
   </data>
-  <data name="lblRealTimeBingoWinloss" xml:space="preserve">
+  <data name="realTimeBingoWinloss" xml:space="preserve">
     <value>Real Time Bingo Win Loss</value>
   </data>
-  <data name="lblRealTimeCSWinloss" xml:space="preserve">
+  <data name="realTimeCSWinloss" xml:space="preserve">
     <value>Real Time Casino Win Loss</value>
   </data>
-  <data name="lblScoreMap" xml:space="preserve">
+  <data name="scoreMap" xml:space="preserve">
     <value>Score Map</value>
   </data>
-  <data name="lblStatement" xml:space="preserve">
+  <data name="statement" xml:space="preserve">
     <value>Statement</value>
   </data>
-  <data name="lblWinLossByBettype" xml:space="preserve">
+  <data name="winLossByBettype" xml:space="preserve">
     <value>Win Loss By Bet Type</value>
   </data>
   <data name="masterwinloss" xml:space="preserve">
@@ -296,5 +296,41 @@
   </data>
   <data name="winlossanalysis" xml:space="preserve">
     <value>Win Loss Analysis</value>
+  </data>
+  <data name="announcements" xml:space="preserve">
+    <value>Announcements</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>Credit</value>
+  </data>
+  <data name="customerSetting" xml:space="preserve">
+    <value>Customer Setting</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>Personal Message</value>
+  </data>
+  <data name="special" xml:space="preserve">
+    <value>Special</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="transfer" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="viewLog" xml:space="preserve">
+    <value>View Log</value>
+  </data>
+  <data name="yourStatistics" xml:space="preserve">
+    <value>Your statistics</value>
+  </data>
+  <data name="winLossAnalysisChart" xml:space="preserve">
+    <value>Win Loss Analysis Chart</value>
   </data>
 </root>

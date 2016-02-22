@@ -1,13 +1,39 @@
-﻿.icon-0::before {
+﻿.mainmenu a,
+.accountinfo a
+{
+    outline: 0;
+}
+
+.accountinfo.disabledView a {
+    cursor: default;
+}
+
+
+.icon-reports::before {
     content: "\e906";
 }
 
-.icon-1::before {
+.icon-totalBets::before {
     content: "\e908";
 }
-.icon-2::before {
+.icon-forecast::before {
     content: "\e904";
 }
-.icon-3::before {
+
+.icon-memberInfo::before {
     content: "\e905";
+}
+
+.icon-announcements:before {
+    content: "\e926";
+}
+.icon-viewLog:before {
+    content: "\e90a";
+}
+.icon-yourStatistics:before {
+    content: "\e907";
+}
+
+.content-left .mainmenu-container .sub-menu .sub-menu-item a {
+    width: 100%;
 }
