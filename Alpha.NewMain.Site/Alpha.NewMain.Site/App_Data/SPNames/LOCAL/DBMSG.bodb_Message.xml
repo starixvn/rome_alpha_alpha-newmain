@@ -15,5 +15,10 @@
       <Mapping DataField="bettransid" ObjectProperty="BetTransId" />
       <Mapping DataField="isRead" ObjectProperty="IsRead" />
     </Setting>
+    <Setting Key="Dot_Msg_SetMessage" SpName="Dot_Msg_SetMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
+      <Mapping DataField="messageId" ObjectProperty="Id" />
+    </Setting>
+    <Setting Key="Dot_Msg_SetUsrMessage" SpName="Dot_Msg_SetUsrMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
+    </Setting>
   </Function>
 </Functions>

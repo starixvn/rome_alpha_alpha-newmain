@@ -4,17 +4,6 @@
 
     public static class SecretExtension
     {
-        private static string CfsCode(string nword)
-        {
-            string number = string.Empty;
-            for (int i = 1; i <= nword.Length; i++)
-            {
-                number = number + Strings.Asc(Strings.Mid(nword, i, 1));
-            }
-
-            return Conversion.Hex(number);
-        }
-
         public static string CfsEnCode(string encryptValue)
         {
             if (string.IsNullOrEmpty(encryptValue))
@@ -88,6 +77,17 @@
             }
 
             return str2;
+        }
+
+        private static string CfsCode(string nword)
+        {
+            string number = string.Empty;
+            for (int i = 1; i <= nword.Length; i++)
+            {
+                number = number + Strings.Asc(Strings.Mid(nword, i, 1));
+            }
+
+            return Conversion.Hex(number);
         }
     }
 }

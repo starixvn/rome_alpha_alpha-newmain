@@ -1,11 +1,12 @@
 ﻿namespace Alpha.NewMain.Site.Services
 {
+    using System.Collections.Generic;
     using Models.Dtos;
-    using Models.Views.Report;
+
     public interface IReportService
     {
         BalanceUpDayModel GetBalanceUpDay();
 
-        BalanceInfoViewModel GetBalanceInfo();
+        BalanceInfoModel GetBalanceInfo();
     }
 }

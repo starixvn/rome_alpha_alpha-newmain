@@ -1,10 +1,12 @@
 ﻿namespace Alpha.NewMain.Site.Services
 {
-    using Alpha.NewMain.Site.Models.Requests.Report;
-    using Models.Views.Report;
+    using Models.Dtos.Announcement;
+    using Models.Requests.Announcement;
 
     public interface IAnnouncementService
     {
-        AnnouncementViewModel GetAnnouncements(string lastPostTimeRequest);
+        AnnouncementReportModel GetAnnouncements(string lastPostTimeRequest, int totalAnnouncement);
+
+        HotAnnouncementModel GetHotAnnouncement(HotAnnouncementQuery message);
     }
 }

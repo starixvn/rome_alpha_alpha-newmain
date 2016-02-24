@@ -4,8 +4,6 @@
     using Alpha.NewMain.Site.Models.Dtos;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
-    using Models.Views;
-    using Models.Views.CustomerProfile;
 
     public interface IDashboardService
     {
@@ -15,7 +13,7 @@
 
         List<string> GetHotMessages();
 
-        ViewProfileViewModel GetProfile(ViewProfileQuery message);
+        ProfilePictureModel GetProfile(ViewProfileQuery message);
 
         ResultModel ChangeLanguage(ChangeLanguageQuery message);
 
@@ -27,10 +25,12 @@
 
         bool IsMainPageFromCookie();
 
-        LeftMenuViewModel GetLeftMenu();
+        List<MenuModel> GetLeftMenu();
 
         void StoreSession();
 
         string GetPasswordHash();
+
+        bool IsShowLeftMenu();
     }
 }

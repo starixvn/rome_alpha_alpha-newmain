@@ -2,6 +2,7 @@
 {
     using Fanex.Data.Repository;
     using Sunplus.Agent.Model.Entities;
+
     public class HighestTurnoverOfMonthCriteria : CriteriaBase
     {
         public int CustId { get; set; }

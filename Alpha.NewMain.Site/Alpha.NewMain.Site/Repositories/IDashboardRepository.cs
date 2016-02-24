@@ -4,13 +4,12 @@
     using System.Web;
     using Criteria.CustomerProfile;
     using Models.Dtos;
-    using Models.Views.CustomerProfile;
 
     public interface IDashboardRepository
     {
         List<LanguageModel> GetLanguages();
 
-        ProfilePictureViewModel GetAvatar(ViewProfileCriteria criteria);
+        ProfilePictureModel GetAvatar(ViewProfileCriteria criteria);
 
         SiteMapNode GetSiteMapNode();
     }

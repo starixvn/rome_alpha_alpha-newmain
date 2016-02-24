@@ -27,10 +27,12 @@
         private static void RegisterMainJavascript(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/scripts/main").Include(
+                "~/Views/Shared/Scripts/SharedScripts.js",
                 "~/Views/CustomerProfile/Scripts/ViewProfile.js",
                 "~/Views/Main/Scripts/Core.js",
                 "~/Views/Main/Scripts/Header.js",
-                "~/Views/Main/Scripts/Dashboard.js"));
+                "~/Views/Main/Scripts/Dashboard.js",
+                "~/Views/Announcement/Scripts/AnnouncementManager.js"));
         }
 
         private static void RegisterMainStyle(BundleCollection bundles)
@@ -40,7 +42,8 @@
                 .Include("~/Content/Main/Styles/css/Dashboard.css", new CssRewriteUrlTransformWrapper())
                 .Include("~/Content/Main/Styles/css/PopupMessage.css", new CssRewriteUrlTransformWrapper())
                 .Include("~/Content/Main/Styles/css/LeftMenu.css", new CssRewriteUrlTransformWrapper())
-                .Include("~/Content/CustomerProfile/Styles/css/CustomerProfile.css", new CssRewriteUrlTransformWrapper()));
+                .Include("~/Content/CustomerProfile/Styles/css/CustomerProfile.css", new CssRewriteUrlTransformWrapper())
+                .Include("~/Content/Announcement/Styles/css/Announcements.css", new CssRewriteUrlTransformWrapper()));
         }
 
         private static void RegisterPortalPageStyle(BundleCollection bundles)
@@ -55,7 +58,7 @@
         {
             bundles.Add(new ScriptBundle("~/bundles/scripts/portalpage").Include(
                 "~/Views/Shared/Scripts/SharedScripts.js",
-                "~/Views/Report/PortalPage/Scripts/PortalPage.js"));
+                "~/Views/Report/Scripts/PortalPage.js"));
         }
 
         private static void RegisterStatisticsStyle(BundleCollection bundles)
@@ -68,7 +71,7 @@
         {
             bundles.Add(new ScriptBundle("~/bundles/scripts/statistics").Include(
                 "~/Views/Shared/Scripts/SharedScripts.js",
-                "~/Views/Report/Statistics/Scripts/Statistics.js"));
+                "~/Views/Report/Scripts/Statistics.js"));
         }
     }
 }

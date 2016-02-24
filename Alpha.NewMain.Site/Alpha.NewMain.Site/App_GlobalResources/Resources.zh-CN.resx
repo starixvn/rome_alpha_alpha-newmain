@@ -346,4 +346,16 @@
   <data name="givenCredit" xml:space="preserve">
     <value>信用额度</value>
   </data>
+  <data name="modifiedBettingLimitValue" xml:space="preserve">
+    <value>您的上线已修改您的投注金額數值。&lt;br&gt;请务必核对您的下线的细节。</value>
+  </data>
+  <data name="modifiedMinPTBettingLimitValue" xml:space="preserve">
+    <value>您的上线已修改您的最低占成及投注金额数值。&lt;br&gt;请务必核对您的下线的细节。</value>
+  </data>
+  <data name="modifiedMinPTValueText" xml:space="preserve">
+    <value>您的上线已修改您的最低占成。&lt;br&gt;请务必核对您的下线的细节。</value>
+  </data>
+  <data name="doNotShowAgain" xml:space="preserve">
+    <value>不再显示</value>
+  </data>
 </root>

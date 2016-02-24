@@ -1,15 +1,17 @@
 ﻿namespace Alpha.NewMain.Site.Services
 {
-    using Alpha.NewMain.Site.Models.Views.Report.Statistics;
+    using System.Collections.Generic;
+    using Models.Dtos;
+    using Models.Dtos.Statistics;
 
     public interface IStatisticsService
     {
-        StatisticsViewModel GetStatistics();
+        StatisticsModel GetStatistics();
 
-        Top10WinningOfMonthViewModel Top10WinningOfMonth();
+        IEnumerable<CustomerInfoModel> Top10WinningOfMonth();
 
-        HighestTurnoverOfMonthViewModel HighestTurnoverOfMonth();
+        IEnumerable<CustomerInfoModel> HighestTurnoverOfMonth();
 
-        NewMembersOfMonthViewModel NewMembersOfMonth();
+        IEnumerable<CustomerInfoModel> NewMembersOfMonth();
     }
 }

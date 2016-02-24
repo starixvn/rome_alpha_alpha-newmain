@@ -1,24 +1,30 @@
 ﻿namespace Alpha.NewMain.Site.Services.Impl
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
+    using System.Xml;
     using Constants;
+    using Criteria.Announcement;
     using Criteria.Report;
     using Fanex.Age.Utility;
     using Fanex.Common;
     using Fanex.Data.Repository;
-    using Models.Dtos;
-    using Models.Requests.Report;
-    using Models.Views.Report;
+    using Fanex.Razorbill.Security.Configurations;
+    using Fanex.Razorbill.Security.Entities;
+    using Fanex.Razorbill.Security.Sessions;
+    using Models.Dtos.Announcement;
+    using Models.Requests.Announcement;
     using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Model.Entities.Permission;
+    using Sunplus.Agent.Utilities;
+
     public class AnnouncementService : IAnnouncementService
     {
-        private readonly DateTime MaxDateTime = new DateTime(9999, 12, 31);
-        private readonly DateTime MinDateTime = new DateTime(1900, 1, 1);
-        private const int TotalMessage = 10;
+        private readonly DateTime _maxDateTime = new DateTime(9999, 12, 31);
+        private readonly DateTime _minDateTime = new DateTime(1900, 1, 1);
+        private const string _announcementResourcePath = "../Views/Announcement/Resources/";
 
         private readonly IDynamicRepository _dynamicRepository;
 
@@ -27,32 +33,31 @@
             _dynamicRepository = dynamicRepository;
         }
 
-        public AnnouncementViewModel GetAnnouncements(string lastPostTimeRequest)
+        public AnnouncementReportModel GetAnnouncements(string lastPostTimeRequest, int totalAnnouncement)
         {
-            var lastPostTime = string.IsNullOrEmpty(lastPostTimeRequest) ? MaxDateTime : Convert.ToDateTime(lastPostTimeRequest);
-            if (lastPostTime == MinDateTime)
+            var lastPostTime = string.IsNullOrEmpty(lastPostTimeRequest) ? _maxDateTime : Convert.ToDateTime(lastPostTimeRequest);
+            if (lastPostTime == _minDateTime)
             {
-                lastPostTime = MaxDateTime;
+                lastPostTime = _maxDateTime;
             }
 
             var siteId = GetSiteId();
-            var criteria = new GetAnnouncementsCriteria
+            var criteria = new AnnouncementsCriteria
             {
                 CustId = UserSession.Current.CustId,
                 ParentSites = GetParentSites(siteId.ToString()),
                 LastPostTime = lastPostTime,
-                TotalMessage = TotalMessage,
+                TotalMessage = totalAnnouncement,
                 IsTest = false
             };
 
             var rawData = _dynamicRepository.Fetch<AnnouncementModel>(criteria);
-            var result = new AnnouncementViewModel
+            var report = new AnnouncementReportModel
             {
-                IsShowAnnouncementTitle = IsShowAnnouncementTitle(lastPostTime),
-                AnnouncementGroup = new List<AnnouncementGroupViewModel>()
+                AnnouncementGroups = new List<AnnouncementGroupModel>()
             };
 
-            var newLastPostTime = MinDateTime;
+            var newLastPostTime = _minDateTime;
             if (rawData.Any())
             {
                 var datesQuery = rawData
@@ -61,9 +66,9 @@
                     .OrderByDescending(p => p);
                 foreach (var date in datesQuery)
                 {
-                    var announcementGroup = new AnnouncementGroupViewModel
+                    var announcementGroup = new AnnouncementGroupModel
                     {
-                        AnnouncementItems = new List<AnnouncementItemViewModel>()
+                        AnnouncementItems = new List<AnnouncementModel>()
                     };
 
                     if (date != lastPostTime.Date)
@@ -77,10 +82,10 @@
                         .OrderByDescending(p => p.PostTime);
                     foreach (var item in dateItemsQuery)
                     {
-                        var announcement = new AnnouncementItemViewModel
+                        var announcement = new AnnouncementModel
                         {
                             Id = item.Id.ToString(),
-                            PostTime = item.PostTime.ToLongTimeString(),
+                            PostTime = item.PostTime,
                             Type = GetMessageType(item),
                             IsRead = item.IsRead
                         };
@@ -93,25 +98,68 @@
                         announcementGroup.AnnouncementItems.Add(announcement);
                     }
 
-                    result.AnnouncementGroup.Add(announcementGroup);
+                    report.AnnouncementGroups.Add(announcementGroup);
                 }
             }
 
-            if (rawData.Count() == TotalMessage)
-            {
-                result.IsShowMoreLink = true;
-            }
-
-            result.LastPostTime = newLastPostTime;
-
-            HttpContext.Current.Response.SetCookie(new HttpCookie("lastPostTime", result.LastPostTime.ToString()));
-            HttpContext.Current.Response.SetCookie(new HttpCookie("moreIsVisible", result.IsShowMoreLink.ToString()));
-            return result;
+            report.LastPostTime = newLastPostTime;
+            HttpContext.Current.Response.SetCookie(new HttpCookie("lastPostTime", lastPostTime.ToString()));
+            return report;
         }
 
-        private bool IsShowAnnouncementTitle(DateTime postTime)
+        public HotAnnouncementModel GetHotAnnouncement(HotAnnouncementQuery message)
         {
-            return postTime == MaxDateTime;
+            var hotAnnouncement = new HotAnnouncementModel();
+            hotAnnouncement.CookieId = Encryption.PearsonEncode(UserSession.Current.UserId.ToString() +
+                UserSession.Current.SubAccId.ToString());
+            var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+            if (SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode)
+            {
+                return hotAnnouncement;
+            }
+
+            List<string> messageTypes = null;
+            if (UserSession.Current.RoleId == RoleIdConstant.Agent &&
+                UserSession.Current.AdminId == 0)
+            {
+                messageTypes = _dynamicRepository.Fetch<string>(new MessageTypeListCriteria
+                {
+                    CustId = UserSession.Current.CustId
+                }).ToList();
+            }
+
+            if (messageTypes != null)
+            {
+                var settingChangedMessage = GetSettingChangedMessage(messageTypes);
+                hotAnnouncement.Content = settingChangedMessage.Content;
+            }
+
+            if (string.IsNullOrEmpty(hotAnnouncement.Content))
+            {
+                hotAnnouncement = GetHotAnnouncementFromLocalFiles(message);
+            }
+
+            switch (UserSession.Current.Language)
+            {
+                case "th-TH":
+                    hotAnnouncement.LanguagueCode = "th";
+                    break;
+                case "zh-TW":
+                case "zh-CN":
+                    hotAnnouncement.LanguagueCode = "tw";
+                    break;
+                case "ko-KR":
+                    hotAnnouncement.LanguagueCode = "ko";
+                    break;
+                case "vi-VN":
+                    hotAnnouncement.LanguagueCode = "vn";
+                    break;
+                default:
+                    hotAnnouncement.LanguagueCode = "en";
+                    break;
+            }
+
+            return hotAnnouncement;
         }
 
         private string GetBriefContent(string fullContent, int maxLength)
@@ -180,7 +228,7 @@
             return MessageTypeNameConstant.Undefined;
         }
 
-        private string GetAnnouncementContent(AnnouncementModel item, AnnouncementItemViewModel announcement)
+        private string GetAnnouncementContent(AnnouncementModel item, AnnouncementModel announcement)
         {
             var content = string.Empty;
             var language = UserSession.Current.Language;
@@ -251,6 +299,270 @@
             }
 
             return content;
+        }
+
+        private MessageModel GetSettingChangedMessage(List<string> messageTypes)
+        {
+            var isPositionTakingChanged = messageTypes.Contains(MessageTypeConstant.PositionTakingChanged.ToString());
+            var isBettingLimitChanged = messageTypes.Contains(MessageTypeConstant.BettingLimitChanged.ToString());
+            var result = new MessageModel();
+            if (isPositionTakingChanged && isBettingLimitChanged)
+            {
+                result.Content = App_GlobalResources.Resources.modifiedMinPTBettingLimitValue;
+            }
+            else if (isPositionTakingChanged)
+            {
+                result.Content = App_GlobalResources.Resources.modifiedMinPTValueText;
+            }
+            else if (isBettingLimitChanged)
+            {
+                result.Content = App_GlobalResources.Resources.modifiedBettingLimitValue;
+            }
+
+            if (!string.IsNullOrEmpty(result.Content))
+            {
+                var content = result.Content.Replace("<br>", " ");
+                result.Id = InsertPersonalMessage(new InsertPersonalMessageCriteria
+                {
+                    ContentEn = content,
+                    ContentCh = content,
+                    ContentCs = content,
+                    ContentJp = content,
+                    ContentIt = string.Empty,
+                    ContentTh = content,
+                    ContentKo = content,
+                    ContentEs = string.Empty,
+                    Type = MessageTypeConstant.PositionTakingChanged,
+                    IsSticky = false,
+                    MatchId = 0,
+                    IsBatch = true
+                });
+            }
+
+            return result;
+        }
+
+        private long InsertPersonalMessage(InsertPersonalMessageCriteria criteria)
+        {
+            var rawData = _dynamicRepository.Fetch<MessageModel>(criteria).FirstOrDefault();
+            if (rawData == null)
+            {
+                return 0;
+            }
+
+            _dynamicRepository.Fetch<bool>(new InsertPersonalMessageTargetCriteria
+            {
+                MessageId = rawData.Id,
+                TargetId = UserSession.Current.UserId,
+                TargetName = UserSession.Current.UserName,
+                IsRead = false,
+                BetTransId = "0"
+            });
+
+            _dynamicRepository.Fetch<bool>(new UpdateViewStatus
+            {
+                CustId = UserSession.Current.CustId,
+                IsViewed = true
+            });
+
+            return rawData.Id;
+        }
+
+        private List<long> GetShowedMessageIds(HotAnnouncementQuery message)
+        {
+            var result = new List<long>();
+            if (!string.IsNullOrEmpty(message.MessageIds))
+            {
+                var ids = message.MessageIds.Split(new char[] { ',', ';', ':' }, System.StringSplitOptions.RemoveEmptyEntries);
+                foreach (string element in ids)
+                {
+                    int i = 0;
+                    if (!int.TryParse(element, out i))
+                    {
+                        continue;
+                    }
+
+                    result.Add(i);
+                }
+            }
+
+            var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
+            bool isForceUseSecurityCode = SecurityCodeConfig.IsActive &&
+               (securityCodeSession.IsRequireSecurityCode ||
+               (status == SecurityCodeStatus.FORCED_CHANGE_SC) ||
+               (status == SecurityCodeStatus.PROVIDED_SC_SUCCESS && !securityCodeSession.IsInternal));
+
+            if (!isForceUseSecurityCode ||
+                UserSession.Current.Site.ToLower().ToLower().Equals("789y"))
+            {
+                result.Add(MessageIdConstant.ForceUseSecurityCode);
+            }
+
+            if (!UserPermission.IsShowGoldDeluxeSettingForCredit)
+            {
+                result.Add(MessageIdConstant.OfferedGoldDeluxe);
+                result.Add(MessageIdConstant.NotOfferedGoldDeluxe);
+            }
+            else if (UserPermission.IsShowLiveCasino)
+            {
+                result.Add(MessageIdConstant.NotOfferedGoldDeluxe);
+            }
+            else
+            {
+                result.Add(MessageIdConstant.OfferedGoldDeluxe);
+            }
+
+            if (!UserPermission.IsShowSuperLive)
+            {
+                result.Add(MessageIdConstant.OfferedSuperLive);
+            }
+
+            if (!UserPermission.IsShowColossusBets)
+            {
+                result.Add(MessageIdConstant.OfferedColossusBets);
+            }
+
+            return result;
+        }
+
+        private HotAnnouncementModel GetHotAnnouncementFromLocalFiles(HotAnnouncementQuery message)
+        {
+            var showedMessages = GetShowedMessageIds(message);
+            var xmlPrivateMsg = GetPrivateAnnouncement();
+            var xmlCommonMsg = GetCommonAnnouncement();
+            JoinTheTwoAnnouncementTypes(xmlPrivateMsg, xmlCommonMsg);
+
+            string language = UserSession.Current.Language;
+            XmlNodeList root = xmlCommonMsg.SelectNodes("FileDB/PopupAnnouncement");
+            var hotAnnouncement = new HotAnnouncementModel();
+            foreach (XmlNode node in root)
+            {
+                var nodeIds = node.Attributes["id"].Value;
+                long nodeId = 0;
+                long.TryParse(nodeIds, out nodeId);
+                if (nodeId == 0 ||
+                    showedMessages.Contains(nodeId) ||
+                    IsExcludedSiteHotMessage(node, UserSession.Current.Site) ||
+                    IsExpiredHotMessage(node))
+                {
+                    continue;
+                }
+
+                hotAnnouncement.Id = nodeId;
+
+                int top;
+                int.TryParse(node.Attributes["top"].Value, out top);
+                hotAnnouncement.Top = top;
+
+                int left;
+                int.TryParse(node.Attributes["left"].Value, out left);
+                hotAnnouncement.Left = left;
+
+                int width;
+                int.TryParse(node.Attributes["width"].Value, out width);
+                hotAnnouncement.Width = width;
+
+                int height;
+                int.TryParse(node.Attributes["height"].Value, out height);
+                hotAnnouncement.Height = height;
+
+                XmlNodeList choosedNodes = node.SelectNodes(language);
+                if (choosedNodes.Count == 0)
+                {
+                    choosedNodes = node.SelectNodes("en-US");
+                }
+
+                if (choosedNodes.Count == 0)
+                {
+                    continue;
+                }
+
+                hotAnnouncement.Source = choosedNodes[0].Attributes["src"].Value;
+                hotAnnouncement.Content = choosedNodes[0].InnerXml.Replace("{effectdate}", Converter.ToString2(node.Attributes["effectdate"].Value));
+                break;
+            }
+
+            return hotAnnouncement;
+        }
+
+        private XmlDocument GetPrivateAnnouncement()
+        {
+            var pathToPrivateMsg = "PopupAdAgentNeutral.xml";
+            if (UserSession.Current.IsSuper)
+            {
+                pathToPrivateMsg = "PopupAdSuperNeutral.xml";
+            }
+            else if (UserSession.Current.IsMaster)
+            {
+                pathToPrivateMsg = "PopupAdMasterNeutral.xml";
+            }
+
+            var xmlPrivateMsg = new XmlDocument();
+            xmlPrivateMsg.Load(HttpContext.Current.Server.MapPath(_announcementResourcePath + pathToPrivateMsg));
+            return xmlPrivateMsg;
+        }
+
+        private XmlDocument GetCommonAnnouncement()
+        {
+            string pathToCommonMsg = HttpContext.Current.Server.MapPath(_announcementResourcePath + "PopupAdCommon.xml");
+            var xmlCommonMsg = new XmlDocument();
+            xmlCommonMsg.Load(pathToCommonMsg);
+            return xmlCommonMsg;
+        }
+
+        private void JoinTheTwoAnnouncementTypes(XmlDocument xmlPrivateMsg, XmlDocument xmlCommonMsg)
+        {
+            if (xmlPrivateMsg.DocumentElement != null)
+            {
+                foreach (XmlNode childNode in xmlPrivateMsg.DocumentElement.ChildNodes)
+                {
+                    var newNode = xmlCommonMsg.ImportNode(childNode, true);
+                    if (xmlCommonMsg.DocumentElement != null)
+                    {
+                        xmlCommonMsg.DocumentElement.AppendChild(newNode);
+                    }
+                }
+            }
+        }
+
+        private bool IsExpiredHotMessage(XmlNode node)
+        {
+            XmlAttribute startDateAttribute = node.Attributes["startdate"];
+            XmlAttribute endDateAttribute = node.Attributes["enddate"];
+            XmlAttribute effectDateAttribute = node.Attributes["effectdate"];
+            DateTime? startDate = startDateAttribute == null ? (DateTime?)null : Convert.ToDateTime(startDateAttribute.Value);
+            DateTime? endDate = endDateAttribute == null ? (DateTime?)null : Convert.ToDateTime(endDateAttribute.Value);
+            string effectDate = effectDateAttribute == null ? string.Empty : Converter.ToString2(effectDateAttribute.Value);
+            DateTime? currentDate = DateTime.Now;
+            return !startDate.HasValue ||
+                (!endDate.HasValue && currentDate < startDate) ||
+                (endDate.HasValue && (currentDate < startDate || endDate < currentDate));
+        }
+
+        private bool IsExcludedSiteHotMessage(XmlNode node, string site)
+        {
+            if (node.Attributes["privatesystem"] != null &&
+                (!node.Attributes["privatesystem"].Value.Equals("*") ||
+                !string.IsNullOrEmpty(node.Attributes["privatesystem"].Value)))
+            {
+                if (!node.Attributes["privatesystem"].Value.Equals(site, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+            if (node.Attributes["excludesites"] != null &&
+                !string.IsNullOrEmpty(node.Attributes["excludesites"].Value))
+            {
+                var excludeSites = node.Attributes["excludesites"].Value.ToUpper().Split(',');
+                if (excludeSites != null && excludeSites.Contains(site.ToUpper()))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

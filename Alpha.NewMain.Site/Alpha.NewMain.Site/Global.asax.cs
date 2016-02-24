@@ -9,6 +9,7 @@
     using Alpha.Auth.Web;
     using Alpha.NewMain.Site.App_Start;
     using Sunplus.Agent.Utilities;
+
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()

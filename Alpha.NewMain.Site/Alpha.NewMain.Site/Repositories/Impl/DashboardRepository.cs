@@ -1,20 +1,20 @@
 ﻿namespace Alpha.NewMain.Site.Repositories.Impl
 {
     using System.Collections.Generic;
-    using System.Data;
     using System.Web;
     using Alpha.NewMain.Site.Models.Dtos;
     using Criteria.CustomerProfile;
     using Fanex.Common;
     using Fanex.Data;
-    using Models.Views.CustomerProfile;
     using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
+
     public class DashboardRepository : IDashboardRepository
     {
         public List<LanguageModel> GetLanguages()
         {
-            var languages = new List<LanguageModel> {
+            var languages = new List<LanguageModel>
+            {
                 new LanguageModel
                 {
                     LanguageCode = "en-US",
@@ -55,9 +55,9 @@
             return languages;
         }
 
-        public ProfilePictureViewModel GetAvatar(ViewProfileCriteria criteria)
+        public ProfilePictureModel GetAvatar(ViewProfileCriteria criteria)
         {
-            var avatar = new ProfilePictureViewModel();
+            var avatar = new ProfilePictureModel();
             avatar.IsDefaultAvatar = true;
             using (var db = new ObjectDb(criteria.GetSettingKey()))
             {

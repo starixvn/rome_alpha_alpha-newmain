@@ -339,4 +339,16 @@
   <data name="givenCredit" xml:space="preserve">
     <value>Hạn mức được cấp</value>
   </data>
+  <data name="modifiedBettingLimitValue" xml:space="preserve">
+    <value>Giới hạn tiền đặt cược của bạn bị thay đổi bởi cấp trên ..&lt;br&gt;Vui lòng thông báo và kiểm tra chi tiết tất cả những thành viên cấp dưới trực thuộc bạn</value>
+  </data>
+  <data name="modifiedMinPTBettingLimitValue" xml:space="preserve">
+    <value>Giới hạn tiền đặt cược và giá trị PT nhỏ nhất của bạn bị thay đổi bởi cấp trên ..&lt;br&gt; Vui lòng thông báo và kiểm tra chi tiết tất cả những thành viên cấp dưới trực thuộc bạn</value>
+  </data>
+  <data name="modifiedMinPTValueText" xml:space="preserve">
+    <value> Giá trị PT nhỏ nhất của bạn bị thay đổi bởi cấp trên .&lt;br&gt; Vui lòng thông báo và kiểm tra chi tiết tất cả những thành viên cấp dưới trực thuộc bạn</value>
+  </data>
+  <data name="doNotShowAgain" xml:space="preserve">
+    <value>Không hiển thị lại</value>
+  </data>
 </root>

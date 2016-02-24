@@ -60,7 +60,7 @@
                         <ul class="list-language">
                             @foreach (var language in Model.Languages)
                             {
-                                <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
+                            <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
                             }
                         </ul>
                     </li>
@@ -98,21 +98,21 @@
         <div class="content-left">
             @if (Model.LeftMenu.IsShowMenu)
             {
-                <div class="mainmenu">
-                    <ul class="menu">
-                        <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
-                        <li class="accountinfo  @(Model.LeftMenu.ShowAccountInfo ? string.Empty : "disabledView")">
-                            <a href="javascript:;">
-                                @(Model.LeftMenu.ShowAccountInfo ? Resources.accountInfo : string.Empty)
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="extra-box">
-                        <span class="icon icon-extra icon-dots"></span>
-                    </div>
+            <div class="mainmenu">
+                <ul class="menu">
+                    <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
+                    <li class="accountinfo  @(Model.LeftMenu.ShowAccountInfo ? string.Empty : "disabledView")">
+                        <a href="javascript:;">
+                            @(Model.LeftMenu.ShowAccountInfo ? Resources.accountInfo : string.Empty)
+                        </a>
+                    </li>
+                </ul>
+                <div class="extra-box">
+                    <span class="icon icon-extra icon-dots"></span>
                 </div>
-                <div class="mainmenu-container panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                    @foreach (var menu in Model.LeftMenu.MenuList)
+            </div>
+            <div class="mainmenu-container panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                @foreach (var menu in Model.LeftMenu.MenuList)
                     {
                     <div class="@(menu.ShowSubMenu ? string.Empty : "list-menu") panel panel-default">
                         <div class="menu-item  panel-heading" role="tab" id="heading-@menu.Id">
@@ -146,14 +146,14 @@
                             }
                     </div>
                     }
-                </div>
+            </div>
 
                 if (Model.LeftMenu.ShowAccountInfo)
                 {
-                    <div class="accountinfo-container container">
-                        <iframe src="/@mainSite/_AccountInfo/AccountInfo.aspx" frameborder="0" id="accountinfo-content" scrolling="auto"
-                                name="accountinfo-conten" marginwidth="0" marginheight="0" allowtransparency="yes"></iframe>
-                    </div>
+            <div class="accountinfo-container container">
+                <iframe src="/@mainSite/_AccountInfo/AccountInfo.aspx" frameborder="0" id="accountinfo-content" scrolling="auto"
+                        name="accountinfo-conten" marginwidth="0" marginheight="0" allowtransparency="yes"></iframe>
+            </div>
                 }
             }
         </div>

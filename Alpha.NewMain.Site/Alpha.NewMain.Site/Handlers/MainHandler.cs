@@ -1,6 +1,5 @@
 ﻿namespace Alpha.NewMain.Site.Handlers
 {
-    using System.Web;
     using MediatR;
     using Models.Dtos;
     using Models.Requests;
@@ -13,6 +12,7 @@
         IRequestHandler<ChangeLanguageQuery, ResultModel>
     {
         private readonly IDashboardService _dashboardService;
+
         public MainHandler(IDashboardService dashboardService)
         {
             _dashboardService = dashboardService;
@@ -29,8 +29,8 @@
                 BaseUrl = _dashboardService.GetBaseUrl(),
                 MainPage = _dashboardService.GetMainPage(),
                 IsMainPageFromCookie = _dashboardService.IsMainPageFromCookie(),
-                LeftMenu = _dashboardService.GetLeftMenu(),
-                PasswordHash= _dashboardService.GetPasswordHash()
+                LeftMenu = LeftMenu(),
+                PasswordHash = _dashboardService.GetPasswordHash()
             };
 
             _dashboardService.StoreSession();
@@ -40,6 +40,20 @@
         public ResultModel Handle(ChangeLanguageQuery message)
         {
             return _dashboardService.ChangeLanguage(message);
+        }
+
+        private LeftMenuViewModel LeftMenu()
+        {
+            var menus = _dashboardService.GetLeftMenu();
+            var pageAccess = UserSession.Current.SubPageAccess;
+            var leftMenu = new LeftMenuViewModel
+            {
+                IsShowMenu = _dashboardService.IsShowLeftMenu(),
+                ShowAccountInfo = pageAccess.ViewMemberInfo,
+                MenuList = menus
+            };
+
+            return leftMenu;
         }
     }
 }

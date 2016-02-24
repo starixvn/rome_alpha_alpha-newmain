@@ -5,20 +5,20 @@
 
     public class FileUploadService : IFileUploadService
     {
-        private static char DirSeparator = Path.DirectorySeparatorChar;
+        private static char _dirSeparator = Path.DirectorySeparatorChar;
 
-        private static string FileDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private static string _fileDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
         public byte[] GetDefaultAvatar()
         {
             byte[] content;
-            string pathDefaultImage = FileDirectory + "Content\\Images";
+            string pathDefaultImage = _fileDirectory + "Content\\Images";
             if (!Directory.Exists(pathDefaultImage))
             {
                 Directory.CreateDirectory(pathDefaultImage);
             }
 
-            string imagePath = string.Format(@"{0}{1}{2}", pathDefaultImage, DirSeparator, "icon_user_default.png");
+            string imagePath = string.Format(@"{0}{1}{2}", pathDefaultImage, _dirSeparator, "icon_user_default.png");
             FileStream stream = new FileStream(Path.GetFullPath(imagePath), FileMode.OpenOrCreate);
             content = StreamToByteArray(stream);
             string a = BitConverter.ToString(content);

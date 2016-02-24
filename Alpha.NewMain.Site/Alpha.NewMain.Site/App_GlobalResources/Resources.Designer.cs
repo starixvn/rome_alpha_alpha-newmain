@@ -196,6 +196,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do not show again.
+        /// </summary>
+        public static string doNotShowAgain {
+            get {
+                return ResourceManager.GetString("doNotShowAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Profile picture.
         /// </summary>
         public static string EditProfilePicture {
@@ -283,6 +292,33 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string member {
             get {
                 return ResourceManager.GetString("member", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your betting limit value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
+        /// </summary>
+        public static string modifiedBettingLimitValue {
+            get {
+                return ResourceManager.GetString("modifiedBettingLimitValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your minimum position taking and betting limit value have been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
+        /// </summary>
+        public static string modifiedMinPTBettingLimitValue {
+            get {
+                return ResourceManager.GetString("modifiedMinPTBettingLimitValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your minimum position taking value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
+        /// </summary>
+        public static string modifiedMinPTValueText {
+            get {
+                return ResourceManager.GetString("modifiedMinPTValueText", resourceCulture);
             }
         }
         

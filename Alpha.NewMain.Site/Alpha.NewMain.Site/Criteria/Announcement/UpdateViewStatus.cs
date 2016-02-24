@@ -1,0 +1,16 @@
+﻿namespace Alpha.NewMain.Site.Criteria.Announcement
+{
+    using Fanex.Data.Repository;
+
+    public class UpdateViewStatus : CriteriaBase
+    {
+        public int CustId { get; set; }
+
+        public bool IsViewed { get; set; }
+
+        public override string GetSettingKey()
+        {
+            return "Age_MessageNoticeUpdStatus";
+        }
+    }
+}

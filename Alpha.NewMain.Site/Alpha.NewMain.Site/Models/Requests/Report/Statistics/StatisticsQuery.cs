@@ -5,6 +5,5 @@
 
     public class StatisticsQuery : IRequest<StatisticsViewModel>
     {
-
     }
 }

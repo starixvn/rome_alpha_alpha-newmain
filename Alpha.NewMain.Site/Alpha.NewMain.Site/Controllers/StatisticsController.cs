@@ -3,6 +3,7 @@
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests.Report.Statistics;
+
     public class StatisticsController : Controller
     {
         private IMediator _mediator;
@@ -13,22 +14,26 @@
 
         public ActionResult Index(StatisticsQuery query)
         {
-            return View("~/Views/Report/Statistics/Index.cshtml", _mediator.Send(query));
+            var viewModel = _mediator.Send(query);
+            return View(viewModel);
         }
 
         public JsonResult Top10WinningOfMonth(Top10WinningOfMonthQuery query)
         {
-            return Json(_mediator.Send(query));
+            var viewModel = _mediator.Send(query);
+            return Json(viewModel);
         }
 
         public JsonResult HighestTurnoverOfMonth(HighestTurnoverOfMonthQuery query)
         {
-            return Json(_mediator.Send(query));
+            var viewModel = _mediator.Send(query);
+            return Json(viewModel);
         }
 
         public JsonResult NewMembersOfMonth(NewMembersOfMonthQuery query)
         {
-            return Json(_mediator.Send(query));
+            var viewModel = _mediator.Send(query);
+            return Json(viewModel);
         }
     }
 }

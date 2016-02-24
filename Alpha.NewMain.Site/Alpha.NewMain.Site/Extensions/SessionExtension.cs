@@ -9,17 +9,7 @@
         private const string BinaryAvatarKey = "BinaryAvatar";
         private const string LanguageKey = "Language";
         private const string DefaultLanguage = "en-US";
-
-        private static object GetProperty(string key)
-        {
-            return HttpContext.Current.Session[HttpContext.Current.Session.SessionID + HYPHEN + key];
-        }
-
-        private static void SetProperty(string key, object value)
-        {
-            HttpContext.Current.Session[HttpContext.Current.Session.SessionID + HYPHEN + key] = value;
-        }
-
+        
         public static bool IsDefaultAvatar
         {
             get
@@ -55,6 +45,16 @@
                 object value = GetProperty(LanguageKey);
                 return (null == value) ? DefaultLanguage : value as string;
             }
+        }
+
+        private static object GetProperty(string key)
+        {
+            return HttpContext.Current.Session[HttpContext.Current.Session.SessionID + HYPHEN + key];
+        }
+
+        private static void SetProperty(string key, object value)
+        {
+            HttpContext.Current.Session[HttpContext.Current.Session.SessionID + HYPHEN + key] = value;
         }
     }
 }

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Dtos.Announcement;
 
     public class AnnouncementViewModel
     {
@@ -11,6 +12,6 @@
 
         public DateTime LastPostTime { get; set; }
 
-        public List<AnnouncementGroupViewModel> AnnouncementGroup { get; set; }
+        public List<AnnouncementGroupModel> AnnouncementGroup { get; set; }
     }
 }

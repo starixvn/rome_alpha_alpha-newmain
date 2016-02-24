@@ -21,8 +21,6 @@
     using Models.Dtos;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
-    using Models.Views;
-    using Models.Views.CustomerProfile;
     using Sunplus.Agent.Model.BL.Authorization;
     using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.BL.Definitions;
@@ -35,13 +33,13 @@
 
     public class DashboardService : IDashboardService
     {
+        private const string _defaultMainPage = "Report/PortalPage";
+
         private readonly IDashboardRepository _repository;
 
         private readonly IFileUploadService _fileUploadService;
 
         private readonly ISessionValidationService _sessionValidationService;
-
-        private const string Default_MainPage = "Report/PortalPage";
 
         public DashboardService(
             IDashboardRepository repository,
@@ -58,23 +56,17 @@
             return _repository.GetLanguages();
         }
 
-        public ViewProfileViewModel GetProfile(ViewProfileQuery message)
+        public ProfilePictureModel GetProfile(ViewProfileQuery message)
         {
             var avatar = GetAvatar(new ViewProfileCriteria
             {
                 CustId = message.CustId
             });
 
-            var result = new ViewProfileViewModel
-            {
-                IsDefaultAvatar = avatar.IsDefaultAvatar,
-                EmbedImage = GenerateImage(avatar)
-            };
-
-            return result;
+            return avatar;
         }
 
-        public ProfilePictureViewModel GetAvatar(ViewProfileCriteria criteria)
+        public ProfilePictureModel GetAvatar(ViewProfileCriteria criteria)
         {
             var avatar = _repository.GetAvatar(criteria);
             if (avatar.IsDefaultAvatar)
@@ -141,6 +133,7 @@
                     {
                         continue;
                     }
+
                     var offerForLevel = Converter.ToInt(xmlNodeAnnouncement.Attributes["role"].Value);
                     var startDate = Converter.ToDateTime(xmlNodeAnnouncement.Attributes["startdate"].Value);
                     var endDate = Converter.ToDateTime(xmlNodeAnnouncement.Attributes["enddate"].Value);
@@ -199,11 +192,9 @@
 
         public string GetCookieCurrentURL()
         {
-            string name = string.Join("_", new string[] {
-               UserSession.Current.CustId.ToString(),
-               UserSession.Current.SubAccId.ToString(),
-               "URL_NewMain"
-            });
+            string name = string.Join(
+                "_",
+                new string[] { UserSession.Current.CustId.ToString(), UserSession.Current.SubAccId.ToString(), "URL_NewMain" });
 
             return Encryption.PearsonEncode(name);
         }
@@ -256,7 +247,7 @@
 
             var cookieCurrentUrl = GetCookieCurrentURL();
             var currentURLCookie = HttpContext.Current.Request.Cookies[cookieCurrentUrl];
-            var url = Default_MainPage;
+            var url = _defaultMainPage;
 
             if (IsMainPageFromCookie())
             {
@@ -280,22 +271,16 @@
                 !currentURLCookie.Value.Contains("SecurityCode");
         }
 
-        public LeftMenuViewModel GetLeftMenu()
+        public List<MenuModel> GetLeftMenu()
         {
-            var pageAccess = UserSession.Current.SubPageAccess;
             var siteNode = _repository.GetSiteMapNode();
-            var leftMenu = new LeftMenuViewModel
-            {
-                IsShowMenu = IsShowLeftMenu(),
-                ShowAccountInfo = pageAccess.ViewMemberInfo,
-                MenuList = new List<MenuModel>()
-            };
-
+            var menuList = new List<MenuModel>();
             if (!siteNode.HasChildNodes)
             {
-                return leftMenu;
+                return menuList;
             }
 
+            var pageAccess = UserSession.Current.SubPageAccess;
             var isSubAcc = UserSession.Current.IsSubAcc;
             var subMenuCount = siteNode.ChildNodes.Count;
             for (int i = 0; i < subMenuCount; i++)
@@ -313,10 +298,10 @@
                     continue;
                 }
 
-                leftMenu.MenuList.Add(GetMenu(subMenu, i, showSubMenu));
+                menuList.Add(GetMenu(subMenu, i, showSubMenu));
             }
 
-            return leftMenu;
+            return menuList;
         }
 
         public string GetPasswordHash()
@@ -330,22 +315,28 @@
             SessionValidator.AddSessionVerificationToken();
         }
 
-        private string GenerateImage(ProfilePictureViewModel avatar)
+        public bool IsShowLeftMenu()
         {
-            try
+            if (!UserSession.Current.IsLogged || UserSession.Current.IsPasswordExpired)
             {
-                byte[] binaryAvatar = avatar.BinaryAvatar;
-                if (binaryAvatar != null)
-                {
-                    return "data:image/jpeg;base64," + Convert.ToBase64String(binaryAvatar);
-                }
-            }
-            catch (Exception ex)
-            {
-                Logs.Write(ex);
+                return false;
             }
 
-            return "data:image/jpeg;base64," + string.Empty;
+            var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+            var newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
+            if (newFlowOfSC)
+            {
+                return false;
+            }
+
+            var oldStatus = UserSession.Current.SecurityCodeResult;
+            if (!securityCodeSession.IsInternal &&
+                (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private bool CanViewMenu(string menuTitle, bool isSubAcc, PageAccess pageAccess)
@@ -433,7 +424,7 @@
             var menu = new MenuModel();
             var title = menuItem.Title;
             var bettypeId = 0;
-            if (title.Contains("bettype") && Int32.TryParse(title.Substring(7), out bettypeId))
+            if (title.Contains("bettype") && int.TryParse(title.Substring(7), out bettypeId))
             {
                 menu.Title = CacheRef.GetBettype(bettypeId);
             }
@@ -495,30 +486,6 @@
             }
 
             return false;
-        }
-
-        private bool IsShowLeftMenu()
-        {
-            if (!UserSession.Current.IsLogged || UserSession.Current.IsPasswordExpired)
-            {
-                return false;
-            }
-
-            var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-            var newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
-            if (newFlowOfSC)
-            {
-                return false;
-            }
-
-            var oldStatus = UserSession.Current.SecurityCodeResult;
-            if (!securityCodeSession.IsInternal &&
-                (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
-            {
-                return false;
-            }
-
-            return true;
         }
 
         private string GetMainSitePath()

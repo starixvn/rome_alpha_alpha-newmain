@@ -346,4 +346,16 @@
   <data name="givenCredit" xml:space="preserve">
     <value>เครดิตทั้งหมด</value>
   </data>
+  <data name="modifiedBettingLimitValue" xml:space="preserve">
+    <value>วงเงินเดิมพัน ของท่าน ถูกเปลี่ยนแปลงเป็นที่เรียบร้อยแล้ว โดยทางต้นสาย  กรุณาตรวจสอบรายละเอียดต่าง ๆ ของลูกค้าของท่านอีกครั้ง</value>
+  </data>
+  <data name="modifiedMinPTBettingLimitValue" xml:space="preserve">
+    <value>เอี่ยวขั้นต่ำ และ วงเงินเดิมพัน ของท่าน ถูกเปลี่ยนแปลงเป็นที่เรียบร้อยแล้ว โดยทางต้นสาย  กรุณาตรวจสอบข้อมูลรายละเอียดต่าง ๆ ของลูกค้าของท่านอีกครั้ง</value>
+  </data>
+  <data name="modifiedMinPTValueText" xml:space="preserve">
+    <value>เอี่ยวขั้นต่ำของท่าน ถูกเปลี่ยนโดยทางต้นสายเป็นที่เรียบร้อยแล้ว&lt;br&gt;กรุณาตรวจสอบรายละเอียดต่าง ๆ ของลูกค้าของท่านอีกครั้ง</value>
+  </data>
+  <data name="doNotShowAgain" xml:space="preserve">
+    <value>ไม่ต้องแสดงอีกครั้ง</value>
+  </data>
 </root>
