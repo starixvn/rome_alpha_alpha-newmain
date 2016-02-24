@@ -97,6 +97,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agent Outstanding.
+        /// </summary>
+        public static string agentOutstanding {
+            get {
+                return ResourceManager.GetString("agentOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AM.
         /// </summary>
         public static string AM {
@@ -169,6 +178,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Created Date.
+        /// </summary>
+        public static string createdDate {
+            get {
+                return ResourceManager.GetString("createdDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Currency.
         /// </summary>
         public static string currency {
@@ -187,11 +205,29 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Given Credit.
+        /// </summary>
+        public static string givenCredit {
+            get {
+                return ResourceManager.GetString("givenCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
         public static string Help {
             get {
                 return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Highest turnover members of the month.
+        /// </summary>
+        public static string highestTurnoverOfTheMonth {
+            get {
+                return ResourceManager.GetString("highestTurnoverOfTheMonth", resourceCulture);
             }
         }
         
@@ -229,6 +265,24 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string masterGivenCredit {
             get {
                 return ResourceManager.GetString("masterGivenCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Master Outstanding.
+        /// </summary>
+        public static string masterOutstanding {
+            get {
+                return ResourceManager.GetString("masterOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Member.
+        /// </summary>
+        public static string member {
+            get {
+                return ResourceManager.GetString("member", resourceCulture);
             }
         }
         
@@ -350,6 +404,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New members of the month.
+        /// </summary>
+        public static string newMemberOfTheMonth {
+            get {
+                return ResourceManager.GetString("newMemberOfTheMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nickname.
         /// </summary>
         public static string nickname {
@@ -425,6 +488,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show.
+        /// </summary>
+        public static string show {
+            get {
+                return ResourceManager.GetString("show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, You don&apos;t have permission to access this page..
         /// </summary>
         public static string strNotAccessPage {
@@ -461,11 +533,47 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Super Outstanding.
+        /// </summary>
+        public static string superOutstanding {
+            get {
+                return ResourceManager.GetString("superOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Today Win Loss.
         /// </summary>
         public static string todayWinLoss {
             get {
                 return ResourceManager.GetString("todayWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 10 winning members of the month.
+        /// </summary>
+        public static string top10WinningMembers {
+            get {
+                return ResourceManager.GetString("top10WinningMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total active/closed/suspended.
+        /// </summary>
+        public static string totalActiveClosedSuspended {
+            get {
+                return ResourceManager.GetString("totalActiveClosedSuspended", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Agent active/closed/suspended.
+        /// </summary>
+        public static string totalAgentActiveClosedSuspended {
+            get {
+                return ResourceManager.GetString("totalAgentActiveClosedSuspended", resourceCulture);
             }
         }
         
@@ -488,6 +596,33 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Bingo Transfer|Outstanding.
+        /// </summary>
+        public static string totalBGTransferOutstanding {
+            get {
+                return ResourceManager.GetString("totalBGTransferOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Casino Transfer|Outstanding.
+        /// </summary>
+        public static string totalCSTransferOutstanding {
+            get {
+                return ResourceManager.GetString("totalCSTransferOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Master active/closed/suspended.
+        /// </summary>
+        public static string totalMasterACS {
+            get {
+                return ResourceManager.GetString("totalMasterACS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total Master Credit.
         /// </summary>
         public static string totalMasterCredit {
@@ -506,11 +641,56 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total Outstanding.
+        /// </summary>
+        public static string totalOutstanding {
+            get {
+                return ResourceManager.GetString("totalOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Poker Transfer|Outstanding.
+        /// </summary>
+        public static string totalP2PTransferOutstanding {
+            get {
+                return ResourceManager.GetString("totalP2PTransferOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turnover.
+        /// </summary>
+        public static string turnover {
+            get {
+                return ResourceManager.GetString("turnover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to to upload now!.
         /// </summary>
         public static string uploadNow {
             get {
                 return ResourceManager.GetString("uploadNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string username {
+            get {
+                return ResourceManager.GetString("username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Winning amount.
+        /// </summary>
+        public static string winningAmount {
+            get {
+                return ResourceManager.GetString("winningAmount", resourceCulture);
             }
         }
         
@@ -547,6 +727,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string yesterdayWinLoss {
             get {
                 return ResourceManager.GetString("yesterdayWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your statistics.
+        /// </summary>
+        public static string yourStatistics {
+            get {
+                return ResourceManager.GetString("yourStatistics", resourceCulture);
             }
         }
     }

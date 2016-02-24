@@ -283,4 +283,67 @@
   <data name="more" xml:space="preserve">
     <value>更多</value>
   </data>
+  <data name="totalActiveClosedSuspended" xml:space="preserve">
+    <value>总数"活跃/关闭/暫停"</value>
+  </data>
+  <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
+    <value>代理总数"活跃/关闭/暫停"</value>
+  </data>
+  <data name="totalBGTransferOutstanding" xml:space="preserve">
+    <value>Total Bingo Transfer|Outstanding</value>
+  </data>
+  <data name="totalCSTransferOutstanding" xml:space="preserve">
+    <value>到娱乐城的总转账额|未完成交易额</value>
+  </data>
+  <data name="totalMasterACS" xml:space="preserve">
+    <value>总代理总数"活跃/关闭/暫停"</value>
+  </data>
+  <data name="totalP2PTransferOutstanding" xml:space="preserve">
+    <value>到扑克的总转账额|未完成交易额</value>
+  </data>
+  <data name="yourStatistics" xml:space="preserve">
+    <value>您的统计</value>
+  </data>
+  <data name="highestTurnoverOfTheMonth" xml:space="preserve">
+    <value>本月最高投注额之会员</value>
+  </data>
+  <data name="newMemberOfTheMonth" xml:space="preserve">
+    <value>本月新会员</value>
+  </data>
+  <data name="superOutstanding" xml:space="preserve">
+    <value>超级总代理未完成交易</value>
+  </data>
+  <data name="top10WinningMembers" xml:space="preserve">
+    <value>本月前10名最高贏額會員</value>
+  </data>
+  <data name="totalOutstanding" xml:space="preserve">
+    <value>未完成交易总数</value>
+  </data>
+  <data name="agentOutstanding" xml:space="preserve">
+    <value>代理未结束交易</value>
+  </data>
+  <data name="masterOutstanding" xml:space="preserve">
+    <value>总代理未结束交易</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="member" xml:space="preserve">
+    <value>会员</value>
+  </data>
+  <data name="turnover" xml:space="preserve">
+    <value>投注额</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="winningAmount" xml:space="preserve">
+    <value>赢额</value>
+  </data>
+  <data name="createdDate" xml:space="preserve">
+    <value>新增日期</value>
+  </data>
+  <data name="givenCredit" xml:space="preserve">
+    <value>信用额度</value>
+  </data>
 </root>

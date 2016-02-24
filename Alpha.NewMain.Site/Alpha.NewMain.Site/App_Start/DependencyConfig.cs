@@ -70,6 +70,7 @@
             container.Register<ISessionValidationService, SessionValidationService>(Lifestyle.Scoped);
             container.Register<IReportService, ReportService>(Lifestyle.Scoped);
             container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Scoped);
+            container.Register<IStatisticsService, StatisticsService>(Lifestyle.Scoped);
         }
 
         private static void RegisterDataAccesses(Container container)

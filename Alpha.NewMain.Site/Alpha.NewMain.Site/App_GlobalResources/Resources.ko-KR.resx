@@ -283,4 +283,67 @@
   <data name="more" xml:space="preserve">
     <value>자세히</value>
   </data>
+  <data name="totalActiveClosedSuspended" xml:space="preserve">
+    <value>총 유효/정지/사용중지</value>
+  </data>
+  <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
+    <value>총 에이전트 접속/중지/보류됨</value>
+  </data>
+  <data name="totalBGTransferOutstanding" xml:space="preserve">
+    <value>Total Bingo Transfer|Outstanding</value>
+  </data>
+  <data name="totalCSTransferOutstanding" xml:space="preserve">
+    <value>총 카지노 전송 |  대기중인 금액</value>
+  </data>
+  <data name="totalMasterACS" xml:space="preserve">
+    <value>총 마스터 접속/중지/보류됨</value>
+  </data>
+  <data name="totalP2PTransferOutstanding" xml:space="preserve">
+    <value>총 Poker 전송/대기중인 금액</value>
+  </data>
+  <data name="yourStatistics" xml:space="preserve">
+    <value>통계</value>
+  </data>
+  <data name="highestTurnoverOfTheMonth" xml:space="preserve">
+    <value>매월 최상위 베팅회원</value>
+  </data>
+  <data name="newMemberOfTheMonth" xml:space="preserve">
+    <value>매월 새로운회원</value>
+  </data>
+  <data name="superOutstanding" xml:space="preserve">
+    <value>슈퍼 베팅중인 금액</value>
+  </data>
+  <data name="top10WinningMembers" xml:space="preserve">
+    <value>최상위 10명의 승리 멤버</value>
+  </data>
+  <data name="totalOutstanding" xml:space="preserve">
+    <value>총 대기 포인트</value>
+  </data>
+  <data name="agentOutstanding" xml:space="preserve">
+    <value>에이전트 아웃스텐딩</value>
+  </data>
+  <data name="masterOutstanding" xml:space="preserve">
+    <value>마스터 대기 포인트</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="member" xml:space="preserve">
+    <value>회원</value>
+  </data>
+  <data name="turnover" xml:space="preserve">
+    <value>총 배팅한 금액</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>사용자 이름</value>
+  </data>
+  <data name="winningAmount" xml:space="preserve">
+    <value>승리한 금액</value>
+  </data>
+  <data name="createdDate" xml:space="preserve">
+    <value>작성일</value>
+  </data>
+  <data name="givenCredit" xml:space="preserve">
+    <value>주어진 크레딧</value>
+  </data>
 </root>

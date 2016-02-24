@@ -283,4 +283,67 @@
   <data name="more" xml:space="preserve">
     <value>เพิ่ม</value>
   </data>
+  <data name="totalActiveClosedSuspended" xml:space="preserve">
+    <value>รวมทั้งหมด เปิด/ปิด/ระงับ</value>
+  </data>
+  <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
+    <value>สถานะของAgent ทั้งหมด/การแข่งขันถูกระงับ</value>
+  </data>
+  <data name="totalBGTransferOutstanding" xml:space="preserve">
+    <value>Total Bingo Transfer|Outstanding</value>
+  </data>
+  <data name="totalCSTransferOutstanding" xml:space="preserve">
+    <value>คาซิโน ยอดรวม โอน/คงค้าง</value>
+  </data>
+  <data name="totalMasterACS" xml:space="preserve">
+    <value>จำนวนรวมในบัญชีของตัวแทนหลัก ยังคงใช้อยู่ / ปิดแล้ว/ การแข่งขันถูกระงับ</value>
+  </data>
+  <data name="totalP2PTransferOutstanding" xml:space="preserve">
+    <value>ยอด โอน / คงค้าง ในPoker ทั้งหมด</value>
+  </data>
+  <data name="yourStatistics" xml:space="preserve">
+    <value>สถิติของคุณ</value>
+  </data>
+  <data name="highestTurnoverOfTheMonth" xml:space="preserve">
+    <value>ยอดหมุนเวียนมากที่สุดของสมาชิกประจำเดือนนี้</value>
+  </data>
+  <data name="newMemberOfTheMonth" xml:space="preserve">
+    <value>สมาชิกใหม่ประจำเดือนนี้</value>
+  </data>
+  <data name="superOutstanding" xml:space="preserve">
+    <value>ยอดคงค้างของซุปเปอร์</value>
+  </data>
+  <data name="top10WinningMembers" xml:space="preserve">
+    <value>สมาชิก10 อันดับที่เล่นได้สูงสุดของเดือน</value>
+  </data>
+  <data name="totalOutstanding" xml:space="preserve">
+    <value>ยอดคงค้างทังหมด</value>
+  </data>
+  <data name="agentOutstanding" xml:space="preserve">
+    <value>เอเย่นต์ยอดคงค้าง</value>
+  </data>
+  <data name="masterOutstanding" xml:space="preserve">
+    <value>การเดิมพันที่ยังไม่สิ้นสุดของ Master</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="member" xml:space="preserve">
+    <value>สมาชิก</value>
+  </data>
+  <data name="turnover" xml:space="preserve">
+    <value>เงินหมุนเวียน</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>ชื่อผู้ใช้ระบบ</value>
+  </data>
+  <data name="winningAmount" xml:space="preserve">
+    <value>ยอดได้ทั้งหมด</value>
+  </data>
+  <data name="createdDate" xml:space="preserve">
+    <value>สร้างขึ้นเมื่อ</value>
+  </data>
+  <data name="givenCredit" xml:space="preserve">
+    <value>เครดิตทั้งหมด</value>
+  </data>
 </root>

@@ -6,6 +6,7 @@
 @using SiteServices = Alpha.NewMain.Site.Services;
 @using Sunplus.Agent.Model.Entities;
 @using System.Web;
+@using System.Web.Optimization;
 @model MainIndexViewModel
 @{
     Layout = "";
@@ -30,11 +31,7 @@
     <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/iconMoon/style.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/Iconalpha/style.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/reset.css">
-    <link type="text/css" rel="stylesheet" href="~/Content/Main/Styles/css/page.css">
-    <link type="text/css" rel="stylesheet" href="~/Content/Main/Styles/css/Dashboard.css">
-    <link type="text/css" rel="stylesheet" href="~/Content/Main/Styles/css/PopupMessage.css">
-    <link type="text/css" rel="stylesheet" href="~/Content/Main/Styles/css/LeftMenu.css">
-    <link type="text/css" rel="stylesheet" href="~/Content/CustomerProfile/Styles/css/CustomerProfile.css">
+    @Styles.Render("~/bundle/styles/main")
     <link type="text/css" rel="stylesheet" href="~/@("Content/Main/Styles/css/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
 </head>
 <body>
@@ -167,11 +164,8 @@
     </div>
 
     <script type="text/javascript" src="/@contentSite/libs/jquery/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="~/Views/CustomerProfile/Scripts/ViewProfile.js"></script>
     <script type="text/javascript" src="/@contentSite/css/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/Views/Main/Scripts/Core.js"></script>
-    <script type="text/javascript" src="~/Views/Main/Scripts/Header.js"></script>
-    <script type="text/javascript" src="~/Views/Main/Scripts/Dashboard.js"></script>
+    @Scripts.Render("~/bundles/scripts/main")
     @if (AlphaDefinitions.AppSettings.PiwikEnable)
     {
         <script type="text/javascript">

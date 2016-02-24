@@ -328,7 +328,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -346,9 +346,8 @@
       <HintPath>..\packages\UMControllerLibrary.1.0.0\lib\net40\UMControllerLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebGrease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.CustomerSetting.Module.Core.1.0.0\lib\net40\WebGrease.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -376,6 +375,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\PagesAccess.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb_AGE.xml" />
@@ -422,7 +422,10 @@
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_bg.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_left.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_right.png" />
+    <Content Include="Content\Images\collapse.png" />
+    <Content Include="Content\Images\expand.png" />
     <Content Include="Content\Images\icon_user_default.png" />
+    <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Main\Styles\css\Dashboard.css" />
     <Content Include="Content\Main\Styles\css\LeftMenu.css" />
     <Content Include="Content\Main\Styles\css\LevelCustomStyle2.css" />
@@ -449,6 +452,7 @@
     <Content Include="Content\Report\PortalPage\Styles\Images\slide01.png" />
     <Content Include="Content\Report\PortalPage\Styles\Images\slide02.png" />
     <Content Include="Content\Report\PortalPage\Styles\Images\slide03.png" />
+    <Content Include="Content\Report\Statistics\Styles\css\Statistics.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Views\CustomerProfile\Scripts\ViewProfile.js" />
@@ -466,8 +470,11 @@
     <Content Include="Content\Main\Styles\sass\Variables_Level3.scss" />
     <Content Include="Content\Main\Styles\sass\Variables_Level4.scss" />
     <Content Include="Views\Report\PortalPage\Scripts\PortalPage.js" />
+    <Content Include="Views\Report\Statistics\Scripts\Statistics.js" />
+    <Content Include="Views\Shared\Scripts\SharedScripts.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Report\PortalPage\Index.cshtml" />
+    <Content Include="Views\Report\Statistics\Index.cshtml" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -566,20 +573,33 @@
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Criteria\CustomerProfile\ViewProfileCriteria.cs" />
     <Compile Include="Criteria\Report\GetAnnouncementsCriteria.cs" />
     <Compile Include="Criteria\Report\GetBalanceInfoCriteria.cs" />
     <Compile Include="Criteria\Report\GetBalanceUpDayCriteria.cs" />
+    <Compile Include="Criteria\Report\Statistics\GetStatisticsCriteria.cs" />
+    <Compile Include="Criteria\Report\Statistics\HighestTurnoverOfMonthCriteria.cs" />
+    <Compile Include="Criteria\Report\Statistics\NewMembersOfMonthCriteria.cs" />
+    <Compile Include="Criteria\Report\Statistics\Top10WinningOfMonthCriteria.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\NumberExtension.cs" />
     <Compile Include="Extensions\SecretExtension.cs" />
     <Compile Include="Extensions\SessionExtension.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\ReportHandler.cs" />
+    <Compile Include="Handlers\StatisticsHandler.cs" />
     <Compile Include="Models\Dtos\AnnouncementModel.cs" />
     <Compile Include="Models\Dtos\BalanceInfoModel.cs" />
     <Compile Include="Models\Dtos\BalanceUpDayModel.cs" />
+    <Compile Include="Models\Dtos\CustomerInfoModel.cs" />
+    <Compile Include="Models\Dtos\Statistics\StatisticsModel.cs" />
     <Compile Include="Models\Requests\Report\GetMoreAnnouncementsQuery.cs" />
+    <Compile Include="Models\Requests\Report\Statistics\HighestTurnoverOfMonthQuery.cs" />
+    <Compile Include="Models\Requests\Report\Statistics\NewMembersOfMonthQuery.cs" />
+    <Compile Include="Models\Requests\Report\Statistics\Top10WinningOfMonthQuery.cs" />
+    <Compile Include="Models\Requests\Report\Statistics\StatisticsQuery.cs" />
+    <Compile Include="Models\Views\CustomerInfoViewModel.cs" />
     <Compile Include="Models\Views\Report\AnnouncementGroupViewModel.cs" />
     <Compile Include="Models\Views\Report\AnnouncementItemViewModel.cs" />
     <Compile Include="Models\Views\Report\AnnouncementViewModel.cs" />
@@ -594,6 +614,11 @@
     <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
     <Compile Include="Models\Views\LeftMenuViewModel.cs" />
     <Compile Include="Models\Views\Report\PortalPageViewModel.cs" />
+    <Compile Include="Models\Views\Report\Statistics\HighestTurnoverOfMonthViewModel.cs" />
+    <Compile Include="Models\Views\Report\Statistics\MemberStatusViewModel.cs" />
+    <Compile Include="Models\Views\Report\Statistics\NewMembersOfMonthViewModel.cs" />
+    <Compile Include="Models\Views\Report\Statistics\Top10WinningOfMonthViewModel.cs" />
+    <Compile Include="Models\Views\Report\Statistics\StatisticsViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -613,8 +638,10 @@
     <Compile Include="Services\Impl\FileUploadService.cs" />
     <Compile Include="Services\Impl\ReportService.cs" />
     <Compile Include="Services\Impl\SessionValidationService.cs" />
+    <Compile Include="Services\Impl\StatisticsService.cs" />
     <Compile Include="Services\IReportService.cs" />
     <Compile Include="Services\ISessionValidationService.cs" />
+    <Compile Include="Services\IStatisticsService.cs" />
     <Compile Include="Utils\LanguageUtil.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -638,27 +665,49 @@
     <EmbeddedResource Include="App_GlobalResources\LeftPanel.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LeftPanel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.ja-JP.resx" />
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.ko-KR.resx" />
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.ja-JP.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.ko-KR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.th-TH.resx" />
-    <EmbeddedResource Include="App_GlobalResources\Resources.th-TH.resx" />
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.vi-VN.resx" />
-    <EmbeddedResource Include="App_GlobalResources\Resources.vi-VN.resx" />
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-CN.resx" />
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.th-TH.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Resources.th-TH.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.vi-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Resources.vi-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-CN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Resources.zh-CN.resx" />
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-TW.resx" />
+    <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-TW.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Resources.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\Resources.ja-JP.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Resources.ja-JP.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\Resources.ko-KR.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Resources.ko-KR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

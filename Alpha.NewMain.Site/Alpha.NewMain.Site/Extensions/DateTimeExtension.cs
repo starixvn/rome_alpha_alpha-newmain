@@ -9,5 +9,15 @@
         {
             return date.ToString(DateTimeFormatConstant.ShortDateWithSlash);
         }
+
+        public static string ToLongFormatedDateWithSlash(this DateTime date)
+        {
+            return date.ToString(DateTimeFormatConstant.LongDateWithSlash);
+        }
+
+        public static string ToShortLongFormatedDateWithSlash(this DateTime date)
+        {
+            return date.ToString(DateTimeFormatConstant.ShortLongDateWithSlash);
+        }
     }
 }

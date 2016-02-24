@@ -286,4 +286,67 @@
   <data name="more" xml:space="preserve">
     <value>More</value>
   </data>
+  <data name="totalActiveClosedSuspended" xml:space="preserve">
+    <value>Total active/closed/suspended</value>
+  </data>
+  <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
+    <value>有効/閉鎖の合計エージェント</value>
+  </data>
+  <data name="totalBGTransferOutstanding" xml:space="preserve">
+    <value>Total Bingo Transfer|Outstanding</value>
+  </data>
+  <data name="totalCSTransferOutstanding" xml:space="preserve">
+    <value>Total Casino Transfer|Outstanding</value>
+  </data>
+  <data name="totalMasterACS" xml:space="preserve">
+    <value>Total Master active/closed/suspended</value>
+  </data>
+  <data name="totalP2PTransferOutstanding" xml:space="preserve">
+    <value>Total Poker Transfer|Outstanding</value>
+  </data>
+  <data name="yourStatistics" xml:space="preserve">
+    <value>Your statistics</value>
+  </data>
+  <data name="highestTurnoverOfTheMonth" xml:space="preserve">
+    <value>Highest turnover members of the month</value>
+  </data>
+  <data name="newMemberOfTheMonth" xml:space="preserve">
+    <value>New members of the month</value>
+  </data>
+  <data name="superOutstanding" xml:space="preserve">
+    <value>Super Outstanding</value>
+  </data>
+  <data name="top10WinningMembers" xml:space="preserve">
+    <value>Top 10 winning members</value>
+  </data>
+  <data name="totalOutstanding" xml:space="preserve">
+    <value>合計未払い残高</value>
+  </data>
+  <data name="agentOutstanding" xml:space="preserve">
+    <value>エージェント未払い</value>
+  </data>
+  <data name="masterOutstanding" xml:space="preserve">
+    <value>マスター未払い残高</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="member" xml:space="preserve">
+    <value>メンバー</value>
+  </data>
+  <data name="turnover" xml:space="preserve">
+    <value>合計ベットポイント</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>ユーザー名</value>
+  </data>
+  <data name="winningAmount" xml:space="preserve">
+    <value>Winning amount</value>
+  </data>
+  <data name="createdDate" xml:space="preserve">
+    <value>Create date</value>
+  </data>
+  <data name="givenCredit" xml:space="preserve">
+    <value>貸付金額</value>
+  </data>
 </root>

@@ -100,7 +100,7 @@
         <siteMapNode title="special" href="/site-main/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
         <siteMapNode title="personalMessage" href="/site-main/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
       </siteMapNode>
-      <siteMapNode title="yourStatistics" href="/site-main/_Reports/PortalPage/PortalPage.aspx"></siteMapNode>
+      <siteMapNode title="yourStatistics" href="/site-newmain/Statistics/Index"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode title="Master">
@@ -194,7 +194,7 @@
         <siteMapNode title="special" href="/site-main/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
         <siteMapNode title="personalMessage" href="/site-main/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
       </siteMapNode>
-      <siteMapNode title="yourStatistics" href="/site-main/_Reports/PortalPage/PortalPage.aspx"></siteMapNode>
+      <siteMapNode title="yourStatistics" href="/site-newmain/Statistics/Index"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode title="Super">
@@ -287,7 +287,7 @@
         <siteMapNode title="special" href="/site-main/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
         <siteMapNode title="personalMessage" href="/site-main/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
       </siteMapNode>
-      <siteMapNode title="yourStatistics" href="/site-main/_Reports/PortalPage/PortalPage.aspx"></siteMapNode>
+      <siteMapNode title="yourStatistics" href="/site-newmain/Statistics/Index"></siteMapNode>
     </siteMapNode>
   </siteMapNode>
 </siteMap>

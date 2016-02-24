@@ -276,4 +276,67 @@
   <data name="more" xml:space="preserve">
     <value>More</value>
   </data>
+  <data name="totalActiveClosedSuspended" xml:space="preserve">
+    <value>Tổng số tài khoản hiện đang: Kích hoạt / Khóa / Đình chỉ</value>
+  </data>
+  <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
+    <value>Số tài khoản Agent hiện đang: Kích hoạt/Khóa/Đình chỉ</value>
+  </data>
+  <data name="totalBGTransferOutstanding" xml:space="preserve">
+    <value>Tổng số tiền chuyển khoản /chưa xử lý bên Bingo</value>
+  </data>
+  <data name="totalCSTransferOutstanding" xml:space="preserve">
+    <value>Tổng số tiền chuyển khoản /chưa xử lý bên Casino</value>
+  </data>
+  <data name="totalMasterACS" xml:space="preserve">
+    <value>Số tài khoản Master hiện đang: Kích hoạt/Khóa/Đình chỉ</value>
+  </data>
+  <data name="totalP2PTransferOutstanding" xml:space="preserve">
+    <value>Tổng số tiền chuyển khoản /chưa xử lý bên Poker</value>
+  </data>
+  <data name="yourStatistics" xml:space="preserve">
+    <value>Thống kê của bạn</value>
+  </data>
+  <data name="highestTurnoverOfTheMonth" xml:space="preserve">
+    <value>Thành viên đặt cược nhiều nhất trong tháng</value>
+  </data>
+  <data name="newMemberOfTheMonth" xml:space="preserve">
+    <value>Thành viên mới trong tháng</value>
+  </data>
+  <data name="superOutstanding" xml:space="preserve">
+    <value>Số  tiền chưa xử lý của Super</value>
+  </data>
+  <data name="top10WinningMembers" xml:space="preserve">
+    <value>10 thành viên thắng cược nhiều nhất trong tháng</value>
+  </data>
+  <data name="totalOutstanding" xml:space="preserve">
+    <value>Tổng số  tiền chưa xử lý</value>
+  </data>
+  <data name="agentOutstanding" xml:space="preserve">
+    <value>Số tiền chưa xử lý của Agent</value>
+  </data>
+  <data name="masterOutstanding" xml:space="preserve">
+    <value>Số tiền chưa xử lý của Master</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="member" xml:space="preserve">
+    <value>Member</value>
+  </data>
+  <data name="turnover" xml:space="preserve">
+    <value>Tiền Cược</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="winningAmount" xml:space="preserve">
+    <value>Tiền thắng cược</value>
+  </data>
+  <data name="createdDate" xml:space="preserve">
+    <value>Ngày tạo</value>
+  </data>
+  <data name="givenCredit" xml:space="preserve">
+    <value>Hạn mức được cấp</value>
+  </data>
 </root>

@@ -16,9 +16,7 @@
     <title></title>
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/reset.css" />
-    <link type="text/css" rel="stylesheet" href="~/Content/Report/PortalPage/Styles/css/BalanceInfo.css" />
-    <link type="text/css" rel="stylesheet" href="~/Content/Report/PortalPage/Styles/css/Announcement.css" />
-    <link type="text/css" rel="stylesheet" href="~/Content/Report/PortalPage/Styles/css/PortalPage.css" />
+    @Styles.Render("~/bundle/styles/portalpage")
 </head>
 <body>
     <div class="section-content">
@@ -146,8 +144,7 @@
 
     <script type="text/javascript" src="/@contentSite/libs/jquery/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="/@contentSite/css/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/Views/Shared/Scripts/SharedScripts.js"></script>
-    <script type="text/javascript" src="~/Views/Report/PortalPage/Scripts/PortalPage.js"></script>
+    @Scripts.Render("~/bundles/scripts/portalpage")
     <script type="text/javascript">
         var rootUrl = '@Url.Content("~")';
         var isEvenRowAnnouncement = @(isEvenRowAnnouncement ? 1:0);
