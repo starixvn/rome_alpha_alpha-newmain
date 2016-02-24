@@ -29,9 +29,11 @@
                 BaseUrl = _dashboardService.GetBaseUrl(),
                 MainPage = _dashboardService.GetMainPage(),
                 IsMainPageFromCookie = _dashboardService.IsMainPageFromCookie(),
-                LeftMenu = _dashboardService.GetLeftMenu()
+                LeftMenu = _dashboardService.GetLeftMenu(),
+                PasswordHash= _dashboardService.GetPasswordHash()
             };
 
+            _dashboardService.StoreSession();
             return result;
         }
 

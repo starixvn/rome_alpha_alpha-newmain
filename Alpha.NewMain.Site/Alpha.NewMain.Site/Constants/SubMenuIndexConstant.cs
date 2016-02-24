@@ -3,11 +3,10 @@
     public class SubMenuIndexConstant
     {
         // Sub-menu index
-        public const int TotalBets = 0;
-        public const int Forecast = 1;
-        public const int Reports = 2;
-        public const int Charts = 3;
-        public const int MemberInfo = 4;
+        public const int Reports = 0;
+        public const int TotalBets = 1;
+        public const int Forecast = 2;
+        public const int MemberInfo = 3;
 
         // Sub-menu of Member information index
         public const int NewMember = 0;

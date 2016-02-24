@@ -10,7 +10,7 @@
     {
         List<LanguageModel> GetLanguages();
 
-        ProfilePictureModel GetAvatar(ViewProfileCriteria criteria);
+        ProfilePictureViewModel GetAvatar(ViewProfileCriteria criteria);
 
         SiteMapNode GetSiteMapNode();
     }

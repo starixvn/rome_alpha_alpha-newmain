@@ -17,6 +17,8 @@
 
         public string MainPage { get; set; }
 
+        public string PasswordHash { get; set; }
+
         public bool IsMainPageFromCookie { get; set; }
 
         public LeftMenuViewModel LeftMenu { get; set; }

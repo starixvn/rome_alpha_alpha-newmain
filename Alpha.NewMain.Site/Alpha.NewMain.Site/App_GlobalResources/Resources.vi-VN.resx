@@ -213,4 +213,67 @@
   <data name="mainMenu" xml:space="preserve">
     <value>Menu</value>
   </data>
+  <data name="balanceInfo" xml:space="preserve">
+    <value>Tài Khoản</value>
+  </data>
+  <data name="agent" xml:space="preserve">
+    <value>Agent</value>
+  </data>
+  <data name="master" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="super" xml:space="preserve">
+    <value>Super</value>
+  </data>
+  <data name="agentGivenCredit" xml:space="preserve">
+    <value>Tổng hạn mức tín dụng của  Agent</value>
+  </data>
+  <data name="masterGivenCredit" xml:space="preserve">
+    <value>Tổng hạn mức tín dụng của  Master</value>
+  </data>
+  <data name="superGivenCredit" xml:space="preserve">
+    <value>Tổng hạn mức tín dụng của  Super</value>
+  </data>
+  <data name="totalAgentCredit" xml:space="preserve">
+    <value>Tổng mức tín dụng của Agent</value>
+  </data>
+  <data name="totalMasterCredit" xml:space="preserve">
+    <value>Tổng mức tín dụng của Master</value>
+  </data>
+  <data name="totalMemberCredit" xml:space="preserve">
+    <value>Tổng mức tín dụng của Member</value>
+  </data>
+  <data name="cashBalance" xml:space="preserve">
+    <value>Số dư tài khoản</value>
+  </data>
+  <data name="currency" xml:space="preserve">
+    <value>Tiền tệ</value>
+  </data>
+  <data name="todayWinLoss" xml:space="preserve">
+    <value>Thắng thua trong ngày</value>
+  </data>
+  <data name="totalBalance" xml:space="preserve">
+    <value>Tổng số tiền giao dịch</value>
+  </data>
+  <data name="yesterdayBalance" xml:space="preserve">
+    <value>Giao dịch đến hết hôm qua</value>
+  </data>
+  <data name="yesterdayCashBalance" xml:space="preserve">
+    <value>Số dư tài khoản đến hết  hôm qua</value>
+  </data>
+  <data name="yesterdayTotalBalance" xml:space="preserve">
+    <value>Tổng tiền giao dịch đến hết hôm qua</value>
+  </data>
+  <data name="yesterdayWinLoss" xml:space="preserve">
+    <value>Thắng thua hôm qua</value>
+  </data>
+  <data name="announcement" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="noInfo" xml:space="preserve">
+    <value>Thông tin chưa được cập nhật</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>More</value>
+  </data>
 </root>

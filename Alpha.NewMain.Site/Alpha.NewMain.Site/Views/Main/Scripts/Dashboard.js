@@ -72,7 +72,7 @@ var DashboardManager = function () {
             self.collapseLeftPanel(jQuery(this));
         });
         jQuery(".icon-home").click(function () {
-            self.changeMenu(self.getMainSitePath() + '_Reports/PortalPage/PortalPage.aspx');
+            self.changeMenu('Report/PortalPage');
         });
         jQuery(".live-message").click(function () {
             self.changeMenu(self.getMainSitePath() + 'Info/NewMessageForm.aspx?pageQuery=', this);
@@ -349,6 +349,7 @@ var DashboardManager = function () {
                     var privateMessage = (results.private_message != null && results.private_message != 'undefined') ? results.private_message : 0;
                     var unreadPriMsgCount = (results.unread_private_messages != null && results.unread_private_messages != 'undefined') ? results.unread_private_messages : 0;
 
+                    unreadPriMsgCount = unreadPriMsgCount > 100 ? "100+" : unreadPriMsgCount;
                     jQuery('.private-message .value').html(unreadPriMsgCount);
 
                     var msgId = 0,
@@ -429,7 +430,7 @@ var DashboardManager = function () {
     };
     self.viewPrivateMessage = function (url) {
         self.changeMenu(url);
-        var countPrivateMsg = jQuery('.private-message .value').html();
+        var countPrivateMsg = jQuery('.private-message .value').html().replace("+", "");
         if (parseInt(countPrivateMsg) > 0) {
             self.updateCountPrivateMsg();
         }
@@ -497,7 +498,10 @@ var DashboardManager = function () {
     };
     self.setURL = function () {
         var url = top.main.location.href;
-        var currentURL = url.replace(_resources.baseUrl, '');
+        var currentURL = url.replace("http:", '')
+            .replace("https:", '')
+            .replace(_resources.baseUrl, '')
+            .replace(baseMainSite, '../' + mainSite + '/');
         if (currentURL == null) {
             return;
         }

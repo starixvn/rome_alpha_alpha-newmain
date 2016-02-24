@@ -84,6 +84,10 @@
       <HintPath>..\packages\Fanex.Age.UI.3.0.0.7\lib\net40\Fanex.Age.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Fanex.Age.Utility, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Age.Utility.3.0.0.1\lib\net40\Fanex.Age.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.Caching, Version=1.0.404.95, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Caching.1.0.404.95\lib\net40\Fanex.Caching.dll</HintPath>
       <Private>True</Private>
@@ -372,10 +376,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\PagesAccess.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBLOG.bodb_CustomerLog.xml" />
+    <Content Include="App_Data\SPNames\PRO\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\PRO\DBLOG.bodb_CustomerLog.xml" />
+    <Content Include="App_Data\SPNames\UAT\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\UAT\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\UAT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Themes\Apo\Security\howtouse.css" />
@@ -407,48 +415,59 @@
     <Content Include="App_Themes\Apo\Security\images\x5.gif" />
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
+    <Content Include="Content\CustomerProfile\Styles\css\CustomerProfile.css" />
+    <Content Include="Content\CustomerProfile\Styles\Images\profileTooltip_bg.png" />
+    <Content Include="Content\CustomerProfile\Styles\Images\profileTooltip_left.png" />
+    <Content Include="Content\CustomerProfile\Styles\Images\profileTooltip_right.png" />
+    <Content Include="Content\CustomerProfile\Styles\Images\tooltip_bg.png" />
+    <Content Include="Content\CustomerProfile\Styles\Images\tooltip_left.png" />
+    <Content Include="Content\CustomerProfile\Styles\Images\tooltip_right.png" />
     <Content Include="Content\Images\icon_user_default.png" />
+    <Content Include="Content\Main\Styles\css\Dashboard.css" />
+    <Content Include="Content\Main\Styles\css\LeftMenu.css" />
+    <Content Include="Content\Main\Styles\css\LevelCustomStyle2.css" />
+    <Content Include="Content\Main\Styles\css\LevelCustomStyle3.css" />
+    <Content Include="Content\Main\Styles\css\LevelCustomStyle4.css" />
+    <Content Include="Content\Main\Styles\css\page.css" />
+    <Content Include="Content\Main\Styles\css\PopupMessage.css" />
+    <Content Include="Content\Main\Styles\Images\headerbg_2.jpg" />
+    <Content Include="Content\Main\Styles\Images\headerbg_3.jpg" />
+    <Content Include="Content\Main\Styles\Images\headerbg_4.jpg" />
+    <Content Include="Content\Main\Styles\Images\icon_close.jpg" />
+    <Content Include="Content\Main\Styles\Images\profileTooltip_bg.png" />
+    <Content Include="Content\Main\Styles\Images\profileTooltip_left.png" />
+    <Content Include="Content\Main\Styles\Images\profileTooltip_right.png" />
+    <Content Include="Content\Main\Styles\Images\sprite_01.png" />
+    <Content Include="Content\Main\Styles\Images\tooltip_bg.png" />
+    <Content Include="Content\Main\Styles\Images\tooltip_left.png" />
+    <Content Include="Content\Main\Styles\Images\tooltip_right.png" />
+    <Content Include="Content\Report\PortalPage\Styles\css\Announcement.css" />
+    <Content Include="Content\Report\PortalPage\Styles\css\BalanceInfo.css" />
+    <Content Include="Content\Report\PortalPage\Styles\css\PortalPage.css" />
+    <Content Include="Content\Report\PortalPage\Styles\Images\expand_collapse_icon.png" />
+    <Content Include="Content\Report\PortalPage\Styles\Images\loading_2.gif" />
+    <Content Include="Content\Report\PortalPage\Styles\Images\slide01.png" />
+    <Content Include="Content\Report\PortalPage\Styles\Images\slide02.png" />
+    <Content Include="Content\Report\PortalPage\Styles\Images\slide03.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Views\CustomerProfile\Scripts\ViewProfile.js" />
-    <Content Include="Views\CustomerProfile\Styles\css\CustomerProfile.css" />
-    <Content Include="Views\CustomerProfile\Styles\Images\profileTooltip_bg.png" />
-    <Content Include="Views\CustomerProfile\Styles\Images\profileTooltip_left.png" />
-    <Content Include="Views\CustomerProfile\Styles\Images\profileTooltip_right.png" />
-    <Content Include="Views\CustomerProfile\Styles\Images\tooltip_bg.png" />
-    <Content Include="Views\CustomerProfile\Styles\Images\tooltip_left.png" />
-    <Content Include="Views\CustomerProfile\Styles\Images\tooltip_right.png" />
     <Content Include="Views\Main\Scripts\Core.js" />
     <Content Include="Views\Main\Scripts\Dashboard.js" />
     <Content Include="Views\Main\Scripts\Header.js" />
-    <Content Include="Views\Main\Styles\css\Dashboard.css" />
-    <Content Include="Views\Main\Styles\css\LeftMenu.css" />
-    <Content Include="Views\Main\Styles\css\PopupMessage.css" />
-    <Content Include="Views\Main\Styles\Images\headerbg_2.jpg" />
-    <Content Include="Views\Main\Styles\Images\headerbg_3.jpg" />
-    <Content Include="Views\Main\Styles\Images\headerbg_4.jpg" />
-    <Content Include="Views\Main\Styles\Images\icon_close.jpg" />
-    <Content Include="Views\Main\Styles\Images\profileTooltip_bg.png" />
-    <Content Include="Views\Main\Styles\Images\profileTooltip_left.png" />
-    <Content Include="Views\Main\Styles\Images\profileTooltip_right.png" />
-    <Content Include="Views\Main\Styles\Images\sprite_01.png" />
-    <Content Include="Views\Main\Styles\Images\tooltip_bg.png" />
-    <Content Include="Views\Main\Styles\Images\tooltip_left.png" />
-    <Content Include="Views\Main\Styles\Images\tooltip_right.png" />
-    <Content Include="Views\Main\Styles\css\LevelCustomStyle2.css" />
-    <Content Include="Views\Main\Styles\css\LevelCustomStyle3.css" />
-    <Content Include="Views\Main\Styles\css\LevelCustomStyle4.css" />
-    <Content Include="Views\Main\Styles\css\page.css" />
-    <Content Include="Views\Main\Styles\sass\Variables_Level2.scss" />
-    <Content Include="Views\Main\Styles\sass\LevelCustomStyle4.scss" />
-    <Content Include="Views\Main\Styles\sass\LevelCustomStyle3.scss" />
+    <Content Include="Views\Main\Scripts\piwikLoader.js" />
     <Content Include="Views\CustomerProfile\ViewProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
-    <None Include="Views\Main\Styles\sass\LevelCustomStyle2.scss" />
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle2.scss" />
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle3.scss" />
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle4.scss" />
+    <Content Include="Content\Main\Styles\sass\Variables_Level2.scss" />
+    <Content Include="Content\Main\Styles\sass\Variables_Level3.scss" />
+    <Content Include="Content\Main\Styles\sass\Variables_Level4.scss" />
+    <Content Include="Views\Report\PortalPage\Scripts\PortalPage.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\Main\Styles\sass\Variables_Level4.scss" />
-    <Content Include="Views\Main\Styles\sass\Variables_Level3.scss" />
+    <Content Include="Views\Report\PortalPage\Index.cshtml" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -475,6 +494,7 @@
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </None>
     <Content Include="Web.Configuration\SecurityCode.config" />
+    <Content Include="Web.Configuration\AuthenticationSection.config" />
     <None Include="Web.ConnectionStrings.config" />
     <None Include="Web.ConnectionStrings.local.config">
       <DependentUpon>Web.ConnectionStrings.config</DependentUpon>
@@ -538,22 +558,42 @@
     <Compile Include="App_Start\CssRewriteUrlTransformWrapper.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Constants\DateTimeFormatConstant.cs" />
+    <Compile Include="Constants\MessageTypeNameConstant.cs" />
     <Compile Include="Constants\RoleDescriptionConstant.cs" />
+    <Compile Include="Constants\RoleIdConstant.cs" />
     <Compile Include="Constants\SubMenuIndexConstant.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Criteria\CustomerProfile\ViewProfileCriteria.cs" />
+    <Compile Include="Criteria\Report\GetAnnouncementsCriteria.cs" />
+    <Compile Include="Criteria\Report\GetBalanceInfoCriteria.cs" />
+    <Compile Include="Criteria\Report\GetBalanceUpDayCriteria.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Extensions\NumberExtension.cs" />
     <Compile Include="Extensions\SecretExtension.cs" />
     <Compile Include="Extensions\SessionExtension.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
+    <Compile Include="Handlers\ReportHandler.cs" />
+    <Compile Include="Models\Dtos\AnnouncementModel.cs" />
+    <Compile Include="Models\Dtos\BalanceInfoModel.cs" />
+    <Compile Include="Models\Dtos\BalanceUpDayModel.cs" />
+    <Compile Include="Models\Requests\Report\GetMoreAnnouncementsQuery.cs" />
+    <Compile Include="Models\Views\Report\AnnouncementGroupViewModel.cs" />
+    <Compile Include="Models\Views\Report\AnnouncementItemViewModel.cs" />
+    <Compile Include="Models\Views\Report\AnnouncementViewModel.cs" />
+    <Compile Include="Models\Views\Report\BalanceInfoViewModel.cs" />
     <Compile Include="Models\Dtos\BusinessException.cs" />
     <Compile Include="Models\Dtos\MenuModel.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
-    <Compile Include="Models\Views\CustomerProfile\ProfilePictureModel.cs" />
+    <Compile Include="Models\Requests\Report\PortalPageQuery.cs" />
+    <Compile Include="Models\Views\CustomerProfile\ProfilePictureViewModel.cs" />
     <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
     <Compile Include="Models\Views\LeftMenuViewModel.cs" />
+    <Compile Include="Models\Views\Report\PortalPageViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -565,10 +605,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Impl\DashboardRepository.cs" />
     <Compile Include="Services\AppSettings.cs" />
+    <Compile Include="Services\IAnnouncementService.cs" />
     <Compile Include="Services\IDashboardService.cs" />
     <Compile Include="Services\IFileUploadService.cs" />
+    <Compile Include="Services\Impl\AnnouncementService.cs" />
     <Compile Include="Services\Impl\DashboardService.cs" />
     <Compile Include="Services\Impl\FileUploadService.cs" />
+    <Compile Include="Services\Impl\ReportService.cs" />
+    <Compile Include="Services\Impl\SessionValidationService.cs" />
+    <Compile Include="Services\IReportService.cs" />
+    <Compile Include="Services\ISessionValidationService.cs" />
     <Compile Include="Utils\LanguageUtil.cs" />
   </ItemGroup>
   <ItemGroup>

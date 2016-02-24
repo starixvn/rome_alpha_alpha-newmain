@@ -2,7 +2,7 @@
 {
     using System.Drawing;
 
-    public class ProfilePictureModel
+    public class ProfilePictureViewModel
     {
         public int CustId { get; set; }
 

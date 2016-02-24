@@ -220,4 +220,67 @@
   <data name="mainMenu" xml:space="preserve">
     <value>主要目錄</value>
   </data>
+  <data name="balanceInfo" xml:space="preserve">
+    <value>餘額資料</value>
+  </data>
+  <data name="agent" xml:space="preserve">
+    <value>代理</value>
+  </data>
+  <data name="master" xml:space="preserve">
+    <value>總代理</value>
+  </data>
+  <data name="super" xml:space="preserve">
+    <value>超級</value>
+  </data>
+  <data name="agentGivenCredit" xml:space="preserve">
+    <value>代理信用額度</value>
+  </data>
+  <data name="masterGivenCredit" xml:space="preserve">
+    <value>總代理信用額度</value>
+  </data>
+  <data name="superGivenCredit" xml:space="preserve">
+    <value>超級總代理信用額度</value>
+  </data>
+  <data name="totalAgentCredit" xml:space="preserve">
+    <value>總代理商信用</value>
+  </data>
+  <data name="totalMasterCredit" xml:space="preserve">
+    <value>總代理最高信用額</value>
+  </data>
+  <data name="totalMemberCredit" xml:space="preserve">
+    <value>會員總信用額</value>
+  </data>
+  <data name="cashBalance" xml:space="preserve">
+    <value>現金余額</value>
+  </data>
+  <data name="currency" xml:space="preserve">
+    <value>貨幣</value>
+  </data>
+  <data name="todayWinLoss" xml:space="preserve">
+    <value>今日輸贏</value>
+  </data>
+  <data name="totalBalance" xml:space="preserve">
+    <value>總平均</value>
+  </data>
+  <data name="yesterdayBalance" xml:space="preserve">
+    <value>昨天餘額</value>
+  </data>
+  <data name="yesterdayCashBalance" xml:space="preserve">
+    <value>昨天現金余額</value>
+  </data>
+  <data name="yesterdayTotalBalance" xml:space="preserve">
+    <value>昨天總平均</value>
+  </data>
+  <data name="yesterdayWinLoss" xml:space="preserve">
+    <value>昨日輸贏</value>
+  </data>
+  <data name="announcement" xml:space="preserve">
+    <value>通告</value>
+  </data>
+  <data name="noInfo" xml:space="preserve">
+    <value>沒資料顯示</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>更多</value>
+  </data>
 </root>

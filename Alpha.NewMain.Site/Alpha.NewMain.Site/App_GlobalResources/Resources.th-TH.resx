@@ -220,4 +220,67 @@
   <data name="mainMenu" xml:space="preserve">
     <value>เมนูหลัก</value>
   </data>
+  <data name="balanceInfo" xml:space="preserve">
+    <value>ข้อมูลยอดเงินคงเหลือ</value>
+  </data>
+  <data name="agent" xml:space="preserve">
+    <value>ตัวแทน</value>
+  </data>
+  <data name="master" xml:space="preserve">
+    <value>ตัวแทนหลัก</value>
+  </data>
+  <data name="super" xml:space="preserve">
+    <value>สูงสุด</value>
+  </data>
+  <data name="agentGivenCredit" xml:space="preserve">
+    <value>เครดิตของเอเย่น</value>
+  </data>
+  <data name="masterGivenCredit" xml:space="preserve">
+    <value>เครดิตของมาสเตอร์</value>
+  </data>
+  <data name="superGivenCredit" xml:space="preserve">
+    <value>เครดิตของซุปเปอร์</value>
+  </data>
+  <data name="totalAgentCredit" xml:space="preserve">
+    <value>ยอดรวมเครดิตของ agent ทั้งหมด</value>
+  </data>
+  <data name="totalMasterCredit" xml:space="preserve">
+    <value>จำนวนรวมในบัญชี ของตัวแทนหลัก</value>
+  </data>
+  <data name="totalMemberCredit" xml:space="preserve">
+    <value>ยอดรวมเครดิตทั้งหมดของสมาชิก</value>
+  </data>
+  <data name="cashBalance" xml:space="preserve">
+    <value>ยอดเงินสด</value>
+  </data>
+  <data name="currency" xml:space="preserve">
+    <value>สกุลเงิน</value>
+  </data>
+  <data name="todayWinLoss" xml:space="preserve">
+    <value>ยอดได้เสียวันนี้</value>
+  </data>
+  <data name="totalBalance" xml:space="preserve">
+    <value>ยอดเงินรวมทั้งหมด</value>
+  </data>
+  <data name="yesterdayBalance" xml:space="preserve">
+    <value>ยอดคงเหลือเมื่อวาน</value>
+  </data>
+  <data name="yesterdayCashBalance" xml:space="preserve">
+    <value>ยอดเงินสดคงเหลือของเมื่อวาน</value>
+  </data>
+  <data name="yesterdayTotalBalance" xml:space="preserve">
+    <value>ยอดรวมบัญชีของเมื่อวาน</value>
+  </data>
+  <data name="yesterdayWinLoss" xml:space="preserve">
+    <value>ยอดได้เสียเมื่อวาน</value>
+  </data>
+  <data name="announcement" xml:space="preserve">
+    <value>ประกาศ</value>
+  </data>
+  <data name="noInfo" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>เพิ่ม</value>
+  </data>
 </root>

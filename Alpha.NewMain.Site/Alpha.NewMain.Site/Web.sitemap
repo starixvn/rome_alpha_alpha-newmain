@@ -289,46 +289,5 @@
       </siteMapNode>
       <siteMapNode title="yourStatistics" href="/site-main/_Reports/PortalPage/PortalPage.aspx"></siteMapNode>
     </siteMapNode>
-
-    <!--HowToUse-->
-    <siteMapNode title="AgentHowToUsePro">
-      <siteMapNode title="HowToUsePro" expand="true">
-        <siteMapNode title="MemberWinLimit" description="WinLimit" width="100%" height="100%"></siteMapNode>
-      </siteMapNode>
-      <siteMapNode title="ProductsFeatures" expand="true">
-        <siteMapNode title="AccInfoFunction" description="AccInfo" width="560" height="310"></siteMapNode>
-        <siteMapNode title="ViewLogFunction" description="ViewLog" width="593" height="334"></siteMapNode>
-        <siteMapNode title="NumberGameFunction" description="NumberGame" width="480" height="280"></siteMapNode>
-        <siteMapNode title="ColossusBets" description="ColossusBets" width="480" height="280"></siteMapNode>
-      </siteMapNode>
-    </siteMapNode>
-
-    <siteMapNode title="MasterHowToUsePro">
-      <siteMapNode title="HowToUsePro" expand="true">
-        <siteMapNode title="MemberWinLimit" description="WinLimit" width="100%" height="100%"></siteMapNode>
-      </siteMapNode>
-      <siteMapNode title="ProductsFeatures" expand="true">
-        <siteMapNode title="AccInfoFunction" description="AccInfo" width="560" height="310"></siteMapNode>
-        <siteMapNode title="ViewLogFunction" description="ViewLog" width="593" height="334"></siteMapNode>
-        <siteMapNode title="AutoPT" description="AutoPT" width="410" height="320"></siteMapNode>
-        <siteMapNode title="NumberGame" description="NumberGame" width="480" height="280"></siteMapNode>
-        <siteMapNode title="ColossusBets" description="ColossusBets" width="480" height="280"></siteMapNode>
-      </siteMapNode>
-    </siteMapNode>
-
-    <siteMapNode title="SuperHowToUsePro">
-      <siteMapNode title="HowToUsePro" expand="true">
-        <siteMapNode title="MemberWinLimit" description="WinLimit" width="100%" height="100%"></siteMapNode>
-      </siteMapNode>
-      <siteMapNode title="ProductsFeatures" expand="true">
-        <siteMapNode title="AccInfoFunction" description="AccInfo" width="560" height="310"></siteMapNode>
-        <siteMapNode title="ViewLogFunction" description="ViewLog" width="593" height="334"></siteMapNode>
-        <siteMapNode title="MasterAutoPT" description="AutoPT" width="410" height="320"></siteMapNode>
-        <siteMapNode title="NumberGame" description="NumberGame" width="480" height="280"></siteMapNode>
-        <siteMapNode title="ColossusBets" description="ColossusBets" width="480" height="280"></siteMapNode>
-      </siteMapNode>
-    </siteMapNode>
-    <!--/HowToUse-->
-
   </siteMapNode>
 </siteMap>

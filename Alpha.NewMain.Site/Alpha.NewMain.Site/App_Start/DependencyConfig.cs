@@ -67,6 +67,9 @@
         {
             container.Register<IDashboardService, DashboardService>(Lifestyle.Scoped);
             container.Register<IFileUploadService, FileUploadService>(Lifestyle.Scoped);
+            container.Register<ISessionValidationService, SessionValidationService>(Lifestyle.Scoped);
+            container.Register<IReportService, ReportService>(Lifestyle.Scoped);
+            container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Scoped);
         }
 
         private static void RegisterDataAccesses(Container container)

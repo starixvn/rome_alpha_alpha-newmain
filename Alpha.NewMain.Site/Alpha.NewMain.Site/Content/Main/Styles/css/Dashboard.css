@@ -52,3 +52,12 @@
 .old-view-text{
     cursor: pointer;
 }
+
+.accountinfo-container{
+    height: 100%;
+}
+
+.panel-group .panel + .panel
+{
+    margin-top: 0;
+}

@@ -55,24 +55,18 @@
             return languages;
         }
 
-        public ProfilePictureModel GetAvatar(ViewProfileCriteria criteria)
+        public ProfilePictureViewModel GetAvatar(ViewProfileCriteria criteria)
         {
-            var avatar = new ProfilePictureModel();
-            var dataSet = new DataSet();
+            var avatar = new ProfilePictureViewModel();
+            avatar.IsDefaultAvatar = true;
             using (var db = new ObjectDb(criteria.GetSettingKey()))
             {
-                var paramsOuput = criteria.GetSpParams();
-                dataSet = db.ExecuteDataSet(paramsOuput);
-            }
-
-            var isDefaultAvatar = dataSet == null ||
-                dataSet.Tables.Count == 0 ||
-                dataSet.Tables[0].Rows.Count == 0;
-
-            avatar.IsDefaultAvatar = isDefaultAvatar;
-            if (!isDefaultAvatar)
-            {
-                avatar.BinaryAvatar = Converter.ToByteArray(dataSet.Tables[0].Rows[0]["image"]);
+                var reader = db.ExecuteReader(criteria.GetSpParams());
+                if (reader.Read())
+                {
+                    avatar.IsDefaultAvatar = false;
+                    avatar.BinaryAvatar = Converter.ToByteArray(reader["image"]);
+                }
             }
 
             return avatar;

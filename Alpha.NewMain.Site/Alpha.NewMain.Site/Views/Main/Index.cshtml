@@ -2,15 +2,20 @@
 @using Sunplus.Agent.Model.Entities;
 @using Alpha.NewMain.Site.App_GlobalResources;
 @using Alpha.NewMain.Site.Models.Views;
+@using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
+@using SiteServices = Alpha.NewMain.Site.Services;
+@using Sunplus.Agent.Model.Entities;
+@using System.Web;
 @model MainIndexViewModel
 @{
     Layout = "";
-    var contentSite = AppSettings.ContentSite;
-    var mainSite = AppSettings.MainSite;
+    var contentSite = SiteServices.AppSettings.ContentSite;
+    var mainSite = SiteServices.AppSettings.MainSite;
     var currentUserSession = UserSession.Current;
     var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
     var contentFrame = "main";
-    var mainPage = Model.IsMainPageFromCookie ? Model.MainPage : "../" + mainSite + "/" + Model.MainPage;
+
+    var baseMainSite = Model.BaseUrl.Replace("/site-newmain/", "/" + mainSite + "/");
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -25,18 +30,18 @@
     <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/iconMoon/style.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/Iconalpha/style.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/reset.css">
-    <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/page.css">
-    <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/Dashboard.css">
-    <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/PopupMessage.css">
-    <link type="text/css" rel="stylesheet" href="~/Views/Main/Styles/css/LeftMenu.css">
-    <link type="text/css" rel="stylesheet" href="~/Views/CustomerProfile/Styles/css/CustomerProfile.css">
-    <link type="text/css" rel="stylesheet" href="~/@("Views/Main/Styles/css/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
+    <link type="text/css" rel="stylesheet" href="~/Content/Main/Styles/css/page.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/Main/Styles/css/Dashboard.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/Main/Styles/css/PopupMessage.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/Main/Styles/css/LeftMenu.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/CustomerProfile/Styles/css/CustomerProfile.css">
+    <link type="text/css" rel="stylesheet" href="~/@("Content/Main/Styles/css/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
 </head>
 <body>
     <div id="popup-top" class="display-none">
         <div id="popup-line">
             <a class="top-message">
-                <img src="~/Views/Main/Styles/Images/icon_close.jpg" class="button-close" alt="@Resources.close" title="@Resources.close" />
+                <img src="~/Content/Main/Styles/Images/icon_close.jpg" class="button-close" alt="@Resources.close" title="@Resources.close" />
             </a>
         </div>
         <div class="popup-content">
@@ -94,7 +99,8 @@
     </div>
     <div class="content">
         <div class="content-left">
-            @if (Model.LeftMenu.IsShowMenu) {
+            @if (Model.LeftMenu.IsShowMenu)
+            {
                 <div class="mainmenu">
                     <ul class="menu">
                         <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
@@ -109,8 +115,8 @@
                     </div>
                 </div>
                 <div class="mainmenu-container panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                @foreach (var menu in Model.LeftMenu.MenuList)
-                {
+                    @foreach (var menu in Model.LeftMenu.MenuList)
+                    {
                     <div class="@(menu.ShowSubMenu ? string.Empty : "list-menu") panel panel-default">
                         <div class="menu-item  panel-heading" role="tab" id="heading-@menu.Id">
                             <a role="button"
@@ -119,48 +125,74 @@
                                data-menugroup="menu-@menu.Id">
                                 <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey">&nbsp;</span>@menu.Title</span>
                                 @if (menu.SubMenu != null && menu.SubMenu.Any())
-                                {
-                                    <span class="pull-right icon-arrow-right"></span>
-                                }
+                                    {
+                                <span class="pull-right icon-arrow-right"></span>
+                                    }
                             </a>
                         </div>
                         @if (menu.SubMenu != null && menu.SubMenu.Any())
-                        {
-                            <div id="collapse-@menu.Id" 
-                                 class="panel-collapse @(menu.ShowSubMenu ? string.Empty : "collapse") collapsible-body sub-menu" 
-                                 data-menugroup="menu-@menu.Id">
-                                <ul class="sub-menu">
-                                    @foreach (var subMenu in menu.SubMenu)
-                                    {
-                                        <li class="sub-menu-item">
-                                            <a @(string.IsNullOrEmpty(subMenu.Url) ? "href=" + "javascript:;" : "href=" + subMenu.Url + " target=" + contentFrame)>
-                                                @subMenu.Title
-                                            </a>
-                                        </li>
-                                    }
-                                </ul>
-                            </div>
-                        }
+                            {
+                        <div id="collapse-@menu.Id"
+                             class="panel-collapse @(menu.ShowSubMenu ? string.Empty : "collapse") collapsible-body sub-menu"
+                             data-menugroup="menu-@menu.Id">
+                            <ul class="sub-menu">
+                                @foreach (var subMenu in menu.SubMenu)
+                                        {
+                                <li class="sub-menu-item">
+                                    <a @(string.IsNullOrEmpty(subMenu.Url) ? "href=" + "javascript:;" : "href=" + subMenu.Url + " target=" + contentFrame)>
+                                        @subMenu.Title
+                                    </a>
+                                </li>
+                                        }
+                            </ul>
+                        </div>
+                            }
+                    </div>
+                    }
+                </div>
+
+                if (Model.LeftMenu.ShowAccountInfo)
+                {
+                    <div class="accountinfo-container container">
+                        <iframe src="/@mainSite/_AccountInfo/AccountInfo.aspx" frameborder="0" id="accountinfo-content" scrolling="auto"
+                                name="accountinfo-conten" marginwidth="0" marginheight="0" allowtransparency="yes"></iframe>
                     </div>
                 }
-            </div>
             }
         </div>
         <div class="content-right">
-            <iframe src="@mainPage" frameborder="0" id="@contentFrame" scrolling="auto"
+            <iframe src="~/@Model.MainPage" frameborder="0" id="@contentFrame" scrolling="auto"
                     name="main" marginwidth="0" marginheight="0" allowtransparency="yes" class="iframe-content"></iframe>
         </div>
     </div>
 
-    <script type="text/javascript" src="/@contentSite/libs/jquery/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/@contentSite/libs/jquery/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="~/Views/CustomerProfile/Scripts/ViewProfile.js"></script>
+    <script type="text/javascript" src="/@contentSite/css/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Views/Main/Scripts/Core.js"></script>
     <script type="text/javascript" src="~/Views/Main/Scripts/Header.js"></script>
     <script type="text/javascript" src="~/Views/Main/Scripts/Dashboard.js"></script>
+    @if (AlphaDefinitions.AppSettings.PiwikEnable)
+    {
+        <script type="text/javascript">
+            var _pkUrl = '@AlphaDefinitions.AppSettings.PiwikUrl',
+                _pkScript = '@AlphaDefinitions.AppSettings.PiwikScript',
+                _pkSiteId = '@AlphaDefinitions.AppSettings.PiwikSiteId';
+        </script>
+        <script type="text/javascript" src="~/Views/Main/Scripts/piwikLoader.js"></script>
+        <noscript><p><img src="@AlphaDefinitions.AppSettings.PiwikUrl?idsite=@AlphaDefinitions.AppSettings.PiwikSiteId" style="border:0;" alt="" /></p></noscript>
+    }
+
     <script type="text/javascript">
+        var baseUrl='@Model.BaseUrl';
+        var start = baseUrl.indexOf('//') + 2;
+        window.document.title = baseUrl.substr(start, baseUrl.length - start - 1);
+        window.passwordHash = '@Model.PasswordHash';
+
         var rootUrl = '@Url.Content("~")';
         var mainSite = '@mainSite';
         var contentFrame = "@contentFrame";
+        var baseMainSite ='@baseMainSite';
         var _resources = {
             language: '@currentUserSession.Language',
             onUserId: '@currentUserSession.OnUserId',

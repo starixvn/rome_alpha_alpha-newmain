@@ -28,5 +28,9 @@
         bool IsMainPageFromCookie();
 
         LeftMenuViewModel GetLeftMenu();
+
+        void StoreSession();
+
+        string GetPasswordHash();
     }
 }

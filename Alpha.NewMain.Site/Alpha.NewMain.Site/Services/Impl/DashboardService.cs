@@ -8,6 +8,7 @@
     using System.Xml;
     using Alpha.NewMain.Site.Repositories;
     using App_GlobalResources;
+    using Auth.Web.Validators;
     using Constants;
     using Criteria.CustomerProfile;
     using Extensions;
@@ -38,14 +39,18 @@
 
         private readonly IFileUploadService _fileUploadService;
 
-        private const string Default_MainPage = "_Reports/PortalPage/PortalPage.aspx";
+        private readonly ISessionValidationService _sessionValidationService;
+
+        private const string Default_MainPage = "Report/PortalPage";
 
         public DashboardService(
             IDashboardRepository repository,
-            IFileUploadService fileUploadService)
+            IFileUploadService fileUploadService,
+            ISessionValidationService sessionValidationService)
         {
             _repository = repository;
             _fileUploadService = fileUploadService;
+            _sessionValidationService = sessionValidationService;
         }
 
         public List<LanguageModel> GetLanguages()
@@ -69,7 +74,7 @@
             return result;
         }
 
-        public ProfilePictureModel GetAvatar(ViewProfileCriteria criteria)
+        public ProfilePictureViewModel GetAvatar(ViewProfileCriteria criteria)
         {
             var avatar = _repository.GetAvatar(criteria);
             if (avatar.IsDefaultAvatar)
@@ -197,7 +202,7 @@
             string name = string.Join("_", new string[] {
                UserSession.Current.CustId.ToString(),
                UserSession.Current.SubAccId.ToString(),
-               "URL"
+               "URL_NewMain"
             });
 
             return Encryption.PearsonEncode(name);
@@ -212,14 +217,15 @@
 
         public string GetMainPage()
         {
+            var mainSitePath = GetMainSitePath();
             if (!UserSession.Current.IsLogged)
             {
-                return "_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
+                return mainSitePath + "/_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
             }
 
             if (UserSession.Current.IsPasswordExpired)
             {
-                return "_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
+                return mainSitePath + "/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
             }
 
             ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
@@ -233,11 +239,11 @@
                 switch (status)
                 {
                     case SecurityCodeStatus.FORCED_CHANGE_SC:
-                        return "Security/SecurityCode/ForceChangeSecurityCode";
+                        return mainSitePath + "/Security/SecurityCode/ForceChangeSecurityCode";
                     case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-                        return "Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
+                        return mainSitePath + "/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
                     default:
-                        return "Security/SecurityCode/VerifySecurityCode";
+                        return mainSitePath + "/Security/SecurityCode/VerifySecurityCode";
                 }
             }
 
@@ -245,7 +251,7 @@
                 (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
             {
                 // Use the OLD flow of Security Code.
-                return "_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
+                return mainSitePath + "/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
             }
 
             var cookieCurrentUrl = GetCookieCurrentURL();
@@ -294,13 +300,13 @@
             var subMenuCount = siteNode.ChildNodes.Count;
             for (int i = 0; i < subMenuCount; i++)
             {
-                var canViewMenu = CanViewMenu(i, isSubAcc, pageAccess);
+                var subMenu = siteNode.ChildNodes[i];
+                var canViewMenu = CanViewMenu(subMenu.Title, isSubAcc, pageAccess);
                 if (!canViewMenu)
                 {
                     continue;
                 }
 
-                var subMenu = siteNode.ChildNodes[i];
                 var showSubMenu = subMenu.GetAttribute("expand") == "true";
                 if (!subMenu.HasChildNodes && subMenu.GetAttribute("href") == null)
                 {
@@ -313,7 +319,18 @@
             return leftMenu;
         }
 
-        private string GenerateImage(ProfilePictureModel avatar)
+        public string GetPasswordHash()
+        {
+            return Encryption.RandomString(new Random().Next(4, 8));
+        }
+
+        public void StoreSession()
+        {
+            _sessionValidationService.AddUsernameTokenToCookie();
+            SessionValidator.AddSessionVerificationToken();
+        }
+
+        private string GenerateImage(ProfilePictureViewModel avatar)
         {
             try
             {
@@ -331,13 +348,13 @@
             return "data:image/jpeg;base64," + string.Empty;
         }
 
-        private bool CanViewMenu(int menuIndex, bool isSubAcc, PageAccess pageAccess)
+        private bool CanViewMenu(string menuTitle, bool isSubAcc, PageAccess pageAccess)
         {
-            var deniedView = (menuIndex == SubMenuIndexConstant.TotalBets && !pageAccess.ViewTotalBets) ||
-                (menuIndex == SubMenuIndexConstant.Forecast && !pageAccess.ViewTotalBets) ||
-                (menuIndex == SubMenuIndexConstant.MemberInfo && !pageAccess.ViewMemberInfo) ||
-                (menuIndex == SubMenuIndexConstant.Reports && !pageAccess.ViewReports) ||
-                (menuIndex == SubMenuIndexConstant.Charts && !pageAccess.ViewReports);
+            var deniedView = (menuTitle == "reports" && !pageAccess.ViewReports) ||
+                (menuTitle == "totalbets" && !pageAccess.ViewTotalBets) ||
+                (menuTitle == "memberInfo" && !pageAccess.ViewMemberInfo) ||
+                (menuTitle == "transfer" && !pageAccess.Transfer) ||
+                (menuTitle == "viewLog" && !pageAccess.ViewLog);
             return !isSubAcc || !deniedView;
         }
 
@@ -502,6 +519,11 @@
             }
 
             return true;
+        }
+
+        private string GetMainSitePath()
+        {
+            return "../" + SiteServices.AppSettings.MainSite + "/";
         }
     }
 }
