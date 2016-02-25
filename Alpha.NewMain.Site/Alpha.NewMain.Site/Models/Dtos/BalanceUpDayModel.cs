@@ -1,9 +1,11 @@
 ﻿namespace Alpha.NewMain.Site.Models.Dtos
 {
+    using System;
+
     public class BalanceUpDayModel
     {
-        public string BalanceUpDay { get; set; }
+        public DateTime BalanceUpDay { get; set; }
 
-        public string MoveBetsDay { get; set; }
+        public DateTime MoveBetsDay { get; set; }
     }
 }

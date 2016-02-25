@@ -21,6 +21,37 @@
             _dashboardService = dashboardService;
         }
 
+        private string CookiesNameToolTip
+        {
+            get
+            {
+                return SecretExtension.CfsEnCode(string.Format("ToolTip{0}", UserSession.Current.CustId), 6);
+            }
+        }
+
+        private int CountNickNameToolTip
+        {
+            get
+            {
+                return HttpContext.Current.Request.Cookies[CookiesNameToolTip] == null ?
+                    0 :
+                    int.Parse(HttpContext.Current.Request.Cookies[CookiesNameToolTip].Value);
+            }
+
+            set
+            {
+                HttpCookie objCookie = new HttpCookie(CookiesNameToolTip)
+                {
+                    HttpOnly = true,
+                    Value = value.ToString()
+                };
+                HttpContext.Current.Response.Cookies.Clear();
+                HttpContext.Current.Response.AppendCookie(objCookie);
+                var timeExpiry = DateTime.Now.AddDays(30);
+                HttpContext.Current.Response.Cookies[CookiesNameToolTip].Expires = timeExpiry;
+            }
+        }
+
         public ViewProfileViewModel Handle(ViewProfileQuery message)
         {
             var profile = _dashboardService.GetProfile(message);
@@ -55,37 +86,6 @@
             }
 
             return "data:image/jpeg;base64," + string.Empty;
-        }
-
-        private string CookiesNameToolTip
-        {
-            get
-            {
-                return SecretExtension.CfsEnCode(string.Format("ToolTip{0}", UserSession.Current.CustId), 6);
-            }
-        }
-
-        private int CountNickNameToolTip
-        {
-            get
-            {
-                return HttpContext.Current.Request.Cookies[CookiesNameToolTip] == null ?
-                    0 :
-                    int.Parse(HttpContext.Current.Request.Cookies[CookiesNameToolTip].Value);
-            }
-
-            set
-            {
-                HttpCookie objCookie = new HttpCookie(CookiesNameToolTip)
-                {
-                    HttpOnly = true,
-                    Value = value.ToString()
-                };
-                HttpContext.Current.Response.Cookies.Clear();
-                HttpContext.Current.Response.AppendCookie(objCookie);
-                var timeExpiry = DateTime.Now.AddDays(30);
-                HttpContext.Current.Response.Cookies[CookiesNameToolTip].Expires = timeExpiry;
-            }
         }
     }
 }

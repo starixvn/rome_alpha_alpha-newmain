@@ -33,7 +33,7 @@
                 PasswordHash = _dashboardService.GetPasswordHash()
             };
 
-            _dashboardService.StoreSession();
+            _dashboardService.StoreSession(result);
             return result;
         }
 

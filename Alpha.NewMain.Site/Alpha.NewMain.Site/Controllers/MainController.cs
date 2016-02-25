@@ -23,6 +23,7 @@
 
         public JsonResult ChangeLanguage(ChangeLanguageQuery query)
         {
+            LanguageUtil.SetLanguage();
             var viewModel = _mediator.Send(query);
             return Json(viewModel);
         }

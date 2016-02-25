@@ -37,6 +37,7 @@ var DashboardManager = function () {
 
         self.initElements();
         self.bindEvents();
+        self.setSharedVariables();
     };
     self.initElements = function () {
         customerProfile.loadCustomerProfile();
@@ -251,7 +252,7 @@ var DashboardManager = function () {
                     var errMsg = result.errMsg;
                     if (errMsg) {
                         alert(errMsg);
-                        dashboardManager.SignOut();
+                        dashboardManager.signOut();
                     } else {
                         alert('Could not contact the server. Please check your network connection.');
                     }
@@ -349,7 +350,7 @@ var DashboardManager = function () {
                     var privateMessage = (results.private_message != null && results.private_message != 'undefined') ? results.private_message : 0;
                     var unreadPriMsgCount = (results.unread_private_messages != null && results.unread_private_messages != 'undefined') ? results.unread_private_messages : 0;
 
-                    unreadPriMsgCount = unreadPriMsgCount > 100 ? "100+" : unreadPriMsgCount;
+                    unreadPriMsgCount = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
                     jQuery('.private-message .value').html(unreadPriMsgCount);
 
                     var msgId = 0,
@@ -507,6 +508,15 @@ var DashboardManager = function () {
         }
 
         setCookie(_resources.cookieCurrentURLKey, currentURL, 1);
+    };
+
+    self.setSharedVariables = function () {
+        top.ph = window.passwordHash;
+        top.isNewSite = true;
+        top.errCodes = [];
+    };
+    self.closeListSetting = function () {
+        self.activeSettingList();
     };
 };
 

@@ -33,7 +33,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>1</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -487,8 +487,7 @@
     <Content Include="Content\Report\PortalPage\Styles\Images\slide01.png" />
     <Content Include="Content\Report\PortalPage\Styles\Images\slide02.png" />
     <Content Include="Content\Report\PortalPage\Styles\Images\slide03.png" />
-    <Content Include="Content\Report\Statistics\Styles\css\Statistics.css" />
-    <Content Include="Content\Shared\RobotoFontFace.css" />
+    <Content Include="Content\Statistics\Styles\css\Statistics.css" />
     <Content Include="Global.asax" />
     <Content Include="Views\Announcement\Resources\PopupAdAgentNeutral.xml" />
     <Content Include="Views\Announcement\Resources\PopupAdCommon.xml" />
@@ -510,7 +509,7 @@
     <Content Include="Content\Main\Styles\sass\Variables_Level3.scss" />
     <Content Include="Content\Main\Styles\sass\Variables_Level4.scss" />
     <Content Include="Views\Report\Scripts\PortalPage.js" />
-    <Content Include="Views\Report\Scripts\Statistics.js" />
+    <Content Include="Views\Statistics\Scripts\Statistics.js" />
     <Content Include="Views\Shared\Scripts\SharedScripts.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Report\PortalPage.cshtml" />
@@ -626,10 +625,10 @@
     <Compile Include="Criteria\Report\AnnouncementsCriteria.cs" />
     <Compile Include="Criteria\Report\BalanceInfoCriteria.cs" />
     <Compile Include="Criteria\Report\BalanceUpDayCriteria.cs" />
-    <Compile Include="Criteria\Report\Statistics\StatisticsCriteria.cs" />
-    <Compile Include="Criteria\Report\Statistics\HighestTurnoverOfMonthCriteria.cs" />
-    <Compile Include="Criteria\Report\Statistics\NewMembersOfMonthCriteria.cs" />
-    <Compile Include="Criteria\Report\Statistics\Top10WinningOfMonthCriteria.cs" />
+    <Compile Include="Criteria\Statistics\StatisticsCriteria.cs" />
+    <Compile Include="Criteria\Statistics\HighestTurnoverOfMonthCriteria.cs" />
+    <Compile Include="Criteria\Statistics\NewMembersOfMonthCriteria.cs" />
+    <Compile Include="Criteria\Statistics\Top10WinningOfMonthCriteria.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\NumberExtension.cs" />
     <Compile Include="Extensions\SecretExtension.cs" />
@@ -695,6 +694,7 @@
     <Compile Include="Services\IReportService.cs" />
     <Compile Include="Services\ISessionValidationService.cs" />
     <Compile Include="Services\IStatisticsService.cs" />
+    <Compile Include="Utils\DateTimeUtil.cs" />
     <Compile Include="Utils\LanguageUtil.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -710,7 +710,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Shared\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\LeftPanel.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

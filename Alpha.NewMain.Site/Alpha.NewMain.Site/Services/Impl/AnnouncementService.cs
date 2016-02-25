@@ -19,12 +19,13 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
     using Sunplus.Agent.Utilities;
+    using Utils;
 
     public class AnnouncementService : IAnnouncementService
     {
+        private const string AnnouncementResourcePath = "../Views/Announcement/Resources/";
         private readonly DateTime _maxDateTime = new DateTime(9999, 12, 31);
         private readonly DateTime _minDateTime = new DateTime(1900, 1, 1);
-        private const string _announcementResourcePath = "../Views/Announcement/Resources/";
 
         private readonly IDynamicRepository _dynamicRepository;
 
@@ -292,8 +293,9 @@
             }
 
             content = Converter.ToString2(ReflectionUtil.GetValue(item, contentField));
-            if (announcement.Type == MessageTypeNameConstant.Private &&
-            !string.IsNullOrEmpty(item.BetTransId))
+            if (!string.IsNullOrEmpty(item.BetTransId) &&
+            (announcement.Type == MessageTypeNameConstant.Private || 
+            announcement.Type == MessageTypeNameConstant.PrivateUnread))
             {
                 content = content.Replace("@@", item.BetTransId);
             }
@@ -499,13 +501,13 @@
             }
 
             var xmlPrivateMsg = new XmlDocument();
-            xmlPrivateMsg.Load(HttpContext.Current.Server.MapPath(_announcementResourcePath + pathToPrivateMsg));
+            xmlPrivateMsg.Load(HttpContext.Current.Server.MapPath(AnnouncementResourcePath + pathToPrivateMsg));
             return xmlPrivateMsg;
         }
 
         private XmlDocument GetCommonAnnouncement()
         {
-            string pathToCommonMsg = HttpContext.Current.Server.MapPath(_announcementResourcePath + "PopupAdCommon.xml");
+            string pathToCommonMsg = HttpContext.Current.Server.MapPath(AnnouncementResourcePath + "PopupAdCommon.xml");
             var xmlCommonMsg = new XmlDocument();
             xmlCommonMsg.Load(pathToCommonMsg);
             return xmlCommonMsg;
@@ -531,9 +533,10 @@
             XmlAttribute startDateAttribute = node.Attributes["startdate"];
             XmlAttribute endDateAttribute = node.Attributes["enddate"];
             XmlAttribute effectDateAttribute = node.Attributes["effectdate"];
-            DateTime? startDate = startDateAttribute == null ? (DateTime?)null : Convert.ToDateTime(startDateAttribute.Value);
-            DateTime? endDate = endDateAttribute == null ? (DateTime?)null : Convert.ToDateTime(endDateAttribute.Value);
-            string effectDate = effectDateAttribute == null ? string.Empty : Converter.ToString2(effectDateAttribute.Value);
+            DateTime? startDate = startDateAttribute == null ? (DateTime?)null : DateTimeUtil.ConvertToDateTimeFromShortDateString(startDateAttribute.Value);
+            DateTime? endDate = endDateAttribute == null ? (DateTime?)null : DateTimeUtil.ConvertToDateTimeFromShortDateString(endDateAttribute.Value);
+            string effectDate = effectDateAttribute == null ? string.Empty :
+                Converter.ToString2(effectDateAttribute.Value);
             DateTime? currentDate = DateTime.Now;
             return !startDate.HasValue ||
                 (!endDate.HasValue && currentDate < startDate) ||

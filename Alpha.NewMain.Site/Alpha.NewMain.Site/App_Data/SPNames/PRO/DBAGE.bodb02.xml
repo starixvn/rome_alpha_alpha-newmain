@@ -103,11 +103,11 @@
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="turnover" ObjectProperty="Turnover" />
     </Setting>
-    <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_MAg" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="turnover" ObjectProperty="Turnover" />
     </Setting>
-    <Setting Key="Age_CustomerSelTopWinningMembers_MAg" SpName="Age_CustomerSelTopWinningMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="turnover" ObjectProperty="Turnover" />
     </Setting>

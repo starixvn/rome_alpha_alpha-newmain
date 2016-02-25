@@ -1,6 +1,5 @@
 ﻿.mainmenu a,
-.accountinfo a
-{
+.accountinfo a {
     outline: 0;
 }
 
@@ -16,6 +15,7 @@
 .icon-totalBets::before {
     content: "\e908";
 }
+
 .icon-forecast::before {
     content: "\e904";
 }
@@ -27,13 +27,34 @@
 .icon-announcements:before {
     content: "\e926";
 }
+
 .icon-viewLog:before {
     content: "\e90a";
 }
+
 .icon-yourStatistics:before {
     content: "\e907";
 }
 
 .content-left .mainmenu-container .sub-menu .sub-menu-item a {
     width: 100%;
+}
+
+.content-left {
+    overflow: hidden;
+}
+
+.accountinfo-container {
+    height: 100%;
+    padding: 0;
+}
+
+.mainmenu-container,
+.accountinfo-container {
+    overflow: auto;
+}
+
+#accountinfo-content {
+    width: 100%;
+    height: 100%;
 }

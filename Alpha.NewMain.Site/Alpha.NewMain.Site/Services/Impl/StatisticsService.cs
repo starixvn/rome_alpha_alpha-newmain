@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Criteria.Report.Statistics;
+    using Criteria.Statistics;
     using Fanex.Data.Repository;
     using Models.Dtos;
     using Models.Dtos.Statistics;
@@ -43,7 +43,6 @@
             });
 
             return rawData;
-
         }
 
         public IEnumerable<CustomerInfoModel> HighestTurnoverOfMonth()

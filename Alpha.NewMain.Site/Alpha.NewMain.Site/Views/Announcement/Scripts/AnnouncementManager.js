@@ -41,7 +41,7 @@ var AnnouncementManager = function () {
             type: "POST",
             url: url,
             data: {
-                id: showedMessageIds.join(','),
+                messageIds: showedMessageIds.join(','),
                 announmentNext: 1
             },
             responseType: "json",
@@ -97,6 +97,18 @@ var AnnouncementManager = function () {
             div.style.top = popUpContainerText.style.top;
             div.style.left = popUpContainerText.style.left;
         }
+
+        $("#popup-container-text .advertisement-close").click(function () {
+            announcementManager.removeAnnouncement();
+        });
+
+        $("#popup-container .advertisement-close").click(function () {
+            parent.announcementManager.removeAnnouncement();
+        });
+
+        $("#popup-container #chkHide").click(function () {
+            announcementManager.doNotShowAnnoucement($(this)[0].checked);
+        });
 
         setTimeout(function () {
             $('#announcement-id')[0].style.display = 'block';

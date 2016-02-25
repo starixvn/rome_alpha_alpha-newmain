@@ -21,6 +21,7 @@
     using Models.Dtos;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
+    using Models.Views;
     using Sunplus.Agent.Model.BL.Authorization;
     using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.BL.Definitions;
@@ -28,12 +29,13 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
     using Sunplus.Agent.Utilities;
+    using Utils;
     using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
     using SiteServices = Alpha.NewMain.Site.Services;
 
     public class DashboardService : IDashboardService
     {
-        private const string _defaultMainPage = "Report/PortalPage";
+        private const string DefaultMainPage = "Report/PortalPage";
 
         private readonly IDashboardRepository _repository;
 
@@ -135,8 +137,8 @@
                     }
 
                     var offerForLevel = Converter.ToInt(xmlNodeAnnouncement.Attributes["role"].Value);
-                    var startDate = Converter.ToDateTime(xmlNodeAnnouncement.Attributes["startdate"].Value);
-                    var endDate = Converter.ToDateTime(xmlNodeAnnouncement.Attributes["enddate"].Value);
+                    var startDate = DateTimeUtil.ConvertToDateTimeFromShortDateString(xmlNodeAnnouncement.Attributes["startdate"].Value);
+                    var endDate = DateTimeUtil.ConvertToDateTimeFromShortDateString(xmlNodeAnnouncement.Attributes["enddate"].Value);
 
                     if (startDate <= currentDate &&
                         currentDate <= endDate &&
@@ -211,12 +213,12 @@
             var mainSitePath = GetMainSitePath();
             if (!UserSession.Current.IsLogged)
             {
-                return mainSitePath + "/_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
+                return mainSitePath + "_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
             }
 
             if (UserSession.Current.IsPasswordExpired)
             {
-                return mainSitePath + "/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
+                return mainSitePath + "_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
             }
 
             ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
@@ -230,11 +232,11 @@
                 switch (status)
                 {
                     case SecurityCodeStatus.FORCED_CHANGE_SC:
-                        return mainSitePath + "/Security/SecurityCode/ForceChangeSecurityCode";
+                        return mainSitePath + "Security/SecurityCode/ForceChangeSecurityCode";
                     case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-                        return mainSitePath + "/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
+                        return mainSitePath + "Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
                     default:
-                        return mainSitePath + "/Security/SecurityCode/VerifySecurityCode";
+                        return mainSitePath + "Security/SecurityCode/VerifySecurityCode";
                 }
             }
 
@@ -242,12 +244,12 @@
                 (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
             {
                 // Use the OLD flow of Security Code.
-                return mainSitePath + "/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
+                return mainSitePath + "_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
             }
 
             var cookieCurrentUrl = GetCookieCurrentURL();
             var currentURLCookie = HttpContext.Current.Request.Cookies[cookieCurrentUrl];
-            var url = _defaultMainPage;
+            var url = DefaultMainPage;
 
             if (IsMainPageFromCookie())
             {
@@ -309,8 +311,9 @@
             return Encryption.RandomString(new Random().Next(4, 8));
         }
 
-        public void StoreSession()
+        public void StoreSession(MainIndexViewModel dashboardViewModel)
         {
+            HttpContext.Current.Session["ph"] = dashboardViewModel.PasswordHash;
             _sessionValidationService.AddUsernameTokenToCookie();
             SessionValidator.AddSessionVerificationToken();
         }
@@ -435,7 +438,7 @@
 
             if (title.Contains("statement"))
             {
-                menu.Url = "../" + (menuItem.GetAttribute("href").Replace("custidParam", UserSession.Current.CustId.ToString()));
+                menu.Url = "../" + menuItem.GetAttribute("href").Replace("custidParam", UserSession.Current.CustId.ToString());
             }
             else
             {

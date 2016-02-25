@@ -12,8 +12,12 @@
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Main", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new
+                {
+                    controller = "Main",
+                    action = "Index",
+                    id = UrlParameter.Optional
+                });
         }
     }
 }

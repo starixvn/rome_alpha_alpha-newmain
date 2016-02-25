@@ -3,6 +3,7 @@
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests.Announcement;
+    using Utils;
 
     public class AnnouncementController : Controller
     {
@@ -15,6 +16,7 @@
 
         public ActionResult HotAnnouncement(HotAnnouncementQuery query)
         {
+            LanguageUtil.SetLanguage();
             var viewModel = _mediator.Send(query);
             return View(viewModel);
         }

@@ -57,3 +57,11 @@ body {
 .panel-content .date-item .date-list-row {
     margin: 0 -15px;
 }
+
+#carousel-example-generic{
+    width: 490px;
+}
+
+.bold {
+    font-weight: bold;
+}

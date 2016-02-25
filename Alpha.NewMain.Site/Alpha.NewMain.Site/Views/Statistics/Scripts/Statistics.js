@@ -100,18 +100,23 @@ var Statistics = function () {
             error: function (jqXhr, event, ajaxSettings) {
             },
             success: function (data) {
+                var customerLength = data.CustomerInfo ? data.CustomerInfo.length : 0;
                 var html = '<table class="table-detail">\
                                 <tr class="rowHeader">\
                                     <th class="rowHeader">'+ resources.username + '</th>\
                                     <th class="rowHeader">' + resources.winningAmount + '</th>\
                                 </tr>';
-                for (var i = 0, customerLength = data.CustomerInfo.length; i < customerLength; i++) {
-                    var customerInfo = data.CustomerInfo[i];
-                    var isEvenRow = (i + 1) % 2;
-                    html += '<tr class="' + (isEvenRow ? "even-row" : "odd-row") + '">\
+                if (customerLength) {
+                    for (var i = 0; i < customerLength; i++) {
+                        var customerInfo = data.CustomerInfo[i];
+                        var isEvenRow = (i + 1) % 2;
+                        html += '<tr class="' + (isEvenRow ? "even-row" : "odd-row") + '">\
                                     <td class="align-left">'+ customerInfo.Username + '</td>\
                                     <td class="align-right">' + customerInfo.WinLoss + '</td>\
                             </tr>';
+                    }
+                } else {
+                    html += '<tr class="odd-row"><td colspan="2" class="align-center bold">' + resources.noInfo + '</td></tr>';
                 }
 
                 html += '</table>';
@@ -132,18 +137,23 @@ var Statistics = function () {
             error: function (jqXhr, event, ajaxSettings) {
             },
             success: function (data) {
+                var customerLength = data.CustomerInfo ? data.CustomerInfo.length : 0;
                 var html = '<table class="table-detail">\
                                 <tr class="rowHeader">\
                                     <th class="rowHeader">'+ resources.username + '</th>\
-                                    <th class="rowHeader">' + resources.winningAmount + '</th>\
+                                    <th class="rowHeader">' + resources.turnover + '</th>\
                                 </tr>';
-                for (var i = 0, customerLength = data.CustomerInfo.length; i < customerLength; i++) {
-                    var customerInfo = data.CustomerInfo[i];
-                    var isEvenRow = (i + 1) % 2;
-                    html += '<tr class="' + (isEvenRow ? "even-row" : "odd-row") + '">\
+                if (customerLength) {
+                    for (var i = 0; i < customerLength; i++) {
+                        var customerInfo = data.CustomerInfo[i];
+                        var isEvenRow = (i + 1) % 2;
+                        html += '<tr class="' + (isEvenRow ? "even-row" : "odd-row") + '">\
                                     <td class="align-left">'+ customerInfo.Username + '</td>\
                                     <td class="align-right">' + customerInfo.Turnover + '</td>\
                             </tr>';
+                    }
+                } else {
+                    html += '<tr class="odd-row"><td colspan="2" class="align-center bold">' + resources.noInfo + '</td></tr>';
                 }
 
                 html += '</table>';
@@ -164,20 +174,25 @@ var Statistics = function () {
             error: function (jqXhr, event, ajaxSettings) {
             },
             success: function (data) {
+                var customerLength = data.CustomerInfo ? data.CustomerInfo.length : 0;
                 var html = '<table class="table-detail">\
                                 <tr class="rowHeader">\
                                     <th class="rowHeader">'+ resources.username + '</th>\
                                     <th class="rowHeader">' + resources.createdDate + '</th>\
                                     <th class="rowHeader">' + resources.givenCredit + '</th>\
                                 </tr>';
-                for (var i = 0, customerLength = data.CustomerInfo.length; i < customerLength; i++) {
-                    var customerInfo = data.CustomerInfo[i];
-                    var isEvenRow = (i + 1) % 2;
-                    html += '<tr class="' + (isEvenRow ? "even-row" : "odd-row") + '">\
+                if (customerLength) {
+                    for (var i = 0, customerLength = data.CustomerInfo.length; i < customerLength; i++) {
+                        var customerInfo = data.CustomerInfo[i];
+                        var isEvenRow = (i + 1) % 2;
+                        html += '<tr class="' + (isEvenRow ? "even-row" : "odd-row") + '">\
                                     <td class="align-left">'+ customerInfo.Username + '</td>\
                                     <td class="align-right">' + customerInfo.GivenCredit + '</td>\
                                     <td class="align-right">' + customerInfo.CreatedDate + '</td>\
                             </tr>';
+                    }
+                } else {
+                    html += '<tr class="odd-row"><td colspan="2" class="align-center bold">' + resources.noInfo + '</td></tr>';
                 }
 
                 html += '</table>';

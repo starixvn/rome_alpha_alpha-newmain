@@ -106,7 +106,7 @@
                                             <tbody>
                                                 @foreach (var announcement in announcementGroup.AnnouncementItems)
                                                 {
-                                                    <tr class="@(isEvenRowAnnouncement ? "even" : "") announcement-@announcement.Id">
+                                                    <tr class="@(isEvenRowAnnouncement ? "even" : "") @(announcement.IsRead ? "":"bold") announcement-@announcement.Id">
                                                         <td class="col-paddingleft">
                                                             <div>&nbsp;</div>
                                                         </td>

@@ -59,25 +59,32 @@
                                 <img class="viewdetail-icon" alt="@Resources.show" src="~/Content/Images/collapse.png" />
                                 <div class="div-detail display-none total-activeclosedsuspened-detail" data-target="total-activeclosedsuspened">
                                     <table class="table-detail">
-                                        @foreach (var status in Model.MemberStatus)
+                                        @if (Model.MemberStatus != null && Model.MemberStatus.Any())
                                         {
-                                            <tr class="@(isEvenRow ? "odd-row" : "even-row")">
-                                                <td class="align-left">
-                                                    @status.Level
-                                                </td>
-                                                <td class="align-right">
-                                                    <span class="active bold">
-                                                        @status.TotalActive
-                                                    </span>
-                                                    |<span class="closed bold">
-                                                        @status.TotalClosed
-                                                    </span>
-                                                    |<span class="suspended bold">
-                                                        @status.TotalSuspended
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            isEvenRow = !isEvenRow;
+                                            foreach (var status in Model.MemberStatus)
+                                            {
+                                                <tr class="@(isEvenRow ? "odd-row" : "even-row")">
+                                                    <td class="align-left">
+                                                        @status.Level
+                                                    </td>
+                                                    <td class="align-right">
+                                                        <span class="active bold">
+                                                            @status.TotalActive
+                                                        </span>
+                                                        |<span class="closed bold">
+                                                            @status.TotalClosed
+                                                        </span>
+                                                        |<span class="suspended bold">
+                                                            @status.TotalSuspended
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                isEvenRow = !isEvenRow;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <tr class="odd-row"><td colspan="2" class="align-center bold">@Resources.noInfo</td></tr>
                                         }
                                     </table>
                                 </div>
@@ -125,7 +132,8 @@
             winningAmount: '@Resources.winningAmount',
             turnover: '@Resources.turnover',
             createdDate: '@Resources.createdDate',
-            givenCredit: '@Resources.givenCredit'
+            givenCredit: '@Resources.givenCredit',
+            noInfo: '@Resources.noInfo'
         };
     </script>
 </body>

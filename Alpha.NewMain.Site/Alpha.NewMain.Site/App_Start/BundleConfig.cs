@@ -64,14 +64,14 @@
         private static void RegisterStatisticsStyle(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/bundle/styles/statistics")
-                .Include("~/Content/Report/Statistics/Styles/css/Statistics.css", new CssRewriteUrlTransformWrapper()));
+                .Include("~/Content/Statistics/Styles/css/Statistics.css", new CssRewriteUrlTransformWrapper()));
         }
 
         private static void RegisterStatisticsJavascript(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/scripts/statistics").Include(
                 "~/Views/Shared/Scripts/SharedScripts.js",
-                "~/Views/Report/Scripts/Statistics.js"));
+                "~/Views/Statistics/Scripts/Statistics.js"));
         }
     }
 }

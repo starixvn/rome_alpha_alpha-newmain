@@ -15,9 +15,9 @@
         IRequestHandler<PortalPageQuery, PortalPageViewModel>,
         IRequestHandler<MoreAnnouncementsQuery, AnnouncementViewModel>
     {
+        private const int TotalAnnouncements = 10;
         private readonly DateTime _maxDateTime = new DateTime(9999, 12, 31);
         private readonly DateTime _minDateTime = new DateTime(1900, 1, 1);
-        private const int _totalAnnouncements = 10;
 
         private readonly IReportService _reportService;
 
@@ -33,8 +33,7 @@
 
         public PortalPageViewModel Handle(PortalPageQuery message)
         {
-            message.LastPostTime = Converter.ToString2(HttpContext.Current.Request["lastPostTime"]);
-            var announcements = Announcements(message.LastPostTime, _totalAnnouncements);
+            var announcements = Announcements(message.LastPostTime, TotalAnnouncements);
             var result = new PortalPageViewModel
             {
                 BalanceInfo = BalanceInfo(),
@@ -46,7 +45,7 @@
 
         public AnnouncementViewModel Handle(MoreAnnouncementsQuery message)
         {
-            return Announcements(message.LastPostTime, _totalAnnouncements);
+            return Announcements(message.LastPostTime, TotalAnnouncements);
         }
 
         private BalanceInfoViewModel BalanceInfo()
@@ -111,7 +110,7 @@
                 lastPostTime = _maxDateTime;
             }
 
-            var report = _announcementService.GetAnnouncements(lastPostTimeMessage, _totalAnnouncements);
+            var report = _announcementService.GetAnnouncements(lastPostTimeMessage, TotalAnnouncements);
             var result = new AnnouncementViewModel
             {
                 IsShowAnnouncementTitle = IsShowAnnouncementTitle(lastPostTime),

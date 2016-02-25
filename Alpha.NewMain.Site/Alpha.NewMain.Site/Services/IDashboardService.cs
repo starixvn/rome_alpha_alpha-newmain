@@ -4,6 +4,7 @@
     using Alpha.NewMain.Site.Models.Dtos;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
+    using Models.Views;
 
     public interface IDashboardService
     {
@@ -27,7 +28,7 @@
 
         List<MenuModel> GetLeftMenu();
 
-        void StoreSession();
+        void StoreSession(MainIndexViewModel dashboardViewModel);
 
         string GetPasswordHash();
 

@@ -1,7 +1,6 @@
 ﻿namespace Alpha.NewMain.Site.Services.Impl
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using Criteria.Report;
     using Fanex.Caching;
@@ -24,7 +23,7 @@
         {
             get
             {
-                return Convert.ToDateTime(GetBalanceUpDay().BalanceUpDay);
+                return GetBalanceUpDay().BalanceUpDay;
             }
         }
 
@@ -32,7 +31,7 @@
         {
             get
             {
-                return Convert.ToDateTime(GetBalanceUpDay().MoveBetsDay);
+                return GetBalanceUpDay().MoveBetsDay;
             }
         }
 
