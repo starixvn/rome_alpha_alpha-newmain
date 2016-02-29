@@ -404,30 +404,21 @@ var DashboardManager = function () {
         });
     };
     self.collapseLeftPanel = function (collapseButton) {
-        var headerCla = jQuery('.header');
-        var left = jQuery('.content');
+        var leftPanel  = jQuery('.left-panel');
+        var rightPanel = jQuery('.right-panel');
 
-        var isCollapse = left.hasClass('collapsed');
+        var isCollapse = leftPanel.hasClass('collapsed');
         if (isCollapse) {
+            leftPanel.removeClass('collapsed');
+            rightPanel.removeClass('expanded');
             jQuery("#logoProfileImg").removeClass("collapse-image");
-            left.removeClass('collapsed');
-            headerCla.removeClass('collapsed');
+           
         } else {
-            jQuery("#logoProfileImg").addClass("collapse-image");
-            left.addClass('collapsed');
-            headerCla.addClass('collapsed');
-            if (jQuery('.accountinfo-container').css('display') == 'block') {
-                jQuery('.icon-accinfo').css('display', 'block');
-                jQuery('.accountinfo-container .row').each(function () {
-                    collapseButton.css('display', 'none');
-                });
-            }
+            leftPanel.addClass('collapsed');
+            rightPanel.addClass('expanded');
+            jQuery("#logoProfileImg").addClass("collapse-image");          
+          
         }
-
-        jQuery('.accountinfo-container .row').each(function () {
-            collapseButton.css('display', 'block');
-        });
-        jQuery('.icon-accinfo').css('display', 'none');
     };
     self.viewPrivateMessage = function (url) {
         self.changeMenu(url);

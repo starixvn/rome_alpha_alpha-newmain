@@ -44,56 +44,9 @@
             <div id="popup-contents-2" class="messageBlock"></div>
         </div>
     </div>
-    <div class="header">
-        <div id="logo" class="header-left">
-        </div>
-        <div class="header-right">
-            <div class="header-right-top">
-                <span class="icon-collapse icon-hamburger icon--m c-White"></span>
-                <ul class="list-top">
-                    <li><span class="icon icon-time opacity-80"></span><span class="txt-top" id="clock"></span></li>
-                    <li>
-                        <span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>
-                        <span class="language-text language-selector"></span>
-                        <ul class="list-language">
-                            @foreach (var language in Model.Languages)
-                            {
-                                <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
-                            }
-                        </ul>
-                    </li>
-                    <li><span class="icon icon-swap-horizontal opacity-80" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
-                    <li>
-                        <span class="icon icon-squares opacity-80 top-right-menu"></span>
-                        <ul class="list-setting">
-                            <li><a href="/@mainSite/_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
-                            <li><a href="javascript:dashboardManager.changeMenu('../@mainSite/Company/ContactUs/Index'); dashboardManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
-                            <li><a href="/@mainSite/ContextualCustomer/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
-                            <li><a href="javascript:dashboardManager.changeMenu('../@mainSite/_MemberInfo/ChangePassword/ChangePassword.aspx'); dashboardManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
-                            <li><a href="javascript:dashboardManager.changeMenu('../@mainSite/Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
-                        </ul>
-                    </li>
-                    <li><span class="icon icon-logout opacity-80"></span></li>
-                </ul>
-            </div>
-            <div class="header-right-bottom">
-                <div class="live-status">
-                    <span class="icon icon-home c-Primary"></span>
-                    <div id="text-news-out">
-                        <span id="scroller">
-                            <span id="live-message" class="maquee live-message"></span>
-                        </span>
-                    </div>
-                </div>
-                <div class="botom-right">
-                    <span class="icon icon-add c-Primary special-message"></span>
-                    <div class="email-box private-message"><span class="icon icon-message c-Primary"></span><span class="value">0</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <div class="content-left">
+    <div class="left-panel">
+        <div class="customer-profile" id="logo"></div>
+        <div class="navigation">
             @if (Model.LeftMenu.IsShowMenu)
             {
                 <div class="mainmenu">
@@ -155,7 +108,53 @@
                 }
             }
         </div>
-        <div class="content-right">
+    </div>
+    <div class="right-panel">
+        <div class="header">
+            <div class="header-row1">
+                <span class="icon-collapse icon-hamburger icon--m c-White"></span>
+                <ul class="list-top">
+                    <li><span class="icon icon-time opacity-80"></span><span class="txt-top" id="clock"></span></li>
+                    <li>
+                        <span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>
+                        <span class="language-text language-selector"></span>
+                        <ul class="list-language">
+                            @foreach (var language in Model.Languages)
+                            {
+                                <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li><span class="icon icon-swap-horizontal opacity-80" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
+                    <li>
+                        <span class="icon icon-squares opacity-80 top-right-menu"></span>
+                        <ul class="list-setting">
+                            <li><a href="/@mainSite/_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@mainSite/Company/ContactUs/Index'); dashboardManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
+                            <li><a href="/@mainSite/ContextualCustomer/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@mainSite/_MemberInfo/ChangePassword/ChangePassword.aspx'); dashboardManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@mainSite/Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
+                        </ul>
+                    </li>
+                    <li><span class="icon icon-logout opacity-80"></span></li>
+                </ul>
+            </div>
+            <div class="header-row2">
+                <div class="live-status">
+                    <span class="icon icon-home c-Primary"></span>
+                    <div id="text-news-out">
+                        <span id="scroller">
+                            <span id="live-message" class="maquee live-message"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="botom-right">
+                    <span class="icon icon-add c-Primary special-message"></span>
+                    <div class="email-box private-message"><span class="icon icon-message c-Primary"></span><span class="value">0</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="right-content">
             <iframe src="~/@Model.MainPage" frameborder="0" id="@contentFrame" scrolling="auto"
                     name="main" marginwidth="0" marginheight="0" allowtransparency="yes" class="iframe-content"></iframe>
         </div>
