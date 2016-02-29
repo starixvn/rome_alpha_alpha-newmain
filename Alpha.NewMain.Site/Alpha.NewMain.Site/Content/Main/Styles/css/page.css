@@ -426,7 +426,7 @@ body {
 }
 /********************************** HEADER ******************************************/
 
-.header-left-logo, .left-panel.collapsed:hover .header-left-logo  {
+.profile-avatar, .left-panel.collapsed:hover .profile-avatar  {
     background: url(../Images/sprite_01.png);
     background-position: -122px -350px;
     display: inline-block;
@@ -914,7 +914,7 @@ body {
 .left-panel.collapsed .navigation .menu {
     display: none;
 }
-.left-panel.collapsed .header-left-logo {
+.left-panel.collapsed .profile-avatar {
     background: url(../Images/sprite_01.png);
     background-position: -136px -427px;
     display: inline-block;
@@ -938,7 +938,13 @@ body {
 }
 .left-panel.collapsed .navigation .icon-user {
     display: block;
+    left: 14px;
+    position: relative;
 }
+.left-panel.collapsed .navigation .accinfo-content {
+    display: none;
+}
+
 .left-panel.collapsed .navigation .menu-item a .icon-arrow-right {
     display: none;
 }
@@ -964,6 +970,9 @@ body {
 
 .left-panel.collapsed:hover .icon-user {
     display: none;
+}
+.left-panel.collapsed:hover .accinfo-content {
+    display: block;
 }
 
 .left-panel.collapsed:hover .menu-item a .icon-arrow-right {

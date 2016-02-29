@@ -11,8 +11,8 @@
 
     var changeNicknameLink = string.Format("/{0}/LoginOption?custId={1}", mainSite, currentUserSession.CustId);
 }
-<div id="text-logo">
-    <a href="/@mainSite/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame" class="header-left-logo">
+<div id="profile-content">
+    <a href="/@mainSite/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame" class="profile-avatar">
         <img id="logoProfileImg" src='@Model.EmbedImage' alt="" title="@Resources.ProfileClickTootip" />
     </a>
 

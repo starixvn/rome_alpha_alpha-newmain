@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="left-panel">
-        <div class="customer-profile" id="logo"></div>
+        <div class="customer-profile" id="profile"></div>
         <div class="navigation">
             @if (Model.LeftMenu.IsShowMenu)
             {
@@ -100,10 +100,11 @@
                 </div>
 
                 if (Model.LeftMenu.ShowAccountInfo)
-                {
+                {                    
                     <div class="accountinfo-container container">
+                        <span class="icon icon-user"></span>
                         <iframe src="/@mainSite/_AccountInfo/AccountInfo.aspx?fromNewSite=1" frameborder="0" id="accountinfo-content" scrolling="auto"
-                                name="menu" marginwidth="0" marginheight="0" allowtransparency="yes"></iframe>
+                                name="menu" marginwidth="0" marginheight="0" allowtransparency="yes" class="accinfo-content"></iframe>
                     </div>
                 }
             }

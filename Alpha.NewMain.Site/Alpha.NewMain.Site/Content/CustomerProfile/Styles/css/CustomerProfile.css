@@ -2,8 +2,8 @@
     margin: 2px 5px;
 }
 
-.header-left-logo,
-.header.collapsed .header-left .header-left-logo {
+.profile-avatar,
+.left-panel.collapsed .profile-avatar {
     background: none;
 }
 
