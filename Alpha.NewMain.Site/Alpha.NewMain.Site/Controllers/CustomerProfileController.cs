@@ -6,7 +6,7 @@
     using Sunplus.Agent.Model.Entities;
     using Utils;
 
-    public class CustomerProfileController : Controller
+    public class CustomerProfileController : BaseController
     {
         private IMediator _mediator;
 
@@ -17,7 +17,6 @@
 
         public ActionResult ViewProfile(ViewProfileQuery query)
         {
-            LanguageUtil.SetLanguage();
             query.CustId = UserSession.Current.CustId;
             var viewModel = _mediator.Send(query);
             return View(viewModel);

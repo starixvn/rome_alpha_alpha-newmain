@@ -5,7 +5,7 @@
     using Models.Requests;
     using Utils;
 
-    public class MainController : Controller
+    public class MainController : BaseController
     {
         private IMediator _mediator;
 
@@ -16,14 +16,12 @@
 
         public ActionResult Index(MainIndexQuery query)
         {
-            LanguageUtil.SetLanguage();
             var viewModel = _mediator.Send(query);
             return View(viewModel);
         }
 
         public JsonResult ChangeLanguage(ChangeLanguageQuery query)
         {
-            LanguageUtil.SetLanguage();
             var viewModel = _mediator.Send(query);
             return Json(viewModel);
         }

@@ -5,7 +5,7 @@
     using Models.Requests.Report.Statistics;
     using Utils;
 
-    public class StatisticsController : Controller
+    public class StatisticsController : BaseController
     {
         private IMediator _mediator;
 
@@ -16,28 +16,24 @@
 
         public ActionResult Index(StatisticsQuery query)
         {
-            LanguageUtil.SetLanguage();
             var viewModel = _mediator.Send(query);
             return View(viewModel);
         }
 
         public JsonResult Top10WinningOfMonth(Top10WinningOfMonthQuery query)
         {
-            LanguageUtil.SetLanguage();
             var viewModel = _mediator.Send(query);
             return Json(viewModel);
         }
 
         public JsonResult HighestTurnoverOfMonth(HighestTurnoverOfMonthQuery query)
         {
-            LanguageUtil.SetLanguage();
             var viewModel = _mediator.Send(query);
             return Json(viewModel);
         }
 
         public JsonResult NewMembersOfMonth(NewMembersOfMonthQuery query)
         {
-            LanguageUtil.SetLanguage();
             var viewModel = _mediator.Send(query);
             return Json(viewModel);
         }

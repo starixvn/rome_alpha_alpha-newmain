@@ -606,6 +606,7 @@
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Constants\DateTimeFormatConstant.cs" />
+    <Compile Include="Constants\LanguageConstant.cs" />
     <Compile Include="Constants\MessageIdConstant.cs" />
     <Compile Include="Constants\MessageTypeConstant.cs" />
     <Compile Include="Constants\MessageTypeNameConstant.cs" />
@@ -613,6 +614,7 @@
     <Compile Include="Constants\RoleIdConstant.cs" />
     <Compile Include="Constants\SubMenuIndexConstant.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
@@ -633,6 +635,7 @@
     <Compile Include="Extensions\NumberExtension.cs" />
     <Compile Include="Extensions\SecretExtension.cs" />
     <Compile Include="Extensions\SessionExtension.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\ReportHandler.cs" />
@@ -694,8 +697,7 @@
     <Compile Include="Services\IReportService.cs" />
     <Compile Include="Services\ISessionValidationService.cs" />
     <Compile Include="Services\IStatisticsService.cs" />
-    <Compile Include="Utils\DateTimeUtil.cs" />
-    <Compile Include="Utils\LanguageUtil.cs" />
+    <Compile Include="Utils\Impl\DateTimeUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

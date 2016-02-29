@@ -42,6 +42,11 @@
 
             if (!Request.IsLocal)
             {
+                if (ex.Message.Contains("Extend Token Error UserID"))
+                {
+                    return;
+                }
+
                 Logs.FilterInfoWarnOrError(ex);
             }
         }

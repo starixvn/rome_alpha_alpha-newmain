@@ -5,7 +5,7 @@
     using Models.Requests.Announcement;
     using Utils;
 
-    public class AnnouncementController : Controller
+    public class AnnouncementController : BaseController
     {
         private IMediator _mediator;
 
@@ -16,7 +16,6 @@
 
         public ActionResult HotAnnouncement(HotAnnouncementQuery query)
         {
-            LanguageUtil.SetLanguage();
             var viewModel = _mediator.Send(query);
             return View(viewModel);
         }
