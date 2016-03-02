@@ -597,23 +597,6 @@ body {
     bottom: 0;
 }
 
-.content-left {
-    background: #f9f9f9;
-    -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
-    width: 256px;
-    position: fixed;
-    top: 88px;
-    bottom: 0;
-    transition: all 0.25s ease-in 0s;
-    overflow: auto;
-    z-index: 99;
-    /*********************************** LEFT MENU *********************************************/
-    /*********************************** MAIN MENU *********************************************/
-    /*********************************** ACCOUNT INFO **************************************/
-}
-
     .navigation .icon {
         color: #333;
     }
@@ -632,14 +615,13 @@ body {
                 text-transform: uppercase;
                 text-decoration: none;
                 display: block;
-                height: 48px;
-                line-height: 48px;
+                height: 40px;
+                line-height: 40px;
                 text-align: center;
                 font-weight: bold;
                 color: #fff;
                 white-space: nowrap;
             }
-
             .navigation .menu li.active {
                 background: #f9f9f9;
             }
@@ -661,7 +643,7 @@ body {
     overflow-y: auto;
     position: absolute;
     left: 0;
-    top: 48px;
+    top: 40px;
     right: 0;
     bottom: 0;
 }
