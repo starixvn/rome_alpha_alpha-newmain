@@ -443,90 +443,90 @@ body {
     padding-top: 18px;
 }
 
-    .customer-profile .userinfo > p {
-        font-size: 12px;
-        margin-top: 8px;
-    }
+.customer-profile .userinfo > p {
+    font-size: 12px;
+    margin-top: 8px;
+}
 
-        .customer-profile .userinfo > p a {
-            color: #fff;
-            text-decoration: none;
-        }
+.customer-profile .userinfo > p a {
+    color: #fff;
+    text-decoration: none;
+}
 
 
 .header-row1 {
     height: 48px;
 }
 
-    .header-row1 .icon-collapse {
-        position: relative;
-        top: 18px;
-        left: 8px;
-        cursor: pointer;
-    }
+.header-row1 .icon-collapse {
+    position: relative;
+    top: 18px;
+    left: 8px;
+    cursor: pointer;
+}
 
-    .header-row1 .list-top {
-        float: right;
-        color: #fff;
-        font-size: 13px;
-    }
+.header-row1 .list-top {
+    float: right;
+    color: #fff;
+    font-size: 13px;
+}
 
-        .header-row1 .list-top > li {
-            display: inline-block;
-            margin: 8px 0;
-            padding: 5px 10px;
-            position: relative;
-        }
+.header-row1 .list-top > li {
+    display: inline-block;
+    margin: 8px 0;
+    padding: 5px 10px;
+    position: relative;
+}
 
-            .headert-top .list-top > li .txt-top {
-                opacity: 0.8;
-            }
+.headert-top .list-top > li .txt-top {
+    opacity: 0.8;
+}
 
-            .header-row1 .list-top > li .list-setting,
-            .header-row1 .list-top > li .list-language {
-                -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-                -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-                box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-                background: #fff;
-                color: #5c1218;
-                position: absolute;
-                top: 40px;
-                min-width: 160px;
-                right: -39px;
-                display: none;
-                z-index: 100;
-            }
+.header-row1 .list-top > li .list-setting,
+.header-row1 .list-top > li .list-language {
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    color: #5c1218;
+    position: absolute;
+    top: 40px;
+    min-width: 160px;
+    right: -39px;
+    display: none;
+    z-index: 100;
+}
 
-                .header-row1 .list-top > li .list-setting > li a,
-                .header-row1 .list-top > li .list-language > li a {
-                    display: block;
-                    padding: 9px 20px;
-                    font-weight: 600;
-                    color: #5c1218;
-                    cursor: pointer;
-                }
+.header-row1 .list-top > li .list-setting > li a,
+.header-row1 .list-top > li .list-language > li a {
+    display: block;
+    padding: 9px 20px;
+    font-weight: 600;
+    color: #5c1218;
+    cursor: pointer;
+}
 
-                    .header-row1 .list-top > li .list-setting > li a .icon,
-                    .header-row1 .list-top > li .list-language > li a .icon {
-                        position: relative;
-                        top: 3px;
-                        margin-right: 10px;
-                    }
+.header-row1 .list-top > li .list-setting > li a .icon,
+.header-row1 .list-top > li .list-language > li a .icon {
+    position: relative;
+    top: 3px;
+    margin-right: 10px;
+}
 
-                .header-row1 .list-top > li .list-setting > li:hover,
-                .header-row1 .list-top > li .list-language > li:hover {
-                    background: #ddd;
-                }
+.header-row1 .list-top > li .list-setting > li:hover,
+.header-row1 .list-top > li .list-language > li:hover {
+    background: #ddd;
+}
 
-                    .header-row1 .list-top > li .list-setting > li:hover a,
-                    .header-row1 .list-top > li .list-language > li:hover a {
-                        text-decoration: none;
-                    }
+.header-row1 .list-top > li .list-setting > li:hover a,
+.header-row1 .list-top > li .list-language > li:hover a {
+    text-decoration: none;
+}
 
-            .header-row1 .list-top > li.active .list-setting,
-            .header-row1 .list-top > li.active .list-language {
-                display: block;
-            }
+.header-row1 .list-top > li.active .list-setting,
+.header-row1 .list-top > li.active .list-language {
+    display: block;
+}
 
 .header-row2 {
     background: #fff;
@@ -538,15 +538,15 @@ body {
     box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
 }
 
-    .header-row2 .botom-right {
-        position: absolute;
-        right: 16px;
-    }
+.header-row2 .botom-right {
+    position: absolute;
+    right: 16px;
+}
 
-    .header-row2 .live-status {
-        float: left;
-        padding: 0 10px;
-    }
+.header-row2 .live-status {
+    float: left;
+    padding: 0 10px;
+}
 
 @media (max-width: 1320px) {
     .header-row2 .live-status {
@@ -565,26 +565,26 @@ body {
     margin-top: 2px;
 }
 
-    .header-row2 .email-box .value {
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        border-radius: 50%;
-        background: #da1625;
-        color: #fff;
-        padding: 2px 5px;
-        position: absolute;
-        top: -6px;
-        right: -4px;
-    }
+.header-row2 .email-box .value {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    background: #da1625;
+    color: #fff;
+    padding: 2px 5px;
+    position: absolute;
+    top: -6px;
+    right: -4px;
+}
 
 .left-panel.collapsed {
     width: 46px;
     transition: all 0.25s ease-in 0s;
 }
-    .left-panel.collapsed .userinfo {
-        display: none;
-    }
+.left-panel.collapsed .userinfo {
+    display: none;
+}
 .right-panel.expanded {
     left: 46px;
 }
@@ -597,47 +597,47 @@ body {
     bottom: 0;
 }
 
-    .navigation .icon {
-        color: #333;
-    }
+.navigation .icon {
+    color: #333;
+}
 
-    .navigation .menu {
-        overflow: hidden;
-    }
+.navigation .menu {
+    overflow: hidden;
+}
 
-        .navigation .menu li {
-            float: left;
-            width: 50%;
-            background: #5c1218;
-        }
+.navigation .menu li {
+    float: left;
+    width: 50%;
+    background: #5c1218;
+}
 
-            .navigation .menu li a {
-                text-transform: uppercase;
-                text-decoration: none;
-                display: block;
-                height: 40px;
-                line-height: 40px;
-                text-align: center;
-                font-weight: bold;
-                color: #fff;
-                white-space: nowrap;
-            }
-            .navigation .menu li.active {
-                background: #f9f9f9;
-            }
+.navigation .menu li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+}
+.navigation .menu li.active {
+    background: #f9f9f9;
+}
 
-                .navigation .menu li.active a {
-                    color: #5c1218;
-                }
+.navigation .menu li.active a {
+    color: #5c1218;
+}
 
-    .navigation .extra-box {
-        display: none;
-    }
+.navigation .extra-box {
+    display: none;
+}
 
-    .navigation .mainmenu-container .panel {
-        border: none;
-        box-shadow: none;
-    }
+.navigation .mainmenu-container .panel {
+    border: none;
+    box-shadow: none;
+}
 .navigation .mainmenu-container {
     overflow-x: hidden;
     overflow-y: auto;
@@ -647,251 +647,251 @@ body {
     right: 0;
     bottom: 0;
 }
-    .navigation .mainmenu-container.panel-group {
-        margin-bottom: 0;
-    }
-        .navigation .mainmenu-container .panel > .panel-heading, .navigation .mainmenu-container .panel.panel-default > .panel-heading {
-            background: none;
-        }
+.navigation .mainmenu-container.panel-group {
+    margin-bottom: 0;
+}
+.navigation .mainmenu-container .panel > .panel-heading, .navigation .mainmenu-container .panel.panel-default > .panel-heading {
+    background: none;
+}
 
-    .navigation .mainmenu-container .menu-item {
-        position: relative;
-        text-transform: uppercase;
-        color: #000000;
-        font-weight: 600;
-        padding: 0;
-    }
+.navigation .mainmenu-container .menu-item {
+    position: relative;
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: 600;
+    padding: 0;
+}
 
-        .navigation .mainmenu-container .menu-item .icon {
-            margin-right: 24px;
-            width: 16px;
-            position: relative;
-            left: 1px;
-        }
+.navigation .mainmenu-container .menu-item .icon {
+    margin-right: 24px;
+    width: 16px;
+    position: relative;
+    left: 1px;
+}
 
-        .navigation .mainmenu-container .menu-item a {
-            display: table;
-            white-space: nowrap;
-            color: #000000;
-            text-decoration: none;
-            height: 48px;
-            line-height: 48px;
-            width: 100%;
-            min-height: 3rem;
-            background: #F5E6E6;
-            padding: 0 16px;
-        }
+.navigation .mainmenu-container .menu-item a {
+    display: table;
+    white-space: nowrap;
+    color: #000000;
+    text-decoration: none;
+    height: 48px;
+    line-height: 48px;
+    width: 100%;
+    min-height: 3rem;
+    background: #F5E6E6;
+    padding: 0 16px;
+}
 
-            .navigation .mainmenu-container .menu-item a .icon-arrow-right {
-                line-height: 48px;
-                font-size: 17px;
-                transform: rotate(90deg);
-                transition: transform 0.3s ease-out;
-            }
+.navigation .mainmenu-container .menu-item a .icon-arrow-right {
+    line-height: 48px;
+    font-size: 17px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-out;
+}
 
-            .navigation .mainmenu-container .menu-item a.collapsed {
-                background: #fff;
-            }
+.navigation .mainmenu-container .menu-item a.collapsed {
+    background: #fff;
+}
 
-                .navigation .mainmenu-container .menu-item a.collapsed .icon-arrow-right {
-                    transform: rotate(0);
-                }
+.navigation .mainmenu-container .menu-item a.collapsed .icon-arrow-right {
+    transform: rotate(0);
+}
 
-    .navigation .mainmenu-container .sub-menu .sub-menu-item a {
-        color: #555555;
-        display: table;
-        white-space: nowrap;
-        text-decoration: none;
-        padding: 0 5px 0 56px;
-        font-weight: 600;
-        height: 36px;
-        line-height: 36px;
-        width: 195px;
-    }
+.navigation .mainmenu-container .sub-menu .sub-menu-item a {
+    color: #555555;
+    display: table;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0 5px 0 56px;
+    font-weight: 600;
+    height: 36px;
+    line-height: 36px;
+    width: 195px;
+}
 
-    .navigation .mainmenu-container .sub-menu .sub-menu-item:hover a {
-        color: #5c1218;
-    }
+.navigation .mainmenu-container .sub-menu .sub-menu-item:hover a {
+    color: #5c1218;
+}
 
-    .navigation .accountinfo-container {
-        display: none;
-        overflow: hidden;
-    }
+.navigation .accountinfo-container {
+    display: none;
+    overflow: hidden;
+}
 
-        .navigation .accountinfo-container.container {
-            width: 100%;
-        }
+.navigation .accountinfo-container.container {
+    width: 100%;
+}
 
-        .navigation .accountinfo-container .form-group {
-            margin: 0;
-            padding-bottom: 0;
-        }
+.navigation .accountinfo-container .form-group {
+    margin: 0;
+    padding-bottom: 0;
+}
 
-        .navigation .accountinfo-container .icon-user {
-            display: none;
-            position: relative;
-            left: 0;
-        }
+.navigation .accountinfo-container .icon-user {
+    display: none;
+    position: relative;
+    left: 0;
+}
 
-        .navigation .accountinfo-container .info {
-            line-height: 2.5;
-        }
+.navigation .accountinfo-container .info {
+    line-height: 2.5;
+}
 
-            .navigation .accountinfo-container .info p .c-Cyan {
-                cursor: pointer;
-            }
+.navigation .accountinfo-container .info p .c-Cyan {
+    cursor: pointer;
+}
 
-            .navigation .accountinfo-container .info p img {
-                display: none;
-                position: absolute;
-            }
+.navigation .accountinfo-container .info p img {
+    display: none;
+    position: absolute;
+}
 
-                .navigation .accountinfo-container .info p img.active {
-                    display: block;
-                    right: 0;
-                    z-index: 2;
-                    top: 26px;
-                }
+.navigation .accountinfo-container .info p img.active {
+    display: block;
+    right: 0;
+    z-index: 2;
+    top: 26px;
+}
 
-        .navigation.accountinfo-container .input-field {
-            margin-top: 0;
-        }
+.navigation.accountinfo-container .input-field {
+    margin-top: 0;
+}
 
-            .navigation .accountinfo-container .input-field .search, .navigation .accountinfo-container .input-field .inp-value {
-                height: 2rem;
-                margin-bottom: 0;
-            }
+.navigation .accountinfo-container .input-field .search, .navigation .accountinfo-container .input-field .inp-value {
+    height: 2rem;
+    margin-bottom: 0;
+}
 
-                .navigation .accountinfo-container .input-field .search:focus:not([readonly]), .navigation .accountinfo-container .input-field .inp-value:focus:not([readonly]) {
-                    border-bottom: 1px solid #5c1218;
-                    box-shadow: 0 1px 0 0 #5c1218;
-                }
+.navigation .accountinfo-container .input-field .search:focus:not([readonly]), .navigation .accountinfo-container .input-field .inp-value:focus:not([readonly]) {
+    border-bottom: 1px solid #5c1218;
+    box-shadow: 0 1px 0 0 #5c1218;
+}
 
-            .navigation .accountinfo-container .input-field .prefix {
-                top: 9px;
-                right: 10px;
-                font-size: 21px;
-                width: auto;
-            }
+.navigation .accountinfo-container .input-field .prefix {
+    top: 9px;
+    right: 10px;
+    font-size: 21px;
+    width: auto;
+}
 
-                .navigation .accountinfo-container .input-field .prefix.active {
-                    color: #5c1218;
-                }
+.navigation .accountinfo-container .input-field .prefix.active {
+    color: #5c1218;
+}
 
-        .navigation .accountinfo-container .btn-block {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-            position: relative;
-        }
+.navigation .accountinfo-container .btn-block {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    position: relative;
+}
 
-            .navigation .accountinfo-container .btn-block .btn {
-                text-transform: none;
-                padding: 0.4rem 1rem;
-                background: #5c1218;
-                color: #fff;
-                font-size: 13px;
-            }
+.navigation .accountinfo-container .btn-block .btn {
+    text-transform: none;
+    padding: 0.4rem 1rem;
+    background: #5c1218;
+    color: #fff;
+    font-size: 13px;
+}
 
-            .navigation .accountinfo-container .btn-block img {
-                position: absolute;
-                display: none;
-            }
+.navigation .accountinfo-container .btn-block img {
+    position: absolute;
+    display: none;
+}
 
-                .navigation .accountinfo-container .btn-block img.active {
-                    display: block;
-                    right: 0;
-                    z-index: 1;
-                    top: 32px;
-                }
+.navigation .accountinfo-container .btn-block img.active {
+    display: block;
+    right: 0;
+    z-index: 1;
+    top: 32px;
+}
 
-        .navigation .accountinfo-container #downline .row-dowline {
-            line-height: 3;
-            border-bottom: 1px solid #d2d2d2;
-            overflow: hidden;
-        }
+.navigation .accountinfo-container #downline .row-dowline {
+    line-height: 3;
+    border-bottom: 1px solid #d2d2d2;
+    overflow: hidden;
+}
 
-            .navigation .accountinfo-container #downline .row-dowline .value .c-Link:after, .navigation .accountinfo-container #downline .row-dowline .value .c-Red:after {
-                content: "/";
-                color: #111;
-            }
+.navigation .accountinfo-container #downline .row-dowline .value .c-Link:after, .navigation .accountinfo-container #downline .row-dowline .value .c-Red:after {
+    content: "/";
+    color: #111;
+}
 
-        .navigation .accountinfo-container #downline .member-dowline {
-            height: 150px;
-            overflow-y: scroll;
-            overflow-x: hidden;
-        }
+.navigation .accountinfo-container #downline .member-dowline {
+    height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
-            .navigation .accountinfo-container #downline .member-dowline p {
-                line-height: 2.5;
-            }
+.navigation .accountinfo-container #downline .member-dowline p {
+    line-height: 2.5;
+}
 
-        .navigation .accountinfo-container .info-block [type="checkbox"] + label {
-            text-indent: -9999px;
-            padding-left: 0;
-            font-size: 0.5rem;
-        }
+.navigation .accountinfo-container .info-block [type="checkbox"] + label {
+    text-indent: -9999px;
+    padding-left: 0;
+    font-size: 0.5rem;
+}
 
-        .navigation .accountinfo-container .product-block {
-            margin-top: 20px;
-            padding-top: 10px;
-            border-top: 1px solid #d2d2d2;
-        }
+.navigation .accountinfo-container .product-block {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #d2d2d2;
+}
 
-            .navigation .accountinfo-container .product-block .edit-block {
-                display: flex;
-                justify-content: space-between;
-            }
+.navigation .accountinfo-container .product-block .edit-block {
+    display: flex;
+    justify-content: space-between;
+}
 
-                .navigation .accountinfo-container .product-block .edit-block .btnEdit {
-                    padding: 7px 13px;
-                    background: #fff;
-                    color: #045ace;
-                }
+.navigation .accountinfo-container .product-block .edit-block .btnEdit {
+    padding: 7px 13px;
+    background: #fff;
+    color: #045ace;
+}
 
-                .navigation .accountinfo-container .product-block .edit-block .btnShowAll {
-                    padding: 7px 13px;
-                    text-transform: none;
-                    background: #5c1218;
-                    color: #fff;
-                }
+.navigation .accountinfo-container .product-block .edit-block .btnShowAll {
+    padding: 7px 13px;
+    text-transform: none;
+    background: #5c1218;
+    color: #fff;
+}
 
-            .navigation .accountinfo-container .product-block a {
-                padding: 6px 12px;
-                position: relative;
-                font-size: 13px;
-                text-transform: capitalize;
-            }
+.navigation .accountinfo-container .product-block a {
+    padding: 6px 12px;
+    position: relative;
+    font-size: 13px;
+    text-transform: capitalize;
+}
 
-                .navigation .accountinfo-container .product-block a img {
-                    display: none;
-                    position: absolute;
-                    bottom: 30px;
-                    left: -8px;
-                }
+.navigation .accountinfo-container .product-block a img {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    left: -8px;
+}
 
-                .navigation .accountinfo-container .product-block a:focus img, .navigation .accountinfo-container .product-block a:active img {
-                    display: block;
-                    z-index: 2;
-                }
+.navigation .accountinfo-container .product-block a:focus img, .navigation .accountinfo-container .product-block a:active img {
+    display: block;
+    z-index: 2;
+}
 
-        .navigation .accountinfo-container .setting-box {
-            margin-top: 15px;
-        }
+.navigation .accountinfo-container .setting-box {
+    margin-top: 15px;
+}
 
-            .navigation .accountinfo-container .setting-box .btn {
-                width: 100%;
-            }
+.navigation .accountinfo-container .setting-box .btn {
+    width: 100%;
+}
 
-            .navigation .accountinfo-container .setting-box input {
-                color: #fff;
-                background: #5c1218;
-                border: none;
-                border-radius: 3px;
-                font-size: 12px;
-                width: 100%;
-                padding: 8px 0;
-            }
+.navigation .accountinfo-container .setting-box input {
+    color: #fff;
+    background: #5c1218;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    width: 100%;
+    padding: 8px 0;
+}
 
 .left-panel.collapsed .navigation .menu {
     display: none;
