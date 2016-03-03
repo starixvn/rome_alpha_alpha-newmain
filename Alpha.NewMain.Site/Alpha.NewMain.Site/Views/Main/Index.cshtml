@@ -61,7 +61,7 @@
                         <span class="icon icon-extra icon-dots"></span>
                     </div>
                 </div>
-                <div class="mainmenu-container panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <section class="mainmenu-container panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     @foreach (var menu in Model.LeftMenu.MenuList)
                     {
                         <div class="@(menu.ShowSubMenu ? string.Empty : "list-menu") panel panel-default">
@@ -96,22 +96,22 @@
                             }
                         </div>
                     }
-                </div>
+                </section>
 
                 if (Model.LeftMenu.ShowAccountInfo)
                 {                    
-                    <div class="accountinfo-container container">
+                    <section class="accountinfo-container container">
                         <span class="icon icon-user"></span>
                         <iframe src="/@mainSite/_AccountInfo/AccountInfo.aspx?fromNewSite=1" frameborder="0" id="accountinfo-content" scrolling="auto"
                                 name="menu" marginwidth="0" marginheight="0" allowtransparency="yes" class="accinfo-content"></iframe>
-                    </div>
+                    </section>
                 }
             }
         </nav>
     </aside>
     <div class="content-wrapper">
         <header class="header">
-            <div class="header-navigation">
+            <section class="header-navigation">
                 <span class="icon-collapse icon-hamburger icon--m c-White"></span>
                 <ul class="list-top">
                     <li><span class="icon icon-time opacity-80"></span><span class="txt-top" id="clock"></span></li>
@@ -138,8 +138,8 @@
                     </li>
                     <li><span class="icon icon-logout opacity-80"></span></li>
                 </ul>
-            </div>
-            <div class="header-notification">
+            </section>
+            <section class="header-notification">
                 <span class="icon icon-home c-Primary"></span>
                 <div id="marquee">
                     <span id="scroller">
@@ -150,7 +150,7 @@
                     <span class="icon icon-add c-Primary special-message"></span>
                     <div class="email-box private-message"><span class="icon icon-message c-Primary"></span><span class="value">0</span></div>
                 </div>
-            </div>
+            </section>
         </header>
         <section class="content">
             <iframe src="~/@Model.MainPage" frameborder="0" id="@contentFrame" scrolling="auto"
