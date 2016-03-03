@@ -1,7 +1,7 @@
 ﻿.customer-profile {
   background: #5c1218 none repeat scroll 0 0; }
 
-.sidebar .menu li {
+.sidebar .main-tab li {
   background: #5c1218 none repeat scroll 0 0; }
 
 .header-navigation {
@@ -10,6 +10,6 @@
 .c-Primary {
   color: #5c1218; }
 
-.sidebar .menu li.active a {
+.sidebar .main-tab li.active a {
   color: #5c1218; }
 

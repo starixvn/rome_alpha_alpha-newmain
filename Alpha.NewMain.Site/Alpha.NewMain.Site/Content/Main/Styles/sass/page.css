@@ -100,7 +100,7 @@ body {
         float: left;
         margin: 12px;
         cursor: pointer; }
-      .sidebar.collapsed:hover .menu, .sidebar.collapsed:hover .userinfo, .sidebar.collapsed:hover .accinfo-content, .sidebar.collapsed:hover .menu-item a .icon-arrow-right, .sidebar.collapsed:hover .panel-collapse .sub-menu,
+      .sidebar.collapsed:hover .main-tab, .sidebar.collapsed:hover .userinfo, .sidebar.collapsed:hover .accinfo-content, .sidebar.collapsed:hover .menu-item a .icon-arrow-right, .sidebar.collapsed:hover .panel-collapse .sub-menu,
       .sidebar.collapsed:hover .list-menu .menu-item .txt-item, .sidebar.collapsed:hover list-menu .menu-item i {
         display: block; }
       .sidebar.collapsed:hover .extra-box, .sidebar.collapsed:hover .icon-user {
