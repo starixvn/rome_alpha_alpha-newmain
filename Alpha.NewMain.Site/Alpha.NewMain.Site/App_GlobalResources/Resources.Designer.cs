@@ -533,6 +533,15 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your statistics.
+        /// </summary>
+        public static string statistics {
+            get {
+                return ResourceManager.GetString("statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, You don&apos;t have permission to access this page..
         /// </summary>
         public static string strNotAccessPage {
@@ -763,15 +772,6 @@ namespace Alpha.NewMain.Site.App_GlobalResources {
         public static string yesterdayWinLoss {
             get {
                 return ResourceManager.GetString("yesterdayWinLoss", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Your statistics.
-        /// </summary>
-        public static string yourStatistics {
-            get {
-                return ResourceManager.GetString("yourStatistics", resourceCulture);
             }
         }
     }

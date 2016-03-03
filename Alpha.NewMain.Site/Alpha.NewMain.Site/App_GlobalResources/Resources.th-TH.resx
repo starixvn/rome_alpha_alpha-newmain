@@ -301,7 +301,7 @@
   <data name="totalP2PTransferOutstanding" xml:space="preserve">
     <value>ยอด โอน / คงค้าง ในPoker ทั้งหมด</value>
   </data>
-  <data name="yourStatistics" xml:space="preserve">
+  <data name="statistics" xml:space="preserve">
     <value>สถิติของคุณ</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">

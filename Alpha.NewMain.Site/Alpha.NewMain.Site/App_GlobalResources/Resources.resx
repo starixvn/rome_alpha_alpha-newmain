@@ -301,7 +301,7 @@
   <data name="totalP2PTransferOutstanding" xml:space="preserve">
     <value>Total Poker Transfer|Outstanding</value>
   </data>
-  <data name="yourStatistics" xml:space="preserve">
+  <data name="statistics" xml:space="preserve">
     <value>Your statistics</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">

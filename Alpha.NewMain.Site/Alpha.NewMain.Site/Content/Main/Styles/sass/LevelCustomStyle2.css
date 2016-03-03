@@ -1,0 +1,15 @@
+﻿.customer-profile {
+  background: #37587d none repeat scroll 0 0; }
+
+.sidebar .menu li {
+  background: #37587d none repeat scroll 0 0; }
+
+.header-navigation {
+  background: #516e8e url("Images/headerbg_2.jpg") no-repeat scroll 0 0; }
+
+.c-Primary {
+  color: #37587d; }
+
+.sidebar .menu li.active a {
+  color: #37587d; }
+

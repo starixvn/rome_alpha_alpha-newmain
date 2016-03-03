@@ -38,10 +38,9 @@
         private static void RegisterMainStyle(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/bundle/styles/main")
-                .Include("~/Content/Main/Styles/css/page.css", new CssRewriteUrlTransformWrapper())
-                .Include("~/Content/Main/Styles/css/Dashboard.css", new CssRewriteUrlTransformWrapper())
-                .Include("~/Content/Main/Styles/css/PopupMessage.css", new CssRewriteUrlTransformWrapper())
-                .Include("~/Content/Main/Styles/css/LeftMenu.css", new CssRewriteUrlTransformWrapper())
+                .Include("~/Content/Main/Styles/sass/page.css", new CssRewriteUrlTransformWrapper())
+                .Include("~/Content/Main/Styles/sass/Dashboard.css", new CssRewriteUrlTransformWrapper())
+                .Include("~/Content/Main/Styles/sass/PopupMessage.css", new CssRewriteUrlTransformWrapper())
                 .Include("~/Content/CustomerProfile/Styles/css/CustomerProfile.css", new CssRewriteUrlTransformWrapper())
                 .Include("~/Content/Announcement/Styles/css/Announcements.css", new CssRewriteUrlTransformWrapper()));
         }

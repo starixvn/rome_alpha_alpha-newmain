@@ -136,17 +136,17 @@ var DashboardManager = function () {
             }
         );
 
-        $('.menu li').click(function () {
+        $('.main-tab li').click(function () {
             var $this = $(this);
             var cla = $(this).attr('class');
             if ($this.hasClass('mainmenu')) {
-                $('.menu li').removeClass('active');
+                $('.main-tab li').removeClass('active');
                 $(this).addClass('active');
                 $('.mainmenu-container').css('display', 'block');
                 $('.accountinfo-container').css('display', 'none');
             }
             else if ($this.hasClass('accountinfo')) {
-                $('.menu li').removeClass('active');
+                $('.main-tab li').removeClass('active');
                 $(this).addClass('active');
                 $('.accountinfo-container').css('display', 'block');
                 $('.mainmenu-container').css('display', 'none');
@@ -364,7 +364,7 @@ var DashboardManager = function () {
 
                     if ((publicMessage[msgId] != null) && (publicMessageId != publicMessage[msgId])) {
                         $('#live-message').html(publicMessage[msgContent]);
-                        $('#text-news-out').click(function () {
+                        $('#marquee').click(function () {
                             self.changeMenu(url);
                         });
 
@@ -404,18 +404,18 @@ var DashboardManager = function () {
         });
     };
     self.collapseLeftPanel = function (collapseButton) {
-        var leftPanel  = jQuery('.left-panel');
-        var rightPanel = jQuery('.right-panel');
+        var sidebar = jQuery('.sidebar');
+        var content = jQuery('.content-wrapper');
 
-        var isCollapse = leftPanel.hasClass('collapsed');
+        var isCollapse = sidebar.hasClass('collapsed');
         if (isCollapse) {
-            leftPanel.removeClass('collapsed');
-            rightPanel.removeClass('expanded');
+            sidebar.removeClass('collapsed');
+            content.removeClass('expanded');
             jQuery("#logoProfileImg").removeClass("collapse-image");
            
         } else {
-            leftPanel.addClass('collapsed');
-            rightPanel.addClass('expanded');
+            sidebar.addClass('collapsed');
+            content.addClass('expanded');
             jQuery("#logoProfileImg").addClass("collapse-image");          
           
         }
@@ -470,7 +470,7 @@ var DashboardManager = function () {
             }
         };
 
-        var text_news = $('#text-news-out')[0];
+        var text_news = $('#marquee')[0];
         self.data.maskWidth = parseInt(text_news.offsetWidth);
 
         self.scrollMessage();

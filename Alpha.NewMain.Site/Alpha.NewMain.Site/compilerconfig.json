@@ -1,0 +1,26 @@
+﻿[
+  {
+    "outputFile": "Content/Main/Styles/sass/page.css",
+    "inputFile": "Content/Main/Styles/sass/page.scss"
+  },
+  {
+    "outputFile": "Content/Main/Styles/sass/LevelCustomStyle2.css",
+    "inputFile": "Content/Main/Styles/sass/LevelCustomStyle2.scss"
+  },
+  {
+    "outputFile": "Content/Main/Styles/sass/LevelCustomStyle3.css",
+    "inputFile": "Content/Main/Styles/sass/LevelCustomStyle3.scss"
+  },
+  {
+    "outputFile": "Content/Main/Styles/sass/LevelCustomStyle4.css",
+    "inputFile": "Content/Main/Styles/sass/LevelCustomStyle4.scss"
+  },
+  {
+    "outputFile": "Content/Main/Styles/sass/dashboard.css",
+    "inputFile": "Content/Main/Styles/sass/dashboard.scss"
+  },
+  {
+    "outputFile": "Content/Main/Styles/sass/PopupMessage.css",
+    "inputFile": "Content/Main/Styles/sass/PopupMessage.scss"
+  }
+]

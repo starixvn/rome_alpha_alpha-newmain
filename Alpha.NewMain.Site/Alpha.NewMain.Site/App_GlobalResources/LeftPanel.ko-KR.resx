@@ -327,7 +327,7 @@
   <data name="viewLog" xml:space="preserve">
     <value>로그인 보기</value>
   </data>
-  <data name="yourStatistics" xml:space="preserve">
+  <data name="statistics" xml:space="preserve">
     <value>통계</value>
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">

@@ -294,7 +294,7 @@
   <data name="totalP2PTransferOutstanding" xml:space="preserve">
     <value>Tổng số tiền chuyển khoản /chưa xử lý bên Poker</value>
   </data>
-  <data name="yourStatistics" xml:space="preserve">
+  <data name="statistics" xml:space="preserve">
     <value>Thống kê của bạn</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">

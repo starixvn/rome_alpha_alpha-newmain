@@ -301,7 +301,7 @@
   <data name="totalP2PTransferOutstanding" xml:space="preserve">
     <value>총 Poker 전송/대기중인 금액</value>
   </data>
-  <data name="yourStatistics" xml:space="preserve">
+  <data name="statistics" xml:space="preserve">
     <value>통계</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">

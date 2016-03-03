@@ -462,10 +462,6 @@
     <Content Include="Content\Images\icon_user_default.png" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Main\Styles\css\Dashboard.css" />
-    <Content Include="Content\Main\Styles\css\LeftMenu.css" />
-    <Content Include="Content\Main\Styles\css\LevelCustomStyle2.css" />
-    <Content Include="Content\Main\Styles\css\LevelCustomStyle3.css" />
-    <Content Include="Content\Main\Styles\css\LevelCustomStyle4.css" />
     <Content Include="Content\Main\Styles\css\page.css" />
     <Content Include="Content\Main\Styles\css\PopupMessage.css" />
     <Content Include="Content\Main\Styles\Images\headerbg_2.jpg" />
@@ -479,6 +475,30 @@
     <Content Include="Content\Main\Styles\Images\tooltip_bg.png" />
     <Content Include="Content\Main\Styles\Images\tooltip_left.png" />
     <Content Include="Content\Main\Styles\Images\tooltip_right.png" />
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle2.css">
+      <DependentUpon>LevelCustomStyle2.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle2.min.css">
+      <DependentUpon>LevelCustomStyle2.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle3.css">
+      <DependentUpon>LevelCustomStyle3.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle3.min.css">
+      <DependentUpon>LevelCustomStyle3.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle4.css">
+      <DependentUpon>LevelCustomStyle4.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle4.min.css">
+      <DependentUpon>LevelCustomStyle4.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\page.css">
+      <DependentUpon>page.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\page.min.css">
+      <DependentUpon>page.css</DependentUpon>
+    </Content>
     <Content Include="Content\Report\PortalPage\Styles\css\Announcement.css" />
     <Content Include="Content\Report\PortalPage\Styles\css\BalanceInfo.css" />
     <Content Include="Content\Report\PortalPage\Styles\css\PortalPage.css" />
@@ -515,6 +535,13 @@
     <Content Include="Views\Report\PortalPage.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
     <Content Include="Views\Statistics\Index.cshtml" />
+    <Content Include="Content\Main\Styles\sass\page.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\Main\Styles\sass\dashboard.scss" />
+    <Content Include="Content\Main\Styles\sass\PopupMessage.scss" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -747,11 +774,15 @@
     <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-CN.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Resources.zh-CN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-TW.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Resources.zh-TW.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Resources.zh-TW.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Resources.ja-JP.resx">

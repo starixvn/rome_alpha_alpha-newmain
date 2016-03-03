@@ -2,17 +2,6 @@
     cursor: pointer;
 }
 
-#popup-top .button-close {
-    width: 14px;
-    height: 14px;
-    border: none;
-}
-
-#popup-top .popup-content {
-    height: 60px;
-    width: auto;
-}
-
 #popup-top {
     color: #000000;
     background-color: #ffffde;
@@ -29,6 +18,15 @@
     -khtml-opacity: 0.95;
     opacity: 0.95;
     overflow: hidden;
+    .button-close {
+        width: 14px;
+        height: 14px;
+        border: none;
+    }
+    .popup-content {
+        height: 60px;
+        width: auto;
+    }
 }
 
 #popup-line {
@@ -65,7 +63,7 @@ div.messageBlock {
     white-space: nowrap;
 }
 
-#text-news-out {
+#marquee {
     overflow: hidden;
     position: absolute;
     width: 94%;

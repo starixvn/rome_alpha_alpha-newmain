@@ -19,7 +19,7 @@
         <siteMapNode title="matchWinLostDetail" href="site-main/_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
         <siteMapNode title="winlossanalysis" href="site-main/_Reports/WinlossAnalysis/Daily_WinlossAnalysisAgent.aspx"></siteMapNode>
    
-        <siteMapNode description="Consolidated" title="consolidatedreport" href="site-main/report/consolidate/index"></siteMapNode>
+        <siteMapNode description="Consolidated" title="consolidatedreport" href="site-main/report/consolidate/index" ></siteMapNode>
 
         <siteMapNode title="winLossByBettype" href="site-main/_Reports/Winloss/WinLossByBettypeAgent.aspx"></siteMapNode>
         <siteMapNode title="commissionByBettype" href="site-main/Report/CommissionByBetType"></siteMapNode>
@@ -100,7 +100,7 @@
         <siteMapNode title="special" href="site-main/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
         <siteMapNode title="personalMessage" href="site-main/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
       </siteMapNode>
-      <siteMapNode title="yourStatistics" href="/site-newmain/Statistics/Index"></siteMapNode>
+      <siteMapNode title="statistics" href="/site-newmain/Statistics/Index"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode title="Master">
@@ -194,7 +194,7 @@
         <siteMapNode title="special" href="site-main/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
         <siteMapNode title="personalMessage" href="site-main/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
       </siteMapNode>
-      <siteMapNode title="yourStatistics" href="/site-newmain/Statistics/Index"></siteMapNode>
+      <siteMapNode title="statistics" href="/site-newmain/Statistics/Index"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode title="Super">
@@ -287,7 +287,7 @@
         <siteMapNode title="special" href="site-main/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
         <siteMapNode title="personalMessage" href="site-main/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
       </siteMapNode>
-      <siteMapNode title="yourStatistics" href="/site-newmain/Statistics/Index"></siteMapNode>
+      <siteMapNode title="statistics" href="/site-newmain/Statistics/Index"></siteMapNode>
     </siteMapNode>
   </siteMapNode>
 </siteMap>

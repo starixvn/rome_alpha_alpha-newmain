@@ -327,7 +327,7 @@
   <data name="viewLog" xml:space="preserve">
     <value>察看日志</value>
   </data>
-  <data name="yourStatistics" xml:space="preserve">
+  <data name="statistics" xml:space="preserve">
     <value>您的統計</value>
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">

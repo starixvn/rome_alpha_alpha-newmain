@@ -26,11 +26,10 @@
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/bootstrap-material-design.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/ripples.min.css">
-    <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/iconMoon/style.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/Iconalpha/style.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/reset.css">
     @Styles.Render("~/bundle/styles/main")
-    <link type="text/css" rel="stylesheet" href="~/@("Content/Main/Styles/css/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
+    <link type="text/css" rel="stylesheet" href="~/@("Content/Main/Styles/sass/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
 </head>
 <body>
     <div id="popup-top" class="display-none">
@@ -44,13 +43,13 @@
             <div id="popup-contents-2" class="messageBlock"></div>
         </div>
     </div>
-    <div class="left-panel">
+    <aside class="sidebar">
         <div class="customer-profile" id="profile"></div>
-        <div class="navigation">
+        <nav class="navigation">
             @if (Model.LeftMenu.IsShowMenu)
             {
-                <div class="mainmenu">
-                    <ul class="menu">
+                <div>
+                    <ul class="main-tab">
                         <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
                         <li class="accountinfo  @(Model.LeftMenu.ShowAccountInfo ? string.Empty : "disabledView")">
                             <a href="javascript:;">
@@ -71,7 +70,7 @@
                                    class="@(menu.ShowSubMenu ? string.Empty : "collapsed")  @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
                                    @(string.IsNullOrEmpty(menu.Url) ? "href=" + "javascript:;" : "href=" + menu.Url + " target=" + contentFrame)
                                    data-menugroup="menu-@menu.Id">
-                                    <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey">&nbsp;</span>@menu.Title</span>
+                                    <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()">&nbsp;</span>@menu.Title</span>
                                     @if (menu.SubMenu != null && menu.SubMenu.Any())
                                     {
                                         <span class="pull-right icon-arrow-right"></span>
@@ -108,11 +107,11 @@
                     </div>
                 }
             }
-        </div>
-    </div>
-    <div class="right-panel">
-        <div class="header">
-            <div class="header-row1">
+        </nav>
+    </aside>
+    <div class="content-wrapper">
+        <header class="header">
+            <div class="header-navigation">
                 <span class="icon-collapse icon-hamburger icon--m c-White"></span>
                 <ul class="list-top">
                     <li><span class="icon icon-time opacity-80"></span><span class="txt-top" id="clock"></span></li>
@@ -140,25 +139,23 @@
                     <li><span class="icon icon-logout opacity-80"></span></li>
                 </ul>
             </div>
-            <div class="header-row2">
-                <div class="live-status">
-                    <span class="icon icon-home c-Primary"></span>
-                    <div id="text-news-out">
-                        <span id="scroller">
-                            <span id="live-message" class="maquee live-message"></span>
-                        </span>
-                    </div>
+            <div class="header-notification">
+                <span class="icon icon-home c-Primary"></span>
+                <div id="marquee">
+                    <span id="scroller">
+                        <span id="live-message" class="maquee live-message"></span>
+                    </span>
                 </div>
-                <div class="botom-right">
+                <div class="nav-iconbox">
                     <span class="icon icon-add c-Primary special-message"></span>
                     <div class="email-box private-message"><span class="icon icon-message c-Primary"></span><span class="value">0</span></div>
                 </div>
             </div>
-        </div>
-        <div class="right-content">
+        </header>
+        <section class="content">
             <iframe src="~/@Model.MainPage" frameborder="0" id="@contentFrame" scrolling="auto"
                     name="main" marginwidth="0" marginheight="0" allowtransparency="yes" class="iframe-content"></iframe>
-        </div>
+        </section>
     </div>
 
     <script type="text/javascript" src="/@contentSite/libs/jquery/jquery-1.11.3.min.js"></script>

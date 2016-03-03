@@ -1,14 +1,14 @@
 ﻿@import 'Variables_Level4.scss';
 
-.header {
+.customer-profile {
     background: $text-color none repeat scroll 0 0;
 }
 
-.content-left .menu li {
+.sidebar .menu li {
     background: $text-color none repeat scroll 0 0;
 }
 
-.header-right-top {
+.header-navigation {
     background: $background-color url($header-background) no-repeat scroll 0 0;
 }
 
@@ -16,6 +16,6 @@
     color: $text-color;
 }
 
-.content-left .menu li.active a {
+.sidebar .menu li.active a {
     color: $text-color;
 }

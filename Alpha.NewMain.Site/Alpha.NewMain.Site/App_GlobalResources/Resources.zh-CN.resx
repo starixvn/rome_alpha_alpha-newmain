@@ -301,7 +301,7 @@
   <data name="totalP2PTransferOutstanding" xml:space="preserve">
     <value>到扑克的总转账额|未完成交易额</value>
   </data>
-  <data name="yourStatistics" xml:space="preserve">
+  <data name="statistics" xml:space="preserve">
     <value>您的统计</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">
