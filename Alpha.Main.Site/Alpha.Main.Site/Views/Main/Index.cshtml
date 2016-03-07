@@ -1,0 +1,205 @@
+﻿@using Sunplus.Agent.Model.Entities;
+@using Alpha.Main.Site.App_GlobalResources;
+@using Alpha.Main.Site.Models.Views;
+@using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
+@using SiteServices = Alpha.Main.Site.Services;
+@using Sunplus.Agent.Model.Entities;
+@using System.Web.Optimization;
+@model MainIndexViewModel
+@{
+    Layout = "";
+    var contentSite = SiteServices.AppSettings.ContentSite;
+    var oldMainSite = SiteServices.AppSettings.OldMainSite;
+    var currentUserSession = UserSession.Current;
+    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+    var contentFrame = "main";
+
+    var baseOldMainSite = Model.BaseUrl.Replace("/site-main/", "/" + oldMainSite + "/");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/bootstrap-material-design.css">
+    <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/ripples.min.css">
+    <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/Iconalpha/style.css">
+    <link type="text/css" rel="stylesheet" href="/@contentSite/css/reset.css">
+    @Styles.Render("~/bundle/styles/main")
+    <link type="text/css" rel="stylesheet" href="~/@("Content/Main/Styles/sass/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
+</head>
+<body>
+    <div id="popup-top" class="display-none">
+        <div id="popup-line">
+            <a class="top-message">
+                <img src="~/Content/Main/Styles/Images/icon_close.jpg" class="button-close" alt="@Resources.close" title="@Resources.close" />
+            </a>
+        </div>
+        <div class="popup-content">
+            <div id="popup-contents" class="messageBlock"></div>
+            <div id="popup-contents-2" class="messageBlock"></div>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <div class="customer-profile" id="profile"></div>
+        <nav class="navigation">
+            @if (Model.LeftMenu.IsShowMenu)
+            {
+                <div>
+                    <ul class="main-tab">
+                        <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
+                        <li class="accountinfo  @(Model.LeftMenu.ShowAccountInfo ? string.Empty : "disabledView")">
+                            <a href="javascript:;">
+                                @(Model.LeftMenu.ShowAccountInfo ? Resources.accountInfo : string.Empty)
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="extra-box">
+                        <span class="icon icon-extra icon-dots"></span>
+                    </div>
+                </div>
+                <section class="mainmenu-container panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    @foreach (var menu in Model.LeftMenu.MenuList)
+                    {
+                        <div class="@(menu.ShowSubMenu ? string.Empty : "list-menu") panel panel-default">
+                            <div class="menu-item  panel-heading" role="tab" id="heading-@menu.Id">
+                                <a role="button"
+                                   class="@(menu.ShowSubMenu ? string.Empty : "collapsed")  @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
+                                   @(string.IsNullOrEmpty(menu.Url) ? "href=" + "javascript:;" : "href=" + menu.Url + " target=" + contentFrame)
+                                   data-menugroup="menu-@menu.Id">
+                                    <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()">&nbsp;</span>@menu.Title</span>
+                                    @if (menu.SubMenu != null && menu.SubMenu.Any())
+                                    {
+                                        <span class="pull-right icon-arrow-right"></span>
+                                    }
+                                </a>
+                            </div>
+                            @if (menu.SubMenu != null && menu.SubMenu.Any())
+                            {
+                                <div id="collapse-@menu.Id"
+                                     class="panel-collapse @(menu.ShowSubMenu ? string.Empty : "collapse") collapsible-body sub-menu"
+                                     data-menugroup="menu-@menu.Id">
+                                    <ul class="sub-menu">
+                                        @foreach (var subMenu in menu.SubMenu)
+                                        {
+                                            <li class="sub-menu-item">
+                                                <a @(string.IsNullOrEmpty(subMenu.Url) ? "href=" + "javascript:;" : "href=" + subMenu.Url + " target=" + contentFrame)>
+                                                    @subMenu.Title
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                    }
+                </section>
+
+                if (Model.LeftMenu.ShowAccountInfo)
+                {                    
+                    <section class="accountinfo-container container">
+                        <span class="icon icon-user"></span>
+                        <iframe src="/@oldMainSite/_AccountInfo/AccountInfo.aspx?fromNewSite=1" frameborder="0" id="accountinfo-content" scrolling="auto"
+                                name="menu" marginwidth="0" marginheight="0" allowtransparency="yes" class="accinfo-content"></iframe>
+                    </section>
+                }
+            }
+        </nav>
+    </aside>
+    <div class="content-wrapper">
+        <header class="header">
+            <section class="header-navigation">
+                <span class="icon-collapse icon-hamburger icon--m c-White"></span>
+                <ul class="list-top">
+                    <li><span class="icon icon-time opacity-80"></span><span class="txt-top" id="clock"></span></li>
+                    <li>
+                        <span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>
+                        <span class="language-text language-selector"></span>
+                        <ul class="list-language">
+                            @foreach (var language in Model.Languages)
+                            {
+                                <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li><span class="icon icon-swap-horizontal opacity-80" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
+                    <li>
+                        <span class="icon icon-squares opacity-80 top-right-menu"></span>
+                        <ul class="list-setting">
+                            <li><a href="/@oldMainSite/_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/Company/ContactUs/Index'); dashboardManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
+                            <li><a href="/@oldMainSite/ContextualCustomer/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/_MemberInfo/ChangePassword/ChangePassword.aspx'); dashboardManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
+                        </ul>
+                    </li>
+                    <li><span class="icon icon-logout opacity-80"></span></li>
+                </ul>
+            </section>
+            <section class="header-notification">
+                <span class="icon icon-home c-Primary"></span>
+                <div id="marquee">
+                    <span id="scroller">
+                        <span id="live-message" class="maquee live-message"></span>
+                    </span>
+                </div>
+                <div class="nav-iconbox">
+                    <span class="icon icon-add c-Primary special-message"></span>
+                    <div class="email-box private-message"><span class="icon icon-message c-Primary"></span><span class="value">0</span></div>
+                </div>
+            </section>
+        </header>
+        <section class="content">
+            <iframe src="@Model.MainPage" frameborder="0" id="@contentFrame" scrolling="auto"
+                    name="main" marginwidth="0" marginheight="0" allowtransparency="yes" class="iframe-content"></iframe>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="/@contentSite/libs/jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/@contentSite/css/bootstrap/js/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/scripts/main")
+    @if (AlphaDefinitions.AppSettings.PiwikEnable)
+    {
+        <script type="text/javascript">
+            var _pkUrl = '@AlphaDefinitions.AppSettings.PiwikUrl',
+                _pkScript = '@AlphaDefinitions.AppSettings.PiwikScript',
+                _pkSiteId = '@AlphaDefinitions.AppSettings.PiwikSiteId';
+        </script>
+        <script type="text/javascript" src="~/Views/Main/Scripts/piwikLoader.js"></script>
+        <noscript><p><img src="@AlphaDefinitions.AppSettings.PiwikUrl?idsite=@AlphaDefinitions.AppSettings.PiwikSiteId" style="border:0;" alt="" /></p></noscript>
+    }
+
+    <script type="text/javascript">
+        var baseMainSite='@Model.BaseUrl';
+        var baseOldMainSite='@baseOldMainSite';
+        var start = baseMainSite.indexOf('//') + 2;
+        window.document.title = baseMainSite.substr(start, baseMainSite.length - start - 1);
+        window.passwordHash = '@Model.PasswordHash';
+
+        var rootUrl = '@Url.Content("~")';
+        var oldMainSite = '@oldMainSite';
+        var contentFrame = "@contentFrame";
+        var _resources = {
+            language: '@currentUserSession.Language',
+            onUserId: '@currentUserSession.OnUserId',
+            cookieCurrentURLKey: '@Model.CookieCurrentURLKey',
+            baseUrl: '@Model.BaseUrl',
+            msgList: @Html.Raw(serializer.Serialize(Model.HotMessages)),
+
+            months:@Html.Raw(serializer.Serialize(Model.MonthNames)),
+            year: @DateTime.Now.Year,
+            month:@DateTime.Now.Month,
+            day:@DateTime.Now.Day,
+            hrs:@DateTime.Now.Hour,
+            min:@DateTime.Now.Minute,
+            sec:@DateTime.Now.Second,
+            PM:'@Resources.PM',
+            AM:'@Resources.AM'
+        };
+
+    </script>
+</body>
+</html>

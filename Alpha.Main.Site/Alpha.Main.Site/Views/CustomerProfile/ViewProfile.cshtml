@@ -1,0 +1,88 @@
+@using Sunplus.Agent.Model.Entities;
+@using Alpha.Main.Site.App_GlobalResources;
+@using Alpha.Main.Site.Services;
+@{
+    Layout = "";
+    var currentUserSession = UserSession.Current;
+    string displayProfile = string.Empty;
+    var contentFrame = "main";
+    var isShowEditProfilePictureTooltip = Model.IsDefaultAvatar && Model.CountNicknameTooltip < 4;
+    var oldMainSite = AppSettings.OldMainSite;
+
+    var changeNicknameLink = string.Format("/{0}/LoginOption?custId={1}", oldMainSite, currentUserSession.CustId);
+}
+<div id="profile-content">
+    <a href="/@oldMainSite/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame" class="profile-avatar">
+        <img id="logoProfileImg" src='@Model.EmbedImage' alt="" title="@Resources.ProfileClickTootip" />
+    </a>
+
+    <div class="userinfo">
+        @if (currentUserSession.IsSubAcc)
+        {
+            <span class="userName">@HttpUtility.HtmlEncode(currentUserSession.UserName)</span>
+            <br />
+            <div class="adminAndSubAcc">@Html.Raw(Resources.subAcc + " " + HttpUtility.HtmlEncode(currentUserSession.SubUserName))</div>
+        }
+        else if (currentUserSession.IsInternal)
+        {
+            <span class="userName">@HttpUtility.HtmlEncode(currentUserSession.UserName)</span>
+            <br />
+            <div class="adminAndSubAcc">@Html.Raw(Resources.admin + " " + HttpUtility.HtmlEncode(currentUserSession.AdminName))</div>
+        }
+        else
+        {
+            <span class="userName">@HttpUtility.HtmlEncode(currentUserSession.UserName)</span>
+            <br />
+            if (!string.IsNullOrEmpty(currentUserSession.NickName))
+            {
+                <div class="nickname-box">
+                    <a href="@changeNicknameLink" class="linkNickName" id="linkNickNameID" target="@contentFrame">
+                        <span id="labelNickname">@currentUserSession.NickName</span>
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="nickname-box">
+                    <span id="spanNickNameID">@Resources.nickname: </span><a href="@changeNicknameLink" class="linkConfigNow" id="linkNickNameID" target="@contentFrame">
+                        <span id="labelNickname">@Resources.configNow</span>
+                    </a>
+                </div>
+                if (Model.CountNicknameTooltip < 4)
+                {
+                    displayProfile = "none";
+                    <div id="tooltip-box">
+                        <div class="left">
+                        </div>
+                        <div class="bg">
+                            <div class="normal">
+                                <div class="introNickname">
+                                    @Html.Raw(Resources.introNickname)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                        </div>
+                    </div>
+                }
+            }
+
+            if (isShowEditProfilePictureTooltip)
+            {
+                <div id="profileTooltip" style="display:@displayProfile;">
+                    <div class="left">
+                    </div>
+                    <div class="bg">
+                        <div class="normal">
+                            <div class="tooltip-content">
+                                @Html.Raw(@Resources.ProfileLoginTip)<a class="change-picture-link" href="/@oldMainSite/ProfilePicture?custId=@currentUserSession.CustId" target="main">@Resources.clickHere</a>&nbsp;@Resources.uploadNow
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

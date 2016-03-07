@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="AGE">
+
+    <siteMapNode title="Agent">
+      <!--Report-->
+      <siteMapNode title="reports">
+        <siteMapNode title="memberWinLoss" href="site-oldmain/_Reports/Common/MatchResultEntered.aspx"></siteMapNode>
+        <siteMapNode title="memberwinlossdetail" href="site-oldmain/_Reports/Winloss/WinLossDetailAgent.aspx"></siteMapNode>
+
+        <siteMapNode title="memberOutstanding" href="site-oldmain/_Reports/Common/Outstanding.aspx"></siteMapNode>
+        <!--Casino-RealTimeWL-->
+        <siteMapNode description="cs" title="realTimeCSWinloss" href="site-oldmain/_Reports/CasinoWinloss/CSWinlossAgent.aspx"></siteMapNode>
+        <!--/Casino-RealTimeWL-->
+        <!--Bingo-RealTimeWL-->
+        <siteMapNode description="bg" title="realTimeBingoWinloss" href="site-oldmain/_Reports/BingoWinloss/BingoWinlossAgent.aspx"></siteMapNode>
+        <!--/Bingo-RealTimeWL-->
+        <siteMapNode title="matchwinloss" href="site-oldmain/_Reports/MatchWinloss/MatchWinLoss.aspx"></siteMapNode>
+        <siteMapNode title="matchWinLostDetail" href="site-oldmain/_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
+        <siteMapNode title="winlossanalysis" href="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisAgent.aspx"></siteMapNode>
+   
+        <siteMapNode description="Consolidated" title="consolidatedreport" href="site-oldmain/report/consolidate/index" ></siteMapNode>
+
+        <siteMapNode title="winLossByBettype" href="site-oldmain/_Reports/Winloss/WinLossByBettypeAgent.aspx"></siteMapNode>
+        <siteMapNode title="commissionByBettype" href="site-oldmain/Report/CommissionByBetType"></siteMapNode>
+        <!--HR-->
+        <siteMapNode description="hr" title="commssionhorseracing" href="site-oldmain/_Reports/Commission/HRCommission.aspx"></siteMapNode>
+        <!--/HR-->
+        <siteMapNode title="cancelledBets" href="site-oldmain/_Reports/BetList/CancelBetList.aspx"></siteMapNode>
+        <siteMapNode description="LastBetMonitoring" title="monitor" href="site-oldmain/_Reports/LastBetMonitoring/LastBetMonitoring.aspx"></siteMapNode>
+        <!--Statement-->
+        <siteMapNode title="statement" href="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=2&amp;rptmrange=5"></siteMapNode>
+        <!--/Statement-->
+        <!--Foobet-->
+        <siteMapNode title="foobet" href="site-oldmain/Report/Foobet"></siteMapNode>
+        <!--/Foobet-->
+        <siteMapNode title="result" href="~/Normal" microSite="true" microSiteNameSettingKey="ResultSiteVirtualPath"></siteMapNode>
+        <siteMapNode title="winLossAnalysisChart" href="site-oldmain/_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
+      </siteMapNode>
+      <!--/Report-->
+      <!--Totalbets-->
+      <siteMapNode title="totalbets">
+        <siteMapNode title="HOUL" href="site-oldmain/_TotalBets/HDPOU.aspx"></siteMapNode>
+        <siteMapNode title="moneyline" href="site-oldmain/_TotalBets/MoneyLine.aspx"></siteMapNode>
+        <siteMapNode title="OE1x2DND" href="site-oldmain/_TotalBets/OddEven1x2.aspx"></siteMapNode>
+        <siteMapNode title="correctscore" href="site-oldmain/_BetList/BetList.aspx?type=CorrectScore"></siteMapNode>
+        <siteMapNode title="fthttotalgoal" href="site-oldmain/_TotalBets/TotalGoal.aspx"></siteMapNode>
+        <siteMapNode title="parlay" href="site-oldmain/_BetList/BetList.aspx?type=MixParlay"></siteMapNode>
+        <siteMapNode title="outRight" href="site-oldmain/_TotalBets/OutRight.aspx"></siteMapNode>
+        <siteMapNode title="htft" href="site-oldmain/_TotalBets/HTFT.aspx"></siteMapNode>
+        <siteMapNode title="fthtfglg" href="site-oldmain/_TotalBets/FGLG.aspx"></siteMapNode>
+        <siteMapNode title="bettype13" href="site-oldmain/_BetList/BetList.aspx?bettype=13&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="bettype24" href="site-oldmain/_BetList/BetList.aspx?bettype=24&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="homeDrawAwayNoBet" href="site-oldmain/_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
+        <siteMapNode title="bettype26" href="site-oldmain/_BetList/BetList.aspx?bettype=26&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="bettype27" href="site-oldmain/_BetList/BetList.aspx?bettype=27&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="bettype28" href="site-oldmain/_BetList/BetList.aspx?bettype=28&amp;type=Bettype"></siteMapNode>
+        <!--NG-->
+        <siteMapNode description="numbergame" title="numbergame" href="site-oldmain/_TotalBets/NumberGame.aspx"></siteMapNode>
+        <!--/NG-->
+        <!--HR-->
+        <siteMapNode description="hr" title="hr" href="site-oldmain/_TotalBets/Racing.aspx"></siteMapNode>
+        <!--/HR-->
+      </siteMapNode>
+      <!--/Totalbets-->
+      <!--Forecast-->
+      <siteMapNode title="forecast">
+        <siteMapNode title="HOUL" href="site-oldmain/_Forecast/FCHDPOU.aspx"></siteMapNode>
+        <siteMapNode title="lbl1x2" href="site-oldmain/_Forecast/FC1X2.aspx"></siteMapNode>
+        <siteMapNode description="ScoreMap" title="scoreMap" href="site-oldmain/ForecastScoreMap/Index"></siteMapNode>
+      </siteMapNode>
+      <!--/Forecast-->
+      <!--MemberInfo-->
+      <siteMapNode title="memberInfo" expand="true">
+        <siteMapNode title="newMember" href="site-oldmain/_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
+        <siteMapNode description="subacc" title="subaccount" href="site-oldmain/_SubAcc/SubAccList.aspx"></siteMapNode>
+        <siteMapNode title="customerlist" href="_MemberInfo/CustomerList/Agent/MemberList.aspx"></siteMapNode>
+
+        <siteMapNode title="creditbalance" href="site-oldmain/_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
+        <siteMapNode title="positionTaking" href="site-oldmain/_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
+        <!--Casino-PositionTaking-->
+        <siteMapNode description="cs" title="casinoPositionTaking" href="site-oldmain/_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
+        <!--/Casino-PositionTaking-->
+        <!--Bingo-PositionTaking-->
+        <siteMapNode description="bgPT" title="bingoPositionTaking" href="site-oldmain/_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
+        <!--/Bingo-PositionTaking-->
+        <siteMapNode title="memberCommission" href="site-oldmain/_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
+        <siteMapNode title="MemberWinLimit" href="site-oldmain/MemberInformation/WinLimit/Index"></siteMapNode>
+      </siteMapNode>
+      <!--/MemberInfo-->
+      <siteMapNode title="transfer" href="../site-oldmain/_Transfer/Agent/MemberList.aspx"></siteMapNode>
+      <siteMapNode title="viewLog">
+        <siteMapNode title="customerSetting" href="site-oldmain/_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting&amp;pageIndex=1"></siteMapNode>
+        <siteMapNode title="status" href="site-oldmain/_ViewLog/LogStatus.aspx?tabid=Status&amp;pageIndex=1"></siteMapNode>
+        <siteMapNode title="credit" href="site-oldmain/_ViewLog/LogCredit.aspx?tabid=Credit&amp;pageIndex=1"></siteMapNode>
+        <siteMapNode title="login" href="site-oldmain/_ViewLog/LogLogin.aspx?tabid=Login&amp;pageIndex=1"></siteMapNode>
+      </siteMapNode>
+      <siteMapNode title="announcements">
+        <siteMapNode title="normal" href="site-oldmain/Info/NewMessageForm.aspx?pageQuery="></siteMapNode>
+        <siteMapNode title="special" href="site-oldmain/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
+        <siteMapNode title="personalMessage" href="site-oldmain/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
+      </siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode title="Master">
+      <!--Report-->
+      <siteMapNode title="reports">
+        <siteMapNode title="agentwinloss" href="site-oldmain/_Reports/Common/MatchResultEntered.aspx"></siteMapNode>
+        <siteMapNode title="agentwinlostdetail" href="site-oldmain/_Reports/Winloss/WinLossDetailMaster.aspx"></siteMapNode>
+
+        <siteMapNode title="agentOutstanding" href="site-oldmain/_Reports/Common/Outstanding.aspx"></siteMapNode>
+        <!--Casino-RealTimeWL-->
+        <siteMapNode description="cs" title="realTimeCSWinloss" href="site-oldmain/_Reports/CasinoWinloss/CSWinlossMaster.aspx"></siteMapNode>
+        <!--/Casino-RealTimeWL-->
+        <!--Bingo-RealTimeWL-->
+        <siteMapNode description="bg" title="realTimeBingoWinloss" href="site-oldmain/_Reports/BingoWinloss/BingoWinlossMaster.aspx"></siteMapNode>
+        <!--/Bingo-RealTimeWL-->
+        <siteMapNode title="matchWinLostDetail" href="site-oldmain/_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
+        <siteMapNode title="winLossByBettype" href="site-oldmain/_Reports/Winloss/WinLossByBettypeMaster.aspx"></siteMapNode>
+        <siteMapNode title="winlossanalysis" href="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisMaster.aspx"></siteMapNode>
+     
+        <siteMapNode description="Consolidated" title="consolidatedreport" href="site-oldmain/report/consolidate/index"></siteMapNode>
+
+        <siteMapNode title="commissionByBettype" href="site-oldmain/Report/CommissionByBetType"></siteMapNode>
+        <!--HR-->
+        <siteMapNode description="hr" title="commssionhorseracing" href="site-oldmain/_Reports/Commission/HRCommission.aspx"></siteMapNode>
+        <!--/HR-->
+        <siteMapNode title="cancelledBets" href="site-oldmain/_Reports/BetList/CancelBetList.aspx"></siteMapNode>
+        <!--Statement-->
+        <siteMapNode title="statement" href="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=3&amp;rptmrange=5"></siteMapNode>
+        <!--/Statement-->
+
+        <siteMapNode title="result" href="~/Normal" microSite="true" microSiteNameSettingKey="ResultSiteVirtualPath"></siteMapNode>
+        <siteMapNode title="winLossAnalysisChart" href="site-oldmain/_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
+      </siteMapNode>
+      <!--/Report-->
+      <!--Totalbets-->
+      <siteMapNode title="totalbets">
+        <siteMapNode title="HOUL" href="site-oldmain/_TotalBets/HDPOU.aspx"></siteMapNode>
+        <siteMapNode title="moneyline" href="site-oldmain/_TotalBets/MoneyLine.aspx"></siteMapNode>
+        <siteMapNode title="OE1x2DND" href="site-oldmain/_TotalBets/OddEven1x2.aspx"></siteMapNode>
+        <siteMapNode title="correctscore" href="site-oldmain/_BetList/BetList.aspx?type=CorrectScore"></siteMapNode>
+        <siteMapNode title="fthttotalgoal" href="site-oldmain/_TotalBets/TotalGoal.aspx"></siteMapNode>
+        <siteMapNode title="parlay" href="site-oldmain/_BetList/BetList.aspx?type=MixParlay"></siteMapNode>
+        <siteMapNode title="outRight" href="site-oldmain/_TotalBets/OutRight.aspx"></siteMapNode>
+        <siteMapNode title="htft" href="site-oldmain/_TotalBets/HTFT.aspx"></siteMapNode>
+        <siteMapNode title="fthtfglg" href="site-oldmain/_TotalBets/FGLG.aspx"></siteMapNode>
+        <siteMapNode title="bettype13" href="site-oldmain/_BetList/BetList.aspx?bettype=13&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="bettype24" href="site-oldmain/_BetList/BetList.aspx?bettype=24&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="homeDrawAwayNoBet" href="site-oldmain/_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
+        <siteMapNode title="bettype26" href="site-oldmain/_BetList/BetList.aspx?bettype=26&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="bettype27" href="site-oldmain/_BetList/BetList.aspx?bettype=27&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="bettype28" href="site-oldmain/_BetList/BetList.aspx?bettype=28&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="numbergame" href="site-oldmain/_TotalBets/NumberGame.aspx"></siteMapNode>
+        <!--HR-->
+        <siteMapNode description="hr" title="hr" href="site-oldmain/_TotalBets/Racing.aspx"></siteMapNode>
+        <!--/HR-->
+      </siteMapNode>
+      <!--/Totalbets-->
+      <!--Forecast-->
+      <siteMapNode title="forecast">
+        <siteMapNode title="HOUL" href="site-oldmain/_Forecast/FCHDPOU.aspx"></siteMapNode>
+        <siteMapNode title="lbl1x2" href="site-oldmain/_Forecast/FC1X2.aspx"></siteMapNode>
+        <siteMapNode description="ScoreMap" title="scoreMap" href="site-oldmain/ForecastScoreMap/Index"></siteMapNode>
+      </siteMapNode>
+      <!--/Forecast-->
+      <!--MemberInfo-->
+      <siteMapNode title="memberInfo" expand="true">
+        <siteMapNode title="newAgent" href="site-oldmain/_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
+        <siteMapNode description="subacc" title="subaccount" href="site-oldmain/_SubAcc/SubAccList.aspx"></siteMapNode>
+        <siteMapNode title="agentList" href="site-oldmain/_MemberInfo/CustomerList/Master/AgentList.aspx"></siteMapNode>
+        <siteMapNode title="creditbalance" href="site-oldmain/_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
+        <siteMapNode title="positionTaking" href="site-oldmain/_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
+        <!--Casino-PositionTaking-->
+        <siteMapNode description="cs" title="casinoPositionTaking" href="site-oldmain/_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
+        <!--/Casino-PositionTaking-->
+        <!--Bingo-PositionTaking-->
+        <siteMapNode description="bgPT" title="bingoPositionTaking" href="site-oldmain/_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
+        <!--/Bingo-PositionTaking-->
+        <siteMapNode title="memberCommission" href="site-oldmain/_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
+        <siteMapNode title="MemberWinLimit" href="site-oldmain/MemberInformation/WinLimit/Index"></siteMapNode>
+      </siteMapNode>
+      <!--/MemberInfo-->
+      <siteMapNode title="transfer" href="../site-oldmain/_Transfer/Master/AgentList.aspx"></siteMapNode>
+      <siteMapNode title="viewLog">
+        <siteMapNode title="customerSetting" href="site-oldmain/_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting&amp;pageIndex=1"></siteMapNode>
+        <siteMapNode title="status" href="site-oldmain/_ViewLog/LogStatus.aspx?tabid=Status&amp;pageIndex=1"></siteMapNode>
+        <siteMapNode title="credit" href="site-oldmain/_ViewLog/LogCredit.aspx?tabid=Credit&amp;pageIndex=1"></siteMapNode>
+        <siteMapNode title="login" href="site-oldmain/_ViewLog/LogLogin.aspx?tabid=Login&amp;pageIndex=1"></siteMapNode>
+      </siteMapNode>
+      <siteMapNode title="announcements">
+        <siteMapNode title="normal" href="site-oldmain/Info/NewMessageForm.aspx?pageQuery="></siteMapNode>
+        <siteMapNode title="special" href="site-oldmain/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
+        <siteMapNode title="personalMessage" href="site-oldmain/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
+      </siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode title="Super">
+      <!--Report-->
+      <siteMapNode title="reports">
+        <siteMapNode title="masterwinloss" href="site-oldmain/_Reports/Common/MatchResultEntered.aspx"></siteMapNode>
+        <siteMapNode title="masterwinlostdetail" href="site-oldmain/_Reports/Winloss/WinLossDetailSuper.aspx"></siteMapNode>
+
+        <siteMapNode title="masterOutstanding" href="site-oldmain/_Reports/Common/Outstanding.aspx"></siteMapNode>
+        <!--Casino-RealTimeWL-->
+        <siteMapNode description="cs" title="realTimeCSWinloss" href="site-oldmain/_Reports/CasinoWinloss/CSWinlossSuper.aspx"></siteMapNode>
+        <!--/Casino-RealTimeWL-->
+        <!--Bingo-RealTimeWL-->
+        <siteMapNode description="bg" title="realTimeBingoWinloss" href="site-oldmain/_Reports/BingoWinloss/BingoWinlossSuper.aspx"></siteMapNode>
+        <!--/Bingo-RealTimeWL-->
+        <siteMapNode title="matchWinLostDetail" href="site-oldmain/_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
+        <siteMapNode title="winLossByBettype" href="site-oldmain/_Reports/Winloss/WinLossByBettypeSuper.aspx"></siteMapNode>
+        <siteMapNode title="winlossanalysis" href="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisSuper.aspx"></siteMapNode>
+       
+        <siteMapNode description="Consolidated" title="consolidatedreport" href="site-oldmain/report/consolidate/index"></siteMapNode>
+
+        <siteMapNode title="commissionByBettype" href="site-oldmain/Report/CommissionByBetType"></siteMapNode>
+        <!--HR-->
+        <siteMapNode description="hr" title="commssionhorseracing" href="site-oldmain/_Reports/Commission/HRCommission.aspx"></siteMapNode>
+        <!--/HR-->
+        <siteMapNode title="cancelledBets" href="site-oldmain/_Reports/BetList/CancelBetList.aspx"></siteMapNode>
+        <!--Statement-->
+        <siteMapNode title="statement" href="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=4&amp;rptmrange=5"></siteMapNode>
+        <!--/Statement-->
+        <siteMapNode title="result" href="~/Normal" microSite="true" microSiteNameSettingKey="ResultSiteVirtualPath"></siteMapNode>
+        <siteMapNode title="winLossAnalysisChart" href="site-oldmain/_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
+      </siteMapNode>
+      <!--/Report-->
+      <!--Totalbets-->
+      <siteMapNode title="totalbets">
+        <siteMapNode title="HOUL" href="site-oldmain/_TotalBets/HDPOU.aspx"></siteMapNode>
+        <siteMapNode title="moneyline" href="site-oldmain/_TotalBets/MoneyLine.aspx"></siteMapNode>
+        <siteMapNode title="OE1x2DND" href="site-oldmain/_TotalBets/OddEven1x2.aspx"></siteMapNode>
+        <siteMapNode title="correctscore" href="site-oldmain/_BetList/BetList.aspx?type=CorrectScore"></siteMapNode>
+        <siteMapNode title="fthttotalgoal" href="site-oldmain/_TotalBets/TotalGoal.aspx"></siteMapNode>
+        <siteMapNode title="parlay" href="site-oldmain/_BetList/BetList.aspx?type=MixParlay"></siteMapNode>
+        <siteMapNode title="outRight" href="site-oldmain/_TotalBets/OutRight.aspx"></siteMapNode>
+        <siteMapNode title="htft" href="site-oldmain/_TotalBets/HTFT.aspx"></siteMapNode>
+        <siteMapNode title="fthtfglg" href="site-oldmain/_TotalBets/FGLG.aspx"></siteMapNode>
+        <siteMapNode title="bettype13" href="site-oldmain/_BetList/BetList.aspx?bettype=13&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="bettype24" href="site-oldmain/_BetList/BetList.aspx?bettype=24&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="homeDrawAwayNoBet" href="site-oldmain/_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
+        <siteMapNode title="bettype26" href="site-oldmain/_BetList/BetList.aspx?bettype=26&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="bettype27" href="site-oldmain/_BetList/BetList.aspx?bettype=27&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="bettype28" href="site-oldmain/_BetList/BetList.aspx?bettype=28&amp;type=Bettype"></siteMapNode>
+        <siteMapNode title="numbergame" href="site-oldmain/_TotalBets/NumberGame.aspx"></siteMapNode>
+        <!--HR-->
+        <siteMapNode description="hr" title="hr" href="site-oldmain/_TotalBets/Racing.aspx"></siteMapNode>
+        <!--/HR-->
+      </siteMapNode>
+      <!--/Totalbets-->
+      <!--Forecast-->
+      <siteMapNode title="forecast">
+        <siteMapNode title="HOUL" href="site-oldmain/_Forecast/FCHDPOU.aspx"></siteMapNode>
+        <siteMapNode title="lbl1x2" href="site-oldmain/_Forecast/FC1X2.aspx"></siteMapNode>
+        <siteMapNode description="ScoreMap" title="scoreMap" href="site-oldmain/ForecastScoreMap/Index"></siteMapNode>
+      </siteMapNode>
+      <!--/Forecast-->
+      <!--MemberInfo-->
+      <siteMapNode title="memberInfo" expand="true">
+        <siteMapNode title="newMaster" href="site-oldmain/_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
+        <siteMapNode description="subacc" title="subaccount" href="site-oldmain/_SubAcc/SubAccList.aspx"></siteMapNode>
+        <siteMapNode title="masterList" href="site-oldmain/_MemberInfo/CustomerList/Super/MasterList.aspx"></siteMapNode>
+        <siteMapNode title="creditbalance" href="site-oldmain/_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
+        <siteMapNode title="positionTaking" href="site-oldmain/_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
+        <!--Casino-PositionTaking-->
+        <siteMapNode description="cs" title="casinoPositionTaking" href="site-oldmain/_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
+        <!--/Casino-PositionTaking-->
+        <!--Bingo-PositionTaking-->
+        <siteMapNode description="bgPT" title="bingoPositionTaking" href="site-oldmain/_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
+        <!--/Bingo-PositionTaking-->
+        <siteMapNode title="memberCommission" href="site-oldmain/_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
+        <siteMapNode title="MemberWinLimit" href="site-oldmain/MemberInformation/WinLimit/Index"></siteMapNode>
+      </siteMapNode>
+      <!--/MemberInfo-->
+      <siteMapNode title="transfer" href="../site-oldmain/_Transfer/Super/MasterList.aspx"></siteMapNode>
+      <siteMapNode title="viewLog">
+        <siteMapNode title="customerSetting" href="site-oldmain/_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting&amp;pageIndex=1"></siteMapNode>
+        <siteMapNode title="status" href="site-oldmain/_ViewLog/LogStatus.aspx?tabid=Status&amp;pageIndex=1"></siteMapNode>
+        <siteMapNode title="credit" href="site-oldmain/_ViewLog/LogCredit.aspx?tabid=Credit&amp;pageIndex=1"></siteMapNode>
+        <siteMapNode title="login" href="site-oldmain/_ViewLog/LogLogin.aspx?tabid=Login&amp;pageIndex=1"></siteMapNode>
+      </siteMapNode>
+      <siteMapNode title="announcements">
+        <siteMapNode title="normal" href="site-oldmain/Info/NewMessageForm.aspx?pageQuery="></siteMapNode>
+        <siteMapNode title="special" href="site-oldmain/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
+        <siteMapNode title="personalMessage" href="site-oldmain/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
+      </siteMapNode>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
