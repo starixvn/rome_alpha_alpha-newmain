@@ -23,12 +23,12 @@
         private static void RegisterMainJavascript(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/scripts/main").Include(
-                "~/Views/Shared/Scripts/SharedScripts.js",
-                "~/Views/CustomerProfile/Scripts/ViewProfile.js",
-                "~/Views/Main/Scripts/Core.js",
-                "~/Views/Main/Scripts/Header.js",
-                "~/Views/Main/Scripts/Dashboard.js",
-                "~/Views/Announcement/Scripts/AnnouncementManager.js"));
+                "~/Content/Shared/Scripts/SharedScripts.js",
+                "~/Content/CustomerProfile/Scripts/ViewProfile.js",
+                "~/Content/Main/Scripts/Core.js",
+                "~/Content/Main/Scripts/Header.js",
+                "~/Content/Main/Scripts/Dashboard.js",
+                "~/Content/Announcement/Scripts/AnnouncementManager.js"));
         }
 
         private static void RegisterMainStyle(BundleCollection bundles)

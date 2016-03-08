@@ -3,7 +3,6 @@
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
-    using Utils;
 
     public class MainController : BaseController
     {

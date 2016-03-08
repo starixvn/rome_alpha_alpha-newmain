@@ -19,11 +19,10 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
     using Sunplus.Agent.Utilities;
-    using Utils;
 
     public class AnnouncementService : IAnnouncementService
     {
-        private const string AnnouncementResourcePath = "../Views/Announcement/Resources/";
+        private const string AnnouncementResourcePath = "../Content/Announcement/Resources/";
         private readonly DateTime _maxDateTime = new DateTime(9999, 12, 31);
         private readonly DateTime _minDateTime = new DateTime(1900, 1, 1);
 
@@ -459,8 +458,8 @@
             XmlAttribute startDateAttribute = node.Attributes["startdate"];
             XmlAttribute endDateAttribute = node.Attributes["enddate"];
             XmlAttribute effectDateAttribute = node.Attributes["effectdate"];
-            DateTime? startDate = startDateAttribute == null ? (DateTime?)null : DateTimeUtil.ConvertToDateTimeFromShortDateString(startDateAttribute.Value);
-            DateTime? endDate = endDateAttribute == null ? (DateTime?)null : DateTimeUtil.ConvertToDateTimeFromShortDateString(endDateAttribute.Value);
+            DateTime? startDate = startDateAttribute == null ? (DateTime?)null : Converter.ToDateTime(startDateAttribute.Value);
+            DateTime? endDate = endDateAttribute == null ? (DateTime?)null : Converter.ToDateTime(endDateAttribute.Value);
             string effectDate = effectDateAttribute == null ? string.Empty :
                 Converter.ToString2(effectDateAttribute.Value);
             DateTime? currentDate = DateTime.Now;

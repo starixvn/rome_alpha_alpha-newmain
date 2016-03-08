@@ -461,9 +461,6 @@
     <Content Include="Content\Images\expand.png" />
     <Content Include="Content\Images\icon_user_default.png" />
     <Content Include="Content\Images\loading.gif" />
-    <Content Include="Content\Main\Styles\css\Dashboard.css" />
-    <Content Include="Content\Main\Styles\css\page.css" />
-    <Content Include="Content\Main\Styles\css\PopupMessage.css" />
     <Content Include="Content\Main\Styles\Images\headerbg_2.jpg" />
     <Content Include="Content\Main\Styles\Images\headerbg_3.jpg" />
     <Content Include="Content\Main\Styles\Images\headerbg_4.jpg" />
@@ -500,16 +497,16 @@
       <DependentUpon>page.css</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="Views\Announcement\Resources\PopupAdAgentNeutral.xml" />
-    <Content Include="Views\Announcement\Resources\PopupAdCommon.xml" />
-    <Content Include="Views\Announcement\Resources\PopupAdMasterNeutral.xml" />
-    <Content Include="Views\Announcement\Resources\PopupAdSuperNeutral.xml" />
-    <Content Include="Views\Announcement\Scripts\AnnouncementManager.js" />
-    <Content Include="Views\CustomerProfile\Scripts\ViewProfile.js" />
-    <Content Include="Views\Main\Scripts\Core.js" />
-    <Content Include="Views\Main\Scripts\Dashboard.js" />
-    <Content Include="Views\Main\Scripts\Header.js" />
-    <Content Include="Views\Main\Scripts\piwikLoader.js" />
+    <Content Include="Content\Announcement\Resources\PopupAdAgentNeutral.xml" />
+    <Content Include="Content\Announcement\Resources\PopupAdCommon.xml" />
+    <Content Include="Content\Announcement\Resources\PopupAdMasterNeutral.xml" />
+    <Content Include="Content\Announcement\Resources\PopupAdSuperNeutral.xml" />
+    <Content Include="Content\Announcement\Scripts\AnnouncementManager.js" />
+    <Content Include="Content\CustomerProfile\Scripts\ViewProfile.js" />
+    <Content Include="Content\Main\Scripts\Core.js" />
+    <Content Include="Content\Main\Scripts\Dashboard.js" />
+    <Content Include="Content\Main\Scripts\Header.js" />
+    <Content Include="Content\Main\Scripts\piwikLoader.js" />
     <Content Include="Views\CustomerProfile\ViewProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
@@ -519,7 +516,7 @@
     <Content Include="Content\Main\Styles\sass\Variables_Level2.scss" />
     <Content Include="Content\Main\Styles\sass\Variables_Level3.scss" />
     <Content Include="Content\Main\Styles\sass\Variables_Level4.scss" />
-    <Content Include="Views\Shared\Scripts\SharedScripts.js" />
+    <Content Include="Content\Shared\Scripts\SharedScripts.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
     <Content Include="Content\Main\Styles\sass\page.scss" />
@@ -677,7 +674,6 @@
     <Compile Include="Services\Impl\FileUploadService.cs" />
     <Compile Include="Services\Impl\SessionValidationService.cs" />
     <Compile Include="Services\ISessionValidationService.cs" />
-    <Compile Include="Utils\Impl\DateTimeUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -692,9 +688,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Shared\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\LeftPanel.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

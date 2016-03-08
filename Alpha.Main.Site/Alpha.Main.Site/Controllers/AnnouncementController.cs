@@ -3,7 +3,6 @@
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests.Announcement;
-    using Utils;
 
     public class AnnouncementController : BaseController
     {

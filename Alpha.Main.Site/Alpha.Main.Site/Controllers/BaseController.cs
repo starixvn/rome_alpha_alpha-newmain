@@ -9,7 +9,6 @@
     using System.Web.Security;
     using Constants;
     using Sunplus.Agent.Model.Entities;
-    using Utils;
 
     public class BaseController : Controller
     {

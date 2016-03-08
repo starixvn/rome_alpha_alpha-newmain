@@ -29,7 +29,6 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
     using Sunplus.Agent.Utilities;
-    using Utils;
     using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
     using SiteServices = Alpha.Main.Site.Services;
 
@@ -137,8 +136,8 @@
                     }
 
                     var offerForLevel = Converter.ToInt(xmlNodeAnnouncement.Attributes["role"].Value);
-                    var startDate = DateTimeUtil.ConvertToDateTimeFromShortDateString(xmlNodeAnnouncement.Attributes["startdate"].Value);
-                    var endDate = DateTimeUtil.ConvertToDateTimeFromShortDateString(xmlNodeAnnouncement.Attributes["enddate"].Value);
+                    var startDate = Converter.ToDateTime(xmlNodeAnnouncement.Attributes["startdate"].Value);
+                    var endDate = Converter.ToDateTime(xmlNodeAnnouncement.Attributes["enddate"].Value);
 
                     if (startDate <= currentDate &&
                         currentDate <= endDate &&

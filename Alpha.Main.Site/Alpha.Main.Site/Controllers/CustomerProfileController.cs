@@ -4,7 +4,6 @@
     using MediatR;
     using Models.Requests.CustomerProfile;
     using Sunplus.Agent.Model.Entities;
-    using Utils;
 
     public class CustomerProfileController : BaseController
     {

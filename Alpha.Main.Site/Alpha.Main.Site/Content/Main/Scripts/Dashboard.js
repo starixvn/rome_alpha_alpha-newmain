@@ -73,7 +73,7 @@ var DashboardManager = function () {
             self.collapseLeftPanel(jQuery(this));
         });
         jQuery(".icon-home").click(function () {
-            self.changeMenu('Report/PortalPage');
+            self.changeMenu(self.getOldMainSitePath() + '_Reports/PortalPage/PortalPage.aspx');
         });
         jQuery(".live-message").click(function () {
             self.changeMenu(self.getOldMainSitePath() + 'Info/NewMessageForm.aspx?pageQuery=', this);
@@ -412,12 +412,12 @@ var DashboardManager = function () {
             sidebar.removeClass('collapsed');
             content.removeClass('expanded');
             jQuery("#logoProfileImg").removeClass("collapse-image");
-           
+
         } else {
             sidebar.addClass('collapsed');
             content.addClass('expanded');
-            jQuery("#logoProfileImg").addClass("collapse-image");          
-          
+            jQuery("#logoProfileImg").addClass("collapse-image");
+
         }
     };
     self.viewPrivateMessage = function (url) {
