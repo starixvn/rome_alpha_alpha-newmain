@@ -299,7 +299,7 @@ body {
           background: #ddd; }
           .header-navigation .list-top > li .list-setting > li:hover a, .header-navigation .list-top > li .list-language > li:hover a {
             text-decoration: none; }
-      .header-navigation .list-top > li:active .list-setting, .header-navigation .list-top > li:active .list-language {
+      .header-navigation .list-top > li.active .list-setting, .header-navigation .list-top > li.active .list-language {
         display: block; }
 
 /********************************** Header Notification *************************************/
