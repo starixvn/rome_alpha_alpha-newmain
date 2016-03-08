@@ -472,6 +472,12 @@
     <Content Include="Content\Main\Styles\Images\tooltip_bg.png" />
     <Content Include="Content\Main\Styles\Images\tooltip_left.png" />
     <Content Include="Content\Main\Styles\Images\tooltip_right.png" />
+    <Content Include="Content\Main\Styles\sass\dashboard.css">
+      <DependentUpon>dashboard.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\dashboard.min.css">
+      <DependentUpon>dashboard.css</DependentUpon>
+    </Content>
     <Content Include="Content\Main\Styles\sass\LevelCustomStyle2.css">
       <DependentUpon>LevelCustomStyle2.scss</DependentUpon>
     </Content>
@@ -495,6 +501,12 @@
     </Content>
     <Content Include="Content\Main\Styles\sass\page.min.css">
       <DependentUpon>page.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\PopupMessage.css">
+      <DependentUpon>PopupMessage.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Main\Styles\sass\PopupMessage.min.css">
+      <DependentUpon>PopupMessage.css</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\Announcement\Resources\PopupAdAgentNeutral.xml" />

@@ -214,6 +214,7 @@ body {
     bottom: 0;
     .panel {
         background: transparent;
+        border: none;
         -webkit-box-shadow: none;
            -moz-box-shadow: none;
                 box-shadow: none;
@@ -426,5 +427,43 @@ body {
     height: calc(100% - 88px);
     position: relative;
     z-index: 80;
+}
 
+/********************************** ie8 ******************************************/
+.ie8 {
+    .navigation {
+        position: absolute;
+        top: 88px;
+        bottom: 0;
+        left: 0;
+        width: 256px;
+        //height: calc(100% - 88px);
+        z-index: 999;
+    }
+    .header {
+        position: absolute;
+        z-index: 90;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .content {
+        background: #f4f4f4;
+        top: 88px;
+        bottom: 0;
+        position: absolute;
+        z-index: 80;
+        left: 0;
+        right: 0;
+    }
+    .content-wrapper {
+        position: absolute;
+        left: 256px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        &.expanded {
+            left: 46px;
+        }
+    }
 }
