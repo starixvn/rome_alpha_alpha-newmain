@@ -57,7 +57,7 @@
             @if (Model.LeftMenu.IsShowMenu)
             {
                 <div>
-                    <ul class="main-tab">
+                    <ul class="main-tab" id="main-tab">
                         <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
                         <li class="accountinfo  @(Model.LeftMenu.ShowAccountInfo ? string.Empty : "disabledView")">
                             <a href="javascript:;">
@@ -119,14 +119,14 @@
     </aside>
     <div class="content-wrapper">
         <header class="header">
-            <section class="header-navigation">
-                <span class="icon-collapse icon-hamburger icon--m c-White"></span>
+            <section class="header-navigation" id="header-navigation">
+                <span class="icon-collapse icon-hamburger icon-m c-White"></span>
                 <ul class="list-top">
                     <li><span class="icon icon-time opacity-80"></span><span class="txt-top" id="clock"></span></li>
                     <li>
                         <span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>
                         <span class="language-text language-selector"></span>
-                        <ul class="list-language">
+                        <ul class="list-language" id="language">
                             @foreach (var language in Model.Languages)
                             {
                                 <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
@@ -147,7 +147,7 @@
                     <li><span class="icon icon-logout opacity-80"></span></li>
                 </ul>
             </section>
-            <section class="header-notification">
+            <section class="header-notification" id="header-notification">
                 <span class="icon icon-home c-Primary"></span>
                 <div id="marquee">
                     <span id="scroller">
@@ -160,7 +160,7 @@
                 </div>
             </section>
         </header>
-        <section class="content">
+        <section class="content" id="content">
             <iframe src="@Model.MainPage" frameborder="0" id="@contentFrame" scrolling="auto"
                     name="main" marginwidth="0" marginheight="0" allowtransparency="yes" class="iframe-content"></iframe>
         </section>
