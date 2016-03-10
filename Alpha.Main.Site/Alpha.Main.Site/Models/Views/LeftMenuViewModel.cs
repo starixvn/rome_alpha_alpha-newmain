@@ -9,6 +9,6 @@
 
         public bool ShowAccountInfo { get; set; }
 
-        public List<MenuModel> MenuList { get; set; }
+        public List<MenuItem> MenuList { get; set; }
     }
 }

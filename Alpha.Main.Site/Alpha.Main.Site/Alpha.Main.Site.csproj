@@ -314,6 +314,7 @@
       <HintPath>..\packages\Fanex.CustomerSetting.Module.Core.1.0.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -532,12 +533,15 @@
     <Content Include="Web.config" />
     <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
     <Content Include="Content\Main\Styles\sass\page.scss" />
+    <Content Include="App_Data\Alpha.sitemap" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Content\Main\Styles\sass\dashboard.scss" />
     <Content Include="Content\Main\Styles\sass\PopupMessage.scss" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="App_Data\Sitemap.json" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -605,7 +609,6 @@
     <None Include="Web.proi7.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="Web.sitemap" />
     <None Include="Web.uati1.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -639,6 +642,7 @@
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
@@ -657,10 +661,14 @@
     <Compile Include="Models\Dtos\Announcement\MessageModel.cs" />
     <Compile Include="Models\Dtos\CustomerInfoModel.cs" />
     <Compile Include="Models\Dtos\ProfilePictureModel.cs" />
+    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\Enumerations\Enumeration.cs" />
+    <Compile Include="Models\Enumerations\Level.cs" />
     <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\Views\CustomerInfoViewModel.cs" />
     <Compile Include="Models\Dtos\BusinessException.cs" />
-    <Compile Include="Models\Dtos\MenuModel.cs" />
+    <Compile Include="Models\Dtos\MenuItem.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
@@ -679,13 +687,17 @@
     <Compile Include="Repositories\Impl\DashboardRepository.cs" />
     <Compile Include="Services\AppSettings.cs" />
     <Compile Include="Services\IAnnouncementService.cs" />
+    <Compile Include="Services\CachingService.cs" />
     <Compile Include="Services\IDashboardService.cs" />
     <Compile Include="Services\IFileUploadService.cs" />
     <Compile Include="Services\Impl\AnnouncementService.cs" />
+    <Compile Include="Services\Impl\CachingServiceImpl.cs" />
     <Compile Include="Services\Impl\DashboardService.cs" />
     <Compile Include="Services\Impl\FileUploadService.cs" />
     <Compile Include="Services\Impl\SessionValidationService.cs" />
+    <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
     <Compile Include="Services\ISessionValidationService.cs" />
+    <Compile Include="Services\SiteMenuService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -700,7 +712,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Index\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\LeftPanel.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

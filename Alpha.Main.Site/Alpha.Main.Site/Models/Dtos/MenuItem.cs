@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class MenuModel
+    public class MenuItem
     {
         public int Id { get; set; }
 
@@ -18,6 +18,6 @@
 
         public bool IsImportant { get; set; }
 
-        public List<MenuModel> SubMenu { get; set; }
+        public List<MenuItem> SubMenu { get; set; }
     }
 }

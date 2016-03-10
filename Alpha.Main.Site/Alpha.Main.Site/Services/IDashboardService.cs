@@ -26,7 +26,7 @@
 
         bool IsMainPageFromCookie();
 
-        List<MenuModel> GetLeftMenu();
+        List<MenuItem> GetLeftMenu();
 
         void StoreSession(MainIndexViewModel dashboardViewModel);
 

@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Repositories.Impl
 {
+    using System.Collections;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Web;
     using Alpha.Main.Site.Models.Dtos;
     using Criteria.CustomerProfile;
@@ -75,18 +77,24 @@
         public SiteMapNode GetSiteMapNode()
         {
             SiteMapNode rootNode = SiteMap.RootNode;
-            var roleId = UserSession.Current.RoleId;
-            switch (roleId)
-            {
-                case (int)UserTypes.Agent:
-                    return rootNode.ChildNodes[0];
-                case (int)UserTypes.Master:
-                    return rootNode.ChildNodes[1];
-                case (int)UserTypes.Super:
-                    return rootNode.ChildNodes[2];
-                default:
-                    throw new BusinessException("Invalid role id for customer " + UserSession.Current.CustId + ": " + roleId);
-            }
+            
+            return rootNode;        
+                
+                
+                
+
+            //var roleId = UserSession.Current.RoleId;
+            //switch (roleId)
+            //{
+            //    case (int)UserTypes.Agent:
+            //        return rootNode.ChildNodes[0];
+            //    case (int)UserTypes.Master:
+            //        return rootNode.ChildNodes[1];
+            //    case (int)UserTypes.Super:
+            //        return rootNode.ChildNodes[2];
+            //    default:
+            //        throw new BusinessException("Invalid role id for customer " + UserSession.Current.CustId + ": " + roleId);
+            //}
         }
     }
 }

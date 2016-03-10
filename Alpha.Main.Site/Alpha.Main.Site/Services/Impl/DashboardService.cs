@@ -31,6 +31,7 @@
     using Sunplus.Agent.Utilities;
     using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
     using SiteServices = Alpha.Main.Site.Services;
+    using System.Linq;
 
     public class DashboardService : IDashboardService
     {
@@ -272,10 +273,10 @@
                 !currentURLCookie.Value.Contains("SecurityCode");
         }
 
-        public List<MenuModel> GetLeftMenu()
+        public List<MenuItem> GetLeftMenu()
         {
             var siteNode = _repository.GetSiteMapNode();
-            var menuList = new List<MenuModel>();
+            var menuList = new List<MenuItem>();
             if (!siteNode.HasChildNodes)
             {
                 return menuList;
@@ -284,17 +285,19 @@
             var pageAccess = UserSession.Current.SubPageAccess;
             var isSubAcc = UserSession.Current.IsSubAcc;
             var subMenuCount = siteNode.ChildNodes.Count;
+
             for (int i = 0; i < subMenuCount; i++)
             {
                 var subMenu = siteNode.ChildNodes[i];
                 var canViewMenu = CanViewMenu(subMenu.Title, isSubAcc, pageAccess);
-                if (!canViewMenu)
+                if (!canViewMenu 
+                    || (subMenu.Roles.Count > 0 && !subMenu.Roles.Contains(UserSession.Current.RoleId)))
                 {
                     continue;
                 }
 
                 var showSubMenu = subMenu.GetAttribute("expand") == "true";
-                if (!subMenu.HasChildNodes && subMenu.GetAttribute("href") == null)
+                if (!subMenu.HasChildNodes && string.IsNullOrWhiteSpace(subMenu.Url))
                 {
                     continue;
                 }
@@ -351,24 +354,25 @@
             return !isSubAcc || !deniedView;
         }
 
-        private MenuModel GetMenu(SiteMapNode subMenu, int index, bool showSubMenu)
+        private MenuItem GetMenu(SiteMapNode siteMapNode, int index, bool showSubMenu)
         {
-            var menu = new MenuModel
+            var menu = new MenuItem
             {
                 Id = index,
                 ShowSubMenu = showSubMenu,
-                Title = GetLeftPanelResource(subMenu.Title),
-                Url = subMenu.GetAttribute("href"),
-                SubMenu = new List<MenuModel>(),
-                ResourceKey = subMenu.Title
+                Title = GetLeftPanelResource(siteMapNode.Title),
+                Url = siteMapNode.Url,
+                SubMenu = new List<MenuItem>(),
+                ResourceKey = siteMapNode.Title
             };
 
             var isSubAcc = UserSession.Current.IsSubAcc;
             var authorize = new AuthorizationBO(UserSession.Current.NetSessionId);
-            var itemCount = subMenu.ChildNodes.Count;
+            var itemCount = siteMapNode.ChildNodes.Count;
+
             for (var j = 0; j < itemCount; j++)
             {
-                SiteMapNode item = subMenu.ChildNodes[j];
+                SiteMapNode item = siteMapNode.ChildNodes[j];
                 var isDeniedView = IsDeniedViewSubMenu(isSubAcc, item, authorize);
                 if (isDeniedView)
                 {
@@ -421,9 +425,9 @@
                 (subMenu.Title.Contains("MemberWinLimit") && !UserSession.Current.IsLiveCasinoSync && UserSession.Current.IsHideGoldDeluxe);
         }
 
-        private MenuModel GetMenuItem(SiteMapNode menuItem, int index, int parentIndex)
+        private MenuItem GetMenuItem(SiteMapNode menuItem, int index, int parentIndex)
         {
-            var menu = new MenuModel();
+            var menu = new MenuItem();
             var title = menuItem.Title;
             var bettypeId = 0;
             if (title.Contains("bettype") && int.TryParse(title.Substring(7), out bettypeId))
@@ -437,7 +441,7 @@
 
             if (title.Contains("statement"))
             {
-                menu.Url = "../" + menuItem.GetAttribute("href").Replace("custidParam", UserSession.Current.CustId.ToString());
+                menu.Url = "../" + menuItem.Url.Replace("custidParam", UserSession.Current.CustId.ToString());
             }
             else
             {
@@ -445,13 +449,13 @@
                 {
                     var microSiteSettingKey = menuItem.GetAttribute("microSiteNameSettingKey");
                     var microSiteName = AppSettings.GetValue(microSiteSettingKey);
-                    var microSiteUrl = HttpContext.Current.Response.ApplyAppPathModifier(menuItem.GetAttribute("href"));
+                    var microSiteUrl = HttpContext.Current.Response.ApplyAppPathModifier(menuItem.Url);
                     microSiteUrl = Regex.Replace(microSiteUrl, HttpRuntime.AppDomainAppVirtualPath, microSiteName, RegexOptions.IgnoreCase);
                     menu.Url = microSiteUrl;
                 }
                 else
                 {
-                    menu.Url = "../" + menuItem.GetAttribute("href");
+                    menu.Url = "../" + menuItem.Url;
                 }
             }
 
