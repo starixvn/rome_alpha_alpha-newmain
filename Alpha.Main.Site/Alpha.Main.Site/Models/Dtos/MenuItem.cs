@@ -10,7 +10,7 @@
 
         public string Url { get; set; }
 
-        public bool ShowSubMenus { get; set; }
+        public bool Expand { get; set; }
 
         public int Order { get; set; }
 

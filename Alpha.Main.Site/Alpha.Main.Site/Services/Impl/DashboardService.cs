@@ -363,7 +363,7 @@
         {
             var menu = new MenuItem
             {                
-                ShowSubMenus = showSubMenu,
+                Expand = showSubMenu,
                 Title = GetLeftPanelResource(siteMapNode.Title),
                 Url = siteMapNode.Url,
                 SubMenus = new List<MenuItem>(),

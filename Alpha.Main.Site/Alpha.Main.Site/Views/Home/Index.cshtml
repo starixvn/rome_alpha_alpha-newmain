@@ -72,10 +72,10 @@
                 <section class="mainmenu-container panel-group mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
                     @foreach (var menu in Model.SideBar.MenuList)
                     {
-                        <div class="@(menu.ShowSubMenus ? string.Empty : "list-menu") panel panel-default">
+                        <div class="@(menu.Expand ? string.Empty : "list-menu") panel panel-default">
                             <div class="menu-item  panel-heading" role="tab" id="heading-@menu.Name">
                                 <a role="button"
-                                   class="@(menu.ShowSubMenus ? string.Empty : "collapsed")  @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
+                                   class="@(menu.Expand ? string.Empty : "collapsed")  @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
                                    @(string.IsNullOrEmpty(menu.Url) ? "href=" + "javascript:;" : "href=" + menu.Url + " target=" + contentFrame)
                                    data-menugroup="menu-@menu.Name">
                                     <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.Title</span>
@@ -88,7 +88,7 @@
                             @if (menu.SubMenus.Any())
                             {
                                 <div id="collapse-@menu.Name"
-                                     class="panel-collapse @(menu.ShowSubMenus ? string.Empty : "collapse") collapsible-body sub-menu"
+                                     class="panel-collapse @(menu.Expand ? string.Empty : "collapse") collapsible-body sub-menu"
                                      data-menugroup="menu-@menu.Name">
                                     <ul class="sub-menu">
                                         @foreach (var subMenu in menu.SubMenus)

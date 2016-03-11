@@ -87,7 +87,7 @@
                                 Url = node.Url,
                                 SubMenus = new List<MenuItem>(),
                                 Name = node.Title.ToLower(),
-                                ShowSubMenus = (node["expand"] != null && (node["expand"] == "1"
+                                Expand = (node["expand"] != null && (node["expand"] == "1"
                                             || node["expand"].ToLower() == "true"))
                             };
 
