@@ -202,17 +202,17 @@ a, a:focus, a:active, a:target, a:hover {
       line-height: 48px;
       width: 100%;
       min-height: 3rem;
-      background: #d5d5d6;
+      background: transparent;
       padding: 0 16px; }
       .mainmenu-container .menu-item a .icon-arrow-right {
         line-height: 48px;
         font-size: 17px;
-        transform: rotate(90deg);
+        transform: rotate(0);
         transition: transform 0.3s ease-out; }
-      .mainmenu-container .menu-item a.collapsed {
-        background: transparent; }
-        .mainmenu-container .menu-item a.collapsed .icon-arrow-right {
-          transform: rotate(0); }
+      .mainmenu-container .menu-item a.active {
+        background: #d5d5d6; }
+        .mainmenu-container .menu-item a.active .icon-arrow-right {
+          transform: rotate(90deg); }
   .mainmenu-container .sub-menu .sub-menu-item a {
     color: #555555;
     display: table;

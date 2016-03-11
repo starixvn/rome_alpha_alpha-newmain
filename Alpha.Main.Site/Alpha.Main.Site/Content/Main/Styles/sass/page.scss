@@ -249,18 +249,18 @@ a, a:focus, a:active, a:target, a:hover {
             line-height: 48px;
             width: 100%;
             min-height: 3rem;
-            background: #d5d5d6;
+            background: transparent;
             padding: 0 16px;
             .icon-arrow-right {
                 line-height: 48px;
                 font-size: 17px;
-                transform: rotate(90deg);
+                    transform: rotate(0);
                 transition: transform 0.3s ease-out;
             }
-            &.collapsed {
-                background: transparent;
+            &.active {
+                background: #d5d5d6;
                 .icon-arrow-right {
-                    transform: rotate(0);
+                transform: rotate(90deg);
                 }
             }
         }

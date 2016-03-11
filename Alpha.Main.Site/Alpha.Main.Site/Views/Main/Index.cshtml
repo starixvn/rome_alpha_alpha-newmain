@@ -28,7 +28,9 @@
     <title></title>
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/css/bootstrap-material-design.min.css">
+    <!--[if !(IE)]><!-->
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/css/ripples.min.css">
+    <!--<![endif]-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -71,39 +73,35 @@
                         <span class="icon icon-extra icon-dots"></span>
                     </div>
                 </div>
-                <section class="mainmenu-container panel-group mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
-                    <ul>
+                <section class="mainmenu-container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
+                    <ul class="list-menu">
                         @foreach (var menu in Model.LeftMenu.MenuList)
                         {
-                            <li class="@(menu.ShowSubMenu ? string.Empty : "list-menu") panel panel-default">
-                                <div class="menu-item  panel-heading withripple" role="tab" id="heading-@menu.Id">
-                                    <a role="button"
-                                       class="@(menu.ShowSubMenu ? string.Empty : "collapsed")  @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
-                                       @(string.IsNullOrEmpty(menu.Url) ? "href=" + "javascript:;" : "href=" + menu.Url + " target=" + contentFrame)
-                                       data-menugroup="menu-@menu.Id">
-                                        <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()">&nbsp;</span>@menu.Title</span>
-                                        @if (menu.SubMenu != null && menu.SubMenu.Any())
-                                        {
-                                            <span class="pull-right icon-arrow-right"></span>
-                                        }
-                                    </a>
-                                </div>
+                            <li class="menu-item @(menu.ShowSubMenu ? "active" : "")" >
+                                <a  class="withripple menu-opener
+                                    @(menu.ShowSubMenu ? "active" : "")
+                                    @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
+                                    @(string.IsNullOrEmpty(menu.Url) ? "href=" + "javascript:;" : "href=" + menu.Url + " target=" + contentFrame)>
+                                    <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()">&nbsp;</span>@menu.Title</span>
+                                    @if (menu.SubMenu != null && menu.SubMenu.Any())
+                                    {
+                                        <span class="pull-right icon-arrow-right"></span>
+                                    }
+                                </a>
                                 @if (menu.SubMenu != null && menu.SubMenu.Any())
                                 {
-                                    <div id="collapse-@menu.Id"
-                                         class="panel-collapse @(menu.ShowSubMenu ? string.Empty : "collapse") collapsible-body sub-menu"
-                                         data-menugroup="menu-@menu.Id">
-                                        <ul class="sub-menu">
-                                            @foreach (var subMenu in menu.SubMenu)
-                                            {
-                                                <li class="sub-menu-item">
-                                                    <a @(string.IsNullOrEmpty(subMenu.Url) ? "href=" + "javascript:;" : "href=" + subMenu.Url + " target=" + contentFrame)>
-                                                        @subMenu.Title
-                                                    </a>
-                                                </li>
-                                            }
-                                        </ul>
-                                    </div>
+                                    <ul id="collapse-@menu.Id"
+                                        class="sub-menu"
+                                        style="display: @(menu.ShowSubMenu ? "block" : "none");">
+                                        @foreach (var subMenu in menu.SubMenu)
+                                        {
+                                            <li class="sub-menu-item">
+                                                <a @(string.IsNullOrEmpty(subMenu.Url) ? "href=" + "javascript:;" : "href=" + subMenu.Url + " target=" + contentFrame)>
+                                                    @subMenu.Title
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
                                 }
                             </li>
                         }
@@ -179,7 +177,9 @@
     <script type="text/javascript" src="/@contentSite/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="/@contentSite/css/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/@contentSite/css/bootstrap-material/js/material.min.js"></script>
+    <!--[if !(IE)]><!-->
     <script type="text/javascript" src="/@contentSite/css/bootstrap-material/js/ripples.min.js"></script>
+    <!--<![endif]-->
     <script>
         $.material.init();
     </script>

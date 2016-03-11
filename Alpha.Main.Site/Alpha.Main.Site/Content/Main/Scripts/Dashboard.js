@@ -86,19 +86,33 @@ var DashboardManager = function () {
             top.location = rootUrl + self.getOldMainSitePath() + "Index.aspx";
         });
 
-        $(".mainmenu-container .parent-menu").click(function () {
+        var menuOpener = $('.menu-opener');
+        var subMenu = $('.sub-menu');
+        var menuItems = $('.menu-item');
+        menuOpener.click(function () {
             var $this = $(this);
-            var isCollapsed = $this.hasClass("collapsed");
-            var menuGroup = $this.attr("data-menugroup");
-            var subMenu = $('.mainmenu-container .sub-menu[data-menugroup="' + menuGroup + '"]');
-            subMenu.toggle('fast', function () {
-                $(this).toggleClass('collapse');
-            });
+            var menuContainer = $this.closest('li');
+            menuItems.removeClass('active');
 
-            if (isCollapsed) {
-                $this.removeClass("collapsed");
+            menuContainer.addClass('active');
+            var isVisible = $this.hasClass('active');
+            menuOpener.removeClass('active');
+            subMenu.slideUp('normal');
+            var checkElement = $this.next();
+            if (isVisible) {
+                menuContainer.removeClass('active');
+                $this.removeClass('active');
+
+                if (checkElement.is('ul')) {
+                    checkElement.slideUp('normal');
+                }
             } else {
-                $this.addClass("collapsed");
+                menuContainer.addClass('active');
+                $this.addClass('active');
+
+                if (checkElement.is('ul')) {
+                    checkElement.slideDown('normal');
+                }
             }
         });
 
