@@ -541,7 +541,6 @@
     <Content Include="Content\Main\Styles\sass\dashboard.scss" />
     <Content Include="Content\Main\Styles\sass\PopupMessage.scss" />
     <Content Include="Views\Home\Menu.cshtml" />
-    <Content Include="App_Data\Sitemap.json" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -663,7 +662,7 @@
     <Compile Include="Models\Dtos\ProfilePictureModel.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />
-    <Compile Include="Models\Enumerations\Level.cs" />
+    <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Views\CustomerInfoViewModel.cs" />

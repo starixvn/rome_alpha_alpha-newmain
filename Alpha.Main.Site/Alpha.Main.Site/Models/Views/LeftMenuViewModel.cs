@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Dtos;
 
-    public class LeftMenuViewModel
+    public class SideBarViewModel
     {
         public bool IsShowMenu { get; set; }
 

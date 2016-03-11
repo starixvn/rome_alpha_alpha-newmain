@@ -48,7 +48,7 @@
             var absoluteDifference = (byte)Math.Abs(firstValue.Value - secondValue.Value);
             return absoluteDifference;
         }
-
+                
         public static T FromDisplayName<T>(string displayName) where T : Enumeration, new()
         {
             var matchingItem = Parse<T, string>(displayName, "display name", item => item.DisplayName == displayName);

@@ -54,14 +54,14 @@
     <aside class="sidebar">
         <div class="customer-profile" id="profile"></div>
         <nav class="navigation">
-            @if (Model.LeftMenu.IsShowMenu)
+            @if (Model.SideBar.IsShowMenu)
             {
                 <div>
                     <ul class="main-tab" id="main-tab">
                         <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
-                        <li class="accountinfo  @(Model.LeftMenu.ShowAccountInfo ? string.Empty : "disabledView")">
+                        <li class="accountinfo  @(Model.SideBar.ShowAccountInfo ? string.Empty : "disabledView")">
                             <a href="javascript:;">
-                                @(Model.LeftMenu.ShowAccountInfo ? Resources.accountInfo : string.Empty)
+                                @(Model.SideBar.ShowAccountInfo ? Resources.accountInfo : string.Empty)
                             </a>
                         </li>
                     </ul>
@@ -70,28 +70,28 @@
                     </div>
                 </div>
                 <section class="mainmenu-container panel-group mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
-                    @foreach (var menu in Model.LeftMenu.MenuList)
+                    @foreach (var menu in Model.SideBar.MenuList)
                     {
-                        <div class="@(menu.ShowSubMenu ? string.Empty : "list-menu") panel panel-default">
-                            <div class="menu-item  panel-heading" role="tab" id="heading-@menu.Id">
+                        <div class="@(menu.ShowSubMenus ? string.Empty : "list-menu") panel panel-default">
+                            <div class="menu-item  panel-heading" role="tab" id="heading-@menu.Name">
                                 <a role="button"
-                                   class="@(menu.ShowSubMenu ? string.Empty : "collapsed")  @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
+                                   class="@(menu.ShowSubMenus ? string.Empty : "collapsed")  @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
                                    @(string.IsNullOrEmpty(menu.Url) ? "href=" + "javascript:;" : "href=" + menu.Url + " target=" + contentFrame)
-                                   data-menugroup="menu-@menu.Id">
-                                    <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()">&nbsp;</span>@menu.Title</span>
-                                    @if (menu.SubMenu != null && menu.SubMenu.Any())
+                                   data-menugroup="menu-@menu.Name">
+                                    <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.Title</span>
+                                    @if (menu.SubMenus.Any())
                                     {
                                         <span class="pull-right icon-arrow-right"></span>
                                     }
                                 </a>
                             </div>
-                            @if (menu.SubMenu != null && menu.SubMenu.Any())
+                            @if (menu.SubMenus.Any())
                             {
-                                <div id="collapse-@menu.Id"
-                                     class="panel-collapse @(menu.ShowSubMenu ? string.Empty : "collapse") collapsible-body sub-menu"
-                                     data-menugroup="menu-@menu.Id">
+                                <div id="collapse-@menu.Name"
+                                     class="panel-collapse @(menu.ShowSubMenus ? string.Empty : "collapse") collapsible-body sub-menu"
+                                     data-menugroup="menu-@menu.Name">
                                     <ul class="sub-menu">
-                                        @foreach (var subMenu in menu.SubMenu)
+                                        @foreach (var subMenu in menu.SubMenus)
                                         {
                                             <li class="sub-menu-item">
                                                 <a @(string.IsNullOrEmpty(subMenu.Url) ? "href=" + "javascript:;" : "href=" + subMenu.Url + " target=" + contentFrame)>
@@ -106,12 +106,12 @@
                     }
                 </section>
 
-                if (Model.LeftMenu.ShowAccountInfo)
+                if (Model.SideBar.ShowAccountInfo)
                 {
                     <section class="accountinfo-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
                         <span class="icon icon-user"></span>
                         <iframe src="/@oldMainSite/_AccountInfo/AccountInfo.aspx?fromNewSite=1" frameborder="0" id="accountinfo-content" scrolling="auto"
-                                name="menu" marginwidth="0" marginheight="0" allowtransparency="yes" class="accinfo-content"></iframe>
+                                name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content"></iframe>
                     </section>
                 }
             }

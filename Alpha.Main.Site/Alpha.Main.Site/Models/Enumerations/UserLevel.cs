@@ -3,17 +3,17 @@
     using System;
 
     [Serializable]
-    public class Level : Enumeration
+    public class UserLevel : Enumeration
     {        
-        public static readonly Level Super = new Level(4, "Super");
-        public static readonly Level Master = new Level(3, "Master");
-        public static readonly Level Agent = new Level(2, "Agent");        
+        public static readonly UserLevel Super = new UserLevel(4, "Super");
+        public static readonly UserLevel Master = new UserLevel(3, "Master");
+        public static readonly UserLevel Agent = new UserLevel(2, "Agent");        
 
-        public Level()
+        public UserLevel()
         {
         }
 
-        private Level(byte value, string displayName)
+        private UserLevel(byte value, string displayName)
             : base(value, displayName)
         {
         }       

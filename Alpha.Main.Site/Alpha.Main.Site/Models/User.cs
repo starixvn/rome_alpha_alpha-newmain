@@ -8,7 +8,7 @@
         private int id;
         private string name;
         private int subAccountId;
-        private Level level;
+        private UserLevel level;
 
         public new int Id
         {
@@ -46,6 +46,24 @@
             }
         }
 
+        public UserLevel Level
+        {
+            get
+            {
+                return this.level;
+            }
+
+            set
+            {
+                if (ReferenceEquals(value, null))
+                {
+                    throw new ArgumentNullException("value");
+                }
+
+                this.level = value;
+            }
+        }
+
         public int SubAccountId
         {
             get
@@ -64,21 +82,19 @@
             }
         }
 
-        public Level Level
+        public bool IsSubAccount
         {
             get
             {
-                return this.level;
+                return (SubAccountId > 0);
             }
+        }
 
-            set
+        public bool IsMainAccount
+        {
+            get
             {
-                if (ReferenceEquals(value, null))
-                {
-                    throw new ArgumentNullException("value");
-                }                
-
-                this.level = value;
+                return !IsSubAccount;
             }
         }
     }

@@ -29,7 +29,7 @@
                 BaseUrl = _dashboardService.GetBaseUrl(),
                 MainPage = _dashboardService.GetMainPage(),
                 IsMainPageFromCookie = _dashboardService.IsMainPageFromCookie(),
-                LeftMenu = LeftMenu(),
+                SideBar = LeftMenu(),
                 PasswordHash = _dashboardService.GetPasswordHash()
             };
 
@@ -42,11 +42,11 @@
             return _dashboardService.ChangeLanguage(message);
         }
 
-        private LeftMenuViewModel LeftMenu()
+        private SideBarViewModel LeftMenu()
         {
             var menus = _dashboardService.GetLeftMenu();
             var pageAccess = UserSession.Current.SubPageAccess;
-            var leftMenu = new LeftMenuViewModel
+            var leftMenu = new SideBarViewModel
             {
                 IsShowMenu = _dashboardService.IsShowLeftMenu(),
                 ShowAccountInfo = pageAccess.ViewMemberInfo,

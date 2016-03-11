@@ -74,11 +74,17 @@
             return avatar;
         }
 
+       
         public SiteMapNode GetSiteMapNode()
         {
-            SiteMapNode rootNode = SiteMap.RootNode;
+
+
+            var node = SiteMap.Provider.RootNode;
+
+
             
-            return rootNode;        
+
+            return node;        
                 
                 
                 

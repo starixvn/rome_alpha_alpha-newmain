@@ -32,7 +32,7 @@
     using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
     using SiteServices = Alpha.Main.Site.Services;
     using System.Linq;
-
+    using Models.Enumerations;
     public class DashboardService : IDashboardService
     {
         private static string DefaultMainPage = "../" + SiteServices.AppSettings.OldMainSite + "/_Reports/PortalPage/PortalPage.aspx";
@@ -286,24 +286,29 @@
             var isSubAcc = UserSession.Current.IsSubAcc;
             var subMenuCount = siteNode.ChildNodes.Count;
 
-            for (int i = 0; i < subMenuCount; i++)
-            {
-                var subMenu = siteNode.ChildNodes[i];
-                var canViewMenu = CanViewMenu(subMenu.Title, isSubAcc, pageAccess);
-                if (!canViewMenu 
-                    || (subMenu.Roles.Count > 0 && !subMenu.Roles.Contains(UserSession.Current.RoleId)))
-                {
-                    continue;
-                }
 
-                var showSubMenu = subMenu.GetAttribute("expand") == "true";
-                if (!subMenu.HasChildNodes && string.IsNullOrWhiteSpace(subMenu.Url))
-                {
-                    continue;
-                }
+            var siteMenuService = new SiteMenuServiceImpl(new CachingServiceImpl());
 
-                menuList.Add(GetMenu(subMenu, i, showSubMenu));
-            }
+            menuList =  siteMenuService.GetMenuByUser(new Models.User { Level = Enumeration.FromValue<UserLevel>(2) }).ToList();
+
+            //for (int i = 0; i < subMenuCount; i++)
+            //{
+            //    var subMenu = siteNode.ChildNodes[i];
+            //    var canViewMenu = CanViewMenu(subMenu.Title, isSubAcc, pageAccess);
+            //    if (!canViewMenu
+            //        || (subMenu.Roles.Count > 0 && !subMenu.Roles.Contains(UserSession.Current.RoleId)))
+            //    {
+            //        continue;
+            //    }
+
+            //    var showSubMenu = subMenu.GetAttribute("expand") == "true";
+            //    if (!subMenu.HasChildNodes && string.IsNullOrWhiteSpace(subMenu.Url))
+            //    {
+            //        continue;
+            //    }
+
+            //    menuList.Add(GetMenu(subMenu, i, showSubMenu));
+            //}
 
             return menuList;
         }
@@ -357,13 +362,12 @@
         private MenuItem GetMenu(SiteMapNode siteMapNode, int index, bool showSubMenu)
         {
             var menu = new MenuItem
-            {
-                Id = index,
-                ShowSubMenu = showSubMenu,
+            {                
+                ShowSubMenus = showSubMenu,
                 Title = GetLeftPanelResource(siteMapNode.Title),
                 Url = siteMapNode.Url,
-                SubMenu = new List<MenuItem>(),
-                ResourceKey = siteMapNode.Title
+                SubMenus = new List<MenuItem>(),
+                Name = siteMapNode.Title
             };
 
             var isSubAcc = UserSession.Current.IsSubAcc;
@@ -379,7 +383,7 @@
                     continue;
                 }
 
-                menu.SubMenu.Add(GetMenuItem(item, j, index));
+                menu.SubMenus.Add(GetMenuItem(item, j, index));
             }
 
             return menu;

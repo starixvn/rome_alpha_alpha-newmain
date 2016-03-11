@@ -9,7 +9,7 @@
     using Models.Dtos;
 
     public interface SiteMenuService
-    {        
-        IList<MenuItem> GetMenuByUser(User user);
+    {
+        IEnumerable<MenuItem> GetMenuByUser(User user);
     }
 }

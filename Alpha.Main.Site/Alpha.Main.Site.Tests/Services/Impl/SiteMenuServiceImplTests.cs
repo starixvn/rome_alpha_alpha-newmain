@@ -10,12 +10,24 @@
         [Test]
         public void GetMenuByUser_UserIsNull_ArgumentNullExceptionThrown()
         {
-            //// Arrange
-            var siteMenuService = new SiteMenuServiceImpl();
-            User user = null;
+            ////// Arrange
+            //var siteMenuService = new SiteMenuServiceImpl();
+            //User user = null;
 
-            //// Act & Assert
-            Assert.Throws<ArgumentNullException>(() => siteMenuService.GetMenuByUser(user));
+            ////// Act & Assert
+            //Assert.Throws<ArgumentNullException>(() => siteMenuService.GetMenuByUser(user));
+        }
+
+        [Test]
+        public void GetMenuByUser_Always_GetMenuByLevel()
+        {
+
+        }
+
+        [Test]
+        public void GetMenuByUser_UserIsSubAccount_GetMenuForSubAccount()
+        {
+
         }
     }
 }
