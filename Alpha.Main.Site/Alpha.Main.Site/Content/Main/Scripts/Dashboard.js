@@ -57,15 +57,6 @@ var DashboardManager = function () {
             self.activeSettingList();
         });
 
-        var languageSelector = jQuery('.language-selector');
-        languageSelector.click(function () {
-            if (isShowTopRightMenu) {
-                self.activeSettingList();
-            }
-
-            self.activeLanguageList();
-        });
-
         jQuery(".icon-logout").click(function () {
             self.signOut();
         });
@@ -158,10 +149,6 @@ var DashboardManager = function () {
     };
     self.getOldMainSitePath = function () {
         return '../' + oldMainSite + '/';
-    };
-    self.activeLanguageList = function () {
-        isShowLanguageList = !isShowLanguageList;
-        jQuery('.language-selector').parent().toggleClass("active");
     };
     self.activeSettingList = function () {
         isShowTopRightMenu = !isShowTopRightMenu;

@@ -27,6 +27,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/css/bootstrap-material-design.min.css">
+    <link type="text/css" rel="stylesheet" href="/@contentSite/css/bootstrap-material/css/ripples.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -70,40 +72,43 @@
                     </div>
                 </div>
                 <section class="mainmenu-container panel-group mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
-                    @foreach (var menu in Model.LeftMenu.MenuList)
-                    {
-                        <div class="@(menu.ShowSubMenu ? string.Empty : "list-menu") panel panel-default">
-                            <div class="menu-item  panel-heading" role="tab" id="heading-@menu.Id">
-                                <a role="button"
-                                   class="@(menu.ShowSubMenu ? string.Empty : "collapsed")  @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
-                                   @(string.IsNullOrEmpty(menu.Url) ? "href=" + "javascript:;" : "href=" + menu.Url + " target=" + contentFrame)
-                                   data-menugroup="menu-@menu.Id">
-                                    <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()">&nbsp;</span>@menu.Title</span>
-                                    @if (menu.SubMenu != null && menu.SubMenu.Any())
-                                    {
-                                        <span class="pull-right icon-arrow-right"></span>
-                                    }
-                                </a>
-                            </div>
-                            @if (menu.SubMenu != null && menu.SubMenu.Any())
-                            {
-                                <div id="collapse-@menu.Id"
-                                     class="panel-collapse @(menu.ShowSubMenu ? string.Empty : "collapse") collapsible-body sub-menu"
-                                     data-menugroup="menu-@menu.Id">
-                                    <ul class="sub-menu">
-                                        @foreach (var subMenu in menu.SubMenu)
+                    <ul>
+                        @foreach (var menu in Model.LeftMenu.MenuList)
+                        {
+                            <li class="@(menu.ShowSubMenu ? string.Empty : "list-menu") panel panel-default">
+                                <div class="menu-item  panel-heading withripple" role="tab" id="heading-@menu.Id">
+                                    <a role="button"
+                                       class="@(menu.ShowSubMenu ? string.Empty : "collapsed")  @(string.IsNullOrEmpty(menu.Url) ? "parent-menu" : string.Empty)"
+                                       @(string.IsNullOrEmpty(menu.Url) ? "href=" + "javascript:;" : "href=" + menu.Url + " target=" + contentFrame)
+                                       data-menugroup="menu-@menu.Id">
+                                        <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()">&nbsp;</span>@menu.Title</span>
+                                        @if (menu.SubMenu != null && menu.SubMenu.Any())
                                         {
-                                            <li class="sub-menu-item">
-                                                <a @(string.IsNullOrEmpty(subMenu.Url) ? "href=" + "javascript:;" : "href=" + subMenu.Url + " target=" + contentFrame)>
-                                                    @subMenu.Title
-                                                </a>
-                                            </li>
+                                            <span class="pull-right icon-arrow-right"></span>
                                         }
-                                    </ul>
+                                    </a>
                                 </div>
-                            }
-                        </div>
-                    }
+                                @if (menu.SubMenu != null && menu.SubMenu.Any())
+                                {
+                                    <div id="collapse-@menu.Id"
+                                         class="panel-collapse @(menu.ShowSubMenu ? string.Empty : "collapse") collapsible-body sub-menu"
+                                         data-menugroup="menu-@menu.Id">
+                                        <ul class="sub-menu">
+                                            @foreach (var subMenu in menu.SubMenu)
+                                            {
+                                                <li class="sub-menu-item">
+                                                    <a @(string.IsNullOrEmpty(subMenu.Url) ? "href=" + "javascript:;" : "href=" + subMenu.Url + " target=" + contentFrame)>
+                                                        @subMenu.Title
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+                            </li>
+                        }
+                    </ul>
+
                 </section>
 
                 if (Model.LeftMenu.ShowAccountInfo)
@@ -119,24 +124,28 @@
     </aside>
     <div class="content-wrapper">
         <header class="header">
-            <section class="header-navigation" id="header-navigation">
-                <span class="icon-collapse icon-hamburger icon-m c-White"></span>
-                <ul class="list-top">
+            <section class="navbar header-navigation" id="header-navigation">
+                <span class="icon-collapse icon-hamburger icon-m c-White withripple"></span>
+                <ul class="nav navbar-nav list-top">
                     <li><span class="icon icon-time opacity-80"></span><span class="txt-top" id="clock"></span></li>
-                    <li>
-                        <span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>
-                        <span class="language-text language-selector"></span>
-                        <ul class="list-language" id="language">
+                    <li class="dropdown">
+                        <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
+                            <span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>
+                            <span class="language-text language-selector"></span>
+                        </a>
+                        <ul class="dropdown-menu list-language" id="language">
                             @foreach (var language in Model.Languages)
                             {
                                 <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
                             }
                         </ul>
                     </li>
-                    <li><span class="icon icon-swap-horizontal opacity-80" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
-                    <li>
-                        <span class="icon icon-squares opacity-80 top-right-menu"></span>
-                        <ul class="list-setting">
+                    <li class="withripple"><span class="icon icon-swap-horizontal opacity-80" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
+                    <li class="dropdown">
+                        <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
+                            <span class="icon icon-squares opacity-80 top-right-menu"></span>
+                        </a>
+                        <ul class="dropdown-menu list-setting">
                             <li><a href="/@oldMainSite/_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
                             <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/Company/ContactUs/Index'); dashboardManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
                             <li><a href="/@oldMainSite/ContextualCustomer/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
@@ -144,11 +153,11 @@
                             <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                         </ul>
                     </li>
-                    <li><span class="icon icon-logout opacity-80"></span></li>
+                    <li class="withripple"><span class="icon icon-logout opacity-80"></span></li>
                 </ul>
             </section>
             <section class="header-notification" id="header-notification">
-                <span class="icon icon-home c-Primary"></span>
+                <span class="icon icon-home c-Primary withripple"></span>
                 <div id="marquee">
                     <span id="scroller">
                         <span id="live-message" class="maquee live-message"></span>
@@ -169,6 +178,11 @@
     <script type="text/javascript" src="/@contentSite/libs/jquery/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="/@contentSite/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="/@contentSite/css/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/@contentSite/css/bootstrap-material/js/material.min.js"></script>
+    <script type="text/javascript" src="/@contentSite/css/bootstrap-material/js/ripples.min.js"></script>
+    <script>
+        $.material.init();
+    </script>
     @Scripts.Render("~/bundles/scripts/main")
     @if (AlphaDefinitions.AppSettings.PiwikEnable)
     {

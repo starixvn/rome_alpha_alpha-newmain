@@ -9,6 +9,9 @@ body {
   font-size: 12px !important;
   overflow: hidden; }
 
+a, a:focus, a:active, a:target, a:hover {
+  outline: none; }
+
 .bold {
   font-weight: bold; }
 
@@ -28,9 +31,9 @@ body {
 .icon {
   position: relative;
   top: 2px;
-  right: 5px;
   cursor: pointer;
-  font-size: 17px; }
+  font-size: 17px;
+  margin-right: 5px; }
 
 .icon-add {
   padding-right: 8px;
@@ -186,7 +189,7 @@ body {
     font-weight: 600;
     padding: 0; }
     .mainmenu-container .menu-item .icon {
-      margin-right: 24px;
+      margin-right: 15px;
       width: 16px;
       position: relative;
       left: 1px; }
@@ -237,7 +240,8 @@ body {
     left: 0; }
   .accountinfo-container #accountinfo-content {
     width: 100%;
-    height: 100%; }
+    top: 0;
+    height: 100vh; }
 
 /********************************** Content-wrapper ******************************************/
 .content-wrapper {
@@ -256,11 +260,11 @@ body {
 
 /********************************** Header Navigation ************************************/
 .header-navigation {
-  height: 48px; }
+  height: 48px;
+  margin-bottom: 0; }
   .header-navigation .icon-collapse {
-    position: relative;
-    top: 18px;
-    left: 8px;
+    display: inline-block;
+    padding: 16px 15px;
     cursor: pointer; }
   .header-navigation .list-top {
     float: right;
@@ -268,23 +272,27 @@ body {
     font-size: 13px; }
     .header-navigation .list-top > li {
       display: inline-block;
-      margin: 8px 0;
-      padding: 5px 10px;
+      padding: 15px 10px;
       position: relative; }
       .header-navigation .list-top > li .txt-top {
         opacity: 0.8; }
+      .header-navigation .list-top > li.dropdown {
+        margin: 0;
+        padding: 0; }
+        .header-navigation .list-top > li.dropdown > a {
+          padding: 15px;
+          opacity: 0.8; }
+        .header-navigation .list-top > li.dropdown .dropdown-menu.list-setting {
+          right: 0;
+          left: auto; }
+        .header-navigation .list-top > li.dropdown .dropdown-menu li > a {
+          font-size: 13px; }
       .header-navigation .list-top > li .list-setting, .header-navigation .list-top > li .list-language {
         -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
         -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
         background: #fff;
-        color: #5c1218;
-        position: absolute;
-        top: 40px;
-        min-width: 160px;
-        right: -39px;
-        display: none;
-        z-index: 100; }
+        color: #5c1218; }
         .header-navigation .list-top > li .list-setting > li a, .header-navigation .list-top > li .list-language > li a {
           display: block;
           padding: 9px 20px;
@@ -299,8 +307,6 @@ body {
           background: #ddd; }
           .header-navigation .list-top > li .list-setting > li:hover a, .header-navigation .list-top > li .list-language > li:hover a {
             text-decoration: none; }
-      .header-navigation .list-top > li.active .list-setting, .header-navigation .list-top > li.active .list-language {
-        display: block; }
 
 /********************************** Header Notification *************************************/
 .header-notification {
@@ -312,7 +318,7 @@ body {
   -moz-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3); }
   .header-notification .icon-home {
-    margin-left: 15px; }
+    padding: 11px 15px; }
   .header-notification .nav-iconbox {
     position: absolute;
     right: 16px;
