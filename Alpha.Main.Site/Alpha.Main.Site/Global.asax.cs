@@ -14,6 +14,10 @@
     {
         protected void Application_Start()
         {
+            ViewEngines.Engines.Clear();            
+            ViewEngines.Engines.Add(new RazorViewEngine());
+            MvcHandler.DisableMvcResponseHeader = true;
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
