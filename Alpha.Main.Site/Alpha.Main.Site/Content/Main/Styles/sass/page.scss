@@ -230,7 +230,6 @@ a, a:focus, a:active, a:target, a:hover {
     }
     .menu-item {
         position: relative;
-        text-transform: uppercase;
         color: #000;
         font-weight: 600;
         padding: 0;
@@ -240,11 +239,12 @@ a, a:focus, a:active, a:target, a:hover {
             position: relative;
             left: 1px;
         }
-        a {
+        > a {
             display: table;
             white-space: nowrap;
             color: #000000;
             text-decoration: none;
+            text-transform: uppercase;
             height: 48px;
             line-height: 48px;
             width: 100%;
@@ -275,7 +275,6 @@ a, a:focus, a:active, a:target, a:hover {
             font-weight: 600;
             height: 36px;
             line-height: 36px;
-            width: 195px;
         }
         &:hover a {
             color: #5c1218;

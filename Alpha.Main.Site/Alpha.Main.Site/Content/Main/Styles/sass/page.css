@@ -184,7 +184,6 @@ a, a:focus, a:active, a:target, a:hover {
     background: #f9f9f9; }
   .mainmenu-container .menu-item {
     position: relative;
-    text-transform: uppercase;
     color: #000;
     font-weight: 600;
     padding: 0; }
@@ -193,25 +192,26 @@ a, a:focus, a:active, a:target, a:hover {
       width: 16px;
       position: relative;
       left: 1px; }
-    .mainmenu-container .menu-item a {
+    .mainmenu-container .menu-item > a {
       display: table;
       white-space: nowrap;
       color: #000000;
       text-decoration: none;
+      text-transform: uppercase;
       height: 48px;
       line-height: 48px;
       width: 100%;
       min-height: 3rem;
       background: transparent;
       padding: 0 16px; }
-      .mainmenu-container .menu-item a .icon-arrow-right {
+      .mainmenu-container .menu-item > a .icon-arrow-right {
         line-height: 48px;
         font-size: 17px;
         transform: rotate(0);
         transition: transform 0.3s ease-out; }
-      .mainmenu-container .menu-item a.active {
+      .mainmenu-container .menu-item > a.active {
         background: #d5d5d6; }
-        .mainmenu-container .menu-item a.active .icon-arrow-right {
+        .mainmenu-container .menu-item > a.active .icon-arrow-right {
           transform: rotate(90deg); }
   .mainmenu-container .sub-menu .sub-menu-item a {
     color: #555555;
@@ -221,8 +221,7 @@ a, a:focus, a:active, a:target, a:hover {
     padding: 0 5px 0 56px;
     font-weight: 600;
     height: 36px;
-    line-height: 36px;
-    width: 195px; }
+    line-height: 36px; }
   .mainmenu-container .sub-menu .sub-menu-item:hover a {
     color: #5c1218; }
 
