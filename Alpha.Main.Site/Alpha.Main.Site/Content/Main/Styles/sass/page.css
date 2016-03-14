@@ -98,10 +98,10 @@ a, a:focus, a:active, a:target, a:hover {
       z-index: 1003; }
       .sidebar.collapsed:hover .profile-avatar {
         display: inline-block;
-        height: 63px;
-        width: 64px;
+        height: 48px;
+        width: 48px;
         float: left;
-        margin: 12px;
+        margin: 18px;
         cursor: pointer; }
       .sidebar.collapsed:hover .main-tab, .sidebar.collapsed:hover .userinfo, .sidebar.collapsed:hover .accinfo-content, .sidebar.collapsed:hover .menu-item a .icon-arrow-right, .sidebar.collapsed:hover .panel-collapse .sub-menu,
       .sidebar.collapsed:hover .list-menu .menu-item .txt-item, .sidebar.collapsed:hover list-menu .menu-item i {
@@ -115,10 +115,10 @@ a, a:focus, a:active, a:target, a:hover {
   height: 88px; }
   .customer-profile .profile-avatar {
     display: inline-block;
-    height: 63px;
-    width: 64px;
+    height: 48px;
+    width: 48px;
     float: left;
-    margin: 12px;
+    margin: 18px;
     cursor: pointer; }
     .customer-profile .profile-avatar img {
       width: 100%;
@@ -383,4 +383,7 @@ a, a:focus, a:active, a:target, a:hover {
   bottom: 0; }
   .ie8 .content-wrapper.expanded {
     left: 46px; }
+
+.sidebar.collapsed .mainmenu-container .sub-menu {
+  display: none !important; }
 

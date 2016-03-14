@@ -122,10 +122,10 @@ a, a:focus, a:active, a:target, a:hover {
             z-index: 1003;
             .profile-avatar {
                 display: inline-block;
-                height: 63px;
-                width: 64px;
+                height: 48px;
+                width: 48px;
                 float: left;
-                margin: 12px;
+                margin: 18px;
                 cursor: pointer;
             }
             .main-tab, .userinfo,  .accinfo-content, .menu-item a .icon-arrow-right, .panel-collapse .sub-menu, 
@@ -147,10 +147,10 @@ a, a:focus, a:active, a:target, a:hover {
     height: 88px;
     .profile-avatar  {
         display: inline-block;
-        height: 63px;
-        width: 64px;
+        height: 48px;
+        width: 48px;
         float: left;
-        margin: 12px;
+        margin: 18px;
         cursor: pointer;
         img {
             width: 100%;
@@ -473,5 +473,10 @@ a, a:focus, a:active, a:target, a:hover {
         &.expanded {
             left: 46px;
         }
+    }
+}
+.sidebar.collapsed {
+    .mainmenu-container .sub-menu {
+        display: none!important;
     }
 }
