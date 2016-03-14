@@ -223,7 +223,7 @@ a, a:focus, a:active, a:target, a:hover {
                 box-shadow: none;
     }
     &.panel-group {
-        margin-bottom: 0
+        margin-bottom: 0;
     }
     .panel > .panel-heading, .panel.panel-default > .panel-heading {
         background: #f9f9f9;
@@ -234,7 +234,7 @@ a, a:focus, a:active, a:target, a:hover {
         font-weight: 600;
         padding: 0;
         .icon {
-            margin-right: 15px;
+            margin-right: 22px;
             width: 16px;
             position: relative;
             left: 1px;
