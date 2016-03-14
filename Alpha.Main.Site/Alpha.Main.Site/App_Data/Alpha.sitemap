@@ -7,24 +7,24 @@
       <siteMapNode title="memberwinlossdetail" url="site-oldmain/_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
       <siteMapNode title="memberOutstanding" url="site-oldmain/_Reports/Common/Outstanding.aspxlv=2" roles="Agent"></siteMapNode>
 
-      <siteMapNode title="agentwinloss" url="site-oldmain/_Reports/Common/MatchResultEntered.aspx?lv=3" roles="3"></siteMapNode>
-      <siteMapNode title="agentwinlostdetail" url="site-oldmain/_Reports/Winloss/WinLossDetailMaster.aspx" roles="3"></siteMapNode>
-      <siteMapNode title="agentOutstanding" url="site-oldmain/_Reports/Common/Outstanding.aspxlv=3" roles="3"></siteMapNode>
+      <siteMapNode title="agentwinloss" url="site-oldmain/_Reports/Common/MatchResultEntered.aspx?lv=3" roles="Master"></siteMapNode>
+      <siteMapNode title="agentwinlostdetail" url="site-oldmain/_Reports/Winloss/WinLossDetailMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode title="agentOutstanding" url="site-oldmain/_Reports/Common/Outstanding.aspxlv=3" roles="Master"></siteMapNode>
 
-      <siteMapNode title="masterwinloss" url="site-oldmain/_Reports/Common/MatchResultEntered.aspx?lv=4" roles="4"></siteMapNode>
-      <siteMapNode title="masterwinlostdetail" url="site-oldmain/_Reports/Winloss/WinLossDetailSuper.aspx" roles="4"></siteMapNode>
-      <siteMapNode title="masterOutstanding" url="site-oldmain/_Reports/Common/Outstanding.aspxlv=4" roles="4"></siteMapNode>
+      <siteMapNode title="masterwinloss" url="site-oldmain/_Reports/Common/MatchResultEntered.aspx?lv=4" roles="Super"></siteMapNode>
+      <siteMapNode title="masterwinlostdetail" url="site-oldmain/_Reports/Winloss/WinLossDetailSuper.aspx" roles="Super"></siteMapNode>
+      <siteMapNode title="masterOutstanding" url="site-oldmain/_Reports/Common/Outstanding.aspxlv=4" roles="Super"></siteMapNode>
 
       <!--Casino-RealTimeWL-->
       <siteMapNode description="cs" title="realTimeCSWinloss" url="site-oldmain/_Reports/CasinoWinloss/CSWinlossAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode description="cs" title="realTimeCSWinloss" url="site-oldmain/_Reports/CasinoWinloss/CSWinlossMaster.aspx" roles="3"></siteMapNode>
-      <siteMapNode description="cs" title="realTimeCSWinloss" url="site-oldmain/_Reports/CasinoWinloss/CSWinlossSuper.aspx" roles="4"></siteMapNode>
+      <siteMapNode description="cs" title="realTimeCSWinloss" url="site-oldmain/_Reports/CasinoWinloss/CSWinlossMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode description="cs" title="realTimeCSWinloss" url="site-oldmain/_Reports/CasinoWinloss/CSWinlossSuper.aspx" roles="Super"></siteMapNode>
       <!--/Casino-RealTimeWL-->
 
       <!--Bingo-RealTimeWL-->
       <siteMapNode description="bg" title="realTimeBingoWinloss" url="site-oldmain/_Reports/BingoWinloss/BingoWinlossAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode description="bg" title="realTimeBingoWinloss" url="site-oldmain/_Reports/BingoWinloss/BingoWinlossMaster.aspx" roles="3"></siteMapNode>
-      <siteMapNode description="bg" title="realTimeBingoWinloss" url="site-oldmain/_Reports/BingoWinloss/BingoWinlossSuper.aspx" roles="4"></siteMapNode>
+      <siteMapNode description="bg" title="realTimeBingoWinloss" url="site-oldmain/_Reports/BingoWinloss/BingoWinlossMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode description="bg" title="realTimeBingoWinloss" url="site-oldmain/_Reports/BingoWinloss/BingoWinlossSuper.aspx" roles="Super"></siteMapNode>
       <!--/Bingo-RealTimeWL-->
 
       <siteMapNode title="matchwinloss" url="site-oldmain/_Reports/MatchWinloss/MatchWinLoss.aspx" roles="Agent"></siteMapNode>
@@ -33,11 +33,11 @@
       <siteMapNode title="winLossByBettype" url="site-oldmain/_Reports/Winloss/WinLossByBettypeAgent.aspx" roles="Agent"></siteMapNode>
       <siteMapNode title="winlossanalysis" url="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisAgent.aspx" roles="Agent"></siteMapNode>
 
-      <siteMapNode title="winLossByBettype" url="site-oldmain/_Reports/Winloss/WinLossByBettypeMaster.aspx" roles="3"></siteMapNode>
-      <siteMapNode title="winlossanalysis" url="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisMaster.aspx" roles="3"></siteMapNode>
+      <siteMapNode title="winLossByBettype" url="site-oldmain/_Reports/Winloss/WinLossByBettypeMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode title="winlossanalysis" url="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisMaster.aspx" roles="Master"></siteMapNode>
 
-      <siteMapNode title="winLossByBettype" url="site-oldmain/_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="4"></siteMapNode>
-      <siteMapNode title="winlossanalysis" url="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisSuper.aspx" roles="4"></siteMapNode>
+      <siteMapNode title="winLossByBettype" url="site-oldmain/_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="Super"></siteMapNode>
+      <siteMapNode title="winlossanalysis" url="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisSuper.aspx" roles="Super"></siteMapNode>
 
       <siteMapNode description="Consolidated" title="consolidatedreport" url="site-oldmain/report/consolidate/index"></siteMapNode>
 
@@ -49,8 +49,8 @@
       <siteMapNode description="LastBetMonitoring" title="monitor" url="site-oldmain/_Reports/LastBetMonitoring/LastBetMonitoring.aspx" roles="Agent"></siteMapNode>
       <!--Statement-->
       <siteMapNode title="statement" url="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=2&amp;rptmrange=5" roles="Agent"></siteMapNode>
-      <siteMapNode title="statement" url="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=3&amp;rptmrange=5" roles="3"></siteMapNode>
-      <siteMapNode title="statement" url="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=4&amp;rptmrange=5" roles="4"></siteMapNode>
+      <siteMapNode title="statement" url="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=3&amp;rptmrange=5" roles="Master"></siteMapNode>
+      <siteMapNode title="statement" url="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=4&amp;rptmrange=5" roles="Super"></siteMapNode>
       <!--/Statement-->
 
       <!--Foobet-->
@@ -99,8 +99,8 @@
       <siteMapNode description="subacc" title="subaccount" url="site-oldmain/_SubAcc/SubAccList.aspx"></siteMapNode>
 
       <siteMapNode title="customerlist" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode title="agentList" url="site-oldmain/_MemberInfo/CustomerList/Master/AgentList.aspx" roles="3"></siteMapNode>
-      <siteMapNode title="masterList" url="site-oldmain/_MemberInfo/CustomerList/Super/MasterList.aspx" roles="4"></siteMapNode>
+      <siteMapNode title="agentList" url="site-oldmain/_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master"></siteMapNode>
+      <siteMapNode title="masterList" url="site-oldmain/_MemberInfo/CustomerList/Super/MasterList.aspx" roles="Super"></siteMapNode>
 
       <siteMapNode title="creditbalance" url="site-oldmain/_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
       <siteMapNode title="positionTaking" url="site-oldmain/_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
