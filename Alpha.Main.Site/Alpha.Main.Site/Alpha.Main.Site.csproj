@@ -617,10 +617,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\LeftPanel.Designer.cs">
+    <Compile Include="App_GlobalResources\Alpha.sitemap.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LeftPanel.resx</DependentUpon>
+      <DependentUpon>Alpha.sitemap.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -716,41 +716,28 @@
     <Folder Include="Views\Index\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.resx">
+    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ko-KR.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.resx">
+      <LastGenOutput>Alpha.sitemap.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>LeftPanel.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.ja-JP.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.ko-KR.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.th-TH.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.vi-VN.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.zh-CN.resx" />
+    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.zh-TW.resx" />
     <EmbeddedResource Include="App_GlobalResources\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.th-TH.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Resources.th-TH.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.vi-VN.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Resources.vi-VN.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-CN.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Resources.zh-CN.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\LeftPanel.zh-TW.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="App_GlobalResources\Resources.zh-TW.resx">

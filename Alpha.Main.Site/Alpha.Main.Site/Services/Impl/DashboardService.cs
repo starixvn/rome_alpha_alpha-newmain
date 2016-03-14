@@ -33,6 +33,8 @@
     using SiteServices = Alpha.Main.Site.Services;
     using System.Linq;
     using Models.Enumerations;
+    using System.Threading;
+    using System.Globalization;
     public class DashboardService : IDashboardService
     {
         private static string DefaultMainPage = "../" + SiteServices.AppSettings.OldMainSite + "/_Reports/PortalPage/PortalPage.aspx";
@@ -398,7 +400,7 @@
                     return string.Empty;
                 }
 
-                object val = LeftPanel.ResourceManager.GetString(key);
+                object val = Alpha_sitemap.ResourceManager.GetString(key);
                 if (val != null)
                 {
                     return val.ToString();

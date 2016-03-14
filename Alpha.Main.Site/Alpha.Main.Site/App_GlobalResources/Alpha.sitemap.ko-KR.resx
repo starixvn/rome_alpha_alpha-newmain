@@ -117,220 +117,220 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="agentwinloss" xml:space="preserve">
+  <data name="agentwinloss.title" xml:space="preserve">
     <value>에이전트 승 패</value>
   </data>
-  <data name="agentwinlostdetail" xml:space="preserve">
+  <data name="agentwinlostdetail.title" xml:space="preserve">
     <value>에이전트 승 패 상세보기</value>
   </data>
-  <data name="bettype24" xml:space="preserve">
+  <data name="bettype24.title" xml:space="preserve">
     <value>Double Chance</value>
   </data>
-  <data name="bettype26" xml:space="preserve">
+  <data name="bettype26.title" xml:space="preserve">
     <value>Both/One/Neither Team To Score</value>
   </data>
-  <data name="bingoPositionTaking" xml:space="preserve">
+  <data name="bingoPositionTaking.title" xml:space="preserve">
     <value>빙고게임 포지션(%)</value>
   </data>
-  <data name="casinoPositionTaking" xml:space="preserve">
+  <data name="casinoPositionTaking.title" xml:space="preserve">
     <value>카지노 포지션(%)</value>
   </data>
-  <data name="charts" xml:space="preserve">
+  <data name="charts.title" xml:space="preserve">
     <value>차트</value>
   </data>
-  <data name="consolidatedreport" xml:space="preserve">
+  <data name="consolidatedreport.title" xml:space="preserve">
     <value>Consolidation</value>
   </data>
-  <data name="correctscore" xml:space="preserve">
+  <data name="correctscore.title" xml:space="preserve">
     <value>정확한 점수</value>
   </data>
-  <data name="creditbalance" xml:space="preserve">
+  <data name="creditbalance.title" xml:space="preserve">
     <value>크레딧/잔액</value>
   </data>
-  <data name="customerlist" xml:space="preserve">
+  <data name="customerlist.title" xml:space="preserve">
     <value>고객 리스트</value>
   </data>
-  <data name="dailywinlossanalysisreport" xml:space="preserve">
+  <data name="dailywinlossanalysisreport.title" xml:space="preserve">
     <value>일일승패금액분석</value>
   </data>
-  <data name="fthtfglg" xml:space="preserve">
+  <data name="fthtfglg.title" xml:space="preserve">
     <value>첫골/마지막골</value>
   </data>
-  <data name="fthttotalgoal" xml:space="preserve">
+  <data name="fthttotalgoal.title" xml:space="preserve">
     <value>총 득점</value>
   </data>
-  <data name="hr" xml:space="preserve">
+  <data name="hr.title" xml:space="preserve">
     <value>경마</value>
   </data>
-  <data name="htft" xml:space="preserve">
+  <data name="htft.title" xml:space="preserve">
     <value>전반전/풀타임</value>
   </data>
-  <data name="lbl1x2" xml:space="preserve">
+  <data name="lbl1x2.title" xml:space="preserve">
     <value>승/무/패</value>
   </data>
-  <data name="agentList" xml:space="preserve">
+  <data name="agentList.title" xml:space="preserve">
     <value>에이전트 목록</value>
   </data>
-  <data name="agentOutstanding" xml:space="preserve">
+  <data name="agentOutstanding.title" xml:space="preserve">
     <value>에이전트 아웃스텐딩</value>
   </data>
-  <data name="cancelledBets" xml:space="preserve">
+  <data name="cancelledBets.title" xml:space="preserve">
     <value>취소된 배팅</value>
   </data>
-  <data name="commissionByBettype" xml:space="preserve">
+  <data name="commissionByBettype.title" xml:space="preserve">
     <value>배팅 종류에 따른 수수료</value>
   </data>
-  <data name="commssionhorseracing" xml:space="preserve">
+  <data name="commssionhorseracing.title" xml:space="preserve">
     <value>경마 수수료</value>
   </data>
-  <data name="foobet" xml:space="preserve">
+  <data name="foobet.title" xml:space="preserve">
     <value>FB 금융</value>
   </data>
-  <data name="forecast" xml:space="preserve">
+  <data name="forecast.title" xml:space="preserve">
     <value>예상</value>
   </data>
-  <data name="homeDrawAwayNoBet" xml:space="preserve">
+  <data name="homeDrawAwayNoBet.title" xml:space="preserve">
     <value>Home/Draw/Away No Bet</value>
   </data>
-  <data name="HOUL" xml:space="preserve">
+  <data name="HOUL.title" xml:space="preserve">
     <value>핸디캡/초과 미만/생중계</value>
   </data>
-  <data name="masterList" xml:space="preserve">
+  <data name="masterList.title" xml:space="preserve">
     <value>마스터 에이전트 목록</value>
   </data>
-  <data name="masterOutstanding" xml:space="preserve">
+  <data name="masterOutstanding.title" xml:space="preserve">
     <value>마스터 대기 포인트</value>
   </data>
-  <data name="matchWinLostDetail" xml:space="preserve">
+  <data name="matchWinLostDetail.title" xml:space="preserve">
     <value>경기 승 패 상세보기</value>
   </data>
-  <data name="memberCommission" xml:space="preserve">
+  <data name="memberCommission.title" xml:space="preserve">
     <value>회원 수수료</value>
   </data>
-  <data name="memberInfo" xml:space="preserve">
+  <data name="memberInfo.title" xml:space="preserve">
     <value>회원 정보</value>
   </data>
-  <data name="memberOutstanding" xml:space="preserve">
+  <data name="memberOutstanding.title" xml:space="preserve">
     <value>회원 아웃스텐딩</value>
   </data>
-  <data name="memberWinLoss" xml:space="preserve">
+  <data name="memberWinLoss.title" xml:space="preserve">
     <value>회원 승리 패배</value>
   </data>
-  <data name="monitor" xml:space="preserve">
+  <data name="monitor.title" xml:space="preserve">
     <value>마지막베팅내역</value>
   </data>
-  <data name="newAgent" xml:space="preserve">
+  <data name="newAgent.title" xml:space="preserve">
     <value>새로운 에이전트</value>
   </data>
-  <data name="newMaster" xml:space="preserve">
+  <data name="newMaster.title" xml:space="preserve">
     <value>새로운 마스터</value>
   </data>
-  <data name="newMember" xml:space="preserve">
+  <data name="newMember.title" xml:space="preserve">
     <value>새로운 회원</value>
   </data>
-  <data name="outRight" xml:space="preserve">
+  <data name="outRight.title" xml:space="preserve">
     <value>순위,승자 등</value>
   </data>
-  <data name="positionTaking" xml:space="preserve">
+  <data name="positionTaking.title" xml:space="preserve">
     <value>포지션 테이킹(%)</value>
   </data>
-  <data name="realTimeBingoWinloss" xml:space="preserve">
+  <data name="realTimeBingoWinloss.title" xml:space="preserve">
     <value>실시간 빙고 승리/패배</value>
   </data>
-  <data name="realTimeCSWinloss" xml:space="preserve">
+  <data name="realTimeCSWinloss.title" xml:space="preserve">
     <value>실시간 카지노 승패</value>
   </data>
-  <data name="scoreMap" xml:space="preserve">
+  <data name="scoreMap.title" xml:space="preserve">
     <value>라이브스코어</value>
   </data>
-  <data name="statement" xml:space="preserve">
+  <data name="statement.title" xml:space="preserve">
     <value>기록</value>
   </data>
-  <data name="winLossByBettype" xml:space="preserve">
+  <data name="winLossByBettype.title" xml:space="preserve">
     <value>배팅 종류별 승리 패배</value>
   </data>
-  <data name="masterwinloss" xml:space="preserve">
+  <data name="masterwinloss.title" xml:space="preserve">
     <value>마스터 승리 패배</value>
   </data>
-  <data name="masterwinlostdetail" xml:space="preserve">
+  <data name="masterwinlostdetail.title" xml:space="preserve">
     <value>상세한 마스터 승리 패배</value>
   </data>
-  <data name="matchwinloss" xml:space="preserve">
+  <data name="matchwinloss.title" xml:space="preserve">
     <value>매치 승리 패배</value>
   </data>
-  <data name="MemberWinLimit" xml:space="preserve">
+  <data name="MemberWinLimit.title" xml:space="preserve">
     <value>회원의  지급한도</value>
   </data>
-  <data name="memberwinlossdetail" xml:space="preserve">
+  <data name="memberwinlossdetail.title" xml:space="preserve">
     <value>상세한 회원의 승리 패배</value>
   </data>
-  <data name="moneyline" xml:space="preserve">
+  <data name="moneyline.title" xml:space="preserve">
     <value>머니라인(핸디캡 없는 경기)</value>
   </data>
-  <data name="monthlywinlossanalysisreport" xml:space="preserve">
+  <data name="monthlywinlossanalysisreport.title" xml:space="preserve">
     <value>매월 승리/패배 분석</value>
   </data>
-  <data name="numbergame" xml:space="preserve">
+  <data name="numbergame.title" xml:space="preserve">
     <value>넘버게임 커미션</value>
   </data>
-  <data name="OE1x2DND" xml:space="preserve">
+  <data name="OE1x2DND.title" xml:space="preserve">
     <value>Odd/Even + 1x2 + DND</value>
   </data>
-  <data name="parlay" xml:space="preserve">
+  <data name="parlay.title" xml:space="preserve">
     <value>팔레이</value>
   </data>
-  <data name="reports" xml:space="preserve">
+  <data name="reports.title" xml:space="preserve">
     <value>리포트</value>
   </data>
-  <data name="result" xml:space="preserve">
+  <data name="result.title" xml:space="preserve">
     <value>결과 확인</value>
   </data>
-  <data name="sportconsolidatedreport" xml:space="preserve">
+  <data name="sportconsolidatedreport.title" xml:space="preserve">
     <value>스포츠 통합 리포트</value>
   </data>
-  <data name="subaccount" xml:space="preserve">
+  <data name="subaccount.title" xml:space="preserve">
     <value>보조계정</value>
   </data>
-  <data name="totalbets" xml:space="preserve">
+  <data name="totalbets.title" xml:space="preserve">
     <value>총 배팅</value>
   </data>
-  <data name="winlossanalysis" xml:space="preserve">
+  <data name="winlossanalysis.title" xml:space="preserve">
     <value>승리/패배 분석</value>
   </data>
-  <data name="announcements" xml:space="preserve">
+  <data name="announcements.title" xml:space="preserve">
     <value>Announcements</value>
   </data>
-  <data name="credit" xml:space="preserve">
+  <data name="credit.title" xml:space="preserve">
     <value>포인트</value>
   </data>
-  <data name="customerSetting" xml:space="preserve">
+  <data name="customerSetting.title" xml:space="preserve">
     <value>회원설정</value>
   </data>
-  <data name="login" xml:space="preserve">
+  <data name="login.title" xml:space="preserve">
     <value>로그인</value>
   </data>
-  <data name="normal" xml:space="preserve">
+  <data name="normal.title" xml:space="preserve">
     <value>일반</value>
   </data>
-  <data name="personalMessage" xml:space="preserve">
+  <data name="personalMessage.title" xml:space="preserve">
     <value>개인 메세지</value>
   </data>
-  <data name="special" xml:space="preserve">
+  <data name="special.title" xml:space="preserve">
     <value>Special</value>
   </data>
-  <data name="status" xml:space="preserve">
+  <data name="status.title" xml:space="preserve">
     <value>상황</value>
   </data>
-  <data name="transfer" xml:space="preserve">
+  <data name="transfer.title" xml:space="preserve">
     <value>전송</value>
   </data>
-  <data name="viewLog" xml:space="preserve">
+  <data name="viewLog.title" xml:space="preserve">
     <value>로그인 보기</value>
   </data>
-  <data name="statistics" xml:space="preserve">
+  <data name="statistics.title" xml:space="preserve">
     <value>통계</value>
   </data>
-  <data name="winLossAnalysisChart" xml:space="preserve">
+  <data name="winLossAnalysisChart.title" xml:space="preserve">
     <value>Win Loss Analysis Chart</value>
   </data>
 </root>

@@ -117,220 +117,220 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="agentwinloss" xml:space="preserve">
+  <data name="agentwinloss.title" xml:space="preserve">
     <value>Thắng thua của Agent</value>
   </data>
-  <data name="agentwinlostdetail" xml:space="preserve">
+  <data name="agentwinlostdetail.title" xml:space="preserve">
     <value>Chi tiết thắng thua của Agent</value>
   </data>
-  <data name="bettype24" xml:space="preserve">
+  <data name="bettype24.title" xml:space="preserve">
     <value>Double Chance</value>
   </data>
-  <data name="bettype26" xml:space="preserve">
+  <data name="bettype26.title" xml:space="preserve">
     <value>Both/One/Neither Team To Score</value>
   </data>
-  <data name="bingoPositionTaking" xml:space="preserve">
+  <data name="bingoPositionTaking.title" xml:space="preserve">
     <value>(%) PT của Bingo</value>
   </data>
-  <data name="casinoPositionTaking" xml:space="preserve">
+  <data name="casinoPositionTaking.title" xml:space="preserve">
     <value>(%) PT của Casino</value>
   </data>
-  <data name="charts" xml:space="preserve">
+  <data name="charts.title" xml:space="preserve">
     <value>Biểu đồ</value>
   </data>
-  <data name="consolidatedreport" xml:space="preserve">
+  <data name="consolidatedreport.title" xml:space="preserve">
     <value>Consolidation</value>
   </data>
-  <data name="correctscore" xml:space="preserve">
+  <data name="correctscore.title" xml:space="preserve">
     <value>Điểm số chính xác</value>
   </data>
-  <data name="creditbalance" xml:space="preserve">
+  <data name="creditbalance.title" xml:space="preserve">
     <value>Hạn mức /Tín dụng</value>
   </data>
-  <data name="customerlist" xml:space="preserve">
+  <data name="customerlist.title" xml:space="preserve">
     <value>Danh sách Thành viên</value>
   </data>
-  <data name="dailywinlossanalysisreport" xml:space="preserve">
+  <data name="dailywinlossanalysisreport.title" xml:space="preserve">
     <value>Đánh giá kết quả thắng thua trong ngày</value>
   </data>
-  <data name="fthtfglg" xml:space="preserve">
+  <data name="fthtfglg.title" xml:space="preserve">
     <value>FT &amp; HT FG/LG</value>
   </data>
-  <data name="fthttotalgoal" xml:space="preserve">
+  <data name="fthttotalgoal.title" xml:space="preserve">
     <value>FT &amp; HT Total Goal</value>
   </data>
-  <data name="hr" xml:space="preserve">
+  <data name="hr.title" xml:space="preserve">
     <value>Racing</value>
   </data>
-  <data name="htft" xml:space="preserve">
+  <data name="htft.title" xml:space="preserve">
     <value>Hiệp 1 / Toàn thời gian</value>
   </data>
-  <data name="lbl1x2" xml:space="preserve">
+  <data name="lbl1x2.title" xml:space="preserve">
     <value>1 X 2</value>
   </data>
-  <data name="agentList" xml:space="preserve">
+  <data name="agentList.title" xml:space="preserve">
     <value>Danh sách Agent</value>
   </data>
-  <data name="agentOutstanding" xml:space="preserve">
+  <data name="agentOutstanding.title" xml:space="preserve">
     <value>Số tiền chưa xử lý của Agent</value>
   </data>
-  <data name="cancelledBets" xml:space="preserve">
+  <data name="cancelledBets.title" xml:space="preserve">
     <value>Cược hủy/từ chối</value>
   </data>
-  <data name="commissionByBettype" xml:space="preserve">
+  <data name="commissionByBettype.title" xml:space="preserve">
     <value>Hoa hồng theo loại cược</value>
   </data>
-  <data name="commssionhorseracing" xml:space="preserve">
+  <data name="commssionhorseracing.title" xml:space="preserve">
     <value>Hoa hồng cho Racing</value>
   </data>
-  <data name="foobet" xml:space="preserve">
+  <data name="foobet.title" xml:space="preserve">
     <value>FB Financial</value>
   </data>
-  <data name="forecast" xml:space="preserve">
+  <data name="forecast.title" xml:space="preserve">
     <value>Dự đoán</value>
   </data>
-  <data name="homeDrawAwayNoBet" xml:space="preserve">
+  <data name="homeDrawAwayNoBet.title" xml:space="preserve">
     <value>Home/Draw/Away No Bet</value>
   </data>
-  <data name="HOUL" xml:space="preserve">
+  <data name="HOUL.title" xml:space="preserve">
     <value>Handicap/Over Under/Live</value>
   </data>
-  <data name="masterList" xml:space="preserve">
+  <data name="masterList.title" xml:space="preserve">
     <value>Danh sách Master</value>
   </data>
-  <data name="masterOutstanding" xml:space="preserve">
+  <data name="masterOutstanding.title" xml:space="preserve">
     <value>Số tiền chưa xử lý của Master</value>
   </data>
-  <data name="matchWinLostDetail" xml:space="preserve">
+  <data name="matchWinLostDetail.title" xml:space="preserve">
     <value>Chi tiết thắng thua theo trận</value>
   </data>
-  <data name="memberCommission" xml:space="preserve">
+  <data name="memberCommission.title" xml:space="preserve">
     <value>Hoa hồng của Member</value>
   </data>
-  <data name="memberInfo" xml:space="preserve">
+  <data name="memberInfo.title" xml:space="preserve">
     <value>Thông tin Thành viên</value>
   </data>
-  <data name="memberOutstanding" xml:space="preserve">
+  <data name="memberOutstanding.title" xml:space="preserve">
     <value>Số tiền chưa xử lý của Member</value>
   </data>
-  <data name="memberWinLoss" xml:space="preserve">
+  <data name="memberWinLoss.title" xml:space="preserve">
     <value>Thắng thua của Member</value>
   </data>
-  <data name="monitor" xml:space="preserve">
+  <data name="monitor.title" xml:space="preserve">
     <value>Giám sát lượt cược gần nhất</value>
   </data>
-  <data name="newAgent" xml:space="preserve">
+  <data name="newAgent.title" xml:space="preserve">
     <value>Thành viên Agent mới</value>
   </data>
-  <data name="newMaster" xml:space="preserve">
+  <data name="newMaster.title" xml:space="preserve">
     <value>Thành viên Master mới</value>
   </data>
-  <data name="newMember" xml:space="preserve">
+  <data name="newMember.title" xml:space="preserve">
     <value>Thành viên  mới</value>
   </data>
-  <data name="outRight" xml:space="preserve">
+  <data name="outRight.title" xml:space="preserve">
     <value>Cược Thắng</value>
   </data>
-  <data name="positionTaking" xml:space="preserve">
+  <data name="positionTaking.title" xml:space="preserve">
     <value>Position Taking (%)</value>
   </data>
-  <data name="realTimeBingoWinloss" xml:space="preserve">
+  <data name="realTimeBingoWinloss.title" xml:space="preserve">
     <value>Thắng thua hiện tại của Bingo</value>
   </data>
-  <data name="realTimeCSWinloss" xml:space="preserve">
+  <data name="realTimeCSWinloss.title" xml:space="preserve">
     <value>Thắng thua hiện tại của Casino</value>
   </data>
-  <data name="scoreMap" xml:space="preserve">
+  <data name="scoreMap.title" xml:space="preserve">
     <value>Score Map</value>
   </data>
-  <data name="statement" xml:space="preserve">
+  <data name="statement.title" xml:space="preserve">
     <value>Sao kê</value>
   </data>
-  <data name="winLossByBettype" xml:space="preserve">
+  <data name="winLossByBettype.title" xml:space="preserve">
     <value>Thắng thua theo loại cược</value>
   </data>
-  <data name="masterwinloss" xml:space="preserve">
+  <data name="masterwinloss.title" xml:space="preserve">
     <value>Thắng thua của Master</value>
   </data>
-  <data name="masterwinlostdetail" xml:space="preserve">
+  <data name="masterwinlostdetail.title" xml:space="preserve">
     <value>Chi tiết thắng thua của Master</value>
   </data>
-  <data name="matchwinloss" xml:space="preserve">
+  <data name="matchwinloss.title" xml:space="preserve">
     <value>Thắng thua theo trận</value>
   </data>
-  <data name="MemberWinLimit" xml:space="preserve">
+  <data name="MemberWinLimit.title" xml:space="preserve">
     <value>Giới hạn tiền thắng cược của Member</value>
   </data>
-  <data name="memberwinlossdetail" xml:space="preserve">
+  <data name="memberwinlossdetail.title" xml:space="preserve">
     <value>Chi tiết thắng thua của Member</value>
   </data>
-  <data name="moneyline" xml:space="preserve">
+  <data name="moneyline.title" xml:space="preserve">
     <value>Money Line</value>
   </data>
-  <data name="monthlywinlossanalysisreport" xml:space="preserve">
+  <data name="monthlywinlossanalysisreport.title" xml:space="preserve">
     <value>Phân tích hệ số thắng thua trong tháng</value>
   </data>
-  <data name="numbergame" xml:space="preserve">
+  <data name="numbergame.title" xml:space="preserve">
     <value>Number Game</value>
   </data>
-  <data name="OE1x2DND" xml:space="preserve">
+  <data name="OE1x2DND.title" xml:space="preserve">
     <value>Lẻ/Chẵn + 1x2 + DND</value>
   </data>
-  <data name="parlay" xml:space="preserve">
+  <data name="parlay.title" xml:space="preserve">
     <value>Cá cược tổng hợp</value>
   </data>
-  <data name="reports" xml:space="preserve">
+  <data name="reports.title" xml:space="preserve">
     <value>Báo cáo</value>
   </data>
-  <data name="result" xml:space="preserve">
+  <data name="result.title" xml:space="preserve">
     <value>Kết quả</value>
   </data>
-  <data name="sportconsolidatedreport" xml:space="preserve">
+  <data name="sportconsolidatedreport.title" xml:space="preserve">
     <value>Tổng kết báo cáo của Sport</value>
   </data>
-  <data name="subaccount" xml:space="preserve">
+  <data name="subaccount.title" xml:space="preserve">
     <value>Tài khoản phụ</value>
   </data>
-  <data name="totalbets" xml:space="preserve">
+  <data name="totalbets.title" xml:space="preserve">
     <value>Tổng Cược</value>
   </data>
-  <data name="winlossanalysis" xml:space="preserve">
+  <data name="winlossanalysis.title" xml:space="preserve">
     <value>Phân tích hệ số thắng thua</value>
   </data>
-  <data name="announcements" xml:space="preserve">
+  <data name="announcements.title" xml:space="preserve">
     <value>Announcements</value>
   </data>
-  <data name="credit" xml:space="preserve">
+  <data name="credit.title" xml:space="preserve">
     <value>Hạn mức tín dụng</value>
   </data>
-  <data name="customerSetting" xml:space="preserve">
+  <data name="customerSetting.title" xml:space="preserve">
     <value>Default Log</value>
   </data>
-  <data name="login" xml:space="preserve">
+  <data name="login.title" xml:space="preserve">
     <value>Đăng nhập</value>
   </data>
-  <data name="normal" xml:space="preserve">
+  <data name="normal.title" xml:space="preserve">
     <value>Bình thường</value>
   </data>
-  <data name="personalMessage" xml:space="preserve">
+  <data name="personalMessage.title" xml:space="preserve">
     <value>Tin nhắn cá nhân</value>
   </data>
-  <data name="special" xml:space="preserve">
+  <data name="special.title" xml:space="preserve">
     <value>Special</value>
   </data>
-  <data name="status" xml:space="preserve">
+  <data name="status.title" xml:space="preserve">
     <value>Trạng thái</value>
   </data>
-  <data name="transfer" xml:space="preserve">
+  <data name="transfer.title" xml:space="preserve">
     <value>Chuyển khoản</value>
   </data>
-  <data name="viewLog" xml:space="preserve">
+  <data name="viewLog.title" xml:space="preserve">
     <value>Nhật ký</value>
   </data>
-  <data name="statistics" xml:space="preserve">
+  <data name="statistics.title" xml:space="preserve">
     <value>Thống kê của bạn</value>
   </data>
-  <data name="winLossAnalysisChart" xml:space="preserve">
+  <data name="winLossAnalysisChart.title" xml:space="preserve">
     <value>Win Loss Analysis Chart</value>
   </data>
 </root>

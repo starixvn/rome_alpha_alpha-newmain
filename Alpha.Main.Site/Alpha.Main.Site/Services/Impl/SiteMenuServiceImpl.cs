@@ -86,7 +86,7 @@
                                 Title = node.Title,
                                 Url = node.Url,
                                 SubMenus = new List<MenuItem>(),
-                                Name = node.Title.ToLower(),
+                                Name = node.ResourceKey.ToLower(),
                                 Expand = (node["expand"] != null && (node["expand"] == "1"
                                             || node["expand"].ToLower() == "true"))
                             };

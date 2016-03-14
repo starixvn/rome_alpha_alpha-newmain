@@ -22,14 +22,14 @@ namespace Alpha.Main.Site.App_GlobalResources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class LeftPanel {
+    public class Alpha_sitemap {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal LeftPanel() {
+        internal Alpha_sitemap() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Alpha.Main.Site.App_GlobalResources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Alpha.Main.Site.App_GlobalResources.LeftPanel", typeof(LeftPanel).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Alpha.Main.Site.App_GlobalResources.Alpha.sitemap", typeof(Alpha_sitemap).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,648 +63,648 @@ namespace Alpha.Main.Site.App_GlobalResources {
         /// <summary>
         ///   Looks up a localized string similar to Agent List.
         /// </summary>
-        public static string agentList {
+        public static string agentList_title {
             get {
-                return ResourceManager.GetString("agentList", resourceCulture);
+                return ResourceManager.GetString("agentList.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Agent Outstanding.
         /// </summary>
-        public static string agentOutstanding {
+        public static string agentOutstanding_title {
             get {
-                return ResourceManager.GetString("agentOutstanding", resourceCulture);
+                return ResourceManager.GetString("agentOutstanding.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Agent Win Loss.
         /// </summary>
-        public static string agentwinloss {
+        public static string agentwinloss_title {
             get {
-                return ResourceManager.GetString("agentwinloss", resourceCulture);
+                return ResourceManager.GetString("agentwinloss.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Agent Win Loss Detail.
         /// </summary>
-        public static string agentwinlostdetail {
+        public static string agentwinlostdetail_title {
             get {
-                return ResourceManager.GetString("agentwinlostdetail", resourceCulture);
+                return ResourceManager.GetString("agentwinlostdetail.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Announcements.
         /// </summary>
-        public static string announcements {
+        public static string announcements_title {
             get {
-                return ResourceManager.GetString("announcements", resourceCulture);
+                return ResourceManager.GetString("announcements.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Double Chance.
         /// </summary>
-        public static string bettype24 {
+        public static string bettype24_title {
             get {
-                return ResourceManager.GetString("bettype24", resourceCulture);
+                return ResourceManager.GetString("bettype24.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Both/One/Neither Team To Score.
         /// </summary>
-        public static string bettype26 {
+        public static string bettype26_title {
             get {
-                return ResourceManager.GetString("bettype26", resourceCulture);
+                return ResourceManager.GetString("bettype26.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Bingo Position Taking (%).
         /// </summary>
-        public static string bingoPositionTaking {
+        public static string bingoPositionTaking_title {
             get {
-                return ResourceManager.GetString("bingoPositionTaking", resourceCulture);
+                return ResourceManager.GetString("bingoPositionTaking.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cancelled Bets.
         /// </summary>
-        public static string cancelledBets {
+        public static string cancelledBets_title {
             get {
-                return ResourceManager.GetString("cancelledBets", resourceCulture);
+                return ResourceManager.GetString("cancelledBets.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Casino Position Taking (%).
         /// </summary>
-        public static string casinoPositionTaking {
+        public static string casinoPositionTaking_title {
             get {
-                return ResourceManager.GetString("casinoPositionTaking", resourceCulture);
+                return ResourceManager.GetString("casinoPositionTaking.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Charts.
         /// </summary>
-        public static string charts {
+        public static string charts_title {
             get {
-                return ResourceManager.GetString("charts", resourceCulture);
+                return ResourceManager.GetString("charts.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Commission By Bet Type.
         /// </summary>
-        public static string commissionByBettype {
+        public static string commissionByBettype_title {
             get {
-                return ResourceManager.GetString("commissionByBettype", resourceCulture);
+                return ResourceManager.GetString("commissionByBettype.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Racing Commission.
         /// </summary>
-        public static string commssionhorseracing {
+        public static string commssionhorseracing_title {
             get {
-                return ResourceManager.GetString("commssionhorseracing", resourceCulture);
+                return ResourceManager.GetString("commssionhorseracing.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Consolidation.
         /// </summary>
-        public static string consolidatedreport {
+        public static string consolidatedreport_title {
             get {
-                return ResourceManager.GetString("consolidatedreport", resourceCulture);
+                return ResourceManager.GetString("consolidatedreport.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Correct Score.
         /// </summary>
-        public static string correctscore {
+        public static string correctscore_title {
             get {
-                return ResourceManager.GetString("correctscore", resourceCulture);
+                return ResourceManager.GetString("correctscore.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Credit.
         /// </summary>
-        public static string credit {
+        public static string credit_title {
             get {
-                return ResourceManager.GetString("credit", resourceCulture);
+                return ResourceManager.GetString("credit.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Credit/Balance.
         /// </summary>
-        public static string creditbalance {
+        public static string creditbalance_title {
             get {
-                return ResourceManager.GetString("creditbalance", resourceCulture);
+                return ResourceManager.GetString("creditbalance.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Customer List.
         /// </summary>
-        public static string customerlist {
+        public static string customerlist_title {
             get {
-                return ResourceManager.GetString("customerlist", resourceCulture);
+                return ResourceManager.GetString("customerlist.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Customer Setting.
         /// </summary>
-        public static string customerSetting {
+        public static string customerSetting_title {
             get {
-                return ResourceManager.GetString("customerSetting", resourceCulture);
+                return ResourceManager.GetString("customerSetting.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Daily Winloss Analysis.
         /// </summary>
-        public static string dailywinlossanalysisreport {
+        public static string dailywinlossanalysisreport_title {
             get {
-                return ResourceManager.GetString("dailywinlossanalysisreport", resourceCulture);
+                return ResourceManager.GetString("dailywinlossanalysisreport.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to FB Financial.
         /// </summary>
-        public static string foobet {
+        public static string foobet_title {
             get {
-                return ResourceManager.GetString("foobet", resourceCulture);
+                return ResourceManager.GetString("foobet.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Forecast.
         /// </summary>
-        public static string forecast {
+        public static string forecast_title {
             get {
-                return ResourceManager.GetString("forecast", resourceCulture);
+                return ResourceManager.GetString("forecast.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to FT &amp; HT FG/LG.
         /// </summary>
-        public static string fthtfglg {
+        public static string fthtfglg_title {
             get {
-                return ResourceManager.GetString("fthtfglg", resourceCulture);
+                return ResourceManager.GetString("fthtfglg.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to FT &amp; HT Total Goal.
         /// </summary>
-        public static string fthttotalgoal {
+        public static string fthttotalgoal_title {
             get {
-                return ResourceManager.GetString("fthttotalgoal", resourceCulture);
+                return ResourceManager.GetString("fthttotalgoal.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Home/Draw/Away No Bet.
         /// </summary>
-        public static string homeDrawAwayNoBet {
+        public static string homeDrawAwayNoBet_title {
             get {
-                return ResourceManager.GetString("homeDrawAwayNoBet", resourceCulture);
+                return ResourceManager.GetString("homeDrawAwayNoBet.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Handicap/Over Under/Live.
         /// </summary>
-        public static string HOUL {
+        public static string HOUL_title {
             get {
-                return ResourceManager.GetString("HOUL", resourceCulture);
+                return ResourceManager.GetString("HOUL.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Racing.
         /// </summary>
-        public static string hr {
+        public static string hr_title {
             get {
-                return ResourceManager.GetString("hr", resourceCulture);
+                return ResourceManager.GetString("hr.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to HT/FT.
         /// </summary>
-        public static string htft {
+        public static string htft_title {
             get {
-                return ResourceManager.GetString("htft", resourceCulture);
+                return ResourceManager.GetString("htft.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to 1 X 2.
         /// </summary>
-        public static string lbl1x2 {
+        public static string lbl1x2_title {
             get {
-                return ResourceManager.GetString("lbl1x2", resourceCulture);
+                return ResourceManager.GetString("lbl1x2.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
-        public static string login {
+        public static string login_title {
             get {
-                return ResourceManager.GetString("login", resourceCulture);
+                return ResourceManager.GetString("login.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Master Agent List.
         /// </summary>
-        public static string masterList {
+        public static string masterList_title {
             get {
-                return ResourceManager.GetString("masterList", resourceCulture);
+                return ResourceManager.GetString("masterList.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Master Outstanding.
         /// </summary>
-        public static string masterOutstanding {
+        public static string masterOutstanding_title {
             get {
-                return ResourceManager.GetString("masterOutstanding", resourceCulture);
+                return ResourceManager.GetString("masterOutstanding.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Master Win Loss.
         /// </summary>
-        public static string masterwinloss {
+        public static string masterwinloss_title {
             get {
-                return ResourceManager.GetString("masterwinloss", resourceCulture);
+                return ResourceManager.GetString("masterwinloss.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Master Win Loss Detail.
         /// </summary>
-        public static string masterwinlostdetail {
+        public static string masterwinlostdetail_title {
             get {
-                return ResourceManager.GetString("masterwinlostdetail", resourceCulture);
+                return ResourceManager.GetString("masterwinlostdetail.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Match Win Loss.
         /// </summary>
-        public static string matchwinloss {
+        public static string matchwinloss_title {
             get {
-                return ResourceManager.GetString("matchwinloss", resourceCulture);
+                return ResourceManager.GetString("matchwinloss.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Match Win Loss Detail.
         /// </summary>
-        public static string matchWinLostDetail {
+        public static string matchWinLostDetail_title {
             get {
-                return ResourceManager.GetString("matchWinLostDetail", resourceCulture);
+                return ResourceManager.GetString("matchWinLostDetail.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Member Commission.
         /// </summary>
-        public static string memberCommission {
+        public static string memberCommission_title {
             get {
-                return ResourceManager.GetString("memberCommission", resourceCulture);
+                return ResourceManager.GetString("memberCommission.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to MEMBER INFORMATION.
         /// </summary>
-        public static string memberInfo {
+        public static string memberInfo_title {
             get {
-                return ResourceManager.GetString("memberInfo", resourceCulture);
+                return ResourceManager.GetString("memberInfo.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Member Outstanding.
         /// </summary>
-        public static string memberOutstanding {
+        public static string memberOutstanding_title {
             get {
-                return ResourceManager.GetString("memberOutstanding", resourceCulture);
+                return ResourceManager.GetString("memberOutstanding.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Member Win Limit.
         /// </summary>
-        public static string MemberWinLimit {
+        public static string MemberWinLimit_title {
             get {
-                return ResourceManager.GetString("MemberWinLimit", resourceCulture);
+                return ResourceManager.GetString("MemberWinLimit.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Member Win Loss.
         /// </summary>
-        public static string memberWinLoss {
+        public static string memberWinLoss_title {
             get {
-                return ResourceManager.GetString("memberWinLoss", resourceCulture);
+                return ResourceManager.GetString("memberWinLoss.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Member Win Loss Detail.
         /// </summary>
-        public static string memberwinlossdetail {
+        public static string memberwinlossdetail_title {
             get {
-                return ResourceManager.GetString("memberwinlossdetail", resourceCulture);
+                return ResourceManager.GetString("memberwinlossdetail.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Money Line.
         /// </summary>
-        public static string moneyline {
+        public static string moneyline_title {
             get {
-                return ResourceManager.GetString("moneyline", resourceCulture);
+                return ResourceManager.GetString("moneyline.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Last Bets Monitoring.
         /// </summary>
-        public static string monitor {
+        public static string monitor_title {
             get {
-                return ResourceManager.GetString("monitor", resourceCulture);
+                return ResourceManager.GetString("monitor.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Monthly Winloss Analysis.
         /// </summary>
-        public static string monthlywinlossanalysisreport {
+        public static string monthlywinlossanalysisreport_title {
             get {
-                return ResourceManager.GetString("monthlywinlossanalysisreport", resourceCulture);
+                return ResourceManager.GetString("monthlywinlossanalysisreport.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to New Agent.
         /// </summary>
-        public static string newAgent {
+        public static string newAgent_title {
             get {
-                return ResourceManager.GetString("newAgent", resourceCulture);
+                return ResourceManager.GetString("newAgent.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to New Master.
         /// </summary>
-        public static string newMaster {
+        public static string newMaster_title {
             get {
-                return ResourceManager.GetString("newMaster", resourceCulture);
+                return ResourceManager.GetString("newMaster.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to New Member.
         /// </summary>
-        public static string newMember {
+        public static string newMember_title {
             get {
-                return ResourceManager.GetString("newMember", resourceCulture);
+                return ResourceManager.GetString("newMember.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Normal.
         /// </summary>
-        public static string normal {
+        public static string normal_title {
             get {
-                return ResourceManager.GetString("normal", resourceCulture);
+                return ResourceManager.GetString("normal.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Number Game.
         /// </summary>
-        public static string numbergame {
+        public static string numbergame_title {
             get {
-                return ResourceManager.GetString("numbergame", resourceCulture);
+                return ResourceManager.GetString("numbergame.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Odd/Even + 1x2 + DND.
         /// </summary>
-        public static string OE1x2DND {
+        public static string OE1x2DND_title {
             get {
-                return ResourceManager.GetString("OE1x2DND", resourceCulture);
+                return ResourceManager.GetString("OE1x2DND.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Outright.
         /// </summary>
-        public static string outRight {
+        public static string outRight_title {
             get {
-                return ResourceManager.GetString("outRight", resourceCulture);
+                return ResourceManager.GetString("outRight.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Parlay.
         /// </summary>
-        public static string parlay {
+        public static string parlay_title {
             get {
-                return ResourceManager.GetString("parlay", resourceCulture);
+                return ResourceManager.GetString("parlay.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Personal Message.
         /// </summary>
-        public static string personalMessage {
+        public static string personalMessage_title {
             get {
-                return ResourceManager.GetString("personalMessage", resourceCulture);
+                return ResourceManager.GetString("personalMessage.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Position Taking (%).
         /// </summary>
-        public static string positionTaking {
+        public static string positionTaking_title {
             get {
-                return ResourceManager.GetString("positionTaking", resourceCulture);
+                return ResourceManager.GetString("positionTaking.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Real Time Bingo Win Loss.
         /// </summary>
-        public static string realTimeBingoWinloss {
+        public static string realTimeBingoWinloss_title {
             get {
-                return ResourceManager.GetString("realTimeBingoWinloss", resourceCulture);
+                return ResourceManager.GetString("realTimeBingoWinloss.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Real Time Casino Win Loss.
         /// </summary>
-        public static string realTimeCSWinloss {
+        public static string realTimeCSWinloss_title {
             get {
-                return ResourceManager.GetString("realTimeCSWinloss", resourceCulture);
+                return ResourceManager.GetString("realTimeCSWinloss.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Reports.
         /// </summary>
-        public static string reports {
+        public static string reports_title {
             get {
-                return ResourceManager.GetString("reports", resourceCulture);
+                return ResourceManager.GetString("reports.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Results.
         /// </summary>
-        public static string result {
+        public static string result_title {
             get {
-                return ResourceManager.GetString("result", resourceCulture);
+                return ResourceManager.GetString("result.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Score Map.
         /// </summary>
-        public static string scoreMap {
+        public static string scoreMap_title {
             get {
-                return ResourceManager.GetString("scoreMap", resourceCulture);
+                return ResourceManager.GetString("scoreMap.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Special.
         /// </summary>
-        public static string special {
+        public static string special_title {
             get {
-                return ResourceManager.GetString("special", resourceCulture);
+                return ResourceManager.GetString("special.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sport Consolidated Report.
         /// </summary>
-        public static string sportconsolidatedreport {
+        public static string sportconsolidatedreport_title {
             get {
-                return ResourceManager.GetString("sportconsolidatedreport", resourceCulture);
+                return ResourceManager.GetString("sportconsolidatedreport.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Statement.
         /// </summary>
-        public static string statement {
+        public static string statement_title {
             get {
-                return ResourceManager.GetString("statement", resourceCulture);
+                return ResourceManager.GetString("statement.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Your statistics.
         /// </summary>
-        public static string statistics {
+        public static string statistics_title {
             get {
-                return ResourceManager.GetString("statistics", resourceCulture);
+                return ResourceManager.GetString("statistics.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
-        public static string status {
+        public static string status_title {
             get {
-                return ResourceManager.GetString("status", resourceCulture);
+                return ResourceManager.GetString("status.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Sub Account.
         /// </summary>
-        public static string subaccount {
+        public static string subaccount_title {
             get {
-                return ResourceManager.GetString("subaccount", resourceCulture);
+                return ResourceManager.GetString("subaccount.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Total Bets.
         /// </summary>
-        public static string totalbets {
+        public static string totalbets_title {
             get {
-                return ResourceManager.GetString("totalbets", resourceCulture);
+                return ResourceManager.GetString("totalbets.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Transfer.
         /// </summary>
-        public static string transfer {
+        public static string transfer_title {
             get {
-                return ResourceManager.GetString("transfer", resourceCulture);
+                return ResourceManager.GetString("transfer.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to View Log.
         /// </summary>
-        public static string viewLog {
+        public static string viewLog_title {
             get {
-                return ResourceManager.GetString("viewLog", resourceCulture);
+                return ResourceManager.GetString("viewLog.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Win Loss Analysis.
         /// </summary>
-        public static string winlossanalysis {
+        public static string winlossanalysis_title {
             get {
-                return ResourceManager.GetString("winlossanalysis", resourceCulture);
+                return ResourceManager.GetString("winlossanalysis.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Win Loss Analysis Chart.
         /// </summary>
-        public static string winLossAnalysisChart {
+        public static string winLossAnalysisChart_title {
             get {
-                return ResourceManager.GetString("winLossAnalysisChart", resourceCulture);
+                return ResourceManager.GetString("winLossAnalysisChart.title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Win Loss By Bet Type.
         /// </summary>
-        public static string winLossByBettype {
+        public static string winLossByBettype_title {
             get {
-                return ResourceManager.GetString("winLossByBettype", resourceCulture);
+                return ResourceManager.GetString("winLossByBettype.title", resourceCulture);
             }
         }
     }
