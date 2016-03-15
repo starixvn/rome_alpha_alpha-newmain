@@ -117,221 +117,221 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="agentwinloss.title" xml:space="preserve">
+  <data name="agentwinloss" xml:space="preserve">
     <value>エージェント勝ち負け</value>
   </data>
-  <data name="agentwinlostdetail.title" xml:space="preserve">
+  <data name="agentwinlostdetail" xml:space="preserve">
     <value>エージェント勝ち負け詳細</value>
   </data>
-  <data name="bettype24.title" xml:space="preserve">
+  <data name="bettype24" xml:space="preserve">
     <value>Double Chance</value>
   </data>
-  <data name="bettype26.title" xml:space="preserve">
+  <data name="bettype26" xml:space="preserve">
     <value>Both/One/Neither Team To Score</value>
   </data>
-  <data name="bingoPositionTaking.title" xml:space="preserve">
+  <data name="bingoPositionTaking" xml:space="preserve">
     <value>Bingo Position Taking (%)</value>
   </data>
-  <data name="casinoPositionTaking.title" xml:space="preserve">
+  <data name="casinoPositionTaking" xml:space="preserve">
     <value>Casino Position Taking (%)</value>
   </data>
-  <data name="charts.title" xml:space="preserve">
+  <data name="charts" xml:space="preserve">
     <value>Charts</value>
   </data>
-  <data name="consolidatedreport.title" xml:space="preserve">
+  <data name="consolidatedreport" xml:space="preserve">
     <value>Consolidation</value>
   </data>
-  <data name="correctscore.title" xml:space="preserve">
+  <data name="correctscore" xml:space="preserve">
     <value>コレクトスコア</value>
   </data>
-  <data name="creditbalance.title" xml:space="preserve">
+  <data name="creditbalance" xml:space="preserve">
     <value>貸付金額 / 残高</value>
   </data>
-  <data name="customerlist.title" xml:space="preserve">
+  <data name="customerlist" xml:space="preserve">
     <value>お客様リスト</value>
   </data>
-  <data name="dailywinlossanalysisreport.title" xml:space="preserve">
+  <data name="dailywinlossanalysisreport" xml:space="preserve">
     <value>Daily Winloss Analysis</value>
   </data>
-  <data name="fthtfglg.title" xml:space="preserve">
+  <data name="fthtfglg" xml:space="preserve">
     <value>FT &amp; HT FG/LG</value>
   </data>
-  <data name="fthttotalgoal.title" xml:space="preserve">
+  <data name="fthttotalgoal" xml:space="preserve">
     <value>FT &amp; HT Total Goal</value>
   </data>
-  <data name="hr.title" xml:space="preserve">
+  <data name="hr" xml:space="preserve">
     <value>Racing</value>
   </data>
-  <data name="htft.title" xml:space="preserve">
+  <data name="htft" xml:space="preserve">
     <value>HT/FT</value>
   </data>
-  <data name="lbl1x2.title" xml:space="preserve">
+  <data name="lbl1x2" xml:space="preserve">
     <value>1 X 2</value>
   </data>
-  <data name="agentList.title" xml:space="preserve">
+  <data name="agentList" xml:space="preserve">
     <value>エージェントリスト</value>
   </data>
-  <data name="agentOutstanding.title" xml:space="preserve">
+  <data name="agentOutstanding" xml:space="preserve">
     <value>エージェント未払い</value>
   </data>
-  <data name="cancelledBets.title" xml:space="preserve">
+  <data name="cancelledBets" xml:space="preserve">
     <value>取り消されたベット</value>
   </data>
-  <data name="commissionByBettype.title" xml:space="preserve">
+  <data name="commissionByBettype" xml:space="preserve">
     <value>Commission By Bet Type</value>
   </data>
-  <data name="commssionhorseracing.title" xml:space="preserve">
+  <data name="commssionhorseracing" xml:space="preserve">
     <value>Racing Commission</value>
   </data>
-  <data name="foobet.title" xml:space="preserve">
+  <data name="foobet" xml:space="preserve">
     <value>FB Financial</value>
   </data>
-  <data name="forecast.title" xml:space="preserve">
+  <data name="forecast" xml:space="preserve">
     <value>予想</value>
   </data>
-  <data name="homeDrawAwayNoBet.title" xml:space="preserve">
+  <data name="homeDrawAwayNoBet" xml:space="preserve">
     <value>Home/Draw/Away No Bet</value>
   </data>
-  <data name="HOUL.title" xml:space="preserve">
+  <data name="HOUL" xml:space="preserve">
     <value>ハンディキャップ/オーバー・アンダー/ライブ</value>
   </data>
-  <data name="masterList.title" xml:space="preserve">
+  <data name="masterList" xml:space="preserve">
     <value>Master Agent List</value>
   </data>
-  <data name="masterOutstanding.title" xml:space="preserve">
+  <data name="masterOutstanding" xml:space="preserve">
     <value>マスター未払い残高</value>
   </data>
-  <data name="matchWinLostDetail.title" xml:space="preserve">
+  <data name="matchWinLostDetail" xml:space="preserve">
     <value>試合勝ち負け詳細</value>
   </data>
-  <data name="memberCommission.title" xml:space="preserve">
+  <data name="memberCommission" xml:space="preserve">
     <value>メンバー手数料</value>
   </data>
-  <data name="memberInfo.title" xml:space="preserve">
+  <data name="memberInfo" xml:space="preserve">
     <value>メンバー情報</value>
   </data>
-  <data name="memberOutstanding.title" xml:space="preserve">
+  <data name="memberOutstanding" xml:space="preserve">
     <value>メンバー未払い</value>
   </data>
-  <data name="memberWinLoss.title" xml:space="preserve">
+  <data name="memberWinLoss" xml:space="preserve">
     <value>メンバー勝ち負け</value>
   </data>
-  <data name="monitor.title" xml:space="preserve">
+  <data name="monitor" xml:space="preserve">
     <value>Last Bets Monitoring</value>
   </data>
-  <data name="newAgent.title" xml:space="preserve">
+  <data name="newAgent" xml:space="preserve">
     <value>新しいエージェント</value>
   </data>
-  <data name="newMaster.title" xml:space="preserve">
+  <data name="newMaster" xml:space="preserve">
     <value>New Master</value>
   </data>
-  <data name="newMember.title" xml:space="preserve">
+  <data name="newMember" xml:space="preserve">
     <value>新しいメンバー</value>
   </data>
-  <data name="outRight.title" xml:space="preserve">
+  <data name="outRight" xml:space="preserve">
     <value>即座</value>
   </data>
-  <data name="positionTaking.title" xml:space="preserve">
+  <data name="positionTaking" xml:space="preserve">
     <value>保有ポジション (%)</value>
   </data>
-  <data name="realTimeBingoWinloss.title" xml:space="preserve">
+  <data name="realTimeBingoWinloss" xml:space="preserve">
     <value>Real Time Bingo Win Loss</value>
   </data>
-  <data name="realTimeCSWinloss.title" xml:space="preserve">
+  <data name="realTimeCSWinloss" xml:space="preserve">
     <value>Real Time Casino Win Loss</value>
   </data>
-  <data name="scoreMap.title" xml:space="preserve">
+  <data name="scoreMap" xml:space="preserve">
     <value>Score Map</value>
   </data>
-  <data name="statement.title" xml:space="preserve">
+  <data name="statement" xml:space="preserve">
     <value>明細書</value>
   </data>
-  <data name="winLossByBettype.title" xml:space="preserve">
+  <data name="winLossByBettype" xml:space="preserve">
     <value>Win Loss By Bet Type</value>
   </data>
-  <data name="masterwinloss.title" xml:space="preserve">
+  <data name="masterwinloss" xml:space="preserve">
     <value>Master Win Loss</value>
   </data>
-  <data name="masterwinlostdetail.title" xml:space="preserve">
+  <data name="masterwinlostdetail" xml:space="preserve">
     <value>Master Win Loss Detail</value>
   </data>
-  <data name="matchwinloss.title" xml:space="preserve">
+  <data name="matchwinloss" xml:space="preserve">
     <value>Match Win Loss</value>
   </data>
-  <data name="MemberWinLimit.title" xml:space="preserve">
+  <data name="MemberWinLimit" xml:space="preserve">
     <value>Member Win Limit</value>
   </data>
-  <data name="memberwinlossdetail.title" xml:space="preserve">
+  <data name="memberwinlossdetail" xml:space="preserve">
     <value>Member Win Loss Detail</value>
   </data>
-  <data name="moneyline.title" xml:space="preserve">
+  <data name="moneyline" xml:space="preserve">
     <value>マネーライン</value>
   </data>
-  <data name="monthlywinlossanalysisreport.title" xml:space="preserve">
+  <data name="monthlywinlossanalysisreport" xml:space="preserve">
     <value>Monthly Winloss Analysis</value>
   </data>
-  <data name="numbergame.title" xml:space="preserve">
+  <data name="numbergame" xml:space="preserve">
     <value>Number Game</value>
   </data>
-  <data name="OE1x2DND.title" xml:space="preserve">
+  <data name="OE1x2DND" xml:space="preserve">
     <value>Odd/Even + 1x2 + DND</value>
   </data>
-  <data name="parlay.title" xml:space="preserve">
+  <data name="parlay" xml:space="preserve">
     <value>ミックスパーレー</value>
   </data>
-  <data name="reports.title" xml:space="preserve">
+  <data name="reports" xml:space="preserve">
     <value>報告書</value>
   </data>
-  <data name="result.title" xml:space="preserve">
+  <data name="result" xml:space="preserve">
     <value>結果</value>
   </data>
-  <data name="sportconsolidatedreport.title" xml:space="preserve">
+  <data name="sportconsolidatedreport" xml:space="preserve">
     <value>Sport Consolidated Report</value>
   </data>
-  <data name="subaccount.title" xml:space="preserve">
+  <data name="subaccount" xml:space="preserve">
     <value>Sub Account</value>
   </data>
-  <data name="totalbets.title" xml:space="preserve">
+  <data name="totalbets" xml:space="preserve">
     <value>合計ベット数</value>
   </data>
-  <data name="winlossanalysis.title" xml:space="preserve">
+  <data name="winlossanalysis" xml:space="preserve">
     <value>Win Loss Analysis</value>
   </data>
-  <data name="announcements.title" xml:space="preserve">
+  <data name="announcements" xml:space="preserve">
     <value>Announcements</value>
   </data>
-  <data name="credit.title" xml:space="preserve">
+  <data name="credit" xml:space="preserve">
     <value>貸付金額</value>
   </data>
-  <data name="customerSetting.title" xml:space="preserve">
+  <data name="customerSetting" xml:space="preserve">
     <value>Customer Setting</value>
   </data>
-  <data name="login.title" xml:space="preserve">
+  <data name="login" xml:space="preserve">
     <value>入力</value>
   </data>
-  <data name="normal.title" xml:space="preserve">
+  <data name="normal" xml:space="preserve">
     <value>Normal</value>
   </data>
-  <data name="personalMessage.title" xml:space="preserve">
+  <data name="personalMessage" xml:space="preserve">
     <value>Personal Message</value>
   </data>
-  <data name="special.title" xml:space="preserve">
+  <data name="special" xml:space="preserve">
     <value>Special</value>
   </data>
-  <data name="status.title" xml:space="preserve">
+  <data name="status" xml:space="preserve">
     <value>状態</value>
   </data>
-  <data name="transfer.title" xml:space="preserve">
+  <data name="transfer" xml:space="preserve">
     <value>送金
 </value>
   </data>
-  <data name="viewLog.title" xml:space="preserve">
+  <data name="viewLog" xml:space="preserve">
     <value>View Log</value>
   </data>
-  <data name="statistics.title" xml:space="preserve">
+  <data name="statistics" xml:space="preserve">
     <value>Your statistics</value>
   </data>
-  <data name="winLossAnalysisChart.title" xml:space="preserve">
+  <data name="winLossAnalysisChart" xml:space="preserve">
     <value>Win Loss Analysis Chart</value>
   </data>
 </root>
