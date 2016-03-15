@@ -364,9 +364,7 @@
         private MenuItem GetMenu(SiteMapNode siteMapNode, int index, bool showSubMenu)
         {
             var menu = new MenuItem
-            {                
-                Expand = showSubMenu,
-                Title = GetLeftPanelResource(siteMapNode.Title),
+            {                         
                 Url = siteMapNode.Url,
                 SubMenus = new List<MenuItem>(),
                 Name = siteMapNode.Title
@@ -437,14 +435,7 @@
             var menu = new MenuItem();
             var title = menuItem.Title;
             var bettypeId = 0;
-            if (title.Contains("bettype") && int.TryParse(title.Substring(7), out bettypeId))
-            {
-                menu.Title = CacheRef.GetBettype(bettypeId);
-            }
-            else
-            {
-                menu.Title = GetLeftPanelResource(menuItem.Title);
-            }
+           
 
             if (title.Contains("statement"))
             {
