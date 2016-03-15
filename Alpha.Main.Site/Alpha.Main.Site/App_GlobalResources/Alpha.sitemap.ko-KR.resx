@@ -123,11 +123,11 @@
   <data name="agentwinlostdetail" xml:space="preserve">
     <value>에이전트 승 패 상세보기</value>
   </data>
-  <data name="bettype24" xml:space="preserve">
-    <value>Double Chance</value>
+  <data name="BetType24" xml:space="preserve">
+    <value>더블 찬스</value>
   </data>
-  <data name="bettype26" xml:space="preserve">
-    <value>Both/One/Neither Team To Score</value>
+  <data name="BetType26" xml:space="preserve">
+    <value>양 팀 득점/한 팀 득점/득점 없음</value>
   </data>
   <data name="bingoPositionTaking" xml:space="preserve">
     <value>빙고게임 포지션(%)</value>
@@ -332,5 +332,14 @@
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">
     <value>Win Loss Analysis Chart</value>
+  </data>
+  <data name="BetType13" xml:space="preserve">
+    <value>클린 시트</value>
+  </data>
+  <data name="BetType27" xml:space="preserve">
+    <value>완봉승</value>
+  </data>
+  <data name="BetType28" xml:space="preserve">
+    <value>3방향 핸디캡</value>
   </data>
 </root>

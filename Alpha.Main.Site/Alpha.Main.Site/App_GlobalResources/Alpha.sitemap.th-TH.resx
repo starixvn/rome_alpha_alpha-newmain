@@ -123,10 +123,10 @@
   <data name="agentwinlostdetail" xml:space="preserve">
     <value>รายละเอียดการชนะ แพ้ ของ</value>
   </data>
-  <data name="bettype24" xml:space="preserve">
-    <value>ไม่มีการยิงประตู</value>
+  <data name="BetType24" xml:space="preserve">
+    <value>ดับเบิลชานส์</value>
   </data>
-  <data name="bettype26" xml:space="preserve">
+  <data name="BetType26" xml:space="preserve">
     <value>ทั้งสองทีม/หนึ่งทีม/ไม่ทั้งสองทีมที่ทำคะแนนได้</value>
   </data>
   <data name="bingoPositionTaking" xml:space="preserve">
@@ -332,5 +332,14 @@
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">
     <value>Win Loss Analysis Chart</value>
+  </data>
+  <data name="BetType13" xml:space="preserve">
+    <value>ไม่มีการยิงประตู</value>
+  </data>
+  <data name="BetType27" xml:space="preserve">
+    <value>ชนะโดยไม่เสียประตู</value>
+  </data>
+  <data name="BetType28" xml:space="preserve">
+    <value>แฮนดิแคป 3 ทาง</value>
   </data>
 </root>

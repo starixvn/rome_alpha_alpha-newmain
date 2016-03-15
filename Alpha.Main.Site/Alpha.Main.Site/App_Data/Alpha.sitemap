@@ -72,12 +72,12 @@
       <siteMapNode resourceKey="outRight" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/OutRight.aspx"></siteMapNode>
       <siteMapNode resourceKey="htft" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/HTFT.aspx"></siteMapNode>
       <siteMapNode resourceKey="fthtfglg" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/FGLG.aspx"></siteMapNode>
-      <siteMapNode resourceKey="betType13" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=13&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="betType24" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=24&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="BetType13" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=13&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="BetType24" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=24&amp;type=Bettype"></siteMapNode>
       <siteMapNode resourceKey="homeDrawAwayNoBet" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
-      <siteMapNode resourceKey="betType26" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=26&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="betType27" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=27&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="betType28" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=28&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="BetType26" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=26&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="BetType27" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=27&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="BetType28" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=28&amp;type=Bettype"></siteMapNode>
       <!--NG-->
       <siteMapNode description="numbergame" resourceKey="numbergame" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/NumberGame.aspx"></siteMapNode>
       <!--/NG-->

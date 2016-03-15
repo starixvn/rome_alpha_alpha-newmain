@@ -123,11 +123,11 @@
   <data name="agentwinlostdetail" xml:space="preserve">
     <value>エージェント勝ち負け詳細</value>
   </data>
-  <data name="bettype24" xml:space="preserve">
-    <value>Double Chance</value>
+  <data name="BetType24" xml:space="preserve">
+    <value>ダブルチャンス</value>
   </data>
-  <data name="bettype26" xml:space="preserve">
-    <value>Both/One/Neither Team To Score</value>
+  <data name="BetType26" xml:space="preserve">
+    <value>両チーム／1 チーム／得点なし</value>
   </data>
   <data name="bingoPositionTaking" xml:space="preserve">
     <value>Bingo Position Taking (%)</value>
@@ -333,5 +333,14 @@
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">
     <value>Win Loss Analysis Chart</value>
+  </data>
+  <data name="BetType13" xml:space="preserve">
+    <value>クリーンシート</value>
+  </data>
+  <data name="BetType27" xml:space="preserve">
+    <value>完封勝ち</value>
+  </data>
+  <data name="BetType28" xml:space="preserve">
+    <value>3 ウェイハンディキャップ</value>
   </data>
 </root>

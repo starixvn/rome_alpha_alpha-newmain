@@ -106,20 +106,47 @@ namespace Alpha.Main.Site.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Double Chance.
+        ///   Looks up a localized string similar to Clean Sheet.
         /// </summary>
-        public static string bettype24 {
+        public static string BetType13 {
             get {
-                return ResourceManager.GetString("bettype24", resourceCulture);
+                return ResourceManager.GetString("BetType13", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both/One/Neither Team To Score.
+        ///   Looks up a localized string similar to Double Chance.
         /// </summary>
-        public static string bettype26 {
+        public static string BetType24 {
             get {
-                return ResourceManager.GetString("bettype26", resourceCulture);
+                return ResourceManager.GetString("BetType24", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Both/One/Neither team to score.
+        /// </summary>
+        public static string BetType26 {
+            get {
+                return ResourceManager.GetString("BetType26", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To win to nil.
+        /// </summary>
+        public static string BetType27 {
+            get {
+                return ResourceManager.GetString("BetType27", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3-way handicap.
+        /// </summary>
+        public static string BetType28 {
+            get {
+                return ResourceManager.GetString("BetType28", resourceCulture);
             }
         }
         

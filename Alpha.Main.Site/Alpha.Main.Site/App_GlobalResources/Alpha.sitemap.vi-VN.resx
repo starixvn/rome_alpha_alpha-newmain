@@ -123,11 +123,11 @@
   <data name="agentwinlostdetail" xml:space="preserve">
     <value>Chi tiết thắng thua của Agent</value>
   </data>
-  <data name="bettype24" xml:space="preserve">
+  <data name="BetType24" xml:space="preserve">
     <value>Double Chance</value>
   </data>
-  <data name="bettype26" xml:space="preserve">
-    <value>Both/One/Neither Team To Score</value>
+  <data name="BetType26" xml:space="preserve">
+    <value>Both/One/Neither team to score</value>
   </data>
   <data name="bingoPositionTaking" xml:space="preserve">
     <value>(%) PT của Bingo</value>
@@ -332,5 +332,14 @@
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">
     <value>Win Loss Analysis Chart</value>
+  </data>
+  <data name="BetType13" xml:space="preserve">
+    <value>Clean Sheet</value>
+  </data>
+  <data name="BetType27" xml:space="preserve">
+    <value>To win to nil</value>
+  </data>
+  <data name="BetType28" xml:space="preserve">
+    <value>3-way handicap</value>
   </data>
 </root>

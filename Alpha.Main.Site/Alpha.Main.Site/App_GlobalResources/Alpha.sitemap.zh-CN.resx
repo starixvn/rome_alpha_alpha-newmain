@@ -123,10 +123,10 @@
   <data name="agentwinlostdetail" xml:space="preserve">
     <value>代理输赢细节</value>
   </data>
-  <data name="bettype24" xml:space="preserve">
-    <value>零失球</value>
+  <data name="BetType24" xml:space="preserve">
+    <value>双重机会</value>
   </data>
-  <data name="bettype26" xml:space="preserve">
+  <data name="BetType26" xml:space="preserve">
     <value>双方/一方/两者皆不得分</value>
   </data>
   <data name="bingoPositionTaking" xml:space="preserve">
@@ -332,5 +332,14 @@
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">
     <value>Win Loss Analysis Chart</value>
+  </data>
+  <data name="BetType13" xml:space="preserve">
+    <value>零失球</value>
+  </data>
+  <data name="BetType27" xml:space="preserve">
+    <value>零失球的胜方</value>
+  </data>
+  <data name="BetType28" xml:space="preserve">
+    <value>三项让分投注</value>
   </data>
 </root>
