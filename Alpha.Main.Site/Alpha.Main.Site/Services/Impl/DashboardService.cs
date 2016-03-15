@@ -420,6 +420,7 @@
         {
             return (isSubAcc && subMenu.Description == RoleDescriptionConstant.SubAcc) ||
                 !authorize.AuthorizeUrl(0, 0, false, subMenu.GetAttribute("href")) ||
+
                 (!UserPermission.IsShowRacing && subMenu.Description == RoleDescriptionConstant.HorseRacing) ||
                 (UserSession.Current.IsDisabledFI && subMenu.Description == RoleDescriptionConstant.Financial) ||
                 (!UserPermission.IsShowCasino && (subMenu.Description == RoleDescriptionConstant.Casino)) ||

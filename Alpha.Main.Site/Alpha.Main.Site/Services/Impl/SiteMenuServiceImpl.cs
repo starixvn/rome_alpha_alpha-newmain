@@ -111,7 +111,9 @@
             int subAccountId,
             IEnumerable<MenuItem> userLevelMenu)
         {
-            throw new NotImplementedException();
+            var subAccountMenu = new List<MenuItem>();
+
+            return subAccountMenu;
         }
     }
 }
