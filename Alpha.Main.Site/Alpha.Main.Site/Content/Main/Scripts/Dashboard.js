@@ -40,7 +40,16 @@ var DashboardManager = function () {
         self.setSharedVariables();
     };
     self.initElements = function () {
+        var firstMenu = $('.list-menu > .menu-item:first-child');
+        self.expandMenu(firstMenu);
+
         customerProfile.loadCustomerProfile();
+    };
+    self.expandMenu = function (menu) {
+        var firstMenu = $('.list-menu > .menu-item:first-child');
+        menu.addClass('active');
+        menu.find('.parent-menu').addClass('active');
+        menu.find('.sub-menu').slideDown('normal');
     };
 
     self.bindEvents = function () {
@@ -116,27 +125,21 @@ var DashboardManager = function () {
             }
         });
 
-        $('.content-left').hover(
+        $('.sidebar').hover(
             function () {
-                if ($(this).parent().hasClass('collapsed')) {
-                    $('.accountinfo-container .row').each(function () {
-                        $(this).css('display', 'block');
-                    });
-                    $('.icon-accinfo').css('display', 'none');
-                    $('.header').removeClass('collapsed');
+                if ($(this).hasClass('collapsed')) {
                     $("#logoProfileImg").removeClass("collapse-image");
+
+                    var activeSubMenu = $('.menu-item.active .sub-menu');
+                    activeSubMenu.css('display', 'block');
                 }
             },
             function () {
-                if ($(this).parent().hasClass('collapsed')) {
-                    if ($('.accountinfo-container').css('display') == 'block') {
-                        $('.icon-accinfo').css('display', 'block');
-                        $('.accountinfo-container .row').each(function () {
-                            $(this).css('display', 'none');
-                        });
-                    }
-                    $('.header').addClass('collapsed');
+                if ($(this).hasClass('collapsed')) {
                     $("#logoProfileImg").addClass("collapse-image");
+
+                    var activeSubMenu = $('.menu-item.active .sub-menu');
+                    activeSubMenu.css('display', 'none');
                 }
             }
         );
@@ -409,16 +412,18 @@ var DashboardManager = function () {
         var content = jQuery('.content-wrapper');
 
         var isCollapse = sidebar.hasClass('collapsed');
+
+        var activeSubMenu = $('.menu-item.active .sub-menu');
         if (isCollapse) {
+            activeSubMenu.css('display', 'block');
             sidebar.removeClass('collapsed');
             content.removeClass('expanded');
             jQuery("#logoProfileImg").removeClass("collapse-image");
-
         } else {
+            activeSubMenu.css('display', 'none');
             sidebar.addClass('collapsed');
             content.addClass('expanded');
             jQuery("#logoProfileImg").addClass("collapse-image");
-
         }
     };
     self.viewPrivateMessage = function (url) {

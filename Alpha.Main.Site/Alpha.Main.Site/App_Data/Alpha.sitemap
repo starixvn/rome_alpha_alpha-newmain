@@ -3,130 +3,130 @@
   <siteMapNode title="Alpha Site">
     <!--Report-->
     <siteMapNode resourceKey="reports" expand="true" >
-      <siteMapNode resourceKey="memberWinLoss" url="site-oldmain/_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="memberwinlossdetail" url="site-oldmain/_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="memberOutstanding" url="site-oldmain/_Reports/Common/Outstanding.aspxlv=2" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberWinLoss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberwinlossdetail" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberOutstanding" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Common/Outstanding.aspxlv=2" roles="Agent"></siteMapNode>
 
-      <siteMapNode resourceKey="agentwinloss" url="site-oldmain/_Reports/Common/MatchResultEntered.aspx?lv=3" roles="3"></siteMapNode>
-      <siteMapNode resourceKey="agentwinlostdetail" url="site-oldmain/_Reports/Winloss/WinLossDetailMaster.aspx" roles="3"></siteMapNode>
-      <siteMapNode resourceKey="agentOutstanding" url="site-oldmain/_Reports/Common/Outstanding.aspxlv=3" roles="3"></siteMapNode>
+      <siteMapNode resourceKey="agentwinloss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Common/MatchResultEntered.aspx?lv=3" roles="3"></siteMapNode>
+      <siteMapNode resourceKey="agentwinlostdetail" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Winloss/WinLossDetailMaster.aspx" roles="3"></siteMapNode>
+      <siteMapNode resourceKey="agentOutstanding" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Common/Outstanding.aspxlv=3" roles="3"></siteMapNode>
 
-      <siteMapNode resourceKey="masterwinloss" url="site-oldmain/_Reports/Common/MatchResultEntered.aspx?lv=4" roles="4"></siteMapNode>
-      <siteMapNode resourceKey="masterwinlostdetail" url="site-oldmain/_Reports/Winloss/WinLossDetailSuper.aspx" roles="4"></siteMapNode>
-      <siteMapNode resourceKey="masterOutstanding" url="site-oldmain/_Reports/Common/Outstanding.aspxlv=4" roles="4"></siteMapNode>
+      <siteMapNode resourceKey="masterwinloss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Common/MatchResultEntered.aspx?lv=4" roles="4"></siteMapNode>
+      <siteMapNode resourceKey="masterwinlostdetail" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Winloss/WinLossDetailSuper.aspx" roles="4"></siteMapNode>
+      <siteMapNode resourceKey="masterOutstanding" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Common/Outstanding.aspxlv=4" roles="4"></siteMapNode>
 
       <!--Casino-RealTimeWL-->
-      <siteMapNode description="cs" resourceKey="realTimeCSWinloss" url="site-oldmain/_Reports/CasinoWinloss/CSWinlossAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode description="cs" resourceKey="realTimeCSWinloss" url="site-oldmain/_Reports/CasinoWinloss/CSWinlossMaster.aspx" roles="3"></siteMapNode>
-      <siteMapNode description="cs" resourceKey="realTimeCSWinloss" url="site-oldmain/_Reports/CasinoWinloss/CSWinlossSuper.aspx" roles="4"></siteMapNode>
+      <siteMapNode description="cs" resourceKey="realTimeCSWinloss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/CasinoWinloss/CSWinlossAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode description="cs" resourceKey="realTimeCSWinloss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/CasinoWinloss/CSWinlossMaster.aspx" roles="3"></siteMapNode>
+      <siteMapNode description="cs" resourceKey="realTimeCSWinloss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/CasinoWinloss/CSWinlossSuper.aspx" roles="4"></siteMapNode>
       <!--/Casino-RealTimeWL-->
 
       <!--Bingo-RealTimeWL-->
-      <siteMapNode description="bg" resourceKey="realTimeBingoWinloss" url="site-oldmain/_Reports/BingoWinloss/BingoWinlossAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode description="bg" resourceKey="realTimeBingoWinloss" url="site-oldmain/_Reports/BingoWinloss/BingoWinlossMaster.aspx" roles="3"></siteMapNode>
-      <siteMapNode description="bg" resourceKey="realTimeBingoWinloss" url="site-oldmain/_Reports/BingoWinloss/BingoWinlossSuper.aspx" roles="4"></siteMapNode>
+      <siteMapNode description="bg" resourceKey="realTimeBingoWinloss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/BingoWinloss/BingoWinlossAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode description="bg" resourceKey="realTimeBingoWinloss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/BingoWinloss/BingoWinlossMaster.aspx" roles="3"></siteMapNode>
+      <siteMapNode description="bg" resourceKey="realTimeBingoWinloss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/BingoWinloss/BingoWinlossSuper.aspx" roles="4"></siteMapNode>
       <!--/Bingo-RealTimeWL-->
 
-      <siteMapNode resourceKey="matchwinloss" url="site-oldmain/_Reports/MatchWinloss/MatchWinLoss.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="matchWinLostDetail" url="site-oldmain/_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
+      <siteMapNode resourceKey="matchwinloss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/MatchWinloss/MatchWinLoss.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="matchWinLostDetail" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossByBettype" url="site-oldmain/_Reports/Winloss/WinLossByBettypeAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="winlossanalysis" url="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="winLossByBettype" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Winloss/WinLossByBettypeAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisAgent.aspx" roles="Agent"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossByBettype" url="site-oldmain/_Reports/Winloss/WinLossByBettypeMaster.aspx" roles="3"></siteMapNode>
-      <siteMapNode resourceKey="winlossanalysis" url="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisMaster.aspx" roles="3"></siteMapNode>
+      <siteMapNode resourceKey="winLossByBettype" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Winloss/WinLossByBettypeMaster.aspx" roles="3"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisMaster.aspx" roles="3"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossByBettype" url="site-oldmain/_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="4"></siteMapNode>
-      <siteMapNode resourceKey="winlossanalysis" url="site-oldmain/_Reports/WinlossAnalysis/Daily_WinlossAnalysisSuper.aspx" roles="4"></siteMapNode>
+      <siteMapNode resourceKey="winLossByBettype" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="4"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisSuper.aspx" roles="4"></siteMapNode>
 
-      <siteMapNode description="Consolidated" resourceKey="consolidatedreport" url="site-oldmain/report/consolidate/index"></siteMapNode>
+      <siteMapNode description="Consolidated" resourceKey="consolidatedreport" microSite="true" microSiteNameSettingKey="OldMainSite" url="report/consolidate/index"></siteMapNode>
 
-      <siteMapNode resourceKey="commissionByBettype" url="site-oldmain/Report/CommissionByBetType"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" microSite="true" microSiteNameSettingKey="OldMainSite" url="Report/CommissionByBetType"></siteMapNode>
       <!--HR-->
-      <siteMapNode description="hr" resourceKey="commssionhorseracing" url="site-oldmain/_Reports/Commission/HRCommission.aspx"></siteMapNode>
+      <siteMapNode description="hr" resourceKey="commssionhorseracing" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Commission/HRCommission.aspx"></siteMapNode>
       <!--/HR-->
-      <siteMapNode resourceKey="cancelledBets" url="site-oldmain/_Reports/BetList/CancelBetList.aspx"></siteMapNode>
-      <siteMapNode description="LastBetMonitoring" resourceKey="monitor" url="site-oldmain/_Reports/LastBetMonitoring/LastBetMonitoring.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="cancelledBets" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/BetList/CancelBetList.aspx"></siteMapNode>
+      <siteMapNode description="LastBetMonitoring" resourceKey="monitor" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/LastBetMonitoring/LastBetMonitoring.aspx" roles="Agent"></siteMapNode>
       <!--Statement-->
-      <siteMapNode resourceKey="statement" url="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=2&amp;rptmrange=5" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="statement" url="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=3&amp;rptmrange=5" roles="3"></siteMapNode>
-      <siteMapNode resourceKey="statement" url="site-oldmain/Finance/StatementSMA?CustID=custidParam&amp;RoleID=4&amp;rptmrange=5" roles="4"></siteMapNode>
+      <siteMapNode resourceKey="statement" microSite="true" microSiteNameSettingKey="OldMainSite" url="Finance/StatementSMA?CustID=custidParam&amp;RoleID=2&amp;rptmrange=5" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="statement" microSite="true" microSiteNameSettingKey="OldMainSite" url="Finance/StatementSMA?CustID=custidParam&amp;RoleID=3&amp;rptmrange=5" roles="3"></siteMapNode>
+      <siteMapNode resourceKey="statement" microSite="true" microSiteNameSettingKey="OldMainSite" url="Finance/StatementSMA?CustID=custidParam&amp;RoleID=4&amp;rptmrange=5" roles="4"></siteMapNode>
       <!--/Statement-->
 
       <!--Foobet-->
-      <siteMapNode resourceKey="foobet" url="site-oldmain/Report/Foobet" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="foobet" microSite="true" microSiteNameSettingKey="OldMainSite" url="Report/Foobet" roles="Agent"></siteMapNode>
       <!--/Foobet-->
 
       <siteMapNode resourceKey="result" url="~/Normal" microSite="true" microSiteNameSettingKey="ResultSiteVirtualPath"></siteMapNode>
-      <siteMapNode resourceKey="winLossAnalysisChart" url="site-oldmain/_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
+      <siteMapNode resourceKey="winLossAnalysisChart" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
     <!--Totalbets-->
     <siteMapNode resourceKey="totalbets">
-      <siteMapNode resourceKey="HOUL" url="site-oldmain/_TotalBets/HDPOU.aspx"></siteMapNode>
-      <siteMapNode resourceKey="moneyline" url="site-oldmain/_TotalBets/MoneyLine.aspx"></siteMapNode>
-      <siteMapNode resourceKey="OE1x2DND" url="site-oldmain/_TotalBets/OddEven1x2.aspx"></siteMapNode>
-      <siteMapNode resourceKey="correctscore" url="site-oldmain/_BetList/BetList.aspx?type=CorrectScore"></siteMapNode>
-      <siteMapNode resourceKey="fthttotalgoal" url="site-oldmain/_TotalBets/TotalGoal.aspx"></siteMapNode>
-      <siteMapNode resourceKey="parlay" url="site-oldmain/_BetList/BetList.aspx?type=MixParlay"></siteMapNode>
-      <siteMapNode resourceKey="outRight" url="site-oldmain/_TotalBets/OutRight.aspx"></siteMapNode>
-      <siteMapNode resourceKey="htft" url="site-oldmain/_TotalBets/HTFT.aspx"></siteMapNode>
-      <siteMapNode resourceKey="fthtfglg" url="site-oldmain/_TotalBets/FGLG.aspx"></siteMapNode>
-      <siteMapNode resourceKey="bettype13" url="site-oldmain/_BetList/BetList.aspx?bettype=13&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="bettype24" url="site-oldmain/_BetList/BetList.aspx?bettype=24&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="homeDrawAwayNoBet" url="site-oldmain/_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
-      <siteMapNode resourceKey="bettype26" url="site-oldmain/_BetList/BetList.aspx?bettype=26&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="bettype27" url="site-oldmain/_BetList/BetList.aspx?bettype=27&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="bettype28" url="site-oldmain/_BetList/BetList.aspx?bettype=28&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="HOUL" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/HDPOU.aspx"></siteMapNode>
+      <siteMapNode resourceKey="moneyline" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/MoneyLine.aspx"></siteMapNode>
+      <siteMapNode resourceKey="OE1x2DND" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/OddEven1x2.aspx"></siteMapNode>
+      <siteMapNode resourceKey="correctscore" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?type=CorrectScore"></siteMapNode>
+      <siteMapNode resourceKey="fthttotalgoal" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/TotalGoal.aspx"></siteMapNode>
+      <siteMapNode resourceKey="parlay" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?type=MixParlay"></siteMapNode>
+      <siteMapNode resourceKey="outRight" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/OutRight.aspx"></siteMapNode>
+      <siteMapNode resourceKey="htft" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/HTFT.aspx"></siteMapNode>
+      <siteMapNode resourceKey="fthtfglg" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/FGLG.aspx"></siteMapNode>
+      <siteMapNode resourceKey="betType13" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=13&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="betType24" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=24&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="homeDrawAwayNoBet" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
+      <siteMapNode resourceKey="betType26" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=26&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="betType27" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=27&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="betType28" microSite="true" microSiteNameSettingKey="OldMainSite" url="_BetList/BetList.aspx?bettype=28&amp;type=Bettype"></siteMapNode>
       <!--NG-->
-      <siteMapNode description="numbergame" resourceKey="numbergame" url="site-oldmain/_TotalBets/NumberGame.aspx"></siteMapNode>
+      <siteMapNode description="numbergame" resourceKey="numbergame" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/NumberGame.aspx"></siteMapNode>
       <!--/NG-->
       <!--HR-->
-      <siteMapNode description="hr" resourceKey="hr" url="site-oldmain/_TotalBets/Racing.aspx"></siteMapNode>
+      <siteMapNode description="hr" resourceKey="hr" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/Racing.aspx"></siteMapNode>
       <!--/HR-->
     </siteMapNode>
     <!--/Totalbets-->
     <!--Forecast-->
     <siteMapNode resourceKey="forecast">
-      <siteMapNode resourceKey="HOUL" url="site-oldmain/_Forecast/FCHDPOU.aspx"></siteMapNode>
-      <siteMapNode resourceKey="lbl1x2" url="site-oldmain/_Forecast/FC1X2.aspx"></siteMapNode>
-      <siteMapNode description="ScoreMap" resourceKey="scoreMap" url="site-oldmain/ForecastScoreMap/Index"></siteMapNode>
+      <siteMapNode resourceKey="HOUL" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Forecast/FCHDPOU.aspx"></siteMapNode>
+      <siteMapNode resourceKey="lbl1x2" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Forecast/FC1X2.aspx"></siteMapNode>
+      <siteMapNode description="ScoreMap" resourceKey="scoreMap" microSite="true" microSiteNameSettingKey="OldMainSite" url="ForecastScoreMap/Index"></siteMapNode>
     </siteMapNode>
     <!--/Forecast-->
     <!--MemberInfo-->
     <siteMapNode resourceKey="memberInfo">
-      <siteMapNode resourceKey="newMember" url="site-oldmain/_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
-      <siteMapNode description="subacc" resourceKey="subaccount" url="site-oldmain/_SubAcc/SubAccList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="newMember" microSite="true" microSiteNameSettingKey="OldMainSite" url="_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
+      <siteMapNode description="subacc" resourceKey="subaccount" microSite="true" microSiteNameSettingKey="OldMainSite" url="_SubAcc/SubAccList.aspx"></siteMapNode>
 
       <siteMapNode resourceKey="customerlist" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentList" url="site-oldmain/_MemberInfo/CustomerList/Master/AgentList.aspx" roles="3"></siteMapNode>
-      <siteMapNode resourceKey="masterList" url="site-oldmain/_MemberInfo/CustomerList/Super/MasterList.aspx" roles="4"></siteMapNode>
+      <siteMapNode resourceKey="agentList" microSite="true" microSiteNameSettingKey="OldMainSite" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="3"></siteMapNode>
+      <siteMapNode resourceKey="masterList" microSite="true" microSiteNameSettingKey="OldMainSite" url="_MemberInfo/CustomerList/Super/MasterList.aspx" roles="4"></siteMapNode>
 
-      <siteMapNode resourceKey="creditbalance" url="site-oldmain/_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
-      <siteMapNode resourceKey="positionTaking" url="site-oldmain/_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="creditbalance" microSite="true" microSiteNameSettingKey="OldMainSite" url="_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="positionTaking" microSite="true" microSiteNameSettingKey="OldMainSite" url="_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
       <!--Casino-PositionTaking-->
-      <siteMapNode description="cs" resourceKey="casinoPositionTaking" url="site-oldmain/_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
+      <siteMapNode description="cs" resourceKey="casinoPositionTaking" microSite="true" microSiteNameSettingKey="OldMainSite" url="_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
       <!--/Casino-PositionTaking-->
       <!--Bingo-PositionTaking-->
-      <siteMapNode description="bgPT" resourceKey="bingoPositionTaking" url="site-oldmain/_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
+      <siteMapNode description="bgPT" resourceKey="bingoPositionTaking" microSite="true" microSiteNameSettingKey="OldMainSite" url="_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
       <!--/Bingo-PositionTaking-->
-      <siteMapNode resourceKey="memberCommission" url="site-oldmain/_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
-      <siteMapNode resourceKey="MemberWinLimit" url="site-oldmain/MemberInformation/WinLimit/Index"></siteMapNode>
+      <siteMapNode resourceKey="memberCommission" microSite="true" microSiteNameSettingKey="OldMainSite" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
+      <siteMapNode resourceKey="MemberWinLimit" microSite="true" microSiteNameSettingKey="OldMainSite" url="MemberInformation/WinLimit/Index"></siteMapNode>
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="transfer" url="../site-oldmain/_Transfer/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
     <siteMapNode resourceKey="transfer" url="../site-oldmain/_Transfer/Master/AgentList.aspx" roles="Master"></siteMapNode>
     <siteMapNode resourceKey="transfer" url="../site-oldmain/_Transfer/Super/MasterList.aspx" roles="Super"></siteMapNode>
     <siteMapNode resourceKey="viewLog">
-      <siteMapNode resourceKey="customerSetting" url="site-oldmain/_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting&amp;pageIndex=1"></siteMapNode>
-      <siteMapNode resourceKey="status" url="site-oldmain/_ViewLog/LogStatus.aspx?tabid=Status&amp;pageIndex=1"></siteMapNode>
-      <siteMapNode resourceKey="credit" url="site-oldmain/_ViewLog/LogCredit.aspx?tabid=Credit&amp;pageIndex=1"></siteMapNode>
-      <siteMapNode resourceKey="login" url="site-oldmain/_ViewLog/LogLogin.aspx?tabid=Login&amp;pageIndex=1"></siteMapNode>
+      <siteMapNode resourceKey="customerSetting" microSite="true" microSiteNameSettingKey="OldMainSite" url="_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting&amp;pageIndex=1"></siteMapNode>
+      <siteMapNode resourceKey="status" microSite="true" microSiteNameSettingKey="OldMainSite" url="_ViewLog/LogStatus.aspx?tabid=Status&amp;pageIndex=1"></siteMapNode>
+      <siteMapNode resourceKey="credit" microSite="true" microSiteNameSettingKey="OldMainSite" url="_ViewLog/LogCredit.aspx?tabid=Credit&amp;pageIndex=1"></siteMapNode>
+      <siteMapNode resourceKey="login" microSite="true" microSiteNameSettingKey="OldMainSite" url="_ViewLog/LogLogin.aspx?tabid=Login&amp;pageIndex=1"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="announcements">
-      <siteMapNode resourceKey="normal" url="site-oldmain/Info/NewMessageForm.aspx?pageQuery="></siteMapNode>
-      <siteMapNode resourceKey="special" url="site-oldmain/Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
-      <siteMapNode resourceKey="personalMessage" url="site-oldmain/Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
+      <siteMapNode resourceKey="normal" microSite="true" microSiteNameSettingKey="OldMainSite" url="Info/NewMessageForm.aspx?pageQuery="></siteMapNode>
+      <siteMapNode resourceKey="special" microSite="true" microSiteNameSettingKey="OldMainSite" url="Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
+      <siteMapNode resourceKey="personalMessage" microSite="true" microSiteNameSettingKey="OldMainSite" url="Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
     </siteMapNode>
   </siteMapNode>
 </siteMap>

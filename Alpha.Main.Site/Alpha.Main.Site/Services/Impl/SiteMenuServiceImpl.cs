@@ -54,7 +54,7 @@
                     throw new InvalidOperationException(nameof(rootNode));
                 }
 
-                menuItems = BuildMenuFromSiteMapNode(rootNode, userLevel);
+                menuItems = BuildMenu(rootNode, userLevel);
 
                 cacheManager.Add(cacheKey, menuItems);
             }
@@ -62,7 +62,7 @@
             return menuItems;
         }
 
-        private List<MenuItem> BuildMenuFromSiteMapNode(SiteMapNode siteMapNode, UserLevel userLevel)
+        private List<MenuItem> BuildMenu(SiteMapNode siteMapNode, UserLevel userLevel)
         {
             var menuItems = new List<MenuItem>();
 
@@ -79,21 +79,13 @@
                         if (node.Roles.Count == 0
                             || node.Roles.Contains(userLevel.DisplayName)
                             || node.Roles.Contains(userLevel.DisplayName.ToLower())
-                            || node.Roles.Contains(userLevel.Value))
+                            || node.Roles.Contains(userLevel.Value.ToString()))
                         {
-                            var menuItem = new MenuItem
-                            {
-                                Title = node.Title,
-                                Url = node.Url,
-                                SubMenus = new List<MenuItem>(),
-                                Name = node.ResourceKey.ToLower(),
-                                Expand = (node["expand"] != null && (node["expand"] == "1"
-                                            || node["expand"].ToLower() == "true"))
-                            };
+                            MenuItem menuItem = BuildMenuItem(node);
 
                             if (node.HasChildNodes)
                             {
-                                menuItem.SubMenus = BuildMenuFromSiteMapNode(node, userLevel);
+                                menuItem.SubMenus = BuildMenu(node, userLevel);
                             }
 
                             menuItems.Add(menuItem);
@@ -102,6 +94,17 @@
             }
 
             return menuItems;
+        }
+
+        private static MenuItem BuildMenuItem(SiteMapNode node)
+        {
+            return new MenuItem
+            {
+                ResourceKey = node.ResourceKey,
+                Url = node.Url,
+                SubMenus = new List<MenuItem>(),
+                Name = node.ResourceKey.ToLower()
+            };
         }
 
         private IEnumerable<MenuItem> GetMenuForSubAccount(
