@@ -101,9 +101,12 @@
             return new MenuItem
             {
                 ResourceKey = node.ResourceKey,
+                Name = node.ResourceKey.ToLower(),
                 Url = node.Url,
-                SubMenus = new List<MenuItem>(),
-                Name = node.ResourceKey.ToLower()
+                SubMenus = new List<MenuItem>(),                
+                ShowSubMenus = !string.IsNullOrWhiteSpace(node["expand"])
+                            && ("1".Equals(node["expand"])
+                            || "true".Equals(node["expand"], StringComparison.InvariantCultureIgnoreCase))
             };
         }
 

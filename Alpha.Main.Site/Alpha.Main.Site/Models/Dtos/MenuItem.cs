@@ -17,13 +17,15 @@
             {
                return Alpha_sitemap.ResourceManager.GetString(this.ResourceKey);
             }
-        }
+        }        
 
         public string Url { get; set; }                
 
         public bool IsImportant { get; set; }
 
-        public List<MenuItem> SubMenus { get; set; }        
+        public List<MenuItem> SubMenus { get; set; }
+
+        public bool ShowSubMenus { get; set; }
 
         public Expression<Func<User, MenuItem, bool>> IsAccessibleTo
         {
