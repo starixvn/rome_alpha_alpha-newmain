@@ -2,7 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true" >
   <siteMapNode title="Alpha Site">
     <!--Report-->
-    <siteMapNode resourceKey="reports" expand="1" >
+    <siteMapNode resourceKey="reports" expand="1" functionType="[E]" >
       <siteMapNode resourceKey="memberWinLoss" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberwinlossdetail" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberOutstanding" microSite="true" microSiteNameSettingKey="OldMainSite" url="_Reports/Common/Outstanding.aspxlv=2" roles="Agent"></siteMapNode>
@@ -62,7 +62,7 @@
     </siteMapNode>
     <!--/Report-->
     <!--Totalbets-->
-    <siteMapNode resourceKey="totalbets">
+    <siteMapNode resourceKey="totalbets" functionType="[D]">
       <siteMapNode resourceKey="HOUL" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/HDPOU.aspx"></siteMapNode>
       <siteMapNode resourceKey="moneyline" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/MoneyLine.aspx"></siteMapNode>
       <siteMapNode resourceKey="OE1x2DND" microSite="true" microSiteNameSettingKey="OldMainSite" url="_TotalBets/OddEven1x2.aspx"></siteMapNode>
@@ -94,7 +94,7 @@
     </siteMapNode>
     <!--/Forecast-->
     <!--MemberInfo-->
-    <siteMapNode resourceKey="memberInfo">
+    <siteMapNode resourceKey="memberInfo" functionType="[H]">
       <siteMapNode resourceKey="newMember" microSite="true" microSiteNameSettingKey="OldMainSite" url="_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
       <siteMapNode description="subacc" resourceKey="subaccount" microSite="true" microSiteNameSettingKey="OldMainSite" url="_SubAcc/SubAccList.aspx"></siteMapNode>
 
@@ -114,10 +114,10 @@
       <siteMapNode resourceKey="MemberWinLimit" microSite="true" microSiteNameSettingKey="OldMainSite" url="MemberInformation/WinLimit/Index"></siteMapNode>
     </siteMapNode>
     <!--/MemberInfo-->
-    <siteMapNode resourceKey="transfer" url="../site-oldmain/_Transfer/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
-    <siteMapNode resourceKey="transfer" url="../site-oldmain/_Transfer/Master/AgentList.aspx" roles="Master"></siteMapNode>
-    <siteMapNode resourceKey="transfer" url="../site-oldmain/_Transfer/Super/MasterList.aspx" roles="Super"></siteMapNode>
-    <siteMapNode resourceKey="viewLog">
+    <siteMapNode resourceKey="transfer" url="../site-oldmain/_Transfer/Agent/MemberList.aspx" functionType="[C]" roles="Agent"></siteMapNode>
+    <siteMapNode resourceKey="transfer" url="../site-oldmain/_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
+    <siteMapNode resourceKey="transfer" url="../site-oldmain/_Transfer/Super/MasterList.aspx" functionType="[C]" roles="Super"></siteMapNode>
+    <siteMapNode resourceKey="viewLog" functionType="[G]">
       <siteMapNode resourceKey="customerSetting" microSite="true" microSiteNameSettingKey="OldMainSite" url="_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting&amp;pageIndex=1"></siteMapNode>
       <siteMapNode resourceKey="status" microSite="true" microSiteNameSettingKey="OldMainSite" url="_ViewLog/LogStatus.aspx?tabid=Status&amp;pageIndex=1"></siteMapNode>
       <siteMapNode resourceKey="credit" microSite="true" microSiteNameSettingKey="OldMainSite" url="_ViewLog/LogCredit.aspx?tabid=Credit&amp;pageIndex=1"></siteMapNode>

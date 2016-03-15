@@ -1,14 +1,22 @@
 ﻿namespace Alpha.Main.Site.Models
 {
     using System;
+    using Dtos;
     using Enumerations;
+    using Sunplus.Agent.Model.Entities;
     [Serializable]
-    public class User : Entity<int>
+    public class User : Entity<int>, IUser
     {
         private int id;
         private string name;
         private int subAccountId;
         private UserLevel level;
+        private PageAccess pageAccess;
+
+        public User(PageAccess pageAccess)
+        {
+            this.pageAccess = pageAccess;
+        }        
 
         public new int Id
         {
@@ -96,6 +104,24 @@
             {
                 return !IsSubAccount;
             }
+        }
+
+        public PageAccess PageAccess
+        {
+            get
+            {
+                return pageAccess;
+            }
+        }
+
+        public bool HasPermissionOnFunction(string function)
+        {
+            if (string.IsNullOrWhiteSpace(function))
+            {
+                throw new ArgumentNullException(nameof(function));
+            }
+
+            return this.pageAccess.Contains(function);
         }
     }
 }

@@ -10,6 +10,6 @@
 
     public interface SiteMenuService
     {
-        IEnumerable<MenuItem> GetMenuByUser(User user);
+        IEnumerable<MenuItem> GetMenuByUser(IUser user);
     }
 }

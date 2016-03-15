@@ -291,7 +291,9 @@
 
             var siteMenuService = new SiteMenuServiceImpl(new CachingServiceImpl());
 
-            menuList =  siteMenuService.GetMenuByUser(new Models.User { Level = Enumeration.FromValue<UserLevel>(2) }).ToList();
+            var user = new Models.User(pageAccess);
+            user.Level = Enumeration.FromValue<UserLevel>(2);
+            menuList =  siteMenuService.GetMenuByUser(user).ToList();
 
             //for (int i = 0; i < subMenuCount; i++)
             //{
@@ -457,7 +459,7 @@
                 }
             }
 
-            menu.IsImportant = title.Contains("monitor") && !CheckingLastsBetMonitoringFunctionStatus();
+            //menu.IsImportant = title.Contains("monitor") && !CheckingLastsBetMonitoringFunctionStatus();
             return menu;
         }
 

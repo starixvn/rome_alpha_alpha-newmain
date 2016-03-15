@@ -21,7 +21,7 @@
             this.cacheManager = cacheManager ?? new CachingServiceImpl();
         }
 
-        public IEnumerable<MenuItem> GetMenuByUser(User user)
+        public IEnumerable<MenuItem> GetMenuByUser(IUser user)
         {
             var menuItems = Enumerable.Empty<MenuItem>();
 
@@ -34,7 +34,7 @@
 
             if (user.IsSubAccount)
             {
-                menuItems = GetMenuForSubAccount(user.SubAccountId, menuItems);
+                menuItems = GetMenuForSubAccount(user, menuItems);
             }
 
             return menuItems;
@@ -86,6 +86,7 @@
                             if (node.HasChildNodes)
                             {
                                 menuItem.SubMenus = BuildMenu(node, userLevel);
+                                menuItem.ShowSubMenus = GetExpandAttributeInfo(node);
                             }
 
                             menuItems.Add(menuItem);
@@ -98,23 +99,29 @@
 
         private static MenuItem BuildMenuItem(SiteMapNode node)
         {
-            return new MenuItem
-            {
-                ResourceKey = node.ResourceKey,
-                Name = node.ResourceKey.ToLower(),
-                Url = node.Url,
-                SubMenus = new List<MenuItem>(),                
-                ShowSubMenus = !string.IsNullOrWhiteSpace(node["expand"])
-                            && ("1".Equals(node["expand"])
-                            || "true".Equals(node["expand"], StringComparison.InvariantCultureIgnoreCase))
-            };
+            var menuItem = new MenuItem(node.Key);
+
+            menuItem.Name = node.ResourceKey.ToLower();
+            menuItem.Url = node.Url;
+            menuItem.SubMenus = new List<MenuItem>();
+            menuItem.Function = node["functionType"];
+
+            return menuItem;
+        }
+
+        private static bool GetExpandAttributeInfo(SiteMapNode node)
+        {
+           return !string.IsNullOrWhiteSpace(node["expand"])
+                  && ("1".Equals(node["expand"]) 
+                    || "true".Equals(node["expand"], StringComparison.InvariantCultureIgnoreCase));
         }
 
         private IEnumerable<MenuItem> GetMenuForSubAccount(
-            int subAccountId,
+            IUser user,
             IEnumerable<MenuItem> userLevelMenu)
         {
-            var subAccountMenu = new List<MenuItem>();
+            var subAccountMenu = userLevelMenu
+                .Where(menuItem => menuItem.IsAccessibleToUser(user));
 
             return subAccountMenu;
         }
