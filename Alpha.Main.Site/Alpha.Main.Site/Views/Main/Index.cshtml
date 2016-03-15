@@ -52,11 +52,11 @@
                         if (menu.SubMenus.Any())
                         {
                             <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
-                                <span class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
+                                <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
                                       href="javascript:;">
                                     <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
                                     <span class="pull-right icon-arrow-right"></span>
-                                </span>
+                                </a>
                                 <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
                                     @foreach (var subMenu in menu.SubMenus)
                                     {
@@ -97,9 +97,9 @@
 <div class="content-wrapper">
     <header class="header">
         <section class="navbar header-navigation" id="header-navigation">
-            <span class="icon-collapse icon-hamburger icon-m c-White withripple"></span>
+            <span class="icon-collapse icon-hamburger withripple"></span>
             <ul class="nav navbar-nav list-top">
-                <li><span class="icon icon-time opacity-80"></span><span class="txt-top" id="clock"></span></li>
+                <li><span class="icon icon-time"></span><span class="txt-top" id="clock"></span></li>
                 <li class="dropdown">
                     <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
                         <span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>
@@ -112,10 +112,10 @@
                         }
                     </ul>
                 </li>
-                <li class="withripple"><span class="icon icon-swap-horizontal opacity-80" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
+                <li class="withripple"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
                 <li class="dropdown">
                     <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
-                        <span class="icon icon-squares opacity-80 top-right-menu"></span>
+                        <span class="icon icon-squares top-right-menu"></span>
                     </a>
                     <ul class="dropdown-menu list-setting">
                         <li><a href="/@oldMainSite/_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
@@ -125,7 +125,7 @@
                         <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                     </ul>
                 </li>
-                <li class="withripple"><span class="icon icon-logout opacity-80"></span></li>
+                <li class="withripple"><span class="icon icon-logout"></span></li>
             </ul>
         </section>
         <section class="header-notification" id="header-notification">

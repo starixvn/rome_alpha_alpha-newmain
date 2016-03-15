@@ -15,15 +15,6 @@ a, a:focus, a:active, a:target, a:hover {
 .bold {
   font-weight: bold; }
 
-.c-White {
-  color: #fff; }
-
-.c-Primary {
-  color: #5c1218; }
-
-.opacity-80 {
-  opacity: 0.8; }
-
 .center {
   text-align: center; }
 
@@ -45,12 +36,6 @@ a, a:focus, a:active, a:target, a:hover {
   display: inline-block;
   height: 12px;
   width: 17px; }
-
-.icon-m {
-  font-size: 17px; }
-
-.icon-s {
-  font-size: 12px; }
 
 /********************************** Sidebar ******************************************/
 .sidebar {
@@ -264,11 +249,15 @@ a, a:focus, a:active, a:target, a:hover {
   .header-navigation .icon-collapse {
     display: inline-block;
     padding: 16px 15px;
-    cursor: pointer; }
+    cursor: pointer;
+    font-size: 17px;
+    color: #fff; }
   .header-navigation .list-top {
     float: right;
     color: #fff;
     font-size: 13px; }
+    .header-navigation .list-top .icon-swap-horizontal, .header-navigation .list-top .icon-squares, .header-navigation .list-top .icon-logout {
+      opacity: 0.8; }
     .header-navigation .list-top > li {
       display: inline-block;
       padding: 15px 10px;
