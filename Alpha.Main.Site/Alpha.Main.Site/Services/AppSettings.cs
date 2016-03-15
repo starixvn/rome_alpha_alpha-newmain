@@ -44,5 +44,13 @@
                 return Converter.ToBool(ConfigurationManager.AppSettings["EnableBetsListMonitoring"]);
             }
         }
+
+        public static string VirtualDirectory
+        {
+            get
+            {
+                return Converter.ToString2(ConfigurationManager.AppSettings["VirtualDirectory"]);
+            }
+        }
     }
 }
