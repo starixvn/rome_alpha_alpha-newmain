@@ -7,9 +7,9 @@
     {
         public string GetAppPath(string appName, string pathModifier)
         {
-            var redirectUrl = HttpContext.Current.Response.ApplyAppPathModifier(pathModifier);
-            redirectUrl = Regex.Replace(redirectUrl, HttpRuntime.AppDomainAppVirtualPath, appName, RegexOptions.IgnoreCase);
-            return redirectUrl;
+            var appPath = HttpContext.Current.Response.ApplyAppPathModifier(pathModifier);
+            appPath = Regex.Replace(appPath, HttpRuntime.AppDomainAppVirtualPath, appName, RegexOptions.IgnoreCase);
+            return appPath;
         }
     }
 }
