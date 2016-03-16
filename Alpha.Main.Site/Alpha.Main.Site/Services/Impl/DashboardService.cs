@@ -38,7 +38,7 @@
     using Models;
     public class DashboardService : IDashboardService
     {
-        private static string DefaultMainPage = "../" + SiteServices.AppSettings.OldMainSite + "/_Reports/PortalPage/PortalPage.aspx";
+        private static string DefaultMainPage = "../" + SiteServices.AppSettings.OldMainApp + "/_Reports/PortalPage/PortalPage.aspx";
 
         private readonly IDashboardRepository _repository;
 
@@ -497,7 +497,7 @@
 
         private string GetOldMainSitePath()
         {
-            return "../" + SiteServices.AppSettings.OldMainSite + "/";
+            return "../" + SiteServices.AppSettings.OldMainApp + "/";
         }
     }
 }
