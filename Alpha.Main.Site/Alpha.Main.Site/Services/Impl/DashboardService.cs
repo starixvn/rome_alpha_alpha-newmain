@@ -213,15 +213,16 @@
 
         public string GetMainPage()
         {
-            var oldMainSitePath = GetOldMainSitePath();
+            _defaultMainPage = "/" + _appPathService.GetAppPath(SiteServices.AppSettings.OldMainApp, "_Reports/PortalPage/PortalPage.aspx");
+            var oldMainAppPath = GetOldMainAppPath();
             if (!UserSession.Current.IsLogged)
             {
-                return oldMainSitePath + "_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
+                return oldMainAppPath + "_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
             }
 
             if (UserSession.Current.IsPasswordExpired)
             {
-                return oldMainSitePath + "_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
+                return oldMainAppPath + "_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
             }
 
             ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
@@ -235,11 +236,11 @@
                 switch (status)
                 {
                     case SecurityCodeStatus.FORCED_CHANGE_SC:
-                        return oldMainSitePath + "Security/SecurityCode/ForceChangeSecurityCode";
+                        return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCode";
                     case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-                        return oldMainSitePath + "Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
+                        return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
                     default:
-                        return oldMainSitePath + "Security/SecurityCode/VerifySecurityCode";
+                        return oldMainAppPath + "Security/SecurityCode/VerifySecurityCode";
                 }
             }
 
@@ -247,12 +248,12 @@
                 (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
             {
                 // Use the OLD flow of Security Code.
-                return oldMainSitePath + "_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
+                return oldMainAppPath + "_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
             }
 
             var cookieCurrentUrl = GetCookieCurrentURL();
             var currentURLCookie = HttpContext.Current.Request.Cookies[cookieCurrentUrl];
-            var url = DefaultMainPage;
+            var url = _defaultMainPage;
 
             if (IsMainPageFromCookie())
             {
@@ -294,7 +295,7 @@
 
             var user = new Models.User(pageAccess);
             user.Level = Enumeration.FromValue<UserLevel>(2);
-            menuList =  siteMenuService.GetMenuByUser(user).ToList();
+            menuList = siteMenuService.GetMenuByUser(user).ToList();
 
             //for (int i = 0; i < subMenuCount; i++)
             //{
@@ -367,7 +368,7 @@
         private MenuItem GetMenu(SiteMapNode siteMapNode, int index, bool showSubMenu)
         {
             var menu = new MenuItem
-            {                         
+            {
                 Url = siteMapNode.Url,
                 SubMenus = new List<MenuItem>(),
                 Name = siteMapNode.Title
@@ -438,7 +439,7 @@
             var menu = new MenuItem();
             var title = menuItem.Title;
             var bettypeId = 0;
-           
+
 
             if (title.Contains("statement"))
             {
@@ -495,9 +496,9 @@
             return false;
         }
 
-        private string GetOldMainSitePath()
+        private string GetOldMainAppPath()
         {
-            return "../" + SiteServices.AppSettings.OldMainApp + "/";
+            return _appPathService.GetAppPath(SiteServices.AppSettings.OldMainApp, "~");
         }
     }
 }
