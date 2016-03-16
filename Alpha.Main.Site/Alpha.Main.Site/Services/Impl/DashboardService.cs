@@ -38,22 +38,26 @@
     using Models;
     public class DashboardService : IDashboardService
     {
-        private static string DefaultMainPage = "../" + SiteServices.AppSettings.OldMainApp + "/_Reports/PortalPage/PortalPage.aspx";
-
         private readonly IDashboardRepository _repository;
 
         private readonly IFileUploadService _fileUploadService;
 
         private readonly ISessionValidationService _sessionValidationService;
 
+        private string _defaultMainPage;
+
+        private AppPathService _appPathService;
+
         public DashboardService(
             IDashboardRepository repository,
             IFileUploadService fileUploadService,
-            ISessionValidationService sessionValidationService)
+            ISessionValidationService sessionValidationService,
+            AppPathService appPathService)
         {
             _repository = repository;
             _fileUploadService = fileUploadService;
             _sessionValidationService = sessionValidationService;
+            _appPathService = appPathService;
         }
 
         public List<LanguageModel> GetLanguages()
@@ -440,25 +444,22 @@
             var title = menuItem.Title;
             var bettypeId = 0;
 
-
-            if (title.Contains("statement"))
+            if (!string.IsNullOrEmpty(menuItem.GetAttribute("microSite")))
             {
-                menu.Url = "../" + menuItem.Url.Replace("custidParam", UserSession.Current.CustId.ToString());
+                var microSiteSettingKey = menuItem.GetAttribute("microSiteNameSettingKey");
+                var microSiteName = AppSettings.GetValue(microSiteSettingKey);
+                var microSiteUrl = HttpContext.Current.Response.ApplyAppPathModifier(menuItem.Url);
+                microSiteUrl = Regex.Replace(microSiteUrl, HttpRuntime.AppDomainAppVirtualPath, microSiteName, RegexOptions.IgnoreCase);
+                menu.Url = microSiteUrl;
             }
             else
             {
-                if (!string.IsNullOrEmpty(menuItem.GetAttribute("microSite")))
-                {
-                    var microSiteSettingKey = menuItem.GetAttribute("microSiteNameSettingKey");
-                    var microSiteName = AppSettings.GetValue(microSiteSettingKey);
-                    var microSiteUrl = HttpContext.Current.Response.ApplyAppPathModifier(menuItem.Url);
-                    microSiteUrl = Regex.Replace(microSiteUrl, HttpRuntime.AppDomainAppVirtualPath, microSiteName, RegexOptions.IgnoreCase);
-                    menu.Url = microSiteUrl;
-                }
-                else
-                {
-                    menu.Url = "../" + menuItem.Url;
-                }
+                menu.Url = "/" + menuItem.Url;
+            }
+
+            if (title.Contains("statement"))
+            {
+                menu.Url = "/" + menu.Url.Replace("custidParam", UserSession.Current.CustId.ToString());
             }
 
             //menu.IsImportant = title.Contains("monitor") && !CheckingLastsBetMonitoringFunctionStatus();
@@ -498,7 +499,7 @@
 
         private string GetOldMainAppPath()
         {
-            return _appPathService.GetAppPath(SiteServices.AppSettings.OldMainApp, "~");
+            return "/" + _appPathService.GetAppPath(SiteServices.AppSettings.OldMainApp, "~");
         }
     }
 }
