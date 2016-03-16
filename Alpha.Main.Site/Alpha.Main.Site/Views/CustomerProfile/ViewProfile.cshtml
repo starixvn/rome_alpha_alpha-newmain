@@ -1,18 +1,20 @@
 @using Sunplus.Agent.Model.Entities;
 @using Alpha.Main.Site.App_GlobalResources;
 @using Alpha.Main.Site.Services;
+@using Alpha.Main.Site.Services.Impl;
 @{
     Layout = "";
     var currentUserSession = UserSession.Current;
     string displayProfile = string.Empty;
     var contentFrame = "main";
     var isShowEditProfilePictureTooltip = Model.IsDefaultAvatar && Model.CountNicknameTooltip < 4;
-    var oldMainSite = AppSettings.OldMainSite;
+    var appPathService = new AppPathServiceImpl();
+    var baseOldMainApp = appPathService.GetAppPath(AppSettings.OldMainApp, "~");
 
-    var changeNicknameLink = string.Format("/{0}/LoginOption?custId={1}", oldMainSite, currentUserSession.CustId);
+    var changeNicknameLink = string.Format("{0}/LoginOption?custId={1}", baseOldMainApp, currentUserSession.CustId);
 }
 <div id="profile-content">
-    <a href="/@oldMainSite/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame" class="profile-avatar">
+    <a href="/@(baseOldMainApp + "ProfilePicture?custId=" + currentUserSession.CustId)" target="@contentFrame" class="profile-avatar">
         <img id="logoProfileImg" src='@Model.EmbedImage' alt="" title="@Resources.ProfileClickTootip" />
     </a>
 
@@ -75,7 +77,7 @@
                     <div class="bg">
                         <div class="normal">
                             <div class="tooltip-content">
-                                @Html.Raw(@Resources.ProfileLoginTip)<a class="change-picture-link" href="/@oldMainSite/ProfilePicture?custId=@currentUserSession.CustId" target="main">@Resources.clickHere</a>&nbsp;@Resources.uploadNow
+                                @Html.Raw(@Resources.ProfileLoginTip)<a class="change-picture-link" href="/@(baseOldMainApp +"ProfilePicture?custId="+currentUserSession.CustId)" target="main">@Resources.clickHere</a>&nbsp;@Resources.uploadNow
                             </div>
                         </div>
                     </div>

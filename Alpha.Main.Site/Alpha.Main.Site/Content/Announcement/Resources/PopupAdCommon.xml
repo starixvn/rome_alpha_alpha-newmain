@@ -9,14 +9,14 @@
       domain: 5
   -->
 
-  <PopupAnnouncement id="4523901" name="ColossusBets" startdate="02/23/2016" enddate="03/29/2016"  effectdate="24/02/2016" width="1000" height="220" top="110" left="350">
+  <PopupAnnouncement id="4523909" name="ColossusBets" startdate="02/23/2016" enddate="03/29/2016"  effectdate="24/02/2016" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
       <p>
         We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b>.<br/>
-        This new product will be offered by default. 
-        If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. Follow 
-        <a target="_blank" href="../site-main/_HowToUse/Index.aspx?redirectto=ColossusBets" title="Help" id="Help">this instruction</a> for more details.<br/>
+        This new product will be offered by default.
+        If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. Follow
+        <a href="javascript:;" onclick="window.open('/' + top.baseOldMainApp + '_HowToUse/Index.aspx?redirectto=ColossusBets')" title="Help" id="Help">this instruction</a> for more details.<br/>
         All settings will be available for configuration since <b>28/01/2016</b>.<br/>
       </p>
       <p>
@@ -101,7 +101,7 @@
     <en-US src="">
       Dear valued agents,<br />
       <p>
-        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget. 
+        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget.
         It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
         During this conversion period:<br/>
         &#8226; All broken/running Casino tickets will be refunded except tickets placed on Card games, which have been running more than 24 hours, will be settled as Lose tickets.<br/>
@@ -156,7 +156,7 @@
     <ja-JP src="">
       Dear valued agents,<br />
       <p>
-        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget. 
+        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget.
         It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
         During this conversion period:<br/>
         &#8226; All broken/running Casino tickets will be refunded except tickets placed on Card games, which have been running more than 24 hours, will be settled as Lose tickets.<br/>
@@ -175,7 +175,7 @@
     <ko-KR src="">
       Dear valued agents,<br />
       <p>
-        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget. 
+        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget.
         It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
         During this conversion period:<br/>
         &#8226; All broken/running Casino tickets will be refunded except tickets placed on Card games, which have been running more than 24 hours, will be settled as Lose tickets.<br/>
@@ -212,7 +212,7 @@
     <vi-VN src="">
       Dear valued agents,<br />
       <p>
-        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget. 
+        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget.
         It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
         During this conversion period:<br/>
         &#8226; All broken/running Casino tickets will be refunded except tickets placed on Card games, which have been running more than 24 hours, will be settled as Lose tickets.<br/>
@@ -228,7 +228,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-  
+
   <PopupAnnouncement id="4910001" name="Cockfighting" startdate="12/20/2015" enddate="01/04/2016"  effectdate="12/20/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
@@ -328,7 +328,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-  
+
   <PopupAnnouncement id="4459701" name="Muay Thai" startdate="11/20/2015" enddate="12/04/2015"  effectdate="11/20/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
@@ -359,7 +359,7 @@
 
     <zh-TW src="">
       尊敬的代理們,<br />
-      <p>        
+      <p>
         我們非常榮幸地宣布將於<b>{effectdate}</b> 推出​​新產品名為<b>“Muay Thai”</b> 這新產品有兩個投注類型（亞洲盤和大/小）<br/>
         所有設定將配置如下：<br/>
         &#8226; 佣金將根據體育博彩的佣金設定組別如A組，B組，C組，D組<br/>
@@ -426,7 +426,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-    
+
   <PopupAnnouncement id="3577701" name="Metric Gaming" startdate="09/15/2015" enddate="09/30/2015"  effectdate="15/10/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
@@ -540,7 +540,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-  
+
   <PopupAnnouncement id="3543501" name="Gold Deluxe - already synced Live Casino" startdate="04/01/2015" enddate="06/30/2015"  effectdate="dd/mm/yyyy" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
@@ -955,7 +955,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-  
+
   <PopupAnnouncement id="20150109" name="New statement" startdate="01/01/2015" enddate="02/01/2015"  effectdate="1/1/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued Agents,<br />
@@ -1072,6 +1072,6 @@
         Thank you.
       </p>
     </vi-VN>
-  </PopupAnnouncement>  
+  </PopupAnnouncement>
 
 </FileDB>

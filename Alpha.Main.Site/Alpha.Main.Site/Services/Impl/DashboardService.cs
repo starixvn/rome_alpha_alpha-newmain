@@ -2,8 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
+    using System.Linq;
     using System.Text.RegularExpressions;
+    using System.Threading;
     using System.Web;
     using System.Xml;
     using Alpha.Main.Site.Repositories;
@@ -19,6 +22,7 @@
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
     using Models.Dtos;
+    using Models.Enumerations;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
     using Models.Views;
@@ -31,28 +35,29 @@
     using Sunplus.Agent.Utilities;
     using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
     using SiteServices = Alpha.Main.Site.Services;
-    using System.Linq;
-    using Models.Enumerations;
-    using System.Threading;
-    using System.Globalization;
+
     public class DashboardService : IDashboardService
     {
-        private static string DefaultMainPage = "../" + SiteServices.AppSettings.OldMainSite + "/_Reports/PortalPage/PortalPage.aspx";
-
         private readonly IDashboardRepository _repository;
 
         private readonly IFileUploadService _fileUploadService;
 
         private readonly ISessionValidationService _sessionValidationService;
 
+        private AppPathService _appPathService;
+
+        private string _defaultMainPage;
+
         public DashboardService(
             IDashboardRepository repository,
             IFileUploadService fileUploadService,
-            ISessionValidationService sessionValidationService)
+            ISessionValidationService sessionValidationService,
+            AppPathService appPathService)
         {
             _repository = repository;
             _fileUploadService = fileUploadService;
             _sessionValidationService = sessionValidationService;
+            _appPathService = appPathService;
         }
 
         public List<LanguageModel> GetLanguages()
@@ -212,15 +217,16 @@
 
         public string GetMainPage()
         {
-            var oldMainSitePath = GetOldMainSitePath();
+            _defaultMainPage = _appPathService.GetAppPath(SiteServices.AppSettings.OldMainApp, "_Reports/PortalPage/PortalPage.aspx");
+            var oldMainAppPath = GetOldMainAppPath();
             if (!UserSession.Current.IsLogged)
             {
-                return oldMainSitePath + "_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
+                return oldMainAppPath + "_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
             }
 
             if (UserSession.Current.IsPasswordExpired)
             {
-                return oldMainSitePath + "_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
+                return oldMainAppPath + "_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
             }
 
             ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
@@ -234,11 +240,11 @@
                 switch (status)
                 {
                     case SecurityCodeStatus.FORCED_CHANGE_SC:
-                        return oldMainSitePath + "Security/SecurityCode/ForceChangeSecurityCode";
+                        return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCode";
                     case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-                        return oldMainSitePath + "Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
+                        return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
                     default:
-                        return oldMainSitePath + "Security/SecurityCode/VerifySecurityCode";
+                        return oldMainAppPath + "Security/SecurityCode/VerifySecurityCode";
                 }
             }
 
@@ -246,12 +252,12 @@
                 (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
             {
                 // Use the OLD flow of Security Code.
-                return oldMainSitePath + "_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
+                return oldMainAppPath + "_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
             }
 
             var cookieCurrentUrl = GetCookieCurrentURL();
             var currentURLCookie = HttpContext.Current.Request.Cookies[cookieCurrentUrl];
-            var url = DefaultMainPage;
+            var url = _defaultMainPage;
 
             if (IsMainPageFromCookie())
             {
@@ -366,7 +372,7 @@
         private MenuItem GetMenu(SiteMapNode siteMapNode, int index, bool showSubMenu)
         {
             var menu = new MenuItem
-            {                         
+            {
                 Url = siteMapNode.Url,
                 SubMenus = new List<MenuItem>(),
                 Name = siteMapNode.Title
@@ -437,7 +443,7 @@
             var menu = new MenuItem();
             var title = menuItem.Title;
             var bettypeId = 0;
-           
+
 
             if (title.Contains("statement"))
             {
@@ -494,9 +500,9 @@
             return false;
         }
 
-        private string GetOldMainSitePath()
+        private string GetOldMainAppPath()
         {
-            return "../" + SiteServices.AppSettings.OldMainSite + "/";
+            return _appPathService.GetAppPath(SiteServices.AppSettings.OldMainApp, "~");
         }
     }
 }

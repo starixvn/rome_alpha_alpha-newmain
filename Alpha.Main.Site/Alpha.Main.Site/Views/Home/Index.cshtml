@@ -9,12 +9,12 @@
 @{
     Layout = "";
     var contentSite = SiteServices.AppSettings.ContentSite;
-    var oldMainSite = SiteServices.AppSettings.OldMainSite;
+    var oldMainApp = SiteServices.AppSettings.OldMainApp;
     var currentUserSession = UserSession.Current;
     var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
     var contentFrame = "main";
 
-    var baseOldMainSite = Model.BaseUrl.Replace("/site-main/", "/" + oldMainSite + "/");
+    var baseOldMainApp = Model.BaseUrl.Replace("/site-main/", "/" + oldMainApp + "/");
 }
 <!DOCTYPE html>
 <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
@@ -110,7 +110,7 @@
                 {
                     <section class="accountinfo-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
                         <span class="icon icon-user"></span>
-                        <iframe src="/@oldMainSite/_AccountInfo/AccountInfo.aspx?fromNewSite=1" frameborder="0" id="accountinfo-content" scrolling="auto"
+                        <iframe src="/@oldMainApp/_AccountInfo/AccountInfo.aspx?fromNewSite=1" frameborder="0" id="accountinfo-content" scrolling="auto"
                                 name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content"></iframe>
                     </section>
                 }
@@ -140,11 +140,11 @@
                     <li>
                         <span class="icon icon-squares top-right-menu"></span>
                         <ul class="list-setting">
-                            <li><a href="/@oldMainSite/_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
-                            <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/Company/ContactUs/Index'); dashboardManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
-                            <li><a href="/@oldMainSite/ContextualCustomer/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
-                            <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/_MemberInfo/ChangePassword/ChangePassword.aspx'); dashboardManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
-                            <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
+                            <li><a href="/@oldMainApp/_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@oldMainApp/Company/ContactUs/Index'); dashboardManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
+                            <li><a href="/@oldMainApp/ContextualCustomer/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@oldMainApp/_MemberInfo/ChangePassword/ChangePassword.aspx'); dashboardManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
+                            <li><a href="javascript:dashboardManager.changeMenu('../@oldMainApp/Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                         </ul>
                     </li>
                     <li><span class="icon icon-logout opacity-80"></span></li>
@@ -185,14 +185,14 @@
     }
 
     <script type="text/javascript">
-        var baseMainSite='@Model.BaseUrl';
-        var baseOldMainSite='@baseOldMainSite';
-        var start = baseMainSite.indexOf('//') + 2;
-        window.document.title = baseMainSite.substr(start, baseMainSite.length - start - 1);
+        var baseMainApp='@Model.BaseUrl';
+        var baseOldMainApp='@baseOldMainApp';
+        var start = baseMainApp.indexOf('//') + 2;
+        window.document.title = baseMainApp.substr(start, baseMainApp.length - start - 1);
         window.passwordHash = '@Model.PasswordHash';
 
         var rootUrl = '@Url.Content("~")';
-        var oldMainSite = '@oldMainSite';
+        var oldMainApp = '@oldMainApp';
         var contentFrame = "@contentFrame";
         var _resources = {
             language: '@currentUserSession.Language',

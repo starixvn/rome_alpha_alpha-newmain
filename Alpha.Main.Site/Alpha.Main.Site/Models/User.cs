@@ -94,7 +94,7 @@
         {
             get
             {
-                return (SubAccountId > 0);
+                return SubAccountId > 0;
             }
         }
 

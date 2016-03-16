@@ -92,7 +92,7 @@ var HeaderManager = function () {
         else return true;
     }
     self.changeLanguage = function (lang) {
-        var url = rootUrl + 'Main/ChangeLanguage';
+        var url = top.baseMainApp + 'Main/ChangeLanguage';
         jQuery.ajax({
             type: "POST",
             url: url,

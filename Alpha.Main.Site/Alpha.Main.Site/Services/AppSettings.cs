@@ -13,11 +13,11 @@
             }
         }
 
-        public static string OldMainSite
+        public static string OldMainApp
         {
             get
             {
-                return ConfigurationManager.AppSettings["OldMainSite"];
+                return ConfigurationManager.AppSettings["OldMainApp"];
             }
         }
 

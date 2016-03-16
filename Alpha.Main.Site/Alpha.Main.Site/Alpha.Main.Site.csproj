@@ -530,7 +530,9 @@
     <Content Include="Content\Main\Styles\sass\Variables_Level3.scss" />
     <Content Include="Content\Main\Styles\sass\Variables_Level4.scss" />
     <Content Include="Content\Shared\Scripts\SharedScripts.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
     <Content Include="Content\Main\Styles\sass\page.scss" />
     <Content Include="App_Data\Alpha.sitemap" />
@@ -692,12 +694,14 @@
     <Compile Include="Services\IDashboardService.cs" />
     <Compile Include="Services\IFileUploadService.cs" />
     <Compile Include="Services\Impl\AnnouncementService.cs" />
+    <Compile Include="Services\Impl\AppPathServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingServiceImpl.cs" />
     <Compile Include="Services\Impl\DashboardService.cs" />
     <Compile Include="Services\Impl\FileUploadService.cs" />
     <Compile Include="Services\Impl\SessionValidationService.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
     <Compile Include="Services\ISessionValidationService.cs" />
+    <Compile Include="Services\AppPathService.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
   </ItemGroup>
   <ItemGroup>

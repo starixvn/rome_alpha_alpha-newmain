@@ -8,11 +8,15 @@
     using System.Web.Routing;
     using System.Web.Security;
     using Constants;
+    using Services;
+    using Services.Impl;
     using Sunplus.Agent.Model.Entities;
 
     public class BaseController : Controller
     {
-        public CultureInfo DefaultCulture = CultureInfo.CreateSpecificCulture(LanguageConstant.DefaultLanguage);
+        private CultureInfo _defaultCulture = CultureInfo.CreateSpecificCulture(LanguageConstant.DefaultLanguage);
+
+        private AppPathService _appPathService = new AppPathServiceImpl();
 
         protected override void OnAuthentication(AuthenticationContext filterContext)
         {
@@ -21,7 +25,6 @@
             if (UserSession.Current.CustId == 0)
             {
                 Response.Redirect(FormsAuthentication.LoginUrl, true);
-
                 return;
             }
         }
@@ -56,8 +59,8 @@
             Thread.CurrentThread.CurrentCulture = new CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
-            Thread.CurrentThread.CurrentCulture.DateTimeFormat = DefaultCulture.DateTimeFormat;
-            Thread.CurrentThread.CurrentCulture.NumberFormat = DefaultCulture.NumberFormat;
+            Thread.CurrentThread.CurrentCulture.DateTimeFormat = _defaultCulture.DateTimeFormat;
+            Thread.CurrentThread.CurrentCulture.NumberFormat = _defaultCulture.NumberFormat;
 
             base.Initialize(requestContext);
         }

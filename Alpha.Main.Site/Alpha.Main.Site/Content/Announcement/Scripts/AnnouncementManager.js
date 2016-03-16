@@ -9,7 +9,7 @@ var AnnouncementManager = function () {
         self.loadAnnouncement();
     };
     self.loadAnnouncement = function () {
-        var url = rootUrl + 'Announcement/HotAnnouncement';
+        var url = top.baseMainApp + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,
@@ -36,7 +36,7 @@ var AnnouncementManager = function () {
         }
     };
     self.loadAnnouncementNext = function () {
-        var url = rootUrl + 'Announcement/HotAnnouncement';
+        var url = top.baseMainApp + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,
@@ -52,9 +52,6 @@ var AnnouncementManager = function () {
                 timeoutAnnouncement = setTimeout(self.removeAnnouncement, 120000);
             }
         });
-    };
-    self.getOldMainSitePath = function () {
-        return '../' + oldMainSite + '/';
     };
     self.showAnnouncement = function (result) {
         var text = result;

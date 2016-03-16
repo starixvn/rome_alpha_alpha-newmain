@@ -42,7 +42,6 @@ var DashboardManager = function () {
     self.initElements = function () {
         var firstMenu = $('.list-menu > .menu-item:first-child');
         self.expandMenu(firstMenu);
-
         customerProfile.loadCustomerProfile();
     };
     self.expandMenu = function (menu) {
@@ -73,26 +72,26 @@ var DashboardManager = function () {
             self.collapseLeftPanel(jQuery(this));
         });
         jQuery(".icon-home").click(function () {
-            self.changeMenu(self.getOldMainSitePath() + '_Reports/PortalPage/PortalPage.aspx');
+            self.changeMenu("/" + top.baseOldMainApp + '_Reports/PortalPage/PortalPage.aspx');
         });
         jQuery(".live-message").click(function () {
-            self.changeMenu(self.getOldMainSitePath() + 'Info/NewMessageForm.aspx?pageQuery=', this);
+            self.changeMenu("/" + top.baseOldMainApp + 'Info/NewMessageForm.aspx?pageQuery=', this);
         });
         jQuery(".special-message").click(function () {
-            self.changeMenu(self.getOldMainSitePath() + 'Info/NewMessageForm.aspx?pageQuery=', this);
+            self.changeMenu("/" + top.baseOldMainApp + 'Info/NewMessageForm.aspx?pageQuery=', this);
         });
 
         jQuery(".private-message").click(function () {
-            self.viewPrivateMessage(self.getOldMainSitePath() + 'Info/NewMessageForm.aspx?pageQuery=private');
+            self.viewPrivateMessage("/" + top.baseOldMainApp + 'Info/NewMessageForm.aspx?pageQuery=private');
         });
         jQuery(".iframe-content").load(function () {
             self.setURL();
         });
         jQuery(".icon-swap-horizontal").click(function () {
-            top.location = rootUrl + self.getOldMainSitePath() + "Index.aspx";
+            top.location = "/" + top.baseOldMainApp + "Index.aspx";
         });
         jQuery(".old-view-text").click(function () {
-            top.location = rootUrl + self.getOldMainSitePath() + "Index.aspx";
+            top.location = "/" + top.baseOldMainApp + "Index.aspx";
         });
 
         var menuOpener = $('.menu-opener');
@@ -164,16 +163,13 @@ var DashboardManager = function () {
         setTimeout(self.getMessages, 500);
         setTimeout(self.reCheckin, 30000);
     };
-    self.getOldMainSitePath = function () {
-        return '../' + oldMainSite + '/';
-    };
     self.activeSettingList = function () {
         isShowTopRightMenu = !isShowTopRightMenu;
         jQuery('.top-right-menu').parent().toggleClass("active");
     };
     self.changeMenu = function (url) {
         self.clearCurrentLeftMenu();
-        top.main.location = rootUrl + url;
+        top.main.location = url;
         self.selectTopMenu(url);
     };
     self.clearCurrentLeftMenu = function () {
@@ -241,7 +237,7 @@ var DashboardManager = function () {
     self.reCheckin = function () {
         // Post with return result in JSON format
         setCookie("ssl", location.href.indexOf('https://') == 0, 30);
-        var url = rootUrl + self.getOldMainSitePath() + '_Authorization/Handlers/ReCheckin.ashx';
+        var url = "/" + top.baseOldMainApp + '_Authorization/Handlers/ReCheckin.ashx';
         jQuery.ajax({
             type: "POST",
             url: url,
@@ -273,7 +269,7 @@ var DashboardManager = function () {
             index = index.parent;
         }
 
-        index.location = rootUrl + self.getOldMainSitePath() + '_Authorization/Handlers/SignOut.ashx';
+        index.location = "/" + top.baseOldMainApp + '_Authorization/Handlers/SignOut.ashx';
         if (index.location.href.indexOf('https://imb.') == 0 ||
             index.location.href.indexOf('https://int.') == 0) {
             index.close();
@@ -339,7 +335,7 @@ var DashboardManager = function () {
         }
     };
     self.getMessages = function () {
-        var url = rootUrl + self.getOldMainSitePath() + '_UserMessage/Handlers/GetMessages.ashx';
+        var url = "/" + top.baseOldMainApp + '_UserMessage/Handlers/GetMessages.ashx';
         jQuery.ajax({
             type: "POST",
             url: url,
@@ -362,7 +358,7 @@ var DashboardManager = function () {
                         msgType = 2;
 
                     // Process Public Message: show new public message and its link to message form
-                    var url = self.getOldMainSitePath() + "Info/NewMessageForm.aspx?pageQuery=";
+                    var url = '/' + top.baseOldMainApp + "Info/NewMessageForm.aspx?pageQuery=";
                     var balloonPopupContent = "";
                     url += publicMessage[msgType];
 
@@ -434,7 +430,7 @@ var DashboardManager = function () {
         }
     };
     self.updateCountPrivateMsg = function () {
-        var url = rootUrl + self.getOldMainSitePath() + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx';
+        var url = '/' + top.baseOldMainApp + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx';
         jQuery.ajax({
             type: "POST",
             url: url,
@@ -498,8 +494,7 @@ var DashboardManager = function () {
         var url = top.main.location.href;
         var currentURL = url.replace("http:", '')
             .replace("https:", '')
-            .replace(_resources.baseUrl, '')
-            .replace(baseOldMainSite, '../' + oldMainSite + '/');
+            .replace(_resources.baseUrl, '');
         if (currentURL == null) {
             return;
         }
@@ -511,6 +506,7 @@ var DashboardManager = function () {
         top.ph = window.passwordHash;
         top.isNewSite = true;
         top.errCodes = [];
+        top.baseOldMainApp = baseOldMainApp;
     };
     self.closeListSetting = function () {
         self.activeSettingList();

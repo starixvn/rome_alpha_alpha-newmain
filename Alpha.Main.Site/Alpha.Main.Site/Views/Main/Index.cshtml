@@ -5,15 +5,16 @@
 @using SiteServices = Alpha.Main.Site.Services;
 @using Sunplus.Agent.Model.Entities;
 @using System.Web.Optimization;
+@using Alpha.Main.Site.Services.Impl;
 @model MainIndexViewModel
 @{
     var contentSite = SiteServices.AppSettings.ContentSite;
-    var oldMainSite = SiteServices.AppSettings.OldMainSite;
     var currentUserSession = UserSession.Current;
     var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
     var contentFrame = "main";
 
-    var baseOldMainSite = Model.BaseUrl.Replace("/" + SiteServices.AppSettings.VirtualDirectory + "/", "/" + oldMainSite + "/");
+    var appPathService = new AppPathServiceImpl();
+    var baseOldMainApp = appPathService.GetAppPath(SiteServices.AppSettings.OldMainApp, "~");
 }
 
 @section Styles{
@@ -48,50 +49,50 @@
             <section class="mainmenu-container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
                 <ul class="list-menu">
                     @foreach (var menu in Model.SideBar.MenuList)
-                    {
-                        if (menu.SubMenus.Any())
                         {
-                            <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
-                                <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
-                                      href="javascript:;">
-                                    <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
-                                    <span class="pull-right icon-arrow-right"></span>
-                                </a>
-                                <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
-                                    @foreach (var subMenu in menu.SubMenus)
-                                    {
-                                        <li class="sub-menu-item">
-                                            <a href="@subMenu.Url" target="main">
-                                                @subMenu.DisplayName
-                                            </a>
-                                        </li>
-                                    }
-                                </ul>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="menu-item">
-                                <a class="withripple menu-opener parent-menu" href="@menu.Url" target="main">
-                                    <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
-                                </a>
-                            </li>
-                        }
+                            if (menu.SubMenus.Any())
+                            {
+                    <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
+                        <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
+                           href="javascript:;">
+                            <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
+                            <span class="pull-right icon-arrow-right"></span>
+                        </a>
+                        <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
+                            @foreach (var subMenu in menu.SubMenus)
+                                        {
+                                <li class="sub-menu-item">
+                                    <a href="@subMenu.Url" target="main">
+                                        @subMenu.DisplayName
+                                    </a>
+                                </li>
+                                        }
+                        </ul>
+                    </li>
+                            }
+                            else
+                            {
+                    <li class="menu-item">
+                        <a class="withripple menu-opener parent-menu" href="@menu.Url" target="main">
+                            <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
+                        </a>
+                    </li>
+                            }
 
-                    }
+                        }
                 </ul>
 
             </section>
 
-            if (Model.SideBar.ShowAccountInfo)
-            {
-                <section class="accountinfo-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
-                    <span class="icon icon-user"></span>
-                    <iframe src="/@oldMainSite/_AccountInfo/AccountInfo.aspx?fromNewSite=1" frameborder="0" id="accountinfo-content" scrolling="auto"
-                            name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content"></iframe>
-                </section>
+                if (Model.SideBar.ShowAccountInfo)
+                {
+            <section class="accountinfo-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <span class="icon icon-user"></span>
+                <iframe src="/@(baseOldMainApp + "_AccountInfo/AccountInfo.aspx?fromNewSite=1")" frameborder="0" id="accountinfo-content" scrolling="auto"
+                        name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content"></iframe>
+            </section>
+                }
             }
-        }
     </nav>
 </aside>
 <div class="content-wrapper">
@@ -107,9 +108,9 @@
                     </a>
                     <ul class="dropdown-menu list-language" id="language">
                         @foreach (var language in Model.Languages)
-                        {
+                            {
                             <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
-                        }
+                            }
                     </ul>
                 </li>
                 <li class="withripple"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
@@ -118,11 +119,11 @@
                         <span class="icon icon-squares top-right-menu"></span>
                     </a>
                     <ul class="dropdown-menu list-setting">
-                        <li><a href="/@oldMainSite/_HowToUse/Index.aspx" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
-                        <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/Company/ContactUs/Index'); dashboardManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
-                        <li><a href="/@oldMainSite/ContextualCustomer/ProfilePicture?custId=@currentUserSession.CustId" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
-                        <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/_MemberInfo/ChangePassword/ChangePassword.aspx'); dashboardManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
-                        <li><a href="javascript:dashboardManager.changeMenu('../@oldMainSite/Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
+                        <li><a href="/@(baseOldMainApp + "_HowToUse/Index.aspx")" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
+                        <li><a href="javascript:dashboardManager.changeMenu('/' + top.baseOldMainApp + 'Company/ContactUs/Index'); dashboardManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
+                        <li><a href="/@(baseOldMainApp + "ContextualCustomer/ProfilePicture?custId=" + currentUserSession.CustId)" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
+                        <li><a href="javascript:dashboardManager.changeMenu('/' + top.baseOldMainApp + '_MemberInfo/ChangePassword/ChangePassword.aspx'); dashboardManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
+                        <li><a href="javascript:dashboardManager.changeMenu('/' + top.baseOldMainApp + 'Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                     </ul>
                 </li>
                 <li class="withripple"><span class="icon icon-logout"></span></li>
@@ -149,7 +150,7 @@
 <div id="popup-top" class="display-none">
     <div id="popup-line">
         <a class="top-message">
-            <img src="~/Content/Main/Styles/Images/icon_close.jpg" class="button-close" alt="@Resources.close" title="@Resources.close" />
+            <img src="../Content/Main/Styles/Images/icon_close.jpg" class="button-close" alt="@Resources.close" title="@Resources.close" />
         </a>
     </div>
     <div class="popup-content">
@@ -168,44 +169,40 @@
     @if (AlphaDefinitions.AppSettings.PiwikEnable)
     {
         <script type="text/javascript">
-            var _pkUrl = '@AlphaDefinitions.AppSettings.PiwikUrl',
-                _pkScript = '@AlphaDefinitions.AppSettings.PiwikScript',
-                _pkSiteId = '@AlphaDefinitions.AppSettings.PiwikSiteId';
+                var _pkUrl = '@AlphaDefinitions.AppSettings.PiwikUrl',
+                    _pkScript = '@AlphaDefinitions.AppSettings.PiwikScript',
+                    _pkSiteId = '@AlphaDefinitions.AppSettings.PiwikSiteId';
         </script>
-        <script type="text/javascript" src="~/Content/Main/Scripts/piwikLoader.js"></script>
-        <noscript><p><img src="@AlphaDefinitions.AppSettings.PiwikUrl?idsite=@AlphaDefinitions.AppSettings.PiwikSiteId" style="border:0;" alt="" /></p></noscript>
+            <script type="text/javascript" src="~/Content/Main/Scripts/piwikLoader.js"></script>
+            <noscript><p><img src="@AlphaDefinitions.AppSettings.PiwikUrl?idsite=@AlphaDefinitions.AppSettings.PiwikSiteId" style="border:0;" alt="" /></p></noscript>
     }
 
     <script type="text/javascript">
-        $.material.init();
-        var baseMainSite='@Model.BaseUrl';
-        var baseOldMainSite='@baseOldMainSite';
-        var start = baseMainSite.indexOf('//') + 2;
-        window.document.title = baseMainSite.substr(start, baseMainSite.length - start - 1);
-        window.passwordHash = '@Model.PasswordHash';
+            $.material.init();
+            var baseMainApp='@Model.BaseUrl';
+            var baseOldMainApp='@baseOldMainApp';
+            var start = baseMainApp.indexOf('//') + 2;
+            window.document.title = baseMainApp.substr(start, baseMainApp.length - start - 1);
+            window.passwordHash = '@Model.PasswordHash';
 
-        var rootUrl = '@Url.Content("~")';
-        var oldMainSite = '@oldMainSite';
-        var contentFrame = "@contentFrame";
-        var _resources = {
-            language: '@currentUserSession.Language',
-            onUserId: '@currentUserSession.OnUserId',
-            cookieCurrentURLKey: '@Model.CookieCurrentURLKey',
-            baseUrl: '@Model.BaseUrl',
-            msgList: @Html.Raw(serializer.Serialize(Model.HotMessages)),
+            var contentFrame = "@contentFrame";
+            var _resources = {
+                language: '@currentUserSession.Language',
+                onUserId: '@currentUserSession.OnUserId',
+                cookieCurrentURLKey: '@Model.CookieCurrentURLKey',
+                baseUrl: '@Model.BaseUrl',
+                msgList: @Html.Raw(serializer.Serialize(Model.HotMessages)),
 
-            months:@Html.Raw(serializer.Serialize(Model.MonthNames)),
-            year: @DateTime.Now.Year,
-            month:@DateTime.Now.Month,
-            day:@DateTime.Now.Day,
-            hrs:@DateTime.Now.Hour,
-            min:@DateTime.Now.Minute,
-            sec:@DateTime.Now.Second,
-            PM:'@Resources.PM',
-            AM:'@Resources.AM'
-        };
+                months:@Html.Raw(serializer.Serialize(Model.MonthNames)),
+                year: @DateTime.Now.Year,
+                month:@DateTime.Now.Month,
+                day:@DateTime.Now.Day,
+                hrs:@DateTime.Now.Hour,
+                min:@DateTime.Now.Minute,
+                sec:@DateTime.Now.Second,
+                PM:'@Resources.PM',
+                AM:'@Resources.AM'
+            };
 
     </script>
 }
-
-
