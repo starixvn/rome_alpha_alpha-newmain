@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using Alpha.Main.Site.Models.Dtos;
+    using Models;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
     using Models.Views;

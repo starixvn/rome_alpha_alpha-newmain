@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.Models.Dtos
+﻿namespace Alpha.Main.Site.Models
 {
     using System;
     using System.Collections.Generic;

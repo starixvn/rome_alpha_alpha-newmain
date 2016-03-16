@@ -100,7 +100,7 @@
         private static MenuItem BuildMenuItem(SiteMapNode node)
         {
             var menuItem = new MenuItem(node.Key);
-
+            menuItem.Key = node.ResourceKey;
             menuItem.Name = node.ResourceKey.ToLower();
             menuItem.Url = node.Url;
             menuItem.SubMenus = new List<MenuItem>();

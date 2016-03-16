@@ -667,11 +667,12 @@
     <Compile Include="Models\Enumerations\Enumeration.cs" />
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\IUser.cs" />
+    <Compile Include="Models\Menus\IMenuItem.cs" />
     <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Views\CustomerInfoViewModel.cs" />
     <Compile Include="Models\Dtos\BusinessException.cs" />
-    <Compile Include="Models\Dtos\MenuItem.cs" />
+    <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />

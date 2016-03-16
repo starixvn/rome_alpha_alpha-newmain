@@ -10,10 +10,10 @@
 
         public void AddUsernameTokenToCookie()
         {
-            var encodedValue = Encode(UserSession.Current.UserName);
-            var httpCookie = new HttpCookie(UsernameCookieKey, encodedValue);
-            httpCookie.HttpOnly = true;
-            HttpContext.Current.Response.Cookies.Add(httpCookie);
+            //var encodedValue = Encode(UserSession.Current.UserName);
+            //var httpCookie = new HttpCookie(UsernameCookieKey, encodedValue);
+            //httpCookie.HttpOnly = true;
+            //HttpContext.Current.Response.Cookies.Add(httpCookie);
         }
 
         private string Encode(string data)
