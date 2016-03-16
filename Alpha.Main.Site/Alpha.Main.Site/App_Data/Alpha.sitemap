@@ -2,7 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true" >
   <siteMapNode title="Alpha Site">
     <!--Report-->
-    <siteMapNode resourceKey="reports" expand="1" functionType="[E]" >
+    <siteMapNode  resourceKey="reports" expand="1" functionType="[E]" >
       <siteMapNode resourceKey="memberWinLoss"  microSiteNameSettingKey="OldMainSite" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberwinlossdetail"  microSiteNameSettingKey="OldMainSite" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberOutstanding"  microSiteNameSettingKey="OldMainSite" url="_Reports/Common/Outstanding.aspxlv=2" roles="Agent"></siteMapNode>

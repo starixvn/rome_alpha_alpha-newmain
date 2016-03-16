@@ -107,7 +107,8 @@
             menuItem.Function = node["functionType"];
 
             return menuItem;
-        }
+        }      
+
 
         private static bool GetExpandAttributeInfo(SiteMapNode node)
         {
