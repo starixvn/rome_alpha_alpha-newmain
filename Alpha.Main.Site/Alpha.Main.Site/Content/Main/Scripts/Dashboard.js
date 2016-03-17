@@ -263,7 +263,7 @@ var DashboardManager = function () {
         });
     };
     self.signOut = function () {
-        setCookie(_resources.cookieCurrentURLKey, '', 1);
+        setCookie(_resources.cookieCurrentURLKey, '', -1);
         var index = window;
         while (index != index.parent) // Jump out
         {
