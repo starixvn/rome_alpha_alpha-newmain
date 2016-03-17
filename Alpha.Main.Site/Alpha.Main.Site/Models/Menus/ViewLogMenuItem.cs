@@ -6,10 +6,9 @@
     using System.Web;
     using Sunplus.Agent.Model.Entities;
 
-    public class ViewLogMenuItem : MenuItemBase
+    public class ViewLogMenuItem : MenuItem
     {
-        public ViewLogMenuItem(string key, string url, string function, bool isVisible, bool showSubMenus)
-            : base(key, url, function, isVisible, showSubMenus)
+        public ViewLogMenuItem()
         {
         }
 

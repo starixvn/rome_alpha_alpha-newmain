@@ -6,10 +6,9 @@
     using System.Web;
     using Sunplus.Agent.Model.Entities.Permission;
 
-    public class RacingMenuItem : MenuItemBase
+    public class RacingMenuItem : MenuItem
     {
-        public RacingMenuItem(string key, string url, string function, bool isVisible, bool showSubMenus)
-            : base(key, url, function, isVisible, showSubMenus)
+        public RacingMenuItem()
         {
         }
 

@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using Alpha.Main.Site.Models.Dtos;
     using Models;
+    using Models.Menus;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
     using Models.Views;
@@ -27,7 +28,7 @@
 
         bool IsMainPageFromCookie();
 
-        List<MenuItem> GetLeftMenu();
+        List<IMenuItem> GetLeftMenu();
 
         void StoreSession(MainIndexViewModel dashboardViewModel);
 

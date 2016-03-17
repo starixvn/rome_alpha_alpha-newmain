@@ -7,9 +7,10 @@
     using System.Threading.Tasks;
     using Models;
     using Models.Dtos;
+    using Models.Menus;
 
     public interface SiteMenuService
     {
-        IEnumerable<MenuItem> GetMenuByUser(IUser user);
+        IEnumerable<IMenuItem> GetMenuByUser(IUser user);
     }
 }

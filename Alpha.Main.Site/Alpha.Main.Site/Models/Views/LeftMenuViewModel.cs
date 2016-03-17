@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using Dtos;
+    using Menus;
 
     public class SideBarViewModel
     {
@@ -9,6 +10,6 @@
 
         public bool ShowAccountInfo { get; set; }
 
-        public List<MenuItem> MenuList { get; set; }
+        public List<IMenuItem> MenuList { get; set; }
     }
 }

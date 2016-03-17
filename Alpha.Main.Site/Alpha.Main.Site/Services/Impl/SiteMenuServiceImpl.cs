@@ -9,21 +9,24 @@
     using Models;
     using Models.Dtos;
     using Models.Enumerations;
+    using Models.Menus;
 
     public class SiteMenuServiceImpl : SiteMenuService
     {
         private const string CacheKeyMenuByUserLevel = "Alpha.Main.MenuForLevel.";
 
         private readonly CachingService cacheManager;
+        private readonly MenuItemFactory menuItemFactory;
 
-        public SiteMenuServiceImpl(CachingService cacheManager)
+        public SiteMenuServiceImpl(CachingService cacheManager, MenuItemFactory menuItemFactory)
         {
             this.cacheManager = cacheManager ?? new CachingServiceImpl();
+            this.menuItemFactory = menuItemFactory ?? new MenuItemFactoryImpl();
         }
 
-        public IEnumerable<MenuItem> GetMenuByUser(IUser user)
+        public IEnumerable<IMenuItem> GetMenuByUser(IUser user)
         {
-            var menuItems = Enumerable.Empty<MenuItem>();
+            var menuItems = Enumerable.Empty<IMenuItem>();
 
             if (user == null)
             {
@@ -40,10 +43,10 @@
             return menuItems;
         }
 
-        private IEnumerable<MenuItem> GetMenuByUserLevel(UserLevel userLevel)
+        private IEnumerable<IMenuItem> GetMenuByUserLevel(UserLevel userLevel)
         {
             var cacheKey = CacheKeyMenuByUserLevel + userLevel.DisplayName;
-            IEnumerable<MenuItem> menuItems = cacheManager.Get<IEnumerable<MenuItem>>(cacheKey);
+            IEnumerable<IMenuItem> menuItems = cacheManager.Get<IEnumerable<IMenuItem>>(cacheKey);
 
             if (menuItems == null)
             {
@@ -62,9 +65,9 @@
             return menuItems;
         }
 
-        private List<MenuItem> BuildMenu(SiteMapNode siteMapNode, UserLevel userLevel)
+        private List<IMenuItem> BuildMenu(SiteMapNode siteMapNode, UserLevel userLevel)
         {
-            var menuItems = new List<MenuItem>();
+            var menuItems = new List<IMenuItem>();
 
             if (ReferenceEquals(null, siteMapNode))
             {
@@ -81,12 +84,11 @@
                             || node.Roles.Contains(userLevel.DisplayName.ToLower())
                             || node.Roles.Contains(userLevel.Value.ToString()))
                         {
-                            MenuItem menuItem = BuildMenuItem(node);
+                            var menuItem = menuItemFactory.Create(node);
 
                             if (node.HasChildNodes)
                             {
                                 menuItem.SubMenus = BuildMenu(node, userLevel);
-                                menuItem.ShowSubMenus = GetExpandAttributeInfo(node);
                             }
 
                             menuItems.Add(menuItem);
@@ -95,34 +97,14 @@
             }
 
             return menuItems;
-        }
-
-        private static MenuItem BuildMenuItem(SiteMapNode node)
-        {
-            var menuItem = new MenuItem(node.Key);
-            menuItem.Key = node.ResourceKey;
-            menuItem.Name = node.ResourceKey.ToLower();
-            menuItem.Url = node.Url;
-            menuItem.SubMenus = new List<MenuItem>();
-            menuItem.Function = node["functionType"];
-
-            return menuItem;
         }      
 
-
-        private static bool GetExpandAttributeInfo(SiteMapNode node)
-        {
-           return !string.IsNullOrWhiteSpace(node["expand"])
-                  && ("1".Equals(node["expand"]) 
-                    || "true".Equals(node["expand"], StringComparison.InvariantCultureIgnoreCase));
-        }
-
-        private IEnumerable<MenuItem> GetMenuForSubAccount(
+        private IEnumerable<IMenuItem> GetMenuForSubAccount(
             IUser user,
-            IEnumerable<MenuItem> userLevelMenu)
+            IEnumerable<IMenuItem> userLevelMenu)
         {
             var subAccountMenu = userLevelMenu
-                .Where(menuItem => menuItem.IsAccessibleToUser(user));
+                .Where(menuItem => menuItem.IsVisible);
 
             return subAccountMenu;
         }

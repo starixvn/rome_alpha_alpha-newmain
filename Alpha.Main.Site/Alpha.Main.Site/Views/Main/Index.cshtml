@@ -47,50 +47,50 @@
             <section class="mainmenu-container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
                 <ul class="list-menu">
                     @foreach (var menu in Model.SideBar.MenuList)
+                    {
+                        if (menu.SubMenus.Any())
                         {
-                            if (menu.SubMenus.Any())
-                            {
-                    <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
-                        <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
-                           href="javascript:;">
-                            <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
-                            <span class="pull-right icon-arrow-right"></span>
-                        </a>
-                        <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
-                            @foreach (var subMenu in menu.SubMenus)
-                                        {
-                                <li class="sub-menu-item">
-                                    <a href="@subMenu.Url" target="main">
-                                        @subMenu.DisplayName
-                                    </a>
-                                </li>
-                                        }
-                        </ul>
-                    </li>
-                            }
-                            else
-                            {
-                    <li class="menu-item">
-                        <a class="withripple menu-opener parent-menu" href="@menu.Url" target="main">
-                            <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
-                        </a>
-                    </li>
-                            }
-
+                            <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
+                                <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
+                                   href="javascript:;">
+                                    <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
+                                    <span class="pull-right icon-arrow-right"></span>
+                                </a>
+                                <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
+                                    @foreach (var subMenu in menu.SubMenus)
+                                    {
+                                        <li class="sub-menu-item">
+                                            <a href="@subMenu.Url" target="main">
+                                                @subMenu.DisplayName
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
                         }
+                        else
+                        {
+                            <li class="menu-item">
+                                <a class="withripple menu-opener parent-menu" href="@menu.Url" target="main">
+                                    <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
+                                </a>
+                            </li>
+                        }
+
+                    }
                 </ul>
 
             </section>
 
-                if (Model.SideBar.ShowAccountInfo)
-                {
-            <section class="accountinfo-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
-                <span class="icon icon-user"></span>
-                <iframe src="/@(baseOldMainApp + "_AccountInfo/AccountInfo.aspx?fromNewSite=1")" frameborder="0" id="accountinfo-content" scrolling="auto"
-                        name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content"></iframe>
-            </section>
-                }
+            if (Model.SideBar.ShowAccountInfo)
+            {
+                <section class="accountinfo-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
+                    <span class="icon icon-user"></span>
+                    <iframe src="/@(baseOldMainApp + "_AccountInfo/AccountInfo.aspx?fromNewSite=1")" frameborder="0" id="accountinfo-content" scrolling="auto"
+                            name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content"></iframe>
+                </section>
             }
+        }
     </nav>
 </aside>
 <div class="content-wrapper">
@@ -106,9 +106,9 @@
                     </a>
                     <ul class="dropdown-menu list-language" id="language">
                         @foreach (var language in Model.Languages)
-                            {
+                        {
                             <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
-                            }
+                        }
                     </ul>
                 </li>
                 <li class="withripple"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
@@ -142,7 +142,7 @@
     </header>
     <section class="content" id="content">
         <iframe src="@Model.MainPage" frameborder="0" id="@contentFrame" scrolling="auto"
-                name="main" marginwidth="0" marginheight="0" allowtransparency="yes" class="iframe-content"></iframe>
+                name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>
     </section>
 </div>
 <div id="popup-top" class="display-none">
@@ -165,40 +165,40 @@
     @if (AlphaDefinitions.AppSettings.PiwikEnable)
     {
         <script type="text/javascript">
-                var _pkUrl = '@AlphaDefinitions.AppSettings.PiwikUrl',
-                    _pkScript = '@AlphaDefinitions.AppSettings.PiwikScript',
-                    _pkSiteId = '@AlphaDefinitions.AppSettings.PiwikSiteId';
+            var _pkUrl = '@AlphaDefinitions.AppSettings.PiwikUrl',
+                _pkScript = '@AlphaDefinitions.AppSettings.PiwikScript',
+                _pkSiteId = '@AlphaDefinitions.AppSettings.PiwikSiteId';
         </script>
-            <script type="text/javascript" src="~/Content/Main/Scripts/piwikLoader.js"></script>
+        <script type="text/javascript" src="~/Content/Main/Scripts/piwikLoader.js"></script>
             <noscript><p><img src="@AlphaDefinitions.AppSettings.PiwikUrl?idsite=@AlphaDefinitions.AppSettings.PiwikSiteId" style="border:0;" alt="" /></p></noscript>
     }
 
     <script type="text/javascript">
-            $.material.init();
-            var baseMainApp='@Model.BaseUrl';
-            var baseOldMainApp='@baseOldMainApp';
-            var start = baseMainApp.indexOf('//') + 2;
-            window.document.title = baseMainApp.substr(start, baseMainApp.length - start - 1);
-            window.passwordHash = '@Model.PasswordHash';
+        $.material.init();
+        var baseMainApp='@Model.BaseUrl';
+        var baseOldMainApp='@baseOldMainApp';
+        var start = baseMainApp.indexOf('//') + 2;
+        window.document.title = baseMainApp.substr(start, baseMainApp.length - start - 1);
+        window.passwordHash = '@Model.PasswordHash';
 
-            var contentFrame = "@contentFrame";
-            var _resources = {
-                language: '@currentUserSession.Language',
-                onUserId: '@currentUserSession.OnUserId',
-                cookieCurrentURLKey: '@Model.CookieCurrentURLKey',
-                baseUrl: '@Model.BaseUrl',
-                msgList: @Html.Raw(serializer.Serialize(Model.HotMessages)),
+        var contentFrame = "@contentFrame";
+        var _resources = {
+            language: '@currentUserSession.Language',
+            onUserId: '@currentUserSession.OnUserId',
+            cookieCurrentURLKey: '@Model.CookieCurrentURLKey',
+            baseUrl: '@Model.BaseUrl',
+            msgList: @Html.Raw(serializer.Serialize(Model.HotMessages)),
 
-                months:@Html.Raw(serializer.Serialize(Model.MonthNames)),
-                year: @DateTime.Now.Year,
-                month:@DateTime.Now.Month,
-                day:@DateTime.Now.Day,
-                hrs:@DateTime.Now.Hour,
-                min:@DateTime.Now.Minute,
-                sec:@DateTime.Now.Second,
-                PM:'@Resources.PM',
-                AM:'@Resources.AM'
-            };
+            months:@Html.Raw(serializer.Serialize(Model.MonthNames)),
+            year: @DateTime.Now.Year,
+            month:@DateTime.Now.Month,
+            day:@DateTime.Now.Day,
+            hrs:@DateTime.Now.Hour,
+            min:@DateTime.Now.Minute,
+            sec:@DateTime.Now.Second,
+            PM:'@Resources.PM',
+            AM:'@Resources.AM'
+        };
 
     </script>
 }

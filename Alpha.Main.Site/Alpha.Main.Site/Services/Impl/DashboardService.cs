@@ -36,6 +36,7 @@
     using System.Threading;
     using System.Globalization;
     using Models;
+    using Models.Menus;
     public class DashboardService : IDashboardService
     {
         private readonly IDashboardRepository _repository;
@@ -281,10 +282,10 @@
                 !currentURLCookie.Value.Contains("SecurityCode");
         }
 
-        public List<MenuItem> GetLeftMenu()
+        public List<IMenuItem> GetLeftMenu()
         {
             var siteNode = _repository.GetSiteMapNode();
-            var menuList = new List<MenuItem>();
+            var menuList = new List<IMenuItem>();
             if (!siteNode.HasChildNodes)
             {
                 return menuList;
@@ -295,7 +296,7 @@
             var subMenuCount = siteNode.ChildNodes.Count;
 
 
-            var siteMenuService = new SiteMenuServiceImpl(new CachingServiceImpl());
+            var siteMenuService = new SiteMenuServiceImpl(new CachingServiceImpl(), new MenuItemFactoryImpl());
 
             var user = new Models.User(pageAccess);
             user.Level = Enumeration.FromValue<UserLevel>(2);
@@ -369,33 +370,33 @@
             return !isSubAcc || !deniedView;
         }
 
-        private MenuItem GetMenu(SiteMapNode siteMapNode, int index, bool showSubMenu)
-        {
-            var menu = new MenuItem
-            {
-                Url = siteMapNode.Url,
-                SubMenus = new List<MenuItem>(),
-                Name = siteMapNode.Title
-            };
+        //private IMenuItem GetMenu(SiteMapNode siteMapNode, int index, bool showSubMenu)
+        //{
+        //    var menu = new Models.Menus.MenuItem
+        //    {
+        //        Url = siteMapNode.Url,
+        //        SubMenus = new List<IMenuItem>(),
+        //        Name = siteMapNode.Title
+        //    };
 
-            var isSubAcc = UserSession.Current.IsSubAcc;
-            var authorize = new AuthorizationBO(UserSession.Current.NetSessionId);
-            var itemCount = siteMapNode.ChildNodes.Count;
+        //    var isSubAcc = UserSession.Current.IsSubAcc;
+        //    var authorize = new AuthorizationBO(UserSession.Current.NetSessionId);
+        //    var itemCount = siteMapNode.ChildNodes.Count;
 
-            for (var j = 0; j < itemCount; j++)
-            {
-                SiteMapNode item = siteMapNode.ChildNodes[j];
-                var isDeniedView = IsDeniedViewSubMenu(isSubAcc, item, authorize);
-                if (isDeniedView)
-                {
-                    continue;
-                }
+        //    for (var j = 0; j < itemCount; j++)
+        //    {
+        //        SiteMapNode item = siteMapNode.ChildNodes[j];
+        //        var isDeniedView = IsDeniedViewSubMenu(isSubAcc, item, authorize);
+        //        if (isDeniedView)
+        //        {
+        //            continue;
+        //        }
 
-                menu.SubMenus.Add(GetMenuItem(item, j, index));
-            }
+        //        menu.SubMenus.Add(GetMenuItem(item, j, index));
+        //    }
 
-            return menu;
-        }
+        //    return menu;
+        //}
 
         private string GetLeftPanelResource(string key)
         {
@@ -438,33 +439,33 @@
                 (subMenu.Title.Contains("MemberWinLimit") && !UserSession.Current.IsLiveCasinoSync && UserSession.Current.IsHideGoldDeluxe);
         }
 
-        private MenuItem GetMenuItem(SiteMapNode menuItem, int index, int parentIndex)
-        {
-            var menu = new MenuItem();
-            var title = menuItem.Title;
-            var bettypeId = 0;
+        //private IMenuItem GetMenuItem(SiteMapNode menuItem, int index, int parentIndex)
+        //{
+        //    var menu = new Models.Menus.MenuItem();
+        //    var title = menuItem.Title;
+        //    var bettypeId = 0;
 
-            if (!string.IsNullOrEmpty(menuItem.GetAttribute("microSite")))
-            {
-                var microSiteSettingKey = menuItem.GetAttribute("microSiteNameSettingKey");
-                var microSiteName = AppSettings.GetValue(microSiteSettingKey);
-                var microSiteUrl = HttpContext.Current.Response.ApplyAppPathModifier(menuItem.Url);
-                microSiteUrl = Regex.Replace(microSiteUrl, HttpRuntime.AppDomainAppVirtualPath, microSiteName, RegexOptions.IgnoreCase);
-                menu.Url = microSiteUrl;
-            }
-            else
-            {
-                menu.Url = "/" + menuItem.Url;
-            }
+        //    if (!string.IsNullOrEmpty(menuItem.GetAttribute("microSite")))
+        //    {
+        //        var microSiteSettingKey = menuItem.GetAttribute("microSiteNameSettingKey");
+        //        var microSiteName = AppSettings.GetValue(microSiteSettingKey);
+        //        var microSiteUrl = HttpContext.Current.Response.ApplyAppPathModifier(menuItem.Url);
+        //        microSiteUrl = Regex.Replace(microSiteUrl, HttpRuntime.AppDomainAppVirtualPath, microSiteName, RegexOptions.IgnoreCase);
+        //        menu.Url = microSiteUrl;
+        //    }
+        //    else
+        //    {
+        //        menu.Url = "/" + menuItem.Url;
+        //    }
 
-            if (title.Contains("statement"))
-            {
-                menu.Url = "/" + menu.Url.Replace("custidParam", UserSession.Current.CustId.ToString());
-            }
+        //    if (title.Contains("statement"))
+        //    {
+        //        menu.Url = "/" + menu.Url.Replace("custidParam", UserSession.Current.CustId.ToString());
+        //    }
 
-            //menu.IsImportant = title.Contains("monitor") && !CheckingLastsBetMonitoringFunctionStatus();
-            return menu;
-        }
+        //    //menu.IsImportant = title.Contains("monitor") && !CheckingLastsBetMonitoringFunctionStatus();
+        //    return menu;
+        //}
 
         private bool CheckingLastsBetMonitoringFunctionStatus()
         {

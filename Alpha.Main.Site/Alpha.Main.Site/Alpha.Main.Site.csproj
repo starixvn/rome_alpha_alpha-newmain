@@ -76,12 +76,20 @@
       <HintPath>..\packages\Fanex.Caching.1.0.404.95\lib\net40\Enyim.Caching.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ExcelUtil, Version=29.3.0.1000, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.CustomerSetting.Module.Core.1.0.0\lib\net40\ExcelUtil.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.Age.UI, Version=3.0.0.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Age.UI.3.0.0.7\lib\net40\Fanex.Age.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Age.Utility, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Age.Utility.3.0.0.1\lib\net40\Fanex.Age.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Caching, Version=1.0.404.95, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Caching.1.0.404.95\lib\net40\Fanex.Caching.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Common, Version=1.0.404.97, Culture=neutral, processorArchitecture=MSIL">
@@ -122,6 +130,14 @@
     </Reference>
     <Reference Include="Fanex.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Logging.1.0.0.0\lib\net40\Fanex.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.NAP.Core, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.NAP.Core.1.0.0.1\lib\net40\Fanex.NAP.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.NAP.Framework, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.NAP.Framework.1.0.0.2\lib\net40\Fanex.NAP.Framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Razorbill.Security, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
@@ -651,6 +667,9 @@
     <Compile Include="Models\Enumerations\Enumeration.cs" />
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\IUser.cs" />
+    <Compile Include="Models\Menus\MenuItemFactory.cs" />
+    <Compile Include="Models\Menus\MenuItemFactoryImpl.cs" />
+    <Compile Include="Models\Menus\SubAccountMenuItem.cs" />
     <Compile Include="Models\Menus\ConsolidatedReportMenuItem.cs" />
     <Compile Include="Models\Menus\FoobetMenuItem.cs" />
     <Compile Include="Models\Menus\LiveCasinoMenuItem.cs" />
@@ -660,7 +679,7 @@
     <Compile Include="Models\Menus\CasinoMenuItem.cs" />
     <Compile Include="Models\Menus\RacingMenuItem.cs" />
     <Compile Include="Models\Menus\IMenuItem.cs" />
-    <Compile Include="Models\Menus\MenuItemBase.cs" />
+    <Compile Include="Models\Menus\MenuItem.cs" />
     <Compile Include="Models\Menus\MemberInfoMenuItem.cs" />
     <Compile Include="Models\Menus\TotalBetsMenuItem.cs" />
     <Compile Include="Models\Menus\ReportMenuItem.cs" />
@@ -670,7 +689,6 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Views\CustomerInfoViewModel.cs" />
     <Compile Include="Models\Dtos\BusinessException.cs" />
-    <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />

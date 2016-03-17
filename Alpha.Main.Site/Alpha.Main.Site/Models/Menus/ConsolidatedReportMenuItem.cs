@@ -5,10 +5,9 @@
     using System.Linq;
     using System.Web;
 
-    public class ConsolidatedReportMenuItem : MenuItemBase
+    public class ConsolidatedReportMenuItem : MenuItem
     {
-        public ConsolidatedReportMenuItem(string key, string url, string function, bool isVisible, bool showSubMenus)
-            : base(key, url, function, isVisible, showSubMenus)
+        public ConsolidatedReportMenuItem()
         {
         }
     }

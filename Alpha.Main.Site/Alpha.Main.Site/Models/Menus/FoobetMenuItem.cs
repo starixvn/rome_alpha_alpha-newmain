@@ -8,10 +8,9 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 
-    public class FoobetMenuItem : MenuItemBase
+    public class FoobetMenuItem : MenuItem
     {
-        public FoobetMenuItem(string key, string url, string function, bool isVisible, bool showSubMenus)
-            : base(key, url, function, isVisible, showSubMenus)
+        public FoobetMenuItem()
         {
         }
 

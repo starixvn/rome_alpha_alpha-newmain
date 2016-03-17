@@ -7,10 +7,9 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 
-    public class SubAccountMenuItem : MenuItemBase
+    public class SubAccountMenuItem : MenuItem
     {
-        public SubAccountMenuItem(string key, string url, string function, bool isVisible, bool showSubMenus)
-            : base(key, url, function, isVisible, showSubMenus)
+        public SubAccountMenuItem()
         {
         }
 

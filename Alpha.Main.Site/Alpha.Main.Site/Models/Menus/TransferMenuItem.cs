@@ -5,10 +5,10 @@
     using System.Linq;
     using System.Web;
     using Sunplus.Agent.Model.Entities;
-    public class TransferMenuItem : MenuItemBase
+
+    public class TransferMenuItem : MenuItem
     {
-        public TransferMenuItem(string key, string url, string function, bool isVisible, bool showSubMenus)
-            : base(key, url, function, isVisible, showSubMenus)
+        public TransferMenuItem()
         {
         }
 

@@ -8,12 +8,22 @@
 
     public interface IMenuItem
     {
-        string Key { get; }
+        string Key { get; set; }
+
+        string Name { get; set; }
+
         string DisplayName { get; }
-        string Url { get; }
-        string Function { get;}        
+
+        string Url { get; set; }
+
+        string Function { get; set; }
+
+        string AppName { get; set; }
+
         bool IsVisible { get; }
-        bool ShowSubMenus { get; }
+
+        bool ShowSubMenus { get; set; }
+
         List<IMenuItem> SubMenus { get; set; }       
     }
 }

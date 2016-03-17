@@ -6,10 +6,9 @@
     using System.Web;
     using Sunplus.Agent.Model.Entities.Permission;
 
-    public class NumberGameMenuItem : MenuItemBase
+    public class NumberGameMenuItem : MenuItem
     {
-        public NumberGameMenuItem(string key, string url, string function, bool isVisible, bool showSubMenus)
-            : base(key, url, function, isVisible, showSubMenus)
+        public NumberGameMenuItem()
         {
         }
 

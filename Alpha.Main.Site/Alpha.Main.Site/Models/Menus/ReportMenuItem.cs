@@ -6,10 +6,9 @@
     using System.Web;
     using Sunplus.Agent.Model.Entities;
 
-    public class ReportMenuItem : MenuItemBase
+    public class ReportMenuItem : MenuItem
     {
-        public ReportMenuItem(string key, string url, string function, bool isVisible, bool showSubMenus)
-            : base(key, url, function, isVisible, showSubMenus)
+        public ReportMenuItem()
         {         
         }
 
