@@ -62,7 +62,7 @@
                 cacheManager.Add(cacheKey, menuItems);
             }
 
-            return menuItems;
+            return menuItems.Where(menuItem => menuItem.IsVisible);
         }
 
         private List<IMenuItem> BuildMenu(SiteMapNode siteMapNode, UserLevel userLevel)
