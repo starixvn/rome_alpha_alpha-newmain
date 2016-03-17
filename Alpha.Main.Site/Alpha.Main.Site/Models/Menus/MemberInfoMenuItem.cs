@@ -9,7 +9,7 @@
     public class MemberInfoMenuItem : MenuItem
     {
         public MemberInfoMenuItem()
-        {         
+        {
         }
 
         public override bool IsVisible

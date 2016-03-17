@@ -8,7 +8,7 @@
 
     public class BingoMenuItem : MenuItem
     {
-        public BingoMenuItem()            
+        public BingoMenuItem()
         {
         }
 

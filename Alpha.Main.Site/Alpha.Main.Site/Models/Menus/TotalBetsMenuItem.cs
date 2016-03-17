@@ -9,7 +9,7 @@
     public class TotalBetsMenuItem : MenuItem
     {
         public TotalBetsMenuItem()
-        {         
+        {
         }
 
         public override bool IsVisible

@@ -2,8 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
+    using System.Linq;
     using System.Text.RegularExpressions;
+    using System.Threading;
     using System.Web;
     using System.Xml;
     using Alpha.Main.Site.Repositories;
@@ -18,7 +21,10 @@
     using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
+    using Models;
     using Models.Dtos;
+    using Models.Enumerations;
+    using Models.Menus;
     using Models.Requests;
     using Models.Requests.CustomerProfile;
     using Models.Views;
@@ -31,12 +37,7 @@
     using Sunplus.Agent.Utilities;
     using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
     using SiteServices = Alpha.Main.Site.Services;
-    using System.Linq;
-    using Models.Enumerations;
-    using System.Threading;
-    using System.Globalization;
-    using Models;
-    using Models.Menus;
+
     public class DashboardService : IDashboardService
     {
         private readonly IDashboardRepository _repository;
