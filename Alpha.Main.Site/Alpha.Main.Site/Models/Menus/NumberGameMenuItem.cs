@@ -15,7 +15,7 @@
         public override bool IsVisible
         {
             get
-            {
+            {                
                 return UserPermission.IsShowNumberGame;
             }
         }

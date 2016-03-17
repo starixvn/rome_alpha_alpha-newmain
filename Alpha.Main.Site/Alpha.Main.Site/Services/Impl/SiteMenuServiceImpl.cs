@@ -37,7 +37,7 @@
 
             if (user.IsSubAccount)
             {
-                menuItems = GetMenuForSubAccount(user, menuItems);
+                menuItems = GetMenusForSubAccount(user, menuItems);
             }
 
             return menuItems;
@@ -48,7 +48,7 @@
             var cacheKey = CacheKeyMenuByUserLevel + userLevel.DisplayName;
             IEnumerable<IMenuItem> menuItems = cacheManager.Get<IEnumerable<IMenuItem>>(cacheKey);
 
-            if (menuItems == null)
+            //if (menuItems == null)
             {
                 var rootNode = SiteMap.RootNode;
 
@@ -62,7 +62,7 @@
                 cacheManager.Add(cacheKey, menuItems);
             }
 
-            return menuItems.Where(menuItem => menuItem.IsVisible);
+            return menuItems;
         }
 
         private List<IMenuItem> BuildMenu(SiteMapNode siteMapNode, UserLevel userLevel)
@@ -99,11 +99,20 @@
             return menuItems;
         }      
 
-        private IEnumerable<IMenuItem> GetMenuForSubAccount(
+        //private IEnumerable<IMenuItem> GetMenusForMainAccount(
+        //    IUser user,
+        //    IEnumerable<IMenuItem> userLevelMenu)
+        //{
+        //    userLevelMenu
+        //        .Where(menuItem => menuItem.IsVisible)
+        //        .
+        //}
+
+        private IEnumerable<IMenuItem> GetMenusForSubAccount(
             IUser user,
-            IEnumerable<IMenuItem> userLevelMenu)
+            IEnumerable<IMenuItem> mainAccountMenus)
         {
-            var subAccountMenu = userLevelMenu
+            var subAccountMenu = mainAccountMenus
                 .Where(menuItem => menuItem.IsVisible);
 
             return subAccountMenu;

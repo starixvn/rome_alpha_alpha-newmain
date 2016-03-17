@@ -32,9 +32,9 @@
 
         private static Type GetMenuItemType(SiteMapNode siteMapNode)
         {
-            var menuItemType = string.IsNullOrWhiteSpace(siteMapNode["menuType"])
+            var menuItemType = string.IsNullOrWhiteSpace(siteMapNode["menuItemType"])
                 ? typeof(MenuItem)
-                : Type.GetType($"Alpha.Main.Site.Models.Menus.{siteMapNode["menuType"]}", throwOnError: false, ignoreCase: false);
+                : Type.GetType($"Alpha.Main.Site.Models.Menus.{siteMapNode["menuItemType"]}", throwOnError: false, ignoreCase: false);
 
             return menuItemType;
         }

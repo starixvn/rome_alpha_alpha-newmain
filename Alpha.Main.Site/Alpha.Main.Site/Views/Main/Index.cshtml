@@ -48,8 +48,10 @@
                 <ul class="list-menu">
                     @foreach (var menu in Model.SideBar.MenuList)
                     {
-                        if (menu.SubMenus.Any())
+                        if (menu.IsVisible)
                         {
+                            if (menu.SubMenus.Any())
+                            {
                             <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
                                 <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
                                    href="javascript:;">
@@ -59,22 +61,26 @@
                                 <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
                                     @foreach (var subMenu in menu.SubMenus)
                                     {
-                                        <li class="sub-menu-item">
-                                            <a href="@subMenu.Url" target="main">
-                                                @subMenu.DisplayName
-                                            </a>
-                                        </li>
+                                        if (subMenu.IsVisible)
+                                        {
+                                            <li class="sub-menu-item">
+                                                <a href="@subMenu.Url" target="main">
+                                                    @subMenu.DisplayName
+                                                </a>
+                                            </li>
+                                        }
                                     }
                                 </ul>
                             </li>
-                        }
-                        else
-                        {
+                            }
+                            else
+                            {
                             <li class="menu-item">
                                 <a class="withripple menu-opener parent-menu" href="@menu.Url" target="main">
                                     <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
                                 </a>
                             </li>
+                            }
                         }
 
                     }
