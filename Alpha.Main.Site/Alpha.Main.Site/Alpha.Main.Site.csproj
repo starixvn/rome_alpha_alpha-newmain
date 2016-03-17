@@ -499,7 +499,9 @@
     </Content>
     <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
     <Content Include="Content\Main\Styles\sass\page.scss" />
-    <Content Include="App_Data\Alpha.sitemap" />
+    <Content Include="App_Data\Alpha.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

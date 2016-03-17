@@ -295,12 +295,13 @@
             var pageAccess = UserSession.Current.SubPageAccess;
             var isSubAcc = UserSession.Current.IsSubAcc;
             var subMenuCount = siteNode.ChildNodes.Count;
-
+            
 
             var siteMenuService = new SiteMenuServiceImpl(new CachingServiceImpl(), new MenuItemFactoryImpl());
 
             var user = new Models.User(pageAccess);
             user.Level = Enumeration.FromValue<UserLevel>(2);
+            user.SubAccountId = UserSession.Current.SubAccId;
             menuList = siteMenuService.GetMenuByUser(user).ToList();
 
             //for (int i = 0; i < subMenuCount; i++)

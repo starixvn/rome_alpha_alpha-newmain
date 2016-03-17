@@ -48,7 +48,7 @@
             var cacheKey = CacheKeyMenuByUserLevel + userLevel.DisplayName;
             IEnumerable<IMenuItem> menuItems = cacheManager.Get<IEnumerable<IMenuItem>>(cacheKey);
 
-            //if (menuItems == null)
+            if (menuItems == null)
             {
                 var rootNode = SiteMap.RootNode;
 
@@ -97,16 +97,7 @@
             }
 
             return menuItems;
-        }      
-
-        //private IEnumerable<IMenuItem> GetMenusForMainAccount(
-        //    IUser user,
-        //    IEnumerable<IMenuItem> userLevelMenu)
-        //{
-        //    userLevelMenu
-        //        .Where(menuItem => menuItem.IsVisible)
-        //        .
-        //}
+        }       
 
         private IEnumerable<IMenuItem> GetMenusForSubAccount(
             IUser user,
