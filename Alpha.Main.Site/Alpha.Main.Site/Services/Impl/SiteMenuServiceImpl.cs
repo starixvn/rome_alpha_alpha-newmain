@@ -33,17 +33,17 @@
                 throw new ArgumentNullException(nameof(user));
             }
 
-            menuItems = GetMenuByUserLevel(user.Level);
+            menuItems = LoadMenusByUserLevel(user.Level);            
 
             if (user.IsSubAccount)
             {
-                menuItems = GetMenusForSubAccount(user, menuItems);
+                menuItems = GetMenusForSubAccount(menuItems);
             }
 
             return menuItems;
         }
 
-        private IEnumerable<IMenuItem> GetMenuByUserLevel(UserLevel userLevel)
+        private IEnumerable<IMenuItem> LoadMenusByUserLevel(UserLevel userLevel)
         {
             var cacheKey = CacheKeyMenuByUserLevel + userLevel.DisplayName;
             IEnumerable<IMenuItem> menuItems = cacheManager.Get<IEnumerable<IMenuItem>>(cacheKey);
@@ -61,6 +61,11 @@
 
                 cacheManager.Add(cacheKey, menuItems);
             }
+
+            menuItems.ToList().ForEach(menuItem =>
+            {
+                menuItem.SubMenus.RemoveAll(subMenuItem => !subMenuItem.IsVisible);
+            });
 
             return menuItems;
         }
@@ -97,11 +102,22 @@
             }
 
             return menuItems;
-        }       
+        }
 
-        private IEnumerable<IMenuItem> GetMenusForSubAccount(
-            IUser user,
-            IEnumerable<IMenuItem> mainAccountMenus)
+        private IEnumerable<IMenuItem> GetMenusForMainAccount(IEnumerable<IMenuItem> menuItemsByLevel)
+        {
+            var mainAccountMenus = new List<IMenuItem>();
+
+            menuItemsByLevel.ToList().ForEach(menuItem =>
+            {
+                menuItem.SubMenus.RemoveAll(subMenuItem => !subMenuItem.IsVisible);
+                mainAccountMenus.Add(menuItem);
+            });
+
+            return mainAccountMenus;
+        }
+
+        private IEnumerable<IMenuItem> GetMenusForSubAccount(IEnumerable<IMenuItem> mainAccountMenus)
         {
             var subAccountMenu = mainAccountMenus
                 .Where(menuItem => menuItem.IsVisible);
