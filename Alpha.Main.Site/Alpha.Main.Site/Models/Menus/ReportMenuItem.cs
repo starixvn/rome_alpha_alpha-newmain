@@ -8,6 +8,8 @@
 
     public class ReportMenuItem : MenuItem
     {
+        public static Func<bool> CheckVisibleFunc;
+
         public ReportMenuItem()
         {
         }
@@ -16,8 +18,8 @@
         {
             get
             {
-                return UserSession.Current.SubPageAccess.ViewReports;
+                return CheckVisibleFunc.Invoke();               
             }
-        }
+        }   
     }
 }

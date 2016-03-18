@@ -598,6 +598,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\CssRewriteUrlTransformWrapper.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
+    <Compile Include="App_Start\MenuItemConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Constants\DateTimeFormatConstant.cs" />
     <Compile Include="Constants\LanguageConstant.cs" />

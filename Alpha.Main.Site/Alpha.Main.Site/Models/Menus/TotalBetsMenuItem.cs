@@ -8,6 +8,8 @@
 
     public class TotalBetsMenuItem : MenuItem
     {
+        public static Func<bool> CheckVisibleFunc;      
+
         public TotalBetsMenuItem()
         {
         }
@@ -16,7 +18,7 @@
         {
             get
             {
-                return UserSession.Current.SubPageAccess.ViewTotalBets;
+                return CheckVisibleFunc.Invoke();
             }
         }
     }
