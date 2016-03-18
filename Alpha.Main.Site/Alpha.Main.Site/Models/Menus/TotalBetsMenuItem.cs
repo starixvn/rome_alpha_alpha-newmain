@@ -11,6 +11,6 @@
         public TotalBetsMenuItem(Func<bool> checkVisibleFunc)
         {
             this.checkVisibleFunc = checkVisibleFunc;
-        }
+        }     
     }
 }

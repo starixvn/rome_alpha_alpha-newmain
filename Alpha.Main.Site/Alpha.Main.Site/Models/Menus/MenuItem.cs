@@ -46,7 +46,7 @@
                 return Alpha_sitemap.ResourceManager.GetString(this.Key);
             }
         }
-        
+
         public virtual string Url
         {
             get
@@ -88,12 +88,12 @@
 
                 return true;
             }
-        }              
+        }
 
         public List<IMenuItem> SubMenus
         {
             get;
             set;
-        }        
+        }
     }
 }

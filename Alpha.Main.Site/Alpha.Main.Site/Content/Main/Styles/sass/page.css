@@ -209,6 +209,8 @@ a, a:focus, a:active, a:target, a:hover {
     line-height: 36px; }
   .mainmenu-container .sub-menu .sub-menu-item:hover a {
     color: #5c1218; }
+  .mainmenu-container .sub-menu .sub-menu-item .disabled-menu {
+    color: #767676; }
 
 /********************************** Account Info ******************************************/
 .accountinfo-container {

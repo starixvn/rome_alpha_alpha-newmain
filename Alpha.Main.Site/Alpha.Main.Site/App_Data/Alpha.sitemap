@@ -54,7 +54,7 @@
       <!--/Statement-->
 
       <!--Foobet-->
-      <siteMapNode resourceKey="foobet" appName="OldMainApp" url="Report/Foobet" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="foobet" menuItemType="FoobetMenuItem" appName="OldMainApp" url="Report/Foobet" roles="Agent"></siteMapNode>
       <!--/Foobet-->
 
       <siteMapNode resourceKey="result" url="~/Normal" appName="ResultSiteVirtualPath"></siteMapNode>

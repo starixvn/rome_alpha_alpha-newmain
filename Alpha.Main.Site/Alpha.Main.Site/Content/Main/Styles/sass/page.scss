@@ -163,7 +163,7 @@ a, a:focus, a:active, a:target, a:hover {
     .main-tab {
          overflow: hidden;
          li {
-            float: left;
+            float: left
             width: 50%;
             background: #5c1218;
             a {
@@ -259,6 +259,10 @@ a, a:focus, a:active, a:target, a:hover {
         }
         &:hover a {
             color: #5c1218;
+        }
+
+        .disabled-menu {
+            color: #767676;
         }
     }
 }
