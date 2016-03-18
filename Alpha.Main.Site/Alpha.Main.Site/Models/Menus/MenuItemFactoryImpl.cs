@@ -18,28 +18,6 @@
             this.container = container;
         }
 
-        public IMenuItem Create(SiteMapNode siteMapNode)
-        {
-            Check.Argument.IsNotNull(siteMapNode, nameof(siteMapNode));
-
-            var type = GetMenuItemType(siteMapNode);
-            var menuItem = CreateMenuInstance(type);
-            SetDataForMenuItem(menuItem, siteMapNode);
-
-            return menuItem;
-        }
-
-        private IMenuItem CreateMenuInstance(Type menuItemType)
-        {
-            //IMenuItem menuItem = (menuItemType != null)
-            //   ? (IMenuItem)Activator.CreateInstance(menuItemType)
-            //   : new MenuItem();
-
-            IMenuItem menuItem = (IMenuItem)this.container.GetInstance(menuItemType);
-
-            return menuItem;
-        }
-
         private static Type GetMenuItemType(SiteMapNode siteMapNode)
         {
             var menuItemType = string.IsNullOrWhiteSpace(siteMapNode["menuItemType"])
@@ -70,5 +48,23 @@
                    && ("1".Equals(node["expand"])
                      || "true".Equals(node["expand"], StringComparison.InvariantCultureIgnoreCase));
         }
+
+        public IMenuItem Create(SiteMapNode siteMapNode)
+        {
+            Check.Argument.IsNotNull(siteMapNode, nameof(siteMapNode));
+
+            var type = GetMenuItemType(siteMapNode);
+            var menuItem = CreateMenuInstance(type);
+            SetDataForMenuItem(menuItem, siteMapNode);
+
+            return menuItem;
+        }
+
+        private IMenuItem CreateMenuInstance(Type menuItemType)
+        {
+            IMenuItem menuItem = (IMenuItem)this.container.GetInstance(menuItemType);
+
+            return menuItem;
+        }        
     }
 }
