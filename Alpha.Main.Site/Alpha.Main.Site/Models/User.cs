@@ -11,21 +11,21 @@
         private int id;
         private string name;
         private int subAccountId;
-        private UserLevel level;
-        private PageAccess pageAccess;
+        private UserLevel level;        
 
-        public User(PageAccess pageAccess)
-        {
-            this.pageAccess = pageAccess;
+        public User()
+        {            
         }        
 
         public new int Id
         {
+            [DebuggerStepThrough]
             get
             {
                 return this.id;
             }
 
+            [DebuggerStepThrough]
             set
             {
                 if (value <= 0)
@@ -39,11 +39,13 @@
 
         public string Name
         {
+            [DebuggerStepThrough]
             get
             {
                 return this.name;
             }
 
+            [DebuggerStepThrough]
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -57,11 +59,13 @@
 
         public UserLevel Level
         {
+            [DebuggerStepThrough]
             get
             {
                 return this.level;
             }
 
+            [DebuggerStepThrough]
             set
             {
                 if (ReferenceEquals(value, null))
@@ -75,11 +79,13 @@
 
         public int SubAccountId
         {
+            [DebuggerStepThrough]
             get
             {
                 return this.subAccountId;
             }
 
+            [DebuggerStepThrough]
             set
             {
                 if (value < 0)
@@ -105,24 +111,6 @@
             {
                 return !IsSubAccount;
             }
-        }
-
-        public PageAccess PageAccess
-        {
-            get
-            {
-                return pageAccess;
-            }
-        }
-
-        public bool HasPermissionOnFunction(string function)
-        {
-            if (string.IsNullOrWhiteSpace(function))
-            {
-                throw new ArgumentNullException(nameof(function));
-            }
-
-            return this.pageAccess.Contains(function);
-        }
+        }        
     }
 }

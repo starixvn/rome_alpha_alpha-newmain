@@ -298,9 +298,9 @@
 
             var pageAccess = UserSession.Current.SubPageAccess;
             var isSubAcc = UserSession.Current.IsSubAcc;
-            var subMenuCount = siteNode.ChildNodes.Count;          
-          
-            var user = new Models.User(pageAccess);
+            var subMenuCount = siteNode.ChildNodes.Count;
+
+            var user = new User();
             user.Level = Enumeration.FromValue<UserLevel>(2);
             user.SubAccountId = UserSession.Current.SubAccId;
             menuList = siteMenuService.GetMenuByUser(user).ToList();

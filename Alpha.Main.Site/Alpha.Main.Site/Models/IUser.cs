@@ -16,10 +16,6 @@
 
         bool IsMainAccount { get; }
 
-        bool IsSubAccount { get; }
-
-        PageAccess PageAccess { get; }
-
-        bool HasPermissionOnFunction(string function);
+        bool IsSubAccount { get; }                
     }
 }
