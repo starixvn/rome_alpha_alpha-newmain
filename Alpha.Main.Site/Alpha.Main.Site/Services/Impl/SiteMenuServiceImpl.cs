@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
     using System.Linq;
     using System.Web;
     using System.Xml;
@@ -20,32 +21,39 @@
 
         public SiteMenuServiceImpl(CachingService cacheManager, MenuItemFactory menuItemFactory)
         {
+            Contract.Ensures(cacheManager != null, nameof(cacheManager));
+            Contract.Ensures(menuItemFactory != null, nameof(menuItemFactory));
+
             this.cacheManager = cacheManager;
             this.menuItemFactory = menuItemFactory;
         }
 
         public IEnumerable<IMenuItem> GetMenuByUser(IUser user)
         {
+            Contract.Ensures(user != null, nameof(user));
+
             var menuItems = Enumerable.Empty<IMenuItem>();
-
-            if (user == null)
-            {
-                throw new ArgumentNullException(nameof(user));
-            }
-
-            menuItems = LoadMenusByUserLevel(user.Level);            
-
-            if (user.IsSubAccount)
-            {
-                menuItems = GetMenusForSubAccount(menuItems);
-            }
+            
+            RemoveInvisibleMenu(GetMenuDataByUserLevel(user.Level));            
 
             return menuItems;
         }
 
-        private IEnumerable<IMenuItem> LoadMenusByUserLevel(UserLevel userLevel)
+        private void RemoveInvisibleMenu(IEnumerable<IMenuItem> menuItems)
+        {
+            Contract.Ensures(menuItems != null);
+
+            menuItems.ToList().RemoveAll(menuItem => !menuItem.Status.IsVisible);
+            menuItems.ToList().ForEach(menuItem =>
+            {
+                menuItem.SubMenus.RemoveAll(subMenuItem => !subMenuItem.Status.IsVisible);
+            });
+        }
+
+        private IEnumerable<IMenuItem> GetMenuDataByUserLevel(UserLevel userLevel)
         {
             var cacheKey = CacheKeyMenuByUserLevel + userLevel.DisplayName;
+
             IEnumerable<IMenuItem> menuItems = cacheManager.Get<IEnumerable<IMenuItem>>(cacheKey);
 
             if (menuItems == null)
@@ -60,24 +68,16 @@
                 menuItems = BuildMenu(rootNode, userLevel);
 
                 cacheManager.Add(cacheKey, menuItems);
-            }
-
-            menuItems.ToList().ForEach(menuItem =>
-            {
-                menuItem.SubMenus.RemoveAll(subMenuItem => !subMenuItem.IsVisible);
-            });
+            }           
 
             return menuItems;
         }
 
         private List<IMenuItem> BuildMenu(SiteMapNode siteMapNode, UserLevel userLevel)
         {
-            var menuItems = new List<IMenuItem>();
+            Contract.Ensures(siteMapNode != null, nameof(siteMapNode));
 
-            if (ReferenceEquals(null, siteMapNode))
-            {
-                throw new ArgumentNullException(nameof(siteMapNode));
-            }
+            var menuItems = new List<IMenuItem>();            
 
             if (siteMapNode.HasChildNodes)
             {
@@ -102,27 +102,6 @@
             }
 
             return menuItems;
-        }
-
-        private IEnumerable<IMenuItem> GetMenusForMainAccount(IEnumerable<IMenuItem> menuItemsByLevel)
-        {
-            var mainAccountMenus = new List<IMenuItem>();
-
-            menuItemsByLevel.ToList().ForEach(menuItem =>
-            {
-                menuItem.SubMenus.RemoveAll(subMenuItem => !subMenuItem.IsVisible);
-                mainAccountMenus.Add(menuItem);
-            });
-
-            return mainAccountMenus;
-        }
-
-        private IEnumerable<IMenuItem> GetMenusForSubAccount(IEnumerable<IMenuItem> mainAccountMenus)
-        {
-            var subAccountMenu = mainAccountMenus
-                .Where(menuItem => menuItem.IsVisible);
-
-            return subAccountMenu;
-        }
+        }                
     }
 }

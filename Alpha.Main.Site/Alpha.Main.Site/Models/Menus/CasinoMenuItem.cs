@@ -8,9 +8,9 @@
 
     public class CasinoMenuItem : MenuItem
     {
-        public CasinoMenuItem(Func<bool> checkVisibleFunc)
+        public CasinoMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }
     }
 }

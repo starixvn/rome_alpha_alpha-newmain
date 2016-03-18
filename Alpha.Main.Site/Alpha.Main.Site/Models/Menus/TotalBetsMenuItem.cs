@@ -8,9 +8,9 @@
 
     public class TotalBetsMenuItem : MenuItem
     {
-        public TotalBetsMenuItem(Func<bool> checkVisibleFunc)
+        public TotalBetsMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }     
     }
 }

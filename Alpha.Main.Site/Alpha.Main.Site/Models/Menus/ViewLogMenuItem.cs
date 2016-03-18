@@ -8,9 +8,9 @@
 
     public class ViewLogMenuItem : MenuItem
     {
-        public ViewLogMenuItem(Func<bool> checkVisibleFunc)
+        public ViewLogMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }
     }
 }

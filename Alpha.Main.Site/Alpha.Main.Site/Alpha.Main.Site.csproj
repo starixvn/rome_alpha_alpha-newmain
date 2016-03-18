@@ -637,6 +637,7 @@
     <Compile Include="Models\Menus\LastBetMonitorMenuItem.cs" />
     <Compile Include="Models\Menus\MenuItemFactory.cs" />
     <Compile Include="Models\Menus\MenuItemFactoryImpl.cs" />
+    <Compile Include="Models\Menus\MenuStatus.cs" />
     <Compile Include="Models\Menus\StatementMenuItem.cs" />
     <Compile Include="Models\Menus\SubAccountMenuItem.cs" />
     <Compile Include="Models\Menus\ConsolidatedReportMenuItem.cs" />

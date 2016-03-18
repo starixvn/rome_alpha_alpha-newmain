@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Linq.Expressions;
     using System.Web;
     using Models.Menus;
     using Services;
@@ -15,37 +16,67 @@
     {
         public static void Register(Container container)
         {
-            container.Register<MenuItem>(() => new MenuItem(checkVisibleFunc: null));
+            container.Register<MenuItem>(() => new MenuItem(getMenuStatusFunc: null));
 
             container.Register<ReportMenuItem>(
-                () => new ReportMenuItem(() => Current.SubPageAccess.ViewReports));
+                () => new ReportMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.ViewReports)));
 
             container.Register<TotalBetsMenuItem>(
-                () => new TotalBetsMenuItem(() => Current.SubPageAccess.ViewTotalBets));
+                () => new TotalBetsMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.ViewTotalBets)));
 
             container.Register<MemberInfoMenuItem>(
-                () => new MemberInfoMenuItem(() => Current.SubPageAccess.ViewMemberInfo));
+                () => new MemberInfoMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.ViewMemberInfo)));
 
             container.Register<TransferMenuItem>(
-               () => new TransferMenuItem(() => Current.SubPageAccess.Transfer));
+               () => new TransferMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.Transfer)));
 
             container.Register<ViewLogMenuItem>(
-               () => new ViewLogMenuItem(() => Current.SubPageAccess.ViewLog));
+               () => new ViewLogMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.ViewLog)));
 
-            container.Register<SubAccountMenuItem>(() => new SubAccountMenuItem(() => !Current.IsSubAcc));
-            container.Register<RacingMenuItem>(() => new RacingMenuItem(() => IsShowRacing));
-            container.Register<CasinoMenuItem>(() => new CasinoMenuItem(() => IsShowCasino));
-            container.Register<BingoMenuItem>(() => new BingoMenuItem(() => IsShowBingoReport));
-            container.Register<NumberGameMenuItem>(() => new NumberGameMenuItem(() => IsShowNumberGame));
-            container.Register<LiveCasinoMenuItem>(() => new LiveCasinoMenuItem(() => IsShowLiveCasino));
+            container.Register<SubAccountMenuItem>(
+                () => new SubAccountMenuItem(() => new MenuStatus(!Current.IsSubAcc)));
+
+            container.Register<RacingMenuItem>(
+                () => new RacingMenuItem(() => new MenuStatus(IsShowRacing)));
+
+            container.Register<CasinoMenuItem>(
+                () => new CasinoMenuItem(() => new MenuStatus(IsShowCasino)));
+
+            container.Register<BingoMenuItem>(
+                () => new BingoMenuItem(() => new MenuStatus(IsShowBingoReport)));
+
+            container.Register<NumberGameMenuItem>(
+                () => new NumberGameMenuItem(() => new MenuStatus(IsShowNumberGame)));
+
+            container.Register<LiveCasinoMenuItem>(
+                () => new LiveCasinoMenuItem(() => new MenuStatus(IsShowLiveCasino)));
+
             container.Register<ConsolidatedReportMenuItem>(
-                () => new ConsolidatedReportMenuItem(() => UserSession.Current.IsShowConsolidatedReport));
+                () => new ConsolidatedReportMenuItem(() => new MenuStatus(UserSession.Current.IsShowConsolidatedReport)));
 
             container.Register<FoobetMenuItem>(
-                () => new FoobetMenuItem(() => UserSession.Current.CustId != AppSettings.CustIdFoobet));
+                () => new FoobetMenuItem(() => new MenuStatus(UserSession.Current.CustId != AppSettings.CustIdFoobet)));
 
             container.Register<MemberWinLimitMenuItem>(() => new MemberWinLimitMenuItem(
-              () => UserSession.Current.IsLiveCasinoSync || !UserSession.Current.IsHideGoldDeluxe));
-        }                          
+              () => new MenuStatus(UserSession.Current.IsLiveCasinoSync || !UserSession.Current.IsHideGoldDeluxe)));
+
+            container.Register<LastBetMonitorMenuItem>(() => new LastBetMonitorMenuItem(
+              () => new MenuStatus(isVisible: true, isDisabled: ((Func<bool>)(() =>
+              {
+                  if (UserSession.Current.IsInternal || AppSettings.EnableBetsListMonitoring)
+                  {
+                      return false;
+                  }
+
+                  var usersAlwaysToAccessThisFunction = AppSettings.UsersAlwaysAllowAccessBetsListMonitoring;
+                  var isDisabled = string.IsNullOrWhiteSpace(usersAlwaysToAccessThisFunction) ||
+                      !usersAlwaysToAccessThisFunction.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                      .ToList()
+                      .Contains(UserSession.Current.CustId.ToString());
+
+                  return isDisabled;
+
+              })).Invoke())));            
+        }
     }
 }

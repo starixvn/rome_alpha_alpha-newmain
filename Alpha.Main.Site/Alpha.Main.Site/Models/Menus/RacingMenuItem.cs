@@ -8,9 +8,9 @@
 
     public class RacingMenuItem : MenuItem
     {
-        public RacingMenuItem(Func<bool> checkVisibleFunc)
+        public RacingMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }       
     }
 }

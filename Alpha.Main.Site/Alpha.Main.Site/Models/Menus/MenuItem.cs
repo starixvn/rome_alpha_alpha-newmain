@@ -12,32 +12,24 @@
 
     public class MenuItem : IMenuItem
     {
-        protected Func<bool> checkVisibleFunc;
-
         private string url;
 
+        protected Func<MenuStatus> GetMenuStatusFunc;
+
         protected MenuItem()
-        { }       
-
-        public MenuItem(Func<bool> checkVisibleFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+        }       
+
+        public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
+        {
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }
 
-        public string Key
-        {
-            get; set;
-        }
+        public string Key { get; set; }
 
-        public string Name
-        {
-            get; set;
-        }
+        public string Name { get; set; }
 
-        public string AppName
-        {
-            get; set;
-        }
+        public string AppName { get; set; }
 
         public string DisplayName
         {
@@ -65,35 +57,23 @@
             {
                 this.url = value;
             }
-        }
-
-        public string Function
-        {
-            get; set;
-        }
-
-        public bool ShowSubMenus
-        {
-            get; set;
-        }
-
-        public virtual bool IsVisible
+        }        
+        
+        public virtual MenuStatus Status
         {
             get
             {
-                if (checkVisibleFunc != null)
+                if (GetMenuStatusFunc != null)
                 {
-                    return checkVisibleFunc.Invoke();
+                    return GetMenuStatusFunc.Invoke();
                 }
 
-                return true;
+                return new MenuStatus();
             }
         }
 
-        public List<IMenuItem> SubMenus
-        {
-            get;
-            set;
-        }
+        public bool ShowSubMenus { get; set; }
+
+        public List<IMenuItem> SubMenus { get; set; }      
     }
 }

@@ -9,9 +9,9 @@
 
     public class MemberWinLimitMenuItem : MenuItem
     {
-        public MemberWinLimitMenuItem(Func<bool> checkVisibleFunc)
+        public MemberWinLimitMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }        
     }
 }

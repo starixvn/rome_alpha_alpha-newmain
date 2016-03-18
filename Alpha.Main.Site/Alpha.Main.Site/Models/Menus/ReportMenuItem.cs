@@ -8,9 +8,9 @@
 
     public class ReportMenuItem : MenuItem
     {        
-        public ReportMenuItem(Func<bool> checkVisibleFunc)
+        public ReportMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }
     }
 }

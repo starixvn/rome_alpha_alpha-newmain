@@ -10,9 +10,9 @@
 
     public class FoobetMenuItem : MenuItem
     {
-        public FoobetMenuItem(Func<bool> checkVisibleFunc)
+        public FoobetMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }
     }
 }

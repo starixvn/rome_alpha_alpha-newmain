@@ -8,9 +8,9 @@
 
     public class NumberGameMenuItem : MenuItem
     {
-        public NumberGameMenuItem(Func<bool> checkVisibleFunc)
+        public NumberGameMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }
     }
 }

@@ -8,9 +8,9 @@
 
     public class TransferMenuItem : MenuItem
     {
-        public TransferMenuItem(Func<bool> checkVisibleFunc)
+        public TransferMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }
     }
 }

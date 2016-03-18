@@ -14,13 +14,11 @@
 
         string DisplayName { get; }
 
-        string Url { get; set; }
-
-        string Function { get; set; }
+        string Url { get; set; }        
 
         string AppName { get; set; }
 
-        bool IsVisible { get; }
+        MenuStatus Status { get; }        
 
         bool ShowSubMenus { get; set; }
 

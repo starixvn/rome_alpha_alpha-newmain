@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -33,8 +34,7 @@
             menuItem.Name = node.ResourceKey.ToLower();
             menuItem.Url = node.Url;
             menuItem.AppName = node["AppName"];
-            menuItem.SubMenus = new List<IMenuItem>();
-            menuItem.Function = node["functionType"];
+            menuItem.SubMenus = new List<IMenuItem>();           
 
             if (node.HasChildNodes)
             {
@@ -51,20 +51,13 @@
 
         public IMenuItem Create(SiteMapNode siteMapNode)
         {
-            Check.Argument.IsNotNull(siteMapNode, nameof(siteMapNode));
+            Contract.Ensures(siteMapNode != null);
+                        
+            var menuItem = (IMenuItem)this.container.GetInstance(GetMenuItemType(siteMapNode));
 
-            var type = GetMenuItemType(siteMapNode);
-            var menuItem = CreateMenuInstance(type);
             SetDataForMenuItem(menuItem, siteMapNode);
 
             return menuItem;
         }
-
-        private IMenuItem CreateMenuInstance(Type menuItemType)
-        {
-            IMenuItem menuItem = (IMenuItem)this.container.GetInstance(menuItemType);
-
-            return menuItem;
-        }        
     }
 }

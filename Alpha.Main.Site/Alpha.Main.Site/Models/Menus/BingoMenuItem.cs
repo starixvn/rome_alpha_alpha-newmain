@@ -9,9 +9,9 @@
 
     public class BingoMenuItem : MenuItem
     {
-        public BingoMenuItem(Func<bool> checkVisibleFunc)
+        public BingoMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }
     }
 }

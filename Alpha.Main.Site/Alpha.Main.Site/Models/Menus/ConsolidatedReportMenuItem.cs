@@ -8,9 +8,9 @@
 
     public class ConsolidatedReportMenuItem : MenuItem
     {
-        public ConsolidatedReportMenuItem(Func<bool> checkVisibleFunc)
+        public ConsolidatedReportMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }       
     }
 }

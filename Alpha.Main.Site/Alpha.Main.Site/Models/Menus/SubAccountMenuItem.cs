@@ -9,9 +9,9 @@
 
     public class SubAccountMenuItem : MenuItem
     {
-        public SubAccountMenuItem(Func<bool> checkVisibleFunc)
+        public SubAccountMenuItem(Func<MenuStatus> getMenuStatusFunc)
         {
-            this.checkVisibleFunc = checkVisibleFunc;
+            this.GetMenuStatusFunc = getMenuStatusFunc;
         }
     }
 }
