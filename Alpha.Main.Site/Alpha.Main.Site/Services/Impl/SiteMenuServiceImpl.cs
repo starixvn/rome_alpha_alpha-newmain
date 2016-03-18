@@ -34,7 +34,9 @@
 
             var menuItems = Enumerable.Empty<IMenuItem>();
             
-            RemoveInvisibleMenu(GetMenuDataByUserLevel(user.Level));            
+            menuItems = GetMenuDataByUserLevel(user.Level);
+
+            RemoveInvisibleMenu(menuItems);
 
             return menuItems;
         }
@@ -58,14 +60,9 @@
 
             if (menuItems == null)
             {
-                var rootNode = SiteMap.RootNode;
+                Contract.Requires(SiteMap.RootNode != null, nameof(SiteMap.RootNode));                
 
-                if (rootNode == null)
-                {
-                    throw new InvalidOperationException(nameof(rootNode));
-                }
-
-                menuItems = BuildMenu(rootNode, userLevel);
+                menuItems = BuildMenu(SiteMap.RootNode, userLevel);
 
                 cacheManager.Add(cacheKey, menuItems);
             }           

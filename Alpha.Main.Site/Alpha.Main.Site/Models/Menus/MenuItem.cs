@@ -68,7 +68,7 @@
                     return GetMenuStatusFunc.Invoke();
                 }
 
-                return new MenuStatus();
+                return new MenuStatus( true, false);
             }
         }
 

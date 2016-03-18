@@ -18,20 +18,21 @@
         {
             container.Register<MenuItem>(() => new MenuItem(getMenuStatusFunc: null));
 
+
             container.Register<ReportMenuItem>(
-                () => new ReportMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.ViewReports)));
+                () => new ReportMenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewReports)));
 
             container.Register<TotalBetsMenuItem>(
-                () => new TotalBetsMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.ViewTotalBets)));
+                () => new TotalBetsMenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets)));
 
             container.Register<MemberInfoMenuItem>(
-                () => new MemberInfoMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.ViewMemberInfo)));
+                () => new MemberInfoMenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo)));
 
             container.Register<TransferMenuItem>(
-               () => new TransferMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.Transfer)));
+               () => new TransferMenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.Transfer)));
 
             container.Register<ViewLogMenuItem>(
-               () => new ViewLogMenuItem(() => new MenuStatus(Current.IsSubAcc && Current.SubPageAccess.ViewLog)));
+               () => new ViewLogMenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog)));
 
             container.Register<SubAccountMenuItem>(
                 () => new SubAccountMenuItem(() => new MenuStatus(!Current.IsSubAcc)));
@@ -61,7 +62,7 @@
               () => new MenuStatus(UserSession.Current.IsLiveCasinoSync || !UserSession.Current.IsHideGoldDeluxe)));
 
             container.Register<LastBetMonitorMenuItem>(() => new LastBetMonitorMenuItem(
-              () => new MenuStatus(isVisible: true, isDisabled: ((Func<bool>)(() =>
+              () => new MenuStatus(() =>
               {
                   if (UserSession.Current.IsInternal || AppSettings.EnableBetsListMonitoring)
                   {
@@ -76,7 +77,7 @@
 
                   return isDisabled;
 
-              })).Invoke())));            
+              })));            
         }
     }
 }

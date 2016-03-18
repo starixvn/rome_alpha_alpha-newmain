@@ -13,9 +13,13 @@
             this.IsDisabled = isDisabled;
         }
 
-        public bool IsVisible { get; set; }
+        public MenuStatus(Func<bool> getDisableFunc = null) : this(true, getDisableFunc.Invoke())
+        {
+        }
 
-        public bool IsDisabled { get; set; }
+        public bool IsVisible { get; }
+
+        public bool IsDisabled { get; }
 
     }
 }
