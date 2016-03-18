@@ -2,22 +2,16 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.Contracts;
     using System.Linq;
     using System.Web;
     using Sunplus.Agent.Model.Entities.Permission;
 
     public class BingoMenuItem : MenuItem
     {
-        public BingoMenuItem()
+        public BingoMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return UserPermission.IsShowBingoReport;
-            }
+            this.checkVisibleFunc = checkVisibleFunc;
         }
     }
 }

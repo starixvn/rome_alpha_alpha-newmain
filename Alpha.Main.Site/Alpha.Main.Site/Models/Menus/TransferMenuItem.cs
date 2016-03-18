@@ -8,16 +8,9 @@
 
     public class TransferMenuItem : MenuItem
     {
-        public TransferMenuItem()
+        public TransferMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return UserSession.Current.SubPageAccess.Transfer;
-            }
+            this.checkVisibleFunc = checkVisibleFunc;
         }
     }
 }

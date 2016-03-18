@@ -8,16 +8,9 @@
 
     public class ConsolidatedReportMenuItem : MenuItem
     {
-        public ConsolidatedReportMenuItem()
+        public ConsolidatedReportMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return UserSession.Current.IsShowConsolidatedReport;
-            }
-        }
+            this.checkVisibleFunc = checkVisibleFunc;
+        }       
     }
 }

@@ -2,11 +2,13 @@
 {
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using System.Diagnostics;
     using System.Reflection;
     using System.Web.Mvc;
     using Fanex.Data.Repository;
     using Handlers;
     using MediatR;
+    using Models.Menus;
     using Repositories;
     using Repositories.Impl;
     using Services;
@@ -14,13 +16,14 @@
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
-
+    using System.Diagnostics.Contracts;
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
         public static void Init()
-        {
+        {            
             var container = new Container();
+
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
 
             RegisterMediator(container);
@@ -37,9 +40,13 @@
             // This is an extension method from the integration package as well.
             container.RegisterMvcIntegratedFilterProvider();
 
-            container.Verify();
+            MenuItemConfig.Register(container);
+
+            container.Verify();            
 
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+
+            
         }
 
         private static void RegisterMediator(Container container)
@@ -69,7 +76,11 @@
             container.Register<IFileUploadService, FileUploadService>(Lifestyle.Scoped);
             container.Register<ISessionValidationService, SessionValidationService>(Lifestyle.Scoped);
             container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Scoped);
-            container.Register<AppPathService, AppPathServiceImpl>(Lifestyle.Scoped);
+            container.Register<AppPathService, AppPathServiceImpl>(Lifestyle.Singleton);
+            container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Scoped);
+            container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
+            container.Register<MenuItemFactory, MenuItemFactoryImpl>(Lifestyle.Singleton);
+
         }
 
         private static void RegisterDataAccesses(Container container)

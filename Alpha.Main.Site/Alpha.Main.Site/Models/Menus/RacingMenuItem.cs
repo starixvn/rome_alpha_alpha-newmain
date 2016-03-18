@@ -8,16 +8,9 @@
 
     public class RacingMenuItem : MenuItem
     {
-        public RacingMenuItem()
+        public RacingMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return UserPermission.IsShowRacing;
-            }
-        }
+            this.checkVisibleFunc = checkVisibleFunc;
+        }       
     }
 }

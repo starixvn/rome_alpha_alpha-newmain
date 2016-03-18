@@ -8,18 +8,9 @@
 
     public class TotalBetsMenuItem : MenuItem
     {
-        public static Func<bool> CheckVisibleFunc;      
-
-        public TotalBetsMenuItem()
+        public TotalBetsMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return CheckVisibleFunc.Invoke();
-            }
+            this.checkVisibleFunc = checkVisibleFunc;
         }
     }
 }

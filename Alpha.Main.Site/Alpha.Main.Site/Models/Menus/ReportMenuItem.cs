@@ -7,19 +7,10 @@
     using Sunplus.Agent.Model.Entities;
 
     public class ReportMenuItem : MenuItem
-    {
-        public static Func<bool> CheckVisibleFunc;
-
-        public ReportMenuItem()
+    {        
+        public ReportMenuItem(Func<bool> checkVisibleFunc)
         {
+            this.checkVisibleFunc = checkVisibleFunc;
         }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return CheckVisibleFunc.Invoke();               
-            }
-        }   
     }
 }

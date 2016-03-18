@@ -8,16 +8,9 @@
 
     public class ViewLogMenuItem : MenuItem
     {
-        public ViewLogMenuItem()
+        public ViewLogMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return UserSession.Current.SubPageAccess.ViewLog;
-            }
+            this.checkVisibleFunc = checkVisibleFunc;
         }
     }
 }

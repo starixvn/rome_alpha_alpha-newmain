@@ -10,16 +10,9 @@
 
     public class FoobetMenuItem : MenuItem
     {
-        public FoobetMenuItem()
+        public FoobetMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return UserSession.Current.CustId == AppSettings.CustIdFoobet;
-            }
+            this.checkVisibleFunc = checkVisibleFunc;
         }
     }
 }

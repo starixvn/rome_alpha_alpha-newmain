@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
+    using App_Start;
     using MediatR;
     using Models.Requests;
 
@@ -9,7 +10,7 @@
         private IMediator _mediator;
 
         public MainController(IMediator mediator)
-        {
+        {            
             _mediator = mediator;
         }
 

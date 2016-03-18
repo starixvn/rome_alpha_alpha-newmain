@@ -46,6 +46,8 @@
 
         private readonly ISessionValidationService _sessionValidationService;
 
+        private readonly SiteMenuService siteMenuService;
+
         private string _defaultMainPage;
 
         private AppPathService _appPathService;
@@ -54,12 +56,14 @@
             IDashboardRepository repository,
             IFileUploadService fileUploadService,
             ISessionValidationService sessionValidationService,
-            AppPathService appPathService)
+            AppPathService appPathService,
+            SiteMenuService siteMenuService)
         {
             _repository = repository;
             _fileUploadService = fileUploadService;
             _sessionValidationService = sessionValidationService;
             _appPathService = appPathService;
+            this.siteMenuService = siteMenuService;
         }
 
         public List<LanguageModel> GetLanguages()
@@ -294,11 +298,8 @@
 
             var pageAccess = UserSession.Current.SubPageAccess;
             var isSubAcc = UserSession.Current.IsSubAcc;
-            var subMenuCount = siteNode.ChildNodes.Count;
-            
-
-            var siteMenuService = new SiteMenuServiceImpl(new CachingServiceImpl(), new MenuItemFactoryImpl());
-
+            var subMenuCount = siteNode.ChildNodes.Count;          
+          
             var user = new Models.User(pageAccess);
             user.Level = Enumeration.FromValue<UserLevel>(2);
             user.SubAccountId = UserSession.Current.SubAccId;

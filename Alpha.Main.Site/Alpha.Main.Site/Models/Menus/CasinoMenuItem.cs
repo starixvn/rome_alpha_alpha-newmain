@@ -8,16 +8,9 @@
 
     public class CasinoMenuItem : MenuItem
     {
-        public CasinoMenuItem()
+        public CasinoMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return UserPermission.IsShowCasino;
-            }
+            this.checkVisibleFunc = checkVisibleFunc;
         }
     }
 }

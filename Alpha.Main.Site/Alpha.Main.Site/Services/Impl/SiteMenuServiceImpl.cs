@@ -20,8 +20,8 @@
 
         public SiteMenuServiceImpl(CachingService cacheManager, MenuItemFactory menuItemFactory)
         {
-            this.cacheManager = cacheManager ?? new CachingServiceImpl();
-            this.menuItemFactory = menuItemFactory ?? new MenuItemFactoryImpl();
+            this.cacheManager = cacheManager;
+            this.menuItemFactory = menuItemFactory;
         }
 
         public IEnumerable<IMenuItem> GetMenuByUser(IUser user)

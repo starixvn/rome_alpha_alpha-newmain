@@ -9,16 +9,9 @@
 
     public class SubAccountMenuItem : MenuItem
     {
-        public SubAccountMenuItem()
+        public SubAccountMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {                
-                return !UserSession.Current.IsSubAcc;
-            }
+            this.checkVisibleFunc = checkVisibleFunc;
         }
     }
 }

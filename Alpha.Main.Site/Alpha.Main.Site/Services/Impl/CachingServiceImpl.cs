@@ -8,23 +8,24 @@
     /// </summary>
     public class CachingServiceImpl : CachingService
     {
-        private readonly ObjectCache _cache;
+        private readonly ObjectCache cache;
 
-        public CachingServiceImpl()
-            : this(MemoryCache.Default)
+        public CachingServiceImpl()            
         {
-        }
-
-        public CachingServiceImpl(ObjectCache cache)
-        {
-            if (cache == null)
-            {
-                throw new ArgumentNullException("cache");
-            }
-
-            this._cache = cache;
+            cache = MemoryCache.Default;
             DefaultCacheDuration = 60 * 20;
         }
+
+        //public CachingServiceImpl(ObjectCache cache)
+        //{
+        //    if (cache == null)
+        //    {
+        //        throw new ArgumentNullException("cache");
+        //    }
+
+        //    this.cache = cache;
+        //    DefaultCacheDuration = 60 * 20;
+        //}
 
         /// <summary>
         ///     Seconds to cache objects for by default
@@ -63,14 +64,14 @@
 
             ValidateKey(key);
 
-            _cache.Set(key, item, policy);
+            cache.Set(key, item, policy);
         }
 
         public T Get<T>(string key)
         {
             ValidateKey(key);
 
-            var item = _cache[key];
+            var item = cache[key];
 
             if (item is T)
             {
@@ -106,7 +107,7 @@
 
             var newLazyCacheItem = new Lazy<T>(addItemFactory);
 
-            var existingCacheItem = _cache.AddOrGetExisting(key, newLazyCacheItem, policy);
+            var existingCacheItem = cache.AddOrGetExisting(key, newLazyCacheItem, policy);
 
             if (existingCacheItem != null)
             {
@@ -130,7 +131,7 @@
             catch
             {
                 // addItemFactory errored so do not cache the exception
-                _cache.Remove(key);
+                cache.Remove(key);
                 throw;
             }
         }
@@ -138,7 +139,7 @@
         public void Remove(string key)
         {
             ValidateKey(key);
-            _cache.Remove(key);
+            cache.Remove(key);
         }
 
         private void ValidateKey(string key)

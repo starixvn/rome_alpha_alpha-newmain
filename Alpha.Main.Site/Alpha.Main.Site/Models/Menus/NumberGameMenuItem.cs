@@ -8,16 +8,9 @@
 
     public class NumberGameMenuItem : MenuItem
     {
-        public NumberGameMenuItem()
+        public NumberGameMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {                
-                return UserPermission.IsShowNumberGame;
-            }
+            this.checkVisibleFunc = checkVisibleFunc;
         }
     }
 }

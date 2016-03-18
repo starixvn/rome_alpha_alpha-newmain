@@ -12,10 +12,16 @@
 
     public class MenuItem : IMenuItem
     {
+        protected Func<bool> checkVisibleFunc;
+
         private string url;
 
-        public MenuItem()
-        {           
+        protected MenuItem()
+        { }       
+
+        public MenuItem(Func<bool> checkVisibleFunc)
+        {
+            this.checkVisibleFunc = checkVisibleFunc;
         }
 
         public string Key
@@ -75,6 +81,11 @@
         {
             get
             {
+                if (checkVisibleFunc != null)
+                {
+                    return checkVisibleFunc.Invoke();
+                }
+
                 return true;
             }
         }              
@@ -83,6 +94,6 @@
         {
             get;
             set;
-        }       
+        }        
     }
 }

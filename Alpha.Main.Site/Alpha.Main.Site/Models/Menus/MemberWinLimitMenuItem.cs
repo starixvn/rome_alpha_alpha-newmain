@@ -9,16 +9,9 @@
 
     public class MemberWinLimitMenuItem : MenuItem
     {
-        public MemberWinLimitMenuItem()
+        public MemberWinLimitMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return UserSession.Current.IsLiveCasinoSync || !UserSession.Current.IsHideGoldDeluxe;
-            }
-        }
+            this.checkVisibleFunc = checkVisibleFunc;
+        }        
     }
 }

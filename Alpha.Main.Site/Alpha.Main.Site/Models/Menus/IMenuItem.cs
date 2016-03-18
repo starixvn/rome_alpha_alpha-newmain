@@ -24,6 +24,6 @@
 
         bool ShowSubMenus { get; set; }
 
-        List<IMenuItem> SubMenus { get; set; }       
+        List<IMenuItem> SubMenus { get; set; }
     }
 }

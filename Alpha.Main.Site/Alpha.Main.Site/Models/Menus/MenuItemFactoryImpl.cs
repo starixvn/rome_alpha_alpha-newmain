@@ -7,9 +7,17 @@
     using System.Threading.Tasks;
     using System.Web;
     using Fanex.Common.Helper;
+    using SimpleInjector;
 
     public class MenuItemFactoryImpl : MenuItemFactory
     {
+        private readonly Container container;
+
+        public MenuItemFactoryImpl(Container container)
+        {
+            this.container = container;
+        }
+
         public IMenuItem Create(SiteMapNode siteMapNode)
         {
             Check.Argument.IsNotNull(siteMapNode, nameof(siteMapNode));
@@ -21,11 +29,13 @@
             return menuItem;
         }
 
-        private static IMenuItem CreateMenuInstance(Type menuItemType)
+        private IMenuItem CreateMenuInstance(Type menuItemType)
         {
-            IMenuItem menuItem = (menuItemType != null)
-               ? (IMenuItem)Activator.CreateInstance(menuItemType)
-               : new MenuItem();
+            //IMenuItem menuItem = (menuItemType != null)
+            //   ? (IMenuItem)Activator.CreateInstance(menuItemType)
+            //   : new MenuItem();
+
+            IMenuItem menuItem = (IMenuItem)this.container.GetInstance(menuItemType);
 
             return menuItem;
         }

@@ -8,16 +8,9 @@
 
     public class MemberInfoMenuItem : MenuItem
     {
-        public MemberInfoMenuItem()
+        public MemberInfoMenuItem(Func<bool> checkVisibleFunc)
         {
-        }
-
-        public override bool IsVisible
-        {
-            get
-            {
-                return UserSession.Current.SubPageAccess.ViewMemberInfo;
-            }
-        }
+            this.checkVisibleFunc = checkVisibleFunc;
+        }        
     }
 }
