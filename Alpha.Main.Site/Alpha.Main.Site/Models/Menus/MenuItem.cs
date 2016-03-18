@@ -51,7 +51,7 @@
         {
             get
             {
-                var appVirtualPath = ConfigurationManager.AppSettings[AppName];
+                var appVirtualPath = AppSettings.GetAppName(AppName);
                 if (!string.IsNullOrWhiteSpace(appVirtualPath))
                 {
                     var menuItemUrl = HttpContext.Current.Response.ApplyAppPathModifier(this.url);

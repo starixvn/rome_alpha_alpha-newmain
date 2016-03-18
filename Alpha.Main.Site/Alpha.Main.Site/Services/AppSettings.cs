@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Services
 {
     using System.Configuration;
+    using System.Diagnostics.Contracts;
     using Fanex.Common;
 
     public static class AppSettings
@@ -51,6 +52,13 @@
             {
                 return Converter.ToString2(ConfigurationManager.AppSettings["VirtualDirectory"]);
             }
+        }
+
+        public static string GetAppName(string name)
+        {
+            Contract.Requires(!string.IsNullOrWhiteSpace(name));
+
+            return ConfigurationManager.AppSettings[name];
         }
     }
 }
