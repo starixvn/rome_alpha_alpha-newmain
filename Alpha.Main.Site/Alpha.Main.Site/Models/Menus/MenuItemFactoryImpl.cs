@@ -32,7 +32,7 @@
         {
             menuItem.Key = node.ResourceKey;
             menuItem.Name = node.ResourceKey.ToLower();
-            menuItem.Url = node.Url;
+            menuItem.Url = node.Key;
             menuItem.AppName = node["AppName"];
             menuItem.SubMenus = new List<IMenuItem>();           
 

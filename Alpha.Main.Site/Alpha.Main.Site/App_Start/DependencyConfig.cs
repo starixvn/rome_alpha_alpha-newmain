@@ -1,8 +1,9 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
     using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
     using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Diagnostics.Contracts;
     using System.Reflection;
     using System.Web.Mvc;
     using Fanex.Data.Repository;
@@ -16,7 +17,6 @@
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
-    using System.Diagnostics.Contracts;
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]

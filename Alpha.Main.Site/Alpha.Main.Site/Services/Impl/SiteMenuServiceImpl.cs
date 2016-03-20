@@ -33,30 +33,17 @@
             Contract.Ensures(user != null, nameof(user));
 
             var menuItems = Enumerable.Empty<IMenuItem>();
-            
-            menuItems = GetMenuDataByUserLevel(user.Level);
 
-            RemoveInvisibleMenu(menuItems);
+            menuItems = GetMenuDataByUserLevel(user.Level);
 
             return menuItems;
         }
 
-        private void RemoveInvisibleMenu(IEnumerable<IMenuItem> menuItems)
-        {
-            Contract.Ensures(menuItems != null);
-
-            menuItems.ToList().RemoveAll(menuItem => !menuItem.Status.IsVisible);
-            menuItems.ToList().ForEach(menuItem =>
-            {
-                menuItem.SubMenus.RemoveAll(subMenuItem => !subMenuItem.Status.IsVisible);
-            });
-        }
-
-        private IEnumerable<IMenuItem> GetMenuDataByUserLevel(UserLevel userLevel)
+        private List<IMenuItem> GetMenuDataByUserLevel(UserLevel userLevel)
         {
             var cacheKey = CacheKeyMenuByUserLevel + userLevel.DisplayName;
 
-            IEnumerable<IMenuItem> menuItems = cacheManager.Get<IEnumerable<IMenuItem>>(cacheKey);
+            List<IMenuItem> menuItems = cacheManager.Get<List<IMenuItem>>(cacheKey);
 
             if (menuItems == null)
             {
