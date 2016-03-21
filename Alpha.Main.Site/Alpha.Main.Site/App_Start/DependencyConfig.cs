@@ -18,6 +18,7 @@
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
+
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
@@ -44,8 +45,6 @@
             container.Verify();            
 
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
-
-            
         }
 
         private static void RegisterMediator(Container container)
@@ -79,9 +78,6 @@
             container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Scoped);
             container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
             container.Register<MenuItemFactory, MenuItemFactoryImpl>(Lifestyle.Singleton);
-
-
-
         }
 
         private static void RegisterDataAccesses(Container container)

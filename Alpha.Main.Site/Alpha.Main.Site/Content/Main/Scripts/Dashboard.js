@@ -166,6 +166,14 @@ var DashboardManager = function () {
             }
         });
 
+        $('.accountinfo').click(function () {
+            var accInfoContent = $('.accinfo-content');
+            var src = accInfoContent.attr('src');
+            if (!src) {
+                accInfoContent.attr('src', '/' + baseOldMainApp + '_AccountInfo/AccountInfo.aspx?fromNewSite=1');
+            }
+        });
+
         setTimeout(self.getMessages, 500);
         setTimeout(self.reCheckin, 30000);
     };

@@ -25,7 +25,7 @@
             
             if (UserSession.Current.CustId == 0)
             {
-                var logInUrl = "/" + _appPathService.GetAppPath(AppSettings.OldMainApp, FormsAuthentication.LoginUrl);
+                var logInUrl = _appPathService.GetAppPath(AppSettings.OldMainApp, FormsAuthentication.LoginUrl);
                 Response.Redirect(logInUrl, true);
                 return;
             }
