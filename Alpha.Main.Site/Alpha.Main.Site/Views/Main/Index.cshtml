@@ -63,7 +63,7 @@
                                         {
                                             if (subMenu.Status.IsVisible)
                                             {
-                                                <li class="sub-menu-item">
+                                                <li class="sub-menu-item @(subMenu.Status.IsDisabled?"disabled-menu":string.Empty)">
                                                     <a href="@subMenu.Url" target="main">
                                                         @subMenu.DisplayName
                                                     </a>

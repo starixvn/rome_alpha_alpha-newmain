@@ -26,15 +26,15 @@
     <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]" >
       <siteMapNode resourceKey="memberWinLoss" appName="OldMainApp" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberwinlossdetail" appName="OldMainApp" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="memberOutstanding" appName="OldMainApp" url="_Reports/Common/Outstanding.aspxlv=2" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberOutstanding" appName="OldMainApp" url="_Reports/Common/Outstanding.aspx?lv=2" roles="Agent"></siteMapNode>
 
       <siteMapNode resourceKey="agentwinloss" appName="OldMainApp" url="_Reports/Common/MatchResultEntered.aspx?lv=3" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="agentwinlostdetail" appName="OldMainApp" url="_Reports/Winloss/WinLossDetailMaster.aspx" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="agentOutstanding" appName="OldMainApp" url="_Reports/Common/Outstanding.aspxlv=3" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="agentOutstanding" appName="OldMainApp" url="_Reports/Common/Outstanding.aspx?lv=3" roles="Master"></siteMapNode>
 
       <siteMapNode resourceKey="masterwinloss" appName="OldMainApp" url="_Reports/Common/MatchResultEntered.aspx?lv=4" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="masterwinlostdetail" appName="OldMainApp" url="_Reports/Winloss/WinLossDetailSuper.aspx" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="masterOutstanding" appName="OldMainApp" url="_Reports/Common/Outstanding.aspxlv=4" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="masterOutstanding" appName="OldMainApp" url="_Reports/Common/Outstanding.aspx?lv=4" roles="Super"></siteMapNode>
 
       <!--Casino-RealTimeWL-->
       <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appName="OldMainApp" url="_Reports/CasinoWinloss/CSWinlossAgent.aspx" roles="Agent"></siteMapNode>
