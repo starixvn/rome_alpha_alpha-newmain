@@ -35,13 +35,15 @@ var DashboardManager = function () {
         dashboardManager.selectTopMenu();
         dashboardManager.showHotMsg(_resources.msgList);
 
+        self.storeElements();
         self.initElements();
         self.bindEvents();
         self.setSharedVariables();
     };
+    self.storeElements = function () {
+        self.data.subMenuItems = $('.sub-menu-item');
+    };
     self.initElements = function () {
-        var firstMenu = $('.list-menu > .menu-item:first-child');
-        self.expandMenu(firstMenu);
         customerProfile.loadCustomerProfile();
     };
     self.expandMenu = function (menu) {
@@ -122,6 +124,10 @@ var DashboardManager = function () {
                     checkElement.slideDown('normal');
                 }
             }
+        });
+
+        self.data.subMenuItems.click(function () {
+            self.activeSubMenuItem($(this));
         });
 
         $('.sidebar').hover(
@@ -511,6 +517,11 @@ var DashboardManager = function () {
     };
     self.closeListSetting = function () {
         self.activeSettingList();
+    };
+
+    self.activeSubMenuItem = function (subMenu) {
+        self.data.subMenuItems.removeClass('active');
+        subMenu.addClass('active');
     };
 };
 
