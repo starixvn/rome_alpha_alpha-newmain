@@ -16,7 +16,7 @@
       <siteMapNode menuItemType="CasinoMenuItem" resourceKey="casinoPositionTaking" appName="OldMainApp" url="_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
       <!--/Casino-PositionTaking-->
       <!--Bingo-PositionTaking-->
-      <siteMapNode resourceKey="bingoPositionTaking" appName="OldMainApp" url="_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="bingoPositionTaking" menuItemType="BingoPositionTakingMenuItem" appName="OldMainApp" url="_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
       <!--/Bingo-PositionTaking-->
       <siteMapNode resourceKey="memberCommission" appName="OldMainApp" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
       <siteMapNode resourceKey="MemberWinLimit" appName="OldMainApp" url="MemberInformation/WinLimit/Index"></siteMapNode>

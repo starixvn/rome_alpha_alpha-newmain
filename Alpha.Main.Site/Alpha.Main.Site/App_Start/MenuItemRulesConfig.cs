@@ -26,9 +26,10 @@
             ["RacingMenuItem"] = () => new MenuStatus(IsShowRacing),
             ["CasinoMenuItem"] = () => new MenuStatus(IsShowCasino),
             ["BingoMenuItem"] = () => new MenuStatus(IsShowBingoReport),
+            ["BingoPositionTakingMenuItem"] = () => new MenuStatus(IsShowBingo),
             ["NumberGameMenuItem"] = () => new MenuStatus(IsShowNumberGame),
             ["LiveCasinoMenuItem"] = () => new MenuStatus(IsShowLiveCasino),
-            ["ConsolidatedReportMenuItem"] = () => new MenuStatus(UserSession.Current.IsShowConsolidatedReport),            
+            ["ConsolidatedReportMenuItem"] = () => new MenuStatus(UserSession.Current.IsShowConsolidatedReport),
             ["FoobetMenuItem"] = () => new MenuStatus(UserSession.Current.CustId != AppSettings.CustIdFoobet),
             ["MemberWinLimitMenuItem"] = () => new MenuStatus(UserSession.Current.IsLiveCasinoSync || !UserSession.Current.IsHideGoldDeluxe),
             ["LastBetMonitorMenuItem"] = () => new MenuStatus(null, () =>
