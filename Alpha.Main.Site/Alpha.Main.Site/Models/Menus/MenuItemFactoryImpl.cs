@@ -13,15 +13,15 @@
 
     public class MenuItemFactoryImpl : MenuItemFactory
     {
-        private readonly IDictionary<string, Func<IMenuItem>> menuItemTypeConfiguration; 
+        private readonly IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration; 
 
         public MenuItemFactoryImpl() : this(null)
         {
         }
 
-        internal MenuItemFactoryImpl(IDictionary<string, Func<IMenuItem>> menuItemTypeConfiguration)
+        internal MenuItemFactoryImpl(IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration)
         {
-            this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? MenuItemRulesConfig.MenuContainer;
+            this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? MenuItemRulesConfig.MenuItemTypeStatuRules;
         }
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
@@ -37,7 +37,7 @@
         {
             Contract.Ensures(siteMapNode != null);
 
-            var menuItem = menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty].Invoke();
+            var menuItem = new MenuItem(menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty]);
 
             SetDataForMenuItem(menuItem, siteMapNode);
 

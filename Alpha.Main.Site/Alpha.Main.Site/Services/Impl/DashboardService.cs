@@ -301,7 +301,7 @@
             var subMenuCount = siteNode.ChildNodes.Count;
 
             var user = new User();
-            user.Level = Enumeration.FromValue<UserLevel>(2);
+            user.Level = Enumeration.FromValue<UserLevel>(UserSession.Current.RoleId);
             user.SubAccountId = UserSession.Current.SubAccId;
             menuList = siteMenuService.GetMenuByUser(user).ToList();
 

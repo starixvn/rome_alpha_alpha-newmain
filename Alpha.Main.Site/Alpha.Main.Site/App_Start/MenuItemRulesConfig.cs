@@ -14,24 +14,24 @@
 
     public static class MenuItemRulesConfig
     {
-        public static readonly Dictionary<string, Func<IMenuItem>> MenuContainer = new Dictionary<string, Func<IMenuItem>>
+        public static readonly Dictionary<string, Func<MenuStatus>> MenuItemTypeStatuRules = new Dictionary<string, Func<MenuStatus>>
         {
-            [string.Empty] = () => new MenuItem(getMenuStatusFunc: null),
-            ["ReportMenuItem"] = () => new MenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewReports)),
-            ["TotalBetsMenuItem"] = () => new MenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets)),
-            ["MemberInfoMenuItem"] = () => new MenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo)),
-            ["TransferMenuItem"] = () => new MenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.Transfer)),
-            ["ViewLogMenuItem"] = () => new MenuItem(() => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog)),
-            ["SubAccountMenuItem"] = () => new MenuItem(() => new MenuStatus(!Current.IsSubAcc)),
-            ["RacingMenuItem"] = () => new MenuItem(() => new MenuStatus(IsShowRacing)),
-            ["CasinoMenuItem"] = () => new MenuItem(() => new MenuStatus(IsShowCasino)),
-            ["BingoMenuItem"] = () => new MenuItem(() => new MenuStatus(IsShowBingoReport)),
-            ["NumberGameMenuItem"] = () => new MenuItem(() => new MenuStatus(IsShowNumberGame)),
-            ["LiveCasinoMenuItem"] = () => new MenuItem(() => new MenuStatus(IsShowLiveCasino)),
-            ["ConsolidatedReportMenuItem"] = () => new MenuItem(() => new MenuStatus(UserSession.Current.IsShowConsolidatedReport)),            
-            ["FoobetMenuItem"] = () => new MenuItem(() => new MenuStatus(UserSession.Current.CustId != AppSettings.CustIdFoobet)),
-            ["MemberWinLimitMenuItem"] = () => new MenuItem(() => new MenuStatus(UserSession.Current.IsLiveCasinoSync || !UserSession.Current.IsHideGoldDeluxe)),
-            ["LastBetMonitorMenuItem"] = () => new MenuItem(() => new MenuStatus(() =>
+            [string.Empty] = null,
+            ["ReportMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewReports),
+            ["TotalBetsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets),
+            ["MemberInfoMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo),
+            ["TransferMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.Transfer),
+            ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
+            ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),
+            ["RacingMenuItem"] = () => new MenuStatus(IsShowRacing),
+            ["CasinoMenuItem"] = () => new MenuStatus(IsShowCasino),
+            ["BingoMenuItem"] = () => new MenuStatus(IsShowBingoReport),
+            ["NumberGameMenuItem"] = () => new MenuStatus(IsShowNumberGame),
+            ["LiveCasinoMenuItem"] = () => new MenuStatus(IsShowLiveCasino),
+            ["ConsolidatedReportMenuItem"] = () => new MenuStatus(UserSession.Current.IsShowConsolidatedReport),            
+            ["FoobetMenuItem"] = () => new MenuStatus(UserSession.Current.CustId != AppSettings.CustIdFoobet),
+            ["MemberWinLimitMenuItem"] = () => new MenuStatus(UserSession.Current.IsLiveCasinoSync || !UserSession.Current.IsHideGoldDeluxe),
+            ["LastBetMonitorMenuItem"] = () => new MenuStatus(null, () =>
             {
                 if (UserSession.Current.IsInternal || AppSettings.EnableBetsListMonitoring)
                 {
@@ -46,7 +46,7 @@
 
                 return disabled;
 
-            }))
+            })
         };
     }
 }
