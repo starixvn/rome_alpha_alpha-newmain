@@ -58,12 +58,12 @@ a, a:focus, a:active, a:target, a:hover {
     bottom: 0;
     left: 0;
     overflow: hidden;
-    transition: all 0.25s ease-in 0s;
+    transition: width 0.7s cubic-bezier(0.15, 0.99, 0.18, 1.01) 0s;
     z-index: 99;
     //sidebar when collapsed 
     &.collapsed {
         width: 46px;
-        transition: all 0.25s ease-in 0s;
+        transition: width 0.7s cubic-bezier(0.15, 0.99, 0.18, 1.01) 0s;
         .userinfo {
             display: none;
         }
