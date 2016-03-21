@@ -207,10 +207,11 @@ a, a:focus, a:active, a:target, a:hover {
     font-weight: 600;
     height: 36px;
     line-height: 36px; }
-  .mainmenu-container .sub-menu .sub-menu-item:hover a {
+  .mainmenu-container .sub-menu .sub-menu-item:hover a, .mainmenu-container .sub-menu .sub-menu-item.active a {
     color: #5c1218; }
-  .mainmenu-container .sub-menu .sub-menu-item .disabled-menu {
-    color: #767676; }
+  .mainmenu-container .sub-menu .sub-menu-item.disabled-menu a {
+    color: #555;
+    opacity: 0.6; }
 
 /********************************** Account Info ******************************************/
 .accountinfo-container {
