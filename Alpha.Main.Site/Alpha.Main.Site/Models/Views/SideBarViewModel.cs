@@ -10,6 +10,6 @@
 
         public bool ShowAccountInfo { get; set; }
 
-        public List<IMenuItem> MenuList { get; set; }
+        public IEnumerable<IMenuItem> MenuList { get; set; }
     }
 }

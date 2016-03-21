@@ -22,6 +22,7 @@
         {
             base.OnAuthentication(filterContext);
 
+            
             if (UserSession.Current.CustId == 0)
             {
                 var logInUrl = "/" + _appPathService.GetAppPath(AppSettings.OldMainApp, FormsAuthentication.LoginUrl);

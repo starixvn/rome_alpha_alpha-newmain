@@ -648,7 +648,7 @@
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
     <Compile Include="Models\Views\CustomerProfile\ProfilePictureViewModel.cs" />
     <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
-    <Compile Include="Models\Views\LeftMenuViewModel.cs" />
+    <Compile Include="Models\Views\SideBarViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
