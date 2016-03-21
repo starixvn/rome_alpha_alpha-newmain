@@ -6,20 +6,22 @@
     using System.Web;
 
     public class MenuStatus
-    {                
-        public MenuStatus(bool isVisible = true, bool isDisabled = false)
+    {
+        public MenuStatus(bool visible = true, bool disabled = false)
         {
-            this.IsVisible = isVisible;
-            this.IsDisabled = isDisabled;
+            this.Visible = visible;
+            this.Disabled = disabled;
         }
 
-        public MenuStatus(Func<bool> getDisableFunc = null) : this(true, getDisableFunc.Invoke())
+        public MenuStatus(Func<bool> getVisibleFunc = null, Func<bool> getDisableFunc = null)
+            : this(getVisibleFunc != null ? getVisibleFunc.Invoke() : true,
+                  getDisableFunc != null ? getDisableFunc.Invoke() : false)
         {
         }
 
-        public bool IsVisible { get; }
+        public bool Visible { get; }
 
-        public bool IsDisabled { get; }
+        public bool Disabled { get; }
 
     }
 }

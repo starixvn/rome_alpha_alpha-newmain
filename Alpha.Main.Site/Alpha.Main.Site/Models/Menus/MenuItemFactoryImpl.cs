@@ -7,25 +7,21 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Web;
+    using App_Start;
     using Fanex.Common.Helper;
     using SimpleInjector;
 
     public class MenuItemFactoryImpl : MenuItemFactory
     {
-        private readonly Container container;
+        private readonly IDictionary<string, Func<IMenuItem>> menuItemTypeConfiguration; 
 
-        public MenuItemFactoryImpl(Container container)
+        public MenuItemFactoryImpl() : this(null)
         {
-            this.container = container;
         }
 
-        private static Type GetMenuItemType(SiteMapNode siteMapNode)
+        internal MenuItemFactoryImpl(IDictionary<string, Func<IMenuItem>> menuItemTypeConfiguration)
         {
-            var menuItemType = string.IsNullOrWhiteSpace(siteMapNode["menuItemType"])
-                ? typeof(MenuItem)
-                : Type.GetType($"Alpha.Main.Site.Models.Menus.{siteMapNode["menuItemType"]}", throwOnError: false, ignoreCase: false);
-
-            return menuItemType;
+            this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? MenuItemRulesConfig.MenuContainer;
         }
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
@@ -34,26 +30,14 @@
             menuItem.Name = node.ResourceKey.ToLower();
             menuItem.Url = node.Key;
             menuItem.AppName = node["AppName"];
-            menuItem.SubMenus = new List<IMenuItem>();           
-
-            if (node.HasChildNodes)
-            {
-                menuItem.ShowSubMenus = GetExpandAttributeInfo(node);
-            }
-        }
-
-        private static bool GetExpandAttributeInfo(SiteMapNode node)
-        {
-            return !string.IsNullOrWhiteSpace(node["expand"])
-                   && ("1".Equals(node["expand"])
-                     || "true".Equals(node["expand"], StringComparison.InvariantCultureIgnoreCase));
+            menuItem.SubMenus = new List<IMenuItem>();          
         }
 
         public IMenuItem Create(SiteMapNode siteMapNode)
         {
             Contract.Ensures(siteMapNode != null);
-                        
-            var menuItem = (IMenuItem)this.container.GetInstance(GetMenuItemType(siteMapNode));
+
+            var menuItem = menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty].Invoke();
 
             SetDataForMenuItem(menuItem, siteMapNode);
 

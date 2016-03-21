@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
@@ -38,9 +39,7 @@
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
 
             // This is an extension method from the integration package as well.
-            container.RegisterMvcIntegratedFilterProvider();
-
-            MenuItemConfig.Register(container);
+            container.RegisterMvcIntegratedFilterProvider();            
 
             container.Verify();            
 
@@ -80,6 +79,8 @@
             container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Scoped);
             container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
             container.Register<MenuItemFactory, MenuItemFactoryImpl>(Lifestyle.Singleton);
+
+
 
         }
 

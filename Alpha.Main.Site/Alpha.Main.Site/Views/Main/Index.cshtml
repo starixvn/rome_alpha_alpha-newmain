@@ -48,7 +48,7 @@
                 <ul class="list-menu">
                     @foreach (var menu in Model.SideBar.MenuList)
                     {
-                        if (menu.Status.IsVisible)
+                        if (menu.Status.Visible)
                         {
                             if (menu.SubMenus.Any())
                             {
@@ -61,7 +61,7 @@
                                     <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
                                         @foreach (var subMenu in menu.SubMenus)
                                         {
-                                            if (subMenu.Status.IsVisible)
+                                            if (subMenu.Status.Visible)
                                             {
                                                 <li class="sub-menu-item @(subMenu.Status.IsDisabled?"disabled-menu":string.Empty)">
                                                     <a href="@subMenu.Url" target="main">

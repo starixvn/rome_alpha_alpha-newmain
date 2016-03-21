@@ -69,9 +69,9 @@
       <siteMapNode resourceKey="cancelledBets" appName="OldMainApp" url="_Reports/BetList/CancelBetList.aspx"></siteMapNode>
       <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="monitor" appName="OldMainApp" url="_Reports/LastBetMonitoring/LastBetMonitoring.aspx" roles="Agent"></siteMapNode>
       <!--Statement-->
-      <siteMapNode resourceKey="statement" menuItemType="StatementMenuItem" appName="OldMainApp" url="Finance/StatementSMA?rptmrange=5&amp;roleId=2" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="statement" menuItemType="StatementMenuItem" appName="OldMainApp" url="Finance/StatementSMA?rptmrange=5&amp;roleId=3" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="statement" menuItemType="StatementMenuItem" appName="OldMainApp" url="Finance/StatementSMA?rptmrange=5&amp;roleId=4" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="statement" appName="OldMainApp" url="Finance/StatementSMA?CustID=custidParam&amp;RoleID=2&amp;rptmrange=5" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="statement"  appName="OldMainApp" url="Finance/StatementSMA?CustID=custidParam&amp;RoleID=3&amp;rptmrange=5" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="statement"  appName="OldMainApp" url="Finance/StatementSMA?CustID=custidParam&amp;RoleID=4&amp;rptmrange=5" roles="Super"></siteMapNode>
       <!--/Statement-->
 
       <!--Foobet-->
