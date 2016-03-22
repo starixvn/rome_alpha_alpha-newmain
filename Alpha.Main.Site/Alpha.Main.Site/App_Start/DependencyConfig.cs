@@ -78,6 +78,7 @@
             container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Scoped);
             container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
             container.Register<MenuItemFactory, MenuItemFactoryImpl>(Lifestyle.Singleton);
+            container.Register<AuthorizeUrlService, AuthorizeUrlServiceImpl>(Lifestyle.Scoped);
         }
 
         private static void RegisterDataAccesses(Container container)

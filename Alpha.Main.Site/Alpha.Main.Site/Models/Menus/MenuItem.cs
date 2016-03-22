@@ -18,19 +18,19 @@
         private Func<string, bool> authorizeUrlFunc;
 
         protected MenuItem() 
-            : this(null, null, null)
+            : this(null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null) 
-            : this(getMenuStatusFunc, null, null)
+            : this(getMenuStatusFunc, null)
         {           
         }
 
-        public MenuItem(Func<MenuStatus> getMenuStatusFunc, Func<string, bool> authorizeUrlFunc, Func<string> getUrlFunc)
+        public MenuItem(Func<MenuStatus> getMenuStatusFunc, Func<string, bool> authorizeUrlFunc)
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
-            this.getUrlFunc = getUrlFunc ?? FormatUrl;
+            this.authorizeUrlFunc = authorizeUrlFunc;            
         }
 
         public string Key { get; set; }
@@ -51,7 +51,14 @@
         {
             get
             {
-                return getUrlFunc.Invoke();
+                var appVirtualPath = AppSettings.GetAppName(AppName);
+
+                if (!string.IsNullOrWhiteSpace(appVirtualPath))
+                {
+                    return "/" + Regex.Replace(this.url, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath, RegexOptions.IgnoreCase);
+                }
+
+                return this.url;
             }
 
             set
@@ -64,7 +71,9 @@
         {
             get
             {
-                return authorizeUrlFunc.Invoke(this.url)
+                var isAuthorized = authorizeUrlFunc.Invoke(this.url);
+
+                return isAuthorized
                     ? getMenuStatusFunc.Invoke()
                     : new MenuStatus(false, false);
             }
@@ -73,17 +82,5 @@
         public bool ShowSubMenus { get; set; }
 
         public List<IMenuItem> SubMenus { get; set; }
-
-        private string FormatUrl()
-        {
-            var appVirtualPath = AppSettings.GetAppName(AppName);
-            if (!string.IsNullOrWhiteSpace(appVirtualPath))
-            {
-                var menuItemUrl = HttpContext.Current.Response.ApplyAppPathModifier(this.url);
-                return "/" + Regex.Replace(menuItemUrl, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath, RegexOptions.IgnoreCase);
-            }
-
-            return this.url;
-        }
     }
 }
