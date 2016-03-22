@@ -42,11 +42,11 @@
             return _dashboardService.ChangeLanguage(message);
         }
 
-        private SideBarViewModel LeftMenu()
+        private NavigationViewModel LeftMenu()
         {
             var menus = _dashboardService.GetLeftMenu();
             var pageAccess = UserSession.Current.SubPageAccess;
-            var leftMenu = new SideBarViewModel
+            var leftMenu = new NavigationViewModel
             {
                 IsShowMenu = _dashboardService.IsShowLeftMenu(),
                 ShowAccountInfo = pageAccess.ViewMemberInfo,

@@ -21,6 +21,6 @@
 
         public bool IsMainPageFromCookie { get; set; }
 
-        public SideBarViewModel SideBar { get; set; }
+        public NavigationViewModel SideBar { get; set; }
     }
 }

@@ -15,18 +15,19 @@
         private string url;
         private Func<MenuStatus> getMenuStatusFunc;
         private Func<string> getUrlFunc;
+        private Func<string, bool> authorizeUrlFunc;
 
         protected MenuItem() 
-            : this(null, null)
+            : this(null, null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null) 
-            : this(getMenuStatusFunc, null)
+            : this(getMenuStatusFunc, null, null)
         {           
         }
 
-        public MenuItem(Func<MenuStatus> getMenuStatusFunc, Func<string> getUrlFunc)
+        public MenuItem(Func<MenuStatus> getMenuStatusFunc, Func<string, bool> authorizeUrlFunc, Func<string> getUrlFunc)
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
             this.getUrlFunc = getUrlFunc ?? FormatUrl;
@@ -63,7 +64,9 @@
         {
             get
             {
-                return getMenuStatusFunc.Invoke();
+                return authorizeUrlFunc.Invoke(this.url)
+                    ? getMenuStatusFunc.Invoke()
+                    : new MenuStatus(false, false);
             }
         }
 

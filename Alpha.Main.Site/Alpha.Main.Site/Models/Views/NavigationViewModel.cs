@@ -4,7 +4,7 @@
     using Dtos;
     using Menus;
 
-    public class SideBarViewModel
+    public class NavigationViewModel
     {
         public bool IsShowMenu { get; set; }
 
