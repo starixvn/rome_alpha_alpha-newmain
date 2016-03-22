@@ -605,9 +605,7 @@
     <Compile Include="Constants\MessageIdConstant.cs" />
     <Compile Include="Constants\MessageTypeConstant.cs" />
     <Compile Include="Constants\MessageTypeNameConstant.cs" />
-    <Compile Include="Constants\RoleDescriptionConstant.cs" />
     <Compile Include="Constants\RoleIdConstant.cs" />
-    <Compile Include="Constants\SubMenuIndexConstant.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
