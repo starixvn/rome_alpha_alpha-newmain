@@ -31,8 +31,8 @@
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
         {
-            menuItem.Key = node.ResourceKey;
-            menuItem.Name = node.ResourceKey.ToLower();
+            menuItem.Key = node.Key;
+            menuItem.ResourceKey = node.ResourceKey;
             menuItem.Url = node.Url;
             menuItem.AppName = node["AppName"];
             menuItem.SubMenus = new List<IMenuItem>();

@@ -55,7 +55,7 @@
                                 <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
                                     <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
                                        href="javascript:;">
-                                        <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
+                                        <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()"></span>@menu.DisplayName</span>
                                         <span class="pull-right icon-arrow-right"></span>
                                     </a>
                                     <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
@@ -77,7 +77,7 @@
                             {
                                 <li class="menu-item">
                                     <a class="withripple menu-opener parent-menu" href="@menu.Url" target="main">
-                                        <span class="txt-item pull-left"><span class="icon icon-@menu.Name"></span>@menu.DisplayName</span>
+                                        <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()"></span>@menu.DisplayName</span>
                                     </a>
                                 </li>
                             }

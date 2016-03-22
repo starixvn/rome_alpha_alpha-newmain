@@ -35,7 +35,7 @@
 
         public string Key { get; set; }
 
-        public string Name { get; set; }
+        public string ResourceKey { get; set; }
 
         public string AppName { get; set; }
 
@@ -43,7 +43,7 @@
         {
             get
             {
-                return Alpha_sitemap.ResourceManager.GetString(this.Key);
+                return Alpha_sitemap.ResourceManager.GetString(this.ResourceKey);
             }
         }
 
