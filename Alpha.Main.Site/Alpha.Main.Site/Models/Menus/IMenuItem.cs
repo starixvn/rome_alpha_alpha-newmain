@@ -14,11 +14,11 @@
 
         string DisplayName { get; }
 
-        string Url { get; set; }        
+        string Url { get; set; }
 
         string AppName { get; set; }
 
-        MenuStatus Status { get; }        
+        MenuStatus Status { get; }
 
         bool ShowSubMenus { get; set; }
 

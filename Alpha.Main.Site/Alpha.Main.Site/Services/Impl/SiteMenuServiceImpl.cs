@@ -47,12 +47,12 @@
 
             if (menuItems == null)
             {
-                Contract.Requires(SiteMap.RootNode != null, nameof(SiteMap.RootNode));                
+                Contract.Requires(SiteMap.RootNode != null, nameof(SiteMap.RootNode));
 
                 menuItems = BuildMenu(SiteMap.RootNode, userLevel);
 
                 cacheManager.Add(cacheKey, menuItems);
-            }           
+            }
 
             return menuItems;
         }
@@ -61,7 +61,7 @@
         {
             Contract.Ensures(siteMapNode != null, nameof(siteMapNode));
 
-            var menuItems = new List<IMenuItem>();            
+            var menuItems = new List<IMenuItem>();
 
             if (siteMapNode.HasChildNodes)
             {
@@ -86,6 +86,6 @@
             }
 
             return menuItems;
-        }                
+        }
     }
 }

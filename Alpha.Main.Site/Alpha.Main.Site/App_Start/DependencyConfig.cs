@@ -23,7 +23,7 @@
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
         public static void Init()
-        {            
+        {
             var container = new Container();
 
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
@@ -40,9 +40,9 @@
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
 
             // This is an extension method from the integration package as well.
-            container.RegisterMvcIntegratedFilterProvider();            
+            container.RegisterMvcIntegratedFilterProvider();
 
-            container.Verify();            
+            container.Verify();
 
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }

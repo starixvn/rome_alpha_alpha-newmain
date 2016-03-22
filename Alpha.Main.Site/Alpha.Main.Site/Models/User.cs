@@ -11,11 +11,11 @@
         private int id;
         private string name;
         private int subAccountId;
-        private UserLevel level;        
+        private UserLevel level;
 
         public User()
-        {            
-        }        
+        {
+        }
 
         public new int Id
         {
@@ -111,6 +111,6 @@
             {
                 return !IsSubAccount;
             }
-        }        
+        }
     }
 }

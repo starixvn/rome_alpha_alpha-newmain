@@ -13,7 +13,7 @@
 
     public class MenuItemFactoryImpl : MenuItemFactory
     {
-        private readonly IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration; 
+        private readonly IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
 
         public MenuItemFactoryImpl() : this(null)
         {
@@ -30,7 +30,7 @@
             menuItem.Name = node.ResourceKey.ToLower();
             menuItem.Url = node.Key;
             menuItem.AppName = node["AppName"];
-            menuItem.SubMenus = new List<IMenuItem>();          
+            menuItem.SubMenus = new List<IMenuItem>();
         }
 
         public IMenuItem Create(SiteMapNode siteMapNode)

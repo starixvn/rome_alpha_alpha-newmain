@@ -74,33 +74,11 @@
             return avatar;
         }
 
-       
+
         public SiteMapNode GetSiteMapNode()
         {
-
-
             var node = SiteMap.Provider.RootNode;
-
-
-            
-
-            return node;        
-                
-                
-                
-
-            //var roleId = UserSession.Current.RoleId;
-            //switch (roleId)
-            //{
-            //    case (int)UserTypes.Agent:
-            //        return rootNode.ChildNodes[0];
-            //    case (int)UserTypes.Master:
-            //        return rootNode.ChildNodes[1];
-            //    case (int)UserTypes.Super:
-            //        return rootNode.ChildNodes[2];
-            //    default:
-            //        throw new BusinessException("Invalid role id for customer " + UserSession.Current.CustId + ": " + roleId);
-            //}
+            return node;
         }
     }
 }
