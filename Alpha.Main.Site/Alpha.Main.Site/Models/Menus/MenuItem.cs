@@ -55,7 +55,7 @@
 
                 if (!string.IsNullOrWhiteSpace(appVirtualPath))
                 {
-                    return "/" + Regex.Replace(this.url, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath, RegexOptions.IgnoreCase);
+                    return this.url.ToLowerInvariant().Replace(HttpRuntime.AppDomainAppVirtualPath.ToLowerInvariant(), "/" + appVirtualPath);
                 }
 
                 return this.url;
