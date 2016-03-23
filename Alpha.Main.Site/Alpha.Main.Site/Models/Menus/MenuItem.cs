@@ -53,8 +53,8 @@
                 var appVirtualPath = AppSettings.GetAppName(AppName);
 
                 if (!string.IsNullOrWhiteSpace(appVirtualPath))
-                {
-                    return this.url.ToLowerInvariant().Replace(HttpRuntime.AppDomainAppVirtualPath.ToLowerInvariant(), "/" + appVirtualPath);
+                {                    
+                    return  Regex.Replace(this.url, HttpRuntime.AppDomainAppVirtualPath, "/" + appVirtualPath);
                 }
 
                 return this.url;
