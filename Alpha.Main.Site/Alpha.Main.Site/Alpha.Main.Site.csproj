@@ -339,7 +339,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\PagesAccess.xml" />
+    <Content Include="App_Data\PagesAccess.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml" />

@@ -71,7 +71,7 @@
         {
             get
             {
-                var isAuthorized = authorizeUrlFunc.Invoke(this.url);
+                var isAuthorized = authorizeUrlFunc.Invoke(this.Key);
 
                 return isAuthorized
                     ? getMenuStatusFunc.Invoke()

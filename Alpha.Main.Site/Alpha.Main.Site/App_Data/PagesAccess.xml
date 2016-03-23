@@ -119,7 +119,7 @@
   <add url="_MemberInfo/PositionTaking/Super/EditMultipleMembers.aspx" role="4-[B],4-[H]" id="4406" subfun="Super Edit Multiple Members" fun="Member Info" />
 
   <!--\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/-->
-  <add url="_MemberInfo/SearchAndCopy/MasterPage.aspx" role="2-[A]" id="4011" subfun="Search and Copy - Master Page" fun="Member Info" />
+  <add url="/site-main/_memberinfo/searchandcopy/masterpage.aspx" role="2-[A]" id="4011" subfun="Search and Copy - Master Page" fun="Member Info" />
   <add url="_MemberInfo/SearchAndCopy/SearchUser.aspx" role="2-[A]" id="4012" subfun="Search and Copy - Searching User" fun="Member Info" />
   <add url="_MemberInfo/SearchAndCopy/Agent/InfoMember.aspx" role="2-[A]" id="4013" subfun="Search and Copy - Copy Member" fun="Member Info" />
   <add url="_MemberInfo/SearchAndCopy/Agent/ReviewSettingMember.aspx" role="2-[A]" id="4014" subfun="Search and Copy - Preview Member" fun="Member Info" />
