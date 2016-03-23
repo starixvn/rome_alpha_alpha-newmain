@@ -14,7 +14,7 @@
 
     public static class MenuItemRulesConfig
     {
-        public static readonly Dictionary<string, Func<MenuStatus>> MenuItemTypeStatuRules = new Dictionary<string, Func<MenuStatus>>
+        public static readonly Dictionary<string, Func<MenuStatus>> MenuItemTypeStatusRules = new Dictionary<string, Func<MenuStatus>>
         {
             [string.Empty] = null,
             ["ReportMenuItem"] = () => new MenuStatus(() => !Current.IsSubAcc || Current.SubPageAccess.ViewReports, null),

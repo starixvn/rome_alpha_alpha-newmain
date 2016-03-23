@@ -26,7 +26,7 @@
         internal MenuItemFactoryImpl(AuthorizeUrlService authorizeUrlService, IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration)
         {
             this.authorizeUrlService = authorizeUrlService ?? new AuthorizeUrlServiceImpl();
-            this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? MenuItemRulesConfig.MenuItemTypeStatuRules;
+            this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? MenuItemRulesConfig.MenuItemTypeStatusRules;
         }
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)

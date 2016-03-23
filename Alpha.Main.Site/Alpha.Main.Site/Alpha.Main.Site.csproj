@@ -642,7 +642,6 @@
     <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Views\CustomerInfoViewModel.cs" />
-    <Compile Include="Models\Dtos\BusinessException.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />

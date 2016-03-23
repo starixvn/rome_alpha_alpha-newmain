@@ -13,8 +13,7 @@
     public class MenuItem : IMenuItem
     {
         private string url;
-        private Func<MenuStatus> getMenuStatusFunc;
-        private Func<string> getUrlFunc;
+        private Func<MenuStatus> getMenuStatusFunc;        
         private Func<string, bool> authorizeUrlFunc;
 
         protected MenuItem() 
