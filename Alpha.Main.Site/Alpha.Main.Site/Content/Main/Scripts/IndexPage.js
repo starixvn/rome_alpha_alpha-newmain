@@ -1,10 +1,10 @@
-﻿var dashboardManager;
+﻿var indexPageManager;
 
 jQuery(document).ready(function () {
-    dashboardManager.init();
+    indexPageManager.init();
 });
 
-var DashboardManager = function () {
+var IndexPageManager = function () {
     var self = this;
     var isShowTopRightMenu = false;
     var isShowLanguageList = false;
@@ -32,27 +32,15 @@ var DashboardManager = function () {
     }
 
     self.init = function () {
-        dashboardManager.selectTopMenu();
-        dashboardManager.showHotMsg(_resources.msgList);
-
-        self.storeElements();
+        indexPageManager.selectTopMenu();
+        indexPageManager.showHotMsg(_resources.msgList);
         self.initElements();
         self.bindEvents();
         self.setSharedVariables();
     };
-    self.storeElements = function () {
-        self.data.subMenuItems = $('.sub-menu-item');
-    };
     self.initElements = function () {
-        customerProfile.loadCustomerProfile();
+        self.loadCustomerProfile();
     };
-    self.expandMenu = function (menu) {
-        var firstMenu = $('.list-menu > .menu-item:first-child');
-        menu.addClass('active');
-        menu.find('.parent-menu').addClass('active');
-        menu.find('.sub-menu').slideDown('normal');
-    };
-
     self.bindEvents = function () {
         jQuery(".top-message").click(function () {
             self.showPopupTop(false);
@@ -94,84 +82,6 @@ var DashboardManager = function () {
         });
         jQuery(".old-view-text").click(function () {
             top.location = "/" + top.baseOldMainApp + "Index.aspx";
-        });
-
-        var menuOpener = $('.menu-opener');
-        var subMenu = $('.sub-menu');
-        var menuItems = $('.menu-item');
-        menuOpener.click(function () {
-            var $this = $(this);
-            var menuContainer = $this.closest('li');
-            menuItems.removeClass('active');
-
-            menuContainer.addClass('active');
-            var isVisible = $this.hasClass('active');
-            menuOpener.removeClass('active');
-            subMenu.slideUp('normal');
-            var checkElement = $this.next();
-            if (isVisible) {
-                menuContainer.removeClass('active');
-                $this.removeClass('active');
-
-                if (checkElement.is('ul')) {
-                    checkElement.slideUp('normal');
-                }
-            } else {
-                menuContainer.addClass('active');
-                $this.addClass('active');
-
-                if (checkElement.is('ul')) {
-                    checkElement.slideDown('normal');
-                }
-            }
-        });
-
-        self.data.subMenuItems.click(function () {
-            self.activeSubMenuItem($(this));
-        });
-
-        $('.sidebar').hover(
-            function () {
-                if ($(this).hasClass('collapsed')) {
-                    $("#logoProfileImg").removeClass("collapse-image");
-
-                    var activeSubMenu = $('.menu-item.active .sub-menu');
-                    activeSubMenu.css('display', 'block');
-                }
-            },
-            function () {
-                if ($(this).hasClass('collapsed')) {
-                    $("#logoProfileImg").addClass("collapse-image");
-
-                    var activeSubMenu = $('.menu-item.active .sub-menu');
-                    activeSubMenu.css('display', 'none');
-                }
-            }
-        );
-
-        $('.main-tab li').click(function () {
-            var $this = $(this);
-            var cla = $(this).attr('class');
-            if ($this.hasClass('mainmenu')) {
-                $('.main-tab li').removeClass('active');
-                $(this).addClass('active');
-                $('.mainmenu-container').css('display', 'block');
-                $('.accountinfo-container').css('display', 'none');
-            }
-            else if ($this.hasClass('accountinfo')) {
-                $('.main-tab li').removeClass('active');
-                $(this).addClass('active');
-                $('.accountinfo-container').css('display', 'block');
-                $('.mainmenu-container').css('display', 'none');
-            }
-        });
-
-        $('.accountinfo').click(function () {
-            var accInfoContent = $('.accinfo-content');
-            var src = accInfoContent.attr('src');
-            if (!src) {
-                accInfoContent.attr('src', '/' + baseOldMainApp + '_AccountInfo/AccountInfo.aspx?fromNewSite=1');
-            }
         });
 
         setTimeout(self.getMessages, 500);
@@ -266,7 +176,7 @@ var DashboardManager = function () {
                     var errMsg = result.errMsg;
                     if (errMsg) {
                         alert(errMsg);
-                        dashboardManager.signOut();
+                        indexPageManager.signOut();
                     } else {
                         alert('Could not contact the server. Please check your network connection.');
                     }
@@ -526,11 +436,21 @@ var DashboardManager = function () {
     self.closeListSetting = function () {
         self.activeSettingList();
     };
-
-    self.activeSubMenuItem = function (subMenu) {
-        self.data.subMenuItems.removeClass('active');
-        subMenu.addClass('active');
+    self.loadCustomerProfile = function () {
+        var url = top.baseMainApp + "CustomerProfile/ViewProfile";
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {},
+            responseType: "json",
+            error: function (jqXhr, event, ajaxSettings) {
+            },
+            success: function (data) {
+                $("#profile").html(data);
+                customerProfile.bindEvents();
+            }
+        });
     };
 };
 
-var dashboardManager = new DashboardManager();
+indexPageManager = new IndexPageManager();

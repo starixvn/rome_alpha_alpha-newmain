@@ -92,7 +92,7 @@ var HeaderManager = function () {
         else return true;
     }
     self.changeLanguage = function (lang) {
-        var url = top.baseMainApp + 'Main/ChangeLanguage';
+        var url = top.baseMainApp + 'Home/ChangeLanguage';
         jQuery.ajax({
             type: "POST",
             url: url,
@@ -107,7 +107,7 @@ var HeaderManager = function () {
                     self.reloadPage();
                 } else {
                     if (resultCode == self.enums.ErrorCode.AccessDenied) {
-                        dashboardManager.signOut();
+                        indexPageManager.signOut();
                     }
                 }
             },

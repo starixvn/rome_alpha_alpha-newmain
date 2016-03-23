@@ -3,6 +3,8 @@
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
+    using Models.Requests.Home;
+    using Sunplus.Agent.Model.Entities;
 
     public class HomeController : Controller
     {
@@ -12,23 +14,21 @@
         {
             _mediator = mediator;
         }
-
-        // GET: Index
+        
         public ActionResult Index()
         {
             return View();
         }
 
         [ChildActionOnly]
-        public ActionResult Profile()
+        public PartialViewResult Navigation(NavigationQuery query)
         {
-            return View();
-        }
+            query.SubPageAccess = UserSession.Current.SubPageAccess;
+            query.IsSubAcc = UserSession.Current.IsSubAcc;
+            query.RoleId = UserSession.Current.RoleId;
 
-        [ChildActionOnly]
-        public ActionResult Menu()
-        {
-            return View();
+            var viewModel = _mediator.Send(query);
+            return PartialView(viewModel);
         }
     }
 }

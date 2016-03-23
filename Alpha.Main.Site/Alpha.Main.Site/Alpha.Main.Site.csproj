@@ -424,10 +424,11 @@
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_bg.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_left.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_right.png" />
-    <Content Include="Content\Images\collapse.png" />
-    <Content Include="Content\Images\expand.png" />
-    <Content Include="Content\Images\icon_user_default.png" />
-    <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Main\Scripts\Core.js" />
+    <Content Include="Content\Main\Scripts\Header.js" />
+    <Content Include="Content\Main\Scripts\IndexPage.js" />
+    <Content Include="Content\Main\Scripts\piwikLoader.js" />
+    <Content Include="Content\Main\Scripts\SideBar.js" />
     <Content Include="Content\Main\Styles\Images\headerbg_2.jpg" />
     <Content Include="Content\Main\Styles\Images\headerbg_3.jpg" />
     <Content Include="Content\Main\Styles\Images\headerbg_4.jpg" />
@@ -475,6 +476,59 @@
     <Content Include="Content\Main\Styles\sass\PopupMessage.min.css">
       <DependentUpon>PopupMessage.css</DependentUpon>
     </Content>
+    <Content Include="Content\Home\Scripts\IndexPage.js" />
+    <Content Include="Content\Home\Scripts\SideBar.js" />
+    <Content Include="Content\Images\collapse.png" />
+    <Content Include="Content\Images\expand.png" />
+    <Content Include="Content\Images\icon_user_default.png" />
+    <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Home\Styles\Images\headerbg_2.jpg" />
+    <Content Include="Content\Home\Styles\Images\headerbg_3.jpg" />
+    <Content Include="Content\Home\Styles\Images\headerbg_4.jpg" />
+    <Content Include="Content\Home\Styles\Images\icon_close.jpg" />
+    <Content Include="Content\Home\Styles\Images\profileTooltip_bg.png" />
+    <Content Include="Content\Home\Styles\Images\profileTooltip_left.png" />
+    <Content Include="Content\Home\Styles\Images\profileTooltip_right.png" />
+    <Content Include="Content\Home\Styles\Images\sprite_01.png" />
+    <Content Include="Content\Home\Styles\Images\tooltip_bg.png" />
+    <Content Include="Content\Home\Styles\Images\tooltip_left.png" />
+    <Content Include="Content\Home\Styles\Images\tooltip_right.png" />
+    <Content Include="Content\Home\Styles\sass\dashboard.css">
+      <DependentUpon>dashboard.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\dashboard.min.css">
+      <DependentUpon>dashboard.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\LevelCustomStyle2.css">
+      <DependentUpon>LevelCustomStyle2.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\LevelCustomStyle2.min.css">
+      <DependentUpon>LevelCustomStyle2.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\LevelCustomStyle3.css">
+      <DependentUpon>LevelCustomStyle3.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\LevelCustomStyle3.min.css">
+      <DependentUpon>LevelCustomStyle3.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\LevelCustomStyle4.css">
+      <DependentUpon>LevelCustomStyle4.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\LevelCustomStyle4.min.css">
+      <DependentUpon>LevelCustomStyle4.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\page.css">
+      <DependentUpon>page.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\page.min.css">
+      <DependentUpon>page.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\PopupMessage.css">
+      <DependentUpon>PopupMessage.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\sass\PopupMessage.min.css">
+      <DependentUpon>PopupMessage.css</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\Announcement\Resources\PopupAdAgentNeutral.xml" />
     <Content Include="Content\Announcement\Resources\PopupAdCommon.xml" />
@@ -482,25 +536,24 @@
     <Content Include="Content\Announcement\Resources\PopupAdSuperNeutral.xml" />
     <Content Include="Content\Announcement\Scripts\AnnouncementManager.js" />
     <Content Include="Content\CustomerProfile\Scripts\ViewProfile.js" />
-    <Content Include="Content\Main\Scripts\Core.js" />
-    <Content Include="Content\Main\Scripts\Dashboard.js" />
-    <Content Include="Content\Main\Scripts\Header.js" />
-    <Content Include="Content\Main\Scripts\piwikLoader.js" />
+    <Content Include="Content\Home\Scripts\Core.js" />
+    <Content Include="Content\Home\Scripts\Header.js" />
+    <Content Include="Content\Home\Scripts\piwikLoader.js" />
     <Content Include="Views\CustomerProfile\ViewProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
-    <Content Include="Content\Main\Styles\sass\LevelCustomStyle2.scss" />
-    <Content Include="Content\Main\Styles\sass\LevelCustomStyle3.scss" />
-    <Content Include="Content\Main\Styles\sass\LevelCustomStyle4.scss" />
-    <Content Include="Content\Main\Styles\sass\Variables_Level2.scss" />
-    <Content Include="Content\Main\Styles\sass\Variables_Level3.scss" />
-    <Content Include="Content\Main\Styles\sass\Variables_Level4.scss" />
+    <Content Include="Content\Home\Styles\sass\LevelCustomStyle2.scss" />
+    <Content Include="Content\Home\Styles\sass\LevelCustomStyle3.scss" />
+    <Content Include="Content\Home\Styles\sass\LevelCustomStyle4.scss" />
+    <Content Include="Content\Home\Styles\sass\Variables_Level2.scss" />
+    <Content Include="Content\Home\Styles\sass\Variables_Level3.scss" />
+    <Content Include="Content\Home\Styles\sass\Variables_Level4.scss" />
     <Content Include="Content\Shared\Scripts\SharedScripts.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
-    <Content Include="Content\Main\Styles\sass\page.scss" />
+    <Content Include="Content\Home\Styles\sass\page.scss" />
     <Content Include="App_Data\Alpha.sitemap">
       <SubType>Designer</SubType>
     </Content>
@@ -508,10 +561,19 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Content\Main\Styles\sass\dashboard.scss" />
-    <Content Include="Content\Main\Styles\sass\PopupMessage.scss" />
-    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Content\Home\Styles\sass\dashboard.scss" />
+    <Content Include="Content\Home\Styles\sass\PopupMessage.scss" />
+    <Content Include="Views\Home\Navigation.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Content\Main\Styles\sass\dashboard.scss" />
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle2.scss" />
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle3.scss" />
+    <Content Include="Content\Main\Styles\sass\LevelCustomStyle4.scss" />
+    <Content Include="Content\Main\Styles\sass\page.scss" />
+    <Content Include="Content\Main\Styles\sass\PopupMessage.scss" />
+    <Content Include="Content\Main\Styles\sass\Variables_Level2.scss" />
+    <Content Include="Content\Main\Styles\sass\Variables_Level3.scss" />
+    <Content Include="Content\Main\Styles\sass\Variables_Level4.scss" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -625,6 +687,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
+    <Compile Include="Handlers\HomeHandler.cs" />
     <Compile Include="Models\Dtos\Announcement\AnnouncementModel.cs" />
     <Compile Include="Models\Dtos\Announcement\HotAnnouncementModel.cs" />
     <Compile Include="Models\Dtos\Announcement\MessageModel.cs" />
@@ -640,14 +703,15 @@
     <Compile Include="Models\Menus\IMenuItem.cs" />
     <Compile Include="Models\Menus\MenuItem.cs" />
     <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
+    <Compile Include="Models\Requests\Home\NavigationQuery.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Views\CustomerInfoViewModel.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
-    <Compile Include="Models\Views\CustomerProfile\ProfilePictureViewModel.cs" />
     <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
     <Compile Include="Models\Views\NavigationViewModel.cs" />
+    <Compile Include="DataAccess\HomeDataAccess.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -658,8 +722,10 @@
     <Compile Include="Models\Views\MainIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Impl\DashboardRepository.cs" />
+    <Compile Include="DataAccess\Impl\HomeDataAccessImpl.cs" />
     <Compile Include="Services\AppSettings.cs" />
     <Compile Include="Services\AuthorizeUrlService.cs" />
+    <Compile Include="Services\HomeService.cs" />
     <Compile Include="Services\IAnnouncementService.cs" />
     <Compile Include="Services\CachingService.cs" />
     <Compile Include="Services\IDashboardService.cs" />
@@ -670,6 +736,7 @@
     <Compile Include="Services\Impl\CachingServiceImpl.cs" />
     <Compile Include="Services\Impl\DashboardService.cs" />
     <Compile Include="Services\Impl\FileUploadService.cs" />
+    <Compile Include="Services\Impl\HomeServiceImpl.cs" />
     <Compile Include="Services\Impl\SessionValidationService.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
     <Compile Include="Services\ISessionValidationService.cs" />

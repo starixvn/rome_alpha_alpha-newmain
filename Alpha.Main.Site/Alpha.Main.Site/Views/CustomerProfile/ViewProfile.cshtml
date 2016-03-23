@@ -7,7 +7,9 @@
     var currentUserSession = UserSession.Current;
     string displayProfile = string.Empty;
     var contentFrame = "main";
-    var isShowEditProfilePictureTooltip = Model.IsDefaultAvatar && Model.CountNicknameTooltip < 4;
+    var isShowEditProfilePictureTooltip = Model.IsDefaultAvatar && 
+        Model.CountNicknameTooltip < 4 &&
+        !string.IsNullOrEmpty(currentUserSession.NickName);
     var appPathService = new AppPathServiceImpl();
     var baseOldMainApp = appPathService.GetAppPath(AppSettings.OldMainApp, "~");
 
@@ -52,7 +54,6 @@
                 </div>
                 if (Model.CountNicknameTooltip < 4)
                 {
-                    displayProfile = "none";
                     <div id="tooltip-box">
                         <div class="left">
                         </div>
@@ -71,7 +72,7 @@
 
             if (isShowEditProfilePictureTooltip)
             {
-                <div id="profileTooltip" style="display:@displayProfile;">
+                <div id="profileTooltip">
                     <div class="left">
                     </div>
                     <div class="bg">
@@ -88,3 +89,4 @@
         }
     </div>
 </div>
+<script type="text/javascript" src="~/Content/CustomerProfile/Scripts/ViewProfile.js"></script>

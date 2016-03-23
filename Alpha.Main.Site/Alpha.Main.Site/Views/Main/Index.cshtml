@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" href="/@contentSite/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.min.css">
     <link type="text/css" rel="stylesheet" href="/@contentSite/Fonts/Iconalpha/style.css">
     @Styles.Render("~/bundle/styles/main")
-    <link type="text/css" rel="stylesheet" href="~/@("Content/Main/Styles/sass/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
+    <link type="text/css" rel="stylesheet" href="~/@("Content/Home/Styles/sass/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
 }
 
 <aside class="sidebar">
@@ -123,10 +123,10 @@
                     </a>
                     <ul class="dropdown-menu list-setting">
                         <li><a href="/@(baseOldMainApp + "_HowToUse/Index.aspx")" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
-                        <li><a href="javascript:dashboardManager.changeMenu('/' + top.baseOldMainApp + 'Company/ContactUs/Index'); dashboardManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
+                        <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + 'Company/ContactUs/Index'); indexPageManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
                         <li><a href="/@(baseOldMainApp + "ContextualCustomer/ProfilePicture?custId=" + currentUserSession.CustId)" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
-                        <li><a href="javascript:dashboardManager.changeMenu('/' + top.baseOldMainApp + '_MemberInfo/ChangePassword/ChangePassword.aspx'); dashboardManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
-                        <li><a href="javascript:dashboardManager.changeMenu('/' + top.baseOldMainApp + 'Security/SecurityCode/ChangeSecurityCode'); dashboardManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
+                        <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + '_MemberInfo/ChangePassword/ChangePassword.aspx'); indexPageManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
+                        <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + 'Security/SecurityCode/ChangeSecurityCode'); indexPageManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                     </ul>
                 </li>
                 <li class="withripple"><span class="icon icon-logout"></span></li>
@@ -153,7 +153,7 @@
 <div id="popup-top" class="display-none">
     <div id="popup-line">
         <a class="top-message">
-            <img src="~/Content/Main/Styles/Images/icon_close.jpg" class="button-close" alt="@Resources.close" title="@Resources.close" />
+            <img src="~/Content/Home/Styles/Images/icon_close.jpg" class="button-close" alt="@Resources.close" title="@Resources.close" />
         </a>
     </div>
     <div class="popup-content">
@@ -174,7 +174,7 @@
                 _pkScript = '@AlphaDefinitions.AppSettings.PiwikScript',
                 _pkSiteId = '@AlphaDefinitions.AppSettings.PiwikSiteId';
         </script>
-        <script type="text/javascript" src="~/Content/Main/Scripts/piwikLoader.js"></script>
+        <script type="text/javascript" src="~/Content/Home/Scripts/piwikLoader.js"></script>
         <noscript><p><img src="@AlphaDefinitions.AppSettings.PiwikUrl?idsite=@AlphaDefinitions.AppSettings.PiwikSiteId" style="border:0;" alt="" /></p></noscript>
     }
 

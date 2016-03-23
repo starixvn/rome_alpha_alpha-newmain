@@ -7,6 +7,8 @@
     using System.Diagnostics.Contracts;
     using System.Reflection;
     using System.Web.Mvc;
+    using DataAccess;
+    using DataAccess.Impl;
     using Fanex.Data.Repository;
     using Handlers;
     using MediatR;
@@ -79,12 +81,14 @@
             container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
             container.Register<MenuItemFactory, MenuItemFactoryImpl>(Lifestyle.Singleton);
             container.Register<AuthorizeUrlService, AuthorizeUrlServiceImpl>(Lifestyle.Scoped);
+            container.Register<HomeService, HomeServiceImpl>(Lifestyle.Scoped);
         }
 
         private static void RegisterDataAccesses(Container container)
         {
             container.Register<IDynamicRepository, DynamicRepository>(Lifestyle.Scoped);
             container.Register<IDashboardRepository, DashboardRepository>(Lifestyle.Scoped);
+            container.Register<HomeDataAccess, HomeDataAccessImpl>(Lifestyle.Scoped);
         }
     }
 }

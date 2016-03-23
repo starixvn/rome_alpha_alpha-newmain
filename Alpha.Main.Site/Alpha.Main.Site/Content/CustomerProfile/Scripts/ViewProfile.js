@@ -39,49 +39,28 @@ var CustomerProfile = function () {
             }
         }
     };
+    self.bindEvents = function () {
+        $(".change-picture-link").click(function () {
+            customerProfile.hideProfileTooltip();
+        });
 
-    self.loadCustomerProfile = function () {
-        var url = top.baseMainApp + "CustomerProfile/ViewProfile";
-        var xmlhttp;
-
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        var frameLength = window.parent.frames.length;
+        for (var i = 0; i < frameLength; i++) {
+            $(window.parent.frames[i].window.document).click(function () {
+                customerProfile.clickToHide();
+            });
         }
 
-        xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("profile").innerHTML = xmlhttp.responseText;
-                $(".change-picture-link").click(function () {
-                    customerProfile.hideProfileTooltip();
-                });
-
-                var numerousFrames = window.parent.frames.length;
-
-                for (var i = 0; i < numerousFrames; i++) {
-                    window.parent.frames[i].window.document.onclick = function () {
-                        customerProfile.clickToHide();
-                    }
-                }
-
-                var tooltipBox = $('#tooltip-box');
-                if (tooltipBox.length) {
-                    setTimeout(function () {
-                        customerProfile.hideTooltipIntroNickname();
-                        customerProfile.showTooltipProfilePicture();
-                    }, 10000);
-                }
-                else {
-                    customerProfile.showTooltipProfilePicture();
-                }
-            }
+        var tooltipBox = $('#tooltip-box');
+        if (tooltipBox.length) {
+            setTimeout(function () {
+                customerProfile.hideTooltipIntroNickname();
+                customerProfile.showTooltipProfilePicture();
+            }, 10000);
         }
-
-        xmlhttp.open("POST", url, true);
-        xmlhttp.send();
+        else {
+            customerProfile.showTooltipProfilePicture();
+        }
     };
 };
 
