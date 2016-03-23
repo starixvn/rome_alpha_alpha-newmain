@@ -31,66 +31,44 @@ var HeaderManager = function () {
             _resources.sec = 0;
             _resources.min++;
         }
+
         if (_resources.min == 60) {
             _resources.min = 0;
             _resources.hrs++;
         }
+
         if (_resources.hrs == 24) {
             _resources.hrs = 0;
             _resources.sec = 0;
             _resources.min = 0;
             _resources.day++;
         }
-        if (_resources.min < 10) {
-            strmin = "0" + _resources.min;
-        } else {
-            strmin = _resources.min;
-        }
-        if (_resources.sec < 10) {
-            strsec = "0" + _resources.sec;
-        } else {
-            strsec = _resources.sec;
-        }
 
-        if (!self.isDate(_resources.year, _resources.month, _resources.day)) {
+        strmin = _resources.min < 10 ? "0" + _resources.min : _resources.min;
+        strsec = _resources.sec < 10 ? "0" + _resources.sec : _resources.sec;
+
+        if (!_.isDate(new Date(parseFloat(_resources.year) + "/" + _resources.month + "/" + _resources.day))) {
             //to next _resources.month
             _resources.month++;
             _resources.day = 1;
         }
-        if (!self.isDate(_resources.year, _resources.month, _resources.day)) {
+
+        if (!_.isDate(new Date(parseFloat(_resources.year) + "/" + _resources.month + "/" + _resources.day))) {
             //to next _resources.year
             _resources.year++;
             _resources.month = 1;
             _resources.day = 1;
         }
 
-        if (_resources.hrs >= 12) {
-            stra = _resources.PM;
-        } else {
-            stra = _resources.AM;
-        }
-        if (_resources.hrs >= 12) {
-            strhrs = _resources.hrs - 12;
-        } else {
-            strhrs = _resources.hrs;
-        }
-
+        stra = _resources.hrs >= 12 ? _resources.PM : _resources.AM;
+        strhrs = _resources.hrs >= 12 ? _resources.hrs - 12 : _resources.hrs;
         var months = eval(_resources.months);
 
         var str = strhrs + ":" + strmin + ":" + strsec + " " + stra + " " +
             months[_resources.month - 1] + " " + _resources.day + ", " + _resources.year + " GMT-4";
         $("#clock").html(str);
-
         setTimeout(self.runClock, 1000);
     };
-    self.isDate = function (TDY, TDM, TDD) {
-        // input 3 string
-        var BegDate = new Date(parseFloat(TDY) + "/" + TDM + "/" + TDD);
-        if (BegDate.getYear() < 200) var TBegYear = BegDate.getYear() + 1900
-        else var TBegYear = BegDate.getYear()
-        if (TBegYear != parseFloat(TDY) || BegDate.getMonth() + 1 != parseFloat(TDM) || BegDate.getDate() != parseFloat(TDD)) return false;
-        else return true;
-    }
     self.changeLanguage = function (lang) {
         var url = top.baseMainApp + 'Home/ChangeLanguage';
         jQuery.ajax({

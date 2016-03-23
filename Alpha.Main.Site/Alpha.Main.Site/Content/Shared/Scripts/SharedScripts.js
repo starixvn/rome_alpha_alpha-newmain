@@ -24,6 +24,7 @@ function setCookie(name, value, days, domain) {
     else {
         var expires = "";
     }
+
     document.cookie = name + "=" + value + expires + "; path=/;" + ((typeof domain != 'undefined') ? ("domain=" + domain) : String.Empty);
 }
 
