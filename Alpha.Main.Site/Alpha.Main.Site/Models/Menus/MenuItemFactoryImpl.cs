@@ -23,7 +23,9 @@
         {
         }
 
-        internal MenuItemFactoryImpl(AuthorizeUrlService authorizeUrlService, IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration)
+        internal MenuItemFactoryImpl(
+            AuthorizeUrlService authorizeUrlService, 
+            IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration)
         {
             this.authorizeUrlService = authorizeUrlService ?? new AuthorizeUrlServiceImpl();
             this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? MenuItemRulesConfig.MenuItemTypeStatusRules;
@@ -44,7 +46,7 @@
 
             var menuItem = new MenuItem(
                 menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty], 
-                (string s) => authorizeUrlService.CanAccessUrl(s));
+               authorizeUrlService.CanAccessUrl);
 
             SetDataForMenuItem(menuItem, siteMapNode);
 

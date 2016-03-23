@@ -14,7 +14,7 @@
     {
         private string url;
         private Func<MenuStatus> getMenuStatusFunc;        
-        private Func<string, bool> authorizeUrlFunc;
+        private Predicate<string> authorizeUrlFunc;
 
         protected MenuItem() 
             : this(null, null)
@@ -26,7 +26,7 @@
         {           
         }
 
-        public MenuItem(Func<MenuStatus> getMenuStatusFunc, Func<string, bool> authorizeUrlFunc)
+        public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc)
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
             this.authorizeUrlFunc = authorizeUrlFunc;            
