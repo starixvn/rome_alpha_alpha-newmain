@@ -20,13 +20,12 @@
             return View();
         }
         
-        public ActionResult Navigation(NavigationQuery query)
+        public ActionResult MenuBar()
         {
-            query.SubPageAccess = UserSession.Current.SubPageAccess;
-            query.IsSubAcc = UserSession.Current.IsSubAcc;
-            query.RoleId = UserSession.Current.RoleId;
+            var message = new MenuBarQuery();            
 
-            var viewModel = _mediator.Send(query);
+            var viewModel = _mediator.Send(message);
+
             return View(viewModel);
         }
     }

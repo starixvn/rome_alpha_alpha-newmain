@@ -322,6 +322,10 @@
 
         public bool IsShowLeftMenu()
         {
+            const int ForceChangeSecurityCode = 4;
+            const int ForceChangeSecurityCodeWithoutValidation = 3;
+
+
             if (!UserSession.Current.IsLogged || UserSession.Current.IsPasswordExpired)
             {
                 return false;
@@ -334,9 +338,9 @@
                 return false;
             }
 
-            var oldStatus = UserSession.Current.SecurityCodeResult;
+            var oldStatus = Convert.ToInt32(UserSession.Current.SecurityCodeResult);
             if (!securityCodeSession.IsInternal &&
-                (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
+                (oldStatus == ForceChangeSecurityCode || oldStatus == ForceChangeSecurityCodeWithoutValidation))
             {
                 return false;
             }

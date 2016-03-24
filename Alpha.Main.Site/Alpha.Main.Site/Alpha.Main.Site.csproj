@@ -563,7 +563,7 @@
     </None>
     <Content Include="Content\Home\Styles\sass\dashboard.scss" />
     <Content Include="Content\Home\Styles\sass\PopupMessage.scss" />
-    <Content Include="Views\Home\Navigation.cshtml" />
+    <Content Include="Views\Home\MenuBar.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Content\Main\Styles\sass\dashboard.scss" />
     <Content Include="Content\Main\Styles\sass\LevelCustomStyle2.scss" />
@@ -662,7 +662,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\CssRewriteUrlTransformWrapper.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
-    <Compile Include="App_Start\MenuItemRulesConfig.cs" />
+    <Compile Include="App_Start\RulesConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Constants\DateTimeFormatConstant.cs" />
     <Compile Include="Constants\LanguageConstant.cs" />
@@ -687,7 +687,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
-    <Compile Include="Handlers\HomeHandler.cs" />
+    <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Models\Dtos\Announcement\AnnouncementModel.cs" />
     <Compile Include="Models\Dtos\Announcement\HotAnnouncementModel.cs" />
     <Compile Include="Models\Dtos\Announcement\MessageModel.cs" />
@@ -704,13 +704,14 @@
     <Compile Include="Models\Menus\MenuItem.cs" />
     <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
     <Compile Include="Models\Requests\Home\NavigationQuery.cs" />
+    <Compile Include="Models\Requests\MenuBarQuery.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Views\CustomerInfoViewModel.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
     <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
-    <Compile Include="Models\Views\NavigationViewModel.cs" />
+    <Compile Include="Models\Views\MenuBarViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -757,6 +758,7 @@
   <ItemGroup>
     <Folder Include="DataAccess\Impl\" />
     <Folder Include="Views\Index\" />
+    <Folder Include="Views\MenuBar\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />

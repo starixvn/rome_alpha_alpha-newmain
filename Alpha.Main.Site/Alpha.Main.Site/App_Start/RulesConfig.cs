@@ -5,14 +5,16 @@
     using System.Linq;
     using System.Linq.Expressions;
     using System.Web;
+    using Fanex.Razorbill.Security.Configurations;
+    using Fanex.Razorbill.Security.Sessions;
     using Models.Menus;
     using Services;
-    using SimpleInjector;
+    using SimpleInjector;    
     using Sunplus.Agent.Model.Entities;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
-    public static class MenuItemRulesConfig
+    public static class FunctionConfig
     {
         public static readonly Dictionary<string, Func<MenuStatus>> MenuItemTypeStatusRules = new Dictionary<string, Func<MenuStatus>>
         {
@@ -48,6 +50,38 @@
                 return disabled;
 
             })
+        };
+
+        public static Func<bool> ShowMenuBar = () =>
+        {
+            const int ForceChangeSecurityCode = 4;
+            const int ForceChangeSecurityCodeWithoutValidation = 3;
+
+            if (!UserSession.Current.IsLogged || UserSession.Current.IsPasswordExpired)
+            {
+                return false;
+            }
+
+            var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+            var newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
+            if (newFlowOfSC)
+            {
+                return false;
+            }
+
+            var oldStatus = Convert.ToInt32(UserSession.Current.SecurityCodeResult);
+            if (!securityCodeSession.IsInternal &&
+                (oldStatus == ForceChangeSecurityCode || oldStatus == ForceChangeSecurityCodeWithoutValidation))
+            {
+                return false;
+            }
+
+            return true;
+        };
+
+        public static Func<bool> ShowAccountInfo = () =>
+        {
+            return Current.SubPageAccess.ViewMemberInfo;
         };
     }
 }

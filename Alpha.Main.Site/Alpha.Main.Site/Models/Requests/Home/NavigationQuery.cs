@@ -5,7 +5,7 @@
     using MediatR;
     using Sunplus.Agent.Model.Entities;
 
-    public class NavigationQuery : IRequest<NavigationViewModel>
+    public class NavigationQuery : IRequest<MenuBarViewModel>
     {
         public PageAccess SubPageAccess { get; set; }
 

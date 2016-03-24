@@ -6,7 +6,7 @@
     using Services;
 
     public class HomeHandler :
-          IRequestHandler<NavigationQuery, NavigationViewModel>
+          IRequestHandler<NavigationQuery, MenuBarViewModel>
     {
         private readonly SiteMenuService siteMenuService;
         private readonly IDashboardService dashboardService;
@@ -17,11 +17,11 @@
             this.siteMenuService = siteMenuService;
         }
 
-        public NavigationViewModel Handle(NavigationQuery query)
+        public MenuBarViewModel Handle(NavigationQuery query)
         {
             var menus = siteMenuService.GetMenuByUser(query.GetUser());
 
-            var model = new NavigationViewModel
+            var model = new MenuBarViewModel
             {
                 IsMainMenuVisible = dashboardService.IsShowLeftMenu(),
                 IsAccountInfoVisible = query.SubPageAccess.ViewMemberInfo,

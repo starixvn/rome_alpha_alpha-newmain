@@ -42,18 +42,22 @@
             return _dashboardService.ChangeLanguage(message);
         }
 
-        private NavigationViewModel LeftMenu()
+        private MenuBarViewModel LeftMenu()
         {
+            
             var menus = _dashboardService.GetLeftMenu();
             var pageAccess = UserSession.Current.SubPageAccess;
-            var leftMenu = new NavigationViewModel
-            {
-                IsMainMenuVisible = _dashboardService.IsShowLeftMenu(),
-                IsAccountInfoVisible = pageAccess.ViewMemberInfo,
-                MenuItems = menus
-            };
 
-            return leftMenu;
+            //var leftMenu = new MenuBarViewModel
+            //{
+            //    IsMainMenuVisible = _dashboardService.IsShowLeftMenu(),
+            //    IsAccountInfoVisible = pageAccess.ViewMemberInfo,
+            //    MenuItems = menus
+            //};
+
+            //var leftMenu = new MenuBarViewModel(_dashboardService.IsShowLeftMenu(), pageAccess.ViewMemberInfo, menus);
+
+            throw new System.NotImplementedException();
         }
     }
 }

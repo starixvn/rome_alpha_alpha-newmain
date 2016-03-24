@@ -3,8 +3,7 @@
     using System;
     using System.Diagnostics;
     using Dtos;
-    using Enumerations;
-    using Sunplus.Agent.Model.Entities;
+    using Enumerations;    
 
     [Serializable]
     public class User : Entity<int>, IUser
@@ -17,8 +16,6 @@
         public User()
         {
         }
-        
-        
 
         public new int Id
         {
