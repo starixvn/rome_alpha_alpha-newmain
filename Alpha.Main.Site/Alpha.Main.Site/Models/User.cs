@@ -5,6 +5,7 @@
     using Dtos;
     using Enumerations;
     using Sunplus.Agent.Model.Entities;
+
     [Serializable]
     public class User : Entity<int>, IUser
     {
@@ -16,6 +17,8 @@
         public User()
         {
         }
+        
+        
 
         public new int Id
         {

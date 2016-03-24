@@ -1,14 +1,15 @@
 ﻿@using Alpha.Main.Site.App_GlobalResources;
 @using Alpha.Main.Site.Models.Views
 @model NavigationViewModel
-@if (Model.IsShowMenu)
+
+@if (Model.IsMainMenuVisible)
 {
     <div>
         <ul class="main-tab" id="main-tab">
             <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
-            <li class="accountinfo  @(Model.ShowAccountInfo ? string.Empty : "disabledView")">
+            <li class="accountinfo  @(Model.IsAccountInfoVisible ? string.Empty : "disabledView")">
                 <a href="javascript:;">
-                    @(Model.ShowAccountInfo ? Resources.accountInfo : string.Empty)
+                    @(Model.IsAccountInfoVisible ? Resources.accountInfo : string.Empty)
                 </a>
             </li>
         </ul>
@@ -18,48 +19,42 @@
     </div>
     <section class="mainmenu-container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
         <ul class="list-menu">
-            @foreach (var menu in Model.MenuList)
+            @foreach (var menu in Model.VisibleMenuItems)
+            {
+                if (menu.SubMenus.Any())
                 {
-                    if (menu.Status.Visible)
-                    {
-                        if (menu.SubMenus.Any())
-                        {
-                        <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
-                            <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
-                               href="javascript:;">
-                                <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()"></span>@menu.DisplayName</span>
-                                <span class="pull-right icon-arrow-right"></span>
-                            </a>
-                            <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
-                                @foreach (var subMenu in menu.SubMenus)
-                                {
-                                    if (subMenu.Status.Visible)
-                                    {
-                                        <li class="sub-menu-item @(subMenu.Status.Disabled?"disabled-menu":string.Empty)">
-                                            <a href="@subMenu.Url" target="main">
-                                                @subMenu.DisplayName
-                                            </a>
-                                        </li>
-                                    }
-                                }
-                            </ul>
-                        </li>
-                    }
-                    else
-                    {
-                        <li class="menu-item">
-                            <a class="withripple menu-opener parent-menu" href="@menu.Url" target="main">
-                                <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()"></span>@menu.DisplayName</span>
-                            </a>
-                        </li>
-                    }
+                    <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
+                        <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
+                           href="javascript:;">
+                            <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()"></span>@menu.DisplayName</span>
+                            <span class="pull-right icon-arrow-right"></span>
+                        </a>
+                        <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
+                            @foreach (var subMenu in menu.VisibileSubMenus)
+                            {
+                                <li class="sub-menu-item @(subMenu.Status.Disabled?"disabled-menu":string.Empty)">
+                                    <a href="@subMenu.Url" target="main">
+                                        @subMenu.DisplayName
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li class="menu-item">
+                        <a class="withripple menu-opener parent-menu" href="@menu.Url" target="main">
+                            <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()"></span>@menu.DisplayName</span>
+                        </a>
+                    </li>
                 }
             }
         </ul>
 
     </section>
 
-    if (Model.ShowAccountInfo)
+    if (Model.IsAccountInfoVisible)
     {
         <section class="accountinfo-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
             <span class="icon icon-user"></span>
@@ -67,6 +62,4 @@
                     name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content"></iframe>
         </section>
     }
-
-    <script type="text/javascript" src="~/Content/Home/Scripts/SideBar.js"></script>
 }

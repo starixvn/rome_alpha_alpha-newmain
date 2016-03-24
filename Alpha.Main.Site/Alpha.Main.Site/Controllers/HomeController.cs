@@ -6,7 +6,7 @@
     using Models.Requests.Home;
     using Sunplus.Agent.Model.Entities;
 
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private IMediator _mediator;
 
@@ -19,16 +19,15 @@
         {
             return View();
         }
-
-        [ChildActionOnly]
-        public PartialViewResult Navigation(NavigationQuery query)
+        
+        public ActionResult Navigation(NavigationQuery query)
         {
             query.SubPageAccess = UserSession.Current.SubPageAccess;
             query.IsSubAcc = UserSession.Current.IsSubAcc;
             query.RoleId = UserSession.Current.RoleId;
 
             var viewModel = _mediator.Send(query);
-            return PartialView(viewModel);
+            return View(viewModel);
         }
     }
 }

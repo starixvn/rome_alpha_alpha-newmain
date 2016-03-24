@@ -8,27 +8,27 @@
     public class HomeHandler :
           IRequestHandler<NavigationQuery, NavigationViewModel>
     {
-        private readonly HomeService homeService;
-
+        private readonly SiteMenuService siteMenuService;
         private readonly IDashboardService dashboardService;
 
-        public HomeHandler(IDashboardService dashboardService, HomeService homeService)
+        public HomeHandler(IDashboardService dashboardService, SiteMenuService siteMenuService)
         {
             this.dashboardService = dashboardService;
-            this.homeService = homeService;
+            this.siteMenuService = siteMenuService;
         }
 
         public NavigationViewModel Handle(NavigationQuery query)
         {
-            var menus = homeService.GetNavigation(query);
-            var leftMenu = new NavigationViewModel
+            var menus = siteMenuService.GetMenuByUser(query.GetUser());
+
+            var model = new NavigationViewModel
             {
-                IsShowMenu = dashboardService.IsShowLeftMenu(),
-                ShowAccountInfo = query.SubPageAccess.ViewMemberInfo,
-                MenuList = menus
+                IsMainMenuVisible = dashboardService.IsShowLeftMenu(),
+                IsAccountInfoVisible = query.SubPageAccess.ViewMemberInfo,
+                MenuItems = menus
             };
 
-            return leftMenu;
+            return model;
         }
     }
 }

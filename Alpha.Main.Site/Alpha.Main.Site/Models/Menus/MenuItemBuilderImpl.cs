@@ -14,16 +14,16 @@
     using Services.Impl;
     using SimpleInjector;
 
-    public class MenuItemFactoryImpl : MenuItemFactory
+    public class MenuItemBuilderImpl : MenuItemBuilder
     {
         private readonly IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
         private readonly AuthorizeUrlService authorizeUrlService;
 
-        public MenuItemFactoryImpl() : this(null, null)
+        public MenuItemBuilderImpl() : this(null, null)
         {
         }
 
-        internal MenuItemFactoryImpl(
+        internal MenuItemBuilderImpl(
             AuthorizeUrlService authorizeUrlService, 
             IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration)
         {
@@ -40,9 +40,9 @@
             menuItem.SubMenus = new List<IMenuItem>();
         }
 
-        public IMenuItem Create(SiteMapNode siteMapNode)
-        {
-            Contract.Ensures(siteMapNode != null); ;
+        public IMenuItem BuildMenuItem(SiteMapNode siteMapNode)
+        {            
+            Contract.Ensures(siteMapNode != null);        
 
             var menuItem = new MenuItem(
                 menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty], 
@@ -51,6 +51,6 @@
             SetDataForMenuItem(menuItem, siteMapNode);
 
             return menuItem;
-        }
+        }        
     }
 }

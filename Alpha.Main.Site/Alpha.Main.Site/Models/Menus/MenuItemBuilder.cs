@@ -7,8 +7,8 @@
     using System.Threading.Tasks;
     using System.Web;
 
-    public interface MenuItemFactory
+    public interface MenuItemBuilder
     {
-        IMenuItem Create(SiteMapNode node);
+        IMenuItem BuildMenuItem(SiteMapNode node);
     }
 }

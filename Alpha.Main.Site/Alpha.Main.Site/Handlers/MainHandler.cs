@@ -48,9 +48,9 @@
             var pageAccess = UserSession.Current.SubPageAccess;
             var leftMenu = new NavigationViewModel
             {
-                IsShowMenu = _dashboardService.IsShowLeftMenu(),
-                ShowAccountInfo = pageAccess.ViewMemberInfo,
-                MenuList = menus
+                IsMainMenuVisible = _dashboardService.IsShowLeftMenu(),
+                IsAccountInfoVisible = pageAccess.ViewMemberInfo,
+                MenuItems = menus
             };
 
             return leftMenu;

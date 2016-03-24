@@ -17,9 +17,9 @@
         private const string CacheKeyMenuByUserLevel = "Alpha.Main.MenuForLevel.";
 
         private readonly CachingService cacheManager;
-        private readonly MenuItemFactory menuItemFactory;
+        private readonly MenuItemBuilder menuItemFactory;
 
-        public SiteMenuServiceImpl(CachingService cacheManager, MenuItemFactory menuItemFactory)
+        public SiteMenuServiceImpl(CachingService cacheManager, MenuItemBuilder menuItemFactory)
         {
             Contract.Ensures(cacheManager != null, nameof(cacheManager));
             Contract.Ensures(menuItemFactory != null, nameof(menuItemFactory));
@@ -73,7 +73,7 @@
                             || node.Roles.Contains(userLevel.DisplayName.ToLower())
                             || node.Roles.Contains(userLevel.Value.ToString()))
                         {
-                            var menuItem = menuItemFactory.Create(node);
+                            var menuItem = menuItemFactory.BuildMenuItem(node);
 
                             if (node.HasChildNodes)
                             {

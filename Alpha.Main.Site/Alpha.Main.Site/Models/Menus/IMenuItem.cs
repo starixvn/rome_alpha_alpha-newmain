@@ -23,5 +23,7 @@
         bool ShowSubMenus { get; set; }
 
         List<IMenuItem> SubMenus { get; set; }
+
+        IEnumerable<IMenuItem> VisibileSubMenus { get; }
     }
 }

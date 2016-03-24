@@ -29,14 +29,14 @@
 <aside class="sidebar">
     <div class="customer-profile" id="profile"></div>
     <nav class="navigation">
-        @if (Model.SideBar.IsShowMenu)
-            {
+        @if (Model.SideBar.IsMainMenuVisible)
+        {
             <div>
                 <ul class="main-tab" id="main-tab">
                     <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
-                    <li class="accountinfo  @(Model.SideBar.ShowAccountInfo ? string.Empty : "disabledView")">
+                    <li class="accountinfo  @(Model.SideBar.IsAccountInfoVisible ? string.Empty : "disabledView")">
                         <a href="javascript:;">
-                            @(Model.SideBar.ShowAccountInfo ? Resources.accountInfo : string.Empty)
+                            @(Model.SideBar.IsAccountInfoVisible ? Resources.accountInfo : string.Empty)
                         </a>
                     </li>
                 </ul>
@@ -46,7 +46,7 @@
             </div>
             <section class="mainmenu-container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
                 <ul class="list-menu">
-                    @foreach (var menu in Model.SideBar.MenuList)
+                    @foreach (var menu in Model.SideBar.MenuItems)
                     {
                         if (menu.Status.Visible)
                         {
@@ -87,7 +87,7 @@
 
             </section>
 
-            if (Model.SideBar.ShowAccountInfo)
+            if (Model.SideBar.IsAccountInfoVisible)
             {
                 <section class="accountinfo-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
                     <span class="icon icon-user"></span>

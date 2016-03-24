@@ -3,13 +3,23 @@
     using System.Collections.Generic;
     using Dtos;
     using Menus;
+    using System.Linq;
+    using System.Collections;
 
     public class NavigationViewModel
     {
-        public bool IsShowMenu { get; set; }
+        public bool IsMainMenuVisible { get; set; }
 
-        public bool ShowAccountInfo { get; set; }
+        public bool IsAccountInfoVisible { get; set; }
 
-        public IEnumerable<IMenuItem> MenuList { get; set; }
+        public IEnumerable<IMenuItem> MenuItems { get; set; }
+
+        public IEnumerable<IMenuItem> VisibleMenuItems
+        {
+            get
+            {
+                return MenuItems.Where(menuItem => menuItem.Status.Visible);
+            }
+        }
     }
 }

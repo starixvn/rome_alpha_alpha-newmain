@@ -31,7 +31,8 @@
         @Html.Action("ViewProfile", "CustomerProfile")
     </div>
     <nav class="navigation" id="navigation">
-        @Html.Action("Navigation")
+        @Html.Partial("Navigation")
+        
     </nav>
 </aside>
 
@@ -40,18 +41,8 @@
     <script type="text/javascript" src="/@contentSite/css/bootstrap-material/js/material.min.js"></script>
     <script type="text/javascript" src="/@contentSite/css/bootstrap-material/js/ripples.min.js"></script>
     <script type="text/javascript" src="/@contentSite/libs/underscore/underscore-min.js"></script>
-    @Scripts.Render("~/bundles/scripts/home")
-    @if (AlphaDefinitions.AppSettings.PiwikEnable)
-    {
-        <script type="text/javascript">
-            var _pkUrl = '@AlphaDefinitions.AppSettings.PiwikUrl',
-                _pkScript = '@AlphaDefinitions.AppSettings.PiwikScript',
-                _pkSiteId = '@AlphaDefinitions.AppSettings.PiwikSiteId';
-        </script>
-        <script type="text/javascript" src="~/Content/Home/Scripts/piwikLoader.js"></script>
-        <noscript><p><img src="@AlphaDefinitions.AppSettings.PiwikUrl?idsite=@AlphaDefinitions.AppSettings.PiwikSiteId" style="border:0;" alt="" /></p></noscript>
-    }
-
+    @Scripts.Render("~/bundles/scripts/home")    
+    <script type="text/javascript" src="~/Content/Home/Scripts/SideBar.js"></script>
     <script type="text/javascript">
         $.material.init();
         var baseMainApp='';

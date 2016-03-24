@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Configuration;
+    using System.Linq;
     using System.Linq.Expressions;
     using System.Text.RegularExpressions;
     using System.Web;
@@ -81,5 +82,13 @@
         public bool ShowSubMenus { get; set; }
 
         public List<IMenuItem> SubMenus { get; set; }
+
+        public IEnumerable<IMenuItem> VisibileSubMenus
+        {
+            get
+            {
+                return this.SubMenus.Where(menuItem => menuItem.Status.Visible);
+            }
+        }
     }
 }
