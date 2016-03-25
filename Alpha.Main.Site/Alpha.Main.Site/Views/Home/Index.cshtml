@@ -19,12 +19,13 @@
 
     @ContentSite.Styles.Render(
         "/css/reset.css",
-        "/bootstrap-material/css/bootstrap-material-design.min.css",
+        "/css/bootstrap-material/css/bootstrap-material-design.min.css",
         "/css/bootstrap-material/css/ripples.min.css",
         "/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.min.css",
         "/fonts/iconalpha/style.css")
 
     @Styles.Render("~/bundle/styles/home")
+
     <link type="text/css" rel="stylesheet" href="~/@($"content/home/styles/sass/{Model.UserLevel}.css")">
 </head>
 <body>
@@ -53,6 +54,7 @@
     "/css/bootstrap-material/js/material.min.js",
     "/css/bootstrap-material/js/ripples.min.js",
     "/libs/underscore/underscore-min.js")
+
     @Scripts.Render("~/bundles/scripts/home")
     <script type="text/javascript">
             $.material.init();

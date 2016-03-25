@@ -16,9 +16,6 @@
     {
         protected void Application_Start()
         {
-            
-
-
             ViewEngines.Engines.Clear();            
             ViewEngines.Engines.Add(new RazorViewEngine());
             MvcHandler.DisableMvcResponseHeader = true;
@@ -32,7 +29,6 @@
             Fanex.Data.Configuration.DbSettingProviderManager.Current.Start();
 
             ShareSession.Init();           
-
 
             Logs.WriteInfo("Alpha - New Main - Application Start");
         }
