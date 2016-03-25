@@ -594,6 +594,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\ContentStyles.cs" />
     <Compile Include="App_GlobalResources\Alpha.sitemap.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
