@@ -1,6 +1,6 @@
 ﻿var sideBarManager;
 
-jQuery(document).ready(function () {
+$(document).ready(function () {
     sideBarManager.init();
 });
 

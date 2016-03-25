@@ -28,6 +28,7 @@
                 "~/Content/Home/Scripts/Header.js",
                 "~/Content/Home/Scripts/header.navigation.js",
                 "~/Content/Home/Scripts/header.notification.js",
+                "~/Content/Home/Scripts/SideBar.js",
                 "~/Content/Home/Scripts/IndexPage.js",
                 "~/Content/Announcement/Scripts/AnnouncementManager.js"));
         }
