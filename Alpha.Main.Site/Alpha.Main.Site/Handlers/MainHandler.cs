@@ -6,7 +6,7 @@
     using Models.Views;
     using Services;
     using Sunplus.Agent.Model.Entities;
-
+    using ViewModels;
     public class MainHandler :
         IRequestHandler<MainIndexQuery, MainIndexViewModel>,
         IRequestHandler<ChangeLanguageQuery, ResultModel>

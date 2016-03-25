@@ -13,6 +13,7 @@
     using Services;
     using Services.Impl;
     using Sunplus.Agent.Model.Entities;
+    using ViewModels;
 
     public class MenuBarHandler :
         IRequestHandler<MenuBarQuery, MenuBarViewModel>

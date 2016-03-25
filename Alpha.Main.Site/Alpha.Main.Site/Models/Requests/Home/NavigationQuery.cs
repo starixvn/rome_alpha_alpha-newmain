@@ -4,6 +4,7 @@
     using Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
+    using ViewModels;
 
     public class NavigationQuery : IRequest<MenuBarViewModel>
     {

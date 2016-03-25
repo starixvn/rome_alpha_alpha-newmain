@@ -1,12 +1,11 @@
-﻿namespace Alpha.Main.Site.Models.Views
+﻿namespace Alpha.Main.Site.ViewModels
 {
     using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using App_Start;
-    using Dtos;
-    using Menus;
+    using Models.Menus;
 
     public class MenuBarViewModel
     {

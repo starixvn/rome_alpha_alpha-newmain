@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using Dtos;
-
+    using ViewModels;
     public class MainIndexViewModel
     {
         public List<LanguageModel> Languages { get; set; }

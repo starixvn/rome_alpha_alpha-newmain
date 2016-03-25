@@ -425,6 +425,7 @@
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_left.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_right.png" />
     <Content Include="Content\Home\Scripts\header.nav.js" />
+    <Content Include="Content\Home\Scripts\menubar.js" />
     <Content Include="Content\Main\Scripts\Core.js" />
     <Content Include="Content\Main\Scripts\Header.js" />
     <Content Include="Content\Main\Scripts\IndexPage.js" />
@@ -575,8 +576,9 @@
     <Content Include="Content\Main\Styles\sass\Variables_Level2.scss" />
     <Content Include="Content\Main\Styles\sass\Variables_Level3.scss" />
     <Content Include="Content\Main\Styles\sass\Variables_Level4.scss" />
-    <Content Include="Views\Home\Header.cshtml" />
-    <Content Include="Content\Home\Scripts\header.not.js" />
+    <Content Include="Views\Home\HeaderNav.cshtml" />
+    <Content Include="Content\Home\Scripts\header.msg.js" />
+    <Content Include="Views\Home\HeaderMsg.cshtml" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -714,7 +716,7 @@
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
     <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
-    <Compile Include="Models\Views\MenuBarViewModel.cs" />
+    <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
