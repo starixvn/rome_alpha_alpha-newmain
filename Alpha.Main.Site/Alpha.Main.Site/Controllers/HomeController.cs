@@ -34,7 +34,12 @@
             return View();
         }
 
-        public ActionResult Header()
+        public ActionResult HeaderNav()
+        {
+            return View();
+        }
+
+        public ActionResult HeaderMsg()
         {
             return View();
         }
