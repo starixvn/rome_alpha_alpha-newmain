@@ -22,6 +22,7 @@ var IndexPageManager = function () {
         self.selectTopMenu();
     };
     self.bindEvents = function () {
+        customerProfile.bindEvents();
         jQuery(".iframe-content").load(function () {
             self.setURL();
         });
