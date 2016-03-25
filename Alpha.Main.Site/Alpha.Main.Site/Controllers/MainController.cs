@@ -16,9 +16,6 @@
 
         public ActionResult Index(MainIndexQuery query)
         {
-            //var viewModel = _mediator.Send(query);
-            //return View(viewModel);
-
             return RedirectToAction("Index", "Home");
         }
 
