@@ -42,5 +42,6 @@
                 .Include("~/Content/CustomerProfile/Styles/css/CustomerProfile.css", new CssRewriteUrlTransformWrapper())
                 .Include("~/Content/Announcement/Styles/css/Announcements.css", new CssRewriteUrlTransformWrapper()));
         }        
+                "~/Content/CustomerProfile/Scripts/brief-profile.js",
     }
 }

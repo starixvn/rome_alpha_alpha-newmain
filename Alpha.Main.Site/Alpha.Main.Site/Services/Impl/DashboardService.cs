@@ -35,7 +35,9 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
     using Sunplus.Agent.Utilities;
+
     using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;
+
     using SiteServices = Alpha.Main.Site.Services;
 
     public class DashboardService : IDashboardService
@@ -71,7 +73,7 @@
             return _repository.GetLanguages();
         }
 
-        public ProfilePictureModel GetProfile(ViewProfileQuery message)
+        public ProfilePictureModel GetProfile(BriefProfileQuery message)
         {
             var avatar = GetAvatar(new ViewProfileCriteria
             {
@@ -123,7 +125,7 @@
             {
                 return msgList;
             }
-
+            
             var isShowed = Converter.ToString2(HttpContext.Current.Session["messageisshowed"]).Equals("1");
             var currentDate = DateTime.Now;
             var language = UserSession.Current.Language.ToLower();
@@ -162,20 +164,26 @@
                             case "zh-tw":
                                 msgList.Add(xmlNodeAnnouncement.SelectNodes("zh-TW")[0].InnerText);
                                 break;
+
                             case "zh-cn":
                                 msgList.Add(xmlNodeAnnouncement.SelectNodes("zh-CN")[0].InnerText);
                                 break;
+
                             case "ja-jp":
                                 msgList.Add(xmlNodeAnnouncement.SelectNodes("ja-JP")[0].InnerText);
                                 break;
+
                             case "th-th":
                                 msgList.Add(xmlNodeAnnouncement.SelectNodes("th-TH")[0].InnerText);
                                 break;
+
                             case "ko-kr":
                                 msgList.Add(xmlNodeAnnouncement.SelectNodes("ko-KR")[0].InnerText);
                                 break;
+
                             case "vi-vn":
                                 break;
+
                             default:
                                 msgList.Add(xmlNodeAnnouncement.SelectNodes("en-US")[0].InnerText);
                                 break;
@@ -247,8 +255,10 @@
                 {
                     case SecurityCodeStatus.FORCED_CHANGE_SC:
                         return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCode";
+
                     case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
                         return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
+
                     default:
                         return oldMainAppPath + "Security/SecurityCode/VerifySecurityCode";
                 }

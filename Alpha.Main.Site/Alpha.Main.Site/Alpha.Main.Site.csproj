@@ -486,11 +486,11 @@
     <Content Include="Content\Announcement\Resources\PopupAdMasterNeutral.xml" />
     <Content Include="Content\Announcement\Resources\PopupAdSuperNeutral.xml" />
     <Content Include="Content\Announcement\Scripts\AnnouncementManager.js" />
-    <Content Include="Content\CustomerProfile\Scripts\ViewProfile.js" />
+    <Content Include="Content\CustomerProfile\Scripts\brief-profile.js" />
     <Content Include="Content\Home\Scripts\Core.js" />
     <Content Include="Content\Home\Scripts\Header.js" />
     <Content Include="Content\Home\Scripts\piwikLoader.js" />
-    <Content Include="Views\CustomerProfile\ViewProfile.cshtml" />
+    <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
     <Content Include="Content\Home\Styles\sass\LevelCustomStyle2.scss" />
@@ -654,8 +654,8 @@
     <Compile Include="Models\Views\CustomerInfoViewModel.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
-    <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
-    <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
+    <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />
+    <Compile Include="Models\Views\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />

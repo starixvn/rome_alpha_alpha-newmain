@@ -16,7 +16,7 @@
 
         List<string> GetHotMessages();
 
-        ProfilePictureModel GetProfile(ViewProfileQuery message);
+        ProfilePictureModel GetProfile(BriefProfileQuery message);
 
         ResultModel ChangeLanguage(ChangeLanguageQuery message);
 

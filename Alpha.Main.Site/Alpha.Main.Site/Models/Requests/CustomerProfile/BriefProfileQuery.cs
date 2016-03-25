@@ -3,7 +3,7 @@
     using MediatR;
     using Views.CustomerProfile;
 
-    public class ViewProfileQuery : IRequest<ViewProfileViewModel>
+    public class BriefProfileQuery : IRequest<BriefProfileViewModel>
     {
         public int CustId { get; set; }
     }

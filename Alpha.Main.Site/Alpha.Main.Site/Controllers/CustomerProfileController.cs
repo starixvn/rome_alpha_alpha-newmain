@@ -14,7 +14,7 @@
             _mediator = mediator;
         }
 
-        public ActionResult ViewProfile(ViewProfileQuery query)
+        public ActionResult BriefProfile(BriefProfileQuery query)
         {
             query.CustId = UserSession.Current.CustId;
             var viewModel = _mediator.Send(query);

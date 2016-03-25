@@ -6,7 +6,9 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Diagnostics.Contracts;
     using System.Reflection;
+    using System.Web;
     using System.Web.Mvc;    
+    using System.Web.SessionState;
     using Fanex.Data.Repository;
     using Handlers;
     using MediatR;
@@ -18,7 +20,7 @@
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
-
+    using Sunplus.Agent.Model.Entities;
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
@@ -80,6 +82,17 @@
             container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
             container.Register<AuthorizeUrlService, AuthorizeUrlServiceImpl>(Lifestyle.Scoped);
             
+            container.Register<IUserSession>(() =>
+            {
+                if (HttpContext.Current != null
+                    && (HttpContext.Current.Handler is IRequiresSessionState 
+                    || HttpContext.Current.Handler is IReadOnlySessionState))
+                {
+                    return UserSession.Current;
+                }
+
+                return new UserSessionBase(string.Empty);
+            }, Lifestyle.Transient);
         }
 
         private static void RegisterDataAccesses(Container container)
