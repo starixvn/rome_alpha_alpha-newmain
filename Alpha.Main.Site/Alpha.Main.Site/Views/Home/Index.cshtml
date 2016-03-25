@@ -32,6 +32,17 @@
     </nav>
 </aside>
 
+<div class="content-wrapper">
+    <header class="header">
+        @Html.Action("Header")
+    </header>
+    <section class="content" id="content">
+        <iframe frameborder="0" id="main" scrolling="auto"
+                name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>
+
+    </section>
+</div>
+
 @section Scripts{
     <script type="text/javascript" src="/@contentSite/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="/@contentSite/css/bootstrap-material/js/material.min.js"></script>

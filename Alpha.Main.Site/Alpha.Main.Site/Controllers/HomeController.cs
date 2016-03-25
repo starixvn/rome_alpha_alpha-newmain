@@ -28,5 +28,16 @@
 
             return View(viewModel);
         }
+
+        public ActionResult UserProfile()
+        {
+            return View();
+        }
+
+        public ActionResult Header()
+        {
+            return View();
+        }
+
     }
 }
