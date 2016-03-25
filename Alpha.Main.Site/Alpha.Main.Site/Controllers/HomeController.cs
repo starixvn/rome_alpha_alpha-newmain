@@ -5,7 +5,7 @@
     using Models.Requests;
     using Models.Requests.Home;
     using Sunplus.Agent.Model.Entities;
-
+    using ViewModels;
     public class HomeController : BaseController
     {
         private IMediator _mediator;
@@ -36,7 +36,9 @@
 
         public ActionResult HeaderNav()
         {
-            return View();
+            var viewModel = new HeaderNavViewModel();
+
+            return View(viewModel);
         }
 
         public ActionResult HeaderMsg()

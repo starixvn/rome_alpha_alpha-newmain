@@ -1,0 +1,25 @@
+﻿@helper HelperName(string name)
+{
+// your helper can contain code and/or markup, e.g.
+// var msg = "Hello " + name;
+// <p>@msg</p>
+// For more information, visit http://go.microsoft.com/fwlink/?LinkID=204658
+}
+
+
+@helper DisplayLanguageDropdown(string languageCode = "en-US")
+{
+    <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
+        <span class="icon icon-flag language-selector langFlag_@languageCode.ToLowerInvariant()"></span>        
+        <span class="language-text language-selector"></span>
+    </a>
+    <ul class="dropdown-menu list-language" id="language">      
+        <li class="en-US"><a class="changelanguage-link" data-value="en-US">English</a></li>
+        <li class="zh-TW"><a class="changelanguage-link" data-value="zh-TW">繁體中文</a></li>
+        <li class="zh-CN"><a class="changelanguage-link" data-value="zh-CN">简体中文</a></li>
+        <li class="ja-JP"><a class="changelanguage-link" data-value="ja-JP">日本語</a></li>
+        <li class="th-TH"><a class="changelanguage-link" data-value="th-TH">ภาษาไทย</a></li>
+        <li class="ko-KR"><a class="changelanguage-link" data-value="ko-KR">한국어</a></li>
+        <li class="vi-VN"><a class="changelanguage-link" data-value="en-US">Tiếng Việt</a></li>
+    </ul>
+}

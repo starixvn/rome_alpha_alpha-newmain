@@ -1,18 +1,4 @@
-﻿@using Sunplus.Agent.Model.Entities;
-@using SiteServices = Alpha.Main.Site.Services;
-@using Sunplus.Agent.Model.Entities;
-@using System.Web.Optimization;
-@using Alpha.Main.Site.Services.Impl;
-@model MainIndexViewModel
-@{
-    var contentSite = SiteServices.AppSettings.ContentSite;
-    var currentUserSession = UserSession.Current;
-    var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-    var contentFrame = "main";
-
-    var appPathService = new AppPathServiceImpl();
-    var baseOldMainApp = appPathService.GetAppPath(SiteServices.AppSettings.OldMainApp, "~");
-}
+﻿@model IndexViewModel
 <!DOCTYPE html>
 <!--[if IE 8 ]>
 <html lang="en" class="ie8">
@@ -39,7 +25,7 @@
         "/fonts/iconalpha/style.css")
 
     @Styles.Render("~/bundle/styles/home")
-    <link type="text/css" rel="stylesheet" href="~/@("Content/Home/Styles/sass/LevelCustomStyle" + currentUserSession.RoleId + ".css")">
+    <link type="text/css" rel="stylesheet" href="~/@($"content/home/styles/sass/{Model.UserLevel}.css")">
 </head>
 <body>
     <aside class="sidebar">
@@ -70,13 +56,13 @@
     @Scripts.Render("~/bundles/scripts/home")
     <script type="text/javascript">
             $.material.init();
-            var baseMainApp='';
+            @*var baseMainApp='';
             var baseOldMainApp='';
             var start = baseMainApp.indexOf('//') + 2;
             window.document.title = baseMainApp.substr(start, baseMainApp.length - start - 1);
             window.passwordHash = '';
 
-            var contentFrame = "@contentFrame";
+            var contentFrame = "main";
             var _resources = {
                 language: '@currentUserSession.Language',
                 onUserId: '@currentUserSession.OnUserId',
@@ -93,7 +79,7 @@
                 sec:@DateTime.Now.Second,
                 PM:'@Resources.PM',
                 AM:'@Resources.AM'
-            };
+            };*@
 
     </script>
 </body>

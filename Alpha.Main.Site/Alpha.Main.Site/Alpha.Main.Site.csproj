@@ -451,19 +451,19 @@
       <DependentUpon>dashboard.css</DependentUpon>
     </Content>
     <Content Include="Content\Home\Styles\sass\LevelCustomStyle2.css">
-      <DependentUpon>LevelCustomStyle2.scss</DependentUpon>
+      <DependentUpon>agent.scss</DependentUpon>
     </Content>
     <Content Include="Content\Home\Styles\sass\LevelCustomStyle2.min.css">
       <DependentUpon>LevelCustomStyle2.css</DependentUpon>
     </Content>
     <Content Include="Content\Home\Styles\sass\LevelCustomStyle3.css">
-      <DependentUpon>LevelCustomStyle3.scss</DependentUpon>
+      <DependentUpon>master.scss</DependentUpon>
     </Content>
     <Content Include="Content\Home\Styles\sass\LevelCustomStyle3.min.css">
       <DependentUpon>LevelCustomStyle3.css</DependentUpon>
     </Content>
     <Content Include="Content\Home\Styles\sass\LevelCustomStyle4.css">
-      <DependentUpon>LevelCustomStyle4.scss</DependentUpon>
+      <DependentUpon>super.scss</DependentUpon>
     </Content>
     <Content Include="Content\Home\Styles\sass\LevelCustomStyle4.min.css">
       <DependentUpon>LevelCustomStyle4.css</DependentUpon>
@@ -493,9 +493,9 @@
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
-    <Content Include="Content\Home\Styles\sass\LevelCustomStyle2.scss" />
-    <Content Include="Content\Home\Styles\sass\LevelCustomStyle3.scss" />
-    <Content Include="Content\Home\Styles\sass\LevelCustomStyle4.scss" />
+    <Content Include="Content\Home\Styles\sass\agent.scss" />
+    <Content Include="Content\Home\Styles\sass\master.scss" />
+    <Content Include="Content\Home\Styles\sass\super.scss" />
     <Content Include="Content\Home\Styles\sass\Variables_Level2.scss" />
     <Content Include="Content\Home\Styles\sass\Variables_Level3.scss" />
     <Content Include="Content\Home\Styles\sass\Variables_Level4.scss" />
@@ -508,6 +508,7 @@
     <Content Include="App_Data\Alpha.sitemap">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Code\RazorHelper.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -657,6 +658,7 @@
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Models\Views\CustomerProfile\BriefProfileViewModel.cs" />
+    <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
