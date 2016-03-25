@@ -1,48 +1,13 @@
-﻿@{
-    Layout = "";
-}
-<section class="navbar header-navigation" id="header-navigation">
-    <span class="icon-collapse icon-hamburger withripple"></span>
-    <ul class="nav navbar-nav list-top">
-        <li><span class="icon icon-time"></span><span class="txt-top" id="clock"></span></li>
-        <li class="dropdown">
-            <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
-                @*<span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>*@
-                <span class="icon icon-flag language-selector langFlag_en"></span>
-                <span class="language-text language-selector"></span>
-            </a>
-            <ul class="dropdown-menu list-language" id="language">
-                @*@foreach (var language in Model.Languages)
-                    {
-                        <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
-                    }*@
-
-                <li class="en-US"><a class="changelanguage-link" data-value="en-US">en-US</a></li>
-                <li class="en-US"><a class="changelanguage-link" data-value="en-US">en-US</a></li>
-                <li class="en-US"><a class="changelanguage-link" data-value="en-US">en-US</a></li>
-                <li class="en-US"><a class="changelanguage-link" data-value="en-US">en-US</a></li>
-                <li class="en-US"><a class="changelanguage-link" data-value="en-US">en-US</a></li>
-            </ul>
-        </li>
-        <li class="withripple"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
-        <li class="dropdown">
-            <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
-                <span class="icon icon-squares top-right-menu"></span>
-            </a>
-            <ul class="dropdown-menu list-setting">
-                @*<li><a href="/@(baseOldMainApp + "_HowToUse/Index.aspx")" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
-    <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + 'Company/ContactUs/Index'); headerNavigationManager.headerNavigationManager();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
-    <li><a href="/@(baseOldMainApp + "ContextualCustomer/ProfilePicture?custId=" + currentUserSession.CustId)" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
-    <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + '_MemberInfo/ChangePassword/ChangePassword.aspx'); headerNavigationManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
-    <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + 'Security/SecurityCode/ChangeSecurityCode'); headerNavigationManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>*@
-
-                <li><a href="#" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
-                <li><a href="#"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
-                <li><a href="#" target="main"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
-                <li><a href="#"><span class="icon icon-lock"></span>@Resources.password</a></li>
-                <li><a href="#"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
-            </ul>
-        </li>
-        <li class="withripple"><span class="icon icon-logout"></span></li>
-    </ul>
+﻿        <span id="scroller">
+            <span id="live-message" class="maquee live-message"></span>
+        </span>
+    </div>
+    <div class="nav-iconbox">
+        <span class="icon icon-add c-Primary special-message"></span>
+        <div class="email-box private-message"><span class="icon icon-message c-Primary"></span><span class="value">0</span></div>
+    </div>
+                    <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + 'Company/ContactUs/Index'); indexPageManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
+                    <li><a href="/@(baseOldMainApp + "ContextualCustomer/ProfilePicture?custId=" + currentUserSession.CustId)" target="@contentFrame"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
+                    <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + '_MemberInfo/ChangePassword/ChangePassword.aspx'); indexPageManager.closeListSetting();"><span class="icon icon-lock"></span>@Resources.password</a></li>
+                    <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + 'Security/SecurityCode/ChangeSecurityCode'); indexPageManager.closeListSetting();"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>*@
 </section>

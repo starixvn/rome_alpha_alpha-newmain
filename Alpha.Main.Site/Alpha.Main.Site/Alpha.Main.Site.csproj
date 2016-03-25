@@ -656,6 +656,7 @@
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\ViewProfileQuery.cs" />
     <Compile Include="Models\Views\CustomerProfile\ViewProfileViewModel.cs" />
+    <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
@@ -691,7 +692,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -704,6 +704,7 @@
     <Folder Include="DataAccess\Impl\" />
     <Folder Include="Views\Index\" />
     <Folder Include="Views\MenuBar\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />
