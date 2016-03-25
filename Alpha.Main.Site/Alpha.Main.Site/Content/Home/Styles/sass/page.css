@@ -239,61 +239,61 @@ a, a:focus, a:active, a:target, a:hover {
   z-index: 90; }
 
 /********************************** Header Navigation ************************************/
-.header-navigation {
+.header-nav {
   height: 48px;
   margin-bottom: 0; }
-  .header-navigation .icon-collapse {
+  .header-nav .icon-collapse {
     display: inline-block;
     padding: 16px 15px;
     cursor: pointer;
     font-size: 17px;
     color: #fff; }
-  .header-navigation .list-top {
+  .header-nav .list-top {
     float: right;
     color: #fff;
     font-size: 13px; }
-    .header-navigation .list-top .icon-swap-horizontal, .header-navigation .list-top .icon-squares, .header-navigation .list-top .icon-logout {
+    .header-nav .list-top .icon-swap-horizontal, .header-nav .list-top .icon-squares, .header-nav .list-top .icon-logout {
       opacity: 0.8; }
-    .header-navigation .list-top > li {
+    .header-nav .list-top > li {
       display: inline-block;
       padding: 15px 10px;
       position: relative; }
-      .header-navigation .list-top > li .txt-top {
+      .header-nav .list-top > li .txt-top {
         opacity: 0.8; }
-      .header-navigation .list-top > li.dropdown {
+      .header-nav .list-top > li.dropdown {
         margin: 0;
         padding: 0; }
-        .header-navigation .list-top > li.dropdown > a {
+        .header-nav .list-top > li.dropdown > a {
           padding: 15px;
           opacity: 0.8; }
-        .header-navigation .list-top > li.dropdown .dropdown-menu.list-setting {
+        .header-nav .list-top > li.dropdown .dropdown-menu.list-setting {
           right: 0;
           left: auto; }
-        .header-navigation .list-top > li.dropdown .dropdown-menu li > a {
+        .header-nav .list-top > li.dropdown .dropdown-menu li > a {
           font-size: 13px; }
-      .header-navigation .list-top > li .list-setting, .header-navigation .list-top > li .list-language {
+      .header-nav .list-top > li .list-setting, .header-nav .list-top > li .list-language {
         -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
         -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
         background: #fff;
         color: #5c1218; }
-        .header-navigation .list-top > li .list-setting > li a, .header-navigation .list-top > li .list-language > li a {
+        .header-nav .list-top > li .list-setting > li a, .header-nav .list-top > li .list-language > li a {
           display: block;
           padding: 9px 20px;
           font-weight: 600;
           color: #5c1218;
           cursor: pointer; }
-          .header-navigation .list-top > li .list-setting > li a .icon, .header-navigation .list-top > li .list-language > li a .icon {
+          .header-nav .list-top > li .list-setting > li a .icon, .header-nav .list-top > li .list-language > li a .icon {
             position: relative;
             top: 1px;
             margin-right: 10px; }
-        .header-navigation .list-top > li .list-setting > li:hover, .header-navigation .list-top > li .list-language > li:hover {
+        .header-nav .list-top > li .list-setting > li:hover, .header-nav .list-top > li .list-language > li:hover {
           background: #ddd; }
-          .header-navigation .list-top > li .list-setting > li:hover a, .header-navigation .list-top > li .list-language > li:hover a {
+          .header-nav .list-top > li .list-setting > li:hover a, .header-nav .list-top > li .list-language > li:hover a {
             text-decoration: none; }
 
 /********************************** Header Notification *************************************/
-.header-notification {
+.header-msg {
   background: #fff;
   height: 40px;
   padding: 10px 0;
@@ -301,23 +301,23 @@ a, a:focus, a:active, a:target, a:hover {
   -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3); }
-  .header-notification .icon-home {
+  .header-msg .icon-home {
     padding: 11px 15px; }
-  .header-notification .nav-iconbox {
+  .header-msg .nav-iconbox {
     position: absolute;
     right: 16px;
     top: 8px; }
-  .header-notification .marquee-box {
+  .header-msg .marquee-box {
     float: left;
     padding: 0 10px; }
-  .header-notification .maquee {
+  .header-msg .maquee {
     color: #045ace;
     font-size: 13px; }
-  .header-notification .email-box {
+  .header-msg .email-box {
     display: inline-block;
     position: relative;
     margin-top: 2px; }
-    .header-notification .email-box .value {
+    .header-msg .email-box .value {
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       border-radius: 50%;
