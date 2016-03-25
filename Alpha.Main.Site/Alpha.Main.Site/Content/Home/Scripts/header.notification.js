@@ -245,5 +245,3 @@ var HeaderNotificationManager = function () {
 };
 
 var headerNotificationManager = new HeaderNotificationManager();
-        var url = top.baseMainApp + "CustomerProfile/BriefProfile";
-                briefProfile.bindEvents();

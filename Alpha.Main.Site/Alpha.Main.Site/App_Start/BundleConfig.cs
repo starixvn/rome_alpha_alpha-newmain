@@ -29,6 +29,7 @@
                 "~/Content/Home/Scripts/header.navigation.js",
                 "~/Content/Home/Scripts/header.notification.js",
                 "~/Content/Home/Scripts/SideBar.js",
+                "~/Content/CustomerProfile/Scripts/brief-profile.js",
                 "~/Content/Home/Scripts/IndexPage.js",
                 "~/Content/Announcement/Scripts/AnnouncementManager.js"));
         }
@@ -42,6 +43,5 @@
                 .Include("~/Content/CustomerProfile/Styles/css/CustomerProfile.css", new CssRewriteUrlTransformWrapper())
                 .Include("~/Content/Announcement/Styles/css/Announcements.css", new CssRewriteUrlTransformWrapper()));
         }        
-                "~/Content/CustomerProfile/Scripts/brief-profile.js",
     }
 }
