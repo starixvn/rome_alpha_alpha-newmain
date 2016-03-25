@@ -49,8 +49,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Antlr3.Runtime.3.3.1.7705\lib\net20\Antlr3.Runtime.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0.2\lib\net40\AutoMapper.dll</HintPath>
@@ -626,7 +626,9 @@
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
     <Compile Include="Criteria\Announcement\MessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
-    <Compile Include="Criteria\CustomerProfile\ViewProfileCriteria.cs" />
+    <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
+    <Compile Include="DataAccess\CustomerProfileDataAccess.cs" />
+    <Compile Include="DataAccess\Impl\CustomerProfileDataAccessImpl.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\NumberExtension.cs" />
     <Compile Include="Extensions\SecretExtension.cs" />
@@ -639,7 +641,7 @@
     <Compile Include="Models\Dtos\Announcement\HotAnnouncementModel.cs" />
     <Compile Include="Models\Dtos\Announcement\MessageModel.cs" />
     <Compile Include="Models\Dtos\CustomerInfoModel.cs" />
-    <Compile Include="Models\Dtos\ProfilePictureModel.cs" />
+    <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />
     <Compile Include="Models\Enumerations\UserLevel.cs" />
@@ -659,6 +661,8 @@
     <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Models\Views\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
+    <Compile Include="Services\CustomerProfileService.cs" />
+    <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
     <Compile Include="Repositories\IDashboardRepository.cs" />
@@ -676,16 +680,12 @@
     <Compile Include="Services\IAnnouncementService.cs" />
     <Compile Include="Services\CachingService.cs" />
     <Compile Include="Services\IDashboardService.cs" />
-    <Compile Include="Services\IFileUploadService.cs" />
     <Compile Include="Services\Impl\AnnouncementService.cs" />
     <Compile Include="Services\Impl\AppPathServiceImpl.cs" />
     <Compile Include="Services\Impl\AuthorizeUrlServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingServiceImpl.cs" />
     <Compile Include="Services\Impl\DashboardService.cs" />
-    <Compile Include="Services\Impl\FileUploadService.cs" />
-    <Compile Include="Services\Impl\SessionValidationService.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
-    <Compile Include="Services\ISessionValidationService.cs" />
     <Compile Include="Services\AppPathService.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
   </ItemGroup>
@@ -704,10 +704,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataAccess\Impl\" />
     <Folder Include="Views\Index\" />
     <Folder Include="Views\MenuBar\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />

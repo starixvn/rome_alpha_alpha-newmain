@@ -44,10 +44,6 @@
     {
         private readonly IDashboardRepository _repository;
 
-        private readonly IFileUploadService _fileUploadService;
-
-        private readonly ISessionValidationService _sessionValidationService;
-
         private readonly SiteMenuService siteMenuService;
 
         private string _defaultMainPage;
@@ -56,14 +52,10 @@
 
         public DashboardService(
             IDashboardRepository repository,
-            IFileUploadService fileUploadService,
-            ISessionValidationService sessionValidationService,
             AppPathService appPathService,
             SiteMenuService siteMenuService)
         {
             _repository = repository;
-            _fileUploadService = fileUploadService;
-            _sessionValidationService = sessionValidationService;
             _appPathService = appPathService;
             this.siteMenuService = siteMenuService;
         }
@@ -71,29 +63,6 @@
         public List<LanguageModel> GetLanguages()
         {
             return _repository.GetLanguages();
-        }
-
-        public ProfilePictureModel GetProfile(BriefProfileQuery message)
-        {
-            var avatar = GetAvatar(new ViewProfileCriteria
-            {
-                CustId = message.CustId
-            });
-
-            return avatar;
-        }
-
-        public ProfilePictureModel GetAvatar(ViewProfileCriteria criteria)
-        {
-            var avatar = _repository.GetAvatar(criteria);
-            if (avatar.IsDefaultAvatar)
-            {
-                avatar.BinaryAvatar = _fileUploadService.GetDefaultAvatar();
-            }
-
-            SessionExtension.IsDefaultAvatar = avatar.IsDefaultAvatar;
-            SessionExtension.BinaryAvatar = avatar.BinaryAvatar;
-            return avatar;
         }
 
         public List<string> GetMonthNames()

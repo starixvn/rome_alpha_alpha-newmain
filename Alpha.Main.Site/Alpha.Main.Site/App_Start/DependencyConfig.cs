@@ -7,8 +7,10 @@
     using System.Diagnostics.Contracts;
     using System.Reflection;
     using System.Web;
-    using System.Web.Mvc;    
+    using System.Web.Mvc;
     using System.Web.SessionState;
+    using DataAccess;
+    using DataAccess.Impl;
     using Fanex.Data.Repository;
     using Handlers;
     using MediatR;
@@ -21,6 +23,7 @@
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
     using Sunplus.Agent.Model.Entities;
+
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
@@ -73,33 +76,34 @@
         private static void RegisterServices(Container container)
         {
             container.Register<IDashboardService, DashboardService>(Lifestyle.Scoped);
-            container.Register<IFileUploadService, FileUploadService>(Lifestyle.Scoped);
-            container.Register<ISessionValidationService, SessionValidationService>(Lifestyle.Scoped);
             container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Scoped);
             container.Register<AppPathService, AppPathServiceImpl>(Lifestyle.Singleton);
             container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Scoped);
             container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
             container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
             container.Register<AuthorizeUrlService, AuthorizeUrlServiceImpl>(Lifestyle.Scoped);
-            
-            container.Register<IUserSession>(() =>
-            {
-                if (HttpContext.Current != null
-                    && (HttpContext.Current.Handler is IRequiresSessionState 
-                    || HttpContext.Current.Handler is IReadOnlySessionState))
-                {
-                    return UserSession.Current;
-                }
+            container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Scoped);
 
-                return new UserSessionBase(string.Empty);
-            }, Lifestyle.Transient);
+            container.Register<IUserSession>(
+                () =>
+                {
+                    if (HttpContext.Current != null
+                        && (HttpContext.Current.Handler is IRequiresSessionState
+                        || HttpContext.Current.Handler is IReadOnlySessionState))
+                    {
+                        return UserSession.Current;
+                    }
+
+                    return new UserSessionBase(string.Empty);
+                },
+                Lifestyle.Transient);
         }
 
         private static void RegisterDataAccesses(Container container)
         {
             container.Register<IDynamicRepository, DynamicRepository>(Lifestyle.Scoped);
             container.Register<IDashboardRepository, DashboardRepository>(Lifestyle.Scoped);
-            
+            container.Register<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>(Lifestyle.Scoped);
         }
     }
 }

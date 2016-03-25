@@ -2,7 +2,7 @@
 {
     using Fanex.Data.Repository;
 
-    public class ViewProfileCriteria : CriteriaBase
+    public class GetProfilePictureCriteria : CriteriaBase
     {
         public int CustId { get; set; }
 

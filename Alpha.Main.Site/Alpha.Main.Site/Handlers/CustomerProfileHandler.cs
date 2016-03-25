@@ -2,10 +2,12 @@
 {
     using System;
     using System.Web;
+    using System.Web.Http.Routing;
     using Alpha.Main.Site.Models.Requests.CustomerProfile;
     using App_GlobalResources;
     using Extensions;
     using MediatR;
+    using Models.CustomerProfiles;
     using Models.Dtos;
     using Models.Views.CustomerProfile;
     using Services;
@@ -18,16 +20,16 @@
     {
         private const int MaxCountNickNameTooltip = 4;
 
-        private readonly IDashboardService _dashboardService;
+        private readonly CustomerProfileService _customerProfileService;
         private readonly AppPathService _appPathService;
         private readonly IUserSession _userSession;
 
         public CustomerProfileHandler(
-            IDashboardService dashboardService,
+            CustomerProfileService customerProfileService,
             AppPathService appPathService,
             IUserSession userSession)
         {
-            _dashboardService = dashboardService;
+            _customerProfileService = customerProfileService;
             _appPathService = appPathService;
             _userSession = userSession;
         }
@@ -68,7 +70,7 @@
         public BriefProfileViewModel Handle(BriefProfileQuery message)
         {
             var baseOldMainApp = _appPathService.GetAppPath(AppSettings.OldMainApp, "~");
-            var profile = _dashboardService.GetProfile(message);
+            var profile = _customerProfileService.GetProfilePicture(message.CustId);
             var isShowEditProfilePictureTooltip = profile.IsDefaultAvatar
                 && CountNickNameToolTip < MaxCountNickNameTooltip
                 && !string.IsNullOrEmpty(_userSession.NickName);
@@ -76,43 +78,51 @@
             var viewModel = new BriefProfileViewModel
             {
                 IsDefaultAvatar = profile.IsDefaultAvatar,
-                EmbedImage = GenerateImage(profile.BinaryAvatar),
+                EmbedImage = GenerateImage(profile),
                 IsShowEditProfilePictureTooltip = isShowEditProfilePictureTooltip,
                 ChangeNickNameUrl = string.Format("/{0}LoginOption?custId={1}", baseOldMainApp, _userSession.CustId),
                 ViewProfileUrl = string.Format("/{0}ProfilePicture?custId={1}", baseOldMainApp, _userSession.CustId),
                 Username = HttpUtility.HtmlEncode(_userSession.UserName),
-                IsNotMainAccount = _userSession.IsSubAcc || _userSession.IsInternal,
-                IsShowIntroduceNickName = CountNickNameToolTip++ < MaxCountNickNameTooltip
+                IsNotMainAccount = _userSession.IsSubAcc || _userSession.IsInternal
             };
 
-            BuildNickName(viewModel);
+            if (CountNickNameToolTip < MaxCountNickNameTooltip)
+            {
+                CountNickNameToolTip++;
+            }
+            else
+            {
+                viewModel.IsShowIntroduceNickName = true;
+            }
+
+            viewModel.NickName = BuildNickName();
 
             return viewModel;
         }
 
-        private void BuildNickName(BriefProfileViewModel viewModel)
+        private string BuildNickName()
         {
             if (_userSession.IsSubAcc)
             {
-                viewModel.NickName = string.Format("{0} {1}", Resources.subAcc, HttpUtility.HtmlEncode(_userSession.SubUserName));
+                return string.Format("{0} {1}", Resources.subAcc, HttpUtility.HtmlEncode(_userSession.SubUserName));
             }
             else if (_userSession.IsInternal)
             {
-                viewModel.NickName = string.Format("{0} {1}", Resources.admin, HttpUtility.HtmlEncode(_userSession.AdminName));
+                return string.Format("{0} {1}", Resources.admin, HttpUtility.HtmlEncode(_userSession.AdminName));
             }
             else
             {
-                viewModel.NickName = HttpUtility.HtmlEncode(_userSession.NickName);
+                return HttpUtility.HtmlEncode(_userSession.NickName);
             }
         }
 
-        private string GenerateImage(byte[] binaryAvatar)
+        private string GenerateImage(ProfilePicture profilePicture)
         {
             try
             {
-                if (binaryAvatar != null)
+                if (profilePicture.BinaryAvatar != null)
                 {
-                    return "data:image/jpeg;base64," + Convert.ToBase64String(binaryAvatar);
+                    return "data:image/jpeg;base64," + Convert.ToBase64String(profilePicture.BinaryAvatar);
                 }
             }
             catch (Exception ex)
@@ -120,7 +130,7 @@
                 Logs.Write(ex);
             }
 
-            return "data:image/jpeg;base64," + string.Empty;
+            return _appPathService.GetContentPath("~/Content/Images/icon_user_default.png");
         }
     }
 }

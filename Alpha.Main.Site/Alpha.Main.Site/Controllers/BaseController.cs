@@ -63,7 +63,7 @@
 
             Thread.CurrentThread.CurrentCulture.DateTimeFormat = _defaultCulture.DateTimeFormat;
             Thread.CurrentThread.CurrentCulture.NumberFormat = _defaultCulture.NumberFormat;
-
+            
             base.Initialize(requestContext);
         }
     }

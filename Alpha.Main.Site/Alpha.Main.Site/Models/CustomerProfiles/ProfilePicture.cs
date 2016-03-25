@@ -1,8 +1,8 @@
-﻿namespace Alpha.Main.Site.Models.Dtos
+﻿namespace Alpha.Main.Site.Models.CustomerProfiles
 {
     using System.Drawing;
 
-    public class ProfilePictureModel
+    public class ProfilePicture
     {
         public int CustId { get; set; }
 

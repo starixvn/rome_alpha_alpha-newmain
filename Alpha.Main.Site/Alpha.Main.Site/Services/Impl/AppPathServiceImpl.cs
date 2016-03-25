@@ -1,7 +1,9 @@
 ﻿namespace Alpha.Main.Site.Services.Impl
 {
+    using System;
     using System.Text.RegularExpressions;
     using System.Web;
+    using System.Web.Mvc;
 
     public class AppPathServiceImpl : AppPathService
     {
@@ -10,6 +12,13 @@
             var appPath = HttpContext.Current.Response.ApplyAppPathModifier(pathModifier);
             appPath = Regex.Replace(appPath, HttpRuntime.AppDomainAppVirtualPath, appName, RegexOptions.IgnoreCase);
             return appPath;
+        }
+
+        public string GetContentPath(string contentPath)
+        {
+            UrlHelper url = new UrlHelper(HttpContext.Current.Request.RequestContext);
+
+            return url.Content(contentPath);
         }
     }
 }

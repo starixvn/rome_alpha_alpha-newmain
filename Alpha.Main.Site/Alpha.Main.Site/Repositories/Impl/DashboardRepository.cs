@@ -57,24 +57,6 @@
             return languages;
         }
 
-        public ProfilePictureModel GetAvatar(ViewProfileCriteria criteria)
-        {
-            var avatar = new ProfilePictureModel();
-            avatar.IsDefaultAvatar = true;
-            using (var db = new ObjectDb(criteria.GetSettingKey()))
-            {
-                var reader = db.ExecuteReader(criteria.GetSpParams());
-                if (reader.Read())
-                {
-                    avatar.IsDefaultAvatar = false;
-                    avatar.BinaryAvatar = Converter.ToByteArray(reader["image"]);
-                }
-            }
-
-            return avatar;
-        }
-
-
         public SiteMapNode GetSiteMapNode()
         {
             var node = SiteMap.Provider.RootNode;

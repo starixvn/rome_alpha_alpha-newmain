@@ -15,7 +15,7 @@
             Contract.Ensures(string.IsNullOrWhiteSpace(url), nameof(url));
 
             AuthorizationBO service = new AuthorizationBO(UserSession.Current.NetSessionId);
-            return service.AuthorizeUrl(0, 0, false, url);            
+            return service.AuthorizeUrl(0, 0, false, url);
         }
     }
 }

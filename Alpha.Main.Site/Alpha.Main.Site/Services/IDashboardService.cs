@@ -16,8 +16,6 @@
 
         List<string> GetHotMessages();
 
-        ProfilePictureModel GetProfile(BriefProfileQuery message);
-
         ResultModel ChangeLanguage(ChangeLanguageQuery message);
 
         string GetCookieCurrentURL();

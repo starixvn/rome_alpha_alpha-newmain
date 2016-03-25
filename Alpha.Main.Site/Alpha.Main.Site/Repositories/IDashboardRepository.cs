@@ -9,8 +9,6 @@
     {
         List<LanguageModel> GetLanguages();
 
-        ProfilePictureModel GetAvatar(ViewProfileCriteria criteria);
-
         SiteMapNode GetSiteMapNode();
     }
 }
