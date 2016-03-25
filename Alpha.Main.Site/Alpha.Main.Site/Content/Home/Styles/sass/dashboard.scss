@@ -22,32 +22,36 @@
     height: 100%;
 }
 
-.langFlag_e {
-    background: rgba(0, 0, 0, 0) url("../../../../../contents/img/flags/flag_en.png") no-repeat scroll 0 0;
+.icon-flag {
+    background: url("../../../../../contents/img/flag_sprite.png") no-repeat;
+    display: inline-block;
+    height: 12px;
+    width: 17px;
 }
 
-.langFlag_ct {
-    background: rgba(0, 0, 0, 0) url("../../../../../contents/img/flags/flag_cn.png") no-repeat scroll 0 0;
+.langFlag_en {
+    background-position: 0 0;
 }
 
-.langFlag_cs {
-    background: rgba(0, 0, 0, 0) url("../../../../../contents/img/flags/flag_cn.png") no-repeat scroll 0 0;
+.langFlag_zh {
+     background-position: 0 -12px;
 }
 
 .langFlag_ko {
-    background: rgba(0, 0, 0, 0) url("../../../../../contents/img/flags/flag_kr.png") no-repeat scroll 0 0;
+     background-position: 0 -51px;
+     height: 13px;
 }
 
 .langFlag_th {
-    background: rgba(0, 0, 0, 0) url("../../../../../contents/img/flags/flag_th.png") no-repeat scroll 0 0;
+    background-position: 0 -39px;
 }
 
-.langFlag_j {
-    background: rgba(0, 0, 0, 0) url("../../../../../contents/img/flags/flag_jp.png") no-repeat scroll 0 0;
+.langFlag_ja {
+    background-position: 0 -26px;
 }
 
 .langFlag_vi {
-    background: rgba(0, 0, 0, 0) url("../../../../../contents/img/flags/flag_vn.png") no-repeat scroll 0 0;
+    background-position: 0 -65px;
 }
 
 .old-view-text{

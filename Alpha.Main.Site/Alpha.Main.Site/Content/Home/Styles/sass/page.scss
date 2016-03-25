@@ -37,14 +37,6 @@ a, a:focus, a:active, a:target, a:hover {
     font-size: 16px;
 }
 
-.icon-flag {
-    background: url(../Images/sprite_01.png);
-    background-position: -73px -115px;
-    display: inline-block;
-    height: 12px;
-    width: 17px;
-}
-
 
 /********************************** Sidebar ******************************************/
 .sidebar {
@@ -363,7 +355,7 @@ a, a:focus, a:active, a:target, a:hover {
                         cursor: pointer;
                         .icon {
                             position: relative;
-                            top: 3px;
+                            top: 1px;
                             margin-right: 10px;
                         }
                     }

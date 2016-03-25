@@ -22,5 +22,13 @@
   {
     "outputFile": "Content/Home/Styles/sass/PopupMessage.css",
     "inputFile": "Content/Home/Styles/sass/PopupMessage.scss"
+  },
+  {
+    "outputFile": "Content/Main/Styles/sass/dashboard.css",
+    "inputFile": "Content/Main/Styles/sass/dashboard.scss"
+  },
+  {
+    "outputFile": "Content/Main/Styles/sass/page.css",
+    "inputFile": "Content/Main/Styles/sass/page.scss"
   }
 ]

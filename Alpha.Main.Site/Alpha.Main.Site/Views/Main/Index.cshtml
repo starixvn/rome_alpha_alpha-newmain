@@ -106,13 +106,12 @@
                 <li><span class="icon icon-time"></span><span class="txt-top" id="clock"></span></li>
                 <li class="dropdown">
                     <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
-                        <span class="icon icon-flag language-selector langFlag_@currentUserSession.LangKey.ToLower()"></span>
                         <span class="language-text language-selector"></span>
                     </a>
                     <ul class="dropdown-menu list-language" id="language">
                         @foreach (var language in Model.Languages)
                         {
-                            <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode">@language.LanguageName</a></li>
+                            <li class="@language.LanguageCode"><a class="changelanguage-link" data-value="@language.LanguageCode"><span class="icon icon-flag langFlag_@language.LanguageCode.Substring(0, 2).ToLower()"></span>@language.LanguageName</a></li>
                         }
                     </ul>
                 </li>
