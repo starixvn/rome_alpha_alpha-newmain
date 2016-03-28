@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using App_Start;
@@ -25,12 +24,12 @@
 
         public bool Visible
         {
-            get { return this.menuBarVisibleFunc.Invoke(); }
+            get { return this.menuBarVisibleFunc(); }
         }
 
         public bool IsAccountInfoVisible
         {
-            get { return this.accountInfoVisibleFunc.Invoke(); }
+            get { return this.accountInfoVisibleFunc(); }
         }
 
         public IEnumerable<IMenuItem> MenuItems
