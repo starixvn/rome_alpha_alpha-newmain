@@ -20,22 +20,22 @@
     </div>
     <section class="mainmenu-container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
         <ul class="list-menu">
-            @foreach (var menu in Model.MenuItems)
+            @foreach (var menuItem in Model.MenuItems)
             {
-                if (menu.VisibileSubMenus.Any())
+                if (menuItem.VisibileSubMenus.Any())
                 {
-                    <li class="menu-item @(menu.ShowSubMenus ? "active" : string.Empty)">
-                        <a class="withripple menu-opener parent-menu @(menu.ShowSubMenus ? "active" : string.Empty)"
+                    <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)">
+                        <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)"
                            href="javascript:;">
-                            <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()"></span>@menu.DisplayName</span>
+                            <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
                             <span class="pull-right icon-arrow-right"></span>
                         </a>
-                        <ul class="sub-menu" style="display: @(menu.ShowSubMenus ? "block" : "none");">
-                            @foreach (var subMenu in menu.VisibileSubMenus)
+                        <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
+                            @foreach (var subMenuItem in menuItem.VisibileSubMenus)
                             {
-                                <li class="sub-menu-item @(subMenu.Status.Disabled?"disabled-menu":string.Empty)">
-                                    <a href="@subMenu.Url" target="main">
-                                        @subMenu.DisplayName
+                                <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)">
+                                    <a href="@subMenuItem.Url" target="main">
+                                        @subMenuItem.DisplayName
                                     </a>
                                 </li>
                             }
@@ -45,9 +45,9 @@
                 else
                 {
                     <li class="menu-item">
-                        <a class="withripple menu-opener parent-menu" href="@menu.Url" target="main">
-                            <span class="txt-item pull-left"><span class="icon icon-@menu.ResourceKey.ToLower()"></span>@menu.DisplayName</span>
-                        </a>
+                        <a class="withripple menu-opener parent-menu" href="@menuItem.Url" target="main">
+                            <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
+                        </a>                  
                     </li>
                 }
             }

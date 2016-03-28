@@ -424,11 +424,24 @@
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_bg.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_left.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_right.png" />
-    <Content Include="Content\Home\Scripts\header.navigation.js" />
-    <Content Include="Content\Home\Scripts\header.notification.js" />
+    <Content Include="Content\Home\Scripts\Header.min.js">
+      <DependentUpon>Header.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Scripts\header.msg.min.js">
+      <DependentUpon>header.msg.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Scripts\header.nav.js" />
+    <Content Include="Content\Home\Scripts\header.na.min.js">
+      <DependentUpon>header.nav.js</DependentUpon>
+    </Content>
     <Content Include="Content\Home\Scripts\menubar.js" />
     <Content Include="Content\Home\Scripts\IndexPage.js" />
-    <Content Include="Content\Home\Scripts\SideBar.js" />
+    <Content Include="Content\Home\Scripts\menubar.min.js">
+      <DependentUpon>menubar.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Scripts\piwikLoader.min.js">
+      <DependentUpon>piwikLoader.js</DependentUpon>
+    </Content>
     <Content Include="Content\Home\Styles\agent.css">
       <DependentUpon>agent.scss</DependentUpon>
     </Content>
@@ -503,6 +516,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Code\RazorHelper.cshtml" />
+    <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -698,10 +712,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Index\" />
-    <Folder Include="Views\MenuBar\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ko-KR.resx" />

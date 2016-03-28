@@ -26,9 +26,9 @@
                 "~/Content/Shared/Scripts/SharedScripts.js",
                 "~/Content/Home/Scripts/Core.js",
                 "~/Content/Home/Scripts/Header.js",
-                "~/Content/Home/Scripts/header.navigation.js",
-                "~/Content/Home/Scripts/header.notification.js",
-                "~/Content/Home/Scripts/SideBar.js",
+                "~/Content/Home/Scripts/header.nav.js",
+                "~/Content/Home/Scripts/header.msg.js",
+                "~/Content/Home/Scripts/menubar.js",
                 "~/Content/CustomerProfile/Scripts/brief-profile.js",
                 "~/Content/Home/Scripts/IndexPage.js",
                 "~/Content/Announcement/Scripts/AnnouncementManager.js"));

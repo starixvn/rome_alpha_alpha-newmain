@@ -1,0 +1,38 @@
+[
+  {
+    "outputFileName": "Content/Home/Scripts/menubar.js",
+    "inputFiles": [
+      "Content/Home/Scripts/menubar.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Home/Scripts/Header.js",
+    "inputFiles": [
+      "Content/Home/Scripts/Header.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Home/Scripts/header.msg.js",
+    "inputFiles": [
+      "Content/Home/Scripts/header.msg.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Home/Scripts/header.navigation.js",
+    "inputFiles": [
+      "Content/Home/Scripts/header.navigation.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Home/Scripts/header.na.js",
+    "inputFiles": [
+      "Content/Home/Scripts/header.na.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/Home/Scripts/piwikLoader.js",
+    "inputFiles": [
+      "Content/Home/Scripts/piwikLoader.js"
+    ]
+  }
+]

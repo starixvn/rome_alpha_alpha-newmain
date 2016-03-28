@@ -72,15 +72,6 @@
 
         private static void RegisterServices(Container container)
         {
-            container.Register<IDashboardService, DashboardService>(Lifestyle.Scoped);
-            container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Scoped);
-            container.Register<AppPathService, AppPathServiceImpl>(Lifestyle.Singleton);
-            container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Scoped);
-            container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
-            container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
-            container.Register<AuthorizeUrlService, AuthorizeUrlServiceImpl>(Lifestyle.Scoped);
-            container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Scoped);
-
             container.Register<IUserSession>(
                 () =>
                 {
@@ -94,6 +85,17 @@
                     return new UserSessionBase(string.Empty);
                 },
                 Lifestyle.Transient);
+
+            container.Register<IDashboardService, DashboardService>(Lifestyle.Scoped);
+            container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Scoped);
+            container.Register<AppPathService, AppPathServiceImpl>(Lifestyle.Singleton);
+            container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Scoped);
+            container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
+            container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
+            container.Register<AuthorizeUrlService, AuthorizeUrlServiceImpl>(Lifestyle.Scoped);
+            container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Scoped);
+
+            
         }
 
         private static void RegisterDataAccesses(Container container)

@@ -6,18 +6,26 @@
 
     public class AuthorizeUrlServiceImpl : AuthorizeUrlService
     {
-        private readonly AuthorizationBO authService;
+        private AuthorizationBO authService;
 
-        public AuthorizeUrlServiceImpl(AuthorizationBO authService = null)
+        private AuthorizationBO AuthorizeServie
         {
-            this.authService = authService ?? new AuthorizationBO(UserSession.Current.NetSessionId);
+            get
+            {
+                if (authService == null)
+                {
+                    return new AuthorizationBO(UserSession.Current.NetSessionId);
+                }
+
+                return authService;
+            }            
         }
 
         public bool CanAccessUrl(string url)
         {
             Argument.Requires(!string.IsNullOrWhiteSpace(url), nameof(url));
             
-            return authService.AuthorizeUrl(0, 0, false, url);
+            return AuthorizeServie.AuthorizeUrl(0, 0, false, url);
         }
     }
 }
