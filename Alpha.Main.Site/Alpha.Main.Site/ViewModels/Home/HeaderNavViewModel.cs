@@ -4,11 +4,11 @@
 
     public class HeaderNavViewModel
     {
-       public string LanguageKey
+       public string Language
         {
             get
             {
-                return UserSession.Current.LangKey;
+                return UserSession.Current.Language;
             }
         }
     }

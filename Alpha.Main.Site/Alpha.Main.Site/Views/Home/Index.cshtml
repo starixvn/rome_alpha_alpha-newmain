@@ -7,15 +7,15 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
-    <title></title>    
-    @ContentSite.Styles.Render("/css/bootstrap/css/bootstrap.min.css")    
+    <title></title>
+    @ContentSite.Styles.Render("/css/bootstrap/css/bootstrap.min.css")
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     @ContentSite.Styles.Render(
         "/css/reset.css",
         "/css/bootstrap-material/css/bootstrap-material-design.min.css",
@@ -23,13 +23,11 @@
         "/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.min.css",
         "/fonts/iconalpha/style.css")
     @Styles.Render("~/bundle/styles/home")
-    @Styles.Render($"~/content/home/styles/{Model.UserLevel}.css")    
+    @Styles.Render($"~/content/home/styles/{Model.UserLevel}.css")
 </head>
 <body>
     <aside class="sidebar">
-        <div class="customer-profile" id="profile">
-        	@Html.Action("BriefProfile", "CustomerProfile")
-        </div>
+        <div class="customer-profile" id="profile"></div>
         <nav class="navigation" id="navigation">
             @Html.Action("MenuBar")
         </nav>
@@ -45,18 +43,20 @@
     </div>
     @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 
+    <input id="onuserid" type="hidden" value="@Model.OnUserId" />
+    <input id="basemainapp" type="hidden" value="@Url.Content("~")" />
     @ContentSite.Scripts.Render(
-    "/libs/jquery/jquery-1.11.3.min.js",
-    "/css/bootstrap/js/bootstrap.min.js",
-    "/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.concat.min.js",
-    "/css/bootstrap-material/js/material.min.js",
-    "/css/bootstrap-material/js/ripples.min.js",
-    "/libs/underscore/underscore-min.js")
+        "/libs/jquery/jquery-1.11.3.min.js",
+        "/css/bootstrap/js/bootstrap.min.js",
+        "/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.concat.min.js",
+        "/css/bootstrap-material/js/material.min.js",
+        "/css/bootstrap-material/js/ripples.min.js",
+        "/libs/underscore/underscore-min.js")
 
     @Scripts.Render("~/bundles/scripts/home")
     <script type="text/javascript">
-            $.material.init();
-            @*var baseMainApp='';
+
+        @*var baseMainApp='';
             var baseOldMainApp='';
             var start = baseMainApp.indexOf('//') + 2;
             window.document.title = baseMainApp.substr(start, baseMainApp.length - start - 1);
@@ -65,20 +65,9 @@
             var contentFrame = "main";
             var _resources = {
                 language: '@currentUserSession.Language',
-                onUserId: '@currentUserSession.OnUserId',
                 cookieCurrentURLKey: '',
                 baseUrl: '',
                 msgList:[],
-
-                months:[],
-                year: @DateTime.Now.Year,
-                month:@DateTime.Now.Month,
-                day:@DateTime.Now.Day,
-                hrs:@DateTime.Now.Hour,
-                min:@DateTime.Now.Minute,
-                sec:@DateTime.Now.Second,
-                PM:'@Resources.PM',
-                AM:'@Resources.AM'
             };*@
 
     </script>

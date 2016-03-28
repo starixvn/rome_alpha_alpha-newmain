@@ -19,8 +19,25 @@ var IndexPageManager = function () {
         self.setSharedVariables();
     };
     self.initElements = function () {
+        $.material.init();
+        self.loadBriefProfile();
         self.selectTopMenu();
     };
+    self.loadBriefProfile = function () {
+        var url = $("#basemainapp").val() + 'CustomerProfile/BriefProfile';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {},
+            responseType: "json",
+            success: function (result) {
+                $("#profile").html(result);
+            },
+            error: function (jqXhr, event, ajaxSettings) {
+            }
+        });
+    };
+
     self.bindEvents = function () {
         briefProfile.bindEvents();
         jQuery(".iframe-content").load(function () {
@@ -32,8 +49,7 @@ var IndexPageManager = function () {
     self.signOut = function () {
         setCookie(_resources.cookieCurrentURLKey, '', -1);
         var index = window;
-        while (index != index.parent)
-        {
+        while (index != index.parent) {
             index = index.parent;
         }
 
@@ -113,7 +129,7 @@ var IndexPageManager = function () {
         $.ajax({
             type: "POST",
             url: url,
-            data: { onid: _resources.onUserId },
+            data: { onid: $("#onuserid").val() },
             responseType: "json",
             success: function (result) {
                 var result = convertReponseToJson(result);

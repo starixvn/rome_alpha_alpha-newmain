@@ -1,15 +1,28 @@
 ﻿<section class="navbar header-nav" id="header-nav">
     <span class="icon-collapse icon-hamburger withripple"></span>
     <ul class="nav navbar-nav list-top">
-        <li><span class="icon icon-time"></span><span class="txt-top" id="clock"></span></li>
+        <li>
+            <span class="icon icon-time"></span>
+            <span class="txt-top" id="clock"
+                  data-year="@DateTime.Now.Year"
+                  data-month="@DateTime.Now.Month"
+                  data-day="@DateTime.Now.Day"
+                  data-hour="@DateTime.Now.Hour"
+                  data-minute="@DateTime.Now.Minute"
+                  data-second="@DateTime.Now.Second"
+                  data-label-am="@Resources.AM"
+                  data-label-pm="@Resources.PM"
+                  data-label-months="[]"></span>
+        </li>
         <li class="dropdown">
-            @RazorHelper.DisplayLanguageDropdown(Model.LanguageKey)
+            @RazorHelper.DisplayLanguageDropdown(Model.Language)
         </li>
         <li class="withripple"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
         <li class="dropdown">
             <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
                 <span class="icon icon-squares top-right-menu"></span>
             </a>
+
             <ul class="dropdown-menu list-setting">
                 @*<li><a href="/@(baseOldMainApp + "_HowToUse/Index.aspx")" target="blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
                     <li><a href="javascript:indexPageManager.changeMenu('/' + top.baseOldMainApp + 'Company/ContactUs/Index'); indexPageManager.closeListSetting();"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>

@@ -2,6 +2,21 @@
 
 var HeaderManager = function () {
     var self = this;
+
+    self.data = {
+        clock: {
+            year: 0,
+            month: 0,
+            day: 0,
+            hour: 0,
+            minute: 0,
+            second: 0,
+            labelAM: '',
+            labelPM: '',
+            months: []
+        },
+    };
+
     self.enums = {
         ErrorCode: {
             AccessDenied: 1
@@ -9,15 +24,29 @@ var HeaderManager = function () {
     };
 
     self.init = function () {
-        //self.runClock();
+        self.initClock();
+        self.runClock();
 
         //self.initElements();
         //self.bindEvents();
     };
 
+    self.initClock = function () {
+        var clock = $("#clock");
+        self.data.clock.year = clock.attr("data-year");
+        self.data.clock.month = clock.attr("data-month");
+        self.data.clock.day = clock.attr("data-day");
+        self.data.clock.hour = clock.attr("data-hour");
+        self.data.clock.minute = clock.attr("data-minute");
+        self.data.clock.second = clock.attr("data-second");
+        self.data.clock.labelAM = clock.attr("data-label-am");
+        self.data.clock.labelPM = clock.attr("data-label-pm");
+        self.data.clock.labelMonths = clock.attr("data-label-months");
+    };
     self.initElements = function () {
-        var language = jQuery(".list-language ." + _resources.language + " > a").html();
-        jQuery(".language-text").html(language);
+        var currentLanguage = $("#language").attr("data-currentlanguage");
+        var language = $(".list-language ." + currentLanguage + " > a").html();
+        $(".language-text").html(language);
     };
     self.bindEvents = function () {
         jQuery(".changelanguage-link").click(function () {
@@ -26,46 +55,45 @@ var HeaderManager = function () {
     };
 
     self.runClock = function () {
-        _resources.sec++;
-        if (_resources.sec == 60) {
-            _resources.sec = 0;
-            _resources.min++;
+        self.data.clock.second++;
+        if (self.data.clock.second == 60) {
+            self.data.clock.second = 0;
+            self.data.clock.minute++;
         }
 
-        if (_resources.min == 60) {
-            _resources.min = 0;
-            _resources.hrs++;
+        if (self.data.clock.minute == 60) {
+            self.data.clock.minute = 0;
+            self.data.clock.hour++;
         }
 
-        if (_resources.hrs == 24) {
-            _resources.hrs = 0;
-            _resources.sec = 0;
-            _resources.min = 0;
-            _resources.day++;
+        if (self.data.clock.hour == 24) {
+            self.data.clock.hour = 0;
+            self.data.clock.second = 0;
+            self.data.clock.minute = 0;
+            self.data.clock.day++;
         }
 
-        strmin = _resources.min < 10 ? "0" + _resources.min : _resources.min;
-        strsec = _resources.sec < 10 ? "0" + _resources.sec : _resources.sec;
+        strmin = self.data.clock.minute < 10 ? "0" + self.data.clock.minute : self.data.clock.minute;
+        strsec = self.data.clock.second < 10 ? "0" + self.data.clock.second : self.data.clock.second;
 
-        if (!_.isDate(new Date(parseFloat(_resources.year) + "/" + _resources.month + "/" + _resources.day))) {
+        if (!_.isDate(new Date(parseFloat(self.data.clock.year) + "/" + self.data.clock.month + "/" + self.data.clock.day))) {
             //to next _resources.month
-            _resources.month++;
-            _resources.day = 1;
+            self.data.clock.month++;
+            self.data.clock.day = 1;
         }
 
-        if (!_.isDate(new Date(parseFloat(_resources.year) + "/" + _resources.month + "/" + _resources.day))) {
-            //to next _resources.year
-            _resources.year++;
-            _resources.month = 1;
-            _resources.day = 1;
+        if (!_.isDate(new Date(parseFloat(self.data.clock.year) + "/" + self.data.clock.month + "/" + self.data.clock.day))) {
+            //to next self.data.clock.year
+            self.data.clock.year++;
+            self.data.clock.month = 1;
+            self.data.clock.day = 1;
         }
 
-        stra = _resources.hrs >= 12 ? _resources.PM : _resources.AM;
-        strhrs = _resources.hrs >= 12 ? _resources.hrs - 12 : _resources.hrs;
-        var months = eval(_resources.months);
+        stra = self.data.clock.hour >= 12 ? self.data.clock.labelPM : self.data.clock.labelAM;
+        strhrs = self.data.clock.hour >= 12 ? self.data.clock.hour - 12 : self.data.clock.hour;
 
         var str = strhrs + ":" + strmin + ":" + strsec + " " + stra + " " +
-            months[_resources.month - 1] + " " + _resources.day + ", " + _resources.year + " GMT-4";
+            self.data.clock.labelMonths[self.data.clock.month - 1] + " " + self.data.clock.day + ", " + self.data.clock.year + " GMT-4";
         $("#clock").html(str);
         setTimeout(self.runClock, 1000);
     };
