@@ -7,7 +7,7 @@
 .header-nav {
   background: #276443 url("../Images/headerbg_3.jpg") no-repeat scroll 0 0; }
 
-.c-Primary {
+.icon-home, .icon-add, .icon-message {
   color: #1c5334; }
 
 .sidebar .main-tab li.active a {
