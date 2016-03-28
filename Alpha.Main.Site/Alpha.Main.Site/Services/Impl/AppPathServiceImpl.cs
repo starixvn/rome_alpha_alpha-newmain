@@ -13,12 +13,5 @@
             appPath = Regex.Replace(appPath, HttpRuntime.AppDomainAppVirtualPath, appName, RegexOptions.IgnoreCase);
             return appPath;
         }
-
-        public string GetContentPath(string contentPath)
-        {
-            UrlHelper url = new UrlHelper(HttpContext.Current.Request.RequestContext);
-
-            return url.Content(contentPath);
-        }
     }
 }

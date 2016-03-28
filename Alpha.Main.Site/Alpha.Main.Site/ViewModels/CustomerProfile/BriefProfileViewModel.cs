@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.Models.Views.CustomerProfile
+﻿namespace Alpha.Main.Site.ViewModels.CustomerProfile
 {
     public class BriefProfileViewModel
     {

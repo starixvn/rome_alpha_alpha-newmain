@@ -5,7 +5,7 @@
 <div id="profile-content">
 
     <a href="@Model.ViewProfileUrl" target="@Model.MainFrameName" class="profile-avatar">
-        <img id="logoProfileImg" src='@Model.EmbedImage' alt="" title="@Resources.ProfileClickTootip" />
+        <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/Content/Images/icon_user_default.png") : Model.EmbedImage)' alt="" title="@Resources.ProfileClickTootip" />
     </a>
 
     <div class="userinfo">

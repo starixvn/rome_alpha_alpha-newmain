@@ -667,7 +667,7 @@
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />
-    <Compile Include="Models\Views\CustomerProfile\BriefProfileViewModel.cs" />
+    <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="Helpers\AppPathHelper.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
     <Compile Include="Services\CustomerProfileService.cs" />

@@ -130,7 +130,7 @@
                 Logs.Write(ex);
             }
 
-            return _appPathService.GetContentPath("~/Content/Images/icon_user_default.png");
+            return string.Empty;
         }
     }
 }
