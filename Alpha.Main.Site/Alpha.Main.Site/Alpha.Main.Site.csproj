@@ -630,7 +630,7 @@
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Helpers\Argument.cs" />
-    <Compile Include="Helpers\HtmlHelper.cs" />
+    <Compile Include="Helpers\ContentSite.cs" />
     <Compile Include="Models\Dtos\Announcement\AnnouncementModel.cs" />
     <Compile Include="Models\Dtos\Announcement\HotAnnouncementModel.cs" />
     <Compile Include="Models\Dtos\Announcement\MessageModel.cs" />

@@ -1,13 +1,4 @@
-﻿@helper HelperName(string name)
-{
-// your helper can contain code and/or markup, e.g.
-// var msg = "Hello " + name;
-// <p>@msg</p>
-// For more information, visit http://go.microsoft.com/fwlink/?LinkID=204658
-}
-
-
-@helper DisplayLanguageDropdown(string selectedLangaugeCode = "en-US")
+﻿@helper DisplayLanguageDropdown(string selectedLangaugeCode = "en-US")
 {
     <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
         <span class="icon icon-flag language-selector langFlag_@selectedLangaugeCode.ToLowerInvariant()"></span>        
