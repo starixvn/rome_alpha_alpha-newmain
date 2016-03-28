@@ -6,8 +6,6 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Web.SessionState;
-    using Auth.Services;
-    using Auth.Services.Impl;
     using DataAccess;
     using DataAccess.Impl;
     using Fanex.Data.Repository;
@@ -94,8 +92,7 @@
             container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Scoped);
             container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
             container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
-            container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Scoped);
-            container.Register<IAuthorizationService>(() => new AuthorizationService(), Lifestyle.Scoped);
+            container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Scoped);            
         }
 
         private static void RegisterDataAccesses(Container container)
