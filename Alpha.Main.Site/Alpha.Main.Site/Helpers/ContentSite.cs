@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.App_Code
+﻿namespace Alpha.Main.Site.Helpers
 {
     using System.Linq;
     using System.Web;
@@ -20,6 +20,6 @@
             {
                 return System.Web.Optimization.Scripts.Render(paths.Select(path => "/" + AppSettings.ContentSite + path).ToArray());
             }
-        }       
+        }
     }
 }
