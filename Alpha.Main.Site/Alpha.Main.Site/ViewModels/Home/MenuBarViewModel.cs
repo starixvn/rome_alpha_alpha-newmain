@@ -19,8 +19,8 @@
             Func<bool> accountInfoVisibleFunc = null)
         {
             this.menuItems = menuItems;
-            this.menuBarVisibleFunc = menuBarVisibleFunc ?? FunctionConfig.ShowMenuBar;
-            this.accountInfoVisibleFunc = accountInfoVisibleFunc ?? FunctionConfig.ShowAccountInfo;
+            this.menuBarVisibleFunc = menuBarVisibleFunc ?? FunctionRegistry.ShowMenuBar;
+            this.accountInfoVisibleFunc = accountInfoVisibleFunc ?? FunctionRegistry.ShowAccountInfo;
         }
 
         public bool Visible

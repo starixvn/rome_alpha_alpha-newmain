@@ -1,34 +1,34 @@
 ﻿[
   {
-    "outputFile": "Content/Home/Styles/sass/page.css",
-    "inputFile": "Content/Home/Styles/sass/page.scss"
+    "outputFile": "Content/Home/Styles/page.css",
+    "inputFile": "Content/Home/Styles/page.scss"
   },
   {
-    "outputFile": "Content/Home/Styles/sass/LevelCustomStyle2.css",
-    "inputFile": "Content/Home/Styles/sass/LevelCustomStyle2.scss"
+    "outputFile": "Content/Home/Styles/agent.css",
+    "inputFile": "Content/Home/Styles/agent.scss"
   },
   {
-    "outputFile": "Content/Home/Styles/sass/LevelCustomStyle3.css",
-    "inputFile": "Content/Home/Styles/sass/LevelCustomStyle3.scss"
+    "outputFile": "Content/Home/Styles/master.css",
+    "inputFile": "Content/Home/Styles/master.scss"
   },
   {
-    "outputFile": "Content/Home/Styles/sass/LevelCustomStyle4.css",
-    "inputFile": "Content/Home/Styles/sass/LevelCustomStyle4.scss"
+    "outputFile": "Content/Home/Styles/super.css",
+    "inputFile": "Content/Home/Styles/super.scss"
   },
   {
-    "outputFile": "Content/Home/Styles/sass/dashboard.css",
-    "inputFile": "Content/Home/Styles/sass/dashboard.scss"
+    "outputFile": "Content/Home/Styles/dashboard.css",
+    "inputFile": "Content/Home/Styles/dashboard.scss"
   },
   {
-    "outputFile": "Content/Home/Styles/sass/PopupMessage.css",
-    "inputFile": "Content/Home/Styles/sass/PopupMessage.scss"
+    "outputFile": "Content/Home/Styles/PopupMessage.css",
+    "inputFile": "Content/Home/Styles/PopupMessage.scss"
   },
   {
-    "outputFile": "Content/Main/Styles/sass/dashboard.css",
-    "inputFile": "Content/Main/Styles/sass/dashboard.scss"
+    "outputFile": "Content/Home/Styles/dashboard.css",
+    "inputFile": "Content/Home/Styles/dashboard.scss"
   },
   {
-    "outputFile": "Content/Main/Styles/sass/page.css",
-    "inputFile": "Content/Main/Styles/sass/page.scss"
+    "outputFile": "Content/Home/Styles/page.css",
+    "inputFile": "Content/Home/Styles/page.scss"
   }
 ]

@@ -429,6 +429,42 @@
     <Content Include="Content\Home\Scripts\menubar.js" />
     <Content Include="Content\Home\Scripts\IndexPage.js" />
     <Content Include="Content\Home\Scripts\SideBar.js" />
+    <Content Include="Content\Home\Styles\agent.css">
+      <DependentUpon>agent.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\agent.min.css">
+      <DependentUpon>agent.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\dashboard.css">
+      <DependentUpon>dashboard.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\dashboard.min.css">
+      <DependentUpon>dashboard.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\master.css">
+      <DependentUpon>master.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\master.min.css">
+      <DependentUpon>master.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\page.css">
+      <DependentUpon>page.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\page.min.css">
+      <DependentUpon>page.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\PopupMessage.css">
+      <DependentUpon>PopupMessage.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\PopupMessage.min.css">
+      <DependentUpon>PopupMessage.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\super.css">
+      <DependentUpon>super.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Home\Styles\super.min.css">
+      <DependentUpon>super.css</DependentUpon>
+    </Content>
     <Content Include="Content\Images\collapse.png" />
     <Content Include="Content\Images\expand.png" />
     <Content Include="Content\Images\icon_user_default.png" />
@@ -444,42 +480,6 @@
     <Content Include="Content\Home\Styles\Images\tooltip_bg.png" />
     <Content Include="Content\Home\Styles\Images\tooltip_left.png" />
     <Content Include="Content\Home\Styles\Images\tooltip_right.png" />
-    <Content Include="Content\Home\Styles\sass\dashboard.css">
-      <DependentUpon>dashboard.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\dashboard.min.css">
-      <DependentUpon>dashboard.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\LevelCustomStyle2.css">
-      <DependentUpon>agent.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\LevelCustomStyle2.min.css">
-      <DependentUpon>LevelCustomStyle2.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\LevelCustomStyle3.css">
-      <DependentUpon>master.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\LevelCustomStyle3.min.css">
-      <DependentUpon>LevelCustomStyle3.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\LevelCustomStyle4.css">
-      <DependentUpon>super.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\LevelCustomStyle4.min.css">
-      <DependentUpon>LevelCustomStyle4.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\page.css">
-      <DependentUpon>page.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\page.min.css">
-      <DependentUpon>page.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\PopupMessage.css">
-      <DependentUpon>PopupMessage.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\sass\PopupMessage.min.css">
-      <DependentUpon>PopupMessage.css</DependentUpon>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\Announcement\Resources\PopupAdAgentNeutral.xml" />
     <Content Include="Content\Announcement\Resources\PopupAdCommon.xml" />
@@ -493,18 +493,18 @@
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
-    <Content Include="Content\Home\Styles\sass\agent.scss" />
-    <Content Include="Content\Home\Styles\sass\master.scss" />
-    <Content Include="Content\Home\Styles\sass\super.scss" />
-    <Content Include="Content\Home\Styles\sass\Variables_Level2.scss" />
-    <Content Include="Content\Home\Styles\sass\Variables_Level3.scss" />
-    <Content Include="Content\Home\Styles\sass\Variables_Level4.scss" />
+    <Content Include="Content\Home\Styles\agent.scss" />
+    <Content Include="Content\Home\Styles\master.scss" />
+    <Content Include="Content\Home\Styles\super.scss" />
+    <Content Include="Content\Home\Styles\agent.variables.scss" />
+    <Content Include="Content\Home\Styles\master.variables.scss" />
+    <Content Include="Content\Home\Styles\super.variables.scss" />
     <Content Include="Content\Shared\Scripts\SharedScripts.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
-    <Content Include="Content\Home\Styles\sass\page.scss" />
+    <Content Include="Content\Home\Styles\page.scss" />
     <Content Include="App_Data\Alpha.sitemap">
       <SubType>Designer</SubType>
     </Content>
@@ -513,8 +513,8 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Content\Home\Styles\sass\dashboard.scss" />
-    <Content Include="Content\Home\Styles\sass\PopupMessage.scss" />
+    <Content Include="Content\Home\Styles\dashboard.scss" />
+    <Content Include="Content\Home\Styles\PopupMessage.scss" />
     <Content Include="Views\Home\MenuBar.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\HeaderNav.cshtml" />
@@ -609,7 +609,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\CssRewriteUrlTransformWrapper.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
-    <Compile Include="App_Start\RulesConfig.cs" />
+    <Compile Include="App_Start\FunctionRegistry.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Constants\DateTimeFormatConstant.cs" />
     <Compile Include="Constants\LanguageConstant.cs" />

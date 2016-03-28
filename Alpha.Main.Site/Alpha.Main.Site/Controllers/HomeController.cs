@@ -3,9 +3,8 @@
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
-    using Models.Requests.Home;
-    using Sunplus.Agent.Model.Entities;
     using ViewModels;
+
     public class HomeController : BaseController
     {
         private IMediator _mediator;
@@ -17,7 +16,9 @@
         
         public ActionResult Index()
         {
-            return View();
+            var viewModel = new IndexViewModel();
+
+            return View(viewModel);
         }
         
         public ActionResult MenuBar()

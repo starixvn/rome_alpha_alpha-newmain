@@ -28,7 +28,7 @@
             IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration)
         {
             this.authorizeUrlService = authorizeUrlService ?? new AuthorizeUrlServiceImpl();
-            this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? FunctionConfig.MenuItemTypeStatusRules;
+            this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? FunctionRegistry.MenuItemTypeStatusRules;
         }
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)

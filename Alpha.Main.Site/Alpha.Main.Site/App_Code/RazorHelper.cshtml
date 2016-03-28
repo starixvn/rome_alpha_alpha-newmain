@@ -7,10 +7,10 @@
 }
 
 
-@helper DisplayLanguageDropdown(string languageCode = "en-US")
+@helper DisplayLanguageDropdown(string selectedLangaugeCode = "en-US")
 {
     <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
-        <span class="icon icon-flag language-selector langFlag_@languageCode.ToLowerInvariant()"></span>        
+        <span class="icon icon-flag language-selector langFlag_@selectedLangaugeCode.ToLowerInvariant()"></span>        
         <span class="language-text language-selector"></span>
     </a>
     <ul class="dropdown-menu list-language" id="language">      
