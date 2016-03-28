@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Site.Services
 {
     using System.Configuration;
-    using System.Diagnostics.Contracts;
     using Fanex.Common;
+    using Helpers;
 
     public static class AppSettings
     {
@@ -56,7 +56,7 @@
 
         public static string GetAppName(string name)
         {
-            Contract.Requires(!string.IsNullOrWhiteSpace(name));
+           // Argument.Requires(!string.IsNullOrWhiteSpace(name), nameof(name));
 
             return ConfigurationManager.AppSettings[name];
         }

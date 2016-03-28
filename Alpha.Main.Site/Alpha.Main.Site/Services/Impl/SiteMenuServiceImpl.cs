@@ -1,14 +1,11 @@
 ﻿namespace Alpha.Main.Site.Services.Impl
 {
-    using System;
     using System.Collections.Generic;
     using System.Diagnostics.Contracts;
     using System.Linq;
     using System.Web;
-    using System.Xml;
-    using System.Xml.Linq;
+    using Helpers;
     using Models;
-    using Models.Dtos;
     using Models.Enumerations;
     using Models.Menus;
 
@@ -21,8 +18,8 @@
 
         public SiteMenuServiceImpl(CachingService cacheManager, MenuItemBuilder menuItemBuilder)
         {
-            Contract.Ensures(cacheManager != null, nameof(cacheManager));
-            Contract.Ensures(menuItemBuilder != null, nameof(menuItemBuilder));
+            Argument.Requires(cacheManager != null, nameof(cacheManager));
+            Argument.Requires(menuItemBuilder != null, nameof(menuItemBuilder));
 
             this.cacheManager = cacheManager;
             this.menuItemBuilder = menuItemBuilder;
@@ -30,7 +27,7 @@
 
         public IEnumerable<IMenuItem> GetMenuByUser(IUser user)
         {
-            Contract.Ensures(user != null, nameof(user));
+            Argument.Requires(user != null, nameof(user));
 
             var menuItems = Enumerable.Empty<IMenuItem>();
 
@@ -47,7 +44,7 @@
 
             if (menuItems == null)
             {
-                Contract.Requires(SiteMap.RootNode != null, nameof(SiteMap.RootNode));
+                Argument.Requires(SiteMap.RootNode != null, nameof(SiteMap.RootNode));
 
                 menuItems = BuildMenu(SiteMap.RootNode, userLevel);
 

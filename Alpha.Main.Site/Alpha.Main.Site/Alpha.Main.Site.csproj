@@ -595,7 +595,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\ContentStyles.cs" />
+    <Content Include="App_Code\ContentSite.cs" />
     <Compile Include="App_GlobalResources\Alpha.sitemap.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -637,6 +637,7 @@
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
+    <Compile Include="Helpers\Argument.cs" />
     <Compile Include="Models\Dtos\Announcement\AnnouncementModel.cs" />
     <Compile Include="Models\Dtos\Announcement\HotAnnouncementModel.cs" />
     <Compile Include="Models\Dtos\Announcement\MessageModel.cs" />
@@ -660,6 +661,7 @@
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Models\Views\CustomerProfile\BriefProfileViewModel.cs" />
+    <Compile Include="Helpers\AppPathHelper.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
     <Compile Include="Services\CustomerProfileService.cs" />
     <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />

@@ -2,19 +2,12 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Globalization;
     using System.IO;
     using System.Linq;
-    using System.Text.RegularExpressions;
-    using System.Threading;
     using System.Web;
     using System.Xml;
     using Alpha.Main.Site.Repositories;
     using App_GlobalResources;
-    using Auth.Web.Validators;
-    using Constants;
-    using Criteria.CustomerProfile;
-    using Extensions;
     using Fanex.Age.UI;
     using Fanex.Common;
     using Fanex.CustomerSetting.Module.Core.Web;
@@ -26,14 +19,10 @@
     using Models.Enumerations;
     using Models.Menus;
     using Models.Requests;
-    using Models.Requests.CustomerProfile;
     using Models.Views;
-    using Sunplus.Agent.Model.BL.Authorization;
-    using Sunplus.Agent.Model.BL.Cache;
     using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Common;
     using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Model.Entities.Permission;
     using Sunplus.Agent.Utilities;
 
     using AlphaDefinitions = Sunplus.Agent.Model.BL.Definitions;

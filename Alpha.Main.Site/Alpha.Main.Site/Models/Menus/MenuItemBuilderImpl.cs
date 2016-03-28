@@ -2,17 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics.Contracts;
-    using System.Linq;
-    using System.Linq.Expressions;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Web;
     using App_Start;
-    using Fanex.Common.Helper;
+    using Helpers;
     using Services;
     using Services.Impl;
-    using SimpleInjector;
 
     public class MenuItemBuilderImpl : MenuItemBuilder
     {
@@ -42,7 +36,7 @@
 
         public IMenuItem BuildMenuItem(SiteMapNode siteMapNode)
         {            
-            Contract.Ensures(siteMapNode != null);        
+            Argument.Requires(siteMapNode != null);        
 
             var menuItem = new MenuItem(
                 menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty], 

@@ -2,13 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Linq;
-    using System.Linq.Expressions;
     using System.Text.RegularExpressions;
     using System.Web;
     using App_GlobalResources;
-    using Fanex.Common.Helper;
     using Services;
 
     public class MenuItem : IMenuItem
@@ -71,10 +68,10 @@
         {
             get
             {
-                var isAuthorized = authorizeUrlFunc.Invoke(this.Key);
+                var isAuthorized = authorizeUrlFunc(this.Key);
 
                 return isAuthorized
-                    ? getMenuStatusFunc.Invoke()
+                    ? getMenuStatusFunc()
                     : new MenuStatus(false, false);
             }
         }

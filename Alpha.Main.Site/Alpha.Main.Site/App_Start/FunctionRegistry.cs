@@ -8,11 +8,13 @@
     using Fanex.Razorbill.Security.Sessions;
     using Models.Menus;
     using Sunplus.Agent.Model.BL.Definitions;
+    using static Helpers.AppPathHelper;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
-    using static Sunplus.Agent.Model.Entities.UserSession;    
+    using static Sunplus.Agent.Model.Entities.UserSession;
 
     public static class FunctionRegistry
     {
+        
         public static readonly Dictionary<string, Func<MenuStatus>> MenuItemTypeStatusRules = new Dictionary<string, Func<MenuStatus>>
         {
             [string.Empty] = null,
@@ -50,7 +52,7 @@
         };
 
         public static Func<bool> ShowMenuBar = () =>
-        {
+        {            
             const int ForceChangeSecurityCode = 4;
             const int ForceChangeSecurityCodeWithoutValidation = 3;
 
@@ -81,50 +83,50 @@
             return Current.SubPageAccess.ViewMemberInfo;
         };
 
-        //public static Func<string> GetDefaultContent = () =>
-        //{
-            
-        //   var _defaultMainPage = "/" + Alpha.Main.Site.AppPathUtil.GetAppPath(Services.AppSettings.OldMainApp, "_Reports/PortalPage/PortalPage.aspx");            
+        public static Func<string> GetDefaultUrl= () =>
+        {
 
-        //    if (!Current.IsLogged)
-        //    {
-        //        return oldMainAppPath + "_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
-        //    }
+            var _defaultMainPage = "/" + GetOldMainPath("_Reports/PortalPage/PortalPage.aspx");
 
-        //    if (Current.IsPasswordExpired)
-        //    {
-        //        return oldMainAppPath + "_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
-        //    }
+            if (!Current.IsLogged)  
+            {
+                return GetOldMainPath("_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
+            }
 
-        //    ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-        //    bool newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
-        //    var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
-        //    var oldStatus = Current.SecurityCodeResult;
+            if (Current.IsPasswordExpired)
+            {
+                return GetOldMainPath("_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
+            }
 
-        //    var mainPage = string.Empty;
-        //    if (newFlowOfSC)
-        //    {
-        //        switch (status)
-        //        {
-        //            case SecurityCodeStatus.FORCED_CHANGE_SC:
-        //                return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCode";
+            ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+            bool newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
+            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
+            var oldStatus = Current.SecurityCodeResult;
 
-        //            case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-        //                return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
+            var mainPage = string.Empty;
+            if (newFlowOfSC)
+            {
+                switch (status)
+                {
+                    case SecurityCodeStatus.FORCED_CHANGE_SC:
+                        return GetOldMainPath("Security/SecurityCode/ForceChangeSecurityCode");
 
-        //            default:
-        //                return oldMainAppPath + "Security/SecurityCode/VerifySecurityCode";
-        //        }
-        //    }
+                    case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
+                        return GetOldMainPath("Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
 
-        //    if (!securityCodeSession.IsInternal &&
-        //        (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
-        //    {
-        //        // Use the OLD flow of Security Code.
-        //        return oldMainAppPath + "_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
-        //    }
-          
-        //    return _defaultMainPage;
-        //};
+                    default:
+                        return GetOldMainPath("Security/SecurityCode/VerifySecurityCode");
+                }
+            }
+
+            if (!securityCodeSession.IsInternal &&
+                (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
+            {
+                // Use the OLD flow of Security Code.
+                return GetOldMainPath("_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
+            }
+
+            return _defaultMainPage;
+        };
     }
 }
