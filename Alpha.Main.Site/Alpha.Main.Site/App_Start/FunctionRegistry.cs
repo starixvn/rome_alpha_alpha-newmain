@@ -4,11 +4,12 @@
     using System.Collections.Generic;
     using System.Linq;
     using Fanex.Razorbill.Security.Configurations;
+    using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
     using Models.Menus;
-    using Services;
+    using Sunplus.Agent.Model.BL.Definitions;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
-    using static Sunplus.Agent.Model.Entities.UserSession;
+    using static Sunplus.Agent.Model.Entities.UserSession;    
 
     public static class FunctionRegistry
     {
@@ -28,16 +29,16 @@
             ["NumberGameMenuItem"] = () => new MenuStatus(IsShowNumberGame),
             ["LiveCasinoMenuItem"] = () => new MenuStatus(IsShowLiveCasino),
             ["ConsolidatedReportMenuItem"] = () => new MenuStatus(Current.IsShowConsolidatedReport),
-            ["FoobetMenuItem"] = () => new MenuStatus(Current.CustId != AppSettings.CustIdFoobet),
+            ["FoobetMenuItem"] = () => new MenuStatus(Current.CustId != Services.AppSettings.CustIdFoobet),
             ["MemberWinLimitMenuItem"] = () => new MenuStatus(Current.IsLiveCasinoSync || !Current.IsHideGoldDeluxe),
             ["LastBetMonitorMenuItem"] = () => new MenuStatus(null, () =>
             {
-                if (Current.IsInternal || AppSettings.EnableBetsListMonitoring)
+                if (Current.IsInternal || Services.AppSettings.EnableBetsListMonitoring)
                 {
                     return false;
                 }
 
-                var usersAlwaysToAccessThisFunction = AppSettings.UsersAlwaysAllowAccessBetsListMonitoring;
+                var usersAlwaysToAccessThisFunction = Services.AppSettings.UsersAlwaysAllowAccessBetsListMonitoring;
                 var disabled = string.IsNullOrWhiteSpace(usersAlwaysToAccessThisFunction) ||
                     !usersAlwaysToAccessThisFunction.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                     .ToList()
@@ -76,8 +77,54 @@
         };
 
         public static Func<bool> ShowAccountInfo = () =>
-        {
+        {         
             return Current.SubPageAccess.ViewMemberInfo;
         };
+
+        //public static Func<string> GetDefaultContent = () =>
+        //{
+            
+        //   var _defaultMainPage = "/" + Alpha.Main.Site.AppPathUtil.GetAppPath(Services.AppSettings.OldMainApp, "_Reports/PortalPage/PortalPage.aspx");            
+
+        //    if (!Current.IsLogged)
+        //    {
+        //        return oldMainAppPath + "_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true";
+        //    }
+
+        //    if (Current.IsPasswordExpired)
+        //    {
+        //        return oldMainAppPath + "_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true";
+        //    }
+
+        //    ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+        //    bool newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
+        //    var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
+        //    var oldStatus = Current.SecurityCodeResult;
+
+        //    var mainPage = string.Empty;
+        //    if (newFlowOfSC)
+        //    {
+        //        switch (status)
+        //        {
+        //            case SecurityCodeStatus.FORCED_CHANGE_SC:
+        //                return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCode";
+
+        //            case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
+        //                return oldMainAppPath + "Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation";
+
+        //            default:
+        //                return oldMainAppPath + "Security/SecurityCode/VerifySecurityCode";
+        //        }
+        //    }
+
+        //    if (!securityCodeSession.IsInternal &&
+        //        (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
+        //    {
+        //        // Use the OLD flow of Security Code.
+        //        return oldMainAppPath + "_MemberInfo/SecurityCode/ChangeSecurityCode.aspx";
+        //    }
+          
+        //    return _defaultMainPage;
+        //};
     }
 }

@@ -20,10 +20,10 @@
 
         protected override void OnAuthentication(AuthenticationContext filterContext)
         {
+                        
             base.OnAuthentication(filterContext);
-
-            
-            if (UserSession.Current.CustId == 0)
+                        
+            if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
             {
                 var logInUrl = _appPathService.GetAppPath(AppSettings.OldMainApp, FormsAuthentication.LoginUrl);
                 Response.Redirect(logInUrl, true);
