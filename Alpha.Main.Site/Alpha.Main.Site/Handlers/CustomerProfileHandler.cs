@@ -2,18 +2,15 @@
 {
     using System;
     using System.Web;
-    using System.Web.Http.Routing;
     using Alpha.Main.Site.Models.Requests.CustomerProfile;
     using App_GlobalResources;
     using Extensions;
     using MediatR;
     using Models.CustomerProfiles;
-    using Models.Dtos;
-    using Models.Views.CustomerProfile;
     using Services;
-    using Services.Impl;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using ViewModels.CustomerProfile;
 
     public class CustomerProfileHandler :
          IRequestHandler<BriefProfileQuery, BriefProfileViewModel>

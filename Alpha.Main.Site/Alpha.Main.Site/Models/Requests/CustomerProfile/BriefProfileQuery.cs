@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.CustomerProfile
 {
     using MediatR;
-    using Views.CustomerProfile;
+    using ViewModels.CustomerProfile;
 
     public class BriefProfileQuery : IRequest<BriefProfileViewModel>
     {

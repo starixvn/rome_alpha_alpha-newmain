@@ -4,24 +4,24 @@
     using System.Collections.Generic;
     using System.Web;
     using App_Start;
+    using Auth.Services;
+    using Auth.Services.Impl;
     using Helpers;
-    using Services;
-    using Services.Impl;
 
     public class MenuItemBuilderImpl : MenuItemBuilder
     {
         private readonly IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
-        private readonly AuthorizeUrlService authorizeUrlService;
+        private readonly IAuthorizationService _authorizationService;
 
         public MenuItemBuilderImpl() : this(null, null)
         {
         }
 
         internal MenuItemBuilderImpl(
-            AuthorizeUrlService authorizeUrlService, 
+            IAuthorizationService authorizationService,
             IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration)
         {
-            this.authorizeUrlService = authorizeUrlService ?? new AuthorizeUrlServiceImpl();
+            this._authorizationService = authorizationService ?? new AuthorizationService();
             this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? FunctionRegistry.MenuItemTypeStatusRules;
         }
 
@@ -35,16 +35,16 @@
         }
 
         public IMenuItem BuildMenuItem(SiteMapNode siteMapNode)
-        {            
-            Argument.Requires(siteMapNode != null);        
+        {
+            Argument.Requires(siteMapNode != null);
 
             var menuItem = new MenuItem(
-                menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty], 
-               authorizeUrlService.CanAccessUrl);
+                menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty],
+               _authorizationService.IsAuthorized);
 
             SetDataForMenuItem(menuItem, siteMapNode);
 
             return menuItem;
-        }        
+        }
     }
 }

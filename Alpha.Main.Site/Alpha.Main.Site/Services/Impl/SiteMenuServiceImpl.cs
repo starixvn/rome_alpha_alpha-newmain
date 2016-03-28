@@ -4,6 +4,7 @@
     using System.Diagnostics.Contracts;
     using System.Linq;
     using System.Web;
+    using Auth.Services;
     using Helpers;
     using Models;
     using Models.Enumerations;
