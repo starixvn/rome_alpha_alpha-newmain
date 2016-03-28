@@ -38,7 +38,6 @@
         {
             bundles.Add(new StyleBundle("~/bundle/styles/home")
                 .Include("~/Content/Home/Styles/page.css", new CssRewriteUrlTransformWrapper())
-                .Include("~/Content/Home/Styles/Dashboard.css", new CssRewriteUrlTransformWrapper())
                 .Include("~/Content/Home/Styles/PopupMessage.css", new CssRewriteUrlTransformWrapper())
                 .Include("~/Content/CustomerProfile/Styles/css/CustomerProfile.css", new CssRewriteUrlTransformWrapper())
                 .Include("~/Content/Announcement/Styles/css/Announcements.css", new CssRewriteUrlTransformWrapper()));

@@ -280,6 +280,8 @@ a, a:focus, a:active, a:target, a:hover {
     cursor: pointer;
     font-size: 17px;
     color: #fff; }
+  .header-nav .old-view-text {
+    cursor: pointer; }
   .header-nav .list-top {
     float: right;
     color: #fff;

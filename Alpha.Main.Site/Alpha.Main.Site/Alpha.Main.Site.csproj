@@ -435,12 +435,6 @@
     <Content Include="Content\Home\Styles\agent.min.css">
       <DependentUpon>agent.css</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\dashboard.css">
-      <DependentUpon>dashboard.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Styles\dashboard.min.css">
-      <DependentUpon>dashboard.css</DependentUpon>
-    </Content>
     <Content Include="Content\Home\Styles\Images\flag_sprite.png" />
     <Content Include="Content\Home\Styles\master.css">
       <DependentUpon>master.scss</DependentUpon>
@@ -513,7 +507,6 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Content\Home\Styles\dashboard.scss" />
     <Content Include="Content\Home\Styles\PopupMessage.scss" />
     <Content Include="Views\Home\MenuBar.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
