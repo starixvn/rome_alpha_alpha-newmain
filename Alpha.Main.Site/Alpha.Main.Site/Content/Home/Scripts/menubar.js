@@ -1,10 +1,11 @@
-﻿var sideBarManager;
+﻿var menuBarManager;
 
 jQuery(document).ready(function () {
-    sideBarManager.init();
+    menuBarManager.init();
+    
 });
 
-var SideBarManager = function () {
+var MenuBarManager = function () {
     var self = this;
     self.data = {
         dom: {
@@ -22,10 +23,12 @@ var SideBarManager = function () {
     };
 
     self.bindEvents = function () {
+
         var menuOpener = $('.menu-opener');
         var subMenu = $('.sub-menu');
         var menuItems = $('.menu-item');
-        menuOpener.click(function () {
+
+        menuOpener.click(function () {            
             var $this = $(this);
             var menuContainer = $this.closest('li');
             menuItems.removeClass('active');
@@ -94,9 +97,12 @@ var SideBarManager = function () {
 
         $('.accountinfo').click(function () {
             var accInfoContent = $('.accinfo-content');
+
+            var oldMainRootPath = $("#oldMainRootPath").val();
+
             var src = accInfoContent.attr('src');
             if (!src) {
-                accInfoContent.attr('src', '/' + baseOldMainApp + '_AccountInfo/AccountInfo.aspx?fromNewSite=1');
+                accInfoContent.attr('src', '/' + oldMainRootPath + '_AccountInfo/AccountInfo.aspx?fromNewSite=1');
             }
         });
 
@@ -113,4 +119,4 @@ var SideBarManager = function () {
     };
 };
 
-sideBarManager = new SideBarManager();
+menuBarManager = new MenuBarManager();

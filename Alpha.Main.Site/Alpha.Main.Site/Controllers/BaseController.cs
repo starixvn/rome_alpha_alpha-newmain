@@ -8,24 +8,22 @@
     using System.Web.Routing;
     using System.Web.Security;
     using Constants;
-    using Services;
-    using Services.Impl;
+    using Helpers;
     using Sunplus.Agent.Model.Entities;
 
     public class BaseController : Controller
     {
         private CultureInfo _defaultCulture = CultureInfo.CreateSpecificCulture(LanguageConstant.DefaultLanguage);
 
-        private AppPathService _appPathService = new AppPathServiceImpl();
-
         protected override void OnAuthentication(AuthenticationContext filterContext)
         {
                         
             base.OnAuthentication(filterContext);
                         
-            if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
+            if (!filterContext.HttpContext.User.Identity.IsAuthenticated                
+                || UserSession.Current.UserId <= 0)
             {
-                var logInUrl = _appPathService.GetAppPath(AppSettings.OldMainApp, FormsAuthentication.LoginUrl);
+                var logInUrl = AppPathHelper.GetOldMainPath(FormsAuthentication.LoginUrl);
                 Response.Redirect(logInUrl, true);
                 return;
             }

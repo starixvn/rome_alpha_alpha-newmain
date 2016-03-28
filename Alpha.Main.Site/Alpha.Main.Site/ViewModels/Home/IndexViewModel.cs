@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using App_Start;
+    using Helpers;
     using Models.Enumerations;
     using Sunplus.Agent.Model.Entities;
 
@@ -52,6 +53,14 @@
             get
             {
                 return defaultUrl;
+            }
+        }
+
+        public string OldMainRootPath
+        {
+            get
+            {
+                return AppPathHelper.GetOldMainPath("~");
             }
         }
     }

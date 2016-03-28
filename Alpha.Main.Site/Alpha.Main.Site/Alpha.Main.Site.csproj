@@ -431,6 +431,9 @@
     <Content Include="Content\Home\Scripts\header.na.min.js">
       <DependentUpon>header.nav.js</DependentUpon>
     </Content>
+    <Content Include="Content\Home\Scripts\IndexPage.min.js">
+      <DependentUpon>IndexPage.js</DependentUpon>
+    </Content>
     <Content Include="Content\Home\Scripts\menubar.js" />
     <Content Include="Content\Home\Scripts\IndexPage.js" />
     <Content Include="Content\Home\Scripts\menubar.min.js">

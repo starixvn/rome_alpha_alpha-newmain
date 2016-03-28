@@ -9,10 +9,10 @@ var HeaderManager = function () {
     };
 
     self.init = function () {
-        self.runClock();
+        //self.runClock();
 
-        self.initElements();
-        self.bindEvents();
+        //self.initElements();
+        //self.bindEvents();
     };
 
     self.initElements = function () {

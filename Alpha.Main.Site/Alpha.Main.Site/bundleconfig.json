@@ -34,5 +34,11 @@
     "inputFiles": [
       "Content/Home/Scripts/piwikLoader.js"
     ]
+  },
+  {
+    "outputFileName": "Content/Home/Scripts/IndexPage.js",
+    "inputFiles": [
+      "Content/Home/Scripts/IndexPage.js"
+    ]
   }
 ]
