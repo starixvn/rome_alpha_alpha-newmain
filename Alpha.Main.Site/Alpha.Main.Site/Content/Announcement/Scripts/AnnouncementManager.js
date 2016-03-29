@@ -21,7 +21,7 @@ var AnnouncementManager = function () {
             },
             success: function (data) {
                 self.showAnnouncement(data);
-                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 120000);
+                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 4000);
             }
         });
     };
@@ -32,7 +32,7 @@ var AnnouncementManager = function () {
             clearTimeout(timeoutAnnouncement);
             setTimeout(function () {
                 self.loadAnnouncementNext(timeout);
-            }, 30000);
+            }, 3000);
         }
     };
     self.loadAnnouncementNext = function () {
@@ -49,7 +49,7 @@ var AnnouncementManager = function () {
             },
             success: function (data) {
                 self.showAnnouncement(data);
-                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 120000);
+                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 4000);
             }
         });
     };

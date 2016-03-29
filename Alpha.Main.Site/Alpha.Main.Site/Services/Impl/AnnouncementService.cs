@@ -23,35 +23,34 @@
     public class AnnouncementService : IAnnouncementService
     {
         private const string AnnouncementResourcePath = "../Content/Announcement/Resources/";
-        private readonly DateTime _maxDateTime = new DateTime(9999, 12, 31);
-        private readonly DateTime _minDateTime = new DateTime(1900, 1, 1);
 
         private readonly IDynamicRepository _dynamicRepository;
+        private readonly IUserSession _userSession;
 
-        public AnnouncementService(IDynamicRepository dynamicRepository)
+        public AnnouncementService(IDynamicRepository dynamicRepository, IUserSession userSession)
         {
             _dynamicRepository = dynamicRepository;
+            _userSession = userSession;
         }
 
-        public HotAnnouncementModel GetHotAnnouncement(HotAnnouncementQuery message)
+        public HotAnnouncement GetHotAnnouncement(HotAnnouncementQuery message)
         {
-            var hotAnnouncement = new HotAnnouncementModel();
-            hotAnnouncement.CookieId = Encryption.PearsonEncode(UserSession.Current.UserId.ToString() +
-                UserSession.Current.SubAccId.ToString());
+            var hotAnnouncement = new HotAnnouncement();
+            hotAnnouncement.CookieId = Encryption.PearsonEncode(_userSession.UserId.ToString() + _userSession.SubAccId.ToString());
             var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
             if (SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode)
             {
                 return hotAnnouncement;
             }
 
-            List<string> messageTypes = null;
-            if (UserSession.Current.RoleId == RoleIdConstant.Agent &&
-                UserSession.Current.AdminId == 0)
+            IEnumerable<string> messageTypes = null;
+            if (_userSession.RoleId == RoleIdConstant.Agent &&
+                _userSession.AdminId == 0)
             {
-                messageTypes = _dynamicRepository.Fetch<string>(new MessageTypeListCriteria
+                messageTypes = _dynamicRepository.Fetch<string>(new GetMessageTypeListCriteria
                 {
-                    CustId = UserSession.Current.CustId
-                }).ToList();
+                    CustId = _userSession.CustId
+                });
             }
 
             if (messageTypes != null)
@@ -65,27 +64,27 @@
                 hotAnnouncement = GetHotAnnouncementFromLocalFiles(message);
             }
 
-            switch (UserSession.Current.Language)
-            {
-                case "th-TH":
-                    hotAnnouncement.LanguagueCode = "th";
-                    break;
-                case "zh-TW":
-                case "zh-CN":
-                    hotAnnouncement.LanguagueCode = "tw";
-                    break;
-                case "ko-KR":
-                    hotAnnouncement.LanguagueCode = "ko";
-                    break;
-                case "vi-VN":
-                    hotAnnouncement.LanguagueCode = "vn";
-                    break;
-                default:
-                    hotAnnouncement.LanguagueCode = "en";
-                    break;
-            }
+            hotAnnouncement.LanguagueCode = GetLanguageCode();
 
             return hotAnnouncement;
+        }
+
+        private string GetLanguageCode()
+        {
+            switch (_userSession.Language)
+            {
+                case "th-TH":
+                    return "th";
+                case "zh-TW":
+                case "zh-CN":
+                    return "tw";
+                case "ko-KR":
+                    return "ko";
+                case "vi-VN":
+                    return "vn";
+                default:
+                    return "en";
+            }
         }
 
         private string GetBriefContent(string fullContent, int maxLength)
@@ -96,7 +95,7 @@
 
         private int GetSiteId()
         {
-            switch (UserSession.Current.RoleId)
+            switch (_userSession.RoleId)
             {
                 case RoleIdConstant.Super:
                     return 3100;
@@ -157,7 +156,7 @@
         private string GetAnnouncementContent(AnnouncementModel item, AnnouncementModel announcement)
         {
             var content = string.Empty;
-            var language = UserSession.Current.Language;
+            var language = _userSession.Language;
             var contentField = "ContentEn";
             switch (language)
             {
@@ -228,7 +227,7 @@
             return content;
         }
 
-        private MessageModel GetSettingChangedMessage(List<string> messageTypes)
+        private MessageModel GetSettingChangedMessage(IEnumerable<string> messageTypes)
         {
             var isPositionTakingChanged = messageTypes.Contains(MessageTypeConstant.PositionTakingChanged.ToString());
             var isBettingLimitChanged = messageTypes.Contains(MessageTypeConstant.BettingLimitChanged.ToString());
@@ -280,15 +279,15 @@
             _dynamicRepository.Fetch<bool>(new InsertPersonalMessageTargetCriteria
             {
                 MessageId = rawData.Id,
-                TargetId = UserSession.Current.UserId,
-                TargetName = UserSession.Current.UserName,
+                TargetId = _userSession.UserId,
+                TargetName = _userSession.UserName,
                 IsRead = false,
                 BetTransId = "0"
             });
 
             _dynamicRepository.Fetch<bool>(new UpdateViewStatus
             {
-                CustId = UserSession.Current.CustId,
+                CustId = _userSession.CustId,
                 IsViewed = true
             });
 
@@ -321,7 +320,7 @@
                (status == SecurityCodeStatus.PROVIDED_SC_SUCCESS && !securityCodeSession.IsInternal));
 
             if (!isForceUseSecurityCode ||
-                UserSession.Current.Site.ToLower().ToLower().Equals("789y"))
+                _userSession.Site.ToLower().ToLower().Equals("789y"))
             {
                 result.Add(MessageIdConstant.ForceUseSecurityCode);
             }
@@ -353,16 +352,16 @@
             return result;
         }
 
-        private HotAnnouncementModel GetHotAnnouncementFromLocalFiles(HotAnnouncementQuery message)
+        private HotAnnouncement GetHotAnnouncementFromLocalFiles(HotAnnouncementQuery message)
         {
             var showedMessages = GetShowedMessageIds(message);
             var xmlPrivateMsg = GetPrivateAnnouncement();
             var xmlCommonMsg = GetCommonAnnouncement();
             JoinTheTwoAnnouncementTypes(xmlPrivateMsg, xmlCommonMsg);
 
-            string language = UserSession.Current.Language;
+            string language = _userSession.Language;
             XmlNodeList root = xmlCommonMsg.SelectNodes("FileDB/PopupAnnouncement");
-            var hotAnnouncement = new HotAnnouncementModel();
+            var hotAnnouncement = new HotAnnouncement();
             foreach (XmlNode node in root)
             {
                 var nodeIds = node.Attributes["id"].Value;
@@ -370,7 +369,7 @@
                 long.TryParse(nodeIds, out nodeId);
                 if (nodeId == 0 ||
                     showedMessages.Contains(nodeId) ||
-                    IsExcludedSiteHotMessage(node, UserSession.Current.Site) ||
+                    IsExcludedSiteHotMessage(node, _userSession.Site) ||
                     IsExpiredHotMessage(node))
                 {
                     continue;
@@ -416,11 +415,11 @@
         private XmlDocument GetPrivateAnnouncement()
         {
             var pathToPrivateMsg = "PopupAdAgentNeutral.xml";
-            if (UserSession.Current.IsSuper)
+            if (_userSession.IsSuper)
             {
                 pathToPrivateMsg = "PopupAdSuperNeutral.xml";
             }
-            else if (UserSession.Current.IsMaster)
+            else if (_userSession.IsMaster)
             {
                 pathToPrivateMsg = "PopupAdMasterNeutral.xml";
             }

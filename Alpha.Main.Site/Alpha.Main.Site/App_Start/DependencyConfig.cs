@@ -84,19 +84,19 @@
                 },
                 Lifestyle.Transient);
 
-            container.Register<IDashboardService, DashboardService>(Lifestyle.Scoped);
-            container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Scoped);
+            container.Register<IDashboardService, DashboardService>(Lifestyle.Transient);
+            container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Transient);
             container.Register<AppPathService, AppPathServiceImpl>(Lifestyle.Singleton);
-            container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Scoped);
+            container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Transient);
             container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
             container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
-            container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Scoped);            
+            container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Transient);            
         }
 
         private static void RegisterDataAccesses(Container container)
         {
-            container.Register<IDynamicRepository, DynamicRepository>(Lifestyle.Scoped);
-            container.Register<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>(Lifestyle.Scoped);
+            container.Register<IDynamicRepository, DynamicRepository>(Lifestyle.Transient);
+            container.Register<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>(Lifestyle.Transient);
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     using Fanex.Data.Repository;
 
-    public class MessageTypeListCriteria : CriteriaBase
+    public class GetMessageTypeListCriteria : CriteriaBase
     {
         public int CustId { get; set; }
 

@@ -14,7 +14,7 @@
                 url: "{controller}/{action}/{id}",
                 defaults: new
                 {
-                    controller = "Main",
+                    controller = "Home",
                     action = "Index",
                     id = UrlParameter.Optional
                 });

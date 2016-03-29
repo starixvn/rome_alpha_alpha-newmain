@@ -9,7 +9,7 @@
       domain: 5
   -->
 
-  <PopupAnnouncement id="4523901" name="ColossusBets" startdate="02/23/2016" enddate="03/29/2016"  effectdate="24/02/2016" width="1000" height="220" top="110" left="350">
+  <PopupAnnouncement id="4523909" name="ColossusBets" startdate="02/23/2016" enddate="04/29/2016"  effectdate="24/02/2016" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
       <p>
@@ -97,7 +97,7 @@
     </vi-VN>
   </PopupAnnouncement>
 
-  <PopupAnnouncement id="5086201" name="RnG Single Wallet" startdate="01/17/2016" enddate="01/18/2016"  effectdate="26/01/2016" width="1000" height="220" top="110" left="350">
+  <PopupAnnouncement id="5086201" name="RnG Single Wallet" startdate="01/17/2016" enddate="04/29/2016"  effectdate="26/01/2016" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
       <p>
@@ -229,7 +229,7 @@
     </vi-VN>
   </PopupAnnouncement>
 
-  <PopupAnnouncement id="4910001" name="Cockfighting" startdate="12/20/2015" enddate="01/04/2016"  effectdate="12/20/2015" width="1000" height="220" top="110" left="350">
+  <PopupAnnouncement id="4910001" name="Cockfighting" startdate="12/20/2015" enddate="04/29/20166"  effectdate="12/20/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
       <p>

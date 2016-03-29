@@ -6,7 +6,7 @@
     using Services;
 
     public class AnnouncementHandler :
-         IRequestHandler<HotAnnouncementQuery, HotAnnouncementModel>
+         IRequestHandler<HotAnnouncementQuery, HotAnnouncement>
     {
         private readonly IAnnouncementService _announcementService;
 
@@ -15,7 +15,7 @@
             _announcementService = announcementService;
         }
 
-        public HotAnnouncementModel Handle(HotAnnouncementQuery message)
+        public HotAnnouncement Handle(HotAnnouncementQuery message)
         {
             return _announcementService.GetHotAnnouncement(message);
         }

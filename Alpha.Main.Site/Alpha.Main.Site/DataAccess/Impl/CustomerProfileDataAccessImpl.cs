@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Site.DataAccess.Impl
 {
     using Alpha.Main.Site.Criteria.CustomerProfile;
-    using Alpha.Main.Site.Models.Dtos;
     using Fanex.Common;
     using Fanex.Data;
     using Models.CustomerProfiles;
+
     public class CustomerProfileDataAccessImpl : CustomerProfileDataAccess
     {
         public ProfilePicture GetProfilePicture(GetProfilePictureCriteria criteria)

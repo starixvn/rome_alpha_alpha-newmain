@@ -624,7 +624,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
-    <Compile Include="Criteria\Announcement\MessageTypeListCriteria.cs" />
+    <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
     <Compile Include="DataAccess\CustomerProfileDataAccess.cs" />
@@ -638,9 +638,8 @@
     <Compile Include="Helpers\Argument.cs" />
     <Compile Include="Helpers\ContentSite.cs" />
     <Compile Include="Models\Dtos\Announcement\AnnouncementModel.cs" />
-    <Compile Include="Models\Dtos\Announcement\HotAnnouncementModel.cs" />
+    <Compile Include="Models\Dtos\Announcement\HotAnnouncement.cs" />
     <Compile Include="Models\Dtos\Announcement\MessageModel.cs" />
-    <Compile Include="Models\Dtos\CustomerInfoModel.cs" />
     <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />
@@ -655,7 +654,6 @@
     <Compile Include="Models\Requests\Home\NavigationQuery.cs" />
     <Compile Include="Models\Requests\MenuBarQuery.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\Views\CustomerInfoViewModel.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />

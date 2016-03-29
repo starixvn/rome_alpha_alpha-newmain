@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.Models.Dtos.Announcement
 {
-    public class HotAnnouncementModel
+    public class HotAnnouncement
     {
         public long Id { get; set; }
 
