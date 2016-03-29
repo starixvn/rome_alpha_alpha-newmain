@@ -16,7 +16,7 @@
         We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered by default.
         If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. Follow
-        <a href="javascript:;" onclick="window.open('/' + top.baseOldMainApp + '_HowToUse/Index.aspx?redirectto=ColossusBets')" title="Help" id="Help">this instruction</a> for more details.<br/>
+        <a href="javascript:;" onclick="window.open('/' + top.oldMainRootPath + '_HowToUse/Index.aspx?redirectto=ColossusBets')" title="Help" id="Help">this instruction</a> for more details.<br/>
         All settings will be available for configuration since <b>28/01/2016</b>.<br/>
       </p>
       <p>

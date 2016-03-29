@@ -108,7 +108,7 @@ var MenuBarManager = function () {
 
     };
     self.activeSubMenuItem = function (subMenu) {
-        self.data.subMenuItems.removeClass('active');
+        self.data.dom.subMenuItems.removeClass('active');
         subMenu.addClass('active');
     };
     self.expandMenu = function (menu) {

@@ -42,6 +42,10 @@
             self.hideProfileTooltip();
         });
 
+        $(document).click(function () {
+            self.clickToHide();
+        });
+
         var frameLength = window.parent.frames.length;
         for (var i = 0; i < frameLength; i++) {
             $(window.parent.frames[i].window.document).click(function () {

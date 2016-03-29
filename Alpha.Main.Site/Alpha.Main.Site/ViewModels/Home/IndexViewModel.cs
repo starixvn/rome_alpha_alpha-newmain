@@ -1,10 +1,12 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
+    using System;
     using App_Start;
     using Helpers;
     using Models.Enumerations;
     using Services;
     using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Utilities;
 
     public class IndexViewModel
     {
@@ -70,6 +72,14 @@
             get
             {
                 return AppPathHelper.GetAppPath(AppSettings.VirtualDirectory, "~");
+            }
+        }
+
+        public string PasswordHash
+        {
+            get
+            {
+                return Encryption.RandomString(new Random().Next(4, 8));
             }
         }
     }

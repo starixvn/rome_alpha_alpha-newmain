@@ -43,7 +43,9 @@
     </div>
     @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
     @Html.Hidden("onuserid", Model.OnUserId)
-    @Html.Hidden("basemainapp", Model.MainRootPath)
+    @Html.Hidden("mainRootPath", Model.MainRootPath)
+    @Html.Hidden("messageList", "[]")
+    @Html.Hidden("passwordHash", Model.PasswordHash)
 
     @ContentSite.Scripts.Render(
         "/libs/jquery/jquery-1.11.3.min.js",
@@ -54,22 +56,5 @@
         "/libs/underscore/underscore-min.js")
 
     @Scripts.Render("~/bundles/scripts/home")
-    <script type="text/javascript">
-
-        @*var baseMainApp='';
-            var baseOldMainApp='';
-            var start = baseMainApp.indexOf('//') + 2;
-            window.document.title = baseMainApp.substr(start, baseMainApp.length - start - 1);
-            window.passwordHash = '';
-
-            var contentFrame = "main";
-            var _resources = {
-                language: '@currentUserSession.Language',
-                cookieCurrentURLKey: '',
-                baseUrl: '',
-                msgList:[],
-            };*@
-
-    </script>
 </body>
 </html>

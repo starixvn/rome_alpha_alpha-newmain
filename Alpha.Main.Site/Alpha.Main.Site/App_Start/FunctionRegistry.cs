@@ -14,7 +14,6 @@
 
     public static class FunctionRegistry
     {
-        
         public static readonly Dictionary<string, Func<MenuStatus>> MenuItemTypeStatusRules = new Dictionary<string, Func<MenuStatus>>
         {
             [string.Empty] = null,
@@ -52,7 +51,7 @@
         };
 
         public static Func<bool> ShowMenuBar = () =>
-        {            
+        {
             const int ForceChangeSecurityCode = 4;
             const int ForceChangeSecurityCodeWithoutValidation = 3;
 
@@ -79,54 +78,54 @@
         };
 
         public static Func<bool> ShowAccountInfo = () =>
-        {         
+        {
             return Current.SubPageAccess.ViewMemberInfo;
         };
 
-        public static Func<string> GetDefaultUrl= () =>
-        {
+        public static Func<string> GetDefaultUrl = () =>
+         {
 
-            var _defaultMainPage = "/" + GetOldMainPath("_Reports/PortalPage/PortalPage.aspx");
+             var _defaultMainPage = "/" + GetOldMainPath("_Reports/PortalPage/PortalPage.aspx");
 
-            if (!Current.IsLogged)  
-            {
-                return GetOldMainPath("_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
-            }
+             if (!Current.IsLogged)
+             {
+                 return GetOldMainPath("_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
+             }
 
-            if (Current.IsPasswordExpired)
-            {
-                return GetOldMainPath("_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
-            }
+             if (Current.IsPasswordExpired)
+             {
+                 return GetOldMainPath("_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
+             }
 
-            ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-            bool newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
-            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
-            var oldStatus = Current.SecurityCodeResult;
+             ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+             bool newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
+             var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
+             var oldStatus = Current.SecurityCodeResult;
 
-            var mainPage = string.Empty;
-            if (newFlowOfSC)
-            {
-                switch (status)
-                {
-                    case SecurityCodeStatus.FORCED_CHANGE_SC:
-                        return GetOldMainPath("Security/SecurityCode/ForceChangeSecurityCode");
+             var mainPage = string.Empty;
+             if (newFlowOfSC)
+             {
+                 switch (status)
+                 {
+                     case SecurityCodeStatus.FORCED_CHANGE_SC:
+                         return GetOldMainPath("Security/SecurityCode/ForceChangeSecurityCode");
 
-                    case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-                        return GetOldMainPath("Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
+                     case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
+                         return GetOldMainPath("Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
 
-                    default:
-                        return GetOldMainPath("Security/SecurityCode/VerifySecurityCode");
-                }
-            }
+                     default:
+                         return GetOldMainPath("Security/SecurityCode/VerifySecurityCode");
+                 }
+             }
 
-            if (!securityCodeSession.IsInternal &&
-                (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
-            {
+             if (!securityCodeSession.IsInternal &&
+                 (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
+             {
                 // Use the OLD flow of Security Code.
                 return GetOldMainPath("_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
-            }
+             }
 
-            return _defaultMainPage;
-        };
+             return _defaultMainPage;
+         };
     }
 }

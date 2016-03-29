@@ -18,11 +18,5 @@
         {
             return RedirectToAction("Index", "Home");
         }
-
-        public JsonResult ChangeLanguage(ChangeLanguageQuery query)
-        {
-            var viewModel = _mediator.Send(query);
-            return Json(viewModel);
-        }
     }
 }

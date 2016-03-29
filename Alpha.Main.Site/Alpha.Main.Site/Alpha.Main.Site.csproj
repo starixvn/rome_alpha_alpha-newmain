@@ -421,9 +421,6 @@
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_bg.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_left.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_right.png" />
-    <Content Include="Content\Home\Scripts\Header.min.js">
-      <DependentUpon>Header.js</DependentUpon>
-    </Content>
     <Content Include="Content\Home\Scripts\header.msg.min.js">
       <DependentUpon>header.msg.js</DependentUpon>
     </Content>
@@ -495,7 +492,6 @@
     <Content Include="Content\Announcement\Scripts\AnnouncementManager.js" />
     <Content Include="Content\CustomerProfile\Scripts\brief-profile.js" />
     <Content Include="Content\Home\Scripts\Core.js" />
-    <Content Include="Content\Home\Scripts\Header.js" />
     <Content Include="Content\Home\Scripts\piwikLoader.js" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />

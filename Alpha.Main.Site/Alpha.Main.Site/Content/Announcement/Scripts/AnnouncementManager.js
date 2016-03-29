@@ -9,7 +9,7 @@ var AnnouncementManager = function () {
         self.loadAnnouncement();
     };
     self.loadAnnouncement = function () {
-        var url = top.baseMainApp + 'Announcement/HotAnnouncement';
+        var url = "/" + top.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,
@@ -36,7 +36,7 @@ var AnnouncementManager = function () {
         }
     };
     self.loadAnnouncementNext = function () {
-        var url = top.baseMainApp + 'Announcement/HotAnnouncement';
+        var url = "/" + top.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,

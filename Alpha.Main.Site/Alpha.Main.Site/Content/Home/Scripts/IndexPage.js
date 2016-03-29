@@ -14,17 +14,20 @@ var IndexPageManager = function () {
 
     var currentTab = null;
     self.init = function () {
+        self.setSharedVariables();
         self.initElements();
         self.bindEvents();
-        self.setSharedVariables();
     };
     self.initElements = function () {
+        var start = top.mainRootPath.indexOf('//') + 2;
+        window.document.title = top.mainRootPath.substr(start, top.mainRootPath.length - start - 1);
+
         $.material.init();
         self.loadBriefProfile();
         self.selectTopMenu();
     };
     self.loadBriefProfile = function () {
-        var url = "/" + $("#basemainapp").val() + 'CustomerProfile/BriefProfile';
+        var url = "/" + $("#mainRootPath").val() + 'CustomerProfile/BriefProfile';
         $.ajax({
             type: "POST",
             url: url,
@@ -32,6 +35,7 @@ var IndexPageManager = function () {
             responseType: "json",
             success: function (result) {
                 $("#profile").html(result);
+                briefProfile.bindEvents();
             },
             error: function (jqXhr, event, ajaxSettings) {
             }
@@ -47,13 +51,12 @@ var IndexPageManager = function () {
     };
 
     self.signOut = function () {
-        setCookie(_resources.cookieCurrentURLKey, '', -1);
         var index = window;
         while (index != index.parent) {
             index = index.parent;
         }
 
-        index.location = "/" + top.baseOldMainApp + '_Authorization/Handlers/SignOut.ashx';
+        index.location = "/" + top.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
         if (index.location.href.indexOf('https://imb.') == 0 ||
             index.location.href.indexOf('https://int.') == 0) {
             index.close();
@@ -117,15 +120,16 @@ var IndexPageManager = function () {
         }
     };
     self.setSharedVariables = function () {
-        top.ph = window.passwordHash;
+        top.ph = $("#passwordHash").val();
         top.isNewSite = true;
         top.errCodes = [];
-        top.baseOldMainApp = baseOldMainApp;
+        top.oldMainRootPath = $("#oldMainRootPath").val();
+        top.mainRootPath = $("#mainRootPath").val();
     };
     self.reCheckin = function () {
         // Post with return result in JSON format
         setCookie("ssl", location.href.indexOf('https://') == 0, 30);
-        var url = "/" + top.baseOldMainApp + '_Authorization/Handlers/ReCheckin.ashx';
+        var url = "/" + top.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx';
         $.ajax({
             type: "POST",
             url: url,
@@ -154,12 +158,10 @@ var IndexPageManager = function () {
         var url = top.main.location.href;
         var currentURL = url.replace("http:", '')
             .replace("https:", '')
-            .replace(_resources.baseUrl, '');
+            .replace(top.mainRootPath, '');
         if (currentURL == null) {
             return;
         }
-
-        setCookie(_resources.cookieCurrentURLKey, currentURL, 1);
     };
 };
 

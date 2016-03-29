@@ -13,17 +13,17 @@
         {
             _mediator = mediator;
         }
-        
+
         public ActionResult Index()
         {
             var viewModel = new IndexViewModel();
 
             return View(viewModel);
         }
-        
+
         public ActionResult MenuBar()
         {
-            var message = new MenuBarQuery();            
+            var message = new MenuBarQuery();
 
             var viewModel = _mediator.Send(message);
 
@@ -45,6 +45,12 @@
         public ActionResult HeaderMsg()
         {
             return View();
+        }
+
+        public JsonResult ChangeLanguage(ChangeLanguageQuery query)
+        {
+            var viewModel = _mediator.Send(query);
+            return Json(viewModel);
         }
     }
 }
