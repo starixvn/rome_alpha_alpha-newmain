@@ -2,18 +2,12 @@
 {
     using System.Collections.Generic;
     using Alpha.Main.Site.Models.Dtos;
-    using Models;
     using Models.Menus;
     using Models.Requests;
-    using Models.Requests.CustomerProfile;
     using Models.Views;
 
     public interface IDashboardService
     {
-        List<LanguageModel> GetLanguages();
-
-        List<string> GetMonthNames();
-
         List<string> GetHotMessages();
 
         ResultModel ChangeLanguage(ChangeLanguageQuery message);
@@ -25,13 +19,9 @@
         string GetMainPage();
 
         bool IsMainPageFromCookie();
-
-        List<IMenuItem> GetLeftMenu();
-
+        
         void StoreSession(MainIndexViewModel dashboardViewModel);
-
-        string GetPasswordHash();
-
+        
         bool IsShowLeftMenu();
     }
 }

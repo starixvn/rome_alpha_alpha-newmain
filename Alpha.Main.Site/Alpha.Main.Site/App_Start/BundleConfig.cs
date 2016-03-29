@@ -36,11 +36,12 @@
 
         private static void RegisterHomeStyle(BundleCollection bundles)
         {
+            var cssRewriteUrlTransformWrapper = new CssRewriteUrlTransformWrapper();
             bundles.Add(new StyleBundle("~/bundle/styles/home")
-                .Include("~/Content/Home/Styles/page.css", new CssRewriteUrlTransformWrapper())
-                .Include("~/Content/Home/Styles/PopupMessage.css", new CssRewriteUrlTransformWrapper())
-                .Include("~/Content/CustomerProfile/Styles/css/CustomerProfile.css", new CssRewriteUrlTransformWrapper())
-                .Include("~/Content/Announcement/Styles/css/Announcements.css", new CssRewriteUrlTransformWrapper()));
-        }        
+                .Include("~/Content/Home/Styles/page.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Content/Home/Styles/PopupMessage.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Content/CustomerProfile/Styles/CustomerProfile.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Content/Announcement/Styles/Announcements.css", cssRewriteUrlTransformWrapper));
+        }
     }
 }

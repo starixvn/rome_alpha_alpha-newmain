@@ -52,31 +52,31 @@
 }
 
     #popup-container-text .toptitlepopup_en {
-        background: url(../Images/toptitlepopup.png) no-repeat;
+        background: url(Images/toptitlepopup.png) no-repeat;
         width: 474px;
         height: 55px;
     }
 
     #popup-container-text .toptitlepopup_th {
-        background: url(../Images/toptitlepopup_thai.png) no-repeat;
+        background: url(Images/toptitlepopup_thai.png) no-repeat;
         width: 474px;
         height: 55px;
     }
 
     #popup-container-text .toptitlepopup_tw {
-        background: url(../Images/toptitlepopup_TW.png) no-repeat;
+        background: url(Images/toptitlepopup_TW.png) no-repeat;
         width: 474px;
         height: 55px;
     }
 
     #popup-container-text .toptitlepopup_ko {
-        background: url(../Images/toptitlepopup_KO.png) no-repeat;
+        background: url(Images/toptitlepopup_KO.png) no-repeat;
         width: 474px;
         height: 55px;
     }
 
     #popup-container-text .toptitlepopup_vn {
-        background: url(../Images/toptitlepopup_vn.png) no-repeat;
+        background: url(Images/toptitlepopup_vn.png) no-repeat;
         width: 474px;
         height: 55px;
     }
@@ -92,7 +92,7 @@
     }
 
     #popup-container-text .linebg {
-        background: url(../Images/linebg.png) repeat-y;
+        background: url(Images/linebg.png) repeat-y;
         width: 461px;
     }
 
@@ -125,7 +125,7 @@
     }
 
     #popup-container-text .bottomborder {
-        background: url(../Images/bottomborder.png) repeat-x;
+        background: url(Images/bottomborder.png) repeat-x;
         height: 6px;
         width: 461px;
     }

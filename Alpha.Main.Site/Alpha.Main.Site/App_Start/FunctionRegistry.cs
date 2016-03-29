@@ -84,7 +84,6 @@
 
         public static Func<string> GetDefaultUrl = () =>
          {
-
              var _defaultMainPage = "/" + GetOldMainPath("_Reports/PortalPage/PortalPage.aspx");
 
              if (!Current.IsLogged)

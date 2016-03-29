@@ -12,8 +12,6 @@
     using Handlers;
     using MediatR;
     using Models.Menus;
-    using Repositories;
-    using Repositories.Impl;
     using Services;
     using Services.Impl;
     using SimpleInjector;
@@ -63,7 +61,7 @@
 
         private static IEnumerable<Assembly> GetAssemblies()
         {
-            yield return typeof(MainHandler).Assembly;
+            yield return typeof(HomeHandler).Assembly;
         }
 
         private static void RegisterCrossCuttingConcerns(Container container)
@@ -98,7 +96,6 @@
         private static void RegisterDataAccesses(Container container)
         {
             container.Register<IDynamicRepository, DynamicRepository>(Lifestyle.Scoped);
-            container.Register<IDashboardRepository, DashboardRepository>(Lifestyle.Scoped);
             container.Register<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>(Lifestyle.Scoped);
         }
     }

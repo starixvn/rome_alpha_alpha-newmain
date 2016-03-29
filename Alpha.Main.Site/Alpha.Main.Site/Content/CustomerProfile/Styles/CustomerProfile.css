@@ -47,20 +47,20 @@
 
     #tooltip-box .left {
         float: left;
-        background: url(../Images/tooltip_left.png) no-repeat;
+        background: url(Images/tooltip_left.png) no-repeat;
         width: 15px;
         height: 45px;
     }
 
     #tooltip-box .bg {
         float: left;
-        background: url(../Images/tooltip_bg.png) repeat-x;
+        background: url(Images/tooltip_bg.png) repeat-x;
         height: 45px;
     }
 
     #tooltip-box .right {
         float: left;
-        background: url(../Images/tooltip_right.png) no-repeat;
+        background: url(Images/tooltip_right.png) no-repeat;
         width: 37px;
         height: 45px;
     }
@@ -88,20 +88,20 @@
 
     #profileTooltip .left {
         float: left;
-        background: url(../Images/profileTooltip_left.png) no-repeat;
+        background: url(Images/profileTooltip_left.png) no-repeat;
         width: 15px;
         height: 75px;
     }
 
     #profileTooltip .bg {
         float: left;
-        background: url(../Images/profileTooltip_bg.png) repeat-x;
+        background: url(Images/profileTooltip_bg.png) repeat-x;
         height: 75px;
     }
 
     #profileTooltip .right {
         float: left;
-        background: url(../Images/profileTooltip_right.png) no-repeat;
+        background: url(Images/profileTooltip_right.png) no-repeat;
         width: 37px;
         height: 75px;
     }

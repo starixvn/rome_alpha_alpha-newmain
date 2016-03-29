@@ -6,7 +6,6 @@
     using System.Linq;
     using System.Web;
     using System.Xml;
-    using Alpha.Main.Site.Repositories;
     using App_GlobalResources;
     using Fanex.Age.UI;
     using Fanex.Common;
@@ -31,8 +30,6 @@
 
     public class DashboardService : IDashboardService
     {
-        private readonly IDashboardRepository _repository;
-
         private readonly SiteMenuService siteMenuService;
 
         private string _defaultMainPage;
@@ -40,20 +37,13 @@
         private AppPathService _appPathService;
 
         public DashboardService(
-            IDashboardRepository repository,
             AppPathService appPathService,
             SiteMenuService siteMenuService)
         {
-            _repository = repository;
             _appPathService = appPathService;
             this.siteMenuService = siteMenuService;
         }
-
-        public List<LanguageModel> GetLanguages()
-        {
-            return _repository.GetLanguages();
-        }
-
+        
         public List<string> GetMonthNames()
         {
             var result = new List<string>();
@@ -254,33 +244,7 @@
                 !currentURLCookie.Value.Contains("ChangePassword.aspx") &&
                 !currentURLCookie.Value.Contains("SecurityCode");
         }
-
-        public List<IMenuItem> GetLeftMenu()
-        {
-            var siteNode = _repository.GetSiteMapNode();
-            var menuList = new List<IMenuItem>();
-            if (!siteNode.HasChildNodes)
-            {
-                return menuList;
-            }
-
-            var pageAccess = UserSession.Current.SubPageAccess;
-            var isSubAcc = UserSession.Current.IsSubAcc;
-            var subMenuCount = siteNode.ChildNodes.Count;
-
-            var user = new User();
-            user.Level = Enumeration.FromValue<UserLevel>(UserSession.Current.RoleId);
-            user.SubAccountId = UserSession.Current.SubAccId;
-            menuList = siteMenuService.GetMenuByUser(user).ToList();
-
-            return menuList;
-        }
-
-        public string GetPasswordHash()
-        {
-            return Encryption.RandomString(new Random().Next(4, 8));
-        }
-
+        
         public void StoreSession(MainIndexViewModel dashboardViewModel)
         {
             HttpContext.Current.Session["ph"] = dashboardViewModel.PasswordHash;

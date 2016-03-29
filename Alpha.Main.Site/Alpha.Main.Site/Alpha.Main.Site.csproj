@@ -386,7 +386,7 @@
     <Content Include="App_Themes\Apo\Security\images\x5.gif" />
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
-    <Content Include="Content\Announcement\Styles\css\Announcements.css" />
+    <Content Include="Content\Announcement\Styles\Announcements.css" />
     <Content Include="Content\Announcement\Styles\Images\bottomborder.png" />
     <Content Include="Content\Announcement\Styles\Images\CloseIcon.png" />
     <Content Include="Content\Announcement\Styles\Images\CloseIcon_h.png" />
@@ -414,7 +414,7 @@
     <Content Include="Content\Announcement\Styles\Images\toptitlepopup_thai.png" />
     <Content Include="Content\Announcement\Styles\Images\toptitlepopup_TW.png" />
     <Content Include="Content\Announcement\Styles\Images\toptitlepopup_vn.png" />
-    <Content Include="Content\CustomerProfile\Styles\css\CustomerProfile.css" />
+    <Content Include="Content\CustomerProfile\Styles\CustomerProfile.css" />
     <Content Include="Content\CustomerProfile\Styles\Images\profileTooltip_bg.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\profileTooltip_left.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\profileTooltip_right.png" />
@@ -613,7 +613,6 @@
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\FunctionRegistry.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Constants\DateTimeFormatConstant.cs" />
     <Compile Include="Constants\LanguageConstant.cs" />
     <Compile Include="Constants\MessageIdConstant.cs" />
     <Compile Include="Constants\MessageTypeConstant.cs" />
@@ -623,7 +622,6 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
     <Compile Include="Criteria\Announcement\MessageTypeListCriteria.cs" />
@@ -631,8 +629,6 @@
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
     <Compile Include="DataAccess\CustomerProfileDataAccess.cs" />
     <Compile Include="DataAccess\Impl\CustomerProfileDataAccessImpl.cs" />
-    <Compile Include="Extensions\DateTimeExtension.cs" />
-    <Compile Include="Extensions\NumberExtension.cs" />
     <Compile Include="Extensions\SecretExtension.cs" />
     <Compile Include="Extensions\SessionExtension.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -670,16 +666,13 @@
     <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
-    <Compile Include="Repositories\IDashboardRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\MainHandler.cs" />
-    <Compile Include="Models\Dtos\LanguageModel.cs" />
+    <Compile Include="Handlers\HomeHandler.cs" />
     <Compile Include="Models\Requests\MainIndexQuery.cs" />
     <Compile Include="Models\Views\MainIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Impl\DashboardRepository.cs" />
     <Compile Include="Services\AppSettings.cs" />
     <Compile Include="Services\IAnnouncementService.cs" />
     <Compile Include="Services\CachingService.cs" />
@@ -698,7 +691,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Main\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

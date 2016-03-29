@@ -113,9 +113,9 @@
     </siteMapNode>
     <!--/Forecast-->
    
-    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" url="../site-oldmain/_Transfer/Agent/MemberList.aspx" functionType="[C]" roles="Agent"></siteMapNode>
-    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" url="../site-oldmain/_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
-    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" url="../site-oldmain/_Transfer/Super/MasterList.aspx" functionType="[C]" roles="Super"></siteMapNode>
+    <siteMapNode resourceKey="transfer" appName="OldMainApp" menuItemType="TransferMenuItem" url="_Transfer/Agent/MemberList.aspx" functionType="[C]" roles="Agent"></siteMapNode>
+    <siteMapNode resourceKey="transfer" appName="OldMainApp" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
+    <siteMapNode resourceKey="transfer" appName="OldMainApp" menuItemType="TransferMenuItem" url="_Transfer/Super/MasterList.aspx" functionType="[C]" roles="Super"></siteMapNode>
     <siteMapNode resourceKey="viewLog" menuItemType="ViewLogMenuItem" functionType="[G]">
       <siteMapNode resourceKey="customerSetting" appName="OldMainApp" url="_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting&amp;pageIndex=1"></siteMapNode>
       <siteMapNode resourceKey="status" appName="OldMainApp" url="_ViewLog/LogStatus.aspx?tabid=Status&amp;pageIndex=1"></siteMapNode>
