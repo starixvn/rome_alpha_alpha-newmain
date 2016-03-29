@@ -1,10 +1,11 @@
-﻿
+﻿@using Alpha.Main.Site.App_GlobalResources;
 
 @helper DisplayLanguageDropdown(string selectedLanguageCode = "en-US")
 {
-    <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
+    <a href="javascript:;" data-target="#" class="dropdown-toggle withripple language-selector-container" data-toggle="dropdown">
+        <span class="icon icon-flag language-selector langFlag_@selectedLanguageCode.ToLowerInvariant().Substring(0,2)">
+        </span>
         <span class="language-text language-selector">
-            <span class="icon icon-flag language-selector langFlag_@selectedLanguageCode.ToLowerInvariant().Substring(0,2)"></span>
         </span>
     </a>
     <ul class="dropdown-menu list-language" id="language" data-currentlanguage="@selectedLanguageCode">
@@ -16,4 +17,13 @@
         <li class="ko-KR"><a class="changelanguage-link" data-value="ko-KR"><span class="icon-flag langFlag_ko"></span>한국어</a></li>
         <li class="vi-VN"><a class="changelanguage-link" data-value="vi-VN"><span class="icon-flag langFlag_vi"></span>Tiếng Việt</a></li>
     </ul>
+}
+
+
+@helper DisplayMonthList()
+{
+    @("['" + Resources.monthName1 + "','" + Resources.monthName2 + "','" + Resources.monthName3 + "','" +
+       Resources.monthName4 + "','" + Resources.monthName5 + "','" + Resources.monthName6 + "','" +
+       Resources.monthName7 + "','" + Resources.monthName8 + "','" + Resources.monthName9 + "','" +
+       Resources.monthName10 + "','" + Resources.monthName11 + "','" + Resources.monthName12 + "']")
 }

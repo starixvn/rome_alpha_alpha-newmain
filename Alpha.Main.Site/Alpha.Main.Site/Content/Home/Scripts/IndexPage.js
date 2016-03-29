@@ -24,7 +24,7 @@ var IndexPageManager = function () {
         self.selectTopMenu();
     };
     self.loadBriefProfile = function () {
-        var url = $("#basemainapp").val() + 'CustomerProfile/BriefProfile';
+        var url = "/" + $("#basemainapp").val() + 'CustomerProfile/BriefProfile';
         $.ajax({
             type: "POST",
             url: url,

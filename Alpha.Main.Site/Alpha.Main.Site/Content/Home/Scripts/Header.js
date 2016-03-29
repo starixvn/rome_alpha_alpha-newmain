@@ -27,8 +27,8 @@ var HeaderManager = function () {
         self.initClock();
         self.runClock();
 
-        //self.initElements();
-        //self.bindEvents();
+        self.initElements();
+        self.bindEvents();
     };
 
     self.initClock = function () {
@@ -41,15 +41,15 @@ var HeaderManager = function () {
         self.data.clock.second = clock.attr("data-second");
         self.data.clock.labelAM = clock.attr("data-label-am");
         self.data.clock.labelPM = clock.attr("data-label-pm");
-        self.data.clock.labelMonths = clock.attr("data-label-months");
+        self.data.clock.labelMonths = JSON.parse(clock.attr("data-label-months").replace(/'/g, '"'));
     };
     self.initElements = function () {
         var currentLanguage = $("#language").attr("data-currentlanguage");
         var language = $(".list-language ." + currentLanguage + " > a").html();
-        $(".language-text").html(language);
+        $(".language-selector-container").html(language);
     };
     self.bindEvents = function () {
-        jQuery(".changelanguage-link").click(function () {
+        $(".changelanguage-link").click(function () {
             self.changeLanguage($(this).attr("data-value"));
         });
     };

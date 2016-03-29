@@ -3,6 +3,7 @@
     using App_Start;
     using Helpers;
     using Models.Enumerations;
+    using Services;
     using Sunplus.Agent.Model.Entities;
 
     public class IndexViewModel
@@ -61,6 +62,14 @@
             get
             {
                 return AppPathHelper.GetOldMainPath("~");
+            }
+        }
+
+        public string MainRootPath
+        {
+            get
+            {
+                return AppPathHelper.GetAppPath(AppSettings.VirtualDirectory, "~");
             }
         }
     }

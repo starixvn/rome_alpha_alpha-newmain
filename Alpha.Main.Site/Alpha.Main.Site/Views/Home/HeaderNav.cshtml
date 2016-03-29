@@ -12,7 +12,7 @@
                   data-second="@DateTime.Now.Second"
                   data-label-am="@Resources.AM"
                   data-label-pm="@Resources.PM"
-                  data-label-months="[]"></span>
+                  data-label-months="@RazorHelper.DisplayMonthList()"></span>
         </li>
         <li class="dropdown">
             @RazorHelper.DisplayLanguageDropdown(Model.Language)
