@@ -19,8 +19,7 @@ var IndexPageManager = function () {
         self.bindEvents();
     };
     self.initElements = function () {
-        var start = top.mainRootPath.indexOf('//') + 2;
-        window.document.title = top.mainRootPath.substr(start, top.mainRootPath.length - start - 1);
+        window.document.title = top.mainRootPath.substr(0, top.mainRootPath.length - 1);
 
         $.material.init();
         self.loadBriefProfile();
