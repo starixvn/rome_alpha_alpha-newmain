@@ -300,6 +300,10 @@ a, a:focus, a:active, a:target, a:hover {
         .header-nav .list-top > li.dropdown > a {
           padding: 15px;
           opacity: 0.8; }
+          .header-nav .list-top > li.dropdown > a.language-selector-container {
+            margin-top: 2px; }
+            .header-nav .list-top > li.dropdown > a.language-selector-container .icon-flag {
+              margin-right: 8px; }
         .header-nav .list-top > li.dropdown .dropdown-menu.list-setting {
           right: 0;
           left: auto; }

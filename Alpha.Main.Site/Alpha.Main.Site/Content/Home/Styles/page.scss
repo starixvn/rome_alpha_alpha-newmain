@@ -371,6 +371,12 @@ a, a:focus, a:active, a:target, a:hover {
                 > a {
                     padding:15px;
                     opacity: 0.8;
+                    &.language-selector-container {
+                        margin-top: 2px;
+                        .icon-flag {
+                            margin-right: 8px;
+                        }
+                    }
                 }
                 .dropdown-menu {
                     &.list-setting {
