@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Site.Services
 {
-    using System.Configuration;
     using Fanex.Common;
-    using Helpers;
+    using System.Configuration;
 
     public static class AppSettings
     {
@@ -54,9 +53,17 @@
             }
         }
 
+        public static string NonUseSecurityCodeSites
+        {
+            get
+            {
+                return Converter.ToString2(ConfigurationManager.AppSettings["NonUseSecurityCodeSites"]);
+            }
+        }
+
         public static string GetAppName(string name)
         {
-           // Argument.Requires(!string.IsNullOrWhiteSpace(name), nameof(name));
+            // Argument.Requires(!string.IsNullOrWhiteSpace(name), nameof(name));
 
             return ConfigurationManager.AppSettings[name];
         }

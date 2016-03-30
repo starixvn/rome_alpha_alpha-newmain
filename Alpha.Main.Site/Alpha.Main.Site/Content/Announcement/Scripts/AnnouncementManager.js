@@ -1,13 +1,13 @@
-﻿var announcementManager;
-
-var AnnouncementManager = function () {
+﻿var AnnouncementManager = function () {
     var self = this;
     var showedMessageIds = new Array();
     var timeoutAnnouncement = 0;
     var timeoutAnnouncementNext = 0;
+
     self.init = function () {
         self.loadAnnouncement();
     };
+
     self.loadAnnouncement = function () {
         var url = "/" + top.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
@@ -21,10 +21,11 @@ var AnnouncementManager = function () {
             },
             success: function (data) {
                 self.showAnnouncement(data);
-                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 4000);
+                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 120000);
             }
         });
     };
+
     self.removeAnnouncement = function (timeout) {
         var announcementId = $('#announcement-id');
         if (announcementId != null) {
@@ -32,9 +33,10 @@ var AnnouncementManager = function () {
             clearTimeout(timeoutAnnouncement);
             setTimeout(function () {
                 self.loadAnnouncementNext(timeout);
-            }, 3000);
+            }, 30000);
         }
     };
+
     self.loadAnnouncementNext = function () {
         var url = "/" + top.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
@@ -49,10 +51,11 @@ var AnnouncementManager = function () {
             },
             success: function (data) {
                 self.showAnnouncement(data);
-                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 4000);
+                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 120000);
             }
         });
     };
+
     self.showAnnouncement = function (result) {
         var text = result;
         if (text.length < 10) {
@@ -111,6 +114,7 @@ var AnnouncementManager = function () {
             $('#announcement-id')[0].style.display = 'block';
         }, 2000);
     };
+
     self.checkShowedMessage = function (id) {
         var count = showedMessageIds.length;
         for (var i = 0; i < count; i++) {
@@ -121,6 +125,7 @@ var AnnouncementManager = function () {
 
         return false;
     };
+
     self.getAnnoucementShowCount = function () {
         var cookieName = self.getAnnoucementCookieName();
         if (cookieName == null) return 0;
@@ -133,6 +138,7 @@ var AnnouncementManager = function () {
 
         return count;
     };
+
     self.getAnnoucementCookieName = function () {
         try {
             var popUpId = $("#popup-id")[0];
@@ -166,7 +172,7 @@ var AnnouncementManager = function () {
     };
 };
 
-announcementManager = new AnnouncementManager();
+var announcementManager = new AnnouncementManager();
 
 $(document).ready(function () {
     announcementManager.init();

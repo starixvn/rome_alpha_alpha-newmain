@@ -13,9 +13,15 @@
             _mediator = mediator;
         }
 
-        public ActionResult HotAnnouncement(HotAnnouncementQuery query)
+        public ActionResult HotAnnouncement(HotAnnouncementQuery message)
         {
-            var viewModel = _mediator.Send(query);
+            var announcementResourcePath = "../Content/Announcement/Resources/";
+            message.SuperPrivateMessagePath = HttpContext.Server.MapPath(announcementResourcePath + "PopupAdSuperNeutral.xml");
+            message.MasterPrivateMessagePath = HttpContext.Server.MapPath(announcementResourcePath + "PopupAdMasterNeutral.xml");
+            message.AgentPrivateMessagePath = HttpContext.Server.MapPath(announcementResourcePath + "PopupAdAgentNeutral.xml");
+            message.CommonAnnouncementPath = HttpContext.Server.MapPath(announcementResourcePath + "PopupAdCommon.xml");
+
+            var viewModel = _mediator.Send(message);
             return View(viewModel);
         }
     }
