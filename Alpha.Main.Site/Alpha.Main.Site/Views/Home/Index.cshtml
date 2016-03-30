@@ -45,7 +45,7 @@
     @Html.Hidden("onuserid", Model.OnUserId)
     @Html.Hidden("mainRootPath", Model.MainRootPath)
     @Html.Hidden("messageList", "[]")
-    @Html.Hidden("passwordHash", Model.PasswordHash)
+    @Html.Hidden("passwordHash", Model.PasswordHash)    
 
     @ContentSite.Scripts.Render(
         "/libs/jquery/jquery-1.11.3.min.js",
@@ -53,7 +53,8 @@
         "/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.concat.min.js",
         "/css/bootstrap-material/js/material.min.js",
         "/css/bootstrap-material/js/ripples.min.js",
-        "/libs/underscore/underscore-min.js")
+        "/libs/underscore/underscore-min.js",
+        "/libs/moment/moment-with-locales.js")
 
     @Scripts.Render("~/bundles/scripts/home")
 </body>

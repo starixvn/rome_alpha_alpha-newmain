@@ -8,16 +8,12 @@ var HeaderNavigationManager = function () {
     var self = this;
     self.data = {
         clock: {
-            year: 0,
-            month: 0,
-            day: 0,
-            hour: 0,
-            minute: 0,
-            second: 0,
             labelAM: '',
             labelPM: '',
-            months: []
+            months: [],
+            momentTime: null
         },
+        languageCode: 'en'
     };
     self.enums = {
         ErrorCode: {
@@ -34,62 +30,47 @@ var HeaderNavigationManager = function () {
     };
 
     self.initElements = function () {
+        self.data.languageCode = $("#language-code").val();
         var currentLanguage = $("#language").attr("data-currentlanguage");
         var language = $(".list-language ." + currentLanguage + " > a").html();
         $(".language-selector-container").html(language);
     };
     self.initClock = function () {
         var clock = $("#clock");
-        self.data.clock.year = clock.attr("data-year");
-        self.data.clock.month = clock.attr("data-month");
-        self.data.clock.day = clock.attr("data-day");
-        self.data.clock.hour = clock.attr("data-hour");
-        self.data.clock.minute = clock.attr("data-minute");
-        self.data.clock.second = clock.attr("data-second");
+
         self.data.clock.labelAM = clock.attr("data-label-am");
         self.data.clock.labelPM = clock.attr("data-label-pm");
         self.data.clock.labelMonths = JSON.parse(clock.attr("data-label-months").replace(/'/g, '"'));
+
+        var time = new Date(self.data.clock.year, self.data.clock.month - 1, self.data.clock.day,
+            self.data.clock.hour, self.data.clock.minute, self.data.clock.second);
+        self.data.clock.momentTime = moment({
+            year: clock.attr("data-year"),
+            month: clock.attr("data-month") - 1,
+            day: clock.attr("data-day"),
+            hour: clock.attr("data-hour"),
+            minute: clock.attr("data-minute"),
+            second: clock.attr("data-second"),
+            milliseconds: 0
+        });
     };
     self.runClock = function () {
-        self.data.clock.second++;
-        if (self.data.clock.second == 60) {
-            self.data.clock.second = 0;
-            self.data.clock.minute++;
-        }
+        self.data.clock.momentTime.add('seconds', 1);
 
-        if (self.data.clock.minute == 60) {
-            self.data.clock.minute = 0;
-            self.data.clock.hour++;
-        }
+        // Moment use hour from 1->12
+        // var str = self.data.clock.momentTime.lang('zh').format("hh:mm:ss A MMM DD, YYYY") + " GMT-4";
 
-        if (self.data.clock.hour == 24) {
-            self.data.clock.hour = 0;
-            self.data.clock.second = 0;
-            self.data.clock.minute = 0;
-            self.data.clock.day++;
-        }
+        var hour = self.data.clock.momentTime.get("hour");
+        var year = self.data.clock.momentTime.get("year");
+        var month = self.data.clock.momentTime.get("month");
+        var day = self.data.clock.momentTime.get("day");
 
-        strmin = self.data.clock.minute < 10 ? "0" + self.data.clock.minute : self.data.clock.minute;
-        strsec = self.data.clock.second < 10 ? "0" + self.data.clock.second : self.data.clock.second;
+        // Expected: hour from 0->11   
+        var strhrs = hour >= 12 ? hour - 12 : hour;
+        var stra = hour >= 12 ? self.data.clock.labelPM : self.data.clock.labelAM;
+        var str = strhrs + ":" + self.data.clock.momentTime.format("mm:ss") + " " + stra + " " +
+            self.data.clock.labelMonths[month] + " " + day + ", " + year + " GMT-4";
 
-        if (!_.isDate(new Date(parseFloat(self.data.clock.year) + "/" + self.data.clock.month + "/" + self.data.clock.day))) {
-            //to next self.data.clock.month
-            self.data.clock.month++;
-            self.data.clock.day = 1;
-        }
-
-        if (!_.isDate(new Date(parseFloat(self.data.clock.year) + "/" + self.data.clock.month + "/" + self.data.clock.day))) {
-            //to next self.data.clock.year
-            self.data.clock.year++;
-            self.data.clock.month = 1;
-            self.data.clock.day = 1;
-        }
-
-        stra = self.data.clock.hour >= 12 ? self.data.clock.labelPM : self.data.clock.labelAM;
-        strhrs = self.data.clock.hour >= 12 ? self.data.clock.hour - 12 : self.data.clock.hour;
-
-        var str = strhrs + ":" + strmin + ":" + strsec + " " + stra + " " +
-            self.data.clock.labelMonths[self.data.clock.month - 1] + " " + self.data.clock.day + ", " + self.data.clock.year + " GMT-4";
         $("#clock").html(str);
         setTimeout(self.runClock, 1000);
     };
