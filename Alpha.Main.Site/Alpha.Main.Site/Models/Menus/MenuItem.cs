@@ -11,23 +11,23 @@
     public class MenuItem : IMenuItem
     {
         private string url;
-        private Func<MenuStatus> getMenuStatusFunc;        
+        private Func<MenuStatus> getMenuStatusFunc;
         private Predicate<string> authorizeUrlFunc;
 
-        protected MenuItem() 
+        protected MenuItem()
             : this(null, null)
         {
         }
 
-        public MenuItem(Func<MenuStatus> getMenuStatusFunc = null) 
+        public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
             : this(getMenuStatusFunc, null)
-        {           
+        {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc)
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
-            this.authorizeUrlFunc = authorizeUrlFunc;            
+            this.authorizeUrlFunc = authorizeUrlFunc;
         }
 
         public string Key { get; set; }
@@ -51,8 +51,8 @@
                 var appVirtualPath = AppSettings.GetAppName(AppName);
 
                 if (!string.IsNullOrWhiteSpace(appVirtualPath))
-                {                    
-                    return  Regex.Replace(this.url, HttpRuntime.AppDomainAppVirtualPath, "/" + appVirtualPath);
+                {
+                    return Regex.Replace(this.url, HttpRuntime.AppDomainAppVirtualPath, "/" + appVirtualPath);
                 }
 
                 return this.url;
@@ -62,7 +62,7 @@
             {
                 this.url = value;
             }
-        }       
+        }
 
         public virtual MenuStatus Status
         {

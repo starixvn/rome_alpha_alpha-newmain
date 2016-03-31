@@ -1,10 +1,9 @@
 ﻿namespace Alpha.Main.Site.Services
 {
-    using System.Collections.Generic;
     using Alpha.Main.Site.Models.Dtos;
-    using Models.Menus;
     using Models.Requests;
     using Models.Views;
+    using System.Collections.Generic;
 
     public interface IDashboardService
     {
@@ -12,16 +11,6 @@
 
         ResultModel ChangeLanguage(ChangeLanguageQuery message);
 
-        string GetCookieCurrentURL();
-
-        string GetBaseUrl();
-
-        string GetMainPage();
-
-        bool IsMainPageFromCookie();
-        
         void StoreSession(MainIndexViewModel dashboardViewModel);
-        
-        bool IsShowLeftMenu();
     }
 }

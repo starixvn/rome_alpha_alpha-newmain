@@ -17,10 +17,9 @@
 
         protected override void OnAuthentication(AuthenticationContext filterContext)
         {
-                        
             base.OnAuthentication(filterContext);
-                        
-            if (!filterContext.HttpContext.User.Identity.IsAuthenticated                
+
+            if (!filterContext.HttpContext.User.Identity.IsAuthenticated
                 || UserSession.Current.UserId <= 0)
             {
                 var logInUrl = AppPathHelper.GetOldMainPath(FormsAuthentication.LoginUrl);
@@ -61,7 +60,7 @@
 
             Thread.CurrentThread.CurrentCulture.DateTimeFormat = _defaultCulture.DateTimeFormat;
             Thread.CurrentThread.CurrentCulture.NumberFormat = _defaultCulture.NumberFormat;
-            
+
             base.Initialize(requestContext);
         }
     }

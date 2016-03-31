@@ -63,8 +63,7 @@
 
         public static string GetAppName(string name)
         {
-            // Argument.Requires(!string.IsNullOrWhiteSpace(name), nameof(name));
-
+            // Argument.Requires(!string.IsNullOrWhiteSpace(name), nameof(name));   
             return ConfigurationManager.AppSettings[name];
         }
     }

@@ -5,10 +5,6 @@
 
     public static class Argument
     {
-        static Argument()
-        {
-        }
-
         [DebuggerStepThrough]
         public static void Requires(bool condition, string message)
         {

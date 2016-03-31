@@ -20,7 +20,7 @@
                 CustId = custId
             };
 
-            return _customerProfileDataAccess.GetProfilePicture(criteria); ;
+            return _customerProfileDataAccess.GetProfilePicture(criteria);
         }
     }
 }

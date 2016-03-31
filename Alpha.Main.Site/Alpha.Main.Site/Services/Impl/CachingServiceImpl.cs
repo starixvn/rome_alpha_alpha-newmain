@@ -10,26 +10,12 @@
     {
         private readonly ObjectCache cache;
 
-        public CachingServiceImpl()            
+        public CachingServiceImpl()
         {
             cache = MemoryCache.Default;
             DefaultCacheDuration = 60 * 20;
         }
 
-        //public CachingServiceImpl(ObjectCache cache)
-        //{
-        //    if (cache == null)
-        //    {
-        //        throw new ArgumentNullException("cache");
-        //    }
-
-        //    this.cache = cache;
-        //    DefaultCacheDuration = 60 * 20;
-        //}
-
-        /// <summary>
-        ///     Seconds to cache objects for by default
-        /// </summary>
         public int DefaultCacheDuration { get; set; }
 
         private DateTimeOffset DefaultExpiryDateTime

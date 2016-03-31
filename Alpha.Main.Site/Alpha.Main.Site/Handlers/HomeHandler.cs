@@ -21,9 +21,7 @@
         {
             var result = new MainIndexViewModel
             {
-                HotMessages = _dashboardService.GetHotMessages(),
-                MainPage = _dashboardService.GetMainPage(),
-                IsMainPageFromCookie = _dashboardService.IsMainPageFromCookie()
+                HotMessages = _dashboardService.GetHotMessages()
             };
 
             _dashboardService.StoreSession(result);
