@@ -1,4 +1,5 @@
-﻿<section class="navbar header-nav" id="header-nav">
+﻿@model HeaderNavViewModel
+<section class="navbar header-nav" id="header-nav">
     <span class="icon-collapse icon-hamburger withripple"></span>
     <ul class="nav navbar-nav list-top">
         <li>
@@ -12,10 +13,13 @@
                   data-second="@DateTime.Now.Second"
                   data-label-am="@Resources.AM"
                   data-label-pm="@Resources.PM"
-                  data-label-months="@RazorHelper.DisplayMonthList()"></span>
+                  data-label-months="@("['" + Resources.monthName1 + "','" + Resources.monthName2 + "','" + Resources.monthName3 + "','" +
+                                           Resources.monthName4 + "','" + Resources.monthName5 + "','" + Resources.monthName6 + "','" +
+                                           Resources.monthName7 + "','" + Resources.monthName8 + "','" + Resources.monthName9 + "','" +
+                                           Resources.monthName10 + "','" + Resources.monthName11 + "','" + Resources.monthName12 + "']")"></span>
         </li>
         <li class="dropdown">
-            @RazorHelper.DisplayLanguageDropdown(Model.Language)
+            @Html.Partial("~/Views/Shared/Language.cshtml", Model.Language)
         </li>
         <li class="withripple"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
         <li class="dropdown">
