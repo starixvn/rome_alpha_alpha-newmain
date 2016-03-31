@@ -39,23 +39,26 @@ a, a:focus, a:active, a:target, a:hover {
   height: 12px;
   width: 17px; }
 
-.langFlag_en {
+.langFlag-en-us {
   background-position: 0 0; }
 
-.langFlag_zh {
+.langFlag-zh-tw {
   background-position: 0 -12px; }
 
-.langFlag_ko {
+.langFlag-zh-cn {
+  background-position: 0 -12px; }
+
+.langFlag-ko-kr {
   background-position: 0 -51px;
   height: 13px; }
 
-.langFlag_th {
+.langFlag-th-th {
   background-position: 0 -39px; }
 
-.langFlag_ja {
+.langFlag-ja-jp {
   background-position: 0 -26px; }
 
-.langFlag_vi {
+.langFlag-vi-vn {
   background-position: 0 -65px; }
 
 .icon-time {
