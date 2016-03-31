@@ -83,13 +83,13 @@ var HeaderNavigationManager = function () {
             self.collapseLeftPanel($(this));
         });
         $(".icon-home").click(function () {
-            indexPageManager.changeMenu("/" + top.oldMainRootPath + '_Reports/PortalPage/PortalPage.aspx');
+            indexPageManager.changeMenu(top.oldMainRootPath + '_Reports/PortalPage/PortalPage.aspx');
         });
         $(".icon-swap-horizontal").click(function () {
-            top.location = "/" + top.oldMainRootPath + "Index.aspx";
+            top.location = top.oldMainRootPath + "Index.aspx";
         });
         $(".old-view-text").click(function () {
-            top.location = "/" + top.oldMainRootPath + "Index.aspx";
+            top.location = top.oldMainRootPath + "Index.aspx";
         });
         $(".changelanguage-link").click(function () {
             self.changeLanguage($(this).attr("data-value"));
@@ -121,7 +121,7 @@ var HeaderNavigationManager = function () {
         $('.top-right-menu').parent().toggleClass("active");
     };
     self.changeLanguage = function (lang) {
-        var url = "/" + top.mainRootPath + 'Home/ChangeLanguage';
+        var url = top.mainRootPath + 'Home/ChangeLanguage';
         jQuery.ajax({
             type: "POST",
             url: url,

@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System;
+    using System.Web;
     using App_Start;
     using Helpers;
     using Models.Enumerations;
@@ -63,7 +64,7 @@
         {
             get
             {
-                return AppPathHelper.GetOldMainPath("~");
+                return AppPathHelper.GetOldMainPath("~/");
             }
         }
 
@@ -71,7 +72,7 @@
         {
             get
             {
-                return AppPathHelper.GetAppPath(AppSettings.VirtualDirectory, "~");
+                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
             }
         }
 

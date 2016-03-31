@@ -10,7 +10,7 @@
         {
             public static IHtmlString Render(params string[] paths)
             {
-                return System.Web.Optimization.Styles.Render(paths.Select(path => "/" + AppSettings.ContentSite + path).ToArray());
+                return System.Web.Optimization.Styles.Render(paths.Select(path => AppSettings.ContentSite + path).ToArray());
             }
         }
 
@@ -18,7 +18,7 @@
         {
             public static IHtmlString Render(params string[] paths)
             {
-                return System.Web.Optimization.Scripts.Render(paths.Select(path => "/" + AppSettings.ContentSite + path).ToArray());
+                return System.Web.Optimization.Scripts.Render(paths.Select(path => AppSettings.ContentSite + path).ToArray());
             }
         }
     }

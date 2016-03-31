@@ -9,7 +9,7 @@
     };
 
     self.loadAnnouncement = function () {
-        var url = "/" + top.mainRootPath + 'Announcement/HotAnnouncement';
+        var url = top.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,
@@ -38,7 +38,7 @@
     };
 
     self.loadAnnouncementNext = function () {
-        var url = "/" + top.mainRootPath + 'Announcement/HotAnnouncement';
+        var url = top.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,

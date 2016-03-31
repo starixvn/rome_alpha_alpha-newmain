@@ -102,7 +102,7 @@ var MenuBarManager = function () {
 
             var src = accInfoContent.attr('src');
             if (!src) {
-                accInfoContent.attr('src', '/' + oldMainRootPath + '_AccountInfo/AccountInfo.aspx?fromNewSite=1');
+                accInfoContent.attr('src', oldMainRootPath + '_AccountInfo/AccountInfo.aspx?fromNewSite=1');
             }
         });
 

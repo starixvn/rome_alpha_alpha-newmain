@@ -26,7 +26,7 @@ var IndexPageManager = function () {
         self.selectTopMenu();
     };
     self.loadBriefProfile = function () {
-        var url = "/" + $("#mainRootPath").val() + 'CustomerProfile/BriefProfile';
+        var url = $("#mainRootPath").val() + 'CustomerProfile/BriefProfile';
         $.ajax({
             type: "POST",
             url: url,
@@ -55,7 +55,7 @@ var IndexPageManager = function () {
             index = index.parent;
         }
 
-        index.location = "/" + top.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
+        index.location = top.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
         if (index.location.href.indexOf('https://imb.') == 0 ||
             index.location.href.indexOf('https://int.') == 0) {
             index.close();
@@ -128,7 +128,7 @@ var IndexPageManager = function () {
     self.reCheckin = function () {
         // Post with return result in JSON format
         setCookie("ssl", location.href.indexOf('https://') == 0, 30);
-        var url = "/" + top.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx';
+        var url = top.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx';
         $.ajax({
             type: "POST",
             url: url,
