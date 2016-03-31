@@ -1,7 +1,8 @@
-﻿@model string
+﻿@using Alpha.Main.Site.Constants
+@model string
 @{
     Layout = null;
-    var selectedLanguageCode = Model ?? "en-US";
+    var selectedLanguageCode = Model ?? LanguageConstant.DefaultLanguage;
 }
 
 <a href="javascript:;" data-target="#" class="dropdown-toggle withripple language-selector-container" data-toggle="dropdown">
