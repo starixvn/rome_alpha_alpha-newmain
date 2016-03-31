@@ -55,7 +55,7 @@ var HeaderNavigationManager = function () {
         });
     };
     self.runClock = function () {
-        self.data.clock.momentTime.add('seconds', 1);
+        self.data.clock.momentTime.add(1, 'seconds');
 
         // Moment use hour from 1->12
         // var str = self.data.clock.momentTime.lang('zh').format("hh:mm:ss A MMM DD, YYYY") + " GMT-4";
