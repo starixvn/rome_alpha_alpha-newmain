@@ -30,7 +30,7 @@
     }
 
 #popup-container {
-    font-family: "Roboto",Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 12px;
     background: #e0e0e0;
     position: absolute; /* FOR Flash */
@@ -41,9 +41,8 @@
 
 /*@Kaden modify UI for Announcement Text*/
 #popup-container-text {
-    font-family: "Roboto",Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 12px;
-
     position: fixed;
     z-index: 99999;
     padding: 0px;
@@ -130,6 +129,6 @@
         width: 461px;
     }
 
-.popup-container-text .icon-close{
+.popup-container-text .icon-close {
     border: 0px;
 }

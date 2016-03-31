@@ -33,7 +33,7 @@
             {
                 return userSession.Language;
             }
-        }      
+        }
 
         public string LanguageKey
         {

@@ -514,6 +514,8 @@
     <Content Include="Views\Home\HeaderNav.cshtml" />
     <Content Include="Content\Home\Scripts\header.msg.js" />
     <Content Include="Views\Home\HeaderMsg.cshtml" />
+    <Content Include="Views\Announcement\HotAnnouncementWithSource.cshtml" />
+    <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
