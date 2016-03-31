@@ -77,8 +77,8 @@
                 IsDefaultAvatar = profile.IsDefaultAvatar,
                 EmbedImage = GenerateImage(profile),
                 IsShowEditProfilePictureTooltip = isShowEditProfilePictureTooltip,
-                ChangeNickNameUrl = string.Format("/{0}LoginOption?custId={1}", baseOldMainApp, _userSession.CustId),
-                ViewProfileUrl = string.Format("/{0}ProfilePicture?custId={1}", baseOldMainApp, _userSession.CustId),
+                ChangeNickNameUrl = string.Format("{0}LoginOption?custId={1}", baseOldMainApp, _userSession.CustId),
+                ViewProfileUrl = string.Format("{0}ProfilePicture?custId={1}", baseOldMainApp, _userSession.CustId),
                 Username = HttpUtility.HtmlEncode(_userSession.UserName),
                 IsNotMainAccount = _userSession.IsSubAcc || _userSession.IsInternal
             };
