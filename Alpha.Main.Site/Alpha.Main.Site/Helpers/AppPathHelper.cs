@@ -18,12 +18,12 @@
 
         public static string GetOldMainPath(string virtualPath)
         {
-            return GetAppPath(AppSettings.OldMainApp, virtualPath);
+            return GetAppPath(AppSettings.OldMainAppPath, virtualPath);
         }
 
         public static string GetContent(string virtualPath)
         {
-            return GetAppPath(AppSettings.ContentSite, virtualPath);
+            return GetAppPath(AppSettings.ContentAppPath, virtualPath);
         }
     }
 }

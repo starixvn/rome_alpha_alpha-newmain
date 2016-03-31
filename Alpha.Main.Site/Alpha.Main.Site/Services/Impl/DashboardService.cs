@@ -146,7 +146,7 @@
 
         private string GetOldMainAppPath()
         {
-            return "/" + _appPathService.GetAppPath(SiteServices.AppSettings.OldMainApp, "~");
+            return _appPathService.GetAppPath(SiteServices.AppSettings.OldMainAppPath, "~/");
         }
     }
 }

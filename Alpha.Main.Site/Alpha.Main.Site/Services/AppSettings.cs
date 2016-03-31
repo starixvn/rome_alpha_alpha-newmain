@@ -5,19 +5,19 @@
 
     public static class AppSettings
     {
-        public static string ContentSite
+        public static string ContentAppPath
         {
             get
             {
-                return ConfigurationManager.AppSettings["ContentSite"];
+                return ConfigurationManager.AppSettings["ContentAppPath"];
             }
         }
 
-        public static string OldMainApp
+        public static string OldMainAppPath
         {
             get
             {
-                return ConfigurationManager.AppSettings["OldMainApp"];
+                return ConfigurationManager.AppSettings["OldMainAppPath"];
             }
         }
 

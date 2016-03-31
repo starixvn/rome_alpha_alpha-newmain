@@ -66,7 +66,7 @@
 
         public BriefProfileViewModel Handle(BriefProfileQuery message)
         {
-            var baseOldMainApp = _appPathService.GetAppPath(AppSettings.OldMainApp, "~");
+            var baseOldMainApp = _appPathService.GetAppPath(AppSettings.OldMainAppPath, "~/");
             var profile = _customerProfileService.GetProfilePicture(message.CustId);
             var isShowEditProfilePictureTooltip = profile.IsDefaultAvatar
                 && CountNickNameToolTip < MaxCountNickNameTooltip
