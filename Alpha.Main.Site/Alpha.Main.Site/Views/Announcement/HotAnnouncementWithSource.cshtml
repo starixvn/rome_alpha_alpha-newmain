@@ -1,0 +1,26 @@
+﻿@using Alpha.Main.Site.Models.Dtos.Announcement;
+@using Alpha.Main.Site.App_GlobalResources;
+@model HotAnnouncement
+<div id="popup-container" style="width: @(Model.Width + "px");
+     top: @(Model.Top + "px"); left: @(Model.Left + "px");">
+
+    <iframe frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="no"
+            src="@Model.Source"
+            width="@Model.Width"
+            height="@Model.Height"></iframe>
+
+    <div id="closePopup" class="close-advertisement">
+        <a class="advertisement-close" href="javascript:;" title="@Resources.close">
+            <img src="~/Content/Announcement/Styles/Images/close_button.png"
+                 alt="@Resources.close"
+                 class="icon-close" />
+        </a>
+    </div>
+
+    <div class="notshow-advertisement">
+        <input type="checkbox" id="chkHide" />
+        <label for="chkHide" class="lblHide">
+            @Resources.doNotShowAgain
+        </label>
+    </div>
+</div>

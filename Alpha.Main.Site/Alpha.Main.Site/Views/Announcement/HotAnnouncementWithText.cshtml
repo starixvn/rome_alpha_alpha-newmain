@@ -1,0 +1,29 @@
+﻿@using Alpha.Main.Site.Models.Dtos.Announcement;
+@using Alpha.Main.Site.App_GlobalResources;
+@model HotAnnouncement
+<div id="popup-container-text" style="top: @(Model.Top + "px");
+         left: @(Model.Left + "px");"
+     class="ui-draggable">
+
+    <div class="@("toptitlepopup_" + Model.LanguagueCode)">
+        <div class="advertisement">
+            <a class="advertisement-close" href="javascript:;" title="@Resources.close">
+                <img src="~/Content/Announcement/Styles/Images/iconClose.png"
+                     alt="@Resources.close" class="icon-close" />
+            </a>
+        </div>
+    </div>
+
+    <div class="paddingleft">
+        <div class="linebg">
+            <div>
+                <div class="message">
+                    @Html.Raw(Model.Content)
+                </div>
+            </div>
+            <div class='lineblue'></div>
+            <div class='linewhite'></div>
+        </div>
+        <div class="bottomborder"></div>
+    </div>
+</div>

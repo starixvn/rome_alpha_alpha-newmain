@@ -35,8 +35,8 @@
         public HotAnnouncement GetHotAnnouncement(HotAnnouncementQuery message)
         {
             var hotAnnouncement = new HotAnnouncement();
-            if (securityCodeService.IsActive &&
-                securityCodeService.IsRequireSecurityCode)
+            if (message.IsSecurityCodeActive &&
+                message.IsRequireSecurityCode)
             {
                 return hotAnnouncement;
             }
@@ -147,7 +147,7 @@
                     .ToList();
             }
 
-            bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(userSession.Site);
+            bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(userSession.Site, message.SecurityCodeResult, message.SecurityCodeSession);
             var messageVisibilities = MessageVisibilities(isForceUseSecurityCode);
 
             foreach (var messageVisibility in messageVisibilities)
