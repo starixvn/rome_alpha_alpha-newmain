@@ -93,6 +93,7 @@
             container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Transient);
             container.Register<SecurityCodeService, SecurityCodeServiceImpl>(Lifestyle.Transient);
             container.Register<UserPermissionService, UserPermissionServiceImpl>(Lifestyle.Transient);
+            container.Register<UserMessageService, UserMessageServiceImpl>(Lifestyle.Transient);
         }
 
         private static void RegisterDataAccesses(Container container)

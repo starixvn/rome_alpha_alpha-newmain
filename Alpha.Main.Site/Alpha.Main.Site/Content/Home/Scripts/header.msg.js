@@ -21,12 +21,16 @@
         topMessagePopup: null,
         marqueeMessage: null,
         popupContainer1: null,
-        popupContainer2: null
+        popupContainer2: null,
+        hotMessages: null,
+        userMessageModal: null
     },
 
     init: function () {
         headerMessage.cacheElements();
         headerMessage.registerEvents();
+
+        headerMessage.showHotMessage();
     },
 
     cacheElements: function () {
@@ -38,6 +42,8 @@
         headerMessage.domElements.marqueeMessage = $('#marqueeMessage');
         headerMessage.domElements.popupContainer1 = $('#popupContainer1');
         headerMessage.domElements.popupContainer2 = $('#popupContainer2');
+        headerMessage.domElements.hotMessages = $('#userMessageModalBody p');
+        headerMessage.domElements.userMessageModal = $('#userMessageModal');
     },
 
     registerEvents: function () {
@@ -93,59 +99,60 @@
         }
     },
 
-    showHotMessage: function (messages) {
-        if (messages.length == 0) {
-            headerMessage.domElements.topMessagePopup.addClass('display-none');
-            return;
-        }
+    showHotMessage: function () {
+        headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
 
-        headerMessage.domElements.popupContainer1.html(messages[msgIndex]);
-        if (messages.length > 1) {
-            headerMessage.domElements.popupContainer2(messages[msgIndex + 1]);
-        }
+        //if (headerMessage.domElements.hotMessages.length == 0) {
 
-        self.showPopupTop(true);
-        headerMessage.domElements.topMessagePopup.css("height", headerMessage.domElements.popupContainer1.height() + 'px');
-        if (messages.length > 1) {
-            setInterval(headerMessage.startSwapMessage, 18000);
-        }
+        //    return;
+        //}
+
+
+        //headerMessage.domElements.popupContainer1.html(messages[headerMessage.messageIndex]);
+        //if (messages.length > 1) {
+        //    headerMessage.domElements.popupContainer2(messages[headerMessage.messageIndex + 1]);
+        //}
+
+        //headerMessage.domElements.topMessagePopup.css("height", headerMessage.domElements.popupContainer1.height() + 'px');
+        //if (messages.length > 1) {
+        //    setInterval(headerMessage.startSwapMessage, 18000);
+        //}
     },
 
-    showPublicMessage: function () {
+    showPublicMessage: function (publicMessage) {
         // Process Public Message: show new public message and its link to message form
-        var url = headerMessage.urls.oldMainAppPrivateMessageForm + publicMessage[msgType];
+        var url = headerMessage.urls.oldMainAppPrivateMessageForm + publicMessage[headerMessage.messageType];
         var balloonPopupContent = "";
 
-        if (publicMessage[msgId] && publicMessage[msgId] != publicMessageId) {
-            headerMessage.domElements.liveMessage.html(publicMessage[msgContent]);
+        if (publicMessage[headerMessage.messageIdIndex] && publicMessage[headerMessage.messageIdIndex] != publicMessageId) {
+            headerMessage.domElements.liveMessage.html(publicMessage[headerMessage.messageContentIndex]);
             headerMessage.domElements.liveMessage.data(url);
 
             // Work with FF, IE6-7
             if (publicMessageId > 0) {
-                balloonPopupContent = publicMessage[msgContent];
+                balloonPopupContent = publicMessage[headerMessage.messageContentIndex];
             }
 
-            publicMessageId = publicMessage[msgId];
+            publicMessageId = publicMessage[headerMessage.messageIdIndex];
         }
     },
 
-    showPrivateMessage: function () {
+    showPrivateMessage: function (privateMessage) {
         // Process Private Message: show new private message
-        if ((privateMessage[msgId] != null) && (privateMessageId != privateMessage[msgId])) {
+        if (privateMessage[headerMessage.messageIdIndex] && privateMessageId != privateMessage[headerMessage.messageIdIndex]) {
             var liveMessageContent = headerMessage.domElements.liveMessage.html();
-            headerMessage.domElements.liveMessage.html(liveMessageContent + ". <font color=\"green\">Private message:" + privateMessage[msgContent] + "</font>");
+            headerMessage.domElements.liveMessage.html(liveMessageContent + ". <font color=\"green\">Private message:" + privateMessage[headerMessage.messageContentIndex] + "</font>");
 
             if (privateMessageId > 0) {
-                balloonPopupContent = privateMessage[msgContent];
+                balloonPopupContent = privateMessage[headerMessage.messageContentIndex];
             }
 
-            privateMessageId = privateMessage[msgId];
+            privateMessageId = privateMessage[headerMessage.messageIdIndex];
         }
     },
 
     processBallonPopup: function () {
         // Process Balloon Pop-up: show new public and private messages if existed
-
         if (balloonPopupContent != "") {
             headerMessage.domElements.popupContainer1.html(balloonPopupContent);
             self.showPopupTop(0);
@@ -162,19 +169,23 @@
             responseType: "json",
             success: function (rawResults) {
                 var results = convertReponseToJson(rawResults);
+
                 try {
-                    var publicMessage = results.public_message ? results.public_message : 0;
-                    var privateMessage = results.private_message ? results.private_message : 0;
-                    var unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
+                    var publicMessage = results.public_message ? results.public_message : 0,
+                        privateMessage = results.private_message ? results.private_message : 0,
+                        unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
 
                     unreadPriMsgCount = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
 
                     headerMessage.domElements.privateMessageCounter.html(unreadPriMsgCount);
 
-                    self.applyScroller();
+                    headerMessage.showPublicMessage(publicMessage);
+
+                    headerMessage.showPrivateMessage(privateMessage);
+
                 } catch (e) { }
 
-                setTimeout(self.getMessages, (60 * 1000));
+                setTimeout(headerMessage.getMessages, (60 * 1000));
             }
         });
     },

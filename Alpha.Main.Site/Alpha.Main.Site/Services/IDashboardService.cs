@@ -7,8 +7,6 @@
 
     public interface IDashboardService
     {
-        List<string> GetHotMessages();
-
         ResultModel ChangeLanguage(ChangeLanguageQuery message);
 
         void StoreSession(MainIndexViewModel dashboardViewModel);

@@ -3,6 +3,7 @@
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
+    using Models.Requests.UserMessages;
     using ViewModels;
 
     public class HomeController : BaseController
@@ -44,7 +45,7 @@
 
         public ActionResult HeaderMsg()
         {
-            return View();
+            return View(_mediator.Send(new HotMessagesQuery()));
         }
 
         public JsonResult ChangeLanguage(ChangeLanguageQuery query)

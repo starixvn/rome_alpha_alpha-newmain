@@ -1,9 +1,7 @@
 ﻿namespace Alpha.Main.Site.Services.Impl
 {
-    using System;
     using System.Text.RegularExpressions;
     using System.Web;
-    using System.Web.Mvc;
 
     public class AppPathServiceImpl : AppPathService
     {

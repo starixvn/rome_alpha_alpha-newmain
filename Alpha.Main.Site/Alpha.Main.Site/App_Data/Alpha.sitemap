@@ -3,129 +3,129 @@
   <siteMapNode title="Alpha Site">
     <!--MemberInfo-->
     <siteMapNode resourceKey="memberInfo" menuItemType="MemberInfoMenuItem" functionType="[H]">
-      <siteMapNode resourceKey="newMember" appName="OldMainApp" url="_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
-      <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appName="OldMainApp" url="_SubAcc/SubAccList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="newMember" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
+      <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx"></siteMapNode>
 
-      <siteMapNode resourceKey="customerlist" appName="OldMainApp" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentList" appName="OldMainApp" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterList" appName="OldMainApp" url="_MemberInfo/CustomerList/Super/MasterList.aspx" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="customerlist" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="agentList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="masterList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Super/MasterList.aspx" roles="Super"></siteMapNode>
 
-      <siteMapNode resourceKey="creditbalance" appName="OldMainApp" url="_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
-      <siteMapNode resourceKey="positionTaking" appName="OldMainApp" url="_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="creditbalance" appPath="OldMainAppPath" url="_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="positionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
       <!--Casino-PositionTaking-->
-      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="casinoPositionTaking" appName="OldMainApp" url="_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
+      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="casinoPositionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
       <!--/Casino-PositionTaking-->
       <!--Bingo-PositionTaking-->
-      <siteMapNode resourceKey="bingoPositionTaking" menuItemType="BingoPositionTakingMenuItem" appName="OldMainApp" url="_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="bingoPositionTaking" menuItemType="BingoPositionTakingMenuItem" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
       <!--/Bingo-PositionTaking-->
-      <siteMapNode resourceKey="memberCommission" appName="OldMainApp" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
-      <siteMapNode resourceKey="MemberWinLimit" appName="OldMainApp" url="MemberInformation/WinLimit/Index"></siteMapNode>
+      <siteMapNode resourceKey="memberCommission" appPath="OldMainAppPath" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
+      <siteMapNode resourceKey="MemberWinLimit" appPath="OldMainAppPath" url="MemberInformation/WinLimit/Index"></siteMapNode>
     </siteMapNode>
     <!--/MemberInfo-->
     <!--Report-->
     <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]" >
-      <siteMapNode resourceKey="memberWinLoss" appName="OldMainApp" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="memberwinlossdetail" appName="OldMainApp" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="memberOutstanding" appName="OldMainApp" url="_Reports/Common/Outstanding.aspx?lv=2" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberWinLoss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberwinlossdetail" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=2" roles="Agent"></siteMapNode>
 
-      <siteMapNode resourceKey="agentwinloss" appName="OldMainApp" url="_Reports/Common/MatchResultEntered.aspx?lv=3" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="agentwinlostdetail" appName="OldMainApp" url="_Reports/Winloss/WinLossDetailMaster.aspx" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="agentOutstanding" appName="OldMainApp" url="_Reports/Common/Outstanding.aspx?lv=3" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="agentwinloss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=3" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="agentwinlostdetail" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="agentOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=3" roles="Master"></siteMapNode>
 
-      <siteMapNode resourceKey="masterwinloss" appName="OldMainApp" url="_Reports/Common/MatchResultEntered.aspx?lv=4" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="masterwinlostdetail" appName="OldMainApp" url="_Reports/Winloss/WinLossDetailSuper.aspx" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="masterOutstanding" appName="OldMainApp" url="_Reports/Common/Outstanding.aspx?lv=4" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="masterwinloss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=4" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="masterwinlostdetail" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailSuper.aspx" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="masterOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=4" roles="Super"></siteMapNode>
 
       <!--Casino-RealTimeWL-->
-      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appName="OldMainApp" url="_Reports/CasinoWinloss/CSWinlossAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appName="OldMainApp" url="_Reports/CasinoWinloss/CSWinlossMaster.aspx" roles="Master"></siteMapNode>
-      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appName="OldMainApp" url="_Reports/CasinoWinloss/CSWinlossSuper.aspx" roles="Super"></siteMapNode>
+      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appPath="OldMainAppPath" url="_Reports/CasinoWinloss/CSWinlossAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appPath="OldMainAppPath" url="_Reports/CasinoWinloss/CSWinlossMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appPath="OldMainAppPath" url="_Reports/CasinoWinloss/CSWinlossSuper.aspx" roles="Super"></siteMapNode>
       <!--/Casino-RealTimeWL-->
 
       <!--Bingo-RealTimeWL-->
-      <siteMapNode menuItemType="BingoMenuItem" resourceKey="realTimeBingoWinloss" appName="OldMainApp" url="_Reports/BingoWinloss/BingoWinlossAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode menuItemType="BingoMenuItem" resourceKey="realTimeBingoWinloss" appName="OldMainApp" url="_Reports/BingoWinloss/BingoWinlossMaster.aspx" roles="Master"></siteMapNode>
-      <siteMapNode menuItemType="BingoMenuItem" resourceKey="realTimeBingoWinloss" appName="OldMainApp" url="_Reports/BingoWinloss/BingoWinlossSuper.aspx" roles="Super"></siteMapNode>
+      <siteMapNode menuItemType="BingoMenuItem" resourceKey="realTimeBingoWinloss" appPath="OldMainAppPath" url="_Reports/BingoWinloss/BingoWinlossAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode menuItemType="BingoMenuItem" resourceKey="realTimeBingoWinloss" appPath="OldMainAppPath" url="_Reports/BingoWinloss/BingoWinlossMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode menuItemType="BingoMenuItem" resourceKey="realTimeBingoWinloss" appPath="OldMainAppPath" url="_Reports/BingoWinloss/BingoWinlossSuper.aspx" roles="Super"></siteMapNode>
       <!--/Bingo-RealTimeWL-->
 
-      <siteMapNode resourceKey="matchwinloss" appName="OldMainApp" url="_Reports/MatchWinloss/MatchWinLoss.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="matchWinLostDetail" appName="OldMainApp" url="_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
+      <siteMapNode resourceKey="matchwinloss" appPath="OldMainAppPath" url="_Reports/MatchWinloss/MatchWinLoss.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="matchWinLostDetail" appPath="OldMainAppPath" url="_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossByBettype" appName="OldMainApp" url="_Reports/Winloss/WinLossByBettypeAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="winlossanalysis" appName="OldMainApp" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" appPath="OldMainAppPath" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisAgent.aspx" roles="Agent"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossByBettype" appName="OldMainApp" url="_Reports/Winloss/WinLossByBettypeMaster.aspx" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="winlossanalysis" appName="OldMainApp" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" appPath="OldMainAppPath" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisMaster.aspx" roles="Master"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossByBettype" appName="OldMainApp" url="_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="winlossanalysis" appName="OldMainApp" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisSuper.aspx" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" appPath="OldMainAppPath" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisSuper.aspx" roles="Super"></siteMapNode>
 
-      <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appName="OldMainApp" url="report/consolidate/index"></siteMapNode>
+      <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="OldMainAppPath" url="report/consolidate/index"></siteMapNode>
 
-      <siteMapNode resourceKey="commissionByBettype" appName="OldMainApp" url="Report/CommissionByBetType"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="OldMainAppPath" url="Report/CommissionByBetType"></siteMapNode>
       <!--HR-->
-      <siteMapNode menuItemType="RacingMenuItem" resourceKey="commssionhorseracing" appName="OldMainApp" url="_Reports/Commission/HRCommission.aspx"></siteMapNode>
+      <siteMapNode menuItemType="RacingMenuItem" resourceKey="commssionhorseracing" appPath="OldMainAppPath" url="_Reports/Commission/HRCommission.aspx"></siteMapNode>
       <!--/HR-->
-      <siteMapNode resourceKey="cancelledBets" appName="OldMainApp" url="_Reports/BetList/CancelBetList.aspx"></siteMapNode>
-      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="monitor" appName="OldMainApp" url="_Reports/LastBetMonitoring/LastBetMonitoring.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="cancelledBets" appPath="OldMainAppPath" url="_Reports/BetList/CancelBetList.aspx"></siteMapNode>
+      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="monitor" appPath="OldMainAppPath" url="_Reports/LastBetMonitoring/LastBetMonitoring.aspx" roles="Agent"></siteMapNode>
       <!--Statement-->
-      <siteMapNode resourceKey="statement" appName="OldMainApp" url="Finance/StatementSMA?rptmrange=5"></siteMapNode>
+      <siteMapNode resourceKey="statement" appPath="OldMainAppPath" url="Finance/StatementSMA?rptmrange=5"></siteMapNode>
       <!--/Statement-->
 
       <!--Foobet-->
-      <siteMapNode resourceKey="foobet" menuItemType="FoobetMenuItem" appName="OldMainApp" url="Report/Foobet" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="foobet" menuItemType="FoobetMenuItem" appPath="OldMainAppPath" url="Report/Foobet" roles="Agent"></siteMapNode>
       <!--/Foobet-->
 
-      <siteMapNode resourceKey="result" url="~/Normal" appName="ResultSiteVirtualPath"></siteMapNode>
-      <siteMapNode resourceKey="winLossAnalysisChart" appName="OldMainApp" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
+      <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
+      <siteMapNode resourceKey="winLossAnalysisChart" appPath="OldMainAppPath" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
     <!--Totalbets-->
     <siteMapNode resourceKey="totalbets" menuItemType="TotalBetsMenuItem" functionType="[D]">
-      <siteMapNode resourceKey="HOUL" appName="OldMainApp" url="_TotalBets/HDPOU.aspx"></siteMapNode>
-      <siteMapNode resourceKey="moneyline" appName="OldMainApp" url="_TotalBets/MoneyLine.aspx"></siteMapNode>
-      <siteMapNode resourceKey="OE1x2DND" appName="OldMainApp" url="_TotalBets/OddEven1x2.aspx"></siteMapNode>
-      <siteMapNode resourceKey="correctscore" appName="OldMainApp" url="_BetList/BetList.aspx?type=CorrectScore"></siteMapNode>
-      <siteMapNode resourceKey="fthttotalgoal" appName="OldMainApp" url="_TotalBets/TotalGoal.aspx"></siteMapNode>
-      <siteMapNode resourceKey="parlay" appName="OldMainApp" url="_BetList/BetList.aspx?type=MixParlay"></siteMapNode>
-      <siteMapNode resourceKey="outRight" appName="OldMainApp" url="_TotalBets/OutRight.aspx"></siteMapNode>
-      <siteMapNode resourceKey="htft" appName="OldMainApp" url="_TotalBets/HTFT.aspx"></siteMapNode>
-      <siteMapNode resourceKey="fthtfglg" appName="OldMainApp" url="_TotalBets/FGLG.aspx"></siteMapNode>
-      <siteMapNode resourceKey="BetType13" appName="OldMainApp" url="_BetList/BetList.aspx?bettype=13&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="BetType24" appName="OldMainApp" url="_BetList/BetList.aspx?bettype=24&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="homeDrawAwayNoBet" appName="OldMainApp" url="_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
-      <siteMapNode resourceKey="BetType26" appName="OldMainApp" url="_BetList/BetList.aspx?bettype=26&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="BetType27" appName="OldMainApp" url="_BetList/BetList.aspx?bettype=27&amp;type=Bettype"></siteMapNode>
-      <siteMapNode resourceKey="BetType28" appName="OldMainApp" url="_BetList/BetList.aspx?bettype=28&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="HOUL" appPath="OldMainAppPath" url="_TotalBets/HDPOU.aspx"></siteMapNode>
+      <siteMapNode resourceKey="moneyline" appPath="OldMainAppPath" url="_TotalBets/MoneyLine.aspx"></siteMapNode>
+      <siteMapNode resourceKey="OE1x2DND" appPath="OldMainAppPath" url="_TotalBets/OddEven1x2.aspx"></siteMapNode>
+      <siteMapNode resourceKey="correctscore" appPath="OldMainAppPath" url="_BetList/BetList.aspx?type=CorrectScore"></siteMapNode>
+      <siteMapNode resourceKey="fthttotalgoal" appPath="OldMainAppPath" url="_TotalBets/TotalGoal.aspx"></siteMapNode>
+      <siteMapNode resourceKey="parlay" appPath="OldMainAppPath" url="_BetList/BetList.aspx?type=MixParlay"></siteMapNode>
+      <siteMapNode resourceKey="outRight" appPath="OldMainAppPath" url="_TotalBets/OutRight.aspx"></siteMapNode>
+      <siteMapNode resourceKey="htft" appPath="OldMainAppPath" url="_TotalBets/HTFT.aspx"></siteMapNode>
+      <siteMapNode resourceKey="fthtfglg" appPath="OldMainAppPath" url="_TotalBets/FGLG.aspx"></siteMapNode>
+      <siteMapNode resourceKey="BetType13" appPath="OldMainAppPath" url="_BetList/BetList.aspx?bettype=13&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="BetType24" appPath="OldMainAppPath" url="_BetList/BetList.aspx?bettype=24&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="homeDrawAwayNoBet" appPath="OldMainAppPath" url="_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
+      <siteMapNode resourceKey="BetType26" appPath="OldMainAppPath" url="_BetList/BetList.aspx?bettype=26&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="BetType27" appPath="OldMainAppPath" url="_BetList/BetList.aspx?bettype=27&amp;type=Bettype"></siteMapNode>
+      <siteMapNode resourceKey="BetType28" appPath="OldMainAppPath" url="_BetList/BetList.aspx?bettype=28&amp;type=Bettype"></siteMapNode>
       <!--NG-->
-      <siteMapNode menuItemType="NumberGameMenuItem" resourceKey="numbergame" appName="OldMainApp" url="_TotalBets/NumberGame.aspx"></siteMapNode>
+      <siteMapNode menuItemType="NumberGameMenuItem" resourceKey="numbergame" appPath="OldMainAppPath" url="_TotalBets/NumberGame.aspx"></siteMapNode>
       <!--/NG-->
       <!--HR-->
-      <siteMapNode menuItemType="RacingMenuItem" resourceKey="hr" appName="OldMainApp" url="_TotalBets/Racing.aspx"></siteMapNode>
+      <siteMapNode menuItemType="RacingMenuItem" resourceKey="hr" appPath="OldMainAppPath" url="_TotalBets/Racing.aspx"></siteMapNode>
       <!--/HR-->
     </siteMapNode>
     <!--/Totalbets-->
     <!--Forecast-->
     <siteMapNode resourceKey="forecast" menuItemType="TotalBetsMenuItem">
-      <siteMapNode resourceKey="HOUL" appName="OldMainApp" url="_Forecast/FCHDPOU.aspx"></siteMapNode>
-      <siteMapNode resourceKey="lbl1x2" appName="OldMainApp" url="_Forecast/FC1X2.aspx"></siteMapNode>
-      <siteMapNode resourceKey="scoreMap" appName="OldMainApp" url="ForecastScoreMap/Index"></siteMapNode>
+      <siteMapNode resourceKey="HOUL" appPath="OldMainAppPath" url="_Forecast/FCHDPOU.aspx"></siteMapNode>
+      <siteMapNode resourceKey="lbl1x2" appPath="OldMainAppPath" url="_Forecast/FC1X2.aspx"></siteMapNode>
+      <siteMapNode resourceKey="scoreMap" appPath="OldMainAppPath" url="ForecastScoreMap/Index"></siteMapNode>
     </siteMapNode>
     <!--/Forecast-->
    
-    <siteMapNode resourceKey="transfer" appName="OldMainApp" menuItemType="TransferMenuItem" url="_Transfer/Agent/MemberList.aspx" functionType="[C]" roles="Agent"></siteMapNode>
-    <siteMapNode resourceKey="transfer" appName="OldMainApp" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
-    <siteMapNode resourceKey="transfer" appName="OldMainApp" menuItemType="TransferMenuItem" url="_Transfer/Super/MasterList.aspx" functionType="[C]" roles="Super"></siteMapNode>
+    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Agent/MemberList.aspx" functionType="[C]" roles="Agent"></siteMapNode>
+    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
+    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Super/MasterList.aspx" functionType="[C]" roles="Super"></siteMapNode>
     <siteMapNode resourceKey="viewLog" menuItemType="ViewLogMenuItem" functionType="[G]">
-      <siteMapNode resourceKey="customerSetting" appName="OldMainApp" url="_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting&amp;pageIndex=1"></siteMapNode>
-      <siteMapNode resourceKey="status" appName="OldMainApp" url="_ViewLog/LogStatus.aspx?tabid=Status&amp;pageIndex=1"></siteMapNode>
-      <siteMapNode resourceKey="credit" appName="OldMainApp" url="_ViewLog/LogCredit.aspx?tabid=Credit&amp;pageIndex=1"></siteMapNode>
-      <siteMapNode resourceKey="login" appName="OldMainApp" url="_ViewLog/LogLogin.aspx?tabid=Login&amp;pageIndex=1"></siteMapNode>
+      <siteMapNode resourceKey="customerSetting" appPath="OldMainAppPath" url="_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting&amp;pageIndex=1"></siteMapNode>
+      <siteMapNode resourceKey="status" appPath="OldMainAppPath" url="_ViewLog/LogStatus.aspx?tabid=Status&amp;pageIndex=1"></siteMapNode>
+      <siteMapNode resourceKey="credit" appPath="OldMainAppPath" url="_ViewLog/LogCredit.aspx?tabid=Credit&amp;pageIndex=1"></siteMapNode>
+      <siteMapNode resourceKey="login" appPath="OldMainAppPath" url="_ViewLog/LogLogin.aspx?tabid=Login&amp;pageIndex=1"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="announcements">
-      <siteMapNode resourceKey="normal" appName="OldMainApp" url="Info/NewMessageForm.aspx?pageQuery="></siteMapNode>
-      <siteMapNode resourceKey="special" appName="OldMainApp" url="Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
-      <siteMapNode resourceKey="personalMessage" appName="OldMainApp" url="Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
+      <siteMapNode resourceKey="normal" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery="></siteMapNode>
+      <siteMapNode resourceKey="special" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
+      <siteMapNode resourceKey="personalMessage" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
     </siteMapNode>
   </siteMapNode>
 </siteMap>

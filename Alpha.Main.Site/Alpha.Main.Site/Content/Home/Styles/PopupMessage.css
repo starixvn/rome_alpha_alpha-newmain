@@ -63,3 +63,21 @@ div.messageBlock {
   left: 38px;
   height: 16px; }
 
+.message-modal {
+  width: 500px;
+  height: 150px;
+  top: 0px;
+  left: 400px;
+  overflow: hidden; }
+  .message-modal .modal-content .modal-header {
+    padding: 4px; }
+  .message-modal .modal-dialog {
+    margin: 3px auto; }
+  .message-modal .modal-body {
+    padding: 3px;
+    max-height: 420px;
+    overflow-y: auto; }
+
+.modal-open .modal {
+  overflow: hidden; }
+

@@ -61,7 +61,7 @@
             }
         }
 
-        public static string GetAppName(string name)
+        public static string GetAppPath(string name)
         {
             // Argument.Requires(!string.IsNullOrWhiteSpace(name), nameof(name));   
             return ConfigurationManager.AppSettings[name];

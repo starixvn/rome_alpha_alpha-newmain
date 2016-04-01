@@ -12,7 +12,7 @@
 
         string Url { get; set; }
 
-        string AppName { get; set; }
+        string AppPath { get; set; }
 
         MenuStatus Status { get; }
 

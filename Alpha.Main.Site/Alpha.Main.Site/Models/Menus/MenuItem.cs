@@ -34,7 +34,7 @@
 
         public string ResourceKey { get; set; }
 
-        public string AppName { get; set; }
+        public string AppPath { get; set; }
 
         public string DisplayName
         {
@@ -48,11 +48,11 @@
         {
             get
             {
-                var appVirtualPath = AppSettings.GetAppName(AppName);
+                var appVirtualPath = AppSettings.GetAppPath(AppPath);
 
                 if (!string.IsNullOrWhiteSpace(appVirtualPath))
                 {
-                    return Regex.Replace(this.url, HttpRuntime.AppDomainAppVirtualPath, "/" + appVirtualPath);
+                    return Regex.Replace(this.url, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath);
                 }
 
                 return this.url;

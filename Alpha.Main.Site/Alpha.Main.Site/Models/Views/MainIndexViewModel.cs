@@ -1,13 +1,10 @@
 ﻿namespace Alpha.Main.Site.Models.Views
 {
     using System.Collections.Generic;
-    using Dtos;
     using ViewModels;
 
     public class MainIndexViewModel
     {
-        public List<string> HotMessages { get; set; }
-
         public string CookieCurrentURLKey { get; set; }
 
         public string BaseUrl { get; set; }

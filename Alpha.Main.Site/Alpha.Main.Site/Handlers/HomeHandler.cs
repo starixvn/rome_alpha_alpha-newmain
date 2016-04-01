@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System.Web;
     using MediatR;
     using Models.Dtos;
     using Models.Requests;
@@ -19,10 +20,7 @@
 
         public MainIndexViewModel Handle(MainIndexQuery message)
         {
-            var result = new MainIndexViewModel
-            {
-                HotMessages = _dashboardService.GetHotMessages()
-            };
+            var result = new MainIndexViewModel();
 
             _dashboardService.StoreSession(result);
             return result;

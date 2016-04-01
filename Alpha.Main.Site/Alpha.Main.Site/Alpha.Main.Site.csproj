@@ -345,6 +345,7 @@
     <Content Include="App_Data\SPNames\UAT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\UAT\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml" />
+    <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <Content Include="App_Themes\Apo\Security\howtouse.css" />
     <Content Include="App_Themes\Apo\Security\howtouse.min.css" />
     <Content Include="App_Themes\Apo\Security\images\bg_buttonsite.jpg" />
@@ -410,24 +411,9 @@
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_left.png" />
     <Content Include="Content\CustomerProfile\Styles\Images\tooltip_right.png" />
     <Content Include="Content\Home\Scripts\header.msg.js" />
-    <Content Include="Content\Home\Scripts\header.msg.min.js">
-      <DependentUpon>header.msg.old.js</DependentUpon>
-    </Content>
     <Content Include="Content\Home\Scripts\header.nav.js" />
-    <Content Include="Content\Home\Scripts\header.na.min.js">
-      <DependentUpon>header.nav.js</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Scripts\header.nav.min.js">
-      <DependentUpon>header.nav.js</DependentUpon>
-    </Content>
-    <Content Include="Content\Home\Scripts\IndexPage.min.js">
-      <DependentUpon>IndexPage.js</DependentUpon>
-    </Content>
     <Content Include="Content\Home\Scripts\menubar.js" />
     <Content Include="Content\Home\Scripts\IndexPage.js" />
-    <Content Include="Content\Home\Scripts\menubar.min.js">
-      <DependentUpon>menubar.js</DependentUpon>
-    </Content>
     <Content Include="Content\Home\Scripts\piwikLoader.min.js">
       <DependentUpon>piwikLoader.js</DependentUpon>
     </Content>
@@ -503,7 +489,6 @@
     <Content Include="App_Data\Alpha.sitemap">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -629,6 +614,7 @@
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
+    <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\Argument.cs" />
     <Compile Include="Helpers\ContentSite.cs" />
     <Compile Include="Helpers\LanguageHelper.cs" />
@@ -647,13 +633,16 @@
     <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
     <Compile Include="Models\Requests\Home\NavigationQuery.cs" />
     <Compile Include="Models\Requests\MenuBarQuery.cs" />
+    <Compile Include="Models\Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Services\Impl\SecurityCodeServiceImpl.cs" />
+    <Compile Include="Services\Impl\UserMessageServiceImpl.cs" />
     <Compile Include="Services\Impl\UserPermissionServiceImpl.cs" />
     <Compile Include="Services\SecurityCodeService.cs" />
+    <Compile Include="Services\UserMessageService.cs" />
     <Compile Include="Services\UserPermissionService.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="Helpers\AppPathHelper.cs" />

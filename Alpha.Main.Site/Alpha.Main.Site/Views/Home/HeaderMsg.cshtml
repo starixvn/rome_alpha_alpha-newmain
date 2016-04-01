@@ -1,16 +1,4 @@
-﻿<div class="modal fade" id="popupTop" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog smallModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div id="popupContentMessage1" class="messageBlock"></div>
-                <div id="popupContentMessage2" class="messageBlock"></div>
-            </div>
-        </div>
-    </div>
-</div>
+﻿@model IEnumerable<string>
 
 <section class="header-msg" id="headerMessage">
     <span class="icon icon-home withripple"></span>
@@ -27,3 +15,30 @@
         </div>
     </div>
 </section>
+
+<div class="modal fade message-modal" id="userMessageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="result-detailt-title"></h4>
+            </div>
+
+            <div class="modal-body" id="userMessageModalBody">
+                @foreach (var hotMessage in Model)
+                {
+                    <p>@hotMessage</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

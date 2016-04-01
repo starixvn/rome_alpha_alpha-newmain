@@ -18,11 +18,13 @@
     -khtml-opacity: 0.95;
     opacity: 0.95;
     overflow: hidden;
+
     .button-close {
         width: 14px;
         height: 14px;
         border: none;
     }
+
     .popup-content {
         height: 60px;
         width: auto;
@@ -71,4 +73,31 @@ div.messageBlock {
     top: 15px;
     left: 38px;
     height: 16px;
+}
+
+.message-modal {
+    width: 500px;
+    height: 150px;
+    top: 0px;
+    left: 400px;
+    overflow: hidden;
+
+    .modal-content .modal-header {
+        padding: 4px;
+    }
+
+    .modal-dialog {
+        margin: 3px auto;
+    }
+
+    .modal-body {
+        padding: 3px;
+        max-height: 420px;
+        overflow-y: auto;
+    }
+}
+
+.modal-open .modal
+{
+    overflow: hidden;
 }
