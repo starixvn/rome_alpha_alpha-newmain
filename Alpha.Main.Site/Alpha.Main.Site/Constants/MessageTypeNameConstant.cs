@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.Constants
 {
-    public class MessageTypeNameConstant
+    public static class MessageTypeNameConstant
     {
         public const string Special = "special";
 

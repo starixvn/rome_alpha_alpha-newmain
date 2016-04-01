@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.Constants
 {
-    public class RoleIdConstant
+    public static class RoleIdConstant
     {
         public const int Super = 4;
 

@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.Constants
 {
-    public class MessageTypeConstant
+    public static class MessageTypeConstant
     {
         public const int PositionTakingChanged = 1;
 

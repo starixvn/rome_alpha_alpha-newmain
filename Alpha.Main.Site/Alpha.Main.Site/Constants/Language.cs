@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class Language
+    public static class Language
     {
         private const string English = "en-US";
         public const string Default = English;

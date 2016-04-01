@@ -608,7 +608,7 @@
     <Compile Include="App_Start\FunctionRegistry.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Constants\Language.cs" />
-    <Compile Include="Constants\MessageIdConstant.cs" />
+    <Compile Include="Constants\MessageId.cs" />
     <Compile Include="Constants\MessageTypeConstant.cs" />
     <Compile Include="Constants\MessageTypeNameConstant.cs" />
     <Compile Include="Constants\RoleIdConstant.cs" />
