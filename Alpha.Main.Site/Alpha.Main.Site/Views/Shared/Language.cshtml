@@ -2,7 +2,7 @@
 @model string
 @{
     Layout = null;
-    var selectedLanguageCode = Model ?? LanguageConstant.DefaultLanguage;
+    var selectedLanguageCode = Model ?? Language.Default;
 }
 
 <a href="javascript:;" data-target="#" class="dropdown-toggle withripple language-selector-container" data-toggle="dropdown">

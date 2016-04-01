@@ -607,7 +607,7 @@
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\FunctionRegistry.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Constants\LanguageConstant.cs" />
+    <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\MessageIdConstant.cs" />
     <Compile Include="Constants\MessageTypeConstant.cs" />
     <Compile Include="Constants\MessageTypeNameConstant.cs" />

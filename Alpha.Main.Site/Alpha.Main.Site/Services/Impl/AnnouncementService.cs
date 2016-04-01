@@ -190,7 +190,7 @@
                 var choosedNodes = announcementNode.SelectNodes(language);
                 if (choosedNodes.Count == 0)
                 {
-                    choosedNodes = announcementNode.SelectNodes(LanguageConstant.DefaultLanguage);
+                    choosedNodes = announcementNode.SelectNodes(Language.Default);
                 }
 
                 if (choosedNodes.Count == 0)
@@ -282,15 +282,15 @@
         private Dictionary<int, bool> MessageVisibilities(bool isForceUseSecurityCode)
         {
             var messageVisibilities = new Dictionary<int, bool>();
-            messageVisibilities.Add(MessageIdConstant.ForceUseSecurityCode, isForceUseSecurityCode);
+            messageVisibilities.Add(MessageId.ForceUseSecurityCode, isForceUseSecurityCode);
             messageVisibilities.Add(
-                MessageIdConstant.NotOfferedGoldDeluxe,
+                MessageId.NotOfferedGoldDeluxe,
                 userPermissionService.IsShowGoldDeluxeSettingForCredit && !userPermissionService.IsShowLiveCasino);
             messageVisibilities.Add(
-                MessageIdConstant.OfferedGoldDeluxe,
+                MessageId.OfferedGoldDeluxe,
                 userPermissionService.IsShowGoldDeluxeSettingForCredit && userPermissionService.IsShowLiveCasino);
-            messageVisibilities.Add(MessageIdConstant.OfferedSuperLive, userPermissionService.IsShowSuperLive);
-            messageVisibilities.Add(MessageIdConstant.OfferedColossusBets, userPermissionService.IsShowColossusBets);
+            messageVisibilities.Add(MessageId.OfferedSuperLive, userPermissionService.IsShowSuperLive);
+            messageVisibilities.Add(MessageId.OfferedColossusBets, userPermissionService.IsShowColossusBets);
 
             return messageVisibilities;
         }

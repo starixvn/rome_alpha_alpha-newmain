@@ -1,5 +1,11 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Reflection;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.SessionState;
     using DataAccess;
     using DataAccess.Impl;
     using Fanex.Data.Repository;
@@ -12,12 +18,6 @@
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
     using Sunplus.Agent.Model.Entities;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Reflection;
-    using System.Web;
-    using System.Web.Mvc;
-    using System.Web.SessionState;
 
     public static class DependencyConfig
     {

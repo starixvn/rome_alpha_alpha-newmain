@@ -1,13 +1,13 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
     using Models.Menus;
     using Sunplus.Agent.Model.BL.Definitions;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using static Helpers.AppPathHelper;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;

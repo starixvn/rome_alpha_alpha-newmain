@@ -13,7 +13,7 @@
 
     public class BaseController : Controller
     {
-        private CultureInfo _defaultCulture = CultureInfo.CreateSpecificCulture(LanguageConstant.DefaultLanguage);
+        private CultureInfo _defaultCulture = CultureInfo.CreateSpecificCulture(Language.Default);
 
         protected override void OnAuthentication(AuthenticationContext filterContext)
         {
@@ -50,7 +50,7 @@
 
             if (string.IsNullOrEmpty(cultureName))
             {
-                cultureName = LanguageConstant.DefaultLanguage;
+                cultureName = Language.Default;
                 UserSession.Current.Language = cultureName;
             }
 

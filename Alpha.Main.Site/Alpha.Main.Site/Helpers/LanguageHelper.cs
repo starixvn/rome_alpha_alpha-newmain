@@ -7,7 +7,7 @@
         public static string GetShortLanguageCode(string language)
         {
             var codeLength = 2;
-            var correctedlanguage = string.IsNullOrEmpty(language) ? LanguageConstant.DefaultLanguage : language;
+            var correctedlanguage = string.IsNullOrEmpty(language) ? Language.Default : language;
             return language.Substring(0, codeLength);
         }
     }

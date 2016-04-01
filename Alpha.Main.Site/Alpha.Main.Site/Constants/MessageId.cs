@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.Constants
 {
-    public class MessageIdConstant
+    public class MessageId
     {
         public const int ForceUseSecurityCode = 20140512;
 
