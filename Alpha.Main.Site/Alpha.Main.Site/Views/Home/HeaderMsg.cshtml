@@ -1,12 +1,29 @@
-﻿<section class="header-msg" id="header-msg">
+﻿<div class="modal fade" id="popupTop" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog smallModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="popupContentMessage1" class="messageBlock"></div>
+                <div id="popupContentMessage2" class="messageBlock"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="header-msg" id="headerMessage">
     <span class="icon icon-home withripple"></span>
-    <div id="marquee">
+    <div id="marqueeMessage">
         <span id="scroller">
-            <span id="live-message" class="maquee live-message"></span>
+            <span id="liveMessage" class="maquee live-message" data-live-message-url=""></span>
         </span>
     </div>
     <div class="nav-iconbox">
-        <span class="icon icon-add special-message" id="btnPrivateMessage"></span>
-        <div class="email-box private-message"><span class="icon icon-message"></span><span class="value" id="privateMessageCounter">0</span></div>
+        <span class="icon icon-add special-message" id="btnSpecialMessage"></span>
+        <div class="email-box private-message" id="btnPrivateMessage">
+            <span class="icon icon-message"></span>
+            <span class="value" id="privateMessageCounter">0</span>
+        </div>
     </div>
 </section>
