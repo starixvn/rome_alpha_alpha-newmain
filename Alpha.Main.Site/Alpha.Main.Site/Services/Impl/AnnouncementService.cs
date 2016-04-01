@@ -185,7 +185,7 @@
                 }
 
                 hotAnnouncement.Id = nodeId;
-                AssignAnnouncementPopupApperance(announcementNode, hotAnnouncement);
+                AssignAnnouncementPopupApperances(announcementNode, hotAnnouncement);
 
                 var choosedNodes = announcementNode.SelectNodes(language);
                 if (choosedNodes.Count == 0)
@@ -208,19 +208,7 @@
 
         private XmlDocument GetPrivateAnnouncement(HotAnnouncementQuery message)
         {
-            var pathToPrivateMsg = message.AgentPrivateMessagePath;
-            switch (userSession.RoleId)
-            {
-                case RoleIdConstant.Super:
-                    pathToPrivateMsg = message.SuperPrivateMessagePath;
-                    break;
-                case RoleIdConstant.Master:
-                    pathToPrivateMsg = message.SuperPrivateMessagePath;
-                    break;
-                default:
-                    break;
-            }
-
+            var pathToPrivateMsg = message.PrivateMessagePath;
             var xmlPrivateMsg = new XmlDocument();
             xmlPrivateMsg.Load(pathToPrivateMsg);
             return xmlPrivateMsg;
@@ -307,7 +295,7 @@
             return messageVisibilities;
         }
 
-        private void AssignAnnouncementPopupApperance(XmlNode announcementNode, HotAnnouncement hotAnnouncement)
+        private void AssignAnnouncementPopupApperances(XmlNode announcementNode, HotAnnouncement hotAnnouncement)
         {
             int top;
             int.TryParse(announcementNode.Attributes["top"].Value, out top);

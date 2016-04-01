@@ -1,8 +1,10 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Web.Mvc;
     using MediatR;
+    using Models.Enumerations;
     using Models.Requests.Announcement;
+    using Sunplus.Agent.Model.Entities;
+    using System.Web.Mvc;
 
     public class AnnouncementController : BaseController
     {
@@ -15,10 +17,10 @@
 
         public ActionResult HotAnnouncement(HotAnnouncementQuery message)
         {
+            var userLevel = Enumeration.FromValue<UserLevel>(UserSession.Current.RoleId);
+
             var announcementResourcePath = "../Content/Announcement/Resources/";
-            message.SuperPrivateMessagePath = HttpContext.Server.MapPath(announcementResourcePath + "PopupAdSuperNeutral.xml");
-            message.MasterPrivateMessagePath = HttpContext.Server.MapPath(announcementResourcePath + "PopupAdMasterNeutral.xml");
-            message.AgentPrivateMessagePath = HttpContext.Server.MapPath(announcementResourcePath + "PopupAdAgentNeutral.xml");
+            message.PrivateMessagePath = HttpContext.Server.MapPath(announcementResourcePath + "PopupAd" + userLevel.DisplayName + "Neutral.xml");
             message.CommonAnnouncementPath = HttpContext.Server.MapPath(announcementResourcePath + "PopupAdCommon.xml");
 
             var viewModel = _mediator.Send(message);

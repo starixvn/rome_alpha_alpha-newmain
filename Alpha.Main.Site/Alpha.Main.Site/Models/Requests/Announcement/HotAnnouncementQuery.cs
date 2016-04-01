@@ -12,11 +12,7 @@
 
         public string AnnouncementResourcePath { get; set; }
 
-        public string SuperPrivateMessagePath { get; set; }
-
-        public string MasterPrivateMessagePath { get; set; }
-
-        public string AgentPrivateMessagePath { get; set; }
+        public string PrivateMessagePath { get; set; }
 
         public string CommonAnnouncementPath { get; set; }
 
