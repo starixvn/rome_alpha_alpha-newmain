@@ -1,9 +1,10 @@
-﻿var headerMessage = {
+﻿var oldMainRootPath = document.getElementById('oldMainRootPath').value;
+var headerMessage = {
     urls: {
-        oldMainAppMessageForm: top.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
-        oldMainAppPrivateMessageForm: top.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
-        updatePrivateMessageCount: top.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
-        getMessages: top.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'
+        oldMainAppMessageForm: oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
+        oldMainAppPrivateMessageForm: oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
+        updatePrivateMessageCount: oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
+        getMessages: oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'
     },
 
     messageIndex: 0,
@@ -31,6 +32,7 @@
         headerMessage.registerEvents();
 
         headerMessage.showHotMessage();
+        headerMessage.getMessages();
     },
 
     cacheElements: function () {
@@ -101,7 +103,15 @@
 
     showHotMessage: function () {
         headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
-
+        //$(headerMessage.domElements.hotMessages[0]).animate({
+        //    opacity: 0.0
+        //}, 1500, function () {
+        //    $(headerMessage.domElements.hotMessages[0]).hide()
+        //    $(headerMessage.domElements.hotMessages[1]).show().animate({
+        //        opacity: 1.0
+        //    }, 1500);
+        //});
+       
         //if (headerMessage.domElements.hotMessages.length == 0) {
 
         //    return;
@@ -117,6 +127,8 @@
         //if (messages.length > 1) {
         //    setInterval(headerMessage.startSwapMessage, 18000);
         //}
+
+
     },
 
     showPublicMessage: function (publicMessage) {
