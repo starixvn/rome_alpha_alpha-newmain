@@ -502,6 +502,7 @@
     <Content Include="Views\Announcement\HotAnnouncementWithSource.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
     <Content Include="Views\Shared\Language.cshtml" />
+    <Content Include="Views\Language\List.cshtml" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -601,6 +602,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
@@ -650,6 +652,7 @@
     <Compile Include="Services\CustomerProfileService.cs" />
     <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
+    <Compile Include="ViewModels\Home\LanguageViewModel.cs" />
     <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

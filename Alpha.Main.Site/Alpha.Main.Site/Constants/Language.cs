@@ -5,8 +5,28 @@
     public static class Language
     {
         private const string English = "en-US";
-        public const string Default = English;
-        public static readonly List<string> Keys = new List<string> { "E", "CT", "J", "TH", "CS", "KO", "VI" };
-        public static readonly List<string> Codes = new List<string> { English, "zh-TW", "ja-JP", "th-TH", "zh-CN", "ko-KR", "vi-VN" };
+        public const string Default = English;        
+
+        public static readonly Dictionary<string, string> CodeKeys = new Dictionary<string, string>
+        {
+            [English] = "E",
+            ["zh-TW"] = "CT",
+            ["zh-CN"] = "CS",
+            ["ja-JP"] = "J",
+            ["th-TH"] = "TH",
+            ["ko-KR"] = "KO",
+            ["vi-VN"] = "VI"
+        };
+
+        public static readonly Dictionary<string, string> CodeNames = new Dictionary<string, string>
+        {
+            [English] = "English",
+            ["zh-TW"] = "繁體中文",
+            ["zh-CN"] = "简体中文",
+            ["ja-JP"] = "日本語",
+            ["th-TH"] = "ภาษาไทย",            
+            ["ko-KR"] = "한국어",
+            ["vi-VN"] = "Tiếng Việt"
+        };
     }
 }

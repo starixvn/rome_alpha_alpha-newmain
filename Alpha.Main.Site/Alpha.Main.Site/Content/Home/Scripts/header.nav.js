@@ -121,23 +121,18 @@ var HeaderNavigationManager = function () {
         $('.top-right-menu').parent().toggleClass("active");
     };
     self.changeLanguage = function (lang) {
-        var url = top.mainRootPath + 'Home/ChangeLanguage';
+        var url = top.mainRootPath + 'Language/Change';
         jQuery.ajax({
             type: "POST",
             url: url,
-            data: { Language: lang },
+            data: { languageCode: lang },
             responseType: "json",
-            success: function (result) {
-                var resultCode = result.ResultCode;
-                if (resultCode == 0) {
+            success: function (result) {              
+                if (result !== undefined) {
                     // Remove www so that subdomain can override LANGUAGE value
                     var domain = window.location.hostname.replace(/([a-zA-Z0-9]+.)/, '').replace('www.', '');
                     setCookie('LANGUAGE', lang, 30, domain);
                     self.reloadPage();
-                } else {
-                    if (resultCode == self.enums.ErrorCode.AccessDenied) {
-                        indexPageManager.signOut();
-                    }
                 }
             },
             error: function (jqXhr, event, ajaxSettings) {

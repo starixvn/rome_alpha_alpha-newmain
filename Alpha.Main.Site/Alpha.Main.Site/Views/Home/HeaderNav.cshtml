@@ -19,7 +19,7 @@
                                            Resources.monthName10 + "','" + Resources.monthName11 + "','" + Resources.monthName12 + "']")"></span>
         </li>
         <li class="dropdown">
-            @Html.Partial("~/Views/Shared/Language.cshtml", Model.Language)
+            @Html.Action("List", "Language")            
         </li>
         <li class="withripple"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
         <li class="dropdown">
