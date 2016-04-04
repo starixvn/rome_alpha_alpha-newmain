@@ -7,12 +7,12 @@
     using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
-    public class HomeController : BaseController
+    public class DefaultController : BaseController
     {
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
 
-        public HomeController(IUserSession userSession, IMediator mediator)
+        public DefaultController(IUserSession userSession, IMediator mediator)
         {
             this.userSession = userSession;
             this.mediator = mediator;

@@ -493,11 +493,11 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Content\Home\Styles\PopupMessage.scss" />
-    <Content Include="Views\Home\MenuBar.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\HeaderNav.cshtml" />
+    <Content Include="Views\Default\MenuBar.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\HeaderNav.cshtml" />
     <Content Include="Content\Home\Scripts\header.msg.old.js" />
-    <Content Include="Views\Home\HeaderMsg.cshtml" />
+    <Content Include="Views\Default\HeaderMsg.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithSource.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
     <Content Include="Views\Shared\Language.cshtml" />
@@ -599,7 +599,7 @@
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
