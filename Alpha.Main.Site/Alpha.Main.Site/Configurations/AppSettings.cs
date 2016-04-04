@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.Services
+﻿namespace Alpha.Main.Site.Configurations
 {
     using Fanex.Common;
     using System.Configuration;

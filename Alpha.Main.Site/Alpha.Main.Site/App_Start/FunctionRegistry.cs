@@ -30,18 +30,18 @@
             ["NumberGameMenuItem"] = () => new MenuStatus(IsShowNumberGame),
             ["LiveCasinoMenuItem"] = () => new MenuStatus(IsShowLiveCasino),
             ["ConsolidatedReportMenuItem"] = () => new MenuStatus(Current.IsShowConsolidatedReport),
-            ["FoobetMenuItem"] = () => new MenuStatus(Current.CustId != Services.AppSettings.CustIdFoobet),
+            ["FoobetMenuItem"] = () => new MenuStatus(Current.CustId != Configurations.AppSettings.CustIdFoobet),
             ["MemberWinLimitMenuItem"] = () => new MenuStatus(Current.IsLiveCasinoSync || !Current.IsHideGoldDeluxe),
             ["LastBetMonitorMenuItem"] = () => new MenuStatus(
                 null,
                 () =>
                 {
-                    if (Current.IsInternal || Services.AppSettings.EnableBetsListMonitoring)
+                    if (Current.IsInternal || Configurations.AppSettings.EnableBetsListMonitoring)
                     {
                         return false;
                     }
 
-                    var usersAlwaysToAccessThisFunction = Services.AppSettings.UsersAlwaysAllowAccessBetsListMonitoring;
+                    var usersAlwaysToAccessThisFunction = Configurations.AppSettings.UsersAlwaysAllowAccessBetsListMonitoring;
                     var disabled = string.IsNullOrWhiteSpace(usersAlwaysToAccessThisFunction) ||
                         !usersAlwaysToAccessThisFunction.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                         .ToList()

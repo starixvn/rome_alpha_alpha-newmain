@@ -23,7 +23,6 @@
         private static void RegisterHomeJavascript(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/scripts/home").Include(
-                "~/Content/Shared/Scripts/SharedScripts.js",
                 "~/Content/Home/Scripts/Core.js",
                 "~/Content/Home/Scripts/header.nav.js",
                 "~/Content/Home/Scripts/header.msg.js",

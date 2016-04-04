@@ -6,7 +6,7 @@
     using System.Text.RegularExpressions;
     using System.Web;
     using App_GlobalResources;
-    using Services;
+    using Configurations;
 
     public class MenuItem : IMenuItem
     {

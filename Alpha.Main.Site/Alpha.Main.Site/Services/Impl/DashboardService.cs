@@ -9,23 +9,19 @@
     using Models.Views;
     using Sunplus.Agent.Model.Common;
     using Sunplus.Agent.Model.Entities;
-    using SiteServices = Alpha.Main.Site.Services;
 
     public class DashboardService : IDashboardService
     {
         private readonly SiteMenuService siteMenuService;
 
-        private AppPathService _appPathService;
-        private IUserSession _userSession;
+        private IUserSession userSession;
 
         public DashboardService(
-            AppPathService appPathService,
             SiteMenuService siteMenuService,
             IUserSession userSession)
         {
-            _appPathService = appPathService;
             this.siteMenuService = siteMenuService;
-            _userSession = userSession;
+            this.userSession = userSession;
         }
 
         public ResultModel ChangeLanguage(ChangeLanguageQuery message)
@@ -52,11 +48,6 @@
 
             // _sessionValidationService.AddUsernameTokenToCookie();
             // SessionValidator.AddSessionVerificationToken();
-        }
-
-        private string GetOldMainAppPath()
-        {
-            return _appPathService.GetAppPath(SiteServices.AppSettings.OldMainAppPath, "~/");
         }
     }
 }

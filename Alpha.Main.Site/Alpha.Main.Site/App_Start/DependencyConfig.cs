@@ -70,7 +70,7 @@
 
         private static void RegisterServices(Container container)
         {
-            container.Register<IUserSession>(
+            container.Register(
                 () =>
                 {
                     if (HttpContext.Current != null
@@ -84,12 +84,14 @@
                 },
                 Lifestyle.Transient);
 
-            container.Register<IDashboardService, DashboardService>(Lifestyle.Transient);
-            container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Transient);
-            container.Register<AppPathService, AppPathServiceImpl>(Lifestyle.Singleton);
-            container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Transient);
+            //// Singleton
             container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
             container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
+
+            //// Transient
+            container.Register<IDashboardService, DashboardService>(Lifestyle.Transient);
+            container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Transient);
+            container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Transient);
             container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Transient);
             container.Register<SecurityCodeService, SecurityCodeServiceImpl>(Lifestyle.Transient);
             container.Register<UserPermissionService, UserPermissionServiceImpl>(Lifestyle.Transient);

@@ -1,10 +1,11 @@
 ﻿namespace Alpha.Main.Site.Services.Impl
 {
+    using System;
+    using System.Linq;
+    using Configurations;
     using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
-    using System;
-    using System.Linq;
 
     public class SecurityCodeServiceImpl : SecurityCodeService
     {

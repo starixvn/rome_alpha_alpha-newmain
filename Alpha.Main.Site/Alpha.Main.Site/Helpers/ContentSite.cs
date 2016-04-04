@@ -2,7 +2,7 @@
 {
     using System.Linq;
     using System.Web;
-    using Services;
+    using Configurations;
 
     public static class ContentSite
     {

@@ -463,10 +463,10 @@
     <Content Include="Content\Home\Styles\Images\tooltip_left.png" />
     <Content Include="Content\Home\Styles\Images\tooltip_right.png" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Announcement\Resources\PopupAdAgentNeutral.xml" />
-    <Content Include="Content\Announcement\Resources\PopupAdCommon.xml" />
-    <Content Include="Content\Announcement\Resources\PopupAdMasterNeutral.xml" />
-    <Content Include="Content\Announcement\Resources\PopupAdSuperNeutral.xml" />
+    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
+    <Content Include="App_Data\Announcements\PopupAdCommon.xml" />
+    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.xml" />
+    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml" />
     <Content Include="Content\Announcement\Scripts\AnnouncementManager.js" />
     <Content Include="Content\CustomerProfile\Scripts\brief-profile.js" />
     <Content Include="Content\Home\Scripts\Core.js" />
@@ -480,7 +480,6 @@
     <Content Include="Content\Home\Styles\agent.variables.scss" />
     <Content Include="Content\Home\Styles\master.variables.scss" />
     <Content Include="Content\Home\Styles\super.variables.scss" />
-    <Content Include="Content\Shared\Scripts\SharedScripts.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -596,7 +595,6 @@
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\MessageId.cs" />
     <Compile Include="Constants\MessageTypeConstant.cs" />
-    <Compile Include="Constants\MessageTypeNameConstant.cs" />
     <Compile Include="Constants\RoleIdConstant.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -659,16 +657,14 @@
     <Compile Include="Models\Requests\MainIndexQuery.cs" />
     <Compile Include="Models\Views\MainIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AppSettings.cs" />
+    <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Services\IAnnouncementService.cs" />
     <Compile Include="Services\CachingService.cs" />
     <Compile Include="Services\IDashboardService.cs" />
     <Compile Include="Services\Impl\AnnouncementService.cs" />
-    <Compile Include="Services\Impl\AppPathServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingServiceImpl.cs" />
     <Compile Include="Services\Impl\DashboardService.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
-    <Compile Include="Services\AppPathService.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -684,9 +680,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Requests\Home\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ko-KR.resx" />

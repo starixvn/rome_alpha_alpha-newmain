@@ -4,7 +4,9 @@
     using System.Web;
     using Alpha.Main.Site.Models.Requests.CustomerProfile;
     using App_GlobalResources;
+    using Configurations;
     using Extensions;
+    using Helpers;
     using MediatR;
     using Models.CustomerProfiles;
     using Services;
@@ -17,25 +19,31 @@
     {
         private const int MaxCountNickNameTooltip = 4;
 
-        private readonly CustomerProfileService _customerProfileService;
-        private readonly AppPathService _appPathService;
-        private readonly IUserSession _userSession;
+        private readonly CustomerProfileService customerProfileService;
+        private readonly IUserSession userSession;
+        private readonly string oldMainRootApp;
+
+        internal CustomerProfileHandler(
+            CustomerProfileService customerProfileService,
+            IUserSession userSession,
+            string oldMainRootApp)
+        {
+            this.customerProfileService = customerProfileService;
+            this.userSession = userSession;
+            this.oldMainRootApp = oldMainRootApp ?? AppPathHelper.GetAppPath(AppSettings.OldMainAppPath, "~/");
+        }
 
         public CustomerProfileHandler(
             CustomerProfileService customerProfileService,
-            AppPathService appPathService,
-            IUserSession userSession)
+            IUserSession userSession) : this(customerProfileService, userSession, null)
         {
-            _customerProfileService = customerProfileService;
-            _appPathService = appPathService;
-            _userSession = userSession;
         }
 
         private string CookiesNameToolTip
         {
             get
             {
-                return SecretExtension.CfsEnCode(string.Format("ToolTip{0}", _userSession.CustId), 6);
+                return SecretExtension.CfsEnCode(string.Format("ToolTip{0}", userSession.CustId), 6);
             }
         }
 
@@ -66,21 +74,22 @@
 
         public BriefProfileViewModel Handle(BriefProfileQuery message)
         {
-            var baseOldMainApp = _appPathService.GetAppPath(AppSettings.OldMainAppPath, "~/");
-            var profile = _customerProfileService.GetProfilePicture(message.CustId);
+            message.CustId = userSession.CustId;
+
+            var profile = customerProfileService.GetProfilePicture(message.CustId);
             var isShowEditProfilePictureTooltip = profile.IsDefaultAvatar
                 && CountNickNameToolTip < MaxCountNickNameTooltip
-                && !string.IsNullOrEmpty(_userSession.NickName);
+                && !string.IsNullOrEmpty(userSession.NickName);
 
             var viewModel = new BriefProfileViewModel
             {
                 IsDefaultAvatar = profile.IsDefaultAvatar,
                 EmbedImage = GenerateImage(profile),
                 IsShowEditProfilePictureTooltip = isShowEditProfilePictureTooltip,
-                ChangeNickNameUrl = string.Format("{0}LoginOption?custId={1}", baseOldMainApp, _userSession.CustId),
-                ViewProfileUrl = string.Format("{0}ProfilePicture?custId={1}", baseOldMainApp, _userSession.CustId),
-                Username = HttpUtility.HtmlEncode(_userSession.UserName),
-                IsNotMainAccount = _userSession.IsSubAcc || _userSession.IsInternal
+                ChangeNickNameUrl = string.Format("{0}LoginOption?custId={1}", this.oldMainRootApp, message.CustId),
+                ViewProfileUrl = string.Format("{0}ProfilePicture?custId={1}", this.oldMainRootApp, message.CustId),
+                Username = HttpUtility.HtmlEncode(userSession.UserName),
+                IsNotMainAccount = userSession.IsSubAcc || userSession.IsInternal
             };
 
             if (CountNickNameToolTip < MaxCountNickNameTooltip)
@@ -99,17 +108,17 @@
 
         private string BuildNickName()
         {
-            if (_userSession.IsSubAcc)
+            if (userSession.IsSubAcc)
             {
-                return string.Format("{0} {1}", Resources.subAcc, HttpUtility.HtmlEncode(_userSession.SubUserName));
+                return string.Format("{0} {1}", Resources.subAcc, HttpUtility.HtmlEncode(userSession.SubUserName));
             }
-            else if (_userSession.IsInternal)
+            else if (userSession.IsInternal)
             {
-                return string.Format("{0} {1}", Resources.admin, HttpUtility.HtmlEncode(_userSession.AdminName));
+                return string.Format("{0} {1}", Resources.admin, HttpUtility.HtmlEncode(userSession.AdminName));
             }
             else
             {
-                return HttpUtility.HtmlEncode(_userSession.NickName);
+                return HttpUtility.HtmlEncode(userSession.NickName);
             }
         }
 

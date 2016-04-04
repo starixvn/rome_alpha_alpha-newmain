@@ -12,11 +12,14 @@
     public class UserMessageHandler :
         IRequestHandler<HotMessagesQuery, IEnumerable<string>>
     {
+        /// <summary>
+        /// Do not change this session name, because it is used by old site
+        /// </summary>
         private const string IsShowedMessageSessionKey = "messageisshowed";
         private readonly UserMessageService userMessageService;
-        private IUserSession _userSession;
+        private IUserSession userSession;
 
-        private bool IsShowedMessage
+        private bool IsShowedHotMessages
         {
             get
             {
@@ -29,28 +32,28 @@
         }
 
         public UserMessageHandler(
-            UserMessageService userMessageServiceImpl,
+            UserMessageService userMessageService,
             IUserSession userSession)
         {
-            userMessageService = userMessageServiceImpl;
-            _userSession = userSession;
+            this.userMessageService = userMessageService;
+            this.userSession = userSession;
         }
 
         public IEnumerable<string> Handle(HotMessagesQuery message)
         {
-            if (IsShowedMessage)
+            if (IsShowedHotMessages)
             {
                 return Enumerable.Empty<string>();
             }
 
-            message.Language = _userSession.Language;
-            message.RoleId = _userSession.RoleId;
+            message.Language = userSession.Language;
+            message.RoleId = userSession.RoleId;
 
-            var userMessagViewModel = userMessageService.GetHotMessages(message);
+            var hotMessages = userMessageService.GetHotMessages(message);
 
-            IsShowedMessage = true;
+            IsShowedHotMessages = true;
 
-            return userMessagViewModel;
+            return hotMessages;
         }
     }
 }
