@@ -63,7 +63,7 @@
         {
             get
             {
-                return AppPathHelper.GetOldMainPath("~/");
+                return OldMainSite.Url("~/");
             }
         }
 

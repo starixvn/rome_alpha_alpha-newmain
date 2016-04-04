@@ -21,5 +21,10 @@
                 return System.Web.Optimization.Scripts.Render(paths.Select(path => AppSettings.ContentAppPath + path).ToArray());
             }
         }
+
+        public static string Url(string virtualPath)
+        {
+            return AppPathHelper.GetAppPath(AppSettings.ContentAppPath, virtualPath);
+        }
     }
 }
