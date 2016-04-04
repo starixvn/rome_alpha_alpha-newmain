@@ -1,21 +1,16 @@
 ﻿namespace Alpha.Main.Site.Services.Impl
 {
+    using System.Web;
     using App_GlobalResources;
     using Fanex.Age.UI;
-    using Fanex.Common;
     using Fanex.CustomerSetting.Module.Core.Web;
     using Models.Dtos;
     using Models.Requests;
     using Models.Views;
     using Sunplus.Agent.Model.Common;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Web;
-    using System.Xml;
     using SiteServices = Alpha.Main.Site.Services;
-    using System.Linq;
+
     public class DashboardService : IDashboardService
     {
         private readonly SiteMenuService siteMenuService;

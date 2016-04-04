@@ -1,10 +1,8 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System.Collections.Generic;
-    using System.Collections.Specialized;
     using Constants;
     using Sunplus.Agent.Model.Entities;
-    using System.Linq;
 
     public class LanguageViewModel
     {

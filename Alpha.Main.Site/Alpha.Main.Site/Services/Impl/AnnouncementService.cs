@@ -1,5 +1,9 @@
 ﻿namespace Alpha.Main.Site.Services.Impl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Xml;
     using Constants;
     using Criteria.Announcement;
     using Fanex.Common;
@@ -8,10 +12,6 @@
     using Models.Dtos.Announcement;
     using Models.Requests.Announcement;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Xml;
 
     public class AnnouncementService : IAnnouncementService
     {
@@ -63,6 +63,7 @@
             }
 
             hotAnnouncement.LanguagueCode = LanguageHelper.GetShortLanguageCode(userSession.Language);
+
             return hotAnnouncement;
         }
 
