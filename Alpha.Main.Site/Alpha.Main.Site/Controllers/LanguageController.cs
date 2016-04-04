@@ -3,6 +3,7 @@
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
+    using ViewModels;
 
     public class LanguageController : BaseController
     {
@@ -16,7 +17,7 @@
         [ChildActionOnly]
         public ActionResult List()
         {
-            var viewModel = mediator.Send(new AllLanguagesQuery());
+            var viewModel = mediator.Send(new EmptyQuery() as IRequest<LanguageViewModel>);
 
             return PartialView(viewModel);
         }

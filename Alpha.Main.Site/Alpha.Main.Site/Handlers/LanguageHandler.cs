@@ -8,7 +8,7 @@
     using ViewModels;
 
     public class LanguageHandler :
-        IRequestHandler<AllLanguagesQuery, LanguageViewModel>,
+        IRequestHandler<EmptyQuery, LanguageViewModel>,
         IRequestHandler<ChangeLanguageQuery, string>
     {
         private readonly IUserSession userSession;
@@ -34,9 +34,11 @@
             return languageCode;
         }
 
-        public LanguageViewModel Handle(AllLanguagesQuery message)
+        public LanguageViewModel Handle(EmptyQuery message)
         {
-            return new LanguageViewModel(Language.CodeNames, userSession.Language);
+            var viewModel = new LanguageViewModel(Language.CodeNames, userSession.Language);
+
+            return viewModel;
         }
     }
 }

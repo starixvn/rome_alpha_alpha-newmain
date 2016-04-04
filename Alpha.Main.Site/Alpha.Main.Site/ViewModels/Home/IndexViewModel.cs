@@ -11,12 +11,12 @@
     public class IndexViewModel
     {
         private readonly IUserSession userSession;
-        private readonly string defaultUrl;
+        private readonly Func<string> getDefaultUrl;
 
-        public IndexViewModel(IUserSession userSession = null, string defaultUrl = "")
+        public IndexViewModel(IUserSession userSession, Func<string> getDefaultUrl)
         {
             this.userSession = userSession;
-            this.defaultUrl = string.IsNullOrWhiteSpace(defaultUrl) ? FunctionRegistry.GetDefaultUrl() : defaultUrl;
+            this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
         }
 
         public string UserLevel
@@ -55,7 +55,7 @@
         {
             get
             {
-                return defaultUrl;
+                return getDefaultUrl();
             }
         }
 
