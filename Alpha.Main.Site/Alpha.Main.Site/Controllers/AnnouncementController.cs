@@ -19,9 +19,9 @@
         {
             var userLevel = Enumeration.FromValue<UserLevel>(UserSession.Current.RoleId);
 
-            var annoucementDataPath = HttpContext.Server.MapPath("~/App_Data/Announcements");
-            message.PrivateMessagePath = HttpContext.Server.MapPath(annoucementDataPath + "PopupAd" + userLevel.DisplayName + "Neutral.xml");
-            message.CommonAnnouncementPath = HttpContext.Server.MapPath(annoucementDataPath + "PopupAdCommon.xml");
+            var annoucementDataPath = "~/App_Data/Announcements";
+            message.PrivateMessagePath = HttpContext.Server.MapPath($"{annoucementDataPath}/PopupAd{userLevel.DisplayName}Neutral.xml");
+            message.CommonAnnouncementPath = HttpContext.Server.MapPath($"{annoucementDataPath}/PopupAdCommon.xml");
 
             var viewModel = _mediator.Send(message);
             return View(viewModel);

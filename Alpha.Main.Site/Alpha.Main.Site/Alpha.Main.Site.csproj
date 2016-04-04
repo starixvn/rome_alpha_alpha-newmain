@@ -375,116 +375,116 @@
     <Content Include="App_Themes\Apo\Security\images\x5.gif" />
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
-    <Content Include="Content\Announcement\Styles\Announcements.css" />
-    <Content Include="Content\Announcement\Styles\Images\bottomborder.png" />
-    <Content Include="Content\Announcement\Styles\Images\CloseIcon.png" />
-    <Content Include="Content\Announcement\Styles\Images\CloseIcon_h.png" />
-    <Content Include="Content\Announcement\Styles\Images\close_button.png" />
-    <Content Include="Content\Announcement\Styles\Images\Greyhound_Aus.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\Greyhound_Aus_CS.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\Greyhound_Aus_CT.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\Greyhound_Aus_TH.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\Hasness_Aus.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\Hasness_Aus_CS.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\Hasness_Aus_CT.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\Hasness_Aus_TH.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\iconClose.png" />
-    <Content Include="Content\Announcement\Styles\Images\ico_conts.png" />
-    <Content Include="Content\Announcement\Styles\Images\info.gif" />
-    <Content Include="Content\Announcement\Styles\Images\linebg.png" />
-    <Content Include="Content\Announcement\Styles\Images\popup_bg.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\popup_bg_cs.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\popup_bg_ct.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\popup_bg_th.jpg" />
-    <Content Include="Content\Announcement\Styles\Images\title.gif" />
-    <Content Include="Content\Announcement\Styles\Images\toptitlepopup.png" />
-    <Content Include="Content\Announcement\Styles\Images\toptitlepopup_hoa.png" />
-    <Content Include="Content\Announcement\Styles\Images\toptitlepopup_KO.png" />
-    <Content Include="Content\Announcement\Styles\Images\toptitlepopup_thai.png" />
-    <Content Include="Content\Announcement\Styles\Images\toptitlepopup_TW.png" />
-    <Content Include="Content\Announcement\Styles\Images\toptitlepopup_vn.png" />
-    <Content Include="Content\CustomerProfile\Styles\CustomerProfile.css" />
-    <Content Include="Content\CustomerProfile\Styles\Images\profileTooltip_bg.png" />
-    <Content Include="Content\CustomerProfile\Styles\Images\profileTooltip_left.png" />
-    <Content Include="Content\CustomerProfile\Styles\Images\profileTooltip_right.png" />
-    <Content Include="Content\CustomerProfile\Styles\Images\tooltip_bg.png" />
-    <Content Include="Content\CustomerProfile\Styles\Images\tooltip_left.png" />
-    <Content Include="Content\CustomerProfile\Styles\Images\tooltip_right.png" />
-    <Content Include="Content\Home\Scripts\header.msg.js" />
-    <Content Include="Content\Home\Scripts\header.nav.js" />
-    <Content Include="Content\Home\Scripts\menubar.js" />
-    <Content Include="Content\Home\Scripts\IndexPage.js" />
-    <Content Include="Content\Home\Scripts\piwikLoader.min.js">
+    <Content Include="Content\Styles\Announcement\Announcements.css" />
+    <Content Include="Content\Styles\Announcement\Images\bottomborder.png" />
+    <Content Include="Content\Styles\Announcement\Images\CloseIcon.png" />
+    <Content Include="Content\Styles\Announcement\Images\CloseIcon_h.png" />
+    <Content Include="Content\Styles\Announcement\Images\close_button.png" />
+    <Content Include="Content\Styles\Announcement\Images\Greyhound_Aus.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\Greyhound_Aus_CS.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\Greyhound_Aus_CT.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\Greyhound_Aus_TH.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\Hasness_Aus.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\Hasness_Aus_CS.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\Hasness_Aus_CT.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\Hasness_Aus_TH.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\iconClose.png" />
+    <Content Include="Content\Styles\Announcement\Images\ico_conts.png" />
+    <Content Include="Content\Styles\Announcement\Images\info.gif" />
+    <Content Include="Content\Styles\Announcement\Images\linebg.png" />
+    <Content Include="Content\Styles\Announcement\Images\popup_bg.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\popup_bg_cs.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\popup_bg_ct.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\popup_bg_th.jpg" />
+    <Content Include="Content\Styles\Announcement\Images\title.gif" />
+    <Content Include="Content\Styles\Announcement\Images\toptitlepopup.png" />
+    <Content Include="Content\Styles\Announcement\Images\toptitlepopup_hoa.png" />
+    <Content Include="Content\Styles\Announcement\Images\toptitlepopup_KO.png" />
+    <Content Include="Content\Styles\Announcement\Images\toptitlepopup_thai.png" />
+    <Content Include="Content\Styles\Announcement\Images\toptitlepopup_TW.png" />
+    <Content Include="Content\Styles\Announcement\Images\toptitlepopup_vn.png" />
+    <Content Include="Content\Styles\CustomerProfiles\CustomerProfile.css" />
+    <Content Include="Content\Styles\CustomerProfiles\Images\profileTooltip_bg.png" />
+    <Content Include="Content\Styles\CustomerProfiles\Images\profileTooltip_left.png" />
+    <Content Include="Content\Styles\CustomerProfiles\Images\profileTooltip_right.png" />
+    <Content Include="Content\Styles\CustomerProfiles\Images\tooltip_bg.png" />
+    <Content Include="Content\Styles\CustomerProfiles\Images\tooltip_left.png" />
+    <Content Include="Content\Styles\CustomerProfiles\Images\tooltip_right.png" />
+    <Content Include="Content\Scripts\Home\header.msg.js" />
+    <Content Include="Content\Scripts\Home\header.nav.js" />
+    <Content Include="Content\Scripts\Home\menubar.js" />
+    <Content Include="Content\Scripts\Home\IndexPage.js" />
+    <Content Include="Content\Scripts\Home\piwikLoader.min.js">
       <DependentUpon>piwikLoader.js</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\agent.css">
+    <Content Include="Content\Styles\Home\agent.css">
       <DependentUpon>agent.scss</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\agent.min.css">
+    <Content Include="Content\Styles\Home\agent.min.css">
       <DependentUpon>agent.css</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\Images\flag_sprite.png" />
-    <Content Include="Content\Home\Styles\master.css">
+    <Content Include="Content\Styles\Home\Images\flag_sprite.png" />
+    <Content Include="Content\Styles\Home\master.css">
       <DependentUpon>master.scss</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\master.min.css">
+    <Content Include="Content\Styles\Home\master.min.css">
       <DependentUpon>master.css</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\page.css">
+    <Content Include="Content\Styles\Home\page.css">
       <DependentUpon>page.scss</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\page.min.css">
+    <Content Include="Content\Styles\Home\page.min.css">
       <DependentUpon>page.css</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\PopupMessage.css">
+    <Content Include="Content\Styles\Home\PopupMessage.css">
       <DependentUpon>PopupMessage.scss</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\PopupMessage.min.css">
+    <Content Include="Content\Styles\Home\PopupMessage.min.css">
       <DependentUpon>PopupMessage.css</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\super.css">
+    <Content Include="Content\Styles\Home\super.css">
       <DependentUpon>super.scss</DependentUpon>
     </Content>
-    <Content Include="Content\Home\Styles\super.min.css">
+    <Content Include="Content\Styles\Home\super.min.css">
       <DependentUpon>super.css</DependentUpon>
     </Content>
     <Content Include="Content\Images\collapse.png" />
     <Content Include="Content\Images\expand.png" />
     <Content Include="Content\Images\icon_user_default.png" />
     <Content Include="Content\Images\loading.gif" />
-    <Content Include="Content\Home\Styles\Images\headerbg_2.jpg" />
-    <Content Include="Content\Home\Styles\Images\headerbg_3.jpg" />
-    <Content Include="Content\Home\Styles\Images\headerbg_4.jpg" />
-    <Content Include="Content\Home\Styles\Images\icon_close.jpg" />
-    <Content Include="Content\Home\Styles\Images\profileTooltip_bg.png" />
-    <Content Include="Content\Home\Styles\Images\profileTooltip_left.png" />
-    <Content Include="Content\Home\Styles\Images\profileTooltip_right.png" />
-    <Content Include="Content\Home\Styles\Images\tooltip_bg.png" />
-    <Content Include="Content\Home\Styles\Images\tooltip_left.png" />
-    <Content Include="Content\Home\Styles\Images\tooltip_right.png" />
+    <Content Include="Content\Styles\Home\Images\headerbg_2.jpg" />
+    <Content Include="Content\Styles\Home\Images\headerbg_3.jpg" />
+    <Content Include="Content\Styles\Home\Images\headerbg_4.jpg" />
+    <Content Include="Content\Styles\Home\Images\icon_close.jpg" />
+    <Content Include="Content\Styles\Home\Images\profileTooltip_bg.png" />
+    <Content Include="Content\Styles\Home\Images\profileTooltip_left.png" />
+    <Content Include="Content\Styles\Home\Images\profileTooltip_right.png" />
+    <Content Include="Content\Styles\Home\Images\tooltip_bg.png" />
+    <Content Include="Content\Styles\Home\Images\tooltip_left.png" />
+    <Content Include="Content\Styles\Home\Images\tooltip_right.png" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
     <Content Include="App_Data\Announcements\PopupAdCommon.xml" />
     <Content Include="App_Data\Announcements\PopupAdMasterNeutral.xml" />
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml" />
-    <Content Include="Content\Announcement\Scripts\AnnouncementManager.js" />
-    <Content Include="Content\CustomerProfile\Scripts\brief-profile.js" />
-    <Content Include="Content\Home\Scripts\Core.js" />
-    <Content Include="Content\Home\Scripts\piwikLoader.js" />
+    <Content Include="Content\Scripts\Announcement\AnnouncementManager.js" />
+    <Content Include="Content\Scripts\CustomerProfiles\brief-profile.js" />
+    <Content Include="Content\Scripts\Core.js" />
+    <Content Include="Content\Scripts\Home\piwikLoader.js" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
-    <Content Include="Content\Home\Styles\agent.scss" />
-    <Content Include="Content\Home\Styles\master.scss" />
-    <Content Include="Content\Home\Styles\super.scss" />
-    <Content Include="Content\Home\Styles\agent.variables.scss" />
-    <Content Include="Content\Home\Styles\master.variables.scss" />
-    <Content Include="Content\Home\Styles\super.variables.scss" />
+    <Content Include="Content\Styles\Home\agent.scss" />
+    <Content Include="Content\Styles\Home\master.scss" />
+    <Content Include="Content\Styles\Home\super.scss" />
+    <Content Include="Content\Styles\Home\agent.variables.scss" />
+    <Content Include="Content\Styles\Home\master.variables.scss" />
+    <Content Include="Content\Styles\Home\super.variables.scss" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
-    <Content Include="Content\Home\Styles\page.scss" />
+    <Content Include="Content\Styles\Home\page.scss" />
     <Content Include="App_Data\Alpha.sitemap">
       <SubType>Designer</SubType>
     </Content>
@@ -492,11 +492,11 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Content\Home\Styles\PopupMessage.scss" />
+    <Content Include="Content\Styles\Home\PopupMessage.scss" />
     <Content Include="Views\Default\MenuBar.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\HeaderNav.cshtml" />
-    <Content Include="Content\Home\Scripts\header.msg.old.js" />
+    <Content Include="Content\Scripts\Home\header.msg.old.js" />
     <Content Include="Views\Default\HeaderMsg.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithSource.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
@@ -640,10 +640,8 @@
     <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Services\Impl\SecurityCodeServiceImpl.cs" />
     <Compile Include="Services\Impl\UserMessageServiceImpl.cs" />
-    <Compile Include="Services\Impl\UserPermissionServiceImpl.cs" />
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\UserMessageService.cs" />
-    <Compile Include="Services\UserPermissionService.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="Helpers\AppPathHelper.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
@@ -657,9 +655,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Configurations\AppSettings.cs" />
-    <Compile Include="Services\IAnnouncementService.cs" />
+    <Compile Include="Services\AnnouncementService.cs" />
     <Compile Include="Services\CachingService.cs" />
-    <Compile Include="Services\Impl\AnnouncementService.cs" />
+    <Compile Include="Services\Impl\AnnouncementServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingServiceImpl.cs" />
     <Compile Include="Services\Impl\DashboardService.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />

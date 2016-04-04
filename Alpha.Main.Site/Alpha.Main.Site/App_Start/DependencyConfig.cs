@@ -89,11 +89,10 @@
             container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
 
             //// Transient            
-            container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Transient);
+            container.Register<AnnouncementService, AnnouncementServiceImpl>(Lifestyle.Transient);
             container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Transient);
             container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Transient);
             container.Register<SecurityCodeService, SecurityCodeServiceImpl>(Lifestyle.Transient);
-            container.Register<UserPermissionService, UserPermissionServiceImpl>(Lifestyle.Transient);
             container.Register<UserMessageService, UserMessageServiceImpl>(Lifestyle.Transient);
         }
 

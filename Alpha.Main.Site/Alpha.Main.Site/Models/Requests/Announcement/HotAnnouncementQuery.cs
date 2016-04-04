@@ -1,13 +1,27 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.Announcement
 {
+    using System.Collections.Generic;
+    using Constants;
     using Dtos.Announcement;
     using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
     using MediatR;
-
+    using Sunplus.Agent.Model.BL.Definitions;
+    using Sunplus.Agent.Model.Entities.Permission;
     public class HotAnnouncementQuery : IRequest<HotAnnouncement>
     {
+        private IDictionary<int, bool> productsStatus;
+
+        public HotAnnouncementQuery()
+        {
+        }
+
+        internal HotAnnouncementQuery(IDictionary<int, bool> productsStatus)
+        {
+            this.productsStatus = productsStatus;
+        }
+
         public string MessageIds { get; set; }
 
         public string AnnouncementResourcePath { get; set; }
@@ -53,6 +67,22 @@
             get
             {
                 return CookieLessSessionFactory.SecurityCodeSession;
+            }
+        }
+
+        public IDictionary<int, bool> ProductsStatus
+        {
+            get
+            {
+                var productsStatus = this.productsStatus ?? new Dictionary<int, bool>
+                {
+                    { MessageId.NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
+                    { MessageId.OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
+                    { MessageId.OfferedSuperLive, UserPermission.IsShowSuperLive },
+                    { MessageId.OfferedColossusBets,  UserPermission.IsShowColossusBets }
+                };
+
+                return productsStatus;
             }
         }
     }

@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml;
+    using App_GlobalResources;
     using Constants;
     using Criteria.Announcement;
     using Fanex.Common;
@@ -13,23 +14,20 @@
     using Models.Requests.Announcement;
     using Sunplus.Agent.Model.Entities;
 
-    public class AnnouncementService : IAnnouncementService
+    public class AnnouncementServiceImpl : AnnouncementService
     {
         private readonly IDynamicRepository dynamicRepository;
         private readonly IUserSession userSession;
         private readonly SecurityCodeService securityCodeService;
-        private readonly UserPermissionService userPermissionService;
 
-        public AnnouncementService(
+        public AnnouncementServiceImpl(
             IDynamicRepository dynamicRepository,
             IUserSession userSession,
-            SecurityCodeService securityCodeService,
-            UserPermissionService userPermissionService)
+            SecurityCodeService securityCodeService)
         {
             this.dynamicRepository = dynamicRepository;
             this.userSession = userSession;
             this.securityCodeService = securityCodeService;
-            this.userPermissionService = userPermissionService;
         }
 
         public HotAnnouncement GetHotAnnouncement(HotAnnouncementQuery message)
@@ -74,15 +72,15 @@
             var result = new MessageModel();
             if (isPositionTakingChanged && isBettingLimitChanged)
             {
-                result.Content = App_GlobalResources.Resources.modifiedMinPTBettingLimitValue;
+                result.Content = Resources.modifiedMinPTBettingLimitValue;
             }
             else if (isPositionTakingChanged)
             {
-                result.Content = App_GlobalResources.Resources.modifiedMinPTValueText;
+                result.Content = Resources.modifiedMinPTValueText;
             }
             else if (isBettingLimitChanged)
             {
-                result.Content = App_GlobalResources.Resources.modifiedBettingLimitValue;
+                result.Content = Resources.modifiedBettingLimitValue;
             }
 
             if (!string.IsNullOrEmpty(result.Content))
@@ -149,13 +147,16 @@
             }
 
             bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(userSession.Site, message.SecurityCodeResult, message.SecurityCodeSession);
-            var messageVisibilities = MessageVisibilities(isForceUseSecurityCode);
-
-            foreach (var messageVisibility in messageVisibilities)
+            if(!isForceUseSecurityCode)
             {
-                if (!messageVisibility.Value)
+                result.Add(MessageId.ForceUseSecurityCode);
+            }
+
+            foreach (var productStatus in message.ProductsStatus)
+            {
+                if (!productStatus.Value)
                 {
-                    result.Add(messageVisibility.Key);
+                    result.Add(productStatus.Key);
                 }
             }
 
@@ -278,22 +279,6 @@
             }
 
             return false;
-        }
-
-        private Dictionary<int, bool> MessageVisibilities(bool isForceUseSecurityCode)
-        {
-            var messageVisibilities = new Dictionary<int, bool>();
-            messageVisibilities.Add(MessageId.ForceUseSecurityCode, isForceUseSecurityCode);
-            messageVisibilities.Add(
-                MessageId.NotOfferedGoldDeluxe,
-                userPermissionService.IsShowGoldDeluxeSettingForCredit && !userPermissionService.IsShowLiveCasino);
-            messageVisibilities.Add(
-                MessageId.OfferedGoldDeluxe,
-                userPermissionService.IsShowGoldDeluxeSettingForCredit && userPermissionService.IsShowLiveCasino);
-            messageVisibilities.Add(MessageId.OfferedSuperLive, userPermissionService.IsShowSuperLive);
-            messageVisibilities.Add(MessageId.OfferedColossusBets, userPermissionService.IsShowColossusBets);
-
-            return messageVisibilities;
         }
 
         private void AssignAnnouncementPopupApperances(XmlNode announcementNode, HotAnnouncement hotAnnouncement)

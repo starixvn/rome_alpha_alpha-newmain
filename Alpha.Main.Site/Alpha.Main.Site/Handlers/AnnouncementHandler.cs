@@ -10,10 +10,10 @@
     public class AnnouncementHandler :
          IRequestHandler<HotAnnouncementQuery, HotAnnouncement>
     {
-        private readonly IAnnouncementService _announcementService;
+        private readonly AnnouncementService _announcementService;
         private readonly IUserSession _userSession;
 
-        public AnnouncementHandler(IAnnouncementService announcementService, IUserSession userSession)
+        public AnnouncementHandler(AnnouncementService announcementService, IUserSession userSession)
         {
             _announcementService = announcementService;
             _userSession = userSession;

@@ -23,23 +23,23 @@
         private static void RegisterHomeJavascript(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/scripts/home").Include(
-                "~/Content/Home/Scripts/Core.js",
-                "~/Content/Home/Scripts/header.nav.js",
-                "~/Content/Home/Scripts/header.msg.js",
-                "~/Content/Home/Scripts/menubar.js",
-                "~/Content/CustomerProfile/Scripts/brief-profile.js",
-                "~/Content/Home/Scripts/IndexPage.js",
-                "~/Content/Announcement/Scripts/AnnouncementManager.js"));
+                "~/Content/Scripts/Core.js",
+                "~/Content/Scripts/Home/header.nav.js",
+                "~/Content/Scripts/Home/header.msg.js",
+                "~/Content/Scripts/Home/menubar.js",
+                "~/Content/Scripts/CustomerProfiles/brief-profile.js",
+                "~/Content/Scripts/Home/IndexPage.js",
+                "~/Content/Scripts/Announcement/AnnouncementManager.js"));
         }
 
         private static void RegisterHomeStyle(BundleCollection bundles)
         {
             var cssRewriteUrlTransformWrapper = new CssRewriteUrlTransformWrapper();
             bundles.Add(new StyleBundle("~/bundle/styles/home")
-                .Include("~/Content/Home/Styles/page.css", cssRewriteUrlTransformWrapper)
-                .Include("~/Content/Home/Styles/PopupMessage.css", cssRewriteUrlTransformWrapper)
-                .Include("~/Content/CustomerProfile/Styles/CustomerProfile.css", cssRewriteUrlTransformWrapper)
-                .Include("~/Content/Announcement/Styles/Announcements.css", cssRewriteUrlTransformWrapper));
+                .Include("~/Content/Styles/Home/page.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Content/Styles/Home/PopupMessage.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Content/Styles/CustomerProfiles/CustomerProfile.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Content/Styles/Announcement/Announcements.css", cssRewriteUrlTransformWrapper));
         }
     }
 }

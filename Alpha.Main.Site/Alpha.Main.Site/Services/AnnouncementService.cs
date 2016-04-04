@@ -3,7 +3,7 @@
     using Models.Dtos.Announcement;
     using Models.Requests.Announcement;
 
-    public interface IAnnouncementService
+    public interface AnnouncementService
     {
         HotAnnouncement GetHotAnnouncement(HotAnnouncementQuery message);
     }
