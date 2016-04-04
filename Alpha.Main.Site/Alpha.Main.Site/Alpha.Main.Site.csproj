@@ -658,7 +658,6 @@
     <Compile Include="Services\CachingService.cs" />
     <Compile Include="Services\Impl\AnnouncementServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingServiceImpl.cs" />
-    <Compile Include="Services\Impl\DashboardService.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
   </ItemGroup>
