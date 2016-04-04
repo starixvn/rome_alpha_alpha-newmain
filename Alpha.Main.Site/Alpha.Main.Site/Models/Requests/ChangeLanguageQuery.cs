@@ -1,10 +1,22 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
-    using Dtos;
     using MediatR;
 
-    public class ChangeLanguageQuery : IRequest<ResultModel>
+    public class ChangeLanguageQuery : IRequest<string>
     {
-        public string Language { get; set; }
+        private string language;
+
+        public ChangeLanguageQuery(string language)
+        {
+            this.language = language;
+        }
+
+        public string Language
+        {
+            get
+            {
+                return language;
+            }
+        }
     }
 }

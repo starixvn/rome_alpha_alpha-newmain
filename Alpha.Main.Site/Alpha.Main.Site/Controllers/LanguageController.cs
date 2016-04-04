@@ -1,24 +1,22 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Linq;
     using System.Web.Mvc;
-    using Constants;
-    using Sunplus.Agent.Model.Entities;
-    using ViewModels;
+    using MediatR;
+    using Models.Requests;
 
     public class LanguageController : BaseController
     {
-        private readonly IUserSession userSession;
+        private IMediator mediator;
 
-        public LanguageController(IUserSession userSession)
+        public LanguageController(IMediator mediator)
         {
-            this.userSession = userSession ?? UserSession.Current;
+            this.mediator = mediator;
         }
 
         [ChildActionOnly]
         public ActionResult List()
         {
-            var viewModel = new LanguageViewModel(Language.CodeNames, userSession.Language);
+            var viewModel = mediator.Send(new AllLanguagesQuery());
 
             return PartialView(viewModel);
         }
@@ -26,14 +24,7 @@
         [HttpPost]
         public JsonResult Change(string languageCode)
         {
-            if (string.IsNullOrWhiteSpace(languageCode)
-                || !Language.CodeNames.Keys.Contains(languageCode))
-            {
-                languageCode = Language.Default;
-            }
-
-            userSession.Language = languageCode;
-            userSession.LangKey = Language.CodeKeys[languageCode];            
+            var viewModel = mediator.Send(new ChangeLanguageQuery(languageCode));
 
             return Json(languageCode);
         }
