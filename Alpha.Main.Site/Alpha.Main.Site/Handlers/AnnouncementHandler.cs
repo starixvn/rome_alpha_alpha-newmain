@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using MediatR;
-    using Models.Dtos.Announcement;
+    using Models.Announcements;
     using Models.Requests.Announcement;
     using Services;
     using Sunplus.Agent.Model.Entities;

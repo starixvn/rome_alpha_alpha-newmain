@@ -10,7 +10,7 @@
     using Fanex.Common;
     using Fanex.Data.Repository;
     using Helpers;
-    using Models.Dtos.Announcement;
+    using Models.Announcements;
     using Models.Requests.Announcement;
     using Sunplus.Agent.Model.Entities;
 
@@ -51,8 +51,7 @@
 
             if (messageTypes != null)
             {
-                var settingChangedMessage = GetSettingChangedMessage(messageTypes);
-                hotAnnouncement.Content = settingChangedMessage.Content;
+                hotAnnouncement.Content = GetSettingChangedMessage(messageTypes);
             }
 
             if (string.IsNullOrEmpty(hotAnnouncement.Content))
@@ -65,28 +64,28 @@
             return hotAnnouncement;
         }
 
-        private MessageModel GetSettingChangedMessage(IEnumerable<string> messageTypes)
+        private string GetSettingChangedMessage(IEnumerable<string> messageTypes)
         {
             var isPositionTakingChanged = messageTypes.Contains(MessageTypeConstant.PositionTakingChanged.ToString());
             var isBettingLimitChanged = messageTypes.Contains(MessageTypeConstant.BettingLimitChanged.ToString());
-            var result = new MessageModel();
+            var messageContent = string.Empty;
             if (isPositionTakingChanged && isBettingLimitChanged)
             {
-                result.Content = Resources.modifiedMinPTBettingLimitValue;
+                messageContent = Resources.modifiedMinPTBettingLimitValue;
             }
             else if (isPositionTakingChanged)
             {
-                result.Content = Resources.modifiedMinPTValueText;
+                messageContent = Resources.modifiedMinPTValueText;
             }
             else if (isBettingLimitChanged)
             {
-                result.Content = Resources.modifiedBettingLimitValue;
+                messageContent = Resources.modifiedBettingLimitValue;
             }
 
-            if (!string.IsNullOrEmpty(result.Content))
+            if (!string.IsNullOrEmpty(messageContent))
             {
-                var content = result.Content.Replace("<br>", " ");
-                result.Id = InsertPersonalMessage(new InsertPersonalMessageCriteria
+                var content = messageContent.Replace("<br>", " ");
+                InsertPersonalMessage(new InsertPersonalMessageCriteria
                 {
                     ContentEn = content,
                     ContentCh = content,
@@ -103,15 +102,15 @@
                 });
             }
 
-            return result;
+            return messageContent;
         }
 
-        private long InsertPersonalMessage(InsertPersonalMessageCriteria criteria)
+        private void InsertPersonalMessage(InsertPersonalMessageCriteria criteria)
         {
-            var rawData = dynamicRepository.Fetch<MessageModel>(criteria).FirstOrDefault();
+            var rawData = dynamicRepository.Fetch<dynamic>(criteria).FirstOrDefault();
             if (rawData == null)
             {
-                return 0;
+                return;
             }
 
             dynamicRepository.Fetch<bool>(new InsertPersonalMessageTargetCriteria
@@ -128,8 +127,6 @@
                 CustId = userSession.CustId,
                 IsViewed = true
             });
-
-            return rawData.Id;
         }
 
         private List<long> GetShowedMessageIds(HotAnnouncementQuery message)
@@ -147,7 +144,7 @@
             }
 
             bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(userSession.Site, message.SecurityCodeResult, message.SecurityCodeSession);
-            if(!isForceUseSecurityCode)
+            if (!isForceUseSecurityCode)
             {
                 result.Add(MessageId.ForceUseSecurityCode);
             }

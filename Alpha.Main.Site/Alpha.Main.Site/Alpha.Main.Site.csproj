@@ -619,8 +619,7 @@
     <Compile Include="Helpers\ContentSite.cs" />
     <Compile Include="Helpers\LanguageHelper.cs" />
     <Compile Include="Helpers\OldMainSite.cs" />
-    <Compile Include="Models\Dtos\Announcement\HotAnnouncement.cs" />
-    <Compile Include="Models\Dtos\Announcement\MessageModel.cs" />
+    <Compile Include="Models\Announcements\HotAnnouncement.cs" />
     <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />

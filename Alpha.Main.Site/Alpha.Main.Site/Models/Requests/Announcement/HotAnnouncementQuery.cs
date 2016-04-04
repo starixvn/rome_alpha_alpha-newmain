@@ -1,14 +1,14 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.Announcement
 {
     using System.Collections.Generic;
+    using Announcements;
     using Constants;
-    using Dtos.Announcement;
     using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
     using MediatR;
-    using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities.Permission;
+
     public class HotAnnouncementQuery : IRequest<HotAnnouncement>
     {
         private IDictionary<int, bool> productsStatus;

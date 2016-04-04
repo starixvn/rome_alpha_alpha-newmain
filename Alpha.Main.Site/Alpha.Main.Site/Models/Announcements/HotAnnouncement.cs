@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.Models.Dtos.Announcement
+﻿namespace Alpha.Main.Site.Models.Announcements
 {
     public class HotAnnouncement
     {
