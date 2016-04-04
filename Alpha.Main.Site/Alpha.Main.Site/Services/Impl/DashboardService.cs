@@ -6,11 +6,10 @@
     using Fanex.CustomerSetting.Module.Core.Web;
     using Models.Dtos;
     using Models.Requests;
-    using Models.Views;
     using Sunplus.Agent.Model.Common;
     using Sunplus.Agent.Model.Entities;
 
-    public class DashboardService : IDashboardService
+    public class DashboardService 
     {
         private readonly SiteMenuService siteMenuService;
 
@@ -42,12 +41,12 @@
             return result;
         }
 
-        public void StoreSession(MainIndexViewModel dashboardViewModel)
-        {
-            HttpContext.Current.Session["ph"] = dashboardViewModel.PasswordHash;
+        //public void StoreSession(MainIndexViewModel dashboardViewModel)
+        //{
+        //    HttpContext.Current.Session["ph"] = dashboardViewModel.PasswordHash;
 
-            // _sessionValidationService.AddUsernameTokenToCookie();
-            // SessionValidator.AddSessionVerificationToken();
-        }
+        //    // _sessionValidationService.AddUsernameTokenToCookie();
+        //    // SessionValidator.AddSessionVerificationToken();
+        //}
     }
 }

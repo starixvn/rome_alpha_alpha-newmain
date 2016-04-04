@@ -88,8 +88,7 @@
             container.Register<CachingService, CachingServiceImpl>(Lifestyle.Singleton);
             container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
 
-            //// Transient
-            container.Register<IDashboardService, DashboardService>(Lifestyle.Transient);
+            //// Transient            
             container.Register<IAnnouncementService, AnnouncementService>(Lifestyle.Transient);
             container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Transient);
             container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Transient);
