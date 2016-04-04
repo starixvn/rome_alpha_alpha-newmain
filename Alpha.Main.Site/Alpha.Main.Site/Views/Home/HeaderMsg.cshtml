@@ -2,11 +2,14 @@
 
 <section class="header-msg" id="headerMessage">
     <span class="icon icon-home withripple"></span>
+
+
     <div id="marqueeMessage">
         <span id="scroller">
             <span id="liveMessage" class="maquee live-message" data-live-message-url=""></span>
         </span>
     </div>
+
     <div class="nav-iconbox">
         <span class="icon icon-add special-message" id="btnSpecialMessage"></span>
         <div class="email-box private-message" id="btnPrivateMessage">
@@ -25,9 +28,18 @@
             </div>
 
             <div class="modal-body" id="userMessageModalBody">
-                @foreach (var hotMessage in Model)
-                {
-                    <p>@hotMessage</p>
+                @{
+                    var isFirstMessage = true;
+
+                    foreach (var hotMessage in Model)
+                    {
+                        <p class="@(isFirstMessage ? "current-hot-message" : "not-shown-message")">@hotMessage</p>
+
+                        if (isFirstMessage)
+                        {
+                            isFirstMessage = false;
+                        }
+                    }
                 }
             </div>
         </div>

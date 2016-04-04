@@ -1,4 +1,5 @@
-﻿var oldMainRootPath = document.getElementById('oldMainRootPath').value;
+﻿
+var oldMainRootPath = document.getElementById('oldMainRootPath').value;
 var headerMessage = {
     urls: {
         oldMainAppMessageForm: oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
@@ -13,6 +14,9 @@ var headerMessage = {
     messageIdIndex: 0,
     messageContentIndex: 1,
     messageTypeIndex: 2,
+    publicMessageId: 0,
+    privateMessageId: 0,
+    scrollMessageTimeout: null,
 
     domElements: {
         btnPrivateMessage: null,
@@ -24,7 +28,8 @@ var headerMessage = {
         popupContainer1: null,
         popupContainer2: null,
         hotMessages: null,
-        userMessageModal: null
+        userMessageModal: null,
+        currentHotMessage: null
     },
 
     init: function () {
@@ -44,8 +49,9 @@ var headerMessage = {
         headerMessage.domElements.marqueeMessage = $('#marqueeMessage');
         headerMessage.domElements.popupContainer1 = $('#popupContainer1');
         headerMessage.domElements.popupContainer2 = $('#popupContainer2');
-        headerMessage.domElements.hotMessages = $('#userMessageModalBody p');
+        headerMessage.domElements.hotMessages = $('#userMessageModalBody');
         headerMessage.domElements.userMessageModal = $('#userMessageModal');
+        headerMessage.domElements.currentHotMessage = headerMessage.domElements.hotMessages.find('p.current-hot-message');
     },
 
     registerEvents: function () {
@@ -76,19 +82,20 @@ var headerMessage = {
             //// Reset private message after click on view private message link
             $.ajax({
                 url: headerMessage.urls.updatePrivateMessageCount,
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json"
-            }).done(function (data) {
-                if (data.errCode == 0) {
-                    headerMessage.domElements.privateMessageCounter.html(0);
+                type: 'POST',
+                responseType: 'json',
+                success: function (rawResult) {
+                    var result = convertReponseToJson(rawResult);
+                    if (result.errCode == 0) {
+                        headerMessage.domElements.privateMessageCounter.html(0);
+                    }
                 }
             });
         }
     },
 
     viewSpecialMessage: function () {
-        indexPageManager.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
+        indexPageManager.changeMenu(headerMessage.urls.oldMainAppMessageForm);
     },
 
     viewLiveMessage: function () {
@@ -102,76 +109,59 @@ var headerMessage = {
     },
 
     showHotMessage: function () {
-        headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
-        //$(headerMessage.domElements.hotMessages[0]).animate({
-        //    opacity: 0.0
-        //}, 1500, function () {
-        //    $(headerMessage.domElements.hotMessages[0]).hide()
-        //    $(headerMessage.domElements.hotMessages[1]).show().animate({
-        //        opacity: 1.0
-        //    }, 1500);
-        //});
-       
-        //if (headerMessage.domElements.hotMessages.length == 0) {
+        if (headerMessage.domElements.currentHotMessage.length > 0) {
+            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
+        }
 
-        //    return;
-        //}
-
-
-        //headerMessage.domElements.popupContainer1.html(messages[headerMessage.messageIndex]);
-        //if (messages.length > 1) {
-        //    headerMessage.domElements.popupContainer2(messages[headerMessage.messageIndex + 1]);
-        //}
-
-        //headerMessage.domElements.topMessagePopup.css("height", headerMessage.domElements.popupContainer1.height() + 'px');
-        //if (messages.length > 1) {
-        //    setInterval(headerMessage.startSwapMessage, 18000);
-        //}
-
-
+        setInterval(headerMessage.swapMessage, 18 * 1000);
     },
 
     showPublicMessage: function (publicMessage) {
         // Process Public Message: show new public message and its link to message form
-        var url = headerMessage.urls.oldMainAppPrivateMessageForm + publicMessage[headerMessage.messageType];
+        var url = headerMessage.urls.oldMainAppMessageForm + publicMessage[headerMessage.messageTypeIndex];
         var balloonPopupContent = "";
 
-        if (publicMessage[headerMessage.messageIdIndex] && publicMessage[headerMessage.messageIdIndex] != publicMessageId) {
-            headerMessage.domElements.liveMessage.html(publicMessage[headerMessage.messageContentIndex]);
-            headerMessage.domElements.liveMessage.data(url);
+        if (publicMessage[headerMessage.messageIdIndex]
+            && publicMessage[headerMessage.messageIdIndex] != headerMessage.publicMessageId) {
 
-            // Work with FF, IE6-7
-            if (publicMessageId > 0) {
-                balloonPopupContent = publicMessage[headerMessage.messageContentIndex];
-            }
+            headerMessage.domElements.liveMessage
+                .html(publicMessage[headerMessage.messageContentIndex])
+                .data(url);
 
-            publicMessageId = publicMessage[headerMessage.messageIdIndex];
+            headerMessage.appendMessageToPopup(publicMessage[headerMessage.messageContentIndex]);
+
+            headerMessage.publicMessageId = publicMessage[headerMessage.messageIdIndex];
         }
     },
 
-    showPrivateMessage: function (privateMessage) {
+    showPrivateMessage: function (privateMessage, unreadPriMsgCount) {
         // Process Private Message: show new private message
-        if (privateMessage[headerMessage.messageIdIndex] && privateMessageId != privateMessage[headerMessage.messageIdIndex]) {
+        if (privateMessage[headerMessage.messageIdIndex]
+            && headerMessage.privateMessageId != privateMessage[headerMessage.messageIdIndex]) {
+
+            //// Append Private Message to Marquee with green color format.
             var liveMessageContent = headerMessage.domElements.liveMessage.html();
-            headerMessage.domElements.liveMessage.html(liveMessageContent + ". <font color=\"green\">Private message:" + privateMessage[headerMessage.messageContentIndex] + "</font>");
+            headerMessage.domElements.liveMessage.html(
+                liveMessageContent
+                + ". <font color=\"green\">Private message:"
+                + privateMessage[headerMessage.messageContentIndex]
+                + "</font>");
 
-            if (privateMessageId > 0) {
-                balloonPopupContent = privateMessage[headerMessage.messageContentIndex];
-            }
+            headerMessage.appendMessageToPopup(privateMessage[headerMessage.messageContentIndex]);
 
-            privateMessageId = privateMessage[headerMessage.messageIdIndex];
+            headerMessage.privateMessageId = privateMessage[headerMessage.messageIdIndex];
         }
+
+        unreadPriMsgCount = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
+
+        headerMessage.domElements.privateMessageCounter.html(unreadPriMsgCount);
     },
 
-    processBallonPopup: function () {
-        // Process Balloon Pop-up: show new public and private messages if existed
-        if (balloonPopupContent != "") {
-            headerMessage.domElements.popupContainer1.html(balloonPopupContent);
-            self.showPopupTop(0);
-            setTimeout(function () {
-                self.showPopupTop(1);
-            }, (30 * 100));
-        }
+    appendMessageToPopup: function (messsage) {
+        headerMessage.domElements.hotMessages.append(
+                '<p class="not-shown-message">'
+                + messsage
+                + '</p>');
     },
 
     getMessages: function () {
@@ -187,51 +177,99 @@ var headerMessage = {
                         privateMessage = results.private_message ? results.private_message : 0,
                         unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
 
-                    unreadPriMsgCount = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
-
-                    headerMessage.domElements.privateMessageCounter.html(unreadPriMsgCount);
-
                     headerMessage.showPublicMessage(publicMessage);
 
-                    headerMessage.showPrivateMessage(privateMessage);
+                    headerMessage.showPrivateMessage(privateMessage, unreadPriMsgCount);
 
+                    headerMessage.applyScroller();
                 } catch (e) { }
-
-                setTimeout(headerMessage.getMessages, (60 * 1000));
             }
         });
     },
 
-    startSwapMessage: function () {
-        if (headerMessage.messageIndex >= self.data.msgList.length - 1) {
-            msgIndex = -1;
+    swapMessage: function () {
+        var nextMessage = [];
+
+        if (headerMessage.domElements.currentHotMessage.length === 0) {
+            nextMessage = headerMessage.domElements.hotMessages.find('p.not-shown-message');
+        }
+        else {
+            nextMessage = headerMessage.domElements.currentHotMessage.next();
         }
 
-        popupContents1Height = headerMessage.domElements.popupContainer1.height() + 20;
-        popupContents2.innerHTML = self.data.msgList[++headerMessage.messageIndex];
-        setTimeout(headerMessage.swapMessage, 50);
+        if (nextMessage.length > 0) {
+            if (headerMessage.domElements.currentHotMessage.length > 0) {
+                //// Hide old Message
+                headerMessage.domElements.currentHotMessage.animate({
+                    opacity: 0.0
+                },
+                1500,
+                function () {
+                    //// Remove Old Message and Show New Message
+                    headerMessage.domElements.currentHotMessage.remove();
+                    headerMessage.showNextMessage(nextMessage);
+                });
+            }
+            else {
+                headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
+                headerMessage.showNextMessage(nextMessage);
+            }
+        }
     },
 
-    swapMessage: function () {
-        popupContents1MarginTop -= 5;
-        if (Math.abs(popupContents1MarginTop) >= popupContents1Height) {
-            popupContents1MarginTop = 0;
-            var parentNode = popupContents1.parentNode;
-            parentNode.removeChild(popupContents1);
-            parentNode.appendChild(popupContents1);
-            var node2 = popupContents2;
-            popupContents2 = popupContents1;
-            popupContents1 = node2;
+    showNextMessage: function (nextMessage) {
+        nextMessage.show().animate({
+            opacity: 1.0
+        },
+        1500,
+        function () {
+            headerMessage.domElements.currentHotMessage = nextMessage;
+        });
+    },
 
-            popupContents1.style.marginTop = popupContents1MarginTop + "px";
-            popupContents2.style.marginTop = popupContents1MarginTop + "px";
-
-            $("#popup-top").css("height", popupContents1.clientHeight + 'px');
+    applyScroller: function () {
+        if (headerMessage.scrollerLeft) {
             return;
         }
 
-        popupContents1.style.marginTop = popupContents1MarginTop + "px";
-        setTimeout(self.swapMessage, 50);
+        headerMessage.scrollerLeft = -100;
+        headerMessage.scrollerWidth = 0;
+
+        headerMessage.scroller = $('#scroller')[0];
+        headerMessage.topnews = headerMessage.domElements.liveMessage[0];
+
+        headerMessage.topnews.onmouseover = function () {
+            clearTimeout(headerMessage.scrollMessageTimeout);
+            headerMessage.scrollMessageTimeout = 0;
+            headerMessage.scrollerPaused = true;
+        };
+        headerMessage.topnews.onmouseout = function () {
+            if (headerMessage.scrollerPaused) {
+                headerMessage.scrollerPaused = false;
+                headerMessage.scrollMessageTimeout = setTimeout(headerMessage.scrollMessage, 20);
+            } else {
+                headerMessage.scrollerPaused = false;
+            }
+        };
+
+        var text_news = headerMessage.domElements.marqueeMessage[0];
+        headerMessage.maskWidth = parseInt(text_news.offsetWidth);
+
+        headerMessage.scrollMessage();
+    },
+    
+    scrollMessage: function () {
+        if (headerMessage.scrollerPaused) {
+            return;
+        }
+
+        if (headerMessage.scrollerLeft + headerMessage.scrollerWidth < -5) {
+            headerMessage.scrollerLeft = headerMessage.maskWidth + 5;
+            headerMessage.scrollerWidth = parseInt(headerMessage.topnews.offsetWidth);
+        }
+
+        headerMessage.scroller.style.left = (headerMessage.scrollerLeft--) + 'px';
+        headerMessage.scrollMessageTimeout = setTimeout(headerMessage.scrollMessage, 20);
     }
 };
 

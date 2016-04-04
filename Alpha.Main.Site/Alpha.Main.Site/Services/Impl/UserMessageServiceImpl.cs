@@ -4,93 +4,65 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Web;
     using System.Xml;
     using Fanex.Common;
-    using Sunplus.Agent.Model.Entities;
+    using Models.Requests.UserMessages;
 
     public class UserMessageServiceImpl : UserMessageService
     {
-        private const string IsShowedMessageSessionKey = "messageisshowed";
-        private IUserSession _userSession;
-
-        public UserMessageServiceImpl(IUserSession userSession)
-        {
-            _userSession = userSession;
-        }
-
-        private bool IsShowedMessage
-        {
-            get
-            {
-                return false;
-                //// Use it because we want to consistency with old site
-                return Converter.ToString2(HttpContext.Current.Session[IsShowedMessageSessionKey]).Equals("1");
-            }
-            set
-            {
-                HttpContext.Current.Session[IsShowedMessageSessionKey] = value ? 1 : 0;
-            }
-        }
-
-        public IEnumerable<string> GetHotMessages(string hotMessageFilePath)
+        public IEnumerable<string> GetHotMessages(HotMessagesQuery message)
         {
             List<string> hotMessages = new List<string>();
 
-            if (!File.Exists(hotMessageFilePath))
+            if (!File.Exists(message.HotMessageFilePath))
             {
                 throw new FileNotFoundException("Cannot find user tooltip message.");
             }
 
             var xmlNormalAnnouncement = new XmlDocument();
 
-            xmlNormalAnnouncement.Load(hotMessageFilePath);
+            xmlNormalAnnouncement.Load(message.HotMessageFilePath);
 
             if (!xmlNormalAnnouncement.DocumentElement.HasChildNodes)
             {
                 return Enumerable.Empty<string>();
             }
 
-            if (!IsShowedMessage)
+            foreach (XmlNode announcementXmlNode in xmlNormalAnnouncement.DocumentElement.ChildNodes)
             {
-                IsShowedMessage = true;
-
-                foreach (XmlNode announcementXmlNode in xmlNormalAnnouncement.DocumentElement.ChildNodes)
+                if (announcementXmlNode == null ||
+                    announcementXmlNode.Attributes["id"] == null ||
+                    string.IsNullOrEmpty(announcementXmlNode.Attributes["id"].Value) ||
+                    announcementXmlNode.Attributes["role"] == null ||
+                    string.IsNullOrEmpty(announcementXmlNode.Attributes["role"].Value) ||
+                    announcementXmlNode.Attributes["startdate"] == null ||
+                    string.IsNullOrEmpty(announcementXmlNode.Attributes["startdate"].Value) ||
+                    announcementXmlNode.Attributes["enddate"] == null ||
+                    string.IsNullOrEmpty(announcementXmlNode.Attributes["enddate"].Value))
                 {
-                    if (announcementXmlNode == null ||
-                        announcementXmlNode.Attributes["id"] == null ||
-                        string.IsNullOrEmpty(announcementXmlNode.Attributes["id"].Value) ||
-                        announcementXmlNode.Attributes["role"] == null ||
-                        string.IsNullOrEmpty(announcementXmlNode.Attributes["role"].Value) ||
-                        announcementXmlNode.Attributes["startdate"] == null ||
-                        string.IsNullOrEmpty(announcementXmlNode.Attributes["startdate"].Value) ||
-                        announcementXmlNode.Attributes["enddate"] == null ||
-                        string.IsNullOrEmpty(announcementXmlNode.Attributes["enddate"].Value))
-                    {
-                        continue;
-                    }
+                    continue;
+                }
 
-                    var hotMessage = GetHotMessageByLanguage(_userSession.Language.ToLower(), announcementXmlNode);
+                var hotMessage = GetHotMessageByLanguage(message.RoleId, message.Language.ToLower(), announcementXmlNode);
 
-                    if (!string.IsNullOrWhiteSpace(hotMessage))
-                    {
-                        hotMessages.Add(hotMessage);
-                    }
+                if (!string.IsNullOrWhiteSpace(hotMessage))
+                {
+                    hotMessages.Add(hotMessage);
                 }
             }
 
             return hotMessages;
         }
 
-        private string GetHotMessageByLanguage(string language, XmlNode announcementXmlNode)
+        private string GetHotMessageByLanguage(byte roleId, string language, XmlNode announcementXmlNode)
         {
-            var offerForLevel = Converter.ToInt(announcementXmlNode.Attributes["role"].Value);
+            var offerForRoleId = Converter.ToInt(announcementXmlNode.Attributes["role"].Value);
             var startDate = Converter.ToDateTime(announcementXmlNode.Attributes["startdate"].Value);
             var endDate = Converter.ToDateTime(announcementXmlNode.Attributes["enddate"].Value);
             var currentDate = DateTime.Now;
 
             if (startDate <= currentDate && currentDate <= endDate &&
-                (_userSession.RoleId == offerForLevel || offerForLevel == 0))
+                (roleId == offerForRoleId || offerForRoleId == 0))
             {
                 switch (language)
                 {

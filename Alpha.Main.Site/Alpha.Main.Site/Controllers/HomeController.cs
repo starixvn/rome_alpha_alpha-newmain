@@ -45,7 +45,12 @@
 
         public ActionResult HeaderMsg()
         {
-            return View(_mediator.Send(new HotMessagesQuery()));
+            var query = new HotMessagesQuery
+            {
+                HotMessageFilePath = HttpContext.Server.MapPath("~/App_Data/UserMessage/ToolTipMessage.xml")
+            };
+
+            return View(_mediator.Send(query));
         }
     }
 }

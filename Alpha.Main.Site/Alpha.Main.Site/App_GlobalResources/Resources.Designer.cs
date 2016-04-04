@@ -494,6 +494,15 @@ namespace Alpha.Main.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Private Message.
+        /// </summary>
+        public static string PrivateMessage {
+            get {
+                return ResourceManager.GetString("PrivateMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click here to Edit Profile Picture..
         /// </summary>
         public static string ProfileClickTootip {

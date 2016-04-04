@@ -356,6 +356,8 @@ a, a:focus, a:active, a:target, a:hover {
   .header-msg .maquee {
     color: #045ace;
     font-size: 13px; }
+  .header-msg .live-message, .header-msg .private-message {
+    cursor: pointer; }
   .header-msg .email-box {
     display: inline-block;
     position: relative;

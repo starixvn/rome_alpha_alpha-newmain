@@ -515,6 +515,11 @@ a, a:focus, a:active, a:target, a:hover {
         font-size: 13px;
     }
 
+    .live-message, .private-message {
+        cursor: pointer;
+    }
+
+
     .email-box {
         display: inline-block;
         position: relative;

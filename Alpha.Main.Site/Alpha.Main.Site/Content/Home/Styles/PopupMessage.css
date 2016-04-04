@@ -52,7 +52,8 @@ div.messageBlock {
 
 #scroller {
   position: absolute;
-  white-space: nowrap; }
+  white-space: nowrap;
+  top: 15px; }
 
 #marquee {
   overflow: hidden;
@@ -64,7 +65,7 @@ div.messageBlock {
   height: 16px; }
 
 .message-modal {
-  width: 500px;
+  width: 420px;
   height: 150px;
   top: 0px;
   left: 400px;
@@ -77,6 +78,9 @@ div.messageBlock {
     padding: 3px;
     max-height: 420px;
     overflow-y: auto; }
+  .message-modal .not-shown-message {
+    display: none;
+    opacity: 0; }
 
 .modal-open .modal {
   overflow: hidden; }
