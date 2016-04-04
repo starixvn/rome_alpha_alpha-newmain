@@ -3,16 +3,22 @@
     using System.Linq;
     using System.Web.Mvc;
     using Constants;
-    using Fanex.CustomerSetting.Module.Core.Web;
     using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
     public class LanguageController : BaseController
     {
+        private readonly IUserSession userSession;
+
+        public LanguageController(IUserSession userSession)
+        {
+            this.userSession = userSession ?? UserSession.Current;
+        }
+
         [ChildActionOnly]
         public ActionResult List()
         {
-            var viewModel = new LanguageViewModel();
+            var viewModel = new LanguageViewModel(Language.CodeNames, userSession.Language);
 
             return PartialView(viewModel);
         }
@@ -26,9 +32,8 @@
                 languageCode = Language.Default;
             }
 
-            UserSession.Current.Language = languageCode;
-            UserSession.Current.LangKey = Language.CodeKeys[languageCode];
-            AppSession.Language = languageCode;
+            userSession.Language = languageCode;
+            userSession.LangKey = Language.CodeKeys[languageCode];            
 
             return Json(languageCode);
         }

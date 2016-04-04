@@ -15,7 +15,7 @@
 
         public IndexViewModel(IUserSession userSession = null, string defaultUrl = "")
         {
-            this.userSession = userSession ?? UserSession.Current;
+            this.userSession = userSession;
             this.defaultUrl = string.IsNullOrWhiteSpace(defaultUrl) ? FunctionRegistry.GetDefaultUrl() : defaultUrl;
         }
 

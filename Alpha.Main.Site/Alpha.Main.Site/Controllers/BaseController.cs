@@ -13,7 +13,7 @@
 
     public class BaseController : Controller
     {
-        private CultureInfo _defaultCulture = CultureInfo.CreateSpecificCulture(Language.Default);
+        private CultureInfo defaultCulture = CultureInfo.CreateSpecificCulture(Language.Default);        
 
         protected override void OnAuthentication(AuthenticationContext filterContext)
         {
@@ -58,8 +58,8 @@
             Thread.CurrentThread.CurrentCulture = new CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
-            Thread.CurrentThread.CurrentCulture.DateTimeFormat = _defaultCulture.DateTimeFormat;
-            Thread.CurrentThread.CurrentCulture.NumberFormat = _defaultCulture.NumberFormat;
+            Thread.CurrentThread.CurrentCulture.DateTimeFormat = defaultCulture.DateTimeFormat;
+            Thread.CurrentThread.CurrentCulture.NumberFormat = defaultCulture.NumberFormat;
 
             base.Initialize(requestContext);
         }

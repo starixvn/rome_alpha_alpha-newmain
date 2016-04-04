@@ -61,7 +61,7 @@
 
         private static IEnumerable<Assembly> GetAssemblies()
         {
-            yield return typeof(HomeHandler).Assembly;
+            yield return typeof(MenuBarHandler).Assembly;
         }
 
         private static void RegisterCrossCuttingConcerns(Container container)

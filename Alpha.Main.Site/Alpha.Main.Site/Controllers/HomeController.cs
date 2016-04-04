@@ -4,41 +4,40 @@
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
+    using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
     public class HomeController : BaseController
     {
-        private IMediator _mediator;
+        private readonly IUserSession userSession;
+        private readonly IMediator mediator;
 
-        public HomeController(IMediator mediator)
+        public HomeController(IUserSession userSession, IMediator mediator)
         {
-            _mediator = mediator;
+            this.userSession = userSession;
+            this.mediator = mediator;
         }
 
         public ActionResult Index()
         {
-            var viewModel = new IndexViewModel();
+            var viewModel = new IndexViewModel(userSession);
 
             return View(viewModel);
         }
 
+        [ChildActionOnly]
         public ActionResult MenuBar()
         {
-            var message = new MenuBarQuery();
+            var message = new MenuBarQuery(userSession.RoleId);
 
-            var viewModel = _mediator.Send(message);
+            var viewModel = mediator.Send(message);
 
             return PartialView(viewModel);
         }
 
-        public ActionResult UserProfile()
-        {
-            return View();
-        }
-
         public ActionResult HeaderNav()
         {
-            var viewModel = new HeaderNavViewModel();
+            var viewModel = new HeaderNavViewModel(userSession.Language);
 
             return View(viewModel);
         }

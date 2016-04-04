@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using Constants;
-    using Sunplus.Agent.Model.Entities;
 
     public class LanguageViewModel
     {
@@ -12,7 +11,7 @@
         public LanguageViewModel(Dictionary<string, string> data, string currentLanguage = Language.Default)
         {
             this.data = data ?? Language.CodeNames;
-            this.currentLanguage = UserSession.Current.Language;
+            this.currentLanguage = currentLanguage;
         }
 
         public LanguageViewModel() : this (null, string.Empty)

@@ -1,14 +1,18 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
-    using Sunplus.Agent.Model.Entities;
-
     public class HeaderNavViewModel
     {
-       public string Language
+        private readonly string language;
+        public HeaderNavViewModel(string language)
+        {
+            this.language = language;
+        }
+
+        public string Language
         {
             get
             {
-                return UserSession.Current.Language;
+                return language;
             }
         }
     }

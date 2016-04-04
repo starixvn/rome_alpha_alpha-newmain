@@ -2,17 +2,23 @@
 {
     using Enumerations;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
     public class MenuBarQuery : IRequest<MenuBarViewModel>
     {
+        private byte roleId;
+
+        public MenuBarQuery(byte roleId)
+        {
+            this.roleId = roleId;
+        }
+
         public IUser User
         {
             get
             {
                 var user = new User();
-                user.Level = Enumeration.FromValue<UserLevel>(UserSession.Current.RoleId);
+                user.Level = Enumeration.FromValue<UserLevel>(this.roleId);
 
                 return user;
             }

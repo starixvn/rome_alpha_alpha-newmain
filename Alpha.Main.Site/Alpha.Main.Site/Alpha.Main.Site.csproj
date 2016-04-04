@@ -656,7 +656,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Handlers\HomeHandler.cs" />
     <Compile Include="Models\Requests\MainIndexQuery.cs" />
     <Compile Include="Models\Views\MainIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
