@@ -28,7 +28,7 @@
 
             var viewModel = _mediator.Send(message);
 
-            return View(viewModel);
+            return PartialView(viewModel);
         }
 
         public ActionResult UserProfile()
@@ -46,12 +46,6 @@
         public ActionResult HeaderMsg()
         {
             return View(_mediator.Send(new HotMessagesQuery()));
-        }
-
-        public JsonResult ChangeLanguage(ChangeLanguageQuery query)
-        {
-            var viewModel = _mediator.Send(query);
-            return Json(viewModel);
         }
     }
 }

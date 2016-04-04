@@ -633,7 +633,6 @@
     <Compile Include="Models\Menus\IMenuItem.cs" />
     <Compile Include="Models\Menus\MenuItem.cs" />
     <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
-    <Compile Include="Models\Requests\Home\NavigationQuery.cs" />
     <Compile Include="Models\Requests\MenuBarQuery.cs" />
     <Compile Include="Models\Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="Models\User.cs" />
@@ -686,7 +685,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\Requests\Home\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ko-KR.resx" />

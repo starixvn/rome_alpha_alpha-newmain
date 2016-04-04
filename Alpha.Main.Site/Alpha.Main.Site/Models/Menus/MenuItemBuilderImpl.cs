@@ -11,7 +11,7 @@
     public class MenuItemBuilderImpl : MenuItemBuilder
     {
         private readonly IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
-        private readonly IAuthorizationService _authorizationService;
+        private readonly IAuthorizationService authorizationService;
 
         public MenuItemBuilderImpl() : this(null, null)
         {
@@ -21,7 +21,7 @@
             IAuthorizationService authorizationService,
             IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration)
         {
-            this._authorizationService = authorizationService ?? new AuthorizationService();
+            this.authorizationService = authorizationService ?? new AuthorizationService();
             this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? FunctionRegistry.MenuItemTypeStatusRules;
         }
 
@@ -40,7 +40,7 @@
 
             var menuItem = new MenuItem(
                 menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty],
-               _authorizationService.IsAuthorized);
+               authorizationService.IsAuthorized);
 
             SetDataForMenuItem(menuItem, siteMapNode);
 

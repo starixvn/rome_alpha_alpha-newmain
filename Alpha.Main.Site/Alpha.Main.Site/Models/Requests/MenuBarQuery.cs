@@ -13,6 +13,7 @@
             {
                 var user = new User();
                 user.Level = Enumeration.FromValue<UserLevel>(UserSession.Current.RoleId);
+
                 return user;
             }
         }

@@ -1,8 +1,6 @@
 ﻿namespace Alpha.Main.Site.Models
 {
     using Alpha.Main.Site.Models.Enumerations;
-    using Dtos;
-    using Sunplus.Agent.Model.Entities;
 
     public interface IUser
     {
