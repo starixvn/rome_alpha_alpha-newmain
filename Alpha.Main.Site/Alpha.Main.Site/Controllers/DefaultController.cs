@@ -1,13 +1,10 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Threading.Tasks;
-    using System.Web;
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels;
 
     public class DefaultController : BaseController
     {
