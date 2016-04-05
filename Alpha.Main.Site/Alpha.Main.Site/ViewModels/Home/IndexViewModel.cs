@@ -8,19 +8,43 @@
 
     public class IndexViewModel
     {
+        private readonly int userId;
+        private readonly int onUserId;
         private readonly byte roleId;
         private readonly string language;
         private readonly string languageKey;
-        private readonly int onUserId;
         private readonly Func<string> getDefaultUrl;
 
-        public IndexViewModel(byte roleId, string language, string languageKey, int onUserId, Func<string> getDefaultUrl)
+        public IndexViewModel(
+            int userId,
+            int onUserId,
+            byte roleId,
+            string language,
+            string languageKey,            
+            Func<string> getDefaultUrl)
         {
+            this.userId = userId;
             this.roleId = roleId;
             this.language = language;
             this.languageKey = languageKey;
             this.onUserId = onUserId;
             this.getDefaultUrl = getDefaultUrl;
+        }
+
+        public int UserId
+        {
+            get
+            {
+                return this.userId;
+            }
+        }
+
+        public int OnUserId
+        {
+            get
+            {
+                return this.onUserId;
+            }
         }
 
         public string UserLevel
@@ -45,15 +69,7 @@
             {
                 return this.languageKey;
             }
-        }
-
-        public int OnUserId
-        {
-            get
-            {
-                return this.onUserId;
-            }
-        }
+        }       
 
         public string DefaultUrl
         {

@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
-    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;

@@ -11,6 +11,31 @@
         public IndexQuery(IUserSession userSession)
         {
             this.userSession = userSession;
+        }       
+
+        public int UserId
+        {
+            get
+            {
+                return userSession.UserId;
+            }
+        }
+
+
+        public int OnUserId
+        {
+            get
+            {
+                return userSession.OnUserId;
+            }
+        }
+
+        public byte RoleId
+        {
+            get
+            {
+                return userSession.RoleId;
+            }
         }
 
         public string Language
@@ -26,22 +51,6 @@
             get
             {
                 return userSession.LangKey;
-            }
-        }
-
-        public int OnUserId
-        {
-            get
-            {
-                return userSession.OnUserId;
-            }
-        }
-
-        public byte RoleId
-        {
-            get
-            {
-                return userSession.RoleId;
             }
         }
     }
