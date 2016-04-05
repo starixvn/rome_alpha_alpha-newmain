@@ -27,9 +27,9 @@
         }
 
         [ChildActionOnly]
-        public async Task<ActionResult> MenuBar()
+        public ActionResult MenuBar()
         {
-            var viewModel = await mediator.SendAsync(new MenuBarQuery(userSession.RoleId));
+            var viewModel = mediator.Send(new MenuBarQuery(userSession.RoleId));
 
             return PartialView(viewModel);
         }
