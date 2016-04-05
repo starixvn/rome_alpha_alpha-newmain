@@ -4,7 +4,7 @@
     using MediatR;
     using ViewModels;
 
-    public class MenuBarQuery : IRequest<MenuBarViewModel>
+    public class MenuBarQuery : IAsyncRequest<MenuBarViewModel>
     {
         private byte roleId;
 

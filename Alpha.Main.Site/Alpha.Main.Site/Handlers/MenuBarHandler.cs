@@ -1,12 +1,14 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
+    using System.Threading.Tasks;
     using MediatR;
     using Models.Requests;
     using Services;
     using ViewModels;
 
     public class MenuBarHandler :
-        IRequestHandler<MenuBarQuery, MenuBarViewModel>
+        IAsyncRequestHandler<MenuBarQuery, MenuBarViewModel>
     {
         private readonly SiteMenuService siteMenuService;
 
@@ -23,6 +25,11 @@
             var viewModel = new MenuBarViewModel(menuItems);
 
             return viewModel;
+        }
+
+        Task<MenuBarViewModel> IAsyncRequestHandler<MenuBarQuery, MenuBarViewModel>.Handle(MenuBarQuery message)
+        {
+            throw new NotImplementedException();
         }
     }
 }

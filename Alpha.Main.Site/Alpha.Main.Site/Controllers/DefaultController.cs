@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
@@ -26,11 +27,9 @@
         }
 
         [ChildActionOnly]
-        public ActionResult MenuBar()
+        public async Task<ActionResult> MenuBar()
         {
-            var message = new MenuBarQuery(userSession.RoleId);
-
-            var viewModel = mediator.Send(message);
+            var viewModel = await mediator.SendAsync(new MenuBarQuery(userSession.RoleId));
 
             return PartialView(viewModel);
         }

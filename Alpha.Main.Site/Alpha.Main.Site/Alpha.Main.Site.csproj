@@ -634,7 +634,6 @@
     <Compile Include="Models\Menus\MenuItem.cs" />
     <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
     <Compile Include="Models\Requests\EmptyQuery.cs" />
-    <Compile Include="Models\Requests\IndexQuery.cs" />
     <Compile Include="Models\Requests\MenuBarQuery.cs" />
     <Compile Include="Models\Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="Models\User.cs" />
