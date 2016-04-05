@@ -18,15 +18,15 @@
     </div>
 </section>
 
-<div class="modal fade" id="userMessageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+<div class="modal fade message-modal" id="userMessageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm mCustomScrollbar" role="document" data-mcs-theme="minimal-dark">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
                 <h4 class="modal-title" id="result-detailt-title"></h4>
             </div>
 
-            <div class="modal-body" id="userMessageModalBody">
+            <div class="modal-body"  id="userMessageModalBody">
                     <span class="icon icon-alert"></span>
                         @{
                             var isFirstMessage = true;

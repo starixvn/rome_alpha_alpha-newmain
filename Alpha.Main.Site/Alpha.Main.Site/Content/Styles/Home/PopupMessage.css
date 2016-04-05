@@ -37,6 +37,29 @@ div.messageBlock {
   padding-top: 2px;
   color: #222; }
 
+.message-modal {
+  width: 420px;
+  height: 100px;
+  top: 0px;
+  left: 400px;
+  overflow: hidden; }
+  .message-modal .modal-sm {
+    width: 420px; }
+  .message-modal .modal-content .modal-header {
+    padding: 4px; }
+  .message-modal .modal-dialog {
+    margin: 3px auto; }
+  .message-modal .modal-body {
+    padding: 3px;
+    max-height: 420px;
+    overflow-y: auto; }
+  .message-modal .not-shown-message {
+    display: none;
+    opacity: 0; }
+
+.modal-open .modal {
+  overflow: hidden; }
+
 #live-message {
   overflow: hidden;
   cursor: pointer; }
@@ -61,7 +84,8 @@ div.messageBlock {
   font-size: 20px; }
 
 #userMessageModal .modal-dialog {
-  margin: 10px auto; }
+  margin: 10px auto;
+  max-height: 100px; }
   #userMessageModal .modal-dialog .modal-content {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
     background: #faf9dd; }
