@@ -1,4 +1,38 @@
-﻿function setCookie(name, value, days) {
+﻿var alpha = alpha || {};
+
+alpha.urls = {
+    oldMainRootPath: document.getElementById('oldMainRootPath').value,
+    mainRootPath: document.getElementById('mainRootPath').value
+};
+
+alpha.user =
+    {
+        onUserId: document.getElementById('onUserId').value,
+        passwordHash: document.getElementById('passwordHash').value
+    };
+
+alpha.core = {
+    convertReponseToJson: function (reponse) {
+        return eval("(" + reponse + ")");
+    },
+
+    signOut: function () {
+        var index = window;
+        while (index != index.parent) {
+            index = index.parent;
+        }
+
+        index.location = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
+
+        if (index.location.href.indexOf('https://imb.') == 0 ||
+            index.location.href.indexOf('https://int.') == 0) {
+            index.close();
+        }
+    }
+};
+
+//=> will remove soon to use jquery.cookie
+function setCookie(name, value, days) {
     if (days) {
         var date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -40,17 +74,6 @@ function setCookie(name, value, days, domain) {
     }
 
     document.cookie = name + "=" + value + expires + "; path=/;" + ((typeof domain != 'undefined') ? ("domain=" + domain) : String.Empty);
-}
-
-function deleteAllCookies() {
-    var cookies = document.cookie.split(";");
-
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        var eqPos = cookie.indexOf("=");
-        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    }
 }
 
 

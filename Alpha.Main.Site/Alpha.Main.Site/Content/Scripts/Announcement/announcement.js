@@ -1,15 +1,16 @@
-﻿var AnnouncementManager = function () {
+﻿'use strict';
+
+var AnnouncementManager = function () {
     var self = this;
-    var showedMessageIds = new Array();
+    var showedMessageIds = [];
     var timeoutAnnouncement = 0;
-    var timeoutAnnouncementNext = 0;
 
     self.init = function () {
         self.loadAnnouncement();
     };
 
     self.loadAnnouncement = function () {
-        var url = top.mainRootPath + 'Announcement/HotAnnouncement';
+        var url = alpha.urls.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,
@@ -17,8 +18,6 @@
                 messageIds: showedMessageIds.join(',')
             },
             responseType: "json",
-            error: function (jqXhr, event, ajaxSettings) {
-            },
             success: function (data) {
                 self.showAnnouncement(data);
                 timeoutAnnouncement = setTimeout(self.removeAnnouncement, 120000);
@@ -38,7 +37,7 @@
     };
 
     self.loadAnnouncementNext = function () {
-        var url = top.mainRootPath + 'Announcement/HotAnnouncement';
+        var url = alpha.urls.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,
@@ -47,8 +46,6 @@
                 announmentNext: 1
             },
             responseType: "json",
-            error: function (jqXhr, event, ajaxSettings) {
-            },
             success: function (data) {
                 self.showAnnouncement(data);
                 timeoutAnnouncement = setTimeout(self.removeAnnouncement, 120000);

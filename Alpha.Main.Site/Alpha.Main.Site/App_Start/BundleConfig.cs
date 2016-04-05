@@ -23,13 +23,13 @@
         private static void RegisterHomeJavascript(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/scripts/home").Include(
-                "~/Content/Scripts/Core.js",
-                "~/Content/Scripts/Home/header.nav.js",
-                "~/Content/Scripts/Home/header.msg.js",
-                "~/Content/Scripts/Home/menubar.js",
+                "~/Content/Scripts/core.js",
+                "~/Content/Scripts/Home/header-nav.js",
+                "~/Content/Scripts/Home/header-message.js",
+                "~/Content/Scripts/Home/menu-bar.js",
                 "~/Content/Scripts/CustomerProfiles/brief-profile.js",
-                "~/Content/Scripts/Home/IndexPage.js",
-                "~/Content/Scripts/Announcement/AnnouncementManager.js"));
+                "~/Content/Scripts/Home/index-page.js",
+                "~/Content/Scripts/Announcement/announcement.js"));
         }
 
         private static void RegisterHomeStyle(BundleCollection bundles)

@@ -1,4 +1,8 @@
-﻿
+﻿/// <reference path="index-page.js" />
+
+'use strict';
+/*global indexPageManager,convertReponseToJson*/
+
 var oldMainRootPath = document.getElementById('oldMainRootPath').value;
 var headerMessage = {
     urls: {
@@ -70,7 +74,7 @@ var headerMessage = {
 
     viewPrivateMessage: function () {
         
-        indexPageManager.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
+        indexPage.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
 
         var countPrivateMsg = headerMessage.domElements.privateMessageCounter.html().replace("+", "");
 
@@ -82,7 +86,7 @@ var headerMessage = {
                 responseType: 'json',
                 success: function (rawResult) {
                     var result = convertReponseToJson(rawResult);
-                    if (result.errCode == 0) {
+                    if (result.errCode === 0) {
                         headerMessage.domElements.privateMessageCounter.html(0);
                     }
                 }
@@ -91,16 +95,16 @@ var headerMessage = {
     },
 
     viewSpecialMessage: function () {
-        indexPageManager.changeMenu(headerMessage.urls.oldMainAppMessageForm);
+        indexPage.changeMenu(headerMessage.urls.oldMainAppMessageForm);
     },
 
     viewLiveMessage: function () {
         var liveMessageUrl = headerMessage.domElements.liveMessage.data('live-message-url');
         if (liveMessageUrl) {
-            indexPageManager.changeMenu(liveMessageUrl);
+            indexPage.changeMenu(liveMessageUrl);
         }
         else {
-            indexPageManager.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
+            indexPage.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
         }
     },
 
@@ -118,7 +122,7 @@ var headerMessage = {
         var balloonPopupContent = "";
 
         if (publicMessage[headerMessage.messageIdIndex]
-            && publicMessage[headerMessage.messageIdIndex] != headerMessage.publicMessageId) {
+            && publicMessage[headerMessage.messageIdIndex] !== headerMessage.publicMessageId) {
 
             headerMessage.domElements.liveMessage
                 .html(publicMessage[headerMessage.messageContentIndex])
@@ -133,7 +137,7 @@ var headerMessage = {
     showPrivateMessage: function (privateMessage, unreadPriMsgCount) {
         // Process Private Message: show new private message
         if (privateMessage[headerMessage.messageIdIndex]
-            && headerMessage.privateMessageId != privateMessage[headerMessage.messageIdIndex]) {
+            && headerMessage.privateMessageId !== privateMessage[headerMessage.messageIdIndex]) {
 
             //// Append Private Message to Marquee with green color format.
             var liveMessageContent = headerMessage.domElements.liveMessage.html();

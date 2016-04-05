@@ -1,69 +1,82 @@
-﻿var BriefProfile = function () {
-    var self = this;
-    self.hideTooltipIntroNickname = function () {
-        var tooltipBox = $('#tooltip-box');
-        if (tooltipBox.length) {
-            tooltipBox.remove();
-        }
-    };
+﻿'use strict';
 
-    self.hideProfileTooltip = function () {
-        var profileTooltip = $('#profileTooltip');
-        if (profileTooltip.length) {
-            profileTooltip.remove();
-        }
-    };
+var briefProfile = {
+    domElements: {
+        toolTipBox: null,
+        profileTooltip: null,
+        changePictureLink: null,
+    },
 
-    self.showTooltipProfilePicture = function () {
-        var profileTooltip = $('#profileTooltip');
-        if (profileTooltip.length) {
-            profileTooltip.css("display", "");
-            setTimeout(function () {
-                self.hideProfileTooltip();
-            }, 30000);
-        }
-    };
+    init: function () {
+        briefProfile.cachedDomElements();
+        briefProfile.registerEvents();
+    },
 
-    self.clickToHide = function () {
-        var tooltipBox = $('#tooltip-box');
-        var profileTooltip = $('#profileTooltip');
-        if (tooltipBox.length) {
-            self.hideTooltipIntroNickname();
-            self.showTooltipProfilePicture();
-        }
-        else {
-            if (profileTooltip.length) {
-                self.hideProfileTooltip();
-            }
-        }
-    };
-    self.bindEvents = function () {
-        $(".change-picture-link").click(function () {
-            self.hideProfileTooltip();
-        });
+    registerEvents: function () {
 
         $(document).click(function () {
-            self.clickToHide();
+            briefProfile.clickToHide();
         });
 
         var frameLength = window.parent.frames.length;
         for (var i = 0; i < frameLength; i++) {
             $(window.parent.frames[i].window.document).click(function () {
-                self.clickToHide();
+                briefProfile.clickToHide();
             });
         }
 
-        var tooltipBox = $('#tooltip-box');
-        if (tooltipBox.length) {
+        briefProfile.domElements.changePictureLink
+            .off('click.brief-profile')
+            .on('click.brief-profile', self.hideProfileTooltip);
+
+        if (briefProfile.domElements.length > 0) {
             setTimeout(function () {
-                self.hideTooltipIntroNickname();
-                self.showTooltipProfilePicture();
+                briefProfile.hideTooltipIntroNickname();
+                briefProfile.showTooltipProfilePicture();
             }, 10000);
         }
         else {
-            self.showTooltipProfilePicture();
+            briefProfile.showTooltipProfilePicture();
         }
-    };
-};
+    },
 
-var briefProfile = new BriefProfile();
+    cachedDomElements: function () {
+        briefProfile.domElements.toolTipBox = $('#tooltip-box');
+        briefProfile.domElements.profileTooltip = $('#profileTooltip');
+        briefProfile.domElements.changePictureLink = $('#changePictureLink');
+    },
+
+    hideTooltipIntroNickname: function () {
+        if (briefProfile.domElements.toolTipBox.length > 0) {
+            briefProfile.domElements.toolTipBox.remove();
+        }
+    },
+
+    hideProfileTooltip: function () {
+        if (briefProfile.domElements.profileTooltip.length > 0) {
+            briefProfile.domElements.profileTooltip.remove();
+        }
+    },
+
+    showTooltipProfilePicture: function () {
+        if (briefProfile.domElements.profileTooltip.length > 0) {
+            briefProfile.domElements.profileTooltip.show();
+
+            setTimeout(function () {
+                briefProfile.hideProfileTooltip();
+            }, 30000);
+        }
+    },
+
+    clickToHide: function () {
+        if (briefProfile.domElements.toolTipBox.length > 0) {
+            briefProfile.hideTooltipIntroNickname();
+            briefProfile.showTooltipProfilePicture();
+        }
+        else {
+            if (briefProfile.domElements.profileTooltip.length > 0) {
+                briefProfile.hideProfileTooltip();
+            }
+        }
+    }
+};

@@ -1,4 +1,8 @@
-﻿var headerNavigationManager;
+﻿/// <reference path="index-page.js" />
+
+'use strict';
+
+var headerNavigationManager;
 
 $(document).ready(function () {
     headerNavigationManager.init();
@@ -77,19 +81,19 @@ var HeaderNavigationManager = function () {
 
     self.bindEvents = function () {
         $(".icon-logout").click(function () {
-            indexPageManager.signOut();
+            indexPage.signOut();
         });
         $('.icon-collapse').click(function () {
             self.collapseLeftPanel($(this));
         });
         $(".icon-home").click(function () {
-            indexPageManager.changeMenu(top.oldMainRootPath + '_Reports/PortalPage/PortalPage.aspx');
+            indexPage.changeMenu(alpha.urls.oldMainRootPath + '_Reports/PortalPage/PortalPage.aspx');
         });
         $(".icon-swap-horizontal").click(function () {
-            top.location = top.oldMainRootPath + "Index.aspx";
+            top.location = alpha.urls.oldMainRootPath + "Index.aspx";
         });
         $(".old-view-text").click(function () {
-            top.location = top.oldMainRootPath + "Index.aspx";
+            top.location = alpha.urls.oldMainRootPath + "Index.aspx";
         });
         $(".changelanguage-link").click(function () {
             self.changeLanguage($(this).attr("data-value"));
@@ -121,7 +125,7 @@ var HeaderNavigationManager = function () {
         $('.top-right-menu').parent().toggleClass("active");
     };
     self.changeLanguage = function (lang) {
-        var url = top.mainRootPath + 'Language/Change';
+        var url = alpha.urls.mainRootPath + 'Language/Change';
         jQuery.ajax({
             type: "POST",
             url: url,

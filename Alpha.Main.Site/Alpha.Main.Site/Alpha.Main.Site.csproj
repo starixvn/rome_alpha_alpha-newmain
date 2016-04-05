@@ -410,13 +410,10 @@
     <Content Include="Content\Styles\CustomerProfiles\Images\tooltip_bg.png" />
     <Content Include="Content\Styles\CustomerProfiles\Images\tooltip_left.png" />
     <Content Include="Content\Styles\CustomerProfiles\Images\tooltip_right.png" />
-    <Content Include="Content\Scripts\Home\header.msg.js" />
-    <Content Include="Content\Scripts\Home\header.nav.js" />
-    <Content Include="Content\Scripts\Home\menubar.js" />
-    <Content Include="Content\Scripts\Home\IndexPage.js" />
-    <Content Include="Content\Scripts\Home\piwikLoader.min.js">
-      <DependentUpon>piwikLoader.js</DependentUpon>
-    </Content>
+    <Content Include="Content\Scripts\Home\header-message.js" />
+    <Content Include="Content\Scripts\Home\header-nav.js" />
+    <Content Include="Content\Scripts\Home\menu-bar.js" />
+    <Content Include="Content\Scripts\Home\index-page.js" />
     <Content Include="Content\Styles\Home\agent.css">
       <DependentUpon>agent.scss</DependentUpon>
     </Content>
@@ -467,10 +464,10 @@
     <Content Include="App_Data\Announcements\PopupAdCommon.xml" />
     <Content Include="App_Data\Announcements\PopupAdMasterNeutral.xml" />
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml" />
-    <Content Include="Content\Scripts\Announcement\AnnouncementManager.js" />
+    <Content Include="Content\Scripts\Announcement\announcement.js" />
     <Content Include="Content\Scripts\CustomerProfiles\brief-profile.js" />
-    <Content Include="Content\Scripts\Core.js" />
-    <Content Include="Content\Scripts\Home\piwikLoader.js" />
+    <Content Include="Content\Scripts\core.js" />
+    <Content Include="Content\Scripts\piwik-loader.js" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
