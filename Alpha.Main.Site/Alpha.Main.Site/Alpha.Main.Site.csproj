@@ -639,7 +639,9 @@
     <Compile Include="Models\Requests\ChangeLanguageQuery.cs" />
     <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Services\Impl\SecurityCodeServiceImpl.cs" />
+    <Compile Include="Services\Impl\SessionManagerImpl.cs" />
     <Compile Include="Services\Impl\UserMessageServiceImpl.cs" />
+    <Compile Include="Services\SessionManager.cs" />
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\UserMessageService.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
@@ -656,9 +658,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Services\AnnouncementService.cs" />
-    <Compile Include="Services\CachingService.cs" />
+    <Compile Include="Services\CachingManager.cs" />
     <Compile Include="Services\Impl\AnnouncementServiceImpl.cs" />
-    <Compile Include="Services\Impl\CachingServiceImpl.cs" />
+    <Compile Include="Services\Impl\CachingManagerImpl.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
   </ItemGroup>

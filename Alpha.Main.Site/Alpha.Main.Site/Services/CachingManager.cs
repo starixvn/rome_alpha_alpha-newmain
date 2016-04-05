@@ -3,7 +3,7 @@
     using System;
     using System.Runtime.Caching;
 
-    public interface CachingService
+    public interface CachingManager
     {
         void Add<T>(string key, T item);
 

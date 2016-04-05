@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Threading.Tasks;
+    using System.Web;
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
@@ -21,6 +22,7 @@
 
         public ActionResult Index()
         {
+            
             var viewModel = mediator.Send(new EmptyQuery() as IRequest<IndexViewModel>);
 
             return View(viewModel);

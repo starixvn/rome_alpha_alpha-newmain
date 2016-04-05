@@ -14,10 +14,10 @@
     {
         private const string CacheKeyMenuByUserLevel = "Alpha.Main.MenuForLevel.";
 
-        private readonly CachingService cacheManager;
+        private readonly CachingManager cacheManager;
         private readonly MenuItemBuilder menuItemBuilder;
 
-        public SiteMenuServiceImpl(CachingService cacheManager, MenuItemBuilder menuItemBuilder)
+        public SiteMenuServiceImpl(CachingManager cacheManager, MenuItemBuilder menuItemBuilder)
         {
             Check.Argument.IsNotNull(cacheManager, nameof(cacheManager));
             Check.Argument.IsNotNull(menuItemBuilder, nameof(menuItemBuilder));

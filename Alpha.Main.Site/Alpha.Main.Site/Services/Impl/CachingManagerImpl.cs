@@ -6,11 +6,11 @@
     /// <summary>
     ///  <see cref="https://github.com/alastairtree/LazyCache"/>
     /// </summary>
-    public class CachingServiceImpl : CachingService
+    public class CachingManagerImpl : CachingManager
     {
         private readonly ObjectCache cache;
 
-        public CachingServiceImpl()
+        public CachingManagerImpl()
         {
             cache = MemoryCache.Default;
             DefaultCacheDuration = 60 * 20;
