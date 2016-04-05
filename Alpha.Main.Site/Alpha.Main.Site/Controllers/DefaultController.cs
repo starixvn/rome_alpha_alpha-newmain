@@ -35,18 +35,6 @@
             return PartialView(viewModel);
         }
 
-        public ActionResult HeaderNav()
-        {
-            var query = new HeaderNavQuery
-            {
-                CustId = this.userSession.CustId
-            };
-
-            var viewModel = mediator.Send(query);
-
-            return View(viewModel);
-        }
-
         public ActionResult HeaderMsg()
         {
             var query = new HotMessagesQuery
