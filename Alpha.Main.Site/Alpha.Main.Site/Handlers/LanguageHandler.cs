@@ -4,41 +4,37 @@
     using Constants;
     using MediatR;
     using Models.Requests;
-    using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
     public class LanguageHandler :
-        IRequestHandler<EmptyQuery, LanguageViewModel>,
-        IRequestHandler<ChangeLanguageQuery, string>
+        IRequestHandler<AllLanguagesQuery, LanguageViewModel>,
+        IRequestHandler<ChangeLanguageCommand, string>
     {
-        private readonly IUserSession userSession;
-
-        public LanguageHandler(IUserSession userSession)
+        public string Handle(ChangeLanguageCommand message)
         {
-            this.userSession = userSession;
+            var languageCode = Standardize(message.LanguageCode);
+
+            message.ChangeLanguage(languageCode);
+
+            return languageCode;
         }
 
-        public string Handle(ChangeLanguageQuery message)
+        public LanguageViewModel Handle(AllLanguagesQuery message)
         {
-            var languageCode = message.Language;
+            var viewModel = new LanguageViewModel(Language.CodeNames, Standardize(message.LanguageCode));
 
+            return viewModel;
+        }
+
+        private string Standardize(string languageCode)
+        {
             if (string.IsNullOrWhiteSpace(languageCode)
               || !Language.CodeNames.Keys.Contains(languageCode))
             {
                 languageCode = Language.Default;
             }
 
-            userSession.Language = languageCode;
-            userSession.LangKey = Language.CodeKeys[languageCode];
-
             return languageCode;
-        }
-
-        public LanguageViewModel Handle(EmptyQuery message)
-        {
-            var viewModel = new LanguageViewModel(Language.CodeNames, userSession.Language);
-
-            return viewModel;
         }
     }
 }

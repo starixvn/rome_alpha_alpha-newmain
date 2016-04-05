@@ -7,18 +7,14 @@
     using Configurations;
     using Helpers;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
 
     public class DefaultHandler :
-        IRequestHandler<EmptyQuery, IndexViewModel>,
+        IRequestHandler<IndexQuery, IndexViewModel>
         IRequestHandler<HeaderNavQuery, HeaderNavViewModel>
-    {
-        private readonly IUserSession userSession;
         private readonly string oldMainRootApp;
-
-        internal DefaultHandler(IUserSession userSession, string oldMainRootApp)
-        {
-            this.userSession = userSession;
+       
+    {
+        public IndexViewModel Handle(IndexQuery message)
             this.oldMainRootApp = oldMainRootApp ?? AppPathHelper.GetAppPath(AppSettings.OldMainAppPath, "~/");
         }
 
@@ -36,11 +32,13 @@
                 ChangeSecurityCodeUrl = $"{this.oldMainRootApp}Security/SecurityCode/ChangeSecurityCode",
                 ChangePasswordUrl = $"{this.oldMainRootApp}_MemberInfo/ChangePassword/ChangePassword.aspx"
             };
-        }
-
-        public IndexViewModel Handle(EmptyQuery message)
         {
-            var viewModel = new IndexViewModel(userSession, FunctionRegistry.GetDefaultUrl);
+            var viewModel = new IndexViewModel(
+                message.RoleId,
+                message.Language,
+                message.LanguageKey,
+                message.OnUserId,
+                FunctionRegistry.GetDefaultUrl);
 
             return viewModel;
         }

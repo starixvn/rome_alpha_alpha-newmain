@@ -2,28 +2,32 @@
 {
     using System;
     using System.Web;
-    using App_Start;
     using Helpers;
     using Models.Enumerations;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
 
     public class IndexViewModel
     {
-        private readonly IUserSession userSession;
+        private readonly byte roleId;
+        private readonly string language;
+        private readonly string languageKey;
+        private readonly int onUserId;
         private readonly Func<string> getDefaultUrl;
 
-        public IndexViewModel(IUserSession userSession, Func<string> getDefaultUrl)
+        public IndexViewModel(byte roleId, string language, string languageKey, int onUserId, Func<string> getDefaultUrl)
         {
-            this.userSession = userSession;
-            this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
+            this.roleId = roleId;
+            this.language = language;
+            this.languageKey = languageKey;
+            this.onUserId = onUserId;
+            this.getDefaultUrl = getDefaultUrl;
         }
 
         public string UserLevel
         {
             get
             {
-                return Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName.ToLower();
+                return Enumeration.FromValue<UserLevel>(this.roleId).DisplayName.ToLower();
             }
         }
 
@@ -31,7 +35,7 @@
         {
             get
             {
-                return userSession.Language;
+                return this.language;
             }
         }
 
@@ -39,7 +43,7 @@
         {
             get
             {
-                return userSession.LangKey;
+                return this.languageKey;
             }
         }
 
@@ -47,7 +51,7 @@
         {
             get
             {
-                return userSession.OnUserId;
+                return this.onUserId;
             }
         }
 

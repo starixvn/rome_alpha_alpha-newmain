@@ -22,8 +22,7 @@
 
         public ActionResult Index()
         {
-            
-            var viewModel = mediator.Send(new EmptyQuery() as IRequest<IndexViewModel>);
+            var viewModel = mediator.Send(new IndexQuery(userSession));
 
             return View(viewModel);
         }

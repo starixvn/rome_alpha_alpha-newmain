@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
@@ -53,15 +54,16 @@
             container.RegisterSingleton<IMediator, Mediator>();
             container.Register(typeof(IRequestHandler<,>), assemblies);
             container.Register(typeof(IAsyncRequestHandler<,>), assemblies);
+
             container.RegisterCollection(typeof(INotificationHandler<>), assemblies);
             container.RegisterCollection(typeof(IAsyncNotificationHandler<>), assemblies);
             container.RegisterSingleton(new SingleInstanceFactory(container.GetInstance));
-            container.RegisterSingleton(new MultiInstanceFactory(container.GetAllInstances));
+            container.RegisterSingleton(new MultiInstanceFactory(container.GetAllInstances));            
         }
 
         private static IEnumerable<Assembly> GetAssemblies()
         {
-            yield return typeof(MenuBarHandler).Assembly;
+            yield return typeof(DefaultHandler).Assembly;
         }
 
         private static void RegisterCrossCuttingConcerns(Container container)

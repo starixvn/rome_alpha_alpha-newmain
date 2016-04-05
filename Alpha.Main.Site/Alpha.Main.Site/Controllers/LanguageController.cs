@@ -1,23 +1,31 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System;
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
-    using ViewModels;
+    using Sunplus.Agent.Model.Entities;
 
     public class LanguageController : BaseController
     {
-        private IMediator mediator;
+        private readonly IMediator mediator;
+        private readonly IUserSession userSession;
 
-        public LanguageController(IMediator mediator)
+        public LanguageController(IMediator mediator, IUserSession userSession)
         {
+            if (userSession == null)
+            {
+                throw new ArgumentNullException(nameof(userSession));
+            }
+
+            this.userSession = userSession;
             this.mediator = mediator;
         }
 
         [ChildActionOnly]
         public ActionResult List()
         {
-            var viewModel = mediator.Send(new EmptyQuery() as IRequest<LanguageViewModel>);
+            var viewModel = mediator.Send(new AllLanguagesQuery(userSession.Language));
 
             return PartialView(viewModel);
         }
@@ -25,9 +33,9 @@
         [HttpPost]
         public JsonResult Change(string languageCode)
         {
-            var viewModel = mediator.Send(new ChangeLanguageQuery(languageCode));
+            var viewModel = mediator.Send(new ChangeLanguageCommand(userSession, languageCode));           
 
-            return Json(languageCode);
+            return Json(viewModel);
         }
     }
 }
