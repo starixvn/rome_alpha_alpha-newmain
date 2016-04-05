@@ -2,19 +2,16 @@
 {
     public class HeaderNavViewModel
     {
-        private readonly string language;
+        public string Language { get; set; }
 
-        public HeaderNavViewModel(string language)
-        {
-            this.language = language;
-        }
+        public string HowToUseUrl { get; set; }
 
-        public string Language
-        {
-            get
-            {
-                return language;
-            }
-        }
+        public string ContactUsUrl { get; set; }
+
+        public string ProfilePictureUrl { get; set; }
+
+        public string ChangePasswordUrl { get; set; }
+
+        public string ChangeSecurityCodeUrl { get; set; }
     }
 }

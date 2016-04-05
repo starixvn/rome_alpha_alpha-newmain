@@ -78,20 +78,6 @@ var indexPage = {
             }
         });
     }
-
-    //loadBriefProfile: function () {
-    //    var url = $("#mainRootPath").val() + 'CustomerProfile/BriefProfile';
-
-    //    $.ajax({
-    //        type: "POST",
-    //        url: url,
-    //        responseType: "json",
-    //        success: function (result) {
-    //            $("#profile").html(result);
-                
-    //        }
-    //    });
-    //}
 };
 
 $(function () {

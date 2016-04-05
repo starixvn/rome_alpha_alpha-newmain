@@ -38,7 +38,12 @@
 
         public ActionResult HeaderNav()
         {
-            var viewModel = new HeaderNavViewModel(userSession.Language);
+            var query = new HeaderNavQuery
+            {
+                CustId = this.userSession.CustId
+            };
+
+            var viewModel = mediator.Send(query);
 
             return View(viewModel);
         }
@@ -51,7 +56,9 @@
                 RoleId = this.userSession.RoleId
             };
 
-            return View(mediator.Send(query));
+            var viewModel = mediator.Send(query);
+
+            return View(viewModel);
         }
     }
 }

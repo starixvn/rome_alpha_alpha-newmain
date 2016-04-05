@@ -5,7 +5,8 @@
 
     public class EmptyQuery : 
         IRequest<IndexViewModel>, 
-        IRequest<LanguageViewModel>
+        IRequest<LanguageViewModel>,
+        IRequest<HeaderNavViewModel>
     {
     }
 }
