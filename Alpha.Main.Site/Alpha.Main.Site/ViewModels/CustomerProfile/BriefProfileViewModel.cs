@@ -2,6 +2,8 @@
 {
     public class BriefProfileViewModel
     {
+        public int CustId { get; set; }
+
         public bool IsDefaultAvatar { get; set; }
 
         public string EmbedImage { get; set; }

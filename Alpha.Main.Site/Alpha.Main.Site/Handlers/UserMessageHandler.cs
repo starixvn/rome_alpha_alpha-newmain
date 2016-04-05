@@ -2,11 +2,10 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using System.Web;
-    using Fanex.Common;
     using MediatR;
     using Models.Requests.UserMessages;
     using Services;
+    using Services.Impl;
 
     public class UserMessageHandler :
         IRequestHandler<HotMessagesQuery, IEnumerable<string>>
@@ -14,25 +13,27 @@
         /// <summary>
         /// Do not change this session name, because it is used by old site
         /// </summary>
-        private const string IsShowedMessageSessionKey = "messageisshowed";
+        private const string IsShowedHotMessageSessionKey = "IsShowedHotMessageSessionKey";
 
         private readonly UserMessageService userMessageService;
+        private readonly SessionManager sessionManager;
 
-        public UserMessageHandler(UserMessageService userMessageService)
+        public UserMessageHandler(UserMessageService userMessageService, SessionManagerImpl sessionManager)
         {
             this.userMessageService = userMessageService;
+            this.sessionManager = sessionManager;
         }
 
         private bool IsShowedHotMessages
         {
             get
             {
-                return Converter.ToString2(HttpContext.Current.Session[IsShowedMessageSessionKey]).Equals("1");
+                return this.sessionManager.Get<bool>(IsShowedHotMessageSessionKey);
             }
 
             set
             {
-                HttpContext.Current.Session[IsShowedMessageSessionKey] = value ? 1 : 0;
+                this.sessionManager.Add(IsShowedHotMessageSessionKey, value);
             }
         }
 

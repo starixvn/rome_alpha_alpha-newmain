@@ -89,12 +89,13 @@
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Singleton);
 
-            //// Transient            
+            //// Transient
             container.Register<AnnouncementService, AnnouncementServiceImpl>(Lifestyle.Transient);
             container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Transient);
             container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Transient);
             container.Register<SecurityCodeService, SecurityCodeServiceImpl>(Lifestyle.Transient);
             container.Register<UserMessageService, UserMessageServiceImpl>(Lifestyle.Transient);
+            container.Register<SessionManager, SessionManagerImpl>(Lifestyle.Transient);
         }
 
         private static void RegisterDataAccesses(Container container)

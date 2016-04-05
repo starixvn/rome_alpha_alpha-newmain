@@ -79,6 +79,7 @@
             {
                 IsDefaultAvatar = profile.IsDefaultAvatar,
                 EmbedImage = GenerateImage(profile),
+                CustId = message.CustId,
                 IsShowEditProfilePictureTooltip = isShowEditProfilePictureTooltip,
                 ChangeNickNameUrl = $"{this.oldMainRootApp}LoginOption?custId={message.CustId}",
                 ViewProfileUrl = $"{this.oldMainRootApp}ProfilePicture?custId={message.CustId}",

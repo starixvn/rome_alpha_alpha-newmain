@@ -4,7 +4,7 @@
 
     public interface SessionManager
     {
-        void Add<T>(string key, T item);        
+        void Add<T>(string key, T item);
 
         T Get<T>(string key);
 

@@ -7,12 +7,16 @@
     public class SessionManagerImpl : SessionManager
     {
         private readonly HttpSessionState httpSession;
-        
-        public SessionManagerImpl(HttpSessionState httpSession)
+
+        public SessionManagerImpl() : this(null)
+        {
+        }
+
+        internal SessionManagerImpl(HttpSessionState httpSession)
         {
             this.httpSession = httpSession ?? HttpContext.Current.Session;
         }
-         
+
         public void Add<T>(string key, T item)
         {
             if (item == null)
@@ -20,7 +24,7 @@
                 throw new ArgumentNullException("item");
             }
 
-            ValidateKey(key);            
+            ValidateKey(key);
 
             httpSession.Add(key, item);
         }
@@ -95,6 +99,11 @@
             {
                 throw new ArgumentOutOfRangeException("key", @"Cache keys cannot be empty or whitespace");
             }
+        }
+
+        private string BuildKey(string key)
+        {
+            return $"{httpSession.SessionID}_{key}";
         }
     }
 }

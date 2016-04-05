@@ -1,4 +1,5 @@
-﻿/// <reference path="index-page.js" />
+﻿/// <reference path="../core.js" />
+/// <reference path="index-page.js" />
 
 'use strict';
 
@@ -81,7 +82,7 @@ var HeaderNavigationManager = function () {
 
     self.bindEvents = function () {
         $(".icon-logout").click(function () {
-            indexPage.signOut();
+            alpha.core.signOut();
         });
         $('.icon-collapse').click(function () {
             self.collapseLeftPanel($(this));
