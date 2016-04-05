@@ -18,28 +18,29 @@
     </div>
 </section>
 
-<div class="modal fade message-modal" id="userMessageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-sm" role="document">
+<div class="modal fade" id="userMessageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
                 <h4 class="modal-title" id="result-detailt-title"></h4>
             </div>
 
             <div class="modal-body" id="userMessageModalBody">
-                @{
-                    var isFirstMessage = true;
+                    <span class="icon icon-alert"></span>
+                        @{
+                            var isFirstMessage = true;
 
-                    foreach (var hotMessage in Model)
-                    {
-                        <p class="@(isFirstMessage ? "current-hot-message" : "not-shown-message")">@hotMessage</p>
+                            foreach (var hotMessage in Model)
+                            {
+                                <p class="@(isFirstMessage ? "current-hot-message" : "not-shown-message")">@hotMessage</p>
 
-                        if (isFirstMessage)
-                        {
-                            isFirstMessage = false;
+                                if (isFirstMessage)
+                                {
+                                    isFirstMessage = false;
+                                }
+                            }
                         }
-                    }
-                }
             </div>
         </div>
     </div>

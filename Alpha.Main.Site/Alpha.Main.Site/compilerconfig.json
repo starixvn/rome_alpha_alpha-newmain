@@ -30,5 +30,9 @@
   {
     "outputFile": "Content/Home/Styles/page.css",
     "inputFile": "Content/Home/Styles/page.scss"
+  },
+  {
+    "outputFile": "Content/Styles/Home/PopupMessage.css",
+    "inputFile": "Content/Styles/Home/PopupMessage.scss"
   }
 ]
