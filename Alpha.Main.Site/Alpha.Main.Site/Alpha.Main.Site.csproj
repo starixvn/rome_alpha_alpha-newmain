@@ -496,7 +496,6 @@
     <Content Include="Views\Default\MenuBar.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\HeaderNav.cshtml" />
-    <Content Include="Content\Scripts\Home\header.msg.old.js" />
     <Content Include="Views\Default\HeaderMsg.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithSource.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
@@ -606,8 +605,8 @@
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
-    <Compile Include="DataAccess\CustomerProfileDataAccess.cs" />
-    <Compile Include="DataAccess\Impl\CustomerProfileDataAccessImpl.cs" />
+    <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
+    <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
     <Compile Include="Extensions\SecretExtension.cs" />
     <Compile Include="Extensions\SessionExtension.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -617,7 +616,6 @@
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
-    <Compile Include="Helpers\Argument.cs" />
     <Compile Include="Helpers\ContentSite.cs" />
     <Compile Include="Helpers\LanguageHelper.cs" />
     <Compile Include="Helpers\OldMainSite.cs" />

@@ -6,6 +6,7 @@
     using App_Start;
     using Auth.Services;
     using Auth.Services.Impl;
+    using Fanex.Common.Helper;
     using Helpers;
 
     public class MenuItemBuilderImpl : MenuItemBuilder
@@ -36,7 +37,7 @@
 
         public IMenuItem BuildMenuItem(SiteMapNode siteMapNode)
         {
-            Argument.Requires(siteMapNode != null);
+            Check.Argument.IsNotNull(siteMapNode, nameof(siteMapNode));
 
             var menuItem = new MenuItem(
                 menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty],

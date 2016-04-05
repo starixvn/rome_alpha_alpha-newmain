@@ -6,8 +6,8 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Web.SessionState;
-    using DataAccess;
-    using DataAccess.Impl;
+    using DataAccesses;
+    using DataAccesses.Impl;
     using Fanex.Data.Repository;
     using Handlers;
     using MediatR;

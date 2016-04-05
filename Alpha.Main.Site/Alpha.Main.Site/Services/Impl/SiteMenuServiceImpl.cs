@@ -4,6 +4,7 @@
     using System.Diagnostics.Contracts;
     using System.Linq;
     using System.Web;
+    using Fanex.Common.Helper;
     using Helpers;
     using Models;
     using Models.Enumerations;
@@ -18,8 +19,8 @@
 
         public SiteMenuServiceImpl(CachingService cacheManager, MenuItemBuilder menuItemBuilder)
         {
-            Argument.Requires(cacheManager != null, nameof(cacheManager));
-            Argument.Requires(menuItemBuilder != null, nameof(menuItemBuilder));
+            Check.Argument.IsNotNull(cacheManager, nameof(cacheManager));
+            Check.Argument.IsNotNull(menuItemBuilder, nameof(menuItemBuilder));
 
             this.cacheManager = cacheManager;
             this.menuItemBuilder = menuItemBuilder;
@@ -27,7 +28,7 @@
 
         public IEnumerable<IMenuItem> GetMenuByUser(IUser user)
         {
-            Argument.Requires(user != null, nameof(user));
+            Check.Argument.IsNotNull(user, nameof(user));
 
             var menuItems = Enumerable.Empty<IMenuItem>();
 
@@ -44,7 +45,7 @@
 
             if (menuItems == null)
             {
-                Argument.Requires(SiteMap.RootNode != null, nameof(SiteMap.RootNode));
+                Check.Argument.IsNotNull(SiteMap.RootNode, nameof(SiteMap.RootNode));
 
                 menuItems = BuildMenu(SiteMap.RootNode, userLevel);
 

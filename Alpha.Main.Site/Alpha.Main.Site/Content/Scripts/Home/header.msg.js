@@ -25,8 +25,6 @@ var headerMessage = {
         btnSpecialMessage: null,
         topMessagePopup: null,
         marqueeMessage: null,
-        popupContainer1: null,
-        popupContainer2: null,
         hotMessages: null,
         userMessageModal: null,
         currentHotMessage: null
@@ -47,8 +45,6 @@ var headerMessage = {
         headerMessage.domElements.btnSpecialMessage = $('#btnSpecialMessage');
         headerMessage.domElements.topMessagePopup = $('.top-message');
         headerMessage.domElements.marqueeMessage = $('#marqueeMessage');
-        headerMessage.domElements.popupContainer1 = $('#popupContainer1');
-        headerMessage.domElements.popupContainer2 = $('#popupContainer2');
         headerMessage.domElements.hotMessages = $('#userMessageModalBody');
         headerMessage.domElements.userMessageModal = $('#userMessageModal');
         headerMessage.domElements.currentHotMessage = headerMessage.domElements.hotMessages.find('p.current-hot-message');
@@ -211,9 +207,10 @@ var headerMessage = {
                 });
             }
             else {
-                headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
                 headerMessage.showNextMessage(nextMessage);
             }
+
+            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
         }
     },
 

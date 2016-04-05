@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.DataAccess
+﻿namespace Alpha.Main.Site.DataAccesses
 {
     using Alpha.Main.Site.Criteria.CustomerProfile;
     using Models.CustomerProfiles;

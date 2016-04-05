@@ -3,6 +3,7 @@
     using System;
     using System.Text.RegularExpressions;
     using System.Web;
+    using Fanex.Common.Helper;
 
     public static class AppPathHelper
     {
@@ -12,13 +13,13 @@
         }
 
         public static string GetAppPath(
-            string appName, 
-            string virtualPath, 
-            Func<HttpContext> getCurrentContext, 
+            string appName,
+            string virtualPath,
+            Func<HttpContext> getCurrentContext,
             Func<string> getAppDomainVirtualPath)
         {
-            Argument.Requires(!string.IsNullOrWhiteSpace(appName), nameof(appName));
-            Argument.Requires(!string.IsNullOrWhiteSpace(virtualPath), nameof(virtualPath));
+            Check.Argument.IsNotEmpty(appName, nameof(appName));
+            Check.Argument.IsNotEmpty(virtualPath, nameof(virtualPath));
 
             getCurrentContext = getCurrentContext ?? (() => { return HttpContext.Current; });
             getAppDomainVirtualPath = getAppDomainVirtualPath ?? (() => HttpRuntime.AppDomainAppVirtualPath);
@@ -35,5 +36,5 @@
 
             return appPath;
         }
-    }  
+    }
 }

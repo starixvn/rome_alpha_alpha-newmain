@@ -3,6 +3,7 @@
     public class HeaderNavViewModel
     {
         private readonly string language;
+
         public HeaderNavViewModel(string language)
         {
             this.language = language;

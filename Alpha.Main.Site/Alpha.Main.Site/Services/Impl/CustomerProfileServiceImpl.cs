@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Services.Impl
 {
     using Criteria.CustomerProfile;
-    using DataAccess;
+    using DataAccesses;
     using Models.CustomerProfiles;
 
     public class CustomerProfileServiceImpl : CustomerProfileService

@@ -10,7 +10,6 @@
     using MediatR;
     using Models.CustomerProfiles;
     using Services;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
     using ViewModels.CustomerProfile;
 
@@ -20,38 +19,28 @@
         private const int MaxCountNickNameTooltip = 4;
 
         private readonly CustomerProfileService customerProfileService;
-        private readonly IUserSession userSession;
         private readonly string oldMainRootApp;
+
+        private int custId;
 
         internal CustomerProfileHandler(
             CustomerProfileService customerProfileService,
-            IUserSession userSession,
             string oldMainRootApp)
         {
             this.customerProfileService = customerProfileService;
-            this.userSession = userSession;
             this.oldMainRootApp = oldMainRootApp ?? AppPathHelper.GetAppPath(AppSettings.OldMainAppPath, "~/");
         }
 
         public CustomerProfileHandler(
-            CustomerProfileService customerProfileService,
-            IUserSession userSession) : this(customerProfileService, userSession, null)
+            CustomerProfileService customerProfileService) : this(customerProfileService, null)
         {
-        }
-
-        private string CookiesNameToolTip
-        {
-            get
-            {
-                return SecretExtension.CfsEnCode(string.Format("ToolTip{0}", userSession.CustId), 6);
-            }
         }
 
         private int CountNickNameToolTip
         {
             get
             {
-                var cookiesNameToolTip = HttpContext.Current.Request.Cookies[CookiesNameToolTip];
+                var cookiesNameToolTip = HttpContext.Current.Request.Cookies[GetCookiesNameToolTip(this.custId)];
 
                 return cookiesNameToolTip == null
                     ? 0
@@ -60,7 +49,7 @@
 
             set
             {
-                var toolTipCookie = new HttpCookie(CookiesNameToolTip)
+                var toolTipCookie = new HttpCookie(GetCookiesNameToolTip(this.custId))
                 {
                     HttpOnly = true,
                     Value = value.ToString(),
@@ -72,24 +61,29 @@
             }
         }
 
+        private string GetCookiesNameToolTip(int custId)
+        {
+            return SecretExtension.CfsEnCode($"ToolTip{custId}", 6);
+        }
+
         public BriefProfileViewModel Handle(BriefProfileQuery message)
         {
-            message.CustId = userSession.CustId;
+            this.custId = message.CustId;
 
             var profile = customerProfileService.GetProfilePicture(message.CustId);
             var isShowEditProfilePictureTooltip = profile.IsDefaultAvatar
                 && CountNickNameToolTip < MaxCountNickNameTooltip
-                && !string.IsNullOrEmpty(userSession.NickName);
+                && !string.IsNullOrEmpty(message.NickName);
 
             var viewModel = new BriefProfileViewModel
             {
                 IsDefaultAvatar = profile.IsDefaultAvatar,
                 EmbedImage = GenerateImage(profile),
                 IsShowEditProfilePictureTooltip = isShowEditProfilePictureTooltip,
-                ChangeNickNameUrl = string.Format("{0}LoginOption?custId={1}", this.oldMainRootApp, message.CustId),
-                ViewProfileUrl = string.Format("{0}ProfilePicture?custId={1}", this.oldMainRootApp, message.CustId),
-                Username = HttpUtility.HtmlEncode(userSession.UserName),
-                IsNotMainAccount = userSession.IsSubAcc || userSession.IsInternal
+                ChangeNickNameUrl = $"{this.oldMainRootApp}LoginOption?custId={message.CustId}",
+                ViewProfileUrl = $"{this.oldMainRootApp}ProfilePicture?custId={message.CustId}",
+                Username = HttpUtility.HtmlEncode(message.UserName),
+                IsNotMainAccount = message.IsSubAcc || message.IsInternal
             };
 
             if (CountNickNameToolTip < MaxCountNickNameTooltip)
@@ -101,24 +95,24 @@
                 viewModel.IsShowIntroduceNickName = true;
             }
 
-            viewModel.NickName = BuildNickName();
+            viewModel.NickName = BuildNickName(message);
 
             return viewModel;
         }
 
-        private string BuildNickName()
+        private string BuildNickName(BriefProfileQuery message)
         {
-            if (userSession.IsSubAcc)
+            if (message.IsSubAcc)
             {
-                return string.Format("{0} {1}", Resources.subAcc, HttpUtility.HtmlEncode(userSession.SubUserName));
+                return $"{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}";
             }
-            else if (userSession.IsInternal)
+            else if (message.IsInternal)
             {
-                return string.Format("{0} {1}", Resources.admin, HttpUtility.HtmlEncode(userSession.AdminName));
+                return $"{Resources.admin} {HttpUtility.HtmlEncode(message.AdminName)}";
             }
             else
             {
-                return HttpUtility.HtmlEncode(userSession.NickName);
+                return HttpUtility.HtmlEncode(message.NickName);
             }
         }
 
@@ -128,7 +122,7 @@
             {
                 if (profilePicture.BinaryAvatar != null)
                 {
-                    return "data:image/jpeg;base64," + Convert.ToBase64String(profilePicture.BinaryAvatar);
+                    return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.BinaryAvatar)}";
                 }
             }
             catch (Exception ex)

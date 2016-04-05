@@ -45,7 +45,8 @@
         {
             var query = new HotMessagesQuery
             {
-                HotMessageFilePath = HttpContext.Server.MapPath("~/App_Data/UserMessage/ToolTipMessage.xml")
+                Language = this.userSession.Language,
+                RoleId = this.userSession.RoleId
             };
 
             return View(mediator.Send(query));

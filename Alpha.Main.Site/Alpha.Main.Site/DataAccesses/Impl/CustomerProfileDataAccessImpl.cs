@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.DataAccess.Impl
+﻿namespace Alpha.Main.Site.DataAccesses.Impl
 {
     using Alpha.Main.Site.Criteria.CustomerProfile;
     using Fanex.Common;
