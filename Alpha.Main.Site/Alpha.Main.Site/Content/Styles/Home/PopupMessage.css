@@ -44,7 +44,8 @@ div.messageBlock {
   left: 400px;
   overflow: hidden; }
   .message-modal .modal-sm {
-    width: 420px; }
+    width: 420px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3); }
   .message-modal .modal-content .modal-header {
     padding: 4px; }
   .message-modal .modal-dialog {
@@ -84,11 +85,12 @@ div.messageBlock {
   font-size: 20px; }
 
 #userMessageModal .modal-dialog {
-  margin: 10px auto;
-  max-height: 100px; }
+  margin: 10px auto 0;
+  max-height: 88px; }
   #userMessageModal .modal-dialog .modal-content {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
-    background: #faf9dd; }
+    background: #faf9dd;
+    border-radius: 0; }
     #userMessageModal .modal-dialog .modal-content .modal-header {
       padding: 0 5px;
       position: relative;
