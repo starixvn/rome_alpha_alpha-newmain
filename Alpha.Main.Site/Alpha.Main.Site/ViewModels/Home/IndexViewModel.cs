@@ -9,7 +9,7 @@
     public class IndexViewModel
     {
         private readonly int custId;
-        private readonly int onUserId;
+        private readonly int onlineUserId;
         private readonly byte roleId;
         private readonly string language;
         private readonly string languageKey;
@@ -17,7 +17,7 @@
 
         public IndexViewModel(
             int custId,
-            int onUserId,
+            int onlineUserId,
             byte roleId,
             string language,
             string languageKey,            
@@ -27,7 +27,7 @@
             this.roleId = roleId;
             this.language = language;
             this.languageKey = languageKey;
-            this.onUserId = onUserId;
+            this.onlineUserId = onlineUserId;
             this.getDefaultUrl = getDefaultUrl;
         }
 
@@ -43,7 +43,7 @@
         {
             get
             {
-                return this.onUserId;
+                return this.onlineUserId;
             }
         }
 

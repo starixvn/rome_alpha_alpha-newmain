@@ -5,9 +5,7 @@
     using App_Start;
     using MediatR;
 
-    public class DefaultHandler :
-        IRequestHandler<IndexQuery, IndexViewModel>
-
+    public class DefaultHandler : IRequestHandler<IndexQuery, IndexViewModel>
     {
         public IndexViewModel Handle(IndexQuery message)
         {
