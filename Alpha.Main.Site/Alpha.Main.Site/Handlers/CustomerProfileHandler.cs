@@ -5,7 +5,7 @@
     using Alpha.Main.Site.Models.Requests.CustomerProfile;
     using App_GlobalResources;
     using Configurations;
-    using Extensions;
+    using Fanex.Common;
     using Helpers;
     using MediatR;
     using Models.CustomerProfiles;
@@ -63,7 +63,7 @@
 
         private string GetCookiesNameToolTip(int custId)
         {
-            return SecretExtension.CfsEnCode($"ToolTip{custId}", 6);
+            return Cryptography.CfsEnCode($"ToolTip{custId}");
         }
 
         public BriefProfileViewModel Handle(BriefProfileQuery message)
