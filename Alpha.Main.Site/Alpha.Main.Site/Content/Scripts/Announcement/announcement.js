@@ -5,6 +5,7 @@ var announcement = {
     securityCodeId: ['20130426', '20130526'],
     timeoutAnnouncement: 0,
     announcementCookieName: null,
+
     domElements: {
         announcementId: null,
         popUpId: null,
@@ -13,6 +14,11 @@ var announcement = {
         popUpContainerText: null,
         hideAdvertisement: null,
         announcementCookieId: null,
+    },
+    constants: {
+        maximumTimeToShowAnnoucementPopUp: 5,
+        normalExpiredDays: 30,
+        securityCodeAnnoucementExpiredDay: 1
     },
     urls: {
         hotAnnoucement: alpha.urls.mainRootPath + 'Announcement/HotAnnouncement'
@@ -183,11 +189,16 @@ var announcement = {
     increaseAnnoucementShowTimes: function () {
         var count = announcement.getAnnoucementShowCount();
         var popUpId = announcement.domElements.popUpId;
-        var cookieDays = announcement.securityCodeId.indexOf(popUpId.val()) == -1 ? 30 : 1;
+        var cookieDays = announcement.securityCodeId.indexOf(popUpId.val()) == -1 ?
+            announcement.constants.normalExpiredDays :
+            announcement.constants.securityCodeAnnoucementExpiredDay;
         $.cookie(announcement.announcementCookieName, ++count, { expires: cookieDays, path: '/' });
     },
     doNotShowAnnoucement: function (hide) {
-        $.cookie(announcement.announcementCookieName, hide ? 5 : 1, { expires: 30, path: '/' });
+        $.cookie(
+            announcement.announcementCookieName,
+            hide ? announcement.constants.maximumTimeToShowAnnoucementPopUp : 1,
+            { expires: announcement.constants.normalExpiredDays, path: '/' });
     }
 };
 

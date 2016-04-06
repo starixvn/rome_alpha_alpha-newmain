@@ -113,18 +113,23 @@ var headerNav = {
         headerNav.domElements.iconLogOut.click(function () {
             alpha.core.signOut();
         });
+
         headerNav.domElements.iconCollapse.click(function () {
             headerNav.collapseLeftPanel($(this));
         });
+
         headerNav.domElements.iconHome.click(function () {
             indexPage.changeMenu(headerNav.urls.home);
         });
+
         headerNav.domElements.iconSwapView.click(function () {
             top.location = headerNav.urls.oldMainIndex;
         });
+
         headerNav.domElements.textSwapView.click(function () {
             top.location = headerNav.urls.oldMainIndex;
         });
+
         headerNav.domElements.changeLanguageLink.click(function () {
             headerNav.changeLanguage($(this).data("value"));
         });
