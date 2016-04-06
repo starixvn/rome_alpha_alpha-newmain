@@ -3,6 +3,19 @@
 
 'use strict';
 
+var headerNav = {
+    domElements: {},
+
+    init: function () {
+    },
+
+    registerEvents: function () {
+    },
+
+    cachedDomElements: function () {
+    }
+};
+
 var headerNavigationManager;
 
 $(document).ready(function () {

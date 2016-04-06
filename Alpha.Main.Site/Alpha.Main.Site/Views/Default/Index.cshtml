@@ -21,7 +21,7 @@
         "/css/bootstrap-material/css/bootstrap-material-design.min.css",
         "/css/bootstrap-material/css/ripples.min.css",
         "/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.min.css",
-        "/fonts/iconalpha/style.css")
+        "/fonts/iconalpha/style.min.css")
     @Styles.Render("~/bundle/styles/home")
     @Styles.Render($"~/content/styles/home/{Model.UserLevel}.css")
 </head>
@@ -53,8 +53,8 @@
         "/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.concat.min.js",
         "/css/bootstrap-material/js/material.min.js",
         "/css/bootstrap-material/js/ripples.min.js",
-        "/libs/underscore/underscore-min.js",
-        "/libs/moment/moment-with-locales.js")
+        "/libs/moment/moment-with-locales.min.js",
+        "/libs/jquery/jquery.cookie.min.js")
 
     @Scripts.Render("~/bundles/scripts/home")
 </body>

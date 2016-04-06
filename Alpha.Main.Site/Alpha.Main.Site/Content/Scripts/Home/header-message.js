@@ -27,7 +27,6 @@ var headerMessage = {
         privateMessageCounter: null,
         liveMessage: null,
         btnSpecialMessage: null,
-        topMessagePopup: null,
         marqueeMessage: null,
         hotMessages: null,
         userMessageModal: null,
@@ -47,7 +46,6 @@ var headerMessage = {
         headerMessage.domElements.privateMessageCounter = $('#privateMessageCounter');
         headerMessage.domElements.liveMessage = $('#liveMessage');
         headerMessage.domElements.btnSpecialMessage = $('#btnSpecialMessage');
-        headerMessage.domElements.topMessagePopup = $('.top-message');
         headerMessage.domElements.marqueeMessage = $('#marqueeMessage');
         headerMessage.domElements.hotMessages = $('#userMessageModalBody');
         headerMessage.domElements.userMessageModal = $('#userMessageModal');
@@ -143,7 +141,7 @@ var headerMessage = {
             var liveMessageContent = headerMessage.domElements.liveMessage.html();
             headerMessage.domElements.liveMessage.html(
                 liveMessageContent
-                + ". <font color=\"green\">Private message:"
+                + ". <font color=\"green\">Private message: "
                 + privateMessage[headerMessage.messageContentIndex]
                 + "</font>");
 
@@ -191,7 +189,7 @@ var headerMessage = {
         var nextMessage = [];
 
         if (headerMessage.domElements.currentHotMessage.length === 0) {
-            nextMessage = headerMessage.domElements.hotMessages.find('p.not-shown-message');
+            nextMessage = headerMessage.domElements.hotMessages.find('p.not-shown-message:first');
         }
         else {
             nextMessage = headerMessage.domElements.currentHotMessage.next();
@@ -219,7 +217,7 @@ var headerMessage = {
     },
 
     showNextMessage: function (nextMessage) {
-        nextMessage.show().animate({
+        nextMessage.show().removeClass('not-shown-message').animate({
             opacity: 1.0
         },
         1500,

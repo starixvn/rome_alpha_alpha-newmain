@@ -14,6 +14,9 @@
 
     public class AnnouncementServiceImpl : AnnouncementService
     {
+        public const int PositionTakingChanged = 1;
+        public const int BettingLimitChanged = 2;
+
         private readonly IDynamicRepository dynamicRepository;
         private readonly SecurityCodeService securityCodeService;
 
@@ -61,8 +64,8 @@
 
         private string GetSettingChangedMessage(IEnumerable<string> messageTypes, HotAnnouncementQuery query)
         {
-            var isPositionTakingChanged = messageTypes.Contains(MessageTypeConstant.PositionTakingChanged.ToString());
-            var isBettingLimitChanged = messageTypes.Contains(MessageTypeConstant.BettingLimitChanged.ToString());
+            var isPositionTakingChanged = messageTypes.Contains(PositionTakingChanged.ToString());
+            var isBettingLimitChanged = messageTypes.Contains(BettingLimitChanged.ToString());
             var messageContent = string.Empty;
             if (isPositionTakingChanged && isBettingLimitChanged)
             {
