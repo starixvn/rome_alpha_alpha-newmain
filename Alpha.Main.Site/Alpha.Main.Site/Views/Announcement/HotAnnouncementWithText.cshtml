@@ -1,13 +1,11 @@
 ﻿@model HotAnnouncement
-<div class="modal fade announcement-modal" id="popup-container-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     style="top: @(Model.Top + "px"); left: @(Model.Left + "px");">
+<div class="modal fade announcement-modal" id="popup-container-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"><span aria-hidden="true"></span></button>
-                <h4 class="modal-title" id="result-detailt-title"></h4>
+                <h4 class="modal-title" id="result-detailt-title"><span class="icon icon-bullhorn"></span>Announcement!</h4>
             </div>
-            <span class="icon icon-alert"></span>
             <div class="modal-body" id="announcementModalBody">
                 @Html.Raw(Model.Content)
             </div>
