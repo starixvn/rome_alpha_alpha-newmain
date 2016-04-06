@@ -618,7 +618,6 @@
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />
     <Compile Include="Models\Enumerations\UserLevel.cs" />
-    <Compile Include="Models\IUser.cs" />
     <Compile Include="Models\Menus\MenuItemBuilder.cs" />
     <Compile Include="Models\Menus\MenuItemBuilderImpl.cs" />
     <Compile Include="Models\Menus\MenuStatus.cs" />
@@ -630,7 +629,6 @@
     <Compile Include="Models\Requests\HeaderNavQuery.cs" />
     <Compile Include="Models\Requests\MenuBarQuery.cs" />
     <Compile Include="Models\Requests\UserMessages\HotMessagesQuery.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Models\Dtos\ResultModel.cs" />
     <Compile Include="Models\Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />

@@ -5,8 +5,6 @@
     using System.Linq;
     using System.Web;
     using Fanex.Common.Helper;
-    using Helpers;
-    using Models;
     using Models.Enumerations;
     using Models.Menus;
 
@@ -26,13 +24,12 @@
             this.menuItemBuilder = menuItemBuilder;
         }
 
-        public IEnumerable<IMenuItem> GetMenuByUser(IUser user)
+        public IEnumerable<IMenuItem> GetMenuByUserLevel(UserLevel userLevel)
         {
-            Check.Argument.IsNotNull(user, nameof(user));
-
+            
             var menuItems = Enumerable.Empty<IMenuItem>();
 
-            menuItems = GetMenuDataByUserLevel(user.Level);
+            menuItems = GetMenuDataByUserLevel(userLevel);
 
             return menuItems;
         }

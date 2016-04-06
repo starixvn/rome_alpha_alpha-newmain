@@ -18,7 +18,7 @@
 
         public MenuBarViewModel Handle(MenuBarQuery message)
         {
-            var menuItems = siteMenuService.GetMenuByUser(message.User);
+            var menuItems = siteMenuService.GetMenuByUserLevel(message.UserLevel);
 
             var viewModel = new MenuBarViewModel(menuItems);
 

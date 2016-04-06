@@ -13,14 +13,11 @@
             this.roleId = roleId;
         }
 
-        public IUser User
+        public UserLevel UserLevel
         {
             get
             {
-                var user = new User();
-                user.Level = Enumeration.FromValue<UserLevel>(this.roleId);
-
-                return user;
+               return Enumeration.FromValue<UserLevel>(this.roleId);
             }
         }
     }
