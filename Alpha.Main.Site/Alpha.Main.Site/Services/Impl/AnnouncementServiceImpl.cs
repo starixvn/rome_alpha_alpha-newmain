@@ -94,7 +94,7 @@
                         ContentTh = content,
                         ContentKo = content,
                         ContentEs = string.Empty,
-                        Type = MessageTypeConstant.PositionTakingChanged,
+                        Type = PositionTakingChanged,
                         IsSticky = false,
                         MatchId = 0,
                         IsBatch = true
