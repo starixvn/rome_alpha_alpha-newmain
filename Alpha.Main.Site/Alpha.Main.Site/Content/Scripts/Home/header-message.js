@@ -38,7 +38,7 @@ var headerMessage = {
         headerMessage.cacheElements();
         headerMessage.registerEvents();
 
-        headerMessage.showHotMessage();
+        headerMessage.showHotMessages();
         headerMessage.getMessages();
     },
 
@@ -108,7 +108,7 @@ var headerMessage = {
         }
     },
 
-    showHotMessage: function () {
+    showHotMessages: function () {
         if (headerMessage.domElements.currentHotMessage.length > 0) {
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
         }

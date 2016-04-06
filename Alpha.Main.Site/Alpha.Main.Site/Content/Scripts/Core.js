@@ -31,6 +31,13 @@ alpha.core = {
     }
 };
 
+//// Set value for old main
+top.ph = alpha.user.passwordHash;
+top.isNewSite = true;
+top.errCodes = [];
+top.oldMainRootPath = alpha.urls.oldMainRootPath;
+top.mainRootPath = alpha.urls.mainRootPath;
+
 //=> will remove soon to use jquery.cookie
 function setCookie(name, value, days) {
     if (days) {

@@ -6,10 +6,6 @@
 var indexPage = {
     currentTab: null,
 
-    urls: {
-
-    },
-
     domElements: {
         mainFrame: null,
         partialContents: null
@@ -73,7 +69,7 @@ var indexPage = {
             var url = $(item).data('url');
             if (url && url.length > 0) {
                 $(item).load(url + '?' + Math.random(), function () {
-                    if ($(item).hasClass('brief-profile')) {
+                    if ($(item).hasClass('customer-profile')) {
                         briefProfile.init();
                     }
                 });
