@@ -38,10 +38,6 @@ top.errCodes = [];
 top.oldMainRootPath = alpha.urls.oldMainRootPath;
 top.mainRootPath = alpha.urls.mainRootPath;
 
-//=> will remove soon to use jquery.cookie
-function convertReponseToJson(reponse) {
-    return eval("(" + reponse + ")");
-}
 
 
 

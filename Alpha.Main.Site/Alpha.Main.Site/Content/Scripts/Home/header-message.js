@@ -1,7 +1,7 @@
 ﻿/// <reference path="index-page.js" />
 
 'use strict';
-/*global indexPage, convertReponseToJson*/
+/*global indexPage*/
 
 var oldMainRootPath = document.getElementById('oldMainRootPath').value;
 var headerMessage = {
@@ -83,7 +83,7 @@ var headerMessage = {
                 type: 'POST',
                 responseType: 'json',
                 success: function (rawResult) {
-                    var result = convertReponseToJson(rawResult);
+                    var result = alpha.core.convertReponseToJson(rawResult);
                     if (result.errCode === 0) {
                         headerMessage.domElements.privateMessageCounter.html(0);
                     }
@@ -167,7 +167,7 @@ var headerMessage = {
             url: headerMessage.urls.getMessages,
             responseType: "json",
             success: function (rawResults) {
-                var results = convertReponseToJson(rawResults);
+                var results = alpha.core.convertReponseToJson(rawResults);
 
                 try {
                     var publicMessage = results.public_message ? results.public_message : 0,
