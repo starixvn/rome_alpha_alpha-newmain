@@ -61,9 +61,16 @@
             }
         }
 
+        public static string StaticResourcesVersion
+        {
+            get
+            {
+                return Converter.ToString2(ConfigurationManager.AppSettings["ContentApp:StaticResourcesVersion"]);
+            }
+        }
+
         public static string GetAppPath(string name)
         {
-            // Argument.Requires(!string.IsNullOrWhiteSpace(name), nameof(name));   
             return ConfigurationManager.AppSettings[name];
         }
     }
