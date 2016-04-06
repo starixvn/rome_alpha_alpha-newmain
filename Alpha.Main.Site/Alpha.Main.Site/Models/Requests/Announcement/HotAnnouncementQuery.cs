@@ -1,25 +1,51 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.Announcement
 {
-    using System.Collections.Generic;
     using Announcements;
     using Constants;
-    using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
     using MediatR;
+    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
+    using System.Collections.Generic;
 
     public class HotAnnouncementQuery : IRequest<HotAnnouncement>
     {
         private IDictionary<int, bool> productsStatus;
 
+        private bool isSecurityCodeActive;
+
+        private ISecurityCodeSession securityCodeSession;
+
+        private IUserSession userSession;
+
         public HotAnnouncementQuery()
         {
         }
 
-        internal HotAnnouncementQuery(IDictionary<int, bool> productsStatus)
+        internal HotAnnouncementQuery(
+            IDictionary<int, bool> productsStatus,
+            ISecurityCodeSession securityCodeSession,
+            IUserSession userSession,
+            bool isSecurityCodeActive)
         {
             this.productsStatus = productsStatus;
+            this.securityCodeSession = securityCodeSession;
+            this.userSession = userSession;
+            this.isSecurityCodeActive = isSecurityCodeActive;
+        }
+
+        public IUserSession UserSession
+        {
+            get
+            {
+                return userSession;
+            }
+
+            set
+            {
+                userSession = value;
+            }
         }
 
         public string MessageIds { get; set; }
@@ -34,7 +60,12 @@
         {
             get
             {
-                return SecurityCodeConfig.IsActive;
+                return isSecurityCodeActive;
+            }
+
+            set
+            {
+                isSecurityCodeActive = value;
             }
         }
 
@@ -42,7 +73,7 @@
         {
             get
             {
-                return SecurityCodeSession.IsRequireSecurityCode;
+                return SecurityCodeSession != null ? SecurityCodeSession.IsRequireSecurityCode : false;
             }
         }
 
@@ -50,7 +81,7 @@
         {
             get
             {
-                return SecurityCodeSession.IsInternal;
+                return SecurityCodeSession != null ? SecurityCodeSession.IsInternal : false;
             }
         }
 
@@ -58,7 +89,7 @@
         {
             get
             {
-                return (SecurityCodeStatus)SecurityCodeSession.SecurityCodeResult;
+                return SecurityCodeSession != null ? (SecurityCodeStatus)SecurityCodeSession.SecurityCodeResult : SecurityCodeStatus.NONE;
             }
         }
 
@@ -66,7 +97,12 @@
         {
             get
             {
-                return CookieLessSessionFactory.SecurityCodeSession;
+                return securityCodeSession;
+            }
+
+            set
+            {
+                securityCodeSession = value;
             }
         }
 
@@ -83,6 +119,62 @@
                 };
 
                 return productsStatus;
+            }
+        }
+
+        public byte RoleId
+        {
+            get
+            {
+                return userSession != null ? userSession.RoleId : (byte)0;
+            }
+        }
+
+        public int AdminId
+        {
+            get
+            {
+                return userSession != null ? userSession.AdminId : 0;
+            }
+        }
+
+        public int CustId
+        {
+            get
+            {
+                return userSession != null ? userSession.CustId : 0;
+            }
+        }
+
+        public string Language
+        {
+            get
+            {
+                return userSession != null ? userSession.Language : string.Empty;
+            }
+        }
+
+        public int UserId
+        {
+            get
+            {
+                return userSession != null ? userSession.UserId : 0;
+            }
+        }
+
+        public string UserName
+        {
+            get
+            {
+                return userSession != null ? userSession.UserName : string.Empty;
+            }
+        }
+
+        public string Site
+        {
+            get
+            {
+                return userSession != null ? userSession.Site : string.Empty;
             }
         }
     }

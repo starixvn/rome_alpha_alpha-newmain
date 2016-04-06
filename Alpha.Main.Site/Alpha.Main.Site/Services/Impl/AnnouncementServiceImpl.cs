@@ -1,32 +1,27 @@
 ﻿namespace Alpha.Main.Site.Services.Impl
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Xml;
     using App_GlobalResources;
     using Constants;
     using Criteria.Announcement;
     using Fanex.Common;
     using Fanex.Data.Repository;
-    using Helpers;
     using Models.Announcements;
     using Models.Requests.Announcement;
-    using Sunplus.Agent.Model.Entities;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Xml;
 
     public class AnnouncementServiceImpl : AnnouncementService
     {
         private readonly IDynamicRepository dynamicRepository;
-        private readonly IUserSession userSession;
         private readonly SecurityCodeService securityCodeService;
 
         public AnnouncementServiceImpl(
             IDynamicRepository dynamicRepository,
-            IUserSession userSession,
             SecurityCodeService securityCodeService)
         {
             this.dynamicRepository = dynamicRepository;
-            this.userSession = userSession;
             this.securityCodeService = securityCodeService;
         }
 
@@ -40,18 +35,18 @@
             }
 
             IEnumerable<string> messageTypes = null;
-            if (userSession.RoleId == RoleIdConstant.Agent &&
-                userSession.AdminId == 0)
+            if (message.RoleId == RoleIdConstant.Agent &&
+                message.AdminId == 0)
             {
                 messageTypes = dynamicRepository.Fetch<string>(new GetMessageTypeListCriteria
                 {
-                    CustId = userSession.CustId
+                    CustId = message.CustId
                 });
             }
 
             if (messageTypes != null)
             {
-                hotAnnouncement.Content = GetSettingChangedMessage(messageTypes);
+                hotAnnouncement.Content = GetSettingChangedMessage(messageTypes, message);
             }
 
             if (string.IsNullOrEmpty(hotAnnouncement.Content))
@@ -59,12 +54,12 @@
                 hotAnnouncement = GetHotAnnouncementFromLocalFiles(message);
             }
 
-            hotAnnouncement.LanguagueCode = LanguageHelper.GetShortLanguageCode(userSession.Language);
+            hotAnnouncement.Languague = message.Language;
 
             return hotAnnouncement;
         }
 
-        private string GetSettingChangedMessage(IEnumerable<string> messageTypes)
+        private string GetSettingChangedMessage(IEnumerable<string> messageTypes, HotAnnouncementQuery message)
         {
             var isPositionTakingChanged = messageTypes.Contains(MessageTypeConstant.PositionTakingChanged.ToString());
             var isBettingLimitChanged = messageTypes.Contains(MessageTypeConstant.BettingLimitChanged.ToString());
@@ -85,27 +80,29 @@
             if (!string.IsNullOrEmpty(messageContent))
             {
                 var content = messageContent.Replace("<br>", " ");
-                InsertPersonalMessage(new InsertPersonalMessageCriteria
-                {
-                    ContentEn = content,
-                    ContentCh = content,
-                    ContentCs = content,
-                    ContentJp = content,
-                    ContentIt = string.Empty,
-                    ContentTh = content,
-                    ContentKo = content,
-                    ContentEs = string.Empty,
-                    Type = MessageTypeConstant.PositionTakingChanged,
-                    IsSticky = false,
-                    MatchId = 0,
-                    IsBatch = true
-                });
+                InsertPersonalMessage(
+                    new InsertPersonalMessageCriteria
+                    {
+                        ContentEn = content,
+                        ContentCh = content,
+                        ContentCs = content,
+                        ContentJp = content,
+                        ContentIt = string.Empty,
+                        ContentTh = content,
+                        ContentKo = content,
+                        ContentEs = string.Empty,
+                        Type = MessageTypeConstant.PositionTakingChanged,
+                        IsSticky = false,
+                        MatchId = 0,
+                        IsBatch = true
+                    },
+                    message);
             }
 
             return messageContent;
         }
 
-        private void InsertPersonalMessage(InsertPersonalMessageCriteria criteria)
+        private void InsertPersonalMessage(InsertPersonalMessageCriteria criteria, HotAnnouncementQuery message)
         {
             var rawData = dynamicRepository.Fetch<dynamic>(criteria).FirstOrDefault();
             if (rawData == null)
@@ -116,15 +113,15 @@
             dynamicRepository.Fetch<bool>(new InsertPersonalMessageTargetCriteria
             {
                 MessageId = rawData.Id,
-                TargetId = userSession.UserId,
-                TargetName = userSession.UserName,
+                TargetId = message.UserId,
+                TargetName = message.UserName,
                 IsRead = false,
                 BetTransId = "0"
             });
 
             dynamicRepository.Fetch<bool>(new UpdateViewStatus
             {
-                CustId = userSession.CustId,
+                CustId = message.CustId,
                 IsViewed = true
             });
         }
@@ -143,7 +140,7 @@
                     .ToList();
             }
 
-            bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(userSession.Site, message.SecurityCodeResult, message.SecurityCodeSession);
+            bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(message.Site, message.SecurityCodeResult, message.SecurityCodeSession);
             if (!isForceUseSecurityCode)
             {
                 result.Add(MessageId.ForceUseSecurityCode);
@@ -167,7 +164,7 @@
             var xmlCommonMsg = GetCommonAnnouncement(message);
             JoinTheTwoAnnouncementTypes(xmlPrivateMsg, xmlCommonMsg);
 
-            var language = userSession.Language;
+            var language = message.Language;
             var announcementNodes = xmlCommonMsg.SelectNodes("FileDB/PopupAnnouncement");
             var hotAnnouncement = new HotAnnouncement();
             foreach (XmlNode announcementNode in announcementNodes)
@@ -177,7 +174,7 @@
                 long.TryParse(nodeIds, out nodeId);
                 if (nodeId == 0 ||
                     showedMessages.Contains(nodeId) ||
-                    IsExcludedHotMessageSite(announcementNode, userSession.Site) ||
+                    IsExcludedHotMessageSite(announcementNode, message.Site) ||
                     IsExpiredHotMessage(announcementNode))
                 {
                     continue;

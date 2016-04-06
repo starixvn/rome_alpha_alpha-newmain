@@ -3,7 +3,7 @@
          left: @(Model.Left + "px");"
      class="ui-draggable">
 
-    <div class="@("toptitlepopup_" + Model.LanguagueCode)">
+    <div class="@("toptitlepopup-" + Model.Languague.ToLowerInvariant())">
         <div class="advertisement">
             <a class="advertisement-close" href="javascript:;" title="@Resources.close">
                 <img src="~/Content/Styles/Announcement/Images/iconClose.png"

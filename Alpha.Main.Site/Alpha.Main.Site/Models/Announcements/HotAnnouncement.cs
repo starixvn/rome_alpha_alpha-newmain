@@ -18,6 +18,6 @@
 
         public string CookieId { get; set; }
 
-        public string LanguagueCode { get; set; }
+        public string Languague { get; set; }
     }
 }

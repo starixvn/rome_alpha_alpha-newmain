@@ -50,31 +50,37 @@
     position: absolute;
 }
 
-    #popup-container-text .toptitlepopup_en {
+    #popup-container-text .toptitlepopup-en-us {
         background: url(Images/toptitlepopup.png) no-repeat;
         width: 474px;
         height: 55px;
     }
 
-    #popup-container-text .toptitlepopup_th {
+    #popup-container-text .toptitlepopup-th-th {
         background: url(Images/toptitlepopup_thai.png) no-repeat;
         width: 474px;
         height: 55px;
     }
 
-    #popup-container-text .toptitlepopup_zh {
+    #popup-container-text .toptitlepopup-zh-tw {
         background: url(Images/toptitlepopup_TW.png) no-repeat;
         width: 474px;
         height: 55px;
     }
 
-    #popup-container-text .toptitlepopup_ko {
+    #popup-container-text .toptitlepopup-zh-cn {
+        background: url(Images/toptitlepopup_TW.png) no-repeat;
+        width: 474px;
+        height: 55px;
+    }
+
+    #popup-container-text .toptitlepopup-ko-kr {
         background: url(Images/toptitlepopup_KO.png) no-repeat;
         width: 474px;
         height: 55px;
     }
 
-    #popup-container-text .toptitlepopup_vi {
+    #popup-container-text .toptitlepopup-vi-vn {
         background: url(Images/toptitlepopup_vn.png) no-repeat;
         width: 474px;
         height: 55px;
