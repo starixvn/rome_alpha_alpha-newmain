@@ -4,21 +4,31 @@
 'use strict';
 
 var headerNav = {
-    domElements: {},
+    domElements: {
+        clock: null,
+        languageCode: null,
+        language: null
+    },
 
     init: function () {
+        headerNav.cachedDomElements();
+        headerNav.registerEvents();
     },
 
     registerEvents: function () {
     },
 
     cachedDomElements: function () {
+        headerNav.domElements.clock = $('#clock');
+        headerNav.domElements.languageCode = $("#language-code");
+        headerNav.domElements.language = $("#language");
     }
 };
 
 var headerNavigationManager;
 
 $(document).ready(function () {
+    headerNav.init();
     headerNavigationManager.init();
 });
 
@@ -48,13 +58,14 @@ var HeaderNavigationManager = function () {
     };
 
     self.initElements = function () {
-        self.data.languageCode = $("#language-code").val();
-        var currentLanguage = $("#language").attr("data-currentlanguage");
+        self.data.languageCode = headerNav.domElements.languageCode.val();
+        var currentLanguage = headerNav.domElements.language.attr("data-currentlanguage");
         var language = $(".list-language ." + currentLanguage + " > a").html();
         $(".language-selector-container").html(language);
     };
+
     self.initClock = function () {
-        var clock = $("#clock");
+        var clock = headerNav.domElements.clock;
 
         self.data.clock.labelAM = clock.attr("data-label-am");
         self.data.clock.labelPM = clock.attr("data-label-pm");

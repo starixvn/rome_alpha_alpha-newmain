@@ -1,7 +1,7 @@
 ﻿/// <reference path="index-page.js" />
 
 'use strict';
-/*global indexPageManager,convertReponseToJson*/
+/*global indexPage, convertReponseToJson*/
 
 var oldMainRootPath = document.getElementById('oldMainRootPath').value;
 var headerMessage = {
@@ -117,7 +117,6 @@ var headerMessage = {
     showPublicMessage: function (publicMessage) {
         // Process Public Message: show new public message and its link to message form
         var url = headerMessage.urls.oldMainAppMessageForm + publicMessage[headerMessage.messageTypeIndex];
-        var balloonPopupContent = "";
 
         if (publicMessage[headerMessage.messageIdIndex]
             && publicMessage[headerMessage.messageIdIndex] !== headerMessage.publicMessageId) {
@@ -181,8 +180,11 @@ var headerMessage = {
 
                     headerMessage.applyScroller();
                 } catch (e) { }
+
+                setTimeout(headerMessage.getMessages, 60 * 1000);
             }
         });
+
     },
 
     swapMessage: function () {

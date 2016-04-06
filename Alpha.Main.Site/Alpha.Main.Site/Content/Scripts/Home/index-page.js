@@ -1,7 +1,7 @@
 ﻿/// <reference path="../core.js" />
 
 'use strict';
-/*global core*/
+/*global alpha, setCookie, briefProfile*/
 
 var indexPage = {
     currentTab: null,
@@ -26,7 +26,7 @@ var indexPage = {
 
     cachedDomElements: function () {
         indexPage.domElements.mainFrame = $('#main');
-        indexPage.domElements.partialContents = $('.partial-content')
+        indexPage.domElements.partialContents = $('.partial-content');
     },
 
     changeMenu: function (url) {
@@ -35,7 +35,7 @@ var indexPage = {
 
     reCheckin: function () {
         // Post with return result in JSON format
-        setCookie("ssl", location.href.indexOf('https://') == 0, 30);
+        setCookie("ssl", location.href.indexOf('https://') === 0, 30);
 
         var url = alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx';
 
@@ -45,9 +45,9 @@ var indexPage = {
             data: { onid: alpha.user.onUserId },
             responseType: "json",
             success: function (result) {
-                var result = convertReponseToJson(result);
+                result = alpha.core.convertReponseToJson(result);
                 var errCode = result.errCode;
-                if (errCode == 0) {
+                if (errCode === 0) {
                     setTimeout(indexPage.reCheckin, 30000);
                 } else {
                     var errMsg = result.errMsg;
