@@ -125,11 +125,11 @@ var announcement = {
         });
 
         announcement.domElements.hideAdvertisement.click(function () {
-            announcement.doNotShowAnnoucement($(this)[0].checked);
+            announcement.doNotShowAnnoucement($(this).is(':checked'));
         });
 
         setTimeout(function () {
-            announcement.domElements.announcementId[0].style.display = 'block';
+            announcement.domElements.announcementId.css('display', 'block');
             var popUpContainer = announcement.domElements.popUpContainerText.length ?
                 announcement.domElements.popUpContainerText :
                 announcement.domElements.popUpContainer;
