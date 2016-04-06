@@ -1,27 +1,16 @@
 ﻿@model HotAnnouncement
-<div id="popup-container-text" style="top: @(Model.Top + "px");
-         left: @(Model.Left + "px");"
-     class="ui-draggable">
-
-    <div class="@("toptitlepopup-" + Model.Languague.ToLowerInvariant())">
-        <div class="advertisement">
-            <a class="advertisement-close" href="javascript:;" title="@Resources.close">
-                <img src="~/Content/Styles/Announcement/Images/iconClose.png"
-                     alt="@Resources.close" class="icon-close" />
-            </a>
-        </div>
-    </div>
-
-    <div class="paddingleft">
-        <div class="linebg">
-            <div>
-                <div class="message">
-                    @Html.Raw(Model.Content)
-                </div>
+<div class="modal fade announcement-modal" id="popup-container-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     style="top: @(Model.Top + "px"); left: @(Model.Left + "px");">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"><span aria-hidden="true"></span></button>
+                <h4 class="modal-title" id="result-detailt-title"></h4>
             </div>
-            <div class='lineblue'></div>
-            <div class='linewhite'></div>
+            <span class="icon icon-alert"></span>
+            <div class="modal-body" id="announcementModalBody">
+                @Html.Raw(Model.Content)
+            </div>
         </div>
-        <div class="bottomborder"></div>
     </div>
 </div>

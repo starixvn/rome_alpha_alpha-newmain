@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var announcementManager = {
+var announcement = {
     showedMessageIds: [],
     securityCodeId: ['20130426', '20130526'],
     timeoutAnnouncement: 0,
@@ -16,16 +16,16 @@ var announcementManager = {
     },
 
     init: function () {
-        announcementManager.loadAnnouncement();
+        announcement.loadAnnouncement();
     },
     cacheElements: function () {
-        announcementManager.domElements.announcementId = $('#announcement-id');
-        announcementManager.domElements.popUpId = $("#popup-id")[0];
-        announcementManager.domElements.popUpPanel = $("#popup_panel")[0];
-        announcementManager.domElements.popUpContainer = $('#popup-container')[0];
-        announcementManager.domElements.popUpContainerText = $('#popup-container-text')[0];
-        announcementManager.domElements.hideAdvertisement = $("#popup-container #chkHide");
-        announcementManager.domElements.announcementCookieId = $("#announcement-cookies-id")[0];
+        announcement.domElements.announcementId = $('#announcement-id');
+        announcement.domElements.popUpId = $("#popup-id");
+        announcement.domElements.popUpPanel = $("#popup_panel");
+        announcement.domElements.popUpContainer = $('#popup-container');
+        announcement.domElements.popUpContainerText = $('#popup-container-text');
+        announcement.domElements.hideAdvertisement = $("#popup-container #chkHide");
+        announcement.domElements.announcementCookieId = $("#announcement-cookies-id");
     },
     loadAnnouncement: function () {
         var url = alpha.urls.mainRootPath + 'Announcement/HotAnnouncement';
@@ -33,23 +33,23 @@ var announcementManager = {
             type: "POST",
             url: url,
             data: {
-                messageIds: announcementManager.showedMessageIds.join(',')
+                messageIds: announcement.showedMessageIds.join(',')
             },
             responseType: "json",
             success: function (data) {
-                announcementManager.showAnnouncement(data);
-                announcementManager.timeoutAnnouncement = setTimeout(announcementManager.removeAnnouncement, 120000);
+                announcement.showAnnouncement(data);
+                announcement.timeoutAnnouncement = setTimeout(announcement.removeAnnouncement, 120000);
             }
         });
     },
 
     removeAnnouncement: function (timeout) {
-        var announcementId = announcementManager.domElements.announcementId;
+        var announcementId = announcement.domElements.announcementId;
         if (announcementId != null) {
             announcementId.remove();
-            clearTimeout(announcementManager.timeoutAnnouncement);
+            clearTimeout(announcement.timeoutAnnouncement);
             setTimeout(function () {
-                announcementManager.loadAnnouncementNext(timeout);
+                announcement.loadAnnouncementNext(timeout);
             }, 30000);
         }
     },
@@ -60,13 +60,13 @@ var announcementManager = {
             type: "POST",
             url: url,
             data: {
-                messageIds: announcementManager.showedMessageIds.join(','),
+                messageIds: announcement.showedMessageIds.join(','),
                 announmentNext: 1
             },
             responseType: "json",
             success: function (data) {
-                announcementManager.showAnnouncement(data);
-                announcementManager.timeoutAnnouncement = setTimeout(announcementManager.removeAnnouncement, 120000);
+                announcement.showAnnouncement(data);
+                announcement.timeoutAnnouncement = setTimeout(announcement.removeAnnouncement, 120000);
             }
         });
     },
@@ -77,64 +77,69 @@ var announcementManager = {
             return;
         }
 
-        announcementManager.removeAnnouncement();
+        announcement.removeAnnouncement();
 
         var div = document.createElement('div');
         div.innerHTML = text;
         div.style.display = 'none';
         div.setAttribute('id', 'announcement-id');
         document.body.appendChild(div);
-        announcementManager.cacheElements();
-        announcementManager.announcementCookieName = announcementManager.getAnnoucementCookieName();
 
-        var popUp = announcementManager.domElements.popUpId;
-        var id = popUp ? popUp.value : 0;
-        if (!announcementManager.checkShowedMessage(id)) {
-            announcementManager.showedMessageIds.push(id);
+        announcement.cacheElements();
+        announcement.announcementCookieName = announcement.getAnnoucementCookieName();
+
+        var popUp = announcement.domElements.popUpId;
+        var id = popUp.length ? popUp.val() : 0;
+        if (!announcement.checkShowedMessage(id)) {
+            announcement.showedMessageIds.push(id);
         }
 
-        var count = announcementManager.getAnnoucementShowCount();
+        var count = announcement.getAnnoucementShowCount();
         if (count >= 6) {
-            setTimeout(announcementManager.removeAnnouncement, 1000);
+            setTimeout(announcement.removeAnnouncement, 1000);
             return;
         }
 
-        announcementManager.increaseAnnoucementShowTimes();
-        var popUpPanel = announcementManager.domElements.popUpPanel;
+        announcement.increaseAnnoucementShowTimes();
+        var popUpPanel = announcement.domElements.popUpPanel;
         if (id < 0 && popUpPanel) {
-            popUpPanel.style.display = 'none';
+            popUpPanel.css('display', 'none');
         }
 
-        var popUpContainer =
-            announcementManager.domElements.popUpContainerText ||
-            announcementManager.domElements.popUpContainer;
-        div.style.top = popUpContainer.style.top;
-        div.style.left = popUpContainer.style.left;
+        var popUpContainer = announcement.domElements.popUpContainerText.length ?
+            announcement.domElements.popUpContainerText :
+            announcement.domElements.popUpContainer;
+        div.style.top = popUpContainer.css('top');
+        div.style.left = popUpContainer.css('left');
 
-        announcementManager.bindEvents();
+        announcement.bindEvents();
     },
 
     bindEvents: function () {
-        $('#popup-container-text .advertisement-close').click(function () {
-            announcementManager.removeAnnouncement();
+        announcement.domElements.popUpContainerText.find('.icon-close').click(function () {
+            announcement.removeAnnouncement();
         });
 
-        $('#popup-container .advertisement-close').click(function () {
-            parent.announcementManager.removeAnnouncement();
+        announcement.domElements.popUpContainer.find('.icon-close').click(function () {
+            parent.announcement.removeAnnouncement();
         });
 
-        announcementManager.domElements.hideAdvertisement.click(function () {
-            announcementManager.doNotShowAnnoucement($(this)[0].checked);
+        announcement.domElements.hideAdvertisement.click(function () {
+            announcement.doNotShowAnnoucement($(this)[0].checked);
         });
 
         setTimeout(function () {
-            announcementManager.domElements.announcementId[0].style.display = 'block';
+            announcement.domElements.announcementId[0].style.display = 'block';
+            var popUpContainer = announcement.domElements.popUpContainerText.length ?
+                announcement.domElements.popUpContainerText :
+                announcement.domElements.popUpContainer;
+            popUpContainer.modal({ show: true, backdrop: false });
         }, 2000);
     },
     checkShowedMessage: function (id) {
-        var count = announcementManager.showedMessageIds.length;
+        var count = announcement.showedMessageIds.length;
         for (var i = 0; i < count; i++) {
-            if (id == announcementManager.showedMessageIds[i]) {
+            if (id == announcement.showedMessageIds[i]) {
                 return true;
             }
         }
@@ -143,7 +148,7 @@ var announcementManager = {
     },
 
     getAnnoucementShowCount: function () {
-        var cookieName = announcementManager.announcementCookieName;
+        var cookieName = announcement.announcementCookieName;
         if (cookieName == null) {
             return 0;
         }
@@ -159,32 +164,32 @@ var announcementManager = {
 
     getAnnoucementCookieName: function () {
         try {
-            var popUpId = announcementManager.domElements.popUpId;
-            if (!popUpId) {
+            var popUpId = announcement.domElements.popUpId;
+            if (popUpId.length == 0) {
                 return null;
             }
 
-            if (parseInt(popUpId.value) < 0) {
+            if (parseInt(popUpId.val()) < 0) {
                 return null;
             }
 
-            return "-" + popUpId.value + announcementManager.domElements.announcementCookieId.value;
+            return "-" + popUpId.val() + announcement.domElements.announcementCookieId.val();
         }
         catch (e) {
             return null;
         }
     },
     increaseAnnoucementShowTimes: function () {
-        var count = announcementManager.getAnnoucementShowCount();
-        var popUpId = announcementManager.domElements.popUpId;
-        var cookieDays = announcementManager.securityCodeId.indexOf(popUpId.value) == -1 ? 30 : 1;
-        setCookie(announcementManager.announcementCookieName, ++count, cookieDays);
+        var count = announcement.getAnnoucementShowCount();
+        var popUpId = announcement.domElements.popUpId;
+        var cookieDays = announcement.securityCodeId.indexOf(popUpId.val()) == -1 ? 30 : 1;
+        setCookie(announcement.announcementCookieName, ++count, cookieDays);
     },
     doNotShowAnnoucement: function (hide) {
-        setCookie(announcementManager.announcementCookieName, hide ? 5 : 1, 30);
+        setCookie(announcement.announcementCookieName, hide ? 5 : 1, 30);
     }
 };
 
 $(function () {
-    announcementManager.init();
+    announcement.init();
 });

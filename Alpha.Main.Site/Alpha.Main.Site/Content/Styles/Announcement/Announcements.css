@@ -29,6 +29,20 @@
         color: #FF6600;
     }
 
+.announcement-modal {
+    top: 110px;
+    left: 350px;
+    overflow: hidden;
+    width: 600px;
+    height: auto;
+}
+
+    .announcement-modal .modal-dialog {
+        width: 600px;
+        height: 500px;
+    }
+
+
 #popup-container {
     font-family: Arial, sans-serif;
     font-size: 12px;
@@ -49,6 +63,7 @@
     margin: 0px;
     position: absolute;
 }
+
 
     #popup-container-text .toptitlepopup-en-us {
         background: url(Images/toptitlepopup.png) no-repeat;
