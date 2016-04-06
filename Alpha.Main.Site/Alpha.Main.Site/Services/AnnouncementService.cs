@@ -5,6 +5,6 @@
 
     public interface AnnouncementService
     {
-        HotAnnouncement GetHotAnnouncement(HotAnnouncementQuery message);
+        HotAnnouncement GetHotAnnouncement(HotAnnouncementQuery query);
     }
 }

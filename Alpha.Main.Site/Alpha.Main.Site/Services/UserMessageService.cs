@@ -5,6 +5,6 @@
 
     public interface UserMessageService
     {
-        IEnumerable<string> GetHotMessages(HotMessagesQuery message);
+        IEnumerable<string> GetHotMessages(HotMessagesQuery query);
     }
 }

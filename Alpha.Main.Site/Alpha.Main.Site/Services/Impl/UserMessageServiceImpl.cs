@@ -10,18 +10,18 @@
 
     public class UserMessageServiceImpl : UserMessageService
     {
-        public IEnumerable<string> GetHotMessages(HotMessagesQuery message)
+        public IEnumerable<string> GetHotMessages(HotMessagesQuery query)
         {
             List<string> hotMessages = new List<string>();
 
-            if (!File.Exists(message.HotMessageFilePath))
+            if (!File.Exists(query.HotMessageFilePath))
             {
                 throw new FileNotFoundException("Cannot find user tooltip message.");
             }
 
             var xmlNormalAnnouncement = new XmlDocument();
 
-            xmlNormalAnnouncement.Load(message.HotMessageFilePath);
+            xmlNormalAnnouncement.Load(query.HotMessageFilePath);
 
             if (!xmlNormalAnnouncement.DocumentElement.HasChildNodes)
             {
@@ -43,7 +43,7 @@
                     continue;
                 }
 
-                var hotMessage = GetHotMessageByLanguage(message.RoleId, message.Language.ToLower(), announcementXmlNode);
+                var hotMessage = GetHotMessageByLanguage(query.RoleId, query.Language.ToLower(), announcementXmlNode);
 
                 if (!string.IsNullOrWhiteSpace(hotMessage))
                 {

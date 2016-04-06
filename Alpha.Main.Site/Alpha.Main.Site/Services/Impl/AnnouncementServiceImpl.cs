@@ -25,41 +25,41 @@
             this.securityCodeService = securityCodeService;
         }
 
-        public HotAnnouncement GetHotAnnouncement(HotAnnouncementQuery message)
+        public HotAnnouncement GetHotAnnouncement(HotAnnouncementQuery query)
         {
             var hotAnnouncement = new HotAnnouncement();
-            if (message.IsSecurityCodeActive &&
-                message.IsRequireSecurityCode)
+            if (query.IsSecurityCodeActive &&
+                query.IsRequireSecurityCode)
             {
                 return hotAnnouncement;
             }
 
             IEnumerable<string> messageTypes = null;
-            if (message.RoleId == RoleIdConstant.Agent &&
-                message.AdminId == 0)
+            if (query.RoleId == RoleIdConstant.Agent &&
+                query.AdminId == 0)
             {
                 messageTypes = dynamicRepository.Fetch<string>(new GetMessageTypeListCriteria
                 {
-                    CustId = message.CustId
+                    CustId = query.CustId
                 });
             }
 
             if (messageTypes != null)
             {
-                hotAnnouncement.Content = GetSettingChangedMessage(messageTypes, message);
+                hotAnnouncement.Content = GetSettingChangedMessage(messageTypes, query);
             }
 
             if (string.IsNullOrEmpty(hotAnnouncement.Content))
             {
-                hotAnnouncement = GetHotAnnouncementFromLocalFiles(message);
+                hotAnnouncement = GetHotAnnouncementFromLocalFiles(query);
             }
 
-            hotAnnouncement.Languague = message.Language;
+            hotAnnouncement.Languague = query.Language;
 
             return hotAnnouncement;
         }
 
-        private string GetSettingChangedMessage(IEnumerable<string> messageTypes, HotAnnouncementQuery message)
+        private string GetSettingChangedMessage(IEnumerable<string> messageTypes, HotAnnouncementQuery query)
         {
             var isPositionTakingChanged = messageTypes.Contains(MessageTypeConstant.PositionTakingChanged.ToString());
             var isBettingLimitChanged = messageTypes.Contains(MessageTypeConstant.BettingLimitChanged.ToString());
@@ -96,13 +96,13 @@
                         MatchId = 0,
                         IsBatch = true
                     },
-                    message);
+                    query);
             }
 
             return messageContent;
         }
 
-        private void InsertPersonalMessage(InsertPersonalMessageCriteria criteria, HotAnnouncementQuery message)
+        private void InsertPersonalMessage(InsertPersonalMessageCriteria criteria, HotAnnouncementQuery query)
         {
             var rawData = dynamicRepository.Fetch<dynamic>(criteria).FirstOrDefault();
             if (rawData == null)
@@ -113,40 +113,40 @@
             dynamicRepository.Fetch<bool>(new InsertPersonalMessageTargetCriteria
             {
                 MessageId = rawData.Id,
-                TargetId = message.UserId,
-                TargetName = message.UserName,
+                TargetId = query.UserId,
+                TargetName = query.UserName,
                 IsRead = false,
                 BetTransId = "0"
             });
 
             dynamicRepository.Fetch<bool>(new UpdateViewStatus
             {
-                CustId = message.CustId,
+                CustId = query.CustId,
                 IsViewed = true
             });
         }
 
-        private List<long> GetShowedMessageIds(HotAnnouncementQuery message)
+        private List<long> GetShowedMessageIds(HotAnnouncementQuery query)
         {
             var result = new List<long>();
 
-            if (!string.IsNullOrEmpty(message.MessageIds))
+            if (!string.IsNullOrEmpty(query.MessageIds))
             {
                 long id = 0;
-                result = message.MessageIds
+                result = query.MessageIds
                     .Split(new char[] { ',', ';', ':' }, StringSplitOptions.RemoveEmptyEntries)
                     .Where(str => long.TryParse(str, out id))
                     .Select(str => long.Parse(str))
                     .ToList();
             }
 
-            bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(message.Site, message.SecurityCodeResult, message.SecurityCodeSession);
+            bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(query.Site, query.SecurityCodeResult, query.SecurityCodeSession);
             if (!isForceUseSecurityCode)
             {
                 result.Add(MessageId.ForceUseSecurityCode);
             }
 
-            foreach (var productStatus in message.ProductsStatus)
+            foreach (var productStatus in query.ProductsStatus)
             {
                 if (!productStatus.Value)
                 {
@@ -157,14 +157,14 @@
             return result;
         }
 
-        private HotAnnouncement GetHotAnnouncementFromLocalFiles(HotAnnouncementQuery message)
+        private HotAnnouncement GetHotAnnouncementFromLocalFiles(HotAnnouncementQuery query)
         {
-            var showedMessages = GetShowedMessageIds(message);
-            var xmlPrivateMsg = GetPrivateAnnouncement(message);
-            var xmlCommonMsg = GetCommonAnnouncement(message);
+            var showedMessages = GetShowedMessageIds(query);
+            var xmlPrivateMsg = GetPrivateAnnouncement(query);
+            var xmlCommonMsg = GetCommonAnnouncement(query);
             JoinTheTwoAnnouncementTypes(xmlPrivateMsg, xmlCommonMsg);
 
-            var language = message.Language;
+            var language = query.Language;
             var announcementNodes = xmlCommonMsg.SelectNodes("FileDB/PopupAnnouncement");
             var hotAnnouncement = new HotAnnouncement();
             foreach (XmlNode announcementNode in announcementNodes)
@@ -174,7 +174,7 @@
                 long.TryParse(nodeIds, out nodeId);
                 if (nodeId == 0 ||
                     showedMessages.Contains(nodeId) ||
-                    IsExcludedHotMessageSite(announcementNode, message.Site) ||
+                    IsExcludedHotMessageSite(announcementNode, query.Site) ||
                     IsExpiredHotMessage(announcementNode))
                 {
                     continue;
@@ -202,18 +202,18 @@
             return hotAnnouncement;
         }
 
-        private XmlDocument GetPrivateAnnouncement(HotAnnouncementQuery message)
+        private XmlDocument GetPrivateAnnouncement(HotAnnouncementQuery query)
         {
-            var pathToPrivateMsg = message.PrivateMessagePath;
+            var pathToPrivateMsg = query.PrivateMessagePath;
             var xmlPrivateMsg = new XmlDocument();
             xmlPrivateMsg.Load(pathToPrivateMsg);
             return xmlPrivateMsg;
         }
 
-        private XmlDocument GetCommonAnnouncement(HotAnnouncementQuery message)
+        private XmlDocument GetCommonAnnouncement(HotAnnouncementQuery query)
         {
             var xmlCommonMsg = new XmlDocument();
-            xmlCommonMsg.Load(message.CommonAnnouncementPath);
+            xmlCommonMsg.Load(query.CommonAnnouncementPath);
             return xmlCommonMsg;
         }
 
