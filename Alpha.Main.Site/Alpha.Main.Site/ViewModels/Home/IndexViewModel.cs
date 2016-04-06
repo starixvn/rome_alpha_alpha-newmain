@@ -14,6 +14,7 @@
         private readonly string language;
         private readonly string languageKey;
         private readonly Func<string> getDefaultUrl;
+        private readonly string passwordHash;
 
         public IndexViewModel(
             int custId,
@@ -29,6 +30,7 @@
             this.languageKey = languageKey;
             this.onlineUserId = onlineUserId;
             this.getDefaultUrl = getDefaultUrl;
+            this.passwordHash = Encryption.RandomString(new Random().Next(4, 8));
         }
 
         public int CustId
@@ -99,7 +101,7 @@
         {
             get
             {
-                return Encryption.RandomString(new Random().Next(4, 8));
+                return this.passwordHash;
             }
         }
     }

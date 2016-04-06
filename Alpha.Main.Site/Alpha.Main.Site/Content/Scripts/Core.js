@@ -31,7 +31,7 @@ alpha.core = {
     }
 };
 
-//// Set value for old main
+//// Set value for old main => every share variables should be listed here
 top.ph = alpha.user.passwordHash;
 top.isNewSite = true;
 top.errCodes = [];

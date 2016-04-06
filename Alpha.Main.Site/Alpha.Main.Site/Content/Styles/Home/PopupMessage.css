@@ -38,13 +38,13 @@ div.messageBlock {
   color: #222; }
 
 .message-modal {
-  width: 420px;
+  width: 500px;
   height: 100px;
   top: 0px;
-  left: 400px;
+  left: 300px;
   overflow: hidden; }
   .message-modal .modal-sm {
-    width: 420px;
+    width: 500px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3); }
   .message-modal .modal-content .modal-header {
     padding: 4px; }
