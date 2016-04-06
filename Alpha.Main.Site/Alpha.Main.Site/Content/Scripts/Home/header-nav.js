@@ -160,7 +160,7 @@ var HeaderNavigationManager = function () {
                 if (result !== undefined) {
                     // Remove www so that subdomain can override LANGUAGE value
                     var domain = window.location.hostname.replace(/([a-zA-Z0-9]+.)/, '').replace('www.', '');
-                    setCookie('LANGUAGE', lang, 30, domain);
+                    $.cookie('LANGUAGE', lang, { expires: 30, path: domain });
                     self.reloadPage();
                 }
             },

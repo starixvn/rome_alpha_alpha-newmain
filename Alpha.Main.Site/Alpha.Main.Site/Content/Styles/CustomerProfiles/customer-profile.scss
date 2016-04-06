@@ -43,33 +43,35 @@
     -moz-opacity: 1;
     -khtml-opacity: 1;
     opacity: 1;
-}
 
-    #tooltip-box .left {
+    .left {
         float: left;
         background: url(Images/tooltip_left.png) no-repeat;
         width: 15px;
         height: 45px;
     }
 
-    #tooltip-box .bg {
+    .bg {
         float: left;
         background: url(Images/tooltip_bg.png) repeat-x;
         height: 45px;
     }
 
-    #tooltip-box .right {
+    .right {
         float: left;
         background: url(Images/tooltip_right.png) no-repeat;
         width: 37px;
         height: 45px;
     }
 
-    #tooltip-box .normal {
+    .normal {
         color: #BF0104;
         font-family: Arial,Tahoma,Arial,helvetica,sans-serif;
         line-height: 14px;
     }
+}
+
+
 
 #profileTooltip {
     width: 500px;
@@ -84,37 +86,34 @@
     -moz-opacity: 1;
     -khtml-opacity: 1;
     opacity: 1;
-}
 
-    #profileTooltip .left {
+    .left {
         float: left;
         background: url(Images/profileTooltip_left.png) no-repeat;
         width: 15px;
         height: 75px;
     }
 
-    #profileTooltip .bg {
+    .bg {
         float: left;
         background: url(Images/profileTooltip_bg.png) repeat-x;
         height: 75px;
     }
 
-    #profileTooltip .right {
+    .right {
         float: left;
         background: url(Images/profileTooltip_right.png) no-repeat;
         width: 37px;
         height: 75px;
     }
 
-    #profileTooltip .normal {
+    .normal {
         color: #BF0104;
         font-family: Arial,Tahoma,helvetica,sans-serif;
         line-height: 14px;
     }
-
-#logoProfileImg.collapse-image {
-    width: 100%;
 }
 
-.header-left-logo {
+#profileTooltip #profileTooltip #profileTooltip #logoProfileImg.collapse-image {
+    width: 100%;
 }

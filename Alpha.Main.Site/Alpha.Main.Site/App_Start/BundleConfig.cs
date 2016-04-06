@@ -38,7 +38,7 @@
             bundles.Add(new StyleBundle("~/bundle/styles/home")
                 .Include("~/Content/Styles/Home/page.css", cssRewriteUrlTransformWrapper)
                 .Include("~/Content/Styles/Home/PopupMessage.css", cssRewriteUrlTransformWrapper)
-                .Include("~/Content/Styles/CustomerProfiles/CustomerProfile.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Content/Styles/CustomerProfiles/customer-profile.css", cssRewriteUrlTransformWrapper)
                 .Include("~/Content/Styles/Announcement/Announcements.css", cssRewriteUrlTransformWrapper));
         }
     }

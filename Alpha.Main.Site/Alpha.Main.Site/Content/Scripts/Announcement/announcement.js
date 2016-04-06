@@ -153,7 +153,7 @@ var announcement = {
             return 0;
         }
 
-        var value = getCookie(cookieName);
+        var value = $.cookie(cookieName);
         var count = parseInt(value, 10);
         if (isNaN(count)) {
             count = 0;
@@ -183,10 +183,10 @@ var announcement = {
         var count = announcement.getAnnoucementShowCount();
         var popUpId = announcement.domElements.popUpId;
         var cookieDays = announcement.securityCodeId.indexOf(popUpId.val()) == -1 ? 30 : 1;
-        setCookie(announcement.announcementCookieName, ++count, cookieDays);
+        $.cookie(announcement.announcementCookieName, ++count, { expires: cookieDays, path: '/' });
     },
     doNotShowAnnoucement: function (hide) {
-        setCookie(announcement.announcementCookieName, hide ? 5 : 1, 30);
+        $.cookie(announcement.announcementCookieName, hide ? 5 : 1, { expires: 30, path: '/' });
     }
 };
 

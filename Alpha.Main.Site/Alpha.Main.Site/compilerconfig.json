@@ -1,38 +1,72 @@
 ﻿[
   {
     "outputFile": "Content/Home/Styles/page.css",
-    "inputFile": "Content/Home/Styles/page.scss"
+    "inputFile": "Content/Home/Styles/page.scss",
+    "minify": {
+      "enabled": false
+    }
   },
   {
     "outputFile": "Content/Home/Styles/agent.css",
-    "inputFile": "Content/Home/Styles/agent.scss"
+    "inputFile": "Content/Home/Styles/agent.scss",
+    "minify": {
+      "enabled": false
+    }
   },
   {
     "outputFile": "Content/Home/Styles/master.css",
-    "inputFile": "Content/Home/Styles/master.scss"
+    "inputFile": "Content/Home/Styles/master.scss",
+    "minify": {
+      "enabled": false
+    }
   },
   {
     "outputFile": "Content/Home/Styles/super.css",
-    "inputFile": "Content/Home/Styles/super.scss"
+    "inputFile": "Content/Home/Styles/super.scss",
+    "minify": {
+      "enabled": false
+    }
   },
   {
     "outputFile": "Content/Home/Styles/dashboard.css",
-    "inputFile": "Content/Home/Styles/dashboard.scss"
+    "inputFile": "Content/Home/Styles/dashboard.scss",
+    "minify": {
+      "enabled": false
+    }
   },
   {
     "outputFile": "Content/Home/Styles/PopupMessage.css",
-    "inputFile": "Content/Home/Styles/PopupMessage.scss"
+    "inputFile": "Content/Home/Styles/PopupMessage.scss",
+    "minify": {
+      "enabled": false
+    }
   },
   {
     "outputFile": "Content/Home/Styles/dashboard.css",
-    "inputFile": "Content/Home/Styles/dashboard.scss"
+    "inputFile": "Content/Home/Styles/dashboard.scss",
+    "minify": {
+      "enabled": false
+    }
   },
   {
     "outputFile": "Content/Home/Styles/page.css",
-    "inputFile": "Content/Home/Styles/page.scss"
+    "inputFile": "Content/Home/Styles/page.scss",
+    "minify": {
+      "enabled": false
+    }
   },
   {
     "outputFile": "Content/Styles/Home/PopupMessage.css",
-    "inputFile": "Content/Styles/Home/PopupMessage.scss"
+    "inputFile": "Content/Styles/Home/PopupMessage.scss",
+    "minify": {
+      "enabled": false
+    }
+  },
+  {
+    "outputFile": "Content/Styles/CustomerProfiles/customer-profile.css",
+    "inputFile": "Content/Styles/CustomerProfiles/customer-profile.scss",
+    "minify": {
+      "enabled": false
+    }
   }
 ]

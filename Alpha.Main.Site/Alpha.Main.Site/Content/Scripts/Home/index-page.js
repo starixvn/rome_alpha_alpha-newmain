@@ -1,7 +1,7 @@
 ﻿/// <reference path="../core.js" />
 
 'use strict';
-/*global alpha, setCookie, briefProfile*/
+/*global alpha, briefProfile*/
 
 var indexPage = {
     currentTab: null,
@@ -35,7 +35,7 @@ var indexPage = {
 
     reCheckin: function () {
         // Post with return result in JSON format
-        setCookie("ssl", location.href.indexOf('https://') === 0, 30);
+        $.cookie('ssl', location.href.indexOf('https://') === 0, { expires: 30, path: '/' });
 
         var url = alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx';
 
