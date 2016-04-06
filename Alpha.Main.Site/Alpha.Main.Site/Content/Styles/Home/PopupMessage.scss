@@ -45,7 +45,7 @@ div.messageBlock {
 
 .message-modal {
     width: 500px;
-    height: 100px;
+    height: 102px;
     top: 0px;
     left: 300px;
     overflow: hidden;
@@ -65,7 +65,7 @@ div.messageBlock {
 
     .modal-body {
         padding: 3px;
-        max-height: 66px;
+        max-height: 70px;
         overflow-y: auto;
     }
 
@@ -103,8 +103,9 @@ div.messageBlock {
     .close {
         color: #85490d;
         opacity: 1;
-        margin: 1px 0;
         font-size: 20px;
+        margin: 0;
+        top: 0;
     }
     .modal-dialog {
         margin: 10px auto 0;
@@ -115,28 +116,20 @@ div.messageBlock {
             background: #faf9dd;
             border-radius: 0;
             .modal-header {
-                padding: 0 5px;
+                padding: 0 2px;
                 position: relative;
                 z-index: 100;
             }
-            
-            .icon-alert {
-                color: #f48808;
-                font-size: 21px;
-                position: absolute;
-                top: 24px;
-                left: 8px;
-            }
             .modal-body {
                 position: relative;
-                padding: 0 30px 0 8px ;
+                padding: 0 15px ;
                 min-height: 60px;
                 overflow: auto;
                 z-index: 99;
                 p {
                     color: #85490d;
-                    margin-left: 30px;
                     line-height: 20px;
+                    margin-bottom: 10px;
                 }
             }
         }
