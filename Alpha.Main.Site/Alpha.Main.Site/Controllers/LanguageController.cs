@@ -8,8 +8,8 @@
 
     public class LanguageController : BaseController
     {
-        private readonly IMediator mediator;
         private readonly IUserSession userSession;
+        private readonly IMediator mediator;        
 
         public LanguageController(IMediator mediator, IUserSession userSession)
         {

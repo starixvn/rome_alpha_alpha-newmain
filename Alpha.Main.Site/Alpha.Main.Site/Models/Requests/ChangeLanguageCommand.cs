@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
-    using System;
     using Constants;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -24,16 +23,10 @@
             }
         }
 
-        public Action<string> ChangeLanguage
+        public void ChangeLanguage(string languageCode)
         {
-            get
-            {
-                return (code) => 
-                {
-                    userSession.Language = code;
-                    userSession.LangKey = Language.CodeKeys[code];
-                };
-            }
+            userSession.Language = languageCode;
+            userSession.LangKey = Language.CodeKeys[languageCode];            
         }
     }
 }
