@@ -18,8 +18,6 @@ var indexPage = {
         indexPage.cachedDomElements();
         indexPage.loadPartialViews();
         indexPage.registerEvents();
-
-        indexPage.setVariablesForOldSite();
     },
 
     registerEvents: function () {
@@ -75,11 +73,6 @@ var indexPage = {
                 });
             }
         });
-    },
-
-    setVariablesForOldSite: function () {
-        top.ph = alpha.user.passwordHash;
-        top.errCodes = [];
     }
 };
 

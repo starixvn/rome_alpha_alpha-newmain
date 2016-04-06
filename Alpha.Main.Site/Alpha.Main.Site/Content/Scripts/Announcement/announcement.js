@@ -1,131 +1,152 @@
 ﻿'use strict';
 
-var AnnouncementManager = function () {
-    var self = this;
-    var showedMessageIds = [];
-    var timeoutAnnouncement = 0;
+var announcementManager = {
+    showedMessageIds: [],
+    securityCodeId: ['20130426', '20130526'],
+    timeoutAnnouncement: 0,
+    announcementCookieName: null,
+    domElements: {
+        announcementId: null,
+        popUpId: null,
+        popUpPanel: null,
+        popUpContainer: null,
+        popUpContainerText: null,
+        hideAdvertisement: null,
+        announcementCookieId: null,
+    },
 
-    self.init = function () {
-        self.loadAnnouncement();
-    };
-
-    self.loadAnnouncement = function () {
+    init: function () {
+        announcementManager.loadAnnouncement();
+    },
+    cacheElements: function () {
+        announcementManager.domElements.announcementId = $('#announcement-id');
+        announcementManager.domElements.popUpId = $("#popup-id")[0];
+        announcementManager.domElements.popUpPanel = $("#popup_panel")[0];
+        announcementManager.domElements.popUpContainer = $('#popup-container')[0];
+        announcementManager.domElements.popUpContainerText = $('#popup-container-text')[0];
+        announcementManager.domElements.hideAdvertisement = $("#popup-container #chkHide");
+        announcementManager.domElements.announcementCookieId = $("#announcement-cookies-id")[0];
+    },
+    loadAnnouncement: function () {
         var url = alpha.urls.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,
             data: {
-                messageIds: showedMessageIds.join(',')
+                messageIds: announcementManager.showedMessageIds.join(',')
             },
             responseType: "json",
             success: function (data) {
-                self.showAnnouncement(data);
-                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 120000);
+                announcementManager.showAnnouncement(data);
+                announcementManager.timeoutAnnouncement = setTimeout(announcementManager.removeAnnouncement, 120000);
             }
         });
-    };
+    },
 
-    self.removeAnnouncement = function (timeout) {
-        var announcementId = $('#announcement-id');
+    removeAnnouncement: function (timeout) {
+        var announcementId = announcementManager.domElements.announcementId;
         if (announcementId != null) {
             announcementId.remove();
-            clearTimeout(timeoutAnnouncement);
+            clearTimeout(announcementManager.timeoutAnnouncement);
             setTimeout(function () {
-                self.loadAnnouncementNext(timeout);
+                announcementManager.loadAnnouncementNext(timeout);
             }, 30000);
         }
-    };
+    },
 
-    self.loadAnnouncementNext = function () {
+    loadAnnouncementNext: function () {
         var url = alpha.urls.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
             url: url,
             data: {
-                messageIds: showedMessageIds.join(','),
+                messageIds: announcementManager.showedMessageIds.join(','),
                 announmentNext: 1
             },
             responseType: "json",
             success: function (data) {
-                self.showAnnouncement(data);
-                timeoutAnnouncement = setTimeout(self.removeAnnouncement, 120000);
+                announcementManager.showAnnouncement(data);
+                announcementManager.timeoutAnnouncement = setTimeout(announcementManager.removeAnnouncement, 120000);
             }
         });
-    };
+    },
 
-    self.showAnnouncement = function (result) {
+    showAnnouncement: function (result) {
         var text = result;
         if (text.length < 10) {
             return;
         }
 
-        self.removeAnnouncement();
+        announcementManager.removeAnnouncement();
+
         var div = document.createElement('div');
         div.innerHTML = text;
         div.style.display = 'none';
         div.setAttribute('id', 'announcement-id');
         document.body.appendChild(div);
+        announcementManager.cacheElements();
+        announcementManager.announcementCookieName = announcementManager.getAnnoucementCookieName();
 
-        var popUp = $('#popup-id')[0];
+        var popUp = announcementManager.domElements.popUpId;
         var id = popUp ? popUp.value : 0;
-        if (!self.checkShowedMessage(id)) {
-            showedMessageIds.push(id);
+        if (!announcementManager.checkShowedMessage(id)) {
+            announcementManager.showedMessageIds.push(id);
         }
 
-        var count = self.getAnnoucementShowCount();
+        var count = announcementManager.getAnnoucementShowCount();
         if (count >= 6) {
-            setTimeout(self.removeAnnouncement, 1000);
+            setTimeout(announcementManager.removeAnnouncement, 1000);
             return;
         }
 
-        self.increaseAnnoucementShowTimes();
-        var popUpPanel = $("#popup_panel")[0];
+        announcementManager.increaseAnnoucementShowTimes();
+        var popUpPanel = announcementManager.domElements.popUpPanel;
         if (id < 0 && popUpPanel) {
             popUpPanel.style.display = 'none';
         }
 
-        var popUpContainer = $('#popup-container')[0];
-        var popUpContainerText = $('#popup-container-text')[0];
-        if (popUpContainerText == null) {
-            div.style.top = popUpContainer.style.top;
-            div.style.left = popUpContainer.style.left;
-        }
-        else {
-            div.style.top = popUpContainerText.style.top;
-            div.style.left = popUpContainerText.style.left;
-        }
+        var popUpContainer =
+            announcementManager.domElements.popUpContainerText ||
+            announcementManager.domElements.popUpContainer;
+        div.style.top = popUpContainer.style.top;
+        div.style.left = popUpContainer.style.left;
 
-        $("#popup-container-text .advertisement-close").click(function () {
+        announcementManager.bindEvents();
+    },
+
+    bindEvents: function () {
+        $('#popup-container-text .advertisement-close').click(function () {
             announcementManager.removeAnnouncement();
         });
 
-        $("#popup-container .advertisement-close").click(function () {
+        $('#popup-container .advertisement-close').click(function () {
             parent.announcementManager.removeAnnouncement();
         });
 
-        $("#popup-container #chkHide").click(function () {
+        announcementManager.domElements.hideAdvertisement.click(function () {
             announcementManager.doNotShowAnnoucement($(this)[0].checked);
         });
 
         setTimeout(function () {
-            $('#announcement-id')[0].style.display = 'block';
+            announcementManager.domElements.announcementId[0].style.display = 'block';
         }, 2000);
-    };
-
-    self.checkShowedMessage = function (id) {
-        var count = showedMessageIds.length;
+    },
+    checkShowedMessage: function (id) {
+        var count = announcementManager.showedMessageIds.length;
         for (var i = 0; i < count; i++) {
-            if (id == showedMessageIds[i]) {
+            if (id == announcementManager.showedMessageIds[i]) {
                 return true;
             }
         }
 
         return false;
-    };
+    },
 
-    self.getAnnoucementShowCount = function () {
-        var cookieName = self.getAnnoucementCookieName();
-        if (cookieName == null) return 0;
+    getAnnoucementShowCount: function () {
+        var cookieName = announcementManager.announcementCookieName;
+        if (cookieName == null) {
+            return 0;
+        }
 
         var value = getCookie(cookieName);
         var count = parseInt(value, 10);
@@ -134,11 +155,11 @@ var AnnouncementManager = function () {
         }
 
         return count;
-    };
+    },
 
-    self.getAnnoucementCookieName = function () {
+    getAnnoucementCookieName: function () {
         try {
-            var popUpId = $("#popup-id")[0];
+            var popUpId = announcementManager.domElements.popUpId;
             if (!popUpId) {
                 return null;
             }
@@ -147,30 +168,23 @@ var AnnouncementManager = function () {
                 return null;
             }
 
-            return "-" + popUpId.value + $("#announcement-cookies-id")[0].value;
+            return "-" + popUpId.value + announcementManager.domElements.announcementCookieId.value;
         }
         catch (e) {
             return null;
         }
-    };
-    self.increaseAnnoucementShowTimes = function () {
-        var count = self.getAnnoucementShowCount();
-        var popUpId = $("#popup-id");
-        if (popUpId.value == '20130426' ||
-            popUpId.value == '20130526') {
-            setCookie(self.getAnnoucementCookieName(), ++count, 1);
-        }
-        else {
-            setCookie(self.getAnnoucementCookieName(), ++count, 30);
-        }
-    };
-    self.doNotShowAnnoucement = function (hide) {
-        setCookie(self.getAnnoucementCookieName(), hide ? 5 : 1, 30);
-    };
+    },
+    increaseAnnoucementShowTimes: function () {
+        var count = announcementManager.getAnnoucementShowCount();
+        var popUpId = announcementManager.domElements.popUpId;
+        var cookieDays = announcementManager.securityCodeId.indexOf(popUpId.value) == -1 ? 30 : 1;
+        setCookie(announcementManager.announcementCookieName, ++count, cookieDays);
+    },
+    doNotShowAnnoucement: function (hide) {
+        setCookie(announcementManager.announcementCookieName, hide ? 5 : 1, 30);
+    }
 };
 
-var announcementManager = new AnnouncementManager();
-
-$(document).ready(function () {
+$(function () {
     announcementManager.init();
 });
