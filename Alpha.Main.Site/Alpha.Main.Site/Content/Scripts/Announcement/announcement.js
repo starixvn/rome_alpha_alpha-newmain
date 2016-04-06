@@ -14,6 +14,9 @@ var announcement = {
         hideAdvertisement: null,
         announcementCookieId: null,
     },
+    urls: {
+        hotAnnoucement: alpha.urls.mainRootPath + 'Announcement/HotAnnouncement'
+    },
 
     init: function () {
         announcement.loadAnnouncement();
@@ -28,10 +31,9 @@ var announcement = {
         announcement.domElements.announcementCookieId = $("#announcement-cookies-id");
     },
     loadAnnouncement: function () {
-        var url = alpha.urls.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
-            url: url,
+            url: announcement.urls.hotAnnoucement,
             data: {
                 messageIds: announcement.showedMessageIds.join(',')
             },
@@ -55,10 +57,9 @@ var announcement = {
     },
 
     loadAnnouncementNext: function () {
-        var url = alpha.urls.mainRootPath + 'Announcement/HotAnnouncement';
         $.ajax({
             type: "POST",
-            url: url,
+            url: announcement.urls.hotAnnoucement,
             data: {
                 messageIds: announcement.showedMessageIds.join(','),
                 announmentNext: 1
