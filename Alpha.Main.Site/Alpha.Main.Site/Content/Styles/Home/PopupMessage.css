@@ -52,7 +52,7 @@ div.messageBlock {
     margin: 3px auto; }
   .message-modal .modal-body {
     padding: 3px;
-    max-height: 420px;
+    max-height: 66px;
     overflow-y: auto; }
   .message-modal .not-shown-message {
     display: none;
@@ -85,9 +85,7 @@ div.messageBlock {
   font-size: 20px; }
 
 #userMessageModal .modal-dialog {
-  margin: 10px auto 0;
-  max-height: 88px;
-  overflow: auto; }
+  margin: 10px auto 0; }
   #userMessageModal .modal-dialog .modal-content {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
     background: #faf9dd;
@@ -96,18 +94,18 @@ div.messageBlock {
       padding: 0 5px;
       position: relative;
       z-index: 100; }
+    #userMessageModal .modal-dialog .modal-content .icon-alert {
+      color: #f48808;
+      font-size: 21px;
+      position: absolute;
+      top: 24px;
+      left: 8px; }
     #userMessageModal .modal-dialog .modal-content .modal-body {
       position: relative;
-      padding: 5px 30px 0 8px;
-      top: -15px;
+      padding: 0 30px 0 8px;
       min-height: 60px;
       overflow: auto;
       z-index: 99; }
-      #userMessageModal .modal-dialog .modal-content .modal-body .icon-alert {
-        color: #f48808;
-        font-size: 21px;
-        position: absolute;
-        top: 10px; }
       #userMessageModal .modal-dialog .modal-content .modal-body p {
         color: #85490d;
         margin-left: 30px;
