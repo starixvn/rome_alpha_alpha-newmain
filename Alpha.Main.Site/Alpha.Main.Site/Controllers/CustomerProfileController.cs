@@ -16,15 +16,9 @@
             this.mediator = mediator;
         }
 
-        public ActionResult BriefProfile(BriefProfileQuery query)
+        public ActionResult BriefProfile()
         {
-            query.CustId = userSession.CustId;
-            query.NickName = userSession.NickName;
-            query.UserName = userSession.UserName;
-            query.AdminName = userSession.AdminName;
-            query.IsSubAcc = userSession.IsSubAcc;
-            query.IsInternal = userSession.IsInternal;
-            query.SubUserName = userSession.SubUserName;
+            var query = new BriefProfileQuery(this.userSession);
 
             var viewModel = mediator.Send(query);
 

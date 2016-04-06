@@ -1,22 +1,72 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.CustomerProfile
 {
     using MediatR;
+    using Sunplus.Agent.Model.Entities;
     using ViewModels.CustomerProfile;
 
     public class BriefProfileQuery : IRequest<BriefProfileViewModel>
     {
-        public int CustId { get; set; }
+        private readonly IUserSession userSession;
 
-        public string UserName { get; set; }
+        public BriefProfileQuery(IUserSession userSession)
+        {
+            this.userSession = userSession;
+        }
 
-        public string NickName { get; set; }
+        public int CustId
+        {
+            get
+            {
+                return this.userSession.CustId;
+            }
+        }
 
-        public bool IsSubAcc { get; set; }
+        public string UserName
+        {
+            get
+            {
+                return this.userSession.UserName;
+            }
+        }
 
-        public bool IsInternal { get; set; }
+        public string NickName
+        {
+            get
+            {
+                return this.userSession.NickName;
+            }
+        }
 
-        public string SubUserName { get; set; }
+        public bool IsSubAcc
+        {
+            get
+            {
+                return this.userSession.IsSubAcc;
+            }
+        }
 
-        public string AdminName { get; set; }
+        public bool IsInternal
+        {
+            get
+            {
+                return this.userSession.IsInternal;
+            }
+        }
+
+        public string SubUserName
+        {
+            get
+            {
+                return this.userSession.SubUserName;
+            }
+        }
+
+        public string AdminName
+        {
+            get
+            {
+                return this.userSession.AdminName;
+            }
+        }
     }
 }

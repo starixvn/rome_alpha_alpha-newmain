@@ -1,25 +1,27 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.Announcement
 {
+    using System.Collections.Generic;
+    using System.Web;
     using Announcements;
     using Constants;
+    using Enumerations;
+    using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
-    using System.Collections.Generic;
 
     public class HotAnnouncementQuery : IRequest<HotAnnouncement>
     {
-        private IDictionary<int, bool> productsStatus;
+        private readonly IDictionary<int, bool> productsStatus;
+        private readonly bool isSecurityCodeActive;
+        private readonly ISecurityCodeSession securityCodeSession;
+        private readonly IUserSession userSession;
+        private readonly string commonAnnouncementFilePath;
+        private readonly string privateMessageFilePath;
 
-        private bool isSecurityCodeActive;
-
-        private ISecurityCodeSession securityCodeSession;
-
-        private IUserSession userSession;
-
-        public HotAnnouncementQuery()
+        public HotAnnouncementQuery() : this(null, null, null, null, null, null)
         {
         }
 
@@ -27,34 +29,44 @@
             IDictionary<int, bool> productsStatus,
             ISecurityCodeSession securityCodeSession,
             IUserSession userSession,
-            bool isSecurityCodeActive)
+            bool? isSecurityCodeActive,
+            string commonAnnouncementFilePath,
+            string privateMessageFilePath)
         {
-            this.productsStatus = productsStatus;
-            this.securityCodeSession = securityCodeSession;
-            this.userSession = userSession;
-            this.isSecurityCodeActive = isSecurityCodeActive;
-        }
-
-        public IUserSession UserSession
-        {
-            get
-            {
-                return userSession;
-            }
-
-            set
-            {
-                userSession = value;
-            }
+            this.productsStatus = productsStatus ?? new Dictionary<int, bool>
+                {
+                    { MessageId.NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
+                    { MessageId.OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
+                    { MessageId.OfferedSuperLive, UserPermission.IsShowSuperLive },
+                    { MessageId.OfferedColossusBets,  UserPermission.IsShowColossusBets }
+                };
+            this.securityCodeSession = securityCodeSession ?? CookieLessSessionFactory.SecurityCodeSession;
+            this.userSession = userSession ?? UserSession.Current;
+            this.isSecurityCodeActive = isSecurityCodeActive.HasValue ? isSecurityCodeActive.Value : SecurityCodeConfig.IsActive;
+            this.commonAnnouncementFilePath = commonAnnouncementFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAdCommon.xml");
+            var userLevelName = Enumeration.FromValue<UserLevel>(this.userSession.RoleId);
+            this.privateMessageFilePath = privateMessageFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAd{userLevelName}Neutral.xml");
         }
 
         public string MessageIds { get; set; }
 
         public string AnnouncementResourcePath { get; set; }
 
-        public string PrivateMessagePath { get; set; }
+        public string PrivateMessagePath
+        {
+            get
+            {
+                return privateMessageFilePath;
+            }
+        }
 
-        public string CommonAnnouncementPath { get; set; }
+        public string CommonAnnouncementPath
+        {
+            get
+            {
+                return commonAnnouncementFilePath;
+            }
+        }
 
         public bool IsSecurityCodeActive
         {
@@ -62,18 +74,13 @@
             {
                 return isSecurityCodeActive;
             }
-
-            set
-            {
-                isSecurityCodeActive = value;
-            }
         }
 
         public bool IsRequireSecurityCode
         {
             get
             {
-                return SecurityCodeSession != null ? SecurityCodeSession.IsRequireSecurityCode : false;
+                return securityCodeSession.IsRequireSecurityCode;
             }
         }
 
@@ -81,7 +88,7 @@
         {
             get
             {
-                return SecurityCodeSession != null ? SecurityCodeSession.IsInternal : false;
+                return securityCodeSession.IsInternal;
             }
         }
 
@@ -89,7 +96,7 @@
         {
             get
             {
-                return SecurityCodeSession != null ? (SecurityCodeStatus)SecurityCodeSession.SecurityCodeResult : SecurityCodeStatus.NONE;
+                return (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
             }
         }
 
@@ -99,25 +106,12 @@
             {
                 return securityCodeSession;
             }
-
-            set
-            {
-                securityCodeSession = value;
-            }
         }
 
         public IDictionary<int, bool> ProductsStatus
         {
             get
             {
-                var productsStatus = this.productsStatus ?? new Dictionary<int, bool>
-                {
-                    { MessageId.NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
-                    { MessageId.OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
-                    { MessageId.OfferedSuperLive, UserPermission.IsShowSuperLive },
-                    { MessageId.OfferedColossusBets,  UserPermission.IsShowColossusBets }
-                };
-
                 return productsStatus;
             }
         }
@@ -126,7 +120,7 @@
         {
             get
             {
-                return userSession != null ? userSession.RoleId : (byte)0;
+                return userSession.RoleId;
             }
         }
 
@@ -134,7 +128,7 @@
         {
             get
             {
-                return userSession != null ? userSession.AdminId : 0;
+                return userSession.AdminId;
             }
         }
 
@@ -142,7 +136,7 @@
         {
             get
             {
-                return userSession != null ? userSession.CustId : 0;
+                return userSession.CustId;
             }
         }
 
@@ -150,7 +144,7 @@
         {
             get
             {
-                return userSession != null ? userSession.Language : string.Empty;
+                return userSession.Language;
             }
         }
 
@@ -158,7 +152,7 @@
         {
             get
             {
-                return userSession != null ? userSession.UserId : 0;
+                return userSession.UserId;
             }
         }
 
@@ -166,7 +160,7 @@
         {
             get
             {
-                return userSession != null ? userSession.UserName : string.Empty;
+                return userSession.UserName;
             }
         }
 
@@ -174,7 +168,7 @@
         {
             get
             {
-                return userSession != null ? userSession.Site : string.Empty;
+                return userSession.Site;
             }
         }
     }
