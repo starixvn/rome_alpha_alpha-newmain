@@ -1,80 +1,76 @@
 ﻿[
   {
-    "outputFile": "Content/Home/Styles/page.css",
-    "inputFile": "Content/Home/Styles/page.scss",
+    "outputFile": "Assets/Home/Styles/page.css",
+    "inputFile": "Assets/Home/Styles/page.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Home/Styles/agent.css",
-    "inputFile": "Content/Home/Styles/agent.scss",
+    "outputFile": "Assets/Home/Styles/agent.css",
+    "inputFile": "Assets/Home/Styles/agent.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Home/Styles/master.css",
-    "inputFile": "Content/Home/Styles/master.scss",
+    "outputFile": "Assets/Home/Styles/master.css",
+    "inputFile": "Assets/Home/Styles/master.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Home/Styles/super.css",
-    "inputFile": "Content/Home/Styles/super.scss",
+    "outputFile": "Assets/Home/Styles/super.css",
+    "inputFile": "Assets/Home/Styles/super.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Home/Styles/dashboard.css",
-    "inputFile": "Content/Home/Styles/dashboard.scss",
+    "outputFile": "Assets/Home/Styles/dashboard.css",
+    "inputFile": "Assets/Home/Styles/dashboard.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Home/Styles/PopupMessage.css",
-    "inputFile": "Content/Home/Styles/PopupMessage.scss",
+    "outputFile": "Assets/Home/Styles/PopupMessage.css",
+    "inputFile": "Assets/Home/Styles/PopupMessage.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Home/Styles/dashboard.css",
-    "inputFile": "Content/Home/Styles/dashboard.scss",
+    "outputFile": "Assets/Home/Styles/dashboard.css",
+    "inputFile": "Assets/Home/Styles/dashboard.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Home/Styles/page.css",
-    "inputFile": "Content/Home/Styles/page.scss",
+    "outputFile": "Assets/Home/Styles/page.css",
+    "inputFile": "Assets/Home/Styles/page.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Styles/Home/PopupMessage.css",
-    "inputFile": "Content/Styles/Home/PopupMessage.scss",
+    "outputFile": "Assets/Styles/Home/PopupMessage.css",
+    "inputFile": "Assets/Styles/Home/PopupMessage.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Styles/CustomerProfiles/customer-profile.css",
-    "inputFile": "Content/Styles/CustomerProfiles/customer-profile.scss",
+    "outputFile": "Assets/Styles/CustomerProfiles/customer-profile.css",
+    "inputFile": "Assets/Styles/CustomerProfiles/customer-profile.scss",
     "minify": {
       "enabled": false
     }
   },
   {
-    "outputFile": "Content/Styles/Announcement/announcement.css",
-    "inputFile": "Content/Styles/Announcement/announcement.scss"
-  },
-  {
-    "outputFile": "Content/Styles/Announcement/announcements.css",
-    "inputFile": "Content/Styles/Announcement/announcements.scss"
+    "outputFile": "Assets/Styles/Announcement/announcements.css",
+    "inputFile": "Assets/Styles/Announcement/announcements.scss"
   }
 ]
