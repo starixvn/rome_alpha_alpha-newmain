@@ -68,5 +68,13 @@
     "minify": {
       "enabled": false
     }
+  },
+  {
+    "outputFile": "Content/Styles/Announcement/announcement.css",
+    "inputFile": "Content/Styles/Announcement/announcement.scss"
+  },
+  {
+    "outputFile": "Content/Styles/Announcement/announcements.css",
+    "inputFile": "Content/Styles/Announcement/announcements.scss"
   }
 ]

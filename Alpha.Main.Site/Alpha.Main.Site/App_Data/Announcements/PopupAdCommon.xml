@@ -11,7 +11,7 @@
 
   <PopupAnnouncement id="4523909" name="ColossusBets" startdate="02/23/2016" enddate="04/29/2016"  effectdate="24/02/2016" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered by default.
@@ -20,12 +20,12 @@
         All settings will be available for configuration since <b>28/01/2016</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      敬爱的代理,<br />
+      <b>敬爱的代理,</b><br />
       <p>
         我们非常荣幸地宣布新产品 "Colossus Bets" 将在  <b>{effectdate}</b>。<br/>
         此新产品将开放为默认状态。若您要禁用 "Colossus Bets" 于特定下线，请在设定功能里进行设置。更多详情，请参阅以下步骤。<br/>
@@ -37,7 +37,7 @@
     </zh-CN>
 
     <zh-TW src="">
-      敬愛的代理,<br />
+      <b>敬愛的代理,</b><br />
       <p>
         我們非常榮幸地宣布新產品 "Colossus Bets" 將在 <b>{effectdate}</b> 推出。<br/>
         此新產品將開放為默認狀態。若您要禁用 "Colossus Bets" 於特定下線，請在設定功能裏進行設置。更多詳情，請參閱以下步驟。<br/>
@@ -49,43 +49,43 @@
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered by default. If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. Follow this instruction for more details.<br/>
         All settings will be available for configuration since <b>28/01/2016</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered by default. If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. Follow this instruction for more details.<br/>
         All settings will be available for configuration since <b>28/01/2016</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered by default. If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. Follow this instruction for more details.<br/>
         All settings will be available for configuration since <b>28/01/2016</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </th-TH>
 
     <vi-VN src="">
-      Chào quý khách hàng,<br />
+      <b>Chào quý khách hàng,</b><br />
       <p>
         Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp sản phẩm cá cược mới - Colossus Bets.<br/>
         Sản phẩm mới này sẽ  được cung cấp theo mặc định. Nếu bạn muốn vô hiệu hoá "Colossus Bets" ở cấp dưới, bạn có thể cấu hình trong trang Cấu Hình như hướng dẫn này.<br/>
@@ -99,7 +99,7 @@
 
   <PopupAnnouncement id="5086201" name="RnG Single Wallet" startdate="01/17/2016" enddate="04/29/2016"  effectdate="26/01/2016" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget.
         It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
@@ -113,12 +113,12 @@
         &#160;&#160;&#45; If you wish to change on a specific downline, please configure at the Setting function.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      亲爱的代理，<br />
+      <b>亲爱的代理，</b><br />
       <p>
         我们在此宣布<b>{effectdate}</b>起，体育博彩和娱乐城将共享同个体育博彩预算。会员将无需从体育博彩转账至娱乐城以进行娱乐城游戏。<br/>
         在这转换期间：<br/>
@@ -136,7 +136,7 @@
     </zh-CN>
 
     <zh-TW src="">
-      親愛的代理，<br />
+      <b>親愛的代理，</b><br />
       <p>
         我們在此宣布從<b>{effectdate}</b>起，體育博彩结和娛樂城將共享同個體育預博彩算。會員將無需從體育博彩轉賬至娛樂城以進行娛樂城遊戲。<br/>
         在這轉換期間：<br/>
@@ -154,7 +154,7 @@
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget.
         It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
@@ -168,12 +168,12 @@
         &#160;&#160;&#45; If you wish to change on a specific downline, please configure at the Setting function.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget.
         It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
@@ -187,12 +187,12 @@
         &#160;&#160;&#45; If you wish to change on a specific downline, please configure at the Setting function.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      เรียนลูกค้าผู้มีอุปการคุณทุกท่าน<br />
+      <b>เรียนลูกค้าผู้มีอุปการคุณทุกท่าน</b><br />
       <p>
         ประกาศตั้งแต่วันที่ <b>{effectdate}</b> หน้ากีฬาและคาสิโนจะใช้วงเงินร่วมกัน ซึ่งหมายความว่าผู้เล่นไม่ต้องโอนเงินจากหน้ากีฬาไปยังคาสิโนเพื่อเล่นเกมคาสิโนอีกต่อไป<br/>
         การเปลี่ยนแปลง<br/>
@@ -210,7 +210,7 @@
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget.
         It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
@@ -224,14 +224,14 @@
         &#160;&#160;&#45; If you wish to change on a specific downline, please configure at the Setting function.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </vi-VN>
   </PopupAnnouncement>
 
   <PopupAnnouncement id="4910001" name="Cockfighting" startdate="12/20/2015" enddate="04/29/2016"  effectdate="12/20/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
@@ -240,12 +240,12 @@
         &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
@@ -254,12 +254,12 @@
         &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </zh-CN>
 
     <zh-TW src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
@@ -268,12 +268,12 @@
         &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
@@ -282,12 +282,12 @@
         &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
@@ -296,12 +296,12 @@
         &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
@@ -310,12 +310,12 @@
         &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
         This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
@@ -324,14 +324,14 @@
         &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </vi-VN>
   </PopupAnnouncement>
 
   <PopupAnnouncement id="4459701" name="Muay Thai" startdate="11/20/2015" enddate="12/04/2015"  effectdate="11/20/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
         which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
@@ -340,12 +340,12 @@
         &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      尊敬的代理们，<br />
+      <b>尊敬的代理们，</b><br />
       <p>
         我们非常荣幸地宣布将于<b>{effectdate}</b> 推出​​​​新产品名为<b>“Muay Thai”</b> 这新产品有两个投注类型（亚洲盘和大/小）<br/>
         所有设定将配置如下：<br/>
@@ -358,7 +358,7 @@
     </zh-CN>
 
     <zh-TW src="">
-      尊敬的代理們,<br />
+      <b>尊敬的代理們,</b><br />
       <p>
         我們非常榮幸地宣布將於<b>{effectdate}</b> 推出​​新產品名為<b>“Muay Thai”</b> 這新產品有兩個投注類型（亞洲盤和大/小）<br/>
         所有設定將配置如下：<br/>
@@ -371,7 +371,7 @@
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
         which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
@@ -380,12 +380,12 @@
         &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
         which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
@@ -394,12 +394,12 @@
         &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
         which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
@@ -408,12 +408,12 @@
         &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
         which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
@@ -422,14 +422,14 @@
         &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </vi-VN>
   </PopupAnnouncement>
 
   <PopupAnnouncement id="3577701" name="Metric Gaming" startdate="09/15/2015" enddate="09/30/2015"  effectdate="15/10/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
         &#8226; Goal within 60 seconds of kick.<br/>
@@ -440,12 +440,12 @@
         All settings of Soccer Handicap will be applied for these new bet types.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      尊敬的代理们,<br />
+      <b>尊敬的代理们,</b><br />
       <p>
         我们非常荣幸地宣布将于<b>{effectdate}</b>推出足球5种新的投注类型如下：
         &#8226; Goal within 60 seconds of kick.<br/>
@@ -461,7 +461,7 @@
     </zh-CN>
 
     <zh-TW src="">
-      尊敬的代理們,<br />
+      <b>尊敬的代理們,</b><br />
       <p>
         我們非常榮幸地宣布將於<b>{effectdate}</b>推出足球5種新的投註類型如下：
         &#8226; Goal within 60 seconds of kick.<br/>
@@ -477,7 +477,7 @@
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
         &#8226; Goal within 60 seconds of kick.<br/>
@@ -488,12 +488,12 @@
         All settings of Soccer Handicap will be applied for these new bet types.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
         &#8226; Goal within 60 seconds of kick.<br/>
@@ -504,12 +504,12 @@
         All settings of Soccer Handicap will be applied for these new bet types.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
         &#8226; Goal within 60 seconds of kick.<br/>
@@ -520,12 +520,12 @@
         All settings of Soccer Handicap will be applied for these new bet types.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
         &#8226; Goal within 60 seconds of kick.<br/>
@@ -536,14 +536,14 @@
         All settings of Soccer Handicap will be applied for these new bet types.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </vi-VN>
   </PopupAnnouncement>
 
   <PopupAnnouncement id="3543501" name="Gold Deluxe - already synced Live Casino" startdate="04/01/2015" enddate="06/30/2015"  effectdate="dd/mm/yyyy" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be configured as follows:<br/>
@@ -552,12 +552,12 @@
         All settings will be available for configuration since dd/mm/yyyy.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be configured as follows:<br/>
@@ -566,12 +566,12 @@
         All settings will be available for configuration since dd/mm/yyyy.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </zh-CN>
 
     <zh-TW src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be configured as follows:<br/>
@@ -580,12 +580,12 @@
         All settings will be available for configuration since dd/mm/yyyy.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be configured as follows:<br/>
@@ -595,12 +595,12 @@
         All settings will be available for configuration since dd/mm/yyyy
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be configured as follows:<br/>
@@ -609,12 +609,12 @@
         All settings will be available for configuration since dd/mm/yyyy.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be configured as follows:<br/>
@@ -623,12 +623,12 @@
         All settings will be available for configuration since dd/mm/yyyy.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be configured as follows:<br/>
@@ -637,186 +637,186 @@
         All settings will be available for configuration since dd/mm/yyyy.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </vi-VN>
   </PopupAnnouncement>
 
   <PopupAnnouncement id="3543502" name="Gold Deluxe - haven't synced Live Casino" startdate="04/01/2015" enddate="06/30/2015"  effectdate="dd/mm/yyyy" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be available for configuration since dd/mm/yyyy.<br/>
         Please, contact your upline for your desired settings.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be available for configuration since dd/mm/yyyy.<br/>
         Please, contact your upline for your desired settings.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </zh-CN>
 
     <zh-TW src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be available for configuration since dd/mm/yyyy.<br/>
         Please, contact your upline for your desired settings.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be available for configuration since dd/mm/yyyy.<br/>
         Please, contact your upline for your desired settings.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be available for configuration since dd/mm/yyyy.<br/>
         Please, contact your upline for your desired settings.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be available for configuration since dd/mm/yyyy.<br/>
         Please, contact your upline for your desired settings.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
         All settings will be available for configuration since dd/mm/yyyy.<br/>
         Please, contact your upline for your desired settings.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </vi-VN>
   </PopupAnnouncement>
 
   <PopupAnnouncement id="20150401" name="Change Commission group" startdate="04/01/2015" enddate="04/30/2015"  effectdate="01/04/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
         Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
         will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
         Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
         will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </zh-CN>
 
     <zh-TW src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
         Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
         will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
         Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
         will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
         Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
         will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
         Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
         will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
         Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
         will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </vi-VN>
   </PopupAnnouncement>
 
   <PopupAnnouncement id="20141231" name="Tennis - Sporting Solution" startdate="12/31/2014" enddate="01/31/2015"  effectdate="01/01/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We’re pleased to offer you 8 new bet types of Tennis with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/Tennis/en-US.SportingSolutionBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Tennis product and all setttings will be configured as follows:
       </p>
@@ -831,12 +831,12 @@
         &#8226; Commission settings of <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> bet types will be copied from Asian HDP, OU, OE.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      敬爱的代理们，<br />
+      <b>敬爱的代理们，</b><br />
       <p>
         于 <b>{effectdate}</b> 网球将推出八项新的投注设定,  您可以点击<a href='_Announcement/Template/NewProduct/Tennis/zh-CN.SportingSolutionBettypes.htm' target='_blank'>此处</a>以查看完整的设定项目。 在设定方面， 本公司已在网球占成数页面增添了新的设定， 名为“其他”。 所有设定都将被配置如下：
       </p>
@@ -856,7 +856,7 @@
     </zh-CN>
 
     <zh-TW src="">
-      敬愛的代理們，<br />
+      <b>敬愛的代理們，</b><br />
       <p>
         於 <b>{effectdate}</b> 網球將推出八項新的投註設定,  您可以點擊<a href='_Announcement/Template/NewProduct/Tennis/zh-TW.SportingSolutionBettypes.htm' target='_blank'>此處</a>以查看完整的設定項目。 在設定方面， 本公司已在網球占成數頁面增添了新的設定， 名為“其他”。 所有設定都將被配置如下：
       </p>
@@ -876,7 +876,7 @@
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We’re pleased to offer you 8 new bet types of Tennis with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/Tennis/ja-JP.SportingSolutionBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Tennis product and all setttings will be configured as follows:
       </p>
@@ -891,12 +891,12 @@
         &#8226; Commission settings of <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> bet types will be copied from Asian HDP, OU, OE.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <b>Dear valued agents,</b><br />
       <p>
         We’re pleased to offer you 8 new bet types of Tennis with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/Tennis/ko-KR.SportingSolutionBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Tennis product and all setttings will be configured as follows:
       </p>
@@ -911,12 +911,12 @@
         &#8226; Commission settings of <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> bet types will be copied from Asian HDP, OU, OE.
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      เรียน ท่านเอเจนต์ ทุกอ่าน <br />
+      <b>เรียน ท่านเอเจนต์ ทุกอ่าน </b><br />
       <p>
         ทางบริษัทยินดีที่จะเสนอการทายผลเทนนิสรูปแบบใหม่ 8 ชนิดด้วยกัน ซึ่งจะมีผลตั้งแต่ <b>{effectdate}</b>. ท่านสามารถ <a href='_Announcement/Template/NewProduct/Tennis/th-TH.SportingSolutionBettypes.htm' target='_blank'>คลิ๊กที่นี่</a> เพื่อดูรายละเอียดรายการต่าง ๆ ทั้งหมด เพื่อเป็นการอำนวยความสะดวก ทางเราได้ทำการเพิ่มเติมในส่วนการตั้งค่าความเสี่ยงให้ใหม่ โดยตั้งชื่อว่า "ชนิดอื่นๆ" ซึ่งจะอยู่ภายใต้การตั้งค่ากีฬาเทนนิส และการตั้งค่าต่าง ๆ จะเป็นดังต่อไปนี้
       </p>
@@ -936,7 +936,7 @@
     </th-TH>
 
     <vi-VN src="">
-      Chào quý khách hàng,<br />
+      <b>Chào quý khách hàng,</b><br />
       <p>
         Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 8 loại cược mới cho Tennis. Bạn có thể xem thêm chi tiết các loại cược mới <a href='_Announcement/Template/NewProduct/Tennis/vi-VN.SportingSolutionBettypes.htm' target='_blank'>ở đây</a>. Nhằm hỗ trợ cho các loại cược mới, chúng tôi đã thêm phần "Others" bên dưới mục Tennis trong trang thiết lập Position Taking. Tất cả các thiết lập sẽ được cấu hình như sau:
       </p>
@@ -958,7 +958,7 @@
 
   <PopupAnnouncement id="20150109" name="New statement" startdate="01/01/2015" enddate="02/01/2015"  effectdate="1/1/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued Agents,<br />
+      <b>Dear valued Agents,</b><br />
       <p>
         In an effort to help you monitor transactions more effectively, we are now offering the new
         Statement report with effect from <b>{effectdate}</b>, details are listed below:
@@ -970,12 +970,12 @@
         &#8226; To view the details of Win/Loss or Transfer transactions, click on the amount of each transaction.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </en-US>
 
     <zh-CN src="">
-      尊敬的代理们，<br />
+      <b>尊敬的代理们，</b><br />
       <p>
         为了让您了更有效的监控您的交易账目，我们将在<b>{effectdate}</b> 推出全新的账目报告，细节如下：
       </p>
@@ -991,7 +991,7 @@
     </zh-CN>
 
     <zh-TW src="">
-      尊敬的代理們，<br />
+      <b>尊敬的代理們，</b><br />
       <p>
         為了讓您了更有效的監控您的交易賬目，我們將在<b>{effectdate}</b> 推出全新的賬目報告，細節如下：
       </p>
@@ -1007,7 +1007,7 @@
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued Agents,<br />
+      <b>Dear valued Agents,</b><br />
       <p>
         In an effort to help you monitor transactions more effectively, we are now offering the new
         Statement report with effect from <b>{effectdate}</b>, details are listed below:
@@ -1019,12 +1019,12 @@
         &#8226; To view the details of Win/Loss or Transfer transactions, click on the amount of each transaction.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued Agents,<br />
+      <b>Dear valued Agents,</b><br />
       <p>
         In an effort to help you monitor transactions more effectively, we are now offering the new
         Statement report with effect from <b>{effectdate}</b>, details are listed below:
@@ -1036,12 +1036,12 @@
         &#8226; To view the details of Win/Loss or Transfer transactions, click on the amount of each transaction.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </ko-KR>
 
     <th-TH src="">
-      เรียน เอเจนต์ ผู้มีอุปการะคุณ<br />
+      <b>เรียน เอเจนต์ ผู้มีอุปการะคุณ</b><br />
       <p>
         เพื่อเป็นการช่วยให้ท่านเอเจนต์ได้ตรวจสอบการทำธุรกรรมต่าง ๆ ได้อย่างมีประสิธิภาพมากขึ้น ทางบริษัทขออนุญาตินำเสนอรายงานงบการเงินรูปแบบใหม่ ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b> ดังรายละเอียดดังต่อไปนี้
       </p>
@@ -1057,7 +1057,7 @@
     </th-TH>
 
     <vi-VN src="">
-      Dear valued Agents,<br />
+      <b>Dear valued Agents,</b><br />
       <p>
         In an effort to help you monitor transactions more effectively, we are now offering the new
         Statement report with effect from <b>{effectdate}</b>, details are listed below:
@@ -1069,7 +1069,7 @@
         &#8226; To view the details of Win/Loss or Transfer transactions, click on the amount of each transaction.<br/>
       </p>
       <p>
-        Thank you.
+        <b>Thank you.</b>
       </p>
     </vi-VN>
   </PopupAnnouncement>

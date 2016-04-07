@@ -136,29 +136,4 @@ div.messageBlock {
     }
 }
 
-.announcement-modal {
-    .modal-content {
-        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
-        .modal-header {
-            padding: 0 15px;
-            .modal-title {
-                border-bottom: 1px solid #dfdfdf;
-                color: #333;
-                font-weight: 700;
-                padding: 10px 0;
-                text-transform: uppercase;
-                .bullhorn-box {
-                    display: inline-block;
-                    padding: 5px 7px;
-                    border-radius: 15px;
-                    background: #930b15;
-                    margin-right: 10px;
-                    .icon-bullhorn {
-                        margin-right: 0;
-                        color: #fff;
-                    }
-                }
-            }
-        }
-    }
-}
+
