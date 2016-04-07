@@ -11,14 +11,14 @@
 <body>
     <aside class="sidebar">
         <div class="partial-content customer-profile" id="profile" data-url="@Url.Action("BriefProfile", "CustomerProfile")"></div>
-        <nav class="partial-content navigation" id="navigation" data-url="@Url.Action("MenuBar")">
-        </nav>
+        <nav class="partial-content navigation" id="navigation" data-url="@Url.Action("MenuBar")"></nav>
     </aside>
     <div class="content-wrapper">
         <header class="header">
             @Html.Partial("HeaderNav", new HeaderNavViewModel { CustId = Model.CustId })
             @Html.Action("HeaderMsg")
         </header>
+
         <main class="content" id="content">
             <iframe frameborder="0" id="main" data-default-url="@Model.DefaultUrl" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>
         </main>

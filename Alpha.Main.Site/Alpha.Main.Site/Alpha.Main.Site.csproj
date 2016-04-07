@@ -663,9 +663,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Shared\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ko-KR.resx" />
