@@ -24,7 +24,6 @@
             return View(viewModel);
         }
 
-        [ChildActionOnly]
         public ActionResult MenuBar()
         {
             var viewModel = mediator.Send(new MenuBarQuery(userSession.RoleId));

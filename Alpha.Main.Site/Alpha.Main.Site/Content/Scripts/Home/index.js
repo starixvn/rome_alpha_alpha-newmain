@@ -70,6 +70,10 @@ var indexPage = {
                     if ($(item).hasClass('customer-profile')) {
                         briefProfile.init();
                     }
+
+                    if ($(item).hasClass('navigation')) {
+                        menuBar.init();
+                    }
                 });
             }
         });

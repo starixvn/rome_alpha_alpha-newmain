@@ -28,8 +28,7 @@
 <body>
     <aside class="sidebar">
         <div class="partial-content customer-profile" id="profile" data-url="@Url.Action("BriefProfile", "CustomerProfile")"></div>
-        <nav class="navigation" id="navigation">
-            @Html.Action("MenuBar")
+        <nav class="partial-content navigation" id="navigation" data-url="@Url.Action("MenuBar")">
         </nav>
     </aside>
     <div class="content-wrapper">
