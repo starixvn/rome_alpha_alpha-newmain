@@ -433,14 +433,10 @@
     <Content Include="Content\Styles\Home\super.css">
       <DependentUpon>super.scss</DependentUpon>
     </Content>
-    <Content Include="Content\Images\collapse.png" />
-    <Content Include="Content\Images\expand.png" />
     <Content Include="Content\Images\icon_user_default.png" />
-    <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Styles\Home\Images\headerbg_2.jpg" />
     <Content Include="Content\Styles\Home\Images\headerbg_3.jpg" />
     <Content Include="Content\Styles\Home\Images\headerbg_4.jpg" />
-    <Content Include="Content\Styles\Home\Images\icon_close.jpg" />
     <Content Include="Content\Styles\Home\Images\profileTooltip_bg.png" />
     <Content Include="Content\Styles\Home\Images\profileTooltip_left.png" />
     <Content Include="Content\Styles\Home\Images\profileTooltip_right.png" />
@@ -484,7 +480,6 @@
     <Content Include="Views\Default\HeaderMsg.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithSource.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
-    <Content Include="Views\Shared\Language.cshtml" />
     <Content Include="Views\Language\List.cshtml" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
@@ -658,7 +653,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />
     <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ko-KR.resx" />
