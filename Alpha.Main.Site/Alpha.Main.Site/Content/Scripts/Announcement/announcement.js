@@ -18,7 +18,9 @@ var announcement = {
     constants: {
         maximumTimeToShowAnnoucementPopUp: 5,
         normalExpiredDays: 30,
-        securityCodeAnnoucementExpiredDay: 1
+        securityCodeAnnoucementExpiredDay: 1,
+        timeToShowAnnouncement: 120000,
+        annoucementsTransitionTime: 30000
     },
     urls: {
         hotAnnoucement: alpha.urls.mainRootPath + 'Announcement/HotAnnouncement'
@@ -46,7 +48,7 @@ var announcement = {
             responseType: "json",
             success: function (data) {
                 announcement.showAnnouncement(data);
-                announcement.timeoutAnnouncement = setTimeout(announcement.removeAnnouncement, 120000);
+                announcement.timeoutAnnouncement = setTimeout(announcement.removeAnnouncement, announcement.constants.timeToShowAnnouncement);
             }
         });
     },
@@ -58,7 +60,7 @@ var announcement = {
             clearTimeout(announcement.timeoutAnnouncement);
             setTimeout(function () {
                 announcement.loadAnnouncementNext(timeout);
-            }, 30000);
+            }, announcement.constants.annoucementsTransitionTime);
         }
     },
 
@@ -73,7 +75,7 @@ var announcement = {
             responseType: "json",
             success: function (data) {
                 announcement.showAnnouncement(data);
-                announcement.timeoutAnnouncement = setTimeout(announcement.removeAnnouncement, 120000);
+                announcement.timeoutAnnouncement = setTimeout(announcement.removeAnnouncement, announcement.constants.timeToShowAnnouncement);
             }
         });
     },
@@ -102,7 +104,7 @@ var announcement = {
         }
 
         var count = announcement.getAnnoucementShowCount();
-        if (count >= 6) {
+        if (count > announcement.constants.maximumTimeToShowAnnoucementPopUp) {
             setTimeout(announcement.removeAnnouncement, 1000);
             return;
         }
