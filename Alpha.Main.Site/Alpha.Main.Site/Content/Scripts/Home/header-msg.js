@@ -1,7 +1,7 @@
 ﻿/// <reference path="index-page.js" />
 
 'use strict';
-/*global indexPage*/
+/*global index*/
 
 var oldMainRootPath = document.getElementById('oldMainRootPath').value;
 var headerMessage = {
@@ -72,7 +72,7 @@ var headerMessage = {
 
     viewPrivateMessage: function () {
         
-        indexPage.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
+        index.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
 
         var countPrivateMsg = headerMessage.domElements.privateMessageCounter.html().replace("+", "");
 
@@ -93,16 +93,16 @@ var headerMessage = {
     },
 
     viewSpecialMessage: function () {
-        indexPage.changeMenu(headerMessage.urls.oldMainAppMessageForm);
+        index.changeMenu(headerMessage.urls.oldMainAppMessageForm);
     },
 
     viewLiveMessage: function () {
         var liveMessageUrl = headerMessage.domElements.liveMessage.data('live-message-url');
         if (liveMessageUrl) {
-            indexPage.changeMenu(liveMessageUrl);
+            index.changeMenu(liveMessageUrl);
         }
         else {
-            indexPage.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
+            index.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
         }
     },
 

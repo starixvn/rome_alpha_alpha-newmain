@@ -122,7 +122,7 @@ var headerNav = {
         });
 
         headerNav.domElements.iconHome.click(function () {
-            indexPage.changeMenu(headerNav.urls.home);
+            index.changeMenu(headerNav.urls.home);
         });
 
         headerNav.domElements.iconSwapView.click(function () {
