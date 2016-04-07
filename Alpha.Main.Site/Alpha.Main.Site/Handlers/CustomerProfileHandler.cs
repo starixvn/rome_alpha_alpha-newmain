@@ -16,8 +16,6 @@
     public class CustomerProfileHandler :
          IRequestHandler<BriefProfileQuery, BriefProfileViewModel>
     {
-        private const int MaxCountNickNameTooltip = 4;
-
         private readonly CustomerProfileService customerProfileService;
         private readonly string oldMainRootApp;
 
@@ -36,67 +34,23 @@
         {
         }
 
-        private int CountNickNameToolTip
-        {
-            get
-            {
-                var cookiesNameToolTip = HttpContext.Current.Request.Cookies[GetCookiesNameToolTip(this.custId)];
-
-                return cookiesNameToolTip == null
-                    ? 0
-                    : int.Parse(cookiesNameToolTip.Value);
-            }
-
-            set
-            {
-                var toolTipCookie = new HttpCookie(GetCookiesNameToolTip(this.custId))
-                {
-                    HttpOnly = true,
-                    Value = value.ToString(),
-                    Expires = DateTime.Now.AddDays(30)
-                };
-
-                HttpContext.Current.Response.Cookies.Clear();
-                HttpContext.Current.Response.AppendCookie(toolTipCookie);
-            }
-        }
-
-        private string GetCookiesNameToolTip(int custId)
-        {
-            return Cryptography.CfsEnCode($"ToolTip{custId}");
-        }
-
         public BriefProfileViewModel Handle(BriefProfileQuery message)
         {
             this.custId = message.CustId;
 
             var profile = customerProfileService.GetProfilePicture(message.CustId);
-            var isShowEditProfilePictureTooltip = profile.IsDefaultAvatar
-                && CountNickNameToolTip < MaxCountNickNameTooltip
-                && !string.IsNullOrEmpty(message.NickName);
 
             var viewModel = new BriefProfileViewModel
             {
                 IsDefaultAvatar = profile.IsDefaultAvatar,
                 EmbedImage = GenerateImage(profile),
                 CustId = message.CustId,
-                IsShowEditProfilePictureTooltip = isShowEditProfilePictureTooltip,
-                ChangeNickNameUrl = $"{this.oldMainRootApp}LoginOption?custId={message.CustId}",
-                ViewProfileUrl = $"{this.oldMainRootApp}ProfilePicture?custId={message.CustId}",
                 Username = HttpUtility.HtmlEncode(message.UserName),
-                IsNotMainAccount = message.IsSubAcc || message.IsInternal
+                LoginUserIsNotMainAccount = message.IsSubAcc || message.IsInternal,
+                OldMainRootApp = this.oldMainRootApp,
+                NickName = BuildNickName(message),
+                IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{custId}")
             };
-
-            if (CountNickNameToolTip < MaxCountNickNameTooltip)
-            {
-                CountNickNameToolTip++;
-            }
-            else
-            {
-                viewModel.IsShowIntroduceNickName = true;
-            }
-
-            viewModel.NickName = BuildNickName(message);
 
             return viewModel;
         }

@@ -6,11 +6,11 @@
 
     public static class ContentSite
     {
-        private static readonly string staticResourcesVersion;
+        private static readonly string StaticResourcesVersion;
 
         static ContentSite()
         {
-            staticResourcesVersion = AppSettings.StaticResourcesVersion;
+            StaticResourcesVersion = AppSettings.StaticResourcesVersion;
         }
 
         public static string Url(string virtualPath)
@@ -22,7 +22,7 @@
         {
             public static IHtmlString Render(params string[] paths)
             {
-                return System.Web.Optimization.Styles.Render(paths.Select(path => $"{AppSettings.ContentAppPath}{path}?v={staticResourcesVersion}").ToArray());
+                return System.Web.Optimization.Styles.Render(paths.Select(path => $"{AppSettings.ContentAppPath}{path}?v={StaticResourcesVersion}").ToArray());
             }
         }
 
@@ -30,7 +30,7 @@
         {
             public static IHtmlString Render(params string[] paths)
             {
-                return System.Web.Optimization.Scripts.Render(paths.Select(path => $"{AppSettings.ContentAppPath}{path}?v={staticResourcesVersion}").ToArray());
+                return System.Web.Optimization.Scripts.Render(paths.Select(path => $"{AppSettings.ContentAppPath}{path}?v={StaticResourcesVersion}").ToArray());
             }
         }
     }

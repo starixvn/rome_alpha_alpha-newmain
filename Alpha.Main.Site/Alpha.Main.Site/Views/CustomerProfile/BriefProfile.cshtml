@@ -1,10 +1,16 @@
 @model BriefProfileViewModel
 @{
     Layout = null;
+    var changeNickNameUrl = $"{Model.OldMainRootApp}LoginOption?custId={Model.CustId}";
+    var viewProfileUrl = $"{Model.OldMainRootApp}ProfilePicture?custId={Model.CustId}";
+    var mainFrameName = "main";
 }
-<div id="profile-content">
+<div id="profile-content" 
+     data-introduce-nick-name-tooltip-cookie-name="@(Model.IntroduceNickNameTooltipCookieName)"
+     data-is-default-avatar="@(Model.IsDefaultAvatar.ToString().ToLower())"
+     data-nick-name="@(Model.NickName)">
 
-    <a href="@Model.ViewProfileUrl" target="@Model.MainFrameName" class="profile-avatar">
+    <a href="@(viewProfileUrl)" target="@mainFrameName" class="profile-avatar">
         <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/Content/Images/icon_user_default.png") : Model.EmbedImage)' alt="" title="@Resources.ProfileClickTootip" />
     </a>
 
@@ -12,7 +18,7 @@
         <span class="userName">@Model.Username</span>
         <br />
 
-        @if (Model.IsNotMainAccount)
+        @if (Model.LoginUserIsNotMainAccount)
         {
             <div class="adminAndSubAcc">@Html.Raw(Model.NickName)</div>
         }
@@ -21,7 +27,7 @@
             if (!string.IsNullOrEmpty(Model.NickName))
             {
                 <div class="nickname-box">
-                    <a href="@Model.ChangeNickNameUrl" class="linkNickName" id="linkNickNameID" target="@Model.MainFrameName">
+                    <a href="@changeNickNameUrl" class="linkNickName" id="linkNickNameID" target="@mainFrameName">
                         <span id="labelNickname">@Model.NickName</span>
                     </a>
                 </div>
@@ -30,38 +36,18 @@
             {
                 <div class="nickname-box">
                     <span id="spanNickNameID">@Resources.nickname: </span>
-                    <a href="@Model.ChangeNickNameUrl" class="linkConfigNow" id="linkNickNameID" target="@Model.MainFrameName">
+                    <a href="@changeNickNameUrl" class="linkConfigNow" id="linkNickNameID" target="@mainFrameName">
                         <span id="labelNickname">@Resources.configNow</span>
                     </a>
                 </div>
 
-                if (Model.IsShowIntroduceNickName)
-                {
-                    <div id="tooltip-box">
-                        <div class="left">
-                        </div>
-                        <div class="bg">
-                            <div class="normal">
-                                <div class="introNickname">
-                                    @Html.Raw(Resources.introNickname)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right">
-                        </div>
-                    </div>
-                }
-            }
-
-            if (Model.IsShowEditProfilePictureTooltip)
-            {
-                <div id="profileTooltip">
+                <div id="tooltip-box" style="display:none;">
                     <div class="left">
                     </div>
                     <div class="bg">
                         <div class="normal">
-                            <div class="tooltip-content">
-                                @Html.Raw(@Resources.ProfileLoginTip)<a class="change-picture-link" href="@Model.ViewProfileUrl" target="main" id="changePictureLink">@Resources.clickHere</a>&nbsp;@Resources.uploadNow
+                            <div class="introNickname">
+                                @Html.Raw(Resources.introNickname)
                             </div>
                         </div>
                     </div>
@@ -69,6 +55,24 @@
                     </div>
                 </div>
             }
+
+            <div id="profileTooltip" style="display:none;">
+                <div class="left">
+                </div>
+                <div class="bg">
+                    <div class="normal">
+                        <div class="tooltip-content">
+                            @Html.Raw(@Resources.ProfileLoginTip)
+                            <a class="change-picture-link" href="@(viewProfileUrl)" target="main" id="changePictureLink">
+                                @Resources.clickHere
+                            </a>
+                            &nbsp;@Resources.uploadNow
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                </div>
+            </div>
         }
     </div>
 </div>

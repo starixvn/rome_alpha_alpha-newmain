@@ -22,15 +22,18 @@ var headerNav = {
         sideBarContent: null,
         profileImage: null
     },
+
     resources: {
         labelAM: '',
         labelPM: '',
         months: []
     },
+
     data: {
         languageCode: null,
         momentTime: null
     },
+
     urls: {
         home: alpha.urls.oldMainRootPath + '_Reports/PortalPage/PortalPage.aspx',
         oldMainIndex: alpha.urls.oldMainRootPath + "Index.aspx",

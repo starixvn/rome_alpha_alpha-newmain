@@ -26,7 +26,6 @@
 
         public IEnumerable<IMenuItem> GetMenuByUserLevel(UserLevel userLevel)
         {
-            
             var menuItems = Enumerable.Empty<IMenuItem>();
 
             menuItems = GetMenuDataByUserLevel(userLevel);
