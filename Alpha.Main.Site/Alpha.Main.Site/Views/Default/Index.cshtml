@@ -1,17 +1,10 @@
 ﻿@model IndexViewModel
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title></title>
-    @ContentSite.Styles.Render("/css/bootstrap/css/bootstrap.min.css")
-
-    @ContentSite.Styles.Render(
-        "/css/reset.css",
-        "/css/bootstrap-material/css/bootstrap-material-design.min.css",
-        "/css/bootstrap-material/css/ripples.min.css",
-        "/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.min.css",
-        "/fonts/iconalpha/style.min.css")
+    @ContentSite.Styles.Render("/bundle/styles/main/default")  
+    @ContentSite.Styles.Render("/fonts/iconalpha/style.min.css")
     @Styles.Render("~/bundle/styles/default")
     @Styles.Render($"~/assets/styles/home/{Model.UserLevel}.css")
 </head>
@@ -30,21 +23,11 @@
             <iframe frameborder="0" id="main" data-default-url="@Model.DefaultUrl" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>
         </main>
     </div>
-
     @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
     @Html.Hidden("onUserId", Model.OnUserId)
     @Html.Hidden("mainRootPath", Model.MainRootPath)
     @Html.Hidden("passwordHash", Model.PasswordHash)
-
-    @ContentSite.Scripts.Render(
-        "/libs/jquery/jquery-1.11.3.min.js",
-        "/css/bootstrap/js/bootstrap.min.js",
-        "/libs/jquery/jQueryCustomScrollbar/jquery.mCustomScrollbar.concat.min.js",
-        "/css/bootstrap-material/js/material.min.js",
-        "/css/bootstrap-material/js/ripples.min.js",
-        "/libs/moment/moment-with-locales.min.js",
-        "/libs/jquery/jquery.cookie.min.js")
-
+    @ContentSite.Scripts.Render("/bundles/scripts/main/default")
     @Scripts.Render("~/bundles/scripts/default")
 </body>
 </html>
