@@ -39,7 +39,7 @@
                 .Include("~/Assets/Styles/Home/page.css", cssRewriteUrlTransformWrapper)
                 .Include("~/Assets/Styles/Home/PopupMessage.css", cssRewriteUrlTransformWrapper)
                 .Include("~/Assets/Styles/CustomerProfiles/customer-profile.css", cssRewriteUrlTransformWrapper)
-                .Include("~/Content/Styles/Announcement/announcements.css", cssRewriteUrlTransformWrapper));
+                .Include("~/Assets/Styles/Announcement/announcements.css", cssRewriteUrlTransformWrapper));
         }
     }
 }

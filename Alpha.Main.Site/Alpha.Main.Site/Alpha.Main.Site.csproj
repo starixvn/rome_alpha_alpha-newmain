@@ -375,7 +375,12 @@
     <Content Include="App_Themes\Apo\Security\images\x5.gif" />
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
-    <Content Include="Assets\Styles\Announcement\Announcements.css" />
+    <Content Include="Assets\Styles\Announcement\announcements.css">
+      <DependentUpon>announcements.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\Styles\Announcement\announcements.min.css">
+      <DependentUpon>announcements.css</DependentUpon>
+    </Content>
     <Content Include="Assets\Styles\Announcement\Images\bottomborder.png" />
     <Content Include="Assets\Styles\Announcement\Images\CloseIcon.png" />
     <Content Include="Assets\Styles\Announcement\Images\CloseIcon_h.png" />
@@ -485,7 +490,7 @@
     <Content Include="Views\Announcement\HotAnnouncementWithSource.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
     <Content Include="Views\Language\List.cshtml" />
-    <Content Include="Content\Styles\Announcement\announcement.scss" />
+    <Content Include="Assets\Styles\Announcement\announcements.scss" />
     <None Include="Web.AppSettings.config" />
     <None Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
