@@ -25,10 +25,10 @@
             bundles.Add(new ScriptBundle("~/bundles/scripts/home").Include(
                 "~/Content/Scripts/core.js",
                 "~/Content/Scripts/Home/header-nav.js",
-                "~/Content/Scripts/Home/header-message.js",
+                "~/Content/Scripts/Home/header-msg.js",
                 "~/Content/Scripts/Home/menu-bar.js",
                 "~/Content/Scripts/CustomerProfiles/brief-profile.js",
-                "~/Content/Scripts/Home/index-page.js",
+                "~/Content/Scripts/Home/index.js",
                 "~/Content/Scripts/Announcement/announcement.js"));
         }
 

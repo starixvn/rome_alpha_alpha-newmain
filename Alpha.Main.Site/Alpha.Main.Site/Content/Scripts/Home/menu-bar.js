@@ -20,6 +20,8 @@
     init: function () {
         menuBar.storeElements();
         menuBar.bindEvents();
+
+        
     },
     storeElements: function () {
         menuBar.domElements.subMenuItems = $('.sub-menu-item');
@@ -112,7 +114,3 @@
         subMenu.addClass('active');
     }
 };
-
-$(function () {
-    menuBar.init();
-});

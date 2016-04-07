@@ -413,10 +413,10 @@
     <Content Include="Content\Styles\CustomerProfiles\Images\tooltip_bg.png" />
     <Content Include="Content\Styles\CustomerProfiles\Images\tooltip_left.png" />
     <Content Include="Content\Styles\CustomerProfiles\Images\tooltip_right.png" />
-    <Content Include="Content\Scripts\Home\header-message.js" />
+    <Content Include="Content\Scripts\Home\header-msg.js" />
     <Content Include="Content\Scripts\Home\header-nav.js" />
     <Content Include="Content\Scripts\Home\menu-bar.js" />
-    <Content Include="Content\Scripts\Home\index-page.js" />
+    <Content Include="Content\Scripts\Home\index.js" />
     <Content Include="Content\Styles\Home\agent.css">
       <DependentUpon>agent.scss</DependentUpon>
     </Content>
