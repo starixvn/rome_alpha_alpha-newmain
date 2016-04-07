@@ -137,12 +137,19 @@ var headerMessage = {
             && headerMessage.privateMessageId !== privateMessage[headerMessage.messageIdIndex]) {
 
             //// Append Private Message to Marquee with green color format.
-            var liveMessageContent = headerMessage.domElements.liveMessage.html();
-            headerMessage.domElements.liveMessage.html(
-                liveMessageContent
-                + ". <font color=\"green\">Private message: "
-                + privateMessage[headerMessage.messageContentIndex]
-                + "</font>");
+            var privateMessageContent = headerMessage.domElements.liveMessage.find('#private-message-content');
+
+            if (privateMessageContent.length > 0) {
+                privateMessageContent.html(privateMessage[headerMessage.messageContentIndex]);
+            }
+            else {
+                var liveMessageContent = headerMessage.domElements.liveMessage.html();
+                headerMessage.domElements.liveMessage.html(
+                    liveMessageContent
+                    + ". <font id='private-message-content' color=\"green\">Private message: "
+                    + privateMessage[headerMessage.messageContentIndex]
+                    + "</font>");
+            }
 
             headerMessage.appendMessageToPopup(privateMessage[headerMessage.messageContentIndex]);
 
