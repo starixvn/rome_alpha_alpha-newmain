@@ -1,4 +1,4 @@
-﻿var menuBarManager = {
+﻿var menuBar = {
     domElements: {
         subMenuItems: null,
         menuOpener: null,
@@ -18,33 +18,33 @@
     },
 
     init: function () {
-        menuBarManager.storeElements();
-        menuBarManager.bindEvents();
+        menuBar.storeElements();
+        menuBar.bindEvents();
     },
     storeElements: function () {
-        menuBarManager.domElements.subMenuItems = $('.sub-menu-item');
-        menuBarManager.domElements.menuOpener = $('.menu-opener');
-        menuBarManager.domElements.subMenu = $('.sub-menu');
-        menuBarManager.domElements.menuItems = $('.menu-item');
-        menuBarManager.domElements.sideBar = $('.sidebar');
-        menuBarManager.domElements.profilePicture = $("#logoProfileImg");
+        menuBar.domElements.subMenuItems = $('.sub-menu-item');
+        menuBar.domElements.menuOpener = $('.menu-opener');
+        menuBar.domElements.subMenu = $('.sub-menu');
+        menuBar.domElements.menuItems = $('.menu-item');
+        menuBar.domElements.sideBar = $('.sidebar');
+        menuBar.domElements.profilePicture = $("#logoProfileImg");
 
-        menuBarManager.domElements.mainTabs = $('.main-tab li');
-        menuBarManager.domElements.menuContainer = $('.mainmenu-container');
-        menuBarManager.domElements.navigationContainers = $('.navigation .container');
-        menuBarManager.domElements.accountInfoTab = $('.accountinfo');
-        menuBarManager.domElements.accountInfoContent = $('.accinfo-content');
+        menuBar.domElements.mainTabs = $('.main-tab li');
+        menuBar.domElements.menuContainer = $('.mainmenu-container');
+        menuBar.domElements.navigationContainers = $('.navigation .container');
+        menuBar.domElements.accountInfoTab = $('.accountinfo');
+        menuBar.domElements.accountInfoContent = $('.accinfo-content');
     },
     bindEvents: function () {
-        menuBarManager.domElements.menuOpener.click(function () {
+        menuBar.domElements.menuOpener.click(function () {
             var $this = $(this);
             var menuContainer = $this.closest('li');
-            menuBarManager.domElements.menuItems.removeClass('active');
+            menuBar.domElements.menuItems.removeClass('active');
 
             menuContainer.addClass('active');
             var isVisible = $this.hasClass('active');
-            menuBarManager.domElements.menuOpener.removeClass('active');
-            menuBarManager.domElements.subMenu.slideUp('normal');
+            menuBar.domElements.menuOpener.removeClass('active');
+            menuBar.domElements.subMenu.slideUp('normal');
 
             var checkElement = $this.next();
             if (isVisible) {
@@ -64,14 +64,14 @@
             }
         });
 
-        menuBarManager.domElements.subMenuItems.click(function () {
-            menuBarManager.activeSubMenuItem($(this));
+        menuBar.domElements.subMenuItems.click(function () {
+            menuBar.activeSubMenuItem($(this));
         });
 
-        menuBarManager.domElements.sideBar.hover(
+        menuBar.domElements.sideBar.hover(
             function () {
                 if ($(this).hasClass('collapsed')) {
-                    menuBarManager.domElements.profilePicture.removeClass("collapse-image");
+                    menuBar.domElements.profilePicture.removeClass("collapse-image");
 
                     var activeSubMenu = $('.menu-item.active .sub-menu');
                     activeSubMenu.css('display', 'block');
@@ -79,7 +79,7 @@
             },
             function () {
                 if ($(this).hasClass('collapsed')) {
-                    menuBarManager.domElements.profilePicture.addClass("collapse-image");
+                    menuBar.domElements.profilePicture.addClass("collapse-image");
 
                     var activeSubMenu = $('.menu-item.active .sub-menu');
                     activeSubMenu.css('display', 'none');
@@ -87,32 +87,32 @@
             }
         );
 
-        menuBarManager.domElements.mainTabs.click(function () {
+        menuBar.domElements.mainTabs.click(function () {
             var $this = $(this);
             var tabClass = $this.attr('class');
 
-            menuBarManager.domElements.mainTabs.removeClass('active');
+            menuBar.domElements.mainTabs.removeClass('active');
             $this.addClass('active');
 
             var targetContainer = $("." + $this.data("target-container"));
-            menuBarManager.domElements.navigationContainers.css('display', 'none');
+            menuBar.domElements.navigationContainers.css('display', 'none');
             targetContainer.css('display', 'block');
         });
 
-        menuBarManager.domElements.accountInfoTab.click(function () {
-            var accInfoContent = menuBarManager.domElements.accountInfoContent;
+        menuBar.domElements.accountInfoTab.click(function () {
+            var accInfoContent = menuBar.domElements.accountInfoContent;
             var src = accInfoContent.attr('src');
             if (!src) {
-                accInfoContent.attr('src', menuBarManager.urls.accountInfo);
+                accInfoContent.attr('src', menuBar.urls.accountInfo);
             }
         });
     },
     activeSubMenuItem: function (subMenu) {
-        menuBarManager.domElements.subMenuItems.removeClass('active');
+        menuBar.domElements.subMenuItems.removeClass('active');
         subMenu.addClass('active');
     }
 };
 
 $(function () {
-    menuBarManager.init();
+    menuBar.init();
 });
