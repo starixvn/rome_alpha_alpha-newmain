@@ -16,7 +16,7 @@
             <span class="icon icon-extra icon-dots"></span>
         </div>
     </div>
-    <section class="mainmenu-container container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
+    <section class="mainmenu-container tab-content-container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
         <ul class="list-menu">
             @foreach (var menuItem in Model.MenuItems)
             {
@@ -54,7 +54,7 @@
 
     if (Model.IsAccountInfoVisible)
     {
-        <section class="accountinfo-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
+        <section class="accountinfo-container tab-content-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
             <span class="icon icon-user"></span>
             <iframe frameborder="0" id="accountinfo-content" scrolling="auto"
                     name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content"></iframe>

@@ -9,7 +9,7 @@
 
         mainTabs: null,
         menuContainer: null,
-        navigationContainers: null,
+        tabContentContainers: null,
         accountInfoTab: null,
         accountInfoContent: null
     },
@@ -21,7 +21,7 @@
         menuBar.storeElements();
         menuBar.bindEvents();
 
-        
+
     },
     storeElements: function () {
         menuBar.domElements.subMenuItems = $('.sub-menu-item');
@@ -33,7 +33,7 @@
 
         menuBar.domElements.mainTabs = $('.main-tab li');
         menuBar.domElements.menuContainer = $('.mainmenu-container');
-        menuBar.domElements.navigationContainers = $('.navigation .container');
+        menuBar.domElements.tabContentContainers = $('.tab-content-container');
         menuBar.domElements.accountInfoTab = $('.accountinfo');
         menuBar.domElements.accountInfoContent = $('.accinfo-content');
     },
@@ -97,7 +97,7 @@
             $this.addClass('active');
 
             var targetContainer = $("." + $this.data("target-container"));
-            menuBar.domElements.navigationContainers.css('display', 'none');
+            menuBar.domElements.tabContentContainers.css('display', 'none');
             targetContainer.css('display', 'block');
         });
 
