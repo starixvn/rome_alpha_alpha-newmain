@@ -1,12 +1,13 @@
 ﻿namespace Alpha.Main.Site.Services.Impl
 {
+    using Constants;
+    using Fanex.Common;
+    using Models.Requests.UserMessages;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Xml;
-    using Fanex.Common;
-    using Models.Requests.UserMessages;
 
     public class UserMessageServiceImpl : UserMessageService
     {
@@ -66,26 +67,29 @@
             {
                 switch (language)
                 {
+                    case "en-us":
+                        return announcementXmlNode.SelectNodes(Language.English)[0].InnerText;
+
                     case "zh-tw":
-                        return announcementXmlNode.SelectNodes("zh-TW")[0].InnerText;
+                        return announcementXmlNode.SelectNodes(Language.ChineseTraditional)[0].InnerText;
 
                     case "zh-cn":
-                        return announcementXmlNode.SelectNodes("zh-CN")[0].InnerText;
+                        return announcementXmlNode.SelectNodes(Language.ChineseSimplified)[0].InnerText;
 
                     case "ja-jp":
-                        return announcementXmlNode.SelectNodes("ja-JP")[0].InnerText;
+                        return announcementXmlNode.SelectNodes(Language.Japan)[0].InnerText;
 
                     case "th-th":
-                        return announcementXmlNode.SelectNodes("th-TH")[0].InnerText;
+                        return announcementXmlNode.SelectNodes(Language.Thailand)[0].InnerText;
 
                     case "ko-kr":
-                        return announcementXmlNode.SelectNodes("ko-KR")[0].InnerText;
+                        return announcementXmlNode.SelectNodes(Language.Korean)[0].InnerText;
 
                     case "vi-vn":
                         break;
 
                     default:
-                        return announcementXmlNode.SelectNodes("en-US")[0].InnerText;
+                        return announcementXmlNode.SelectNodes(Language.Default)[0].InnerText;
                 }
             }
 

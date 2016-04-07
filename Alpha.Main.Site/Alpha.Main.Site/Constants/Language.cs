@@ -4,29 +4,36 @@
 
     public static class Language
     {
-        private const string English = "en-US";
-        public const string Default = English;        
+        public const string English = "en-US";
+        public const string ChineseTraditional = "zh-TW";
+        public const string ChineseSimplified = "zh-CN";
+        public const string Japan = "ja-JP";
+        public const string Thailand = "th-TH";
+        public const string Korean = "ko-KR";
+        public const string VietNam = "vi-VN";
+
+        public const string Default = English;
 
         public static readonly Dictionary<string, string> CodeKeys = new Dictionary<string, string>
         {
             [English] = "E",
-            ["zh-TW"] = "CT",
-            ["zh-CN"] = "CS",
-            ["ja-JP"] = "J",
-            ["th-TH"] = "TH",
-            ["ko-KR"] = "KO",
-            ["vi-VN"] = "VI"
+            [ChineseTraditional] = "CT",
+            [ChineseSimplified] = "CS",
+            [Japan] = "J",
+            [Thailand] = "TH",
+            [Korean] = "KO",
+            [VietNam] = "VI"
         };
 
         public static readonly Dictionary<string, string> CodeNames = new Dictionary<string, string>
         {
             [English] = "English",
-            ["zh-TW"] = "繁體中文",
-            ["zh-CN"] = "简体中文",
-            ["ja-JP"] = "日本語",
-            ["th-TH"] = "ภาษาไทย",            
-            ["ko-KR"] = "한국어",
-            ["vi-VN"] = "Tiếng Việt"
+            [ChineseTraditional] = "繁體中文",
+            [ChineseSimplified] = "简体中文",
+            [Japan] = "日本語",
+            [Thailand] = "ภาษาไทย",
+            [Korean] = "한국어",
+            [VietNam] = "Tiếng Việt"
         };
     }
 }
