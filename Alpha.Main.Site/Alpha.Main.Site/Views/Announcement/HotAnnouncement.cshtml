@@ -1,11 +1,18 @@
 ﻿@model HotAnnouncement
-@if (string.IsNullOrEmpty(Model.Source))
+@if (string.IsNullOrEmpty(Model.Content))
 {
-    @Html.Partial("HotAnnouncementWithText", Model)
+    @Html.Raw("-")
 }
-else {
-    @Html.Partial("HotAnnouncementWithSource", Model)
-}
+else
+{
+    if (string.IsNullOrEmpty(Model.Source))
+    {
+        @Html.Partial("HotAnnouncementWithText", Model)
+    }
+    else {
+        @Html.Partial("HotAnnouncementWithSource", Model)
+    }
 
-@Html.Hidden("announcement-cookies-id", Model.CookieId)
-@Html.Hidden("popup-id", Model.Id)   
+    @Html.Hidden("announcement-cookies-id", Model.CookieId)
+    @Html.Hidden("popup-id", Model.Id)
+}
