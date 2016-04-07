@@ -85,16 +85,16 @@
 
         private static Func<string> getDefaultUrl = () =>
         {
-            var _defaultMainPage = OldMainSite.Url("~/_Reports/PortalPage/PortalPage.aspx");
+            var _defaultMainPage = MicroSites.OldMainUrl("~/_Reports/PortalPage/PortalPage.aspx");
 
             if (!Current.IsLogged)
             {
-                return OldMainSite.Url("~/_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
+                return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
             }
 
             if (Current.IsPasswordExpired)
             {
-                return OldMainSite.Url("~/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
+                return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
             }
 
             ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
@@ -108,13 +108,13 @@
                 switch (status)
                 {
                     case SecurityCodeStatus.FORCED_CHANGE_SC:
-                        return OldMainSite.Url("~/Security/SecurityCode/ForceChangeSecurityCode");
+                        return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCode");
 
                     case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-                        return OldMainSite.Url("~/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
+                        return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
 
                     default:
-                        return OldMainSite.Url("~/Security/SecurityCode/VerifySecurityCode");
+                        return MicroSites.OldMainUrl("~/Security/SecurityCode/VerifySecurityCode");
                 }
             }
 
@@ -122,7 +122,7 @@
                 (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
             {
                 // Use the OLD flow of Security Code.
-                return OldMainSite.Url("~/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
+                return MicroSites.OldMainUrl("~/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
             }
 
             return _defaultMainPage;

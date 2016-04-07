@@ -33,7 +33,7 @@
     </aside>
     <div class="content-wrapper">
         <header class="header">
-            @Html.Partial("HeaderNav", new HeaderNavViewModel { CustId = Model.CustId, OldMainRootApp = Model.OldMainRootPath })
+            @Html.Partial("HeaderNav", new HeaderNavViewModel { CustId = Model.CustId })
             @Html.Action("HeaderMsg")
         </header>
         <main class="content" id="content">

@@ -1,4 +1,6 @@
-﻿namespace Alpha.Main.Site.ViewModels.CustomerProfile
+﻿using Alpha.Main.Site.Helpers;
+
+namespace Alpha.Main.Site.ViewModels.CustomerProfile
 {
     public class BriefProfileViewModel
     {
@@ -8,7 +10,13 @@
 
         public string EmbedImage { get; set; }
 
-        public string OldMainRootApp { get; set; }
+        public string OldMainRootApp
+        {
+            get
+            {
+                return MicroSites.OldMainUrl("~/");
+            }
+        }
 
         public string Username { get; set; }
 

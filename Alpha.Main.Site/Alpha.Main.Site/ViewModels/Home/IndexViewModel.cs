@@ -85,7 +85,15 @@
         {
             get
             {
-                return OldMainSite.Url("~/");
+                return MicroSites.OldMainUrl("~/");
+            }
+        }
+
+        public string HowToUseRootPath
+        {
+            get
+            {
+                return MicroSites.HowToUseUrl("~/");
             }
         }
 

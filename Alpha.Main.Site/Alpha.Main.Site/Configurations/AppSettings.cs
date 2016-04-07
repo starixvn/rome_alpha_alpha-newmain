@@ -21,6 +21,14 @@
             }
         }
 
+        public static string HowToUseAppPath
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["HowToUseAppPath"];
+            }
+        }
+
         public static int CustIdFoobet
         {
             get

@@ -22,7 +22,7 @@
             if (!filterContext.HttpContext.User.Identity.IsAuthenticated
                 || UserSession.Current.UserId <= 0)
             {
-                var logInUrl = OldMainSite.Url(FormsAuthentication.LoginUrl);
+                var logInUrl = MicroSites.OldMainUrl(FormsAuthentication.LoginUrl);
                 Response.Redirect(logInUrl, true);
                 return;
             }

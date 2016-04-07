@@ -4,9 +4,7 @@
     using System.Web;
     using Alpha.Main.Site.Models.Requests.CustomerProfile;
     using App_GlobalResources;
-    using Configurations;
     using Fanex.Common;
-    using Helpers;
     using MediatR;
     using Models.CustomerProfiles;
     using Services;
@@ -17,27 +15,14 @@
          IRequestHandler<BriefProfileQuery, BriefProfileViewModel>
     {
         private readonly CustomerProfileService customerProfileService;
-        private readonly string oldMainRootApp;
 
-        private int custId;
-
-        internal CustomerProfileHandler(
-            CustomerProfileService customerProfileService,
-            string oldMainRootApp)
+        public CustomerProfileHandler(CustomerProfileService customerProfileService)
         {
             this.customerProfileService = customerProfileService;
-            this.oldMainRootApp = oldMainRootApp ?? AppPathHelper.GetAppPath(AppSettings.OldMainAppPath, "~/");
-        }
-
-        public CustomerProfileHandler(
-            CustomerProfileService customerProfileService) : this(customerProfileService, null)
-        {
         }
 
         public BriefProfileViewModel Handle(BriefProfileQuery message)
         {
-            this.custId = message.CustId;
-
             var profile = customerProfileService.GetProfilePicture(message.CustId);
 
             var viewModel = new BriefProfileViewModel
@@ -47,9 +32,8 @@
                 CustId = message.CustId,
                 Username = HttpUtility.HtmlEncode(message.UserName),
                 LoginUserIsNotMainAccount = message.IsSubAcc || message.IsInternal,
-                OldMainRootApp = this.oldMainRootApp,
                 NickName = BuildNickName(message),
-                IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{custId}")
+                IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{message.CustId}")
             };
 
             return viewModel;
