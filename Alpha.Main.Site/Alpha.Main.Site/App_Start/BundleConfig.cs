@@ -22,24 +22,24 @@
 
         private static void RegisterHomeJavascript(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/scripts/home").Include(
-                "~/Content/Scripts/core.js",
-                "~/Content/Scripts/Home/header-nav.js",
-                "~/Content/Scripts/Home/header-msg.js",
-                "~/Content/Scripts/Home/menu-bar.js",
-                "~/Content/Scripts/CustomerProfiles/brief-profile.js",
-                "~/Content/Scripts/Home/index.js",
-                "~/Content/Scripts/Announcement/announcement.js"));
+            bundles.Add(new ScriptBundle("~/bundles/scripts/default").Include(
+                "~/Assets/Scripts/core.js",
+                "~/Assets/Scripts/Home/header-nav.js",
+                "~/Assets/Scripts/Home/header-msg.js",
+                "~/Assets/Scripts/Home/menu-bar.js",
+                "~/Assets/Scripts/CustomerProfiles/brief-profile.js",
+                "~/Assets/Scripts/Home/index.js",
+                "~/Assets/Scripts/Announcement/announcement.js"));
         }
 
         private static void RegisterHomeStyle(BundleCollection bundles)
         {
             var cssRewriteUrlTransformWrapper = new CssRewriteUrlTransformWrapper();
-            bundles.Add(new StyleBundle("~/bundle/styles/home")
-                .Include("~/Content/Styles/Home/page.css", cssRewriteUrlTransformWrapper)
-                .Include("~/Content/Styles/Home/PopupMessage.css", cssRewriteUrlTransformWrapper)
-                .Include("~/Content/Styles/CustomerProfiles/customer-profile.css", cssRewriteUrlTransformWrapper)
-                .Include("~/Content/Styles/Announcement/Announcements.css", cssRewriteUrlTransformWrapper));
+            bundles.Add(new StyleBundle("~/bundle/styles/default")
+                .Include("~/Assets/Styles/Home/page.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Assets/Styles/Home/PopupMessage.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Assets/Styles/CustomerProfiles/customer-profile.css", cssRewriteUrlTransformWrapper)
+                .Include("~/Assets/Styles/Announcement/Announcements.css", cssRewriteUrlTransformWrapper));
         }
     }
 }

@@ -8,8 +8,6 @@
     using System.Web.Routing;
     using Alpha.Auth.Web;
     using Alpha.Main.Site.App_Start;
-    using Models.Menus;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
 
     public class MvcApplication : System.Web.HttpApplication
