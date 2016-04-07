@@ -4,8 +4,9 @@
 {
     <div>
         <ul class="main-tab" id="main-tab">
-            <li class="mainmenu active"><a href="javascript:;">@Resources.mainMenu</a></li>
-            <li class="accountinfo  @(Model.IsAccountInfoVisible ? string.Empty : "disabledView")">
+            <li class="mainmenu active" data-target-container="mainmenu-container"><a href="javascript:;">@Resources.mainMenu</a></li>
+            <li class="accountinfo  @(Model.IsAccountInfoVisible ? string.Empty : "disabledView")"
+                data-target-container="accountinfo-container">
                 <a href="javascript:;">
                     @(Model.IsAccountInfoVisible ? @Resources.accountInfo : string.Empty)
                 </a>
@@ -15,37 +16,37 @@
             <span class="icon icon-extra icon-dots"></span>
         </div>
     </div>
-    <section class="mainmenu-container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
+    <section class="mainmenu-container container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
         <ul class="list-menu">
             @foreach (var menuItem in Model.MenuItems)
             {
                 if (menuItem.VisibileSubMenus.Any())
                 {
-                    <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)">
-                        <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)"
-                           href="javascript:;">
-                            <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
-                            <span class="pull-right icon-arrow-right"></span>
-                        </a>
-                        <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
-                            @foreach (var subMenuItem in menuItem.VisibileSubMenus)
+            <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)">
+                <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)"
+                   href="javascript:;">
+                    <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
+                    <span class="pull-right icon-arrow-right"></span>
+                </a>
+                <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
+                    @foreach (var subMenuItem in menuItem.VisibileSubMenus)
                             {
-                                <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)">
-                                    <a href="@subMenuItem.Url" target="main">
-                                        @subMenuItem.DisplayName
-                                    </a>
-                                </li>
-                            }
-                        </ul>
+                    <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)">
+                        <a href="@subMenuItem.Url" target="main">
+                            @subMenuItem.DisplayName
+                        </a>
                     </li>
+                            }
+                </ul>
+            </li>
                 }
                 else
                 {
-                    <li class="menu-item">
-                        <a class="withripple menu-opener parent-menu" href="@menuItem.Url" target="main">
-                            <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
-                        </a>                  
-                    </li>
+            <li class="menu-item">
+                <a class="withripple menu-opener parent-menu" href="@menuItem.Url" target="main">
+                    <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
+                </a>
+            </li>
                 }
             }
         </ul>

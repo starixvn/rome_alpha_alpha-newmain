@@ -1,42 +1,51 @@
-﻿var menuBarManager;
+﻿var menuBarManager = {
+    domElements: {
+        subMenuItems: null,
+        menuOpener: null,
+        subMenu: null,
+        menuItems: null,
+        sideBar: null,
+        profilePicture: null,
 
-jQuery(document).ready(function () {
-    menuBarManager.init();
-    
-});
+        mainTabs: null,
+        menuContainer: null,
+        navigationContainers: null,
+        accountInfoTab: null,
+        accountInfoContent: null
+    },
+    urls: {
+        accountInfo: alpha.urls.oldMainRootPath + '_AccountInfo/AccountInfo.aspx?fromNewSite=1'
+    },
 
-var MenuBarManager = function () {
-    var self = this;
-    self.data = {
-        dom: {
-            subMenuItems: null
-        }
-    };
+    init: function () {
+        menuBarManager.storeElements();
+        menuBarManager.bindEvents();
+    },
+    storeElements: function () {
+        menuBarManager.domElements.subMenuItems = $('.sub-menu-item');
+        menuBarManager.domElements.menuOpener = $('.menu-opener');
+        menuBarManager.domElements.subMenu = $('.sub-menu');
+        menuBarManager.domElements.menuItems = $('.menu-item');
+        menuBarManager.domElements.sideBar = $('.sidebar');
+        menuBarManager.domElements.profilePicture = $("#logoProfileImg");
 
-    self.init = function () {
-        self.storeElements();
-        self.bindEvents();
-    };
-
-    self.storeElements = function () {
-        self.data.dom.subMenuItems = $('.sub-menu-item');
-    };
-
-    self.bindEvents = function () {
-
-        var menuOpener = $('.menu-opener');
-        var subMenu = $('.sub-menu');
-        var menuItems = $('.menu-item');
-
-        menuOpener.click(function () {            
+        menuBarManager.domElements.mainTabs = $('.main-tab li');
+        menuBarManager.domElements.menuContainer = $('.mainmenu-container');
+        menuBarManager.domElements.navigationContainers = $('.navigation .container');
+        menuBarManager.domElements.accountInfoTab = $('.accountinfo');
+        menuBarManager.domElements.accountInfoContent = $('.accinfo-content');
+    },
+    bindEvents: function () {
+        menuBarManager.domElements.menuOpener.click(function () {
             var $this = $(this);
             var menuContainer = $this.closest('li');
-            menuItems.removeClass('active');
+            menuBarManager.domElements.menuItems.removeClass('active');
 
             menuContainer.addClass('active');
             var isVisible = $this.hasClass('active');
-            menuOpener.removeClass('active');
-            subMenu.slideUp('normal');
+            menuBarManager.domElements.menuOpener.removeClass('active');
+            menuBarManager.domElements.subMenu.slideUp('normal');
+
             var checkElement = $this.next();
             if (isVisible) {
                 menuContainer.removeClass('active');
@@ -55,14 +64,14 @@ var MenuBarManager = function () {
             }
         });
 
-        self.data.dom.subMenuItems.click(function () {
-            self.activeSubMenuItem($(this));
+        menuBarManager.domElements.subMenuItems.click(function () {
+            menuBarManager.activeSubMenuItem($(this));
         });
 
-        $('.sidebar').hover(
+        menuBarManager.domElements.sideBar.hover(
             function () {
                 if ($(this).hasClass('collapsed')) {
-                    $("#logoProfileImg").removeClass("collapse-image");
+                    menuBarManager.domElements.profilePicture.removeClass("collapse-image");
 
                     var activeSubMenu = $('.menu-item.active .sub-menu');
                     activeSubMenu.css('display', 'block');
@@ -70,7 +79,7 @@ var MenuBarManager = function () {
             },
             function () {
                 if ($(this).hasClass('collapsed')) {
-                    $("#logoProfileImg").addClass("collapse-image");
+                    menuBarManager.domElements.profilePicture.addClass("collapse-image");
 
                     var activeSubMenu = $('.menu-item.active .sub-menu');
                     activeSubMenu.css('display', 'none');
@@ -78,45 +87,32 @@ var MenuBarManager = function () {
             }
         );
 
-        $('.main-tab li').click(function () {
+        menuBarManager.domElements.mainTabs.click(function () {
             var $this = $(this);
-            var cla = $(this).attr('class');
-            if ($this.hasClass('mainmenu')) {
-                $('.main-tab li').removeClass('active');
-                $(this).addClass('active');
-                $('.mainmenu-container').css('display', 'block');
-                $('.accountinfo-container').css('display', 'none');
-            }
-            else if ($this.hasClass('accountinfo')) {
-                $('.main-tab li').removeClass('active');
-                $(this).addClass('active');
-                $('.accountinfo-container').css('display', 'block');
-                $('.mainmenu-container').css('display', 'none');
-            }
+            var tabClass = $this.attr('class');
+
+            menuBarManager.domElements.mainTabs.removeClass('active');
+            $this.addClass('active');
+
+            var targetContainer = $("." + $this.data("target-container"));
+            menuBarManager.domElements.navigationContainers.css('display', 'none');
+            targetContainer.css('display', 'block');
         });
 
-        $('.accountinfo').click(function () {
-            var accInfoContent = $('.accinfo-content');
-
-            var oldMainRootPath = $("#oldMainRootPath").val();
-
+        menuBarManager.domElements.accountInfoTab.click(function () {
+            var accInfoContent = menuBarManager.domElements.accountInfoContent;
             var src = accInfoContent.attr('src');
             if (!src) {
-                accInfoContent.attr('src', oldMainRootPath + '_AccountInfo/AccountInfo.aspx?fromNewSite=1');
+                accInfoContent.attr('src', menuBarManager.urls.accountInfo);
             }
         });
-
-    };
-    self.activeSubMenuItem = function (subMenu) {
-        self.data.dom.subMenuItems.removeClass('active');
+    },
+    activeSubMenuItem: function (subMenu) {
+        menuBarManager.domElements.subMenuItems.removeClass('active');
         subMenu.addClass('active');
-    };
-    self.expandMenu = function (menu) {
-        var firstMenu = $('.list-menu > .menu-item:first-child');
-        menu.addClass('active');
-        menu.find('.parent-menu').addClass('active');
-        menu.find('.sub-menu').slideDown('normal');
-    };
+    }
 };
 
-menuBarManager = new MenuBarManager();
+$(function () {
+    menuBarManager.init();
+});
