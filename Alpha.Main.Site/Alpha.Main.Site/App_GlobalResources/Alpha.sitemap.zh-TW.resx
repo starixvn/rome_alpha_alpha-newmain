@@ -342,4 +342,10 @@
   <data name="BetType28" xml:space="preserve">
     <value>三項讓分投注</value>
   </data>
+  <data name="BetsAndForecast" xml:space="preserve">
+    <value>投注 &amp; 預測 &lt;span class="beta-version"&gt;Beta版&lt;/span&gt;</value>
+  </data>
+  <data name="soccer" xml:space="preserve">
+    <value>足球</value>
+  </data>
 </root>

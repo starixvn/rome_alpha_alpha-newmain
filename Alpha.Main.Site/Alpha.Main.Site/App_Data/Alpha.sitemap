@@ -80,6 +80,11 @@
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="OldMainAppPath" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
+    <!--New Totalbets Forecast-->
+    <siteMapNode resourceKey="BetsAndForecast" menuItemType="TotalBetsForecast">
+      <siteMapNode resourceKey="soccer" appPath="TotalBetsForecastAppPath" url="~/Forecast"></siteMapNode>
+    </siteMapNode>
+    <!--/Forecast-->
     <!--Totalbets-->
     <siteMapNode resourceKey="totalbets" menuItemType="TotalBetsMenuItem" functionType="[D]">
       <siteMapNode resourceKey="HOUL" appPath="OldMainAppPath" url="_TotalBets/HDPOU.aspx"></siteMapNode>

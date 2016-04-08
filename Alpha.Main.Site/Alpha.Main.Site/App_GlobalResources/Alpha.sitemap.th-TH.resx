@@ -342,4 +342,10 @@
   <data name="BetType28" xml:space="preserve">
     <value>แฮนดิแคป 3 ทาง</value>
   </data>
+  <data name="BetsAndForecast" xml:space="preserve">
+    <value>เดิมพันและการคาดการณ์ล่วงหน้า &lt;span class="beta-version"&gt;เบต้า&lt;/span&gt;</value>
+  </data>
+  <data name="soccer" xml:space="preserve">
+    <value>ฟุตบอล</value>
+  </data>
 </root>

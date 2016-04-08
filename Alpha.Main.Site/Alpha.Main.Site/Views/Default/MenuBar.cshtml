@@ -21,31 +21,31 @@
             {
                 if (menuItem.VisibileSubMenus.Any())
                 {
-            <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)">
-                <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)"
-                   href="javascript:;">
-                    <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
-                    <span class="pull-right icon-arrow-right"></span>
-                </a>
-                <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
-                    @foreach (var subMenuItem in menuItem.VisibileSubMenus)
-                            {
-                    <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)">
-                        <a href="@subMenuItem.Url" target="main">
-                            @subMenuItem.DisplayName
+                    <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)">
+                        <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)"
+                           href="javascript:;">
+                            <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@Html.Raw(menuItem.DisplayName)</span>
+                            <span class="pull-right icon-arrow-right"></span>
                         </a>
+                        <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
+                            @foreach (var subMenuItem in menuItem.VisibileSubMenus)
+                                    {
+                                        <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)">
+                                            <a href="@subMenuItem.Url" target="main">
+                                                @subMenuItem.DisplayName
+                                            </a>
+                                        </li>
+                                    }
+                        </ul>
                     </li>
-                            }
-                </ul>
-            </li>
                 }
                 else
                 {
-            <li class="menu-item">
-                <a class="withripple menu-opener parent-menu" href="@menuItem.Url" target="main">
-                    <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
-                </a>
-            </li>
+                    <li class="menu-item">
+                        <a class="withripple menu-opener parent-menu" href="@menuItem.Url" target="main">
+                            <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
+                        </a>
+                    </li>
                 }
             }
         </ul>

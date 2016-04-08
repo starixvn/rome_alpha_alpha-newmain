@@ -72,5 +72,12 @@
   {
     "outputFile": "Assets/Styles/Announcement/announcements.css",
     "inputFile": "Assets/Styles/Announcement/announcements.scss"
+  },
+  {
+    "outputFile": "Assets/Styles/Home/page.css",
+    "inputFile": "Assets/Styles/Home/page.scss",
+    "minify": {
+      "enabled": false
+    }
   }
 ]

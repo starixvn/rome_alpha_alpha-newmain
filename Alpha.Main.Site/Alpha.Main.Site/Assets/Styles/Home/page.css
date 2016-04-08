@@ -226,6 +226,13 @@ a, a:focus, a:active, a:target, a:hover {
         background: #d5d5d6; }
         .mainmenu-container .menu-item > a.active .icon-arrow-right {
           transform: rotate(90deg); }
+    .mainmenu-container .menu-item .beta-version {
+      background: #da1526;
+      font-size: 10px;
+      color: #fff;
+      text-transform: initial;
+      padding: 2px;
+      margin-left: 3px; }
   .mainmenu-container .sub-menu .sub-menu-item a {
     color: #555555;
     display: table;

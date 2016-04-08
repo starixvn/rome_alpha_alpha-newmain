@@ -106,6 +106,15 @@ namespace Alpha.Main.Site.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bets &amp; Forecast &lt;span class=&quot;beta-version&quot;&gt;Beta&lt;/span&gt;.
+        /// </summary>
+        public static string BetsAndForecast {
+            get {
+                return ResourceManager.GetString("BetsAndForecast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clean Sheet.
         /// </summary>
         public static string BetType13 {
@@ -624,6 +633,15 @@ namespace Alpha.Main.Site.App_GlobalResources {
         public static string scoreMap {
             get {
                 return ResourceManager.GetString("scoreMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soccer.
+        /// </summary>
+        public static string soccer {
+            get {
+                return ResourceManager.GetString("soccer", resourceCulture);
             }
         }
         

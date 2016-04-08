@@ -315,6 +315,15 @@ a, a:focus, a:active, a:target, a:hover {
                 }
             }
         }
+
+        .beta-version {
+            background: #da1526;
+            font-size: 10px;
+            color: #fff;
+            text-transform: initial;
+            padding: 2px;
+            margin-left: 3px;
+        }
     }
 
     .sub-menu .sub-menu-item {

@@ -77,6 +77,14 @@
             }
         }
 
+        public static string AllowedSitesToViewTBF
+        {
+            get
+            {
+                return Converter.ToString2(ConfigurationManager.AppSettings["TotalBetsForecast:AllowedSitesToViewTBF"]);
+            }
+        }
+
         public static string GetAppPath(string name)
         {
             return ConfigurationManager.AppSettings[name];

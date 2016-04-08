@@ -342,4 +342,10 @@
   <data name="BetType28" xml:space="preserve">
     <value>3-way handicap</value>
   </data>
+  <data name="BetsAndForecast" xml:space="preserve">
+    <value>Tổng Cược &amp; Dự Đoán &lt;span class="beta-version"&gt;Beta&lt;/span&gt;</value>
+  </data>
+  <data name="soccer" xml:space="preserve">
+    <value>Bóng Đá</value>
+  </data>
 </root>

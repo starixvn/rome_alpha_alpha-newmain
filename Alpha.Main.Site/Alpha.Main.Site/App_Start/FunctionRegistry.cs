@@ -48,6 +48,22 @@
                         .Contains(Current.CustId.ToString());
 
                     return disabled;
+                }),
+            ["TotalBetsForecast"] = () => new MenuStatus(
+                () =>
+                {
+                    if(Current.IsSubAcc && !Current.SubPageAccess.ViewTotalBets)
+                    {
+                        return false;
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(Configurations.AppSettings.AllowedSitesToViewTBF)
+                        && !Configurations.AppSettings.AllowedSitesToViewTBF.ToLower().Contains(Current.Site.ToLower()))
+                    {
+                        return false;
+                    }
+
+                    return true;
                 })
         };
 
