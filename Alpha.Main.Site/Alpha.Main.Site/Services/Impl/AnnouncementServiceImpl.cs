@@ -11,7 +11,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml;
-
+    using Models.Enumerations;
     public class AnnouncementServiceImpl : AnnouncementService
     {
         public const int PositionTakingChanged = 1;
@@ -38,7 +38,7 @@
             }
 
             IEnumerable<string> messageTypes = null;
-            if (query.RoleId == RoleIdConstant.Agent &&
+            if (Enumeration.FromValue<UserLevel>(query.RoleId).IsAgentLevel() &&
                 query.AdminId == 0)
             {
                 messageTypes = dynamicRepository.Fetch<string>(new GetMessageTypeListCriteria
@@ -146,7 +146,7 @@
             bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(query.Site, query.SecurityCodeResult, query.SecurityCodeSession);
             if (!isForceUseSecurityCode)
             {
-                result.Add(MessageId.ForceUseSecurityCode);
+                result.Add(HotAnnouncementQuery.ForceUseSecurityCode);
             }
 
             foreach (var productStatus in query.ProductsStatus)

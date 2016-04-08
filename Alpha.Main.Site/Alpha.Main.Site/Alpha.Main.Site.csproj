@@ -582,8 +582,6 @@
     <Compile Include="App_Start\FunctionRegistry.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Constants\Language.cs" />
-    <Compile Include="Constants\MessageId.cs" />
-    <Compile Include="Constants\RoleIdConstant.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />

@@ -3,7 +3,6 @@
     using System.Collections.Generic;
     using System.Web;
     using Announcements;
-    using Constants;
     using Enumerations;
     using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
@@ -14,6 +13,12 @@
 
     public class HotAnnouncementQuery : IRequest<HotAnnouncement>
     {
+        public const int ForceUseSecurityCode = 20140512;
+        private const int OfferedGoldDeluxe = 3543501;
+        private const int NotOfferedGoldDeluxe = 3543502;
+        private const int OfferedSuperLive = 3577701;
+        private const int OfferedColossusBets = 4523901;
+
         private readonly IDictionary<int, bool> productsStatus;
         private readonly bool isSecurityCodeActive;
         private readonly ISecurityCodeSession securityCodeSession;
@@ -35,10 +40,10 @@
         {
             this.productsStatus = productsStatus ?? new Dictionary<int, bool>
                 {
-                    { MessageId.NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
-                    { MessageId.OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
-                    { MessageId.OfferedSuperLive, UserPermission.IsShowSuperLive },
-                    { MessageId.OfferedColossusBets,  UserPermission.IsShowColossusBets }
+                    { NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
+                    { OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
+                    { OfferedSuperLive, UserPermission.IsShowSuperLive },
+                    { OfferedColossusBets,  UserPermission.IsShowColossusBets }
                 };
             this.securityCodeSession = securityCodeSession ?? CookieLessSessionFactory.SecurityCodeSession;
             this.userSession = userSession ?? UserSession.Current;
