@@ -16,7 +16,7 @@
 
         private readonly SessionManager sessionManager;
 
-        public DefaultHandler(SessionManagerImpl sessionManager)
+        public DefaultHandler(SessionManager sessionManager)
         {
             this.sessionManager = sessionManager;
         }
