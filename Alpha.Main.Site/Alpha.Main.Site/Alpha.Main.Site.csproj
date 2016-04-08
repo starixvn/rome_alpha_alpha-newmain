@@ -438,10 +438,7 @@
     <Content Include="Assets\Styles\Home\super.css">
       <DependentUpon>super.scss</DependentUpon>
     </Content>
-    <Content Include="Assets\Images\collapse.png" />
-    <Content Include="Assets\Images\expand.png" />
     <Content Include="Assets\Images\icon_user_default.png" />
-    <Content Include="Assets\Images\loading.gif" />
     <Content Include="Assets\Styles\Home\Images\headerbg_2.jpg" />
     <Content Include="Assets\Styles\Home\Images\headerbg_3.jpg" />
     <Content Include="Assets\Styles\Home\Images\headerbg_4.jpg" />
@@ -455,8 +452,12 @@
     <Content Include="Global.asax" />
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
     <Content Include="App_Data\Announcements\PopupAdCommon.xml" />
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.xml" />
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml" />
+    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Assets\Scripts\Announcement\announcement.js" />
     <Content Include="Assets\Scripts\CustomerProfiles\brief-profile.js" />
     <Content Include="Assets\Scripts\core.js" />
