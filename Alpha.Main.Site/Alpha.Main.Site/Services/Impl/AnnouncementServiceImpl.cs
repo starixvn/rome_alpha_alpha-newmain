@@ -201,8 +201,8 @@
                 Converter.ToString2(effectDateAttribute.Value);
             DateTime? currentDate = DateTime.Now;
             return !startDate.HasValue ||
-                (!endDate.HasValue && currentDate < startDate) ||
-                (endDate.HasValue && (currentDate < startDate || endDate < currentDate));
+                currentDate < startDate ||
+                (endDate.HasValue && endDate < currentDate);
         }
 
         private bool IsExcludedHotMessageSite(XmlNode node, string site)
@@ -211,6 +211,7 @@
                 (!node.Attributes["privatesystem"].Value.Equals("*") ||
                 !string.IsNullOrEmpty(node.Attributes["privatesystem"].Value)) &&
                 !node.Attributes["privatesystem"].Value.Equals(site, StringComparison.OrdinalIgnoreCase);
+
             if (isPublicSystem)
             {
                 return true;
@@ -220,6 +221,7 @@
                 !string.IsNullOrEmpty(node.Attributes["excludesites"].Value))
             {
                 var isExcludeSite = node.Attributes["excludesites"].Value.ToUpper().Split(',').Contains(site.ToUpper());
+
                 if (isExcludeSite)
                 {
                     return true;
