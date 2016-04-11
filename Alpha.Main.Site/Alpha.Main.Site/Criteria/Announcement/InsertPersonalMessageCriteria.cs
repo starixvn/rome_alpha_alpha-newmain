@@ -4,6 +4,26 @@
 
     public class InsertPersonalMessageCriteria : CriteriaBase
     {
+        public InsertPersonalMessageCriteria()
+        {
+        }
+
+        public InsertPersonalMessageCriteria(string content, int type)
+        {
+            ContentEn = content;
+            ContentCh = content;
+            ContentCs = content;
+            ContentJp = content;
+            ContentIt = string.Empty;
+            ContentTh = content;
+            ContentKo = content;
+            ContentEs = string.Empty;
+            Type = type;
+            IsSticky = false;
+            MatchId = 0;
+            IsBatch = true;
+        }
+
         [SpParam(SqlParamName = "content_en")]
         public string ContentEn { get; set; }
 

@@ -5,13 +5,15 @@
     using Criteria.Announcement;
     using Fanex.Common;
     using Fanex.Data.Repository;
+    using Helpers;
     using Models.Announcements;
+    using Models.Enumerations;
     using Models.Requests.Announcement;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml;
-    using Models.Enumerations;
+
     public class AnnouncementServiceImpl : AnnouncementService
     {
         public const int PositionTakingChanged = 1;
@@ -83,23 +85,7 @@
             if (!string.IsNullOrEmpty(messageContent))
             {
                 var content = messageContent.Replace("<br>", " ");
-                InsertPersonalMessage(
-                    new InsertPersonalMessageCriteria
-                    {
-                        ContentEn = content,
-                        ContentCh = content,
-                        ContentCs = content,
-                        ContentJp = content,
-                        ContentIt = string.Empty,
-                        ContentTh = content,
-                        ContentKo = content,
-                        ContentEs = string.Empty,
-                        Type = PositionTakingChanged,
-                        IsSticky = false,
-                        MatchId = 0,
-                        IsBatch = true
-                    },
-                    query);
+                InsertPersonalMessage(new InsertPersonalMessageCriteria(content, PositionTakingChanged), query);
             }
 
             return messageContent;
@@ -163,9 +149,9 @@
         private HotAnnouncement GetHotAnnouncementFromLocalFiles(HotAnnouncementQuery query)
         {
             var showedMessages = GetShowedMessageIds(query);
-            var xmlPrivateMsg = GetPrivateAnnouncement(query);
-            var xmlCommonMsg = GetCommonAnnouncement(query);
-            JoinTheTwoAnnouncementTypes(xmlPrivateMsg, xmlCommonMsg);
+            var xmlPrivateMsg = XMLDocumentHelper.LoadDocumentFromPath(query.PrivateMessagePath);
+            var xmlCommonMsg = XMLDocumentHelper.LoadDocumentFromPath(query.CommonAnnouncementPath);
+            XMLDocumentHelper.AppendDocument(xmlPrivateMsg, xmlCommonMsg);
 
             var language = query.Language;
             var announcementNodes = xmlCommonMsg.SelectNodes("FileDB/PopupAnnouncement");
@@ -184,9 +170,8 @@
                 }
 
                 hotAnnouncement.Id = nodeId;
-                AssignAnnouncementPopupApperances(announcementNode, hotAnnouncement);
-
                 var choosedNodes = announcementNode.SelectNodes(language);
+
                 if (choosedNodes.Count == 0)
                 {
                     choosedNodes = announcementNode.SelectNodes(Language.Default);
@@ -203,40 +188,6 @@
             }
 
             return hotAnnouncement;
-        }
-
-        private XmlDocument GetPrivateAnnouncement(HotAnnouncementQuery query)
-        {
-            var pathToPrivateMsg = query.PrivateMessagePath;
-            var xmlPrivateMsg = new XmlDocument();
-            xmlPrivateMsg.Load(pathToPrivateMsg);
-            return xmlPrivateMsg;
-        }
-
-        private XmlDocument GetCommonAnnouncement(HotAnnouncementQuery query)
-        {
-            var xmlCommonMsg = new XmlDocument();
-            xmlCommonMsg.Load(query.CommonAnnouncementPath);
-            return xmlCommonMsg;
-        }
-
-        private void JoinTheTwoAnnouncementTypes(XmlDocument xmlPrivateMsg, XmlDocument xmlCommonMsg)
-        {
-            if (xmlPrivateMsg.DocumentElement == null)
-            {
-                return;
-            }
-
-            foreach (XmlNode childNode in xmlPrivateMsg.DocumentElement.ChildNodes)
-            {
-                var newNode = xmlCommonMsg.ImportNode(childNode, true);
-                if (xmlCommonMsg.DocumentElement == null)
-                {
-                    continue;
-                }
-
-                xmlCommonMsg.DocumentElement.AppendChild(newNode);
-            }
         }
 
         private bool IsExpiredHotMessage(XmlNode node)
@@ -276,25 +227,6 @@
             }
 
             return false;
-        }
-
-        private void AssignAnnouncementPopupApperances(XmlNode announcementNode, HotAnnouncement hotAnnouncement)
-        {
-            int top;
-            int.TryParse(announcementNode.Attributes["top"].Value, out top);
-            hotAnnouncement.Top = top;
-
-            int left;
-            int.TryParse(announcementNode.Attributes["left"].Value, out left);
-            hotAnnouncement.Left = left;
-
-            int width;
-            int.TryParse(announcementNode.Attributes["width"].Value, out width);
-            hotAnnouncement.Width = width;
-
-            int height;
-            int.TryParse(announcementNode.Attributes["height"].Value, out height);
-            hotAnnouncement.Height = height;
         }
     }
 }

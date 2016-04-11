@@ -115,12 +115,6 @@ var announcement = {
             popUpPanel.css('display', 'none');
         }
 
-        var popUpContainer = announcement.domElements.popUpContainerText.length ?
-            announcement.domElements.popUpContainerText :
-            announcement.domElements.popUpContainer;
-        div.style.top = popUpContainer.css('top');
-        div.style.left = popUpContainer.css('left');
-
         announcement.bindEvents();
     },
 

@@ -1,6 +1,5 @@
 ﻿@model HotAnnouncement
-<div class="modal fade announcement-modal" id="popup-container-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     style="top: @(Model.Top + "px"); left: @(Model.Left + "px");">
+<div class="modal fade announcement-modal" id="popup-container-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,9 +8,7 @@
             </div>
             <div class="modal-body" id="announcementModalBody">
                 <iframe frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="no"
-                        src="@Model.Source"
-                        width="@Model.Width"
-                        height="@Model.Height"></iframe>
+                        src="@Model.Source"></iframe>
                 <div class="notshow-advertisement">
                     <input type="checkbox" id="chkHide" />
                     <label for="chkHide" class="lblHide">

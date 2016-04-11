@@ -604,6 +604,7 @@
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\ContentSite.cs" />
     <Compile Include="Helpers\MicroSites.cs" />
+    <Compile Include="Helpers\XMLDocumentHelper.cs" />
     <Compile Include="Models\Announcements\HotAnnouncement.cs" />
     <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
     <Compile Include="Models\Entity.cs" />

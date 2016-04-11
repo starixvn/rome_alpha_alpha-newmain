@@ -8,7 +8,7 @@
     using Fanex.Razorbill.Security.Sessions;
     using Helpers;
     using Models.Menus;
-    using Sunplus.Agent.Model.BL.Definitions;    
+    using Sunplus.Agent.Model.BL.Definitions;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
@@ -52,7 +52,7 @@
             ["TotalBetsForecast"] = () => new MenuStatus(
                 () =>
                 {
-                    if(Current.IsSubAcc && !Current.SubPageAccess.ViewTotalBets)
+                    if (Current.IsSubAcc && !Current.SubPageAccess.ViewTotalBets)
                     {
                         return false;
                     }
