@@ -152,10 +152,6 @@ var headerNav = {
         $(document).click(function () {
             headerNav.hideHeaderMenu();
         });
-
-        headerNav.domElements.btnHeaderMenu
-            .off('click.headerNav')
-            .on('click.headerNav', headerNav.setTimeOutToHideHeaderMenu);
     },
 
     hideHeaderMenu: function () {
