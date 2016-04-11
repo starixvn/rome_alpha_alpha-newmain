@@ -143,15 +143,11 @@ var headerNav = {
                 clearTimeout(headerNav.hideHeaderDropdownMenuTimeout);
             })
             .off('mouseleave.headerNav')
-            .on('mouseleave.headerNav', function () {
-                headerNav.hideHeaderDropdownMenuTimeout = setTimeout(headerNav.hideHeaderMenu, 5000);
-            });
+            .on('mouseleave.headerNav', headerNav.setTimeOutToHideHeaderMenu);
 
         headerNav.domElements.btnHeaderMenu
             .off('click.headerNav')
-            .on('click.headerNav', function () {
-                headerNav.hideHeaderDropdownMenuTimeout = setTimeout(headerNav.hideHeaderMenu, 5000);
-            });
+            .on('click.headerNav', headerNav.setTimeOutToHideHeaderMenu);
 
         $(document).click(function () {
             headerNav.hideHeaderMenu();
@@ -159,15 +155,17 @@ var headerNav = {
 
         headerNav.domElements.btnHeaderMenu
             .off('click.headerNav')
-            .on('click.headerNav', function () {
-                headerNav.hideHeaderDropdownMenuTimeout = setTimeout(headerNav.hideHeaderMenu, 5000);
-            });
+            .on('click.headerNav', headerNav.setTimeOutToHideHeaderMenu);
     },
 
     hideHeaderMenu: function () {
         if (headerNav.domElements.headerDropdownMenu.parent().hasClass('open')) {
             headerNav.domElements.headerDropdownMenu.dropdown('toggle');
         }
+    },
+
+    setTimeOutToHideHeaderMenu: function () {
+        headerNav.hideHeaderDropdownMenuTimeout = setTimeout(headerNav.hideHeaderMenu, 5000);
     },
 
     collapseLeftPanel: function (collapseButton) {
