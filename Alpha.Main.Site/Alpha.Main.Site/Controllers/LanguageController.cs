@@ -9,7 +9,7 @@
     public class LanguageController : BaseController
     {
         private readonly IUserSession userSession;
-        private readonly IMediator mediator;        
+        private readonly IMediator mediator;
 
         public LanguageController(IMediator mediator, IUserSession userSession)
         {
@@ -33,7 +33,7 @@
         [HttpPost]
         public JsonResult Change(string languageCode)
         {
-            var viewModel = mediator.Send(new ChangeLanguageCommand(userSession, languageCode));           
+            var viewModel = mediator.Send(new ChangeLanguageCommand(userSession, languageCode));
 
             return Json(viewModel);
         }

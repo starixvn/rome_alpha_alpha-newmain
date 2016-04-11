@@ -45,7 +45,6 @@ var announcement = {
             data: {
                 messageIds: announcement.showedMessageIds.join(',')
             },
-            responseType: "json",
             success: function (data) {
                 announcement.showAnnouncement(data);
                 announcement.timeoutAnnouncement = setTimeout(announcement.removeAnnouncement, announcement.constants.timeToShowAnnouncement);

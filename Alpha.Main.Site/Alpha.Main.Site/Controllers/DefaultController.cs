@@ -1,11 +1,13 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
+    using System.Web.SessionState;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Sunplus.Agent.Model.Entities;
 
+    [SessionState(SessionStateBehavior.Default)]
     public class DefaultController : BaseController
     {
         private readonly IUserSession userSession;

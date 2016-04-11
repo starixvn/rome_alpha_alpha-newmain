@@ -7,13 +7,15 @@
     using System.Web.Mvc.Filters;
     using System.Web.Routing;
     using System.Web.Security;
+    using System.Web.SessionState;
     using Constants;
     using Helpers;
     using Sunplus.Agent.Model.Entities;
 
+    [SessionState(SessionStateBehavior.ReadOnly)]
     public class BaseController : Controller
     {
-        private CultureInfo defaultCulture = CultureInfo.CreateSpecificCulture(Language.Default);        
+        private CultureInfo defaultCulture = CultureInfo.CreateSpecificCulture(Language.Default);
 
         protected override void OnAuthentication(AuthenticationContext filterContext)
         {

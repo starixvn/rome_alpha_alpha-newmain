@@ -9,7 +9,8 @@ var index = {
 
     domElements: {
         mainFrame: null,
-        partialContents: null
+        partialContents: null,
+        content: null
     },
 
     urls: {
@@ -33,8 +34,8 @@ var index = {
     },
 
     cachedDomElements: function () {
-        index.domElements.mainFrame = $('#main');
         index.domElements.partialContents = $('.partial-content');
+        index.domElements.content = $('#content');
     },
 
     changeMenu: function (url) {
@@ -76,10 +77,6 @@ var index = {
                     if ($(item).hasClass('customer-profile')) {
                         briefProfile.init();
                     }
-
-                    if ($(item).hasClass('navigation')) {
-                        menuBar.init();
-                    }
                 });
             }
         });
@@ -94,14 +91,10 @@ var index = {
     },
 
     setCurrentPage: function () {
-        var currentPage = $.cookie(index.currentPageCookieName);
+        var currentPage = $.cookie(index.currentPageCookieName) || index.domElements.content.data('default-url');
 
-        if (currentPage) {
-            index.domElements.mainFrame.attr('src', currentPage);
-        }
-        else {
-            index.domElements.mainFrame.attr('src', index.domElements.mainFrame.data('default-url'));
-        }
+        index.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentPage + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
+        index.domElements.mainFrame = $('#main');
     }
 };
 

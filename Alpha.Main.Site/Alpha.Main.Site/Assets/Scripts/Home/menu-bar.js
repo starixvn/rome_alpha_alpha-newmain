@@ -114,3 +114,7 @@
         subMenu.addClass('active');
     }
 };
+
+$(function () {
+    menuBar.init();
+});
