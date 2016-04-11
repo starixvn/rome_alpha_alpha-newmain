@@ -14,13 +14,15 @@ var headerNav = {
         iconLogOut: null,
         iconCollapse: null,
         iconHome: null,
-        iconSwapView: null,
-        textSwapView: null,
+        swapView: null,
         changeLanguageLink: null,
 
         sideBar: null,
         sideBarContent: null,
-        profileImage: null
+        profileImage: null,
+
+        headerDropdownMenu: null,
+        btnHeaderMenu: null
     },
 
     resources: {
@@ -29,10 +31,9 @@ var headerNav = {
         months: []
     },
 
-    data: {
-        languageCode: null,
-        momentTime: null
-    },
+    languageCode: null,
+    momentTime: null,
+    hideHeaderDropdownMenuTimeout: null,
 
     urls: {
         home: alpha.urls.oldMainRootPath + '_Reports/PortalPage/PortalPage.aspx',
@@ -45,7 +46,7 @@ var headerNav = {
         headerNav.runClock();
 
         headerNav.cachedDomElements();
-        headerNav.initElements();
+        headerNav.initLanguage();
         headerNav.registerEvents();
     },
 
@@ -59,7 +60,7 @@ var headerNav = {
         headerNav.resources.labelMonths = JSON.parse(clock.data("label-months").replace(/'/g, '"'));
 
         var clock = headerNav.domElements.clock;
-        headerNav.data.momentTime = moment({
+        headerNav.momentTime = moment({
             year: clock.attr("data-year"),
             month: clock.attr("data-month") - 1,
             day: clock.attr("data-day"),
@@ -70,20 +71,20 @@ var headerNav = {
         });
     },
     runClock: function () {
-        headerNav.data.momentTime.add(1, 'seconds');
+        headerNav.momentTime.add(1, 'seconds');
 
         // Moment use hour from 1->12
-        // var str = headerNav.data.momentTime.lang('zh').format("hh:mm:ss A MMM DD, YYYY") + " GMT-4";
+        // var str = headerNav.momentTime.lang('zh').format("hh:mm:ss A MMM DD, YYYY") + " GMT-4";
 
-        var hour = headerNav.data.momentTime.get("hour");
-        var year = headerNav.data.momentTime.get("year");
-        var month = headerNav.data.momentTime.get("month");
-        var day = headerNav.data.momentTime.get("day");
+        var hour = headerNav.momentTime.get("hour");
+        var year = headerNav.momentTime.get("year");
+        var month = headerNav.momentTime.get("month");
+        var day = headerNav.momentTime.get("day");
 
         // Expected: hour from 0->11
         var strhrs = hour >= 12 ? hour - 12 : hour;
         var stra = hour >= 12 ? headerNav.resources.labelPM : headerNav.resources.labelAM;
-        var str = strhrs + ":" + headerNav.data.momentTime.format("mm:ss") + " " + stra + " " +
+        var str = strhrs + ":" + headerNav.momentTime.format("mm:ss") + " " + stra + " " +
             headerNav.resources.labelMonths[month] + " " + day + ", " + year + " GMT-4";
 
         headerNav.domElements.clock.html(str);
@@ -97,25 +98,28 @@ var headerNav = {
         headerNav.domElements.iconLogOut = $(".icon-logout");
         headerNav.domElements.iconCollapse = $('.icon-collapse');
         headerNav.domElements.iconHome = $(".icon-home");
-        headerNav.domElements.iconSwapView = $(".icon-swap-horizontal");
-        headerNav.domElements.textSwapView = $(".old-view-text");
+        headerNav.domElements.swapView = $(".icon-swap-horizontal, .old-view-text");
         headerNav.domElements.changeLanguageLink = $(".changelanguage-link");
 
         headerNav.domElements.sideBar = $('.sidebar');
         headerNav.domElements.sideBarContent = $('.content-wrapper');
         headerNav.domElements.profileImage = $("#logoProfileImg");
+
+        headerNav.domElements.headerDropdownMenu = $('#header-dropdown-menu');
+        headerNav.domElements.btnHeaderMenu = $('#btn-header-menu');
     },
-    initElements: function () {
-        headerNav.data.languageCode = headerNav.domElements.languageCode.val();
+
+    initLanguage: function () {
+        headerNav.languageCode = headerNav.domElements.languageCode.val();
 
         var currentLanguage = headerNav.domElements.language.data("currentlanguage");
         var language = $(".list-language ." + currentLanguage + " > a").html();
+
         headerNav.domElements.languageSelectorContainer.html(language);
     },
+
     registerEvents: function () {
-        headerNav.domElements.iconLogOut.click(function () {
-            alpha.core.signOut();
-        });
+        headerNav.domElements.iconLogOut.click(alpha.core.signOut);
 
         headerNav.domElements.iconCollapse.click(function () {
             headerNav.collapseLeftPanel($(this));
@@ -125,17 +129,45 @@ var headerNav = {
             index.changeMenu(headerNav.urls.home);
         });
 
-        headerNav.domElements.iconSwapView.click(function () {
-            top.location = headerNav.urls.oldMainIndex;
-        });
-
-        headerNav.domElements.textSwapView.click(function () {
+        headerNav.domElements.swapView.click(function () {
             top.location = headerNav.urls.oldMainIndex;
         });
 
         headerNav.domElements.changeLanguageLink.click(function () {
             headerNav.changeLanguage($(this).data("value"));
         });
+
+        headerNav.domElements.headerDropdownMenu
+            .off('mouseenter.headerNav')
+            .on('mouseenter.headerNav', function () {
+                clearTimeout(headerNav.hideHeaderDropdownMenuTimeout);
+            })
+            .off('mouseleave.headerNav')
+            .on('mouseleave.headerNav', function () {
+                headerNav.hideHeaderDropdownMenuTimeout = setTimeout(headerNav.hideHeaderMenu, 5000);
+            });
+
+        headerNav.domElements.btnHeaderMenu
+            .off('click.headerNav')
+            .on('click.headerNav', function () {
+                headerNav.hideHeaderDropdownMenuTimeout = setTimeout(headerNav.hideHeaderMenu, 5000);
+            });
+
+        $(document).click(function () {
+            headerNav.hideHeaderMenu();
+        });
+
+        headerNav.domElements.btnHeaderMenu
+            .off('click.headerNav')
+            .on('click.headerNav', function () {
+                headerNav.hideHeaderDropdownMenuTimeout = setTimeout(headerNav.hideHeaderMenu, 5000);
+            });
+    },
+
+    hideHeaderMenu: function () {
+        if (headerNav.domElements.headerDropdownMenu.parent().hasClass('open')) {
+            headerNav.domElements.headerDropdownMenu.dropdown('toggle');
+        }
     },
 
     collapseLeftPanel: function (collapseButton) {

@@ -23,11 +23,11 @@
         </li>
         <li class="withripple"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span><span class="txt-top old-view-text">@Resources.OldView</span></li>
         <li class="dropdown">
-            <a href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
+            <a id="btn-header-menu" href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
                 <span class="icon icon-squares top-right-menu"></span>
             </a>
 
-            <ul class="dropdown-menu list-setting">
+            <ul id="header-dropdown-menu" class="dropdown-menu list-setting">
                 <li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="main"><span class="icon icon-help"></span>@Resources.Help</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>

@@ -22,11 +22,11 @@ var index = {
         $.material.init();
 
         index.cachedDomElements();
-        index.setCurrentPage();
+        index.setCurrentUrl();
         index.loadPartialViews();
         index.registerEvents();
 
-        setTimeout(index.cacheCurrentPage, 1000);
+        setTimeout(index.cacheCurrentUrl, 1000);
     },
 
     registerEvents: function () {
@@ -82,19 +82,25 @@ var index = {
         });
     },
 
-    cacheCurrentPage: function () {
+    cacheCurrentUrl: function () {
         var currentUrl = document.getElementById("main").contentWindow.location.href;
        
-        $.cookie(index.currentPageCookieName, currentUrl, { expires: 30, path: '/' });
+        $.cookie(index.currentPageCookieName, currentUrl, { expires: 1, path: '/' });
 
-        setTimeout(index.cacheCurrentPage, 1000);
+        setTimeout(index.cacheCurrentUrl, 1000);
     },
 
-    setCurrentPage: function () {
-        var currentPage = $.cookie(index.currentPageCookieName) || index.domElements.content.data('default-url');
+    setCurrentUrl: function () {
+        var currentUrl = $.cookie(index.currentPageCookieName) || index.domElements.content.data('default-url');
 
-        index.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentPage + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
-        index.domElements.mainFrame = $('#main');
+        if (index.domElements.mainFrame
+            && index.domElements.mainFrame.length > 0) {
+            index.domElements.mainFrame.attr('src', currentUrl);
+        }
+        else {
+            index.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentUrl + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
+            index.domElements.mainFrame = $('#main');
+        }
     }
 };
 

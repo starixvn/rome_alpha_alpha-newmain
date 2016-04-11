@@ -58,13 +58,6 @@ var briefProfile = {
             briefProfile.hideAllTooltips();
         });
 
-        var frameLength = window.parent.frames.length;
-        for (var i = 0; i < frameLength; i++) {
-            $(window.parent.frames[i].window.document).click(function () {
-                briefProfile.hideAllTooltips();
-            });
-        }
-
         briefProfile.domElements.changePictureLink
             .off('click.brief-profile')
             .on('click.brief-profile', briefProfile.hideProfileTooltip);
