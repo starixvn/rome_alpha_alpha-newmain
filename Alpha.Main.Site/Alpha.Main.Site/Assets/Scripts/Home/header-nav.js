@@ -79,7 +79,7 @@ var headerNav = {
         var hour = headerNav.momentTime.get("hour");
         var year = headerNav.momentTime.get("year");
         var month = headerNav.momentTime.get("month");
-        var day = headerNav.momentTime.get("day");
+        var day = headerNav.momentTime.get("date");
 
         // Expected: hour from 0->11
         var strhrs = hour >= 12 ? hour - 12 : hour;
