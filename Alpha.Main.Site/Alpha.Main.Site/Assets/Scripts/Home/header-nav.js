@@ -1,5 +1,4 @@
 ﻿/// <reference path="../core.js" />
-/// <reference path="~/contents/libs/moment/moment-with-locales.min.js" />
 /// <reference path="index-page.js" />
 
 'use strict';
@@ -32,7 +31,7 @@ var headerNav = {
     },
 
     languageCode: null,
-    momentTime: null,
+    clockTime: null,
     hideHeaderDropdownMenuTimeout: null,
 
     urls: {
@@ -60,35 +59,41 @@ var headerNav = {
         headerNav.resources.labelMonths = JSON.parse(clock.data("label-months").replace(/'/g, '"'));
 
         var clock = headerNav.domElements.clock;
-        headerNav.momentTime = moment({
-            year: clock.attr("data-year"),
-            month: clock.attr("data-month") - 1,
-            day: clock.attr("data-day"),
-            hour: clock.attr("data-hour"),
-            minute: clock.attr("data-minute"),
-            second: clock.attr("data-second"),
-            milliseconds: 0
-        });
+        headerNav.clockTime = new Date(
+            clock.attr("data-year"),
+            clock.attr("data-month") - 1,
+            clock.attr("data-day"),
+            clock.attr("data-hour"),
+            clock.attr("data-minute"),
+            clock.attr("data-second"),
+            0);
     },
     runClock: function () {
-        headerNav.momentTime.add(1, 'seconds');
+        headerNav.clockTime.setSeconds(headerNav.clockTime.getSeconds() + 1);
 
-        // Moment use hour from 1->12
-        // var str = headerNav.momentTime.lang('zh').format("hh:mm:ss A MMM DD, YYYY") + " GMT-4";
+        var strTime = headerNav.formatClockTime(headerNav.clockTime);
+        headerNav.domElements.clock.html(strTime);
+        setTimeout(headerNav.runClock, 1000);
+    },
 
-        var hour = headerNav.momentTime.get("hour");
-        var year = headerNav.momentTime.get("year");
-        var month = headerNav.momentTime.get("month");
-        var day = headerNav.momentTime.get("date");
+    formatClockTime: function (clockTime) {
+        var year = clockTime.getFullYear();
+        var month = clockTime.getMonth();
+        var day = clockTime.getDate();
+
+        var hour = clockTime.getHours();
+        var minute = clockTime.getMinutes();
+        var second = clockTime.getSeconds();
 
         // Expected: hour from 0->11
-        var strhrs = hour >= 12 ? hour - 12 : hour;
+        var strHours = hour >= 12 ? hour - 12 : hour;
+        var strMinute = minute >= 10 ? minute : '0' + minute;
+        var strSecond = second >= 10 ? second : '0' + second;
         var stra = hour >= 12 ? headerNav.resources.labelPM : headerNav.resources.labelAM;
-        var str = strhrs + ":" + headerNav.momentTime.format("mm:ss") + " " + stra + " " +
-            headerNav.resources.labelMonths[month] + " " + day + ", " + year + " GMT-4";
 
-        headerNav.domElements.clock.html(str);
-        setTimeout(headerNav.runClock, 1000);
+        var str = strHours + ":" + strMinute + ":" + strSecond + " " + stra + " " +
+            headerNav.resources.labelMonths[month] + " " + day + ", " + year + " GMT-4";
+        return str;
     },
     cachedDomElements: function () {
         headerNav.domElements.languageCode = $("#language-code");
