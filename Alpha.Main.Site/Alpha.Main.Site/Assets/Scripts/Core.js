@@ -2,7 +2,8 @@
 
 alpha.urls = {
     oldMainRootPath: document.getElementById('oldMainRootPath').value,
-    mainRootPath: document.getElementById('mainRootPath').value
+    mainRootPath: document.getElementById('mainRootPath').value,
+    howToUseRootPath: document.getElementById('howToUseRootPath').value
 };
 
 alpha.user =
