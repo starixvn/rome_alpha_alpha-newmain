@@ -10,7 +10,8 @@
         }
     }
     .modal-content {
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+        background: #f6f6f6;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
         width: 455px;
         margin: auto;
         .modal-header {
@@ -48,6 +49,7 @@
             line-height: 22px;
             max-height: 240px;
             overflow: auto;
+            a { color: #045ace; }
         }
     }
 }
