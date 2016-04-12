@@ -16,7 +16,7 @@
 
             if (!File.Exists(hotMessageFilePath))
             {
-                throw new FileNotFoundException("Cannot find user tooltip message.");
+                throw new FileNotFoundException("Cannot find user tooltip message file data.");
             }
 
             var xmlNormalAnnouncement = new XmlDocument();
