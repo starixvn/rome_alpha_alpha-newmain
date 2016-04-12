@@ -2,10 +2,8 @@
 {
     using Alpha.Main.Site.Models.Requests;
     using Alpha.Main.Site.ViewModels;
-    using App_Start;
     using MediatR;
     using Services;
-    using Services.Impl;
 
     public class DefaultHandler : IRequestHandler<IndexQuery, IndexViewModel>
     {

@@ -3,8 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using App_Start;
-    using Models.Menus;
+    using Main.Models.Menus;
 
     public class MenuBarViewModel
     {
@@ -13,8 +12,8 @@
         private IEnumerable<IMenuItem> menuItems;
 
         public MenuBarViewModel(
-            IEnumerable<IMenuItem> menuItems, 
-            Func<bool> menuBarVisibleFunc = null, 
+            IEnumerable<IMenuItem> menuItems,
+            Func<bool> menuBarVisibleFunc = null,
             Func<bool> accountInfoVisibleFunc = null)
         {
             this.menuItems = menuItems;

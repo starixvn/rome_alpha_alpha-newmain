@@ -567,34 +567,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\Alpha.sitemap.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Alpha.sitemap.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\CssRewriteUrlTransformWrapper.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
-    <Compile Include="App_Start\FunctionRegistry.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Constants\Language.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
-    <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
-    <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
-    <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
-    <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
-    <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
-    <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
-    <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
@@ -603,38 +584,16 @@
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\ContentSite.cs" />
-    <Compile Include="Helpers\MicroSites.cs" />
-    <Compile Include="Helpers\XMLDocumentHelper.cs" />
-    <Compile Include="Models\Announcements\HotAnnouncement.cs" />
-    <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
-    <Compile Include="Models\Entity.cs" />
-    <Compile Include="Models\Enumerations\Enumeration.cs" />
-    <Compile Include="Models\Enumerations\UserLevel.cs" />
-    <Compile Include="Models\Menus\MenuItemBuilder.cs" />
-    <Compile Include="Models\Menus\MenuItemBuilderImpl.cs" />
-    <Compile Include="Models\Menus\MenuStatus.cs" />
-    <Compile Include="Models\Menus\IMenuItem.cs" />
-    <Compile Include="Models\Menus\MenuItem.cs" />
-    <Compile Include="Models\Requests\AllLanguagesQuery.cs" />
-    <Compile Include="Models\Requests\Announcement\HotAnnouncementQuery.cs" />
-    <Compile Include="Models\Requests\IndexQuery.cs" />
-    <Compile Include="Models\Requests\HeaderNavQuery.cs" />
-    <Compile Include="Models\Requests\MenuBarQuery.cs" />
-    <Compile Include="Models\Requests\UserMessages\HotMessagesQuery.cs" />
-    <Compile Include="Models\Dtos\ResultModel.cs" />
-    <Compile Include="Models\Requests\ChangeLanguageCommand.cs" />
-    <Compile Include="Models\Requests\CustomerProfile\BriefProfileQuery.cs" />
-    <Compile Include="Services\Impl\SecurityCodeServiceImpl.cs" />
-    <Compile Include="Services\Impl\SessionManagerImpl.cs" />
-    <Compile Include="Services\Impl\UserMessageServiceImpl.cs" />
-    <Compile Include="Services\SessionManager.cs" />
-    <Compile Include="Services\SecurityCodeService.cs" />
-    <Compile Include="Services\UserMessageService.cs" />
+    <Compile Include="Requests\AllLanguagesQuery.cs" />
+    <Compile Include="Requests\Announcement\HotAnnouncementQuery.cs" />
+    <Compile Include="Requests\ChangeLanguageCommand.cs" />
+    <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
+    <Compile Include="Requests\HeaderNavQuery.cs" />
+    <Compile Include="Requests\IndexQuery.cs" />
+    <Compile Include="Requests\MenuBarQuery.cs" />
+    <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
-    <Compile Include="Helpers\AppPathHelper.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
-    <Compile Include="Services\CustomerProfileService.cs" />
-    <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\LanguageViewModel.cs" />
     <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
@@ -642,16 +601,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Configurations\AppSettings.cs" />
-    <Compile Include="Services\AnnouncementService.cs" />
-    <Compile Include="Services\CachingManager.cs" />
-    <Compile Include="Services\Impl\AnnouncementServiceImpl.cs" />
-    <Compile Include="Services\Impl\CachingManagerImpl.cs" />
-    <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
-    <Compile Include="Services\SiteMenuService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
@@ -663,45 +617,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ja-JP.resx" />
-    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.ko-KR.resx" />
-    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.resx">
-      <LastGenOutput>Alpha.sitemap.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.th-TH.resx" />
-    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.vi-VN.resx" />
-    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.zh-CN.resx" />
-    <EmbeddedResource Include="App_GlobalResources\Alpha.sitemap.zh-TW.resx" />
-    <EmbeddedResource Include="App_GlobalResources\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Resources.th-TH.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Resources.vi-VN.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Resources.zh-CN.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App_GlobalResources\Resources.zh-TW.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\Resources.ja-JP.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\Resources.ko-KR.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Alpha.Main\Alpha.Main.csproj">
+      <Project>{2ceef496-572b-4c3e-9675-573c57a66107}</Project>
+      <Name>Alpha.Main</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

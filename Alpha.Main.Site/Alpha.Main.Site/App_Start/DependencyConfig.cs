@@ -10,8 +10,8 @@
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
     using Handlers;
+    using Main.Models.Menus;
     using MediatR;
-    using Models.Menus;
     using Services;
     using Services.Impl;
     using SimpleInjector;

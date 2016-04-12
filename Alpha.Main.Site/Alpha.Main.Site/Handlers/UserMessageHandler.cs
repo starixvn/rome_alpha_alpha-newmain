@@ -44,7 +44,7 @@
                 return Enumerable.Empty<string>();
             }
 
-            var hotMessages = userMessageService.GetHotMessages(message);
+            var hotMessages = userMessageService.GetHotMessages(message.HotMessageFilePath, message.RoleId, message.Language);
 
             IsShowedHotMessages = true;
 

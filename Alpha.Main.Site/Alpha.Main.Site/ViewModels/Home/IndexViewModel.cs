@@ -2,8 +2,8 @@
 {
     using System;
     using System.Web;
-    using Helpers;
-    using Models.Enumerations;
+    using Main.Helpers;
+    using Main.Models.Enumerations;
     using Sunplus.Agent.Utilities;
 
     public class IndexViewModel
@@ -21,7 +21,7 @@
             int onlineUserId,
             byte roleId,
             string language,
-            string languageKey,            
+            string languageKey,
             Func<string> getDefaultUrl)
         {
             this.custId = custId;
@@ -71,7 +71,7 @@
             {
                 return this.languageKey;
             }
-        }       
+        }
 
         public string DefaultUrl
         {

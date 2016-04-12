@@ -3,10 +3,10 @@
     using System;
     using System.Web;
     using Alpha.Main.Site.Models.Requests.CustomerProfile;
-    using App_GlobalResources;
+    using AppResources;
     using Fanex.Common;
+    using Main.Models.CustomerProfiles;
     using MediatR;
-    using Models.CustomerProfiles;
     using Services;
     using Sunplus.Agent.Utilities;
     using ViewModels.CustomerProfile;

@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
-    using Alpha.Main.Site.Helpers;
+    using Main.Helpers;
 
     public class HeaderNavViewModel
     {

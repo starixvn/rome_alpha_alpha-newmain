@@ -1,8 +1,9 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using Main.Models.Announcements;
     using MediatR;
-    using Models.Announcements;
     using Models.Requests.Announcement;
+    using Params.Announcements;
     using Services;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
@@ -11,18 +12,31 @@
          IRequestHandler<HotAnnouncementQuery, HotAnnouncement>
     {
         private readonly AnnouncementService _announcementService;
-        private readonly IUserSession _userSession;
 
         public AnnouncementHandler(AnnouncementService announcementService, IUserSession userSession)
         {
             _announcementService = announcementService;
-            _userSession = userSession;
         }
 
         public HotAnnouncement Handle(HotAnnouncementQuery message)
         {
-            var hotAnnouncement = _announcementService.GetHotAnnouncement(message);
-            hotAnnouncement.CookieId = Encryption.PearsonEncode(_userSession.UserId.ToString() + _userSession.SubAccId.ToString());
+            var hotAnnouncement = _announcementService.GetHotAnnouncement(new GetHotAnnouncementsParams()
+            {
+                MessageIds = message.MessageIds,
+                PrivateMessagePath = message.PrivateMessagePath,
+                CommonAnnouncementPath = message.CommonAnnouncementPath,
+                AdminId = message.AdminId,
+                CustId = message.CustId,
+                UserId = message.UserId,
+                Language = message.Language,
+                ProductsStatus = message.ProductsStatus,
+                RoleId = message.RoleId,
+                Site = message.Site,
+                SubAccId = message.SubAccId,
+                UserName = message.UserName
+            });
+
+            hotAnnouncement.CookieId = Encryption.PearsonEncode(message.UserId.ToString() + message.SubAccId.ToString());
 
             return hotAnnouncement;
         }
