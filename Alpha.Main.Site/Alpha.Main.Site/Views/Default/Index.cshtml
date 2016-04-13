@@ -29,7 +29,9 @@
     @Html.Hidden("mainRootPath", Model.MainRootPath)
     @Html.Hidden("passwordHash", Model.PasswordHash)
     @Html.Hidden("howToUseRootPath", Model.HowToUseRootPath)
+    @Html.Hidden("subPageAccess", Model.SubPageAccess)
     @ContentSite.Scripts.Render("/bundles/site-main/default.min.js")
+    @Scripts.Render("~/Assets/Scripts/AGEWnd.js")
     @Scripts.Render("~/bundles/scripts/default")
 </body>
 </html>

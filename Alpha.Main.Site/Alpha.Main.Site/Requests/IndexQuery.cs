@@ -11,7 +11,7 @@
         public IndexQuery(IUserSession userSession)
         {
             this.userSession = userSession;
-        }       
+        }
 
         public int UserId
         {
@@ -50,6 +50,14 @@
             get
             {
                 return userSession.LangKey;
+            }
+        }
+
+        public string SubPageAccess
+        {
+            get
+            {
+                return userSession.SubPageAccess;
             }
         }
     }

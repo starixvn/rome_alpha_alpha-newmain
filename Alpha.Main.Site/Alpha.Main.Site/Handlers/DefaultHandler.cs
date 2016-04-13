@@ -27,7 +27,8 @@
                 message.RoleId,
                 message.Language,
                 message.LanguageKey,
-                FunctionRegistry.GetDefaultUrl);
+                FunctionRegistry.GetDefaultUrl,
+                message.SubPageAccess);
 
             this.sessionManager.Add<string>(PasswordHashSessionKey, viewModel.PasswordHash);
 

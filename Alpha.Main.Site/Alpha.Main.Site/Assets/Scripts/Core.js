@@ -9,7 +9,8 @@ alpha.urls = {
 alpha.user =
     {
         onUserId: document.getElementById('onUserId').value,
-        passwordHash: document.getElementById('passwordHash').value
+        passwordHash: document.getElementById('passwordHash').value,
+        subPageAccess: document.getElementById('subPageAccess').value
     };
 
 alpha.core = {
@@ -38,6 +39,9 @@ top.isNewSite = true;
 top.errCodes = [];
 top.oldMainRootPath = alpha.urls.oldMainRootPath;
 top.mainRootPath = alpha.urls.mainRootPath;
+
+top.AGE = top.AGE || {};
+top.AGE.PERMISSIONS = alpha.user.subPageAccess;
 
 //// Functions for Site-old only, do not use these
 function getCookie(name) {
@@ -69,4 +73,19 @@ function setCookie(name, value, days, domain) {
 
     document.cookie = name + "=" + value + expires + "; path=/;" + ((typeof domain != 'undefined') ? ("domain=" + domain) : String.Empty);
 }
+
+parent.age = parent.age || {};
+window.age.OpenPopUp = function (url, title, width, height, position) {
+    title = title || '';
+    var popH = height || 360;
+    var popW = width || 480;
+    var left = position ? position.left : 200;
+    var top = position ? position.top : 200;
+    ageWnd.open(url, title, left, top, popW, popH);
+}
+
+window.age.ClosePopUp = function () {
+    ageWnd.close();
+}
+
 

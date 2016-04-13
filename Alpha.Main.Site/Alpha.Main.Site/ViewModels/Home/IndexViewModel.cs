@@ -15,6 +15,7 @@
         private readonly string languageKey;
         private readonly Func<string> getDefaultUrl;
         private readonly string passwordHash;
+        private readonly string subPageAccess;
 
         public IndexViewModel(
             int custId,
@@ -22,7 +23,8 @@
             byte roleId,
             string language,
             string languageKey,
-            Func<string> getDefaultUrl)
+            Func<string> getDefaultUrl,
+            string subPageAccess)
         {
             this.custId = custId;
             this.roleId = roleId;
@@ -31,6 +33,7 @@
             this.onlineUserId = onlineUserId;
             this.getDefaultUrl = getDefaultUrl;
             this.passwordHash = Encryption.RandomString(new Random().Next(4, 8));
+            this.subPageAccess = subPageAccess;
         }
 
         public int CustId
@@ -110,6 +113,14 @@
             get
             {
                 return this.passwordHash;
+            }
+        }
+
+        public string SubPageAccess
+        {
+            get
+            {
+                return this.subPageAccess;
             }
         }
     }

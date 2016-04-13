@@ -5,7 +5,9 @@
     using MediatR;
     using Models.Requests;
     using Sunplus.Agent.Model.Entities;
+    using System.Web.SessionState;
 
+    [SessionState(SessionStateBehavior.Default)]
     public class LanguageController : BaseController
     {
         private readonly IUserSession userSession;
