@@ -47,7 +47,8 @@ div.messageBlock {
     width: 500px;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3); }
   .message-modal .modal-content .modal-header {
-    padding: 4px; }
+    padding: 4px;
+    border-bottom: none; }
   .message-modal .modal-dialog {
     margin: 3px auto; }
   .message-modal .modal-body {
