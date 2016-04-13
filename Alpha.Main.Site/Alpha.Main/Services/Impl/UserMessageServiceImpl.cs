@@ -76,10 +76,10 @@
                         return announcementXmlNode.SelectNodes(Language.ChineseSimplified)[0].InnerText;
 
                     case "ja-jp":
-                        return announcementXmlNode.SelectNodes(Language.Japan)[0].InnerText;
+                        return announcementXmlNode.SelectNodes(Language.Japanese)[0].InnerText;
 
                     case "th-th":
-                        return announcementXmlNode.SelectNodes(Language.Thailand)[0].InnerText;
+                        return announcementXmlNode.SelectNodes(Language.Thai)[0].InnerText;
 
                     case "ko-kr":
                         return announcementXmlNode.SelectNodes(Language.Korean)[0].InnerText;

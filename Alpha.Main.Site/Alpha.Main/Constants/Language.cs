@@ -7,10 +7,10 @@
         public const string English = "en-US";
         public const string ChineseTraditional = "zh-TW";
         public const string ChineseSimplified = "zh-CN";
-        public const string Japan = "ja-JP";
-        public const string Thailand = "th-TH";
+        public const string Japanese = "ja-JP";
+        public const string Thai = "th-TH";
         public const string Korean = "ko-KR";
-        public const string VietNam = "vi-VN";
+        public const string Vietnamese = "vi-VN";
 
         public const string Default = English;
 
@@ -19,10 +19,10 @@
             [English] = "E",
             [ChineseTraditional] = "CT",
             [ChineseSimplified] = "CS",
-            [Japan] = "J",
-            [Thailand] = "TH",
+            [Japanese] = "J",
+            [Thai] = "TH",
             [Korean] = "KO",
-            [VietNam] = "VI"
+            [Vietnamese] = "VI"
         };
 
         public static readonly Dictionary<string, string> CodeNames = new Dictionary<string, string>
@@ -30,10 +30,10 @@
             [English] = "English",
             [ChineseTraditional] = "繁體中文",
             [ChineseSimplified] = "简体中文",
-            [Japan] = "日本語",
-            [Thailand] = "ภาษาไทย",
+            [Japanese] = "日本語",
+            [Thai] = "ภาษาไทย",
             [Korean] = "한국어",
-            [VietNam] = "Tiếng Việt"
+            [Vietnamese] = "Tiếng Việt"
         };
     }
 }
