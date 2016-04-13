@@ -422,21 +422,12 @@
     <Content Include="Assets\Scripts\Home\header-nav.js" />
     <Content Include="Assets\Scripts\Home\menu-bar.js" />
     <Content Include="Assets\Scripts\Home\index.js" />
-    <Content Include="Assets\Styles\Home\agent.css">
-      <DependentUpon>agent.scss</DependentUpon>
-    </Content>
     <Content Include="Assets\Styles\Home\Images\flag_sprite.png" />
-    <Content Include="Assets\Styles\Home\master.css">
-      <DependentUpon>master.scss</DependentUpon>
-    </Content>
     <Content Include="Assets\Styles\Home\page.css">
       <DependentUpon>page.scss</DependentUpon>
     </Content>
     <Content Include="Assets\Styles\Home\PopupMessage.css">
       <DependentUpon>PopupMessage.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\Styles\Home\super.css">
-      <DependentUpon>super.scss</DependentUpon>
     </Content>
     <Content Include="Assets\Images\icon_user_default.png" />
     <Content Include="Assets\Styles\Home\Images\headerbg_2.jpg" />
@@ -465,12 +456,6 @@
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
-    <Content Include="Assets\Styles\Home\agent.scss" />
-    <Content Include="Assets\Styles\Home\master.scss" />
-    <Content Include="Assets\Styles\Home\super.scss" />
-    <Content Include="Assets\Styles\Home\agent.variables.scss" />
-    <Content Include="Assets\Styles\Home\master.variables.scss" />
-    <Content Include="Assets\Styles\Home\super.variables.scss" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -3,10 +3,8 @@
 <html lang="en">
 <head>
     <title></title>
-    @ContentSite.Styles.Render("/bundles/site-main/default.min.css")
-    @ContentSite.Styles.Render("/fonts/iconalpha/style.min.css")
+    @ContentSite.Styles.Render($"/bundles/site-main/{Model.UserLevel}.min.css")
     @Styles.Render("~/bundle/styles/default")
-    @Styles.Render($"~/assets/styles/home/{Model.UserLevel}.css")
 </head>
 <body>
     <aside class="sidebar">
