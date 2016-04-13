@@ -70,11 +70,12 @@ var index = {
     },
 
     loadPartialViews: function () {
-        index.domElements.partialContents.each(function (index, item) {
-            var url = $(item).data('url');
+        index.domElements.partialContents.each(function (index, partialContent) {
+            var $partialContent = $(partialContent),
+                url = $partialContent.data('url');
             if (url && url.length > 0) {
-                $(item).load(url + '?' + Math.random(), function () {
-                    if ($(item).hasClass('customer-profile')) {
+                $partialContent.load(url + '?' + Math.random(), function () {
+                    if ($partialContent.hasClass('customer-profile')) {
                         briefProfile.init();
                     }
                 });
@@ -100,6 +101,18 @@ var index = {
         else {
             index.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentUrl + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
             index.domElements.mainFrame = $('#main');
+            index.domElements.mainFrame.load(function () {
+                $(this).contents().find('body').click(function () {
+
+                    $('.dropdown-toggle').each(function (index, dropdown) {
+                        var $dropdown = $(dropdown);
+                        if ($dropdown.parent().hasClass('open')) {
+                            $dropdown.dropdown('toggle');
+                        }
+                    });
+
+                });
+            });
         }
     }
 };
