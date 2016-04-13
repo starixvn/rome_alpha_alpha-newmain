@@ -7,16 +7,16 @@
 
     public class GetHotAnnouncementsParams
     {
-        private readonly bool isSecurityCodeActive;
         private readonly ISecurityCodeSession securityCodeSession;
+        private bool isSecurityCodeActive;
 
         public GetHotAnnouncementsParams() : this(null, null)
         {
         }
 
         internal GetHotAnnouncementsParams(
-            ISecurityCodeSession securityCodeSession,
-            bool? isSecurityCodeActive)
+            ISecurityCodeSession securityCodeSession = null,
+            bool? isSecurityCodeActive = null)
         {
             this.securityCodeSession = securityCodeSession ?? CookieLessSessionFactory.SecurityCodeSession;
             this.isSecurityCodeActive = isSecurityCodeActive.HasValue ? isSecurityCodeActive.Value : SecurityCodeConfig.IsActive;
@@ -51,6 +51,11 @@
             get
             {
                 return isSecurityCodeActive;
+            }
+
+            set
+            {
+                isSecurityCodeActive = value;
             }
         }
 

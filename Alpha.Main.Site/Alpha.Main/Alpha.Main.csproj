@@ -133,7 +133,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\AppSettings.cs" />
+    <Compile Include="Constants\AnnouncementId.cs" />
     <Compile Include="Constants\Language.cs" />
+    <Compile Include="Constants\RoleId.cs" />
+    <Compile Include="Constants\SettingChangeType.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />

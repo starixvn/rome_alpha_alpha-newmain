@@ -1,20 +1,16 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.Announcement
 {
-    using System.Collections.Generic;
-    using System.Web;
+    using Constants;
     using Main.Models.Announcements;
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
+    using System.Collections.Generic;
+    using System.Web;
 
     public class HotAnnouncementQuery : IRequest<HotAnnouncement>
     {
-        private const int OfferedGoldDeluxe = 3543501;
-        private const int NotOfferedGoldDeluxe = 3543502;
-        private const int OfferedSuperLive = 3577701;
-        private const int OfferedColossusBets = 4523901;
-
         private readonly string commonAnnouncementFilePath;
         private readonly string privateMessageFilePath;
         private readonly IUserSession userSession;
@@ -28,10 +24,10 @@
         {
             this.productsStatus = productsStatus ?? new Dictionary<int, bool>
                 {
-                    { NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
-                    { OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
-                    { OfferedSuperLive, UserPermission.IsShowSuperLive },
-                    { OfferedColossusBets,  UserPermission.IsShowColossusBets }
+                    { AnnouncementId.NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
+                    { AnnouncementId.OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
+                    { AnnouncementId.OfferedSuperLive, UserPermission.IsShowSuperLive },
+                    { AnnouncementId.OfferedColossusBets,  UserPermission.IsShowColossusBets }
                 };
 
             this.userSession = userSession ?? UserSession.Current;

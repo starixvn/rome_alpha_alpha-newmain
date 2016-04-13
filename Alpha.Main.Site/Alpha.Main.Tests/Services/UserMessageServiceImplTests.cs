@@ -1,14 +1,10 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Reflection;
-    using System.Text;
-    using System.Threading.Tasks;
+    using Helps;
     using Main.Services.Impl;
     using NUnit.Framework;
+    using System.IO;
+    using System.Linq;
 
     [TestFixture]
     public class UserMessageServiceImplTests
@@ -31,7 +27,7 @@
         public void GetHotMessages_HotMessagesFileDoesNotContainAnyData_ReturnEmptyEnumeration()
         {
             //// Arrange
-            var hotMessageFilePath = GetFilePath(@"\TestData\EmptyToolTipMessage.xml");
+            var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\EmptyToolTipMessage.xml");
 
             //// Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, string.Empty);
@@ -51,7 +47,7 @@
         public void GetHotMessages_HotMessageContainsData_ReturnHotMessage(string language, string expectedMessage)
         {
             //// Arrange
-            var hotMessageFilePath = GetFilePath(@"\TestData\TooltipMessage.xml");
+            var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\TooltipMessage.xml");
 
             //// Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, language);
@@ -64,7 +60,7 @@
         public void GetHotMessage_LanguageIsVietNamese_ReturnEmpty()
         {
             //// Arrange
-            var hotMessageFilePath = GetFilePath(@"\TestData\TooltipMessage.xml");
+            var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\TooltipMessage.xml");
 
             //// Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, "vi-VN");
@@ -77,7 +73,7 @@
         public void GetHotMessage_HotMessageIsExpired_ReturnEmpty()
         {
             //// Arrange
-            var hotMessageFilePath = GetFilePath(@"\TestData\ExpiredMessage.xml");
+            var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\ExpiredMessage.xml");
 
             //// Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, "en-US");
@@ -92,24 +88,13 @@
         public void GetHotMessage_UserWasOfferedHotMessage_ReturnHotMessage(byte roleId, string expectedMessage)
         {
             //// Arrange
-            var hotMessageFilePath = GetFilePath(@"\TestData\OfferMessageByRoleId.xml");
+            var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\OfferMessageByRoleId.xml");
 
             //// Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, roleId, "en-US");
 
             //// Assert
             Assert.AreEqual(expectedMessage, actualHotMessages.ElementAt(0));
-        }
-
-
-
-        private static string GetFilePath(string relativeFilePath)
-        {
-            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-            UriBuilder uri = new UriBuilder(codeBase);
-            string path = Uri.UnescapeDataString(uri.Path);
-
-            return Path.GetDirectoryName(path) + relativeFilePath;
         }
     }
 }
