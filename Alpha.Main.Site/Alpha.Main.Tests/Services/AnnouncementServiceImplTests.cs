@@ -33,6 +33,14 @@
         private const string ShowedAnnouncementId = "4523901";
         private const string StillWaitAnnouncementId = "4523909";
 
+        public const int PositionTakingChanged = 1;
+        public const int BettingLimitChanged = 2;
+
+        public const int OfferedGoldDeluxe = 3543501;
+        public const int NotOfferedGoldDeluxe = 3543502;
+        public const int OfferedSuperLive = 3577701;
+        public const int OfferedColossusBets = 4523901;
+
         private DateTime validAnnouncementDay = new DateTime(2016, 4, 13);
 
         [Test]
@@ -461,12 +469,12 @@
             var settingChanges = new List<string>();
             if (isPositionTakingChanged)
             {
-                settingChanges.Add(SettingChangeType.PositionTakingChanged.ToString());
+                settingChanges.Add(PositionTakingChanged.ToString());
             }
 
             if (isBettingLimitChanged)
             {
-                settingChanges.Add(SettingChangeType.BettingLimitChanged.ToString());
+                settingChanges.Add(BettingLimitChanged.ToString());
             }
 
             return settingChanges;

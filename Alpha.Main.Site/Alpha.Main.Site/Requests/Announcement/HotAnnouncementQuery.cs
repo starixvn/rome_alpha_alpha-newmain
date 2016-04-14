@@ -16,6 +16,11 @@
         private readonly IUserSession userSession;
         private readonly IDictionary<int, bool> productsStatus;
 
+        public const int OfferedGoldDeluxe = 3543501;
+        public const int NotOfferedGoldDeluxe = 3543502;
+        public const int OfferedSuperLive = 3577701;
+        public const int OfferedColossusBets = 4523901;
+
         public HotAnnouncementQuery() : this(null, null, null, null)
         {
         }
@@ -24,10 +29,10 @@
         {
             this.productsStatus = productsStatus ?? new Dictionary<int, bool>
                 {
-                    { AnnouncementId.NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
-                    { AnnouncementId.OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
-                    { AnnouncementId.OfferedSuperLive, UserPermission.IsShowSuperLive },
-                    { AnnouncementId.OfferedColossusBets,  UserPermission.IsShowColossusBets }
+                    { NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
+                    { OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
+                    { OfferedSuperLive, UserPermission.IsShowSuperLive },
+                    { OfferedColossusBets,  UserPermission.IsShowColossusBets }
                 };
 
             this.userSession = userSession ?? UserSession.Current;

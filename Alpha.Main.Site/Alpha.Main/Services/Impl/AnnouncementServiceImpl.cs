@@ -19,6 +19,9 @@
     {
         public const int ForceUseSecurityCode = 20140512;
 
+        public const int PositionTakingChanged = 1;
+        public const int BettingLimitChanged = 2;
+
         private readonly IDynamicRepository dynamicRepository;
         private readonly SecurityCodeService securityCodeService;
         private readonly DateTimeHelper dateTimeHelper;
@@ -69,8 +72,8 @@
 
         private string GetSettingChangedMessage(IEnumerable<string> messageTypes, GetHotAnnouncementsParams getParams)
         {
-            var isPositionTakingChanged = messageTypes.Contains(SettingChangeType.PositionTakingChanged.ToString());
-            var isBettingLimitChanged = messageTypes.Contains(SettingChangeType.BettingLimitChanged.ToString());
+            var isPositionTakingChanged = messageTypes.Contains(PositionTakingChanged.ToString());
+            var isBettingLimitChanged = messageTypes.Contains(BettingLimitChanged.ToString());
             var messageContent = string.Empty;
             if (isPositionTakingChanged && isBettingLimitChanged)
             {
@@ -88,7 +91,7 @@
             if (!string.IsNullOrEmpty(messageContent))
             {
                 var content = messageContent.Replace("<br>", " ");
-                InsertPersonalMessage(new InsertPersonalMessageCriteria(content, SettingChangeType.PositionTakingChanged), getParams);
+                InsertPersonalMessage(new InsertPersonalMessageCriteria(content, PositionTakingChanged), getParams);
             }
 
             return messageContent;
