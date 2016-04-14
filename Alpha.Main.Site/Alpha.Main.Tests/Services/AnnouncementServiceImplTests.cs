@@ -20,15 +20,20 @@
     [TestFixture]
     public class AnnouncementServiceImplTests
     {
-        private const string EmptyAnnoucementPath = @"\TestData\Announcements\EmptyAnnouncement.xml";
-        private const string AvailableAnnoucementPath = @"\TestData\Announcements\AvailableAnnouncement.xml";
-        private const string ExpiredAnnoucementPath = @"\TestData\Announcements\ExpiredAnnouncement.xml";
+        private const string EmptyAnnoucementPath = @"\TestData\Announcements\HotAnnouncement\EmptyAnnouncement.xml";
+        private const string AvailableAnnoucementPath = @"\TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml";
 
         private const int ValidAdminId = 1;
         private const string PublicSystem = "publicSystem";
         private const string ExludedSite = "exludedSite";
+        private const string IncludedSite = "includedSite";
 
-        private const string ExpectAnnouncementContent = "Announcement";
+        private const string ExpectedAnnouncementContent = "Announcement";
+
+        private const string ShowedAnnouncementId = "4523901";
+        private const string StillWaitAnnouncementId = "4523909";
+
+        private DateTime validAnnouncementDay = new DateTime(2016, 4, 13);
 
         [Test]
         public void GetHotAnnouncement_RequireSecurityCode_AnnouncementWithNullContent()
@@ -86,7 +91,7 @@
             Assert.AreEqual(true, actualHotAnnouncement.Content.StartsWith(expectedAnnouncementPrefix));
         }
 
-        [TestCase(true, ExpectAnnouncementContent)]
+        [TestCase(true, ExpectedAnnouncementContent)]
         [TestCase(false, null)]
         public void GetHotAnnouncement_AgentDirectLoginAndSettingNotChange_AnnouncementFromFiles(
             bool hasAnnouncement,
@@ -108,7 +113,7 @@
             var query = new GetHotAnnouncementsParams(securityCodeSession, true);
             query.RoleId = UserLevel.Agent.Value;
             query.AdminId = 0;
-            query.ProductsStatus = new Dictionary<int, bool>();
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
 
             query.CommonAnnouncementPath = FileHelper.GetFilePath(hasAnnouncement ? AvailableAnnoucementPath : EmptyAnnoucementPath);
             query.PrivateMessagePath = FileHelper.GetFilePath(EmptyAnnoucementPath);
@@ -121,11 +126,11 @@
             Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
         }
 
-        [TestCase(RoleId.Agent, true, true, ExpectAnnouncementContent)]
-        [TestCase(RoleId.Master, true, true, ExpectAnnouncementContent)]
-        [TestCase(RoleId.Super, true, true, ExpectAnnouncementContent)]
-        [TestCase(RoleId.Master, false, true, ExpectAnnouncementContent)]
-        [TestCase(RoleId.Super, false, true, ExpectAnnouncementContent)]
+        [TestCase(RoleId.Agent, true, true, ExpectedAnnouncementContent)]
+        [TestCase(RoleId.Master, true, true, ExpectedAnnouncementContent)]
+        [TestCase(RoleId.Super, true, true, ExpectedAnnouncementContent)]
+        [TestCase(RoleId.Master, false, true, ExpectedAnnouncementContent)]
+        [TestCase(RoleId.Super, false, true, ExpectedAnnouncementContent)]
         [TestCase(RoleId.Agent, true, false, null)]
         [TestCase(RoleId.Master, true, false, null)]
         [TestCase(RoleId.Super, true, false, null)]
@@ -149,7 +154,7 @@
             var query = new GetHotAnnouncementsParams(securityCodeSession, true);
             query.RoleId = roleId;
             query.AdminId = isAdminLogIn ? ValidAdminId : 0;
-            query.ProductsStatus = new Dictionary<int, bool>();
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
 
             query.CommonAnnouncementPath = FileHelper.GetFilePath(hasAnnouncement ? AvailableAnnoucementPath : EmptyAnnoucementPath);
             query.PrivateMessagePath = FileHelper.GetFilePath(EmptyAnnoucementPath);
@@ -171,8 +176,6 @@
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
             var dateTimeHelper = Substitute.For<DateTimeHelper>();
-
-            var validAnnouncementDay = new DateTime(2016, 4, 13);
             dateTimeHelper.Now.Returns(validAnnouncementDay);
 
             var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
@@ -182,7 +185,7 @@
             securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
 
             var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.ProductsStatus = new Dictionary<int, bool>();
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
 
             query.CommonAnnouncementPath = FileHelper.GetFilePath(commonAnnouncementPath);
             query.PrivateMessagePath = FileHelper.GetFilePath(privateMessagePath);
@@ -197,14 +200,14 @@
             Assert.AreNotEqual(null, actualHotAnnouncement.Content);
         }
 
-        [Test]
-        public void GetHotAnnouncement_NotAgentDirectLoginAndExpiredAnnouncement_NullContent()
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Expired\Announcement_NotHasStartDate.xml")]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Expired\Announcement_NotReachStartDate.xml")]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Expired\Announcement_OverEndDate.xml")]
+        public void GetHotAnnouncement_NotAgentDirectLoginAndExpiredAnnouncement_NullContent(string expiredAnnouncementPath)
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
             var dateTimeHelper = Substitute.For<DateTimeHelper>();
-
-            var validAnnouncementDay = new DateTime(2016, 4, 13);
             dateTimeHelper.Now.Returns(validAnnouncementDay);
 
             var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
@@ -214,10 +217,10 @@
             securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
 
             var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.ProductsStatus = new Dictionary<int, bool>();
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
 
             query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(ExpiredAnnoucementPath);
+            query.PrivateMessagePath = FileHelper.GetFilePath(expiredAnnouncementPath);
             query.Language = Language.Default;
             query.RoleId = RoleId.ValidRoleId;
             query.AdminId = ValidAdminId;
@@ -229,16 +232,14 @@
             Assert.AreEqual(null, actualHotAnnouncement.Content);
         }
 
-        [TestCase(@"\TestData\Announcements\AvailableAnnouncement_IgnoreAllSystem.xml", PublicSystem)]
-        [TestCase(@"\TestData\Announcements\AvailableAnnouncement_IgnorePrivateSystem.xml", PublicSystem)]
-        [TestCase(@"\TestData\Announcements\AvailableAnnouncement_IgnoreExcludedSite.xml", ExludedSite)]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreAllSystem.xml", PublicSystem)]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnorePrivateSystem.xml", PublicSystem)]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml", ExludedSite)]
         public void GetHotAnnouncement_NotAgentDirectLoginAndExcludeHotMessage_NullContent(string availableAnnoucementPath, string site)
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
             var dateTimeHelper = Substitute.For<DateTimeHelper>();
-
-            var validAnnouncementDay = new DateTime(2016, 4, 13);
             dateTimeHelper.Now.Returns(validAnnouncementDay);
             var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
 
@@ -247,7 +248,7 @@
             securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
 
             var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.ProductsStatus = new Dictionary<int, bool>();
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
 
             query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
             query.PrivateMessagePath = FileHelper.GetFilePath(availableAnnoucementPath);
@@ -263,13 +264,175 @@
             Assert.AreEqual(null, actualHotAnnouncement.Content);
         }
 
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml", IncludedSite)]
+        public void GetHotAnnouncement_NotAgentDirectLoginAndIncludeHotMessage_NotNullContent(string availableAnnoucementPath, string site)
+        {
+            // Arrange
+            var securityCodeService = Substitute.For<SecurityCodeService>();
+            var dateTimeHelper = Substitute.For<DateTimeHelper>();
+            dateTimeHelper.Now.Returns(validAnnouncementDay);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+
+            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            securityCodeSession.IsRequireSecurityCode.Returns(false);
+            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+
+            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+
+            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
+            query.PrivateMessagePath = FileHelper.GetFilePath(availableAnnoucementPath);
+            query.Language = Language.Default;
+            query.RoleId = RoleId.ValidRoleId;
+            query.AdminId = ValidAdminId;
+            query.Site = site;
+
+            // Action
+            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
+
+            // Assert
+            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+        }
+
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml")]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\Announcement_NotHasEndDate.xml")]
+        public void GetHotAnnouncement_NotAgentDirectLoginAndAvailableAnnouncement_NotNullContent(string availableAnnoucementPath)
+        {
+            // Arrange
+            var securityCodeService = Substitute.For<SecurityCodeService>();
+            var dateTimeHelper = Substitute.For<DateTimeHelper>();
+            dateTimeHelper.Now.Returns(validAnnouncementDay);
+
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+
+            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            securityCodeSession.IsRequireSecurityCode.Returns(false);
+            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+
+            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+
+            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
+            query.PrivateMessagePath = FileHelper.GetFilePath(availableAnnoucementPath);
+            query.Language = Language.Default;
+            query.RoleId = RoleId.ValidRoleId;
+            query.AdminId = ValidAdminId;
+
+            // Action
+            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
+
+            // Assert
+            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+        }
+
+        [TestCase(Language.Thai, @"\TestData\Announcements\HotAnnouncement\Language\Announcement_NotMatchLanguage_NotHasDefault.xml", null)]
+        [TestCase(Language.Thai, @"\TestData\Announcements\HotAnnouncement\Language\Announcement_NotMatchLanguage_HasDefault.xml", ExpectedAnnouncementContent)]
+        [TestCase(Language.Thai, @"\TestData\Announcements\HotAnnouncement\Language\Announcement_MatchLanguage.xml", ExpectedAnnouncementContent)]
+        public void GetHotAnnouncement_NotAgentDirectLoginAndAvailableAnnouncement_AnnouncementContent(
+            string language,
+            string availableAnnoucementPath,
+            string expectedAnnouncementContent)
+        {
+            // Arrange
+            var securityCodeService = Substitute.For<SecurityCodeService>();
+            var dateTimeHelper = Substitute.For<DateTimeHelper>();
+            dateTimeHelper.Now.Returns(validAnnouncementDay);
+
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+
+            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            securityCodeSession.IsRequireSecurityCode.Returns(false);
+            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+
+            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+
+            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
+            query.PrivateMessagePath = FileHelper.GetFilePath(availableAnnoucementPath);
+            query.Language = Language.Default;
+            query.RoleId = RoleId.ValidRoleId;
+            query.AdminId = ValidAdminId;
+            query.Language = language;
+
+            // Action
+            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
+
+            // Assert
+            Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+        }
+
         [Test]
-        public void GetHotAnnouncement_DisableSecurityCodeAndValidAnnouncement_AnnouncementWithNullContent()
+        public void GetHotAnnouncement_NotAgentDirectLoginAndDisableProduct_NullContent()
+        {
+            // Arrange
+            var securityCodeService = Substitute.For<SecurityCodeService>();
+            var dateTimeHelper = Substitute.For<DateTimeHelper>();
+            dateTimeHelper.Now.Returns(validAnnouncementDay);
+
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+
+            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            securityCodeSession.IsRequireSecurityCode.Returns(false);
+            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+
+            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+            query.AnnouncementEnableStatus.Add(4523901, false);
+
+            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
+            query.PrivateMessagePath = FileHelper.GetFilePath(AvailableAnnoucementPath);
+            query.Language = Language.Default;
+            query.RoleId = RoleId.ValidRoleId;
+            query.AdminId = ValidAdminId;
+            query.Language = Language.Default;
+
+            // Action
+            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
+
+            // Assert
+            Assert.AreEqual(null, actualHotAnnouncement.Content);
+        }
+
+        [TestCase(ShowedAnnouncementId, null)]
+        [TestCase(StillWaitAnnouncementId, ExpectedAnnouncementContent)]
+        [TestCase("", ExpectedAnnouncementContent)]
+        public void GetHotAnnouncement_NotAgentDirectLoginAndShowedAnnouncement_NullContent(
+            string showedAnnouncementId,
+            string expectedAnnouncementContent)
+        {
+            // Arrange
+            var securityCodeService = Substitute.For<SecurityCodeService>();
+            var dateTimeHelper = Substitute.For<DateTimeHelper>();
+            dateTimeHelper.Now.Returns(validAnnouncementDay);
+
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+
+            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            securityCodeSession.IsRequireSecurityCode.Returns(false);
+            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+
+            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+
+            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
+            query.PrivateMessagePath = FileHelper.GetFilePath(AvailableAnnoucementPath);
+            query.Language = Language.Default;
+            query.RoleId = RoleId.ValidRoleId;
+            query.AdminId = ValidAdminId;
+            query.MessageIds = showedAnnouncementId.ToString();
+
+            // Action
+            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
+
+            // Assert
+            Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+        }
+
+        [Test]
+        public void GetHotAnnouncement_DisableSecurityCodeAndValidAnnouncement_NotNullContent()
         {
             var securityCodeService = Substitute.For<SecurityCodeService>();
             var dateTimeHelper = Substitute.For<DateTimeHelper>();
-
-            var validAnnouncementDay = new DateTime(2016, 4, 13);
             dateTimeHelper.Now.Returns(validAnnouncementDay);
             var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
 
@@ -278,7 +441,7 @@
             securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
 
             var query = new GetHotAnnouncementsParams(securityCodeSession, false);
-            query.ProductsStatus = new Dictionary<int, bool>();
+            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
 
             query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
             query.PrivateMessagePath = FileHelper.GetFilePath(AvailableAnnoucementPath);

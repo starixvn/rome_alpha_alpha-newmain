@@ -29,7 +29,7 @@
                 CustId = message.CustId,
                 UserId = message.UserId,
                 Language = message.Language,
-                ProductsStatus = message.ProductsStatus,
+                AnnouncementEnableStatus = message.ProductsStatus,
                 RoleId = message.RoleId,
                 Site = message.Site,
                 SubAccId = message.SubAccId,

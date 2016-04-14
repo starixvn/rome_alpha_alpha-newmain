@@ -139,7 +139,7 @@
                 result.Add(ForceUseSecurityCode);
             }
 
-            foreach (var productStatus in getParams.ProductsStatus)
+            foreach (var productStatus in getParams.AnnouncementEnableStatus)
             {
                 if (!productStatus.Value)
                 {
@@ -204,6 +204,7 @@
             string effectDate = effectDateAttribute == null ? string.Empty :
                 Converter.ToString2(effectDateAttribute.Value);
             DateTime? currentDate = dateTimeHelper.Now;
+
             return !startDate.HasValue ||
                 currentDate < startDate ||
                 (endDate.HasValue && endDate < currentDate);

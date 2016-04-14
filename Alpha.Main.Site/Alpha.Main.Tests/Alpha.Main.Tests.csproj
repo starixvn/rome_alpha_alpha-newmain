@@ -136,22 +136,43 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestData\Announcements\AvailableAnnouncement_IgnoreExcludedSite.xml">
+    <Content Include="TestData\Announcements\HotAnnouncement\Available\Announcement_NotHasEndDate.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\Announcements\AvailableAnnouncement_IgnorePrivateSystem.xml">
+    <Content Include="TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\Announcements\AvailableAnnouncement_IgnoreAllSystem.xml">
+    <Content Include="TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\Announcements\AvailableAnnouncement.xml">
+    <Content Include="TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnorePrivateSystem.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\Announcements\ExpiredAnnouncement.xml">
+    <Content Include="TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreAllSystem.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\Announcements\EmptyAnnouncement.xml">
+    <Content Include="TestData\Announcements\HotAnnouncement\AvailableAnnouncement.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\Expired\Announcement_NotReachStartDate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\Expired\Announcement_NotHasStartDate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\Expired\Announcement_OverEndDate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\EmptyAnnouncement.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\Language\Announcement_NotMatchLanguage_HasDefault.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\Language\Announcement_MatchLanguage.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\Language\Announcement_NotMatchLanguage_NotHasDefault.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\EmptyToolTipMessage.xml">

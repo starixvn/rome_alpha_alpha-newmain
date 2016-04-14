@@ -32,7 +32,7 @@
 
         public int SubAccId { get; set; }
 
-        public IDictionary<int, bool> ProductsStatus { get; set; }
+        public IDictionary<int, bool> AnnouncementEnableStatus { get; set; }
 
         public byte RoleId { get; set; }
 
