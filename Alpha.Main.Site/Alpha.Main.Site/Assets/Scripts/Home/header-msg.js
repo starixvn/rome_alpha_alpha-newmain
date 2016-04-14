@@ -240,8 +240,8 @@ var headerMessage = {
             return;
         }
 
-        headerMessage.scrollerLeft = -100;
-        headerMessage.scrollerWidth = 0;
+        headerMessage.scrollerLeft = 200;
+        headerMessage.scrollerWidth = $('#scroller').width();
 
         headerMessage.scroller = $('#scroller')[0];
         headerMessage.topnews = headerMessage.domElements.liveMessage[0];
@@ -260,8 +260,8 @@ var headerMessage = {
             }
         };
 
-        var text_news = headerMessage.domElements.marqueeMessage[0];
-        headerMessage.maskWidth = parseInt(text_news.offsetWidth);
+        var textNews = headerMessage.domElements.marqueeMessage[0];
+        headerMessage.maskWidth = parseInt(textNews.offsetWidth);
 
         headerMessage.scrollMessage();
     },
