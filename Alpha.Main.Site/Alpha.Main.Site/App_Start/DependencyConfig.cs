@@ -1,15 +1,10 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Reflection;
-    using System.Web;
-    using System.Web.Mvc;
-    using System.Web.SessionState;
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
     using Handlers;
+    using Main.Helpers;
     using Main.Models.Menus;
     using MediatR;
     using Services;
@@ -18,6 +13,12 @@
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
     using Sunplus.Agent.Model.Entities;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Reflection;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.SessionState;
 
     public static class DependencyConfig
     {
@@ -57,7 +58,7 @@
             container.RegisterCollection(typeof(INotificationHandler<>), assemblies);
             container.RegisterCollection(typeof(IAsyncNotificationHandler<>), assemblies);
             container.RegisterSingleton(new SingleInstanceFactory(container.GetInstance));
-            container.RegisterSingleton(new MultiInstanceFactory(container.GetAllInstances));            
+            container.RegisterSingleton(new MultiInstanceFactory(container.GetAllInstances));
         }
 
         private static IEnumerable<Assembly> GetAssemblies()
@@ -67,6 +68,7 @@
 
         private static void RegisterCrossCuttingConcerns(Container container)
         {
+            container.Register<DateTimeHelper, DateTimeHelperImpl>(Lifestyle.Transient);
         }
 
         private static void RegisterServices(Container container)
