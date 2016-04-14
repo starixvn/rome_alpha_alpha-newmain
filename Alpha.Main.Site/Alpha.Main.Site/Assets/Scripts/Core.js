@@ -74,18 +74,44 @@ function setCookie(name, value, days, domain) {
     document.cookie = name + "=" + value + expires + "; path=/;" + ((typeof domain != 'undefined') ? ("domain=" + domain) : String.Empty);
 }
 
-parent.age = parent.age || {};
+window.age = window.age || {};
 window.age.OpenPopUp = function (url, title, width, height, position) {
     title = title || '';
     var popH = height || 360;
     var popW = width || 480;
     var left = position ? position.left : 200;
     var top = position ? position.top : 200;
-    ageWnd.open(url, title, left, top, popW, popH);
+
+    var popUp = $("#page-popup");
+    popUp.css({
+        width: popW,
+        height: popH,
+        left: left,
+        top: top
+    });
+
+    popUp.removeClass("hidden");
+    popUp.find(".popup-title").html(title);
+    popUp.find(".ex-modal").css("height", (popH - 16) + "px");
+
+    var iframe = popUp.find("#popup-iframe");
+
+    var padding = 15 * 2;
+    iframe.css({
+        width: popW - padding,
+        height: popH - 100,
+        left: left,
+        top: top
+    });
+    iframe.attr("src", url);
+    popUp.modal({ show: true, backdrop: false });
+    popUp.find(".icon-close").unbind("click").click(function () {
+        popUp.addClass("hidden");
+    });
 }
+
 
 window.age.ClosePopUp = function () {
-    ageWnd.close();
-}
-
-
+    var popUp = $("#page-popup");
+    popUp.addClass("hidden");
+};

@@ -7,6 +7,20 @@
     @Styles.Render("~/bundle/styles/default")
 </head>
 <body>
+    <div id="page-popup" class="modal fade hidden" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog ex-modal" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"><span aria-hidden="true"></span></button>
+                    <h4 class="modal-title" id="result-detail-title"><span class="popup-title"></span></h4>
+                </div>
+                <div class="modal-body">
+                    <iframe frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="no"
+                            id="popup-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
     <aside class="sidebar">
         <div class="partial-content customer-profile" id="profile" data-url="@Url.Action("BriefProfile", "CustomerProfile")"></div>
         <nav class="navigation" id="navigation">
@@ -29,7 +43,6 @@
     @Html.Hidden("howToUseRootPath", Model.HowToUseRootPath)
     @Html.Hidden("subPageAccess", Model.SubPageAccess)
     @ContentSite.Scripts.Render("/bundles/site-main/default.min.js")
-    @Scripts.Render("~/Assets/Scripts/AGEWnd.js")
     @Scripts.Render("~/bundles/scripts/default")
 </body>
 </html>
