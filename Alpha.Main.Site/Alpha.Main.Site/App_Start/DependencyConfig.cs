@@ -68,7 +68,7 @@
 
         private static void RegisterCrossCuttingConcerns(Container container)
         {
-            container.Register<DateTimeHelper, DateTimeHelperImpl>(Lifestyle.Transient);
+            container.Register<IDateTime, DateTimeWrap>(Lifestyle.Transient);
         }
 
         private static void RegisterServices(Container container)

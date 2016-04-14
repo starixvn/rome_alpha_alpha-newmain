@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class DateTimeHelperImpl : DateTimeHelper
+    public class DateTimeWrap : IDateTime
     {
         public DateTime Now
         {

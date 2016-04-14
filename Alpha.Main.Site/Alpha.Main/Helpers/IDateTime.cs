@@ -2,7 +2,7 @@
 {
     using System;
 
-    public interface DateTimeHelper
+    public interface IDateTime
     {
         DateTime Now { get; set; }
     }

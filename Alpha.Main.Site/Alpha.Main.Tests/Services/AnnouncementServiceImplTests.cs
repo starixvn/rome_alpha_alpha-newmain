@@ -183,10 +183,10 @@
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeHelper = Substitute.For<DateTimeHelper>();
-            dateTimeHelper.Now.Returns(validAnnouncementDay);
+            var dateTimeWrapper = Substitute.For<IDateTime>();
+            dateTimeWrapper.Now.Returns(validAnnouncementDay);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
 
             var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(false);
@@ -215,10 +215,10 @@
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeHelper = Substitute.For<DateTimeHelper>();
-            dateTimeHelper.Now.Returns(validAnnouncementDay);
+            var dateTimeWrapper = Substitute.For<IDateTime>();
+            dateTimeWrapper.Now.Returns(validAnnouncementDay);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
 
             var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(false);
@@ -247,9 +247,9 @@
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeHelper = Substitute.For<DateTimeHelper>();
-            dateTimeHelper.Now.Returns(validAnnouncementDay);
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+            var dateTimeWrapper = Substitute.For<IDateTime>();
+            dateTimeWrapper.Now.Returns(validAnnouncementDay);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
 
             var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(false);
@@ -277,9 +277,9 @@
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeHelper = Substitute.For<DateTimeHelper>();
-            dateTimeHelper.Now.Returns(validAnnouncementDay);
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+            var dateTimeWrapper = Substitute.For<IDateTime>();
+            dateTimeWrapper.Now.Returns(validAnnouncementDay);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
 
             var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(false);
@@ -308,10 +308,10 @@
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeHelper = Substitute.For<DateTimeHelper>();
-            dateTimeHelper.Now.Returns(validAnnouncementDay);
+            var dateTimeWrapper = Substitute.For<IDateTime>();
+            dateTimeWrapper.Now.Returns(validAnnouncementDay);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
 
             var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(false);
@@ -343,10 +343,10 @@
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeHelper = Substitute.For<DateTimeHelper>();
-            dateTimeHelper.Now.Returns(validAnnouncementDay);
+            var dateTimeWrapper = Substitute.For<IDateTime>();
+            dateTimeWrapper.Now.Returns(validAnnouncementDay);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
 
             var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(false);
@@ -374,10 +374,10 @@
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeHelper = Substitute.For<DateTimeHelper>();
-            dateTimeHelper.Now.Returns(validAnnouncementDay);
+            var dateTimeWrapper = Substitute.For<IDateTime>();
+            dateTimeWrapper.Now.Returns(validAnnouncementDay);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
 
             var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(false);
@@ -410,10 +410,10 @@
         {
             // Arrange
             var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeHelper = Substitute.For<DateTimeHelper>();
-            dateTimeHelper.Now.Returns(validAnnouncementDay);
+            var dateTimeWrapper = Substitute.For<IDateTime>();
+            dateTimeWrapper.Now.Returns(validAnnouncementDay);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
 
             var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(false);
@@ -440,9 +440,9 @@
         public void GetHotAnnouncement_DisableSecurityCodeAndValidAnnouncement_NotNullContent()
         {
             var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeHelper = Substitute.For<DateTimeHelper>();
-            dateTimeHelper.Now.Returns(validAnnouncementDay);
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeHelper);
+            var dateTimeWrapper = Substitute.For<IDateTime>();
+            dateTimeWrapper.Now.Returns(validAnnouncementDay);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
 
             var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(false);

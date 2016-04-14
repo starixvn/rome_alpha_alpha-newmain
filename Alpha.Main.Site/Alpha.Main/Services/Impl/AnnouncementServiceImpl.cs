@@ -24,16 +24,16 @@
 
         private readonly IDynamicRepository dynamicRepository;
         private readonly SecurityCodeService securityCodeService;
-        private readonly DateTimeHelper dateTimeHelper;
+        private readonly IDateTime dateTimeWrapper;
 
         public AnnouncementServiceImpl(
             IDynamicRepository dynamicRepository = null,
             SecurityCodeService securityCodeService = null,
-            DateTimeHelper dateTimeHelper = null)
+            IDateTime dateTimeWrapper = null)
         {
             this.dynamicRepository = dynamicRepository ?? new DynamicRepository();
             this.securityCodeService = securityCodeService ?? new SecurityCodeServiceImpl();
-            this.dateTimeHelper = dateTimeHelper ?? new DateTimeHelperImpl();
+            this.dateTimeWrapper = dateTimeWrapper ?? new DateTimeWrap();
         }
 
         public HotAnnouncement GetHotAnnouncement(GetHotAnnouncementsParams getParams)
@@ -206,7 +206,7 @@
             DateTime? endDate = endDateAttribute == null ? (DateTime?)null : Converter.ToDateTime(endDateAttribute.Value);
             string effectDate = effectDateAttribute == null ? string.Empty :
                 Converter.ToString2(effectDateAttribute.Value);
-            DateTime? currentDate = dateTimeHelper.Now;
+            DateTime currentDate = dateTimeWrapper.Now;
 
             return !startDate.HasValue ||
                 currentDate < startDate ||
