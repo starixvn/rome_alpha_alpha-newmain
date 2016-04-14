@@ -143,8 +143,11 @@
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
     <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
+    <Compile Include="Entities\Announcements\PersonalMessage.cs" />
     <Compile Include="FunctionRegistry.cs" />
     <Compile Include="Helpers\AppPathHelper.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Helpers\Impl\DateTimeHelperImpl.cs" />
     <Compile Include="Helpers\MicroSites.cs" />
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
     <Compile Include="Models\Announcements\HotAnnouncement.cs" />

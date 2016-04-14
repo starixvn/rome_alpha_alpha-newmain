@@ -1,3 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+    <PopupAnnouncement id="4523901" name="ColossusBets" startdate="03/01/2016" enddate="03/30/2016"  effectdate="03/01/2016">
+        <en-US src="">Announcement</en-US>
+    </PopupAnnouncement>
 </FileDB>

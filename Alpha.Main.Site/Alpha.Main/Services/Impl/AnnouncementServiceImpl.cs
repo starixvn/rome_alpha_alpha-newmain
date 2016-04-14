@@ -1,18 +1,19 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Xml;
     using AppResources;
     using Constants;
     using Criteria.Announcement;
+    using Entities.Announcements;
     using Fanex.Common;
     using Fanex.Data.Repository;
     using Helpers;
     using Models.Announcements;
     using Models.Enumerations;
     using Params.Announcements;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Xml;
 
     public class AnnouncementServiceImpl : AnnouncementService
     {
@@ -20,13 +21,16 @@
 
         private readonly IDynamicRepository dynamicRepository;
         private readonly SecurityCodeService securityCodeService;
+        private readonly DateTimeHelper dateTimeHelper;
 
         public AnnouncementServiceImpl(
             IDynamicRepository dynamicRepository = null,
-            SecurityCodeService securityCodeService = null)
+            SecurityCodeService securityCodeService = null,
+            DateTimeHelper dateTimeHelper = null)
         {
             this.dynamicRepository = dynamicRepository ?? new DynamicRepository();
             this.securityCodeService = securityCodeService ?? new SecurityCodeServiceImpl();
+            this.dateTimeHelper = dateTimeHelper ?? new DateTimeHelperImpl();
         }
 
         public HotAnnouncement GetHotAnnouncement(GetHotAnnouncementsParams getParams)
@@ -92,15 +96,16 @@
 
         private void InsertPersonalMessage(InsertPersonalMessageCriteria criteria, GetHotAnnouncementsParams getParams)
         {
-            var rawData = dynamicRepository.Fetch<dynamic>(criteria).FirstOrDefault();
-            if (rawData == null)
+            var rawData = dynamicRepository.Fetch<PersonalMessage>(criteria);
+            if (rawData == null || !rawData.Any())
             {
                 return;
             }
 
+            var firstMessage = rawData.FirstOrDefault();
             dynamicRepository.Fetch<bool>(new InsertPersonalMessageTargetCriteria
             {
-                MessageId = rawData.Id,
+                MessageId = firstMessage.Id,
                 TargetId = getParams.UserId,
                 TargetName = getParams.UserName,
                 IsRead = false,
@@ -198,7 +203,7 @@
             DateTime? endDate = endDateAttribute == null ? (DateTime?)null : Converter.ToDateTime(endDateAttribute.Value);
             string effectDate = effectDateAttribute == null ? string.Empty :
                 Converter.ToString2(effectDateAttribute.Value);
-            DateTime? currentDate = DateTime.Now;
+            DateTime? currentDate = dateTimeHelper.Now;
             return !startDate.HasValue ||
                 currentDate < startDate ||
                 (endDate.HasValue && endDate < currentDate);
@@ -209,7 +214,7 @@
             var isPublicSystem = node.Attributes["privatesystem"] != null &&
                 (!node.Attributes["privatesystem"].Value.Equals("*") ||
                 !string.IsNullOrEmpty(node.Attributes["privatesystem"].Value)) &&
-                !node.Attributes["privatesystem"].Value.Equals(site, StringComparison.OrdinalIgnoreCase);
+                !node.Attributes["privatesystem"].Value.ToUpper().Split(',').Contains(site.ToUpper());
 
             if (isPublicSystem)
             {

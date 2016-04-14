@@ -136,6 +136,15 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestData\Announcements\AvailableAnnouncement_IgnoreExcludedSite.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\AvailableAnnouncement_IgnorePrivateSystem.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\AvailableAnnouncement_IgnoreAllSystem.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\Announcements\AvailableAnnouncement.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
