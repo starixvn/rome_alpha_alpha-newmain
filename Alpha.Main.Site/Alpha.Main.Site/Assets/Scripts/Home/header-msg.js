@@ -30,7 +30,8 @@ var headerMessage = {
         marqueeMessage: null,
         hotMessages: null,
         userMessageModal: null,
-        currentHotMessage: null
+        currentHotMessage: null,
+        scroller: null
     },
 
     init: function () {
@@ -50,6 +51,7 @@ var headerMessage = {
         headerMessage.domElements.hotMessages = $('#userMessageModalBody');
         headerMessage.domElements.userMessageModal = $('#userMessageModal');
         headerMessage.domElements.currentHotMessage = headerMessage.domElements.hotMessages.find('p.current-hot-message');
+        headerMessage.domElements.scroller = $('#scroller');
     },
 
     registerEvents: function () {
@@ -240,10 +242,10 @@ var headerMessage = {
             return;
         }
 
-        headerMessage.scrollerLeft = 200;
-        headerMessage.scrollerWidth = $('#scroller').width();
+        headerMessage.scrollerLeft = 100;
+        headerMessage.scrollerWidth = headerMessage.domElements.scroller.width();
 
-        headerMessage.scroller = $('#scroller')[0];
+        headerMessage.scroller = headerMessage.domElements.scroller[0];
         headerMessage.topnews = headerMessage.domElements.liveMessage[0];
 
         headerMessage.topnews.onmouseover = function () {
