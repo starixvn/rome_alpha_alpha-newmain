@@ -375,68 +375,83 @@
     <Content Include="App_Themes\Apo\Security\images\x5.gif" />
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
+    <Content Include="Assets\bundles\default-index.css" />
+    <Content Include="Assets\bundles\default-index.js" />
+    <Content Include="Assets\bundles\default-index.min.css">
+      <DependentUpon>default-index.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-index.min.js">
+      <DependentUpon>default-index.js</DependentUpon>
+    </Content>
     <Content Include="Assets\Styles\Announcement\announcements.css">
       <DependentUpon>announcements.scss</DependentUpon>
     </Content>
     <Content Include="Assets\Styles\Announcement\announcements.min.css">
       <DependentUpon>announcements.css</DependentUpon>
     </Content>
-    <Content Include="Assets\Styles\Announcement\Images\bottomborder.png" />
-    <Content Include="Assets\Styles\Announcement\Images\CloseIcon.png" />
-    <Content Include="Assets\Styles\Announcement\Images\CloseIcon_h.png" />
-    <Content Include="Assets\Styles\Announcement\Images\close_button.png" />
-    <Content Include="Assets\Styles\Announcement\Images\Greyhound_Aus.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\Greyhound_Aus_CS.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\Greyhound_Aus_CT.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\Greyhound_Aus_TH.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\Hasness_Aus.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\Hasness_Aus_CS.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\Hasness_Aus_CT.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\Hasness_Aus_TH.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\iconClose.png" />
-    <Content Include="Assets\Styles\Announcement\Images\ico_conts.png" />
-    <Content Include="Assets\Styles\Announcement\Images\info.gif" />
-    <Content Include="Assets\Styles\Announcement\Images\linebg.png" />
-    <Content Include="Assets\Styles\Announcement\Images\popup_bg.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\popup_bg_cs.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\popup_bg_ct.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\popup_bg_th.jpg" />
-    <Content Include="Assets\Styles\Announcement\Images\title.gif" />
-    <Content Include="Assets\Styles\Announcement\Images\toptitlepopup.png" />
-    <Content Include="Assets\Styles\Announcement\Images\toptitlepopup_hoa.png" />
-    <Content Include="Assets\Styles\Announcement\Images\toptitlepopup_KO.png" />
-    <Content Include="Assets\Styles\Announcement\Images\toptitlepopup_thai.png" />
-    <Content Include="Assets\Styles\Announcement\Images\toptitlepopup_TW.png" />
-    <Content Include="Assets\Styles\Announcement\Images\toptitlepopup_vn.png" />
-    <Content Include="Assets\Styles\CustomerProfiles\customer-profile.css">
-      <DependentUpon>customer-profile.scss</DependentUpon>
+    <Content Include="Assets\styles\announcement\images\bottomborder.png" />
+    <Content Include="Assets\styles\announcement\images\CloseIcon.png" />
+    <Content Include="Assets\styles\announcement\images\CloseIcon_h.png" />
+    <Content Include="Assets\styles\announcement\images\close_button.png" />
+    <Content Include="Assets\styles\announcement\images\Greyhound_Aus.jpg" />
+    <Content Include="Assets\styles\announcement\images\Greyhound_Aus_CS.jpg" />
+    <Content Include="Assets\styles\announcement\images\Greyhound_Aus_CT.jpg" />
+    <Content Include="Assets\styles\announcement\images\Greyhound_Aus_TH.jpg" />
+    <Content Include="Assets\styles\announcement\images\Hasness_Aus.jpg" />
+    <Content Include="Assets\styles\announcement\images\Hasness_Aus_CS.jpg" />
+    <Content Include="Assets\styles\announcement\images\Hasness_Aus_CT.jpg" />
+    <Content Include="Assets\styles\announcement\images\Hasness_Aus_TH.jpg" />
+    <Content Include="Assets\styles\announcement\images\iconClose.png" />
+    <Content Include="Assets\styles\announcement\images\ico_conts.png" />
+    <Content Include="Assets\styles\announcement\images\info.gif" />
+    <Content Include="Assets\styles\announcement\images\linebg.png" />
+    <Content Include="Assets\styles\announcement\images\popup_bg.jpg" />
+    <Content Include="Assets\styles\announcement\images\popup_bg_cs.jpg" />
+    <Content Include="Assets\styles\announcement\images\popup_bg_ct.jpg" />
+    <Content Include="Assets\styles\announcement\images\popup_bg_th.jpg" />
+    <Content Include="Assets\styles\announcement\images\title.gif" />
+    <Content Include="Assets\styles\announcement\images\toptitlepopup.png" />
+    <Content Include="Assets\styles\announcement\images\toptitlepopup_hoa.png" />
+    <Content Include="Assets\styles\announcement\images\toptitlepopup_KO.png" />
+    <Content Include="Assets\styles\announcement\images\toptitlepopup_thai.png" />
+    <Content Include="Assets\styles\announcement\images\toptitlepopup_TW.png" />
+    <Content Include="Assets\styles\announcement\images\toptitlepopup_vn.png" />
+    <Content Include="Assets\scripts\home\header-msg.js" />
+    <Content Include="Assets\scripts\home\header-nav.js" />
+    <Content Include="Assets\scripts\home\menu-bar.js" />
+    <Content Include="Assets\scripts\home\index.js" />
+    <Content Include="Assets\Styles\customer-profiles\customer-profile.css" />
+    <Content Include="Assets\Styles\customer-profiles\customer-profile.min.css">
+      <DependentUpon>customer-profile.css</DependentUpon>
     </Content>
-    <Content Include="Assets\Styles\CustomerProfiles\customer-profile.scss" />
-    <Content Include="Assets\Styles\CustomerProfiles\Images\profileTooltip_bg.png" />
-    <Content Include="Assets\Styles\CustomerProfiles\Images\profileTooltip_left.png" />
-    <Content Include="Assets\Styles\CustomerProfiles\Images\profileTooltip_right.png" />
-    <Content Include="Assets\Styles\CustomerProfiles\Images\tooltip_bg.png" />
-    <Content Include="Assets\Styles\CustomerProfiles\Images\tooltip_left.png" />
-    <Content Include="Assets\Styles\CustomerProfiles\Images\tooltip_right.png" />
-    <Content Include="Assets\Scripts\Home\header-msg.js" />
-    <Content Include="Assets\Scripts\Home\header-nav.js" />
-    <Content Include="Assets\Scripts\Home\menu-bar.js" />
-    <Content Include="Assets\Scripts\Home\index.js" />
-    <Content Include="Assets\Styles\Home\images\flag_sprite.png" />
-    <Content Include="Assets\Styles\Home\page.css">
+    <Content Include="Assets\styles\customer-profiles\images\profileTooltip_bg.png" />
+    <Content Include="Assets\styles\customer-profiles\images\profileTooltip_left.png" />
+    <Content Include="Assets\styles\customer-profiles\images\profileTooltip_right.png" />
+    <Content Include="Assets\styles\customer-profiles\images\tooltip_bg.png" />
+    <Content Include="Assets\styles\customer-profiles\images\tooltip_left.png" />
+    <Content Include="Assets\styles\customer-profiles\images\tooltip_right.png" />
+    <Content Include="Assets\styles\home\images\flag_sprite.png" />
+    <Content Include="Assets\styles\home\images\headerbg_2.jpg" />
+    <Content Include="Assets\styles\home\images\headerbg_3.jpg" />
+    <Content Include="Assets\styles\home\images\headerbg_4.jpg" />
+    <Content Include="Assets\styles\home\page.css">
       <DependentUpon>page.scss</DependentUpon>
     </Content>
-    <Content Include="Assets\Styles\Home\PopupMessage.css">
-      <DependentUpon>PopupMessage.scss</DependentUpon>
-    </Content>
     <Content Include="Assets\Images\icon_user_default.png" />
-    <Content Include="Assets\Styles\Home\images\icon_close.jpg" />
-    <Content Include="Assets\Styles\Home\images\profileTooltip_bg.png" />
-    <Content Include="Assets\Styles\Home\images\profileTooltip_left.png" />
-    <Content Include="Assets\Styles\Home\images\profileTooltip_right.png" />
-    <Content Include="Assets\Styles\Home\images\tooltip_bg.png" />
-    <Content Include="Assets\Styles\Home\images\tooltip_left.png" />
-    <Content Include="Assets\Styles\Home\images\tooltip_right.png" />
+    <Content Include="Assets\styles\home\images\icon_close.jpg" />
+    <Content Include="Assets\styles\home\images\profileTooltip_bg.png" />
+    <Content Include="Assets\styles\home\images\profileTooltip_left.png" />
+    <Content Include="Assets\styles\home\images\profileTooltip_right.png" />
+    <Content Include="Assets\styles\home\images\tooltip_bg.png" />
+    <Content Include="Assets\styles\home\images\tooltip_left.png" />
+    <Content Include="Assets\styles\home\images\tooltip_right.png" />
+    <Content Include="Assets\Styles\home\page.min.css">
+      <DependentUpon>page.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\popup-message.css" />
+    <Content Include="Assets\Styles\home\popup-message.min.css">
+      <DependentUpon>popup-message.css</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
     <Content Include="App_Data\Announcements\PopupAdCommon.xml" />
@@ -446,10 +461,10 @@
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Assets\Scripts\Announcement\announcement.js" />
-    <Content Include="Assets\Scripts\CustomerProfiles\brief-profile.js" />
-    <Content Include="Assets\Scripts\core.js" />
-    <Content Include="Assets\Scripts\piwik-loader.js" />
+    <Content Include="Assets\scripts\Announcement\announcement.js" />
+    <Content Include="Assets\scripts\customer-profiles\brief-profile.js" />
+    <Content Include="Assets\scripts\core.js" />
+    <Content Include="Assets\scripts\piwik-loader.js" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
@@ -457,16 +472,17 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
-    <Content Include="Assets\Styles\Home\page.scss" />
+    <Content Include="Assets\styles\home\page.scss" />
     <Content Include="App_Data\Alpha.sitemap">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\Styles\customer-profiles\customer-profile.scss" />
+    <Content Include="Assets\styles\home\popup-message.scss" />
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Assets\Styles\Home\PopupMessage.scss" />
     <Content Include="Views\Default\MenuBar.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\HeaderNav.cshtml" />
@@ -550,8 +566,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\CssRewriteUrlTransformWrapper.cs" />
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
@@ -641,7 +655,8 @@
   </Target>
   <PropertyGroup>
     <PostBuildEvent>if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"  
-      start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"</PostBuildEvent>
+      start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"
+$(SolutionDir)BuildTask.bat</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -21,7 +21,6 @@
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
             DependencyConfig.Init();
 
             Fanex.Data.Configuration.DbSettingProviderManager.Current.Start();

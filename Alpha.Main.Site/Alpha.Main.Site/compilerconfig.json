@@ -1,83 +1,18 @@
 ﻿[
   {
-    "outputFile": "Assets/Home/Styles/page.css",
-    "inputFile": "Assets/Home/Styles/page.scss",
-    "minify": {
-      "enabled": false
-    }
+    "outputFile": "Assets/Styles/home/popup-message.css",
+    "inputFile": "Assets/Styles/home/popup-message.scss"
   },
   {
-    "outputFile": "Assets/Home/Styles/agent.css",
-    "inputFile": "Assets/Home/Styles/agent.scss",
-    "minify": {
-      "enabled": false
-    }
+    "outputFile": "Assets/Styles/home/page.css",
+    "inputFile": "Assets/Styles/home/page.scss"
   },
   {
-    "outputFile": "Assets/Home/Styles/master.css",
-    "inputFile": "Assets/Home/Styles/master.scss",
-    "minify": {
-      "enabled": false
-    }
-  },
-  {
-    "outputFile": "Assets/Home/Styles/super.css",
-    "inputFile": "Assets/Home/Styles/super.scss",
-    "minify": {
-      "enabled": false
-    }
-  },
-  {
-    "outputFile": "Assets/Home/Styles/dashboard.css",
-    "inputFile": "Assets/Home/Styles/dashboard.scss",
-    "minify": {
-      "enabled": false
-    }
-  },
-  {
-    "outputFile": "Assets/Home/Styles/PopupMessage.css",
-    "inputFile": "Assets/Home/Styles/PopupMessage.scss",
-    "minify": {
-      "enabled": false
-    }
-  },
-  {
-    "outputFile": "Assets/Home/Styles/dashboard.css",
-    "inputFile": "Assets/Home/Styles/dashboard.scss",
-    "minify": {
-      "enabled": false
-    }
-  },
-  {
-    "outputFile": "Assets/Home/Styles/page.css",
-    "inputFile": "Assets/Home/Styles/page.scss",
-    "minify": {
-      "enabled": false
-    }
-  },
-  {
-    "outputFile": "Assets/Styles/Home/PopupMessage.css",
-    "inputFile": "Assets/Styles/Home/PopupMessage.scss",
-    "minify": {
-      "enabled": false
-    }
-  },
-  {
-    "outputFile": "Assets/Styles/CustomerProfiles/customer-profile.css",
-    "inputFile": "Assets/Styles/CustomerProfiles/customer-profile.scss",
-    "minify": {
-      "enabled": false
-    }
+    "outputFile": "Assets/Styles/customer-profiles/customer-profile.css",
+    "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss"
   },
   {
     "outputFile": "Assets/Styles/Announcement/announcements.css",
     "inputFile": "Assets/Styles/Announcement/announcements.scss"
-  },
-  {
-    "outputFile": "Assets/Styles/Home/page.css",
-    "inputFile": "Assets/Styles/Home/page.scss",
-    "minify": {
-      "enabled": false
-    }
   }
 ]

@@ -4,7 +4,7 @@
 <head>
     <title></title>
     @ContentSite.Styles.Render($"/bundles/site-main/{Model.UserLevel}.min.css")
-    @Styles.Render("~/bundle/styles/default")
+    <link href="@(Url.Content($"~/Assets/bundles/default-index.min.css?v={AppSettings.StaticResourcesVersion}"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div id="page-popup" class="modal fade hidden" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -43,6 +43,6 @@
     @Html.Hidden("howToUseRootPath", Model.HowToUseRootPath)
     @Html.Hidden("subPageAccess", Model.SubPageAccess)
     @ContentSite.Scripts.Render("/bundles/site-main/default.min.js")
-    @Scripts.Render("~/bundles/scripts/default")
+    <script src="@(Url.Content($"~/Assets/bundles/default-index.min.js?v={AppSettings.StaticResourcesVersion}"))" type="text/javascript"></script>
 </body>
 </html>
