@@ -76,7 +76,8 @@
     cursor: pointer; }
     .customer-profile .profile-avatar img {
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      border-radius: 50%; }
   .customer-profile .userinfo {
     color: #fff;
     font-size: 13px;
