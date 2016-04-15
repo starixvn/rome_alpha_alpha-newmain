@@ -150,7 +150,6 @@ var headerNav = {
 
     urls: {
         home: alpha.urls.oldMainRootPath + '_Reports/PortalPage/PortalPage.aspx',
-        oldMainIndex: alpha.urls.oldMainRootPath + "Index.aspx",
         changeLanguage: alpha.urls.mainRootPath + 'Language/Change'
     },
 
@@ -217,7 +216,6 @@ var headerNav = {
         headerNav.domElements.iconLogOut = $(".icon-logout");
         headerNav.domElements.iconCollapse = $('.icon-collapse');
         headerNav.domElements.iconHome = $(".icon-home");
-        headerNav.domElements.swapView = $(".icon-swap-horizontal, .old-view-text");
         headerNav.domElements.changeLanguageLink = $(".changelanguage-link");
 
         headerNav.domElements.sideBar = $('.sidebar');
@@ -243,10 +241,6 @@ var headerNav = {
 
         headerNav.domElements.iconHome.click(function () {
             index.changeMenu(headerNav.urls.home);
-        });
-
-        headerNav.domElements.swapView.click(function () {
-            top.location = headerNav.urls.oldMainIndex;
         });
 
         headerNav.domElements.changeLanguageLink.click(function () {
