@@ -173,9 +173,7 @@
     position: relative;
     left: 0; }
   .accountinfo-container #accountinfo-content {
-    width: 100%;
-    top: 0;
-    height: 100vh; }
+    width: 100%; }
 
 /********************************** Content-wrapper ******************************************/
 .content-wrapper {

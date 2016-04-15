@@ -107,6 +107,22 @@
             if (!src) {
                 accInfoContent.attr('src', menuBar.urls.accountInfo);
             }
+
+            accInfoContent.unbind("load").load(function () {
+                var contentHeight = accInfoContent.contents().find("html").height();
+
+                var iframeHeightPadding = 20;
+
+                var iframeHeight = contentHeight + iframeHeightPadding;
+                var topHeight = 88;
+                var maxHeight = $(window).height() - 50 - topHeight;
+                if (iframeHeight >= maxHeight) {
+                    iframeHeight = maxHeight;
+                }
+
+                accInfoContent.css("height", iframeHeight);
+            });
+
         });
     },
     activeSubMenuItem: function (subMenu) {
