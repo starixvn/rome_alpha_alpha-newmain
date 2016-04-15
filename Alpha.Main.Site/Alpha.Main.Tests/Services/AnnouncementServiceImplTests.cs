@@ -43,23 +43,6 @@
 
         private DateTime validAnnouncementDay = new DateTime(2016, 4, 13);
 
-        [Test]
-        public void GetHotAnnouncement_RequireSecurityCode_AnnouncementWithNullContent()
-        {
-            // Arrange
-            var announcementServiceImpl = new AnnouncementServiceImpl();
-
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(true);
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
-        }
-
         [TestCase(true, true, true, "Your minimum position taking and betting limit value have been changed by the upline.")]
         [TestCase(true, false, true, "Your minimum position taking value has been changed by the upline.")]
         [TestCase(false, true, true, "Your betting limit value has been changed by the upline.")]
