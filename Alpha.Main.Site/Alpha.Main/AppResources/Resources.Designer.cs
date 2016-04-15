@@ -503,7 +503,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click here to Edit Profile Picture..
+        ///   Looks up a localized string similar to Click here to edit profile picture..
         /// </summary>
         public static string ProfileClickTootip {
             get {

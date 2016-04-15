@@ -121,7 +121,7 @@
     <value>Close</value>
   </data>
   <data name="ProfileClickTootip" xml:space="preserve">
-    <value>Click here to Edit Profile Picture.</value>
+    <value>Click here to edit profile picture.</value>
   </data>
   <data name="subAcc" xml:space="preserve">
     <value>Sub-Acc</value>
