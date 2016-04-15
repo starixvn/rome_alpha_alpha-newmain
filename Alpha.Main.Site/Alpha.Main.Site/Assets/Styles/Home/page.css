@@ -176,7 +176,7 @@
     position: relative;
     left: 0; }
   .accountinfo-container #accountinfo-content {
-    width: 100%; }
+    width: 100%;
     min-height: 340px; }
 
 /********************************** Content-wrapper ******************************************/
