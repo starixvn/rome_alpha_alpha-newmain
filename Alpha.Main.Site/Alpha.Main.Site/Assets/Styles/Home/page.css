@@ -117,6 +117,9 @@
       width: 16px;
       position: relative;
       left: 1px; }
+      .mainmenu-container .menu-item .icon.icon-betsandforecast {
+        font-size: 20px;
+        margin-right: 18px; }
     .mainmenu-container .menu-item > a {
       display: table;
       white-space: nowrap;
@@ -174,6 +177,7 @@
     left: 0; }
   .accountinfo-container #accountinfo-content {
     width: 100%; }
+    min-height: 340px; }
 
 /********************************** Content-wrapper ******************************************/
 .content-wrapper {

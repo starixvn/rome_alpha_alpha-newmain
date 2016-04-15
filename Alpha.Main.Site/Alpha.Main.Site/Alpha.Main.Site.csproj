@@ -422,7 +422,7 @@
     <Content Include="Assets\Scripts\Home\header-nav.js" />
     <Content Include="Assets\Scripts\Home\menu-bar.js" />
     <Content Include="Assets\Scripts\Home\index.js" />
-    <Content Include="Assets\Styles\Home\Images\flag_sprite.png" />
+    <Content Include="Assets\Styles\Home\images\flag_sprite.png" />
     <Content Include="Assets\Styles\Home\page.css">
       <DependentUpon>page.scss</DependentUpon>
     </Content>
@@ -430,16 +430,13 @@
       <DependentUpon>PopupMessage.scss</DependentUpon>
     </Content>
     <Content Include="Assets\Images\icon_user_default.png" />
-    <Content Include="Assets\Styles\Home\Images\headerbg_2.jpg" />
-    <Content Include="Assets\Styles\Home\Images\headerbg_3.jpg" />
-    <Content Include="Assets\Styles\Home\Images\headerbg_4.jpg" />
-    <Content Include="Assets\Styles\Home\Images\icon_close.jpg" />
-    <Content Include="Assets\Styles\Home\Images\profileTooltip_bg.png" />
-    <Content Include="Assets\Styles\Home\Images\profileTooltip_left.png" />
-    <Content Include="Assets\Styles\Home\Images\profileTooltip_right.png" />
-    <Content Include="Assets\Styles\Home\Images\tooltip_bg.png" />
-    <Content Include="Assets\Styles\Home\Images\tooltip_left.png" />
-    <Content Include="Assets\Styles\Home\Images\tooltip_right.png" />
+    <Content Include="Assets\Styles\Home\images\icon_close.jpg" />
+    <Content Include="Assets\Styles\Home\images\profileTooltip_bg.png" />
+    <Content Include="Assets\Styles\Home\images\profileTooltip_left.png" />
+    <Content Include="Assets\Styles\Home\images\profileTooltip_right.png" />
+    <Content Include="Assets\Styles\Home\images\tooltip_bg.png" />
+    <Content Include="Assets\Styles\Home\images\tooltip_left.png" />
+    <Content Include="Assets\Styles\Home\images\tooltip_right.png" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
     <Content Include="App_Data\Announcements\PopupAdCommon.xml" />
@@ -464,6 +461,7 @@
     <Content Include="App_Data\Alpha.sitemap">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -608,6 +606,7 @@
       <Name>Alpha.Main</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

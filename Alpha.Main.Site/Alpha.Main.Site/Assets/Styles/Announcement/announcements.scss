@@ -12,35 +12,31 @@
     .modal-content {
         background: #f6f6f6;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+        border-radius: 0;
         width: 455px;
         margin: auto;
         .modal-header {
+            background: #930a14;
+            color: #fff;
             padding: 0 15px;
+            border-bottom: none;
             .icon-close {
                 margin-right: 0;
-                color: #333;
+                color: #fff;
                 opacity: 1;
                 font-size: 20px;
                 top: 16px;
                 right: -4px;
+                text-shadow: none;
             }
             .modal-title {
-                border-bottom: 1px solid #dfdfdf;
-                color: #333;
+                color: #fff;
                 font-weight: 700;
-                padding: 10px 0;
+                font-size: 12px;
+                padding: 15px 0;
                 text-transform: uppercase;
-                .bullhorn-box {
-                    display: inline-block;
-                    padding: 5px 7px;
-                    border-radius: 15px;
-                    background: #930b15;
-                    margin-right: 10px;
-                    .icon-bullhorn {
-                        cursor: default;
-                        margin-right: 0;
-                        color: #fff;
-                    }
+                .icon-bullhorn {
+                    cursor: default;
                 }
             }
         }
