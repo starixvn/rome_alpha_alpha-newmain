@@ -1,15 +1,15 @@
-﻿/// <reference path="index-page.js" />
+﻿/// <reference path="index.js" />
 
 'use strict';
 /*global index*/
 
-var oldMainRootPath = document.getElementById('oldMainRootPath').value;
 var headerMessage = {
     urls: {
-        oldMainAppMessageForm: oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
-        oldMainAppPrivateMessageForm: oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
-        updatePrivateMessageCount: oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
-        getMessages: oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'
+        oldMainAppNormalMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
+        oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
+        oldMainAppSpecialMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=special',
+        updatePrivateMessageCount: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
+        getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'
     },
 
     messageIndex: 0,
@@ -95,7 +95,7 @@ var headerMessage = {
     },
 
     viewSpecialMessage: function () {
-        index.changeMenu(headerMessage.urls.oldMainAppMessageForm);
+        index.changeMenu(headerMessage.urls.oldMainAppSpecialMessageForm);
     },
 
     viewLiveMessage: function () {
@@ -104,7 +104,7 @@ var headerMessage = {
             index.changeMenu(liveMessageUrl);
         }
         else {
-            index.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
+            index.changeMenu(headerMessage.urls.oldMainAppNormalMessageForm);
         }
     },
 
@@ -118,7 +118,7 @@ var headerMessage = {
 
     showPublicMessage: function (publicMessage) {
         // Process Public Message: show new public message and its link to message form
-        var url = headerMessage.urls.oldMainAppMessageForm + publicMessage[headerMessage.messageTypeIndex];
+        var url = headerMessage.urls.oldMainAppNormalMessageForm + publicMessage[headerMessage.messageTypeIndex];
 
         if (publicMessage[headerMessage.messageIdIndex]
             && publicMessage[headerMessage.messageIdIndex] !== headerMessage.publicMessageId) {
