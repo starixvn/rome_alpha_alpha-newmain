@@ -431,9 +431,6 @@
     <Content Include="Assets\styles\customer-profiles\images\tooltip_left.png" />
     <Content Include="Assets\styles\customer-profiles\images\tooltip_right.png" />
     <Content Include="Assets\styles\home\images\flag_sprite.png" />
-    <Content Include="Assets\styles\home\images\headerbg_2.jpg" />
-    <Content Include="Assets\styles\home\images\headerbg_3.jpg" />
-    <Content Include="Assets\styles\home\images\headerbg_4.jpg" />
     <Content Include="Assets\styles\home\page.css">
       <DependentUpon>page.scss</DependentUpon>
     </Content>
