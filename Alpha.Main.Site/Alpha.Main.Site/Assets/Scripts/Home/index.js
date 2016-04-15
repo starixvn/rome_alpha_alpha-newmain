@@ -92,7 +92,11 @@ var index = {
     },
 
     setCurrentUrl: function () {
-        var currentUrl = $.cookie(index.currentPageCookieName) || index.domElements.content.data('default-url');
+        var currentUrl = $.cookie(index.currentPageCookieName);
+
+        if (!currentUrl || currentUrl === 'about:blank') {
+            currentUrl = index.domElements.content.data('default-url');
+        }
 
         if (index.domElements.mainFrame
             && index.domElements.mainFrame.length > 0) {
