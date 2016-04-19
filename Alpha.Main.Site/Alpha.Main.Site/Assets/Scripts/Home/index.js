@@ -10,7 +10,8 @@ var index = {
     domElements: {
         mainFrame: null,
         partialContents: null,
-        content: null
+        content: null,
+        accountInfoContent: null
     },
 
     urls: {
@@ -36,6 +37,7 @@ var index = {
     cachedDomElements: function () {
         index.domElements.partialContents = $('.partial-content');
         index.domElements.content = $('#content');
+        index.domElements.accountInfoContent = $('#accountinfo-content');
     },
 
     changeMenu: function (url) {
@@ -106,18 +108,26 @@ var index = {
             index.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentUrl + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
             index.domElements.mainFrame = $('#main');
             index.domElements.mainFrame.load(function () {
-                $(this).contents().find('body').click(function () {
+                var iframeWindow = index.domElements.mainFrame[0].contentWindow || index.domElements.mainFrame[0].contentDocument;
+                index.closeAllOpenDropdowns(iframeWindow);
+            });
 
-                    $('.dropdown-toggle').each(function (index, dropdown) {
-                        var $dropdown = $(dropdown);
-                        if ($dropdown.parent().hasClass('open')) {
-                            $dropdown.dropdown('toggle');
-                        }
-                    });
-
-                });
+            index.domElements.accountInfoContent.load(function () {
+                var iframeWindow = index.domElements.accountInfoContent[0].contentWindow || index.domElements.accountInfoContent[0].contentDocument;
+                index.closeAllOpenDropdowns(iframeWindow);
             });
         }
+    },
+
+    closeAllOpenDropdowns: function (iframeWindow) {
+        $(iframeWindow.document).click(function () {
+            $('.dropdown-toggle').each(function (index, dropdown) {
+                var $dropdown = $(dropdown);
+                if ($dropdown.parent().hasClass('open')) {
+                    $dropdown.dropdown('toggle');
+                }
+            });
+        });
     }
 };
 
