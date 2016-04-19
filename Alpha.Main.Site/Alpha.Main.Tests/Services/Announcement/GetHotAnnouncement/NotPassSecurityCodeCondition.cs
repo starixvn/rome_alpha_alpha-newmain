@@ -3,12 +3,14 @@
     using Fanex.Razorbill.Security.Sessions;
     using NSubstitute;
 
-    public class DisableSecurityCodeTest : PassSecurityCodeTest
+    public class NotPassSecurityCodeCondition : SecurityCodeCondition
     {
-        public DisableSecurityCodeTest()
+        public NotPassSecurityCodeCondition()
         {
+            IsSecurityCodeActive = true;
+
             SecurityCodeSession = Substitute.For<ISecurityCodeSession>();
-            SecurityCodeSession.IsRequireSecurityCode.Returns(false);
+            SecurityCodeSession.IsRequireSecurityCode.Returns(true);
         }
     }
 }

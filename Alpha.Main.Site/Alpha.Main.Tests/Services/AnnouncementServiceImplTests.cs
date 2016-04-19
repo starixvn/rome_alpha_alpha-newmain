@@ -1,29 +1,14 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using Alpha.Main.Services.Impl;
-    using Criteria.Announcement;
-    using Entities.Announcements;
-    using Fanex.Data.Repository;
-    using Fanex.Razorbill.Security.Entities;
-    using Fanex.Razorbill.Security.Sessions;
-    using Helpers;
-    using Helps;
+    using Announcement.GetHotAnnouncement;
     using Main.Constants;
-    using Main.Services;
-    using Models.Enumerations;
-    using NSubstitute;
     using NUnit.Framework;
-    using Params.Announcements;
-    using System;
     using System.Collections.Generic;
 
     [TestFixture]
     public class AnnouncementServiceImplTests
     {
-        private const string EmptyAnnoucementPath = @"\TestData\Announcements\HotAnnouncement\EmptyAnnouncement.xml";
-        private const string AvailableAnnoucementPath = @"\TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml";
-
-        private const int ValidAdminId = 1;
         private const string PublicSystem = "publicSystem";
         private const string ExludedSite = "exludedSite";
         private const string IncludedSite = "includedSite";
@@ -33,15 +18,21 @@
         private const string ShowedAnnouncementId = "4523901";
         private const string StillWaitAnnouncementId = "4523909";
 
-        public const int PositionTakingChanged = 1;
-        public const int BettingLimitChanged = 2;
+        [Test]
+        public void GetHotAnnouncement_NotPassSecurityCode_AnnouncementWithNullContent()
+        {
+            // Arrange
+            var announcementServiceImpl = new AnnouncementServiceImpl();
 
-        public const int OfferedGoldDeluxe = 3543501;
-        public const int NotOfferedGoldDeluxe = 3543502;
-        public const int OfferedSuperLive = 3577701;
-        public const int OfferedColossusBets = 4523901;
+            var securityCodeCondition = new NotPassSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-        private DateTime validAnnouncementDay = new DateTime(2016, 4, 13);
+            // Action
+            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
+
+            // Assert
+            Assert.AreEqual(null, actualHotAnnouncement.Content);
+        }
 
         [TestCase(true, true, true, "Your minimum position taking and betting limit value have been changed by the upline.")]
         [TestCase(true, false, true, "Your minimum position taking value has been changed by the upline.")]
@@ -56,23 +47,13 @@
             string expectedAnnouncementPrefix)
         {
             // Arrange
-            var dynamicRepository = Substitute.For<IDynamicRepository>();
-            var settingChanges = GetSettingChanges(isPositionTakingChanged, isBettingLimitChanged);
-            dynamicRepository.Fetch<string>(Arg.Any<GetMessageTypeListCriteria>()).Returns(settingChanges);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            IEnumerable<PersonalMessage> insertPersonalMessageResult = isInsertPersonalMessage ?
-                   new List<PersonalMessage> { new PersonalMessage { Id = 0 } } :
-                   null;
-            dynamicRepository.Fetch<PersonalMessage>(Arg.Any<InsertPersonalMessageCriteria>()).Returns(insertPersonalMessageResult);
+            var logInAndSettingChangedCondition = new AgentDirectLoginAndSettingChangedCondition(isPositionTakingChanged, isBettingLimitChanged, isInsertPersonalMessage);
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(dynamicRepository, null);
-
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.RoleId = UserLevel.Agent.Value;
-            query.AdminId = 0;
+            var announcementServiceImpl = new AnnouncementServiceImpl(logInAndSettingChangedCondition.DynamicRepository);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
@@ -89,26 +70,20 @@
             string expectedAnnouncementContent)
         {
             // Arrange
-            var dynamicRepository = Substitute.For<IDynamicRepository>();
-            List<string> settingChanges = GetSettingChanges(false, false);
-            dynamicRepository.Fetch<string>(Arg.Any<GetMessageTypeListCriteria>()).Returns(settingChanges);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var securityCodeService = Substitute.For<SecurityCodeService>();
+            var logInAndSettingChangedCondition = new AgentDirectLoginAndSettingChangedCondition(false, false);
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(dynamicRepository, securityCodeService);
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
-
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.RoleId = UserLevel.Agent.Value;
-            query.AdminId = 0;
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
-
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(hasAnnouncement ? AvailableAnnoucementPath : EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.Language = Language.Default;
+            var announcementServiceImpl = new AnnouncementServiceImpl(
+                logInAndSettingChangedCondition.DynamicRepository,
+                showedMessageCondition.SecurityCodeService);
+            var localFileAnnouncementCondition = LocalFileConditionFactory.Create(hasAnnouncement);
+            localFileAnnouncementCondition.SetUpCondition(query);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
@@ -134,22 +109,19 @@
             string expectedAnnouncement)
         {
             // Arrange
-            var securityCodeService = Substitute.For<SecurityCodeService>();
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService);
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService);
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.RoleId = roleId;
-            query.AdminId = isAdminLogIn ? ValidAdminId : 0;
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition(roleId, isAdminLogIn);
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(hasAnnouncement ? AvailableAnnoucementPath : EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.Language = Language.Default;
+            var localFileAnnouncementCondition = LocalFileConditionFactory.Create(hasAnnouncement);
+            localFileAnnouncementCondition.SetUpCondition(query);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
@@ -158,31 +130,28 @@
             Assert.AreEqual(expectedAnnouncement, actualHotAnnouncement.Content);
         }
 
-        [TestCase(EmptyAnnoucementPath, AvailableAnnoucementPath)]
-        [TestCase(AvailableAnnoucementPath, EmptyAnnoucementPath)]
-        public void GetHotAnnouncement_NotAgentDirectLoginAndHasOnePrivateOrCommonAnnoucement_NotNullContent(
+        [TestCase(LocalFileCondition.EmptyAnnouncementPath, LocalFileCondition.AvailableAnnoucementPath)]
+        [TestCase(LocalFileCondition.AvailableAnnoucementPath, LocalFileCondition.EmptyAnnouncementPath)]
+        [TestCase(LocalFileCondition.AvailableAnnoucementPath, LocalFileCondition.AvailableAnnoucementPath)]
+        public void GetHotAnnouncement_NotAgentDirectLoginAndHasPrivateOrCommonAnnouncement_NotNullContent(
             string commonAnnouncementPath,
             string privateMessagePath)
         {
             // Arrange
-            var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeWrapper = Substitute.For<IDateTime>();
-            dateTimeWrapper.Now.Returns(validAnnouncementDay);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(commonAnnouncementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(privateMessagePath);
-            query.Language = Language.Default;
-            query.RoleId = RoleId.ValidRoleId;
-            query.AdminId = ValidAdminId;
+            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(commonAnnouncementPath, privateMessagePath);
+            localFileAnnouncementCondition.SetUpCondition(query);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
@@ -197,24 +166,20 @@
         public void GetHotAnnouncement_NotAgentDirectLoginAndExpiredAnnouncement_NullContent(string expiredAnnouncementPath)
         {
             // Arrange
-            var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeWrapper = Substitute.For<IDateTime>();
-            dateTimeWrapper.Now.Returns(validAnnouncementDay);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
 
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(expiredAnnouncementPath);
-            query.Language = Language.Default;
-            query.RoleId = RoleId.ValidRoleId;
-            query.AdminId = ValidAdminId;
+            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(null, expiredAnnouncementPath);
+            localFileAnnouncementCondition.SetUpCondition(query);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
@@ -226,26 +191,24 @@
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreAllSystem.xml", PublicSystem)]
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnorePrivateSystem.xml", PublicSystem)]
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml", ExludedSite)]
-        public void GetHotAnnouncement_NotAgentDirectLoginAndExcludeHotMessage_NullContent(string availableAnnoucementPath, string site)
+        public void GetHotAnnouncement_NotAgentDirectLoginAndExcludeHotMessage_NullContent(string availableAnnouncementPath, string site)
         {
             // Arrange
-            var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeWrapper = Substitute.For<IDateTime>();
-            dateTimeWrapper.Now.Returns(validAnnouncementDay);
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
 
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(availableAnnoucementPath);
-            query.Language = Language.Default;
-            query.RoleId = RoleId.ValidRoleId;
-            query.AdminId = ValidAdminId;
+            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
+
+            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(null, availableAnnouncementPath);
+            localFileAnnouncementCondition.SetUpCondition(query);
+
             query.Site = site;
 
             // Action
@@ -256,26 +219,24 @@
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml", IncludedSite)]
-        public void GetHotAnnouncement_NotAgentDirectLoginAndIncludeHotMessage_NotNullContent(string availableAnnoucementPath, string site)
+        public void GetHotAnnouncement_NotAgentDirectLoginAndIncludeHotMessage_NotNullContent(string availableAnnouncementPath, string site)
         {
             // Arrange
-            var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeWrapper = Substitute.For<IDateTime>();
-            dateTimeWrapper.Now.Returns(validAnnouncementDay);
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(availableAnnoucementPath);
-            query.Language = Language.Default;
-            query.RoleId = RoleId.ValidRoleId;
-            query.AdminId = ValidAdminId;
+            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
+
+            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(availableAnnouncementPath);
+            localFileAnnouncementCondition.SetUpCondition(query);
+
             query.Site = site;
 
             // Action
@@ -287,27 +248,23 @@
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml")]
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\Announcement_NotHasEndDate.xml")]
-        public void GetHotAnnouncement_NotAgentDirectLoginAndAvailableAnnouncement_NotNullContent(string availableAnnoucementPath)
+        public void GetHotAnnouncement_NotAgentDirectLoginAndAvailableAnnouncement_NotNullContent(string availableAnnouncementPath)
         {
             // Arrange
-            var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeWrapper = Substitute.For<IDateTime>();
-            dateTimeWrapper.Now.Returns(validAnnouncementDay);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
 
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(availableAnnoucementPath);
-            query.Language = Language.Default;
-            query.RoleId = RoleId.ValidRoleId;
-            query.AdminId = ValidAdminId;
+            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(availableAnnouncementPath);
+            localFileAnnouncementCondition.SetUpCondition(query);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
@@ -325,24 +282,20 @@
             string expectedAnnouncementContent)
         {
             // Arrange
-            var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeWrapper = Substitute.For<IDateTime>();
-            dateTimeWrapper.Now.Returns(validAnnouncementDay);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
 
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(availableAnnoucementPath);
-            query.Language = Language.Default;
-            query.RoleId = RoleId.ValidRoleId;
-            query.AdminId = ValidAdminId;
+            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(availableAnnoucementPath);
+            localFileAnnouncementCondition.SetUpCondition(query);
             query.Language = language;
 
             // Action
@@ -356,26 +309,22 @@
         public void GetHotAnnouncement_NotAgentDirectLoginAndDisableProduct_NullContent()
         {
             // Arrange
-            var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeWrapper = Substitute.For<IDateTime>();
-            dateTimeWrapper.Now.Returns(validAnnouncementDay);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
-
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
             query.AnnouncementEnableStatus = new Dictionary<int, bool>();
             query.AnnouncementEnableStatus.Add(4523901, false);
 
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(AvailableAnnoucementPath);
-            query.Language = Language.Default;
-            query.RoleId = RoleId.ValidRoleId;
-            query.AdminId = ValidAdminId;
-            query.Language = Language.Default;
+            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
+
+            var localFileAnnouncementCondition = new HasAnnouncementCondition();
+            localFileAnnouncementCondition.SetUpCondition(query);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
@@ -392,25 +341,21 @@
             string expectedAnnouncementContent)
         {
             // Arrange
-            var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeWrapper = Substitute.For<IDateTime>();
-            dateTimeWrapper.Now.Returns(validAnnouncementDay);
+            var securityCodeCondition = new NotRequireSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
-
-            var query = new GetHotAnnouncementsParams(securityCodeSession, true);
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
-
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(AvailableAnnoucementPath);
-            query.Language = Language.Default;
-            query.RoleId = RoleId.ValidRoleId;
-            query.AdminId = ValidAdminId;
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
             query.MessageIds = showedAnnouncementId.ToString();
+
+            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
+
+            var localFileAnnouncementCondition = new HasAnnouncementCondition();
+            localFileAnnouncementCondition.SetUpCondition(query);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
@@ -422,45 +367,27 @@
         [Test]
         public void GetHotAnnouncement_DisableSecurityCodeAndValidAnnouncement_NotNullContent()
         {
-            var securityCodeService = Substitute.For<SecurityCodeService>();
-            var dateTimeWrapper = Substitute.For<IDateTime>();
-            dateTimeWrapper.Now.Returns(validAnnouncementDay);
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, securityCodeService, dateTimeWrapper);
+            // Arrange
+            var securityCodeCondition = new DisableSecurityCodeCondition();
+            var query = securityCodeCondition.HotAnnouncementsParams();
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(false);
-            securityCodeSession.SecurityCodeResult.Returns((int)SecurityCodeStatus.NONE);
+            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
+            logInAndSettingChangedCondition.SetUpCondition(query);
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, false);
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
+            var showedMessageCondition = new ShowedMessageCondition(false);
+            showedMessageCondition.SetUpCondition(query);
 
-            query.CommonAnnouncementPath = FileHelper.GetFilePath(EmptyAnnoucementPath);
-            query.PrivateMessagePath = FileHelper.GetFilePath(AvailableAnnoucementPath);
-            query.Language = Language.Default;
-            query.RoleId = RoleId.ValidRoleId;
-            query.AdminId = ValidAdminId;
+            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
+
+            var localFileAnnouncementCondition = new HasAnnouncementCondition();
+            localFileAnnouncementCondition.SetUpCondition(query);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
             // Assert
             Assert.AreNotEqual(null, actualHotAnnouncement.Content);
-        }
-
-        private List<string> GetSettingChanges(bool isPositionTakingChanged, bool isBettingLimitChanged)
-        {
-            var settingChanges = new List<string>();
-            if (isPositionTakingChanged)
-            {
-                settingChanges.Add(PositionTakingChanged.ToString());
-            }
-
-            if (isBettingLimitChanged)
-            {
-                settingChanges.Add(BettingLimitChanged.ToString());
-            }
-
-            return settingChanges;
         }
     }
 }
