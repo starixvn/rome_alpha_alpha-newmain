@@ -1,10 +1,13 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using Alpha.Main.Services.Impl;
-    using Announcement.GetHotAnnouncement;
+    using Announcement.GetHotAnnouncement.LocalFileCondition;
+    using Announcement.GetHotAnnouncement.LogInAndSettingChangedTest;
+    using Announcement.GetHotAnnouncement.SecurityCodeCondition;
     using Main.Constants;
     using NUnit.Framework;
-    using System.Collections.Generic;
+    using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
+    using NotAgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest;
 
     [TestFixture]
     public class AnnouncementServiceImplTests
@@ -17,6 +20,8 @@
 
         private const string ShowedAnnouncementId = "4523901";
         private const string StillWaitAnnouncementId = "4523909";
+
+        public const string ForceUseSecurityCode = "20140512";
 
         [Test]
         public void GetHotAnnouncement_NotPassSecurityCode_AnnouncementWithNullContent()
@@ -46,50 +51,22 @@
             bool isInsertPersonalMessage,
             string expectedAnnouncementPrefix)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var logInAndSettingChangedCondition = new AgentDirectLoginAndSettingChangedCondition(isPositionTakingChanged, isBettingLimitChanged, isInsertPersonalMessage);
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var announcementServiceImpl = new AnnouncementServiceImpl(logInAndSettingChangedCondition.DynamicRepository);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement);
-            Assert.AreEqual(true, actualHotAnnouncement.Content.StartsWith(expectedAnnouncementPrefix));
+            var test = new AgentDirectLoginTest.SettingChangedTest();
+            test.Run(
+                isPositionTakingChanged,
+                isBettingLimitChanged,
+                isInsertPersonalMessage,
+                expectedAnnouncementPrefix);
         }
 
         [TestCase(true, ExpectedAnnouncementContent)]
         [TestCase(false, null)]
-        public void GetHotAnnouncement_AgentDirectLoginAndSettingNotChange_AnnouncementFromFiles(
+        public void GetHotAnnouncement_AgentDirectLoginAndSettingNotChanged_AnnouncementFromFiles(
             bool hasAnnouncement,
             string expectedAnnouncementContent)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var logInAndSettingChangedCondition = new AgentDirectLoginAndSettingChangedCondition(false, false);
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-
-            var announcementServiceImpl = new AnnouncementServiceImpl(
-                logInAndSettingChangedCondition.DynamicRepository,
-                showedMessageCondition.SecurityCodeService);
-            var localFileAnnouncementCondition = LocalFileConditionFactory.Create(hasAnnouncement);
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+            var test = new AgentDirectLoginTest.SettingNotChangedTest();
+            test.Run(hasAnnouncement, expectedAnnouncementContent);
         }
 
         [TestCase(RoleId.Agent, true, true, ExpectedAnnouncementContent)]
@@ -102,62 +79,29 @@
         [TestCase(RoleId.Super, true, false, null)]
         [TestCase(RoleId.Master, false, false, null)]
         [TestCase(RoleId.Super, false, false, null)]
-        public void GetHotAnnouncement_NotAgentDirectLogin_AnnouncementFromFiles(
+        public void GetHotAnnouncement_NotAgentorAdminLogInTest_AnnouncementFromFiles(
             byte roleId,
             bool isAdminLogIn,
             bool hasAnnouncement,
             string expectedAnnouncement)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService);
-
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition(roleId, isAdminLogIn);
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var localFileAnnouncementCondition = LocalFileConditionFactory.Create(hasAnnouncement);
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreEqual(expectedAnnouncement, actualHotAnnouncement.Content);
+            var test = new NotAgentOrAdminLogInTest();
+            test.Run(
+                roleId,
+                isAdminLogIn,
+                hasAnnouncement,
+                expectedAnnouncement);
         }
 
-        [TestCase(LocalFileCondition.EmptyAnnouncementPath, LocalFileCondition.AvailableAnnoucementPath)]
-        [TestCase(LocalFileCondition.AvailableAnnoucementPath, LocalFileCondition.EmptyAnnouncementPath)]
-        [TestCase(LocalFileCondition.AvailableAnnoucementPath, LocalFileCondition.AvailableAnnoucementPath)]
+        [TestCase(LocalFileBaseCondition.EmptyAnnouncementPath, LocalFileBaseCondition.AvailableAnnoucementPath)]
+        [TestCase(LocalFileBaseCondition.AvailableAnnoucementPath, LocalFileBaseCondition.EmptyAnnouncementPath)]
+        [TestCase(LocalFileBaseCondition.AvailableAnnoucementPath, LocalFileBaseCondition.AvailableAnnoucementPath)]
         public void GetHotAnnouncement_NotAgentDirectLoginAndHasPrivateOrCommonAnnouncement_NotNullContent(
             string commonAnnouncementPath,
             string privateMessagePath)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-
-            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
-
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(commonAnnouncementPath, privateMessagePath);
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            var test = new NotAgentDirectLoginTest.HasPrivateOrCommonAnnouncementTest();
+            test.Run(commonAnnouncementPath, privateMessagePath);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Expired\Announcement_NotHasStartDate.xml")]
@@ -165,27 +109,8 @@
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Expired\Announcement_OverEndDate.xml")]
         public void GetHotAnnouncement_NotAgentDirectLoginAndExpiredAnnouncement_NullContent(string expiredAnnouncementPath)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-
-            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
-
-            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(null, expiredAnnouncementPath);
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            var test = new NotAgentDirectLoginTest.ExpiredAnnouncementTest();
+            test.Run(expiredAnnouncementPath);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreAllSystem.xml", PublicSystem)]
@@ -193,84 +118,23 @@
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml", ExludedSite)]
         public void GetHotAnnouncement_NotAgentDirectLoginAndExcludeHotMessage_NullContent(string availableAnnouncementPath, string site)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-
-            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
-
-            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(null, availableAnnouncementPath);
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            query.Site = site;
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            var test = new NotAgentDirectLoginTest.ExcludeHotMessageTest();
+            test.Run(availableAnnouncementPath, site);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml", IncludedSite)]
         public void GetHotAnnouncement_NotAgentDirectLoginAndIncludeHotMessage_NotNullContent(string availableAnnouncementPath, string site)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
-
-            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(availableAnnouncementPath);
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            query.Site = site;
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            var test = new NotAgentDirectLoginTest.IncludeHotMessageTest();
+            test.Run(availableAnnouncementPath, site);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml")]
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\Announcement_NotHasEndDate.xml")]
         public void GetHotAnnouncement_NotAgentDirectLoginAndAvailableAnnouncement_NotNullContent(string availableAnnouncementPath)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-
-            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
-
-            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(availableAnnouncementPath);
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            var test = new NotAgentDirectLoginTest.AvailableAnnouncementTest();
+            test.Run(availableAnnouncementPath);
         }
 
         [TestCase(Language.Thai, @"\TestData\Announcements\HotAnnouncement\Language\Announcement_NotMatchLanguage_NotHasDefault.xml", null)]
@@ -281,56 +145,15 @@
             string availableAnnoucementPath,
             string expectedAnnouncementContent)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-
-            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
-
-            var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(availableAnnoucementPath);
-            localFileAnnouncementCondition.SetUpCondition(query);
-            query.Language = language;
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+            var test = new NotAgentDirectLoginTest.AvailableAnnouncementTest();
+            test.Run(language, availableAnnoucementPath, expectedAnnouncementContent);
         }
 
         [Test]
         public void GetHotAnnouncement_NotAgentDirectLoginAndDisableProduct_NullContent()
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-            query.AnnouncementEnableStatus = new Dictionary<int, bool>();
-            query.AnnouncementEnableStatus.Add(4523901, false);
-
-            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
-
-            var localFileAnnouncementCondition = new HasAnnouncementCondition();
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            var test = new NotAgentDirectLoginTest.DisableProductTest();
+            test.Run();
         }
 
         [TestCase(ShowedAnnouncementId, null)]
@@ -340,54 +163,25 @@
             string showedAnnouncementId,
             string expectedAnnouncementContent)
         {
-            // Arrange
-            var securityCodeCondition = new NotRequireSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
-
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-            query.MessageIds = showedAnnouncementId.ToString();
-
-            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
-
-            var localFileAnnouncementCondition = new HasAnnouncementCondition();
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+            var test = new NotAgentDirectLoginTest.ShowedAnnouncementTest();
+            test.Run(showedAnnouncementId, expectedAnnouncementContent);
         }
 
         [Test]
         public void GetHotAnnouncement_DisableSecurityCodeAndValidAnnouncement_NotNullContent()
         {
-            // Arrange
-            var securityCodeCondition = new DisableSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
+            var test = new NotAgentDirectLoginTest.DisableSecurityCodeAndValidAnnouncementTest();
+            test.Run();
+        }
 
-            var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
-            logInAndSettingChangedCondition.SetUpCondition(query);
-
-            var showedMessageCondition = new ShowedMessageCondition(false);
-            showedMessageCondition.SetUpCondition(query);
-
-            var announcementTimeCondition = new ValidAnnouncementTimeCondition();
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, announcementTimeCondition.DateTimeWrapper);
-
-            var localFileAnnouncementCondition = new HasAnnouncementCondition();
-            localFileAnnouncementCondition.SetUpCondition(query);
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\HasAnnouncement.xml", ExpectedAnnouncementContent)]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\NotHasAnnouncement.xml", null)]
+        public void GetHotAnnouncement_NotAgentDirectLoginAndIsForceUseSecurityCodeSite_NotNullContent(
+            string announcementPath,
+            string expectedAnnouncementContent)
+        {
+            var test = new NotAgentDirectLoginTest.ForceUseSecurityCodeSiteTest();
+            test.Run(announcementPath, expectedAnnouncementContent);
         }
     }
 }

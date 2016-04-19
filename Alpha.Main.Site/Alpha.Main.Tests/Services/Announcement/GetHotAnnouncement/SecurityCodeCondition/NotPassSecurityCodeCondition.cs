@@ -1,9 +1,9 @@
-﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement
+﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.SecurityCodeCondition
 {
     using Fanex.Razorbill.Security.Sessions;
     using NSubstitute;
 
-    public class NotPassSecurityCodeCondition : SecurityCodeCondition
+    public class NotPassSecurityCodeCondition : SecurityCodeBaseCondition
     {
         public NotPassSecurityCodeCondition()
         {

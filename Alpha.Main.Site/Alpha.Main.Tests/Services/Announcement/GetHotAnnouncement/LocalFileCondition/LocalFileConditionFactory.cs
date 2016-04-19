@@ -1,8 +1,8 @@
-﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement
+﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LocalFileCondition
 {
     public class LocalFileConditionFactory
     {
-        public static LocalFileCondition Create(bool hasAnnouncement)
+        public static LocalFileBaseCondition Create(bool hasAnnouncement)
         {
             if (hasAnnouncement)
             {

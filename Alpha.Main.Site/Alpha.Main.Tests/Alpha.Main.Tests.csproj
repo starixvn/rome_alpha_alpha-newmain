@@ -117,19 +117,33 @@
     <Compile Include="Helps\FileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AnnouncementServiceImplTests.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\AgentDirectLoginAndSettingChangedCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\DisableSecurityCodeCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\EmptyAnnouncementCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\HasAnnouncementCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\HasPrivateOrCommonAnnouncementCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileConditionFactory.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\NotAgentDirectLoginCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\AgentDirectLoginAndSettingChangedCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\AgentDirectLoginTest\SettingNotChangedTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\AgentDirectLoginTest\SettingChangedTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\DisableSecurityCodeAndValidAnnouncementTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\LogInAndSettingChangedBaseTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\AvailableAnnouncementTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\DisableProductTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\ExcludeHotMessageTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\ExpiredAnnouncementTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\HasPrivateOrCommonAnnouncementTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\IncludeHotMessageTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\ForceUseSecurityCodeSiteTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\ShowedAnnouncementTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentOrAdminLogInTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\NotAgentDirectLoginBaseTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\DisableSecurityCodeCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\EmptyAnnouncementCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\HasAnnouncementCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\HasPrivateOrCommonAnnouncementCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\LocalFileBaseCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\LocalFileConditionFactory.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\NotAgentDirectLoginCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\ShowedMessageCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\NotPassSecurityCodeCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\NotRequireSecurityCodeCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\LogInAndSettingChangedCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\NotPassSecurityCodeCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\NotRequireSecurityCodeCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\SecurityCodeBaseCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\ValidAnnouncementTimeCondition.cs" />
     <Compile Include="Services\UserMessageServiceImplTests.cs" />
   </ItemGroup>
@@ -154,6 +168,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\NotHasAnnouncement.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\HasAnnouncement.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml">

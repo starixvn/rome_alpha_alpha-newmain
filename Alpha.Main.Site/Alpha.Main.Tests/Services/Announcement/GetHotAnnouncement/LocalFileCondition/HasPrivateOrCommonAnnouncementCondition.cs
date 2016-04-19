@@ -1,6 +1,6 @@
-﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement
+﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LocalFileCondition
 {
-    public class HasPrivateOrCommonAnnouncementCondition : LocalFileCondition
+    public class HasPrivateOrCommonAnnouncementCondition : LocalFileBaseCondition
     {
         public HasPrivateOrCommonAnnouncementCondition(
             string commonAnnouncementPath = EmptyAnnouncementPath,

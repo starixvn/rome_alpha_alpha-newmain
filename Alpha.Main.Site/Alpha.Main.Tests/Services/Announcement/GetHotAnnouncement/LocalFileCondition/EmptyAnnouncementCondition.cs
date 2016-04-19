@@ -1,6 +1,6 @@
-﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement
+﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LocalFileCondition
 {
-    public class EmptyAnnouncementCondition : LocalFileCondition
+    public class EmptyAnnouncementCondition : LocalFileBaseCondition
     {
         public EmptyAnnouncementCondition()
         {

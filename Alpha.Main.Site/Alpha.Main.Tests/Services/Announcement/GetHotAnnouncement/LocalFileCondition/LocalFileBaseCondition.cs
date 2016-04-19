@@ -1,10 +1,10 @@
-﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement
+﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LocalFileCondition
 {
     using Alpha.Main.Params.Announcements;
     using Constants;
     using Helps;
 
-    public class LocalFileCondition
+    public class LocalFileBaseCondition
     {
         public const string EmptyAnnouncementPath = @"\TestData\Announcements\HotAnnouncement\EmptyAnnouncement.xml";
 
