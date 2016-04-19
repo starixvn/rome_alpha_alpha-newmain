@@ -69,8 +69,10 @@
   height: 88px; }
   .customer-profile .profile-avatar {
     display: inline-block;
-    height: 48px;
-    width: 48px;
+    height: 50px;
+    width: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
     float: left;
     margin: 18px;
     cursor: pointer; }
@@ -178,7 +180,7 @@
     left: 0; }
   .accountinfo-container #accountinfo-content {
     width: 100%;
-    min-height: 340px; }
+    min-height: 400px; }
 
 /********************************** Content-wrapper ******************************************/
 .content-wrapper {
@@ -188,49 +190,18 @@
   top: 0;
   bottom: 0; }
   .content-wrapper.expanded {
-    left: 46px; }
+    left: 48px; }
 
 /********************************** Content ******************************************/
 .content {
   background: #f4f4f4;
-  height: calc(100% - 88px);
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 88px;
   z-index: 80; }
   .content .iframe-content {
     width: 100%;
     height: 100%; }
-
-/********************************** ie8 ******************************************/
-.ie8 .navigation {
-  position: absolute;
-  top: 88px;
-  bottom: 0;
-  left: 0;
-  width: 256px;
-  z-index: 999; }
-
-.ie8 .header {
-  position: absolute;
-  z-index: 90;
-  top: 0;
-  left: 0;
-  right: 0; }
-
-.ie8 .content {
-  background: #f4f4f4;
-  top: 88px;
-  bottom: 0;
-  position: absolute;
-  z-index: 80;
-  left: 0;
-  right: 0; }
-
-.ie8 .content-wrapper {
-  position: absolute;
-  left: 256px;
-  right: 0;
-  top: 0;
-  bottom: 0; }
-  .ie8 .content-wrapper.expanded {
-    left: 46px; }
 
