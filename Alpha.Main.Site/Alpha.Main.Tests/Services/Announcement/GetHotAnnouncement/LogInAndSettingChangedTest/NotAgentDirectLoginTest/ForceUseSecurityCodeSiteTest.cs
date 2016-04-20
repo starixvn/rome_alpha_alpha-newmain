@@ -2,11 +2,11 @@
 {
     using Alpha.Main.Services.Impl;
     using Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LocalFileCondition;
-    using NUnit.Framework;
+    using Models.Announcements;
 
     public class ForceUseSecurityCodeSiteTest : NotAgentDirectLoginBaseTest
     {
-        public void Run(string announcementPath, string expectedAnnouncementContent)
+        public HotAnnouncement Run(string announcementPath, string expectedAnnouncementContent)
         {
             // Arrange
             var query = HotAnnouncementsParams;
@@ -22,8 +22,7 @@
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
-            // Assert
-            Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+            return actualHotAnnouncement;
         }
     }
 }

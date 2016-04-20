@@ -2,11 +2,11 @@
 {
     using Alpha.Main.Services.Impl;
     using LocalFileCondition;
-    using NUnit.Framework;
+    using Models.Announcements;
 
     public class NotAgentOrAdminLogInTest : LogInAndSettingChangedBaseTest
     {
-        public void Run(
+        public HotAnnouncement Run(
             byte roleId,
             bool isAdminLogIn,
             bool hasAnnouncement,
@@ -29,8 +29,7 @@
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
-            // Assert
-            Assert.AreEqual(expectedAnnouncement, actualHotAnnouncement.Content);
+            return actualHotAnnouncement;
         }
     }
 }

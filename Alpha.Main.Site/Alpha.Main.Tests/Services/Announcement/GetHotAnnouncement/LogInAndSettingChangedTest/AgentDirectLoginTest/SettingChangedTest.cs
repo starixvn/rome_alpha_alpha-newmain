@@ -1,11 +1,11 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest
 {
     using Alpha.Main.Services.Impl;
-    using NUnit.Framework;
+    using Models.Announcements;
 
     public class SettingChangedTest : LogInAndSettingChangedBaseTest
     {
-        public void Run(
+        public HotAnnouncement Run(
             bool isPositionTakingChanged,
             bool isBettingLimitChanged,
             bool isInsertPersonalMessage,
@@ -22,9 +22,7 @@
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
-            // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement);
-            Assert.AreEqual(true, actualHotAnnouncement.Content.StartsWith(expectedAnnouncementPrefix));
+            return actualHotAnnouncement;
         }
     }
 }

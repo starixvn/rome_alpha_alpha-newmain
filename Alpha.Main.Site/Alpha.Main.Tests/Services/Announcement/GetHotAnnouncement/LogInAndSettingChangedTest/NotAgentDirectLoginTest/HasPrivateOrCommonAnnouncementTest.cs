@@ -2,11 +2,11 @@
 {
     using Alpha.Main.Services.Impl;
     using LocalFileCondition;
-    using NUnit.Framework;
+    using Models.Announcements;
 
     public class HasPrivateOrCommonAnnouncementTest : NotAgentDirectLoginBaseTest
     {
-        public void Run(string commonAnnouncementPath, string privateMessagePath)
+        public HotAnnouncement Run(string commonAnnouncementPath, string privateMessagePath)
         {
             // Arrange
             var query = HotAnnouncementsParams;
@@ -22,8 +22,7 @@
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
-            // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            return actualHotAnnouncement;
         }
     }
 }

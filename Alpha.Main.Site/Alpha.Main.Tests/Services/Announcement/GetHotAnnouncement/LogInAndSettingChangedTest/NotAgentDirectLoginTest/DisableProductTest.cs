@@ -2,12 +2,12 @@
 {
     using LocalFileCondition;
     using Main.Services.Impl;
-    using NUnit.Framework;
+    using Models.Announcements;
     using System.Collections.Generic;
 
     public class DisableProductTest : NotAgentDirectLoginBaseTest
     {
-        public void Run()
+        public HotAnnouncement Run()
         {
             // Arrange
             var query = HotAnnouncementsParams;
@@ -25,8 +25,7 @@
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
-            // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            return actualHotAnnouncement;
         }
     }
 }

@@ -2,11 +2,12 @@
 {
     using Alpha.Main.Services.Impl;
     using LocalFileCondition;
+    using Models.Announcements;
     using NUnit.Framework;
 
     public class AvailableAnnouncementTest : NotAgentDirectLoginBaseTest
     {
-        public void Run(string availableAnnouncementPath)
+        public HotAnnouncement Run(string availableAnnouncementPath)
         {
             // Arrange
             var query = HotAnnouncementsParams;
@@ -22,11 +23,10 @@
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
-            // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            return actualHotAnnouncement;
         }
 
-        public void Run(
+        public HotAnnouncement Run(
             string language,
             string availableAnnoucementPath,
             string expectedAnnouncementContent)
@@ -46,8 +46,7 @@
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
-            // Assert
-            Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+            return actualHotAnnouncement;
         }
     }
 }

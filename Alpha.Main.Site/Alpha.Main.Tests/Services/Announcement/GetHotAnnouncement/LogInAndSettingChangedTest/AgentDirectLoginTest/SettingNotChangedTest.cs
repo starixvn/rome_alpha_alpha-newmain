@@ -2,11 +2,11 @@
 {
     using Alpha.Main.Services.Impl;
     using LocalFileCondition;
-    using NUnit.Framework;
+    using Models.Announcements;
 
     public class SettingNotChangedTest : LogInAndSettingChangedBaseTest
     {
-        public void Run(bool hasAnnouncement, string expectedAnnouncementContent)
+        public HotAnnouncement Run(bool hasAnnouncement, string expectedAnnouncementContent)
         {
             // Arrange
             var query = HotAnnouncementsParams;
@@ -26,8 +26,7 @@
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
-            // Assert
-            Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+            return actualHotAnnouncement;
         }
     }
 }

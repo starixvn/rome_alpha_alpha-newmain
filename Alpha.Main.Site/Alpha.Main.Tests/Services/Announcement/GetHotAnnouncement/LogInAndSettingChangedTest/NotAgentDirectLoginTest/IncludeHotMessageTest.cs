@@ -2,11 +2,11 @@
 {
     using Alpha.Main.Services.Impl;
     using LocalFileCondition;
-    using NUnit.Framework;
+    using Models.Announcements;
 
     public class IncludeHotMessageTest : NotAgentDirectLoginBaseTest
     {
-        public void Run(string availableAnnouncementPath, string site)
+        public HotAnnouncement Run(string availableAnnouncementPath, string site)
         {
             // Arrange
             var query = HotAnnouncementsParams;
@@ -24,8 +24,7 @@
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
-            // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            return actualHotAnnouncement;
         }
     }
 }

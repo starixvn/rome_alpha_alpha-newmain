@@ -120,7 +120,7 @@
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\AgentDirectLoginAndSettingChangedCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\AgentDirectLoginTest\SettingNotChangedTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\AgentDirectLoginTest\SettingChangedTest.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\DisableSecurityCodeAndValidAnnouncementTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\DisableSecurityCodeAndValidAnnouncementTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\LogInAndSettingChangedBaseTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\AvailableAnnouncementTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\DisableProductTest.cs" />
