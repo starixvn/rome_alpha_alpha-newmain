@@ -251,6 +251,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login Option.
+        /// </summary>
+        public static string LoginOption {
+            get {
+                return ResourceManager.GetString("LoginOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Main menu.
         /// </summary>
         public static string mainMenu {

@@ -205,6 +205,9 @@
   <data name="EditProfilePicture" xml:space="preserve">
     <value>Profile picture</value>
   </data>
+  <data name="LoginOption" xml:space="preserve">
+    <value>Login Option</value>
+  </data>
   <data name="password" xml:space="preserve">
     <value>Password</value>
   </data>

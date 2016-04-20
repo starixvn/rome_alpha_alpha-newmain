@@ -205,6 +205,9 @@
   <data name="EditProfilePicture" xml:space="preserve">
     <value>个人头像</value>
   </data>
+  <data name="LoginOption" xml:space="preserve">
+    <value>Login Option</value>
+  </data>
   <data name="password" xml:space="preserve">
     <value>密码</value>
   </data>
