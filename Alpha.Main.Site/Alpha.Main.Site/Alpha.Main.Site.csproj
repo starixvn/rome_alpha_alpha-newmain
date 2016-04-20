@@ -449,6 +449,7 @@
     <Content Include="Assets\Styles\home\popup-message.min.css">
       <DependentUpon>popup-message.css</DependentUpon>
     </Content>
+    <Content Include="favico.ico" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
     <Content Include="App_Data\Announcements\PopupAdCommon.xml" />
