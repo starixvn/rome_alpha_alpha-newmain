@@ -9,7 +9,6 @@
     {
         public HotAnnouncement Run(string availableAnnouncementPath)
         {
-            // Arrange
             var query = HotAnnouncementsParams;
 
             var showedMessageCondition = new ShowedMessageCondition(false);
@@ -20,7 +19,6 @@
             var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(availableAnnouncementPath);
             localFileAnnouncementCondition.SetUpCondition(query);
 
-            // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
             return actualHotAnnouncement;
@@ -31,7 +29,6 @@
             string availableAnnoucementPath,
             string expectedAnnouncementContent)
         {
-            // Arrange
             var query = HotAnnouncementsParams;
 
             var showedMessageCondition = new ShowedMessageCondition(false);
@@ -43,7 +40,6 @@
             localFileAnnouncementCondition.SetUpCondition(query);
             query.Language = language;
 
-            // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
             return actualHotAnnouncement;

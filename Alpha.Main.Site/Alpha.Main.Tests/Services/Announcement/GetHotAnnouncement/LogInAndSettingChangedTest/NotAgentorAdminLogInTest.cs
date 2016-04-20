@@ -12,7 +12,6 @@
             bool hasAnnouncement,
             string expectedAnnouncement)
         {
-            // Arrange
             var query = HotAnnouncementsParams;
 
             var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition(roleId, isAdminLogIn);
@@ -26,7 +25,6 @@
             var localFileAnnouncementCondition = LocalFileConditionFactory.Create(hasAnnouncement);
             localFileAnnouncementCondition.SetUpCondition(query);
 
-            // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
             return actualHotAnnouncement;

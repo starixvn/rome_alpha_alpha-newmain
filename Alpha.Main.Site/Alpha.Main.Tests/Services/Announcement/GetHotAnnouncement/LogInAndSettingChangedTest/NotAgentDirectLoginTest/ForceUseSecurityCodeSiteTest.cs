@@ -8,7 +8,6 @@
     {
         public HotAnnouncement Run(string announcementPath, string expectedAnnouncementContent)
         {
-            // Arrange
             var query = HotAnnouncementsParams;
 
             var showedMessageCondition = new ShowedMessageCondition(false);
@@ -19,7 +18,6 @@
             var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(announcementPath);
             localFileAnnouncementCondition.SetUpCondition(query);
 
-            // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
             return actualHotAnnouncement;

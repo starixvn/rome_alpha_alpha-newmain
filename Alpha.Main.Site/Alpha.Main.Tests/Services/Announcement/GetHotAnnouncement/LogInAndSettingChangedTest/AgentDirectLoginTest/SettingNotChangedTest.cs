@@ -8,7 +8,6 @@
     {
         public HotAnnouncement Run(bool hasAnnouncement, string expectedAnnouncementContent)
         {
-            // Arrange
             var query = HotAnnouncementsParams;
 
             var logInAndSettingChangedCondition = new AgentDirectLoginAndSettingChangedCondition(false, false);
@@ -23,7 +22,6 @@
             var localFileAnnouncementCondition = LocalFileConditionFactory.Create(hasAnnouncement);
             localFileAnnouncementCondition.SetUpCondition(query);
 
-            // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
             return actualHotAnnouncement;

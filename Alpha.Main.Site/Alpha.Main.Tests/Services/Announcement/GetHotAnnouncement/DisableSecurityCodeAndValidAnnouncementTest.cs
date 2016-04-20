@@ -9,7 +9,6 @@
     {
         public HotAnnouncement Run()
         {
-            // Arrange
             var securityCodeCondition = new DisableSecurityCodeCondition();
             var hotAnnouncementsParams = securityCodeCondition.HotAnnouncementsParams();
 
@@ -27,7 +26,6 @@
             var localFileAnnouncementCondition = new HasAnnouncementCondition();
             localFileAnnouncementCondition.SetUpCondition(query);
 
-            // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
             return actualHotAnnouncement;

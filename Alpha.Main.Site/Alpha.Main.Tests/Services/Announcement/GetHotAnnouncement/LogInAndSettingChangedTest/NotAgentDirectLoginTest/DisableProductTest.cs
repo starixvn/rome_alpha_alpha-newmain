@@ -9,7 +9,6 @@
     {
         public HotAnnouncement Run()
         {
-            // Arrange
             var query = HotAnnouncementsParams;
 
             var showedMessageCondition = new ShowedMessageCondition(false);
@@ -22,7 +21,6 @@
             var localFileAnnouncementCondition = new HasAnnouncementCondition();
             localFileAnnouncementCondition.SetUpCondition(query);
 
-            // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
             return actualHotAnnouncement;

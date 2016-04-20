@@ -8,7 +8,6 @@
     {
         public HotAnnouncement Run(string availableAnnouncementPath, string site)
         {
-            // Arrange
             var query = HotAnnouncementsParams;
 
             var showedMessageCondition = new ShowedMessageCondition(false);
@@ -21,7 +20,6 @@
 
             query.Site = site;
 
-            // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
 
             return actualHotAnnouncement;
