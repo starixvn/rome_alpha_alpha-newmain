@@ -108,6 +108,8 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
     popUp.find(".icon-close").unbind("click").click(function () {
         popUp.addClass("hidden");
     });
+
+    popUp.tinyDraggable();
 }
 
 window.age.ClosePopUp = function () {
@@ -151,4 +153,5 @@ window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, widt
     popUp.find(".icon-close").unbind("click").click(function () {
         popUp.remove();
     });
+    popUp.tinyDraggable();
 };

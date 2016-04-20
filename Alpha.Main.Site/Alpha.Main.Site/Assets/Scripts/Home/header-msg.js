@@ -73,7 +73,7 @@ var headerMessage = {
     },
 
     viewPrivateMessage: function () {
-        
+
         index.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
 
         var countPrivateMsg = headerMessage.domElements.privateMessageCounter.html().replace("+", "");
@@ -111,6 +111,7 @@ var headerMessage = {
     showHotMessages: function () {
         if (headerMessage.domElements.currentHotMessage.length > 0) {
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
+            headerMessage.domElements.userMessageModal.tinyDraggable();
         }
 
         setInterval(headerMessage.swapMessage, 18 * 1000);
@@ -224,6 +225,7 @@ var headerMessage = {
             }
 
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
+            headerMessage.domElements.userMessageModal.tinyDraggable();
         }
     },
 
@@ -267,7 +269,7 @@ var headerMessage = {
 
         headerMessage.scrollMessage();
     },
-    
+
     scrollMessage: function () {
         if (headerMessage.scrollerPaused) {
             return;

@@ -108,6 +108,8 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
     popUp.find(".icon-close").unbind("click").click(function () {
         popUp.addClass("hidden");
     });
+
+    popUp.tinyDraggable();
 }
 
 window.age.ClosePopUp = function () {
@@ -151,6 +153,7 @@ window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, widt
     popUp.find(".icon-close").unbind("click").click(function () {
         popUp.remove();
     });
+    popUp.tinyDraggable();
 };
 
 /// <reference path="../core.js" />
@@ -417,7 +420,7 @@ var headerMessage = {
     },
 
     viewPrivateMessage: function () {
-        
+
         index.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
 
         var countPrivateMsg = headerMessage.domElements.privateMessageCounter.html().replace("+", "");
@@ -455,6 +458,7 @@ var headerMessage = {
     showHotMessages: function () {
         if (headerMessage.domElements.currentHotMessage.length > 0) {
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
+            headerMessage.domElements.userMessageModal.tinyDraggable();
         }
 
         setInterval(headerMessage.swapMessage, 18 * 1000);
@@ -568,6 +572,7 @@ var headerMessage = {
             }
 
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
+            headerMessage.domElements.userMessageModal.tinyDraggable();
         }
     },
 
@@ -611,7 +616,7 @@ var headerMessage = {
 
         headerMessage.scrollMessage();
     },
-    
+
     scrollMessage: function () {
         if (headerMessage.scrollerPaused) {
             return;
@@ -1060,6 +1065,7 @@ var announcement = {
                 announcement.domElements.popUpContainerText :
                 announcement.domElements.popUpContainer;
             popUpContainer.modal({ show: true, backdrop: false });
+            popUpContainer.tinyDraggable();
         }, 2000);
     },
     checkShowedMessage: function (id) {
