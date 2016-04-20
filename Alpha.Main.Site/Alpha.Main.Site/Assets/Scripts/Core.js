@@ -110,8 +110,45 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
     });
 }
 
-
 window.age.ClosePopUp = function () {
     var popUp = $("#page-popup");
     popUp.addClass("hidden");
+};
+
+window.AGEWnd = window.AGEWnd || {};
+window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, width, height) {
+    title = title || '';
+    var popH = height || 360;
+    var popW = width || 480;
+    var left = left || 200;
+    var top = top || 200;
+
+    var popUp = $("#page-popup").clone();
+    popUp.css({
+        width: popW,
+        height: popH,
+        left: left,
+        top: top
+    });
+
+    popUp.appendTo("body");
+    popUp.removeClass("hidden");
+    popUp.find(".popup-title").html(title);
+    popUp.find(".ex-modal").css("height", (popH - 16) + "px");
+
+    var iframe = popUp.find("#popup-iframe");
+
+    var padding = 15 * 2;
+    iframe.css({
+        width: popW - padding,
+        height: popH - 100,
+        left: left,
+        top: top
+    });
+
+    iframe.attr("src", url);
+    popUp.modal({ show: true, backdrop: false });
+    popUp.find(".icon-close").unbind("click").click(function () {
+        popUp.remove();
+    });
 };
