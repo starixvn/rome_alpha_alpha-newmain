@@ -358,4 +358,7 @@
   <data name="doNotShowAgain" xml:space="preserve">
     <value>이 페이지를 다시 표시하지않습니다.</value>
   </data>
+  <data name="PrivateMessage" xml:space="preserve">
+    <value>Private Message</value>
+  </data>
 </root>

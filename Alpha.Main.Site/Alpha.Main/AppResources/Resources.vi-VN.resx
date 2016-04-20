@@ -351,4 +351,13 @@
   <data name="doNotShowAgain" xml:space="preserve">
     <value>Không hiển thị lại</value>
   </data>
+  <data name="AM" xml:space="preserve">
+    <value>AM</value>
+  </data>
+  <data name="PM" xml:space="preserve">
+    <value>PM</value>
+  </data>
+  <data name="PrivateMessage" xml:space="preserve">
+    <value>Private Message</value>
+  </data>
 </root>

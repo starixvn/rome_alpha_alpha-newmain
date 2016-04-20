@@ -358,4 +358,7 @@
   <data name="doNotShowAgain" xml:space="preserve">
     <value>ไม่ต้องแสดงอีกครั้ง</value>
   </data>
+  <data name="PrivateMessage" xml:space="preserve">
+    <value>Private Message</value>
+  </data>
 </root>
