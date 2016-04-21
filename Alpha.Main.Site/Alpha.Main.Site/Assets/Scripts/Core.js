@@ -175,3 +175,21 @@ window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, widt
 
     popUp.tinyDraggable();
 };
+
+window.bootboxConfirm = function (message, acceptCallback, cancelCallback) {
+    bootbox.confirm(message, function (result) {
+        if (result && acceptCallback && typeof (acceptCallback) == "function") {
+            acceptCallback();
+        } else if (cancelCallback && typeof (cancelCallback) == "function") {
+            cancelCallback();
+        }
+    });
+};
+
+window.bootboxAlert = function (message, callbackFunction) {
+    bootbox.alert(message, function () {
+        if (callbackFunction && typeof (callbackFunction) == "function") {
+            callbackFunction();
+        }
+    });
+};
