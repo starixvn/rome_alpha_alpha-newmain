@@ -21,7 +21,6 @@ var index = {
     init: function () {
         window.document.title = alpha.urls.mainRootPath.substr(1, alpha.urls.mainRootPath.length - 2);
         $.material.init();
-
         index.cachedDomElements();
         index.setCurrentUrl();
         index.loadPartialViews();

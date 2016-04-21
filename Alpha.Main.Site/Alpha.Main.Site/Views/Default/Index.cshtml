@@ -16,7 +16,7 @@
                     <h4 class="modal-title" id="result-detail-title"><span class="popup-title"></span></h4>
                 </div>
                 <div class="modal-body">
-                    <iframe frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="no"
+                    <iframe frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto"
                             id="popup-iframe"></iframe>
                 </div>
             </div>
@@ -51,6 +51,6 @@
     @Html.Hidden("howToUseRootPath", Model.HowToUseRootPath)
     @Html.Hidden("subPageAccess", Model.SubPageAccess)
     @ContentSite.Scripts.Render("/bundles/site-main/default.min.js")
-    <script src="@(Url.Content($"~/Assets/bundles/default-index.min.js?v={AppSettings.StaticResourcesVersion}"))" type="text/javascript"></script>
+    <script src="@(Url.Content($"~/Assets/bundles/default-index.js?v={AppSettings.StaticResourcesVersion}"))" type="text/javascript"></script>
 </body>
 </html>

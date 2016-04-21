@@ -43,6 +43,8 @@ var headerNav = {
         headerNav.cachedDomElements();
         headerNav.initLanguage();
         headerNav.registerEvents();
+
+        $('[data-toggle="tooltip"]').tooltip();
     },
 
     initClock: function () {

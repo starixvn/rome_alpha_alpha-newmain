@@ -92,14 +92,15 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
 
     popUp.removeClass("hidden");
     popUp.find(".popup-title").html(title);
-    popUp.find(".ex-modal").css("height", (popH - 16) + "px");
+    popUp.find(".ex-modal").css("height", popH + "px");
+    popUp.find(".modal-content .modal-body").css("height", (popH - 40) + "px");
 
     var iframe = popUp.find("#popup-iframe");
 
     var padding = 15 * 2;
     iframe.css({
         width: popW - padding,
-        height: popH - 100,
+        height: popH - 82,
         left: left,
         top: top
     });
@@ -107,6 +108,14 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
     popUp.modal({ show: true, backdrop: false });
     popUp.find(".icon-close").unbind("click").click(function () {
         popUp.addClass("hidden");
+    });
+
+    iframe.load(function () {
+        var iframe_doc = iframe.contents();
+
+        if (title == '' && iframe_doc.title != 'Home') {
+            popUp.find(".popup-title").html(title);
+        }
     });
 
     popUp.tinyDraggable();
@@ -136,14 +145,15 @@ window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, widt
     popUp.appendTo("body");
     popUp.removeClass("hidden");
     popUp.find(".popup-title").html(title);
-    popUp.find(".ex-modal").css("height", (popH - 16) + "px");
+    popUp.find(".ex-modal").css("height", popH + "px");
+    popUp.find(".modal-content .modal-body").css("height", (popH - 40) + "px");
 
     var iframe = popUp.find("#popup-iframe");
 
     var padding = 15 * 2;
     iframe.css({
         width: popW - padding,
-        height: popH - 100,
+        height: popH - 82,
         left: left,
         top: top
     });
@@ -153,7 +163,16 @@ window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, widt
     popUp.find(".icon-close").unbind("click").click(function () {
         popUp.remove();
     });
-    popUp.tinyDraggable();
+
+    iframe.load(function () {
+        var iframe_doc = iframe.contents();
+
+        if (title == '' && iframe_doc.title != 'Home') {
+            popUp.find(".popup-title").html(title);
+        }
+    });
+
+    //popUp.tinyDraggable();
 };
 
 /// <reference path="../core.js" />
@@ -201,6 +220,8 @@ var headerNav = {
         headerNav.cachedDomElements();
         headerNav.initLanguage();
         headerNav.registerEvents();
+
+        $('[data-toggle="tooltip"]').tooltip();
     },
 
     initClock: function () {
@@ -659,7 +680,6 @@ var index = {
     init: function () {
         window.document.title = alpha.urls.mainRootPath.substr(1, alpha.urls.mainRootPath.length - 2);
         $.material.init();
-
         index.cachedDomElements();
         index.setCurrentUrl();
         index.loadPartialViews();
