@@ -1,27 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true" >
   <siteMapNode title="Alpha Site">
-    <!--MemberInfo-->
-    <siteMapNode resourceKey="memberInfo" menuItemType="MemberInfoMenuItem" functionType="[H]">
-      <siteMapNode resourceKey="newMember" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
-      <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx"></siteMapNode>
-
-      <siteMapNode resourceKey="customerlist" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Super/MasterList.aspx" roles="Super"></siteMapNode>
-
-      <siteMapNode resourceKey="creditbalance" appPath="OldMainAppPath" url="_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
-      <siteMapNode resourceKey="positionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
-      <!--Casino-PositionTaking-->
-      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="casinoPositionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
-      <!--/Casino-PositionTaking-->
-      <!--Bingo-PositionTaking-->
-      <siteMapNode resourceKey="bingoPositionTaking" menuItemType="BingoPositionTakingMenuItem" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
-      <!--/Bingo-PositionTaking-->
-      <siteMapNode resourceKey="memberCommission" appPath="OldMainAppPath" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
-      <siteMapNode resourceKey="MemberWinLimit" appPath="OldMainAppPath" url="MemberInformation/WinLimit/Index"></siteMapNode>
-    </siteMapNode>
-    <!--/MemberInfo-->
     <!--Report-->
     <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]" >
       <siteMapNode resourceKey="memberWinLoss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
@@ -80,6 +59,27 @@
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="OldMainAppPath" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
+    <!--MemberInfo-->
+    <siteMapNode resourceKey="memberInfo" menuItemType="MemberInfoMenuItem" functionType="[H]">
+      <siteMapNode resourceKey="newMember" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx"></siteMapNode>
+      <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx"></siteMapNode>
+
+      <siteMapNode resourceKey="customerlist" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="agentList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="masterList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Super/MasterList.aspx" roles="Super"></siteMapNode>
+
+      <siteMapNode resourceKey="creditbalance" appPath="OldMainAppPath" url="_MemberInfo/CreditBalance/CreditBalanceList.aspx"></siteMapNode>
+      <siteMapNode resourceKey="positionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
+      <!--Casino-PositionTaking-->
+      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="casinoPositionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
+      <!--/Casino-PositionTaking-->
+      <!--Bingo-PositionTaking-->
+      <siteMapNode resourceKey="bingoPositionTaking" menuItemType="BingoPositionTakingMenuItem" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
+      <!--/Bingo-PositionTaking-->
+      <siteMapNode resourceKey="memberCommission" appPath="OldMainAppPath" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
+      <siteMapNode resourceKey="MemberWinLimit" appPath="OldMainAppPath" url="MemberInformation/WinLimit/Index"></siteMapNode>
+    </siteMapNode>
+    <!--/MemberInfo-->
     <!--New Totalbets Forecast-->
     <siteMapNode resourceKey="BetsAndForecast" menuItemType="TotalBetsForecast">
       <siteMapNode resourceKey="soccer" appPath="TotalBetsForecastAppPath" url="~/Forecast"></siteMapNode>
