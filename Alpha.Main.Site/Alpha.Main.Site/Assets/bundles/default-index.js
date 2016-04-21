@@ -93,7 +93,7 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
     popUp.removeClass("hidden");
     popUp.find(".popup-title").html(title);
     popUp.find(".ex-modal").css("height", popH + "px");
-    popUp.find(".modal-content .modal-body").css('padding-top', '8px');
+    popUp.find(".modal-content .modal-body").css('padding', '8px 14px');
     popUp.find(".modal-content .modal-body").css("height", (popH - 40) + "px");
 
     var iframe = popUp.find("#popup-iframe");
@@ -131,7 +131,7 @@ window.AGEWnd = window.AGEWnd || {};
 window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, width, height) {
     title = title || '';
     var popH = height || 360;
-    var popW = (width + 100) || 480;
+    var popW = (width + 104) || 480;
     var left = left || 200;
     var top = top || 200;
 
@@ -153,7 +153,7 @@ window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, widt
 
     var padding = 15 * 2;
     iframe.css({
-        width: popW - padding,
+        width: popW - padding - 4,
         height: popH - 40 - 20,
         left: left,
         top: top
