@@ -1,27 +1,34 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Web.Mvc;
-    using System.Web.SessionState;
+    using Fanex.Razorbill.Security.Sessions;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Model.Entities.Permission;
+    using System.Web.Mvc;
+    using System.Web.SessionState;
 
     [SessionState(SessionStateBehavior.Default)]
     public class DefaultController : BaseController
     {
         private readonly IUserSession userSession;
+        private readonly ISecurityCodeSession securityCodeSession;
         private readonly IMediator mediator;
 
-        public DefaultController(IUserSession userSession, IMediator mediator)
+        public DefaultController(
+            IUserSession userSession,
+            ISecurityCodeSession securityCodeSession,
+            IMediator mediator)
         {
             this.userSession = userSession;
+            this.securityCodeSession = securityCodeSession;
             this.mediator = mediator;
         }
 
         public ActionResult Index()
         {
-            var viewModel = mediator.Send(new IndexQuery(userSession));
+            var viewModel = mediator.Send(new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify));
 
             return View(viewModel);
         }

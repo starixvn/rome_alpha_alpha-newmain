@@ -1,10 +1,11 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
-    using System;
-    using System.Web;
     using Main.Helpers;
     using Main.Models.Enumerations;
+    using Models.Requests;
     using Sunplus.Agent.Utilities;
+    using System;
+    using System.Web;
 
     public class IndexViewModel
     {
@@ -16,24 +17,27 @@
         private readonly Func<string> getDefaultUrl;
         private readonly string passwordHash;
         private readonly string subPageAccess;
+        private readonly bool enableSecurityCode;
 
-        public IndexViewModel(
-            int custId,
-            int onlineUserId,
-            byte roleId,
-            string language,
-            string languageKey,
-            Func<string> getDefaultUrl,
-            string subPageAccess)
+        public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl)
         {
-            this.custId = custId;
-            this.roleId = roleId;
-            this.language = language;
-            this.languageKey = languageKey;
-            this.onlineUserId = onlineUserId;
+            this.custId = message.UserId;
+            this.roleId = message.RoleId;
+            this.language = message.Language;
+            this.languageKey = message.LanguageKey;
+            this.onlineUserId = message.OnUserId;
             this.getDefaultUrl = getDefaultUrl;
             this.passwordHash = Encryption.RandomString(new Random().Next(4, 8));
-            this.subPageAccess = subPageAccess;
+            this.subPageAccess = message.SubPageAccess;
+            this.enableSecurityCode = message.EnableSecurityCode;
+        }
+
+        public bool EnableSecurityCode
+        {
+            get
+            {
+                return this.enableSecurityCode;
+            }
         }
 
         public int CustId

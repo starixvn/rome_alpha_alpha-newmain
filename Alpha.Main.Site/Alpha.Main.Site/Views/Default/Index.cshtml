@@ -30,7 +30,14 @@
     </aside>
     <div class="content-wrapper">
         <header class="header">
-            @Html.Partial("HeaderNav", new HeaderNavViewModel { CustId = Model.CustId })
+            @Html.Partial(
+           "HeaderNav",
+           new HeaderNavViewModel
+           {
+               CustId = Model.CustId,
+               EnableSecurityCode = Model.EnableSecurityCode
+           })
+
             @Html.Action("HeaderMsg")
         </header>
 

@@ -6,6 +6,8 @@
     {
         public int CustId { get; set; }
 
+        public bool EnableSecurityCode { get; set; }
+
         public string OldMainRootPath
         {
             get

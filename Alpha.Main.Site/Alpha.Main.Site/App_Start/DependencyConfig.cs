@@ -3,6 +3,7 @@
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
+    using Fanex.Razorbill.Security.Sessions;
     using Handlers;
     using Main.Helpers;
     using Main.Models.Menus;
@@ -84,6 +85,20 @@
                     }
 
                     return new UserSessionBase(string.Empty);
+                },
+                Lifestyle.Transient);
+
+            container.Register(
+                () =>
+                {
+                    if (HttpContext.Current != null
+                       && (HttpContext.Current.Handler is IRequiresSessionState
+                       || HttpContext.Current.Handler is IReadOnlySessionState))
+                    {
+                        return CookieLessSessionFactory.SecurityCodeSession;
+                    }
+
+                    return new SecurityCodeSession(string.Empty);
                 },
                 Lifestyle.Transient);
 
