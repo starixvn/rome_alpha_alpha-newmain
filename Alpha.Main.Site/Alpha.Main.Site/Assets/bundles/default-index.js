@@ -112,10 +112,12 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
     });
 
     iframe.load(function () {
+        var title = popUp.find(".popup-title").html() || '';
         var iframe_doc = iframe.contents();
 
-        if (title == '' && iframe_doc.title != 'Home') {
-            popUp.find(".popup-title").html(title);
+        var iframeTitle = iframe_doc.find("title").text();
+        if (title == '' && iframeTitle != 'Home') {
+            popUp.find(".popup-title").html(iframeTitle);
         }
     });
 
@@ -166,10 +168,12 @@ window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, widt
     });
 
     iframe.load(function () {
+        var title = popUp.find(".popup-title").html() || '';
         var iframe_doc = iframe.contents();
 
-        if (title == '' && iframe_doc.title != 'Home') {
-            popUp.find(".popup-title").html(title);
+        var iframeTitle = iframe_doc.find("title").text();
+        if (title == '' && iframeTitle != 'Home') {
+            popUp.find(".popup-title").html(iframeTitle);
         }
     });
 
