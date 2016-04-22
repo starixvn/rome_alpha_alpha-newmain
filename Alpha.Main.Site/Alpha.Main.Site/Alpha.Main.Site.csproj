@@ -375,20 +375,6 @@
     <Content Include="App_Themes\Apo\Security\images\x5.gif" />
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
-    <Content Include="Assets\bundles\default-index.css" />
-    <Content Include="Assets\bundles\default-index.js" />
-    <Content Include="Assets\bundles\default-index.min.css">
-      <DependentUpon>default-index.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-index.min.js">
-      <DependentUpon>default-index.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\Styles\Announcement\announcements.css">
-      <DependentUpon>announcements.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\Styles\Announcement\announcements.min.css">
-      <DependentUpon>announcements.css</DependentUpon>
-    </Content>
     <Content Include="Assets\styles\announcement\images\bottomborder.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon_h.png" />
@@ -420,10 +406,6 @@
     <Content Include="Assets\scripts\home\header-nav.js" />
     <Content Include="Assets\scripts\home\menu-bar.js" />
     <Content Include="Assets\scripts\home\index.js" />
-    <Content Include="Assets\Styles\customer-profiles\customer-profile.css" />
-    <Content Include="Assets\Styles\customer-profiles\customer-profile.min.css">
-      <DependentUpon>customer-profile.css</DependentUpon>
-    </Content>
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_bg.png" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_left.png" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_right.png" />
@@ -431,9 +413,6 @@
     <Content Include="Assets\styles\customer-profiles\images\tooltip_left.png" />
     <Content Include="Assets\styles\customer-profiles\images\tooltip_right.png" />
     <Content Include="Assets\styles\home\images\flag_sprite.png" />
-    <Content Include="Assets\styles\home\page.css">
-      <DependentUpon>page.scss</DependentUpon>
-    </Content>
     <Content Include="Assets\Images\icon_user_default.png" />
     <Content Include="Assets\styles\home\images\icon_close.jpg" />
     <Content Include="Assets\styles\home\images\profileTooltip_bg.png" />
@@ -442,13 +421,6 @@
     <Content Include="Assets\styles\home\images\tooltip_bg.png" />
     <Content Include="Assets\styles\home\images\tooltip_left.png" />
     <Content Include="Assets\styles\home\images\tooltip_right.png" />
-    <Content Include="Assets\Styles\home\page.min.css">
-      <DependentUpon>page.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\home\popup-message.css" />
-    <Content Include="Assets\Styles\home\popup-message.min.css">
-      <DependentUpon>popup-message.css</DependentUpon>
-    </Content>
     <Content Include="favico.ico" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
