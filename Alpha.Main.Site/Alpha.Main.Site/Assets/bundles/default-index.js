@@ -193,6 +193,7 @@ window.bootboxAlert = function (message, callbackFunction) {
         }
     });
 };
+
 /// <reference path="../core.js" />
 /// <reference path="index-page.js" />
 
@@ -247,9 +248,9 @@ var headerNav = {
         // we must run this first of all 
         headerNav.domElements.clock = $('#clock');
         var clock = headerNav.domElements.clock;
-        headerNav.resources.labelAM = clock.data("label-am");
-        headerNav.resources.labelPM = clock.data("label-pm");
-        headerNav.resources.labelMonths = JSON.parse(clock.data("label-months").replace(/'/g, '"'));
+        headerNav.resources.labelAM = 'AM';
+        headerNav.resources.labelPM = 'PM';
+        headerNav.resources.labelMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
         var clock = headerNav.domElements.clock;
         headerNav.clockTime = new Date(
