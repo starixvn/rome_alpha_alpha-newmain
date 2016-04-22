@@ -151,48 +151,6 @@
   <data name="uploadNow" xml:space="preserve">
     <value>to upload now!</value>
   </data>
-  <data name="monthName1" xml:space="preserve">
-    <value>Jan</value>
-  </data>
-  <data name="monthName10" xml:space="preserve">
-    <value>Oct</value>
-  </data>
-  <data name="monthName11" xml:space="preserve">
-    <value>Nov</value>
-  </data>
-  <data name="monthName12" xml:space="preserve">
-    <value>Dec</value>
-  </data>
-  <data name="monthName2" xml:space="preserve">
-    <value>Feb</value>
-  </data>
-  <data name="monthName3" xml:space="preserve">
-    <value>Mar</value>
-  </data>
-  <data name="monthName4" xml:space="preserve">
-    <value>Apr</value>
-  </data>
-  <data name="monthName5" xml:space="preserve">
-    <value>May</value>
-  </data>
-  <data name="monthName6" xml:space="preserve">
-    <value>Jun</value>
-  </data>
-  <data name="monthName7" xml:space="preserve">
-    <value>Jul</value>
-  </data>
-  <data name="monthName8" xml:space="preserve">
-    <value>Aug</value>
-  </data>
-  <data name="monthName9" xml:space="preserve">
-    <value>Sept</value>
-  </data>
-  <data name="AM" xml:space="preserve">
-    <value>AM</value>
-  </data>
-  <data name="PM" xml:space="preserve">
-    <value>PM</value>
-  </data>
   <data name="strNotAccessPage" xml:space="preserve">
     <value>Sorry, You don't have permission to access this page.</value>
   </data>

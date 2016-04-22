@@ -106,15 +106,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AM.
-        /// </summary>
-        public static string AM {
-            get {
-                return ResourceManager.GetString("AM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Announcement.
         /// </summary>
         public static string announcement {
@@ -332,114 +323,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Jan.
-        /// </summary>
-        public static string monthName1 {
-            get {
-                return ResourceManager.GetString("monthName1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Oct.
-        /// </summary>
-        public static string monthName10 {
-            get {
-                return ResourceManager.GetString("monthName10", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nov.
-        /// </summary>
-        public static string monthName11 {
-            get {
-                return ResourceManager.GetString("monthName11", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dec.
-        /// </summary>
-        public static string monthName12 {
-            get {
-                return ResourceManager.GetString("monthName12", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Feb.
-        /// </summary>
-        public static string monthName2 {
-            get {
-                return ResourceManager.GetString("monthName2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mar.
-        /// </summary>
-        public static string monthName3 {
-            get {
-                return ResourceManager.GetString("monthName3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Apr.
-        /// </summary>
-        public static string monthName4 {
-            get {
-                return ResourceManager.GetString("monthName4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to May.
-        /// </summary>
-        public static string monthName5 {
-            get {
-                return ResourceManager.GetString("monthName5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Jun.
-        /// </summary>
-        public static string monthName6 {
-            get {
-                return ResourceManager.GetString("monthName6", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Jul.
-        /// </summary>
-        public static string monthName7 {
-            get {
-                return ResourceManager.GetString("monthName7", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Aug.
-        /// </summary>
-        public static string monthName8 {
-            get {
-                return ResourceManager.GetString("monthName8", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sept.
-        /// </summary>
-        public static string monthName9 {
-            get {
-                return ResourceManager.GetString("monthName9", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to More.
         /// </summary>
         public static string more {
@@ -490,15 +373,6 @@ namespace Alpha.Main.AppResources {
         public static string password {
             get {
                 return ResourceManager.GetString("password", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to PM.
-        /// </summary>
-        public static string PM {
-            get {
-                return ResourceManager.GetString("PM", resourceCulture);
             }
         }
         
