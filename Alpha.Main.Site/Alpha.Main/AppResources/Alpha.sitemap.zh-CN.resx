@@ -301,7 +301,7 @@
     <value>Announcements</value>
   </data>
   <data name="customerSetting" xml:space="preserve">
-    <value>默认日志</value>
+    <value>会员设定</value>
   </data>
   <data name="login" xml:space="preserve">
     <value>登入</value>

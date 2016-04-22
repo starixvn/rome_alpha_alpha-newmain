@@ -301,7 +301,7 @@
     <value>Announcements</value>
   </data>
   <data name="customerSetting" xml:space="preserve">
-    <value>บันทึกการผิดสัญญา</value>
+    <value>ตั้งค่าสมาชิก</value>
   </data>
   <data name="login" xml:space="preserve">
     <value>เข้าระบบ</value>
