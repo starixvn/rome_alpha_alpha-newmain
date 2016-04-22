@@ -5,18 +5,20 @@
 :: 4. bundleconfig.json => BundlerMinifier.exe
 ::	  compilerconfig.json => WebCompiler.exe
 :: 5. Commandline version of BundlerMinifier.exe&WebCompiler.exe doesn't recompile for existing file (css, min, js)
+:: 6. Must install Git and this will clean source code folder when run
 
 
 @set currentFolder=%cd%
-@set configFolder=%currentFolder%\assets
-@set visualStudioExtensions=%UserProfile%\AppData\BuildExternsions
+@set configFolder=%currentFolder%\Alpha.Main.Site\Alpha.Main.Site
+@set visualStudioExtensions=%UserProfile%\AppData\Local\Microsoft\VisualStudio\14.0\Extensions
 
-@set bundleConfigFile=bundleconfig.json
 @set compilerConfigFile=compilerconfig.json
+@set bundleConfigFile=bundleconfig.json
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 @echo off
 @setlocal EnableDelayedExpansion
+@call :CleanSourceFolder
 @call :FindBundlerMinifierApp bundleAndMinifyApp
 @call :FindWebCompilerApp webCompilerApp
 
@@ -35,7 +37,12 @@
 	)	
 )
 
-@pause
+@exit /b 0
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:CleanSourceFolder 
+@git clean -d -x -f
+exit /b
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :FindWebCompilerApp webCompilerApp
@@ -89,8 +96,6 @@ exit /b
 
 
 exit /b
-
-
 
 
 
