@@ -300,11 +300,8 @@
   <data name="announcements" xml:space="preserve">
     <value>Announcements</value>
   </data>
-  <data name="credit" xml:space="preserve">
-    <value>Hạn mức tín dụng</value>
-  </data>
   <data name="customerSetting" xml:space="preserve">
-    <value>Default Log</value>
+    <value>Thiết lập</value>
   </data>
   <data name="login" xml:space="preserve">
     <value>Đăng nhập</value>
@@ -347,5 +344,8 @@
   </data>
   <data name="soccer" xml:space="preserve">
     <value>Bóng Đá</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>Tín dụng</value>
   </data>
 </root>

@@ -459,7 +459,7 @@
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Assets\scripts\Announcement\announcement.js" />
+    <Content Include="Assets\scripts\announcement\announcement.js" />
     <Content Include="Assets\scripts\customer-profiles\brief-profile.js" />
     <Content Include="Assets\scripts\core.js" />
     <Content Include="Assets\scripts\piwik-loader.js" />

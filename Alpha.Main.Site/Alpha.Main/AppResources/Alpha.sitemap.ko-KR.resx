@@ -300,9 +300,6 @@
   <data name="announcements" xml:space="preserve">
     <value>Announcements</value>
   </data>
-  <data name="credit" xml:space="preserve">
-    <value>포인트</value>
-  </data>
   <data name="customerSetting" xml:space="preserve">
     <value>회원설정</value>
   </data>
@@ -347,5 +344,8 @@
   </data>
   <data name="soccer" xml:space="preserve">
     <value>축구</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>Credit</value>
   </data>
 </root>

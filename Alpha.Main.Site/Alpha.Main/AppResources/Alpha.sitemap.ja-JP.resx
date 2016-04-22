@@ -300,9 +300,6 @@
   <data name="announcements" xml:space="preserve">
     <value>Announcements</value>
   </data>
-  <data name="credit" xml:space="preserve">
-    <value>貸付金額</value>
-  </data>
   <data name="customerSetting" xml:space="preserve">
     <value>Customer Setting</value>
   </data>
@@ -348,5 +345,8 @@
   </data>
   <data name="soccer" xml:space="preserve">
     <value>サッカー</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>Credit</value>
   </data>
 </root>

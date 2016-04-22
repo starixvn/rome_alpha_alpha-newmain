@@ -300,9 +300,6 @@
   <data name="announcements" xml:space="preserve">
     <value>Announcements</value>
   </data>
-  <data name="credit" xml:space="preserve">
-    <value>เครดิต</value>
-  </data>
   <data name="customerSetting" xml:space="preserve">
     <value>บันทึกการผิดสัญญา</value>
   </data>
@@ -347,5 +344,8 @@
   </data>
   <data name="soccer" xml:space="preserve">
     <value>ฟุตบอล</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>เครดิต</value>
   </data>
 </root>
