@@ -183,9 +183,6 @@
   <data name="commssionhorseracing" xml:space="preserve">
     <value>คอมมิสชั่นการแข่งขันม้า</value>
   </data>
-  <data name="foobet" xml:space="preserve">
-    <value>FB การเงิน</value>
-  </data>
   <data name="forecast" xml:space="preserve">
     <value>การทำนายผลล่วงหน้า</value>
   </data>

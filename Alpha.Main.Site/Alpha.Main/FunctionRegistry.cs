@@ -30,7 +30,6 @@
             ["NumberGameMenuItem"] = () => new MenuStatus(IsShowNumberGame),
             ["LiveCasinoMenuItem"] = () => new MenuStatus(IsShowLiveCasino),
             ["ConsolidatedReportMenuItem"] = () => new MenuStatus(Current.IsShowConsolidatedReport),
-            ["FoobetMenuItem"] = () => new MenuStatus(Current.CustId != Configurations.AppSettings.CustIdFoobet),
             ["MemberWinLimitMenuItem"] = () => new MenuStatus(Current.IsLiveCasinoSync || !Current.IsHideGoldDeluxe),
             ["LastBetMonitorMenuItem"] = () => new MenuStatus(
                 null,

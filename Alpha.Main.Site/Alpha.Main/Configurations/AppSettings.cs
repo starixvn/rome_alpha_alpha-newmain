@@ -29,14 +29,6 @@
             }
         }
 
-        public static int CustIdFoobet
-        {
-            get
-            {
-                return Converter.ToInt(ConfigurationManager.AppSettings["CustIdFoobet"]);
-            }
-        }
-
         public static string UsersAlwaysAllowAccessBetsListMonitoring
         {
             get

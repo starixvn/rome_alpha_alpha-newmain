@@ -51,10 +51,6 @@
       <siteMapNode resourceKey="statement" appPath="OldMainAppPath" url="Finance/StatementSMA?rptmrange=5"></siteMapNode>
       <!--/Statement-->
 
-      <!--Foobet-->
-      <siteMapNode resourceKey="foobet" menuItemType="FoobetMenuItem" appPath="OldMainAppPath" url="Report/Foobet" roles="Agent"></siteMapNode>
-      <!--/Foobet-->
-
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="OldMainAppPath" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
     </siteMapNode>

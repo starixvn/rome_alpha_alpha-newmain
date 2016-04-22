@@ -183,9 +183,6 @@
   <data name="commssionhorseracing" xml:space="preserve">
     <value>경마 수수료</value>
   </data>
-  <data name="foobet" xml:space="preserve">
-    <value>FB 금융</value>
-  </data>
   <data name="forecast" xml:space="preserve">
     <value>예상</value>
   </data>

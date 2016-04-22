@@ -183,9 +183,6 @@
   <data name="commssionhorseracing" xml:space="preserve">
     <value>賽馬佣金</value>
   </data>
-  <data name="foobet" xml:space="preserve">
-    <value>FB金融</value>
-  </data>
   <data name="forecast" xml:space="preserve">
     <value>預測</value>
   </data>

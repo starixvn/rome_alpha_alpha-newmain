@@ -277,15 +277,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FB Financial.
-        /// </summary>
-        public static string foobet {
-            get {
-                return ResourceManager.GetString("foobet", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Forecast.
         /// </summary>
         public static string forecast {
