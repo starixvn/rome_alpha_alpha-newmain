@@ -206,7 +206,7 @@
     <value>รายละเอียดรูปภาพ</value>
   </data>
   <data name="LoginOption" xml:space="preserve">
-    <value>Login Option</value>
+    <value>ตัวเลือก การเข้าใช้งาน</value>
   </data>
   <data name="password" xml:space="preserve">
     <value>รหัสผ่าน</value>

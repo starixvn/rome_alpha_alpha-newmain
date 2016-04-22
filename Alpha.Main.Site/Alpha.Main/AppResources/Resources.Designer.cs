@@ -251,7 +251,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login Option.
+        ///   Looks up a localized string similar to Login option.
         /// </summary>
         public static string LoginOption {
             get {

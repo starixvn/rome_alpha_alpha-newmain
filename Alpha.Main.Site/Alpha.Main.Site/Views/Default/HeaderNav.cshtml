@@ -29,7 +29,6 @@
 
             <ul id="header-dropdown-menu" class="dropdown-menu list-setting">
                 <li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="main"><span class="icon icon-help"></span>@Resources.Help</a></li>
-                <li><a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.LoginOption</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-profilepic"></span>@Resources.EditProfilePicture</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}_MemberInfo/ChangePassword/ChangePassword.aspx")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
@@ -39,6 +38,7 @@
                     <li><a href="@($"{Model.OldMainRootPath}Security/SecurityCode/ChangeSecurityCode")" target="main"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                 }
 
+                <li><a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
             </ul>
         </li>
         <li class="withripple"><span class="icon icon-logout" data-toggle="tooltip" data-placement="bottom" title="Logout"></span></li>

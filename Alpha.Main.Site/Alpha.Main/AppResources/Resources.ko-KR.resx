@@ -206,7 +206,7 @@
     <value>프로필 사진</value>
   </data>
   <data name="LoginOption" xml:space="preserve">
-    <value>Login Option</value>
+    <value>로그인 옵션</value>
   </data>
   <data name="password" xml:space="preserve">
     <value>비밀번호</value>

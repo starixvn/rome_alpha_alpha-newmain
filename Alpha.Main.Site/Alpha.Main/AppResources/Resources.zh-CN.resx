@@ -206,7 +206,7 @@
     <value>个人头像</value>
   </data>
   <data name="LoginOption" xml:space="preserve">
-    <value>Login Option</value>
+    <value>登录选项</value>
   </data>
   <data name="password" xml:space="preserve">
     <value>密码</value>
