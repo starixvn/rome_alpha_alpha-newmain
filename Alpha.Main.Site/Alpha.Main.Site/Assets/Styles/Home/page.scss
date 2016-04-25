@@ -1,4 +1,11 @@
 ﻿
+body {
+    margin: 0;
+    font-family: Roboto;
+    font-size: 13px;
+    overflow: hidden;
+}
+
 /********************************** Customer profile ******************************************/
 .customer-profile {
     overflow: hidden;
@@ -45,7 +52,7 @@
     overflow-y: auto;
     position: absolute;
     left: 0;
-    top: 40px;
+    top: 52px;
     right: 0;
     bottom: 0;
 
@@ -67,7 +74,7 @@
 
     .menu-item {
         position: relative;
-        color: #000;
+        color: #333;
         font-weight: 600;
         padding: 0;
 
@@ -81,6 +88,15 @@
                 font-size: 20px;
                 margin-right: 18px;
             }
+
+            &.icon-announcements {
+                font-size: 22px;
+                margin-right: 16px;
+            }
+
+            &.icon-totalbets {
+                font-size: 14px;
+            }
         }
 
         > a {
@@ -89,22 +105,22 @@
             color: #000000;
             text-decoration: none;
             text-transform: uppercase;
-            height: 48px;
-            line-height: 48px;
+            height: 36px;
+            line-height: 36px;
             width: 100%;
             min-height: 3rem;
             background: transparent;
             padding: 0 16px;
 
             .icon-arrow-right {
-                line-height: 48px;
+                line-height: 36px;
                 font-size: 17px;
                 transform: rotate(0);
                 transition: transform 0.3s ease-out;
             }
 
-            &.active {
-                background: #d5d5d6;
+            &.active, &:hover {
+                background: #e5e5e5;
 
                 .icon-arrow-right {
                     transform: rotate(90deg);
@@ -132,10 +148,6 @@
             font-weight: 600;
             height: 36px;
             line-height: 36px;
-        }
-
-        &:hover a, &.active a {
-            color: #ab121d;
         }
 
         &.disabled-menu a {

@@ -10,13 +10,14 @@
         }
     }
     .modal-content {
-        background: #f6f6f6;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+        background: #f6f6f6;        
+        -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
         border-radius: 0;
         width: 455px;
         margin: auto;
         .modal-header {
-            background: #930a14;
             color: #fff;
             padding: 0 15px;
             border-bottom: none;
