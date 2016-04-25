@@ -3,7 +3,7 @@
     top: 110px;
     left: 350px;
     overflow: hidden;
-    height: auto;
+    height: 300px;
     .modal-dialog {
         &.ex-modal {
             width: 100%;
@@ -15,8 +15,6 @@
         -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
         border-radius: 0;
-        width: 455px;
-        margin: auto;
         .modal-header {
             color: #fff;
             padding: 0 15px;
@@ -31,20 +29,22 @@
                 text-shadow: none;
             }
             .modal-title {
+                border-bottom: none;
                 color: #fff;
                 font-weight: 700;
                 font-size: 12px;
-                padding: 15px 0;
+                padding: 13px 0;
                 text-transform: uppercase;
-                .icon-bullhorn {
+                .icon-announcements {
                     cursor: default;
+                    font-size: 20px;
                 }
             }
         }
         .modal-body {
             padding: 15px;
             line-height: 22px;
-            max-height: 240px;
+            max-height: 245px;
             overflow: auto;
             a { color: #045ace; }
         }
