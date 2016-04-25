@@ -375,6 +375,10 @@
     <Content Include="App_Themes\Apo\Security\images\x5.gif" />
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
+    <Content Include="Assets\bundles\default-index.css" />
+    <Content Include="Assets\bundles\default-index.js" />
+    <Content Include="Assets\bundles\default-index.min.css" />
+    <Content Include="Assets\bundles\default-index.min.js" />
     <Content Include="Assets\styles\announcement\images\bottomborder.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon_h.png" />
@@ -448,8 +452,8 @@
     </Content>
     <Content Include="Assets\Styles\customer-profiles\customer-profile.scss" />
     <Content Include="Assets\styles\home\popup-message.scss" />
-    <None Include="bundleconfig.json" />
-    <None Include="compilerconfig.json" />
+    <Content Include="bundleconfig.json" />
+    <Content Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -461,6 +465,7 @@
     <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
     <Content Include="Views\Language\List.cshtml" />
     <Content Include="Assets\Styles\Announcement\announcements.scss" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.AppSettings.config" />
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -625,9 +630,11 @@
   </Target>
   <PropertyGroup>
     <PostBuildEvent>if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"  
-      start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"
-cd $(ProjectDir)
-BuildTask.Release</PostBuildEvent>
+      start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>cd $(ProjectDir)
+BuildTask.Release</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
