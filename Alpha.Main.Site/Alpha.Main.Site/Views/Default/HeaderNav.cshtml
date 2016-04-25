@@ -26,7 +26,7 @@
                 <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.LoginOption</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}_MemberInfo/ChangePassword/ChangePassword.aspx")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
-                <li><a href="@($"{Model.OldMainRootPath}Security/SecurityCode/ChangeSecurityCode")" target="main"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
+
                 @if (Model.EnableSecurityCode)
                 {
                     <li><a href="@($"{Model.OldMainRootPath}Security/SecurityCode/ChangeSecurityCode")" target="main"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
