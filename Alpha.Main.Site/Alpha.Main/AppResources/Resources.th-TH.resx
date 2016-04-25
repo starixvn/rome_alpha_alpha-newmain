@@ -322,4 +322,7 @@
   <data name="PrivateMessage" xml:space="preserve">
     <value>Private Message</value>
   </data>
+  <data name="Less" xml:space="preserve">
+    <value>Less</value>
+  </data>
 </root>

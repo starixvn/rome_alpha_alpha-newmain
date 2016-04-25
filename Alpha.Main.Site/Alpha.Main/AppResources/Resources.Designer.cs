@@ -242,6 +242,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Less.
+        /// </summary>
+        public static string Less {
+            get {
+                return ResourceManager.GetString("Less", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login option.
         /// </summary>
         public static string LoginOption {

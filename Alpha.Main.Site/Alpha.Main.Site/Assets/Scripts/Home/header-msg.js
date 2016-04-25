@@ -31,7 +31,10 @@ var headerMessage = {
         hotMessages: null,
         userMessageModal: null,
         currentHotMessage: null,
-        scroller: null
+        scroller: null,
+
+        showMoreContainer: null,
+        showLessContainer: null
     },
 
     init: function () {
@@ -52,6 +55,9 @@ var headerMessage = {
         headerMessage.domElements.userMessageModal = $('#userMessageModal');
         headerMessage.domElements.currentHotMessage = headerMessage.domElements.hotMessages.find('p.current-hot-message');
         headerMessage.domElements.scroller = $('#scroller');
+
+        headerMessage.domElements.showMoreContainer = $(".showmore-container");
+        headerMessage.domElements.showLessContainer = $(".showless-container");
     },
 
     registerEvents: function () {
@@ -70,6 +76,9 @@ var headerMessage = {
         headerMessage.domElements.marqueeMessage
             .off('click.headermsg')
             .on('click.headermsg', headerMessage.viewLiveMessage);
+
+        headerMessage.domElements.showMoreContainer.click(headerMessage.showMoreHotMessage);
+        headerMessage.domElements.showLessContainer.click(headerMessage.showLessHotMessage);
     },
 
     viewPrivateMessage: function () {
@@ -112,9 +121,57 @@ var headerMessage = {
         if (headerMessage.domElements.currentHotMessage.length > 0) {
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
             headerMessage.domElements.userMessageModal.tinyDraggable();
+            headerMessage.domElements.currentHotMessage.html('       Dear valued customer: [Position Taking] Kindly be informed that effective from 2nd November 2015, our Company will request all SMAs level must set the Sportsbook Min PT as 50%.       For more details, please refer to Settlement Department or Customer Service Department. Thank you!        Dear valued customer: [Position Taking] Kindly be informed that effective from 2nd November 2015, our Company will request all SMAs level must set the Sportsbook Min PT as 50%.       For more details, please refer to Settlement Department or Customer Service Department. Thank you!         ');
+            headerMessage.calculateHotMessagePopupHeight(false);
         }
 
         setInterval(headerMessage.swapMessage, 18 * 1000);
+    },
+
+    calculateHotMessagePopupHeight: function (showFullMessage) {
+        var maxMessageHeight = 70;
+        var isShowFull = showFullMessage;
+        var messageHeight = headerMessage.domElements.currentHotMessage.height();
+        var headerHeight = 20;
+        var popUpPadding = 14;
+
+        if (showFullMessage) {
+            headerMessage.domElements.showMoreContainer.addClass("hide");
+            headerMessage.domElements.currentHotMessage.removeClass("brief-content");
+            messageHeight = headerMessage.domElements.currentHotMessage.height();
+
+            if (messageHeight <= maxMessageHeight) {
+                headerMessage.domElements.showLessContainer.addClass("hide");
+            } else {
+                headerMessage.domElements.showLessContainer.removeClass("hide");
+                messageHeight += headerMessage.domElements.showLessContainer.height() + 10;
+            }
+
+            messageHeight += 10;
+        }
+        else {
+            headerMessage.domElements.showLessContainer.addClass("hide");
+            headerMessage.domElements.currentHotMessage.removeClass("brief-content");
+            messageHeight = headerMessage.domElements.currentHotMessage.height();
+
+            if (messageHeight <= maxMessageHeight) {
+                headerMessage.domElements.showMoreContainer.addClass("hide");
+                messageHeight = messageHeight + 10;
+            } else {
+                headerMessage.domElements.currentHotMessage.addClass("brief-content");
+                headerMessage.domElements.showMoreContainer.removeClass("hide");
+                messageHeight = maxMessageHeight + headerMessage.domElements.showMoreContainer.height() + 10;
+            }
+        }
+
+        var popUpHeight = headerHeight + messageHeight + popUpPadding;
+        headerMessage.domElements.userMessageModal.height(popUpHeight);
+    },
+    showMoreHotMessage: function () {
+        headerMessage.calculateHotMessagePopupHeight(true);
+    },
+    showLessHotMessage: function () {
+        headerMessage.calculateHotMessagePopupHeight(false);
     },
 
     showPublicMessage: function (publicMessage) {
@@ -230,13 +287,15 @@ var headerMessage = {
     },
 
     showNextMessage: function (nextMessage) {
+        nextMessage.html('       Dear valued customer: [Position Taking] Kindly be informed that effective from 2nd November 2015, our Company will r');
         nextMessage.show().removeClass('not-shown-message').animate({
             opacity: 1.0
         },
-        1500,
-        function () {
-            headerMessage.domElements.currentHotMessage = nextMessage;
-        });
+       1500,
+       function () {
+           headerMessage.domElements.currentHotMessage = nextMessage;
+           headerMessage.calculateHotMessagePopupHeight(false);
+       });
     },
 
     applyScroller: function () {
