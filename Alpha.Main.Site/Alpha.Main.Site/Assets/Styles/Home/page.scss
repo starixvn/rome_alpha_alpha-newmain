@@ -18,7 +18,7 @@ body {
         border: 3px solid rgba(255, 255, 255, 0.1);
         border-radius: 50%;
         float: left;
-        margin: 14px 12px 14px 16px;
+        margin: 14px 12px;
         cursor: pointer;
 
         img {
@@ -74,57 +74,56 @@ body {
 
     .menu-item {
         position: relative;
-        color: #333;
+        color: #222;
         font-weight: 600;
         padding: 0;
 
         .icon {
-            margin-right: 22px;
+            margin-right: 16px;
             width: 16px;
             position: relative;
             left: 1px;
-
-            &.icon-betsandforecast {
-                font-size: 20px;
-                margin-right: 18px;
-            }
-
-            &.icon-announcements {
-                font-size: 22px;
-                margin-right: 16px;
-            }
+            color: #333;
 
             &.icon-totalbets {
                 font-size: 14px;
             }
+
+            &.icon-announcements {
+                font-size: 20px;
+                margin-right: 12px;
+            }
         }
 
         > a {
+            color: #222;
             display: table;
             white-space: nowrap;
-            color: #000000;
             text-decoration: none;
             text-transform: uppercase;
-            height: 36px;
-            line-height: 36px;
+            height: 40px;
+            line-height: 40px;
             width: 100%;
             min-height: 3rem;
             background: transparent;
-            padding: 0 16px;
+            padding: 0 8px 0 12px;
 
             .icon-arrow-right {
-                line-height: 36px;
+                line-height: 40px;
                 font-size: 17px;
                 transform: rotate(0);
                 transition: transform 0.3s ease-out;
             }
 
-            &.active, &:hover {
+            &.active {
                 background: #e5e5e5;
 
                 .icon-arrow-right {
                     transform: rotate(90deg);
                 }
+            }
+            &:hover {
+                background: #e5e5e5;
             }
         }
 
