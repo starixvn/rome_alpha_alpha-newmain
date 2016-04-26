@@ -286,14 +286,15 @@ var headerMessage = {
     },
 
     showNextMessage: function (nextMessage) {
-        nextMessage.show().removeClass('not-shown-message').animate({
+        nextMessage.show().removeClass('not-shown-message');
+        headerMessage.domElements.currentHotMessage = nextMessage;
+        headerMessage.calculateHotMessagePopupHeight(false);
+        nextMessage.animate({
             opacity: 1.0
         },
-      1500,
-      function () {
-          headerMessage.domElements.currentHotMessage = nextMessage;
-          headerMessage.calculateHotMessagePopupHeight(false);
-      });
+        1500,
+        function () {
+        });
     },
 
     applyScroller: function () {
