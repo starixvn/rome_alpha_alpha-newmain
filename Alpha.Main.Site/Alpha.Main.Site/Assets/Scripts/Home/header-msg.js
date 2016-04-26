@@ -121,7 +121,6 @@ var headerMessage = {
         if (headerMessage.domElements.currentHotMessage.length > 0) {
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
             headerMessage.domElements.userMessageModal.tinyDraggable();
-            headerMessage.domElements.currentHotMessage.html('       Dear valued customer: [Position Taking] Kindly be informed that effective from 2nd November 2015, our Company will request all SMAs level must set the Sportsbook Min PT as 50%.       For more details, please refer to Settlement Department or Customer Service Department. Thank you!        Dear valued customer: [Position Taking] Kindly be informed that effective from 2nd November 2015, our Company will request all SMAs level must set the Sportsbook Min PT as 50%.       For more details, please refer to Settlement Department or Customer Service Department. Thank you!         ');
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
@@ -287,15 +286,14 @@ var headerMessage = {
     },
 
     showNextMessage: function (nextMessage) {
-        nextMessage.html('       Dear valued customer: [Position Taking] Kindly be informed that effective from 2nd November 2015, our Company will r');
         nextMessage.show().removeClass('not-shown-message').animate({
             opacity: 1.0
         },
-       1500,
-       function () {
-           headerMessage.domElements.currentHotMessage = nextMessage;
-           headerMessage.calculateHotMessagePopupHeight(false);
-       });
+      1500,
+      function () {
+          headerMessage.domElements.currentHotMessage = nextMessage;
+          headerMessage.calculateHotMessagePopupHeight(false);
+      });
     },
 
     applyScroller: function () {
