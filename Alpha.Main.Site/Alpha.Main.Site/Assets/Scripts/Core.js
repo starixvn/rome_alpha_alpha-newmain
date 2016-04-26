@@ -180,7 +180,7 @@ window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, widt
     popUp.tinyDraggable();
 };
 
-window.bootboxConfirm = function (message, acceptCallback, cancelCallback) {
+window.bootboxConfirm = function (message, handleElement, acceptCallback, cancelCallback) {
     bootbox.confirm(message, function (result) {
         if (result && acceptCallback && typeof (acceptCallback) == "function") {
             acceptCallback();
@@ -188,12 +188,38 @@ window.bootboxConfirm = function (message, acceptCallback, cancelCallback) {
             cancelCallback();
         }
     });
+
+    if (handleElement) {
+        var $handleElement = $(handleElement);
+        var dialog = $(".bootbox-confirm .modal-dialog");
+        var position = $handleElement.position();
+        var checkboxLeft = 3;
+        var startTop = 164;
+
+        dialog.css({
+            left: position.left + checkboxLeft,
+            top: position.top + startTop
+        });
+    }
 };
 
-window.bootboxAlert = function (message, callbackFunction) {
+window.bootboxAlert = function (message, handleElement, callbackFunction) {
     bootbox.alert(message, function () {
         if (callbackFunction && typeof (callbackFunction) == "function") {
             callbackFunction();
         }
     });
+
+    if (handleElement) {
+        var $handleElement = $(handleElement);
+        var dialog = $(".bootbox-alert .modal-dialog");
+        var position = $handleElement.position();
+        var checkboxLeft = 3;
+        var startTop = 164;
+
+        dialog.css({
+            left: position.left + checkboxLeft,
+            top: position.top + startTop
+        });
+    }
 };
