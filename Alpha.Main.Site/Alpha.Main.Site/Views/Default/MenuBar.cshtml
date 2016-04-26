@@ -3,8 +3,8 @@
 {
     <div>
         <ul class="main-tab" id="main-tab">
-            <li class="mainmenu active" data-target-container="mainmenu-container"><a href="javascript:;">@Resources.mainMenu</a></li>
-            <li class="accountinfo  @(Model.IsAccountInfoVisible ? string.Empty : "disabledView")"
+            <li class="mainmenu withripple active " data-target-container="mainmenu-container"><a href="javascript:;">@Resources.mainMenu</a></li>
+            <li class="accountinfo withripple  @(Model.IsAccountInfoVisible ? string.Empty : "disabledView")"
                 data-target-container="accountinfo-container">
                 <a href="javascript:;">
                     @(Model.IsAccountInfoVisible ? @Resources.accountInfo : string.Empty)

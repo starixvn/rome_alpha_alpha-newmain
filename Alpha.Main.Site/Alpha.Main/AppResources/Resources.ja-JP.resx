@@ -245,7 +245,7 @@
     <value>情報がありません</value>
   </data>
   <data name="more" xml:space="preserve">
-    <value>More</value>
+    <value>more</value>
   </data>
   <data name="totalActiveClosedSuspended" xml:space="preserve">
     <value>Total active/closed/suspended</value>
@@ -326,6 +326,6 @@
     <value>Private Message</value>
   </data>
   <data name="Less" xml:space="preserve">
-    <value>Less</value>
+    <value>less</value>
   </data>
 </root>

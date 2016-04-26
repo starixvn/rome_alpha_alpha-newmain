@@ -52,6 +52,7 @@ var headerMessage = {
         headerMessage.domElements.btnSpecialMessage = $('#btnSpecialMessage');
         headerMessage.domElements.marqueeMessage = $('#marqueeMessage');
         headerMessage.domElements.hotMessages = $('#userMessageModalBody');
+        headerMessage.domElements.contentMessage = $('#msg-content');
         headerMessage.domElements.userMessageModal = $('#userMessageModal');
         headerMessage.domElements.currentHotMessage = headerMessage.domElements.hotMessages.find('p.current-hot-message');
         headerMessage.domElements.scroller = $('#scroller');
@@ -124,15 +125,16 @@ var headerMessage = {
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
-        setInterval(headerMessage.swapMessage, 18 * 1000);
+        setInterval(headerMessage.swapMessage, 180 * 1000);
     },
 
     calculateHotMessagePopupHeight: function (showFullMessage) {
-        var maxMessageHeight = 70;
+        var maxMessageHeight = 80;
         var isShowFull = showFullMessage;
         var messageHeight = headerMessage.domElements.currentHotMessage.height();
         var headerHeight = 20;
-        var popUpPadding = 14;
+        var popUpPadding = 5;
+        var bodyPadding = 5;
 
         if (showFullMessage) {
             headerMessage.domElements.showMoreContainer.addClass("hide");
@@ -143,10 +145,10 @@ var headerMessage = {
                 headerMessage.domElements.showLessContainer.addClass("hide");
             } else {
                 headerMessage.domElements.showLessContainer.removeClass("hide");
-                messageHeight += headerMessage.domElements.showLessContainer.height() + 10;
+                messageHeight += headerMessage.domElements.showLessContainer.height();
             }
 
-            messageHeight += 10;
+            messageHeight += bodyPadding;
         }
         else {
             headerMessage.domElements.showLessContainer.addClass("hide");
@@ -155,14 +157,15 @@ var headerMessage = {
 
             if (messageHeight <= maxMessageHeight) {
                 headerMessage.domElements.showMoreContainer.addClass("hide");
-                messageHeight = messageHeight + 10;
+                messageHeight = messageHeight + bodyPadding;
             } else {
                 headerMessage.domElements.currentHotMessage.addClass("brief-content");
                 headerMessage.domElements.showMoreContainer.removeClass("hide");
-                messageHeight = maxMessageHeight + headerMessage.domElements.showMoreContainer.height() + 10;
+                messageHeight = maxMessageHeight + headerMessage.domElements.showMoreContainer.height();
             }
         }
 
+        console.log(headerMessage.domElements.currentHotMessage.height() + ' ' + headerMessage.domElements.showMoreContainer.height());
         var popUpHeight = headerHeight + messageHeight + popUpPadding;
         headerMessage.domElements.userMessageModal.height(popUpHeight);
     },
@@ -221,7 +224,7 @@ var headerMessage = {
     },
 
     appendMessageToPopup: function (messsage) {
-        headerMessage.domElements.hotMessages.append(
+        headerMessage.domElements.contentMessage.append(
                 '<p class="not-shown-message">'
                 + messsage
                 + '</p>');

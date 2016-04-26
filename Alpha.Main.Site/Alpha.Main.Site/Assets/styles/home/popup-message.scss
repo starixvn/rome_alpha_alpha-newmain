@@ -1,33 +1,4 @@
 ﻿
-#popup-top {
-    color: #000000;
-    background-color: #ffffde;
-    position: absolute;
-    width: 460px;
-    min-height: 56px;
-    z-index: 100;
-    left: 560px;
-    top: 2px;
-    border: 1px solid #ae5f27;
-    padding: 1px 1px;
-    filter: alpha(opacity=95);
-    -moz-opacity: 0.95;
-    -khtml-opacity: 0.95;
-    opacity: 0.95;
-    overflow: hidden;
-
-    .button-close {
-        width: 14px;
-        height: 14px;
-        border: none;
-    }
-
-    .popup-content {
-        height: 60px;
-        width: auto;
-    }
-}
-
 div.messageBlock {
     font-size: 11px;
     font-weight: normal;
@@ -47,7 +18,7 @@ div.messageBlock {
 .message-modal {
     width: 500px;
     height: 140px;
-    top: 0px;
+    top: 10px;
     left: 300px;
     overflow: hidden;
 
@@ -61,10 +32,6 @@ div.messageBlock {
         border-bottom: none;
     }
 
-    .modal-dialog {
-        margin: 3px auto;
-    }
-
     .modal-body {
         padding: 3px;
         overflow-y: auto;
@@ -73,16 +40,6 @@ div.messageBlock {
     .not-shown-message {
         display: none;
         opacity: 0;
-    }
-
-    .showmore-container, .showless-container {
-        background-color: #fff;
-        cursor: pointer;
-        line-height: 24px;
-        padding-top: 2px;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 10px;
     }
 }
 
@@ -120,9 +77,6 @@ div.messageBlock {
     }
 
     .modal-dialog {
-        margin: 10px auto 0;
-        //max-height: 88px;
-        //overflow: auto;
         .modal-content {
             box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
             background: #faf9dd;
@@ -136,19 +90,24 @@ div.messageBlock {
 
             .modal-body {
                 position: relative;
-                padding: 0 15px;
+                padding: 0 15px 5px;
                 min-height: 60px;
                 overflow: auto;
                 z-index: 99;
 
+                .showmore-container, .showless-container {
+                    display: inline-block;
+                    float: right;
+                }
+
                 p {
                     color: #85490d;
                     line-height: 20px;
-                    margin-bottom: 10px;
+                    margin-bottom: 0;
                 }
 
                 p.brief-content {
-                    height: 60px;
+                    height: 80px;
                     overflow: hidden;
                 }
             }

@@ -90,8 +90,8 @@ body {
             }
 
             &.icon-announcements {
-                font-size: 20px;
-                margin-right: 12px;
+                //font-size: 20px;
+                //margin-right: 12px;
             }
         }
 
@@ -101,15 +101,12 @@ body {
             white-space: nowrap;
             text-decoration: none;
             text-transform: uppercase;
-            height: 40px;
-            line-height: 40px;
             width: 100%;
             min-height: 3rem;
             background: transparent;
-            padding: 0 8px 0 12px;
+            padding: 14px 8px 14px 12px;
 
             .icon-arrow-right {
-                line-height: 40px;
                 font-size: 17px;
                 transform: rotate(0);
                 transition: transform 0.3s ease-out;
@@ -137,16 +134,13 @@ body {
         }
     }
 
-    .sub-menu .sub-menu-item {
+    .sub-menu .sub-menu-item {     
+        padding: 9px 15px 9px 44px;
         a {
             color: #555555;
             display: table;
-            white-space: nowrap;
             text-decoration: none;
-            padding: 0 5px 0 56px;
             font-weight: 600;
-            height: 36px;
-            line-height: 36px;
         }
 
         &.disabled-menu a {
@@ -188,7 +182,7 @@ body {
     bottom: 0;
 
     &.expanded {
-        left: 48px;
+        left: 42px;
     }
 }
 

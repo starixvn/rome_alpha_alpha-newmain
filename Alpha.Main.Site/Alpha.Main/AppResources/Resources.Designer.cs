@@ -242,7 +242,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Less.
+        ///   Looks up a localized string similar to less.
         /// </summary>
         public static string Less {
             get {
@@ -332,7 +332,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More.
+        ///   Looks up a localized string similar to more.
         /// </summary>
         public static string more {
             get {

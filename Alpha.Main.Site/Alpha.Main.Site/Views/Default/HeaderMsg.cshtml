@@ -25,23 +25,25 @@
                 <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
             </div>
             <div class="modal-body" id="userMessageModalBody">
-                @{
-                    var isFirstMessage = true;
+                <div id="msg-content">
+                    @{
+                        var isFirstMessage = true;
 
-                    foreach (var hotMessage in Model)
-                    {
-                        <p class="@(isFirstMessage ? "current-hot-message" : "not-shown-message")">@hotMessage</p>
-
-                        if (isFirstMessage)
+                        foreach (var hotMessage in Model)
                         {
-                            isFirstMessage = false;
+                            <p class="@(isFirstMessage ? "current-hot-message" : "not-shown-message")">@hotMessage</p>
+
+                            if (isFirstMessage)
+                            {
+                                isFirstMessage = false;
+                            }
                         }
                     }
-                }
+                </div>
+                <a href="javascript:;" class="link hide showmore-container">@Resources.more</a>
+                <a href="javascript:;" class="link hide showless-container">@Resources.Less</a>
             </div>
-
-            <div class="showmore-container hide">@Resources.more</div>
-            <div class="showless-container hide">@Resources.Less</div>
+            
         </div>
     </div>
 </div>
