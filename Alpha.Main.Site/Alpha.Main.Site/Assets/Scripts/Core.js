@@ -194,11 +194,12 @@ window.bootboxConfirm = function (message, handleElement, acceptCallback, cancel
         var dialog = $(".bootbox-confirm .modal-dialog");
         var position = $handleElement.position();
         var checkboxLeft = 3;
+        var checkboxBottom = 3;
         var startTop = 164;
 
         dialog.css({
             left: position.left + checkboxLeft,
-            top: position.top + startTop
+            top: startTop + position.top + checkboxBottom
         });
     }
 };
@@ -215,11 +216,12 @@ window.bootboxAlert = function (message, handleElement, callbackFunction) {
         var dialog = $(".bootbox-alert .modal-dialog");
         var position = $handleElement.position();
         var checkboxLeft = 3;
+        var checkboxBottom = 3;
         var startTop = 164;
 
         dialog.css({
             left: position.left + checkboxLeft,
-            top: position.top + startTop
+            top: startTop + position.top + checkboxBottom
         });
     }
 };
