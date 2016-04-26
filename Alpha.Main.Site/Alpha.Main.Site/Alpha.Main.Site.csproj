@@ -425,6 +425,18 @@
     <Content Include="Assets\styles\home\images\tooltip_bg.png" />
     <Content Include="Assets\styles\home\images\tooltip_left.png" />
     <Content Include="Assets\styles\home\images\tooltip_right.png" />
+    <Content Include="Assets\styles\home\page.css">
+      <DependentUpon>page.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\page.min.css">
+      <DependentUpon>page.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\popup-message.css">
+      <DependentUpon>popup-message.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\popup-message.min.css">
+      <DependentUpon>popup-message.css</DependentUpon>
+    </Content>
     <Content Include="favico.ico" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
