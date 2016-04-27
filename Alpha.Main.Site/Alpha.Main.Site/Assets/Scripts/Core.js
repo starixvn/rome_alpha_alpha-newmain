@@ -97,7 +97,7 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
 
     var headerHeight = 40;
     var contentBorder = 2;
-    var bodyHeightPadding = 18;
+    var bodyHeightPadding = 38;
     popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
 
     var iframe = popUp.find("#popup-iframe");
@@ -158,7 +158,7 @@ window.ageWnd.open = window.ageWnd.open || function (url, title, left, top, widt
 
     var headerHeight = 40;
     var contentBorder = 2;
-    var bodyHeightPadding = 18;
+    var bodyHeightPadding = 38;
     popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
 
     var iframe = popUp.find("#popup-iframe");
