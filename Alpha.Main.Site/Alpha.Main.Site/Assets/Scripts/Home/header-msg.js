@@ -125,7 +125,7 @@ var headerMessage = {
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
-        setInterval(headerMessage.swapMessage, 180 * 1000);
+        setInterval(headerMessage.swapMessage, 18 * 1000);
     },
 
     calculateHotMessagePopupHeight: function (showFullMessage) {
@@ -133,8 +133,8 @@ var headerMessage = {
         var isShowFull = showFullMessage;
         var messageHeight = headerMessage.domElements.currentHotMessage.height();
         var headerHeight = 20;
-        var popUpPadding = 5;
-        var bodyPadding = 5;
+        var bodyBorder = 2;
+        var bodyPadding = 5 + bodyBorder;
 
         if (showFullMessage) {
             headerMessage.domElements.showMoreContainer.addClass("hide");
@@ -145,7 +145,7 @@ var headerMessage = {
                 headerMessage.domElements.showLessContainer.addClass("hide");
             } else {
                 headerMessage.domElements.showLessContainer.removeClass("hide");
-                messageHeight += headerMessage.domElements.showLessContainer.height();
+                messageHeight += headerMessage.domElements.showLessContainer.height() + 2;
             }
 
             messageHeight += bodyPadding;
@@ -157,16 +157,15 @@ var headerMessage = {
 
             if (messageHeight <= maxMessageHeight) {
                 headerMessage.domElements.showMoreContainer.addClass("hide");
-                messageHeight = messageHeight + bodyPadding;
+                messageHeight += bodyPadding;
             } else {
                 headerMessage.domElements.currentHotMessage.addClass("brief-content");
                 headerMessage.domElements.showMoreContainer.removeClass("hide");
-                messageHeight = maxMessageHeight + headerMessage.domElements.showMoreContainer.height();
+                messageHeight = maxMessageHeight + headerMessage.domElements.showMoreContainer.height() + 2;
             }
         }
 
-        console.log(headerMessage.domElements.currentHotMessage.height() + ' ' + headerMessage.domElements.showMoreContainer.height());
-        var popUpHeight = headerHeight + messageHeight + popUpPadding;
+        var popUpHeight = headerHeight + messageHeight;
         headerMessage.domElements.userMessageModal.height(popUpHeight);
     },
     showMoreHotMessage: function () {
