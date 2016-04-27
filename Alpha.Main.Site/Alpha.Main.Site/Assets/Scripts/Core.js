@@ -133,8 +133,8 @@ window.age.ClosePopUp = function () {
     popUp.addClass("hidden");
 };
 
-window.AGEWnd = window.AGEWnd || {};
-window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, width, height) {
+window.ageWnd = window.ageWnd || {};
+window.ageWnd.open = window.ageWnd.open || function (url, title, left, top, width, height) {
     title = title || '';
     var popH = height || 360;
 
