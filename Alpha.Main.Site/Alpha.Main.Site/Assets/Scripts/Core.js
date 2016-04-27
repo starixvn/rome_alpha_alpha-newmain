@@ -94,14 +94,18 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
     popUp.find(".popup-title").html(title);
     popUp.find(".ex-modal").css("height", popH + "px");
     popUp.find(".modal-content .modal-body").css('padding', '8px 14px');
-    popUp.find(".modal-content .modal-body").css("height", (popH - 40) + "px");
+
+    var headerHeight = 40;
+    var contentBorder = 2;
+    var bodyHeightPadding = 18;
+    popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
 
     var iframe = popUp.find("#popup-iframe");
 
     var padding = 15 * 2;
     iframe.css({
         width: popW - padding,
-        height: popH - 82,
+        height: popH - headerHeight - contentBorder - bodyHeightPadding,
         left: left,
         top: top
     });
@@ -133,7 +137,9 @@ window.AGEWnd = window.AGEWnd || {};
 window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, width, height) {
     title = title || '';
     var popH = height || 360;
-    var popW = (width + 104) || 480;
+
+    var oldSiteBodyWidthPadding = 34;
+    var popW = (width + oldSiteBodyWidthPadding) || 480;
     var left = left || 200;
     var top = top || 200;
 
@@ -149,14 +155,17 @@ window.AGEWnd.open = window.AGEWnd.open || function (url, title, left, top, widt
     popUp.removeClass("hidden");
     popUp.find(".popup-title").html(title);
     popUp.find(".ex-modal").css("height", popH + "px");
-    popUp.find(".modal-content .modal-body").css("height", (popH - 40) + "px");
+
+    var headerHeight = 40;
+    var contentBorder = 2;
+    var bodyHeightPadding = 18;
+    popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
 
     var iframe = popUp.find("#popup-iframe");
 
-    var padding = 15 * 2;
     iframe.css({
-        width: popW - padding - 4,
-        height: popH - 40 - 20,
+        width: '100%',
+        height: popH - headerHeight - contentBorder - bodyHeightPadding,
         left: left,
         top: top
     });

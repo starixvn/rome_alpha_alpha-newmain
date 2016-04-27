@@ -1,5 +1,6 @@
 [
     {
+        "CompileOnSave": true,
         "outputFileName": "Assets/bundles/default-index.js",
         "inputFiles": [
             "Assets/scripts/core.js",
@@ -12,6 +13,7 @@
         ]
     },
     {
+        "CompileOnSave": true,
         "outputFileName": "Assets/bundles/default-index.css",
         "inputFiles": [
             "Assets/Styles/home/page.css",

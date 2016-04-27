@@ -377,8 +377,12 @@
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
     <Content Include="Assets\bundles\default-index.css" />
     <Content Include="Assets\bundles\default-index.js" />
-    <Content Include="Assets\bundles\default-index.min.css" />
-    <Content Include="Assets\bundles\default-index.min.js" />
+    <Content Include="Assets\bundles\default-index.min.css">
+      <DependentUpon>default-index.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-index.min.js">
+      <DependentUpon>default-index.js</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\announcement\images\bottomborder.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon_h.png" />
