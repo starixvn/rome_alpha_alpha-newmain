@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Helpers
 {
+    using System.Diagnostics;
     using System.Linq;
+    using System.Reflection;
     using System.Web;
     using Configurations;
     using Main.Helpers;
@@ -11,7 +13,11 @@
 
         static ContentSite()
         {
-            StaticResourcesVersion = AppSettings.StaticResourcesVersion;
+
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+            StaticResourcesVersion = fvi.FileVersion;
         }
 
         public static string Url(string virtualPath)
