@@ -19,7 +19,6 @@ var index = {
     },
 
     init: function () {
-        window.document.title = alpha.urls.mainRootPath.substr(1, alpha.urls.mainRootPath.length - 2);
         $.material.init();
         index.cachedDomElements();
         index.setCurrentUrl();
@@ -86,7 +85,7 @@ var index = {
 
     cacheCurrentUrl: function () {
         var currentUrl = document.getElementById("main").contentWindow.location.href;
-       
+
         $.cookie(index.currentPageCookieName, currentUrl, { expires: 1, path: '/' });
 
         setTimeout(index.cacheCurrentUrl, 1000);
