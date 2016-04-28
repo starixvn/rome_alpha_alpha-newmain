@@ -284,6 +284,7 @@ var headerMessage = {
 
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
             headerMessage.domElements.userMessageModal.tinyDraggable();
+            headerMessage.calculateHotMessagePopupHeight(false);
         }
     },
 
