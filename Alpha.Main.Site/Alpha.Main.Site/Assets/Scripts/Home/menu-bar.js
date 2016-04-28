@@ -14,14 +14,12 @@
         accountInfoContent: null
     },
     urls: {
-        accountInfo: alpha.urls.oldMainRootPath + '_AccountInfo/AccountInfo.aspx?fromNewSite=1'
+        accountInfo: alpha.urls.oldMainRootPath + '_AccountInfo/AccountInfo.aspx'
     },
 
     init: function () {
         menuBar.storeElements();
         menuBar.bindEvents();
-
-
     },
     storeElements: function () {
         menuBar.domElements.subMenuItems = $('.sub-menu-item');
@@ -108,39 +106,14 @@
                 accInfoContent.attr('src', menuBar.urls.accountInfo);
             }
 
-            accInfoContent.unbind("load").load(function () {
-                var contentHeight = accInfoContent.contents().find("html").height();
-
-                var iframeHeightPadding = 20;
-
-                var iframeHeight = contentHeight + iframeHeightPadding;
-                var topHeight = 88;
-                var maxHeight = $(window).height() - 50 - topHeight;
-                if (iframeHeight >= maxHeight) {
-                    iframeHeight = maxHeight;
-                }
-
-                accInfoContent.css("height", iframeHeight);
-            });
-
-        });
-
-        menuBar.domElements.accountInfoTab.click(function () {
-            var accInfoContent = menuBar.domElements.accountInfoContent;
-            var src = accInfoContent.attr('src');
-            if (!src) {
-                accInfoContent.attr('src', menuBar.urls.accountInfo);
-            }
-
-            accInfoContent.unbind("load").load(function () {
-                var contentHeight = accInfoContent.contents().find("html").height();
-                var iframeHeightPadding = 20;
+            // To work on IE, use plain-old javascript onload event
+            accInfoContent[0].onload = function () {
+                var contentHeight = accInfoContent.contents().find("body").height();
+                var iframeHeightPadding = 40;
                 var iframeHeight = contentHeight + iframeHeightPadding;
                 accInfoContent.css("height", iframeHeight);
-            });
-
+            };
         });
-       
     },
     activeSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');
