@@ -1,0 +1,76 @@
+﻿namespace Alpha.Main.Site.Helpers
+{
+    using System.Configuration;
+    using System.Diagnostics;
+    using System.Linq;
+    using System.Reflection;
+    using System.Web;
+    using System.Web.Configuration;
+    using Configurations;
+    using Main.Helpers;
+
+    public static class StaticResources
+    {
+        private static readonly string StaticResourcesVersion;
+        private static readonly string MinText = ".min";
+
+        static StaticResources()
+        {
+            if (IsDebugMode())
+            {
+                MinText = string.Empty;
+            }
+
+            StaticResourcesVersion = GetBuildVersion();
+        }
+
+        private static string GetBuildVersion()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+            return versionInfo.FileVersion;
+        }
+
+        private static bool IsDebugMode()
+        {
+            var compilationSection = (CompilationSection)ConfigurationManager.GetSection(@"system.web/compilation");
+
+            return compilationSection.Debug;
+        }
+
+        #region Assets App
+
+        public static class AssetStyles
+        {
+            public static IHtmlString Render(params string[] paths)
+            {
+                return System.Web.Optimization.Styles.Render(paths.Select(path => $"{AppSettings.AssetAppPath}{path}{MinText}.css?v={StaticResourcesVersion}").ToArray());
+            }
+        }
+
+        public static class AssetScripts
+        {
+            public static IHtmlString Render(params string[] paths)
+            {
+                return System.Web.Optimization.Scripts.Render(paths.Select(path => $"{AppSettings.AssetAppPath}{path}{MinText}.js?v={StaticResourcesVersion}").ToArray());
+            }
+        }
+
+        #endregion Assets App
+
+        #region Current site
+
+        public static string MainSiteScriptUrl(string relativePath)
+        {
+            return VirtualPathUtility.ToAbsolute($"{relativePath}{MinText}.js?v={StaticResourcesVersion}");
+        }
+
+        public static string MainSiteStyleUrl(string relativePath)
+        {
+            return VirtualPathUtility.ToAbsolute($"{relativePath}{MinText}.css?v={StaticResourcesVersion}");
+        }
+
+        #endregion
+    }
+}

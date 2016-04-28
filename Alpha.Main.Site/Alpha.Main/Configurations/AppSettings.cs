@@ -5,11 +5,11 @@
 
     public static class AppSettings
     {
-        public static string ContentAppPath
+        public static string AssetAppPath
         {
             get
             {
-                return ConfigurationManager.AppSettings["ContentAppPath"];
+                return ConfigurationManager.AppSettings["AssetAppPath"];
             }
         }
 
