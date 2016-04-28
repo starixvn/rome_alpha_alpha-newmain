@@ -325,4 +325,7 @@
   <data name="Less" xml:space="preserve">
     <value>less</value>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>注销</value>
+  </data>
 </root>
