@@ -12,11 +12,11 @@
                   data-minute="@DateTime.Now.Minute"
                   data-second="@DateTime.Now.Second"></span>
         </li>
-        <li class="dropdown">
+        <li class="dropdown language">
             @Html.Action("List", "Language")
         </li>
-        <li><a class="txt-top old-view-text withripple" href="@Model.OldMainRootPath"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span>@Resources.OldView</a></li>
-        <li class="dropdown">
+        <li class="view-type"><a class="txt-top old-view-text withripple" href="@Model.OldMainRootPath"><span class="icon icon-swap-horizontal" title="@Resources.OldView"></span>@Resources.OldView</a></li>
+        <li class="dropdown setting">
             <a id="btn-header-menu" href="javascript:;" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
                 <span class="icon icon-squares top-right-menu"></span>
             </a>
@@ -35,6 +35,6 @@
                 <li><a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
             </ul>
         </li>
-        <li><span class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></span></li>
+        <li class="logout"><a href="javascript:;" class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
     </ul>
 </section>

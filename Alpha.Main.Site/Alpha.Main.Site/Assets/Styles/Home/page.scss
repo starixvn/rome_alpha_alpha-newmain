@@ -79,7 +79,7 @@ body {
         padding: 0;
 
         .icon {
-            margin-right: 16px;
+            margin-right: 14px;
             width: 16px;
             position: relative;
             left: 1px;
@@ -107,9 +107,11 @@ body {
             padding: 14px 8px 14px 12px;
 
             .icon-arrow-right {
-                font-size: 17px;
+                font-size: 16px;
                 transform: rotate(0);
                 transition: transform 0.3s ease-out;
+                position: relative;
+                top: 2px;
             }
 
             &.active {
@@ -152,10 +154,9 @@ body {
 
 /********************************** Account Info ******************************************/
 .accountinfo-container {
-    display: none;
-    overflow: hidden;
     height: 100%;
     padding: 0;
+    display: none;
 
     &.container {
         width: 100%;
