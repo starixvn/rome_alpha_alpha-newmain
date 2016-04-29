@@ -29,13 +29,13 @@
                         </a>
                         <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
                             @foreach (var subMenuItem in menuItem.VisibileSubMenus)
-                                    {
-                                        <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)">
-                                            <a href="@subMenuItem.Url" target="main">
-                                                @subMenuItem.DisplayName
-                                            </a>
-                                        </li>
-                                    }
+                            {
+                                <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)">
+                                    <a href="@subMenuItem.Url" target="main">
+                                        @subMenuItem.DisplayName
+                                    </a>
+                                </li>
+                            }
                         </ul>
                     </li>
                 }
@@ -53,10 +53,10 @@
 
     if (Model.IsAccountInfoVisible)
     {
-        <section class="accountinfo-container tab-content-container container" >
+        <section class="accountinfo-container tab-content-container container mCustomScrollbar" data-mcs-theme="minimal-dark">
             <span class="icon icon-user"></span>
             <iframe frameborder="0" id="accountinfo-content"
-                    name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content" scrolling="no"></iframe>
+                    name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content" scrolling="auto"></iframe>
         </section>
     }
 }
