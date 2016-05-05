@@ -108,12 +108,19 @@
 
             // To work on IE, use plain-old javascript onload event
             accInfoContent[0].onload = function () {
-                var contentHeight = accInfoContent.contents().find("body").height();
-                var iframeHeightPadding = 40;
-                var iframeHeight = contentHeight + iframeHeightPadding;
-                accInfoContent.css("height", iframeHeight);
+                if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+                    menuBar.domElements.accountInfoContent.addClass('small-device');
+                    menuBar.domElements.tabContentContainers.removeClass('mCustomScrollbar');
+                }
+                else {
+                    var contentHeight = accInfoContent.contents().find("body").height();
+                    var iframeHeightPadding = 40;
+                    var iframeHeight = contentHeight + iframeHeightPadding;
+                    accInfoContent.css("height", iframeHeight);
+                }
             };
         });
+
     },
     activeSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');

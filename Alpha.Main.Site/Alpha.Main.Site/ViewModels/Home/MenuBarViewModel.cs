@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using Main.Models.Menus;
-
+    using System.Web;
     public class MenuBarViewModel
     {
         private Func<bool> menuBarVisibleFunc;
@@ -37,6 +37,46 @@
             {
                 return this.menuItems.Where(menuItem => menuItem.Status.Visible);
             }
+        }
+
+        public bool IsSmallDevice
+        {
+            get
+            {
+                bool isMoblie = false;
+                string strUserAgent = HttpContext.Current.Request.UserAgent.ToLower();
+                if (
+
+                  strUserAgent.Contains("iphone")
+
+                  || strUserAgent.Contains("ipod")
+
+                 || strUserAgent.Contains("android")
+
+                 || strUserAgent.Contains("iemobile")
+
+                 || strUserAgent.Contains("version")
+
+                 || strUserAgent.Contains("blackberry")
+
+                 || strUserAgent.Contains("windows ce")
+
+                 || strUserAgent.Contains("opera mini")
+
+                 || strUserAgent.Contains("palm")
+
+                 || strUserAgent.Contains("ipad"))
+                {
+
+                    return true;
+                }
+
+                return isMoblie;
+            }
+        }
+
+        public string getUserAgent() {
+                return HttpContext.Current.Request.UserAgent.ToLower();
         }
     }
 }

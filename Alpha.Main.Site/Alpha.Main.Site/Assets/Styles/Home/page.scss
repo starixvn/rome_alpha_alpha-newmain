@@ -171,6 +171,10 @@ body {
     #accountinfo-content {
         width: 100%;
         min-height: 500px;
+        &.small-device {
+            height: 93%;
+            min-height: initial;
+        }
     }
 }
 
