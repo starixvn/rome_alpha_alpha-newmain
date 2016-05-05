@@ -3,7 +3,6 @@
     using AppResources;
     using Constants;
     using Criteria.Announcement;
-    using Entities.Announcements;
     using Fanex.Common;
     using Fanex.Data.Repository;
     using Helpers;

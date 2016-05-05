@@ -2,8 +2,8 @@
 {
     using Alpha.Main.Models.Enumerations;
     using Criteria.Announcement;
-    using Entities.Announcements;
     using Fanex.Data.Repository;
+    using Models.Announcements;
     using NSubstitute;
     using Params.Announcements;
     using System.Collections.Generic;

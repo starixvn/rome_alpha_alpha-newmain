@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Entities.Announcements
+﻿namespace Alpha.Main.Models.Announcements
 {
     public class PersonalMessage
     {
