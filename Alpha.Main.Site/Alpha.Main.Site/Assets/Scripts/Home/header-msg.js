@@ -121,7 +121,6 @@ var headerMessage = {
     showHotMessages: function () {
         if (headerMessage.domElements.currentHotMessage.length > 0) {
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
-            headerMessage.domElements.userMessageModal.tinyDraggable();
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
@@ -283,7 +282,6 @@ var headerMessage = {
             }
 
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
-            headerMessage.domElements.userMessageModal.tinyDraggable();
             headerMessage.calculateHotMessagePopupHeight(false);
         }
     },

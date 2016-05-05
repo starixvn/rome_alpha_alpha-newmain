@@ -124,8 +124,6 @@ window.age.OpenPopUp = function (url, title, width, height, position) {
             popUp.find(".popup-title").html(iframeTitle);
         }
     });
-
-    popUp.tinyDraggable();
 }
 
 window.age.ClosePopUp = function () {
@@ -185,8 +183,6 @@ window.ageWnd.open = window.ageWnd.open || function (url, title, left, top, widt
             popUp.find(".popup-title").html(iframeTitle);
         }
     });
-
-    popUp.tinyDraggable();
 };
 
 window.bootboxConfirm = function (message, handleElement, acceptCallback, cancelCallback) {
