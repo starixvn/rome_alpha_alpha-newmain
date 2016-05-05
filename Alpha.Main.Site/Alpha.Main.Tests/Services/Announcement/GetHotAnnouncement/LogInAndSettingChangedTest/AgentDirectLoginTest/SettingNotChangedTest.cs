@@ -18,7 +18,8 @@
 
             var announcementServiceImpl = new AnnouncementServiceImpl(
                 logInAndSettingChangedCondition.DynamicRepository,
-                showedMessageCondition.SecurityCodeService);
+                showedMessageCondition.SecurityCodeService,
+                ValidAnnouncementTimeCondition.DateTimeWrapper);
             var localFileAnnouncementCondition = LocalFileConditionFactory.Create(hasAnnouncement);
             localFileAnnouncementCondition.SetUpCondition(query);
 

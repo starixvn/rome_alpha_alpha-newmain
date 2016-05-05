@@ -20,7 +20,10 @@
             var showedMessageCondition = new ShowedMessageCondition(false);
             showedMessageCondition.SetUpCondition(query);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService);
+            var announcementServiceImpl = new AnnouncementServiceImpl(
+                null,
+                showedMessageCondition.SecurityCodeService,
+                ValidAnnouncementTimeCondition.DateTimeWrapper);
 
             var localFileAnnouncementCondition = LocalFileConditionFactory.Create(hasAnnouncement);
             localFileAnnouncementCondition.SetUpCondition(query);

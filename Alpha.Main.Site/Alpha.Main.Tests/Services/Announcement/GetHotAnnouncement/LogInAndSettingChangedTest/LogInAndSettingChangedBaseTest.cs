@@ -9,8 +9,12 @@
         {
             var securityCodeCondition = new NotRequireSecurityCodeCondition();
             HotAnnouncementsParams = securityCodeCondition.HotAnnouncementsParams();
+
+            ValidAnnouncementTimeCondition = new ValidAnnouncementTimeCondition();
         }
 
         public GetHotAnnouncementsParams HotAnnouncementsParams { get; set; }
+
+        public ValidAnnouncementTimeCondition ValidAnnouncementTimeCondition { get; set; }
     }
 }

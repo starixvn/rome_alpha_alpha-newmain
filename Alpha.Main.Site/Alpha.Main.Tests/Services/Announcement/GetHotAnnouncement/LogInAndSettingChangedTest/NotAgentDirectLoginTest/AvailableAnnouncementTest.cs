@@ -3,7 +3,6 @@
     using Alpha.Main.Services.Impl;
     using LocalFileCondition;
     using Models.Announcements;
-    using NUnit.Framework;
 
     public class AvailableAnnouncementTest : NotAgentDirectLoginBaseTest
     {

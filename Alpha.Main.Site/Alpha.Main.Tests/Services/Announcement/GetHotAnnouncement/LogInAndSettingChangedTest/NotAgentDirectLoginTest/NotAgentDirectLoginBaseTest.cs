@@ -6,10 +6,6 @@
         {
             var logInAndSettingChangedCondition = new NotAgentDirectLoginCondition();
             logInAndSettingChangedCondition.SetUpCondition(HotAnnouncementsParams);
-
-            ValidAnnouncementTimeCondition = new ValidAnnouncementTimeCondition();
         }
-
-        public ValidAnnouncementTimeCondition ValidAnnouncementTimeCondition { get; set; }
     }
 }

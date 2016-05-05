@@ -35,7 +35,7 @@
 
         public ActionResult MenuBar()
         {
-            var viewModel = mediator.Send(new MenuBarQuery(userSession.RoleId));
+            var viewModel = mediator.Send(new MenuBarQuery(userSession.RoleId, Request.UserAgent));
 
             return PartialView(viewModel);
         }
