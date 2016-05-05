@@ -20,7 +20,7 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Web.SessionState;
-
+    using Main.Helpers.Impl;
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
@@ -113,6 +113,7 @@
             container.Register<SecurityCodeService, SecurityCodeServiceImpl>(Lifestyle.Transient);
             container.Register<UserMessageService, UserMessageServiceImpl>(Lifestyle.Transient);
             container.Register<SessionManager, SessionManagerImpl>(Lifestyle.Transient);
+            container.Register<SiteMapReader, SiteMapReaderImpl>(Lifestyle.Transient);
         }
 
         private static void RegisterDataAccesses(Container container)

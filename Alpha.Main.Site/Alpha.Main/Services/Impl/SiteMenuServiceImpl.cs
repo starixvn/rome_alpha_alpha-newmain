@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Web;
     using Fanex.Common.Helper;
+    using Helpers;
     using Models.Enumerations;
     using Models.Menus;
 
@@ -14,14 +15,20 @@
 
         private readonly CachingManager cacheManager;
         private readonly MenuItemBuilder menuItemBuilder;
+        private readonly SiteMapReader siteMapReader;
 
-        public SiteMenuServiceImpl(CachingManager cacheManager, MenuItemBuilder menuItemBuilder)
+        public SiteMenuServiceImpl(
+            CachingManager cacheManager, 
+            MenuItemBuilder menuItemBuilder,
+            SiteMapReader siteMapReader)
         {
             Check.Argument.IsNotNull(cacheManager, nameof(cacheManager));
             Check.Argument.IsNotNull(menuItemBuilder, nameof(menuItemBuilder));
+            Check.Argument.IsNotNull(siteMapReader, nameof(siteMapReader));
 
             this.cacheManager = cacheManager;
             this.menuItemBuilder = menuItemBuilder;
+            this.siteMapReader = siteMapReader;
         }
 
         public IEnumerable<IMenuItem> GetMenuByUserLevel(UserLevel userLevel)
@@ -41,9 +48,9 @@
 
             if (menuItems == null)
             {
-                Check.Argument.IsNotNull(SiteMap.RootNode, nameof(SiteMap.RootNode));
+                var rootNode = this.siteMapReader.GetRootNode();
 
-                menuItems = BuildMenu(SiteMap.RootNode, userLevel);
+                menuItems = BuildMenu(rootNode, userLevel);
 
                 cacheManager.Add(cacheKey, menuItems);
             }
@@ -53,8 +60,6 @@
 
         private List<IMenuItem> BuildMenu(SiteMapNode siteMapNode, UserLevel userLevel)
         {
-            Contract.Ensures(siteMapNode != null, nameof(siteMapNode));
-
             var menuItems = new List<IMenuItem>();
 
             if (siteMapNode.HasChildNodes)

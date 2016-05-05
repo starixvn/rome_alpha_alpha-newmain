@@ -147,7 +147,9 @@
     <Compile Include="Helpers\AppPathHelper.cs" />
     <Compile Include="Helpers\IDateTime.cs" />
     <Compile Include="Helpers\Impl\DateTimeWrap.cs" />
+    <Compile Include="Helpers\Impl\SiteMapReaderImpl.cs" />
     <Compile Include="Helpers\MicroSites.cs" />
+    <Compile Include="Helpers\SiteMapReader.cs" />
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
     <Compile Include="Models\Announcements\HotAnnouncement.cs" />
     <Compile Include="Models\Announcements\PersonalMessage.cs" />

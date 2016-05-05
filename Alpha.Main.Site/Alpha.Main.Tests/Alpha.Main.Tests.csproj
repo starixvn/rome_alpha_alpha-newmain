@@ -105,6 +105,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -114,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\RoleId.cs" />
+    <Compile Include="Helps\CustomSiteMapProvider.cs" />
     <Compile Include="Helps\FileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AnnouncementServiceImplTests.cs" />
@@ -145,9 +147,14 @@
     <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\NotRequireSecurityCodeCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\SecurityCodeBaseCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\ValidAnnouncementTimeCondition.cs" />
+    <Compile Include="Services\SiteMenuServiceImplTests.cs" />
     <Compile Include="Services\UserMessageServiceImplTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="TestData\Menus\TestGetByLevel.sitemap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="app.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
