@@ -1,13 +1,10 @@
-﻿namespace Alpha.Main.Tests.Helps
+﻿namespace Alpha.Main.Tests.Helpers
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.Specialized;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Web;
     using System.Xml;
+    using Helps;
     public class CustomSiteMapProvider : StaticSiteMapProvider
     {
         private String _siteMapFileName;
@@ -116,9 +113,9 @@
             var roles = rootElement.GetAttribute("roles") ?? string.Empty;
 
             newSiteMapNode.Roles = roles.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            newSiteMapNode.ResourceKey = rootElement.GetAttribute("resourceKey");
 
             return newSiteMapNode;
         }
-
     }
 }

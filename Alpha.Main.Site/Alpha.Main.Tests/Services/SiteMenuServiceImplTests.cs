@@ -1,14 +1,10 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Web;
     using Helpers;
-    using Helps;
+    using Main.Helpers;
     using Main.Services;
     using Main.Services.Impl;
     using Models.Enumerations;
@@ -46,7 +42,7 @@
 
             //// Act
             var actualMenuItems = siteMenuServiceImpl.GetMenuByUserLevel(Enumeration.FromValue<UserLevel>(userLevelId));
-            
+
             //// Assert
             Assert.AreEqual(menuItems, actualMenuItems);
         }
@@ -54,10 +50,10 @@
         [TestCase(2, 5)] //// Agent
         [TestCase(3, 7)] //// Master
         [TestCase(4, 6)] //// Super
-        public void GetMenuByUserLevel_UserLevelIsValid_ReturnMenuItemsByUserLevel(byte userLevelId, int numberOfAccessedMenu)
+        public void GetMenuByUserLevel_UserLevelIsValid_ReturnMenuItemsByUserLevelName(byte userLevelId, int numberOfAccessedMenu)
         {
             //// Arrange
-            var rootNode = CreateRootNodeStub(@"\TestData\Menus\TestGetByLevel.sitemap");
+            var rootNode = CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelName.sitemap");
             siteMapReader.GetRootNode().Returns(rootNode);
 
             //// Act
@@ -65,6 +61,58 @@
 
             //// Assert
             Assert.AreEqual(numberOfAccessedMenu, CountMenuItems(actualMenuItems));
+        }
+
+        [TestCase(2, 5)] //// Agent
+        [TestCase(3, 7)] //// Master
+        [TestCase(4, 6)] //// Super
+        public void GetMenuByUserLevel_UserLevelIsValid_ReturnMenuItemsByUserLevelId(byte userLevelId, int numberOfAccessedMenu)
+        {
+            //// Arrange
+            var rootNode = CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelId.sitemap");
+            siteMapReader.GetRootNode().Returns(rootNode);
+
+            //// Act
+            var actualMenuItems = siteMenuServiceImpl.GetMenuByUserLevel(Enumeration.FromValue<UserLevel>(userLevelId));
+
+            //// Assert
+            Assert.AreEqual(numberOfAccessedMenu, CountMenuItems(actualMenuItems));
+        }
+
+        [Test]
+        public void GetMenuByUserLevel_ReadSiteMapData_ExecuteBuildMenuItemForEachMenu()
+        {
+            //// Arrange
+            var rootNode = CreateRootNodeStub(@"\TestData\Menus\OneUrlAgentSiteMap.sitemap");
+            siteMapReader.GetRootNode().Returns(rootNode);
+
+            //// Act
+            siteMenuServiceImpl.GetMenuByUserLevel(Enumeration.FromValue<UserLevel>(2));
+
+            //// Assert
+            menuItemBuilder.Received(1).BuildMenuItem(
+                Arg.Is<SiteMapNode>(siteMapNode => siteMapNode.Url == "~/Forecast"
+                                                && siteMapNode.ResourceKey == "soccer"));
+        }
+
+        [TestCase(2, 5)] //// Agent
+        [TestCase(3, 7)] //// Master
+        [TestCase(4, 6)] //// Super
+        public void GetMenuByUserLevel_GotSiteMapData_StoreSiteMapInCacheByUserLevel(byte userLevelId, int numberOfAccessedMenu)
+        {
+            //// Arrange
+            var userLevel = Enumeration.FromValue<UserLevel>(userLevelId);
+            var rootNode = CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelName.sitemap");
+            siteMapReader.GetRootNode().Returns(rootNode);
+
+            //// Act
+            siteMenuServiceImpl.GetMenuByUserLevel(userLevel);
+
+            //// Assert
+            cachingManager.Received().Add(
+                $"Alpha.Main.MenuForLevel.{userLevel.DisplayName}",
+                Arg.Is<IEnumerable<IMenuItem>>(
+                menuItems => CountMenuItems(menuItems) == numberOfAccessedMenu));
         }
 
         private int CountMenuItems(IEnumerable<IMenuItem> menuItems)
@@ -89,13 +137,13 @@
             var customeSiteMapProvider = new CustomSiteMapProvider();
             NameValueCollection providerAttributes = new NameValueCollection(1);
             providerAttributes.Add("siteMapFile", siteMapFilePath);
+
             // Initialize the provider with a provider name and file name.
-            customeSiteMapProvider.Initialize("testProvider", providerAttributes);
+            customeSiteMapProvider.Initialize("customPervider", providerAttributes);
             var rootNode = customeSiteMapProvider.BuildSiteMap();
 
             return rootNode;
         }
-
 
         private List<IMenuItem> CreateMenuItemsStub()
         {
@@ -120,6 +168,5 @@
                 }
             };
         }
-
     }
 }
