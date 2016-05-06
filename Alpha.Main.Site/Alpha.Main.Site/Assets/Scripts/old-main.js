@@ -4,7 +4,7 @@
 top.ph = alpha.user.passwordHash;
 top.isNewSite = true;
 top.errCodes = [];
-top.oldMainRootPath = alpha.urls.oldMainRootPath;
+top.baseUrl = alpha.urls.oldMainRootPath;
 top.mainRootPath = alpha.urls.mainRootPath;
 
 top.AGE = top.AGE || {};
@@ -196,4 +196,8 @@ window.bootboxAlert = function (message, handleElement, callbackFunction) {
             top: startTop + position.top + checkboxBottom
         });
     }
+};
+
+var AGEWnd = function (docContext) {
+    return top.ageWnd;
 };
