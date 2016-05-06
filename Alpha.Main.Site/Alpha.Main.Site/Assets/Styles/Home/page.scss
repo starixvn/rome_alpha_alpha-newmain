@@ -121,6 +121,7 @@ body {
                     transform: rotate(90deg);
                 }
             }
+
             &:hover {
                 background: #e5e5e5;
             }
@@ -136,8 +137,9 @@ body {
         }
     }
 
-    .sub-menu .sub-menu-item {     
+    .sub-menu .sub-menu-item {
         padding: 9px 15px 9px 44px;
+
         a {
             color: #555555;
             display: table;
@@ -171,6 +173,7 @@ body {
     #accountinfo-content {
         width: 100%;
         min-height: 500px;
+
         &.small-device {
             height: 93%;
             min-height: initial;
@@ -196,7 +199,7 @@ body {
     background: #f4f4f4;
     position: absolute;
     bottom: 0;
-    left: 0; 
+    left: 0;
     right: 0;
     top: 88px;
     z-index: 80;
@@ -207,4 +210,9 @@ body {
     }
 }
 
-
+.mask-loading-div {
+    background-color: #fff;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 99;
+}
