@@ -2,7 +2,7 @@
 {
     using Alpha.Main.Services.Impl;
     using LocalFileCondition;
-    using Models.Announcements;
+    using Main.Models.Announcements;
 
     public class NotAgentOrAdminLogInTest : LogInAndSettingChangedBaseTest
     {

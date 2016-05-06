@@ -2,7 +2,7 @@
 {
     using Alpha.Main.Services.Impl;
     using Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LocalFileCondition;
-    using Models.Announcements;
+    using Main.Models.Announcements;
 
     public class ForceUseSecurityCodeSiteTest : NotAgentDirectLoginBaseTest
     {

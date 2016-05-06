@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement
 {
+    using System.Collections.Generic;
     using Alpha.Main.Models.Enumerations;
     using Criteria.Announcement;
     using Fanex.Data.Repository;
-    using Models.Announcements;
+    using Main.Models.Announcements;
     using NSubstitute;
     using Params.Announcements;
-    using System.Collections.Generic;
 
     public class AgentDirectLoginAndSettingChangedCondition : LogInAndSettingChangedCondition
     {

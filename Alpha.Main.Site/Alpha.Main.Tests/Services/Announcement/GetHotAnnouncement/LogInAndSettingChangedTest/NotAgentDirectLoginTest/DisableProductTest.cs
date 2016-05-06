@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest
 {
-    using LocalFileCondition;
-    using Main.Services.Impl;
-    using Models.Announcements;
     using System.Collections.Generic;
+    using LocalFileCondition;
+    using Main.Models.Announcements;
+    using Main.Services.Impl;
 
     public class DisableProductTest : NotAgentDirectLoginBaseTest
     {

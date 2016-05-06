@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest
 {
     using Alpha.Main.Services.Impl;
-    using Models.Announcements;
+    using Main.Models.Announcements;
 
     public class SettingChangedTest : LogInAndSettingChangedBaseTest
     {

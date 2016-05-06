@@ -12,7 +12,7 @@
     public class MenuItemBuilderImplTests
     {
         private IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
-        private IAuthorizationService authorizationService;
+        //private IAuthorizationService authorizationService;
 
 
     }
