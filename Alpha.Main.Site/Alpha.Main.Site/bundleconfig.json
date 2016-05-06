@@ -4,6 +4,7 @@
         "outputFileName": "Assets/bundles/default-index.js",
         "inputFiles": [
             "Assets/scripts/core.js",
+            "Assets/scripts/old-main.js",
             "Assets/scripts/home/header-nav.js",
             "Assets/scripts/home/header-msg.js",
             "Assets/scripts/home/index.js",

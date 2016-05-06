@@ -383,6 +383,7 @@
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
+    <Content Include="Assets\scripts\old-main.js" />
     <Content Include="Assets\styles\announcement\images\bottomborder.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon_h.png" />
