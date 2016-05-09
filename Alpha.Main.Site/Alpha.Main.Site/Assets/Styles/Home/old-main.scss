@@ -1,0 +1,93 @@
+﻿@import "variables";
+@import "mixins";
+
+/*************************************************/
+/* Popup */
+/*************************************************/
+.AGEWnd {
+	background-color: $popup-bg;
+	border: 1px solid $popup-border;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0 16px 16px;
+    @include box-sizing('content-box');
+    @include effect-special;
+}
+
+.AGEWndMask {
+	background-color: transparent;
+	border: dashed 2px $popup-border;
+	border-style: dotted;
+	cursor: move;
+	z-index: 1002;
+}
+
+.AGEWndTitleMask {
+	background-color: #727272;
+	border: solid 0 #fff;
+	border-style: none;
+	cursor: move;
+	filter: alpha(opacity=01);
+	height: 20px;
+	left: 0;
+	margin: 0;
+	opacity: 0.01;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	z-index: 1002;
+}
+
+.AGEWndTable {
+	border: solid 0 transparent;
+	cursor: default;
+	margin: 0;
+	padding: 0;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.AGEWndTitle {
+	-moz-user-select: none;
+	color: $text-color;
+	font-weight: bold;
+	margin: 0;
+    border-bottom: 1px solid $popup-border;
+}
+
+.AGEWndTitleDiv {
+	font-size: $font-size;
+	font-weight: bold;    
+}
+
+.AGEWndTitleText {
+	cursor: pointer;
+	text-align: left;
+}
+
+.AGEWndTitleButton {
+	height: 20px;
+	overflow: hidden;
+	padding-right: 1px;
+	text-align: right;
+	width: 20px;
+}
+
+.AGEWndCloseButton {
+	display: block;
+	cursor: pointer;
+
+     &:after {                
+        content: '\e92c';
+        font:{
+            family: 'Iconalpha';
+            size: 14px;
+            weight: bold;
+        }
+    }
+}
+
+.AGEWndNoPadding {
+	margin: 0;
+	padding: 0;
+}

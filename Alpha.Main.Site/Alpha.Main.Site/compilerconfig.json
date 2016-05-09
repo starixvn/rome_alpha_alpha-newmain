@@ -1,7 +1,11 @@
 ﻿[
-    {
-        "outputFile": "Assets/Styles/home/popup-message.css",
-        "inputFile": "Assets/Styles/home/popup-message.scss"
+  {
+    "outputFile": "Assets/Styles/home/popup-message.css",
+    "inputFile": "Assets/Styles/home/popup-message.scss"
+  },
+   {
+        "outputFile": "Assets/Styles/home/old-main.css",
+        "inputFile": "Assets/Styles/home/old-main.scss"
     },
     {
         "outputFile": "Assets/Styles/home/page.css",
