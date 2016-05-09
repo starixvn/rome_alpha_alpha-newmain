@@ -78,5 +78,13 @@
                     (securityCodeSession.IsEnableSecurityCode || this.showSecurityVerify);
             }
         }
+
+        public bool IsInternalWebVPN
+        {
+            get
+            {
+                return userSession.IsInternalWebVPN;
+            }
+        }
     }
 }

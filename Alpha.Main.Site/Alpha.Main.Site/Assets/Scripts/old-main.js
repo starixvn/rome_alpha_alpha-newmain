@@ -6,7 +6,7 @@ top.isNewSite = true;
 top.errCodes = [];
 top.baseUrl = alpha.urls.oldMainRootPath;
 top.mainRootPath = alpha.urls.mainRootPath;
-
+top.IsInternalWebVPN = $("#isInternalWebVPN");
 top.AGE = top.AGE || {};
 top.AGE.PERMISSIONS = alpha.user.subPageAccess;
 
@@ -149,9 +149,11 @@ window.age = window.age || {
         } else {
             el = document.createElement(type);
         }
+
         if (typeof parent != "undefined") {
             parent.appendChild(el);
         }
+
         return el;
     },
     CalculateViewport: function () {
@@ -175,6 +177,7 @@ window.age = window.age || {
                 age.viewport.width = document.documentElement.clientWidth;
                 age.viewport.height = document.documentElement.clientHeight;
             }
+
             age.viewport.width = Math.max(document.body.scrollWidth, age.viewport.width);
             age.viewport.height = Math.max(document.body.scrollHeight, age.viewport.height);
         }

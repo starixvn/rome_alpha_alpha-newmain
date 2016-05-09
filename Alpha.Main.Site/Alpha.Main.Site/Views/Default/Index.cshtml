@@ -50,6 +50,7 @@
     @Html.Hidden("passwordHash", Model.PasswordHash)
     @Html.Hidden("howToUseRootPath", Model.HowToUseRootPath)
     @Html.Hidden("subPageAccess", Model.SubPageAccess)
+    @Html.Hidden("isInternalWebVPN", Model.IsInternalWebVPN)
 
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/Assets/bundles/default-index"))" type="text/javascript"></script>

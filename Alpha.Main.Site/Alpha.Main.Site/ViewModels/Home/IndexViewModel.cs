@@ -18,6 +18,7 @@
         private readonly string passwordHash;
         private readonly string subPageAccess;
         private readonly bool enableSecurityCode;
+        private readonly bool isInternalWebVPN;
 
         public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl)
         {
@@ -30,6 +31,7 @@
             this.passwordHash = Encryption.RandomString(new Random().Next(4, 8));
             this.subPageAccess = message.SubPageAccess;
             this.enableSecurityCode = message.EnableSecurityCode;
+            this.isInternalWebVPN = message.IsInternalWebVPN;
         }
 
         public bool EnableSecurityCode
@@ -125,6 +127,14 @@
             get
             {
                 return this.subPageAccess;
+            }
+        }
+
+        public bool IsInternalWebVPN
+        {
+            get
+            {
+                return this.isInternalWebVPN;
             }
         }
     }
