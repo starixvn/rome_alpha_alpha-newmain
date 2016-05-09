@@ -4,6 +4,9 @@
 top.ph = alpha.user.passwordHash;
 top.isNewSite = true;
 top.errCodes = [];
+top.errMsgs = [];
+top.userNames = [];
+
 top.baseUrl = alpha.urls.oldMainRootPath;
 top.mainRootPath = alpha.urls.mainRootPath;
 top.IsInternalWebVPN = $("#isInternalWebVPN");
@@ -184,6 +187,19 @@ window.age = window.age || {
     },
     isIE: function () {
         return (/msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent));
+    },
+    SignOut: function () {
+        var index = window;
+        while (index != index.parent) {
+            index = index.parent;
+        }
+
+        index.location = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
+
+        if (index.location.href.indexOf('https://imb.') == 0 ||
+            index.location.href.indexOf('https://int.') == 0) {
+            index.close();
+        }
     }
 };
 
