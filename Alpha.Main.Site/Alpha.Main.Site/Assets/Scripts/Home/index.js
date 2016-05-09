@@ -21,10 +21,10 @@ var index = {
     init: function () {
         $.material.init();
         index.cachedDomElements();
-        index.setCurrentUrl();
         index.loadPartialViews();
         index.registerEvents();
 
+        index.setCurrentUrl();
         setTimeout(index.cacheCurrentUrl, 1000);
     },
 
@@ -87,16 +87,10 @@ var index = {
         var currentUrl = document.getElementById("main").contentWindow.location.href;
 
         $.cookie(index.currentPageCookieName, currentUrl, { expires: 1, path: '/' });
-
-        setTimeout(index.cacheCurrentUrl, 1000);
     },
 
     setCurrentUrl: function () {
-        var currentUrl = $.cookie(index.currentPageCookieName);
-
-        if (!currentUrl || currentUrl === 'about:blank') {
-            currentUrl = index.domElements.content.data('default-url');
-        }
+        var currentUrl = index.domElements.content.data('default-url');
 
         if (index.domElements.mainFrame
             && index.domElements.mainFrame.length > 0) {

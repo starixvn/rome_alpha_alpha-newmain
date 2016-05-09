@@ -1,14 +1,14 @@
 ﻿namespace Alpha.Main
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
     using Helpers;
     using Models.Menus;
     using Sunplus.Agent.Model.BL.Definitions;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
@@ -138,6 +138,22 @@
             {
                 // Use the OLD flow of Security Code.
                 return MicroSites.OldMainUrl("~/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
+            }
+
+            var currentURLCookie = System.Web.HttpContext.Current.Request.Cookies["DFFKDHFJKLDHFJDH"];
+            var ignoreUrls = new List<string> {
+                "Error.aspx" ,
+                "SignIn.aspx",
+                "ChangePassword.aspx",
+                "SecurityCode"
+            };
+
+            if (currentURLCookie != null &&
+                !string.IsNullOrEmpty(currentURLCookie.Value) &&
+                !Current.IsInternal &&
+                !ignoreUrls.Where(str => currentURLCookie.Value.Contains(str)).Any())
+            {
+                return currentURLCookie.Value;
             }
 
             return _defaultMainPage;

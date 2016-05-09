@@ -206,6 +206,9 @@ window.age = window.age || {
 age.CreateMaskDiv();
 
 window.ageWnd = window.ageWnd || {
+    popUp: [],
+    callback: [],
+
     open: function (url, title, left, top, width, height, callBack) {
         title = title || '';
         var popH = height || 360;
@@ -260,7 +263,19 @@ window.ageWnd = window.ageWnd || {
                 popUp.find(".popup-title").html(iframeTitle);
             }
         });
+
+        window.ageWnd.popUp.push(popUp);
+        window.ageWnd.callback.push();
     },
+    close: function () {
+        var popUp = window.ageWnd.popUp.pop();
+        popUp.remove();
+
+        var callBack = window.ageWnd.callback.pop();
+        if (callBack && typeof (callBack) == "function") {
+            callBack();
+        }
+    }
 };
 
 window.bootboxConfirm = function (message, handleElement, acceptCallback, cancelCallback) {
