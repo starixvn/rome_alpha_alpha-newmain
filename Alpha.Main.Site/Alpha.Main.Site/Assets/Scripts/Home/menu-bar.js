@@ -11,7 +11,8 @@
         menuContainer: null,
         tabContentContainers: null,
         accountInfoTab: null,
-        accountInfoContent: null
+        accountInfoContent: null,
+        redirectItems: null
     },
     urls: {
         accountInfo: alpha.urls.oldMainRootPath + '_AccountInfo/AccountInfo.aspx'
@@ -34,6 +35,7 @@
         menuBar.domElements.tabContentContainers = $('.tab-content-container');
         menuBar.domElements.accountInfoTab = $('.accountinfo');
         menuBar.domElements.accountInfoContent = $('.accinfo-content');
+        menuBar.domElements.redirectItems = $('.redirect-item');
     },
     bindEvents: function () {
         menuBar.domElements.menuOpener.click(function () {
@@ -121,6 +123,9 @@
             };
         });
 
+        menuBar.domElements.redirectItems.click(function () {
+            index.saveCurrentUrl($(this).attr('href'));
+        });
     },
     activeSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');

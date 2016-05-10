@@ -120,6 +120,9 @@ var index = {
                 }
             });
         });
+    },
+    saveCurrentUrl: function (currentUrl) {
+        $.cookie(index.currentPageCookieName, currentUrl, { expires: 1, path: '/' });
     }
 };
 

@@ -9,6 +9,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Web;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
@@ -140,7 +141,7 @@
                 return MicroSites.OldMainUrl("~/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
             }
 
-            var currentURLCookie = System.Web.HttpContext.Current.Request.Cookies["DFFKDHFJKLDHFJDH"];
+            var currentURLCookie = HttpContext.Current.Request.Cookies["DFFKDHFJKLDHFJDH"];
             var ignoreUrls = new List<string> {
                 "Error.aspx" ,
                 "SignIn.aspx",
@@ -153,7 +154,7 @@
                 !Current.IsInternal &&
                 !ignoreUrls.Where(str => currentURLCookie.Value.Contains(str)).Any())
             {
-                return currentURLCookie.Value;
+                return HttpUtility.UrlDecode(currentURLCookie.Value);
             }
 
             return _defaultMainPage;

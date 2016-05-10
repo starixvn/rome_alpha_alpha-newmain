@@ -31,7 +31,7 @@
                             @foreach (var subMenuItem in menuItem.VisibileSubMenus)
                             {
                                 <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)">
-                                    <a href="@subMenuItem.Url" target="main">
+                                    <a href="@subMenuItem.Url" target="main" class="redirect-item">
                                         @subMenuItem.DisplayName
                                     </a>
                                 </li>
@@ -42,7 +42,7 @@
                 else
                 {
                     <li class="menu-item">
-                        <a class="withripple menu-opener parent-menu" href="@menuItem.Url" target="main">
+                        <a class="withripple menu-opener parent-menu redirect-item" href="@menuItem.Url" target="main">
                             <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
                         </a>
                     </li>
