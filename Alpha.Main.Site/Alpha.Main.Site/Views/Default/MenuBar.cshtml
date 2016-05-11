@@ -3,12 +3,10 @@
 {
     <div>
         <ul class="main-tab" id="main-tab">
-            <li class="mainmenu withripple active " data-target-container="mainmenu-container"><a href="javascript:;">@Resources.mainMenu</a></li>
+            <li class="mainmenu withripple active " data-target-container="mainmenu-container"><a>@Resources.mainMenu</a></li>
             <li class="accountinfo withripple  @(Model.IsAccountInfoVisible ? string.Empty : "disabledView")"
                 data-target-container="accountinfo-container">
-                <a href="javascript:;">
-                    @(Model.IsAccountInfoVisible ? @Resources.accountInfo : string.Empty)
-                </a>
+                <a>@(Model.IsAccountInfoVisible ? @Resources.accountInfo : string.Empty)</a>
             </li>
         </ul>
         <div class="extra-box">
@@ -22,8 +20,7 @@
                 if (menuItem.VisibileSubMenus.Any())
                 {
                     <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)">
-                        <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)"
-                           href="javascript:;">
+                        <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)">
                             <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@Html.Raw(menuItem.DisplayName)</span>
                             <span class="pull-right icon-arrow-right"></span>
                         </a>

@@ -1,8 +1,10 @@
-﻿
+﻿@import "_variables.scss";
+@import "_mixins.scss";
+
 body {
     margin: 0;
-    font-family: Roboto;
-    font-size: 13px;
+    font-family: $font-family;
+    font-size: $font-size;
     overflow: hidden;
 }
 
@@ -12,29 +14,29 @@ body {
     height: 88px;
 
     .profile-avatar {
+        @include border-radius(50%);
         display: inline-block;
         height: 56px;
         width: 56px;
         border: 3px solid rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
         float: left;
         margin: 14px 12px;
         cursor: pointer;
 
         img {
+            @include border-radius(50%);
             width: 100%;
             height: 100%;
-            border-radius: 50%;
         }
     }
 
     .userinfo {
         color: #fff;
-        font-size: 13px;
+        //font-size: 13px;
         padding-top: 22px;
 
         > p {
-            font-size: 12px;
+            font-size: $font-size - 1;
             margin-top: 8px;
 
             a {
@@ -57,11 +59,9 @@ body {
     bottom: 0;
 
     .panel {
+        @include box-shadow(none);
         background: transparent;
         border: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
     }
 
     &.panel-group {
@@ -90,12 +90,11 @@ body {
             }
 
             &.icon-announcements {
-                //font-size: 20px;
-                //margin-right: 12px;
             }
         }
 
         > a {
+            cursor: pointer;
             color: #222;
             display: table;
             white-space: nowrap;
@@ -107,8 +106,8 @@ body {
             padding: 14px 8px 14px 12px;
 
             .icon-arrow-right {
+                @include transform(rotate(0));
                 font-size: 16px;
-                transform: rotate(0);
                 transition: transform 0.3s ease-out;
                 position: relative;
                 top: 2px;
@@ -118,7 +117,7 @@ body {
                 background: #e5e5e5;
 
                 .icon-arrow-right {
-                    transform: rotate(90deg);
+                    @include transform(rotate(90deg));
                 }
             }
 

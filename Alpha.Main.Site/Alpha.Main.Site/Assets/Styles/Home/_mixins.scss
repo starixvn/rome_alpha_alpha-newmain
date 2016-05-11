@@ -7,6 +7,16 @@
           #{$property}: #{$value};
 }
 
+/// Box Shadow
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
+  @if ($inset != "") {
+    @include css3-prefix('box-shadow', $inset $x $y $blur $color);
+  } @else {
+    @include css3-prefix('box-shadow', $x $y $blur $color);
+  }
+}
+
 /// Border Radius
 /// @param {Size} $radius [5px] - Radius
 /// @require {mixin} css3-prefix
@@ -23,6 +33,14 @@
   @include css3-prefix('box-sizing', $type);
 }
 
+/// Transform
+/// @param {List} $params - Params
+/// @require {mixin} css3-prefix
+
+@mixin transform($params) {
+  @include css3-prefix('transform', $params);
+}
+
 /*******************************************/
 /* Effect of dropdownlist */
 /*******************************************/
@@ -32,3 +50,5 @@
    -moz-box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
    box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
 }
+
+
