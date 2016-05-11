@@ -7,9 +7,13 @@
         "outputFile": "Assets/Styles/home/old-main.css",
         "inputFile": "Assets/Styles/home/old-main.scss"
     },
-    {
-        "outputFile": "Assets/Styles/home/page.css",
-        "inputFile": "Assets/Styles/home/page.scss"
+  {
+    "outputFile": "Assets/Styles/home/page.css",
+    "inputFile": "Assets/Styles/home/page.scss"
+  },
+      {
+        "outputFile": "Assets/Styles/home/tooltip.css",
+        "inputFile": "Assets/Styles/home/tooltip.scss"
     },
     {
         "outputFile": "Assets/Styles/customer-profiles/customer-profile.css",

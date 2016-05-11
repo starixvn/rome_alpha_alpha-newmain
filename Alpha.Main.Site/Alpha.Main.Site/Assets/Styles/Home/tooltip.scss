@@ -1,0 +1,65 @@
+﻿@import "_variables.scss";
+
+#toolTipSettingMinPT {
+  color: $text-color;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: 17px;
+  position: absolute;
+  width: 355px;
+  z-index: 1000;
+
+  .minptleft, .minptbg, .minptright {
+      float: left;
+      height: 72px;
+  }
+   .minptleft {
+      background: url(images/minptleft.png) no-repeat;      
+      width: 19px;
+    }
+
+    .minptbg {
+      background: url(images/minptbg.png) repeat-x;
+    }
+
+    .minptright {
+      background: url(images/minptright.png) no-repeat;
+      width: 10px;
+    }
+
+    .minptarrow {
+      background: url(images/minptarrow.png) no-repeat;
+      height: 21px;
+      width: 22px;
+    }
+
+    %arrow {
+        float: left;
+        margin-top: -7px;
+    }
+    .arrow1 {
+        @extend %arrow;
+        margin-left: 50px;
+    }
+
+    .arrow2 {
+        @extend %arrow;
+        margin-left: 170px;
+    }
+
+    .minptclose {
+      background: url(images/minptclose.png) no-repeat;
+      cursor: pointer;
+      float: left;
+      height: 13px;
+      margin-right: -1px;
+      margin-top: 10px;
+      width: 13px;
+    }
+
+    .text {
+      float: left;
+      padding-top: 26px;
+      width: 310px;
+    }
+}
