@@ -362,3 +362,38 @@ function ShowSecCodePopup(preUrl) {
         return true;
     });
 }
+
+//Javascript code snippet to create a div dynamically in Javascript.
+function CreateDiv(id, html, className, left, top, position) {
+
+    var newdiv = document.createElement('div');
+    newdiv.setAttribute('id', id);
+
+    if (position != "") {
+        newdiv.style.position = position;
+    }
+
+    if (left != "") {
+        newdiv.style.left = left;
+    }
+    if (top != "") {
+        newdiv.style.top = top;
+    }
+
+    if (className != "") {
+        newdiv.className = className;
+    }
+
+    if (html != "") {
+        newdiv.innerHTML = html;
+    }
+
+    document.body.appendChild(newdiv);
+}
+
+function RemoveDiv(idNode) {
+    var self = document.getElementById(idNode);
+    if (self != null) {
+        self.parentNode.removeChild(self);
+    }
+}
