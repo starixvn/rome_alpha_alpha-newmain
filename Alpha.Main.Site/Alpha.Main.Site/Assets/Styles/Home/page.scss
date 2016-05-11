@@ -159,7 +159,8 @@ body {
     height: 100%;
     padding: 0;
     display: none;
-
+    -webkit-overflow-scrolling: touch ;
+    overflow: scroll;
     &.container {
         width: 100%;
     }
@@ -173,9 +174,9 @@ body {
     #accountinfo-content {
         width: 100%;
         min-height: 500px;
-
+        margin-bottom: 50px;
         &.small-device {
-            height: 93%;
+            height: 100%;
             min-height: initial;
         }
     }
@@ -183,6 +184,7 @@ body {
 
 /********************************** Content-wrapper ******************************************/
 .content-wrapper {
+    display: table-cell;
     position: absolute;
     left: 256px;
     right: 0;
@@ -190,7 +192,7 @@ body {
     bottom: 0;
 
     &.expanded {
-        left: 42px;
+        left: 40px;
     }
 }
 

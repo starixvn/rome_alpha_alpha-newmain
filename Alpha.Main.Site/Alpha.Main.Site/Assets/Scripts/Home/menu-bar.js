@@ -112,8 +112,7 @@
             accInfoContent[0].onload = function () {
                 if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
                     menuBar.domElements.accountInfoContent.addClass('small-device');
-                    menuBar.domElements.tabContentContainers.removeClass('mCustomScrollbar');
-                }
+                  }
                 else {
                     var contentHeight = accInfoContent.contents().find("body").height();
                     var iframeHeightPadding = 40;

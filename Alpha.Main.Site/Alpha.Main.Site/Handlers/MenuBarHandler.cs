@@ -20,7 +20,7 @@
         {
             var menuItems = siteMenuService.GetMenuByUserLevel(message.UserLevel);
 
-            var viewModel = new MenuBarViewModel(menuItems);
+            var viewModel = new MenuBarViewModel(menuItems, message.IsSmallDevice);
 
             return viewModel;
         }
