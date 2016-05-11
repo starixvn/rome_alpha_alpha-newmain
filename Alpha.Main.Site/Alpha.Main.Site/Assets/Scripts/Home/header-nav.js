@@ -118,7 +118,8 @@ var headerNav = {
     },
 
     registerEvents: function () {
-        headerNav.domElements.iconLogOut.click(alpha.core.signOut);
+
+        headerNav.domElements.iconLogOut.on('click touchend', alpha.core.signOut);
 
         headerNav.domElements.iconCollapse.click(function () {
             headerNav.collapseLeftPanel($(this));
