@@ -1,9 +1,10 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.Announcement
 {
-    using Constants;
+    using Fanex.Razorbill.Security.Configurations;
     using Main.Models.Announcements;
     using Main.Models.Enumerations;
     using MediatR;
+    using Params.Announcements;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
     using System.Collections.Generic;
@@ -21,11 +22,18 @@
         public const int OfferedSuperLive = 3577701;
         public const int OfferedColossusBets = 4523901;
 
-        public HotAnnouncementQuery() : this(null, null, null, null)
+        private bool isSecurityCodeActive;
+
+        public HotAnnouncementQuery() : this(null, null, null, null, null)
         {
         }
 
-        internal HotAnnouncementQuery(IDictionary<int, bool> productsStatus, IUserSession userSession, string privateMessageFilePath, string commonAnnouncementFilePath)
+        internal HotAnnouncementQuery(
+            IDictionary<int, bool> productsStatus,
+            IUserSession userSession,
+            string privateMessageFilePath,
+            string commonAnnouncementFilePath,
+            bool? isSecurityCodeActive = null)
         {
             this.productsStatus = productsStatus ?? new Dictionary<int, bool>
                 {
@@ -40,6 +48,8 @@
             var userLevelName = Enumeration.FromValue<UserLevel>(this.userSession.RoleId);
             this.commonAnnouncementFilePath = commonAnnouncementFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAdCommon.xml");
             this.privateMessageFilePath = privateMessageFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAd{userLevelName}Neutral.xml");
+
+            this.isSecurityCodeActive = isSecurityCodeActive.HasValue ? isSecurityCodeActive.Value : SecurityCodeConfig.IsActive;
         }
 
         public string MessageIds { get; set; }
@@ -130,6 +140,30 @@
             {
                 return userSession.Site;
             }
+        }
+
+        public bool IsSecurityCodeActive
+        {
+            get
+            {
+                return isSecurityCodeActive;
+            }
+        }
+
+        public void AssignValue(GetHotAnnouncementsParams hotAnnouncementsParams)
+        {
+            hotAnnouncementsParams.MessageIds = MessageIds;
+            hotAnnouncementsParams.PrivateMessagePath = PrivateMessagePath;
+            hotAnnouncementsParams.CommonAnnouncementPath = CommonAnnouncementPath;
+            hotAnnouncementsParams.AdminId = AdminId;
+            hotAnnouncementsParams.CustId = CustId;
+            hotAnnouncementsParams.UserId = UserId;
+            hotAnnouncementsParams.Language = Language;
+            hotAnnouncementsParams.AnnouncementEnableStatus = ProductsStatus;
+            hotAnnouncementsParams.RoleId = RoleId;
+            hotAnnouncementsParams.Site = Site;
+            hotAnnouncementsParams.SubAccId = SubAccId;
+            hotAnnouncementsParams.UserName = UserName;
         }
     }
 }

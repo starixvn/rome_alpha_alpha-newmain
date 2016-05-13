@@ -1,40 +1,33 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using Fanex.Razorbill.Security.Sessions;
     using Main.Models.Announcements;
     using MediatR;
     using Models.Requests.Announcement;
     using Params.Announcements;
     using Services;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
 
     public class AnnouncementHandler :
          IRequestHandler<HotAnnouncementQuery, HotAnnouncement>
     {
         private readonly AnnouncementService _announcementService;
+        private readonly ISecurityCodeSession securityCodeSession;
 
-        public AnnouncementHandler(AnnouncementService announcementService, IUserSession userSession)
+        public AnnouncementHandler(
+            AnnouncementService announcementService,
+            ISecurityCodeSession securityCodeSession = null)
         {
             _announcementService = announcementService;
+            this.securityCodeSession = securityCodeSession ?? CookieLessSessionFactory.SecurityCodeSession;
         }
 
         public HotAnnouncement Handle(HotAnnouncementQuery message)
         {
-            var hotAnnouncement = _announcementService.GetHotAnnouncement(new GetHotAnnouncementsParams()
-            {
-                MessageIds = message.MessageIds,
-                PrivateMessagePath = message.PrivateMessagePath,
-                CommonAnnouncementPath = message.CommonAnnouncementPath,
-                AdminId = message.AdminId,
-                CustId = message.CustId,
-                UserId = message.UserId,
-                Language = message.Language,
-                AnnouncementEnableStatus = message.ProductsStatus,
-                RoleId = message.RoleId,
-                Site = message.Site,
-                SubAccId = message.SubAccId,
-                UserName = message.UserName
-            });
+            var hotAnnouncementsParams = new GetHotAnnouncementsParams(securityCodeSession, message.IsSecurityCodeActive);
+            message.AssignValue(hotAnnouncementsParams);
+
+            var hotAnnouncement = _announcementService.GetHotAnnouncement(hotAnnouncementsParams);
 
             hotAnnouncement.CookieId = Encryption.PearsonEncode(message.UserId.ToString() + message.SubAccId.ToString());
 
