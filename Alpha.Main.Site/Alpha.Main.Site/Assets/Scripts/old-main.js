@@ -275,6 +275,8 @@ window.ageWnd = window.ageWnd || {
         if (callBack && typeof (callBack) == "function") {
             callBack();
         }
+    },
+    setRect: function (left, top, width, height) {
     }
 };
 
