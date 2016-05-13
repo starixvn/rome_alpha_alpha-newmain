@@ -424,6 +424,11 @@
     <Content Include="Assets\styles\home\images\flag_sprite.png" />
     <Content Include="Assets\Images\icon_user_default.png" />
     <Content Include="Assets\styles\home\images\icon_close.jpg" />
+    <Content Include="Assets\styles\home\images\minptarrow.png" />
+    <Content Include="Assets\styles\home\images\minptbg.png" />
+    <Content Include="Assets\styles\home\images\minptclose.png" />
+    <Content Include="Assets\styles\home\images\minptleft.png" />
+    <Content Include="Assets\styles\home\images\minptright.png" />
     <Content Include="Assets\styles\home\images\profileTooltip_bg.png" />
     <Content Include="Assets\styles\home\images\profileTooltip_left.png" />
     <Content Include="Assets\styles\home\images\profileTooltip_right.png" />
@@ -447,6 +452,12 @@
     </Content>
     <Content Include="Assets\styles\home\popup-message.min.css">
       <DependentUpon>popup-message.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\tooltip.css">
+      <DependentUpon>tooltip.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\tooltip.min.css">
+      <DependentUpon>tooltip.css</DependentUpon>
     </Content>
     <Content Include="favico.ico" />
     <Content Include="Global.asax" />
@@ -480,6 +491,7 @@
     <Content Include="Assets\styles\home\old-main.scss" />
     <Content Include="Assets\styles\home\_variables.scss" />
     <Content Include="Assets\styles\home\_mixins.scss" />
+    <Content Include="Assets\styles\home\tooltip.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>

@@ -191,6 +191,9 @@ body {
 
     &.expanded {
         left: 40px;
+        .header {
+            left: 40px;
+        }
     }
 }
 
