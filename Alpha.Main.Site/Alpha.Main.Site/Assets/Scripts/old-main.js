@@ -277,6 +277,9 @@ window.ageWnd = window.ageWnd || {
         }
     },
     setRect: function (left, top, width, height) {
+    },
+    createInstance: function () {
+        return window.ageWnd;
     }
 };
 
