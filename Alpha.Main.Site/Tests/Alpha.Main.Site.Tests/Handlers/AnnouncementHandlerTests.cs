@@ -47,7 +47,7 @@
             var viewModel = announcementHandler.Handle(query);
 
             // Assert
-            Assert.Equals(true, announcementService.Received().GetHotAnnouncement(Arg.Any<GetHotAnnouncementsParams>()));
+            announcementService.Received().GetHotAnnouncement(Arg.Any<GetHotAnnouncementsParams>());
         }
     }
 }
