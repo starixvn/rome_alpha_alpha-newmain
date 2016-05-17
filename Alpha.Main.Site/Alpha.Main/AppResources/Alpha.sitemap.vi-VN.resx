@@ -124,10 +124,10 @@
     <value>Chi tiết thắng thua của Agent</value>
   </data>
   <data name="BetType24" xml:space="preserve">
-    <value>Double Chance</value>
+    <value>Nhân Đôi Cơ Hội</value>
   </data>
   <data name="BetType26" xml:space="preserve">
-    <value>Both/One/Neither team to score</value>
+    <value>Cả hai/Một/Không Đội Nào Ghi Bàn</value>
   </data>
   <data name="bingoPositionTaking" xml:space="preserve">
     <value>(%) PT của Bingo</value>
@@ -139,31 +139,31 @@
     <value>Biểu đồ</value>
   </data>
   <data name="consolidatedreport" xml:space="preserve">
-    <value>Consolidation</value>
+    <value>Thắng thua của nhóm</value>
   </data>
   <data name="correctscore" xml:space="preserve">
-    <value>Điểm số chính xác</value>
+    <value>Tỷ số chính xác</value>
   </data>
   <data name="creditbalance" xml:space="preserve">
-    <value>Hạn mức /Tín dụng</value>
+    <value>Hạn mức/Balance</value>
   </data>
   <data name="customerlist" xml:space="preserve">
-    <value>Danh sách Thành viên</value>
+    <value>Danh sách Member</value>
   </data>
   <data name="dailywinlossanalysisreport" xml:space="preserve">
     <value>Đánh giá kết quả thắng thua trong ngày</value>
   </data>
   <data name="fthtfglg" xml:space="preserve">
-    <value>FT &amp; HT FG/LG</value>
+    <value>Bàn Thắng Đầu/Cuối</value>
   </data>
   <data name="fthttotalgoal" xml:space="preserve">
-    <value>FT &amp; HT Total Goal</value>
+    <value>Tổng Số Bàn Thắng</value>
   </data>
   <data name="hr" xml:space="preserve">
     <value>Racing</value>
   </data>
   <data name="htft" xml:space="preserve">
-    <value>Hiệp 1 / Toàn thời gian</value>
+    <value>Hiệp 1/Toàn trận</value>
   </data>
   <data name="lbl1x2" xml:space="preserve">
     <value>1 X 2</value>
@@ -172,7 +172,7 @@
     <value>Danh sách Agent</value>
   </data>
   <data name="agentOutstanding" xml:space="preserve">
-    <value>Số tiền chưa xử lý của Agent</value>
+    <value>Tiền chưa xử lý của Agent</value>
   </data>
   <data name="cancelledBets" xml:space="preserve">
     <value>Cược hủy/từ chối</value>
@@ -190,13 +190,13 @@
     <value>Home/Draw/Away No Bet</value>
   </data>
   <data name="HOUL" xml:space="preserve">
-    <value>Handicap/Over Under/Live</value>
+    <value>Cược chấp/Tài Xỉu/Trực tuyến</value>
   </data>
   <data name="masterList" xml:space="preserve">
     <value>Danh sách Master</value>
   </data>
   <data name="masterOutstanding" xml:space="preserve">
-    <value>Số tiền chưa xử lý của Master</value>
+    <value>Tiền chưa xử lý của Master</value>
   </data>
   <data name="matchWinLostDetail" xml:space="preserve">
     <value>Chi tiết thắng thua theo trận</value>
@@ -208,13 +208,13 @@
     <value>Thông tin Thành viên</value>
   </data>
   <data name="memberOutstanding" xml:space="preserve">
-    <value>Số tiền chưa xử lý của Member</value>
+    <value>Tiền chưa xử lý của Member</value>
   </data>
   <data name="memberWinLoss" xml:space="preserve">
     <value>Thắng thua của Member</value>
   </data>
   <data name="monitor" xml:space="preserve">
-    <value>Giám sát lượt cược gần nhất</value>
+    <value>Quản lý cược gần nhất</value>
   </data>
   <data name="newAgent" xml:space="preserve">
     <value>Thành viên Agent mới</value>
@@ -256,13 +256,13 @@
     <value>Thắng thua theo trận</value>
   </data>
   <data name="MemberWinLimit" xml:space="preserve">
-    <value>Giới hạn tiền thắng cược của Member</value>
+    <value>Giới hạn thắng cược của Member</value>
   </data>
   <data name="memberwinlossdetail" xml:space="preserve">
     <value>Chi tiết thắng thua của Member</value>
   </data>
   <data name="moneyline" xml:space="preserve">
-    <value>Money Line</value>
+    <value>Moneyline</value>
   </data>
   <data name="monthlywinlossanalysisreport" xml:space="preserve">
     <value>Phân tích hệ số thắng thua trong tháng</value>
@@ -295,7 +295,7 @@
     <value>Phân tích hệ số thắng thua</value>
   </data>
   <data name="announcements" xml:space="preserve">
-    <value>Announcements</value>
+    <value>Thông Báo</value>
   </data>
   <data name="customerSetting" xml:space="preserve">
     <value>Thiết lập</value>
@@ -304,7 +304,7 @@
     <value>Đăng nhập</value>
   </data>
   <data name="normal" xml:space="preserve">
-    <value>Bình thường</value>
+    <value>Thông dụng</value>
   </data>
   <data name="personalMessage" xml:space="preserve">
     <value>Tin nhắn cá nhân</value>
@@ -325,16 +325,16 @@
     <value>Thống kê của bạn</value>
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">
-    <value>Win Loss Analysis Chart</value>
+    <value>Biểu đồ đánh giá thắng thua</value>
   </data>
   <data name="BetType13" xml:space="preserve">
-    <value>Clean Sheet</value>
+    <value>Giữ Sạch Lưới</value>
   </data>
   <data name="BetType27" xml:space="preserve">
     <value>To win to nil</value>
   </data>
   <data name="BetType28" xml:space="preserve">
-    <value>3-way handicap</value>
+    <value>Cược Chấp 3 Chiều</value>
   </data>
   <data name="BetsAndForecast" xml:space="preserve">
     <value>Tổng Cược &amp; Dự Đoán &lt;span class="beta-version"&gt;Beta&lt;/span&gt;</value>

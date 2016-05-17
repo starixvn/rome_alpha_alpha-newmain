@@ -157,7 +157,7 @@
     <value>Giúp đỡ</value>
   </data>
   <data name="ContactUs" xml:space="preserve">
-    <value>Contact Us</value>
+    <value>Liên hệ</value>
   </data>
   <data name="EditProfilePicture" xml:space="preserve">
     <value>Hình đại diện</value>
@@ -166,19 +166,19 @@
     <value>Tùy chọn đăng nhập</value>
   </data>
   <data name="password" xml:space="preserve">
-    <value>Mật Khẩu</value>
+    <value>Mật khẩu</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
     <value>Mã bảo mật</value>
   </data>
   <data name="OldView" xml:space="preserve">
-    <value>Old View</value>
+    <value>Giao diện Mới/Cũ</value>
   </data>
   <data name="accountInfo" xml:space="preserve">
     <value>Thông tin</value>
   </data>
   <data name="mainMenu" xml:space="preserve">
-    <value>Menu</value>
+    <value>Menu chính</value>
   </data>
   <data name="balanceInfo" xml:space="preserve">
     <value>Tài Khoản</value>
@@ -241,52 +241,52 @@
     <value>Thông tin chưa được cập nhật</value>
   </data>
   <data name="more" xml:space="preserve">
-    <value>more</value>
+    <value>Thêm</value>
   </data>
   <data name="totalActiveClosedSuspended" xml:space="preserve">
-    <value>Tổng số tài khoản hiện đang: Kích hoạt / Khóa / Đình chỉ</value>
+    <value>Tổng số tài khoản đang Hoạt Động/Khóa/Đình Chỉ</value>
   </data>
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>Số tài khoản Agent hiện đang: Kích hoạt/Khóa/Đình chỉ</value>
   </data>
   <data name="totalBGTransferOutstanding" xml:space="preserve">
-    <value>Tổng số tiền chuyển khoản /chưa xử lý bên Bingo</value>
+    <value>Tổng tiền chuyển khoản /chưa xử lý bên Bingo</value>
   </data>
   <data name="totalCSTransferOutstanding" xml:space="preserve">
-    <value>Tổng số tiền chuyển khoản /chưa xử lý bên Casino</value>
+    <value>Tổng tiền chuyển khoản/chưa xử lý của Casino</value>
   </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>Số tài khoản Master hiện đang: Kích hoạt/Khóa/Đình chỉ</value>
   </data>
   <data name="totalP2PTransferOutstanding" xml:space="preserve">
-    <value>Tổng số tiền chuyển khoản /chưa xử lý bên Poker</value>
+    <value>Tổng tiền chuyển khoản/chưa xử lý của Poker</value>
   </data>
   <data name="statistics" xml:space="preserve">
     <value>Thống kê của bạn</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">
-    <value>Thành viên đặt cược nhiều nhất trong tháng</value>
+    <value>Member đặt cược nhiều nhất trong tháng</value>
   </data>
   <data name="newMemberOfTheMonth" xml:space="preserve">
-    <value>Thành viên mới trong tháng</value>
+    <value>Member mới trong tháng</value>
   </data>
   <data name="superOutstanding" xml:space="preserve">
-    <value>Số  tiền chưa xử lý của Super</value>
+    <value>Tiền chưa xử lý của Super</value>
   </data>
   <data name="top10WinningMembers" xml:space="preserve">
-    <value>10 thành viên thắng cược nhiều nhất trong tháng</value>
+    <value>10 member thắng nhiều nhất trong tháng</value>
   </data>
   <data name="totalOutstanding" xml:space="preserve">
-    <value>Tổng số  tiền chưa xử lý</value>
+    <value>Tổng tiền chưa xử lý</value>
   </data>
   <data name="agentOutstanding" xml:space="preserve">
-    <value>Số tiền chưa xử lý của Agent</value>
+    <value>Tiền chưa xử lý của Agent</value>
   </data>
   <data name="masterOutstanding" xml:space="preserve">
-    <value>Số tiền chưa xử lý của Master</value>
+    <value>Tiền chưa xử lý của Master</value>
   </data>
   <data name="show" xml:space="preserve">
-    <value>Show</value>
+    <value>Hiển thị</value>
   </data>
   <data name="member" xml:space="preserve">
     <value>Member</value>
@@ -319,10 +319,10 @@
     <value>Không hiển thị lại</value>
   </data>
   <data name="PrivateMessage" xml:space="preserve">
-    <value>Private Message</value>
+    <value>Tin nhắn cá nhân</value>
   </data>
   <data name="Less" xml:space="preserve">
-    <value>less</value>
+    <value>Rút gọn</value>
   </data>
   <data name="LogOut" xml:space="preserve">
     <value>Đăng Xuất</value>
