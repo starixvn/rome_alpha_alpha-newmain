@@ -2,18 +2,54 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using Auth.Services;
+    using Helpers;
     using Main.Models.Menus;
+    using NSubstitute;
     using NUnit.Framework;
 
     [TestFixture]
     public class MenuItemBuilderImplTests
     {
+        private MenuItemBuilderImpl menuItemBuilderImpl;
         private IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
-        //private IAuthorizationService authorizationService;
+        private IAuthorizationService authorizationService;
 
+        [SetUp]
+        public void SetUp()
+        {
+            authorizationService = Substitute.For<IAuthorizationService>();
+            menuItemTypeConfiguration = new Dictionary<string, Func<MenuStatus>>
+            {
+                { string.Empty, null }
+            };
 
+            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration);
+        }
+
+        [Test]
+        public void BuildMenuItem_SiteMapNodeIsNull_ThrowArgumentIsNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() => menuItemBuilderImpl.BuildMenuItem(null));
+        }
+
+        [Test]
+        public void BuildMenuItem_ReadDataFromSiteMapNode_ReturnMenuItem()
+        {
+            /// Arrange
+            var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\MenuItemBuilder.sitemap");
+            var testNode = rootNode.ChildNodes[0];
+
+            //// Act
+            var actualMenuItem = menuItemBuilderImpl.BuildMenuItem(testNode);
+
+            //// Assert
+            Assert.IsTrue(
+                actualMenuItem.ResourceKey == "soccer"
+                && actualMenuItem.AppPath == "TotalBetsForecastAppPath"
+                && actualMenuItem.Url == "~/Forecast"
+                && actualMenuItem.SubMenus != null
+                && !string.IsNullOrEmpty(actualMenuItem.Key));
+        }
     }
 }

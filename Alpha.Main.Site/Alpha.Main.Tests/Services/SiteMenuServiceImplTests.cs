@@ -53,7 +53,7 @@
         public void GetMenuByUserLevel_UserLevelIsValid_ReturnMenuItemsByUserLevelName(byte userLevelId, int numberOfAccessedMenu)
         {
             //// Arrange
-            var rootNode = CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelName.sitemap");
+            var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelName.sitemap");
             siteMapReader.GetRootNode().Returns(rootNode);
 
             //// Act
@@ -69,7 +69,7 @@
         public void GetMenuByUserLevel_UserLevelIsValid_ReturnMenuItemsByUserLevelId(byte userLevelId, int numberOfAccessedMenu)
         {
             //// Arrange
-            var rootNode = CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelId.sitemap");
+            var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelId.sitemap");
             siteMapReader.GetRootNode().Returns(rootNode);
 
             //// Act
@@ -83,7 +83,7 @@
         public void GetMenuByUserLevel_ReadSiteMapData_ExecuteBuildMenuItemForEachMenu()
         {
             //// Arrange
-            var rootNode = CreateRootNodeStub(@"\TestData\Menus\OneUrlAgentSiteMap.sitemap");
+            var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\OneUrlAgentSiteMap.sitemap");
             siteMapReader.GetRootNode().Returns(rootNode);
 
             //// Act
@@ -102,7 +102,7 @@
         {
             //// Arrange
             var userLevel = Enumeration.FromValue<UserLevel>(userLevelId);
-            var rootNode = CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelName.sitemap");
+            var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelName.sitemap");
             siteMapReader.GetRootNode().Returns(rootNode);
 
             //// Act
@@ -129,20 +129,6 @@
             }
 
             return totalCount;
-        }
-
-        private SiteMapNode CreateRootNodeStub(string siteMapFilePath)
-        {
-            //var rootNode = SiteMap.RootNode;
-            var customeSiteMapProvider = new CustomSiteMapProvider();
-            NameValueCollection providerAttributes = new NameValueCollection(1);
-            providerAttributes.Add("siteMapFile", siteMapFilePath);
-
-            // Initialize the provider with a provider name and file name.
-            customeSiteMapProvider.Initialize("customPervider", providerAttributes);
-            var rootNode = customeSiteMapProvider.BuildSiteMap();
-
-            return rootNode;
         }
 
         private List<IMenuItem> CreateMenuItemsStub()

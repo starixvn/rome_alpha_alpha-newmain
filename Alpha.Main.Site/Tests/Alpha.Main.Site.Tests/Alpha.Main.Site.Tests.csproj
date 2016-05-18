@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="Constants\RoleId.cs" />
     <Compile Include="Handlers\AnnouncementHandlerTests.cs" />
+    <Compile Include="Handlers\MenuBarHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

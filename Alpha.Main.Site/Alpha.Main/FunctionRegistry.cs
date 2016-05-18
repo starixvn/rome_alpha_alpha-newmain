@@ -1,15 +1,15 @@
 ﻿namespace Alpha.Main
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
     using Fanex.Razorbill.Security.Configurations;
     using Fanex.Razorbill.Security.Entities;
     using Fanex.Razorbill.Security.Sessions;
     using Helpers;
     using Models.Menus;
     using Sunplus.Agent.Model.BL.Definitions;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
@@ -142,8 +142,9 @@
             }
 
             var currentURLCookie = HttpContext.Current.Request.Cookies["DFFKDHFJKLDHFJDH"];
-            var ignoreUrls = new List<string> {
-                "Error.aspx" ,
+            var ignoreUrls = new List<string>
+            {
+                "Error.aspx",
                 "SignIn.aspx",
                 "ChangePassword.aspx",
                 "SecurityCode"
