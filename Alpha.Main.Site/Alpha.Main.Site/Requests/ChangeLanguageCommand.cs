@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.Models.Requests
+﻿namespace Alpha.Main.Site.Requests
 {
     using Constants;
     using MediatR;
@@ -23,10 +23,15 @@
             }
         }
 
-        public void ChangeLanguage(string languageCode)
+        public virtual void ChangeLanguage(string languageCode)
         {
+            if (string.IsNullOrWhiteSpace(languageCode))
+            {
+                return;
+            }
+
             userSession.Language = languageCode;
-            userSession.LangKey = Language.CodeKeys[languageCode];            
+            userSession.LangKey = Language.CodeKeys[languageCode];
         }
     }
 }
