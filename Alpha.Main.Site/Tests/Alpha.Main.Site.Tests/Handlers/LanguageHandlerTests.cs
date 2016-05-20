@@ -4,8 +4,8 @@
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
-    using Requests;
     using Site.Handlers;
+    using Site.Requests;
     using Sunplus.Agent.Model.Entities;
     using System;
     using ViewModels;
@@ -127,7 +127,7 @@
         [TestCase(Language.Japanese, Language.Japanese)]
         [TestCase(Language.Thai, Language.Thai)]
         [TestCase(Language.Korean, Language.Korean)]
-        [TestCase(Language.Vietnamese, Language.Korean)]
+        [TestCase(Language.Vietnamese, Language.Vietnamese)]
         public void HandleAllLanguagesQuery_NotNullCommand_ReturnViewModelWithCorrectDataAndLanguageCode(
             string languageCode,
             string expectedLanguageCode)

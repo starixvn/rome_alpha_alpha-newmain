@@ -55,6 +55,11 @@
             return isEqual;
         }
 
+        public override int GetHashCode()
+        {
+            return Data.GetHashCode() ^ CurrentLanguage.GetHashCode();
+        }
+
         /// <summary>
         /// ToString: use for displaying compare result two object (Unit test)
         /// </summary>

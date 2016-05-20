@@ -25,7 +25,8 @@
 
         public virtual void ChangeLanguage(string languageCode)
         {
-            if (string.IsNullOrWhiteSpace(languageCode))
+            if (string.IsNullOrWhiteSpace(languageCode) ||
+                !Language.CodeKeys.ContainsKey(languageCode))
             {
                 return;
             }
