@@ -57,16 +57,9 @@
 
         private string GenerateImage(ProfilePicture profilePicture)
         {
-            try
+            if (profilePicture.BinaryAvatar != null)
             {
-                if (profilePicture.BinaryAvatar != null)
-                {
-                    return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.BinaryAvatar)}";
-                }
-            }
-            catch (Exception ex)
-            {
-                Logs.Write(ex);
+                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.BinaryAvatar)}";
             }
 
             return string.Empty;

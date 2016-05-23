@@ -116,9 +116,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\CustId.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\RoleId.cs" />
+    <Compile Include="Constants\Username.cs" />
     <Compile Include="Handlers\AnnouncementHandlerTests.cs" />
+    <Compile Include="Handlers\CustomerProfileHandlerTests.cs" />
     <Compile Include="Handlers\MenuBarHandlerTests.cs" />
     <Compile Include="Handlers\LanguageHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
