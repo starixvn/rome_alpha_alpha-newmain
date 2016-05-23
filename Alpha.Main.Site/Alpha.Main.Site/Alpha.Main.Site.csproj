@@ -415,24 +415,24 @@
     <Content Include="Assets\styles\announcement\images\toptitlepopup_vn.png" />
     <Content Include="Web.local.config" />
     <Content Include="tsconfig.json" />
-    <None Include="Web.uati7.config">
+    <Content Include="Web.uati7.config">
       <DependentUpon>Web.local.config</DependentUpon>
-    </None>
-    <None Include="Web.napexternal.config">
+    </Content>
+    <Content Include="Web.napexternal.config">
       <DependentUpon>Web.local.config</DependentUpon>
-    </None>
-    <None Include="Web.napinternal.config">
+    </Content>
+    <Content Include="Web.napinternal.config">
       <DependentUpon>Web.local.config</DependentUpon>
-    </None>
-    <None Include="Web.proi1.config">
+    </Content>
+    <Content Include="Web.proi1.config">
       <DependentUpon>Web.local.config</DependentUpon>
-    </None>
-    <None Include="Web.proi7.config">
+    </Content>
+    <Content Include="Web.proi7.config">
       <DependentUpon>Web.local.config</DependentUpon>
-    </None>
-    <None Include="Web.uati1.config">
+    </Content>
+    <Content Include="Web.uati1.config">
       <DependentUpon>Web.local.config</DependentUpon>
-    </None>
+    </Content>
     <TypeScriptCompile Include="Assets\scripts\home\header-msg.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-nav.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\menu-bar.ts" />
