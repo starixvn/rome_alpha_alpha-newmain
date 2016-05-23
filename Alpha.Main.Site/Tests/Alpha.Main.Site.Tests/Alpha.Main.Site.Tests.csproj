@@ -122,6 +122,7 @@
     <Compile Include="Constants\Username.cs" />
     <Compile Include="Handlers\AnnouncementHandlerTests.cs" />
     <Compile Include="Handlers\CustomerProfileHandlerTests.cs" />
+    <Compile Include="Handlers\DefaultHandlerTests.cs" />
     <Compile Include="Handlers\MenuBarHandlerTests.cs" />
     <Compile Include="Handlers\LanguageHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
