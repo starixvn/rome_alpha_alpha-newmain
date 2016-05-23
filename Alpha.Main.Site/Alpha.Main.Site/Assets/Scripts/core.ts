@@ -1,4 +1,6 @@
-﻿var alpha = {
+﻿alert("aaa");
+
+var alpha = {
     urls:
     {
         oldMainRootPath: (<HTMLInputElement>document.getElementById('oldMainRootPath')).value,
