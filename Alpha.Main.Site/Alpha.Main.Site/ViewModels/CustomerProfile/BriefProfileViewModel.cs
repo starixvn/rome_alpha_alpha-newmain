@@ -23,10 +23,6 @@ namespace Alpha.Main.Site.ViewModels.CustomerProfile
 
         public bool LoginUserIsNotMainAccount { get; set; }
 
-        public string SubAccUserName { get; set; }
-
-        public string AdminName { get; set; }
-
         public string NickName { get; set; }
 
         public string IntroduceNickNameTooltipCookieName { get; set; }

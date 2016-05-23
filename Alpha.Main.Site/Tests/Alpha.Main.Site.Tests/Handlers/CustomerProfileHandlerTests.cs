@@ -143,5 +143,88 @@
             // Assert
             Assert.AreEqual(expectedUsername, viewModel.Username);
         }
+
+        [TestCase(false, false, false)]
+        [TestCase(false, true, true)]
+        [TestCase(true, false, true)]
+        [TestCase(true, true, true)]
+        public void HandleBriefProfileQuery_QueryMatchProfile_ReturnIsNotMainAccountMatchWithAccountType(
+            bool isSubAccount,
+            bool isInternal,
+            bool expectedIsNotMainAccount)
+        {
+            // Arrange
+            var customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+
+            var userSession = Substitute.For<IUserSession>();
+            userSession.IsSubAcc.Returns(isSubAccount);
+            userSession.IsInternal.Returns(isInternal);
+
+            var query = new BriefProfileQuery(userSession);
+
+            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
+
+            // Action
+            var viewModel = customerProfileHandler.Handle(query);
+
+            // Assert
+            Assert.AreEqual(expectedIsNotMainAccount, viewModel.LoginUserIsNotMainAccount);
+        }
+
+        [TestCase(true, false, "Sub-Acc ")]
+        [TestCase(true, true, "Sub-Acc ")]
+        [TestCase(false, true, "Admin ")]
+        [TestCase(false, false, "")]
+        public void HandleBriefProfileQuery_QueryMatchProfileWithEmptyName_ReturnNickNameMatchWithAccountType(
+            bool isSubAccount,
+            bool isInternal,
+            string expectedNickName)
+        {
+            // Arrange
+            var customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+
+            var userSession = Substitute.For<IUserSession>();
+            userSession.IsSubAcc.Returns(isSubAccount);
+            userSession.IsInternal.Returns(isInternal);
+            userSession.SubUserName.Returns(string.Empty);
+            userSession.AdminName.Returns(string.Empty);
+            userSession.NickName.Returns(string.Empty);
+
+            var query = new BriefProfileQuery(userSession);
+
+            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
+
+            // Action
+            var viewModel = customerProfileHandler.Handle(query);
+
+            // Assert
+            Assert.AreEqual(expectedNickName, viewModel.NickName);
+        }
+
+        [TestCase(CustId.InvalidId, "CCA80D2C89CCA8EC9280F5088DB181")]
+        [TestCase(CustId.ValidId, "40C8226B76C76797A38A6AC830708A")]
+        public void HandleBriefProfileQuery_QueryMatchProfileWithEmptyName_ReturnToolTipCookieMatchWithCustId(
+            int custId,
+            string expectedCookieToolTipName)
+        {
+            // Arrange
+            var customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+
+            var userSession = Substitute.For<IUserSession>();
+            userSession.CustId.Returns(custId);
+
+            var query = new BriefProfileQuery(userSession);
+
+            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
+
+            // Action
+            var viewModel = customerProfileHandler.Handle(query);
+
+            // Assert
+            Assert.AreEqual(expectedCookieToolTipName, viewModel.IntroduceNickNameTooltipCookieName);
+        }
     }
 }
