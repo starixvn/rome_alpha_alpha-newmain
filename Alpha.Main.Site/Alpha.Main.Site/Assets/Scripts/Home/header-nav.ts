@@ -1,5 +1,6 @@
-﻿/// <reference path="../core.js" />
-/// <reference path="index-page.js" />
+﻿/// <reference path="../core.ts" />
+/// <reference path="index.ts" />
+
 
 'use strict';
 
@@ -24,7 +25,8 @@ var headerNav = {
     resources: {
         labelAM: '',
         labelPM: '',
-        months: []
+        months: [],
+        labelMonths: null
     },
 
     languageCode: null,
@@ -154,7 +156,7 @@ var headerNav = {
         }
     },
     changeLanguage: function (lang) {
-        jQuery.ajax({
+        $.ajax({
             type: "POST",
             url: headerNav.urls.changeLanguage,
             data: { languageCode: lang },

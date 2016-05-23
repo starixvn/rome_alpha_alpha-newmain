@@ -52,13 +52,13 @@ var announcement = {
         });
     },
 
-    removeAnnouncement: function (timeout) {
+    removeAnnouncement: function () {
         var announcementId = announcement.domElements.announcementId;
         if (announcementId != null) {
             announcementId.remove();
             clearTimeout(announcement.timeoutAnnouncement);
             setTimeout(function () {
-                announcement.loadAnnouncementNext(timeout);
+                announcement.loadAnnouncementNext();
             }, announcement.constants.annoucementsTransitionTime);
         }
     },
@@ -123,7 +123,8 @@ var announcement = {
         });
 
         announcement.domElements.popUpContainer.find('.icon-close').click(function () {
-            parent.announcement.removeAnnouncement();
+            //// Re-test again
+            parent['announcement'].removeAnnouncement();
         });
 
         announcement.domElements.hideAdvertisement.click(function () {

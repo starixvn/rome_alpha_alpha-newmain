@@ -1,4 +1,4 @@
-﻿/// <reference path="index.js" />
+﻿
 
 'use strict';
 /*global index*/
@@ -22,6 +22,14 @@ var headerMessage = {
     privateMessageId: 0,
     scrollMessageTimeout: null,
 
+    scrollerLeft: null,
+    scrollerWidth: null,
+    maskWidth: null,
+    scrollerPaused: null,
+    topnews: null,
+    scroller: null,
+
+
     domElements: {
         btnPrivateMessage: null,
         privateMessageCounter: null,
@@ -32,6 +40,7 @@ var headerMessage = {
         userMessageModal: null,
         currentHotMessage: null,
         scroller: null,
+        contentMessage: null,
 
         showMoreContainer: null,
         showLessContainer: null

@@ -1,4 +1,7 @@
-﻿'use strict';
+﻿/// <reference path="../core.ts" />
+
+'use strict';
+declare var $: any;
 
 var briefProfile = {
     maxCountNickNameTooltip: 4,
@@ -17,14 +20,14 @@ var briefProfile = {
 
         briefProfile.checkAndSetShowEditProfilePictureTooltip();
         briefProfile.checkAndShowNickNameTooltip();
-        
+
         briefProfile.registerEvents();
     },
 
     checkAndSetShowEditProfilePictureTooltip: function () {
         var isShowEditProfilePictureTooltip = briefProfile.domElements.profileContent.data('is-default-avatar')
-        && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountNickNameTooltip
-        && briefProfile.domElements.profileContent.data('nick-name').length === 0;
+            && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountNickNameTooltip
+            && briefProfile.domElements.profileContent.data('nick-name').length === 0;
 
         if (isShowEditProfilePictureTooltip) {
             briefProfile.showTooltipProfilePicture();
@@ -33,7 +36,7 @@ var briefProfile = {
 
     checkAndShowNickNameTooltip: function () {
         var countNickNameToolTip = briefProfile.getCountNickNameToolTip();
-
+        
         if (countNickNameToolTip >= briefProfile.maxCountNickNameTooltip) {
             briefProfile.showTooltipIntroNickname();
         }
@@ -57,7 +60,7 @@ var briefProfile = {
         $(document).click(function () {
             briefProfile.hideAllTooltips();
         });
-
+        
         briefProfile.domElements.changePictureLink
             .off('click.brief-profile')
             .on('click.brief-profile', briefProfile.hideProfileTooltip);
@@ -105,5 +108,6 @@ var briefProfile = {
     hideAllTooltips: function () {
         briefProfile.hideTooltipIntroNickname();
         briefProfile.hideProfileTooltip();
+
     }
 };

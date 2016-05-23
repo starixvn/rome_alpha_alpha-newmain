@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -26,6 +27,7 @@
     </NuGetPackageImportStamp>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -411,10 +413,10 @@
     <Content Include="Assets\styles\announcement\images\toptitlepopup_thai.png" />
     <Content Include="Assets\styles\announcement\images\toptitlepopup_TW.png" />
     <Content Include="Assets\styles\announcement\images\toptitlepopup_vn.png" />
-    <Content Include="Assets\scripts\home\header-msg.js" />
-    <Content Include="Assets\scripts\home\header-nav.js" />
-    <Content Include="Assets\scripts\home\menu-bar.js" />
-    <Content Include="Assets\scripts\home\index.js" />
+    <TypeScriptCompile Include="Assets\scripts\home\header-msg.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\header-nav.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\menu-bar.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\index.ts" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_bg.png" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_left.png" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_right.png" />
@@ -469,9 +471,8 @@
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Assets\scripts\announcement\announcement.js" />
-    <Content Include="Assets\scripts\customer-profiles\brief-profile.js" />
-    <Content Include="Assets\scripts\core.js" />
+    <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
+    <TypeScriptCompile Include="Assets\scripts\core.ts" />
     <Content Include="Assets\scripts\piwik-loader.js" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
@@ -633,12 +634,18 @@
       <Name>Alpha.Main</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Assets\scripts\customer-profiles\brief-profile.ts" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
@@ -667,12 +674,14 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"  
+    <PostBuildEvent>cd $(ProjectDir)
+BuildTask.Release
+if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"  
       start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>cd $(ProjectDir)
-BuildTask.Release</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

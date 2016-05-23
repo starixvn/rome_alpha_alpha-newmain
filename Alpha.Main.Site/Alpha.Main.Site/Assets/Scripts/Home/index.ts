@@ -1,4 +1,4 @@
-﻿/// <reference path="../core.js" />
+﻿/// <reference path="../core.ts" />
 
 'use strict';
 /*global alpha, briefProfile*/
@@ -84,7 +84,7 @@ var index = {
     },
 
     cacheCurrentUrl: function () {
-        var currentUrl = document.getElementById("main").contentWindow.location.href;
+        var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href;
 
         $.cookie(index.currentPageCookieName, currentUrl, { expires: 1, path: '/' });
     },
