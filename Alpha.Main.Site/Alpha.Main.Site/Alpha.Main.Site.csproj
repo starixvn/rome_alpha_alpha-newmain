@@ -413,6 +413,25 @@
     <Content Include="Assets\styles\announcement\images\toptitlepopup_thai.png" />
     <Content Include="Assets\styles\announcement\images\toptitlepopup_TW.png" />
     <Content Include="Assets\styles\announcement\images\toptitlepopup_vn.png" />
+    <Content Include="Web.local.config" />
+    <None Include="Web.uati7.config">
+      <DependentUpon>Web.local.config</DependentUpon>
+    </None>
+    <None Include="Web.napexternal.config">
+      <DependentUpon>Web.local.config</DependentUpon>
+    </None>
+    <None Include="Web.napinternal.config">
+      <DependentUpon>Web.local.config</DependentUpon>
+    </None>
+    <None Include="Web.proi1.config">
+      <DependentUpon>Web.local.config</DependentUpon>
+    </None>
+    <None Include="Web.proi7.config">
+      <DependentUpon>Web.local.config</DependentUpon>
+    </None>
+    <None Include="Web.uati1.config">
+      <DependentUpon>Web.local.config</DependentUpon>
+    </None>
     <TypeScriptCompile Include="Assets\scripts\home\header-msg.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-nav.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\menu-bar.ts" />
@@ -556,27 +575,6 @@
     </Content>
     <Content Include="Web.ConnectionStrings.uati7.config">
       <DependentUpon>Web.ConnectionStrings.config</DependentUpon>
-    </Content>
-    <Content Include="Web.local.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.napexternal.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.napinternal.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.proi1.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.proi7.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.uati1.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.uati7.config">
-      <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
