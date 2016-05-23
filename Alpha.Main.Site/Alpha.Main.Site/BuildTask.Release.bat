@@ -15,8 +15,6 @@
 @set compilerConfigFile=compilerconfig.json
 @set bundleConfigFile=bundleconfig.json
 
-"C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.8\tsc.exe" -p "%currentFolder%"
-
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 @echo off
 @setlocal EnableDelayedExpansion
