@@ -64,18 +64,19 @@ window.age = window.age || {
         popUp.find(".popup-title").html(title);
         popUp.find(".ex-modal").css("height", popH + "px");
         popUp.find(".modal-content .modal-body").css('padding', '8px 14px');
+        popUp.find(".modal-content .modal-body").css('overflow', 'hidden');
 
         var headerHeight = 40;
         var contentBorder = 2;
-        var bodyHeightPadding = 38;
         popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
 
         var iframe = popUp.find("#popup-iframe");
 
         var padding = 15 * 2;
+        var verticalPadding = 8 * 2; 
         iframe.css({
             width: popW - padding,
-            height: popH - headerHeight - contentBorder - bodyHeightPadding,
+            height: popH - headerHeight - contentBorder - verticalPadding,
             left: left,
             top: top
         });
