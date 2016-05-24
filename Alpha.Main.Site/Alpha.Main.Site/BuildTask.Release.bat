@@ -24,13 +24,13 @@
 @cd %configFolder%
 @for %%f in (*) do (
 	@if /i "%%f"=="%compilerConfigFile%" (
-		@call !webCompilerApp! "%configFolder%\%%f"
+		@call !webCompilerApp! "%configFolder%\%%f">nul
 	)	
 )
 
 @for %%f in (*) do (
 	@if /i "%%f"=="%bundleConfigFile%" (
-		@call !bundleAndMinifyApp! "%configFolder%\%%f"
+		@call !bundleAndMinifyApp! "%configFolder%\%%f">nul
 	)	
 )
 
