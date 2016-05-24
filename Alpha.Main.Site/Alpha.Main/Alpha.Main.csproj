@@ -201,8 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Alpha.sitemap.th-TH.resx" />
     <EmbeddedResource Include="AppResources\Alpha.sitemap.vi-VN.resx" />
-    <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-CN.resx" />
-    <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-TW.resx" />
+    <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-CN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-TW.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.ja-JP.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

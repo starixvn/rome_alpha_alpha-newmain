@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.LocalFileCondition
 {
     using Alpha.Main.Params.Announcements;
-    using Constants;
     using Helps;
+    using Main.Constants;
 
     public class LocalFileBaseCondition
     {

@@ -138,6 +138,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\CustId.cs" />
     <Compile Include="Constants\RoleId.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\NotRequireSecurityCodeCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\SecurityCodeBaseCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\ValidAnnouncementTimeCondition.cs" />
+    <Compile Include="Services\CustomerProfileServiceImplTests.cs" />
     <Compile Include="Services\SiteMenuServiceImplTests.cs" />
     <Compile Include="Services\UserMessageServiceImplTests.cs" />
   </ItemGroup>
