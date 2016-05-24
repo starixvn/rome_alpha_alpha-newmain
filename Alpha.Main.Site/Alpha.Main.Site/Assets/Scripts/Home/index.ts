@@ -25,7 +25,7 @@ var index = {
         index.registerEvents();
 
         index.setCurrentUrl();
-        setTimeout(index.cacheCurrentUrl, 1000);
+        setInterval(index.cacheCurrentUrl, 1000);
     },
 
     registerEvents: function () {
