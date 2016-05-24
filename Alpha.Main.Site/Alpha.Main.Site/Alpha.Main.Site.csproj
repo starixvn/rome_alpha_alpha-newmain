@@ -414,7 +414,6 @@
     <Content Include="Assets\styles\announcement\images\toptitlepopup_TW.png" />
     <Content Include="Assets\styles\announcement\images\toptitlepopup_vn.png" />
     <Content Include="Web.local.config" />
-    <Content Include="tsconfig.json" />
     <Content Include="Web.uati7.config">
       <DependentUpon>Web.local.config</DependentUpon>
     </Content>
