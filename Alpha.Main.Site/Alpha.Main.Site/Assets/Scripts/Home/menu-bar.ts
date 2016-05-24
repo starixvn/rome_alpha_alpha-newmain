@@ -21,6 +21,7 @@
     init: function () {
         menuBar.storeElements();
         menuBar.bindEvents();
+        menuBar.layoutSmallSize();
     },
     storeElements: function () {
         menuBar.domElements.subMenuItems = $('.sub-menu-item');
@@ -37,32 +38,37 @@
         menuBar.domElements.accountInfoContent = $('.accinfo-content');
         menuBar.domElements.redirectItems = $('.redirect-item');
     },
+    layoutSmallSize: function () {
+        var width = $(window).width();
+        var content = $('.content-wrapper');
+        var isCollapse = menuBar.domElements.sideBar.hasClass('collapsed');
+        var activeSubMenu = $('.menu-item.active .sub-menu');
+        if (width <= 1024) {
+            if (!isCollapse) {
+                activeSubMenu.css('display', 'none');
+                menuBar.domElements.sideBar.addClass('collapsed');
+                content.addClass('expanded');
+                menuBar.domElements.profilePicture.addClass("collapse-image");
+            }
+        }
+        else {
+            activeSubMenu.css('display', 'block');
+            menuBar.domElements.sideBar.removeClass('collapsed');
+            content.removeClass('expanded');
+            menuBar.domElements.profilePicture.removeClass("collapse-image");
+        }
+    },
     bindEvents: function () {
         menuBar.domElements.menuOpener.click(function () {
             var $this = $(this);
-            var menuContainer = $this.closest('li');
-            menuBar.domElements.menuItems.removeClass('active');
-
-            menuContainer.addClass('active');
-            var isVisible = $this.hasClass('active');
-            menuBar.domElements.menuOpener.removeClass('active');
-            menuBar.domElements.subMenu.slideUp('normal');
-
-            var checkElement = $this.next();
-            if (isVisible) {
-                menuContainer.removeClass('active');
-                $this.removeClass('active');
-
-                if (checkElement.is('ul')) {
-                    checkElement.slideUp('normal');
+            if (menuBar.domElements.sideBar.hasClass('focusout')) {
+                menuBar.showMenuBar();
+                if (!$this.hasClass('active')) {
+                    menuBar.collapseMenu($this);
                 }
-            } else {
-                menuContainer.addClass('active');
-                $this.addClass('active');
-
-                if (checkElement.is('ul')) {
-                    checkElement.slideDown('normal');
-                }
+            }
+            else {
+                menuBar.collapseMenu($this);
             }
         });
 
@@ -72,20 +78,10 @@
 
         menuBar.domElements.sideBar.hover(
             function () {
-                if ($(this).hasClass('collapsed')) {
-                    menuBar.domElements.profilePicture.removeClass("collapse-image");
-
-                    var activeSubMenu = $('.menu-item.active .sub-menu');
-                    activeSubMenu.css('display', 'block');
-                }
+                menuBar.showMenuBar();
             },
             function () {
-                if ($(this).hasClass('collapsed')) {
-                    menuBar.domElements.profilePicture.addClass("collapse-image");
-
-                    var activeSubMenu = $('.menu-item.active .sub-menu');
-                    activeSubMenu.css('display', 'none');
-                }
+                menuBar.hideMenuBar();
             }
         );
 
@@ -112,7 +108,7 @@
             accInfoContent[0].onload = function () {
                 if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
                     menuBar.domElements.accountInfoContent.addClass('small-device');
-                  }
+                }
                 else {
                     var contentHeight = accInfoContent.contents().find("body").height();
                     var iframeHeightPadding = 40;
@@ -124,11 +120,66 @@
 
         menuBar.domElements.redirectItems.click(function () {
             index.saveCurrentUrl($(this).attr('href'));
+            menuBar.hideMenuBar();
         });
+
+        $(window).resize(function () {
+            menuBar.layoutSmallSize();
+        });
+        
     },
     activeSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');
         subMenu.addClass('active');
+    },
+
+    showMenuBar: function () {
+        if (menuBar.domElements.sideBar.hasClass('collapsed')) {
+            menuBar.domElements.sideBar.addClass('hovered');
+            menuBar.domElements.sideBar.removeClass('focusout');
+
+            menuBar.domElements.profilePicture.removeClass("collapse-image");
+
+            var activeSubMenu = $('.menu-item.active .sub-menu');
+            activeSubMenu.css('display', 'block');
+        }
+    },
+    hideMenuBar: function () {
+        if (menuBar.domElements.sideBar.hasClass('collapsed')) {
+            menuBar.domElements.profilePicture.addClass("collapse-image");
+
+            menuBar.domElements.sideBar.removeClass('hovered');
+            menuBar.domElements.sideBar.addClass('focusout');
+                        
+            var activeSubMenu = $('.menu-item.active .sub-menu');
+            activeSubMenu.css('display', 'none');
+        }
+    },
+    collapseMenu: function (clickedItem) {
+        var menuContainer = clickedItem.closest('li');
+            menuBar.domElements.menuItems.removeClass('active');
+
+            menuContainer.addClass('active');
+            var isVisible = clickedItem.hasClass('active');
+            menuBar.domElements.menuOpener.removeClass('active');
+            menuBar.domElements.subMenu.slideUp('normal');
+
+            var checkElement = clickedItem.next();
+            if (isVisible) {
+                menuContainer.removeClass('active');
+                clickedItem.removeClass('active');
+
+                if (checkElement.is('ul')) {
+                    checkElement.slideUp('normal');
+                }
+            } else {
+                menuContainer.addClass('active');
+                clickedItem.addClass('active');
+
+                if (checkElement.is('ul')) {
+                    checkElement.slideDown('normal');
+                }
+            }
     }
 };
 

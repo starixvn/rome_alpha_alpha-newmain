@@ -54,10 +54,12 @@ body {
     overflow-y: auto;
     position: absolute;
     left: 0;
-    top: 52px;
+    top: 56px;
     right: 0;
     bottom: 0;
-
+    &.disabledViewAccInfo {
+        top: 40px;
+    }
     .panel {
         @include box-shadow(none);
         background: transparent;

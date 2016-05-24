@@ -3,17 +3,20 @@
 {
     <div>
         <ul class="main-tab" id="main-tab">
-            <li class="mainmenu withripple active " data-target-container="mainmenu-container"><a>@Resources.mainMenu</a></li>
-            <li class="accountinfo withripple  @(Model.IsAccountInfoVisible ? string.Empty : "disabledView")"
-                data-target-container="accountinfo-container">
-                <a>@(Model.IsAccountInfoVisible ? @Resources.accountInfo : string.Empty)</a>
-            </li>
+            <li class="mainmenu withripple active @(Model.IsAccountInfoVisible ? string.Empty : "disabledViewAccInfo")" data-target-container="mainmenu-container"><a>@Resources.mainMenu</a></li>
+            @if (Model.IsAccountInfoVisible)
+            {
+                <li class="accountinfo withripple"
+                    data-target-container="accountinfo-container">
+                    <a>@Resources.accountInfo</a>
+                </li>
+            }
         </ul>
         <div class="extra-box">
             <span class="icon icon-extra icon-dots"></span>
         </div>
     </div>
-    <section class="mainmenu-container tab-content-container mCustomScrollbar" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
+    <section class="mainmenu-container tab-content-container mCustomScrollbar @(Model.IsAccountInfoVisible ? string.Empty : "disabledViewAccInfo")" data-mcs-theme="minimal-dark" id="accordion" role="tablist" aria-multiselectable="true">
         <ul class="list-menu">
             @foreach (var menuItem in Model.MenuItems)
             {
