@@ -6,7 +6,7 @@
 ::	  compilerconfig.json => WebCompiler.exe
 :: 5. Commandline version of BundlerMinifier.exe&WebCompiler.exe doesn't recompile for existing file (css, min, js)
 :: 6. Must install Git and this will clean source code folder when run
-
+@echo off
 
 @set currentFolder=%cd%
 @set configFolder=%currentFolder%
@@ -18,7 +18,6 @@
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 @echo off
 @setlocal EnableDelayedExpansion
-@call :CleanSourceFolder
 @call :FindBundlerMinifierApp bundleAndMinifyApp
 @call :FindWebCompilerApp webCompilerApp
 
@@ -38,11 +37,6 @@
 )
 
 @exit /b 0
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:CleanSourceFolder 
-@git clean -d -x -f
-exit /b
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :FindWebCompilerApp webCompilerApp
