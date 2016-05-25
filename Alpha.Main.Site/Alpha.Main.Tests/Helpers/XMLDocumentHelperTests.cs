@@ -14,7 +14,17 @@
             string documentPath = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(documentPath)));
+            Assert.Throws<ArgumentNullException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(documentPath)));
+        }
+
+        [Test]
+        public void LoadDocumentFromPath_NullPath_ArgumentException()
+        {
+            // Arrange
+            string documentPath = string.Empty;
+
+            // Action & Assert
+            Assert.Throws<ArgumentException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(documentPath)));
         }
     }
 }
