@@ -13,7 +13,7 @@
 
         public static void AppendDocument(XmlDocument documentSource, XmlDocument documentTarget)
         {
-            if (documentSource.DocumentElement == null)
+            if (documentSource.DocumentElement == null || documentTarget.DocumentElement == null)
             {
                 return;
             }
@@ -21,11 +21,6 @@
             foreach (XmlNode childNode in documentSource.DocumentElement.ChildNodes)
             {
                 var newNode = documentTarget.ImportNode(childNode, true);
-                if (documentTarget.DocumentElement == null)
-                {
-                    continue;
-                }
-
                 documentTarget.DocumentElement.AppendChild(newNode);
             }
         }
