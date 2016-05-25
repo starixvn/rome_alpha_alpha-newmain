@@ -17,7 +17,7 @@
     public class AnnouncementHandlerTests
     {
         [Test]
-        public void HandleHotAnnouncementQuery_NullQuery_ThrowArgumentNullException()
+        public void HandleHotAnnouncementQuery_NullQuery_ThrowNullReferenceException()
         {
             // Arrange
             var announcementService = Substitute.For<AnnouncementService>();

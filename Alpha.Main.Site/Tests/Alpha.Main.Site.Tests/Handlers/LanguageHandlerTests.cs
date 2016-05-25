@@ -14,7 +14,7 @@
     public class LanguageHandlerTests
     {
         [Test]
-        public void HandleChangeLanguageCommand_NullCommand_ThrowArgumentNullException()
+        public void HandleChangeLanguageCommand_NullCommand_ThrowNullReferenceException()
         {
             // Arrange
             ChangeLanguageCommand command = null;
@@ -105,7 +105,7 @@
         }
 
         [Test]
-        public void HandleAllLanguagesQuery_NullCommand_ThrowArgumentNullException()
+        public void HandleAllLanguagesQuery_NullCommand_ThrowNullReferenceException()
         {
             // Arrange
             AllLanguagesQuery query = null;

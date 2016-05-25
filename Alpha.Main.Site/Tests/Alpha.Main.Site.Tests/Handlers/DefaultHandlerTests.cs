@@ -15,7 +15,7 @@
         private const string PasswordHashSessionKey = "ph";
 
         [Test]
-        public void HandleIndexQuery_NullQuery_ThrowArgumentNullException()
+        public void HandleIndexQuery_NullQuery_ThrowNullReferenceException()
         {
             // Arrange
             IndexQuery query = null;

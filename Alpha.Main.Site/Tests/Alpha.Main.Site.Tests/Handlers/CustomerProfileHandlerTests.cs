@@ -14,7 +14,7 @@
     public class CustomerProfileHandlerTests
     {
         [Test]
-        public void HandleBriefProfileQuery_NullQuery_ThrowArgumentNullException()
+        public void HandleBriefProfileQuery_NullQuery_ThrowNullReferenceException()
         {
             // Arrange
             BriefProfileQuery query = null;
