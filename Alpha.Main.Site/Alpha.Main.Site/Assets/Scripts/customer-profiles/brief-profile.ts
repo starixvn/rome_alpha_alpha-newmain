@@ -26,8 +26,7 @@ var briefProfile = {
 
     checkAndSetShowEditProfilePictureTooltip: function () {
         var isShowEditProfilePictureTooltip = briefProfile.domElements.profileContent.data('is-default-avatar')
-            && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountNickNameTooltip
-            && briefProfile.domElements.profileContent.data('nick-name').length === 0;
+            && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountNickNameTooltip;
 
         if (isShowEditProfilePictureTooltip) {
             briefProfile.showTooltipProfilePicture();
@@ -36,8 +35,9 @@ var briefProfile = {
 
     checkAndShowNickNameTooltip: function () {
         var countNickNameToolTip = briefProfile.getCountNickNameToolTip();
-        
-        if (countNickNameToolTip >= briefProfile.maxCountNickNameTooltip) {
+
+        if (briefProfile.domElements.profileContent.data('nick-name').length === 0
+                && countNickNameToolTip >= briefProfile.maxCountNickNameTooltip) {
             briefProfile.showTooltipIntroNickname();
         }
         else {
@@ -60,7 +60,7 @@ var briefProfile = {
         $(document).click(function () {
             briefProfile.hideAllTooltips();
         });
-        
+
         briefProfile.domElements.changePictureLink
             .off('click.brief-profile')
             .on('click.brief-profile', briefProfile.hideProfileTooltip);
@@ -91,7 +91,7 @@ var briefProfile = {
 
             setTimeout(function () {
                 briefProfile.hideProfileTooltip();
-            }, 30000);
+            }, 20000);
         }
     },
 
@@ -101,13 +101,12 @@ var briefProfile = {
 
             setTimeout(function () {
                 briefProfile.hideTooltipIntroNickname();
-            }, 30000);
+            }, 20000);
         }
     },
 
     hideAllTooltips: function () {
         briefProfile.hideTooltipIntroNickname();
         briefProfile.hideProfileTooltip();
-
     }
 };
