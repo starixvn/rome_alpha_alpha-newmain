@@ -40,7 +40,7 @@ var briefProfile = {
                 && countNickNameToolTip >= briefProfile.maxCountNickNameTooltip) {
             briefProfile.showTooltipIntroNickname();
         }
-        else {
+        else if (countNickNameToolTip < briefProfile.maxCountNickNameTooltip) {
             briefProfile.setCountNickNameToolTip(++countNickNameToolTip)
         }
     },
