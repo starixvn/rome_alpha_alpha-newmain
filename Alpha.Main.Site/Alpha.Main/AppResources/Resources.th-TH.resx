@@ -170,10 +170,10 @@
     <value>รหัสผ่าน</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
-    <value>Security Code</value>
+    <value>รหัสรักษาความปลอดภัย</value>
   </data>
   <data name="OldView" xml:space="preserve">
-    <value>Old View</value>
+    <value>มุมมองแบบเก่า</value>
   </data>
   <data name="accountInfo" xml:space="preserve">
     <value>ข้อมูลบัญชี</value>
@@ -287,7 +287,7 @@
     <value>การเดิมพันที่ยังไม่สิ้นสุดของ Master</value>
   </data>
   <data name="show" xml:space="preserve">
-    <value>Show</value>
+    <value>โชว์</value>
   </data>
   <data name="member" xml:space="preserve">
     <value>สมาชิก</value>
@@ -320,7 +320,7 @@
     <value>ไม่ต้องแสดงอีกครั้ง</value>
   </data>
   <data name="PrivateMessage" xml:space="preserve">
-    <value>Private Message</value>
+    <value>ข้อความส่วนตัว</value>
   </data>
   <data name="Less" xml:space="preserve">
     <value>less</value>

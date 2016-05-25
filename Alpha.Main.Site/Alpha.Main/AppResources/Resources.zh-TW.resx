@@ -173,7 +173,7 @@
     <value>保安碼</value>
   </data>
   <data name="OldView" xml:space="preserve">
-    <value>Old View</value>
+    <value>舊視圖</value>
   </data>
   <data name="accountInfo" xml:space="preserve">
     <value>用戶資料</value>
@@ -287,7 +287,7 @@
     <value>總代理未結束交易</value>
   </data>
   <data name="show" xml:space="preserve">
-    <value>Show</value>
+    <value>顯示</value>
   </data>
   <data name="member" xml:space="preserve">
     <value>會員</value>
@@ -320,10 +320,10 @@
     <value>不再顯示</value>
   </data>
   <data name="PrivateMessage" xml:space="preserve">
-    <value>Private Message</value>
+    <value>個人訊息</value>
   </data>
   <data name="Less" xml:space="preserve">
-    <value>less</value>
+    <value>少</value>
   </data>
   <data name="LogOut" xml:space="preserve">
     <value>註銷</value>

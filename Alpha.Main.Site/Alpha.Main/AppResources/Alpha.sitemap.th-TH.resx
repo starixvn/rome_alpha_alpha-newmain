@@ -295,7 +295,7 @@
     <value>การวิเคราะห์ ผล แพ้ ชนะ</value>
   </data>
   <data name="announcements" xml:space="preserve">
-    <value>Announcements</value>
+    <value>ประกาศ</value>
   </data>
   <data name="customerSetting" xml:space="preserve">
     <value>ตั้งค่าสมาชิก</value>
@@ -310,7 +310,7 @@
     <value>ข้อความส่วนตัว</value>
   </data>
   <data name="special" xml:space="preserve">
-    <value>Special</value>
+    <value>พิเศษ</value>
   </data>
   <data name="status" xml:space="preserve">
     <value>สถานะ</value>
@@ -325,7 +325,7 @@
     <value>สถิติของคุณ</value>
   </data>
   <data name="winLossAnalysisChart" xml:space="preserve">
-    <value>Win Loss Analysis Chart</value>
+    <value>แผนภูมิวิเคราะห์ เงินได้เสีย</value>
   </data>
   <data name="BetType13" xml:space="preserve">
     <value>ไม่มีการยิงประตู</value>
