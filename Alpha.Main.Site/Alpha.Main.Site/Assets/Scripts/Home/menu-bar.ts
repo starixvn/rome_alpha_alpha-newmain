@@ -119,7 +119,6 @@
         });
 
         menuBar.domElements.redirectItems.click(function () {
-            index.saveCurrentUrl($(this).attr('href'));
             menuBar.hideMenuBar();
         });
 

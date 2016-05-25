@@ -11,6 +11,7 @@
     {
         private readonly int custId;
         private readonly int onlineUserId;
+        private readonly int subAccId;
         private readonly byte roleId;
         private readonly string language;
         private readonly string languageKey;
@@ -27,6 +28,7 @@
             this.language = message.Language;
             this.languageKey = message.LanguageKey;
             this.onlineUserId = message.OnUserId;
+            this.subAccId = message.SubAccId;
             this.getDefaultUrl = getDefaultUrl;
             this.passwordHash = Encryption.RandomString(new Random().Next(4, 8));
             this.subPageAccess = message.SubPageAccess;
@@ -135,6 +137,14 @@
             get
             {
                 return this.isInternalWebVPN;
+            }
+        }
+
+        public string CurrentURLCookieName
+        {
+            get
+            {
+                return CookieHelper.GetCurrentUrlCookieName();
             }
         }
     }

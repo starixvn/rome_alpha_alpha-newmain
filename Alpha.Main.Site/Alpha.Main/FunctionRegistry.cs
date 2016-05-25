@@ -141,7 +141,7 @@
                 return MicroSites.OldMainUrl("~/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
             }
 
-            var currentURLCookie = HttpContext.Current.Request.Cookies["DFFKDHFJKLDHFJDH"];
+            var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
             var ignoreUrls = new List<string>
             {
                 "Error.aspx",
@@ -155,7 +155,12 @@
                 !Current.IsInternal &&
                 !ignoreUrls.Where(str => currentURLCookie.Value.Contains(str)).Any())
             {
-                return HttpUtility.UrlDecode(currentURLCookie.Value);
+                Uri currentUrl = new Uri(HttpUtility.UrlDecode(currentURLCookie.Value));
+
+                if (HttpContext.Current.Request.Url.Host == currentUrl.Host)
+                {
+                    return currentUrl.ToString();
+                }
             }
 
             return _defaultMainPage;

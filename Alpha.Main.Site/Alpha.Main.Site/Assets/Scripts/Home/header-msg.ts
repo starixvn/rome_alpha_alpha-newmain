@@ -77,7 +77,7 @@ var headerMessage = {
 
         headerMessage.domElements.btnSpecialMessage
             .off('click.headermsg')
-            .on('click.headermsg', headerMessage.viewSpecialMessage);
+            .on('click.headermsg', headerMessage.viewLiveMessage);
 
         headerMessage.domElements.liveMessage
             .off('click.headermsg')

@@ -37,6 +37,14 @@
             }
         }
 
+        public int SubAccId
+        {
+            get
+            {
+                return userSession.SubAccId;
+            }
+        }
+
         public byte RoleId
         {
             get

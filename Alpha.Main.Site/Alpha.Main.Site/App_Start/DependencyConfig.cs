@@ -22,7 +22,6 @@
     using SimpleInjector.Integration.Web.Mvc;
     using Sunplus.Agent.Model.Entities;
 
-
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
