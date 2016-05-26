@@ -7,6 +7,7 @@
     <link href="@(StaticResources.MainSiteStyleUrl("~/Assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
     <div id="page-popup" class="modal fade hidden" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog ex-modal" role="document">
             <div class="modal-content">
@@ -21,6 +22,13 @@
             </div>
         </div>
     </div>
+
+    <div id="warning-browser-message" style="display:none;">
+        <span>@Resources.BrowserIsOutOfDate</span>
+        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">@Resources.ClickToUpdateBrowser</a>
+    </div>
+
+
     <aside class="sidebar">
         <div class="partial-content customer-profile" id="profile" data-url="@Url.Action("BriefProfile", "CustomerProfile")"></div>
         <nav class="navigation" id="navigation">

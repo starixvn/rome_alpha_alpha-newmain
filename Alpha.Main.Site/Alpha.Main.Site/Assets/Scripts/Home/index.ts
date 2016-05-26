@@ -20,12 +20,13 @@ var index = {
     },
 
     init: function () {
+        index.checkIEBrowserAndShowWarning();
         $.material.init();
         index.cachedDomElements();
         index.loadPartialViews();
         index.registerEvents();
-
         index.setCurrentUrl();
+        
     },
 
     registerEvents: function () {
@@ -124,6 +125,15 @@ var index = {
                 }
             });
         });
+    },
+
+    checkIEBrowserAndShowWarning: function () {
+        var myNav = navigator.userAgent.toLowerCase();
+        var ieVersion = (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : 10;
+
+        if (ieVersion <= 9) {
+            document.getElementById("warning-browser-message").style.display = "block";
+        }
     }
 };
 

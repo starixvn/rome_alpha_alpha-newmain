@@ -124,6 +124,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your browser is out of date and might not be working properly width our website. For a better support, we strongly recommend that you upgrade to a newer version..
+        /// </summary>
+        public static string BrowserIsOutOfDate {
+            get {
+                return ResourceManager.GetString("BrowserIsOutOfDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cash Balance.
         /// </summary>
         public static string cashBalance {
@@ -138,6 +147,15 @@ namespace Alpha.Main.AppResources {
         public static string clickHere {
             get {
                 return ResourceManager.GetString("clickHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click here to update your browser.
+        /// </summary>
+        public static string ClickToUpdateBrowser {
+            get {
+                return ResourceManager.GetString("ClickToUpdateBrowser", resourceCulture);
             }
         }
         
