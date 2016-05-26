@@ -16,16 +16,28 @@
     [TestFixture]
     public class AnnouncementHandlerTests
     {
+        private AnnouncementService announcementService;
+        private ISecurityCodeSession securityCodeSession;
+        private AnnouncementHandler announcementHandler;
+        private IUserSession userSession;
+
+        [SetUp]
+        public void SetUp()
+        {
+            announcementService = Substitute.For<AnnouncementService>();
+            securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            announcementHandler = new AnnouncementHandler(announcementService, securityCodeSession);
+            userSession = Substitute.For<IUserSession>();
+        }
+
         [Test]
         public void HandleHotAnnouncementQuery_NullQuery_ThrowNullReferenceException()
         {
             // Arrange
-            var announcementService = Substitute.For<AnnouncementService>();
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            var announcementHandler = new AnnouncementHandler(announcementService, securityCodeSession);
+            HotAnnouncementQuery nullQuery = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => announcementHandler.Handle(null)));
+            Assert.Throws<NullReferenceException>(new TestDelegate(() => announcementHandler.Handle(nullQuery)));
         }
 
         [Test]
@@ -33,16 +45,11 @@
         {
             // Arrange
             var hotAnnouncement = new HotAnnouncement();
-            var announcementService = Substitute.For<AnnouncementService>();
             announcementService.GetHotAnnouncement(Arg.Any<GetHotAnnouncementsParams>())
                 .Returns(hotAnnouncement);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            var announcementHandler = new AnnouncementHandler(announcementService, securityCodeSession);
-
-            var userSession = Substitute.For<IUserSession>();
             userSession.RoleId.Returns(RoleId.ValidRoleId);
-            var query = Substitute.For<HotAnnouncementQuery>(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, false);
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, false);
 
             // Action
             var viewModel = announcementHandler.Handle(query);
@@ -62,19 +69,14 @@
         {
             // Arrange
             var hotAnnouncement = new HotAnnouncement();
-            var announcementService = Substitute.For<AnnouncementService>();
             announcementService.GetHotAnnouncement(Arg.Any<GetHotAnnouncementsParams>())
                 .Returns(hotAnnouncement);
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            var announcementHandler = new AnnouncementHandler(announcementService, securityCodeSession);
-
-            var userSession = Substitute.For<IUserSession>();
             userSession.RoleId.Returns(RoleId.ValidRoleId);
             userSession.UserId.Returns(userId);
             userSession.SubAccId.Returns(subAccId);
 
-            var query = Substitute.For<HotAnnouncementQuery>(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, false);
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, false);
 
             // Action
             var viewModel = announcementHandler.Handle(query);

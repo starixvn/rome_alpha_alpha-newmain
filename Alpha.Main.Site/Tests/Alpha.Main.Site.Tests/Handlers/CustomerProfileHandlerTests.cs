@@ -13,30 +13,35 @@
     [TestFixture]
     public class CustomerProfileHandlerTests
     {
+        private CustomerProfileService customerProfileService;
+        private CustomerProfileHandler customerProfileHandler;
+        private IUserSession userSession;
+
+        [SetUp]
+        public void SetUp()
+        {
+            customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileHandler = new CustomerProfileHandler(customerProfileService);
+            userSession = Substitute.For<IUserSession>();
+        }
+
         [Test]
         public void HandleBriefProfileQuery_NullQuery_ThrowNullReferenceException()
         {
             // Arrange
-            BriefProfileQuery query = null;
-
-            var customerProfileService = Substitute.For<CustomerProfileService>();
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
+            BriefProfileQuery nullQuery = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => customerProfileHandler.Handle(query)));
+            Assert.Throws<NullReferenceException>(new TestDelegate(() => customerProfileHandler.Handle(nullQuery)));
         }
 
         [Test]
         public void HandleBriefProfileQuery_NotNullQuery_CallGetProfilePictureService()
         {
             // Arrange
-            var customerProfileService = Substitute.For<CustomerProfileService>();
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
-            var userSession = Substitute.For<IUserSession>();
             var query = new BriefProfileQuery(userSession);
-
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
 
             // Action
             var viewModel = customerProfileHandler.Handle(query);
@@ -52,14 +57,12 @@
             byte[] binaryAvatar,
             string expectedEmbedImage)
         {
-            // Arrange
-            var customerProfileService = Substitute.For<CustomerProfileService>();
+            // Arrange                                                             
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
             {
                 BinaryAvatar = binaryAvatar
             });
 
-            var userSession = Substitute.For<IUserSession>();
             var query = new BriefProfileQuery(userSession);
 
             var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
@@ -77,17 +80,13 @@
             bool isDefaultAvatar,
             bool expectedIsDefaultAvatar)
         {
-            // Arrange
-            var customerProfileService = Substitute.For<CustomerProfileService>();
+            // Arrange                                                            
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
             {
                 IsDefaultAvatar = isDefaultAvatar
             });
 
-            var userSession = Substitute.For<IUserSession>();
             var query = new BriefProfileQuery(userSession);
-
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
 
             // Action
             var viewModel = customerProfileHandler.Handle(query);
@@ -102,16 +101,12 @@
             int custId,
             int expectedCustId)
         {
-            // Arrange
-            var customerProfileService = Substitute.For<CustomerProfileService>();
+            // Arrange                                                            
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
-            var userSession = Substitute.For<IUserSession>();
             userSession.CustId.Returns(custId);
 
             var query = new BriefProfileQuery(userSession);
-
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
 
             // Action
             var viewModel = customerProfileHandler.Handle(query);
@@ -126,16 +121,12 @@
             string username,
             string expectedUsername)
         {
-            // Arrange
-            var customerProfileService = Substitute.For<CustomerProfileService>();
+            // Arrange                                                              
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
-            var userSession = Substitute.For<IUserSession>();
             userSession.UserName.Returns(username);
 
             var query = new BriefProfileQuery(userSession);
-
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
 
             // Action
             var viewModel = customerProfileHandler.Handle(query);
@@ -153,17 +144,13 @@
             bool isInternal,
             bool expectedIsNotMainAccount)
         {
-            // Arrange
-            var customerProfileService = Substitute.For<CustomerProfileService>();
+            // Arrange                                                              
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
-            var userSession = Substitute.For<IUserSession>();
             userSession.IsSubAcc.Returns(isSubAccount);
             userSession.IsInternal.Returns(isInternal);
 
             var query = new BriefProfileQuery(userSession);
-
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
 
             // Action
             var viewModel = customerProfileHandler.Handle(query);
@@ -181,11 +168,9 @@
             bool isInternal,
             string expectedNickName)
         {
-            // Arrange
-            var customerProfileService = Substitute.For<CustomerProfileService>();
+            // Arrange                                                             
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
-            var userSession = Substitute.For<IUserSession>();
             userSession.IsSubAcc.Returns(isSubAccount);
             userSession.IsInternal.Returns(isInternal);
             userSession.SubUserName.Returns(string.Empty);
@@ -193,8 +178,6 @@
             userSession.NickName.Returns(string.Empty);
 
             var query = new BriefProfileQuery(userSession);
-
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
 
             // Action
             var viewModel = customerProfileHandler.Handle(query);
@@ -209,16 +192,12 @@
             int custId,
             string expectedCookieToolTipName)
         {
-            // Arrange
-            var customerProfileService = Substitute.For<CustomerProfileService>();
+            // Arrange                                                              
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
-            var userSession = Substitute.For<IUserSession>();
             userSession.CustId.Returns(custId);
 
             var query = new BriefProfileQuery(userSession);
-
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
 
             // Action
             var viewModel = customerProfileHandler.Handle(query);

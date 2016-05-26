@@ -13,33 +13,37 @@
     public class DefaultHandlerTests
     {
         private const string PasswordHashSessionKey = "ph";
+        private SessionManager sessionManager;
+        private DefaultHandler defaultHandler;
+        private IUserSession userSession;
+        private ISecurityCodeSession securityCodeSession;
+
+        [SetUp]
+        public void SetUp()
+        {
+            sessionManager = Substitute.For<SessionManager>();
+            defaultHandler = new DefaultHandler(sessionManager);
+            userSession = Substitute.For<IUserSession>();
+            securityCodeSession = Substitute.For<ISecurityCodeSession>();
+        }
 
         [Test]
         public void HandleIndexQuery_NullQuery_ThrowNullReferenceException()
         {
             // Arrange
-            IndexQuery query = null;
-
-            var sessionManager = Substitute.For<SessionManager>();
-            var defaultHandler = new DefaultHandler(sessionManager);
+            IndexQuery nullQuery = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => defaultHandler.Handle(query)));
+            Assert.Throws<NullReferenceException>(new TestDelegate(() => defaultHandler.Handle(nullQuery)));
         }
 
         [Test]
-        public void HandleIndexQuery_NotNullCommand_CallStorePasswordHash()
+        public void HandleIndexQuery_NotNullQuery_CallStorePasswordHash()
         {
             // Arrange
-            var userSession = Substitute.For<IUserSession>();
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             var query = new IndexQuery(userSession, securityCodeSession, false);
-
-            var sessionManager = Substitute.For<SessionManager>();
-
-            var defaultHandler = new DefaultHandler(sessionManager);
 
             // Action 
             var viewModel = defaultHandler.Handle(query);
@@ -52,16 +56,12 @@
         public void HandleIndexQuery_NotNullCommand_ReturnPasswordHashStoredInSession()
         {
             // Arrange
-            var userSession = Substitute.For<IUserSession>();
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
             var query = new IndexQuery(userSession, securityCodeSession, false);
 
-            var sessionManager = Substitute.For<SessionManager>();
             string argumentUsed = null;
             sessionManager.Add<string>(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
-            var defaultHandler = new DefaultHandler(sessionManager);
 
             // Action 
             var viewModel = defaultHandler.Handle(query);
