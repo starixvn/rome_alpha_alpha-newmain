@@ -189,6 +189,10 @@
       <HintPath>..\packages\Newtonsoft.Json.Alpha.4.5.0.0\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ONEbook.UM, Version=2.0.2.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ONEbook.UM.2.0.2.7\lib\net40\ONEbook.UM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RemotingRef, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RemotingRef.1.0.0.4\lib\net40\RemotingRef.dll</HintPath>
       <Private>True</Private>
@@ -432,6 +436,9 @@
     <Content Include="Web.uati1.config">
       <DependentUpon>Web.local.config</DependentUpon>
     </Content>
+    <None Include="Web.sit.config">
+      <DependentUpon>Web.local.config</DependentUpon>
+    </None>
     <TypeScriptCompile Include="Assets\scripts\home\header-msg.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-nav.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\menu-bar.ts" />

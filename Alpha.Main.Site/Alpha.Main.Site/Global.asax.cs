@@ -1,20 +1,20 @@
 ﻿namespace Alpha.Main.Site
 {
+    using Alpha.Auth.Web;
+    using Alpha.Main.Site.App_Start;
+    using ONEbook.UM.Filters;
+    using Sunplus.Agent.Utilities;
     using System;
     using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
-    using System.Web.Optimization;
     using System.Web.Routing;
-    using Alpha.Auth.Web;
-    using Alpha.Main.Site.App_Start;
-    using Sunplus.Agent.Utilities;
 
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
-            ViewEngines.Engines.Clear();            
+            ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
             MvcHandler.DisableMvcResponseHeader = true;
 
@@ -25,7 +25,9 @@
 
             Fanex.Data.Configuration.DbSettingProviderManager.Current.Start();
 
-            ShareSession.Init();           
+            ShareSession.Init();
+
+            GlobalFilters.Filters.Add(new CheckUMFilter());
 
             Logs.WriteInfo("Alpha - New Main - Application Start");
         }
