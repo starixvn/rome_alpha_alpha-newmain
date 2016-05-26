@@ -10,24 +10,32 @@
     [TestFixture]
     public class XMLDocumentHelperTests
     {
+        private string applicationBaseDirectory;
+
+        [TestFixtureSetUp]
+        public void Init()
+        {
+            applicationBaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        }
+
         [Test]
         public void LoadDocumentFromPath_NullPath_ThrowArgumentNullException()
         {
             // Arrange
-            string documentPath = null;
+            string nullDocumentPath = null;
 
             // Action & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(documentPath)));
+            Assert.Throws<ArgumentNullException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(nullDocumentPath)));
         }
 
         [Test]
         public void LoadDocumentFromPath_EmptyPath_ThrowArgumentException()
         {
             // Arrange
-            string documentPath = string.Empty;
+            string emptyDocumentPath = string.Empty;
 
             // Action & Assert
-            Assert.Throws<ArgumentException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(documentPath)));
+            Assert.Throws<ArgumentException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(emptyDocumentPath)));
         }
 
         [TestCase(@"TestData\XMLDocumentHelper")]
@@ -44,7 +52,7 @@
         public void LoadDocumentFromPath_InvalidXMLFile_ThrowXmlException()
         {
             // Arrange
-            var absoluteDocumentPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\InvalidDocument.xml");
+            var absoluteDocumentPath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\InvalidDocument.xml");
 
             // Action & Assert
             Assert.Throws<XmlException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentPath)));
@@ -64,7 +72,7 @@
         {
             // Arrange
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root></Root>";
-            var absoluteDocumentPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativeDocumentPath);
+            var absoluteDocumentPath = Path.Combine(applicationBaseDirectory, relativeDocumentPath);
 
             // Action
             var document = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentPath);
@@ -97,11 +105,11 @@
         public void AppendDocument_SourceWithNoElement_ReturnTargetOuterXml()
         {
             // Arrange
-            var absoluteDocumentSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
+            var absoluteDocumentSourcePath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
             XmlDocument documentSource = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentSourcePath);
             documentSource.RemoveAll();
 
-            var absoluteDocumentTargetPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
+            var absoluteDocumentTargetPath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
             var documentTarget = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentTargetPath);
 
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root></Root>";
@@ -117,10 +125,10 @@
         public void AppendDocument_TargetWithNoElement_ReturnEmptyOuterXml()
         {
             // Arrange
-            var absoluteDocumentSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
+            var absoluteDocumentSourcePath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
             XmlDocument documentSource = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentSourcePath);
 
-            var absoluteDocumentTargetPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
+            var absoluteDocumentTargetPath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
             var documentTarget = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentTargetPath);
             documentTarget.RemoveAll();
 
@@ -137,10 +145,10 @@
         public void AppendDocument_SourceAndTargetWithTheSameElement_ReturnCorrectOuterXml()
         {
             // Arrange
-            var absoluteDocumentSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
+            var absoluteDocumentSourcePath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
             XmlDocument documentSource = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentSourcePath);
 
-            var absoluteDocumentTargetPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
+            var absoluteDocumentTargetPath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
             var documentTarget = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentTargetPath);
 
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root></Root>";
@@ -156,12 +164,12 @@
         public void AppendDocument_SourceAndTargetWithDifferentRootElements_ReturnTargetOuterXml()
         {
             // Arrange
-            var absoluteDocumentTargetPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
+            var absoluteDocumentTargetPath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
             var documentTarget = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentTargetPath);
 
-            var absoluteDocumentSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\DifferentRootElement.xml");
+            var absoluteDocumentSourcePath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\DifferentRootElement.xml");
             XmlDocument documentSource = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentSourcePath);
-                           
+
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root></Root>";
 
             // Action
@@ -175,10 +183,10 @@
         public void AppendDocument_SourceAndTargetSameRootAndDifferentElements_CombinedOuterXml()
         {
             // Arrange
-            var absoluteDocumentTargetPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\SameRootAndDifferentElements_Target.xml");
+            var absoluteDocumentTargetPath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\SameRootAndDifferentElements_Target.xml");
             var documentTarget = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentTargetPath);
 
-            var absoluteDocumentSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\SameRootAndDifferentElements_Source.xml");
+            var absoluteDocumentSourcePath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\SameRootAndDifferentElements_Source.xml");
             XmlDocument documentSource = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentSourcePath);
 
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root><SubNode2></SubNode2><SubNode1 /></Root>";
@@ -194,10 +202,10 @@
         public void AppendDocument_SourceAndTargetSameRootAndSameElements_CombinedOuterXml()
         {
             // Arrange
-            var absoluteDocumentTargetPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\SameRootAndSameElements.xml");
+            var absoluteDocumentTargetPath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\SameRootAndSameElements.xml");
             var documentTarget = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentTargetPath);
 
-            var absoluteDocumentSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"TestData\XMLDocumentHelper\SameRootAndSameElements.xml");
+            var absoluteDocumentSourcePath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\SameRootAndSameElements.xml");
             XmlDocument documentSource = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentSourcePath);
 
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root><SubNode1></SubNode1><SubNode1 /></Root>";

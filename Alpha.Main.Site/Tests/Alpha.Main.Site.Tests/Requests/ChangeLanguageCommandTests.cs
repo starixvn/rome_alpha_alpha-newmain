@@ -9,6 +9,14 @@
     [TestFixture]
     public class ChangeLanguageCommandTests
     {
+        private IUserSession userSession;
+
+        [SetUp]
+        public void SetUp()
+        {
+            userSession = Substitute.For<IUserSession>();
+        }
+
         [TestCase(null, "")]
         [TestCase("", "")]
         [TestCase(" ", "")]
@@ -27,7 +35,6 @@
             string expectedLanguageCode)
         {
             // Arrange
-            var userSession = Substitute.For<IUserSession>();
             var command = new ChangeLanguageCommand(userSession, languageCode);
 
             // Action

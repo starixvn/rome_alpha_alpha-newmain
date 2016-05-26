@@ -13,28 +13,34 @@
     [TestFixture]
     public class LanguageHandlerTests
     {
+        private LanguageHandler languageHandler;
+        private IUserSession userSession;
+
+        [SetUp]
+        public void SetUp()
+        {
+            languageHandler = new LanguageHandler();
+            userSession = Substitute.For<IUserSession>();
+        }
+
         [Test]
         public void HandleChangeLanguageCommand_NullCommand_ThrowNullReferenceException()
         {
             // Arrange
-            ChangeLanguageCommand command = null;
-            var languageHandler = new LanguageHandler();
+            ChangeLanguageCommand nullCommand = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => languageHandler.Handle(command)));
+            Assert.Throws<NullReferenceException>(new TestDelegate(() => languageHandler.Handle(nullCommand)));
         }
 
         [Test]
         public void HandleChangeLanguageCommand_NotNullCommand_CallChangeLanguage()
         {
             // Arrange
-            var userSession = Substitute.For<IUserSession>();
             var command = Substitute.For<ChangeLanguageCommand>(userSession, Arg.Any<string>());
 
             string argumentUsed = null;
             command.ChangeLanguage(Arg.Do<string>(x => argumentUsed = x));
-
-            var languageHandler = new LanguageHandler();
 
             // Action
             var viewModel = languageHandler.Handle(command);
@@ -61,12 +67,9 @@
             string expectedReceivedLanguageCode)
         {
             // Arrange
-            var userSession = Substitute.For<IUserSession>();
             string argumentUsed = null;
             var command = Substitute.For<ChangeLanguageCommand>(userSession, languageCode);
             command.ChangeLanguage(Arg.Do<string>(x => argumentUsed = x));
-
-            var languageHandler = new LanguageHandler();
 
             // Action
             var viewModel = languageHandler.Handle(command);
@@ -93,9 +96,7 @@
             string expectedLanguageCode)
         {
             // Arrange
-            var userSession = Substitute.For<IUserSession>();
             var command = Substitute.For<ChangeLanguageCommand>(userSession, languageCode);
-            var languageHandler = new LanguageHandler();
 
             // Action
             var viewModel = languageHandler.Handle(command);
@@ -105,14 +106,13 @@
         }
 
         [Test]
-        public void HandleAllLanguagesQuery_NullCommand_ThrowNullReferenceException()
+        public void HandleAllLanguagesQuery_NullQuery_ThrowNullReferenceException()
         {
             // Arrange
-            AllLanguagesQuery query = null;
-            var languageHandler = new LanguageHandler();
+            AllLanguagesQuery nullQuery = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => languageHandler.Handle(query)));
+            Assert.Throws<NullReferenceException>(new TestDelegate(() => languageHandler.Handle(nullQuery)));
         }
 
         [TestCase(null, Language.Default)]
@@ -134,7 +134,6 @@
         {
             // Arrange
             var query = new AllLanguagesQuery(languageCode);
-            var languageHandler = new LanguageHandler();
 
             var expectedViewModel = new LanguageViewModel(Language.CodeNames, expectedLanguageCode);
 
