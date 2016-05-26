@@ -172,7 +172,6 @@
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\NotAgentDirectLoginCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\ShowedMessageCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\LogInAndSettingChangedCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\NotPassSecurityCodeCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\NotRequireSecurityCodeCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\SecurityCodeBaseCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\ValidAnnouncementTimeCondition.cs" />

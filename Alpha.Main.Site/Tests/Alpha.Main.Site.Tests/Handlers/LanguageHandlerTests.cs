@@ -96,7 +96,7 @@
             string expectedLanguageCode)
         {
             // Arrange
-            var command = Substitute.For<ChangeLanguageCommand>(userSession, languageCode);
+            var command = new ChangeLanguageCommand(userSession, languageCode);
 
             // Action
             var viewModel = languageHandler.Handle(command);

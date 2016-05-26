@@ -3,9 +3,11 @@
     using Alpha.Main.Services.Impl;
     using Announcement.GetHotAnnouncement.LocalFileCondition;
     using Announcement.GetHotAnnouncement.LogInAndSettingChangedTest;
-    using Announcement.GetHotAnnouncement.SecurityCodeCondition;
+    using Fanex.Razorbill.Security.Sessions;
     using Main.Constants;
+    using NSubstitute;
     using NUnit.Framework;
+    using Params.Announcements;
     using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
     using NotAgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest;
 
@@ -27,10 +29,13 @@
         public void GetHotAnnouncement_NotPassSecurityCode_AnnouncementWithNullContent()
         {
             // Arrange
+            var isSecurityCodeActive = true;
+            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            securityCodeSession.IsRequireSecurityCode.Returns(true);
+
             var announcementServiceImpl = new AnnouncementServiceImpl();
 
-            var securityCodeCondition = new NotPassSecurityCodeCondition();
-            var query = securityCodeCondition.HotAnnouncementsParams();
+            var query = new GetHotAnnouncementsParams(securityCodeSession, isSecurityCodeActive);
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);

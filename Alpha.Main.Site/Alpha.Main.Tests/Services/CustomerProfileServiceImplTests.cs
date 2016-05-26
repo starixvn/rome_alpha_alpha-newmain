@@ -10,6 +10,16 @@
     [TestFixture]
     public class CustomerProfileServiceImplTests
     {
+        private CustomerProfileDataAccess customerProfileDataAccess;
+        private CustomerProfileServiceImpl customerProfileService;
+
+        [SetUp]
+        public void SetUp()
+        {
+            customerProfileDataAccess = Substitute.For<CustomerProfileDataAccess>();
+            customerProfileService = new CustomerProfileServiceImpl(customerProfileDataAccess);
+        }
+
         [TestCase(CustId.InvalidId, CustId.InvalidId)]
         [TestCase(CustId.ValidId, CustId.ValidId)]
         public void GetProfilePicture_AnyCustId_CallDataAccessGetProfilePicture(
@@ -17,9 +27,6 @@
             int expectedCustId)
         {
             // Arrange
-            var customerProfileDataAccess = Substitute.For<CustomerProfileDataAccess>();
-
-            var customerProfileService = new CustomerProfileServiceImpl(customerProfileDataAccess);
 
             // Action
             var profilePicture = customerProfileService.GetProfilePicture(custId);

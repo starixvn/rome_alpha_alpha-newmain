@@ -80,7 +80,7 @@
             bool isDefaultAvatar,
             bool expectedIsDefaultAvatar)
         {
-            // Arrange                                                            
+            // Arrange
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
             {
                 IsDefaultAvatar = isDefaultAvatar
@@ -101,7 +101,7 @@
             int custId,
             int expectedCustId)
         {
-            // Arrange                                                            
+            // Arrange
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
             userSession.CustId.Returns(custId);
@@ -121,7 +121,7 @@
             string username,
             string expectedUsername)
         {
-            // Arrange                                                              
+            // Arrange
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
             userSession.UserName.Returns(username);
@@ -144,7 +144,7 @@
             bool isInternal,
             bool expectedIsNotMainAccount)
         {
-            // Arrange                                                              
+            // Arrange
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
             userSession.IsSubAcc.Returns(isSubAccount);
@@ -192,7 +192,7 @@
             int custId,
             string expectedCookieToolTipName)
         {
-            // Arrange                                                              
+            // Arrange
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
             userSession.CustId.Returns(custId);
