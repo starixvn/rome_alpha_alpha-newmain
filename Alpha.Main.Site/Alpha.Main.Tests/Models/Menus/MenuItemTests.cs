@@ -16,14 +16,20 @@
         public void VisibileSubMenus_SubMenuItemsHasData_ReturnAllVisibledSubMenuItems()
         {
             //// Arrange
-            var authorizedUrlFunction = Substitute.For<Predicate<string>>();
-            authorizedUrlFunction.Invoke(Arg.Any<string>()).Returns(true);
+            Predicate<string> authorizedUrlFunction = (a) =>
+            {
+                return true;
+            };
 
-            var unauthorizedUrlFunction = Substitute.For<Predicate<string>>();
-            unauthorizedUrlFunction.Invoke(Arg.Any<string>()).Returns(false);
+            Predicate<string> unauthorizedUrlFunction = (a) =>
+            {
+                return false;
+            };
 
-            var getMenuStatusFunc = Substitute.For<Func<MenuStatus>>();
-            getMenuStatusFunc.Invoke().Returns(new MenuStatus(true, false));
+            Func<MenuStatus> getMenuStatusFunc = () =>
+            {
+                return new MenuStatus(true, false);
+            };
 
             //// Act
             menuItem = new MenuItem
@@ -43,8 +49,10 @@
         public void Status_UserIsNotAuthorizedOnMenu_ReturnStatusIsNotVisible()
         {
             //// Arrange
-            var authorizedUrlFunction = Substitute.For<Predicate<string>>();
-            authorizedUrlFunction.Invoke(Arg.Any<string>()).Returns(false);
+            Predicate<string> authorizedUrlFunction = (a) =>
+            {
+                return false;
+            };
 
             //// Act
             var actualMenuItem = new MenuItem(null, authorizedUrlFunction);
@@ -54,18 +62,24 @@
         }
 
         [Test]
-        public void Status_UserIsAuthorizedOnMenu_ExecuteGetMenuStatusFunc()
+        public void Status_UserIsAuthorizedOnMenu_ReturnMenuStatus()
         {
             //// Arrange
-            var authorizedUrlFunction = Substitute.For<Predicate<string>>();
-            authorizedUrlFunction.Invoke(Arg.Any<string>()).Returns(true);
-            var getMenuStatusFunc = Substitute.For<Func<MenuStatus>>();
+            Predicate<string> authorizedUrlFunction = (a) =>
+            {
+                return true;
+            };
+            var expectedMenuStatus = new MenuStatus(true, false);
+            Func<MenuStatus> getMenuStatusFunc = () =>
+            {
+                return expectedMenuStatus;
+            };
 
             //// Act
             var actualMenuItemStatus = new MenuItem(getMenuStatusFunc, authorizedUrlFunction).Status;
 
             //// Assert
-            getMenuStatusFunc.Received().Invoke();
+            Assert.AreEqual(expectedMenuStatus, actualMenuItemStatus);
         }
     }
 }
