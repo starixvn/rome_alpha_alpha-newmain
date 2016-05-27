@@ -73,7 +73,7 @@ window.age = window.age || {
         var iframe = popUp.find("#popup-iframe");
 
         var padding = 15 * 2;
-        var verticalPadding = 8 * 2; 
+        var verticalPadding = 8 * 2;
         iframe.css({
             width: popW - padding,
             height: popH - headerHeight - contentBorder - verticalPadding,
@@ -220,6 +220,8 @@ window.ageWnd = window.ageWnd || {
         var top = top || 200;
 
         var popUp = $("#page-popup").clone();
+
+
         popUp.css({
             width: popW,
             height: popH,
@@ -238,6 +240,9 @@ window.ageWnd = window.ageWnd || {
         popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
 
         var iframe = popUp.find("#popup-iframe");
+        if (!url) {
+            iframe.attr('name', 'AGEWndIframe');
+        }
 
         iframe.css({
             width: '100%',
