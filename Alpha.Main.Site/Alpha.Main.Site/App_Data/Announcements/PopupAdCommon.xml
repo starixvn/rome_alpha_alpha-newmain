@@ -8,6 +8,27 @@
       LCS: 7,
       domain: 5
   -->
+  <PopupAnnouncement id="5525910" name="OneRNG Casino"  startdate="05/24/2016" enddate="06/07/2016"  effectdate="05/24/2016"
+                    width="640" height="480" top="110" left="350">
+    <en-US src="/site-oldmain/_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+      N/A
+    </en-US>
+    <zh-CN src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+      N/A
+    </zh-CN>
+    <zh-TW src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+      N/A
+    </zh-TW>
+    <ja-JP src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+      N/A
+    </ja-JP>
+    <ko-KR src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+      N/A
+    </ko-KR>
+    <th-TH src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+      N/A
+    </th-TH>
+  </PopupAnnouncement>
     <PopupAnnouncement id="5525922" name="Voidbridge" startdate="05/15/2016" enddate="06/03/2016"  effectdate="05/24/2016"
                      width="1000" height="220" top="110" left="350">
       <en-US src="">
