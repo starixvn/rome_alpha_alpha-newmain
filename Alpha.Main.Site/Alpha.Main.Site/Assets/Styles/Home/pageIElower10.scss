@@ -1,0 +1,44 @@
+﻿@import "_variables.scss";
+@import "_mixins.scss";
+
+body {
+    background: url('images/update Browser.jpg') center top no-repeat;
+    font-family: $font-family;
+    font-size: $font-size;
+}
+
+#warning-browser-message {
+    @include box-shadow(2px, 1px, 8px, rgba(0, 0, 0, 0.4));
+    color: #85490d;
+    line-height: 20px;
+    position: absolute;
+    padding: 15px;
+    margin: 210px auto 0;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 1040;
+    background: #faf9dd;
+    width: 800px;
+    .content-msg {
+        padding: 0 25px;
+    }
+    a {
+        white-space: nowrap;
+        color: #045ace;
+        font-weight: bold;
+    }
+    .icon-close {
+        cursor: pointer;
+        font-size: 20px;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+    .icon-alert {
+        position: absolute;
+        left: 15px;
+        font-size: 18px;
+        color: #f38709;
+    }
+}

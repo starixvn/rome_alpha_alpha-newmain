@@ -3,24 +3,28 @@
     "outputFile": "Assets/Styles/home/popup-message.css",
     "inputFile": "Assets/Styles/home/popup-message.scss"
   },
-   {
-        "outputFile": "Assets/Styles/home/old-main.css",
-        "inputFile": "Assets/Styles/home/old-main.scss"
-    },
+  {
+    "outputFile": "Assets/Styles/home/old-main.css",
+    "inputFile": "Assets/Styles/home/old-main.scss"
+  },
   {
     "outputFile": "Assets/Styles/home/page.css",
     "inputFile": "Assets/Styles/home/page.scss"
   },
-      {
-        "outputFile": "Assets/Styles/home/tooltip.css",
-        "inputFile": "Assets/Styles/home/tooltip.scss"
-    },
-    {
-        "outputFile": "Assets/Styles/customer-profiles/customer-profile.css",
-        "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss"
-    },
-    {
-        "outputFile": "Assets/Styles/announcement/announcements.css",
-        "inputFile": "Assets/Styles/announcement/announcements.scss"
-    }
+  {
+    "outputFile": "Assets/Styles/home/tooltip.css",
+    "inputFile": "Assets/Styles/home/tooltip.scss"
+  },
+  {
+    "outputFile": "Assets/Styles/customer-profiles/customer-profile.css",
+    "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss"
+  },
+  {
+    "outputFile": "Assets/Styles/announcement/announcements.css",
+    "inputFile": "Assets/Styles/announcement/announcements.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/pageIElower10.css",
+    "inputFile": "Assets/styles/home/pageIElower10.scss"
+  }
 ]

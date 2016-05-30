@@ -7,11 +7,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    @StaticResources.AssetStyles.Render($"/styles/fonts/iconalpha/style")
+    <link href="@(StaticResources.MainSiteStyleUrl("~/Assets/styles/home/pageIElower10"))" rel="stylesheet" type="text/css" />
     <title>Browser Warning</title>
 </head>
 <body>
     <div id="warning-browser-message" class="warning-browser-message">
-        <span class="icon-close"></span>
         <span class="icon-alert"></span>
         <div class="content-msg">
             <span>@Resources.BrowserIsOutOfDate</span>
