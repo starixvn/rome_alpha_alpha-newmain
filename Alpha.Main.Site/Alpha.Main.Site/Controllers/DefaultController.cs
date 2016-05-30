@@ -1,13 +1,14 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Web.Mvc;
+    using System.Web.SessionState;
     using Fanex.Razorbill.Security.Sessions;
+    using Helpers;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
-    using System.Web.Mvc;
-    using System.Web.SessionState;
 
     [SessionState(SessionStateBehavior.Default)]
     public class DefaultController : BaseController
@@ -28,6 +29,13 @@
 
         public ActionResult Index()
         {
+            var isBrowserIELower10 = BrowserHelper.IsBrowserIELower10();
+
+            if (isBrowserIELower10)
+            {
+                return RedirectToAction("IndexIELower10");
+            }
+
             var viewModel = mediator.Send(new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify));
 
             return View(viewModel);
@@ -51,6 +59,11 @@
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
+        }
+
+        public ActionResult IndexIELower10()
+        {
+            return View();
         }
     }
 }

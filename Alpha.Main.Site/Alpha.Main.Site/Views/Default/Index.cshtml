@@ -40,14 +40,6 @@
 
             @Html.Action("HeaderMsg")
         </header>
-        <div id="warning-browser-message" style="display:none;" class="warning-browser-message">
-            <span class="icon-close"></span>
-            <span class="icon-alert"></span>
-            <div class="content-msg">
-                <span>@Resources.BrowserIsOutOfDate</span>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">@Resources.ClickToUpdateBrowser</a>
-            </div>
-        </div>
         <main class="content" id="content" data-default-url="@Model.DefaultUrl">
         </main>
     </div>

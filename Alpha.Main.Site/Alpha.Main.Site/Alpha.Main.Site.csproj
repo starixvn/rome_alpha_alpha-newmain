@@ -537,6 +537,7 @@
     <Content Include="Views\Language\List.cshtml" />
     <Content Include="Assets\Styles\Announcement\announcements.scss" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Views\Default\IndexIELower10.cshtml" />
     <None Include="Web.AppSettings.config" />
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -605,6 +606,7 @@
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
+    <Compile Include="Helpers\BrowserHelper.cs" />
     <Compile Include="Helpers\StaticResources.cs" />
     <Compile Include="Requests\AllLanguagesQuery.cs" />
     <Compile Include="Requests\Announcement\HotAnnouncementQuery.cs" />

@@ -124,7 +124,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your browser is out of date and might not be working properly width our website. For a better support, we strongly recommend that you upgrade to a newer version..
+        ///   Looks up a localized string similar to Your browser is out of date and might not be working properly with our website. For a better support, we strongly recommend that you upgrade to a newer version..
         /// </summary>
         public static string BrowserIsOutOfDate {
             get {
