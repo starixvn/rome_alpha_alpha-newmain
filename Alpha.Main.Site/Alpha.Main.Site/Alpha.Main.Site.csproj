@@ -423,6 +423,13 @@
     <Content Include="Assets\styles\announcement\images\toptitlepopup_thai.png" />
     <Content Include="Assets\styles\announcement\images\toptitlepopup_TW.png" />
     <Content Include="Assets\styles\announcement\images\toptitlepopup_vn.png" />
+    <Content Include="Assets\styles\home\images\update Browser.jpg" />
+    <Content Include="Assets\styles\home\pageIElower10.css">
+      <DependentUpon>pageIElower10.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\pageIElower10.min.css">
+      <DependentUpon>pageIElower10.css</DependentUpon>
+    </Content>
     <Content Include="Web.local.config" />
     <Content Include="Web.uati7.config">
       <DependentUpon>Web.local.config</DependentUpon>
@@ -525,6 +532,7 @@
     <Content Include="Assets\styles\home\_variables.scss" />
     <Content Include="Assets\styles\home\_mixins.scss" />
     <Content Include="Assets\styles\home\tooltip.scss" />
+    <Content Include="Assets\styles\home\pageIElower10.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
