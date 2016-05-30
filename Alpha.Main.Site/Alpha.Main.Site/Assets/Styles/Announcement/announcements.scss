@@ -1,13 +1,11 @@
 ﻿.announcement-modal {
-    width: 480px;
     top: 110px;
     left: 350px;
     overflow: hidden;
-    height: 300px;
+    right: auto;
+    bottom: auto;
+    width: 600px;
     .modal-dialog {
-        &.ex-modal {
-            width: 100%;
-        }
     }
     .modal-content {
         background: #f6f6f6;        
@@ -44,7 +42,7 @@
         .modal-body {
             padding: 15px;
             line-height: 22px;
-            max-height: 245px;
+            max-height: 500px;
             overflow: auto;
             a { color: #045ace; }
         }
@@ -54,7 +52,7 @@
 .announcement-modal#popup-container {
         height: 530px;
         width: 640px;
-        .modal-dialog.ex-modal { height: 100%;}
+        .modal-dialog.ex-modal { height: 100%; width: 100%;}
         .modal-content {
             .modal-body {
                 height: 100%;

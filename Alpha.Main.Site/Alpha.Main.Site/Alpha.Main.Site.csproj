@@ -390,6 +390,12 @@
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
     <Content Include="Assets\scripts\old-main.js" />
+    <Content Include="Assets\styles\announcement\announcements.css">
+      <DependentUpon>announcements.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\announcement\announcements.min.css">
+      <DependentUpon>announcements.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\announcement\images\bottomborder.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon.png" />
     <Content Include="Assets\styles\announcement\images\CloseIcon_h.png" />
