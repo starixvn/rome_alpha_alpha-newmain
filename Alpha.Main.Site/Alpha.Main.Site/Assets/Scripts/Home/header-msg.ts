@@ -129,7 +129,7 @@ var headerMessage = {
 
     showHotMessages: function () {
         if (headerMessage.domElements.currentHotMessage.length > 0) {
-            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
+            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false }).tinyDraggable();
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
@@ -290,7 +290,7 @@ var headerMessage = {
                 headerMessage.showNextMessage(nextMessage);
             }
 
-            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false });
+            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false }).tinyDraggable();
             headerMessage.calculateHotMessagePopupHeight(false);
         }
     },

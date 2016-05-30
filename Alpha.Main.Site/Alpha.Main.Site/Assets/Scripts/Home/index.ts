@@ -28,6 +28,7 @@ var index = {
     },
 
     registerEvents: function () {
+        $('#page-popup').tinyDraggable();
         setTimeout(index.reCheckin, 30000);
     },
 

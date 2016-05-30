@@ -136,7 +136,7 @@ var announcement = {
             var popUpContainer = announcement.domElements.popUpContainerText.length ?
                 announcement.domElements.popUpContainerText :
                 announcement.domElements.popUpContainer;
-            popUpContainer.modal({ show: true, backdrop: false });
+            popUpContainer.modal({ show: true, backdrop: false }).tinyDraggable();
         }, 2000);
     },
     checkShowedMessage: function (id) {

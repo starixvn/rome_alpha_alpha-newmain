@@ -221,7 +221,7 @@ window.ageWnd = window.ageWnd || {
 
         var popUp = $("#page-popup").clone();
 
-
+        popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
         popUp.css({
             width: popW,
             height: popH,
@@ -270,6 +270,7 @@ window.ageWnd = window.ageWnd || {
             }
         });
 
+        popUp.tinyDraggable();
         window.ageWnd.popUp.push(popUp);
         window.ageWnd.callback.push();
     },
