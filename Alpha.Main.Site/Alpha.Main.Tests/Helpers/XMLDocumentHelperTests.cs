@@ -88,17 +88,20 @@
             XmlDocument documentSource = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => XMLDocumentHelper.AppendDocument(documentSource, Arg.Any<XmlDocument>())));
+            Assert.Throws<NullReferenceException>(new TestDelegate(() => XMLDocumentHelper.AppendDocument(documentSource, new XmlDocument())));
         }
 
         [Test]
-        public void AppendDocument_NullTarget_ThrowNullReferenceException()
+        public void AppendDocument_HasDataSourceAndNullTarget_ThrowNullReferenceException()
         {
             // Arrange
             XmlDocument documentTarget = null;
 
+            var absoluteDocumentSourcePath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
+            XmlDocument documentSource = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentSourcePath);
+
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => XMLDocumentHelper.AppendDocument(Arg.Any<XmlDocument>(), documentTarget)));
+            Assert.Throws<NullReferenceException>(new TestDelegate(() => XMLDocumentHelper.AppendDocument(documentSource, documentTarget)));
         }
 
         [Test]
