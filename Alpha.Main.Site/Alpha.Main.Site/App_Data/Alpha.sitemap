@@ -15,18 +15,6 @@
       <siteMapNode resourceKey="masterwinlostdetail" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailSuper.aspx" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="masterOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=4" roles="Super"></siteMapNode>
 
-      <!--Casino-RealTimeWL-->
-      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appPath="OldMainAppPath" url="_Reports/CasinoWinloss/CSWinlossAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appPath="OldMainAppPath" url="_Reports/CasinoWinloss/CSWinlossMaster.aspx" roles="Master"></siteMapNode>
-      <siteMapNode menuItemType="CasinoMenuItem" resourceKey="realTimeCSWinloss" appPath="OldMainAppPath" url="_Reports/CasinoWinloss/CSWinlossSuper.aspx" roles="Super"></siteMapNode>
-      <!--/Casino-RealTimeWL-->
-
-      <!--Bingo-RealTimeWL-->
-      <siteMapNode menuItemType="BingoMenuItem" resourceKey="realTimeBingoWinloss" appPath="OldMainAppPath" url="_Reports/BingoWinloss/BingoWinlossAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode menuItemType="BingoMenuItem" resourceKey="realTimeBingoWinloss" appPath="OldMainAppPath" url="_Reports/BingoWinloss/BingoWinlossMaster.aspx" roles="Master"></siteMapNode>
-      <siteMapNode menuItemType="BingoMenuItem" resourceKey="realTimeBingoWinloss" appPath="OldMainAppPath" url="_Reports/BingoWinloss/BingoWinlossSuper.aspx" roles="Super"></siteMapNode>
-      <!--/Bingo-RealTimeWL-->
-
       <siteMapNode resourceKey="matchwinloss" appPath="OldMainAppPath" url="_Reports/MatchWinloss/MatchWinLoss.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="matchWinLostDetail" appPath="OldMainAppPath" url="_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
 
