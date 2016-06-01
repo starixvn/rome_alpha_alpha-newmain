@@ -41,6 +41,16 @@
 
             return false;
         }
+    },
+    init: function () {
+        if (alpha.core.isIe()) {
+            //// Work arround because in IE, bootstrap modal dont delegate focusin event to others.
+            $.fn.modal.Constructor.prototype.enforceFocus = function () { };
+        }
     }
 };
+
+$(function () {
+    alpha.init();
+});
 
