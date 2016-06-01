@@ -102,6 +102,7 @@ var briefProfile = {
 
             setTimeout(function () {
                 briefProfile.hideTooltipIntroNickname();
+                briefProfile.showTooltipProfilePicture();
             }, 20000);
         }
         else {
