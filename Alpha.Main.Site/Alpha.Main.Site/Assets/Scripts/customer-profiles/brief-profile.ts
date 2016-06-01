@@ -4,8 +4,9 @@
 declare var $: any;
 
 var briefProfile = {
-    maxCountBriefProfileTooltip: 4,
-    maxCountNickNameToolTip: 8,
+    maxCountShowTooltip: 4,
+    isShowEditProfilePictureTooltip: false,
+    isShowNickNameProfileTooltip: false,
 
     domElements: {
         toolTipBox: null,
@@ -19,33 +20,28 @@ var briefProfile = {
     init: function () {
         briefProfile.cachedDomElements();
 
-        briefProfile.checkAndSetShowEditProfilePictureTooltip();
         briefProfile.checkAndShowNickNameTooltip();
+        briefProfile.checkAndSetShowEditProfilePictureTooltip();
+
 
         briefProfile.registerEvents();
     },
 
     checkAndSetShowEditProfilePictureTooltip: function () {
-        var isShowEditProfilePictureTooltip = briefProfile.domElements.profileContent.data('is-default-avatar')
-            && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountBriefProfileTooltip;
-
-        if (isShowEditProfilePictureTooltip) {
-            briefProfile.showTooltipProfilePicture();
-        }
+        briefProfile.isShowEditProfilePictureTooltip = briefProfile.domElements.profileContent.data('is-default-avatar')
+            && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountShowTooltip;
     },
 
     checkAndShowNickNameTooltip: function () {
         var countNickNameToolTip = briefProfile.getCountNickNameToolTip();
 
         if (briefProfile.domElements.profileContent.data('nick-name').length === 0
-            && countNickNameToolTip >= briefProfile.maxCountBriefProfileTooltip
-            && countNickNameToolTip < briefProfile.maxCountNickNameToolTip) {
-            briefProfile.showTooltipIntroNickname();
+            && countNickNameToolTip < briefProfile.maxCountShowTooltip) {
+            briefProfile.isShowNickNameProfileTooltip = true;
             briefProfile.setCountNickNameToolTip(++countNickNameToolTip);
         }
-        else if (countNickNameToolTip < briefProfile.maxCountBriefProfileTooltip) {
-            briefProfile.setCountNickNameToolTip(++countNickNameToolTip);
-        }
+
+        briefProfile.showTooltipIntroNickname();
     },
 
     getCountNickNameToolTip: function () {
@@ -89,7 +85,8 @@ var briefProfile = {
     },
 
     showTooltipProfilePicture: function () {
-        if (briefProfile.domElements.profileTooltip.length > 0) {
+        if (briefProfile.domElements.profileTooltip.length > 0
+            && briefProfile.isShowEditProfilePictureTooltip) {
             briefProfile.domElements.profileTooltip.show();
 
             setTimeout(function () {
@@ -99,17 +96,25 @@ var briefProfile = {
     },
 
     showTooltipIntroNickname: function () {
-        if (briefProfile.domElements.toolTipBox.length > 0) {
+        if (briefProfile.domElements.toolTipBox.length > 0
+            && briefProfile.isShowNickNameProfileTooltip) {
             briefProfile.domElements.toolTipBox.show();
 
             setTimeout(function () {
                 briefProfile.hideTooltipIntroNickname();
+                briefProfile.showTooltipProfilePicture();
             }, 20000);
         }
     },
 
     hideAllTooltips: function () {
         briefProfile.hideTooltipIntroNickname();
-        briefProfile.hideProfileTooltip();
+        if (briefProfile.isShowNickNameProfileTooltip) {
+            briefProfile.showTooltipProfilePicture();
+            briefProfile.isShowNickNameProfileTooltip = false;
+        }
+        else {
+            briefProfile.hideProfileTooltip();
+        }
     }
 };
