@@ -4,7 +4,8 @@
 declare var $: any;
 
 var briefProfile = {
-    maxCountNickNameTooltip: 4,
+    maxCountBriefProfileTooltip: 4,
+    maxCountNickNameToolTip: 8,
 
     domElements: {
         toolTipBox: null,
@@ -26,7 +27,7 @@ var briefProfile = {
 
     checkAndSetShowEditProfilePictureTooltip: function () {
         var isShowEditProfilePictureTooltip = briefProfile.domElements.profileContent.data('is-default-avatar')
-            && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountNickNameTooltip;
+            && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountBriefProfileTooltip;
 
         if (isShowEditProfilePictureTooltip) {
             briefProfile.showTooltipProfilePicture();
@@ -37,11 +38,13 @@ var briefProfile = {
         var countNickNameToolTip = briefProfile.getCountNickNameToolTip();
 
         if (briefProfile.domElements.profileContent.data('nick-name').length === 0
-                && countNickNameToolTip >= briefProfile.maxCountNickNameTooltip) {
+            && countNickNameToolTip >= briefProfile.maxCountBriefProfileTooltip
+            && countNickNameToolTip < briefProfile.maxCountNickNameToolTip) {
             briefProfile.showTooltipIntroNickname();
+            briefProfile.setCountNickNameToolTip(++countNickNameToolTip);
         }
-        else if (countNickNameToolTip < briefProfile.maxCountNickNameTooltip) {
-            briefProfile.setCountNickNameToolTip(++countNickNameToolTip)
+        else if (countNickNameToolTip < briefProfile.maxCountBriefProfileTooltip) {
+            briefProfile.setCountNickNameToolTip(++countNickNameToolTip);
         }
     },
 
