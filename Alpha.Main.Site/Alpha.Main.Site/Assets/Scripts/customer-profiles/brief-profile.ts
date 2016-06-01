@@ -20,9 +20,8 @@ var briefProfile = {
     init: function () {
         briefProfile.cachedDomElements();
 
-        briefProfile.checkAndShowNickNameTooltip();
         briefProfile.checkAndSetShowEditProfilePictureTooltip();
-
+        briefProfile.checkAndShowNickNameTooltip();
 
         briefProfile.registerEvents();
     },
@@ -38,8 +37,9 @@ var briefProfile = {
         if (briefProfile.domElements.profileContent.data('nick-name').length === 0
             && countNickNameToolTip < briefProfile.maxCountShowTooltip) {
             briefProfile.isShowNickNameProfileTooltip = true;
-            briefProfile.setCountNickNameToolTip(++countNickNameToolTip);
         }
+
+        briefProfile.setCountNickNameToolTip(++countNickNameToolTip);
 
         briefProfile.showTooltipIntroNickname();
     },
@@ -102,8 +102,10 @@ var briefProfile = {
 
             setTimeout(function () {
                 briefProfile.hideTooltipIntroNickname();
-                briefProfile.showTooltipProfilePicture();
             }, 20000);
+        }
+        else {
+            briefProfile.showTooltipProfilePicture();
         }
     },
 
