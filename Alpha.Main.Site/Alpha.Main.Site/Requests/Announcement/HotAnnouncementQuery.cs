@@ -7,6 +7,7 @@
     using Params.Announcements;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
+    using System;
     using System.Collections.Generic;
     using System.Web;
 
@@ -152,6 +153,11 @@
 
         public void AssignValue(GetHotAnnouncementsParams hotAnnouncementsParams)
         {
+            if (hotAnnouncementsParams == null)
+            {
+                throw new ArgumentNullException(nameof(hotAnnouncementsParams), "Argument cannot be null");
+            }
+
             hotAnnouncementsParams.MessageIds = MessageIds;
             hotAnnouncementsParams.PrivateMessagePath = PrivateMessagePath;
             hotAnnouncementsParams.CommonAnnouncementPath = CommonAnnouncementPath;

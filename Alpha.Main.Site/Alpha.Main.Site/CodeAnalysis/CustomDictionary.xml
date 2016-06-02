@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Dictionary>
+    <Words>
+        <Recognized >
+        </Recognized>
+        <Unrecognized />
+        <Deprecated />
+        <Compound>
+        </Compound>
+        <DiscreteExceptions>
+        </DiscreteExceptions>
+    </Words>
+    <Acronyms>
+        <CasingExceptions>
+            <Acronym>VPN</Acronym>
+            <Acronym>URL</Acronym>
+        </CasingExceptions>
+    </Acronyms>
+</Dictionary>

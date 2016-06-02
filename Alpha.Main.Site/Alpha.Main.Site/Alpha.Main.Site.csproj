@@ -431,6 +431,7 @@
     <Content Include="Assets\styles\home\pageIElower10.min.css">
       <DependentUpon>pageIElower10.css</DependentUpon>
     </Content>
+    <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />
     <Content Include="Web.local.config" />
     <Content Include="Web.uati7.config">
       <DependentUpon>Web.local.config</DependentUpon>

@@ -23,6 +23,11 @@
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Maintainability",
+            "CA1500:VariableNamesShouldNotMatchFieldNames",
+            MessageId = "languageCode",
+            Justification = "Reviewed!")]
         public virtual void ChangeLanguage(string languageCode)
         {
             if (string.IsNullOrWhiteSpace(languageCode) ||

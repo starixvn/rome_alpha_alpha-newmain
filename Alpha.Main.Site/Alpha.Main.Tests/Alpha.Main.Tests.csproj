@@ -160,6 +160,7 @@
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\HasPrivateOrCommonAnnouncementTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\IncludeHotMessageTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\ForceUseSecurityCodeSiteTest.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\NotForceUseSecurityCodeSiteTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\ShowedAnnouncementTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentOrAdminLogInTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\NotAgentDirectLoginBaseTest.cs" />
@@ -218,7 +219,7 @@
     <Content Include="TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\NotHasAnnouncement.xml">
+    <Content Include="TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\OnlyForceUseSecurityCode.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\HasAnnouncement.xml">

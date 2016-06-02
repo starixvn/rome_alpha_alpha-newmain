@@ -25,6 +25,16 @@
         }
 
         [Test]
+        public void HandleMenuBarQuery_NullQuery_ThrowArgumentNullException()
+        {
+            // Arrange
+            MenuBarQuery nullQuery = null;
+
+            // Action & Assert
+            Assert.Throws<ArgumentNullException>(new TestDelegate(() => menuBarHandler.Handle(nullQuery)));
+        }
+
+        [Test]
         public void HandleMenuBarQuery_WhenCalled_ExecuteGetMenuByUserLevel()
         {
             //// Arrange

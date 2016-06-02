@@ -8,8 +8,6 @@
     [TestFixture]
     public class MenuStatusTests
     {
-        private MenuStatus menuStatus;
-
         [Test]
         public void MenuStatus_GetVisibleFunctionIsNull_ReturnVisibleIsTrue()
         {

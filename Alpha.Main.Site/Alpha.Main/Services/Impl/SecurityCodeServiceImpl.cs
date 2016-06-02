@@ -21,6 +21,11 @@
                 return false;
             }
 
+            if (site == null)
+            {
+                throw new ArgumentNullException(nameof(site), "Site cannot be null");
+            }
+
             var isNonUseSecurityCodeSite = AppSettings.NonUseSecurityCodeSites.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(str => str.ToLower())
                 .Contains(site.ToLower());
@@ -28,6 +33,11 @@
             if (isNonUseSecurityCodeSite)
             {
                 return false;
+            }
+
+            if (securityCodeSession == null)
+            {
+                throw new ArgumentNullException(nameof(securityCodeSession), "Security Code Session cannot be null");
             }
 
             bool isForceUseSecurityCode = securityCodeSession.IsRequireSecurityCode ||

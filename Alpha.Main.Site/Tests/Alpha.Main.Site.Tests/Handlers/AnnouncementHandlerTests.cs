@@ -31,13 +31,13 @@
         }
 
         [Test]
-        public void HandleHotAnnouncementQuery_NullQuery_ThrowNullReferenceException()
+        public void HandleHotAnnouncementQuery_NullQuery_ThrowArgumentNullException()
         {
             // Arrange
             HotAnnouncementQuery nullQuery = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => announcementHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(new TestDelegate(() => announcementHandler.Handle(nullQuery)));
         }
 
         [Test]

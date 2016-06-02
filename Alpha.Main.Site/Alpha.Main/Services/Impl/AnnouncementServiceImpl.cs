@@ -37,6 +37,11 @@
 
         public HotAnnouncement GetHotAnnouncement(GetHotAnnouncementsParams getParams)
         {
+            if (getParams == null)
+            {
+                throw new ArgumentNullException(nameof(getParams), "Argument cannot be null");
+            }
+
             var hotAnnouncement = new HotAnnouncement();
             if (getParams.IsSecurityCodeActive &&
                 getParams.IsRequireSecurityCode)
@@ -166,8 +171,8 @@
             {
                 var nodeIds = announcementNode.Attributes["id"].Value;
                 long nodeId = 0;
-                long.TryParse(nodeIds, out nodeId);
-                if (nodeId == 0 ||
+                if (!long.TryParse(nodeIds, out nodeId) ||
+                    nodeId == 0 ||
                     showedMessages.Contains(nodeId) ||
                     IsExcludedHotMessageSite(announcementNode, getParams.Site) ||
                     IsExpiredHotMessage(announcementNode))
@@ -200,11 +205,8 @@
         {
             XmlAttribute startDateAttribute = node.Attributes["startdate"];
             XmlAttribute endDateAttribute = node.Attributes["enddate"];
-            XmlAttribute effectDateAttribute = node.Attributes["effectdate"];
             DateTime? startDate = startDateAttribute == null ? (DateTime?)null : Converter.ToDateTime(startDateAttribute.Value);
             DateTime? endDate = endDateAttribute == null ? (DateTime?)null : Converter.ToDateTime(endDateAttribute.Value);
-            string effectDate = effectDateAttribute == null ? string.Empty :
-                Converter.ToString2(effectDateAttribute.Value);
             DateTime currentDate = dateTimeWrapper.Now;
 
             return !startDate.HasValue ||

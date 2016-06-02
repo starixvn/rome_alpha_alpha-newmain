@@ -3,6 +3,7 @@
     using MediatR;
     using Models.Requests;
     using Services;
+    using System;
     using ViewModels;
 
     public class MenuBarHandler :
@@ -18,6 +19,11 @@
 
         public MenuBarViewModel Handle(MenuBarQuery message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
             var menuItems = siteMenuService.GetMenuByUserLevel(message.UserLevel);
 
             var viewModel = new MenuBarViewModel(menuItems, message.IsSmallDevice);

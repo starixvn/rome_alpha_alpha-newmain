@@ -4,6 +4,7 @@
     using MediatR;
     using Models.Requests;
     using Requests;
+    using System;
     using System.Linq;
     using ViewModels;
 
@@ -13,6 +14,11 @@
     {
         public string Handle(ChangeLanguageCommand message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Command cannot be null");
+            }
+
             var languageCode = Standardize(message.LanguageCode);
 
             message.ChangeLanguage(languageCode);
@@ -22,6 +28,11 @@
 
         public LanguageViewModel Handle(AllLanguagesQuery message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
             var viewModel = new LanguageViewModel(Language.CodeNames, Standardize(message.LanguageCode));
 
             return viewModel;

@@ -7,6 +7,7 @@
     using Params.Announcements;
     using Services;
     using Sunplus.Agent.Utilities;
+    using System;
 
     public class AnnouncementHandler :
          IRequestHandler<HotAnnouncementQuery, HotAnnouncement>
@@ -24,6 +25,11 @@
 
         public HotAnnouncement Handle(HotAnnouncementQuery message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
             var hotAnnouncementsParams = new GetHotAnnouncementsParams(securityCodeSession, message.IsSecurityCodeActive);
             message.AssignValue(hotAnnouncementsParams);
 

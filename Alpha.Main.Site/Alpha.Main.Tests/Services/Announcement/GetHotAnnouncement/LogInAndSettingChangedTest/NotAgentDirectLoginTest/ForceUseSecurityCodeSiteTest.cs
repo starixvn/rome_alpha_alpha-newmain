@@ -10,7 +10,7 @@
         {
             var query = HotAnnouncementsParams;
 
-            var showedMessageCondition = new ShowedMessageCondition(false);
+            var showedMessageCondition = new ShowedMessageCondition(true);
             showedMessageCondition.SetUpCondition(query);
 
             var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, ValidAnnouncementTimeCondition.DateTimeWrapper);

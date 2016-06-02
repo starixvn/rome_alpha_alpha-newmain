@@ -24,13 +24,13 @@
         }
 
         [Test]
-        public void HandleChangeLanguageCommand_NullCommand_ThrowNullReferenceException()
+        public void HandleChangeLanguageCommand_NullCommand_ThrowArgumentNullException()
         {
             // Arrange
             ChangeLanguageCommand nullCommand = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => languageHandler.Handle(nullCommand)));
+            Assert.Throws<ArgumentNullException>(new TestDelegate(() => languageHandler.Handle(nullCommand)));
         }
 
         [Test]
@@ -106,13 +106,13 @@
         }
 
         [Test]
-        public void HandleAllLanguagesQuery_NullQuery_ThrowNullReferenceException()
+        public void HandleAllLanguagesQuery_NullQuery_ThrowArgumentNullException()
         {
             // Arrange
             AllLanguagesQuery nullQuery = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => languageHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(new TestDelegate(() => languageHandler.Handle(nullQuery)));
         }
 
         [TestCase(null, Language.Default)]

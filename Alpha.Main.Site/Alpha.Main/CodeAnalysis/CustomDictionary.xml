@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Dictionary>
+    <Words>
+        <Recognized >
+        </Recognized>
+        <Unrecognized />
+        <Deprecated />
+        <Compound>
+        </Compound>
+        <DiscreteExceptions>
+        </DiscreteExceptions>
+    </Words>
+    <Acronyms>
+        <CasingExceptions>
+            <Acronym>XML</Acronym>
+        </CasingExceptions>
+    </Acronyms>
+</Dictionary>
