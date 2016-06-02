@@ -1,17 +1,17 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
+    using System;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Web;
     using Main.Helpers;
     using Main.Models.Enumerations;
     using Models.Requests;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Web;
 
     public class IndexViewModel
     {
         private readonly int custId;
         private readonly int onlineUserId;
-        private readonly int subAccId;
         private readonly byte roleId;
         private readonly string language;
         private readonly string languageKey;
@@ -23,12 +23,16 @@
 
         public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
             this.custId = message.UserId;
             this.roleId = message.RoleId;
             this.language = message.Language;
             this.languageKey = message.LanguageKey;
             this.onlineUserId = message.OnUserId;
-            this.subAccId = message.SubAccId;
             this.getDefaultUrl = getDefaultUrl;
             this.passwordHash = Encryption.RandomString(new Random().Next(4, 8));
             this.subPageAccess = message.SubPageAccess;
@@ -84,6 +88,7 @@
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
         public string DefaultUrl
         {
             get
@@ -140,7 +145,7 @@
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
+        [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
         public string CurrentURLCookieName
         {
             get

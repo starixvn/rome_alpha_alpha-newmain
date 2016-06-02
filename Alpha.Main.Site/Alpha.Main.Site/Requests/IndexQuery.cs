@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
+    using System.Diagnostics.CodeAnalysis;
     using Fanex.Razorbill.Security.Sessions;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -87,6 +88,7 @@
             }
         }
 
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "VPN", Justification = "Reviewed!")]
         public bool IsInternalWebVPN
         {
             get

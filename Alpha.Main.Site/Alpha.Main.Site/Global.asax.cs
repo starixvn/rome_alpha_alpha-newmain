@@ -1,17 +1,20 @@
 ﻿namespace Alpha.Main.Site
 {
-    using Alpha.Auth.Web;
-    using Alpha.Main.Site.App_Start;
-    using ONEbook.UM.Filters;
-    using Sunplus.Agent.Utilities;
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
+    using Alpha.Auth.Web;
+    using Alpha.Main.Site.App_Start;
+    using ONEbook.UM.Filters;
+    using Sunplus.Agent.Utilities;
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", 
+            MessageId = "Sunplus.Agent.Utilities.Logs.WriteInfo(System.String)", Justification = "Reviewed!")]
         protected void Application_Start()
         {
             ViewEngines.Engines.Clear();
@@ -56,6 +59,10 @@
             }
         }
 
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "shutDownStack", Justification = "Reviewed!")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "shutDownMessage", Justification = "Reviewed!")]
+        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters",
+            MessageId = "Sunplus.Agent.Utilities.Logs.WriteInfo(System.String)", Justification = "Reviewed!")]
         protected void Application_End()
         {
             HttpRuntime runtime = (HttpRuntime)typeof(HttpRuntime).InvokeMember(

@@ -33,15 +33,17 @@
             menuItem.SubMenus = new List<IMenuItem>();
         }
 
-        public IMenuItem BuildMenuItem(SiteMapNode siteMapNode)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", 
+            MessageId = "0", Justification = "Reviewed!")]
+        public IMenuItem BuildMenuItem(SiteMapNode node)
         {
-            Check.Argument.IsNotNull(siteMapNode, nameof(siteMapNode));
+            Check.Argument.IsNotNull(node, nameof(node));
 
             var menuItem = new MenuItem(
-                menuItemTypeConfiguration[siteMapNode["menuItemType"] ?? string.Empty],
+                menuItemTypeConfiguration[node["menuItemType"] ?? string.Empty],
                authorizationService.IsAuthorized);
 
-            SetDataForMenuItem(menuItem, siteMapNode);
+            SetDataForMenuItem(menuItem, node);
 
             return menuItem;
         }

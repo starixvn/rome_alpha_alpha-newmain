@@ -1,13 +1,13 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
+    using System.Web;
     using Alpha.Main.Site.Models.Requests.CustomerProfile;
     using AppResources;
     using Fanex.Common;
     using Main.Models.CustomerProfiles;
     using MediatR;
     using Services;
-    using System;
-    using System.Web;
     using ViewModels.CustomerProfile;
 
     public class CustomerProfileHandler :
@@ -22,6 +22,11 @@
 
         public BriefProfileViewModel Handle(BriefProfileQuery message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
             var profile = customerProfileService.GetProfilePicture(message.CustId);
 
             var viewModel = new BriefProfileViewModel

@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using MediatR;
@@ -39,6 +40,11 @@
 
         public IEnumerable<string> Handle(HotMessagesQuery message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
             if (IsShowedHotMessages)
             {
                 return Enumerable.Empty<string>();

@@ -2,6 +2,7 @@
 {
     using System.Configuration;
     using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
     using System.Web;
@@ -12,8 +13,10 @@
     public static class StaticResources
     {
         private static readonly string StaticResourcesVersion;
+        [SuppressMessage("Microsoft.Performance", "CA1802:UseLiteralsWhereAppropriate", Justification = "Reviewed!")]
         private static readonly string MinText = ".min";
 
+        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = "Reviewed!")]
         static StaticResources()
         {
             if (IsDebugMode())
@@ -41,6 +44,7 @@
 
         #region Assets App
 
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Justification = "Reviewed!")]
         public static class AssetStyles
         {
             public static IHtmlString Render(params string[] paths)
@@ -49,6 +53,7 @@
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Justification = "Reviewed!")]
         public static class AssetScripts
         {
             public static IHtmlString Render(params string[] paths)
@@ -61,11 +66,13 @@
 
         #region Current site
 
+        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
         public static string MainSiteScriptUrl(string relativePath)
         {
             return VirtualPathUtility.ToAbsolute($"{relativePath}{MinText}.js?v={StaticResourcesVersion}");
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
         public static string MainSiteStyleUrl(string relativePath)
         {
             return VirtualPathUtility.ToAbsolute($"{relativePath}{MinText}.css?v={StaticResourcesVersion}");

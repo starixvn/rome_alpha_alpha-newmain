@@ -1,17 +1,22 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using Constants;
-    using Fanex.Common;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Xml;
+    using Constants;
+    using Fanex.Common;
 
     public class UserMessageServiceImpl : UserMessageService
     {
         public IEnumerable<string> GetHotMessages(string hotMessageFilePath, byte roleId, string language)
         {
+            if (language == null)
+            {
+                throw new ArgumentNullException(nameof(language), "Language cannot be null");
+            }
+
             List<string> hotMessages = new List<string>();
 
             if (!File.Exists(hotMessageFilePath))

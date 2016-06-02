@@ -5,6 +5,7 @@
 
     public static class CookieHelper
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
         public static string GetCurrentUrlCookieName()
         {
             var joinStrings = new string[]

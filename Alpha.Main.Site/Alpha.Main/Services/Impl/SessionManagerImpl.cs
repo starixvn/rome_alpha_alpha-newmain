@@ -29,6 +29,7 @@
             httpSession.Add(key, item);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily", Justification = "Reviewed!")]
         public T Get<T>(string key)
         {
             ValidateKey(key);
@@ -48,6 +49,7 @@
             return default(T);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily", Justification = "Reviewed!")]
         public T GetOrAdd<T>(string key, Func<T> addItemFactory)
         {
             ValidateKey(key);
@@ -99,11 +101,6 @@
             {
                 throw new ArgumentOutOfRangeException("key", @"Cache keys cannot be empty or whitespace");
             }
-        }
-
-        private string BuildKey(string key)
-        {
-            return $"{httpSession.SessionID}_{key}";
         }
     }
 }
