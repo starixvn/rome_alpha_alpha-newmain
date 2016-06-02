@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
+    using System.Diagnostics.CodeAnalysis;
     using Fanex.Data.Repository;
 
     public class InsertPersonalMessageCriteria : CriteriaBase
@@ -10,14 +11,14 @@
 
         public InsertPersonalMessageCriteria(string content, int type)
         {
-            ContentEn = content;
-            ContentCh = content;
-            ContentCs = content;
-            ContentJp = content;
-            ContentIt = string.Empty;
-            ContentTh = content;
-            ContentKo = content;
-            ContentEs = string.Empty;
+            ContentEN = content;
+            ContentCH = content;
+            ContentCS = content;
+            ContentJP = content;
+            ContentIT = string.Empty;
+            ContentTH = content;
+            ContentKO = content;
+            ContentES = string.Empty;
             Type = type;
             IsSticky = false;
             MatchId = 0;
@@ -25,29 +26,30 @@
         }
 
         [SpParam(SqlParamName = "content_en")]
-        public string ContentEn { get; set; }
+        public string ContentEN { get; set; }
 
         [SpParam(SqlParamName = "content_ch")]
-        public string ContentCh { get; set; }
+        public string ContentCH { get; set; }
 
         [SpParam(SqlParamName = "content_cs")]
-        public string ContentCs { get; set; }
+        public string ContentCS { get; set; }
 
         [SpParam(SqlParamName = "content_jp")]
-        public string ContentJp { get; set; }
+        public string ContentJP { get; set; }
 
         [SpParam(SqlParamName = "content_it")]
-        public string ContentIt { get; set; }
+        public string ContentIT { get; set; }
 
         [SpParam(SqlParamName = "content_th")]
-        public string ContentTh { get; set; }
+        public string ContentTH { get; set; }
 
         [SpParam(SqlParamName = "content_ko")]
-        public string ContentKo { get; set; }
+        public string ContentKO { get; set; }
 
         [SpParam(SqlParamName = "content_es")]
-        public string ContentEs { get; set; }
+        public string ContentES { get; set; }
 
+        [SuppressMessage("Microsoft.Naming", "CA1721:PropertyNamesShouldNotMatchGetMethods", Justification = "Reviewed!")]
         [SpParam(SqlParamName = "msgtype")]
         public int Type { get; set; }
 

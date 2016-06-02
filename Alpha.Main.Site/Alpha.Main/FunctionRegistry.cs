@@ -15,6 +15,7 @@
 
     public static class FunctionRegistry
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "Reviewed!")]
         public static readonly Dictionary<string, Func<MenuStatus>> MenuItemTypeStatusRules = new Dictionary<string, Func<MenuStatus>>
         {
             [string.Empty] = null,
@@ -118,7 +119,6 @@
             var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
             var oldStatus = Current.SecurityCodeResult;
 
-            var mainPage = string.Empty;
             if (newFlowOfSC)
             {
                 switch (status)

@@ -14,6 +14,7 @@
 
         public const string Default = English;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
         public static readonly Dictionary<string, string> CodeKeys = new Dictionary<string, string>
         {
             [English] = "E",
@@ -25,6 +26,7 @@
             [Vietnamese] = "VI"
         };
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
         public static readonly Dictionary<string, string> CodeNames = new Dictionary<string, string>
         {
             [English] = "English",

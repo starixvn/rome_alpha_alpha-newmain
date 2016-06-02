@@ -1,7 +1,8 @@
 ﻿namespace Alpha.Main.Configurations
 {
-    using Fanex.Common;
     using System.Configuration;
+    using System.Diagnostics.CodeAnalysis;
+    using Fanex.Common;
 
     public static class AppSettings
     {
@@ -69,6 +70,7 @@
             }
         }
 
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "TBF", Justification = "Reviewed!")]
         public static string AllowedSitesToViewTBF
         {
             get
