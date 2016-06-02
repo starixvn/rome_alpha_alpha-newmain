@@ -28,7 +28,7 @@
         }
 
         [Test]
-        public void HandleIndexQuery_NullQuery_ThrowNullReferenceException()
+        public void HandleIndexQuery_NullQuery_ThrowArgumentNullException()
         {
             // Arrange
             IndexQuery nullQuery = null;

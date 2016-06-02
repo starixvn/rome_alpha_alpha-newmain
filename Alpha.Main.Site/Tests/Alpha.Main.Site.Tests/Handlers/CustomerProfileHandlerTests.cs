@@ -26,7 +26,7 @@
         }
 
         [Test]
-        public void HandleBriefProfileQuery_NullQuery_ThrowNullReferenceException()
+        public void HandleBriefProfileQuery_NullQuery_ThrowArgumentNullException()
         {
             // Arrange
             BriefProfileQuery nullQuery = null;
