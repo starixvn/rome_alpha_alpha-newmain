@@ -34,7 +34,7 @@
             IndexQuery nullQuery = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => defaultHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(new TestDelegate(() => defaultHandler.Handle(nullQuery)));
         }
 
         [Test]

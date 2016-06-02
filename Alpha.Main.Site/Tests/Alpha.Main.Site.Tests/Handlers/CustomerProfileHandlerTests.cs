@@ -32,7 +32,7 @@
             BriefProfileQuery nullQuery = null;
 
             // Action & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => customerProfileHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(new TestDelegate(() => customerProfileHandler.Handle(nullQuery)));
         }
 
         [Test]
