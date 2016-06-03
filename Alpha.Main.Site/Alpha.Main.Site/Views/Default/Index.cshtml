@@ -22,7 +22,8 @@
             </div>
         </div>
     </div>
-    
+
+    @Html.Action("HeaderHotMsg")
     <aside class="sidebar">
         <div class="partial-content customer-profile" id="profile" data-url="@Url.Action("BriefProfile", "CustomerProfile")"></div>
         <nav class="navigation" id="navigation">
@@ -39,7 +40,7 @@
                EnableSecurityCode = Model.EnableSecurityCode
            })
 
-            @Html.Action("HeaderMsg")
+            @Html.Partial("HeaderMarquee")
         </header>
         <main class="content" id="content" data-default-url="@Model.DefaultUrl">
         </main>

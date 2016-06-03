@@ -48,7 +48,7 @@
             return PartialView(viewModel);
         }
 
-        public ActionResult HeaderMsg()
+        public ActionResult HeaderHotMsg()
         {
             var query = new HotMessagesQuery
             {

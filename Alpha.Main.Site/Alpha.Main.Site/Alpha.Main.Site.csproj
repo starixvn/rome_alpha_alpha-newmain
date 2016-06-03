@@ -541,13 +541,14 @@
     <Content Include="Views\Default\MenuBar.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\HeaderNav.cshtml" />
-    <Content Include="Views\Default\HeaderMsg.cshtml" />
+    <Content Include="Views\Default\HeaderHotMsg.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithSource.cshtml" />
     <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
     <Content Include="Views\Language\List.cshtml" />
     <Content Include="Assets\Styles\Announcement\announcements.scss" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Default\IndexIELower10.cshtml" />
+    <Content Include="Views\Default\HeaderMarquee.cshtml" />
     <None Include="Web.AppSettings.config" />
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
