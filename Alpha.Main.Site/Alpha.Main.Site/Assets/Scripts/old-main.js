@@ -236,7 +236,7 @@ window.ageWnd = window.ageWnd || {
 
         var headerHeight = 40;
         var contentBorder = 2;
-        var bodyHeightPadding = 38;
+        var bodyHeightPadding = 18;
         popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
 
         var iframe = popUp.find("#popup-iframe");
