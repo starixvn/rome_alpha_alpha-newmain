@@ -213,6 +213,7 @@ window.ageWnd = window.ageWnd || {
     open: function (url, title, left, top, width, height, callBack) {
         title = title || '';
         var popH = height || 360;
+        popH = popH + 50;
 
         var oldSiteBodyWidthPadding = 34;
         var popW = (width + oldSiteBodyWidthPadding) || 480;
@@ -240,18 +241,12 @@ window.ageWnd = window.ageWnd || {
         popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
 
         var iframe = popUp.find("#popup-iframe");
-        if (!url) {
-            iframe.attr('name', 'AGEWndIframe');
+        var iframeHeight = popH - headerHeight - contentBorder - bodyHeightPadding;
+        ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, top);
+        if (url) {
+            iframe.attr("src", url);
         }
 
-        iframe.css({
-            width: '100%',
-            height: popH - headerHeight - contentBorder - bodyHeightPadding,
-            left: left,
-            top: top
-        });
-
-        iframe.attr("src", url);
         popUp.modal({ show: true, backdrop: false });
         popUp.find(".icon-close").unbind("click").click(function () {
             popUp.remove();
@@ -260,19 +255,15 @@ window.ageWnd = window.ageWnd || {
             }
         });
 
-        iframe.load(function () {
-            var title = popUp.find(".popup-title").html() || '';
-            var iframe_doc = iframe.contents();
-
-            var iframeTitle = iframe_doc.find("title").text();
-            if (title == '' && iframeTitle != 'Home') {
-                popUp.find(".popup-title").html(iframeTitle);
-            }
-        });
-
         popUp.tinyDraggable();
         window.ageWnd.popUp.push(popUp);
         window.ageWnd.callback.push();
+
+        if (!url) {
+            ageWnd.copyTargetForm(popUp);
+            iframe = popUp.find('.modal-body').find('#popup-iframe');
+            ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, top);
+        }
     },
     close: function () {
         var popUp = window.ageWnd.popUp.pop();
@@ -287,6 +278,34 @@ window.ageWnd = window.ageWnd || {
     },
     createInstance: function () {
         return window.ageWnd;
+    },
+
+    copyTargetForm: function (popUp) {
+        var oldTarget = top.main.document.getElementById("target");
+        var newTarget = $.clone(oldTarget);
+        popUp.find('.modal-body').prepend(newTarget);
+        popUp.find('.modal-body').find('#popup-iframe').remove();
+        popUp.find('.modal-body').prepend('<iframe id="popup-iframe" frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto" name="edit-setting-frame"></iframe>');
+        newTarget.target = "edit-setting-frame";
+        newTarget.submit();
+    },
+    setIframeInfo: function (iframe, popUp, iframeHeight, left, top) {
+        iframe.css({
+            width: '100%',
+            height: iframeHeight,
+            left: left,
+            top: top
+        });
+
+        iframe.load(function () {
+            var title = popUp.find(".popup-title").html() || '';
+            var iframe_doc = iframe.contents();
+
+            var iframeTitle = iframe_doc.find("title").text();
+            if (title == '' && iframeTitle != 'Home') {
+                popUp.find(".popup-title").html(iframeTitle);
+            }
+        });
     }
 };
 
