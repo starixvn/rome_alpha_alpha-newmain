@@ -46,8 +46,8 @@ function setCookie(name, value, days, domain) {
 
 window.age = window.age || {
     OpenPopUp: function (url, title, width, height, position) {
-        var maxWidth = top.window.innerWidth;
-        var maxHeight = top.window.innerHeight - (position ? position.top : 0) - 60;
+        var maxWidth = window.top.window.innerWidth;
+        var maxHeight = window.top.window.innerHeight - (position ? position.top : 0) - 60;
         width = width > maxWidth ? maxWidth : width;
         height = height > maxHeight ? maxHeight : height;
 
@@ -217,8 +217,8 @@ window.ageWnd = window.ageWnd || {
 
     open: function (url, title, left, popUpTop, width, height, callBack) {
         popUpTop = popUpTop || 200;
-        var maxWidth = top.window.innerWidth;
-        var maxHeight = top.window.innerHeight - popUpTop - 60;
+        var maxWidth = window.top.window.innerWidth;
+        var maxHeight = window.top.window.innerHeight - popUpTop - 60;
         width = width > maxWidth ? maxWidth : width;
         height = height > maxHeight ? maxHeight : height;
 
