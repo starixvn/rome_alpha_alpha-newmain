@@ -443,16 +443,88 @@ var menuBarManager = {
 
         return parseFloat(top.$('#mCSB_2_container').css('top').replace(/px/g, ''));
     },
+    getMainFrameScrollTop: function () {
+        var scrollTop = top.main.scrollY;
+        if (scrollTop == undefined) {
+            scrollTop = document.documentElement ?
+                document.documentElement.scrollTop :
+                document.body.scrollTop;
+        }
+
+        scrollTop = -scrollTop;
+
+        return scrollTop;
+    },
 
     getOffset: function (el) {
         var _x = 0;
         var _y = 0;
         while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
-            _x += el.offsetLeft - el.scrollLeft;
-            _y += el.offsetTop - el.scrollTop;
+            if (el.style.display == 'none') {
+                _x += parseFloat(el.style.left.replace(/px/g, '')) - el.scrollLeft;
+                _y += parseFloat(el.style.top.replace(/px/g, '')) - el.scrollTop;
+            } else {
+                _x += el.offsetLeft - el.scrollLeft;
+                _y += el.offsetTop - el.scrollTop;
+            }
+
             el = el.offsetParent;
         }
         return { top: _y, left: _x };
+    },
+
+    getPopupEditStatusPosition_CustomerList: function (handleElement) {
+        var handleElementPosition = menuBarManager.getOffset(handleElement);
+
+        var startTop = 0;
+        var scrollTop = menuBarManager.getMainFrameScrollTop();
+
+        var popUpTop = 0;
+        var left = 0;
+        startTop = 146;
+        popUpTop = startTop + handleElementPosition.top + scrollTop;
+        left = handleElementPosition.left - 200 + top.$('.sidebar').width();
+
+        var position = {
+            left: left,
+            top: popUpTop
+        };
+
+        var windowHeight = window.top.window.innerHeight;
+        var maxTop = windowHeight - 200;
+        if (position.top >= maxTop) {
+            position.top = maxTop;
+        }
+
+        return position;
+    },
+    getPopupEditStatusPosition_LeftPanel: function (handleElement) {
+        var handleElementPosition = menuBarManager.getOffset(handleElement);
+
+        var startTop = 0;
+        var scrollTop = menuBarManager.getCustInfoScrollTop();
+
+        var popUpTop = 0;
+        var left = 0;
+
+        startTop = 164;
+        var checkboxLeft = 3;
+        var checkboxBottom = 3;
+        popUpTop = startTop + handleElementPosition.top + checkboxBottom + scrollTop;
+        left = handleElementPosition.left;
+
+        var position = {
+            left: left,
+            top: popUpTop
+        };
+
+        var windowHeight = window.top.window.innerHeight;
+        var maxTop = windowHeight - 200;
+        if (position.top >= maxTop) {
+            position.top = maxTop;
+        }
+
+        return position;
     },
 
     getPopupEditStatusPosition: function (handleElement) {
@@ -460,24 +532,10 @@ var menuBarManager = {
             return null;
         }
 
-        var checkboxLeft = 3;
-        var checkboxBottom = 3;
-        var startTop = 164;
-
-        var handleElementPosition = menuBarManager.getOffset(handleElement);
-
-        var scrollTop = menuBarManager.getCustInfoScrollTop();
-        var position = {
-            left: handleElementPosition.left + checkboxLeft,
-            top: startTop + handleElementPosition.top + checkboxBottom + scrollTop
-        };
-
-        var windowHeight = top.window.innerHeight;
-        var maxTop = windowHeight - 200;
-        if (position.top >= maxTop) {
-            position.top = maxTop;
+        if (handleElement.id == 'Popup') {
+            return menuBarManager.getPopupEditStatusPosition_CustomerList(handleElement);
         }
 
-        return position;
+        return menuBarManager.getPopupEditStatusPosition_LeftPanel(handleElement);
     }
 }
