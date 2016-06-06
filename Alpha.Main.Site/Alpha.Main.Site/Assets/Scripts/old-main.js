@@ -46,6 +46,11 @@ function setCookie(name, value, days, domain) {
 
 window.age = window.age || {
     OpenPopUp: function (url, title, width, height, position) {
+        var maxWidth = top.window.innerWidth;
+        var maxHeight = top.window.innerHeight - (position ? position.top : 0) - 60;
+        width = width > maxWidth ? maxWidth : width;
+        height = height > maxHeight ? maxHeight : height;
+
         title = title || '';
         var popH = height || 360;
         var popW = width || 480;
@@ -210,15 +215,20 @@ window.ageWnd = window.ageWnd || {
     popUp: [],
     callback: [],
 
-    open: function (url, title, left, top, width, height, callBack) {
+    open: function (url, title, left, popUpTop, width, height, callBack) {
+        popUpTop = popUpTop || 200;
+        var maxWidth = top.window.innerWidth;
+        var maxHeight = top.window.innerHeight - popUpTop - 60;
+        width = width > maxWidth ? maxWidth : width;
+        height = height > maxHeight ? maxHeight : height;
+
         title = title || '';
         var popH = height || 360;
         popH = popH + 50;
 
         var oldSiteBodyWidthPadding = 34;
         var popW = (width + oldSiteBodyWidthPadding) || 480;
-        var left = left || 200;
-        var top = top || 200;
+        left = left || 200;
 
         var popUp = $("#page-popup").clone();
 
@@ -227,7 +237,7 @@ window.ageWnd = window.ageWnd || {
             width: popW,
             height: popH,
             left: left,
-            top: top
+            top: popUpTop
         });
 
         popUp.appendTo("body");
@@ -242,7 +252,7 @@ window.ageWnd = window.ageWnd || {
 
         var iframe = popUp.find("#popup-iframe");
         var iframeHeight = popH - headerHeight - contentBorder - bodyHeightPadding;
-        ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, top);
+        ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
         if (url) {
             iframe.attr("src", url);
         }
@@ -262,7 +272,7 @@ window.ageWnd = window.ageWnd || {
         if (!url) {
             ageWnd.copyTargetForm(popUp);
             iframe = popUp.find('.modal-body').find('#popup-iframe');
-            ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, top);
+            ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
         }
     },
     close: function () {
