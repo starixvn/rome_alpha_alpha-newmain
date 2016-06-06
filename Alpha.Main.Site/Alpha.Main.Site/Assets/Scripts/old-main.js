@@ -319,16 +319,11 @@ window.bootboxConfirm = function (message, handleElement, acceptCallback, cancel
     });
 
     if (handleElement) {
-        var $handleElement = $(handleElement);
         var dialog = $(".bootbox-confirm .modal-dialog");
-        var position = $handleElement.position();
-        var checkboxLeft = 3;
-        var checkboxBottom = 3;
-        var startTop = 164;
-
+        var position = menuBarManager.getPopupEditStatusPosition(handleElement);
         dialog.css({
-            left: position.left + checkboxLeft,
-            top: startTop + position.top + checkboxBottom
+            left: position.left,
+            top: +position.top
         });
     }
 };
@@ -341,12 +336,8 @@ window.bootboxAlert = function (message, handleElement, callbackFunction) {
     });
 
     if (handleElement) {
-        var $handleElement = $(handleElement);
         var dialog = $(".bootbox-alert .modal-dialog");
-        var position = $handleElement.position();
-        var checkboxLeft = 3;
-        var checkboxBottom = 3;
-        var startTop = 164;
+        var position = menuBarManager.getPopupEditStatusPosition(handleElement);
 
         dialog.css({
             left: position.left + checkboxLeft,
@@ -426,5 +417,57 @@ function RemoveDiv(idNode) {
     var self = document.getElementById(idNode);
     if (self != null) {
         self.parentNode.removeChild(self);
+    }
+}
+
+var menuBarManager = {
+    isSmallDevice: function () {
+        var isSmallDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        return isSmallDevice;
+    },
+    getCustInfoScrollTop: function () {
+        var isSmallDevice = menuBarManager.isSmallDevice();
+        if (isSmallDevice) {
+            return -top.$('.accountinfo-container').scrollTop();
+        }
+
+        return parseFloat(top.$('#mCSB_2_container').css('top').replace(/px/g, ''));
+    },
+
+    getOffset: function (el) {
+        var _x = 0;
+        var _y = 0;
+        while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+            _x += el.offsetLeft - el.scrollLeft;
+            _y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+        }
+        return { top: _y, left: _x };
+    },
+
+    getPopupEditStatusPosition: function (handleElement) {
+        if (!handleElement) {
+            return null;
+        }
+
+        var checkboxLeft = 3;
+        var checkboxBottom = 3;
+        var startTop = 164;
+
+        var handleElementPosition = menuBarManager.getOffset(handleElement);
+
+        var scrollTop = menuBarManager.getCustInfoScrollTop();
+        var position = {
+            left: handleElementPosition.left + checkboxLeft,
+            top: startTop + handleElementPosition.top + checkboxBottom + scrollTop
+        };
+
+        var windowHeight = top.window.innerHeight;
+        var maxTop = windowHeight - 200;
+        if (position.top >= maxTop) {
+            position.top = maxTop;
+        }
+
+        return position;
     }
 }

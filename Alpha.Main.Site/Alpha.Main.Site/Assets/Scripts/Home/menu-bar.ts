@@ -125,7 +125,7 @@
         $(window).resize(function () {
             menuBar.layoutSmallSize();
         });
-        
+
     },
     activeSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');
@@ -149,36 +149,36 @@
 
             menuBar.domElements.sideBar.removeClass('hovered');
             menuBar.domElements.sideBar.addClass('focusout');
-                        
+
             var activeSubMenu = $('.menu-item.active .sub-menu');
             activeSubMenu.css('display', 'none');
         }
     },
     collapseMenu: function (clickedItem) {
         var menuContainer = clickedItem.closest('li');
-            menuBar.domElements.menuItems.removeClass('active');
+        menuBar.domElements.menuItems.removeClass('active');
 
-            menuContainer.addClass('active');
-            var isVisible = clickedItem.hasClass('active');
-            menuBar.domElements.menuOpener.removeClass('active');
-            menuBar.domElements.subMenu.slideUp('normal');
+        menuContainer.addClass('active');
+        var isVisible = clickedItem.hasClass('active');
+        menuBar.domElements.menuOpener.removeClass('active');
+        menuBar.domElements.subMenu.slideUp('normal');
 
-            var checkElement = clickedItem.next();
-            if (isVisible) {
-                menuContainer.removeClass('active');
-                clickedItem.removeClass('active');
+        var checkElement = clickedItem.next();
+        if (isVisible) {
+            menuContainer.removeClass('active');
+            clickedItem.removeClass('active');
 
-                if (checkElement.is('ul')) {
-                    checkElement.slideUp('normal');
-                }
-            } else {
-                menuContainer.addClass('active');
-                clickedItem.addClass('active');
-
-                if (checkElement.is('ul')) {
-                    checkElement.slideDown('normal');
-                }
+            if (checkElement.is('ul')) {
+                checkElement.slideUp('normal');
             }
+        } else {
+            menuContainer.addClass('active');
+            clickedItem.addClass('active');
+
+            if (checkElement.is('ul')) {
+                checkElement.slideDown('normal');
+            }
+        }
     }
 };
 
