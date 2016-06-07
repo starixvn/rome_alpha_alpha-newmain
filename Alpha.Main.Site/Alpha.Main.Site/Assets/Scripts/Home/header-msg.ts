@@ -129,7 +129,8 @@ var headerMessage = {
 
     showHotMessages: function () {
         if (headerMessage.domElements.currentHotMessage.length > 0) {
-            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false }).tinyDraggable();
+            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false })
+                .tinyDraggable({ exclude: 'button.icon.icon-close.close, #userMessageModalBody, p, a' });
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
@@ -290,7 +291,8 @@ var headerMessage = {
                 headerMessage.showNextMessage(nextMessage);
             }
 
-            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false }).tinyDraggable();
+            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false })
+                .tinyDraggable({ exclude: 'button.icon.icon-close.close, #userMessageModalBody, p, a' });
             headerMessage.calculateHotMessagePopupHeight(false);
         }
     },
