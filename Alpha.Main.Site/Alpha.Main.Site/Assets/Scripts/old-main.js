@@ -319,7 +319,7 @@ window.ageWnd = window.ageWnd || {
     }
 };
 
-window.bootboxConfirm = function (message, handleElement, acceptCallback, cancelCallback) {
+window.bootboxConfirm = function (message, handleElement, acceptCallback, cancelCallback, popUpOptions) {
     bootbox.confirm(message, function (result) {
         if (result && acceptCallback && typeof (acceptCallback) == "function") {
             acceptCallback();
@@ -330,10 +330,10 @@ window.bootboxConfirm = function (message, handleElement, acceptCallback, cancel
 
     if (handleElement) {
         var dialog = $(".bootbox-confirm .modal-dialog");
-        var position = menuBarManager.getPopupEditStatusPosition(handleElement);
+        var position = menuBarManager.getPopupEditStatusPosition(handleElement, popUpOptions);
         dialog.css({
             left: position.left,
-            top: +position.top
+            top: position.top
         });
     }
 };
@@ -470,6 +470,7 @@ var menuBarManager = {
 
             el = el.offsetParent;
         }
+
         return { top: _y, left: _x };
     },
 
@@ -527,9 +528,13 @@ var menuBarManager = {
         return position;
     },
 
-    getPopupEditStatusPosition: function (handleElement) {
+    getPopupEditStatusPosition: function (handleElement, popUpOptions) {
         if (!handleElement) {
             return null;
+        }
+
+        if (popUpOptions && popUpOptions.type == 'DoubleComm_CustomerList') {
+            return menuBarManager.getPopupEditStatusPosition_DoubleComm(handleElement);
         }
 
         if (handleElement.id == 'Popup') {
@@ -537,5 +542,31 @@ var menuBarManager = {
         }
 
         return menuBarManager.getPopupEditStatusPosition_LeftPanel(handleElement);
+    },
+
+    getPopupEditStatusPosition_DoubleComm: function (handleElement) {
+        var handleElementPosition = menuBarManager.getOffset(handleElement);
+
+        var startTop = 0;
+        var scrollTop = menuBarManager.getMainFrameScrollTop();
+
+        var popUpTop = 0;
+        var left = 0;
+        startTop = 111;
+        popUpTop = startTop + handleElementPosition.top + scrollTop;
+        left = handleElementPosition.left - 150 + top.$('.sidebar').width();
+
+        var position = {
+            left: left,
+            top: popUpTop
+        };
+
+        var windowHeight = window.top.window.innerHeight;
+        var maxTop = windowHeight - 200;
+        if (position.top >= maxTop) {
+            position.top = maxTop;
+        }
+
+        return position;
     }
 }
