@@ -141,7 +141,7 @@ var headerMessage = {
         var maxMessageHeight = 80;
         var isShowFull = showFullMessage;
         var messageHeight = headerMessage.domElements.currentHotMessage.height();
-        var headerHeight = 20;
+        var headerHeight = 30;
         var bodyBorder = 2;
         var bodyPadding = 5 + bodyBorder;
 
