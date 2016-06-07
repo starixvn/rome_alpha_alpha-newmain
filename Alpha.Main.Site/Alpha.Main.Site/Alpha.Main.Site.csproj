@@ -424,6 +424,12 @@
     <Content Include="Assets\styles\announcement\images\toptitlepopup_thai.png" />
     <Content Include="Assets\styles\announcement\images\toptitlepopup_TW.png" />
     <Content Include="Assets\styles\announcement\images\toptitlepopup_vn.png" />
+    <Content Include="Assets\styles\customer-profiles\customer-profile.css">
+      <DependentUpon>customer-profile.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\customer-profiles\customer-profile.min.css">
+      <DependentUpon>customer-profile.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\images\update Browser.jpg" />
     <Content Include="Assets\styles\home\pageIElower10.css">
       <DependentUpon>pageIElower10.scss</DependentUpon>

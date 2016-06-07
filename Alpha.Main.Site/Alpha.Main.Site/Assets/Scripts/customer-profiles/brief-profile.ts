@@ -12,7 +12,8 @@ var briefProfile = {
         toolTipBox: null,
         profileTooltip: null,
         changePictureLink: null,
-        profileContent: null
+        profileContent: null,
+        profilePicture: null
     },
 
     countNickNameToolTipCookieName: null,
@@ -63,6 +64,10 @@ var briefProfile = {
         briefProfile.domElements.changePictureLink
             .off('click.brief-profile')
             .on('click.brief-profile', briefProfile.hideProfileTooltip);
+
+        briefProfile.domElements.profilePicture.click(function () {
+            menuBar.hideMenuBar();
+        });
     },
 
     cachedDomElements: function () {
@@ -70,6 +75,7 @@ var briefProfile = {
         briefProfile.domElements.profileTooltip = $('#profileTooltip');
         briefProfile.domElements.changePictureLink = $('#changePictureLink');
         briefProfile.domElements.profileContent = $('#profile-content');
+        briefProfile.domElements.profilePicture = $("#logoProfileImg");
     },
 
     hideTooltipIntroNickname: function () {

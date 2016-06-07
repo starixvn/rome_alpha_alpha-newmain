@@ -5,7 +5,6 @@
         subMenu: null,
         menuItems: null,
         sideBar: null,
-        profilePicture: null,
 
         mainTabs: null,
         menuContainer: null,
@@ -29,7 +28,6 @@
         menuBar.domElements.subMenu = $('.sub-menu');
         menuBar.domElements.menuItems = $('.menu-item');
         menuBar.domElements.sideBar = $('.sidebar');
-        menuBar.domElements.profilePicture = $("#logoProfileImg");
 
         menuBar.domElements.mainTabs = $('.main-tab li');
         menuBar.domElements.menuContainer = $('.mainmenu-container');
@@ -49,7 +47,6 @@
                 menuBar.domElements.sideBar.addClass('collapsed');
                 menuBar.domElements.sideBar.addClass('collapsed-smallsize');
                 content.addClass('expanded');
-                menuBar.domElements.profilePicture.addClass("collapse-image");
             }
         }
         else {
@@ -60,7 +57,6 @@
                 menuBar.domElements.sideBar.removeClass('collapsed-smallsize');
 
                 content.removeClass('expanded');
-                menuBar.domElements.profilePicture.removeClass("collapse-image");
             }
         }
     },
@@ -144,16 +140,12 @@
             menuBar.domElements.sideBar.addClass('hovered');
             menuBar.domElements.sideBar.removeClass('focusout');
 
-            menuBar.domElements.profilePicture.removeClass("collapse-image");
-
             var activeSubMenu = $('.menu-item.active .sub-menu');
             activeSubMenu.css('display', 'block');
         }
     },
     hideMenuBar: function () {
         if (menuBar.domElements.sideBar.hasClass('collapsed')) {
-            menuBar.domElements.profilePicture.addClass("collapse-image");
-
             menuBar.domElements.sideBar.removeClass('hovered');
             menuBar.domElements.sideBar.addClass('focusout');
 
