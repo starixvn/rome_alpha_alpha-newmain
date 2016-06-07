@@ -137,24 +137,30 @@ var headerNav = {
     },
 
     collapseLeftPanel: function (collapseButton) {
-        var sidebar = headerNav.domElements.sideBar;
-        var content = headerNav.domElements.sideBarContent;
+        var collapsedClass = 'collapsed',
+            expandedClass = 'expanded',
+            collapseImageClass = 'collapse-image',
+            dockedClass = 'docked',
+            sidebar = headerNav.domElements.sideBar,
+            content = headerNav.domElements.sideBarContent,
+            isCollapsed = sidebar.hasClass(collapsedClass),
+            activeSubMenu = $('.menu-item.active .sub-menu');
 
-        var isCollapse = sidebar.hasClass('collapsed');
-        var activeSubMenu = $('.menu-item.active .sub-menu');
-
-        if (isCollapse) {
-            activeSubMenu.css('display', 'block');
-            sidebar.removeClass('collapsed');
-            content.removeClass('expanded');
-            headerNav.domElements.profileImage.removeClass("collapse-image");
+        if (isCollapsed) {
+            activeSubMenu.hide();
+            sidebar.addClass(dockedClass);
+            sidebar.removeClass(collapsedClass);
+            content.removeClass(expandedClass);
+            headerNav.domElements.profileImage.removeClass(collapseImageClass);
         } else {
-            activeSubMenu.css('display', 'none');
-            sidebar.addClass('collapsed');
-            content.addClass('expanded');
-            headerNav.domElements.profileImage.addClass("collapse-image");
+            activeSubMenu.show();
+            sidebar.removeClass(dockedClass);
+            sidebar.addClass(collapsedClass);
+            content.addClass(expandedClass);
+            headerNav.domElements.profileImage.addClass(collapseImageClass);
         }
     },
+
     changeLanguage: function (lang) {
         $.ajax({
             type: "POST",

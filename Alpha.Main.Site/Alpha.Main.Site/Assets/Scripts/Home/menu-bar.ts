@@ -11,7 +11,9 @@
         tabContentContainers: null,
         accountInfoTab: null,
         accountInfoContent: null,
-        redirectItems: null
+        redirectItems: null,
+        extraIcon: null,
+        header: null
     },
     urls: {
         accountInfo: alpha.urls.oldMainRootPath + '_AccountInfo/AccountInfo.aspx'
@@ -35,17 +37,23 @@
         menuBar.domElements.accountInfoTab = $('.accountinfo');
         menuBar.domElements.accountInfoContent = $('.accinfo-content');
         menuBar.domElements.redirectItems = $('.redirect-item');
+        menuBar.domElements.extraIcon = $('#icon-extra');
+        menuBar.domElements.header = $('#header');
     },
     layoutSmallSize: function () {
-        var width = $(window).width();
-        var content = $('.content-wrapper');
-        var isCollapse = menuBar.domElements.sideBar.hasClass('collapsed');
-        var activeSubMenu = $('.menu-item.active .sub-menu');
+        var width = $(window).width(),
+            content = $('.content-wrapper'),
+            isCollapsed = menuBar.domElements.sideBar.hasClass('collapsed'),
+            activeSubMenu = $('.menu-item.active .sub-menu');
+
         if (width <= 1024) {
-            if (!isCollapse) {
+            if (!isCollapsed) {
+                if (menuBar.domElements.sideBar.hasClass('docked')) {
+                    return;
+                }
+
                 activeSubMenu.css('display', 'none');
-                menuBar.domElements.sideBar.addClass('collapsed');
-                menuBar.domElements.sideBar.addClass('collapsed-smallsize');
+                menuBar.domElements.sideBar.addClass('collapsed').addClass('collapsed-smallsize');
                 content.addClass('expanded');
             }
         }
@@ -53,8 +61,7 @@
             var isAutoCollapse = menuBar.domElements.sideBar.hasClass('collapsed-smallsize');
             if (isAutoCollapse) {
                 activeSubMenu.css('display', 'block');
-                menuBar.domElements.sideBar.removeClass('collapsed');
-                menuBar.domElements.sideBar.removeClass('collapsed-smallsize');
+                menuBar.domElements.sideBar.removeClass('collapsed').removeClass('collapsed-smallsize');
 
                 content.removeClass('expanded');
             }
@@ -79,14 +86,7 @@
             menuBar.activeSubMenuItem($(this));
         });
 
-        menuBar.domElements.sideBar.hover(
-            function () {
-                menuBar.showMenuBar();
-            },
-            function () {
-                menuBar.hideMenuBar();
-            }
-        );
+        menuBar.domElements.sideBar.hover(menuBar.showMenuBar, menuBar.hideMenuBar);
 
         menuBar.domElements.mainTabs.click(function () {
             var $this = $(this);
@@ -125,11 +125,11 @@
             menuBar.hideMenuBar();
         });
 
-        $(window).resize(function () {
-            menuBar.layoutSmallSize();
-        });
-
+        $(window).resize(menuBar.layoutSmallSize);
+        menuBar.domElements.header.click(menuBar.hideMenuBar);
+        menuBar.domElements.extraIcon.click(menuBar.showMenuBar);
     },
+
     activeSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');
         subMenu.addClass('active');
@@ -137,22 +137,22 @@
 
     showMenuBar: function () {
         if (menuBar.domElements.sideBar.hasClass('collapsed')) {
-            menuBar.domElements.sideBar.addClass('hovered');
-            menuBar.domElements.sideBar.removeClass('focusout');
+            menuBar.domElements.sideBar.addClass('hovered').removeClass('focusout');
 
             var activeSubMenu = $('.menu-item.active .sub-menu');
             activeSubMenu.css('display', 'block');
         }
     },
+
     hideMenuBar: function () {
         if (menuBar.domElements.sideBar.hasClass('collapsed')) {
-            menuBar.domElements.sideBar.removeClass('hovered');
-            menuBar.domElements.sideBar.addClass('focusout');
+            menuBar.domElements.sideBar.removeClass('hovered').addClass('focusout');
 
             var activeSubMenu = $('.menu-item.active .sub-menu');
             activeSubMenu.css('display', 'none');
         }
     },
+
     collapseMenu: function (clickedItem) {
         var menuContainer = clickedItem.closest('li');
         menuBar.domElements.menuItems.removeClass('active');
@@ -170,6 +170,7 @@
             if (checkElement.is('ul')) {
                 checkElement.slideUp('normal');
             }
+
         } else {
             menuContainer.addClass('active');
             clickedItem.addClass('active');

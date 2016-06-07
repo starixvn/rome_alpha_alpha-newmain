@@ -1,4 +1,5 @@
 ﻿/// <reference path="../core.ts" />
+/// <reference path="menu-bar.ts" />
 
 'use strict';
 /*global alpha, briefProfile*/
@@ -106,6 +107,9 @@ var index = {
                 index.closeAllOpenDropdowns(iframeWindow);
 
                 index.cacheCurrentUrl();
+                $(this).contents().off('click.closeMenu').on('click.closeMenu', function () {
+                    menuBar.hideMenuBar();
+                });
             });
 
             index.domElements.accountInfoContent.load(function () {
@@ -123,6 +127,8 @@ var index = {
                     $dropdown.dropdown('toggle');
                 }
             });
+
+
         });
     }
 };
