@@ -47,15 +47,21 @@
             if (!isCollapse) {
                 activeSubMenu.css('display', 'none');
                 menuBar.domElements.sideBar.addClass('collapsed');
+                menuBar.domElements.sideBar.addClass('collapsed-smallsize');
                 content.addClass('expanded');
                 menuBar.domElements.profilePicture.addClass("collapse-image");
             }
         }
         else {
-            activeSubMenu.css('display', 'block');
-            menuBar.domElements.sideBar.removeClass('collapsed');
-            content.removeClass('expanded');
-            menuBar.domElements.profilePicture.removeClass("collapse-image");
+            var isAutoCollapse = menuBar.domElements.sideBar.hasClass('collapsed-smallsize');
+            if (isAutoCollapse) {
+                activeSubMenu.css('display', 'block');
+                menuBar.domElements.sideBar.removeClass('collapsed');
+                menuBar.domElements.sideBar.removeClass('collapsed-smallsize');
+
+                content.removeClass('expanded');
+                menuBar.domElements.profilePicture.removeClass("collapse-image");
+            }
         }
     },
     bindEvents: function () {
