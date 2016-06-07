@@ -61,7 +61,8 @@
     bindEvents: function () {
         menuBar.domElements.menuOpener.click(function () {
             var $this = $(this);
-            if (menuBar.domElements.sideBar.hasClass('focusout')) {
+            if (menuBar.domElements.sideBar.hasClass('collapsed') &&
+                menuBar.domElements.sideBar.hasClass('focusout')) {
                 menuBar.showMenuBar();
                 if (!$this.hasClass('active')) {
                     menuBar.collapseMenu($this);
