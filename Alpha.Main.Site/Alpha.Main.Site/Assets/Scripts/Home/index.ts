@@ -107,7 +107,11 @@ var index = {
                 index.closeAllOpenDropdowns(iframeWindow);
 
                 index.cacheCurrentUrl();
-                $(this).contents().off('click.closeMenu').on('click.closeMenu', function () {
+
+                $(iframeWindow.document)
+                    .off('click.closeMenu touchstart.closemenu')
+                    .on('click.closeMenu  touchstart.closemenu',
+                    function () {
                     menuBar.hideMenuBar();
                 });
             });
@@ -127,8 +131,6 @@ var index = {
                     $dropdown.dropdown('toggle');
                 }
             });
-
-
         });
     }
 };

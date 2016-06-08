@@ -37,7 +37,7 @@
         menuBar.domElements.accountInfoTab = $('.accountinfo');
         menuBar.domElements.accountInfoContent = $('.accinfo-content');
         menuBar.domElements.redirectItems = $('.redirect-item');
-        menuBar.domElements.extraIcon = $('#icon-extra');
+        menuBar.domElements.extraIcon = $('.extra-box');
         menuBar.domElements.header = $('#header');
     },
     layoutSmallSize: function () {
