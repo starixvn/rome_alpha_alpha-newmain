@@ -81,6 +81,10 @@ div.messageBlock {
         font-size: 20px;
         margin: 0;
         top: 0;
+        left: 0;
+        &:before {
+            left: 16px;
+        }
     }
 
     .modal-dialog {
