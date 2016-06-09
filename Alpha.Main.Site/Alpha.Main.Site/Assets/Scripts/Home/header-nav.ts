@@ -105,7 +105,7 @@ var headerNav = {
         headerNav.domElements.iconHome = $(".icon-home");
         headerNav.domElements.changeLanguageLink = $(".changelanguage-link");
 
-        headerNav.domElements.sideBar = $('.sidebar');
+        headerNav.domElements.sideBar = $('#side-bar');
         headerNav.domElements.sideBarContent = $('.content-wrapper');
         headerNav.domElements.profileImage = $("#logoProfileImg");
     },
@@ -146,14 +146,14 @@ var headerNav = {
             isCollapsed = sidebar.hasClass(collapsedClass),
             activeSubMenu = $('.menu-item.active .sub-menu');
 
+        activeSubMenu.show();
         if (isCollapsed) {
-            activeSubMenu.hide();
             sidebar.addClass(dockedClass);
             sidebar.removeClass(collapsedClass);
             content.removeClass(expandedClass);
             headerNav.domElements.profileImage.removeClass(collapseImageClass);
         } else {
-            activeSubMenu.show();
+            
             sidebar.removeClass(dockedClass);
             sidebar.addClass(collapsedClass);
             content.addClass(expandedClass);

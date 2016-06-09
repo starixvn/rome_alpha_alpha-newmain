@@ -5,7 +5,6 @@
         subMenu: null,
         menuItems: null,
         sideBar: null,
-
         mainTabs: null,
         menuContainer: null,
         tabContentContainers: null,
@@ -13,8 +12,11 @@
         accountInfoContent: null,
         redirectItems: null,
         extraIcon: null,
-        header: null
+        header: null,
+        userIcon: null,
+        mainTab: null
     },
+
     urls: {
         accountInfo: alpha.urls.oldMainRootPath + '_AccountInfo/AccountInfo.aspx'
     },
@@ -24,13 +26,13 @@
         menuBar.bindEvents();
         menuBar.layoutSmallSize();
     },
+
     storeElements: function () {
         menuBar.domElements.subMenuItems = $('.sub-menu-item');
         menuBar.domElements.menuOpener = $('.menu-opener');
         menuBar.domElements.subMenu = $('.sub-menu');
         menuBar.domElements.menuItems = $('.menu-item');
-        menuBar.domElements.sideBar = $('.sidebar');
-
+        menuBar.domElements.sideBar = $('#side-bar');
         menuBar.domElements.mainTabs = $('.main-tab li');
         menuBar.domElements.menuContainer = $('.mainmenu-container');
         menuBar.domElements.tabContentContainers = $('.tab-content-container');
@@ -39,7 +41,10 @@
         menuBar.domElements.redirectItems = $('.redirect-item');
         menuBar.domElements.extraIcon = $('.extra-box');
         menuBar.domElements.header = $('#header');
+        menuBar.domElements.userIcon = $('#user-icon');
+        menuBar.domElements.mainTab = $('#main-tab');
     },
+
     layoutSmallSize: function () {
         var width = $(window).width(),
             content = $('.content-wrapper'),
@@ -55,6 +60,7 @@
                 activeSubMenu.css('display', 'none');
                 menuBar.domElements.sideBar.addClass('collapsed').addClass('collapsed-smallsize');
                 content.addClass('expanded');
+                
             }
         }
         else {
@@ -62,11 +68,11 @@
             if (isAutoCollapse) {
                 activeSubMenu.css('display', 'block');
                 menuBar.domElements.sideBar.removeClass('collapsed').removeClass('collapsed-smallsize');
-
                 content.removeClass('expanded');
             }
         }
     },
+
     bindEvents: function () {
         menuBar.domElements.menuOpener.click(function () {
             var $this = $(this);
@@ -86,53 +92,69 @@
             menuBar.activeSubMenuItem($(this));
         });
 
-        menuBar.domElements.sideBar.hover(menuBar.showMenuBar, menuBar.hideMenuBar);
+        menuBar.domElements.sideBar.off('mouseenter.menubar')
+            .on('mouseenter.menubar', function (e) {
+                setTimeout(menuBar.showMenuBar, 50);
+            });
+
+        menuBar.domElements.sideBar.off('mouseleave.menubar')
+            .on('mouseleave.menubar', menuBar.hideMenuBar);
 
         menuBar.domElements.mainTabs.click(function () {
-            var $this = $(this);
-            var tabClass = $this.attr('class');
-
-            menuBar.domElements.mainTabs.removeClass('active');
-            $this.addClass('active');
-
-            var targetContainer = $("." + $this.data("target-container"));
-            menuBar.domElements.tabContentContainers.css('display', 'none');
-            targetContainer.css('display', 'block');
+            menuBar.openTab($(this));
         });
 
-        menuBar.domElements.accountInfoTab.click(function () {
-            var accInfoContent = menuBar.domElements.accountInfoContent;
-            var src = accInfoContent.attr('src');
-            if (!src) {
-                accInfoContent.attr('src', menuBar.urls.accountInfo);
-            }
-
-            // To work on IE, use plain-old javascript onload event
-            accInfoContent[0].onload = function () {
-                if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-                    menuBar.domElements.accountInfoContent.addClass('small-device');
-                }
-                else {
-                    var contentHeight = accInfoContent.contents().find("body").height();
-                    var iframeHeightPadding = 40;
-                    var iframeHeight = contentHeight + iframeHeightPadding;
-                    accInfoContent.css("height", iframeHeight);
-                }
-            };
-        });
+        menuBar.domElements.accountInfoTab.click(menuBar.showAccountInfo);
 
         menuBar.domElements.redirectItems.click(function () {
             menuBar.hideMenuBar();
         });
 
         $(window).resize(menuBar.layoutSmallSize);
+
         menuBar.domElements.header.click(menuBar.hideMenuBar);
-        menuBar.domElements.extraIcon.click(menuBar.showMenuBar);
+
+        menuBar.domElements.extraIcon.click(function (e) {
+            setTimeout(menuBar.showMenuBar, 50);
+        });
     },
 
     activeSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');
         subMenu.addClass('active');
+    },
+
+    openTab: function (tab) {
+        var currentActiveTab = menuBar.domElements.mainTab.data('active-tab'),
+            tabClass = tab.attr('class');
+
+        menuBar.domElements.mainTabs.removeClass('active');
+        tab.addClass('active');
+
+        menuBar.domElements.tabContentContainers.css('display', 'none');
+        var targetContainer = $("." + tab.data("target-container"));
+        targetContainer.css('display', 'block');
+    },
+
+    showAccountInfo: function () {
+        var accInfoContent = menuBar.domElements.accountInfoContent;
+        var src = accInfoContent.attr('src');
+        if (!src) {
+            accInfoContent.attr('src', menuBar.urls.accountInfo);
+        }
+
+        // To work on IE, use plain-old javascript onload event
+        accInfoContent[0].onload = function () {
+            if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+                menuBar.domElements.accountInfoContent.addClass('small-device');
+            }
+            else {
+                var contentHeight = accInfoContent.contents().find("body").height();
+                var iframeHeightPadding = 40;
+                var iframeHeight = contentHeight + iframeHeightPadding;
+                accInfoContent.css("height", iframeHeight);
+            }
+        };
     },
 
     showMenuBar: function () {
@@ -155,10 +177,10 @@
 
     collapseMenu: function (clickedItem) {
         var menuContainer = clickedItem.closest('li');
-        menuBar.domElements.menuItems.removeClass('active');
-
         menuContainer.addClass('active');
+
         var isVisible = clickedItem.hasClass('active');
+        menuBar.domElements.menuItems.removeClass('active');
         menuBar.domElements.menuOpener.removeClass('active');
         menuBar.domElements.subMenu.slideUp('normal');
 
