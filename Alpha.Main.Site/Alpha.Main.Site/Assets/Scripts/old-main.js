@@ -211,114 +211,118 @@ window.age = window.age || {
 
 age.CreateMaskDiv();
 
-window.ageWnd = window.ageWnd || {
-    popUp: [],
-    callback: [],
+var AgeWnd = function () {
+    return {
+        popUp: [],
+        callback: [],
 
-    open: function (url, title, left, popUpTop, width, height, callBack) {
-        popUpTop = popUpTop || 200;
-        var maxWidth = window.top.window.innerWidth;
-        var maxHeight = window.top.window.innerHeight - popUpTop - 60;
-        width = width > maxWidth ? maxWidth : width;
-        height = height > maxHeight ? maxHeight : height;
+        open: function (url, title, left, popUpTop, width, height, callBack) {
+            popUpTop = popUpTop || 200;
+            var maxWidth = window.top.window.innerWidth;
+            var maxHeight = window.top.window.innerHeight - popUpTop - 60;
+            width = width > maxWidth ? maxWidth : width;
+            height = height > maxHeight ? maxHeight : height;
 
-        title = title || '';
-        var popH = height || 360;
-        popH = popH + 50;
+            title = title || '';
+            var popH = height || 360;
+            popH = popH + 50;
 
-        var oldSiteBodyWidthPadding = 34;
-        var popW = (width + oldSiteBodyWidthPadding) || 480;
-        left = left || 200;
+            var oldSiteBodyWidthPadding = 34;
+            var popW = (width + oldSiteBodyWidthPadding) || 480;
+            left = left || 200;
 
-        var popUp = $("#page-popup").clone();
+            var popUp = this.popUp.length >= 1 ? this.popUp.pop() : $("#page-popup").clone();
 
-        popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
-        popUp.css({
-            width: popW,
-            height: popH,
-            left: left,
-            top: popUpTop
-        });
+            popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
+            popUp.css({
+                width: popW,
+                height: popH,
+                left: left,
+                top: popUpTop
+            });
 
-        popUp.appendTo("body");
-        popUp.removeClass("hidden");
-        popUp.find(".popup-title").html(title);
-        popUp.find(".ex-modal").css("height", popH + "px");
+            popUp.appendTo("body");
+            popUp.removeClass("hidden");
+            popUp.find(".popup-title").html(title);
+            popUp.find(".ex-modal").css("height", popH + "px");
 
-        var headerHeight = 40;
-        var contentBorder = 2;
-        var bodyHeightPadding = 18;
-        popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
+            var headerHeight = 40;
+            var contentBorder = 2;
+            var bodyHeightPadding = 18;
+            popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
 
-        var iframe = popUp.find("#popup-iframe");
-        var iframeHeight = popH - headerHeight - contentBorder - bodyHeightPadding;
-        ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
-        if (url) {
-            iframe.attr("src", url);
-        }
+            var iframe = popUp.find("#popup-iframe");
+            var iframeHeight = popH - headerHeight - contentBorder - bodyHeightPadding;
+            ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
+            if (url) {
+                iframe.attr("src", url);
+            }
 
-        popUp.modal({ show: true, backdrop: false });
-        popUp.find(".icon-close").unbind("click").click(function () {
+            popUp.modal({ show: true, backdrop: false });
+            popUp.find(".icon-close").unbind("click").click(function () {
+                popUp.remove();
+                if (callBack && typeof (callBack) == "function") {
+                    callBack();
+                }
+            });
+
+            popUp.tinyDraggable();
+            this.popUp.push(popUp);
+            this.callback.push();
+
+            if (!url) {
+                ageWnd.copyTargetForm(popUp);
+                iframe = popUp.find('.modal-body').find('#popup-iframe');
+                ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
+            }
+        },
+        close: function () {
+            var popUp = this.popUp.pop();
             popUp.remove();
+
+            var callBack = this.callback.pop();
             if (callBack && typeof (callBack) == "function") {
                 callBack();
             }
-        });
+        },
+        setRect: function (left, top, width, height) {
+        },
+        createInstance: function () {
+            return new AgeWnd();
+        },
 
-        popUp.tinyDraggable();
-        window.ageWnd.popUp.push(popUp);
-        window.ageWnd.callback.push();
+        copyTargetForm: function (popUp) {
+            var oldTarget = top.main.document.getElementById("target");
+            var newTarget = $.clone(oldTarget);
+            popUp.find('.modal-body').prepend(newTarget);
+            popUp.find('.modal-body').find('#popup-iframe').remove();
+            var iframeId = 'edit-setting-frame-' + Math.random().toString(36).substring(7);
+            popUp.find('.modal-body').prepend('<iframe id="popup-iframe" frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto" name="' + iframeId + '"></iframe>');
+            newTarget.target = iframeId;
+            newTarget.submit();
+        },
+        setIframeInfo: function (iframe, popUp, iframeHeight, left, top) {
+            iframe.css({
+                width: '100%',
+                height: iframeHeight,
+                left: left,
+                top: top
+            });
 
-        if (!url) {
-            ageWnd.copyTargetForm(popUp);
-            iframe = popUp.find('.modal-body').find('#popup-iframe');
-            ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
+            iframe.load(function () {
+                var title = popUp.find(".popup-title").html() || '';
+                var iframe_doc = iframe.contents();
+
+                var iframeTitle = iframe_doc.find("title").text();
+                if (title == '' && iframeTitle != 'Home') {
+                    popUp.find(".popup-title").html(iframeTitle);
+                }
+            });
         }
-    },
-    close: function () {
-        var popUp = window.ageWnd.popUp.pop();
-        popUp.remove();
-
-        var callBack = window.ageWnd.callback.pop();
-        if (callBack && typeof (callBack) == "function") {
-            callBack();
-        }
-    },
-    setRect: function (left, top, width, height) {
-    },
-    createInstance: function () {
-        return window.ageWnd;
-    },
-
-    copyTargetForm: function (popUp) {
-        var oldTarget = top.main.document.getElementById("target");
-        var newTarget = $.clone(oldTarget);
-        popUp.find('.modal-body').prepend(newTarget);
-        popUp.find('.modal-body').find('#popup-iframe').remove();
-        var iframeId = 'edit-setting-frame-' + Math.random().toString(36).substring(7);
-        popUp.find('.modal-body').prepend('<iframe id="popup-iframe" frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto" name="' + iframeId + '"></iframe>');
-        newTarget.target = iframeId;
-        newTarget.submit();
-    },
-    setIframeInfo: function (iframe, popUp, iframeHeight, left, top) {
-        iframe.css({
-            width: '100%',
-            height: iframeHeight,
-            left: left,
-            top: top
-        });
-
-        iframe.load(function () {
-            var title = popUp.find(".popup-title").html() || '';
-            var iframe_doc = iframe.contents();
-
-            var iframeTitle = iframe_doc.find("title").text();
-            if (title == '' && iframeTitle != 'Home') {
-                popUp.find(".popup-title").html(iframeTitle);
-            }
-        });
     }
 };
+
+window.ageWnd = window.ageWnd || new AgeWnd();
 
 window.bootboxConfirm = function (message, handleElement, acceptCallback, cancelCallback, popUpOptions) {
     bootbox.confirm(message, function (result) {
