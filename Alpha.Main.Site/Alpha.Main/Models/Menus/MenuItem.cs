@@ -68,7 +68,7 @@
         {
             get
             {
-                var isAuthorized = authorizeUrlFunc(this.Key);
+                var isAuthorized = authorizeUrlFunc(this.Url);
 
                 return isAuthorized
                     ? getMenuStatusFunc()
