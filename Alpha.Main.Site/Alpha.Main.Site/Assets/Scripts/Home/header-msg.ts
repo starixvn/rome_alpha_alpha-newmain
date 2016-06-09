@@ -142,8 +142,8 @@ var headerMessage = {
         var isShowFull = showFullMessage;
         var messageHeight = headerMessage.domElements.currentHotMessage.height();
         var headerHeight = 30;
-        var bodyBorder = 2;
-        var bodyPadding = 5 + bodyBorder;
+        var bodyBorderHeight = 2;
+        var bodyPaddingHeight = 5 + bodyBorderHeight;
 
         if (showFullMessage) {
             headerMessage.domElements.showMoreContainer.addClass("hide");
@@ -157,7 +157,7 @@ var headerMessage = {
                 messageHeight += headerMessage.domElements.showLessContainer.height() + 2;
             }
 
-            messageHeight += bodyPadding;
+            messageHeight += bodyPaddingHeight;
         }
         else {
             headerMessage.domElements.showLessContainer.addClass("hide");
@@ -166,7 +166,7 @@ var headerMessage = {
 
             if (messageHeight <= maxMessageHeight) {
                 headerMessage.domElements.showMoreContainer.addClass("hide");
-                messageHeight += bodyPadding;
+                messageHeight += bodyPaddingHeight;
             } else {
                 headerMessage.domElements.currentHotMessage.addClass("brief-content");
                 headerMessage.domElements.showMoreContainer.removeClass("hide");
@@ -233,9 +233,9 @@ var headerMessage = {
 
     appendMessageToPopup: function (messsage) {
         headerMessage.domElements.contentMessage.append(
-                '<p class="not-shown-message">'
-                + messsage
-                + '</p>');
+            '<p class="not-shown-message">'
+            + messsage
+            + '</p>');
     },
 
     getMessages: function () {
@@ -280,12 +280,12 @@ var headerMessage = {
                 headerMessage.domElements.currentHotMessage.animate({
                     opacity: 0.0
                 },
-                1500,
-                function () {
-                    //// Remove Old Message and Show New Message
-                    headerMessage.domElements.currentHotMessage.remove();
-                    headerMessage.showNextMessage(nextMessage);
-                });
+                    1500,
+                    function () {
+                        //// Remove Old Message and Show New Message
+                        headerMessage.domElements.currentHotMessage.remove();
+                        headerMessage.showNextMessage(nextMessage);
+                    });
             }
             else {
                 headerMessage.showNextMessage(nextMessage);
@@ -304,9 +304,9 @@ var headerMessage = {
         nextMessage.animate({
             opacity: 1.0
         },
-        1500,
-        function () {
-        });
+            1500,
+            function () {
+            });
     },
 
     applyScroller: function () {

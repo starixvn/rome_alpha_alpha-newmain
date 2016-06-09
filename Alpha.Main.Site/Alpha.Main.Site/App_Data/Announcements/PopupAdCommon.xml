@@ -8,189 +8,395 @@
       LCS: 7,
       domain: 5
   -->
+    <PopupAnnouncement id="5525910" name="OneRNG Casino"  startdate="05/15/2016" enddate="08/03/2016"  effectdate="05/24/2016"
+                    width="640" height="480" top="110" left="350">
+        <en-US src="/site-oldmain/_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+            N/A
+        </en-US>
+        <zh-CN src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+            N/A
+        </zh-CN>
+        <zh-TW src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+            N/A
+        </zh-TW>
+        <ja-JP src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+            N/A
+        </ja-JP>
+        <ko-KR src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+            N/A
+        </ko-KR>
+        <th-TH src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
+            N/A
+        </th-TH>
+    </PopupAnnouncement>
+
+    <PopupAnnouncement id="5525922" name="Voidbridge" startdate="05/15/2016" enddate="06/03/2016"  effectdate="05/24/2016"
+                         width="1000" height="220" top="110" left="350">
+        <en-US src="">
+            Dear valued agents,<br />
+            <p>
+                We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
+            </p>
+            <p>
+                This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
+            </p>
+            <p>
+                All settings will be configured as follows:
+            </p>
+            <p>
+                &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
+                &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
+            </p>
+            <p>
+                If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
+            </p>
+            <p>
+                All settings will be available for configuration since <b>05/20/2016</b>.
+            </p>
+            <p>
+                Thank you
+            </p>
+        </en-US>
+
+        <zh-CN src="">
+            尊敬的代理，<br />
+            <p>
+                在此宣佈 <b>{effectdate}</b>, 新产品 "Macau Games" 将于手机版推出.
+            </p>
+            <p>
+                此项新产品将于默认开启形式推出.  若您要关闭 "Macau Games" 于特定下线, 可到设定功能里设置.
+            </p>
+            <p>
+                所有设定将配置如下:
+            </p>
+            <p>
+                &#8226; 占成数, 佣金和会员的赢额上限将複製娱乐城的设定.<br/>
+                &#8226; 会员投注限额不会超过 上线提供的投注限额.
+            </p>
+            <p>
+                如果娱乐城没有任何设定, 请在 "Macau Games" 正式推出前自行设定
+            </p>
+            <p>
+                所有设定将可用于自 <b>05/20/2016</b> 配置.
+            </p>
+            <p>
+                谢谢。
+            </p>
+        </zh-CN>
+
+        <zh-TW src="">
+            尊敬的代理，<br />
+            <p>
+                在此宣佈 <b>{effectdate}</b>, 新產品 "Macau Games" 將于手機版推出.
+            </p>
+            <p>
+                此項新產品將于默認開啟形式推出.  若您要關閉 "Macau Games" 于特定下線, 可到設定功能里設置.
+            </p>
+            <p>
+                所有設定將配置如下:
+            </p>
+            <p>
+                &#8226; 占成數, 傭金和會員的贏額上限將複製娛樂城的設定.<br/>
+                &#8226; 會員投注限額不會超過 上线提供的投注限額.
+            </p>
+            <p>
+                如果娛樂城沒有任何設定, 請在 "Macau Games" 正式推出前自行設定.
+            </p>
+            <p>
+                所有設定將可用於自 <b>05/20/2016</b> 配置
+            </p>
+            <p>
+                謝謝。
+            </p>
+        </zh-TW>
+
+        <ja-JP src="">
+            Dear valued agents,<br />
+            <p>
+                We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
+            </p>
+            <p>
+                This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
+            </p>
+            <p>
+                All settings will be configured as follows:
+            </p>
+            <p>
+                &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
+                &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
+            </p>
+            <p>
+                If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
+            </p>
+            <p>
+                All settings will be available for configuration since <b>05/20/2016</b>.
+            </p>
+            <p>
+                Thank you
+            </p>
+        </ja-JP>
+
+        <ko-KR src="">
+            Dear valued agents,<br />
+            <p>
+                We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
+            </p>
+            <p>
+                This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
+            </p>
+            <p>
+                All settings will be configured as follows:
+            </p>
+            <p>
+                &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
+                &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
+            </p>
+            <p>
+                If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
+            </p>
+            <p>
+                All settings will be available for configuration since <b>05/20/2016</b>.
+            </p>
+            <p>
+                Thank you
+            </p>
+        </ko-KR>
+
+        <th-TH src="">
+            เรียน ท่านเอเจนต์ที่มีอุปการะคุณ<br />
+            <p>
+                ทางบริษัทใคร่ขอแจ้งให้ทราบว่า จะทำการเปิดตัวสินค้าชื่อ “Macau Games” ซึ่งสามารถเดิมพันผ่านอุปกรณ์มือถือ ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b>
+            </p>
+            <p>
+                เกมส์นี้จะเปิดถึงลูกค้าโดยตรง หากท่านต้องการจะปิดการใช้งานให้กับดาวไลน์ฉพาะเจาะจง โปรดกำหนดที่ฟังก์ชั่นการตั้งค่า
+            </p>
+            <p>
+                การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้:
+            </p>
+            <p>
+                &#8226; ค่าความเสี่ยง คอมมิสชั่น และการจำกัดค่าได้เสียของเมมเบ้อ การตั้งค่านี้จะทำการคัดลอกมาจากการตั้งค่าของ RNG Casino เดิมที่มีการตั้งค่าไว้อยู่แล้ว<br/>
+                &#8226; วงเงินเดิมพันของเมมเบ้อ จะไม่เกินวงเงินเดิมพันของ SMA
+            </p>
+            <p>
+                หากไม่มี RNG Casino สามารถคัดลอก จะต้องมีการกำหนดค่าการตั้งค่าสำหรับเกม" Macau Games" ก่อนที่ผลิตภัณฑ์นี้ถูกเปิดใช้งานเพื่อวางเดิมพัน
+            </p>
+            <p>
+                การตั้งค่าทั้งหมดจะสามารถใช้ได้สำหรับการกำหนดค่า ตั้งแต่ <b>05/20/2016</b>
+            </p>
+            <p>
+                กราบขอบพระคุณคะ
+            </p>
+        </th-TH>
+
+        <vi-VN src="">
+            Kính gửi quý khách hàng,<br />
+            <p>
+                Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm một trò chơi điện thoại mới tên "Macau Games".
+            </p>
+            <p>
+                Sản phẩm này sẽ được cung cấp mặc định. Nếu bạn muốn vô hiệu hoá "Macau Games" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.
+            </p>
+            <p>
+                Tất cả các thiết lập sẽ được cấu hình như sau:
+            </p>
+            <p>
+                &#8226; Position Taking, Hoa Hồng và Giới Hạn Thắng Thua của Member sẽ được sao chép từ RNG Casino.<br/>
+                &#8226; Giới hạn cược của Member sẽ không vượt quá giới hạn cược do SMA quy định
+            </p>
+            <p>
+                Nếu không có thiết lập nào được sao chép từ RNG Casino, bạn phải cấu hình các thiết lập cho "Macau Games" trước khi sản phẩm này được cho phép đặt cược.
+            </p>
+            <p>
+                Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>05/20/2016</b>.
+            </p>
+            <p>
+                Trân Trọng
+            </p>
+        </vi-VN>
+    </PopupAnnouncement>
     <PopupAnnouncement id="5525922" name="Voidbridge" startdate="05/15/2016" enddate="11/03/2016"  effectdate="05/24/2016"
                      width="1000" height="220" top="110" left="350">
-      <en-US src="">
-        Dear valued agents,<br />
-        <p>
-          We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
-        </p>
-        <p>
-          This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
-        </p>
-        <p>
-          All settings will be configured as follows:
-        </p>
-        <p>
-          &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
-          &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
-        </p>
-        <p>
-          If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
-        </p>
-        <p>
-          All settings will be available for configuration since <b>05/20/2016</b>.
-        </p>
-        <p>
-          Thank you
-        </p>
-      </en-US>
+        <en-US src="">
+            Dear valued agents,<br />
+            <p>
+                We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
+            </p>
+            <p>
+                This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
+            </p>
+            <p>
+                All settings will be configured as follows:
+            </p>
+            <p>
+                &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
+                &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
+            </p>
+            <p>
+                If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
+            </p>
+            <p>
+                All settings will be available for configuration since <b>05/20/2016</b>.
+            </p>
+            <p>
+                Thank you
+            </p>
+        </en-US>
 
-      <zh-CN src="">
-        尊敬的代理，<br />
-        <p>
-          在此宣佈 <b>{effectdate}</b>, 新产品 "Macau Games" 将于手机版推出.
-        </p>
-        <p>
-          此项新产品将于默认开启形式推出.  若您要关闭 "Macau Games" 于特定下线, 可到设定功能里设置.
-        </p>
-        <p>
-          所有设定将配置如下:
-        </p>
-        <p>
-          &#8226; 占成数, 佣金和会员的赢额上限将複製娱乐城的设定.<br/>
-          &#8226; 会员投注限额不会超过 上线提供的投注限额.
-        </p>
-        <p>
-          如果娱乐城没有任何设定, 请在 "Macau Games" 正式推出前自行设定
-        </p>
-        <p>
-          所有设定将可用于自 <b>05/20/2016</b> 配置.
-        </p>
-        <p>
-          谢谢。
-        </p>
-      </zh-CN>
+        <zh-CN src="">
+            尊敬的代理，<br />
+            <p>
+                在此宣佈 <b>{effectdate}</b>, 新产品 "Macau Games" 将于手机版推出.
+            </p>
+            <p>
+                此项新产品将于默认开启形式推出.  若您要关闭 "Macau Games" 于特定下线, 可到设定功能里设置.
+            </p>
+            <p>
+                所有设定将配置如下:
+            </p>
+            <p>
+                &#8226; 占成数, 佣金和会员的赢额上限将複製娱乐城的设定.<br/>
+                &#8226; 会员投注限额不会超过 上线提供的投注限额.
+            </p>
+            <p>
+                如果娱乐城没有任何设定, 请在 "Macau Games" 正式推出前自行设定
+            </p>
+            <p>
+                所有设定将可用于自 <b>05/20/2016</b> 配置.
+            </p>
+            <p>
+                谢谢。
+            </p>
+        </zh-CN>
 
-      <zh-TW src="">
-        尊敬的代理，<br />
-        <p>
-          在此宣佈 <b>{effectdate}</b>, 新產品 "Macau Games" 將于手機版推出.
-        </p>
-        <p>
-          此項新產品將于默認開啟形式推出.  若您要關閉 "Macau Games" 于特定下線, 可到設定功能里設置.
-        </p>
-        <p>
-          所有設定將配置如下:
-        </p>
-        <p>
-          &#8226; 占成數, 傭金和會員的贏額上限將複製娛樂城的設定.<br/>
-          &#8226; 會員投注限額不會超過 上线提供的投注限額.
-        </p>
-        <p>
-          如果娛樂城沒有任何設定, 請在 "Macau Games" 正式推出前自行設定.
-        </p>
-        <p>
-          所有設定將可用於自 <b>05/20/2016</b> 配置
-        </p>
-        <p>
-          謝謝。
-        </p>
-      </zh-TW>
+        <zh-TW src="">
+            尊敬的代理，<br />
+            <p>
+                在此宣佈 <b>{effectdate}</b>, 新產品 "Macau Games" 將于手機版推出.
+            </p>
+            <p>
+                此項新產品將于默認開啟形式推出.  若您要關閉 "Macau Games" 于特定下線, 可到設定功能里設置.
+            </p>
+            <p>
+                所有設定將配置如下:
+            </p>
+            <p>
+                &#8226; 占成數, 傭金和會員的贏額上限將複製娛樂城的設定.<br/>
+                &#8226; 會員投注限額不會超過 上线提供的投注限額.
+            </p>
+            <p>
+                如果娛樂城沒有任何設定, 請在 "Macau Games" 正式推出前自行設定.
+            </p>
+            <p>
+                所有設定將可用於自 <b>05/20/2016</b> 配置
+            </p>
+            <p>
+                謝謝。
+            </p>
+        </zh-TW>
 
-      <ja-JP src="">
-        Dear valued agents,<br />
-        <p>
-          We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
-        </p>
-        <p>
-          This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
-        </p>
-        <p>
-          All settings will be configured as follows:
-        </p>
-        <p>
-          &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
-          &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
-        </p>
-        <p>
-          If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
-        </p>
-        <p>
-          All settings will be available for configuration since <b>05/20/2016</b>.
-        </p>
-        <p>
-          Thank you
-        </p>
-      </ja-JP>
+        <ja-JP src="">
+            Dear valued agents,<br />
+            <p>
+                We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
+            </p>
+            <p>
+                This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
+            </p>
+            <p>
+                All settings will be configured as follows:
+            </p>
+            <p>
+                &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
+                &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
+            </p>
+            <p>
+                If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
+            </p>
+            <p>
+                All settings will be available for configuration since <b>05/20/2016</b>.
+            </p>
+            <p>
+                Thank you
+            </p>
+        </ja-JP>
 
-      <ko-KR src="">
-        Dear valued agents,<br />
-        <p>
-          We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
-        </p>
-        <p>
-          This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
-        </p>
-        <p>
-          All settings will be configured as follows:
-        </p>
-        <p>
-          &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
-          &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
-        </p>
-        <p>
-          If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
-        </p>
-        <p>
-          All settings will be available for configuration since <b>05/20/2016</b>.
-        </p>
-        <p>
-          Thank you
-        </p>
-      </ko-KR>
+        <ko-KR src="">
+            Dear valued agents,<br />
+            <p>
+                We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
+            </p>
+            <p>
+                This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
+            </p>
+            <p>
+                All settings will be configured as follows:
+            </p>
+            <p>
+                &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
+                &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
+            </p>
+            <p>
+                If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
+            </p>
+            <p>
+                All settings will be available for configuration since <b>05/20/2016</b>.
+            </p>
+            <p>
+                Thank you
+            </p>
+        </ko-KR>
 
-      <th-TH src="">
-        เรียน ท่านเอเจนต์ที่มีอุปการะคุณ<br />
-        <p>
-          ทางบริษัทใคร่ขอแจ้งให้ทราบว่า จะทำการเปิดตัวสินค้าชื่อ “Macau Games” ซึ่งสามารถเดิมพันผ่านอุปกรณ์มือถือ ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b>
-        </p>
-        <p>
-          เกมส์นี้จะเปิดถึงลูกค้าโดยตรง หากท่านต้องการจะปิดการใช้งานให้กับดาวไลน์ฉพาะเจาะจง โปรดกำหนดที่ฟังก์ชั่นการตั้งค่า
-        </p>
-        <p>
-          การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้:
-        </p>
-        <p>
-          &#8226; ค่าความเสี่ยง คอมมิสชั่น และการจำกัดค่าได้เสียของเมมเบ้อ การตั้งค่านี้จะทำการคัดลอกมาจากการตั้งค่าของ RNG Casino เดิมที่มีการตั้งค่าไว้อยู่แล้ว<br/>
-          &#8226; วงเงินเดิมพันของเมมเบ้อ จะไม่เกินวงเงินเดิมพันของ SMA
-        </p>
-        <p>
-          หากไม่มี RNG Casino สามารถคัดลอก จะต้องมีการกำหนดค่าการตั้งค่าสำหรับเกม" Macau Games" ก่อนที่ผลิตภัณฑ์นี้ถูกเปิดใช้งานเพื่อวางเดิมพัน
-        </p>
-        <p>
-          การตั้งค่าทั้งหมดจะสามารถใช้ได้สำหรับการกำหนดค่า ตั้งแต่ <b>05/20/2016</b>
-        </p>
-        <p>
-          กราบขอบพระคุณคะ
-        </p>
-      </th-TH>
+        <th-TH src="">
+            เรียน ท่านเอเจนต์ที่มีอุปการะคุณ<br />
+            <p>
+                ทางบริษัทใคร่ขอแจ้งให้ทราบว่า จะทำการเปิดตัวสินค้าชื่อ “Macau Games” ซึ่งสามารถเดิมพันผ่านอุปกรณ์มือถือ ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b>
+            </p>
+            <p>
+                เกมส์นี้จะเปิดถึงลูกค้าโดยตรง หากท่านต้องการจะปิดการใช้งานให้กับดาวไลน์ฉพาะเจาะจง โปรดกำหนดที่ฟังก์ชั่นการตั้งค่า
+            </p>
+            <p>
+                การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้:
+            </p>
+            <p>
+                &#8226; ค่าความเสี่ยง คอมมิสชั่น และการจำกัดค่าได้เสียของเมมเบ้อ การตั้งค่านี้จะทำการคัดลอกมาจากการตั้งค่าของ RNG Casino เดิมที่มีการตั้งค่าไว้อยู่แล้ว<br/>
+                &#8226; วงเงินเดิมพันของเมมเบ้อ จะไม่เกินวงเงินเดิมพันของ SMA
+            </p>
+            <p>
+                หากไม่มี RNG Casino สามารถคัดลอก จะต้องมีการกำหนดค่าการตั้งค่าสำหรับเกม" Macau Games" ก่อนที่ผลิตภัณฑ์นี้ถูกเปิดใช้งานเพื่อวางเดิมพัน
+            </p>
+            <p>
+                การตั้งค่าทั้งหมดจะสามารถใช้ได้สำหรับการกำหนดค่า ตั้งแต่ <b>05/20/2016</b>
+            </p>
+            <p>
+                กราบขอบพระคุณคะ
+            </p>
+        </th-TH>
 
-      <vi-VN src="">
-        Kính gửi quý khách hàng,<br />
-        <p>
-          Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm một trò chơi điện thoại mới tên "Macau Games".
-        </p>
-        <p>
-          Sản phẩm này sẽ được cung cấp mặc định. Nếu bạn muốn vô hiệu hoá "Macau Games" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.
-        </p>
-        <p>
-          Tất cả các thiết lập sẽ được cấu hình như sau:
-        </p>
-        <p>
-          &#8226; Position Taking, Hoa Hồng và Giới Hạn Thắng Thua của Member sẽ được sao chép từ RNG Casino.<br/>
-          &#8226; Giới hạn cược của Member sẽ không vượt quá giới hạn cược do SMA quy định
-        </p>
-        <p>
-          Nếu không có thiết lập nào được sao chép từ RNG Casino, bạn phải cấu hình các thiết lập cho "Macau Games" trước khi sản phẩm này được cho phép đặt cược.
-        </p>
-        <p>
-          Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>05/20/2016</b>.
-        </p>
-        <p>
-          Trân Trọng
-        </p>
-      </vi-VN>
+        <vi-VN src="">
+            Kính gửi quý khách hàng,<br />
+            <p>
+                Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm một trò chơi điện thoại mới tên "Macau Games".
+            </p>
+            <p>
+                Sản phẩm này sẽ được cung cấp mặc định. Nếu bạn muốn vô hiệu hoá "Macau Games" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.
+            </p>
+            <p>
+                Tất cả các thiết lập sẽ được cấu hình như sau:
+            </p>
+            <p>
+                &#8226; Position Taking, Hoa Hồng và Giới Hạn Thắng Thua của Member sẽ được sao chép từ RNG Casino.<br/>
+                &#8226; Giới hạn cược của Member sẽ không vượt quá giới hạn cược do SMA quy định
+            </p>
+            <p>
+                Nếu không có thiết lập nào được sao chép từ RNG Casino, bạn phải cấu hình các thiết lập cho "Macau Games" trước khi sản phẩm này được cho phép đặt cược.
+            </p>
+            <p>
+                Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>05/20/2016</b>.
+            </p>
+            <p>
+                Trân Trọng
+            </p>
+        </vi-VN>
     </PopupAnnouncement>
     <PopupAnnouncement id="4523909" name="ColossusBets" startdate="02/23/2016" enddate="04/29/2016"  effectdate="24/02/2016" width="1000" height="220" top="110" left="350">
         <en-US src="">
