@@ -295,8 +295,9 @@ window.ageWnd = window.ageWnd || {
         var newTarget = $.clone(oldTarget);
         popUp.find('.modal-body').prepend(newTarget);
         popUp.find('.modal-body').find('#popup-iframe').remove();
-        popUp.find('.modal-body').prepend('<iframe id="popup-iframe" frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto" name="edit-setting-frame"></iframe>');
-        newTarget.target = "edit-setting-frame";
+        var iframeId = 'edit-setting-frame-' + Math.random().toString(36).substring(7);
+        popUp.find('.modal-body').prepend('<iframe id="popup-iframe" frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto" name="' + iframeId + '"></iframe>');
+        newTarget.target = iframeId;
         newTarget.submit();
     },
     setIframeInfo: function (iframe, popUp, iframeHeight, left, top) {
