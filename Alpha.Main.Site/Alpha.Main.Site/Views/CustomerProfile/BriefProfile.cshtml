@@ -40,39 +40,45 @@
                         <span id="labelNickname">@Resources.configNow</span>
                     </a>
                 </div>
-
-                <div id="tooltip-box" style="display:none;">
-                    <div class="left">
-                    </div>
-                    <div class="bg">
-                        <div class="normal">
-                            <div class="introNickname">
-                                @Html.Raw(Resources.introNickname)
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right">
-                    </div>
-                </div>
             }
-
-            <div id="profileTooltip" style="display:none;">
-                <div class="left">
-                </div>
-                <div class="bg">
-                    <div class="normal">
-                        <div class="tooltip-content">
-                            @Html.Raw(@Resources.ProfileLoginTip)
-                            <a class="change-picture-link" href="@(viewProfileUrl)" target="main" id="changePictureLink">
-                                @Resources.clickHere
-                            </a>
-                            &nbsp;@Resources.uploadNow
-                        </div>
-                    </div>
-                </div>
-                <div class="right">
-                </div>
-            </div>
         }
     </div>
 </div>
+
+@if (!Model.LoginUserIsNotMainAccount)
+{
+    if (string.IsNullOrEmpty(Model.NickName))
+    {
+        <div id="tooltip-box" style="display:none;">
+            <div class="left">
+            </div>
+            <div class="bg">
+                <div class="normal">
+                    <div class="introNickname">
+                        @Html.Raw(Resources.introNickname)
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+    }
+
+    <div id="profileTooltip" style="display:none;">
+        <div class="left">
+        </div>
+        <div class="bg">
+            <div class="normal">
+                <div class="tooltip-content">
+                    @Html.Raw(@Resources.ProfileLoginTip)
+                    <a class="change-picture-link" href="@(viewProfileUrl)" target="main" id="changePictureLink">
+                        @Resources.clickHere
+                    </a>
+                    &nbsp;@Resources.uploadNow
+                </div>
+            </div>
+        </div>
+        <div class="right">
+        </div>
+    </div>
+}
