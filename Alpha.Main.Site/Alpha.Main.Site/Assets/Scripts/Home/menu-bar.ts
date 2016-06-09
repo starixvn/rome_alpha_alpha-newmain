@@ -60,7 +60,7 @@
                 activeSubMenu.css('display', 'none');
                 menuBar.domElements.sideBar.addClass('collapsed').addClass('collapsed-smallsize');
                 content.addClass('expanded');
-                
+
             }
         }
         else {
@@ -109,8 +109,6 @@
         menuBar.domElements.redirectItems.click(function () {
             menuBar.hideMenuBar();
         });
-
-        $(window).resize(menuBar.layoutSmallSize);
 
         menuBar.domElements.header.click(menuBar.hideMenuBar);
 
