@@ -123,6 +123,10 @@
     },
 
     openTab: function (tab) {
+        if (!tab.hasClass('withripple')) {
+            return;
+        }
+
         var currentActiveTab = menuBar.domElements.mainTab.data('active-tab'),
             tabClass = tab.attr('class');
 

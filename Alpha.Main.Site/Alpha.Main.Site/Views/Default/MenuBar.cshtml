@@ -3,7 +3,7 @@
 {
     <div>
         <ul class="main-tab" id="main-tab">
-            <li class="mainmenu withripple active @(Model.IsAccountInfoVisible ? string.Empty : "disabledViewAccInfo")" data-target-container="mainmenu-container"><a>@Resources.mainMenu</a></li>
+            <li class="mainmenu active @(Model.IsAccountInfoVisible ? "withripple" : "disabledViewAccInfo")" data-target-container="mainmenu-container"><a>@Resources.mainMenu</a></li>
             @if (Model.IsAccountInfoVisible)
             {
                 <li class="accountinfo withripple"
