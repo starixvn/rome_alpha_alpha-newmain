@@ -7,7 +7,7 @@ body {
     font-size: $font-size;
     overflow: hidden;
 }
-
+html * {max-height:1000000px;}
 /********************************** Customer profile ******************************************/
 .customer-profile {
     overflow: hidden;
