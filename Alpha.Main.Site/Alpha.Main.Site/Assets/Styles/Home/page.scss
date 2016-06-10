@@ -281,23 +281,5 @@ html * {max-height:1000000px;}
 
 @media only screen and (max-device-width : 767px)   {
 
-     .header-nav {
-        .icon-collapse {
-            float: left;
-        }
-
-        .list-top {
-            float: left;
-
-            .datetime {
-                display: none;
-            }
-
-            > li .list-setting, > li .list-language {
-                position: absolute;
-            }
-        }
-
-        
-     }
+     
 }
