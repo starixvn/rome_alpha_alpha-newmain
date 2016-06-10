@@ -13,7 +13,8 @@ var index = {
         partialContents: null,
         content: null,
         accountInfoContent: null,
-        currentURLCookieName: null
+        currentURLCookieName: null,
+        pagePopup: null
     },
 
     urls: {
@@ -29,7 +30,7 @@ var index = {
     },
 
     registerEvents: function () {
-        $('#page-popup').tinyDraggable();
+        index.domElements.pagePopup.tinyDraggable();
         setTimeout(index.reCheckin, 30000);
     },
 
@@ -38,6 +39,7 @@ var index = {
         index.domElements.content = $('#content');
         index.domElements.accountInfoContent = $('#accountinfo-content');
         index.domElements.currentURLCookieName = $('#currentURLCookieName');
+        index.domElements.pagePopup = $('#page-popup');
         index.currentUrlCookieName = index.domElements.currentURLCookieName.val();
     },
 

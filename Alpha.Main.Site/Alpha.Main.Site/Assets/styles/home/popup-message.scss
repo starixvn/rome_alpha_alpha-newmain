@@ -21,6 +21,7 @@ div.messageBlock {
     top: 10px;
     left: 300px;
     overflow: hidden;
+
     .modal-sm {
         width: 500px;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
@@ -69,7 +70,7 @@ div.messageBlock {
         width: 85%;
     }
 
-     @media (min-width:1024px) and (max-width:1280px) {
+    @media (min-width:1024px) and (max-width:1280px) {
         width: 89%;
     }
 }
@@ -82,6 +83,7 @@ div.messageBlock {
         margin: 0;
         top: 0;
         left: 0;
+
         &:before {
             left: 16px;
         }
@@ -101,7 +103,7 @@ div.messageBlock {
 
             .modal-body {
                 position: relative;
-                padding: 0 15px 5px;
+                padding: 10px 5px 5px 5px;
                 min-height: 60px;
                 overflow: auto;
                 z-index: 1050;
@@ -114,13 +116,22 @@ div.messageBlock {
 
                 p {
                     color: #85490d;
-                    line-height: 20px;
+                    line-height: 17px;
                     margin-bottom: 0;
+                    margin-right: 30px;
                 }
 
                 p.brief-content {
-                    height: 80px;
                     overflow: hidden;
+                }
+
+                .icon-close {
+                    width: 30px;
+                    height: 20px;
+                }
+
+                #msg-content {
+                    cursor: move;
                 }
             }
         }

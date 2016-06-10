@@ -130,7 +130,7 @@ var headerMessage = {
     showHotMessages: function () {
         if (headerMessage.domElements.currentHotMessage.length > 0) {
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false })
-                .tinyDraggable({ exclude: 'button.icon.icon-close.close, #userMessageModalBody, p, a' });
+                .tinyDraggable({ exclude: 'button.icon.icon-close.close, a' });
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
@@ -138,17 +138,19 @@ var headerMessage = {
     },
 
     calculateHotMessagePopupHeight: function (showFullMessage) {
-        var maxMessageHeight = 80;
+        var maxMessageHeight = 47;
         var isShowFull = showFullMessage;
         var messageHeight = headerMessage.domElements.currentHotMessage.height();
-        var headerHeight = 30;
+        var headerHeight = 10;
         var bodyBorderHeight = 2;
         var bodyPaddingHeight = 5 + bodyBorderHeight;
 
         if (showFullMessage) {
             headerMessage.domElements.showMoreContainer.addClass("hide");
             headerMessage.domElements.currentHotMessage.removeClass("brief-content");
+            headerMessage.domElements.currentHotMessage.css('height', '');
             messageHeight = headerMessage.domElements.currentHotMessage.height();
+            headerMessage.domElements.currentHotMessage.height(messageHeight);
 
             if (messageHeight <= maxMessageHeight) {
                 headerMessage.domElements.showLessContainer.addClass("hide");
@@ -168,7 +170,7 @@ var headerMessage = {
                 headerMessage.domElements.showMoreContainer.addClass("hide");
                 messageHeight += bodyPaddingHeight;
             } else {
-                headerMessage.domElements.currentHotMessage.addClass("brief-content");
+                headerMessage.domElements.currentHotMessage.addClass("brief-content").height(maxMessageHeight);
                 headerMessage.domElements.showMoreContainer.removeClass("hide");
                 messageHeight = maxMessageHeight + headerMessage.domElements.showMoreContainer.height() + 2;
             }
@@ -192,7 +194,7 @@ var headerMessage = {
             && publicMessage[headerMessage.messageIdIndex] !== headerMessage.publicMessageId) {
 
             headerMessage.domElements.liveMessage
-                .html(publicMessage[headerMessage.messageContentIndex])
+                .html(publicMessage[headerMessage.messageContentIndex] + '. ')
                 .data(url);
 
             headerMessage.appendMessageToPopup(publicMessage[headerMessage.messageContentIndex]);
@@ -210,13 +212,13 @@ var headerMessage = {
             var privateMessageContent = headerMessage.domElements.liveMessage.find('#private-message-content');
 
             if (privateMessageContent.length > 0) {
-                privateMessageContent.html(privateMessage[headerMessage.messageContentIndex]);
+                privateMessageContent.html("Private message: " + privateMessage[headerMessage.messageContentIndex]);
             }
             else {
                 var liveMessageContent = headerMessage.domElements.liveMessage.html();
                 headerMessage.domElements.liveMessage.html(
                     liveMessageContent
-                    + ". <font id='private-message-content' color=\"green\">Private message: "
+                    + "<font id='private-message-content' color=\"green\">Private message: "
                     + privateMessage[headerMessage.messageContentIndex]
                     + "</font>");
             }
@@ -258,7 +260,7 @@ var headerMessage = {
                     headerMessage.applyScroller();
                 } catch (e) { }
 
-                setTimeout(headerMessage.getMessages, 60 * 1000);
+                setTimeout(headerMessage.getMessages, 10 * 1000);
             }
         });
 
@@ -292,7 +294,7 @@ var headerMessage = {
             }
 
             headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false })
-                .tinyDraggable({ exclude: 'button.icon.icon-close.close, #userMessageModalBody, p, a' });
+                .tinyDraggable({ exclude: 'button.icon.icon-close.close, a' });
             headerMessage.calculateHotMessagePopupHeight(false);
         }
     },
