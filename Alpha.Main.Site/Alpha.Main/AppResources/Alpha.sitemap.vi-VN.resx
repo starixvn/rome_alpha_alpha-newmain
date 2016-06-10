@@ -133,7 +133,7 @@
     <value>(%) PT của Bingo</value>
   </data>
   <data name="casinoPositionTaking" xml:space="preserve">
-    <value>(%) PT của Casino</value>
+    <value>PT (%) của Casino</value>
   </data>
   <data name="charts" xml:space="preserve">
     <value>Biểu đồ</value>
@@ -175,7 +175,7 @@
     <value>Tiền chưa xử lý của Agent</value>
   </data>
   <data name="cancelledBets" xml:space="preserve">
-    <value>Cược hủy/từ chối</value>
+    <value>Cược bị hủy</value>
   </data>
   <data name="commissionByBettype" xml:space="preserve">
     <value>Hoa hồng theo loại cược</value>
@@ -217,13 +217,13 @@
     <value>Quản lý cược gần nhất</value>
   </data>
   <data name="newAgent" xml:space="preserve">
-    <value>Thành viên Agent mới</value>
+    <value>Tạo Agent mới</value>
   </data>
   <data name="newMaster" xml:space="preserve">
-    <value>Thành viên Master mới</value>
+    <value>Tạo Master mới</value>
   </data>
   <data name="newMember" xml:space="preserve">
-    <value>Thành viên  mới</value>
+    <value>Tạo Member mới</value>
   </data>
   <data name="outRight" xml:space="preserve">
     <value>Cược Thắng</value>
