@@ -110,9 +110,9 @@ body {
             .icon-arrow-right {
                 @include transform(rotate(0));
                 font-size: 16px;
-                transition: transform 0.3s ease-out;
                 position: relative;
                 top: 2px;
+                @include transition(transform 0.3s ease-out);
             }
 
             &.active {
@@ -223,4 +223,81 @@ body {
     z-index: 99;
 }
 
-/********************************** Warning browser message ***********************************/
+/********************************** Icons ******************************************/
+.hamburger-box {
+    cursor: pointer;
+    height: 24px;
+    width: 22px;
+    display: inline-block;
+    margin: 10px 16px;
+
+    .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+        background-color: #fff;
+        height: 2px;
+        position: absolute;
+        width: 16px;        
+        @include transition(transform ease .15s);        
+        @include border-radius(4px);
+    }
+
+    .hamburger-inner {
+        top: 50%;
+        display: block;
+
+        &:after, &:before {
+            display: block;
+            content: '';
+        }
+
+        &:before {
+            top: -5px;
+        }
+
+        &:after {
+            bottom: -5px;
+        }
+    }
+
+    &:hover .hamburger-inner:before {
+        @include transform(translate3d(-2px, 1px, 0) rotate(-37deg) scaleX(0.7));
+    }
+
+    &:hover .hamburger-inner:after {
+        @include transform(translate3d(-2px, -1px, 0) rotate(37deg) scaleX(0.7));
+    }
+
+}
+
+.content-wrapper.expanded {
+    .hamburger-box:hover .hamburger-inner:before {
+        @include transform(translate3d(2px, 1px, 0) rotate(37deg) scaleX(0.7));
+    }
+
+    .hamburger-box:hover .hamburger-inner:after {
+        @include transform(translate3d(2px, -1px, 0) rotate(-37deg) scaleX(0.7));
+    }
+}
+
+
+@media only screen and (max-device-width : 767px)   {
+
+     .header-nav {
+        .icon-collapse {
+            float: left;
+        }
+
+        .list-top {
+            float: left;
+
+            .datetime {
+                display: none;
+            }
+
+            > li .list-setting, > li .list-language {
+                position: absolute;
+            }
+        }
+
+        
+     }
+}
