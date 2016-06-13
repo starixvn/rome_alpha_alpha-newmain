@@ -214,7 +214,7 @@
             </p>
         </vi-VN>
     </PopupAnnouncement>
-    <PopupAnnouncement id="5525922" name="Voidbridge" startdate="05/15/2016" enddate="11/03/2016"  effectdate="05/24/2016"
+    <PopupAnnouncement id="5525922" name="Voidbridge" startdate="05/15/2016" enddate="06/03/2016"  effectdate="05/24/2016"
                      width="1000" height="220" top="110" left="350">
         <en-US src="">
             Dear valued agents,<br />
@@ -965,7 +965,7 @@
         </vi-VN>
     </PopupAnnouncement>
 
-    <PopupAnnouncement id="3543501" name="Gold Deluxe - already synced Live Casino" startdate="04/01/2015" enddate="06/30/2015"  effectdate="dd/mm/yyyy" width="1000" height="220" top="110" left="350">
+    <PopupAnnouncement id="3543501" name="Gold Deluxe - already synced Live Casino" startdate="04/01/2015" enddate="06/03/2015"  effectdate="dd/mm/yyyy" width="1000" height="220" top="110" left="350">
         <en-US src="">
             <b>Dear valued agents,</b>
             <br />
@@ -1073,7 +1073,7 @@
         </vi-VN>
     </PopupAnnouncement>
 
-    <PopupAnnouncement id="3543502" name="Gold Deluxe - haven't synced Live Casino" startdate="04/01/2015" enddate="06/30/2015"  effectdate="dd/mm/yyyy" width="1000" height="220" top="110" left="350">
+    <PopupAnnouncement id="3543502" name="Gold Deluxe - haven't synced Live Casino" startdate="04/01/2015" enddate="06/03/2015"  effectdate="dd/mm/yyyy" width="1000" height="220" top="110" left="350">
         <en-US src="">
             <b>Dear valued agents,</b>
             <br />
