@@ -138,7 +138,7 @@ var headerMessage = {
     },
 
     calculateHotMessagePopupHeight: function (showFullMessage) {
-        var maxMessageHeight = 50;
+        var maxMessageHeight = 53;
         var isShowFull = showFullMessage;
         var messageHeight = headerMessage.domElements.currentHotMessage.height();
         var headerHeight = 10;
