@@ -138,7 +138,7 @@ var headerMessage = {
     },
 
     calculateHotMessagePopupHeight: function (showFullMessage) {
-        var maxMessageHeight = 47;
+        var maxMessageHeight = 50;
         var isShowFull = showFullMessage;
         var messageHeight = headerMessage.domElements.currentHotMessage.height();
         var headerHeight = 10;
@@ -260,7 +260,7 @@ var headerMessage = {
                     headerMessage.applyScroller();
                 } catch (e) { }
 
-                setTimeout(headerMessage.getMessages, 10 * 1000);
+                setTimeout(headerMessage.getMessages, 60 * 1000);
             }
         });
 
