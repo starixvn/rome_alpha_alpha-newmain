@@ -12,7 +12,6 @@ var headerNav = {
         languageSelectorContainer: null,
 
         iconLogOut: null,
-        iconCollapse: null,
         iconHome: null,
         swapView: null,
         changeLanguageLink: null,
@@ -101,7 +100,6 @@ var headerNav = {
         headerNav.domElements.languageSelectorContainer = $(".language-selector-container");
 
         headerNav.domElements.iconLogOut = $(".icon-logout");
-        headerNav.domElements.iconCollapse = $('.icon-collapse');
         headerNav.domElements.iconHome = $(".icon-home");
         headerNav.domElements.changeLanguageLink = $(".changelanguage-link");
 
@@ -123,11 +121,6 @@ var headerNav = {
 
         headerNav.domElements.iconLogOut.on('click touchend', alpha.core.signOut);
 
-        headerNav.domElements.iconCollapse.click(function (e) {
-            headerNav.collapseLeftPanel($(this));
-            e.stopPropagation();
-        });
-
         headerNav.domElements.iconHome.click(function () {
             index.changeMenu(headerNav.urls.home);
         });
@@ -135,46 +128,6 @@ var headerNav = {
         headerNav.domElements.changeLanguageLink.click(function () {
             headerNav.changeLanguage($(this).data("value"));
         });
-    },
-
-    collapseLeftPanel: function (collapseButton) {
-        var collapsedClass = 'collapsed',
-            expandedClass = 'expanded',
-            collapseImageClass = 'collapse-image',
-            dockedClass = 'docked',
-            sidebar = headerNav.domElements.sideBar,
-            content = headerNav.domElements.sideBarContent,
-            isCollapsed = sidebar.hasClass(collapsedClass),
-            isHidenMobile = sidebar.hasClass('hidden-mobile'),
-            activeSubMenu = $('.menu-item.active .sub-menu');
-
-        activeSubMenu.show();
-
-        var width = $(window).width();
-        if (width < 768) {
-            if (isHidenMobile) {
-                sidebar.addClass('visible-mobile')
-                    .removeClass('hidden-mobile');
-            }
-            else {
-                sidebar.removeClass('visible-mobile')
-                    .addClass('hidden-mobile');
-            }
-        }
-        else {
-            if (isCollapsed) {
-                sidebar.addClass(dockedClass);
-                sidebar.removeClass(collapsedClass);
-                content.removeClass(expandedClass);
-                headerNav.domElements.profileImage.removeClass(collapseImageClass);
-            } else {
-
-                sidebar.removeClass(dockedClass);
-                sidebar.addClass(collapsedClass);
-                content.addClass(expandedClass);
-                headerNav.domElements.profileImage.addClass(collapseImageClass);
-            }
-        }
     },
 
     changeLanguage: function (lang) {

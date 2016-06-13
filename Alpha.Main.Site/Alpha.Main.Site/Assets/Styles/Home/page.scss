@@ -57,7 +57,7 @@ html * {
     overflow-y: auto;
     position: absolute;
     left: 0;
-    top: 56px;
+    top: 65px;
     right: 0;
     bottom: 0;
 
@@ -160,6 +160,14 @@ html * {
     }
 }
 
+.sidebar {
+    &.docked, &.hovered {
+        .mainmenu-container {
+            top: 56px;
+        }
+    }
+}
+
 /********************************** Account Info ******************************************/
 .accountinfo-container {
     height: 100%;
@@ -170,12 +178,6 @@ html * {
 
     &.container {
         width: 100%;
-    }
-
-    .icon-user {
-        display: none;
-        position: relative;
-        left: 0;
     }
 
     #accountinfo-content {
@@ -229,6 +231,13 @@ html * {
     opacity: 0.5;
     position: absolute;
     z-index: 99;
+}
+
+.icon-user {
+    display: none;
+    position: relative;
+    left: 0;
+    top: 25px;
 }
 
 

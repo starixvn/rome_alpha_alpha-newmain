@@ -1,4 +1,6 @@
-﻿var alpha = {
+﻿declare var isMobile: any;
+
+var alpha = {
     urls:
     {
         oldMainRootPath: (<HTMLInputElement>document.getElementById('oldMainRootPath')).value,
@@ -42,11 +44,29 @@
             return false;
         }
     },
+    isScreenGreater1024: false,
+    isScreenLower768: false,
+    isScreenGreater768AndLower1024: false,
+    isMobile: false,
     init: function () {
         if (alpha.core.isIe()) {
             //// Work arround because in IE, bootstrap modal dont delegate focusin event to others.
             $.fn.modal.Constructor.prototype.enforceFocus = function () { };
         }
+
+        var currentWindowWidth = $(window).width();
+
+        if (currentWindowWidth < 768) {
+            alpha.isScreenLower768 = true;
+        }
+        else if (currentWindowWidth <= 1024) {
+            alpha.isScreenGreater768AndLower1024 = true;
+        }
+        else {
+            alpha.isScreenGreater1024 = true;
+        }
+
+        alpha.isMobile = isMobile.any;
     }
 };
 

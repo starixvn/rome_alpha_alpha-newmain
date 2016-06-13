@@ -66,7 +66,7 @@ var briefProfile = {
             .on('click.brief-profile', briefProfile.hideProfileTooltip);
 
         briefProfile.domElements.profilePicture.click(function () {
-            menuBar.hideMenuBar();
+            menuBar.collapseSideBar();
         });
     },
 

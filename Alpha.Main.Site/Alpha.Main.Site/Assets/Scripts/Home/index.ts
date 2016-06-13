@@ -114,7 +114,7 @@ var index = {
                     .off('click.closeMenu touchstart.closemenu')
                     .on('click.closeMenu  touchstart.closemenu',
                     function () {
-                    menuBar.hideMenuBar();
+                    menuBar.collapseSideBar();
                 });
             });
 

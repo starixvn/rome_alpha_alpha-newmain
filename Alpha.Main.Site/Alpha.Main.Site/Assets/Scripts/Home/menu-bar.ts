@@ -1,13 +1,10 @@
 ﻿var menuBar = {
     domElements: {
         subMenuItems: null,
-        menuOpener: null,
-        subMenu: null,
+        menuOpeners: null,
+        subMenus: null,
         menuItems: null,
         sideBar: null,
-        mainTabs: null,
-        menuContainer: null,
-        tabContentContainers: null,
         accountInfoTab: null,
         accountInfoContent: null,
         redirectItems: null,
@@ -15,7 +12,13 @@
         header: null,
         userIcon: null,
         mainTab: null,
-        mainContent: null
+        mainContent: null,
+        mainMenuTab: null,
+        mainMenuHeader: null,
+        accountInfo: null,
+        accountInfoHeader: null,
+        hamburgerIcon: null,
+        profileImage: null
     },
 
     urls: {
@@ -25,19 +28,15 @@
     init: function () {
         menuBar.storeElements();
         menuBar.bindEvents();
-        menuBar.layoutSmallSize();
+        menuBar.initSidebar();
     },
 
     storeElements: function () {
         menuBar.domElements.subMenuItems = $('.sub-menu-item');
-        menuBar.domElements.menuOpener = $('.menu-opener');
-        menuBar.domElements.subMenu = $('.sub-menu');
+        menuBar.domElements.menuOpeners = $('.menu-opener');
+        menuBar.domElements.subMenus = $('.sub-menu');
         menuBar.domElements.menuItems = $('.menu-item');
         menuBar.domElements.sideBar = $('#side-bar');
-        menuBar.domElements.mainTabs = $('.main-tab li');
-        menuBar.domElements.menuContainer = $('.mainmenu-container');
-        menuBar.domElements.tabContentContainers = $('.tab-content-container');
-        menuBar.domElements.accountInfoTab = $('.accountinfo');
         menuBar.domElements.accountInfoContent = $('.accinfo-content');
         menuBar.domElements.redirectItems = $('.redirect-item');
         menuBar.domElements.extraIcon = $('.extra-box');
@@ -45,110 +44,147 @@
         menuBar.domElements.userIcon = $('#user-icon');
         menuBar.domElements.mainTab = $('#main-tab');
         menuBar.domElements.mainContent = $('#content-wrapper');
+        menuBar.domElements.mainMenuTab = $('#main-menu-tab');
+        menuBar.domElements.accountInfoTab = $('#account-info-tab');
+        menuBar.domElements.accountInfoHeader = $('#account-info-header');
+        menuBar.domElements.mainMenuHeader = $('#main-menu-header');
+        menuBar.domElements.hamburgerIcon = $('#hamburger-icon');
+        menuBar.domElements.profileImage = $('#logoProfileImg');
     },
 
-    layoutSmallSize: function () {
-        var width = $(window).width(),
-            isCollapsed = menuBar.domElements.sideBar.hasClass('collapsed'),
-            activeSubMenu = $('.menu-item.active .sub-menu');
+    initSidebar: function () {
+        var sidebar = menuBar.domElements.sideBar,
+            mainContent = menuBar.domElements.mainContent;
 
-        if (width < 768) {
-            menuBar.domElements.sideBar.addClass('hidden-mobile');
-            menuBar.domElements.mainContent.addClass('expanded-mobile');
+        if (alpha.isScreenLower768) {
+            sidebar.addClass('hidden-mobile');
+            mainContent.addClass('expanded-mobile');
+
+            return;
         }
-        else if (width <= 1024) {
-            if (!isCollapsed) {
-                if (menuBar.domElements.sideBar.hasClass('docked')) {
-                    return;
-                }
 
-                activeSubMenu.css('display', 'none');
-                menuBar.domElements.sideBar.addClass('collapsed').addClass('collapsed-smallsize');
-                menuBar.domElements.mainContent.addClass('expanded');
+        var activeSubMenu = $('.menu-item.active .sub-menu');
+        if (alpha.isScreenGreater768AndLower1024) {
+            activeSubMenu.hide();
+            sidebar.addClass('collapsed').addClass('collapsed-smallsize');
+            mainContent.addClass('expanded');
 
-            }
+            return;
         }
-        else {
-            var isAutoCollapse = menuBar.domElements.sideBar.hasClass('collapsed-smallsize');
-            if (isAutoCollapse) {
-                activeSubMenu.css('display', 'block');
-                menuBar.domElements.sideBar.removeClass('collapsed').removeClass('collapsed-smallsize');
-                menuBar.domElements.mainContent.removeClass('expanded');
-            }
+
+        if (alpha.isScreenGreater1024) {
+            activeSubMenu.show();
+            sidebar.removeClass('collapsed').removeClass('collapsed-smallsize');
+            mainContent.removeClass('expanded');
         }
     },
 
     bindEvents: function () {
-        menuBar.domElements.menuOpener.click(function (e) {
-            var $this = $(this);
-            if (menuBar.domElements.sideBar.hasClass('collapsed') &&
-                menuBar.domElements.sideBar.hasClass('focusout')) {
-                menuBar.showMenuBar();
-                if (!$this.hasClass('active')) {
-                    menuBar.collapseMenu($this);
-                }
+        menuBar.domElements.menuOpeners.click(function (e) {
+            var $this = $(this),
+                sideBar = menuBar.domElements.sideBar,
+                isCollapsed = sideBar.hasClass('focusout')
+                    && sideBar.hasClass('collapsed-smallsize')
+                    && !sideBar.hasClass('docked'),
+                isActive = $this.hasClass('active');
+
+            menuBar.expandSideBar();
+
+            if (isCollapsed && isActive) {
+                menuBar.activateMainMenuTab();
             }
             else {
-                menuBar.collapseMenu($this);
+                menuBar.toggleMainMenu($this);
             }
-
-            e.stopPropagation();
         });
 
         menuBar.domElements.subMenuItems.click(function () {
-            menuBar.activeSubMenuItem($(this));
+            menuBar.activateSubMenuItem($(this));
         });
 
-        //menuBar.domElements.sideBar.off('mouseenter.menubar')
-        //    .on('mouseenter.menubar', function (e) {
-        //        setTimeout(menuBar.showMenuBar, 50);
-        //    });
-
-        //menuBar.domElements.sideBar.off('mouseleave.menubar')
-        //    .on('mouseleave.menubar', menuBar.hideMenuBar);
-
-        menuBar.domElements.mainTabs.click(function () {
-            menuBar.openTab($(this));
+        menuBar.domElements.mainMenuHeader.click(menuBar.activateMainMenuTab);
+        menuBar.domElements.accountInfoHeader.click(menuBar.activateAccountInfoTab);
+        menuBar.domElements.userIcon.click(menuBar.activateAccountInfoTab);
+        menuBar.domElements.redirectItems.click(menuBar.collapseSideBar);
+        menuBar.domElements.header.click(menuBar.collapseSideBar);
+        menuBar.domElements.extraIcon.click(menuBar.expandSideBar);
+        menuBar.domElements.hamburgerIcon.click(function (e) {
+            menuBar.collapseLeftPanel($(this));
+            e.stopPropagation();
         });
-
-        menuBar.domElements.accountInfoTab.click(menuBar.showAccountInfo);
-
-        menuBar.domElements.redirectItems.click(function () {
-            menuBar.hideMenuBar();
-        });
-
-        menuBar.domElements.header.click(menuBar.hideMenuBar);
-
-        menuBar.domElements.extraIcon.click(function (e) {
-            setTimeout(menuBar.showMenuBar, 50);
-        });
+        menuBar.registerMouseHoverForDestopBrowsers();
     },
 
-    activeSubMenuItem: function (subMenu) {
-        menuBar.domElements.subMenuItems.removeClass('active');
-        subMenu.addClass('active');
-    },
+    registerMouseHoverForDestopBrowsers: function () {
+        if (!alpha.isMobile) {
+            menuBar.domElements.sideBar
+                .off('mouseenter.menubar')
+                .on('mouseenter.menubar', function (e) {
+                    setTimeout(menuBar.expandSideBar, 50);
+                });
 
-    openTab: function (tab) {
-        if (!tab.hasClass('withripple')) {
-            return;
+            menuBar.domElements.sideBar
+                .off('mouseleave.menubar')
+                .on('mouseleave.menubar', menuBar.collapseSideBar);
         }
-
-        var currentActiveTab = menuBar.domElements.mainTab.data('active-tab'),
-            tabClass = tab.attr('class');
-
-        menuBar.domElements.mainTabs.removeClass('active');
-        tab.addClass('active');
-
-        menuBar.domElements.tabContentContainers.css('display', 'none');
-        var targetContainer = $("." + tab.data("target-container"));
-        targetContainer.css('display', 'block');
     },
 
-    showAccountInfo: function () {
-        var accInfoContent = menuBar.domElements.accountInfoContent;
-        var src = accInfoContent.attr('src');
-        if (!src) {
+    collapseLeftPanel: function (collapseButton) {
+        var collapsedClass = 'collapsed',
+            expandedClass = 'expanded',
+            collapseImageClass = 'collapse-image',
+            dockedClass = 'docked',
+            sidebar = menuBar.domElements.sideBar,
+            content = menuBar.domElements.mainContent,
+            isCollapsed = sidebar.hasClass(collapsedClass),
+            isHidenMobile = sidebar.hasClass('hidden-mobile'),
+            activeSubMenu = $('.menu-item.active .sub-menu'),
+            profileImage = menuBar.domElements.profileImage;
+
+        if (alpha.isScreenLower768) {
+            if (isHidenMobile) {
+                sidebar.addClass('visible-mobile')
+                    .removeClass('hidden-mobile');
+            }
+            else {
+                sidebar.removeClass('visible-mobile')
+                    .addClass('hidden-mobile');
+            }
+        }
+        else {
+            if (isCollapsed) {
+                activeSubMenu.show();
+                sidebar.addClass(dockedClass).removeClass(collapsedClass);
+                content.removeClass(expandedClass);
+                profileImage.removeClass(collapseImageClass);
+
+                //// When expanding, check current active tab, and active it
+                if (menuBar.domElements.accountInfoHeader.hasClass('active')) {
+                    menuBar.domElements.mainMenuTab.hide();
+                }
+                else {
+                    menuBar.domElements.accountInfoTab.hide();
+                }
+            } else {
+                activeSubMenu.hide();
+                sidebar.removeClass(dockedClass).addClass(collapsedClass);
+                content.addClass(expandedClass);
+                profileImage.addClass(collapseImageClass);
+                menuBar.domElements.mainMenuTab.show();
+            }
+        }
+    },
+
+    activateAccountInfoTab: function () {
+        menuBar.domElements.accountInfoHeader.addClass('active');
+        menuBar.domElements.mainMenuHeader.removeClass('active');
+        menuBar.domElements.mainMenuTab.hide();
+        menuBar.domElements.accountInfoTab.show();
+
+        var accInfoContent = menuBar.domElements.accountInfoContent,
+            accountInfoUrl = accInfoContent.attr('src');
+
+        if (!accountInfoUrl) {
             accInfoContent.attr('src', menuBar.urls.accountInfo);
         }
 
@@ -166,61 +202,88 @@
         };
     },
 
-    showMenuBar: function () {
-        if (menuBar.domElements.sideBar.hasClass('collapsed')) {
-            menuBar.domElements.sideBar.addClass('hovered').removeClass('focusout');
+    activateSubMenuItem: function (subMenu) {
+        menuBar.domElements.subMenuItems.removeClass('active');
+        subMenu.addClass('active');
+    },
 
-            var activeSubMenu = $('.menu-item.active .sub-menu');
-            activeSubMenu.css('display', 'block');
+    expandSideBar: function () {
+        var sideBar = menuBar.domElements.sideBar;
+
+        if (alpha.isScreenLower768 && sideBar.hasClass('hidden-mobile')) {
+            sideBar.removeClass('hidden-mobile').addClass('visible-mobile');
         }
+        else if (sideBar.hasClass('collapsed')) {
+            sideBar.addClass('hovered').removeClass('focusout');
 
-        if (menuBar.domElements.sideBar.hasClass('visible-mobile')) {
-            menuBar.domElements.sideBar
-                .addClass('hidden-mobile')
-                .removeClass('visible-mobile');
+            //// Show all active sub menus
+            var activeSubMenus = $('.menu-item.active .sub-menu');
+            activeSubMenus.css('display', 'block');
+
+            //// When expanding, if active tab is account info, then hide menu bar
+            if (menuBar.domElements.accountInfoHeader.hasClass('active')) {
+                menuBar.domElements.mainMenuTab.hide();
+            }
         }
     },
 
-    hideMenuBar: function () {
-        if (menuBar.domElements.sideBar.hasClass('collapsed')) {
-            menuBar.domElements.sideBar.removeClass('hovered').addClass('focusout');
+    collapseSideBar: function () {
+        var sideBar = menuBar.domElements.sideBar;
 
-            var activeSubMenu = $('.menu-item.active .sub-menu');
-            activeSubMenu.css('display', 'none');
+        if (alpha.isScreenLower768
+            && sideBar.hasClass('visible-mobile')) {
+            menuBar.domElements.sideBar.addClass('hidden-mobile').removeClass('visible-mobile');
         }
+        else if (sideBar.hasClass('collapsed')) {
+            sideBar.removeClass('hovered').addClass('focusout');
 
-        if (menuBar.domElements.sideBar.hasClass('visible-mobile'))
-        {
-            menuBar.domElements.sideBar
-                .addClass('hidden-mobile')
-                .removeClass('visible-mobile');
+            //// Hide all expanded sub menus
+            var activeSubMenus = $('.menu-item.active .sub-menu');
+            activeSubMenus.css('display', 'none');
+
+            //// Show all menu bar icon
+            menuBar.domElements.mainMenuTab.show();
         }
     },
 
-    collapseMenu: function (clickedItem) {
-        var menuContainer = clickedItem.closest('li');
-        menuContainer.addClass('active');
+    activateMainMenuTab: function () {
+        //// Set header tab state, and hide account infor tab
+        menuBar.domElements.accountInfoHeader.removeClass('active');
+        menuBar.domElements.accountInfoTab.hide();
+        menuBar.domElements.mainMenuHeader.addClass('active');
+        menuBar.domElements.mainMenuTab.show();
+    },
 
-        var isVisible = clickedItem.hasClass('active');
+    toggleMainMenu: function (menuOpener) {
+        menuBar.activateMainMenuTab();
+
+        var mainMenu = menuOpener.parent(),
+            isVisible = menuOpener.hasClass('active');
+
+        //// Hide all active menus
         menuBar.domElements.menuItems.removeClass('active');
-        menuBar.domElements.menuOpener.removeClass('active');
-        menuBar.domElements.subMenu.slideUp('normal');
+        menuBar.domElements.menuOpeners.removeClass('active');
+        menuBar.domElements.subMenus.slideUp('normal');
 
-        var checkElement = clickedItem.next();
+        var subMenuContainer = menuOpener.next();
         if (isVisible) {
-            menuContainer.removeClass('active');
-            clickedItem.removeClass('active');
+            //// Unset active for selected menu, when collapse
+            mainMenu.removeClass('active');
+            menuOpener.removeClass('active');
 
-            if (checkElement.is('ul')) {
-                checkElement.slideUp('normal');
+            //// Incase of has sub menu, then collapse sub menus
+            if (subMenuContainer.is('ul')) {
+                subMenuContainer.slideUp('normal');
             }
 
         } else {
-            menuContainer.addClass('active');
-            clickedItem.addClass('active');
+            //// Expand selected menu
+            mainMenu.addClass('active');
+            menuOpener.addClass('active');
 
-            if (checkElement.is('ul')) {
-                checkElement.slideDown('normal');
+            //// expand all sub menu
+            if (subMenuContainer.is('ul')) {
+                subMenuContainer.slideDown('normal');
             }
         }
     }
