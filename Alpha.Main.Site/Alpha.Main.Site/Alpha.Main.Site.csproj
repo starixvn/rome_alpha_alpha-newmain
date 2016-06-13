@@ -392,6 +392,8 @@
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="Assets\scripts\introduction\doc.script.ts" />
+    <TypeScriptCompile Include="Assets\scripts\introduction\enjoyhint.ts" />
     <Content Include="Assets\scripts\old-main.js" />
     <Content Include="Assets\styles\announcement\announcements.css">
       <DependentUpon>announcements.scss</DependentUpon>
@@ -697,6 +699,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties bundleconfig_1json__JSONSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
