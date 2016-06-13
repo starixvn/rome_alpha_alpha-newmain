@@ -355,8 +355,8 @@ window.bootboxAlert = function (message, handleElement, callbackFunction) {
         var position = menuBarManager.getPopupEditStatusPosition(handleElement);
 
         dialog.css({
-            left: position.left + checkboxLeft,
-            top: startTop + position.top + checkboxBottom
+            left: position.left,
+            top: position.top
         });
     }
 };
