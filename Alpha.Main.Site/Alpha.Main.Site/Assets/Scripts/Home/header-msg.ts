@@ -197,7 +197,9 @@ var headerMessage = {
                 .html(publicMessage[headerMessage.messageContentIndex] + '. ')
                 .data(url);
 
-            headerMessage.appendMessageToPopup(publicMessage[headerMessage.messageContentIndex]);
+            if (headerMessage.publicMessageId !== 0) {
+                headerMessage.appendMessageToPopup(publicMessage[headerMessage.messageContentIndex]);
+            }
 
             headerMessage.publicMessageId = publicMessage[headerMessage.messageIdIndex];
         }
@@ -223,7 +225,9 @@ var headerMessage = {
                     + "</font>");
             }
 
-            headerMessage.appendMessageToPopup(privateMessage[headerMessage.messageContentIndex]);
+            if (headerMessage.privateMessageId !== 0) {
+                headerMessage.appendMessageToPopup(privateMessage[headerMessage.messageContentIndex]);
+            }
 
             headerMessage.privateMessageId = privateMessage[headerMessage.messageIdIndex];
         }
@@ -246,9 +250,9 @@ var headerMessage = {
             url: headerMessage.urls.getMessages,
             responseType: "json",
             success: function (rawResults) {
-                var results = alpha.core.convertReponseToJson(rawResults);
-
                 try {
+                    var results = alpha.core.convertReponseToJson(rawResults);
+
                     var publicMessage = results.public_message ? results.public_message : 0,
                         privateMessage = results.private_message ? results.private_message : 0,
                         unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
