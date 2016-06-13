@@ -99,13 +99,13 @@
             menuBar.activeSubMenuItem($(this));
         });
 
-        menuBar.domElements.sideBar.off('mouseenter.menubar')
-            .on('mouseenter.menubar', function (e) {
-                setTimeout(menuBar.showMenuBar, 50);
-            });
+        //menuBar.domElements.sideBar.off('mouseenter.menubar')
+        //    .on('mouseenter.menubar', function (e) {
+        //        setTimeout(menuBar.showMenuBar, 50);
+        //    });
 
-        menuBar.domElements.sideBar.off('mouseleave.menubar')
-            .on('mouseleave.menubar', menuBar.hideMenuBar);
+        //menuBar.domElements.sideBar.off('mouseleave.menubar')
+        //    .on('mouseleave.menubar', menuBar.hideMenuBar);
 
         menuBar.domElements.mainTabs.click(function () {
             menuBar.openTab($(this));
