@@ -45,11 +45,31 @@ function setCookie(name, value, days, domain) {
 }
 
 window.age = window.age || {
-    OpenPopUp: function (url, title, width, height, position) {
+    calculateWidthHeight: function (width, height, position) {
         var maxWidth = window.top.window.innerWidth;
         var maxHeight = window.top.window.innerHeight - (position ? position.top : 0) - 60;
         width = width > maxWidth ? maxWidth : width;
         height = height > maxHeight ? maxHeight : height;
+
+        var minHeight = 250;
+        minHeight = height < minHeight ? height : minHeight;
+        if (height < minHeight) {
+            if (minHeight < height) {
+                height = minHeight;
+            } else {
+                height = height;
+            }
+        }
+
+        return {
+            width: width,
+            height: height
+        };
+    },
+    OpenPopUp: function (url, title, width, height, position) {
+        var widthHeight = window.age.calculateWidthHeight(width, height, position);
+        width = widthHeight.width;
+        height = widthHeight.height;
 
         title = title || '';
         var popH = height || 360;
@@ -216,12 +236,33 @@ var AgeWnd = function () {
         popUp: [],
         callback: [],
 
-        open: function (url, title, left, popUpTop, width, height, callBack) {
-            popUpTop = popUpTop || 200;
+        calculateWidthHeight: function (width, height, position) {
             var maxWidth = window.top.window.innerWidth;
-            var maxHeight = window.top.window.innerHeight - popUpTop - 60;
+            var maxHeight = window.top.window.innerHeight - (position ? position.top : 0) - 60;
             width = width > maxWidth ? maxWidth : width;
             height = height > maxHeight ? maxHeight : height;
+
+            var minHeight = 250;
+            minHeight = height < minHeight ? height : minHeight;
+            if (height < minHeight) {
+                if (minHeight < height) {
+                    height = minHeight;
+                } else {
+                    height = height;
+                }
+            }
+
+            return {
+                width: width,
+                height: height
+            };
+        },
+        open: function (url, title, left, popUpTop, width, height, callBack) {
+            popUpTop = popUpTop || 200;
+
+            var widthHeight = this.calculateWidthHeight(width, height, { top: popUpTop });
+            width = widthHeight.width;
+            height = widthHeight.height;
 
             title = title || '';
             var popH = height || 360;
