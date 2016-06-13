@@ -123,8 +123,9 @@ var headerNav = {
 
         headerNav.domElements.iconLogOut.on('click touchend', alpha.core.signOut);
 
-        headerNav.domElements.iconCollapse.click(function () {
+        headerNav.domElements.iconCollapse.click(function (e) {
             headerNav.collapseLeftPanel($(this));
+            e.stopPropagation();
         });
 
         headerNav.domElements.iconHome.click(function () {
@@ -144,20 +145,35 @@ var headerNav = {
             sidebar = headerNav.domElements.sideBar,
             content = headerNav.domElements.sideBarContent,
             isCollapsed = sidebar.hasClass(collapsedClass),
+            isHidenMobile = sidebar.hasClass('hidden-mobile'),
             activeSubMenu = $('.menu-item.active .sub-menu');
 
         activeSubMenu.show();
-        if (isCollapsed) {
-            sidebar.addClass(dockedClass);
-            sidebar.removeClass(collapsedClass);
-            content.removeClass(expandedClass);
-            headerNav.domElements.profileImage.removeClass(collapseImageClass);
-        } else {
-            
-            sidebar.removeClass(dockedClass);
-            sidebar.addClass(collapsedClass);
-            content.addClass(expandedClass);
-            headerNav.domElements.profileImage.addClass(collapseImageClass);
+
+        var width = $(window).width();
+        if (width < 768) {
+            if (isHidenMobile) {
+                sidebar.addClass('visible-mobile')
+                    .removeClass('hidden-mobile');
+            }
+            else {
+                sidebar.removeClass('visible-mobile')
+                    .addClass('hidden-mobile');
+            }
+        }
+        else {
+            if (isCollapsed) {
+                sidebar.addClass(dockedClass);
+                sidebar.removeClass(collapsedClass);
+                content.removeClass(expandedClass);
+                headerNav.domElements.profileImage.removeClass(collapseImageClass);
+            } else {
+
+                sidebar.removeClass(dockedClass);
+                sidebar.addClass(collapsedClass);
+                content.addClass(expandedClass);
+                headerNav.domElements.profileImage.addClass(collapseImageClass);
+            }
         }
     },
 
