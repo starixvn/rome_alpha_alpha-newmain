@@ -22,11 +22,11 @@
             this.showSecurityVerify = showSecurityVerify;
         }
 
-        public int UserId
+        public int CustId
         {
             get
             {
-                return userSession.UserId;
+                return userSession.CustId;
             }
         }
 

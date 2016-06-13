@@ -28,7 +28,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            this.custId = message.UserId;
+            this.custId = message.CustId;
             this.roleId = message.RoleId;
             this.language = message.Language;
             this.languageKey = message.LanguageKey;
