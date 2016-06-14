@@ -402,10 +402,6 @@ window.bootboxAlert = function (message, handleElement, callbackFunction) {
     }
 };
 
-var AGEWnd = function (docContext) {
-    return top.ageWnd;
-};
-
 function ShowSecCodePopup(preUrl) {
 
     preUrl = 'url=' + escape(preUrl);
