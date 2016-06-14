@@ -4,7 +4,7 @@
 
     public static class BrowserHelper
     {
-        public static bool IsBrowserIELower10()
+        public static bool IsUnsupportedBrowsers()
         {
             var currentRequest = HttpContext.Current.Request;
 
@@ -13,6 +13,8 @@
             {
                 return true;
             }
+
+
 
             return false;
         }

@@ -29,7 +29,7 @@
 
         public ActionResult Index()
         {
-            var isBrowserIELower10 = BrowserHelper.IsBrowserIELower10();
+            var isBrowserIELower10 = BrowserHelper.IsUnsupportedBrowsers();
 
             if (isBrowserIELower10)
             {

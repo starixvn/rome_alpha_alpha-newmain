@@ -57,7 +57,7 @@ html * {
     overflow-y: auto;
     position: absolute;
     left: 0;
-    top: 65px;
+    top: 60px;
     right: 0;
     bottom: 0;
 
@@ -160,13 +160,13 @@ html * {
     }
 }
 
-.sidebar {
-    &.docked, &.hovered {
+/*.sidebar {
+    &.docked, &.hovered, &.focusout {
         .mainmenu-container {
             top: 56px;
         }
     }
-}
+}*/
 
 /********************************** Account Info ******************************************/
 .accountinfo-container {

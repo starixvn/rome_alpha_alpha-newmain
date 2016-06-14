@@ -28,7 +28,7 @@
     init: function () {
         menuBar.storeElements();
         menuBar.bindEvents();
-        menuBar.initSidebar();
+        menuBar.initSideBar();
     },
 
     storeElements: function () {
@@ -52,19 +52,13 @@
         menuBar.domElements.profileImage = $('#logoProfileImg');
     },
 
-    initSidebar: function () {
+    initSideBar: function () {
         var sidebar = menuBar.domElements.sideBar,
             mainContent = menuBar.domElements.mainContent;
 
-        if (alpha.isScreenLower768) {
-            sidebar.addClass('hidden-mobile');
-            mainContent.addClass('expanded-mobile');
-
-            return;
-        }
-
         var activeSubMenu = $('.menu-item.active .sub-menu');
-        if (alpha.isScreenGreater768AndLower1024) {
+        if (alpha.isScreenLower768
+            || alpha.isScreenGreater768AndLower1024) {
             activeSubMenu.hide();
             sidebar.addClass('collapsed').addClass('collapsed-smallsize');
             mainContent.addClass('expanded');
