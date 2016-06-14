@@ -392,8 +392,16 @@
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
-    <TypeScriptCompile Include="Assets\scripts\introduction\doc.script.ts" />
-    <TypeScriptCompile Include="Assets\scripts\introduction\enjoyhint.ts" />
+    <TypeScriptCompile Include="Assets\scripts\introduction\script.ts" />
+    <Content Include="Assets\bundles\default-introduction.css" />
+    <Content Include="Assets\bundles\default-introduction.js" />
+    <Content Include="Assets\bundles\default-introduction.min.css">
+      <DependentUpon>default-introduction.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-introduction.min.js">
+      <DependentUpon>default-introduction.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />
     <Content Include="Assets\styles\announcement\announcements.css">
       <DependentUpon>announcements.scss</DependentUpon>
@@ -442,6 +450,16 @@
       <DependentUpon>pageIElower10.css</DependentUpon>
     </Content>
     <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />
+    <Content Include="Assets\styles\introduction\enjoyhint.css" />
+    <Content Include="Assets\styles\introduction\images\OldUI-1.png" />
+    <Content Include="Assets\styles\introduction\images\OldUI-2.png" />
+    <Content Include="Assets\styles\introduction\images\OldUI-3.png" />
+    <Content Include="Assets\styles\introduction\intro.css">
+      <DependentUpon>intro.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\introduction\intro.min.css">
+      <DependentUpon>intro.css</DependentUpon>
+    </Content>
     <Content Include="Web.local.config" />
     <Content Include="Web.uati7.config">
       <DependentUpon>Web.local.config</DependentUpon>
@@ -545,6 +563,7 @@
     <Content Include="Assets\styles\home\_mixins.scss" />
     <Content Include="Assets\styles\home\tooltip.scss" />
     <Content Include="Assets\styles\home\pageIElower10.scss" />
+    <Content Include="Assets\styles\introduction\intro.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -559,6 +578,7 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
+    <Content Include="Views\Default\Introduction.cshtml" />
     <None Include="Web.AppSettings.config" />
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -674,6 +694,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Assets\scripts\customer-profiles\brief-profile.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\styles\introduction\Casino_Hand\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

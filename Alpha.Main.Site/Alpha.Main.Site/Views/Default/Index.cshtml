@@ -7,6 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/Assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
+    <link href="@(StaticResources.MainSiteStyleUrl("~/Assets/bundles/default-introduction"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -24,6 +25,7 @@
             </div>
         </div>
     </div>
+    @Html.Partial("Introduction")
 
     @Html.Action("HeaderHotMsg")
     <aside class="sidebar" id="side-bar">
@@ -60,5 +62,37 @@
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/Assets/bundles/default-index"))" type="text/javascript"></script>
     <script src="@(StaticResources.MainSiteScriptUrl("~/Assets/bundles/default-introduction"))" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            var $maskInner = $(".mask-inner");
+            var $p = $maskInner.find("P");
+            var words = $p.text().split(" ");
+            var delay = 100;
+            var $tempEl = $("<div>");
+
+            $p.empty().show();
+            $.each(words, function (i, word) {
+                var $span = $("<span>").text(word + " ");
+                $span.css({
+                    "transition-delay": i * delay + "ms"
+                });
+                $tempEl.append($span)
+            });
+
+            $p.html($tempEl.html());
+
+            setTimeout(function () {
+                $maskInner.addClass("in");
+                setTimeout(function () {
+                    $p.addClass("in")
+                }, 1e3);
+            }, 1e3);
+            $('#beginModal').modal('show');
+            $(".js-let-go-btn").click(function () {
+                $('#beginModal').modal('hide');
+                enjoyhint_instance.run();
+            });
+        });
+    </script>
 </body>
 </html>

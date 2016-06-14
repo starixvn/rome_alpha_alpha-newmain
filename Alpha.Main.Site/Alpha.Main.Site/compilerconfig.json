@@ -26,5 +26,9 @@
   {
     "outputFile": "Assets/styles/home/pageIElower10.css",
     "inputFile": "Assets/styles/home/pageIElower10.scss"
+  },
+  {
+    "outputFile": "Assets/styles/introduction/intro.css",
+    "inputFile": "Assets/styles/introduction/intro.scss"
   }
 ]

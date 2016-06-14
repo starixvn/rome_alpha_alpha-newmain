@@ -837,8 +837,8 @@ var EnjoyHint = function (_options) {
                         top: label_y + label_height + 20
                     });
                     that.$close_btn.css({
-                        right : 10,
-                        top: 10
+                        right : 20,
+                        bottom: 20
                     });
 
 
