@@ -252,6 +252,7 @@ var AgeWnd = function () {
                 }
             }
 
+            alert('Louis testing: maxHeight-' + maxHeight + '/' + '/' + height);
             return {
                 width: width,
                 height: height
