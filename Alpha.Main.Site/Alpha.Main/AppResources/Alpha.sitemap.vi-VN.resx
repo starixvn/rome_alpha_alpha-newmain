@@ -145,7 +145,7 @@
     <value>Tỷ số chính xác</value>
   </data>
   <data name="creditbalance" xml:space="preserve">
-    <value>Hạn mức/Balance</value>
+    <value>Tín dụng/Balance</value>
   </data>
   <data name="customerlist" xml:space="preserve">
     <value>Danh sách Member</value>
