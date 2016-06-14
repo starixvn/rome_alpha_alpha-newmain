@@ -29,11 +29,11 @@
 
         public ActionResult Index()
         {
-            var isBrowserIELower10 = BrowserHelper.IsUnsupportedBrowsers();
+            var browser = BrowserHelper.CheckSupportedBrowsers();
 
-            if (isBrowserIELower10)
+            if (browser.IsUnsupportedBrowser)
             {
-                return RedirectToAction("IndexIELower10");
+                return View("UnsupportedBrowsers", browser);
             }
 
             var viewModel = mediator.Send(new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify));
@@ -61,9 +61,9 @@
             return View(viewModel);
         }
 
-        public ActionResult IndexIELower10()
+        public ActionResult UnsupportedBrowsers()
         {
-            return View();
+            return View(BrowserHelper.CheckSupportedBrowsers());
         }
     }
 }

@@ -553,7 +553,7 @@
     <Content Include="Views\Language\List.cshtml" />
     <Content Include="Assets\Styles\Announcement\announcements.scss" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
-    <Content Include="Views\Default\IndexIELower10.cshtml" />
+    <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
     <None Include="Web.AppSettings.config" />
     <Content Include="Web.AppSettings.local.config">
@@ -634,6 +634,7 @@
     <Compile Include="Requests\MenuBarQuery.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
+    <Compile Include="ViewModels\Home\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\LanguageViewModel.cs" />
