@@ -450,7 +450,13 @@
       <DependentUpon>pageIElower10.css</DependentUpon>
     </Content>
     <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />
-    <Content Include="Assets\styles\introduction\enjoyhint.css" />
+    <None Include="Assets\styles\introduction\enjoyhint.scss" />
+    <Content Include="Assets\styles\introduction\enjoyhint.css">
+      <DependentUpon>enjoyhint.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\introduction\enjoyhint.min.css">
+      <DependentUpon>enjoyhint.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\introduction\images\OldUI-1.png" />
     <Content Include="Assets\styles\introduction\images\OldUI-2.png" />
     <Content Include="Assets\styles\introduction\images\OldUI-3.png" />

@@ -71,3 +71,4 @@ var enjoyhint_script_steps = [
 enjoyhint_instance.set(enjoyhint_script_steps);
 //run Enjoyhint script
 //enjoyhint_instance.run();
+//# sourceMappingURL=script.js.map

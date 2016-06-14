@@ -30,5 +30,9 @@
   {
     "outputFile": "Assets/styles/introduction/intro.css",
     "inputFile": "Assets/styles/introduction/intro.scss"
+  },
+  {
+    "outputFile": "Assets/styles/introduction/enjoyhint.css",
+    "inputFile": "Assets/styles/introduction/enjoyhint.scss"
   }
 ]
