@@ -48,7 +48,8 @@ var enjoyhint_script_steps = [
     },
     {
         "next #navigation": '<p class="title">Main menu</p>' +
-        '<p>Reorder the features you use most, all in one place.</p>'
+        '<p>Reorder the features you use most, all in one place.</p>',        
+        bottom: 400
     },
     {
         "next .list-menu .menu-item:last-child":
