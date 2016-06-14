@@ -263,7 +263,7 @@
         //// Hide all active menus
         menuBar.domElements.menuItems.removeClass('active');
         menuBar.domElements.menuOpeners.removeClass('active');
-        menuBar.domElements.subMenus.slideUp('normal');
+        menuBar.domElements.subMenus.slideUp('fast');
 
         var subMenuContainer = menuOpener.next();
         if (isVisible) {
@@ -273,7 +273,7 @@
 
             //// Incase of has sub menu, then collapse sub menus
             if (subMenuContainer.is('ul')) {
-                subMenuContainer.slideUp('normal');
+                subMenuContainer.slideUp('fast');
             }
 
         } else {
@@ -283,7 +283,7 @@
 
             //// expand all sub menu
             if (subMenuContainer.is('ul')) {
-                subMenuContainer.slideDown('normal');
+                subMenuContainer.slideDown('fast');
             }
         }
     }
