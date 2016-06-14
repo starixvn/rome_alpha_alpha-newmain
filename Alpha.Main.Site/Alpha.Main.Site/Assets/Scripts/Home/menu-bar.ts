@@ -191,16 +191,17 @@
 
     expandSideBar: function () {
         var sideBar = menuBar.domElements.sideBar;
+        if (sideBar.hasClass('collapsed')) {
+            sideBar.addClass('hovered').removeClass('focusout');
 
-        sideBar.addClass('hovered').removeClass('focusout');
+            //// Show all active sub menus
+            var activeSubMenus = $('.menu-item.active .sub-menu');
+            activeSubMenus.css('display', 'block');
 
-        //// Show all active sub menus
-        var activeSubMenus = $('.menu-item.active .sub-menu');
-        activeSubMenus.css('display', 'block');
-
-        //// When expanding, if active tab is account info, then hide menu bar
-        if (menuBar.domElements.accountInfoHeader.hasClass('active')) {
-            menuBar.domElements.mainMenuTab.hide();
+            //// When expanding, if active tab is account info, then hide menu bar
+            if (menuBar.domElements.accountInfoHeader.hasClass('active')) {
+                menuBar.domElements.mainMenuTab.hide();
+            }
         }
     },
 
@@ -210,15 +211,16 @@
         if (sideBar.hasClass('docked')) {
             return;
         }
+        if (sideBar.hasClass('collapsed')) {
+            sideBar.removeClass('hovered').addClass('focusout');
 
-        sideBar.removeClass('hovered').addClass('focusout');
+            //// Hide all expanded sub menus
+            var activeSubMenus = $('.menu-item.active .sub-menu');
+            activeSubMenus.css('display', 'none');
 
-        //// Hide all expanded sub menus
-        var activeSubMenus = $('.menu-item.active .sub-menu');
-        activeSubMenus.css('display', 'none');
-
-        //// Show all menu bar icon
-        menuBar.domElements.mainMenuTab.show();
+            //// Show all menu bar icon
+            menuBar.domElements.mainMenuTab.show();
+        }
     },
 
     activateMainMenuTab: function () {
