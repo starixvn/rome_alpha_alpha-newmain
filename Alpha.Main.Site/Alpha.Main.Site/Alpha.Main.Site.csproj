@@ -352,7 +352,7 @@
     <Content Include="App_Data\SPNames\UAT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\UAT\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml" />
-    <Content Include="App_Data\UserMessage\ToolTipMessage.UAT.xml" />
+    <Content Include="App_Data\UserMessage\ToolTipMessage.uati1.xml" />
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <Content Include="App_Themes\Apo\Security\howtouse.css" />
     <Content Include="App_Themes\Apo\Security\howtouse.min.css" />
