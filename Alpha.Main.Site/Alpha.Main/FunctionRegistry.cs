@@ -168,6 +168,84 @@
             return _defaultMainPage;
         };
 
+        private static Func<string> testGetDefaultUrlWithVPN = () =>
+        {
+            var _defaultMainPage = MicroSites.OldMainUrl("~/_Reports/PortalPage/PortalPage.aspx");
+
+            if (!Current.IsLogged)
+            {
+                return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
+            }
+
+            if (Current.IsPasswordExpired)
+            {
+                return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
+            }
+
+            ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+            bool newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
+            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
+            var oldStatus = Current.SecurityCodeResult;
+
+            if (newFlowOfSC)
+            {
+                switch (status)
+                {
+                    case SecurityCodeStatus.FORCED_CHANGE_SC:
+                        return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCode");
+
+                    case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
+                        return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
+
+                    default:
+                        return MicroSites.OldMainUrl("~/Security/SecurityCode/VerifySecurityCode");
+                }
+            }
+
+            if (!securityCodeSession.IsInternal &&
+                (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
+            {
+                // Use the OLD flow of Security Code.
+                return MicroSites.OldMainUrl("~/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
+            }
+
+            var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
+            var ignoreUrls = new List<string>
+            {
+                "Error.aspx",
+                "SignIn.aspx",
+                "ChangePassword.aspx",
+                "SecurityCode"
+            };
+
+            var result = "currentURLCookie != null: " + (currentURLCookie != null ? "true" : "false");
+            result += currentURLCookie != null ? "string.IsNullOrEmpty(currentURLCookie.Value): " + (string.IsNullOrEmpty(currentURLCookie.Value) ? "true" : "false") : "";
+            result += currentURLCookie != null && !string.IsNullOrEmpty(currentURLCookie.Value) ?
+                "Current.IsInternal: " + (Current.IsInternal ? "true" : "false") : "";
+            if (currentURLCookie != null && !string.IsNullOrEmpty(currentURLCookie.Value))
+            {
+                Uri currentUrl = new Uri(HttpUtility.UrlDecode(currentURLCookie.Value));
+                result += "HttpContext.Current.Request.Url.Host: " + HttpContext.Current.Request.Url.Host;
+                result += "currentUrl.Host: " + currentUrl.Host;
+                result += "currentUrl: " + currentUrl.ToString();
+                return result;
+            }
+
+            if (currentURLCookie != null &&
+                !string.IsNullOrEmpty(currentURLCookie.Value) &&
+                !Current.IsInternal &&
+                !ignoreUrls.Where(str => currentURLCookie.Value.Contains(str)).Any())
+            {
+                Uri currentUrl = new Uri(HttpUtility.UrlDecode(currentURLCookie.Value));
+                if (HttpContext.Current.Request.Url.Host == currentUrl.Host)
+                {
+                    return currentUrl.ToString();
+                }
+            }
+
+            return result;
+        };
+
         public static Func<bool> ShowMenuBar
         {
             get
@@ -189,6 +267,14 @@
             get
             {
                 return getDefaultUrl;
+            }
+        }
+
+        public static Func<string> TestGetDefaultUrlWithVPN
+        {
+            get
+            {
+                return testGetDefaultUrlWithVPN;
             }
         }
     }
