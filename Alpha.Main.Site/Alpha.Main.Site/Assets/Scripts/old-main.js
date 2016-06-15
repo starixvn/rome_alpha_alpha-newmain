@@ -586,7 +586,12 @@ var menuBarManager = {
             return menuBarManager.getPopupEditStatusPosition_CustomerList(handleElement);
         }
 
-        return menuBarManager.getPopupEditStatusPosition_LeftPanel(handleElement);
+        var position = menuBarManager.getPopupEditStatusPosition_LeftPanel(handleElement);
+        if (popUpOptions && popUpOptions.type == 'TransferCondition') {
+            position.left += top.$('.sidebar').width()+3;
+        }
+
+        return position;
     },
 
     getPopupEditStatusPosition_DoubleComm: function (handleElement) {
