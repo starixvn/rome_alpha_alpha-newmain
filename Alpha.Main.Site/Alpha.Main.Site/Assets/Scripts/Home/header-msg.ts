@@ -1,7 +1,7 @@
 ﻿
 
 //'use strict';
-/*global index*/
+/*global indexManager*/
 
 var headerMessage = {
     urls: {
@@ -93,7 +93,7 @@ var headerMessage = {
 
     viewPrivateMessage: function () {
 
-        index.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
+        indexManager.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
 
         var countPrivateMsg = headerMessage.domElements.privateMessageCounter.html().replace("+", "");
 
@@ -114,16 +114,16 @@ var headerMessage = {
     },
 
     viewSpecialMessage: function () {
-        index.changeMenu(headerMessage.urls.oldMainAppSpecialMessageForm);
+        indexManager.changeMenu(headerMessage.urls.oldMainAppSpecialMessageForm);
     },
 
     viewLiveMessage: function () {
         var liveMessageUrl = headerMessage.domElements.liveMessage.data('live-message-url');
         if (liveMessageUrl) {
-            index.changeMenu(liveMessageUrl);
+            indexManager.changeMenu(liveMessageUrl);
         }
         else {
-            index.changeMenu(headerMessage.urls.oldMainAppNormalMessageForm);
+            indexManager.changeMenu(headerMessage.urls.oldMainAppNormalMessageForm);
         }
     },
 

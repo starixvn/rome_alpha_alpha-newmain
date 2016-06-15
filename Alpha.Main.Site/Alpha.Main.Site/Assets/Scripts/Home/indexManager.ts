@@ -4,7 +4,7 @@
 //'use strict';
 /*global alpha, briefProfile*/
 
-var index = {
+var indexManager = {
     currentTab: null,
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
 
@@ -23,28 +23,28 @@ var index = {
 
     init: function () {
         $.material.init();
-        index.cachedDomElements();
-        index.loadPartialViews();
-        index.registerEvents();
-        index.setCurrentUrl();
+        indexManager.cachedDomElements();
+        indexManager.loadPartialViews();
+        indexManager.registerEvents();
+        indexManager.setCurrentUrl();
     },
 
     registerEvents: function () {
-        index.domElements.pagePopup.tinyDraggable();
-        setTimeout(index.reCheckin, 30000);
+        indexManager.domElements.pagePopup.tinyDraggable();
+        setTimeout(indexManager.reCheckin, 30000);
     },
 
     cachedDomElements: function () {
-        index.domElements.partialContents = $('.partial-content');
-        index.domElements.content = $('#content');
-        index.domElements.accountInfoContent = $('#accountinfo-content');
-        index.domElements.currentURLCookieName = $('#currentURLCookieName');
-        index.domElements.pagePopup = $('#page-popup');
-        index.currentUrlCookieName = index.domElements.currentURLCookieName.val();
+        indexManager.domElements.partialContents = $('.partial-content');
+        indexManager.domElements.content = $('#content');
+        indexManager.domElements.accountInfoContent = $('#accountinfo-content');
+        indexManager.domElements.currentURLCookieName = $('#currentURLCookieName');
+        indexManager.domElements.pagePopup = $('#page-popup');
+        indexManager.currentUrlCookieName = indexManager.domElements.currentURLCookieName.val();
     },
 
     changeMenu: function (url) {
-        index.domElements.mainFrame.attr('src', url);
+        indexManager.domElements.mainFrame.attr('src', url);
     },
 
     reCheckin: function () {
@@ -53,14 +53,14 @@ var index = {
 
         $.ajax({
             type: "POST",
-            url: index.urls.reCheckinUrl,
+            url: indexManager.urls.reCheckinUrl,
             data: { onid: alpha.user.onUserId },
             responseType: "json",
             success: function (result) {
                 result = alpha.core.convertReponseToJson(result);
                 var errCode = result.errCode;
                 if (errCode === 0) {
-                    setTimeout(index.reCheckin, 30000);
+                    setTimeout(indexManager.reCheckin, 30000);
                 } else {
                     var errMsg = result.errMsg;
                     if (errMsg) {
@@ -75,7 +75,7 @@ var index = {
     },
 
     loadPartialViews: function () {
-        index.domElements.partialContents.each(function (index, partialContent) {
+        indexManager.domElements.partialContents.each(function (index, partialContent) {
             var $partialContent = $(partialContent),
                 url = $partialContent.data('url');
             if (url && url.length > 0) {
@@ -91,24 +91,24 @@ var index = {
     cacheCurrentUrl: function () {
         var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href;
 
-        $.cookie(index.currentUrlCookieName, currentUrl, { expires: 1, path: '/' });
+        $.cookie(indexManager.currentUrlCookieName, currentUrl, { expires: 1, path: '/' });
     },
 
     setCurrentUrl: function () {
-        var currentUrl = index.domElements.content.data('default-url');
+        var currentUrl = indexManager.domElements.content.data('default-url');
 
-        if (index.domElements.mainFrame
-            && index.domElements.mainFrame.length > 0) {
-            index.domElements.mainFrame.attr('src', currentUrl);
+        if (indexManager.domElements.mainFrame
+            && indexManager.domElements.mainFrame.length > 0) {
+            indexManager.domElements.mainFrame.attr('src', currentUrl);
         }
         else {
-            index.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentUrl + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
-            index.domElements.mainFrame = $('#main');
-            index.domElements.mainFrame.load(function () {
-                var iframeWindow = index.domElements.mainFrame[0].contentWindow || index.domElements.mainFrame[0].contentDocument;
-                index.closeAllOpenDropdowns(iframeWindow);
+            indexManager.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentUrl + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
+            indexManager.domElements.mainFrame = $('#main');
+            indexManager.domElements.mainFrame.load(function () {
+                var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
+                indexManager.closeAllOpenDropdowns(iframeWindow);
 
-                index.cacheCurrentUrl();
+                indexManager.cacheCurrentUrl();
 
                 $(iframeWindow.document)
                     .off('click.closeMenu touchstart.closemenu')
@@ -118,9 +118,9 @@ var index = {
                 });
             });
 
-            index.domElements.accountInfoContent.load(function () {
-                var iframeWindow = index.domElements.accountInfoContent[0].contentWindow || index.domElements.accountInfoContent[0].contentDocument;
-                index.closeAllOpenDropdowns(iframeWindow);
+            indexManager.domElements.accountInfoContent.load(function () {
+                var iframeWindow = indexManager.domElements.accountInfoContent[0].contentWindow || indexManager.domElements.accountInfoContent[0].contentDocument;
+                indexManager.closeAllOpenDropdowns(iframeWindow);
             });
         }
     },
@@ -138,5 +138,5 @@ var index = {
 };
 
 $(function () {
-    index.init();
+    indexManager.init();
 });
