@@ -97,6 +97,7 @@ var indexManager = {
     setCurrentUrl: function () {
         var currentUrl = indexManager.domElements.content.data('default-url');
 
+        console.log(currentUrl);
         if (indexManager.domElements.mainFrame
             && indexManager.domElements.mainFrame.length > 0) {
             indexManager.domElements.mainFrame.attr('src', currentUrl);
