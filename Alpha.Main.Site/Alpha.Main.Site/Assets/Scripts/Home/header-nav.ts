@@ -122,9 +122,7 @@ var headerNav = {
         headerNav.domElements.iconLogOut.on('click touchend', alpha.core.signOut);
 
         headerNav.domElements.iconHome.click(function () {
-            alert('Louis testing: ' + headerNav.urls.home);
             index.changeMenu(headerNav.urls.home);
-            alert('Louis testing: ' + 'done');
         });
 
         headerNav.domElements.changeLanguageLink.click(function () {
