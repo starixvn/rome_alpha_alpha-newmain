@@ -20,9 +20,8 @@
         private readonly string subPageAccess;
         private readonly bool enableSecurityCode;
         private readonly bool isInternalWebVPN;
-        private readonly Func<string> testGetDefaultUrlWithVPN;
 
-        public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl, Func<string> testGetDefaultUrlWithVPN)
+        public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl)
         {
             if (message == null)
             {
@@ -39,8 +38,6 @@
             this.subPageAccess = message.SubPageAccess;
             this.enableSecurityCode = message.EnableSecurityCode;
             this.isInternalWebVPN = message.IsInternalWebVPN;
-
-            this.testGetDefaultUrlWithVPN = testGetDefaultUrlWithVPN;
         }
 
         public bool EnableSecurityCode
@@ -97,15 +94,6 @@
             get
             {
                 return getDefaultUrl();
-            }
-        }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
-        public string TestGetDefaultUrlWithVPN
-        {
-            get
-            {
-                return testGetDefaultUrlWithVPN();
             }
         }
 
