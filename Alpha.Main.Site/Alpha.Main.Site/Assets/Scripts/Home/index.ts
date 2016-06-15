@@ -1,7 +1,7 @@
 ﻿/// <reference path="../core.ts" />
 /// <reference path="menu-bar.ts" />
 
-'use strict';
+//'use strict';
 /*global alpha, briefProfile*/
 
 var index = {
@@ -44,9 +44,7 @@ var index = {
     },
 
     changeMenu: function (url) {
-        console.log('Louis testing: ' + url);
         index.domElements.mainFrame.attr('src', url);
-        console.log('Louis testing: ' + 'done');
     },
 
     reCheckin: function () {

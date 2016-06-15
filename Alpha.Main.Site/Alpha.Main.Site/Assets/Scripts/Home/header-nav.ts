@@ -2,7 +2,7 @@
 /// <reference path="index.ts" />
 
 
-'use strict';
+//'use strict';
 
 var headerNav = {
     domElements: {
