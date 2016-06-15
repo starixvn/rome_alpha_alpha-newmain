@@ -148,7 +148,7 @@
     <value>Credit/Balance</value>
   </data>
   <data name="customerlist" xml:space="preserve">
-    <value>Customer List</value>
+    <value>Member List</value>
   </data>
   <data name="dailywinlossanalysisreport" xml:space="preserve">
     <value>Daily Winloss Analysis</value>

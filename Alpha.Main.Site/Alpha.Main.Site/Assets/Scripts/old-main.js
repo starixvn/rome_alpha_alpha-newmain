@@ -301,7 +301,7 @@ var AgeWnd = function () {
 
             popUp.modal({ show: true, backdrop: false });
             popUp.find(".icon-close").unbind("click").click(function () {
-                popUp.find('.modal-body').find('#target').remove();
+                top.$('body').find('#target').remove();
                 popUp.remove();
                 if (callBack && typeof (callBack) == "function") {
                     callBack();
@@ -320,7 +320,7 @@ var AgeWnd = function () {
         },
         close: function () {
             var popUp = this.popUp.pop();
-            popUp.find('.modal-body').find('#target').remove();
+            top.$('body').find('#target').remove();
             popUp.remove();
 
             var callBack = this.callback.pop();
@@ -341,7 +341,7 @@ var AgeWnd = function () {
             var iframeId = 'edit-setting-frame-' + Math.random().toString(36).substring(7);
             popUp.find('.modal-body').append('<iframe id="popup-iframe" frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto" name="' + iframeId + '"></iframe>');
 
-            popUp.find('.modal-body').append(newTarget);
+            top.$('body').append(newTarget);
             newTarget.target = iframeId;
             newTarget.submit();
         },

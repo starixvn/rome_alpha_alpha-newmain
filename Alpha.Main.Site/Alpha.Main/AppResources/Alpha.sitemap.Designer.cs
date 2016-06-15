@@ -250,7 +250,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer List.
+        ///   Looks up a localized string similar to Member List.
         /// </summary>
         public static string customerlist {
             get {
