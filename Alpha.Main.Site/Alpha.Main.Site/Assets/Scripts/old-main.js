@@ -297,11 +297,15 @@ var AgeWnd = function () {
             ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
             if (url) {
                 iframe.attr("src", url);
+            } else {
+                ageWnd.copyTargetForm(popUp);
+                iframe = popUp.find('.modal-body').find('#popup-iframe');
+                ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
             }
 
             popUp.modal({ show: true, backdrop: false });
             popUp.find(".icon-close").unbind("click").click(function () {
-                top.$('body').find('#target').remove();
+                popUp.find('.modal-body #target').remove();
                 popUp.remove();
                 if (callBack && typeof (callBack) == "function") {
                     callBack();
@@ -311,16 +315,10 @@ var AgeWnd = function () {
             popUp.tinyDraggable();
             this.popUp.push(popUp);
             this.callback.push();
-
-            if (!url) {
-                ageWnd.copyTargetForm(popUp);
-                iframe = popUp.find('.modal-body').find('#popup-iframe');
-                ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
-            }
         },
         close: function () {
             var popUp = this.popUp.pop();
-            top.$('body').find('#target').remove();
+            popUp.find('.modal-body #target').remove();
             popUp.remove();
 
             var callBack = this.callback.pop();
@@ -337,11 +335,11 @@ var AgeWnd = function () {
         copyTargetForm: function (popUp) {
             var oldTarget = top.main.document.getElementById("target");
             var newTarget = $.clone(oldTarget);
-             popUp.find('.modal-body').find('#popup-iframe').remove();
+            popUp.find('.modal-body').find('#popup-iframe').remove();
             var iframeId = 'edit-setting-frame-' + Math.random().toString(36).substring(7);
             popUp.find('.modal-body').append('<iframe id="popup-iframe" frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto" name="' + iframeId + '"></iframe>');
 
-            top.$('body').append(newTarget);
+            popUp.find('.modal-body').append(newTarget);
             newTarget.target = iframeId;
             newTarget.submit();
         },
@@ -588,7 +586,7 @@ var menuBarManager = {
 
         var position = menuBarManager.getPopupEditStatusPosition_LeftPanel(handleElement);
         if (popUpOptions && popUpOptions.type == 'TransferCondition') {
-            position.left += top.$('.sidebar').width()+3;
+            position.left += top.$('.sidebar').width() + 3;
         }
 
         return position;
