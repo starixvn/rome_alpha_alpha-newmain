@@ -122,6 +122,8 @@ var headerNav = {
         headerNav.domElements.iconLogOut.on('click touchend', alpha.core.signOut);
 
         headerNav.domElements.iconHome.click(function () {
+            console.log(index);
+            console.log(index.changeMenu);
             index.changeMenu(headerNav.urls.home);
         });
 
