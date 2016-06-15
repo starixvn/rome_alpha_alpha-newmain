@@ -2,7 +2,7 @@
 /// <reference path="indexManager.ts" />
 
 
-//'use strict';
+'use strict';
 
 var headerNav = {
     domElements: {
@@ -122,8 +122,6 @@ var headerNav = {
         headerNav.domElements.iconLogOut.on('click touchend', alpha.core.signOut);
 
         headerNav.domElements.iconHome.click(function () {
-            console.log(indexManager);
-            console.log(indexManager.changeMenu);
             indexManager.changeMenu(headerNav.urls.home);
         });
 

@@ -1,6 +1,6 @@
 ﻿/// <reference path="../core.ts" />
 
-//'use strict';
+'use strict';
 declare var $: any;
 
 var briefProfile = {

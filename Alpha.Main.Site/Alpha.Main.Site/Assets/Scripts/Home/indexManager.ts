@@ -1,7 +1,7 @@
 ﻿/// <reference path="../core.ts" />
 /// <reference path="menu-bar.ts" />
 
-//'use strict';
+'use strict';
 /*global alpha, briefProfile*/
 
 var indexManager = {
