@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using MediatR;
     using Models.Requests.UserMessages;
     using Services;
@@ -25,19 +24,6 @@
             this.sessionManager = sessionManager;
         }
 
-        private bool IsShowedHotMessages
-        {
-            get
-            {
-                return this.sessionManager.Get<bool>(IsShowedHotMessageSessionKey);
-            }
-
-            set
-            {
-                this.sessionManager.Add(IsShowedHotMessageSessionKey, value);
-            }
-        }
-
         public IEnumerable<string> Handle(HotMessagesQuery message)
         {
             if (message == null)
@@ -45,14 +31,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            if (IsShowedHotMessages)
-            {
-                return Enumerable.Empty<string>();
-            }
-
             var hotMessages = userMessageService.GetHotMessages(message.HotMessageFilePath, message.RoleId, message.Language);
-
-            IsShowedHotMessages = true;
 
             return hotMessages;
         }
