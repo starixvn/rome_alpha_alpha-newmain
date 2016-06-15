@@ -44,9 +44,9 @@ var index = {
     },
 
     changeMenu: function (url) {
-        alert('Louis testing: ' + headerNav.urls.home);
+        console.log('Louis testing: ' + url);
         index.domElements.mainFrame.attr('src', url);
-        alert('Louis testing: ' + 'done');
+        console.log('Louis testing: ' + 'done');
     },
 
     reCheckin: function () {
