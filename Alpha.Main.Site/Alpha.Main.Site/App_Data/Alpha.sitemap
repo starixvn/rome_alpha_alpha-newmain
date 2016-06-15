@@ -114,9 +114,9 @@
       <siteMapNode resourceKey="login" appPath="OldMainAppPath" url="_ViewLog/LogLogin.aspx?tabid=Login&amp;pageIndex=1"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="announcements">
-      <siteMapNode resourceKey="normal" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery="></siteMapNode>
-      <siteMapNode resourceKey="special" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=allSpecial"></siteMapNode>
-      <siteMapNode resourceKey="personalMessage" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=private"></siteMapNode>
+      <siteMapNode resourceKey="normal" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=" byPassAuthorization="true"></siteMapNode>
+      <siteMapNode resourceKey="special" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=allSpecial" byPassAuthorization="true"></siteMapNode>
+      <siteMapNode resourceKey="personalMessage" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=private" byPassAuthorization="true"></siteMapNode>
     </siteMapNode>
   </siteMapNode>
 </siteMap>

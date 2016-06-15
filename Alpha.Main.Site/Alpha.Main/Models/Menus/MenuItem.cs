@@ -36,6 +36,8 @@
 
         public string AppPath { get; set; }
 
+        public bool ByPassAuthorization { get; set; }
+
         public string DisplayName
         {
             get
@@ -68,7 +70,7 @@
         {
             get
             {
-                var isAuthorized = authorizeUrlFunc(this.Url);
+                var isAuthorized = ByPassAuthorization || authorizeUrlFunc(this.Url);
 
                 return isAuthorized
                     ? getMenuStatusFunc()
