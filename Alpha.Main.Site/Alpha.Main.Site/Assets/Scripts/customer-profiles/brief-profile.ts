@@ -7,6 +7,7 @@ var briefProfile = {
     maxCountShowTooltip: 4,
     isShowEditProfilePictureTooltip: false,
     isShowNickNameProfileTooltip: false,
+    autoCloseToolTipTime: 20000,
 
     domElements: {
         toolTipBox: null,
@@ -57,13 +58,12 @@ var briefProfile = {
     },
 
     registerEvents: function () {
-        $(document).click(function () {
+        briefProfile.domElements.profileTooltip
+            .off('click')
+            .on('click', briefProfile.hideProfileTooltip);
+        setTimeout(function () {
             briefProfile.hideAllTooltips();
-        });
-
-        briefProfile.domElements.changePictureLink
-            .off('click.brief-profile')
-            .on('click.brief-profile', briefProfile.hideProfileTooltip);
+        }, briefProfile.autoCloseToolTipTime);
 
         briefProfile.domElements.profilePicture.click(function () {
             menuBar.collapseSideBar();

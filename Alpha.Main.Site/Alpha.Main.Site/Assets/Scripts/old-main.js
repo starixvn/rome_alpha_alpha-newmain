@@ -303,6 +303,11 @@ var AgeWnd = function () {
                 ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
             }
 
+            setTimeout(function () {
+                ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack);
+            }, 100);
+        },
+        openPopUpAfterSetIframeSrc: function (popUp, callBack) {
             popUp.modal({ show: true, backdrop: false });
             popUp.find(".icon-close").unbind("click").click(function () {
                 popUp.find('.modal-body #target').remove();
