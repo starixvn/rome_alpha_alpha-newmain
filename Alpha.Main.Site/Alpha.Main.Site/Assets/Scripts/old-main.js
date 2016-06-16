@@ -325,7 +325,9 @@ var AgeWnd = function () {
 
             // This will make elements on popup lose focus
             // Issue: click any point on popup trigger open keyboard/dropdown (default focus elements)
+            popUp.find(':focus').blur();
             popUp.blur();
+
             this.popUp.push(popUp);
             this.callback.push();
         },
