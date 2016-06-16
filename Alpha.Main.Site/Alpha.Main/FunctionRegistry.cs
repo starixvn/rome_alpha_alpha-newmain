@@ -176,6 +176,14 @@
             }
         }
 
+        public static Func<bool> ShowIntroduction
+        {
+            get
+            {
+                return showMenuBar;
+            }
+        }
+
         public static Func<bool> ShowAccountInfo
         {
             get

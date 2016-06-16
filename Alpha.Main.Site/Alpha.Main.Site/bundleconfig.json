@@ -27,7 +27,7 @@
     "outputFileName": "Assets/bundles/default-introduction.js",
     "inputFiles": [
       "Assets/scripts/introduction/enjoyhint.js",
-      "Assets/scripts/introduction/script.js"
+      "Assets/scripts/home/introduction.js"
     ]
   },
   {

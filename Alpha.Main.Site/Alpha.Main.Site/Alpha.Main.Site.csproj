@@ -392,7 +392,7 @@
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
-    <TypeScriptCompile Include="Assets\scripts\introduction\script.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\introduction.ts" />
     <Content Include="Assets\bundles\default-introduction.css" />
     <Content Include="Assets\bundles\default-introduction.js" />
     <Content Include="Assets\bundles\default-introduction.min.css">

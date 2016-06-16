@@ -58,41 +58,10 @@
     @Html.Hidden("subPageAccess", Model.SubPageAccess)
     @Html.Hidden("isInternalWebVPN", Model.IsInternalWebVPN)
     @Html.Hidden("currentURLCookieName", Model.CurrentURLCookieName)
+    @Html.Hidden("isShowIntroduction", Model.IsShowIntroduction)
 
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/Assets/bundles/default-index"))" type="text/javascript"></script>
     <script src="@(StaticResources.MainSiteScriptUrl("~/Assets/bundles/default-introduction"))" type="text/javascript"></script>
-    <script>
-        $(document).ready(function () {
-            var $maskInner = $(".mask-inner");
-            var $p = $maskInner.find("P");
-            var words = $p.text().split(" ");
-            var delay = 100;
-            var $tempEl = $("<div>");
-
-            $p.empty().show();
-            $.each(words, function (i, word) {
-                var $span = $("<span>").text(word + " ");
-                $span.css({
-                    "transition-delay": i * delay + "ms"
-                });
-                $tempEl.append($span)
-            });
-
-            $p.html($tempEl.html());
-
-            setTimeout(function () {
-                $maskInner.addClass("in");
-                setTimeout(function () {
-                    $p.addClass("in")
-                }, 300);
-            }, 300);
-            $('#beginModal').modal('show');
-            $(".js-let-go-btn").click(function () {
-                $('#beginModal').modal('hide');
-                enjoyhint_instance.run();
-            });
-        });
-    </script>
 </body>
 </html>

@@ -11,7 +11,8 @@ var alpha = {
     {
         onUserId: (<HTMLInputElement>document.getElementById('onUserId')).value,
         passwordHash: (<HTMLInputElement>document.getElementById('passwordHash')).value,
-        subPageAccess: (<HTMLInputElement>document.getElementById('subPageAccess')).value
+        subPageAccess: (<HTMLInputElement>document.getElementById('subPageAccess')).value,
+        isShowIntroduction: (<HTMLInputElement>document.getElementById('isShowIntroduction')).value.toLowerCase() === "true"
     },
     core:
     {

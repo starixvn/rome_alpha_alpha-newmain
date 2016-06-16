@@ -20,8 +20,9 @@
         private readonly string subPageAccess;
         private readonly bool enableSecurityCode;
         private readonly bool isInternalWebVPN;
+        private readonly Func<bool> isShowIntroduction;
 
-        public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl)
+        public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl, Func<bool> isShowIntroduction)
         {
             if (message == null)
             {
@@ -38,6 +39,7 @@
             this.subPageAccess = message.SubPageAccess;
             this.enableSecurityCode = message.EnableSecurityCode;
             this.isInternalWebVPN = message.IsInternalWebVPN;
+            this.isShowIntroduction = isShowIntroduction;
         }
 
         public bool EnableSecurityCode
@@ -151,6 +153,14 @@
             get
             {
                 return CookieHelper.GetCurrentUrlCookieName();
+            }
+        }
+
+        public bool IsShowIntroduction
+        {
+            get
+            {
+                return isShowIntroduction();
             }
         }
     }
