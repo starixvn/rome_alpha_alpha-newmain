@@ -275,11 +275,15 @@ var AgeWnd = function () {
             var popUp = this.popUp.length >= 1 ? this.popUp.pop() : $("#page-popup").clone();
 
             popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
+
+            // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
+            var scrollTop = oldMainUltilities.isSmallDevice() ? document.body.scrollTop : 0;
+
             popUp.css({
                 width: popW,
                 height: popH,
                 left: left,
-                top: popUpTop
+                top: popUpTop + scrollTop
             });
 
             popUp.appendTo("body");
@@ -318,6 +322,7 @@ var AgeWnd = function () {
             });
 
             popUp.tinyDraggable();
+            popUp.blur();
             this.popUp.push(popUp);
             this.callback.push();
         },
@@ -340,6 +345,7 @@ var AgeWnd = function () {
         copyTargetForm: function (popUp) {
             var oldTarget = top.main.document.getElementById("target");
             var newTarget = $.clone(oldTarget);
+
             popUp.find('.modal-body').find('#popup-iframe').remove();
             var iframeId = 'edit-setting-frame-' + Math.random().toString(36).substring(7);
             popUp.find('.modal-body').append('<iframe id="popup-iframe" frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto" name="' + iframeId + '"></iframe>');
@@ -479,12 +485,8 @@ function RemoveDiv(idNode) {
 }
 
 var menuBarManager = {
-    isSmallDevice: function () {
-        var isSmallDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        return isSmallDevice;
-    },
     getCustInfoScrollTop: function () {
-        var isSmallDevice = menuBarManager.isSmallDevice();
+        var isSmallDevice = oldMainUltilities.isSmallDevice();
         if (isSmallDevice) {
             return -top.$('.accountinfo-container').scrollTop();
         }
@@ -504,26 +506,9 @@ var menuBarManager = {
         return scrollTop;
     },
 
-    getOffset: function (el) {
-        var _x = 0;
-        var _y = 0;
-        while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
-            if (el.style.display == 'none') {
-                _x += parseFloat(el.style.left.replace(/px/g, '')) - el.scrollLeft;
-                _y += parseFloat(el.style.top.replace(/px/g, '')) - el.scrollTop;
-            } else {
-                _x += el.offsetLeft - el.scrollLeft;
-                _y += el.offsetTop - el.scrollTop;
-            }
-
-            el = el.offsetParent;
-        }
-
-        return { top: _y, left: _x };
-    },
 
     getPopupEditStatusPosition_CustomerList: function (handleElement) {
-        var handleElementPosition = menuBarManager.getOffset(handleElement);
+        var handleElementPosition = oldMainUltilities.getOffset(handleElement);
 
         var startTop = 0;
         var scrollTop = menuBarManager.getMainFrameScrollTop();
@@ -548,7 +533,7 @@ var menuBarManager = {
         return position;
     },
     getPopupEditStatusPosition_LeftPanel: function (handleElement) {
-        var handleElementPosition = menuBarManager.getOffset(handleElement);
+        var handleElementPosition = oldMainUltilities.getOffset(handleElement);
 
         var startTop = 0;
         var scrollTop = menuBarManager.getCustInfoScrollTop();
@@ -598,7 +583,7 @@ var menuBarManager = {
     },
 
     getPopupEditStatusPosition_DoubleComm: function (handleElement) {
-        var handleElementPosition = menuBarManager.getOffset(handleElement);
+        var handleElementPosition = oldMainUltilities.getOffset(handleElement);
 
         var startTop = 0;
         var scrollTop = menuBarManager.getMainFrameScrollTop();
@@ -622,4 +607,28 @@ var menuBarManager = {
 
         return position;
     }
-}
+};
+
+var oldMainUltilities = {
+    isSmallDevice: function () {
+        var isSmallDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        return isSmallDevice;
+    },
+    getOffset: function (el) {
+        var _x = 0;
+        var _y = 0;
+        while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+            if (el.style.display == 'none') {
+                _x += parseFloat(el.style.left.replace(/px/g, '')) - el.scrollLeft;
+                _y += parseFloat(el.style.top.replace(/px/g, '')) - el.scrollTop;
+            } else {
+                _x += el.offsetLeft - el.scrollLeft;
+                _y += el.offsetTop - el.scrollTop;
+            }
+
+            el = el.offsetParent;
+        }
+
+        return { top: _y, left: _x };
+    }
+};
