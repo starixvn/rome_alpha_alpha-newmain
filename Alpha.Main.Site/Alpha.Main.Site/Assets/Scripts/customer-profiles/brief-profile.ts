@@ -61,6 +61,11 @@ var briefProfile = {
         briefProfile.domElements.profileTooltip
             .off('click')
             .on('click', briefProfile.hideProfileTooltip);
+
+        briefProfile.domElements.toolTipBox
+            .off('click')
+            .on('click', briefProfile.hideTooltipIntroNickname);
+
         setTimeout(function () {
             briefProfile.hideAllTooltips();
         }, briefProfile.autoCloseToolTipTime);

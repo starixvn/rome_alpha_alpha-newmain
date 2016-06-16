@@ -322,6 +322,9 @@ var AgeWnd = function () {
             });
 
             popUp.tinyDraggable();
+
+            // This will make elements on popup lose focus
+            // Issue: click any point on popup trigger open keyboard/dropdown (default focus elements)
             popUp.blur();
             this.popUp.push(popUp);
             this.callback.push();
