@@ -672,3 +672,9 @@ var oldMainUltilities = {
         return 0;
     }
 };
+
+function reloadPopUpSetting() {
+    var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
+    var iframe = popUp.find('#popup-iframe');
+    iframe.attr('src', iframe.attr('src'));
+}
