@@ -187,7 +187,7 @@ window.age = window.age || {
     },
     CalculateViewport: function () {
         age.viewport = { width: 0, height: 0 };
-        if (!age.isIE()) {
+        if (!oldMainUltilities.isIE()) {
             // in standards compliant mode (i.e. with a valid doctype as the first line in the document)
             if (typeof document.documentElement != 'undefined' &&
                 typeof document.documentElement.scrollWidth != 'undefined' &&
@@ -210,9 +210,6 @@ window.age = window.age || {
             age.viewport.width = Math.max(document.body.scrollWidth, age.viewport.width);
             age.viewport.height = Math.max(document.body.scrollHeight, age.viewport.height);
         }
-    },
-    isIE: function () {
-        return (/msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent));
     },
     SignOut: function () {
         var index = window;
@@ -277,8 +274,10 @@ var AgeWnd = function () {
             popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
 
             // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
-            var scrollTop = oldMainUltilities.isSmallDevice() ? document.body.scrollTop : 0;
+            var scrollTop = oldMainUltilities.getScrollLeft(window) || 0;
+            var scrollLeft = oldMainUltilities.getScrollTop(window) || 0;
 
+            var isSmallDevice = oldMainUltilities.isSmallDevice();
             popUp.css({
                 width: popW,
                 height: popH,
@@ -298,20 +297,18 @@ var AgeWnd = function () {
 
             var iframe = popUp.find("#popup-iframe");
             var iframeHeight = popH - headerHeight - contentBorder - bodyHeightPadding;
-            ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
+            ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isSmallDevice);
             if (url) {
                 iframe.attr("src", url);
             } else {
                 ageWnd.copyTargetForm(popUp);
                 iframe = popUp.find('.modal-body').find('#popup-iframe');
-                ageWnd.setIframeInfo(iframe, popUp, iframeHeight, iframeHeight, left, popUpTop);
+                ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isSmallDevice);
             }
 
-            setTimeout(function () {
-                ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack);
-            }, 100);
+            ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack);
         },
-        openPopUpAfterSetIframeSrc: function (popUp, callBack) {
+        openPopUpAfterSetIframeSrc: function (popUp, callBack, isSmallDevice) {
             popUp.modal({ show: true, backdrop: false });
             popUp.find(".icon-close").unbind("click").click(function () {
                 popUp.find('.modal-body #target').remove();
@@ -322,11 +319,6 @@ var AgeWnd = function () {
             });
 
             popUp.tinyDraggable();
-
-            // This will make elements on popup lose focus
-            // Issue: click any point on popup trigger open keyboard/dropdown (default focus elements)
-            popUp.find(':focus').blur();
-            popUp.blur();
 
             this.popUp.push(popUp);
             this.callback.push();
@@ -359,7 +351,7 @@ var AgeWnd = function () {
             newTarget.target = iframeId;
             newTarget.submit();
         },
-        setIframeInfo: function (iframe, popUp, iframeHeight, left, top) {
+        setIframeInfo: function (iframe, popUp, iframeHeight, left, top, isSmallDevice) {
             iframe.css({
                 width: '100%',
                 height: iframeHeight,
@@ -374,6 +366,12 @@ var AgeWnd = function () {
                 var iframeTitle = iframe_doc.find("title").text();
                 if (title == '' && iframeTitle != 'Home') {
                     popUp.find(".popup-title").html(iframeTitle);
+                }
+
+                if (isSmallDevice) {
+                    // This will make elements on popup lose focus
+                    // Issue: click any point on popup trigger open keyboard/dropdown (default focus elements)
+                    iframe.contents().find(':focus').blur();
                 }
             });
         }
@@ -615,6 +613,9 @@ var menuBarManager = {
 };
 
 var oldMainUltilities = {
+    isIE: function () {
+        return (/msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent));
+    },
     isSmallDevice: function () {
         var isSmallDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         return isSmallDevice;
@@ -635,5 +636,39 @@ var oldMainUltilities = {
         }
 
         return { top: _y, left: _x };
+    },
+    getScrollLeft: function (documentContext) {
+        var isIE = oldMainUltilities.isIE();
+        if (isIE && typeof (documentContext.pageXOffset) == 'number') {
+            return documentContext.pageXOffset;
+        }
+
+        if (documentContext.body && (documentContext.body.scrollLeft || documentContext.body.scrollTop)) {
+            return documentContext.body.scrollLeft;
+        }
+
+        if (documentContext.documentElement &&
+            (documentContext.documentElement.scrollLeft || documentContext.documentElement.scrollTop)) {
+            return documentContext.documentElement.scrollLeft;
+        }
+
+        return 0;
+    },
+    getScrollTop: function (documentContext) {
+        var isIE = oldMainUltilities.isIE();
+        if (isIE && typeof (documentContext.pageYOffset) == 'number') {
+            return documentContext.pageYOffset;
+        }
+
+        if (documentContext.body && (documentContext.body.scrollLeft || documentContext.body.scrollTop)) {
+            return documentContext.body.scrollTop;
+        }
+
+        if (documentContext.documentElement &&
+            (documentContext.documentElement.scrollLeft || documentContext.documentElement.scrollTop)) {
+            return documentContext.documentElement.scrollTop;
+        }
+
+        return 0;
     }
 };
