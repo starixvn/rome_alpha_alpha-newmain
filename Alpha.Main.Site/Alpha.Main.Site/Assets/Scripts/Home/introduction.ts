@@ -59,11 +59,38 @@ var introduction = {
                 radius: 20
             },
             {
+                "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
+                '<p>' + introduction.resources.MainMenuIntroduction + '</p>'
+            },
+            {
                 "next #menu-VIEWLOG": '<p>' + introduction.resources.TransferAndViewLogIntroduction + '</p>' +
                 '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',
                 top: -50,
                 permission: '[G]'
             },
+            {
+                "next #menu-TRANSFER": '<p>Transfer is now located in the Main Menu</p>' +
+                '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',                
+                permission: '[G]'
+            },
+            {
+                "next #menu-VIEWLOG": '<p>View Log is now located in the Main Menu</p>' +
+                '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',               
+                permission: '[G]'
+            },
+            {
+                "click #hamburger-icon": '<p class="blinker">Need more space? Click this</p>', 
+                shape: 'circle',
+                radius: 25,
+                showSkip: false
+                //onBeforeStart: function () {
+                //    menuBar.collapseSideBar();
+                //}
+            },
+            {
+                "next #side-bar": '<p class="title">Collapse/Expand Icon</p>' +
+                '<p>' + introduction.resources.CollapseExpandIconIntroduction + '</p>'
+            },                
             {
                 "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
                 '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
@@ -74,31 +101,9 @@ var introduction = {
             {
                 "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
                 '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
-                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>'
-            },
-            {
-                "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
-                '<p>' + introduction.resources.MainMenuIntroduction + '</p>'
-            },
-            {
-                "click #menu-REPORTS":
-                '<p class="blinker">' + introduction.resources.ReportMenuIntroduction + '</p>',
-                showSkip: false,
-                permission: '[E]'
-            },
-            {
-                "next #sub-menu-WINLOSSANALYSISCHART":
-                '<p>' + introduction.resources.WinLossAnalysisChartIntroduction + '</p>',
-                permission: '[E]'
-            },
-            {
-                "next #hamburger-icon": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
-                '<p>' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
-                shape: 'circle',
-                radius: 25,
-                onBeforeStart: function () {
-                    menuBar.collapseSideBar();
-                }
+                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>',
+                'nextButton': { className: "myNext", text: "Got it" },
+                'skipButton': { className: "replay", text: "Replay" }
             }];
 
         //[A]: Create
