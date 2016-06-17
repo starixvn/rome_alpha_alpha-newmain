@@ -66,10 +66,6 @@ var briefProfile = {
             .off('click')
             .on('click', briefProfile.hideTooltipIntroNickname);
 
-        setTimeout(function () {
-            briefProfile.hideAllTooltips();
-        }, briefProfile.autoCloseToolTipTime);
-
         briefProfile.domElements.profilePicture.click(function () {
             menuBar.collapseSideBar();
         });
@@ -87,6 +83,8 @@ var briefProfile = {
         if (briefProfile.domElements.toolTipBox.length > 0) {
             briefProfile.domElements.toolTipBox.remove();
         }
+
+        briefProfile.showTooltipProfilePicture();
     },
 
     hideProfileTooltip: function () {
@@ -113,22 +111,10 @@ var briefProfile = {
 
             setTimeout(function () {
                 briefProfile.hideTooltipIntroNickname();
-                briefProfile.showTooltipProfilePicture();
             }, 20000);
         }
         else {
             briefProfile.showTooltipProfilePicture();
-        }
-    },
-
-    hideAllTooltips: function () {
-        briefProfile.hideTooltipIntroNickname();
-        if (briefProfile.isShowNickNameProfileTooltip) {
-            briefProfile.showTooltipProfilePicture();
-            briefProfile.isShowNickNameProfileTooltip = false;
-        }
-        else {
-            briefProfile.hideProfileTooltip();
         }
     }
 };

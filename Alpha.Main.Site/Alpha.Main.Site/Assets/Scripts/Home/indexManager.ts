@@ -112,7 +112,7 @@ var indexManager = {
 
                 $(iframeWindow.document)
                     .off('click.closeMenu touchstart.closemenu')
-                    .on('click.closeMenu  touchstart.closemenu',
+                    .on('click.closeMenu touchstart.closemenu',
                     function () {
                         menuBar.collapseSideBar();
                     });
