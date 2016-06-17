@@ -70,12 +70,12 @@ var introduction = {
             },
             {
                 "next #menu-TRANSFER": '<p>Transfer is now located in the Main Menu</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',                
+                '<img src="Assets/styles/introduction/images/OldUI-2-1.png" /><br><br>',                
                 permission: '[G]'
             },
             {
                 "next #menu-VIEWLOG": '<p>View Log is now located in the Main Menu</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',               
+                '<img src="Assets/styles/introduction/images/OldUI-2-2.png" /><br><br>',               
                 permission: '[G]'
             },
             {
