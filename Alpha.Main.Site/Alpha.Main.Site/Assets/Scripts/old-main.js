@@ -389,33 +389,44 @@ window.bootboxConfirm = function (message, handleElement, acceptCallback, cancel
         }
     });
 
-    if (handleElement) {
-        var dialog = $(".bootbox-confirm .modal-dialog");
-        var position = menuBarManager.getPopupEditStatusPosition(handleElement, popUpOptions);
-        dialog.css({
-            left: position.left,
-            top: position.top
-        });
-    }
+    var dialog = $(".bootbox-confirm .modal-dialog");
+    var position = getBootboxPostion(handleElement, popUpOptions);
+    dialog.css({
+        left: position.left,
+        top: position.top
+    });
 };
 
-window.bootboxAlert = function (message, handleElement, callbackFunction) {
+window.bootboxAlert = function (message, handleElement, callbackFunction, popUpOptions) {
     bootbox.alert(message, function () {
         if (callbackFunction && typeof (callbackFunction) == "function") {
             callbackFunction();
         }
     });
 
-    if (handleElement) {
-        var dialog = $(".bootbox-alert .modal-dialog");
-        var position = menuBarManager.getPopupEditStatusPosition(handleElement);
+    var dialog = $(".bootbox-alert .modal-dialog");
+    var position = getBootboxPostion(handleElement, popUpOptions);
 
-        dialog.css({
-            left: position.left,
-            top: position.top
-        });
-    }
+    dialog.css({
+        left: position.left || 0,
+        top: position.top || 0
+    });
 };
+
+function getBootboxPostion(handleElement, popUpOptions) {
+    if (popUpOptions && popUpOptions.position) {
+        return popUpOptions.position;
+    }
+
+    if (handleElement) {
+        return menuBarManager.getPopupEditStatusPosition(handleElement, popUpOptions);
+    }
+
+    return {
+        left: $(window).width() / 2,
+        top: 100
+    };
+}
 
 function ShowSecCodePopup(preUrl) {
 
@@ -508,7 +519,6 @@ var menuBarManager = {
 
         return scrollTop;
     },
-
 
     getPopupEditStatusPosition_CustomerList: function (handleElement) {
         var handleElementPosition = oldMainUltilities.getOffset(handleElement);
