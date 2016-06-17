@@ -15,6 +15,7 @@ var introduction = {
         }
 
         introduction.cacheDOMElements();
+        introduction.buildIntroductionStep();
         introduction.registerEvents();
     },
 
@@ -23,7 +24,6 @@ var introduction = {
         introduction.domElements.letGoButtons = $('.js-let-go-btn');
         introduction.domElements.markInner = $(".mask-inner");
         ///"[A][B][C][D][E][G][H]"
-        //[0]: All
         //[A]: Create
         //[B]: Update
         //[C]: Transfer
@@ -34,55 +34,72 @@ var introduction = {
         //[G]: View Log
     },
 
-    introductionSteps: [
-        {
-            "next .icon-home": '<p>Home icon – access to home page</p>' +
-            '<img src="Assets/styles/introduction/images/OldUI-1.png" /><br><br>',
-            shape: 'circle',
-            radius: 20
-        },
-        {
-            "next .list-menu": '<p>Transfer and View Log are now located in the Main Menu</p>' +
-            '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',
-            top: 240,
-            bottom: 50,
-            permission: '[]'
-        },
-        {
-            "next #btn-header-menu": '<p class="title">Quick Menu</p>' +
-            '<p>Quick access to Account Settings</p>' +
-            '<p><img src="Assets/styles/introduction/images/Quickmenu.png" /></p>',
-            shape: 'circle',
-            radius: 20
-        },
-        {
-            "next .view-type": '<p class="title">Switch View</p>' +
-            '<p>Not familiar with this new interface? Click here to get back.</p>' +
-            '<p>Note: The old version is only available until DD/MM/YYYY.</p>'
-        },
-        {
-            "next #navigation": '<p class="title">Main menu</p>' +
-            '<p>Logical order, all in one place</p>',
-            bottom: 400
-        },
-        {
-            "click .list-menu .menu-item:first-child":
-            '<p class="blinker">What’s new in the Reports? Click this</p>',
-            showSkip: false
-        },
-        {
-            "next .list-menu li.active:first-child ul li:last-child":
-            '<p>The Win Loss Analysis Chart is here</p>'
-        },
-        {
-            "next #hamburger-icon": '<p class="title">Collapse/expand Icon</p>' +
-            '<p>Free up space</p>',
-            shape: 'circle',
-            radius: 25,
-            right: 5,
-            top: 5
-        }
-    ],
+    buildIntroductionStep: function () {
+        var fullSteps = [
+            {
+                "next .icon-home": '<p>Home icon – access to home page</p>' +
+                '<img src="Assets/styles/introduction/images/OldUI-1.png" /><br><br>',
+                shape: 'circle',
+                radius: 20,
+                permission: '[dfdfdfdf]'
+            },
+            {
+                "next .list-menu": '<p>Transfer and View Log are now located in the Main Menu</p>' +
+                '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',
+                top: 240,
+                bottom: 50,
+                permission: '[C]'
+            },
+            {
+                "next #btn-header-menu": '<p class="title">Quick Menu</p>' +
+                '<p>Quick access to Account Settings</p>' +
+                '<p><img src="Assets/styles/introduction/images/Quickmenu.png" /></p>',
+                shape: 'circle',
+                radius: 20
+            },
+            {
+                "next .view-type": '<p class="title">Switch View</p>' +
+                '<p>Not familiar with this new interface? Click here to get back.</p>' +
+                '<p>Note: The old version is only available until DD/MM/YYYY.</p>'
+            },
+            {
+                "next #navigation": '<p class="title">Main menu</p>' +
+                '<p>Logical order, all in one place</p>',
+                bottom: 400
+            },
+            {
+                "click .list-menu .menu-item:first-child":
+                '<p class="blinker">What’s new in the Reports? Click this</p>',
+                showSkip: false,
+                permission: '[E]'
+            },
+            {
+                "next .list-menu li.active:first-child ul li:last-child":
+                '<p>The Win Loss Analysis Chart is here</p>',
+                permission: '[E]'
+            },
+            {
+                "next #hamburger-icon": '<p class="title">Collapse/expand Icon</p>' +
+                '<p>Free up space</p>',
+                shape: 'circle',
+                radius: 25,
+                right: 5,
+                top: 5
+            }];
+
+        $.each(fullSteps, function (index, step) {
+            if (typeof (step.permission) === undefined
+                || step.permission == null
+                || alpha.user.subPageAccess.indexOf(step.permission) > -1) {
+
+                introduction.introductionSteps.push(step);
+
+                return;
+            }
+        });
+    },
+
+    introductionSteps: [],
 
     registerEvents: function () {
         //initialize instance
