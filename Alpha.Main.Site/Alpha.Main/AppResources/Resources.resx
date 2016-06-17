@@ -340,4 +340,52 @@
   <data name="WarningOldViewDate" xml:space="preserve">
     <value>The old version is only available until DD/MM/YYYY.</value>
   </data>
+  <data name="HomeIconIntroduction" xml:space="preserve">
+    <value>Home icon – access to home page</value>
+  </data>
+  <data name="TransferAndViewLogIntroduction" xml:space="preserve">
+    <value>Transfer and View Log are now located in the Main Menu</value>
+  </data>
+  <data name="QuickMenuIntroduction" xml:space="preserve">
+    <value>Quick access to Account Settings</value>
+  </data>
+  <data name="QuickMenu" xml:space="preserve">
+    <value>Quick Menu</value>
+  </data>
+  <data name="SwitchView" xml:space="preserve">
+    <value>Switch View</value>
+  </data>
+  <data name="BackOldViewIntroduction" xml:space="preserve">
+    <value>Not familiar with this new interface? Click here to get back.</value>
+  </data>
+  <data name="WarningOldVersionDeadline" xml:space="preserve">
+    <value>Note: The old version is only available until</value>
+  </data>
+  <data name="MainMenuIntroduction" xml:space="preserve">
+    <value>Logical order, all in one place</value>
+  </data>
+  <data name="ReportMenuIntroduction" xml:space="preserve">
+    <value>What’s new in the Reports? Click this</value>
+  </data>
+  <data name="WinLossAnalysisChartIntroduction" xml:space="preserve">
+    <value>The Win Loss Analysis Chart is here</value>
+  </data>
+  <data name="CollapseExpandIcon" xml:space="preserve">
+    <value>Collapse/expand Icon</value>
+  </data>
+  <data name="CollapseExpandIconIntroduction" xml:space="preserve">
+    <value>Free up space</value>
+  </data>
+  <data name="MainIntroductionTitle" xml:space="preserve">
+    <value>Experience the new Alpha</value>
+  </data>
+  <data name="MainIntroductionDescription" xml:space="preserve">
+    <value>More visualized and convenient than ever.</value>
+  </data>
+  <data name="NotNow" xml:space="preserve">
+    <value>Not now</value>
+  </data>
+  <data name="QuickTour" xml:space="preserve">
+    <value>Quick tour</value>
+  </data>
 </root>

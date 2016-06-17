@@ -115,6 +115,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not familiar with this new interface? Click here to get back..
+        /// </summary>
+        public static string BackOldViewIntroduction {
+            get {
+                return ResourceManager.GetString("BackOldViewIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Balance Info.
         /// </summary>
         public static string balanceInfo {
@@ -174,6 +183,24 @@ namespace Alpha.Main.AppResources {
         public static string close {
             get {
                 return ResourceManager.GetString("close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collapse/expand Icon.
+        /// </summary>
+        public static string CollapseExpandIcon {
+            get {
+                return ResourceManager.GetString("CollapseExpandIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free up space.
+        /// </summary>
+        public static string CollapseExpandIconIntroduction {
+            get {
+                return ResourceManager.GetString("CollapseExpandIconIntroduction", resourceCulture);
             }
         }
         
@@ -259,6 +286,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Home icon – access to home page.
+        /// </summary>
+        public static string HomeIconIntroduction {
+            get {
+                return ResourceManager.GetString("HomeIconIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;Dear customers! Now you can login with your own nickname&lt;/div&gt;
         ///&lt;div&gt;... more secure and personalized.&lt;/div&gt;.
         /// </summary>
@@ -296,11 +332,38 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to More visualized and convenient than ever..
+        /// </summary>
+        public static string MainIntroductionDescription {
+            get {
+                return ResourceManager.GetString("MainIntroductionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Experience the new Alpha.
+        /// </summary>
+        public static string MainIntroductionTitle {
+            get {
+                return ResourceManager.GetString("MainIntroductionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Main menu.
         /// </summary>
         public static string mainMenu {
             get {
                 return ResourceManager.GetString("mainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logical order, all in one place.
+        /// </summary>
+        public static string MainMenuIntroduction {
+            get {
+                return ResourceManager.GetString("MainMenuIntroduction", resourceCulture);
             }
         }
         
@@ -404,6 +467,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not now.
+        /// </summary>
+        public static string NotNow {
+            get {
+                return ResourceManager.GetString("NotNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Old View.
         /// </summary>
         public static string OldView {
@@ -448,6 +520,42 @@ namespace Alpha.Main.AppResources {
         public static string ProfileLoginTip {
             get {
                 return ResourceManager.GetString("ProfileLoginTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quick Menu.
+        /// </summary>
+        public static string QuickMenu {
+            get {
+                return ResourceManager.GetString("QuickMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quick access to Account Settings.
+        /// </summary>
+        public static string QuickMenuIntroduction {
+            get {
+                return ResourceManager.GetString("QuickMenuIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quick tour.
+        /// </summary>
+        public static string QuickTour {
+            get {
+                return ResourceManager.GetString("QuickTour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What’s new in the Reports? Click this.
+        /// </summary>
+        public static string ReportMenuIntroduction {
+            get {
+                return ResourceManager.GetString("ReportMenuIntroduction", resourceCulture);
             }
         }
         
@@ -520,6 +628,15 @@ namespace Alpha.Main.AppResources {
         public static string superOutstanding {
             get {
                 return ResourceManager.GetString("superOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch View.
+        /// </summary>
+        public static string SwitchView {
+            get {
+                return ResourceManager.GetString("SwitchView", resourceCulture);
             }
         }
         
@@ -641,6 +758,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transfer and View Log are now located in the Main Menu.
+        /// </summary>
+        public static string TransferAndViewLogIntroduction {
+            get {
+                return ResourceManager.GetString("TransferAndViewLogIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turnover.
         /// </summary>
         public static string turnover {
@@ -673,6 +799,15 @@ namespace Alpha.Main.AppResources {
         public static string WarningOldViewDate {
             get {
                 return ResourceManager.GetString("WarningOldViewDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Win Loss Analysis Chart is here.
+        /// </summary>
+        public static string WinLossAnalysisChartIntroduction {
+            get {
+                return ResourceManager.GetString("WinLossAnalysisChartIntroduction", resourceCulture);
             }
         }
         

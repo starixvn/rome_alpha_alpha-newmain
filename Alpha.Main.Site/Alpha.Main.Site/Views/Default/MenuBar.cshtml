@@ -25,12 +25,12 @@
         </div>
     </div>
     <section id="main-menu-tab"  class="mainmenu-container mCustomScrollbar @(Model.IsAccountInfoVisible ? string.Empty : "disabledViewAccInfo")" data-mcs-theme="minimal-dark" role="tablist" aria-multiselectable="true">
-        <ul class="list-menu">
+        <ul class="list-menu" id="main-menu-items">
             @foreach (var menuItem in Model.MenuItems)
             {
                 if (menuItem.VisibileSubMenus.Any())
                 {
-                    <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)">
+                    <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)" id="menu-@(menuItem.ResourceKey.ToUpper())">
                         <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)">
                             <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@Html.Raw(menuItem.DisplayName)</span>
                             <span class="pull-right icon-arrow-right"></span>
@@ -38,7 +38,7 @@
                         <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
                             @foreach (var subMenuItem in menuItem.VisibileSubMenus)
                             {
-                                <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)">
+                                <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)" id="sub-menu-@(subMenuItem.ResourceKey.ToUpper())">
                                     <a href="@subMenuItem.Url" target="main" class="redirect-item">
                                         @subMenuItem.DisplayName
                                     </a>
@@ -49,7 +49,7 @@
                 }
                 else
                 {
-                    <li class="menu-item">
+                    <li class="menu-item" id="menu-@(menuItem.ResourceKey.ToUpper())">
                         <a class="withripple menu-opener parent-menu redirect-item" href="@menuItem.Url" target="main">
                             <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
                         </a>

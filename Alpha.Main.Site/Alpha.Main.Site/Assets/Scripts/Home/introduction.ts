@@ -1,12 +1,32 @@
-﻿declare var EnjoyHint: any;
+﻿/// <reference path="menu-bar.ts" />
+
+declare var EnjoyHint: any;
 
 var introduction = {
     enjoyHint: null,
+    readIntroductionCookieName: 'ICKN',
 
     domElements: {
         beginModal: null,
-        letGoButtons: null,
+        startIntroductionBtn: null,
+        notNowIntroductionBtn: null,
         markInner: null
+    },
+
+    resources: {
+        HomeIconIntroduction: (<HTMLInputElement>document.getElementById('HomeIconIntroduction')).value,
+        TransferAndViewLogIntroduction: (<HTMLInputElement>document.getElementById('TransferAndViewLogIntroduction')).value,
+        QuickMenuIntroduction: (<HTMLInputElement>document.getElementById('QuickMenuIntroduction')).value,
+        QuickMenu: (<HTMLInputElement>document.getElementById('QuickMenu')).value,
+        SwitchView: (<HTMLInputElement>document.getElementById('SwitchView')).value,
+        BackOldViewIntroduction: (<HTMLInputElement>document.getElementById('BackOldViewIntroduction')).value,
+        WarningOldVersionDeadline: (<HTMLInputElement>document.getElementById('WarningOldVersionDeadline')).value,
+        MainMenuIntroduction: (<HTMLInputElement>document.getElementById('MainMenuIntroduction')).value,
+        ReportMenuIntroduction: (<HTMLInputElement>document.getElementById('ReportMenuIntroduction')).value,
+        WinLossAnalysisChartIntroduction: (<HTMLInputElement>document.getElementById('WinLossAnalysisChartIntroduction')).value,
+        CollapseExpandIcon: (<HTMLInputElement>document.getElementById('CollapseExpandIcon')).value,
+        CollapseExpandIconIntroduction: (<HTMLInputElement>document.getElementById('CollapseExpandIconIntroduction')).value,
+        MainMenu: (<HTMLInputElement>document.getElementById('MainMenu')).value
     },
 
     init: function () {
@@ -14,16 +34,73 @@ var introduction = {
             return;
         }
 
+        var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
+
+        if (isReadIntroduction) {
+            //return;
+        }
+
         introduction.cacheDOMElements();
-        introduction.buildIntroductionStep();
         introduction.registerEvents();
     },
 
     cacheDOMElements: function () {
         introduction.domElements.beginModal = $('#beginModal');
-        introduction.domElements.letGoButtons = $('.js-let-go-btn');
+        introduction.domElements.startIntroductionBtn = $('#start-introduction-btn');
         introduction.domElements.markInner = $(".mask-inner");
-        ///"[A][B][C][D][E][G][H]"
+    },
+
+    buildIntroductionStep: function () {
+        var fullSteps = [
+            {
+                'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>' +
+                '<img src="Assets/styles/introduction/images/OldUI-1.png" /><br><br>',
+                shape: 'circle',
+                radius: 20
+            },
+            {
+                "next #menu-VIEWLOG": '<p>' + introduction.resources.TransferAndViewLogIntroduction + '</p>' +
+                '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',
+                top: -50,
+                permission: '[G]'
+            },
+            {
+                "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
+                '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
+                '<p><img src="Assets/styles/introduction/images/Quickmenu.png" /></p>',
+                shape: 'circle',
+                radius: 20
+            },
+            {
+                "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
+                '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
+                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>'
+            },
+            {
+                "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
+                '<p>' + introduction.resources.MainMenuIntroduction + '</p>'
+            },
+            {
+                "click #menu-REPORTS":
+                '<p class="blinker">' + introduction.resources.ReportMenuIntroduction + '</p>',
+                showSkip: false,
+                permission: '[E]'
+            },
+            {
+                "next #sub-menu-WINLOSSANALYSISCHART":
+                '<p>' + introduction.resources.WinLossAnalysisChartIntroduction + '</p>',
+                permission: '[E]'
+            },
+            {
+                "next #hamburger-icon": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
+                '<p>' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
+                shape: 'circle',
+                radius: 25,
+                onBeforeStart: function () {
+                    menuBar.collapseSideBar();
+                }
+            }];
+
         //[A]: Create
         //[B]: Update
         //[C]: Transfer
@@ -32,80 +109,23 @@ var introduction = {
         //[F]: Forcast
         //[H]: Member Information
         //[G]: View Log
-    },
-
-    buildIntroductionStep: function () {
-        var fullSteps = [
-            {
-                "next .icon-home": '<p>Home icon – access to home page</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-1.png" /><br><br>',
-                shape: 'circle',
-                radius: 20,
-                permission: '[dfdfdfdf]'
-            },
-            {
-                "next .list-menu": '<p>Transfer and View Log are now located in the Main Menu</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',
-                top: 240,
-                bottom: 50,
-                permission: '[C]'
-            },
-            {
-                "next #btn-header-menu": '<p class="title">Quick Menu</p>' +
-                '<p>Quick access to Account Settings</p>' +
-                '<p><img src="Assets/styles/introduction/images/Quickmenu.png" /></p>',
-                shape: 'circle',
-                radius: 20
-            },
-            {
-                "next .view-type": '<p class="title">Switch View</p>' +
-                '<p>Not familiar with this new interface? Click here to get back.</p>' +
-                '<p>Note: The old version is only available until DD/MM/YYYY.</p>'
-            },
-            {
-                "next #navigation": '<p class="title">Main menu</p>' +
-                '<p>Logical order, all in one place</p>',
-                bottom: 400
-            },
-            {
-                "click .list-menu .menu-item:first-child":
-                '<p class="blinker">What’s new in the Reports? Click this</p>',
-                showSkip: false,
-                permission: '[E]'
-            },
-            {
-                "next .list-menu li.active:first-child ul li:last-child":
-                '<p>The Win Loss Analysis Chart is here</p>',
-                permission: '[E]'
-            },
-            {
-                "next #hamburger-icon": '<p class="title">Collapse/expand Icon</p>' +
-                '<p>Free up space</p>',
-                shape: 'circle',
-                radius: 25,
-                right: 5,
-                top: 5
-            }];
-
         $.each(fullSteps, function (index, step) {
             if (typeof (step.permission) === undefined
                 || step.permission == null
                 || alpha.user.subPageAccess.indexOf(step.permission) > -1) {
-
                 introduction.introductionSteps.push(step);
 
                 return;
             }
         });
+
+        introduction.enjoyHint = new EnjoyHint({});
+        introduction.enjoyHint.set(introduction.introductionSteps);
     },
 
     introductionSteps: [],
 
-    registerEvents: function () {
-        //initialize instance
-        introduction.enjoyHint = new EnjoyHint({});
-        introduction.enjoyHint.set(introduction.introductionSteps);
-
+    showDelayFirstIntroduction: function () {
         var $p = introduction.domElements.markInner.find("P");
         var words = $p.text().split(" ");
         var delay = 100;
@@ -129,14 +149,33 @@ var introduction = {
                 $p.addClass("in")
             }, 300);
         }, 300);
+    },
+
+    registerEvents: function () {
+        introduction.buildIntroductionStep();
+        introduction.showDelayFirstIntroduction();
         introduction.domElements.beginModal.modal('show');
-        introduction.domElements.letGoButtons.click(function () {
+        introduction.domElements.startIntroductionBtn.click(function () {
             introduction.domElements.beginModal.modal('hide');
+            introduction.setReadIntroduction();
             introduction.enjoyHint.run();
         });
+    },
+
+    getCookieExpireOptions: function () {
+        var cookieExpire: any = { expires: 365, path: window.location.pathname };
+
+        if (alpha.core.isIe()) {
+            cookieExpire = { expires: 365 };
+        }
+
+        return cookieExpire;
+    },
+
+    setReadIntroduction: function () {
+        $.cookie(introduction.readIntroductionCookieName, true, introduction.getCookieExpireOptions());
     }
 };
-
 
 $(function () {
     introduction.init();
