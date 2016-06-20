@@ -683,8 +683,110 @@ var oldMainUltilities = {
     }
 };
 
-function reloadPopUpSetting() {
-    var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
-    var iframe = popUp.find('#popup-iframe');
-    iframe.attr('src', iframe.attr('src'));
+function reloadPopUpSetting(timeOut) {
+    if (timeOut) {
+        setTimeout(function () {
+            doReload();
+        }, timeOut);
+    } else {
+        doReload();
+    }
+
+    function doReload() {
+        var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
+        var iframes = popUp.find('#popup-iframe');
+        var target = popUp.find('.modal-body #target');
+        if (target && target.length) {
+            target.submit();
+            doReloadMainFrame();
+        }
+        else if (iframes && iframes.length) {
+            iframes.attr('src', iframes.attr('src'));
+            iframes.load(function () {
+                doReloadMainFrame();
+            });
+        } else {
+            doReloadMainFrame();
+        }
+
+        window.top.clearPopupSubtitle(true);
+    }
+
+    function doReloadMainFrame() {
+        var arrayCustId = top.main.$("arrayCustID").value;
+        var arrayUserName = top.main.$("arrayUserName").value;
+        window.top.main.location.reload();
+        window.top.$('#main').load(function () {
+            top.main.$("arrayCustID").value = arrayCustId;
+            top.main.$("arrayUserName").value = arrayUserName;
+        });
+    }
+}
+
+function hasPopupOpen() {
+    var popUp = top.$('.modal[id^="page-popup"]');
+    var popUpLength = popUp.length;
+    var hasPopUp = !top.$(popUp[popUpLength - 1]).hasClass('hidden');
+
+    return hasPopUp;
+}
+
+function clearPopupSubtitle(hasSubTitle) {
+    var popUps = top.$('.modal[id^="page-popup"]');
+    var popUpLength = popUps.length;
+    var hasPopUp = !top.$(popUps[popUpLength - 1]).hasClass('hidden');
+
+    if (!hasPopUp) {
+        return;
+    }
+
+    var popUp = top.$(popUps[popUpLength - 1]);
+    var iframes = popUp.find('#popup-iframe');
+    var iframe = iframes && iframes.length ? iframes[0] : null;
+
+    if (!iframe) {
+        return;
+    }
+
+    var timer = setInterval(function () {
+        var iframeDoc = iframe.contentDocument || (iframe.contentWindow ? iframe.contentWindow.document : null);
+        if (!iframeDoc) {
+            return;
+        }
+
+        var isReady = iframeDoc.readyState == 'complete' ||
+            iframeDoc.readyState == 'interactive';
+        if (!isReady) {
+            return;
+        }
+
+        clearSubTitleAfterInframeLoad(iframe);
+        clearInterval(timer);
+    }, 200);
+
+
+    iframe.onload = function () {
+        clearSubTitleAfterInframeLoad(iframe);
+        clearInterval(timer);
+    };
+
+    function clearSubTitleAfterInframeLoad(iframe) {
+        var titles = iframe.contentWindow.document.getElementsByClassName('setting-header-agency');
+        var header_main = titles && titles.length ? titles[0] : null;
+
+        header_main = header_main || iframe.contentWindow.document.getElementById('header_main');
+        header_main = header_main || iframe.contentWindow.document.getElementById('race-book-positiontaking-header');
+        header_main = header_main || iframe.contentWindow.document.getElementById('title_header');
+
+        if (header_main) {
+            header_main.style.display = 'none';
+        }
+
+        if (hasSubTitle) {
+            var subTitles = iframe.contentWindow.document.getElementsByClassName('subTitle');
+            if (subTitles && subTitles.length) {
+                subTitles[0].style.display = 'none';
+            }
+        }
+    }
 }
