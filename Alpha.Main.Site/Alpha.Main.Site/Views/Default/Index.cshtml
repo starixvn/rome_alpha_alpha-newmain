@@ -59,9 +59,12 @@
     @Html.Hidden("isInternalWebVPN", Model.IsInternalWebVPN)
     @Html.Hidden("currentURLCookieName", Model.CurrentURLCookieName)
     @Html.Hidden("isShowIntroduction", Model.IsShowIntroduction)
+    @Html.Hidden("userLevel", Model.UserLevel)
+    @Html.Hidden("isSubAccount", Model.IsSubAccount)
 
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/Assets/bundles/default-index"))" type="text/javascript"></script>
+
     <script src="@(StaticResources.MainSiteScriptUrl("~/Assets/bundles/default-introduction"))" type="text/javascript"></script>
 </body>
 </html>

@@ -21,6 +21,7 @@
         private readonly bool enableSecurityCode;
         private readonly bool isInternalWebVPN;
         private readonly Func<bool> isShowIntroduction;
+        private readonly bool isSubAccount;
 
         public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl, Func<bool> isShowIntroduction)
         {
@@ -40,6 +41,7 @@
             this.enableSecurityCode = message.EnableSecurityCode;
             this.isInternalWebVPN = message.IsInternalWebVPN;
             this.isShowIntroduction = isShowIntroduction;
+            this.isSubAccount = message.IsSubAccount;
         }
 
         public bool EnableSecurityCode
@@ -136,6 +138,14 @@
             get
             {
                 return this.subPageAccess;
+            }
+        }
+
+        public bool IsSubAccount
+        {
+            get
+            {
+                return this.isSubAccount;
             }
         }
 

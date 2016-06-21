@@ -392,7 +392,7 @@
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
-    <TypeScriptCompile Include="Assets\scripts\home\introduction.ts" />
+    <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-introduction.css" />
     <Content Include="Assets\bundles\default-introduction.js" />
     <Content Include="Assets\bundles\default-introduction.min.css">
@@ -457,9 +457,14 @@
     <Content Include="Assets\styles\introduction\enjoyhint.min.css">
       <DependentUpon>enjoyhint.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\introduction\images\agent.png" />
+    <Content Include="Assets\styles\introduction\images\master.png" />
     <Content Include="Assets\styles\introduction\images\OldUI-1.png" />
+    <Content Include="Assets\styles\introduction\images\OldUI-2-1.png" />
+    <Content Include="Assets\styles\introduction\images\OldUI-2-2.png" />
     <Content Include="Assets\styles\introduction\images\OldUI-2.png" />
     <Content Include="Assets\styles\introduction\images\OldUI-3.png" />
+    <Content Include="Assets\styles\introduction\images\super.png" />
     <Content Include="Assets\styles\introduction\intro.css">
       <DependentUpon>intro.scss</DependentUpon>
     </Content>

@@ -388,4 +388,10 @@
   <data name="QuickTour" xml:space="preserve">
     <value>Quick tour</value>
   </data>
+  <data name="TransferMenuIntroduction" xml:space="preserve">
+    <value>Transfer is now located in the Main Menu</value>
+  </data>
+  <data name="ViewLogMenuIntroduction" xml:space="preserve">
+    <value>View Log is now located in the Main Menu</value>
+  </data>
 </root>

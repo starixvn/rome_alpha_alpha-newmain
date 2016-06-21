@@ -1,4 +1,5 @@
-﻿/// <reference path="menu-bar.ts" />
+﻿/// <reference path="../home/menu-bar.ts" />
+
 
 declare var EnjoyHint: any;
 
@@ -26,7 +27,9 @@ var introduction = {
         WinLossAnalysisChartIntroduction: (<HTMLInputElement>document.getElementById('WinLossAnalysisChartIntroduction')).value,
         CollapseExpandIcon: (<HTMLInputElement>document.getElementById('CollapseExpandIcon')).value,
         CollapseExpandIconIntroduction: (<HTMLInputElement>document.getElementById('CollapseExpandIconIntroduction')).value,
-        MainMenu: (<HTMLInputElement>document.getElementById('MainMenu')).value
+        MainMenu: (<HTMLInputElement>document.getElementById('MainMenu')).value,
+        TransferMenuIntroduction: (<HTMLInputElement>document.getElementById('TransferMenuIntroduction')).value,
+        ViewLogMenuIntroduction: (<HTMLInputElement>document.getElementById('ViewLogMenuIntroduction')).value
     },
 
     init: function () {
@@ -37,7 +40,7 @@ var introduction = {
         var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
 
         if (isReadIntroduction) {
-            //return;
+            return;
         }
 
         introduction.cacheDOMElements();
@@ -51,12 +54,26 @@ var introduction = {
     },
 
     buildIntroductionStep: function () {
+        var viewLogStep = {
+            "next #menu-VIEWLOG": '<p>' + introduction.resources.ViewLogMenuIntroduction + '</p>' +
+            '<img src="Assets/styles/introduction/images/OldUI-2-2.png" /><br><br>',
+            permission: '[G]'
+        };
+
+        var transferStep = {
+            "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>' +
+            '<img src="Assets/styles/introduction/images/OldUI-2-1.png" /><br><br>',
+            permission: '[C]'
+        };
+
         var fullSteps = [
             {
-                'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-1.png" /><br><br>',
+                'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>',
                 shape: 'circle',
-                radius: 20
+                radius: 20,
+                onBeforeStart: function () {
+                    briefProfile.hideAllTooltips();
+                }
             },
             {
                 "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
@@ -66,35 +83,26 @@ var introduction = {
                 "next #menu-VIEWLOG": '<p>' + introduction.resources.TransferAndViewLogIntroduction + '</p>' +
                 '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',
                 top: -50,
-                permission: '[G]'
+                isViewLogAndTransferIntroduction: true,
+                permission: 'COMBINE'
             },
             {
-                "next #menu-TRANSFER": '<p>Transfer is now located in the Main Menu</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-2-1.png" /><br><br>',                
-                permission: '[G]'
-            },
-            {
-                "next #menu-VIEWLOG": '<p>View Log is now located in the Main Menu</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-2-2.png" /><br><br>',               
-                permission: '[G]'
-            },
-            {
-                "click #hamburger-icon": '<p class="blinker">Need more space? Click this</p>', 
+                "click #hamburger-icon": '<p class="blinker">' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
                 shape: 'circle',
                 radius: 25,
-                showSkip: false
-                //onBeforeStart: function () {
-                //    menuBar.collapseSideBar();
-                //}
+                showSkip: false,
+                onBeforeStart: function () {
+                    menuBar.collapseSideBar();
+                }
             },
             {
-                "next #side-bar": '<p class="title">Collapse/Expand Icon</p>' +
+                "next #side-bar": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
                 '<p>' + introduction.resources.CollapseExpandIconIntroduction + '</p>'
-            },                
+            },
             {
                 "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
                 '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
-                '<p><img src="Assets/styles/introduction/images/Quickmenu.png" /></p>',
+                '<p><img class="quick-menu-introduction-image" src="Assets/styles/introduction/images/' + alpha.user.level + '.png" /></p>',
                 shape: 'circle',
                 radius: 20
             },
@@ -103,9 +111,9 @@ var introduction = {
                 '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
                 '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>',
                 'nextButton': { className: "myNext", text: "Got it" },
-                'skipButton': { className: "replay", text: "Replay" }
+                'skipButton': { className: "replay-introduction", text: "Replay" }
             }];
-
+        
         //[A]: Create
         //[B]: Update
         //[C]: Transfer
@@ -121,6 +129,25 @@ var introduction = {
                 introduction.introductionSteps.push(step);
 
                 return;
+            }
+
+            //// If user have view log and transfer permission, then show combined introduction, eles show each introduction
+            if (step.isViewLogAndTransferIntroduction) {
+                if (!alpha.user.isSubAccount
+                    || (alpha.user.subPageAccess.indexOf(viewLogStep.permission) > -1
+                        && alpha.user.subPageAccess.indexOf(transferStep.permission) > -1)) {
+                    introduction.introductionSteps.push(step);
+
+                    return;
+                }
+
+                if (alpha.user.subPageAccess.indexOf(viewLogStep.permission) > -1) {
+                    introduction.introductionSteps.push(viewLogStep);
+                }
+
+                if (alpha.user.subPageAccess.indexOf(transferStep.permission) > -1) {
+                    introduction.introductionSteps.push(transferStep);
+                }
             }
         });
 
@@ -152,19 +179,29 @@ var introduction = {
             introduction.domElements.markInner.addClass("in");
             setTimeout(function () {
                 $p.addClass("in")
-            }, 300);
-        }, 300);
+            }, 150);
+        }, 150);
     },
 
     registerEvents: function () {
-        introduction.buildIntroductionStep();
-        introduction.showDelayFirstIntroduction();
-        introduction.domElements.beginModal.modal('show');
+        introduction.show();
         introduction.domElements.startIntroductionBtn.click(function () {
             introduction.domElements.beginModal.modal('hide');
             introduction.setReadIntroduction();
             introduction.enjoyHint.run();
         });
+
+        $(document)
+            .off('click.replay-introduction', '.replay-introduction')
+            .on('click.replay-introduction', '.replay-introduction', function () {
+                introduction.show();
+            });
+    },
+
+    show: function () {
+        introduction.buildIntroductionStep();
+        introduction.showDelayFirstIntroduction();
+        introduction.domElements.beginModal.modal('show');
     },
 
     getCookieExpireOptions: function () {

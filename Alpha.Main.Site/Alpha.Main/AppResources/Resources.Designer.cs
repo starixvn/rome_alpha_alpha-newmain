@@ -767,6 +767,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transfer is now located in the Main Menu.
+        /// </summary>
+        public static string TransferMenuIntroduction {
+            get {
+                return ResourceManager.GetString("TransferMenuIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turnover.
         /// </summary>
         public static string turnover {
@@ -790,6 +799,15 @@ namespace Alpha.Main.AppResources {
         public static string username {
             get {
                 return ResourceManager.GetString("username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Log is now located in the Main Menu.
+        /// </summary>
+        public static string ViewLogMenuIntroduction {
+            get {
+                return ResourceManager.GetString("ViewLogMenuIntroduction", resourceCulture);
             }
         }
         

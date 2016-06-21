@@ -93,6 +93,14 @@ var briefProfile = {
         }
     },
 
+    hideAllTooltips: function () {
+        if (briefProfile.domElements.toolTipBox.length > 0) {
+            briefProfile.domElements.toolTipBox.remove();
+        }
+
+        briefProfile.hideProfileTooltip();
+    },
+
     showTooltipProfilePicture: function () {
         if (briefProfile.domElements.profileTooltip.length > 0
             && briefProfile.isShowEditProfilePictureTooltip) {

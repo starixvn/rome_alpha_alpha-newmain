@@ -78,6 +78,14 @@
             }
         }
 
+        public bool IsSubAccount
+        {
+            get
+            {
+                return userSession.IsSubAcc;
+            }
+        }
+
         public bool EnableSecurityCode
         {
             get

@@ -187,6 +187,11 @@
     animation-iteration-count: infinite;
 }
 
+.quick-menu-introduction-image {
+    width:160px;
+    height:273px;
+}
+
 @-webkit-keyframes bounceIn {
     from, 20%, 40%, 60%, 80%, to {
         -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);

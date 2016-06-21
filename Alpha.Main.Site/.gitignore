@@ -72,15 +72,19 @@ bundles
 */bundles/**/*.js
 *.css
 
-*/Alpha.Main.Site/Assets/[Ss]cripts/core.js
-[Ss]cripts/[A]nnouncement/*.js
-[Ss]cripts/customer-profiles/*.js
-[Ss]cripts/[H]ome/*.js
+**/Alpha.Main.Site/Assets/[Ss]cripts/core.js
+**/[Ss]cripts/[Aa]nnouncement/*.js
+**/[Ss]cripts/customer-profiles/*.js
+**/[Ss]cripts/[Hh]ome/*.js
+**/[Ss]cripts/[Ii]ntroduction/*.js
 
-[Ss]cripts/core.js.map
-[Ss]cripts/[A]nnouncement/*.js.map
-[Ss]cripts/customer-profiles/*.js.map
-[Ss]cripts/[H]ome/*.js.map
+**/[Ss]cripts/core.js.map
+**/[Ss]cripts/[Aa]nnouncement/*.js.map
+**/[Ss]cripts/customer-profiles/*.js.map
+**/[Ss]cripts/[Hh]ome/*.js.map
+**/[Ss]cripts/[Ii]ntroduction/*.js.map
+
+
 
 
 
