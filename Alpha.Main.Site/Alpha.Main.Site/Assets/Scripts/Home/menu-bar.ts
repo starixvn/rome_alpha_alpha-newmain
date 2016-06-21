@@ -172,7 +172,7 @@
 
         // To work on IE, use plain-old javascript onload event
         accInfoContent[0].onload = function () {
-            if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+            if (alpha.isMobile) {
                 menuBar.domElements.accountInfoContent.addClass('small-device');
             }
             else {

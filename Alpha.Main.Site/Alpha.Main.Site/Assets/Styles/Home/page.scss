@@ -1,6 +1,9 @@
 ﻿@import "_variables.scss";
 @import "_mixins.scss";
 
+body, html {
+    height: 100%;
+}
 body {
     margin: 0;
     font-family: $font-family;

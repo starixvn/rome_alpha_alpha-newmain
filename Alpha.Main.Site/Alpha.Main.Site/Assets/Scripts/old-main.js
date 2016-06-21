@@ -277,10 +277,10 @@ var AgeWnd = function () {
             var scrollTop = oldMainUltilities.getScrollLeft(window) || 0;
             var scrollLeft = oldMainUltilities.getScrollTop(window) || 0;
 
-            var isSmallDevice = oldMainUltilities.isSmallDevice();
+            var isAutoHeight = oldMainUltilities.isiOS();
             popUp.css({
                 width: popW,
-                height: popH,
+                height: isAutoHeight ? 'auto' : popH,
                 left: left,
                 top: popUpTop + scrollTop
             });
@@ -288,27 +288,29 @@ var AgeWnd = function () {
             popUp.appendTo("body");
             popUp.removeClass("hidden");
             popUp.find(".popup-title").html(title);
-            popUp.find(".ex-modal").css("height", popH + "px");
+            if (!isAutoHeight) {
+                popUp.find(".ex-modal").css("height", popH + "px");
+            }
 
             var headerHeight = 40;
             var contentBorder = 2;
             var bodyHeightPadding = 18;
-            popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
+            popUp.find(".modal-content .modal-body").css("height", isAutoHeight ? 'auto' : (popH - headerHeight - contentBorder) + "px");
 
             var iframe = popUp.find("#popup-iframe");
             var iframeHeight = popH - headerHeight - contentBorder - bodyHeightPadding;
-            ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isSmallDevice);
+            ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isAutoHeight);
             if (url) {
                 iframe.attr("src", url);
             } else {
                 ageWnd.copyTargetForm(popUp);
                 iframe = popUp.find('.modal-body').find('#popup-iframe');
-                ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isSmallDevice);
+                ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isAutoHeight);
             }
 
             ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack);
         },
-        openPopUpAfterSetIframeSrc: function (popUp, callBack, isSmallDevice) {
+        openPopUpAfterSetIframeSrc: function (popUp, callBack, isAutoHeight) {
             popUp.modal({ show: true, backdrop: false });
             popUp.find(".icon-close").unbind("click").click(function () {
                 popUp.find('.modal-body #target').remove();
@@ -351,10 +353,10 @@ var AgeWnd = function () {
             newTarget.target = iframeId;
             newTarget.submit();
         },
-        setIframeInfo: function (iframe, popUp, iframeHeight, left, top, isSmallDevice) {
+        setIframeInfo: function (iframe, popUp, iframeHeight, left, top, isAutoHeight) {
             iframe.css({
                 width: '100%',
-                height: iframeHeight,
+                height: '100%',
                 left: left,
                 top: top
             });
@@ -368,7 +370,7 @@ var AgeWnd = function () {
                     popUp.find(".popup-title").html(iframeTitle);
                 }
 
-                if (isSmallDevice) {
+                if (oldMainUltilities.isSmallDevice()) {
                     // This will make elements on popup lose focus
                     // Issue: click any point on popup trigger open keyboard/dropdown (default focus elements)
                     iframe.contents().find(':focus').blur();
@@ -629,6 +631,10 @@ var oldMainUltilities = {
     isSmallDevice: function () {
         var isSmallDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         return isSmallDevice;
+    },
+    isiOS: function () {
+        var isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        return isiOS;
     },
     getOffset: function (el) {
         var _x = 0;
