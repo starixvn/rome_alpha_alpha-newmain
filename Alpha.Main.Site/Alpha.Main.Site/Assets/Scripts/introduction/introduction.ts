@@ -100,6 +100,19 @@ var introduction = {
                 '<p>' + introduction.resources.CollapseExpandIconIntroduction + '</p>'
             },
             {
+                "click #hamburger-icon": '<p class="blinker">Show Main Menu</p>',
+                shape: 'circle',
+                radius: 25,
+                showSkip: false,
+                onBeforeStart: function () {
+                    menuBar.collapseSideBar();
+                }
+            },
+            {
+                "next #side-bar": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
+                '<p>Show Main Menu</p>'
+            },            
+            {
                 "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
                 '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
                 '<p><img class="quick-menu-introduction-image" src="Assets/styles/introduction/images/' + alpha.user.level + '.png" /></p>',
