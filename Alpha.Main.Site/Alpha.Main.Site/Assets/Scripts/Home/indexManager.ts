@@ -116,10 +116,15 @@ var indexManager = {
                     function () {
                         menuBar.collapseSideBar();
                     });
+
+                if (alpha.isMobile) {
+                    $(iframeWindow.document).find(':focus').blur();
+                }
             });
 
             indexManager.domElements.accountInfoContent.load(function () {
-                var iframeWindow = indexManager.domElements.accountInfoContent[0].contentWindow || indexManager.domElements.accountInfoContent[0].contentDocument;
+                var iframeWindow = indexManager.domElements.accountInfoContent[0].contentWindow ||
+                    indexManager.domElements.accountInfoContent[0].contentDocument;
                 indexManager.closeAllOpenDropdowns(iframeWindow);
             });
         }
