@@ -42,7 +42,7 @@ div.messageBlock {
 }
 
 .modal-open .modal {
-   // overflow: hidden;
+   overflow: auto;
 }
 
 #live-message {
@@ -94,7 +94,6 @@ div.messageBlock {
             .modal-body {
                 position: relative;
                 padding: 10px 5px 5px 5px;
-                min-height: 60px;
                 overflow: auto;
                 z-index: 1050;
 

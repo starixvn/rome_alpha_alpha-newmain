@@ -156,7 +156,7 @@ var headerMessage = {
                 headerMessage.domElements.showLessContainer.addClass("hide");
             } else {
                 headerMessage.domElements.showLessContainer.removeClass("hide");
-                messageHeight += headerMessage.domElements.showLessContainer.height() + 2;
+                messageHeight += headerMessage.domElements.showLessContainer.height();
             }
 
             messageHeight += bodyPaddingHeight;
@@ -168,15 +168,23 @@ var headerMessage = {
 
             if (messageHeight <= maxMessageHeight) {
                 headerMessage.domElements.showMoreContainer.addClass("hide");
-                messageHeight += bodyPaddingHeight;
             } else {
                 headerMessage.domElements.currentHotMessage.addClass("brief-content").height(maxMessageHeight);
                 headerMessage.domElements.showMoreContainer.removeClass("hide");
-                messageHeight = maxMessageHeight + headerMessage.domElements.showMoreContainer.height() + 2;
+                messageHeight = maxMessageHeight + headerMessage.domElements.showMoreContainer.height();
             }
+
+            messageHeight += bodyPaddingHeight;
         }
 
         var popUpHeight = headerHeight + messageHeight;
+
+        var minHeight = 40;
+        headerMessage.domElements.currentHotMessage.css('min-height', minHeight);
+            if (popUpHeight < minHeight) {
+            popUpHeight = minHeight;
+        }
+
         headerMessage.domElements.userMessageModal.height(popUpHeight);
     },
     showMoreHotMessage: function () {
