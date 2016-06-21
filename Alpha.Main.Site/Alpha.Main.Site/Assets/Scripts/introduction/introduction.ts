@@ -67,7 +67,12 @@ var introduction = {
             },
             {
                 "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
-                '<p>' + introduction.resources.MainMenuIntroduction + '</p>'
+                '<p>' + introduction.resources.MainMenuIntroduction + '</p>',
+                onBeforeStart: function () {
+                    if (isSiteBarCollapsed) {
+                        menuBar.domElements.hamburgerIcon.trigger('click');
+                    }
+                }
             },
             {
                 "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>' +
@@ -80,14 +85,14 @@ var introduction = {
                 permission: '[G]'
             },
             {
-                "click #hamburger-icon": '<p class="blinker">' + (isSiteBarCollapsed ? introduction.resources.ShowMainMenu : introduction.resources.CollapseExpandIconIntroduction) + '</p>',
+                "click #hamburger-icon": '<p class="blinker">' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
                 shape: 'circle',
                 radius: 25,
                 showSkip: false
             },
             {
                 "next #side-bar": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
-                '<p>' + (isSiteBarCollapsed ? introduction.resources.ShowMainMenu : introduction.resources.CollapseExpandIconIntroduction) + '</p>'
+                '<p>' + introduction.resources.ShowMainMenu + '</p>'
             },           
             {
                 "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
