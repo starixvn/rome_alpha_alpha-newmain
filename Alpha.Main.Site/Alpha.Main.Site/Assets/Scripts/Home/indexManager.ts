@@ -126,11 +126,6 @@ var indexManager = {
                 var iframeWindow = indexManager.domElements.accountInfoContent[0].contentWindow ||
                     indexManager.domElements.accountInfoContent[0].contentDocument;
                 indexManager.closeAllOpenDropdowns(iframeWindow);
-
-                if (alpha.isMobile) {
-                    var usernameTextbox = $(top.document).find('[name="menu"]').contents().find('#frmAgent').contents().find('#txtUsername');
-                    usernameTextbox.blur();
-                }
             });
         }
     },
