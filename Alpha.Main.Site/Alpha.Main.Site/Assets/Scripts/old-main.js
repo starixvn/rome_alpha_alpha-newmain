@@ -713,13 +713,18 @@ function reloadPopUpSetting(timeOut) {
     }
 
     function doReloadMainFrame() {
-        var arrayCustId = top.main.$("arrayCustID").value;
-        var arrayUserName = top.main.$("arrayUserName").value;
-        window.top.main.location.reload(true);
-        window.top.$('#main').load(function () {
-            top.main.$("arrayCustID").value = arrayCustId;
-            top.main.$("arrayUserName").value = arrayUserName;
-        });
+        var isCustomerList = top.main.$("arrayCustID") && top.main.$("arrayUserName");
+        if (isCustomerList) {
+            var arrayCustId = top.main.$("arrayCustID").value;
+            var arrayUserName = top.main.$("arrayUserName").value;
+            window.top.main.location.reload(true);
+            window.top.$('#main').load(function () {
+                top.main.$("arrayCustID").value = arrayCustId;
+                top.main.$("arrayUserName").value = arrayUserName;
+            });
+        } else {
+            window.top.main.location.reload(true);
+        }
     }
 }
 
