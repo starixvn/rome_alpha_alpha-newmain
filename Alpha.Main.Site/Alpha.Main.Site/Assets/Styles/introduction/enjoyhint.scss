@@ -11,7 +11,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1010;
+    z-index: 2500;
     pointer-events: none;
     overflow: hidden;
 }
@@ -24,7 +24,7 @@
     position: absolute;
     width: 2000px;
     height: 1500px;
-    z-index: 1011;
+    z-index: 2500;
     pointer-events: all;
 }
 
@@ -44,7 +44,7 @@
 
 .enjoyhint_close_btn, .enjoyhint_next_btn, .enjoyhint_skip_btn {
     position: absolute;
-    z-index: 1012;
+    z-index: 2500;
     pointer-events: all;
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -254,7 +254,7 @@
 .enjoy_hint_label {
     position: absolute;
     color: #fff;
-    z-index: 107;
+    z-index: 2500;
     font-size: 22px;
     font-family: casino_handregular,Arial;
     -webkit-transition: opacity .4s cubic-bezier(.42,0,.58,1);

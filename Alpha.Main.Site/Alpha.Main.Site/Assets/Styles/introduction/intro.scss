@@ -28,32 +28,36 @@
     }
 }
 
-#beginModal .modal-dialog {
-    margin-top: 200px;
+#beginModal {
+    z-index: 1052;
 
-    .modal-content {
-        border-radius: 0;
-        border: none;
-        background: none;
-        box-shadow: none;
-        color: #fff;
-    }
+    .modal-dialog {
+        margin-top: 200px;
 
-    .modal-header {
-        background: #fff;
-        border-bottom: none;
-        padding: 0;
-        position: relative;
+        .modal-content {
+            border-radius: 0;
+            border: none;
+            background: none;
+            box-shadow: none;
+            color: #fff;
+        }
 
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            z-index: 99;
-            opacity: 0.5;
+        .modal-header {
+            background: #fff;
+            border-bottom: none;
+            padding: 0;
+            position: relative;
 
-            &:hover {
-                opacity: 0.9;
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                z-index: 99;
+                opacity: 0.5;
+
+                &:hover {
+                    opacity: 0.9;
+                }
             }
         }
     }
@@ -188,9 +192,14 @@
 }
 
 .quick-menu-introduction-image {
-    width:160px;
-    height:273px;
+    width: 160px;
+    height: 273px;
 }
+
+.modal-backdrop {
+    z-index: 1051;
+}
+
 
 @-webkit-keyframes bounceIn {
     from, 20%, 40%, 60%, 80%, to {

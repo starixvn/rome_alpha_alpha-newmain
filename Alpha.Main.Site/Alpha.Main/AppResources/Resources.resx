@@ -371,7 +371,7 @@
     <value>The Win Loss Analysis Chart is here</value>
   </data>
   <data name="CollapseExpandIcon" xml:space="preserve">
-    <value>Collapse/expand Icon</value>
+    <value>Collapse/Expand Icon</value>
   </data>
   <data name="CollapseExpandIconIntroduction" xml:space="preserve">
     <value>Free up space</value>
@@ -393,5 +393,8 @@
   </data>
   <data name="ViewLogMenuIntroduction" xml:space="preserve">
     <value>View Log is now located in the Main Menu</value>
+  </data>
+  <data name="ShowMainMenu" xml:space="preserve">
+    <value>Show Main Menu</value>
   </data>
 </root>

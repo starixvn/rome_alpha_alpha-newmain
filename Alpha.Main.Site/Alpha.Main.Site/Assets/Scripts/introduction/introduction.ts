@@ -29,7 +29,8 @@ var introduction = {
         CollapseExpandIconIntroduction: (<HTMLInputElement>document.getElementById('CollapseExpandIconIntroduction')).value,
         MainMenu: (<HTMLInputElement>document.getElementById('MainMenu')).value,
         TransferMenuIntroduction: (<HTMLInputElement>document.getElementById('TransferMenuIntroduction')).value,
-        ViewLogMenuIntroduction: (<HTMLInputElement>document.getElementById('ViewLogMenuIntroduction')).value
+        ViewLogMenuIntroduction: (<HTMLInputElement>document.getElementById('ViewLogMenuIntroduction')).value,
+        ShowMainMenu: (<HTMLInputElement>document.getElementById('ShowMainMenu')).value
     },
 
     init: function () {
@@ -79,33 +80,15 @@ var introduction = {
                 permission: '[G]'
             },
             {
-                "click #hamburger-icon": '<p class="blinker">'
-                    + (isSiteBarCollapsed ? introduction.resources.CollapseExpandIconIntroduction : 'df asda ds')
-                    + '</p>',
+                "click #hamburger-icon": '<p class="blinker">' + (isSiteBarCollapsed ? introduction.resources.ShowMainMenu : introduction.resources.CollapseExpandIconIntroduction) + '</p>',
                 shape: 'circle',
                 radius: 25,
-                showSkip: false,
-                onBeforeStart: function () {
-                    menuBar.collapseSideBar();
-                }
+                showSkip: false
             },
             {
                 "next #side-bar": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
-                '<p>' + introduction.resources.CollapseExpandIconIntroduction + '</p>'
-            },
-            {
-                "click #hamburger-icon": '<p class="blinker">Show Main Menu</p>',
-                shape: 'circle',
-                radius: 25,
-                showSkip: false,
-                onBeforeStart: function () {
-                    menuBar.collapseSideBar();
-                }
-            },
-            {
-                "next #side-bar": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
-                '<p>Show Main Menu</p>'
-            },            
+                '<p>' + (isSiteBarCollapsed ? introduction.resources.ShowMainMenu : introduction.resources.CollapseExpandIconIntroduction) + '</p>'
+            },           
             {
                 "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
                 '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
@@ -129,6 +112,7 @@ var introduction = {
         //[F]: Forcast
         //[H]: Member Information
         //[G]: View Log
+        introduction.introductionSteps = [];
         $.each(fullSteps, function (index, step) {
             if (typeof (step.permission) === undefined
                 || step.permission == null
@@ -167,8 +151,8 @@ var introduction = {
             introduction.domElements.markInner.addClass("in");
             setTimeout(function () {
                 $p.addClass("in")
-            }, 150);
-        }, 150);
+            }, 200);
+        }, 200);
     },
 
     registerEvents: function () {

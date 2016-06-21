@@ -187,7 +187,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Collapse/expand Icon.
+        ///   Looks up a localized string similar to Collapse/Expand Icon.
         /// </summary>
         public static string CollapseExpandIcon {
             get {
@@ -574,6 +574,15 @@ namespace Alpha.Main.AppResources {
         public static string show {
             get {
                 return ResourceManager.GetString("show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Main Menu.
+        /// </summary>
+        public static string ShowMainMenu {
+            get {
+                return ResourceManager.GetString("ShowMainMenu", resourceCulture);
             }
         }
         
