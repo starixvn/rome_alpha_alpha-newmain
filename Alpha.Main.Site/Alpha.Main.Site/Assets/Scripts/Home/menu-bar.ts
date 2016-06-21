@@ -73,6 +73,10 @@
         }
     },
 
+    isSideBarCollapsed: function () {
+        return menuBar.domElements.sideBar.hasClass('collapsed');
+    },
+
     bindEvents: function () {
         menuBar.domElements.menuOpeners.click(function (e) {
             var $this = $(this),

@@ -54,18 +54,7 @@ var introduction = {
     },
 
     buildIntroductionStep: function () {
-        var viewLogStep = {
-            "next #menu-VIEWLOG": '<p>' + introduction.resources.ViewLogMenuIntroduction + '</p>' +
-            '<img src="Assets/styles/introduction/images/OldUI-2-2.png" /><br><br>',
-            permission: '[G]'
-        };
-
-        var transferStep = {
-            "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>' +
-            '<img src="Assets/styles/introduction/images/OldUI-2-1.png" /><br><br>',
-            permission: '[C]'
-        };
-
+        var isSiteBarCollapsed = menuBar.isSideBarCollapsed();
         var fullSteps = [
             {
                 'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>',
@@ -80,14 +69,19 @@ var introduction = {
                 '<p>' + introduction.resources.MainMenuIntroduction + '</p>'
             },
             {
-                "next #menu-VIEWLOG": '<p>' + introduction.resources.TransferAndViewLogIntroduction + '</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-2.png" /><br><br>',
-                top: -50,
-                isViewLogAndTransferIntroduction: true,
-                permission: 'COMBINE'
+                "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>' +
+                '<img src="Assets/styles/introduction/images/OldUI-2-1.png" /><br><br>',
+                permission: '[C]'
             },
             {
-                "click #hamburger-icon": '<p class="blinker">' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
+                "next #menu-VIEWLOG": '<p>' + introduction.resources.ViewLogMenuIntroduction + '</p>' +
+                '<img src="Assets/styles/introduction/images/OldUI-2-2.png" /><br><br>',
+                permission: '[G]'
+            },
+            {
+                "click #hamburger-icon": '<p class="blinker">'
+                    + (isSiteBarCollapsed ? introduction.resources.CollapseExpandIconIntroduction : 'df asda ds')
+                    + '</p>',
                 shape: 'circle',
                 radius: 25,
                 showSkip: false,
@@ -142,25 +136,6 @@ var introduction = {
                 introduction.introductionSteps.push(step);
 
                 return;
-            }
-
-            //// If user have view log and transfer permission, then show combined introduction, eles show each introduction
-            if (step.isViewLogAndTransferIntroduction) {
-                if (!alpha.user.isSubAccount
-                    || (alpha.user.subPageAccess.indexOf(viewLogStep.permission) > -1
-                        && alpha.user.subPageAccess.indexOf(transferStep.permission) > -1)) {
-                    introduction.introductionSteps.push(step);
-
-                    return;
-                }
-
-                if (alpha.user.subPageAccess.indexOf(viewLogStep.permission) > -1) {
-                    introduction.introductionSteps.push(viewLogStep);
-                }
-
-                if (alpha.user.subPageAccess.indexOf(transferStep.permission) > -1) {
-                    introduction.introductionSteps.push(transferStep);
-                }
             }
         });
 
