@@ -41,7 +41,7 @@ var introduction = {
         var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
 
         if (isReadIntroduction) {
-            return;
+            //return;
         }
 
         introduction.cacheDOMElements();
