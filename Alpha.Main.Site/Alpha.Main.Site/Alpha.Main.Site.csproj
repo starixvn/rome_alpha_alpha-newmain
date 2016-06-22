@@ -450,7 +450,11 @@
       <DependentUpon>pageIElower10.css</DependentUpon>
     </Content>
     <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />
+    <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.eot" />
+    <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.ttf" />
+    <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.woff" />
     <None Include="Assets\styles\introduction\enjoyhint.scss" />
+    <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.svg" />
     <Content Include="Assets\styles\introduction\enjoyhint.css">
       <DependentUpon>enjoyhint.scss</DependentUpon>
     </Content>
@@ -706,9 +710,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Assets\scripts\customer-profiles\brief-profile.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\styles\introduction\Casino_Hand\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
