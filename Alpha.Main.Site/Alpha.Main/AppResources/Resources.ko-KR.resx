@@ -329,9 +329,15 @@
     <value>로그 아웃</value>
   </data>
   <data name="BrowserIsOutOfDate" xml:space="preserve">
-    <value>Your browser is out of date and might not be working properly with our website. For a better support, we strongly recommend that you upgrade to a newer version.</value>
+    <value>Your browser is outdated and may not be compatible with some features in our website. For a better support, we strongly recommend you to upgrade your browser to a new version.</value>
   </data>
   <data name="ClickToUpdateBrowser" xml:space="preserve">
-    <value>Click here to update your browser</value>
+    <value>click here for the upgrade</value>
+  </data>
+  <data name="ClickToBackOldView" xml:space="preserve">
+    <value>Click here to get back.</value>
+  </data>
+  <data name="WarningOldViewDate" xml:space="preserve">
+    <value>The old version is only available until DD/MM/YYYY.</value>
   </data>
 </root>

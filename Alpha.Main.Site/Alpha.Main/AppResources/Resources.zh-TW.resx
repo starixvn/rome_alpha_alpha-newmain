@@ -334,4 +334,10 @@
   <data name="ClickToUpdateBrowser" xml:space="preserve">
     <value>請點擊這里以升級您的瀏覽器。</value>
   </data>
+  <data name="ClickToBackOldView" xml:space="preserve">
+    <value>Click here to get back.</value>
+  </data>
+  <data name="WarningOldViewDate" xml:space="preserve">
+    <value>The old version is only available until DD/MM/YYYY.</value>
+  </data>
 </root>

@@ -18,8 +18,9 @@
         <span class="icon-alert"></span>
         <div class="content-msg">
             <span>@Resources.BrowserIsOutOfDate</span>
-            <a href="@Model.DownloadNewBrowserUrl" target="_blank">@Resources.ClickToUpdateBrowser</a> |
-            <a href="@Alpha.Main.Helpers.MicroSites.OldMainUrl("~/")">@Resources.OldView</a>
+            Please, <a href="@Model.DownloadNewBrowserUrl" target="_blank">@Resources.ClickToUpdateBrowser</a>.
+            Not yet familiar with some new features? <a href="@Alpha.Main.Helpers.MicroSites.OldMainUrl("~/")">@Resources.ClickToBackOldView</a>
+            <p><b>Warning:</b> @Resources.WarningOldViewDate</p>
         </div>
     </div>
 

@@ -124,7 +124,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your browser is out of date and might not be working properly with our website. For a better support, we strongly recommend that you upgrade to a newer version..
+        ///   Looks up a localized string similar to Your browser is outdated and may not be compatible with some features in our website. For a better support, we strongly recommend you to upgrade your browser to a new version..
         /// </summary>
         public static string BrowserIsOutOfDate {
             get {
@@ -151,7 +151,16 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click here to update your browser.
+        ///   Looks up a localized string similar to Click here to get back..
+        /// </summary>
+        public static string ClickToBackOldView {
+            get {
+                return ResourceManager.GetString("ClickToBackOldView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to click here for the upgrade.
         /// </summary>
         public static string ClickToUpdateBrowser {
             get {
@@ -655,6 +664,15 @@ namespace Alpha.Main.AppResources {
         public static string username {
             get {
                 return ResourceManager.GetString("username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The old version is only available until DD/MM/YYYY..
+        /// </summary>
+        public static string WarningOldViewDate {
+            get {
+                return ResourceManager.GetString("WarningOldViewDate", resourceCulture);
             }
         }
         

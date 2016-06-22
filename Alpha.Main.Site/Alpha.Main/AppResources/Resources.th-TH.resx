@@ -334,4 +334,10 @@
   <data name="ClickToUpdateBrowser" xml:space="preserve">
     <value>คลิ๊กตรงนี้เพื่อทำการอัพเกรด เบราว์เซอร์ของท่าน</value>
   </data>
+  <data name="ClickToBackOldView" xml:space="preserve">
+    <value>Click here to get back.</value>
+  </data>
+  <data name="WarningOldViewDate" xml:space="preserve">
+    <value>The old version is only available until DD/MM/YYYY.</value>
+  </data>
 </root>
