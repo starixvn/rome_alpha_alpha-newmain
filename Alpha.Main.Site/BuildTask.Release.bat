@@ -9,8 +9,8 @@
 @echo off
 
 @set currentFolder=%cd%
-@set configFolder=%currentFolder%
-@set visualStudioExtensions=%UserProfile%\AppData\Local\Microsoft\VisualStudio\14.0\Extensions
+@set configFolder=%currentFolder%\Alpha.Main.Site
+@set visualStudioExtensions=%currentFolder%\_tools
 
 @set compilerConfigFile=compilerconfig.json
 @set bundleConfigFile=bundleconfig.json
