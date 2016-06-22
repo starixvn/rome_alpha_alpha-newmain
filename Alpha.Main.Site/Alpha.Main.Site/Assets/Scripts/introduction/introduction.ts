@@ -75,13 +75,11 @@ var introduction = {
                 }
             },
             {
-                "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-2-1.png" /><br><br>',
+                "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>',
                 permission: '[C]'
             },
             {
-                "next #menu-VIEWLOG": '<p>' + introduction.resources.ViewLogMenuIntroduction + '</p>' +
-                '<img src="Assets/styles/introduction/images/OldUI-2-2.png" /><br><br>',
+                "next #menu-VIEWLOG": '<p>' + introduction.resources.ViewLogMenuIntroduction + '</p>',
                 permission: '[G]'
             },
             {
