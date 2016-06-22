@@ -311,7 +311,14 @@ var AgeWnd = function () {
             ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack);
         },
         openPopUpAfterSetIframeSrc: function (popUp, callBack, isAutoHeight) {
+            popUp.on('shown.bs.modal', function () {
+                popUp.find('.modal-dialog').css({
+                    transform: 'none'
+                });
+            });
+
             popUp.modal({ show: true, backdrop: false });
+
             popUp.find(".icon-close").unbind("click").click(function () {
                 popUp.find('.modal-body #target').remove();
                 popUp.remove();
