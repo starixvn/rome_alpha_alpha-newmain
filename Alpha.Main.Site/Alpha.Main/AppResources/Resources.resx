@@ -359,7 +359,7 @@
     <value>Not familiar with this new interface? Click here to get back.</value>
   </data>
   <data name="WarningOldVersionDeadline" xml:space="preserve">
-    <value>Note: The old version is only available until</value>
+    <value>Note: The old version is only available until </value>
   </data>
   <data name="MainMenuIntroduction" xml:space="preserve">
     <value>Logical order, all in one place</value>

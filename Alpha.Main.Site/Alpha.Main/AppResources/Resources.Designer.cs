@@ -821,6 +821,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Note: The old version is only available until .
+        /// </summary>
+        public static string WarningOldVersionDeadline {
+            get {
+                return ResourceManager.GetString("WarningOldVersionDeadline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The old version is only available until DD/MM/YYYY..
         /// </summary>
         public static string WarningOldViewDate {

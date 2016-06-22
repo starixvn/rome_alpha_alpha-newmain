@@ -5,7 +5,7 @@ declare var EnjoyHint: any;
 
 var introduction = {
     enjoyHint: null,
-    readIntroductionCookieName: 'ICKN',
+    readIntroductionCookieName: 'Introduction',
 
     domElements: {
         beginModal: null,
