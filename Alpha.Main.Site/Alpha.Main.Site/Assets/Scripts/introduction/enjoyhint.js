@@ -185,7 +185,8 @@ var EnjoyHint = function (_options) {
                         left: step_data.left,
                         right: step_data.right,
                         margin: step_data.margin,
-                        scroll: step_data.scroll
+                        scroll: step_data.scroll,
+                        moveUp: step_data.moveUp
                     };
 
                     if (step_data.shape && step_data.shape == 'circle') {
@@ -710,6 +711,7 @@ var EnjoyHint = function (_options) {
 
                 that.renderLabelWithShape = function (data) {
                     var shape_type = data.shape || 'rect';
+                    var moveUp = data.moveUp || 0;
                     var shape_data = {};
 
 
@@ -816,6 +818,8 @@ var EnjoyHint = function (_options) {
                     if (left_offset < label_shift_with_label_width && right_offset < label_shift_with_label_width) {
                         label_x = data.center_x;
                     }
+
+                    label_y -= moveUp;
 
                     var label_data = that.renderLabel({
                         x: label_x,

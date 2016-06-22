@@ -72,7 +72,8 @@ var introduction = {
                     if (isSiteBarCollapsed) {
                         menuBar.domElements.hamburgerIcon.trigger('click');
                     }
-                }
+                },
+                moveUp: 100
             },
             {
                 "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>',
@@ -97,7 +98,8 @@ var introduction = {
                 '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
                 '<p><img class="quick-menu-introduction-image" src="Assets/styles/introduction/images/' + alpha.user.level + '.png" /></p>',
                 shape: 'circle',
-                radius: 20
+                radius: 20,
+                moveUp: 30
             },
             {
                 "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
