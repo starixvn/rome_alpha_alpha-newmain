@@ -62,14 +62,6 @@ var introduction = {
         var isSiteBarCollapsed = menuBar.isSideBarCollapsed();
         var fullSteps = [
             {
-                'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>',
-                shape: 'circle',
-                radius: 20,
-                onBeforeStart: function () {
-                    briefProfile.hideAllTooltips();
-                }
-            },
-            {
                 "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
                 '<p>' + introduction.resources.MainMenuIntroduction + '</p>',
                 onBeforeStart: function () {
@@ -78,7 +70,7 @@ var introduction = {
                     }
                 },
                 moveUp: 100
-            },
+            },                       
             {
                 "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>',
                 permission: '[C]'
@@ -86,7 +78,7 @@ var introduction = {
             {
                 "next #menu-VIEWLOG": '<p>' + introduction.resources.ViewLogMenuIntroduction + '</p>',
                 permission: '[G]'
-            },
+            },            
             {
                 "click #hamburger-icon": '<p class="blinker">' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
                 shape: 'circle',
@@ -96,7 +88,15 @@ var introduction = {
             {
                 "next #side-bar": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
                 '<p>' + introduction.resources.ShowMainMenu + '</p>'
-            },           
+            },
+            {
+                'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>',
+                shape: 'circle',
+                radius: 20,
+                onBeforeStart: function () {
+                    briefProfile.hideAllTooltips();
+                }
+            }, 
             {
                 "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
                 '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
