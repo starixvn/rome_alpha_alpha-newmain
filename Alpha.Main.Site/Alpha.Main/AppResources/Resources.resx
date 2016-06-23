@@ -400,8 +400,8 @@
   <data name="GotIt" xml:space="preserve">
     <value>Got it</value>
   </data>
-  <data name="Replace" xml:space="preserve">
-    <value>Replace</value>
+  <data name="Replay" xml:space="preserve">
+    <value>Replay</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Next</value>

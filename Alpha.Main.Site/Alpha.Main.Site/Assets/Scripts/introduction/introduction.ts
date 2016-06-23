@@ -32,7 +32,7 @@ var introduction = {
         ViewLogMenuIntroduction: (<HTMLInputElement>document.getElementById('ViewLogMenuIntroduction')).value,
         Skip: (<HTMLInputElement>document.getElementById('Skip')).value,
         Next: (<HTMLInputElement>document.getElementById('Next')).value,
-        Replace: (<HTMLInputElement>document.getElementById('Replace')).value,
+        Replay: (<HTMLInputElement>document.getElementById('Replay')).value,
         GotIt: (<HTMLInputElement>document.getElementById('GotIt')).value,
         ShowMainMenu: (<HTMLInputElement>document.getElementById('ShowMainMenu')).value
     },
@@ -110,7 +110,7 @@ var introduction = {
                 '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
                 '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>',
                 nextButton: { className: "myNext", text: introduction.resources.GotIt },
-                skipButton: { className: "replay-introduction", text: introduction.resources.Replace }
+                skipButton: { className: "replay-introduction", text: introduction.resources.Replay }
             }];
         
         //[A]: Create

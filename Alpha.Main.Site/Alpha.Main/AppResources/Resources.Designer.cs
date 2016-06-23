@@ -569,11 +569,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Replace.
+        ///   Looks up a localized string similar to Replay.
         /// </summary>
-        public static string Replace {
+        public static string Replay {
             get {
-                return ResourceManager.GetString("Replace", resourceCulture);
+                return ResourceManager.GetString("Replay", resourceCulture);
             }
         }
         
