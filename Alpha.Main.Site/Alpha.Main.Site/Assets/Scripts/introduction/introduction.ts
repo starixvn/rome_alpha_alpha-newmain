@@ -179,6 +179,7 @@ var introduction = {
         introduction.buildIntroductionStep();
         introduction.showDelayFirstIntroduction();
         introduction.domElements.beginModal.modal('show');
+        $('.modal-backdrop').css('z-index', 1051);
     },
 
     getCookieExpireOptions: function () {
