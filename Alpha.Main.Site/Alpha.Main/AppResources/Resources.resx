@@ -374,7 +374,7 @@
     <value>Collapse/Expand Icon</value>
   </data>
   <data name="CollapseExpandIconIntroduction" xml:space="preserve">
-    <value>Free up space</value>
+    <value>Click to free up space</value>
   </data>
   <data name="MainIntroductionTitle" xml:space="preserve">
     <value>Experience the new Alpha</value>
@@ -396,5 +396,17 @@
   </data>
   <data name="ShowMainMenu" xml:space="preserve">
     <value>Show Main Menu</value>
+  </data>
+  <data name="GotIt" xml:space="preserve">
+    <value>Got it</value>
+  </data>
+  <data name="Replace" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Skip</value>
   </data>
 </root>

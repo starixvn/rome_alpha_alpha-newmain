@@ -30,6 +30,10 @@ var introduction = {
         MainMenu: (<HTMLInputElement>document.getElementById('MainMenu')).value,
         TransferMenuIntroduction: (<HTMLInputElement>document.getElementById('TransferMenuIntroduction')).value,
         ViewLogMenuIntroduction: (<HTMLInputElement>document.getElementById('ViewLogMenuIntroduction')).value,
+        Skip: (<HTMLInputElement>document.getElementById('Skip')).value,
+        Next: (<HTMLInputElement>document.getElementById('Next')).value,
+        Replace: (<HTMLInputElement>document.getElementById('Replace')).value,
+        GotIt: (<HTMLInputElement>document.getElementById('GotIt')).value,
         ShowMainMenu: (<HTMLInputElement>document.getElementById('ShowMainMenu')).value
     },
 
@@ -105,8 +109,8 @@ var introduction = {
                 "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
                 '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
                 '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>',
-                'nextButton': { className: "myNext", text: "Got it" },
-                'skipButton': { className: "replay-introduction", text: "Replay" }
+                nextButton: { className: "myNext", text: introduction.resources.GotIt },
+                skipButton: { className: "replay-introduction", text: introduction.resources.Replace }
             }];
         
         //[A]: Create
@@ -122,6 +126,15 @@ var introduction = {
             if (typeof (step.permission) === undefined
                 || step.permission == null
                 || alpha.user.subPageAccess.indexOf(step.permission) > -1) {
+
+                if (!step.nextButton) {
+                    step.nextButton = { text: introduction.resources.Next }
+                }
+
+                if (!step.skipButton) {
+                    step.skipButton = { text: introduction.resources.Skip }
+                }
+
                 introduction.introductionSteps.push(step);
 
                 return;

@@ -340,4 +340,10 @@
   <data name="WarningOldViewDate" xml:space="preserve">
     <value>The old version is only available until DD/MM/YYYY.</value>
   </data>
+  <data name="Next" xml:space="preserve">
+    <value>다음</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>다음</value>
+  </data>
 </root>

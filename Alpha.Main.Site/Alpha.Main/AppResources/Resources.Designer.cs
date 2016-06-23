@@ -196,7 +196,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Free up space.
+        ///   Looks up a localized string similar to Click to free up space.
         /// </summary>
         public static string CollapseExpandIconIntroduction {
             get {
@@ -264,6 +264,15 @@ namespace Alpha.Main.AppResources {
         public static string givenCredit {
             get {
                 return ResourceManager.GetString("givenCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Got it.
+        /// </summary>
+        public static string GotIt {
+            get {
+                return ResourceManager.GetString("GotIt", resourceCulture);
             }
         }
         
@@ -449,6 +458,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nickname.
         /// </summary>
         public static string nickname {
@@ -551,6 +569,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Replace.
+        /// </summary>
+        public static string Replace {
+            get {
+                return ResourceManager.GetString("Replace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to What’s new in the Reports? Click this.
         /// </summary>
         public static string ReportMenuIntroduction {
@@ -583,6 +610,15 @@ namespace Alpha.Main.AppResources {
         public static string ShowMainMenu {
             get {
                 return ResourceManager.GetString("ShowMainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skip.
+        /// </summary>
+        public static string Skip {
+            get {
+                return ResourceManager.GetString("Skip", resourceCulture);
             }
         }
         
