@@ -278,12 +278,19 @@ var AgeWnd = function () {
             var scrollLeft = oldMainUltilities.getScrollTop(window) || 0;
 
             var isAutoHeight = oldMainUltilities.isiOS();
-            popUp.css({
+
+            var popupCss = {
                 width: popW,
                 height: isAutoHeight ? 'auto' : popH,
                 left: left,
                 top: popUpTop + scrollTop
-            });
+            };
+
+            if (isAutoHeight) {
+                $.extend(popupCss, { overflow: 'visible' });
+            }
+
+            popUp.css(popupCss);
 
             popUp.appendTo("body");
             popUp.removeClass("hidden");
@@ -308,13 +315,17 @@ var AgeWnd = function () {
                 ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isAutoHeight);
             }
 
-            ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack);
+            ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack, isAutoHeight);
         },
         openPopUpAfterSetIframeSrc: function (popUp, callBack, isAutoHeight) {
             popUp.on('shown.bs.modal', function () {
                 popUp.find('.modal-dialog').css({
                     transform: 'none'
                 });
+                
+                if (isAutoHeight) {
+                    popUp.css({ display: 'table' });
+                }
             });
 
             popUp.modal({ show: true, backdrop: false });
