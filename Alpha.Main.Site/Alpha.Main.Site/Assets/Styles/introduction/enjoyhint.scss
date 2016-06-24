@@ -35,11 +35,13 @@
 }
 
 .enjoyhint_btn, .enjoyhint_next_btn, .enjoyhint_skip_btn {
-    height: 40px;
+    height: 32px;
     cursor: pointer;
     margin: 0 auto;
     text-align: center;
     letter-spacing: 1px;
+    line-height: 32px;
+    font-size: 15px;
 }
 
 .enjoyhint_close_btn, .enjoyhint_next_btn, .enjoyhint_skip_btn {
@@ -53,7 +55,7 @@
 .enjoyhint_next_btn {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     color: #fff;
@@ -73,20 +75,20 @@
     .enjoyhint_next_btn:hover {
         color: rgba(255,255,255,1);
         background: #5c1218;
-        border: 2px solid #5c1218;
+        border: 1px solid #5c1218;
     }
 
     .enjoyhint_next_btn:active {
         color: rgba(255,255,255,1);
         background: #5c1218;
-        border: 2px solid #5c1218;
+        border: 1px solid #5c1218;
         transition: none;
     }
 
 .enjoyhint_skip_btn {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     color: #fff;
@@ -100,13 +102,13 @@
     .enjoyhint_skip_btn:hover {
         color: rgba(255,255,255,1);
         background: #5c1218;
-        border: 2px solid #5c1218;
+        border: 1px solid #5c1218;
     }
 
     .enjoyhint_skip_btn:active {
         color: rgba(255,255,255,1);
         background: #5c1218;
-        border: 2px solid #5c1218;
+        border: 1px solid #5c1218;
         transition: none;
     }
 
@@ -255,7 +257,7 @@
     position: absolute;
     color: #fff;
     z-index: 2500;
-    font-size: 22px;
+    font-size: 28px;
     font-family: casino_handregular,Arial;
     -webkit-transition: opacity .4s cubic-bezier(.42,0,.58,1);
     -moz-transition: opacity .4s cubic-bezier(.42,0,.58,1);
@@ -263,7 +265,7 @@
 }
 
 .enjoy_hint_label  p.title{    
-    font-size: 30px;    
+    font-size: 35px;    
 }
 
 div.kineticjs-content {

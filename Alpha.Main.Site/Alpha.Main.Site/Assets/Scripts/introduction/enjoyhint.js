@@ -362,7 +362,7 @@ var EnjoyHint = function (_options) {
                 that.$svg = $('<svg width="' + that.canvas_size.w + '" height="' + that.canvas_size.h + '" class="' + that.cl.main_canvas + ' ' + that.cl.main_svg + '">').appendTo(that.enjoyhint_svg_wrapper);
                 var defs = $(makeSVG('defs'));
                 var marker = $(makeSVG('marker', {id: "arrowMarker", viewBox: "0 0 36 21", refX: "21", refY: "10", markerUnits: "strokeWidth", orient: "auto", markerWidth: "16", markerHeight: "12"}));
-                var polilyne = $(makeSVG('path', {style: "fill:none; stroke:rgb(255,255,255); stroke-width:2", d: "M0,0 c30,11 30,9 0,20"}));
+                var polilyne = $(makeSVG('path', { style: "fill:none; stroke:rgb(255,255,255); stroke-width:2", d: "M0,0 c30,11 30,6 -5,31" }));
                 defs.append(marker.append(polilyne)).appendTo(that.$svg);
                 that.kinetic_stage = new Kinetic.Stage({
                     container: that.cl.kinetic_container,
@@ -374,7 +374,7 @@ var EnjoyHint = function (_options) {
                 that.rect = new Kinetic.Rect({
 //          x: 0,
 //          y: 0,
-                    fill: 'rgba(0,0,0,0.6)',
+                    fill: 'rgba(0,0,0,0.8)',
                     width: that.canvas_size.w,
                     height: that.canvas_size.h
                 });

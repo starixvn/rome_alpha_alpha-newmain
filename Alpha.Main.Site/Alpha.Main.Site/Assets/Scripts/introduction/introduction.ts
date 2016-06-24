@@ -68,8 +68,7 @@ var introduction = {
                     if (isSiteBarCollapsed) {
                         menuBar.domElements.hamburgerIcon.trigger('click');
                     }
-                },
-                moveUp: 100
+                }
             },                       
             {
                 "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>',
@@ -80,15 +79,12 @@ var introduction = {
                 permission: '[G]'
             },            
             {
-                "click #hamburger-icon": '<p class="blinker">' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
+                "click #hamburger-icon": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
+                '<p class="blinker">' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
                 shape: 'circle',
                 radius: 25,
                 showSkip: false
-            },
-            {
-                "next #side-bar": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
-                '<p>' + introduction.resources.ShowMainMenu + '</p>'
-            },
+            },            
             {
                 'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>',
                 shape: 'circle',
@@ -108,10 +104,18 @@ var introduction = {
             {
                 "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
                 '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
-                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>',
+                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>'
+                
+            },
+            {
+                "next .icon-time": '<p class="title">Replay?</p>' +
+                '<p>You can replay this tour by clicking on this button</p>',
+                shape: 'circle',
+                radius: 20,                
                 nextButton: { className: "myNext", text: introduction.resources.GotIt },
                 skipButton: { className: "replay-introduction", text: introduction.resources.Replay }
-            }];
+            }
+        ];
         
         //[A]: Create
         //[B]: Update
