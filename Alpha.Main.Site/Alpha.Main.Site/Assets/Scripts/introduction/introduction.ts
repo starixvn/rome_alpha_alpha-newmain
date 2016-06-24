@@ -188,7 +188,8 @@ var introduction = {
                 "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
                 '<p>' + introduction.resources.ReplayInstruction + '</p>',
                 nextButton: { className: "myNext", text: introduction.resources.GotIt },
-                skipButton: { className: "replay-introduction", text: introduction.resources.Replay }
+                //skipButton: { className: "replay-introduction", text: introduction.resources.Replay }
+                showSkip: false
             }
         ];
 
