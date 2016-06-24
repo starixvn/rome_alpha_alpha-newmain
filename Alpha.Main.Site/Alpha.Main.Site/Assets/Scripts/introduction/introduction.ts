@@ -174,7 +174,7 @@ var introduction = {
     },
 
     registerEvents: function () {
-        introduction.show();
+        introduction.show(false);
         introduction.domElements.startIntroductionBtn.click(function () {
             introduction.domElements.beginModal.modal('hide');
             introduction.setReadIntroduction();
@@ -184,15 +184,20 @@ var introduction = {
         $(document)
             .off('click.replay-introduction', '.replay-introduction')
             .on('click.replay-introduction', '.replay-introduction', function () {
-                introduction.show();
+                introduction.show(true);
             });
     },
 
-    show: function () {
+    show: function (isShowInstructionImmediately) {
         introduction.buildIntroductionStep();
         introduction.showDelayFirstIntroduction();
-        introduction.domElements.beginModal.modal('show');
-        $('.modal-backdrop').css('z-index', 1051);
+        if (isShowInstructionImmediately) {
+            introduction.enjoyHint.run();
+        }
+        else {
+            introduction.domElements.beginModal.modal('show');
+            $('.modal-backdrop').css('z-index', 1051);
+        }
     },
 
     getCookieExpireOptions: function () {
