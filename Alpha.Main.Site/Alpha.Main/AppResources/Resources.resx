@@ -409,4 +409,7 @@
   <data name="Skip" xml:space="preserve">
     <value>Skip</value>
   </data>
+  <data name="ReplayInstruction" xml:space="preserve">
+    <value>You can replay this tour by clicking on this button.</value>
+  </data>
 </root>

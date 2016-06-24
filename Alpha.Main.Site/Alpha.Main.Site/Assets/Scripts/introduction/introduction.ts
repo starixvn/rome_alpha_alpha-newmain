@@ -35,7 +35,8 @@ var introduction = {
         Next: (<HTMLInputElement>document.getElementById('Next')).value,
         Replay: (<HTMLInputElement>document.getElementById('Replay')).value,
         GotIt: (<HTMLInputElement>document.getElementById('GotIt')).value,
-        ShowMainMenu: (<HTMLInputElement>document.getElementById('ShowMainMenu')).value
+        ShowMainMenu: (<HTMLInputElement>document.getElementById('ShowMainMenu')).value,
+        ReplayInstruction: (<HTMLInputElement>document.getElementById('ReplayInstruction')).value
     },
 
     init: function () {
@@ -70,7 +71,8 @@ var introduction = {
                     if (isSiteBarCollapsed) {
                         menuBar.domElements.hamburgerIcon.trigger('click');
                     }
-                }
+                },
+                moveUp: 100
             },                       
             {
                 "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>',
@@ -110,10 +112,10 @@ var introduction = {
                 
             },
             {
-                "next .icon-time": '<p class="title">Replay?</p>' +
-                '<p>You can replay this tour by clicking on this button</p>',
+                "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
+                '<p>' + introduction.resources.ReplayInstruction + '</p>',
                 shape: 'circle',
-                radius: 20,                
+                radius: 30,                
                 nextButton: { className: "myNext", text: introduction.resources.GotIt },
                 skipButton: { className: "replay-introduction", text: introduction.resources.Replay }
             }

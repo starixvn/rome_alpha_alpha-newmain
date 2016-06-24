@@ -578,6 +578,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can replay this tour by clicking on this button..
+        /// </summary>
+        public static string ReplayInstruction {
+            get {
+                return ResourceManager.GetString("ReplayInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to What’s new in the Reports? Click this.
         /// </summary>
         public static string ReportMenuIntroduction {
