@@ -11,7 +11,8 @@ var introduction = {
         beginModal: null,
         startIntroductionBtn: null,
         notNowIntroductionBtn: null,
-        markInner: null
+        markInner: null,
+        replayInstruction: null
     },
 
     resources: {
@@ -56,6 +57,7 @@ var introduction = {
         introduction.domElements.beginModal = $('#beginModal');
         introduction.domElements.startIntroductionBtn = $('#start-introduction-btn');
         introduction.domElements.markInner = $(".mask-inner");
+        introduction.domElements.replayInstruction = $('#replay-instruction');
     },
 
     buildIntroductionStep: function () {
@@ -188,6 +190,12 @@ var introduction = {
         $(document)
             .off('click.replay-introduction', '.replay-introduction')
             .on('click.replay-introduction', '.replay-introduction', function () {
+                introduction.show(true);
+            });
+
+        introduction.domElements.replayInstruction
+            .off('click.replay-introduction')
+            .on('click.replay-introduction', function () {
                 introduction.show(true);
             });
     },
