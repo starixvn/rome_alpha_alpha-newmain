@@ -12,7 +12,8 @@ var introduction = {
         startIntroductionBtn: null,
         notNowIntroductionBtn: null,
         markInner: null,
-        replayInstruction: null
+        replayInstruction: null,
+        modalInstructionBody: null
     },
 
     resources: {
@@ -44,23 +45,27 @@ var introduction = {
         if (!alpha.user.isShowIntroduction) {
             return;
         }
-
-        var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
-
-        if (isReadIntroduction) {
-            //return;
-        }
-
+        
         introduction.cacheDOMElements();
         introduction.registerEvents();
+
+        var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
+        //// Hard code always show
+        if (true || !isReadIntroduction) {
+            introduction.domElements.beginModal.modal('show');
+            $('.modal-backdrop').css('z-index', 1051);
+
+            introduction.showDelayFirstIntroduction();
+        }
     },
 
     cacheDOMElements: function () {
         introduction.domElements.beginModal = $('#beginModal');
         introduction.domElements.startIntroductionBtn = $('#start-introduction-btn');
-        introduction.domElements.markInner = $(".mask-inner");
+        introduction.domElements.markInner = $("#mask-inner");
         introduction.domElements.replayInstruction = $('#replay-instruction');
         introduction.domElements.notNowIntroductionBtn = $("#not-now-introduction-btn");
+        introduction.domElements.modalInstructionBody = $('#instruction-modal-body');
     },
 
     showDelayFirstIntroduction: function () {
@@ -84,17 +89,12 @@ var introduction = {
         setTimeout(function () {
             introduction.domElements.markInner.addClass("in");
             setTimeout(function () {
-                $p.addClass("in")
-            }, 200);
-        }, 200);
+                $p.addClass("in");
+            }, 250);
+        }, 250);
     },
 
     registerEvents: function () {
-        //// Show welcome message
-        introduction.domElements.beginModal.modal('show');
-        $('.modal-backdrop').css('z-index', 1051);
-        introduction.showDelayFirstIntroduction();
-
         introduction.domElements.startIntroductionBtn
             .off('click.introduction')
             .on('click.introduction', function () {
@@ -126,8 +126,7 @@ var introduction = {
     showNotNowSteps: function () {
         introduction.enjoyHint = new EnjoyHint({});
         introduction.enjoyHint.set([{
-            "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
-            '<p>' + introduction.resources.TakeTourInstruction + '</p>',
+            "next #replay-instruction": '<p>' + introduction.resources.TakeTourInstruction + '</p>',
             nextButton: { className: "myNext", text: introduction.resources.GotIt },
             showSkip: false
         }]);

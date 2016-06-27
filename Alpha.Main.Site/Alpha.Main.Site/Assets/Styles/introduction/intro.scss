@@ -98,23 +98,18 @@
         position: relative;
         width: 980px;
 
-        .logo {
-            opacity: 0;
-            z-index: 2;
-        }
-
         h1, p {
             color: #fff;
             z-index: 1;
         }
 
         h1 {
-            opacity: 0;
+            //opacity: 0;
             text-shadow: none;
         }
 
         .button-block {
-            opacity: 0;
+            //opacity: 0;
 
             button {
                 font: normal normal normal 17px/38px "Roboto",Helvetica,sans-serif;
