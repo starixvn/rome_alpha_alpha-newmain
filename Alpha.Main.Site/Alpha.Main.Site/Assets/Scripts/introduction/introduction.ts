@@ -68,6 +68,7 @@ var introduction = {
                 "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
                 '<p>' + introduction.resources.MainMenuIntroduction + '</p>',
                 onBeforeStart: function () {
+                    briefProfile.hideAllTooltips();
                     if (isSiteBarCollapsed) {
                         menuBar.domElements.hamburgerIcon.trigger('click');
                     }
