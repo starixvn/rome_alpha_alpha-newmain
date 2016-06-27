@@ -55,15 +55,15 @@
 .enjoyhint_next_btn {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
-    border: 1px solid #fff;
+    border: 1px solid #5c1218;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     color: #fff;
-    background: 0 0;
-    -webkit-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0);
-    -moz-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0);
-    -o-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0);
-    transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0);
+    background: #5c1218;
+    -webkit-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0),box-shadow .3s cubic-bezier(0,0,0,0);
+    -moz-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0),box-shadow .3s cubic-bezier(0,0,0,0);
+    -o-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0),box-shadow .3s cubic-bezier(0,0,0,0);
+    transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0),box-shadow .3s cubic-bezier(0,0,0,0);
 }
 
     .enjoyhint_next_btn:active, .enjoyhint_skip_btn:active {
@@ -74,14 +74,16 @@
 
     .enjoyhint_next_btn:hover {
         color: rgba(255,255,255,1);
-        background: #5c1218;
-        border: 1px solid #5c1218;
+        background: #75171f;
+        border: 1px solid #75171f;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.2);
     }
 
     .enjoyhint_next_btn:active {
         color: rgba(255,255,255,1);
-        background: #5c1218;
-        border: 1px solid #5c1218;
+        background: #75171f;
+        border: 1px solid #75171f;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.2);
         transition: none;
     }
 
@@ -93,22 +95,24 @@
     border-radius: 2px;
     color: #fff;
     background: 0 0;
-    -webkit-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0);
-    -moz-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0);
-    -o-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0);
-    transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0);
+    -webkit-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0),box-shadow .3s cubic-bezier(0,0,0,0);
+    -moz-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0),box-shadow .3s cubic-bezier(0,0,0,0);
+    -o-transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0),box-shadow .3s cubic-bezier(0,0,0,0);
+    transition: background-color .3s cubic-bezier(0,0,0,0),color .3s cubic-bezier(0,0,0,0),width .3s cubic-bezier(0,0,0,0),border-width .3s cubic-bezier(0,0,0,0),border-color .3s cubic-bezier(0,0,0,0),box-shadow .3s cubic-bezier(0,0,0,0);
 }
 
     .enjoyhint_skip_btn:hover {
         color: rgba(255,255,255,1);
-        background: #5c1218;
+        background: #75171f;
         border: 1px solid #5c1218;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.2);
     }
 
     .enjoyhint_skip_btn:active {
         color: rgba(255,255,255,1);
         background: #5c1218;
         border: 1px solid #5c1218;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.2);
         transition: none;
     }
 

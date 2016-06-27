@@ -15,8 +15,6 @@
 }
 
 .modal-dialog.smallModal {
-
-
     .modal-content {
         padding: 20px;
     }
@@ -119,18 +117,28 @@
             opacity: 0;
 
             button {
-                font: normal normal normal 17px/40px "Roboto",Helvetica,sans-serif;
-                border: 2px solid #fff;
+                font: normal normal normal 17px/38px "Roboto",Helvetica,sans-serif;
+                border: 1px solid #fff;
                 padding: 0 20px;
-                margin-top: 20px;
+                margin-top: 20px;                
                 border-radius: 2px;
                 background: none;
-                margin-right: 5px;
+                margin-right: 8px;
                 transition: 0.3s ease-in;
 
                 &:hover {
+                    background: #75171f;
+                    border-color: #5c1218;
+                    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.2);
+                }
+
+                &.active {
                     background: #5c1218;
                     border-color: #5c1218;
+
+                    &:hover {
+                        background: #75171f;
+                    }
                 }
             }
         }
