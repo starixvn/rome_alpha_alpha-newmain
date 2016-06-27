@@ -322,7 +322,7 @@ var AgeWnd = function () {
                 popUp.find('.modal-dialog').css({
                     transform: 'none'
                 });
-                
+
                 if (isAutoHeight) {
                     popUp.css({ display: 'table' });
                 }
@@ -710,30 +710,23 @@ var oldMainUltilities = {
 function reloadPopUpSetting(timeOut) {
     if (timeOut) {
         setTimeout(function () {
-            doReload();
+            doReloadMainFrame();
         }, timeOut);
     } else {
-        doReload();
+        doReloadMainFrame();
     }
 
-    function doReload() {
+    function doReloadPopup() {
         var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
         var iframes = popUp.find('#popup-iframe');
         var target = popUp.find('.modal-body #target');
         if (target && target.length) {
             target.submit();
-            doReloadMainFrame();
         }
         else if (iframes && iframes.length) {
             iframes.attr('src', iframes.attr('src'));
-            iframes.load(function () {
-                doReloadMainFrame();
-            });
-        } else {
-            doReloadMainFrame();
         }
 
-        window.top.clearPopupSubtitle(true);
     }
 
     function doReloadMainFrame() {
@@ -746,10 +739,19 @@ function reloadPopUpSetting(timeOut) {
             window.top.$('#main').load(function () {
                 top.main.$("arrayCustID").value = arrayCustId;
                 top.main.$("arrayUserName").value = arrayUserName;
+                doReloadPopup();
+
+                window.top.$('#main').unbind('load');
             });
         } else {
             window.top.main.location.reload(true);
+            window.top.$('#main').load(function () {
+                doReloadPopup();
+                window.top.$('#main').unbind('load');
+            });
         }
+
+        window.top.clearPopupSubtitle(true);
     }
 }
 
