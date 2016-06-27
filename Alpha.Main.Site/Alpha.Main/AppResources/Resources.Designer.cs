@@ -695,6 +695,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can take the tour by clicking on this button..
+        /// </summary>
+        public static string TakeTourInstruction {
+            get {
+                return ResourceManager.GetString("TakeTourInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Today Win Loss.
         /// </summary>
         public static string todayWinLoss {

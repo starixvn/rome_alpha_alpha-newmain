@@ -36,7 +36,8 @@ var introduction = {
         Replay: (<HTMLInputElement>document.getElementById('Replay')).value,
         GotIt: (<HTMLInputElement>document.getElementById('GotIt')).value,
         ShowMainMenu: (<HTMLInputElement>document.getElementById('ShowMainMenu')).value,
-        ReplayInstruction: (<HTMLInputElement>document.getElementById('ReplayInstruction')).value
+        ReplayInstruction: (<HTMLInputElement>document.getElementById('ReplayInstruction')).value,
+        TakeTourInstruction: (<HTMLInputElement>document.getElementById('TakeTourInstruction')).value
     },
 
     init: function () {
@@ -59,105 +60,11 @@ var introduction = {
         introduction.domElements.startIntroductionBtn = $('#start-introduction-btn');
         introduction.domElements.markInner = $(".mask-inner");
         introduction.domElements.replayInstruction = $('#replay-instruction');
+        introduction.domElements.notNowIntroductionBtn = $("#not-now-introduction-btn");
     },
-
-    buildIntroductionStep: function () {
-        var isSiteBarCollapsed = menuBar.isSideBarCollapsed();
-        var fullSteps = [
-            {
-                "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
-                '<p>' + introduction.resources.MainMenuIntroduction + '</p>',
-                onBeforeStart: function () {
-                    briefProfile.hideAllTooltips();
-                    if (isSiteBarCollapsed) {
-                        menuBar.domElements.hamburgerIcon.trigger('click');
-                    }
-                },
-                moveUp: 100
-            },                       
-            {
-                "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>',
-                permission: '[C]'
-            },
-            {
-                "next #menu-VIEWLOG": '<p>' + introduction.resources.ViewLogMenuIntroduction + '</p>',
-                permission: '[G]'
-            },            
-            {
-                "click #hamburger-icon": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
-                '<p class="blinker">' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
-                shape: 'circle',
-                radius: 25,
-                showSkip: false
-            },            
-            {
-                'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>',
-                shape: 'circle',
-                radius: 20,
-                onBeforeStart: function () {
-                    briefProfile.hideAllTooltips();
-                }
-            }, 
-            {
-                "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
-                '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
-                '<p><img class="quick-menu-introduction-image" src="Assets/styles/introduction/images/' + alpha.user.level + '.png" /></p>',
-                shape: 'circle',
-                radius: 20,
-                moveUp: 30
-            },
-            {
-                "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
-                '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
-                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>'
-                
-            },
-            {
-                "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
-                '<p>' + introduction.resources.ReplayInstruction + '</p>',
-                shape: 'circle',
-                radius: 30,                
-                nextButton: { className: "myNext", text: introduction.resources.GotIt },
-                skipButton: { className: "replay-introduction", text: introduction.resources.Replay }
-            }
-        ];
-        
-        //[A]: Create
-        //[B]: Update
-        //[C]: Transfer
-        //[D]: Total Bets
-        //[E]: Reports
-        //[F]: Forcast
-        //[H]: Member Information
-        //[G]: View Log
-        introduction.introductionSteps = [];
-        $.each(fullSteps, function (index, step) {
-            if (typeof (step.permission) === undefined
-                || step.permission == null
-                || alpha.user.subPageAccess.indexOf(step.permission) > -1) {
-
-                if (!step.nextButton) {
-                    step.nextButton = { text: introduction.resources.Next }
-                }
-
-                if (!step.skipButton) {
-                    step.skipButton = { text: introduction.resources.Skip }
-                }
-
-                introduction.introductionSteps.push(step);
-
-                return;
-            }
-        });
-
-        introduction.enjoyHint = new EnjoyHint({});
-        introduction.enjoyHint.set(introduction.introductionSteps);
-    },
-
-    introductionSteps: [],
 
     showDelayFirstIntroduction: function () {
-        var $p = introduction.domElements.markInner.find("P");
+        var $p = introduction.domElements.markInner.find("p");
         var words = $p.text().split(" ");
         var delay = 100;
         var $tempEl = $("<div>");
@@ -183,36 +90,139 @@ var introduction = {
     },
 
     registerEvents: function () {
-        introduction.show(false);
-        introduction.domElements.startIntroductionBtn.click(function () {
-            introduction.domElements.beginModal.modal('hide');
-            introduction.setReadIntroduction();
-            introduction.enjoyHint.run();
-        });
+        //// Show welcome message
+        introduction.domElements.beginModal.modal('show');
+        $('.modal-backdrop').css('z-index', 1051);
+        introduction.showDelayFirstIntroduction();
+
+        introduction.domElements.startIntroductionBtn
+            .off('click.introduction')
+            .on('click.introduction', function () {
+                introduction.domElements.beginModal.modal('hide');
+                introduction.setReadIntroduction();
+                introduction.showMainSteps();
+                introduction.enjoyHint.run();
+            });
+
+        introduction.domElements.notNowIntroductionBtn
+            .off('click.introduction')
+            .on('click.introduction', function () {
+                introduction.domElements.beginModal.modal('hide');
+                introduction.setReadIntroduction();
+                introduction.showNotNowSteps();
+                introduction.enjoyHint.run();
+            });
+
 
         $(document)
             .off('click.replay-introduction', '.replay-introduction')
-            .on('click.replay-introduction', '.replay-introduction', function () {
-                introduction.show(true);
-            });
+            .on('click.replay-introduction', '.replay-introduction', introduction.showMainSteps);
 
         introduction.domElements.replayInstruction
             .off('click.replay-introduction')
-            .on('click.replay-introduction', function () {
-                introduction.show(true);
-            });
+            .on('click.replay-introduction', introduction.showMainSteps);
     },
 
-    show: function (isShowInstructionImmediately) {
-        introduction.buildIntroductionStep();
-        introduction.showDelayFirstIntroduction();
-        if (isShowInstructionImmediately) {
-            introduction.enjoyHint.run();
-        }
-        else {
-            introduction.domElements.beginModal.modal('show');
-            $('.modal-backdrop').css('z-index', 1051);
-        }
+    showNotNowSteps: function () {
+        introduction.enjoyHint = new EnjoyHint({});
+        introduction.enjoyHint.set([{
+            "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
+            '<p>' + introduction.resources.TakeTourInstruction + '</p>',
+            nextButton: { className: "myNext", text: introduction.resources.GotIt },
+            showSkip: false
+        }]);
+    },
+
+    showMainSteps: function () {
+        var isSiteBarCollapsed = menuBar.isSideBarCollapsed();
+        var fullSteps = [
+            {
+                "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
+                '<p>' + introduction.resources.MainMenuIntroduction + '</p>',
+                onBeforeStart: function () {
+                    briefProfile.hideAllTooltips();
+                    if (isSiteBarCollapsed) {
+                        menuBar.domElements.hamburgerIcon.trigger('click');
+                    }
+                },
+                moveUp: 100
+            },
+            {
+                "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>',
+                permission: '[C]'
+            },
+            {
+                "next #menu-VIEWLOG": '<p>' + introduction.resources.ViewLogMenuIntroduction + '</p>',
+                permission: '[G]'
+            },
+            {
+                "click #hamburger-icon": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
+                '<p class="blinker">' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
+                shape: 'circle',
+                radius: 25,
+                showSkip: false
+            },
+            {
+                'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>',
+                shape: 'circle',
+                radius: 20,
+                onBeforeStart: function () {
+                    briefProfile.hideAllTooltips();
+                }
+            },
+            {
+                "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
+                '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
+                '<p><img class="quick-menu-introduction-image" src="Assets/styles/introduction/images/' + alpha.user.level + '.png" /></p>',
+                shape: 'circle',
+                radius: 20,
+                moveUp: 30
+            },
+            {
+                "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
+                '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
+                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>'
+
+            },
+            {
+                "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
+                '<p>' + introduction.resources.ReplayInstruction + '</p>',
+                nextButton: { className: "myNext", text: introduction.resources.GotIt },
+                skipButton: { className: "replay-introduction", text: introduction.resources.Replay }
+            }
+        ];
+
+        //[A]: Create
+        //[B]: Update
+        //[C]: Transfer
+        //[D]: Total Bets
+        //[E]: Reports
+        //[F]: Forcast
+        //[H]: Member Information
+        //[G]: View Log
+        var introductionSteps = [];
+        $.each(fullSteps, function (index, step) {
+            if (typeof (step.permission) === undefined
+                || step.permission == null
+                || alpha.user.subPageAccess.indexOf(step.permission) > -1) {
+
+                if (!step.nextButton) {
+                    step.nextButton = { text: introduction.resources.Next }
+                }
+
+                if (!step.skipButton) {
+                    step.skipButton = { text: introduction.resources.Skip }
+                }
+
+                introductionSteps.push(step);
+
+                return;
+            }
+        });
+
+        introduction.enjoyHint = new EnjoyHint({});
+        introduction.enjoyHint.set(introductionSteps);
+        introduction.enjoyHint.run();
     },
 
     getCookieExpireOptions: function () {

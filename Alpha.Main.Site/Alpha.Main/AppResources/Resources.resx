@@ -412,4 +412,7 @@
   <data name="ReplayInstruction" xml:space="preserve">
     <value>You can replay this tour by clicking on this button.</value>
   </data>
+  <data name="TakeTourInstruction" xml:space="preserve">
+    <value>You can take the tour by clicking on this button.</value>
+  </data>
 </root>
