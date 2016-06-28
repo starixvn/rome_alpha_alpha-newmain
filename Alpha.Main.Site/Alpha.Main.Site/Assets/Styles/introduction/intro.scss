@@ -113,11 +113,11 @@
 
             button {
                 font: normal normal normal 17px/38px "Roboto",Helvetica,sans-serif;
-                border: 1px solid #fff;
+                border: 1px solid #5c1218;
                 padding: 0 20px;
                 margin-top: 20px;                
                 border-radius: 2px;
-                background: none;
+                background: #5c1218;
                 margin-right: 8px;
                 transition: 0.3s ease-in;
 
@@ -128,11 +128,12 @@
                 }
 
                 &.active {
-                    background: #5c1218;
-                    border-color: #5c1218;
+                    background: none;
+                    border-color: #fff;
 
                     &:hover {
                         background: #75171f;
+                        border-color: #5c1218;
                     }
                 }
             }
