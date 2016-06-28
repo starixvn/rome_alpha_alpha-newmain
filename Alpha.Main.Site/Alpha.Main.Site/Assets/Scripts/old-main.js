@@ -112,13 +112,7 @@ window.age = window.age || {
         });
 
         iframe.load(function () {
-            var title = popUp.find(".popup-title").html() || '';
-            var iframe_doc = iframe.contents();
-
-            var iframeTitle = iframe_doc.find("title").text();
-            if (title == '' && iframeTitle != 'Home') {
-                popUp.find(".popup-title").html(iframeTitle);
-            }
+            age.updatePopupTitleAfterLoad(popUp, iframe);
         });
     },
     ClosePopUp: function () {
@@ -223,6 +217,15 @@ window.age = window.age || {
             index.location.href.indexOf('https://int.') == 0) {
             index.close();
         }
+    },
+    updatePopupTitleAfterLoad: function (popUp, iframe) {
+        var title = popUp.find(".popup-title").html() || '';
+        var iframe_doc = iframe.contents();
+
+        var iframeTitle = iframe_doc.find("title").text();
+        if (title == '' && iframeTitle != 'Home') {
+            popUp.find(".popup-title").html(iframeTitle);
+        }
     }
 };
 
@@ -277,6 +280,7 @@ var AgeWnd = function () {
             var scrollTop = oldMainUltilities.getScrollLeft(window) || 0;
             var scrollLeft = oldMainUltilities.getScrollTop(window) || 0;
 
+            // ON iOS: there is scroll issues with popup. We must show popup with auto height
             var isAutoHeight = oldMainUltilities.isiOS();
 
             var popupCss = {
@@ -319,10 +323,12 @@ var AgeWnd = function () {
         },
         openPopUpAfterSetIframeSrc: function (popUp, callBack, isAutoHeight) {
             popUp.on('shown.bs.modal', function () {
+                // transform property make objectFlash not show (MacauGames Result) 
                 popUp.find('.modal-dialog').css({
                     transform: 'none'
                 });
 
+                // This will make popup isn't cut its height when its height larger than browser height
                 if (isAutoHeight) {
                     popUp.css({ display: 'table' });
                 }
@@ -380,13 +386,7 @@ var AgeWnd = function () {
             });
 
             iframe.load(function () {
-                var title = popUp.find(".popup-title").html() || '';
-                var iframe_doc = iframe.contents();
-
-                var iframeTitle = iframe_doc.find("title").text();
-                if (title == '' && iframeTitle != 'Home') {
-                    popUp.find(".popup-title").html(iframeTitle);
-                }
+                ageWnd.updatePopupTitleAfterLoad(popUp, iframe);
 
                 if (oldMainUltilities.isSmallDevice()) {
                     // This will make elements on popup lose focus
@@ -394,6 +394,15 @@ var AgeWnd = function () {
                     iframe.contents().find(':focus').blur();
                 }
             });
+        },
+        updatePopupTitleAfterLoad: function (popUp, iframe) {
+            var title = popUp.find(".popup-title").html() || '';
+            var iframe_doc = iframe.contents();
+
+            var iframeTitle = iframe_doc.find("title").text();
+            if (title == '' && iframeTitle != 'Home') {
+                popUp.find(".popup-title").html(iframeTitle);
+            }
         }
     }
 };
