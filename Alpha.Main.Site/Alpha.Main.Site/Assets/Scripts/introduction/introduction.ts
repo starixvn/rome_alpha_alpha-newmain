@@ -144,7 +144,8 @@ var introduction = {
                         menuBar.domElements.hamburgerIcon.trigger('click');
                     }
                 },
-                moveUp: 100
+                moveUp: alpha.isScreenGreater1024 ? 0 : 100,
+                arrowPointer: alpha.isScreenGreater1024 ? null : ['left', 'right', 'bottom']
             },
             {
                 "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>',

@@ -186,7 +186,8 @@ var EnjoyHint = function (_options) {
                         right: step_data.right,
                         margin: step_data.margin,
                         scroll: step_data.scroll,
-                        moveUp: step_data.moveUp
+                        moveUp: step_data.moveUp,
+                        arrowPointer: step_data.arrowPointer
                     };
 
                     if (step_data.shape && step_data.shape == 'circle') {
@@ -712,6 +713,7 @@ var EnjoyHint = function (_options) {
                 that.renderLabelWithShape = function (data) {
                     var shape_type = data.shape || 'rect';
                     var moveUp = data.moveUp || 0;
+                    var arrowPointer = data.arrowPointer;
                     var shape_data = {};
 
 
@@ -900,37 +902,41 @@ var EnjoyHint = function (_options) {
                         }
                     }
 
-
-                    if (is_center) {
-                        if (is_top) {
-                            setArrowData('left', 'top', 'top');
-                        } else if (is_bottom) {
-                            setArrowData('top', 'bottom', 'bottom');
-                        } else {
+                    if (arrowPointer) {
+                        setArrowData(arrowPointer[0], arrowPointer[1], arrowPointer[2]);
+                    }
+                    else {
+                        if (is_center) {
+                            if (is_top) {
+                                setArrowData('left', 'top', 'top');
+                            } else if (is_bottom) {
+                                setArrowData('top', 'bottom', 'bottom');
+                            } else {
+                                sideStatements(
+                                    ['left', 'top', 'top'],//top
+                                    ['left', 'top', 'top'],//mid_top
+                                    ['left', 'top', 'top'],//mid
+                                    ['top', 'right', 'top'],//mid_bot
+                                    ['left', 'bottom', 'bottom']//bot
+                                );
+                            }
+                        } else if (is_left) {
                             sideStatements(
-                                ['left', 'top', 'top'],//top
-                                ['left', 'top', 'top'],//mid_top
-                                ['left', 'top', 'top'],//mid
-                                ['top', 'right', 'top'],//mid_bot
-                                ['left', 'bottom', 'bottom']//bot
+                                ['right', 'top', 'top'],//top
+                                ['bottom', 'left', 'bottom'],//mid_top
+                                ['right', 'left', 'top'],//mid
+                                ['top', 'left', 'top'],//mid_bot
+                                ['right', 'bottom', 'bottom']//bot
                             );
+                        } else {//right
+                            sideStatements(
+                                    ['left', 'top', 'top'],//top
+                                    ['bottom', 'right', 'bottom'],//mid_top
+                                    ['left', 'top', 'top'],//mid
+                                    ['top', 'right', 'top'],//mid_bot
+                                    ['left', 'bottom', 'bottom']//bot
+                                );
                         }
-                    } else if (is_left) {
-                        sideStatements(
-                            ['right', 'top', 'top'],//top
-                            ['bottom', 'left', 'bottom'],//mid_top
-                            ['right', 'left', 'top'],//mid
-                            ['top', 'left', 'top'],//mid_bot
-                            ['right', 'bottom', 'bottom']//bot
-                        );
-                    } else {//right
-                        sideStatements(
-                            ['left', 'top', 'top'],//top
-                            ['bottom', 'right', 'bottom'],//mid_top
-                            ['left', 'top', 'top'],//mid
-                            ['top', 'right', 'top'],//mid_bot
-                            ['left', 'bottom', 'bottom']//bot
-                        );
                     }
 
                     var label_conn_coordinates = label_data.conn[conn_label_side];
