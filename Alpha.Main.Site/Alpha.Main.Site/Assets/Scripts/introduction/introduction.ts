@@ -101,7 +101,6 @@ var introduction = {
                 introduction.domElements.beginModal.modal('hide');
                 introduction.setReadIntroduction();
                 introduction.showMainSteps();
-                introduction.enjoyHint.run();
             });
 
         introduction.domElements.notNowIntroductionBtn
@@ -110,7 +109,6 @@ var introduction = {
                 introduction.domElements.beginModal.modal('hide');
                 introduction.setReadIntroduction();
                 introduction.showNotNowSteps();
-                introduction.enjoyHint.run();
             });
 
 
@@ -130,6 +128,7 @@ var introduction = {
             nextButton: { className: "myNext", text: introduction.resources.GotIt },
             showSkip: false
         }]);
+        introduction.enjoyHint.run();
     },
 
     showMainSteps: function () {
