@@ -695,7 +695,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can take the tour by clicking on this button..
+        ///   Looks up a localized string similar to You can take the tour by clicking on this icon..
         /// </summary>
         public static string TakeTourInstruction {
             get {

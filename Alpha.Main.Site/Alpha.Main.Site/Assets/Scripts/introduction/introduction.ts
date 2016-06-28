@@ -51,7 +51,7 @@ var introduction = {
 
         var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
         //// Hard code always show
-        if (true || !isReadIntroduction) {
+        if (!isReadIntroduction) {
             introduction.domElements.beginModal.modal('show');
             $('.modal-backdrop').css('z-index', 1051);
 
