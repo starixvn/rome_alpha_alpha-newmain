@@ -134,59 +134,66 @@ var headerMessage = {
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
-        setInterval(headerMessage.swapMessage, 18 * 1000);
+        setInterval(headerMessage.swapMessage, 5 * 1000);
     },
 
-    calculateHotMessagePopupHeight: function (showFullMessage) {
-        var maxMessageHeight = 53;
-        var isShowFull = showFullMessage;
-        var messageHeight = headerMessage.domElements.currentHotMessage.height();
-        var headerHeight = 10;
-        var bodyBorderHeight = 2;
-        var bodyPaddingHeight = 5 + bodyBorderHeight;
+    resetHotMessageElements: function (showFullMessage) {
+        var minMessageHeight = 40;
+        headerMessage.domElements.currentHotMessage.css('min-height', minMessageHeight);
 
         if (showFullMessage) {
             headerMessage.domElements.showMoreContainer.addClass("hide");
             headerMessage.domElements.currentHotMessage.removeClass("brief-content");
             headerMessage.domElements.currentHotMessage.css('height', '');
-            messageHeight = headerMessage.domElements.currentHotMessage.height();
-            headerMessage.domElements.currentHotMessage.height(messageHeight);
-
+        } else {
+            headerMessage.domElements.showLessContainer.addClass("hide");
+            headerMessage.domElements.currentHotMessage.removeClass("brief-content");
+        }
+    },
+    setHotMessageElementStyleByMessageHeight: function (showFullMessage, messageHeight, maxMessageHeight) {
+        if (showFullMessage) {
             if (messageHeight <= maxMessageHeight) {
                 headerMessage.domElements.showLessContainer.addClass("hide");
             } else {
                 headerMessage.domElements.showLessContainer.removeClass("hide");
-                messageHeight += headerMessage.domElements.showLessContainer.height();
             }
-
-            messageHeight += bodyPaddingHeight;
         }
         else {
-            headerMessage.domElements.showLessContainer.addClass("hide");
-            headerMessage.domElements.currentHotMessage.removeClass("brief-content");
-            messageHeight = headerMessage.domElements.currentHotMessage.height();
-
             if (messageHeight <= maxMessageHeight) {
                 headerMessage.domElements.showMoreContainer.addClass("hide");
             } else {
                 headerMessage.domElements.currentHotMessage.addClass("brief-content").height(maxMessageHeight);
                 headerMessage.domElements.showMoreContainer.removeClass("hide");
-                messageHeight = maxMessageHeight + headerMessage.domElements.showMoreContainer.height();
             }
+        }
+    },
+    calculateHotMessageHeight: function (showFullMessage) {
+        headerMessage.resetHotMessageElements(showFullMessage);
 
-            messageHeight += bodyPaddingHeight;
+        var messageHeight = headerMessage.domElements.currentHotMessage.height();
+
+        var maxMessageHeight = 53;
+        headerMessage.setHotMessageElementStyleByMessageHeight(showFullMessage, messageHeight, maxMessageHeight);
+
+        if (maxMessageHeight < messageHeight) {
+            messageHeight = showFullMessage ?
+                messageHeight + headerMessage.domElements.showLessContainer.height() :
+                maxMessageHeight + headerMessage.domElements.showMoreContainer.height();
         }
 
+        var bodyBorderHeight = 2;
+        var bodyPaddingHeight = 5 + bodyBorderHeight;
+        messageHeight += bodyPaddingHeight;
+
+        return messageHeight;
+    },
+    calculateHotMessagePopupHeight: function (showFullMessage) {
+        var headerHeight = 10;
+        var messageHeight = headerMessage.calculateHotMessageHeight(showFullMessage);
         var popUpHeight = headerHeight + messageHeight;
-
-        var minHeight = 40;
-        headerMessage.domElements.currentHotMessage.css('min-height', minHeight);
-            if (popUpHeight < minHeight) {
-            popUpHeight = minHeight;
-        }
-
         headerMessage.domElements.userMessageModal.height(popUpHeight);
     },
+
     showMoreHotMessage: function () {
         headerMessage.calculateHotMessagePopupHeight(true);
     },
@@ -272,7 +279,7 @@ var headerMessage = {
                     headerMessage.applyScroller();
                 } catch (e) { }
 
-                setTimeout(headerMessage.getMessages, 60 * 1000);
+                setTimeout(headerMessage.getMessages, 10 * 1000);
             }
         });
 
