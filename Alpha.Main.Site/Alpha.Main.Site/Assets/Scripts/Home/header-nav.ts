@@ -45,7 +45,9 @@ var headerNav = {
         headerNav.initLanguage();
         headerNav.registerEvents();
 
-        $('[data-toggle="tooltip"]').tooltip();
+        if (!alpha.isMobile) {
+            $('[data-toggle="tooltip"]').tooltip();
+        }
     },
 
     initClock: function () {
