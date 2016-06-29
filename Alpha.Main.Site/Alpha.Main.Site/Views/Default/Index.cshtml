@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
-    <link href="@(StaticResources.MainSiteStyleUrl("~/Assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
-    <link href="@(StaticResources.MainSiteStyleUrl("~/Assets/bundles/default-introduction"))" rel="stylesheet" type="text/css" />
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-introduction"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -63,8 +63,8 @@
     @Html.Hidden("isSubAccount", Model.IsSubAccount)
 
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
-    <script src="@(StaticResources.MainSiteScriptUrl("~/Assets/bundles/default-index"))" type="text/javascript"></script>
+    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
 
-    <script src="@(StaticResources.MainSiteScriptUrl("~/Assets/bundles/default-introduction"))" type="text/javascript"></script>
+    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-introduction"))" type="text/javascript"></script>
 </body>
 </html>
