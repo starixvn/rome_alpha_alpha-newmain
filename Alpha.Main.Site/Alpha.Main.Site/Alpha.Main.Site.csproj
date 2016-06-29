@@ -385,7 +385,11 @@
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
+    <Content Include="Assets\bundles\default-index.css" />
     <Content Include="Assets\bundles\default-index.js" />
+    <Content Include="Assets\bundles\default-index.min.css">
+      <DependentUpon>default-index.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
