@@ -329,16 +329,16 @@
     <value>注销</value>
   </data>
   <data name="BrowserIsOutOfDate" xml:space="preserve">
-    <value>您的浏览器已过期，可能无法与我们的网站正常操作。为了提供更好的支援，我们强烈建议您升级至新的版本。</value>
+    <value>Your browser is out of date and might not be working properly with our website. For a better support, we strongly recommend that you upgrade to a newer verion. Please, </value>
   </data>
   <data name="ClickToUpdateBrowser" xml:space="preserve">
-    <value>请点击这里以升级您的浏览器。</value>
+    <value>click here to update your browser</value>
   </data>
   <data name="ClickToBackOldView" xml:space="preserve">
-    <value>Click here to get back.</value>
+    <value>Click here to get back</value>
   </data>
   <data name="WarningOldViewDate" xml:space="preserve">
-    <value>The old version is only available until DD/MM/YYYY.</value>
+    <value>The old version is only available until</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>下一页</value>

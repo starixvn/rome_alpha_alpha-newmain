@@ -1,4 +1,5 @@
 ﻿@model BrowserViewModel
+
 @{
     Layout = null;
     var downloadNewBrowserUrl = "http://windows.microsoft.com/en-us/internet-explorer/download-ie";
@@ -9,19 +10,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/pageIElower10")
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/unsupport-browser/{Model.UserLevel}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/styles/home/pageIElower10"))" rel="stylesheet" type="text/css" />
     <title>Browser Warning</title>
 </head>
-<body>
+<body class="unsupport-browser">
     <div id="warning-browser-message" class="warning-browser-message">
         @Model.UserLevel.ToString()
         <span class="icon-alert"></span>
         <div class="content-msg">
-            <span>@Resources.BrowserIsOutOfDate</span>
-            Please, <a href="@Model.DownloadNewBrowserUrl" target="_blank">@Resources.ClickToUpdateBrowser</a>.
-            Not yet familiar with some new features? <a href="@Alpha.Main.Helpers.MicroSites.OldMainUrl("~/")">@Resources.ClickToBackOldView</a>
-            <p><b>Warning:</b> @Resources.WarningOldViewDate</p>
+            <span>@Resources.BrowserIsOutOfDate</span><a href="@Model.DownloadNewBrowserUrl" target="_blank">@Resources.ClickToUpdateBrowser</a>.
+            <p>Not yet familiar with some new features? <a href="@Alpha.Main.Helpers.MicroSites.OldMainUrl("~/")">@Resources.ClickToBackOldView</a></p>
+            <p><b>Warning:</b> @Resources.WarningOldViewDate <b>DD/MM/YYYY.</b></p>
         </div>
     </div>
 

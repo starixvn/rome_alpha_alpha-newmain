@@ -387,6 +387,7 @@
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.css" />
     <Content Include="Assets\bundles\default-index.js" />
+    <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.min.css">
       <DependentUpon>default-index.css</DependentUpon>
     </Content>
@@ -442,7 +443,6 @@
     <Content Include="Assets\styles\customer-profiles\customer-profile.min.css">
       <DependentUpon>customer-profile.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\home\images\update Browser.jpg" />
     <Content Include="Assets\styles\home\pageIElower10.css">
       <DependentUpon>pageIElower10.scss</DependentUpon>
     </Content>

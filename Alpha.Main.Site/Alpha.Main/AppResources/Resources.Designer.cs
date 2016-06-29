@@ -142,7 +142,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your browser is outdated and may not be compatible with some features in our website. For a better support, we strongly recommend you to upgrade your browser to a new version..
+        ///   Looks up a localized string similar to Your browser is out of date and might not be working properly with our website. For a better support, we strongly recommend that you upgrade to a newer verion. Please, .
         /// </summary>
         public static string BrowserIsOutOfDate {
             get {
@@ -169,7 +169,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click here to get back..
+        ///   Looks up a localized string similar to Click here to get back.
         /// </summary>
         public static string ClickToBackOldView {
             get {
@@ -178,7 +178,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to click here for the upgrade.
+        ///   Looks up a localized string similar to click here to update your browser.
         /// </summary>
         public static string ClickToUpdateBrowser {
             get {
@@ -893,7 +893,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The old version is only available until DD/MM/YYYY..
+        ///   Looks up a localized string similar to The old version is only available until.
         /// </summary>
         public static string WarningOldViewDate {
             get {
