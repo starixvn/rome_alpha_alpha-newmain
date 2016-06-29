@@ -197,7 +197,7 @@ var headerMessage = {
         headerMessage.domElements.userMessageModal.height(popUpHeight + paddingBecauseScrollbar);
         setTimeout(function () {
             headerMessage.domElements.userMessageModal.height(popUpHeight);
-        }, 100);
+        }, 10);
     },
 
     showMoreHotMessage: function () {
