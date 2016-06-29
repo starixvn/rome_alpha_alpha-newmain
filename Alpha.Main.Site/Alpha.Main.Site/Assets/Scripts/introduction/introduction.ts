@@ -144,6 +144,7 @@ var introduction = {
                     if (isSiteBarCollapsed) {
                         menuBar.domElements.hamburgerIcon.trigger('click');
                     }
+                    menuBar.activateMainMenuTab();
                 },
                 moveUp: alpha.isScreenGreater1024 ? 0 : 100,
                 arrowPointer: alpha.isScreenGreater1024 || window.innerHeight > window.innerWidth ? null : ['left', 'right', 'bottom']
