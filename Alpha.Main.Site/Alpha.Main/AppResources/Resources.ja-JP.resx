@@ -346,4 +346,7 @@
   <data name="Next" xml:space="preserve">
     <value>次へ</value>
   </data>
+  <data name="AlphaTour" xml:space="preserve">
+    <value>Alpha Tour</value>
+  </data>
 </root>

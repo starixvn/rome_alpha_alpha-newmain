@@ -106,6 +106,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alpha Tour.
+        /// </summary>
+        public static string AlphaTour {
+            get {
+                return ResourceManager.GetString("AlphaTour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Announcement.
         /// </summary>
         public static string announcement {

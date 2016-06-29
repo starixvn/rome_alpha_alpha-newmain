@@ -415,4 +415,7 @@
   <data name="TakeTourInstruction" xml:space="preserve">
     <value>You can take the tour by clicking on this icon.</value>
   </data>
+  <data name="AlphaTour" xml:space="preserve">
+    <value>Alpha Tour</value>
+  </data>
 </root>

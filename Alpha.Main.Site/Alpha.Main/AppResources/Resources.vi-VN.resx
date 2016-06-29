@@ -345,4 +345,7 @@
   <data name="Skip" xml:space="preserve">
     <value>Bỏ qua</value>
   </data>
+  <data name="AlphaTour" xml:space="preserve">
+    <value>Alpha Tour</value>
+  </data>
 </root>

@@ -384,22 +384,10 @@
     <Content Include="App_Themes\Apo\Security\images\x5.gif" />
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
-    <Content Include="Assets\bundles\default-index.css" />
-    <Content Include="Assets\bundles\default-index.js" />
-    <Content Include="Assets\bundles\default-index.min.css">
-      <DependentUpon>default-index.css</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
+    <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-introduction.css" />
-    <Content Include="Assets\bundles\default-introduction.js" />
-    <Content Include="Assets\bundles\default-introduction.min.css">
-      <DependentUpon>default-introduction.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-introduction.min.js">
-      <DependentUpon>default-introduction.js</DependentUpon>
     </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />

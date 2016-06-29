@@ -346,4 +346,7 @@
   <data name="Skip" xml:space="preserve">
     <value>다음</value>
   </data>
+  <data name="AlphaTour" xml:space="preserve">
+    <value>Alpha Tour</value>
+  </data>
 </root>
