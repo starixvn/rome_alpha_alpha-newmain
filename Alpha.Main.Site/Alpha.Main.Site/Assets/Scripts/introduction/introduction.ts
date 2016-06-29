@@ -5,7 +5,7 @@ declare var EnjoyHint: any;
 
 var introduction = {
     enjoyHint: null,
-    readIntroductionCookieName: 'Introduction',
+    readIntroductionCookieName: 'Instruction',
 
     domElements: {
         beginModal: null,
@@ -126,7 +126,9 @@ var introduction = {
         introduction.enjoyHint.set([{
             "next #replay-instruction": '<p>' + introduction.resources.TakeTourInstruction + '</p>',
             nextButton: { className: "myNext", text: introduction.resources.GotIt },
-            showSkip: false
+            showSkip: false,
+            shape: 'circle',
+            radius: 20
         }]);
         introduction.enjoyHint.run();
     },
@@ -164,10 +166,7 @@ var introduction = {
             {
                 'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>',
                 shape: 'circle',
-                radius: 20,
-                onBeforeStart: function () {
-                    briefProfile.hideAllTooltips();
-                }
+                radius: 20
             },
             {
                 "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
@@ -181,13 +180,11 @@ var introduction = {
                 "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
                 '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
                 '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>'
-
             },
             {
                 "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
                 '<p>' + introduction.resources.ReplayInstruction + '</p>',
                 nextButton: { className: "myNext", text: introduction.resources.GotIt },
-                //skipButton: { className: "replay-introduction", text: introduction.resources.Replay }
                 showSkip: false,
                 shape: 'circle',
                 radius: 20

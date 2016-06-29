@@ -389,6 +389,10 @@
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\default-introduction.css" />
+    <Content Include="Assets\bundles\default-introduction.min.css">
+      <DependentUpon>default-introduction.css</DependentUpon>
+    </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />
     <Content Include="Assets\styles\announcement\announcements.css">
