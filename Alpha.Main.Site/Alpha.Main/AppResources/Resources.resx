@@ -329,16 +329,25 @@
     <value>Log out</value>
   </data>
   <data name="BrowserIsOutOfDate" xml:space="preserve">
-    <value>Your browser is out of date and might not be working properly with our website. For a better support, we strongly recommend that you upgrade to a newer verion. Please, </value>
+    <value>Your browser is outdated and might not be working properly with our website. For a better support, we strongly recommend that you upgrade to a newer version. Please, </value>
   </data>
   <data name="ClickToUpdateBrowser" xml:space="preserve">
     <value>click here to update your browser</value>
+  </data>
+  <data name="BackOldViewText" xml:space="preserve">
+    <value>Not yet familiar with some new feature? </value>
   </data>
   <data name="ClickToBackOldView" xml:space="preserve">
     <value>Click here to get back</value>
   </data>
   <data name="WarningOldViewDate" xml:space="preserve">
     <value>The old version is only available until</value>
+  </data>
+  <data name="WarningText" xml:space="preserve">
+    <value>Warning: </value>
+  </data>
+  <data name="TitleUnsupportBrowser" xml:space="preserve">
+    <value>Browser Update Required! </value>
   </data>
   <data name="HomeIconIntroduction" xml:space="preserve">
     <value>Home icon – access to home page</value>

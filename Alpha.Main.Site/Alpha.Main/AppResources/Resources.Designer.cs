@@ -133,6 +133,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not yet familiar with some new feature? .
+        /// </summary>
+        public static string BackOldViewText {
+            get {
+                return ResourceManager.GetString("BackOldViewText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Balance Info.
         /// </summary>
         public static string balanceInfo {
@@ -142,7 +151,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your browser is out of date and might not be working properly with our website. For a better support, we strongly recommend that you upgrade to a newer verion. Please, .
+        ///   Looks up a localized string similar to Your browser is outdated and might not be working properly with our website. For a better support, we strongly recommend that you upgrade to a newer version. Please, .
         /// </summary>
         public static string BrowserIsOutOfDate {
             get {
@@ -713,6 +722,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browser Update Required! .
+        /// </summary>
+        public static string TitleUnsupportBrowser {
+            get {
+                return ResourceManager.GetString("TitleUnsupportBrowser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Today Win Loss.
         /// </summary>
         public static string todayWinLoss {
@@ -898,6 +916,15 @@ namespace Alpha.Main.AppResources {
         public static string WarningOldViewDate {
             get {
                 return ResourceManager.GetString("WarningOldViewDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: .
+        /// </summary>
+        public static string WarningText {
+            get {
+                return ResourceManager.GetString("WarningText", resourceCulture);
             }
         }
         

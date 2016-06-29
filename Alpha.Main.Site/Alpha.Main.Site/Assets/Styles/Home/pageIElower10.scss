@@ -3,29 +3,36 @@
 
 body {
     font-family: $font-family;
-    font-size: $font-size + 2;
+    font-size: $font-size + 1;
 }
 
 #warning-browser-message {
     @include box-shadow(2px, 1px, 8px, rgba(0, 0, 0, 0.4));
-    color: #85490d;
+    color: #fff;
     line-height: 20px;
     position: absolute;
     padding: 15px;
-    margin: 210px auto 0;
+    margin: 150px auto 0;
     top: 90px;
     left: 0;
     right: 0;
     z-index: 1040;
-    background: #faf9dd;
-    width: 800px;
+    background: #fe9b1c;
+    width: 820px;
+    .title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+        top: -6px;
+    }
     .content-msg {
-        padding: 0 25px;
+        padding: 0 15px;
     }
     a {
         white-space: nowrap;
-        color: #045ace;
         font-weight: bold;
+        color: #fff;
     }
     .icon-close {
         cursor: pointer;
@@ -35,9 +42,10 @@ body {
         top: 5px;
     }
     .icon-alert {
-        position: absolute;
-        left: 15px;
-        font-size: 18px;
-        color: #f38709;
+        color: #fff;
+        margin-right: 10px;
+        font-size: 28px;
+        position: relative;
+        top: 3px;
     }
 }
