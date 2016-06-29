@@ -666,6 +666,7 @@
     <Compile Include="Helpers\StaticResources.cs" />
     <Compile Include="Requests\AllLanguagesQuery.cs" />
     <Compile Include="Requests\Announcement\HotAnnouncementQuery.cs" />
+    <Compile Include="Requests\BrowserQuery.cs" />
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\HeaderNavQuery.cs" />

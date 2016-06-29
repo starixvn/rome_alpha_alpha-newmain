@@ -7,6 +7,7 @@
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
+    using Requests;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 
@@ -29,7 +30,10 @@
 
         public ActionResult Index()
         {
-            var browser = BrowserHelper.CheckSupportedBrowsers();
+            var browser = this.mediator.Send(new BrowserQuery
+            {
+                UserLevelId = this.userSession.RoleId
+            });
 
             if (browser.IsUnsupportedBrowser)
             {
@@ -63,7 +67,12 @@
 
         public ActionResult UnsupportedBrowsers()
         {
-            return View(BrowserHelper.CheckSupportedBrowsers());
+            var browser = this.mediator.Send(new BrowserQuery
+            {
+                UserLevelId = this.userSession.RoleId
+            });
+
+            return View(browser);
         }
     }
 }

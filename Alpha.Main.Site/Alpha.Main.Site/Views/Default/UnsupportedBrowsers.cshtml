@@ -15,6 +15,7 @@
 </head>
 <body>
     <div id="warning-browser-message" class="warning-browser-message">
+        @Model.UserLevel.ToString()
         <span class="icon-alert"></span>
         <div class="content-msg">
             <span>@Resources.BrowserIsOutOfDate</span>
