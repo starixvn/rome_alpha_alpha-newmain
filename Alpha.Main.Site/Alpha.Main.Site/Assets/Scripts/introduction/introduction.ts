@@ -13,7 +13,8 @@ var introduction = {
         notNowIntroductionBtn: null,
         markInner: null,
         replayInstruction: null,
-        modalInstructionBody: null
+        modalInstructionBody: null,
+        oldViewLink: null
     },
 
     resources: {
@@ -66,6 +67,7 @@ var introduction = {
         introduction.domElements.replayInstruction = $('#replay-instruction');
         introduction.domElements.notNowIntroductionBtn = $("#not-now-introduction-btn");
         introduction.domElements.modalInstructionBody = $('#instruction-modal-body');
+        introduction.domElements.oldViewLink = $('#old-view-link a');
     },
 
     showDelayFirstIntroduction: function () {
@@ -180,7 +182,11 @@ var introduction = {
             {
                 "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
                 '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
-                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>'
+                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>',
+                onBeforeStart: function () {
+                    introduction.domElements.oldViewLink.data('old-link', introduction.domElements.oldViewLink.attr('href'));
+                    introduction.domElements.oldViewLink.attr('href', '#');
+                },
             },
             {
                 "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
@@ -188,7 +194,8 @@ var introduction = {
                 nextButton: { className: "myNext", text: introduction.resources.GotIt },
                 showSkip: false,
                 shape: 'circle',
-                radius: 20
+                radius: 20,
+                onBeforeStart: introduction.setOldViewLink
             }
         ];
 
@@ -220,9 +227,19 @@ var introduction = {
             }
         });
 
-        introduction.enjoyHint = new EnjoyHint({});
+        introduction.enjoyHint = new EnjoyHint({
+            onSkip: introduction.setOldViewLink
+        });
         introduction.enjoyHint.set(introductionSteps);
         introduction.enjoyHint.run();
+    },
+
+    setOldViewLink: function () {
+        if (introduction.domElements.oldViewLink.data('old-link')
+            && introduction.domElements.oldViewLink.data('old-link') !== ""
+            && introduction.domElements.oldViewLink.attr('href') === "#") {
+            introduction.domElements.oldViewLink.attr('href', introduction.domElements.oldViewLink.data('old-link'));
+        }
     },
 
     getCookieExpireOptions: function () {

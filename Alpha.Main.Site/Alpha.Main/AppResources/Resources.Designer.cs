@@ -106,7 +106,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alpha Tour.
+        ///   Looks up a localized string similar to Quick Tour.
         /// </summary>
         public static string AlphaTour {
             get {
