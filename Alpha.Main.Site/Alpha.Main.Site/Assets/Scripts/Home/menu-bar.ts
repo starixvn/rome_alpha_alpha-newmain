@@ -148,8 +148,10 @@
             //// When expanding, check current active tab, and active it
             if (menuBar.domElements.accountInfoHeader.hasClass('active')) {
                 menuBar.domElements.mainMenuTab.hide();
+                menuBar.domElements.accountInfoTab.show()
             }
             else {
+                menuBar.domElements.mainMenuTab.show();
                 menuBar.domElements.accountInfoTab.hide();
             }
         } else {
@@ -158,6 +160,7 @@
             content.addClass(expandedClass);
             profileImage.addClass(collapseImageClass);
             menuBar.domElements.mainMenuTab.show();
+            menuBar.domElements.accountInfoTab.hide();
         }
     },
 
@@ -205,6 +208,7 @@
             //// When expanding, if active tab is account info, then hide menu bar
             if (menuBar.domElements.accountInfoHeader.hasClass('active')) {
                 menuBar.domElements.mainMenuTab.hide();
+                menuBar.domElements.accountInfoTab.show();
             }
         }
     },
@@ -224,6 +228,7 @@
 
             //// Show all menu bar icon
             menuBar.domElements.mainMenuTab.show();
+            menuBar.domElements.accountInfoTab.hide();
         }
     },
 
