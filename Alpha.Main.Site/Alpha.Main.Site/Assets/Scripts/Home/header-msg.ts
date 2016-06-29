@@ -134,7 +134,7 @@ var headerMessage = {
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
-        setInterval(headerMessage.swapMessage, 18 * 1000);
+        setInterval(headerMessage.swapMessage, 5 * 1000);
     },
 
     resetHotMessageElements: function (showFullMessage) {
@@ -167,12 +167,8 @@ var headerMessage = {
             }
         }
     },
-    calculateHotMessageHeight: function (showFullMessage) {
-        headerMessage.resetHotMessageElements(showFullMessage);
-
+    calculateHotMessageHeight: function (showFullMessage, maxMessageHeight) {
         var messageHeight = headerMessage.domElements.currentHotMessage.height();
-
-        var maxMessageHeight = 53;
         headerMessage.setHotMessageElementStyleByMessageHeight(showFullMessage, messageHeight, maxMessageHeight);
 
         if (maxMessageHeight < messageHeight) {
@@ -189,14 +185,25 @@ var headerMessage = {
     },
     calculateHotMessagePopupHeight: function (showFullMessage) {
         var headerHeight = 10;
-        var messageHeight = headerMessage.calculateHotMessageHeight(showFullMessage);
+
+        headerMessage.resetHotMessageElements(showFullMessage);
+        var messageHeight = headerMessage.domElements.currentHotMessage.height();
+        var maxMessageHeight = 53;
+        var paddingBecauseScrollbar = showFullMessage && messageHeight > maxMessageHeight ? 17 : 0;
+
+        var messageHeight = headerMessage.calculateHotMessageHeight(showFullMessage, maxMessageHeight);
         var popUpHeight = headerHeight + messageHeight;
-        headerMessage.domElements.userMessageModal.height(popUpHeight);
+
+        headerMessage.domElements.userMessageModal.height(popUpHeight + paddingBecauseScrollbar);
+        setTimeout(function () {
+            headerMessage.domElements.userMessageModal.height(popUpHeight);
+        }, 100);
     },
 
     showMoreHotMessage: function () {
         headerMessage.calculateHotMessagePopupHeight(true);
     },
+
     showLessHotMessage: function () {
         headerMessage.calculateHotMessagePopupHeight(false);
     },
@@ -279,7 +286,7 @@ var headerMessage = {
                     headerMessage.applyScroller();
                 } catch (e) { }
 
-                setTimeout(headerMessage.getMessages, 60 * 1000);
+                setTimeout(headerMessage.getMessages, 10 * 1000);
             }
         });
 
