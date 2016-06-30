@@ -89,7 +89,8 @@ window.age = window.age || {
         popUp.find(".popup-title").html(title);
         popUp.find(".ex-modal").css("height", popH + "px");
         popUp.find(".modal-content .modal-body").css('padding', '8px 14px');
-        popUp.find(".modal-content .modal-body").css('overflow', 'hidden');
+        popUp.find(".modal-content .modal-body").css('overflow-y', 'hidden');
+        popUp.find(".modal-content .modal-body").css('overflow-x', 'auto');
 
         var headerHeight = 40;
         var contentBorder = 2;
@@ -103,7 +104,8 @@ window.age = window.age || {
             width: popW - padding,
             height: popH - headerHeight - contentBorder - verticalPadding,
             left: left,
-            top: top
+            top: top,
+            overflow: 'auto'
         });
         iframe.attr("src", url);
         popUp.modal({ show: true, backdrop: false });
@@ -291,7 +293,7 @@ var AgeWnd = function () {
             };
 
             if (isAutoHeight) {
-                $.extend(popupCss, { overflow: 'visible' });
+                $.extend(popupCss, { 'overflow-y': 'visible', 'overflow-x': 'auto' });
             }
 
             popUp.css(popupCss);
