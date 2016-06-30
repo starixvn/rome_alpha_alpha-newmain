@@ -184,20 +184,15 @@ var headerMessage = {
         return messageHeight;
     },
     calculateHotMessagePopupHeight: function (showFullMessage) {
-        var headerHeight = 10;
-
         headerMessage.resetHotMessageElements(showFullMessage);
-        var messageHeight = headerMessage.domElements.currentHotMessage.height();
-        var maxMessageHeight = 53;
-        var paddingBecauseScrollbar = showFullMessage && messageHeight > maxMessageHeight ? 17 : 0;
 
+        var maxMessageHeight = 53;
         var messageHeight = headerMessage.calculateHotMessageHeight(showFullMessage, maxMessageHeight);
+
+        var headerHeight = 10;
         var popUpHeight = headerHeight + messageHeight;
 
-        headerMessage.domElements.userMessageModal.height(popUpHeight + paddingBecauseScrollbar);
-        setTimeout(function () {
-            headerMessage.domElements.userMessageModal.height(popUpHeight);
-        }, 10);
+        headerMessage.domElements.userMessageModal.height(popUpHeight);
     },
 
     showMoreHotMessage: function () {
@@ -289,7 +284,6 @@ var headerMessage = {
                 setTimeout(headerMessage.getMessages, 60 * 1000);
             }
         });
-
     },
 
     swapMessage: function () {

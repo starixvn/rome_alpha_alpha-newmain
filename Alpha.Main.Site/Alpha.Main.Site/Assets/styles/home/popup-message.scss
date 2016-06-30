@@ -42,7 +42,7 @@ div.messageBlock {
 }
 
 .modal-open .modal {
-   overflow: auto;
+    overflow: auto;
 }
 
 #live-message {
@@ -66,6 +66,8 @@ div.messageBlock {
 }
 
 #userMessageModal {
+    overflow: hidden;
+
     .close {
         color: #85490d;
         opacity: 1;
