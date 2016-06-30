@@ -463,7 +463,7 @@ function ShowSecCodePopup(preUrl) {
 
     preUrl = 'url=' + escape(preUrl);
     var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
-    var popH = 190, popW = 370, verticalOffset = -75;
+    var popH = 190, popW = 396, verticalOffset = -75;
     var x = (screen.width / 2) - (popW / 2) + verticalOffset;
     var y = (screen.height / 2) - (popH / 2);
 
