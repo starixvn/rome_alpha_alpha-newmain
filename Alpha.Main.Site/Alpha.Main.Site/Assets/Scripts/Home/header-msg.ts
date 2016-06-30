@@ -134,7 +134,7 @@ var headerMessage = {
             headerMessage.calculateHotMessagePopupHeight(false);
         }
 
-        setInterval(headerMessage.swapMessage, 5 * 1000);
+        setInterval(headerMessage.swapMessage, 18 * 1000);
     },
 
     resetHotMessageElements: function (showFullMessage) {
@@ -286,7 +286,7 @@ var headerMessage = {
                     headerMessage.applyScroller();
                 } catch (e) { }
 
-                setTimeout(headerMessage.getMessages, 10 * 1000);
+                setTimeout(headerMessage.getMessages, 60 * 1000);
             }
         });
 
