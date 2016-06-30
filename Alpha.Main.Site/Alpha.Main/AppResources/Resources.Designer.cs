@@ -368,7 +368,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Experience the new Alpha.
+        ///   Looks up a localized string similar to Experience the new look and feel.
         /// </summary>
         public static string MainIntroductionTitle {
             get {
