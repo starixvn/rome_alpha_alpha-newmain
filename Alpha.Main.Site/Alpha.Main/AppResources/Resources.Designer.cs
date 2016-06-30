@@ -359,7 +359,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to More visualized and convenient than ever..
+        ///   Looks up a localized string similar to More visualized and convenient..
         /// </summary>
         public static string MainIntroductionDescription {
             get {
