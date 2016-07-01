@@ -187,7 +187,8 @@ var EnjoyHint = function (_options) {
                         margin: step_data.margin,
                         scroll: step_data.scroll,
                         moveUp: step_data.moveUp,
-                        arrowPointer: step_data.arrowPointer
+                        arrowPointer: step_data.arrowPointer,
+                        addLeftOffset: step_data.addLeftOffset
                     };
 
                     if (step_data.shape && step_data.shape == 'circle') {
@@ -714,6 +715,7 @@ var EnjoyHint = function (_options) {
                     var shape_type = data.shape || 'rect';
                     var moveUp = data.moveUp || 0;
                     var arrowPointer = data.arrowPointer;
+                    var addLeftOffset = data.addLeftOffset || 0;
                     var shape_data = {};
 
 
@@ -800,7 +802,7 @@ var EnjoyHint = function (_options) {
                     label.remove();
                     var top_offset = data.center_y - half_h;
                     var bottom_offset = body_size.h - (data.center_y + half_h);
-                    var left_offset = data.center_x - half_w;
+                    var left_offset = data.center_x - half_w + addLeftOffset;
                     var right_offset = body_size.w - (data.center_x + half_w);
 
                     var label_hor_side = (body_size.w - data.center_x) < data.center_x ? 'left' : 'right';

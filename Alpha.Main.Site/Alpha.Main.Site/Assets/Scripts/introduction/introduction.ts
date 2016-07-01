@@ -148,7 +148,7 @@ var introduction = {
                     }
                     menuBar.activateMainMenuTab();
                 },
-                moveUp: alpha.isScreenGreater1024 ? 0 : 100,
+                moveUp: alpha.isScreenGreater1024 ? 0 : 120,
                 arrowPointer: alpha.isScreenGreater1024 || window.innerHeight > window.innerWidth ? null : ['left', 'right', 'bottom']
             },
             {
@@ -177,7 +177,7 @@ var introduction = {
                 '<p><img class="quick-menu-introduction-image" src="Assets/styles/introduction/images/' + alpha.user.level + '.png" /></p>',
                 shape: 'circle',
                 radius: 20,
-                moveUp: 30
+                moveUp: 60
             },
             {
                 "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
@@ -187,6 +187,7 @@ var introduction = {
                     introduction.domElements.oldViewLink.data('old-link', introduction.domElements.oldViewLink.attr('href'));
                     introduction.domElements.oldViewLink.attr('href', '#');
                 },
+                addLeftOffset: 50
             },
             {
                 "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
