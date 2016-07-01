@@ -133,7 +133,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not yet familiar with some new feature? .
+        ///   Looks up a localized string similar to Not yet familiar with some new features? .
         /// </summary>
         public static string BackOldViewText {
             get {

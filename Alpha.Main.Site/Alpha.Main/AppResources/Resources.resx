@@ -335,7 +335,7 @@
     <value>click here to update your browser</value>
   </data>
   <data name="BackOldViewText" xml:space="preserve">
-    <value>Not yet familiar with some new feature? </value>
+    <value>Not yet familiar with some new features? </value>
   </data>
   <data name="ClickToBackOldView" xml:space="preserve">
     <value>Click here to get back</value>

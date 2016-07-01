@@ -2,7 +2,6 @@
 
 @{
     Layout = null;
-    var downloadNewBrowserUrl = "http://windows.microsoft.com/en-us/internet-explorer/download-ie";
 }
 
 <!DOCTYPE html>
@@ -12,14 +11,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     @StaticResources.AssetStyles.Render($"/bundles/site-main/unsupport-browser/{Model.UserLevel}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/styles/home/pageIElower10"))" rel="stylesheet" type="text/css" />
-    <title>Browser Warning</title>
+    <title>@Resources.BrowserIsOutOfDate</title>
 </head>
 <body class="unsupport-browser">
     <div id="warning-browser-message" class="warning-browser-message">
         <p class="title"><span class="icon-alert"></span>@Resources.TitleUnsupportBrowser</p>
         <div class="content-msg">
-            <span>@Resources.BrowserIsOutOfDate</span><a href="@Model.DownloadNewBrowserUrl" target="_blank">@Resources.ClickToUpdateBrowser</a>
-            <p>@Resources.BackOldViewText<a href="@Alpha.Main.Helpers.MicroSites.OldMainUrl("~/")">@Resources.ClickToBackOldView</a></p>
+            <span>@Resources.BrowserIsOutOfDate</span><a href="@Model.DownloadNewBrowserUrl" target="_blank">@(Resources.ClickToUpdateBrowser).</a>
+            <p>@Resources.BackOldViewText<a href="@Alpha.Main.Helpers.MicroSites.OldMainUrl("~/")">@(Resources.ClickToBackOldView).</a></p>
             <p><b>@Resources.WarningText</b> @Resources.WarningOldViewDate <b>DD/MM/YYYY.</b></p>
         </div>
     </div>
