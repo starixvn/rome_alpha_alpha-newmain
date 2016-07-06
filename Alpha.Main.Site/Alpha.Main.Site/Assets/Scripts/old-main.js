@@ -46,24 +46,20 @@ function setCookie(name, value, days, domain) {
 
 window.age = window.age || {
     calculateWidthHeight: function (width, height, position) {
+        var realHeight = height;
         var maxWidth = window.top.window.innerWidth;
-        var maxHeight = window.top.window.innerHeight - (position ? position.top : 0) - 60;
-        width = width > maxWidth ? maxWidth : width;
-        height = height > maxHeight ? maxHeight : height;
 
         var minHeight = 250;
-        minHeight = height < minHeight ? height : minHeight;
-        if (height < minHeight) {
-            if (minHeight < height) {
-                height = minHeight;
-            } else {
-                height = height;
-            }
-        }
+        var maxHeight = window.top.window.innerHeight - (position ? position.top : 0) - 60;
+        maxHeight = maxHeight < minHeight ? minHeight : maxHeight;
+
+        width = width > maxWidth ? maxWidth : width;
+        realHeight = realHeight > maxHeight ? maxHeight : realHeight;
+        realHeight = realHeight < minHeight ? minHeight : realHeight;
 
         return {
             width: width,
-            height: height
+            height: realHeight
         };
     },
     OpenPopUp: function (url, title, width, height, position) {
@@ -239,24 +235,20 @@ var AgeWnd = function () {
         callback: [],
 
         calculateWidthHeight: function (width, height, position) {
+            var realHeight = height;
             var maxWidth = window.top.window.innerWidth;
-            var maxHeight = window.top.window.innerHeight - (position ? position.top : 0) - 60;
-            width = width > maxWidth ? maxWidth : width;
-            height = height > maxHeight ? maxHeight : height;
 
             var minHeight = 250;
-            minHeight = height < minHeight ? height : minHeight;
-            if (height < minHeight) {
-                if (minHeight < height) {
-                    height = minHeight;
-                } else {
-                    height = height;
-                }
-            }
+            var maxHeight = window.top.window.innerHeight - (position ? position.top : 0) - 60;
+            maxHeight = maxHeight < minHeight ? minHeight : maxHeight;
+
+            width = width > maxWidth ? maxWidth : width;
+            realHeight = realHeight > maxHeight ? maxHeight : realHeight;
+            realHeight = realHeight < minHeight ? minHeight : realHeight;
 
             return {
                 width: width,
-                height: height
+                height: realHeight
             };
         },
         open: function (url, title, left, popUpTop, width, height, callBack) {
@@ -349,7 +341,7 @@ var AgeWnd = function () {
             popUp.tinyDraggable();
 
             this.popUp.push(popUp);
-            this.callback.push();
+            this.callback.push(callBack);
         },
         close: function () {
             var popUp = this.popUp.pop();
@@ -482,7 +474,10 @@ function ShowSecCodePopup(preUrl) {
     }
 
     top.age.Lock();
-    top.ageWnd.open(url, '', y, x, popW, popH, function () {
+
+    var popupSecurityCode = top.ageWnd.createInstance();
+    top.popupSecurityCode = popupSecurityCode;
+    popupSecurityCode.open(url, '', x, y, popW, popH, function () {
         var c = top.frames.length;
         for (var i = 0; i < c; i++) {
             var w = top.frames[i];
@@ -820,6 +815,7 @@ function clearPopupSubtitle(hasSubTitle) {
         header_main = header_main || iframe.contentWindow.document.getElementById('header_main');
         header_main = header_main || iframe.contentWindow.document.getElementById('race-book-positiontaking-header');
         header_main = header_main || iframe.contentWindow.document.getElementById('title_header');
+        header_main = header_main || iframe.contentWindow.document.getElementById('button_hr');
 
         if (header_main) {
             header_main.style.display = 'none';
