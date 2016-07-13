@@ -409,4 +409,7 @@
   <data name="TakeTourInstruction" xml:space="preserve">
     <value>点击此图标可游览手册教学</value>
   </data>
+  <data name="QuickTourTooltip" xml:space="preserve">
+    <value>快速游览手册教学</value>
+  </data>
 </root>

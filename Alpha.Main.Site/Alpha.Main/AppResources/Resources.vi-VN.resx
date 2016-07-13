@@ -408,4 +408,7 @@
   <data name="TakeTourInstruction" xml:space="preserve">
     <value>Bạn có thể xem hướng dẫn bằng cách nhấn vào &lt;/p&gt;&lt;p&gt; biểu tượng này.</value>
   </data>
+  <data name="QuickTourTooltip" xml:space="preserve">
+    <value>Giới thiệu giao diện mới</value>
+  </data>
 </root>

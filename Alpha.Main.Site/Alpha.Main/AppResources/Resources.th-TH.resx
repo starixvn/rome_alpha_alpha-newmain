@@ -409,4 +409,7 @@
   <data name="TakeTourInstruction" xml:space="preserve">
     <value>คุณสามารถใช้คู่มือโดยการคลิกที่ไอคอนนี้</value>
   </data>
+  <data name="QuickTourTooltip" xml:space="preserve">
+    <value>คู่มือรวบรัด</value>
+  </data>
 </root>

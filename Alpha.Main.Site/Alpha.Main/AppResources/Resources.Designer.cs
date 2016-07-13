@@ -578,6 +578,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quick tour.
+        /// </summary>
+        public static string QuickTourTooltip {
+            get {
+                return ResourceManager.GetString("QuickTourTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Replay.
         /// </summary>
         public static string Replay {
