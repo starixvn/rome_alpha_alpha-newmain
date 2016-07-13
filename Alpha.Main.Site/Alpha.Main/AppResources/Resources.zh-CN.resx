@@ -334,4 +334,79 @@
   <data name="Skip" xml:space="preserve">
     <value>略过</value>
   </data>
+  <data name="BrowserIsOutOfDate" xml:space="preserve">
+    <value>您的浏览器已属逾期版本故未能全面支援我们的网站。 为了得到更全面的支援， 强烈建议您升级浏览器至新版本。</value>
+  </data>
+  <data name="ClickToUpdateBrowser" xml:space="preserve">
+    <value>点击此处升级浏览器。</value>
+  </data>
+  <data name="BackOldViewText" xml:space="preserve">
+    <value>还没熟悉新介面？</value>
+  </data>
+  <data name="ClickToBackOldView" xml:space="preserve">
+    <value>点击此处返回。</value>
+  </data>
+  <data name="WarningOldViewDate" xml:space="preserve">
+    <value>旧版本仅适用至</value>
+  </data>
+  <data name="WarningText" xml:space="preserve">
+    <value>警告：</value>
+  </data>
+  <data name="HomeIconIntroduction" xml:space="preserve">
+    <value>主页图标 - 连接至首页</value>
+  </data>
+  <data name="QuickMenuIntroduction" xml:space="preserve">
+    <value>快速连接至账号设定</value>
+  </data>
+  <data name="QuickMenu" xml:space="preserve">
+    <value>捷径菜单</value>
+  </data>
+  <data name="SwitchView" xml:space="preserve">
+    <value>转换游览</value>
+  </data>
+  <data name="BackOldViewIntroduction" xml:space="preserve">
+    <value>还没熟悉新介面？ 点击此处返回。</value>
+  </data>
+  <data name="WarningOldVersionDeadline" xml:space="preserve">
+    <value>备注： 旧版本仅适用至 </value>
+  </data>
+  <data name="MainMenuIntroduction" xml:space="preserve">
+    <value>逻辑序列， 全在一处</value>
+  </data>
+  <data name="CollapseExpandIcon" xml:space="preserve">
+    <value>缩小/扩展 图标</value>
+  </data>
+  <data name="CollapseExpandIconIntroduction" xml:space="preserve">
+    <value>点击以得扩展空</value>
+  </data>
+  <data name="MainIntroductionTitle" xml:space="preserve">
+    <value>体验与感受全新介面</value>
+  </data>
+  <data name="MainIntroductionDescription" xml:space="preserve">
+    <value>更全面与方便。</value>
+  </data>
+  <data name="NotNow" xml:space="preserve">
+    <value>不是现在</value>
+  </data>
+  <data name="QuickTour" xml:space="preserve">
+    <value>快速游览手册教学</value>
+  </data>
+  <data name="TransferMenuIntroduction" xml:space="preserve">
+    <value>在主菜单转账</value>
+  </data>
+  <data name="ViewLogMenuIntroduction" xml:space="preserve">
+    <value>在主菜单查看日志</value>
+  </data>
+  <data name="GotIt" xml:space="preserve">
+    <value>明白了</value>
+  </data>
+  <data name="Replay" xml:space="preserve">
+    <value>重播</value>
+  </data>
+  <data name="ReplayInstruction" xml:space="preserve">
+    <value>点击此图标可重播游览手册教学</value>
+  </data>
+  <data name="TakeTourInstruction" xml:space="preserve">
+    <value>点击此图标可游览手册教学</value>
+  </data>
 </root>

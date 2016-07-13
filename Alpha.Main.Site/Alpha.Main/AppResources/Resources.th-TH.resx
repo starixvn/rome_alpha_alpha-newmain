@@ -334,4 +334,79 @@
   <data name="Skip" xml:space="preserve">
     <value>ผ่าน</value>
   </data>
+  <data name="BrowserIsOutOfDate" xml:space="preserve">
+    <value>เบราว์เซอร์ของคุณล้าสมัยและอาจจะไม่ได้ทำงานอย่างถูกต้องกับเว็บไซต์ของเรา. สำหรับการสนับสนุนที่ดีเราขอแนะนำให้คุณอัปเกรดเป็นเวอร์ชันใหม่.</value>
+  </data>
+  <data name="ClickToUpdateBrowser" xml:space="preserve">
+    <value>กรุณาคลิกที่นี่เพื่ออัปเดตเบราว์เซอร์</value>
+  </data>
+  <data name="BackOldViewText" xml:space="preserve">
+    <value>ยังไม่คุ้นเคยกับรูปลักษณ์ใหม่?</value>
+  </data>
+  <data name="ClickToBackOldView" xml:space="preserve">
+    <value>คลิกที่นี่เพื่อย้อนกลับ</value>
+  </data>
+  <data name="WarningOldViewDate" xml:space="preserve">
+    <value>รุ่นเก่าจะใช้ได้ถึงวันที่</value>
+  </data>
+  <data name="WarningText" xml:space="preserve">
+    <value>คำเตือน:</value>
+  </data>
+  <data name="HomeIconIntroduction" xml:space="preserve">
+    <value>ไอคอนหน้าแรก - การเข้าถึงหน้าแรก</value>
+  </data>
+  <data name="QuickMenuIntroduction" xml:space="preserve">
+    <value>การเข้าถึงการตั้งค่าบัญชีอย่างรวดเร็ว</value>
+  </data>
+  <data name="QuickMenu" xml:space="preserve">
+    <value>เมนูลัด</value>
+  </data>
+  <data name="SwitchView" xml:space="preserve">
+    <value>สลับมุมมอง</value>
+  </data>
+  <data name="BackOldViewIntroduction" xml:space="preserve">
+    <value>ยังไม่คุ้นเคยกับรูปลักษณ์ใหม่? คลิกที่นี่เพื่อย้อนกลับ</value>
+  </data>
+  <data name="WarningOldVersionDeadline" xml:space="preserve">
+    <value>หมายเหตุ: รุ่นเก่าจะใช้ได้ถึงวันที่ </value>
+  </data>
+  <data name="MainMenuIntroduction" xml:space="preserve">
+    <value>ลำดับตรรกะทั้งหมดในที่เดียว</value>
+  </data>
+  <data name="CollapseExpandIcon" xml:space="preserve">
+    <value>ลด / ขยายไอคอน</value>
+  </data>
+  <data name="CollapseExpandIconIntroduction" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มพื้นที่ว่าง</value>
+  </data>
+  <data name="MainIntroductionTitle" xml:space="preserve">
+    <value>สัมผัสกับรูปลักษณ์ใหม่และความรู้สึกใหม่</value>
+  </data>
+  <data name="MainIntroductionDescription" xml:space="preserve">
+    <value>สะดวกสบายและครอบคลุมมากขึ้น</value>
+  </data>
+  <data name="NotNow" xml:space="preserve">
+    <value>ไม่ใช่ตอนนี้</value>
+  </data>
+  <data name="QuickTour" xml:space="preserve">
+    <value>คู่มือรวบรัด</value>
+  </data>
+  <data name="TransferMenuIntroduction" xml:space="preserve">
+    <value>โอนจากเมนูหลัก</value>
+  </data>
+  <data name="ViewLogMenuIntroduction" xml:space="preserve">
+    <value>ดูบันทึกจากเมนูหลัก</value>
+  </data>
+  <data name="GotIt" xml:space="preserve">
+    <value>เข้าใจ</value>
+  </data>
+  <data name="Replay" xml:space="preserve">
+    <value>เล่นใหม่</value>
+  </data>
+  <data name="ReplayInstruction" xml:space="preserve">
+    <value>คุณสามารถรีเพลคู่มือโดยการคลิกที่ไอคอนนี้</value>
+  </data>
+  <data name="TakeTourInstruction" xml:space="preserve">
+    <value>คุณสามารถใช้คู่มือโดยการคลิกที่ไอคอนนี้</value>
+  </data>
 </root>

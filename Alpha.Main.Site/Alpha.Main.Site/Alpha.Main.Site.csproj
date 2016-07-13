@@ -384,7 +384,6 @@
     <Content Include="App_Themes\Apo\Security\images\x5.gif" />
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
-    <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.css" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.js" />

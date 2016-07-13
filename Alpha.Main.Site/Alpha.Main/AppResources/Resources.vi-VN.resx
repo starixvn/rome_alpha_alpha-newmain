@@ -333,4 +333,79 @@
   <data name="Skip" xml:space="preserve">
     <value>Bỏ qua</value>
   </data>
+  <data name="BrowserIsOutOfDate" xml:space="preserve">
+    <value>Trình duyệt của bạn đã lỗi thời và có thể không tương thích tốt với website. Để được hỗ trợ tốt hơn, bạn nên nâng cấp lên một phiên bản mới. Vui lòng</value>
+  </data>
+  <data name="ClickToUpdateBrowser" xml:space="preserve">
+    <value>nhấn vào đây để nâng cấp</value>
+  </data>
+  <data name="BackOldViewText" xml:space="preserve">
+    <value>Chưa quen với các tính năng mới?</value>
+  </data>
+  <data name="ClickToBackOldView" xml:space="preserve">
+    <value>Nhấn vào đây để quay lại phiên bản cũ</value>
+  </data>
+  <data name="WarningOldViewDate" xml:space="preserve">
+    <value>Phiên bản cũ sẽ được duy trì đến hết ngày</value>
+  </data>
+  <data name="WarningText" xml:space="preserve">
+    <value>Lưu ý:</value>
+  </data>
+  <data name="HomeIconIntroduction" xml:space="preserve">
+    <value>Biểu tượng Trang Chủ - truy cập vào trang chủ</value>
+  </data>
+  <data name="QuickMenuIntroduction" xml:space="preserve">
+    <value>Truy cập nhanh vào Thiết Lập Tài Khoản</value>
+  </data>
+  <data name="QuickMenu" xml:space="preserve">
+    <value>Menu Nhanh</value>
+  </data>
+  <data name="SwitchView" xml:space="preserve">
+    <value>Chuyển đổi giao diện</value>
+  </data>
+  <data name="BackOldViewIntroduction" xml:space="preserve">
+    <value>Chưa quen với các tính năng mới?&lt;/p&gt;&lt;p&gt;Nhấn vào đây để quay lại phiên bản cũ.</value>
+  </data>
+  <data name="WarningOldVersionDeadline" xml:space="preserve">
+    <value>Lưu ý: Phiên bản cũ sẽ được duy trì đến hết ngày &lt;/p&gt;&lt;p&gt;</value>
+  </data>
+  <data name="MainMenuIntroduction" xml:space="preserve">
+    <value>Sắp xếp hợp lý, tất cả trong một nơi</value>
+  </data>
+  <data name="CollapseExpandIcon" xml:space="preserve">
+    <value>Thu gọn/Mở rộng</value>
+  </data>
+  <data name="CollapseExpandIconIntroduction" xml:space="preserve">
+    <value>Nhấn vào đây để giải phóng không gian</value>
+  </data>
+  <data name="MainIntroductionTitle" xml:space="preserve">
+    <value>Trải nghiệm giao diện mới</value>
+  </data>
+  <data name="MainIntroductionDescription" xml:space="preserve">
+    <value>Trực quan và thuận tiện hơn</value>
+  </data>
+  <data name="NotNow" xml:space="preserve">
+    <value>Khi khác</value>
+  </data>
+  <data name="QuickTour" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
+  <data name="TransferMenuIntroduction" xml:space="preserve">
+    <value>Chuyển Khoản nằm trong Menu Chính</value>
+  </data>
+  <data name="ViewLogMenuIntroduction" xml:space="preserve">
+    <value>Nhật Ký nằm trong Menu Chính</value>
+  </data>
+  <data name="GotIt" xml:space="preserve">
+    <value>Đã rõ</value>
+  </data>
+  <data name="Replay" xml:space="preserve">
+    <value>Xem lại</value>
+  </data>
+  <data name="ReplayInstruction" xml:space="preserve">
+    <value>Bạn có thể xem lại hướng dẫn này bằng cách nhấn vào &lt;/p&gt;&lt;p&gt; biểu tượng này.</value>
+  </data>
+  <data name="TakeTourInstruction" xml:space="preserve">
+    <value>Bạn có thể xem hướng dẫn bằng cách nhấn vào &lt;/p&gt;&lt;p&gt; biểu tượng này.</value>
+  </data>
 </root>

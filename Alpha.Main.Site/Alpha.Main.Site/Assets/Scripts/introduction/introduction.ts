@@ -187,7 +187,7 @@ var introduction = {
                     introduction.domElements.oldViewLink.data('old-link', introduction.domElements.oldViewLink.attr('href'));
                     introduction.domElements.oldViewLink.attr('href', '#');
                 },
-                addLeftOffset: 50
+                addLeftOffset: 70
             },
             {
                 "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +

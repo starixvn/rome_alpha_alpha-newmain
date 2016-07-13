@@ -106,15 +106,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quick Tour.
-        /// </summary>
-        public static string AlphaTour {
-            get {
-                return ResourceManager.GetString("AlphaTour", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Announcement.
         /// </summary>
         public static string announcement {
@@ -124,7 +115,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not familiar with this new interface? Click here to get back..
+        ///   Looks up a localized string similar to Not yet familiar with this new interface? Click here to get back..
         /// </summary>
         public static string BackOldViewIntroduction {
             get {
