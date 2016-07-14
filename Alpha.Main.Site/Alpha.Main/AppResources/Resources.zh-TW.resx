@@ -335,7 +335,7 @@
     <value>略過</value>
   </data>
   <data name="BrowserIsOutOfDate" xml:space="preserve">
-    <value>您的瀏覽器已屬逾期版本故未能全面支援我們的網站。 為了得到更全面的支援， 強烈建議您升級瀏覽器至新版本</value>
+    <value>您的瀏覽器已屬逾期版本故未能全面支援我們的網站。 為了得到更全面的支援， 強烈建議您升級瀏覽器至新版本。</value>
   </data>
   <data name="ClickToUpdateBrowser" xml:space="preserve">
     <value>點擊此處升級瀏覽器</value>

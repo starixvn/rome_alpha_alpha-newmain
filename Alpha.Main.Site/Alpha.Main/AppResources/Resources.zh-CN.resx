@@ -338,13 +338,13 @@
     <value>您的浏览器已属逾期版本故未能全面支援我们的网站。 为了得到更全面的支援， 强烈建议您升级浏览器至新版本。</value>
   </data>
   <data name="ClickToUpdateBrowser" xml:space="preserve">
-    <value>点击此处升级浏览器。</value>
+    <value>点击此处升级浏览器</value>
   </data>
   <data name="BackOldViewText" xml:space="preserve">
     <value>还没熟悉新介面？</value>
   </data>
   <data name="ClickToBackOldView" xml:space="preserve">
-    <value>点击此处返回。</value>
+    <value>点击此处返回</value>
   </data>
   <data name="WarningOldViewDate" xml:space="preserve">
     <value>旧版本仅适用至</value>
