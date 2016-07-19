@@ -736,8 +736,8 @@ function reloadPopUpSetting(timeOut) {
     }
 
     function doReloadMainFrame() {
-        var isCustomerList = top.main.$("arrayCustID") && top.main.$("arrayCustID").length &&
-            top.main.$("arrayUserName") && top.main.$("arrayUserName").length;
+        var isCustomerList = top.main.$("arrayCustID") && top.main.$("arrayCustID").value.length &&
+            top.main.$("arrayUserName") && top.main.$("arrayUserName").value.length;
         if (isCustomerList) {
             var arrayCustId = top.main.$("arrayCustID").value;
             var arrayUserName = top.main.$("arrayUserName").value;
