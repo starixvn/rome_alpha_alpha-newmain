@@ -109,10 +109,10 @@
     <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
     <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Super/MasterList.aspx" functionType="[C]" roles="Super"></siteMapNode>
     <siteMapNode resourceKey="viewLog" menuItemType="ViewLogMenuItem" functionType="[G]">
-      <siteMapNode resourceKey="customerSetting" appPath="ViewLogsAppPath" url="CustomerSettingLogs"></siteMapNode>
-      <siteMapNode resourceKey="status" appPath="ViewLogsAppPath" url="StatusLogs"></siteMapNode>
-      <siteMapNode resourceKey="credit" appPath="ViewLogsAppPath" url="CreditLogs"></siteMapNode>
-      <siteMapNode resourceKey="login" appPath="ViewLogsAppPath" url="LoginLogs"></siteMapNode>
+      <siteMapNode resourceKey="customerSetting" appPath="ViewLogsAppPath" url="CustomerSetting"></siteMapNode>
+      <siteMapNode resourceKey="status" appPath="ViewLogsAppPath" url="Status"></siteMapNode>
+      <siteMapNode resourceKey="credit" appPath="ViewLogsAppPath" url="Credit"></siteMapNode>
+      <siteMapNode resourceKey="login" appPath="ViewLogsAppPath" url="Login"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="announcements">
       <siteMapNode resourceKey="normal" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=" byPassAuthorization="true"></siteMapNode>
