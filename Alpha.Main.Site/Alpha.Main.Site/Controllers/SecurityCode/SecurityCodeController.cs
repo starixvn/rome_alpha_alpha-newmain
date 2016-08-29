@@ -84,7 +84,7 @@
                 ? _securityCodeService.MD5Salt(this.securityCodeSession.SubAccId)
                 : _securityCodeService.MD5Salt(this.securityCodeSession.CustId);
 
-            return View("~/Areas/Security/Views/SecurityCode/ForceChangeSecurityCode.cshtml");
+            return View("~/Views/SecurityCode/ForceChangeSecurityCode.cshtml");
         }
 
         /// <summary>
@@ -94,7 +94,7 @@
         [HttpGet]
         public ActionResult ForceChangeSecurityCodeWithoutValidation()
         {
-            return View("~/Areas/Security/Views/SecurityCode/ForceChangeSecurityCodeWithoutValidation.cshtml");
+            return View("~/Views/SecurityCode/ForceChangeSecurityCodeWithoutValidation.cshtml");
         }
 
         /// <summary>
@@ -111,7 +111,7 @@
                 ? _securityCodeService.MD5Salt(this.securityCodeSession.SubAccId)
                 : _securityCodeService.MD5Salt(this.securityCodeSession.CustId);
 
-            return View("~/Areas/Security/Views/SecurityCode/VerifySecurityCode.cshtml");
+            return View("~/Views/SecurityCode/VerifySecurityCode.cshtml");
         }
 
         /// <summary>
@@ -136,7 +136,7 @@
             ViewBag.Language = this.securityCodeSession.Language;
             ViewBag.VirtualDirectory = ConfigurationManager.AppSettings["VirtualDirectory"];
 
-            return View("~/Areas/Security/Views/SecurityCode/ChangeSecurityCode.cshtml");
+            return View("~/Views/SecurityCode/ChangeSecurityCode.cshtml");
         }
 
         /// <summary>
@@ -154,14 +154,14 @@
 
             ViewBag.Language = this.securityCodeSession.Language;
             ViewBag.VirtualDirectory = ConfigurationManager.AppSettings["VirtualDirectory"];
-            return View("~/Areas/Security/Views/SecurityCode/ResetSecurityCode.cshtml");
+            return View("~/Views/SecurityCode/ResetSecurityCode.cshtml");
         }
 
         [HttpGet]
         public ActionResult HowToUse()
         {
             string language = this.securityCodeSession.Language;
-            return View("~/Areas/Security/Views/SecurityCode/HowToUse/SecurityCode_" + language + ".cshtml");
+            return View("~/Views/SecurityCode/HowToUse/SecurityCode_" + language + ".cshtml");
         }
 
         /// <summary>
