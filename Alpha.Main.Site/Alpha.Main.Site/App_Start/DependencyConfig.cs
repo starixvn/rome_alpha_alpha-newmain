@@ -1,20 +1,14 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Reflection;
-    using System.Web;
-    using System.Web.Mvc;
-    using System.Web.SessionState;
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
-    using Fanex.Razorbill.Security.Sessions;
     using Handlers;
     using Main.Helpers;
     using Main.Helpers.Impl;
     using Main.Models.Menus;
     using MediatR;
+    using SecurityCode.Sessions;
     using Services;
     using Services.Impl;
     using SimpleInjector;
@@ -22,6 +16,12 @@
     using SimpleInjector.Integration.Web.Mvc;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Reflection;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.SessionState;
 
     public static class DependencyConfig
     {
@@ -112,6 +112,7 @@
         {
             container.RegisterPerWebRequest<IDynamicRepository, DynamicRepository>();
             container.RegisterPerWebRequest<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>();
+            container.Register<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>(Lifestyle.Transient);
         }
     }
 }

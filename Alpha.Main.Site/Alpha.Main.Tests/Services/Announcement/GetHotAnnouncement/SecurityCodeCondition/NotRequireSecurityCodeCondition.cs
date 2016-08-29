@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.SecurityCodeCondition
 {
-    using Fanex.Razorbill.Security.Sessions;
     using NSubstitute;
-
+    using SecurityCode.Sessions;
     public class NotRequireSecurityCodeCondition : SecurityCodeBaseCondition
     {
         public NotRequireSecurityCodeCondition()

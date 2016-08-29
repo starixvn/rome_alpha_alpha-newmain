@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using Fanex.Razorbill.Security.Sessions;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
+    using SecurityCode.Sessions;
     using Services;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;

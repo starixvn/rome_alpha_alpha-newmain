@@ -36,6 +36,10 @@
       <HintPath>..\packages\Alpha.Auth.3.0.0.7\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Alpha.SecurityCode, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.2\lib\net40\Alpha.SecurityCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -56,10 +60,6 @@
       <HintPath>..\packages\Fanex.CustomerSetting.Module.KenoStatus.1.0.0.2\lib\net40\Fanex.CustomerSetting.Module.KenoStatus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.CustomerSetting.Security, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.CustomerSetting.Security.1.0.0.1\lib\net40\Fanex.CustomerSetting.Security.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Fanex.Data, Version=0.5.404.63, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Data.0.5.404.63\lib\net40\Fanex.Data.dll</HintPath>
       <Private>True</Private>
@@ -74,10 +74,6 @@
     </Reference>
     <Reference Include="Fanex.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Logging.1.0.0.0\lib\net40\Fanex.Logging.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Fanex.Razorbill.Security, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Razorbill.Security.3.0.0.2\lib\net40\Fanex.Razorbill.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -139,6 +135,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="AppResources\SecurityCode.Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SecurityCode.Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
@@ -148,6 +149,9 @@
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
     <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
+    <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
+    <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
+    <Compile Include="Encryption\Encryptor.cs" />
     <Compile Include="FunctionRegistry.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\AppPathHelper.cs" />
@@ -168,6 +172,9 @@
     <Compile Include="Models\Menus\MenuItemBuilder.cs" />
     <Compile Include="Models\Menus\MenuItemBuilderImpl.cs" />
     <Compile Include="Models\Menus\MenuStatus.cs" />
+    <Compile Include="Models\SecurityCode\CustomerPermissionResult.cs" />
+    <Compile Include="Models\SecurityCode\Result.cs" />
+    <Compile Include="Models\SecurityCode\UserRole.cs" />
     <Compile Include="Params\Announcements\GetHotAnnouncementsParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppResources\Alpha.sitemap.Designer.cs">
@@ -211,6 +218,12 @@
     <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-TW.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\SecurityCode.Resources.ja-JP.resx" />
+    <EmbeddedResource Include="AppResources\SecurityCode.Resources.ko-KR.resx" />
+    <EmbeddedResource Include="AppResources\SecurityCode.Resources.th-TH.resx" />
+    <EmbeddedResource Include="AppResources\SecurityCode.Resources.vi-VN.resx" />
+    <EmbeddedResource Include="AppResources\SecurityCode.Resources.zh-CN.resx" />
+    <EmbeddedResource Include="AppResources\SecurityCode.Resources.zh-TW.resx" />
     <EmbeddedResource Include="AppResources\Resources.ja-JP.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -233,6 +246,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.zh-TW.resx">
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\SecurityCode.Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SecurityCode.Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -1,14 +1,14 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Web.Mvc;
-    using Fanex.Razorbill.Security.Sessions;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
+    using SecurityCode.Sessions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
-
+    using System.Web.Mvc;
+    using System.Web.SessionState;
     public class DefaultController : BaseController
     {
         private readonly IUserSession userSession;

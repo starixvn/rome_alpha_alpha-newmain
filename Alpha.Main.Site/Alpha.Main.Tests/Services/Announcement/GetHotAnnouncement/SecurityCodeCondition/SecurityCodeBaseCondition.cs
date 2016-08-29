@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.SecurityCodeCondition
 {
-    using Fanex.Razorbill.Security.Sessions;
     using Params.Announcements;
-
+    using SecurityCode.Sessions;
     public class SecurityCodeBaseCondition
     {
         public ISecurityCodeSession SecurityCodeSession { get; set; }

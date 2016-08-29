@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="alertEmptySecCode" xml:space="preserve">
+    <value>Your Security Code was cleaned by your upline/admin.
+Please use the form below to set your Security Code again.</value>
+  </data>
+  <data name="alertErrorSecCodeConfirm" xml:space="preserve">
+    <value>Mã bảo mật xác nhận không chính xác.</value>
+  </data>
+  <data name="alertForcedChangeSCTitle" xml:space="preserve">
+    <value>Bạn buộc phải thay đổi Mã bảo mật. Mã bảo mật mới phải khác với Mã bảo mật mà bạn đã nhận được từ CSD hoặc cấp trên của bạn.</value>
+  </data>
+  <data name="alertForcedChangeSCWithoutValidationTitle" xml:space="preserve">
+    <value>Bạn cần thiết lập mã bảo vệ để xác thực sau mỗi lần đăng nhập.&lt;br/&gt;
+Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
+  </data>
+  <data name="alertInputWrongSecCode" xml:space="preserve">
+    <value>Bạn đã cung cấp sai Mã bảo mật. Vui lòng thử lại.</value>
+  </data>
+  <data name="alertOldSecCodeEmpty" xml:space="preserve">
+    <value>Vui lòng nhập Mã bảo mật hiện tại</value>
+  </data>
+  <data name="alertSameSecCode" xml:space="preserve">
+    <value>Mã bảo mật mới phải khác với Mã bảo mật hiện tại.</value>
+  </data>
+  <data name="alertSecCodeChangedOK" xml:space="preserve">
+    <value>Mã bảo mật đã được thay đổi thành công.</value>
+  </data>
+  <data name="alertSecCodeEmpty" xml:space="preserve">
+    <value>Mã bảo mật phải có giá trị, không thể trống</value>
+  </data>
+  <data name="ConfirmSecurityCode" xml:space="preserve">
+    <value>Xác nhận mã bảo mật mới</value>
+  </data>
+  <data name="contactMessage" xml:space="preserve">
+    <value>Nếu bạn chưa có Mã bảo mật, vui lòng liên hệ cấp trên của bạn hoặc bộ phận CSD.</value>
+  </data>
+  <data name="forceChangeSecCode" xml:space="preserve">
+    <value>Tính bảo mật và quyền riêng tư của bạn là điều quan trọng đối với chúng tôi. Do vậy, chúng tôi không ngừng nâng cao mức độ bảo mật để bảo vệ an toàn cho dữ liệu của bạn. Vì thế, chúng tôi đã quyết định thực hiện 1 tính năng mới là Mã bảo mật. Mã bảo mật có thể được xem như là một mật mã thứ hai và sẽ yêu cầu bạn nhập vào khi thực thi các thao tác có mức độ rủi ro cao (ví dụ: đổi mật mã, mở lại tài khoản bị đóng, v.v.)&lt;br/&gt;
+Vui lòng điền vào mẩu bên dưới để thiết lập giá trị cho Mã bảo mật.&lt;br/&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="informSecCode" xml:space="preserve">
+    <value>Vui lòng nhập Mã bảo mật trước khi thực hiện các thiết lập!</value>
+  </data>
+  <data name="lblRequiredSecCode" xml:space="preserve">
+    <value>&lt;p&gt;Mã bảo mật phải:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;* Chỉ toàn ký tự số.&lt;/li&gt;&lt;li&gt;* Là số có 6 ký tự số kết hợp từ [0-9].&lt;/li&gt;&lt;li&gt;* Có ít nhất 2 ký tự khác nhau trong Mã bảo mật.&lt;/li&gt;&lt;li&gt;* Không phải là số gồm những ký tự tăng dần hoặc giảm dần từ trái sang phải.&lt;/li&gt;&lt;ul&gt;&lt;li&gt;+ Ví dụ: không cho phép 123456, 456789, 765432, v.v.&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;</value>
+  </data>
+  <data name="lblSecCodeWrongRule" xml:space="preserve">
+    <value>Mã bảo mật do bạn cung cấp không thỏa quy tắc đặt ra.</value>
+  </data>
+  <data name="oldSecCode" xml:space="preserve">
+    <value>Mã bảo mật cũ</value>
+  </data>
+  <data name="secCodeGuide" xml:space="preserve">
+    <value>Vui lòng thực hiện việc lựa chọn Mã bảo mật theo 3 bước như sau:&lt;br/&gt;
+1. Chọn Mã bảo mật mà bạn muốn&lt;br/&gt;
+2. Nhấp chuột vào nút Xác nhận để gởi đi&lt;br/&gt;
+3. Hệ thống sẽ yêu cầu bạn nhập vào Mã bảo mật mà bạn đã được nhận từ CSD hoặc cấp trên của bạn để chứng thực &lt;br/&gt;
+Chú ý: Mã bảo mật mới phải khác với Mã bảo mật bạn nhận được từ CSD hoặc cấp trên của bạn</value>
+  </data>
+  <data name="SecurityCode" xml:space="preserve">
+    <value>Mã bảo mật</value>
+  </data>
+  <data name="titleFirstTimeSecCode" xml:space="preserve">
+    <value>Security Code</value>
+  </data>
+  <data name="titleProvideSecCode" xml:space="preserve">
+    <value>Please provide Security Code</value>
+  </data>
+  <data name="titleResetSecCode" xml:space="preserve">
+    <value>Thay đổi Mã bảo mật</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="titleVerifySecurityCode" xml:space="preserve">
+    <value>Security Code Validation</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Vui lòng tìm hiểu thêm tại đây</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mật Khẩu</value>
+  </data>
+  <data name="SecurityCodeValidation" xml:space="preserve">
+    <value>Security Code Validation</value>
+  </data>
+  <data name="NotAuthorized" xml:space="preserve">
+    <value>Bạn không được cho phép sử dụng chức năng này</value>
+  </data>
+  <data name="NewSecurityCode" xml:space="preserve">
+    <value>Mã bảo mật mới</value>
+  </data>
+</root>

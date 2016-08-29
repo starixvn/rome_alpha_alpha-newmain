@@ -3,11 +3,11 @@
     using Alpha.Main.Services.Impl;
     using Announcement.GetHotAnnouncement.LocalFileCondition;
     using Announcement.GetHotAnnouncement.LogInAndSettingChangedTest;
-    using Fanex.Razorbill.Security.Sessions;
     using Main.Constants;
     using NSubstitute;
     using NUnit.Framework;
     using Params.Announcements;
+    using SecurityCode.Sessions;
     using System;
     using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
     using NotAgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest;

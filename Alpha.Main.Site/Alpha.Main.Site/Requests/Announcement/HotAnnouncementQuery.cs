@@ -3,12 +3,12 @@
     using System;
     using System.Collections.Generic;
     using System.Web;
-    using Fanex.Razorbill.Security.Configurations;
     using Main.Models.Announcements;
     using Main.Models.Enumerations;
     using MediatR;
     using Params.Announcements;
     using Sunplus.Agent.Model.Base;
+    using SecurityCode.Configurations;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 

@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using Constants;
-    using Fanex.Razorbill.Security.Sessions;
     using Main.Models.Announcements;
     using Models.Requests.Announcement;
     using NSubstitute;
     using NUnit.Framework;
     using Params.Announcements;
+    using SecurityCode.Sessions;
     using Services;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;

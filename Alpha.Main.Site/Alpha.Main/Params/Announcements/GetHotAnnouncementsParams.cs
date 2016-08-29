@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Params.Announcements
 {
+    using SecurityCode.Configurations;
+    using SecurityCode.Entities;
+    using SecurityCode.Sessions;
     using System.Collections.Generic;
-    using Fanex.Razorbill.Security.Configurations;
-    using Fanex.Razorbill.Security.Entities;
-    using Fanex.Razorbill.Security.Sessions;
 
     public class GetHotAnnouncementsParams
     {

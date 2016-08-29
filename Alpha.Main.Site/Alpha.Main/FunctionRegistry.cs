@@ -1,19 +1,18 @@
 ﻿namespace Alpha.Main
 {
+    using Helpers;
+    using Models.Menus;
+    using SecurityCode.Configurations;
+    using SecurityCode.Entities;
+    using SecurityCode.Sessions;
+    using Sunplus.Agent.Model.BL.Definitions;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
-    using Fanex.Razorbill.Security.Configurations;
-    using Fanex.Razorbill.Security.Entities;
-    using Fanex.Razorbill.Security.Sessions;
-    using Helpers;
-    using Models.Menus;
-    using Sunplus.Agent.Model.BL.Definitions;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
-
     public static class FunctionRegistry
     {
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]

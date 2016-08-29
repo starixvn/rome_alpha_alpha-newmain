@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement
 {
     using Alpha.Main.Services;
-    using Fanex.Razorbill.Security.Entities;
-    using Fanex.Razorbill.Security.Sessions;
     using NSubstitute;
     using Params.Announcements;
+    using SecurityCode.Entities;
+    using SecurityCode.Sessions;
     using System.Collections.Generic;
 
     public class ShowedMessageCondition
