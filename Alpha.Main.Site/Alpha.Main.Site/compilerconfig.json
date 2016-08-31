@@ -1,38 +1,52 @@
-﻿[
+[
   {
     "outputFile": "Assets/Styles/home/popup-message.css",
-    "inputFile": "Assets/Styles/home/popup-message.scss"
+    "inputFile": "Assets/Styles/home/popup-message.scss",
+    "sourceMap": false
   },
   {
     "outputFile": "Assets/Styles/home/old-main.css",
-    "inputFile": "Assets/Styles/home/old-main.scss"
+    "inputFile": "Assets/Styles/home/old-main.scss",
+    "sourceMap": false
   },
   {
     "outputFile": "Assets/Styles/home/page.css",
-    "inputFile": "Assets/Styles/home/page.scss"
+    "inputFile": "Assets/Styles/home/page.scss",
+    "sourceMap": false
   },
   {
     "outputFile": "Assets/Styles/home/tooltip.css",
-    "inputFile": "Assets/Styles/home/tooltip.scss"
+    "inputFile": "Assets/Styles/home/tooltip.scss",
+    "sourceMap": false
   },
   {
     "outputFile": "Assets/Styles/customer-profiles/customer-profile.css",
-    "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss"
+    "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss",
+    "sourceMap": false
   },
   {
     "outputFile": "Assets/Styles/announcement/announcements.css",
-    "inputFile": "Assets/Styles/announcement/announcements.scss"
+    "inputFile": "Assets/Styles/announcement/announcements.scss",
+    "sourceMap": false
   },
   {
     "outputFile": "Assets/styles/home/pageIElower10.css",
-    "inputFile": "Assets/styles/home/pageIElower10.scss"
+    "inputFile": "Assets/styles/home/pageIElower10.scss",
+    "sourceMap": false
   },
   {
     "outputFile": "Assets/styles/introduction/intro.css",
-    "inputFile": "Assets/styles/introduction/intro.scss"
+    "inputFile": "Assets/styles/introduction/intro.scss",
+    "sourceMap": false
   },
   {
     "outputFile": "Assets/styles/introduction/enjoyhint.css",
-    "inputFile": "Assets/styles/introduction/enjoyhint.scss"
+    "inputFile": "Assets/styles/introduction/enjoyhint.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "Assets/styles/securitycode/SC.css",
+    "inputFile": "Assets/styles/securitycode/SC.scss",
+    "sourceMap": false
   }
 ]
