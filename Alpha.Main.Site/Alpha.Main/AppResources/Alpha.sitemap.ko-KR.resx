@@ -297,9 +297,6 @@
   <data name="announcements" xml:space="preserve">
     <value>Announcements</value>
   </data>
-  <data name="customerSetting" xml:space="preserve">
-    <value>회원설정</value>
-  </data>
   <data name="login" xml:space="preserve">
     <value>로그인</value>
   </data>
@@ -344,5 +341,8 @@
   </data>
   <data name="credit" xml:space="preserve">
     <value>Credit</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>설정</value>
   </data>
 </root>

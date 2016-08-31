@@ -297,9 +297,6 @@
   <data name="announcements" xml:space="preserve">
     <value>Thông Báo</value>
   </data>
-  <data name="customerSetting" xml:space="preserve">
-    <value>Thiết lập</value>
-  </data>
   <data name="login" xml:space="preserve">
     <value>Đăng nhập</value>
   </data>
@@ -344,6 +341,9 @@
   </data>
   <data name="credit" xml:space="preserve">
     <value>Tín dụng</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Thiết lập</value>
   </data>
   <data name="BetChoiceLimit" xml:space="preserve">
     <value>Giới hạn lựa chọn</value>
