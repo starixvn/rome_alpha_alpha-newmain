@@ -125,24 +125,30 @@
             var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
             var oldStatus = Current.SecurityCodeResult;
 
-            var securityCodeUrl = string.Empty; 
+            var securityCodeUrl = string.Empty;
 
-                switch (status)
-                {
-                    case SecurityCodeStatus.FORCED_CHANGE_SC:
-                    securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCode");
-                    // return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCode");
-                    break;
+            return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCode");
+            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeWithoutValidation");
+            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
+            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ResetSecurityCode");
+            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ChangeSecurityCode");
 
-                    case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-                    securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeWithoutValidation");
-                    //return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
-                    break;
+            //switch (status)
+            //    {
+            //        case SecurityCodeStatus.FORCED_CHANGE_SC:
+            //        securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCode");
+            //        // return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCode");
+            //        break;
 
-                default:
-                    securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
-                    return securityCodeUrl;
-            }
+            //        case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
+            //        securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeWithoutValidation");
+            //        //return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
+            //        break;
+
+            //    default:
+            //        securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
+            //        return securityCodeUrl;
+            //}
             
 
            
