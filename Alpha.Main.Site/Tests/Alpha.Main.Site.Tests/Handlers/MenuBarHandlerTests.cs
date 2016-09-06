@@ -1,8 +1,5 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using Main.Models.Enumerations;
     using Main.Models.Menus;
     using Models.Requests;
@@ -10,6 +7,9 @@
     using NUnit.Framework;
     using Services;
     using Site.Handlers;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     [TestFixture]
     public class MenuBarHandlerTests

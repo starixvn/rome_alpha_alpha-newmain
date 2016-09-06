@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "~/Views/SecurityCodeNewMain/Shared/_Layout.cshtml";
+
+@section css {
+    @Styles.Render("~/App_Themes/Apo/Common/Agent.min.css")
+}
+
+@section js {
+    @System.Web.Optimization.Scripts.Render("~/bundles/resetsecuritycode-js?v=12")
+    <script type="text/javascript">
+        var custid = '@Request["custid"]';
+        var subaccid = '@Request["subaccid"]';
+        var securityCodeResource = {
+            alertSecCodeEmpty: '@SecurityCode_Resources.alertSecCodeEmpty',
+            alertSecCodeWrongRule: '@SecurityCode_Resources.lblSecCodeWrongRule',
+            alertErrorSecCodeConfirm: '@SecurityCode_Resources.alertErrorSecCodeConfirm'
+        };
+    </script>
+}
+<div class="container-wrap">
+    <div id="header_main">@SecurityCode_Resources.SecurityCode</div>
+    @using (Html.BeginForm("ResetSecurityCode", "SecurityCode", System.Web.Mvc.FormMethod.Post,
+                                                                     new { id = "frmResetSecurityCode" }))
+    {
+        @Html.Partial("../Shared/_HeaderMessage", null)
+        <table class="tbl-security">
+            <tr>
+                <td colspan="2" class="subTitle bold">@(SecurityCode_Resources.titleResetSecCode + " - " + Request["username"])</td>
+            </tr>
+            <tr>
+                <td class="widthPercent40">@SecurityCode_Resources.SecurityCode</td>
+                <td>
+                    <input id="txtSecCode" onkeyup="return validateSecurityCode(this, 'spnNewPwdIcon');" type="password" name="securityCode" autocomplete="off" maxlength="6" class="txt hasBorder" />
+                    <span id="spnNewPwdIcon" class="">&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td>@SecurityCode_Resources.ConfirmSecurityCode</td>
+                <td>
+                    <input id="txtConfirmSecCode" onkeyup="return validateSecurityCode(this,'spnConfirmSecCodeIcon');" type="password" name="confirmSecurityCode" autocomplete="off" maxlength="6" class="txt hasBorder" />
+                    <span id="spnConfirmSecCodeIcon" class="">&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="@SecurityCode_Resources.Submit" class="btnSubmit" />
+                    <input type="reset" value="@SecurityCode_Resources.Reset" class="btn" />
+                </td>
+            </tr>
+        </table>
+    }
+    @Html.Partial("Shared/_SecurityCodeHint", SecurityCode_Resources.lblRequiredSecCode)
+    <div class="learn-more width370">
+        @Html.ActionLink(SecurityCode_Resources.LearnMore, "HowToUse", "SecurityCode", null, new { style = "padding:4px", target = "_blank" })
+    </div>
+</div>

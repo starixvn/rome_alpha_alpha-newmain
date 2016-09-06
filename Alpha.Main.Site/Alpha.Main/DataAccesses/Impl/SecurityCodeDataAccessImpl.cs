@@ -1,11 +1,11 @@
 ﻿namespace Alpha.Main.DataAccesses.Impl
 {
-    using System.Collections;
-    using System.Data;
+    using Alpha.Main.DataAccesses;
+    using Alpha.Main.Models.SecurityCode;
     using Fanex.Common;
     using Fanex.Data;
-    using Alpha.Main.Models.SecurityCode;
-    using Alpha.Main.DataAccesses;
+    using System.Collections;
+    using System.Data;
     /// <summary>
     /// TODO: Update summary.
     /// </summary>

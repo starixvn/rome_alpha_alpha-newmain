@@ -37,7 +37,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.SecurityCode, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.2\lib\net40\Alpha.SecurityCode.dll</HintPath>
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode\lib\net40\Alpha.SecurityCode.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -254,6 +254,10 @@
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Alpha.SecurityCode.dll" />
+    <Content Include="bin\Alpha.SecurityCode.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

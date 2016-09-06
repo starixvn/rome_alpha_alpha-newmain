@@ -24,7 +24,7 @@
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            DependencyConfig.Init();
+           DependencyConfig.Init();
 
             Fanex.Data.Configuration.DbSettingProviderManager.Current.Start();
 

@@ -54,7 +54,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.SecurityCode, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.2\lib\net40\Alpha.SecurityCode.dll</HintPath>
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode\lib\net40\Alpha.SecurityCode.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
@@ -77,8 +77,8 @@
       <HintPath>..\packages\CasinoLibrary.1.0.2.14\lib\net40\CasinoUtility.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.Age.UI, Version=3.0.1.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Age.UI.3.0.1.2\lib\net40\Fanex.Age.UI.dll</HintPath>
+    <Reference Include="Fanex.Age.UI, Version=3.0.2.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Age.UI.3.0.2.3-SecurityCode4\lib\net40\Fanex.Age.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Age.Utility, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -503,6 +503,14 @@
     </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />
+    <Content Include="Assets\scripts\security-code\changesecuritycode.js" />
+    <Content Include="Assets\scripts\security-code\core.js" />
+    <Content Include="Assets\scripts\security-code\forcechangesecuritycode.js" />
+    <Content Include="Assets\scripts\security-code\forcechangesecuritycodewithoutvalidation.js" />
+    <Content Include="Assets\scripts\security-code\resetsecuritycode.js" />
+    <Content Include="Assets\scripts\security-code\Sha1.js" />
+    <Content Include="Assets\scripts\security-code\Sha256.js" />
+    <Content Include="Assets\scripts\security-code\verifysecuritycode.js" />
     <Content Include="Assets\styles\announcement\announcements.css">
       <DependentUpon>announcements.scss</DependentUpon>
     </Content>
@@ -574,9 +582,9 @@
     <Content Include="Assets\styles\introduction\intro.min.css">
       <DependentUpon>intro.css</DependentUpon>
     </Content>
-    <Content Include="Web.Configuration\SecurityCode.uati1.config">
+    <Content Include="Web.local.config">
       <SubType>Designer</SubType>
-      <DependentUpon>SecurityCode.config</DependentUpon>
+    </Content>
     </Content>
     <Content Include="Web.local.config" />
     <Content Include="Web.napexternal.config">
@@ -675,6 +683,7 @@
     <Content Include="Assets\styles\home\tooltip.scss" />
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\introduction\intro.scss" />
+    <Content Include="bin\Alpha.SecurityCode.dll.config" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -692,9 +701,14 @@
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
     <Content Include="Views\Default\Introduction.cshtml" />
     <Content Include="Views\Default\Piwik.cshtml" />
-    <None Include="Web.AppSettings.config">
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="Views\SecurityCodeNewMain\VerifySecurityCode.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\ChangeSecurityCode.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\ForceChangeSecurityCode.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\ForceChangeSecurityCodeWithoutValidation.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\ResetSecurityCode.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\Shared\_HeaderMessage.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\Shared\_Layout.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\Shared\_SecurityCodeHint.cshtml" />
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -728,10 +742,7 @@
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
-    <Compile Include="Controllers\SecurityCode\SecurityCodeBasedPage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controllers\SecurityCode\SecurityCodeController.cs" />
+    <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="Filter\AntiXSRFFilter.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandler.cs" />
@@ -739,6 +750,11 @@
     <Compile Include="Handlers\DefaultHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
+    <Compile Include="Handlers\SecurityCode\VerifySecurityCodeHandler.cs" />
+    <Compile Include="Handlers\SecurityCode\ResetSecurityCodeHandler.cs" />
+    <Compile Include="Handlers\SecurityCode\ForceChangeSecurityCodeWithoutValidationQueryHandler.cs" />
+    <Compile Include="Handlers\SecurityCode\ForceChangeSecurityCodeHandler.cs" />
+    <Compile Include="Handlers\SecurityCode\ChangeSecurityCodeHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\BrowserHelper.cs" />
     <Compile Include="Helpers\StaticResources.cs" />
@@ -750,8 +766,19 @@
     <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeSecurityCodeQuery.cs" />
+    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeQuery.cs" />
+    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeWithoutValidationQuery.cs" />
+    <Compile Include="Requests\SecurityCode\ResetSecurityCodeQuery.cs" />
+    <Compile Include="Requests\SecurityCode\SecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\VerifySecurityCodeQuery.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
+    <Compile Include="ViewModels\Security\ResetSecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\Security\ChangeSecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\Security\ForceChangeSecurityCodeWithoutValidationViewModel.cs" />
+    <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\Security\VerifySecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Home\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />

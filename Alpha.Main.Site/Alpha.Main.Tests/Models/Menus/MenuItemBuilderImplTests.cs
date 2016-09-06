@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Tests.Models.Menus
 {
-    using System;
-    using System.Collections.Generic;
     using Auth.Services;
     using Helpers;
     using Main.Models.Menus;
     using NSubstitute;
     using NUnit.Framework;
+    using System;
+    using System.Collections.Generic;
 
     [TestFixture]
     public class MenuItemBuilderImplTests

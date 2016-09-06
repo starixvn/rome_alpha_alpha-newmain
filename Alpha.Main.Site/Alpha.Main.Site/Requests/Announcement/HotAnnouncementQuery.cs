@@ -8,7 +8,6 @@
     using MediatR;
     using Params.Announcements;
     using Sunplus.Agent.Model.Base;
-    using SecurityCode.Configurations;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 

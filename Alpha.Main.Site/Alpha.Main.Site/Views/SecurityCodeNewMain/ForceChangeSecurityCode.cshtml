@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "ForceChangeSecurityCode";
+    Layout = "~/Views/SecurityCodeNewMain/Shared/_Layout.cshtml";
+}
+
+@section css {
+    @Styles.Render("~/App_Themes/Apo/Common/Agent.min.css")
+}
+
+@section js {
+    @System.Web.Optimization.Scripts.Render("~/bundles/forcechangesecuritycode-js?v=5")
+    <script type="text/javascript">
+        var securityCodeToken = '@ViewBag.SecurityCodeToken';
+        var securitySalt = '@ViewBag.SecuritySalt';
+        var securityCodeResource = {
+            alertOldSecCodeEmpty: '@SecurityCode_Resources.alertOldSecCodeEmpty',
+            alertSecCodeEmpty: '@SecurityCode_Resources.alertSecCodeEmpty',
+            alertSecCodeWrongRule: '@SecurityCode_Resources.lblSecCodeWrongRule',
+            alertErrorSecCodeConfirm: '@SecurityCode_Resources.alertErrorSecCodeConfirm',
+            alertSameSecCode: '@SecurityCode_Resources.alertSameSecCode',
+            alertSecCodeSucc: '@SecurityCode_Resources.alertSecCodeChangedOK'
+        };
+    </script>
+}
+<div class="container-wrap">
+    <div id="header_main">@SecurityCode_Resources.SecurityCode</div>
+    @using (Html.BeginForm("ForceChangeSecurityCode", "SecurityCode", System.Web.Mvc.FormMethod.Post,
+                             new { id = "frmForceChangeSecurityCode" }))
+    {
+        @Html.Partial("Shared/_HeaderMessage", SecurityCode_Resources.alertForcedChangeSCTitle)
+        <table class="tbl-security">
+            @*<tr>
+                <td colspan="2" class="subTitle bold">@SecurityCode_Resources.SecurityCode</td>
+            </tr>*@
+            <tr>
+                <td>@SecurityCode_Resources.oldSecCode</td>
+                <td>
+                    <input id="txtOldSecCode" type="password" name="oldSecurityCode" autocomplete="off" maxlength="6" class="txt hasBorder" />
+                </td>
+            </tr>
+            <tr>
+                <td>@SecurityCode_Resources.SecurityCode</td>
+                <td>
+                    <input id="txtSecCode" onkeyup="return validateSecurityCode(this, 'spnNewPwdIcon');" type="password" name="securityCode" autocomplete="off" maxlength="6" class="txt hasBorder" />
+                    <span id="spnNewPwdIcon" class="">&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td>@SecurityCode_Resources.ConfirmSecurityCode</td>
+                <td>
+                    <input id="txtConfirmSecCode" onkeyup="return validateSecurityCode(this,'spnConfirmSecCodeIcon');" type="password" name="confirmSecurityCode" autocomplete="off" maxlength="6" class="txt hasBorder" />
+                    <span id="spnConfirmSecCodeIcon" class="">&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="@SecurityCode_Resources.Submit" class="btnSubmit" />
+                    <input type="reset" value="@SecurityCode_Resources.Reset" class="btn" />
+                </td>
+            </tr>
+        </table>
+    }
+    @Html.Partial("Shared/_SecurityCodeHint", SecurityCode_Resources.lblRequiredSecCode)
+</div>

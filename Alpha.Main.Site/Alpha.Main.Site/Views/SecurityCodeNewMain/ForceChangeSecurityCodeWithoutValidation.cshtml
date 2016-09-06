@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "ForceChangeSecurityCodeWithoutValidation";
+    Layout = "~/Views/SecurityCodeNewMain/Shared/_Layout.cshtml";
+}
+@section css {
+    @Styles.Render("~/App_Themes/Apo/Common/Agent.min.css")
+}
+@section js {
+    @System.Web.Optimization.Scripts.Render("~/bundles/securitycodewithoutvalidation-js?v=5")
+    <script type="text/javascript">
+        var securityCodeResource = {
+            alertSecCodeEmpty: '@SecurityCode_Resources.alertSecCodeEmpty',
+            alertSecCodeWrongRule: '@SecurityCode_Resources.lblSecCodeWrongRule',
+            alertErrorSecCodeConfirm: '@SecurityCode_Resources.alertErrorSecCodeConfirm'
+        };
+    </script>
+}
+<div class="container-wrap">
+    <div id="header_main">@SecurityCode_Resources.SecurityCode</div>
+    @using (Html.BeginForm("ForceChangeSecurityCodeWithoutValidation", "SecurityCode", System.Web.Mvc.FormMethod.Post,
+                             new { id = "frmForceChangeSecurityCodeWithoutValidation" }))
+    {
+        @Html.Partial("Shared/_HeaderMessage", SecurityCode_Resources.alertForcedChangeSCWithoutValidationTitle)
+        <table class="tbl-security">
+            @*<tr>
+                <td colspan="2" class="subTitle bold">@SecurityCode_Resources.SecurityCode</td>
+            </tr>*@
+            <tr>
+                <td>@SecurityCode_Resources.SecurityCode</td>
+                <td>
+                    <input id="txtSecCode" onkeyup="return validateSecurityCode(this, 'spnNewPwdIcon');" type="password" name="securityCode" autocomplete="off" maxlength="6" class="txt hasBorder" />
+                    <span id="spnNewPwdIcon" class="">&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td>@SecurityCode_Resources.ConfirmSecurityCode</td>
+                <td>
+                    <input id="txtConfirmSecCode" onkeyup="return validateSecurityCode(this,'spnConfirmSecCodeIcon');" type="password" name="confirmSecurityCode" autocomplete="off" maxlength="6" class="txt hasBorder" />
+                    <span id="spnConfirmSecCodeIcon" class="">&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="@SecurityCode_Resources.Submit" class="btnSubmit" />
+                    <input type="reset" value="@SecurityCode_Resources.Reset" class="btn" />
+                </td>
+            </tr>
+        </table>
+    }
+    @Html.Partial("Shared/_SecurityCodeHint", SecurityCode_Resources.lblRequiredSecCode)
+</div>

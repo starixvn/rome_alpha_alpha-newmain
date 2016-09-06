@@ -125,27 +125,27 @@
             var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
             var oldStatus = Current.SecurityCodeResult;
 
-            if (newFlowOfSC)
-            {
+            var securityCodeUrl = string.Empty; 
+
                 switch (status)
                 {
                     case SecurityCodeStatus.FORCED_CHANGE_SC:
-                        return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCode");
+                    securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCode");
+                    // return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCode");
+                    break;
 
                     case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-                        return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
+                    securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeWithoutValidation");
+                    //return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
+                    break;
 
-                    default:
-                        return MicroSites.OldMainUrl("~/Security/SecurityCode/VerifySecurityCode");
-                }
+                default:
+                    securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
+                    return securityCodeUrl;
             }
+            
 
-            if (!securityCodeSession.IsInternal &&
-                (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
-            {
-                // Use the OLD flow of Security Code.
-                return MicroSites.OldMainUrl("~/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
-            }
+           
 
             var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
             var ignoreUrls = new List<string>
