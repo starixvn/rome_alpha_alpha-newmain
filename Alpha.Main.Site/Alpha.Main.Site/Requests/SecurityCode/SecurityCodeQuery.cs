@@ -27,9 +27,5 @@
                 return ConfigurationManager.AppSettings["VirtualDirectory"];
             }
         }
-
-
-
-
     }
 }

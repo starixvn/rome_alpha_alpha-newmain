@@ -15,8 +15,6 @@
 
         bool ValidateSecurityCode(string securityCode);
 
-        string GenerateSecurityToken(int size = 6);
-
         string MD5Salt(int custId);
 
         Result CheckSecurityCode(SecurityCodeParams inputParams);

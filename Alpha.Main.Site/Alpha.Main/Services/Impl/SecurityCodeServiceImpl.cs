@@ -4,7 +4,6 @@
     using AppResources;
     using Configurations;
     using Criteria.SecurityCode;
-    using DataAccesses;
     using Fanex.Data.Repository;
     using Fanex.Security;
     using Models.SecurityCode;
@@ -259,10 +258,6 @@
         }
 
         #region Helper methods
-        public string GenerateSecurityToken(int size = 6)
-        {
-            return Cryptography.RandomString(size);
-        }
 
         private string HashSecurityCode(int custId, string securityCode, bool isResetMember = false)
         {
@@ -311,7 +306,7 @@
 
         private Result UpdateSecurityCodeStatus(int custId, bool validSecurityCode, string language, string clientIP, int subAccountId = 0)
         {
-            Result result = null;
+            Result result = new Result();
             if (subAccountId == 0)
             {
                 result = this.UpdateSecurityCodeStatusOfMainAccount(custId, validSecurityCode, language, clientIP);
