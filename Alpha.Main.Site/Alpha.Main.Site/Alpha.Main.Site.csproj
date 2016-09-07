@@ -589,6 +589,7 @@
     <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
     <Content Include="Views\Language\List.cshtml" />
     <Content Include="Assets\Styles\Announcement\announcements.scss" />
+    <Content Include="deployment.ignore" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
