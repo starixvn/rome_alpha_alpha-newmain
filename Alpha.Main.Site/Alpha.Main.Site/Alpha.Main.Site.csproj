@@ -748,13 +748,9 @@
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
+    <Compile Include="Handlers\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
-    <Compile Include="Handlers\SecurityCode\VerifySecurityCodeHandler.cs" />
-    <Compile Include="Handlers\SecurityCode\ResetSecurityCodeHandler.cs" />
-    <Compile Include="Handlers\SecurityCode\ForceChangeSecurityCodeWithoutValidationQueryHandler.cs" />
-    <Compile Include="Handlers\SecurityCode\ForceChangeSecurityCodeHandler.cs" />
-    <Compile Include="Handlers\SecurityCode\ChangeSecurityCodeHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\BrowserHelper.cs" />
     <Compile Include="Helpers\StaticResources.cs" />
@@ -766,18 +762,10 @@
     <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
-    <Compile Include="Requests\SecurityCode\ResetSecurityCodeQuery.cs" />
-    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeWithoutValidationQuery.cs" />
-    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeQuery.cs" />
-    <Compile Include="Requests\SecurityCode\ChangeSecurityCodeQuery.cs" />
-    <Compile Include="Requests\SecurityCode\VerifySecurityCodeQuery.cs" />
+    <Compile Include="Requests\SecurityCode\SecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\SecurityCodeQuery.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
-    <Compile Include="ViewModels\Security\ResetSecurityCodeViewModel.cs" />
-    <Compile Include="ViewModels\Security\ChangeSecurityCodeViewModel.cs" />
-    <Compile Include="ViewModels\Security\ForceChangeSecurityCodeWithoutValidationViewModel.cs" />
-    <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
-    <Compile Include="ViewModels\Security\VerifySecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Home\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
@@ -787,6 +775,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">

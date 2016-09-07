@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Services
 {
     using Models.SecurityCode;
+    using Params.Announcements;
     using SecurityCode.Entities;
     using SecurityCode.Sessions;
     using System.Diagnostics.CodeAnalysis;
@@ -18,48 +19,15 @@
 
         string MD5Salt(int custId);
 
-        Result CheckSecurityCode(
-            int custId,
-            string securityCode,
-            string randomKey,
-            string language,
-            string clientIP,
-            int subAccountId = 0);
+        Result CheckSecurityCode(SecurityCodeParams inputParams);
 
-        Result ChangeSecurityCodeWithoutValidation(
-            int custId,
-            int userId,
-            string securityCode,
-            string language,
-            string clientIP,
-            int subAccountId = 0);
+        Result ChangeSecurityCodeWithoutValidation(SecurityCodeParams inputParams);
 
-        Result ChangeSecurityCode(
-            int custId,
-            int userId,
-            string oldSecurityCode,
-            string securityCode,
-            string randomKey,
-            string language,
-            string clientIP,
-            int subAccountId = 0);
+        Result ChangeSecurityCode(SecurityCodeParams inputParams);
 
-        Result ResetSecurityCode(
-            int custId,
-            int userId,
-            int subAccountId,
-            string securityCode,
-            string language,
-            string clientIP,
-            bool isResetMember = false);
+        Result ResetSecurityCode(SecurityCodeParams inputParams);
 
-        Result ResetSecurityCodeOfSubAccount(
-            int custId,
-            int userId,
-            int subAccountId,
-            string securityCode,
-            string language,
-            string clientIP);
+        Result ResetSecurityCodeOfSubAccount(SecurityCodeParams inputParams);
 
     }
 }

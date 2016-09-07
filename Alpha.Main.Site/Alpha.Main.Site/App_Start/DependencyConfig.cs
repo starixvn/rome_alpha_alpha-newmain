@@ -112,7 +112,6 @@
         {
             container.RegisterPerWebRequest<IDynamicRepository, DynamicRepository>();
             container.RegisterPerWebRequest<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>();
-            container.Register<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>(Lifestyle.Transient);
         }
     }
 }

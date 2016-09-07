@@ -147,10 +147,15 @@
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\ChangeSecurityCodeOfSubAccount2Criteria.cs" />
+    <Compile Include="Criteria\SecurityCode\ChangeSecurityCodeOfSubAccountCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\ChangeSecurityCodeOfMainAccountCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateSecurityCodeStatusOfSubAccountCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateSecurityCodeStatusOfMainAccountCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\GetSecurityCodeOfSubAccountCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\GetSecurityCodeOfMainAccountCriteria.cs" />
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
     <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
-    <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
-    <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
     <Compile Include="Encryption\Encryptor.cs" />
     <Compile Include="FunctionRegistry.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -172,10 +177,11 @@
     <Compile Include="Models\Menus\MenuItemBuilder.cs" />
     <Compile Include="Models\Menus\MenuItemBuilderImpl.cs" />
     <Compile Include="Models\Menus\MenuStatus.cs" />
-    <Compile Include="Models\SecurityCode\CustomerPermissionResult.cs" />
     <Compile Include="Models\SecurityCode\Result.cs" />
+    <Compile Include="Models\SecurityCode\SecurityCode.cs" />
     <Compile Include="Models\SecurityCode\UserRole.cs" />
     <Compile Include="Params\Announcements\GetHotAnnouncementsParams.cs" />
+    <Compile Include="Params\SecurityCode\SecurityCodeParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppResources\Alpha.sitemap.Designer.cs">
       <DependentUpon>Alpha.sitemap.resx</DependentUpon>
@@ -259,6 +265,7 @@
     <Content Include="bin\Alpha.SecurityCode.dll" />
     <Content Include="bin\Alpha.SecurityCode.pdb" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -3,9 +3,12 @@
     using Alpha.Main.Services;
     using AppResources;
     using Configurations;
+    using Criteria.SecurityCode;
     using DataAccesses;
+    using Fanex.Data.Repository;
     using Fanex.Security;
     using Models.SecurityCode;
+    using Params.Announcements;
     using SecurityCode.Configurations;
     using SecurityCode.Entities;
     using SecurityCode.Sessions;
@@ -23,11 +26,12 @@
         private const int AllowSecurityCodeLength = 6;
         private const string SecurityCodeRule = @"^([0-9])(?!\1+$)[0-9]+$";
 
-        private readonly SecurityCodeDataAccess _securityCodeDataAccess;
+        private readonly IDynamicRepository dynamicRepository;
 
-        public SecurityCodeServiceImpl(SecurityCodeDataAccess securityCodeDataAccess = null)
+        public SecurityCodeServiceImpl(
+            IDynamicRepository dynamicRepository = null)
         {
-            _securityCodeDataAccess = securityCodeDataAccess ;
+            this.dynamicRepository = dynamicRepository ?? new DynamicRepository();
         }
 
         public bool IsIgnoreSecurityCode(string url)
@@ -68,32 +72,24 @@
             return isForceUseSecurityCode;
         }
 
-        /// <summary>
-        /// Checks the security code.
-        /// </summary>
-        /// <param name="custId">The customer id.</param>
-        /// <param name="securityCode">The security code.</param>
-        /// <param name="randomKey">The random key.</param>
-        /// <param name="language">The language.</param>
-        /// <param name="clientIP">The client IP.</param>
-        /// <param name="subAccountId">The sub account id.</param>
-        /// <returns>The result object.</returns>
-        public Result CheckSecurityCode(int custId, string securityCode, string randomKey, string language, string clientIP, int subAccountId = 0)
+        //public Result CheckSecurityCode(int custId, string securityCode, string randomKey, string language, string clientIP, int subAccountId = 0)
+        public Result CheckSecurityCode(SecurityCodeParams inputParams)
         {
-            if (string.IsNullOrEmpty(securityCode) || string.IsNullOrEmpty(randomKey))
+            if (string.IsNullOrEmpty(inputParams.SecurityCode) || string.IsNullOrEmpty(inputParams.RandomKey))
             {
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.alertInputWrongSecCode };
             }
 
-            string securityCodeDB = GetSecurityCode(custId, subAccountId);
-            string securityCodeDBHash = Cryptography.ComputeHash(SHA256, securityCodeDB, randomKey);
-            bool validSecurityCode = string.Equals(securityCode, securityCodeDBHash);
+            string securityCodeDB = GetSecurityCode(inputParams.CustId, inputParams.SubAccountId);
+            string securityCodeDBHash = Cryptography.ComputeHash(SHA256, securityCodeDB, inputParams.RandomKey);
+            bool validSecurityCode = string.Equals(inputParams.SecurityCode, securityCodeDBHash);
+
             //// update status of Security Code
-            Result result = UpdateSecurityCodeStatus(custId, validSecurityCode, language, clientIP, subAccountId);
+            Result result = UpdateSecurityCodeStatus(inputParams.CustId, validSecurityCode, inputParams.Language, inputParams.IP, inputParams.SubAccountId);
             if (result.ErrorCode == 200)
             {
                 result.ErrorCode = 2; //// account is closed
-                if (subAccountId == 0)
+                if (inputParams.SubAccountId == 0)
                 {
                    // new CasinoLibrary.SBAgent.Customer().UpdateCustClosedFailSecurityCode(custId, true, clientIP);
                 }
@@ -107,75 +103,42 @@
             return result;
         }
 
-        /// <summary>
-        /// Changes the security code.
-        /// </summary>
-        /// <param name="custId">The customer id.</param>
-        /// <param name="userId">The user id.</param>
-        /// <param name="oldSecurityCode">The old security code.</param>
-        /// <param name="securityCode">The security code.</param>
-        /// <param name="randomKey">The random key.</param>
-        /// <param name="language">The language.</param>
-        /// <param name="clientIP">The client IP.</param>
-        /// <param name="subAccountId">The sub account id.</param>
-        /// <returns>The result object.</returns>
-        public Result ChangeSecurityCode(
-            int custId,
-            int userId,
-            string oldSecurityCode,
-            string securityCode,
-            string randomKey,
-            string language,
-            string clientIP,
-            int subAccountId = 0)
+        public Result ChangeSecurityCode(SecurityCodeParams inputParams)
         {
+
             //// check old SC is valid
-            Result result = CheckSecurityCode(custId, oldSecurityCode, randomKey, language, clientIP, subAccountId);
+            Result result = CheckSecurityCode(inputParams);
+
             if (result.ErrorCode != 0)
             {
                 return result;
             }
 
-            result = ChangeSecurityCodeWithoutValidation(custId, userId, securityCode, language, clientIP, subAccountId);
+            result = ChangeSecurityCodeWithoutValidation(inputParams);
+
             return result;
         }
 
-        /// <summary>
-        /// Changes the security code without validation.
-        /// </summary>
-        /// <param name="custId">The customer id.</param>
-        /// <param name="userId">The user id.</param>
-        /// <param name="securityCode">The security code.</param>
-        /// <param name="language">The language.</param>
-        /// <param name="clientIP">The client IP.</param>
-        /// <param name="subAccountId">The sub account id.</param>
-        /// <returns>The result object.</returns>
-        public Result ChangeSecurityCodeWithoutValidation(
-            int custId,
-            int userId,
-            string securityCode,
-            string language,
-            string clientIP,
-            int subAccountId = 0)
+        public Result ChangeSecurityCodeWithoutValidation(SecurityCodeParams inputParams)
         {
             Result result = null;
             string hashSecurityCode = null;
-            if (subAccountId > 0)
+            if (inputParams.SubAccountId > 0)
             {
-                hashSecurityCode = HashSecurityCode(subAccountId, securityCode);
-                result = _securityCodeDataAccess.ChangeSecurityCodeOfSubAccount(custId, userId, subAccountId, hashSecurityCode, language, clientIP);
+                hashSecurityCode = HashSecurityCode(inputParams.SubAccountId, inputParams.SecurityCode);
+                result = this.ChangeSecurityCodeOfSubAccount(inputParams);
             }
             else
             {
-                hashSecurityCode = HashSecurityCode(custId, securityCode);
+                hashSecurityCode = HashSecurityCode(inputParams.CustId, inputParams.SecurityCode);
                 //// check new SC must be totally different from old SC
-                string securityCodeDB = GetSecurityCode(custId);
+                string securityCodeDB = GetSecurityCode(inputParams.CustId);
                 if (string.Equals(hashSecurityCode, securityCodeDB))
                 {
                     return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.alertSameSecCode };
                 }
 
-                result = _securityCodeDataAccess.ChangeSecurityCodeOfMainAccount(custId, userId, subAccountId, hashSecurityCode, language, clientIP);
+                result = this.ChangeSecurityCodeOfMainAccount(inputParams);
             }
 
             if (result != null && result.ErrorCode == 0)
@@ -186,34 +149,10 @@
             return result;
         }
 
-        /// <summary>
-        /// Resets the security code.
-        /// </summary>
-        /// <param name="custId">The customer id.</param>
-        /// <param name="userId">The user id.</param>
-        /// <param name="subAccountId">The sub account id.</param>
-        /// <param name="securityCode">The security code.</param>
-        /// <param name="language">The language.</param>
-        /// <param name="clientIP">The client IP.</param>
-        /// <param name="isResetMember">If set to <c>true</c> [is reset member].</param>
-        /// <returns>The result object.</returns>
-        public Result ResetSecurityCode(
-            int custId,
-            int userId,
-            int subAccountId,
-            string securityCode,
-            string language,
-            string clientIP,
-            bool isResetMember = false)
+        public Result ResetSecurityCode(SecurityCodeParams inputParams)
         {
-            string hashSecurityCode = HashSecurityCode(custId, securityCode, isResetMember);
-            Result result = _securityCodeDataAccess.ChangeSecurityCodeOfMainAccount(
-                custId,
-                userId,
-                subAccountId,
-                hashSecurityCode,
-                language,
-                clientIP);
+            string hashSecurityCode = HashSecurityCode(inputParams.CustId, inputParams.SecurityCode, inputParams.IsResetMember);
+            Result result = this.ChangeSecurityCodeOfMainAccount(inputParams);
 
             if (result.ErrorCode == 0)
             {
@@ -223,32 +162,10 @@
             return result;
         }
 
-        /// <summary>
-        /// Resets the security code of sub account.
-        /// </summary>
-        /// <param name="custId">The customer id.</param>
-        /// <param name="userId">The user id.</param>
-        /// <param name="subAccountId">The sub account id.</param>
-        /// <param name="securityCode">The security code.</param>
-        /// <param name="language">The language.</param>
-        /// <param name="clientIP">The client IP.</param>
-        /// <returns>The result object.</returns>
-        public Result ResetSecurityCodeOfSubAccount(
-            int custId,
-            int userId,
-            int subAccountId,
-            string securityCode,
-            string language,
-            string clientIP)
+        public Result ResetSecurityCodeOfSubAccount(SecurityCodeParams inputParams)
         {
-            string hashSecurityCode = HashSecurityCode(subAccountId, securityCode);
-            Result result = _securityCodeDataAccess.ChangeSecurityCodeOfSubAccount2(
-                custId,
-                userId,
-                subAccountId,
-                hashSecurityCode,
-                language,
-                clientIP);
+            string hashSecurityCode = HashSecurityCode(inputParams.SubAccountId, inputParams.SecurityCode);
+            Result result = this.ChangeSecurityCodeOfSubAccount2(inputParams);
 
             if (result.ErrorCode == 0)
             {
@@ -258,11 +175,46 @@
             return result;
         }
 
-        /// <summary>
-        /// Validates the security code.
-        /// </summary>
-        /// <param name="securityCode">The security code.</param>
-        /// <returns>True if security code is valid otherwise false.</returns>
+        private Result ChangeSecurityCodeOfMainAccount(SecurityCodeParams inputParams)
+        {
+            return dynamicRepository.Get<Result>(new ChangeSecurityCodeOfMainAccountCriteria
+            {
+                CustId = inputParams.CustId,
+                SubaccId = inputParams.SubAccountId,
+                UserId = inputParams.UserId,
+                SecurityCode = inputParams.SecurityCode,
+                IP = inputParams.IP,
+                Language = inputParams.Language
+            });
+        }
+
+        private Result ChangeSecurityCodeOfSubAccount(SecurityCodeParams inputParams)
+        {
+            return dynamicRepository.Get<Result>(new ChangeSecurityCodeOfSubAccountCriteria
+            {
+                CustId = inputParams.CustId,
+                SubaccId = inputParams.SubAccountId,
+                UserId = inputParams.UserId,
+                SecurityCode = inputParams.SecurityCode,
+                IP = inputParams.IP,
+                Language = inputParams.Language
+            });
+        }
+
+
+        private Result ChangeSecurityCodeOfSubAccount2(SecurityCodeParams inputParams)
+        {
+            return dynamicRepository.Get<Result>(new ChangeSecurityCodeOfSubAccount2Criteria
+            {
+                CustId = inputParams.CustId,
+                SubaccId = inputParams.SubAccountId,
+                UserId = inputParams.UserId,
+                SecurityCode = inputParams.SecurityCode,
+                IP = inputParams.IP,
+                Language = inputParams.Language
+            });
+        }
+
         public bool ValidateSecurityCode(string securityCode)
         {
             int securityCodeLength = securityCode == null ? 0 : securityCode.Trim().Length;
@@ -307,24 +259,11 @@
         }
 
         #region Helper methods
-
-        /// <summary>
-        /// Generates the security token.
-        /// </summary>
-        /// <param name="size">The size of string.</param>
-        /// <returns>The random string .</returns>
         public string GenerateSecurityToken(int size = 6)
         {
             return Cryptography.RandomString(size);
         }
 
-        /// <summary>
-        /// Hashes the security code.
-        /// </summary>
-        /// <param name="custId">The customer id.</param>
-        /// <param name="securityCode">The security code.</param>
-        /// <param name="isResetMember">If set to <c>true</c> [is reset member].</param>
-        /// <returns>The encryption string.</returns>
         private string HashSecurityCode(int custId, string securityCode, bool isResetMember = false)
         {
             //// because the Member site doesn't want to edit his code.
@@ -338,51 +277,84 @@
             return Cryptography.ComputeHash(SHA1, securityCode, salt);
         }
 
-        /// <summary>
-        /// Gets the security code.
-        /// </summary>
-        /// <param name="custId">The customer id.</param>
-        /// <param name="subAccountId">The sub account id.</param>
-        /// <returns>The security code string.</returns>
         private string GetSecurityCode(int custId, int subAccountId = 0)
         {
             string securityCode;
             if (subAccountId == 0)
             {
-                securityCode = _securityCodeDataAccess.GetSecurityCodeOfMainAccount(custId);
+                securityCode = this.GetSecurityCodeOfMainAccount(custId);
             }
             else
             {
-                securityCode = _securityCodeDataAccess.GetSecurityCodeOfSubAccount(custId, subAccountId);
+                securityCode = this.GetSecurityCodeOfSubAccount(custId, subAccountId);
             }
 
             return securityCode;
         }
 
-        /// <summary>
-        /// Updates the security code status.
-        /// </summary>
-        /// <param name="custId">The customer id.</param>
-        /// <param name="validSecurityCode">If set to <c>true</c> [valid security code].</param>
-        /// <param name="language">The language.</param>
-        /// <param name="clientIP">The client IP.</param>
-        /// <param name="subAccountId">The sub account id.</param>
-        /// <returns>The result object.</returns>
+        private string GetSecurityCodeOfMainAccount(int custId)
+        {
+            return dynamicRepository.Get<string>(new GetSecurityCodeOfMainAccountCriteria
+            {
+                CustId = custId
+            });
+        }
+
+        private string GetSecurityCodeOfSubAccount(int custId, int subAccountId = 0)
+        {
+            return dynamicRepository.Get<string>(new GetSecurityCodeOfSubAccountCriteria
+            {
+                CustId = custId,
+                SubaccId = subAccountId
+            });
+        }
+
         private Result UpdateSecurityCodeStatus(int custId, bool validSecurityCode, string language, string clientIP, int subAccountId = 0)
         {
             Result result = null;
             if (subAccountId == 0)
             {
-                result = _securityCodeDataAccess.UpdateSecurityCodeStatusOfMainAccount(custId, validSecurityCode, language, clientIP);
+                result = this.UpdateSecurityCodeStatusOfMainAccount(custId, validSecurityCode, language, clientIP);
             }
             else
             {
-                result = _securityCodeDataAccess.UpdateSecurityCodeStatusOfSubAccount(custId, subAccountId, validSecurityCode, language, clientIP);
+                result = this.UpdateSecurityCodeStatusOfSubAccount(custId, subAccountId, validSecurityCode, language, clientIP);
             }
 
             return result;
         }
 
+        private Result UpdateSecurityCodeStatusOfMainAccount(
+            int custId,
+            bool validSecurityCode,
+            string language,
+            string clientIP)
+        {
+            return dynamicRepository.Get<Result>(new UpdateSecurityCodeStatusOfMainAccountCriteria
+            {
+                CustId = custId,
+                CheckedSecurityCode = validSecurityCode,
+                IP = clientIP,
+                Language = language
+            });
+        }
+
+        private Result UpdateSecurityCodeStatusOfSubAccount(
+            int custId,
+            int subAccountId,
+            bool validSecurityCode,
+            string language,
+            string clientIP)
+        {
+            return dynamicRepository.Get<Result>(new UpdateSecurityCodeStatusOfSubAccountCriteria
+            {
+                CustId = custId,
+                SubaccId = subAccountId,
+                CheckedSecurityCode = validSecurityCode,
+                IP = clientIP,
+                Language = language
+            });
+        }
         #endregion
     }
 }

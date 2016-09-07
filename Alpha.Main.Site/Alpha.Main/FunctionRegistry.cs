@@ -127,9 +127,9 @@
 
             var securityCodeUrl = string.Empty;
 
-            return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCode");
-            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeWithoutValidation");
-            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
+            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCode");
+            return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeWithoutValidation");
+            //return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
             //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ResetSecurityCode");
             //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ChangeSecurityCode");
 
@@ -149,9 +149,9 @@
             //        securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
             //        return securityCodeUrl;
             //}
-            
 
-           
+
+
 
             var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
             var ignoreUrls = new List<string>
