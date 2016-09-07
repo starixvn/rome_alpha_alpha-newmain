@@ -1,4 +1,6 @@
-﻿#profileTooltip .tooltip-content {
+﻿@import '../Home/_mixins.scss';
+
+#profileTooltip .tooltip-content {
     margin: 2px 5px;
 }
 
@@ -31,102 +33,38 @@
 }
 
 
-
-#tooltip-box {
-    width: 500px;
-    font-family: Arial,Tahoma,helvetica,sans-serif;
-    top: 2px;
-    font-weight: normal;
-    font-size: 8pt;
-    position: fixed;
-    z-index: 1000;
-    left: 203px;
-    filter: alpha(opacity=100);
-    -moz-opacity: 1;
-    -khtml-opacity: 1;
-    opacity: 1;
-
-    .left {
-        float: left;
-        background: url(Images/tooltip_left.png) no-repeat;
-        width: 15px;
-        height: 45px;
+#profileTooltip, #tooltip-box {
+    background-color: #f6f6f6;
+    font-size: 12px;
+	top: 2px; 
+	left: 203px;
+	position: fixed;
+	z-index: 1000;
+    color: #c30101;
+    line-height: 15px;
+    max-width: 514px;
+    padding: 5px 16px;
+    @include border-radius(1px);
+    @include box-shadow(0, 0, 8px, rgba(0, 0, 0, 0.4));
+    
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -12px;
+        top: 24%;
+        width: 0;
+        height: 0;
+        border-top: 0 solid transparent;
+        border-right: 0 solid transparent;
+        border-bottom: 12px solid #f6f6f6;
+        border-left: 12px solid transparent;
     }
 
-    .bg {
-        float: left;
-        background: url(Images/tooltip_bg.png) repeat-x;
-        height: 45px;
-    }
-
-    .right {
-        float: left;
-        background: url(Images/tooltip_right.png) no-repeat;
-        width: 37px;
-        height: 45px;
-    }
-
-    .normal {
-        color: #BF0104;
-        font-family: Arial,Tahoma,Arial,helvetica,sans-serif;
-        line-height: 14px;
+    a {
+        color: #055ace;
     }
 }
-
-.collapsed {
-    #tooltip-box, #profileTooltip {
-        left: 35px;
-    }
-}
-
-.hovered {
-    #tooltip-box, #profileTooltip {
-        left: 203px;
-    }
-}
-
-
-#profileTooltip {
-    width: 500px;
-    font-family: Arial,Tahoma,helvetica,sans-serif;
-    top: 2px;
-    left: 203px;
-    font-weight: normal;
-    font-size: 8pt;
-    position: fixed;
-    z-index: 1000;
-    filter: alpha(opacity=100);
-    -moz-opacity: 1;
-    -khtml-opacity: 1;
-    opacity: 1;
-
-    .left {
-        float: left;
-        background: url(Images/profileTooltip_left.png) no-repeat;
-        width: 15px;
-        height: 75px;
-    }
-
-    .bg {
-        float: left;
-        background: url(Images/profileTooltip_bg.png) repeat-x;
-        height: 75px;
-    }
-
-    .right {
-        float: left;
-        background: url(Images/profileTooltip_right.png) no-repeat;
-        width: 37px;
-        height: 75px;
-    }
-
-    .normal {
-        color: #BF0104;
-        font-family: Arial,Tahoma,helvetica,sans-serif;
-        line-height: 14px;
-    }
-}
-
 #profileTooltip #profileTooltip #profileTooltip #logoProfileImg.collapse-image {
     width: 100%;
 }

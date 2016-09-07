@@ -140,10 +140,8 @@
 &lt;div&gt;... 更安全化及个性化.&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>&lt;div&gt;尊敬的客户! 为了帮助您识别真正的网站, &lt;/div&gt;
-&lt;div&gt; 我们现在提供您个性化个人头像的选项. &lt;/div&gt;
-&lt;div&gt; 一旦图片上载成功, &lt;/div&gt;
-&lt;div&gt; 您将可以于此见到否则您可能会处于欺诈性的网站. 马上&lt;/div&gt;</value>
+    <value>&lt;div&gt;尊敬的客户! 为了帮助您识别真正的网站, 我们现在提供您个性化个人头像的选项. &lt;/div&gt;
+&lt;div&gt; 一旦图片上载成功, 您将可以于此见到否则您可能会处于欺诈性的网站. 马上&lt;/div&gt;</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>点击此处</value>

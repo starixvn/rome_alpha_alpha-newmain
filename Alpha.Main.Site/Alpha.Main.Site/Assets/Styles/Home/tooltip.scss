@@ -1,42 +1,46 @@
 ﻿@import "_variables.scss";
+@import "_mixins.scss";
 
 #toolTipSettingMinPT {
-  color: $text-color;
-  font-family: $font-family;
-  font-size: $font-size;
-  line-height: 17px;
-  position: absolute;
-  width: 355px;
-  z-index: 1000;
+    background-color: #fde5cd;
+    border: 1px solid #fcbf7e;
+    color: $text-color;
+    line-height: 17px;
+    position: absolute;
+    width: 355px;
+    z-index: 1000;
+    @include box-shadow(1px, 2px, 6px, rgba(0, 0, 0, 0.2));
 
-  .minptleft, .minptbg, .minptright {
-      float: left;
-      height: 72px;
-  }
-   .minptleft {
-      background: url(images/minptleft.png) no-repeat;      
-      width: 19px;
+   .icon-close {
+        cursor: pointer;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+
+        &:before {           
+            font:{
+                size: 14px;
+                weight: bold;
+            }
+        }
     }
 
-    .minptbg {
-      background: url(images/minptbg.png) repeat-x;
-    }
-
-    .minptright {
-      background: url(images/minptright.png) no-repeat;
-      width: 10px;
+    .content {
+        width: auto;
+        padding: 10px 20px;
     }
 
     .minptarrow {
       background: url(images/minptarrow.png) no-repeat;
-      height: 21px;
-      width: 22px;
+      height: 25px;
+      width: 23px;
     }
 
     %arrow {
-        float: left;
-        margin-top: -7px;
+        position: absolute;
+        bottom: -25px;
     }
+
     .arrow1 {
         @extend %arrow;
         margin-left: 50px;
@@ -44,7 +48,7 @@
 
     .arrow2 {
         @extend %arrow;
-        margin-left: 170px;
+        margin-left: 252px;
     }
 
     .minptclose {
