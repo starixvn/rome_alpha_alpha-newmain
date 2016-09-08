@@ -385,6 +385,26 @@
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
     <Content Include="Assets\bundles\default-index.css" />
+    <Content Include="Web.Configuration\SecurityCode.local.config">
+      <SubType>Designer</SubType>
+      <DependentUpon>SecurityCode.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Configuration\SecurityCode.napexternal.config">
+      <SubType>Designer</SubType>
+      <DependentUpon>SecurityCode.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Configuration\SecurityCode.napinternal.config">
+      <SubType>Designer</SubType>
+      <DependentUpon>SecurityCode.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Configuration\SecurityCode.proi1.config">
+      <SubType>Designer</SubType>
+      <DependentUpon>SecurityCode.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Configuration\SecurityCode.sit.config">
+      <SubType>Designer</SubType>
+      <DependentUpon>SecurityCode.config</DependentUpon>
+    </Content>
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.css">
@@ -473,6 +493,10 @@
     </Content>
     <Content Include="Assets\styles\introduction\intro.min.css">
       <DependentUpon>intro.css</DependentUpon>
+    </Content>
+    <Content Include="Web.Configuration\SecurityCode.uati1.config">
+      <SubType>Designer</SubType>
+      <DependentUpon>SecurityCode.config</DependentUpon>
     </Content>
     <Content Include="Web.local.config" />
     <Content Include="Web.napexternal.config">
@@ -588,9 +612,12 @@
     <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
     <Content Include="Views\Default\Introduction.cshtml" />
-    <None Include="Web.AppSettings.config" />
+    <None Include="Web.AppSettings.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.AppSettings.napexternal.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
@@ -607,7 +634,9 @@
     <Content Include="Web.AppSettings.uati1.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
-    <Content Include="Web.Configuration\SecurityCode.config" />
+    <Content Include="Web.Configuration\SecurityCode.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Configuration\AuthorizationSection.config" />
   </ItemGroup>
   <ItemGroup>
