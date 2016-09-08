@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
-<PopupAnnouncement id="20150407" name="RnG - Auto Master PT" startdate="04/01/2015" enddate="04/21/2015"  effectdate="04/14/2015" width="1000" height="220" top="110" left="350">
+	<PopupAnnouncement id="20150407" name="RnG - Auto Master PT" startdate="04/01/2015" enddate="04/21/2015"  effectdate="04/14/2015" width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued customers,<br />
       <p>
@@ -86,110 +86,4 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-
-  <PopupAnnouncement id="20130426" name="Security Code" width="460" height="220" top="110" left="350" startdate="04/01/2013" enddate="04/21/2013">
-    <en-US src="">
-      Dear valued customers,<br />
-      In order to protect your account, we would like to introduce new function called "Security Code". You'll be required to input Security Code when doing critical actions, such as: changing password, creating new downline accounts, updating your downlines setting/credit...<br />
-      Please contact your upline or CSD to get Security Code. If you're a sub-account, please contact your main account.<br />
-      Once you got your own security code, please set up security code for your downlines. They can only get it from you to continue running the business safely.<br /><br />
-      For more information, please click <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_en-US.html' target='_blank'> here.</a>
-    </en-US>
-    <zh-CN src="">
-      尊敬的客户,<br />
-      为了保护您的账号, 我们将引入一项称为"保安码"的新功能。当您执行任何敏感的操作如修改密码、创建新的下线账号、更新您下线的设定/信用额等, 您将被要求输入保安码<br />
-      请联系您的上线或客服部以获取保安码。如果你是一个子帐户, 请联系您的主帐户。<br />
-      一旦您获得属于自己的保安码, 请为您的下线设置保安码。下线唯有向您获取保安码才能继续安全的运行他们的业务。<br /><br />
-      欲了解更多详情, 请点击<a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_zh-CN.html' target='_blank'> 此处。</a>
-    </zh-CN>
-    <zh-TW src="">
-      尊敬的客戶,<br />
-      為了保護您的賬號, 我們將引入一項稱為"保安碼"的新功能。當您執行任何敏感的操作如修改密碼、創建新的下線賬號、更新您下線的設定/信用額等, 您將被要求輸入保安碼。<br />
-      請聯繫您的上線或客服部以獲取保安碼。如果你是一个子帐户，请联系您的主帐户。<br />
-      一旦您獲得屬於自己的保安碼, 請為您的下線設置保安碼。下線唯有向您獲取保安碼才能繼續安全的運行他們的業務。<br /><br />
-      欲了解更多詳情, 請點擊<a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_zh-TW.html' target='_blank'> 此處。</a>
-    </zh-TW>
-    <ja-JP src="">
-      Dear valued customers,<br />
-      In order to protect your account, we would like to introduce new function called "Security Code". You'll be required to input Security Code when doing critical actions, such as: changing password, creating new downline accounts, updating your downlines setting/credit...<br />
-      Please contact your upline or CSD to get Security Code. If you're a sub-account, please contact your main account.<br />
-      Once you got your own security code, please set up security code for your downlines. They can only get it from you to continue running the business safely.<br /><br />
-      For more information, please click <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_en-US.html' target='_blank'> here.</a>
-    </ja-JP>
-    <ko-KR src="">
-      Dear valued customers,<br />
-      In order to protect your account, we would like to introduce new function called "Security Code". You'll be required to input Security Code when doing critical actions, such as: changing password, creating new downline accounts, updating your downlines setting/credit...<br />
-      Please contact your upline or CSD to get Security Code. If you're a sub-account, please contact your main account.<br />
-      Once you got your own security code, please set up security code for your downlines. They can only get it from you to continue running the business safely.<br /><br />
-      For more information, please click <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_en-US.html' target='_blank'> here.</a>
-    </ko-KR>
-    <th-TH src="">
-      Dear valued customers,<br />
-      In order to protect your account, we would like to introduce new function called "Security Code". You'll be required to input Security Code when doing critical actions, such as: changing password, creating new downline accounts, updating your downlines setting/credit...<br />
-      Please contact your upline or CSD to get Security Code. If you're a sub-account, please contact your main account.<br />
-      Once you got your own security code, please set up security code for your downlines. They can only get it from you to continue running the business safely.<br /><br />
-      For more information, please click <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_en-US.html' target='_blank'> here.</a>
-    </th-TH>
-    <vi-VN src="">
-      Chào quí khách hàng,<br />
-      Vì mục đích tăng cường tính bảo mật cho tài khoản của các bạn, chúng tôi xin giới thiệu 1 tính năng mới, với tên gọi ‘Mã bảo mật’. Bạn đòi hỏi phải nhập Mã bảo mật khi thực hiện những hành động mang tính rủi ro như là thay đổi mật khẩu, tạo mới tài khoản, những thay đổi liên quan đến thiết lập của thành viên cấp dưới...<br />
-      Vui lòng liên hệ với cấp trên hoặc bộ phận CSD để nhận mã bảo mật. Nếu bạn dùng tài khoản phụ, vui lòng liên hệ người dùng tài khoản chính.<br />
-      Một khi bạn đã có mã bảo mật, vui lòng thiết lập mã bảo mật cho tất cả cấp  dưới. Họ chỉ có thể tiếp tục công việc 1 cách an toàn khi nhận được mã bảo mật từ bạn.<br /><br />
-
-      Để biết thêm thông tin chi tiết, vui lòng nhấp chuột vào <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_vi-VN.html' target='_blank'>đây.</a>
-    </vi-VN>
-  </PopupAnnouncement>
-  <PopupAnnouncement id="20130526" name="Security Code" width="460" height="220" top="110" left="350" startdate="04/01/2013" enddate="04/21/2013">
-    <en-US src="">
-      Dear valued customers,<br />
-      In order to protect your account, we would like to introduce new function called "Security Code". You'll be required to input Security Code when doing critical actions, such as: changing password, creating new downline accounts, updating your downlines setting/credit...<br />
-      Your Security Code was required to set up before {0} but it was not set yet. So, above critical actions cannot be done until you contact your upline or CSD to get Security Code. If you're a sub-account, please contact your main account.<br />
-      Once you got your own security code, please set up security code for your downlines. They can only get it from you to continue running the business safely.<br /><br />
-      For more information, please click <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_en-US.html' target='_blank'>here.</a>
-    </en-US>
-    <zh-CN src="">
-      尊敬的客户,<br />
-      为了保护您的账号, 我们将引入一项称为""机密码""的新功能。当您执行任何敏感的操作如修改密码、创建新的下线账号、更新您下线的设定/信用额等, 您将被要求输入机密机密码。<br />
-      您的机密码须于{0}前被设置但它尚未被设置。因此, 上述所述之操作无法执行直至您联系您的上线或客服部以获取机密码。如果你是一个子帐户，请联系您的主帐户。<br />
-      一旦您获得属于自己的机密码, 请为您的下线设置机密码。下线唯有向您获取机密码才能继续安全的运行他们的业务。<br />
-      欲了解更多详情, 请<a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_zh-CN.html' target='_blank'>点击此处。</a>
-    </zh-CN>
-    <zh-TW src="">
-      尊敬的客户,<br />
-      为了保护您的账号, 我们将引入一项称为""机密码""的新功能。当您执行任何敏感的操作如修改密码、创建新的下线账号、更新您下线的设定/信用额等, 您将被要求输入机密机密码。"尊敬的客戶,<br />
-      為了保護您的賬號, 我們將引入一項稱為""機密碼""的新功能。當您執行任何敏感的操作如修改密碼、創建新的下線賬號、更新您下線的設定/信用額等, 您將被要求輸入機密機密碼。<br />
-      您的機密碼須于{0}前被設置但它尚未被設置。因此, 上述所述之操作無法執行直至您聯繫您的上線或客服部以獲取機密碼。如果你是一個子帳戶，請聯繫您的主帳戶。<br />
-      一旦您獲得屬於自己的機密碼, 請為您的下線設置機密碼。下線唯有向您獲取機密碼才能繼續安全的運行他們的業務。<br />
-      欲了解更多詳情, 請<a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_zh-TW.html' target='_blank'>點擊此處。</a>
-    </zh-TW>
-    <ja-JP src="">
-      Dear valued customers,<br />
-      In order to protect your account, we would like to introduce new function called "Security Code". You'll be required to input Security Code when doing critical actions, such as: changing password, creating new downline accounts, updating your downlines setting/credit...<br />
-      Your Security Code was required to set up before {0} but it was not set yet. So, above critical actions cannot be done until you contact your upline or CSD to get Security Code. If you're a sub-account, please contact your main account.<br />
-      Once you got your own security code, please set up security code for your downlines. They can only get it from you to continue running the business safely.<br /><br />
-      For more information, please click <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_en-US.html' target='_blank'>here.</a>
-    </ja-JP>
-    <ko-KR src="">
-      Dear valued customers,<br />
-      In order to protect your account, we would like to introduce new function called "Security Code". You'll be required to input Security Code when doing critical actions, such as: changing password, creating new downline accounts, updating your downlines setting/credit...<br />
-      Your Security Code was required to set up before {0} but it was not set yet. So, above critical actions cannot be done until you contact your upline or CSD to get Security Code. If you're a sub-account, please contact your main account.<br />
-      Once you got your own security code, please set up security code for your downlines. They can only get it from you to continue running the business safely.<br /><br />
-      For more information, please click <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_en-US.html' target='_blank'>here.</a>
-    </ko-KR>
-    <th-TH src="">
-      Dear valued customers,<br />
-      In order to protect your account, we would like to introduce new function called "Security Code". You'll be required to input Security Code when doing critical actions, such as: changing password, creating new downline accounts, updating your downlines setting/credit...<br />
-      Your Security Code was required to set up before {0} but it was not set yet. So, above critical actions cannot be done until you contact your upline or CSD to get Security Code. If you're a sub-account, please contact your main account.<br />
-      Once you got your own security code, please set up security code for your downlines. They can only get it from you to continue running the business safely.<br /><br />
-      For more information, please click <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_en-US.html' target='_blank'>here.</a>
-    </th-TH>
-    <vi-VN src="">
-      Chào quí khách hàng,<br />
-      Vì mục đích tăng cường tính bảo mật cho tài khoản của các bạn, chúng tôi xin giới thiệu 1 tính năng mới, với tên gọi ‘Mã bảo mật’. Bạn đòi hỏi phải nhập Mã bảo mật khi thực hiện những hành động mang tính rủi ro như là thay đổi mật khẩu, tạo mới tài khoản, những thay đổi liên quan đến thiết lập của thành viên cấp dưới...<br />
-      Mã bảo mật đòi hỏi phải được thiết lập trước ngày {0} nhưng bạn đã không thực hiện điều đó. Do vậy tất cả những thiết lập nhạy cảm sẻ không thể thực hiện cho tới khi bạn liên hệ với cấp trên hoặc bộ phận CSD để nhận mã bảo mật. Nếu bạn dùng tài khoản phụ, vui lòng liện hệ với người dùng tài khoản chính.<br />
-      Một khi bạn đã có mã bảo mật, vui lòng thiết lập mã bảo mật cho tất cả cấp  dưới. Họ chỉ có thể tiếp tục công việc 1 cách an toàn khi nhận được mã bảo mật từ bạn.<br /><br />
-      Để biết thêm thông tin chi tiết, vui lòng nhấp chuột vào <a href='../_HowToUse/Resources/HTML/SecurityCode/SecurityCode_vi-VN.html' target='_blank'>đây.</a>
-    </vi-VN>
-  </PopupAnnouncement>
-  
 </FileDB>
