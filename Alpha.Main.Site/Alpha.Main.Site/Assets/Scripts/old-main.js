@@ -313,9 +313,9 @@ var AgeWnd = function () {
                 ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isAutoHeight);
             }
 
-            ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack, isAutoHeight);
+            ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack, isAutoHeight, this);
         },
-        openPopUpAfterSetIframeSrc: function (popUp, callBack, isAutoHeight) {
+        openPopUpAfterSetIframeSrc: function (popUp, callBack, isAutoHeight, currentAgeWnd) {
             popUp.on('shown.bs.modal', function () {
                 // transform property make objectFlash not show (MacauGames Result) 
                 popUp.find('.modal-dialog').css({
@@ -340,8 +340,8 @@ var AgeWnd = function () {
 
             popUp.tinyDraggable();
 
-            this.popUp.push(popUp);
-            this.callback.push(callBack);
+            currentAgeWnd.popUp.push(popUp);
+            currentAgeWnd.callback.push(callBack);
         },
         close: function () {
             var popUp = this.popUp.pop();
@@ -451,7 +451,7 @@ function getBootboxPostion(handleElement, popUpOptions) {
     };
 }
 
-function ShowSecCodePopup(preUrl) {
+function ShowSecCodePopup(preUrl, callerAge) {
 
     preUrl = 'url=' + escape(preUrl);
     var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
@@ -476,7 +476,21 @@ function ShowSecCodePopup(preUrl) {
     top.age.Lock();
 
     var popupSecurityCode = top.ageWnd.createInstance();
-    top.popupSecurityCode = popupSecurityCode;
+    popupSecurityCode.onClosing = function () {
+        try {
+            top.age.UnLock();
+
+            if (callerAge) {
+                callerAge.UnLock();
+            }
+
+        } catch (e) {
+        }
+
+        return true;
+    };
+
+    top.securityCodePopup = popupSecurityCode;
     popupSecurityCode.open(url, '', x, y, popW, popH, function () {
         var c = top.frames.length;
         for (var i = 0; i < c; i++) {
@@ -714,6 +728,10 @@ var oldMainUltilities = {
 };
 
 function reloadPopUpSetting(timeOut) {
+    var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
+    var iframes = popUp.find('#popup-iframe');
+    var target = popUp.find('.modal-body #target');
+
     if (timeOut) {
         setTimeout(function () {
             doReloadMainFrame();
@@ -723,16 +741,11 @@ function reloadPopUpSetting(timeOut) {
     }
 
     function doReloadPopup() {
-        var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
-        var iframes = popUp.find('#popup-iframe');
-        var target = popUp.find('.modal-body #target');
-        if (target && target.length) {
+        if (iframes && iframes.length && iframes.attr('src')) {
+            iframes.attr('src', iframes.attr('src'));
+        } else if (target && target.length) {
             target.submit();
         }
-        else if (iframes && iframes.length) {
-            iframes.attr('src', iframes.attr('src'));
-        }
-
     }
 
     function doReloadMainFrame() {
