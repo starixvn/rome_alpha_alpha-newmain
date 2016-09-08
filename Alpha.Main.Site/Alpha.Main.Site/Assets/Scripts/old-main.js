@@ -815,7 +815,6 @@ function clearPopupSubtitle(hasSubTitle) {
         clearInterval(timer);
     }, 200);
 
-
     iframe.onload = function () {
         clearSubTitleAfterInframeLoad(iframe);
         clearInterval(timer);
