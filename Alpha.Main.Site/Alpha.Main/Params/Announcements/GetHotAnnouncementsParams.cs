@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Params.Announcements
 {
-    using SecurityCode.Configurations;
-    using SecurityCode.Entities;
-    using SecurityCode.Sessions;
+    using Alpha.SecurityCode.Configurations;
+    using Alpha.SecurityCode.Entities;
+    using Alpha.SecurityCode.Sessions;
     using System.Collections.Generic;
 
     public class GetHotAnnouncementsParams

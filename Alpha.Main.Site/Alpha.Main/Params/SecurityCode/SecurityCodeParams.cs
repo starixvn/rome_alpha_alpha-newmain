@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Params.Announcements
+﻿namespace Alpha.Main.Params.SecurityCode
 {
     public class SecurityCodeParams
     {
@@ -10,7 +10,7 @@
 
         public string SecurityCode { get; set; }
 
-        public string RandomKey { get; set; }
+        public string SecurityCodeToken { get; set; }
 
         public string Language { get; set; }
 

@@ -7,7 +7,7 @@
     using Fanex.Data.Repository;
     using Fanex.Security;
     using Models.SecurityCode;
-    using Params.Announcements;
+    using Params.SecurityCode;
     using SecurityCode.Configurations;
     using SecurityCode.Entities;
     using SecurityCode.Sessions;
@@ -74,13 +74,13 @@
         //public Result CheckSecurityCode(int custId, string securityCode, string randomKey, string language, string clientIP, int subAccountId = 0)
         public Result CheckSecurityCode(SecurityCodeParams inputParams)
         {
-            if (string.IsNullOrEmpty(inputParams.SecurityCode) || string.IsNullOrEmpty(inputParams.RandomKey))
+            if (string.IsNullOrEmpty(inputParams.SecurityCode) || string.IsNullOrEmpty(inputParams.SecurityCodeToken))
             {
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.alertInputWrongSecCode };
             }
 
             string securityCodeDB = GetSecurityCode(inputParams.CustId, inputParams.SubAccountId);
-            string securityCodeDBHash = Cryptography.ComputeHash(SHA256, securityCodeDB, inputParams.RandomKey);
+            string securityCodeDBHash = Cryptography.ComputeHash(SHA256, securityCodeDB, inputParams.SecurityCodeToken);
             bool validSecurityCode = string.Equals(inputParams.SecurityCode, securityCodeDBHash);
 
             //// update status of Security Code
@@ -199,7 +199,6 @@
                 Language = inputParams.Language
             });
         }
-
 
         private Result ChangeSecurityCodeOfSubAccount2(SecurityCodeParams inputParams)
         {

@@ -1,22 +1,27 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
     using Alpha.SecurityCode.Sessions;
+    using AppResources;
     using Encryption;
     using Fanex.Security;
     using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
+    using Params.SecurityCode;
     using Services;
     using System;
     using ViewModels.Security;
 
     public class SecurityCodeHandler :
          IRequestHandler<SecurityCodeQuery, SecurityCodeViewModel>,
-         IRequestHandler<UpdateSecurityCodeCommand, Result>
+         IRequestHandler<UpdateChangeSecurityCodeCommand, Result>,
+         IRequestHandler<UpdateForceChangeSecurityCodeByUpline, Result>,
+         IRequestHandler<UpdateForceChangeSecurityCodeTheFirstLogin, Result>,
+         IRequestHandler<ResetSecurityCodeCommand, Result>,
+         IRequestHandler<VerifySecurityCodeCommand, Result>
     {
         private ISecurityCodeSession securityCodeSession;
-
-        private readonly SecurityCodeService securityCodeService;
+        private SecurityCodeService securityCodeService;
 
         private string PH
         {
@@ -25,6 +30,19 @@
                 return System.Web.HttpContext.Current.Session["ph"] + string.Empty;
             }
         }
+
+        private string ClientIP
+        {
+            get
+            {
+                string ip = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]
+                    ?? System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+                string[] ips = string.IsNullOrEmpty(ip) ? new string[] { string.Empty } : ip.Split(',');
+
+                return ips[0];
+            }
+        }
+
         public SecurityCodeHandler(
            SecurityCodeService securityCodeService,
            ISecurityCodeSession securityCodeSession = null)
@@ -54,9 +72,233 @@
             };
         }
 
-        public Result Handle(UpdateSecurityCodeCommand message)
+        public Result Handle(UpdateChangeSecurityCodeCommand message)
         {
-            return new Result();
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
+            if (this.securityCodeSession.IsInternal)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+            }
+
+            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
+            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
+
+            //// validate request
+            string errorMessage = string.Empty;
+            if (string.IsNullOrEmpty(message.OldSecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.alertOldSecCodeEmpty;
+            }
+            else if (string.IsNullOrEmpty(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
+            }
+            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
+            }
+            else if (message.SecurityCode != message.ConfirmSecurityCode)
+            {
+                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
+            }
+
+            if (errorMessage.Length != 0)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
+            }
+
+            return this.securityCodeService.ChangeSecurityCode(
+                new SecurityCodeParams
+                {
+                    CustId = this.securityCodeSession.CustId,
+                    UserId = this.securityCodeSession.UserId,
+                    OldSecurityCode = message.OldSecurityCode,
+                    SecurityCode = message.SecurityCode,
+                    SecurityCodeToken = message.SecurityCodeToken,
+                    Language = this.securityCodeSession.Language,
+                    IP = this.ClientIP,
+                    SubAccountId = this.securityCodeSession.SubAccId
+                });
+        }
+
+        public Result Handle(UpdateForceChangeSecurityCodeTheFirstLogin message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
+            if (this.securityCodeSession.IsInternal)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+            }
+
+            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
+            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
+
+            //// validate request
+            string errorMessage = string.Empty;
+            if (string.IsNullOrEmpty(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
+            }
+            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
+            }
+            else if (message.SecurityCode != message.ConfirmSecurityCode)
+            {
+                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
+            }
+
+            if (errorMessage.Length != 0)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
+            }
+
+            return this.securityCodeService.ChangeSecurityCode(
+                new SecurityCodeParams
+                {
+                    CustId = this.securityCodeSession.CustId,
+                    UserId = this.securityCodeSession.UserId,
+                    SecurityCode = message.SecurityCode,
+                    IP = this.ClientIP,
+                    Language = this.securityCodeSession.Language,
+                    SubAccountId = this.securityCodeSession.SubAccId
+                });
+        }
+
+        public Result Handle(UpdateForceChangeSecurityCodeByUpline message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
+            if (this.securityCodeSession.IsInternal)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+            }
+
+            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
+            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
+
+            //// validate request
+            string errorMessage = string.Empty;
+            if (string.IsNullOrEmpty(message.OldSecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.alertOldSecCodeEmpty;
+            }
+            else if (string.IsNullOrEmpty(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
+            }
+            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
+            }
+            else if (message.SecurityCode != message.ConfirmSecurityCode)
+            {
+                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
+            }
+
+            if (errorMessage.Length != 0)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
+            }
+
+            return this.securityCodeService.ChangeSecurityCode(
+                new SecurityCodeParams
+                {
+                    CustId = this.securityCodeSession.CustId,
+                    UserId = this.securityCodeSession.UserId,
+                    OldSecurityCode = message.OldSecurityCode,
+                    SecurityCode = message.SecurityCode,
+                    SecurityCodeToken = message.SecurityCodeToken,
+                    IP = this.ClientIP,
+                    Language = this.securityCodeSession.Language,
+                    SubAccountId = this.securityCodeSession.SubAccId
+                });
+        }
+
+        public Result Handle(ResetSecurityCodeCommand message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
+            bool isResetSubAccount = message.SubAccountId > 0;
+            if (this.securityCodeSession.IsInternal && !isResetSubAccount)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+            }
+
+            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
+            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
+
+            //// validate request
+            string errorMessage = string.Empty;
+            if (string.IsNullOrEmpty(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
+            }
+            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
+            }
+            else if (message.SecurityCode != message.ConfirmSecurityCode)
+            {
+                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
+            }
+
+            if (errorMessage.Length != 0)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
+            }
+            return this.securityCodeService.ChangeSecurityCode(
+                new SecurityCodeParams
+                {
+                    CustId = this.securityCodeSession.CustId,
+                    UserId = this.securityCodeSession.UserId,
+                    SecurityCode = message.SecurityCode,
+                    IP = this.ClientIP,
+                    Language = this.securityCodeSession.Language,
+                    SubAccountId = this.securityCodeSession.SubAccId
+                });
+        }
+
+        public Result Handle(VerifySecurityCodeCommand message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
+            if (this.securityCodeSession.IsInternal)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+            }
+
+            if (string.IsNullOrEmpty(message.SecurityCode))
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.informSecCode };
+            }
+
+            return this.securityCodeService.ChangeSecurityCode(
+                new SecurityCodeParams
+                {
+                    CustId = this.securityCodeSession.CustId,
+                    SecurityCode = message.SecurityCode,
+                    SecurityCodeToken = message.SecurityCodeToken,
+                    IP = this.ClientIP,
+                    Language = this.securityCodeSession.Language,
+                    SubAccountId = this.securityCodeSession.SubAccId
+                });
         }
 
         private string GenerateSecurityToken(int size = 6)
