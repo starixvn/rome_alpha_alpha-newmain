@@ -22,7 +22,78 @@
         };
     </script>
 }
-<div class="container-wrap">
+
+<div class="block">
+    <form class="form-SC" id="form-SC">
+        <div class="box-lang">
+            <div class="dropdown">
+                <span class="btn dropdown-toggle" type="button" id="langList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="flag flag-en"></span>
+                    English
+                    <span class="caret"></span>
+                </span>
+                <ul class="dropdown-menu" aria-labelledby="langList">
+                    <li><a href="#"><span class="flag flag-en"></span>English</a></li>
+                    <li><a href="#"><span class="flag flag-cn"></span>繁體中文</a></li>
+                    <li><a href="#"><span class="flag flag-tw"></span>简体中文</a></li>
+                    <li><a href="#"><span class="flag flag-jp"></span>日本語</a></li>
+                    <li><a href="#"><span class="flag flag-th"></span>ภาษาไทย</a></li>
+                    <li><a href="#"><span class="flag flag-kr"></span>한국어</a></li>
+                    <li><a href="#"><span class="flag flag-vn"></span>Tiếng Việt</a></li>
+                </ul>
+            </div>
+        </div>
+        <h1 class="title">Security Code</h1>
+        <p> Please create your own security code</p>
+        <figure class="avatar">
+            <img src="../Assets/Styles/security-code/images/1.jpg" alt="Avatar">
+            <figcaption><span class="username">S688H</span><br /><span class="nickname">(John88)</span></figcaption>
+        </figure>
+        <div class="rowlg">
+            <input type="password" class="txt" name="providedSC" id="providedSC" placeholder="Provided Security Code">
+            <i class="icon-account-key"></i>
+            <i class="validation"></i>
+        </div>
+        <div class="rowlg help-rules">
+            <input type="password" class="txt" name="SC" id="SC" placeholder="Security Code">
+            <i class="icon-account-key"></i>
+            <i class="validation"></i>
+        </div>
+        <div class="rowlg">
+            <input type="password" class="txt" name="confirmSC" id="confirmSC" placeholder="Confirm Security Code">
+            <i class="icon-account-key"></i>
+            <i class="validation"></i>
+        </div>
+        <div class="list-button">
+            <input type="button" class="btn-cancel" value="Back" />
+            <input type="submit" class="btn-submit" value="Submit" />
+        </div>
+    </form>
+    <div class="rules" id="rules">
+        <div class="rules-title" id="rules-title" data-toggle="modal" data-target="#sc"><span class="icon-information-outline icon-rules"></span>Security code rules</div>
+        <!-- Modal -->
+        <div class="modal fade information" id="sc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="icon icon-close close" data-dismiss="modal" aria-label="Close"></span>
+                        <h4 class="modal-title" id="myModalLabel"><span class="icon-information-outline icon-rules"></span>Security code rules</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Security Code (SC) must be a 6-digits string, contains at least 2 different digits and must not be forward run and backward run number.</p>
+                        <ul>
+                            <li>A "Forward run" is a consecutive, ascending order series of digits.</li>
+                            <li>A "Backward Run" is a consecutive, descending order series of digits.</li>
+                            <li>For example: 123456, 456789, 765432, ect. are not allowed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="container-wrap">
     <div id="header_main">@SecurityCode_Resources.SecurityCode</div>
     @using (Html.BeginForm("ForceChangeSecurityCode", "SecurityCode", System.Web.Mvc.FormMethod.Post,
                              new { id = "frmForceChangeSecurityCode" }))
@@ -32,7 +103,7 @@
             @*<tr>
                 <td colspan="2" class="subTitle bold">@SecurityCode_Resources.SecurityCode</td>
             </tr>*@
-            <tr>
+            @*<tr>
                 <td>@SecurityCode_Resources.oldSecCode</td>
                 <td>
                     <input id="txtOldSecCode" type="password" name="oldSecurityCode" autocomplete="off" maxlength="6" class="txt hasBorder" />
@@ -62,4 +133,4 @@
         </table>
     }
     @Html.Partial("Shared/_SecurityCodeHint", SecurityCode_Resources.lblRequiredSecCode)
-</div>
+</div>*@

@@ -501,6 +501,10 @@
     <Content Include="Assets\bundles\default-introduction.min.js">
       <DependentUpon>default-introduction.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\security-code.css" />
+    <Content Include="Assets\bundles\security-code.min.css">
+      <DependentUpon>security-code.css</DependentUpon>
+    </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />
     <Content Include="Assets\scripts\security-code\changesecuritycode.js" />
@@ -581,6 +585,20 @@
     </Content>
     <Content Include="Assets\styles\introduction\intro.min.css">
       <DependentUpon>intro.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security-code\images\1.jpg" />
+    <Content Include="Assets\styles\security-code\images\2.jpg" />
+    <Content Include="Assets\styles\security-code\images\3.jpg" />
+    <Content Include="Assets\styles\security-code\images\4.jpg" />
+    <Content Include="Assets\styles\security-code\images\5.jpg" />
+    <Content Include="Assets\styles\security-code\images\6.jpg" />
+    <Content Include="Assets\styles\security-code\images\7.jpg" />
+    <Content Include="Assets\styles\security-code\images\8.jpg" />
+    <Content Include="Assets\styles\security-code\security-code.css">
+      <DependentUpon>security-code.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security-code\security-code.min.css">
+      <DependentUpon>security-code.css</DependentUpon>
     </Content>
     <Content Include="Web.local.config">
       <SubType>Designer</SubType>
@@ -684,6 +702,7 @@
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\introduction\intro.scss" />
     <Content Include="bin\Alpha.SecurityCode.dll.config" />
+    <Content Include="Assets\styles\security-code\security-code.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>

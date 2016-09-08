@@ -36,5 +36,11 @@
       "Assets/styles/introduction/enjoyhint.css",
       "Assets/styles/introduction/intro.css"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security-code.css",
+    "inputFiles": [
+      "Assets/styles/security-code/security-code.css"
+    ]
   }
 ]

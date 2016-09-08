@@ -7,12 +7,13 @@
     <meta content="" name="description">
     <meta content="" name="author">
     @RenderSection("css", required: false)
-    @Styles.Render("~/App_Themes/Apo/styles/securitycode-css")    
+    @Styles.Render("/assets/bundles/site-main/security-code/default.min.css")    
+    @Styles.Render("../Assets/bundles/security-code.min.css")    
 </head>
 <body>
     @RenderBody()
     @Html.AntiForgeryToken()
-    <script src="@Url.Content("~/Scripts/_Libs/jQuery/jquery-1.8.2.min.js")" type="text/javascript"></script>
+    <script src="/assets/bundles/site-main/security-code/default.js" type="text/javascript"></script>
     @RenderSection("js", required: false)
 </body>
 </html>
