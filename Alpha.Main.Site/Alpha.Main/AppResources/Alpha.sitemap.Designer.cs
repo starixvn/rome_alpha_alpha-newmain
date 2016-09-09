@@ -133,7 +133,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Both/One/Neither team to score.
+        ///   Looks up a localized string similar to Both/One/Neither Team To Score.
         /// </summary>
         public static string BetType26 {
             get {
@@ -142,7 +142,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To win to nil.
+        ///   Looks up a localized string similar to To Win To Nil.
         /// </summary>
         public static string BetType27 {
             get {
@@ -151,7 +151,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 3-way handicap.
+        ///   Looks up a localized string similar to 3-Way Handicap.
         /// </summary>
         public static string BetType28 {
             get {

@@ -127,7 +127,7 @@
     <value>Double Chance</value>
   </data>
   <data name="BetType26" xml:space="preserve">
-    <value>Both/One/Neither team to score</value>
+    <value>Both/One/Neither Team To Score</value>
   </data>
   <data name="bingoPositionTaking" xml:space="preserve">
     <value>Bingo Position Taking (%)</value>
@@ -331,10 +331,10 @@
     <value>Clean Sheet</value>
   </data>
   <data name="BetType27" xml:space="preserve">
-    <value>To win to nil</value>
+    <value>To Win To Nil</value>
   </data>
   <data name="BetType28" xml:space="preserve">
-    <value>3-way handicap</value>
+    <value>3-Way Handicap</value>
   </data>
   <data name="BetsAndForecast" xml:space="preserve">
     <value>Bets &amp; Forecast &lt;span class="beta-version"&gt;Beta&lt;/span&gt;</value>
