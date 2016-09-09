@@ -6,14 +6,11 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="" name="author">
-    @RenderSection("css", required: false)
-    @Styles.Render("/assets/bundles/site-main/security-code/default.min.css")    
-    @Styles.Render("../Assets/bundles/security-code.min.css")    
+    @RenderSection("css", required: false)      
 </head>
 <body>
     @RenderBody()
-    @Html.AntiForgeryToken()
-    <script src="/assets/bundles/site-main/security-code/default.js" type="text/javascript"></script>
+    @Html.AntiForgeryToken()    
     @RenderSection("js", required: false)
 </body>
 </html>

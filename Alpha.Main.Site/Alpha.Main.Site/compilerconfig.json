@@ -36,10 +36,6 @@
     "inputFile": "Assets/styles/introduction/enjoyhint.scss"
   },
   {
-    "outputFile": "Assets/styles/securitycode/SC.css",
-    "inputFile": "Assets/styles/securitycode/SC.scss"
-  },
-  {
     "outputFile": "Assets/styles/security-code/security-code.css",
     "inputFile": "Assets/styles/security-code/security-code.scss"
   }

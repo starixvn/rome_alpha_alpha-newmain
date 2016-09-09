@@ -1,4 +1,36 @@
-﻿.rowlg .icon-account-key {
-    font-size: 20px;
-    top: 8px;
+﻿body {
+    background: none;
+}
+
+.block {
+    padding-top: 16px;
+
+    label {
+        font-weight: normal;
+        margin-bottom: 8px;
+    }
+
+    .txt {
+        width: 252px;
+    }
+
+    .note-red {
+        color: #ff0101;
+        padding-right: 6px;
+    }
+
+    .rules {
+        color: #666;   
+        padding-top: 12px;    
+
+        ul {
+            list-style: initial;
+            padding-left: 32px;
+
+            li {
+                list-style-type: disc;
+                line-height: 24px;
+            }
+        }
+    }
 }
