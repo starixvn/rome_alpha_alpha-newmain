@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true" >
   <siteMapNode title="Alpha Site">
-    
+
     <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]" >
       <siteMapNode resourceKey="memberWinLoss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="2"></siteMapNode>
       <siteMapNode resourceKey="memberwinlossdetail1" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="2"></siteMapNode>
@@ -9,7 +9,7 @@
       <siteMapNode resourceKey="memberwinlossdetail3" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="4"></siteMapNode>
       <siteMapNode resourceKey="memberwinlossdetail4" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="3"></siteMapNode>
     </siteMapNode>
-    
+
     <siteMapNode resourceKey="MemberInfo" menuItemType="MemberInfo" roles="4">
       <siteMapNode resourceKey="DownlineList" appPath="OldMainAppPath" url="~/DownlineList"></siteMapNode>
     </siteMapNode>
@@ -17,10 +17,10 @@
     <siteMapNode resourceKey="MemberInfoMaster" menuItemType="MemberInfo" roles="3">
       <siteMapNode resourceKey="MemberInfoMaster" appPath="OldMainAppPath" url="~/DownlineList1" roles="3"></siteMapNode>
     </siteMapNode>
-    
+
     <siteMapNode resourceKey="BetsAndForecast" menuItemType="TotalBetsForecast">
-      <siteMapNode resourceKey="soccer" appPath="TotalBetsForecastAppPath" url="~/Forecast"></siteMapNode>
+      <siteMapNode resourceKey="soccer" appPath="TotalbetsForecastSiteVirtualPath" url="~/Forecast"></siteMapNode>
     </siteMapNode>
-  
+
   </siteMapNode>
 </siteMap>

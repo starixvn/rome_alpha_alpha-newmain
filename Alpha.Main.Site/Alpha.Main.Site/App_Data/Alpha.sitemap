@@ -68,7 +68,7 @@
     <!--/MemberInfo-->
     <!--New Totalbets Forecast-->
     <siteMapNode resourceKey="BetsAndForecast" menuItemType="TotalBetsForecast">
-      <siteMapNode resourceKey="soccer" appPath="TotalBetsForecastAppPath" url="~/Forecast"></siteMapNode>
+      <siteMapNode resourceKey="soccer" appPath="TotalbetsForecastSiteVirtualPath" url="~/Forecast"></siteMapNode>
     </siteMapNode>
     <!--/Forecast-->
     <!--Totalbets-->

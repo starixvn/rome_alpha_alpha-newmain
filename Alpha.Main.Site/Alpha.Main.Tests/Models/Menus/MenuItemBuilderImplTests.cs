@@ -46,7 +46,7 @@
             //// Assert
             Assert.IsTrue(
                 actualMenuItem.ResourceKey == "soccer"
-                && actualMenuItem.AppPath == "TotalBetsForecastAppPath"
+                && actualMenuItem.AppPath == "TotalbetsForecastSiteVirtualPath"
                 && actualMenuItem.Url == "~/Forecast"
                 && actualMenuItem.SubMenus != null
                 && !string.IsNullOrEmpty(actualMenuItem.Key));
