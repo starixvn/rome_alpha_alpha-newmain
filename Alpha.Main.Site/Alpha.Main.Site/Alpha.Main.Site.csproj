@@ -706,6 +706,7 @@
     </Content>
     <Content Include="Web.AppSettings.uati1.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Configuration\SecurityCode.config">
       <SubType>Designer</SubType>

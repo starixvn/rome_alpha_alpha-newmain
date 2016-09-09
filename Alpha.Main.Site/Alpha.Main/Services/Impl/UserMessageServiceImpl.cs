@@ -36,6 +36,7 @@
             foreach (XmlNode announcementXmlNode in xmlNormalAnnouncement.DocumentElement.ChildNodes)
             {
                 if (announcementXmlNode == null ||
+                    announcementXmlNode.Attributes == null ||
                     announcementXmlNode.Attributes["id"] == null ||
                     string.IsNullOrEmpty(announcementXmlNode.Attributes["id"].Value) ||
                     announcementXmlNode.Attributes["role"] == null ||
