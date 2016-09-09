@@ -398,6 +398,12 @@
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.uati1.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
     </Content>
+    <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb02.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL\DBCUST.CustDB.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL\DBLOG.bodb_CustomerLog.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL\DBMSG.bodb_Message.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml" />
