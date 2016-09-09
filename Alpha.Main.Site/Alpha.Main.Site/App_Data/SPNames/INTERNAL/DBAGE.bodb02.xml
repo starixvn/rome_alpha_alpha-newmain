@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Functions>
+  <Function Name="Report">
+    <Setting Key="Age_SelBalanceUpDay" SpName="Age_SelBalanceUpDay" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
+      <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
+      <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
+      <Mapping DataField="yesterday_totalBalance" ObjectProperty="YesterdayTotalBalance" />
+      <Mapping DataField="todayWinloss" ObjectProperty="TodayWinLoss" />
+      <Mapping DataField="yesterdayWinloss" ObjectProperty="YesterdayWinLoss" />
+      <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
+      <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
+    </Setting>
+    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
+      <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
+      <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
+      <Mapping DataField="yesterday_totalBalance" ObjectProperty="YesterdayTotalBalance" />
+      <Mapping DataField="todayWinloss" ObjectProperty="TodayWinLoss" />
+      <Mapping DataField="yesterdayWinloss" ObjectProperty="YesterdayWinLoss" />
+      <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
+      <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
+    </Setting>
+    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
+      <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
+      <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
+      <Mapping DataField="yesterday_totalBalance" ObjectProperty="YesterdayTotalBalance" />
+      <Mapping DataField="todayWinloss" ObjectProperty="TodayWinLoss" />
+      <Mapping DataField="yesterdayWinloss" ObjectProperty="YesterdayWinLoss" />
+      <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
+      <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
+    </Setting>
+  </Function>
+  <Function Name="Statistics">
+    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="total_csTransfer" ObjectProperty="CasinoTransfer" />
+      <Mapping DataField="total_csOutStanding" ObjectProperty="CasinoOutstanding" />
+      <Mapping DataField="total_BITransfer" ObjectProperty="BingoTransfer" />
+      <Mapping DataField="total_BIOutStanding" ObjectProperty="BingoOutstanding" />
+      <Mapping DataField="total_P2PTransfer" ObjectProperty="P2PTransfer" />
+      <Mapping DataField="total_P2POutStanding" ObjectProperty="P2POutstanding" />
+      <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
+      <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
+      <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
+      <Mapping DataField="outStanding" ObjectProperty="OutStanding" />
+      <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
+      <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
+    </Setting>
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="total_csTransfer" ObjectProperty="CasinoTransfer" />
+      <Mapping DataField="total_csOutStanding" ObjectProperty="CasinoOutstanding" />
+      <Mapping DataField="total_BITransfer" ObjectProperty="BingoTransfer" />
+      <Mapping DataField="total_BIOutStanding" ObjectProperty="BingoOutstanding" />
+      <Mapping DataField="total_P2PTransfer" ObjectProperty="P2PTransfer" />
+      <Mapping DataField="total_P2POutStanding" ObjectProperty="P2POutstanding" />
+      <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
+      <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
+      <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
+      <Mapping DataField="total_agentActive" ObjectProperty="TotalAgentActive" />
+      <Mapping DataField="total_agentClosed" ObjectProperty="TotalAgentClosed" />
+      <Mapping DataField="total_agentSuspended" ObjectProperty="TotalAgentSuspended" />
+      <Mapping DataField="outStanding" ObjectProperty="OutStanding" />
+      <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
+      <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
+    </Setting>
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="total_csTransfer" ObjectProperty="CasinoTransfer" />
+      <Mapping DataField="total_csOutStanding" ObjectProperty="CasinoOutstanding" />
+      <Mapping DataField="total_BITransfer" ObjectProperty="BingoTransfer" />
+      <Mapping DataField="total_BIOutStanding" ObjectProperty="BingoOutstanding" />
+      <Mapping DataField="total_P2PTransfer" ObjectProperty="P2PTransfer" />
+      <Mapping DataField="total_P2POutStanding" ObjectProperty="P2POutstanding" />
+      <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
+      <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
+      <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
+      <Mapping DataField="total_agentActive" ObjectProperty="TotalAgentActive" />
+      <Mapping DataField="total_agentClosed" ObjectProperty="TotalAgentClosed" />
+      <Mapping DataField="total_agentSuspended" ObjectProperty="TotalAgentSuspended" />
+      <Mapping DataField="total_masterActive" ObjectProperty="TotalMasterActive" />
+      <Mapping DataField="total_masterClosed" ObjectProperty="TotalMasterClosed" />
+      <Mapping DataField="total_masterSuspended" ObjectProperty="TotalMasterSuspended" />
+      <Mapping DataField="outStanding" ObjectProperty="OutStanding" />
+      <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
+      <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
+    </Setting>
+
+    <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="username" ObjectProperty="Username" />
+      <Mapping DataField="winlost" ObjectProperty="WinLoss" />
+    </Setting>
+    <Setting Key="Age_CustomerSelTopWinningMembers_MAg" SpName="Age_CustomerSelTopWinningMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="username" ObjectProperty="Username" />
+      <Mapping DataField="winlost" ObjectProperty="WinLoss" />
+    </Setting>
+    <Setting Key="Age_CustomerSelTopWinningMembers_SAg" SpName="Age_CustomerSelTopWinningMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="username" ObjectProperty="Username" />
+      <Mapping DataField="winlost" ObjectProperty="WinLoss" />
+    </Setting>
+
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_SAg" SpName="Age_CustomerSelTopTurnoverMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="username" ObjectProperty="Username" />
+      <Mapping DataField="turnover" ObjectProperty="Turnover" />
+    </Setting>
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_MAg" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="username" ObjectProperty="Username" />
+      <Mapping DataField="turnover" ObjectProperty="Turnover" />
+    </Setting>
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+      <Mapping DataField="username" ObjectProperty="Username" />
+      <Mapping DataField="turnover" ObjectProperty="Turnover" />
+    </Setting>
+  </Function>
+</Functions>
