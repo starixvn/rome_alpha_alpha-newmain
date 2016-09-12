@@ -68,7 +68,7 @@
             return isForceUseSecurityCode;
         }
 
-        public Result CheckSecurityCodeBetweenWebAndDB(CheckSecurityCodeParams inputParams)
+        public Result CompareSecurityCodeBetweenWebAndDB(CheckSecurityCodeParams inputParams)
         {
             if (string.IsNullOrEmpty(inputParams.SecurityCode) || string.IsNullOrEmpty(inputParams.SecurityCodeToken))
             {
@@ -80,7 +80,7 @@
             bool validSecurityCode = string.Equals(inputParams.SecurityCode, securityCodeDBHash);
 
             //// update status of Security Code
-            Result result = UpdateSecurityCodeStatus(inputParams.CustId, validSecurityCode, inputParams.Language, inputParams.IP, inputParams.SubAccountId);
+            Result result = UpdateSecurityCodeCounter(inputParams.CustId, validSecurityCode, inputParams.Language, inputParams.IP, inputParams.SubAccountId);
             if (result.ErrorCode == 200)
             {
                 result.ErrorCode = 2; //// account is closed
@@ -98,7 +98,7 @@
             return result;
         }
 
-        public Result ChangeSecurityCode(SecurityCodeParams inputParams)
+        public Result ForceChangeSecurityCodeByFirstLogin(SecurityCodeParams inputParams)
         {
 
             ////// check old SC is valid
@@ -109,12 +109,12 @@
             //    return result;
             //}
 
-            Result result = ChangeSecurityCodeWithoutValidation(inputParams);
+            Result result = ChangeSecurityCode(inputParams);
 
             return result;
         }
 
-        public Result ChangeSecurityCodeWithoutValidation(SecurityCodeParams inputParams)
+        public Result ChangeSecurityCode(SecurityCodeParams inputParams)
         {
             Result result = null;
             string hashSecurityCode = null;
@@ -122,7 +122,8 @@
             {
                 hashSecurityCode = HashSecurityCode(inputParams.SubAccountId, inputParams.SecurityCode);
                 inputParams.HashSecurityCode = hashSecurityCode;
-                result = this.ChangeSecurityCodeOfSubAccount(inputParams);
+
+                result = this.UpdateSubAccountSecurityCode(inputParams);
             }
             else
             {
@@ -135,7 +136,7 @@
                     return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.alertSameSecCode };
                 }
 
-                result = this.ChangeSecurityCodeOfMainAccount(inputParams);
+                result = this.UpdateMainAccountSecurityCode(inputParams);
             }
 
             if (result != null && result.ErrorCode == 0)
@@ -146,10 +147,18 @@
             return result;
         }
 
-        public Result ResetSecurityCode(SecurityCodeParams inputParams)
+        public Result UpdateMainAccountSecurityCode(SecurityCodeParams inputParams)
         {
             string hashSecurityCode = HashSecurityCode(inputParams.CustId, inputParams.SecurityCode, inputParams.IsResetMember);
-            Result result = this.ChangeSecurityCodeOfMainAccount(inputParams);
+            Result result = this.securityCodeDataAccess.UpdateMainAccountSecurityCode(new UpdateMainAccountSecurityCodeCriteria
+            {
+                CustId = inputParams.CustId,
+                SubaccId = inputParams.SubAccountId,
+                UserId = inputParams.UserId,
+                HashSecurityCode = inputParams.HashSecurityCode,
+                IP = inputParams.IP,
+                Language = inputParams.Language
+            });
 
             if (result.ErrorCode == 0)
             {
@@ -159,53 +168,35 @@
             return result;
         }
 
-        public Result ResetSecurityCodeOfSubAccount(SecurityCodeParams inputParams)
+        public Result ResetSubAccountSecurityCodeByUplineOrMainAccount(SecurityCodeParams inputParams)
         {
             string hashSecurityCode = HashSecurityCode(inputParams.SubAccountId, inputParams.SecurityCode);
-            Result result = this.ChangeSecurityCodeOfSubAccount2(inputParams);
-
-            if (result.ErrorCode == 0)
-            {
-                result.ErrorMessage = SecurityCode_Resources.alertSecCodeChangedOK;
-            }
-
-            return result;
-        }
-
-        private Result ChangeSecurityCodeOfMainAccount(SecurityCodeParams inputParams)
-        {
-            return this.securityCodeDataAccess.ChangeSecurityCodeOfMainAccount(new ChangeSecurityCodeOfMainAccountCriteria
-            {
-                CustId = inputParams.CustId,
-                SubaccId = inputParams.SubAccountId,
-                UserId = inputParams.UserId,
-                HashSecurityCode = inputParams.HashSecurityCode,
-                IP = inputParams.IP,
-                Language = inputParams.Language
-            });
-        }
-
-        private Result ChangeSecurityCodeOfSubAccount(SecurityCodeParams inputParams)
-        {
-            return this.securityCodeDataAccess.ChangeSecurityCodeOfSubAccount(new ChangeSecurityCodeOfSubAccountCriteria
-            {
-                CustId = inputParams.CustId,
-                SubaccId = inputParams.SubAccountId,
-                UserId = inputParams.UserId,
-                HashSecurityCode = inputParams.HashSecurityCode,
-                IP = inputParams.IP,
-                Language = inputParams.Language
-            });
-        }
-
-        private Result ChangeSecurityCodeOfSubAccount2(SecurityCodeParams inputParams)
-        {
-            return this.securityCodeDataAccess.ChangeSecurityCodeOfSubAccount2(new ChangeSecurityCodeOfSubAccount2Criteria
+            Result result = this.securityCodeDataAccess.ResetSubAccountSecurityCode(new ResetSubAccountSecurityCodeCriteria
             {
                 CustId = inputParams.CustId,
                 SubaccId = inputParams.SubAccountId,
                 UserId = inputParams.UserId,
                 HashSecurityCode = inputParams.SecurityCode,
+                IP = inputParams.IP,
+                Language = inputParams.Language
+            });
+
+            if (result.ErrorCode == 0)
+            {
+                result.ErrorMessage = SecurityCode_Resources.alertSecCodeChangedOK;
+            }
+
+            return result;
+        }
+
+        private Result UpdateSubAccountSecurityCode(SecurityCodeParams inputParams)
+        {
+            return this.securityCodeDataAccess.UpdateSubAccountSecurityCode(new UpdateSubAccountSecurityCodeCriteria
+            {
+                CustId = inputParams.CustId,
+                SubaccId = inputParams.SubAccountId,
+                UserId = inputParams.UserId,
+                HashSecurityCode = inputParams.HashSecurityCode,
                 IP = inputParams.IP,
                 Language = inputParams.Language
             });
@@ -271,14 +262,14 @@
         {
             if (subAccountId.Equals(0))
             {
-                return this.securityCodeDataAccess.GetSecurityCodeOfMainAccount(new GetSecurityCodeOfMainAccountCriteria
+                return this.securityCodeDataAccess.GetMainAccountSecurityCode(new GetMainAccountSecurityCodeCriteria
                 {
                     CustId = custId
                 });
             }
             else
             {
-                return this.securityCodeDataAccess.GetSecurityCodeOfSubAccount(new GetSecurityCodeOfSubAccountCriteria
+                return this.securityCodeDataAccess.GetSubAccountSecurityCode(new GetSubAccountSecurityCodeCriteria
                 {
                     CustId = custId,
                     SubaccId = subAccountId
@@ -286,11 +277,11 @@
             }
         }
 
-        private Result UpdateSecurityCodeStatus(int custId, bool validSecurityCode, string language, string clientIP, int subAccountId)
+        private Result UpdateSecurityCodeCounter(int custId, bool validSecurityCode, string language, string clientIP, int subAccountId)
         {
             if (subAccountId.Equals(0))
             {
-                return this.securityCodeDataAccess.UpdateSecurityCodeStatusOfMainAccount(new UpdateSecurityCodeStatusOfMainAccountCriteria
+                return this.securityCodeDataAccess.UpdateMainAccountSecurityCodeCounter(new UpdateMainAccountSecurityCodeCounterCriteria
                 {
                     CustId = custId,
                     CheckedSecurityCode = validSecurityCode,
@@ -300,7 +291,7 @@
             }
             else
             {
-                return this.securityCodeDataAccess.UpdateSecurityCodeStatusOfSubAccount(new UpdateSecurityCodeStatusOfSubAccountCriteria
+                return this.securityCodeDataAccess.UpdateSubAccountSecurityCodeCounter(new UpdateSubAccountSecurityCodeCounterCriteria
                 {
                     CustId = custId,
                     SubaccId = subAccountId,

@@ -2,13 +2,13 @@
 {
     using Fanex.Data.Repository;
 
-    public class GetSecurityCodeOfMainAccountCriteria : CriteriaBase
+    public class GetMainAccountSecurityCodeCriteria : CriteriaBase
     {
         public int CustId { get; set; }
 
         public override string GetSettingKey()
         {
-            return "Age_CustomerSelSecurityCode";
+            return "Age_GetMainAccountSecurityCode";
         }
     }
 }

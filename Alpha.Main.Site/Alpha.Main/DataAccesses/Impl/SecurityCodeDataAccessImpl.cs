@@ -13,7 +13,7 @@
     /// </summary>
     public class SecurityCodeDataAccessImpl : SecurityCodeDataAccess
     {
-        public string GetSecurityCodeOfMainAccount(GetSecurityCodeOfMainAccountCriteria criteria)
+        public string GetMainAccountSecurityCode(GetMainAccountSecurityCodeCriteria criteria)
         {
             if (criteria == null)
             {
@@ -32,30 +32,28 @@
             return string.Empty;
         }
 
-        public string GetSecurityCodeOfSubAccount(GetSecurityCodeOfSubAccountCriteria criteria)
+        public string GetSubAccountSecurityCode(GetSubAccountSecurityCodeCriteria criteria)
         {
-            using (var objectDb = new ObjectDb("Age_CustomerSelSecurityCode_Sub"))
+            if (criteria == null)
             {
-                Hashtable inputParams = new Hashtable();
-                inputParams.Add("custid", criteria.CustId);
-                inputParams.Add("subaccid", criteria.SubaccId);
+                throw new ArgumentNullException(nameof(criteria), "Criteria cannot be null");
+            }
 
-                objectDb.AssignParamValues(inputParams);
-                using (IDataReader securityCodeReader = objectDb.ExecuteReader())
+            using (var db = new ObjectDb(criteria.GetSettingKey()))
+            {
+                var reader = db.ExecuteReader(criteria.GetSpParams());
+                if (reader.Read())
                 {
-                    if (securityCodeReader.Read())
-                    {
-                        return securityCodeReader.GetString(0);
-                    }
+                    return reader.GetString(0);
                 }
-
-                return string.Empty;
             }
+
+            return string.Empty;
         }
 
-        public Result UpdateSecurityCodeStatusOfMainAccount(UpdateSecurityCodeStatusOfMainAccountCriteria criteria)
+        public Result UpdateMainAccountSecurityCodeCounter(UpdateMainAccountSecurityCodeCounterCriteria criteria)
         {
-            using (var objectDb = new ObjectDb("Age_CustomerUpdSecurityCodeStatus"))
+            using (var objectDb = new ObjectDb("Age_UpdateSubAccountSecurityCode"))
             {
                 Hashtable inputParams = new Hashtable();
                 inputParams.Add("custid", criteria.CustId);
@@ -77,9 +75,9 @@
             }
         }
 
-        public Result UpdateSecurityCodeStatusOfSubAccount(UpdateSecurityCodeStatusOfSubAccountCriteria criteria)
+        public Result UpdateSubAccountSecurityCodeCounter(UpdateSubAccountSecurityCodeCounterCriteria criteria)
         {
-            using (var objectDb = new ObjectDb("Age_CustomerUpdSecurityCodeStatus_Sub"))
+            using (var objectDb = new ObjectDb("Age_UpdateSecurityCodeCounterOfSubAccount"))
             {
                 Hashtable inputParams = new Hashtable();
                 inputParams.Add("custid", criteria.CustId);
@@ -102,7 +100,7 @@
             }
         }
 
-        public Result ChangeSecurityCodeOfMainAccount(ChangeSecurityCodeOfMainAccountCriteria criteria)
+        public Result UpdateMainAccountSecurityCode(UpdateMainAccountSecurityCodeCriteria criteria)
         {
             using (var objectDb = new ObjectDb("Age_CustomerUpdSecurityCode"))
             {
@@ -128,9 +126,9 @@
             }
         }
 
-        public Result ChangeSecurityCodeOfSubAccount(ChangeSecurityCodeOfSubAccountCriteria criteria)
+        public Result UpdateSubAccountSecurityCode(UpdateSubAccountSecurityCodeCriteria criteria)
         {
-            using (var objectDb = new ObjectDb("Age_CustomerUpdSecurityCode_Sub"))
+            using (var objectDb = new ObjectDb("Age_UpdateSubAccountSecurityCode"))
             {
                 Hashtable inputParams = new Hashtable();
                 inputParams.Add("custid", criteria.CustId);
@@ -154,9 +152,9 @@
             }
         }
 
-        public Result ChangeSecurityCodeOfSubAccount2(ChangeSecurityCodeOfSubAccount2Criteria criteria)
+        public Result ResetSubAccountSecurityCode(ResetSubAccountSecurityCodeCriteria criteria)
         {
-            using (var objectDb = new ObjectDb("Age_CustomerUpdSecurityCode_Sub2"))
+            using (var objectDb = new ObjectDb("Age_ResetSubAccountSecurityCodeByUplineOrMainAccount"))
             {
                 Hashtable inputParams = new Hashtable();
                 inputParams.Add("custid", criteria.CustId);

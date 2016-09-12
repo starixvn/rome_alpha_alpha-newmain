@@ -7,18 +7,18 @@
     /// </summary>
     public interface SecurityCodeDataAccess
     {
-        string GetSecurityCodeOfMainAccount(GetSecurityCodeOfMainAccountCriteria criteria);
+        string GetMainAccountSecurityCode(GetMainAccountSecurityCodeCriteria criteria);
 
-        string GetSecurityCodeOfSubAccount(GetSecurityCodeOfSubAccountCriteria criteria);
+        string GetSubAccountSecurityCode(GetSubAccountSecurityCodeCriteria criteria);
 
-        Result UpdateSecurityCodeStatusOfMainAccount(UpdateSecurityCodeStatusOfMainAccountCriteria criteria);
+        Result UpdateMainAccountSecurityCodeCounter(UpdateMainAccountSecurityCodeCounterCriteria criteria);
 
-        Result UpdateSecurityCodeStatusOfSubAccount(UpdateSecurityCodeStatusOfSubAccountCriteria criteria);
+        Result UpdateSubAccountSecurityCodeCounter(UpdateSubAccountSecurityCodeCounterCriteria criteria);
 
-        Result ChangeSecurityCodeOfMainAccount(ChangeSecurityCodeOfMainAccountCriteria criteria);
+        Result UpdateMainAccountSecurityCode(UpdateMainAccountSecurityCodeCriteria criteria);
 
-        Result ChangeSecurityCodeOfSubAccount(ChangeSecurityCodeOfSubAccountCriteria criteria);
+        Result UpdateSubAccountSecurityCode(UpdateSubAccountSecurityCodeCriteria criteria);
 
-        Result ChangeSecurityCodeOfSubAccount2(ChangeSecurityCodeOfSubAccount2Criteria criteria);
+        Result ResetSubAccountSecurityCode(ResetSubAccountSecurityCodeCriteria criteria);
     }
 }

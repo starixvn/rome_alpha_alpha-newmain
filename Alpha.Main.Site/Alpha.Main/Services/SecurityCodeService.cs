@@ -16,15 +16,15 @@
 
         string MD5Salt(int custId);
 
-        Result CheckSecurityCodeBetweenWebAndDB(CheckSecurityCodeParams inputParams);
+        Result CompareSecurityCodeBetweenWebAndDB(CheckSecurityCodeParams inputParams);
 
-        Result ChangeSecurityCodeWithoutValidation(SecurityCodeParams inputParams);
+        Result ForceChangeSecurityCodeByFirstLogin(SecurityCodeParams inputParams);
 
         Result ChangeSecurityCode(SecurityCodeParams inputParams);
 
-        Result ResetSecurityCode(SecurityCodeParams inputParams);
+        Result UpdateMainAccountSecurityCode(SecurityCodeParams inputParams);
 
-        Result ResetSecurityCodeOfSubAccount(SecurityCodeParams inputParams);
+        Result ResetSubAccountSecurityCodeByUplineOrMainAccount(SecurityCodeParams inputParams);
 
     }
 }

@@ -2,7 +2,7 @@
 {
     using Fanex.Data.Repository;
 
-    public class ChangeSecurityCodeOfSubAccount2Criteria : CriteriaBase
+    public class UpdateMainAccountSecurityCodeCriteria : CriteriaBase
     {
         public int CustId { get; set; }
 
@@ -18,7 +18,7 @@
 
         public override string GetSettingKey()
         {
-            return "Age_CustomerUpdSecurityCode_Sub2";
+            return "Age_UpdateMainAccountSecurityCode";
         }
     }
 }

@@ -72,7 +72,6 @@
             };
         }
 
-
         public Result Handle(UpdateChangeSecurityCodeCommand message)
         {
             if (message == null)
@@ -212,7 +211,7 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            Result result = this.securityCodeService.CheckSecurityCodeBetweenWebAndDB(
+            Result result = this.securityCodeService.CompareSecurityCodeBetweenWebAndDB(
                 new CheckSecurityCodeParams
                 {
                     CustId = this.securityCodeSession.CustId,
@@ -306,7 +305,7 @@
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.informSecCode };
             }
 
-            Result result = this.securityCodeService.CheckSecurityCodeBetweenWebAndDB(
+            Result result = this.securityCodeService.CompareSecurityCodeBetweenWebAndDB(
                new CheckSecurityCodeParams
                {
                    CustId = this.securityCodeSession.CustId,
