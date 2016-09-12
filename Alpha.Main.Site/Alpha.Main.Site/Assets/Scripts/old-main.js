@@ -729,6 +729,9 @@ var oldMainUltilities = {
 
 function reloadPopUpSetting(timeOut) {
     var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
+    if (typeof (popUp) === 'undefined') {
+        return;
+    }
     var iframes = popUp.find('#popup-iframe');
     var target = popUp.find('.modal-body #target');
 
