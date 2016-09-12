@@ -17,8 +17,7 @@
          IRequestHandler<UpdateForceChangeSecurityCodeTheFirstLogin, Result>,
          IRequestHandler<ResetSecurityCodeCommand, Result>,
          IRequestHandler<VerifySecurityCodeCommand, Result>
-    {
-        
+    {  
         public SecurityCodeHandler(
            SecurityCodeService securityCodeService,
            ISecurityCodeSession securityCodeSession = null) : base(securityCodeService, securityCodeSession)
@@ -296,24 +295,8 @@
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.informSecCode };
             }
 
+
             Result result = base.CompareSecurityCodeBetweenWebAndDB(
-              new CheckSecurityCodeParams
-              {
-                  CustId = base.securityCodeSession.CustId,
-                  SecurityCode = message.SecurityCode,
-                  SecurityCodeToken = message.SecurityCodeToken,
-                  Language = base.securityCodeSession.Language,
-                  IP = base.ClientIP,
-                  SubAccountId = base.securityCodeSession.SubAccId
-              });
-
-            if (result.ErrorCode != 0)
-            {
-                return result;
-            }
-
-
-            result = base.CompareSecurityCodeBetweenWebAndDB(
               new CheckSecurityCodeParams
               {
                   CustId = base.securityCodeSession.CustId,

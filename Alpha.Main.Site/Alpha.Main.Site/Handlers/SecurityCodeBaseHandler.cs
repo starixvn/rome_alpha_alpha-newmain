@@ -117,7 +117,7 @@
                 hashSecurityCode = HashSecurityCode(inputParams.SubAccountId, inputParams.SecurityCode);
                 inputParams.HashSecurityCode = hashSecurityCode;
 
-                result = this.UpdateSubAccountSecurityCode(inputParams);
+                result = this.securityCodeService.UpdateSubAccountSecurityCode(inputParams);
             }
             else
             {
@@ -181,19 +181,6 @@
             }
 
             return result;
-        }
-
-        private Result UpdateSubAccountSecurityCode(SecurityCodeParams inputParams)
-        {
-            return this.securityCodeService.UpdateSubAccountSecurityCode(new SecurityCodeParams
-            {
-                CustId = inputParams.CustId,
-                SubAccountId = inputParams.SubAccountId,
-                UserId = inputParams.UserId,
-                HashSecurityCode = inputParams.HashSecurityCode,
-                IP = inputParams.IP,
-                Language = inputParams.Language
-            });
         }
 
         public bool ValidateSecurityCode(string securityCode)

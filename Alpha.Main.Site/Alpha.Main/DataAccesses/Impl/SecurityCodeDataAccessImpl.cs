@@ -53,7 +53,7 @@
 
         public Result UpdateMainAccountSecurityCodeCounter(UpdateMainAccountSecurityCodeCounterCriteria criteria)
         {
-            using (var objectDb = new ObjectDb("Age_UpdateSubAccountSecurityCode"))
+            using (var objectDb = new ObjectDb("Age_UpdateMainAccountSecurityCodeCounter"))
             {
                 Hashtable inputParams = new Hashtable();
                 inputParams.Add("custid", criteria.CustId);
@@ -77,7 +77,7 @@
 
         public Result UpdateSubAccountSecurityCodeCounter(UpdateSubAccountSecurityCodeCounterCriteria criteria)
         {
-            using (var objectDb = new ObjectDb("Age_UpdateSecurityCodeCounterOfSubAccount"))
+            using (var objectDb = new ObjectDb("Age_UpdateSubAccountSecurityCodeCounter"))
             {
                 Hashtable inputParams = new Hashtable();
                 inputParams.Add("custid", criteria.CustId);
@@ -102,7 +102,7 @@
 
         public Result UpdateMainAccountSecurityCode(UpdateMainAccountSecurityCodeCriteria criteria)
         {
-            using (var objectDb = new ObjectDb("Age_CustomerUpdSecurityCode"))
+            using (var objectDb = new ObjectDb("Age_UpdateMainAccountSecurityCode"))
             {
                 Hashtable inputParams = new Hashtable();
                 inputParams.Add("custid", criteria.CustId);
@@ -154,7 +154,7 @@
 
         public Result ResetSubAccountSecurityCode(ResetSubAccountSecurityCodeCriteria criteria)
         {
-            using (var objectDb = new ObjectDb("Age_ResetSubAccountSecurityCodeByUplineOrMainAccount"))
+            using (var objectDb = new ObjectDb("Age_ResetSubAccountSecurityCode"))
             {
                 Hashtable inputParams = new Hashtable();
                 inputParams.Add("custid", criteria.CustId);
