@@ -161,7 +161,8 @@ var AgeWnd = function () {
     return {
         popUp: [],
         callback: [],
-
+        id: null,
+        iframeAttributes: null,
         calculateWidthHeight: function (width, height, position) {
             var realHeight = height;
             var maxWidth = window.top.window.innerWidth;
@@ -179,7 +180,7 @@ var AgeWnd = function () {
                 height: realHeight
             };
         },
-        open: function (url, title, left, popUpTop, width, height, callBack) {
+        open: function (url, title, left, popUpTop, width, height, callBack, iframeAttributes) {
             popUpTop = popUpTop || 200;
 
             var widthHeight = this.calculateWidthHeight(width, height, { top: popUpTop });
@@ -196,8 +197,9 @@ var AgeWnd = function () {
 
             var popUp = this.popUp.length >= 1 ? this.popUp.pop() : $("#page-popup").clone();
 
-            popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
-
+            var popupId = "page-popup-" + Math.random().toString(36).substring(7);
+            popUp.attr("id", popupId);
+            this.id = popupId;
             // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
             var scrollTop = oldMainUltilities.getScrollTop(window.document.body);
             var scrollLeft = oldMainUltilities.getScrollLeft(window.document.body);
@@ -235,6 +237,10 @@ var AgeWnd = function () {
             ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isAutoHeight);
             if (url) {
                 iframe.attr("src", url);
+                if (iframeAttributes) {
+                    this.iframeAttributes = iframeAttributes;
+                    this.iframeAttributes.src = url;
+                }
             } else {
                 ageWnd.copyTargetForm(popUp);
                 iframe = popUp.find('.modal-body').find('#popup-iframe');
@@ -273,6 +279,9 @@ var AgeWnd = function () {
         },
         close: function () {
             var popUp = this.popUp.pop();
+            if (!popUp) {
+                return;
+            }
             popUp.find('.modal-body #target').remove();
             popUp.remove();
 
@@ -381,8 +390,9 @@ function getBootboxPostion(handleElement, popUpOptions) {
 
 function ShowSecCodePopup(preUrl, callerAge) {
 
-    preUrl = 'url=' + escape(preUrl);
-    var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
+    //preUrl = 'url=' + escape(preUrl);
+    //var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
+    var url = '/site-main/SecurityCodeNewMain/VerifySecurityCode';
     var popH = 190, popW = 396, verticalOffset = -75;
     var x = (screen.width / 2) - (popW / 2) + verticalOffset;
     var y = (screen.height / 2) - (popH / 2);
@@ -428,7 +438,10 @@ function ShowSecCodePopup(preUrl, callerAge) {
 
         top.age.UnLock();
         return true;
-    });
+    	},
+        {
+            preUrl: preUrl
+        });
 }
 
 //Javascript code snippet to create a div dynamically in Javascript.

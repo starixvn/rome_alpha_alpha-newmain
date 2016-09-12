@@ -15,6 +15,13 @@ var verifySecurityCode = {
             e.preventDefault();
         });
         $('#txtSecCode').focus();
+
+        $('#simulateDone').click(function (e) {
+            var preUrl = top.popupSecurityCode.iframeAttributes.preUrl;
+            top[preUrl]();
+            top.popupSecurityCode.close();
+            e.preventDefault();
+        });
     },
     verify: function () {
         lockUI();
