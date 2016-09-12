@@ -104,7 +104,7 @@
         }
 
         [HttpPost]
-        [AntiXSRFFilter]
+        //[AntiXSRFFilter]
         public JsonResult VerifySecurityCode(string securityCode)
         {
             var query = new VerifySecurityCodeCommand(securityCode, this.securityCodeSession);

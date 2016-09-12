@@ -4,13 +4,13 @@
 var verifySecurityCode = {
     initialize: function () {
         $('#divVerifySecurityBlock').removeClass('hidden');
-        $('#txtSecCode').keypress(function (e) {
+        $('#SC').keypress(function (e) {
             if (e.which == 13) {
                 verifySecurityCode.verify();
                 e.preventDefault();
             }
         });
-        $('#btnSubmit').click(function (e) {
+        $('#btn-submit').click(function (e) {
             verifySecurityCode.verify();
             e.preventDefault();
         });
@@ -19,7 +19,7 @@ var verifySecurityCode = {
     verify: function () {
         lockUI();
         var $messageContainer = $('#errorSection');
-        var $txtSecCode = $('#txtSecCode');
+        var $txtSecCode = $('#SC');
         var message = verifySecurityCode.checkInputParameters($txtSecCode);
         if (message.length !== 0) {
             showMessage($messageContainer, message, 1);

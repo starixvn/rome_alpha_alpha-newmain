@@ -306,16 +306,24 @@
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.informSecCode };
             }
 
-            return this.securityCodeService.ChangeSecurityCode(
-                new SecurityCodeParams
-                {
-                    CustId = this.securityCodeSession.CustId,
-                    SecurityCode = message.SecurityCode,
-                    SecurityCodeToken = message.SecurityCodeToken,
-                    IP = this.ClientIP,
-                    Language = this.securityCodeSession.Language,
-                    SubAccountId = this.securityCodeSession.SubAccId
-                });
+            Result result = this.securityCodeService.CheckSecurityCodeBetweenWebAndDB(
+               new CheckSecurityCodeParams
+               {
+                   CustId = this.securityCodeSession.CustId,
+                   SecurityCode = message.SecurityCode,
+                   SecurityCodeToken = message.SecurityCodeToken,
+                   Language = this.securityCodeSession.Language,
+                   IP = this.ClientIP,
+                   SubAccountId = this.securityCodeSession.SubAccId
+               });
+
+            if (result.ErrorCode == 0)
+            {
+                this.securityCodeSession.SecurityCodeToken = string.Empty;
+                this.securityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.PROVIDED_SC_SUCCESS;
+            }
+
+            return result;
         }
 
         private string GenerateSecurityToken(int size = 6)

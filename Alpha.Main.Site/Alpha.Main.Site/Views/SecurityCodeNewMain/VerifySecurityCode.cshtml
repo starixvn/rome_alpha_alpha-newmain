@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Alpha.Main.Site.ViewModels.Security.SecurityCodeViewModel
+@{
     ViewBag.Title = "VerifySecurityCode";
     Layout = "~/Views/SecurityCodeNewMain/Shared/_Layout.cshtml";
 }
@@ -9,11 +10,9 @@
 }
 
 @section js {
-    @System.Web.Optimization.Scripts.Render("~/bundles/verifysecuritycode-js?v=16")
-
     <script type="text/javascript">
-        var securityCodeToken = '@ViewBag.SecurityCodeToken';
-        var securitySalt = '@ViewBag.SecuritySalt';
+        var securityCodeToken = '@Model.SecurityCodeToken';
+        var securitySalt = '@Model.SecuritySalt';
         var securityCodeResource = {
             informSecCode: '@SecurityCode_Resources.informSecCode'
         };
@@ -40,33 +39,6 @@
     </div>
 </div>
 
-@*<div class="container-wrap hidden" id="divVerifySecurityBlock">
-    <div id="header_main">@SecurityCode_Resources.SecurityCodeValidation</div>
-
-    @Html.Partial("Shared/_HeaderMessage", SecurityCode_Resources.informSecCode)
-    <table class="tbl-security">
-        @*<tr>
-                <td colspan="2" class="subTitle bold">@SecurityCode_Resources.SecurityCode</td>
-            </tr>*@
-        @*<tr>
-            <td>@SecurityCode_Resources.SecurityCode</td>
-            <td>
-                <input id="txtSecCode" type="password" name="securityCode" autocomplete="off" maxlength="6" class="txt hasBorder" />
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="button" value="@SecurityCode_Resources.Submit" class="btnSubmit" id="btnSubmit" />
-                <input type="reset" value="@SecurityCode_Resources.Reset" class="btn" />
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" class="note-message">@SecurityCode_Resources.contactMessage</td>
-        </tr>
-    </table>
-
-</div>*@
 <script src="@Url.Content("~/Assets/scripts/security-code/jquery-1.8.2.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Assets/scripts/security-code/core.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Assets/scripts/security-code/changesecuritycode.js")" type="text/javascript"></script>

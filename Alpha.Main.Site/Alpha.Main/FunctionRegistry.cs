@@ -125,8 +125,8 @@
 
 
             //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/UpdateForceChangeSecurityCodeTheFirstLogin");
-            return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeByUpline");
-            //return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
+            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeByUpline");
+            return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
             //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ResetSecurityCode");
             //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ChangeSecurityCode");
 
