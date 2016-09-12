@@ -4,7 +4,6 @@
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
-    using SecurityCode.Sessions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
     using System.Web.Mvc;

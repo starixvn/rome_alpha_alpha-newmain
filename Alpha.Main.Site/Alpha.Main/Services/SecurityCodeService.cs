@@ -2,8 +2,7 @@
 {
     using Models.SecurityCode;
     using Params.SecurityCode;
-    using SecurityCode.Entities;
-    using SecurityCode.Sessions;
+    using Sessions;
     using System.Diagnostics.CodeAnalysis;
 
     public interface SecurityCodeService
@@ -17,7 +16,7 @@
 
         string MD5Salt(int custId);
 
-        Result CheckSecurityCode(SecurityCodeParams inputParams);
+        Result CheckSecurityCodeBetweenWebAndDB(CheckSecurityCodeParams inputParams);
 
         Result ChangeSecurityCodeWithoutValidation(SecurityCodeParams inputParams);
 

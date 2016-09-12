@@ -35,10 +35,6 @@
       <HintPath>..\packages\Alpha.Auth.3.0.0.7\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.SecurityCode, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode\lib\net40\Alpha.SecurityCode.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="AutoMapper">
       <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>

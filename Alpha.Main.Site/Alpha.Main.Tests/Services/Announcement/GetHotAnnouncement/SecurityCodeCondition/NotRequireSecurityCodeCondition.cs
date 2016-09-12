@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.SecurityCodeCondition
 {
     using NSubstitute;
-    using SecurityCode.Sessions;
+    using Sessions;
     public class NotRequireSecurityCodeCondition : SecurityCodeBaseCondition
     {
         public NotRequireSecurityCodeCondition()

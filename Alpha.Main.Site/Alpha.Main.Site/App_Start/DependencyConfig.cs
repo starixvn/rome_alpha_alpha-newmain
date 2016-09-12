@@ -8,9 +8,9 @@
     using Main.Helpers.Impl;
     using Main.Models.Menus;
     using MediatR;
-    using SecurityCode.Sessions;
     using Services;
     using Services.Impl;
+    using Sessions;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
@@ -112,6 +112,7 @@
         {
             container.RegisterPerWebRequest<IDynamicRepository, DynamicRepository>();
             container.RegisterPerWebRequest<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>();
+            container.Register<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>(Lifestyle.Transient);
         }
     }
 }

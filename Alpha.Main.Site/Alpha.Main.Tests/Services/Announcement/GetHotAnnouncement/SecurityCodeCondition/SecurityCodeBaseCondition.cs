@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.SecurityCodeCondition
 {
     using Params.Announcements;
-    using SecurityCode.Sessions;
+    using Sessions;
     public class SecurityCodeBaseCondition
     {
         public ISecurityCodeSession SecurityCodeSession { get; set; }

@@ -3,9 +3,10 @@
     using Filter;
     using MediatR;
     using Models.Request.SecurityCode;
-    using SecurityCode.Sessions;
+    using Sessions;
     using System.Web.Mvc;
-
+    using System.Web.SessionState;
+    [SessionState(SessionStateBehavior.Default)]
     public class SecurityCodeNewMainController : BaseController
     {
         private ISecurityCodeSession securityCodeSession;
@@ -37,7 +38,6 @@
             return View(viewModel);
         }
 
-
         [HttpGet]
         public ActionResult ChangeSecurityCode()
         {
@@ -58,7 +58,6 @@
             return View(viewModel);
         }
 
-      
         [HttpGet]
         public ActionResult ResetSecurityCode()
         {
@@ -73,7 +72,8 @@
         [AntiXSRFFilter]
         public JsonResult ForceChangeSecurityCodeByUpline(string oldSecurityCode, string securityCode, string confirmSecurityCode)
         {
-            var query = new UpdateForceChangeSecurityCodeByUpline(oldSecurityCode, securityCode, confirmSecurityCode);
+            var scSession = new SecurityCodeSession(Session.SessionID);
+            var query = new UpdateForceChangeSecurityCodeByUpline(oldSecurityCode, securityCode, confirmSecurityCode, this.securityCodeSession);
 
             var viewModel = mediator.Send(query);
 
@@ -96,7 +96,7 @@
         [AntiXSRFFilter]
         public JsonResult ChangeSecurityCode(string oldSecurityCode, string securityCode, string confirmSecurityCode)
         {
-            var query = new UpdateChangeSecurityCodeCommand(oldSecurityCode, securityCode, confirmSecurityCode);
+            var query = new UpdateChangeSecurityCodeCommand(oldSecurityCode, securityCode, confirmSecurityCode, this.securityCodeSession);
 
             var viewModel = mediator.Send(query);
 
@@ -107,7 +107,7 @@
         [AntiXSRFFilter]
         public JsonResult VerifySecurityCode(string securityCode)
         {
-            var query = new VerifySecurityCodeCommand(securityCode);
+            var query = new VerifySecurityCodeCommand(securityCode, this.securityCodeSession);
 
             var viewModel = mediator.Send(query);
 

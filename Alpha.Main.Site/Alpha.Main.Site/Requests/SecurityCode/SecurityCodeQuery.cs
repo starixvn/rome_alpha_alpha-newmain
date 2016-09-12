@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Models.Request.SecurityCode
 {
-    using Alpha.SecurityCode.Sessions;
     using MediatR;
+    using Sessions;
     using System.Configuration;
     using ViewModels.Security;
     public class SecurityCodeQuery : IRequest<SecurityCodeViewModel>

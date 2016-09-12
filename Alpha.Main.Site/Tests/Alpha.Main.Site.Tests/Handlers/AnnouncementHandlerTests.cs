@@ -6,8 +6,8 @@
     using NSubstitute;
     using NUnit.Framework;
     using Params.Announcements;
-    using SecurityCode.Sessions;
     using Services;
+    using Sessions;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
     using System;

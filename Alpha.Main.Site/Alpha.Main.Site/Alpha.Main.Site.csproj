@@ -53,10 +53,6 @@
       <HintPath>..\packages\Alpha.Auth.3.0.0.7\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.SecurityCode, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode\lib\net40\Alpha.SecurityCode.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr3.Runtime.3.3.1.7705\lib\net20\Antlr3.Runtime.dll</HintPath>
@@ -511,6 +507,7 @@
     <Content Include="Assets\scripts\security-code\core.js" />
     <Content Include="Assets\scripts\security-code\forcechangesecuritycode.js" />
     <Content Include="Assets\scripts\security-code\forcechangesecuritycodewithoutvalidation.js" />
+    <Content Include="Assets\scripts\security-code\jquery-1.8.2.min.js" />
     <Content Include="Assets\scripts\security-code\resetsecuritycode.js" />
     <Content Include="Assets\scripts\security-code\Sha1.js" />
     <Content Include="Assets\scripts\security-code\Sha256.js" />
@@ -783,6 +780,7 @@
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
     <Compile Include="Requests\SecurityCode\UpdateForceChangeSecurityCodeByUpline.cs" />
+    <Compile Include="Requests\SecurityCode\BaseSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\UpdateForceChangeSecurityCodeTheFirstLogin.cs" />
     <Compile Include="Requests\SecurityCode\UpdateChangeSecurityCodeCommand.cs" />

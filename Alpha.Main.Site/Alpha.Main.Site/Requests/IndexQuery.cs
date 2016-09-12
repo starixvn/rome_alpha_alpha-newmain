@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
-    using Alpha.SecurityCode.Sessions;
     using MediatR;
+    using Sessions;
     using Sunplus.Agent.Model.Entities;
     using System.Diagnostics.CodeAnalysis;
     using ViewModels;

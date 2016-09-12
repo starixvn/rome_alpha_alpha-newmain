@@ -3,8 +3,8 @@
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
-    using SecurityCode.Sessions;
     using Services;
+    using Sessions;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
     using System;

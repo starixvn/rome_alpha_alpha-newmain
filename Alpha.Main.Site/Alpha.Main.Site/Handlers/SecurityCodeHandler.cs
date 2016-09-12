@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
-    using Alpha.SecurityCode.Sessions;
     using AppResources;
     using Encryption;
     using Fanex.Security;
@@ -9,6 +8,7 @@
     using Models.Request.SecurityCode;
     using Params.SecurityCode;
     using Services;
+    using Sessions;
     using System;
     using ViewModels.Security;
 
@@ -71,6 +71,7 @@
                 SecuritySalt = SecuritySalt
             };
         }
+
 
         public Result Handle(UpdateChangeSecurityCodeCommand message)
         {
@@ -209,6 +210,22 @@
             if (errorMessage.Length != 0)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
+            }
+
+            Result result = this.securityCodeService.CheckSecurityCodeBetweenWebAndDB(
+                new CheckSecurityCodeParams
+                {
+                    CustId = this.securityCodeSession.CustId,
+                    SecurityCode = message.OldSecurityCode,
+                    SecurityCodeToken = message.SecurityCodeToken,
+                    Language = this.securityCodeSession.Language,
+                    IP = this.ClientIP,
+                    SubAccountId = this.securityCodeSession.SubAccId
+                });
+
+            if (result.ErrorCode != 0)
+            {
+                return result;
             }
 
             return this.securityCodeService.ChangeSecurityCode(

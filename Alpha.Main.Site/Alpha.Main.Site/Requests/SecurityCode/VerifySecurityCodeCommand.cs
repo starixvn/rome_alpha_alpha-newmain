@@ -1,14 +1,14 @@
 ﻿namespace Alpha.Main.Site.Models.Request.SecurityCode
 {
-    using Alpha.SecurityCode.Sessions;
     using Main.Models.SecurityCode;
     using MediatR;
-    using System.Configuration;
-    using ViewModels.Security;
+    using Sessions;
     public class VerifySecurityCodeCommand : IRequest<Result>
     {
-        public VerifySecurityCodeCommand(string securityCode)
+        private ISecurityCodeSession securityCodeSession;
+        public VerifySecurityCodeCommand(string securityCode, ISecurityCodeSession securityCodeSession)
         {
+            this.securityCodeSession = securityCodeSession;
             this.SecurityCode = securityCode;
         }
 
@@ -16,7 +16,13 @@
 
         public string SecurityCode { get; set; }
 
-        public string SecurityCodeToken { get; set; }
+        public string SecurityCodeToken
+        {
+            get
+            {
+                return this.securityCodeSession.SecurityCodeToken;
+            }
+        }
 
         public string Language { get; set; }
 

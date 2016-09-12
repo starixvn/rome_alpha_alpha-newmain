@@ -7,7 +7,7 @@
     using NSubstitute;
     using NUnit.Framework;
     using Params.Announcements;
-    using SecurityCode.Sessions;
+    using Sessions;
     using System;
     using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
     using NotAgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest;

@@ -1,11 +1,10 @@
 ﻿namespace Alpha.Main
 {
+    using Configurations;
     using Helpers;
     using Models.Menus;
-    using SecurityCode.Configurations;
-    using SecurityCode.Entities;
-    using SecurityCode.Sessions;
-    using Sunplus.Agent.Model.BL.Definitions;
+    using Models.SecurityCode;
+    using Sessions;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
@@ -121,11 +120,9 @@
             }
 
             ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-            bool newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
-            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
-            var oldStatus = Current.SecurityCodeResult;
 
-            var securityCodeUrl = string.Empty;
+            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
+
 
             //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/UpdateForceChangeSecurityCodeTheFirstLogin");
             return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeByUpline");

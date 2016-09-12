@@ -10,6 +10,8 @@
 
         public string SecurityCode { get; set; }
 
+        public string HashSecurityCode { get; set; }
+
         public string SecurityCodeToken { get; set; }
 
         public string Language { get; set; }

@@ -1,14 +1,15 @@
 ﻿namespace Alpha.Main.Site.Models.Request.SecurityCode
 {
-    using Alpha.SecurityCode.Sessions;
     using Main.Models.SecurityCode;
     using MediatR;
-    using System.Configuration;
-    using ViewModels.Security;
+    using Sessions;
     public class UpdateChangeSecurityCodeCommand : IRequest<Result>
     {
-        public UpdateChangeSecurityCodeCommand(string oldSecurityCode, string securityCode, string confirmSecurityCode)
+        private ISecurityCodeSession securityCodeSession;
+
+        public UpdateChangeSecurityCodeCommand(string oldSecurityCode, string securityCode, string confirmSecurityCode, ISecurityCodeSession securityCodeSession)
         {
+            this.securityCodeSession = securityCodeSession;
             this.OldSecurityCode = oldSecurityCode;
             this.SecurityCode = securityCode;
             this.ConfirmSecurityCode = confirmSecurityCode;
@@ -24,7 +25,12 @@
 
         public string ConfirmSecurityCode { get; set; }
 
-        public string SecurityCodeToken { get; set; }
+        public string SecurityCodeToken
+        {    get
+            {
+                return this.securityCodeSession.SecurityCodeToken;
+            }
+        }
 
         public string Language { get; set; }
 

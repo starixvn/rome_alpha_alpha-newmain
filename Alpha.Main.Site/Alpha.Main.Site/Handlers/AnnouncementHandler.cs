@@ -1,11 +1,11 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using Alpha.SecurityCode.Sessions;
     using Main.Models.Announcements;
     using MediatR;
     using Models.Requests.Announcement;
     using Params.Announcements;
     using Services;
+    using Sessions;
     using Sunplus.Agent.Utilities;
     using System;
 
