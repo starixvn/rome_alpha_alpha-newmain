@@ -11,7 +11,6 @@
     <Setting Key="Age_UpdateMainAccountSecurityCode" SpName="Age_CustomerUpdSecurityCode" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />  
     <Setting Key="Age_UpdateSubAccountSecurityCode" SpName="Age_CustomerUpdSecurityCode_Sub" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
     <Setting Key="Age_ResetSubAccountSecurityCode" SpName="Age_CustomerUpdSecurityCode_Sub2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />  
-    
     <Setting Key="Age_UpdateMainAccountSecurityCodeCounter" SpName="Age_CustomerUpdSecurityCodeStatus" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
     <Setting Key="Age_UpdateSubAccountSecurityCodeCounter" SpName="Age_CustomerUpdSecurityCodeStatus_Sub" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
     <Setting Key="Age_GetMainAccountSecurityCode" SpName="Age_CustomerSelSecurityCode" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />

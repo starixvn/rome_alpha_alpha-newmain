@@ -12,19 +12,18 @@
 
         bool IsForceUseSecurityCode(string site, SecurityCodeStatus securityCodeResult, ISecurityCodeSession securityCodeSession);
 
-        bool ValidateSecurityCode(string securityCode);
+        string GetMainAccountSecurityCode(int custId);
 
-        string MD5Salt(int custId);
+        string GetSubAccountSecurityCode(int custId, int subAccountId);
 
-        Result CompareSecurityCodeBetweenWebAndDB(CheckSecurityCodeParams inputParams);
+        Result UpdateMainAccountSecurityCodeCounter(SecurityCodeParams securityCodeParams);
 
-        Result ForceChangeSecurityCodeByFirstLogin(SecurityCodeParams inputParams);
+        Result UpdateSubAccountSecurityCodeCounter(SecurityCodeParams securityCodeParams);
 
-        Result ChangeSecurityCode(SecurityCodeParams inputParams);
+        Result UpdateMainAccountSecurityCode(SecurityCodeParams securityCodeParams);
 
-        Result UpdateMainAccountSecurityCode(SecurityCodeParams inputParams);
+        Result UpdateSubAccountSecurityCode(SecurityCodeParams securityCodeParams);
 
-        Result ResetSubAccountSecurityCodeByUplineOrMainAccount(SecurityCodeParams inputParams);
-
+        Result ResetSubAccountSecurityCode(SecurityCodeParams securityCodeParams);
     }
 }

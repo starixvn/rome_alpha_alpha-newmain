@@ -764,7 +764,7 @@
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
-    <Compile Include="Handlers\ISecurityCodeService.cs" />
+    <Compile Include="Handlers\SecurityCodeBaseHandler.cs" />
     <Compile Include="Handlers\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />

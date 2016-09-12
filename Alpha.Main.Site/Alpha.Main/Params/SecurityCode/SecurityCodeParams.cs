@@ -8,6 +8,8 @@
 
         public string OldSecurityCode { get; set; }
 
+        public bool IsValidSecurityCode { get; set; }
+
         public string SecurityCode { get; set; }
 
         public string HashSecurityCode { get; set; }
