@@ -182,7 +182,7 @@ var introduction = {
             {
                 "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
                 '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
-                '<p>' + introduction.resources.WarningOldVersionDeadline + ' DD/MM/YYYY.</p>',
+                '<p>' + introduction.resources.WarningOldVersionDeadline + ' 10/20/2016.</p>',
                 onBeforeStart: function () {
                     introduction.domElements.oldViewLink.data('old-link', introduction.domElements.oldViewLink.attr('href'));
                     introduction.domElements.oldViewLink.attr('href', '#');
