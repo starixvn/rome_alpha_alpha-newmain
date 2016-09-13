@@ -33,7 +33,7 @@ var headerNav = {
     hideHeaderDropdownMenuTimeout: null,
 
     urls: {
-        home: alpha.urls.oldMainRootPath + '_Reports/PortalPage/PortalPage.aspx',
+        home: 'Home/Index',
         changeLanguage: alpha.urls.mainRootPath + 'Language/Change'
     },
 

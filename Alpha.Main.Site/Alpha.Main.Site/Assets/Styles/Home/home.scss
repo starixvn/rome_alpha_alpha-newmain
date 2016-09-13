@@ -1,0 +1,98 @@
+﻿@import '../Home/_variables.scss';
+
+body {
+    background-color: transparent;
+    font-family: $font-family;
+    line-height: 36px;
+}
+
+.tab-content > .tab-pane {
+    padding: 8px 0;
+    .row {
+        margin: 0;
+    }
+
+    [class^="col"] {
+        padding: 0;
+    }
+}
+
+.lable {
+    text-transform: capitalize;
+    color: $text-color;
+    text-align: left;
+}
+
+.value {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: right;
+
+    &.text-red {
+        color: #fe0002;
+    }
+}
+
+.group-title {
+    border-bottom: 1px solid #dedede;
+    font-weight: bold;
+    line-height: 30px;
+    padding-top: 4px;
+    text-transform: uppercase;    
+}
+
+// Announcement
+.group-date {
+    background-color: #e3e3e3;
+    line-height: 28px;
+    padding: 0 16px;
+}
+
+.msg-contents {
+    .msg {
+        &.public {
+            color: $msg-public;
+        }
+
+        &.private {
+            color: $msg-private;
+        }
+
+        &.special {
+            color: $msg-special;
+        }
+
+        .time {
+            line-height: 30px;
+
+            [class^="icon"] {
+                position: relative;
+                top: 1px;
+            }
+        }
+
+        .content {
+            line-height: 30px;
+        }
+    }
+}
+
+@media only screen and (max-device-width : 768px) {
+    body {
+        background-color: #fff;
+    }
+
+    .nav-tabs {
+        display: table;
+        width: 100%;
+
+        li {
+            display: table-cell;
+            float: none;
+
+            a {
+                text-align: center;
+            }
+        }
+    }
+}

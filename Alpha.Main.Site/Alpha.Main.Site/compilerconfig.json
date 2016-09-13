@@ -38,6 +38,8 @@
   {
     "outputFile": "Assets/styles/security/security.css",
     "inputFile": "Assets/styles/security/security.scss"
+    "outputFile": "Assets/styles/home/home.css",
+    "inputFile": "Assets/styles/home/home.scss"
   },
   {
     "outputFile": "Assets/styles/security/lean-more.css",

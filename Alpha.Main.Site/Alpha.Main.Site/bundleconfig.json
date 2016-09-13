@@ -38,9 +38,11 @@
     ]
   },
   {
+    "outputFileName": "Assets/bundles/default-home.css",
     "outputFileName": "Assets/bundles/security/security.css",
     "inputFiles": [
       "Assets/styles/security/security.css"
+      "Assets/Styles/home/home.css"
     ]
   },
    {
@@ -124,4 +126,5 @@
       "Assets/scripts/security/password/reset-sub-account-password.js"
     ]
   }
+
 ]

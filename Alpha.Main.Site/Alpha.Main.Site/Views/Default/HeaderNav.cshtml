@@ -2,7 +2,11 @@
 <section class="navbar header-nav" id="header-nav">
     <span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
     <ul class="nav navbar-nav list-top">
-        <li class="datetime">
+        <li class="visible-mobile"><span class="icon icon-home"></span></li>
+        <li class="visible-mobile"><span class="icon icon-account-search"></span></li>
+        <li class="visible-mobile"><span class="icon icon-message"><span class="circle-red"></span></span></li>        
+        <li class="visible-mobile"><span class="icon icon-bell"><span class="circle-red"></span></span></li>  
+        <li class="hidden-mobile datetime">
             <span class="icon icon-time"></span>
             <span class="txt-top" id="clock"
                   data-year="@DateTime.Now.Year"
@@ -12,10 +16,10 @@
                   data-minute="@DateTime.Now.Minute"
                   data-second="@DateTime.Now.Second"></span>
         </li>
-        <li class="dropdown language">
-            @Html.Action("List", "Language")
+        <li class="hidden-mobile dropdown language">
+            <a href="javascript:;" data-target="#" class="dropdown-toggle language-selector-container"><span class="icon-flag langFlag-en-us"></span>English</a>
         </li>
-        <li class="intro-box">
+        <li class="hidden-mobile">
             <div class="icon icon-instruction" id="replay-instruction" data-placement="bottom" data-toggle="tooltip" title="@Resources.QuickTourTooltip"></div>
         </li>
         <li class="dropdown setting">
@@ -24,7 +28,7 @@
             </a>
 
             <ul id="header-dropdown-menu" class="dropdown-menu list-setting">
-                <li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="_blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
+                <li class="visible-mobile">@Html.Action("List", "Language")</li>                
                 <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.LoginOption</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
                 <li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
@@ -33,10 +37,11 @@
                 {
                     <li><a href="@($"{Model.MainRootPath}SecurityCode/ChangeUserOwnSecurityCode")" target="main"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                 }
-
+                <li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="_blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
+                <li class="visible-mobile"><a href="javascript;"><span class="icon icon-logout"></span>@Resources.LogOut</a></li>
             </ul>
         </li>
-        <li class="logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
+        <li class="hidden-mobile logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
     </ul>
 </section>

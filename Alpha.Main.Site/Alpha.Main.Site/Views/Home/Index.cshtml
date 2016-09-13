@@ -1,0 +1,136 @@
+﻿@model IndexViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/home/home-super")
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-home"))" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#balance" aria-controls="home" role="tab" data-toggle="tab">Balance</a>
+        </li>
+        <li role="presentation">
+            <a href="#stats" aria-controls="home" role="tab" data-toggle="tab">Stats</a>
+        </li>
+        <li role="presentation">
+            <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">Notice</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="balance">
+            <div class="row">
+                <div class="col-xs-7 lable">super</div>
+                <div class="col-xs-5 value"><strong>supertest1</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 lable">currency</div>
+                <div class="col-xs-5 value"><strong>uus</strong></div>
+            </div>
+            <div class="group-title">balance</div>
+            <div class="row">
+                <div class="col-xs-7 lable">cash</div>
+                <div class="col-xs-5 value"><strong>32,946,656.93</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 lable">Yesterday cash</div>
+                <div class="col-xs-5 value"><strong>32,946,656.93</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 lable">total</div>
+                <div class="col-xs-5 value text-red"><strong>-3.874.67</strong></div>
+            </div>
+            <div class="group-title">winloss</div>
+            <div class="row">
+                <div class="col-xs-7 lable">yesterday total</div>
+                <div class="col-xs-5 value"><strong>32,946,656.93</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 lable">today (09/08/2016)</div>
+                <div class="col-xs-5 value"><strong>0.00</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 lable">yesterday (09/08/2016)</div>
+                <div class="col-xs-5 value"><strong>30,000.20</strong></div>
+            </div>
+            <div class="group-title">credit</div>
+            <div class="row">
+                <div class="col-xs-7 lable">super given</div>
+                <div class="col-xs-5 value"><strong>20,000,000,003.00</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 lable">todatl master</div>
+                <div class="col-xs-5 value"><strong>1,312,724,106.00</strong></div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="stats">
+            <div class="row">
+                <div class="col-xs-7 lable">super outstanding</div>
+                <div class="col-xs-5 value"><strong>1,732.35</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 lable">total outstanding</div>
+                <div class="col-xs-5 value"><strong>13,041.00</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 lable">total casino transfer</div>
+                <div class="col-xs-5 value"><strong>0.00</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7 lable">total casino outstanding</div>
+                <div class="col-xs-5 value"><strong>0.00</strong></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 lable">total active/closed/suspended <span class="icon icon-plus"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 lable">top 10 winning members of the month <span class="icon icon-plus"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 lable">highest turnover members of the month <span class="icon icon-plus"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 lable">new members of the month: 2 <span class="icon icon-plus"></span></div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="notice">
+            <div class="group-date">11/14/2015</div>
+            <div class="msg-contents">
+                <div class="msg public">
+                    <div class="time"><span class="icon-plus"></span>11:52:25 PM</div>
+                    <div class="content">Automation test void ticket: ...</div>
+                </div>
+            </div>
+            <div class="group-date">11/15/2015</div>
+            <div class="msg-contents">
+                <div class="msg private">
+                    <div class="time"><span class="icon-minus"></span>11:52:25 PM</div>
+                    <div class="content">Automation test void ticket: 9799000085, 9799000086, 9799000087, 9799000088, 9799000089, 9799000090, 9799000091, 9799000092, 9799000093, 9799000094, 9799000095, 9799000096, 9799000097, 9799000098, 9799000099, 9799000100, 9799000101, 9799000102, 9799000103</div>
+                </div>
+                <div class="msg public">
+                    <div class="time"><span class="icon-plus"></span>11:52:25 PM</div>
+                    <div class="content">Automation test void ticket: ...</div>
+                </div>
+                <div class="msg private">
+                    <div class="time"><span class="icon-plus"></span>11:52:25 PM</div>
+                    <div class="content">Automation test void ticket: ...</div>
+                </div>
+                <div class="msg private">
+                    <div class="time"><span class="icon-plus"></span>11:52:25 PM</div>
+                    <div class="content">Automation test void ticket: ...</div>
+                </div>
+                <div class="msg special">
+                    <div class="time"><span class="icon-plus"></span>11:52:25 PM</div>
+                    <div class="content">Automation test void ticket: ...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @StaticResources.AssetScripts.Render("/bundles/site-main/home/home-default")
+</body>
+</html>

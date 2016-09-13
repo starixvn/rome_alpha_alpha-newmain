@@ -164,13 +164,13 @@ html * {
     }
 }
 
-/*.sidebar {
+.sidebar {
     &.docked, &.hovered, &.focusout {
         .mainmenu-container {
             top: 56px;
         }
     }
-}*/
+}
 
 /********************************** Account Info ******************************************/
 .accountinfo-container {
@@ -244,33 +244,18 @@ html * {
     top: 20px;
 }
 @media only screen and (max-device-width : 767px) {
-
-    .header-nav {
-        .icon-collapse {
-            float: left;
-        }
-
-        .list-top {
-            float: right;
-            margin: 0 4px;
-
-            #clock {
-                display: none;
-            }
-
-            > li .list-setting, > li .list-language {
-                position: absolute;
-            }
-
-
-            .view-type {
-                display: none;
-            }
-        }
+    .message-modal {
+        display: none !important;
     }
 
-    .content-wrapper.expanded-mobile, .header {
-        left: 0;
+    .content-wrapper {
+        .content {
+            background-color: #fff;
+            top: 48px;
+        }
+        &.expanded-mobile, .header {
+            left: 0;
+        }
     }
 
     .sidebar {

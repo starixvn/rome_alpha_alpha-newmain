@@ -481,10 +481,20 @@
     <TypeScriptCompile Include="Assets\scripts\security\security-code\security-code-resources.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\security-code\verify-securitycode.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\security-helper.ts" />
+    <Content Include="Assets\bundles\default-home.css" />
+    <Content Include="Assets\bundles\default-home.min.css">
+      <DependentUpon>default-home.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-index.css" />
     <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.css">
       <DependentUpon>default-index.css</DependentUpon>
+      </Content>
+    <Content Include="Assets\styles\home\home.css">
+      <DependentUpon>home.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\home.min.css">
+      <DependentUpon>home.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
@@ -607,6 +617,7 @@
     <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.ttf" />
     <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.woff" />
     <Content Include="App_Data\securitycode.json" />
+    <Content Include="Assets\styles\home\home.scss" />
     <None Include="Assets\styles\introduction\enjoyhint.scss" />
     <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.svg" />
     <Content Include="Assets\styles\introduction\enjoyhint.css">
@@ -745,6 +756,7 @@
     <Content Include="Views\Default\Introduction.cshtml" />
     <Content Include="Views\Default\Piwik.cshtml" />
     <Content Include="Views\Password\ChangePassword.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Password\ForceChangePassword.cshtml" />
     <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
     <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
@@ -795,6 +807,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
