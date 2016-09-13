@@ -12,16 +12,21 @@
 
     public class SecurityCodeHandler : SecurityCodeBaseHandler,
          IRequestHandler<SecurityCodeQuery, SecurityCodeViewModel>,
-         IRequestHandler<UpdateChangeSecurityCodeCommand, Result>,
-         IRequestHandler<UpdateForceChangeSecurityCodeByUpline, Result>,
-         IRequestHandler<UpdateForceChangeSecurityCodeTheFirstLogin, Result>,
+         IRequestHandler<ChangeSecurityCodeByItselfCommand, Result>,
+         IRequestHandler<ForceChangeSecurityCodeWhenLoginCommand, Result>,
+         IRequestHandler<ForceChangeSecurityCodeTheFirstLoginCommand, Result>,
          IRequestHandler<ResetSecurityCodeCommand, Result>,
          IRequestHandler<VerifySecurityCodeCommand, Result>
-    {  
+    {
         public SecurityCodeHandler(
            SecurityCodeService securityCodeService,
            ISecurityCodeSession securityCodeSession = null) : base(securityCodeService, securityCodeSession)
         {
+        }
+             private void ResetToken()
+        {
+            this.securityCodeSession.SecurityCodeToken = string.Empty;
+            this.securityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.PROVIDED_SC_SUCCESS;
         }
 
         public SecurityCodeViewModel Handle(SecurityCodeQuery message)
@@ -45,76 +50,7 @@
             };
         }
 
-        public Result Handle(UpdateChangeSecurityCodeCommand message)
-        {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
-            }
-
-            if (base.securityCodeSession.IsInternal)
-            {
-                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
-            }
-
-            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
-            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
-
-            //// validate request
-            string errorMessage = string.Empty;
-            if (string.IsNullOrEmpty(message.OldSecurityCode))
-            {
-                errorMessage = SecurityCode_Resources.alertOldSecCodeEmpty;
-            }
-            else if (string.IsNullOrEmpty(message.SecurityCode))
-            {
-                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
-            }
-            else if (!base.ValidateSecurityCode(message.SecurityCode))
-            {
-                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
-            }
-            else if (message.SecurityCode != message.ConfirmSecurityCode)
-            {
-                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
-            }
-
-            if (errorMessage.Length != 0)
-            {
-                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
-            }
-
-            Result result = base.CompareSecurityCodeBetweenWebAndDB(
-              new CheckSecurityCodeParams
-              {
-                  CustId = base.securityCodeSession.CustId,
-                  SecurityCode = message.OldSecurityCode,
-                  SecurityCodeToken = message.SecurityCodeToken,
-                  Language = base.securityCodeSession.Language,
-                  IP = base.ClientIP,
-                  SubAccountId = base.securityCodeSession.SubAccId
-              });
-
-            if (result.ErrorCode != 0)
-            {
-                return result;
-            }
-
-            return base.ChangeSecurityCode(
-                new SecurityCodeParams
-                {
-                    CustId = base.securityCodeSession.CustId,
-                    UserId = base.securityCodeSession.UserId,
-                    OldSecurityCode = message.OldSecurityCode,
-                    SecurityCode = message.SecurityCode,
-                    SecurityCodeToken = message.SecurityCodeToken,
-                    Language = base.securityCodeSession.Language,
-                    IP = base.ClientIP,
-                    SubAccountId = base.securityCodeSession.SubAccId
-                });
-        }
-
-        public Result Handle(UpdateForceChangeSecurityCodeTheFirstLogin message)
+        public Result Handle(ForceChangeSecurityCodeTheFirstLoginCommand message)
         {
             if (message == null)
             {
@@ -149,19 +85,11 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return base.ChangeSecurityCode(
-                new SecurityCodeParams
-                {
-                    CustId = base.securityCodeSession.CustId,
-                    UserId = base.securityCodeSession.UserId,
-                    SecurityCode = message.SecurityCode,
-                    IP = base.ClientIP,
-                    Language = base.securityCodeSession.Language,
-                    SubAccountId = base.securityCodeSession.SubAccId
-                });
+            return base.ChangeSecurityCodeFirstLogin(message);
+
         }
 
-        public Result Handle(UpdateForceChangeSecurityCodeByUpline message)
+        public Result Handle(ForceChangeSecurityCodeWhenLoginCommand message)
         {
             if (message == null)
             {
@@ -200,34 +128,50 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            Result result = base.CompareSecurityCodeBetweenWebAndDB(
-                new CheckSecurityCodeParams
-                {
-                    CustId = base.securityCodeSession.CustId,
-                    SecurityCode = message.OldSecurityCode,
-                    SecurityCodeToken = message.SecurityCodeToken,
-                    Language = base.securityCodeSession.Language,
-                    IP = base.ClientIP,
-                    SubAccountId = base.securityCodeSession.SubAccId
-                });
+            return base.ForceChangeSecurityCodeWhenLogin(message);
+        }
 
-            if (result.ErrorCode != 0)
+        public Result Handle(ChangeSecurityCodeByItselfCommand message)
+        {
+            if (message == null)
             {
-                return result;
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            return base.ChangeSecurityCode(
-                new SecurityCodeParams
-                {
-                    CustId = base.securityCodeSession.CustId,
-                    UserId = base.securityCodeSession.UserId,
-                    OldSecurityCode = message.OldSecurityCode,
-                    SecurityCode = message.SecurityCode,
-                    SecurityCodeToken = message.SecurityCodeToken,
-                    IP = base.ClientIP,
-                    Language = base.securityCodeSession.Language,
-                    SubAccountId = base.securityCodeSession.SubAccId
-                });
+            if (base.securityCodeSession.IsInternal)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+            }
+
+            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
+            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
+
+            //// validate request
+            string errorMessage = string.Empty;
+            if (string.IsNullOrEmpty(message.OldSecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.alertOldSecCodeEmpty;
+            }
+            else if (string.IsNullOrEmpty(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
+            }
+            else if (!base.ValidateSecurityCode(message.SecurityCode))
+            {
+                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
+            }
+            else if (message.SecurityCode != message.ConfirmSecurityCode)
+            {
+                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
+            }
+
+            if (errorMessage.Length != 0)
+            {
+                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
+            }
+
+            return base.ChangeSecurityCodeByItself(message);
+
         }
 
         public Result Handle(ResetSecurityCodeCommand message)
@@ -237,7 +181,8 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            bool isResetSubAccount = message.SubAccountId > 0;
+            bool isResetSubAccount = message.SubAccId.HasValue && message.SubAccId.Value > 0;
+
             if (base.securityCodeSession.IsInternal && !isResetSubAccount)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
@@ -266,16 +211,17 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return base.ChangeSecurityCode(
-                new SecurityCodeParams
-                {
-                    CustId = base.securityCodeSession.CustId,
-                    UserId = base.securityCodeSession.UserId,
-                    SecurityCode = message.SecurityCode,
-                    IP = base.ClientIP,
-                    Language = base.securityCodeSession.Language,
-                    SubAccountId = base.securityCodeSession.SubAccId
-                });
+            Result result = new Result();
+            if (message.CustId.HasValue && message.CustId.Value > 0)
+            {
+                result =  base.ResetDownlineSecurityCode(message);
+            }
+            else if (isResetSubAccount)
+            {
+                result = base.ResetSubAccountSecurityCode(message);
+            }
+
+            return result;
         }
 
         public Result Handle(VerifySecurityCodeCommand message)
@@ -295,22 +241,10 @@
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.informSecCode };
             }
 
-
-            Result result = base.CompareSecurityCodeBetweenWebAndDB(
-              new CheckSecurityCodeParams
-              {
-                  CustId = base.securityCodeSession.CustId,
-                  SecurityCode = message.SecurityCode,
-                  SecurityCodeToken = message.SecurityCodeToken,
-                  Language = base.securityCodeSession.Language,
-                  IP = base.ClientIP,
-                  SubAccountId = base.securityCodeSession.SubAccId
-              });
-
+            Result result = base.VerifySecurityCodeForImportantAction(message);
             if (result.ErrorCode == 0)
             {
-                base.securityCodeSession.SecurityCodeToken = string.Empty;
-                base.securityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.PROVIDED_SC_SUCCESS;
+                this.ResetToken();
             }
 
             return result;

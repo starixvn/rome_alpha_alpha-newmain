@@ -2,30 +2,44 @@
 {
     using Main.Models.SecurityCode;
     using MediatR;
+    using Sessions;
     public class ResetSecurityCodeCommand : IRequest<Result>
     {
-        public ResetSecurityCodeCommand(int custId, int subAccId, string securityCode, string confirmSecurityCode)
+        private ISecurityCodeSession securityCodeSession;
+        public ResetSecurityCodeCommand(int? custId, int? SubAccId, string securityCode, string confirmSecurityCode, ISecurityCodeSession securityCodeSession)
         {
+            this.CustId = custId;
+            this.SubAccId = SubAccId;
+            this.securityCodeSession = securityCodeSession;
             this.SecurityCode = securityCode;
             this.ConfirmSecurityCode = confirmSecurityCode;
-            this.CustId = custId;
-            this.SubAccountId = subAccId;
         }
 
-        public int CustId { get; set; }
+        public int? CustId { get; set; }
 
-        public int UserId { get; set; }
+        public int UserId
+        {
+            get
+            {
+                return this.securityCodeSession.UserId;
+            }
+        }
 
-        public string SecurityCode { get; set; }
+        public int? SubAccId { get; set; }
 
         public string ConfirmSecurityCode { get; set; }
 
-        public string Language { get; set; }
+        public string SecurityCode { get; set; }
+
+
+        public string Language
+        {
+            get
+            {
+                return this.securityCodeSession.Language;
+            }
+        }
 
         private string IP { get; set; }
-
-        public int SubAccountId { get; set; }
-
-        public bool IsResetMember { get; set; }
     }
 }

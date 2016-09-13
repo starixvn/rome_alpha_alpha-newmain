@@ -12,7 +12,13 @@
             this.SecurityCode = securityCode;
         }
 
-        public int CustId { get; set; }
+        public int CustId
+        {
+            get
+            {
+                return this.securityCodeSession.CustId;
+            }
+        }
 
         public string SecurityCode { get; set; }
 
@@ -24,10 +30,22 @@
             }
         }
 
-        public string Language { get; set; }
+        public string Language
+        {
+            get
+            {
+                return this.securityCodeSession.Language;
+            }
+        }
 
         private string IP { get; set; }
 
-        public int SubAccountId { get; set; }
+        public int SubAccountId
+        {
+            get
+            {
+                return this.securityCodeSession.SubAccId;
+            }
+        }
     }
 }

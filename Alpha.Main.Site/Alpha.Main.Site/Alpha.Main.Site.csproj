@@ -779,11 +779,10 @@
     <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
-    <Compile Include="Requests\SecurityCode\UpdateForceChangeSecurityCodeByUpline.cs" />
-    <Compile Include="Requests\SecurityCode\BaseSecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeSecurityCodeForItselfCommand.cs" />
+    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeWhenLoginCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
-    <Compile Include="Requests\SecurityCode\UpdateForceChangeSecurityCodeTheFirstLogin.cs" />
-    <Compile Include="Requests\SecurityCode\UpdateChangeSecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeTheFirstLoginCommand.cs" />
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\SecurityCodeQuery.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
