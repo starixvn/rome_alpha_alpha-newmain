@@ -503,10 +503,10 @@
     </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />
-    <Content Include="Assets\scripts\security-code\changesecuritycode.js" />
+    <Content Include="Assets\scripts\security-code\changeUserOwnSecurityCode.js" />
     <Content Include="Assets\scripts\security-code\core.js" />
-    <Content Include="Assets\scripts\security-code\forcechangesecuritycode.js" />
-    <Content Include="Assets\scripts\security-code\forcechangesecuritycodewithoutvalidation.js" />
+    <Content Include="Assets\scripts\security-code\changeSecurityCodeByForcing.js" />
+    <Content Include="Assets\scripts\security-code\changeSecurityCodeFirstLogin.js" />
     <Content Include="Assets\scripts\security-code\jquery-1.8.2.min.js" />
     <Content Include="Assets\scripts\security-code\resetsecuritycode.js" />
     <Content Include="Assets\scripts\security-code\Sha1.js" />
@@ -718,9 +718,9 @@
     <Content Include="Views\Default\Introduction.cshtml" />
     <Content Include="Views\Default\Piwik.cshtml" />
     <Content Include="Views\SecurityCodeNewMain\VerifySecurityCode.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\ChangeSecurityCode.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\ForceChangeSecurityCodeByUpline.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\ForceChangeSecurityCodeByTheFirstLogin.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\ChangeUserOwnSecurityCode.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\ChangeSecurityCodeByForcing.cshtml" />
+    <Content Include="Views\SecurityCodeNewMain\ChangeSecurityCodeFirstLogin.cshtml" />
     <Content Include="Views\SecurityCodeNewMain\ResetSecurityCode.cshtml" />
     <Content Include="Views\SecurityCodeNewMain\Shared\_HeaderMessage.cshtml" />
     <Content Include="Views\SecurityCodeNewMain\Shared\_Layout.cshtml" />
@@ -779,12 +779,12 @@
     <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
-    <Compile Include="Requests\SecurityCode\ChangeSecurityCodeForItselfCommand.cs" />
-    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeWhenLoginCommand.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\SelectSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
-    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeTheFirstLoginCommand.cs" />
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
-    <Compile Include="Requests\SecurityCode\SecurityCodeQuery.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\Home\BrowserViewModel.cs" />

@@ -12,18 +12,18 @@
 
         bool IsForceUseSecurityCode(string site, SecurityCodeStatus securityCodeResult, ISecurityCodeSession securityCodeSession);
 
-        string GetMainAccountSecurityCode(int custId);
+        string GetMainAccountHashSecurityCode(int custId);
 
-        string GetSubAccountSecurityCode(int custId, int subAccountId);
+        string GetSubAccountHashSecurityCode(int custId, int subAccountId);
 
-        Result UpdateMainAccountSecurityCodeCounter(SecurityCodeParams securityCodeParams);
+        Result UpdateMainAccountHashSecurityCodeCounter(SecurityCodeParams securityCodeParams);
 
-        Result UpdateSubAccountSecurityCodeCounter(SecurityCodeParams securityCodeParams);
+        Result UpdateSubAccountHashSecurityCodeCounter(SecurityCodeParams securityCodeParams);
 
-        Result UpdateMainAccountSecurityCode(SecurityCodeParams securityCodeParams);
+        Result UpdateMainAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
 
-        Result UpdateSubAccountSecurityCode(SecurityCodeParams securityCodeParams);
+        Result UpdateSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
 
-        Result ResetSubAccountSecurityCode(SecurityCodeParams securityCodeParams);
+        Result ResetSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
     }
 }

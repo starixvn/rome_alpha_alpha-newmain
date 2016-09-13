@@ -3,13 +3,12 @@
     using Main.Models.SecurityCode;
     using MediatR;
     using Sessions;
-    public class ForceChangeSecurityCodeWhenLoginCommand : IRequest<Result>
+    public class ChangeSecurityCodeFirstLoginCommand : IRequest<Result>
     {
         private ISecurityCodeSession securityCodeSession;
-        public ForceChangeSecurityCodeWhenLoginCommand(string oldSecurityCode, string securityCode, string confirmSecurityCode, ISecurityCodeSession securityCodeSession)
+        public ChangeSecurityCodeFirstLoginCommand( string securityCode, string confirmSecurityCode, ISecurityCodeSession securityCodeSession)
         {
             this.securityCodeSession = securityCodeSession;
-            this.OldSecurityCode = oldSecurityCode;
             this.SecurityCode = securityCode;
             this.ConfirmSecurityCode = confirmSecurityCode;
         }
@@ -38,19 +37,9 @@
             }
         }
 
-        public string OldSecurityCode { get; set; }
-
         public string ConfirmSecurityCode { get; set; }
 
         public string SecurityCode { get; set; }
-
-        public string SecurityCodeToken
-        {
-            get
-            {
-                return this.securityCodeSession.SecurityCodeToken;
-            }
-        }
 
         public string Language
         {

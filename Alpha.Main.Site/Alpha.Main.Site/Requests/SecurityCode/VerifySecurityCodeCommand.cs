@@ -40,7 +40,7 @@
 
         private string IP { get; set; }
 
-        public int SubAccountId
+        public int SubAccId
         {
             get
             {

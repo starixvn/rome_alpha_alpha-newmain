@@ -2,7 +2,7 @@
 {
     using Fanex.Data.Repository;
 
-    public class ResetSubAccountSecurityCodeCriteria : CriteriaBase
+    public class ResetSubAccountHashSecurityCodeCriteria : CriteriaBase
     {
         public int CustId { get; set; }
 

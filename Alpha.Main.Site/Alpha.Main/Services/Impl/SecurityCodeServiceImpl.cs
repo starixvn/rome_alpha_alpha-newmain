@@ -59,26 +59,26 @@
             return isForceUseSecurityCode;
         }
 
-        public string GetMainAccountSecurityCode(int custId)
+        public string GetMainAccountHashSecurityCode(int custId)
         {
-            return this.securityCodeDataAccess.GetMainAccountSecurityCode(
-                new GetMainAccountSecurityCodeCriteria
+            return this.securityCodeDataAccess.GetMainAccountHashSecurityCode(
+                new GetMainAccountHashSecurityCodeCriteria
                 {
                     CustId = custId
                 });
         }
 
-        public string GetSubAccountSecurityCode(int custId, int subAccountId)
+        public string GetSubAccountHashSecurityCode(int custId, int subAccountId)
         {
-            return this.securityCodeDataAccess.GetSubAccountSecurityCode(
-                new GetSubAccountSecurityCodeCriteria
+            return this.securityCodeDataAccess.GetSubAccountHashSecurityCode(
+                new GetSubAccountHashSecurityCodeCriteria
                 {
                     CustId = custId,
                     SubaccId = subAccountId
                 });
         }
 
-        public Result UpdateMainAccountSecurityCodeCounter(SecurityCodeParams securityCodeParams)
+        public Result UpdateMainAccountHashSecurityCodeCounter(SecurityCodeParams securityCodeParams)
         {
             return this.securityCodeDataAccess.UpdateMainAccountSecurityCodeCounter(
                 new UpdateMainAccountSecurityCodeCounterCriteria
@@ -90,7 +90,7 @@
                 });
         }
 
-        public Result UpdateSubAccountSecurityCodeCounter(SecurityCodeParams securityCodeParams)
+        public Result UpdateSubAccountHashSecurityCodeCounter(SecurityCodeParams securityCodeParams)
         {
             return this.securityCodeDataAccess.UpdateSubAccountSecurityCodeCounter(
                 new UpdateSubAccountSecurityCodeCounterCriteria
@@ -103,10 +103,10 @@
                 });
         }
 
-        public Result UpdateMainAccountSecurityCode(SecurityCodeParams securityCodeParams)
+        public Result UpdateMainAccountHashSecurityCode(SecurityCodeParams securityCodeParams)
         {
-            return this.securityCodeDataAccess.UpdateMainAccountSecurityCode(
-                 new UpdateMainAccountSecurityCodeCriteria
+            return this.securityCodeDataAccess.UpdateMainAccountHashSecurityCode(
+                 new UpdateMainAccountHashSecurityCodeCriteria
                  {
                      CustId = securityCodeParams.CustId,
                      SubaccId = securityCodeParams.SubAccountId,
@@ -117,9 +117,9 @@
                  });
         }
 
-        public Result UpdateSubAccountSecurityCode(SecurityCodeParams securityCodeParams)
+        public Result UpdateSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams)
         {
-            return this.securityCodeDataAccess.UpdateSubAccountSecurityCode(new UpdateSubAccountSecurityCodeCriteria
+            return this.securityCodeDataAccess.UpdateSubAccountHashSecurityCode(new UpdateSubAccountHashSecurityCodeCriteria
             {
                 CustId = securityCodeParams.CustId,
                 SubaccId = securityCodeParams.SubAccountId,
@@ -130,14 +130,14 @@
             });
         }
 
-        public Result ResetSubAccountSecurityCode(SecurityCodeParams securityCodeParams)
+        public Result ResetSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams)
         {
-            return this.securityCodeDataAccess.ResetSubAccountSecurityCode(new ResetSubAccountSecurityCodeCriteria
+            return this.securityCodeDataAccess.ResetSubAccountHashSecurityCode(new ResetSubAccountHashSecurityCodeCriteria
             {
                 CustId = securityCodeParams.CustId,
                 SubaccId = securityCodeParams.SubAccountId,
                 UserId = securityCodeParams.UserId,
-                HashSecurityCode = securityCodeParams.SecurityCode,
+                HashSecurityCode = securityCodeParams.HashSecurityCode,
                 IP = securityCodeParams.IP,
                 Language = securityCodeParams.Language
             });

@@ -4,10 +4,10 @@
     using Sessions;
     using System.Configuration;
     using ViewModels.Security;
-    public class SecurityCodeQuery : IRequest<SecurityCodeViewModel>
+    public class SelectSecurityCodeQuery : IRequest<SecurityCodeViewModel>
     {
         private ISecurityCodeSession securityCodeSession;
-        public SecurityCodeQuery(ISecurityCodeSession securityCodeSession)
+        public SelectSecurityCodeQuery(ISecurityCodeSession securityCodeSession)
         {
             this.securityCodeSession = securityCodeSession;
         }

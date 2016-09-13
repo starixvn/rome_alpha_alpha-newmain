@@ -1,35 +1,54 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
     using AppResources;
+    using Encryption;
+    using Fanex.Security;
     using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
-    using Params.SecurityCode;
     using Services;
     using Sessions;
     using System;
     using ViewModels.Security;
 
     public class SecurityCodeHandler : SecurityCodeBaseHandler,
-         IRequestHandler<SecurityCodeQuery, SecurityCodeViewModel>,
-         IRequestHandler<ChangeSecurityCodeByItselfCommand, Result>,
-         IRequestHandler<ForceChangeSecurityCodeWhenLoginCommand, Result>,
-         IRequestHandler<ForceChangeSecurityCodeTheFirstLoginCommand, Result>,
+         IRequestHandler<SelectSecurityCodeQuery, SecurityCodeViewModel>,
+         IRequestHandler<ChangeSecurityCodeFirstLoginCommand, Result>,
+         IRequestHandler<ChangeSecurityCodeByForcingCommand, Result>,
+         IRequestHandler<ChangeUserOwnSecurityCodeCommand, Result>,
          IRequestHandler<ResetSecurityCodeCommand, Result>,
          IRequestHandler<VerifySecurityCodeCommand, Result>
     {
+        private string PH
+        {
+            get
+            {
+                return System.Web.HttpContext.Current.Session["ph"] + string.Empty;
+            }
+        }
+
+        private string GenerateSecurityToken(int size = 6)
+        {
+            return Cryptography.RandomString(size);
+        }
+
+        private string GetRC4Decryption(string encryption)
+        {
+            if (string.IsNullOrEmpty(encryption))
+            {
+                return string.Empty;
+            }
+
+            return Encryptor.RC4(this.PH, Encryptor.HexDecode(encryption));
+        }
+
         public SecurityCodeHandler(
            SecurityCodeService securityCodeService,
            ISecurityCodeSession securityCodeSession = null) : base(securityCodeService, securityCodeSession)
         {
         }
-             private void ResetToken()
-        {
-            this.securityCodeSession.SecurityCodeToken = string.Empty;
-            this.securityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.PROVIDED_SC_SUCCESS;
-        }
-
-        public SecurityCodeViewModel Handle(SecurityCodeQuery message)
+            
+        public SecurityCodeViewModel Handle(SelectSecurityCodeQuery message)
         {
             if (message == null)
             {
@@ -50,7 +69,7 @@
             };
         }
 
-        public Result Handle(ForceChangeSecurityCodeTheFirstLoginCommand message)
+        public Result Handle(ChangeSecurityCodeFirstLoginCommand message)
         {
             if (message == null)
             {
@@ -62,10 +81,9 @@
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
             }
 
-            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
-            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
+            message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
+            message.ConfirmSecurityCode = this.GetRC4Decryption(message.ConfirmSecurityCode);
 
-            //// validate request
             string errorMessage = string.Empty;
             if (string.IsNullOrEmpty(message.SecurityCode))
             {
@@ -89,7 +107,7 @@
 
         }
 
-        public Result Handle(ForceChangeSecurityCodeWhenLoginCommand message)
+        public Result Handle(ChangeSecurityCodeByForcingCommand message)
         {
             if (message == null)
             {
@@ -101,10 +119,9 @@
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
             }
 
-            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
-            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
+            message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
+            message.ConfirmSecurityCode = this.GetRC4Decryption(message.ConfirmSecurityCode);
 
-            //// validate request
             string errorMessage = string.Empty;
             if (string.IsNullOrEmpty(message.OldSecurityCode))
             {
@@ -128,10 +145,10 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return base.ForceChangeSecurityCodeWhenLogin(message);
+            return base.ChangeSecurityCodeByForcing(message);
         }
 
-        public Result Handle(ChangeSecurityCodeByItselfCommand message)
+        public Result Handle(ChangeUserOwnSecurityCodeCommand message)
         {
             if (message == null)
             {
@@ -143,10 +160,9 @@
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
             }
 
-            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
-            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
+            message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
+            message.ConfirmSecurityCode = this.GetRC4Decryption(message.ConfirmSecurityCode);
 
-            //// validate request
             string errorMessage = string.Empty;
             if (string.IsNullOrEmpty(message.OldSecurityCode))
             {
@@ -170,7 +186,7 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return base.ChangeSecurityCodeByItself(message);
+            return base.ChangeUserOwnSecurityCode(message);
 
         }
 
@@ -188,10 +204,9 @@
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
             }
 
-            message.SecurityCode = GetRC4Decryption(message.SecurityCode);
-            message.ConfirmSecurityCode = GetRC4Decryption(message.ConfirmSecurityCode);
+            message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
+            message.ConfirmSecurityCode = this.GetRC4Decryption(message.ConfirmSecurityCode);
 
-            //// validate request
             string errorMessage = string.Empty;
             if (string.IsNullOrEmpty(message.SecurityCode))
             {
@@ -241,13 +256,7 @@
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.informSecCode };
             }
 
-            Result result = base.VerifySecurityCodeForImportantAction(message);
-            if (result.ErrorCode == 0)
-            {
-                this.ResetToken();
-            }
-
-            return result;
+            return base.VerifySecurityCode(message);
         }
     }
 }

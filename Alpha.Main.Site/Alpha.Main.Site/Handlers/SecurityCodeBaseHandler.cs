@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
     using AppResources;
-    using Encryption;
     using Fanex.Security;
     using Main.Models.SecurityCode;
     using Models.Request.SecurityCode;
@@ -21,15 +20,7 @@
         protected ISecurityCodeSession securityCodeSession;
         private SecurityCodeService securityCodeService;
 
-        protected string PH
-        {
-            get
-            {
-                return System.Web.HttpContext.Current.Session["ph"] + string.Empty;
-            }
-        }
-
-        protected string ClientIP
+        private string ClientIP
         {
             get
             {
@@ -54,22 +45,7 @@
             this.securityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.PROVIDED_SC_SUCCESS;
         }
 
-        protected string GenerateSecurityToken(int size = 6)
-        {
-            return Cryptography.RandomString(size);
-        }
-
-        protected string GetRC4Decryption(string encryption)
-        {
-            if (string.IsNullOrEmpty(encryption))
-            {
-                return string.Empty;
-            }
-
-            return Encryptor.RC4(this.PH, Encryptor.HexDecode(encryption));
-        }
-
-        protected Result ChangeSecurityCodeFirstLogin(ForceChangeSecurityCodeTheFirstLoginCommand message)
+        protected Result ChangeSecurityCodeFirstLogin(ChangeSecurityCodeFirstLoginCommand message)
         {
             return this.UpdateSecurityCode(new SecurityCodeParams
             {
@@ -82,9 +58,9 @@
             });
         }
 
-        protected Result ForceChangeSecurityCodeWhenLogin(ForceChangeSecurityCodeWhenLoginCommand message)
+        protected Result ChangeSecurityCodeByForcing(ChangeSecurityCodeByForcingCommand message)
         {
-            Result result = this.CompareSecurityCodeBetweenWebAndDB(this.securityCodeSession.CustId, this.securityCodeSession.SubAccId, message.OldSecurityCode);
+            Result result = this.CompareHashSecurityCodeBetweenWebAndDB(this.securityCodeSession.CustId, this.securityCodeSession.SubAccId, message.OldSecurityCode);
             if (result.ErrorCode.Equals(0))
             {
                 result = this.UpdateSecurityCode(new SecurityCodeParams
@@ -106,9 +82,9 @@
             return result;
         }
 
-        protected Result ChangeSecurityCodeByItself(ChangeSecurityCodeByItselfCommand message)
+        protected Result ChangeUserOwnSecurityCode(ChangeUserOwnSecurityCodeCommand message)
         {
-            Result result = this.CompareSecurityCodeBetweenWebAndDB(this.securityCodeSession.CustId, this.securityCodeSession.SubAccId, message.OldSecurityCode);
+            Result result = this.CompareHashSecurityCodeBetweenWebAndDB(this.securityCodeSession.CustId, this.securityCodeSession.SubAccId, message.OldSecurityCode);
             if (result.ErrorCode.Equals(0))
             {
                 result =  this.UpdateSecurityCode(new SecurityCodeParams
@@ -130,24 +106,30 @@
             return result;
         }
 
-        protected Result VerifySecurityCodeForImportantAction(VerifySecurityCodeCommand message)
+        protected Result VerifySecurityCode(VerifySecurityCodeCommand message)
         {
-            return this.CompareSecurityCodeBetweenWebAndDB(message.CustId, message.SubAccountId, message.SecurityCode);
+            Result result =  this.CompareHashSecurityCodeBetweenWebAndDB(message.CustId, message.SubAccId, message.SecurityCode);
+            if (result.ErrorCode == 0)
+            {
+                this.ResetToken();
+            }
+
+            return result;
         }
      
-        private Result CompareSecurityCodeBetweenWebAndDB(int custId, int subAccId, string securityCode)
+        private Result CompareHashSecurityCodeBetweenWebAndDB(int custId, int subAccId, string webHashSecurityCode)
         {
-            if (string.IsNullOrEmpty(securityCode) || string.IsNullOrEmpty(this.securityCodeSession.SecurityCodeToken))
+            if (string.IsNullOrEmpty(webHashSecurityCode) || string.IsNullOrEmpty(this.securityCodeSession.SecurityCodeToken))
             {
                 return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.alertInputWrongSecCode };
             }
 
-            string securityCodeDB = GetSecurityCode(custId, subAccId);
-            string securityCodeDBHash = Cryptography.ComputeHash(SHA256, securityCodeDB, this.securityCodeSession.SecurityCodeToken);
-            bool validSecurityCode = string.Equals(this.securityCodeSession.SecurityCode, securityCodeDBHash);
+            string dBsecurityCode = GetDBhashSecurityCode(custId, subAccId);
+            string dBHashsecurityCode = Cryptography.ComputeHash(SHA256, dBsecurityCode, this.securityCodeSession.SecurityCodeToken);
+            bool isValidSecurityCode = string.Equals(webHashSecurityCode, dBHashsecurityCode);
 
             //// update status of Security Code
-            Result result = UpdateSecurityCodeCounter(custId, validSecurityCode, this.securityCodeSession.Language, this.ClientIP, subAccId);
+            Result result = UpdateSecurityCodeCounter(custId, isValidSecurityCode, this.securityCodeSession.Language, this.ClientIP, subAccId);
             if (result.ErrorCode == 200)
             {
                 result.ErrorCode = 2; //// account is closed
@@ -170,9 +152,9 @@
            // new CasinoLibrary.SBAgent.Customer().UpdateCustClosedFailSecurityCode(custId, true, clientIP);
         }
 
-        protected Result UpdateSecurityCode(SecurityCodeParams inputParams)
+        private Result UpdateSecurityCode(SecurityCodeParams securityCodeParams)
         {
-            Result result = inputParams.SubAccountId.Equals(0) ? this.UpdateMainAccountSecurityCode(inputParams) : this.UpdateSubAccountSecurityCode(inputParams);
+            Result result = securityCodeParams.SubAccountId.Equals(0) ? this.UpdateMainAccountSecurityCode(securityCodeParams) : this.UpdateSubAccountSecurityCode(securityCodeParams);
 
             if (result != null && result.ErrorCode == 0)
             {
@@ -181,47 +163,47 @@
 
             return result;
         }
-        private Result UpdateSubAccountSecurityCode(SecurityCodeParams inputParams)
+        private Result UpdateSubAccountSecurityCode(SecurityCodeParams securityCodeParams)
         {
-            string hashSecurityCode = HashSecurityCode(inputParams.SubAccountId, inputParams.SecurityCode);
-            inputParams.HashSecurityCode = hashSecurityCode;
-            return this.securityCodeService.UpdateSubAccountSecurityCode(inputParams);
+            string hashSecurityCode = HashSecurityCode(securityCodeParams.SubAccountId, securityCodeParams.SecurityCode);
+            securityCodeParams.HashSecurityCode = hashSecurityCode;
+            return this.securityCodeService.UpdateSubAccountHashSecurityCode(securityCodeParams);
         }
-        private Result UpdateMainAccountSecurityCode(SecurityCodeParams inputParams)
+        private Result UpdateMainAccountSecurityCode(SecurityCodeParams securityCodeParams)
         {
-            string hashSecurityCode = HashSecurityCode(inputParams.CustId, inputParams.SecurityCode);
-            inputParams.HashSecurityCode = hashSecurityCode;
-            return this.securityCodeService.UpdateMainAccountSecurityCode(inputParams);
+            string hashSecurityCode = HashSecurityCode(securityCodeParams.CustId, securityCodeParams.SecurityCode);
+            securityCodeParams.HashSecurityCode = hashSecurityCode;
+            return this.securityCodeService.UpdateMainAccountHashSecurityCode(securityCodeParams);
         }
 
-        protected Result ResetDownlineSecurityCode(ResetSecurityCodeCommand message)
+        protected Result ResetDownlineSecurityCode(ResetSecurityCodeCommand securityCodeParams)
         {
             var isResetMember = this.securityCodeSession.RoleId == (byte)UserRole.Agent;
-            string hashSecurityCode = HashSecurityCode(message.CustId.Value, message.SecurityCode, isResetMember);
+            string hashSecurityCode = HashSecurityCode(securityCodeParams.CustId.Value, securityCodeParams.SecurityCode, isResetMember);
 
-            return this.securityCodeService.UpdateMainAccountSecurityCode(new SecurityCodeParams
+            return this.securityCodeService.UpdateMainAccountHashSecurityCode(new SecurityCodeParams
             {
-                CustId = message.CustId.Value,
-                SubAccountId = message.SubAccId.Value,
-                UserId = message.UserId,
+                CustId = securityCodeParams.CustId.Value,
+                SubAccountId = securityCodeParams.SubAccId.Value,
+                UserId = securityCodeParams.UserId,
                 SecurityCode = hashSecurityCode,
-                Language = message.Language,
+                Language = securityCodeParams.Language,
                 IP = this.ClientIP
             });
         }
 
-        protected Result ResetSubAccountSecurityCode(ResetSecurityCodeCommand message)
+        protected Result ResetSubAccountSecurityCode(ResetSecurityCodeCommand securityCodeParams)
         {
             //Reset SubAccount SecurityCode By Upline Or MainAccount
-            string hashSecurityCode = HashSecurityCode(message.SubAccId.Value, message.SecurityCode);
-            Result result = this.securityCodeService.ResetSubAccountSecurityCode(new SecurityCodeParams
+            string hashSecurityCode = HashSecurityCode(securityCodeParams.SubAccId.Value, securityCodeParams.SecurityCode);
+            Result result = this.securityCodeService.ResetSubAccountHashSecurityCode(new SecurityCodeParams
             {
-                CustId = message.CustId.Value,
-                SubAccountId = message.SubAccId.Value,
-                UserId = message.UserId,
-                HashSecurityCode = message.SecurityCode,
+                CustId = securityCodeParams.CustId.Value,
+                SubAccountId = securityCodeParams.SubAccId.Value,
+                UserId = securityCodeParams.UserId,
+                HashSecurityCode = securityCodeParams.SecurityCode,
                 IP = this.ClientIP,
-                Language = message.Language
+                Language = securityCodeParams.Language
             });
 
             if (result.ErrorCode == 0)
@@ -288,24 +270,24 @@
             return Cryptography.ComputeHash(SHA1, securityCode, salt);
         }
 
-        private string GetSecurityCode(int custId, int subAccountId)
+        private string GetDBhashSecurityCode(int custId, int subAccountId)
         {
-            return subAccountId.Equals(0) ? this.securityCodeService.GetMainAccountSecurityCode(custId) : this.securityCodeService.GetSubAccountSecurityCode(custId, subAccountId);
+            return subAccountId.Equals(0) ? this.securityCodeService.GetMainAccountHashSecurityCode(custId) : this.securityCodeService.GetSubAccountHashSecurityCode(custId, subAccountId);
         }
 
-        private Result UpdateSecurityCodeCounter(int custId, bool validSecurityCode, string language, string clientIP, int subAccountId)
+        private Result UpdateSecurityCodeCounter(int custId, bool isValidSecurityCode, string language, string clientIP, int subAccountId)
         {
-           return subAccountId.Equals(0) ? this.securityCodeService.UpdateMainAccountSecurityCodeCounter(new SecurityCodeParams
+           return subAccountId.Equals(0) ? this.securityCodeService.UpdateMainAccountHashSecurityCodeCounter(new SecurityCodeParams
            {
                CustId = custId,
-               IsValidSecurityCode = validSecurityCode,
+               IsValidSecurityCode = isValidSecurityCode,
                IP = clientIP,
                Language = language
-           }) : this.securityCodeService.UpdateSubAccountSecurityCodeCounter(new SecurityCodeParams
+           }) : this.securityCodeService.UpdateSubAccountHashSecurityCodeCounter(new SecurityCodeParams
            {
                CustId = custId,
                SubAccountId = subAccountId,
-               IsValidSecurityCode = validSecurityCode,
+               IsValidSecurityCode = isValidSecurityCode,
                IP = clientIP,
                Language = language
            });

@@ -13,7 +13,7 @@
     /// </summary>
     public class SecurityCodeDataAccessImpl : SecurityCodeDataAccess
     {
-        public string GetMainAccountSecurityCode(GetMainAccountSecurityCodeCriteria criteria)
+        public string GetMainAccountHashSecurityCode(GetMainAccountHashSecurityCodeCriteria criteria)
         {
             if (criteria == null)
             {
@@ -32,7 +32,7 @@
             return string.Empty;
         }
 
-        public string GetSubAccountSecurityCode(GetSubAccountSecurityCodeCriteria criteria)
+        public string GetSubAccountHashSecurityCode(GetSubAccountHashSecurityCodeCriteria criteria)
         {
             if (criteria == null)
             {
@@ -100,7 +100,7 @@
             }
         }
 
-        public Result UpdateMainAccountSecurityCode(UpdateMainAccountSecurityCodeCriteria criteria)
+        public Result UpdateMainAccountHashSecurityCode(UpdateMainAccountHashSecurityCodeCriteria criteria)
         {
             using (var objectDb = new ObjectDb("Age_UpdateMainAccountSecurityCode"))
             {
@@ -126,7 +126,7 @@
             }
         }
 
-        public Result UpdateSubAccountSecurityCode(UpdateSubAccountSecurityCodeCriteria criteria)
+        public Result UpdateSubAccountHashSecurityCode(UpdateSubAccountHashSecurityCodeCriteria criteria)
         {
             using (var objectDb = new ObjectDb("Age_UpdateSubAccountSecurityCode"))
             {
@@ -152,7 +152,7 @@
             }
         }
 
-        public Result ResetSubAccountSecurityCode(ResetSubAccountSecurityCodeCriteria criteria)
+        public Result ResetSubAccountHashSecurityCode(ResetSubAccountHashSecurityCodeCriteria criteria)
         {
             using (var objectDb = new ObjectDb("Age_ResetSubAccountSecurityCode"))
             {

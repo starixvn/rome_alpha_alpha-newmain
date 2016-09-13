@@ -145,13 +145,13 @@
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\ResetSubAccountSecurityCodeCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\ResetSubAccountHashSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateSubAccountHashSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateMainAccountHashSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCounterCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCounterCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\GetSubAccountSecurityCodeCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\GetMainAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\GetSubAccountHashSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\GetMainAccountHashSecurityCodeCriteria.cs" />
     <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
@@ -182,7 +182,6 @@
     <Compile Include="Models\SecurityCode\SecurityCodeStatus.cs" />
     <Compile Include="Models\SecurityCode\UserRole.cs" />
     <Compile Include="Params\Announcements\GetHotAnnouncementsParams.cs" />
-    <Compile Include="Params\SecurityCode\CheckSecurityCodeParams.cs" />
     <Compile Include="Params\SecurityCode\SecurityCodeParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppResources\Alpha.sitemap.Designer.cs">

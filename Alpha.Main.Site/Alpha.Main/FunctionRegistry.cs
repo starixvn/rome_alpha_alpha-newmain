@@ -124,11 +124,11 @@
             var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
 
 
-            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/UpdateForceChangeSecurityCodeTheFirstLogin");
-            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ForceChangeSecurityCodeByUpline");
-            return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
+            //return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ChangeSecurityCodeFirstLogin");
+            return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ChangeSecurityCodeByForcing");
+            //return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/VerifySecurityCode");
             //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ResetSecurityCode");
-            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ChangeSecurityCode");
+            //return "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCodeNewMain/ChangeUserOwnSecurityCode");
 
             //switch (status)
             //    {

@@ -3,10 +3,10 @@
     using Main.Models.SecurityCode;
     using MediatR;
     using Sessions;
-    public class ChangeSecurityCodeByItselfCommand : IRequest<Result>
+    public class ChangeSecurityCodeByForcingCommand : IRequest<Result>
     {
         private ISecurityCodeSession securityCodeSession;
-        public ChangeSecurityCodeByItselfCommand(string oldSecurityCode, string securityCode, string confirmSecurityCode, ISecurityCodeSession securityCodeSession)
+        public ChangeSecurityCodeByForcingCommand(string oldSecurityCode, string securityCode, string confirmSecurityCode, ISecurityCodeSession securityCodeSession)
         {
             this.securityCodeSession = securityCodeSession;
             this.OldSecurityCode = oldSecurityCode;
@@ -52,7 +52,8 @@
             }
         }
 
-        public string Language {
+        public string Language
+        {
             get
             {
                 return this.securityCodeSession.Language;

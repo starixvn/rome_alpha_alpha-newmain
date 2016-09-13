@@ -1,25 +1,26 @@
 ﻿$(document).ready(function () {
-    forcechangesecuritycodewithoutvalidation.initialize();
+    changeSecurityCodeByForcing.initialize();
 })
-var forcechangesecuritycodewithoutvalidation = {
+var changeSecurityCodeByForcing = {
     initialize: function () {
-        var $form = $('#frmForceChangeSecurityCodeWithoutValidation');
+        var $form = $('.form-SC');
         $form.submit(function (e) {
-            forcechangesecuritycodewithoutvalidation.changeSecurityCode();
+            changeSecurityCodeByForcing.changeSecurityCode();
             e.preventDefault();
         });
         $form.bind('reset', function (e) {
             $('#spnNewPwdIcon').removeClass();
             $('#spnConfirmSecCodeIcon').removeClass();
         });
-        $('#txtSecCode').focus();
+        $('#txtOldSecCode').focus();
     },
     changeSecurityCode: function () {
         lockUI();
         var $messageContainer = $('#errorSection');
-        var $txtSecCode = $('#txtSecCode');
-        var $txtConfirmSecCode = $('#txtConfirmSecCode');
-        var message = forcechangesecuritycodewithoutvalidation.checkInputParameters($txtSecCode, $txtConfirmSecCode);
+        var $txtOldSecCode = $('#providedSC');
+        var $txtSecCode = $('#SC');
+        var $txtConfirmSecCode = $('#confirmSC');
+        var message = changeSecurityCodeByForcing.checkInputParameters($txtOldSecCode, $txtSecCode, $txtConfirmSecCode);
         if (message.length !== 0) {
             showMessage($messageContainer, message, 1);
             unlockUI();
@@ -27,19 +28,26 @@ var forcechangesecuritycodewithoutvalidation = {
         }
 
         var ph = parent.top.ph;
+        var oldSecCode = $txtOldSecCode.val();
+        oldSecCode = hashSecurityCode(oldSecCode);
         var secCode = $txtSecCode.val();
         secCode = secCode.ec(ph).hc();
         var confirmSecCode = $txtConfirmSecCode.val();
         confirmSecCode = confirmSecCode.ec(ph).hc();
         $.ajax({
             type: 'POST',
-            url: 'ForceChangeSecurityCodeWithoutValidation',
-            data: { securityCode: secCode, confirmSecurityCode: confirmSecCode },
+            url: 'ChangeSecurityCodeByForcing',
+            data: { oldSecurityCode: oldSecCode, securityCode: secCode, confirmSecurityCode: confirmSecCode },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
+                var errorCode = data.ErrorCode;
                 showMessage($messageContainer, data.ErrorMessage, data.ErrorCode);
-                if (data.ErrorCode === 0) {
+                if (errorCode === 0) { // OK
                     redirectToHomePage(2000);
+                }
+                else if (errorCode === 2) { // account is closed
+                    alert(data.ErrorMessage);
+                    top.age.SignOut();
                 }
                 else {
                     $txtSecCode.focus();
@@ -50,11 +58,16 @@ var forcechangesecuritycodewithoutvalidation = {
             }
         })
     },
-    checkInputParameters: function ($txtSecCode, $txtConfirmSecCode) {
+    checkInputParameters: function ($txtOldSecCode, $txtSecCode, $txtConfirmSecCode) {
         var message = '';
+        var oldSecCode = $txtOldSecCode.val();
         var secCode = $txtSecCode.val();
         var confirmSecCode = $txtConfirmSecCode.val();
-        if (secCode.length === 0) {
+        if (oldSecCode.length === 0) {
+            message = securityCodeResource.alertOldSecCodeEmpty;
+            $txtOldSecCode.focus();
+        }
+        else if (secCode.length === 0) {
             message = securityCodeResource.alertSecCodeEmpty;
             $txtSecCode.focus();
         }
@@ -65,6 +78,10 @@ var forcechangesecuritycodewithoutvalidation = {
         else if (secCode != confirmSecCode) {
             message = securityCodeResource.alertErrorSecCodeConfirm;
             $txtConfirmSecCode.focus();
+        }
+        else if (oldSecCode === secCode) {
+            message = securityCodeResource.alertSameSecCode;
+            $txtSecCode.focus();
         }
 
         return message;
