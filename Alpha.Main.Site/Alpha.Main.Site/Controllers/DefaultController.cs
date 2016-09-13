@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
+    using Configurations;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
@@ -27,11 +28,15 @@
 
         public ActionResult Index()
         {
+            if (AppSettings.IsShowOldViewLink)
+            
+                {
             var browser = this.mediator.Send(new BrowserQuery(this.userSession));
 
-            if (browser.IsUnsupportedBrowser)
-            {
-                return View("UnsupportedBrowsers", browser);
+                	if (browser.IsUnsupportedBrowser)
+                	{
+                    	return View("UnsupportedBrowsers", browser);
+                	}
             }
 
                 if (!this.userSession.IsLogged
