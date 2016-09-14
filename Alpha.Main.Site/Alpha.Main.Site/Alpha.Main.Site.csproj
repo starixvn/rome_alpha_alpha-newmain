@@ -717,14 +717,13 @@
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
     <Content Include="Views\Default\Introduction.cshtml" />
     <Content Include="Views\Default\Piwik.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\VerifySecurityCode.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\ChangeUserOwnSecurityCode.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\ChangeSecurityCodeByForcing.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\ChangeSecurityCodeFirstLogin.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\ResetSecurityCode.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\Shared\_HeaderMessage.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\Shared\_Layout.cshtml" />
-    <Content Include="Views\SecurityCodeNewMain\Shared\_SecurityCodeHint.cshtml" />
+    <Content Include="Views\SecurityCode\ChangeUserOwnSecurityCode.cshtml" />
+    <Content Include="Views\SecurityCode\ChangeSecurityCodeByForcing.cshtml" />
+    <Content Include="Views\SecurityCode\ChangeSecurityCodeFirstLogin.cshtml" />
+    <Content Include="Views\SecurityCode\ResetSecurityCode.cshtml" />
+    <Content Include="Views\SecurityCode\Shared\_HeaderMessage.cshtml" />
+    <Content Include="Views\SecurityCode\Shared\_Layout.cshtml" />
+    <Content Include="Views\SecurityCode\Shared\_SecurityCodeHint.cshtml" />
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -764,8 +763,8 @@
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
-    <Compile Include="Handlers\SecurityCodeBaseHandler.cs" />
-    <Compile Include="Handlers\SecurityCodeHandler.cs" />
+    <Compile Include="Handlers\SecurityCode\SecurityCodeBaseHandler.cs" />
+    <Compile Include="Handlers\SecurityCode\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />

@@ -13,21 +13,21 @@
         /// <summary>
         /// The PROVIDE_ SC.
         /// </summary>
-        PROVIDED_SC,
+        PROVIDED_SECURITYCODE,
 
         /// <summary>
         /// The PROVIDED_SC_SUCCESS.
         /// </summary>
-        PROVIDED_SC_SUCCESS,
+        PROVIDED_SECURITYCODE_SUCCESS,
 
         /// <summary>
         /// The FORCED_CHANGE_SC_WITHOUT_VALIDATION.
         /// </summary>
-        FORCED_CHANGE_SC_WITHOUT_VALIDATION,
+        CHANGE_SECURITYCODE_FIRSTLOGIN,
 
         /// <summary>
         /// The FORCED_CHANGE_SC.
         /// </summary>
-        FORCED_CHANGE_SC
+        CHANGE_SECURITYCODE_BY_FORCING
     }
 }

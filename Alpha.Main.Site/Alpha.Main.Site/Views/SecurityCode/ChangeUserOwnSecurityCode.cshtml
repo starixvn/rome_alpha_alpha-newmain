@@ -1,7 +1,7 @@
-﻿@using Sunplus.Agent.Model.Entities;
+﻿@model Alpha.Main.Site.ViewModels.Security.SecurityCodeViewModel
 @{
     ViewBag.Title = "ChangeSecurityCode";
-    Layout = "~/Views/SecurityCodeNewMain/Shared/_Layout.cshtml";
+    Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
 @section css {
     @Styles.Render("/assets/bundles/site-main/security-code/default.min.css")
@@ -11,8 +11,8 @@
 @section js {
     @System.Web.Optimization.Scripts.Render("~/bundles/changesecuritycode-js?v=6")
     <script type="text/javascript">
-        var securityCodeToken = '@ViewBag.SecurityCodeToken';
-        var securitySalt = '@ViewBag.SecuritySalt';
+      var securityCodeToken = '@Model.SecurityCodeToken';
+        var securitySalt = '@Model.SecuritySalt';
         var securityCodeResource = {
             alertOldSecCodeEmpty: '@SecurityCode_Resources.alertOldSecCodeEmpty',
             alertSecCodeEmpty: '@SecurityCode_Resources.alertSecCodeEmpty',

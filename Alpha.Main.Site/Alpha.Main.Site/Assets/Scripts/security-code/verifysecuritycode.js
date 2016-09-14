@@ -10,7 +10,8 @@ var verifySecurityCode = {
                 e.preventDefault();
             }
         });
-        $('#btn-submit').click(function (e) {
+        var $form = $('.form-SC');
+        $form.submit(function (e) {
             verifySecurityCode.verify();
             e.preventDefault();
         });

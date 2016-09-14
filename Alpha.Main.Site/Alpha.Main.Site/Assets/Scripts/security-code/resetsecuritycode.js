@@ -3,7 +3,7 @@
 })
 var resetsecuritycode = {
     initialize: function () {
-        var $form = $('#frmResetSecurityCode');
+        var $form = $('.form-SC');
         $form.submit(function (e) {
             resetsecuritycode.reset();
             e.preventDefault();
@@ -34,8 +34,8 @@ var resetsecuritycode = {
     reset: function () {
         lockUI();
         var $messageContainer = $('#errorSection');
-        var $txtSecCode = $('#txtSecCode');
-        var $txtConfirmSecCode = $('#txtConfirmSecCode');
+        var $txtSecCode = $('#SC');
+        var $txtConfirmSecCode = $('#confirmSC');
         var message = resetsecuritycode.checkInputParameters($txtSecCode, $txtConfirmSecCode);
         if (message.length !== 0) {
             $('#error-wrap').removeClass('display-none');

@@ -145,13 +145,13 @@
                 {
                     if (this.IsInternal)
                     {
-                        status = SecurityCodeStatus.PROVIDED_SC_SUCCESS;
+                        status = SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS;
                     }
                     else
                     {
                         status = hasSC
-                            ? SecurityCodeStatus.FORCED_CHANGE_SC
-                            : SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION;
+                            ? SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING
+                            : SecurityCodeStatus.CHANGE_SECURITYCODE_FIRSTLOGIN;
                     }
                 }
                 else
@@ -159,8 +159,8 @@
                     if (hasSC)
                     {
                         status = this.IsInternal
-                            ? SecurityCodeStatus.PROVIDED_SC_SUCCESS
-                            : SecurityCodeStatus.PROVIDED_SC;
+                            ? SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS
+                            : SecurityCodeStatus.PROVIDED_SECURITYCODE;
                     }
                     else
                     {
@@ -198,7 +198,7 @@
             get
             {
                 SecurityCodeStatus status = (SecurityCodeStatus)this.SecurityCodeResult;
-                if (status == SecurityCodeStatus.NONE || status == SecurityCodeStatus.PROVIDED_SC_SUCCESS)
+                if (status == SecurityCodeStatus.NONE || status == SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS)
                 {
                     return false;
                 }

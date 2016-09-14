@@ -7,12 +7,12 @@
     using System.Web.Mvc;
     using System.Web.SessionState;
     [SessionState(SessionStateBehavior.Default)]
-    public class SecurityCodeNewMainController : BaseController
+    public class SecurityCodeController : BaseController
     {
         private ISecurityCodeSession securityCodeSession;
         private readonly IMediator mediator;
 
-        public SecurityCodeNewMainController(ISecurityCodeSession securityCodeSession, IMediator mediator)
+        public SecurityCodeController(ISecurityCodeSession securityCodeSession, IMediator mediator)
         {
             this.securityCodeSession = securityCodeSession;
             this.mediator = mediator;

@@ -53,8 +53,8 @@
             }
 
             bool isForceUseSecurityCode = securityCodeSession.IsRequireSecurityCode ||
-               securityCodeResult == SecurityCodeStatus.FORCED_CHANGE_SC ||
-               (securityCodeResult == SecurityCodeStatus.PROVIDED_SC_SUCCESS && !securityCodeSession.IsInternal);
+               securityCodeResult == SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING ||
+               (securityCodeResult == SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS && !securityCodeSession.IsInternal);
 
             return isForceUseSecurityCode;
         }

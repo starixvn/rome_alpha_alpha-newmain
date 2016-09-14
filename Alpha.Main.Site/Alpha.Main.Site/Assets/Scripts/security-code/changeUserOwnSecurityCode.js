@@ -1,11 +1,11 @@
 ﻿$(document).ready(function () {
-    changesecuritycode.initialize();
+    changeUserOwnSecurityCode.initialize();
 })
-var changesecuritycode = {
+var changeUserOwnSecurityCode = {
     initialize: function () {
-        var $form = $('#frmChangeSecurityCode');
+        var $form = $('.form-SC');
         $form.submit(function (e) {
-            changesecuritycode.change();
+            changeUserOwnSecurityCode.change();
             e.preventDefault();
         });
         $form.bind('reset', function (e) {
@@ -17,10 +17,10 @@ var changesecuritycode = {
     change: function () {
         lockUI();
         var $messageContainer = $('#errorSection');
-        var $txtOldSecCode = $('#txtOldSecCode');
-        var $txtSecCode = $('#txtSecCode');
-        var $txtConfirmSecCode = $('#txtConfirmSecCode');
-        var message = changesecuritycode.checkInputParameters($txtOldSecCode, $txtSecCode, $txtConfirmSecCode);
+        var $txtOldSecCode = $('#oldSC');
+        var $txtSecCode = $('#SC');
+        var $txtConfirmSecCode = $('#confirmSC');
+        var message = changeUserOwnSecurityCode.checkInputParameters($txtOldSecCode, $txtSecCode, $txtConfirmSecCode);
         if (message.length !== 0) {
             $('#error-wrap').removeClass('display-none');
             showMessage($messageContainer, message, 1);
@@ -37,7 +37,7 @@ var changesecuritycode = {
         confirmSecCode = confirmSecCode.ec(ph).hc();
         $.ajax({
             type: 'POST',
-            url: 'ChangeSecurityCode',
+            url: 'ChangeUserOwnSecurityCode',
             data: { oldSecurityCode: oldSecCode, securityCode: secCode, confirmSecurityCode: confirmSecCode },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
