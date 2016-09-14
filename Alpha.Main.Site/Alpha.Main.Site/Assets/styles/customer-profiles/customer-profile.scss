@@ -36,7 +36,7 @@
 #profileTooltip, #tooltip-box {
     background-color: #f6f6f6;
     font-size: 12px;
-	top: 2px; 
+	top: 12px; 
 	left: 203px;
 	position: fixed;
 	z-index: 1000;
@@ -67,4 +67,21 @@
 }
 #profileTooltip #profileTooltip #profileTooltip #logoProfileImg.collapse-image {
     width: 100%;
+}
+
+@media only screen and (max-width : 1024px) {
+    .sidebar {
+        &.collapsed.focusout, &.collapsed.collapsed-smallsize {
+            #profileTooltip, #tooltip-box {
+                left: 56px;
+            }
+        }
+
+        &.collapsed.hovered {
+            #profileTooltip, #tooltip-box {
+                left: 203px;
+            }
+        }
+    }
+    
 }

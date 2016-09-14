@@ -63,6 +63,8 @@
             sidebar.addClass('collapsed').addClass('collapsed-smallsize');
             mainContent.addClass('expanded');
 
+            menuBar.positionPTTooltip();
+
             return;
         }
 
@@ -162,6 +164,8 @@
             menuBar.domElements.mainMenuTab.show();
             menuBar.domElements.accountInfoTab.hide();
         }
+
+        menuBar.positionPTTooltip();
     },
 
     activateAccountInfoTab: function () {
@@ -272,6 +276,17 @@
                 subMenuContainer.slideDown('fast');
             }
         }
+    },
+
+    positionPTTooltip: function () {
+        // tabPT tool tip
+        setTimeout(function () {
+            var tabPT = $('#toolTipSettingMinPT');
+            if (tabPT && tabPT.length) {
+                var tabPTLeft = $('.sidebar').width() + 20;
+                tabPT.css('left', tabPTLeft);
+            }
+        }, 400);
     }
 };
 
