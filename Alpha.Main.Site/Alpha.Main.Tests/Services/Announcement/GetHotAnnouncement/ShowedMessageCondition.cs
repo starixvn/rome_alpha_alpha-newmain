@@ -21,8 +21,6 @@
         public void SetUpCondition(GetHotAnnouncementsParams query)
         {
             SecurityCodeService = Substitute.For<SecurityCodeService>();
-            SecurityCodeService.IsForceUseSecurityCode(Arg.Any<string>(), Arg.Any<SecurityCodeStatus>(), Arg.Any<ISecurityCodeSession>())
-                .Returns(ForceUseSecurityCode);
 
             query.AnnouncementEnableStatus = new Dictionary<int, bool>();
         }

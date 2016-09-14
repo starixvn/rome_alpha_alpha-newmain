@@ -21,44 +21,6 @@
             this.securityCodeDataAccess = securityCodeDataAccess ?? new SecurityCodeDataAccessImpl();
         }
 
-        public bool IsIgnoreSecurityCode(string url)
-        {
-            return SecurityCodeConfig.IsIgnoreSecurityCode(url);
-        }
-
-        public bool IsForceUseSecurityCode(string site, SecurityCodeStatus securityCodeResult, ISecurityCodeSession securityCodeSession)
-        {
-            if (SecurityCodeConfig.IsActive)
-            {
-                return false;
-            }
-
-            if (site == null)
-            {
-                throw new ArgumentNullException(nameof(site), "Site cannot be null");
-            }
-
-            var isNonUseSecurityCodeSite = AppSettings.NonUseSecurityCodeSites.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(str => str.ToLower())
-                .Contains(site.ToLower());
-
-            if (isNonUseSecurityCodeSite)
-            {
-                return false;
-            }
-
-            if (securityCodeSession == null)
-            {
-                throw new ArgumentNullException(nameof(securityCodeSession), "Security Code Session cannot be null");
-            }
-
-            bool isForceUseSecurityCode = securityCodeSession.IsRequireSecurityCode ||
-               securityCodeResult == SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING ||
-               (securityCodeResult == SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS && !securityCodeSession.IsInternal);
-
-            return isForceUseSecurityCode;
-        }
-
         public string GetMainAccountHashSecurityCode(int custId)
         {
             return this.securityCodeDataAccess.GetMainAccountHashSecurityCode(

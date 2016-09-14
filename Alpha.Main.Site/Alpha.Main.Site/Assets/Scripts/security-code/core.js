@@ -176,18 +176,21 @@ getBaseUrl = function () {
     return url;
 };
 gotoHomePage = function () {
-    var wnd = window.parent;
-    while (wnd != wnd.parent) // Jump out
-    {
-        wnd = wnd.parent;
-    }
+    //var wnd = window.parent;
+    //while (wnd != wnd.parent) // Jump out
+    //{
+    //    wnd = wnd.parent;
+    //}
 
-    var baseUrl = getBaseUrl();
-    if (top.mainRootPath) {
-        wnd.location = top.mainRootPath + 'Default';
-    } else {
-        wnd.location = baseUrl + 'Index.aspx';
-    }
+    window.location = getBaseUrl() + 'site-main/Default/Index';
+
+   
+    //var baseUrl = getBaseUrl();
+    //if (top.mainRootPath) {
+    //    wnd.location = top.mainRootPath + 'Default';
+    //} else {
+    //    wnd.location = baseUrl + 'Index.aspx';
+    //}
 };
 /*refresh = function () {
     var wnd = window.parent;

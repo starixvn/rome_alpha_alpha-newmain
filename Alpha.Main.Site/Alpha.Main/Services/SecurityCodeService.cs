@@ -7,11 +7,6 @@
 
     public interface SecurityCodeService
     {
-        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "0#", Justification = "Reviewed!")]
-        bool IsIgnoreSecurityCode(string url);
-
-        bool IsForceUseSecurityCode(string site, SecurityCodeStatus securityCodeResult, ISecurityCodeSession securityCodeSession);
-
         string GetMainAccountHashSecurityCode(int custId);
 
         string GetSubAccountHashSecurityCode(int custId, int subAccountId);

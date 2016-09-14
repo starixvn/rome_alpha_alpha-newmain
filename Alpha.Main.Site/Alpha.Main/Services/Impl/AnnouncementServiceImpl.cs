@@ -43,11 +43,6 @@
             }
 
             var hotAnnouncement = new HotAnnouncement();
-            if (getParams.IsSecurityCodeActive &&
-                getParams.IsRequireSecurityCode)
-            {
-                return hotAnnouncement;
-            }
 
             IEnumerable<string> messageTypes = null;
             if (Enumeration.FromValue<UserLevel>(getParams.RoleId).IsAgentLevel() &&
@@ -141,12 +136,6 @@
                     .Where(str => long.TryParse(str, out id))
                     .Select(str => long.Parse(str))
                     .ToList();
-            }
-
-            bool isForceUseSecurityCode = securityCodeService.IsForceUseSecurityCode(getParams.Site, getParams.SecurityCodeResult, getParams.SecurityCodeSession);
-            if (!isForceUseSecurityCode)
-            {
-                result.Add(ForceUseSecurityCode);
             }
 
             foreach (var productStatus in getParams.AnnouncementEnableStatus)

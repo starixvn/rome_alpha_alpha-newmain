@@ -30,7 +30,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var hotAnnouncementsParams = new GetHotAnnouncementsParams(securityCodeSession, message.IsSecurityCodeActive);
+            var hotAnnouncementsParams = new GetHotAnnouncementsParams();
             message.AssignValue(hotAnnouncementsParams);
 
             var hotAnnouncement = _announcementService.GetHotAnnouncement(hotAnnouncementsParams);

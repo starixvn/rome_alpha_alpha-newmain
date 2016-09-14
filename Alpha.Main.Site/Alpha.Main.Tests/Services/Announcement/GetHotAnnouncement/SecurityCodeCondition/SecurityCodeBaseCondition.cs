@@ -10,7 +10,7 @@
 
         public GetHotAnnouncementsParams HotAnnouncementsParams()
         {
-            var query = new GetHotAnnouncementsParams(SecurityCodeSession, IsSecurityCodeActive);
+            var query = new GetHotAnnouncementsParams();
             return query;
         }
     }

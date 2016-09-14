@@ -8,6 +8,7 @@
     using Models.Request.SecurityCode;
     using Services;
     using Sessions;
+    using Sunplus.Agent.Utilities;
     using System;
     using ViewModels.Security;
 
@@ -23,6 +24,11 @@
         {
             get
             {
+                if(string.IsNullOrEmpty(System.Web.HttpContext.Current.Session["ph"] as string))
+                {
+                    System.Web.HttpContext.Current.Session["ph"] = Encryption.RandomString(new Random().Next(4, 8));
+                }
+
                 return System.Web.HttpContext.Current.Session["ph"] + string.Empty;
             }
         }
@@ -65,7 +71,8 @@
             return new SecurityCodeViewModel
             {
                 SecurityCodeToken = securityCodeToken,
-                SecuritySalt = SecuritySalt
+                SecuritySalt = SecuritySalt,
+                PH = this.PH
             };
         }
 

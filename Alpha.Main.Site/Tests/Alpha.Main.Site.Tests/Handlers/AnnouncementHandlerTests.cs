@@ -49,7 +49,7 @@
                 .Returns(hotAnnouncement);
 
             userSession.RoleId.Returns(RoleId.ValidRoleId);
-            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, false);
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty);
 
             // Action
             var viewModel = announcementHandler.Handle(query);
@@ -76,7 +76,7 @@
             userSession.UserId.Returns(userId);
             userSession.SubAccId.Returns(subAccId);
 
-            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, false);
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty);
 
             // Action
             var viewModel = announcementHandler.Handle(query);

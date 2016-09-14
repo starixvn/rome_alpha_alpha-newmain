@@ -125,10 +125,9 @@
         {
             get
             {
-                // The status have not in Session yet.
+               // The status have not in Session yet.
                 //if (!SecurityCodeConfig.IsActive)
                 //{
-                //    // Cannot update SC Result to NONE, because maybe we will use the old Flow
                 //    return (int)SecurityCodeStatus.NONE;
                 //}
 

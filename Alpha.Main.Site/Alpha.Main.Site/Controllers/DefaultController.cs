@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using Main.Models.SecurityCode;
     using MediatR;
+    using Models.Request.SecurityCode;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
@@ -36,6 +38,9 @@
             var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
 
             var viewModel = mediator.Send(query);
+
+
+
 
             return View(viewModel);
         }

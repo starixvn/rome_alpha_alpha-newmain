@@ -27,7 +27,6 @@ var changeSecurityCodeByForcing = {
             return;
         }
 
-        var ph = parent.top.ph;
         var oldSecCode = $txtOldSecCode.val();
         oldSecCode = hashSecurityCode(oldSecCode);
         var secCode = $txtSecCode.val();

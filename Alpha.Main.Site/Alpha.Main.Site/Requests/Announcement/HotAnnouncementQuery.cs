@@ -25,9 +25,7 @@
         public const int OfferedAllbet = 53088003;
         public const int NotOfferedAllbet = 53088004;
 
-        private bool isSecurityCodeActive;
-
-        public HotAnnouncementQuery() : this(null, null, null, null, null)
+        public HotAnnouncementQuery() : this(null, null, null, null)
         {
         }
 
@@ -35,14 +33,12 @@
             IDictionary<int, bool> productsStatus,
             IUserSession userSession,
             string privateMessageFilePath,
-            string commonAnnouncementFilePath,
-            bool? isSecurityCodeActive = null)
+            string commonAnnouncementFilePath)
         {
             this.productsStatus = productsStatus;
             this.userSession = userSession ?? new UserSessionExt();
             this.commonAnnouncementFilePath = commonAnnouncementFilePath;
             this.privateMessageFilePath = privateMessageFilePath;
-            this.isSecurityCodeActive = isSecurityCodeActive.HasValue ? isSecurityCodeActive.Value : SecurityCodeConfig.IsActive;
         }
 
         public string MessageIds { get; set; }
@@ -144,13 +140,6 @@
             }
         }
 
-        public bool IsSecurityCodeActive
-        {
-            get
-            {
-                return isSecurityCodeActive;
-            }
-        }
 
         public void AssignValue(GetHotAnnouncementsParams hotAnnouncementsParams)
         {

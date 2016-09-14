@@ -8,6 +8,12 @@
 
         public string SecuritySalt { get; set; }
 
+        public string PH { get; set; }
+
+        public string Avatar { get; set; }
+
+        public string NickName { get; set; }
+
         public string Language { get; set; }
 
         public string VirtualDirectory { get; set; }

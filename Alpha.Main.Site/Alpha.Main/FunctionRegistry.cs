@@ -1,9 +1,7 @@
 ﻿namespace Alpha.Main
 {
-    using Configurations;
     using Helpers;
     using Models.Menus;
-    using Models.SecurityCode;
     using Sessions;
     using System;
     using System.Collections.Generic;
@@ -12,6 +10,7 @@
     using System.Web;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
+
     public static class FunctionRegistry
     {
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
@@ -84,15 +83,10 @@
             }
 
             var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-            var newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
-            if (newFlowOfSC)
-            {
-                return false;
-            }
 
-            var oldStatus = Convert.ToInt32(Current.SecurityCodeResult);
+            var status = Convert.ToInt32(Current.SecurityCodeResult);
             if (!securityCodeSession.IsInternal &&
-                (oldStatus == ForceChangeSecurityCode || oldStatus == ForceChangeSecurityCodeWithoutValidation))
+                (status == ForceChangeSecurityCode || status == ForceChangeSecurityCodeWithoutValidation))
             {
                 return false;
             }
@@ -118,36 +112,6 @@
             {
                 return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
             }
-
-            ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-
-            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
-
-
-            //return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCode/ChangeSecurityCodeFirstLogin");
-            //return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCode/ChangeSecurityCodeByForcing");
-            //return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCode/VerifySecurityCode");
-            //return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCode/ResetSecurityCode");
-            return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCode/ChangeUserOwnSecurityCode");
-
-            switch (status)
-            {
-                case SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING:
-                    return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCode/ChangeSecurityCodeByForcing");
-                    // return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCode");
-
-                case SecurityCodeStatus.CHANGE_SECURITYCODE_FIRSTLOGIN:
-                    return "/site-main" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCode/ChangeSecurityCodeFirstLogin");
-                    //return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
-           
-
-                //default:
-                //    securityCodeUrl = "/" + AppPathHelper.GetAppPath(Alpha.Main.Configurations.AppSettings.VirtualDirectory, "SecurityCode/VerifySecurityCode");
-                //    return securityCodeUrl;
-            }
-
-
-
 
             var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
             var ignoreUrls = new List<string>

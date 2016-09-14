@@ -46,7 +46,7 @@
 
             var announcementServiceImpl = new AnnouncementServiceImpl();
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, isSecurityCodeActive);
+            var query = new GetHotAnnouncementsParams();
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
