@@ -1,7 +1,8 @@
 ﻿namespace Alpha.Main.Sessions
 {
-    using Configurations;
+    using Models.Enumerations;
     using Models.SecurityCode;
+    using SecurityCode.Services;
     using System.Web;
 
     public class SecurityCodeSession : ISecurityCodeSession
@@ -40,11 +41,6 @@
                 object value = this.GetProperty(LANGUAGE);
                 return (null == value) ? DEFAULTLANGUAGE : value as string;
             }
-
-            set
-            {
-                throw new System.NotImplementedException();
-            }
         }
 
         public int CustId
@@ -54,11 +50,6 @@
                 object value = this.GetProperty(CUSTID);
                 return (null == value) ? 0 : (int)value;
             }
-
-            set
-            {
-                throw new System.NotImplementedException();
-            }
         }
 
         public int SubAccId
@@ -67,6 +58,14 @@
             {
                 object value = this.GetProperty(SUBACCID);
                 return (null == value) ? 0 : (int)value;
+            }
+        }
+
+        public UserLevel UserLevel
+        {
+            get
+            {
+                return Enumeration.FromValue<UserLevel>(this.RoleId);
             }
         }
 
@@ -125,8 +124,7 @@
         {
             get
             {
-               // The status have not in Session yet.
-                //if (!SecurityCodeConfig.IsActive)
+                //if (!SecurityCodeChecker.IsEnableSecurityCode())
                 //{
                 //    return (int)SecurityCodeStatus.NONE;
                 //}
@@ -229,11 +227,6 @@
                 {
                     return this.CustId;
                 }
-            }
-
-            set
-            {
-                throw new System.NotImplementedException();
             }
         }
 

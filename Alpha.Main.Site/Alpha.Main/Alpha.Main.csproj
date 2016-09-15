@@ -36,6 +36,10 @@
       <HintPath>..\packages\Alpha.Auth.3.0.0.7\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Alpha.SecurityCode, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode05\lib\net40\Alpha.SecurityCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -137,8 +141,6 @@
       <DependentUpon>SecurityCode.Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
-    <Compile Include="Configurations\SecurityCodeConfig.cs" />
-    <Compile Include="Configurations\SecurityCodeSection.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
@@ -178,9 +180,7 @@
     <Compile Include="Models\Menus\MenuItemBuilderImpl.cs" />
     <Compile Include="Models\Menus\MenuStatus.cs" />
     <Compile Include="Models\SecurityCode\Result.cs" />
-    <Compile Include="Models\SecurityCode\SecurityCode.cs" />
     <Compile Include="Models\SecurityCode\SecurityCodeStatus.cs" />
-    <Compile Include="Models\SecurityCode\UserRole.cs" />
     <Compile Include="Params\Announcements\GetHotAnnouncementsParams.cs" />
     <Compile Include="Params\SecurityCode\SecurityCodeParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

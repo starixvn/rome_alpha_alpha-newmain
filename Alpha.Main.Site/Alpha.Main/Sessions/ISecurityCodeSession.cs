@@ -1,4 +1,6 @@
-﻿namespace Alpha.Main.Sessions
+﻿using Alpha.Main.Models.Enumerations;
+
+namespace Alpha.Main.Sessions
 {
     public interface ISecurityCodeSession
     {
@@ -9,6 +11,8 @@
         int CustId { get; }
 
         int UserId { get; }
+
+        UserLevel UserLevel { get; }
 
         byte RoleId { get; }
 

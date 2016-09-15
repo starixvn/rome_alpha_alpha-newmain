@@ -53,6 +53,11 @@
       <HintPath>..\packages\Alpha.Auth.3.0.0.7\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Alpha.SecurityCode, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode05\lib\net40\Alpha.SecurityCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr3.Runtime.3.3.1.7705\lib\net20\Antlr3.Runtime.dll</HintPath>
@@ -561,6 +566,7 @@
     <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.eot" />
     <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.ttf" />
     <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.woff" />
+    <Content Include="App_Data\securitycode.json" />
     <None Include="Assets\styles\introduction\enjoyhint.scss" />
     <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.svg" />
     <Content Include="Assets\styles\introduction\enjoyhint.css">

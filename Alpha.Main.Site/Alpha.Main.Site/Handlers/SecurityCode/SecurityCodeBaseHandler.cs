@@ -2,6 +2,7 @@
 {
     using AppResources;
     using Fanex.Security;
+    using Main.Models.Enumerations;
     using Main.Models.SecurityCode;
     using Models.Request.SecurityCode;
     using Params.SecurityCode;
@@ -216,7 +217,7 @@
 
         protected Result ResetDownlineSecurityCode(ResetSecurityCodeCommand securityCodeParams)
         {
-            var isResetMember = this.securityCodeSession.RoleId == (byte)UserRole.Agent;
+            var isResetMember = this.securityCodeSession.UserLevel.Equals(UserLevel.Agent);
             string hashSecurityCode = HashSecurityCode(securityCodeParams.CustId.Value, securityCodeParams.SecurityCode, isResetMember);
 
             return this.securityCodeService.UpdateMainAccountHashSecurityCode(new SecurityCodeParams
