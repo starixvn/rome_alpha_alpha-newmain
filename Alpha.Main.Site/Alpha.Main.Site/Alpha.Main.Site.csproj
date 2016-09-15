@@ -605,7 +605,6 @@
     <Content Include="Web.local.config">
       <SubType>Designer</SubType>
     </Content>
-    </Content>
     <Content Include="Web.local.config" />
     <Content Include="Web.napexternal.config">
       <DependentUpon>Web.local.config</DependentUpon>
