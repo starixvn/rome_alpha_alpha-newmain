@@ -104,23 +104,25 @@ var indexManager = {
         else {
             indexManager.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentUrl + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
             indexManager.domElements.mainFrame = $('#main');
-            indexManager.domElements.mainFrame.load(function () {
-                var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
-                indexManager.closeAllOpenDropdowns(iframeWindow);
+            indexManager.domElements.mainFrame
+                .off('load.newmain')
+                .on('load.newmain', function () {
+                    var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
+                    indexManager.closeAllOpenDropdowns(iframeWindow);
 
-                indexManager.cacheCurrentUrl();
+                    indexManager.cacheCurrentUrl();
 
-                $(iframeWindow.document)
-                    .off('click.closeMenu touchstart.closemenu')
-                    .on('click.closeMenu touchstart.closemenu',
-                    function () {
-                        menuBar.collapseSideBar();
-                    });
+                    $(iframeWindow.document)
+                        .off('click.closeMenu touchstart.closemenu')
+                        .on('click.closeMenu touchstart.closemenu',
+                        function () {
+                            menuBar.collapseSideBar();
+                        });
 
-                if (alpha.isMobile) {
-                    $(iframeWindow.document).find(':focus').blur();
-                }
-            });
+                    if (alpha.isMobile) {
+                        $(iframeWindow.document).find(':focus').blur();
+                    }
+                });
 
             indexManager.domElements.accountInfoContent.load(function () {
                 var iframeWindow = indexManager.domElements.accountInfoContent[0].contentWindow ||
