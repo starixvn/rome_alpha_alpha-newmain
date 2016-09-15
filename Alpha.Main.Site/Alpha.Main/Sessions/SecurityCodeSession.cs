@@ -2,7 +2,6 @@
 {
     using Models.Enumerations;
     using Models.SecurityCode;
-    using SecurityCode.Services;
     using System.Web;
 
     public class SecurityCodeSession : ISecurityCodeSession
@@ -135,7 +134,7 @@
                     return (int)value;
                 }
 
-                SecurityCodeStatus status;
+                SecurityCodeStatus status = SecurityCodeStatus.PROVIDED_SECURITYCODE;
                 bool isForceSecurityCode = this.IsForcedSecurityCode;
                 bool hasSC = !string.IsNullOrEmpty(this.SecurityCode);
                 if (isForceSecurityCode)
@@ -165,11 +164,13 @@
                     }
                 }
 
-                // only assign value when CustId != 0 (Session is initialize)
+                //only assign value when CustId != 0(Session is initialize)
                 if (this.CustId > 0)
                 {
                     this.SetProperty(SECURITYCODERESULT, (int)status);
                 }
+
+                this.SetProperty(SECURITYCODERESULT, (int)status);
 
                 return (int)status;
             }

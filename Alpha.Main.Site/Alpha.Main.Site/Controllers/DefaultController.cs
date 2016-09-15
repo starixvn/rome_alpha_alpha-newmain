@@ -41,6 +41,7 @@
             {
                 ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
                 var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
+
                 switch (status)
                 {
                     case SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING:

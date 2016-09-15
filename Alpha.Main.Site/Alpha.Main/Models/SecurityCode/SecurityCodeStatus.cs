@@ -6,27 +6,27 @@
     public enum SecurityCodeStatus
     {
         /// <summary>
-        /// The NONE value.
+        /// Not offer SC
         /// </summary>
         NONE = 0,
 
         /// <summary>
-        /// The PROVIDE_ SC.
+        /// Require input SC 
         /// </summary>
         PROVIDED_SECURITYCODE,
 
         /// <summary>
-        /// The PROVIDED_SC_SUCCESS.
+        /// Input SC successfully
         /// </summary>
         PROVIDED_SECURITYCODE_SUCCESS,
 
         /// <summary>
-        /// The FORCED_CHANGE_SC_WITHOUT_VALIDATION.
+        /// Change SC the First login
         /// </summary>
         CHANGE_SECURITYCODE_FIRSTLOGIN,
 
         /// <summary>
-        /// The FORCED_CHANGE_SC.
+        /// Change SC by forcing
         /// </summary>
         CHANGE_SECURITYCODE_BY_FORCING
     }

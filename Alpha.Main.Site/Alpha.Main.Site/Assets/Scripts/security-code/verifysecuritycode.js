@@ -28,7 +28,6 @@ var verifySecurityCode = {
             return;
         }
 
-        var ph = parent.top.ph;
         var secCode = $txtSecCode.val();
         secCode = hashSecurityCode(secCode);
         $.ajax({

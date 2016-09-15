@@ -26,7 +26,6 @@ var changeSecurityCodeFirstLogin = {
             return;
         }
 
-        var ph = parent.top.ph;
         var secCode = $txtSecCode.val();
         secCode = secCode.ec(ph).hc();
         var confirmSecCode = $txtConfirmSecCode.val();

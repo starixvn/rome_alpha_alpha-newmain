@@ -3,6 +3,7 @@
     using AppResources;
     using Encryption;
     using Fanex.Security;
+    using Main.Models.CustomerProfiles;
     using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
@@ -20,6 +21,8 @@
          IRequestHandler<ResetSecurityCodeCommand, Result>,
          IRequestHandler<VerifySecurityCodeCommand, Result>
     {
+        private readonly CustomerProfileService customerProfileService;
+
         private string PH
         {
             get
@@ -50,8 +53,10 @@
 
         public SecurityCodeHandler(
            SecurityCodeService securityCodeService,
+           CustomerProfileService customerProfileService,
            ISecurityCodeSession securityCodeSession = null) : base(securityCodeService, securityCodeSession)
         {
+            this.customerProfileService = customerProfileService;
         }
             
         public SecurityCodeViewModel Handle(SelectSecurityCodeQuery message)
@@ -60,6 +65,8 @@
             {
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
+
+            var profile = customerProfileService.GetProfilePicture(base.securityCodeSession.CustId);
 
             string securityCodeToken = this.GenerateSecurityToken();
             base.securityCodeSession.SecurityCodeToken = securityCodeToken;
@@ -72,7 +79,9 @@
             {
                 SecurityCodeToken = securityCodeToken,
                 SecuritySalt = SecuritySalt,
-                PH = this.PH
+                PH = this.PH,
+                IsDefaultAvatar = profile.IsDefaultAvatar,
+                EmbedImage = this.GenerateImage(profile)
             };
         }
 
@@ -264,6 +273,16 @@
             }
 
             return base.VerifySecurityCode(message);
+        }
+
+        private string GenerateImage(ProfilePicture profilePicture)
+        {
+            if (profilePicture.BinaryAvatar != null)
+            {
+                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.BinaryAvatar)}";
+            }
+
+            return string.Empty;
         }
     }
 }

@@ -1,11 +1,13 @@
 {
   "isActive": false,
   "siteMainApp": "site-main",
-  "currentSiteApp": "site-main",
+  "currentSiteApp": "ex-main",
   "urls": [
+    "relative-url"
   ],
   "sites": [
+    "site-name"
   ],
   "verifyingSecurityCodeUrl": "SecurityCode/VerifySecurityCode",
-  "changeSecurityCodeUrl": "SecurityCode/ChangeUserOwnSecurityCode"
+  "changeSecurityCodeUrl": "SecurityCode/ChangeSecurityCode"
 }

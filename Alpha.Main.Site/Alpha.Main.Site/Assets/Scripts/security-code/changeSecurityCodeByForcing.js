@@ -8,10 +8,17 @@ var changeSecurityCodeByForcing = {
             changeSecurityCodeByForcing.changeSecurityCode();
             e.preventDefault();
         });
-        $form.bind('reset', function (e) {
+        $("#btn-cancel").click(function () {
+            redirectToHomePage(2000);
             $('#spnNewPwdIcon').removeClass();
             $('#spnConfirmSecCodeIcon').removeClass();
         });
+
+        //$form.bind('#btn-cancel', function (e) {
+        //    redirectToHomePage(2000);
+        //    $('#spnNewPwdIcon').removeClass();
+        //    $('#spnConfirmSecCodeIcon').removeClass();
+        //});
         $('#txtOldSecCode').focus();
     },
     changeSecurityCode: function () {

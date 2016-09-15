@@ -10,7 +10,9 @@
 
         public string PH { get; set; }
 
-        public string Avatar { get; set; }
+        public bool IsDefaultAvatar { get; set; }
+
+        public string EmbedImage { get; set; }
 
         public string NickName { get; set; }
 
