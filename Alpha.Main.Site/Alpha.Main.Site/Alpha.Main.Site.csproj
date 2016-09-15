@@ -468,6 +468,11 @@
     <Content Include="Assets\bundles\default-index.min.css">
       <DependentUpon>default-index.css</DependentUpon>
     </Content>
+    <Content Include="Assets\scripts\security-code\change-securitycode-by-forcing.js" />
+    <Content Include="Assets\scripts\security-code\change-securitydode-firstlogin.js" />
+    <Content Include="Assets\scripts\security-code\change-user-own-securitycode.js" />
+    <Content Include="Assets\scripts\security-code\reset-securitycode.js" />
+    <Content Include="Assets\scripts\security-code\verify-securitycode.js" />
     <Content Include="Web.Configuration\SecurityCode.local.config">
       <SubType>Designer</SubType>
       <DependentUpon>SecurityCode.config</DependentUpon>
@@ -507,15 +512,10 @@
     </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />
-    <Content Include="Assets\scripts\security-code\changeUserOwnSecurityCode.js" />
     <Content Include="Assets\scripts\security-code\core.js" />
-    <Content Include="Assets\scripts\security-code\changeSecurityCodeByForcing.js" />
-    <Content Include="Assets\scripts\security-code\changeSecurityCodeFirstLogin.js" />
     <Content Include="Assets\scripts\security-code\jquery-1.8.2.min.js" />
-    <Content Include="Assets\scripts\security-code\resetsecuritycode.js" />
     <Content Include="Assets\scripts\security-code\Sha1.js" />
     <Content Include="Assets\scripts\security-code\Sha256.js" />
-    <Content Include="Assets\scripts\security-code\verifysecuritycode.js" />
     <Content Include="Assets\styles\announcement\announcements.css">
       <DependentUpon>announcements.scss</DependentUpon>
     </Content>
@@ -727,7 +727,6 @@
     <Content Include="Views\SecurityCode\ResetSecurityCode.cshtml" />
     <Content Include="Views\SecurityCode\Shared\_HeaderMessage.cshtml" />
     <Content Include="Views\SecurityCode\Shared\_Layout.cshtml" />
-    <Content Include="Views\SecurityCode\Shared\_SecurityCodeHint.cshtml" />
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
       <SubType>Designer</SubType>

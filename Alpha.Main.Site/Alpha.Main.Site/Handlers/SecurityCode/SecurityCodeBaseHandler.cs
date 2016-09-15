@@ -147,7 +147,7 @@
 
         protected Result ChangeSecurityCodeFirstLogin(ChangeSecurityCodeFirstLoginCommand message)
         {
-            return this.UpdateSecurityCode(new SecurityCodeParams
+            Result result =  this.UpdateSecurityCode(new SecurityCodeParams
             {
                 CustId = message.CustId,
                 SubAccountId = message.SubAccId,
@@ -156,6 +156,13 @@
                 Language = message.Language,
                 IP = this.ClientIP
             });
+
+            if (result.ErrorCode.Equals(0))
+            {
+                this.ResetToken();
+            }
+
+            return result;
         }
 
         protected Result ChangeSecurityCodeByForcing(ChangeSecurityCodeByForcingCommand message)
