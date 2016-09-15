@@ -1,7 +1,7 @@
 {
   "isActive": false,
   "siteMainApp": "site-main",
-  "currentSiteApp": "ex-main",
+  "currentSiteApp": "site-main",
   "urls": [
     "relative-url"
   ],

@@ -8,13 +8,17 @@ var changeSecurityCodeByForcing = {
             changeSecurityCodeByForcing.changeSecurityCode();
             e.preventDefault();
         });
-        $("#btn-cancel").click(function () {
+        //$("#btn-cancel").click(function () {
+        //    redirectToHomePage(2000);
+        //    $('#spnNewPwdIcon').removeClass();
+        //    $('#spnConfirmSecCodeIcon').removeClass();
+        //});
+
+        $("#btn-cancel").bind("click", function () {
             redirectToHomePage(2000);
-            $('#spnNewPwdIcon').removeClass();
-            $('#spnConfirmSecCodeIcon').removeClass();
         });
 
-        //$form.bind('#btn-cancel', function (e) {
+        //$form.bind('button', function (e) {
         //    redirectToHomePage(2000);
         //    $('#spnNewPwdIcon').removeClass();
         //    $('#spnConfirmSecCodeIcon').removeClass();
