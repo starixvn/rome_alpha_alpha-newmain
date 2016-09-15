@@ -7,15 +7,15 @@
     using ViewModels;
     public class IndexQuery : IRequest<IndexViewModel>
     {
-        private readonly bool showSecurityVerify;
+        private readonly bool isEnableSecurityCode;
         private readonly IUserSession userSession;
         private readonly ISecurityCodeSession securityCodeSession;
 
-        public IndexQuery(IUserSession userSession, ISecurityCodeSession securityCodeSession, bool showSecurityVerify)
+        public IndexQuery(IUserSession userSession, ISecurityCodeSession securityCodeSession, bool isEnableSecurityCode)
         {
             this.userSession = userSession;
             this.securityCodeSession = securityCodeSession;
-            this.showSecurityVerify = showSecurityVerify;
+            this.isEnableSecurityCode = isEnableSecurityCode;
         }
 
         public int CustId
@@ -88,7 +88,7 @@
             {
                 return userSession.IsLogged &&
                     !userSession.IsPasswordExpired &&
-                    (securityCodeSession.IsEnableSecurityCode || this.showSecurityVerify);
+                    this.isEnableSecurityCode;
             }
         }
 

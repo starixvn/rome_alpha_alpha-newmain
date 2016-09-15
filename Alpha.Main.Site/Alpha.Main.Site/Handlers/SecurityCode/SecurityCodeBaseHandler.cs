@@ -9,6 +9,7 @@
     using Services;
     using Sessions;
     using System.Text.RegularExpressions;
+
     public class SecurityCodeBaseHandler 
     {
         private const string MD5 = "MD5";
@@ -44,6 +45,7 @@
         {
             this.securityCodeSession.SecurityCodeToken = string.Empty;
             this.securityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS;
+            Alpha.SecurityCode.Web.SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode = true;
         }
 
         private Result UpdateSecurityCode(SecurityCodeParams securityCodeParams)

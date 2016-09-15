@@ -1,13 +1,12 @@
 ﻿namespace Alpha.Main
 {
-    using Helpers;
-    using Models.Menus;
-    using Sessions;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Helpers;
+    using Models.Menus;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
@@ -74,19 +73,7 @@
 
         private static Func<bool> showMenuBar = () =>
         {
-            const int ForceChangeSecurityCode = 4;
-            const int ForceChangeSecurityCodeWithoutValidation = 3;
-
             if (!Current.IsLogged || Current.IsPasswordExpired)
-            {
-                return false;
-            }
-
-            var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-
-            var status = Convert.ToInt32(Current.SecurityCodeResult);
-            if (!securityCodeSession.IsInternal &&
-                (status == ForceChangeSecurityCode || status == ForceChangeSecurityCodeWithoutValidation))
             {
                 return false;
             }

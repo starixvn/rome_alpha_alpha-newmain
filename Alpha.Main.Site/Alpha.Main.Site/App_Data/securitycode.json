@@ -6,6 +6,6 @@
   ],
   "sites": [
   ],
-  "verifyingSecurityCodeUrl": "SecurityCodeNewMain/VerifySecurityCode",
-  "changeSecurityCodeUrl": "SecurityCodeNewMain/ChangeSecurityCode"
+  "verifyingSecurityCodeUrl": "SecurityCode/VerifySecurityCode",
+  "changeSecurityCodeUrl": "SecurityCode/ChangeUserOwnSecurityCode"
 }

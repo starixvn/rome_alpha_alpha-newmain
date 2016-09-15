@@ -1,11 +1,13 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Web.Mvc;
+    using System.Web.SessionState;
     using Filter;
+    using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
     using Sessions;
-    using System.Web.Mvc;
-    using System.Web.SessionState;
+
     [SessionState(SessionStateBehavior.Default)]
     public class SecurityCodeController : BaseController
     {

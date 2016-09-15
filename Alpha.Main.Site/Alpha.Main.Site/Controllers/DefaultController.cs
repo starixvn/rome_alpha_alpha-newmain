@@ -10,6 +10,8 @@
     using Sunplus.Agent.Model.Entities.Permission;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using SecurityCode.Services;
+
     public class DefaultController : BaseController
     {
         private readonly IUserSession userSession;
@@ -34,13 +36,26 @@
             {
                 return View("UnsupportedBrowsers", browser);
             }
+            
+            if (SecurityCodeChecker.IsForcedChangeSecurityCode())
+            {
+                ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+                var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
+                switch (status)
+                {
+                    case SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING:
+                        return RedirectToAction("ChangeSecurityCodeByForcing", "SecurityCode");
 
-            var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
+                    case SecurityCodeStatus.CHANGE_SECURITYCODE_FIRSTLOGIN:
+                        return RedirectToAction("ChangeSecurityCodeFirstLogin", "SecurityCode");
+                }
+            }
+            
+var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
 
-            var viewModel = mediator.Send(query);
 
-
-
+                var viewModel = mediator.Send(query);
+            
 
             return View(viewModel);
         }

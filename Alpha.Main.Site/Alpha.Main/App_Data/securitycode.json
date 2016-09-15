@@ -1,0 +1,11 @@
+{
+  "isActive": false,
+  "siteMainApp": "site-main",
+  "currentSiteApp": "site-main",
+  "urls": [
+  ],
+  "sites": [
+  ],
+  "verifyingSecurityCodeUrl": "SecurityCodeNewMain/VerifySecurityCode",
+  "changeSecurityCodeUrl": "SecurityCodeNewMain/ChangeSecurityCode"
+}
