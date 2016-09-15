@@ -6,7 +6,7 @@
 }
 
 @section js {
-    <script src="/assets/bundles/site-main/security-code/default.js" type="text/javascript"></script>
+    @StaticResources.AssetScripts.Render("/bundles/site-main/security-code/before-home-page")
     <script type="text/javascript">
         var ph = '@Model.PH';
         var securityCodeResource = {
