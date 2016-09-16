@@ -38,9 +38,23 @@
     ]
   },
   {
-    "outputFileName": "Assets/bundles/security-code.css",
+    "outputFileName": "Assets/bundles/security-code/security-code.css",
     "inputFiles": [
       "Assets/styles/security-code/security-code.css"
+    ]
+  },
+   {
+    "outputFileName": "Assets/bundles/security-code/verify-securitycode.js",
+    "inputFiles": [
+      "Assets/scripts/security-code/securitycode-helper.js",
+      "Assets/scripts/security-code/verify-securitycode.js"
+    ]
+  },
+   {
+    "outputFileName": "Assets/bundles/security-code/change-securitycode-by-forcing.js",
+    "inputFiles": [
+      "Assets/scripts/security-code/securitycode-helper.js",
+      "Assets/scripts/security-code/change-securitycode-by-forcing.js"
     ]
   }
 ]

@@ -1,28 +1,18 @@
 ﻿@model Alpha.Main.Site.ViewModels.Security.SecurityCodeViewModel
 @{
-    ViewBag.Title = "VerifySecurityCode";
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
 
 @section css {
-    @Styles.Render("/assets/bundles/site-main/security-code/default.min.css")
-    @Styles.Render("../Assets/bundles/security-code.min.css")
+    @StaticResources.AssetStyles.Render("/bundles/site-main/security-code/default")
+    <link href="@StaticResources.MainSiteStyleUrl("~/Assets/bundles/security-code/security-code")" rel="stylesheet" type="text/css" />
 }
 
-@section js {
-    <script type="text/javascript">
-        var securityCodeToken = '@Model.SecurityCodeToken';
-        var securitySalt = '@Model.SecuritySalt';
-        var ph = '@Model.PH';
-        var securityCodeResource = {
-            informSecCode: '@SecurityCode_Resources.informSecCode'
-        };
-    </script>
-} 
 <h1 class="page-title">Security Code</h1>
-@Html.Partial("~/Views/SecurityCode/Shared/_HeaderMessage.cshtml", SecurityCode_Resources.informSecCode)
+
+<div id="error-message" class="msg msg-error">@SecurityCode_Resources.informSecCode</div>
 <div class="block">
-    <form class="form-SC">        
+    <form class="form-SC">
         <div class="form-group">
             <label>Security Code</label>
             <input type="password" class="txt form-control" name="SC" id="SC" />
@@ -32,19 +22,13 @@
             <input type="button" value="Simulte Verify Done" id="simulateDone" />
         </div>
     </form>
-    <div class="rules">
-        <p><span class="note-red">*</span>Security Code (SC) must be a 6-digits string, contains at least 2 different digits and must not be forward run and backward run number.</p>
-        <ul>
-            <li>A "Forward run" is a consecutive, ascending order series of digits.</li>
-            <li>A "Backward Run" is a consecutive, descending order series of digits.</li>
-            <li>For example: 123456, 456789, 765432, ect. are not allowed</li>
-        </ul>
-    </div>
 </div>
 
-@StaticResources.AssetScripts.Render("/bundles/site-main/default")
-<script src="@Url.Content("~/Assets/scripts/security-code/jquery-1.8.2.min.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Assets/scripts/security-code/core.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Assets/scripts/security-code/Sha1.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Assets/scripts/security-code/Sha256.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Assets/scripts/security-code/verify-securitycode.js")" type="text/javascript"></script>
+@Html.Hidden("securitycode-token", Model.SecurityCodeToken)
+@Html.Hidden("security-salt", Model.SecuritySalt)
+@Html.Hidden("inform-securitycode", SecurityCode_Resources.informSecCode)
+
+@section js {
+    @StaticResources.AssetScripts.Render("/bundles/site-main/default", "/bundles/site-main/security-code/before-home-page")
+    <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security-code/verify-securitycode")" type="text/javascript"></script>
+}

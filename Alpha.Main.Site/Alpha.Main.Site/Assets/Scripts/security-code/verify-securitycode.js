@@ -1,35 +1,41 @@
-﻿$(document).ready(function () {
+﻿'use strict';
+
+$(document).ready(function () {
     verifySecurityCode.initialize();
 })
+
 var verifySecurityCode = {
+    resources: {
+        inform: $('#inform-securitycode').val()
+    },
     initialize: function () {
-        $('#divVerifySecurityBlock').removeClass('hidden');
         $('#SC').keypress(function (e) {
             if (e.which == 13) {
                 verifySecurityCode.verify();
                 e.preventDefault();
             }
         });
-        var $form = $('.form-SC');
-        $form.submit(function (e) {
+
+        $('.form-SC').submit(function (e) {
             verifySecurityCode.verify();
             e.preventDefault();
         });
-        $('#txtSecCode').focus();
+
+        $('#SC').focus();
     },
     verify: function () {
-        lockUI();
-        var $messageContainer = $('#errorSection');
-        var $txtSecCode = $('#SC');
-        var message = verifySecurityCode.checkInputParameters($txtSecCode);
+        //lockUI();
+        var $messageContainer = $('#error-message');
+        var $txtSecurityCode = $('#SC');
+        var message = verifySecurityCode.checkInputParameters($txtSecurityCode);
         if (message.length !== 0) {
-            showMessage($messageContainer, message, 1);
-            unlockUI();
+            $messageContainer.empty().html(message);
+            //unlockUI();
             return;
         }
 
-        var secCode = $txtSecCode.val();
-        secCode = hashSecurityCode(secCode);
+        var secCode = $txtSecurityCode.val();
+        secCode = securitycodeHelper.hashSecurityCode(secCode);
         $.ajax({
             type: 'POST',
             url: 'VerifySecurityCode',
@@ -58,21 +64,21 @@ var verifySecurityCode = {
                     top.age.SignOut();
                 }
                 else {
-                    showMessage($messageContainer, data.ErrorMessage, data.ErrorCode);
-                    $txtSecCode.focus();
+                    $messageContainer.empty().html(data.ErrorMessage);
+                    $txtSecurityCode.focus();
                 }
             },
             complete: function (jqXHR, textStatus) {
-                unlockUI();
+                //unlockUI();
             }
         })
     },
-    checkInputParameters: function ($txtSecCode) {
+    checkInputParameters: function ($txtSecurityCode) {
         var message = '';
-        var secCode = $txtSecCode.val();
+        var secCode = $txtSecurityCode.val();
         if (secCode.length === 0) {
-            message = securityCodeResource.informSecCode;
-            $txtSecCode.focus();
+            message = verifySecurityCode.resources.inform;
+            $txtSecurityCode.focus();
         }
         return message;
     },
