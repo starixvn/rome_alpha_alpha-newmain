@@ -125,6 +125,12 @@
       "Assets/scripts/security/security-helper.js",
       "Assets/scripts/security/password/reset-sub-account-password.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/default-messages.css",
+    "inputFiles": [
+      "Assets/Styles/Messages/messages.css"
+    ]
   }
 
 ]

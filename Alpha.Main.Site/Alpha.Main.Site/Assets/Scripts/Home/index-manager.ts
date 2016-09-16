@@ -35,7 +35,7 @@ var indexManager = {
 
     registerEvents: function () {
         indexManager.domElements.pagePopup.tinyDraggable();
-        setTimeout(indexManager.reCheckin, 30000);
+        setTimeout(indexManager.reCheckin, 30000);        
     },
 
     cachedDomElements: function () {

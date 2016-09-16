@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/messages/messages-super")
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-messages"))" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">Notice</a>
+        </li>
+        <li role="presentation">
+            <a href="#special" aria-controls="home" role="tab" data-toggle="tab">Special Notice</a>
+        </li>
+        <li role="presentation">
+            <a href="#personal" aria-controls="home" role="tab" data-toggle="tab">Personal Message</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active balance-info" id="notice">
+            <div class="filter">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <div class="control date">
+                            <div class="input-group date" id="fromDateContainer">
+                                <input class="form-control" id="fromDate" name="FromDate" type="text" value="07/18/2016" />
+                                <span class="input-group-addon">
+                                    <span class="icon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="txt">To</label>
+                        <div class="control date">
+                            <div class="input-group date" id="toDateContainer">
+                                <input class="form-control" id="toDate" name="ToDate" type="text" value="07/18/2016" />
+                                <span class="input-group-addon">
+                                    <span class="icon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group group-button">
+                        <input type="submit" value="Submit" class="btn btn-submit">
+                    </div>
+                </form>
+            </div>
+            <table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover">
+                <thead>
+                    <tr>
+                        <th class="col-order">#</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-order">1</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">2</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">3</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">4</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">5</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">6</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">7</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">8</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">9</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">10</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">11</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">12</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">13</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">14</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">15</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">16</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-order">17</td>
+                        <td>
+                            <div class="row-first">09/16/2016 04:15:05 <span class="messageId">#61436</span></div>
+                            <div class="message-content">Automation test upload msg: 9799001000, 9799001001, 9799001002, 9799001003</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div role="tabpanel" class="tab-pane statistic" id="special">
+            
+        </div>
+        <div role="tabpanel" class="tab-pane notice" id="personal">
+            
+        </div>
+    </div>
+    @StaticResources.AssetScripts.Render("/bundles/site-main/messages/messages-default")
+    <script>
+        $(function () {
+            $('#fromDateContainer').datetimepicker({
+                allowInputToggle: true,
+                format: 'MM/DD/YYYY'
+            });
+
+            $('#toDateContainer').datetimepicker({
+                allowInputToggle: true,
+                format: 'MM/DD/YYYY'
+            });
+        })
+    </script>
+</body>
+</html>

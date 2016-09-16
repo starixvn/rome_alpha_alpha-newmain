@@ -490,11 +490,21 @@
     <Content Include="Assets\bundles\default-index.min.css">
       <DependentUpon>default-index.css</DependentUpon>
       </Content>
+    <Content Include="Assets\bundles\default-messages.css" />
+    <Content Include="Assets\bundles\default-messages.min.css">
+      <DependentUpon>default-messages.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\home.min.css">
       <DependentUpon>home.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\messages\messages.css">
+      <DependentUpon>messages.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\messages\messages.min.css">
+      <DependentUpon>messages.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
@@ -738,6 +748,7 @@
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\introduction\intro.scss" />
     <Content Include="Assets\styles\security\security.scss" />
+    <Content Include="Assets\styles\messages\messages.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -758,6 +769,7 @@
     <Content Include="Views\Password\ChangePassword.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Password\ForceChangePassword.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
     <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeByForcing.cshtml" />
@@ -807,6 +819,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />

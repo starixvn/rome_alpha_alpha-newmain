@@ -15,6 +15,10 @@ var headerNav = {
         iconHome: null,
         swapView: null,
         changeLanguageLink: null,
+        iconSearch: null,
+        linkLogout: null,
+        iconBell: null,
+        iconMessage: null,
 
         sideBar: null,
         sideBarContent: null,
@@ -34,6 +38,7 @@ var headerNav = {
 
     urls: {
         home: 'Home/Index',
+        messages: 'Messages/Index',
         changeLanguage: alpha.urls.mainRootPath + 'Language/Change'
     },
 
@@ -104,6 +109,11 @@ var headerNav = {
         headerNav.domElements.iconLogOut = $(".icon-logout");
         headerNav.domElements.iconHome = $(".icon-home");
         headerNav.domElements.changeLanguageLink = $(".changelanguage-link");
+        // For mobile
+        headerNav.domElements.iconSearch = $(".icon-account-search");
+        headerNav.domElements.linkLogout = $(".link-logout");
+        headerNav.domElements.iconBell = $(".icon-bell");
+        headerNav.domElements.iconMessage = $(".icon-message");
 
         headerNav.domElements.sideBar = $('#side-bar');
         headerNav.domElements.sideBarContent = $('.content-wrapper');
@@ -129,6 +139,36 @@ var headerNav = {
 
         headerNav.domElements.changeLanguageLink.click(function () {
             headerNav.changeLanguage($(this).data("value"));
+        });
+
+        // Logout link for mobile
+        headerNav.domElements.linkLogout.on('click touchend', alpha.core.signOut);
+
+        headerNav.domElements.iconMessage.click(function () {
+            indexManager.changeMenu(headerNav.urls.messages);
+        });
+
+        // Quick search component for mobile
+        headerNav.domElements.iconSearch.click(function () {
+            var topSearchbar = $('.top-search-bar'),
+                iconClose = $('.icon-close'),
+                searchBarToggleClass = 'search-bar-toggle';
+            topSearchbar.addClass(searchBarToggleClass);
+            headerNav.domElements.sideBarContent.append('<div class="blockUI"></div>');
+            iconClose.click(function () {
+                topSearchbar.removeClass(searchBarToggleClass);
+                headerNav.domElements.sideBarContent.find('.blockUI').remove();
+            });
+            $('.blockUI').click(function () {
+                topSearchbar.removeClass(searchBarToggleClass);
+                headerNav.domElements.sideBarContent.find('.blockUI').remove();
+            });
+        });
+
+        // Annoucement popup for mobile
+        headerNav.domElements.iconBell.click(function () {
+            var announcementPopup = $("#announcement-popup");
+            announcementPopup.modal('show');
         });
     },
 

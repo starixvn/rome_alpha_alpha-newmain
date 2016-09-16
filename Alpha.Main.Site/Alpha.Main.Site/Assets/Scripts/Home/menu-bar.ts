@@ -144,11 +144,11 @@
 
         if (alpha.isScreenLower768) {
             if (sidebar.hasClass('hidden-mobile')) {
-                content.removeClass('expanded-mobile');
+                content.addClass('expanded-mobile');
                 sidebar.removeClass('hidden-mobile').addClass('visible-mobile');
             }
             else {
-                content.addClass('expanded-mobile');
+                content.removeClass('expanded-mobile');
                 sidebar.addClass('hidden-mobile').removeClass('visible-mobile');
             }
         }

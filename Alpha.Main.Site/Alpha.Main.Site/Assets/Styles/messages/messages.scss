@@ -1,0 +1,75 @@
+﻿@import '../Home/_variables.scss';
+@import '../Home/_mixins.scss';
+
+body {
+    background-color: transparent;
+    font-size: $font-size;
+    font-family: $font-family;
+    line-height: 20px;
+}
+
+.tab-content > .tab-pane {
+    padding: 8px 0;    
+}
+
+.tblRpt {
+    table-layout: fixed;
+    width: 100%;
+
+    .col-order {
+        text-align: center;
+        width: 44px;
+    }
+
+    .row-first {
+        color: #8c8c8c;
+
+        .messageId {
+            margin-left: 4px;
+        }
+    }
+
+    tbody td {
+        white-space: normal;
+    }
+
+}
+@media only screen and (max-width : 767px) {
+    body {
+        background-color: #fff;
+        font-size: $font-size + 1;
+    }
+
+    .nav-tabs {
+        display: table;
+        width: 100%;
+
+        li {
+            display: table-cell;
+            float: none;            
+
+            a {                
+                text-align: center;
+            }
+        }
+    }
+
+    .nav.nav-tabs > li > a {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .filter {
+        .group-button {
+            margin-right: 0;
+            width: 100%;
+            clear: both;
+            
+            .btn-submit {
+                height: 36px;
+                margin-right: 0;
+                width: 100%;
+            }
+        }
+    }
+}

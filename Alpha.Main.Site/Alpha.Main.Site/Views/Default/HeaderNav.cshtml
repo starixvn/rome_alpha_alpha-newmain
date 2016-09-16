@@ -17,7 +17,7 @@
                   data-second="@DateTime.Now.Second"></span>
         </li>
         <li class="hidden-mobile dropdown language">
-            <a href="javascript:;" data-target="#" class="dropdown-toggle language-selector-container"><span class="icon-flag langFlag-en-us"></span>English</a>
+            @Html.Action("List", "Language")
         </li>
         <li class="hidden-mobile">
             <div class="icon icon-instruction" id="replay-instruction" data-placement="bottom" data-toggle="tooltip" title="@Resources.QuickTourTooltip"></div>
@@ -39,7 +39,7 @@
                 }
                 <li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="_blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
-                <li class="visible-mobile"><a href="javascript;"><span class="icon icon-logout"></span>@Resources.LogOut</a></li>
+                <li class="visible-mobile"><a class="link-logout"><span class="icon icon-logout"></span>@Resources.LogOut</a></li>
             </ul>
         </li>
         <li class="hidden-mobile logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
