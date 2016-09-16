@@ -25,11 +25,11 @@ var changeSecurityCodeByForcing = {
     },
     changeSecurityCode: function () {
         //lockUI();
-        //var $messageContainer = $('#error-message');
         var $txtOldSecurityCode = $('#providedSC');
         var $txtSecurityCode = $('#SC');
         var $txtConfirmSecurityCode = $('#confirmSC');
         if (!changeSecurityCodeByForcing.validateInputSecurityCode($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode)) {
+            // unlockUI();
             return;
         }
 

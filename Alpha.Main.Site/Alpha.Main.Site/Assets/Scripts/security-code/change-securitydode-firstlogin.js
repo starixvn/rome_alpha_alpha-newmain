@@ -2,70 +2,87 @@
     changeSecurityCodeFirstLogin.initialize();
 })
 var changeSecurityCodeFirstLogin = {
+    resources: {
+        rules: "<i class='icon-information-outline icon-rules' data-toggle='modal' data-target='#sc'></i>",
+        securityCodeEmpty: $('#alert-securitycode-empty').val(),
+        securityCodeWrongRule: $('#alert-securitycode-wrong-rule').val(),
+        errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
+    },
     initialize: function () {
-        var $form = $('.form-SC');
-        $form.submit(function (e) {
+  
+        $('.form-SC').submit(function (e) {
             changeSecurityCodeFirstLogin.changeSecurityCode();
             e.preventDefault();
         });
-        $form.bind('reset', function (e) {
-            $('#spnNewPwdIcon').removeClass();
-            $('#spnConfirmSecCodeIcon').removeClass();
+        $("#btn-cancel").bind("click", function () {
+            redirectToHomePage(2000);
         });
-        $('#txtSecCode').focus();
+
+        $('#SC').focus();
     },
     changeSecurityCode: function () {
-        lockUI();
-        var $messageContainer = $('#errorSection');
-        var $txtSecCode = $('#SC');
-        var $txtConfirmSecCode = $('#confirmSC');
-        var message = changeSecurityCodeFirstLogin.checkInputParameters($txtSecCode, $txtConfirmSecCode);
-        if (message.length !== 0) {
-            showMessage($messageContainer, message, 1);
-            unlockUI();
+        //lockUI();
+        var $txtSecurityCode = $('#SC');
+        var $txtConfirmSecurityCode = $('#confirmSC');
+        if (!changeSecurityCodeFirstLogin.validateInputSecurityCode($txtSecurityCode, $txtConfirmSecurityCode)) {
+           // unlockUI();
             return;
         }
 
-        var secCode = $txtSecCode.val();
-        secCode = secCode.ec(ph).hc();
-        var confirmSecCode = $txtConfirmSecCode.val();
-        confirmSecCode = confirmSecCode.ec(ph).hc();
+        var hashKey = $('#hashkey').val();
+        var secCode = $txtSecurityCode.val();
+        secCode = secCode.ec(hashKey).hc();
+        var confirmSecCode = $txtConfirmSecurityCode.val();
+        confirmSecCode = confirmSecCode.ec(hashKey).hc();
         $.ajax({
             type: 'POST',
             url: 'ChangeSecurityCodeFirstLogin',
             data: { securityCode: secCode, confirmSecurityCode: confirmSecCode },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                showMessage($messageContainer, data.ErrorMessage, data.ErrorCode);
                 if (data.ErrorCode === 0) {
-                    redirectToHomePage(2000);
+                    securitycodeHelper.redirectToHomePage(2000);
                 }
                 else {
-                    $txtSecCode.focus();
+                    $("#providedSC").addClass('error');
+                    $("#lblprovidedSC-error").empty().html(data.ErrorMessage);
+                    $txtSecurityCode.focus();
                 }
             },
             complete: function (jqXHR, textStatus) {
-                unlockUI();
+                //unlockUI();
             }
         })
     },
-    checkInputParameters: function ($txtSecCode, $txtConfirmSecCode) {
-        var message = '';
-        var secCode = $txtSecCode.val();
-        var confirmSecCode = $txtConfirmSecCode.val();
+    validateInputSecurityCode: function ($txtSecurityCode, $txtConfirmSecurityCode) {
+        changeSecurityCodeFirstLogin.resetOriginalInputStatus();
+        var secCode = $txtSecurityCode.val();
+        var confirmSecCode = $txtConfirmSecurityCode.val();
         if (secCode.length === 0) {
-            message = securityCodeResource.alertSecCodeEmpty;
-            $txtSecCode.focus();
+            $("#SC").addClass('error');
+            $("#lblSC-error").empty().html(changeSecurityCodeFirstLogin.resources.securityCodeEmpty).append(changeSecurityCodeFirstLogin.resources.rules);
+            $txtSecurityCode.focus();
+            return false;
         }
-        else if (!isValidSecurityCode(secCode)) {
-            message = securityCodeResource.alertSecCodeWrongRule;
-            $txtSecCode.focus();
+        else if (!securitycodeHelper.isValidSecurityCode(secCode)) {
+            $("#SC").addClass('error');
+            $("#lblSC-error").empty().html(changeSecurityCodeFirstLogin.resources.securityCodeWrongRule).append(changeSecurityCodeFirstLogin.resources.rules);
+            $txtSecurityCode.focus();
+            return false;
         }
         else if (secCode != confirmSecCode) {
-            message = securityCodeResource.alertErrorSecCodeConfirm;
-            $txtConfirmSecCode.focus();
+            $("#confirmSC").addClass('error');
+            $("#lblconfirmSC-error").empty().html(changeSecurityCodeFirstLogin.resources.errorSecurityCodeConfirm);
+            $txtConfirmSecurityCode.focus();
+            return false;
         }
 
-        return message;
+        return true;
+    },
+    resetOriginalInputStatus: function () {
+        $("#SC").removeClass('error');
+        $("#lblSC-error").empty();
+        $("#confirmSC").removeClass('error');
+        $("#lblconfirmSC-error").empty();
     }
 }

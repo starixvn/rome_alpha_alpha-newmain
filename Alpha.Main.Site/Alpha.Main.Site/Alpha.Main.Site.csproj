@@ -469,11 +469,25 @@
       <DependentUpon>default-index.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\security-code\change-securitycode-by-forcing.js" />
+    <Content Include="Assets\bundles\security-code\change-securitycode-by-forcing.min.js">
+      <DependentUpon>change-securitycode-by-forcing.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security-code\change-securitydode-firstlogin.js" />
+    <Content Include="Assets\bundles\security-code\change-securitydode-firstlogin.min.js">
+      <DependentUpon>change-securitydode-firstlogin.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security-code\change-user-own-securitycode.js" />
+    <Content Include="Assets\bundles\security-code\change-user-own-securitycode.min.js">
+      <DependentUpon>change-user-own-securitycode.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security-code\security-code.css" />
     <Content Include="Assets\bundles\security-code\security-code.min.css">
       <DependentUpon>security-code.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\security-code\verify-securitycode.js" />
+    <Content Include="Assets\bundles\security-code\verify-securitycode.min.js">
+      <DependentUpon>verify-securitycode.js</DependentUpon>
+    </Content>
     <Content Include="Assets\scripts\security-code\change-securitycode-by-forcing.js" />
     <Content Include="Assets\scripts\security-code\change-securitydode-firstlogin.js" />
     <Content Include="Assets\scripts\security-code\change-user-own-securitycode.js" />
@@ -725,7 +739,6 @@
     <Content Include="Views\SecurityCode\ChangeSecurityCodeByForcing.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeFirstLogin.cshtml" />
     <Content Include="Views\SecurityCode\ResetSecurityCode.cshtml" />
-    <Content Include="Views\SecurityCode\Shared\_HeaderMessage.cshtml" />
     <Content Include="Views\SecurityCode\Shared\_Layout.cshtml" />
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>

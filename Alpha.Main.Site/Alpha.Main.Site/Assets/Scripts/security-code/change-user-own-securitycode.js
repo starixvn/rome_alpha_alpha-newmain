@@ -2,6 +2,14 @@
     changeUserOwnSecurityCode.initialize();
 })
 var changeUserOwnSecurityCode = {
+    resources: {
+        oldSecurityCodeEmpty: $('#alert-old-securitycode-empty').val(),
+        securityCodeEmpty: $('#alert-securitycode-empty').val(),
+        securityCodeWrongRule: $('#alert-securitycode-wrong-rule').val(),
+        errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
+        sameSecurityCode: $('#alert-same-securitycode').val(),
+        securityCodeChangeSucessfully: $('#alert-securitycode-change-ok').val()
+    },
     initialize: function () {
         var $form = $('.form-SC');
         $form.submit(function (e) {
@@ -9,83 +17,85 @@ var changeUserOwnSecurityCode = {
             e.preventDefault();
         });
         $form.bind('reset', function (e) {
-            $('#spnNewPwdIcon').removeClass();
-            $('#spnConfirmSecCodeIcon').removeClass();
+            changeUserOwnSecurityCode.resetOriginalInputStatus();
         });
-        $('#txtOldSecCode').focus();
+        $('#SC').focus();
     },
     change: function () {
-        lockUI();
-        var $messageContainer = $('#errorSection');
-        var $txtOldSecCode = $('#oldSC');
-        var $txtSecCode = $('#SC');
-        var $txtConfirmSecCode = $('#confirmSC');
-        var message = changeUserOwnSecurityCode.checkInputParameters($txtOldSecCode, $txtSecCode, $txtConfirmSecCode);
+        //lockUI();
+        var $messageContainer = $('#error-message');
+        var $txtOldSecurityCode = $('#oldSC');
+        var $txtSecurityCode = $('#SC');
+        var $txtConfirmSecurityCode = $('#confirmSC');
+        var message = changeUserOwnSecurityCode.checkInputParameters($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
-            $('#error-wrap').removeClass('display-none');
-            showMessage($messageContainer, message, 1);
-            unlockUI();
+            $messageContainer.empty().html(message);
+            // unlockUI();
             return;
         }
 
-        var oldSecCode = $txtOldSecCode.val();
-        oldSecCode = hashSecurityCode(oldSecCode);
-        var secCode = $txtSecCode.val();
-        secCode = secCode.ec(ph).hc();
-        var confirmSecCode = $txtConfirmSecCode.val();
-        confirmSecCode = confirmSecCode.ec(ph).hc();
+        var hashKey = $('#hashkey').val();
+        var oldSecCode = $txtOldSecurityCode.val();
+        oldSecCode = securitycodeHelper.hashSecurityCode(oldSecCode);
+        var secCode = $txtSecurityCode.val();
+        secCode = secCode.ec(hashKey).hc();
+        var confirmSecCode = $txtConfirmSecurityCode.val();
+        confirmSecCode = confirmSecCode.ec(hashKey).hc();
         $.ajax({
             type: 'POST',
             url: 'ChangeUserOwnSecurityCode',
             data: { oldSecurityCode: oldSecCode, securityCode: secCode, confirmSecurityCode: confirmSecCode },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                $('#error-wrap').removeClass('display-none');
-                showMessage($messageContainer, data.ErrorMessage, data.ErrorCode);
-                var errorCode = data.ErrorCode;
-                if (errorCode === 0) { // OK
-                    setTimeout(changesecuritycode.gotoSecurityCodePage, 5000);
+                if (data.ErrorCode === 0) { // OK
+                    setTimeout(changeUserOwnSecurityCode.gotoSecurityCodePage(), 5000);
                 }
-                else if (errorCode === 2) { // account is closed
+                else if (data.ErrorCode === 2) { // account is closed
                     alert(data.ErrorMessage);
                     top.age.SignOut();
                 }
                 else {
-                    $txtSecCode.focus();
+                    $messageContainer.empty().html(data.ErrorMessage);
+                    $txtOldSecurityCode.focus();
                 }
             },
             complete: function (jqXHR, textStatus) {
-                unlockUI();
+                //unlockUI();
             }
         })
     },
-    checkInputParameters: function ($txtOldSecCode, $txtSecCode, $txtConfirmSecCode) {
-        var message = '';
-        var oldSecCode = $txtOldSecCode.val();
-        var secCode = $txtSecCode.val();
-        var confirmSecCode = $txtConfirmSecCode.val();
+    checkInputParameters: function ($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode) {
+        var oldSecCode = $txtOldSecurityCode.val();
+        var secCode = $txtSecurityCode.val();
+        var confirmSecCode = $txtConfirmSecurityCode.val();
         if (oldSecCode.length === 0) {
-            message = securityCodeResource.alertOldSecCodeEmpty;
-            $txtOldSecCode.focus();
+            $txtOldSecurityCode.focus();
+            return changeUserOwnSecurityCode.resources.oldSecurityCodeEmpty;
         }
         else if (secCode.length === 0) {
-            message = securityCodeResource.alertSecCodeEmpty;
-            $txtSecCode.focus();
+            $txtSecurityCode.focus();
+            return changeUserOwnSecurityCode.resources.securityCodeEmpty;
         }
-        else if (!isValidSecurityCode(secCode)) {
-            message = securityCodeResource.alertSecCodeWrongRule;
-            $txtSecCode.focus();
+        else if (!securitycodeHelper.isValidSecurityCode(secCode)) {
+            $txtSecurityCode.focus();
+            return changeUserOwnSecurityCode.resources.securityCodeWrongRule;
         }
         else if (secCode != confirmSecCode) {
-            message = securityCodeResource.alertErrorSecCodeConfirm;
-            $txtConfirmSecCode.focus();
+            $txtConfirmSecurityCode.focus();
+            return changeUserOwnSecurityCode.resources.errorSecurityCodeConfirm;
         }
         else if (oldSecCode === secCode) {
-            message = securityCodeResource.alertSameSecCode;
-            $txtSecCode.focus();
+            $txtSecurityCode.focus();
+            return changeUserOwnSecurityCode.resources.sameSecurityCode;
         }
 
-        return message;
+        return '';
+    },
+    resetOriginalInputStatus: function () {
+        $("#SC").removeClass('error');
+        $("#lblSC-error").empty();
+        $("#confirmSC").removeClass('error');
+        $("#lblconfirmSC-error").empty();
     },
     gotoPwdPage: function () {
         if (top.menu && top.menu.ClearCurrentLeftMenu) {
@@ -93,14 +103,14 @@ var changeUserOwnSecurityCode = {
         }
 
         var pwdLink = '_MemberInfo/ChangePassword/ChangePassword.aspx';
-        window.location = getBaseUrl() + pwdLink;
+        window.location = securitycodeHelper.getBaseUrl() + pwdLink;
     },
     gotoSecurityCodePage: function () {
-        if (top.menu && top.menu.ClearCurrentLeftMenu) {
-            top.menu.ClearCurrentLeftMenu();
-        }
+        //if (top.menu && top.menu.ClearCurrentLeftMenu) {
+        //    top.menu.ClearCurrentLeftMenu();
+        //}
 
-        var scLink = 'Security/SecurityCode/ChangeSecurityCode';
-        window.location = getBaseUrl() + scLink;
+        var scLink = 'SecurityCode/ChangeUserOwnSecurityCode';
+        window.location = securitycodeHelper.getBaseUrl() + 'SecurityCode/ChangeUserOwnSecurityCode';
     }
 }
