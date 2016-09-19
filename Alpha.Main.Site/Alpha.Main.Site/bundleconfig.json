@@ -129,7 +129,7 @@
   {
     "outputFileName": "Assets/bundles/default-messages.css",
     "inputFiles": [
-      "Assets/Styles/Messages/messages.css"
+      "Assets/styles/messages/messages.css"
     ]
   }
 

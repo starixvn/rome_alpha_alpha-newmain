@@ -32,8 +32,9 @@ body {
     tbody td {
         white-space: normal;
     }
-
 }
+
+/* ----------- Mobile ----------- */
 @media only screen and (max-width : 767px) {
     body {
         background-color: #fff;
@@ -60,6 +61,50 @@ body {
     }
 
     .filter {
+        display: block;
+        .group-button { 
+            .btn-submit {
+                height: 36px;
+                margin-right: 0;
+            }
+        }
+
+        .input-group.date .form-control {
+            height: 36px;
+            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+        }
+    }      
+}
+
+/* ----------- iPhone 5 with landscape ----------- */
+@media only screen and (max-width: 568px) {
+    .filter .form-group {
+        margin-right: 0;
+
+        .control.date {
+            width: 120px;
+        }
+
+        .input-group.date .input-group-addon {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+    }
+
+    .bootstrap-datetimepicker-widget.dropdown-menu {
+        left: 0px !important;
+        right: 0px !important;
+        width: 100% !important;
+
+        &.pull-right:before, &.pull-right:after {
+            display: none;
+        }
+    }
+}
+
+  /* ----------- iPhone 5/ Iphone 6 with portrait  ----------- */
+  @media only screen and (max-width: 375px) {
+     .filter {
         .group-button {
             margin-right: 0;
             width: 100%;
@@ -72,4 +117,6 @@ body {
             }
         }
     }
-}
+ }
+
+

@@ -37,8 +37,8 @@ var headerNav = {
     hideHeaderDropdownMenuTimeout: null,
 
     urls: {
-        home: 'Home/Index',
-        messages: 'Messages/Index',
+        home: alpha.urls.mainRootPath + 'Home/Index',
+        messages: alpha.urls.mainRootPath +  'Messages/Index',
         changeLanguage: alpha.urls.mainRootPath + 'Language/Change'
     },
 
@@ -133,7 +133,7 @@ var headerNav = {
 
         headerNav.domElements.iconLogOut.on('click touchend', alpha.core.signOut);
 
-        headerNav.domElements.iconHome.click(function () {
+        headerNav.domElements.iconHome.on('click touchend', function () {
             indexManager.changeMenu(headerNav.urls.home);
         });
 
@@ -144,7 +144,7 @@ var headerNav = {
         // Logout link for mobile
         headerNav.domElements.linkLogout.on('click touchend', alpha.core.signOut);
 
-        headerNav.domElements.iconMessage.click(function () {
+        headerNav.domElements.iconMessage.on('click touchend', function () {
             indexManager.changeMenu(headerNav.urls.messages);
         });
 
