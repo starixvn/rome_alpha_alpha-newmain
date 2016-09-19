@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Sessions
 {
+    using System.Web;
     using Models.Enumerations;
     using Models.SecurityCode;
-    using System.Web;
-
+    using SecurityCode.Services;
     public class SecurityCodeSession : ISecurityCodeSession
     {
         private const string HYPHEN = "_";

@@ -1,4 +1,4 @@
-﻿@model Alpha.Main.Site.ViewModels.Security.SecurityCodeViewModel
+﻿@model Alpha.Main.Site.ViewModels.Security.BaseSecurityCodeViewModel
 
 @{
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
@@ -10,6 +10,7 @@
 }
 
 <h1 class="page-title">Security Code</h1>
+<div id="error-message" class="msg msg-error">@SecurityCode_Resources.informSecCode</div>
 <div class="block">
     <form class="form-SC">
         <div class="form-group">
@@ -38,8 +39,10 @@
 @Html.Hidden("hashkey", Model.PH)
 @Html.Hidden("alert-securitycode-empty", SecurityCode_Resources.alertSecCodeEmpty)
 @Html.Hidden("alert-securitycode-wrong-rule", SecurityCode_Resources.lblSecCodeWrongRule)
-@Html.Hidden("_custId", Request["custid"])
-@Html.Hidden("_subaccid", Request["subaccid"])
+@Html.Hidden("alert-error-securitycode-confirm", SecurityCode_Resources.alertErrorSecCodeConfirm)
+@Html.Hidden("custid", Request["custid"])
+@Html.Hidden("subaccid", Request["subaccid"])
+@Html.Hidden("rootUrl", Model.RootUrl)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security-code/before-home-page")

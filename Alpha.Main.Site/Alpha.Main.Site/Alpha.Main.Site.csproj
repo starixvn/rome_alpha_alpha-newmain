@@ -480,6 +480,10 @@
     <Content Include="Assets\bundles\security-code\change-user-own-securitycode.min.js">
       <DependentUpon>change-user-own-securitycode.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\security-code\reset-securitycode.js" />
+    <Content Include="Assets\bundles\security-code\reset-securitycode.min.js">
+      <DependentUpon>reset-securitycode.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security-code\security-code.css" />
     <Content Include="Assets\bundles\security-code\security-code.min.css">
       <DependentUpon>security-code.css</DependentUpon>
@@ -797,7 +801,8 @@
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs" />
-    <Compile Include="Requests\SecurityCode\SelectSecurityCodeQuery.cs" />
+    <Compile Include="Requests\SecurityCode\BaseSecurityCodeQuery.cs" />
+    <Compile Include="Requests\SecurityCode\LoginSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
@@ -811,7 +816,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\Security\BaseSecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\Security\LoginSecurityCodeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">

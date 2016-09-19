@@ -1,8 +1,11 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
+    using System;
     using AppResources;
+    using Configurations;
     using Encryption;
     using Fanex.Security;
+    using Main.Helpers;
     using Main.Models.CustomerProfiles;
     using Main.Models.SecurityCode;
     using MediatR;
@@ -10,11 +13,10 @@
     using Services;
     using Sessions;
     using Sunplus.Agent.Utilities;
-    using System;
     using ViewModels.Security;
-
     public class SecurityCodeHandler : SecurityCodeBaseHandler,
-         IRequestHandler<SelectSecurityCodeQuery, SecurityCodeViewModel>,
+         IRequestHandler<LoginSecurityCodeQuery, LoginSecurityCodeViewModel>,
+         IRequestHandler<BaseSecurityCodeQuery, BaseSecurityCodeViewModel>,
          IRequestHandler<ChangeSecurityCodeFirstLoginCommand, Result>,
          IRequestHandler<ChangeSecurityCodeByForcingCommand, Result>,
          IRequestHandler<ChangeUserOwnSecurityCodeCommand, Result>,
@@ -27,7 +29,7 @@
         {
             get
             {
-                if(string.IsNullOrEmpty(System.Web.HttpContext.Current.Session["ph"] as string))
+                if (string.IsNullOrEmpty(System.Web.HttpContext.Current.Session["ph"] as string))
                 {
                     System.Web.HttpContext.Current.Session["ph"] = Encryption.RandomString(new Random().Next(4, 8));
                 }
@@ -58,8 +60,8 @@
         {
             this.customerProfileService = customerProfileService;
         }
-            
-        public SecurityCodeViewModel Handle(SelectSecurityCodeQuery message)
+
+        public BaseSecurityCodeViewModel Handle(BaseSecurityCodeQuery message)
         {
             if (message == null)
             {
@@ -75,13 +77,43 @@
                 ? base.MD5Salt(base.securityCodeSession.SubAccId)
                 : base.MD5Salt(base.securityCodeSession.CustId);
 
-            return new SecurityCodeViewModel
+            return new BaseSecurityCodeViewModel
+            {
+                SecurityCodeToken = securityCodeToken,
+                SecuritySalt = SecuritySalt,
+                PH = this.PH,
+                RootUrl = AppPathHelper.GetAppPath(AppSettings.SiteMainAppPath, "~")
+            };
+        }
+
+
+        public LoginSecurityCodeViewModel Handle(LoginSecurityCodeQuery message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+            }
+
+            var profile = customerProfileService.GetProfilePicture(base.securityCodeSession.CustId);
+
+            string securityCodeToken = this.GenerateSecurityToken();
+            base.securityCodeSession.SecurityCodeToken = securityCodeToken;
+
+            var SecuritySalt = base.securityCodeSession.SubAccId > 0
+                ? base.MD5Salt(base.securityCodeSession.SubAccId)
+                : base.MD5Salt(base.securityCodeSession.CustId);
+
+            return new LoginSecurityCodeViewModel
             {
                 SecurityCodeToken = securityCodeToken,
                 SecuritySalt = SecuritySalt,
                 PH = this.PH,
                 IsDefaultAvatar = profile.IsDefaultAvatar,
-                EmbedImage = this.GenerateImage(profile)
+                Username = message.UserName,
+                AlternateUsername = this.BuildAlternateUsername(message),
+                UsernameShower = this.BuildUsernameShower(message),
+                EmbedImage = this.GenerateImage(profile),
+                RootUrl = AppPathHelper.GetAppPath(AppSettings.SiteMainAppPath, "~")
             };
         }
 
@@ -245,7 +277,7 @@
             Result result = new Result();
             if (message.CustId.HasValue && message.CustId.Value > 0)
             {
-                result =  base.ResetDownlineSecurityCode(message);
+                result = base.ResetDownlineSecurityCode(message);
             }
             else if (isResetSubAccount)
             {
@@ -283,6 +315,30 @@
             }
 
             return string.Empty;
+        }
+
+        private string BuildUsernameShower(LoginSecurityCodeQuery message)
+        {
+            if (message.IsSubAcc)
+            {
+                return message.SubUserName;
+            }
+            else
+            {
+                return string.IsNullOrEmpty(message.NickName) ? message.UserName : message.NickName;
+            }
+        }
+
+        private string BuildAlternateUsername(LoginSecurityCodeQuery message)
+        {
+            if (message.IsSubAcc)
+            {
+                return "(" + message.SubUserName + ")";
+            }
+            else
+            {
+                return string.IsNullOrEmpty(message.NickName) ? string.Empty : "(" + message.NickName + ")";
+            }
         }
     }
 }

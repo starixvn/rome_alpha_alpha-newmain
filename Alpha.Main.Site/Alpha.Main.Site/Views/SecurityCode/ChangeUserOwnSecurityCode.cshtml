@@ -1,4 +1,4 @@
-﻿@model Alpha.Main.Site.ViewModels.Security.SecurityCodeViewModel
+﻿@model Alpha.Main.Site.ViewModels.Security.LoginSecurityCodeViewModel
 @{
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
@@ -47,6 +47,7 @@
 @Html.Hidden("alert-error-securitycode-confirm", SecurityCode_Resources.alertErrorSecCodeConfirm)
 @Html.Hidden("alert-same-securitycode", SecurityCode_Resources.alertSameSecCode)
 @Html.Hidden("alert-securitycode-change-ok", SecurityCode_Resources.alertSecCodeChangedOK)
+@Html.Hidden("rootUrl", Model.RootUrl)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security-code/before-home-page")

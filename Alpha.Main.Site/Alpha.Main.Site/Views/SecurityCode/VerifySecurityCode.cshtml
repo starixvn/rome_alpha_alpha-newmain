@@ -1,4 +1,4 @@
-﻿@model Alpha.Main.Site.ViewModels.Security.SecurityCodeViewModel
+﻿@model Alpha.Main.Site.ViewModels.Security.BaseSecurityCodeViewModel
 @{
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
@@ -25,6 +25,7 @@
 @Html.Hidden("securitycode-token", Model.SecurityCodeToken)
 @Html.Hidden("security-salt", Model.SecuritySalt)
 @Html.Hidden("inform-securitycode", SecurityCode_Resources.informSecCode)
+@Html.Hidden("rootUrl", Model.RootUrl)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/default", "/bundles/site-main/security-code/before-home-page")

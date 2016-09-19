@@ -1,4 +1,4 @@
-﻿@model Alpha.Main.Site.ViewModels.Security.SecurityCodeViewModel
+﻿@model Alpha.Main.Site.ViewModels.Security.LoginSecurityCodeViewModel
 
 @{
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
@@ -32,7 +32,7 @@
         <p> Please create your own security code</p>
         <figure class="avatar">
             <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="Avatar" />
-            <figcaption><span class="username">S688H</span><br /><span class="nickname">(John88)</span></figcaption>
+            <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
         </figure>
         <div class="rowlg help-rules">
             <input type="password" class="txt" name="SC" id="SC" placeholder="Security Code">
@@ -79,6 +79,7 @@
 @Html.Hidden("alert-securitycode-empty", SecurityCode_Resources.alertSecCodeEmpty)
 @Html.Hidden("alert-securitycode-wrong-rule", SecurityCode_Resources.lblSecCodeWrongRule)
 @Html.Hidden("alert-error-securitycode-confirm", SecurityCode_Resources.alertErrorSecCodeConfirm)
+@Html.Hidden("rootUrl", Model.RootUrl)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security-code/before-home-page")

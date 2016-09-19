@@ -7,23 +7,25 @@
     using MediatR;
     using Models.Request.SecurityCode;
     using Sessions;
-
+    using Sunplus.Agent.Model.Entities;
     [SessionState(SessionStateBehavior.Default)]
     public class SecurityCodeController : BaseController
     {
+        private readonly IUserSession userSession;
         private ISecurityCodeSession securityCodeSession;
         private readonly IMediator mediator;
 
-        public SecurityCodeController(ISecurityCodeSession securityCodeSession, IMediator mediator)
+        public SecurityCodeController(IUserSession userSession, ISecurityCodeSession securityCodeSession,IMediator mediator)
         {
             this.securityCodeSession = securityCodeSession;
+            this.userSession = userSession;
             this.mediator = mediator;
         }
 
         [HttpGet]
         public ActionResult ChangeSecurityCodeFirstLogin()
         {
-            var query = new SelectSecurityCodeQuery(this.securityCodeSession);
+            var query = new LoginSecurityCodeQuery(this.userSession);
 
             var viewModel = mediator.Send(query);
 
@@ -44,7 +46,7 @@
         [HttpGet]
         public ActionResult ChangeSecurityCodeByForcing()
         {
-            var query = new SelectSecurityCodeQuery(this.securityCodeSession);
+            var query = new LoginSecurityCodeQuery(this.userSession);
 
             var viewModel = mediator.Send(query);
 
@@ -65,7 +67,7 @@
         [HttpGet]
         public ActionResult ChangeUserOwnSecurityCode()
         {
-            var query = new SelectSecurityCodeQuery(this.securityCodeSession);
+            var query = new BaseSecurityCodeQuery(this.userSession);
 
             var viewModel = mediator.Send(query);
 
@@ -86,7 +88,7 @@
         [HttpGet]
         public ActionResult ResetSecurityCode()
         {
-            var query = new SelectSecurityCodeQuery(this.securityCodeSession);
+            var query = new BaseSecurityCodeQuery(this.userSession);
 
             var viewModel = mediator.Send(query);
 
@@ -107,7 +109,7 @@
         [HttpGet]
         public ActionResult VerifySecurityCode()
         {
-            var query = new SelectSecurityCodeQuery(this.securityCodeSession);
+            var query = new BaseSecurityCodeQuery(this.userSession);
 
             var viewModel = mediator.Send(query);
 

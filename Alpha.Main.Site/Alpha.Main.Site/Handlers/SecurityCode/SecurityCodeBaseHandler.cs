@@ -229,7 +229,7 @@
             var isResetMember = this.securityCodeSession.UserLevel.Equals(UserLevel.Agent);
             string hashSecurityCode = HashSecurityCode(securityCodeParams.CustId.Value, securityCodeParams.SecurityCode, isResetMember);
 
-            return this.securityCodeService.UpdateMainAccountHashSecurityCode(new SecurityCodeParams
+            Result result = this.securityCodeService.UpdateMainAccountHashSecurityCode(new SecurityCodeParams
             {
                 CustId = securityCodeParams.CustId.Value,
                 SubAccountId = securityCodeParams.SubAccId.Value,
@@ -238,6 +238,12 @@
                 Language = securityCodeParams.Language,
                 IP = this.ClientIP
             });
+
+            if (result.ErrorCode == 0)
+            {
+                result.ErrorMessage = SecurityCode_Resources.alertSecCodeChangedOK;
+            }
+            return result;
         }
 
         protected Result ResetSubAccountSecurityCode(ResetSecurityCodeCommand securityCodeParams)

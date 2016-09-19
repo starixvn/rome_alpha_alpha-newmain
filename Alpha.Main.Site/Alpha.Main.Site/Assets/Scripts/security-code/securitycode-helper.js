@@ -72,7 +72,7 @@
         //    wnd = wnd.parent;
         //}
 
-        window.location = $("#rootUrl") + '/Default/Index';
+        window.location = securitycodeHelper.getBaseUrl() + $("#rootUrl").val() + '/Default/Index';
 
 
         //var baseUrl = getBaseUrl();

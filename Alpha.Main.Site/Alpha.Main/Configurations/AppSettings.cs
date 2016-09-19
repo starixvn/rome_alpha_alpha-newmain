@@ -33,6 +33,14 @@
                 return ConfigurationManager.AppSettings["HowToUseAppPath"];
             }
         }
+        
+        public static string SiteMainAppPath
+        {
+            get
+            {
+                return "/" + ConfigurationManager.AppSettings["AppMainName"];
+            }
+        }
 
         public static string UsersAlwaysAllowAccessBetsListMonitoring
         {

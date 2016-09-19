@@ -6,7 +6,8 @@
     "relative-url"
   ],
   "sites": [
-    "site-name"
+    "SecurityCode/ResetSecurityCode",
+    "SecurityCode/ChangeUserOwnSecurityCode"
   ],
   "verifyingSecurityCodeUrl": "SecurityCode/VerifySecurityCode",
   "changeSecurityCodeUrl": "SecurityCode/ChangeSecurityCode"
