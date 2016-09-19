@@ -1,16 +1,12 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Web.SessionState;
     using Main.Models.SecurityCode;
     using MediatR;
-    using Models.Request.SecurityCode;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
     using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Model.Entities.Permission;
-    using System.Web.Mvc;
-    using System.Web.SessionState;
-    using SecurityCode.Services;
 
     public class DefaultController : BaseController
     {

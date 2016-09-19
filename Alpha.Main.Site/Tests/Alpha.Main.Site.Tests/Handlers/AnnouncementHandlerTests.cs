@@ -1,5 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
+    using System.Collections.Generic;
     using Constants;
     using Main.Models.Announcements;
     using Models.Requests.Announcement;
@@ -10,8 +12,6 @@
     using Sessions;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Generic;
 
     [TestFixture]
     public class AnnouncementHandlerTests

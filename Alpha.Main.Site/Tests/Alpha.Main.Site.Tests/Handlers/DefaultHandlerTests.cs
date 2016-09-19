@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
@@ -7,7 +8,6 @@
     using Sessions;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
-    using System;
 
     [TestFixture]
     public class DefaultHandlerTests

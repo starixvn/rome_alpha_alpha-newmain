@@ -64,11 +64,18 @@
       "Assets/scripts/security-code/change-securitydode-firstlogin.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security-code/change-user-own-securitycode.js",
     "inputFiles": [
       "Assets/scripts/security-code/securitycode-helper.js",
       "Assets/scripts/security-code/change-user-own-securitycode.js"
+    ]
+  },
+   {
+    "outputFileName": "Assets/bundles/security-code/reset-securitycode.js",
+    "inputFiles": [
+      "Assets/scripts/security-code/securitycode-helper.js",
+      "Assets/scripts/security-code/reset-securitycode.js"
     ]
   }
 ]
