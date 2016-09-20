@@ -757,7 +757,6 @@ function reloadPopUpSetting(timeOut) {
         if (isCustomerList) {
             var arrayCustId = top.main.$("arrayCustID").value;
             var arrayUserName = top.main.$("arrayUserName").value;
-            window.top.main.location.reload(true);
             //// Use load.oldmain here to do not override onload funtion on new main, please do not change the event name
             window.top.$('#main')
                 .on('load.oldmain', function () {
@@ -766,16 +765,15 @@ function reloadPopUpSetting(timeOut) {
                 doReloadPopup();
 
                 window.top.$('#main').off('load.oldmain');
-                }).trigger('load.oldmain');
+                });
         } else {
-            window.top.main.location.reload(true);
             window.top.$('#main')
                .on('load.oldmain', function () {
                 doReloadPopup();
                 window.top.$('#main').off('load.oldmain');
-               }).trigger('load.oldmain');
+               });
         }
-
+        window.top.main.location.reload(true);
         window.top.clearPopupSubtitle(true);
     }
 }
