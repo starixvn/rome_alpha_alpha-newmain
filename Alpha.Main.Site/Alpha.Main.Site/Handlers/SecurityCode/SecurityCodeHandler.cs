@@ -3,7 +3,6 @@
     using System;
     using AppResources;
     using Configurations;
-    using Encryption;
     using Fanex.Security;
     using Main.Helpers;
     using Main.Models.CustomerProfiles;
@@ -12,8 +11,9 @@
     using Models.Request.SecurityCode;
     using Services;
     using Sessions;
-    using Sunplus.Agent.Utilities;
     using ViewModels.Security;
+    using Sunplus.Agent.Utilities;
+
     public class SecurityCodeHandler : SecurityCodeBaseHandler,
          IRequestHandler<LoginSecurityCodeQuery, LoginSecurityCodeViewModel>,
          IRequestHandler<BaseSecurityCodeQuery, BaseSecurityCodeViewModel>,
@@ -50,7 +50,7 @@
                 return string.Empty;
             }
 
-            return Encryptor.RC4(this.HashKey, Encryptor.HexDecode(encryption));
+            return Alpha.Main.Encryption.Encryptor.RC4(this.HashKey, Alpha.Main.Encryption.Encryptor.HexDecode(encryption));
         }
 
         public SecurityCodeHandler(
@@ -81,8 +81,7 @@
             {
                 SecurityCodeToken = securityCodeToken,
                 SecuritySalt = SecuritySalt,
-                HashKey = this.HashKey,
-                AppPath = AppPathHelper.GetAppPath(AppSettings.SiteMainAppPath, "~")
+                HashKey = this.HashKey
             };
         }
 
@@ -112,8 +111,7 @@
                 Username = message.UserName,
                 AlternateUsername = this.BuildAlternateUsername(message),
                 UsernameShower = this.BuildUsernameShower(message),
-                EmbedImage = this.GenerateImage(profile),
-                AppPath = AppPathHelper.GetAppPath(AppSettings.SiteMainAppPath, "~")
+                EmbedImage = this.GenerateImage(profile)
             };
         }
 

@@ -47,10 +47,36 @@
             url = protocol + '//' + host + '/';
         }
 
-        return url + $("#appPath").val();
+        return url;
+    },
+    signOut: function () {
+        window.location = securitycodeHelper.getBaseUrl() + $("#oldMainRootPath").val() + '_Authorization/Handlers/SignOut.ashx';
     },
     gotoHomePage: function () {
-        window.location = securitycodeHelper.getBaseUrl()  + '/Default/Index';
+        window.location = securitycodeHelper.getBaseUrl() + $("#mainRootPath").val() + '/Default/Index';
+    },
+    initLanguage: function () {
+        var languageCode = $("#language-code").val();
+        var currentLanguage = $("#language").data("currentlanguage");
+        var language = $(".list-language ." + currentLanguage + " > a").html();
+        $(".language-selector-container").html(language);
+
+        $(".changelanguage-link").click(function () {
+            securitycodeHelper.changeLanguage($(this).data("value"));
+        });
+    },
+    changeLanguage: function (lang) {
+        $.ajax({
+            type: "POST",
+            url: securitycodeHelper.getBaseUrl() + $("#mainRootPath").val() + 'Language/Change',
+            data: { languageCode: lang },
+            responseType: "json",
+            success: function (result) {
+                if (result !== undefined) {
+                    window.location.reload();
+                }
+            }
+        });
     },
     lockUI: function () {
     },

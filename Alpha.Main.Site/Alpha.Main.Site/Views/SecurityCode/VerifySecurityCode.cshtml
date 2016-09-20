@@ -25,7 +25,8 @@
 @Html.Hidden("securitycode-token", Model.SecurityCodeToken)
 @Html.Hidden("security-salt", Model.SecuritySalt)
 @Html.Hidden("inform-securitycode", SecurityCode_Resources.informSecCode)
-@Html.Hidden("appPath", Model.AppPath)
+@Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
+@Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/default", "/bundles/site-main/security-code/before-home-page")

@@ -48,7 +48,8 @@
 @Html.Hidden("alert-error-securitycode-confirm", SecurityCode_Resources.alertErrorSecCodeConfirm)
 @Html.Hidden("alert-same-securitycode", SecurityCode_Resources.alertSameSecCode)
 @Html.Hidden("alert-securitycode-change-ok", SecurityCode_Resources.alertSecCodeChangedOK)
-@Html.Hidden("appPath", Model.AppPath)
+@Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
+@Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security-code/before-home-page")

@@ -3,9 +3,9 @@
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Filter;
-    using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
+    using Models.Requests;
     using Sessions;
     using Sunplus.Agent.Model.Entities;
     [SessionState(SessionStateBehavior.Default)]
@@ -29,6 +29,8 @@
 
             var viewModel = mediator.Send(query);
 
+            viewModel.Language = mediator.Send(new AllLanguagesQuery(userSession.Language));
+
             return View(viewModel);
         }
 
@@ -49,6 +51,8 @@
             var query = new LoginSecurityCodeQuery(this.userSession);
 
             var viewModel = mediator.Send(query);
+
+            viewModel.Language = mediator.Send(new AllLanguagesQuery(userSession.Language));
 
             return View(viewModel);
         }

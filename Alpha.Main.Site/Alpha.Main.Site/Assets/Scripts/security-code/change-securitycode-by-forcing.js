@@ -12,13 +12,14 @@ var changeSecurityCodeByForcing = {
         securityCodeChangeSucessfully: $('#alert-securitycode-change-ok').val()
     },
     initialize: function () {
+        securitycodeHelper.initLanguage();
         $('.form-SC').submit(function (e) {
             changeSecurityCodeByForcing.changeSecurityCode();
             e.preventDefault();
         });
 
-        $("#btn-back").bind("click", function () {
-            redirectToHomePage(2000);
+        $("#btn-cancel").bind("click", function () {
+            securitycodeHelper.signOut();
         });
 
         $('#txtOldSecCode').focus();

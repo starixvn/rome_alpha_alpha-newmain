@@ -9,12 +9,13 @@ var changeSecurityCodeFirstLogin = {
         errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
     },
     initialize: function () {
+        securitycodeHelper.initLanguage();
         $('.form-SC').submit(function (e) {
             changeSecurityCodeFirstLogin.changeSecurityCode();
             e.preventDefault();
         });
-        $("#btn-back").bind("click", function () {
-            redirectToHomePage(2000);
+        $("#btn-cancel").bind("click", function () {
+            securitycodeHelper.signOut();
         });
 
         $('#txtSecCode').focus();

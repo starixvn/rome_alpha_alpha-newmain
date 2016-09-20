@@ -92,7 +92,7 @@
                 result.ErrorCode = 2; //// account is closed
                 if (this.securityCodeSession.SubAccId == 0)
                 {
-                    this.CloseCasinoAccount();
+                    this.CloseCasinoAccount(custId, ClientIP);
                 }
             }
             else if (result.ErrorCode != 0)
@@ -104,9 +104,9 @@
             return result;
         }
 
-        private void CloseCasinoAccount()
+        private void CloseCasinoAccount(int custId, string ip)
         {
-            // new CasinoLibrary.SBAgent.Customer().UpdateCustClosedFailSecurityCode(custId, true, clientIP);
+             new CasinoLibrary.SBAgent.Customer().UpdateCustClosedFailSecurityCode(custId, true, ip);
         }
 
         private string HashSecurityCode(int custId, string securityCode, bool isResetMember = false)

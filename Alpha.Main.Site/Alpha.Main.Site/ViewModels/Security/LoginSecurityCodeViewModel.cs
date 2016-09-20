@@ -12,6 +12,6 @@
 
         public string UsernameShower { get; set; }
 
-        public string Language { get; set; }
+        public LanguageViewModel Language { get; set; }
     }
 }

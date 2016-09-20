@@ -7,56 +7,54 @@
 @section css {
     @StaticResources.AssetStyles.Render("/bundles/site-main/security-code/before-home-page")
 }
-@*  *@
 <div class="block">
     <form class="form-SC">
+        <h1 class="title">@SecurityCode_Resources.SecurityCode</h1>
         <div class="box-lang">
             <div class="dropdown">
                 <span class="btn dropdown-toggle" type="button" id="langList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="flag flag-en"></span>
-                    English
+                    <span class="flag flag-@Model.Language.CurrentLanguage"></span>
+                    @Model.Language.CurrentLanguage
                     <span class="caret"></span>
                 </span>
-                <ul class="dropdown-menu" aria-labelledby="langList">
-                    <li><a href="#"><span class="flag flag-en"></span>English</a></li>
-                    <li><a href="#"><span class="flag flag-cn"></span>繁體中文</a></li>
-                    <li><a href="#"><span class="flag flag-tw"></span>简体中文</a></li>
-                    <li><a href="#"><span class="flag flag-jp"></span>日本語</a></li>
-                    <li><a href="#"><span class="flag flag-th"></span>ภาษาไทย</a></li>
-                    <li><a href="#"><span class="flag flag-kr"></span>한국어</a></li>
-                    <li><a href="#"><span class="flag flag-vn"></span>Tiếng Việt</a></li>
+                <ul class="dropdown-menu" aria-labelledby="@Model.Language.CurrentLanguage">
+                    @foreach (var languageItem in Model.Language.Data)
+                     {
+                        <li class="@languageItem.Key"><a class="changelanguage-link" data-value="@languageItem.Key"><span class="flag flag-@languageItem.Key"></span>@languageItem.Value</a></li>
+
+                    }
                 </ul>
             </div>
         </div>
-        <h1 class="title">@SecurityCode_Resources.SecurityCode</h1>
-        <p> @(string.Format(@SecurityCode_Resources.SecurityCodeShower, @Model.UsernameShower))
-        <figure class="avatar">
-            <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="Avatar" />
-            <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
-        </figure>
-        <div class="rowlg">
-            <input type="password" class="txt" name="providedSC" id="txtOldSecCode" placeholder="@SecurityCode_Resources.oldSecCode">
-            <label id="txtOldSecCode-error" class="error"></label>
-            <i class="icon-account-key"></i>
-            <i class="validation"></i>
-        </div>
-        <div class="rowlg help-rules">
-            <input type="password" class="txt" name="SC" id="txtSecCode" placeholder="@SecurityCode_Resources.SecurityCode">
-            <label id="txtSecCode-error" class="error"></label>
-            <i class="icon-account-key"></i>
-            <i class="validation"></i>
-        </div>
-        <div class="rowlg">
-            <input type="password" class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@SecurityCode_Resources.ConfirmSecurityCode">
-            <label id="txtConfirmSecCode-error" class="error"></label>
-            <i class="icon-account-key"></i>
-            <i class="validation"></i>
-        </div>
-        <div id="error-message" class="msg msg-error display-none"></div>
-        <div class="list-button">
-            <input type="button" class="btn-back" id="btn-cancel" value="@SecurityCode_Resources.Back" />
-            <input type="submit" class="btn-submit" value="@SecurityCode_Resources.Submit" />
-        </div>
+        <p>
+            @(string.Format(@SecurityCode_Resources.SecurityCodeShower, @Model.UsernameShower))
+            <figure class="avatar">
+                <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="Avatar" />
+                <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
+            </figure>
+            <div class="rowlg">
+                <input type="password" class="txt" name="providedSC" id="txtOldSecCode" placeholder="@SecurityCode_Resources.oldSecCode">
+                <label id="txtOldSecCode-error" class="error"></label>
+                <i class="icon-account-key"></i>
+                <i class="validation"></i>
+            </div>
+            <div class="rowlg help-rules">
+                <input type="password" class="txt" name="SC" id="txtSecCode" placeholder="@SecurityCode_Resources.SecurityCode">
+                <label id="txtSecCode-error" class="error"></label>
+                <i class="icon-account-key"></i>
+                <i class="validation"></i>
+            </div>
+            <div class="rowlg">
+                <input type="password" class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@SecurityCode_Resources.ConfirmSecurityCode">
+                <label id="txtConfirmSecCode-error" class="error"></label>
+                <i class="icon-account-key"></i>
+                <i class="validation"></i>
+            </div>
+            <div id="error-message" class="msg msg-error display-none"></div>
+            <div class="list-button">
+                <input type="button" class="btn-back" id="btn-cancel" value="@SecurityCode_Resources.Back" />
+                <input type="submit" class="btn-submit" value="@SecurityCode_Resources.Submit" />
+            </div>
     </form>
     <div class="rules" id="rules">
         <div class="rules-title" id="rules-title" data-toggle="modal" data-target="#sc"><span class="icon-information-outline icon-rules"></span>"@SecurityCode_Resources.SecurityCodeRules</div>
@@ -90,7 +88,8 @@
 @Html.Hidden("alert-error-securitycode-confirm", SecurityCode_Resources.alertErrorSecCodeConfirm)
 @Html.Hidden("alert-same-securitycode", SecurityCode_Resources.alertSameSecCode)
 @Html.Hidden("alert-securitycode-change-ok", SecurityCode_Resources.alertSecCodeChangedOK)
-@Html.Hidden("appPath", Model.AppPath)
+@Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
+@Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security-code/before-home-page")
