@@ -50,7 +50,7 @@
                 return string.Empty;
             }
 
-            return Encryptor.RC4(this.PH, Encryptor.HexDecode(encryption));
+            return Alpha.Main.Encryption.Encryptor.RC4(this.PH, Alpha.Main.Encryption.Encryptor.HexDecode(encryption));
         }
 
         public SecurityCodeHandler(
