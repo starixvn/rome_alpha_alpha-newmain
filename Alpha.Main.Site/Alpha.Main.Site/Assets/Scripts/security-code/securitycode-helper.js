@@ -53,7 +53,7 @@
         window.location = securitycodeHelper.getBaseUrl() + $("#oldMainRootPath").val() + '_Authorization/Handlers/SignOut.ashx';
     },
     gotoHomePage: function () {
-        window.location = securitycodeHelper.getBaseUrl() + $("#mainRootPath").val() + '/Default/Index';
+        window.location = securitycodeHelper.getBaseUrl() + $("#mainRootPath").val() + 'Default/Index';
     },
     initLanguage: function () {
         $(".changelanguage-link").click(function () {

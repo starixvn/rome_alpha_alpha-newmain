@@ -55,8 +55,8 @@ var changeSecurityCodeByForcing = {
                     top.age.SignOut();
                 }
                 else {
-                    $("#providedSC").addClass('error');
-                    $("#lblprovidedSC-error").empty().html(data.ErrorMessage);
+                    $("#txtOldSecCode").addClass('error');
+                    $("#txtOldSecCode-error").empty().html(data.ErrorMessage);
                     $txtOldSecurityCode.focus();
                 }
             },
