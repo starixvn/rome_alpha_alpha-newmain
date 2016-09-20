@@ -106,7 +106,7 @@
                 Lifestyle.Transient);
 
             //// Singleton
-            container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
+            container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Transient);
             container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Transient);
 
             //// Transient
