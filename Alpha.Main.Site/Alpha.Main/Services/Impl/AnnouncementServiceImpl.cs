@@ -58,7 +58,7 @@
                     {
                         CustId = getParams.CustId
                     })
-                    .Select(messageType => messageTypes.ToString())
+                    .Select(messageType => messageType.ToString())
                     .ToList();
             }
 
