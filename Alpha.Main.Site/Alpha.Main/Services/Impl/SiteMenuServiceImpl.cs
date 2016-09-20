@@ -31,28 +31,31 @@
             this.siteMapReader = siteMapReader;
         }
 
-        public IEnumerable<IMenuItem> GetMenuByUserLevel(UserLevel userLevel)
+        public IEnumerable<IMenuItem> GetMenuByUserLevel(UserLevel userLevel, bool isCookieLess = false)
         {
             var menuItems = Enumerable.Empty<IMenuItem>();
 
-            menuItems = GetMenuDataByUserLevel(userLevel);
+            menuItems = GetMenuDataByUserLevel(userLevel, isCookieLess);
 
             return menuItems;
         }
 
-        private List<IMenuItem> GetMenuDataByUserLevel(UserLevel userLevel)
+        private List<IMenuItem> GetMenuDataByUserLevel(UserLevel userLevel, bool isCookieLess)
         {
             var cacheKey = CacheKeyMenuByUserLevel + userLevel.DisplayName;
 
-            List<IMenuItem> menuItems = null;//cacheManager.Get<List<IMenuItem>>(cacheKey);
+            List<IMenuItem> menuItems = cacheManager.Get<List<IMenuItem>>(cacheKey);
 
-            if (menuItems == null)
+            if (menuItems == null || isCookieLess)
             {
                 var rootNode = this.siteMapReader.GetRootNode();
 
                 menuItems = BuildMenu(rootNode, userLevel);
 
-                cacheManager.Add(cacheKey, menuItems);
+                if (!isCookieLess)
+                {
+                    cacheManager.Add(cacheKey, menuItems);
+                }
             }
 
             return menuItems;

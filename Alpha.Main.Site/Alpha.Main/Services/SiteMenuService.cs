@@ -6,6 +6,6 @@
 
     public interface SiteMenuService
     {
-        IEnumerable<IMenuItem> GetMenuByUserLevel(UserLevel userLevel);
+        IEnumerable<IMenuItem> GetMenuByUserLevel(UserLevel userLevel, bool isCookieLess = false);
     }
 }

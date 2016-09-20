@@ -4,6 +4,7 @@
     using MediatR;
     using System.Collections.Generic;
     using ViewModels;
+    using System.Web;
 
     public class MenuBarQuery : IRequest<MenuBarViewModel>
     {
@@ -45,6 +46,14 @@
             {
                 var strUserAgent = (UserAgent ?? string.Empty).ToLower();
                 return smallDevices.Exists(str => strUserAgent.Contains(str.ToLower())) || strUserAgent.Contains("version");
+            }
+        }
+
+        public bool IsCookieLess
+        {
+            get
+            {
+                return HttpContext.Current.Session.IsCookieless;
             }
         }
     }

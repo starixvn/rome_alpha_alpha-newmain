@@ -24,7 +24,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var menuItems = siteMenuService.GetMenuByUserLevel(message.UserLevel);
+            var menuItems = siteMenuService.GetMenuByUserLevel(message.UserLevel, message.IsCookieLess);
 
             var viewModel = new MenuBarViewModel(menuItems, message.IsSmallDevice);
 
