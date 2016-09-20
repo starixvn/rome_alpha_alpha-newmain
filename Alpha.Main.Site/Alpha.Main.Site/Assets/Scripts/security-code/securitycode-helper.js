@@ -24,22 +24,6 @@
         }
         return result;
     },
-    validateSecurityCode: function (container, errorContainerName) {
-        var $container = $(container);
-        var $errorContainer = $('#' + errorContainerName);
-        var errorContainerClassName = $errorContainer.prop('class');
-
-        var securityCode = $container.val();
-        var validSC = securitycodeHelper.isValidSecurityCode(securityCode);
-        if (validSC && errorContainerClassName !== 'tick') {
-            $errorContainer.removeClass();
-            $errorContainer.addClass('tick');
-        }
-        else if (!validSC && errorContainerClassName !== 'crossError') {
-            $errorContainer.removeClass();
-            $errorContainer.addClass('crossError');
-        }
-    },
     hashSecurityCode: function (securityCode) {
         var salt = $("#security-salt").val();
         var token = $("#securitycode-token").val();
@@ -63,30 +47,14 @@
             url = protocol + '//' + host + '/';
         }
 
-        return url;
+        return url + $("#appPath").val();
     },
     gotoHomePage: function () {
-        //var wnd = window.parent;
-        //while (wnd != wnd.parent) // Jump out
-        //{
-        //    wnd = wnd.parent;
-        //}
-
-        window.location = securitycodeHelper.getBaseUrl() + $("#rootUrl").val() + '/Default/Index';
-
-
-        //var baseUrl = getBaseUrl();
-        //if (top.mainRootPath) {
-        //    wnd.location = top.mainRootPath + 'Default';
-        //} else {
-        //    wnd.location = baseUrl + 'Index.aspx';
-        //}
+        window.location = securitycodeHelper.getBaseUrl()  + '/Default/Index';
     },
     lockUI: function () {
-        try { parent.age.Lock(false) } catch (err) { };
     },
     unlockUI: function () {
-        try { parent.age.UnLock() } catch (err) { };
     }
 }
 

@@ -211,4 +211,28 @@ Chú ý: Mã bảo mật mới phải khác với Mã bảo mật bạn nhận �
   <data name="NewSecurityCode" xml:space="preserve">
     <value>Mã bảo mật mới</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="PleaseCreateYourOwnSecurityCode" xml:space="preserve">
+    <value>Please create your own security code</value>
+  </data>
+  <data name="SecurityCodeRules" xml:space="preserve">
+    <value>Security code rules</value>
+  </data>
+  <data name="SecurityCodeRules01" xml:space="preserve">
+    <value>Security Code (SC) must be a 6-digits string, contains at least 2 different digits and must not be forward run and backward run number.</value>
+  </data>
+  <data name="SecurityCodeRules02" xml:space="preserve">
+    <value>A "Forward run" is a consecutive, ascending order series of digits.</value>
+  </data>
+  <data name="SecurityCodeRules03" xml:space="preserve">
+    <value>A "Backward Run" is a consecutive, descending order series of digits.</value>
+  </data>
+  <data name="SecurityCodeRules04" xml:space="preserve">
+    <value>For example: 123456, 456789, 765432, ect. are not allowed</value>
+  </data>
+  <data name="SecurityCodeShower" xml:space="preserve">
+    <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
+  </data>
 </root>

@@ -6,8 +6,8 @@
 
         public string SecuritySalt { get; set; }
 
-        public string PH { get; set; }
+        public string HashKey { get; set; }
 
-        public string RootUrl { get; set; }
+        public string AppPath { get; set; }
     }
 }

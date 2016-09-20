@@ -19,18 +19,18 @@ var changeUserOwnSecurityCode = {
         $form.bind('reset', function (e) {
             changeUserOwnSecurityCode.resetOriginalInputStatus();
         });
-        $('#SC').focus();
+        $('#txtOldSecCode').focus();
     },
     change: function () {
-        //lockUI();
+        securitycodeHelper.lockUI();
         var $messageContainer = $('#error-message');
-        var $txtOldSecurityCode = $('#oldSC');
-        var $txtSecurityCode = $('#SC');
-        var $txtConfirmSecurityCode = $('#confirmSC');
+        var $txtOldSecurityCode = $('#txtOldSecCode');
+        var $txtSecurityCode = $('#txtSecCode');
+        var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         var message = changeUserOwnSecurityCode.checkInputParameters($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
             $messageContainer.empty().html(message);
-            // unlockUI();
+            securitycodeHelper.unlockUI();
             return;
         }
 
@@ -60,7 +60,7 @@ var changeUserOwnSecurityCode = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                //unlockUI();
+                securitycodeHelper.unlockUI();
             }
         })
     },
@@ -92,10 +92,9 @@ var changeUserOwnSecurityCode = {
         return '';
     },
     resetOriginalInputStatus: function () {
-        $("#SC").removeClass('error');
-        $("#lblSC-error").empty();
-        $("#confirmSC").removeClass('error');
-        $("#lblconfirmSC-error").empty();
+        $("#txtOldSecCode").empty();
+        $("#txtSecCode").empty();
+        $("#txtConfirmSecCode").empty();
     },
     gotoPwdPage: function () {
         if (top.menu && top.menu.ClearCurrentLeftMenu) {

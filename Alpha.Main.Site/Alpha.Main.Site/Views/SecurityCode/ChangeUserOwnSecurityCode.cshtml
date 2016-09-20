@@ -1,4 +1,5 @@
-﻿@model Alpha.Main.Site.ViewModels.Security.LoginSecurityCodeViewModel
+﻿@model Alpha.Main.Site.ViewModels.Security.BaseSecurityCodeViewModel
+
 @{
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
@@ -7,47 +8,47 @@
     <link href="@StaticResources.MainSiteStyleUrl("~/Assets/bundles/security-code/security-code")" rel="stylesheet" type="text/css" />
 }
 
-<h1 class="page-title">Security Code</h1>
+<h1 class="page-title">@SecurityCode_Resources.SecurityCode</h1>
 <div id="error-message" class="msg msg-error">@SecurityCode_Resources.informSecCode</div>
 <div class="block">
     <form class="form-SC">
         <div class="form-group">
-            <label>Old Security Code</label>
-            <input type="password" class="txt form-control" name="oldSC" id="oldSC">
+            <label>@SecurityCode_Resources.oldSecCode</label>
+            <input type="password" class="txt form-control" name="oldSC" id="txtOldSecCode">
         </div>
         <div class="form-group">
-            <label>Security Code</label>
-            <input type="password" class="txt form-control" name="SC" id="SC">
+            <label>@SecurityCode_Resources.SecurityCode</label>
+            <input type="password" class="txt form-control" name="SC" id="txtSecCode">
         </div>
         <div class="form-group">
-            <label>Confirm Security Code</label>
-            <input type="password" class="txt form-control" name="confirmSC" id="confirmSC">
+            <label>@SecurityCode_Resources.ConfirmSecurityCode</label>
+            <input type="password" class="txt form-control" name="confirmSC" id="txtConfirmSecCode">
         </div>
         <div class="form-group">
-            <input type="submit" class="btn-submit" value="Submit" />
-            <input type="reset" value="Reset" />
+            <input type="submit" class="btn-submit" value="@SecurityCode_Resources.Submit" />
+            <input type="reset" value="@SecurityCode_Resources.Reset" />
         </div>
     </form>
     <div class="rules">
-        <p><span class="note-red">*</span>Security Code (SC) must be a 6-digits string, contains at least 2 different digits and must not be forward run and backward run number.</p>
+        <p><span class="note-red">*</span>@SecurityCode_Resources.SecurityCodeRules01</p>
         <ul>
-            <li>A "Forward run" is a consecutive, ascending order series of digits.</li>
-            <li>A "Backward Run" is a consecutive, descending order series of digits.</li>
-            <li>For example: 123456, 456789, 765432, ect. are not allowed</li>
+            <li>@SecurityCode_Resources.SecurityCodeRules02</li>
+            <li>@SecurityCode_Resources.SecurityCodeRules03</li>
+            <li>@SecurityCode_Resources.SecurityCodeRules04</li>
         </ul>
     </div>
 </div>
 
 @Html.Hidden("securitycode-token", Model.SecurityCodeToken)
 @Html.Hidden("security-salt", Model.SecuritySalt)
-@Html.Hidden("hashkey", Model.PH)
+@Html.Hidden("hashkey", Model.HashKey)
 @Html.Hidden("alert-old-securitycode-empty", SecurityCode_Resources.alertOldSecCodeEmpty)
 @Html.Hidden("alert-securitycode-empty", SecurityCode_Resources.alertSecCodeEmpty)
 @Html.Hidden("alert-securitycode-wrong-rule", SecurityCode_Resources.lblSecCodeWrongRule)
 @Html.Hidden("alert-error-securitycode-confirm", SecurityCode_Resources.alertErrorSecCodeConfirm)
 @Html.Hidden("alert-same-securitycode", SecurityCode_Resources.alertSameSecCode)
 @Html.Hidden("alert-securitycode-change-ok", SecurityCode_Resources.alertSecCodeChangedOK)
-@Html.Hidden("rootUrl", Model.RootUrl)
+@Html.Hidden("appPath", Model.AppPath)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security-code/before-home-page")

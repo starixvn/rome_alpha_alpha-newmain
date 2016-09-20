@@ -25,16 +25,16 @@
     {
         private readonly CustomerProfileService customerProfileService;
 
-        private string PH
+        private string HashKey
         {
             get
             {
-                if (string.IsNullOrEmpty(System.Web.HttpContext.Current.Session["ph"] as string))
+                if (string.IsNullOrEmpty(System.Web.HttpContext.Current.Session["hashkey"] as string))
                 {
-                    System.Web.HttpContext.Current.Session["ph"] = Encryption.RandomString(new Random().Next(4, 8));
+                    System.Web.HttpContext.Current.Session["hashkey"] = Encryption.RandomString(new Random().Next(4, 8));
                 }
 
-                return System.Web.HttpContext.Current.Session["ph"] + string.Empty;
+                return System.Web.HttpContext.Current.Session["hashkey"] + string.Empty;
             }
         }
 
@@ -50,7 +50,7 @@
                 return string.Empty;
             }
 
-            return Alpha.Main.Encryption.Encryptor.RC4(this.PH, Alpha.Main.Encryption.Encryptor.HexDecode(encryption));
+            return Encryptor.RC4(this.HashKey, Encryptor.HexDecode(encryption));
         }
 
         public SecurityCodeHandler(
@@ -81,8 +81,8 @@
             {
                 SecurityCodeToken = securityCodeToken,
                 SecuritySalt = SecuritySalt,
-                PH = this.PH,
-                RootUrl = AppPathHelper.GetAppPath(AppSettings.SiteMainAppPath, "~")
+                HashKey = this.HashKey,
+                AppPath = AppPathHelper.GetAppPath(AppSettings.SiteMainAppPath, "~")
             };
         }
 
@@ -107,13 +107,13 @@
             {
                 SecurityCodeToken = securityCodeToken,
                 SecuritySalt = SecuritySalt,
-                PH = this.PH,
+                HashKey = this.HashKey,
                 IsDefaultAvatar = profile.IsDefaultAvatar,
                 Username = message.UserName,
                 AlternateUsername = this.BuildAlternateUsername(message),
                 UsernameShower = this.BuildUsernameShower(message),
                 EmbedImage = this.GenerateImage(profile),
-                RootUrl = AppPathHelper.GetAppPath(AppSettings.SiteMainAppPath, "~")
+                AppPath = AppPathHelper.GetAppPath(AppSettings.SiteMainAppPath, "~")
             };
         }
 

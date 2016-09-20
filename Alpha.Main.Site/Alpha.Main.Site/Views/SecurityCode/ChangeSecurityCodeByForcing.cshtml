@@ -7,7 +7,7 @@
 @section css {
     @StaticResources.AssetStyles.Render("/bundles/site-main/security-code/before-home-page")
 }
-
+@*  *@
 <div class="block">
     <form class="form-SC">
         <div class="box-lang">
@@ -28,52 +28,52 @@
                 </ul>
             </div>
         </div>
-        <h1 class="title">Security Code</h1>
-        <p> Hi @Model.UsernameShower, please input the security code provided by your upline and create your own one.</p>
+        <h1 class="title">@SecurityCode_Resources.SecurityCode</h1>
+        <p> @(string.Format(@SecurityCode_Resources.SecurityCodeShower, @Model.UsernameShower))
         <figure class="avatar">
             <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="Avatar" />
             <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
         </figure>
         <div class="rowlg">
-            <input type="password" class="txt" name="providedSC" id="providedSC" placeholder="Provided Security Code">
-            <label id="lblprovidedSC-error" class="error"></label>
+            <input type="password" class="txt" name="providedSC" id="txtOldSecCode" placeholder="@SecurityCode_Resources.oldSecCode">
+            <label id="txtOldSecCode-error" class="error"></label>
             <i class="icon-account-key"></i>
             <i class="validation"></i>
         </div>
         <div class="rowlg help-rules">
-            <input type="password" class="txt" name="SC" id="SC" placeholder="Security Code">
-            <label id="lblSC-error" class="error"></label>
+            <input type="password" class="txt" name="SC" id="txtSecCode" placeholder="@SecurityCode_Resources.SecurityCode">
+            <label id="txtSecCode-error" class="error"></label>
             <i class="icon-account-key"></i>
             <i class="validation"></i>
         </div>
         <div class="rowlg">
-            <input type="password" class="txt" name="confirmSC" id="confirmSC" placeholder="Confirm Security Code">
-            <label id="lblconfirmSC-error" class="error"></label>
+            <input type="password" class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@SecurityCode_Resources.ConfirmSecurityCode">
+            <label id="txtConfirmSecCode-error" class="error"></label>
             <i class="icon-account-key"></i>
             <i class="validation"></i>
         </div>
         <div id="error-message" class="msg msg-error display-none"></div>
         <div class="list-button">
-            <input type="button" class="btn-cancel" id="btn-cancel" value="Back" />
-            <input type="submit" class="btn-submit" value="Submit" />
+            <input type="button" class="btn-back" id="btn-cancel" value="@SecurityCode_Resources.Back" />
+            <input type="submit" class="btn-submit" value="@SecurityCode_Resources.Submit" />
         </div>
     </form>
     <div class="rules" id="rules">
-        <div class="rules-title" id="rules-title" data-toggle="modal" data-target="#sc"><span class="icon-information-outline icon-rules"></span>Security code rules</div>
+        <div class="rules-title" id="rules-title" data-toggle="modal" data-target="#sc"><span class="icon-information-outline icon-rules"></span>"@SecurityCode_Resources.SecurityCodeRules</div>
         <!-- Modal -->
         <div class="modal fade information" id="sc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="icon icon-close close" data-dismiss="modal" aria-label="Close"></span>
-                        <h4 class="modal-title" id="myModalLabel"><span class="icon-information-outline icon-rules"></span>Security code rules</h4>
+                        <h4 class="modal-title" id="myModalLabel"><span class="icon-information-outline icon-rules"></span>"@SecurityCode_Resources.SecurityCodeRules</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Security Code (SC) must be a 6-digits string, contains at least 2 different digits and must not be forward run and backward run number.</p>
+                        <p>@SecurityCode_Resources.SecurityCodeRules01</p>
                         <ul>
-                            <li>A "Forward run" is a consecutive, ascending order series of digits.</li>
-                            <li>A "Backward Run" is a consecutive, descending order series of digits.</li>
-                            <li>For example: 123456, 456789, 765432, ect. are not allowed</li>
+                            <li>@SecurityCode_Resources.SecurityCodeRules02</li>
+                            <li>@SecurityCode_Resources.SecurityCodeRules03</li>
+                            <li>@SecurityCode_Resources.SecurityCodeRules04</li>
                         </ul>
                     </div>
                 </div>
@@ -83,14 +83,14 @@
 </div>
 @Html.Hidden("securitycode-token", Model.SecurityCodeToken)
 @Html.Hidden("security-salt", Model.SecuritySalt)
-@Html.Hidden("hashkey", Model.PH)
+@Html.Hidden("hashkey", Model.HashKey)
 @Html.Hidden("alert-old-securitycode-empty", SecurityCode_Resources.alertOldSecCodeEmpty)
 @Html.Hidden("alert-securitycode-empty", SecurityCode_Resources.alertSecCodeEmpty)
 @Html.Hidden("alert-securitycode-wrong-rule", SecurityCode_Resources.lblSecCodeWrongRule)
 @Html.Hidden("alert-error-securitycode-confirm", SecurityCode_Resources.alertErrorSecCodeConfirm)
 @Html.Hidden("alert-same-securitycode", SecurityCode_Resources.alertSameSecCode)
 @Html.Hidden("alert-securitycode-change-ok", SecurityCode_Resources.alertSecCodeChangedOK)
-@Html.Hidden("rootUrl", Model.RootUrl)
+@Html.Hidden("appPath", Model.AppPath)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security-code/before-home-page")

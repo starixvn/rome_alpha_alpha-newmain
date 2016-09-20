@@ -29,7 +29,7 @@ namespace Alpha.Main.AppResources {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public SecurityCode_Resources() {
+        internal SecurityCode_Resources() {
         }
         
         /// <summary>
@@ -145,6 +145,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm Security Code.
         /// </summary>
         public static string ConfirmSecurityCode {
@@ -245,6 +254,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please create your own security code.
+        /// </summary>
+        public static string PleaseCreateYourOwnSecurityCode {
+            get {
+                return ResourceManager.GetString("PleaseCreateYourOwnSecurityCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
         public static string Reset {
@@ -272,6 +290,60 @@ namespace Alpha.Main.AppResources {
         public static string SecurityCode {
             get {
                 return ResourceManager.GetString("SecurityCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Security code rules.
+        /// </summary>
+        public static string SecurityCodeRules {
+            get {
+                return ResourceManager.GetString("SecurityCodeRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Security Code (SC) must be a 6-digits string, contains at least 2 different digits and must not be forward run and backward run number..
+        /// </summary>
+        public static string SecurityCodeRules01 {
+            get {
+                return ResourceManager.GetString("SecurityCodeRules01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A &quot;Forward run&quot; is a consecutive, ascending order series of digits..
+        /// </summary>
+        public static string SecurityCodeRules02 {
+            get {
+                return ResourceManager.GetString("SecurityCodeRules02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A &quot;Backward Run&quot; is a consecutive, descending order series of digits..
+        /// </summary>
+        public static string SecurityCodeRules03 {
+            get {
+                return ResourceManager.GetString("SecurityCodeRules03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For example: 123456, 456789, 765432, ect. are not allowed.
+        /// </summary>
+        public static string SecurityCodeRules04 {
+            get {
+                return ResourceManager.GetString("SecurityCodeRules04", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi {0}, please input the security code provided by your upline and create your own one..
+        /// </summary>
+        public static string SecurityCodeShower {
+            get {
+                return ResourceManager.GetString("SecurityCodeShower", resourceCulture);
             }
         }
         

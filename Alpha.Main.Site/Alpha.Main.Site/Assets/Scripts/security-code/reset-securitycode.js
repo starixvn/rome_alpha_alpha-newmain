@@ -17,37 +17,21 @@ var resetsecuritycode = {
             e.preventDefault();
         });
         $form.bind('reset', function (e) {
-            //$('#spnNewPwdIcon').removeClass();
-            //$('#spnConfirmSecCodeIcon').removeClass();
+            $("#lblSC").empty();
+            $("#lblconfirmSC").empty();
         });
         $('#txtSecCode').focus();
-
-        //var hasPopUp = false;
-        //var popUp;
-        //if (top.isNewSite) {
-        //    popUp = top.$('.modal[id^="page-popup"]');
-        //    var popUpLength = popUp.length;
-        //    hasPopUp = !top.$(popUp[popUpLength - 1]).hasClass('hidden');
-        //} else {
-        //    popUp = parent.document.getElementsByClassName('AGEWnd');
-        //    hasPopUp = popUp && popUp.length;
-        //}
-
-        //if (hasPopUp) {
-        //    var titles = $("#header_main");
-        //    titles.addClass('display-none');
-        //    $('.tbl-security .subTitle').addClass('display-none');
-        //}
     },
     reset: function () {
-        //lockUI();
+        securitycodeHelper.lockUI();
         var $messageContainer = $('#error-message');
-        var $txtSecurityCode = $('#SC');
-        var $txtConfirmSecurityCode = $('#confirmSC');
+        $messageContainer.removeClass('display-none');
+        var $txtSecurityCode = $('#txtSecCode');
+        var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         var message = resetsecuritycode.checkInputParameters($txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
             $messageContainer.empty().html(message);
-            // unlockUI();
+            securitycodeHelper.unlockUI();
             return;
         }
 
@@ -70,7 +54,7 @@ var resetsecuritycode = {
                 //window.top.reloadPopUpSetting(3000);
             },
             complete: function (jqXHR, textStatus) {
-                //unlockUI();
+                securitycodeHelper.unlockUI();
             }
         })
     },

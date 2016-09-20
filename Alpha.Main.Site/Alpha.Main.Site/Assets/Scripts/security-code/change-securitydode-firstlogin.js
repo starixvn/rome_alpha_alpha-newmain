@@ -9,23 +9,22 @@ var changeSecurityCodeFirstLogin = {
         errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
     },
     initialize: function () {
-  
         $('.form-SC').submit(function (e) {
             changeSecurityCodeFirstLogin.changeSecurityCode();
             e.preventDefault();
         });
-        $("#btn-cancel").bind("click", function () {
+        $("#btn-back").bind("click", function () {
             redirectToHomePage(2000);
         });
 
-        $('#SC').focus();
+        $('#txtSecCode').focus();
     },
     changeSecurityCode: function () {
-        //lockUI();
-        var $txtSecurityCode = $('#SC');
-        var $txtConfirmSecurityCode = $('#confirmSC');
+        securitycodeHelper.lockUI();
+        var $txtSecurityCode = $('#txtSecCode');
+        var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         if (!changeSecurityCodeFirstLogin.validateInputSecurityCode($txtSecurityCode, $txtConfirmSecurityCode)) {
-           // unlockUI();
+            securitycodeHelper.unlockUI();
             return;
         }
 
@@ -44,13 +43,13 @@ var changeSecurityCodeFirstLogin = {
                     securitycodeHelper.redirectToHomePage(2000);
                 }
                 else {
-                    $("#providedSC").addClass('error');
-                    $("#lblprovidedSC-error").empty().html(data.ErrorMessage);
+                    $("#txtSecCode").addClass('error');
+                    $("#txtSecCode-error").empty().html(data.ErrorMessage);
                     $txtSecurityCode.focus();
                 }
             },
             complete: function (jqXHR, textStatus) {
-                //unlockUI();
+                securitycodeHelper.unlockUI();
             }
         })
     },
@@ -59,20 +58,20 @@ var changeSecurityCodeFirstLogin = {
         var secCode = $txtSecurityCode.val();
         var confirmSecCode = $txtConfirmSecurityCode.val();
         if (secCode.length === 0) {
-            $("#SC").addClass('error');
-            $("#lblSC-error").empty().html(changeSecurityCodeFirstLogin.resources.securityCodeEmpty).append(changeSecurityCodeFirstLogin.resources.rules);
+            $("#txtSecCode").addClass('error');
+            $("#txtSecCode-error").empty().html(changeSecurityCodeFirstLogin.resources.securityCodeEmpty).append(changeSecurityCodeFirstLogin.resources.rules);
             $txtSecurityCode.focus();
             return false;
         }
         else if (!securitycodeHelper.isValidSecurityCode(secCode)) {
-            $("#SC").addClass('error');
-            $("#lblSC-error").empty().html(changeSecurityCodeFirstLogin.resources.securityCodeWrongRule).append(changeSecurityCodeFirstLogin.resources.rules);
+            $("#txtSecCode").addClass('error');
+            $("#txtSecCode-error").empty().html(changeSecurityCodeFirstLogin.resources.securityCodeWrongRule).append(changeSecurityCodeFirstLogin.resources.rules);
             $txtSecurityCode.focus();
             return false;
         }
         else if (secCode != confirmSecCode) {
-            $("#confirmSC").addClass('error');
-            $("#lblconfirmSC-error").empty().html(changeSecurityCodeFirstLogin.resources.errorSecurityCodeConfirm);
+            $("#txtConfirmSecCode").addClass('error');
+            $("#txtConfirmSecCode-error").empty().html(changeSecurityCodeFirstLogin.resources.errorSecurityCodeConfirm);
             $txtConfirmSecurityCode.focus();
             return false;
         }
@@ -80,9 +79,9 @@ var changeSecurityCodeFirstLogin = {
         return true;
     },
     resetOriginalInputStatus: function () {
-        $("#SC").removeClass('error');
-        $("#lblSC-error").empty();
-        $("#confirmSC").removeClass('error');
-        $("#lblconfirmSC-error").empty();
+        $("#txtSecCode").removeClass('error');
+        $("#txtSecCode-error").empty();
+        $("#txtConfirmSecCode").removeClass('error');
+        $("#txtConfirmSecCode-error").empty();
     }
 }

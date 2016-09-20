@@ -17,19 +17,19 @@ var changeSecurityCodeByForcing = {
             e.preventDefault();
         });
 
-        $("#btn-cancel").bind("click", function () {
+        $("#btn-back").bind("click", function () {
             redirectToHomePage(2000);
         });
 
-        $('#providedSC').focus();
+        $('#txtOldSecCode').focus();
     },
     changeSecurityCode: function () {
-        //lockUI();
-        var $txtOldSecurityCode = $('#providedSC');
-        var $txtSecurityCode = $('#SC');
-        var $txtConfirmSecurityCode = $('#confirmSC');
+        securitycodeHelper.lockUI();
+        var $txtOldSecurityCode = $('#txtOldSecCode');
+        var $txtSecurityCode = $('#txtSecCode');
+        var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         if (!changeSecurityCodeByForcing.validateInputSecurityCode($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode)) {
-            // unlockUI();
+            securitycodeHelper.unlockUI();
             return;
         }
 
@@ -60,7 +60,7 @@ var changeSecurityCodeByForcing = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                //unlockUI();
+                securitycodeHelper.unlockUI();
             }
         })
     },
@@ -70,32 +70,32 @@ var changeSecurityCodeByForcing = {
         var secCode = $txtSecurityCode.val();
         var confirmSecCode = $txtConfirmSecurityCode.val();
         if (oldSecCode.length === 0) {
-            $("#providedSC").addClass('error');
-            $("#lblprovidedSC-error").empty().html(changeSecurityCodeByForcing.resources.oldSecurityCodeEmpty);
+            $("#txtOldSecCode").addClass('error');
+            $("#txtOldSecCode-error").empty().html(changeSecurityCodeByForcing.resources.oldSecurityCodeEmpty);
             $txtOldSecurityCode.focus();
             return false;
         }
         else if (secCode.length === 0) {
-            $("#SC").addClass('error');
-            $("#lblSC-error").empty().html(changeSecurityCodeByForcing.resources.securityCodeEmpty).append(changeSecurityCodeByForcing.resources.rules);
+            $("#txtSecCode").addClass('error');
+            $("#txtSecCode-error").empty().html(changeSecurityCodeByForcing.resources.securityCodeEmpty).append(changeSecurityCodeByForcing.resources.rules);
             $txtSecurityCode.focus();
             return false;
         }
         else if (!securitycodeHelper.isValidSecurityCode(secCode)) {
-            $("#SC").addClass('error');
-            $("#lblSC-error").empty().html(changeSecurityCodeByForcing.resources.securityCodeWrongRule).append(changeSecurityCodeByForcing.resources.rules);
+            $("#txtSecCode").addClass('error');
+            $("#txtSecCode-error").empty().html(changeSecurityCodeByForcing.resources.securityCodeWrongRule).append(changeSecurityCodeByForcing.resources.rules);
             $txtSecurityCode.focus();
             return false;
         }
         else if (secCode != confirmSecCode) {
-            $("#confirmSC").addClass('error');
-            $("#lblconfirmSC-error").empty().html(changeSecurityCodeByForcing.resources.errorSecurityCodeConfirm);
+            $("#txtConfirmSecCode").addClass('error');
+            $("#txtConfirmSecCode-error").empty().html(changeSecurityCodeByForcing.resources.errorSecurityCodeConfirm);
             $txtConfirmSecurityCode.focus();
             return false;
         }
         else if (oldSecCode === secCode) {
-            $("#confirmSC").addClass('error');
-            $("#lblconfirmSC-error").empty().html(changeSecurityCodeByForcing.resources.sameSecurityCode);
+            $("#txtConfirmSecCode").addClass('error');
+            $("#txtConfirmSecCode-error").empty().html(changeSecurityCodeByForcing.resources.sameSecurityCode);
             $txtSecurityCode.focus();
             return false;
         }
@@ -103,11 +103,11 @@ var changeSecurityCodeByForcing = {
         return true;
     },
     resetOriginalInputStatus: function () {
-        $("#providedSC").removeClass('error');
-        $("#lblprovidedSC-error").empty();
-        $("#SC").removeClass('error');
-        $("#lblSC-error").empty();
-        $("#confirmSC").removeClass('error');
-        $("#lblconfirmSC-error").empty();
+        $("#txtOldSecCode").removeClass('error');
+        $("#txtOldSecCode-error").empty();
+        $("#txtSecCode").removeClass('error');
+        $("#txtSecCode-error").empty();
+        $("#txtConfirmSecCode").removeClass('error');
+        $("#txtConfirmSecCode-error").empty();
     }
 }

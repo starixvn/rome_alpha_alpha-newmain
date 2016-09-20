@@ -309,7 +309,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\SecurityCode.Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SecurityCode.Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

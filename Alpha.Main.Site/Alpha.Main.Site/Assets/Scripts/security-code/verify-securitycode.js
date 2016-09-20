@@ -21,16 +21,16 @@ var verifySecurityCode = {
             e.preventDefault();
         });
 
-        $('#SC').focus();
+        $('#txtSecCode').focus();
     },
     verify: function () {
-        //lockUI();
+        securitycodeHelper.lockUI();
         var $messageContainer = $('#error-message');
-        var $txtSecurityCode = $('#SC');
+        var $txtSecurityCode = $('#txtSecCode');
         var message = verifySecurityCode.checkInputParameters($txtSecurityCode);
         if (message.length !== 0) {
             $messageContainer.empty().html(message);
-            //unlockUI();
+            securitycodeHelper.unlockUI();
             return;
         }
 
@@ -69,7 +69,7 @@ var verifySecurityCode = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                //unlockUI();
+                securitycodeHelper.unlockUI();
             }
         })
     },
