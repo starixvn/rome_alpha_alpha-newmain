@@ -33,7 +33,6 @@
                 return View("UnsupportedBrowsers", browser);
             }
             
-            return RedirectToAction("ChangeSecurityCodeFirstLogin", "SecurityCode");
             if (SecurityCodeChecker.IsForcedChangeSecurityCode())
             {
                 ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;

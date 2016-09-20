@@ -11,22 +11,22 @@
 <div class="block">
     <form class="form-SC">
         <div class="box-lang">
-            <div class="dropdown">
-                <span class="btn dropdown-toggle" type="button" id="langList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="flag flag-@Model.Language.CurrentLanguage"></span>
-                    @Model.Language.CurrentLanguage
-                    <span class="caret"></span>
-                </span>
-                <ul class="dropdown-menu" aria-labelledby="@Model.Language.CurrentLanguage">
-                    @foreach (var languageItem in Model.Language.Data)
-                    {
-                        <li class="@languageItem.Key"><a class="changelanguage-link" data-value="@languageItem.Key"><span class="flag flag-@languageItem.Key"></span>@languageItem.Value</a></li>
-
-                    }
-                </ul>
+                <div class="dropdown">
+                    <span class="btn dropdown-toggle" type="button" id="langList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <span class="flag flag-@Model.Language.CurrentLanguage"></span>
+                        @Model.Language.Data[Model.Language.CurrentLanguage]
+                        <span class="caret"></span>
+                    </span>
+                    <ul class="dropdown-menu" aria-labelledby="langList">
+                        @foreach (var languageItem in Model.Language.Data)
+                        {
+                            <li class="@languageItem.Key"><a class="changelanguage-link" data-value="@languageItem.Key"><span class="flag flag-@languageItem.Key"></span>@languageItem.Value</a></li>
+                        }
+                    </ul>
+                
             </div>
-        </div>
 
+        </div>
         <h1 class="title">@SecurityCode_Resources.SecurityCode</h1>
         <p> @SecurityCode_Resources.PleaseCreateYourOwnSecurityCode</p>
         <figure class="avatar">

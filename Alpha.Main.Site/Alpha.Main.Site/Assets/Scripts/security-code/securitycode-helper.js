@@ -56,11 +56,6 @@
         window.location = securitycodeHelper.getBaseUrl() + $("#mainRootPath").val() + '/Default/Index';
     },
     initLanguage: function () {
-        var languageCode = $("#language-code").val();
-        var currentLanguage = $("#language").data("currentlanguage");
-        var language = $(".list-language ." + currentLanguage + " > a").html();
-        $(".language-selector-container").html(language);
-
         $(".changelanguage-link").click(function () {
             securitycodeHelper.changeLanguage($(this).data("value"));
         });
