@@ -44,7 +44,7 @@
         {
             var cacheKey = CacheKeyMenuByUserLevel + userLevel.DisplayName;
 
-            List<IMenuItem> menuItems = cacheManager.Get<List<IMenuItem>>(cacheKey);
+            List<IMenuItem> menuItems = null;//cacheManager.Get<List<IMenuItem>>(cacheKey);
 
             if (menuItems == null)
             {

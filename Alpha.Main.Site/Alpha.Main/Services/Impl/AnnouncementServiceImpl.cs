@@ -53,10 +53,13 @@
             if (Enumeration.FromValue<UserLevel>(getParams.RoleId).IsAgentLevel() &&
                 getParams.AdminId == 0)
             {
-                messageTypes = dynamicRepository.Fetch<string>(new GetMessageTypeListCriteria
-                {
-                    CustId = getParams.CustId
-                });
+                messageTypes = dynamicRepository
+                    .Fetch<byte>(new GetMessageTypeListCriteria
+                    {
+                        CustId = getParams.CustId
+                    })
+                    .Select(messageType => messageTypes.ToString())
+                    .ToList();
             }
 
             if (messageTypes != null)
