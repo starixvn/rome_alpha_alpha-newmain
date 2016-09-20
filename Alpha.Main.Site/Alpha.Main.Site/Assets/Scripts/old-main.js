@@ -901,3 +901,52 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFr
         doActionAfterTimeOut();
     }
 }
+
+var popupManager = {
+    positionPadding: 5,
+    get leftPosition() {
+        // top-left main frame
+        var accountInfoWidth = top.$('.sidebar').width();
+
+        return accountInfoWidth + top.popupManager.positionPadding;
+    },
+
+    get topPosition() {
+        // top-left main frame
+        return 90 + top.popupManager.positionPadding
+    },
+
+    // Choose most suitable screen resolution 1920 X 1080
+    defaultHeight: 1000,
+
+    defaultWidth: 480,
+    openByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
+        window.top.popupManager.open(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top);
+    },
+    openMultipleByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
+        window.top.popupManager.openMultiple(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top);
+    },
+    open: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
+        var handler = window.top.ageWnd;
+        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top);
+    },
+    openMultiple: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
+        var handler = window.top.ageWnd.createInstance();
+        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top);
+    },
+    openWithHanlder: function (handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
+        left = left || document.body.scrollLeft + window.top.popupManager.leftPosition;
+        top = top || document.body.scrollTop + window.top.popupManager.topPosition;
+
+        width = width || window.top.popupManager.defaultWidth;
+        height = height || window.top.popupManager.defaultHeight;
+        title = title || '';
+
+        handler.open(url, title, left, top, width, height, windowCss, titleCss, closeBtnCss);
+    },
+    close: function () {
+        top.ageWnd.close();
+    }
+};
+
+
