@@ -18,7 +18,7 @@ var changeSecurityCodeByForcing = {
             e.preventDefault();
         });
 
-        $("#btn-cancel").bind("click", function () {
+        $("#btn-back").bind("click", function () {
             securitycodeHelper.signOut();
         });
 
