@@ -25,12 +25,12 @@ var changeSecurityCodeByForcing = {
         $('#txtOldSecCode').focus();
     },
     changeSecurityCode: function () {
-        securitycodeHelper.lockUI();
+        $.blockUI();
         var $txtOldSecurityCode = $('#txtOldSecCode');
         var $txtSecurityCode = $('#txtSecCode');
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         if (!changeSecurityCodeByForcing.validateInputSecurityCode($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode)) {
-            securitycodeHelper.unlockUI();
+            $.blockUI()
             return;
         }
 
@@ -61,7 +61,7 @@ var changeSecurityCodeByForcing = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                securitycodeHelper.unlockUI();
+                $.blockUI()
             }
         })
     },

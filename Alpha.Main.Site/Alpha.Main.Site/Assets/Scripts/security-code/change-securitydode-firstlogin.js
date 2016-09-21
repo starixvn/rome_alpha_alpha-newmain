@@ -21,11 +21,11 @@ var changeSecurityCodeFirstLogin = {
         $('#txtSecCode').focus();
     },
     changeSecurityCode: function () {
-        securitycodeHelper.lockUI();
+        $.blockUI();
         var $txtSecurityCode = $('#txtSecCode');
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         if (!changeSecurityCodeFirstLogin.validateInputSecurityCode($txtSecurityCode, $txtConfirmSecurityCode)) {
-            securitycodeHelper.unlockUI();
+            $.blockUI()
             return;
         }
 
@@ -50,7 +50,7 @@ var changeSecurityCodeFirstLogin = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                securitycodeHelper.unlockUI();
+                $.blockUI()
             }
         })
     },

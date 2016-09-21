@@ -20,7 +20,7 @@ var resetsecuritycode = {
         $('#txtSecCode').focus();
     },
     reset: function () {
-        securitycodeHelper.lockUI();
+        $.blockUI();
         var $messageContainer = $('#error-message');
         $messageContainer.removeClass('display-none');
         var $txtSecurityCode = $('#txtSecCode');
@@ -28,7 +28,7 @@ var resetsecuritycode = {
         var message = resetsecuritycode.checkInputParameters($txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
             resetsecuritycode.showFailMessage($messageContainer, message);
-            securitycodeHelper.unlockUI();
+            $.blockUI()
             return;
         }
 
@@ -53,7 +53,7 @@ var resetsecuritycode = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                securitycodeHelper.unlockUI();
+                $.blockUI()
             }
         })
     },

@@ -25,7 +25,7 @@ var changeUserOwnSecurityCode = {
         });
     },
     change: function () {
-        securitycodeHelper.lockUI();
+        $.blockUI();
         var $messageContainer = $('#error-message');
         $messageContainer.removeClass('display-none');
         var $txtOldSecurityCode = $('#txtOldSecCode');
@@ -34,7 +34,7 @@ var changeUserOwnSecurityCode = {
         var message = changeUserOwnSecurityCode.checkInputParameters($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
             changeUserOwnSecurityCode.showFailMessage($messageContainer, message);
-            securitycodeHelper.unlockUI();
+            $.unblockUI();
             return;
         }
 
@@ -65,7 +65,7 @@ var changeUserOwnSecurityCode = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                securitycodeHelper.unlockUI();
+                $.unblockUI();
             }
         })
     },

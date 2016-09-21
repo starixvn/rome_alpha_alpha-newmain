@@ -3,11 +3,10 @@
   "siteMainApp": "site-main",
   "currentSiteApp": "site-main",
   "urls": [
-    "relative-url"
-  ],
-  "sites": [
     "SecurityCode/ResetSecurityCode",
     "SecurityCode/ChangeUserOwnSecurityCode"
+  ],
+  "sites": [
   ],
   "verifyingSecurityCodeUrl": "SecurityCode/VerifySecurityCode",
   "changeSecurityCodeUrl": "SecurityCode/ChangeSecurityCode"

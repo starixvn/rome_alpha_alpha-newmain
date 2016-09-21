@@ -24,13 +24,13 @@ var verifySecurityCode = {
         $('#txtSecCode').focus();
     },
     verify: function () {
-        securitycodeHelper.lockUI();
+        $.blockUI();
         var $messageContainer = $('#error-message');
         var $txtSecurityCode = $('#txtSecCode');
         var message = verifySecurityCode.checkInputParameters($txtSecurityCode);
         if (message.length !== 0) {
             $messageContainer.empty().html(message);
-            securitycodeHelper.unlockUI();
+            $.blockUI()
             return;
         }
 
@@ -69,7 +69,7 @@ var verifySecurityCode = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                securitycodeHelper.unlockUI();
+                $.blockUI()
             }
         })
     },
