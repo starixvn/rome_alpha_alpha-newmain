@@ -24,6 +24,7 @@ var changeUserOwnSecurityCode = {
     change: function () {
         securitycodeHelper.lockUI();
         var $messageContainer = $('#error-message');
+        $messageContainer.removeClass('display-none');
         var $txtOldSecurityCode = $('#txtOldSecCode');
         var $txtSecurityCode = $('#txtSecCode');
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
