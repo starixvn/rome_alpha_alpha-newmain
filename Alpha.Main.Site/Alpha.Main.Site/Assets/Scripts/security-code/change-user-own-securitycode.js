@@ -52,7 +52,9 @@ var changeUserOwnSecurityCode = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode === 0) { // OK
-                    setTimeout(changeUserOwnSecurityCode.gotoSecurityCodePage(), 5000);
+                    $messageContainer.removeClass('msg-error');
+                    $messageContainer.addClass('msg-success').empty().html(changeUserOwnSecurityCode.resources.securityCodeChangeSucessfully);
+                    setTimeout(changeUserOwnSecurityCode.refreshPage(), 5000);
                 }
                 else if (data.ErrorCode === 2) { // account is closed
                     alert(data.ErrorMessage);
@@ -103,7 +105,7 @@ var changeUserOwnSecurityCode = {
     gotoPasswordPage: function () {
         window.location = $("#oldMainRootPath").val() + '_MemberInfo/ChangePassword/ChangePassword.aspx';
     },
-    gotoSecurityCodePage: function () {
+    refreshPage: function () {
         window.location = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';
     }
 }

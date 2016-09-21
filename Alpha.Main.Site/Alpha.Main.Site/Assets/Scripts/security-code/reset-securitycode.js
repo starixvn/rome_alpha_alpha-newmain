@@ -17,8 +17,7 @@ var resetsecuritycode = {
             e.preventDefault();
         });
         $form.bind('reset', function (e) {
-            $("#lblSC").empty();
-            $("#lblconfirmSC").empty();
+            resetsecuritycode.resetInputValue();
         });
         $('#txtSecCode').focus();
     },
@@ -47,11 +46,13 @@ var resetsecuritycode = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode !== 0) {
-                    $messageContainer.empty().html(data.ErrorMessage);
+                    resetsecuritycode.showFailMessage(data.ErrorMessage);
                     $txtSecurityCode.focus();
                 }
-                
-                //window.top.reloadPopUpSetting(3000);
+                else
+                {
+                    resetsecuritycode.showSuccessfullyMessage();
+                }
             },
             complete: function (jqXHR, textStatus) {
                 securitycodeHelper.unlockUI();
@@ -76,5 +77,20 @@ var resetsecuritycode = {
         }
 
         return '';
+    },
+    resetInputValue: function()
+    {
+        $("#txtSecCode").empty();
+        $("#txtConfirmSecCode").empty();
+    },
+    showSuccessfullyMessage: function(message)
+    {
+        $messageContainer.removeClass('msg-success');
+        $messageContainer.addClass('msg-error').empty().html(message);
+    },
+    showFailMessage: function()
+    {
+        $messageContainer.removeClass('msg-error');
+        $messageContainer.addClass('msg-success').empty().html(changeUserOwnSecurityCode.resources.securityCodeChangeSucessfully);
     }
 }
