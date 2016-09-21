@@ -28,7 +28,7 @@ var resetsecuritycode = {
         var message = resetsecuritycode.checkInputParameters($txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
             resetsecuritycode.showFailMessage($messageContainer, message);
-            $.blockUI()
+            $.unblockUI();
             return;
         }
 
@@ -51,9 +51,10 @@ var resetsecuritycode = {
                 {
                     resetsecuritycode.showSuccessfullyMessage($messageContainer);
                 }
+
             },
             complete: function (jqXHR, textStatus) {
-                $.blockUI()
+                $.unblockUI();
             }
         })
     },

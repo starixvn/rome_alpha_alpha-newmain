@@ -30,7 +30,7 @@ var changeSecurityCodeByForcing = {
         var $txtSecurityCode = $('#txtSecCode');
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         if (!changeSecurityCodeByForcing.validateInputSecurityCode($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode)) {
-            $.blockUI()
+            $.unblockUI();
             return;
         }
 
@@ -61,7 +61,7 @@ var changeSecurityCodeByForcing = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                $.blockUI()
+                $.unblockUI();
             }
         })
     },

@@ -30,7 +30,7 @@ var verifySecurityCode = {
         var message = verifySecurityCode.checkInputParameters($txtSecurityCode);
         if (message.length !== 0) {
             $messageContainer.empty().html(message);
-            $.blockUI()
+            $.unblockUI();
             return;
         }
 
@@ -69,7 +69,7 @@ var verifySecurityCode = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                $.blockUI()
+                $.unblockUI();
             }
         })
     },

@@ -25,7 +25,7 @@ var changeSecurityCodeFirstLogin = {
         var $txtSecurityCode = $('#txtSecCode');
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         if (!changeSecurityCodeFirstLogin.validateInputSecurityCode($txtSecurityCode, $txtConfirmSecurityCode)) {
-            $.blockUI()
+            $.unblockUI();
             return;
         }
 
