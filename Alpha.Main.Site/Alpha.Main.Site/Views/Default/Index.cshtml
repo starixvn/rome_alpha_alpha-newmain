@@ -63,10 +63,7 @@
     @Html.Hidden("userLevel", Model.UserLevel)
     @Html.Hidden("isSubAccount", Model.IsSubAccount)
 
-    @if (Model.IsPiwikEnable)
-    {
-        @Html.Partial("Piwik", Model)
-    }
+    @Html.Partial("Piwik", Model)
 
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
