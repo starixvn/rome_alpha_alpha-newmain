@@ -61,7 +61,7 @@ var verifySecurityCode = {
                 }
                 else if (errorCode === 2) { // account is closed 
                     alert(data.ErrorMessage);
-                    top.age.SignOut();
+                    securitycodeHelper.signOut();
                 }
                 else {
                     $messageContainer.empty().html(data.ErrorMessage);

@@ -29,12 +29,12 @@
         {
             get
             {
-                if (string.IsNullOrEmpty(System.Web.HttpContext.Current.Session["hashkey"] as string))
+                if (string.IsNullOrEmpty(System.Web.HttpContext.Current.Session["ph"] as string))
                 {
-                    System.Web.HttpContext.Current.Session["hashkey"] = Encryption.RandomString(new Random().Next(4, 8));
+                    System.Web.HttpContext.Current.Session["ph"] = Encryption.RandomString(new Random().Next(4, 8));
                 }
 
-                return System.Web.HttpContext.Current.Session["hashkey"] + string.Empty;
+                return System.Web.HttpContext.Current.Session["ph"] + string.Empty;
             }
         }
 

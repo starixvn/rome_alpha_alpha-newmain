@@ -21,7 +21,7 @@ var changeUserOwnSecurityCode = {
         });
         $('#txtOldSecCode').focus();
         $('#passwordNav').click(function () {
-            changeUserOwnSecurityCode.gotoPasswordPage() 
+            changeUserOwnSecurityCode.gotoPasswordPage()
         });
     },
     change: function () {
@@ -33,7 +33,7 @@ var changeUserOwnSecurityCode = {
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         var message = changeUserOwnSecurityCode.checkInputParameters($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
-            $messageContainer.empty().html(message);
+            changeUserOwnSecurityCode.showFailMessage($messageContainer, message);
             securitycodeHelper.unlockUI();
             return;
         }
@@ -52,16 +52,15 @@ var changeUserOwnSecurityCode = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode === 0) { // OK
-                    $messageContainer.removeClass('msg-error');
-                    $messageContainer.addClass('msg-success').empty().html(changeUserOwnSecurityCode.resources.securityCodeChangeSucessfully);
-                    setTimeout(changeUserOwnSecurityCode.refreshPage(), 5000);
+                    changeUserOwnSecurityCode.showSuccessfullyMessage($messageContainer);
+                    setTimeout(changeUserOwnSecurityCode.refreshPage, 5000);
                 }
                 else if (data.ErrorCode === 2) { // account is closed
                     alert(data.ErrorMessage);
-                    top.age.SignOut();
+                    securitycodeHelper.signOut();
                 }
                 else {
-                    $messageContainer.empty().html(data.ErrorMessage);
+                    changeUserOwnSecurityCode.showFailMessage($messageContainer, data.ErrorMessage);
                     $txtOldSecurityCode.focus();
                 }
             },
@@ -101,6 +100,14 @@ var changeUserOwnSecurityCode = {
         $("#txtOldSecCode").empty();
         $("#txtSecCode").empty();
         $("#txtConfirmSecCode").empty();
+    },
+    showSuccessfullyMessage: function ($messageContainer) {
+        $messageContainer.removeClass('msg-error');
+        $messageContainer.addClass('msg-success').empty().html(changeUserOwnSecurityCode.resources.securityCodeChangeSucessfully);
+    },
+    showFailMessage: function ($messageContainer, message) {
+        $messageContainer.removeClass('msg-success');
+        $messageContainer.addClass('msg-error').empty().html(message);
     },
     gotoPasswordPage: function () {
         window.location = $("#oldMainRootPath").val() + '_MemberInfo/ChangePassword/ChangePassword.aspx';
