@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
+    using System.Web;
     using Main.Helpers;
 
     public class HeaderNavViewModel
@@ -21,6 +22,14 @@
             get
             {
                 return MicroSites.HowToUseUrl("~/");
+            }
+        }
+
+        public string MainRootPath
+        {
+            get
+            {
+                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
             }
         }
     }

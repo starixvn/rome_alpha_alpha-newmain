@@ -1,5 +1,5 @@
 {
-  "isActive": false,
+  "isActive": true,
   "siteMainApp": "site-main",
   "currentSiteApp": "site-main",
   "urls": [

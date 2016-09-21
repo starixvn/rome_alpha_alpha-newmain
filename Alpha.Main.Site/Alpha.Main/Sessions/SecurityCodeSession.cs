@@ -123,10 +123,10 @@
         {
             get
             {
-                //if (!SecurityCodeChecker.IsEnableSecurityCode())
-                //{
-                //    return (int)SecurityCodeStatus.NONE;
-                //}
+                if (!SecurityCodeChecker.IsEnableSecurityCode())
+                {
+                    return (int)SecurityCodeStatus.NONE;
+                }
 
                 object value = this.GetProperty(SECURITYCODERESULT);
                 if (value != null)
