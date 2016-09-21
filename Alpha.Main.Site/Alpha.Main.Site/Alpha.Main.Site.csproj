@@ -600,7 +600,7 @@
     <TypeScriptCompile Include="Assets\scripts\home\header-msg.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-nav.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\menu-bar.ts" />
-    <TypeScriptCompile Include="Assets\scripts\home\indexManager.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\index-manager.ts" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_bg.png" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_left.png" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_right.png" />
@@ -694,6 +694,7 @@
     <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
     <Content Include="Views\Default\Introduction.cshtml" />
+    <Content Include="Views\Default\Piwik.cshtml" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>
