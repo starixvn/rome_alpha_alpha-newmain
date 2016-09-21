@@ -23,19 +23,21 @@
          IRequestHandler<ResetSecurityCodeCommand, Result>,
          IRequestHandler<VerifySecurityCodeCommand, Result>
     {
+        private const string CacheKeyHashKey = "ph";
         private readonly CustomerProfileService customerProfileService;
+        private readonly CachingManager cacheManager;
 
         private string HashKey
         {
             get
             {
-                if (string.IsNullOrEmpty(System.Web.HttpContext.Current.Session["ph"] as string))
+                if (string.IsNullOrEmpty(this.cacheManager.Get<string>(CacheKeyHashKey)))
                 {
-                    System.Web.HttpContext.Current.Session["ph"] = Encryption.RandomString(new Random().Next(4, 8));
+                    this.cacheManager.Add(CacheKeyHashKey, Encryption.RandomString(new Random().Next(4, 8))) ;
                 }
 
-                return System.Web.HttpContext.Current.Session["ph"] + string.Empty;
-            }
+                return this.cacheManager.Get<string>(CacheKeyHashKey) + string.Empty;
+            } 
         }
 
         private string GenerateSecurityToken(int size = 6)
@@ -56,8 +58,10 @@
         public SecurityCodeHandler(
            SecurityCodeService securityCodeService,
            CustomerProfileService customerProfileService,
+           CachingManager cacheManager,
            ISecurityCodeSession securityCodeSession = null) : base(securityCodeService, securityCodeSession)
         {
+            this.cacheManager = cacheManager;
             this.customerProfileService = customerProfileService;
         }
 
