@@ -62,10 +62,6 @@
             }
         });
     },
-    lockUI: function () {
-    },
-    unlockUI: function () {
-    }
 }
 
 String.prototype.ec = function (key) {

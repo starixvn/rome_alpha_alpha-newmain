@@ -50,7 +50,7 @@ var changeSecurityCodeFirstLogin = {
                 }
             },
             complete: function (jqXHR, textStatus) {
-                $.blockUI()
+                $.unblockUI();
             }
         })
     },
