@@ -20,6 +20,9 @@ var changeUserOwnSecurityCode = {
             changeUserOwnSecurityCode.resetOriginalInputStatus();
         });
         $('#txtOldSecCode').focus();
+        $('#passwordNav').click(function () {
+            changeUserOwnSecurityCode.gotoPasswordPage() 
+        });
     },
     change: function () {
         securitycodeHelper.lockUI();
@@ -97,20 +100,10 @@ var changeUserOwnSecurityCode = {
         $("#txtSecCode").empty();
         $("#txtConfirmSecCode").empty();
     },
-    gotoPwdPage: function () {
-        if (top.menu && top.menu.ClearCurrentLeftMenu) {
-            top.menu.ClearCurrentLeftMenu();
-        }
-
-        var pwdLink = '_MemberInfo/ChangePassword/ChangePassword.aspx';
-        window.location = securitycodeHelper.getBaseUrl() + pwdLink;
+    gotoPasswordPage: function () {
+        window.location = $("#oldMainRootPath").val() + '_MemberInfo/ChangePassword/ChangePassword.aspx';
     },
     gotoSecurityCodePage: function () {
-        //if (top.menu && top.menu.ClearCurrentLeftMenu) {
-        //    top.menu.ClearCurrentLeftMenu();
-        //}
-
-        var scLink = 'SecurityCode/ChangeUserOwnSecurityCode';
-        window.location = securitycodeHelper.getBaseUrl() + 'SecurityCode/ChangeUserOwnSecurityCode';
+        window.location = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';
     }
 }

@@ -38,22 +38,11 @@
     redirectToHomePage: function (timeout) {
         setTimeout(securitycodeHelper.gotoHomePage, timeout);
     },
-    getBaseUrl: function () {
-        var url = top.baseUrl;
-        if (!url) {
-            var urlArray = window.location.href.split('/');
-            var protocol = urlArray[0];
-            var host = urlArray[2];
-            url = protocol + '//' + host + '/';
-        }
-
-        return url;
-    },
     signOut: function () {
-        window.location = securitycodeHelper.getBaseUrl() + $("#oldMainRootPath").val() + '_Authorization/Handlers/SignOut.ashx';
+        window.location =  $("#oldMainRootPath").val() + '_Authorization/Handlers/SignOut.ashx';
     },
     gotoHomePage: function () {
-        window.location = securitycodeHelper.getBaseUrl() + $("#mainRootPath").val() + 'Default/Index';
+        window.location =  $("#mainRootPath").val() + 'Default/Index';
     },
     initLanguage: function () {
         $(".changelanguage-link").click(function () {
@@ -63,7 +52,7 @@
     changeLanguage: function (lang) {
         $.ajax({
             type: "POST",
-            url: securitycodeHelper.getBaseUrl() + $("#mainRootPath").val() + 'Language/Change',
+            url: $("#mainRootPath").val() + 'Language/Change',
             data: { languageCode: lang },
             responseType: "json",
             success: function (result) {
