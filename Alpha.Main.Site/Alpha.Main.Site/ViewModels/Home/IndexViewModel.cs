@@ -23,6 +23,11 @@
         private readonly Func<bool> isShowIntroduction;
         private readonly bool isSubAccount;
 
+        private readonly bool isPiwikEnable;
+        private readonly string piwikUrl;
+        private readonly string piwikScript;
+        private readonly string piwikSiteId;
+
         public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl, Func<bool> isShowIntroduction)
         {
             if (message == null)
@@ -42,6 +47,11 @@
             this.isInternalWebVPN = message.IsInternalWebVPN;
             this.isShowIntroduction = isShowIntroduction;
             this.isSubAccount = message.IsSubAccount;
+
+            this.isPiwikEnable = message.IsPiwikEnable;
+            this.piwikUrl = message.PiwikUrl;
+            this.piwikScript = message.PiwikScript;
+            this.piwikSiteId = message.PiwikSiteId;
         }
 
         public bool EnableSecurityCode
@@ -171,6 +181,38 @@
             get
             {
                 return isShowIntroduction();
+            }
+        }
+
+        public bool IsPiwikEnable
+        {
+            get
+            {
+                return isPiwikEnable;
+            }
+        }
+
+        public string PiwikUrl
+        {
+            get
+            {
+                return piwikUrl;
+            }
+        }
+
+        public string PiwikScript
+        {
+            get
+            {
+                return piwikScript;
+            }
+        }
+
+        public string PiwikSiteId
+        {
+            get
+            {
+                return piwikSiteId;
             }
         }
     }

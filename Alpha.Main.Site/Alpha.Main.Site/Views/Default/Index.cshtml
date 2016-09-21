@@ -49,7 +49,7 @@
         </header>
         <main class="content" id="content" data-default-url="@Model.DefaultUrl">
         </main>
-    </div>    
+    </div>
 
     @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
     @Html.Hidden("onUserId", Model.OnUserId)
@@ -63,9 +63,23 @@
     @Html.Hidden("userLevel", Model.UserLevel)
     @Html.Hidden("isSubAccount", Model.IsSubAccount)
 
+    @Html.Hidden("piwik-isenable", Model.IsPiwikEnable)
+    @Html.Hidden("piwik-url", Model.PiwikUrl)
+    @Html.Hidden("piwik-siteid", Model.PiwikSiteId)
+
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
 
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-introduction"))" type="text/javascript"></script>
+
+    @if (Model.IsPiwikEnable)
+    {
+        <script type="text/javascript" async="true" defer="true" src="@Model.PiwikScript"></script>
+        <noscript>
+            <p>
+                <img src="@Model.PiwikUrl?idsite=@Model.PiwikSiteId" alt="" class="piwik-noscript" />
+            </p>
+        </noscript>
+    }
 </body>
 </html>

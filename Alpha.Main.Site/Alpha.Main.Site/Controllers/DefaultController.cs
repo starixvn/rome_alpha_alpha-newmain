@@ -8,6 +8,7 @@
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
+    using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 
@@ -40,7 +41,16 @@
                 return View("UnsupportedBrowsers", browser);
             }
 
-            var viewModel = mediator.Send(new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify));
+            var query = new IndexQuery(
+                userSession,
+                securityCodeSession,
+                UserPermission.IsShowSecurityVerify,
+                AppSettings.PiwikEnable,
+                AppSettings.PiwikUrl,
+                AppSettings.PiwikScript,
+                AppSettings.PiwikSiteId);
+
+            var viewModel = mediator.Send(query);
 
             return View(viewModel);
         }
