@@ -29,7 +29,6 @@
             this.userSession = userSession;
             this.securityCodeSession = securityCodeSession;
             this.showSecurityVerify = showSecurityVerify;
-
             this.isPiwikEnable = isPiwikEnable;
             this.piwikUrl = piwikUrl;
             this.piwikScript = piwikScript;

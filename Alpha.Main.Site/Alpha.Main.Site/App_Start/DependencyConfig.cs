@@ -20,6 +20,7 @@
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
+    using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
 
     public static class DependencyConfig
@@ -77,19 +78,7 @@
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
         private static void RegisterServices(Container container)
         {
-            container.Register(
-                () =>
-                {
-                    if (HttpContext.Current != null
-                        && (HttpContext.Current.Handler is IRequiresSessionState
-                        || HttpContext.Current.Handler is IReadOnlySessionState))
-                    {
-                        return UserSession.Current;
-                    }
-
-                    return new UserSessionBase(string.Empty);
-                },
-                Lifestyle.Transient);
+            container.Register<IUserSession, UserSessionExt>(Lifestyle.Transient);
 
             container.Register(
                 () =>

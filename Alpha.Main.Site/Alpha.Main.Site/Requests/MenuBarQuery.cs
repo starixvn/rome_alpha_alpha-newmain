@@ -53,7 +53,7 @@
         {
             get
             {
-                return HttpContext.Current.Session.IsCookieless;
+                return HttpContext.Current != null ? HttpContext.Current.Session.IsCookieless : false;
             }
         }
     }
