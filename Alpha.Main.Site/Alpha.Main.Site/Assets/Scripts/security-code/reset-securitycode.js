@@ -3,11 +3,9 @@
 })
 var resetsecuritycode = {
     resources: {
-        oldSecurityCodeEmpty: $('#alert-old-securitycode-empty').val(),
         securityCodeEmpty: $('#alert-securitycode-empty').val(),
         securityCodeWrongRule: $('#alert-securitycode-wrong-rule').val(),
         errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
-        sameSecurityCode: $('#alert-same-securitycode').val(),
         securityCodeChangeSucessfully: $('#alert-securitycode-change-ok').val()
     },
     initialize: function () {
@@ -29,7 +27,7 @@ var resetsecuritycode = {
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         var message = resetsecuritycode.checkInputParameters($txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
-            $messageContainer.empty().html(message);
+            resetsecuritycode.showFailMessage($messageContainer, message);
             securitycodeHelper.unlockUI();
             return;
         }
@@ -46,12 +44,12 @@ var resetsecuritycode = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode !== 0) {
-                    resetsecuritycode.showFailMessage(data.ErrorMessage);
+                    resetsecuritycode.showFailMessage($messageContainer, data.ErrorMessage);
                     $txtSecurityCode.focus();
                 }
                 else
                 {
-                    resetsecuritycode.showSuccessfullyMessage();
+                    resetsecuritycode.showSuccessfullyMessage($messageContainer);
                 }
             },
             complete: function (jqXHR, textStatus) {
@@ -83,14 +81,14 @@ var resetsecuritycode = {
         $("#txtSecCode").empty();
         $("#txtConfirmSecCode").empty();
     },
-    showSuccessfullyMessage: function(message)
+    showSuccessfullyMessage: function ($messageContainer)
+    {
+        $messageContainer.removeClass('msg-error');
+        $messageContainer.addClass('msg-success').empty().html(resetsecuritycode.resources.securityCodeChangeSucessfully);
+    },
+    showFailMessage: function ($messageContainer, message)
     {
         $messageContainer.removeClass('msg-success');
         $messageContainer.addClass('msg-error').empty().html(message);
-    },
-    showFailMessage: function()
-    {
-        $messageContainer.removeClass('msg-error');
-        $messageContainer.addClass('msg-success').empty().html(changeUserOwnSecurityCode.resources.securityCodeChangeSucessfully);
     }
 }
