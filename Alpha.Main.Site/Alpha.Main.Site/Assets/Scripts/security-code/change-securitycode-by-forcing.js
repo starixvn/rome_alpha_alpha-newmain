@@ -52,7 +52,7 @@ var changeSecurityCodeByForcing = {
                 }
                 else if (data.ErrorCode === 2) { // account is closed
                     alert(data.ErrorMessage);
-                    top.age.SignOut();
+                    securitycodeHelper.signOut();
                 }
                 else {
                     $("#txtOldSecCode").addClass('error');

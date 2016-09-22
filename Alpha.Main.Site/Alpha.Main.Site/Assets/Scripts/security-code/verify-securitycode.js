@@ -9,7 +9,7 @@ var verifySecurityCode = {
         inform: $('#inform-securitycode').val()
     },
     initialize: function () {
-        $('#SC').keypress(function (e) {
+        $('#txtSecCode').keypress(function (e) {
             if (e.which == 13) {
                 verifySecurityCode.verify();
                 e.preventDefault();

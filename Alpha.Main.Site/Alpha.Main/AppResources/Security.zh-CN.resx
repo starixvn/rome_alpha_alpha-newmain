@@ -122,52 +122,52 @@
 Please use the form below to set your Security Code again.</value>
   </data>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
-    <value>The Security Code was not correctly confirmed.</value>
+    <value>您的机密码无法被确认。</value>
   </data>
   <data name="alertForcedChangeSCTitle" xml:space="preserve">
-    <value>You're required to change Security Code. Your new Security Code must be different from the one provided by your upline/CSD.&lt;br/&gt;
-Please use the form below to change your Security Code now.</value>
+    <value>您需要更改机密码。您的新机密码必须要与您上线所提供不相同。&lt;br/&gt;
+请使用下面的表格更改您现在的机密码。</value>
   </data>
   <data name="alertForcedChangeSCWithoutValidationTitle" xml:space="preserve">
-    <value>You're required to set your Security Code to authenticate later each time you log-in.&lt;br/&gt;
-Please use the form below to set your Security Code now.</value>
+    <value>您需要设置您的机密码来验证当日后您从新登入。&lt;br/&gt;
+请使用下面的表格设置您现在的机密码。</value>
   </data>
   <data name="alertInputWrongSecCode" xml:space="preserve">
-    <value>Your provided Security Code is not correct. Please try again</value>
+    <value>您所提供的保安码是不正确的。请再试一次。</value>
   </data>
   <data name="alertOldSecCodeEmpty" xml:space="preserve">
-    <value>Please enter old Security Code</value>
+    <value>请输入您的旧保安码。</value>
   </data>
   <data name="alertSameSecCode" xml:space="preserve">
-    <value>Your new Security Code must be different from the current one.</value>
+    <value>您的新保安码必须与当前的不相同。</value>
   </data>
   <data name="alertSecCodeChangedOK" xml:space="preserve">
-    <value>Your Security Code has been changed successfully.</value>
+    <value>您已成功更改您的保安码。</value>
   </data>
   <data name="alertSecCodeEmpty" xml:space="preserve">
-    <value>Sorry, Security Code cannot be empty</value>
+    <value>抱歉, 保安码不能空置</value>
   </data>
   <data name="ConfirmSecurityCode" xml:space="preserve">
-    <value>Confirm Security Code</value>
+    <value>确认保安码</value>
   </data>
   <data name="contactMessage" xml:space="preserve">
-    <value>If you haven't got security code, please contact your upline or CSD.</value>
+    <value>若您尚未获取保安码, 请联系您的上线或客服部</value>
   </data>
   <data name="forceChangeSecCode" xml:space="preserve">
     <value>Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a new feature called Security Code. It may be considered as a second password and will require you to input when you execute any sensitive actions such as change password, reopen/unsuspend accounts, etc.&lt;br/&gt;
 Please use the form below to set your Security Code now.&lt;br/&gt;&lt;br/&gt;</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>Please input your security code before proceeding!</value>
+    <value>请输入您的保安码以继续执行!</value>
   </data>
   <data name="lblRequiredSecCode" xml:space="preserve">
-    <value>&lt;p&gt;Security Code (SC) must be:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;* Numeric digits only.&lt;/li&gt;&lt;li&gt;* 6 digits from 0-9.&lt;/li&gt;&lt;li&gt;* At least 2 different digits in the SC.&lt;/li&gt;&lt;li&gt;* Not a forward run AND not a backward run number:&lt;ul&gt;&lt;li&gt;+ A "Forward Run" number is an integer whose digits are all in consecutive, ascending order, left to right.&lt;/li&gt;&lt;li&gt;+ A "Backward Run" number is an integer whose digits are all in consecutive, descending order, left to right.&lt;/li&gt;&lt;li&gt;+ For example: 123456, 456789, 765432, etc. are not allowed.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</value>
+    <value>&lt;p&gt;保安码必须是:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;* 数字而已&lt;/li&gt;&lt;li&gt;* 必须是0-9的6位数字&lt;/li&gt;&lt;li&gt;* 保安码设置必须至少两个不同的数字&lt;/li&gt;&lt;li&gt;* 不能为顺序号或逆序号&lt;ul&gt;&lt;li&gt;+ "顺序"号为整体数字组合都是连续的递增的顺序, 从左至右。&lt;/li&gt;&lt;li&gt;+ "逆序"号位整体数字组合都是连续的递减的顺序, 从左至右。&lt;/li&gt;&lt;li&gt;+ 例如: 123456, 456789, 765432等都是不被允许的&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
-    <value>Your provided Security Code does not meet the requirements.</value>
+    <value>您所提供的保安码不符合要求。</value>
   </data>
   <data name="oldSecCode" xml:space="preserve">
-    <value>Old Security Code</value>
+    <value>旧保安码</value>
   </data>
   <data name="secCodeGuide" xml:space="preserve">
     <value>Please follow 3 steps to set new Security Code:&lt;br/&gt;
@@ -177,40 +177,40 @@ Please use the form below to set your Security Code now.&lt;br/&gt;&lt;br/&gt;</
 Note: your new SC must be different from the one provided by upline/CSD</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
-    <value>Security Code</value>
+    <value>保安码</value>
   </data>
   <data name="titleFirstTimeSecCode" xml:space="preserve">
-    <value>Security Code</value>
+    <value>保安码</value>
   </data>
   <data name="titleProvideSecCode" xml:space="preserve">
     <value>Please provide Security Code</value>
   </data>
   <data name="titleResetSecCode" xml:space="preserve">
-    <value>Reset Security Code</value>
+    <value>重置保安码</value>
   </data>
   <data name="Reset" xml:space="preserve">
-    <value>リセット</value>
+    <value>重填</value>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>送信</value>
+    <value>提交</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
     <value>Security Code Validation</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
-    <value>Learn more</value>
+    <value>了解更多</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>パスワード</value>
+    <value>密码</value>
   </data>
   <data name="SecurityCodeValidation" xml:space="preserve">
     <value>Security Code Validation</value>
   </data>
   <data name="NotAuthorized" xml:space="preserve">
-    <value>You are not authorized on this function</value>
+    <value>您没有使用此功能的权限</value>
   </data>
   <data name="NewSecurityCode" xml:space="preserve">
-    <value>Security Code</value>
+    <value>保安码</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
@@ -235,5 +235,94 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
+  </data>
+  <data name="errUserName" xml:space="preserve">
+    <value>请输入账号及密码</value>
+  </data>
+  <data name="lblConfirmClosed" xml:space="preserve">
+    <value>您的帐户被关闭，你必须退出。请联系您上线的援助。</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="loginWrong5Times" xml:space="preserve">
+    <value>您已输入6次错误的用户名/密码, 请与5分钟后再尝试。</value>
+  </data>
+  <data name="stringSessionLogged" xml:space="preserve">
+    <value>另一个相同账号已登入界面,强制被登出.如果此登入不是由您所进行,请联络您的上线</value>
+  </data>
+  <data name="undermaintenance" xml:space="preserve">
+    <value>我们正在服务器维护，网站将被从（0）至（1）无法使用。不便之处，敬请原谅！</value>
+  </data>
+  <data name="alertErrorConfirm" xml:space="preserve">
+    <value>您的密码不能被确认</value>
+  </data>
+  <data name="alertInputOldPwd" xml:space="preserve">
+    <value>请输入旧密码</value>
+  </data>
+  <data name="alertPasswordEmpty" xml:space="preserve">
+    <value>密码不能留空</value>
+  </data>
+  <data name="forcechangepwd" xml:space="preserve">
+    <value>您必须更换密码于第一次登入。</value>
+  </data>
+  <data name="lblPasswordChangedOK" xml:space="preserve">
+    <value>您已成功更改您的密码。</value>
+  </data>
+  <data name="lblPasswordDAccountName" xml:space="preserve">
+    <value>您的密码不能包含您的用户名或昵称。</value>
+  </data>
+  <data name="lblPasswordDOldOne" xml:space="preserve">
+    <value>您的新密码不能与旧密码相同。</value>
+  </data>
+  <data name="lblPasswordExpired" xml:space="preserve">
+    <value>您的安全及隐私对我们非常重要。因此, 我们不断努力的提高我们的安全预防措施以保护您的数据。基于此原因, 我们决定实施密码重设。
+
+请使用以下表格立即更换您的密码。</value>
+  </data>
+  <data name="lblPasswordHint" xml:space="preserve">
+    <value>注: 我们强烈建议您定期更换您的密码以提高安全性。</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>密码必须至少 8 个字符没有空格和包含至少 3个 以下：
+
+• 大写字母 [A-Z]
+• 小写字母 [a-z]
+• 数字 [0-9]
+• 特殊字符 （!、 @、 # 等。。)
+
+例如： 59D7!4$h, 493abcDE
+注意： 您的密码需有大小写</value>
+  </data>
+  <data name="lblPasswordWrongRule" xml:space="preserve">
+    <value>您的密码不符合最低安全要求</value>
+  </data>
+  <data name="lblConfirmPassword" xml:space="preserve">
+    <value>确定密码</value>
+  </data>
+  <data name="lblOldPassword" xml:space="preserve">
+    <value>旧密码</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="PasswordHint01" xml:space="preserve">
+    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:</value>
+  </data>
+  <data name="PasswordHint02" xml:space="preserve">
+    <value>&lt;li&gt;Uppercase letter [A-Z]&lt;/li&gt;
+&lt;li&gt;Lowercase letter [a-z]&lt;/li&gt;
+&lt;li&gt;Numeric [0-9]&lt;/li&gt;
+&lt;li&gt;Special character (!,,#,etc..)&lt;/li&gt;</value>
+  </data>
+  <data name="PasswordHint03" xml:space="preserve">
+    <value>&lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt;: 59D7!4$h, 493abcDE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: your password is cAsE sEnSiTiVe&lt;/p&gt;</value>
+  </data>
+  <data name="PasswordRules" xml:space="preserve">
+    <value>Password rules</value>
+  </data>
+  <data name="PasswordShower" xml:space="preserve">
+    <value>hi {0}, please create your own password</value>
   </data>
 </root>

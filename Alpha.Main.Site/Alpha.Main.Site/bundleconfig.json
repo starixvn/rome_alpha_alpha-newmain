@@ -71,11 +71,39 @@
       "Assets/scripts/security-code/change-user-own-securitycode.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security-code/reset-securitycode.js",
     "inputFiles": [
       "Assets/scripts/security-code/securitycode-helper.js",
       "Assets/scripts/security-code/reset-securitycode.js"
+    ]
+  },
+   {
+    "outputFileName": "Assets/bundles/password/change-password.js",
+    "inputFiles": [
+      "Assets/scripts/security-code/securitycode-helper.js",
+      "Assets/scripts/password/change-password.js"
+    ]
+  },
+   {
+    "outputFileName": "Assets/bundles/password/reset-main-account-password.js",
+    "inputFiles": [
+      "Assets/scripts/security-code/securitycode-helper.js",
+      "Assets/scripts/password/reset-main-account-password.js"
+    ]
+  },
+   {
+    "outputFileName": "Assets/bundles/password/force-change-password.js",
+    "inputFiles": [
+      "Assets/scripts/security-code/securitycode-helper.js",
+      "Assets/scripts/password/force-change-password.js"
+    ]
+  },
+   {
+    "outputFileName": "Assets/bundles/password/reset-sub-account-password.js",
+    "inputFiles": [
+      "Assets/scripts/security-code/securitycode-helper.js",
+      "Assets/scripts/password/reset-sub-account-password.js"
     ]
   }
 ]

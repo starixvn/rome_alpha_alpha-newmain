@@ -25,45 +25,45 @@
                     </ul>         
             </div>
         </div>
-        <h1 class="title">@SecurityCode_Resources.SecurityCode</h1>
-        <p> @SecurityCode_Resources.PleaseCreateYourOwnSecurityCode</p>
+        <h1 class="title">@Security.SecurityCode</h1>
+        <p> @Security.PleaseCreateYourOwnSecurityCode</p>
         <figure class="avatar">
             <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="Avatar" />
             <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
         </figure>
         <div class="rowlg help-rules">
-            <input type="password" class="txt" name="SC" id="txtSecCode" placeholder="@SecurityCode_Resources.SecurityCode">
+            <input type="password" class="txt" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode">
             <label id="txtSecCode-error" class="error"></label>
             <i class="icon-account-key"></i>
             <i class="validation"></i>
         </div>
         <div class="rowlg">
-            <input type="password" class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@SecurityCode_Resources.ConfirmSecurityCode">
+            <input type="password" class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode">
             <label id="txtConfirmSecCode-error" class="error"></label>
             <i class="icon-account-key"></i>
             <i class="validation"></i>
         </div>
         <div class="list-button">
-            <input type="button" class="btn-cancel" id="btn-back" value="@SecurityCode_Resources.Back" />
-            <input type="submit" class="btn-submit" value="@SecurityCode_Resources.Submit" />
+            <input type="button" class="btn-cancel" id="btn-back" value="@Security.Back" />
+            <input type="submit" class="btn-submit" value="@Security.Submit" />
         </div>
     </form>
     <div class="rules" id="rules">
-        <div class="rules-title" id="rules-title" data-toggle="modal" data-target="#sc"><span class="icon-information-outline icon-rules"></span>@SecurityCode_Resources.SecurityCodeRules</div>
+        <div class="rules-title" id="rules-title" data-toggle="modal" data-target="#sc"><span class="icon-information-outline icon-rules"></span>@Security.SecurityCodeRules</div>
         <!-- Modal -->
         <div class="modal fade information" id="sc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="icon icon-close close" data-dismiss="modal" aria-label="Close"></span>
-                        <h4 class="modal-title" id="myModalLabel"><span class="icon-information-outline icon-rules"></span>@SecurityCode_Resources.SecurityCodeRules</h4>
+                        <h4 class="modal-title" id="myModalLabel"><span class="icon-information-outline icon-rules"></span>@Security.SecurityCodeRules</h4>
                     </div>
                     <div class="modal-body">
-                        <p>@SecurityCode_Resources.SecurityCodeRules01</p>
+                        <p>@Security.SecurityCodeRules01</p>
                         <ul>
-                            <li>@SecurityCode_Resources.SecurityCodeRules02</li>
-                            <li>@SecurityCode_Resources.SecurityCodeRules03</li>
-                            <li>@SecurityCode_Resources.SecurityCodeRules04</li>
+                            <li>@Security.SecurityCodeRules02</li>
+                            <li>@Security.SecurityCodeRules03</li>
+                            <li>@Security.SecurityCodeRules04</li>
                         </ul>
                     </div>
                 </div>
@@ -73,13 +73,13 @@
 </div>
 
 @Html.Hidden("hashkey", Model.HashKey)
-@Html.Hidden("alert-securitycode-empty", SecurityCode_Resources.alertSecCodeEmpty)
-@Html.Hidden("alert-securitycode-wrong-rule", SecurityCode_Resources.lblSecCodeWrongRule)
-@Html.Hidden("alert-error-securitycode-confirm", SecurityCode_Resources.alertErrorSecCodeConfirm)
+@Html.Hidden("alert-securitycode-empty", Security.alertSecCodeEmpty)
+@Html.Hidden("alert-securitycode-wrong-rule", Security.lblSecCodeWrongRule)
+@Html.Hidden("alert-error-securitycode-confirm", Security.alertErrorSecCodeConfirm)
 @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 @Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
-    @StaticResources.AssetScripts.Render("/bundles/site-main/security-code/before-home-page")
+    @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
     <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security-code/change-securitydode-firstlogin")" type="text/javascript"></script>
 }

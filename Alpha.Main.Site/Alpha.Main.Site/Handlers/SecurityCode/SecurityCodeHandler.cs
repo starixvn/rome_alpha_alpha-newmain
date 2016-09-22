@@ -128,7 +128,7 @@
 
             if (base.securityCodeSession.IsInternal)
             {
-                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
 
             message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
@@ -137,15 +137,15 @@
             string errorMessage = string.Empty;
             if (string.IsNullOrEmpty(message.SecurityCode))
             {
-                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
+                errorMessage = Security.alertSecCodeEmpty;
             }
             else if (!base.ValidateSecurityCode(message.SecurityCode))
             {
-                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
+                errorMessage = Security.lblSecCodeWrongRule;
             }
             else if (message.SecurityCode != message.ConfirmSecurityCode)
             {
-                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
+                errorMessage = Security.alertErrorSecCodeConfirm;
             }
 
             if (errorMessage.Length != 0)
@@ -166,7 +166,7 @@
 
             if (base.securityCodeSession.IsInternal)
             {
-                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
 
             message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
@@ -175,19 +175,19 @@
             string errorMessage = string.Empty;
             if (string.IsNullOrEmpty(message.OldSecurityCode))
             {
-                errorMessage = SecurityCode_Resources.alertOldSecCodeEmpty;
+                errorMessage = Security.alertOldSecCodeEmpty;
             }
             else if (string.IsNullOrEmpty(message.SecurityCode))
             {
-                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
+                errorMessage = Security.alertSecCodeEmpty;
             }
             else if (!base.ValidateSecurityCode(message.SecurityCode))
             {
-                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
+                errorMessage = Security.lblSecCodeWrongRule;
             }
             else if (message.SecurityCode != message.ConfirmSecurityCode)
             {
-                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
+                errorMessage = Security.alertErrorSecCodeConfirm;
             }
 
             if (errorMessage.Length != 0)
@@ -207,7 +207,7 @@
 
             if (base.securityCodeSession.IsInternal)
             {
-                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
 
             message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
@@ -216,19 +216,19 @@
             string errorMessage = string.Empty;
             if (string.IsNullOrEmpty(message.OldSecurityCode))
             {
-                errorMessage = SecurityCode_Resources.alertOldSecCodeEmpty;
+                errorMessage = Security.alertOldSecCodeEmpty;
             }
             else if (string.IsNullOrEmpty(message.SecurityCode))
             {
-                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
+                errorMessage = Security.alertSecCodeEmpty;
             }
             else if (!base.ValidateSecurityCode(message.SecurityCode))
             {
-                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
+                errorMessage = Security.lblSecCodeWrongRule;
             }
             else if (message.SecurityCode != message.ConfirmSecurityCode)
             {
-                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
+                errorMessage = Security.alertErrorSecCodeConfirm;
             }
 
             if (errorMessage.Length != 0)
@@ -251,7 +251,7 @@
 
             if (base.securityCodeSession.IsInternal && !isResetSubAccount)
             {
-                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
 
             message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
@@ -260,15 +260,15 @@
             string errorMessage = string.Empty;
             if (string.IsNullOrEmpty(message.SecurityCode))
             {
-                errorMessage = SecurityCode_Resources.alertSecCodeEmpty;
+                errorMessage = Security.alertSecCodeEmpty;
             }
             else if (!base.ValidateSecurityCode(message.SecurityCode))
             {
-                errorMessage = SecurityCode_Resources.lblSecCodeWrongRule;
+                errorMessage = Security.lblSecCodeWrongRule;
             }
             else if (message.SecurityCode != message.ConfirmSecurityCode)
             {
-                errorMessage = SecurityCode_Resources.alertErrorSecCodeConfirm;
+                errorMessage = Security.alertErrorSecCodeConfirm;
             }
 
             if (errorMessage.Length != 0)
@@ -298,12 +298,12 @@
 
             if (base.securityCodeSession.IsInternal)
             {
-                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.NotAuthorized };
+                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
 
             if (string.IsNullOrEmpty(message.SecurityCode))
             {
-                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.informSecCode };
+                return new Result { ErrorCode = -1, ErrorMessage = Security.informSecCode };
             }
 
             return base.VerifySecurityCode(message);

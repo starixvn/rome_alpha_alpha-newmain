@@ -122,95 +122,94 @@
 Please use the form below to set your Security Code again.</value>
   </data>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
-    <value>您的保安碼無法被確認。</value>
+    <value>Mã bảo mật xác nhận không chính xác.</value>
   </data>
   <data name="alertForcedChangeSCTitle" xml:space="preserve">
-    <value>您需要更改機密碼。您的新保安碼必須要與您上線所提供不相同。&lt;br/&gt;
-請使用下面的表格更改您現在的保安碼。</value>
+    <value>Bạn buộc phải thay đổi Mã bảo mật. Mã bảo mật mới phải khác với Mã bảo mật mà bạn đã nhận được từ CSD hoặc cấp trên của bạn.</value>
   </data>
   <data name="alertForcedChangeSCWithoutValidationTitle" xml:space="preserve">
-    <value>您需要設置您的保安碼以驗證日後的每一次登錄。&lt;br/&gt;
-請使用以下的表格設置您的保安碼。</value>
+    <value>Bạn cần thiết lập mã bảo vệ để xác thực sau mỗi lần đăng nhập.&lt;br/&gt;
+Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
   </data>
   <data name="alertInputWrongSecCode" xml:space="preserve">
-    <value>您所提供的保安碼是不正確的。請再試一次。</value>
+    <value>Bạn đã cung cấp sai Mã bảo mật. Vui lòng thử lại.</value>
   </data>
   <data name="alertOldSecCodeEmpty" xml:space="preserve">
-    <value>請輸入您的舊保安碼。</value>
+    <value>Vui lòng nhập Mã bảo mật hiện tại</value>
   </data>
   <data name="alertSameSecCode" xml:space="preserve">
-    <value>您的新保安碼必須與當前的不相同。</value>
+    <value>Mã bảo mật mới phải khác với Mã bảo mật hiện tại.</value>
   </data>
   <data name="alertSecCodeChangedOK" xml:space="preserve">
-    <value>您已成功更改您的保安碼。</value>
+    <value>Mã bảo mật đã được thay đổi thành công.</value>
   </data>
   <data name="alertSecCodeEmpty" xml:space="preserve">
-    <value>抱歉, 保安碼不能空置</value>
+    <value>Mã bảo mật phải có giá trị, không thể trống</value>
   </data>
   <data name="ConfirmSecurityCode" xml:space="preserve">
-    <value>確認保安碼</value>
+    <value>Xác nhận mã bảo mật mới</value>
   </data>
   <data name="contactMessage" xml:space="preserve">
-    <value>若您尚未獲取保安碼, 請聯繫您的上線或客服部</value>
+    <value>Nếu bạn chưa có Mã bảo mật, vui lòng liên hệ cấp trên của bạn hoặc bộ phận CSD.</value>
   </data>
   <data name="forceChangeSecCode" xml:space="preserve">
-    <value>Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a new feature called Security Code. It may be considered as a second password and will require you to input when you execute any sensitive actions such as change password, reopen/unsuspend accounts, etc.&lt;br/&gt;
-Please use the form below to set your Security Code now.&lt;br/&gt;&lt;br/&gt;</value>
+    <value>Tính bảo mật và quyền riêng tư của bạn là điều quan trọng đối với chúng tôi. Do vậy, chúng tôi không ngừng nâng cao mức độ bảo mật để bảo vệ an toàn cho dữ liệu của bạn. Vì thế, chúng tôi đã quyết định thực hiện 1 tính năng mới là Mã bảo mật. Mã bảo mật có thể được xem như là một mật mã thứ hai và sẽ yêu cầu bạn nhập vào khi thực thi các thao tác có mức độ rủi ro cao (ví dụ: đổi mật mã, mở lại tài khoản bị đóng, v.v.)&lt;br/&gt;
+Vui lòng điền vào mẩu bên dưới để thiết lập giá trị cho Mã bảo mật.&lt;br/&gt;&lt;br/&gt;</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>請輸入您的保安碼以繼續執行!</value>
+    <value>Vui lòng nhập Mã bảo mật trước khi thực hiện các thiết lập!</value>
   </data>
   <data name="lblRequiredSecCode" xml:space="preserve">
-    <value>&lt;p&gt;保安碼必須是:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;* 數字而已&lt;/li&gt;&lt;li&gt;* 必須是0-9的6位數字&lt;/li&gt;&lt;li&gt;* 保安碼設置必須至少兩個不同的數字&lt;/li&gt;&lt;li&gt;* 不能為順序號或逆序號&lt;ul&gt;&lt;li&gt;+ "順序"號為整體數字組合都是連續的遞增的順序, 從左至右。&lt;/li&gt;&lt;li&gt;+ "逆序"號位整體數字組合都是連續的遞減的順序, 從左至右。&lt;/li&gt;&lt;li&gt;+ 例如: 123456, 456789, 765432等都是不被允許的&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</value>
+    <value>&lt;p&gt;Mã bảo mật phải:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;* Chỉ toàn ký tự số.&lt;/li&gt;&lt;li&gt;* Là số có 6 ký tự số kết hợp từ [0-9].&lt;/li&gt;&lt;li&gt;* Có ít nhất 2 ký tự khác nhau trong Mã bảo mật.&lt;/li&gt;&lt;li&gt;* Không phải là số gồm những ký tự tăng dần hoặc giảm dần từ trái sang phải.&lt;/li&gt;&lt;ul&gt;&lt;li&gt;+ Ví dụ: không cho phép 123456, 456789, 765432, v.v.&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
-    <value>您所提供的保安碼不符合要求。</value>
+    <value>Mã bảo mật do bạn cung cấp không thỏa quy tắc đặt ra.</value>
   </data>
   <data name="oldSecCode" xml:space="preserve">
-    <value>舊保安碼</value>
+    <value>Mã bảo mật cũ</value>
   </data>
   <data name="secCodeGuide" xml:space="preserve">
-    <value>Please follow 3 steps to set new Security Code:&lt;br/&gt;
-1. Choose the Security Code you want&lt;br/&gt;
-2. Click Submit button&lt;br/&gt;
-3. The system will ask you to input the Security Code provided by your upline/CSD to verify &lt;br/&gt;
-Note: your new SC must be different from the one provided by upline/CSD</value>
+    <value>Vui lòng thực hiện việc lựa chọn Mã bảo mật theo 3 bước như sau:&lt;br/&gt;
+1. Chọn Mã bảo mật mà bạn muốn&lt;br/&gt;
+2. Nhấp chuột vào nút Xác nhận để gởi đi&lt;br/&gt;
+3. Hệ thống sẽ yêu cầu bạn nhập vào Mã bảo mật mà bạn đã được nhận từ CSD hoặc cấp trên của bạn để chứng thực &lt;br/&gt;
+Chú ý: Mã bảo mật mới phải khác với Mã bảo mật bạn nhận được từ CSD hoặc cấp trên của bạn</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
-    <value>保安碼</value>
+    <value>Mã bảo mật</value>
   </data>
   <data name="titleFirstTimeSecCode" xml:space="preserve">
-    <value>保安碼</value>
+    <value>Security Code</value>
   </data>
   <data name="titleProvideSecCode" xml:space="preserve">
     <value>Please provide Security Code</value>
   </data>
   <data name="titleResetSecCode" xml:space="preserve">
-    <value>重置保安碼</value>
+    <value>Thay đổi Mã bảo mật</value>
   </data>
   <data name="Reset" xml:space="preserve">
-    <value>重填</value>
+    <value>Reset</value>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>提交</value>
+    <value>Xác nhận</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
     <value>Security Code Validation</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
-    <value>了解更多</value>
+    <value>Vui lòng tìm hiểu thêm tại đây</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>密碼</value>
+    <value>Mật Khẩu</value>
   </data>
   <data name="SecurityCodeValidation" xml:space="preserve">
     <value>Security Code Validation</value>
   </data>
   <data name="NotAuthorized" xml:space="preserve">
-    <value>您沒有使用此功能的權限</value>
+    <value>Bạn không được cho phép sử dụng chức năng này</value>
   </data>
   <data name="NewSecurityCode" xml:space="preserve">
-    <value>保安碼</value>
+    <value>Mã bảo mật mới</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
@@ -235,5 +234,93 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
+  </data>
+  <data name="errUserName" xml:space="preserve">
+    <value>Vui lòng điền Tên đăng nhập và Mật khẩu</value>
+  </data>
+  <data name="lblConfirmClosed" xml:space="preserve">
+    <value>Tài khoản của bạn đã bị khóa, bạn buộc phải đăng xuất .Vui lòng liên hệ với cấp trên của bạn để được hỗ trợ</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="loginWrong5Times" xml:space="preserve">
+    <value>Bạn đã 6 lần điền sai Tên đăng nhập / Mật khẩu, Vui lòng thử lại sau 5 phút</value>
+  </data>
+  <data name="stringSessionLogged" xml:space="preserve">
+    <value>Phiên đăng nhập này bị đóng vì tài khoản của bạn đã đăng nhập ở phiên khác. Nếu không phải bạn, vui lòng liên hệ cấp trên của bạn để được hỗ trợ.</value>
+  </data>
+  <data name="undermaintenance" xml:space="preserve">
+    <value>Server đang được bảo trì,Webside sẽ không thể truy cập từ {0} cho đến {1} . Xin lỗi vì sự bất tiện này!</value>
+  </data>
+  <data name="alertErrorConfirm" xml:space="preserve">
+    <value>Mật khẩu xác nhận không chính xác</value>
+  </data>
+  <data name="alertInputOldPwd" xml:space="preserve">
+    <value>Vui lòng nhập  Mật Khẩu hiện tại</value>
+  </data>
+  <data name="alertPasswordEmpty" xml:space="preserve">
+    <value>Mật Khẩu không thể để trống!!!</value>
+  </data>
+  <data name="forcechangepwd" xml:space="preserve">
+    <value>Bạn buộc phải thay đổi mật khẩu ở lần đăng nhập đầu tiên</value>
+  </data>
+  <data name="lblPasswordChangedOK" xml:space="preserve">
+    <value>Mật khẩu của bạn đã được thay đổi thành công.</value>
+  </data>
+  <data name="lblPasswordDAccountName" xml:space="preserve">
+    <value>Mật khẩu không được chứa tên đăng nhập hoặc tên riêng.</value>
+  </data>
+  <data name="lblPasswordDOldOne" xml:space="preserve">
+    <value>Mật khẩu mới phải khác với mật khẩu đang sử dụng.</value>
+  </data>
+  <data name="lblPasswordExpired" xml:space="preserve">
+    <value>Tính bảo mật và quyền riêng tư của bạn là điều rất quan trọng đối với chúng tôi. Do vậy, chúng tôi không ngừng nâng cao mức độ bảo mật để  bảo vệ an toàn cho dữ liệu của bạn. Vì thế, yêu cầu bạn thay đổi mật khẩu hiện tại.
+Vui lòng điền vào mẩu bên dưới để thay đổi mật khẩu.</value>
+  </data>
+  <data name="lblPasswordHint" xml:space="preserve">
+    <value>Lưu ý: Bạn nên thay đổi mật khẩu định kỳ để tăng cường tính bảo mật.</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>Mật khẩu phải gồm ít nhất 8 ký tự, không có khoảng trắng và phải có ít nhất 3 ký tự sau đây:
+
+ - Ký tự viết hoa [A-Z]
+ - Ký tự viết thường [a-z]
+ - Ký tự số [0-9]
+ - Ký tự đặc biệt (!,@,#,...)
+Ví dụ : 59D7!4$h, 493abcDE
+
+Lưu ý : Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
+  </data>
+  <data name="lblPasswordWrongRule" xml:space="preserve">
+    <value>Mật khẩu của bạn chưa đạt mức an toàn tối thiểu.</value>
+  </data>
+  <data name="lblConfirmPassword" xml:space="preserve">
+    <value>Xác nhận mật khẩu mới</value>
+  </data>
+  <data name="lblOldPassword" xml:space="preserve">
+    <value>Mật khẩu hiện tại</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Mật khẩu mới</value>
+  </data>
+  <data name="PasswordHint01" xml:space="preserve">
+    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:</value>
+  </data>
+  <data name="PasswordHint02" xml:space="preserve">
+    <value>&lt;li&gt;Uppercase letter [A-Z]&lt;/li&gt;
+&lt;li&gt;Lowercase letter [a-z]&lt;/li&gt;
+&lt;li&gt;Numeric [0-9]&lt;/li&gt;
+&lt;li&gt;Special character (!,,#,etc..)&lt;/li&gt;</value>
+  </data>
+  <data name="PasswordHint03" xml:space="preserve">
+    <value>&lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt;: 59D7!4$h, 493abcDE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: your password is cAsE sEnSiTiVe&lt;/p&gt;</value>
+  </data>
+  <data name="PasswordRules" xml:space="preserve">
+    <value>Password rules</value>
+  </data>
+  <data name="PasswordShower" xml:space="preserve">
+    <value>hi {0}, please create your own password</value>
   </data>
 </root>

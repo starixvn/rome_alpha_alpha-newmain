@@ -140,8 +140,10 @@
 &lt;div&gt;... 更安全化及個性化.&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>&lt;div&gt;尊敬的客戶! 為了幫助您識​​別真正的網站, 我們現在提供您個性化個人頭像的選項. &lt;/div&gt;
-&lt;div&gt; 一旦圖片上載成功, 您將可以於此見到否則您可能會處於欺詐性的網站. 馬上 &lt;/div&gt;</value>
+    <value>&lt;div&gt;尊敬的客戶! 為了幫助您識​​別真正的網站, &lt;/div&gt;
+&lt;div&gt; 我們現在提供您個性化個人頭像的選項. &lt;/div&gt;
+&lt;div&gt; 一旦圖片上載成功, &lt;/div&gt;
+&lt;div&gt; 您將可以於此見到否則您可能會處於欺詐性的網站. 馬上 &lt;/div&gt;</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>點擊此處</value>
@@ -409,65 +411,5 @@
   </data>
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>快速遊覽手冊教學</value>
-  </data>
-  <data name="errUserName" xml:space="preserve">
-    <value>請輸入會員名字及密碼</value>
-  </data>
-  <data name="lblConfirmClosed" xml:space="preserve">
-    <value>您的帳戶被關閉，你必須退出。請聯系您上線的援助。</value>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>登入</value>
-  </data>
-  <data name="loginWrong5Times" xml:space="preserve">
-    <value>您已輸入6次錯誤的用戶名/密碼, 請與5分鐘後再嘗試。</value>
-  </data>
-  <data name="stringSessionLogged" xml:space="preserve">
-    <value>另一個相同帐号已登入介面,強制被登出. 如果此登入不是由您所進行, 請聯絡您的上線.</value>
-  </data>
-  <data name="undermaintenance" xml:space="preserve">
-    <value>我們正在服務器維護，網站將被從（0）至（1）無法使用。不便之處，敬請原諒！</value>
-  </data>
-  <data name="alertErrorConfirm" xml:space="preserve">
-    <value>您的密碼不能被確認</value>
-  </data>
-  <data name="alertInputOldPwd" xml:space="preserve">
-    <value>請輸入舊密碼</value>
-  </data>
-  <data name="alertPasswordEmpty" xml:space="preserve">
-    <value>密碼不能留空</value>
-  </data>
-  <data name="forcechangepwd" xml:space="preserve">
-    <value>您必須更換密碼於第一次登入。</value>
-  </data>
-  <data name="lblPasswordChangedOK" xml:space="preserve">
-    <value>您已成功更改您的密码。</value>
-  </data>
-  <data name="lblPasswordDAccountName" xml:space="preserve">
-    <value>您的密码不能包含您的用户名或昵称。</value>
-  </data>
-  <data name="lblPasswordDOldOne" xml:space="preserve">
-    <value>您的新密码不能与旧密码相同。</value>
-  </data>
-  <data name="lblPasswordExpired" xml:space="preserve">
-    <value> 您的安全及隱私對我們非常重要。因此, 我們不斷努力的提高我們的安全預防措施以保護您的數據。基於此原因, 我們決定實施密碼重設。
-請使用以下表格立即更換您的密碼。</value>
-  </data>
-  <data name="lblPasswordHint" xml:space="preserve">
-    <value>注: 我們強烈建議您定期更換您的密碼以提高安全性。</value>
-  </data>
-  <data name="lblPasswordRequire" xml:space="preserve">
-    <value>密码必须至少 8 个字符没有空格和包含至少 3个 以下：
-
-• 大写字母 [A-Z]
-• 小写字母 [a-z]
-• 数字 [0-9]
-• 特殊字符 （!、 @、 # 等。。)
-
-例如： 59D7!4$h, 493abcDE
-注意： 您的密码需有大小写</value>
-  </data>
-  <data name="lblPasswordWrongRule" xml:space="preserve">
-    <value>您的密码不符合最低安全要求</value>
   </data>
 </root>

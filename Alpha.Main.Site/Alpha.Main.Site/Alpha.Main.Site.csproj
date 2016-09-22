@@ -472,6 +472,22 @@
     <Content Include="Assets\bundles\default-index.min.css">
       <DependentUpon>default-index.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\password\change-password.js" />
+    <Content Include="Assets\bundles\password\change-password.min.js">
+      <DependentUpon>change-password.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\password\force-change-password.js" />
+    <Content Include="Assets\bundles\password\force-change-password.min.js">
+      <DependentUpon>force-change-password.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\password\reset-main-account-password.js" />
+    <Content Include="Assets\bundles\password\reset-main-account-password.min.js">
+      <DependentUpon>reset-main-account-password.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\password\reset-sub-account-password.js" />
+    <Content Include="Assets\bundles\password\reset-sub-account-password.min.js">
+      <DependentUpon>reset-sub-account-password.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security-code\change-securitycode-by-forcing.js" />
     <Content Include="Assets\bundles\security-code\change-securitycode-by-forcing.min.js">
       <DependentUpon>change-securitycode-by-forcing.js</DependentUpon>
@@ -496,6 +512,10 @@
     <Content Include="Assets\bundles\security\security.min.css">
       <DependentUpon>security.css</DependentUpon>
     </Content>
+    <Content Include="Assets\scripts\password\force-change-password.js" />
+    <Content Include="Assets\scripts\password\change-password.js" />
+    <Content Include="Assets\scripts\password\reset-main-account-password.js" />
+    <Content Include="Assets\scripts\password\reset-sub-account-password.js" />
     <Content Include="Assets\scripts\security-code\change-securitycode-by-forcing.js" />
     <Content Include="Assets\scripts\security-code\change-securitydode-firstlogin.js" />
     <Content Include="Assets\scripts\security-code\change-user-own-securitycode.js" />

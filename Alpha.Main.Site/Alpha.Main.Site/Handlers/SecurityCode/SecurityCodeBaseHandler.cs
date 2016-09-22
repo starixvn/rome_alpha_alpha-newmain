@@ -54,7 +54,7 @@
 
             if (result != null && result.ErrorCode == 0)
             {
-                result.ErrorMessage = SecurityCode_Resources.alertSecCodeChangedOK;
+                result.ErrorMessage = Security.alertSecCodeChangedOK;
             }
 
             return result;
@@ -78,7 +78,7 @@
         {
             if (string.IsNullOrEmpty(webHashSecurityCode) || string.IsNullOrEmpty(this.securityCodeSession.SecurityCodeToken))
             {
-                return new Result { ErrorCode = -1, ErrorMessage = SecurityCode_Resources.alertInputWrongSecCode };
+                return new Result { ErrorCode = -1, ErrorMessage = Security.alertInputWrongSecCode };
             }
 
             string dBsecurityCode = GetDBhashSecurityCode(custId, subAccId);
@@ -98,7 +98,7 @@
             else if (result.ErrorCode != 0)
             {
                 result.ErrorCode = 9009; //// wrong SC
-                result.ErrorMessage = SecurityCode_Resources.alertInputWrongSecCode;
+                result.ErrorMessage = Security.alertInputWrongSecCode;
             }
 
             return result;
@@ -241,7 +241,7 @@
 
             if (result.ErrorCode == 0)
             {
-                result.ErrorMessage = SecurityCode_Resources.alertSecCodeChangedOK;
+                result.ErrorMessage = Security.alertSecCodeChangedOK;
             }
             return result;
         }
@@ -262,7 +262,7 @@
 
             if (result.ErrorCode == 0)
             {
-                result.ErrorMessage = SecurityCode_Resources.alertSecCodeChangedOK;
+                result.ErrorMessage = Security.alertSecCodeChangedOK;
             }
 
             return result;

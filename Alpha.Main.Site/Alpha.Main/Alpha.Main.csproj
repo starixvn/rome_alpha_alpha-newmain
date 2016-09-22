@@ -171,14 +171,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppResources\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="AppResources\SecurityCode.Resources.Designer.cs">
+    <Compile Include="AppResources\Security.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SecurityCode.Resources.resx</DependentUpon>
+      <DependentUpon>Security.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\Language.cs" />
@@ -281,22 +281,34 @@
     <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-TW.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\SecurityCode.Resources.ja-JP.resx" />
-    <EmbeddedResource Include="AppResources\SecurityCode.Resources.ko-KR.resx" />
-    <EmbeddedResource Include="AppResources\SecurityCode.Resources.th-TH.resx" />
-    <EmbeddedResource Include="AppResources\SecurityCode.Resources.vi-VN.resx" />
-    <EmbeddedResource Include="AppResources\SecurityCode.Resources.zh-CN.resx" />
-    <EmbeddedResource Include="AppResources\SecurityCode.Resources.zh-TW.resx" />
+    <EmbeddedResource Include="AppResources\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.ja-JP.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.ko-KR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.th-TH.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.vi-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.zh-CN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.zh-TW.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.ja-JP.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.ko-KR.resx">
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.th-TH.resx">
       <SubType>Designer</SubType>
@@ -310,9 +322,10 @@
     <EmbeddedResource Include="AppResources\Resources.zh-TW.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\SecurityCode.Resources.resx">
+    <EmbeddedResource Include="AppResources\Security.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>SecurityCode.Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Security.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

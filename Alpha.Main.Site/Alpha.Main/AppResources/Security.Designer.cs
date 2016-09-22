@@ -22,14 +22,14 @@ namespace Alpha.Main.AppResources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class SecurityCode_Resources {
+    public class Security {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal SecurityCode_Resources() {
+        internal Security() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Alpha.Main.AppResources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Alpha.Main.AppResources.SecurityCode.Resources", typeof(SecurityCode_Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Alpha.Main.AppResources.Security", typeof(Security).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -67,6 +67,15 @@ namespace Alpha.Main.AppResources {
         public static string alertEmptySecCode {
             get {
                 return ResourceManager.GetString("alertEmptySecCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password was not correctly confirmed..
+        /// </summary>
+        public static string alertErrorConfirm {
+            get {
+                return ResourceManager.GetString("alertErrorConfirm", resourceCulture);
             }
         }
         
@@ -100,6 +109,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please Enter Old Password!!!.
+        /// </summary>
+        public static string alertInputOldPwd {
+            get {
+                return ResourceManager.GetString("alertInputOldPwd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your provided Security Code is not correct. Please try again.
         /// </summary>
         public static string alertInputWrongSecCode {
@@ -114,6 +132,15 @@ namespace Alpha.Main.AppResources {
         public static string alertOldSecCodeEmpty {
             get {
                 return ResourceManager.GetString("alertOldSecCodeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, password cannot be empty!!!.
+        /// </summary>
+        public static string alertPasswordEmpty {
+            get {
+                return ResourceManager.GetString("alertPasswordEmpty", resourceCulture);
             }
         }
         
@@ -172,6 +199,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please input username and password.
+        /// </summary>
+        public static string errUserName {
+            get {
+                return ResourceManager.GetString("errUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are forced to change your password at first logon.
+        /// </summary>
+        public static string forcechangepwd {
+            get {
+                return ResourceManager.GetString("forcechangepwd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a new feature called Security Code. It may be considered as a second password and will require you to input when you execute any sensitive actions such as change password, reopen/unsuspend accounts, etc.&lt;br/&gt;
         ///Please use the form below to set your Security Code now.&lt;br/&gt;&lt;br/&gt;.
         /// </summary>
@@ -187,6 +232,105 @@ namespace Alpha.Main.AppResources {
         public static string informSecCode {
             get {
                 return ResourceManager.GetString("informSecCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account was closed so you&apos;re forced to logout. Please contact your upline for the assistance..
+        /// </summary>
+        public static string lblConfirmClosed {
+            get {
+                return ResourceManager.GetString("lblConfirmClosed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Password.
+        /// </summary>
+        public static string lblConfirmPassword {
+            get {
+                return ResourceManager.GetString("lblConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Old Password.
+        /// </summary>
+        public static string lblOldPassword {
+            get {
+                return ResourceManager.GetString("lblOldPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password has been changed successfully..
+        /// </summary>
+        public static string lblPasswordChangedOK {
+            get {
+                return ResourceManager.GetString("lblPasswordChangedOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password must not contain your username or nickname..
+        /// </summary>
+        public static string lblPasswordDAccountName {
+            get {
+                return ResourceManager.GetString("lblPasswordDAccountName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your new password must be totally different from your current one..
+        /// </summary>
+        public static string lblPasswordDOldOne {
+            get {
+                return ResourceManager.GetString("lblPasswordDOldOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a password reset. 
+        ///Please use the form below to change your password now..
+        /// </summary>
+        public static string lblPasswordExpired {
+            get {
+                return ResourceManager.GetString("lblPasswordExpired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note: You&apos;re strongly recommended to change your password periodically to enhance security..
+        /// </summary>
+        public static string lblPasswordHint {
+            get {
+                return ResourceManager.GetString("lblPasswordHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must be at least 8 characters without white-space and contain at least 3 of the following:
+        ///
+        ///  • Uppercase letter [A-Z] 
+        ///  • Lowercase letter [a-z] 
+        ///  • Numeric [0-9] 
+        ///  • Special character (!,@,#,etc..)
+        ///
+        ///For example: 59D7!4$h, 493abcDE
+        ///Notes: your password is cAsE sEnSiTiVe.
+        /// </summary>
+        public static string lblPasswordRequire {
+            get {
+                return ResourceManager.GetString("lblPasswordRequire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password does not meet the minimum security requirement..
+        /// </summary>
+        public static string lblPasswordWrongRule {
+            get {
+                return ResourceManager.GetString("lblPasswordWrongRule", resourceCulture);
             }
         }
         
@@ -214,6 +358,33 @@ namespace Alpha.Main.AppResources {
         public static string LearnMore {
             get {
                 return ResourceManager.GetString("LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have entered wrong user name / password 6 times, please try again after 5 minutes..
+        /// </summary>
+        public static string loginWrong5Times {
+            get {
+                return ResourceManager.GetString("loginWrong5Times", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Password.
+        /// </summary>
+        public static string NewPassword {
+            get {
+                return ResourceManager.GetString("NewPassword", resourceCulture);
             }
         }
         
@@ -250,6 +421,55 @@ namespace Alpha.Main.AppResources {
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must be at least 8 characters without white-space and contain at least 3 of the following:.
+        /// </summary>
+        public static string PasswordHint01 {
+            get {
+                return ResourceManager.GetString("PasswordHint01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;li&gt;Uppercase letter [A-Z]&lt;/li&gt;
+        ///&lt;li&gt;Lowercase letter [a-z]&lt;/li&gt;
+        ///&lt;li&gt;Numeric [0-9]&lt;/li&gt;
+        ///&lt;li&gt;Special character (!,,#,etc..)&lt;/li&gt;.
+        /// </summary>
+        public static string PasswordHint02 {
+            get {
+                return ResourceManager.GetString("PasswordHint02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt;: 59D7!4$h, 493abcDE&lt;/p&gt;
+        ///&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: your password is cAsE sEnSiTiVe&lt;/p&gt;.
+        /// </summary>
+        public static string PasswordHint03 {
+            get {
+                return ResourceManager.GetString("PasswordHint03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password rules.
+        /// </summary>
+        public static string PasswordRules {
+            get {
+                return ResourceManager.GetString("PasswordRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hi {0}, please create your own password.
+        /// </summary>
+        public static string PasswordShower {
+            get {
+                return ResourceManager.GetString("PasswordShower", resourceCulture);
             }
         }
         
@@ -357,6 +577,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have been logged out because your account has logged into another session. Don&apos;t recognize this activity? Please contact your upline for assistance..
+        /// </summary>
+        public static string stringSessionLogged {
+            get {
+                return ResourceManager.GetString("stringSessionLogged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submit.
         /// </summary>
         public static string Submit {
@@ -398,6 +627,15 @@ namespace Alpha.Main.AppResources {
         public static string titleVerifySecurityCode {
             get {
                 return ResourceManager.GetString("titleVerifySecurityCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We are having server maintenance, website will be unavailable from {0} until {1}. Sorry for the inconveniences caused!.
+        /// </summary>
+        public static string undermaintenance {
+            get {
+                return ResourceManager.GetString("undermaintenance", resourceCulture);
             }
         }
     }

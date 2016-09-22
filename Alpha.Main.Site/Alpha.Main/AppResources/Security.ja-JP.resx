@@ -166,23 +166,8 @@ Please use the form below to set your Security Code now.&lt;br/&gt;&lt;br/&gt;</
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>Your provided Security Code does not meet the requirements.</value>
   </data>
-  <data name="LearnMore" xml:space="preserve">
-    <value>Learn more</value>
-  </data>
-  <data name="NewSecurityCode" xml:space="preserve">
-    <value>Security Code</value>
-  </data>
-  <data name="NotAuthorized" xml:space="preserve">
-    <value>You are not authorized on this function</value>
-  </data>
   <data name="oldSecCode" xml:space="preserve">
     <value>Old Security Code</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="Reset" xml:space="preserve">
-    <value>Reset</value>
   </data>
   <data name="secCodeGuide" xml:space="preserve">
     <value>Please follow 3 steps to set new Security Code:&lt;br/&gt;
@@ -194,12 +179,6 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   <data name="SecurityCode" xml:space="preserve">
     <value>Security Code</value>
   </data>
-  <data name="SecurityCodeValidation" xml:space="preserve">
-    <value>Security Code Validation</value>
-  </data>
-  <data name="Submit" xml:space="preserve">
-    <value>Submit</value>
-  </data>
   <data name="titleFirstTimeSecCode" xml:space="preserve">
     <value>Security Code</value>
   </data>
@@ -209,8 +188,29 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   <data name="titleResetSecCode" xml:space="preserve">
     <value>Reset Security Code</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>リセット</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>送信</value>
+  </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
     <value>Security Code Validation</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Learn more</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>パスワード</value>
+  </data>
+  <data name="SecurityCodeValidation" xml:space="preserve">
+    <value>Security Code Validation</value>
+  </data>
+  <data name="NotAuthorized" xml:space="preserve">
+    <value>You are not authorized on this function</value>
+  </data>
+  <data name="NewSecurityCode" xml:space="preserve">
+    <value>Security Code</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
@@ -235,5 +235,93 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
+  </data>
+  <data name="errUserName" xml:space="preserve">
+    <value>ユーザー名とパスワードを入力してください</value>
+  </data>
+  <data name="lblConfirmClosed" xml:space="preserve">
+    <value>Your account was closed so you're forced to logout. Please contact your upline for the assistance.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>入力</value>
+  </data>
+  <data name="loginWrong5Times" xml:space="preserve">
+    <value>You have entered wrong user name / password 6 times, please try again after 5 minutes.</value>
+  </data>
+  <data name="stringSessionLogged" xml:space="preserve">
+    <value>... Another session has been logged in ...\n Your session will be terminated!!! \n If that is not you, please contact your upline!!!</value>
+  </data>
+  <data name="undermaintenance" xml:space="preserve">
+    <value>We are having server maintenance, website will be unavailable from {0} until {1}. Sorry for the inconveniences caused!</value>
+  </data>
+  <data name="alertErrorConfirm" xml:space="preserve">
+    <value>パスワードが正しくありません。</value>
+  </data>
+  <data name="alertInputOldPwd" xml:space="preserve">
+    <value>古いパスワードを入力してください</value>
+  </data>
+  <data name="alertPasswordEmpty" xml:space="preserve">
+    <value>申し訳ございません 。パスワードを必ず入力してください!!!</value>
+  </data>
+  <data name="forcechangepwd" xml:space="preserve">
+    <value>You are forced to change your password at first logon</value>
+  </data>
+  <data name="lblPasswordChangedOK" xml:space="preserve">
+    <value>Your password has been changed successfully.</value>
+  </data>
+  <data name="lblPasswordDAccountName" xml:space="preserve">
+    <value>Your password must not contain your username or nickname.</value>
+  </data>
+  <data name="lblPasswordDOldOne" xml:space="preserve">
+    <value>Your new password must be totally different from your current one.</value>
+  </data>
+  <data name="lblPasswordExpired" xml:space="preserve">
+    <value>Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a password reset. 
+Please use the form below to change your password now.</value>
+  </data>
+  <data name="lblPasswordHint" xml:space="preserve">
+    <value>Note: You're strongly recommended to change your password periodically to enhance security.</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:
+
+  • Uppercase letter [A-Z] 
+  • Lowercase letter [a-z] 
+  • Numeric [0-9] 
+  • Special character (!,@,#,etc..)
+
+For example: 59D7!4$h, 493abcDE
+Notes: your password is cAsE sEnSiTiVe</value>
+  </data>
+  <data name="lblPasswordWrongRule" xml:space="preserve">
+    <value>Your password does not meet the minimum security requirement.</value>
+  </data>
+  <data name="lblConfirmPassword" xml:space="preserve">
+    <value>パスワードの確認</value>
+  </data>
+  <data name="lblOldPassword" xml:space="preserve">
+    <value>古いパスワード</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>パスワード</value>
+  </data>
+  <data name="PasswordHint01" xml:space="preserve">
+    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:</value>
+  </data>
+  <data name="PasswordHint02" xml:space="preserve">
+    <value>&lt;li&gt;Uppercase letter [A-Z]&lt;/li&gt;
+&lt;li&gt;Lowercase letter [a-z]&lt;/li&gt;
+&lt;li&gt;Numeric [0-9]&lt;/li&gt;
+&lt;li&gt;Special character (!,,#,etc..)&lt;/li&gt;</value>
+  </data>
+  <data name="PasswordHint03" xml:space="preserve">
+    <value>&lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt;: 59D7!4$h, 493abcDE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: your password is cAsE sEnSiTiVe&lt;/p&gt;</value>
+  </data>
+  <data name="PasswordRules" xml:space="preserve">
+    <value>Password rules</value>
+  </data>
+  <data name="PasswordShower" xml:space="preserve">
+    <value>hi {0}, please create your own password</value>
   </data>
 </root>
