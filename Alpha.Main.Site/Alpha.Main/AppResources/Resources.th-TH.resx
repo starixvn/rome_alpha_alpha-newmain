@@ -412,4 +412,22 @@
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>คู่มือรวบรัด</value>
   </data>
+  <data name="errUserName" xml:space="preserve">
+    <value>โปรดใส่ชื่อผู้ใช้และรหัสผ่าน</value>
+  </data>
+  <data name="lblConfirmClosed" xml:space="preserve">
+    <value>บัญชีของคุณได้ถูกปิดการใช้งานดังนั้นคุณถูกบังคับให้ออกจากระบบ กรุณาติดต่ออัพไลน์เพื่อขอความช่วยเหลือ</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>เข้าระบบ</value>
+  </data>
+  <data name="loginWrong5Times" xml:space="preserve">
+    <value>คุณป้อนยูเซอร์เนม/รหัสผ่าน ผิด 6ครั้ง กรุณาลองใหม่อีกครั้งใน 5นาที</value>
+  </data>
+  <data name="stringSessionLogged" xml:space="preserve">
+    <value>มีการเข้าระบบในบัญชีของท่านจากอีกที่หนึ่ง ระบบของท่านไม่สามารถใช้ได้  ถ้าท่านไม่ได้เข้าระบบ กรุณาติดต่อผู้ที่แนะนำท่าน</value>
+  </data>
+  <data name="undermaintenance" xml:space="preserve">
+    <value>ขณะนี้ทางเรามีการบำรุงรักษาเซิร์ฟเวอร์ เว็บไซต์จะไม่สามารถเข้าใช้งานได้ตั้งต่เวลา  {0} until {1}. ขออภัยในความไม่สะดวก</value>
+  </data>
 </root>

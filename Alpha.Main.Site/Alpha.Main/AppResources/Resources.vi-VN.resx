@@ -411,4 +411,22 @@
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>Giới thiệu giao diện mới</value>
   </data>
+  <data name="errUserName" xml:space="preserve">
+    <value>Vui lòng điền Tên đăng nhập và Mật khẩu</value>
+  </data>
+  <data name="lblConfirmClosed" xml:space="preserve">
+    <value>Tài khoản của bạn đã bị khóa, bạn buộc phải đăng xuất .Vui lòng liên hệ với cấp trên của bạn để được hỗ trợ</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="loginWrong5Times" xml:space="preserve">
+    <value>Bạn đã 6 lần điền sai Tên đăng nhập / Mật khẩu, Vui lòng thử lại sau 5 phút</value>
+  </data>
+  <data name="stringSessionLogged" xml:space="preserve">
+    <value>Phiên đăng nhập này bị đóng vì tài khoản của bạn đã đăng nhập ở phiên khác. Nếu không phải bạn, vui lòng liên hệ cấp trên của bạn để được hỗ trợ.</value>
+  </data>
+  <data name="undermaintenance" xml:space="preserve">
+    <value>Server đang được bảo trì,Webside sẽ không thể truy cập từ {0} cho đến {1} . Xin lỗi vì sự bất tiện này!</value>
+  </data>
 </root>

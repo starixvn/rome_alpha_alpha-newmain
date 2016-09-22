@@ -334,4 +334,22 @@
   <data name="Skip" xml:space="preserve">
     <value>다음</value>
   </data>
+  <data name="errUserName" xml:space="preserve">
+    <value>사용자명과 비밀번호를 입력해주세요</value>
+  </data>
+  <data name="lblConfirmClosed" xml:space="preserve">
+    <value>이 계좌는 비활성화된 계좌로서 로그인을 하실수 없습니다.아이디를 발급받으신 에이젼트에 문의해 주시기 바랍니다.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="loginWrong5Times" xml:space="preserve">
+    <value>잘못된 회원정보이거나 비밀번호 6회오류입니다.5분후에 다시시도하십시오</value>
+  </data>
+  <data name="stringSessionLogged" xml:space="preserve">
+    <value>다른 곳에서 접속 하였습니다. … /접속을 종료합니다…/허가되지 않은 접속이 시도 되었다면 상위단계에 바로 연락해 주시기 바랍니다</value>
+  </data>
+  <data name="undermaintenance" xml:space="preserve">
+    <value>{0}~{1}시까지 서버 점검시간입니다. 불편을 끼쳐드려 죄송합니다.</value>
+  </data>
 </root>

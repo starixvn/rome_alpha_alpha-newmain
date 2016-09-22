@@ -427,4 +427,22 @@ can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;</value
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>Quick tour</value>
   </data>
+  <data name="errUserName" xml:space="preserve">
+    <value>Please input username and password</value>
+  </data>
+  <data name="lblConfirmClosed" xml:space="preserve">
+    <value>Your account was closed so you're forced to logout. Please contact your upline for the assistance.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="loginWrong5Times" xml:space="preserve">
+    <value>You have entered wrong user name / password 6 times, please try again after 5 minutes.</value>
+  </data>
+  <data name="stringSessionLogged" xml:space="preserve">
+    <value>You have been logged out because your account has logged into another session. Don't recognize this activity? Please contact your upline for assistance.</value>
+  </data>
+  <data name="undermaintenance" xml:space="preserve">
+    <value>We are having server maintenance, website will be unavailable from {0} until {1}. Sorry for the inconveniences caused!</value>
+  </data>
 </root>

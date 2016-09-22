@@ -268,6 +268,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please input username and password.
+        /// </summary>
+        public static string errUserName {
+            get {
+                return ResourceManager.GetString("errUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Given Credit.
         /// </summary>
         public static string givenCredit {
@@ -323,6 +332,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account was closed so you&apos;re forced to logout. Please contact your upline for the assistance..
+        /// </summary>
+        public static string lblConfirmClosed {
+            get {
+                return ResourceManager.GetString("lblConfirmClosed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to less.
         /// </summary>
         public static string Less {
@@ -332,11 +350,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login option.
         /// </summary>
         public static string LoginOption {
             get {
                 return ResourceManager.GetString("LoginOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have entered wrong user name / password 6 times, please try again after 5 minutes..
+        /// </summary>
+        public static string loginWrong5Times {
+            get {
+                return ResourceManager.GetString("loginWrong5Times", resourceCulture);
             }
         }
         
@@ -659,6 +695,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have been logged out because your account has logged into another session. Don&apos;t recognize this activity? Please contact your upline for assistance..
+        /// </summary>
+        public static string stringSessionLogged {
+            get {
+                return ResourceManager.GetString("stringSessionLogged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, You don&apos;t have permission to access this page..
         /// </summary>
         public static string strNotAccessPage {
@@ -871,6 +916,15 @@ namespace Alpha.Main.AppResources {
         public static string turnover {
             get {
                 return ResourceManager.GetString("turnover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We are having server maintenance, website will be unavailable from {0} until {1}. Sorry for the inconveniences caused!.
+        /// </summary>
+        public static string undermaintenance {
+            get {
+                return ResourceManager.GetString("undermaintenance", resourceCulture);
             }
         }
         

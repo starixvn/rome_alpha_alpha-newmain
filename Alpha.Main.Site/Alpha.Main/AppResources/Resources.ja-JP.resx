@@ -334,4 +334,22 @@ can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;</value
   <data name="Next" xml:space="preserve">
     <value>次へ</value>
   </data>
+  <data name="errUserName" xml:space="preserve">
+    <value>ユーザー名とパスワードを入力してください</value>
+  </data>
+  <data name="lblConfirmClosed" xml:space="preserve">
+    <value>Your account was closed so you're forced to logout. Please contact your upline for the assistance.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>入力</value>
+  </data>
+  <data name="loginWrong5Times" xml:space="preserve">
+    <value>You have entered wrong user name / password 6 times, please try again after 5 minutes.</value>
+  </data>
+  <data name="stringSessionLogged" xml:space="preserve">
+    <value>... Another session has been logged in ...\n Your session will be terminated!!! \n If that is not you, please contact your upline!!!</value>
+  </data>
+  <data name="undermaintenance" xml:space="preserve">
+    <value>We are having server maintenance, website will be unavailable from {0} until {1}. Sorry for the inconveniences caused!</value>
+  </data>
 </root>

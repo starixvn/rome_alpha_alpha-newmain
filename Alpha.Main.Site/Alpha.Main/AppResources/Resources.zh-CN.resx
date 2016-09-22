@@ -410,4 +410,22 @@
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>快速游览手册教学</value>
   </data>
+  <data name="errUserName" xml:space="preserve">
+    <value>请输入账号及密码</value>
+  </data>
+  <data name="lblConfirmClosed" xml:space="preserve">
+    <value>您的帐户被关闭，你必须退出。请联系您上线的援助。</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="loginWrong5Times" xml:space="preserve">
+    <value>您已输入6次错误的用户名/密码, 请与5分钟后再尝试。</value>
+  </data>
+  <data name="stringSessionLogged" xml:space="preserve">
+    <value>另一个相同账号已登入界面,强制被登出.如果此登入不是由您所进行,请联络您的上线</value>
+  </data>
+  <data name="undermaintenance" xml:space="preserve">
+    <value>我们正在服务器维护，网站将被从（0）至（1）无法使用。不便之处，敬请原谅！</value>
+  </data>
 </root>
