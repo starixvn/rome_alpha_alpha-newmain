@@ -133,6 +133,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Balance.
+        /// </summary>
+        public static string balance {
+            get {
+                return ResourceManager.GetString("balance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Balance Info.
         /// </summary>
         public static string balanceInfo {
@@ -237,6 +246,15 @@ namespace Alpha.Main.AppResources {
         public static string createdDate {
             get {
                 return ResourceManager.GetString("createdDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credit.
+        /// </summary>
+        public static string credit {
+            get {
+                return ResourceManager.GetString("credit", resourceCulture);
             }
         }
         
@@ -961,6 +979,15 @@ namespace Alpha.Main.AppResources {
         public static string WarningText {
             get {
                 return ResourceManager.GetString("WarningText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Loss.
+        /// </summary>
+        public static string winloss {
+            get {
+                return ResourceManager.GetString("winloss", resourceCulture);
             }
         }
         

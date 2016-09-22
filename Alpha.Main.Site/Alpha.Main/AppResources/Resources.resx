@@ -439,4 +439,13 @@
   <data name="lblresetpassword" xml:space="preserve">
     <value>Reset Password</value>
   </data>
+  <data name="balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="winloss" xml:space="preserve">
+    <value>Win Loss</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>Credit</value>
+  </data>
 </root>

@@ -23,90 +23,8 @@
         </li>
     </ul>
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active balance-info" id="balance">
-            <div class="container">
-                <div class="panel-title"><span class="icon-balanceinfo"></span>balance info</div>
-                <div class="row">
-                    <div class="col-xs-7 lable">super</div>
-                    <div class="col-xs-5 value"><strong>supertest1</strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 lable">currency</div>
-                    <div class="col-xs-5 value"><strong>uus</strong></div>
-                </div>
-                <div class="group-title">balance</div>
-                <div class="row">
-                    <div class="col-xs-7 lable">cash</div>
-                    <div class="col-xs-5 value"><strong>32,946,656.93</strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 lable">Yesterday cash</div>
-                    <div class="col-xs-5 value"><strong>32,946,656.93</strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 lable">total</div>
-                    <div class="col-xs-5 value text-red"><strong>-3.874.67</strong></div>
-                </div>
-                <div class="group-title">winloss</div>
-                <div class="row">
-                    <div class="col-xs-7 lable">yesterday total</div>
-                    <div class="col-xs-5 value"><strong>32,946,656.93</strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 lable">today (09/08/2016)</div>
-                    <div class="col-xs-5 value"><strong>0.00</strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 lable">yesterday (09/08/2016)</div>
-                    <div class="col-xs-5 value"><strong>30,000.20</strong></div>
-                </div>
-                <div class="group-title">credit</div>
-                <div class="row">
-                    <div class="col-xs-7 lable">super given</div>
-                    <div class="col-xs-5 value"><strong>20,000,000,003.00</strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 lable">todatl master</div>
-                    <div class="col-xs-5 value"><strong>1,312,724,106.00</strong></div>
-                </div>
-            </div>
-        </div>
-        <div role="tabpanel" class="tab-pane statistic" id="stats">
-            <div class="container">
-                <div class="panel-title"><span class="icon-statistics"></span>your statistics</div>
-                <div class="group-title">outstanding</div>
-                <div class="row">
-                    <div class="col-xs-7 lable">super</div>
-                    <div class="col-xs-5 value"><strong>1,732.35</strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 lable">total</div>
-                    <div class="col-xs-5 value"><strong>13,041.00</strong></div>
-                </div>
-                <div class="group-title">member info</div>
-                <div class="row">
-                    <div class="col-xs-7 lable">master</div>
-                    <div class="col-xs-5 value"><strong data-toggle="tooltip" data-placement="top" title="Active:540|Closed:31|Suspended:12"><span class="active">540</span>|<span class="closed">31</span>|<span class="suspended">12</span></strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 lable">agent</div>
-                    <div class="col-xs-5 value"><strong data-toggle="tooltip" data-placement="top" title="Active:193|Closed:12|Suspended:12"><span class="active">193</span>|<span class="closed">105</span>|<span class="suspended">12</span></strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7 lable">member</div>
-                    <div class="col-xs-5 value"><strong data-toggle="tooltip" data-placement="top" title="Active:195|Closed:1118|Suspended:5"><span class="active">195</span>|<span class="closed">1118</span>|<span class="suspended">5</span></strong></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 lable">top 10 winning members of the month <span class="icon icon-plus"></span></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 lable">highest turnover members of the month <span class="icon icon-plus"></span></div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 lable">new members of the month: 2 <span class="icon icon-plus"></span></div>
-                </div>
-            </div>
-        </div>
+        <div role="tabpanel" class="tab-pane active balance-info" id="balance" action-url="@Url.Action("BalanceInfo")"></div>
+        <div role="tabpanel" class="tab-pane statistic" id="stats" action-url="@Url.Action("Statistics")"></div>
         <div role="tabpanel" class="tab-pane notice" id="notice">
             <div class="panel-title"><span class="icon-announcements"></span>Announcement</div>
             <div class="group-date">11/14/2015</div>
@@ -143,6 +61,7 @@
         </div>
     </div>
     @StaticResources.AssetScripts.Render("/bundles/site-main/home/home-default")
+    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/home-index"))" type="text/javascript"></script>
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
