@@ -760,17 +760,17 @@ function reloadPopUpSetting(timeOut) {
             //// Use load.oldmain here to do not override onload funtion on new main, please do not change the event name
             window.top.$('#main')
                 .on('load.oldmain', function () {
-                top.main.$("arrayCustID").value = arrayCustId;
-                top.main.$("arrayUserName").value = arrayUserName;
-                doReloadPopup();
+                    top.main.$("arrayCustID").value = arrayCustId;
+                    top.main.$("arrayUserName").value = arrayUserName;
+                    doReloadPopup();
 
-                window.top.$('#main').off('load.oldmain');
+                    window.top.$('#main').off('load.oldmain');
                 });
         } else {
             window.top.$('#main')
                .on('load.oldmain', function () {
-                doReloadPopup();
-                window.top.$('#main').off('load.oldmain');
+                   doReloadPopup();
+                   window.top.$('#main').off('load.oldmain');
                });
         }
         window.top.main.location.reload(true);
@@ -843,5 +843,56 @@ function clearPopupSubtitle(hasSubTitle) {
                 subTitles[0].style.display = 'none';
             }
         }
+    }
+}
+
+function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut) {
+    var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
+    var iframes = popUp.find('#popup-iframe');
+    var iframeSrc = iframes && iframes.length && iframes.attr('src');
+
+    function storeAndRestoreFrameData() {
+        var mainFrame = top.main;
+        var $main = top.$('#main');
+        var scrollY = mainFrame.scrollY;
+
+        var isCustomerList = mainFrame.$("arrayCustID") && mainFrame.$("arrayCustID").value.length &&
+         mainFrame.$("arrayUserName") && mainFrame.$("arrayUserName").value.length;
+        if (isCustomerList) {
+            var arrayCustId = mainFrame.$("arrayCustID").value;
+            var arrayUserName = mainFrame.$("arrayUserName").value;
+            $main.on('load.oldmain', function () {
+                mainFrame.$("arrayCustID").value = arrayCustId;
+                mainFrame.$("arrayUserName").value = arrayUserName;
+
+                $main[0].contentWindow.scrollTo(0, scrollY);
+                $main.off('load.oldmain');
+            });
+        } else {
+            $main.on('load.oldmain', function () {
+                $main[0].contentWindow.scrollTo(0, scrollY);
+                $main.off('load.oldmain');
+            });
+        }
+    }
+
+    function doActionAfterTimeOut() {
+        if (hasPopupOpen()) {
+            top.ageWnd.close();
+        }
+
+        storeAndRestoreFrameData();
+
+        top.main.location.reload(true);
+
+        window.top.clearPopupSubtitle(true);
+    }
+
+    if (timeOut) {
+        setTimeout(function () {
+            doActionAfterTimeOut();
+        }, timeOut);
+    } else {
+        doActionAfterTimeOut();
     }
 }
