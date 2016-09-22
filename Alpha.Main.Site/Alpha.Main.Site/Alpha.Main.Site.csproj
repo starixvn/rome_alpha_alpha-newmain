@@ -53,8 +53,8 @@
       <HintPath>..\packages\Alpha.Auth.3.0.0.7\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.SecurityCode">
-      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode07\lib\net40\Alpha.SecurityCode.dll</HintPath>
+    <Reference Include="Alpha.SecurityCode, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode09\lib\net40\Alpha.SecurityCode.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
@@ -78,7 +78,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Age.UI, Version=3.0.2.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Age.UI.3.0.2.3-SecurityCode5\lib\net40\Fanex.Age.UI.dll</HintPath>
+      <HintPath>..\packages\Fanex.Age.UI.3.0.2.3-SecurityCode6\lib\net40\Fanex.Age.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Age.Utility, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -260,8 +260,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Libraries.AOP, Version=1.0.4218.28561, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Sunplus.Libraries.AOP.1.0.4218.28561\lib\net40\Sunplus.Libraries.AOP.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Libraries.APILogger, Version=1.0.4218.28561, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Libraries.APILogger.1.0.4218.28561\lib\net40\Sunplus.Libraries.APILogger.dll</HintPath>
@@ -485,9 +485,8 @@
       <DependentUpon>change-user-own-securitycode.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\security-code\reset-securitycode.js" />
-    <Content Include="Assets\bundles\security-code\security-code.css" />
-    <Content Include="Assets\bundles\security-code\security-code.min.css">
-      <DependentUpon>security-code.css</DependentUpon>
+    <Content Include="Assets\bundles\security-code\reset-securitycode.min.js">
+      <DependentUpon>reset-securitycode.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\security-code\verify-securitycode.js" />
     <Content Include="Assets\bundles\security-code\verify-securitycode.min.js">
@@ -501,14 +500,18 @@
     <Content Include="Assets\scripts\security-code\change-securitydode-firstlogin.js" />
     <Content Include="Assets\scripts\security-code\change-user-own-securitycode.js" />
     <Content Include="Assets\scripts\security-code\reset-securitycode.js" />
+    <Content Include="Assets\scripts\security-code\securitycode-helper.js" />
     <Content Include="Assets\scripts\security-code\verify-securitycode.js" />
-    <Content Include="Assets\styles\security\security.css">
-      <DependentUpon>security.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\security\security.min.css">
-      <DependentUpon>security.css</DependentUpon>
-    </Content>
-    <Content Include="bundles\site-main\security-code\before-home-page.js" />
+    <Content Include="Assets\styles\security\images\1.jpg" />
+    <Content Include="Assets\styles\security\images\2.jpg" />
+    <Content Include="Assets\styles\security\images\3.jpg" />
+    <Content Include="Assets\styles\security\images\4.jpg" />
+    <Content Include="Assets\styles\security\images\5.jpg" />
+    <Content Include="Assets\styles\security\images\6.jpg" />
+    <Content Include="Assets\styles\security\images\7.jpg" />
+    <Content Include="Assets\styles\security\images\8.jpg" />
+    <Content Include="Assets\styles\security\security.css" />
+    <Content Include="Assets\styles\security\security.min.css" />
     <Content Include="Web.Configuration\SecurityCode.local.config">
       <SubType>Designer</SubType>
       <DependentUpon>SecurityCode.config</DependentUpon>
@@ -529,11 +532,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>SecurityCode.config</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Password\ChangePassword.cshtml" />
-    <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
-    <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
-    <Content Include="Views\Password\ForceChangePassword.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.js">
@@ -549,7 +547,6 @@
     </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />
-    <Content Include="Assets\scripts\security-code\securitycode-helper.js" />
     <Content Include="Assets\styles\announcement\announcements.css">
       <DependentUpon>announcements.scss</DependentUpon>
     </Content>
@@ -622,16 +619,9 @@
     <Content Include="Assets\styles\introduction\intro.min.css">
       <DependentUpon>intro.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\security\images\1.jpg" />
-    <Content Include="Assets\styles\security\images\2.jpg" />
-    <Content Include="Assets\styles\security\images\3.jpg" />
-    <Content Include="Assets\styles\security\images\4.jpg" />
-    <Content Include="Assets\styles\security\images\5.jpg" />
-    <Content Include="Assets\styles\security\images\6.jpg" />
-    <Content Include="Assets\styles\security\images\7.jpg" />
-    <Content Include="Assets\styles\security\images\8.jpg" />
-    <Content Include="Web.local.config">
+    <Content Include="Web.Configuration\SecurityCode.uati1.config">
       <SubType>Designer</SubType>
+      <DependentUpon>SecurityCode.config</DependentUpon>
     </Content>
     <Content Include="Web.local.config" />
     <Content Include="Web.napexternal.config">
@@ -642,6 +632,7 @@
     </Content>
     <Content Include="Web.proi1.config">
       <DependentUpon>Web.local.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.uati1.config">
       <DependentUpon>Web.local.config</DependentUpon>
@@ -730,7 +721,6 @@
     <Content Include="Assets\styles\home\tooltip.scss" />
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\introduction\intro.scss" />
-    <Content Include="bin\Alpha.SecurityCode.dll.config" />
     <Content Include="Assets\styles\security\security.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -749,11 +739,20 @@
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
     <Content Include="Views\Default\Introduction.cshtml" />
     <Content Include="Views\Default\Piwik.cshtml" />
-    <Content Include="Views\SecurityCode\ChangeUserOwnSecurityCode.cshtml" />
+    <Content Include="Views\Password\ChangePassword.cshtml" />
+    <Content Include="Views\Password\ForceChangePassword.cshtml" />
+    <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
+    <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeByForcing.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeFirstLogin.cshtml" />
+    <Content Include="Views\SecurityCode\ChangeUserOwnSecurityCode.cshtml" />
     <Content Include="Views\SecurityCode\ResetSecurityCode.cshtml" />
     <Content Include="Views\SecurityCode\Shared\_Layout.cshtml" />
+    <Content Include="Views\SecurityCode\VerifySecurityCode.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Web.AppSettings.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Web.AppSettings.local.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -794,11 +793,11 @@
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
+    <Compile Include="Handlers\MenuBarHandler.cs" />
+    <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\PasswordHandler.cs" />
     <Compile Include="Handlers\SecurityCode\SecurityCodeBaseHandler.cs" />
     <Compile Include="Handlers\SecurityCode\SecurityCodeHandler.cs" />
-    <Compile Include="Handlers\MenuBarHandler.cs" />
-    <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\BrowserHelper.cs" />
     <Compile Include="Helpers\StaticResources.cs" />
@@ -813,13 +812,13 @@
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
     <Compile Include="Requests\Password\ResetMainAccountPasswordCommand.cs" />
     <Compile Include="Requests\Password\ResetSubAccountPasswordCommand.cs" />
+    <Compile Include="Requests\SecurityCode\BaseSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs" />
-    <Compile Include="Requests\SecurityCode\BaseSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\LoginSecurityCodeQuery.cs" />
-    <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\Home\BrowserViewModel.cs" />
