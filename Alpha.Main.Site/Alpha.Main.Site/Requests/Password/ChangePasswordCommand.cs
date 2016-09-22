@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Alpha.Main.Site.Requests.Password
+﻿namespace Alpha.Main.Site.Requests.Password
 {
-    public class ChangePasswordCommand
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using Main.Models;
+    using MediatR;
+
+    public class ChangePasswordCommand : IRequest<Result>
     {
     }
 }
