@@ -78,7 +78,7 @@
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
         private static void RegisterServices(Container container)
         {
-            container.Register<IUserSession, UserSessionExt>(Lifestyle.Transient);
+            container.Register<IUserSession, UserSessionExt>(Lifestyle.Scoped);
 
             container.Register(
                 () =>

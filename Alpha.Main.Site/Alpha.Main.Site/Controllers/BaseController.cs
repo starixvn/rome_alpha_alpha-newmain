@@ -13,7 +13,6 @@
     using Main.Helpers;
     using Sunplus.Agent.Model.Entities;
 
-    [SessionState(SessionStateBehavior.ReadOnly)]
     public class BaseController : Controller
     {
         private CultureInfo defaultCulture = CultureInfo.CreateSpecificCulture(Language.Default);

@@ -1,9 +1,11 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
+    using System.Web.SessionState;
     using MediatR;
     using Models.Requests.Announcement;
 
+    [SessionState(SessionStateBehavior.ReadOnly)]
     public class AnnouncementController : BaseController
     {
         private IMediator mediator;
