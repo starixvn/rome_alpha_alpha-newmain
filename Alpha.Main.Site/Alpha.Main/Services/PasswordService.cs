@@ -12,10 +12,10 @@
     {
         Result ResetMainAccountPassword(ResetMainAccountPasswordParam param);
 
-        Result ChangeMainAccountPassword(UpdateMainAccountPasswordParam param);
+        Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param);
 
         Result ResetSubAccountPassword(ResetSubAccountPasswordParam param);
 
-        Result ChangeSubAccountPassword(UpdateSubAccountPasswordParam param);
+        Result ChangeSubAccountPassword(ChangeSubAccountPasswordParam param);
     }
 }

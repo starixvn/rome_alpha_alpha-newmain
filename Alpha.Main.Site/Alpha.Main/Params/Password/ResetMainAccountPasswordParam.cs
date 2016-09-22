@@ -15,5 +15,13 @@
         public string LanguageKey { get; set; }
 
         public string Ip { get; set; }
+
+        public bool IsCasinoSync { get; set; }
+
+        public string ActorName { get; set; }
+
+        public bool IsResetMemberPassword { get; set; }
+
+        public string HashKey { get; set; }
     }
 }

@@ -519,6 +519,11 @@
       <SubType>Designer</SubType>
       <DependentUpon>SecurityCode.config</DependentUpon>
     </Content>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Password\ChangePassword.cshtml" />
+    <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
+    <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
+    <Content Include="Views\Password\ForceChangePassword.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.js">
@@ -778,6 +783,7 @@
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="Filter\AntiXSRFFilter.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -799,6 +805,9 @@
     <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
+    <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
+    <Compile Include="Requests\Password\ResetMainAccountPasswordCommand.cs" />
+    <Compile Include="Requests\Password\ResetSubAccountPasswordCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs" />

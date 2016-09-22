@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Alpha.Main.Params.Password
 {
-    public class UpdateMainAccountPasswordParam
+    public class ChangeMainAccountPasswordParam
     {
         public int CustId { get; set; }
 
@@ -27,5 +27,7 @@ namespace Alpha.Main.Params.Password
         public string ActorName { get; set; }
 
         public string NickName { get; set; }
+
+        public string HashKey { get; set; }
     }
 }

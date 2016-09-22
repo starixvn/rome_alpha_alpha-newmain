@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Params.Password
 {
-    public class UpdateSubAccountPasswordParam
+    public class ChangeSubAccountPasswordParam
     {
         public int CustId { get; set; }
 
@@ -19,5 +19,7 @@
         public string Nickname { get; set; }
 
         public string Ip { get; set; }
+
+        public string HashKey { get; set; }
     }
 }

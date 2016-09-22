@@ -15,5 +15,13 @@
                 return Code == 0;
             }
         }
+
+        public virtual bool IsOK
+        {
+            get
+            {
+                return Code == 0;
+            }
+        }
     }
 }

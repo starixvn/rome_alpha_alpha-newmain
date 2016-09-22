@@ -8,6 +8,8 @@
 
         public int ActorId { get; set; }
 
+        public string ActorName { get; set; }
+
         public bool IsDisableCasino { get; set; }
 
         public string NewPassword { get; set; }
@@ -15,5 +17,7 @@
         public string LanguageKey { get; set; }
 
         public string Ip { get; set; }
+
+        public string HashKey { get; set; }
     }
 }
