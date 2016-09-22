@@ -1,0 +1,15 @@
+﻿@model IndexViewModel
+@Html.Hidden("piwik-isenable", Model.IsPiwikEnable)
+@Html.Hidden("piwik-url", Model.PiwikUrl)
+@Html.Hidden("piwik-siteid", Model.PiwikSiteId)
+
+@if (Model.IsPiwikEnable)
+{
+    <script type="text/javascript" async="true" defer="true" src="@Model.PiwikScript"></script>
+    <noscript>
+        <p>
+            <img src="@Model.PiwikUrl?idsite=@Model.PiwikSiteId" alt="" class="piwik-noscript" />
+        </p>
+    </noscript>
+}
+

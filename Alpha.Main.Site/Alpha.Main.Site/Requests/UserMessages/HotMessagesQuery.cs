@@ -6,16 +6,24 @@
 
     public class HotMessagesQuery : IRequest<IEnumerable<string>>
     {
+        private string hotMessageFilePath;
+
         public HotMessagesQuery() : this(null)
         {
         }
 
         internal HotMessagesQuery(string hotMessageFilePath)
         {
-            HotMessageFilePath = hotMessageFilePath ?? HttpContext.Current.Server.MapPath("~/App_Data/UserMessage/ToolTipMessage.xml");
+            this.hotMessageFilePath = hotMessageFilePath;
         }
 
-        public string HotMessageFilePath { get; set; }
+        public string HotMessageFilePath
+        {
+            get
+            {
+                return hotMessageFilePath ?? HttpContext.Current.Server.MapPath("~/App_Data/UserMessage/ToolTipMessage.xml");
+            }
+        }
 
         public string Language { get; set; }
 

@@ -6,6 +6,7 @@ declare var EnjoyHint: any;
 var introduction = {
     enjoyHint: null,
     readIntroductionCookieName: 'Instruction',
+    isCookieLess: (<HTMLInputElement>document.getElementById('IsCookieLess')).value === "1",
 
     domElements: {
         beginModal: null,
@@ -50,13 +51,15 @@ var introduction = {
         introduction.cacheDOMElements();
         introduction.registerEvents();
 
-        var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
-        //// Hard code always show
-        if (!isReadIntroduction) {
-            introduction.domElements.beginModal.modal('show');
-            $('.modal-backdrop').css('z-index', 1051);
+        if (!introduction.isCookieLess) {
+            var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
+            //// Hard code always show
+            if (!isReadIntroduction) {
+                introduction.domElements.beginModal.modal('show');
+                $('.modal-backdrop').css('z-index', 1051);
 
-            introduction.showDelayFirstIntroduction();
+                introduction.showDelayFirstIntroduction();
+            }
         }
     },
 

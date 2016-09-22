@@ -1,15 +1,16 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.Announcement
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Web;
     using Fanex.Razorbill.Security.Configurations;
     using Main.Models.Announcements;
     using Main.Models.Enumerations;
     using MediatR;
     using Params.Announcements;
+    using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
-    using System;
-    using System.Collections.Generic;
-    using System.Web;
 
     public class HotAnnouncementQuery : IRequest<HotAnnouncement>
     {
@@ -36,20 +37,10 @@
             string commonAnnouncementFilePath,
             bool? isSecurityCodeActive = null)
         {
-            this.productsStatus = productsStatus ?? new Dictionary<int, bool>
-                {
-                    { NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
-                    { OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
-                    { OfferedSuperLive, UserPermission.IsShowSuperLive },
-                    { OfferedColossusBets,  UserPermission.IsShowColossusBets }
-                };
-
-            this.userSession = userSession ?? UserSession.Current;
-
-            var userLevelName = Enumeration.FromValue<UserLevel>(this.userSession.RoleId);
-            this.commonAnnouncementFilePath = commonAnnouncementFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAdCommon.xml");
-            this.privateMessageFilePath = privateMessageFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAd{userLevelName}Neutral.xml");
-
+            this.productsStatus = productsStatus;
+            this.userSession = userSession ?? new UserSessionExt();
+            this.commonAnnouncementFilePath = commonAnnouncementFilePath;
+            this.privateMessageFilePath = privateMessageFilePath;
             this.isSecurityCodeActive = isSecurityCodeActive.HasValue ? isSecurityCodeActive.Value : SecurityCodeConfig.IsActive;
         }
 
@@ -59,7 +50,7 @@
         {
             get
             {
-                return privateMessageFilePath;
+                return privateMessageFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAd{Enumeration.FromValue<UserLevel>(this.userSession.RoleId)}Neutral.xml");
             }
         }
 
@@ -67,7 +58,7 @@
         {
             get
             {
-                return commonAnnouncementFilePath;
+                return commonAnnouncementFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAdCommon.xml");
             }
         }
 
@@ -91,7 +82,13 @@
         {
             get
             {
-                return productsStatus;
+                return productsStatus ?? new Dictionary<int, bool>
+                {
+                    { NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
+                    { OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
+                    { OfferedSuperLive, UserPermission.IsShowSuperLive },
+                    { OfferedColossusBets,  UserPermission.IsShowColossusBets }
+                };
             }
         }
 

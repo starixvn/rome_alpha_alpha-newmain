@@ -46,3 +46,4 @@
 @Html.Hidden("GotIt", Resources.GotIt)
 @Html.Hidden("ReplayInstruction", Resources.ReplayInstruction)
 @Html.Hidden("TakeTourInstruction", Resources.TakeTourInstruction)
+@Html.Hidden("IsCookieLess", HttpContext.Current.Session.IsCookieless ? "1" : "0")

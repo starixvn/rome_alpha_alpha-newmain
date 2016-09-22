@@ -11,6 +11,7 @@
     using Helpers;
     using Models.Menus;
     using Sunplus.Agent.Model.BL.Definitions;
+    using Sunplus.Agent.Utilities;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
@@ -157,11 +158,18 @@
                 !Current.IsInternal &&
                 !ignoreUrls.Where(str => currentURLCookie.Value.Contains(str)).Any())
             {
-                Uri currentUrl = new Uri(HttpUtility.UrlDecode(currentURLCookie.Value));
-
-                if (HttpContext.Current.Request.Url.Host == currentUrl.Host)
+                try
                 {
-                    return currentUrl.ToString();
+                    Uri currentUrl = new Uri(HttpUtility.UrlDecode(currentURLCookie.Value));
+
+                    if (HttpContext.Current.Request.Url.Host == currentUrl.Host)
+                    {
+                        return currentUrl.ToString();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Logs.WriteInfo($"{ex.ToString()}\r\n\r\n{currentURLCookie.Value}");
                 }
             }
 

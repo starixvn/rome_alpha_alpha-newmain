@@ -226,8 +226,8 @@
       <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.0.1\lib\net40\Sunplus.Agent.Model.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.1.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.1.3\lib\net40\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.1.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.1.8-UserSessionExt-02\lib\net40\Sunplus.Agent.Model.Base.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -238,8 +238,8 @@
       <HintPath>..\packages\Sunplus.Agent.Model.DataAccessLibrary.3.0.0.1\lib\net40\Sunplus.Agent.Model.DataAccessLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Definitions, Version=3.0.1.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Definitions.3.0.1.3\lib\net40\Sunplus.Agent.Model.Definitions.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Definitions, Version=3.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Definitions.3.0.1.5\lib\net40\Sunplus.Agent.Model.Definitions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.IpFormatter, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -468,6 +468,9 @@
     <Content Include="App_Themes\Apo\Security\securityCode.css" />
     <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
     <Content Include="Assets\bundles\default-index.css" />
+    <Content Include="Assets\bundles\default-index.min.css">
+      <DependentUpon>default-index.css</DependentUpon>
+    </Content>
     <Content Include="Web.Configuration\SecurityCode.local.config">
       <SubType>Designer</SubType>
       <DependentUpon>SecurityCode.config</DependentUpon>
@@ -490,9 +493,6 @@
     </Content>
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.js" />
-    <Content Include="Assets\bundles\default-index.min.css">
-      <DependentUpon>default-index.css</DependentUpon>
-    </Content>
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
@@ -600,7 +600,7 @@
     <TypeScriptCompile Include="Assets\scripts\home\header-msg.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-nav.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\menu-bar.ts" />
-    <TypeScriptCompile Include="Assets\scripts\home\indexManager.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\index-manager.ts" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_bg.png" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_left.png" />
     <Content Include="Assets\styles\customer-profiles\images\profileTooltip_right.png" />
@@ -657,7 +657,6 @@
     </Content>
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\core.ts" />
-    <Content Include="Assets\scripts\piwik-loader.js" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="App_Themes\Apo\Security\howtouse.scss" />
     <Content Include="App_Themes\Apo\Security\securityCode.scss" />
@@ -695,6 +694,7 @@
     <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
     <Content Include="Views\Default\Introduction.cshtml" />
+    <Content Include="Views\Default\Piwik.cshtml" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>

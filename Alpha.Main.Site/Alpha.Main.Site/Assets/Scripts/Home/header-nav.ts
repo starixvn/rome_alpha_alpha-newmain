@@ -1,5 +1,5 @@
 ﻿/// <reference path="../core.ts" />
-/// <reference path="indexManager.ts" />
+/// <reference path="index-manager.ts" />
 
 
 'use strict';

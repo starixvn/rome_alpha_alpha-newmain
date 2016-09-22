@@ -12,14 +12,27 @@
         private readonly IUserSession userSession;
         private readonly ISecurityCodeSession securityCodeSession;
 
+        private readonly bool isPiwikEnable;
+        private readonly string piwikUrl;
+        private readonly string piwikScript;
+        private readonly string piwikSiteId;
+
         public IndexQuery(
             IUserSession userSession,
             ISecurityCodeSession securityCodeSession,
-            bool showSecurityVerify)
+            bool showSecurityVerify,
+            bool isPiwikEnable = false,
+            string piwikUrl = "",
+            string piwikScript = "",
+            string piwikSiteId = "")
         {
             this.userSession = userSession;
             this.securityCodeSession = securityCodeSession;
             this.showSecurityVerify = showSecurityVerify;
+            this.isPiwikEnable = isPiwikEnable;
+            this.piwikUrl = piwikUrl;
+            this.piwikScript = piwikScript;
+            this.piwikSiteId = piwikSiteId;
         }
 
         public int CustId
@@ -93,6 +106,38 @@
                 return userSession.IsLogged &&
                     !userSession.IsPasswordExpired &&
                     (securityCodeSession.IsEnableSecurityCode || this.showSecurityVerify);
+            }
+        }
+
+        public bool IsPiwikEnable
+        {
+            get
+            {
+                return isPiwikEnable;
+            }
+        }
+
+        public string PiwikUrl
+        {
+            get
+            {
+                return piwikUrl;
+            }
+        }
+
+        public string PiwikScript
+        {
+            get
+            {
+                return piwikScript;
+            }
+        }
+
+        public string PiwikSiteId
+        {
+            get
+            {
+                return piwikSiteId;
             }
         }
 

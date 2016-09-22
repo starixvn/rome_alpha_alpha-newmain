@@ -2,14 +2,14 @@
   {
     "outputFileName": "Assets/bundles/default-index.js",
     "inputFiles": [
-        "Assets/scripts/core.js",
-        "Assets/scripts/old-main.js",
-        "Assets/scripts/home/header-nav.js",
-        "Assets/scripts/home/header-msg.js",
-        "Assets/scripts/home/indexManager.js",
-        "Assets/scripts/home/menu-bar.js",
-        "Assets/scripts/announcement/announcement.js",
-        "Assets/scripts/customer-profiles/brief-profile.js"
+      "Assets/scripts/core.js",
+      "Assets/scripts/old-main.js",
+      "Assets/scripts/home/header-nav.js",
+      "Assets/scripts/home/header-msg.js",
+      "Assets/scripts/home/index-manager.js",
+      "Assets/scripts/home/menu-bar.js",
+      "Assets/scripts/announcement/announcement.js",
+      "Assets/scripts/customer-profiles/brief-profile.js"
     ]
   },
   {
