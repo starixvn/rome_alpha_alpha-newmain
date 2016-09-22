@@ -493,11 +493,21 @@
     <Content Include="Assets\bundles\security-code\verify-securitycode.min.js">
       <DependentUpon>verify-securitycode.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\security\security.css" />
+    <Content Include="Assets\bundles\security\security.min.css">
+      <DependentUpon>security.css</DependentUpon>
+    </Content>
     <Content Include="Assets\scripts\security-code\change-securitycode-by-forcing.js" />
     <Content Include="Assets\scripts\security-code\change-securitydode-firstlogin.js" />
     <Content Include="Assets\scripts\security-code\change-user-own-securitycode.js" />
     <Content Include="Assets\scripts\security-code\reset-securitycode.js" />
     <Content Include="Assets\scripts\security-code\verify-securitycode.js" />
+    <Content Include="Assets\styles\security\security.css">
+      <DependentUpon>security.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security\security.min.css">
+      <DependentUpon>security.css</DependentUpon>
+    </Content>
     <Content Include="bundles\site-main\security-code\before-home-page.js" />
     <Content Include="Web.Configuration\SecurityCode.local.config">
       <SubType>Designer</SubType>
@@ -612,20 +622,14 @@
     <Content Include="Assets\styles\introduction\intro.min.css">
       <DependentUpon>intro.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\security-code\images\1.jpg" />
-    <Content Include="Assets\styles\security-code\images\2.jpg" />
-    <Content Include="Assets\styles\security-code\images\3.jpg" />
-    <Content Include="Assets\styles\security-code\images\4.jpg" />
-    <Content Include="Assets\styles\security-code\images\5.jpg" />
-    <Content Include="Assets\styles\security-code\images\6.jpg" />
-    <Content Include="Assets\styles\security-code\images\7.jpg" />
-    <Content Include="Assets\styles\security-code\images\8.jpg" />
-    <Content Include="Assets\styles\security-code\security-code.css">
-      <DependentUpon>security-code.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\security-code\security-code.min.css">
-      <DependentUpon>security-code.css</DependentUpon>
-    </Content>
+    <Content Include="Assets\styles\security\images\1.jpg" />
+    <Content Include="Assets\styles\security\images\2.jpg" />
+    <Content Include="Assets\styles\security\images\3.jpg" />
+    <Content Include="Assets\styles\security\images\4.jpg" />
+    <Content Include="Assets\styles\security\images\5.jpg" />
+    <Content Include="Assets\styles\security\images\6.jpg" />
+    <Content Include="Assets\styles\security\images\7.jpg" />
+    <Content Include="Assets\styles\security\images\8.jpg" />
     <Content Include="Web.local.config">
       <SubType>Designer</SubType>
     </Content>
@@ -727,7 +731,7 @@
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\introduction\intro.scss" />
     <Content Include="bin\Alpha.SecurityCode.dll.config" />
-    <Content Include="Assets\styles\security-code\security-code.scss" />
+    <Content Include="Assets\styles\security\security.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>

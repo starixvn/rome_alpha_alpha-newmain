@@ -38,9 +38,9 @@
     ]
   },
   {
-    "outputFileName": "Assets/bundles/security-code/security-code.css",
+    "outputFileName": "Assets/bundles/security/security.css",
     "inputFiles": [
-      "Assets/styles/security-code/security-code.css"
+      "Assets/styles/security/security.css"
     ]
   },
    {
