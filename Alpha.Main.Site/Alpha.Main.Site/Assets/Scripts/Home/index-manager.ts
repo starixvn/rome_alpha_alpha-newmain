@@ -1,17 +1,12 @@
 ﻿/// <reference path="../core.ts" />
 /// <reference path="menu-bar.ts" />
 
-declare var _paq: any;
-
 'use strict';
 /*global alpha, briefProfile */
 
 var indexManager = {
     currentTab: null,
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
-
-    isPiwikEnable: (<HTMLInputElement>document.getElementById('piwik-isenable')).value,
-    piwikSiteId: (<HTMLInputElement>document.getElementById('piwik-siteid')).value,
 
     domElements: {
         mainFrame: null,
@@ -23,8 +18,7 @@ var indexManager = {
     },
 
     urls: {
-        reCheckinUrl: alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx',
-        piwikUrl: (<HTMLInputElement>document.getElementById('piwik-url')).value
+        reCheckinUrl: alpha.urls.oldMainRootPath + '_Authorization/Handlers/ReCheckin.ashx'
     },
 
     init: function () {
@@ -33,8 +27,6 @@ var indexManager = {
         indexManager.loadPartialViews();
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
-
-        indexManager.initPiwik();
     },
 
     registerEvents: function () {
@@ -137,18 +129,6 @@ var indexManager = {
                     indexManager.domElements.accountInfoContent[0].contentDocument;
                 indexManager.closeAllOpenDropdowns(iframeWindow);
             });
-        }
-    },
-
-    initPiwik: function () {
-        if (indexManager.isPiwikEnable) {
-            var piwikInfo = [];
-            piwikInfo.push(['trackPageView']);
-            piwikInfo.push(['enableLinkTracking']);
-            piwikInfo.push(['setTrackerUrl', indexManager.urls.piwikUrl]);
-            piwikInfo.push(['setSiteId', indexManager.piwikSiteId]);
-
-            _paq = piwikInfo;
         }
     },
 

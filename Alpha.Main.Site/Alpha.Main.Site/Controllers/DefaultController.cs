@@ -3,12 +3,10 @@
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Fanex.Razorbill.Security.Sessions;
-    using Helpers;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
-    using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 
@@ -41,14 +39,7 @@
                 return View("UnsupportedBrowsers", browser);
             }
 
-            var query = new IndexQuery(
-                userSession,
-                securityCodeSession,
-                UserPermission.IsShowSecurityVerify,
-                AppSettings.PiwikEnable,
-                AppSettings.PiwikUrl,
-                AppSettings.PiwikScript,
-                AppSettings.PiwikSiteId);
+            var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
 
             var viewModel = mediator.Send(query);
 
