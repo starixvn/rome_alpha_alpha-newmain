@@ -1,15 +1,22 @@
-﻿@model IndexViewModel
-@Html.Hidden("piwik-isenable", Model.IsPiwikEnable)
-@Html.Hidden("piwik-url", Model.PiwikUrl)
-@Html.Hidden("piwik-siteid", Model.PiwikSiteId)
+﻿@using ModuleSettings = Sunplus.Agent.Model.BL.Definitions;
 
-@if (Model.IsPiwikEnable)
+@Html.Hidden("piwik-isenable", ModuleSettings.AppSettings.PiwikEnable)
+@Html.Hidden("piwik-url", ModuleSettings.AppSettings.PiwikUrl)
+@Html.Hidden("piwik-siteid", ModuleSettings.AppSettings.PiwikSiteId)
+
+@if (ModuleSettings.AppSettings.PiwikEnable)
 {
-    <script type="text/javascript" async="true" defer="true" src="@Model.PiwikScript"></script>
+    <script type="text/javascript" async="true" defer="true" src="@ModuleSettings.AppSettings.PiwikScript"></script>
+    <script type="text/javascript">
+        var _paq = [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        _paq.push(['setTrackerUrl', '@ModuleSettings.AppSettings.PiwikUrl']);
+        _paq.push(['setSiteId', '@ModuleSettings.AppSettings.PiwikSiteId']);
+    </script>
     <noscript>
         <p>
-            <img src="@Model.PiwikUrl?idsite=@Model.PiwikSiteId" alt="" class="piwik-noscript" />
+            <img src="@ModuleSettings.AppSettings.PiwikUrl?idsite=@ModuleSettings.AppSettings.PiwikSiteId" alt="" class="piwik-noscript" />
         </p>
     </noscript>
 }
-

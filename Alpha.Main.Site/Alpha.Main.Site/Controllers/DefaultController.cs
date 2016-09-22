@@ -1,18 +1,19 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System;
     using System.Web.Mvc;
+    using System.Web.Security;
     using System.Web.SessionState;
     using Fanex.Razorbill.Security.Sessions;
-    using Helpers;
+    using Main.Helpers;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
-    using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
+    using Sunplus.Agent.Utilities;
 
-    [SessionState(SessionStateBehavior.Default)]
     public class DefaultController : BaseController
     {
         private readonly IUserSession userSession;
@@ -31,28 +32,27 @@
 
         public ActionResult Index()
         {
-            var browser = this.mediator.Send(new BrowserQuery
+            try
             {
-                UserLevelId = this.userSession.RoleId
-            });
+                var browser = this.mediator.Send(new BrowserQuery(this.userSession));
 
-            if (browser.IsUnsupportedBrowser)
-            {
-                return View("UnsupportedBrowsers", browser);
+                if (browser.IsUnsupportedBrowser)
+                {
+                    return View("UnsupportedBrowsers", browser);
+                }
+
+                var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
+
+                var viewModel = mediator.Send(query);
+
+                return View(viewModel);
             }
+            catch(Exception ex)
+            {
+                Logs.WriteWarn(ex);
 
-            var query = new IndexQuery(
-                userSession,
-                securityCodeSession,
-                UserPermission.IsShowSecurityVerify,
-                AppSettings.PiwikEnable,
-                AppSettings.PiwikUrl,
-                AppSettings.PiwikScript,
-                AppSettings.PiwikSiteId);
-
-            var viewModel = mediator.Send(query);
-
-            return View(viewModel);
+                return Redirect(MicroSites.OldMainUrl(FormsAuthentication.LoginUrl));
+            }
         }
 
         public ActionResult MenuBar()
@@ -77,10 +77,7 @@
 
         public ActionResult UnsupportedBrowsers()
         {
-            var browser = this.mediator.Send(new BrowserQuery
-            {
-                UserLevelId = this.userSession.RoleId
-            });
+            var browser = this.mediator.Send(new BrowserQuery(userSession));
 
             return View(browser);
         }

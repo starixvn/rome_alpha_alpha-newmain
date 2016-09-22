@@ -8,7 +8,6 @@
     using System.Web.Mvc;
     using System.Web.SessionState;
 
-    [SessionState(SessionStateBehavior.Default)]
     public class LanguageController : BaseController
     {
         private readonly IUserSession userSession;
