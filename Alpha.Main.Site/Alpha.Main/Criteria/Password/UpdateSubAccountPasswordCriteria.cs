@@ -23,7 +23,7 @@
 
         public override string GetSettingKey()
         {
-            return "Age_CustSubPwdUpd2";
+            return "UpdateSubAccountPassword";
         }
 
         public override bool IsValid()

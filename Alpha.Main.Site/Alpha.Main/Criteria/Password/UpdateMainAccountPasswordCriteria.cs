@@ -25,7 +25,7 @@
 
         public override string GetSettingKey()
         {
-            return "Age_CustomerPwdUpd2";
+            return "UpdateMainAccountPassword";
         }
 
         public override bool IsValid()

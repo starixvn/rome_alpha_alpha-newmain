@@ -1,16 +1,10 @@
 ﻿namespace Alpha.Main.DataAccesses
 {
-    using Criteria.Password;
+    using Fanex.Data.Repository;
     using Models;
 
     public interface PasswordDataAccess
     {
-        Result ResetMainAccountPassword(ResetMainAccountPasswordCriteria criteria);
-
-        Result ChangeMainAccountPassword(UpdateMainAccountPasswordCriteria criteria);
-
-        Result ResetSubAccountPassword(ResetSubAccountPasswordCriteria criteria);
-
-        Result ChangeSubAccountPassword(UpdateSubAccountPasswordCriteria criteria);
+        Result UpdatePassword(ICriteria criteria);
     }
 }

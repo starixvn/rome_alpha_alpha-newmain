@@ -105,6 +105,7 @@
             container.RegisterPerWebRequest<SecurityCodeService, SecurityCodeServiceImpl>();
             container.RegisterPerWebRequest<UserMessageService, UserMessageServiceImpl>();
             container.RegisterPerWebRequest<SessionManager, SessionManagerImpl>();
+            container.Register<PasswordService, PasswordServiceImpl>(Lifestyle.Transient);
             container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
         }
 
@@ -113,6 +114,7 @@
             container.RegisterPerWebRequest<IDynamicRepository, DynamicRepository>();
             container.RegisterPerWebRequest<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>();
             container.Register<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>(Lifestyle.Transient);
+            container.Register<PasswordDataAccess, PasswordDataAccessImpl>(Lifestyle.Transient);
         }
     }
 }

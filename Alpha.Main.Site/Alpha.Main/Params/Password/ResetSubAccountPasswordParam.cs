@@ -10,7 +10,7 @@
 
         public string ActorName { get; set; }
 
-        public bool IsDisableCasino { get; set; }
+        public bool IsCasinoDisabled { get; set; }
 
         public string NewPassword { get; set; }
 

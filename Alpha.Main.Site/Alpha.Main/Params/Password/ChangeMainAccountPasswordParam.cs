@@ -12,7 +12,7 @@ namespace Alpha.Main.Params.Password
 
         public int ActorId { get; set; }
 
-        public bool IsDisableCasino { get; set; }
+        public bool IsCasinoDisabled { get; set; }
 
         public string NewPassword { get; set; }
 

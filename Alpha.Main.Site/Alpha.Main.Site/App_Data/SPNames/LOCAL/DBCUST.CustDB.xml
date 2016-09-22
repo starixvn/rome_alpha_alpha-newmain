@@ -18,9 +18,9 @@
   </Function>
 
   <Function Name="Password">
-    <Setting Key="Age_CustomerUpdPwd" SpName="Age_CustomerUpdPwd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_CustomerPwdUpd2" SpName="Age_CustomerPwdUpd2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_CustSubPwdUpd" SpName="Age_CustSubPwdUpd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_CustSubPwdUpd2" SpName="Age_CustSubPwdUpd2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="ResetMainAccountPassword" SpName="Age_CustomerUpdPwd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="UpdateMainAccountPassword" SpName="Age_CustomerPwdUpd2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="ResetSubAccountPassword" SpName="Age_CustSubPwdUpd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="UpdateSubAccountPassword" SpName="Age_CustSubPwdUpd2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
   </Function>
 </Functions>

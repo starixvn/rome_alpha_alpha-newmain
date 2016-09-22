@@ -55,7 +55,7 @@
             var criteria = new UpdateMainAccountPasswordCriteria
             {
                 CustId = param.CustId,
-                DisCasino = param.IsDisableCasino,
+                DisCasino = param.IsCasinoDisabled,
                 Language = param.LanguageKey,
                 LoginIp = param.Ip,
                 OldPwd = HashPassword(param.CurrentPassword, param.HashKey),
@@ -63,7 +63,7 @@
                 UserId = param.ActorId
             };
 
-            var updateResult = passwordDataAccess.ChangeMainAccountPassword(criteria);
+            var updateResult = passwordDataAccess.UpdatePassword(criteria);
 
             if (updateResult.IsSuccessful
                 && param.IsCasinoSync)
@@ -123,7 +123,7 @@
                 SubAccID = param.SubAccountId
             };
 
-            return passwordDataAccess.ChangeSubAccountPassword(criteria);
+            return passwordDataAccess.UpdatePassword(criteria);
         }
 
         public Result ResetMainAccountPassword(ResetMainAccountPasswordParam param)
@@ -151,11 +151,11 @@
                 LoginIP = param.Ip,
                 UserPwd = encodedPassword,
                 SubAccID = param.SubAccountId,
-                DisCasino = param.IsDisableCasino,
+                DisCasino = param.IsCasinoDisabled,
                 UserID = param.ActorId
             };
 
-            var updateResult = passwordDataAccess.ResetMainAccountPassword(criteria);
+            var updateResult = passwordDataAccess.UpdatePassword(criteria);
 
             if (updateResult.IsSuccessful
               && param.IsCasinoSync)
@@ -193,7 +193,7 @@
                 UserID = param.ActorId
             };
 
-            return passwordDataAccess.ResetSubAccountPassword(criteria);
+            return passwordDataAccess.UpdatePassword(criteria);
         }
 
         private Result ValidatePassword(

@@ -32,7 +32,7 @@
 
         public override string GetSettingKey()
         {
-            return "Age_CustSubPwdUpd";
+            return "ResetSubAccountPassword";
         }
 
         public override bool IsValid()

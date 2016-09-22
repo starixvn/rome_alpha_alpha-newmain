@@ -1,33 +1,24 @@
 ﻿namespace Alpha.Main.DataAccesses.Impl
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using Criteria.Password;
+    using Fanex.Data;
+    using Fanex.Data.Repository;
     using Models;
 
     public class PasswordDataAccessImpl : PasswordDataAccess
     {
-        public Result ChangeMainAccountPassword(UpdateMainAccountPasswordCriteria criteria)
+        public Result UpdatePassword(ICriteria criteria)
         {
-            throw new NotImplementedException();
-        }
+            using (var db = new ObjectDb(criteria.GetSettingKey()))
+            {
+                db.ExecuteNonQuery(criteria.GetSpParams());
+                var outputParams = db.GetOuputParams();
 
-        public Result ChangeSubAccountPassword(UpdateSubAccountPasswordCriteria criteria)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Result ResetMainAccountPassword(ResetMainAccountPasswordCriteria criteria)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Result ResetSubAccountPassword(ResetSubAccountPasswordCriteria criteria)
-        {
-            throw new NotImplementedException();
+                return new Result
+                {
+                    Code = (int)outputParams["errcode"],
+                    Messsage = outputParams["errmsg"].ToString()
+                };
+            }
         }
     }
 }
