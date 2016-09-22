@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
+    using System;
     using Fanex.Data.Repository;
 
     public class UpdateViewStatus : CriteriaBase
@@ -11,6 +12,11 @@
         public override string GetSettingKey()
         {
             return "Age_MessageNoticeUpdStatus";
+        }
+
+        public override bool IsValid()
+        {
+            return true;
         }
     }
 }

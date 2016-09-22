@@ -93,6 +93,10 @@
       <HintPath>..\packages\CasinoLibrary.1.0.2.14\lib\net40\CasinoUtility.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.Age.Utility, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Age.Utility.3.0.0.1\lib\net40\Fanex.Age.Utility.dll</HintPath>
       <Private>True</Private>
@@ -117,12 +121,20 @@
       <HintPath>..\packages\Fanex.CustomerSetting.Module.KenoStatus.1.0.0.2\lib\net40\Fanex.CustomerSetting.Module.KenoStatus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.Data, Version=0.5.404.63, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Data.0.5.404.63\lib\net40\Fanex.Data.dll</HintPath>
+    <Reference Include="Fanex.Data, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.2.0.1\lib\net461\Fanex.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Data.DbSettingProviderExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Data.DbSettingProviderExtension.1.0.0.1\lib\net40\Fanex.Data.DbSettingProviderExtension.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Data.OldConnectionStringProvider, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.OldConnectionStringProvider.1.0.1\lib\net461\Fanex.Data.OldConnectionStringProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Data.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.Repository.1.0.0\lib\net461\Fanex.Data.Repository.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.GoldDeluxe.CoreSetting, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
@@ -293,6 +305,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -494,6 +508,10 @@
     <Content Include="Assets\bundles\default-messages.min.css">
       <DependentUpon>default-messages.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\home-index.js" />
+    <Content Include="Assets\bundles\home-index.min.js">
+      <DependentUpon>home-index.js</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>
     </Content>
@@ -506,6 +524,9 @@
     <Content Include="Assets\styles\messages\messages.min.css">
       <DependentUpon>messages.css</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="Assets\scripts\home\home-index.ts" />
+    <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
+    <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
@@ -775,6 +796,11 @@
     <Content Include="Views\SecurityCode\ChangeSecurityCodeByForcing.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeFirstLogin.cshtml" />
     <Content Include="Views\SecurityCode\ChangeUserOwnSecurityCode.cshtml" />
+    <Content Include="Views\Home\BalanceInfo.cshtml" />
+    <Content Include="Views\Home\Statistics.cshtml" />
+    <Content Include="Web.ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\SecurityCode\ResetSecurityCode.cshtml" />
     <Content Include="Views\SecurityCode\Shared\_Layout.cshtml" />
     <Content Include="Views\SecurityCode\VerifySecurityCode.cshtml" />
@@ -830,6 +856,7 @@
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
+    <Compile Include="Handlers\HomeHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\PasswordHandler.cs" />
@@ -844,6 +871,7 @@
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\HeaderNavQuery.cs" />
+    <Compile Include="Requests\Home\BalanceInfoQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
@@ -865,6 +893,7 @@
     <Compile Include="ViewModels\Home\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
+    <Compile Include="ViewModels\Home\Index\BalanceInfoViewModel.cs" />
     <Compile Include="ViewModels\Home\LanguageViewModel.cs" />
     <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
     <Compile Include="Global.asax.cs">

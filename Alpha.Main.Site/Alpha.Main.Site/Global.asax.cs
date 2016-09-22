@@ -10,6 +10,9 @@
     using Alpha.Main.Site.App_Start;
     using ONEbook.UM.Filters;
     using Sunplus.Agent.Utilities;
+    using Fanex.Data;
+    using Configurations;
+    using Fanex.Data.OldConnectionStringProvider;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -26,7 +29,16 @@
 
            DependencyConfig.Init();
 
-            Fanex.Data.Configuration.DbSettingProviderManager.Current.Start();
+            //Fanex.Data.Configuration.DbSettingProviderManager.Current.Start();
+            DbSettingProviderManager
+                .StartNewSession()
+                .Use(new OldConnectionStringProvider())
+                .UseDefaultDbSettingProvider(
+                    resourcePath: AppSettings.StoreProcedurePath,
+                    ignoreRedundantParameters: false,
+                    enableWatching: true)
+                .Run();
+
 
             ShareSession.Init();
 

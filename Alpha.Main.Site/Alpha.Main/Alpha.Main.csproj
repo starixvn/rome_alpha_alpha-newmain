@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Alpha.Auth, Version=3.0.0.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.0.9\lib\net40\Alpha.Auth.dll</HintPath>
+    <Reference Include="Alpha.Auth, Version=3.0.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Auth.3.0.0.8-MenuResponsive-01\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.SecurityCode, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
@@ -46,10 +46,14 @@
     </Reference>
     <Reference Include="CasinoLibrary, Version=1.0.2.13, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoLibrary.dll</HintPath>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CasinoSetting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoSetting.dll</HintPath>
+    <Reference Include="Fanex.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Caching.2.0.0\lib\net461\Fanex.Caching.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CasinoUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -76,8 +80,12 @@
       <HintPath>..\packages\Fanex.CustomerSetting.Module.KenoStatus.1.0.0.2\lib\net40\Fanex.CustomerSetting.Module.KenoStatus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.Data, Version=0.5.404.63, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Data.0.5.404.63\lib\net40\Fanex.Data.dll</HintPath>
+    <Reference Include="Fanex.Data, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.2.0.1\lib\net461\Fanex.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Data.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.Repository.1.0.0\lib\net461\Fanex.Data.Repository.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.GoldDeluxe.CoreSetting, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -174,6 +182,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -202,6 +212,8 @@
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\HomeInfo\GetBalanceInfoCriteria.cs" />
+    <Compile Include="Criteria\HomeInfo\GetBalanceUpDayInfoCriteria.cs" />
     <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\ResetSubAccountSecurityCodeCriteria.cs" />
@@ -232,6 +244,8 @@
     <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />
     <Compile Include="Models\Enumerations\UserLevel.cs" />
+    <Compile Include="Models\Home\BalanceInfo.cs" />
+    <Compile Include="Models\Home\BalanceUpDayInfo.cs" />
     <Compile Include="Models\Menus\IMenuItem.cs" />
     <Compile Include="Models\Menus\MenuItem.cs" />
     <Compile Include="Models\Menus\MenuItemBuilder.cs" />
@@ -256,10 +270,12 @@
     <Compile Include="Services\AnnouncementService.cs" />
     <Compile Include="Services\CachingManager.cs" />
     <Compile Include="Services\CustomerProfileService.cs" />
+    <Compile Include="Services\HomeInfoService.cs" />
     <Compile Include="Services\Impl\AnnouncementServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingManagerImpl.cs" />
     <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
     <Compile Include="Services\Impl\PasswordServiceImpl.cs" />
+    <Compile Include="Services\Impl\HomeInfoServiceImpl.cs" />
     <Compile Include="Services\Impl\SecurityCodeServiceImpl.cs" />
     <Compile Include="Services\Impl\SessionManagerImpl.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
