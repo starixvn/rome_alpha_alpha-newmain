@@ -430,4 +430,47 @@
   <data name="undermaintenance" xml:space="preserve">
     <value>ขณะนี้ทางเรามีการบำรุงรักษาเซิร์ฟเวอร์ เว็บไซต์จะไม่สามารถเข้าใช้งานได้ตั้งต่เวลา  {0} until {1}. ขออภัยในความไม่สะดวก</value>
   </data>
+  <data name="alertErrorConfirm" xml:space="preserve">
+    <value>การยืนยันรหัสผ่านไม่ถูกต้อง</value>
+  </data>
+  <data name="alertInputOldPwd" xml:space="preserve">
+    <value>กรุณาใส่รหัสเดิม</value>
+  </data>
+  <data name="alertPasswordEmpty" xml:space="preserve">
+    <value>ขอโทษค่ะ คุณต้องใส่รหัสผ่านด้วย</value>
+  </data>
+  <data name="forcechangepwd" xml:space="preserve">
+    <value>คุณถูกบังคับเปลี่ยนรหัสผ่านก่อนเข้าสู่ระบบ</value>
+  </data>
+  <data name="lblPasswordChangedOK" xml:space="preserve">
+    <value>รหัสผ่านของคุณเปลี่ยนสำเร็จแล้ว</value>
+  </data>
+  <data name="lblPasswordDAccountName" xml:space="preserve">
+    <value>รหัสผ่านต้องไม่ซ้ำกับชื่อบัญชีผู้ใช้ หรือ ชื่อเล่น</value>
+  </data>
+  <data name="lblPasswordDOldOne" xml:space="preserve">
+    <value>รหัสผ่านใหม่ต้องไม่ซ้ำกับรหัสผ่านปัจจุบัน</value>
+  </data>
+  <data name="lblPasswordExpired" xml:space="preserve">
+    <value>ข้อมูลและความปลอดภัยของคุณเป็นสิ่งสำคัญที่สุดสำหรับเรา ฉะนั้น เราจึงไม่หยุดที่จะปรับปรุงมาตรการระบบรักษาความปลอดภัยของข้อมูลของคุณ  ด้วยเหตุนี้ เราขอให้คุณเปลี่ยนรหัสใหม่ 
+
+    กรุณาใช้แบบฟอร์มด้านล่างเพื่อเปลี่ยนรหัสผ่านของคุณ เดี๋ยวนี้</value>
+  </data>
+  <data name="lblPasswordHint" xml:space="preserve">
+    <value>หมายเหตุ:  เราแนะนำให้คุณเปลี่ยนรหัสเป็นระยะเพื่อความปลอดภัยของคุณเอง</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>รหัสต้องมีอย่างน้อย 8 อักขระต้องไม่มีช่องเว้นวรรค และต้องมีอย่างน้อย 3 ข้อ ยังด้านล่าง
+
+1. ต้องมีภาษาอังกฤษตัวพิมพ์ใหญ่ [A-Z] 
+2. ต้องมีภาษาอังกฤษตัวพิมพ์เล็ก [a-z]
+3. ตัวเลข [0-9] 
+4. อักขระพิเศษ (!,@,#,etc..)
+
+ยกตัวอย่างเช่น: 59D7!4$h, 493abcDE
+หมายเหตุ รหัสผ่านของคุณเป็นสิ่งที่สำคัญ</value>
+  </data>
+  <data name="lblPasswordWrongRule" xml:space="preserve">
+    <value>รหัสผ่านของคุณไม่เป็นไปตามข้อแม้ของการรักษาความปลอดภัย</value>
+  </data>
 </root>

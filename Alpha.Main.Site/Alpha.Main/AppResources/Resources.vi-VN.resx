@@ -429,4 +429,46 @@
   <data name="undermaintenance" xml:space="preserve">
     <value>Server đang được bảo trì,Webside sẽ không thể truy cập từ {0} cho đến {1} . Xin lỗi vì sự bất tiện này!</value>
   </data>
+  <data name="alertErrorConfirm" xml:space="preserve">
+    <value>Mật khẩu xác nhận không chính xác</value>
+  </data>
+  <data name="alertInputOldPwd" xml:space="preserve">
+    <value>Vui lòng nhập  Mật Khẩu hiện tại</value>
+  </data>
+  <data name="alertPasswordEmpty" xml:space="preserve">
+    <value>Mật Khẩu không thể để trống!!!</value>
+  </data>
+  <data name="forcechangepwd" xml:space="preserve">
+    <value>Bạn buộc phải thay đổi mật khẩu ở lần đăng nhập đầu tiên</value>
+  </data>
+  <data name="lblPasswordChangedOK" xml:space="preserve">
+    <value>Mật khẩu của bạn đã được thay đổi thành công.</value>
+  </data>
+  <data name="lblPasswordDAccountName" xml:space="preserve">
+    <value>Mật khẩu không được chứa tên đăng nhập hoặc tên riêng.</value>
+  </data>
+  <data name="lblPasswordDOldOne" xml:space="preserve">
+    <value>Mật khẩu mới phải khác với mật khẩu đang sử dụng.</value>
+  </data>
+  <data name="lblPasswordExpired" xml:space="preserve">
+    <value>Tính bảo mật và quyền riêng tư của bạn là điều rất quan trọng đối với chúng tôi. Do vậy, chúng tôi không ngừng nâng cao mức độ bảo mật để  bảo vệ an toàn cho dữ liệu của bạn. Vì thế, yêu cầu bạn thay đổi mật khẩu hiện tại.
+Vui lòng điền vào mẩu bên dưới để thay đổi mật khẩu.</value>
+  </data>
+  <data name="lblPasswordHint" xml:space="preserve">
+    <value>Lưu ý: Bạn nên thay đổi mật khẩu định kỳ để tăng cường tính bảo mật.</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>Mật khẩu phải gồm ít nhất 8 ký tự, không có khoảng trắng và phải có ít nhất 3 ký tự sau đây:
+
+ - Ký tự viết hoa [A-Z]
+ - Ký tự viết thường [a-z]
+ - Ký tự số [0-9]
+ - Ký tự đặc biệt (!,@,#,...)
+Ví dụ : 59D7!4$h, 493abcDE
+
+Lưu ý : Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
+  </data>
+  <data name="lblPasswordWrongRule" xml:space="preserve">
+    <value>Mật khẩu của bạn chưa đạt mức an toàn tối thiểu.</value>
+  </data>
 </root>

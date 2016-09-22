@@ -106,6 +106,33 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The password was not correctly confirmed..
+        /// </summary>
+        public static string alertErrorConfirm {
+            get {
+                return ResourceManager.GetString("alertErrorConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Enter Old Password!!!.
+        /// </summary>
+        public static string alertInputOldPwd {
+            get {
+                return ResourceManager.GetString("alertInputOldPwd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, password cannot be empty!!!.
+        /// </summary>
+        public static string alertPasswordEmpty {
+            get {
+                return ResourceManager.GetString("alertPasswordEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Announcement.
         /// </summary>
         public static string announcement {
@@ -277,6 +304,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You are forced to change your password at first logon.
+        /// </summary>
+        public static string forcechangepwd {
+            get {
+                return ResourceManager.GetString("forcechangepwd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Given Credit.
         /// </summary>
         public static string givenCredit {
@@ -337,6 +373,78 @@ namespace Alpha.Main.AppResources {
         public static string lblConfirmClosed {
             get {
                 return ResourceManager.GetString("lblConfirmClosed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password has been changed successfully..
+        /// </summary>
+        public static string lblPasswordChangedOK {
+            get {
+                return ResourceManager.GetString("lblPasswordChangedOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password must not contain your username or nickname..
+        /// </summary>
+        public static string lblPasswordDAccountName {
+            get {
+                return ResourceManager.GetString("lblPasswordDAccountName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your new password must be totally different from your current one..
+        /// </summary>
+        public static string lblPasswordDOldOne {
+            get {
+                return ResourceManager.GetString("lblPasswordDOldOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a password reset. 
+        ///Please use the form below to change your password now..
+        /// </summary>
+        public static string lblPasswordExpired {
+            get {
+                return ResourceManager.GetString("lblPasswordExpired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note: You&apos;re strongly recommended to change your password periodically to enhance security..
+        /// </summary>
+        public static string lblPasswordHint {
+            get {
+                return ResourceManager.GetString("lblPasswordHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must be at least 8 characters without white-space and contain at least 3 of the following:
+        ///
+        ///  • Uppercase letter [A-Z] 
+        ///  • Lowercase letter [a-z] 
+        ///  • Numeric [0-9] 
+        ///  • Special character (!,@,#,etc..)
+        ///
+        ///For example: 59D7!4$h, 493abcDE
+        ///Notes: your password is cAsE sEnSiTiVe.
+        /// </summary>
+        public static string lblPasswordRequire {
+            get {
+                return ResourceManager.GetString("lblPasswordRequire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password does not meet the minimum security requirement..
+        /// </summary>
+        public static string lblPasswordWrongRule {
+            get {
+                return ResourceManager.GetString("lblPasswordWrongRule", resourceCulture);
             }
         }
         

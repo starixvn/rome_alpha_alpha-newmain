@@ -352,4 +352,46 @@ can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;</value
   <data name="undermaintenance" xml:space="preserve">
     <value>We are having server maintenance, website will be unavailable from {0} until {1}. Sorry for the inconveniences caused!</value>
   </data>
+  <data name="alertErrorConfirm" xml:space="preserve">
+    <value>パスワードが正しくありません。</value>
+  </data>
+  <data name="alertInputOldPwd" xml:space="preserve">
+    <value>古いパスワードを入力してください</value>
+  </data>
+  <data name="alertPasswordEmpty" xml:space="preserve">
+    <value>申し訳ございません 。パスワードを必ず入力してください!!!</value>
+  </data>
+  <data name="forcechangepwd" xml:space="preserve">
+    <value>You are forced to change your password at first logon</value>
+  </data>
+  <data name="lblPasswordChangedOK" xml:space="preserve">
+    <value>Your password has been changed successfully.</value>
+  </data>
+  <data name="lblPasswordDAccountName" xml:space="preserve">
+    <value>Your password must not contain your username or nickname.</value>
+  </data>
+  <data name="lblPasswordDOldOne" xml:space="preserve">
+    <value>Your new password must be totally different from your current one.</value>
+  </data>
+  <data name="lblPasswordExpired" xml:space="preserve">
+    <value>Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a password reset. 
+Please use the form below to change your password now.</value>
+  </data>
+  <data name="lblPasswordHint" xml:space="preserve">
+    <value>Note: You're strongly recommended to change your password periodically to enhance security.</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:
+
+  • Uppercase letter [A-Z] 
+  • Lowercase letter [a-z] 
+  • Numeric [0-9] 
+  • Special character (!,@,#,etc..)
+
+For example: 59D7!4$h, 493abcDE
+Notes: your password is cAsE sEnSiTiVe</value>
+  </data>
+  <data name="lblPasswordWrongRule" xml:space="preserve">
+    <value>Your password does not meet the minimum security requirement.</value>
+  </data>
 </root>
