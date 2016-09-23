@@ -1,0 +1,325 @@
+﻿@import '../Home/_variables.scss';
+@import '../Home/_mixins.scss';
+
+body {
+    background-color: transparent;
+    font-size: $font-size;
+    font-family: $font-family;
+    line-height: 20px;
+}
+
+label {
+    font-weight: normal;
+}
+
+// Messages
+.msg {
+    display: table;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.otp-register {
+    width: 400px;
+
+    .width-100per {
+        width: 100%;
+    }
+
+    .msg {
+        width: 100%;
+    }
+
+    // Buttons
+    .otp-email, .otp-sophos  {
+        width: 48%;
+        margin-right: 0;
+        white-space: normal;
+    }
+
+    .otp-email {
+        background-color: #04a8ed;
+        color: #fff;
+        margin-right: 3%;
+
+        &:hover {
+            background-color: darken(#04a8ed, 5%);
+            color: #fff;
+        }
+    }
+
+    .otp-sophos {
+        background-color: #f26f16;
+        color: #fff;
+
+        &:hover {
+            background-color: darken(#f26f16, 5%);
+            color: #fff;
+        }
+    }
+
+    .input-group {
+        .input-group-addon {
+            border: none;
+            background: none;
+            padding: 0 0 0 12px;
+            .btn-submit {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+// OTP Steps
+.otp-config {
+    padding: 16px 0;
+
+    .panel-group.panel-table {
+        .panel-heading .panel-title a {
+            color: #666;
+            border: none;            
+        }
+
+        .panel-heading + .panel-collapse > .panel-body {
+            border-top: 1px solid #dcdcdc;
+            padding: 16px 0;
+        }
+
+        .panel-body {
+            background-color: #fff;
+        }
+
+        .panel {
+            border-color: #dcdcdc;
+            @include border-radius(0);
+            @include box-shadow-multiple(none);
+        }
+    }
+
+    .list-requirements {
+        margin-bottom: 0;
+        padding-left: 30px;
+
+        li {
+            list-style-type: decimal;
+        }
+        
+        .download-content, .form-register,
+        .qr-code, .account-info, .example {
+            margin-left: -14px;
+        }
+
+        .form-register {
+            padding: 12px 0 16px;
+
+            &.last {
+                padding-bottom: 0;
+            }
+
+            .form-group.last {
+                margin-bottom: 0;
+            }
+
+            .txt {
+                width: 362px;
+                @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+            }
+        
+            .send-otp {
+                background-color: #03a34e;
+                color: #fff;
+
+                &:hover {
+                    background-color: #03a34e;
+                    color: #fff;
+                }
+            } 
+        }
+
+        // Download Sophos
+        .download-content {
+            display: table;
+            padding: 12px 0 28px;
+
+            .logo-sophos {
+                float: left;
+            }
+
+            .list-download {
+                float: right;
+                margin-left: 16px;
+
+                h2 {
+                    font-size: 20px;
+                    font-weight: normal;
+                    margin: 0;
+                }
+
+                p {
+                    color: #666;
+                    font-size: 14px;
+                    margin: 4px 0 8px;
+                }
+            }
+        }
+
+        // QR code
+        .qr-code {
+            padding: 12px 0 28px;
+        }
+
+        // Manual Add
+        .account-info, .example {
+            display: table;
+            width: 100%;
+
+            .col-left, .col-right {
+                float: left;                
+            }
+
+            .col-right {
+                margin-left: 16px;
+            }
+        }
+        
+        .account-info {
+            font-weight: bold;
+            padding: 12px 0 0;
+
+            .row-info {
+                display: table;
+                width: 100%;
+            }
+
+            .col-left {
+                width: 80px;
+            }
+
+            .col-right {
+                font-weight: bold;
+            }
+        }
+
+        .account-info + .example {
+            padding-top: 8px;
+        }
+
+        .example {
+            padding-top: 12px;
+            padding-bottom: 28px;
+        }
+    }
+
+    .list-enableDisable {
+        padding-left: 30px;
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        .btn-submit {
+            margin-top: 4px;
+        }
+    }
+}
+
+@media only screen and (max-width : 767px) {
+    body {
+        background-color: #fff;
+    }
+
+    [class^='btn'] {
+        height: 36px;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .nav-tabs {
+        display: table;
+        width: 100%;
+
+        li {
+            display: table-cell;
+            float: none;            
+
+            a {                
+                text-align: center;
+            }
+        }
+    }
+
+    .otp-register {
+        width: 100%;
+
+        [class^='btn'] {            
+            width: 100%;
+        }
+
+        .otp-email {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        .txt {
+            height: 36px;
+            margin-left: 2px;
+            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+        }
+
+        .input-group {
+            width: 100%;
+            .input-group-addon {
+                width: 40%;
+            }
+        }
+    }
+
+    .otp-config {
+        .panel-group.panel-table {
+            .panel {
+                border: none;
+            }
+
+            .panel-heading .panel-title a {
+                border: 1px solid #dcdcdc;
+            }
+
+            .panel-heading + .panel-collapse > .panel-body {
+                border-top: none;
+            }
+        }
+
+        .list-requirements {
+            padding-left: 18px;
+
+            .download-content, .form-register,
+            .qr-code, .account-info, .example {
+                margin-left: -12px;
+            }
+
+            .form-register {
+                .txt {
+                    height: 36px;
+                    width: 99%;
+                }
+            }
+
+            .example {
+                .col-left, .col-right {
+                    float: none;
+                }
+
+                .col-right {
+                    margin-left: 0;
+                    margin-top: 16px;
+                }
+            }
+        }
+
+        .list-enableDisable {
+            padding-left: 0;
+        }
+        
+    }
+}
+

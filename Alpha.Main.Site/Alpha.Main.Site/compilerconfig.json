@@ -46,5 +46,9 @@
     "inputFile": "Assets/styles/security/lean-more.scss"
     "outputFile": "Assets/styles/messages/messages.css",
     "inputFile": "Assets/styles/messages/messages.scss"
+  },
+  {
+    "outputFile": "Assets/styles/otp/otp.css",
+    "inputFile": "Assets/styles/otp/otp.scss"
   }
 ]

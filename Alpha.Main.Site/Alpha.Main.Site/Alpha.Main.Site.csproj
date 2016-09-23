@@ -503,10 +503,14 @@
     <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.css">
       <DependentUpon>default-index.css</DependentUpon>
-      </Content>
+    </Content>
     <Content Include="Assets\bundles\default-messages.css" />
     <Content Include="Assets\bundles\default-messages.min.css">
       <DependentUpon>default-messages.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-otp.css" />
+    <Content Include="Assets\bundles\default-otp.min.css">
+      <DependentUpon>default-otp.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\home-index.js" />
     <Content Include="Assets\bundles\home-index.min.js">
@@ -524,6 +528,16 @@
     <Content Include="Assets\styles\messages\messages.min.css">
       <DependentUpon>messages.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\otp\images\apple.png" />
+    <Content Include="Assets\styles\otp\images\google.png" />
+    <Content Include="Assets\styles\otp\images\logo.png" />
+    <Content Include="Assets\styles\otp\images\manual-android.png" />
+    <Content Include="Assets\styles\otp\images\manual-apple.png" />
+    <Content Include="Assets\styles\otp\images\otp-android.png" />
+    <Content Include="Assets\styles\otp\images\otp-apple.png" />
+    <Content Include="Assets\styles\otp\images\qr.png" />
+    <Content Include="Assets\styles\otp\otp.css" />
+    <Content Include="Assets\styles\otp\otp.min.css" />
     <TypeScriptCompile Include="Assets\scripts\home\home-index.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.js" />
@@ -770,6 +784,7 @@
     <Content Include="Assets\styles\introduction\intro.scss" />
     <Content Include="Assets\styles\security\security.scss" />
     <Content Include="Assets\styles\messages\messages.scss" />
+    <Content Include="Assets\styles\otp\otp.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -849,6 +864,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
+    <Compile Include="Controllers\OTPController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="Filters\AntiXSRFFilter.cs" />
     <Compile Include="Filters\CheckBelongingFilter.cs" />

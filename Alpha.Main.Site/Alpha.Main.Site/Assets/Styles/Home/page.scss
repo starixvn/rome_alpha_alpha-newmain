@@ -223,7 +223,6 @@ html * {
         padding: 0 12px 8px;
 
         .iframe-content {
-            background: #f4f4f4;
             width: 100%;
             height: 100%;
         }
@@ -307,6 +306,9 @@ html * {
 }
 
 @media only screen and (max-width : 767px) {
+    body {
+        background-color: #fff;
+    }
 
     // Announcements
     #popup-container-text {

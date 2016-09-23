@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/otp/otp-super")
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-otp"))" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation">
+            <a href="#profilePicture" aria-controls="home" role="tab" data-toggle="tab">Profile Picture</a>
+        </li>
+        <li role="presentation">
+            <a href="#nickname" aria-controls="home" role="tab" data-toggle="tab">Nickname</a>
+        </li>
+        <li role="presentation" class="active">
+            <a href="#otp" aria-controls="home" role="tab" data-toggle="tab">OTP</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" id="profilePicture">
+            Profile Picture
+        </div>
+        <div role="tabpanel" class="tab-pane" id="nickname">
+            Nickname
+        </div>
+        <div role="tabpanel" class="tab-pane active otp-config" id="otp">
+            <p>You need ro register an email or (and) setup the <strong>Sophos Authenticator Mobile Application</strong> before enabling the OTP feature.</p>
+            <div class="panel-group panel-table" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerEmail" aria-expanded="true" aria-controls="collapseOne">
+                                Register Email
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="registerEmail" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <ul class="list-requirements">
+                                <li>
+                                    <strong>Register an email to receive the OTP</strong>
+                                    <form role="form" class="form-register">
+                                        <div class="form-group">
+                                            <label>New Email</label>
+                                            <input type="password" class="txt form-control" name="newEmail" id="newEmail" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Confirm Email</label>
+                                            <input type="password" class="txt form-control" name="confirmEmail" id="confirmEmail" />
+                                        </div>
+                                        <div class="form-group last">
+                                            <input type="submit" class="btn-default send-otp" id="btnSubmit" value="Send OTP" />
+                                        </div>
+                                    </form>
+                                </li>
+                                <li>
+                                    <strong>Input the OTP sent to your mailbox to verify the email</strong>
+                                    <form class="form-register last">
+                                        <div class="form-group">
+                                            <label>OTP</label>
+                                            <input type="password" class="txt form-control" name="otp" id="otp" />
+                                        </div>
+                                        <div class="form-group last">
+                                            <input type="submit" class="btn-submit" id="btnSubmit" value="Submit" />
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#registerSophos" aria-expanded="false" aria-controls="collapseTwo">
+                                Register Sophos Authenticator Mobile App
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="registerSophos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <ul class="list-requirements">
+                                <li>
+                                    <strong>Download Sophos Authenticator on your mobile phone.</strong>
+                                    <div class="download-content">
+                                        <div class="logo-sophos">
+                                            <img src="~/Assets/Styles/otp/images/logo.png" />
+                                        </div>
+                                        <div class="list-download">
+                                            <h2>Sophos Authenticator</h2>
+                                            <p><strong>Sophos Gmbh</strong></p>
+                                            <ul class="list-inline">
+                                                <li><a href="#" class="btn-download-ios"><img src="~/Assets/Styles/otp/images/apple.png" /></a></li>
+                                                <li><a href="#" class="btn-download-android"><img src="~/Assets/Styles/otp/images/google.png" /></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>Scan the QR Code to register your account.</strong>
+                                    <div class="qr-code">
+                                        <img src="~/Assets/Styles/otp/images/qr.png" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>If you are unable to scan the QR Code, select Manual Add to input:</strong>
+                                    <div class="account-info">
+                                        <div class="row-info">
+                                            <label class="col-left">Account</label>
+                                            <div class="col-right">Associate</div>
+                                        </div>
+                                        <div class="row-info">
+                                            <label class="col-left">Key</label>
+                                            <div class="col-right">J4VEIZLXLVFUTSFG</div>
+                                        </div>
+                                    </div>
+                                    <div class="example">
+                                        <div class="col-left">
+                                            <img src="~/Assets/Styles/otp/images/manual-apple.png" />
+                                        </div>
+                                        <div class="col-right">
+                                            <img src="~/Assets/Styles/otp/images/manual-android.png" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>Click "Done" for ios users and "Add" for Android users to generate the OTP. This OTP will expire after 30 seconds</strong>
+                                    <div class="example">
+                                        <div class="col-left">
+                                            <img src="~/Assets/Styles/otp/images/otp-apple.png" />
+                                        </div>
+                                        <div class="col-right">
+                                            <img src="~/Assets/Styles/otp/images/otp-android.png" />
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>Enter the OTP in the text field below and submit to verify the Sophos app in your device.</strong>
+                                    <form class="form-register last">
+                                        <div class="form-group">
+                                            <label>OTP</label>
+                                            <input type="password" class="txt form-control" name="otp" id="otp" />
+                                        </div>
+                                        <div class="form-group last">
+                                            <input type="submit" class="btn-submit" id="btnSubmit" value="Submit" />
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#enableDisableOTP" aria-expanded="false" aria-controls="collapseTwo">
+                                Enable/Disable OTP
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="enableDisableOTP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <ul class="list-enableDisable">
+                                <li><label><input type="checkbox" /> Enable OTP via Email.</label></li>
+                                <li><label><input type="checkbox" /> Enable OTP via Sophos Authenticator Mobile App.</label></li>
+                                <li><button class="btn-submit">Submit</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
+</body>
+</html>

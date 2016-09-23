@@ -137,6 +137,12 @@
     "inputFiles": [
       "Assets/styles/messages/messages.css"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/default-otp.css",
+    "inputFiles": [
+      "Assets/styles/otp/otp.css"
+    ]
   }
 
 ]

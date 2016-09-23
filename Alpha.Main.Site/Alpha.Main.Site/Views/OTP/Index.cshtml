@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/otp/otp-super")
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-otp"))" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation">
+            <a href="#profilePicture" aria-controls="home" role="tab" data-toggle="tab">Profile Picture</a>
+        </li>
+        <li role="presentation">
+            <a href="#nickname" aria-controls="home" role="tab" data-toggle="tab">Nickname</a>
+        </li>
+        <li role="presentation" class="active">
+            <a href="#otp" aria-controls="home" role="tab" data-toggle="tab">OTP</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" id="profilePicture">
+            Profile Picture
+        </div>
+        <div role="tabpanel" class="tab-pane" id="nickname">
+            Nickname
+        </div>
+        <div role="tabpanel" class="tab-pane active" id="otp">            
+            <div class="otp-register">
+                <div class="msg msg-error">Please input your security code before proceeding!</div>
+                <div class="form-group">
+                    <button class="btn-default otp-email">Send OTP via email</button>
+                    <button class="btn-default otp-sophos">Send OTP via Sophos</button>
+                </div>
+                <div class="form-group">
+                    <label>OTP</label>
+                    <div class="input-group">
+                        <input type="password" class="txt width-100per form-control" name="otp" id="otp" />
+                        <span class="input-group-addon" id="basic-addon2"><input type="submit" class="btn-submit" id="btnSubmit" value="Submit" /></span>
+                    </div>
+                </div>                          
+            </div>
+        </div>
+    </div>
+    @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
+</body>
+</html>
