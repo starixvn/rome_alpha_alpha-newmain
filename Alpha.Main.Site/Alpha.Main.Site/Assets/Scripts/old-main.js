@@ -883,7 +883,7 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFr
             blurElementToScrollIframe();
 
             $main[0].contentWindow.scrollTo(0, scrollYMainFrame);
-            top.document.body.scrollTo(0, scrollYTopBody);
+            top.window.scrollTo(0, scrollYTopBody);
 
             $main.off('load.oldmain');
         });
