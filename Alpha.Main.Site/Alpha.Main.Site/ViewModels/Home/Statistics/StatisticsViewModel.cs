@@ -20,9 +20,21 @@
         {
         }
 
-        public Statistics Statistics { get { return this.statistics; } }
+        public Statistics Statistics
+        {
+            get
+            {
+                return this.statistics;
+            }
+        }
 
-        public UserLevel UserLevel { get { return this.userLevel; } }
+        public UserLevel UserLevel
+        {
+            get
+            {
+                return this.userLevel;
+            }
+        }
 
         public string AgentOutstandingLabel { get; private set; }
 

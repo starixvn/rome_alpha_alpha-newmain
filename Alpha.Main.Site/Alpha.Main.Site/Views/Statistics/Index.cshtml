@@ -1,0 +1,73 @@
+﻿@using Alpha.Main.Site.ViewModels.Home.Statistics
+@model StatisticsViewModel
+
+@{
+    var statistics = Model.Statistics;
+}
+
+@helper RenderTotalMemberInfo(string labelName, int memberActive, int memberClosed, int memberSuspended)
+{
+    <div class="row">
+        <div class="col-xs-7 lable">@labelName</div>
+        <div class="col-xs-5 value">
+            <strong data-toggle="tooltip" data-placement="top" title="Active:@memberActive|Closed:@memberClosed|Suspended:@memberSuspended">
+                <span class="active">@memberActive</span>|
+                <span class="closed">@memberClosed</span>|
+                <span class="suspended">@memberSuspended</span>
+            </strong>
+        </div>
+    </div>
+}
+
+@helper RenderDropdownTableMemberInfo(string labelName, string labelId, object htmlString)
+{
+    <div class="row">
+        <div class="col-xs-12 label dropdown">
+            <span id="@labelId" class="dropdown-toggle pointer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                @labelName <span class="icon icon-plus"></span>
+            </span>
+            <div class="dropdown-menu dropdown-stast" aria-labelledby="listTopTurnoverMembers">
+                @htmlString
+            </div>
+        </div>
+    </div>
+}
+
+@helper FormatNumber(decimal number)
+{
+    @number.ToString("#,##0.00")
+}
+
+<div class="container">
+    <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
+    <div class="group-title">outstanding</div>
+    <div class="row">
+        <div class="col-xs-7 lable">@Model.AgentOutstandingLabel</div>
+        <div class="col-xs-5 value"><strong>@FormatNumber(Model.Statistics.Outstanding)</strong></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-7 lable">@Resources.totalOutstanding</div>
+        <div class="col-xs-5 value"><strong>@FormatNumber(Model.Statistics.TotalOutstanding)</strong></div>
+    </div>
+    <div class="group-title">@Resources.memberInfo</div>
+
+    @if (Model.UserLevel.IsAgentLevel())
+    {
+        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
+    else if (Model.UserLevel.IsMasterLevel())
+    {
+        @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
+        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
+    else if (Model.UserLevel.IsSuperLevel())
+    {
+        @RenderTotalMemberInfo(Resources.master, statistics.TotalMasterActive, statistics.TotalMasterClosed, statistics.TotalMasterActive);
+        @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
+        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
+
+    @RenderDropdownTableMemberInfo(Resources.top10WinningMembers, "listTopWinningMembers", Html.Action("TopWinningMembers"))
+    @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Html.Action("TopTurnoverMembers"))
+    @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Html.Action("NewMembers"))
+</div>

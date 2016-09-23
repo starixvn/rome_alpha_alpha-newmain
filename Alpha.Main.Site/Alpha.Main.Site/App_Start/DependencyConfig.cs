@@ -98,6 +98,7 @@
             container.RegisterPerWebRequest<PasswordService, PasswordServiceImpl>();
             container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
             container.RegisterPerWebRequest<Encryptor, EncryptorImpl>();
+            container.Register<BalanceUpDayInfoService, BalanceUpDayInfoServiceImpl>(Lifestyle.Transient);
             container.Register<BalanceInfoService, BalanceInfoServiceImpl>(Lifestyle.Transient);
             container.Register<StatisticsService, StatisticsServiceImpl>(Lifestyle.Transient);
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();

@@ -548,6 +548,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notice.
+        /// </summary>
+        public static string notice {
+            get {
+                return ResourceManager.GetString("notice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not now.
         /// </summary>
         public static string NotNow {

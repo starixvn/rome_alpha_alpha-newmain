@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Models.Home
+﻿namespace Alpha.Main.Models.BalanceInfo
 {
     using System;
 

@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Home.Statistics
 {
-    using Main.Models.Enumerations;
-    using Main.Models.Statistics;
     using System.Collections.Generic;
+    using Main.Models.Statistics;
 
     public class TopWinningMembersViewModel
     {
@@ -17,6 +16,12 @@
         {
         }
 
-        public IEnumerable<TopWinningMember> Members { get { return this.members; } }
+        public IEnumerable<TopWinningMember> Members
+        {
+            get
+            {
+                return this.members;
+            }
+        }
     }
 }

@@ -1,17 +1,17 @@
-﻿namespace Alpha.Main.Models.Home
+﻿namespace Alpha.Main.Models.BalanceInfo
 {
     public class BalanceInfo
     {
         public BalanceInfo(
-            string userName
-            , decimal cashBalance
-            , decimal yesterdayCashBalance
-            , decimal totalBalance
-            , decimal yesterdayTotalBalance
-            , decimal todayWinLoss
-            , decimal yesterdayWinLoss
-            , decimal givenCredit
-            , decimal memberCredit)
+            string userName,
+            decimal cashBalance,
+            decimal yesterdayCashBalance,
+            decimal totalBalance,
+            decimal yesterdayTotalBalance,
+            decimal todayWinLoss,
+            decimal yesterdayWinLoss,
+            decimal givenCredit,
+            decimal memberCredit)
         {
             UserName = userName;
             CashBalance = cashBalance;

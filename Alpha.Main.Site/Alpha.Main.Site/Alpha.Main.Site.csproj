@@ -207,6 +207,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MvcPager, Version=1.5.0.28157, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvcPager.1.5.0.28157\lib\net40\MvcPager.dll</HintPath>
       <Private>True</Private>
@@ -808,8 +809,8 @@
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
     <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
-    <Content Include="Views\Home\_BalanceInfo.cshtml" />
-    <Content Include="Views\Home\_Statistics.cshtml" />
+    <Content Include="Views\BalanceInfo\Index.cshtml" />
+    <Content Include="Views\Statistics\Index.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeByForcing.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeFirstLogin.cshtml" />
     <Content Include="Views\SecurityCode\ChangeUserOwnSecurityCode.cshtml" />
@@ -820,10 +821,10 @@
     <Content Include="Views\SecurityCode\Shared\_Layout.cshtml" />
     <Content Include="Views\SecurityCode\VerifySecurityCode.cshtml" />
     <Content Include="Views\Password\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\_TopWinningMembers.cshtml" />
-    <Content Include="Views\Home\Statistics.cshtml" />
-    <Content Include="Views\Home\_NewMembers.cshtml" />
-    <Content Include="Views\Home\_TopTurnoverMembers.cshtml" />
+    <Content Include="Views\Statistics\_TopWinningMembers.cshtml" />
+    <Content Include="Views\Statistics\_NewMembers.cshtml" />
+    <Content Include="Views\Statistics\_TopTurnoverMembers.cshtml" />
+    <Content Include="Views\Notice\Index.cshtml" />
     <Content Include="Views\SecurityCode\Languages.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_en-US.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ja-JP.cshtml" />
@@ -861,11 +862,14 @@
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\BalanceInfoController.cs" />
+    <Compile Include="Controllers\NoticeController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\OTPController.cs" />
@@ -876,6 +880,8 @@
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
+    <Compile Include="Handlers\StatisticsHandler.cs" />
+    <Compile Include="Handlers\BalanceInfoHandler.cs" />
     <Compile Include="Handlers\HomeHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />

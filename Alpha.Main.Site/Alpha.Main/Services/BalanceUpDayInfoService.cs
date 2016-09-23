@@ -1,8 +1,8 @@
-﻿namespace Alpha.Main.DataAccesses
+﻿namespace Alpha.Main.Services
 {
     using Models.BalanceInfo;
 
-    public interface BalanceUpDayInfoDataAccess
+    public interface BalanceUpDayInfoService
     {
         BalanceUpDayInfo GetBalanceUpDayInfo();
     }

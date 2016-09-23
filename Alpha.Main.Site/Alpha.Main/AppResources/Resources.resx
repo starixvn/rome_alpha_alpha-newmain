@@ -451,4 +451,7 @@
   <data name="memberInfo" xml:space="preserve">
     <value>Member Info</value>
   </data>
+  <data name="notice" xml:space="preserve">
+    <value>Notice</value>
+  </data>
 </root>

@@ -3,18 +3,18 @@
     public class Statistics
     {
         public Statistics(
-            decimal outStanding
-            , decimal totalOutStanding
-            , decimal casinoTransfer
-            , decimal casinoOutStanding
-            , decimal bingoTransfer
-            , decimal bingoOutstanding
-            , decimal P2PTransfer
-            , decimal P2POutstanding
-            , int totalMemberActive
-            , int totalMemberClosed
-            , int totalMemberSuspended
-            , int numberNewMembers)
+            decimal outStanding,
+            decimal totalOutStanding,
+            decimal casinoTransfer,
+            decimal casinoOutStanding,
+            decimal bingoTransfer,
+            decimal bingoOutstanding,
+            decimal p2pTransfer,
+            decimal p2pOutstanding,
+            int totalMemberActive,
+            int totalMemberClosed,
+            int totalMemberSuspended,
+            int numberNewMembers)
         {
             Outstanding = outStanding;
             TotalOutstanding = totalOutStanding;
@@ -25,21 +25,21 @@
         }
 
         public Statistics(
-            decimal outStanding
-            , decimal totalOutStanding
-            , decimal casinoTransfer
-            , decimal casinoOutstanding
-            , decimal bingoTransfer
-            , decimal bingoOutstanding
-            , decimal P2PTransfer
-            , decimal P2POutstanding
-            , int totalMemberActive
-            , int totalMemberClosed
-            , int totalMemberSuspended
-            , int totalAgentActive
-            , int totalAgentClosed
-            , int totalAgentSuspended
-            , int numberNewMembers)
+            decimal outStanding,
+            decimal totalOutStanding,
+            decimal casinoTransfer,
+            decimal casinoOutstanding,
+            decimal bingoTransfer,
+            decimal bingoOutstanding,
+            decimal p2pTransfer,
+            decimal p2pOutstanding,
+            int totalMemberActive,
+            int totalMemberClosed,
+            int totalMemberSuspended,
+            int totalAgentActive,
+            int totalAgentClosed,
+            int totalAgentSuspended,
+            int numberNewMembers)
         {
             Outstanding = outStanding;
             TotalOutstanding = totalOutStanding;
@@ -53,24 +53,24 @@
         }
 
         public Statistics(
-            decimal outStanding
-            , decimal totalOutStanding
-            , decimal casinoTransfer
-            , decimal casinoOutstanding
-            , decimal bingoTransfer
-            , decimal bingoOutstanding
-            , decimal P2PTransfer
-            , decimal P2POutstanding
-            , int totalMemberActive
-            , int totalMemberClosed
-            , int totalMemberSuspended
-            , int totalAgentActive
-            , int totalAgentClosed
-            , int totalAgentSuspended
-            , int totalMasterActive
-            , int totalMasterClosed
-            , int totalMasterSuspended
-            , int numberNewMembers)
+            decimal outStanding,
+            decimal totalOutStanding,
+            decimal casinoTransfer,
+            decimal casinoOutstanding,
+            decimal bingoTransfer,
+            decimal bingoOutstanding,
+            decimal p2pTransfer,
+            decimal p2pOutstanding,
+            int totalMemberActive,
+            int totalMemberClosed,
+            int totalMemberSuspended,
+            int totalAgentActive,
+            int totalAgentClosed,
+            int totalAgentSuspended,
+            int totalMasterActive,
+            int totalMasterClosed,
+            int totalMasterSuspended,
+            int numberNewMembers)
         {
             Outstanding = outStanding;
             TotalOutstanding = totalOutStanding;

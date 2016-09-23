@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Home.Statistics
 {
-    using Main.Models.Statistics;
     using System.Collections.Generic;
+    using Main.Models.Statistics;
 
     public class NewMembersViewModel
     {
@@ -16,6 +16,12 @@
         {
         }
 
-        public IEnumerable<NewMember> Members { get { return this.members; } }
+        public IEnumerable<NewMember> Members
+        {
+            get
+            {
+                return this.members;
+            }
+        }
     }
 }

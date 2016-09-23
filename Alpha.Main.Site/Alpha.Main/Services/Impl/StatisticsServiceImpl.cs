@@ -1,22 +1,21 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using Models.Statistics;
-    using Fanex.Data.Repository;
-    using Criteria.Statistics;
     using System.Collections.Generic;
+    using Criteria.Statistics;
+    using Fanex.Data.Repository;
     using Models.Enumerations;
-    using DataAccesses;
+    using Models.Statistics;
 
     public class StatisticsServiceImpl : StatisticsService
     {
-        private BalanceUpDayInfoDataAccess balanceUpDayInfoDA;
+        private BalanceUpDayInfoService balanceUpDayInfoService;
         private IDynamicRepository dynamicRepository;
 
         public StatisticsServiceImpl(
-            BalanceUpDayInfoDataAccess balanceUpDayInfoDA
-            , IDynamicRepository dynamicRepository)
+            BalanceUpDayInfoService balanceUpDayInfoService,
+            IDynamicRepository dynamicRepository)
         {
-            this.balanceUpDayInfoDA = balanceUpDayInfoDA;
+            this.balanceUpDayInfoService = balanceUpDayInfoService;
             this.dynamicRepository = dynamicRepository;
         }
 
@@ -37,8 +36,8 @@
             var criteria = new GetTopWinningMembers(userLevel)
             {
                 CustId = custId,
-                MoveBetsDay = this.balanceUpDayInfoDA.GetBalanceUpDayInfo().MoveBetsDay,
-                BalanceUpDay = this.balanceUpDayInfoDA.GetBalanceUpDayInfo().BalanceUpDay
+                MoveBetsDay = this.balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay,
+                BalanceUpDay = this.balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay
             };
 
             var topWinninMembers = this.dynamicRepository.Fetch<TopWinningMember>(criteria);
@@ -51,8 +50,8 @@
             var criteria = new GetTopTurnoverMembers(userLevel)
             {
                 CustId = custId,
-                MoveBetsDay = this.balanceUpDayInfoDA.GetBalanceUpDayInfo().MoveBetsDay,
-                BalanceUpDay = this.balanceUpDayInfoDA.GetBalanceUpDayInfo().BalanceUpDay
+                MoveBetsDay = this.balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay,
+                BalanceUpDay = this.balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay
             };
 
             var topTurnoverMembers = this.dynamicRepository.Fetch<TopTurnoverMember>(criteria);

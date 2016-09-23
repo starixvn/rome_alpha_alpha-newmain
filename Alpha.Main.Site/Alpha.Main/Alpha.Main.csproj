@@ -221,7 +221,6 @@
     <Compile Include="Criteria\SecurityCode\ResetSubAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetTopTurnoverMembers.cs" />
     <Compile Include="Criteria\Statistics\GetTopWinningMembers.cs" />
-    <Compile Include="DataAccesses\BalanceUpDayInfoDataAccess.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCounterCriteria.cs" />
@@ -233,7 +232,6 @@
     <Compile Include="DataAccesses\PasswordDataAccess.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
-    <Compile Include="DataAccesses\Impl\BalanceUpDayInfoDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
     <Compile Include="FunctionRegistry.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -278,6 +276,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Services\AnnouncementService.cs" />
+    <Compile Include="Services\BalanceUpDayInfoService.cs" />
+    <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
     <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\CachingManager.cs" />
     <Compile Include="Services\CustomerProfileService.cs" />

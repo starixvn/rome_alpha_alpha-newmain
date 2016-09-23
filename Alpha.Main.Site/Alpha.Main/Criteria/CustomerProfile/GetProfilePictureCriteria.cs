@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Criteria.CustomerProfile
 {
-    using System;
     using Fanex.Data.Repository;
 
     public class GetProfilePictureCriteria : CriteriaBase
@@ -14,7 +13,7 @@
 
         public override bool IsValid()
         {
-            return true;
+            return CustId > 0;
         }
     }
 }

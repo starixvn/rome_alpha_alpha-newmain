@@ -1,12 +1,8 @@
 ﻿namespace Alpha.Main.Criteria.Statistics
 {
+    using System;
     using Fanex.Data.Repository;
     using Models.Enumerations;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class GetTopWinningMembers : CriteriaBase
     {

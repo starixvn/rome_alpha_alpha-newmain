@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Criteria.Statistics
 {
+    using System;
     using Fanex.Data.Repository;
     using Models.Enumerations;
-    using System;
 
     public class GetTopTurnoverMembers : CriteriaBase
     {

@@ -1,19 +1,19 @@
-﻿namespace Alpha.Main.DataAccesses.Impl
+﻿namespace Alpha.Main.Services.Impl
 {
     using System;
-    using Models.BalanceInfo;
+    using Criteria.BalanceInfo;
     using Fanex.Caching;
     using Fanex.Data.Repository;
-    using Criteria.BalanceInfo;
+    using Models.BalanceInfo;
 
-    public class BalanceUpDayInfoDataAccessImpl : BalanceUpDayInfoDataAccess
+    public class BalanceUpDayInfoServiceImpl : BalanceUpDayInfoService
     {
         private const string BalanceUpDayKey = "SUNPLUS.AGENT.MODEL.BL.REPORTS.BALANCEUPDAY";
         private IDynamicRepository dynamicRepository;
 
-        public BalanceUpDayInfoDataAccessImpl(IDynamicRepository dynamicRepository)
+        public BalanceUpDayInfoServiceImpl(IDynamicRepository dynamicRepository)
         {
-            this.dynamicRepository = dynamicRepository;    
+            this.dynamicRepository = dynamicRepository;
         }
 
         public BalanceUpDayInfo GetBalanceUpDayInfo()

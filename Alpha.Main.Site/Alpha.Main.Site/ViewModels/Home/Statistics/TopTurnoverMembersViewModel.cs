@@ -1,12 +1,11 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Home.Statistics
 {
-    using Main.Models.Enumerations;
-    using Main.Models.Statistics;
     using System.Collections.Generic;
+    using Main.Models.Statistics;
 
     public class TopTurnoverMembersViewModel
     {
-        IEnumerable<TopTurnoverMember> members;
+        private IEnumerable<TopTurnoverMember> members;
 
         public TopTurnoverMembersViewModel(IEnumerable<TopTurnoverMember> members)
         {
@@ -17,6 +16,12 @@
         {
         }
 
-        public IEnumerable<TopTurnoverMember> Members { get { return this.members; } }
+        public IEnumerable<TopTurnoverMember> Members
+        {
+            get
+            {
+                return this.members;
+            }
+        }
     }
 }

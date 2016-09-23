@@ -1,11 +1,11 @@
 ﻿@using Alpha.Main.Site.ViewModels.Home.Statistics
-@model TopWinningMembersViewModel
+@model TopTurnoverMembersViewModel
 
 <table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover width-100per">
     <thead>
         <tr>
             <th>@Resources.username</th>
-            <th>@Resources.winningAmount</th>
+            <th>@Resources.turnover</th>
         </tr>
     </thead>
     <tbody>
@@ -13,9 +13,8 @@
         {
             <tr>
                 <td class="username">@member.UserName</td>
-                <td class="text-right bold">@member.WinLoss</td>
+                <td class="text-right bold">@member.Turnover</td>
             </tr>
         }
     </tbody>
 </table>
-

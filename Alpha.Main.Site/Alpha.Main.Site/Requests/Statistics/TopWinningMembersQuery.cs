@@ -15,8 +15,20 @@
             this.userLevelId = userLevelId;
         }
 
-        public int CustId { get { return this.custId; } }
+        public int CustId
+        {
+            get
+            {
+                return this.custId;
+            }
+        }
 
-        public UserLevel UserLevel { get { return Enumeration.FromValue<UserLevel>(this.userLevelId); } }
+        public UserLevel UserLevel
+        {
+            get
+            {
+                return Enumeration.FromValue<UserLevel>(this.userLevelId);
+            }
+        }
     }
 }

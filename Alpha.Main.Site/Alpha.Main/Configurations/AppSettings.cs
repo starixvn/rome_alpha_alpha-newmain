@@ -103,17 +103,17 @@
             }
         }
 
-        public static string GetAppPath(string name)
-        {
-            return ConfigurationManager.AppSettings[name];
-        }
-
         public static string StoreProcedurePath
         {
             get
             {
                 return ConfigurationManager.AppSettings["StoreProcedurePath"];
             }
+        }
+
+        public static string GetAppPath(string name)
+        {
+            return ConfigurationManager.AppSettings[name];
         }
     }
 }

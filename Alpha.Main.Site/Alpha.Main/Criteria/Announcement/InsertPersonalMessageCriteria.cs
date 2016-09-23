@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
-    using System;
     using System.Diagnostics.CodeAnalysis;
-    using Fanex.Data.Repository;
     using Fanex.Data;
+    using Fanex.Data.Repository;
 
     public class InsertPersonalMessageCriteria : CriteriaBase
     {

@@ -1,0 +1,53 @@
+﻿@using Alpha.Main.Site.ViewModels.Home.BalanceInfo
+@model BalanceInfoViewModel
+
+@{
+    var balanceInfo = Model.BalanceInfo;
+    var dateFormatString = "MM/dd/yyyy";
+    var today = DateTime.Today.ToString(dateFormatString);
+    var yesterday = DateTime.Today.AddDays(-1).ToString(dateFormatString);
+}
+
+@helper RenderRow(string label, object valueHtml)
+{
+    <div class="row">
+        <div class="col-xs-7 label">@label</div>
+        @valueHtml
+    </div>
+}
+
+@helper GetValueHtml(string value)
+{
+    <div class="col-xs-5 value"><strong>@value</strong></div>
+}
+
+@helper GetValueHtml(decimal value)
+{
+var textClass = value < 0 ? "text-red" : string.Empty;
+    <div class="col-xs-5 value @textClass"><strong>@FormatNumber(value)</strong></div>
+}
+
+@helper FormatNumber(decimal number)
+{
+    @number.ToString("#,##0.00")
+}
+
+<div class="container">
+    <div class="panel-title"><span class="icon-balanceinfo"></span>@Resources.balanceInfo</div>
+    @RenderRow(Model.AgentLabel, GetValueHtml(balanceInfo.UserName))
+    @RenderRow(Resources.currency, GetValueHtml(Model.Currency))
+
+    <div class="group-title">@Resources.balance</div>
+    @RenderRow(Resources.cashBalance, GetValueHtml(balanceInfo.CashBalance))
+    @RenderRow(Resources.yesterdayCashBalance, GetValueHtml(balanceInfo.YesterdayCashBalance))
+    @RenderRow(Resources.totalBalance, GetValueHtml(balanceInfo.TotalBalance))
+    @RenderRow(Resources.yesterdayTotalBalance, GetValueHtml(balanceInfo.YesterdayTotalBalance))
+
+    <div class="group-title">@Resources.winloss</div>
+    @RenderRow($"{Resources.todayWinLoss} ({today})", GetValueHtml(balanceInfo.TodayWinLoss))
+    @RenderRow($"{Resources.yesterdayWinLoss} ({yesterday})", GetValueHtml(balanceInfo.YesterdayWinLoss))
+
+    <div class="group-title">@Resources.credit</div>
+    @RenderRow(Model.AgentGivenCreditLabel, GetValueHtml(balanceInfo.GivenCredit))
+    @RenderRow(Model.DownlineCreditLabel, GetValueHtml(balanceInfo.MemberCredit))
+</div>

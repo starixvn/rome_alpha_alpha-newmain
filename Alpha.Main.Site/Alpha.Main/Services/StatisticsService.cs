@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Services
 {
+    using System.Collections.Generic;
     using Models.Enumerations;
     using Models.Statistics;
-    using System.Collections.Generic;
 
     public interface StatisticsService
     {

@@ -12,6 +12,9 @@
             this.custId = custId;
         }
 
-        public int CustId { get { return this.custId; } }
+        public int CustId
+        {
+            get { return this.custId; }
+        }
     }
 }

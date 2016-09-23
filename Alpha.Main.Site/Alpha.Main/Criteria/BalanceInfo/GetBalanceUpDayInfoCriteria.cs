@@ -1,7 +1,5 @@
-﻿
-namespace Alpha.Main.Criteria.HomeInfo
+﻿namespace Alpha.Main.Criteria.BalanceInfo
 {
-    using System;
     using Fanex.Data.Repository;
 
     public class GetBalanceUpDayInfoCriteria : CriteriaBase
