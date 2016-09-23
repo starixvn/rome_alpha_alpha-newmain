@@ -20,22 +20,26 @@
         // GET: Password
         public ActionResult ChangePassword()
         {
-            return View();
+            var viewModel = this.mediator.Send(new PasswordQuery());
+            return View(viewModel);
         }
 
         public ActionResult ForceChangePassword()
         {
-            return View();
+            var viewModel = this.mediator.Send(new PasswordQuery());
+            return View(viewModel);
         }
 
         public ActionResult ResetMainAccountPassword()
         {
-            return View();
+            var viewModel = this.mediator.Send(new PasswordQuery());
+            return View(viewModel);
         }
 
         public ActionResult ResetSubAccountPassword()
         {
-            return View();
+            var viewModel = this.mediator.Send(new PasswordQuery());
+            return View(viewModel);
         }
 
         [HttpPost]

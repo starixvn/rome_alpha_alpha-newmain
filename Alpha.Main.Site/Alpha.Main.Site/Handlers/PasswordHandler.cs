@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
     using Main.Models;
     using Main.Models.Enumerations;
     using MediatR;
@@ -7,19 +8,32 @@
     using Requests.Password;
     using Services;
     using Sunplus.Agent.Model.Entities;
-
+    using Sunplus.Agent.Utilities;
+    using ViewModels;
+    using ViewModels.Security;
     public class PasswordHandler :
          IRequestHandler<ChangePasswordCommand, Result>,
          IRequestHandler<ResetMainAccountPasswordCommand, Result>,
-         IRequestHandler<ResetSubAccountPasswordCommand, Result>
+         IRequestHandler<ResetSubAccountPasswordCommand, Result>,
+         IRequestHandler<PasswordQuery, PasswordViewModel>
     {
+        private const string HashKeySessionKey = "ph";
+
         private readonly PasswordService passwordService;
         private readonly IUserSession userSession;
+        private readonly SessionManager sessionManager;
+        private readonly Encryptor encryptor;
 
-        public PasswordHandler(PasswordService passwordService, IUserSession userSession)
+        public PasswordHandler(
+            PasswordService passwordService, 
+            IUserSession userSession,
+            SessionManager sessionManager,
+            Encryptor encryptor)
         {
             this.passwordService = passwordService;
             this.userSession = userSession;
+            this.sessionManager = sessionManager;
+            this.encryptor = encryptor;
         }
 
         public Result Handle(ResetSubAccountPasswordCommand message)
@@ -39,6 +53,18 @@
                 });
 
             return result;
+        }
+
+        public PasswordViewModel Handle(PasswordQuery message)
+        {
+            var hashKey = this.encryptor.RandomString(new Random().Next(4, 8));
+
+            this.sessionManager.Add(HashKeySessionKey, hashKey);
+
+            return new PasswordViewModel
+            {
+                HashKey = hashKey
+            };
         }
 
         public Result Handle(ResetMainAccountPasswordCommand message)

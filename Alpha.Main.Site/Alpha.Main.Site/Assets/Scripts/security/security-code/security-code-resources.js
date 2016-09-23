@@ -1,11 +1,11 @@
 ﻿'use strict';
 
 var securityCodeResources = {
-    rules: "<i class='icon-information-outline icon-rules' data-toggle='modal' data-target='#sc'></i>",
-    oldSecurityCodeEmpty: $('#alert-old-securitycode-empty').val(),
-    securityCodeEmpty: $('#alert-securitycode-empty').val(),
-    securityCodeWrongRule: $('#alert-securitycode-wrong-rule').val(),
-    errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
-    sameSecurityCode: $('#alert-same-securitycode').val(),
-    securityCodeChangeSucessfully: $('#alert-securitycode-change-ok').val()
+    rules: "<i class='icon-information-outline icon-rules' data-toggle='modal' data-target='sc'></i>",
+    oldSecurityCodeEmpty: document.getElementById('alert-old-securitycode-empty').value,
+    securityCodeEmpty: document.getElementById('alert-securitycode-empty').value,
+    securityCodeWrongRule: document.getElementById('alert-securitycode-wrong-rule').value,
+    errorSecurityCodeConfirm: document.getElementById('alert-error-securitycode-confirm').value,
+    sameSecurityCode: document.getElementById('alert-same-securitycode').value,
+    securityCodeChangeSucessfully: document.getElementById('alert-securitycode-change-ok').value
 };
