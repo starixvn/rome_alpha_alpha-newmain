@@ -4,8 +4,7 @@
 body {
     background-color: transparent;
     font-size: $font-size;
-    font-family: $font-family;
-    line-height: 36px;
+    font-family: $font-family;    
 }
 
 .tab-content > .tab-pane {
@@ -19,7 +18,7 @@ body {
         font-size: inherit;
         font-weight: normal;
         color: $text-color;
-        line-height: 36px;
+        line-height: inherit;
         text-transform: capitalize;        
         text-align: left;        
     }
@@ -86,13 +85,13 @@ body {
         .dropdown.open .icon-plus:before {
             content: '\e91c';
         }
+
         .dropdown-stast {
             font-size: $font-size;
             line-height: 20px;
             max-height: 280px;
             overflow: auto;            
-            padding: 0;
-            width: 350px;
+            padding: 0;            
             @include border-radius(0);
 
             .width-100per {
@@ -210,6 +209,10 @@ body {
 
         &.statistic {
             padding-left: 8px;
+
+            .dropdown-stast {
+                width: 350px;
+            }
         }
 
         &.notice {
@@ -264,6 +267,7 @@ body {
     body {
         background-color: #fff;
         font-size: $font-size + 1;
+        line-height: 36px;
     }
     
     .nav-tabs {
@@ -320,6 +324,10 @@ body {
         &.statistic {
             .icon-plus, .icon-minus {
                 margin-left: 4px;
+            }
+
+            .dropdown-stast {
+                width: 100%;
             }
         }
         .container {
