@@ -855,10 +855,16 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFr
         top.main.$('txtUserName').blur();
     }
 
+    function getScrollY(element) {
+        return element.scrollY || element.pageYOffset || element.scrollTop || 0;
+    }
+
     function storeAndRestoreFrameData(isCustomerList) {
         var mainFrame = top.main;
         var $main = top.$('#main');
-        var scrollY = mainFrame.scrollY || mainFrame.pageYOffset || mainFrame.scrollTop || 0;
+
+        var scrollYMainFrame = getScrollY(mainFrame);
+        var scrollYTopBody = getScrollY(top.document.body);
 
         var arrayCustId = '';
         var arrayUserName = '';
@@ -876,7 +882,9 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFr
 
             blurElementToScrollIframe();
 
-            $main[0].contentWindow.scrollTo(0, scrollY);
+            $main[0].contentWindow.scrollTo(0, scrollYMainFrame);
+            top.document.body.scrollTo(0, scrollYTopBody);
+
             $main.off('load.oldmain');
         });
     }
