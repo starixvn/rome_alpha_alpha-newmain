@@ -854,7 +854,7 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut) {
     function storeAndRestoreFrameData() {
         var mainFrame = top.main;
         var $main = top.$('#main');
-        var scrollY = mainFrame.scrollY;
+        var scrollY = mainFrame.scrollY || mainFrame.pageYOffset || mainFrame.scrollTop || 0;
 
         var isCustomerList = mainFrame.$("arrayCustID") && mainFrame.$("arrayCustID").value.length &&
          mainFrame.$("arrayUserName") && mainFrame.$("arrayUserName").value.length;
