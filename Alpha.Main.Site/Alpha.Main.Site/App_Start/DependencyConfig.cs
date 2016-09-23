@@ -22,7 +22,8 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Web.SessionState;
-
+    using Sunplus.Agent.Utilities;
+    using Sunplus.Agent.Model.Casino;
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
@@ -107,6 +108,8 @@
             container.RegisterPerWebRequest<SessionManager, SessionManagerImpl>();
             container.Register<PasswordService, PasswordServiceImpl>(Lifestyle.Transient);
             container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
+            container.Register<Encryptor, EncryptorImpl>(Lifestyle.Transient);
+            container.Register<CasinoService, CasinoServiceImpl>(Lifestyle.Transient);
         }
 
         private static void RegisterDataAccesses(Container container)

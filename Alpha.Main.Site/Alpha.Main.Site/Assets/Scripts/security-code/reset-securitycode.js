@@ -63,8 +63,7 @@ var resetsecuritycode = {
         var confirmSecCode = $txtConfirmSecurityCode.val();
         if (secCode.length === 0) {
             $txtSecurityCode.focus();
-           return resetsecuritycode.resources.securityCodeEmpty
-           
+            return resetsecuritycode.resources.securityCodeEmpty; 
         }
         else if (!securitycodeHelper.isValidSecurityCode(secCode)) {
             $txtSecurityCode.focus();

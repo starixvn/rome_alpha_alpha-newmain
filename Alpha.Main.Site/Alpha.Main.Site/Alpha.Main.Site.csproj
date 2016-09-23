@@ -514,8 +514,8 @@
     </Content>
     <Content Include="Assets\scripts\password\force-change-password.js" />
     <Content Include="Assets\scripts\password\change-password.js" />
-    <Content Include="Assets\scripts\password\reset-main-account-password.js" />
     <Content Include="Assets\scripts\password\reset-sub-account-password.js" />
+    <Content Include="Assets\scripts\password\reset-main-account-password.js" />
     <Content Include="Assets\scripts\security-code\change-securitycode-by-forcing.js" />
     <Content Include="Assets\scripts\security-code\change-securitydode-firstlogin.js" />
     <Content Include="Assets\scripts\security-code\change-user-own-securitycode.js" />
