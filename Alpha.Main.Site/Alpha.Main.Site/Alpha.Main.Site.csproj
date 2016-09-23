@@ -808,11 +808,11 @@
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
     <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
+    <Content Include="Views\Home\_BalanceInfo.cshtml" />
+    <Content Include="Views\Home\_Statistics.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeByForcing.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeFirstLogin.cshtml" />
     <Content Include="Views\SecurityCode\ChangeUserOwnSecurityCode.cshtml" />
-    <Content Include="Views\Home\BalanceInfo.cshtml" />
-    <Content Include="Views\Home\Statistics.cshtml" />
     <Content Include="Web.ConnectionStrings.config">
       <SubType>Designer</SubType>
     </Content>
@@ -820,6 +820,10 @@
     <Content Include="Views\SecurityCode\Shared\_Layout.cshtml" />
     <Content Include="Views\SecurityCode\VerifySecurityCode.cshtml" />
     <Content Include="Views\Password\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\_TopWinningMembers.cshtml" />
+    <Content Include="Views\Home\Statistics.cshtml" />
+    <Content Include="Views\Home\_NewMembers.cshtml" />
+    <Content Include="Views\Home\_TopTurnoverMembers.cshtml" />
     <Content Include="Views\SecurityCode\Languages.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_en-US.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ja-JP.cshtml" />
@@ -887,7 +891,11 @@
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\HeaderNavQuery.cs" />
-    <Compile Include="Requests\Home\BalanceInfoQuery.cs" />
+    <Compile Include="Requests\BalanceInfo\BalanceInfoQuery.cs" />
+    <Compile Include="Requests\Statistics\NewMembersQuery.cs" />
+    <Compile Include="Requests\Statistics\TopTurnoverMembersQuery.cs" />
+    <Compile Include="Requests\Statistics\TopWinningMembersQuery.cs" />
+    <Compile Include="Requests\Statistics\StatisticsQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
@@ -909,7 +917,11 @@
     <Compile Include="ViewModels\Home\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
-    <Compile Include="ViewModels\Home\Index\BalanceInfoViewModel.cs" />
+    <Compile Include="ViewModels\Home\BalanceInfo\BalanceInfoViewModel.cs" />
+    <Compile Include="ViewModels\Home\Statistics\NewMembersViewModel.cs" />
+    <Compile Include="ViewModels\Home\Statistics\TopTurnoverMembersViewModel.cs" />
+    <Compile Include="ViewModels\Home\Statistics\TopWinningMembersViewModel.cs" />
+    <Compile Include="ViewModels\Home\Statistics\StatisticsViewModel.cs" />
     <Compile Include="ViewModels\Home\LanguageViewModel.cs" />
     <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
     <Compile Include="Global.asax.cs">

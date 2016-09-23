@@ -1,13 +1,10 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using MediatR;
-    using Requests.Home;
+    using Requests.BalanceInfo;
+    using Requests.Statistics;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
-    using System.Web;
     using System.Web.Mvc;
 
     public class HomeController : BaseController
@@ -29,15 +26,41 @@
         [HttpGet]
         public async Task<ActionResult> BalanceInfo()
         {
-            var viewModel = mediator.Send(new BalanceInfoQuery(this.userSession));
+            var viewModel = mediator.Send(new BalanceInfoQuery(this.userSession.CustId, this.userSession.RoleId, this.userSession.Currency));
 
-            return PartialView("BalanceInfo", viewModel);
+            return PartialView("_BalanceInfo", viewModel);
         }
 
         [HttpGet]
         public ActionResult Statistics()
         {
-            return PartialView("Statistics");
+            var viewModel = mediator.Send(new StatisticsQuery(this.userSession.CustId, this.userSession.RoleId));
+
+            return PartialView("_Statistics", viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult TopWinningMembers()
+        {
+            var viewModel = mediator.Send(new TopWinningMembersQuery(this.userSession.CustId, this.userSession.RoleId));
+
+            return PartialView("_TopWinningMembers", viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult TopTurnoverMembers()
+        {
+            var viewModel = mediator.Send(new TopTurnoverMembersQuery(this.userSession.CustId, this.userSession.RoleId));
+
+            return PartialView("_TopTurnoverMembers", viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult NewMembers()
+        {
+            var viewModel = mediator.Send(new NewMembersQuery(this.userSession.CustId));
+
+            return PartialView("_NewMembers", viewModel);
         }
     }
 }

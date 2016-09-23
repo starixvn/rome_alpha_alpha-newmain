@@ -1,0 +1,85 @@
+﻿@using Alpha.Main.Site.ViewModels.Home.Statistics
+@model StatisticsViewModel
+
+@{
+    var statistics = Model.Statistics;
+}
+
+<div class="container">
+    <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
+    <div class="group-title">outstanding</div>
+    <div class="row">
+        <div class="col-xs-7 lable">@Model.AgentOutstandingLabel</div>
+        <div class="col-xs-5 value"><strong>@FormatNumber(Model.Statistics.Outstanding)</strong></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-7 lable">@Resources.totalOutstanding</div>
+        <div class="col-xs-5 value"><strong>@FormatNumber(Model.Statistics.TotalOutstanding)</strong></div>
+    </div>
+    <div class="group-title">@Resources.memberInfo</div>
+ 
+    @if (Model.UserLevel.IsAgentLevel())
+    {
+        @RenderMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
+    else if (Model.UserLevel.IsMasterLevel())
+    {
+        @RenderMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
+        @RenderMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
+    else if (Model.UserLevel.IsSuperLevel())
+    {
+        @RenderMemberInfo(Resources.master, statistics.TotalMasterActive, statistics.TotalMasterClosed, statistics.TotalMasterActive);
+        @RenderMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
+        @RenderMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
+
+    <div class="row">
+        <div class="col-xs-12 label dropdown">
+            <span id="listTopMembers" class="dropdown-toggle pointer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                top 10 winning members of the month <span class="icon icon-plus"></span>
+            </span>
+            <div class="dropdown-menu dropdown-stast" aria-labelledby="listTopMembers">
+                @Html.Action("TopWinningMembers")
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 label dropdown">
+            <span id="listTopMembers" class="dropdown-toggle pointer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                top 10 winning members of the month <span class="icon icon-plus"></span>
+            </span>
+            <div class="dropdown-menu dropdown-stast" aria-labelledby="listTopMembers">
+                @Html.Action("TopTurnoverMembers")
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 label dropdown">
+            <span id="listTopMembers" class="dropdown-toggle pointer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                new members of the month: @Model.Statistics.NumberNewMembers <span class="icon icon-plus"></span>
+            </span>
+            <div class="dropdown-menu dropdown-stast" aria-labelledby="listTopMembers">
+                @Html.Action("NewMembers")
+            </div>
+        </div>
+    </div>
+
+@helper RenderMemberInfo(string labelName, int memberActive, int memberClosed, int memberSuspended)
+{
+    <div class="row">
+        <div class="col-xs-7 lable">@labelName</div>
+        <div class="col-xs-5 value">
+            <strong data-toggle="tooltip" data-placement="top" title="Active:@memberActive|Closed:@memberClosed|Suspended:@memberSuspended">
+                <span class="active">@memberActive</span>|
+                <span class="closed">@memberClosed</span>|
+                <span class="suspended">@memberSuspended</span>
+            </strong>
+        </div>
+    </div>
+}
+
+@helper FormatNumber(decimal number)
+{
+    @number.ToString("#,##0.00")
+}
