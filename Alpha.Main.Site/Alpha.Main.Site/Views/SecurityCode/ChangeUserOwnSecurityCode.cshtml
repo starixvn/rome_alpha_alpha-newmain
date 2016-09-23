@@ -55,7 +55,7 @@
 @Html.Hidden("hashkey", Model.HashKey)
 @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 @Html.Hidden("mainRootPath", Model.MainRootPath)
-
+   
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
     <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/change-user-own-securitycode")" type="text/javascript"></script>

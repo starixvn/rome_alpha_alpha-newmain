@@ -23,21 +23,37 @@
          IRequestHandler<ResetSecurityCodeCommand, Result>,
          IRequestHandler<VerifySecurityCodeCommand, Result>
     {
-        private const string CacheKeyHashKey = "ph";
+        private const string HashKeySessionKey = "ph";
         private readonly CustomerProfileService customerProfileService;
         private readonly CachingManager cacheManager;
+        private readonly SessionManager sessionManager;
+        private readonly Encryptor encryptor;
+
+        public SecurityCodeHandler(
+          SecurityCodeService securityCodeService,
+          CustomerProfileService customerProfileService,
+          SessionManager sessionManager,
+          Encryptor encryptor,
+          ISecurityCodeSession securityCodeSession = null) : base(securityCodeService, securityCodeSession)
+        {
+            this.sessionManager = sessionManager;
+            this.encryptor = encryptor;
+            this.customerProfileService = customerProfileService;
+        }
 
         private string HashKey
         {
             get
             {
-                if (string.IsNullOrEmpty(this.cacheManager.Get<string>(CacheKeyHashKey)))
+                if (string.IsNullOrEmpty(this.sessionManager.Get<string>(HashKeySessionKey)))
                 {
-                    this.cacheManager.Add(CacheKeyHashKey, Encryption.RandomString(new Random().Next(4, 8))) ;
+                    var hashKey = this.encryptor.RandomString(new Random().Next(4, 8));
+
+                    this.sessionManager.Add(HashKeySessionKey, hashKey);
                 }
 
-                return this.cacheManager.Get<string>(CacheKeyHashKey) + string.Empty;
-            } 
+                return this.sessionManager.Get<string>(HashKeySessionKey) + string.Empty;
+            }
         }
 
         private string GenerateSecurityToken(int size = 6)
@@ -52,18 +68,10 @@
                 return string.Empty;
             }
 
-            return Alpha.Main.Encryption.Encryptor.RC4(this.HashKey, Alpha.Main.Encryption.Encryptor.HexDecode(encryption));
+            return this.encryptor.RC4(this.HashKey, this.encryptor.HexDecode(encryption));
         }
 
-        public SecurityCodeHandler(
-           SecurityCodeService securityCodeService,
-           CustomerProfileService customerProfileService,
-           CachingManager cacheManager,
-           ISecurityCodeSession securityCodeSession = null) : base(securityCodeService, securityCodeSession)
-        {
-            this.cacheManager = cacheManager;
-            this.customerProfileService = customerProfileService;
-        }
+
 
         public BaseSecurityCodeViewModel Handle(BaseSecurityCodeQuery message)
         {

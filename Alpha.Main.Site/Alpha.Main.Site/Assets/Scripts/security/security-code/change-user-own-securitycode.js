@@ -24,7 +24,7 @@ var changeUserOwnSecurityCode = {
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         var message = changeUserOwnSecurityCode.checkInputParameters($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
-            changeUserOwnSecurityCode.showFailMessage($messageContainer, message);
+            securityHelper.showFailMessage($messageContainer, message);
             $.unblockUI();
             return;
         }
@@ -43,7 +43,7 @@ var changeUserOwnSecurityCode = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode === 0) { // OK
-                    securityHelper.showSuccessfullyMessage($messageContainer, securityCodeResources.changePasswordSuccessfully);
+                    securityHelper.showSuccessfullyMessage($messageContainer, securityCodeResources.securityCodeChangeSucessfully);
                     setTimeout(changeUserOwnSecurityCode.refreshPage, 5000);
                 }
                 else if (data.ErrorCode === 2) { // account is closed
@@ -66,23 +66,23 @@ var changeUserOwnSecurityCode = {
         var confirmSecCode = $txtConfirmSecurityCode.val();
         if (oldSecCode.length === 0) {
             $txtOldSecurityCode.focus();
-            return securityCodeResourcess.oldSecurityCodeEmpty;
+            return securityCodeResources.oldSecurityCodeEmpty;
         }
         else if (secCode.length === 0) {
             $txtSecurityCode.focus();
-            return securityCodeResourcess.securityCodeEmpty;
+            return securityCodeResources.securityCodeEmpty;
         }
         else if (!securityHelper.isValidSecurityCode(secCode)) {
             $txtSecurityCode.focus();
-            return securityCodeResourcess.securityCodeWrongRule;
+            return securityCodeResources.securityCodeWrongRule;
         }
         else if (secCode != confirmSecCode) {
             $txtConfirmSecurityCode.focus();
-            return securityCodeResourcess.errorSecurityCodeConfirm;
+            return securityCodeResources.errorSecurityCodeConfirm;
         }
         else if (oldSecCode === secCode) {
             $txtSecurityCode.focus();
-            return securityCodeResourcess.sameSecurityCode;
+            return securityCodeResources.sameSecurityCode;
         }
 
         return '';

@@ -204,7 +204,6 @@
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
     <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
-    <Compile Include="Encryption\Encryptor.cs" />
     <Compile Include="FunctionRegistry.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\AppPathHelper.cs" />

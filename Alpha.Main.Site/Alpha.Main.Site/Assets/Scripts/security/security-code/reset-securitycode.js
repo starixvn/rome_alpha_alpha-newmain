@@ -42,7 +42,7 @@ var resetsecuritycode = {
                 }
                 else
                 {
-                    securityHelper.showSuccessfullyMessage($messageContainer, securityCodeResources.changePasswordSuccessfully);
+                    securityHelper.showSuccessfullyMessage($messageContainer, securityCodeResources.securityCodeChangeSucessfully);
                 }
             },
             complete: function (jqXHR, textStatus) {
