@@ -4,11 +4,12 @@
     using System.Globalization;
     using System.Text;
     using System.Threading;
+    using System.Web;
     using System.Web.Mvc;
     using System.Web.Mvc.Filters;
     using System.Web.Routing;
     using System.Web.Security;
-    using System.Web.SessionState;
+    using Auth.Web.Validators;
     using Constants;
     using Main.Helpers;
     using Sunplus.Agent.Model.Entities;
@@ -25,10 +26,29 @@
             if (!filterContext.HttpContext.User.Identity.IsAuthenticated
                 || UserSession.Current.UserId <= 0)
             {
-                var logInUrl = MicroSites.OldMainUrl(FormsAuthentication.LoginUrl);
-                Response.Redirect(logInUrl, true);
-                return;
+                UnAuthentication(filterContext);
             }
+        }
+
+        private void UnAuthentication(AuthenticationContext filterContext)
+        {
+            HttpResponseBase response = filterContext.HttpContext.Response;
+
+            if (filterContext.HttpContext.Request.IsAjaxRequest())
+            {
+                response.Clear();
+                response.Write("{ \"message\": \"You are not authorized on this function!\" }");
+                filterContext.Result = new HttpUnauthorizedResult();
+                filterContext.Result.ExecuteResult(filterContext.Controller.ControllerContext);
+                response.TrySkipIisCustomErrors = true;
+                response.End();
+            }
+            else
+            {
+                filterContext.Result = new RedirectResult(MicroSites.OldMainUrl(FormsAuthentication.LoginUrl));
+            }
+
+            ValidationLogger.WriteInfo("Redirect to login page.");
         }
 
         protected override JsonResult Json(
