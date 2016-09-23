@@ -83,6 +83,9 @@ body {
             color: #fc6b00;
         }
 
+        .dropdown.open .icon-plus:before {
+            content: '\e91c';
+        }
         .dropdown-stast {
             font-size: $font-size;
             line-height: 20px;
