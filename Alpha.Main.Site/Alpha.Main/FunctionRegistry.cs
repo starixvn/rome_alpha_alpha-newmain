@@ -92,12 +92,14 @@
 
             if (!Current.IsLogged)
             {
-                return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
+                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/Password/ForceChangePassword");
+               // return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
             }
 
             if (Current.IsPasswordExpired)
             {
-                return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
+                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/Password/ChangePassword");
+                //return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
             }
 
             var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];

@@ -24,11 +24,10 @@
 
 @Html.Hidden("securitycode-token", Model.SecurityCodeToken)
 @Html.Hidden("security-salt", Model.SecuritySalt)
-@Html.Hidden("inform-securitycode", Security.informSecCode)
 @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 @Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/default", "/bundles/site-main/security/before-home-page")
-    <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security-code/verify-securitycode")" type="text/javascript"></script>
+    <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/verify-securitycode")" type="text/javascript"></script>
 }

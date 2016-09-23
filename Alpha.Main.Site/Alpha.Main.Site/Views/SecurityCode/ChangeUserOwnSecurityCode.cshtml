@@ -53,16 +53,10 @@
 @Html.Hidden("securitycode-token", Model.SecurityCodeToken)
 @Html.Hidden("security-salt", Model.SecuritySalt)
 @Html.Hidden("hashkey", Model.HashKey)
-@Html.Hidden("alert-old-securitycode-empty", Security.alertOldSecCodeEmpty)
-@Html.Hidden("alert-securitycode-empty", Security.alertSecCodeEmpty)
-@Html.Hidden("alert-securitycode-wrong-rule", Security.lblSecCodeWrongRule)
-@Html.Hidden("alert-error-securitycode-confirm", Security.alertErrorSecCodeConfirm)
-@Html.Hidden("alert-same-securitycode", Security.alertSameSecCode)
-@Html.Hidden("alert-securitycode-change-ok", Security.alertSecCodeChangedOK)
 @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 @Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
-    <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security-code/change-user-own-securitycode")" type="text/javascript"></script>
+    <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/change-user-own-securitycode")" type="text/javascript"></script>
 }

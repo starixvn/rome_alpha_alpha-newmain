@@ -28,7 +28,7 @@
                 <li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="_blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.LoginOption</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
-                <li><a href="@($"{Model.OldMainRootPath}_MemberInfo/ChangePassword/ChangePassword.aspx")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
+                <li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
 
                 @if (Model.EnableSecurityCode)
                 {

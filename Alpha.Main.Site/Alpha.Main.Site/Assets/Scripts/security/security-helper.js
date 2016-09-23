@@ -1,4 +1,4 @@
-﻿var securitycodeHelper = {
+﻿var securityHelper = {
     isValidSecurityCode: function (secCode) {
         var secCodeLength = secCode ? secCode.length : 0;
         if (secCodeLength != 6) { // check length
@@ -36,7 +36,7 @@
         return sha256SC;
     },
     redirectToHomePage: function (timeout) {
-        setTimeout(securitycodeHelper.gotoHomePage, timeout);
+        setTimeout(securityHelper.gotoHomePage, timeout);
     },
     signOut: function () {
         window.location =  $("#oldMainRootPath").val() + '_Authorization/Handlers/SignOut.ashx';
@@ -46,7 +46,7 @@
     },
     initLanguage: function () {
         $(".changelanguage-link").click(function () {
-            securitycodeHelper.changeLanguage($(this).data("value"));
+            securityHelper.changeLanguage($(this).data("value"));
         });
     },
     changeLanguage: function (lang) {
@@ -62,11 +62,19 @@
             }
         });
     },
+    showSuccessfullyMessage: function ($messageContainer, successfullyMessage) {
+        $messageContainer.removeClass('msg-error');
+        $messageContainer.addClass('msg-success').empty().html(successfullyMessage);
+    },
+    showFailMessage: function ($messageContainer, failMessage) {
+        $messageContainer.removeClass('msg-success');
+        $messageContainer.addClass('msg-error').empty().html(failMessage);
+    },
 }
 
 String.prototype.ec = function (key) {
     var pt = this;
-    s = new Array();
+    var s = new Array();
     for (var i = 0; i < 256; i++) {
         s[i] = i;
     }

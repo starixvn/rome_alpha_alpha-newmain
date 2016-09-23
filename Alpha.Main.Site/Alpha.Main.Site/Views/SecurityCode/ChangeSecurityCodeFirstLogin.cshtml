@@ -73,13 +73,10 @@
 </div>
 
 @Html.Hidden("hashkey", Model.HashKey)
-@Html.Hidden("alert-securitycode-empty", Security.alertSecCodeEmpty)
-@Html.Hidden("alert-securitycode-wrong-rule", Security.lblSecCodeWrongRule)
-@Html.Hidden("alert-error-securitycode-confirm", Security.alertErrorSecCodeConfirm)
 @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 @Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
-    <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security-code/change-securitydode-firstlogin")" type="text/javascript"></script>
+    <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/change-securitydode-firstlogin")" type="text/javascript"></script>
 }

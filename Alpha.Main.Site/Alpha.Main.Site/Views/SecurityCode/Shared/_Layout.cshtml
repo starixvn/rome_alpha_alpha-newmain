@@ -11,5 +11,12 @@
     @RenderBody()
     @Html.AntiForgeryToken()    
     @RenderSection("js", required: false)
+
+    @Html.Hidden("alert-old-securitycode-empty", Security.alertOldSecCodeEmpty)
+    @Html.Hidden("alert-securitycode-empty", Security.alertSecCodeEmpty)
+    @Html.Hidden("alert-securitycode-wrong-rule", Security.lblSecCodeWrongRule)
+    @Html.Hidden("alert-error-securitycode-confirm", Security.alertErrorSecCodeConfirm)
+    @Html.Hidden("alert-same-securitycode", Security.alertSameSecCode)
+    @Html.Hidden("alert-securitycode-change-ok", Security.alertSecCodeChangedOK)
 </body>
 </html>

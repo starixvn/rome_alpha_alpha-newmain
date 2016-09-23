@@ -1,21 +1,14 @@
-﻿$(document).ready(function () {
-    changeSecurityCodeFirstLogin.initialize();
-})
+﻿'use strict';
+
 var changeSecurityCodeFirstLogin = {
-    resources: {
-        rules: "<i class='icon-information-outline icon-rules' data-toggle='modal' data-target='#sc'></i>",
-        securityCodeEmpty: $('#alert-securitycode-empty').val(),
-        securityCodeWrongRule: $('#alert-securitycode-wrong-rule').val(),
-        errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
-    },
     initialize: function () {
-        securitycodeHelper.initLanguage();
+        securityHelper.initLanguage();
         $('.form-SC').submit(function (e) {
             changeSecurityCodeFirstLogin.changeSecurityCode();
             e.preventDefault();
         });
         $("#btn-back").bind("click", function () {
-            securitycodeHelper.signOut();
+            securityHelper.signOut();
         });
 
         $('#txtSecCode').focus();
@@ -41,7 +34,7 @@ var changeSecurityCodeFirstLogin = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode === 0) {
-                    securitycodeHelper.redirectToHomePage(2000);
+                    securityHelper.redirectToHomePage(2000);
                 }
                 else {
                     $("#txtSecCode").addClass('error');
@@ -60,19 +53,19 @@ var changeSecurityCodeFirstLogin = {
         var confirmSecCode = $txtConfirmSecurityCode.val();
         if (secCode.length === 0) {
             $("#txtSecCode").addClass('error');
-            $("#txtSecCode-error").empty().html(changeSecurityCodeFirstLogin.resources.securityCodeEmpty).append(changeSecurityCodeFirstLogin.resources.rules);
+            $("#txtSecCode-error").empty().html(securityCodeResources.securityCodeEmpty).append(securityCodeResources.rules);
             $txtSecurityCode.focus();
             return false;
         }
-        else if (!securitycodeHelper.isValidSecurityCode(secCode)) {
+        else if (!securityHelper.isValidSecurityCode(secCode)) {
             $("#txtSecCode").addClass('error');
-            $("#txtSecCode-error").empty().html(changeSecurityCodeFirstLogin.resources.securityCodeWrongRule).append(changeSecurityCodeFirstLogin.resources.rules);
+            $("#txtSecCode-error").empty().html(securityCodeResources.securityCodeWrongRule).append(securityCodeResources.rules);
             $txtSecurityCode.focus();
             return false;
         }
         else if (secCode != confirmSecCode) {
             $("#txtConfirmSecCode").addClass('error');
-            $("#txtConfirmSecCode-error").empty().html(changeSecurityCodeFirstLogin.resources.errorSecurityCodeConfirm);
+            $("#txtConfirmSecCode-error").empty().html(securityCodeResources.errorSecurityCodeConfirm);
             $txtConfirmSecurityCode.focus();
             return false;
         }
@@ -86,3 +79,7 @@ var changeSecurityCodeFirstLogin = {
         $("#txtConfirmSecCode-error").empty();
     }
 }
+
+$(function () {
+    changeSecurityCodeFirstLogin.initialize();
+});

@@ -1,15 +1,6 @@
-﻿$(document).ready(function () {
-    changeUserOwnSecurityCode.initialize();
-})
+﻿'use strict';
+
 var changeUserOwnSecurityCode = {
-    resources: {
-        oldSecurityCodeEmpty: $('#alert-old-securitycode-empty').val(),
-        securityCodeEmpty: $('#alert-securitycode-empty').val(),
-        securityCodeWrongRule: $('#alert-securitycode-wrong-rule').val(),
-        errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
-        sameSecurityCode: $('#alert-same-securitycode').val(),
-        securityCodeChangeSucessfully: $('#alert-securitycode-change-ok').val()
-    },
     initialize: function () {
         var $form = $('.form-SC');
         $form.submit(function (e) {
@@ -40,7 +31,7 @@ var changeUserOwnSecurityCode = {
 
         var hashKey = $('#hashkey').val();
         var oldSecCode = $txtOldSecurityCode.val();
-        oldSecCode = securitycodeHelper.hashSecurityCode(oldSecCode);
+        oldSecCode = securityHelper.hashSecurityCode(oldSecCode);
         var secCode = $txtSecurityCode.val();
         secCode = secCode.ec(hashKey).hc();
         var confirmSecCode = $txtConfirmSecurityCode.val();
@@ -52,15 +43,15 @@ var changeUserOwnSecurityCode = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode === 0) { // OK
-                    changeUserOwnSecurityCode.showSuccessfullyMessage($messageContainer);
+                    securityHelper.showSuccessfullyMessage($messageContainer, securityCodeResources.changePasswordSuccessfully);
                     setTimeout(changeUserOwnSecurityCode.refreshPage, 5000);
                 }
                 else if (data.ErrorCode === 2) { // account is closed
                     alert(data.ErrorMessage);
-                    securitycodeHelper.signOut();
+                    securityHelper.signOut();
                 }
                 else {
-                    changeUserOwnSecurityCode.showFailMessage($messageContainer, data.ErrorMessage);
+                    securityHelper.showFailMessage($messageContainer, data.ErrorMessage);
                     $txtOldSecurityCode.focus();
                 }
             },
@@ -75,23 +66,23 @@ var changeUserOwnSecurityCode = {
         var confirmSecCode = $txtConfirmSecurityCode.val();
         if (oldSecCode.length === 0) {
             $txtOldSecurityCode.focus();
-            return changeUserOwnSecurityCode.resources.oldSecurityCodeEmpty;
+            return securityCodeResourcess.oldSecurityCodeEmpty;
         }
         else if (secCode.length === 0) {
             $txtSecurityCode.focus();
-            return changeUserOwnSecurityCode.resources.securityCodeEmpty;
+            return securityCodeResourcess.securityCodeEmpty;
         }
-        else if (!securitycodeHelper.isValidSecurityCode(secCode)) {
+        else if (!securityHelper.isValidSecurityCode(secCode)) {
             $txtSecurityCode.focus();
-            return changeUserOwnSecurityCode.resources.securityCodeWrongRule;
+            return securityCodeResourcess.securityCodeWrongRule;
         }
         else if (secCode != confirmSecCode) {
             $txtConfirmSecurityCode.focus();
-            return changeUserOwnSecurityCode.resources.errorSecurityCodeConfirm;
+            return securityCodeResourcess.errorSecurityCodeConfirm;
         }
         else if (oldSecCode === secCode) {
             $txtSecurityCode.focus();
-            return changeUserOwnSecurityCode.resources.sameSecurityCode;
+            return securityCodeResourcess.sameSecurityCode;
         }
 
         return '';
@@ -101,18 +92,14 @@ var changeUserOwnSecurityCode = {
         $("#txtSecCode").empty();
         $("#txtConfirmSecCode").empty();
     },
-    showSuccessfullyMessage: function ($messageContainer) {
-        $messageContainer.removeClass('msg-error');
-        $messageContainer.addClass('msg-success').empty().html(changeUserOwnSecurityCode.resources.securityCodeChangeSucessfully);
-    },
-    showFailMessage: function ($messageContainer, message) {
-        $messageContainer.removeClass('msg-success');
-        $messageContainer.addClass('msg-error').empty().html(message);
-    },
     gotoPasswordPage: function () {
-        window.location = $("#oldMainRootPath").val() + '_MemberInfo/ChangePassword/ChangePassword.aspx';
+        window.location = $("#mainRootPath").val() + 'Password/ChangePassword';
     },
     refreshPage: function () {
         window.location = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';
     }
 }
+
+$(function () {
+    changeUserOwnSecurityCode.initialize();
+});

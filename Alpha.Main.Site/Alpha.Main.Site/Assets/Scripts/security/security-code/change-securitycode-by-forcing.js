@@ -1,25 +1,15 @@
-﻿$(document).ready(function () {
-    changeSecurityCodeByForcing.initialize();
-})
+﻿'use strict';
+
 var changeSecurityCodeByForcing = {
-    resources: {
-        rules: "<i class='icon-information-outline icon-rules' data-toggle='modal' data-target='#sc'></i>",
-        oldSecurityCodeEmpty: $('#alert-old-securitycode-empty').val(),
-        securityCodeEmpty: $('#alert-securitycode-empty').val(),
-        securityCodeWrongRule: $('#alert-securitycode-wrong-rule').val(),
-        errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
-        sameSecurityCode: $('#alert-same-securitycode').val(),
-        securityCodeChangeSucessfully: $('#alert-securitycode-change-ok').val()
-    },
     initialize: function () {
-        securitycodeHelper.initLanguage();
+        securityHelper.initLanguage();
         $('.form-SC').submit(function (e) {
             changeSecurityCodeByForcing.changeSecurityCode();
             e.preventDefault();
         });
 
         $("#btn-back").bind("click", function () {
-            securitycodeHelper.signOut();
+            securityHelper.signOut();
         });
 
         $('#txtOldSecCode').focus();
@@ -35,7 +25,7 @@ var changeSecurityCodeByForcing = {
         }
 
         var oldSecCode = $txtOldSecurityCode.val();
-        oldSecCode = securitycodeHelper.hashSecurityCode(oldSecCode);
+        oldSecCode = securityHelper.hashSecurityCode(oldSecCode);
         var secCode = $txtSecurityCode.val();
         var hashKey = $('#hashkey').val();
         secCode = secCode.ec(hashKey).hc();
@@ -48,11 +38,11 @@ var changeSecurityCodeByForcing = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode === 0) { // OK
-                    securitycodeHelper.redirectToHomePage(2000);
+                    securityHelper.redirectToHomePage(2000);
                 }
                 else if (data.ErrorCode === 2) { // account is closed
                     alert(data.ErrorMessage);
-                    securitycodeHelper.signOut();
+                    securityHelper.signOut();
                 }
                 else {
                     $("#txtOldSecCode").addClass('error');
@@ -72,31 +62,31 @@ var changeSecurityCodeByForcing = {
         var confirmSecCode = $txtConfirmSecurityCode.val();
         if (oldSecCode.length === 0) {
             $("#txtOldSecCode").addClass('error');
-            $("#txtOldSecCode-error").empty().html(changeSecurityCodeByForcing.resources.oldSecurityCodeEmpty);
+            $("#txtOldSecCode-error").empty().html(securityCodeResources.oldSecurityCodeEmpty);
             $txtOldSecurityCode.focus();
             return false;
         }
         else if (secCode.length === 0) {
             $("#txtSecCode").addClass('error');
-            $("#txtSecCode-error").empty().html(changeSecurityCodeByForcing.resources.securityCodeEmpty).append(changeSecurityCodeByForcing.resources.rules);
+            $("#txtSecCode-error").empty().html(securityCodeResources.securityCodeEmpty).append(securityCodeResources.rules);
             $txtSecurityCode.focus();
             return false;
         }
-        else if (!securitycodeHelper.isValidSecurityCode(secCode)) {
+        else if (!securityHelper.isValidSecurityCode(secCode)) {
             $("#txtSecCode").addClass('error');
-            $("#txtSecCode-error").empty().html(changeSecurityCodeByForcing.resources.securityCodeWrongRule).append(changeSecurityCodeByForcing.resources.rules);
+            $("#txtSecCode-error").empty().html(securityCodeResources.securityCodeWrongRule).append(securityCodeResources.rules);
             $txtSecurityCode.focus();
             return false;
         }
         else if (secCode != confirmSecCode) {
             $("#txtConfirmSecCode").addClass('error');
-            $("#txtConfirmSecCode-error").empty().html(changeSecurityCodeByForcing.resources.errorSecurityCodeConfirm);
+            $("#txtConfirmSecCode-error").empty().html(securityCodeResources.errorSecurityCodeConfirm);
             $txtConfirmSecurityCode.focus();
             return false;
         }
         else if (oldSecCode === secCode) {
             $("#txtConfirmSecCode").addClass('error');
-            $("#txtConfirmSecCode-error").empty().html(changeSecurityCodeByForcing.resources.sameSecurityCode);
+            $("#txtConfirmSecCode-error").empty().html(securityCodeResources.sameSecurityCode);
             $txtSecurityCode.focus();
             return false;
         }
@@ -112,3 +102,7 @@ var changeSecurityCodeByForcing = {
         $("#txtConfirmSecCode-error").empty();
     }
 }
+
+$(function () {
+    changeSecurityCodeByForcing.initialize();
+});

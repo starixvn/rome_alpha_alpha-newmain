@@ -1,13 +1,6 @@
 ﻿'use strict';
 
-$(document).ready(function () {
-    verifySecurityCode.initialize();
-})
-
 var verifySecurityCode = {
-    resources: {
-        inform: $('#inform-securitycode').val()
-    },
     initialize: function () {
         $('#txtSecCode').keypress(function (e) {
             if (e.which == 13) {
@@ -29,13 +22,13 @@ var verifySecurityCode = {
         var $txtSecurityCode = $('#txtSecCode');
         var message = verifySecurityCode.checkInputParameters($txtSecurityCode);
         if (message.length !== 0) {
-            $messageContainer.empty().html(message);
+            securityHelper.showFailMessage($messageContainer, message);
             $.unblockUI();
             return;
         }
 
         var secCode = $txtSecurityCode.val();
-        secCode = securitycodeHelper.hashSecurityCode(secCode);
+        secCode = securityHelper.hashSecurityCode(secCode);
         $.ajax({
             type: 'POST',
             url: 'VerifySecurityCode',
@@ -61,10 +54,10 @@ var verifySecurityCode = {
                 }
                 else if (errorCode === 2) { // account is closed 
                     alert(data.ErrorMessage);
-                    securitycodeHelper.signOut();
+                    securityHelper.signOut();
                 }
                 else {
-                    $messageContainer.empty().html(data.ErrorMessage);
+                    securityHelper.showFailMessage($messageContainer, data.ErrorMessage);
                     $txtSecurityCode.focus();
                 }
             },
@@ -77,7 +70,7 @@ var verifySecurityCode = {
         var message = '';
         var secCode = $txtSecurityCode.val();
         if (secCode.length === 0) {
-            message = verifySecurityCode.resources.inform;
+            message = securityCodeResources.inform;
             $txtSecurityCode.focus();
         }
         return message;
@@ -93,3 +86,7 @@ var verifySecurityCode = {
         return vars;
     }
 }
+
+$(function () {
+    verifySecurityCode.initialize();
+});

@@ -1,13 +1,6 @@
-﻿$(document).ready(function () {
-    resetsecuritycode.initialize();
-})
+﻿'use strict';
+
 var resetsecuritycode = {
-    resources: {
-        securityCodeEmpty: $('#alert-securitycode-empty').val(),
-        securityCodeWrongRule: $('#alert-securitycode-wrong-rule').val(),
-        errorSecurityCodeConfirm: $('#alert-error-securitycode-confirm').val(),
-        securityCodeChangeSucessfully: $('#alert-securitycode-change-ok').val()
-    },
     initialize: function () {
         var $form = $('.form-SC');
         $form.submit(function (e) {
@@ -27,7 +20,7 @@ var resetsecuritycode = {
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         var message = resetsecuritycode.checkInputParameters($txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
-            resetsecuritycode.showFailMessage($messageContainer, message);
+            securityHelper.showFailMessage($messageContainer, message);
             $.unblockUI();
             return;
         }
@@ -44,14 +37,13 @@ var resetsecuritycode = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode !== 0) {
-                    resetsecuritycode.showFailMessage($messageContainer, data.ErrorMessage);
+                    securityHelper.showFailMessage($messageContainer, data.ErrorMessage);
                     $txtSecurityCode.focus();
                 }
                 else
                 {
-                    resetsecuritycode.showSuccessfullyMessage($messageContainer);
+                    securityHelper.showSuccessfullyMessage($messageContainer, securityCodeResources.changePasswordSuccessfully);
                 }
-
             },
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
@@ -63,15 +55,15 @@ var resetsecuritycode = {
         var confirmSecCode = $txtConfirmSecurityCode.val();
         if (secCode.length === 0) {
             $txtSecurityCode.focus();
-            return resetsecuritycode.resources.securityCodeEmpty; 
+            return securityCodeResources.securityCodeEmpty; 
         }
-        else if (!securitycodeHelper.isValidSecurityCode(secCode)) {
+        else if (!securityHelper.isValidSecurityCode(secCode)) {
             $txtSecurityCode.focus();
-            return resetsecuritycode.resources.securityCodeWrongRule;
+            return securityCodeResources.securityCodeWrongRule;
         }
         else if (secCode != confirmSecCode) {
             $txtConfirmSecurityCode.focus();
-            return resetsecuritycode.resources.errorSecurityCodeConfirm;
+            return securityCodeResources.errorSecurityCodeConfirm;
         }
 
         return '';
@@ -80,15 +72,9 @@ var resetsecuritycode = {
     {
         $("#txtSecCode").empty();
         $("#txtConfirmSecCode").empty();
-    },
-    showSuccessfullyMessage: function ($messageContainer)
-    {
-        $messageContainer.removeClass('msg-error');
-        $messageContainer.addClass('msg-success').empty().html(resetsecuritycode.resources.securityCodeChangeSucessfully);
-    },
-    showFailMessage: function ($messageContainer, message)
-    {
-        $messageContainer.removeClass('msg-success');
-        $messageContainer.addClass('msg-error').empty().html(message);
     }
 }
+
+$(function () {
+    resetsecuritycode.initialize();
+});
