@@ -212,11 +212,16 @@
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
-    <Compile Include="Criteria\HomeInfo\GetBalanceInfoCriteria.cs" />
-    <Compile Include="Criteria\HomeInfo\GetBalanceUpDayInfoCriteria.cs" />
+    <Compile Include="Criteria\Statistics\GetNewMembersCriteria.cs" />
+    <Compile Include="Criteria\Statistics\GetStatisticsCriteria.cs" />
+    <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteria.cs" />
+    <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteria.cs" />
     <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\ResetSubAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\Statistics\GetTopTurnoverMembers.cs" />
+    <Compile Include="Criteria\Statistics\GetTopWinningMembers.cs" />
+    <Compile Include="DataAccesses\BalanceUpDayInfoDataAccess.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCounterCriteria.cs" />
@@ -228,6 +233,7 @@
     <Compile Include="DataAccesses\PasswordDataAccess.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
+    <Compile Include="DataAccesses\Impl\BalanceUpDayInfoDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
     <Compile Include="FunctionRegistry.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -244,8 +250,10 @@
     <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />
     <Compile Include="Models\Enumerations\UserLevel.cs" />
-    <Compile Include="Models\Home\BalanceInfo.cs" />
-    <Compile Include="Models\Home\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
+    <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\Statistics\NewMember.cs" />
+    <Compile Include="Models\Statistics\Statistics.cs" />
     <Compile Include="Models\Menus\IMenuItem.cs" />
     <Compile Include="Models\Menus\MenuItem.cs" />
     <Compile Include="Models\Menus\MenuItemBuilder.cs" />
@@ -253,6 +261,8 @@
     <Compile Include="Models\Menus\MenuStatus.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\SecurityCode\SecurityCodeStatus.cs" />
+    <Compile Include="Models\Statistics\TopTurnoverMember.cs" />
+    <Compile Include="Models\Statistics\TopWinningMember.cs" />
     <Compile Include="Params\Announcements\GetHotAnnouncementsParams.cs" />
     <Compile Include="Params\Password\ResetMainAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ResetSubAccountPasswordParam.cs" />
@@ -268,14 +278,16 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Services\AnnouncementService.cs" />
+    <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\CachingManager.cs" />
     <Compile Include="Services\CustomerProfileService.cs" />
-    <Compile Include="Services\HomeInfoService.cs" />
+    <Compile Include="Services\BalanceInfoService.cs" />
     <Compile Include="Services\Impl\AnnouncementServiceImpl.cs" />
+    <Compile Include="Services\Impl\StatisticsServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingManagerImpl.cs" />
     <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
     <Compile Include="Services\Impl\PasswordServiceImpl.cs" />
-    <Compile Include="Services\Impl\HomeInfoServiceImpl.cs" />
+    <Compile Include="Services\Impl\BalanceInfoServiceImpl.cs" />
     <Compile Include="Services\Impl\SecurityCodeServiceImpl.cs" />
     <Compile Include="Services\Impl\SessionManagerImpl.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />

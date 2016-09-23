@@ -467,6 +467,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Member Info.
+        /// </summary>
+        public static string memberInfo {
+            get {
+                return ResourceManager.GetString("memberInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your betting limit value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
         /// </summary>
         public static string modifiedBettingLimitValue {

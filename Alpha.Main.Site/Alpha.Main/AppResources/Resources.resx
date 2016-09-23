@@ -448,4 +448,7 @@
   <data name="credit" xml:space="preserve">
     <value>Credit</value>
   </data>
+  <data name="memberInfo" xml:space="preserve">
+    <value>Member Info</value>
+  </data>
 </root>
