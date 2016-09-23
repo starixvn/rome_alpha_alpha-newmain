@@ -4,6 +4,7 @@
     using System.Web.Mvc;
     using System.Web.Security;
     using System.Web.SessionState;
+    using Auth.Web.Validators;
     using Fanex.Razorbill.Security.Sessions;
     using Main.Helpers;
     using MediatR;
@@ -49,7 +50,7 @@
             }
             catch(Exception ex)
             {
-                Logs.WriteWarn(ex);
+                ValidationLogger.WriteInfo(ex.ToString());
 
                 return Redirect(MicroSites.OldMainUrl(FormsAuthentication.LoginUrl));
             }
