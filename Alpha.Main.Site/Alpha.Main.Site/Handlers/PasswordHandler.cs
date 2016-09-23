@@ -6,6 +6,7 @@
     using Params.Password;
     using Requests.Password;
     using Services;
+    using Sunplus.Agent.Model.Entities;
 
     public class PasswordHandler :
          IRequestHandler<ChangePasswordCommand, Result>,
@@ -13,10 +14,12 @@
          IRequestHandler<ResetSubAccountPasswordCommand, Result>
     {
         private readonly PasswordService passwordService;
+        private readonly IUserSession userSession;
 
-        public PasswordHandler(PasswordService passwordService)
+        public PasswordHandler(PasswordService passwordService, IUserSession userSession)
         {
             this.passwordService = passwordService;
+            this.userSession = userSession;
         }
 
         public Result Handle(ResetSubAccountPasswordCommand message)
@@ -61,9 +64,10 @@
 
         public Result Handle(ChangePasswordCommand message)
         {
+            var result = new Result();
             if (message.IsSubAccount)
             {
-                return this.passwordService.ChangeSubAccountPassword(
+                result = this.passwordService.ChangeSubAccountPassword(
                 new ChangeSubAccountPasswordParam
                 {
                     CustId = message.CustId,
@@ -80,7 +84,7 @@
             }
             else
             {
-                return this.passwordService.ChangeMainAccountPassword(new ChangeMainAccountPasswordParam
+                result = this.passwordService.ChangeMainAccountPassword(new ChangeMainAccountPasswordParam
                 {
                     ActorId = message.ActorId,
                     ActorName = message.Username,
@@ -95,6 +99,17 @@
                     NickName = message.NickName
                 });
             }
+
+            if(result.IsSuccessful)
+            {
+                // Update is first login status
+                this.userSession.IsLogged = true;
+
+                // Update last change pwd date
+                this.userSession.IsPasswordExpired = false;
+            }
+
+            return result;
         }
     }
 }

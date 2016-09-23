@@ -46,13 +46,6 @@
         }
 
         [HttpPost]
-        public ActionResult ForceChangePassword(ChangePasswordCommand command)
-        {
-            var result = this.mediator.Send(command);
-            return Json(result);
-        }
-
-        [HttpPost]
         public ActionResult ResetMainAccountPassword(ResetMainAccountPasswordCommand command)
         {
             var result = this.mediator.Send(command);

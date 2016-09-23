@@ -30,7 +30,7 @@
         public ActionResult Index()
         {
             //return RedirectToAction("ForceChangePassword", "Password");
-            return RedirectToAction("ResetMainAccountPassword", "Password");
+            //return RedirectToAction("ResetMainAccountPassword", "Password");
             //return RedirectToAction("ResetSubAccountPassword", "Password");
 
             var browser = this.mediator.Send(new BrowserQuery(this.userSession));

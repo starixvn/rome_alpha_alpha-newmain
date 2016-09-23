@@ -9,7 +9,7 @@
     {
         private readonly IUserSession userSession;
 
-        public ResetSubAccountPasswordCommand()
+        public ResetSubAccountPasswordCommand() : this(null)
         {
         }
 

@@ -13,7 +13,7 @@
     {
         private readonly IUserSession userSession;
 
-        public ChangePasswordCommand()
+        public ChangePasswordCommand() : this(null)
         {
 
         }
@@ -23,9 +23,21 @@
             this.userSession = userSession ?? new UserSessionExt();
         }
 
-        public int CustId { get; set; }
+        public int CustId
+        {
+            get
+            {
+                return userSession.CustId;
+            }
+        }
 
-        public int SubAccountId { get; set; }
+        public int SubAccountId
+        {
+            get
+            {
+                return userSession.SubAccId;
+            }
+        }
 
         public int ActorId
         {
