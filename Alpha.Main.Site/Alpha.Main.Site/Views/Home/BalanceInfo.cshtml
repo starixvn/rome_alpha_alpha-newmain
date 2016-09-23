@@ -4,46 +4,46 @@
 <div class="container">
     <div class="panel-title"><span class="icon-balanceinfo"></span>balance info</div>
     <div class="row">
-        <div class="col-xs-7 lable">@Model.AgentLabel</div>
+        <div class="col-xs-7 label">@Model.AgentLabel</div>
         <div class="col-xs-5 value"><strong>@Model.AgentName</strong></div>
     </div>
     <div class="row">
-        <div class="col-xs-7 lable">@Resources.currency</div>
+        <div class="col-xs-7 label">@Resources.currency</div>
         <div class="col-xs-5 value"><strong>@Model.Currency</strong></div>
     </div>
     <div class="group-title">@Resources.balance</div>
     <div class="row">
-        <div class="col-xs-7 lable">@Resources.cashBalance</div>
+        <div class="col-xs-7 label">@Resources.cashBalance</div>
         @FormatBalance(Model.BalanceInfo.CashBalance)
     </div>
     <div class="row">
-        <div class="col-xs-7 lable">@Resources.yesterdayCashBalance</div>
+        <div class="col-xs-7 label">@Resources.yesterdayCashBalance</div>
         @FormatBalance(Model.BalanceInfo.YesterdayCashBalance)
     </div>
     <div class="row">
-        <div class="col-xs-7 lable">@Resources.totalBalance</div>
+        <div class="col-xs-7 label">@Resources.totalBalance</div>
         @FormatBalance(Model.BalanceInfo.TotalBalance)
     </div>
     <div class="row">
-        <div class="col-xs-7 lable">@Resources.yesterdayTotalBalance</div>
+        <div class="col-xs-7 label">@Resources.yesterdayTotalBalance</div>
         @FormatBalance(Model.BalanceInfo.YesterdayTotalBalance)
     </div>
     <div class="group-title">@Resources.winloss</div>
     <div class="row">
-        <div class="col-xs-7 lable">@Resources.todayWinLoss (@DateTime.Today.ToString("MM/dd/yyyy"))</div>
+        <div class="col-xs-7 label">@Resources.todayWinLoss (@DateTime.Today.ToString("MM/dd/yyyy"))</div>
         <div class="col-xs-5 value"><strong>@FormatNumber(Model.BalanceInfo.TodayWinLoss)</strong></div>
     </div>
     <div class="row">
-        <div class="col-xs-7 lable">@Resources.yesterdayWinLoss (@DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy"))</div>
+        <div class="col-xs-7 label">@Resources.yesterdayWinLoss (@DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy"))</div>
         <div class="col-xs-5 value"><strong>@FormatNumber(Model.BalanceInfo.TodayWinLoss)</strong></div>
     </div>
     <div class="group-title">@Resources.credit</div>
     <div class="row">
-        <div class="col-xs-7 lable">@Model.AgentGivenCreditLabel</div>
+        <div class="col-xs-7 label">@Model.AgentGivenCreditLabel</div>
         <div class="col-xs-5 value"><strong>@FormatNumber(Model.BalanceInfo.GivenCredit)</strong></div>
     </div>
     <div class="row">
-        <div class="col-xs-7 lable">@Model.TotalMemberCreditLabel</div>
+        <div class="col-xs-7 label">@Model.TotalMemberCreditLabel</div>
         <div class="col-xs-5 value"><strong>@FormatNumber(Model.BalanceInfo.MemberCredit)</strong></div>
     </div>
 

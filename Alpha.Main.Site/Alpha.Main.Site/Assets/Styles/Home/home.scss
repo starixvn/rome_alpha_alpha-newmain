@@ -11,10 +11,17 @@ body {
 .tab-content > .tab-pane {
     padding: 8px 0;
 
-    .lable {
-        text-transform: capitalize;
+    .pointer {
+        cursor: pointer;
+    }
+
+    .label {
+        font-size: inherit;
+        font-weight: normal;
         color: $text-color;
-        text-align: left;
+        line-height: 36px;
+        text-transform: capitalize;        
+        text-align: left;        
     }
 
     .value {
@@ -74,6 +81,34 @@ body {
 
         .suspended {
             color: #fc6b00;
+        }
+
+        .dropdown-stast {
+            font-size: $font-size;
+            line-height: 20px;
+            max-height: 280px;
+            overflow: auto;            
+            padding: 0;
+            width: 350px;
+            @include border-radius(0);
+
+            .width-100per {
+                width: 100%;
+            }
+
+            .username {
+                width: 147px;
+                word-break: break-all;
+                white-space: normal;
+            }
+
+            .newMemCol {
+                width: 100px;
+            }
+
+            .datetime {
+                font-size: $font-size - 4;
+            }
         }
     }
 
@@ -184,6 +219,10 @@ body {
                 padding: 6px 16px;
                 line-height: 20px;
             }
+        }
+
+        .label {
+            line-height: 30px;      
         }
 
         .panel-title {
