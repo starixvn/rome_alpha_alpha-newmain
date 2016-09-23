@@ -846,34 +846,39 @@ function clearPopupSubtitle(hasSubTitle) {
     }
 }
 
-function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut) {
+function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFrameFunction) {
     var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
     var iframes = popUp.find('#popup-iframe');
     var iframeSrc = iframes && iframes.length && iframes.attr('src');
 
-    function storeAndRestoreFrameData() {
+    function blurElementToScrollIframe() {
+        top.main.$('txtUserName').blur();
+    }
+
+    function storeAndRestoreFrameData(isCustomerList) {
         var mainFrame = top.main;
         var $main = top.$('#main');
         var scrollY = mainFrame.scrollY || mainFrame.pageYOffset || mainFrame.scrollTop || 0;
 
-        var isCustomerList = mainFrame.$("arrayCustID") && mainFrame.$("arrayCustID").value.length &&
-         mainFrame.$("arrayUserName") && mainFrame.$("arrayUserName").value.length;
+        var arrayCustId = '';
+        var arrayUserName = '';
+
         if (isCustomerList) {
-            var arrayCustId = mainFrame.$("arrayCustID").value;
-            var arrayUserName = mainFrame.$("arrayUserName").value;
-            $main.on('load.oldmain', function () {
+            arrayCustId = mainFrame.$("arrayCustID").value;
+            arrayUserName = mainFrame.$("arrayUserName").value;
+        };
+
+        $main.on('load.oldmain', function () {
+            if (isCustomerList) {
                 mainFrame.$("arrayCustID").value = arrayCustId;
                 mainFrame.$("arrayUserName").value = arrayUserName;
+            }
 
-                $main[0].contentWindow.scrollTo(0, scrollY);
-                $main.off('load.oldmain');
-            });
-        } else {
-            $main.on('load.oldmain', function () {
-                $main[0].contentWindow.scrollTo(0, scrollY);
-                $main.off('load.oldmain');
-            });
-        }
+            blurElementToScrollIframe();
+
+            $main[0].contentWindow.scrollTo(0, scrollY);
+            $main.off('load.oldmain');
+        });
     }
 
     function doActionAfterTimeOut() {
@@ -881,7 +886,12 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut) {
             top.ageWnd.close();
         }
 
-        storeAndRestoreFrameData();
+        var mainFrame = top.main;
+        var isCustomerList = mainFrame.$("arrayCustID") &&
+            mainFrame.$("arrayCustID").value.length &&
+            mainFrame.$("arrayUserName") &&
+            mainFrame.$("arrayUserName").value.length;
+        storeAndRestoreFrameData(isCustomerList);
 
         top.main.location.reload(true);
 
