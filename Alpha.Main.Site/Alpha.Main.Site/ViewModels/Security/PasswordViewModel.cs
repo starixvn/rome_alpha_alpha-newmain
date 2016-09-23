@@ -5,6 +5,12 @@
 
     public class PasswordViewModel
     {
+        public int CustId { get; set; }
+
+        public int SubAccountId { get; set; }
+
+        public int CustRole { get; set; }
+
         public string HashKey { get; set; }
 
         public string OldMainRootPath

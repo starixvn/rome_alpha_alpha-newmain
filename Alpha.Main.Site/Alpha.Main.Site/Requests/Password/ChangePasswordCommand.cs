@@ -1,9 +1,5 @@
 ﻿namespace Alpha.Main.Site.Requests.Password
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using Main.Models;
     using MediatR;
     using Sunplus.Agent.Model.Base;
@@ -15,7 +11,6 @@
 
         public ChangePasswordCommand() : this(null)
         {
-
         }
 
         public ChangePasswordCommand(IUserSession userSession)
@@ -46,7 +41,6 @@
                 return this.userSession.CustId;
             }
         }
-
 
         public bool IsCasinoDisabled
         {
@@ -91,7 +85,7 @@
                 return this.userSession.IsSubAcc;
             }
         }
-        
+
         public string Username
         {
             get

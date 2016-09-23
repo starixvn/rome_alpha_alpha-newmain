@@ -18,27 +18,27 @@
         }
 
         // GET: Password
-        public ActionResult ChangePassword()
+        public ActionResult ChangePassword(ChangePasswordQuery query)
         {
-            var viewModel = this.mediator.Send(new PasswordQuery());
+            var viewModel = this.mediator.Send(query);
             return View(viewModel);
         }
 
-        public ActionResult ForceChangePassword()
+        public ActionResult ForceChangePassword(ForceChangePasswordQuery query)
         {
-            var viewModel = this.mediator.Send(new PasswordQuery());
+            var viewModel = this.mediator.Send(query);
             return View(viewModel);
         }
 
-        public ActionResult ResetMainAccountPassword()
+        public ActionResult ResetMainAccountPassword(ResetMainAccountPasswordQuery query)
         {
-            var viewModel = this.mediator.Send(new PasswordQuery());
+            var viewModel = this.mediator.Send(query);
             return View(viewModel);
         }
 
-        public ActionResult ResetSubAccountPassword()
+        public ActionResult ResetSubAccountPassword(ResetSubAccountPasswordQuery query)
         {
-            var viewModel = this.mediator.Send(new PasswordQuery());
+            var viewModel = this.mediator.Send(query);
             return View(viewModel);
         }
 

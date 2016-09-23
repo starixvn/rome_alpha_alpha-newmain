@@ -3,7 +3,7 @@
     using MediatR;
     using ViewModels.Security;
 
-    public class PasswordQuery : IRequest<PasswordViewModel>
+    public class ChangePasswordQuery : IRequest<PasswordViewModel>
     {
     }
 }

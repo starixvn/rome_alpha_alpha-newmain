@@ -832,9 +832,12 @@
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
-    <Compile Include="Requests\Password\PasswordQuery.cs" />
+    <Compile Include="Requests\Password\ChangePasswordQuery.cs" />
+    <Compile Include="Requests\Password\ForceChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetMainAccountPasswordCommand.cs" />
+    <Compile Include="Requests\Password\ResetMainAccountPasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetSubAccountPasswordCommand.cs" />
+    <Compile Include="Requests\Password\ResetSubAccountPasswordQuery.cs" />
     <Compile Include="Requests\SecurityCode\BaseSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
@@ -853,6 +856,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\BaseSecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\LoginSecurityCodeViewModel.cs" />

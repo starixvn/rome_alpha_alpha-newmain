@@ -15,7 +15,10 @@
          IRequestHandler<ChangePasswordCommand, Result>,
          IRequestHandler<ResetMainAccountPasswordCommand, Result>,
          IRequestHandler<ResetSubAccountPasswordCommand, Result>,
-         IRequestHandler<PasswordQuery, PasswordViewModel>
+         IRequestHandler<ChangePasswordQuery, PasswordViewModel>,
+         IRequestHandler<ForceChangePasswordQuery, ForceChangePasswordViewModel>,
+         IRequestHandler<ResetMainAccountPasswordQuery, PasswordViewModel>,
+         IRequestHandler<ResetSubAccountPasswordQuery, PasswordViewModel>
     {
         private const string HashKeySessionKey = "ph";
 
@@ -55,16 +58,22 @@
             return result;
         }
 
-        public PasswordViewModel Handle(PasswordQuery message)
+        public PasswordViewModel Handle(ChangePasswordQuery message)
+        {
+           
+            return new PasswordViewModel
+            {
+                HashKey = GetHasKey()
+            };
+        }
+
+        private string GetHasKey()
         {
             var hashKey = this.encryptor.RandomString(new Random().Next(4, 8));
 
             this.sessionManager.Add(HashKeySessionKey, hashKey);
 
-            return new PasswordViewModel
-            {
-                HashKey = hashKey
-            };
+            return hashKey;
         }
 
         public Result Handle(ResetMainAccountPasswordCommand message)
@@ -136,6 +145,33 @@
             }
 
             return result;
+        }
+
+        public ForceChangePasswordViewModel Handle(ForceChangePasswordQuery message)
+        {
+            return new ForceChangePasswordViewModel
+            {
+                HashKey = GetHasKey()
+            };
+        }
+
+        public PasswordViewModel Handle(ResetMainAccountPasswordQuery message)
+        {
+            var viewModel = Handle(new ChangePasswordQuery());
+
+            viewModel.CustId = message.CustId;
+            viewModel.CustRole = message.CustRole;
+
+            return viewModel;
+        }
+
+        public PasswordViewModel Handle(ResetSubAccountPasswordQuery message)
+        {
+            var viewModel = Handle(new ChangePasswordQuery());
+
+            viewModel.SubAccountId = message.SubAccountId;
+
+            return viewModel;
         }
     }
 }
