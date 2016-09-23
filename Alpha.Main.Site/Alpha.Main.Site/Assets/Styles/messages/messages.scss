@@ -34,8 +34,16 @@ body {
     }
 }
 
+@media only screen and (max-width : $conent-device-greater1024) {
+    .filter {        
+        .input-group.date .form-control {
+            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+        }
+    }  
+}
+
 /* ----------- Mobile ----------- */
-@media only screen and (max-width : 767px) {
+@media only screen and (max-width : $conent-device-lower768) {
     body {
         background-color: #fff;
         font-size: $font-size + 1;

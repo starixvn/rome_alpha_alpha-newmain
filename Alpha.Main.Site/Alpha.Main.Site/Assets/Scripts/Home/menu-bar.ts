@@ -58,23 +58,12 @@
 
         var activeSubMenu = $('.menu-item.active .sub-menu');
 
-        if (alpha.isScreenLower768) {
+        if (alpha.isScreenLower1024) {
             mainContent.addClass('expanded-mobile');
             sidebar.addClass('hidden-mobile');
             return;
         }
-
-        if (alpha.isScreenGreater768AndLower1024) {
-            activeSubMenu.hide();
-            sidebar.addClass('collapsed')
-                .addClass('collapsed-smallsize');
-            mainContent.addClass('expanded');
-
-            menuBar.positionPTTooltip();
-
-            return;
-        }
-
+        
         if (alpha.isScreenGreater1024) {
             activeSubMenu.show();
             sidebar.removeClass('collapsed').removeClass('collapsed-smallsize');
@@ -117,7 +106,7 @@
         menuBar.domElements.extraIcon.click(menuBar.expandSideBar);
         menuBar.domElements.hamburgerIcon.click(function (e) {
             menuBar.collapseLeftPanel();
-            if (alpha.isScreenLower768) {
+            if (alpha.isScreenLower1024) {
                 e.stopPropagation();
             }
         });
@@ -142,7 +131,7 @@
         var sidebar = menuBar.domElements.sideBar,
             content = menuBar.domElements.mainContent;
 
-        if (alpha.isScreenLower768) {
+        if (alpha.isScreenLower1024) {
             if (sidebar.hasClass('hidden-mobile')) {
                 content.addClass('expanded-mobile');
                 sidebar.removeClass('hidden-mobile').addClass('visible-mobile');
@@ -242,7 +231,7 @@
     collapseSideBar: function () {
         var sideBar = menuBar.domElements.sideBar;
 
-        if (alpha.isScreenLower768 && sideBar.hasClass('visible-mobile') ) {
+        if (alpha.isScreenLower1024 && sideBar.hasClass('visible-mobile') ) {
             menuBar.domElements.mainContent.addClass('expanded-mobile');
             sideBar.addClass('hidden-mobile').removeClass('visible-mobile');
         }

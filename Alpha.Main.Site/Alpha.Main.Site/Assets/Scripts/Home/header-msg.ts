@@ -6,7 +6,8 @@
 var headerMessage = {
     urls: {
         oldMainAppNormalMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
-        oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
+        //oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
+        oldMainAppPrivateMessageForm: alpha.urls.mainRootPath + 'messages/index',
         oldMainAppSpecialMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=special',
         updatePrivateMessageCount: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
         getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'

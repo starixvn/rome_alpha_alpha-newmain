@@ -72,6 +72,7 @@ var alpha = {
     isScreenGreater1024: false,
     isScreenLower768: false,
     isScreenGreater768AndLower1024: false,
+    isScreenLower1024: false,
     isMobile: false,
     detectResponsiveInformation: function () {
         if (alpha.core.isIe()) {
@@ -81,11 +82,8 @@ var alpha = {
 
         var currentWindowWidth = $(window).width();
 
-        if (currentWindowWidth < 768) {
-            alpha.isScreenLower768 = true;
-        }
-        else if (currentWindowWidth <= 1024) {
-            alpha.isScreenGreater768AndLower1024 = true;
+        if (currentWindowWidth <= 1024) {
+            alpha.isScreenLower1024 = true;
         }
         else {
             alpha.isScreenGreater1024 = true;

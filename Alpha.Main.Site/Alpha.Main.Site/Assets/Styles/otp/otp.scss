@@ -12,6 +12,11 @@ label {
     font-weight: normal;
 }
 
+[class^='btn'] {
+    height: auto;
+    min-height: $height-normal;
+}
+
 // Messages
 .msg {
     display: table;
@@ -31,9 +36,9 @@ label {
     }
 
     // Buttons
-    .otp-email, .otp-sophos  {
-        width: 48%;
+    .otp-email, .otp-sophos  {        
         margin-right: 0;
+        width: 48%;
         white-space: normal;
     }
 
@@ -223,13 +228,23 @@ label {
     }
 }
 
-@media only screen and (max-width : 767px) {
+@media only screen and (max-width : $conent-device-greater1024) {
+    .otp-register {        
+        .txt {
+            margin-left: 2px;
+            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+        }
+    }
+}
+
+@media only screen and (max-width : $conent-device-lower768) {
     body {
         background-color: #fff;
     }
 
     [class^='btn'] {
-        height: 36px;
+        height: auto;
+        min-height: $height-mobile;
         width: 100%;
         margin-right: 0;
     }
@@ -261,8 +276,7 @@ label {
         }
 
         .txt {
-            height: 36px;
-            margin-left: 2px;
+            height: $height-mobile;            
             @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
         }
 
@@ -299,7 +313,7 @@ label {
 
             .form-register {
                 .txt {
-                    height: 36px;
+                    height: $height-mobile;
                     width: 99%;
                 }
             }

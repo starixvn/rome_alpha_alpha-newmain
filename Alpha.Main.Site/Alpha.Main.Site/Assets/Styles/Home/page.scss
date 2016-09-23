@@ -305,35 +305,14 @@ html * {
     z-index: 1200;
 }
 
-@media only screen and (max-width : 767px) {
+@media only screen and (max-width: $screen-device-greater1024) {
     body {
         background-color: #fff;
-    }
-
-    // Announcements
-    #popup-container-text {
-        display: none !important;
-    }
-        
-    .announcement-modal {
-        z-index: 0;
-        &.visible-mobile {            
-            left: 0;
-            display: block;
-            right: 0;
-            width: 100%;            
-
-            &.in {
-                top: 0;
-                z-index: 1050;
-            }
-        }
     }
 
     .content-wrapper {
         .content {
             background-color: #fff;
-            top: 48px;
         }
 
         &.expanded-mobile, .header {
@@ -355,37 +334,38 @@ html * {
         }
     }
 }
+
+@media only screen and (max-width : $screen-device-lower768) {    
+
+     .content-wrapper {
+        .content {
+            top: 48px;
+        }
+    }
+    // Announcements
+    #popup-container-text {
+        display: none !important;
+    }
+        
+    .announcement-modal {
+        z-index: 0;
+        &.visible-mobile {            
+            left: 0;
+            display: block;
+            right: 0;
+            width: 100%;            
+
+            &.in {
+                top: 0;
+                z-index: 1050;
+            }
+        }
+    }
+    
+}
+
 .piwik-noscript {
     border: 0;
-}
-@media only screen and (max-width:1024px) {
-    .mainmenu-container {
-        .menu-item {
-           .icon {
-               font-size: 20px;
-               margin-right: 18px;
-               &.icon-totalbets {
-                    font-size: 20px;
-                }
-           }
-           > a {
-               padding: 16px 8px 16px 18px;
-           }
-       }
-        .sub-menu .sub-menu-item {
-            padding: 9px 15px 9px 54px;
-        }
-    } 
-   
-   .content-wrapper {
-       &.expanded {
-           left: 56px;
-           .header {
-               left: 56px;
-           }
-
-       }
-   }
 }
 
 @media \0screen\,screen\9 {
