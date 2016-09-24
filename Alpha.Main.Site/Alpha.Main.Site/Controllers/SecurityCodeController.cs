@@ -11,68 +11,50 @@
     [SessionState(SessionStateBehavior.Default)]
     public class SecurityCodeController : BaseController
     {
-        private readonly IUserSession userSession;
-        private ISecurityCodeSession securityCodeSession;
         private readonly IMediator mediator;
 
-        public SecurityCodeController(IUserSession userSession, ISecurityCodeSession securityCodeSession,IMediator mediator)
+        public SecurityCodeController(IMediator mediator)
         {
-            this.securityCodeSession = securityCodeSession;
-            this.userSession = userSession;
             this.mediator = mediator;
         }
 
         [HttpGet]
-        public ActionResult ChangeSecurityCodeFirstLogin()
+        public ActionResult ChangeSecurityCodeFirstLogin(LoginSecurityCodeQuery query)
         {
-            var query = new LoginSecurityCodeQuery(this.userSession);
-
             var viewModel = mediator.Send(query);
-
-            viewModel.Language = mediator.Send(new AllLanguagesQuery(userSession.Language));
 
             return View(viewModel);
         }
 
         [HttpPost]
         [AntiXSRFFilter]
-        public JsonResult ChangeSecurityCodeFirstLogin(string securityCode, string confirmSecurityCode)
+        public JsonResult ChangeSecurityCodeFirstLogin(ChangeSecurityCodeFirstLoginCommand query)
         {
-            var query = new ChangeSecurityCodeFirstLoginCommand(securityCode, confirmSecurityCode, this.securityCodeSession);
-
             var viewModel = mediator.Send(query);
 
             return Json(viewModel);
         }
 
         [HttpGet]
-        public ActionResult ChangeSecurityCodeByForcing()
+        public ActionResult ChangeSecurityCodeByForcing(LoginSecurityCodeQuery query)
         {
-            var query = new LoginSecurityCodeQuery(this.userSession);
-
             var viewModel = mediator.Send(query);
-
-            viewModel.Language = mediator.Send(new AllLanguagesQuery(userSession.Language));
 
             return View(viewModel);
         }
 
         [HttpPost]
         [AntiXSRFFilter]
-        public JsonResult ChangeSecurityCodeByForcing(string oldSecurityCode, string securityCode, string confirmSecurityCode)
+        public JsonResult ChangeSecurityCodeByForcing(ChangeSecurityCodeByForcingCommand query)
         {
-            var query = new ChangeSecurityCodeByForcingCommand(oldSecurityCode, securityCode, confirmSecurityCode, this.securityCodeSession);
-
             var viewModel = mediator.Send(query);
 
             return Json(viewModel);
         }
 
         [HttpGet]
-        public ActionResult ChangeUserOwnSecurityCode()
+        public ActionResult ChangeUserOwnSecurityCode(BaseSecurityCodeQuery query)
         {
-            var query = new BaseSecurityCodeQuery(this.userSession);
-
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -80,20 +62,16 @@
 
         [HttpPost]
         [AntiXSRFFilter]
-        public JsonResult ChangeUserOwnSecurityCode(string oldSecurityCode, string securityCode, string confirmSecurityCode)
+        public JsonResult ChangeUserOwnSecurityCode(ChangeUserOwnSecurityCodeCommand query)
         {
-            var query = new ChangeUserOwnSecurityCodeCommand(oldSecurityCode, securityCode, confirmSecurityCode, this.securityCodeSession);
-
             var viewModel = mediator.Send(query);
 
             return Json(viewModel);
         }
 
         [HttpGet]
-        public ActionResult ResetSecurityCode()
+        public ActionResult ResetSecurityCode(BaseSecurityCodeQuery query)
         {
-            var query = new BaseSecurityCodeQuery(this.userSession);
-
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -101,20 +79,16 @@
 
         [HttpPost]
         [AntiXSRFFilter]
-        public JsonResult ResetSecurityCode(int? custId, int? subAccId, string securityCode, string confirmSecurityCode)
+        public JsonResult ResetSecurityCode(ResetSecurityCodeCommand query)
         {
-            var query = new ResetSecurityCodeCommand(custId.HasValue ? custId.Value : 0, subAccId.HasValue ? subAccId.Value : 0, securityCode, confirmSecurityCode, this.securityCodeSession);
-
             var viewModel = mediator.Send(query);
 
             return Json(viewModel);
         }
 
         [HttpGet]
-        public ActionResult VerifySecurityCode()
+        public ActionResult VerifySecurityCode(BaseSecurityCodeQuery query)
         {
-            var query = new BaseSecurityCodeQuery(this.userSession);
-
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -122,10 +96,8 @@
 
         [HttpPost]
         [AntiXSRFFilter]
-        public JsonResult VerifySecurityCode(string securityCode)
+        public JsonResult VerifySecurityCode(VerifySecurityCodeCommand query)
         {
-            var query = new VerifySecurityCodeCommand(securityCode, this.securityCodeSession);
-
             var viewModel = mediator.Send(query);
 
             return Json(viewModel);
@@ -134,7 +106,7 @@
         [ChildActionOnly]
         public ActionResult Languages()
         {
-            var viewModel = mediator.Send(new AllLanguagesQuery(userSession.Language));
+            var viewModel = mediator.Send(new AllLanguagesQuery());
 
             return PartialView(viewModel);
         }

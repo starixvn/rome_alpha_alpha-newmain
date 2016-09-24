@@ -1,14 +1,21 @@
 ﻿namespace Alpha.Main.Site.Models.Request.SecurityCode
 {
     using MediatR;
+    using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Security;
+
     public class BaseSecurityCodeQuery : IRequest<BaseSecurityCodeViewModel>
     {
         private readonly IUserSession userSession;
+
+        public BaseSecurityCodeQuery() : this(null)
+        {
+        }
+
         public BaseSecurityCodeQuery(IUserSession userSession)
         {
-            this.userSession = userSession;
+            this.userSession = userSession ?? new UserSessionExt();
         }
 
         public int CustId

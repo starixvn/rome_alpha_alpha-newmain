@@ -6,12 +6,14 @@
     public class ChangeUserOwnSecurityCodeCommand : IRequest<Result>
     {
         private ISecurityCodeSession securityCodeSession;
-        public ChangeUserOwnSecurityCodeCommand(string oldSecurityCode, string securityCode, string confirmSecurityCode, ISecurityCodeSession securityCodeSession)
+
+        public ChangeUserOwnSecurityCodeCommand() : this(null)
         {
-            this.securityCodeSession = securityCodeSession;
-            this.OldSecurityCode = oldSecurityCode;
-            this.SecurityCode = securityCode;
-            this.ConfirmSecurityCode = confirmSecurityCode;
+        }
+
+        public ChangeUserOwnSecurityCodeCommand(ISecurityCodeSession securityCodeSession)
+        {
+            this.securityCodeSession = securityCodeSession ?? new SecurityCodeSession();
         }
 
         public int CustId

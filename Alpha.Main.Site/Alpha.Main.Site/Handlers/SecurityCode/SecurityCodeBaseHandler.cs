@@ -232,8 +232,8 @@
             Result result = this.securityCodeService.UpdateMainAccountHashSecurityCode(new SecurityCodeParams
             {
                 CustId = securityCodeParams.CustId.Value,
-                SubAccountId = securityCodeParams.SubAccId.Value,
-                UserId = securityCodeParams.UserId,
+                UserId = this.securityCodeSession.UserId,
+                SubAccountId = this.securityCodeSession.SubAccId,
                 SecurityCode = hashSecurityCode,
                 Language = securityCodeParams.Language,
                 IP = this.ClientIP
@@ -248,13 +248,12 @@
 
         protected Result ResetSubAccountSecurityCode(ResetSecurityCodeCommand securityCodeParams)
         {
-            //Reset SubAccount SecurityCode By Upline Or MainAccount
             string hashSecurityCode = HashSecurityCode(securityCodeParams.SubAccId.Value, securityCodeParams.SecurityCode);
             Result result = this.securityCodeService.ResetSubAccountHashSecurityCode(new SecurityCodeParams
             {
-                CustId = securityCodeParams.CustId.Value,
+                CustId = this.securityCodeSession.CustId,               
+                UserId = this.securityCodeSession.UserId,
                 SubAccountId = securityCodeParams.SubAccId.Value,
-                UserId = securityCodeParams.UserId,
                 HashSecurityCode = securityCodeParams.SecurityCode,
                 IP = this.ClientIP,
                 Language = securityCodeParams.Language

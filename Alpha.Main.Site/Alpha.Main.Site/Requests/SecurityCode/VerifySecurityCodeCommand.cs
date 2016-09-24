@@ -6,10 +6,14 @@
     public class VerifySecurityCodeCommand : IRequest<Result>
     {
         private ISecurityCodeSession securityCodeSession;
-        public VerifySecurityCodeCommand(string securityCode, ISecurityCodeSession securityCodeSession)
+
+        public VerifySecurityCodeCommand() : this(null)
         {
-            this.securityCodeSession = securityCodeSession;
-            this.SecurityCode = securityCode;
+        }
+
+        public VerifySecurityCodeCommand(ISecurityCodeSession securityCodeSession)
+        {
+            this.securityCodeSession = securityCodeSession ?? new SecurityCodeSession();
         }
 
         public int CustId

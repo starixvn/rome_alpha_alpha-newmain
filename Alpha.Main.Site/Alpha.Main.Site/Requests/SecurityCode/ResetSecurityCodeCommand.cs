@@ -6,13 +6,14 @@
     public class ResetSecurityCodeCommand : IRequest<Result>
     {
         private ISecurityCodeSession securityCodeSession;
-        public ResetSecurityCodeCommand(int? custId, int? SubAccId, string securityCode, string confirmSecurityCode, ISecurityCodeSession securityCodeSession)
+
+        public ResetSecurityCodeCommand() : this(null)
         {
-            this.CustId = custId;
-            this.SubAccId = SubAccId;
-            this.securityCodeSession = securityCodeSession;
-            this.SecurityCode = securityCode;
-            this.ConfirmSecurityCode = confirmSecurityCode;
+        }
+
+        public ResetSecurityCodeCommand(ISecurityCodeSession securityCodeSession)
+        {
+            this.securityCodeSession = securityCodeSession ?? new SecurityCodeSession();
         }
 
         public int? CustId { get; set; }

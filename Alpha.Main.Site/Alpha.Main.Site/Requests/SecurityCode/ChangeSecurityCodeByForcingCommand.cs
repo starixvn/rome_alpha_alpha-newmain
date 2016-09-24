@@ -6,12 +6,14 @@
     public class ChangeSecurityCodeByForcingCommand : IRequest<Result>
     {
         private ISecurityCodeSession securityCodeSession;
-        public ChangeSecurityCodeByForcingCommand(string oldSecurityCode, string securityCode, string confirmSecurityCode, ISecurityCodeSession securityCodeSession)
+
+        public ChangeSecurityCodeByForcingCommand() : this(null)
         {
-            this.securityCodeSession = securityCodeSession;
-            this.OldSecurityCode = oldSecurityCode;
-            this.SecurityCode = securityCode;
-            this.ConfirmSecurityCode = confirmSecurityCode;
+        }
+
+        public ChangeSecurityCodeByForcingCommand(ISecurityCodeSession securityCodeSession)
+        {
+            this.securityCodeSession = securityCodeSession ?? new SecurityCodeSession();
         }
 
         public int CustId

@@ -71,8 +71,6 @@
             return this.encryptor.RC4(this.HashKey, this.encryptor.HexDecode(encryption));
         }
 
-
-
         public BaseSecurityCodeViewModel Handle(BaseSecurityCodeQuery message)
         {
             if (message == null)

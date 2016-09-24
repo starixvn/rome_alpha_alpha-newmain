@@ -4,6 +4,7 @@
     using Models.Enumerations;
     using Models.SecurityCode;
     using SecurityCode.Services;
+    using Sunplus.Agent.Model.Base;
     public class SecurityCodeSession : ISecurityCodeSession
     {
         private const string HYPHEN = "_";
@@ -24,9 +25,13 @@
 
         private string _netSessionId;
 
+        public SecurityCodeSession() : this(null)
+        {
+        }
+
         public SecurityCodeSession(string netSessionId)
         {
-            this._netSessionId = netSessionId;
+            this._netSessionId = netSessionId ?? new UserSessionExt().NetSessionId;
         }
 
         #region ISecurityCodeSession Members
