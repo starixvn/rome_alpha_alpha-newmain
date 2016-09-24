@@ -11,7 +11,5 @@
         public string AlternateUsername { get; set; }
 
         public string UsernameShower { get; set; }
-
-        public LanguageViewModel Language { get; set; }
     }
 }
