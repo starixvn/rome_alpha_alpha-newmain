@@ -79,7 +79,5 @@
         }
 
         public int CustRole { get; set; }
-
-        public string HashKey { get; set; }
     }
 }

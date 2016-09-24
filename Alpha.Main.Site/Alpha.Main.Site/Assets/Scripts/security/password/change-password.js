@@ -4,8 +4,8 @@ var changeUserOwnPassword = {
     initialize: function () {
         var $form = $('.form-SC');
         $form.submit(function (e) {
-            changeUserOwnPassword.change();
             e.preventDefault();
+            changeUserOwnPassword.change();
         });
         $form.bind('reset', function (e) {
             changeUserOwnPassword.resetOriginalInputStatus();
@@ -24,14 +24,14 @@ var changeUserOwnPassword = {
         var $txtConfirmPassword = $('#txtConfirmPwd');
         var message = changeUserOwnPassword.checkInputParameters($txtOldPassword, $txtPassword, $txtConfirmPassword);
         if (message.length !== 0) {
-            changeUserOwnPassword.showFailMessage($messageContainer, message);
+            securityHelper.showFailMessage($messageContainer, message);
             $.unblockUI();
             return;
         }
 
         var hashKey = $('#hashkey').val();
         var oldPassword = $txtOldPassword.val();
-        oldPassword = securityHelper.hashSecurityCode(oldPassword);
+        oldPassword = oldPassword.ec(hashKey).hc();
         var password = $txtPassword.val();
         password = password.ec(hashKey).hc();
         var confirmPassword = $txtConfirmPassword.val();

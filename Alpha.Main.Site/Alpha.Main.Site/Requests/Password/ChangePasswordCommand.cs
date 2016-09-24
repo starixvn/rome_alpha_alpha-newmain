@@ -109,7 +109,5 @@
                 return this.userSession.NickName;
             }
         }
-
-        public string HashKey { get; set; }
     }
 }

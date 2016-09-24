@@ -36,10 +36,12 @@
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
         {
+            var rawCurrentPassword = DecryptPassword(param.CurrentPassword, param.HashKey);
+            var rawNewPassword = DecryptPassword(param.NewPassword, param.HashKey);
             var validateResult = ValidatePassword(
                 false,
-                param.CurrentPassword,
-                param.NewPassword,
+                rawCurrentPassword,
+                rawNewPassword,
                 new List<string>
                 {
                     param.ActorName,
@@ -52,14 +54,14 @@
                 return validateResult;
             }
 
-            var encodedPassword = HashPassword(param.NewPassword, param.HashKey);
+            var encodedPassword = HashPassword(rawNewPassword);
             var criteria = new UpdateMainAccountPasswordCriteria
             {
                 CustId = param.CustId,
                 DisCasino = param.IsCasinoDisabled,
                 Language = param.LanguageKey,
                 LoginIp = param.Ip,
-                OldPwd = HashPassword(param.CurrentPassword, param.HashKey),
+                OldPwd = HashPassword(rawCurrentPassword),
                 UserPwd = encodedPassword,
                 UserId = param.ActorId
             };
@@ -97,9 +99,11 @@
 
         public Result ChangeSubAccountPassword(ChangeSubAccountPasswordParam param)
         {
+            var rawCurrentPassword = DecryptPassword(param.CurrentPassword, param.HashKey);
+            var rawNewPassword = DecryptPassword(param.NewPassword, param.HashKey);
             var validateResult = ValidatePassword(
                 false,
-                param.CurrentPassword,
+                rawCurrentPassword,
                 param.NewPassword,
                 new List<string>
                 {
@@ -119,8 +123,8 @@
                 CustID = param.CustId,
                 Language = param.LanguageKey,
                 LoginIP = param.Ip,
-                OldPwd = HashPassword(param.CurrentPassword, param.HashKey),
-                UserPwd = HashPassword(param.NewPassword, param.HashKey),
+                OldPwd = HashPassword(rawCurrentPassword),
+                UserPwd = HashPassword(rawNewPassword),
                 SubAccID = param.SubAccountId
             };
 
@@ -129,10 +133,11 @@
 
         public Result ResetMainAccountPassword(ResetMainAccountPasswordParam param)
         {
+            var rawPassword = DecryptPassword(param.NewPassword, param.HashKey);
             var validateResult = ValidatePassword(
                 true,
                 string.Empty,
-                param.NewPassword,
+                rawPassword,
                 new List<string>
                 {
                     param.ActorName
@@ -144,7 +149,7 @@
                 return validateResult;
             }
 
-            var encodedPassword = HashPassword(param.NewPassword, param.HashKey);
+            var encodedPassword = HashPassword(rawPassword);
             var criteria = new ResetMainAccountPasswordCriteria
             {
                 CustID = param.CustId,
@@ -169,10 +174,11 @@
 
         public Result ResetSubAccountPassword(ResetSubAccountPasswordParam param)
         {
+            var rawNewPassword = DecryptPassword(param.NewPassword, param.HashKey);
             var validateResult = ValidatePassword(
                 true,
                 string.Empty,
-                param.NewPassword,
+                rawNewPassword,
                 new List<string>
                 {
                     param.ActorName
@@ -189,7 +195,7 @@
                 CustId = param.CustId,
                 Language = param.LanguageKey,
                 LoginIP = param.Ip,
-                UserPwd = HashPassword(param.NewPassword, param.HashKey),
+                UserPwd = HashPassword(rawNewPassword),
                 SubAccId = param.SubAccountId,
                 UserID = param.ActorId
             };
@@ -263,9 +269,14 @@
             return (r1 + r2 + r3 + r4 >= 3) && NoWhiteSpace.Match(password).Success;
         }
 
-        private string HashPassword(string password, string hashKey)
+        private string HashPassword(string password)
         {
-            return encryptor.CfsEnCode(encryptor.RC4(hashKey, encryptor.HexDecode(password)));
+            return encryptor.CfsEnCode(password);
+        }
+
+        private string DecryptPassword(string password, string encryptKey)
+        {
+            return encryptor.RC4(encryptKey, encryptor.HexDecode(password));
         }
     }
 }

@@ -69,7 +69,5 @@
                 return this.userSession.UserLoginIp;
             }
         }
-
-        public string HashKey { get; set; }
     }
 }
