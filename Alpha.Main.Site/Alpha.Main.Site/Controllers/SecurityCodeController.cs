@@ -130,5 +130,13 @@
 
             return Json(viewModel);
         }
+
+        [ChildActionOnly]
+        public ActionResult Languages()
+        {
+            var viewModel = mediator.Send(new AllLanguagesQuery(userSession.Language));
+
+            return PartialView(viewModel);
+        }
     }
 }

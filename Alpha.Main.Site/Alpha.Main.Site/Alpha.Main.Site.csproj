@@ -784,6 +784,8 @@
     <Content Include="Views\SecurityCode\Shared\_Layout.cshtml" />
     <Content Include="Views\SecurityCode\VerifySecurityCode.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Password\Shared\_Layout.cshtml" />
+    <Content Include="Views\SecurityCode\Languages.cshtml" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>

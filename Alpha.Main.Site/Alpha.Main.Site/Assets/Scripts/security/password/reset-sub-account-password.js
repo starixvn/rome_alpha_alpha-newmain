@@ -33,10 +33,10 @@ var resetSubAccountPassword = {
         $.ajax({
             type: 'POST',
             url: 'ResetSubAccountPassword',
-            data: { subAccId: $('#subaccid').val(), newPassword: password },
+            data: { subAccountId: $('#subAccountId').val(), newPassword: password },
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode !== 0) {
-                    securityHelper.showFailMessage($messageContainer, data.ErrorMessage);
+                    securityHelper.showFailMessage($messageContainer, data.Messsage);
                     $txtSecurityCode.focus();
                 }
                 else {

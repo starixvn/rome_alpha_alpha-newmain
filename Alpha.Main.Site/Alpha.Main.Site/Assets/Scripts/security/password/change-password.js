@@ -51,7 +51,7 @@ var changeUserOwnPassword = {
                     securityHelper.signOut();
                 }
                 else {
-                    securityHelper.showFailMessage($messageContainer, data.ErrorMessage);
+                    securityHelper.showFailMessage($messageContainer, data.Messsage);
                     $txtOldPassword.focus();
                 }
             },

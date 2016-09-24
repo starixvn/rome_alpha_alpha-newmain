@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
+    using AppResources;
     using Criteria.Password;
     using DataAccesses;
     using Models;
@@ -206,23 +207,23 @@
             if((!isResetPassword && string.IsNullOrWhiteSpace(currentPassword))
                 || string.IsNullOrWhiteSpace(newPassword))
             {
-                return new Result { Code = Result.ErrorCode, Messsage = "Resources.Lang.lblNotAuthorized" };
+                return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
             }
 
             if(!IsMatchedRules(newPassword, isResetPassword))
             {
-                return new Result { Code = Result.ErrorCode, Messsage = "Resources.Lang.donotmatchrule" };
+                return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordRequire};
             }
 
             if (!isResetPassword && string.Compare(newPassword, currentPassword, StringComparison.OrdinalIgnoreCase) == 0)
             {
-                return new Result { Code = Result.ErrorCode, Messsage = "Resources.Lang.lblPasswordDOldOne" }; //// will update resource later
+                return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordDOldOne }; //// will update resource later
             }
 
             if (string.Compare(newPassword, "59D7!4$h", StringComparison.OrdinalIgnoreCase) == 0
                 || string.Compare(newPassword, "493abcDE", StringComparison.OrdinalIgnoreCase) == 0)
             {
-                return new Result { Code = Result.ErrorCode, Messsage = "Resources.Lang.lblPasswordCSample" };
+                return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordWrongRule };
             }
 
             foreach (var invalidPassword in invalidPasswords)
@@ -230,7 +231,7 @@
                 if (!string.IsNullOrWhiteSpace(invalidPassword)
                     && newPassword.ToLower().Contains(invalidPassword.ToLower()))
                 {
-                    return new Result { Code = Result.ErrorCode, Messsage = "Resources.Lang.lblPasswordDAccountName" };
+                    return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordDAccountName };
                 }
             }
 

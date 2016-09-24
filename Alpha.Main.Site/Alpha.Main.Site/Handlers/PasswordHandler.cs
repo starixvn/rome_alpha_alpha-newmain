@@ -2,8 +2,10 @@
 {
     using System;
     using Main.Models;
+    using Main.Models.CustomerProfiles;
     using Main.Models.Enumerations;
     using MediatR;
+    using Models.Request.SecurityCode;
     using Params.Password;
     using Requests.Password;
     using Services;
@@ -26,10 +28,12 @@
         private readonly IUserSession userSession;
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
+        private readonly CustomerProfileService customerProfileService;
 
         public PasswordHandler(
             PasswordService passwordService, 
             IUserSession userSession,
+            CustomerProfileService customerProfileService,
             SessionManager sessionManager,
             Encryptor encryptor)
         {
@@ -37,6 +41,7 @@
             this.userSession = userSession;
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
+            this.customerProfileService = customerProfileService;
         }
 
         public Result Handle(ResetSubAccountPasswordCommand message)
@@ -149,9 +154,16 @@
 
         public ForceChangePasswordViewModel Handle(ForceChangePasswordQuery message)
         {
+            var profile = customerProfileService.GetProfilePicture(this.userSession.CustId);
+
             return new ForceChangePasswordViewModel
             {
-                HashKey = GetHasKey()
+                HashKey = GetHasKey(),
+                IsDefaultAvatar = profile.IsDefaultAvatar,
+                Username = this.userSession.UserName,
+                AlternateUsername = this.BuildAlternateUsername(message),
+                UsernameShower = this.BuildUsernameShower(message),
+                EmbedImage = this.GenerateImage(profile)
             };
         }
 
@@ -172,6 +184,40 @@
             viewModel.SubAccountId = message.SubAccountId;
 
             return viewModel;
+        }
+
+        private string GenerateImage(ProfilePicture profilePicture)
+        {
+            if (profilePicture.BinaryAvatar != null)
+            {
+                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.BinaryAvatar)}";
+            }
+
+            return string.Empty;
+        }
+
+        private string BuildUsernameShower(ForceChangePasswordQuery message)
+        {
+            if (message.IsSubAcc)
+            {
+                return message.SubUserName;
+            }
+            else
+            {
+                return string.IsNullOrEmpty(message.NickName) ? message.UserName : message.NickName;
+            }
+        }
+
+        private string BuildAlternateUsername(ForceChangePasswordQuery message)
+        {
+            if (message.IsSubAcc)
+            {
+                return "(" + message.SubUserName + ")";
+            }
+            else
+            {
+                return string.IsNullOrEmpty(message.NickName) ? string.Empty : "(" + message.NickName + ")";
+            }
         }
     }
 }

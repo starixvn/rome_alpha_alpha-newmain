@@ -33,11 +33,11 @@ var resetMainAccountPassword = {
         $.ajax({
             type: 'POST',
             url: 'ResetMainAccountPassword',
-            data: { custId: $('#custid').val(), newPassword: password},
+            data: { custId: $('#custId').val(), custRole:$('#custRole').val(), newPassword: password},
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.ErrorCode !== 0) {
-                    securityHelper.showFailMessage($messageContainer, data.ErrorMessage);
+                    securityHelper.showFailMessage($messageContainer, data.Messsage);
                     $txtSecurityCode.focus();
                 }
                 else

@@ -8,5 +8,7 @@
         public int CustId { get; set; }
 
         public int CustRole { get; set; }
+
+        public int IsSyncCasino { get; set; }
     }
 }

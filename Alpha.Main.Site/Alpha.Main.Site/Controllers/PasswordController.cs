@@ -7,11 +7,10 @@
     using System.Web.Mvc;
     using MediatR;
     using Requests.Password;
-
+    using Sunplus.Agent.Model.Entities;
     public class PasswordController : BaseController
     {
         private readonly IMediator mediator;
-
         public PasswordController(IMediator mediator)
         {
             this.mediator = mediator;
