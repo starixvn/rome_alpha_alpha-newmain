@@ -427,4 +427,7 @@
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>Quick tour</value>
   </data>
+  <data name="UpdatedSuccessfully" xml:space="preserve">
+    <value>Updated successfully!</value>
+  </data>
 </root>

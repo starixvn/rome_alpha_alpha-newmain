@@ -104,7 +104,7 @@
             var validateResult = ValidatePassword(
                 false,
                 rawCurrentPassword,
-                param.NewPassword,
+                rawNewPassword,
                 new List<string>
                 {
                     param.SubUsername,

@@ -89,19 +89,6 @@
         private static Func<string> getDefaultUrl = () =>
         {
             var _defaultMainPage = MicroSites.OldMainUrl("~/_Reports/PortalPage/PortalPage.aspx");
-
-            if (!Current.IsLogged)
-            {
-                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/Password/ForceChangePassword");
-               // return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
-            }
-
-            if (Current.IsPasswordExpired)
-            {
-                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/Password/ChangePassword");
-                //return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
-            }
-
             var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
             var ignoreUrls = new List<string>
             {

@@ -10,7 +10,7 @@ var resetSubAccountPassword = {
         $form.bind('reset', function (e) {
             resetSubAccountPassword.resetInputValue();
         });
-        $txtNewPassword.focus();
+        $('#txtNewPwd').focus();
     },
     reset: function () {
         $.blockUI();
@@ -35,7 +35,7 @@ var resetSubAccountPassword = {
             url: 'ResetSubAccountPassword',
             data: { subAccountId: $('#subAccountId').val(), newPassword: password },
             success: function (data, textStatus, jqXHR) {
-                if (data.ErrorCode !== 0) {
+                if (data.Code !== 0) {
                     securityHelper.showFailMessage($messageContainer, data.Messsage);
                     $txtSecurityCode.focus();
                 }

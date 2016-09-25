@@ -13,6 +13,8 @@
 
         public string HashKey { get; set; }
 
+        public bool IsCasinoSync { get; set; }
+
         public string OldMainRootPath
         {
             get

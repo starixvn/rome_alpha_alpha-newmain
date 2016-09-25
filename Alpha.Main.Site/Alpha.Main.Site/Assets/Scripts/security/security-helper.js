@@ -42,7 +42,7 @@
         window.location =  $("#oldMainRootPath").val() + '_Authorization/Handlers/SignOut.ashx';
     },
     gotoHomePage: function () {
-        window.location =  $("#mainRootPath").val() + 'Default/Index';
+        window.location =  $("#mainRootPath").val();
     },
     initLanguage: function () {
         $(".changelanguage-link").click(function () {

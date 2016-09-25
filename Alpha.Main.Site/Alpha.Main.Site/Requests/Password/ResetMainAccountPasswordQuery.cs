@@ -9,6 +9,6 @@
 
         public int CustRole { get; set; }
 
-        public int IsSyncCasino { get; set; }
+        public bool IsCasinoSync { get; set; }
     }
 }

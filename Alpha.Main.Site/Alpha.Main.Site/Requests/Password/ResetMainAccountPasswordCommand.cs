@@ -62,13 +62,7 @@
             }
         }
 
-        public bool IsCasinoSync
-        {
-            get
-            {
-                return this.userSession.IsCasinoSync;
-            }
-        }
+        public bool IsCasinoSync { get; set; }
 
         public string ActorName
         {

@@ -42,11 +42,11 @@ var changeUserOwnPassword = {
             data: { currentPassword: oldPassword, newPassword: password },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                if (data.ErrorCode === 0) { // OK
+                if (data.Code === 0) { // OK
                     securityHelper.showSuccessfullyMessage($messageContainer, passwordResources.changePasswordSuccessfully);
                     setTimeout(changeUserOwnPassword.refreshPage, 5000);
                 }
-                else if (data.ErrorCode === 2) { // account is closed
+                else if (data.Code === 2) { // account is closed
                     alert(data.ErrorMessage);
                     securityHelper.signOut();
                 }

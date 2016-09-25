@@ -65,7 +65,6 @@
 
         public PasswordViewModel Handle(ChangePasswordQuery message)
         {
-           
             return new PasswordViewModel
             {
                 HashKey = GetHasKey()
@@ -173,6 +172,7 @@
 
             viewModel.CustId = message.CustId;
             viewModel.CustRole = message.CustRole;
+            viewModel.IsCasinoSync = message.IsCasinoSync;
 
             return viewModel;
         }

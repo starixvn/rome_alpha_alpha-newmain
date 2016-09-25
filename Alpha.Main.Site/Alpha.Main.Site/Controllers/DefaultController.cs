@@ -29,17 +29,19 @@
 
         public ActionResult Index()
         {
-            //return RedirectToAction("ForceChangePassword", "Password");
-            //return RedirectToAction("ResetMainAccountPassword", "Password");
-            //return RedirectToAction("ResetSubAccountPassword", "Password");
-
             var browser = this.mediator.Send(new BrowserQuery(this.userSession));
 
             if (browser.IsUnsupportedBrowser)
             {
                 return View("UnsupportedBrowsers", browser);
             }
-            
+
+            if (!this.userSession.IsLogged
+                || this.userSession.IsPasswordExpired)
+            {
+                return Redirect("~/Password/ForceChangePassword");
+            }
+
             if (SecurityCodeChecker.IsForcedChangeSecurityCode())
             {
                 ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;

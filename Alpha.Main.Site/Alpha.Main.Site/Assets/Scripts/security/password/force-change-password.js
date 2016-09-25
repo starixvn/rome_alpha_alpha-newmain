@@ -4,8 +4,8 @@ var forceChangePassword = {
     initialize: function () {
         securityHelper.initLanguage();
         $('#pwdForm').submit(function (e) {
-            forceChangePassword.changeSecurityCode();
             e.preventDefault();
+            forceChangePassword.changeSecurityCode();
         });
 
         $("#btn-back").bind("click", function () {
@@ -24,29 +24,25 @@ var forceChangePassword = {
             return;
         }
 
-        var oldPassword = $txtOldPassword.val();
-        oldPassword = securityHelper.hashSecurityCode(oldPassword);
-        var password = $txtPassword.val();
         var hashKey = $('#hashkey').val();
-        password = password.ec(hashKey).hc();
-        var confirmPassword = $txtConfirmPassword.val();
-        confirmPassword = confirmPassword.ec(hashKey).hc();
+        var oldPassword = $txtOldPassword.val().ec(hashKey).hc();
+        var password = $txtPassword.val().ec(hashKey).hc();
         $.ajax({
             type: 'POST',
             url: 'ForceChangePassword',
-            data: { currentPassword: oldPassword, newPassword: password},
+            data: { currentPassword: oldPassword, newPassword: password },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                if (data.ErrorCode === 0) { // OK
+                if (data.Code === 0) { // OK
                     securityHelper.redirectToHomePage(2000);
                 }
-                else if (data.ErrorCode === 2) { // account is closed
-                    alert(data.ErrorMessage);
+                else if (data.Code === 2) { // account is closed
+                    alert(data.Message);
                     securityHelper.signOut();
                 }
                 else {
                     $("#txtOldPwd").addClass('error');
-                    $("#txtOldPwd-error").empty().html(data.ErrorMessage);
+                    $("#txtOldPwd-error").empty().html(data.Message);
                     $txtOldPassword.focus();
                 }
             },

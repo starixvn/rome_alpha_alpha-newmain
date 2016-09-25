@@ -4,7 +4,10 @@
   "currentSiteApp": "site-main",
   "urls": [
     "SecurityCode/ResetSecurityCode",
-    "SecurityCode/ChangeUserOwnSecurityCode"
+    "SecurityCode/ChangeUserOwnSecurityCode",
+    "Password/ChangePassword",
+    "Password/ResetMainAccountPassword",
+    "Password/ResetSubAccountPassword"
   ],
   "sites": [
   ],
