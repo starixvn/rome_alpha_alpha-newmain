@@ -59,10 +59,16 @@ body {
 }
 
 // Messages
-.msg {
-    max-width: 500px;
-    margin-bottom: 0;
+
+.msg-content {
+    padding-top: 12px;
+
+    .msg {
+        max-width: 500px;
+        margin: 0;
+    }
 }
+
 
 // It's not necessary at the moment.
 

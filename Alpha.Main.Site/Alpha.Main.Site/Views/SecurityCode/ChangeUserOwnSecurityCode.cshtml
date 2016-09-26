@@ -19,8 +19,10 @@
     </li>
 </ul>
 <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active">        
-        <div id="error-message" class="msg display-none"></div>
+    <div role="tabpanel" class="tab-pane active">
+        <div class="msg-content">
+            <div id="error-message" class="msg display-none"></div>
+        </div>        
         <div class="block">
             <form class="form-SC form-validation">
                 <div class="form-group">
@@ -38,13 +40,13 @@
                     <i class="validation"></i>
                 </div>
                 <div class="form-group">
-                    <label><input type="checkbox" id="showSCchk"/> @Security.ShowSecurityCode</label>
+                    <label><input type="checkbox" id="showSCchk" /> @Security.ShowSecurityCode</label>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn-submit" value="@Security.Submit" />
                     <input type="reset" value="@Security.Reset" />
                 </div>
-            </form>            
+            </form>
         </div>
         <div class="rules">
             <p><span class="note-red">*</span>@Security.SecurityCodeRules01</p>
@@ -61,7 +63,7 @@
 @Html.Hidden("hashkey", Model.HashKey)
 @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 @Html.Hidden("mainRootPath", Model.MainRootPath)
-   
+
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
     <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/change-user-own-securitycode")" type="text/javascript"></script>
