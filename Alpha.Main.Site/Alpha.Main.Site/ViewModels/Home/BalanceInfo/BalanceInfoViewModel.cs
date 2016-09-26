@@ -7,10 +7,10 @@
     public class BalanceInfoViewModel
     {
         private BalanceInfo balanceInfo;
-        private string currency = string.Empty;
-        private string agentLabel = string.Empty;
-        private string agentGivenCreditLabel = string.Empty;
-        private string downlineCreditLabel = string.Empty;
+        private string currency = "UUS";
+        private string userLevelLabel = Resources.agent;
+        private string givenCreditLabel = Resources.agentGivenCredit;
+        private string totalDownlineCreditLabel = Resources.totalMemberCredit;
 
         public BalanceInfoViewModel(
             BalanceInfo balanceInfo,
@@ -19,7 +19,7 @@
         {
             this.balanceInfo = balanceInfo;
             this.currency = currency;
-            InitLabelNameByUserLevel(userLevel);
+            SetLabelTextByUserLevel(userLevel);
         }
 
         public BalanceInfoViewModel() : this(null, null, null)
@@ -42,31 +42,25 @@
             }
         }
 
-        public string AgentLabel { get; private set; }
+        public string UserLevelLabel { get; private set; }
 
-        public string AgentGivenCreditLabel { get; private set; }
+        public string GivenCreditLabel { get; private set; }
 
-        public string DownlineCreditLabel { get; private set; }
+        public string TotalDownlineCreditLabel { get; private set; }
 
-        private void InitLabelNameByUserLevel(UserLevel userLevel)
+        private void SetLabelTextByUserLevel(UserLevel userLevel)
         {
-            if (userLevel.IsAgentLevel())
+            if (userLevel.IsMasterLevel())
             {
-                AgentLabel = Resources.agent;
-                AgentGivenCreditLabel = Resources.agentGivenCredit;
-                DownlineCreditLabel = Resources.totalMemberCredit;
-            }
-            else if (userLevel.IsMasterLevel())
-            {
-                AgentLabel = Resources.master;
-                AgentGivenCreditLabel = Resources.masterGivenCredit;
-                DownlineCreditLabel = Resources.totalAgentCredit;
+                UserLevelLabel = Resources.master;
+                GivenCreditLabel = Resources.masterGivenCredit;
+                TotalDownlineCreditLabel = Resources.totalAgentCredit;
             }
             else if (userLevel.IsSuperLevel())
             {
-                AgentLabel = Resources.super;
-                AgentGivenCreditLabel = Resources.superGivenCredit;
-                DownlineCreditLabel = Resources.totalMasterCredit;
+                UserLevelLabel = Resources.super;
+                GivenCreditLabel = Resources.superGivenCredit;
+                TotalDownlineCreditLabel = Resources.totalMasterCredit;
             }
         }
     }
