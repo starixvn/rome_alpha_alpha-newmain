@@ -52,10 +52,10 @@ var verifySecurityCode = {
                         return;
                     }
                     
-                    if (top.popupSecurityCode && top.popupSecurityCode.iframeAttributes.preUrl) {
-                        var preUrl = top.popupSecurityCode.iframeAttributes.preUrl;
+                    if (top.securityCodePopup && top.securityCodePopup.iframeAttributes.preUrl) {
+                        var preUrl = top.securityCodePopup.iframeAttributes.preUrl;
                         top[preUrl]();
-                        top.popupSecurityCode.close();
+                        top.securityCodePopup.close();
                         return;
                     }
 

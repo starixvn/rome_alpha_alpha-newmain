@@ -47,7 +47,7 @@ var resetMainAccountPassword = {
         $.ajax({
             type: 'POST',
             url: 'ResetMainAccountPassword',
-            data: { custId: $('#custId').val(), custRole: $('#custRole').val(), newPassword: password, isCasinoSync: isCasinoSync },
+            data: { custId: $('#custId').val(), custRoleId: $('#custRoleId').val(), newPassword: password, isCasinoSync: isCasinoSync },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.Code !== 0) {

@@ -96,7 +96,7 @@
                     NewPassword = message.NewPassword,
                     SubAccountId = message.SubAccountId,
                     IsCasinoSync = message.IsCasinoSync,
-                    IsResetMemberPassword = Enumeration.FromValue<UserLevel>((byte)message.CustRole).IsMemberLevel()
+                    IsResetMemberPassword = Enumeration.FromValue<UserLevel>((byte)message.CustRoleId).IsMemberLevel()
                 });
 
             return result;
@@ -172,7 +172,7 @@
             var viewModel = Handle(new ChangePasswordQuery());
 
             viewModel.CustId = message.CustId;
-            viewModel.CustRole = message.CustRole;
+            viewModel.CustRoleId = message.CustRoleId;
             viewModel.IsCasinoSync = message.IsCasinoSync;
 
             return viewModel;

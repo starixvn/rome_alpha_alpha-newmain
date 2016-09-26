@@ -72,6 +72,6 @@
             }
         }
 
-        public int CustRole { get; set; }
+        public int CustRoleId { get; set; }
     }
 }

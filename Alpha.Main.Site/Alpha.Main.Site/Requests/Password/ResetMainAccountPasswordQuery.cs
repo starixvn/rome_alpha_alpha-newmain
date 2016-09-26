@@ -7,7 +7,7 @@
     {
         public int CustId { get; set; }
 
-        public int CustRole { get; set; }
+        public int CustRoleId { get; set; }
 
         public bool IsCasinoSync { get; set; }
     }
