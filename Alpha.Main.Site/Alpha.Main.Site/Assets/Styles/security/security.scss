@@ -28,28 +28,6 @@ body {
 
     .txt {
         width: 100%;
-
-        &.error ~ .validation, &.valid ~ .validation {
-            @extend %alphaIcon;
-            font-size: 18px;
-            right: 8px;
-            top: 25px;
-            position: absolute;
-        }
-
-        &.error {
-            ~ .validation:before {     
-                content: '\e92c';
-                color: $msg-error-color;
-            }
-        }
-
-        &.valid {
-            ~ .validation:before {
-                content: '\e91f';
-                color: $msg-success-color;
-            }
-        }
     }
 
     .note-red {
