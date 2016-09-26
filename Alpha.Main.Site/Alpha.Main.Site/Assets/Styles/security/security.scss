@@ -24,25 +24,26 @@ body {
 
     .txt {
         width: 100%;
-    }
+    }    
+}
+
+// Rules
+.rules {
+    color: #666;   
+    padding-top: 12px;    
 
     .note-red {
         color: #ff0101;
         padding-right: 6px;
     }
 
-    .rules {
-        color: #666;   
-        padding-top: 12px;    
+    ul {
+        list-style: initial;
+        padding-left: 32px;
 
-        ul {
-            list-style: initial;
-            padding-left: 32px;
-
-            li {
-                list-style-type: disc;
-                line-height: 24px;
-            }
+        li {
+            list-style-type: disc;
+            line-height: 24px;
         }
     }
 }

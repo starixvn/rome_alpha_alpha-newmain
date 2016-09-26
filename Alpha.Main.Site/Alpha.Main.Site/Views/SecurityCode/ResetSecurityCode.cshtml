@@ -30,15 +30,15 @@
             <input type="submit" class="btn-submit" value="@Security.Submit" />
             <input type="reset" value="@Security.Reset" />
         </div>
-    </form>
-    <div class="rules">
-        <p><span class="note-red">*</span>@Security.SecurityCodeRules01</p>
-        <ul>
-            <li>@Security.SecurityCodeRules02</li>
-            <li>@Security.SecurityCodeRules03</li>
-            <li>@Security.SecurityCodeRules04</li>
-        </ul>
-    </div>
+    </form>    
+</div>
+<div class="rules">
+    <p><span class="note-red">*</span>@Security.SecurityCodeRules01</p>
+    <ul>
+        <li>@Security.SecurityCodeRules02</li>
+        <li>@Security.SecurityCodeRules03</li>
+        <li>@Security.SecurityCodeRules04</li>
+    </ul>
 </div>
 
 @Html.Hidden("hashkey", Model.HashKey)
