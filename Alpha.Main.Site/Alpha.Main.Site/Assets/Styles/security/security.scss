@@ -24,7 +24,17 @@ body {
 
     .txt {
         width: 100%;
-    }    
+    } 
+    
+    &.has-popup {
+        .form-group {
+            margin-left: 2px;
+        }
+
+        .txt {
+            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+        }
+    }   
 }
 
 // Rules
