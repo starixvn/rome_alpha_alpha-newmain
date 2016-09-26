@@ -74,7 +74,7 @@ window.age = window.age || {
         var top = position ? position.top : 200;
 
         var popUp = $("#page-popup");
-        var popupTop = top + (oldMainUltilities.getScrollTop(window) || 0);
+        var popupTop = top + oldMainUltilities.getScrollTop(window.document.body);
         popUp.css({
             width: popW,
             height: popH,
@@ -272,7 +272,7 @@ var AgeWnd = function () {
             popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
 
             // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
-            var scrollTop = oldMainUltilities.getScrollTop(window) || 0;
+            var scrollTop = oldMainUltilities.getScrollTop(window.document.body);
             var scrollLeft = oldMainUltilities.getScrollLeft(window) || 0;
 
             // ON iOS: there is scroll issues with popup. We must show popup with auto height
@@ -709,22 +709,8 @@ var oldMainUltilities = {
 
         return 0;
     },
-    getScrollTop: function (documentContext) {
-        var isIE = oldMainUltilities.isIE();
-        if (isIE && typeof (documentContext.pageYOffset) == 'number') {
-            return documentContext.pageYOffset;
-        }
-
-        if (documentContext.body && (documentContext.body.scrollLeft || documentContext.body.scrollTop)) {
-            return documentContext.body.scrollTop;
-        }
-
-        if (documentContext.documentElement &&
-            (documentContext.documentElement.scrollLeft || documentContext.documentElement.scrollTop)) {
-            return documentContext.documentElement.scrollTop;
-        }
-
-        return 0;
+    getScrollTop: function (element) {
+        return element.pageYOffset || element.scrollY || element.scrollTop || 0;
     }
 };
 
@@ -857,7 +843,7 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFr
     }
 
     function getScrollY(element) {
-        return element.scrollY || element.pageYOffset || element.scrollTop || 0;
+        return element.pageYOffset || element.scrollY || element.scrollTop || 0;
     }
 
     function storeAndRestoreFrameData(isCustomerList) {
