@@ -217,16 +217,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a new feature called Security Code. It may be considered as a second password and will require you to input when you execute any sensitive actions such as change password, reopen/unsuspend accounts, etc.&lt;br/&gt;
-        ///Please use the form below to set your Security Code now.&lt;br/&gt;&lt;br/&gt;.
-        /// </summary>
-        public static string forceChangeSecCode {
-            get {
-                return ResourceManager.GetString("forceChangeSecCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please input your security code before proceeding!.
         /// </summary>
         public static string informSecCode {
@@ -252,6 +242,7 @@ namespace Alpha.Main.AppResources {
                 return ResourceManager.GetString("lblChangePassword", resourceCulture);
             }
         }
+        
         
         /// <summary>
         ///   Looks up a localized string similar to Your account was closed so you&apos;re forced to logout. Please contact your upline for the assistance..
@@ -353,15 +344,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;Security Code (SC) must be:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;* Numeric digits only.&lt;/li&gt;&lt;li&gt;* 6 digits from 0-9.&lt;/li&gt;&lt;li&gt;* At least 2 different digits in the SC.&lt;/li&gt;&lt;li&gt;* Not a forward run AND not a backward run number:&lt;ul&gt;&lt;li&gt;+ A &quot;Forward Run&quot; number is an integer whose digits are all in consecutive, ascending order, left to right.&lt;/li&gt;&lt;li&gt;+ A &quot;Backward Run&quot; number is an integer whose digits are all in consecutive, descending order, left to right.&lt;/li&gt;&lt;li&gt;+ For example: 123456, 456789, 765432, etc. are not allowed.&lt;/li&gt;&lt;/ul [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string lblRequiredSecCode {
-            get {
-                return ResourceManager.GetString("lblRequiredSecCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Reset Password.
         /// </summary>
         public static string lblresetpassword {
@@ -369,6 +351,7 @@ namespace Alpha.Main.AppResources {
                 return ResourceManager.GetString("lblresetpassword", resourceCulture);
             }
         }
+        
         
         /// <summary>
         ///   Looks up a localized string similar to Your provided Security Code does not meet the requirements..
@@ -515,19 +498,6 @@ namespace Alpha.Main.AppResources {
         public static string Reset {
             get {
                 return ResourceManager.GetString("Reset", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please follow 3 steps to set new Security Code:&lt;br/&gt;
-        ///1. Choose the Security Code you want&lt;br/&gt;
-        ///2. Click Submit button&lt;br/&gt;
-        ///3. The system will ask you to input the Security Code provided by your upline/CSD to verify &lt;br/&gt;
-        ///Note: your new SC must be different from the one provided by upline/CSD.
-        /// </summary>
-        public static string secCodeGuide {
-            get {
-                return ResourceManager.GetString("secCodeGuide", resourceCulture);
             }
         }
         

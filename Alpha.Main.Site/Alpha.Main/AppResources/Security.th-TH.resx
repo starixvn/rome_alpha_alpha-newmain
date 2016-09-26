@@ -153,28 +153,14 @@ Please use the form below to change your Security Code now.</value>
   <data name="contactMessage" xml:space="preserve">
     <value>If you haven't got security code, please contact your upline or CSD.</value>
   </data>
-  <data name="forceChangeSecCode" xml:space="preserve">
-    <value>Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a new feature called Security Code. It may be considered as a second password and will require you to input when you execute any sensitive actions such as change password, reopen/unsuspend accounts, etc.&lt;br/&gt;
-Please use the form below to set your Security Code now.&lt;br/&gt;&lt;br/&gt;</value>
-  </data>
   <data name="informSecCode" xml:space="preserve">
     <value>Please input your security code before proceeding!</value>
-  </data>
-  <data name="lblRequiredSecCode" xml:space="preserve">
-    <value>&lt;p&gt;Security Code (SC) must be:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;* Numeric digits only.&lt;/li&gt;&lt;li&gt;* 6 digits from 0-9.&lt;/li&gt;&lt;li&gt;* At least 2 different digits in the SC.&lt;/li&gt;&lt;li&gt;* Not a forward run AND not a backward run number:&lt;ul&gt;&lt;li&gt;+ A "Forward Run" number is an integer whose digits are all in consecutive, ascending order, left to right.&lt;/li&gt;&lt;li&gt;+ A "Backward Run" number is an integer whose digits are all in consecutive, descending order, left to right.&lt;/li&gt;&lt;li&gt;+ For example: 123456, 456789, 765432, etc. are not allowed.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>Your provided Security Code does not meet the requirements.</value>
   </data>
   <data name="oldSecCode" xml:space="preserve">
     <value>Old Security Code</value>
-  </data>
-  <data name="secCodeGuide" xml:space="preserve">
-    <value>Please follow 3 steps to set new Security Code:&lt;br/&gt;
-1. Choose the Security Code you want&lt;br/&gt;
-2. Click Submit button&lt;br/&gt;
-3. The system will ask you to input the Security Code provided by your upline/CSD to verify &lt;br/&gt;
-Note: your new SC must be different from the one provided by upline/CSD</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
     <value>Security Code</value>
@@ -283,17 +269,6 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   <data name="lblPasswordHint" xml:space="preserve">
     <value>หมายเหตุ:  เราแนะนำให้คุณเปลี่ยนรหัสเป็นระยะเพื่อความปลอดภัยของคุณเอง</value>
   </data>
-  <data name="lblPasswordRequire" xml:space="preserve">
-    <value>รหัสต้องมีอย่างน้อย 8 อักขระต้องไม่มีช่องเว้นวรรค และต้องมีอย่างน้อย 3 ข้อ ยังด้านล่าง
-
-1. ต้องมีภาษาอังกฤษตัวพิมพ์ใหญ่ [A-Z] 
-2. ต้องมีภาษาอังกฤษตัวพิมพ์เล็ก [a-z]
-3. ตัวเลข [0-9] 
-4. อักขระพิเศษ (!,@,#,etc..)
-
-ยกตัวอย่างเช่น: 59D7!4$h, 493abcDE
-หมายเหตุ รหัสผ่านของคุณเป็นสิ่งที่สำคัญ</value>
-  </data>
   <data name="lblPasswordWrongRule" xml:space="preserve">
     <value>รหัสผ่านของคุณไม่เป็นไปตามข้อแม้ของการรักษาความปลอดภัย</value>
   </data>
@@ -307,17 +282,18 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
     <value>รหัสผ่าน</value>
   </data>
   <data name="PasswordHint01" xml:space="preserve">
-    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:</value>
+    <value>รหัสต้องมีอย่างน้อย 8 อักขระต้องไม่มีช่องเว้นวรรค และต้องมีอย่างน้อย 3 ข้อ ยังด้านล่าง</value>
   </data>
   <data name="PasswordHint02" xml:space="preserve">
-    <value>&lt;li&gt;Uppercase letter [A-Z]&lt;/li&gt;
-&lt;li&gt;Lowercase letter [a-z]&lt;/li&gt;
-&lt;li&gt;Numeric [0-9]&lt;/li&gt;
-&lt;li&gt;Special character (!,,#,etc..)&lt;/li&gt;</value>
+    <value>&lt;li&gt; ต้องมีภาษาอังกฤษตัวพิมพ์ใหญ่ [A-Z] &lt;/li&gt;
+&lt;li&gt;ต้องมีภาษาอังกฤษตัวพิมพ์เล็ก [a-z]&lt;/li&gt;
+&lt;li&gt; ตัวเลข [0-9] &lt;/li&gt;
+&lt;li&gt; อักขระพิเศษ (!,@,#,etc..)
+&lt;/li&gt;</value>
   </data>
   <data name="PasswordHint03" xml:space="preserve">
-    <value>&lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt;: 59D7!4$h, 493abcDE&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: your password is cAsE sEnSiTiVe&lt;/p&gt;</value>
+    <value>&lt;p&gt;&lt;strong&gt;ยกตัวอย่างเช่น: &lt;/strong&gt;59D7!4$h, 493abcDE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;หมายเหตุ&lt;/strong&gt;รหัสผ่านของคุณเป็นสิ่งที่สำคัญ&lt;/p&gt;</value>
   </data>
   <data name="PasswordRules" xml:space="preserve">
     <value>Password rules</value>
@@ -339,5 +315,16 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   </data>
   <data name="ShowSecurityCode" xml:space="preserve">
     <value>Show security code</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>รหัสต้องมีอย่างน้อย 8 อักขระต้องไม่มีช่องเว้นวรรค และต้องมีอย่างน้อย 3 ข้อ ยังด้านล่าง
+
+1. ต้องมีภาษาอังกฤษตัวพิมพ์ใหญ่ [A-Z] 
+2. ต้องมีภาษาอังกฤษตัวพิมพ์เล็ก [a-z]
+3. ตัวเลข [0-9] 
+4. อักขระพิเศษ (!,@,#,etc..)
+
+ยกตัวอย่างเช่น: 59D7!4$h, 493abcDE
+หมายเหตุ รหัสผ่านของคุณเป็นสิ่งที่สำคัญ</value>
   </data>
 </root>

@@ -430,4 +430,13 @@
   <data name="UpdatedSuccessfully" xml:space="preserve">
     <value>Updated successfully!</value>
   </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="lblChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="lblresetpassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
 </root>

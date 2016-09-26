@@ -153,28 +153,14 @@ Please use the form below to set your Security Code again.</value>
   <data name="contactMessage" xml:space="preserve">
     <value>若您尚未获取保安码, 请联系您的上线或客服部</value>
   </data>
-  <data name="forceChangeSecCode" xml:space="preserve">
-    <value>Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a new feature called Security Code. It may be considered as a second password and will require you to input when you execute any sensitive actions such as change password, reopen/unsuspend accounts, etc.&lt;br/&gt;
-Please use the form below to set your Security Code now.&lt;br/&gt;&lt;br/&gt;</value>
-  </data>
   <data name="informSecCode" xml:space="preserve">
     <value>请输入您的保安码以继续执行!</value>
-  </data>
-  <data name="lblRequiredSecCode" xml:space="preserve">
-    <value>&lt;p&gt;保安码必须是:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;* 数字而已&lt;/li&gt;&lt;li&gt;* 必须是0-9的6位数字&lt;/li&gt;&lt;li&gt;* 保安码设置必须至少两个不同的数字&lt;/li&gt;&lt;li&gt;* 不能为顺序号或逆序号&lt;ul&gt;&lt;li&gt;+ "顺序"号为整体数字组合都是连续的递增的顺序, 从左至右。&lt;/li&gt;&lt;li&gt;+ "逆序"号位整体数字组合都是连续的递减的顺序, 从左至右。&lt;/li&gt;&lt;li&gt;+ 例如: 123456, 456789, 765432等都是不被允许的&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>您所提供的保安码不符合要求。</value>
   </data>
   <data name="oldSecCode" xml:space="preserve">
     <value>旧保安码</value>
-  </data>
-  <data name="secCodeGuide" xml:space="preserve">
-    <value>Please follow 3 steps to set new Security Code:&lt;br/&gt;
-1. Choose the Security Code you want&lt;br/&gt;
-2. Click Submit button&lt;br/&gt;
-3. The system will ask you to input the Security Code provided by your upline/CSD to verify &lt;br/&gt;
-Note: your new SC must be different from the one provided by upline/CSD</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
     <value>保安码</value>
@@ -222,16 +208,21 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
     <value>Security code rules</value>
   </data>
   <data name="SecurityCodeRules01" xml:space="preserve">
-    <value>Security Code (SC) must be a 6-digits string, contains at least 2 different digits and must not be forward run and backward run number.</value>
+    <value>保安码必须是:
+
+    * 数字而已
+    * 必须是0-9的6位数字
+    * 保安码设置必须至少两个不同的数字
+    * 不能为顺序号或逆序号</value>
   </data>
   <data name="SecurityCodeRules02" xml:space="preserve">
-    <value>A "Forward run" is a consecutive, ascending order series of digits.</value>
+    <value>"顺序"号为整体数字组合都是连续的递增的顺序, 从左至右。</value>
   </data>
   <data name="SecurityCodeRules03" xml:space="preserve">
-    <value>A "Backward Run" is a consecutive, descending order series of digits.</value>
+    <value>"逆序"号位整体数字组合都是连续的递减的顺序, 从左至右。</value>
   </data>
   <data name="SecurityCodeRules04" xml:space="preserve">
-    <value>For example: 123456, 456789, 765432, ect. are not allowed</value>
+    <value>例如: 123456, 456789, 765432等都是不被允许的</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
@@ -283,17 +274,6 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   <data name="lblPasswordHint" xml:space="preserve">
     <value>注: 我们强烈建议您定期更换您的密码以提高安全性。</value>
   </data>
-  <data name="lblPasswordRequire" xml:space="preserve">
-    <value>密码必须至少 8 个字符没有空格和包含至少 3个 以下：
-
-• 大写字母 [A-Z]
-• 小写字母 [a-z]
-• 数字 [0-9]
-• 特殊字符 （!、 @、 # 等。。)
-
-例如： 59D7!4$h, 493abcDE
-注意： 您的密码需有大小写</value>
-  </data>
   <data name="lblPasswordWrongRule" xml:space="preserve">
     <value>您的密码不符合最低安全要求</value>
   </data>
@@ -307,17 +287,17 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
     <value>密码</value>
   </data>
   <data name="PasswordHint01" xml:space="preserve">
-    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:</value>
+    <value>密码必须至少 8 个字符没有空格和包含至少 3个 以下：</value>
   </data>
   <data name="PasswordHint02" xml:space="preserve">
-    <value>&lt;li&gt;Uppercase letter [A-Z]&lt;/li&gt;
-&lt;li&gt;Lowercase letter [a-z]&lt;/li&gt;
-&lt;li&gt;Numeric [0-9]&lt;/li&gt;
-&lt;li&gt;Special character (!,,#,etc..)&lt;/li&gt;</value>
+    <value>&lt;li&gt;大写字母 [A-Z]&lt;/li&gt;
+&lt;li&gt;小写字母 [a-z]&lt;/li&gt;
+&lt;li&gt; 数字 [0-9]&lt;/li&gt;
+&lt;li&gt; 特殊字符 （!、 @、 # 等。。)&lt;/li&gt;</value>
   </data>
   <data name="PasswordHint03" xml:space="preserve">
-    <value>&lt;p&gt;&lt;strong&gt;For example&lt;/strong&gt;: 59D7!4$h, 493abcDE&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: your password is cAsE sEnSiTiVe&lt;/p&gt;</value>
+    <value>&lt;p&gt;&lt;strong&gt;例如  :&lt;/strong&gt; 59D7!4$h, 493abcDE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意： &lt;/strong&gt;您的密码需有大小写&lt;/p&gt;</value>
   </data>
   <data name="PasswordRules" xml:space="preserve">
     <value>Password rules</value>
@@ -333,5 +313,16 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   </data>
   <data name="ShowSecurityCode" xml:space="preserve">
     <value>Show security code</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>密码必须至少 8 个字符没有空格和包含至少 3个 以下：
+
+• 大写字母 [A-Z]
+• 小写字母 [a-z]
+• 数字 [0-9]
+• 特殊字符 （!、 @、 # 等。。)
+
+例如： 59D7!4$h, 493abcDE
+注意： 您的密码需有大小写</value>
   </data>
 </root>

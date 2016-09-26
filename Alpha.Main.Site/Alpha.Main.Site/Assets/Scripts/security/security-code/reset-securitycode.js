@@ -23,6 +23,11 @@ var resetsecuritycode = {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
+
+        var hasPopup = securityHelper.hasPopup();
+        if (hasPopup) {
+            $("#container").addClass("has-popup");
+        }
     },
     reset: function () {
         $.blockUI();

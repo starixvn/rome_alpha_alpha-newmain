@@ -153,28 +153,14 @@ Please use the form below to set your Security Code now.</value>
   <data name="contactMessage" xml:space="preserve">
     <value>If you haven't got security code, please contact your upline or CSD.</value>
   </data>
-  <data name="forceChangeSecCode" xml:space="preserve">
-    <value>Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, we have decided to implement a new feature called Security Code. It may be considered as a second password and will require you to input when you execute any sensitive actions such as change password, reopen/unsuspend accounts, etc.&lt;br/&gt;
-Please use the form below to set your Security Code now.&lt;br/&gt;&lt;br/&gt;</value>
-  </data>
   <data name="informSecCode" xml:space="preserve">
     <value>Please input your security code before proceeding!</value>
-  </data>
-  <data name="lblRequiredSecCode" xml:space="preserve">
-    <value>&lt;p&gt;Security Code (SC) must be:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;* Numeric digits only.&lt;/li&gt;&lt;li&gt;* 6 digits from 0-9.&lt;/li&gt;&lt;li&gt;* At least 2 different digits in the SC.&lt;/li&gt;&lt;li&gt;* Not a forward run AND not a backward run number:&lt;ul&gt;&lt;li&gt;+ A "Forward Run" number is an integer whose digits are all in consecutive, ascending order, left to right.&lt;/li&gt;&lt;li&gt;+ A "Backward Run" number is an integer whose digits are all in consecutive, descending order, left to right.&lt;/li&gt;&lt;li&gt;+ For example: 123456, 456789, 765432, etc. are not allowed.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>Your provided Security Code does not meet the requirements.</value>
   </data>
   <data name="oldSecCode" xml:space="preserve">
     <value>Old Security Code</value>
-  </data>
-  <data name="secCodeGuide" xml:space="preserve">
-    <value>Please follow 3 steps to set new Security Code:&lt;br/&gt;
-1. Choose the Security Code you want&lt;br/&gt;
-2. Click Submit button&lt;br/&gt;
-3. The system will ask you to input the Security Code provided by your upline/CSD to verify &lt;br/&gt;
-Note: your new SC must be different from the one provided by upline/CSD</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
     <value>Security Code</value>
@@ -282,17 +268,6 @@ Please use the form below to change your password now.</value>
   <data name="lblPasswordHint" xml:space="preserve">
     <value>Note: You're strongly recommended to change your password periodically to enhance security.</value>
   </data>
-  <data name="lblPasswordRequire" xml:space="preserve">
-    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:
-
-  • Uppercase letter [A-Z] 
-  • Lowercase letter [a-z] 
-  • Numeric [0-9] 
-  • Special character (!,@,#,etc..)
-
-For example: 59D7!4$h, 493abcDE
-Notes: your password is cAsE sEnSiTiVe</value>
-  </data>
   <data name="lblPasswordWrongRule" xml:space="preserve">
     <value>Your password does not meet the minimum security requirement.</value>
   </data>
@@ -338,5 +313,16 @@ Notes: your password is cAsE sEnSiTiVe</value>
   </data>
   <data name="ShowSecurityCode" xml:space="preserve">
     <value>Show security code</value>
+  </data>
+  <data name="lblPasswordRequire" xml:space="preserve">
+    <value>Password must be at least 8 characters without white-space and contain at least 3 of the following:
+
+  • Uppercase letter [A-Z] 
+  • Lowercase letter [a-z] 
+  • Numeric [0-9] 
+  • Special character (!,@,#,etc..)
+
+For example: 59D7!4$h, 493abcDE
+Notes: your password is cAsE sEnSiTiVe</value>
   </data>
 </root>
