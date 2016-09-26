@@ -65,6 +65,12 @@ var verifySecurityCode = {
                         return;
                     }
 
+                    if (top.ageWnd && top.ageWnd.iframeAttributes.preUrl) {
+                        var preUrl = top.ageWnd.iframeAttributes.preUrl;
+                        top[preUrl]();
+                        return;
+                    }
+
                     redirectToHomePage(200);
                 }
                 else if (errorCode === 2) { // account is closed 
