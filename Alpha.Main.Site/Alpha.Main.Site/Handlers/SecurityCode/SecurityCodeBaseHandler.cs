@@ -253,7 +253,7 @@
                 CustId = this.securityCodeSession.CustId,               
                 UserId = this.securityCodeSession.UserId,
                 SubAccountId = securityCodeParams.SubAccId.Value,
-                HashSecurityCode = securityCodeParams.SecurityCode,
+                HashSecurityCode = hashSecurityCode,
                 IP = this.ClientIP,
                 Language = securityCodeParams.Language
             });
