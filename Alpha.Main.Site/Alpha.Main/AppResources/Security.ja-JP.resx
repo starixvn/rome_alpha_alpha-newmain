@@ -324,6 +324,15 @@ Notes: your password is cAsE sEnSiTiVe</value>
   <data name="PasswordShower" xml:space="preserve">
     <value>hi {0}, please create your own password</value>
   </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="lblChangePassword" xml:space="preserve">
+    <value>パスワードの変更</value>
+  </data>
+  <data name="lblresetpassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
   <data name="ShowPassword" xml:space="preserve">
     <value>Show password</value>
   </data>

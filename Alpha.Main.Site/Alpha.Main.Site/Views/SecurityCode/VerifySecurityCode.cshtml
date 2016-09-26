@@ -1,5 +1,6 @@
 ﻿@model BaseSecurityCodeViewModel
 @{
+    ViewBag.Title = @Security.titleVerifySecurityCode;
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
 
@@ -8,9 +9,9 @@
     <link href="@StaticResources.MainSiteStyleUrl("~/Assets/bundles/security/security")" rel="stylesheet" type="text/css" />
 }
 
-<h1 class="page-title">@Security.SecurityCode</h1>
+<h1 id="title_header" class="page-title">@Security.SecurityCode</h1>
 <div id="error-message" class="msg msg-error">@Security.informSecCode</div>
-<div class="block">
+<div class="block " id="container">
     <form class="form-SC form-validation">
         <div class="form-group">
             <label>Security Code</label>

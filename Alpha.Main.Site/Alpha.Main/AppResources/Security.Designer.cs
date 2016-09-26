@@ -236,6 +236,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string lblBack {
+            get {
+                return ResourceManager.GetString("lblBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Password.
+        /// </summary>
+        public static string lblChangePassword {
+            get {
+                return ResourceManager.GetString("lblChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your account was closed so you&apos;re forced to logout. Please contact your upline for the assistance..
         /// </summary>
         public static string lblConfirmClosed {
@@ -340,6 +358,15 @@ namespace Alpha.Main.AppResources {
         public static string lblRequiredSecCode {
             get {
                 return ResourceManager.GetString("lblRequiredSecCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset Password.
+        /// </summary>
+        public static string lblresetpassword {
+            get {
+                return ResourceManager.GetString("lblresetpassword", resourceCulture);
             }
         }
         

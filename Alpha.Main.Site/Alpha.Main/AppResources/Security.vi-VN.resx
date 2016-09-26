@@ -323,6 +323,15 @@ Lưu ý : Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="PasswordShower" xml:space="preserve">
     <value>hi {0}, please create your own password</value>
   </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>Trở lại</value>
+  </data>
+  <data name="lblChangePassword" xml:space="preserve">
+    <value>Thay đổi mật khẩu</value>
+  </data>
+  <data name="lblresetpassword" xml:space="preserve">
+    <value>Đổi Mật khẩu</value>
+  </data>
   <data name="ShowPassword" xml:space="preserve">
     <value>Show password</value>
   </data>

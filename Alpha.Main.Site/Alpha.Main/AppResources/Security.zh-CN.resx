@@ -325,6 +325,9 @@ Note: your new SC must be different from the one provided by upline/CSD</value>
   <data name="PasswordShower" xml:space="preserve">
     <value>hi {0}, please create your own password</value>
   </data>
+  <data name="lblresetpassword" xml:space="preserve">
+    <value>修改密码</value>
+  </data>
   <data name="ShowPassword" xml:space="preserve">
     <value>Show password</value>
   </data>
