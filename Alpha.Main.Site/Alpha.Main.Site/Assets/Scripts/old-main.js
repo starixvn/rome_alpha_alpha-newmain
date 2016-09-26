@@ -74,11 +74,12 @@ window.age = window.age || {
         var top = position ? position.top : 200;
 
         var popUp = $("#page-popup");
+        var popupTop = top + (oldMainUltilities.getScrollTop(window) || 0);
         popUp.css({
             width: popW,
             height: popH,
             left: left,
-            top: top
+            top: popupTop
         });
 
         popUp.removeClass("hidden");
@@ -271,8 +272,8 @@ var AgeWnd = function () {
             popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
 
             // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
-            var scrollTop = oldMainUltilities.getScrollLeft(window) || 0;
-            var scrollLeft = oldMainUltilities.getScrollTop(window) || 0;
+            var scrollTop = oldMainUltilities.getScrollTop(window) || 0;
+            var scrollLeft = oldMainUltilities.getScrollLeft(window) || 0;
 
             // ON iOS: there is scroll issues with popup. We must show popup with auto height
             var isAutoHeight = oldMainUltilities.isiOS();
