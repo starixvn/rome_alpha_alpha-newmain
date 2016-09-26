@@ -2,9 +2,7 @@
 {
     using Alpha.Main.Models.SecurityCode;
     using Criteria.SecurityCode;
-    /// <summary>
-    /// TODO: Update summary.
-    /// </summary>
+
     public interface SecurityCodeDataAccess
     {
         string GetMainAccountHashSecurityCode(GetMainAccountHashSecurityCodeCriteria criteria);

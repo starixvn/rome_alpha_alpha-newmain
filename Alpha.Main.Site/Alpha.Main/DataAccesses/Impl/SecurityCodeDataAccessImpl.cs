@@ -8,9 +8,7 @@
     using System;
     using System.Collections;
     using System.Data;
-    /// <summary>
-    /// TODO: Update summary.
-    /// </summary>
+
     public class SecurityCodeDataAccessImpl : SecurityCodeDataAccess
     {
         public string GetMainAccountHashSecurityCode(GetMainAccountHashSecurityCodeCriteria criteria)

@@ -13,6 +13,7 @@
     using Sunplus.Agent.Utilities;
     using ViewModels;
     using ViewModels.Security;
+
     public class PasswordHandler :
          IRequestHandler<ChangePasswordCommand, Result>,
          IRequestHandler<ResetMainAccountPasswordCommand, Result>,

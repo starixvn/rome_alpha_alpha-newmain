@@ -160,7 +160,6 @@
             }
 
             return base.ChangeSecurityCodeFirstLogin(message);
-
         }
 
         public Result Handle(ChangeSecurityCodeByForcingCommand message)

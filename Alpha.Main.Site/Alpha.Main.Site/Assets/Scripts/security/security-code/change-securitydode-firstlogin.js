@@ -11,8 +11,20 @@ var changeSecurityCodeFirstLogin = {
             securityHelper.signOut();
         });
 
-        $('#txtSecCode').focus();
+        $("#txtSecCode").focus().keyup(function () {
+            securityHelper.validateSecurityCode(this);
+        });
+
+        $("#txtConfirmSecCode").keyup(function () {
+            securityHelper.validateSecurityCode(this);
+        });
+
+        $("#showSCchk").click(function () {
+            var isChecked = $(this).is(":checked");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+        });
     },
+
     changeSecurityCode: function () {
         $.blockUI();
         var $txtSecurityCode = $('#txtSecCode');

@@ -13,6 +13,19 @@ var forceChangePassword = {
         });
 
         $('#txtOldPwd').focus();
+
+        $("#txtNewPwd").keyup(function () {
+            securityHelper.validatePassword(this);
+        });
+
+        $("#txtConfirmPwd").keyup(function () {
+            securityHelper.validatePassword(this);
+        });
+
+        $("#showPasswordchk").click(function () {
+            var isChecked = $(this).is(":checked");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+        });
     },
     changeSecurityCode: function () {
         $.blockUI();

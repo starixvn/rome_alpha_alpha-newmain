@@ -5,6 +5,7 @@
     using Models.SecurityCode;
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Base;
+
     public class SecurityCodeSession : ISecurityCodeSession
     {
         private const string HYPHEN = "_";
@@ -169,7 +170,6 @@
                     }
                 }
 
-                //only assign value when CustId != 0(Session is initialize)
                 if (this.CustId > 0)
                 {
                     this.SetProperty(SECURITYCODERESULT, (int)status);

@@ -10,7 +10,19 @@ var resetSubAccountPassword = {
         $form.bind('reset', function (e) {
             resetSubAccountPassword.resetInputValue();
         });
-        $('#txtNewPwd').focus();
+
+        $("#txtNewPwd").focus().keyup(function () {
+            securityHelper.validatePassword(this);
+        });
+
+        $("#txtConfirmPwd").keyup(function () {
+            securityHelper.validatePassword(this);
+        });
+
+        $("#showPasswordchk").click(function () {
+            var isChecked = $(this).is(":checked");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+        });
     },
     reset: function () {
         $.blockUI();

@@ -7,12 +7,28 @@ var changeUserOwnSecurityCode = {
             changeUserOwnSecurityCode.change();
             e.preventDefault();
         });
+
         $form.bind('reset', function (e) {
             changeUserOwnSecurityCode.resetOriginalInputStatus();
         });
-        $('#txtOldSecCode').focus();
+
         $('#passwordNav').click(function () {
             changeUserOwnSecurityCode.gotoPasswordPage()
+        });
+
+        $('#txtOldSecCode').focus();
+
+        $("#txtSecCode").keyup(function () {
+            securityHelper.validateSecurityCode(this);
+        });
+
+        $("#txtConfirmSecCode").keyup(function () {
+            securityHelper.validateSecurityCode(this);
+        });
+
+        $("#showSCchk").click(function () {
+            var isChecked = $(this).is(":checked");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
     },
     change: function () {

@@ -10,9 +10,24 @@ var changeUserOwnPassword = {
         $form.bind('reset', function (e) {
             changeUserOwnPassword.resetOriginalInputStatus();
         });
-        $('#txtOldPwd').focus();
+       
         $('#securityCodeNav').click(function () {
             changeUserOwnPassword.gotoSecurityCodePage();
+        });
+
+        $('#txtOldPwd').focus();
+
+        $("#txtNewPwd").keyup(function () {
+            securityHelper.validatePassword(this);
+        });
+
+        $("#txtConfirmPwd").keyup(function () {
+            securityHelper.validatePassword(this);
+        });
+
+        $("#showPasswordchk").click(function () {
+            var isChecked = $(this).is(":checked");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
     },
     change: function () {

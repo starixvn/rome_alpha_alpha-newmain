@@ -7,10 +7,23 @@ var resetMainAccountPassword = {
             resetMainAccountPassword.reset();
             e.preventDefault();
         });
+
         $form.bind('reset', function (e) {
             resetMainAccountPassword.resetInputValue();
         });
-        $('#password').focus();
+
+        $("#password").focus().keyup(function () {
+            securityHelper.validatePassword(this);
+        });
+
+        $("#confirmPassword").keyup(function () {
+            securityHelper.validatePassword(this);
+        });
+
+        $("#showPasswordchk").click(function () {
+            var isChecked = $(this).is(":checked");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+        });
     },
     reset: function () {
         $.blockUI();

@@ -10,7 +10,19 @@ var resetsecuritycode = {
         $form.bind('reset', function (e) {
             resetsecuritycode.resetInputValue();
         });
-        $('#txtSecCode').focus();
+
+        $("#txtSecCode").focus().keyup(function () {
+            securityHelper.validateSecurityCode(this);
+        });
+
+        $("#txtConfirmSecCode").keyup(function () {
+            securityHelper.validateSecurityCode(this);
+        });
+
+        $("#showSCchk").click(function () {
+            var isChecked = $(this).is(":checked");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+        });
     },
     reset: function () {
         $.blockUI();

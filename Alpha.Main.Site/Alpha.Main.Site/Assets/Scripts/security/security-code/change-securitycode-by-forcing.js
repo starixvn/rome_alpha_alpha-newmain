@@ -13,6 +13,19 @@ var changeSecurityCodeByForcing = {
         });
 
         $('#txtOldSecCode').focus();
+
+        $("#txtSecCode").keyup(function () {
+            securityHelper.validateSecurityCode(this);
+        });
+
+        $("#txtConfirmSecCode").keyup(function () {
+            securityHelper.validateSecurityCode(this);
+        });
+
+        $("#showSCchk").click(function(){
+            var isChecked = $(this).is(":checked");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+        });   
     },
     changeSecurityCode: function () {
         $.blockUI();

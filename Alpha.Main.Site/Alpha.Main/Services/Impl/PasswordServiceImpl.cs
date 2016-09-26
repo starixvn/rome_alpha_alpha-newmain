@@ -210,15 +210,15 @@
             IEnumerable<string> invalidPasswords,
             bool isResetMemberPassword)
         {
-            if((!isResetPassword && string.IsNullOrWhiteSpace(currentPassword))
+            if(!isResetPassword && string.IsNullOrWhiteSpace(currentPassword)
                 || string.IsNullOrWhiteSpace(newPassword))
             {
                 return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
             }
 
-            if(!IsMatchedRules(newPassword, isResetPassword))
+            if(!IsMatchedRules(newPassword, isResetPassword) )
             {
-                return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordRequire};
+                return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordRequire };
             }
 
             if (!isResetPassword && string.Compare(newPassword, currentPassword, StringComparison.OrdinalIgnoreCase) == 0)

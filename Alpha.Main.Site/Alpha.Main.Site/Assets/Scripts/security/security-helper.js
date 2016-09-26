@@ -24,6 +24,18 @@
         }
         return result;
     },
+    validateSecurityCode: function (container) {
+        var $container = $(container)
+        var securityCode = $container.val();
+        var validSC = securityHelper.isValidSecurityCode(securityCode);
+        validSC ? securityHelper.showSuccessfullyIcon($container) : securityHelper.showFailIcon($container);
+    },
+    validatePassword: function (container) {
+        var $container = $(container)
+        var password = $container.val();
+        var validPassword = securityHelper.isValidPassword(password);
+        validPassword ? securityHelper.showSuccessfullyIcon($container) : securityHelper.showFailIcon($container);
+    },
     hashSecurityCode: function (securityCode) {
         var salt = $("#security-salt").val();
         var token = $("#securitycode-token").val();
@@ -62,6 +74,14 @@
             }
         });
     },
+    showSuccessfullyIcon: function ($container) {
+        $container.removeClass('error');
+        $container.addClass('valid');
+    },
+    showFailIcon: function ($container) {
+        $container.removeClass('valid');
+        $container.addClass('error');
+    },
     showSuccessfullyMessage: function ($messageContainer, successfullyMessage) {
         $messageContainer.removeClass('msg-error');
         $messageContainer.addClass('msg-success').empty().html(successfullyMessage);
@@ -69,6 +89,34 @@
     showFailMessage: function ($messageContainer, failMessage) {
         $messageContainer.removeClass('msg-success');
         $messageContainer.addClass('msg-error').empty().html(failMessage);
+    },
+    isValidPassword: function(password)
+    {
+        var regex1 = /^(?=.{8,100}$).*\d/i;
+        var regex2 = /^(?=.{8,100}$).*[a-z]/;
+        var regex3 = /^(?=.{8,100}$).*[A-Z]/;
+        var regex4 = /^(?=.{8,100}$).*[\[\]\^\$\.\|\?\*\+\(\)\\~`\!@#%&\-_+={}'""<>:;,]/i;
+
+        var whiteSpace = /^\S*$/;
+
+        var case1 = password.search(regex1) != -1 ? 1 : 0;
+        var case2 = password.search(regex2) != -1 ? 1 : 0;
+        var case3 = password.search(regex3) != -1 ? 1 : 0;
+        var case4 = password.search(regex4) != -1 ? 1 : 0;
+        var case5 = password.search(whiteSpace) != -1;
+
+        return (case1 + case2 + case3 + case4 >= 3) && case5;
+    },
+    showHint: function ()
+    {
+        $('input[type=password]').each(function () {
+            $(this).removeAttr("type").prop('type', 'text');
+        })
+    },
+    hideHint: function () {
+        $('input[type=text]').each(function () {
+            $(this).removeAttr("type").prop('type', 'password');
+        })
     },
 }
 

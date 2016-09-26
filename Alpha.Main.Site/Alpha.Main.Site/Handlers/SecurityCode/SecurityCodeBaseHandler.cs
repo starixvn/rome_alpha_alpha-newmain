@@ -34,8 +34,7 @@
             }
         }
 
-        public SecurityCodeBaseHandler(
-           SecurityCodeService securityCodeService, ISecurityCodeSession securityCodeSession = null)
+        public SecurityCodeBaseHandler(SecurityCodeService securityCodeService, ISecurityCodeSession securityCodeSession = null)
         {
             this.securityCodeService = securityCodeService;
             this.securityCodeSession = securityCodeSession;

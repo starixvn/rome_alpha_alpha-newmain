@@ -15,6 +15,15 @@ var verifySecurityCode = {
         });
 
         $('#txtSecCode').focus();
+
+        $("#txtSecCode").keyup(function () {
+            securityHelper.validateSecurityCode(this);
+        });
+
+        $("#showSCchk").click(function () {
+            var isChecked = $(this).is(":checked");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+        });
     },
     verify: function () {
         $.blockUI();

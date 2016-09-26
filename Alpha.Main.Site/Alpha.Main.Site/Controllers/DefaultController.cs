@@ -31,6 +31,8 @@
         {
             var browser = this.mediator.Send(new BrowserQuery(this.userSession));
 
+            return RedirectToAction("ChangeSecurityCodeByForcing", "SecurityCode");
+
             if (browser.IsUnsupportedBrowser)
             {
                 return View("UnsupportedBrowsers", browser);
@@ -62,7 +64,6 @@ var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsSh
 
                 var viewModel = mediator.Send(query);
             
-
             return View(viewModel);
         }
 
