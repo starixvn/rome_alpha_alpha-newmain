@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
 
+    [SessionState(SessionStateBehavior.ReadOnly)]
     public class NoticeController : BaseController
     {
         public NoticeController()

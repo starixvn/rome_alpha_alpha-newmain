@@ -23,7 +23,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var balanceInfo = balanceInfoService.GetBalanceInfo(message.UserId, message.UserLevel);
+            var balanceInfo = balanceInfoService.GetBalanceInfo(message.CustId, message.UserLevel);
 
             var viewModel = new BalanceInfoViewModel(balanceInfo, message.UserLevel, message.Currency);
 

@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
     using MediatR;
     using Models.Requests;
     using Services;
-    using System;
     using ViewModels;
 
     public class MenuBarHandler :

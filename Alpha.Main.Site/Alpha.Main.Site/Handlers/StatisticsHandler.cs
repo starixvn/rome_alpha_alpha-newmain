@@ -26,7 +26,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var statistics = statisticsService.GetStatistics(message.UserId, message.UserLevel);
+            var statistics = statisticsService.GetStatistics(message.CustId, message.UserLevel);
 
             var viewModel = new StatisticsViewModel(statistics, message.UserLevel);
 

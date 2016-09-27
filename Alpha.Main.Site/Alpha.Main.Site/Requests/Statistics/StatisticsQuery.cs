@@ -6,20 +6,20 @@
 
     public class StatisticsQuery : IRequest<StatisticsViewModel>
     {
-        private int userId;
+        private int custId;
         private byte userLevelId;
 
-        public StatisticsQuery(int userId, byte userLevelId)
+        public StatisticsQuery(int custId, byte userLevelId)
         {
-            this.userId = userId;
+            this.custId = custId;
             this.userLevelId = userLevelId;
         }
 
-        public int UserId
+        public int CustId
         {
             get
             {
-                return this.userId;
+                return this.custId;
             }
         }
 
