@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Requests
 {
-    using Alpha.Main.Site.ViewModels;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
 

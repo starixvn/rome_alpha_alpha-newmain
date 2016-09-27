@@ -1,6 +1,5 @@
 ﻿class HomeIndex {
-    constructor() {
-        this.loadInfo('#balance');
+    constructor() {        
         this.loadInfo('#stats');
         this.loadInfo('#notice');
     };
@@ -17,6 +16,7 @@
 
 $(document).ready(function () {
     new HomeIndex();
+    console.log("document ready and create HomeIndex instance");
 });
 
 $(function () {

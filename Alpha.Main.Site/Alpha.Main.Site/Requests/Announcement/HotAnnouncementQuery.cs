@@ -58,7 +58,8 @@
         {
             get
             {
-                return commonAnnouncementFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAdCommon.xml");
+                return commonAnnouncementFilePath 
+                    ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAdCommon.xml");
             }
         }
 

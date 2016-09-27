@@ -19,11 +19,12 @@
         }
 
         [HttpGet]
+        [ChildActionOnly]
         public ActionResult Index()
         {
-            var viewModel = mediator.Send(new BalanceInfoQuery(this.userSession.CustId, this.userSession.RoleId, this.userSession.Currency));
+            var viewModel = mediator.Send(new BalanceInfoQuery(userSession));
 
-            return View(viewModel);
+            return PartialView(viewModel);
         }
     }
 }

@@ -2,26 +2,23 @@
 {
     using Main.Models.Enumerations;
     using MediatR;
+    using Sunplus.Agent.Model.Entities;
     using ViewModels.Home.BalanceInfo;
 
     public class BalanceInfoQuery : IRequest<BalanceInfoViewModel>
     {
-        private int custId;
-        private byte userLevelId;
-        private string currency;
+        private readonly IUserSession userSession;
 
-        public BalanceInfoQuery(int custId, byte userLevelId, string currency)
+        public BalanceInfoQuery(IUserSession userSession)
         {
-            this.custId = custId;
-            this.userLevelId = userLevelId;
-            this.currency = currency;
+            this.userSession = userSession;
         }
 
-        public int CustId
+        public int UserId
         {
             get
             {
-                return this.custId;
+                return this.userSession.CustId;
             }
         }
 
@@ -29,7 +26,7 @@
         {
             get
             {
-                return Enumeration.FromValue<UserLevel>(this.userLevelId);
+                return Enumeration.FromValue<UserLevel>(this.userSession.RoleId);
             }
         }
 
@@ -37,7 +34,7 @@
         {
             get
             {
-                return this.currency;
+                return this.userSession.Currency;
             }
         }
     }
