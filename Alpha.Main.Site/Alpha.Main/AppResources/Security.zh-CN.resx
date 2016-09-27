@@ -190,7 +190,7 @@ Please use the form below to set your Security Code again.</value>
     <value>密码</value>
   </data>
   <data name="SecurityCodeValidation" xml:space="preserve">
-    <value>Security Code Validation</value>
+    <value>保安码验证</value>
   </data>
   <data name="NotAuthorized" xml:space="preserve">
     <value>您没有使用此功能的权限</value>
@@ -309,7 +309,7 @@ Please use the form below to set your Security Code again.</value>
     <value>修改密码</value>
   </data>
   <data name="ShowPassword" xml:space="preserve">
-    <value>Show password</value>
+    <value>顯示密碼</value>
   </data>
   <data name="ShowSecurityCode" xml:space="preserve">
     <value>保安码显示</value>

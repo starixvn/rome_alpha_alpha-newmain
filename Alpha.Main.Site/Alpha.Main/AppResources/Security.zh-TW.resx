@@ -190,7 +190,7 @@ Please use the form below to set your Security Code again.</value>
     <value>密碼</value>
   </data>
   <data name="SecurityCodeValidation" xml:space="preserve">
-    <value>Security Code Validation</value>
+    <value>保安碼驗證</value>
   </data>
   <data name="NotAuthorized" xml:space="preserve">
     <value>您沒有使用此功能的權限</value>
@@ -328,9 +328,12 @@ Please use the form below to set your Security Code again.</value>
 注意： 您的密码需有大小写</value>
   </data>
   <data name="lblresetpassword" xml:space="preserve">
-    <value>Show password</value>
+    <value>顯示密碼</value>
   </data>
   <data name="ShowSecurityCode" xml:space="preserve">
     <value>保安碼顯示</value>
+  </data>
+  <data name="ShowPassword" xml:space="preserve">
+    <value>顯示密碼</value>
   </data>
 </root>

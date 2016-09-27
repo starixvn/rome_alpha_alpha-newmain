@@ -189,7 +189,7 @@ Please use the form below to set your Security Code again.</value>
     <value>รหัสผ่าน</value>
   </data>
   <data name="SecurityCodeValidation" xml:space="preserve">
-    <value>Security Code Validation</value>
+    <value>ตรวจสอบรหัสรักษาความปลอดภัย</value>
   </data>
   <data name="NotAuthorized" xml:space="preserve">
     <value>คุณไม่มีอำนาจในการเข้าใช้งานฟังก์ชันนี้</value>
@@ -310,7 +310,7 @@ Please use the form below to set your Security Code again.</value>
     <value>แก้ไขรหัส</value>
   </data>
   <data name="ShowPassword" xml:space="preserve">
-    <value>Show password</value>
+    <value>แสดง</value>
   </data>
   <data name="ShowSecurityCode" xml:space="preserve">
     <value>โชว์รหัสลับ</value>
