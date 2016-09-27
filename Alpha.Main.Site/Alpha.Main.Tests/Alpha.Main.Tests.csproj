@@ -183,6 +183,9 @@
     <Compile Include="Services\Announcement\GetHotAnnouncement\ShowedMessageCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\LogInAndSettingChangedCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\ValidAnnouncementTimeCondition.cs" />
+    <Compile Include="Services\StatisticsServiceImplTests.cs" />
+    <Compile Include="Services\BalanceInfoServiceImplTests.cs" />
+    <Compile Include="Services\BalanceUpDayInfoServiceImplTests.cs" />
     <Compile Include="Services\CustomerProfileServiceImplTests.cs" />
     <Compile Include="Services\SiteMenuServiceImplTests.cs" />
     <Compile Include="Services\UserMessageServiceImplTests.cs" />
