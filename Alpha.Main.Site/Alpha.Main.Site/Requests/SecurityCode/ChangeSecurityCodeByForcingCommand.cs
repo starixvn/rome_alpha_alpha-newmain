@@ -3,6 +3,7 @@
     using Main.Models.SecurityCode;
     using MediatR;
     using Sessions;
+
     public class ChangeSecurityCodeByForcingCommand : IRequest<Result>
     {
         private ISecurityCodeSession securityCodeSession;

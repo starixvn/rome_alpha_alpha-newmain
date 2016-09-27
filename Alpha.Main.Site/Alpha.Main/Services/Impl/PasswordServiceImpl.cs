@@ -49,7 +49,7 @@
                 },
                 false);
 
-            if(!validateResult.IsOK)
+            if (!validateResult.IsOK)
             {
                 return validateResult;
             }
@@ -210,13 +210,13 @@
             IEnumerable<string> invalidPasswords,
             bool isResetMemberPassword)
         {
-            if(!isResetPassword && string.IsNullOrWhiteSpace(currentPassword)
+            if (!isResetPassword && string.IsNullOrWhiteSpace(currentPassword)
                 || string.IsNullOrWhiteSpace(newPassword))
             {
                 return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
             }
 
-            if(!IsMatchedRules(newPassword, isResetPassword) )
+            if (!IsMatchedRules(newPassword, isResetPassword))
             {
                 return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordRequire };
             }
@@ -256,7 +256,7 @@
         /// <returns></returns>
         private bool IsMatchedRules(string password, bool isResetMemberPassword)
         {
-            if(isResetMemberPassword)
+            if (isResetMemberPassword)
             {
                 return MemberPasswordRule.Match(password).Success && NoWhiteSpace.Match(password).Success;
             }

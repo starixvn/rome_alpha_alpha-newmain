@@ -2,6 +2,7 @@
 {
     using NSubstitute;
     using Sessions;
+
     public class NotRequireSecurityCodeCondition : SecurityCodeBaseCondition
     {
         public NotRequireSecurityCodeCondition()

@@ -3,6 +3,7 @@
     using System.Web.Mvc;
     using Alpha.Auth.Web.Validators;
     using Main.Models.SecurityCode;
+
     public class AntiXSRFFilter : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)

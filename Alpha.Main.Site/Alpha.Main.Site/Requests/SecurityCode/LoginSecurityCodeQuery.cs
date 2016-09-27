@@ -13,7 +13,6 @@
         {
         }
 
-
         public LoginSecurityCodeQuery(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();
@@ -35,7 +34,6 @@
             }
         }
 
-
         public bool IsSubAcc
         {
             get
@@ -43,6 +41,7 @@
                 return this.userSession.IsSubAcc;
             }
         }
+
         public string UserName
         {
             get

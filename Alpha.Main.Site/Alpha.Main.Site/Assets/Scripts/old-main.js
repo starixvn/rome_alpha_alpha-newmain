@@ -442,6 +442,7 @@ function ShowSecCodePopup(preUrl, callerAge) {
         {
             preUrl: preUrl
         });
+    clearPopupSubtitle();
 }
 
 //Javascript code snippet to create a div dynamically in Javascript.

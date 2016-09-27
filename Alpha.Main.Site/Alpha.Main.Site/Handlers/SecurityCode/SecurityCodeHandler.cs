@@ -2,17 +2,15 @@
 {
     using System;
     using AppResources;
-    using Configurations;
     using Fanex.Security;
-    using Main.Helpers;
     using Main.Models.CustomerProfiles;
     using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
     using Services;
     using Sessions;
-    using ViewModels.Security;
     using Sunplus.Agent.Utilities;
+    using ViewModels.Security;
 
     public class SecurityCodeHandler : SecurityCodeBaseHandler,
          IRequestHandler<LoginSecurityCodeQuery, LoginSecurityCodeViewModel>,
@@ -25,7 +23,6 @@
     {
         private const string HashKeySessionKey = "ph";
         private readonly CustomerProfileService customerProfileService;
-        private readonly CachingManager cacheManager;
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
 
@@ -78,23 +75,22 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(base.securityCodeSession.CustId);
+            var profile = customerProfileService.GetProfilePicture(this.securityCodeSession.CustId);
 
             string securityCodeToken = this.GenerateSecurityToken();
-            base.securityCodeSession.SecurityCodeToken = securityCodeToken;
+            this.securityCodeSession.SecurityCodeToken = securityCodeToken;
 
-            var SecuritySalt = base.securityCodeSession.SubAccId > 0
-                ? base.MD5Salt(base.securityCodeSession.SubAccId)
-                : base.MD5Salt(base.securityCodeSession.CustId);
+            var securitySalt = this.securityCodeSession.SubAccId > 0
+                ? this.MD5Salt(this.securityCodeSession.SubAccId)
+                : this.MD5Salt(this.securityCodeSession.CustId);
 
             return new BaseSecurityCodeViewModel
             {
                 SecurityCodeToken = securityCodeToken,
-                SecuritySalt = SecuritySalt,
+                SecuritySalt = securitySalt,
                 HashKey = this.HashKey
             };
         }
-
 
         public LoginSecurityCodeViewModel Handle(LoginSecurityCodeQuery message)
         {
@@ -103,19 +99,19 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(base.securityCodeSession.CustId);
+            var profile = customerProfileService.GetProfilePicture(this.securityCodeSession.CustId);
 
             string securityCodeToken = this.GenerateSecurityToken();
-            base.securityCodeSession.SecurityCodeToken = securityCodeToken;
+            this.securityCodeSession.SecurityCodeToken = securityCodeToken;
 
-            var SecuritySalt = base.securityCodeSession.SubAccId > 0
-                ? base.MD5Salt(base.securityCodeSession.SubAccId)
-                : base.MD5Salt(base.securityCodeSession.CustId);
+            var securitySalt = this.securityCodeSession.SubAccId > 0
+                ? this.MD5Salt(this.securityCodeSession.SubAccId)
+                : this.MD5Salt(this.securityCodeSession.CustId);
 
             return new LoginSecurityCodeViewModel
             {
                 SecurityCodeToken = securityCodeToken,
-                SecuritySalt = SecuritySalt,
+                SecuritySalt = securitySalt,
                 HashKey = this.HashKey,
                 IsDefaultAvatar = profile.IsDefaultAvatar,
                 Username = message.UserName,
@@ -132,7 +128,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            if (base.securityCodeSession.IsInternal)
+            if (this.securityCodeSession.IsInternal)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
@@ -145,7 +141,7 @@
             {
                 errorMessage = Security.alertSecCodeEmpty;
             }
-            else if (!base.ValidateSecurityCode(message.SecurityCode))
+            else if (!this.ValidateSecurityCode(message.SecurityCode))
             {
                 errorMessage = Security.lblSecCodeWrongRule;
             }
@@ -159,7 +155,7 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return base.ChangeSecurityCodeFirstLogin(message);
+            return this.ChangeSecurityCodeFirstLogin(message);
         }
 
         public Result Handle(ChangeSecurityCodeByForcingCommand message)
@@ -169,7 +165,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            if (base.securityCodeSession.IsInternal)
+            if (this.securityCodeSession.IsInternal)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
@@ -186,7 +182,7 @@
             {
                 errorMessage = Security.alertSecCodeEmpty;
             }
-            else if (!base.ValidateSecurityCode(message.SecurityCode))
+            else if (!this.ValidateSecurityCode(message.SecurityCode))
             {
                 errorMessage = Security.lblSecCodeWrongRule;
             }
@@ -200,7 +196,7 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return base.ChangeSecurityCodeByForcing(message);
+            return this.ChangeSecurityCodeByForcing(message);
         }
 
         public Result Handle(ChangeUserOwnSecurityCodeCommand message)
@@ -210,7 +206,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            if (base.securityCodeSession.IsInternal)
+            if (this.securityCodeSession.IsInternal)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
@@ -227,7 +223,7 @@
             {
                 errorMessage = Security.alertSecCodeEmpty;
             }
-            else if (!base.ValidateSecurityCode(message.SecurityCode))
+            else if (!this.ValidateSecurityCode(message.SecurityCode))
             {
                 errorMessage = Security.lblSecCodeWrongRule;
             }
@@ -241,8 +237,7 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return base.ChangeUserOwnSecurityCode(message);
-
+            return this.ChangeUserOwnSecurityCode(message);
         }
 
         public Result Handle(ResetSecurityCodeCommand message)
@@ -254,7 +249,7 @@
 
             bool isResetSubAccount = message.SubAccId.HasValue && message.SubAccId.Value > 0;
 
-            if (base.securityCodeSession.IsInternal && !isResetSubAccount)
+            if (this.securityCodeSession.IsInternal && !isResetSubAccount)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
@@ -267,7 +262,7 @@
             {
                 errorMessage = Security.alertSecCodeEmpty;
             }
-            else if (!base.ValidateSecurityCode(message.SecurityCode))
+            else if (!this.ValidateSecurityCode(message.SecurityCode))
             {
                 errorMessage = Security.lblSecCodeWrongRule;
             }
@@ -284,11 +279,11 @@
             Result result = new Result();
             if (message.CustId.HasValue && message.CustId.Value > 0)
             {
-                result = base.ResetDownlineSecurityCode(message);
+                result = this.ResetDownlineSecurityCode(message);
             }
             else if (isResetSubAccount)
             {
-                result = base.ResetSubAccountSecurityCode(message);
+                result = this.ResetSubAccountSecurityCode(message);
             }
 
             return result;
@@ -301,7 +296,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            if (base.securityCodeSession.IsInternal)
+            if (this.securityCodeSession.IsInternal)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
@@ -311,7 +306,7 @@
                 return new Result { ErrorCode = -1, ErrorMessage = Security.informSecCode };
             }
 
-            return base.VerifySecurityCode(message);
+            return this.VerifySecurityCode(message);
         }
 
         private string GenerateImage(ProfilePicture profilePicture)

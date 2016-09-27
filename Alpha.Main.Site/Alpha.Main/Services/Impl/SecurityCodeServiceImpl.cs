@@ -1,19 +1,14 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
     using Alpha.Main.Services;
-    using Configurations;
     using Criteria.SecurityCode;
     using DataAccesses;
     using DataAccesses.Impl;
     using Models.SecurityCode;
     using Params.SecurityCode;
-    using Sessions;
-    using System;
-    using System.Linq;
 
     public class SecurityCodeServiceImpl : SecurityCodeService
     {
-
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
 
         public SecurityCodeServiceImpl(SecurityCodeDataAccess securityCodeDataAccess = null)

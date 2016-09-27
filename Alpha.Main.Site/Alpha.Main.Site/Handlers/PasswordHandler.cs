@@ -142,10 +142,10 @@
 
             if(result.IsSuccessful)
             {
-                // Update is first login status
+                //// Update is first login status
                 this.userSession.IsLogged = true;
 
-                // Update last change pwd date
+                //// Update last change pwd date
                 this.userSession.IsPasswordExpired = false;
             }
 

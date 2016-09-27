@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
+    using System.Text.RegularExpressions;
     using AppResources;
     using Fanex.Security;
     using Main.Models.Enumerations;
@@ -8,9 +9,8 @@
     using Params.SecurityCode;
     using Services;
     using Sessions;
-    using System.Text.RegularExpressions;
 
-    public class SecurityCodeBaseHandler 
+    public class SecurityCodeBaseHandler
     {
         private const string MD5 = "MD5";
         private const string SHA1 = "SHA1";
@@ -21,6 +21,12 @@
 
         protected ISecurityCodeSession securityCodeSession;
         private SecurityCodeService securityCodeService;
+ 
+        public SecurityCodeBaseHandler(SecurityCodeService securityCodeService, ISecurityCodeSession securityCodeSession = null)
+        {
+            this.securityCodeService = securityCodeService;
+            this.securityCodeSession = securityCodeSession;
+        }
 
         private string ClientIP
         {
@@ -34,12 +40,6 @@
             }
         }
 
-        public SecurityCodeBaseHandler(SecurityCodeService securityCodeService, ISecurityCodeSession securityCodeSession = null)
-        {
-            this.securityCodeService = securityCodeService;
-            this.securityCodeSession = securityCodeSession;
-        }
-
         private void ResetToken()
         {
             this.securityCodeSession.SecurityCodeToken = string.Empty;
@@ -49,7 +49,8 @@
 
         private Result UpdateSecurityCode(SecurityCodeParams securityCodeParams)
         {
-            Result result = securityCodeParams.SubAccountId.Equals(0) ? this.UpdateMainAccountSecurityCode(securityCodeParams) : this.UpdateSubAccountSecurityCode(securityCodeParams);
+            Result result = securityCodeParams.SubAccountId.Equals(0) ? 
+                this.UpdateMainAccountSecurityCode(securityCodeParams) : this.UpdateSubAccountSecurityCode(securityCodeParams);
 
             if (result != null && result.ErrorCode == 0)
             {
@@ -80,9 +81,9 @@
                 return new Result { ErrorCode = -1, ErrorMessage = Security.alertInputWrongSecCode };
             }
 
-            string dBsecurityCode = GetDBhashSecurityCode(custId, subAccId);
-            string dBHashsecurityCode = Cryptography.ComputeHash(SHA256, dBsecurityCode, this.securityCodeSession.SecurityCodeToken);
-            bool isValidSecurityCode = string.Equals(webHashSecurityCode, dBHashsecurityCode);
+            string securityCodeDB = GetDBhashSecurityCode(custId, subAccId);
+            string hashsecurityCodeDB = Cryptography.ComputeHash(SHA256, securityCodeDB, this.securityCodeSession.SecurityCodeToken);
+            bool isValidSecurityCode = string.Equals(webHashSecurityCode, hashsecurityCodeDB);
 
             //// update status of Security Code
             Result result = UpdateSecurityCodeCounter(custId, isValidSecurityCode, this.securityCodeSession.Language, this.ClientIP, subAccId);
@@ -105,7 +106,7 @@
 
         private void CloseCasinoAccount(int custId, string ip)
         {
-             new CasinoLibrary.SBAgent.Customer().UpdateCustClosedFailSecurityCode(custId, true, ip);
+            new CasinoLibrary.SBAgent.Customer().UpdateCustClosedFailSecurityCode(custId, true, ip);
         }
 
         private string HashSecurityCode(int custId, string securityCode, bool isResetMember = false)
@@ -123,7 +124,8 @@
 
         private string GetDBhashSecurityCode(int custId, int subAccountId)
         {
-            return subAccountId.Equals(0) ? this.securityCodeService.GetMainAccountHashSecurityCode(custId) : this.securityCodeService.GetSubAccountHashSecurityCode(custId, subAccountId);
+            return subAccountId.Equals(0) ? this.securityCodeService.GetMainAccountHashSecurityCode(custId) 
+                : this.securityCodeService.GetSubAccountHashSecurityCode(custId, subAccountId);
         }
 
         private Result UpdateSecurityCodeCounter(int custId, bool isValidSecurityCode, string language, string clientIP, int subAccountId)
@@ -146,7 +148,7 @@
 
         protected Result ChangeSecurityCodeFirstLogin(ChangeSecurityCodeFirstLoginCommand message)
         {
-            Result result =  this.UpdateSecurityCode(new SecurityCodeParams
+            Result result = this.UpdateSecurityCode(new SecurityCodeParams
             {
                 CustId = message.CustId,
                 SubAccountId = message.SubAccId,
@@ -193,7 +195,7 @@
             Result result = this.CompareHashSecurityCodeBetweenWebAndDB(this.securityCodeSession.CustId, this.securityCodeSession.SubAccId, message.OldSecurityCode);
             if (result.ErrorCode.Equals(0))
             {
-                result =  this.UpdateSecurityCode(new SecurityCodeParams
+                result = this.UpdateSecurityCode(new SecurityCodeParams
                 {
                     CustId = message.CustId,
                     SubAccountId = message.SubAccId,
@@ -214,7 +216,7 @@
 
         protected Result VerifySecurityCode(VerifySecurityCodeCommand message)
         {
-            Result result =  this.CompareHashSecurityCodeBetweenWebAndDB(message.CustId, message.SubAccId, message.SecurityCode);
+            Result result = this.CompareHashSecurityCodeBetweenWebAndDB(message.CustId, message.SubAccId, message.SecurityCode);
             if (result.ErrorCode == 0)
             {
                 this.ResetToken();
@@ -242,6 +244,7 @@
             {
                 result.ErrorMessage = Security.alertSecCodeChangedOK;
             }
+
             return result;
         }
 
@@ -250,7 +253,7 @@
             string hashSecurityCode = HashSecurityCode(securityCodeParams.SubAccId.Value, securityCodeParams.SecurityCode);
             Result result = this.securityCodeService.ResetSubAccountHashSecurityCode(new SecurityCodeParams
             {
-                CustId = this.securityCodeSession.CustId,               
+                CustId = this.securityCodeSession.CustId,
                 UserId = this.securityCodeSession.UserId,
                 SubAccountId = securityCodeParams.SubAccId.Value,
                 HashSecurityCode = hashSecurityCode,
@@ -308,5 +311,5 @@
             string plainText = custId.ToString();
             return Cryptography.ComputeHash(MD5, plainText, SECURITYCODEPADDING);
         }
-      }
+    }
 }

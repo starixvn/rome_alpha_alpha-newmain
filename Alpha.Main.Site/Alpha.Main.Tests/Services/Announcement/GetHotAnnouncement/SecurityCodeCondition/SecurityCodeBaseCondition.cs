@@ -2,6 +2,7 @@
 {
     using Params.Announcements;
     using Sessions;
+
     public class SecurityCodeBaseCondition
     {
         public ISecurityCodeSession SecurityCodeSession { get; set; }

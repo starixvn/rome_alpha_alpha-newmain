@@ -3,6 +3,7 @@
     using Main.Models.SecurityCode;
     using MediatR;
     using Sessions;
+
     public class ChangeUserOwnSecurityCodeCommand : IRequest<Result>
     {
         private ISecurityCodeSession securityCodeSession;
@@ -54,7 +55,8 @@
             }
         }
 
-        public string Language {
+        public string Language
+        {
             get
             {
                 return this.securityCodeSession.Language;

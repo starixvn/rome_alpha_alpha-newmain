@@ -34,7 +34,6 @@
             }
         }
 
-
         public bool IsSubAcc
         {
             get

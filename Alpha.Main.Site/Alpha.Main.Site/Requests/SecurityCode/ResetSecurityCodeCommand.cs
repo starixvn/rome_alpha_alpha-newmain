@@ -3,6 +3,7 @@
     using Main.Models.SecurityCode;
     using MediatR;
     using Sessions;
+
     public class ResetSecurityCodeCommand : IRequest<Result>
     {
         private ISecurityCodeSession securityCodeSession;
@@ -31,7 +32,6 @@
         public string ConfirmSecurityCode { get; set; }
 
         public string SecurityCode { get; set; }
-
 
         public string Language
         {

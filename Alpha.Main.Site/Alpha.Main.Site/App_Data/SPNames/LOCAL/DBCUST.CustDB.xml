@@ -7,6 +7,7 @@
       <Mapping DataField="credit" ObjectProperty="GivenCredit" />
     </Setting>
   </Function>
+  
   <Function Name="Security Code">
     <Setting Key="Age_UpdateMainAccountSecurityCode" SpName="Age_CustomerUpdSecurityCode" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />  
     <Setting Key="Age_UpdateSubAccountSecurityCode" SpName="Age_CustomerUpdSecurityCode_Sub" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />

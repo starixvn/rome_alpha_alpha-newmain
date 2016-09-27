@@ -140,7 +140,6 @@
             }
         }
 
-
         public void AssignValue(GetHotAnnouncementsParams hotAnnouncementsParams)
         {
             if (hotAnnouncementsParams == null)

@@ -1,10 +1,11 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
+    using System.Diagnostics.CodeAnalysis;
     using MediatR;
     using Sessions;
     using Sunplus.Agent.Model.Entities;
-    using System.Diagnostics.CodeAnalysis;
     using ViewModels;
+
     public class IndexQuery : IRequest<IndexViewModel>
     {
         private readonly bool isEnableSecurityCode;
