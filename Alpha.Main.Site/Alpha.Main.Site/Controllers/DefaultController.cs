@@ -44,17 +44,7 @@
 
             if (SecurityCodeChecker.IsForcedChangeSecurityCode())
             {
-                ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-                var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
-
-                switch (status)
-                {
-                    case SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING:
-                        return RedirectToAction("ChangeSecurityCodeByForcing", "SecurityCode");
-
-                    case SecurityCodeStatus.CHANGE_SECURITYCODE_FIRSTLOGIN:
-                        return RedirectToAction("ChangeSecurityCodeFirstLogin", "SecurityCode");
-                }
+                return Redirect("~/SecurityCode/CheckLoginSecurityCode");
             }
             
 var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);

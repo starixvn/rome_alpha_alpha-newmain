@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using Alpha.Main.Helpers;
+using Alpha.Main.Models.Enumerations;
 
 namespace Alpha.Main.Site.ViewModels.Security
 {
@@ -10,6 +11,16 @@ namespace Alpha.Main.Site.ViewModels.Security
         public string SecuritySalt { get; set; }
 
         public string HashKey { get; set; }
+
+        public byte CustRoleId { get; set; }
+
+        public string UserLevel
+        {
+            get
+            {
+                return Enumeration.FromValue<UserLevel>(this.CustRoleId).DisplayName.ToLower();
+            }
+        }
 
         public string OldMainRootPath
         {

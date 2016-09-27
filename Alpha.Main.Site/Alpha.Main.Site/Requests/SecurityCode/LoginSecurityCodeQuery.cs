@@ -42,6 +42,14 @@
             }
         }
 
+        public byte RoleId
+        {
+            get
+            {
+                return this.userSession.RoleId;
+            }
+        }
+
         public string UserName
         {
             get

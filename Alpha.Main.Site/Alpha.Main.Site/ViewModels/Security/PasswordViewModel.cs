@@ -2,6 +2,7 @@
 {
     using System.Web;
     using Alpha.Main.Helpers;
+    using Main.Models.Enumerations;
 
     public class PasswordViewModel
     {
@@ -9,7 +10,15 @@
 
         public int SubAccountId { get; set; }
 
-        public int CustRoleId { get; set; }
+        public byte CustRoleId { get; set; }
+
+        public string UserLevel
+        {
+            get
+            {
+                return Enumeration.FromValue<UserLevel>(this.CustRoleId).DisplayName.ToLower();
+            }
+        }
 
         public string HashKey { get; set; }
 

@@ -102,6 +102,10 @@
                 object value = this.GetProperty(ISFORCEDSECURITYCODE);
                 return (null == value) ? false : (bool)value;
             }
+            set
+            {
+                this.SetProperty(ISFORCEDSECURITYCODE, value);
+            }
         }
 
         public string SecurityCode

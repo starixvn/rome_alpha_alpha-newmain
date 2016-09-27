@@ -61,6 +61,7 @@ var changeSecurityCodeByForcing = {
                     $("#txtOldSecCode").addClass('error');
                     $("#txtOldSecCode-error").empty().html(data.ErrorMessage);
                     $txtOldSecurityCode.focus();
+                    $.unblockUI();
                 }
             },
             complete: function (jqXHR, textStatus) {

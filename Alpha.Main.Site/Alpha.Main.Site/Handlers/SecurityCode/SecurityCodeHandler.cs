@@ -84,12 +84,15 @@
                 ? this.MD5Salt(this.SecurityCodeSession.SubAccId)
                 : this.MD5Salt(this.SecurityCodeSession.CustId);
 
-            return new BaseSecurityCodeViewModel
+            var model = new BaseSecurityCodeViewModel
             {
                 SecurityCodeToken = securityCodeToken,
                 SecuritySalt = securitySalt,
-                HashKey = this.HashKey
+                HashKey = this.HashKey,
+                CustRoleId = message.RoleId
             };
+
+            return model;
         }
 
         public LoginSecurityCodeViewModel Handle(LoginSecurityCodeQuery message)
@@ -113,6 +116,7 @@
                 SecurityCodeToken = securityCodeToken,
                 SecuritySalt = securitySalt,
                 HashKey = this.HashKey,
+                CustRoleId = message.RoleId,
                 IsDefaultAvatar = profile.IsDefaultAvatar,
                 Username = message.UserName,
                 AlternateUsername = this.BuildAlternateUsername(message),

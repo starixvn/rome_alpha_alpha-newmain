@@ -26,6 +26,14 @@
             }
         }
 
+        public byte RoleId
+        {
+            get
+            {
+                return this.userSession.RoleId;
+            }
+        }
+
         public int SubAccId
         {
             get

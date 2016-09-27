@@ -18,7 +18,7 @@ namespace Alpha.Main.Sessions
 
         bool IsInternal { get; }
 
-        bool IsForcedSecurityCode { get; }
+        bool IsForcedSecurityCode { get; set; }
 
         string SecurityCode { get; }
 

@@ -3,6 +3,8 @@
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Filter;
+    using Main.Helpers;
+    using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
     using Models.Requests;
@@ -16,6 +18,30 @@
         public SecurityCodeController(IMediator mediator)
         {
             this.mediator = mediator;
+        }
+
+        [HttpGet]
+        public ActionResult CheckLoginSecurityCode(bool isOldmain = false)
+        {
+            ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
+            var securityAction = string.Empty;
+
+            switch (status)
+            {
+                case SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING:
+                    return RedirectToAction("ChangeSecurityCodeByForcing", "SecurityCode");
+
+                case SecurityCodeStatus.CHANGE_SECURITYCODE_FIRSTLOGIN:
+                    return RedirectToAction("ChangeSecurityCodeFirstLogin", "SecurityCode");
+            }
+
+            if(isOldmain)
+            {
+                return Redirect(MicroSites.OldMainUrl("Index.aspx"));
+            }
+
+            return RedirectToAction("Index", "Default");
         }
 
         [HttpGet]

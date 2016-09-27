@@ -66,6 +66,7 @@
         {
             return new PasswordViewModel
             {
+                CustRoleId = message.CustRoleId,
                 HashKey = GetHasKey()
             };
         }
