@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using System;
+    using Constants;
     using Fanex.Data.Repository;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
@@ -30,11 +31,8 @@
         [Test]
         public void GetBalanceInfo_InvalidCustId_ReturnNull()
         {
-            // Arrange
-            var userLevel = Enumeration.FromValue<UserLevel>(2);
-
             // Action
-            var balanceInfo = balanceInfoService.GetBalanceInfo(1, userLevel);
+            var balanceInfo = balanceInfoService.GetBalanceInfo(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
             Assert.AreEqual(balanceInfo, null);
@@ -44,13 +42,14 @@
         public void GetBalanceInfo_ValidCustId_ReturnBalanceInfo()
         {
             // Arrange
-            var userLevel = Enumeration.FromValue<UserLevel>(2);
             var expectedBalanceInfo = new BalanceInfo("user", 1, 1, 1, 1, 1, 1, 1, 1);
 
-            dynamicRepository.Get<BalanceInfo>(Arg.Any<object>()).Returns(expectedBalanceInfo);
+            dynamicRepository
+                .Get<BalanceInfo>(Arg.Any<object>())
+                .Returns(expectedBalanceInfo);
 
             // Action
-            var balanceInfo = balanceInfoService.GetBalanceInfo(1, userLevel);
+            var balanceInfo = balanceInfoService.GetBalanceInfo(CustId.ValidId, UserLevel.Agent);
 
             // Assert
             Assert.AreEqual(balanceInfo, expectedBalanceInfo);

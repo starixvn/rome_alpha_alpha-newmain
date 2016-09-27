@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
+    using Constants;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
     using NSubstitute;
@@ -8,6 +9,7 @@
     using Services;
     using Site.Handlers;
     using Site.Requests.BalanceInfo;
+    using Sunplus.Agent.Model.Entities;
     using ViewModels.Home.BalanceInfo;
 
     [TestFixture]
@@ -15,12 +17,17 @@
     {
         private BalanceInfoService balanceInfoService;
         private BalanceInfoHandler balanceInfoHandler;
+        private IUserSession userSession;
 
         [SetUp]
         public void SetUp()
         {
             balanceInfoService = Substitute.For<BalanceInfoService>();
             balanceInfoHandler = new BalanceInfoHandler(balanceInfoService);
+
+            userSession = Substitute.For<IUserSession>();
+            userSession.CustId.Returns(CustId.ValidId);
+            userSession.RoleId.Returns(RoleId.Agent);
         }
 
         [Test]
@@ -38,31 +45,19 @@
         {
             // Arrange
             var balanceInfo = new BalanceInfo("user", 1, 1, 1, 1, 1, 1, 1, 1);
-            balanceInfoService.GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(balanceInfo);
+            balanceInfoService
+                .GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>())
+                .Returns(balanceInfo);
 
-            var query = new BalanceInfoQuery(1, 2, "USS");
-
-            // Action
-            var viewModel = balanceInfoHandler.Handle(query);
-
-            // Assert
-            balanceInfoService.Received().GetBalanceInfo(Arg.Is<int>(cud => cud == query.CustId), Arg.Is<UserLevel>(ul => ul == query.UserLevel));
-        }
-
-        [Test]
-        public void HandleBalanceInfoQuery_NotNullQuery_ReturnBalanceInfo()
-        {
-            // Arrange
-            var expectedBalanceInfo = new BalanceInfo("user", 1, 1, 1, 1, 1, 1, 1, 1);
-            balanceInfoService.GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(expectedBalanceInfo);
-
-            var query = new BalanceInfoQuery(1, 2, "USS");
+            var query = new BalanceInfoQuery(userSession);
 
             // Action
             var viewModel = balanceInfoHandler.Handle(query);
 
             // Assert
-            Assert.AreEqual(expectedBalanceInfo, viewModel.BalanceInfo);
+            balanceInfoService
+                .Received()
+                .GetBalanceInfo(Arg.Is<int>(cid => cid == query.CustId), Arg.Is<UserLevel>(ul => ul == query.UserLevel));
         }
 
         [Test]
@@ -70,21 +65,23 @@
         {
             // Arrange
             var balanceInfo = new BalanceInfo("user", 1, 1, 1, 1, 1, 1, 1, 1);
-            balanceInfoService.GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(balanceInfo);
+            balanceInfoService
+                .GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>())
+                .Returns(balanceInfo);
 
-            var query = new BalanceInfoQuery(1, 2, "USS");
+            var query = new BalanceInfoQuery(userSession);
 
-            var expectedBalanceInfoViewModel =
-                new BalanceInfoViewModel(
-                    balanceInfo,
-                    query.UserLevel,
-                    query.Currency);
+            var expectedBalanceInfoViewModel = new BalanceInfoViewModel(
+                                                        balanceInfo,
+                                                        query.UserLevel,
+                                                        query.Currency);
 
             // Action
             var balanceInfoViewModel = balanceInfoHandler.Handle(query);
 
             // Assert
-            Assert.IsTrue(expectedBalanceInfoViewModel.Currency == balanceInfoViewModel.Currency
+            Assert.IsTrue(expectedBalanceInfoViewModel.BalanceInfo == balanceInfo
+                && expectedBalanceInfoViewModel.Currency == balanceInfoViewModel.Currency
                 && expectedBalanceInfoViewModel.GivenCreditLabel == balanceInfoViewModel.GivenCreditLabel
                 && expectedBalanceInfoViewModel.TotalDownlineCreditLabel == balanceInfoViewModel.TotalDownlineCreditLabel
                 && expectedBalanceInfoViewModel.UserLevelLabel == balanceInfoViewModel.UserLevelLabel);

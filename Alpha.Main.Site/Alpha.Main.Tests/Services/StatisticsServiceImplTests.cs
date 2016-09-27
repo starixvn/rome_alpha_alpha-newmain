@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Constants;
     using Fanex.Data.Repository;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
@@ -17,7 +18,6 @@
         private IDynamicRepository dynamicRepository;
         private BalanceUpDayInfoService balanceUpDateInfoService;
         private StatisticsServiceImpl statisticsService;
-        private UserLevel userLevel;
 
         [SetUp]
         public void SetUp()
@@ -25,9 +25,9 @@
             dynamicRepository = Substitute.For<IDynamicRepository>();
 
             balanceUpDateInfoService = Substitute.For<BalanceUpDayInfoService>();
-            balanceUpDateInfoService.GetBalanceUpDayInfo().Returns(new BalanceUpDayInfo(DateTime.Today, DateTime.Today));
-
-            userLevel = Enumeration.FromValue<UserLevel>(2);
+            balanceUpDateInfoService
+                .GetBalanceUpDayInfo()
+                .Returns(new BalanceUpDayInfo(DateTime.Today, DateTime.Today));
 
             statisticsService = new StatisticsServiceImpl(balanceUpDateInfoService, dynamicRepository);
         }
@@ -36,7 +36,7 @@
         public void GetStatistics_InvalidCustId_ReturnNull()
         {
             // Action
-            var statistics = statisticsService.GetStatistics(0, userLevel);
+            var statistics = statisticsService.GetStatistics(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
             Assert.AreEqual(statistics, null);
@@ -51,7 +51,7 @@
             dynamicRepository.Get<Statistics>(Arg.Any<object>()).Returns(expectedStatistics);
 
             // Action
-            var statistics = statisticsService.GetStatistics(1, userLevel);
+            var statistics = statisticsService.GetStatistics(CustId.ValidId, UserLevel.Agent);
 
             // Assert
             Assert.AreEqual(statistics, expectedStatistics);
@@ -61,7 +61,7 @@
         public void GetTopWinningMembers_InvalidCustId_ReturnEmptyList()
         {
             // Action
-            var topWinningMembers = statisticsService.GetTopWinningMembers(0, userLevel);
+            var topWinningMembers = statisticsService.GetTopWinningMembers(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
             Assert.AreEqual(topWinningMembers, new List<TopWinningMember>());
@@ -72,12 +72,14 @@
         {
             // Arrange
             var expectedTopWinningMembers = new List<TopWinningMember>();
-            expectedTopWinningMembers.Add(new TopWinningMember(1, "user", 1));
+            expectedTopWinningMembers.Add(new TopWinningMember(CustId.ValidId, "user", 1));
 
-            dynamicRepository.Fetch<TopWinningMember>(Arg.Any<object>()).Returns(expectedTopWinningMembers);
+            dynamicRepository
+                .Fetch<TopWinningMember>(Arg.Any<object>())
+                .Returns(expectedTopWinningMembers);
 
             // Action
-            var topWinningMembers = statisticsService.GetTopWinningMembers(0, userLevel);
+            var topWinningMembers = statisticsService.GetTopWinningMembers(CustId.ValidId, UserLevel.Agent);
 
             // Assert
             Assert.AreEqual(topWinningMembers, expectedTopWinningMembers);
@@ -87,7 +89,7 @@
         public void GetTopTurnoverMembers_InvalidCustId_ReturnEmptyList()
         {
             // Action
-            var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(0, userLevel);
+            var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
             Assert.AreEqual(topTurnoverMembers, new List<TopTurnoverMember>());
@@ -98,12 +100,14 @@
         {
             // Arrange
             var expectedTopTurnoverMembers = new List<TopTurnoverMember>();
-            expectedTopTurnoverMembers.Add(new TopTurnoverMember(1, "user", 1));
+            expectedTopTurnoverMembers.Add(new TopTurnoverMember(CustId.ValidId, "user", 1));
 
-            dynamicRepository.Fetch<TopTurnoverMember>(Arg.Any<object>()).Returns(expectedTopTurnoverMembers);
+            dynamicRepository
+                .Fetch<TopTurnoverMember>(Arg.Any<object>())
+                .Returns(expectedTopTurnoverMembers);
 
             // Action
-            var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(0, userLevel);
+            var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(CustId.ValidId, UserLevel.Agent);
 
             // Assert
             Assert.AreEqual(topTurnoverMembers, expectedTopTurnoverMembers);
@@ -113,7 +117,7 @@
         public void GetNewMembers_InvalidCustId_ReturnEmptyList()
         {
             // Action
-            var newMembers = statisticsService.GetNewMembers(0);
+            var newMembers = statisticsService.GetNewMembers(CustId.InvalidId);
 
             // Assert
             Assert.AreEqual(newMembers, new List<NewMember>());
@@ -124,12 +128,12 @@
         {
             // Arrange
             var expectedNewMembers = new List<NewMember>();
-            expectedNewMembers.Add(new NewMember(1, "user", DateTime.Today, 1));
+            expectedNewMembers.Add(new NewMember(CustId.ValidId, "user", DateTime.Today, 1));
 
             dynamicRepository.Fetch<NewMember>(Arg.Any<object>()).Returns(expectedNewMembers);
 
             // Action
-            var newMembers = statisticsService.GetNewMembers(0);
+            var newMembers = statisticsService.GetNewMembers(CustId.ValidId);
 
             // Assert
             Assert.AreEqual(newMembers, expectedNewMembers);

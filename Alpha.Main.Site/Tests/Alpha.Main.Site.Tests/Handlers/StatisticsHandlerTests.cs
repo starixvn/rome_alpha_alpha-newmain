@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Constants;
     using Main.Models.Enumerations;
     using Main.Models.Statistics;
     using NSubstitute;
@@ -69,7 +70,9 @@
         {
             // Arrange
             var statistics = new Statistics(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(statistics);
+            statisticsService
+                .GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>())
+                .Returns(statistics);
 
             var query = new StatisticsQuery(1, 2);
 
@@ -85,9 +88,11 @@
         {
             // Arrange
             var topWinningMembers = new List<TopWinningMember>();
-            statisticsService.GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(topWinningMembers);
+            statisticsService
+                .GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
+                .Returns(topWinningMembers);
 
-            var query = new TopWinningMembersQuery(1, 2);
+            var query = new TopWinningMembersQuery(CustId.ValidId, RoleId.Agent);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -101,9 +106,11 @@
         {
             // Arrange
             var topTurnoverMembers = new List<TopTurnoverMember>();
-            statisticsService.GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(topTurnoverMembers);
+            statisticsService
+                .GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
+                .Returns(topTurnoverMembers);
 
-            var query = new TopTurnoverMembersQuery(1, 2);
+            var query = new TopTurnoverMembersQuery(CustId.ValidId, RoleId.Agent);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -117,9 +124,11 @@
         {
             // Arrange
             var newMembers = new List<NewMember>();
-            statisticsService.GetNewMembers(Arg.Any<int>()).Returns(newMembers);
+            statisticsService
+                .GetNewMembers(Arg.Any<int>())
+                .Returns(newMembers);
 
-            var query = new NewMembersQuery(1);
+            var query = new NewMembersQuery(CustId.ValidId);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -133,9 +142,11 @@
         {
             // Arrange
             var expectedStatistics = new Statistics(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(expectedStatistics);
+            statisticsService
+                .GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>())
+                .Returns(expectedStatistics);
 
-            var query = new StatisticsQuery(1, 2);
+            var query = new StatisticsQuery(CustId.ValidId, RoleId.Agent);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -149,9 +160,11 @@
         {
             // Arrange
             var expectedTopWinningMembers = new List<TopWinningMember>();
-            statisticsService.GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(expectedTopWinningMembers);
+            statisticsService
+                .GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
+                .Returns(expectedTopWinningMembers);
 
-            var query = new TopWinningMembersQuery(1, 2);
+            var query = new TopWinningMembersQuery(CustId.ValidId, RoleId.Agent);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -165,9 +178,11 @@
         {
             // Arrange
             var expectedTopTurnoverMembers = new List<TopTurnoverMember>();
-            statisticsService.GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(expectedTopTurnoverMembers);
+            statisticsService
+                .GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
+                .Returns(expectedTopTurnoverMembers);
 
-            var query = new TopTurnoverMembersQuery(1, 2);
+            var query = new TopTurnoverMembersQuery(CustId.ValidId, RoleId.Agent);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -181,9 +196,11 @@
         {
             // Arrange
             var expectedNewMembers = new List<NewMember>();
-            statisticsService.GetNewMembers(Arg.Any<int>()).Returns(expectedNewMembers);
+            statisticsService
+                .GetNewMembers(Arg.Any<int>())
+                .Returns(expectedNewMembers);
 
-            var query = new NewMembersQuery(1);
+            var query = new NewMembersQuery(CustId.ValidId);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -197,9 +214,11 @@
         {
             // Arrange
             var statistics = new Statistics(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-            statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(statistics);
+            statisticsService
+                .GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>())
+                .Returns(statistics);
 
-            var query = new StatisticsQuery(1, 2);
+            var query = new StatisticsQuery(CustId.ValidId, RoleId.Agent);
 
             var expectedStatisticsViewModel = new StatisticsViewModel(statistics, query.UserLevel);
 
