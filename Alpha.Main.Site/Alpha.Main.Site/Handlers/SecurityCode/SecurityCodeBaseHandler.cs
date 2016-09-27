@@ -44,7 +44,7 @@
         {
             this.SecurityCodeSession.SecurityCodeToken = string.Empty;
             this.SecurityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS;
-            this.securityCodeSession.IsForcedSecurityCode = false;
+            this.SecurityCodeSession.IsForcedSecurityCode = false;
             Alpha.SecurityCode.Web.SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode = true;
         }
 
