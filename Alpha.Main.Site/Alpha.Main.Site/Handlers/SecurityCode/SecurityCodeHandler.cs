@@ -75,14 +75,14 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(this.SecurityCodeSession.CustId);
+            var profile = customerProfileService.GetProfilePicture(this.securityCodeSession.CustId);
 
             string securityCodeToken = this.GenerateSecurityToken();
-            this.SecurityCodeSession.SecurityCodeToken = securityCodeToken;
+            this.securityCodeSession.SecurityCodeToken = securityCodeToken;
 
-            var securitySalt = this.SecurityCodeSession.SubAccId > 0
-                ? this.MD5Salt(this.SecurityCodeSession.SubAccId)
-                : this.MD5Salt(this.SecurityCodeSession.CustId);
+            var securitySalt = this.securityCodeSession.SubAccId > 0
+                ? this.MD5Salt(this.securityCodeSession.SubAccId)
+                : this.MD5Salt(this.securityCodeSession.CustId);
 
             var model = new BaseSecurityCodeViewModel
             {
@@ -102,14 +102,14 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(this.SecurityCodeSession.CustId);
+            var profile = customerProfileService.GetProfilePicture(this.securityCodeSession.CustId);
 
             string securityCodeToken = this.GenerateSecurityToken();
-            this.SecurityCodeSession.SecurityCodeToken = securityCodeToken;
+            this.securityCodeSession.SecurityCodeToken = securityCodeToken;
 
-            var securitySalt = this.SecurityCodeSession.SubAccId > 0
-                ? this.MD5Salt(this.SecurityCodeSession.SubAccId)
-                : this.MD5Salt(this.SecurityCodeSession.CustId);
+            var securitySalt = this.securityCodeSession.SubAccId > 0
+                ? this.MD5Salt(this.securityCodeSession.SubAccId)
+                : this.MD5Salt(this.securityCodeSession.CustId);
 
             return new LoginSecurityCodeViewModel
             {
@@ -132,7 +132,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            if (this.SecurityCodeSession.IsInternal)
+            if (this.securityCodeSession.IsInternal)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
@@ -169,7 +169,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            if (this.SecurityCodeSession.IsInternal)
+            if (this.securityCodeSession.IsInternal)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
@@ -210,7 +210,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            if (this.SecurityCodeSession.IsInternal)
+            if (this.securityCodeSession.IsInternal)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
@@ -253,7 +253,7 @@
 
             bool isResetSubAccount = message.SubAccId.HasValue && message.SubAccId.Value > 0;
 
-            if (this.SecurityCodeSession.IsInternal && !isResetSubAccount)
+            if (this.securityCodeSession.IsInternal && !isResetSubAccount)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }
@@ -300,7 +300,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            if (this.SecurityCodeSession.IsInternal)
+            if (this.securityCodeSession.IsInternal)
             {
                 return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
             }

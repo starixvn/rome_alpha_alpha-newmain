@@ -24,8 +24,7 @@ var resetSubAccountPassword = {
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
 
-        var hasPopup = securityHelper.hasPopup();
-        if (hasPopup) {
+        if (top.hasPopupOpen()) {
             $("#container").addClass("has-popup");
         }
     },

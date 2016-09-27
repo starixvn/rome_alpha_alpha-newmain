@@ -24,6 +24,8 @@
 
         public bool IsCasinoSync { get; set; }
 
+        public bool EnableSecurityCode { get; set; }
+
         public string OldMainRootPath
         {
             get

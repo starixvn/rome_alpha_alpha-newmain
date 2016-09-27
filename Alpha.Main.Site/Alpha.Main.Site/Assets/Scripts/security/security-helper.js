@@ -117,13 +117,6 @@
         $('input[type=text]').each(function () {
             $(this).removeAttr("type").prop('type', 'password');
         })
-    },
-    hasPopup: function()
-    {
-        var popUps = top.$('.modal[id^="page-popup"]');
-        var popUpLength = popUps.length;
-        var hasPopUp = !top.$(popUps[popUpLength - 1]).hasClass('hidden');
-        return hasPopUp;
     }
 }
 

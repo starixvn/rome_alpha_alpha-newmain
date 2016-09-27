@@ -16,7 +16,7 @@
         {
             this.userSession = userSession;
             this.securityCodeSession = securityCodeSession;
-            this.isEnableSecurityCode = isEnableSecurityCode;
+            this.isEnableSecurityCode = this.securityCodeSession.IsEnableSecurityCode;
         }
 
         public int CustId
