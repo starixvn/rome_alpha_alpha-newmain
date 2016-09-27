@@ -496,22 +496,6 @@
     <Content Include="Assets\bundles\default-introduction.min.js">
       <DependentUpon>default-introduction.js</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\password\change-password.js" />
-    <Content Include="Assets\bundles\password\change-password.min.js">
-      <DependentUpon>change-password.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\password\force-change-password.js" />
-    <Content Include="Assets\bundles\password\force-change-password.min.js">
-      <DependentUpon>force-change-password.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\password\reset-main-account-password.js" />
-    <Content Include="Assets\bundles\password\reset-main-account-password.min.js">
-      <DependentUpon>reset-main-account-password.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\password\reset-sub-account-password.js" />
-    <Content Include="Assets\bundles\password\reset-sub-account-password.min.js">
-      <DependentUpon>reset-sub-account-password.js</DependentUpon>
-    </Content>
     <Content Include="Assets\bundles\security\password\change-password.js" />
     <Content Include="Assets\bundles\security\password\change-password.min.js">
       <DependentUpon>change-password.js</DependentUpon>
@@ -574,26 +558,6 @@
     <Content Include="Assets\styles\security\images\8.jpg" />
     <Content Include="Assets\styles\security\security.css" />
     <Content Include="Assets\styles\security\security.min.css" />
-    <Content Include="Web.Configuration\SecurityCode.local.config">
-      <SubType>Designer</SubType>
-      <DependentUpon>SecurityCode.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Configuration\SecurityCode.napexternal.config">
-      <SubType>Designer</SubType>
-      <DependentUpon>SecurityCode.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Configuration\SecurityCode.napinternal.config">
-      <SubType>Designer</SubType>
-      <DependentUpon>SecurityCode.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Configuration\SecurityCode.proi1.config">
-      <SubType>Designer</SubType>
-      <DependentUpon>SecurityCode.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Configuration\SecurityCode.sit.config">
-      <SubType>Designer</SubType>
-      <DependentUpon>SecurityCode.config</DependentUpon>
-    </Content>
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />
@@ -668,10 +632,6 @@
     </Content>
     <Content Include="Assets\styles\introduction\intro.min.css">
       <DependentUpon>intro.css</DependentUpon>
-    </Content>
-    <Content Include="Web.Configuration\SecurityCode.uati1.config">
-      <SubType>Designer</SubType>
-      <DependentUpon>SecurityCode.config</DependentUpon>
     </Content>
     <Content Include="Web.local.config" />
     <Content Include="Web.napexternal.config">
@@ -823,9 +783,6 @@
     </Content>
     <Content Include="Web.AppSettings.uati1.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.Configuration\SecurityCode.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Configuration\AuthorizationSection.config" />
