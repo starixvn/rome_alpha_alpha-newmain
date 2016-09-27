@@ -21,7 +21,7 @@
         }
 
         [HttpGet]
-        public ActionResult CheckLoginSecurityCode(bool isOldmain = false)
+        public ActionResult CheckLoginSecurityCode()
         {
             ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
             var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
@@ -34,11 +34,6 @@
 
                 case SecurityCodeStatus.CHANGE_SECURITYCODE_FIRSTLOGIN:
                     return RedirectToAction("ChangeSecurityCodeFirstLogin", "SecurityCode");
-            }
-
-            if(isOldmain)
-            {
-                return Redirect(MicroSites.OldMainUrl("Index.aspx"));
             }
 
             return RedirectToAction("Index", "Default");
