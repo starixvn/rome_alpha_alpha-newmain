@@ -1,7 +1,6 @@
 {
   "isActive": true,
-  "siteMainApp": "site-main",
-  "currentSiteApp": "site-main",
+  "siteMainApp": "/site-main",
   "urls": [
     "SecurityCode/ResetSecurityCode",
     "SecurityCode/ChangeUserOwnSecurityCode",
