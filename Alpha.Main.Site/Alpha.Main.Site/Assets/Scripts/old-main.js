@@ -237,14 +237,15 @@ var AgeWnd = function () {
             ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isAutoHeight);
             if (url) {
                 iframe.attr("src", url);
-                if (iframeAttributes) {
-                    this.iframeAttributes = iframeAttributes;
-                    this.iframeAttributes.src = url;
-                }
             } else {
                 ageWnd.copyTargetForm(popUp);
                 iframe = popUp.find('.modal-body').find('#popup-iframe');
                 ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isAutoHeight);
+            }
+
+            if (iframeAttributes) {
+                this.iframeAttributes = iframeAttributes;
+                this.iframeAttributes.src = url;
             }
 
             ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack, isAutoHeight, this);
