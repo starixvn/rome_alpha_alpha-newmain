@@ -14,7 +14,7 @@
             this.userSession = userSession;
         }
 
-        public int UserId
+        public int CustId
         {
             get
             {
