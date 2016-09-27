@@ -37,7 +37,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.SecurityCode, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode07\lib\net40\Alpha.SecurityCode.dll</HintPath>
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3-SecurityCode12\lib\net40\Alpha.SecurityCode.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -261,6 +261,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="App_Data\securitycode.json" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
