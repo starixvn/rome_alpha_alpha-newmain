@@ -7,4 +7,20 @@
       <Mapping DataField="credit" ObjectProperty="GivenCredit" />
     </Setting>
   </Function>
+  <Function Name="Security Code">
+    <Setting Key="Age_UpdateMainAccountSecurityCode" SpName="Age_CustomerUpdSecurityCode" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_UpdateSubAccountSecurityCode" SpName="Age_CustomerUpdSecurityCode_Sub" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_ResetSubAccountSecurityCode" SpName="Age_CustomerUpdSecurityCode_Sub2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_UpdateMainAccountSecurityCodeCounter" SpName="Age_CustomerUpdSecurityCodeStatus" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_UpdateSubAccountSecurityCodeCounter" SpName="Age_CustomerUpdSecurityCodeStatus_Sub" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_GetMainAccountSecurityCode" SpName="Age_CustomerSelSecurityCode" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_GetSubAccountSecurityCode" SpName="Age_CustomerSelSecurityCode_Sub" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+  </Function>
+
+  <Function Name="Password">
+    <Setting Key="ResetMainAccountPassword" SpName="Age_CustomerUpdPwd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="UpdateMainAccountPassword" SpName="Age_CustomerPwdUpd2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="ResetSubAccountPassword" SpName="Age_CustSubPwdUpd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="UpdateSubAccountPassword" SpName="Age_CustSubPwdUpd2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+  </Function>
 </Functions>
