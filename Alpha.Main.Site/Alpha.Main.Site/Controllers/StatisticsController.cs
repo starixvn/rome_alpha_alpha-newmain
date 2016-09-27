@@ -1,10 +1,12 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
+    using System.Web.SessionState;
     using MediatR;
     using Requests.Statistics;
     using Sunplus.Agent.Model.Entities;
 
+    [SessionState(SessionStateBehavior.ReadOnly)]
     public class StatisticsController : BaseController
     {
         private readonly IMediator mediator;
