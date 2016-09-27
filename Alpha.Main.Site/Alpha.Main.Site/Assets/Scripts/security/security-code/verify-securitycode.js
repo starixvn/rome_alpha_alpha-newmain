@@ -33,7 +33,9 @@ var verifySecurityCode = {
     },
     verify: function () {
         $.blockUI();
-        var $messageContainer = $('#error-message');
+        var $container = $('#status-message');
+        var $messageContainer = $('#status-message-content');
+        $messageContainer.removeClass('msg-warning');
         var $txtSecurityCode = $('#txtSecCode');
         var message = verifySecurityCode.checkInputParameters($txtSecurityCode);
         if (message.length !== 0) {

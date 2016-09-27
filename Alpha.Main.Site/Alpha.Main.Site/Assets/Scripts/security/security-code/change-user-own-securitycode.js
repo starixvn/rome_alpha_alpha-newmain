@@ -33,8 +33,9 @@ var changeUserOwnSecurityCode = {
     },
     change: function () {
         $.blockUI();
-        var $messageContainer = $('#error-message');
-        $messageContainer.removeClass('display-none');
+        var $container = $('#status-message');
+        var $messageContainer = $('#status-message-content');
+        $container.removeClass('display-none');
         var $txtOldSecurityCode = $('#txtOldSecCode');
         var $txtSecurityCode = $('#txtSecCode');
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');

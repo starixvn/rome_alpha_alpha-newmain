@@ -31,8 +31,9 @@ var resetsecuritycode = {
     },
     reset: function () {
         $.blockUI();
-        var $messageContainer = $('#error-message');
-        $messageContainer.removeClass('display-none');
+        var $container = $('#status-message');
+        var $messageContainer = $('#status-message-content');
+        $container.removeClass('display-none');
         var $txtSecurityCode = $('#txtSecCode');
         var $txtConfirmSecurityCode = $('#txtConfirmSecCode');
         var message = resetsecuritycode.checkInputParameters($txtSecurityCode, $txtConfirmSecurityCode);

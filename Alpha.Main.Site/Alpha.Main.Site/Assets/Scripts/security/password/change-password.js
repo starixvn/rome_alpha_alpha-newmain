@@ -37,8 +37,9 @@ var changeUserOwnPassword = {
     },
     change: function () {
         $.blockUI();
-        var $messageContainer = $('#error-message');
-        $messageContainer.removeClass('display-none');
+        var $container = $('#status-message');
+        var $messageContainer = $('#status-message-content');
+        $container.removeClass('display-none');
         var $txtOldPassword = $('#txtOldPwd');
         var $txtPassword = $('#txtNewPwd');
         var $txtConfirmPassword = $('#txtConfirmPwd');

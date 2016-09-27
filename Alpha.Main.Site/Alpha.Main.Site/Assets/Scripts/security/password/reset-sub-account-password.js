@@ -23,11 +23,17 @@ var resetSubAccountPassword = {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
+
+        var hasPopup = securityHelper.hasPopup();
+        if (hasPopup) {
+            $("#container").addClass("has-popup");
+        }
     },
     reset: function () {
         $.blockUI();
-        var $messageContainer = $('#error-message');
-        $messageContainer.removeClass('display-none');
+        var $container = $('#status-message');
+        var $messageContainer = $('#status-message-content');
+        $container.removeClass('display-none');
         var $txtSecurityCode = $('#txtNewPwd');
         var $txtConfirmSecurityCode = $('#txtConfirmPwd');
         var message = resetSubAccountPassword.checkInputParameters($txtSecurityCode, $txtConfirmSecurityCode);
