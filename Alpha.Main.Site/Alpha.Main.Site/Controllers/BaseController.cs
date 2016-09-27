@@ -9,7 +9,6 @@
     using System.Web.Mvc.Filters;
     using System.Web.Routing;
     using System.Web.Security;
-    using Auth.Web.Validators;
     using Constants;
     using Main.Helpers;
     using Sunplus.Agent.Model.Entities;
@@ -47,8 +46,6 @@
             {
                 filterContext.Result = new RedirectResult(MicroSites.OldMainUrl(FormsAuthentication.LoginUrl));
             }
-
-            ValidationLogger.WriteInfo("Redirect to login page.");
         }
 
         protected override JsonResult Json(

@@ -6,7 +6,6 @@
 
 @if (ModuleSettings.AppSettings.PiwikEnable)
 {
-    <script type="text/javascript" async="true" defer="true" src="@ModuleSettings.AppSettings.PiwikScript"></script>
     <script type="text/javascript">
         var _paq = [];
         _paq.push(['trackPageView']);
@@ -14,6 +13,7 @@
         _paq.push(['setTrackerUrl', '@ModuleSettings.AppSettings.PiwikUrl']);
         _paq.push(['setSiteId', '@ModuleSettings.AppSettings.PiwikSiteId']);
     </script>
+    <script type="text/javascript" async defer src="@ModuleSettings.AppSettings.PiwikScript"></script>
     <noscript>
         <p>
             <img src="@ModuleSettings.AppSettings.PiwikUrl?idsite=@ModuleSettings.AppSettings.PiwikSiteId" alt="" class="piwik-noscript" />

@@ -1,19 +1,13 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System;
     using System.Web.Mvc;
-    using System.Web.Security;
-    using System.Web.SessionState;
-    using Auth.Web.Validators;
     using Fanex.Razorbill.Security.Sessions;
-    using Main.Helpers;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
-    using Sunplus.Agent.Utilities;
 
     public class DefaultController : BaseController
     {
@@ -33,27 +27,18 @@
 
         public ActionResult Index()
         {
-            try
+            var browser = this.mediator.Send(new BrowserQuery(this.userSession));
+
+            if (browser.IsUnsupportedBrowser)
             {
-                var browser = this.mediator.Send(new BrowserQuery(this.userSession));
-
-                if (browser.IsUnsupportedBrowser)
-                {
-                    return View("UnsupportedBrowsers", browser);
-                }
-
-                var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
-
-                var viewModel = mediator.Send(query);
-
-                return View(viewModel);
+                return View("UnsupportedBrowsers", browser);
             }
-            catch(Exception ex)
-            {
-                ValidationLogger.WriteInfo(ex.ToString());
 
-                return Redirect(MicroSites.OldMainUrl(FormsAuthentication.LoginUrl));
-            }
+            var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
+
+            var viewModel = mediator.Send(query);
+
+            return View(viewModel);
         }
 
         public ActionResult MenuBar()
