@@ -5,13 +5,11 @@
     using Main.Models.CustomerProfiles;
     using Main.Models.Enumerations;
     using MediatR;
-    using Models.Request.SecurityCode;
     using Params.Password;
     using Requests.Password;
     using Services;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using ViewModels;
     using ViewModels.Security;
 
     public class PasswordHandler :
@@ -32,7 +30,7 @@
         private readonly CustomerProfileService customerProfileService;
 
         public PasswordHandler(
-            PasswordService passwordService, 
+            PasswordService passwordService,
             IUserSession userSession,
             CustomerProfileService customerProfileService,
             SessionManager sessionManager,
@@ -140,7 +138,7 @@
                 });
             }
 
-            if(result.IsSuccessful)
+            if (result.IsSuccessful)
             {
                 //// Update is first login status
                 this.userSession.IsLogged = true;

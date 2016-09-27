@@ -7,7 +7,6 @@
     using System.Web;
     using Helpers;
     using Models.Menus;
-    using Sunplus.Agent.Utilities;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
@@ -116,7 +115,7 @@
                             return currentUrl.ToString();
                         }
                     }
-                    catch (Exception ex)
+                catch (Exception ex)
                     {
                         Sunplus.Agent.Utilities.Logs.WriteInfo(ex);
                     }

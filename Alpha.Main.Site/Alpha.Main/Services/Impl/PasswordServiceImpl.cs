@@ -210,7 +210,7 @@
             IEnumerable<string> invalidPasswords,
             bool isResetMemberPassword)
         {
-            if (!isResetPassword && string.IsNullOrWhiteSpace(currentPassword)
+            if ((!isResetPassword && string.IsNullOrWhiteSpace(currentPassword))
                 || string.IsNullOrWhiteSpace(newPassword))
             {
                 return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };

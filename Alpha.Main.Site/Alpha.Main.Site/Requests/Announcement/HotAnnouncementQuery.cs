@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Web;
     using Main.Models.Announcements;
     using Main.Models.Enumerations;
@@ -11,6 +12,7 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 
+    [SuppressMessage("StyleCop.CSharp.StylecopPlus.Rules", "SP2100:CodeLineMustNotBeLongerThan", Justification = "Reviewed.")]
     public class HotAnnouncementQuery : IRequest<HotAnnouncement>
     {
         private readonly string commonAnnouncementFilePath;
