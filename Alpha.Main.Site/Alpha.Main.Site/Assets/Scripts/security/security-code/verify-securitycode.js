@@ -28,6 +28,7 @@ var verifySecurityCode = {
         if (top.hasPopupOpen())
         {
             $("#container").addClass("has-popup");
+            $("#title_header").remove();
         }
     },
     verify: function () {

@@ -389,7 +389,6 @@ function getBootboxPostion(handleElement, popUpOptions) {
 }
 
 function ShowSecCodePopup(preUrl, callerAge) {
-
     //preUrl = 'url=' + escape(preUrl);
     //var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
     var url = '/site-main/SecurityCode/VerifySecurityCode';
@@ -442,7 +441,6 @@ function ShowSecCodePopup(preUrl, callerAge) {
         {
             preUrl: preUrl
         });
-    clearPopupSubtitle();
 }
 
 //Javascript code snippet to create a div dynamically in Javascript.
