@@ -154,7 +154,7 @@ Please use the form below to set your Security Code now.</value>
     <value>If you haven't got security code, please contact your upline or CSD.</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>Please input your security code before proceeding!</value>
+    <value>Please create a Security Code which will be asked for any setting updates to make sure it is you.</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>Your provided Security Code does not meet the requirements.</value>

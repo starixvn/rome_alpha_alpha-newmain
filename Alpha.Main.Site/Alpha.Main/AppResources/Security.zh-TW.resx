@@ -154,7 +154,7 @@ Please use the form below to set your Security Code again.</value>
     <value>若您尚未獲取保安碼, 請聯繫您的上線或客服部</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>請輸入您的保安碼以繼續執行!</value>
+    <value>請創建一個保安碼它將需要輸入當有任何設置需要更新，以確保您是賬號持有人。</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>您所提供的保安碼不符合要求。</value>
@@ -181,7 +181,7 @@ Please use the form below to set your Security Code again.</value>
     <value>提交</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
-    <value>Security Code Validation</value>
+    <value>保安碼顯示</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>了解更多</value>
@@ -225,7 +225,7 @@ Please use the form below to set your Security Code again.</value>
     <value>例如: 123456, 456789, 765432等都是不被允許的</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
-    <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
+    <value>嗨{0}，您的保安碼已被重置。請設置一個新的。</value>
   </data>
   <data name="errUserName" xml:space="preserve">
     <value>請輸入會員名字及密碼</value>
@@ -302,7 +302,7 @@ Please use the form below to set your Security Code again.</value>
     <value>Password rules</value>
   </data>
   <data name="PasswordShower" xml:space="preserve">
-    <value>hi {0}, please create your own password</value>
+    <value>嗨 {0} ，請更改您的密碼。</value>
   </data>
   <data name="lblBack" xml:space="preserve">
     <value>退回</value>
@@ -331,6 +331,6 @@ Please use the form below to set your Security Code again.</value>
     <value>Show password</value>
   </data>
   <data name="ShowSecurityCode" xml:space="preserve">
-    <value>Show security code</value>
+    <value>保安碼顯示</value>
   </data>
 </root>

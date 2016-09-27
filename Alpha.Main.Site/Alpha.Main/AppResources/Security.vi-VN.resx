@@ -153,7 +153,7 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Nếu bạn chưa có Mã bảo mật, vui lòng liên hệ cấp trên của bạn hoặc bộ phận CSD.</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>Vui lòng nhập Mã bảo mật trước khi thực hiện các thiết lập!</value>
+    <value>Please create a Security Code which will be asked for any setting updates to make sure it is you.</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>Mã bảo mật do bạn cung cấp không thỏa quy tắc đặt ra.</value>

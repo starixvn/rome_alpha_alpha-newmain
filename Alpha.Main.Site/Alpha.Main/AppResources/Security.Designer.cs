@@ -217,7 +217,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please input your security code before proceeding!.
+        ///   Looks up a localized string similar to Please create a Security Code which will be asked for any setting updates to make sure it is you..
         /// </summary>
         public static string informSecCode {
             get {
@@ -242,7 +242,6 @@ namespace Alpha.Main.AppResources {
                 return ResourceManager.GetString("lblChangePassword", resourceCulture);
             }
         }
-        
         
         /// <summary>
         ///   Looks up a localized string similar to Your account was closed so you&apos;re forced to logout. Please contact your upline for the assistance..
@@ -351,7 +350,6 @@ namespace Alpha.Main.AppResources {
                 return ResourceManager.GetString("lblresetpassword", resourceCulture);
             }
         }
-        
         
         /// <summary>
         ///   Looks up a localized string similar to Your provided Security Code does not meet the requirements..

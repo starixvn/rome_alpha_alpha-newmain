@@ -125,8 +125,7 @@ Please use the form below to set your Security Code again.</value>
     <value>The Security Code was not correctly confirmed.</value>
   </data>
   <data name="alertForcedChangeSCTitle" xml:space="preserve">
-    <value>You're required to change Security Code. Your new Security Code must be different from the one provided by your upline/CSD.&lt;br/&gt;
-Please use the form below to change your Security Code now.</value>
+    <value>กรุณาเปลี่ยนรหัสความปลอดภัยของคุณ รหัสรักษาความปลอดภัยใหม่จะต้องมีความแตกต่างจากที่ตั้งไว้ให้โดย uplineของท่าน</value>
   </data>
   <data name="alertForcedChangeSCWithoutValidationTitle" xml:space="preserve">
     <value>คุณต้องตั้งรหัสลับของคุณ เพื่อรับรองการเข้าสู่ระบบต่อไปทุกครั้ง&lt;br/&gt;
@@ -154,7 +153,7 @@ Please use the form below to change your Security Code now.</value>
     <value>If you haven't got security code, please contact your upline or CSD.</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>Please input your security code before proceeding!</value>
+    <value>โปรดสร้างรหัสรักษาความปลอดภัยซึ่งระบบจะสอบถามท่านเมื่อทำการตั้งค่าต่าง ๆ เพื่อให้แน่ใจว่าเป็นตัวท่านจริง ๆ</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>Your provided Security Code does not meet the requirements.</value>
@@ -181,7 +180,7 @@ Please use the form below to change your Security Code now.</value>
     <value>ตกลง</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
-    <value>Security Code Validation</value>
+    <value>โชว์รหัสลับ</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>Learn more</value>
@@ -220,7 +219,7 @@ Please use the form below to change your Security Code now.</value>
     <value>For example: 123456, 456789, 765432, ect. are not allowed</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
-    <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
+    <value>สวัสดี {0} รหัสรักษาความปลอดภัยของคุณได้รับการตั้งค่า, โปรดตั้งค่าใหม่</value>
   </data>
   <data name="errUserName" xml:space="preserve">
     <value>โปรดใส่ชื่อผู้ใช้และรหัสผ่าน</value>
@@ -299,7 +298,7 @@ Please use the form below to change your Security Code now.</value>
     <value>Password rules</value>
   </data>
   <data name="PasswordShower" xml:space="preserve">
-    <value>hi {0}, please create your own password</value>
+    <value>สวัสดีคะ {0} โปรดเปลี่ยนรหัสผ่านของคุณ</value>
   </data>
   <data name="lblBack" xml:space="preserve">
     <value>กลับ</value>
@@ -314,7 +313,7 @@ Please use the form below to change your Security Code now.</value>
     <value>Show password</value>
   </data>
   <data name="ShowSecurityCode" xml:space="preserve">
-    <value>Show security code</value>
+    <value>โชว์รหัสลับ</value>
   </data>
   <data name="lblPasswordRequire" xml:space="preserve">
     <value>รหัสต้องมีอย่างน้อย 8 อักขระต้องไม่มีช่องเว้นวรรค และต้องมีอย่างน้อย 3 ข้อ ยังด้านล่าง
