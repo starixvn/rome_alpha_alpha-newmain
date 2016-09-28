@@ -2,24 +2,23 @@
 {
     using Main.Models.Enumerations;
     using MediatR;
+    using Sunplus.Agent.Model.Entities;
     using ViewModels.Home.Statistics;
 
     public class TopTurnoverMembersQuery : IRequest<TopTurnoverMembersViewModel>
     {
-        private int custId;
-        private byte userLevelId;
+        private IUserSession userSession;
 
-        public TopTurnoverMembersQuery(int custId, byte userLevelId)
+        public TopTurnoverMembersQuery(IUserSession userSession)
         {
-            this.custId = custId;
-            this.userLevelId = userLevelId;
+            this.userSession = userSession;
         }
 
         public int CustId
         {
             get
             {
-                return this.custId;
+                return this.userSession.CustId;
             }
         }
 
@@ -27,7 +26,7 @@
         {
             get
             {
-                return Enumeration.FromValue<UserLevel>(this.userLevelId);
+                return Enumeration.FromValue<UserLevel>(this.userSession.RoleId);
             }
         }
     }

@@ -10,11 +10,13 @@
     using Services;
     using Site.Handlers;
     using Site.Requests.Statistics;
+    using Sunplus.Agent.Model.Entities;
     using ViewModels.Home.Statistics;
 
     [TestFixture]
     public class StatisticsHandlerTests
     {
+        private IUserSession userSession;
         private StatisticsService statisticsService;
         private StatisticsHandler statisticsHandler;
 
@@ -23,6 +25,10 @@
         {
             statisticsService = Substitute.For<StatisticsService>();
             statisticsHandler = new StatisticsHandler(statisticsService);
+
+            userSession = Substitute.For<IUserSession>();
+            userSession.CustId.Returns(CustId.ValidId);
+            userSession.RoleId.Returns(RoleId.Agent);
         }
 
         [Test]
@@ -74,7 +80,7 @@
                 .GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>())
                 .Returns(statistics);
 
-            var query = new StatisticsQuery(1, 2);
+            var query = new StatisticsQuery(userSession);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -92,7 +98,7 @@
                 .GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
                 .Returns(topWinningMembers);
 
-            var query = new TopWinningMembersQuery(CustId.ValidId, RoleId.Agent);
+            var query = new TopWinningMembersQuery(userSession);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -110,7 +116,7 @@
                 .GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
                 .Returns(topTurnoverMembers);
 
-            var query = new TopTurnoverMembersQuery(CustId.ValidId, RoleId.Agent);
+            var query = new TopTurnoverMembersQuery(userSession);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -146,7 +152,7 @@
                 .GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>())
                 .Returns(expectedStatistics);
 
-            var query = new StatisticsQuery(CustId.ValidId, RoleId.Agent);
+            var query = new StatisticsQuery(userSession);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -164,7 +170,7 @@
                 .GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
                 .Returns(expectedTopWinningMembers);
 
-            var query = new TopWinningMembersQuery(CustId.ValidId, RoleId.Agent);
+            var query = new TopWinningMembersQuery(userSession);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -182,7 +188,7 @@
                 .GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
                 .Returns(expectedTopTurnoverMembers);
 
-            var query = new TopTurnoverMembersQuery(CustId.ValidId, RoleId.Agent);
+            var query = new TopTurnoverMembersQuery(userSession);
 
             // Action
             var viewModel = statisticsHandler.Handle(query);
@@ -218,7 +224,7 @@
                 .GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>())
                 .Returns(statistics);
 
-            var query = new StatisticsQuery(CustId.ValidId, RoleId.Agent);
+            var query = new StatisticsQuery(userSession);
 
             var expectedStatisticsViewModel = new StatisticsViewModel(statistics, query.UserLevel);
 

@@ -36,21 +36,17 @@
             }
         }
 
-        public string AgentOutstandingLabel { get; private set; }
+        public string AgentOutstandingLabel { get; private set; } = Resources.agentOutstanding;
 
         private void InitForEachUserLevel(UserLevel userLevel)
         {
-            if (userLevel.IsAgentLevel())
+            if (userLevel.IsSuperLevel())
             {
-                AgentOutstandingLabel = Resources.agentOutstanding;
+                AgentOutstandingLabel = Resources.superOutstanding;
             }
             else if (userLevel.IsMasterLevel())
             {
                 AgentOutstandingLabel = Resources.masterOutstanding;
-            }
-            else if (userLevel.IsSuperLevel())
-            {
-                AgentOutstandingLabel = Resources.superOutstanding;
             }
         }
     }

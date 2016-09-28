@@ -21,15 +21,15 @@
         [HttpGet]
         public ActionResult Index()
         {
-            var viewModel = mediator.Send(new StatisticsQuery(this.userSession.CustId, this.userSession.RoleId));
+            var viewModel = mediator.Send(new StatisticsQuery(this.userSession));
 
-            return View(viewModel);
+            return PartialView(viewModel);
         }
 
         [HttpGet]
         public ActionResult TopWinningMembers()
         {
-            var viewModel = mediator.Send(new TopWinningMembersQuery(this.userSession.CustId, this.userSession.RoleId));
+            var viewModel = mediator.Send(new TopWinningMembersQuery(this.userSession));
 
             return PartialView("_TopWinningMembers", viewModel);
         }
@@ -37,7 +37,7 @@
         [HttpGet]
         public ActionResult TopTurnoverMembers()
         {
-            var viewModel = mediator.Send(new TopTurnoverMembersQuery(this.userSession.CustId, this.userSession.RoleId));
+            var viewModel = mediator.Send(new TopTurnoverMembersQuery(this.userSession));
 
             return PartialView("_TopTurnoverMembers", viewModel);
         }
