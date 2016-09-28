@@ -13,7 +13,6 @@
         {
             this.statistics = statistics;
             this.userLevel = userLevel;
-            InitForEachUserLevel(userLevel);
         }
 
         public StatisticsViewModel() : this(null, null)
@@ -36,17 +35,22 @@
             }
         }
 
-        public string AgentOutstandingLabel { get; private set; } = Resources.agentOutstanding;
-
-        private void InitForEachUserLevel(UserLevel userLevel)
+        public string OutstandingLabel
         {
-            if (userLevel.IsSuperLevel())
+            get
             {
-                AgentOutstandingLabel = Resources.superOutstanding;
-            }
-            else if (userLevel.IsMasterLevel())
-            {
-                AgentOutstandingLabel = Resources.masterOutstanding;
+                if (userLevel.IsSuperLevel())
+                {
+                    return Resources.superOutstanding;
+                }
+                else if (userLevel.IsMasterLevel())
+                {
+                    return Resources.masterOutstanding;
+                }
+                else
+                {
+                    return Resources.agentOutstanding;
+                }
             }
         }
     }

@@ -33,24 +33,30 @@
     </div>
 }
 
-@helper FormatNumber(decimal number)
+@helper NumericRow(string label, decimal value)
 {
-    @number.ToString("#,##0.00")
+    <div class="row">
+        <div class="col-xs-7 label">@label</div>
+        <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
+            <strong>@value.ToString("#,##0.00")</strong>
+        </div>
+    </div>
 }
 
 <div class="container">
     <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
     <div class="group-title">outstanding</div>
-    <div class="row">
-        <div class="col-xs-7 lable">@Model.AgentOutstandingLabel</div>
-        <div class="col-xs-5 value"><strong>@FormatNumber(Model.Statistics.Outstanding)</strong></div>
-    </div>
-    <div class="row">
-        <div class="col-xs-7 lable">@Resources.totalOutstanding</div>
-        <div class="col-xs-5 value"><strong>@FormatNumber(Model.Statistics.TotalOutstanding)</strong></div>
-    </div>
+    @NumericRow(Model.OutstandingLabel, statistics.Outstanding)
+    @NumericRow(Resources.totalOutstanding, statistics.TotalOutstanding)
+
     <div class="group-title">@Resources.memberInfo</div>
 
+    @if (Model.UserLevel.IsSuperLevel())
+    {
+        @RenderTotalMemberInfo(Resources.master, statistics.TotalMasterActive, statistics.TotalMasterClosed, statistics.TotalMasterActive);
+        @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
+        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
     @if (Model.UserLevel.IsAgentLevel())
     {
         @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
@@ -60,14 +66,9 @@
         @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
         @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
     }
-    else if (Model.UserLevel.IsSuperLevel())
-    {
-        @RenderTotalMemberInfo(Resources.master, statistics.TotalMasterActive, statistics.TotalMasterClosed, statistics.TotalMasterActive);
-        @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
-        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
-    }
+    else
 
-    @RenderDropdownTableMemberInfo(Resources.top10WinningMembers, "listTopWinningMembers", Html.Action("TopWinningMembers"))
-    @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Html.Action("TopTurnoverMembers"))
-    @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Html.Action("NewMembers"))
-</div>
+        @RenderDropdownTableMemberInfo(Resources.top10WinningMembers, "listTopWinningMembers", Html.Action("TopWinningMembers"))
+        @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Html.Action("TopTurnoverMembers"))
+        @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Html.Action("NewMembers"))
+    </div>
