@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Models.Requests.CustomerProfile
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Models.Requests.CustomerProfile
 {
     using MediatR;
     using Sunplus.Agent.Model.Entities;

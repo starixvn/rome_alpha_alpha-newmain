@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Requests
+﻿#pragma warning disable 612, 618
+namespace Alpha.Main.Site.Requests
 {
     using MediatR;
     using Sunplus.Agent.Model.Entities;

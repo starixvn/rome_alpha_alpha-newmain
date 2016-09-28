@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Controllers
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using System.Web.SessionState;

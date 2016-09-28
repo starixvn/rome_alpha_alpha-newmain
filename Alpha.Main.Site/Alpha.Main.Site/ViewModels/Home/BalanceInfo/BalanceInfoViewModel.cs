@@ -13,7 +13,8 @@
             UserLevel userLevel,
             string currency)
         {
-            this.balanceInfo = balanceInfo;            
+            this.balanceInfo = balanceInfo;
+            this.Currency = currency;          
             SetLabelTextByUserLevel(userLevel);
         }
 

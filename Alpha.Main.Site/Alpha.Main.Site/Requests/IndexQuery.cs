@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Models.Requests
+﻿#pragma warning disable 612, 618
+namespace Alpha.Main.Site.Models.Requests
 {
     using System.Diagnostics.CodeAnalysis;
     using MediatR;

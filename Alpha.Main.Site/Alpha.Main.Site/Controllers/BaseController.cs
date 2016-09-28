@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Controllers
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Controllers
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
@@ -29,6 +30,7 @@
             }
         }
 
+        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "Alpha.Auth.Web.Validators.ValidationLogger.WriteInfo(System.String)")]
         private void UnAuthentication(AuthenticationContext filterContext)
         {
             HttpResponseBase response = filterContext.HttpContext.Response;

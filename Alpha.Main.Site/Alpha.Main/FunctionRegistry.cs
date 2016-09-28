@@ -1,14 +1,16 @@
-﻿namespace Alpha.Main
+﻿#pragma warning disable 612, 618
+namespace Alpha.Main
 {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using System.Web;
+    using System.Web;    
     using Helpers;
     using Models.Menus;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
+    using Sunplus.Agent.Utilities;
 
     public static class FunctionRegistry
     {

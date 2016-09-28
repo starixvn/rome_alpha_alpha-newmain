@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Helpers
+﻿#pragma warning disable 612, 618
+namespace Alpha.Main.Helpers
 {
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;

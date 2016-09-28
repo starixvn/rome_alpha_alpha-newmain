@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.App_Start
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.App_Start
 {
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;

@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Models.Requests.Announcement
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Models.Requests.Announcement
 {
     using System;
     using System.Collections.Generic;

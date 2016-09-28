@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Requests.BalanceInfo
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Requests.BalanceInfo
 {
     using Main.Models.Enumerations;
     using MediatR;

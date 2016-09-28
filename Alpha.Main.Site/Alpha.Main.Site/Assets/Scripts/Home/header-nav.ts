@@ -37,9 +37,9 @@ var headerNav = {
     hideHeaderDropdownMenuTimeout: null,
 
     urls: {
-        home: alpha.urls.mainRootPath + 'Home/Index',
-        messages: alpha.urls.mainRootPath +  'Messages/Index',
-        changeLanguage: alpha.urls.mainRootPath + 'Language/Change'
+        home: alpha.urls.mainRootPath + "Home/Index",
+        messages: alpha.urls.mainRootPath +  "Messages/Index",
+        changeLanguage: alpha.urls.mainRootPath + "Language/Change"
     },
 
     init: function () {
@@ -58,11 +58,10 @@ var headerNav = {
     initClock: function () {
         // to keep the clock difference least to the actual time,
         // we must run this first of all 
-        headerNav.domElements.clock = $('#clock');
-        var clock = headerNav.domElements.clock;
-        headerNav.resources.labelAM = 'AM';
-        headerNav.resources.labelPM = 'PM';
-        headerNav.resources.labelMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        headerNav.domElements.clock = $("#clock");        
+        headerNav.resources.labelAM = "AM";
+        headerNav.resources.labelPM = "PM";
+        headerNav.resources.labelMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
         var clock = headerNav.domElements.clock;
         headerNav.clockTime = new Date(
@@ -93,8 +92,8 @@ var headerNav = {
 
         // Expected: hour from 0->11
         var strHours = hour >= 12 ? hour - 12 : hour;
-        var strMinute = minute >= 10 ? minute : '0' + minute;
-        var strSecond = second >= 10 ? second : '0' + second;
+        var strMinute = minute >= 10 ? minute : "0" + minute;
+        var strSecond = second >= 10 ? second : "0" + second;
         var stra = hour >= 12 ? headerNav.resources.labelPM : headerNav.resources.labelAM;
 
         var str = strHours + ":" + strMinute + ":" + strSecond + " " + stra + " " +
@@ -115,8 +114,8 @@ var headerNav = {
         headerNav.domElements.iconBell = $(".icon-bell");
         headerNav.domElements.iconMessage = $(".icon-message");
 
-        headerNav.domElements.sideBar = $('#side-bar');
-        headerNav.domElements.sideBarContent = $('.content-wrapper');
+        headerNav.domElements.sideBar = $("#side-bar");
+        headerNav.domElements.sideBarContent = $(".content-wrapper");
         headerNav.domElements.profileImage = $("#logoProfileImg");
     },
 
@@ -131,9 +130,9 @@ var headerNav = {
 
     registerEvents: function () {
 
-        headerNav.domElements.iconLogOut.on('click touchend', alpha.core.signOut);
+        headerNav.domElements.iconLogOut.on("click touchend", alpha.core.signOut);
 
-        headerNav.domElements.iconHome.on('click touchend', function () {
+        headerNav.domElements.iconHome.on("click touchend", function () {
             indexManager.changeMenu(headerNav.urls.home);
         });
 
@@ -142,33 +141,33 @@ var headerNav = {
         });
 
         // Logout link for mobile
-        headerNav.domElements.linkLogout.on('click touchend', alpha.core.signOut);
+        headerNav.domElements.linkLogout.on("click touchend", alpha.core.signOut);
 
-        headerNav.domElements.iconMessage.on('click touchend', function () {
+        headerNav.domElements.iconMessage.on("click touchend", function () {
             indexManager.changeMenu(headerNav.urls.messages);
         });
 
         // Quick search component for mobile
         headerNav.domElements.iconSearch.click(function () {
-            var topSearchbar = $('.top-search-bar'),
-                iconClose = $('.icon-close'),
-                searchBarToggleClass = 'search-bar-toggle';
+            var topSearchbar = $(".top-search-bar"),
+                iconClose = $(".icon-close"),
+                searchBarToggleClass = "search-bar-toggle";
             topSearchbar.addClass(searchBarToggleClass);
-            headerNav.domElements.sideBarContent.append('<div class="blockUI"></div>');
+            headerNav.domElements.sideBarContent.append("<div class='blockUI'></div>");
             iconClose.click(function () {
                 topSearchbar.removeClass(searchBarToggleClass);
-                headerNav.domElements.sideBarContent.find('.blockUI').remove();
+                headerNav.domElements.sideBarContent.find(".blockUI").remove();
             });
-            $('.blockUI').click(function () {
+            $(".blockUI").click(function () {
                 topSearchbar.removeClass(searchBarToggleClass);
-                headerNav.domElements.sideBarContent.find('.blockUI').remove();
+                headerNav.domElements.sideBarContent.find(".blockUI").remove();
             });
         });
 
         // Annoucement popup for mobile
         headerNav.domElements.iconBell.click(function () {
             var announcementPopup = $("#announcement-popup");
-            announcementPopup.modal('show');
+            announcementPopup.modal("show");
         });
     },
 
@@ -181,23 +180,23 @@ var headerNav = {
             success: function (result) {
                 if (result !== undefined) {
                     // Remove www so that subdomain can override LANGUAGE value
-                    var domain = window.location.hostname.replace(/([a-zA-Z0-9]+.)/, '').replace('www.', '');
-                    $.cookie('LANGUAGE', lang, { expires: 30, path: domain });
+                    var domain = window.location.hostname.replace(/([a-zA-Z0-9]+.)/, '').replace("www.", '');
+                    $.cookie("LANGUAGE", lang, { expires: 30, path: domain });
                     headerNav.reloadPage();
                 }
             }
         });
     },
     reloadPage: function () {
-        top.location = headerNav.removeBookmarksInUrl(top.location.href);
+        top.location.href = headerNav.removeBookmarksInUrl(top.location.href);
     },
     removeBookmarksInUrl: function (url) {
-        if (typeof url != 'string') {
+        if (typeof url !== 'string') {
             return null;
         }
 
-        var i = url.indexOf('#');
-        if (i == -1) {
+        var i = url.indexOf("#");
+        if (i === -1) {
             return url;
         }
 

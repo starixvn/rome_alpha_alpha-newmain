@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Requests.Statistics
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Requests.Statistics
 {
     using Main.Models.Enumerations;
     using MediatR;
