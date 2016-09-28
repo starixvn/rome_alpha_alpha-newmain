@@ -1,16 +1,17 @@
 ﻿#pragma warning disable 612, 618
+
 namespace Alpha.Main
 {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using System.Web;    
+    using System.Web;
     using Helpers;
     using Models.Menus;
+    using Sunplus.Agent.Utilities;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
-    using Sunplus.Agent.Utilities;
 
     public static class FunctionRegistry
     {
@@ -80,7 +81,7 @@ namespace Alpha.Main
 
         private static Func<string> getDefaultUrl = () =>
         {
-            var _defaultMainPage = MicroSites.OldMainUrl("~/_Reports/PortalPage/PortalPage.aspx");
+            var _defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Home/Index");
             var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
             var ignoreUrls = new List<string>
             {
