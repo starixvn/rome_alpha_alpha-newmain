@@ -6,32 +6,19 @@
 
     public class BalanceInfoViewModel
     {
-        private BalanceInfo balanceInfo;
-        private string currency = "UUS";
-        private string userLevelLabel = Resources.agent;
-        private string givenCreditLabel = Resources.agentGivenCredit;
-        private string totalDownlineCreditLabel = Resources.totalMemberCredit;
+        private BalanceInfo balanceInfo;          
 
         public BalanceInfoViewModel(
             BalanceInfo balanceInfo,
             UserLevel userLevel,
             string currency)
         {
-            this.balanceInfo = balanceInfo;
-            this.currency = currency;
+            this.balanceInfo = balanceInfo;            
             SetLabelTextByUserLevel(userLevel);
         }
 
         public BalanceInfoViewModel() : this(null, null, null)
         {
-        }
-
-        public string Currency
-        {
-            get
-            {
-                return this.currency;
-            }
         }
 
         public BalanceInfo BalanceInfo
@@ -42,11 +29,13 @@
             }
         }
 
-        public string UserLevelLabel { get; private set; }
+        public string Currency { get; }  = "UUS";        
 
-        public string GivenCreditLabel { get; private set; }
+        public string UserLevelLabel { get; private set; } = Resources.agent;
 
-        public string TotalDownlineCreditLabel { get; private set; }
+        public string GivenCreditLabel { get; private set; } = Resources.agentGivenCredit;
+
+        public string TotalDownlineCreditLabel { get; private set; } = Resources.totalMemberCredit;
 
         private void SetLabelTextByUserLevel(UserLevel userLevel)
         {
