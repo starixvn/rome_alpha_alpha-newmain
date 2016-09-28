@@ -158,9 +158,6 @@ Please use the form below to set your Security Code now.</value>
   <data name="LearnMore" xml:space="preserve">
     <value>Learn more</value>
   </data>
-  <data name="NewSecurityCode" xml:space="preserve">
-    <value>Security Code</value>
-  </data>
   <data name="NotAuthorized" xml:space="preserve">
     <value>You are not authorized on this function</value>
   </data>
@@ -182,32 +179,20 @@ Please use the form below to set your Security Code now.</value>
   <data name="Submit" xml:space="preserve">
     <value>Submit</value>
   </data>
-  <data name="titleFirstTimeSecCode" xml:space="preserve">
-    <value>Security Code</value>
-  </data>
   <data name="titleResetSecCode" xml:space="preserve">
     <value>Reset Security Code</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
     <value>Security Code Validation</value>
   </data>
-  <data name="PleaseCreateYourOwnSecurityCode" xml:space="preserve">
-    <value>Please create your own security code</value>
-  </data>
   <data name="SecurityCodeRules" xml:space="preserve">
     <value>Security code rules</value>
   </data>
   <data name="SecurityCodeRules01" xml:space="preserve">
-    <value>Security Code (SC) must be a 6-digits string, contains at least 2 different digits and must not be forward run and backward run number.</value>
+    <value>Security Code must be a 6-digit number, contains at least 2 different digits and must not be consecutive numbers.</value>
   </data>
   <data name="SecurityCodeRules02" xml:space="preserve">
-    <value>A "Forward run" is a consecutive, ascending order series of digits.</value>
-  </data>
-  <data name="SecurityCodeRules03" xml:space="preserve">
-    <value>A "Backward Run" is a consecutive, descending order series of digits.</value>
-  </data>
-  <data name="SecurityCodeRules04" xml:space="preserve">
-    <value>For example: 123456, 456789, 765432, ect. are not allowed</value>
+    <value>For example: 123456, 765432, 456789, etc. are NOT allowed.</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
@@ -240,7 +225,7 @@ Please use the form below to set your Security Code now.</value>
     <value>Sorry, password cannot be empty!!!</value>
   </data>
   <data name="forcechangepwd" xml:space="preserve">
-    <value>You are forced to change your password at first logon</value>
+    <value>You have to change your password at the first login.</value>
   </data>
   <data name="lblPasswordChangedOK" xml:space="preserve">
     <value>Your password has been changed successfully.</value>

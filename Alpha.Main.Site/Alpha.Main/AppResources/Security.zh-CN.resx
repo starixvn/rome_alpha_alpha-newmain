@@ -150,7 +150,7 @@
     <value>若您尚未获取保安码, 请联系您的上线或客服部</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>Please input your security code before proceeding!</value>
+    <value>请输入您的保安码以继续执行!</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>您所提供的保安码不符合要求。</value>
@@ -159,9 +159,6 @@
     <value>旧保安码</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
-    <value>保安码</value>
-  </data>
-  <data name="titleFirstTimeSecCode" xml:space="preserve">
     <value>保安码</value>
   </data>
   <data name="titleResetSecCode" xml:space="preserve">
@@ -188,31 +185,8 @@
   <data name="NotAuthorized" xml:space="preserve">
     <value>您没有使用此功能的权限</value>
   </data>
-  <data name="NewSecurityCode" xml:space="preserve">
-    <value>保安码</value>
-  </data>
-  <data name="PleaseCreateYourOwnSecurityCode" xml:space="preserve">
-    <value>Please create your own security code</value>
-  </data>
   <data name="SecurityCodeRules" xml:space="preserve">
     <value>Security code rules</value>
-  </data>
-  <data name="SecurityCodeRules01" xml:space="preserve">
-    <value>保安码必须是:
-
-    * 数字而已
-    * 必须是0-9的6位数字
-    * 保安码设置必须至少两个不同的数字
-    * 不能为顺序号或逆序号</value>
-  </data>
-  <data name="SecurityCodeRules02" xml:space="preserve">
-    <value>"顺序"号为整体数字组合都是连续的递增的顺序, 从左至右。</value>
-  </data>
-  <data name="SecurityCodeRules03" xml:space="preserve">
-    <value>"逆序"号位整体数字组合都是连续的递减的顺序, 从左至右。</value>
-  </data>
-  <data name="SecurityCodeRules04" xml:space="preserve">
-    <value>例如: 123456, 456789, 765432等都是不被允许的</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>嗨{0}，您的保安码已被重置。请设置一个新的。</value>
@@ -317,5 +291,11 @@
   </data>
   <data name="createSecurityCode" xml:space="preserve">
     <value>请创建一个保安码它将需要输入当有任何设置需要更新，以确保您是账号持有人。</value>
+  </data>
+  <data name="SecurityCodeRules01" xml:space="preserve">
+    <value>保安码必须是6位数字，包含至少2个不同的数字，必须是不连续的号码</value>
+  </data>
+  <data name="SecurityCodeRules02" xml:space="preserve">
+    <value>•例如：123456，765432，456789 等都是不被允许的</value>
   </data>
 </root>

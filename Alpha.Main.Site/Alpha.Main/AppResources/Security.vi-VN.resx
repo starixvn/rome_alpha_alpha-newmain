@@ -149,7 +149,7 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Nếu bạn chưa có Mã bảo mật, vui lòng liên hệ cấp trên của bạn hoặc bộ phận CSD.</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>Please input your security code before proceeding!</value>
+    <value>Vui lòng nhập Mã bảo mật trước khi thực hiện các thiết lập.!</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>Mã bảo mật do bạn cung cấp không thỏa quy tắc đặt ra.</value>
@@ -159,9 +159,6 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
     <value>Mã bảo mật</value>
-  </data>
-  <data name="titleFirstTimeSecCode" xml:space="preserve">
-    <value>Security Code</value>
   </data>
   <data name="titleResetSecCode" xml:space="preserve">
     <value>Thay đổi Mã bảo mật</value>
@@ -173,7 +170,7 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Xác nhận</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
-    <value>Security Code Validation</value>
+    <value>Xác nhận Mã Bảo Mật</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>Vui lòng tìm hiểu thêm tại đây</value>
@@ -182,37 +179,16 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Mật Khẩu</value>
   </data>
   <data name="SecurityCodeValidation" xml:space="preserve">
-    <value>Security Code Validation</value>
+    <value>Xác nhận Mã Bảo Mật</value>
   </data>
   <data name="NotAuthorized" xml:space="preserve">
     <value>Bạn không được cho phép sử dụng chức năng này</value>
   </data>
-  <data name="NewSecurityCode" xml:space="preserve">
-    <value>Mã bảo mật mới</value>
-  </data>
-  <data name="PleaseCreateYourOwnSecurityCode" xml:space="preserve">
-    <value>Please create your own security code</value>
-  </data>
   <data name="SecurityCodeRules" xml:space="preserve">
     <value>Security code rules</value>
   </data>
-  <data name="SecurityCodeRules01" xml:space="preserve">
-    <value>Mã bảo mật phải:
-
-    * Chỉ toàn ký tự số.</value>
-  </data>
-  <data name="SecurityCodeRules02" xml:space="preserve">
-    <value>Là số có 6 ký tự số kết hợp từ [0-9].</value>
-  </data>
-  <data name="SecurityCodeRules03" xml:space="preserve">
-    <value>Có ít nhất 2 ký tự khác nhau trong Mã bảo mật.</value>
-  </data>
-  <data name="SecurityCodeRules04" xml:space="preserve">
-    <value>Không phải là số gồm những ký tự tăng dần hoặc giảm dần từ trái sang phải.
-Ví dụ: không cho phép 123456, 456789, 765432, v.v.</value>
-  </data>
   <data name="SecurityCodeShower" xml:space="preserve">
-    <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
+    <value>Xin chào {0}, Mã Bảo Mật của bạn đã được đặt lại. Vui lòng tạo lại Mã Bảo Mật mới.</value>
   </data>
   <data name="errUserName" xml:space="preserve">
     <value>Vui lòng điền Tên đăng nhập và Mật khẩu</value>
@@ -289,7 +265,7 @@ Vui lòng điền vào mẩu bên dưới để thay đổi mật khẩu.</value
     <value>Password rules</value>
   </data>
   <data name="PasswordShower" xml:space="preserve">
-    <value>hi {0}, please create your own password</value>
+    <value>Xin chào {0}, vui lòng thay đổi Mật Khẩu của bạn.</value>
   </data>
   <data name="lblBack" xml:space="preserve">
     <value>Trở lại</value>
@@ -301,10 +277,10 @@ Vui lòng điền vào mẩu bên dưới để thay đổi mật khẩu.</value
     <value>Đổi Mật khẩu</value>
   </data>
   <data name="ShowPassword" xml:space="preserve">
-    <value>Show password</value>
+    <value>Xem Mật Khẩu</value>
   </data>
   <data name="ShowSecurityCode" xml:space="preserve">
-    <value>Show security code</value>
+    <value>Xem Mã Bảo Mật</value>
   </data>
   <data name="lblPasswordRequire" xml:space="preserve">
     <value>Mật khẩu phải gồm ít nhất 8 ký tự, không có khoảng trắng và phải có ít nhất 3 ký tự sau đây:
@@ -318,6 +294,12 @@ Ví dụ : 59D7!4$h, 493abcDE
 Lưu ý : Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   </data>
   <data name="createSecurityCode" xml:space="preserve">
-    <value>Please create a Security Code which will be asked for any setting updates to make sure it is you.</value>
+    <value>Vui lòng tạo Mã Bảo Mật, mã này dùng để xác thực khi bạn thay đổi các thiết lập.</value>
+  </data>
+  <data name="SecurityCodeRules01" xml:space="preserve">
+    <value>Mã Bảo Mật bao gồm 6 ký tự số, phải chứa ít nhất 2 ký tự khác nhau và không phải là các số liên tiếp nhau.</value>
+  </data>
+  <data name="SecurityCodeRules02" xml:space="preserve">
+    <value>Ví dụ: không cho phép 123456, 456789, 765432, v.v.</value>
   </data>
 </root>
