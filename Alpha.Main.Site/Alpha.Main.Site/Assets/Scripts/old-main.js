@@ -74,11 +74,12 @@ window.age = window.age || {
         var top = position ? position.top : 200;
 
         var popUp = $("#page-popup");
+        var popupTop = top + oldMainUltilities.getScrollTop(window.document.body);
         popUp.css({
             width: popW,
             height: popH,
             left: left,
-            top: top
+            top: popupTop
         });
 
         popUp.removeClass("hidden");
@@ -271,8 +272,8 @@ var AgeWnd = function () {
             popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
 
             // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
-            var scrollTop = oldMainUltilities.getScrollLeft(window) || 0;
-            var scrollLeft = oldMainUltilities.getScrollTop(window) || 0;
+            var scrollTop = oldMainUltilities.getScrollTop(window.document.body);
+            var scrollLeft = oldMainUltilities.getScrollLeft(window) || 0;
 
             // ON iOS: there is scroll issues with popup. We must show popup with auto height
             var isAutoHeight = oldMainUltilities.isiOS();
@@ -708,22 +709,8 @@ var oldMainUltilities = {
 
         return 0;
     },
-    getScrollTop: function (documentContext) {
-        var isIE = oldMainUltilities.isIE();
-        if (isIE && typeof (documentContext.pageYOffset) == 'number') {
-            return documentContext.pageYOffset;
-        }
-
-        if (documentContext.body && (documentContext.body.scrollLeft || documentContext.body.scrollTop)) {
-            return documentContext.body.scrollTop;
-        }
-
-        if (documentContext.documentElement &&
-            (documentContext.documentElement.scrollLeft || documentContext.documentElement.scrollTop)) {
-            return documentContext.documentElement.scrollTop;
-        }
-
-        return 0;
+    getScrollTop: function (element) {
+        return element.pageYOffset || element.scrollY || element.scrollTop || 0;
     }
 };
 
@@ -760,17 +747,17 @@ function reloadPopUpSetting(timeOut) {
             //// Use load.oldmain here to do not override onload funtion on new main, please do not change the event name
             window.top.$('#main')
                 .on('load.oldmain', function () {
-                top.main.$("arrayCustID").value = arrayCustId;
-                top.main.$("arrayUserName").value = arrayUserName;
-                doReloadPopup();
+                    top.main.$("arrayCustID").value = arrayCustId;
+                    top.main.$("arrayUserName").value = arrayUserName;
+                    doReloadPopup();
 
-                window.top.$('#main').off('load.oldmain');
+                    window.top.$('#main').off('load.oldmain');
                 });
         } else {
             window.top.$('#main')
                .on('load.oldmain', function () {
-                doReloadPopup();
-                window.top.$('#main').off('load.oldmain');
+                   doReloadPopup();
+                   window.top.$('#main').off('load.oldmain');
                });
         }
         window.top.main.location.reload(true);
@@ -843,5 +830,74 @@ function clearPopupSubtitle(hasSubTitle) {
                 subTitles[0].style.display = 'none';
             }
         }
+    }
+}
+
+function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFrameFunction) {
+    var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
+    var iframes = popUp.find('#popup-iframe');
+    var iframeSrc = iframes && iframes.length && iframes.attr('src');
+
+    function blurElementToScrollIframe() {
+        top.main.$('txtUserName').blur();
+    }
+
+    function getScrollY(element) {
+        return element.pageYOffset || element.scrollY || element.scrollTop || 0;
+    }
+
+    function storeAndRestoreFrameData(isCustomerList) {
+        var mainFrame = top.main;
+        var $main = top.$('#main');
+
+        var scrollYMainFrame = getScrollY(mainFrame);
+        var scrollYTopBody = getScrollY(top.document.body);
+
+        var arrayCustId = '';
+        var arrayUserName = '';
+
+        if (isCustomerList) {
+            arrayCustId = mainFrame.$("arrayCustID").value;
+            arrayUserName = mainFrame.$("arrayUserName").value;
+        };
+
+        $main.on('load.oldmain', function () {
+            if (isCustomerList) {
+                mainFrame.$("arrayCustID").value = arrayCustId;
+                mainFrame.$("arrayUserName").value = arrayUserName;
+            }
+
+            blurElementToScrollIframe();
+
+            $main[0].contentWindow.scrollTo(0, scrollYMainFrame);
+            top.window.scrollTo(0, scrollYTopBody);
+
+            $main.off('load.oldmain');
+        });
+    }
+
+    function doActionAfterTimeOut() {
+        if (hasPopupOpen()) {
+            top.ageWnd.close();
+        }
+
+        var mainFrame = top.main;
+        var isCustomerList = mainFrame.$("arrayCustID") &&
+            mainFrame.$("arrayCustID").value.length &&
+            mainFrame.$("arrayUserName") &&
+            mainFrame.$("arrayUserName").value.length;
+        storeAndRestoreFrameData(isCustomerList);
+
+        top.main.location.reload(true);
+
+        window.top.clearPopupSubtitle(true);
+    }
+
+    if (timeOut) {
+        setTimeout(function () {
+            doActionAfterTimeOut();
+        }, timeOut);
+    } else {
+        doActionAfterTimeOut();
     }
 }
