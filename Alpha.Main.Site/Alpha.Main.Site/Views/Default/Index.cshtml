@@ -34,14 +34,7 @@
     <div class="content-wrapper" id="content-wrapper">
         @Html.Partial("SearchBar")
         <header class="header" id="header">
-            @Html.Partial(
-           "HeaderNav",
-           new HeaderNavViewModel
-           {
-               CustId = Model.CustId,
-               EnableSecurityCode = Model.EnableSecurityCode
-           })
-
+            @Html.Partial("HeaderNav", Model.HeaderNavViewModel)          
             @Html.Partial("HeaderMarquee")
         </header>
         <main class="content" id="content" data-default-url="@Model.DefaultUrl">
