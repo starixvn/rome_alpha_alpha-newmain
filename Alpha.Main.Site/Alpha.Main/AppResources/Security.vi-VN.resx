@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="alertEmptySecCode" xml:space="preserve">
-    <value>Your Security Code was cleaned by your upline/admin.
-Please use the form below to set your Security Code again.</value>
-  </data>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
     <value>Mã bảo mật xác nhận không chính xác.</value>
   </data>
@@ -153,7 +149,7 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Nếu bạn chưa có Mã bảo mật, vui lòng liên hệ cấp trên của bạn hoặc bộ phận CSD.</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>Please create a Security Code which will be asked for any setting updates to make sure it is you.</value>
+    <value>Please input your security code before proceeding!</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>Mã bảo mật do bạn cung cấp không thỏa quy tắc đặt ra.</value>
@@ -166,9 +162,6 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
   </data>
   <data name="titleFirstTimeSecCode" xml:space="preserve">
     <value>Security Code</value>
-  </data>
-  <data name="titleProvideSecCode" xml:space="preserve">
-    <value>Please provide Security Code</value>
   </data>
   <data name="titleResetSecCode" xml:space="preserve">
     <value>Thay đổi Mã bảo mật</value>
@@ -196,9 +189,6 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
   </data>
   <data name="NewSecurityCode" xml:space="preserve">
     <value>Mã bảo mật mới</value>
-  </data>
-  <data name="Back" xml:space="preserve">
-    <value>Back</value>
   </data>
   <data name="PleaseCreateYourOwnSecurityCode" xml:space="preserve">
     <value>Please create your own security code</value>
@@ -326,5 +316,8 @@ Vui lòng điền vào mẩu bên dưới để thay đổi mật khẩu.</value
 Ví dụ : 59D7!4$h, 493abcDE
 
 Lưu ý : Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
+  </data>
+  <data name="createSecurityCode" xml:space="preserve">
+    <value>Please create a Security Code which will be asked for any setting updates to make sure it is you.</value>
   </data>
 </root>

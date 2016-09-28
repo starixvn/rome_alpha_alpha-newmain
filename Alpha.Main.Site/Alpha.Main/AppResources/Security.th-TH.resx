@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="alertEmptySecCode" xml:space="preserve">
-    <value>Your Security Code was cleaned by your upline/admin.
-Please use the form below to set your Security Code again.</value>
-  </data>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
     <value>The Security Code was not correctly confirmed.</value>
   </data>
@@ -153,7 +149,7 @@ Please use the form below to set your Security Code again.</value>
     <value>If you haven't got security code, please contact your upline or CSD.</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>โปรดสร้างรหัสรักษาความปลอดภัยซึ่งระบบจะสอบถามท่านเมื่อทำการตั้งค่าต่าง ๆ เพื่อให้แน่ใจว่าเป็นตัวท่านจริง ๆ</value>
+    <value>Please input your security code before proceeding!</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>Your provided Security Code does not meet the requirements.</value>
@@ -166,9 +162,6 @@ Please use the form below to set your Security Code again.</value>
   </data>
   <data name="titleFirstTimeSecCode" xml:space="preserve">
     <value>Security Code</value>
-  </data>
-  <data name="titleProvideSecCode" xml:space="preserve">
-    <value>Please provide Security Code</value>
   </data>
   <data name="titleResetSecCode" xml:space="preserve">
     <value>Reset Security Code</value>
@@ -196,9 +189,6 @@ Please use the form below to set your Security Code again.</value>
   </data>
   <data name="NewSecurityCode" xml:space="preserve">
     <value>Security Code</value>
-  </data>
-  <data name="Back" xml:space="preserve">
-    <value>Back</value>
   </data>
   <data name="PleaseCreateYourOwnSecurityCode" xml:space="preserve">
     <value>Please create your own security code</value>
@@ -325,5 +315,8 @@ Please use the form below to set your Security Code again.</value>
 
 ยกตัวอย่างเช่น: 59D7!4$h, 493abcDE
 หมายเหตุ รหัสผ่านของคุณเป็นสิ่งที่สำคัญ</value>
+  </data>
+  <data name="createSecurityCode" xml:space="preserve">
+    <value>โปรดสร้างรหัสรักษาความปลอดภัยซึ่งระบบจะสอบถามท่านเมื่อทำการตั้งค่าต่าง ๆ เพื่อให้แน่ใจว่าเป็นตัวท่านจริง ๆ</value>
   </data>
 </root>

@@ -61,16 +61,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Security Code was cleaned by your upline/admin.
-        ///Please use the form below to set your Security Code again..
-        /// </summary>
-        public static string alertEmptySecCode {
-            get {
-                return ResourceManager.GetString("alertEmptySecCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The password was not correctly confirmed..
         /// </summary>
         public static string alertErrorConfirm {
@@ -172,15 +162,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Back.
-        /// </summary>
-        public static string Back {
-            get {
-                return ResourceManager.GetString("Back", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Confirm Security Code.
         /// </summary>
         public static string ConfirmSecurityCode {
@@ -195,6 +176,15 @@ namespace Alpha.Main.AppResources {
         public static string contactMessage {
             get {
                 return ResourceManager.GetString("contactMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please create a Security Code which will be asked for any setting updates to make sure it is you..
+        /// </summary>
+        public static string createSecurityCode {
+            get {
+                return ResourceManager.GetString("createSecurityCode", resourceCulture);
             }
         }
         
@@ -217,7 +207,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please create a Security Code which will be asked for any setting updates to make sure it is you..
+        ///   Looks up a localized string similar to Please input your security code before proceeding!.
         /// </summary>
         public static string informSecCode {
             get {
@@ -613,15 +603,6 @@ namespace Alpha.Main.AppResources {
         public static string titleFirstTimeSecCode {
             get {
                 return ResourceManager.GetString("titleFirstTimeSecCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please provide Security Code.
-        /// </summary>
-        public static string titleProvideSecCode {
-            get {
-                return ResourceManager.GetString("titleProvideSecCode", resourceCulture);
             }
         }
         

@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="alertEmptySecCode" xml:space="preserve">
-    <value>Your Security Code was cleaned by your upline/admin.
-Please use the form below to set your Security Code again.</value>
-  </data>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
     <value>您的机密码无法被确认。</value>
   </data>
@@ -154,7 +150,7 @@ Please use the form below to set your Security Code again.</value>
     <value>若您尚未获取保安码, 请联系您的上线或客服部</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>请创建一个保安码它将需要输入当有任何设置需要更新，以确保您是账号持有人。</value>
+    <value>Please input your security code before proceeding!</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
     <value>您所提供的保安码不符合要求。</value>
@@ -167,9 +163,6 @@ Please use the form below to set your Security Code again.</value>
   </data>
   <data name="titleFirstTimeSecCode" xml:space="preserve">
     <value>保安码</value>
-  </data>
-  <data name="titleProvideSecCode" xml:space="preserve">
-    <value>Please provide Security Code</value>
   </data>
   <data name="titleResetSecCode" xml:space="preserve">
     <value>重置保安码</value>
@@ -197,9 +190,6 @@ Please use the form below to set your Security Code again.</value>
   </data>
   <data name="NewSecurityCode" xml:space="preserve">
     <value>保安码</value>
-  </data>
-  <data name="Back" xml:space="preserve">
-    <value>Back</value>
   </data>
   <data name="PleaseCreateYourOwnSecurityCode" xml:space="preserve">
     <value>Please create your own security code</value>
@@ -324,5 +314,8 @@ Please use the form below to set your Security Code again.</value>
 
 例如： 59D7!4$h, 493abcDE
 注意： 您的密码需有大小写</value>
+  </data>
+  <data name="createSecurityCode" xml:space="preserve">
+    <value>请创建一个保安码它将需要输入当有任何设置需要更新，以确保您是账号持有人。</value>
   </data>
 </root>
