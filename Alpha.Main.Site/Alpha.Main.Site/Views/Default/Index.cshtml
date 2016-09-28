@@ -22,22 +22,8 @@
 
 </head>
 <body>
-    <div id="page-popup" class="modal fade hidden" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog ex-modal" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"><span aria-hidden="true"></span></button>
-                    <h4 class="modal-title" id="result-detail-title"><span class="popup-title" id="popup-title"></span></h4>
-                </div>
-                <div class="modal-body">
-                    <iframe frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto"
-                            id="popup-iframe"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+    @Html.Partial("Popup")
     @Html.Partial("Introduction")
-
     @Html.Action("HeaderHotMsg")
     <aside class="sidebar" id="side-bar">
         <div class="partial-content customer-profile" id="profile" data-url="@Url.Action("BriefProfile", "CustomerProfile")"></div>
@@ -46,30 +32,7 @@
         </nav>
     </aside>
     <div class="content-wrapper" id="content-wrapper">
-        <!-- Top search bar -->
-        <div class="top-search-bar">
-            <span class="icon-search"></span>
-            <input type="text" class="top-search-input" placeholder="Username or First/Last Name">
-            <span class="icon-close"></span>
-        </div>
-        <!-- Annoucement popup -->
-        <div class="modal fade announcement-modal visible-mobile" id="announcement-popup">
-            <div class="modal-dialog ex-modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"><span aria-hidden="true"></span></button>
-                        <h4 class="modal-title" id="result-detailt-title"><span class="icon icon-announcements"></span>@Resources.announcement!</h4>
-                    </div>
-                    <div class="modal-body" id="announcementModalBody">
-                        <p><strong>Dear valued agents,</strong></p>
-                        <p>We are pleased to announce the launching of the new product named "<strong>Colossus Bets</strong>" with effected from <strong>24/02/2016</strong></p>
-                        <p>This new product will be offered by default. If you wish to disable "<strong>Colossus Bets</strong>" on a specific downline, please configure at the Setting function. Follow this instruction for more details.</p>
-                        <p>All settings will be available for configuration since <strong>28/01/2016</strong>.</p>
-                        <p><strong>Thank you.</strong></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @Html.Partial("SearchBar")
         <header class="header" id="header">
             @Html.Partial(
            "HeaderNav",
@@ -84,7 +47,6 @@
         <main class="content" id="content" data-default-url="@Model.DefaultUrl">
         </main>
     </div>
-
     @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
     @Html.Hidden("onUserId", Model.OnUserId)
     @Html.Hidden("mainRootPath", Model.MainRootPath)
@@ -95,10 +57,8 @@
     @Html.Hidden("currentURLCookieName", Model.CurrentURLCookieName)
     @Html.Hidden("userLevel", Model.UserLevel)
     @Html.Hidden("isSubAccount", Model.IsSubAccount)
-
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
-
     <!--[if (gt IE 8)|!(IE)]><!--><script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-introduction"))" type="text/javascript"></script><!--<![endif]-->
 
     @Html.Partial("Piwik")

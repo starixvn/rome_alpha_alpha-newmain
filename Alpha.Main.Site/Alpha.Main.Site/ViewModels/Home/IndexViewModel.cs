@@ -163,5 +163,17 @@
                 return CookieHelper.GetCurrentUrlCookieName();
             }
         }
+
+        public HeaderNavViewModel HeaderNavViewModel
+        {
+            get
+            {
+                return new HeaderNavViewModel
+                {
+                    CustId = this.CustId,
+                    EnableSecurityCode = this.EnableSecurityCode
+                };
+            }
+        }
     }
 }

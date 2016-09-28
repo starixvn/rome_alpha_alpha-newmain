@@ -18,7 +18,8 @@ namespace Alpha.Main.Site.Controllers
     {
         private CultureInfo defaultCulture = CultureInfo.CreateSpecificCulture(Language.Default);
 
-        [SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Justification = "Reviewed!")]
+        [SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods",
+            MessageId = "0", Justification = "Reviewed!")]
         protected override void OnAuthentication(AuthenticationContext filterContext)
         {
             base.OnAuthentication(filterContext);
@@ -30,7 +31,7 @@ namespace Alpha.Main.Site.Controllers
             }
         }
 
-        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "Alpha.Auth.Web.Validators.ValidationLogger.WriteInfo(System.String)")]
+        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "Reviewed", Justification = "Verified")]
         private void UnAuthentication(AuthenticationContext filterContext)
         {
             HttpResponseBase response = filterContext.HttpContext.Response;

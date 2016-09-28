@@ -815,6 +815,8 @@
     <Content Include="Views\Notice\Index.cshtml" />
     <Content Include="Views\SecurityCode\Languages.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_en-US.cshtml" />
+    <Content Include="Views\Default\Popup.cshtml" />
+    <Content Include="Views\Default\SearchBar.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ja-JP.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ko-KR.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_th-TH.cshtml" />
