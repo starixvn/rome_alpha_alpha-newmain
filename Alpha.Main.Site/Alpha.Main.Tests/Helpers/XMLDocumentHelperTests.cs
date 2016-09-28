@@ -1,18 +1,17 @@
 ﻿namespace Alpha.Main.Tests.Helpers
 {
-    using Main.Helpers;
-    using NSubstitute;
-    using NUnit.Framework;
     using System;
     using System.IO;
     using System.Xml;
+    using Main.Helpers;
+    using NUnit.Framework;
 
     [TestFixture]
     public class XMLDocumentHelperTests
     {
         private string applicationBaseDirectory;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void Init()
         {
             applicationBaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
