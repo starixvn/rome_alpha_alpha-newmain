@@ -823,10 +823,10 @@
     <Content Include="Views\SecurityCode\ResetSecurityCode.cshtml" />
     <Content Include="Views\SecurityCode\Shared\_Layout.cshtml" />
     <Content Include="Views\SecurityCode\VerifySecurityCode.cshtml" />
+    <Content Include="Views\Statistics\TopWinningMembers.cshtml" />
+    <Content Include="Views\Statistics\NewMembers.cshtml" />
+    <Content Include="Views\Statistics\TopTurnoverMembers.cshtml" />
     <Content Include="Views\Password\Shared\_Layout.cshtml" />
-    <Content Include="Views\Statistics\_TopWinningMembers.cshtml" />
-    <Content Include="Views\Statistics\_NewMembers.cshtml" />
-    <Content Include="Views\Statistics\_TopTurnoverMembers.cshtml" />
     <Content Include="Views\Notice\Index.cshtml" />
     <Content Include="Views\SecurityCode\Languages.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_en-US.cshtml" />
@@ -835,7 +835,7 @@
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ja-JP.cshtml" />
     <Content Include="Views\Default\HiddenFields.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ko-KR.cshtml" />
-    <Content Include="Views\Notice\_NoticeMessage.cshtml" />
+    <Content Include="Views\Notice\NoticeMessage.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_th-TH.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-CN.cshtml" />

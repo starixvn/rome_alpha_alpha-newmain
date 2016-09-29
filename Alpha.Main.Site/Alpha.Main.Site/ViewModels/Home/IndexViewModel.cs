@@ -10,17 +10,7 @@
 
     public class IndexViewModel
     {
-        private readonly int custId;
-        private readonly int onlineUserId;
         private readonly byte roleId;
-        private readonly string language;
-        private readonly string languageKey;
-        private readonly Func<string> getDefaultUrl;
-        private readonly string passwordHash;
-        private readonly string subPageAccess;
-        private readonly bool enableSecurityCode;
-        private readonly bool isInternalWebVPN;
-        private readonly bool isSubAccount;
 
         public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl)
         {
@@ -29,42 +19,24 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            this.custId = message.CustId;
             this.roleId = message.RoleId;
-            this.language = message.Language;
-            this.languageKey = message.LanguageKey;
-            this.onlineUserId = message.OnUserId;
-            this.getDefaultUrl = getDefaultUrl;
-            this.passwordHash = Encryption.RandomString(new Random().Next(4, 8));
-            this.subPageAccess = message.SubPageAccess;
-            this.enableSecurityCode = message.EnableSecurityCode;
-            this.isInternalWebVPN = message.IsInternalWebVPN;
-            this.isSubAccount = message.IsSubAccount;
+            this.IsShowIntroduction = isShowIntroduction();
+            this.DefaultUrl = getDefaultUrl();
+            this.CustId = message.CustId;
+            this.Language = message.Language;
+            this.LanguageKey = message.LanguageKey;
+            this.OnUserId = message.OnUserId;
+            this.SubPageAccess = message.SubPageAccess;
+            this.EnableSecurityCode = message.EnableSecurityCode;
+            this.IsInternalWebVPN = message.IsInternalWebVPN;
+            this.IsSubAccount = message.IsSubAccount;
         }
 
-        public bool EnableSecurityCode
-        {
-            get
-            {
-                return this.enableSecurityCode;
-            }
-        }
+        public bool EnableSecurityCode { get; private set; }
 
-        public int CustId
-        {
-            get
-            {
-                return this.custId;
-            }
-        }
+        public int CustId { get; private set; }
 
-        public int OnUserId
-        {
-            get
-            {
-                return this.onlineUserId;
-            }
-        }
+        public int OnUserId { get; private set; }
 
         public string UserLevel
         {
@@ -74,30 +46,12 @@
             }
         }
 
-        public string Language
-        {
-            get
-            {
-                return this.language;
-            }
-        }
+        public string Language { get; private set; }
 
-        public string LanguageKey
-        {
-            get
-            {
-                return this.languageKey;
-            }
-        }
+        public string LanguageKey { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
-        public string DefaultUrl
-        {
-            get
-            {
-                return getDefaultUrl();
-            }
-        }
+        public string DefaultUrl { get; private set; }
 
         public string OldMainRootPath
         {
@@ -123,37 +77,13 @@
             }
         }
 
-        public string PasswordHash
-        {
-            get
-            {
-                return this.passwordHash;
-            }
-        }
+        public string PasswordHash { get; private set; } = Encryption.RandomString(new Random().Next(4, 8));
 
-        public string SubPageAccess
-        {
-            get
-            {
-                return this.subPageAccess;
-            }
-        }
+        public string SubPageAccess { get; private set; }
 
-        public bool IsSubAccount
-        {
-            get
-            {
-                return this.isSubAccount;
-            }
-        }
+        public bool IsSubAccount { get; private set; }
 
-        public bool IsInternalWebVPN
-        {
-            get
-            {
-                return this.isInternalWebVPN;
-            }
-        }
+        public bool IsInternalWebVPN { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
         public string CurrentURLCookieName
@@ -164,6 +94,7 @@
             }
         }
 
+        public bool IsShowIntroduction { get; private set; }
         public HeaderNavViewModel HeaderNavViewModel
         {
             get

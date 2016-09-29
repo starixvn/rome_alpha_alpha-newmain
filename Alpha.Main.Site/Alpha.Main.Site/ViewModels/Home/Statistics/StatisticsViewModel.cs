@@ -6,44 +6,29 @@
 
     public class StatisticsViewModel
     {
-        private Statistics statistics;
-        private UserLevel userLevel;
-
         public StatisticsViewModel(Statistics statistics, UserLevel userLevel)
         {
-            this.statistics = statistics;
-            this.userLevel = userLevel;
+            this.Statistics = statistics;
+            this.UserLevel = userLevel;
         }
 
         public StatisticsViewModel() : this(null, null)
         {
         }
 
-        public Statistics Statistics
-        {
-            get
-            {
-                return this.statistics;
-            }
-        }
+        public Statistics Statistics { get; private set; }
 
-        public UserLevel UserLevel
-        {
-            get
-            {
-                return this.userLevel;
-            }
-        }
+        public UserLevel UserLevel { get; private set; }
 
         public string OutstandingLabel
         {
             get
             {
-                if (userLevel.IsSuperLevel())
+                if (UserLevel.IsSuperLevel())
                 {
                     return Resources.superOutstanding;
                 }
-                else if (userLevel.IsMasterLevel())
+                else if (UserLevel.IsMasterLevel())
                 {
                     return Resources.masterOutstanding;
                 }

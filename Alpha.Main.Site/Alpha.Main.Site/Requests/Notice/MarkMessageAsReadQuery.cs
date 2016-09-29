@@ -4,29 +4,14 @@
 
     public class MarkMessageAsReadQuery : IRequest<bool>
     {
-        private int custId;
-        private string messageIds = string.Empty;
-
         public MarkMessageAsReadQuery(int custId, string messageIds)
         {
-            this.custId = custId;
-            this.messageIds = messageIds;
+            this.CustId = custId;
+            this.MessageIds = messageIds;
         }
 
-        public int CustId
-        {
-            get
-            {
-                return this.custId;
-            }
-        }
+        public int CustId { get; private set; }
 
-        public string MessageIds
-        {
-            get
-            {
-                return this.messageIds;
-            }
-        }
+        public string MessageIds { get; private set; }
     }
 }

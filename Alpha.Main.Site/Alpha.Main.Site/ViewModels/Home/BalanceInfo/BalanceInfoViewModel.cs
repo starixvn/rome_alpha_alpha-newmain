@@ -6,31 +6,20 @@
 
     public class BalanceInfoViewModel
     {
-        private BalanceInfo balanceInfo;          
-
         public BalanceInfoViewModel(
             BalanceInfo balanceInfo,
             UserLevel userLevel,
             string currency)
         {
-            this.balanceInfo = balanceInfo;
-            this.Currency = currency;          
+            this.BalanceInfo = balanceInfo;
+            this.Currency = currency;
+
             SetLabelTextByUserLevel(userLevel);
         }
 
-        public BalanceInfoViewModel() : this(null, null, null)
-        {
-        }
+        public BalanceInfo BalanceInfo { get; private set; }
 
-        public BalanceInfo BalanceInfo
-        {
-            get
-            {
-                return this.balanceInfo;
-            }
-        }
-
-        public string Currency { get; }  = "UUS";        
+        public string Currency { get; } = "UUS";
 
         public string UserLevelLabel { get; private set; } = Resources.agent;
 

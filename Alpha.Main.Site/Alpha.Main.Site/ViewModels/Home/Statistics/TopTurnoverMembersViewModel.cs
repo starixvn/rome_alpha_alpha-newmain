@@ -10,10 +10,6 @@
             Members = members;
         }
 
-        public TopTurnoverMembersViewModel() : this(null)
-        {
-        }
-
         public IEnumerable<TopTurnoverMember> Members { get; private set; }
     }
 }

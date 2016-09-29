@@ -14,21 +14,9 @@
             this.CurrentLanguage = currentLanguage;
         }
 
-        public LanguageViewModel() : this(null, string.Empty)
-        {
-        }
+        public Dictionary<string, string> Data { get; private set; }
 
-        public Dictionary<string, string> Data
-        {
-            get;
-            private set;
-        }
-
-        public string CurrentLanguage
-        {
-            get;
-            private set;
-        }
+        public string CurrentLanguage { get; private set; }
 
         /// <summary>
         /// Equals: used for compare two object (Unit test)

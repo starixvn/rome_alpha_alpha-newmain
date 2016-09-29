@@ -5,23 +5,11 @@
 
     public class TopWinningMembersViewModel
     {
-        private IEnumerable<TopWinningMember> members;
-
         public TopWinningMembersViewModel(IEnumerable<TopWinningMember> members)
         {
-            this.members = members;
+            this.Members = members;
         }
 
-        public TopWinningMembersViewModel() : this(null)
-        {
-        }
-
-        public IEnumerable<TopWinningMember> Members
-        {
-            get
-            {
-                return this.members;
-            }
-        }
+        public IEnumerable<TopWinningMember> Members { get; private set; }
     }
 }

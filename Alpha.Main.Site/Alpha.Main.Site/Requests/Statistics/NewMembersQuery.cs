@@ -5,16 +5,11 @@
 
     public class NewMembersQuery : IRequest<NewMembersViewModel>
     {
-        private int custId;
-
         public NewMembersQuery(int custId)
         {
-            this.custId = custId;
+            this.CustId = custId;
         }
 
-        public int CustId
-        {
-            get { return this.custId; }
-        }
+        public int CustId { get; private set; }
     }
 }

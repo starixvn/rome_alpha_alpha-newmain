@@ -4,16 +4,12 @@
     using Main.Models.Statistics;
 
     public class NewMembersViewModel
-    {       
+    {
         public NewMembersViewModel(IEnumerable<NewMember> members)
         {
             this.Members = members;
         }
 
-        public IEnumerable<NewMember> Members
-        {
-            get;
-            private set;
-        }
+        public IEnumerable<NewMember> Members { get; private set; }
     }
 }

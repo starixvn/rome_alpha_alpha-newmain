@@ -12,7 +12,7 @@ foreach (var message in messages)
 {
         <div id="@message.CurrentMessage.Id"
              class="msg pointer @message.Type @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
-            <div class="time"><span class="icon icon-plus"></span>@message.PostTimeStr</div>
+            <div class="time"><span class="icon icon-plus"></span>@message.PostTime</div>
             <div class="short-content">
                 @message.ShortContent ...
             </div>

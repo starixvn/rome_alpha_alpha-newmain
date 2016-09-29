@@ -12,7 +12,6 @@
         private List<string> devicesUseCustomScrollbar;
 
         private byte roleId;
-        private string userAgent;
 
         public MenuBarQuery(
             byte roleId,
@@ -20,7 +19,7 @@
             List<string> devicesUseCustomScrollbar = null)
         {
             this.roleId = roleId;
-            this.userAgent = userAgent;
+            this.UserAgent = userAgent;
             this.devicesUseCustomScrollbar = devicesUseCustomScrollbar ?? AppSettings.DevicesUseCustomScrollbar;
         }
 
@@ -32,13 +31,7 @@
             }
         }
 
-        public string UserAgent
-        {
-            get
-            {
-                return userAgent;
-            }
-        }
+        public string UserAgent { get; private set; }
 
         public bool IsSmallDevice
         {

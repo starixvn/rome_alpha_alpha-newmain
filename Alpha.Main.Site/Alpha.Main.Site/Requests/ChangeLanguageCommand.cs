@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Requests
 {
     using Constants;
@@ -8,21 +9,14 @@ namespace Alpha.Main.Site.Requests
     public class ChangeLanguageCommand : IRequest<string>
     {
         private readonly IUserSession userSession;
-        private readonly string languageCode;
 
         public ChangeLanguageCommand(IUserSession userSession, string languageCode)
         {
             this.userSession = userSession;
-            this.languageCode = languageCode;
+            this.LanguageCode = languageCode;
         }
 
-        public string LanguageCode
-        {
-            get
-            {
-                return languageCode;
-            }
-        }
+        public string LanguageCode { get; private set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Microsoft.Maintainability",

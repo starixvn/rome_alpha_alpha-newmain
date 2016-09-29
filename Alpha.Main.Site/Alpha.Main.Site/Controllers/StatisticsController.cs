@@ -32,7 +32,7 @@
         {
             var viewModel = mediator.Send(new TopWinningMembersQuery(this.userSession));
 
-            return PartialView("_TopWinningMembers", viewModel);
+            return PartialView("TopWinningMembers", viewModel);
         }
 
         [HttpGet]
@@ -41,7 +41,7 @@
         {
             var viewModel = mediator.Send(new TopTurnoverMembersQuery(this.userSession));
 
-            return PartialView("_TopTurnoverMembers", viewModel);
+            return PartialView("TopTurnoverMembers", viewModel);
         }
 
         [HttpGet]
@@ -50,7 +50,7 @@
         {
             var viewModel = mediator.Send(new NewMembersQuery(this.userSession.CustId));
 
-            return PartialView("_NewMembers", viewModel);
+            return PartialView("NewMembers", viewModel);
         }
     }
 }

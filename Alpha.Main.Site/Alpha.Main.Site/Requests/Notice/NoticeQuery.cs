@@ -10,9 +10,6 @@
     public class NoticeQuery : IRequest<NoticeViewModel>
     {
         private IUserSession userSession;
-        private DateTime lastPostTime = DateTime.Now;
-        private int totalMessage = 10;
-        private bool isTest = false;
 
         public NoticeQuery(
             IUserSession userSession,
@@ -21,9 +18,9 @@
             bool isTest)
         {
             this.userSession = userSession;
-            this.lastPostTime = lastPostTime;
-            this.totalMessage = totalMessage;
-            this.isTest = isTest;
+            this.LastPostTime = lastPostTime;
+            this.TotalMessage = totalMessage;
+            this.IsTest = isTest;
         }
 
         public UserLevel UserLevel
@@ -52,29 +49,11 @@
             }
         }
 
-        public DateTime LastPostTime
-        {
-            get
-            {
-                return this.lastPostTime;
-            }
-        }
+        public DateTime LastPostTime { get; private set; } = DateTime.Now;
 
-        public int TotalMessage
-        {
-            get
-            {
-                return totalMessage;
-            }
-        }
+        public int TotalMessage { get; private set; } = 10;
 
-        public bool IsTest
-        {
-            get
-            {
-                return this.isTest;
-            }
-        }
+        public bool IsTest { get; private set; } = false;
 
         public string CurrentLang
         {

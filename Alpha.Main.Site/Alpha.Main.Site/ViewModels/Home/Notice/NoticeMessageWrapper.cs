@@ -23,7 +23,7 @@
             get; private set;
         }
 
-        public string PostTimeStr
+        public string PostTime
         {
             get
             {
