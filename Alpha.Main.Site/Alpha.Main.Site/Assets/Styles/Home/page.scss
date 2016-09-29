@@ -335,33 +335,12 @@ html * {
     }
 }
 
-@media only screen and (max-width : $screen-device-lower768) {    
-
+@media only screen and (max-width : $screen-device-lower768) {
      .content-wrapper {
         .content {
             top: 48px;
         }
-    }
-    // Announcements
-    #popup-container-text {
-        display: none !important;
-    }
-        
-    .announcement-modal {
-        z-index: 0;
-        &.visible-mobile {            
-            left: 0;
-            display: block;
-            right: 0;
-            width: 100%;            
-
-            &.in {
-                top: 0;
-                z-index: 1050;
-            }
-        }
-    }
-    
+    } 
 }
 
 .piwik-noscript {

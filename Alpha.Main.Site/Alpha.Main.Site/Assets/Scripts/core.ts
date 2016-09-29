@@ -82,6 +82,10 @@ var alpha = {
 
         var currentWindowWidth = $(window).width();
 
+        if (currentWindowWidth < 768) {
+            alpha.isScreenLower768 = true;
+        }
+
         if (currentWindowWidth <= 1024) {
             alpha.isScreenLower1024 = true;
         }

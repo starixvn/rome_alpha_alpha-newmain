@@ -166,8 +166,8 @@ var headerNav = {
 
         // Annoucement popup for mobile
         headerNav.domElements.iconBell.click(function () {
-            var announcementPopup = $("#announcement-popup");
-            announcementPopup.modal("show");
+            announcement.showedMessageIds = [];
+            announcement.loadAnnouncement();
         });
     },
 
