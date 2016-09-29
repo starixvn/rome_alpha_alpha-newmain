@@ -20,7 +20,7 @@ namespace Alpha.Main.Sessions
 
         bool IsForcedSecurityCode { get; set; }
 
-        string SecurityCode { get; }
+        string SecurityCode { get; set; }
 
         string SecurityCodeToken { get; set; }
 

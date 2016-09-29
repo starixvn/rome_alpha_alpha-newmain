@@ -115,6 +115,11 @@
             {
                 return (string)this.GetProperty(SECURITYCODE);
             }
+
+            set
+            {
+                this.SetProperty(SECURITYCODE, value);
+            }
         }
 
         public string SecurityCodeToken
