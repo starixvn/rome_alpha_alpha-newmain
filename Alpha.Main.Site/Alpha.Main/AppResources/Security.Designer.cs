@@ -171,15 +171,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you haven&apos;t got security code, please contact your upline or CSD..
-        /// </summary>
-        public static string contactMessage {
-            get {
-                return ResourceManager.GetString("contactMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please create a Security Code which will be asked for any setting updates to make sure it is you..
         /// </summary>
         public static string createSecurityCode {

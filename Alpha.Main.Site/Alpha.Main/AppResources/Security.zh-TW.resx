@@ -146,9 +146,6 @@
   <data name="ConfirmSecurityCode" xml:space="preserve">
     <value>確認保安碼</value>
   </data>
-  <data name="contactMessage" xml:space="preserve">
-    <value>若您尚未獲取保安碼, 請聯繫您的上線或客服部</value>
-  </data>
   <data name="informSecCode" xml:space="preserve">
     <value>請輸入您的保安碼以繼續執行!</value>
   </data>

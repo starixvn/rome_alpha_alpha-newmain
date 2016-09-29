@@ -146,9 +146,6 @@ Please use the form below to set your Security Code now.</value>
   <data name="ConfirmSecurityCode" xml:space="preserve">
     <value>Confirm Security Code</value>
   </data>
-  <data name="contactMessage" xml:space="preserve">
-    <value>If you haven't got security code, please contact your upline or CSD.</value>
-  </data>
   <data name="informSecCode" xml:space="preserve">
     <value>Please input your security code before proceeding!</value>
   </data>
