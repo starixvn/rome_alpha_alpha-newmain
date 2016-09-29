@@ -9,6 +9,7 @@
     {
         private const string DefaultContentPropName = "ContentEn";
         private const int DefaultMaxContentLength = 100;
+        private const string Ellipsis = "...";
 
         private string currentLang = Language.English;
 
@@ -23,11 +24,11 @@
             get; private set;
         }
 
-        public string PostTime
+        public DateTime PostTime
         {
             get
             {
-                return this.CurrentMessage.PostTime.ToLongTimeString();
+                return this.CurrentMessage.PostTime;
             }
         }
 
@@ -61,7 +62,7 @@
             {
                 int length = Math.Min(DefaultMaxContentLength, Content.Length);
 
-                return Content.Substring(0, length);
+                return Content.Substring(0, length) + Ellipsis;
             }
         }
 

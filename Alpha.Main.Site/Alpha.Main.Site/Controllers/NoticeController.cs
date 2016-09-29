@@ -31,7 +31,7 @@
             var viewModel = mediator.Send(
                 new NoticeQuery(userSession, lastPostDate, totalMessage, false));
 
-            return PartialView("NoticeMessage", viewModel);
+            return PartialView("NoticeMessages", viewModel);
         }
 
         [HttpPost]

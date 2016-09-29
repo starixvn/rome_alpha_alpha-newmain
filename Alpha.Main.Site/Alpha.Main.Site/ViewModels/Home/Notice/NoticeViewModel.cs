@@ -9,7 +9,7 @@
     {
         public NoticeViewModel(IEnumerable<NoticeMessageWrapper> noticeMessages)
         {
-            this.NoticeMessages = noticeMessages;
+            this.NoticeMessages = noticeMessages.OrderByDescending(m => m.CurrentMessage.PostTime);
         }
 
         public IEnumerable<NoticeMessageWrapper> NoticeMessages { get; private set; }
