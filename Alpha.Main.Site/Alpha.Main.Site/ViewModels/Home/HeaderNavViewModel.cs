@@ -5,9 +5,15 @@
 
     public class HeaderNavViewModel
     {
-        public int CustId { get; set; }
+        public HeaderNavViewModel(int custId, bool enableSecurityCode)
+        {
+            this.CustId = custId;
+            this.EnableSecurityCode = enableSecurityCode;
+        }
 
-        public bool EnableSecurityCode { get; set; }
+        public int CustId { get; private set; }
+
+        public bool EnableSecurityCode { get; private set; }
 
         public string OldMainRootPath
         {

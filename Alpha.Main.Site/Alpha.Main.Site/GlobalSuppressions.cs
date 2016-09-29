@@ -4,6 +4,8 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1014:MarkAssembliesWithClsCompliant")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Scope = "namespace", Target = "Alpha.Main.Site.App_Start")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Handlers.DefaultHandler.#Handle(Alpha.Main.Site.Requests.BrowserQuery)")]
+
+#pragma warning disable 618, 612
 // This file is used by Code Analysis to maintain SuppressMessage 
 // attributes that are applied to this project.
 // Project-level suppressions either have no target or are given 

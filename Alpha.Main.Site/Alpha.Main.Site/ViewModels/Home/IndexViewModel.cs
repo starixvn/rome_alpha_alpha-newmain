@@ -90,7 +90,7 @@
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
+        [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
         public string DefaultUrl
         {
             get
@@ -168,11 +168,7 @@
         {
             get
             {
-                return new HeaderNavViewModel
-                {
-                    CustId = this.CustId,
-                    EnableSecurityCode = this.EnableSecurityCode
-                };
+                return new HeaderNavViewModel(this.CustId, this.EnableSecurityCode);
             }
         }
     }

@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
-    using Main.Models.Menus;
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Main.Models.Menus;
 
     public class MenuBarViewModel
     {

@@ -27,6 +27,7 @@
         }
 
         [HttpGet]
+        [ChildActionOnly]
         public ActionResult TopWinningMembers()
         {
             var viewModel = mediator.Send(new TopWinningMembersQuery(this.userSession));
@@ -35,6 +36,7 @@
         }
 
         [HttpGet]
+        [ChildActionOnly]
         public ActionResult TopTurnoverMembers()
         {
             var viewModel = mediator.Send(new TopTurnoverMembersQuery(this.userSession));
@@ -43,6 +45,7 @@
         }
 
         [HttpGet]
+        [ChildActionOnly]
         public ActionResult NewMembers()
         {
             var viewModel = mediator.Send(new NewMembersQuery(this.userSession.CustId));

@@ -8,7 +8,6 @@
     using System.Web;
     using System.Web.Configuration;
     using Configurations;
-    using Main.Helpers;
 
     public static class StaticResources
     {

@@ -1,5 +1,4 @@
 ﻿using Alpha.Main.Helpers;
-using Alpha.Main.Site.Helpers;
 
 namespace Alpha.Main.Site.ViewModels.CustomerProfile
 {

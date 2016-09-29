@@ -1,20 +1,17 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
-    using Constants;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using Constants;
 
     public class LanguageViewModel
     {
-        private Dictionary<string, string> data;
-        private string currentLanguage;
-
         public LanguageViewModel(Dictionary<string, string> data, string currentLanguage = Language.Default)
         {
-            this.data = data ?? Language.CodeNames;
-            this.currentLanguage = currentLanguage;
+            this.Data = data ?? Language.CodeNames;
+            this.CurrentLanguage = currentLanguage;
         }
 
         public LanguageViewModel() : this(null, string.Empty)
@@ -23,18 +20,14 @@
 
         public Dictionary<string, string> Data
         {
-            get
-            {
-                return this.data;
-            }
+            get;
+            private set;
         }
 
         public string CurrentLanguage
         {
-            get
-            {
-                return this.currentLanguage;
-            }
+            get;
+            private set;
         }
 
         /// <summary>
@@ -52,6 +45,7 @@
 
             var isEqual = !Data.Except(compareViewModel.Data).Any() &&
                 string.Equals(CurrentLanguage, compareViewModel.CurrentLanguage, StringComparison.Ordinal);
+
             return isEqual;
         }
 
