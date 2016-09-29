@@ -161,7 +161,7 @@
 
             if (result.ErrorCode.Equals(0))
             {
-                this.securityCodeSession.SecurityCode = message.SecurityCode;
+                this.SecurityCodeSession.SecurityCode = message.SecurityCode;
                 this.ResetToken();
             }
 
@@ -186,7 +186,7 @@
 
             if (result.ErrorCode.Equals(0))
             {
-                this.securityCodeSession.SecurityCode = message.SecurityCode;
+                this.SecurityCodeSession.SecurityCode = message.SecurityCode;
                 this.ResetToken();
             }
 
