@@ -40,16 +40,7 @@
         <main class="content" id="content" data-default-url="@Model.DefaultUrl">
         </main>
     </div>
-    @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
-    @Html.Hidden("onUserId", Model.OnUserId)
-    @Html.Hidden("mainRootPath", Model.MainRootPath)
-    @Html.Hidden("passwordHash", Model.PasswordHash)
-    @Html.Hidden("howToUseRootPath", Model.HowToUseRootPath)
-    @Html.Hidden("subPageAccess", Model.SubPageAccess)
-    @Html.Hidden("isInternalWebVPN", Model.IsInternalWebVPN)
-    @Html.Hidden("currentURLCookieName", Model.CurrentURLCookieName)
-    @Html.Hidden("userLevel", Model.UserLevel)
-    @Html.Hidden("isSubAccount", Model.IsSubAccount)
+    @Html.Partial("HiddenFields", Model)
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
     <!--[if (gt IE 8)|!(IE)]><!--><script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-introduction"))" type="text/javascript"></script><!--<![endif]-->

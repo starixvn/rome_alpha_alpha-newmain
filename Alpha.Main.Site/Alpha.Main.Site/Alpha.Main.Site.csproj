@@ -818,6 +818,7 @@
     <Content Include="Views\Default\Popup.cshtml" />
     <Content Include="Views\Default\SearchBar.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ja-JP.cshtml" />
+    <Content Include="Views\Default\HiddenFields.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ko-KR.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_th-TH.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
