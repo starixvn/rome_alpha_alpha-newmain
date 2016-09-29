@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
   <PopupAnnouncement id="53088001" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
-                     startdate="10/5/2016" enddate="10/19/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc"
+                     startdate="9/5/2016" enddate="10/19/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc"
                       width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
@@ -159,7 +159,7 @@
   </PopupAnnouncement>
 
   <PopupAnnouncement id="53088002" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 0"
-                     startdate="10/5/2016" enddate="10/19/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc"
+                     startdate="9/5/2016" enddate="10/19/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc"
                       width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
