@@ -12,13 +12,14 @@
         {
             this.userSession = userSession;
         }
-
         public byte UserLevelId
         {
             get
             {
                 return this.userSession.RoleId;
             }
+        }
+
         }
     }
 }

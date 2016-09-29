@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Web.SessionState;
-    using Main.Models.SecurityCode;
+    using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
@@ -10,7 +9,6 @@
     using Sessions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
-    using System.Web.Mvc;
 
     public class DefaultController : BaseController
     {
