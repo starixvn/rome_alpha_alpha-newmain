@@ -5,23 +5,15 @@
 
     public class TopTurnoverMembersViewModel
     {
-        private IEnumerable<TopTurnoverMember> members;
-
         public TopTurnoverMembersViewModel(IEnumerable<TopTurnoverMember> members)
         {
-            this.members = members;
+            Members = members;
         }
 
         public TopTurnoverMembersViewModel() : this(null)
         {
         }
 
-        public IEnumerable<TopTurnoverMember> Members
-        {
-            get
-            {
-                return this.members;
-            }
-        }
+        public IEnumerable<TopTurnoverMember> Members { get; private set; }
     }
 }

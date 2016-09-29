@@ -180,6 +180,7 @@
       <DependentUpon>Security.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
+    <Compile Include="Constants\DateTimeDefault.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
@@ -188,6 +189,8 @@
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\Notice\GetNoticeMessagesCriteria.cs" />
+    <Compile Include="Criteria\Notice\MarkMessageAsReadCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetNewMembersCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetStatisticsCriteria.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteria.cs" />
@@ -226,6 +229,7 @@
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\Notice\NoticeMessage.cs" />
     <Compile Include="Models\Statistics\NewMember.cs" />
     <Compile Include="Models\Statistics\Statistics.cs" />
     <Compile Include="Models\Menus\IMenuItem.cs" />
@@ -252,6 +256,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Services\AnnouncementService.cs" />
+    <Compile Include="Services\Impl\NoticeServiceImpl.cs" />
+    <Compile Include="Services\NoticeService.cs" />
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
     <Compile Include="Services\StatisticsService.cs" />

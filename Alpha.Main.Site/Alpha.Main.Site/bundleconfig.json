@@ -15,7 +15,8 @@
   {
     "outputFileName": "Assets/bundles/home-index.js",
     "inputFiles": [
-      "Assets/scripts/home/home-index.js"
+      "Assets/scripts/home/home-index.js",
+      "Assets/scripts/home/notice-message.js"
     ]
   },
   {

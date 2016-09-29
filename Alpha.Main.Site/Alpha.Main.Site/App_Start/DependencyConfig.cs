@@ -103,6 +103,7 @@ namespace Alpha.Main.Site.App_Start
             container.Register<BalanceInfoService, BalanceInfoServiceImpl>(Lifestyle.Transient);
             container.Register<StatisticsService, StatisticsServiceImpl>(Lifestyle.Transient);
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
+            container.Register<NoticeService, NoticeServiceImpl>(Lifestyle.Transient);
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
         }
 

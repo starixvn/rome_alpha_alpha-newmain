@@ -17,7 +17,7 @@
     <RootNamespace>Alpha.Main.Site</RootNamespace>
     <AssemblyName>Alpha.Main.Site</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -193,6 +193,18 @@
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.Interception">
       <HintPath>..\packages\EnterpriseLibrary.Logging.5.0.414.0\lib\net40\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.5.0.414.0\lib\net40\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\EnterpriseLibrary.Unity.5.0.414.0\lib\net40\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\EnterpriseLibrary.Unity.5.0.414.0\lib\net40\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\packages\EnterpriseLibrary.Unity.5.0.414.0\lib\net40\Microsoft.Practices.Unity.Interception.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -441,7 +453,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml" />
-    <Content Include="App_Data\SPNames\LOCAL\DBMSG.bodb_Message.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBMSG.bodb_Message.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb02.xml" />
@@ -528,6 +542,7 @@
     <Content Include="Assets\styles\otp\otp.css" />
     <Content Include="Assets\styles\otp\otp.min.css" />
     <TypeScriptCompile Include="Assets\scripts\home\home-index.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\notice-message.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.js">
@@ -820,6 +835,7 @@
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ja-JP.cshtml" />
     <Content Include="Views\Default\HiddenFields.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ko-KR.cshtml" />
+    <Content Include="Views\Notice\_NoticeMessage.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_th-TH.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-CN.cshtml" />
@@ -869,6 +885,7 @@
     <Compile Include="Filters\CheckBelongingFilter.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandler.cs" />
+    <Compile Include="Handlers\NoticeHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
     <Compile Include="Handlers\StatisticsHandler.cs" />
@@ -889,6 +906,8 @@
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\BalanceInfo\BalanceInfoQuery.cs" />
+    <Compile Include="Requests\Notice\NoticeQuery.cs" />
+    <Compile Include="Requests\Notice\MarkMessageAsReadQuery.cs" />
     <Compile Include="Requests\Statistics\NewMembersQuery.cs" />
     <Compile Include="Requests\Statistics\TopTurnoverMembersQuery.cs" />
     <Compile Include="Requests\Statistics\TopWinningMembersQuery.cs" />
@@ -915,6 +934,8 @@
     <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\BalanceInfo\BalanceInfoViewModel.cs" />
+    <Compile Include="ViewModels\Home\Notice\NoticeMessageWrapper.cs" />
+    <Compile Include="ViewModels\Home\Notice\NoticeViewModel.cs" />
     <Compile Include="ViewModels\Home\Statistics\NewMembersViewModel.cs" />
     <Compile Include="ViewModels\Home\Statistics\TopTurnoverMembersViewModel.cs" />
     <Compile Include="ViewModels\Home\Statistics\TopWinningMembersViewModel.cs" />

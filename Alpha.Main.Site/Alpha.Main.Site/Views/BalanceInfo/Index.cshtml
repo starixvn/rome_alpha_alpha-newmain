@@ -8,7 +8,7 @@
 @helper TextRow(string label, string text)
 {
     <div class="row">
-        <div class="col-xs-7 label">@label</div>
+        <div class="col-xs-7">@label</div>
         <div class="col-xs-5 value"><strong>@text</strong></div>
     </div>
 }
@@ -16,7 +16,7 @@
 @helper NumericRow(string label, decimal value)
 {
     <div class="row">
-        <div class="col-xs-7 label">@label</div>
+        <div class="col-xs-7">@label</div>
         <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
             <strong>@value.ToString("#,##0.00")</strong>
         </div>
@@ -24,8 +24,8 @@
 }
 
 <div class="container">
-    <div class="panel-title"><span class="icon-balanceinfo"></span>@Resources.balanceInfo</div>   
-    @TextRow(label:Model.UserLevelLabel, text: balanceInfo.UserName)
+    <div class="panel-title"><span class="icon-balanceinfo"></span>@Resources.balanceInfo</div>
+    @TextRow(label: Model.UserLevelLabel, text: balanceInfo.UserName)
     @TextRow(Resources.currency, Model.Currency)
 
     <div class="group-title">@Resources.balance</div>
