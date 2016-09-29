@@ -10,6 +10,7 @@
     using Sessions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
+    using System.Web.Mvc;
 
     public class DefaultController : BaseController
     {
@@ -36,22 +37,21 @@
                 return View("UnsupportedBrowsers", browser);
             }
 
-            if (!this.userSession.IsLogged
-                || this.userSession.IsPasswordExpired)
-            {
-                return Redirect("~/Password/ForceChangePassword");
-            }
+                if (!this.userSession.IsLogged
+                    || this.userSession.IsPasswordExpired)
+                {
+                    return Redirect("~/Password/ForceChangePassword");
+                }
 
-            if (SecurityCodeChecker.IsForcedChangeSecurityCode())
-            {
-                return Redirect("~/SecurityCode/CheckLoginSecurityCode");
-            }
-            
-var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
+                if (SecurityCodeChecker.IsForcedChangeSecurityCode())
+                {
+                    return Redirect("~/SecurityCode/CheckLoginSecurityCode");
+                }
 
+                var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
 
                 var viewModel = mediator.Send(query);
-            
+
             return View(viewModel);
         }
 
