@@ -14,6 +14,7 @@
     using Main.Helpers.Impl;
     using Main.Models.Menus;
     using MediatR;
+    using SecurityCode.Services;
     using Services;
     using Services.Impl;
     using Sessions;
@@ -92,7 +93,7 @@
                         return CookieLessSessionFactory.SecurityCodeSession;
                     }
 
-                    return new SecurityCodeSession(string.Empty);
+                    return new SecurityCodeSession(string.Empty, null);
                 },
                 Lifestyle.Transient);
 
@@ -111,6 +112,7 @@
             container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
             container.Register<Encryptor, EncryptorImpl>(Lifestyle.Transient);
             container.Register<CasinoService, CasinoServiceImpl>(Lifestyle.Transient);
+            container.Register<SecurityCodeChecker, SecurityCodeCheckerImpl>(Lifestyle.Transient);
         }
 
         private static void RegisterDataAccesses(Container container)

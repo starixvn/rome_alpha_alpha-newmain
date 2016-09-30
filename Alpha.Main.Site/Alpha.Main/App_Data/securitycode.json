@@ -1,11 +1,12 @@
 {
-  "isActive": true,
+  "isActive": false,
   "siteMainApp": "/site-main",
-  "urls": [
+  "paths": [
+    "relative-path"
   ],
   "sites": [
+    "site-name"
   ],
-  "resetSecurityCodeUrl": "SecurityCode/ResetSecurityCode",
-  "verifyingSecurityCodeUrl": "SecurityCode/VerifySecurityCode",
-  "changeSecurityCodeUrl": "SecurityCode/ChangeUserOwnSecurityCode"
+  "verifyingSecurityCodePath": "SecurityCode/VerifySecurityCode",
+  "resetSecurityCodePath": "SecurityCode/resetSecurityCodePath"
 }

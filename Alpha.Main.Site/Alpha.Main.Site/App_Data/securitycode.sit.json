@@ -1,7 +1,7 @@
 {
   "isActive": true,
   "siteMainApp": "/site-main",
-  "urls": [
+  "paths": [
     "SecurityCode/ResetSecurityCode",
     "SecurityCode/ChangeUserOwnSecurityCode",
     "Password/ChangePassword",
@@ -10,6 +10,6 @@
   ],
   "sites": [
   ],
-  "verifyingSecurityCodeUrl": "SecurityCode/VerifySecurityCode",
-  "changeSecurityCodeUrl": "SecurityCode/ChangeSecurityCode"
+  "verifyingSecurityCodePath": "SecurityCode/VerifySecurityCode",
+  "resetSecurityCodePath": "SecurityCode/ChangeSecurityCode"
 }

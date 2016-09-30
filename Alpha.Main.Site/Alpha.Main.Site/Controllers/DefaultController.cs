@@ -15,15 +15,18 @@
         private readonly IUserSession userSession;
         private readonly ISecurityCodeSession securityCodeSession;
         private readonly IMediator mediator;
+        private readonly SecurityCodeChecker securityCodeChecker;
 
         public DefaultController(
             IUserSession userSession,
             ISecurityCodeSession securityCodeSession,
-            IMediator mediator)
+            IMediator mediator,
+            SecurityCodeChecker securityCodeChecker)
         {
             this.userSession = userSession;
             this.securityCodeSession = securityCodeSession;
             this.mediator = mediator;
+            this.securityCodeChecker = securityCodeChecker;
         }
 
         public ActionResult Index()
@@ -41,7 +44,7 @@
                     return Redirect("~/Password/ForceChangePassword");
                 }
 
-                if (SecurityCodeChecker.IsForcedChangeSecurityCode())
+                if (this.securityCodeChecker.IsForcedChangeSecurityCode())
                 {
                     return Redirect("~/SecurityCode/CheckLoginSecurityCode");
                 }

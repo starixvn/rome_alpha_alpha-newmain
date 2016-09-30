@@ -11,7 +11,7 @@
         {
             get
             {
-                return new SecurityCodeSession(HttpContext.Current.Session.SessionID);
+                return new SecurityCodeSession(HttpContext.Current.Session.SessionID, null);
             }
         }
     }

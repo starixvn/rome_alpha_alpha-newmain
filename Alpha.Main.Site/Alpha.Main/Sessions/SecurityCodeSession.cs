@@ -25,14 +25,16 @@
         private const string SECURITYCODERESULT = "SECURITYCODERESULT";
 
         private string _netSessionId;
+        private SecurityCodeChecker securityCodeChecker;
 
-        public SecurityCodeSession() : this(null)
+        public SecurityCodeSession() : this(null, null)
         {
         }
 
-        public SecurityCodeSession(string netSessionId)
+        public SecurityCodeSession(string netSessionId, SecurityCodeChecker securityCodeChecker)
         {
             this._netSessionId = netSessionId ?? new UserSessionExt().NetSessionId;
+            this.securityCodeChecker = securityCodeChecker ?? new SecurityCodeCheckerImpl();
         }
 
         #region ISecurityCodeSession Members
@@ -139,7 +141,7 @@
         {
             get
             {
-                if (!SecurityCodeChecker.IsEnableSecurityCode())
+                if (!this.securityCodeChecker.IsEnableSecurityCode())
                 {
                     return (int)SecurityCodeStatus.NONE;
                 }
