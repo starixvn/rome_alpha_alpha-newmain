@@ -49,7 +49,7 @@
             }
         }
 
-        public DateTime LastPostTime { get; private set; } = DateTime.Now;
+        public DateTime LastPostTime { get; private set; } = DateTime.Today;
 
         public int TotalMessage { get; private set; } = 10;
 

@@ -22,7 +22,7 @@
             bool isRead)
         {
             Id = id;
-            ContentEn = contentCh;
+            ContentEn = contentEn;
             ContentCs = contentCs;
             ContentCh = contentCh;
             ContentJp = contentJp;

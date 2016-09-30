@@ -59,6 +59,8 @@
         public void HandleIndexQuery_NotNullCommand_ReturnPasswordHashStoredInSession()
         {
             // Arrange
+            userSession.IsLogged.Returns(false);
+            userSession.IsPasswordExpired.Returns(true);
             userSession.SubPageAccess.Returns(new PageAccess());
 
             var query = new IndexQuery(userSession, false);
