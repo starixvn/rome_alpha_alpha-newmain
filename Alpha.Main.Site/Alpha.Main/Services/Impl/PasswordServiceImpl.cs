@@ -216,7 +216,7 @@
                 return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
             }
 
-            if (!IsMatchedRules(newPassword, isResetPassword))
+            if (!IsMatchedRules(newPassword, isResetMemberPassword))
             {
                 return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordRequire };
             }
