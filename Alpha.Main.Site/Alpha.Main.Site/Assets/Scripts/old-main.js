@@ -45,79 +45,6 @@ function setCookie(name, value, days, domain) {
 }
 
 window.age = window.age || {
-    calculateWidthHeight: function (width, height, position) {
-        var realHeight = height;
-        var maxWidth = window.top.window.innerWidth;
-
-        var minHeight = 250;
-        var maxHeight = window.top.window.innerHeight - (position ? position.top : 0) - 60;
-        maxHeight = maxHeight < minHeight ? minHeight : maxHeight;
-
-        width = width > maxWidth ? maxWidth : width;
-        realHeight = realHeight > maxHeight ? maxHeight : realHeight;
-        realHeight = realHeight < minHeight ? minHeight : realHeight;
-
-        return {
-            width: width,
-            height: realHeight
-        };
-    },
-    OpenPopUp: function (url, title, width, height, position) {
-        var widthHeight = window.age.calculateWidthHeight(width, height, position);
-        width = widthHeight.width;
-        height = widthHeight.height;
-
-        title = title || '';
-        var popH = height || 360;
-        var popW = width || 480;
-        var left = position ? position.left : 200;
-        var top = position ? position.top : 200;
-
-        var popUp = $("#page-popup");
-        var popupTop = top + oldMainUltilities.getScrollTop(window.document.body);
-        popUp.css({
-            width: popW,
-            height: popH,
-            left: left,
-            top: popupTop
-        });
-
-        popUp.removeClass("hidden");
-        popUp.find(".popup-title").html(title);
-        popUp.find(".ex-modal").css("height", popH + "px");
-        popUp.find(".modal-content .modal-body").css('padding', '8px 14px');
-        popUp.find(".modal-content .modal-body").css('overflow-y', 'hidden');
-        popUp.find(".modal-content .modal-body").css('overflow-x', 'auto');
-
-        var headerHeight = 40;
-        var contentBorder = 2;
-        popUp.find(".modal-content .modal-body").css("height", (popH - headerHeight - contentBorder) + "px");
-
-        var iframe = popUp.find("#popup-iframe");
-
-        var padding = 15 * 2;
-        var verticalPadding = 8 * 2;
-        iframe.css({
-            width: popW - padding,
-            height: popH - headerHeight - contentBorder - verticalPadding,
-            left: left,
-            top: top,
-            overflow: 'auto'
-        });
-        iframe.attr("src", url);
-        popUp.modal({ show: true, backdrop: false });
-        popUp.find(".icon-close").unbind("click").click(function () {
-            popUp.addClass("hidden");
-        });
-
-        iframe.load(function () {
-            age.updatePopupTitleAfterLoad(popUp, iframe);
-        });
-    },
-    ClosePopUp: function () {
-        var popUp = $("#page-popup");
-        popUp.addClass("hidden");
-    },
     Lock: function (withIcon) {
         age.ShowMaskDiv();
         age.locked = true;
@@ -273,7 +200,7 @@ var AgeWnd = function () {
 
             // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
             var scrollTop = oldMainUltilities.getScrollTop(window.document.body);
-            var scrollLeft = oldMainUltilities.getScrollLeft(window) || 0;
+            var scrollLeft = oldMainUltilities.getScrollLeft(window.document.body);
 
             // ON iOS: there is scroll issues with popup. We must show popup with auto height
             var isAutoHeight = oldMainUltilities.isiOS();
@@ -281,7 +208,7 @@ var AgeWnd = function () {
             var popupCss = {
                 width: popW,
                 height: isAutoHeight ? 'auto' : popH,
-                left: left,
+                left: left + scrollLeft,
                 top: popUpTop + scrollTop
             };
 
@@ -692,22 +619,9 @@ var oldMainUltilities = {
 
         return { top: _y, left: _x };
     },
-    getScrollLeft: function (documentContext) {
-        var isIE = oldMainUltilities.isIE();
-        if (isIE && typeof (documentContext.pageXOffset) == 'number') {
-            return documentContext.pageXOffset;
-        }
+    getScrollLeft: function (element) {
+        return element.pageXOffset || element.scrollX || element.scrollLeft || 0;
 
-        if (documentContext.body && (documentContext.body.scrollLeft || documentContext.body.scrollTop)) {
-            return documentContext.body.scrollLeft;
-        }
-
-        if (documentContext.documentElement &&
-            (documentContext.documentElement.scrollLeft || documentContext.documentElement.scrollTop)) {
-            return documentContext.documentElement.scrollLeft;
-        }
-
-        return 0;
     },
     getScrollTop: function (element) {
         return element.pageYOffset || element.scrollY || element.scrollTop || 0;
@@ -913,7 +827,7 @@ var popupManager = {
 
     get topPosition() {
         // top-left main frame
-        return 90 + top.popupManager.positionPadding
+        return 90 + top.popupManager.positionPadding;
     },
 
     // Choose most suitable screen resolution 1920 X 1080
@@ -935,8 +849,8 @@ var popupManager = {
         window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top);
     },
     openWithHanlder: function (handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
-        left = left || document.body.scrollLeft + window.top.popupManager.leftPosition;
-        top = top || document.body.scrollTop + window.top.popupManager.topPosition;
+        left = left || window.top.popupManager.leftPosition;
+        top = top || window.top.popupManager.topPosition;
 
         width = width || window.top.popupManager.defaultWidth;
         height = height || window.top.popupManager.defaultHeight;
