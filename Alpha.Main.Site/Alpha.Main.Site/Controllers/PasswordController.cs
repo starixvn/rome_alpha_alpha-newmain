@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Filter;
     using MediatR;
     using Requests.Password;
 
@@ -40,28 +41,28 @@
             return View(viewModel);
         }
 
-        [HttpPost]
+        [HttpPost, AntiXSRFFilter]
         public ActionResult ChangePassword(ChangePasswordCommand command)
         {
             var result = this.mediator.Send(command);
             return Json(result);
         }
 
-        [HttpPost]
+        [HttpPost, AntiXSRFFilter]
         public ActionResult ForceChangePassword(ChangePasswordCommand command)
         {
             var result = this.mediator.Send(command);
             return Json(result);
         }
 
-        [HttpPost]
+        [HttpPost, AntiXSRFFilter]
         public ActionResult ResetMainAccountPassword(ResetMainAccountPasswordCommand command)
         {
             var result = this.mediator.Send(command);
             return Json(result);
         }
 
-        [HttpPost]
+        [HttpPost, AntiXSRFFilter]
         public ActionResult ResetSubAccountPassword(ResetSubAccountPasswordCommand command)
         {
             var result = this.mediator.Send(command);

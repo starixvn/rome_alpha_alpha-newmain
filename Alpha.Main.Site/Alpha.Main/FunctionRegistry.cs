@@ -71,16 +71,6 @@
                 })
         };
 
-        private static Func<bool> showMenuBar = () =>
-        {
-            if (!Current.IsLogged || Current.IsPasswordExpired)
-            {
-                return false;
-            }
-
-            return true;
-        };
-
         private static Func<bool> showAccountInfo = () =>
         {
             return Current.SubPageAccess.ViewMemberInfo;
@@ -124,22 +114,6 @@
 
             return _defaultMainPage;
         };
-
-        public static Func<bool> ShowMenuBar
-        {
-            get
-            {
-                return showMenuBar;
-            }
-        }
-
-        public static Func<bool> ShowIntroduction
-        {
-            get
-            {
-                return showMenuBar;
-            }
-        }
 
         public static Func<bool> ShowAccountInfo
         {

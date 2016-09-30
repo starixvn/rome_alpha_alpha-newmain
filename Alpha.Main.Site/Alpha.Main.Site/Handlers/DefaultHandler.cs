@@ -35,7 +35,7 @@
 
         public IndexViewModel Handle(IndexQuery message)
         {
-            var viewModel = new IndexViewModel(message, FunctionRegistry.GetDefaultUrl, FunctionRegistry.ShowIntroduction);
+            var viewModel = new IndexViewModel(message, FunctionRegistry.GetDefaultUrl);
 
             this.sessionManager.Add<string>(PasswordHashSessionKey, viewModel.PasswordHash);
 
