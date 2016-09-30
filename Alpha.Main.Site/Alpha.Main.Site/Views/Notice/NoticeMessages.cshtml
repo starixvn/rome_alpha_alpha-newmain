@@ -26,10 +26,10 @@
                 <div id="@message.CurrentMessage.Id"
                      class="msg pointer @message.Type @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
                     <div class="time"><span class="icon icon-plus"></span>@message.PostTime.ToLongTimeString()</div>
-                    <div class="short-content">
+                    <div class="content short-content">
                         @message.ShortContent
                     </div>
-                    <div class="full-content collapse">
+                    <div class="content full-content collapse">
                         @message.Content
                     </div>
                 </div>

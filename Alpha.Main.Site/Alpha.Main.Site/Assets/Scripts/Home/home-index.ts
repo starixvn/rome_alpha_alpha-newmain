@@ -2,7 +2,7 @@
 
 class HomeIndex {
     constructor() {
-        this.loadInfo('#stats', () => { });
+        this.loadInfo('#stats', () => { $('[data-toggle="tooltip"]').tooltip({ html: true }); });
         this.loadInfo('#notice', this.onCompleteLoadNotice);
     };
 
@@ -26,7 +26,3 @@ class HomeIndex {
 $(document).ready(function () {
     new HomeIndex();
 });
-
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-})
