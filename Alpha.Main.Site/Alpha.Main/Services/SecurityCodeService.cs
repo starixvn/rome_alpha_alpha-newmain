@@ -11,14 +11,16 @@
 
         string GetSubAccountHashSecurityCode(int custId, int subAccountId);
 
-        Result UpdateMainAccountHashSecurityCodeCounter(SecurityCodeParams securityCodeParams);
-
-        Result UpdateSubAccountHashSecurityCodeCounter(SecurityCodeParams securityCodeParams);
-
         Result UpdateMainAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
 
         Result UpdateSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
 
         Result ResetSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
+
+        string MD5Salt(int custId);
+
+        bool ValidateSecurityCode(string securityCode);
+
+        Result CompareHashSecurityCodeBetweenWebAndDB(int custId, int subAccId, bool isSubAcc, string securityCodeToken, string language, string webHashSecurityCode);
     }
 }

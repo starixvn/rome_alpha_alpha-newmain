@@ -819,8 +819,7 @@
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\PasswordHandler.cs" />
-    <Compile Include="Handlers\SecurityCode\SecurityCodeBaseHandler.cs" />
-    <Compile Include="Handlers\SecurityCode\SecurityCodeHandler.cs" />
+    <Compile Include="Handlers\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\BrowserHelper.cs" />
     <Compile Include="Helpers\StaticResources.cs" />

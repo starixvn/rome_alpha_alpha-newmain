@@ -4,16 +4,17 @@
     using AppResources;
     using Fanex.Security;
     using Main.Models.CustomerProfiles;
+    using Main.Models.Enumerations;
     using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
+    using Params.SecurityCode;
     using Services;
     using Sessions;
     using Sunplus.Agent.Utilities;
     using ViewModels.Security;
 
-    public class SecurityCodeHandler : SecurityCodeBaseHandler,
-         IRequestHandler<LoginSecurityCodeQuery, LoginSecurityCodeViewModel>,
+    public class SecurityCodeHandler : IRequestHandler<LoginSecurityCodeQuery, LoginSecurityCodeViewModel>,
          IRequestHandler<BaseSecurityCodeQuery, BaseSecurityCodeViewModel>,
          IRequestHandler<ChangeSecurityCodeFirstLoginCommand, Result>,
          IRequestHandler<ChangeSecurityCodeByForcingCommand, Result>,
@@ -25,17 +26,21 @@
         private readonly CustomerProfileService customerProfileService;
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
+        private readonly SecurityCodeService securityCodeService;
+        protected readonly ISecurityCodeSession SecurityCodeSession;
 
         public SecurityCodeHandler(
           SecurityCodeService securityCodeService,
           CustomerProfileService customerProfileService,
           SessionManager sessionManager,
           Encryptor encryptor,
-          ISecurityCodeSession securityCodeSession = null) : base(securityCodeService, securityCodeSession)
+          ISecurityCodeSession securityCodeSession = null)
         {
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
             this.customerProfileService = customerProfileService;
+            this.securityCodeService = securityCodeService;
+            this.SecurityCodeSession = securityCodeSession;
         }
 
         private string HashKey
@@ -81,8 +86,8 @@
             this.SecurityCodeSession.SecurityCodeToken = securityCodeToken;
 
             var securitySalt = this.SecurityCodeSession.SubAccId > 0
-                ? this.MD5Salt(this.SecurityCodeSession.SubAccId)
-                : this.MD5Salt(this.SecurityCodeSession.CustId);
+                ? this.securityCodeService.MD5Salt(this.SecurityCodeSession.SubAccId)
+                : this.securityCodeService.MD5Salt(this.SecurityCodeSession.CustId);
 
             var model = new BaseSecurityCodeViewModel
             {
@@ -108,8 +113,8 @@
             this.SecurityCodeSession.SecurityCodeToken = securityCodeToken;
 
             var securitySalt = this.SecurityCodeSession.SubAccId > 0
-                ? this.MD5Salt(this.SecurityCodeSession.SubAccId)
-                : this.MD5Salt(this.SecurityCodeSession.CustId);
+                ? this.securityCodeService.MD5Salt(this.SecurityCodeSession.SubAccId)
+                : this.securityCodeService.MD5Salt(this.SecurityCodeSession.CustId);
 
             return new LoginSecurityCodeViewModel
             {
@@ -145,7 +150,7 @@
             {
                 errorMessage = Security.alertSecCodeEmpty;
             }
-            else if (!this.ValidateSecurityCode(message.SecurityCode))
+            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
             {
                 errorMessage = Security.lblSecCodeWrongRule;
             }
@@ -159,7 +164,22 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return this.ChangeSecurityCodeFirstLogin(message);
+            Result result = this.UpdateSecurityCode(new SecurityCodeParams
+            {
+                CustId = message.CustId,
+                SubAccId = message.SubAccId,
+                UserId = message.UserId,
+                SecurityCode = message.SecurityCode,
+                Language = message.Language
+            });
+
+            if (result.ErrorCode.Equals(0))
+            {
+                this.SecurityCodeSession.SecurityCode = message.SecurityCode;
+                this.ResetToken();
+            }
+
+            return result;
         }
 
         public Result Handle(ChangeSecurityCodeByForcingCommand message)
@@ -186,7 +206,7 @@
             {
                 errorMessage = Security.alertSecCodeEmpty;
             }
-            else if (!this.ValidateSecurityCode(message.SecurityCode))
+            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
             {
                 errorMessage = Security.lblSecCodeWrongRule;
             }
@@ -200,7 +220,33 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return this.ChangeSecurityCodeByForcing(message);
+            Result result = this.securityCodeService.CompareHashSecurityCodeBetweenWebAndDB(
+               this.SecurityCodeSession.CustId,
+               this.SecurityCodeSession.SubAccId,
+               message.IsSubAcc,
+               this.SecurityCodeSession.SecurityCodeToken,
+               this.SecurityCodeSession.Language,
+               message.OldSecurityCode);
+
+            if (result.ErrorCode.Equals(0))
+            {
+                result = this.UpdateSecurityCode(new SecurityCodeParams
+                {
+                    CustId = message.CustId,
+                    SubAccId = message.SubAccId,
+                    UserId = message.UserId,
+                    SecurityCode = message.SecurityCode,
+                    Language = message.Language
+                });
+            }
+
+            if (result.ErrorCode.Equals(0))
+            {
+                this.SecurityCodeSession.SecurityCode = message.SecurityCode;
+                this.ResetToken();
+            }
+
+            return result;
         }
 
         public Result Handle(ChangeUserOwnSecurityCodeCommand message)
@@ -227,7 +273,7 @@
             {
                 errorMessage = Security.alertSecCodeEmpty;
             }
-            else if (!this.ValidateSecurityCode(message.SecurityCode))
+            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
             {
                 errorMessage = Security.lblSecCodeWrongRule;
             }
@@ -241,7 +287,32 @@
                 return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
             }
 
-            return this.ChangeUserOwnSecurityCode(message);
+            Result result = this.securityCodeService.CompareHashSecurityCodeBetweenWebAndDB(
+               this.SecurityCodeSession.CustId,
+               this.SecurityCodeSession.SubAccId,
+               message.IsSubAcc,
+               this.SecurityCodeSession.SecurityCodeToken,
+               this.SecurityCodeSession.Language,
+               message.OldSecurityCode);
+
+            if (result.ErrorCode.Equals(0))
+            {
+                result = this.UpdateSecurityCode(new SecurityCodeParams
+                {
+                    CustId = message.CustId,
+                    SubAccId = message.SubAccId,
+                    UserId = message.UserId,
+                    SecurityCode = message.SecurityCode,
+                    Language = message.Language
+                });
+            }
+
+            if (result.ErrorCode.Equals(0))
+            {
+                this.ResetToken();
+            }
+
+            return result;
         }
 
         public Result Handle(ResetSecurityCodeCommand message)
@@ -266,7 +337,7 @@
             {
                 errorMessage = Security.alertSecCodeEmpty;
             }
-            else if (!this.ValidateSecurityCode(message.SecurityCode))
+            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
             {
                 errorMessage = Security.lblSecCodeWrongRule;
             }
@@ -310,7 +381,82 @@
                 return new Result { ErrorCode = -1, ErrorMessage = Security.informSecCode };
             }
 
-            return this.VerifySecurityCode(message);
+            Result result = this.securityCodeService.CompareHashSecurityCodeBetweenWebAndDB(
+                message.CustId,
+                message.SubAccId,
+                message.IsSubAcc,
+                this.SecurityCodeSession.SecurityCodeToken,
+                this.SecurityCodeSession.Language,
+                message.SecurityCode);
+
+            if (result.ErrorCode == 0)
+            {
+                this.ResetToken();
+            }
+
+            return result;
+        }
+
+        private void ResetToken()
+        {
+            this.SecurityCodeSession.SecurityCodeToken = string.Empty;
+            this.SecurityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS;
+            this.SecurityCodeSession.IsForcedSecurityCode = false;
+            Alpha.SecurityCode.Web.SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode = true;
+        }
+
+        private Result UpdateSecurityCode(SecurityCodeParams securityCodeParams)
+        {
+            Result result = securityCodeParams.SubAccId.Equals(0) ?
+                this.securityCodeService.UpdateMainAccountHashSecurityCode(securityCodeParams) : this.securityCodeService.UpdateSubAccountHashSecurityCode(securityCodeParams);
+
+            if (result != null && result.ErrorCode == 0)
+            {
+                result.ErrorMessage = Security.alertSecCodeChangedOK;
+            }
+
+            return result;
+        }
+
+        private Result ResetDownlineSecurityCode(ResetSecurityCodeCommand securityCodeParams)
+        {
+            var isResetMember = this.SecurityCodeSession.UserLevel.Equals(UserLevel.Agent);
+
+            Result result = this.securityCodeService.UpdateMainAccountHashSecurityCode(new SecurityCodeParams
+            {
+                CustId = securityCodeParams.CustId.Value,
+                UserId = this.SecurityCodeSession.UserId,
+                SubAccId = this.SecurityCodeSession.SubAccId,
+                IsResetMember = isResetMember,
+                SecurityCode = securityCodeParams.SecurityCode,
+                Language = securityCodeParams.Language,
+            });
+
+            if (result.ErrorCode == 0)
+            {
+                result.ErrorMessage = Security.alertSecCodeChangedOK;
+            }
+
+            return result;
+        }
+
+        private Result ResetSubAccountSecurityCode(ResetSecurityCodeCommand securityCodeParams)
+        {
+            Result result = this.securityCodeService.ResetSubAccountHashSecurityCode(new SecurityCodeParams
+            {
+                CustId = this.SecurityCodeSession.CustId,
+                UserId = this.SecurityCodeSession.UserId,
+                SubAccId = securityCodeParams.SubAccId.Value,
+                HashSecurityCode = securityCodeParams.SecurityCode,
+                Language = securityCodeParams.Language
+            });
+
+            if (result.ErrorCode == 0)
+            {
+                result.ErrorMessage = Security.alertSecCodeChangedOK;
+            }
+
+            return result;
         }
 
         private string GenerateImage(ProfilePicture profilePicture)

@@ -41,6 +41,14 @@
             }
         }
 
+        public bool IsSubAcc
+        {
+            get
+            {
+                return this.securityCodeSession.SubAccId.Equals(0);
+            }
+        }
+
         public string ConfirmSecurityCode { get; set; }
 
         public string SecurityCode { get; set; }

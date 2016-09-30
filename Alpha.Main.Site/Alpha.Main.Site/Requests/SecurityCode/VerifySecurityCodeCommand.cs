@@ -52,5 +52,13 @@
                 return this.securityCodeSession.SubAccId;
             }
         }
+
+        public bool IsSubAcc
+        {
+            get
+            {
+                return this.securityCodeSession.SubAccId.Equals(0);
+            }
+        }
     }
 }

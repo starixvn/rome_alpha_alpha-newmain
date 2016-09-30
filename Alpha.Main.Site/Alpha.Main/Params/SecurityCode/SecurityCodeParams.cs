@@ -4,13 +4,15 @@
     {
         public int CustId { get; set; }
 
-        public int SubAccountId { get; set; }
+        public int SubAccId { get; set; }
 
         public int UserId { get; set; }
 
         public bool IsValidSecurityCode { get; set; }
 
         public string SecurityCode { get; set; }
+
+        public bool IsResetMember { get; set; }
 
         public string HashSecurityCode { get; set; }
 
