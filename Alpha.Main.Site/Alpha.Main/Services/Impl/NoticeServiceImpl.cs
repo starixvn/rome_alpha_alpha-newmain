@@ -45,14 +45,12 @@
                 MessageIds = messageIds
             };
 
-            try
-            {
-                dynamicRepository.Execute(criteria);
-            }
-            catch
+            if (!criteria.IsValid())
             {
                 return false;
             }
+
+            dynamicRepository.Execute(criteria);
 
             return true;
         }
