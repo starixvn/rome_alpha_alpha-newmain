@@ -64,7 +64,7 @@
       <!--/Bingo-PositionTaking-->
       <siteMapNode resourceKey="memberCommission" appPath="OldMainAppPath" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
       <siteMapNode resourceKey="MemberWinLimit" appPath="OldMainAppPath" url="MemberInformation/WinLimit/Index"></siteMapNode>
-      <siteMapNode resourceKey="BetChoiceLimit" menuItemType="BetChoiceLimitMenuItem" appPath="OldMainAppPath" url="MemberInformation/BetChoiceLimit/Index" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="BetChoiceLimit" menuItemType="BetChoiceLimitMenuItem" appPath="OldMainAppPath" url="MemberInformation/BetChoiceLimit/Index"></siteMapNode>
     </siteMapNode>
     <!--/MemberInfo-->
     <!--New Totalbets Forecast-->
