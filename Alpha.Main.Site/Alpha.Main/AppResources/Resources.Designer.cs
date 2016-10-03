@@ -440,7 +440,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Master given.
+        ///   Looks up a localized string similar to Master Given.
         /// </summary>
         public static string masterGivenCredit {
             get {
@@ -749,7 +749,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Super given.
+        ///   Looks up a localized string similar to Super Given.
         /// </summary>
         public static string superGivenCredit {
             get {

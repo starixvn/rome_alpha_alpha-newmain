@@ -197,10 +197,10 @@
     <value>Agent Given</value>
   </data>
   <data name="masterGivenCredit" xml:space="preserve">
-    <value>Master given</value>
+    <value>Master Given</value>
   </data>
   <data name="superGivenCredit" xml:space="preserve">
-    <value>Super given</value>
+    <value>Super Given</value>
   </data>
   <data name="totalAgentCredit" xml:space="preserve">
     <value>Total Agent</value>

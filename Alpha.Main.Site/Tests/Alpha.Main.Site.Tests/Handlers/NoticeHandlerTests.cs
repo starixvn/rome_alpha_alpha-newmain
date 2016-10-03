@@ -19,8 +19,6 @@
         private NoticeHandler noticeHandler;
         private IUserSession userSession;
 
-        public object DataTime { get; private set; }
-
         [SetUp]
         public void SetUp()
         {
@@ -51,7 +49,7 @@
 
             var query = new NoticeQuery(userSession, DateTime.Today, 10, false);
 
-            // Action
+            // Act
             var viewModel = noticeHandler.Handle(query);
 
             // Assert
@@ -65,77 +63,13 @@
                     Arg.Is<bool>(it => it == query.IsTest));
         }
 
-        [TestCase(1, false, "private")]
-        [TestCase(1, true, "special")]
-        [TestCase(3, true, "special")]
-        [TestCase(3, false, "public")]
-        public void HandleNoticeQuery_NotNullQuery_GetNoticeMessageType(
-            byte msgType,
-            bool isSticky,
-            string expectedMsgTypeText)
-        {
-            // Arrange
-            var noticeMessages = CreateNoticeMessagesData(msgType, isSticky);
-            FakeReturnGetNoticeMessagesService(noticeMessages);
-
-            var noticeQuery = new NoticeQuery(userSession, DateTime.Today, 10, false);
-
-            // Action
-            var viewModel = noticeHandler.Handle(noticeQuery);
-
-            // Assert
-            Assert.AreEqual(expectedMsgTypeText, viewModel.NoticeMessages.FirstOrDefault().Type);
-        }
-
-        [TestCase(Language.ChineseSimplified, "cs")]
-        [TestCase(Language.ChineseTraditional, "ch")]
-        [TestCase(Language.Thai, "th")]
-        [TestCase(Language.Japanese, "jp")]
-        [TestCase(Language.Korean, "ko")]
-        [TestCase(Language.Vietnamese, "en")]
-        [TestCase(Language.English, "en")]
-        public void HandleNoticeQuery_NotNullQuery_GetNoticeContentByLang(string lang, string expectedContent)
-        {
-            // Arrange
-            var noticeMessages = CreateNoticeMessagesData();
-            FakeReturnGetNoticeMessagesService(noticeMessages);
-
-            userSession.Language.Returns(lang);
-
-            var noticeQuery = new NoticeQuery(userSession, DateTime.Today, 10, false);
-
-            // Action
-            var viewModel = noticeHandler.Handle(noticeQuery);
-
-            // Assert
-            Assert.AreEqual(expectedContent, viewModel.NoticeMessages.FirstOrDefault().Content);
-        }
-
-        [Test]
-        public void HandleNoticeQuery_NotNullQuery_GetNoticeShortContent()
-        {
-            // Arrange
-            var noticeMessages = CreateNoticeMessagesData();
-            FakeReturnGetNoticeMessagesService(noticeMessages);
-
-            userSession.Language.Returns(Language.English);
-
-            var noticeQuery = new NoticeQuery(userSession, DateTime.Today, 10, false);
-
-            // Action
-            var viewModel = noticeHandler.Handle(noticeQuery);
-
-            // Assert
-            Assert.AreEqual("en...", viewModel.NoticeMessages.FirstOrDefault().ShortContent);
-        }
-
         [Test]
         public void HandleMarkMessageAsReadQuery_NullQuery_ThrowArgumentNullException()
         {
             // Arrange
             MarkMessageAsReadQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => noticeHandler.Handle(nullQuery)));
         }
 
@@ -145,7 +79,7 @@
             // Arrange
             var query = new MarkMessageAsReadQuery(CustId.ValidId, "1");
 
-            // Action
+            // Act
             var viewModel = noticeHandler.Handle(query);
 
             // Assert

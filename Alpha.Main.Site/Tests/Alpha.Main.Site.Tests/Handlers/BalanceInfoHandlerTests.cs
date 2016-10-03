@@ -9,8 +9,8 @@
     using Services;
     using Site.Handlers;
     using Site.Requests.BalanceInfo;
+    using Site.ViewModels.Dashboard;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels.Dashboard;
 
     [TestFixture]
     public class BalanceInfoHanlderTests

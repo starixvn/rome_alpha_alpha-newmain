@@ -10,8 +10,8 @@
     using Services;
     using Site.Handlers;
     using Site.Requests.Statistics;
+    using Site.ViewModels.Dashboard.Statistics;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels.Dashboard.Statistics;
 
     [TestFixture]
     public class StatisticsHandlerTests

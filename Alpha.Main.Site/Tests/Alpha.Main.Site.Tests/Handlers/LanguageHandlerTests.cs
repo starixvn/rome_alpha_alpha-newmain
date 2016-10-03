@@ -7,8 +7,8 @@
     using NUnit.Framework;
     using Site.Handlers;
     using Site.Requests;
+    using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels;
 
     [TestFixture]
     public class LanguageHandlerTests
