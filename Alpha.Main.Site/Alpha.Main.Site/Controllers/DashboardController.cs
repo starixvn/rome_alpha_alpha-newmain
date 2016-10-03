@@ -1,10 +1,12 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using MediatR;
     using Requests.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
+    using ViewModels.Dashboard;
 
     public class DashboardController : BaseController
     {
@@ -20,7 +22,9 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var viewModel = new DashboardViewModel(userSession.RoleId);
+
+            return View(viewModel);
         }
 
         [HttpGet]

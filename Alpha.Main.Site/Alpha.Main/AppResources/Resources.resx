@@ -152,7 +152,7 @@
     <value>to upload now!</value>
   </data>
   <data name="strNotAccessPage" xml:space="preserve">
-    <value>Sorry, You don't have permission to access this page.</value>
+    <value>public string GivenCreditLabel { get; private set; } = Resources.agentGivenCredit;</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
@@ -194,46 +194,46 @@
     <value>Super</value>
   </data>
   <data name="agentGivenCredit" xml:space="preserve">
-    <value>Agent Given Credit</value>
+    <value>Agent Given</value>
   </data>
   <data name="masterGivenCredit" xml:space="preserve">
-    <value>Master given credit</value>
+    <value>Master given</value>
   </data>
   <data name="superGivenCredit" xml:space="preserve">
-    <value>Super given credit</value>
+    <value>Super given</value>
   </data>
   <data name="totalAgentCredit" xml:space="preserve">
-    <value>Total Agent Credit</value>
+    <value>Total Agent</value>
   </data>
   <data name="totalMasterCredit" xml:space="preserve">
-    <value>Total Master Credit</value>
+    <value>Total Master</value>
   </data>
   <data name="totalMemberCredit" xml:space="preserve">
-    <value>Total Member Credit</value>
+    <value>Total Member</value>
   </data>
   <data name="cashBalance" xml:space="preserve">
-    <value>Cash Balance</value>
+    <value>Cash</value>
   </data>
   <data name="currency" xml:space="preserve">
     <value>Currency</value>
   </data>
   <data name="todayWinLoss" xml:space="preserve">
-    <value>Today Win Loss</value>
+    <value>Today</value>
   </data>
   <data name="totalBalance" xml:space="preserve">
-    <value>Total Balance</value>
+    <value>Total</value>
   </data>
   <data name="yesterdayBalance" xml:space="preserve">
     <value>Yesterday Balance</value>
   </data>
   <data name="yesterdayCashBalance" xml:space="preserve">
-    <value>Yesterday Cash Balance</value>
+    <value>Yesterday Cash</value>
   </data>
   <data name="yesterdayTotalBalance" xml:space="preserve">
-    <value>Yesterday Total Balance</value>
+    <value>Yesterday Total</value>
   </data>
   <data name="yesterdayWinLoss" xml:space="preserve">
-    <value>Yesterday Win Loss</value>
+    <value>Yesterday</value>
   </data>
   <data name="announcement" xml:space="preserve">
     <value>Announcement</value>
@@ -263,7 +263,7 @@
     <value>Total Poker Transfer|Outstanding</value>
   </data>
   <data name="statistics" xml:space="preserve">
-    <value>Statistics</value>
+    <value>Stats</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">
     <value>Highest turnover members of the month</value>
@@ -272,7 +272,7 @@
     <value>New members of the month</value>
   </data>
   <data name="superOutstanding" xml:space="preserve">
-    <value>Super Outstanding</value>
+    <value>Super</value>
   </data>
   <data name="top10WinningMembers" xml:space="preserve">
     <value>Top 10 winning members of the month</value>
@@ -281,10 +281,10 @@
     <value>Total Outstanding</value>
   </data>
   <data name="agentOutstanding" xml:space="preserve">
-    <value>Agent Outstanding</value>
+    <value>Agent</value>
   </data>
   <data name="masterOutstanding" xml:space="preserve">
-    <value>Master Outstanding</value>
+    <value>Master</value>
   </data>
   <data name="show" xml:space="preserve">
     <value>Show</value>

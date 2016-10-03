@@ -17,7 +17,7 @@
     <RootNamespace>Alpha.Main.Site</RootNamespace>
     <AssemblyName>Alpha.Main.Site</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -934,19 +934,16 @@
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
+    <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\BrowserViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\HeaderNavViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\IndexViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\BalanceInfoViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\BalanceInfo\BalanceInfoViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Notice\NoticeMessageWrapper.cs" />
     <Compile Include="ViewModels\Dashboard\Notice\NoticeViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\NewMembersViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\TopTurnoverMembersViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\TopWinningMembersViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\StatisticsViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\LanguageViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\MenuBarViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -955,6 +952,10 @@
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\HeaderNavViewModel.cs" />
+    <Compile Include="ViewModels\IndexViewModel.cs" />
+    <Compile Include="ViewModels\LanguageViewModel.cs" />
+    <Compile Include="ViewModels\MenuBarViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">

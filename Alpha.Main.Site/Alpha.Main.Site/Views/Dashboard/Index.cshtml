@@ -1,4 +1,6 @@
-﻿@model IndexViewModel
+﻿@using Alpha.Main.Site.ViewModels.Dashboard
+@model DashboardViewModel
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,7 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/home/home-super")
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/dashboard/dashboard-{Model.UserLevelName}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-home"))" rel="stylesheet" type="text/css" />
 </head>
 <body>

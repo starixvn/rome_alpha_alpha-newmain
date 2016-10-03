@@ -88,7 +88,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Agent Given Credit.
+        ///   Looks up a localized string similar to Agent Given.
         /// </summary>
         public static string agentGivenCredit {
             get {
@@ -97,7 +97,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Agent Outstanding.
+        ///   Looks up a localized string similar to Agent.
         /// </summary>
         public static string agentOutstanding {
             get {
@@ -160,7 +160,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cash Balance.
+        ///   Looks up a localized string similar to Cash.
         /// </summary>
         public static string cashBalance {
             get {
@@ -440,7 +440,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Master given credit.
+        ///   Looks up a localized string similar to Master given.
         /// </summary>
         public static string masterGivenCredit {
             get {
@@ -449,7 +449,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Master Outstanding.
+        ///   Looks up a localized string similar to Master.
         /// </summary>
         public static string masterOutstanding {
             get {
@@ -713,7 +713,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Statistics.
+        ///   Looks up a localized string similar to Stats.
         /// </summary>
         public static string statistics {
             get {
@@ -722,7 +722,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, You don&apos;t have permission to access this page..
+        ///   Looks up a localized string similar to public string GivenCreditLabel { get; private set; } = Resources.agentGivenCredit;.
         /// </summary>
         public static string strNotAccessPage {
             get {
@@ -749,7 +749,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Super given credit.
+        ///   Looks up a localized string similar to Super given.
         /// </summary>
         public static string superGivenCredit {
             get {
@@ -758,7 +758,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Super Outstanding.
+        ///   Looks up a localized string similar to Super.
         /// </summary>
         public static string superOutstanding {
             get {
@@ -794,7 +794,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Today Win Loss.
+        ///   Looks up a localized string similar to Today.
         /// </summary>
         public static string todayWinLoss {
             get {
@@ -830,7 +830,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Agent Credit.
+        ///   Looks up a localized string similar to Total Agent.
         /// </summary>
         public static string totalAgentCredit {
             get {
@@ -839,7 +839,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Balance.
+        ///   Looks up a localized string similar to Total.
         /// </summary>
         public static string totalBalance {
             get {
@@ -875,7 +875,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Master Credit.
+        ///   Looks up a localized string similar to Total Master.
         /// </summary>
         public static string totalMasterCredit {
             get {
@@ -884,7 +884,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Member Credit.
+        ///   Looks up a localized string similar to Total Member.
         /// </summary>
         public static string totalMemberCredit {
             get {
@@ -1037,7 +1037,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yesterday Cash Balance.
+        ///   Looks up a localized string similar to Yesterday Cash.
         /// </summary>
         public static string yesterdayCashBalance {
             get {
@@ -1046,7 +1046,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yesterday Total Balance.
+        ///   Looks up a localized string similar to Yesterday Total.
         /// </summary>
         public static string yesterdayTotalBalance {
             get {
@@ -1055,7 +1055,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yesterday Win Loss.
+        ///   Looks up a localized string similar to Yesterday.
         /// </summary>
         public static string yesterdayWinLoss {
             get {
