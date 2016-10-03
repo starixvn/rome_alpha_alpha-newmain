@@ -19,6 +19,7 @@
         public BalanceUpDayInfo GetBalanceUpDayInfo()
         {
             var balanceUpDayInfo = CacheService.Get<BalanceUpDayInfo>(BalanceUpDayKey);
+
             if (balanceUpDayInfo == null)
             {
                 var criteria = new GetBalanceUpDayInfoCriteria();

@@ -5,6 +5,8 @@
     using NUnit.Framework;
     using System.IO;
     using System.Linq;
+    using NSubstitute;
+    using System;
 
     [TestFixture]
     public class UserMessageServiceImplTests
@@ -95,6 +97,24 @@
 
             //// Assert
             Assert.AreEqual(expectedMessage, actualHotMessages.ElementAt(0));
+        }
+
+        [TestCase(null)]
+        [TestCase("  ")]
+        [TestCase("")]
+        public void GetHotMessages_LangugeIsNullOrWhiteSpace_ThrowArgumentNullException(string language)
+        {
+            //// Arrange
+            var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\OfferMessageByRoleId.xml");
+
+            //// Act & Assert
+            userMessageServiceImpl
+                .When(x => x.GetHotMessages(hotMessageFilePath, 2, language))
+                .Do(x => 
+                {
+                    throw new ArgumentNullException(nameof(language), "Language cannot be null");
+                });
+
         }
     }
 }

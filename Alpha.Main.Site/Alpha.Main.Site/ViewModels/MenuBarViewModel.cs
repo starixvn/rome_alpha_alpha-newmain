@@ -15,7 +15,7 @@
         {
             MenuItems = menuItems.Where(menuItem => menuItem.Status.Visible);
             IsSmallDevice = isSmallDevice;
-            Visible = (menuBarVisibleFunc ?? FunctionRegistry.ShowMenuBar)();
+            //Visible = (menuBarVisibleFunc ?? FunctionRegistry.ShowMenuBar)();
             IsAccountInfoVisible = (accountInfoVisibleFunc ?? FunctionRegistry.ShowAccountInfo)();
         }
 

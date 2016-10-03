@@ -14,11 +14,6 @@
         private Func<MenuStatus> getMenuStatusFunc;
         private Predicate<string> authorizeUrlFunc;
 
-        protected MenuItem()
-            : this(null, null)
-        {
-        }
-
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
             : this(getMenuStatusFunc, null)
         {
