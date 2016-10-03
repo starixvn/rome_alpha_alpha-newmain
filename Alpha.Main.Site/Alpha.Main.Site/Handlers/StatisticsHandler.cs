@@ -4,7 +4,7 @@
     using MediatR;
     using Requests.Statistics;
     using Services;
-    using ViewModels.Home.Statistics;
+    using ViewModels.Dashboard.Statistics;
 
     public class StatisticsHandler :
         IRequestHandler<StatisticsQuery, StatisticsViewModel>,

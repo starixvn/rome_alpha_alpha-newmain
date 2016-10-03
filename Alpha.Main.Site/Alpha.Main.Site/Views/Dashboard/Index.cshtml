@@ -24,9 +24,12 @@
     </ul>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active balance-info" id="balance">
-            @Html.Action("Index", "BalanceInfo")
+            @Html.Action("BalanceInfo")
         </div>
-        <div role="tabpanel" class="tab-pane statistic" id="stats" action-url="@Url.Action("Index", "Statistics")">Loading...</div>
+        <div role="tabpanel" class="tab-pane statistic" id="stats" action-url="@Url.Action("Index", "Statistics")">
+            <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
+            <div>Loading...</div>
+        </div>
         <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@Url.Action("Index", "Notice")">Loading...</div>
     </div>
     @StaticResources.AssetScripts.Render("/bundles/site-main/home/home-default")

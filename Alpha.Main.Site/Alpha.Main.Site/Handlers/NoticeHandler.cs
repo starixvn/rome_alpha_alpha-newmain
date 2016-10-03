@@ -6,7 +6,7 @@
     using MediatR;
     using Requests.Notice;
     using Services;
-    using ViewModels.Home.Notice;
+    using ViewModels.Dashboard.Notice;
 
     public class NoticeHandler :
         IRequestHandler<NoticeQuery, NoticeViewModel>,

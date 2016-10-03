@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.ViewModels.Home.Statistics
+﻿namespace Alpha.Main.Site.ViewModels.Dashboard.Statistics
 {
     using System.Collections.Generic;
     using Main.Models.Statistics;

@@ -19,17 +19,17 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            this.roleId = message.RoleId;
-            this.IsShowIntroduction = isShowIntroduction();
-            this.DefaultUrl = getDefaultUrl();
-            this.CustId = message.CustId;
-            this.Language = message.Language;
-            this.LanguageKey = message.LanguageKey;
-            this.OnUserId = message.OnUserId;
-            this.SubPageAccess = message.SubPageAccess;
-            this.EnableSecurityCode = message.EnableSecurityCode;
-            this.IsInternalWebVPN = message.IsInternalWebVPN;
-            this.IsSubAccount = message.IsSubAccount;
+            roleId = message.RoleId;
+            IsShowIntroduction = isShowIntroduction();
+            DefaultUrl = getDefaultUrl();
+            CustId = message.CustId;
+            Language = message.Language;
+            LanguageKey = message.LanguageKey;
+            OnUserId = message.OnUserId;
+            SubPageAccess = message.SubPageAccess;
+            EnableSecurityCode = message.EnableSecurityCode;
+            IsInternalWebVPN = message.IsInternalWebVPN;
+            IsSubAccount = message.IsSubAccount;
         }
 
         public bool EnableSecurityCode { get; private set; }

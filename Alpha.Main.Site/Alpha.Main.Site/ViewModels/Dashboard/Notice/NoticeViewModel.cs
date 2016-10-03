@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.ViewModels.Home.Notice
+﻿namespace Alpha.Main.Site.ViewModels.Dashboard.Notice
 {
     using System;
     using System.Collections.Generic;

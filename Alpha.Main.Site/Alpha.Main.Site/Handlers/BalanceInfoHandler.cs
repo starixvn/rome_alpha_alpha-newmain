@@ -4,7 +4,7 @@
     using MediatR;
     using Requests.BalanceInfo;
     using Services;
-    using ViewModels.Home.BalanceInfo;
+    using ViewModels.Dashboard;
 
     public class BalanceInfoHandler : IRequestHandler<BalanceInfoQuery, BalanceInfoViewModel>
     {

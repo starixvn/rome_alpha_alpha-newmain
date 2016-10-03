@@ -4,7 +4,7 @@ namespace Alpha.Main.Site.Requests.Statistics
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels.Home.Statistics;
+    using ViewModels.Dashboard.Statistics;
 
     public class TopWinningMembersQuery : IRequest<TopWinningMembersViewModel>
     {

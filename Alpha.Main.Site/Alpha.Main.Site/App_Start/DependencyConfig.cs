@@ -83,13 +83,11 @@ namespace Alpha.Main.Site.App_Start
         private static void RegisterServices(Container container)
         {
             container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
-
-            //// Singleton
+            container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
 
-            //// Transient
             container.RegisterPerWebRequest<AnnouncementService, AnnouncementServiceImpl>();
             container.RegisterPerWebRequest<SiteMenuService, SiteMenuServiceImpl>();
             container.RegisterPerWebRequest<CustomerProfileService, CustomerProfileServiceImpl>();

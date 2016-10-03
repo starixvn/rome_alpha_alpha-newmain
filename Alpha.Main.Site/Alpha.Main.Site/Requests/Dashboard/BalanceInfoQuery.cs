@@ -4,7 +4,7 @@ namespace Alpha.Main.Site.Requests.BalanceInfo
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels.Home.BalanceInfo;
+    using ViewModels.Dashboard;
 
     public class BalanceInfoQuery : IRequest<BalanceInfoViewModel>
     {

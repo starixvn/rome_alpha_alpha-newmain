@@ -1,11 +1,12 @@
-﻿namespace Alpha.Main.Site.Requests.Notice
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Requests.Notice
 {
     using System;
     using System.Collections.Generic;
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels.Home.Notice;
+    using ViewModels.Dashboard.Notice;
 
     public class NoticeQuery : IRequest<NoticeViewModel>
     {

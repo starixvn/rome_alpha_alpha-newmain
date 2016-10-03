@@ -2,7 +2,7 @@
 
 namespace Alpha.Main.Site.Controllers
 {
-    public class OTPController : Controller
+    public class OtpController : Controller
     {
         // GET: OTP
         public ActionResult Index()

@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.ViewModels.Home.BalanceInfo
+﻿namespace Alpha.Main.Site.ViewModels.Dashboard
 {
     using AppResources;
     using Main.Models.BalanceInfo;

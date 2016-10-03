@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Requests.Statistics
 {
     using MediatR;
-    using ViewModels.Home.Statistics;
+    using ViewModels.Dashboard.Statistics;
 
     public class NewMembersQuery : IRequest<NewMembersViewModel>
     {

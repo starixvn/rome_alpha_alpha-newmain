@@ -17,7 +17,7 @@
     <RootNamespace>Alpha.Main.Site</RootNamespace>
     <AssemblyName>Alpha.Main.Site</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -807,6 +807,7 @@
     <Content Include="Views\Default\Introduction.cshtml" />
     <Content Include="Views\Default\Piwik.cshtml" />
     <Content Include="Views\Password\ChangePassword.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Password\ForceChangePassword.cshtml" />
     <Content Include="Views\Messages\Index.cshtml" />
@@ -837,6 +838,7 @@
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ko-KR.cshtml" />
     <Content Include="Views\Notice\NoticeMessages.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_th-TH.cshtml" />
+    <Content Include="Views\Dashboard\BalanceInfo.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-CN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-TW.cshtml" />
@@ -869,17 +871,16 @@
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\BalanceInfoController.cs" />
     <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
-    <Compile Include="Controllers\OTPController.cs" />
+    <Compile Include="Controllers\OtpController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="Filters\AntiXSRFFilter.cs" />
     <Compile Include="Filters\CheckBelongingFilter.cs" />
@@ -930,18 +931,18 @@
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
-    <Compile Include="ViewModels\Home\BrowserViewModel.cs" />
-    <Compile Include="ViewModels\Home\HeaderNavViewModel.cs" />
-    <Compile Include="ViewModels\Home\IndexViewModel.cs" />
-    <Compile Include="ViewModels\Home\BalanceInfo\BalanceInfoViewModel.cs" />
-    <Compile Include="ViewModels\Home\Notice\NoticeMessageWrapper.cs" />
-    <Compile Include="ViewModels\Home\Notice\NoticeViewModel.cs" />
-    <Compile Include="ViewModels\Home\Statistics\NewMembersViewModel.cs" />
-    <Compile Include="ViewModels\Home\Statistics\TopTurnoverMembersViewModel.cs" />
-    <Compile Include="ViewModels\Home\Statistics\TopWinningMembersViewModel.cs" />
-    <Compile Include="ViewModels\Home\Statistics\StatisticsViewModel.cs" />
-    <Compile Include="ViewModels\Home\LanguageViewModel.cs" />
-    <Compile Include="ViewModels\Home\MenuBarViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\BrowserViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\HeaderNavViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\IndexViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\BalanceInfoViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\Notice\NoticeMessageWrapper.cs" />
+    <Compile Include="ViewModels\Dashboard\Notice\NoticeViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\Statistics\NewMembersViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\Statistics\TopTurnoverMembersViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\Statistics\TopWinningMembersViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\Statistics\StatisticsViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\LanguageViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\MenuBarViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

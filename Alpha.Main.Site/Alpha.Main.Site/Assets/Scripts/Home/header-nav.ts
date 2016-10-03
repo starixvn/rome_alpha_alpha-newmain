@@ -37,7 +37,7 @@ var headerNav = {
     hideHeaderDropdownMenuTimeout: null,
 
     urls: {
-        home: alpha.urls.mainRootPath + "Home/Index",
+        home: alpha.urls.mainRootPath + "Dashboard/Index",
         messages: alpha.urls.mainRootPath +  "Messages/Index",
         changeLanguage: alpha.urls.mainRootPath + "Language/Change"
     },
