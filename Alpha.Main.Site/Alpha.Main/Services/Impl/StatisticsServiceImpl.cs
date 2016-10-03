@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
     using System.Collections.Generic;
+    using System.Linq;
     using Criteria.Statistics;
     using Fanex.Data.Repository;
     using Models.Enumerations;
@@ -31,7 +32,7 @@
             return statistics;
         }
 
-        public IEnumerable<TopWinningMember> GetTopWinningMembers(int custId, UserLevel userLevel)
+        public List<TopWinningMember> GetTopWinningMembers(int custId, UserLevel userLevel)
         {
             var criteria = new GetTopWinningMembers(userLevel)
             {
@@ -40,12 +41,12 @@
                 BalanceUpDay = this.balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay
             };
 
-            var topWinninMembers = this.dynamicRepository.Fetch<TopWinningMember>(criteria);
+            var topWinninMembers = this.dynamicRepository.Fetch<TopWinningMember>(criteria).ToList();
 
             return topWinninMembers;
         }
 
-        public IEnumerable<TopTurnoverMember> GetTopTurnoverMembers(int custId, UserLevel userLevel)
+        public List<TopTurnoverMember> GetTopTurnoverMembers(int custId, UserLevel userLevel)
         {
             var criteria = new GetTopTurnoverMembers(userLevel)
             {
@@ -54,19 +55,19 @@
                 BalanceUpDay = this.balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay
             };
 
-            var topTurnoverMembers = this.dynamicRepository.Fetch<TopTurnoverMember>(criteria);
+            var topTurnoverMembers = this.dynamicRepository.Fetch<TopTurnoverMember>(criteria).ToList();
 
             return topTurnoverMembers;
         }
 
-        public IEnumerable<NewMember> GetNewMembers(int custId)
+        public List<NewMember> GetNewMembers(int custId)
         {
             var criteria = new GetNewMembersCriteria()
             {
                 CustId = custId
             };
 
-            var newMembers = this.dynamicRepository.Fetch<NewMember>(criteria);
+            var newMembers = this.dynamicRepository.Fetch<NewMember>(criteria).ToList();
 
             return newMembers;
         }

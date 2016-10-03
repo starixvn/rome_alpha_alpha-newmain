@@ -52,7 +52,7 @@
             return isSuccess;
         }
 
-        private IEnumerable<NoticeMessageWrapper> CreateNoticeMessageViewModels(IEnumerable<NoticeMessage> noticeMessages, string currentLang)
+        private List<NoticeMessageWrapper> CreateNoticeMessageViewModels(List<NoticeMessage> noticeMessages, string currentLang)
         {
             var noticeMessageViewWrappers = new List<NoticeMessageWrapper>();
 

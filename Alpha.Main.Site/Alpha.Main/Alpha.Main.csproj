@@ -180,7 +180,6 @@
       <DependentUpon>Security.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
-    <Compile Include="Constants\DateTimeDefault.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />

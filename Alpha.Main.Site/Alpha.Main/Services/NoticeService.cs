@@ -6,7 +6,7 @@
 
     public interface NoticeService
     {
-        IEnumerable<NoticeMessage> GetNoticeMessages(
+        List<NoticeMessage> GetNoticeMessages(
             int targetId,
             string targetId2,
             DateTime lastPostTime,

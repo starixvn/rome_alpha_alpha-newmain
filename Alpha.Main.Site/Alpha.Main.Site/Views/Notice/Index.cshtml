@@ -1,4 +1,2 @@
-﻿@using Alpha.Main.Constants
-
-<div class="panel-title"><span class="icon-announcements"></span>@Resources.announcement</div>
-@Html.Action("NoticeMessages", new { lastPostDate = DateTimeDefault.MaxDateTime })
+﻿<div class="panel-title"><span class="icon-announcements"></span>@Resources.announcement</div>
+@Html.Action("NoticeMessages", new { lastPostDate = DateTime.MaxValue })

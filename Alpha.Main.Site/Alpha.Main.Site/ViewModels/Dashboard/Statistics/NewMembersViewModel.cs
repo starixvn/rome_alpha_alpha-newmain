@@ -5,11 +5,11 @@
 
     public class NewMembersViewModel
     {
-        public NewMembersViewModel(IEnumerable<NewMember> members)
+        public NewMembersViewModel(List<NewMember> members)
         {
             this.Members = members;
         }
 
-        public IEnumerable<NewMember> Members { get; private set; }
+        public List<NewMember> Members { get; private set; }
     }
 }

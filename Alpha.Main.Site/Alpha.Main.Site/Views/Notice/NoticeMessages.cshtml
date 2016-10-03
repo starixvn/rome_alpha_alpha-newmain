@@ -4,13 +4,13 @@
 @model NoticeViewModel
 
 <div class="message-content">
-    @if (!Model.DateGroup.Any())
+    @if (!Model.NoticeMessages.Any())
     {
         <div class="text-center">@Resources.noInfo</div>
     }
     else
     {
-        var tempPostTime = DateTimeDefault.MinDateTime;
+        var tempPostTime = DateTime.MinValue;
 
         foreach (var message in Model.NoticeMessages)
         {
@@ -29,7 +29,7 @@
                     <div class="content short-content">
                         @message.ShortContent
                     </div>
-                    <div class="content full-content collapse">
+                    <div class="content full-content">
                         @message.Content
                     </div>
                 </div>
@@ -38,7 +38,7 @@
     }
 </div>
 
-@if (Model.DateGroup.Any())
+@if (Model.NoticeMessages.Any())
 {
     <div class="more-info" value="@Model.LastMessagePostTime">
         More <span class="icon-arrow-down icon-more"></span>

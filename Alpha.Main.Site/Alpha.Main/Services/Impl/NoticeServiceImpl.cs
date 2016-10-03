@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Criteria.Notice;
     using Fanex.Data.Repository;
     using Models.Notice;
@@ -16,7 +17,7 @@
             this.dynamicRepository = dynamicRepository;
         }
 
-        public IEnumerable<NoticeMessage> GetNoticeMessages(
+        public List<NoticeMessage> GetNoticeMessages(
             int targetId,
             string targetId2,
             DateTime lastPostTime,
@@ -32,7 +33,7 @@
                 IsTest = isTest
             };
 
-            var message = dynamicRepository.Fetch<NoticeMessage>(criteria);
+            var message = dynamicRepository.Fetch<NoticeMessage>(criteria).ToList();
 
             return message;
         }

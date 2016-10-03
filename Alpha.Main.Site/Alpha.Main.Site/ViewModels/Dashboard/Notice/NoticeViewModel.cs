@@ -3,40 +3,28 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Constants;
 
     public class NoticeViewModel
     {
-        public NoticeViewModel(IEnumerable<NoticeMessageWrapper> noticeMessages)
+        public NoticeViewModel(List<NoticeMessageWrapper> noticeMessages)
         {
-            this.NoticeMessages = noticeMessages.OrderByDescending(m => m.CurrentMessage.PostTime);
+            this.NoticeMessages = noticeMessages.OrderByDescending(m => m.CurrentMessage.PostTime).ToList();
         }
 
-        public IEnumerable<NoticeMessageWrapper> NoticeMessages { get; private set; }
+        public List<NoticeMessageWrapper> NoticeMessages { get; private set; }
 
-        public IOrderedEnumerable<DateTime> DateGroup
-        {
-            get
-            {
-                return this.NoticeMessages
-                    .Select(m => m.CurrentMessage.PostTime.Date)
-                    .Distinct()
-                    .OrderByDescending(d => d);
-            }
-        }
-
-        public DateTime MaxDateTime { get; } = DateTimeDefault.MaxDateTime;
+        public DateTime MaxDateTime { get; } = DateTime.MaxValue;
 
         public DateTime LastMessagePostTime
         {
             get
             {
-                if (this.DateGroup?.Count() == 0)
+                if (!this.NoticeMessages.Any())
                 {
-                    return DateTimeDefault.MinDateTime;
+                    return DateTime.MinValue;
                 }
 
-                return this.DateGroup.Last();
+                return this.NoticeMessages.Last().PostTime;
             }
         }
     }

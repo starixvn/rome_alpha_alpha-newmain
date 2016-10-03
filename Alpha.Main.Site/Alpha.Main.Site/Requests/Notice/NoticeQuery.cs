@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Requests.Notice
 {
     using System;

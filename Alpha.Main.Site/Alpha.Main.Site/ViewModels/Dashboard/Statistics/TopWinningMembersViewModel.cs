@@ -5,11 +5,11 @@
 
     public class TopWinningMembersViewModel
     {
-        public TopWinningMembersViewModel(IEnumerable<TopWinningMember> members)
+        public TopWinningMembersViewModel(List<TopWinningMember> members)
         {
             this.Members = members;
         }
 
-        public IEnumerable<TopWinningMember> Members { get; private set; }
+        public List<TopWinningMember> Members { get; private set; }
     }
 }

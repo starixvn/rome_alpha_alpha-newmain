@@ -19,8 +19,6 @@
         private NoticeHandler noticeHandler;
         private IUserSession userSession;
 
-        private NoticeMessage noticeMessage;
-
         public object DataTime { get; private set; }
 
         [SetUp]
@@ -45,9 +43,12 @@
         }
 
         [Test]
-        public void HandleNoticeQuery_NotNullQuery_CallGetBalanceInfoService()
+        public void HandleNoticeQuery_NotNullQuery_CallGetNoticeService()
         {
             // Arrange
+            var noticeMessages = CreateNoticeMessagesData();
+            FakeReturnGetNoticeMessagesService(noticeMessages);
+
             var query = new NoticeQuery(userSession, DateTime.Today, 10, false);
 
             // Action
@@ -155,10 +156,24 @@
                     Arg.Is<string>(mid => mid == query.MessageIds));
         }
 
-        private IEnumerable<NoticeMessage> CreateNoticeMessagesData(byte msgType = 1, bool isSticky = false)
+        private List<NoticeMessage> CreateNoticeMessagesData(byte msgType = 1, bool isSticky = false)
         {
-            var noticeMessage = new NoticeMessage(1, "en", "cs", "ch", "jp", "th", "lt", "ko", "es",
-                DateTime.Today, msgType, isSticky, DateTime.Today, "1", true);
+            var noticeMessage = new NoticeMessage(
+                1,
+                "en",
+                "cs",
+                "ch",
+                "jp",
+                "th",
+                "lt",
+                "ko",
+                "es",
+                DateTime.Today,
+                msgType,
+                isSticky,
+                DateTime.Today,
+                "1",
+                true);
 
             var noticeMessages = new List<NoticeMessage>();
             noticeMessages.Add(noticeMessage);
@@ -166,7 +181,7 @@
             return noticeMessages;
         }
 
-        private void FakeReturnGetNoticeMessagesService(IEnumerable<NoticeMessage> noticeMessages)
+        private void FakeReturnGetNoticeMessagesService(List<NoticeMessage> noticeMessages)
         {
             noticeService.GetNoticeMessages(
                       Arg.Any<int>(),
