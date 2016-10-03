@@ -713,7 +713,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your statistics.
+        ///   Looks up a localized string similar to Statistics.
         /// </summary>
         public static string statistics {
             get {
