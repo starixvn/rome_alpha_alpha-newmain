@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.Tests.Requests
+﻿namespace Alpha.Main.Site.Tests.Requests.Dashboard.Notice
 {
     using System;
     using Constants;
