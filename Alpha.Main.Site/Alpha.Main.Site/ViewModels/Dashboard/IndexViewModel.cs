@@ -10,8 +10,6 @@
 
     public class IndexViewModel
     {
-        private readonly byte roleId;
-
         public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl)
         {
             if (message == null)
@@ -19,7 +17,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            roleId = message.RoleId;
+            UserLevel = Enumeration.FromValue<UserLevel>(message.RoleId).DisplayName.ToLower();
             IsShowIntroduction = isShowIntroduction();
             DefaultUrl = getDefaultUrl();
             CustId = message.CustId;
@@ -38,13 +36,7 @@
 
         public int OnUserId { get; private set; }
 
-        public string UserLevel
-        {
-            get
-            {
-                return Enumeration.FromValue<UserLevel>(this.roleId).DisplayName.ToLower();
-            }
-        }
+        public string UserLevel { get; private set; }
 
         public string Language { get; private set; }
 
@@ -99,7 +91,7 @@
         {
             get
             {
-                return new HeaderNavViewModel(this.CustId, this.EnableSecurityCode);
+                return new HeaderNavViewModel(CustId, EnableSecurityCode);
             }
         }
     }

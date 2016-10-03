@@ -10,7 +10,7 @@
     using Site.Handlers;
     using Site.Requests.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels.Home.BalanceInfo;
+    using ViewModels.Dashboard;
 
     [TestFixture]
     public class BalanceInfoHanlderTests

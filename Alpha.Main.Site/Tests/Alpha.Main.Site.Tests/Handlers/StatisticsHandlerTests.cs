@@ -11,7 +11,7 @@
     using Site.Handlers;
     using Site.Requests.Statistics;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels.Home.Statistics;
+    using ViewModels.Dashboard.Statistics;
 
     [TestFixture]
     public class StatisticsHandlerTests

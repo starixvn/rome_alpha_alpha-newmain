@@ -891,7 +891,6 @@
     <Compile Include="Handlers\DefaultHandler.cs" />
     <Compile Include="Handlers\StatisticsHandler.cs" />
     <Compile Include="Handlers\BalanceInfoHandler.cs" />
-    <Compile Include="Handlers\HomeHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\PasswordHandler.cs" />
@@ -906,7 +905,7 @@
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\HeaderNavQuery.cs" />
-    <Compile Include="Requests\BalanceInfo\BalanceInfoQuery.cs" />
+    <Compile Include="Requests\Dashboard\BalanceInfoQuery.cs" />
     <Compile Include="Requests\Notice\NoticeQuery.cs" />
     <Compile Include="Requests\Notice\MarkMessageAsReadQuery.cs" />
     <Compile Include="Requests\Statistics\NewMembersQuery.cs" />
