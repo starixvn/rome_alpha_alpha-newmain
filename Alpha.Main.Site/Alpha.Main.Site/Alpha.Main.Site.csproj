@@ -17,7 +17,7 @@
     <RootNamespace>Alpha.Main.Site</RootNamespace>
     <AssemblyName>Alpha.Main.Site</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -498,6 +498,10 @@
     <TypeScriptCompile Include="Assets\scripts\security\security-code\security-code-resources.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\security-code\verify-securitycode.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\security-helper.ts" />
+    <Content Include="Assets\bundles\dashboard.js" />
+    <Content Include="Assets\bundles\dashboard.min.js">
+      <DependentUpon>dashboard.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-home.css" />
     <Content Include="Assets\bundles\default-home.min.css">
       <DependentUpon>default-home.css</DependentUpon>
@@ -514,10 +518,6 @@
     <Content Include="Assets\bundles\default-otp.css" />
     <Content Include="Assets\bundles\default-otp.min.css">
       <DependentUpon>default-otp.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\home-index.js" />
-    <Content Include="Assets\bundles\home-index.min.js">
-      <DependentUpon>home-index.js</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>
@@ -541,8 +541,9 @@
     <Content Include="Assets\styles\otp\images\qr.png" />
     <Content Include="Assets\styles\otp\otp.css" />
     <Content Include="Assets\styles\otp\otp.min.css" />
-    <TypeScriptCompile Include="Assets\scripts\home\home-index.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\notice-message.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\statistics.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.js">
@@ -904,8 +905,8 @@
     <Compile Include="Requests\BrowserQuery.cs" />
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
-    <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfoQuery.cs" />
+    <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\Notice\NoticeQuery.cs" />
     <Compile Include="Requests\Notice\MarkMessageAsReadQuery.cs" />
     <Compile Include="Requests\Statistics\NewMembersQuery.cs" />
@@ -990,7 +991,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58258</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

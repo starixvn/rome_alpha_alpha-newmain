@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
@@ -28,7 +29,6 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [HttpGet]
-        [ChildActionOnly]
         public ActionResult TopWinningMembers()
         {
             var viewModel = mediator.Send(new TopWinningMembersQuery(this.userSession));
@@ -37,7 +37,6 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [HttpGet]
-        [ChildActionOnly]
         public ActionResult TopTurnoverMembers()
         {
             var viewModel = mediator.Send(new TopTurnoverMembersQuery(this.userSession));
@@ -46,7 +45,6 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [HttpGet]
-        [ChildActionOnly]
         public ActionResult NewMembers()
         {
             var viewModel = mediator.Send(new NewMembersQuery(this.userSession.CustId));

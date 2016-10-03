@@ -1,8 +1,9 @@
-﻿/// <reference path="./notice-message.ts" />
+﻿/// <reference path="./statistics.ts" />
+/// <reference path="./notice-message.ts" />
 
-class HomeIndex {
+class Dashboard {
     constructor() {
-        this.loadInfo('#stats', () => { $('[data-toggle="tooltip"]').tooltip({ html: true }); });
+        this.loadInfo('#stats', this.onCompleteLoadStats);
         this.loadInfo('#notice', this.onCompleteLoadNotice);
     };
 
@@ -18,11 +19,15 @@ class HomeIndex {
         }
     }
 
+    private onCompleteLoadStats = (): void => {
+        new Statistics();
+    }
+
     private onCompleteLoadNotice = (): void => {
         new NoticeMessage();
     }
 }
 
 $(document).ready(function () {
-    new HomeIndex();
+    new Dashboard();
 });

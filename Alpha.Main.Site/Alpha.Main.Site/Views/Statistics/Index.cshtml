@@ -19,15 +19,15 @@
     </div>
 }
 
-@helper RenderDropdownTableMemberInfo(string labelName, string labelId, object htmlString)
+@helper RenderDropdownTableMemberInfo(string labelName, string labelId, string actionUrl)
 {
     <div class="row">
         <div class="col-xs-12 label dropdown">
-            <span id="@labelId" class="dropdown-toggle pointer" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span id="@labelId" class="dropdown-toggle pointer" type="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" action-url=@actionUrl>
                 @labelName <span class="icon icon-plus"></span>
             </span>
             <div class="dropdown-menu dropdown-stast" aria-labelledby="@labelName">
-                @htmlString
             </div>
         </div>
     </div>
@@ -65,8 +65,8 @@
     else if (Model.UserLevel.IsAgentLevel())
     {
         @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
-    }    
-    @RenderDropdownTableMemberInfo(Resources.top10WinningMembers, "listTopWinningMembers", Html.Action("TopWinningMembers"))
-    @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Html.Action("TopTurnoverMembers"))
-    @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Html.Action("NewMembers"))
+    }
+    @RenderDropdownTableMemberInfo(Resources.top10WinningMembers, "listTopWinningMembers", Url.Action("TopWinningMembers", "Statistics"))
+    @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Url.Action("TopTurnoverMembers", "Statistics"))
+    @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Url.Action("NewMembers", "Statistics"))
 </div>

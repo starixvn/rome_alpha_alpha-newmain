@@ -14,9 +14,10 @@
     ]
   },
   {
-    "outputFileName": "Assets/bundles/home-index.js",
+    "outputFileName": "Assets/bundles/default-dashboard.js",
     "inputFiles": [
-      "Assets/scripts/home/home-index.js",
+      "Assets/scripts/home/dashboard.js",
+      "Assets/scripts/home/statistics.js",
       "Assets/scripts/home/notice-message.js"
     ]
   },

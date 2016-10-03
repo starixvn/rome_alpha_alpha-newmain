@@ -4,7 +4,7 @@
 body {
     background-color: transparent;
     font-size: $font-size;
-    font-family: $font-family;    
+    font-family: $font-family;
 }
 
 .tab-content > .tab-pane {
@@ -19,8 +19,8 @@ body {
         font-weight: normal;
         color: $text-color;
         line-height: inherit;
-        text-transform: capitalize;        
-        text-align: left;        
+        text-transform: capitalize;
+        text-align: left;
     }
 
     .value {
@@ -54,11 +54,11 @@ body {
     .group-title {
         border-bottom: 1px solid #dedede;
         font-weight: bold;
-        line-height: normal;        
+        line-height: normal;
         margin-bottom: 6px;
         padding-top: 8px;
         padding-bottom: 4px;
-        text-transform: uppercase;    
+        text-transform: uppercase;
     }
 
     &.statistic {
@@ -90,8 +90,8 @@ body {
             font-size: $font-size;
             line-height: 20px;
             max-height: 280px;
-            overflow: auto;            
-            padding: 0;            
+            overflow: auto;
+            padding: 0;
             @include border-radius(0);
 
             .width-100per {
@@ -113,9 +113,8 @@ body {
             }
         }
     }
-
     // Announcement
-    &.notice {        
+    &.notice {
         .group-date {
             background-color: #e3e3e3;
             font-weight: bold;
@@ -143,7 +142,7 @@ body {
                     color: $msg-special;
                 }
 
-                .time {            
+                .time {
                     [class^="icon"] {
                         margin-right: 8px;
                     }
@@ -152,8 +151,13 @@ body {
                 .time, .content {
                     line-height: 20px;
                 }
+
+                .full-content {
+                    display: none;
+                }
             }
         }
+
         .more-info {
             background-color: #fff;
             cursor: pointer;
@@ -182,48 +186,51 @@ body {
 
 // Customize tooltip
 .tooltip {
-  &.in { opacity: 1; }
-  &.top {
-      .tooltip-arrow {
-          display: none;
-      }
+    &.in {
+        opacity: 1;
+    }
 
-      .tooltip-inner {
-        &:after, &:before {
-            bottom: 0;
-	        left: 50%;
-	        border: solid transparent;
-	        content: " ";
-	        height: 0;
-	        width: 0;
-	        position: absolute;
+    &.top {
+        .tooltip-arrow {
+            display: none;
         }
 
-        &:after {
-	        border-color: transparent;
-	        border-top-color: #f2f2f2;
-	        border-width: 8px;
-	        margin-left: -8px;
-            margin-bottom: -10px;
-        }
+        .tooltip-inner {
+            &:after, &:before {
+                bottom: 0;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+            }
 
-        &:before {
-	        border-color: transparent;
-	        border-top-color: #ccc;
-	        border-width: 10px;
-	        margin-left: -10px;
-            margin-bottom: -14px;
+            &:after {
+                border-color: transparent;
+                border-top-color: #f2f2f2;
+                border-width: 8px;
+                margin-left: -8px;
+                margin-bottom: -10px;
+            }
+
+            &:before {
+                border-color: transparent;
+                border-top-color: #ccc;
+                border-width: 10px;
+                margin-left: -10px;
+                margin-bottom: -14px;
+            }
         }
-      }
-  }
-  
-  .tooltip-inner {
-      border: 1px solid #ccc;
-      color: $text-color;
-      font-weight: bold;
-      background-color: #f2f2f2;
-      text-align: left;
-      @include border-radius(2px);
+    }
+
+    .tooltip-inner {
+        border: 1px solid #ccc;
+        color: $text-color;
+        font-weight: bold;
+        background-color: #f2f2f2;
+        text-align: left;
+        @include border-radius(2px);
     }
 }
 
@@ -238,11 +245,11 @@ body {
 
     .tab-content > .tab-pane {
         display: block;
-        margin-top: 12px;      
-        padding: 0 4px; 
+        margin-top: 12px;
+        padding: 0 4px;
 
-        &.balance-info, &.statistic {            
-            float: left;            
+        &.balance-info, &.statistic {
+            float: left;
             width: 50%;
             @include box-sizing;
 
@@ -279,27 +286,27 @@ body {
         }
 
         .label {
-            line-height: 30px;      
+            line-height: 30px;
         }
 
         .panel-title {
             font-weight: bold;
             font-size: 14px;
             padding: 8px 0;
-            text-transform: uppercase; 
-            
+            text-transform: uppercase;
+
             [class^="icon"] {
                 font-size: 20px;
                 margin-right: 8px;
                 position: relative;
                 top: 4px;
-            }               
+            }
         }
     }
 
     .msg-contents {
-        .msg {          
-            display: table;  
+        .msg {
+            display: table;
             width: 100%;
 
             .time, .content {
@@ -307,7 +314,7 @@ body {
                 display: table-cell;
             }
 
-            .time {            
+            .time {
                 width: 116px;
             }
         }
@@ -320,7 +327,7 @@ body {
         font-size: $font-size + 1;
         line-height: 36px;
     }
-    
+
     .nav-tabs {
         display: table;
         width: 100%;
@@ -344,11 +351,13 @@ body {
                 position: relative;
             }
         }
+
         &.notice {
             padding-top: 12px;
+
             .msg-contents {
-                .msg {          
-                    .time {            
+                .msg {
+                    .time {
                         padding-top: 8px;
                     }
 
@@ -381,12 +390,13 @@ body {
                 width: 100%;
             }
         }
+
         .container {
             padding: 0;
         }
 
         .panel-title {
-            display: none;              
+            display: none;
         }
-    }    
+    }
 }
