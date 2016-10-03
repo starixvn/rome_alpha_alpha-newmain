@@ -345,4 +345,7 @@
   <data name="credit" xml:space="preserve">
     <value>信用额度</value>
   </data>
+  <data name="BetChoiceLimit" xml:space="preserve">
+    <value>選擇投注限額</value>
+  </data>
 </root>

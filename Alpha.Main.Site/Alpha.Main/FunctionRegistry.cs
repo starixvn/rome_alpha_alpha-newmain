@@ -67,6 +67,11 @@
                     }
 
                     return true;
+                }),
+            ["BetChoiceLimitMenuItem"] = () => new MenuStatus(
+                () =>
+                {
+                    return Current.IsShowBetChoiceLimit;
                 })
         };
 

@@ -106,6 +106,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bet Choice Limit.
+        /// </summary>
+        public static string BetChoiceLimit {
+            get {
+                return ResourceManager.GetString("BetChoiceLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bets &amp; Forecast &lt;span class=&quot;beta-version&quot;&gt;Beta&lt;/span&gt;.
         /// </summary>
         public static string BetsAndForecast {
