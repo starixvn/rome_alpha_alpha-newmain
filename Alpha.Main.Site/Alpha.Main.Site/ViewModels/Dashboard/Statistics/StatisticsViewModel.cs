@@ -8,34 +8,30 @@
     {
         public StatisticsViewModel(Statistics statistics, UserLevel userLevel)
         {
-            this.Statistics = statistics;
-            this.UserLevel = userLevel;
-        }
-
-        public StatisticsViewModel() : this(null, null)
-        {
+            Statistics = statistics;
+            UserLevel = userLevel;
+            OutstandingLabel = GetOutStandingLabelByLevel(userLevel);
         }
 
         public Statistics Statistics { get; private set; }
 
         public UserLevel UserLevel { get; private set; }
 
-        public string OutstandingLabel
+        public string OutstandingLabel { get; private set; }
+
+        private string GetOutStandingLabelByLevel(UserLevel userLevel)
         {
-            get
+            if (userLevel.IsSuperLevel())
             {
-                if (UserLevel.IsSuperLevel())
-                {
-                    return Resources.superOutstanding;
-                }
-                else if (UserLevel.IsMasterLevel())
-                {
-                    return Resources.masterOutstanding;
-                }
-                else
-                {
-                    return Resources.agentOutstanding;
-                }
+                return Resources.superOutstanding;
+            }
+            else if (userLevel.IsMasterLevel())
+            {
+                return Resources.masterOutstanding;
+            }
+            else
+            {
+                return Resources.agentOutstanding;
             }
         }
     }
