@@ -57,8 +57,16 @@
 
 @if (Model.IsAccountInfoVisible)
 {
-    <section id="account-info-tab" class="accountinfo-container @(Model.IsSmallDevice ? string.Empty : "mCustomScrollbar")" data-mcs-theme="minimal-dark">
-        <iframe frameborder="0" id="accountinfo-content"
-                name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content" scrolling="auto"></iframe>
-    </section>
+        <!--[if (gt IE 8)|!(IE)]><!-->
+            <section id="account-info-tab" class="accountinfo-container @(Model.IsSmallDevice ? string.Empty : "mCustomScrollbar")" data-mcs-theme="minimal-dark">
+                <iframe frameborder="0" id="accountinfo-content"
+                        name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content" scrolling="auto"></iframe>
+            </section>
+        <!--<![endif]-->
+        <!--[if lt IE 9]>
+            <section id="account-info-tab" class="accountinfo-container">
+                <iframe frameborder="0" id="accountinfo-content"
+                        name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content" scrolling="auto"></iframe>
+            </section>
+        <![endif]-->
 }
