@@ -13,7 +13,7 @@ namespace Alpha.Main.Site.Requests
         public ChangeLanguageCommand(IUserSession userSession, string languageCode)
         {
             this.userSession = userSession;
-            this.LanguageCode = languageCode;
+            LanguageCode = languageCode;
         }
 
         public string LanguageCode { get; private set; }

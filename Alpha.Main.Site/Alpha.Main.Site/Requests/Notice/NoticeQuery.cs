@@ -20,16 +20,16 @@ namespace Alpha.Main.Site.Requests.Notice
             bool isTest)
         {
             this.userSession = userSession;
-            this.LastPostTime = lastPostTime;
-            this.TotalMessage = totalMessage;
-            this.IsTest = isTest;
+            LastPostTime = lastPostTime;
+            TotalMessage = totalMessage;
+            IsTest = isTest;
         }
 
         public UserLevel UserLevel
         {
             get
             {
-                return Enumeration.FromValue<UserLevel>(this.userSession.RoleId);
+                return Enumeration.FromValue<UserLevel>(userSession.RoleId);
             }
         }
 
@@ -37,7 +37,7 @@ namespace Alpha.Main.Site.Requests.Notice
         {
             get
             {
-                return this.userSession.CustId;
+                return userSession.CustId;
             }
         }
 
@@ -61,7 +61,7 @@ namespace Alpha.Main.Site.Requests.Notice
         {
             get
             {
-                return this.userSession.Language;
+                return userSession.Language;
             }
         }
 

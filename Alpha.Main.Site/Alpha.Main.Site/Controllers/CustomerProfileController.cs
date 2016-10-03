@@ -21,7 +21,7 @@ namespace Alpha.Main.Site.Controllers
 
         public ActionResult BriefProfile()
         {
-            var query = new BriefProfileQuery(this.userSession);
+            var query = new BriefProfileQuery(userSession);
 
             var viewModel = mediator.Send(query);
 

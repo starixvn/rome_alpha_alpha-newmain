@@ -1,9 +1,13 @@
-﻿using Alpha.Main.Helpers;
-
-namespace Alpha.Main.Site.ViewModels.CustomerProfile
+﻿namespace Alpha.Main.Site.ViewModels.CustomerProfile
 {
+    using Alpha.Main.Helpers;
+
     public class BriefProfileViewModel
     {
+        public BriefProfileViewModel()
+        {
+        }
+
         public int CustId { get; set; }
 
         public bool IsDefaultAvatar { get; set; }

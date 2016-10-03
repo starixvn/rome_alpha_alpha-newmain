@@ -7,7 +7,7 @@
     {
         public TopWinningMembersViewModel(List<TopWinningMember> members)
         {
-            this.Members = members;
+            Members = members;
         }
 
         public List<TopWinningMember> Members { get; private set; }

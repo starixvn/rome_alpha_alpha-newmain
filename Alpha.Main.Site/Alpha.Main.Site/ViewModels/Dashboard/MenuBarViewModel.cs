@@ -13,10 +13,10 @@
             Func<bool> menuBarVisibleFunc = null,
             Func<bool> accountInfoVisibleFunc = null)
         {
-            this.MenuItems = menuItems.Where(menuItem => menuItem.Status.Visible);
-            this.IsSmallDevice = isSmallDevice;
-            this.Visible = (menuBarVisibleFunc ?? FunctionRegistry.ShowMenuBar)();
-            this.IsAccountInfoVisible = (accountInfoVisibleFunc ?? FunctionRegistry.ShowAccountInfo)();
+            MenuItems = menuItems.Where(menuItem => menuItem.Status.Visible);
+            IsSmallDevice = isSmallDevice;
+            Visible = (menuBarVisibleFunc ?? FunctionRegistry.ShowMenuBar)();
+            IsAccountInfoVisible = (accountInfoVisibleFunc ?? FunctionRegistry.ShowAccountInfo)();
         }
 
         public bool Visible { get; private set; }

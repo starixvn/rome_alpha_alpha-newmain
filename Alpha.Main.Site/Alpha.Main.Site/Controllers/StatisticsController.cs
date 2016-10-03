@@ -23,7 +23,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var viewModel = mediator.Send(new StatisticsQuery(this.userSession));
+            var viewModel = mediator.Send(new StatisticsQuery(userSession));
 
             return PartialView(viewModel);
         }
@@ -31,7 +31,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult TopWinningMembers()
         {
-            var viewModel = mediator.Send(new TopWinningMembersQuery(this.userSession));
+            var viewModel = mediator.Send(new TopWinningMembersQuery(userSession));
 
             return PartialView("TopWinningMembers", viewModel);
         }
@@ -39,7 +39,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult TopTurnoverMembers()
         {
-            var viewModel = mediator.Send(new TopTurnoverMembersQuery(this.userSession));
+            var viewModel = mediator.Send(new TopTurnoverMembersQuery(userSession));
 
             return PartialView("TopTurnoverMembers", viewModel);
         }
@@ -47,7 +47,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult NewMembers()
         {
-            var viewModel = mediator.Send(new NewMembersQuery(this.userSession.CustId));
+            var viewModel = mediator.Send(new NewMembersQuery(userSession.CustId));
 
             return PartialView("NewMembers", viewModel);
         }

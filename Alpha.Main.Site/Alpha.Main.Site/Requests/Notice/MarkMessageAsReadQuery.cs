@@ -6,8 +6,8 @@
     {
         public MarkMessageAsReadQuery(int custId, string messageIds)
         {
-            this.CustId = custId;
-            this.MessageIds = messageIds;
+            CustId = custId;
+            MessageIds = messageIds;
         }
 
         public int CustId { get; private set; }

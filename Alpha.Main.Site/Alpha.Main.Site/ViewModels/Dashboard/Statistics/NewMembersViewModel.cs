@@ -7,7 +7,7 @@
     {
         public NewMembersViewModel(List<NewMember> members)
         {
-            this.Members = members;
+            Members = members;
         }
 
         public List<NewMember> Members { get; private set; }

@@ -15,7 +15,7 @@
 
         public NoticeMessageWrapper(NoticeMessage noticeMessage, string currentLang)
         {
-            this.CurrentMessage = noticeMessage;
+            CurrentMessage = noticeMessage;
             this.currentLang = currentLang;
         }
 
@@ -28,7 +28,7 @@
         {
             get
             {
-                return this.CurrentMessage.PostTime;
+                return CurrentMessage.PostTime;
             }
         }
 
@@ -36,8 +36,8 @@
         {
             get
             {
-                var msgType = this.CurrentMessage.Type;
-                var isSticky = this.CurrentMessage.IsSticky;
+                var msgType = CurrentMessage.Type;
+                var isSticky = CurrentMessage.IsSticky;
 
                 if (msgType == 1 && isSticky != true)
                 {
@@ -70,15 +70,15 @@
         {
             get
             {
-                var contentPropName = GetCurrentContentPropertyNameByLanguage(this.currentLang);
-                var content = ReflectionUtil.GetValue(this.CurrentMessage, contentPropName);
+                var contentPropName = GetCurrentContentPropertyNameByLanguage(currentLang);
+                var content = ReflectionUtil.GetValue(CurrentMessage, contentPropName);
 
                 if (string.IsNullOrEmpty(content?.ToString()))
                 {
-                    content = ReflectionUtil.GetValue(this.CurrentMessage, DefaultContentPropName) ?? string.Empty;
+                    content = ReflectionUtil.GetValue(CurrentMessage, DefaultContentPropName) ?? string.Empty;
                 }
 
-                var result = content.ToString().Replace("@@", this.CurrentMessage.BetTransId);
+                var result = content.ToString().Replace("@@", CurrentMessage.BetTransId);
 
                 return result;
             }

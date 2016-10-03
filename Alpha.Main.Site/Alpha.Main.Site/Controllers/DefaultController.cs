@@ -27,7 +27,7 @@ namespace Alpha.Main.Site.Controllers
 
         public ActionResult Index()
         {
-            var browser = this.mediator.Send(new BrowserQuery(this.userSession));
+            var browser = mediator.Send(new BrowserQuery(userSession));
 
             if (browser.IsUnsupportedBrowser)
             {
@@ -63,8 +63,8 @@ namespace Alpha.Main.Site.Controllers
         {
             var query = new HotMessagesQuery
             {
-                Language = this.userSession.Language,
-                RoleId = this.userSession.RoleId
+                Language = userSession.Language,
+                RoleId = userSession.RoleId
             };
 
             var viewModel = mediator.Send(query);

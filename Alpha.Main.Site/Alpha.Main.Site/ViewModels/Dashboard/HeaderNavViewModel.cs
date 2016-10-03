@@ -7,8 +7,8 @@
     {
         public HeaderNavViewModel(int custId, bool enableSecurityCode)
         {
-            this.CustId = custId;
-            this.EnableSecurityCode = enableSecurityCode;
+            CustId = custId;
+            EnableSecurityCode = enableSecurityCode;
         }
 
         public int CustId { get; private set; }

@@ -17,7 +17,7 @@ namespace Alpha.Main.Site.Requests
         {
             get
             {
-                return this.userSession.RoleId;
+                return userSession.RoleId;
             }
         }
     }

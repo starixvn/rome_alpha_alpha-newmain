@@ -1,5 +1,4 @@
 ﻿#pragma warning disable 618, 612
-
 namespace Alpha.Main.Site.Requests.Statistics
 {
     using Main.Models.Enumerations;
@@ -20,7 +19,7 @@ namespace Alpha.Main.Site.Requests.Statistics
         {
             get
             {
-                return this.userSession.CustId;
+                return userSession.CustId;
             }
         }
 
@@ -28,7 +27,7 @@ namespace Alpha.Main.Site.Requests.Statistics
         {
             get
             {
-                return Enumeration.FromValue<UserLevel>(this.userSession.RoleId);
+                return Enumeration.FromValue<UserLevel>(userSession.RoleId);
             }
         }
     }

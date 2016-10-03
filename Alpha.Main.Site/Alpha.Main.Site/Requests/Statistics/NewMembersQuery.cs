@@ -7,7 +7,7 @@
     {
         public NewMembersQuery(int custId)
         {
-            this.CustId = custId;
+            CustId = custId;
         }
 
         public int CustId { get; private set; }

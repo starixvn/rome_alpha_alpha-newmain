@@ -47,7 +47,7 @@
         {
             var viewModel = new IndexViewModel(message, FunctionRegistry.GetDefaultUrl);
 
-            this.sessionManager.Add<string>(PasswordHashSessionKey, viewModel.PasswordHash);
+            sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
 
             return viewModel;
         }
