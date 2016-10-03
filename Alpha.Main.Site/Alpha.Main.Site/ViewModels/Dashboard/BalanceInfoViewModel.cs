@@ -11,25 +11,30 @@
             UserLevel userLevel,
             string currency)
         {
-            this.BalanceInfo = balanceInfo;
-            this.Currency = currency;
-
+            BalanceInfo = balanceInfo;
+            Currency = currency;
             SetLabelTextByUserLevel(userLevel);
         }
 
         public BalanceInfo BalanceInfo { get; private set; }
 
-        public string Currency { get; } = "UUS";
+        public string Currency { get; private set; } = "UUS";
 
-        public string UserLevelLabel { get; private set; } = Resources.agent;
+        public string UserLevelLabel { get; private set; }
 
-        public string GivenCreditLabel { get; private set; } = Resources.agentGivenCredit;
+        public string GivenCreditLabel { get; private set; }
 
-        public string TotalDownlineCreditLabel { get; private set; } = Resources.totalMemberCredit;
+        public string TotalDownlineCreditLabel { get; private set; }
 
         private void SetLabelTextByUserLevel(UserLevel userLevel)
         {
-            if (userLevel.IsMasterLevel())
+            if (userLevel.IsAgentLevel())
+            {
+                UserLevelLabel = Resources.agent;
+                GivenCreditLabel = Resources.agentGivenCredit;
+                TotalDownlineCreditLabel = Resources.totalMemberCredit;
+            }
+            else if (userLevel.IsMasterLevel())
             {
                 UserLevelLabel = Resources.master;
                 GivenCreditLabel = Resources.masterGivenCredit;

@@ -11,25 +11,17 @@
     {
         private List<string> devicesUseCustomScrollbar;
 
-        private byte roleId;
-
         public MenuBarQuery(
             byte roleId,
             string userAgent,
             List<string> devicesUseCustomScrollbar = null)
         {
-            this.roleId = roleId;
-            this.UserAgent = userAgent;
+            UserLevel = Enumeration.FromValue<UserLevel>(roleId);
+            UserAgent = userAgent;
             this.devicesUseCustomScrollbar = devicesUseCustomScrollbar ?? AppSettings.DevicesUseCustomScrollbar;
         }
 
-        public UserLevel UserLevel
-        {
-            get
-            {
-                return Enumeration.FromValue<UserLevel>(this.roleId);
-            }
-        }
+        public UserLevel UserLevel { get; private set; }
 
         public string UserAgent { get; private set; }
 

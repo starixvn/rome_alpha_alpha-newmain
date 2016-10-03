@@ -17,7 +17,7 @@
     <RootNamespace>Alpha.Main.Site</RootNamespace>
     <AssemblyName>Alpha.Main.Site</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -498,6 +498,10 @@
     <TypeScriptCompile Include="Assets\scripts\security\security-code\security-code-resources.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\security-code\verify-securitycode.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\security-helper.ts" />
+    <Content Include="Assets\bundles\default-dashboard.js" />
+    <Content Include="Assets\bundles\default-dashboard.min.js">
+      <DependentUpon>default-dashboard.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-dashboard.js" />
     <Content Include="Assets\bundles\default-dashboard.min.js">
       <DependentUpon>default-dashboard.js</DependentUpon>

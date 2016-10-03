@@ -10,8 +10,8 @@
     {
         public LanguageViewModel(Dictionary<string, string> data, string currentLanguage = Language.Default)
         {
-            this.Data = data ?? Language.CodeNames;
-            this.CurrentLanguage = currentLanguage;
+            Data = data ?? Language.CodeNames;
+            CurrentLanguage = currentLanguage;
         }
 
         public Dictionary<string, string> Data { get; private set; }
