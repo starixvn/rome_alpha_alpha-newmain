@@ -1,5 +1,5 @@
 ﻿/// <reference path="./statistics.ts" />
-/// <reference path="./notice-message.ts" />
+/// <reference path="./notice.ts" />
 
 class Dashboard {
     constructor() {

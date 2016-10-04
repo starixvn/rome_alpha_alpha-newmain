@@ -13,7 +13,7 @@
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
-    public class BalanceInfoHanlderTests
+    public class BalanceInfoHandlerTests
     {
         private BalanceInfoService balanceInfoService;
         private BalanceInfoHandler balanceInfoHandler;

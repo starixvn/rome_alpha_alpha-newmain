@@ -77,7 +77,7 @@
         public void HandleMarkMessageAsReadQuery_NotNullQuery_CallMarkMessageAsReadService()
         {
             // Arrange
-            var query = new MarkMessageAsReadQuery(CustId.ValidId, "1");
+            var query = new MarkMessageAsReadQuery(CustId.ValidId, 1);
 
             // Act
             var viewModel = noticeHandler.Handle(query);
@@ -87,7 +87,7 @@
                 .Received()
                 .MarkMessageAsRead(
                     Arg.Is<int>(cid => cid == query.CustId),
-                    Arg.Is<string>(mid => mid == query.MessageIds));
+                    Arg.Is<int>(mid => mid == query.MessageId));
         }
 
         private List<NoticeMessage> CreateNoticeMessagesData(byte msgType = 1, bool isSticky = false)

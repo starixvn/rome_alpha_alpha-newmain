@@ -4,14 +4,14 @@
 
     public class MarkMessageAsReadQuery : IRequest<bool>
     {
-        public MarkMessageAsReadQuery(int custId, string messageIds)
+        public MarkMessageAsReadQuery(int custId, int messageId)
         {
             CustId = custId;
-            MessageIds = messageIds;
+            MessageId = messageId;
         }
 
         public int CustId { get; private set; }
 
-        public string MessageIds { get; private set; }
+        public int MessageId { get; private set; }
     }
 }

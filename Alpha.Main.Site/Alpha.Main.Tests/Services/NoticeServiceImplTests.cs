@@ -56,10 +56,10 @@
         }
 
         [Test]
-        public void MarkMessageAsRead_InvalidCustIdAndMessageIds_ReturnFalse()
+        public void MarkMessageAsRead_InvalidCustId_ReturnFalse()
         {
             // Action
-            var isSuccess = noticeService.MarkMessageAsRead(CustId.InvalidId, string.Empty);
+            var isSuccess = noticeService.MarkMessageAsRead(CustId.InvalidId, 1);
 
             // Assert
             Assert.IsFalse(isSuccess);
@@ -69,7 +69,7 @@
         public void MarkMessageAsRead_ValidCustIdAndMessageIds_ReturnTrue()
         {
             // Action
-            var isSuccess = noticeService.MarkMessageAsRead(CustId.ValidId, "1");
+            var isSuccess = noticeService.MarkMessageAsRead(CustId.ValidId, 1);
 
             // Assert
             Assert.IsTrue(isSuccess);

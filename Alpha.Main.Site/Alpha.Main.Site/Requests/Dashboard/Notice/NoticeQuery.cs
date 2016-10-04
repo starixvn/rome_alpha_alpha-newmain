@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Requests.Notice
 {
     using System;
@@ -11,45 +12,23 @@ namespace Alpha.Main.Site.Requests.Notice
 
     public class NoticeQuery : IRequest<NoticeViewModel>
     {
-        private IUserSession userSession;
-
         public NoticeQuery(
             IUserSession userSession,
             DateTime lastPostTime,
             int totalMessage,
             bool isTest)
         {
-            this.userSession = userSession;
+            UserLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
+            CustId = userSession.CustId;
+            CurrentLang = userSession.Language;
             LastPostTime = lastPostTime;
             TotalMessage = totalMessage;
             IsTest = isTest;
         }
 
-        public UserLevel UserLevel
-        {
-            get
-            {
-                return Enumeration.FromValue<UserLevel>(userSession.RoleId);
-            }
-        }
+        public UserLevel UserLevel { get; private set; }
 
-        public int CustId
-        {
-            get
-            {
-                return userSession.CustId;
-            }
-        }
-
-        public string ParentSiteId
-        {
-            get
-            {
-                var siteId = GetSiteIdByUserLevel().ToString();
-
-                return GetParentSiteIds(siteId);
-            }
-        }
+        public int CustId { get; private set; }
 
         public DateTime LastPostTime { get; private set; } = DateTime.Today;
 
@@ -57,11 +36,15 @@ namespace Alpha.Main.Site.Requests.Notice
 
         public bool IsTest { get; private set; } = false;
 
-        public string CurrentLang
+        public string CurrentLang { get; private set; }
+
+        public string ParentSiteId
         {
             get
             {
-                return userSession.Language;
+                var siteId = GetSiteIdByUserLevel();
+
+                return GetParentSiteIds(siteId);
             }
         }
 
@@ -85,22 +68,16 @@ namespace Alpha.Main.Site.Requests.Notice
             return siteId;
         }
 
-        private string GetParentSiteIds(string siteId)
+        private string GetParentSiteIds(int siteId)
         {
-            var parentSiteIds = new List<string>();
+            var parentSiteIds = "3000";
 
-            int lastIndexOfNotZeroChar = siteId.ToList().FindLastIndex(c => c != '0');
-
-            for (int i = 1; i <= lastIndexOfNotZeroChar; i++)
+            if (siteId != 3000)
             {
-                var parentSiteId = siteId.Remove(i) + new string('0', siteId.Length - i);
-
-                parentSiteIds.Add(parentSiteId);
+                parentSiteIds = $"{parentSiteIds},{siteId}";
             }
 
-            parentSiteIds.Add(siteId);
-
-            return string.Join(",", parentSiteIds);
+            return parentSiteIds;
         }
     }
 }

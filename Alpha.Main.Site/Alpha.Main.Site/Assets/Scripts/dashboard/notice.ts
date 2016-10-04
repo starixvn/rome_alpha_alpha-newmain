@@ -38,7 +38,7 @@
 
         let ajaxSetting = {
             url: '/site-main/Notice/MarkMessageAsRead',
-            data: { messageIds: message.attr('id') },
+            data: { messageId: message.attr('id') },
             method: 'POST',
             success: onSuccess
         }

@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Requests.BalanceInfo
 {
     using Main.Models.Enumerations;
@@ -8,35 +9,17 @@ namespace Alpha.Main.Site.Requests.BalanceInfo
 
     public class BalanceInfoQuery : IRequest<BalanceInfoViewModel>
     {
-        private readonly IUserSession userSession;
-
         public BalanceInfoQuery(IUserSession userSession)
         {
-            this.userSession = userSession;
+            CustId = userSession.CustId;
+            UserLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
+            Currency = userSession.Currency;
         }
 
-        public int CustId
-        {
-            get
-            {
-                return userSession.CustId;
-            }
-        }
+        public int CustId { get; private set; }
 
-        public UserLevel UserLevel
-        {
-            get
-            {
-                return Enumeration.FromValue<UserLevel>(userSession.RoleId);
-            }
-        }
+        public UserLevel UserLevel { get; private set; }
 
-        public string Currency
-        {
-            get
-            {
-                return userSession.Currency;
-            }
-        }
+        public string Currency { get; private set; }
     }
 }

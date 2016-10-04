@@ -15,7 +15,7 @@
 
         public override bool IsValid()
         {
-            return UserId > 0 && !string.IsNullOrEmpty(MessageIds);
+            return UserId > 0;
         }
     }
 }

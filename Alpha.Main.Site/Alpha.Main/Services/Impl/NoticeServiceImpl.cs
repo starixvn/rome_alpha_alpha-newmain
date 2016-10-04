@@ -38,12 +38,12 @@
             return message;
         }
 
-        public bool MarkMessageAsRead(int custId, string messageIds)
+        public bool MarkMessageAsRead(int custId, int messageId)
         {
             var criteria = new MarkMessageAsReadCriteria()
             {
                 UserId = custId,
-                MessageIds = messageIds
+                MessageIds = messageId.ToString()
             };
 
             if (!criteria.IsValid())

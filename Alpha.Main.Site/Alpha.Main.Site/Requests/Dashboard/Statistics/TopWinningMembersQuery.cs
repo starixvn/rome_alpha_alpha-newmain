@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Requests.Statistics
 {
     using Main.Models.Enumerations;
@@ -8,27 +9,14 @@ namespace Alpha.Main.Site.Requests.Statistics
 
     public class TopWinningMembersQuery : IRequest<TopWinningMembersViewModel>
     {
-        private IUserSession userSession;
-
         public TopWinningMembersQuery(IUserSession userSession)
         {
-            this.userSession = userSession;
+            CustId = userSession.CustId;
+            UserLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
         }
 
-        public int CustId
-        {
-            get
-            {
-                return userSession.CustId;
-            }
-        }
+        public int CustId { get; private set; }
 
-        public UserLevel UserLevel
-        {
-            get
-            {
-                return Enumeration.FromValue<UserLevel>(userSession.RoleId);
-            }
-        }
+        public UserLevel UserLevel { get; private set; }
     }
 }

@@ -47,7 +47,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var isSuccess = noticeService.MarkMessageAsRead(message.CustId, message.MessageIds);
+            var isSuccess = noticeService.MarkMessageAsRead(message.CustId, message.MessageId);
 
             return isSuccess;
         }

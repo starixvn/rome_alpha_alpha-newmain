@@ -13,6 +13,6 @@
             int totalMessage,
             bool isTest);
 
-        bool MarkMessageAsRead(int custId, string messageIds);
+        bool MarkMessageAsRead(int custId, int messageId);
     }
 }

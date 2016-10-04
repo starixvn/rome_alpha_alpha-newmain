@@ -502,10 +502,6 @@
     <Content Include="Assets\bundles\default-dashboard.min.js">
       <DependentUpon>default-dashboard.js</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\default-dashboard.js" />
-    <Content Include="Assets\bundles\default-dashboard.min.js">
-      <DependentUpon>default-dashboard.js</DependentUpon>
-    </Content>
     <Content Include="Assets\bundles\default-home.css" />
     <Content Include="Assets\bundles\default-home.min.css">
       <DependentUpon>default-home.css</DependentUpon>
@@ -545,9 +541,9 @@
     <Content Include="Assets\styles\otp\images\qr.png" />
     <Content Include="Assets\styles\otp\otp.css" />
     <Content Include="Assets\styles\otp\otp.min.css" />
-    <TypeScriptCompile Include="Assets\scripts\home\dashboard.ts" />
-    <TypeScriptCompile Include="Assets\scripts\home\notice-message.ts" />
-    <TypeScriptCompile Include="Assets\scripts\home\statistics.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\notice.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\statistics.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.js">

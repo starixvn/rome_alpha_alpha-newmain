@@ -8,24 +8,17 @@
     {
         public NoticeViewModel(List<NoticeMessageWrapper> noticeMessages)
         {
-            NoticeMessages = noticeMessages.OrderByDescending(m => m.CurrentMessage.PostTime).ToList();
+            NoticeMessages = noticeMessages
+                .OrderByDescending(m => m.CurrentMessage.PostTime)
+                .ToList();
+
+            LastMessagePostTime = NoticeMessages.Any() ? NoticeMessages.Last().PostTime : DateTime.MinValue;
         }
 
         public List<NoticeMessageWrapper> NoticeMessages { get; private set; }
 
+        public DateTime LastMessagePostTime { get; private set; }
+
         public DateTime MaxDateTime { get; } = DateTime.MaxValue;
-
-        public DateTime LastMessagePostTime
-        {
-            get
-            {
-                if (!NoticeMessages.Any())
-                {
-                    return DateTime.MinValue;
-                }
-
-                return NoticeMessages.Last().PostTime;
-            }
-        }
     }
 }

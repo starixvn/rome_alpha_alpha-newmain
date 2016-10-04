@@ -15,22 +15,14 @@
 
         public NoticeMessageWrapper(NoticeMessage noticeMessage, string currentLang)
         {
-            CurrentMessage = noticeMessage;
             this.currentLang = currentLang;
+            CurrentMessage = noticeMessage;
+            PostTime = CurrentMessage.PostTime;
         }
 
-        public NoticeMessage CurrentMessage
-        {
-            get; private set;
-        }
+        public NoticeMessage CurrentMessage { get; private set; }
 
-        public DateTime PostTime
-        {
-            get
-            {
-                return CurrentMessage.PostTime;
-            }
-        }
+        public DateTime PostTime { get; private set; }
 
         public string MessageType
         {

@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Controllers
 {
     using System;
@@ -36,9 +37,9 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [HttpPost]
-        public bool MarkMessageAsRead(string messageIds)
+        public bool MarkMessageAsRead(int messageId)
         {
-            var isSuccess = mediator.Send(new MarkMessageAsReadQuery(this.userSession.CustId, messageIds));
+            var isSuccess = mediator.Send(new MarkMessageAsReadQuery(this.userSession.CustId, messageId));
 
             return isSuccess;
         }

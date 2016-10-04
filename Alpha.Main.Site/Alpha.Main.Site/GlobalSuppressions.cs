@@ -4,6 +4,10 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1014:MarkAssembliesWithClsCompliant")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Scope = "namespace", Target = "Alpha.Main.Site.App_Start")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Handlers.DefaultHandler.#Handle(Alpha.Main.Site.Requests.BrowserQuery)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.BalanceInfo.BalanceInfoQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Statistics.StatisticsQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Statistics.TopTurnoverMembersQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Statistics.TopWinningMembersQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
 
 #pragma warning disable 618, 612
 // This file is used by Code Analysis to maintain SuppressMessage 
