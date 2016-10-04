@@ -334,4 +334,7 @@
   <data name="Skip" xml:space="preserve">
     <value>다음</value>
   </data>
+  <data name="stats" xml:space="preserve">
+    <value>통계</value>
+  </data>
 </root>

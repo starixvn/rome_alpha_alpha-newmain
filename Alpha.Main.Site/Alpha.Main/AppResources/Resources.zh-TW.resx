@@ -412,4 +412,7 @@
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>快速遊覽手冊教學</value>
   </data>
+  <data name="stats" xml:space="preserve">
+    <value>您的統計</value>
+  </data>
 </root>

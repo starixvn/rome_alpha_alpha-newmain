@@ -713,11 +713,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stats.
+        ///   Looks up a localized string similar to Statistics.
         /// </summary>
         public static string statistics {
             get {
                 return ResourceManager.GetString("statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stats.
+        /// </summary>
+        public static string stats {
+            get {
+                return ResourceManager.GetString("stats", resourceCulture);
             }
         }
         

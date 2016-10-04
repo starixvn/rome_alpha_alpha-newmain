@@ -263,7 +263,7 @@
     <value>Total Poker Transfer|Outstanding</value>
   </data>
   <data name="statistics" xml:space="preserve">
-    <value>Stats</value>
+    <value>Statistics</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">
     <value>Highest turnover members of the month</value>
@@ -453,5 +453,8 @@
   </data>
   <data name="notice" xml:space="preserve">
     <value>Notice</value>
+  </data>
+  <data name="stats" xml:space="preserve">
+    <value>Stats</value>
   </data>
 </root>

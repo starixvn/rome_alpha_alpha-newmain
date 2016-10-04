@@ -411,4 +411,7 @@
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>Giới thiệu giao diện mới</value>
   </data>
+  <data name="stats" xml:space="preserve">
+    <value>Thống kê</value>
+  </data>
 </root>
