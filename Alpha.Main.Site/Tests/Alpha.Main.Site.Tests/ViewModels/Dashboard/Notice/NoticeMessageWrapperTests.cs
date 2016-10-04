@@ -14,7 +14,7 @@
         [TestCase(1, true, "special")]
         [TestCase(3, true, "special")]
         [TestCase(3, false, "public")]
-        public void Type_ByMessageTypeAndIsSticky_ReturnTypeText(byte msgType, bool isSticky, string expectedType)
+        public void MessageType_ByMessageTypeAndIsSticky_ReturnTypeText(byte msgType, bool isSticky, string expectedType)
         {
             // Arrange
             var noticeMessage = CreateNoticeMessagesData(msgType, isSticky);
@@ -23,7 +23,7 @@
             var viewModel = new NoticeMessageWrapper(noticeMessage, Arg.Any<string>());
 
             // Assert
-            Assert.AreEqual(expectedType, viewModel.Type);
+            Assert.AreEqual(expectedType, viewModel.MessageType);
         }
 
         [TestCase(Language.ChineseSimplified, "cs")]

@@ -32,11 +32,11 @@
             }
         }
 
-        public string Type
+        public string MessageType
         {
             get
             {
-                var msgType = CurrentMessage.Type;
+                var msgType = CurrentMessage.MessageType;
                 var isSticky = CurrentMessage.IsSticky;
 
                 if (msgType == 1 && isSticky != true)

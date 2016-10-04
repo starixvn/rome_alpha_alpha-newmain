@@ -6,14 +6,14 @@
     {
         public NoticeMessage(
             int id,
-            string contentEn,
-            string contentCs,
-            string contentCh,
-            string contentJp,
-            string contentTh,
-            string contentIt,
-            string contentKo,
-            string contentEs,
+            string contentEN,
+            string contentCS,
+            string contentCH,
+            string contentJP,
+            string contentTH,
+            string contentIT,
+            string contentKO,
+            string contentES,
             DateTime postTime,
             byte type,
             bool isSticky,
@@ -22,16 +22,16 @@
             bool isRead)
         {
             Id = id;
-            ContentEn = contentEn;
-            ContentCs = contentCs;
-            ContentCh = contentCh;
-            ContentJp = contentJp;
-            ContentTh = contentTh;
-            ContentIt = contentIt;
-            ContentKo = contentKo;
-            ContentEs = contentEs;
+            ContentEN = contentEN;
+            ContentCS = contentCS;
+            ContentCH = contentCH;
+            ContentJP = contentJP;
+            ContentTH = contentTH;
+            ContentIT = contentIT;
+            ContentKO = contentKO;
+            ContentES = contentES;
             PostTime = postTime;
-            Type = type;
+            MessageType = type;
             IsSticky = isSticky;
             LastUpdateTime = lastUpdateTime;
             BetTransId = betTransId;
@@ -40,25 +40,25 @@
 
         public int Id { get; private set; }
 
-        public string ContentEn { get; private set; }
+        public string ContentEN { get; private set; }
 
-        public string ContentCs { get; private set; }
+        public string ContentCS { get; private set; }
 
-        public string ContentCh { get; private set; }
+        public string ContentCH { get; private set; }
 
-        public string ContentJp { get; private set; }
+        public string ContentJP { get; private set; }
 
-        public string ContentTh { get; private set; }
+        public string ContentTH { get; private set; }
 
-        public string ContentIt { get; private set; }
+        public string ContentIT { get; private set; }
 
-        public string ContentKo { get; private set; }
+        public string ContentKO { get; private set; }
 
-        public string ContentEs { get; private set; }
+        public string ContentES { get; private set; }
 
         public DateTime PostTime { get; private set; }
 
-        public byte Type { get; private set; }
+        public byte MessageType { get; private set; }
 
         public bool IsSticky { get; private set; }
 

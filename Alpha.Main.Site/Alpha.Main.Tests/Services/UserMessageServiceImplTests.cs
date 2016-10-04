@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using Helps;
-    using Main.Services.Impl;
-    using NUnit.Framework;
+    using System;
     using System.IO;
     using System.Linq;
+    using Helps;
+    using Main.Services.Impl;
     using NSubstitute;
-    using System;
+    using NUnit.Framework;
 
     [TestFixture]
     public class UserMessageServiceImplTests
@@ -110,11 +110,10 @@
             //// Act & Assert
             userMessageServiceImpl
                 .When(x => x.GetHotMessages(hotMessageFilePath, 2, language))
-                .Do(x => 
+                .Do(x =>
                 {
                     throw new ArgumentNullException(nameof(language), "Language cannot be null");
                 });
-
         }
     }
 }
