@@ -68,6 +68,11 @@
                 () =>
                 {
                     return Current.IsShowBetChoiceLimit;
+                }),
+            ["NG2MenuItem"] = () => new MenuStatus(
+                () =>
+                {
+                    return true;
                 })
         };
 

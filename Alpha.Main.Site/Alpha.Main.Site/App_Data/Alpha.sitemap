@@ -41,6 +41,7 @@
 
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="OldMainAppPath" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
+      <siteMapNode menuItemType="NG2MenuItem" resourceKey="result" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
     <!--MemberInfo-->
@@ -102,6 +103,7 @@
       <siteMapNode resourceKey="HOUL" appPath="OldMainAppPath" url="_Forecast/FCHDPOU.aspx"></siteMapNode>
       <siteMapNode resourceKey="lbl1x2" appPath="OldMainAppPath" url="_Forecast/FC1X2.aspx"></siteMapNode>
       <siteMapNode resourceKey="scoreMap" appPath="OldMainAppPath" url="ForecastScoreMap/Index"></siteMapNode>
+      <siteMapNode menuItemType="NG2MenuItem" resourceKey="scoreMap" appPath="NG2SiteVirtualPath" url="~/Forecast/Index"></siteMapNode>
     </siteMapNode>
     <!--/Forecast-->
 
