@@ -3,20 +3,12 @@
     using Main.Models.Enumerations;
 
     public class DashboardViewModel
-    {
-        private byte roleId;
-
+    {        
         public DashboardViewModel(byte roleId)
         {
-            this.roleId = roleId;
+            UserLevelName = Enumeration.FromValue<UserLevel>(roleId).DisplayName.ToLower();
         }
 
-        public string UserLevelName
-        {
-            get
-            {
-                return Enumeration.FromValue<UserLevel>(this.roleId).DisplayName.ToLower();
-            }
-        }
+        public string UserLevelName { get; private set; }
     }
 }

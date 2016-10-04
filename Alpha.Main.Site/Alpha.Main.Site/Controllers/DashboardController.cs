@@ -1,5 +1,4 @@
 ﻿#pragma warning disable 618, 612
-
 namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
