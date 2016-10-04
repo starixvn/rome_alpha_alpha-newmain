@@ -136,24 +136,24 @@
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      Chào quý khách hàng,<br />
       <p>
-        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
-        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
-        All settings will be configured as follows:
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet".<br />
+        Sản phẩm này sẽ được cung cấp mặc định. Nếu bạn muốn vô hiệu hoá "AllBet" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
+        Tất cả các thiết lập sẽ được cấu hình như sau:
       </p>
       <p>
-        - Position taking will be copied from Live Casino's settings.<br/>
-        - Commission will be copied from Live Casino's settings.<br/>
-        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
-        - Member Win Limit will be copied from Live Casino's settings.
+        - Position Taking sẽ được sao chép từ Live Casino.<br/>
+        - Các thiết lập về hoa hồng sẽ được sao chép từ Live Casino.<br/>
+        - Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br/>
+        - Giới hạn thắng cược của member sẽ được sao chép từ Live Casino.
       </p>
       <p>
-        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
-        All settings will be available for configuration since <b>{effectdate}</b>.
+        Nếu không có thiết lập nào được sao chép từ Live Casino, bạn phải cấu hình các thiết lập cho AllBet trước khi sản phẩm này được cho phép đặt cược.<br/>
+        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>{effectdate}</b>.
       </p>
       <p>
-        Thank you
+        Trân Trọng
       </p>
     </vi-VN>
   </PopupAnnouncement>
@@ -167,7 +167,7 @@
         We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
         This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
         Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
-        All settings will be available for configuration since<b>{effectdate}</b>
+        All settings will be available for configuration since <b>{effectdate}</b>
       </p>
 
       <p>
@@ -209,7 +209,7 @@
         We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
         This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
         Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
-        All settings will be available for configuration since<b>{effectdate}</b>
+        All settings will be available for configuration since <b>{effectdate}</b>
       </p>
 
       <p>
@@ -223,7 +223,7 @@
         We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
         This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
         Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
-        All settings will be available for configuration since<b>{effectdate}</b>
+        All settings will be available for configuration since <b>{effectdate}</b>
       </p>
 
       <p>
@@ -246,16 +246,16 @@
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      Chào quý khách hàng,<br />
       <p>
-        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
-        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
-        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
-        All settings will be available for configuration since<b>{effectdate}</b>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet".<br />
+        Sản phẩm này sẽ được cung cấp mặc định. Nếu bạn muốn vô hiệu hoá "AllBet" riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
+        Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br />
+        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>{effectdate}</b>
       </p>
 
       <p>
-        Thank you
+        Trân Trọng
       </p>
     </vi-VN>
   </PopupAnnouncement>
