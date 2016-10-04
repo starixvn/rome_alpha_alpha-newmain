@@ -18,7 +18,5 @@
         public List<NoticeMessageWrapper> NoticeMessages { get; private set; }
 
         public DateTime LastMessagePostTime { get; private set; }
-
-        public DateTime MaxDateTime { get; } = DateTime.MaxValue;
     }
 }

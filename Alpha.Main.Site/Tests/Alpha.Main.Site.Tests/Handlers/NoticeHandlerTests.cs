@@ -90,6 +90,23 @@
                     Arg.Is<int>(mid => mid == query.MessageId));
         }
 
+        [Test]
+        public void HandleNoticeQuery_NotNullQuery_ReturnNoticeViewModel()
+        {
+            // Arrange
+            var expectedNoticeMessages = CreateNoticeMessagesData();
+            FakeReturnGetNoticeMessagesService(expectedNoticeMessages);
+
+            var query = new NoticeQuery(userSession, DateTime.Today, 100, false);
+
+            // Act
+            var viewModel = noticeHandler.Handle(query);
+
+            // Assert
+            Assert.IsTrue(viewModel.NoticeMessages.Any(msg => expectedNoticeMessages.Contains(msg.CurrentMessage))
+                && viewModel.LastMessagePostTime == expectedNoticeMessages.Last().PostTime);
+        }
+
         private List<NoticeMessage> CreateNoticeMessagesData(byte msgType = 1, bool isSticky = false)
         {
             var noticeMessage = new NoticeMessage(

@@ -70,12 +70,7 @@ namespace Alpha.Main.Site.Requests.Notice
 
         private string GetParentSiteIds(int siteId)
         {
-            var parentSiteIds = "3000";
-
-            if (siteId != 3000)
-            {
-                parentSiteIds = $"{parentSiteIds},{siteId}";
-            }
+            var parentSiteIds = (siteId == 3000) ? siteId.ToString() : $"3000,{siteId}";
 
             return parentSiteIds;
         }

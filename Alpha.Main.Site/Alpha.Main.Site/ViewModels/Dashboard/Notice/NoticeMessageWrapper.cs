@@ -83,27 +83,27 @@
             switch (lang)
             {
                 case Language.ChineseSimplified:
-                    contentLangPropName += "Cs";
+                    contentLangPropName += "CS";
                     break;
 
                 case Language.ChineseTraditional:
-                    contentLangPropName += "Ch";
+                    contentLangPropName += "CH";
                     break;
 
                 case Language.Thai:
-                    contentLangPropName += "Th";
+                    contentLangPropName += "TH";
                     break;
 
                 case Language.Japanese:
-                    contentLangPropName += "Jp";
+                    contentLangPropName += "JP";
                     break;
 
                 case Language.Korean:
-                    contentLangPropName += "Ko";
+                    contentLangPropName += "KO";
                     break;
 
                 default:
-                    contentLangPropName += "En";
+                    contentLangPropName += "EN";
                     break;
             }
 

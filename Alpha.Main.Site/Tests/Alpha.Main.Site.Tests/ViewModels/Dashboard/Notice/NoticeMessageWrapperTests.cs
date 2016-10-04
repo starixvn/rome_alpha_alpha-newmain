@@ -14,6 +14,7 @@
         [TestCase(1, true, "special")]
         [TestCase(3, true, "special")]
         [TestCase(3, false, "public")]
+        [TestCase(4, false, "")]
         public void MessageType_ByMessageTypeAndIsSticky_ReturnTypeText(byte msgType, bool isSticky, string expectedType)
         {
             // Arrange
@@ -24,6 +25,25 @@
 
             // Assert
             Assert.AreEqual(expectedType, viewModel.MessageType);
+        }
+
+        [TestCase(Language.ChineseSimplified, "en")]
+        [TestCase(Language.ChineseTraditional, "en")]
+        [TestCase(Language.Thai, "en")]
+        [TestCase(Language.Japanese, "en")]
+        [TestCase(Language.Korean, "en")]
+        [TestCase(Language.Vietnamese, "en")]
+        [TestCase(Language.English, "en")]
+        public void Content_WhenCurrentLanguageContentIsNull_ReturnContentDefault(string lang, string expectedContent)
+        {
+            // Arrange
+            var noticeMessage = CreateNoticeMessagesDataWithEmptyContent();
+
+            // Act
+            var viewModel = new NoticeMessageWrapper(noticeMessage, lang);
+
+            // Assert
+            Assert.AreEqual(expectedContent, viewModel.Content);
         }
 
         [TestCase(Language.ChineseSimplified, "cs")]
@@ -76,6 +96,28 @@
                 "lt",
                 "ko",
                 "es",
+                DateTime.Today,
+                msgType,
+                isSticky,
+                DateTime.Today,
+                "1",
+                true);
+
+            return noticeMessage;
+        }
+
+        private NoticeMessage CreateNoticeMessagesDataWithEmptyContent(byte msgType = 1, bool isSticky = false)
+        {
+            var noticeMessage = new NoticeMessage(
+                1,
+                "en",
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
                 DateTime.Today,
                 msgType,
                 isSticky,
