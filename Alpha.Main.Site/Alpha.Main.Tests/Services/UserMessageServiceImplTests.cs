@@ -22,7 +22,7 @@
         [Test]
         public void GetHotMessages_HotMessagesFileDoesNotExist_ThrowFileNotFoundException()
         {
-            Assert.Throws<FileNotFoundException>(() => userMessageServiceImpl.GetHotMessages(@"D:\demo.xml", 0, string.Empty));
+            Assert.Throws<FileNotFoundException>(() => userMessageServiceImpl.GetHotMessages(@"D:\demo.xml", 0, "English"));
         }
 
         [Test]
@@ -32,7 +32,7 @@
             var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\EmptyToolTipMessage.xml");
 
             //// Act
-            var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, string.Empty);
+            var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, "English");
 
             //// Assert
             Assert.IsEmpty(actualHotMessages);
@@ -105,15 +105,10 @@
         public void GetHotMessages_LangugeIsNullOrWhiteSpace_ThrowArgumentNullException(string language)
         {
             //// Arrange
-            var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\OfferMessageByRoleId.xml");
+            var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\TooltipMessage.xml");
 
             //// Act & Assert
-            userMessageServiceImpl
-                .When(x => x.GetHotMessages(hotMessageFilePath, 2, language))
-                .Do(x =>
-                {
-                    throw new ArgumentNullException(nameof(language), "Language cannot be null");
-                });
+            Assert.Throws<ArgumentNullException>(() => userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, language));
         }
     }
 }
