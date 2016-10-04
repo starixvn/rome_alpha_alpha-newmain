@@ -4,6 +4,7 @@ namespace Alpha.Main.Site.Requests.Notice
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -47,7 +48,7 @@ namespace Alpha.Main.Site.Requests.Notice
             {
                 var siteId = GetSiteIdByUserLevel().ToString();
 
-                return GetParentSitesId(siteId);
+                return GetParentSiteIds(siteId);
             }
         }
 
@@ -85,40 +86,22 @@ namespace Alpha.Main.Site.Requests.Notice
             return siteId;
         }
 
-        private string GetParentSitesId(string siteId)
+        private string GetParentSiteIds(string siteId)
         {
             var parentSiteIds = new List<string>();
-            int num = 0;
 
-            for (int i = siteId.Length - 1; i >= 0; i--)
+            int lastIndexOfNotZeroChar = siteId.ToList().FindLastIndex(c => c != '0');
+
+            for (int i = 1; i <= lastIndexOfNotZeroChar; i++)
             {
-                if (siteId[i] != '0')
-                {
-                    num = i;
-                    break;
-                }
+                var parentSiteId = siteId.Remove(i) + new string('0', siteId.Length - i);
+
+                parentSiteIds.Add(parentSiteId);
             }
 
-            for (int j = 1; j <= num; j++)
-            {
-                string str = string.Empty;
+            parentSiteIds.Add(siteId);
 
-                for (int m = j; m < siteId.Length; m++)
-                {
-                    str += "0";
-                }
-
-                parentSiteIds.Add(siteId.Remove(j) + str);
-            }
-
-            string parentSiteIdsStr = string.Empty;
-
-            foreach (string parentSiteId in parentSiteIds)
-            {
-                parentSiteIdsStr += parentSiteId + ",";
-            }
-
-            return parentSiteIdsStr + siteId;
+            return string.Join(",", parentSiteIds);
         }
     }
 }
