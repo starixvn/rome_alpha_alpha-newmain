@@ -17,7 +17,7 @@
     public class AnnouncementHandlerTests
     {
         private AnnouncementService announcementService;
-        private ISecurityCodeSession securityCodeSession;
+        private SecurityCodeSession securityCodeSession;
         private AnnouncementHandler announcementHandler;
         private IUserSession userSession;
 
@@ -25,7 +25,7 @@
         public void SetUp()
         {
             announcementService = Substitute.For<AnnouncementService>();
-            securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            securityCodeSession = Substitute.For<SecurityCodeSession>();
             announcementHandler = new AnnouncementHandler(announcementService, securityCodeSession);
             userSession = Substitute.For<IUserSession>();
         }

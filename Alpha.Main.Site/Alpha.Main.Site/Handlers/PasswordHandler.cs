@@ -29,7 +29,7 @@
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
         private readonly CustomerProfileService customerProfileService;
-        private readonly ISecurityCodeSession securityCodeSession;
+        private readonly SecurityCodeSession securityCodeSession;
 
         public PasswordHandler(
             PasswordService passwordService,
@@ -37,7 +37,7 @@
             CustomerProfileService customerProfileService,
             SessionManager sessionManager,
             Encryptor encryptor,
-            ISecurityCodeSession securityCodeSession)
+            SecurityCodeSession securityCodeSession)
         {
             this.passwordService = passwordService;
             this.userSession = userSession;
@@ -217,11 +217,11 @@
         {
             if (message.IsSubAcc)
             {
-                return "(" + message.SubUserName + ")";
+                return $"({message.SubUserName})";
             }
             else
             {
-                return string.IsNullOrEmpty(message.NickName) ? string.Empty : "(" + message.NickName + ")";
+                return string.IsNullOrEmpty(message.NickName) ? string.Empty : $"({message.NickName})";
             }
         }
     }

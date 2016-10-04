@@ -13,11 +13,11 @@
          IRequestHandler<HotAnnouncementQuery, HotAnnouncement>
     {
         private readonly AnnouncementService _announcementService;
-        private readonly ISecurityCodeSession securityCodeSession;
+        private readonly SecurityCodeSession securityCodeSession;
 
         public AnnouncementHandler(
             AnnouncementService announcementService,
-            ISecurityCodeSession securityCodeSession = null)
+            SecurityCodeSession securityCodeSession = null)
         {
             _announcementService = announcementService;
             this.securityCodeSession = securityCodeSession ?? CookieLessSessionFactory.SecurityCodeSession;

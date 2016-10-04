@@ -1,265 +1,47 @@
-﻿namespace Alpha.Main.Sessions
+﻿using Alpha.Main.Models.Enumerations;
+
+namespace Alpha.Main.Sessions
 {
-    using System.Web;
-    using Models.Enumerations;
-    using Models.SecurityCode;
-    using SecurityCode.Services;
-    using Sunplus.Agent.Model.Base;
-
-    public class SecurityCodeSession : ISecurityCodeSession
+    public interface SecurityCodeSession
     {
-        private const string HYPHEN = "_";
-        //// user information
-        private const string DEFAULTLANGUAGE = "en-US";
-        private const string LANGUAGE = "LANGUAGE";
-        private const string CUSTID = "CUSTID";
-        private const string SUBACCID = "SUBACCID";
-        private const string ADMINID = "ADMINID";
-        private const string ROLEID = "ROLEID";
-        private const string USERNAME = "USERNAME";
+        string Language { get; }
 
-        //// security code
-        private const string ISFORCEDSECURITYCODE = "ISFORCEDSECURITYCODE";
-        private const string SECURITYCODE = "SECURITYCODE";
-        private const string SECURITYCODETOKEN = "SECURITYCODETOKEN";
-        private const string SECURITYCODERESULT = "SECURITYCODERESULT";
+        int SubAccId { get; }
 
-        private string _netSessionId;
-        private SecurityCodeChecker securityCodeChecker;
+        int CustId { get; }
 
-        public SecurityCodeSession() : this(null, null)
-        {
-        }
+        int UserId { get; }
 
-        public SecurityCodeSession(string netSessionId, SecurityCodeChecker securityCodeChecker)
-        {
-            this._netSessionId = netSessionId ?? new UserSessionExt().NetSessionId;
-            this.securityCodeChecker = securityCodeChecker ?? new SecurityCodeCheckerImpl();
-        }
+        UserLevel UserLevel { get; }
 
-        #region ISecurityCodeSession Members
+        byte RoleId { get; }
 
-        #region user information
+        bool IsInternal { get; }
 
-        public string Language
-        {
-            get
-            {
-                object value = this.GetProperty(LANGUAGE);
-                return (null == value) ? DEFAULTLANGUAGE : value as string;
-            }
-        }
+        bool IsForcedSecurityCode { get; set; }
 
-        public int CustId
-        {
-            get
-            {
-                object value = this.GetProperty(CUSTID);
-                return (null == value) ? 0 : (int)value;
-            }
-        }
+        string SecurityCode { get; set; }
 
-        public int SubAccId
-        {
-            get
-            {
-                object value = this.GetProperty(SUBACCID);
-                return (null == value) ? 0 : (int)value;
-            }
-        }
+        string SecurityCodeToken { get; set; }
 
-        public UserLevel UserLevel
-        {
-            get
-            {
-                return Enumeration.FromValue<UserLevel>(this.RoleId);
-            }
-        }
+        int SecurityCodeResult { get; set; }
 
-        public byte RoleId
-        {
-            get
-            {
-                object value = this.GetProperty(ROLEID);
-                return (null == value) ? byte.MinValue : (byte)value;
-            }
-        }
+        /// <summary>
+        /// Gets a value indicating whether this instance is enable security code.
+        /// Check PROVIDED_SC_SUCCESS status also.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> If this instance is enable security code; otherwise, <c>false</c>.
+        /// </value>
+        bool IsEnableSecurityCode { get; }
 
-        public bool IsInternal
-        {
-            get
-            {
-                return this.AdminId != 0;
-            }
-        }
-
-        #endregion
-
-        #region security code
-
-        public bool IsForcedSecurityCode
-        {
-            get
-            {
-                object value = this.GetProperty(ISFORCEDSECURITYCODE);
-                return (null == value) ? false : (bool)value;
-            }
-
-            set
-            {
-                this.SetProperty(ISFORCEDSECURITYCODE, value);
-            }
-        }
-
-        public string SecurityCode
-        {
-            get
-            {
-                return (string)this.GetProperty(SECURITYCODE);
-            }
-
-            set
-            {
-                this.SetProperty(SECURITYCODE, value);
-            }
-        }
-
-        public string SecurityCodeToken
-        {
-            get
-            {
-                return (string)this.GetProperty(SECURITYCODETOKEN);
-            }
-
-            set
-            {
-                this.SetProperty(SECURITYCODETOKEN, value);
-            }
-        }
-
-        public int SecurityCodeResult
-        {
-            get
-            {
-                if (!this.securityCodeChecker.IsEnableSecurityCode())
-                {
-                    return (int)SecurityCodeStatus.NONE;
-                }
-
-                object value = this.GetProperty(SECURITYCODERESULT);
-                if (value != null)
-                {
-                    return (int)value;
-                }
-
-                SecurityCodeStatus status = SecurityCodeStatus.PROVIDED_SECURITYCODE;
-                bool isForceSecurityCode = this.IsForcedSecurityCode;
-                bool hasSC = !string.IsNullOrEmpty(this.SecurityCode);
-                if (isForceSecurityCode)
-                {
-                    if (this.IsInternal)
-                    {
-                        status = SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS;
-                    }
-                    else
-                    {
-                        status = hasSC
-                            ? SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING
-                            : SecurityCodeStatus.CHANGE_SECURITYCODE_FIRSTLOGIN;
-                    }
-                }
-                else
-                {
-                    if (hasSC)
-                    {
-                        status = this.IsInternal
-                            ? SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS
-                            : SecurityCodeStatus.PROVIDED_SECURITYCODE;
-                    }
-                    else
-                    {
-                        status = SecurityCodeStatus.NONE;
-                    }
-                }
-
-                if (this.CustId > 0)
-                {
-                    this.SetProperty(SECURITYCODERESULT, (int)status);
-                }
-
-                this.SetProperty(SECURITYCODERESULT, (int)status);
-
-                return (int)status;
-            }
-
-            set
-            {
-                this.SetProperty(SECURITYCODERESULT, value);
-            }
-        }
-
-        #endregion
-
-        public bool IsEnableSecurityCode
-        {
-            get
-            {
-                return this.SecurityCodeResult != (int)SecurityCodeStatus.NONE;
-            }
-        }
-
-        public bool IsRequireSecurityCode
-        {
-            get
-            {
-                SecurityCodeStatus status = (SecurityCodeStatus)this.SecurityCodeResult;
-                if (status == SecurityCodeStatus.NONE || status == SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS)
-                {
-                    return false;
-                }
-
-                return true;
-            }
-        }
-
-        #endregion
-
-        private int AdminId
-        {
-            get
-            {
-                object value = this.GetProperty(ADMINID);
-                return (null == value) ? 0 : (int)value;
-            }
-        }
-
-        public int UserId
-        {
-            get
-            {
-                if (this.IsInternal)
-                {
-                    return this.AdminId;
-                }
-                else
-                {
-                    return this.CustId;
-                }
-            }
-        }
-
-        #region helper methods
-
-        private object GetProperty(string key)
-        {
-            return HttpContext.Current.Session[this._netSessionId + HYPHEN + key];
-        }
-
-        private void SetProperty(string key, object value)
-        {
-            HttpContext.Current.Session[this._netSessionId + HYPHEN + key] = value;
-        }
-
-        #endregion
+        /// <summary>
+        /// Gets a value indicating whether this instance is require security code.
+        /// Do not check PROVIDED_SC_SUCCESS status.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> If this instance is require security code; otherwise, <c>false</c>.
+        /// </value>
+        bool IsRequireSecurityCode { get; }
     }
 }

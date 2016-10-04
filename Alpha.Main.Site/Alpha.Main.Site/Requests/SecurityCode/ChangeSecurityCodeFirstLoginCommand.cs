@@ -1,20 +1,20 @@
 ﻿namespace Alpha.Main.Site.Models.Request.SecurityCode
 {
-    using Main.Models.SecurityCode;
+    using Main.Models;
     using MediatR;
     using Sessions;
 
     public class ChangeSecurityCodeFirstLoginCommand : IRequest<Result>
     {
-        private ISecurityCodeSession securityCodeSession;
+        private SecurityCodeSession securityCodeSession;
 
         public ChangeSecurityCodeFirstLoginCommand() : this(null)
         {
         }
 
-        public ChangeSecurityCodeFirstLoginCommand(ISecurityCodeSession securityCodeSession)
+        public ChangeSecurityCodeFirstLoginCommand(SecurityCodeSession securityCodeSession)
         {
-            this.securityCodeSession = securityCodeSession ?? new SecurityCodeSession();
+            this.securityCodeSession = securityCodeSession ?? new SecurityCodeSessionImpl();
         }
 
         public int CustId
@@ -45,11 +45,9 @@
         {
             get
             {
-                return this.securityCodeSession.SubAccId.Equals(0);
+                return !this.securityCodeSession.SubAccId.Equals(0);
             }
         }
-
-        public string ConfirmSecurityCode { get; set; }
 
         public string SecurityCode { get; set; }
 

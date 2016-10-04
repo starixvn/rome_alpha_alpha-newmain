@@ -225,7 +225,6 @@
     <Compile Include="Models\Menus\MenuItemBuilderImpl.cs" />
     <Compile Include="Models\Menus\MenuStatus.cs" />
     <Compile Include="Models\Result.cs" />
-    <Compile Include="Models\SecurityCode\Result.cs" />
     <Compile Include="Models\SecurityCode\SecurityCodeStatus.cs" />
     <Compile Include="Params\Announcements\GetHotAnnouncementsParams.cs" />
     <Compile Include="Params\Password\ResetMainAccountPasswordParam.cs" />
@@ -256,8 +255,8 @@
     <Compile Include="Services\SiteMenuService.cs" />
     <Compile Include="Services\UserMessageService.cs" />
     <Compile Include="Sessions\CookieLessSessionFactory.cs" />
-    <Compile Include="Sessions\ISecurityCodeSession.cs" />
     <Compile Include="Sessions\SecurityCodeSession.cs" />
+    <Compile Include="Sessions\SecurityCodeSessionImpl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -23,16 +23,16 @@
         [HttpGet]
         public ActionResult CheckLoginSecurityCode()
         {
-            ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
+            SecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
             var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
             var securityAction = string.Empty;
 
             switch (status)
             {
-                case SecurityCodeStatus.CHANGE_SECURITYCODE_BY_FORCING:
+                case SecurityCodeStatus.ChangeSecurityCodeByForcing:
                     return RedirectToAction("ChangeSecurityCodeByForcing", "SecurityCode");
 
-                case SecurityCodeStatus.CHANGE_SECURITYCODE_FIRSTLOGIN:
+                case SecurityCodeStatus.ChangeSecurityCodeFirstLogin:
                     return RedirectToAction("ChangeSecurityCodeFirstLogin", "SecurityCode");
             }
 

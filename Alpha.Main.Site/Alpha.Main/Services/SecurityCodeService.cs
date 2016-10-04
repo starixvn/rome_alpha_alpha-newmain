@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Services
 {
-    using Models.SecurityCode;
+    using Models;
     using Params.SecurityCode;
     using Sessions;
     using System.Diagnostics.CodeAnalysis;

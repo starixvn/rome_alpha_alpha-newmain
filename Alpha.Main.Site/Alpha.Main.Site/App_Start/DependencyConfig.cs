@@ -93,7 +93,7 @@
                         return CookieLessSessionFactory.SecurityCodeSession;
                     }
 
-                    return new SecurityCodeSession(string.Empty, null);
+                    return new SecurityCodeSessionImpl(string.Empty, null);
                 },
                 Lifestyle.Transient);
 

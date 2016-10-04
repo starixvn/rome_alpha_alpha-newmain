@@ -7,7 +7,7 @@
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Security;
-    using Models.SecurityCode;
+    using Models;
     using Params.SecurityCode;
 
     public class SecurityCodeServiceImpl : SecurityCodeService
@@ -40,7 +40,7 @@
 
         public string GetMainAccountHashSecurityCode(int custId)
         {
-            return this.securityCodeDataAccess.GetMainAccountHashSecurityCode(
+            return this.securityCodeDataAccess.GetHashSecurityCode(
                 new GetMainAccountHashSecurityCodeCriteria
                 {
                     CustId = custId
@@ -49,7 +49,7 @@
 
         public string GetSubAccountHashSecurityCode(int custId, int subAccountId)
         {
-            return this.securityCodeDataAccess.GetSubAccountHashSecurityCode(
+            return this.securityCodeDataAccess.GetHashSecurityCode(
                 new GetSubAccountHashSecurityCodeCriteria
                 {
                     CustId = custId,
@@ -61,13 +61,13 @@
         {
             string hashSecurityCode = this.HashSecurityCode(securityCodeParams.CustId, securityCodeParams.SecurityCode, securityCodeParams.IsResetMember);
 
-            return this.securityCodeDataAccess.UpdateMainAccountHashSecurityCode(
+            return this.securityCodeDataAccess.UpdateSecurityCode(
                  new UpdateMainAccountHashSecurityCodeCriteria
                  {
                      CustId = securityCodeParams.CustId,
                      SubaccId = securityCodeParams.SubAccId,
                      UserId = securityCodeParams.UserId,
-                     HashSecurityCode = securityCodeParams.HashSecurityCode,
+                     HashedSecurityCode = hashSecurityCode,
                      IP = this.ClientIP,
                      Language = securityCodeParams.Language
                  });
@@ -77,12 +77,12 @@
         {
             string hashSecurityCode = this.HashSecurityCode(securityCodeParams.SubAccId, securityCodeParams.SecurityCode);
 
-            return this.securityCodeDataAccess.UpdateSubAccountHashSecurityCode(new UpdateSubAccountHashSecurityCodeCriteria
+            return this.securityCodeDataAccess.UpdateSecurityCode(new UpdateSubAccountHashSecurityCodeCriteria
             {
                 CustId = securityCodeParams.CustId,
                 SubaccId = securityCodeParams.SubAccId,
                 UserId = securityCodeParams.UserId,
-                HashSecurityCode = securityCodeParams.HashSecurityCode,
+                HashedSecurityCode = hashSecurityCode,
                 IP = this.ClientIP,
                 Language = securityCodeParams.Language
             });
@@ -91,12 +91,12 @@
         public Result ResetSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams)
         {
             string hashSecurityCode = this.HashSecurityCode(securityCodeParams.SubAccId, securityCodeParams.SecurityCode);
-            return this.securityCodeDataAccess.ResetSubAccountHashSecurityCode(new ResetSubAccountHashSecurityCodeCriteria
+            return this.securityCodeDataAccess.UpdateSecurityCode(new ResetSubAccountHashSecurityCodeCriteria
             {
                 CustId = securityCodeParams.CustId,
                 SubaccId = securityCodeParams.SubAccId,
                 UserId = securityCodeParams.UserId,
-                HashSecurityCode = securityCodeParams.HashSecurityCode,
+                HashedSecurityCode = hashSecurityCode,
                 IP = this.ClientIP,
                 Language = securityCodeParams.Language
             });
@@ -162,7 +162,7 @@
         {
             if (string.IsNullOrEmpty(webHashSecurityCode) || string.IsNullOrEmpty(securityCodeToken))
             {
-                return new Result { ErrorCode = -1, ErrorMessage = Security.alertInputWrongSecCode };
+                return new Result { Code = -1, Messsage = Security.alertInputWrongSecCode };
             }
 
             string securityCodeDB = GetDBhashSecurityCode(custId, subAccId);
@@ -171,18 +171,18 @@
 
             //// update status of Security Code
             Result result = UpdateSecurityCodeCounter(custId, isValidSecurityCode, language, subAccId);
-            if (result.ErrorCode == 200)
+            if (result.Code == 200)
             {
-                result.ErrorCode = 2; //// account is closed
+                result.Code = 2; //// account is closed
                 if (isSubAcc)
                 {
                     this.CloseCasinoAccount(custId, ClientIP);
                 }
             }
-            else if (result.ErrorCode != 0)
+            else if (result.Code != 0)
             {
-                result.ErrorCode = 9009; //// wrong SC
-                result.ErrorMessage = Security.alertInputWrongSecCode;
+                result.Code = 9009; //// wrong SC
+                result.Messsage = Security.alertInputWrongSecCode;
             }
 
             return result;
@@ -202,7 +202,7 @@
         private Result UpdateSecurityCodeCounter(int custId, bool isValidSecurityCode, string language, int subAccountId)
         {
             return subAccountId.Equals(0) ?
-                this.securityCodeDataAccess.UpdateMainAccountSecurityCodeCounter(
+                this.securityCodeDataAccess.UpdateSecurityCode(
                 new UpdateMainAccountSecurityCodeCounterCriteria
                 {
                     CustId = custId,
@@ -210,7 +210,7 @@
                     IP = this.ClientIP,
                     Language = language
                 })
-                : this.securityCodeDataAccess.UpdateSubAccountSecurityCodeCounter(
+                : this.securityCodeDataAccess.UpdateSecurityCode(
                 new UpdateSubAccountSecurityCodeCounterCriteria
                 {
                     CustId = custId,

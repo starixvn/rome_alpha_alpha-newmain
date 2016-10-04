@@ -60,11 +60,11 @@
     ]
   },
    {
-    "outputFileName": "Assets/bundles/security/security-code/change-securitydode-firstlogin.js",
+    "outputFileName": "Assets/bundles/security/security-code/change-securitycode-firstlogin.js",
     "inputFiles": [
       "Assets/scripts/security/security-code/security-code-resources.js",
       "Assets/scripts/security/security-helper.js",
-      "Assets/scripts/security/security-code/change-securitydode-firstlogin.js"
+      "Assets/scripts/security/security-code/change-securitycode-firstlogin.js"
     ]
   },
   {

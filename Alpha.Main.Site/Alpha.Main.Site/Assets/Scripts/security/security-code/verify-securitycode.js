@@ -1,5 +1,7 @@
-﻿'use strict';
-
+/// <reference path="../../core.ts" />
+/// <reference path="../security-helper.ts" />
+/// <reference path="security-code-resources.ts" />
+'use strict';
 var verifySecurityCode = {
     initialize: function () {
         $('#txtSecCode').keypress(function (e) {
@@ -8,25 +10,19 @@ var verifySecurityCode = {
                 e.preventDefault();
             }
         });
-
         $('.form-SC').submit(function (e) {
             verifySecurityCode.verify();
             e.preventDefault();
         });
-
         $('#txtSecCode').focus();
-
         $("#txtSecCode").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
-
-        if (top.hasPopupOpen())
-        {
+        if (top.hasPopupOpen()) {
             $("#container").addClass("has-popup");
             $("#title_header").remove();
         }
@@ -43,7 +39,6 @@ var verifySecurityCode = {
             $.unblockUI();
             return;
         }
-
         var secCode = $txtSecurityCode.val();
         secCode = securityHelper.hashSecurityCode(secCode);
         $.ajax({
@@ -52,48 +47,45 @@ var verifySecurityCode = {
             data: { securityCode: secCode },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                var errorCode = data.ErrorCode;
-                if (errorCode === 0) { // OK
+                var code = data.Code;
+                if (code === 0) {
                     var redirectUrl = verifySecurityCode.getUrlVars()['redirectUrl'];
                     if (redirectUrl) {
                         window.location.href = decodeURIComponent(redirectUrl);
                         return;
                     }
-                    
                     if (top.securityCodePopup && top.securityCodePopup.iframeAttributes.preUrl) {
                         var preUrl = top.securityCodePopup.iframeAttributes.preUrl;
                         top[preUrl]();
                         top.securityCodePopup.close();
                         return;
                     }
-
                     if (top.ageWnd && top.ageWnd.iframeAttributes.preUrl) {
                         var preUrl = top.ageWnd.iframeAttributes.preUrl;
                         top[preUrl]();
                         return;
                     }
-
-                    redirectToHomePage(200);
+                    securityHelper.redirectToHomePage(200);
                 }
-                else if (errorCode === 2) { // account is closed 
-                    alert(data.ErrorMessage);
+                else if (code === 2) {
+                    alert(data.Messsage);
                     securityHelper.signOut();
                 }
                 else {
-                    securityHelper.showFailMessage($messageContainer, data.ErrorMessage);
+                    securityHelper.showFailMessage($messageContainer, data.Messsage);
                     $txtSecurityCode.focus();
                 }
             },
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
             }
-        })
+        });
     },
     checkInputParameters: function ($txtSecurityCode) {
         var message = '';
         var secCode = $txtSecurityCode.val();
         if (secCode.length === 0) {
-            message = securityCodeResources.inform;
+            message = securityCodeResources.securityCodeEmpty;
             $txtSecurityCode.focus();
         }
         return message;
@@ -108,8 +100,7 @@ var verifySecurityCode = {
         }
         return vars;
     }
-}
-
+};
 $(function () {
     verifySecurityCode.initialize();
 });

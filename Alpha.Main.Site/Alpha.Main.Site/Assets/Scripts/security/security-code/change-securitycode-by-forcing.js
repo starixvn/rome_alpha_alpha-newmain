@@ -1,5 +1,4 @@
-﻿'use strict';
-
+'use strict';
 var changeSecurityCodeByForcing = {
     initialize: function () {
         securityHelper.initLanguage();
@@ -7,25 +6,20 @@ var changeSecurityCodeByForcing = {
             changeSecurityCodeByForcing.changeSecurityCode();
             e.preventDefault();
         });
-
         $("#btn-back").bind("click", function () {
             securityHelper.signOut();
         });
-
         $('#txtOldSecCode').focus();
-
         $("#txtSecCode").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#txtConfirmSecCode").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
-        $("#showSCchk").click(function(){
+        $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
-        });   
+        });
     },
     changeSecurityCode: function () {
         $.blockUI();
@@ -36,30 +30,27 @@ var changeSecurityCodeByForcing = {
             $.unblockUI();
             return;
         }
-
         var oldSecCode = $txtOldSecurityCode.val();
         oldSecCode = securityHelper.hashSecurityCode(oldSecCode);
         var secCode = $txtSecurityCode.val();
         var hashKey = $('#hashkey').val();
         secCode = secCode.ec(hashKey).hc();
-        var confirmSecCode = $txtConfirmSecurityCode.val();
-        confirmSecCode = confirmSecCode.ec(hashKey).hc();
         $.ajax({
             type: 'POST',
             url: 'ChangeSecurityCodeByForcing',
-            data: { oldSecurityCode: oldSecCode, securityCode: secCode, confirmSecurityCode: confirmSecCode },
+            data: { oldSecurityCode: oldSecCode, securityCode: secCode },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                if (data.ErrorCode === 0) { // OK
+                if (data.Code === 0) {
                     securityHelper.redirectToHomePage(2000);
                 }
-                else if (data.ErrorCode === 2) { // account is closed
-                    alert(data.ErrorMessage);
+                else if (data.Code === 2) {
+                    alert(data.Messsage);
                     securityHelper.signOut();
                 }
                 else {
                     $("#txtOldSecCode").addClass('error');
-                    $("#txtOldSecCode-error").empty().html(data.ErrorMessage);
+                    $("#txtOldSecCode-error").empty().html(data.Messsage);
                     $txtOldSecurityCode.focus();
                     $.unblockUI();
                 }
@@ -67,7 +58,7 @@ var changeSecurityCodeByForcing = {
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
             }
-        })
+        });
     },
     validateInputSecurityCode: function ($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode) {
         changeSecurityCodeByForcing.resetOriginalInputStatus();
@@ -104,7 +95,6 @@ var changeSecurityCodeByForcing = {
             $txtSecurityCode.focus();
             return false;
         }
-
         return true;
     },
     resetOriginalInputStatus: function () {
@@ -115,8 +105,7 @@ var changeSecurityCodeByForcing = {
         $("#txtConfirmSecCode").removeClass('error');
         $("#txtConfirmSecCode-error").empty();
     }
-}
-
+};
 $(function () {
     changeSecurityCodeByForcing.initialize();
 });

@@ -1,13 +1,13 @@
-﻿var securityHelper = {
+var securityHelper = {
     isValidSecurityCode: function (secCode) {
         var secCodeLength = secCode ? secCode.length : 0;
-        if (secCodeLength != 6) { // check length
+        if (secCodeLength != 6) {
             return false;
         }
         // check digits and all of them are not the same
         var regex = /^([0-9])(?!\1+$)[0-9]+$/;
         var result = secCode.search(regex) != -1 ? true : false;
-        if (result) { // check 'Forward Run' and 'Backward Run'
+        if (result) {
             var isForwardRun = true, isBackwardRun = true;
             var forward = 0, backward = 0;
             forward = backward = parseInt(secCode.charAt(0));
@@ -25,13 +25,13 @@
         return result;
     },
     validateSecurityCode: function (container) {
-        var $container = $(container)
+        var $container = $(container);
         var securityCode = $container.val();
         var validSC = securityHelper.isValidSecurityCode(securityCode);
         validSC ? securityHelper.showSuccessfullyIcon($container) : securityHelper.showFailIcon($container);
     },
     validatePassword: function (container) {
-        var $container = $(container)
+        var $container = $(container);
         var password = $container.val();
         var validPassword = securityHelper.isValidPassword(password);
         validPassword ? securityHelper.showSuccessfullyIcon($container) : securityHelper.showFailIcon($container);
@@ -42,7 +42,6 @@
         if (!salt || !token) {
             return '';
         }
-
         var sha1SC = Sha1.hash(securityCode + salt);
         var sha256SC = Sha256.hash(sha1SC + token);
         return sha256SC;
@@ -51,10 +50,10 @@
         setTimeout(securityHelper.gotoHomePage, timeout);
     },
     signOut: function () {
-        window.location =  $("#oldMainRootPath").val() + '_Authorization/Handlers/SignOut.ashx';
+        window.location.href = $("#oldMainRootPath").val() + '_Authorization/Handlers/SignOut.ashx';
     },
     gotoHomePage: function () {
-        window.location =  $("#mainRootPath").val();
+        window.location.href = $("#mainRootPath").val();
     },
     initLanguage: function () {
         $(".changelanguage-link").click(function () {
@@ -90,36 +89,30 @@
         $messageContainer.removeClass('msg-success');
         $messageContainer.addClass('msg-error').empty().html(failMessage);
     },
-    isValidPassword: function(password)
-    {
+    isValidPassword: function (password) {
         var regex1 = /^(?=.{8,100}$).*\d/i;
         var regex2 = /^(?=.{8,100}$).*[a-z]/;
         var regex3 = /^(?=.{8,100}$).*[A-Z]/;
         var regex4 = /^(?=.{8,100}$).*[\[\]\^\$\.\|\?\*\+\(\)\\~`\!@#%&\-_+={}'""<>:;,]/i;
-
         var whiteSpace = /^\S*$/;
-
         var case1 = password.search(regex1) != -1 ? 1 : 0;
         var case2 = password.search(regex2) != -1 ? 1 : 0;
         var case3 = password.search(regex3) != -1 ? 1 : 0;
         var case4 = password.search(regex4) != -1 ? 1 : 0;
         var case5 = password.search(whiteSpace) != -1;
-
         return (case1 + case2 + case3 + case4 >= 3) && case5;
     },
-    showHint: function ()
-    {
+    showHint: function () {
         $('input[type=password]').each(function () {
             $(this).removeAttr("type").prop('type', 'text');
-        })
+        });
     },
     hideHint: function () {
         $('input[type=text]').each(function () {
             $(this).removeAttr("type").prop('type', 'password');
-        })
+        });
     }
-}
-
+};
 String.prototype.ec = function (key) {
     var pt = this;
     var s = new Array();
@@ -147,7 +140,6 @@ String.prototype.ec = function (key) {
     }
     return ct;
 };
-
 String.prototype.hc = function () {
     var b16_digits = '0123456789abcdef';
     var b16_map = new Array();
@@ -160,7 +152,6 @@ String.prototype.hc = function () {
     }
     return result.join('');
 };
-
 $(function () {
     $.ajaxSetup({
         beforeSend: function (xhr) {

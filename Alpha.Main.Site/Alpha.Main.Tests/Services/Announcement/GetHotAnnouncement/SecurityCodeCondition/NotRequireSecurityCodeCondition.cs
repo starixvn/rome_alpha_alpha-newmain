@@ -9,7 +9,7 @@
         {
             IsSecurityCodeActive = true;
 
-            SecurityCodeSession = Substitute.For<ISecurityCodeSession>();
+            SecurityCodeSession = Substitute.For<SecurityCodeSession>();
             SecurityCodeSession.IsRequireSecurityCode.Returns(false);
         }
     }

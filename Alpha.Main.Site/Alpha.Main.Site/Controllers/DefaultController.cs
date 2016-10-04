@@ -13,13 +13,13 @@
     public class DefaultController : BaseController
     {
         private readonly IUserSession userSession;
-        private readonly ISecurityCodeSession securityCodeSession;
+        private readonly SecurityCodeSession securityCodeSession;
         private readonly IMediator mediator;
         private readonly SecurityCodeChecker securityCodeChecker;
 
         public DefaultController(
             IUserSession userSession,
-            ISecurityCodeSession securityCodeSession,
+            SecurityCodeSession securityCodeSession,
             IMediator mediator,
             SecurityCodeChecker securityCodeChecker)
         {

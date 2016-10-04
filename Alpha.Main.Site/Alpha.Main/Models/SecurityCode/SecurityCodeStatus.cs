@@ -8,26 +8,26 @@
         /// <summary>
         /// Not offer SC
         /// </summary>
-        NONE = 0,
+        None = 0,
 
         /// <summary>
         /// Require input SC 
         /// </summary>
-        PROVIDED_SECURITYCODE,
+        ProvideSecurityCode,
 
         /// <summary>
         /// Input SC successfully
         /// </summary>
-        PROVIDED_SECURITYCODE_SUCCESS,
+        ProvideSecurityCodeSuccess,
 
         /// <summary>
         /// Change SC the First login
         /// </summary>
-        CHANGE_SECURITYCODE_FIRSTLOGIN,
+        ChangeSecurityCodeFirstLogin,
 
         /// <summary>
         /// Change SC by forcing
         /// </summary>
-        CHANGE_SECURITYCODE_BY_FORCING
+        ChangeSecurityCodeByForcing
     }
 }

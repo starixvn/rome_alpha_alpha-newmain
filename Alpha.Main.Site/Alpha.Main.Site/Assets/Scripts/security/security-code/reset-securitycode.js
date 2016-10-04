@@ -1,5 +1,4 @@
-﻿'use strict';
-
+'use strict';
 var resetsecuritycode = {
     initialize: function () {
         var $form = $('.form-SC');
@@ -10,20 +9,16 @@ var resetsecuritycode = {
         $form.bind('reset', function (e) {
             resetsecuritycode.resetInputValue();
         });
-
         $("#txtSecCode").focus().keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#txtConfirmSecCode").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
-
         if (top.hasPopupOpen()) {
             $("#container").addClass("has-popup");
         }
@@ -41,38 +36,34 @@ var resetsecuritycode = {
             $.unblockUI();
             return;
         }
-
         var hashKey = $('#hashkey').val();
         var secCode = $txtSecurityCode.val();
         secCode = secCode.ec(hashKey).hc();
-        var confirmSecCode = $txtConfirmSecurityCode.val();
-        confirmSecCode = confirmSecCode.ec(hashKey).hc();
         $.ajax({
             type: 'POST',
             url: 'ResetSecurityCode',
-            data: { custId: $('#custid').val(), subAccId: $('#subaccid').val(), securityCode: secCode, confirmSecurityCode: confirmSecCode },
+            data: { custId: $('#custid').val(), subAccId: $('#subaccid').val(), securityCode: secCode },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                if (data.ErrorCode !== 0) {
-                    securityHelper.showFailMessage($messageContainer, data.ErrorMessage);
+                if (data.Code !== 0) {
+                    securityHelper.showFailMessage($messageContainer, data.Messsage);
                     $txtSecurityCode.focus();
                 }
-                else
-                {
+                else {
                     securityHelper.showSuccessfullyMessage($messageContainer, securityCodeResources.securityCodeChangeSucessfully);
                 }
             },
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
             }
-        })
+        });
     },
     checkInputParameters: function ($txtSecurityCode, $txtConfirmSecurityCode) {
         var secCode = $txtSecurityCode.val();
         var confirmSecCode = $txtConfirmSecurityCode.val();
         if (secCode.length === 0) {
             $txtSecurityCode.focus();
-            return securityCodeResources.securityCodeEmpty; 
+            return securityCodeResources.securityCodeEmpty;
         }
         else if (!securityHelper.isValidSecurityCode(secCode)) {
             $txtSecurityCode.focus();
@@ -82,16 +73,13 @@ var resetsecuritycode = {
             $txtConfirmSecurityCode.focus();
             return securityCodeResources.errorSecurityCodeConfirm;
         }
-
         return '';
     },
-    resetInputValue: function()
-    {
+    resetInputValue: function () {
         $("#txtSecCode").empty();
         $("#txtConfirmSecCode").empty();
     }
-}
-
+};
 $(function () {
     resetsecuritycode.initialize();
 });

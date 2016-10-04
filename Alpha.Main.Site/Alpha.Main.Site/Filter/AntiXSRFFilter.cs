@@ -2,7 +2,7 @@
 {
     using System.Web.Mvc;
     using Alpha.Auth.Web.Validators;
-    using Main.Models.SecurityCode;
+    using Main.Models;
 
     public class AntiXSRFFilter : ActionFilterAttribute
     {
@@ -27,8 +27,8 @@
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet,
                     Data = new Result
                     {
-                        ErrorCode = antiXSRFResult.ErrCode,
-                        ErrorMessage = antiXSRFResult.ErrMsg
+                        Code = antiXSRFResult.ErrCode,
+                        Messsage = antiXSRFResult.ErrMsg
                     }
                 };
             }

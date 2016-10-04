@@ -1,5 +1,4 @@
-﻿'use strict';
-
+'use strict';
 var resetSubAccountPassword = {
     initialize: function () {
         var $form = $('.form-SC');
@@ -10,20 +9,16 @@ var resetSubAccountPassword = {
         $form.bind('reset', function (e) {
             resetSubAccountPassword.resetInputValue();
         });
-
         $("#txtNewPwd").focus().keyup(function () {
             securityHelper.validatePassword(this);
         });
-
         $("#txtConfirmPwd").keyup(function () {
             securityHelper.validatePassword(this);
         });
-
         $("#showPasswordchk").click(function () {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
-
         if (top.hasPopupOpen()) {
             $("#container").addClass("has-popup");
         }
@@ -41,7 +36,6 @@ var resetSubAccountPassword = {
             $.unblockUI();
             return;
         }
-
         var hashKey = $('#hashkey').val();
         var password = $txtSecurityCode.val();
         password = password.ec(hashKey).hc();
@@ -63,7 +57,7 @@ var resetSubAccountPassword = {
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
             }
-        })
+        });
     },
     checkInputParameters: function ($txtSecurityCode, $txtConfirmSecurityCode) {
         var password = $txtSecurityCode.val();
@@ -71,21 +65,18 @@ var resetSubAccountPassword = {
         if (password.length === 0) {
             $txtSecurityCode.focus();
             return passwordResources.passwordCannotEmpty;
-
         }
         else if (password != confirmPassword) {
             $txtConfirmSecurityCode.focus();
             return passwordResources.confirmPasswordNotCorret;
         }
-
         return '';
     },
     resetInputValue: function () {
         $("#txtNewPwd").empty();
         $("#txtConfirmPwd").empty();
     }
-}
-
+};
 $(function () {
     resetSubAccountPassword.initialize();
 });

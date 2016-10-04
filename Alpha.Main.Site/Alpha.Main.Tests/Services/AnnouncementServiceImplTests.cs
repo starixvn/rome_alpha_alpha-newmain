@@ -40,7 +40,7 @@
         public void GetHotAnnouncement_NotPassSecurityCode_ReturnAnnouncementWithNullContent()
         {
             // Arrange
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            var securityCodeSession = Substitute.For<SecurityCodeSession>();
             securityCodeSession.IsRequireSecurityCode.Returns(true);
 
             var announcementServiceImpl = new AnnouncementServiceImpl();

@@ -1,5 +1,4 @@
-﻿'use strict';
-
+'use strict';
 var changeUserOwnPassword = {
     initialize: function () {
         var $form = $('.form-SC');
@@ -10,26 +9,20 @@ var changeUserOwnPassword = {
         $form.bind('reset', function (e) {
             changeUserOwnPassword.resetOriginalInputStatus();
         });
-       
         $('#securityCodeNav').click(function () {
             changeUserOwnPassword.gotoSecurityCodePage();
         });
-
         $('#txtOldPwd').focus();
-
         $("#txtNewPwd").keyup(function () {
             securityHelper.validatePassword(this);
         });
-
         $("#txtConfirmPwd").keyup(function () {
             securityHelper.validatePassword(this);
         });
-
         $("#showPasswordchk").click(function () {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
-
         if (top.hasPopupOpen()) {
             $("#container").addClass("has-popup");
         }
@@ -48,7 +41,6 @@ var changeUserOwnPassword = {
             $.unblockUI();
             return;
         }
-
         var hashKey = $('#hashkey').val();
         var oldPassword = $txtOldPassword.val();
         oldPassword = oldPassword.ec(hashKey).hc();
@@ -62,12 +54,12 @@ var changeUserOwnPassword = {
             data: { currentPassword: oldPassword, newPassword: password },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                if (data.Code === 0) { // OK
+                if (data.Code === 0) {
                     securityHelper.showSuccessfullyMessage($messageContainer, passwordResources.changePasswordSuccessfully);
                     setTimeout(changeUserOwnPassword.refreshPage, 5000);
                 }
-                else if (data.Code === 2) { // account is closed
-                    alert(data.ErrorMessage);
+                else if (data.Code === 2) {
+                    alert(data.Messsage);
                     securityHelper.signOut();
                 }
                 else {
@@ -78,7 +70,7 @@ var changeUserOwnPassword = {
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
             }
-        })
+        });
     },
     checkInputParameters: function ($txtOldPassword, $txtPassword, $txtConfirmPassword) {
         var oldPassword = $txtOldPassword.val();
@@ -100,7 +92,6 @@ var changeUserOwnPassword = {
             $txtPassword.focus();
             return passwordResources.newPassMustbeDiffOldPass;
         }
-
         return '';
     },
     resetOriginalInputStatus: function () {
@@ -109,13 +100,12 @@ var changeUserOwnPassword = {
         $("#txtConfirmPwd").empty();
     },
     gotoSecurityCodePage: function () {
-        window.location = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';
+        window.location.href = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';
     },
     refreshPage: function () {
-        window.location = $("#mainRootPath").val() + 'Password/ChangePassword';
+        window.location.href = $("#mainRootPath").val() + 'Password/ChangePassword';
     }
-}
-
+};
 $(function () {
     changeUserOwnPassword.initialize();
 });

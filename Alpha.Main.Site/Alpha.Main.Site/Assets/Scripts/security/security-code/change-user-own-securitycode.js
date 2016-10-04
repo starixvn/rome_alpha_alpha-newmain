@@ -1,5 +1,4 @@
-﻿'use strict';
-
+'use strict';
 var changeUserOwnSecurityCode = {
     initialize: function () {
         var $form = $('.form-SC');
@@ -7,25 +6,19 @@ var changeUserOwnSecurityCode = {
             changeUserOwnSecurityCode.change();
             e.preventDefault();
         });
-
         $form.bind('reset', function (e) {
             changeUserOwnSecurityCode.resetOriginalInputStatus();
         });
-
         $('#passwordNav').click(function () {
-            changeUserOwnSecurityCode.gotoPasswordPage()
+            changeUserOwnSecurityCode.gotoPasswordPage();
         });
-
         $('#txtOldSecCode').focus();
-
         $("#txtSecCode").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#txtConfirmSecCode").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
@@ -45,37 +38,34 @@ var changeUserOwnSecurityCode = {
             $.unblockUI();
             return;
         }
-
         var hashKey = $('#hashkey').val();
         var oldSecCode = $txtOldSecurityCode.val();
         oldSecCode = securityHelper.hashSecurityCode(oldSecCode);
         var secCode = $txtSecurityCode.val();
         secCode = secCode.ec(hashKey).hc();
-        var confirmSecCode = $txtConfirmSecurityCode.val();
-        confirmSecCode = confirmSecCode.ec(hashKey).hc();
         $.ajax({
             type: 'POST',
             url: 'ChangeUserOwnSecurityCode',
-            data: { oldSecurityCode: oldSecCode, securityCode: secCode, confirmSecurityCode: confirmSecCode },
+            data: { oldSecurityCode: oldSecCode, securityCode: secCode },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                if (data.ErrorCode === 0) { // OK
+                if (data.Code === 0) {
                     securityHelper.showSuccessfullyMessage($messageContainer, securityCodeResources.securityCodeChangeSucessfully);
                     setTimeout(changeUserOwnSecurityCode.refreshPage, 5000);
                 }
-                else if (data.ErrorCode === 2) { // account is closed
-                    alert(data.ErrorMessage);
+                else if (data.Code === 2) {
+                    alert(data.Messsage);
                     securityHelper.signOut();
                 }
                 else {
-                    securityHelper.showFailMessage($messageContainer, data.ErrorMessage);
+                    securityHelper.showFailMessage($messageContainer, data.Messsage);
                     $txtOldSecurityCode.focus();
                 }
             },
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
             }
-        })
+        });
     },
     checkInputParameters: function ($txtOldSecurityCode, $txtSecurityCode, $txtConfirmSecurityCode) {
         var oldSecCode = $txtOldSecurityCode.val();
@@ -101,7 +91,6 @@ var changeUserOwnSecurityCode = {
             $txtSecurityCode.focus();
             return securityCodeResources.sameSecurityCode;
         }
-
         return '';
     },
     resetOriginalInputStatus: function () {
@@ -110,13 +99,12 @@ var changeUserOwnSecurityCode = {
         $("#txtConfirmSecCode").empty();
     },
     gotoPasswordPage: function () {
-        window.location = $("#mainRootPath").val() + 'Password/ChangePassword';
+        window.location.href = $("#mainRootPath").val() + 'Password/ChangePassword';
     },
     refreshPage: function () {
-        window.location = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';
+        window.location.href = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';
     }
-}
-
+};
 $(function () {
     changeUserOwnSecurityCode.initialize();
 });

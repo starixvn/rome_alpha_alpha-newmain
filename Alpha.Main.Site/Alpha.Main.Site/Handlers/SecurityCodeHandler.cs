@@ -3,6 +3,7 @@
     using System;
     using AppResources;
     using Fanex.Security;
+    using Main.Models;
     using Main.Models.CustomerProfiles;
     using Main.Models.Enumerations;
     using Main.Models.SecurityCode;
@@ -27,14 +28,14 @@
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
         private readonly SecurityCodeService securityCodeService;
-        protected readonly ISecurityCodeSession SecurityCodeSession;
+        protected readonly SecurityCodeSession SecurityCodeSession;
 
         public SecurityCodeHandler(
           SecurityCodeService securityCodeService,
           CustomerProfileService customerProfileService,
           SessionManager sessionManager,
           Encryptor encryptor,
-          ISecurityCodeSession securityCodeSession = null)
+          SecurityCodeSession securityCodeSession = null)
         {
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
@@ -75,24 +76,14 @@
 
         public BaseSecurityCodeViewModel Handle(BaseSecurityCodeQuery message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
-            }
-
             var profile = customerProfileService.GetProfilePicture(this.SecurityCodeSession.CustId);
-
             string securityCodeToken = this.GenerateSecurityToken();
             this.SecurityCodeSession.SecurityCodeToken = securityCodeToken;
-
-            var securitySalt = this.SecurityCodeSession.SubAccId > 0
-                ? this.securityCodeService.MD5Salt(this.SecurityCodeSession.SubAccId)
-                : this.securityCodeService.MD5Salt(this.SecurityCodeSession.CustId);
 
             var model = new BaseSecurityCodeViewModel
             {
                 SecurityCodeToken = securityCodeToken,
-                SecuritySalt = securitySalt,
+                SecuritySalt = this.GetSecuritySalt(),
                 HashKey = this.HashKey,
                 CustRoleId = message.RoleId
             };
@@ -102,24 +93,14 @@
 
         public LoginSecurityCodeViewModel Handle(LoginSecurityCodeQuery message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
-            }
-
             var profile = customerProfileService.GetProfilePicture(this.SecurityCodeSession.CustId);
-
             string securityCodeToken = this.GenerateSecurityToken();
             this.SecurityCodeSession.SecurityCodeToken = securityCodeToken;
-
-            var securitySalt = this.SecurityCodeSession.SubAccId > 0
-                ? this.securityCodeService.MD5Salt(this.SecurityCodeSession.SubAccId)
-                : this.securityCodeService.MD5Salt(this.SecurityCodeSession.CustId);
 
             return new LoginSecurityCodeViewModel
             {
                 SecurityCodeToken = securityCodeToken,
-                SecuritySalt = securitySalt,
+                SecuritySalt = this.GetSecuritySalt(),
                 HashKey = this.HashKey,
                 CustRoleId = message.RoleId,
                 IsDefaultAvatar = profile.IsDefaultAvatar,
@@ -132,36 +113,12 @@
 
         public Result Handle(ChangeSecurityCodeFirstLoginCommand message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
-            }
-
-            if (this.SecurityCodeSession.IsInternal)
-            {
-                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
-            }
-
             message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
-            message.ConfirmSecurityCode = this.GetRC4Decryption(message.ConfirmSecurityCode);
+            var validateResult = this.ValidateSecurityCode(message.SecurityCode);
 
-            string errorMessage = string.Empty;
-            if (string.IsNullOrEmpty(message.SecurityCode))
+            if (!validateResult.IsOK)
             {
-                errorMessage = Security.alertSecCodeEmpty;
-            }
-            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
-            {
-                errorMessage = Security.lblSecCodeWrongRule;
-            }
-            else if (message.SecurityCode != message.ConfirmSecurityCode)
-            {
-                errorMessage = Security.alertErrorSecCodeConfirm;
-            }
-
-            if (errorMessage.Length != 0)
-            {
-                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
+                return validateResult;
             }
 
             Result result = this.UpdateSecurityCode(new SecurityCodeParams
@@ -173,7 +130,7 @@
                 Language = message.Language
             });
 
-            if (result.ErrorCode.Equals(0))
+            if (result.Code.Equals(0))
             {
                 this.SecurityCodeSession.SecurityCode = message.SecurityCode;
                 this.ResetToken();
@@ -184,42 +141,14 @@
 
         public Result Handle(ChangeSecurityCodeByForcingCommand message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
-            }
-
-            if (this.SecurityCodeSession.IsInternal)
-            {
-                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
-            }
-
             message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
-            message.ConfirmSecurityCode = this.GetRC4Decryption(message.ConfirmSecurityCode);
+            var validateResult = this.ValidateSecurityCode(message.SecurityCode, message.OldSecurityCode, true);
 
-            string errorMessage = string.Empty;
-            if (string.IsNullOrEmpty(message.OldSecurityCode))
+            if (!validateResult.IsOK)
             {
-                errorMessage = Security.alertOldSecCodeEmpty;
+                return validateResult;
             }
-            else if (string.IsNullOrEmpty(message.SecurityCode))
-            {
-                errorMessage = Security.alertSecCodeEmpty;
-            }
-            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
-            {
-                errorMessage = Security.lblSecCodeWrongRule;
-            }
-            else if (message.SecurityCode != message.ConfirmSecurityCode)
-            {
-                errorMessage = Security.alertErrorSecCodeConfirm;
-            }
-
-            if (errorMessage.Length != 0)
-            {
-                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
-            }
-
+          
             Result result = this.securityCodeService.CompareHashSecurityCodeBetweenWebAndDB(
                this.SecurityCodeSession.CustId,
                this.SecurityCodeSession.SubAccId,
@@ -228,7 +157,7 @@
                this.SecurityCodeSession.Language,
                message.OldSecurityCode);
 
-            if (result.ErrorCode.Equals(0))
+            if (result.Code.Equals(0))
             {
                 result = this.UpdateSecurityCode(new SecurityCodeParams
                 {
@@ -240,7 +169,7 @@
                 });
             }
 
-            if (result.ErrorCode.Equals(0))
+            if (result.Code.Equals(0))
             {
                 this.SecurityCodeSession.SecurityCode = message.SecurityCode;
                 this.ResetToken();
@@ -251,40 +180,12 @@
 
         public Result Handle(ChangeUserOwnSecurityCodeCommand message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
-            }
-
-            if (this.SecurityCodeSession.IsInternal)
-            {
-                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
-            }
-
             message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
-            message.ConfirmSecurityCode = this.GetRC4Decryption(message.ConfirmSecurityCode);
+            var validateResult = this.ValidateSecurityCode(message.SecurityCode, message.OldSecurityCode, true);
 
-            string errorMessage = string.Empty;
-            if (string.IsNullOrEmpty(message.OldSecurityCode))
+            if (!validateResult.IsOK)
             {
-                errorMessage = Security.alertOldSecCodeEmpty;
-            }
-            else if (string.IsNullOrEmpty(message.SecurityCode))
-            {
-                errorMessage = Security.alertSecCodeEmpty;
-            }
-            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
-            {
-                errorMessage = Security.lblSecCodeWrongRule;
-            }
-            else if (message.SecurityCode != message.ConfirmSecurityCode)
-            {
-                errorMessage = Security.alertErrorSecCodeConfirm;
-            }
-
-            if (errorMessage.Length != 0)
-            {
-                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
+                return validateResult;
             }
 
             Result result = this.securityCodeService.CompareHashSecurityCodeBetweenWebAndDB(
@@ -295,7 +196,7 @@
                this.SecurityCodeSession.Language,
                message.OldSecurityCode);
 
-            if (result.ErrorCode.Equals(0))
+            if (result.Code.Equals(0))
             {
                 result = this.UpdateSecurityCode(new SecurityCodeParams
                 {
@@ -307,7 +208,7 @@
                 });
             }
 
-            if (result.ErrorCode.Equals(0))
+            if (result.Code.Equals(0))
             {
                 this.ResetToken();
             }
@@ -317,38 +218,19 @@
 
         public Result Handle(ResetSecurityCodeCommand message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
-            }
-
+            message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
             bool isResetSubAccount = message.SubAccId.HasValue && message.SubAccId.Value > 0;
 
             if (this.SecurityCodeSession.IsInternal && !isResetSubAccount)
             {
-                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
+                return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
             }
 
-            message.SecurityCode = this.GetRC4Decryption(message.SecurityCode);
-            message.ConfirmSecurityCode = this.GetRC4Decryption(message.ConfirmSecurityCode);
+            var validateResult = this.ValidateSecurityCode(message.SecurityCode);
 
-            string errorMessage = string.Empty;
-            if (string.IsNullOrEmpty(message.SecurityCode))
+            if (!validateResult.IsOK)
             {
-                errorMessage = Security.alertSecCodeEmpty;
-            }
-            else if (!this.securityCodeService.ValidateSecurityCode(message.SecurityCode))
-            {
-                errorMessage = Security.lblSecCodeWrongRule;
-            }
-            else if (message.SecurityCode != message.ConfirmSecurityCode)
-            {
-                errorMessage = Security.alertErrorSecCodeConfirm;
-            }
-
-            if (errorMessage.Length != 0)
-            {
-                return new Result { ErrorCode = -1, ErrorMessage = errorMessage };
+                return validateResult;
             }
 
             Result result = new Result();
@@ -366,19 +248,14 @@
 
         public Result Handle(VerifySecurityCodeCommand message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
-            }
-
             if (this.SecurityCodeSession.IsInternal)
             {
-                return new Result { ErrorCode = -1, ErrorMessage = Security.NotAuthorized };
+                return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
             }
 
             if (string.IsNullOrEmpty(message.SecurityCode))
             {
-                return new Result { ErrorCode = -1, ErrorMessage = Security.informSecCode };
+                return new Result { Code = Result.ErrorCode, Messsage = Security.informSecCode };
             }
 
             Result result = this.securityCodeService.CompareHashSecurityCodeBetweenWebAndDB(
@@ -389,7 +266,7 @@
                 this.SecurityCodeSession.Language,
                 message.SecurityCode);
 
-            if (result.ErrorCode == 0)
+            if (result.Code == 0)
             {
                 this.ResetToken();
             }
@@ -397,10 +274,41 @@
             return result;
         }
 
+        private Result ValidateSecurityCode(
+            string securityCode,
+            string oldSecurityCode = null,
+            bool isCheckOldSecurityCode = false)
+        {
+            if (this.SecurityCodeSession.IsInternal)
+            { 
+                return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
+            }
+
+            string errorMessage = string.Empty;
+
+            if((isCheckOldSecurityCode && string.IsNullOrWhiteSpace(oldSecurityCode))
+                 || string.IsNullOrWhiteSpace(securityCode))
+            {
+                errorMessage = Security.alertOldSecCodeEmpty;
+            }
+
+            if (!this.securityCodeService.ValidateSecurityCode(securityCode))
+            {
+                errorMessage = Security.lblSecCodeWrongRule;
+            }
+
+            if (errorMessage.Length != 0)
+            {
+                return new Result { Code = Result.ErrorCode, Messsage = errorMessage };
+            }
+
+            return new Result();
+        }
+
         private void ResetToken()
         {
             this.SecurityCodeSession.SecurityCodeToken = string.Empty;
-            this.SecurityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.PROVIDED_SECURITYCODE_SUCCESS;
+            this.SecurityCodeSession.SecurityCodeResult = (int)SecurityCodeStatus.ProvideSecurityCodeSuccess;
             this.SecurityCodeSession.IsForcedSecurityCode = false;
             Alpha.SecurityCode.Web.SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode = true;
         }
@@ -410,9 +318,9 @@
             Result result = securityCodeParams.SubAccId.Equals(0) ?
                 this.securityCodeService.UpdateMainAccountHashSecurityCode(securityCodeParams) : this.securityCodeService.UpdateSubAccountHashSecurityCode(securityCodeParams);
 
-            if (result != null && result.ErrorCode == 0)
+            if (result != null && result.Code == 0)
             {
-                result.ErrorMessage = Security.alertSecCodeChangedOK;
+                result.Messsage = Security.alertSecCodeChangedOK;
             }
 
             return result;
@@ -432,9 +340,9 @@
                 Language = securityCodeParams.Language,
             });
 
-            if (result.ErrorCode == 0)
+            if (result.Code == 0)
             {
-                result.ErrorMessage = Security.alertSecCodeChangedOK;
+                result.Messsage = Security.alertSecCodeChangedOK;
             }
 
             return result;
@@ -447,13 +355,13 @@
                 CustId = this.SecurityCodeSession.CustId,
                 UserId = this.SecurityCodeSession.UserId,
                 SubAccId = securityCodeParams.SubAccId.Value,
-                HashSecurityCode = securityCodeParams.SecurityCode,
+                SecurityCode = securityCodeParams.SecurityCode,
                 Language = securityCodeParams.Language
             });
 
-            if (result.ErrorCode == 0)
+            if (result.Code == 0)
             {
-                result.ErrorMessage = Security.alertSecCodeChangedOK;
+                result.Messsage = Security.alertSecCodeChangedOK;
             }
 
             return result;
@@ -485,12 +393,21 @@
         {
             if (message.IsSubAcc)
             {
-                return "(" + message.SubUserName + ")";
+                return $"({message.SubUserName})";
             }
             else
             {
-                return string.IsNullOrEmpty(message.NickName) ? string.Empty : "(" + message.NickName + ")";
+                return string.IsNullOrEmpty(message.NickName) ? string.Empty :   $"({message.NickName})";
             }
+        }
+
+        private string GetSecuritySalt()
+        {
+            var securitySalt = this.SecurityCodeSession.SubAccId > 0
+               ? this.securityCodeService.MD5Salt(this.SecurityCodeSession.SubAccId)
+               : this.securityCodeService.MD5Salt(this.SecurityCodeSession.CustId);
+
+            return securitySalt;
         }
     }
 }

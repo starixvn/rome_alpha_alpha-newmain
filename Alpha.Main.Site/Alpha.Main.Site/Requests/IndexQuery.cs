@@ -10,9 +10,9 @@
     {
         private readonly bool isEnableSecurityCode;
         private readonly IUserSession userSession;
-        private readonly ISecurityCodeSession securityCodeSession;
+        private readonly SecurityCodeSession securityCodeSession;
 
-        public IndexQuery(IUserSession userSession, ISecurityCodeSession securityCodeSession, bool isEnableSecurityCode)
+        public IndexQuery(IUserSession userSession, SecurityCodeSession securityCodeSession, bool isEnableSecurityCode)
         {
             this.userSession = userSession;
             this.securityCodeSession = securityCodeSession;

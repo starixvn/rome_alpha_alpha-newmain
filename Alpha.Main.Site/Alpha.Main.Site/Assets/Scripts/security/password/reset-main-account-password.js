@@ -1,5 +1,4 @@
-﻿'use strict';
-
+'use strict';
 var resetMainAccountPassword = {
     initialize: function () {
         var $form = $('.form-SC');
@@ -7,26 +6,20 @@ var resetMainAccountPassword = {
             resetMainAccountPassword.reset();
             e.preventDefault();
         });
-
         $form.bind('reset', function (e) {
             resetMainAccountPassword.resetInputValue();
         });
-
         $("#password").focus().keyup(function () {
             securityHelper.validatePassword(this);
         });
-
         $("#confirmPassword").keyup(function () {
             securityHelper.validatePassword(this);
         });
-
         $("#showPasswordchk").click(function () {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
-
-        var hasPopup = securityHelper.hasPopup();
-        if (hasPopup) {
+        if (top.hasPopupOpen()) {
             $("#container").addClass("has-popup");
         }
     },
@@ -44,7 +37,6 @@ var resetMainAccountPassword = {
             $.unblockUI();
             return;
         }
-
         var hashKey = $('#hashkey').val();
         var password = $txtSecurityCode.val();
         password = password.ec(hashKey).hc();
@@ -60,15 +52,14 @@ var resetMainAccountPassword = {
                     securityHelper.showFailMessage($messageContainer, data.Messsage);
                     $txtSecurityCode.focus();
                 }
-                else
-                {
+                else {
                     securityHelper.showSuccessfullyMessage($messageContainer, passwordResources.changePasswordSuccessfully);
                 }
             },
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
             }
-        })
+        });
     },
     checkInputParameters: function ($txtSecurityCode, $txtConfirmSecurityCode) {
         var password = $txtSecurityCode.val();
@@ -81,16 +72,13 @@ var resetMainAccountPassword = {
             $txtConfirmSecurityCode.focus();
             return passwordResources.confirmPasswordNotCorret;
         }
-
         return '';
     },
-    resetInputValue: function()
-    {
+    resetInputValue: function () {
         $("#password").empty();
         $("#confirmPassword").empty();
     }
-}
-
+};
 $(function () {
     resetMainAccountPassword.initialize();
 });

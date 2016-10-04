@@ -7,11 +7,11 @@
     /// </summary>
     public static class CookieLessSessionFactory
     {
-        public static ISecurityCodeSession SecurityCodeSession 
+        public static SecurityCodeSession SecurityCodeSession 
         {
             get
             {
-                return new SecurityCodeSession(HttpContext.Current.Session.SessionID, null);
+                return new SecurityCodeSessionImpl(HttpContext.Current.Session.SessionID, null);
             }
         }
     }

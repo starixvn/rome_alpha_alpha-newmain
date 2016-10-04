@@ -14,8 +14,6 @@
 
         public bool IsResetMember { get; set; }
 
-        public string HashSecurityCode { get; set; }
-
         public string Language { get; set; }
 
         public string IP { get; set; }

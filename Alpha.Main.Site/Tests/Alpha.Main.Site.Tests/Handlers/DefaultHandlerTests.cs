@@ -16,7 +16,7 @@
         private SessionManager sessionManager;
         private DefaultHandler defaultHandler;
         private IUserSession userSession;
-        private ISecurityCodeSession securityCodeSession;
+        private SecurityCodeSession securityCodeSession;
 
         [SetUp]
         public void SetUp()
@@ -24,7 +24,7 @@
             sessionManager = Substitute.For<SessionManager>();
             defaultHandler = new DefaultHandler(sessionManager);
             userSession = Substitute.For<IUserSession>();
-            securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            securityCodeSession = Substitute.For<SecurityCodeSession>();
         }
 
         [Test]

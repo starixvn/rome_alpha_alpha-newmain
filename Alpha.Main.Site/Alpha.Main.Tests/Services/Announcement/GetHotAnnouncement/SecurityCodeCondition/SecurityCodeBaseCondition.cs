@@ -5,7 +5,7 @@
 
     public class SecurityCodeBaseCondition
     {
-        public ISecurityCodeSession SecurityCodeSession { get; set; }
+        public SecurityCodeSession SecurityCodeSession { get; set; }
 
         public bool IsSecurityCodeActive { get; set; }
 

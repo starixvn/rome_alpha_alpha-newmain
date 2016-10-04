@@ -1,5 +1,4 @@
-﻿'use strict';
-
+'use strict';
 var changeSecurityCodeFirstLogin = {
     initialize: function () {
         securityHelper.initLanguage();
@@ -10,21 +9,17 @@ var changeSecurityCodeFirstLogin = {
         $("#btn-back").bind("click", function () {
             securityHelper.signOut();
         });
-
         $("#txtSecCode").focus().keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#txtConfirmSecCode").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
     },
-
     changeSecurityCode: function () {
         $.blockUI();
         var $txtSecurityCode = $('#txtSecCode');
@@ -33,31 +28,27 @@ var changeSecurityCodeFirstLogin = {
             $.unblockUI();
             return;
         }
-
         var hashKey = $('#hashkey').val();
         var secCode = $txtSecurityCode.val();
-        secCode = secCode.ec(hashKey).hc();
-        var confirmSecCode = $txtConfirmSecurityCode.val();
-        confirmSecCode = confirmSecCode.ec(hashKey).hc();
         $.ajax({
             type: 'POST',
             url: 'ChangeSecurityCodeFirstLogin',
-            data: { securityCode: secCode, confirmSecurityCode: confirmSecCode },
+            data: { securityCode: secCode },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                if (data.ErrorCode === 0) {
+                if (data.Code === 0) {
                     securityHelper.redirectToHomePage(2000);
                 }
                 else {
                     $("#txtSecCode").addClass('error');
-                    $("#txtSecCode-error").empty().html(data.ErrorMessage);
+                    $("#txtSecCode-error").empty().html(data.Messsage);
                     $txtSecurityCode.focus();
                 }
             },
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
             }
-        })
+        });
     },
     validateInputSecurityCode: function ($txtSecurityCode, $txtConfirmSecurityCode) {
         changeSecurityCodeFirstLogin.resetOriginalInputStatus();
@@ -81,7 +72,6 @@ var changeSecurityCodeFirstLogin = {
             $txtConfirmSecurityCode.focus();
             return false;
         }
-
         return true;
     },
     resetOriginalInputStatus: function () {
@@ -90,8 +80,8 @@ var changeSecurityCodeFirstLogin = {
         $("#txtConfirmSecCode").removeClass('error');
         $("#txtConfirmSecCode-error").empty();
     }
-}
-
+};
 $(function () {
     changeSecurityCodeFirstLogin.initialize();
 });
+//# sourceMappingURL=change-securitydode-firstlogin.js.map

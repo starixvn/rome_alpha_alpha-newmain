@@ -1,5 +1,4 @@
-﻿'use strict';
-
+'use strict';
 var securityCodeResources = {
     rules: "<i class='icon-information-outline icon-rules' data-toggle='modal' data-target='sc'></i>",
     oldSecurityCodeEmpty: document.getElementById('alert-old-securitycode-empty').value,
