@@ -73,13 +73,21 @@ namespace Alpha.Main
                 })
         };
 
+            if (Current != null)
+            {
+            }
         private static Func<bool> showAccountInfo = () =>
         {
-            return Current.SubPageAccess.ViewMemberInfo;
+            return Current == null ? false : Current.SubPageAccess.ViewMemberInfo;
         };
 
         private static Func<string> getDefaultUrl = () =>
         {
+            if (HttpContext.Current == null)
+            {
+                return string.Empty;
+            }
+
             var _defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
             var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
             var ignoreUrls = new List<string>
@@ -91,7 +99,7 @@ namespace Alpha.Main
             };
 
             if (currentURLCookie != null &&
-                !string.IsNullOrEmpty(currentURLCookie.Value) &&
+                !string.IsNullOrWhiteSpace(currentURLCookie.Value) &&
                 !Current.IsInternal &&
                 !ignoreUrls.Where(str => currentURLCookie.Value.Contains(str)).Any())
             {

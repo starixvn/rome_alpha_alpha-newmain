@@ -10,7 +10,11 @@
 
     public class IndexViewModel
     {
-        public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl)
+        private readonly byte roleId;
+        private readonly Func<string> getDefaultUrl;
+        private readonly Func<bool> isShowIntroduction;
+
+        public IndexViewModel(IndexQuery message, Func<string> getDefaultUrl, Func<bool> isShowIntroduction)
         {
             if (message == null)
             {
@@ -20,6 +24,7 @@
             UserLevel = Enumeration.FromValue<UserLevel>(message.RoleId).DisplayName.ToLower();
             IsShowIntroduction = isShowIntroduction();
             DefaultUrl = getDefaultUrl();
+            roleId = message.RoleId;            
             CustId = message.CustId;
             Language = message.Language;
             LanguageKey = message.LanguageKey;
@@ -28,6 +33,8 @@
             EnableSecurityCode = message.EnableSecurityCode;
             IsInternalWebVPN = message.IsInternalWebVPN;
             IsSubAccount = message.IsSubAccount;
+            this.isShowIntroduction = isShowIntroduction ?? FunctionRegistry.ShowIntroduction;
+            this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
         }
 
         public bool EnableSecurityCode { get; private set; }
@@ -36,14 +43,26 @@
 
         public int OnUserId { get; private set; }
 
-        public string UserLevel { get; private set; }
+        public string UserLevel
+        {
+            get
+            {
+                return Enumeration.FromValue<UserLevel>(roleId).DisplayName.ToLower();
+            }
+        }
 
         public string Language { get; private set; }
 
         public string LanguageKey { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
-        public string DefaultUrl { get; private set; }
+        public string DefaultUrl
+        {
+            get
+            {
+                return getDefaultUrl?.Invoke() ?? MainRootPath;
+            }
+        }
 
         public string OldMainRootPath
         {
@@ -86,7 +105,13 @@
             }
         }
 
-        public bool IsShowIntroduction { get; private set; }
+        public bool IsShowIntroduction
+        {
+            get
+            {
+                return isShowIntroduction?.Invoke() ?? true;
+            }
+        }
         public HeaderNavViewModel HeaderNavViewModel
         {
             get

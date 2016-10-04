@@ -27,7 +27,7 @@
             browserHelper = Substitute.For<BrowserHelper>();
             sessionManager = Substitute.For<SessionManager>();
             defaultHandler = new DefaultHandler(sessionManager, browserHelper);
-            userSession = Substitute.For<IUserSession>();
+            userSession = Substitute.For<IUserSession>();            
         }
 
         [Test]
@@ -36,7 +36,7 @@
             // Arrange
             IndexQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => defaultHandler.Handle(nullQuery)));
         }
 
@@ -48,11 +48,11 @@
 
             var query = new IndexQuery(userSession, false);
 
-            // Action
+            // Act
             var viewModel = defaultHandler.Handle(query);
 
             // Assert
-            sessionManager.Received().Add<string>(PasswordHashSessionKey, Arg.Any<string>());
+            sessionManager.Received().Add(PasswordHashSessionKey, Arg.Any<string>());
         }
 
         [Test]
@@ -68,7 +68,7 @@
             string argumentUsed = null;
             sessionManager.Add<string>(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
-            // Action
+            // Act
             var viewModel = defaultHandler.Handle(query);
 
             // Assert
