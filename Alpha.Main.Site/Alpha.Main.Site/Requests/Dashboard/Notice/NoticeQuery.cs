@@ -1,8 +1,8 @@
 ﻿#pragma warning disable 618, 612
-
 namespace Alpha.Main.Site.Requests.Notice
 {
     using System;
+    using System.Collections.Generic;
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -10,13 +10,22 @@ namespace Alpha.Main.Site.Requests.Notice
 
     public class NoticeQuery : IRequest<NoticeMessagesViewModel>
     {
+        private readonly Dictionary<byte, string> parentSitesByLevel = new Dictionary<byte, string>
+        {
+            [UserLevel.Super.Value] = "3000,3100",
+            [UserLevel.Master.Value] = "3000,3200",
+            [UserLevel.Agent.Value] = "3000,3300"
+        };
+
+        private byte roleId;
+
         public NoticeQuery(
             IUserSession userSession,
             DateTime lastPostTime,
             int totalMessage,
             bool isTest)
         {
-            UserLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
+            roleId = userSession.RoleId;
             CustId = userSession.CustId;
             CurrentLang = userSession.Language;
             LastPostTime = lastPostTime;
@@ -24,7 +33,7 @@ namespace Alpha.Main.Site.Requests.Notice
             IsTest = isTest;
         }
 
-        public UserLevel UserLevel { get; private set; }
+        public UserLevel UserLevel => Enumeration.FromValue<UserLevel>(roleId);
 
         public int CustId { get; private set; }
 
@@ -36,41 +45,6 @@ namespace Alpha.Main.Site.Requests.Notice
 
         public string CurrentLang { get; private set; }
 
-        public string ParentSiteId
-        {
-            get
-            {
-                var siteId = GetSiteIdByUserLevel();
-
-                return GetParentSiteIds(siteId);
-            }
-        }
-
-        private int GetSiteIdByUserLevel()
-        {
-            int siteId = 3000;
-
-            if (UserLevel.IsSuperLevel())
-            {
-                siteId = 3100;
-            }
-            else if (UserLevel.IsMasterLevel())
-            {
-                siteId = 3200;
-            }
-            else if (UserLevel.IsAgentLevel())
-            {
-                siteId = 3300;
-            }
-
-            return siteId;
-        }
-
-        private string GetParentSiteIds(int siteId)
-        {
-            var parentSiteIds = (siteId == 3000) ? siteId.ToString() : $"3000,{siteId}";
-
-            return parentSiteIds;
-        }
+        public string ParentSiteId => parentSitesByLevel[UserLevel.Value];               
     }
 }

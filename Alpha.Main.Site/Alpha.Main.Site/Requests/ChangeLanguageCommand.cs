@@ -1,7 +1,7 @@
-﻿#pragma warning disable 618, 612
-
+﻿#pragma warning disable 612, 618
 namespace Alpha.Main.Site.Requests
 {
+    using System.Diagnostics.CodeAnalysis;
     using Constants;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -18,7 +18,7 @@ namespace Alpha.Main.Site.Requests
 
         public string LanguageCode { get; private set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        [SuppressMessage(
             "Microsoft.Maintainability",
             "CA1500:VariableNamesShouldNotMatchFieldNames",
             MessageId = "languageCode",

@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Tests.Handlers
+﻿#pragma warning disable 612, 618
+namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using System.Collections.Generic;

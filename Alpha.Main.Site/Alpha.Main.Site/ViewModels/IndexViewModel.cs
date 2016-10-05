@@ -31,7 +31,7 @@
             OnUserId = message.OnUserId;
             SubPageAccess = message.SubPageAccess;
             EnableSecurityCode = message.EnableSecurityCode;
-            IsInternalWebVPN = message.IsInternalWebVPN;
+            IsInternalWebVPN = message.IsInternalWebVpn;
             IsSubAccount = message.IsSubAccount;
             this.isShowIntroduction = isShowIntroduction ?? FunctionRegistry.ShowIntroduction;
             this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
@@ -88,7 +88,7 @@
             }
         }
 
-        public string PasswordHash { get; private set; } = Encryption.RandomString(new Random().Next(4, 8));
+        public string PasswordHash => Encryption.RandomString(new Random().Next(4, 8));
 
         public string SubPageAccess { get; private set; }
 

@@ -1,7 +1,6 @@
 ﻿#pragma warning disable 612, 618
 namespace Alpha.Main.Site.Models.Requests
 {
-    using System.Diagnostics.CodeAnalysis;
     using MediatR;
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
@@ -18,87 +17,26 @@ namespace Alpha.Main.Site.Models.Requests
             this.isEnableSecurityCode = isEnableSecurityCode;
         }
 
-        public int CustId
-        {
-            get
-            {
-                return userSession.CustId;
-            }
-        }
+        public int CustId => userSession.CustId;        
 
-        public int OnUserId
-        {
-            get
-            {
-                return userSession.OnUserId;
-            }
-        }
+        public int OnUserId => userSession.OnUserId;        
 
-        public int SubAccId
-        {
-            get
-            {
-                return userSession.SubAccId;
-            }
-        }
+        public int SubAccId => userSession.SubAccId;       
 
-        public byte RoleId
-        {
-            get
-            {
-                return userSession.RoleId;
-            }
-        }
+        public byte RoleId => userSession.RoleId;       
 
-        public string Language
-        {
-            get
-            {
-                return userSession.Language;
-            }
-        }
+        public string Language => userSession.Language;       
 
-        public string LanguageKey
-        {
-            get
-            {
-                return userSession.LangKey;
-            }
-        }
+        public string LanguageKey => userSession.LangKey;
 
-        public string SubPageAccess
-        {
-            get
-            {
-                return userSession.SubPageAccess;
-            }
-        }
+        public string SubPageAccess => userSession.SubPageAccess;        
 
-        public bool IsSubAccount
-        {
-            get
-            {
-                return userSession.IsSubAcc;
-            }
-        }
+        public bool IsSubAccount => userSession.IsSubAcc;               
+        
+        public bool IsInternalWebVpn => userSession.IsInternalWebVPN;
 
-        public bool EnableSecurityCode
-        {
-            get
-            {
-                return userSession.IsLogged &&
+        public bool EnableSecurityCode => userSession.IsLogged &&
                     !userSession.IsPasswordExpired &&
                     this.isEnableSecurityCode;
-            }
-        }
-
-        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "VPN", Justification = "Reviewed!")]
-        public bool IsInternalWebVPN
-        {
-            get
-            {
-                return userSession.IsInternalWebVPN;
-            }
-        }
     }
 }

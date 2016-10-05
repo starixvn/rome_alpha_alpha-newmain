@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Tests.Handlers
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using Helpers;

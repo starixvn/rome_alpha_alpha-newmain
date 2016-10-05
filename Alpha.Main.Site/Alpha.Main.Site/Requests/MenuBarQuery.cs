@@ -16,12 +16,12 @@
             string userAgent,
             List<string> devicesUseCustomScrollbar = null)
         {
-            UserLevel = Enumeration.FromValue<UserLevel>(roleId);
+            this.roleId = roleId;
             UserAgent = userAgent;
             this.devicesUseCustomScrollbar = devicesUseCustomScrollbar ?? AppSettings.DevicesUseCustomScrollbar;
         }
 
-        public UserLevel UserLevel { get; private set; }
+        public UserLevel UserLevel => Enumeration.FromValue<UserLevel>(roleId);
 
         public string UserAgent { get; private set; }
 
@@ -34,12 +34,6 @@
             }
         }
 
-        public bool IsCookieLess
-        {
-            get
-            {
-                return HttpContext.Current != null ? HttpContext.Current.Session.IsCookieless : false;
-            }
-        }
+        public bool IsCookieLess => HttpContext.Current != null ? HttpContext.Current.Session.IsCookieless : false;      
     }
 }

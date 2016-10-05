@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Tests.Requests
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Tests.Requests
 {
     using Main.Constants;
     using NSubstitute;
