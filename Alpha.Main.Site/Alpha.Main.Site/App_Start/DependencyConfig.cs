@@ -108,19 +108,19 @@
             container.RegisterPerWebRequest<SecurityCodeService, SecurityCodeServiceImpl>();
             container.RegisterPerWebRequest<UserMessageService, UserMessageServiceImpl>();
             container.RegisterPerWebRequest<SessionManager, SessionManagerImpl>();
-            container.Register<PasswordService, PasswordServiceImpl>(Lifestyle.Transient);
+            container.RegisterPerWebRequest<PasswordService, PasswordServiceImpl>();
             container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
-            container.Register<Encryptor, EncryptorImpl>(Lifestyle.Transient);
-            container.Register<CasinoService, CasinoServiceImpl>(Lifestyle.Transient);
-            container.Register<SecurityCodeChecker, SecurityCodeCheckerImpl>(Lifestyle.Transient);
+            container.RegisterPerWebRequest<Encryptor, EncryptorImpl>();
+            container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
+            container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)
         {
             container.RegisterPerWebRequest<IDynamicRepository, DynamicRepository>();
             container.RegisterPerWebRequest<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>();
-            container.Register<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>(Lifestyle.Transient);
-            container.Register<PasswordDataAccess, PasswordDataAccessImpl>(Lifestyle.Transient);
+            container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
+            container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
         }
     }
 }
