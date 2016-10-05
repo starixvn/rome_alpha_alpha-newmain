@@ -1,225 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<FileDB>
-  <PopupAnnouncement id="62861001" name="PHAIO"
-                   startdate="10/5/2016" enddate="10/19/2016"  effectdate="10/12/2016"
-                    width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      <p>
-        Dear valued agents,
-      </p>
-      <p>
-        We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
-        - Exact 2nd Half Goals<br/>
-        - Both Teams To Score/Result<br/>
-        - Both Teams To Score/Total Goal<br/>
-        - Which Half First Goal<br/>
-        - Home Team Which Half First Goal<br/>
-        - Away Team Which Half First Goal<br/>
-        - First Team 2 Goals<br/>
-        - First Team 3 Goals<br/>
-        - First Goal Method<br/>
-        - To Win From Behind<br/>
-        - 1H Winning Margin<br/>
-        - Both Team To Score in 1H/ 2H<br/>
-        - Home 1H To Score/2H To Score<br/>
-        - Away 1H To Score/2H To Score<br/>
-      </p>
-      <p>
-        These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<br/>
-        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<br/>
-      </p>
-      <p>
-        Thank you
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      <p>
-        尊敬的代理们，
-      </p>
-      <p>
-        在此通知于 <b>{effectdate}</b> 将新推出 14 种足球新投注类别：<br />
-        - 准确下半场总进球<br/>
-        - 两队皆进球/赛果<br/>
-        - 两队皆进球/总进球数<br/>
-        - 预测进第一个球的半场<br/>
-        - 主队于哪个半场最先进球<br/>
-        - 客队于哪个半场最先进球<br/>
-        - 最先进两个球的球队<br/>
-        - 最先进三个球的球队<br/>
-        - 第一个进球方式<br/>
-        - 落后反超获胜的球队<br/>
-        - 上半场净胜球数<br/>
-        - 两队皆进球 上半场/下半场<br/>
-        - 主队均进球 上半场/下半场<br/>
-        - 客队均进球 上半场/下半场<br/>
-      </p>
-      <p>
-        这些投注类别亦有开放在过关盘口及所有设定根据以下配置：<br/>
-        - 准确下半场总进球的占成数将根据足球总进球的设置及其佣金则将根据其它投注类别设置。<br/>
-        - 剩余投注类别的占成数及佣金将根据足球的其它投注类别设置。<br/>
-      </p>
-      <p>
-        谢谢。
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      <p>
-        尊敬的代理們，
-      </p>
-      <p>
-        在此通知於<b>{effectdate}</b>將新推出14種足球新投注類別：<br />
-        - 准確下半場總進球<br/>
-        - 兩隊皆進球/賽果<br/>
-        - 兩隊皆進球/總進球數<br/>
-        - 預測進第一個球的半場<br/>
-        - 主隊於哪個半場最先進球<br/>
-        - 客隊於哪個半場最先進球<br/>
-        - 最先進兩個球的球隊<br/>
-        - 最先進三個球的球隊<br/>
-        - 第一個進球方式<br/>
-        - 落後反超獲勝的球隊<br/>
-        - 上半場淨勝球數<br/>
-        - 兩隊皆進球 上半場/下半場<br/>
-        - 主隊均進球 上半場/下半場<br/>
-        - 客隊均進球 上半場/下半場<br/>
-      </p>
-      <p>
-        這些投注類別亦有開放在過關盤口及所有設定根據以下配置：<br/>
-        - 準確下半場總進球的佔成數將根據足球總進球的設置及其佣金則將根據其它投注類別設置。<br />
-        - 剩餘投注類別的佔成數及佣金將根據足球的其它投注類別設置。<br />
-      </p>
-      <p>
-        謝謝。
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      <p>
-        Dear valued agents,
-      </p>
-      <p>
-        We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
-        - Exact 2nd Half Goals<br/>
-        - Both Teams To Score/Result<br/>
-        - Both Teams To Score/Total Goal<br/>
-        - Which Half First Goal<br/>
-        - Home Team Which Half First Goal<br/>
-        - Away Team Which Half First Goal<br/>
-        - First Team 2 Goals<br/>
-        - First Team 3 Goals<br/>
-        - First Goal Method<br/>
-        - To Win From Behind<br/>
-        - 1H Winning Margin<br/>
-        - Both Team To Score in 1H/ 2H<br/>
-        - Home 1H To Score/2H To Score<br/>
-        - Away 1H To Score/2H To Score<br/>
-      </p>
-      <p>
-        These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<br/>
-        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<br/>
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      <p>
-        Dear valued agents,
-      </p>
-      <p>
-        We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
-        - Exact 2nd Half Goals<br/>
-        - Both Teams To Score/Result<br/>
-        - Both Teams To Score/Total Goal<br/>
-        - Which Half First Goal<br/>
-        - Home Team Which Half First Goal<br/>
-        - Away Team Which Half First Goal<br/>
-        - First Team 2 Goals<br/>
-        - First Team 3 Goals<br/>
-        - First Goal Method<br/>
-        - To Win From Behind<br/>
-        - 1H Winning Margin<br/>
-        - Both Team To Score in 1H/ 2H<br/>
-        - Home 1H To Score/2H To Score<br/>
-        - Away 1H To Score/2H To Score<br/>
-      </p>
-      <p>
-        These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<br/>
-        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<br/>
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      <p>
-        เรียนเอเจนต์ทุกท่าน
-      </p>
-      <p>
-        ทางบริษัทใคร่ขอเรียนให้ทราบว่าทางเวปไซค์จะนำเสนอ 14 ชนิดการทายผลของกีฬาฟุตบอลซึ่งจะมีผลภายในวันที่ <b>{effectdate}</b><br />
-        - เต็งผลประตูในครึ่งหลัง<br/>
-        - ทั้งสองทีมทำประตูได้/ผลประตู<br/>
-        - ทั้งสองทีมทำประตูได้/ผลประตูรวม<br/>
-        - ประตูแรกจะเกิดขึ้นในครึ่งแรกหรือครึ่งหลัง<br/>
-        - ทีมเจ้าบ้านจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br/>
-        - ทีมยืนจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br/>
-        - ทีมแรกที่จะทำได้ 2 ประตูก่อน<br/>
-        - ทีมแรกที่จะทำได้ 3 ประตูก่อน<br/>
-        - วิธีที่ทำประตูแรกได้<br/>
-        - จากแพ้พลิกกับมาชนะ<br/>
-        - ผลต่างประตูที่ชนะในครึ่งแรก<br/>
-        - ทั้งสองทีมทำประตูใน ครึ่งแรก/ครึ่งหลัง<br/>
-        - ทีมเจ้าบ้าน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br/>
-        - ทีมเยือน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br/>
-      </p>
-      <p>
-        ประเภทการทายผลเหล่านี้ ยังสามารถทายผลในบอลชุดได้อีกด้วย และการตั้งค่าทั้งหมดจะตั้งค่าดังต่อไปนี้<br/>
-        - สำหรับการเต็งประตูในครึ่งหลังค่าความเสี่ยงจะตั้งค่าตาม ฟุตบอล การตั้งค่าประตูรวมและคอมมิชชั่นจะตังค่าตามการตั้งค่าอื่น ๆ <br/>
-        - ประเภทเดิมพันในส่วนที่เหลือ ค่าความเสี่ยงและค่าคอมมิชชั่นจะตั้งค่าตาม การตั้งค่าเดิมพันกีฬาฟุตบอลประเภทอื่น ๆ <br/>
-      </p>
-      <p>
-        กราบขอบพระคุณคะ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      <p>
-        Kính gửi quý khách hàng,
-      </p>
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 14 loại cược mới cho môn Bóng Đá gồm có:<br />
-        - Số Bàn Thắng Hiệp 2<br/>
-        - Hai Đội Ghi Bàn/Đội Thắng<br/>
-        - Hai Đội Ghi Bàn/Tổng Bàn Thắng<br/>
-        - Hiệp Ghi Bàn Đầu Tiên<br/>
-        - Hiệp Ghi Bàn Đầu Tiên Của Home<br/>
-        - Hiệp Ghi Bàn Đầu Tiên Của Away<br/>
-        - Đội Ghi 2 Bàn Trước<br/>
-        - Đội Ghi 3 Bàn Trước<br/>
-        - Đội Thắng Lội Ngược Dòng<br/>
-        - To Win From Behind<br/>
-        - Số Bàn Cách Biệt trong Hiệp 1<br/>
-        - Hai Đội Cùng Ghi Bàn trong Hiệp 1/Hiệp 2<br/>
-        - Home Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br/>
-        - Away Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br/>
-      </p>
-      <p>
-        Những loại cược mới này đều cho phép chơi Parlay và tất cả các thiết lập sẽ được cấu hình như sau:<br/>
-        - Đối với loại cược "Số Bàn Thắng Hiệp 2",  Position Taking sẽ theo thiết lập của loại cược "Tổng Số Bàn Thắng" trong Bóng Đá và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<br/>
-        - Đối với các loại cược còn lại, Position Taking và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<br/>
-      </p>
-      <p>
-        Trân trọng.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
+<FileDB> 
  
   <PopupAnnouncement id="53088001" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
                      startdate="10/5/2016" enddate="10/19/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc"
@@ -480,7 +260,228 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
+  
+  <PopupAnnouncement id="62861001" name="PHAIO"
+                     startdate="10/5/2016" enddate="10/19/2016"  effectdate="10/12/2016"
+                      width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>
+        Dear valued agents,
+      </p>
+      <p>
+        We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
+        - Exact 2nd Half Goals<br/>
+        - Both Teams To Score/Result<br/>
+        - Both Teams To Score/Total Goal<br/>
+        - Which Half First Goal<br/>
+        - Home Team Which Half First Goal<br/>
+        - Away Team Which Half First Goal<br/>
+        - First Team 2 Goals<br/>
+        - First Team 3 Goals<br/>
+        - First Goal Method<br/>
+        - To Win From Behind<br/>
+        - 1H Winning Margin<br/>
+        - Both Team To Score in 1H/ 2H<br/>
+        - Home 1H To Score/2H To Score<br/>
+        - Away 1H To Score/2H To Score<br/>
+      </p>
+      <p>
+        These bet types are also available for Parlay and all settings are configured as follows:<br/>
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<br/>
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<br/>
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
 
+    <zh-CN src="">
+      <p>
+        尊敬的代理们，
+      </p>
+      <p>
+        在此通知于 <b>{effectdate}</b> 将新推出 14 种足球新投注类别：<br />
+        - 准确下半场总进球<br/>
+        - 两队皆进球/赛果<br/>
+        - 两队皆进球/总进球数<br/>
+        - 预测进第一个球的半场<br/>
+        - 主队于哪个半场最先进球<br/>
+        - 客队于哪个半场最先进球<br/>
+        - 最先进两个球的球队<br/>
+        - 最先进三个球的球队<br/>
+        - 第一个进球方式<br/>
+        - 落后反超获胜的球队<br/>
+        - 上半场净胜球数<br/>
+        - 两队皆进球 上半场/下半场<br/>
+        - 主队均进球 上半场/下半场<br/>
+        - 客队均进球 上半场/下半场<br/>
+      </p>
+      <p>
+        这些投注类别亦有开放在过关盘口及所有设定根据以下配置：<br/>
+        - 准确下半场总进球的占成数将根据足球总进球的设置及其佣金则将根据其它投注类别设置。<br/>
+        - 剩余投注类别的占成数及佣金将根据足球的其它投注类别设置。<br/>
+      </p>
+      <p>
+        谢谢。
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>
+        尊敬的代理們，
+      </p>
+      <p>
+        在此通知於<b>{effectdate}</b>將新推出14種足球新投注類別：<br />
+        - 准確下半場總進球<br/>
+        - 兩隊皆進球/賽果<br/>
+        - 兩隊皆進球/總進球數<br/>
+        - 預測進第一個球的半場<br/>
+        - 主隊於哪個半場最先進球<br/>
+        - 客隊於哪個半場最先進球<br/>
+        - 最先進兩個球的球隊<br/>
+        - 最先進三個球的球隊<br/>
+        - 第一個進球方式<br/>
+        - 落後反超獲勝的球隊<br/>
+        - 上半場淨勝球數<br/>
+        - 兩隊皆進球 上半場/下半場<br/>
+        - 主隊均進球 上半場/下半場<br/>
+        - 客隊均進球 上半場/下半場<br/>
+      </p>
+      <p>
+        這些投注類別亦有開放在過關盤口及所有設定根據以下配置：<br/>
+        - 準確下半場總進球的佔成數將根據足球總進球的設置及其佣金則將根據其它投注類別設置。<br />
+        - 剩餘投注類別的佔成數及佣金將根據足球的其它投注類別設置。<br />
+      </p>
+      <p>
+        謝謝。
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>
+        Dear valued agents,
+      </p>
+      <p>
+        We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
+        - Exact 2nd Half Goals<br/>
+        - Both Teams To Score/Result<br/>
+        - Both Teams To Score/Total Goal<br/>
+        - Which Half First Goal<br/>
+        - Home Team Which Half First Goal<br/>
+        - Away Team Which Half First Goal<br/>
+        - First Team 2 Goals<br/>
+        - First Team 3 Goals<br/>
+        - First Goal Method<br/>
+        - To Win From Behind<br/>
+        - 1H Winning Margin<br/>
+        - Both Team To Score in 1H/ 2H<br/>
+        - Home 1H To Score/2H To Score<br/>
+        - Away 1H To Score/2H To Score<br/>
+      </p>
+      <p>
+        These bet types are also available for Parlay and all settings are configured as follows:<br/>
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<br/>
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<br/>
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>
+        Dear valued agents,
+      </p>
+      <p>
+        We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
+        - Exact 2nd Half Goals<br/>
+        - Both Teams To Score/Result<br/>
+        - Both Teams To Score/Total Goal<br/>
+        - Which Half First Goal<br/>
+        - Home Team Which Half First Goal<br/>
+        - Away Team Which Half First Goal<br/>
+        - First Team 2 Goals<br/>
+        - First Team 3 Goals<br/>
+        - First Goal Method<br/>
+        - To Win From Behind<br/>
+        - 1H Winning Margin<br/>
+        - Both Team To Score in 1H/ 2H<br/>
+        - Home 1H To Score/2H To Score<br/>
+        - Away 1H To Score/2H To Score<br/>
+      </p>
+      <p>
+        These bet types are also available for Parlay and all settings are configured as follows:<br/>
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<br/>
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<br/>
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        ทางบริษัทใคร่ขอเรียนให้ทราบว่าทางเวปไซค์จะนำเสนอ 14 ชนิดการทายผลของกีฬาฟุตบอลซึ่งจะมีผลภายในวันที่ <b>{effectdate}</b><br />
+        - เต็งผลประตูในครึ่งหลัง<br/>
+        - ทั้งสองทีมทำประตูได้/ผลประตู<br/>
+        - ทั้งสองทีมทำประตูได้/ผลประตูรวม<br/>
+        - ประตูแรกจะเกิดขึ้นในครึ่งแรกหรือครึ่งหลัง<br/>
+        - ทีมเจ้าบ้านจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br/>
+        - ทีมยืนจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br/>
+        - ทีมแรกที่จะทำได้ 2 ประตูก่อน<br/>
+        - ทีมแรกที่จะทำได้ 3 ประตูก่อน<br/>
+        - วิธีที่ทำประตูแรกได้<br/>
+        - จากแพ้พลิกกับมาชนะ<br/>
+        - ผลต่างประตูที่ชนะในครึ่งแรก<br/>
+        - ทั้งสองทีมทำประตูใน ครึ่งแรก/ครึ่งหลัง<br/>
+        - ทีมเจ้าบ้าน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br/>
+        - ทีมเยือน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br/>
+      </p>
+      <p>
+        ประเภทการทายผลเหล่านี้ ยังสามารถทายผลในบอลชุดได้อีกด้วย และการตั้งค่าทั้งหมดจะตั้งค่าดังต่อไปนี้<br/>
+        - สำหรับการเต็งประตูในครึ่งหลังค่าความเสี่ยงจะตั้งค่าตาม ฟุตบอล การตั้งค่าประตูรวมและคอมมิชชั่นจะตังค่าตามการตั้งค่าอื่น ๆ <br/>
+        - ประเภทเดิมพันในส่วนที่เหลือ ค่าความเสี่ยงและค่าคอมมิชชั่นจะตั้งค่าตาม การตั้งค่าเดิมพันกีฬาฟุตบอลประเภทอื่น ๆ <br/>
+      </p>
+      <p>
+        กราบขอบพระคุณคะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 14 loại cược mới cho môn Bóng Đá gồm có:<br />
+        - Số Bàn Thắng Hiệp 2<br/>
+        - Hai Đội Ghi Bàn/Đội Thắng<br/>
+        - Hai Đội Ghi Bàn/Tổng Bàn Thắng<br/>
+        - Hiệp Ghi Bàn Đầu Tiên<br/>
+        - Hiệp Ghi Bàn Đầu Tiên Của Home<br/>
+        - Hiệp Ghi Bàn Đầu Tiên Của Away<br/>
+        - Đội Ghi 2 Bàn Trước<br/>
+        - Đội Ghi 3 Bàn Trước<br/>
+        - Đội Thắng Lội Ngược Dòng<br/>
+        - To Win From Behind<br/>
+        - Số Bàn Cách Biệt trong Hiệp 1<br/>
+        - Hai Đội Cùng Ghi Bàn trong Hiệp 1/Hiệp 2<br/>
+        - Home Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br/>
+        - Away Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br/>
+      </p>
+      <p>
+        Những loại cược mới này đều cho phép chơi Parlay và tất cả các thiết lập sẽ được cấu hình như sau:<br/>
+        - Đối với loại cược "Số Bàn Thắng Hiệp 2",  Position Taking sẽ theo thiết lập của loại cược "Tổng Số Bàn Thắng" trong Bóng Đá và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<br/>
+        - Đối với các loại cược còn lại, Position Taking và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<br/>
+      </p>
+      <p>
+        Trân trọng.
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="63285001" name="Change maxbet of Macau Games" startdate="08/31/2016" enddate="09/01/2016"
                      effectdate="31/08/2016" width="1000" height="220" top="110" left="350">
     <en-US src="">
