@@ -10,7 +10,7 @@ namespace Alpha.Main.Site.Requests.Notice
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard.Notice;
 
-    public class NoticeQuery : IRequest<NoticeViewModel>
+    public class NoticeQuery : IRequest<NoticeMessagesViewModel>
     {
         public NoticeQuery(
             IUserSession userSession,

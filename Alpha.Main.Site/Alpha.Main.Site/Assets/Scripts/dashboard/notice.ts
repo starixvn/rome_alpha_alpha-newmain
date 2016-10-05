@@ -47,18 +47,25 @@
     }
 
     showMoreMessagesRegister = () => {
-        $('.more-info').click(() => {
-            let $this = $('.more-info');
+        let $moreMessagesBtn = $('.more-info');
+
+        $moreMessagesBtn.click(() => {
+            let $content = $('#notice');
 
             let onSuccess = (htmlString: any) => {
-                $this.html(htmlString);
+                debugger
+                $content.html(htmlString);
+                new NoticeMessage();
             }
 
             let ajaxSetting = {
-                url: '/site-main/Notice/NoticeMessages?lastPostDate=' + $this.attr('value'),
+                url: '/site-main/Notice/MoreMessages?totalMessage=' + $moreMessagesBtn.attr('totalMsg'),
                 method: 'GET',
                 success: onSuccess
             }
+
+            $moreMessagesBtn.attr('disabled', 'disabled');
+            $moreMessagesBtn.text('Loading...');
 
             $.ajax(ajaxSetting);
         });

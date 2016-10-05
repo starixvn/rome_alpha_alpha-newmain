@@ -9,7 +9,7 @@
     using ViewModels.Dashboard.Notice;
 
     public class NoticeHandler :
-        IRequestHandler<NoticeQuery, NoticeViewModel>,
+        IRequestHandler<NoticeQuery, NoticeMessagesViewModel>,
         IRequestHandler<MarkMessageAsReadQuery, bool>
     {
         private NoticeService noticeService;
@@ -19,7 +19,7 @@
             this.noticeService = noticeService;
         }
 
-        public NoticeViewModel Handle(NoticeQuery message)
+        public NoticeMessagesViewModel Handle(NoticeQuery message)
         {
             if (message == null)
             {
@@ -35,7 +35,7 @@
 
             var noticeMessageViewModels = CreateNoticeMessageViewModels(noticeMessages, message.CurrentLang);
 
-            var viewModel = new NoticeViewModel(noticeMessageViewModels);
+            var viewModel = new NoticeMessagesViewModel(noticeMessageViewModels);
 
             return viewModel;
         }

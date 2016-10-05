@@ -503,7 +503,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to more.
+        ///   Looks up a localized string similar to More.
         /// </summary>
         public static string more {
             get {

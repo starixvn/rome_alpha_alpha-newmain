@@ -1,2 +1,10 @@
-﻿<div class="panel-title"><span class="icon-announcements"></span>@Resources.notice</div>
-@Html.Action("NoticeMessages", new { lastPostDate = DateTime.MaxValue })
+﻿@using Alpha.Main.Site.ViewModels.Dashboard.Notice
+@model NoticeViewModel
+
+<div class="panel-title"><span class="icon-announcements"></span>@Resources.notice</div>
+@Html.Action("NoticeMessages", new { lastPostDate = DateTime.MaxValue, totalMessage = Model.TotalMessage })
+
+<div class="more-info" totalMsg="@(Model.TotalMessage + 10)">
+    @Resources.more
+    <span class="icon-arrow-down icon-more"></span>
+</div>

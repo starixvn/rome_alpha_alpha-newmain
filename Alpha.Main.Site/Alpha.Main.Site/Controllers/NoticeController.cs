@@ -8,6 +8,7 @@ namespace Alpha.Main.Site.Controllers
     using MediatR;
     using Requests.Notice;
     using Sunplus.Agent.Model.Entities;
+    using ViewModels.Dashboard.Notice;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class NoticeController : BaseController
@@ -24,7 +25,9 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var viewModel = new NoticeViewModel(10);
+
+            return View(viewModel);
         }
 
         [HttpGet]
@@ -42,6 +45,14 @@ namespace Alpha.Main.Site.Controllers
             var isSuccess = mediator.Send(new MarkMessageAsReadQuery(this.userSession.CustId, messageId));
 
             return isSuccess;
+        }
+
+        [HttpGet]
+        public ActionResult MoreMessages(int totalMessage = 10)
+        {
+            var viewModel = new NoticeViewModel(totalMessage);
+
+            return View("Index", viewModel);
         }
     }
 }

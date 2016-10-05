@@ -17,7 +17,7 @@
             var noticeMessaseWrappers = new List<NoticeMessageWrapper>();
 
             // Act
-            var viewModel = new NoticeViewModel(noticeMessaseWrappers);
+            var viewModel = new NoticeMessagesViewModel(noticeMessaseWrappers);
 
             // Assert
             Assert.AreEqual(DateTime.MinValue, viewModel.LastMessagePostTime);
@@ -33,7 +33,7 @@
             noticeMessaseWrappers.Add(CreateNoticeMessageWrapper(DateTime.Today.AddDays(1)));
 
             // Act
-            var viewModel = new NoticeViewModel(noticeMessaseWrappers);
+            var viewModel = new NoticeMessagesViewModel(noticeMessaseWrappers);
 
             // Assert
             Assert.AreEqual(DateTime.Today, viewModel.LastMessagePostTime);

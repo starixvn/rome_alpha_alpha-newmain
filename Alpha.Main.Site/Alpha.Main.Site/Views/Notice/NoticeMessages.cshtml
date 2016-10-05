@@ -1,7 +1,5 @@
-﻿@using Alpha.Main.Constants
-@using Alpha.Main.Site.ViewModels.Dashboard.Notice
-
-@model NoticeViewModel
+﻿@using Alpha.Main.Site.ViewModels.Dashboard.Notice
+@model NoticeMessagesViewModel
 
 <div class="message-content">
     @if (!Model.NoticeMessages.Any())
@@ -38,9 +36,11 @@
     }
 </div>
 
-@if (Model.NoticeMessages.Any())
-{
-    <div class="more-info" value="@Model.LastMessagePostTime">
-        More <span class="icon-arrow-down icon-more"></span>
-    </div>
-}
+@*@if (Model.NoticeMessages.Any())
+    {
+        <div class="more-info-content"></div>
+        <div class="more-info" value="@Model.LastMessagePostTime">
+            @Resources.more
+            <span class="icon-arrow-down icon-more"></span>
+        </div>
+    }*@
