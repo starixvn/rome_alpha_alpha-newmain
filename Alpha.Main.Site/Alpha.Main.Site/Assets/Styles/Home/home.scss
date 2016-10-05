@@ -275,7 +275,7 @@ body {
 
         &.notice {
             float: left;
-            width: 100%;
+            width: 100%;            
             @include box-shadow-multiple('1px 2px 6px rgba(0,0,0,.2)');
 
             .panel-title {
@@ -324,7 +324,7 @@ body {
 @media only screen and (max-width : $conent-device-lower768) {
     body {
         background-color: #fff;
-        font-size: $font-size + 1;
+        font-size: $font-size-mobile;
         line-height: 36px;
     }
 
@@ -354,6 +354,7 @@ body {
 
         &.notice {
             padding-top: 12px;
+            padding-bottom: 34px;         
 
             .msg-contents {
                 .msg {
@@ -369,7 +370,9 @@ body {
 
             .more-info {
                 margin-top: 12px;
-                background-color: #e3e3e3;
+                background-color: #e3e3e3;         
+                position: fixed;
+                bottom: 0;       
                 @include border-radius(1px);
                 @include box-shadow(0px, 2px, 2px, rgba(0, 0, 0, 0.3));
             }

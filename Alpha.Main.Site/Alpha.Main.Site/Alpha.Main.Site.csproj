@@ -535,9 +535,7 @@
     <Content Include="Assets\styles\otp\images\google.png" />
     <Content Include="Assets\styles\otp\images\logo.png" />
     <Content Include="Assets\styles\otp\images\manual-android.png" />
-    <Content Include="Assets\styles\otp\images\manual-apple.png" />
-    <Content Include="Assets\styles\otp\images\otp-android.png" />
-    <Content Include="Assets\styles\otp\images\otp-apple.png" />
+    <Content Include="Assets\styles\otp\images\manual-ios.png" />
     <Content Include="Assets\styles\otp\images\qr.png" />
     <Content Include="Assets\styles\otp\otp.css" />
     <Content Include="Assets\styles\otp\otp.min.css" />
@@ -842,6 +840,8 @@
     <Content Include="Views\Dashboard\BalanceInfo.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-CN.cshtml" />
+    <Content Include="Views\OTP\Config.cshtml" />
+    <Content Include="Views\OTP\Index.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-TW.cshtml" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>

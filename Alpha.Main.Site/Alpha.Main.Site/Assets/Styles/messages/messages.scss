@@ -46,7 +46,7 @@ body {
 @media only screen and (max-width : $conent-device-lower768) {
     body {
         background-color: #fff;
-        font-size: $font-size + 1;
+        font-size: $font-size-mobile;
     }
 
     .nav-tabs {

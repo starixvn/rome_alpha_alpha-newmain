@@ -18,60 +18,23 @@ label {
 }
 
 // Messages
-.msg {
-    display: table;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.msg-content {
+    padding-top: 12px;
+    .msg {
+        max-width: 500px;
+        margin: 0;
+    }
 }
 
-.otp-register {
-    width: 400px;
+.block {
+    max-width: 400px;
+    padding-top: 22px;
+    width: 360px;
 
-    .width-100per {
+    .txt {
+        padding-top: 0;
+        padding-bottom: 0;
         width: 100%;
-    }
-
-    .msg {
-        width: 100%;
-    }
-
-    // Buttons
-    .otp-email, .otp-sophos  {        
-        margin-right: 0;
-        width: 48%;
-        white-space: normal;
-    }
-
-    .otp-email {
-        background-color: #04a8ed;
-        color: #fff;
-        margin-right: 3%;
-
-        &:hover {
-            background-color: darken(#04a8ed, 5%);
-            color: #fff;
-        }
-    }
-
-    .otp-sophos {
-        background-color: #f26f16;
-        color: #fff;
-
-        &:hover {
-            background-color: darken(#f26f16, 5%);
-            color: #fff;
-        }
-    }
-
-    .input-group {
-        .input-group-addon {
-            border: none;
-            background: none;
-            padding: 0 0 0 12px;
-            .btn-submit {
-                margin-right: 0;
-            }
-        }
     }
 }
 
@@ -79,25 +42,79 @@ label {
 .otp-config {
     padding: 16px 0;
 
-    .panel-group.panel-table {
-        .panel-heading .panel-title a {
-            color: #666;
-            border: none;            
+    .panel-group {
+        &.panel-table {
+            .panel-heading .panel-title a {
+                color: #666;
+                border: none;            
+            }
+
+            .panel-heading + .panel-collapse > .panel-body {
+                border-top: 1px solid #dcdcdc;
+                padding: 16px 0;
+            }
+
+            .panel-body {
+                background-color: #fff;
+            }
+
+            .panel {
+                border-color: #dcdcdc;
+                @include border-radius(0);
+                @include box-shadow-multiple(none);
+
+                &.success {
+                    .panel-heading .panel-title a {
+                        color: #03b224;         
+                    }
+                    
+                    .icon-check-circle {
+                        color: #03b224;
+                        font-size: 18px;
+                        display: inline-block;
+                        margin-left: 10px;
+                        position: relative;
+                        top: 4px;
+                    }
+                }
+            }        
         }
 
-        .panel-heading + .panel-collapse > .panel-body {
-            border-top: 1px solid #dcdcdc;
-            padding: 16px 0;
-        }
+        &.manualQRCode {
+            .panel {
+                border: none;
+            }
 
-        .panel-body {
-            background-color: #fff;
-        }
+            .panel-heading .panel-title a {
+                background-color: transparent;
+                color: #038dee;
+                padding: 0;
+            }
 
-        .panel {
-            border-color: #dcdcdc;
-            @include border-radius(0);
-            @include box-shadow-multiple(none);
+            .panel-heading + .panel-collapse > .panel-body {
+                border-top: none;
+                padding-top: 8px;            
+            }
+
+            .icon-content-copy {
+                cursor: pointer;
+                color: #038dee;
+                display: inline-block;
+                font-size: 18px;
+                margin-left: 6px;
+                position: relative;
+                top: 2px;
+            }
+
+            .example {
+                .col-left, .col-right  {
+                    float: left;
+                }
+
+                .col-right {
+                    margin-left: 40px;
+                }
+            }
         }
     }
 
@@ -109,42 +126,14 @@ label {
             list-style-type: decimal;
         }
         
-        .download-content, .form-register,
-        .qr-code, .account-info, .example {
-            margin-left: -14px;
-        }
-
-        .form-register {
-            padding: 12px 0 16px;
-
-            &.last {
-                padding-bottom: 0;
-            }
-
-            .form-group.last {
-                margin-bottom: 0;
-            }
-
-            .txt {
-                width: 362px;
-                @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
-            }
-        
-            .send-otp {
-                background-color: #03a34e;
-                color: #fff;
-
-                &:hover {
-                    background-color: #03a34e;
-                    color: #fff;
-                }
-            } 
+        .download-content, .qr-code, .manualQRCode, .block, .note {
+            margin-left: -12px;
         }
 
         // Download Sophos
-        .download-content {
+         .download-content {
             display: table;
-            padding: 12px 0 28px;
+            padding: 12px 0 16px;
 
             .logo-sophos {
                 float: left;
@@ -168,55 +157,26 @@ label {
             }
         }
 
+         .note {
+             padding-bottom: 16px;
+         }
+
         // QR code
         .qr-code {
-            padding: 12px 0 28px;
+            padding: 12px 0;
         }
 
-        // Manual Add
-        .account-info, .example {
-            display: table;
-            width: 100%;
-
-            .col-left, .col-right {
-                float: left;                
-            }
-
-            .col-right {
-                margin-left: 16px;
-            }
-        }
-        
-        .account-info {
-            font-weight: bold;
-            padding: 12px 0 0;
-
-            .row-info {
-                display: table;
-                width: 100%;
-            }
-
-            .col-left {
-                width: 80px;
-            }
-
-            .col-right {
-                font-weight: bold;
-            }
-        }
-
-        .account-info + .example {
-            padding-top: 8px;
-        }
-
-        .example {
+        .block {
             padding-top: 12px;
-            padding-bottom: 28px;
+
+            .txt {
+                @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+            }
         }
     }
 
     .list-enableDisable {
-        padding-left: 30px;
+        padding-left: 18px;
 
         label {
             margin-bottom: 8px;
@@ -226,20 +186,16 @@ label {
             margin-top: 4px;
         }
     }
-}
 
-@media only screen and (max-width : $conent-device-greater1024) {
-    .otp-register {        
-        .txt {
-            margin-left: 2px;
-            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
-        }
+    .register-succeess {
+        padding: 0 16px;
     }
 }
 
 @media only screen and (max-width : $conent-device-lower768) {
     body {
         background-color: #fff;
+        font-size: $font-size-mobile;
     }
 
     [class^='btn'] {
@@ -263,71 +219,49 @@ label {
         }
     }
 
-    .otp-register {
-        width: 100%;
-
-        [class^='btn'] {            
-            width: 100%;
-        }
-
-        .otp-email {
-            margin-right: 0;
-            margin-bottom: 10px;
-        }
-
-        .txt {
-            height: $height-mobile;            
-            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
-        }
-
-        .input-group {
-            width: 100%;
-            .input-group-addon {
-                width: 40%;
-            }
-        }
-    }
-
     .otp-config {
-        .panel-group.panel-table {
-            .panel {
-                border: none;
+        .panel-group {
+            &.panel-table {
+                .panel {
+                    border: none;
+                }
+
+                .panel-heading .panel-title a {
+                    border: 1px solid #dcdcdc;
+                }
+
+                .panel-heading + .panel-collapse > .panel-body {
+                    border-top: none;
+                }
             }
 
-            .panel-heading .panel-title a {
-                border: 1px solid #dcdcdc;
-            }
+            &.manualQRCode {
+                .panel-heading .panel-title a {
+                    border: none;
+                }
 
-            .panel-heading + .panel-collapse > .panel-body {
-                border-top: none;
+                .example {
+                    margin-top: 20px;
+
+                    .col-left, .col-right  {
+                        float: none;
+                        text-align: center;
+                    }
+
+                    .col-right {
+                        margin-left: 0;
+                        margin-top: 40px;
+                    }
+                }
             }
+        }
+
+        .block {
+            width: 100%;
         }
 
         .list-requirements {
             padding-left: 18px;
-
-            .download-content, .form-register,
-            .qr-code, .account-info, .example {
-                margin-left: -12px;
-            }
-
-            .form-register {
-                .txt {
-                    height: $height-mobile;
-                    width: 99%;
-                }
-            }
-
-            .example {
-                .col-left, .col-right {
-                    float: none;
-                }
-
-                .col-right {
-                    margin-left: 0;
-                    margin-top: 16px;
-                }
-            }
         }
 
         .list-enableDisable {
