@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement.SecurityCodeCondition
 {
     using NSubstitute;
-    using Sessions;
 
     public class NotRequireSecurityCodeCondition : SecurityCodeBaseCondition
     {
@@ -9,8 +8,8 @@
         {
             IsSecurityCodeActive = true;
 
-            SecurityCodeSession = Substitute.For<SecurityCodeSession>();
-            SecurityCodeSession.IsRequireSecurityCode.Returns(false);
+            //SecurityCodeSession = Substitute.For<SecurityCodeSession>();
+            //SecurityCodeSession.IsRequireSecurityCode.Returns(false);
         }
     }
 }

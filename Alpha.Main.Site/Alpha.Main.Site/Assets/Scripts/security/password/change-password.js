@@ -109,3 +109,4 @@ var changeUserOwnPassword = {
 $(function () {
     changeUserOwnPassword.initialize();
 });
+//# sourceMappingURL=change-password.js.map

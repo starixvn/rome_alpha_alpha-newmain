@@ -3,13 +3,11 @@
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Filter;
-    using Main.Helpers;
     using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
     using Models.Requests;
-    using Sessions;
-    using Sunplus.Agent.Model.Entities;
+
     [SessionState(SessionStateBehavior.Default)]
     public class SecurityCodeController : BaseController
     {
@@ -23,9 +21,7 @@
         [HttpGet]
         public ActionResult CheckLoginSecurityCode()
         {
-            SecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
-            var securityAction = string.Empty;
+            var status = mediator.Send(new CheckLoginSecurityCodeQuery());
 
             switch (status)
             {

@@ -2,8 +2,6 @@
 {
     using Models;
     using Params.SecurityCode;
-    using Sessions;
-    using System.Diagnostics.CodeAnalysis;
 
     public interface SecurityCodeService
     {
@@ -17,10 +15,12 @@
 
         Result ResetSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
 
+        string GenerateSecurityToken(int size);
+
         string MD5Salt(int custId);
 
         bool ValidateSecurityCode(string securityCode);
 
-        Result CompareHashSecurityCodeBetweenWebAndDB(int custId, int subAccId, bool isSubAcc, string securityCodeToken, string language, string webHashSecurityCode);
+        Result CompareHashSecurityCodeBetweenWebAndDB(int custId, int subAccId, bool isSubAcc, string securityCodeToken, string language, string webHashSecurityCode, string ip);
     }
 }

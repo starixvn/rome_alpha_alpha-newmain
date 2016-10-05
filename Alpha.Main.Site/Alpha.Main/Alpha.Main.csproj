@@ -254,9 +254,6 @@
     <Compile Include="Services\SessionManager.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
     <Compile Include="Services\UserMessageService.cs" />
-    <Compile Include="Sessions\CookieLessSessionFactory.cs" />
-    <Compile Include="Sessions\SecurityCodeSession.cs" />
-    <Compile Include="Sessions\SecurityCodeSessionImpl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

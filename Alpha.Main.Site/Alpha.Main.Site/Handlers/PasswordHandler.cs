@@ -8,7 +8,6 @@
     using Params.Password;
     using Requests.Password;
     using Services;
-    using Sessions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
     using ViewModels.Security;
@@ -29,22 +28,19 @@
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
         private readonly CustomerProfileService customerProfileService;
-        private readonly SecurityCodeSession securityCodeSession;
 
         public PasswordHandler(
             PasswordService passwordService,
             IUserSession userSession,
             CustomerProfileService customerProfileService,
             SessionManager sessionManager,
-            Encryptor encryptor,
-            SecurityCodeSession securityCodeSession)
+            Encryptor encryptor)
         {
             this.passwordService = passwordService;
             this.userSession = userSession;
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
             this.customerProfileService = customerProfileService;
-            this.securityCodeSession = securityCodeSession;
         }
 
         public Result Handle(ResetSubAccountPasswordCommand message)
@@ -71,7 +67,7 @@
             return new PasswordViewModel
             {
                 CustRoleId = message.CustRoleId,
-                EnableSecurityCode = this.securityCodeSession.IsEnableSecurityCode,
+               // EnableSecurityCode = this.securityCodeSession.IsEnableSecurityCode,
                 HashKey = GetHasKey()
             };
         }

@@ -540,6 +540,9 @@
       <DependentUpon>reset-sub-account-password.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\security\security-code\change-securitycode-by-forcing.js" />
+    <Content Include="Assets\bundles\security\security-code\change-securitycode-by-forcing.min.js">
+      <DependentUpon>change-securitycode-by-forcing.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security\security-code\change-securitycode-firstlogin.js" />
     <Content Include="Assets\bundles\security\security-code\change-securitycode-firstlogin.min.js">
       <DependentUpon>change-securitycode-firstlogin.js</DependentUpon>
@@ -549,6 +552,9 @@
       <DependentUpon>change-user-own-securitycode.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\security\security-code\reset-securitycode.js" />
+    <Content Include="Assets\bundles\security\security-code\reset-securitycode.min.js">
+      <DependentUpon>reset-securitycode.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security\security-code\verify-securitycode.js" />
     <Content Include="Assets\bundles\security\security-code\verify-securitycode.min.js">
       <DependentUpon>verify-securitycode.js</DependentUpon>
@@ -836,6 +842,7 @@
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\CheckLoginSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\LoginSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />

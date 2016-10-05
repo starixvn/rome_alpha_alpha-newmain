@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
     using Alpha.Main.Services.Impl;
     using Announcement.GetHotAnnouncement.LocalFileCondition;
     using Announcement.GetHotAnnouncement.LogInAndSettingChangedTest;
@@ -7,8 +8,6 @@
     using NSubstitute;
     using NUnit.Framework;
     using Params.Announcements;
-    using Sessions;
-    using System;
     using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
     using NotAgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest;
 
@@ -40,8 +39,8 @@
         public void GetHotAnnouncement_NotPassSecurityCode_ReturnAnnouncementWithNullContent()
         {
             // Arrange
-            var securityCodeSession = Substitute.For<SecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(true);
+            //var securityCodeSession = Substitute.For<SecurityCodeSession>();
+            //securityCodeSession.IsRequireSecurityCode.Returns(true);
 
             var announcementServiceImpl = new AnnouncementServiceImpl();
 

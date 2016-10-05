@@ -1,11 +1,9 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement
 {
+    using System.Collections.Generic;
     using Alpha.Main.Services;
-    using Main.Models.SecurityCode;
     using NSubstitute;
     using Params.Announcements;
-    using Sessions;
-    using System.Collections.Generic;
 
     public class ShowedMessageCondition
     {

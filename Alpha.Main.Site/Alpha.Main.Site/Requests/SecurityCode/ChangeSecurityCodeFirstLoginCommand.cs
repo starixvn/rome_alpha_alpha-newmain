@@ -2,26 +2,27 @@
 {
     using Main.Models;
     using MediatR;
-    using Sessions;
+    using Sunplus.Agent.Model.Base;
+    using Sunplus.Agent.Model.Entities;
 
     public class ChangeSecurityCodeFirstLoginCommand : IRequest<Result>
     {
-        private SecurityCodeSession securityCodeSession;
+        private readonly IUserSession userSession;
 
         public ChangeSecurityCodeFirstLoginCommand() : this(null)
         {
         }
 
-        public ChangeSecurityCodeFirstLoginCommand(SecurityCodeSession securityCodeSession)
+        public ChangeSecurityCodeFirstLoginCommand(IUserSession userSession)
         {
-            this.securityCodeSession = securityCodeSession ?? new SecurityCodeSessionImpl();
+            this.userSession = userSession ?? new UserSessionExt();
         }
 
         public int CustId
         {
             get
             {
-                return this.securityCodeSession.CustId;
+                return this.userSession.CustId;
             }
         }
 
@@ -29,7 +30,7 @@
         {
             get
             {
-                return this.securityCodeSession.UserId;
+                return this.userSession.UserId;
             }
         }
 
@@ -37,7 +38,7 @@
         {
             get
             {
-                return this.securityCodeSession.SubAccId;
+                return this.userSession.SubAccId;
             }
         }
 
@@ -45,7 +46,7 @@
         {
             get
             {
-                return !this.securityCodeSession.SubAccId.Equals(0);
+                return this.userSession.IsSubAcc;
             }
         }
 
@@ -55,10 +56,16 @@
         {
             get
             {
-                return this.securityCodeSession.Language;
+                return this.userSession.Language;
             }
         }
 
-        private string IP { get; set; }
+        public string IP
+        {
+            get
+            {
+                return this.userSession.UserLoginIp;
+            }
+        }
     }
 }

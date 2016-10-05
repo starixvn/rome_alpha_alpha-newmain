@@ -5,7 +5,6 @@
     using NSubstitute;
     using NUnit.Framework;
     using Services;
-    using Sessions;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
 
@@ -16,7 +15,7 @@
         private SessionManager sessionManager;
         private DefaultHandler defaultHandler;
         private IUserSession userSession;
-        private SecurityCodeSession securityCodeSession;
+       // private SecurityCodeSession securityCodeSession;
 
         [SetUp]
         public void SetUp()
@@ -24,7 +23,7 @@
             sessionManager = Substitute.For<SessionManager>();
             defaultHandler = new DefaultHandler(sessionManager);
             userSession = Substitute.For<IUserSession>();
-            securityCodeSession = Substitute.For<SecurityCodeSession>();
+            //securityCodeSession = Substitute.For<SecurityCodeSession>();
         }
 
         [Test]
@@ -43,7 +42,7 @@
             // Arrange
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, securityCodeSession, false);
+            var query = new IndexQuery(userSession, false);
 
             // Action 
             var viewModel = defaultHandler.Handle(query);
@@ -58,7 +57,7 @@
             // Arrange
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, securityCodeSession, false);
+            var query = new IndexQuery(userSession, false);
 
             string argumentUsed = null;
             sessionManager.Add<string>(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));

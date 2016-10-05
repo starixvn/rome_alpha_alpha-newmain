@@ -7,3 +7,4 @@ var passwordResources = {
     changePasswordSuccessfully: document.getElementById('password-change-successfully').value,
     newPassMustbeDiffOldPass: document.getElementById('newPassword-must-be-diff-old').value
 };
+//# sourceMappingURL=password-resources.js.map

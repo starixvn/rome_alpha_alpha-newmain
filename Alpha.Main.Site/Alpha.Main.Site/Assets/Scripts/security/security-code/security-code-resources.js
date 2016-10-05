@@ -8,3 +8,4 @@ var securityCodeResources = {
     sameSecurityCode: document.getElementById('alert-same-securitycode').value,
     securityCodeChangeSucessfully: document.getElementById('alert-securitycode-change-ok').value
 };
+//# sourceMappingURL=security-code-resources.js.map

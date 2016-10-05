@@ -2,7 +2,7 @@
 {
     using System.Diagnostics.CodeAnalysis;
     using MediatR;
-    using Sessions;
+    using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
@@ -10,13 +10,11 @@
     {
         private readonly bool isEnableSecurityCode;
         private readonly IUserSession userSession;
-        private readonly SecurityCodeSession securityCodeSession;
 
-        public IndexQuery(IUserSession userSession, SecurityCodeSession securityCodeSession, bool isEnableSecurityCode)
+        public IndexQuery(IUserSession userSession, bool isEnableSecurityCode)
         {
             this.userSession = userSession;
-            this.securityCodeSession = securityCodeSession;
-            this.isEnableSecurityCode = this.securityCodeSession.IsEnableSecurityCode;
+            this.isEnableSecurityCode = isEnableSecurityCode;
         }
 
         public int CustId

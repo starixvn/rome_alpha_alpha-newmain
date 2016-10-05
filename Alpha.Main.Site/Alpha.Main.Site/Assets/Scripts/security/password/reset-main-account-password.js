@@ -82,3 +82,4 @@ var resetMainAccountPassword = {
 $(function () {
     resetMainAccountPassword.initialize();
 });
+//# sourceMappingURL=reset-main-account-password.js.map

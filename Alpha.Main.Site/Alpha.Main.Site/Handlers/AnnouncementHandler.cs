@@ -1,26 +1,22 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
     using Main.Models.Announcements;
     using MediatR;
     using Models.Requests.Announcement;
     using Params.Announcements;
     using Services;
-    using Sessions;
     using Sunplus.Agent.Utilities;
-    using System;
 
     public class AnnouncementHandler :
          IRequestHandler<HotAnnouncementQuery, HotAnnouncement>
     {
         private readonly AnnouncementService _announcementService;
-        private readonly SecurityCodeSession securityCodeSession;
 
         public AnnouncementHandler(
-            AnnouncementService announcementService,
-            SecurityCodeSession securityCodeSession = null)
+            AnnouncementService announcementService)
         {
             _announcementService = announcementService;
-            this.securityCodeSession = securityCodeSession ?? CookieLessSessionFactory.SecurityCodeSession;
         }
 
         public HotAnnouncement Handle(HotAnnouncementQuery message)

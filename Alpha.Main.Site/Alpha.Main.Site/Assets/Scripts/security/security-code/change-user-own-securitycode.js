@@ -108,3 +108,4 @@ var changeUserOwnSecurityCode = {
 $(function () {
     changeUserOwnSecurityCode.initialize();
 });
+//# sourceMappingURL=change-user-own-securitycode.js.map

@@ -17,7 +17,6 @@
     using SecurityCode.Services;
     using Services;
     using Services.Impl;
-    using Sessions;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
@@ -82,20 +81,6 @@
         private static void RegisterServices(Container container)
         {
             container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
-
-            container.Register(
-                () =>
-                {
-                    if (HttpContext.Current != null
-                       && (HttpContext.Current.Handler is IRequiresSessionState
-                       || HttpContext.Current.Handler is IReadOnlySessionState))
-                    {
-                        return CookieLessSessionFactory.SecurityCodeSession;
-                    }
-
-                    return new SecurityCodeSessionImpl(string.Empty, null);
-                },
-                Lifestyle.Transient);
 
             //// Singleton
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);

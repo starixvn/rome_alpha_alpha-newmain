@@ -100,3 +100,4 @@ var forceChangePassword = {
 $(function () {
     forceChangePassword.initialize();
 });
+//# sourceMappingURL=force-change-password.js.map

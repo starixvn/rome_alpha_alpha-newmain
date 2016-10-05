@@ -85,3 +85,4 @@ var changeSecurityCodeFirstLogin = {
 $(function () {
     changeSecurityCodeFirstLogin.initialize();
 });
+//# sourceMappingURL=change-securitycode-firstlogin.js.map

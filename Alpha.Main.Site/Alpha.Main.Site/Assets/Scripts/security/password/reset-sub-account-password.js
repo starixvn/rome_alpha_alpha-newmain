@@ -80,3 +80,4 @@ var resetSubAccountPassword = {
 $(function () {
     resetSubAccountPassword.initialize();
 });
+//# sourceMappingURL=reset-sub-account-password.js.map

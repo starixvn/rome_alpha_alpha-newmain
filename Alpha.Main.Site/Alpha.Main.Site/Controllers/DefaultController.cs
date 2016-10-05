@@ -6,25 +6,21 @@
     using Models.Requests.UserMessages;
     using Requests;
     using SecurityCode.Services;
-    using Sessions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 
     public class DefaultController : BaseController
     {
         private readonly IUserSession userSession;
-        private readonly SecurityCodeSession securityCodeSession;
         private readonly IMediator mediator;
         private readonly SecurityCodeChecker securityCodeChecker;
 
         public DefaultController(
             IUserSession userSession,
-            SecurityCodeSession securityCodeSession,
             IMediator mediator,
             SecurityCodeChecker securityCodeChecker)
         {
             this.userSession = userSession;
-            this.securityCodeSession = securityCodeSession;
             this.mediator = mediator;
             this.securityCodeChecker = securityCodeChecker;
         }
@@ -49,7 +45,7 @@
                     return Redirect("~/SecurityCode/CheckLoginSecurityCode");
                 }
 
-                var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
+                var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode());
 
                 var viewModel = mediator.Send(query);
 
