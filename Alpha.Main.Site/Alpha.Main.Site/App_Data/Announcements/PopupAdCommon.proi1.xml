@@ -5,7 +5,9 @@
                    startdate="10/5/2016" enddate="10/19/2016"  effectdate="10/12/2016"
                     width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <p>
+        Dear valued agents,
+      </p>
       <p>
         We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
         - Exact 2nd Half Goals<br/>
@@ -25,8 +27,8 @@
       </p>
       <p>
         These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b/>
-        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b/>
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<br/>
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<br/>
       </p>
       <p>
         Thank you
@@ -34,7 +36,9 @@
     </en-US>
 
     <zh-CN src="">
-      尊敬的代理们，<br />
+      <p>
+        尊敬的代理们，
+      </p>
       <p>
         在此通知于 <b>{effectdate}</b> 将新推出 14 种足球新投注类别：<br />
         - 准确下半场总进球<br/>
@@ -54,8 +58,8 @@
       </p>
       <p>
         这些投注类别亦有开放在过关盘口及所有设定根据以下配置：<br/>
-        - 准确下半场总进球的占成数将根据足球总进球的设置及其佣金则将根据其它投注类别设置。<b/>
-        - 剩余投注类别的占成数及佣金将根据足球的其它投注类别设置。<b/>
+        - 准确下半场总进球的占成数将根据足球总进球的设置及其佣金则将根据其它投注类别设置。<br/>
+        - 剩余投注类别的占成数及佣金将根据足球的其它投注类别设置。<br/>
       </p>
       <p>
         谢谢。
@@ -63,7 +67,9 @@
     </zh-CN>
 
     <zh-TW src="">
-      尊敬的代理們，<br />
+      <p>
+        尊敬的代理們，
+      </p>
       <p>
         在此通知於<b>{effectdate}</b>將新推出14種足球新投注類別：<br />
         - 准確下半場總進球<br/>
@@ -83,8 +89,8 @@
       </p>
       <p>
         這些投注類別亦有開放在過關盤口及所有設定根據以下配置：<br/>
-        - 準確下半場總進球的佔成數將根據足球總進球的設置及其佣金則將根據其它投注類別設置。<b/>
-        - 剩餘投注類別的佔成數及佣金將根據足球的其它投注類別設置。<b/>
+        - 準確下半場總進球的佔成數將根據足球總進球的設置及其佣金則將根據其它投注類別設置。<br />
+        - 剩餘投注類別的佔成數及佣金將根據足球的其它投注類別設置。<br />
       </p>
       <p>
         謝謝。
@@ -92,7 +98,9 @@
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <p>
+        Dear valued agents,
+      </p>
       <p>
         We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
         - Exact 2nd Half Goals<br/>
@@ -112,8 +120,8 @@
       </p>
       <p>
         These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b/>
-        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b/>
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<br/>
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<br/>
       </p>
       <p>
         Thank you
@@ -121,7 +129,9 @@
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <p>
+        Dear valued agents,
+      </p>
       <p>
         We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
         - Exact 2nd Half Goals<br/>
@@ -141,8 +151,8 @@
       </p>
       <p>
         These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b/>
-        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b/>
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<br/>
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<br/>
       </p>
       <p>
         Thank you
@@ -150,7 +160,9 @@
     </ko-KR>
 
     <th-TH src="">
-      เรียนเอเจนต์ทุกท่าน<br />
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
       <p>
         ทางบริษัทใคร่ขอเรียนให้ทราบว่าทางเวปไซค์จะนำเสนอ 14 ชนิดการทายผลของกีฬาฟุตบอลซึ่งจะมีผลภายในวันที่ <b>{effectdate}</b><br />
         - เต็งผลประตูในครึ่งหลัง<br/>
@@ -170,8 +182,8 @@
       </p>
       <p>
         ประเภทการทายผลเหล่านี้ ยังสามารถทายผลในบอลชุดได้อีกด้วย และการตั้งค่าทั้งหมดจะตั้งค่าดังต่อไปนี้<br/>
-        - สำหรับการเต็งประตูในครึ่งหลังค่าความเสี่ยงจะตั้งค่าตาม ฟุตบอล การตั้งค่าประตูรวมและคอมมิชชั่นจะตังค่าตามการตั้งค่าอื่น ๆ <b/>
-        - ประเภทเดิมพันในส่วนที่เหลือ ค่าความเสี่ยงและค่าคอมมิชชั่นจะตั้งค่าตาม การตั้งค่าเดิมพันกีฬาฟุตบอลประเภทอื่น ๆ <b/>
+        - สำหรับการเต็งประตูในครึ่งหลังค่าความเสี่ยงจะตั้งค่าตาม ฟุตบอล การตั้งค่าประตูรวมและคอมมิชชั่นจะตังค่าตามการตั้งค่าอื่น ๆ <br/>
+        - ประเภทเดิมพันในส่วนที่เหลือ ค่าความเสี่ยงและค่าคอมมิชชั่นจะตั้งค่าตาม การตั้งค่าเดิมพันกีฬาฟุตบอลประเภทอื่น ๆ <br/>
       </p>
       <p>
         กราบขอบพระคุณคะ
@@ -179,7 +191,9 @@
     </th-TH>
 
     <vi-VN src="">
-      Kính gửi quý khách hàng,<br />
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
       <p>
         Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 14 loại cược mới cho môn Bóng Đá gồm có:<br />
         - Số Bàn Thắng Hiệp 2<br/>
@@ -199,8 +213,8 @@
       </p>
       <p>
         Những loại cược mới này đều cho phép chơi Parlay và tất cả các thiết lập sẽ được cấu hình như sau:<br/>
-        - Đối với loại cược "Số Bàn Thắng Hiệp 2",  Position Taking sẽ theo thiết lập của loại cược "Tổng Số Bàn Thắng" trong Bóng Đá và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<b/>
-        - Đối với các loại cược còn lại, Position Taking và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<b/>
+        - Đối với loại cược "Số Bàn Thắng Hiệp 2",  Position Taking sẽ theo thiết lập của loại cược "Tổng Số Bàn Thắng" trong Bóng Đá và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<br/>
+        - Đối với các loại cược còn lại, Position Taking và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<br/>
       </p>
       <p>
         Trân trọng.
