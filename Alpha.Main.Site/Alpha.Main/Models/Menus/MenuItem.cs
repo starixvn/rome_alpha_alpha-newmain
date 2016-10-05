@@ -13,21 +13,28 @@
         private string url;
         private Func<MenuStatus> getMenuStatusFunc;
         private Predicate<string> authorizeUrlFunc;
+        private Func<string> getDisplayName;
 
         protected MenuItem()
-            : this(null, null)
+            : this(null, null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
-            : this(getMenuStatusFunc, null)
+            : this(getMenuStatusFunc, null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc)
+            : this(getMenuStatusFunc, authorizeUrlFunc, null)
+        {
+        }
+
+        public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc, Func<string> getDisplayName)
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
             this.authorizeUrlFunc = authorizeUrlFunc;
+            this.getDisplayName = getDisplayName;
         }
 
         public string Key { get; set; }
@@ -42,7 +49,7 @@
         {
             get
             {
-                return Alpha_sitemap.ResourceManager.GetString(this.ResourceKey);
+                return getDisplayName != null ? getDisplayName() : Alpha_sitemap.ResourceManager.GetString(this.ResourceKey);
             }
         }
 

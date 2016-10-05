@@ -9,19 +9,22 @@
 
     public class MenuItemBuilderImpl : MenuItemBuilder
     {
-        private readonly IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
         private readonly IAuthorizationService authorizationService;
+        private readonly IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
+        private readonly IDictionary<string, Func<string>> menuItemDisplayName;
 
-        public MenuItemBuilderImpl() : this(null, null)
+        public MenuItemBuilderImpl() : this(null, null, null)
         {
         }
 
         internal MenuItemBuilderImpl(
             IAuthorizationService authorizationService,
-            IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration)
+            IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration,
+            IDictionary<string, Func<string>> menuItemDisplayName)
         {
             this.authorizationService = authorizationService ?? new AuthorizationService();
             this.menuItemTypeConfiguration = menuItemTypeConfiguration ?? FunctionRegistry.MenuItemTypeStatusRules;
+            this.menuItemDisplayName = menuItemDisplayName ?? FunctionRegistry.MenuItemDisplayNameRules;
         }
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
@@ -42,7 +45,8 @@
 
             var menuItem = new MenuItem(
                 menuItemTypeConfiguration[node["menuItemType"] ?? string.Empty],
-               authorizationService.IsAuthorized);
+                authorizationService.IsAuthorized,
+                menuItemDisplayName.ContainsKey(node.ResourceKey) ? menuItemDisplayName[node.ResourceKey] : null);
 
             SetDataForMenuItem(menuItem, node);
 

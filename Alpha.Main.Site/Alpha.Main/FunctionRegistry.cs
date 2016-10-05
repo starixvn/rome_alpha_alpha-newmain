@@ -5,8 +5,11 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using AppResources;
+    using Fanex.Products;
     using Helpers;
     using Models.Menus;
+    using Sunplus.Agent.Model.Definitions;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
@@ -72,7 +75,7 @@
             ["NG2MenuItem"] = () => new MenuStatus(
                 () =>
                 {
-                    return true;
+                    return ProductManager.IsShowSettings(ProductIdConstants.NG2);
                 })
         };
 
@@ -135,5 +138,13 @@
                 return getDefaultUrl;
             }
         }
+
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
+        [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "Reviewed!")]
+        public static readonly IDictionary<string, Func<string>> MenuItemDisplayNameRules = new Dictionary<string, Func<string>>
+        {
+            ["ng2"] = () => { return ProductManager.GetProductName(ProductIdConstants.NG2); },
+            ["ng2Schedule"] = () => { return $"{ProductManager.GetProductName(ProductIdConstants.NG2)} {Alpha_sitemap.schedule}"; }
+        };
     }
 }

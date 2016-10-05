@@ -347,5 +347,7 @@
   </data>
   <data name="BetChoiceLimit" xml:space="preserve">
     <value>选择投注限额</value>
+  <data name="schedule" xml:space="preserve">
+    <value>Schedule</value>
   </data>
 </root>
