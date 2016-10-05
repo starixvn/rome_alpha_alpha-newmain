@@ -23,6 +23,8 @@
         public const int NotOfferedGoldDeluxe = 3543502;
         public const int OfferedSuperLive = 3577701;
         public const int OfferedColossusBets = 4523901;
+        public const int OfferedAllbet = 53088001;
+        public const int NotOfferedAllbet = 53088002;
 
         private bool isSecurityCodeActive;
 
@@ -50,7 +52,8 @@
         {
             get
             {
-                return privateMessageFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAd{Enumeration.FromValue<UserLevel>(this.userSession.RoleId)}Neutral.xml");
+                return privateMessageFilePath 
+                    ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAd{Enumeration.FromValue<UserLevel>(this.userSession.RoleId)}Neutral.xml");
             }
         }
 
@@ -87,7 +90,9 @@
                     { NotOfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && !UserPermission.IsShowLiveCasino },
                     { OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
                     { OfferedSuperLive, UserPermission.IsShowSuperLive },
-                    { OfferedColossusBets,  UserPermission.IsShowColossusBets }
+                    { OfferedColossusBets,  UserPermission.IsShowColossusBets },
+                    { OfferedAllbet,  UserPermission.IsSyncAllBet && UserPermission.IsShowLiveCasino },
+                    { NotOfferedAllbet,  UserPermission.IsSyncAllBet && !UserPermission.IsShowLiveCasino }
                 };
             }
         }

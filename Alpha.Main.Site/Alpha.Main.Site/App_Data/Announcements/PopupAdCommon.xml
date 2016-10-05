@@ -8,36 +8,474 @@
       LCS: 7,
       domain: 5
   -->
-  <PopupAnnouncement id="60826006" name="Testing UI/UX Phase 5" startdate="08/23/2016" enddate="08/31/2016"  effectdate="23/08/2016"
-                        width="1000" height="220" top="110" left="350">
+
+  <PopupAnnouncement id="62861001" name="PHAIO"
+                     startdate="10/5/2016" enddate="10/19/2016"  effectdate="10/12/2016"
+                      width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Testing UI/UX Phase 5
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
+        - Exact 2nd Half Goals<br/>
+        - Both Teams To Score/Result<br/>
+        - Both Teams To Score/Total Goal<br/>
+        - Which Half First Goal<br/>
+        - Home Team Which Half First Goal<br/>
+        - Away Team Which Half First Goal<br/>
+        - First Team 2 Goals<br/>
+        - First Team 3 Goals<br/>
+        - First Goal Method<br/>
+        - To Win From Behind<br/>
+        - 1H Winning Margin<br/>
+        - Both Team To Score in 1H/ 2H<br/>
+        - Home 1H To Score/2H To Score<br/>
+        - Away 1H To Score/2H To Score<br/>
+      </p>
+      <p>
+        These bet types are also available for Parlay and all settings are configured as follows:<br/>
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b/>
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b/>
+      </p>
+      <p>
+        Thank you
+      </p>
     </en-US>
 
     <zh-CN src="">
-      Testing UI/UX Phase 5
+      尊敬的代理们，<br />
+      <p>
+        在此通知于 <b>{effectdate}</b> 将新推出 14 种足球新投注类别：<br />
+        - 准确下半场总进球<br/>
+        - 两队皆进球/赛果<br/>
+        - 两队皆进球/总进球数<br/>
+        - 预测进第一个球的半场<br/>
+        - 主队于哪个半场最先进球<br/>
+        - 客队于哪个半场最先进球<br/>
+        - 最先进两个球的球队<br/>
+        - 最先进三个球的球队<br/>
+        - 第一个进球方式<br/>
+        - 落后反超获胜的球队<br/>
+        - 上半场净胜球数<br/>
+        - 两队皆进球 上半场/下半场<br/>
+        - 主队均进球 上半场/下半场<br/>
+        - 客队均进球 上半场/下半场<br/>
+      </p>
+      <p>
+        这些投注类别亦有开放在过关盘口及所有设定根据以下配置：<br/>
+        - 准确下半场总进球的占成数将根据足球总进球的设置及其佣金则将根据其它投注类别设置。<b/>
+        - 剩余投注类别的占成数及佣金将根据足球的其它投注类别设置。<b/>
+      </p>
+      <p>
+        谢谢。
+      </p>
     </zh-CN>
 
     <zh-TW src="">
-      Testing UI/UX Phase 5
+      尊敬的代理們，<br />
+      <p>
+        在此通知於<b>{effectdate}</b>將新推出14種足球新投注類別：<br />
+        - 准確下半場總進球<br/>
+        - 兩隊皆進球/賽果<br/>
+        - 兩隊皆進球/總進球數<br/>
+        - 預測進第一個球的半場<br/>
+        - 主隊於哪個半場最先進球<br/>
+        - 客隊於哪個半場最先進球<br/>
+        - 最先進兩個球的球隊<br/>
+        - 最先進三個球的球隊<br/>
+        - 第一個進球方式<br/>
+        - 落後反超獲勝的球隊<br/>
+        - 上半場淨勝球數<br/>
+        - 兩隊皆進球 上半場/下半場<br/>
+        - 主隊均進球 上半場/下半場<br/>
+        - 客隊均進球 上半場/下半場<br/>
+      </p>
+      <p>
+        這些投注類別亦有開放在過關盤口及所有設定根據以下配置：<br/>
+        - 準確下半場總進球的佔成數將根據足球總進球的設置及其佣金則將根據其它投注類別設置。<b/>
+        - 剩餘投注類別的佔成數及佣金將根據足球的其它投注類別設置。<b/>
+      </p>
+      <p>
+        謝謝。
+      </p>
     </zh-TW>
 
     <ja-JP src="">
-      Testing UI/UX Phase 5
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
+        - Exact 2nd Half Goals<br/>
+        - Both Teams To Score/Result<br/>
+        - Both Teams To Score/Total Goal<br/>
+        - Which Half First Goal<br/>
+        - Home Team Which Half First Goal<br/>
+        - Away Team Which Half First Goal<br/>
+        - First Team 2 Goals<br/>
+        - First Team 3 Goals<br/>
+        - First Goal Method<br/>
+        - To Win From Behind<br/>
+        - 1H Winning Margin<br/>
+        - Both Team To Score in 1H/ 2H<br/>
+        - Home 1H To Score/2H To Score<br/>
+        - Away 1H To Score/2H To Score<br/>
+      </p>
+      <p>
+        These bet types are also available for Parlay and all settings are configured as follows:<br/>
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b/>
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b/>
+      </p>
+      <p>
+        Thank you
+      </p>
     </ja-JP>
 
     <ko-KR src="">
-      Testing UI/UX Phase 5
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
+        - Exact 2nd Half Goals<br/>
+        - Both Teams To Score/Result<br/>
+        - Both Teams To Score/Total Goal<br/>
+        - Which Half First Goal<br/>
+        - Home Team Which Half First Goal<br/>
+        - Away Team Which Half First Goal<br/>
+        - First Team 2 Goals<br/>
+        - First Team 3 Goals<br/>
+        - First Goal Method<br/>
+        - To Win From Behind<br/>
+        - 1H Winning Margin<br/>
+        - Both Team To Score in 1H/ 2H<br/>
+        - Home 1H To Score/2H To Score<br/>
+        - Away 1H To Score/2H To Score<br/>
+      </p>
+      <p>
+        These bet types are also available for Parlay and all settings are configured as follows:<br/>
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b/>
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b/>
+      </p>
+      <p>
+        Thank you
+      </p>
     </ko-KR>
 
     <th-TH src="">
-      Testing UI/UX Phase 5
+      เรียนเอเจนต์ทุกท่าน<br />
+      <p>
+        ทางบริษัทใคร่ขอเรียนให้ทราบว่าทางเวปไซค์จะนำเสนอ 14 ชนิดการทายผลของกีฬาฟุตบอลซึ่งจะมีผลภายในวันที่ <b>{effectdate}</b><br />
+        - เต็งผลประตูในครึ่งหลัง<br/>
+        - ทั้งสองทีมทำประตูได้/ผลประตู<br/>
+        - ทั้งสองทีมทำประตูได้/ผลประตูรวม<br/>
+        - ประตูแรกจะเกิดขึ้นในครึ่งแรกหรือครึ่งหลัง<br/>
+        - ทีมเจ้าบ้านจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br/>
+        - ทีมยืนจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br/>
+        - ทีมแรกที่จะทำได้ 2 ประตูก่อน<br/>
+        - ทีมแรกที่จะทำได้ 3 ประตูก่อน<br/>
+        - วิธีที่ทำประตูแรกได้<br/>
+        - จากแพ้พลิกกับมาชนะ<br/>
+        - ผลต่างประตูที่ชนะในครึ่งแรก<br/>
+        - ทั้งสองทีมทำประตูใน ครึ่งแรก/ครึ่งหลัง<br/>
+        - ทีมเจ้าบ้าน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br/>
+        - ทีมเยือน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br/>
+      </p>
+      <p>
+        ประเภทการทายผลเหล่านี้ ยังสามารถทายผลในบอลชุดได้อีกด้วย และการตั้งค่าทั้งหมดจะตั้งค่าดังต่อไปนี้<br/>
+        - สำหรับการเต็งประตูในครึ่งหลังค่าความเสี่ยงจะตั้งค่าตาม ฟุตบอล การตั้งค่าประตูรวมและคอมมิชชั่นจะตังค่าตามการตั้งค่าอื่น ๆ <b/>
+        - ประเภทเดิมพันในส่วนที่เหลือ ค่าความเสี่ยงและค่าคอมมิชชั่นจะตั้งค่าตาม การตั้งค่าเดิมพันกีฬาฟุตบอลประเภทอื่น ๆ <b/>
+      </p>
+      <p>
+        กราบขอบพระคุณคะ
+      </p>
     </th-TH>
 
     <vi-VN src="">
-      Testing UI/UX Phase 5
+      Kính gửi quý khách hàng,<br />
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 14 loại cược mới cho môn Bóng Đá gồm có:<br />
+        - Số Bàn Thắng Hiệp 2<br/>
+        - Hai Đội Ghi Bàn/Đội Thắng<br/>
+        - Hai Đội Ghi Bàn/Tổng Bàn Thắng<br/>
+        - Hiệp Ghi Bàn Đầu Tiên<br/>
+        - Hiệp Ghi Bàn Đầu Tiên Của Home<br/>
+        - Hiệp Ghi Bàn Đầu Tiên Của Away<br/>
+        - Đội Ghi 2 Bàn Trước<br/>
+        - Đội Ghi 3 Bàn Trước<br/>
+        - Đội Thắng Lội Ngược Dòng<br/>
+        - To Win From Behind<br/>
+        - Số Bàn Cách Biệt trong Hiệp 1<br/>
+        - Hai Đội Cùng Ghi Bàn trong Hiệp 1/Hiệp 2<br/>
+        - Home Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br/>
+        - Away Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br/>
+      </p>
+      <p>
+        Những loại cược mới này đều cho phép chơi Parlay và tất cả các thiết lập sẽ được cấu hình như sau:<br/>
+        - Đối với loại cược "Số Bàn Thắng Hiệp 2",  Position Taking sẽ theo thiết lập của loại cược "Tổng Số Bàn Thắng" trong Bóng Đá và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<b/>
+        - Đối với các loại cược còn lại, Position Taking và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<b/>
+      </p>
+      <p>
+        Trân trọng.
+      </p>
     </vi-VN>
   </PopupAnnouncement>
+
+  <PopupAnnouncement id="53088001" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
+                     startdate="10/5/2016" enddate="10/19/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc"
+                      width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        All settings will be configured as follows:
+      </p>
+      <p>
+        - Position taking will be copied from Live Casino's settings.<br/>
+        - Commission will be copied from Live Casino's settings.<br/>
+        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
+        - Member Win Limit will be copied from Live Casino's settings.
+      </p>
+      <p>
+        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
+        All settings will be available for configuration since <b>{effectdate}</b>.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      尊敬的代理，<br />
+      <p>
+        在此宣佈新产品名为 "AllBet" 将于 <b>{effectdate}</b> 隆重推出.<br />
+        此项新产品将于默认开启形式推出. 若您要关闭 "AllBet" 于特定下线, 可到设定功能里设置.<br />
+        所有设定将配置如下:
+      </p>
+      <p>
+        - 占成数将複製真人娱乐厅的设定.<br/>
+        - 佣金将複製真人娱乐厅的设定.<br/>
+        - 会员投注限额不会超过 上线提供的投注限额.<br/>
+        - 会员赢额限额将複製真人娱乐厅设定.
+      </p>
+      <p>
+        尚若真人娱乐厅无设定可複製，需在 AllBet 开启下注前配置设定.<br/>
+        所有设定将于<b>{effectdate}</b> 开放设置.
+      </p>
+      <p>
+        谢谢.
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      尊敬的代理，<br />
+      <p>
+        在此宣佈新產品名為 "AllBet" 將于<b>{effectdate}</b> 隆重推出.<br />
+        此項新產品將于默認開啟形式推出.  若您要關閉 "AllBet" 于特定下線, 可到設定功能里設置.<br />
+        所有設定將配置如下:
+      </p>
+      <p>
+        - 占成數將複製真人娛樂廳的設定.<br/>
+        - 傭金將複製真人娛樂廳的設定.<br/>
+        - 會員投注限額不會超過 上线提供的投注限額.<br/>
+        - 會員贏額限額將複製真人娛樂廳設定.
+      </p>
+      <p>
+        尚若真人娛樂廳無設定可複製，需在 AllBet 開啟下注前配置設定.<br/>
+        所有設定將于 <b>{effectdate}</b> 開放設置.
+      </p>
+      <p>
+        謝謝.
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        All settings will be configured as follows:
+      </p>
+      <p>
+        - Position taking will be copied from Live Casino's settings.<br/>
+        - Commission will be copied from Live Casino's settings.<br/>
+        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
+        - Member Win Limit will be copied from Live Casino's settings.
+      </p>
+      <p>
+        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
+        All settings will be available for configuration since <b>{effectdate}</b>.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        All settings will be configured as follows:
+      </p>
+      <p>
+        - Position taking will be copied from Live Casino's settings.<br/>
+        - Commission will be copied from Live Casino's settings.<br/>
+        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
+        - Member Win Limit will be copied from Live Casino's settings.
+      </p>
+      <p>
+        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
+        All settings will be available for configuration since <b>{effectdate}</b>.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียน ผู้มีอุปการะคุณ<br />
+      <p>
+        เรามีความยินดีที่จะประกาศการเปิดตัวผลิตภัณฑ์ใหม่ "AllBet" ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป<br />
+        ผลิตภัณฑ์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "AllBet" ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า<br />
+        การตั้งค่าทั้งหมดมีดังต่อไปนี้
+      </p>
+      <p>
+        - การรับสถานะเงินลงทุนจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br/>
+        - ค่านายหน้าจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br/>
+        - วงเงินเดิมพันของสมาชิกจะไม่เกินวงเงินเดิมพันที่เสนอโดย SMA<br/>
+        - วงเงินชนะของสมาชิกจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด
+      </p>
+      <p>
+        หากไม่นำการตั้งค่ามาจากคาสิโนสด ต้องกำหนดการตั้งค่าสำหรับ AllBet ก่อนที่ผลิตภัณฑ์นี้จะเปิดให้วางเดิมพันได้<br/>
+        การตั้งค่าทั้งหมดจะเปิดให้ดำเนินการได้ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป
+      </p>
+      <p>
+        ขอบคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Chào quý khách hàng,<br />
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet".<br />
+        Sản phẩm này sẽ được cung cấp mặc định. Nếu bạn muốn vô hiệu hoá "AllBet" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
+        Tất cả các thiết lập sẽ được cấu hình như sau:
+      </p>
+      <p>
+        - Position Taking sẽ được sao chép từ Live Casino.<br/>
+        - Các thiết lập về hoa hồng sẽ được sao chép từ Live Casino.<br/>
+        - Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br/>
+        - Giới hạn thắng cược của member sẽ được sao chép từ Live Casino.
+      </p>
+      <p>
+        Nếu không có thiết lập nào được sao chép từ Live Casino, bạn phải cấu hình các thiết lập cho AllBet trước khi sản phẩm này được cho phép đặt cược.<br/>
+        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>{effectdate}</b>.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="53088002" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 0"
+                     startdate="10/5/2016" enddate="10/19/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc"
+                      width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
+        All settings will be available for configuration since <b>{effectdate}</b>
+      </p>
+      
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      亲爱的代理,<br />
+      <p>
+        在此宣佈新产品名为 "AllBet" 将于<b>{effectdate}</b> 将隆重推出.<br />
+        此项新产品将于默认开启形式推出. 若您要关闭 "AllBet" 于特定下线, 可到设定功能里设置.<br />
+        会员投注限额不会超过 上线提供的投注限额.<br />
+        所有设定将于 <b>{effectdate}</b> 开放设置.
+      </p>
+
+      <p>
+        谢谢.
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      親愛的代理,<br />
+      <p>
+        在此宣佈新產品名為 "AllBet" 將于<b>{effectdate}</b>將隆重推出.<br />
+        此項新產品將于默認開啟形式推出. 若您要關閉 "AllBet" 于特定下線, 可到設定功能里設置.<br />
+        會員投注限額不會超過上线 提供的投注限額.<br />
+        所有設定將于 <b>{effectdate}</b> 開放設置.
+      </p>
+
+      <p>
+        謝謝.
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
+        All settings will be available for configuration since <b>{effectdate}</b>
+      </p>
+
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
+        All settings will be available for configuration since <b>{effectdate}</b>
+      </p>
+
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียน ผู้มีอุปการะคุณ<br />
+      <p>
+        เรามีความยินดีที่จะประกาศการเปิดตัวผลิตภัณฑ์ใหม่ "AllBet" ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป<br />
+        ผลิตภัณฑ์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "AllBet" ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า<br />
+        วงเงินเดิมพันของสมาชิกจะไม่เกินวงเงินเดิมพันที่เสนอโดย SMA<br />
+        การตั้งค่าทั้งหมดจะเปิดให้ดำเนินการได้ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป
+      </p>
+
+      <p>
+        ขอบคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Chào quý khách hàng,<br />
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet".<br />
+        Sản phẩm này sẽ được cung cấp mặc định. Nếu bạn muốn vô hiệu hoá "AllBet" riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
+        Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br />
+        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>{effectdate}</b>
+      </p>
+
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="61726001" name="Casino DB Migration - RNG: Sync and Enable = true, LCS: sync and enable = false"
                      startdate="08/21/2016" enddate="09/01/2016"  effectdate="31/08/2016"
                       width="1000" height="220" top="110" left="350">
@@ -591,3009 +1029,6 @@
       </p>
       <p>
         Thank you for your understanding and support.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-
-
-  <PopupAnnouncement id="5501700" name="ComboParlay" startdate="07/01/2016" enddate="07/31/2016"  effectdate="20/07/2016"
-                       width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the changes of bet type System Parlay with effect from <b>{effectdate}</b>.<br/>
-        All amendments will be as follows:
-      </p>
-      <p>
-        - Add more betting combos such as Doubles, Trebles, n-Folds and Lucky.
-      </p>
-      <p>
-        - Allow player to place bet with different betting amount on each betting combos.
-      </p>
-      <p>
-        Follow <a href="../site-howtouse/resources/html/systemparlay/en-us.html" target="_blank">this instruction</a> for more details.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈於<b>{effectdate}</b>， 將變換串關的投註類型<br/>
-        所有的修訂將如下：
-      </p>
-      <p>
-        - 添加更多連貫投註如 孖寶，三寶，四重及幸運。
-      </p>
-      <p>
-        - 讓客戶可以針對投注組合下注不一樣的投注金額
-      </p>
-      <p>
-        請根據這<a href="../site-howtouse/resources/html/systemparlay/zh-cn.html" target="_blank">說明</a>瞭解更多詳情。
-      </p>
-      <p>
-        謝謝
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈于<b>{effectdate}</b>， 将变换串关的投注类型<br/>
-        所有的修訂將如下：
-      </p>
-      <p>
-        - 添加更多连贯投注如 孖宝， 三宝，四重 及 幸运。
-      </p>
-      <p>
-        - 让客户可以针对投注组合下注不一样的投注金额
-      </p>
-      <p>
-        请根据这<a href="../site-howtouse/resources/html/systemparlay/zh-tw.html" target="_blank">说明</a>瞭解更多详情。
-      </p>
-      <p>
-        谢谢
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the changes of bet type System Parlay with effect from <b>{effectdate}</b>.<br/>
-        All amendments will be as follows:
-      </p>
-      <p>
-        - Add more betting combos such as Doubles, Trebles, n-Folds and Lucky.
-      </p>
-      <p>
-        - Allow player to place bet with different betting amount on each betting combos.
-      </p>
-      <p>
-        Follow <a href="../site-howtouse/resources/html/systemparlay/ja-jp.html" target="_blank">this instruction</a> for more details.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the changes of bet type System Parlay with effect from <b>{effectdate}</b>.<br/>
-        All amendments will be as follows:
-      </p>
-      <p>
-        - Add more betting combos such as Doubles, Trebles, n-Folds and Lucky.
-      </p>
-      <p>
-        - Allow player to place bet with different betting amount on each betting combos.
-      </p>
-      <p>
-        Follow <a href="../site-howtouse/resources/html/systemparlay/ko-kr.html" target="_blank">this instruction</a> for more details.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน เอเจนต์<br />
-      <p>
-        ทางบริษัทใคร่ขอแจ้งให้ทราบถึงการเปลี่ยนแปลง System Parlay ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป<br/>
-        การปรับเปลี่ยนทั้งหมดมีดังต่อไปนี้
-      </p>
-      <p>
-        - เพิ่มคอมโบการพนันมากขึ้นเช่น สอง, สาม, สี่ และลัคกี้
-      </p>
-      <p>
-        - ลูกค้าสามารถทายผลด้วย วงเงินที่แตกต่างกันในแต่ละชุด
-      </p>
-      <p>
-        รายละเอียดเพิ่มเติมดัง<a href="../site-howtouse/resources/html/systemparlay/th-th.html" target="_blank">คำแนะนำ</a>ดังต่อไปนี้
-      </p>
-      <p>
-        ขอบคุณคะ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Kính gửi quý khách hàng,<br />
-      <p>
-        Kể từ ngày <b>{effectdate}</b>, loại cược System Parlay sẽ có những thay đổi như sau:
-      </p>
-      <p>
-        - Bổ sung thêm các tổ hợp mới như Double, Treble, N-Folds và Lucky.
-      </p>
-      <p>
-        - Cho phép người chơi đặt tiền cược khác nhau vào mỗi tổ hợp.
-      </p>
-      <p>
-        Hãy truy cập <a href="../site-howtouse/resources/html/systemparlay/vi-vn.html" target="_blank">hướng dẫn này</a> để biết thêm chi tiết.
-      </p>
-      <p>
-        Trân trọng.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="5525910" name="OneRNG Casino"  startdate="06/03/2016" enddate="06/17/2016"  effectdate="08/06/2016"
-                     width="640" height="480" top="110" left="350" privatesystem="611111">
-    <en-US src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
-		N/A     
-    </en-US>
-    <zh-CN src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
-      N/A     
-    </zh-CN>
-    <zh-TW src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
-      N/A     
-    </zh-TW>
-    <ja-JP src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
-      N/A     
-    </ja-JP>
-    <ko-KR src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
-      N/A     
-    </ko-KR>
-    <th-TH src="_Announcement/Template/NewProduct/OneRNG/Announcement.html">
-      N/A     
-    </th-TH>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="5525922" name="Voidbridge" startdate="06/03/2016" enddate="06/17/2016"  effectdate="08/06/2016"
-                       width="1000" height="220" top="110" left="350" privatesystem="611111">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
-      </p>
-      <p>
-        All settings will be configured as follows:
-      </p>
-      <p>
-        &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
-        &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
-      </p>
-      <p>
-        If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
-      </p>
-      <p>
-        All settings will be available for configuration since <b>15/07/2016</b>.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈 <b>{effectdate}</b>, 新产品 "Macau Games" 将于手机版推出.
-      </p>
-      <p>
-        此项新产品将于默认开启形式推出.  若您要关闭 "Macau Games" 于特定下线, 可到设定功能里设置.
-      </p>
-      <p>
-        所有设定将配置如下:
-      </p>
-      <p>
-        &#8226; 占成数, 佣金和会员的赢额上限将複製娱乐城的设定.<br/>
-        &#8226; 会员投注限额不会超过 上线提供的投注限额.
-      </p>
-      <p>
-        如果娱乐城没有任何设定, 请在 "Macau Games" 正式推出前自行设定
-      </p>
-      <p>
-        所有设定将可用于自 <b>15/07/2016</b> 配置.
-      </p>
-      <p>
-        谢谢。
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈 <b>{effectdate}</b>, 新產品 "Macau Games" 將于手機版推出.
-      </p>
-      <p>
-        此項新產品將于默認開啟形式推出.  若您要關閉 "Macau Games" 于特定下線, 可到設定功能里設置.
-      </p>
-      <p>
-        所有設定將配置如下:
-      </p>
-      <p>
-        &#8226; 占成數, 傭金和會員的贏額上限將複製娛樂城的設定.<br/>
-        &#8226; 會員投注限額不會超過 上线提供的投注限額.
-      </p>
-      <p>
-        如果娛樂城沒有任何設定, 請在 "Macau Games" 正式推出前自行設定.
-      </p>
-      <p>
-        所有設定將可用於自 <b>15/07/2016</b> 配置
-      </p>
-      <p>
-        謝謝。
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
-      </p>
-      <p>
-        All settings will be configured as follows:
-      </p>
-      <p>
-        &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
-        &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
-      </p>
-      <p>
-        If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
-      </p>
-      <p>
-        All settings will be available for configuration since <b>15/07/2016</b>.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
-      </p>
-      <p>
-        All settings will be configured as follows:
-      </p>
-      <p>
-        &#8226; The Position taking, Commission and Member Win Loss Limit will be copied from RNG Casino's settings.<br/>
-        &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.
-      </p>
-      <p>
-        If there is no setting copied from RNG Casino, it is required to configure setting for Macau Games before this product is enabled to place bet.
-      </p>
-      <p>
-        All settings will be available for configuration since <b>15/07/2016</b>.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน ท่านเอเจนต์ที่มีอุปการะคุณ<br />
-      <p>
-        ทางบริษัทใคร่ขอแจ้งให้ทราบว่า จะทำการเปิดตัวสินค้าชื่อ “Macau Games” ซึ่งสามารถเดิมพันผ่านอุปกรณ์มือถือ ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b>
-      </p>
-      <p>
-        เกมส์นี้จะเปิดถึงลูกค้าโดยตรง หากท่านต้องการจะปิดการใช้งานให้กับดาวไลน์ฉพาะเจาะจง โปรดกำหนดที่ฟังก์ชั่นการตั้งค่า
-      </p>
-      <p>
-        การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้:
-      </p>
-      <p>
-        &#8226; ค่าความเสี่ยง คอมมิสชั่น และการจำกัดค่าได้เสียของเมมเบ้อ การตั้งค่านี้จะทำการคัดลอกมาจากการตั้งค่าของ RNG Casino เดิมที่มีการตั้งค่าไว้อยู่แล้ว<br/>
-        &#8226; วงเงินเดิมพันของเมมเบ้อ จะไม่เกินวงเงินเดิมพันของ SMA
-      </p>
-      <p>
-        หากไม่มี RNG Casino สามารถคัดลอก จะต้องมีการกำหนดค่าการตั้งค่าสำหรับเกม" Macau Games" ก่อนที่ผลิตภัณฑ์นี้ถูกเปิดใช้งานเพื่อวางเดิมพัน
-      </p>
-      <p>
-        การตั้งค่าทั้งหมดจะสามารถใช้ได้สำหรับการกำหนดค่า ตั้งแต่ <b>15/07/2016</b>
-      </p>
-      <p>
-        กราบขอบพระคุณคะ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Kính gửi quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm một trò chơi điện thoại mới tên "Macau Games".
-      </p>
-      <p>
-        Sản phẩm này sẽ được cung cấp mặc định. Nếu bạn muốn vô hiệu hoá "Macau Games" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.
-      </p>
-      <p>
-        Tất cả các thiết lập sẽ được cấu hình như sau:
-      </p>
-      <p>
-        &#8226; Position Taking, Hoa Hồng và Giới Hạn Thắng Thua của Member sẽ được sao chép từ RNG Casino.<br/>
-        &#8226; Giới hạn cược của Member sẽ không vượt quá giới hạn cược do SMA quy định
-      </p>
-      <p>
-        Nếu không có thiết lập nào được sao chép từ RNG Casino, bạn phải cấu hình các thiết lập cho "Macau Games" trước khi sản phẩm này được cho phép đặt cược.
-      </p>
-      <p>
-        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>15/07/2016</b>.
-      </p>
-      <p>
-        Trân Trọng
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="552592201" name="Voidbridge-Unsynced" startdate="06/03/2016" enddate="06/17/2016"  effectdate="08/06/2016"
-                       width="1000" height="220" top="110" left="350" privatesystem="611111">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
-      </p>
-      <p>
-        Member Betting Limit will not exceed the Betting Limit offered by SMA.
-      </p>
-      <p>
-        All settings will be available for configuration since <b>15/07/2016</b>.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈 <b>{effectdate}</b>, 新产品 "Macau Games" 将于手机版推出.
-      </p>
-      <p>
-        此项新产品将于默认开启形式推出.  若您要关闭 "Macau Games" 于特定下线, 可到设定功能里设置.
-      </p>
-      <p>
-        会员投注限额不会超过 上线提供的投注限额.
-      </p>
-      <p>
-        所有设定将可用于自 <b>15/07/2016</b> 配置
-      </p>
-      <p>
-        谢谢。
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈 <b>{effectdate}</b>, 新產品 "Macau Games" 將于手機版推出.
-      </p>
-      <p>
-        此項新產品將于默認開啟形式推出.  若您要關閉 "Macau Games" 于特定下線, 可到設定功能里設置.
-      </p>
-      <p>
-        會員投注限額不會超過 上线提供的投注限額.
-      </p>
-      <p>
-        所有設定將可用於自 <b>15/07/2016</b> 配置
-      </p>
-      <p>
-        謝謝。
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
-      </p>
-      <p>
-        Member Betting Limit will not exceed the Betting Limit offered by SMA.
-      </p>
-      <p>
-        All settings will be available for configuration since <b>15/07/2016</b>.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new Mobile game named “Macau Games” with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        This game will be offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
-      </p>
-      <p>
-        Member Betting Limit will not exceed the Betting Limit offered by SMA.
-      </p>
-      <p>
-        All settings will be available for configuration since <b>15/07/2016</b>.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน ท่านเอเจนต์ที่มีอุปการะคุณ<br />
-      <p>
-        ทางบริษัทใคร่ขอแจ้งให้ทราบว่า จะทำการเปิดตัวสินค้าชื่อ “Macau Games” ซึ่งสามารถเดิมพันผ่านอุปกรณ์มือถือ ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b>
-      </p>
-      <p>
-        เกมส์นี้จะเปิดถึงลูกค้าโดยตรง หากท่านต้องการจะปิดการใช้งานให้กับดาวไลน์ฉพาะเจาะจง โปรดกำหนดที่ฟังก์ชั่นการตั้งค่า
-      </p>
-      <p>
-        วงเงินเดิมพันของเมมเบ้อ จะไม่เกินวงเงินเดิมพันของ SMA
-      </p>
-      <p>
-        การตั้งค่าทั้งหมดจะสามารถใช้ได้สำหรับการกำหนดค่า ตั้งแต่ <b>15/07/2016</b>
-      </p>
-      <p>
-        กราบขอบพระคุณคะ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Kính gửi quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm một trò chơi điện thoại mới tên "Macau Games".
-      </p>
-      <p>
-        Sản phẩm này sẽ được cung cấp mặc định. Nếu bạn muốn vô hiệu hoá "Macau Games" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.
-      </p>
-      <p>
-        Giới hạn cược của Member sẽ không vượt quá giới hạn cược do SMA quy định
-      </p>
-      <p>
-        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>15/07/2016</b>.
-      </p>
-      <p>
-        Trân Trọng
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>  
-
- <PopupAnnouncement id="5525901" name="OneRNG Casino" startdate="06/03/2016" enddate="06/17/2016"  effectdate="08/06/2016"
-                       width="1000" height="220" top="110" left="350" privatesystem="611111">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of 6 new Mobile games of RNG Casino with effect from <b>{effectdate}</b> including:<br/><br/>
-        &#8226; (Mobile) Baccarat.<br/>
-        &#8226; (Mobile) Casino Hold'em.<br/>
-        &#8226; (Mobile) Blackjack.<br/>
-        &#8226; (Mobile) Jungle Wild.<br/>
-        &#8226; (Mobile) God of Prosperity.<br/>
-        &#8226; (Mobile) Sic Bo.<br/>
-      </p>
-      <p>
-        Once you enable RNG Casino, these new games will be offered by default. All settings will be configured as follows:<br/><br/>
-        &#8226; Position taking and Commission will be copied from RNG group’s settings of RNG Casino.<br/>
-        &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
-      </p>
-      <p>
-        All settings will be available for configuration since <b>15/07/2016</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈6 种手机游戏在娱乐城， 将于 <b>{effectdate}</b> 隆重推出. <br/><br/>
-        &#8226;（手机）百家乐<br/>
-        &#8226;（手机）赌场德州扑克<br/>
-        &#8226;（手机）21点<br/>
-        &#8226;（手机）泰山<br/>
-        &#8226;（手机）财神到<br/>
-        &#8226;（手机）骰宝<br/>
-      </p>
-      <p>
-        一旦启用“娱乐城”这些游戏将被默认。所有设定都将进行如下配置：<br/><br/>
-        &#8226; 占成数和佣金将从娱乐城组设定複製<br/>
-        &#8226; 会员投注限额不会超过 上线提供的投注限额.<br/>
-      </p>
-      <p>
-        所有设定将可用于自 <b>15/07/2016</b>配置.
-      </p>
-      <p>
-        谢谢。
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈6 種手機遊戲在娛樂城， 將於 <b>{effectdate}</b> 隆重推出. <br/><br/>
-        &#8226;（手機）百家樂<br/>
-        &#8226;（手機）賭場德州撲克<br/>
-        &#8226;（手機）21點<br/>
-        &#8226;（手機）泰山<br/>
-        &#8226;（手機）財神到<br/>
-        &#8226;（手機）骰寶<br/>
-      </p>
-      <p>
-        一旦啟用“娛樂城”這些遊戲將被默認。所有設定都將進行如下配置：<br/><br/>
-        &#8226; 占成數和傭金將從娛樂城組設定複製.<br/>
-        &#8226; 會員投注限額不會超過 上线提供的投注限額.<br/>
-      </p>
-      <p>
-        所有設定將可用於自 <b>15/07/2016</b> 配置.
-      </p>
-      <p>
-        謝謝。
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of 6 new Mobile games of RNG Casino with effect from <b>{effectdate}</b> including:<br/><br/>
-        &#8226; (Mobile) Baccarat.<br/>
-        &#8226; (Mobile) Casino Hold'em.<br/>
-        &#8226; (Mobile) Blackjack.<br/>
-        &#8226; (Mobile) Jungle Wild.<br/>
-        &#8226; (Mobile) God of Prosperity.<br/>
-        &#8226; (Mobile) Sic Bo.<br/>
-      </p>
-      <p>
-        Once you enable RNG Casino, these new games will be offered by default. All settings will be configured as follows:<br/><br/>
-        &#8226; Position taking and Commission will be copied from RNG group’s settings of RNG Casino.<br/>
-        &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
-      </p>
-      <p>
-        All settings will be available for configuration since <b>15/07/2016</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of 6 new Mobile games of RNG Casino with effect from <b>{effectdate}</b> including:<br/><br/>
-        &#8226; (Mobile) Baccarat.<br/>
-        &#8226; (Mobile) Casino Hold'em.<br/>
-        &#8226; (Mobile) Blackjack.<br/>
-        &#8226; (Mobile) Jungle Wild.<br/>
-        &#8226; (Mobile) God of Prosperity.<br/>
-        &#8226; (Mobile) Sic Bo.<br/>
-      </p>
-      <p>
-        Once you enable RNG Casino, these new games will be offered by default. All settings will be configured as follows:<br/><br/>
-        &#8226; Position taking and Commission will be copied from RNG group’s settings of RNG Casino.<br/>
-        &#8226; Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
-      </p>
-      <p>
-        All settings will be available for configuration since <b>15/07/2016</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน ท่านเอเจนต์ที่มีอุปการะคุณ<br />
-      <p>
-        ทางบริษัทใคร่ขอแจ้งให้ทราบว่า จะทำการเปิดตัว 6 ประเภทเกมส์คาสิโนสามารถเล่นผ่านอุปกรณ์มือถือ ซึ่งจะมีผลตั้งแต่วันที่  <b>{effectdate}</b> ดังนี้<br/><br/>
-        &#8226; (มือถือ) บัคคาร่า<br/>
-        &#8226; (มือถือ) คาสิโน โฮลเด็ม<br/>
-        &#8226; (มือถือ) แบล็คแจ็ค<br/>
-        &#8226; (มือถือ) Jungle Wild<br/>
-        &#8226; (มือถือ) God of Prosperity<br/>
-        &#8226; (มือถือ) ซิคโบ<br/>
-      </p>
-      <p>
-        เมื่อคุณเปิดใช้ RNG คาสิโนเกมส์, เกมส์ใหม่เหล่านี้จะถูกเปิดใช้งานถึงลูกค้าโดยตรง การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้:<br/><br/>
-        &#8226; ค่าความเสียงและคอมมิสชั่นจะคัดลอกมาจากการตั้งค่ากลุ่ม RNG ใน RNG คาสิโนเดิมที่มีการตั้งค่าไว้อยู่แล้ว <br/>
-        &#8226; วงเงินเดิมพันของเมมเบ้อ จะไม่เกินวงเงินเดิมพันของ SMA<br/>
-      </p>
-      <p>
-        การตั้งค่าทั้งหมดจะสามารถใช้ได้สำหรับการกำหนดค่า ตั้งแต่ <b>15/07/2016</b>.
-      </p>
-      <p>
-        กราบขอบพระคุณคะ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Kính gửi quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 6 trò chơi điện thoại mới của RNG Casino gồm có:<br/><br/>
-        &#8226; (Mobile) Baccarat.<br/>
-        &#8226; (Mobile) Casino Hold'em.<br/>
-        &#8226; (Mobile) Blackjack.<br/>
-        &#8226; (Mobile) Jungle Wild.<br/>
-        &#8226; (Mobile) God of Prosperity.<br/>
-        &#8226; (Mobile) Sic Bo.<br/>
-      </p>
-      <p>
-        Khi bạn kích hoạt RNG Casino, những trò chơi này sẽ được kích hoạt theo mặc định. Tất cả thiết lập sẽ được cấu hình như sau:<br/><br/>
-        &#8226; Position Taking và Hoa Hồng sẽ theo cấu hình của nhóm RNG trong RNG Casino<br/>
-        &#8226; Giới hạn cược của Member sẽ không vượt quá giới hạn cược do SMA quy định<br/>
-      </p>
-      <p>
-        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày  <b>15/07/2016</b>.
-      </p>
-      <p>
-        Trân Trọng
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="42116001" name="New Total Bets and Forecast" startdate="03/30/2016" enddate="06/30/2016"  effectdate="31/03/2016"
-                     width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      <p>
-        Incredible commissions on Superlive action. Direct your users to the 'Superlive' icon on all big soccer games, sit back and enjoy the live action, higher turnover and bigger commissions.<br/>
-        <br/>
-        <b>English Premier League</b><br/>
-        &#8226;&#160;&#160;12/05/2016 - 20:00 - Liverpool vs Chelsea<br/>
-        &#8226;&#160;&#160;15/05/2016 - 15:00 - Chelsea vs Leicester City<br/>
-        <br/>
-        <b>UEFA Champions League - FINAL</b><br/>
-        &#8226;&#160;&#160;29/05/2016 - 19:45 - TBD vs Atletico Madrid<br/>
-        <br/>
-        Superlive markets offer brand new live action where users can bet on every single kick of the ball, every single minute! Check them out today.<br/>
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      <p>
-        Superlive 提供让人心动的佣金回馈。 推荐 Superlive 游戏给您的会员， 那您将可享有高的总额度和佣金。<br/>
-        <br/>
-        <b>English Premier League</b><br/>
-        &#8226;&#160;&#160;12/05/2016 - 20:00 - Liverpool vs Chelsea<br/>
-        &#8226;&#160;&#160;15/05/2016 - 15:00 - Chelsea vs Leicester City<br/>
-        <br/>
-        <b>UEFA Champions League - FINAL</b><br/>
-        &#8226;&#160;&#160;29/05/2016 - 19:45 - TBD vs Atletico Madrid<br/>
-        <br/>
-        Superlive 提供崭新的现场玩法, 会员可以投注于赛事的每一个动态, 或每一分钟! 马上去体验吧.<br/>
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      <p>
-        Superlive 提供讓人心動的佣金回馈。 推荐 Superlive 游戏给您的會員， 那您將可享有高的总额度和佣金。<br/>
-        <br/>
-        <b>English Premier League</b><br/>
-        &#8226;&#160;&#160;12/05/2016 - 20:00 - Liverpool vs Chelsea<br/>
-        &#8226;&#160;&#160;15/05/2016 - 15:00 - Chelsea vs Leicester City<br/>
-        <br/>
-        <b>UEFA Champions League - FINAL</b><br/>
-        &#8226;&#160;&#160;29/05/2016 - 19:45 - TBD vs Atletico Madrid<br/>
-        <br/>
-        Superlive 提供嶄新的現場玩法, 會員可以投注于賽事的每一個動態, 或每一分鐘! 馬上去體驗吧.<br/>
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      <p>
-        Incredible commissions on Superlive action. Direct your users to the 'Superlive' icon on all big soccer games, sit back and enjoy the live action, higher turnover and bigger commissions.<br/>
-        <br/>
-        <b>English Premier League</b><br/>
-        &#8226;&#160;&#160;12/05/2016 - 20:00 - Liverpool vs Chelsea<br/>
-        &#8226;&#160;&#160;15/05/2016 - 15:00 - Chelsea vs Leicester City<br/>
-        <br/>
-        <b>UEFA Champions League - FINAL</b><br/>
-        &#8226;&#160;&#160;29/05/2016 - 19:45 - TBD vs Atletico Madrid<br/>
-        <br/>
-        Superlive markets offer brand new live action where users can bet on every single kick of the ball, every single minute! Check them out today.<br/>
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      <p>
-        Incredible commissions on Superlive action. Direct your users to the 'Superlive' icon on all big soccer games, sit back and enjoy the live action, higher turnover and bigger commissions.<br/>
-        <br/>
-        <b>English Premier League</b><br/>
-        &#8226;&#160;&#160;12/05/2016 - 20:00 - Liverpool vs Chelsea<br/>
-        &#8226;&#160;&#160;15/05/2016 - 15:00 - Chelsea vs Leicester City<br/>
-        <br/>
-        <b>UEFA Champions League - FINAL</b><br/>
-        &#8226;&#160;&#160;29/05/2016 - 19:45 - TBD vs Atletico Madrid<br/>
-        <br/>
-        Superlive markets offer brand new live action where users can bet on every single kick of the ball, every single minute! Check them out today.<br/>
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      <p>
-        รายงานการเคลื่อนแบบสด ๆ ส่งตรงสู่ลูกค้าของท่านผ่านทางไอคอน 'Superlive' ด้วยค่าคอมมิชชั่นที่น่าทึ่ง ในทุกการแข่งขันฟุตบอลรายการใหญ่, กลับมานั่งดูและเพลิดเพลินกับการรายงานการเคลื่อนไหวการแข่งขันแบบสดๆ ยิ่งเทิร์นโอเวอร์มาก ยิ่งได้ค่าคอมมิชชั่นมาก<br/>
-        <br/>
-        <b>English Premier League</b><br/>
-        &#8226;&#160;&#160;12/05/2016 - 20:00 - Liverpool vs Chelsea<br/>
-        &#8226;&#160;&#160;15/05/2016 - 15:00 - Chelsea vs Leicester City<br/>
-        <br/>
-        <b>UEFA Champions League - FINAL</b><br/>
-        &#8226;&#160;&#160;29/05/2016 - 19:45 - TBD vs Atletico Madrid<br/>
-        <br/>
-        ตลาด Superlive นำเสนอรายงานการเคลื่อนไหวเกมรูปแบบใหม่ ซึ่งลูกค้าสามารถทายผลในทุกนาที, ทุกการสัมผัสบอล! ดูได้แล้ววันนี้<br/>
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      <p>
-        Hoa hồng khủng từ các kèo SuperLive. Hãy hướng khách hàng của bạn vào biểu tượng SuperLive trong các trận cầu kinh điển, cùng ngồi xuống và thưởng thức diễn biến các trận đấu trực tuyến, cược càng nhiều hoa hồng càng cao.<br/>
-        <br/>
-        <b>English Premier League</b><br/>
-        &#8226;&#160;&#160;12/05/2016 - 20:00 - Liverpool vs Chelsea<br/>
-        &#8226;&#160;&#160;15/05/2016 - 15:00 - Chelsea vs Leicester City<br/>
-        <br/>
-        <b>UEFA Champions League - FINAL</b><br/>
-        &#8226;&#160;&#160;29/05/2016 - 19:45 - TBD vs Atletico Madrid<br/>
-        <br/>
-        SuperLive liên tục cung cấp các kèo trực tuyến, nơi mà các khách hàng có thể đặt cược vào từng cú sút, từng phút. Kiểm tra ngay hôm nay.<br/>
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  
-    <PopupAnnouncement id="56881002" name="PHAIO - new announcement" 
-                     startdate="04/29/2016" enddate="05/31/2016"  effectdate="12/05/2016"
-                      width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br/>
-      <p>
-        We are pleased to announce the launching of 5 new bet types of Soccer with effect from <b>{effectdate}</b> including Home Team Over/Under, Away Team Over/Under, 1H Home Team Over/Under, 1H Away Team Over/Under and Exact 1st Half Goal.<br/>
-        These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        &#8226; For Home Team Over/Under, Away Team Over/Under, 1H Home Team Over/Under and 1H Away Team Over/Under, the Position Taking and Commission will follow Soccer Handicap's setting.<br/>
-        &#8226; For Exact 1st Half Goal, the Position Taking will follow Soccer Total Goal setting and Commission will follow Others bet type's setting.<br/>
-        </p>
-        <p>Thank you</p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理们，<br/>
-      <p>
-        我们在此宣布从<b>{effectdate}</b>起，推出5种新投注类型包括主队大/小盘，客队大/小盘，上半场主队大/小盘，上半场客队大/小盘 和上半场准确进球数。<br/>
-        这些投注类型也有效于过关和所有设置将配置如下：<br/>
-        &#8226; 对于主队大/小盘，客球队大/小盘，上半场主队大/小盘和上半场客队大/小盘的占成数和佣金将根据足球亚洲盘设定。<br/>
-        &#8226; 对于准确上半场进球的占成数将根据足球总进球设定和佣金将根据其他投注类型设定。<br/>
-      </p>
-      <p>谢谢</p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理們，<br/>
-      <p>
-        我們在此宣布從<b>{effectdate}</b>起，推出5種新投註類型包括主隊大/小盤，客隊大/小盤，上半場主隊大/小盤，上半場客隊大/小盤 和上半場準確進球數。<br/>
-        這些投註類型也有效於過關和所有設置將配置如下：<br/>
-        &#8226; 對於主隊大/小盤，客球隊大/小盤，上半場主隊大/小盤和上半場客隊大/小盤的占成數和傭金將根據足球亞洲盤設定。<br/>
-        &#8226; 對於準確上半場進球的占成數將根據足球總進球設定和傭金將根據其他投註類型設定。<br/>
-      </p>
-      <p>謝謝</p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br/>
-      <p>
-        We are pleased to announce the launching of 5 new bet types of Soccer with effect from <b>{effectdate}</b> including Home Team Over/Under, Away Team Over/Under, 1H Home Team Over/Under, 1H Away Team Over/Under and Exact 1st Half Goal.<br/>
-        These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        &#8226; For Home Team Over/Under, Away Team Over/Under, 1H Home Team Over/Under and 1H Away Team Over/Under, the Position Taking and Commission will follow Soccer Handicap's setting.<br/>
-        &#8226; For Exact 1st Half Goal, the Position Taking will follow Soccer Total Goal setting and Commission will follow Others bet type's setting.<br/>
-      </p>
-      <p>Thank you</p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br/>
-      <p>
-        We are pleased to announce the launching of 5 new bet types of Soccer with effect from <b>{effectdate}</b> including Home Team Over/Under, Away Team Over/Under, 1H Home Team Over/Under, 1H Away Team Over/Under and Exact 1st Half Goal.<br/>
-        These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        &#8226; For Home Team Over/Under, Away Team Over/Under, 1H Home Team Over/Under and 1H Away Team Over/Under, the Position Taking and Commission will follow Soccer Handicap's setting.<br/>
-        &#8226; For Exact 1st Half Goal, the Position Taking will follow Soccer Total Goal setting and Commission will follow Others bet type's setting.<br/>
-      </p>
-      <p>Thank you</p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน ท่านเอเจนต์ที่มีอุปการะคุณ<br/>
-      <p>
-        ทางบริษัทใคร่ขอแจ้งให้ทราบว่า จะทำการเปิดตัว 5 ประเภทการเดิมพันแบบใหม่ ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b> ดังนี้ ทีมเจ้าบ้านสูง/ต่ำ, ทีมเยือนสูง/ต่ำ, ครึ่งแรกทีมเจ้าบ้านสูง/ต่ำม ครึ่งแรกทีมเยือนสูง/ต่ำ และ ทายผลประตูในครึ่งแรก<br/>
-        ทุกประเภทการทายผลเหล่านี้สามารถเล่นกับบอลชุด และการตั้งค่าต่างๆ จะดำเนินไปดังนี้<br/>
-        &#8226; สำหรับ ทีมเจ้าบ้านสูง/ต่ำ, ทีมเยือนสูง/ต่ำ, ครึ่งแรกทีมเจ้าบ้านสูง/ต่ำม ครึ่งแรกทีมเยือนสูง/ต่ำ ค่าความเสี่ยงและค่าคอมมิชชั่นจะเป็นไปตามการตั้งค่าในส่วนของ ราคาต่อรองแบบแต้มต่อในกีฬาฟุตบอล<br/>
-        &#8226; สำหรับการทายผลประตูในครึ่งแรกค่าความเสี่ยง จะเป็นไปตาการตั้งค่าของประตูรวมในกีฬาฟุตบอล และคอมมิชชั่นจะเป็นไปตาม การตั่งค่า "อื่นๆ"<br/>
-      </p>
-      <p>กราบขอบพระคุณคะ</p>
-    </th-TH>
-
-     <vi-VN src="">
-     Kính gửi quý khách hàng,<br/>
-      <p>
-		Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 5 loại cược mới cho môn Bóng Đá gồm có Home Team Over/Under, Away Team Over/Under, 1H Home Team Over/Under, 1H Away Team Over/Under và Exact 1st Half Goal.<br/>
-        Những loại cược mới này đều cho phép chơi Parlay và tất cả thiết lập sẽ được cấu hình như sau:<br/>
-        &#8226; Đối với Home Team Over/Under, Away Team Over/Under, 1H Home Team Over/Under và 1H Away Team Over/Under: Position Taking và Hoa Hồng sẽ theo các thiết lập của Bóng Đá Handicap.<br/>
-        &#8226; Đối với Exact 1st Half Goal: Position Taking sẽ theo thiết lập của Bóng Đá Total Goal. Hoa Hồng sẽ theo thiết lập hoa hồng của Loại Cược Khác.<br/>
-      </p>
-      <p>Trân Trọng</p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="56728003" name="Superlive - SUPER COMMISSIONS" startdate="04/27/2016" enddate="05/04/2016"  effectdate="31/03/2016"
-                     width="1000" height="220" top="110" left="350">
-    <en-US src="">      
-      <p>
-        SUPERLIVE - SUPER COMMISSIONS<br/>
-        200+ in-play 60 second markets, more bets, higher margin, more commission<br/>
-		Look out for the Superlive logo on the following big games:<br/>
-		<br/>
-		&#8226; 01/05/2016 - England Premier League - 14:05(GMT +8)<br/>
-		&#160;&#160;Manchester United vs Leicester City<br/>
-		<br/>
-        Tell your customers about Superlive markets and you will earn much higher commissions from all their live action.<br/>
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-	  <p>
-        SUPERLIVE - 超级佣金<br/>
-        200+60秒进行中盘口，更多的投注，高利润，更多的佣金<br/>
-		从SuperLive的标志留意以下大型游戏：<br/>
-		<br/>
-		&#8226; 01/05/2016 - England Premier League - 14:05(GMT +8)<br/>
-		&#160;&#160;Manchester United vs Leicester City<br/>
-		<br/>
-        介绍Superlive于您的客户，您会从他们所有的真人实景赚取更高的佣金。<br/>
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-		<p>
-        SUPERLIVE - 超級傭金<br/>
-        200+60秒進行中盤口，更多的投註，高利潤，更多的傭金<br/>
-		從SuperLive的標誌留意以下大型遊戲：<br/>
-		<br/>
-		&#8226; 01/05/2016 - England Premier League - 14:05(GMT +8)<br/>
-		&#160;&#160;Manchester United vs Leicester City<br/>
-		<br/>
-        介紹Superlive於您的客戶，您會從他們所有的真人實景賺取更高的傭金。<br/>
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-		<p>
-        SUPERLIVE - SUPER COMMISSIONS<br/>
-        200+ in-play 60 second markets, more bets, higher margin, more commission<br/>
-		Look out for the Superlive logo on the following big games:<br/>
-		<br/>
-		&#8226; 01/05/2016 - England Premier League - 14:05(GMT +8)<br/>
-		&#160;&#160;Manchester United vs Leicester City<br/>
-		<br/>
-        Tell your customers about Superlive markets and you will earn much higher commissions from all their live action.<br/>
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-		<p>
-        SUPERLIVE - SUPER COMMISSIONS<br/>
-        200+ in-play 60 second markets, more bets, higher margin, more commission<br/>
-		Look out for the Superlive logo on the following big games:<br/>
-		<br/>
-		&#8226; 01/05/2016 - England Premier League - 14:05(GMT +8)<br/>
-		&#160;&#160;Manchester United vs Leicester City<br/>
-		<br/>
-        Tell your customers about Superlive markets and you will earn much higher commissions from all their live action.<br/>
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      <p>
-        ซูเปอร์ไลฟ์ - ซูเปอร์คอมมิชชั่น<br/>
-        มากกว่า 200 การแข่งขันในตลาด 60 วินาที ยิ่งเล่นมาก ก็กำไรก็เยอะ คอมมิชชั่นก็มากขึ้น<br/>
-		จับตาโลโก้ ซูเปอร์ไลฟ์ ในการเกมส์แข่งขันใหญ่ ๆ ดังต่อไปนี้ :<br/>
-		<br/>
-		&#8226; 01/05/2016 - England Premier League - 14:05(GMT +8)<br/>
-		&#160;&#160;Manchester United vs Leicester City<br/>
-		<br/>
-        แจ้งให้ลูกค้าของทุกท่านทราบเกี่ยวกับ ตลาด ซูเปอร์ไลฟ์ แล้วท่านจะได้รับค่าคอมมากขึ้นไปอีก สำหรับการทายผลทุกเกมสด<br/>
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      <p>
-        SuperLive - Siêu Hoa Hồng<br/>
-        Hỗ trợ hơn 200 lựa chọn cá cược 60s cho các trận đấu trực tiếp, càng nhiều đặt cược, lợi nhuận càng cao, hoa hồng càng lớn.<br/>
-		Hãy tìm kiếm biểu tượng SuperLive trong các trận đấu lớn sau:<br/>
-		<br/>
-		&#8226; 01/05/2016 - England Premier League - 14:05(GMT +8)<br/>
-		&#160;&#160;Manchester United vs Leicester City<br/>
-		<br/>
-        Chia sẻ với khách hàng về các trò chơi SuperLive và bạn sẽ thu được nhiều hoa hồng từ tất cả các cược của họ.<br/>
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="56196001" name="Superlive - boost turnover" startdate="04/19/2016" enddate="04/24/2016"  effectdate="31/03/2016"
-                     width="1000" height="220" top="110" left="350">
-    <en-US src="">      
-      <p>
-        SuperLive - Join The Live Action<br/>
-        Your customers will love these games, and you will earn more commission.<br/>
-		<br/>
-        &#8226; 21/04/2016 - English Premier League  - 03:00(GMT +8)<br/>
-        &#160;&#160;Liverpool vs Everton<br/>
-		<br/>
-		&#8226; 23/04/2016 - English Premier League - 20:00(GMT +8)<br/>
-		&#160;&#160;Bournemouth vs Chelsea<br/>
-		&#160;&#160;Aston Vill vs Southampton<br/>
-		&#160;&#160;Liverpool vs Newcastle Utd<br/>
-		<br/>
-		&#8226; 24/04/2016 - FA Cup Semi-Final- 00:15(GMT +8)<br/>
-		&#160;&#160;Everton vs Man Utd<br/>
-		<br/>
-        SuperLive Betting On Every Game - Share with your customers and drive up your commissions.<br/>
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      <p>
-        SuperLive - 加入真人实景<br/>
-        您的客户将喜欢这些游戏，您也将赚取更多的佣金。<br/>
-		<br/>
-        &#8226; 21/04/2016 - English Premier League  - 03:00(GMT +8)<br/>
-        &#160;&#160;Liverpool vs Everton<br/>
-		<br/>
-		&#8226; 23/04/2016 - English Premier League - 20:00(GMT +8)<br/>
-		&#160;&#160;Bournemouth vs Chelsea<br/>
-		&#160;&#160;Aston Vill vs Southampton<br/>
-		&#160;&#160;Liverpool vs Newcastle Utd<br/>
-		<br/>
-		&#8226; 24/04/2016 - FA Cup Semi-Final- 00:15(GMT +8)<br/>
-		&#160;&#160;Everton vs Man Utd<br/>
-		<br/>		
-        Super Live 投注每一场游戏- 与您的客户分享，和提高您的佣金。<br/>
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      <p>
-        SuperLive - 加入真人實景<br/>
-        您的客戶將喜歡這些遊戲，您也將賺取更多的佣金。<br/>
-		<br/>
-        &#8226; 21/04/2016 - English Premier League  - 03:00(GMT +8)<br/>
-        &#160;&#160;Liverpool vs Everton<br/>
-		<br/>
-		&#8226; 23/04/2016 - English Premier League - 20:00(GMT +8)<br/>
-		&#160;&#160;Bournemouth vs Chelsea<br/>
-		&#160;&#160;Aston Vill vs Southampton<br/>
-		&#160;&#160;Liverpool vs Newcastle Utd<br/>
-		<br/>
-		&#8226; 24/04/2016 - FA Cup Semi-Final- 00:15(GMT +8)<br/>
-		&#160;&#160;Everton vs Man Utd<br/>
-		<br/>
-        Super Live 投注每一場遊戲 - 與您的客戶分享，和提高您的佣金。<br/>
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      <p>
-        SuperLive - Join The Live Action<br/>
-        Your customers will love these games, and you will earn more commission.<br/>
-		<br/>
-        &#8226; 21/04/2016 - English Premier League  - 03:00(GMT +8)<br/>
-        &#160;&#160;Liverpool vs Everton<br/>
-		<br/>
-		&#8226; 23/04/2016 - English Premier League - 20:00(GMT +8)<br/>
-		&#160;&#160;Bournemouth vs Chelsea<br/>
-		&#160;&#160;Aston Vill vs Southampton<br/>
-		&#160;&#160;Liverpool vs Newcastle Utd<br/>
-		<br/>
-		&#8226; 24/04/2016 - FA Cup Semi-Final- 00:15(GMT +8)<br/>
-		&#160;&#160;Everton vs Man Utd<br/>
-		<br/>
-        SuperLive Betting On Every Game - Share with your customers and drive up your commissions.<br/>
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      <p>
-        SuperLive - Join The Live Action<br/>
-        Your customers will love these games, and you will earn more commission.<br/>
-		<br/>
-        &#8226; 21/04/2016 - English Premier League  - 03:00(GMT +8)<br/>
-        &#160;&#160;Liverpool vs Everton<br/>
-		<br/>
-		&#8226; 23/04/2016 - English Premier League - 20:00(GMT +8)<br/>
-		&#160;&#160;Bournemouth vs Chelsea<br/>
-		&#160;&#160;Aston Vill vs Southampton<br/>
-		&#160;&#160;Liverpool vs Newcastle Utd<br/>
-		<br/>
-		&#8226; 24/04/2016 - FA Cup Semi-Final- 00:15(GMT +8)<br/>
-		&#160;&#160;Everton vs Man Utd<br/>
-		<br/>
-        SuperLive Betting On Every Game - Share with your customers and drive up your commissions.<br/>
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      <p>
-        ซูเปอร์ไลฟ์- ร่วมสนุกในเกมการแข่งขันสดๆ        <br/>
-        ลูกค้าของคุณจะชื่นชอบเกมส์นี้และคุณก็ได้รับค่าคอมมิชชั่นมากขึ้น<br/>
-		<br/>
-       &#8226; 21/04/2016 - English Premier League  - 03:00(GMT +8)<br/>
-        &#160;&#160;Liverpool vs Everton<br/>
-		<br/>
-		&#8226; 23/04/2016 - English Premier League - 20:00(GMT +8)<br/>
-		&#160;&#160;Bournemouth vs Chelsea<br/>
-		&#160;&#160;Aston Vill vs Southampton<br/>
-		&#160;&#160;Liverpool vs Newcastle Utd<br/>
-		<br/>
-		&#8226; 24/04/2016 - FA Cup Semi-Final- 00:15(GMT +8)<br/>
-		&#160;&#160;Everton vs Man Utd<br/>
-		<br/>
-        ร่วมสนุกทายผลซูเปอร์ไลฟ์ในทุกเกมการขันขัน - ร่วมแบ่งค่าคอมของคุณและลูกค้า<br/>
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      <p>
-        SuperLive - Tham gia Đặt Cược Trực Tuyến<br/>
-        Khách hàng của bạn sẽ yêu thích những trận đấu này, và bạn sẽ thu được nhiều hoa hồng.<br/>
-		<br/>
-        &#8226; 21/04/2016 - English Premier League  - 03:00(GMT +8)<br/>
-        &#160;&#160;Liverpool vs Everton<br/>
-		<br/>
-		&#8226; 23/04/2016 - English Premier League - 20:00(GMT +8)<br/>
-		&#160;&#160;Bournemouth vs Chelsea<br/>
-		&#160;&#160;Aston Vill vs Southampton<br/>
-		&#160;&#160;Liverpool vs Newcastle Utd<br/>
-		<br/>
-		&#8226; 24/04/2016 - FA Cup Semi-Final- 00:15(GMT +8)<br/>
-		&#160;&#160;Everton vs Man Utd<br/>
-		<br/>
-        SuperLive Cược Trên Mỗi Trận Đấu - Chia sẻ với khách hàng và tăng hoa hồng của bạn.<br/>
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="42116001" name="New Total Bets and Forecast" startdate="04/21/2016" enddate="05/21/2016"  effectdate="21/04/2016"
-                     width="1000" height="220" top="110" left="350" privatesystem="733333,">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new feature named “Bets &amp; Forecast” (Beta) with effect from <b>{effectdate}</b>.<br/>
-        All key points of the new feature will be described as follows:<br/>
-        &#8226; Total Bets and Forecast features are combined into one for quick and easy monitor.<br/>
-        &#8226; Summarize major bet types (Handicap, Over Under and 1X2), number of tickets and stakes.<br/>
-        &#8226; Predict win loss amount on running tickets based on the current score.<br/>
-        &#8226; Display Total Forecast Win Loss on running tickets of each Live event.<br/>
-        &#8226; Allow to filter events by Live/Non-Live, League and Events.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      敬爱的代理,<br />
-      <p>
-        我们在此宣布，新功能名为“投注 &amp; 预测”（Beta版）生效予 <b>{effectdate}</b>。<br/>
-        新功能的所有要点将描述如下：<br/>
-        &#8226; 总投注与预测功能组合成一个快速和容易监控。<br/>
-        &#8226; 总结投注类型（亚洲盘，大小盘和1X2），注单数量和投注额。<br/>
-        &#8226; 用即时比分预测输赢数目予进行中的注单。<br/>
-        &#8226; 显示总预测输赢进行中的注单予每个现场。<br/>
-        &#8226; 允许筛选项目予现场/非现场，联赛和赛事。<br/>
-      </p>
-      <p>
-        谢谢！
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      敬愛的代理,<br />
-      <p>
-        我們在此宣布，新功能名為“投注 &amp; 預測”（Beta版）生效予 <b>{effectdate}</b>。<br/>
-        新功能的所有要點將描述如下：<br/>
-        &#8226; 總投注與預測功能組合成一個快速和容易監控。<br/>
-        &#8226; 總結投注類型（亞洲盤，大小盤和1X2），注单數量和投注額。<br/>
-        &#8226; 用即时比分預測输赢数目予进行中的注单。<br/>
-        &#8226; 顯示總預測輸贏进行中的注单予每個現場。<br/>
-        &#8226; 允許篩選項目予現場/非現場，聯賽和赛事。<br/>
-      </p>
-      <p>
-        謝謝！
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new feature named “Bets &amp; Forecast” (Beta) with effect from <b>{effectdate}</b>.<br/>
-        All key points of the new feature will be described as follows:<br/>
-        &#8226; Total Bets and Forecast features are combined into one for quick and easy monitor.<br/>
-        &#8226; Summarize major bet types (Handicap, Over Under and 1X2), number of tickets and stakes.<br/>
-        &#8226; Predict win loss amount on running tickets based on the current score.<br/>
-        &#8226; Display Total Forecast Win Loss on running tickets of each Live event.<br/>
-        &#8226; Allow to filter events by Live/Non-Live, League and Events.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new feature named “Bets &amp; Forecast” (Beta) with effect from <b>{effectdate}</b>.<br/>
-        All key points of the new feature will be described as follows:<br/>
-        &#8226; Total Bets and Forecast features are combined into one for quick and easy monitor.<br/>
-        &#8226; Summarize major bet types (Handicap, Over Under and 1X2), number of tickets and stakes.<br/>
-        &#8226; Predict win loss amount on running tickets based on the current score.<br/>
-        &#8226; Display Total Forecast Win Loss on running tickets of each Live event.<br/>
-        &#8226; Allow to filter events by Live/Non-Live, League and Events.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียนลูกค้าผู้มีอุปการคุณทุกท่าน<br />
-      <p>
-        ทางบริษัทยินดีที่จะแจ้งให้ทราบว่า ทางเราจะเปิดตัวคุณลักษณะใหม่ชื่อว่า "เดิมพันและการคาดการณ์ล่วงหน้า" (เบต้า) ซึ่งจะมีผลตั้งแต่วันที่  <b>{effectdate}</b>.<br/>
-        จุดสำคัญสำหรับตัวคุณลักษณะใหม่จะอธิบายได้ดังนี้<br/>
-        &#8226; การเดิมพันและการคาดการณ์ล่วงหน้าทั้งหมดจะรวมกันเพื่อความสะดวกรวดเร็วในการตรวจสอบ<br/>
-        &#8226; สรุปประเภทการเดิมพันหลัก ๆ (ราคาต่อรอง, สูงต่ำ และ 1x2), จำนวนเงินเดิมพัน และจำนวนตั๋วต่าง ๆ<br/>
-        &#8226; พยากรณ์จำนวนเงินได้/เสีย ตั๋วต่าง ๆ ที่ยังไม่เคลียร์ ณ ผลคะแนนปัจจุบัน<br/>
-        &#8226; แสดงยอดรวมการคาดการณ์ล่วงหน้า ได้เสีย ของตั๋วต่าง ๆ ที่ยังไม่เคลียร์ ในแต่ละเกมการแข่งขันสด<br/>
-        &#8226; ทำการกรองข้อมูลการแข่งขันต่าง ๆ ทั้งเกมสด และแบบไม่เปิดเกมสด, ตามชื่อลีค และ การแข่งขันต่าง ๆ ได้<br/>
-      </p>
-      <p>
-        ขอบคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Chào quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày  <b>{effectdate}</b>, chúng tôi sẽ cung cấp một tính năng mới với tên gọi "Bets &amp; Forecast" (Beta).<br/>
-        Tính năng mới bao gồm những chức năng sau:<br/>
-        &#8226; Tích hợp toàn bộ tính năng chính của Total Bets và Forecast nhằm quản lý dữ liệu nhanh chóng và dễ dàng hơn.<br/>
-        &#8226; Thống kê số lượng tickets và tiền cược của những loại cược ( Handicap, Over/Under và 1X2).<br/>
-        &#8226; Dự đoán lượng tiền thắng thua của những tickets đang diễn ra dựa trên tỷ số hiện tại.<br/>
-        &#8226; Hiển thị tổng tiền thắng thua được dự đoán trên từng sự kiện trực tuyến.<br/>
-        &#8226; Cho phép lọc dữ liệu theo Live/None-Live, giải đấu và sự kiện.<br/>
-      </p>
-      <p>
-        Trân Trọng.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="4251401" name="Cricket" startdate="03/01/2016" enddate="04/02/2016"  effectdate="02/03/2016" 
-                     width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the changes of sport type Cricket with effect from <b>{effectdate}</b>.<br/>
-        All amendments will be as follows:<br/>
-        &#8226; The bet type Moneyline is renamed as Match Winner and its settings still follow Sportsbook-Other Sports settings.<br/>
-        &#8226; Add a new feature “Net Position” which is the minimum payout that member could get from his tickets bet on Match Winner:<br/>
-        &#160;&#160;&#45; Net Position amount is displayed in Balance Info at member level only.<br/>
-        &#160;&#160;&#45; This amount is added into member’s Bet Credit to enable the member to play more bets.<br/>
-        &#160;&#160;&#45; After the match is settled, Net Position of the match will be cleared and the actual winning/losing amount will be added to member balance.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      敬爱的代理,<br />
-      <p>
-        我们在此宣布将于<b>{effectdate}</b>推出修改体育板球类型.<br/>
-        所有修改如下：<br/>
-        &#8226; 投注类型“独赢”更改名为“比赛获胜队”及其设置仍然根据体育博彩 - 其他体育设置。<br/>
-        &#8226; 添加新的功能“Net Position”，以会员投注“比赛获胜队”的最低派彩:<br/>
-        &#160;&#160;&#45; Net Position 数额只会显示在会员的余额信息。<br/>
-        &#160;&#160;&#45; 这数额会加入予会员的投注额度，使会员有更多的投注额度可以投注。<br/>
-        &#160;&#160;&#45; 比赛结算后，该场赛事的Net Position将被清除，以会员投注“比赛获胜队”实际输/赢数额将加入予会员余额。<br/>
-      </p>
-      <p>
-        谢谢！
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      敬愛的代理,<br />
-      <p>
-        我們在此宣布將於<b>{effectdate}</b>推出修改體育板球類型.<br/>
-        所有修改如下：<br/>
-        &#8226; 投註類型“獨贏”更改名為“比賽獲勝隊”及其設置仍然根據體育博彩 - 其他體育設置。<br/>
-        &#8226; 添加新的功能“Net Position”，以會員投註“比賽獲勝隊”的最低派彩:<br/>
-        &#160;&#160;&#45; Net Position 數額只會顯示在會員的余額信息。<br/>
-        &#160;&#160;&#45; 這數額會加入予會員的投註額度，使會員有更多的投註額度可以投註。<br/>
-        &#160;&#160;&#45; 比賽結算後，該場賽事的Net Position將被清除，以會員投註“比賽獲勝隊”實際輸/贏數額將加入予會員余額。<br/>
-      </p>
-      <p>
-        謝謝！
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the changes of sport type Cricket with effect from <b>{effectdate}</b>.<br/>
-        All amendments will be as follows:<br/>
-        &#8226; The bet type Moneyline is renamed as Match Winner and its settings still follow Sportsbook-Other Sports settings.<br/>
-        &#8226; Add a new feature “Net Position” which is the minimum payout that member could get from his tickets bet on Match Winner:<br/>
-        &#160;&#160;&#45; Net Position amount is displayed in Balance Info at member level only.<br/>
-        &#160;&#160;&#45; This amount is added into member’s Bet Credit to enable the member to play more bets.<br/>
-        &#160;&#160;&#45; After the match is settled, Net Position of the match will be cleared and the actual winning/losing amount will be added to member balance.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the changes of sport type Cricket with effect from <b>{effectdate}</b>.<br/>
-        All amendments will be as follows:<br/>
-        &#8226; The bet type Moneyline is renamed as Match Winner and its settings still follow Sportsbook-Other Sports settings.<br/>
-        &#8226; Add a new feature “Net Position” which is the minimum payout that member could get from his tickets bet on Match Winner:<br/>
-        &#160;&#160;&#45; Net Position amount is displayed in Balance Info at member level only.<br/>
-        &#160;&#160;&#45; This amount is added into member’s Bet Credit to enable the member to play more bets.<br/>
-        &#160;&#160;&#45; After the match is settled, Net Position of the match will be cleared and the actual winning/losing amount will be added to member balance.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียนลูกค้าผู้มีอุปการคุณทุกท่าน<br />
-      <p>
-        เรามีความยินดีที่จะประกาศการเปลี่ยนแปลงของกีฬาคริกเก็ตตั้งแต่วันที่ <b>02/03/2559</b>.<br/>
-        โดยมีการแก้ไขดังต่อไปนี้:<br/>
-        &#8226; การเดิมพันประเภทมันนี่ไลน์ (Moneyline) เปลี่ยนชื่อเป็นผู้ชนะการแข่งขัน (Match Winner) และการตั้งค่าดังกล่าวยังคงใช้ตาม Sportsbook-การตั้งค่ากีฬาอื่น ๆ<br/>
-        &#8226; เพิ่มคุณสมบัติใหม่ "สถานะเงินลงทุนสุทธิ" ซึ่งเป็นการจ่ายเงินขั้นต่ำที่สมาชิกอาจได้รับจากตั๋วเดิมพันหากเป็นผู้ชนะการแข่งขัน<br/>
-        &#160;&#160;&#45; จำนวนสถานะเงินลงทุนสุทธิจะแสดงในข้อมูลยอดคงเหลือที่ระดับสมาชิกเท่านั้น<br/>
-        &#160;&#160;&#45; จำนวนเงินนี้จะเพิ่มเข้าไปในยอดคงเหลือเดิมพันของสมาชิก เพื่อให้สมาชิกวางเดิมพันได้มากขึ้น<br/>
-        &#160;&#160;&#45; หลังจากมีการตัดสินการแข่งขัน สถานะเงินลงทุนสุทธิของการแข่งขันจะถูกหักออก และจำนวนเงินที่ชนะ/แพ้จริงจะเพิ่มเข้าในยอดคงเหลือของสมาชิก<br/>
-      </p>
-      <p>
-        ขอบคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Kính gửi quý khách hàng,<br />
-      <p>
-        Kể từ ngày <b>{effectdate}</b>, sản phẩm cá cược Cricket sẽ có những thay đổi như sau:<br/>
-        &#8226; Loại cược Moneyline sẽ đổi tên thành Match Winner và các thiết lập của nó vẫn theo các thiết lập của Sportsbook-Other Sports.<br/>
-        &#8226; Bổ sung chức năng “Net Position” cho phép member có thể nhận trước số tiền thấp nhất mà member có thể thu được từ các cược đã đặt cho Match Winner:<br/>
-        &#160;&#160;&#45; Số tiền Net Position chỉ hiển thị trong Balance Info ở cấp member.<br/>
-        &#160;&#160;&#45; Số tiền này đã bao gồm trong Bet Credit của member nhằm cho phép member chơi nhiều hơn<br/>
-        &#160;&#160;&#45; Sau khi trận đấu kết thúc, số tiền Net Position của trận đấu đó sẽ bị xoá và tiền thắng thua thật sự sẽ được thêm vào tài khoản của member.<br/>
-      </p>
-      <p>
-        Trân trọng.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="4523901" name="ColossusBets" startdate="01/27/2016" enddate="03/29/2016"  effectdate="10/03/2016 " width="1000" height ="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents, <br/>
-      <p>
-        We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b> .<br/>
-        This new product will be offered by default. If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. 
-		Follow <a target="_blank" href="/site-howtouse/Index.aspx?redirectto=ColossusBets" title="Help" id="Help">this instruction</a> for more details.<br/>
-        All settings will be available for configuration since <b>27/01/2016</b>. <br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      敬爱的代理, <br/>
-      <p>
-        我们非常荣幸地宣布新产品 "Colossus Bets" 将在  <b>{effectdate}</b>。 <br/>
-        此新产品将开放为默认状态。若您要禁用 "Colossus Bets" 于特定下线，请在设定功能里进行设置。更多详情，
-		<a target="_blank" href="/site-howtouse/Index.aspx?redirectto=ColossusBets" title="Help" id="Help">请参阅以下步骤。</a> <br/>
-        所以设定将于 <b> 27/01/2016</b> 开放设置. <br/>
-      </p>
-      <p>
-        谢谢
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      敬愛的代理, <br/>
-      <p>
-        我們非常榮幸地宣布新產品 "Colossus Bets" 將在 <b>{effectdate}</b> 推出。 <br/>
-        此新產品將開放為默認狀態。若您要禁用 "Colossus Bets" 於特定下線，請在設定功能裏進行設置。更多詳情， 
-		<a target="_blank" href="/site-howtouse/Index.aspx?redirectto=ColossusBets" title="Help" id="Help">請參閱以下步驟。</a> <br/>
-        所以設定將於 <b>27/01/2016</b> 開放設置. <br/>
-      </p>
-      <p>
-        謝謝
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents, <br/>
-      <p>
-        We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b> .<br/>
-        This new product will be offered by default. If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. 
-		Follow <a target="_blank" href="/site-howtouse/Index.aspx?redirectto=ColossusBets" title="Help" id="Help">this instruction</a> for more details.<br/>
-        All settings will be available for configuration since <b>27/01/2016</b>. <br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents, <br/>
-      <p>
-        We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b> .<br/>
-        This new product will be offered by default. If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. 
-		Follow <a target="_blank" href="/site-howtouse/Index.aspx?redirectto=ColossusBets" title="Help" id="Help">this instruction</a> for more details.<br/>
-        All settings will be available for configuration since <b> 27/01/2016</b>. <br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      Dear valued agents, <br/>
-      <p>
-        We are pleased to announce the launching of the new product named "Colossus Bets" with effect from <b>{effectdate}</b> .<br/>
-        This new product will be offered by default. If you wish to disable "Colossus Bets" on a specific downline, please configure at the Setting function. 
-		Follow <a target="_blank" href="/site-howtouse/Index.aspx?redirectto=ColossusBets" title="Help" id="Help">this instruction</a> for more details.<br/>
-        All settings will be available for configuration since <b> 27/01/2016</b>. <br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </th-TH>
-
-    <vi-VN src ="">
-      Chào quý khách hàng, <br/>
-      <p>
-        Bắt đầu từ ngày <b> {effectdate}</b >, chúng tôi sẽ cung cấp sản phẩm cá cược mới - Colossus Bets.<br/>
-        Sản phẩm mới này sẽ  được cung cấp theo mặc định. Nếu bạn muốn vô hiệu hoá "Colossus Bets" ở cấp dưới, bạn có thể cấu hình trong trang Cấu Hình <a target="_blank" href="/site-howtouse/Index.aspx?redirectto=ColossusBets" title="Help" id="Help">như hướng dẫn này</a>.<br/>
-        Tất cả thiết lập sẽ sẵn sàng cho việc cấu hình từ ngày <b> 27/01/2016</b>. <br/>
-      </p>
-      <p>
-        Trân trọng.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="5086201" name="RnG Single Wallet" startdate="01/20/2016" enddate="02/04/2016"  effectdate="27/01/2016" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget. 
-        It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
-        During this conversion period:<br/>
-        &#160;&#160;&#8226; All broken/running Casino tickets will be refunded except tickets placed on Card games, which have been running more than 24 hours, will be settled as Lose tickets.<br/>
-        &#160;&#160;&#8226; All money in Casino will be transferred to Sportsbook.<br/>
-        From <b>21/01/2016</b>, Transfer Credit settings will no longer be available.<br/>
-		From <b>22/01/2016</b>, Member Win Limit of existing members will be configured as follows:<br/>
-        &#160;&#160;&#45; Enabled RNG Casino members: Maximum Loss will be copied from Member Max Transfer Credit.<br/>
-        &#160;&#160;&#45; Disabled RNG Casino members: Maximum Loss will be unlimited.<br/>
-        &#160;&#160;&#45; Maximum Win will be unlimited.<br/>
-        &#160;&#160;&#45; If you wish to change on a specific downline, please configure at the Setting function.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      亲爱的代理，<br />
-      <p>
-        我们在此宣布<b>{effectdate}</b>起，体育博彩和娱乐城将共享同个体育博彩预算。会员将无需从体育博彩转账至娱乐城以进行娱乐城游戏。<br/>
-        在这转换期间：<br/>
-        &#160;&#160;&#8226; 所有未完成/进行中的娱乐城注单将被退款，除了下注于纸牌游戏并且已进行超过 24 小时之注单会结算为输。<br/>
-        &#160;&#160;&#8226; 所有在娱乐城内的金额将转至体育博彩。<br/>
-        从<b>21号1月2016</b>年转账设定将不复存.<br/>
-		从<b>22号1月2016</b>年现有会员的最高赢额设定将配置如下：<br/>
-        &#160;&#160;&#45; 开启娱乐城之会员： 最高输额将从会员的最高调动信用额设定复制。<br/>
-        &#160;&#160;&#45; 关闭娱乐城之会员：最高输额将设无限。<br/>
-        &#160;&#160;&#45; 最高赢取倍数将设无限。<br/>
-        &#160;&#160;&#45; 若您欲更改特定下线，请于设定功能进行配置。<br/>
-      </p>
-      <p>
-        谢谢
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      親愛的代理，<br />
-      <p>
-        我們在此宣布從<b>{effectdate}</b>起，體育博彩结和娛樂城將共享同個體育預博彩算。會員將無需從體育博彩轉賬至娛樂城以進行娛樂城遊戲。<br/>
-        在這轉換期間：<br/>
-        &#160;&#160;&#8226; 所有未完成/進行中的娛樂城註單將被退款，除了下註於紙牌遊戲並且已進行超過 24 小時之註單會結算為輸。<br/>
-        &#160;&#160;&#8226; 所有在娛樂城內的金額將轉至體育博彩。<br/>
-        從<b>21號1月2016</b>年轉賬設定將不復存<br/>
-		從<b>22號1月2016</b>年現有會員的最高贏額設定將配置如下：<br/>
-        &#160;&#160;&#45; 開啟娛樂城之會員： 最高輸額將從會員的最高調動信用額設定復制。<br/>
-        &#160;&#160;&#45; 關閉娛樂城之會員：最高輸額將設無限。<br/>
-        &#160;&#160;&#45; 最高贏取倍數將設無限。<br/>
-        &#160;&#160;&#45; 若您欲更改特定下線，請於設定功能進行配置。<br/>
-      </p>
-      <p>
-        謝謝
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget. 
-        It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
-        During this conversion period:<br/>
-        &#160;&#160;&#8226; All broken/running Casino tickets will be refunded except tickets placed on Card games, which have been running more than 24 hours, will be settled as Lose tickets.<br/>
-        &#160;&#160;&#8226; All money in Casino will be transferred to Sportsbook.<br/>
-        From <b>21/01/2016</b>, Transfer Credit settings will no longer be available.<br/>
-		From <b>22/01/2016</b>, Member Win Limit of existing members will be configured as follows:<br/>
-        &#160;&#160;&#45; Enabled RNG Casino members: Maximum Loss will be copied from Member Max Transfer Credit.<br/>
-        &#160;&#160;&#45; Disabled RNG Casino members: Maximum Loss will be unlimited.<br/>
-        &#160;&#160;&#45; Maximum Win will be unlimited.<br/>
-        &#160;&#160;&#45; If you wish to change on a specific downline, please configure at the Setting function.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce from <b>{effectdate}</b> Sportsbook and Casino will share a single Sportsbook budget. 
-        It means players will not have to transfer money from Sportsbook to Casino to play Casino games.<br/>
-        During this conversion period:<br/>
-        &#160;&#160;&#8226; All broken/running Casino tickets will be refunded except tickets placed on Card games, which have been running more than 24 hours, will be settled as Lose tickets.<br/>
-        &#160;&#160;&#8226; All money in Casino will be transferred to Sportsbook.<br/>
-        From <b>21/01/2016</b>, Transfer Credit settings will no longer be available.<br/>
-		From <b>22/01/2016</b>, Member Win Limit of existing members will be configured as follows:<br/>
-        &#160;&#160;&#45; Enabled RNG Casino members: Maximum Loss will be copied from Member Max Transfer Credit.<br/>
-        &#160;&#160;&#45; Disabled RNG Casino members: Maximum Loss will be unlimited.<br/>
-        &#160;&#160;&#45; Maximum Win will be unlimited.<br/>
-        &#160;&#160;&#45; If you wish to change on a specific downline, please configure at the Setting function.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียนลูกค้าผู้มีอุปการคุณทุกท่าน<br />
-      <p>
-        ประกาศตั้งแต่วันที่ <b>{effectdate}</b> หน้ากีฬาและคาสิโนจะใช้วงเงินร่วมกัน ซึ่งหมายความว่าผู้เล่นไม่ต้องโอนเงินจากหน้ากีฬาไปยังคาสิโนเพื่อเล่นเกมคาสิโนอีกต่อไป<br/>
-        การเปลี่ยนแปลง<br/>
-        &#160;&#160;&#8226; Broken เกม/Running เกมทั้งหมดจะได้รับเงินคืน นอกจากตั๋วที่พนันเกมไพ่หาก Running เกิน 24ชั่วโมงตั๋วจะถูกตัดสินเสีย<br/>
-        &#160;&#160;&#8226; วงเงินในคาสิโนทั้งหมดจะถูกโอนไปยังหน้ากีฬา<br/>
-			ตั้งแต่วันที่ <b>21/01/2016</b> การตั้งค่าของ Transfer Credit จะถูกยกเลิก<br/>
-			ตั้งแต่วันที่ <b>22/01/2016</b> ค่า Win Limit ของสมาชิกจะถูกตั้งค่าดังต่อไปนี้ :<br/>
-        &#160;&#160;&#45; เปิดใช้งาน RNG คาสิโนของสมาขิก: ยอดเสียสูงสุดของสมาชิกจะคัดลอกจากยอด Transfer Credit สูงสุด<br/>
-        &#160;&#160;&#45; ปิดใช้งาน RNG คาสิโนของสมาขิก: ไม่มีการกำหนดยอดเสียสูงสุด<br/>
-        &#160;&#160;&#45; ยอดชนะสูงสุดไม่มีกำหนด<br/>
-        &#160;&#160;&#45; หากคุณต้องการเปลี่ยนแปลงการตั้งค่า คุณสามารถตั้งค่าได้ที่หน้าตั้งค่า<br/>
-      </p>
-      <p>
-        ขอบพระคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Chào quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, Sportsbook và Casino sẽ dùng chung ví tiền của Sportsbook. Điều này có nghĩa là người chơi không cần phải chuyển tiền từ Sportsbook vào Casino để chơi Casino Games.<br/>
-        Trong suốt quá trình chuyển đổi này:<br/>
-        &#160;&#160;&#8226; Tất cả các game chưa hoàn thành hay còn đang diễn ra trong Casino sẽ được hoàn tiền ngoại trừ những Card Games kéo dài hơn 24 giờ và chưa hoàn thành, sẽ được xử như là các cược thua.<br/>
-        &#160;&#160;&#8226; Tất cả số dư còn lại trong Casino sẽ được chuyển về Sportsbook.<br/>
-        Từ <b>21/01/2016</b>, các thiết lập chuyển khoản sẽ được loại bỏ.<br/>
-		Từ <b>22/01/2016</b>, Giới Hạn Thắng của những người chơi hiện tại sẽ được thiết lập như sau:<br/>
-        &#160;&#160;&#45; Đối với những người chơi được phép chơi Casino: Giới Hạn Thua sẽ được sao chép từ Giới Hạn Chuyển Khoản.<br/>
-        &#160;&#160;&#45; Đối với những người chơi không được phép chơi Casino: Giới Hạn Thua không bị giới hạn.<br/>
-        &#160;&#160;&#45; Giới hạn thắng không bị giới hạn.<br/>
-        &#160;&#160;&#45; Bạn có thể thay đổi những thiết lập trên cho cấp dưới bằng cách thay đổi các thiết lập trong trang Setting.<br/>
-      </p>
-      <p>
-        Trân trọng.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-   <PopupAnnouncement id="4910001" name="Cockfighting" startdate="12/20/2015" enddate="12/20/2015"  effectdate="12/20/2015" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
-        This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will be copied from Group A of Handicap’s commission setting.<br/>
-        &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
-        This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will be copied from Group A of Handicap’s commission setting.<br/>
-        &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
-        This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will be copied from Group A of Handicap’s commission setting.<br/>
-        &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
-        This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will be copied from Group A of Handicap’s commission setting.<br/>
-        &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
-        This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will be copied from Group A of Handicap’s commission setting.<br/>
-        &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
-        This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will be copied from Group A of Handicap’s commission setting.<br/>
-        &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named <b>“Cockfighting”</b> with effect from <b>{effectdate}</b>.<br/>
-        This new product will be offered to you by default. However, you need to enable it on your downlines manually.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will be copied from Group A of Handicap’s commission setting.<br/>
-        &#8226; Position Taking and Bet Settings will be copied from Other Sports and available for configuration in a new dedicated setting page named <b>"Edit Cockfighting"</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>	
-  
-  <PopupAnnouncement id="4459701" name="Muay Thai" startdate="11/20/2015 03:00:00" enddate="12/04/2015"  effectdate="11/20/2015" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
-        which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will follow group A, B, C, D of Sportsbook’s commission setting.<br/>
-        &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理们，<br />
-      <p>
-        我们非常荣幸地宣布将于<b>{effectdate}</b> 推出​​​​新产品名为<b>“Muay Thai”</b> 这新产品有两个投注类型（亚洲盘和大/小）<br/>
-        所有设定将配置如下：<br/>
-        &#8226; 佣金将根据体育博彩的佣金设定组别如A组，B组，C组，D组<br/>
-        &#8226; 投注设定和占成数将复制从其他及可配置在新的专用设定页面名为<b>“体育博彩2”</b><br/>
-      </p>
-      <p>
-        谢谢
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理們,<br />
-      <p>        
-        我們非常榮幸地宣布將於<b>{effectdate}</b> 推出​​新產品名為<b>“Muay Thai”</b> 這新產品有兩個投注類型（亞洲盤和大/小）<br/>
-        所有設定將配置如下：<br/>
-        &#8226; 佣金將根據體育博彩的佣金設定組別如A組，B組，C組，D組<br/>
-        &#8226; 投注設定和佔成數將複製從其他及可配置在新的專用設定頁面名為<b>“體育博彩2”</b><br/>
-      </p>
-      <p>
-        謝謝
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
-        which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will follow group A, B, C, D of Sportsbook’s commission setting.<br/>
-        &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
-        which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will follow group A, B, C, D of Sportsbook’s commission setting.<br/>
-        &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
-        which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will follow group A, B, C, D of Sportsbook’s commission setting.<br/>
-        &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new sport named <b>“Muay Thai”</b>
-        which consists of two bet types (Handicap and Over/Under) with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Commission will follow group A, B, C, D of Sportsbook’s commission setting.<br/>
-        &#8226; Bet Setting and Position Taking will be copied from <b>Other Sports</b> and available for configuration in a new dedicated setting page named <b>“Sportsbook 2”</b>.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-      
-  <PopupAnnouncement id="3577701" name="Metric Gaming" excludesites="KORIBC,INDO" startdate="12/31/2015 01:00:00" enddate="1/14/2016"  
-                     effectdate="07/01/2016" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
-        &#8226; Goal within 60 seconds of kick.<br/>
-        &#8226; Next Set Piece.<br/>
-        &#8226; Every Single Minute.<br/>
-        &#8226; Time of Possession.<br/>
-        &#8226; First Goal(0-19:59min/20-45+min/2ndHalf).<br/>
-        All settings of Soccer Handicap will be applied for these new bet types.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理们,<br />
-      <p>
-        我们非常荣幸地宣布将于<b>{effectdate}</b>推出足球5种新的投注类型如下：<br/>
-        &#8226; Goal within 60 seconds of kick.<br/>
-        &#8226; Next Set Piece.<br/>
-        &#8226; Every Single Minute.<br/>
-        &#8226; Time of Possession.<br/>
-        &#8226; First Goal(0-19:59min/20-45+min/2ndHalf).<br/>
-        足球亚洲盘所有设置都将应用于这些新的投注类型。
-      </p>
-      <p>
-        谢谢！
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理們,<br />
-      <p>
-        我們非常榮幸地宣布將於<b>{effectdate}</b>推出足球5種新的投註類型如下：<br/>
-        &#8226; Goal within 60 seconds of kick.<br/>
-        &#8226; Next Set Piece.<br/>
-        &#8226; Every Single Minute.<br/>
-        &#8226; Time of Possession.<br/>
-        &#8226; First Goal(0-19:59min/20-45+min/2ndHalf).<br/>
-        足球亞洲盤所有設置都將應用於這些新的投註類型。
-      </p>
-      <p>
-        謝謝！
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
-        &#8226; Goal within 60 seconds of kick.<br/>
-        &#8226; Next Set Piece.<br/>
-        &#8226; Every Single Minute.<br/>
-        &#8226; Time of Possession.<br/>
-        &#8226; First Goal(0-19:59min/20-45+min/2ndHalf).<br/>
-        All settings of Soccer Handicap will be applied for these new bet types.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
-        &#8226; Goal within 60 seconds of kick.<br/>
-        &#8226; Next Set Piece.<br/>
-        &#8226; Every Single Minute.<br/>
-        &#8226; Time of Possession.<br/>
-        &#8226; First Goal(0-19:59min/20-45+min/2ndHalf).<br/>
-        All settings of Soccer Handicap will be applied for these new bet types.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      Dear valued agents,<br />
-      <p>
-        From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
-        &#8226; Goal within 60 seconds of kick.<br/>
-        &#8226; Next Set Piece.<br/>
-        &#8226; Every Single Minute.<br/>
-        &#8226; Time of Possession.<br/>
-        &#8226; First Goal(0-19:59min/20-45+min/2ndHalf).<br/>
-        All settings of Soccer Handicap will be applied for these new bet types.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Dear valued agents,<br />
-      <p>
-        From <b>{effectdate}</b>, we are pleased to offer you 5 new bet types of Soccer as below:<br/>
-        &#8226; Goal within 60 seconds of kick.<br/>
-        &#8226; Next Set Piece.<br/>
-        &#8226; Every Single Minute.<br/>
-        &#8226; Time of Possession.<br/>
-        &#8226; First Goal(0-19:59min/20-45+min/2ndHalf).<br/>
-        All settings of Soccer Handicap will be applied for these new bet types.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-
-  <PopupAnnouncement id="3543501" name="Gold Deluxe - already synced Live Casino" startdate="04/01/2015" enddate="06/30/2015"  effectdate="dd/mm/yyyy" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Position taking will be copied from Live Casino’s settings but not exceeded 93%.<br/>
-        &#8226; Commission will be copied from Live Casino’s settings but not exceeded 0.007.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Position taking will be copied from Live Casino’s settings but not exceeded 93%.<br/>
-        &#8226; Commission will be copied from Live Casino’s settings but not exceeded 0.007.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Position taking will be copied from Live Casino’s settings but not exceeded 93%.<br/>
-        &#8226; Commission will be copied from Live Casino’s settings but not exceeded 0.007.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Position taking is applied by using the settings of Live Casino.<br/>
-        &#8226; Bet Setting is applied by using the settings of Live Casino – Live Baccarat and Live Roulette Game.<br/>
-        &#8226; Commission is applied by using the settings for Live Casino.<br/>
-        All settings will be available for configuration since dd/mm/yyyy
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Position taking will be copied from Live Casino’s settings but not exceeded 93%.<br/>
-        &#8226; Commission will be copied from Live Casino’s settings but not exceeded 0.007.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Position taking will be copied from Live Casino’s settings but not exceeded 93%.<br/>
-        &#8226; Commission will be copied from Live Casino’s settings but not exceeded 0.007.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be configured as follows:<br/>
-        &#8226; Position taking will be copied from Live Casino’s settings but not exceeded 93%.<br/>
-        &#8226; Commission will be copied from Live Casino’s settings but not exceeded 0.007.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-
-  <PopupAnnouncement id="3543502" name="Gold Deluxe - haven't synced Live Casino" startdate="04/01/2015" enddate="06/30/2015"  effectdate="dd/mm/yyyy" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.<br/>
-        Please, contact your upline for your desired settings.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.<br/>
-        Please, contact your upline for your desired settings.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.<br/>
-        Please, contact your upline for your desired settings.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.<br/>
-        Please, contact your upline for your desired settings.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.<br/>
-        Please, contact your upline for your desired settings.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.<br/>
-        Please, contact your upline for your desired settings.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Dear valued agents,<br />
-      <p>
-        We wish to announce the launching of our new product – Gold Deluxe Game with effect from <b>{effectdate}</b>.<br/>
-        All settings will be available for configuration since dd/mm/yyyy.<br/>
-        Please, contact your upline for your desired settings.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="20150401" name="Change Commission group" startdate="04/01/2015" enddate="04/30/2015"  effectdate="01/04/2015" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
-        Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
-        will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
-        Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
-        will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
-        Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
-        will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
-        Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
-        will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
-        Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
-        will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
-        Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
-        will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the change of Commission setting of the 5 bet types: Moneyline, 1st Moneyline,
-        Match Winner, Set X Winner, Set X Game Y Winner in which the ""Asian HDP. OU, OE"" commission group
-        will be applied instead of ""Other Bettypes"" commission group, with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-
-  <PopupAnnouncement id="20141231" name="Tennis - Sporting Solution" startdate="12/31/2014" enddate="01/31/2015"  effectdate="01/01/2015" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to offer you 8 new bet types of Tennis with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/Tennis/en-US.SportingSolutionBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Tennis product and all setttings will be configured as follows:
-      </p>
-      <p>
-        &#8226; Default setting of Tennis "Others" will be copied from Tennis "Handicap" and it can be changed later on if desired.<br />
-        &#8226; Position Taking settings of <b>Set x Winner</b> and <b>Set x Game y Winner</b> bet types will be copied from Tennis "Money Line".<br />
-        &#8226; Position Taking settings of <b>Match Correct Score</b> and <b>Set x Correct Score</b> bet types will be copied from Tennis "Others".<br />
-        &#8226; Position Taking settings of <b>Game Handicap</b> and <b>Set x Game Handicap</b> bet types will be copied from Tennis "Handicap".<br />
-        &#8226; Position Taking settings of <b>Set x Total Game Odd/Even</b> bet type will be copied Tennis "Odd/Even".<br />
-        &#8226; Position Taking settings of <b>Set x Total Game Over/Under</b> bet type will be copied Tennis "Over/Under".<br />
-        &#8226; Commission settings of <b>Set x Winner, Match Correct Score, Set x Correct Score and Set x Game y Winner</b> bet types will be copied from Other Bet types.<br />
-        &#8226; Commission settings of <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> bet types will be copied from Asian HDP, OU, OE.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      敬爱的代理们，<br />
-      <p>
-        于 <b>{effectdate}</b> 网球将推出八项新的投注设定,  您可以点击<a href='_Announcement/Template/NewProduct/Tennis/zh-CN.SportingSolutionBettypes.htm' target='_blank'>此处</a>以查看完整的设定项目。 在设定方面， 本公司已在网球占成数页面增添了新的设定， 名为“其他”。 所有设定都将被配置如下：
-      </p>
-      <p>
-        &#8226; 网球"其他"的默认设置将复制网球"亚洲盘"或可以依照需要而更改。<br />
-        &#8226; <b>第 x 盘获胜者</b> 和 <b>第 x 盘 - 第 y 局获胜者</b> 投注类型占成数设定将复制网球"独赢"<br />
-        &#8226; <b>盘数波胆</b> 和 <b>第 x 盘波胆</b> 投注类型占成数设定将复制网球"其他"<br />
-        &#8226; <b>局数获胜者</b> 和 <b>第 x 盘局数获胜者</b> 投注类型占成数设定将复制网球"亚洲盘"<br />
-        &#8226; <b>第 x 盘局数单双盘</b> 投注类型占成数设定将复制网球"单/双"<br />
-        &#8226; <b>第 x 盘局数大小盘</b> 投注类型占成数设定将复制网球"大/小"<br />
-        &#8226; <b>第 x 盘获胜者, 盘数波胆, 第 x 盘波胆 和 第 x 盘 - 第 y 局获胜者</b> 投注类型佣金设定将复制其他投注类别<br />
-        &#8226; <b>局数获胜者, 第 x 盘局数获胜者, 第 x 盘局数大小盘 和 第 x 盘局数单双盘</b> 投注类型佣金设定将复制亚洲盘、单双、大小盘
-      </p>
-      <p>
-        谢谢
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      敬愛的代理們，<br />
-      <p>
-        於 <b>{effectdate}</b> 網球將推出八項新的投註設定,  您可以點擊<a href='_Announcement/Template/NewProduct/Tennis/zh-TW.SportingSolutionBettypes.htm' target='_blank'>此處</a>以查看完整的設定項目。 在設定方面， 本公司已在網球占成數頁面增添了新的設定， 名為“其他”。 所有設定都將被配置如下：
-      </p>
-      <p>
-        &#8226; 網球"其他"的默認設置將復製網球"亞洲盤"或日後依照需要而更改。<br />
-        &#8226; <b>第 x 盤獲勝者</b>和 <b>第 x 盤 - 第 y 局獲勝者</b> 投注類型占成數設定將復制網球"獨贏"<br />
-        &#8226; <b>盤數波膽</b> 和 <b>第 x 盤波膽</b> 投注類型占成數設定將復制網球"其他"<br />
-        &#8226; <b>局數獲勝者</b> 和 <b>第 x 盤局數獲勝者</b> 投注類型占成數設定將復制網球"亞洲盤"<br />
-        &#8226; <b>第 x 盤局數單雙盤</b> 投注類型占成數設定將復制網球"單/雙"<br />
-        &#8226; <b>第 x 盤局數大小盤</b> 投注類型占成數設定將復制網球"大/小"<br />
-        &#8226; <b>第 x 盤獲勝者, 盤數波膽, 第 x 盤波膽 和 第 x 盤 - 第 y 局獲勝者</b> 投注類型佣金設定將復制其他投注類別<br />
-        &#8226; <b>局數獲勝者, 第 x 盤局數獲勝者, 第 x 盤局數大小盤 和 第 x 盤局數單雙盤</b> 投注類型佣金設定將復制亞洲盤、單雙、大小盤<br />
-      </p>
-      <p>
-        謝謝
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to offer you 8 new bet types of Tennis with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/Tennis/ja-JP.SportingSolutionBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Tennis product and all setttings will be configured as follows:
-      </p>
-      <p>
-        &#8226; Default setting of Tennis "Others" will be copied from Tennis "Handicap" and it can be changed later on if desired.<br />
-        &#8226; Position Taking settings of <b>Set x Winner</b> and <b>Set x Game y Winner</b> bet types will be copied from Tennis "Money Line".<br />
-        &#8226; Position Taking settings of <b>Match Correct Score</b> and <b>Set x Correct Score</b> bet types will be copied from Tennis "Others".<br />
-        &#8226; Position Taking settings of <b>Game Handicap</b> and <b>Set x Game Handicap</b> bet types will be copied from Tennis "Handicap".<br />
-        &#8226; Position Taking settings of <b>Set x Total Game Odd/Even</b> bet type will be copied Tennis "Odd/Even".<br />
-        &#8226; Position Taking settings of <b>Set x Total Game Over/Under</b> bet type will be copied Tennis "Over/Under".<br />
-        &#8226; Commission settings of <b>Set x Winner, Match Correct Score, Set x Correct Score and Set x Game y Winner</b> bet types will be copied from Other Bet types.<br />
-        &#8226; Commission settings of <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> bet types will be copied from Asian HDP, OU, OE.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to offer you 8 new bet types of Tennis with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/Tennis/ko-KR.SportingSolutionBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Tennis product and all setttings will be configured as follows:
-      </p>
-      <p>
-        &#8226; Default setting of Tennis "Others" will be copied from Tennis "Handicap" and it can be changed later on if desired.<br />
-        &#8226; Position Taking settings of <b>Set x Winner</b> and <b>Set x Game y Winner</b> bet types will be copied from Tennis "Money Line".<br />
-        &#8226; Position Taking settings of <b>Match Correct Score</b> and <b>Set x Correct Score</b> bet types will be copied from Tennis "Others".<br />
-        &#8226; Position Taking settings of <b>Game Handicap</b> and <b>Set x Game Handicap</b> bet types will be copied from Tennis "Handicap".<br />
-        &#8226; Position Taking settings of <b>Set x Total Game Odd/Even</b> bet type will be copied Tennis "Odd/Even".<br />
-        &#8226; Position Taking settings of <b>Set x Total Game Over/Under</b> bet type will be copied Tennis "Over/Under".<br />
-        &#8226; Commission settings of <b>Set x Winner, Match Correct Score, Set x Correct Score and Set x Game y Winner</b> bet types will be copied from Other Bet types.<br />
-        &#8226; Commission settings of <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> bet types will be copied from Asian HDP, OU, OE.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน ท่านเอเจนต์ ทุกอ่าน <br />
-      <p>
-        ทางบริษัทยินดีที่จะเสนอการทายผลเทนนิสรูปแบบใหม่ 8 ชนิดด้วยกัน ซึ่งจะมีผลตั้งแต่ <b>{effectdate}</b>. ท่านสามารถ <a href='_Announcement/Template/NewProduct/Tennis/th-TH.SportingSolutionBettypes.htm' target='_blank'>คลิ๊กที่นี่</a> เพื่อดูรายละเอียดรายการต่าง ๆ ทั้งหมด เพื่อเป็นการอำนวยความสะดวก ทางเราได้ทำการเพิ่มเติมในส่วนการตั้งค่าความเสี่ยงให้ใหม่ โดยตั้งชื่อว่า "ชนิดอื่นๆ" ซึ่งจะอยู่ภายใต้การตั้งค่ากีฬาเทนนิส และการตั้งค่าต่าง ๆ จะเป็นดังต่อไปนี้
-      </p>
-      <p>
-        &#8226; การตั้งค่าดั่งเดิมของเทนนิส "ชนิดอื่นๆ" จะคัดลอกมาจากราคาต่อรองเทนนิสและจะสามารถเปลี่ยนในภายหลังได้หากต้องการ<br />
-        &#8226; การตั้งค่าความเสี่ยงของชนิดการทายผล <b>ผู้ชนะเซท X</b> และ <b>ผู้ชนะเซท X เกม Y</b> จะคัดลอกมาจากการทายผู้เล่นหรือทีมที่จะ "ชนะ" ในกีฬาเทนนิส<br />
-        &#8226; การตั้งค่าความเสี่ยงของชนิดการทายผล <b>ทายผลคะแนนรวมของการแข่งขัน</b> และ <b>ทายผลคะแนนรวมในเซทX</b> จะทำการคัดลอกมาจาก เทนนิส "ชนิดอื่นๆ"<br />
-        &#8226; การตั้งค่าความเสี่ยงใน <b>ราคาต่อรองในเกม</b> และ <b>ราคาต่อรองในเซท X</b> การตั้งค่าจะถูกคัดลอกมาจาก ราคาต่อรอง "เทนนิส"<br />
-        &#8226; การตั้งค่าความเสี่ยงของ <b>เซท X ผลคะแนนรวมในเกม คู่/คี่</b> การตั้งค่าจะถูกคัดลอกมาจาก เทนนิส "คู่/คี่"<br />
-        &#8226; การตั้งค่าความเสี่ยงของ <b>เซท X  ผลคะแนนรวมในเกม สุง/ต่ำ</b> การตั้งค่าจะถูกคัดลอกมาจากเทนนิส "สุง/ต่ำ"<br />
-        &#8226; การตั้งค่าคอมมิชชั่นของ <b>ผู้ชนะในเซท X, ทายผลคะแนนของการแข่งขัน,  การทายผลคะแนนของเซท X เกม Y และเซท X เกมY</b> การตั้งค่าจะถูกคัดลอกมาจาก ชนิดอื่น ๆ<br />
-        &#8226; การตั้งค่าคอมมิชั่นของ <b>ราคาต่อรองในเกม, ราคาต่อรองในเกมเซท X, เซท X  ผลคะแนนรวมในเกม สุง/ต่ำ และ เซท X ผลคะแนนรวมในเกม คู่/คี่</b> การตั้งค่าทั้งหมดจะถูกคัดลอกมาจาก ราคาต่อรอง, สูง/ต่ำ, คู่/คี่
-      </p>
-      <p>
-        กราบขอบพระคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Chào quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 8 loại cược mới cho Tennis. Bạn có thể xem thêm chi tiết các loại cược mới <a href='_Announcement/Template/NewProduct/Tennis/vi-VN.SportingSolutionBettypes.htm' target='_blank'>ở đây</a>. Nhằm hỗ trợ cho các loại cược mới, chúng tôi đã thêm phần "Others" bên dưới mục Tennis trong trang thiết lập Position Taking. Tất cả các thiết lập sẽ được cấu hình như sau:
-      </p>
-      <p>
-        &#8226; Cấu hình mặc định của Tennis "Others" sẽ được sao chép từ Tennis "Handicap" và nó có thể tuỳ chỉnh nếu muốn.<br />
-        &#8226; Position Taking của loại cược <b>Set x Winner</b> và <b>Set x Game y Winner</b> sẽ được sao chép từ Tennis "Money Line".<br />
-        &#8226; Position Taking của loại cược <b>Match Correct Score</b> và <b>Set x Correct Score</b> sẽ được sao chép từ Tennis "Others"<br />
-        &#8226; Position Taking của loại cược <b>Game Handicap</b> và <b>Set x Game Handicap</b> sẽ được sao chép từ Tennis "Handicap".<br />
-        &#8226; Position Taking của loại cược <b>Set x Total Game Odd/Even</b> sẽ được sao chép từ Tennis "Odd/Even".<br />
-        &#8226; Position Taking của loại cược <b>Set x Total Game Over/Under</b> sẽ được sao chép từ Tennis "Over/Under".<br />
-        &#8226; Thiết lập hoa hồng của loại cược <b>Set x Winner, Match Correct Score, Set x Correct Score and Set x Game y Winner</b> sẽ được sao chép từ "Các loại cược khác".<br />
-        &#8226; Thiết lập hoa hồng của loại cược <b>Game Handicap, Set x Game Handicap, Set x Total Games Over/Under and Set x Total Game Odd/Even</b> sẽ được sao chép từ Asian HDP, OU, OE.
-      </p>
-      <p>
-        Trân trọng.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
- <PopupAnnouncement id="20150109" name="New statement" startdate="01/01/2015" enddate="02/01/2015"  effectdate="1/1/2015" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued Agents,<br />
-      <p>
-        In an effort to help you monitor transactions more effectively, we are now offering the new 
-        Statement report with effect from <b>{effectdate}</b>, details are listed below:
-      </p>
-      <p>
-        &#8226; All daily transactions will be grouped and put into 1 row only.<br/>
-        &#8226; The new format is only displayed if “From” date starts from 01/01/2014 onwards.<br/>
-        &#8226; The Accumulated Total balance of the previous day must be equal to the Opening Balance of the next day; otherwise the Opening Balance will be highlighted in pink.<br/>
-        &#8226; To view the details of Win/Loss or Transfer transactions, click on the amount of each transaction.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理们，<br />
-      <p>
-        为了让您了更有效的监控您的交易账目，我们将在<b>{effectdate}</b> 推出全新的账目报告，细节如下：
-      </p>
-      <p>
-        &#8226; 所有的日常交易将会合并起来，并以一行记录显示。<br/>
-        &#8226; 全新的账目报告只会显示例如“从”，日期开始从2014年1月1日起查看。<br/>
-        &#8226; 前一天的总累计余额和第二天的期初余額一定要相等； 否则期初余額将突出显示粉红色。<br/>
-        &#8226; 每项交易请点击金额查看输赢或转账交易的详细资料。<br/>
-      </p>
-      <p>
-        谢谢
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理們，<br />
-      <p>
-        為了讓您了更有效的監控您的交易賬目，我們將在<b>{effectdate}</b> 推出全新的賬目報告，細節如下：
-      </p>
-      <p>
-        &#8226; 所有的日常交易將分組進行並會放同一排而已。<br/>
-        &#8226; 全新的賬目報告只會顯示例如“從”，日期開始從2014年1月1日起查看。<br/>
-        &#8226; 前一天的總累計余額和第二天的期初余額一定要相等； 否則期初余額將突出顯示粉紅色。<br/>
-        &#8226; 每项交易請點擊金額查看輸贏或轉賬交易的詳細資料。<br/>
-      </p>
-      <p>
-        謝謝
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued Agents,<br />
-      <p>
-        In an effort to help you monitor transactions more effectively, we are now offering the new
-        Statement report with effect from <b>{effectdate}</b>, details are listed below:
-      </p>
-      <p>
-        &#8226; All daily transactions will be grouped and put into 1 row only.<br/>
-        &#8226; The new format is only displayed if “From” date starts from 01/01/2014 onwards.<br/>
-        &#8226; The Accumulated Total balance of the previous day must be equal to the Opening Balance of the next day; otherwise the Opening Balance will be highlighted in pink.<br/>
-        &#8226; To view the details of Win/Loss or Transfer transactions, click on the amount of each transaction.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued Agents,<br />
-      <p>
-        In an effort to help you monitor transactions more effectively, we are now offering the new
-        Statement report with effect from <b>{effectdate}</b>, details are listed below:
-      </p>
-      <p>
-        &#8226; All daily transactions will be grouped and put into 1 row only.<br/>
-        &#8226; The new format is only displayed if “From” date starts from 01/01/2014 onwards.<br/>
-        &#8226; The Accumulated Total balance of the previous day must be equal to the Opening Balance of the next day; otherwise the Opening Balance will be highlighted in pink.<br/>
-        &#8226; To view the details of Win/Loss or Transfer transactions, click on the amount of each transaction.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน เอเจนต์ ผู้มีอุปการะคุณ<br />
-      <p>
-        เพื่อเป็นการช่วยให้ท่านเอเจนต์ได้ตรวจสอบการทำธุรกรรมต่าง ๆ ได้อย่างมีประสิธิภาพมากขึ้น ทางบริษัทขออนุญาตินำเสนอรายงานงบการเงินรูปแบบใหม่ ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b> ดังรายละเอียดดังต่อไปนี้
-      </p>
-      <p>
-        &#8226; ธุรกรรมทางการเงินประจำวันต่างๆ จะถูกจัดเป็นหมวดหมู่ และใส่ไว้ใน 1 บันทัดเท่านั้น<br/>
-        &#8226; รูปแบบใหม่นี้จะแสดงผล"ตั้งแต่" เริ่มจากวันที่ 01/01/2014 เป็นต้นไป<br/>
-        &#8226; ยอดสะสมรวมของวันก่อนหน้า ต้องตรงกับ ยอดยกมาของวันต่อไป มิเช่นนั้นแล้วยอดยกมาจะถูกไฮไลน์เป็นสีชมพู<br/>
-        &#8226; ดูรายละเอียดยอด ได้/เสีย หรือ ทำธุรกรรมทงการเงินต่าง ๆ นั้น คลิ๊กที่จำนวนเงินของแต่ละรายกรเพื่อตรวจสอบ<br/>
-      </p>
-      <p>
-        ขอบพระคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Dear valued Agents,<br />
-      <p>
-        In an effort to help you monitor transactions more effectively, we are now offering the new
-        Statement report with effect from <b>{effectdate}</b>, details are listed below:
-      </p>
-      <p>
-        &#8226; All daily transactions will be grouped and put into 1 row only.<br/>
-        &#8226; The new format is only displayed if “From” date starts from 01/01/2014 onwards.<br/>
-        &#8226; The Accumulated Total balance of the previous day must be equal to the Opening Balance of the next day; otherwise the Opening Balance will be highlighted in pink.<br/>
-        &#8226; To view the details of Win/Loss or Transfer transactions, click on the amount of each transaction.<br/>
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  <PopupAnnouncement id="20141221" startdate="12/10/2014" enddate="12/22/2014"  effectdate="10/12/2014" width="650" height="300" top="110" left="350">
-    <en-US src="_Announcement/Template/Dongzhi/DongzhiFlash.html?1234">
-      Dongzhi 2014
-    </en-US>
-    <zh-CN src="_Announcement/Template/Dongzhi/DongzhiFlash_cn.html">
-      Dongzhi 2014
-    </zh-CN>
-    <zh-TW src="_Announcement/Template/Dongzhi/DongzhiFlash_tw.html">
-      Dongzhi 2014
-    </zh-TW>
-    <ja-JP src="_Announcement/Template/Dongzhi/DongzhiFlash.html">
-      Dongzhi 2014
-    </ja-JP>
-    <ko-KR src="_Announcement/Template/Dongzhi/DongzhiFlash.html">
-      Dongzhi 2014
-    </ko-KR>
-    <th-TH src="_Announcement/Template/Dongzhi/DongzhiFlash.html">
-      Dongzhi 2014
-    </th-TH>
-    <vi-VN src="_Announcement/Template/Dongzhi/DongzhiFlash.html">
-      Dongzhi 2014
-    </vi-VN>
-  </PopupAnnouncement>
-
-  <PopupAnnouncement id="26071" name="Limited Country Access" startdate="11/01/2014" enddate="12/30/2014"  effectdate="11/26/2014" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued customer,<br />
-      <p>
-        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
-      </p>
-      <p>
-        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
-      </p>
-      <p>
-        We apologize for any inconvenience caused.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的客户，<br />
-      <p>
-        由于政府近期的监管动态， 本公司将不提供任何产品和服务于<b>新加坡</b>地区。
-      </p>
-      <p>
-        因此从<b>2014年11月26日起</b>， 在新加坡的客户将无法链接我们的网站。
-      </p>
-      <p>
-        不便之处， 敬请原谅。
-      </p>
-      <p>
-        谢谢。
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的客戶，<br />
-      <p>
-        由於政府近期的監管動態， 本公司將不提供任何產品和服務於<b>新加坡</b>地區。
-      </p>
-      <p>
-        因此從<b>2014年11月26日起</b>， 在新加坡的客戶將無法鏈接我們的網站。
-      </p>
-      <p>
-        不便之處， 敬請原諒。
-      </p>
-      <p>
-        謝謝。
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued customer,<br />
-      <p>
-        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
-      </p>
-      <p>
-        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
-      </p>
-      <p>
-        We apologize for any inconvenience caused.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued customer,<br />
-      <p>
-        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
-      </p>
-      <p>
-        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
-      </p>
-      <p>
-        We apologize for any inconvenience caused.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      Dear valued customer,<br />
-      <p>
-        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
-      </p>
-      <p>
-        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
-      </p>
-      <p>
-        We apologize for any inconvenience caused.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Dear valued customer,<br />
-      <p>
-        Due to recent regulatory developments, we will no longer offer our products and services in <b>Singapore</b>.
-      </p>
-      <p>
-        For this reason, you will cease to have access to our website in your location from <b>November 26, 2014</b>.
-      </p>
-      <p>
-        We apologize for any inconvenience caused.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="2023" name="Keno Setting" startdate="10/17/2014" enddate="11/17/2014"  effectdate="10/24/2014" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to announce that you can start updating
-        the settings for Keno product which means dedicated,
-        separate settings for Keno are supported with effect
-        from <b>{effectdate}</b> and Number Game settings are no
-        longer used for Keno product.
-      </p>
-      <p>
-        If you wish to update the settings for Keno, please access
-        Account Info function on the Left Panel and choose Edit Keno.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理们,<br />
-      <p>
-        我们非常荣幸地宣布，快乐彩将拥有独立的投注限额及占成设定，于<b>{effectdate}</b> 您可以开始为快乐彩的产品做设置 。快乐彩的设置将不再根据"百练赛"的投注设定。
-      </p>
-      <p>
-        如果您想更换快乐彩的设置，请点击左侧面板上的功能用户资料，然后选择修改快乐彩。
-      </p>
-      <p>
-        谢谢.
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理們,<br />
-      <p>
-        我們非常榮幸地宣布，快樂彩將擁有獨立的投注限額及佔成設定，於<b>{effectdate}</b> 您可以開始為快樂彩的產品做設置。快樂彩的設置將不再根據"百練賽"的投注設定。
-      </p>
-      <p>
-        如果您想更換快樂彩的設置，請點擊左側面板上的功能用戶資料，然後選擇修改快樂彩。
-      </p>
-      <p>
-        謝謝.
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to announce that you can start updating
-        the settings for Keno product which means dedicated,
-        separate settings for Keno are supported with effect
-        from <b>{effectdate}</b> and Number Game settings are no
-        longer used for Keno product.
-      </p>
-      <p>
-        If you wish to update the settings for Keno, please access
-        Account Info function on the Left Panel and choose Edit Keno.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to announce that you can start updating
-        the settings for Keno product which means dedicated,
-        separate settings for Keno are supported with effect
-        from <b>{effectdate}</b> and Number Game settings are no
-        longer used for Keno product.
-      </p>
-      <p>
-        If you wish to update the settings for Keno, please access
-        Account Info function on the Left Panel and choose Edit Keno.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียนลูกค้าที่เคารพรัก<br />
-      <p>
-        เรายินดีที่จะเรียนให้ท่านทราบว่า โปรดักคีโนสามารถแยกการตั้งค่าวงเงินเดิมพันและค่าความเสี่ยงได้แล้ว เริ่มตั้งแต่วันที่ <b>{effectdate}</b>  และค่าการตั้งค่าของโปรดักเกมหมายเลขจะไม่ใช้ร่วมกับคีโนอีกต่อไป
-      </p>
-      <p>
-        หากคุณต้องการที่เปลี่ยนการตั้งค่าของโปรดักคีโน, กรุณากดที่ข้อมูลบัญชีตรงมุมซ้ายมือ และเลือกเกมคิโน
-      </p>
-      <p>
-        ขอบคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Chào quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, bạn có thể cập nhật các thiết lập dành riệng cho Keno. Các thiết lập của Keno sẽ không còn dùng chung với các thiết lập của Number Game nữa.
-      </p>
-      <p>
-        Nếu bạn muốn cập nhật các thiết lập cho Keno, vui lòng vào menu Account Info ở bảng điều khiển bên trái và chọn Edit Keno.        
-      </p>
-      <p>
-        Trân trọng.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-
-  <PopupAnnouncement id="20140915" name="ESports" startdate="09/23/2014" enddate="10/23/2014"  effectdate="23/09/2014" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to announce you the launching of the new sport called "E-Sports" with effect from <b>{effectdate}</b>. All settings will be configured as follows:
-      </p>
-      <p>
-        &#8226; Position Taking of E-Sports Money Line will be copied from Other Sports Money Line.<br />
-        &#8226; Position Taking of E-Sport Handicap will be copied from Other Sports Handicap.<br />
-        &#8226; Position Taking of E-Sport Over/Under will be copied from Other Sports Over/Under.<br />
-        &#8226; Bet Setting of E-Sport will be copied from Other Sports.<br />
-        &#8226; Commission Setting of E-Sport – Money Line will be copied from Other Bettypes.<br />
-        &#8226; Commission Setting of E-Sport – Handicap, Over/Under will be copied from Asian HDP, Over/Under.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理们,<br />
-      <p>
-        我们非常荣幸地宣布将于<b>{effectdate}</b>推出称为"电子游戏"的新产品. 所有设定将如下配置:
-      </p>
-      <p>
-        &#8226; 电子游戏独赢的占成数将复制其他独赢的占成数.<br />
-        &#8226; 电子游戏亚洲盘的占成数将复制其他亚洲盘的占成数.<br />
-        &#8226; 电子游戏大小盘的占成数将复制其他大小盘的占成数.<br />
-        &#8226; 电子游戏的投注设定将复制其他的投注设定.<br />
-        &#8226; 电子游戏独赢的佣金将复制其他投注类别的佣金.<br />
-        &#8226; 电子游戏亚洲盘及大小盘的佣金将复制亚洲盘及大小盘的佣金.
-      </p>
-      <p>
-        谢谢.
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理們,<br />
-      <p>
-        我們非常榮幸地宣布將於<b>{effectdate}</b>推出稱為"電子遊戲"的新產品. 所有設定將如下配置:
-      </p>
-      <p>
-        &#8226; 電子遊戲獨贏的佔成數將復制其他獨贏的佔成數.<br />
-        &#8226; 電子遊戲亞洲盤的佔成數將復制其他亞洲盤的佔成數.<br />
-        &#8226; 電子遊戲大小盤的佔成數將復制其他大小盤的佔成數.<br />
-        &#8226; 電子遊戲的投注設定將復制其他的投注設定.<br />
-        &#8226; 電子遊戲獨贏的佣金將復制其他投注類別的佣金.<br />
-        &#8226; 電子遊戲亞洲盤及大小盤的佣金將復制亞洲盤及大小盤的佣金.
-      </p>
-      <p>
-        謝謝.
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to announce you the launching of the new sport called "E-Sports" with effect from <b>{effectdate}</b>. All settings will be configured as follows:
-      </p>
-      <p>
-        &#8226; Position Taking of E-Sports Money Line will be copied from Other Sports Money Line.<br />
-        &#8226; Position Taking of E-Sport Handicap will be copied from Other Sports Handicap.<br />
-        &#8226; Position Taking of E-Sport Over/Under will be copied from Other Sports Over/Under.<br />
-        &#8226; Bet Setting of E-Sport will be copied from Other Sports.<br />
-        &#8226; Commission Setting of E-Sport – Money Line will be copied from Other Bettypes.<br />
-        &#8226; Commission Setting of E-Sport – Handicap, Over/Under will be copied from Asian HDP, Over/Under.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to announce you the launching of the new sport called "E-Sports" with effect from <b>{effectdate}</b>. All settings will be configured as follows:
-      </p>
-      <p>
-        &#8226; Position Taking of E-Sports Money Line will be copied from Other Sports Money Line.<br />
-        &#8226; Position Taking of E-Sport Handicap will be copied from Other Sports Handicap.<br />
-        &#8226; Position Taking of E-Sport Over/Under will be copied from Other Sports Over/Under.<br />
-        &#8226; Bet Setting of E-Sport will be copied from Other Sports.<br />
-        &#8226; Commission Setting of E-Sport – Money Line will be copied from Other Bettypes.<br />
-        &#8226; Commission Setting of E-Sport – Handicap, Over/Under will be copied from Asian HDP, Over/Under.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียนท่านเอเจนต์ที่เคารพ<br />
-      <p>
-        ทางบริษัทยินดีที่จะประกาศให้ท่านทราบว่า การเปิดตัวเกมใหม่ชื่อ "อี-สปอร์ต" จะมีผลตั้งแต่วันที่ <b>{effectdate}</b> การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้
-      </p>
-      <p>
-        &#8226; ค่าความเสี่ยงของอี-สปอร์ตทายผลผู้ชนะหรือทีมที่ชนะ นั้นจะคัดลอกมาจาก การตั้งค่าทายผลผู้ชนะหรือทีมที่ชนะกีฬาชนิดอื่น<br />
-        &#8226; ค่าความเสี่ยงของราคาต่อรอง อี-สปอร์ต นั้นจะคัดลอกการตั้งค่ามาจาก การตั้งค่าราคาต่อรองกีฬาชนิดอื่น<br />
-        &#8226; ค่าความเสี่ยงของสูง/ต่ำ อี-สปอร์ต นั้นจะคัดลอกการตั้งค่ามาจาก การตั้งค่าสุงต่ำกีฬาชนิดอื่น<br />
-        &#8226; การตั้งค่าเดิมพันของ อี-สปอร์ต จะคัดลอกจากกีฬาชนิดอื่น<br />
-        &#8226; การตั้งค่าคอมมิชชั่นของ อีสปอร์ต-ทายผลผู้ชนะหรือทีมที่ชนะ จะคัดลอกมาจาก การเดิมพันชนิดอื่นๆ<br />
-        &#8226; การตั้งค่าคอมมิชชั่นของ อีสปอร์ต-แต้มต่อ, สูง/ต่ำ จะคัดลอกมาจาก แต้มต่อเอเชีย, สูง/ต่ำ
-      </p>
-      <p>
-        ขอบพระคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to announce you the launching of the new sport called "E-Sports" with effect from <b>{effectdate}</b>. All settings will be configured as follows:
-      </p>
-      <p>
-        &#8226; Position Taking of E-Sports Money Line will be copied from Other Sports Money Line.<br />
-        &#8226; Position Taking of E-Sport Handicap will be copied from Other Sports Handicap.<br />
-        &#8226; Position Taking of E-Sport Over/Under will be copied from Other Sports Over/Under.<br />
-        &#8226; Bet Setting of E-Sport will be copied from Other Sports.<br />
-        &#8226; Commission Setting of E-Sport – Money Line will be copied from Other Bettypes.<br />
-        &#8226; Commission Setting of E-Sport – Handicap, Over/Under will be copied from Asian HDP, Over/Under.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-
-  <PopupAnnouncement id="20140827" name="BetRadar - Change PT and Comm" startdate="08/28/2014" enddate="09/28/2014"  effectdate="28/08/2014" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the changes in Position Taking setting and Commission setting applied for 2 bet types Double Chance, Both/One/Neither Team to Score with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        &#8226; Position Taking setting of Soccer-Others will be applied instead of Soccer-Handicap.<br />
-        &#8226; Others Commission setting will be applied instead of commission of "Asian HDC, OU, OE" group.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理们<br />
-      <p>
-        我们非常荣幸地宣布将于<b>{effectdate}</b>针对两种投注类型: "双重机会" 及 "双方/一方/两者皆不得分" 的占成数及佣金设定进行调整.
-      </p>
-      <p>
-        &#8226; 占成数将复制足球-其他的设定 (而非足球-亚洲盘)<br />
-        &#8226; 将从其他佣金复制 (而非 "亚洲盘, 大小盘, 单双" 的佣金组)
-      </p>
-      <p>
-        谢谢.
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理們<br />
-      <p>
-        我們非常榮幸地宣布將於<b>{effectdate}</b>針對兩種投注類型: "雙重機會" 及"雙方/一方/兩者皆不得分" 的佔成數及佣金設定進行調整.
-      </p>
-      <p>
-        &#8226; 佔成數將復制足球-其他的設定(而非足球-亞洲盤)<br />
-        &#8226; 將從其他佣金複製(而非"亞洲盤, 大小盤, 單雙" 的佣金組)
-      </p>
-      <p>
-        謝謝.
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the changes in Position Taking setting and Commission setting applied for 2 bet types Double Chance, Both/One/Neither Team to Score with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        &#8226; Position Taking setting of Soccer-Others will be applied instead of Soccer-Handicap.<br />
-        &#8226; Others Commission setting will be applied instead of commission of "Asian HDC, OU, OE" group.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the changes in Position Taking setting and Commission setting applied for 2 bet types Double Chance, Both/One/Neither Team to Score with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        &#8226; Position Taking setting of Soccer-Others will be applied instead of Soccer-Handicap.<br />
-        &#8226; Others Commission setting will be applied instead of commission of "Asian HDC, OU, OE" group.
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน เอเจนต์ทุกท่าน<br />
-      <p>
-        ทางบริษัทใคร่ขอแจ้งให้ทราบการเปลี่ยนแปลงว่าด้วย การตั้งค่าเปอร์เซ็นความเสี่ยงและ การตั้งค่าคอมมิชชั่นทั้ง 2 ชนิดการเดิมพัน ทั้ง ดับเบิลชานซ์ และ ทั้งสองทีม/หนึ่งทีม/ไม่ทั้งสองทีมที่ทำคะแนนได้ จะมีผลบังคับใช้ตั้งแต่ <b>{effectdate}</b>.
-      </p>
-      <p>
-        &#8226; การตั้งค่าเปอร์เซ็นความเสี่ยง ซอคเกอร์-อื่น ๆ จะถูกนำไปใช้แทน ซอคเกอร์-แต้มต่อ<br />
-        &#8226; การตั้งค่าค่าคอมมิชชั่นอื่น ๆ จะถูกนำไปใช้แทนที่คอมมิชชั่นในกลุ่มของ "ราคาต่อรองแบบเอเชีย, สุงต่ำ,คู่คี่"
-      </p>
-      <p>
-        ขอบพระคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Chào quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ thay đổi các thiết lập Position Taking và Hoa Hồng áp dụng cho 2 loại cược Double Chance và Both/One/Neither Team to Score.
-      </p>
-      <p>
-        &#8226; Thiết lập Position Taking của Bóng Đá - Loại Cược Khác sẽ được áp dụng cho 2 loại cược này thay thế cho Bóng Đá - Handicap.<br />
-        &#8226; Thiết lập Hoa Hồng - Loại Cược Khác sẽ được áp dụng cho 2 loại cược này thay thế cho nhóm Hoa Hồng - "Asian HDP, OU, OE".
-      </p>
-      <p>
-        Trân trọng.
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-  
-  <PopupAnnouncement id="20140729" name="BetRadar - 14 new bettypes" startdate="07/29/2014" enddate="09/15/2014"  effectdate="15/08/2014" width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to offer you 14 new bet types of Soccer with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/BetRardar/en-US.14NewBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Soccer product.
-      </p>
-      <p>
-        Additional information:
-      </p>
-      <p>
-        &#8226; Position Taking settings of Others will be applied to these new bet type except Half time/Fulltime Correct Score.<br />
-        &#8226; For Half time/Fulltime Correct Score, the Position Taking settings will be copied from Soccer – Correct Score.<br />
-        &#8226; For some existing bet types i.e First Goal/Last Goal, Half Time/ Full Time, 1H First Goal/ Last Goal, the Position Taking settings will now be copied from Soccer– Others  as well.<br />
-        &#8226; Commission settings of these new bet types will be copied from Others Comm.<br />
-        &#8226; Bet settings of these new bet types will be copied from Soccer.<br />
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理们<br />
-      <p>
-        我们非常荣幸地将于<b>{effectdate}</b>为您提供足球新的14种投注类别. 您可点击<a href='_Announcement/Template/NewProduct/BetRardar/zh-CN.14NewBettypes.htm' target='_blank'>这里</a>以查看完整的列表. 为了配合这些新的投注类别, 我们在占成数设定页面的足球产品下增加了新的设定命名为"其他".
-      </p>
-      <p>
-        附加信息:
-      </p>
-      <p>
-        &#8226; 其他的占成数设定将适用于这些新的投注类别除了半场/全场波胆.<br />
-        &#8226; 半场/全​​场波胆之占成数将复制足球- 波胆的设定<br />
-        &#8226; 对于一些现有的投注类别, 即最先进球/最后进球、半场/全场、上半场最先进球/最后进球, 占成数设定也将复制足球- 其他的设定<br />
-        &#8226; 这些新投注类别之佣金将从其他佣金复制<br />
-        &#8226; 这些新投注类别投注设定将从足球中复制<br />
-      </p>
-      <p>
-        谢谢
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理們<br />
-      <p>
-        我們非常榮幸地將於<b>{effectdate}</b>為您提供足球新的14種投注類別. 您可點擊這裡以<a href='_Announcement/Template/NewProduct/BetRardar/zh-TW.14NewBettypes.htm' target='_blank'>查看</a>完整的列表. 爲了配合這些新的投注類別, 我們在占成數設定頁面的足球產品下增加了新的設定命名為"其他".
-      </p>
-      <p>
-        附加信息:
-      </p>
-      <p>
-        &#8226; 其他的占成數設定將適用於這些新的投注類別除了半場/全場波膽.<br />
-        &#8226; 半場/全場波膽之占成數將複製足球 - 波膽的設定<br />
-        &#8226; 對於一些現有的投注類別, 即最先進球/最後進球、半場/全場、上半場最先進球/最後進球, 占成數設定也將複製足球 - 其他的設定<br />
-        &#8226; 這些新投注類別之傭金將從其他傭金複製<br />
-        &#8226; 這些新投注類別投注設定將從足球中複製<br />
-      </p>
-      <p>
-        謝謝
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to offer you 14 new bet types of Soccer with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/BetRardar/ja-JP.14NewBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Soccer product.
-      </p>
-      <p>
-        Additional information:
-      </p>
-      <p>
-        &#8226; Position Taking settings of Others will be applied to these new bet type except Half time/Fulltime Correct Score.<br />
-        &#8226; For Half time/Fulltime Correct Score, the Position Taking settings will be copied from Soccer – Correct Score.<br />
-        &#8226; For some existing bet types i.e First Goal/Last Goal, Half Time/ Full Time, 1H First Goal/ Last Goal, the Position Taking settings will now be copied from Soccer– Others  as well.<br />
-        &#8226; Commission settings of these new bet types will be copied from Others Comm.<br />
-        &#8226; Bet settings of these new bet types will be copied from Soccer.<br />
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We’re pleased to offer you 14 new bet types of Soccer with effect from <b>{effectdate}</b>. You can <a href='_Announcement/Template/NewProduct/BetRardar/ko-KR.14NewBettypes.htm' target='_blank'>click here</a> to view the full list. To accommodate these new bet types, we’ve added a new setting in Position Taking setting page named “Others” under Soccer product.
-      </p>
-      <p>
-        Additional information:
-      </p>
-      <p>
-        &#8226; Position Taking settings of Others will be applied to these new bet type except Half time/Fulltime Correct Score.<br />
-        &#8226; For Half time/Fulltime Correct Score, the Position Taking settings will be copied from Soccer – Correct Score.<br />
-        &#8226; For some existing bet types i.e First Goal/Last Goal, Half Time/ Full Time, 1H First Goal/ Last Goal, the Position Taking settings will now be copied from Soccer– Others  as well.<br />
-        &#8226; Commission settings of these new bet types will be copied from Others Comm.<br />
-        &#8226; Bet settings of these new bet types will be copied from Soccer.<br />
-      </p>
-      <p>
-        Thank you.
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียนเอเย่นท์<br />
-      <p>
-        เรายินดีที่จะแจ้งให้ทราบว่า เราได้เพิ่มรูปแบบการเล่นใหม่อีก 14 ชนิดสำหรับฟุตบอล ซึ่งจะเริ่มใช้ตั้งแต่วันที่ <b>{effectdate}</b> ท่านสามารถ กดที่นี่ เพื่อดูรายการทั้งหมด <a href='_Announcement/Template/NewProduct/BetRardar/th-TH.14NewBettypes.htm' target='_blank'>ทั้งนี้</a> เราได้เพิ่มการตั้งค่าสำหรับการตั้งค่าความเสี่ยง "อื่นๆ" ในหัวข้อ ฟุตบอล
-      </p>
-      <p>
-        ข้อมูลเพิ่มเติม:
-      </p>
-      <p>
-        &#8226; ค่าความเสี่ยงของ "อื่นๆ" จะนำไปใช้กับรูปแบบการเล่นใหม่ ยกเว้น ผลคะแนนครึ่งแรก/ครึ่งหลัง<br />
-        &#8226; สำหรับ ผลคะแนนครึ่งแรก/ครึ่งหลัง ค่าความเสี่ยงจะใช้ค่าจาก "ฟุตบอล - ผลคะแนน"<br />
-        &#8226; สำหรับรูปแบบการเล่นอื่นๆ ที่มีอยู่เดิม เช่น ครึ่งแรก/ครึ่งหลัง , ครึ่งแรก/เต็มเวลา, ประตูแรก/ประตูสุดท้าย ในครึ่งแรก  ค่าความเสี่ยงจะใช้ค่าจาก "ฟุตบอล - อื่นๆ" เช่นเดียวกัน<br />
-        &#8226; ค่าคอมมิชชั่นของรูปแบบการเล่นใหม่ จะใช้ค่าจาก "คอมมิชชั่น อื่นๆ"<br />
-        &#8226; ค่าการเล่น ของรูปแบบการเล่นใหม่ จะใช้ค่าจากกีฬาฟุตบอล<br />
-      </p>
-      <p>
-        ขอขอบพระคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Chào quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 14 loại cược mới cho Soccer. Để xem danh sách 14  loại cược này, vui lòng <a href='_Announcement/Template/NewProduct/BetRardar/vi-VN.14NewBettypes.htm' target='_blank'>nhấp vào đây</a>. Các thiết lập của những loại cược mới này sẽ được đặt trong phần "Loại cược khác" của Soccer trong trang Position Taking.
-      </p>
-      <p>
-        Một số lưu ý khác:
-      </p>
-      <p>
-        &#8226; Các thiết lập Position Taking sẽ được áp dụng cho các loại cược mới ngoại trừ Half Time/Full Time Correct Score.<br />
-        &#8226; Đối với loại cược Half Time/Full Time Correct Score, các thiết lập Position Taking sẽ được sao chép từ loại cược Correct Score của Soccer.<br />
-        &#8226; Đối với các loại cược đang tồn tại như First Goal/Last Goal, Half Time/ Full Time, 1H First Goal/ Last Goal, các thiết lập Position Taking sẽ được sao chép từ "Loại cược khác" trong Soccer.<br />
-        &#8226; Các thiết lập về hoa hồng của những loại cược mới này sẽ được sao chép từ "Loại cược khác".<br />
-        &#8226; Thiết lập cá cược của những loại cược mới này sẽ được sao chép từ Soccer.<br />
-      </p>
-      <p>
-        Trân trọng.
       </p>
     </vi-VN>
   </PopupAnnouncement>

@@ -71,14 +71,14 @@
 
         private static void RegisterCrossCuttingConcerns(Container container)
         {
-            container.Register<IDateTime, DateTimeWrap>(Lifestyle.Transient);
+            container.Register<IDateTime, DateTimeWrap>(Lifestyle.Singleton);
         }
 
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed!")]
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
         private static void RegisterServices(Container container)
         {
-            container.Register<IUserSession, UserSessionExt>(Lifestyle.Scoped);
+            container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
 
             container.Register(
                 () =>
@@ -95,23 +95,23 @@
                 Lifestyle.Transient);
 
             //// Singleton
-            container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Transient);
-            container.Register<MenuItemBuilder, MenuItemBuilderImpl>(Lifestyle.Transient);
+            container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
+            container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
 
             //// Transient
-            container.Register<AnnouncementService, AnnouncementServiceImpl>(Lifestyle.Transient);
-            container.Register<SiteMenuService, SiteMenuServiceImpl>(Lifestyle.Transient);
-            container.Register<CustomerProfileService, CustomerProfileServiceImpl>(Lifestyle.Transient);
-            container.Register<SecurityCodeService, SecurityCodeServiceImpl>(Lifestyle.Transient);
-            container.Register<UserMessageService, UserMessageServiceImpl>(Lifestyle.Transient);
-            container.Register<SessionManager, SessionManagerImpl>(Lifestyle.Transient);
-            container.Register<SiteMapReader, SiteMapReaderImpl>(Lifestyle.Transient);
+            container.RegisterPerWebRequest<AnnouncementService, AnnouncementServiceImpl>();
+            container.RegisterPerWebRequest<SiteMenuService, SiteMenuServiceImpl>();
+            container.RegisterPerWebRequest<CustomerProfileService, CustomerProfileServiceImpl>();
+            container.RegisterPerWebRequest<SecurityCodeService, SecurityCodeServiceImpl>();
+            container.RegisterPerWebRequest<UserMessageService, UserMessageServiceImpl>();
+            container.RegisterPerWebRequest<SessionManager, SessionManagerImpl>();
+            container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)
         {
-            container.Register<IDynamicRepository, DynamicRepository>(Lifestyle.Transient);
-            container.Register<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>(Lifestyle.Transient);
+            container.RegisterPerWebRequest<IDynamicRepository, DynamicRepository>();
+            container.RegisterPerWebRequest<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>();
         }
     }
 }
