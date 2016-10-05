@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using Constants;
-    using Criteria.CustomerProfile;
     using DataAccesses;
+    using Main.Criteria.CustomerProfile;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;

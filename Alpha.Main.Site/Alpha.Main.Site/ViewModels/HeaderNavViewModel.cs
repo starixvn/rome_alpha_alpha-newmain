@@ -15,19 +15,9 @@
 
         public bool EnableSecurityCode { get; private set; }
 
-        public string OldMainRootPath
-        {
-            get
-            {
-                return MicroSites.OldMainUrl("~/");
-            }
-        }
+        public string OldMainRootPath => MicroSites.OldMainUrl("~/");
 
-        public string HowToUseRootPath
-        {
-            get
-            {
-                return MicroSites.HowToUseUrl("~/");
+        public string HowToUseRootPath => MicroSites.HowToUseUrl("~/");
             }
         }
 
@@ -36,7 +26,5 @@
             get
             {
                 return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
-            }
-        }
     }
 }

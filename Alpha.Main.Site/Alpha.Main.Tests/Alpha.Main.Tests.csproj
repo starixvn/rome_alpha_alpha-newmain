@@ -123,6 +123,7 @@
   <ItemGroup>
     <Compile Include="Constants\CustId.cs" />
     <Compile Include="Constants\RoleId.cs" />
+    <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTest.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />

@@ -22,13 +22,10 @@
 
         public BalanceInfo GetBalanceInfo(int custId, UserLevel userLevel)
         {
-            var criteria = new GetBalanceInfoCriteria(userLevel)
-            {
-                CustId = custId,
-                MoveBetsDay = this.balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay
-            };
+            var moveBetsDay = balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay;
+            var criteria = new GetBalanceInfoCriteria(userLevel, custId, moveBetsDay);
 
-            var balanceInfo = this.dynamicRepository.Get<BalanceInfo>(criteria);
+            var balanceInfo = dynamicRepository.Get<BalanceInfo>(criteria);
 
             return balanceInfo;
         }
