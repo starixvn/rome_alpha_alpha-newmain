@@ -1,7 +1,6 @@
 ﻿/// <reference path="../core.ts" />
 /// <reference path="index-manager.ts" />
 
-
 'use strict';
 
 var headerNav = {
@@ -38,8 +37,9 @@ var headerNav = {
 
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index",
-        messages: alpha.urls.mainRootPath +  "Messages/Index",
-        changeLanguage: alpha.urls.mainRootPath + "Language/Change"
+        messages: alpha.urls.mainRootPath + "Messages/Index",
+        changeLanguage: alpha.urls.mainRootPath + "Language/Change",
+        queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx"
     },
 
     init: function () {
@@ -57,8 +57,8 @@ var headerNav = {
 
     initClock: function () {
         // to keep the clock difference least to the actual time,
-        // we must run this first of all 
-        headerNav.domElements.clock = $("#clock");        
+        // we must run this first of all
+        headerNav.domElements.clock = $("#clock");
         headerNav.resources.labelAM = "AM";
         headerNav.resources.labelPM = "PM";
         headerNav.resources.labelMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -129,7 +129,6 @@ var headerNav = {
     },
 
     registerEvents: function () {
-
         headerNav.domElements.iconLogOut.on("click touchend", alpha.core.signOut);
 
         headerNav.domElements.iconHome.on("click touchend", function () {
@@ -149,18 +148,50 @@ var headerNav = {
 
         // Quick search component for mobile
         headerNav.domElements.iconSearch.click(function () {
-            var topSearchbar = $(".top-search-bar"),
+            let topSearchbar = $(".top-search-bar"),
                 iconClose = $(".icon-close"),
                 searchBarToggleClass = "search-bar-toggle";
+
+            let onCloseSearchBar = () => {
+                topSearchbar.removeClass(searchBarToggleClass);
+                headerNav.domElements.sideBarContent.find(".blockUI").remove();
+            };
+
+            let getSuggestions = (query, process) => {
+                return $.get(
+                    headerNav.urls.queryUserName,
+                    { query: query },
+                    function (data) {
+                        let result = alpha.core.convertReponseToJson(data);
+                        let suggestions = result.suggestions.map(function (item) {
+                            return item[0];
+                        });
+
+                        return process(suggestions);
+                    });
+            };
+
+            let afterSelectSuggestionItem = (item) => {
+                onCloseSearchBar();
+                menuBar.collapseLeftPanel();
+                menuBar.activateAccountInfoTab(item);
+            }
+
             topSearchbar.addClass(searchBarToggleClass);
             headerNav.domElements.sideBarContent.append("<div class='blockUI'></div>");
-            iconClose.click(function () {
-                topSearchbar.removeClass(searchBarToggleClass);
-                headerNav.domElements.sideBarContent.find(".blockUI").remove();
-            });
-            $(".blockUI").click(function () {
-                topSearchbar.removeClass(searchBarToggleClass);
-                headerNav.domElements.sideBarContent.find(".blockUI").remove();
+
+            iconClose.click(onCloseSearchBar);
+
+            $(".blockUI").click(onCloseSearchBar);
+
+            $('.top-search-input').typeahead({
+                minLength: 3,
+                items: 10,
+                name: 'userNames',
+                autoSelect: false,
+                delay: 200,
+                source: getSuggestions,
+                afterSelect: afterSelectSuggestionItem
             });
         });
 

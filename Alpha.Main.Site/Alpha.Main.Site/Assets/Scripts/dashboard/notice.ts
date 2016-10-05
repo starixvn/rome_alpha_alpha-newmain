@@ -34,14 +34,14 @@
             if (isMarkedSuccess) {
                 message.removeClass('bold');
             }
-        }
+        };
 
         let ajaxSetting = {
             url: '/site-main/Notice/MarkMessageAsRead',
             data: { messageId: message.attr('id') },
             method: 'POST',
             success: onSuccess
-        }
+        };
 
         $.ajax(ajaxSetting);
     }
@@ -62,7 +62,7 @@
                 url: '/site-main/Notice/MoreMessages?totalMessage=' + $moreMessagesBtn.attr('totalMsg'),
                 method: 'GET',
                 success: onSuccess
-            }
+            };
 
             $moreMessagesBtn.attr('disabled', 'disabled');
             $moreMessagesBtn.text('Loading...');

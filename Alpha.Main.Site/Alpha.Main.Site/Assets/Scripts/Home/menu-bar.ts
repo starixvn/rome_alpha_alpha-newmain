@@ -63,7 +63,7 @@
             sidebar.addClass('hidden-mobile');
             return;
         }
-        
+
         if (alpha.isScreenGreater1024) {
             activeSubMenu.show();
             sidebar.removeClass('collapsed').removeClass('collapsed-smallsize');
@@ -179,7 +179,7 @@
         menuBar.positionPTTooltip();
     },
 
-    activateAccountInfoTab: function () {
+    activateAccountInfoTab: function (userName: string = '') {
         menuBar.domElements.accountInfoHeader.addClass('active');
         menuBar.domElements.mainMenuHeader.removeClass('active');
         menuBar.domElements.mainMenuTab.hide();
@@ -190,6 +190,10 @@
 
         if (!accountInfoUrl) {
             accInfoContent.attr('src', menuBar.urls.accountInfo);
+        }
+
+        if (userName !== '') {
+            accInfoContent.attr('src', menuBar.urls.accountInfo + '?txtUsername=' + userName);
         }
 
         // To work on IE, use plain-old javascript onload event
@@ -231,7 +235,7 @@
     collapseSideBar: function () {
         var sideBar = menuBar.domElements.sideBar;
 
-        if (alpha.isScreenLower1024 && sideBar.hasClass('visible-mobile') ) {
+        if (alpha.isScreenLower1024 && sideBar.hasClass('visible-mobile')) {
             menuBar.domElements.mainContent.addClass('expanded-mobile');
             sideBar.addClass('hidden-mobile').removeClass('visible-mobile');
         }
@@ -283,7 +287,6 @@
             if (subMenuContainer.is('ul')) {
                 subMenuContainer.slideUp('fast');
             }
-
         } else {
             //// Expand selected menu
             mainMenu.addClass('active');
