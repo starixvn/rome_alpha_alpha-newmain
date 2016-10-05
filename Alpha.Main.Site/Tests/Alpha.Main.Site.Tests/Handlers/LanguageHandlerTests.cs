@@ -29,7 +29,7 @@
             // Arrange
             ChangeLanguageCommand nullCommand = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => languageHandler.Handle(nullCommand)));
         }
 
@@ -42,7 +42,7 @@
             string argumentUsed = null;
             command.ChangeLanguage(Arg.Do<string>(x => argumentUsed = x));
 
-            // Action
+            // Act
             var viewModel = languageHandler.Handle(command);
 
             // Assert
@@ -71,7 +71,7 @@
             var command = Substitute.For<ChangeLanguageCommand>(userSession, languageCode);
             command.ChangeLanguage(Arg.Do<string>(x => argumentUsed = x));
 
-            // Action
+            // Act
             var viewModel = languageHandler.Handle(command);
 
             // Assert
@@ -98,7 +98,7 @@
             // Arrange
             var command = new ChangeLanguageCommand(userSession, languageCode);
 
-            // Action
+            // Act
             var viewModel = languageHandler.Handle(command);
 
             // Assert
@@ -111,7 +111,7 @@
             // Arrange
             AllLanguagesQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => languageHandler.Handle(nullQuery)));
         }
 
@@ -136,7 +136,7 @@
 
             var expectedViewModel = new LanguageViewModel(Language.CodeNames, expectedLanguageCode);
 
-            // Action
+            // Act
             var viewModel = languageHandler.Handle(query);
 
             // Assert

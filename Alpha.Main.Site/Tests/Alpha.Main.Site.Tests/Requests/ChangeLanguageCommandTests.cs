@@ -37,7 +37,7 @@
             // Arrange
             var command = new ChangeLanguageCommand(userSession, languageCode);
 
-            // Action
+            // Act
             command.ChangeLanguage(languageCode);
 
             // Assert

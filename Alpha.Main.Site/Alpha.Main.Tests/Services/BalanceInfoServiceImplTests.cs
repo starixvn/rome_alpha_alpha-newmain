@@ -31,7 +31,7 @@
         [Test]
         public void GetBalanceInfo_InvalidCustId_ReturnNull()
         {
-            // Action
+            // Act
             var balanceInfo = balanceInfoService.GetBalanceInfo(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
@@ -48,7 +48,7 @@
                 .Get<BalanceInfo>(Arg.Any<object>())
                 .Returns(expectedBalanceInfo);
 
-            // Action
+            // Act
             var balanceInfo = balanceInfoService.GetBalanceInfo(CustId.ValidId, UserLevel.Agent);
 
             // Assert

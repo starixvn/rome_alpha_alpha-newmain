@@ -28,7 +28,7 @@
         {
             // Arrange
 
-            // Action
+            // Act
             var profilePicture = customerProfileService.GetProfilePicture(custId);
 
             // Assert

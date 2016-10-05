@@ -23,7 +23,7 @@
             // Arrange
             string nullDocumentPath = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(nullDocumentPath)));
         }
 
@@ -33,7 +33,7 @@
             // Arrange
             string emptyDocumentPath = string.Empty;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(emptyDocumentPath)));
         }
 
@@ -43,7 +43,7 @@
         {
             // Arrange
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<DirectoryNotFoundException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(documentPath)));
         }
 
@@ -53,7 +53,7 @@
             // Arrange
             var absoluteDocumentPath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\InvalidDocument.xml");
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<XmlException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentPath)));
         }
 
@@ -62,7 +62,7 @@
         {
             // Arrange
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<FileNotFoundException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(documentPath)));
         }
 
@@ -73,7 +73,7 @@
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root></Root>";
             var absoluteDocumentPath = Path.Combine(applicationBaseDirectory, relativeDocumentPath);
 
-            // Action
+            // Act
             var document = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentPath);
 
             // Assert
@@ -86,7 +86,7 @@
             // Arrange
             XmlDocument documentSource = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => XMLDocumentHelper.AppendDocument(documentSource, new XmlDocument())));
         }
 
@@ -99,7 +99,7 @@
             var absoluteDocumentSourcePath = Path.Combine(applicationBaseDirectory, @"TestData\XMLDocumentHelper\ExampleXMLDocument.xml");
             XmlDocument documentSource = XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentSourcePath);
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => XMLDocumentHelper.AppendDocument(documentSource, documentTarget)));
         }
 
@@ -116,7 +116,7 @@
 
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root></Root>";
 
-            // Action
+            // Act
             XMLDocumentHelper.AppendDocument(documentSource, documentTarget);
 
             // Assert
@@ -136,7 +136,7 @@
 
             var expectedDocument = string.Empty;
 
-            // Action
+            // Act
             XMLDocumentHelper.AppendDocument(documentSource, documentTarget);
 
             // Assert
@@ -155,7 +155,7 @@
 
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root></Root>";
 
-            // Action
+            // Act
             XMLDocumentHelper.AppendDocument(documentSource, documentTarget);
 
             // Assert
@@ -174,7 +174,7 @@
 
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root></Root>";
 
-            // Action
+            // Act
             XMLDocumentHelper.AppendDocument(documentSource, documentTarget);
 
             // Assert
@@ -193,7 +193,7 @@
 
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root><SubNode2></SubNode2><SubNode1 /></Root>";
 
-            // Action
+            // Act
             XMLDocumentHelper.AppendDocument(documentSource, documentTarget);
 
             // Assert
@@ -212,7 +212,7 @@
 
             var expectedDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><Root><SubNode1></SubNode1><SubNode1 /></Root>";
 
-            // Action
+            // Act
             XMLDocumentHelper.AppendDocument(documentSource, documentTarget);
 
             // Assert

@@ -26,7 +26,7 @@
             // Arrange
             userSession.RoleId.Returns(userLevelId);
 
-            // Action
+            // Act
             var query = new NoticeQuery(userSession, DateTime.Today, 10, false);
 
             // Assert

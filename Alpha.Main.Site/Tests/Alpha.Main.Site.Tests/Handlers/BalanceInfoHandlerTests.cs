@@ -36,7 +36,7 @@
             // Arrange
             BalanceInfoQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => balanceInfoHandler.Handle(nullQuery)));
         }
 
@@ -51,7 +51,7 @@
 
             var query = new BalanceInfoQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = balanceInfoHandler.Handle(query);
 
             // Assert
@@ -76,7 +76,7 @@
                                                         query.UserLevel,
                                                         query.Currency);
 
-            // Action
+            // Act
             var balanceInfoViewModel = balanceInfoHandler.Handle(query);
 
             // Assert

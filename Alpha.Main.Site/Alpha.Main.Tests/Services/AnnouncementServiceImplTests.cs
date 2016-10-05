@@ -30,7 +30,7 @@
 
             var announcementServiceImpl = new AnnouncementServiceImpl();
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => announcementServiceImpl.GetHotAnnouncement(nullParam)));
         }
 
@@ -49,7 +49,7 @@
             // Arrange
             var test = new AgentDirectLoginTest.SettingChangedTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(
                 isPositionTakingChanged,
                 isBettingLimitChanged,
@@ -70,7 +70,7 @@
             // Arrange
             var test = new AgentDirectLoginTest.SettingNotChangedTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(hasAnnouncement, expectedAnnouncementContent);
 
             // Assert
@@ -96,7 +96,7 @@
             // Arrange
             var test = new NotAgentOrAdminLogInTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(
                 roleId,
                 isAdminLogIn,
@@ -117,7 +117,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.HasPrivateOrCommonAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(commonAnnouncementPath, privateMessagePath);
 
             // Assert
@@ -132,7 +132,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.ExpiredAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(expiredAnnouncementPath);
 
             // Assert
@@ -147,7 +147,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.ExcludeHotMessageTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(availableAnnouncementPath, site);
 
             // Assert
@@ -160,7 +160,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.IncludeHotMessageTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(availableAnnouncementPath, site);
 
             // Assert
@@ -174,7 +174,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.AvailableAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(availableAnnouncementPath);
 
             // Assert
@@ -192,7 +192,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.AvailableAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(language, availableAnnoucementPath, expectedAnnouncementContent);
 
             // Assert
@@ -205,7 +205,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.DisableProductTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run();
 
             // Assert
@@ -222,7 +222,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.ShowedAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(showedAnnouncementId, expectedAnnouncementContent);
 
             // Assert
@@ -235,7 +235,7 @@
             // Arrange
             var test = new DisableSecurityCodeAndValidAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run();
 
             // Assert
@@ -251,7 +251,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.NotForceUseSecurityCodeSiteTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(announcementPath, expectedAnnouncementContent);
 
             // Assert
@@ -268,7 +268,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.ForceUseSecurityCodeSiteTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(announcementPath, expectedAnnouncementContent);
 
             // Assert

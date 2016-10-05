@@ -35,7 +35,7 @@
         [Test]
         public void GetStatistics_InvalidCustId_ReturnNull()
         {
-            // Action
+            // Act
             var statistics = statisticsService.GetStatistics(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
@@ -50,7 +50,7 @@
 
             dynamicRepository.Get<Statistics>(Arg.Any<object>()).Returns(expectedStatistics);
 
-            // Action
+            // Act
             var statistics = statisticsService.GetStatistics(CustId.ValidId, UserLevel.Agent);
 
             // Assert
@@ -60,7 +60,7 @@
         [Test]
         public void GetTopWinningMembers_InvalidCustId_ReturnEmptyList()
         {
-            // Action
+            // Act
             var topWinningMembers = statisticsService.GetTopWinningMembers(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
@@ -78,7 +78,7 @@
                 .Fetch<TopWinningMember>(Arg.Any<object>())
                 .Returns(expectedTopWinningMembers);
 
-            // Action
+            // Act
             var topWinningMembers = statisticsService.GetTopWinningMembers(CustId.ValidId, UserLevel.Agent);
 
             // Assert
@@ -88,7 +88,7 @@
         [Test]
         public void GetTopTurnoverMembers_InvalidCustId_ReturnEmptyList()
         {
-            // Action
+            // Act
             var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
@@ -106,7 +106,7 @@
                 .Fetch<TopTurnoverMember>(Arg.Any<object>())
                 .Returns(expectedTopTurnoverMembers);
 
-            // Action
+            // Act
             var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(CustId.ValidId, UserLevel.Agent);
 
             // Assert
@@ -116,7 +116,7 @@
         [Test]
         public void GetNewMembers_InvalidCustId_ReturnEmptyList()
         {
-            // Action
+            // Act
             var newMembers = statisticsService.GetNewMembers(CustId.InvalidId);
 
             // Assert
@@ -132,7 +132,7 @@
 
             dynamicRepository.Fetch<NewMember>(Arg.Any<object>()).Returns(expectedNewMembers);
 
-            // Action
+            // Act
             var newMembers = statisticsService.GetNewMembers(CustId.ValidId);
 
             // Assert

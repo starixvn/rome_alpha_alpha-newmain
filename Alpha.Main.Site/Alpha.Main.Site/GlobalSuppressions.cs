@@ -8,6 +8,7 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Statistics.StatisticsQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Statistics.TopTurnoverMembersQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Statistics.TopWinningMembersQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Notice.NoticeQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession,System.DateTime,System.Int32,System.Boolean)")]
 
 #pragma warning disable 618, 612
 // This file is used by Code Analysis to maintain SuppressMessage 

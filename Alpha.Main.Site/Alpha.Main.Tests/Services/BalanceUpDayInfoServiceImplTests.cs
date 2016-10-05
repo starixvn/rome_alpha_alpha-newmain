@@ -30,7 +30,7 @@
                 .Get<BalanceUpDayInfo>(Arg.Any<object>())
                 .Returns(expectedBalanceUpDayInfo);
 
-            // Action
+            // Act
             var balanceUpDayInfo = balanceUpDayInfoService.GetBalanceUpDayInfo();
 
             // Assert

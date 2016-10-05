@@ -37,7 +37,7 @@
             // Arrange
             StatisticsQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => statisticsHandler.Handle(nullQuery)));
         }
 
@@ -47,7 +47,7 @@
             // Arrange
             TopWinningMembersQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => statisticsHandler.Handle(nullQuery)));
         }
 
@@ -57,7 +57,7 @@
             // Arrange
             TopTurnoverMembersQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => statisticsHandler.Handle(nullQuery)));
         }
 
@@ -67,7 +67,7 @@
             // Arrange
             NewMembersQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => statisticsHandler.Handle(nullQuery)));
         }
 
@@ -82,7 +82,7 @@
 
             var query = new StatisticsQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
@@ -100,7 +100,7 @@
 
             var query = new TopWinningMembersQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
@@ -118,7 +118,7 @@
 
             var query = new TopTurnoverMembersQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
@@ -136,7 +136,7 @@
 
             var query = new NewMembersQuery(CustId.ValidId);
 
-            // Action
+            // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
@@ -154,7 +154,7 @@
 
             var query = new StatisticsQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
@@ -172,7 +172,7 @@
 
             var query = new TopWinningMembersQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
@@ -190,7 +190,7 @@
 
             var query = new TopTurnoverMembersQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
@@ -208,7 +208,7 @@
 
             var query = new NewMembersQuery(CustId.ValidId);
 
-            // Action
+            // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
@@ -228,7 +228,7 @@
 
             var expectedStatisticsViewModel = new StatisticsViewModel(statistics, query.UserLevel);
 
-            // Action
+            // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert

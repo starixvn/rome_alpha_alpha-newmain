@@ -31,7 +31,7 @@
             // Arrange
             BriefProfileQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => customerProfileHandler.Handle(nullQuery)));
         }
 
@@ -43,7 +43,7 @@
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -57,7 +57,7 @@
             byte[] binaryAvatar,
             string expectedEmbedImage)
         {
-            // Arrange                                                             
+            // Arrange
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
             {
                 BinaryAvatar = binaryAvatar
@@ -67,7 +67,7 @@
 
             var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -88,7 +88,7 @@
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -108,7 +108,7 @@
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -128,7 +128,7 @@
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -152,7 +152,7 @@
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -168,7 +168,7 @@
             bool isInternal,
             string expectedNickName)
         {
-            // Arrange                                                             
+            // Arrange
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
 
             userSession.IsSubAcc.Returns(isSubAccount);
@@ -179,7 +179,7 @@
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -199,7 +199,7 @@
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert

@@ -36,7 +36,7 @@
             // Arrange
             NoticeQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => noticeHandler.Handle(nullQuery)));
         }
 

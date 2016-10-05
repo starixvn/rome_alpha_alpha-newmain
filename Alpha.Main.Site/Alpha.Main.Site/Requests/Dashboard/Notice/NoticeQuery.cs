@@ -3,8 +3,6 @@
 namespace Alpha.Main.Site.Requests.Notice
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;

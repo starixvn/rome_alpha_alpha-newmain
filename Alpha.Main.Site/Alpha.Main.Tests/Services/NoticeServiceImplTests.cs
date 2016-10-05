@@ -26,7 +26,7 @@
         [Test]
         public void GetNoticeMessages_InvalidCustIdAndParentSiteIds_ReturnEmpty()
         {
-            // Action
+            // Act
             var noticeMessages = noticeService.GetNoticeMessages(
                 CustId.InvalidId,
                 string.Empty,
@@ -47,7 +47,7 @@
             dynamicRepository.Fetch<NoticeMessage>(Arg.Any<CriteriaBase>())
                 .Returns(expectedNoticeMessages);
 
-            // Action
+            // Act
             var noticeMessages = noticeService
                 .GetNoticeMessages(CustId.ValidId, "1", DateTime.Today, 10, false);
 
@@ -58,7 +58,7 @@
         [Test]
         public void MarkMessageAsRead_InvalidCustId_ReturnFalse()
         {
-            // Action
+            // Act
             var isSuccess = noticeService.MarkMessageAsRead(CustId.InvalidId, 1);
 
             // Assert
@@ -68,7 +68,7 @@
         [Test]
         public void MarkMessageAsRead_ValidCustIdAndMessageIds_ReturnTrue()
         {
-            // Action
+            // Act
             var isSuccess = noticeService.MarkMessageAsRead(CustId.ValidId, 1);
 
             // Assert
