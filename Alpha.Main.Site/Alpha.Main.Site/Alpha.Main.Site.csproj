@@ -810,6 +810,7 @@
     <Compile Include="Handlers\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\BrowserHelper.cs" />
+    <Compile Include="Helpers\BrowserHelperImpl.cs" />
     <Compile Include="Helpers\StaticResources.cs" />
     <Compile Include="Requests\AllLanguagesQuery.cs" />
     <Compile Include="Requests\Announcement\HotAnnouncementQuery.cs" />

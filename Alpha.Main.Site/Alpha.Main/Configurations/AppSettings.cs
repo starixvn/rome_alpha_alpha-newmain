@@ -107,13 +107,5 @@
         {
             return ConfigurationManager.AppSettings[name];
         }
-
-        public static bool IsShowOldViewLink
-        {
-            get
-            {
-                return ConfigurationManager.AppSettings["IsShowOldViewLink"] == "1";
-            }
-        }
     }
 }

@@ -124,7 +124,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not yet familiar with some new features? .
+        ///   Looks up a localized string similar to Or click here to home page.
         /// </summary>
         public static string BackOldViewText {
             get {

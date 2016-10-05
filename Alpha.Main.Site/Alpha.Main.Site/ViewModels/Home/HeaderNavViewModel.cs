@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System.Web;
-    using Configurations;
     using Main.Helpers;
 
     public class HeaderNavViewModel
@@ -33,14 +32,5 @@
                 return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
             }
         }
-
-        public bool IsShowOldViewLink
-        {
-            get
-            {
-                return AppSettings.IsShowOldViewLink;
-            }
-        }
-
     }
 }

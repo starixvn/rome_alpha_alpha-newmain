@@ -7,20 +7,27 @@
     using Services;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
+    using Helpers;
+    using Site.Requests;
+    using ViewModels;
 
     [TestFixture]
     public class DefaultHandlerTests
     {
         private const string PasswordHashSessionKey = "ph";
+        private const string SawBrowserWarningPageSessionKey = "DefaultHandler.SawBrowserWarningPageSessionKey";
         private SessionManager sessionManager;
         private DefaultHandler defaultHandler;
         private IUserSession userSession;
+        private BrowserHelper browserHelper;
 
         [SetUp]
         public void SetUp()
         {
+            securityCodeSession = Substitute.For<ISecurityCodeSession>();
+            browserHelper = Substitute.For<BrowserHelper>();
             sessionManager = Substitute.For<SessionManager>();
-            defaultHandler = new DefaultHandler(sessionManager);
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper);
             userSession = Substitute.For<IUserSession>();
         }
 
@@ -66,5 +73,59 @@
             // Assert 
             Assert.AreEqual(argumentUsed, viewModel.PasswordHash);
         }
+
+        #region Handle BrowserQuery
+
+        [Test]
+        public void HandleBrowserQuery_BrowserIsUnsupported_ReturnIsUnsupportedBrowserIsTrue()
+        {
+            //// Arrange
+            userSession.RoleId.Returns((byte)4);
+            var browserQuery = new BrowserQuery(userSession);
+            browserHelper.CheckSupportedBrowsers().Returns(new BrowserViewModel
+            {
+                IsUnsupportedBrowser = true
+            });
+
+            //// Action 
+            var viewModel = defaultHandler.Handle(browserQuery);
+
+            //// 
+            Assert.IsTrue(viewModel.IsUnsupportedBrowser);
+        }
+
+        [Test]
+        public void HandleBrowserQuery_UserSawBrowserWarningPageOneTime_SetSawBrowserWarningPageFlagInSession()
+        {
+            //// Arrange
+            userSession.RoleId.Returns((byte)4);
+            var browserQuery = new BrowserQuery(userSession);
+            browserHelper.CheckSupportedBrowsers().Returns(new BrowserViewModel
+            {
+                IsUnsupportedBrowser = true
+            });
+
+            //// Action 
+            defaultHandler.Handle(browserQuery);
+
+            //// 
+            this.sessionManager.Received().Add<bool>(SawBrowserWarningPageSessionKey, true);
+        }
+
+        [Test]
+        public void HandleBrowserQuery_UserSawBrowserWarningPageAlready_ReturnIsUnsupportedBrowserIsFalse()
+        {
+            //// Arrange
+            this.sessionManager.Get<bool>(SawBrowserWarningPageSessionKey).Returns(true);
+            var browserQuery = new BrowserQuery(userSession);
+
+            //// Action 
+            var viewModel = defaultHandler.Handle(browserQuery);
+
+            //// 
+            Assert.IsFalse(viewModel.IsUnsupportedBrowser);
+        }
+
+        #endregion
     }
 }

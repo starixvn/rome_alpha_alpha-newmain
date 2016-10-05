@@ -28,15 +28,12 @@
 
         public ActionResult Index()
         {
-                if (AppSettings.IsShowOldViewLink)
-                {
-                    var browser = this.mediator.Send(new BrowserQuery(this.userSession));
+                var browser = this.mediator.Send(new BrowserQuery(this.userSession));
 
-                    if (browser.IsUnsupportedBrowser)
-                    {
-                        return View("UnsupportedBrowsers", browser);
-                    }
-            }
+                if (browser.IsUnsupportedBrowser)
+                {
+                    return View("UnsupportedBrowsers", browser);
+                }
 
                 if (!this.userSession.IsLogged
                     || this.userSession.IsPasswordExpired)

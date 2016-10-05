@@ -10,6 +10,7 @@
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
     using Handlers;
+    using Helpers;
     using Main.Helpers;
     using Main.Helpers.Impl;
     using Main.Models.Menus;
@@ -85,6 +86,7 @@
             //// Singleton
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
+            container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
 
             //// Transient
             container.RegisterPerWebRequest<AnnouncementService, AnnouncementServiceImpl>();

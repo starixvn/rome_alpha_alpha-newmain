@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using System;
     using Alpha.Main.Site.Models.Requests;
     using Alpha.Main.Site.ViewModels;
     using Helpers;
@@ -9,7 +8,7 @@
     using Requests;
     using Services;
 
-    public class DefaultHandler : 
+    public class DefaultHandler :
         IRequestHandler<IndexQuery, IndexViewModel>,
         IRequestHandler<BrowserQuery, BrowserViewModel>
     {
@@ -18,17 +17,28 @@
         /// </summary>
         private const string PasswordHashSessionKey = "ph";
 
-        private readonly SessionManager sessionManager;
+        private const string SawBrowserWarningPageSessionKey = "DefaultHandler.SawBrowserWarningPageSessionKey";
 
-        public DefaultHandler(SessionManager sessionManager)
+        private readonly SessionManager sessionManager;
+        private readonly BrowserHelper browserHelper;
+
+        public DefaultHandler(SessionManager sessionManager, BrowserHelper browserHelper)
         {
             this.sessionManager = sessionManager;
+            this.browserHelper = browserHelper;
         }
 
         public BrowserViewModel Handle(BrowserQuery message)
         {
-            var browser = BrowserHelper.CheckSupportedBrowsers();
+            if (this.sessionManager.Get<bool>(SawBrowserWarningPageSessionKey))
+            {
+                return new BrowserViewModel();
+            }
+
+            var browser = browserHelper.CheckSupportedBrowsers();
             browser.UserLevel = Enumeration.FromValue<UserLevel>(message.UserLevelId);
+
+            this.sessionManager.Add(SawBrowserWarningPageSessionKey, true);
 
             return browser;
         }

@@ -61,6 +61,12 @@ var alpha = {
             }
 
             return false;
+        },
+        IsIe8OrLower: function () {
+            var userAgent = window.navigator.userAgent.toLowerCase();
+            return (userAgent.indexOf('msie') != -1)
+                ? (parseInt(userAgent.split('msie')[1]) < 9)
+                : false;
         }
     },
     isScreenGreater1024: false,
