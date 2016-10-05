@@ -2,7 +2,7 @@
 
 var announcement = {
     showedMessageIds: [],
-    securityCodeId: ['20130426', '20130526'],
+    securityCodeId: '20130426,20130526',
     timeoutAnnouncement: 0,
     announcementCookieName: null,
 
