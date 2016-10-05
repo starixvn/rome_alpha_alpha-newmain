@@ -40,7 +40,7 @@
 
             DynamicRepository = Substitute.For<IDynamicRepository>();
             var settingChanges = GetSettingChanges(IsPositionTakingChanged, IsBettingLimitChanged);
-            DynamicRepository.Fetch<string>(Arg.Any<GetMessageTypeListCriteria>()).Returns(settingChanges);
+            DynamicRepository.Fetch<byte>(Arg.Any<GetMessageTypeListCriteria>()).Returns(settingChanges);
 
             IEnumerable<PersonalMessage> insertPersonalMessageResult = IsInsertPersonalMessage ?
                    new List<PersonalMessage> { new PersonalMessage { Id = 0 } } :
@@ -48,17 +48,17 @@
             DynamicRepository.Fetch<PersonalMessage>(Arg.Any<InsertPersonalMessageCriteria>()).Returns(insertPersonalMessageResult);
         }
 
-        private List<string> GetSettingChanges(bool isPositionTakingChanged, bool isBettingLimitChanged)
+        private List<byte> GetSettingChanges(bool isPositionTakingChanged, bool isBettingLimitChanged)
         {
-            var settingChanges = new List<string>();
+            var settingChanges = new List<byte>();
             if (isPositionTakingChanged)
             {
-                settingChanges.Add(PositionTakingChanged.ToString());
+                settingChanges.Add(PositionTakingChanged);
             }
 
             if (isBettingLimitChanged)
             {
-                settingChanges.Add(BettingLimitChanged.ToString());
+                settingChanges.Add(BettingLimitChanged);
             }
 
             return settingChanges;
