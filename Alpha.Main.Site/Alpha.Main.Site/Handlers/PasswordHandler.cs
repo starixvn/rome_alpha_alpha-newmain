@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using System;
+    using Alpha.SecurityCode.Services;
     using AppResources;
     using Main.Models;
     using Main.Models.CustomerProfiles;
@@ -29,19 +30,22 @@
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
         private readonly CustomerProfileService customerProfileService;
+        private readonly SecurityCodeChecker securityCodeChecker;
 
         public PasswordHandler(
             PasswordService passwordService,
             IUserSession userSession,
             CustomerProfileService customerProfileService,
             SessionManager sessionManager,
-            Encryptor encryptor)
+            Encryptor encryptor,
+            SecurityCodeChecker securityCodeChecker)
         {
             this.passwordService = passwordService;
             this.userSession = userSession;
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
             this.customerProfileService = customerProfileService;
+            this.securityCodeChecker = securityCodeChecker;
         }
 
         public Result Handle(ResetSubAccountPasswordCommand message)
@@ -68,7 +72,8 @@
             return new PasswordViewModel
             {
                 CustRoleId = message.CustRoleId,
-                HashKey = GetHasKey()
+                HashKey = GetHasKey(),
+                EnableSecurityCode = securityCodeChecker.IsEnableSecurityCode()
             };
         }
 

@@ -542,7 +542,9 @@
     <Content Include="Assets\bundles\security\security-code\verify-securitycode.js" />
     <Content Include="Assets\bundles\security\security-code\verify-securitycode.min.js" />
     <Content Include="Assets\bundles\security\security.css" />
-    <Content Include="Assets\bundles\security\security.min.css" />
+    <Content Include="Assets\bundles\security\security.min.css">
+      <DependentUpon>security.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\security\images\1.jpg" />
     <Content Include="Assets\styles\security\images\2.jpg" />
     <Content Include="Assets\styles\security\images\3.jpg" />
