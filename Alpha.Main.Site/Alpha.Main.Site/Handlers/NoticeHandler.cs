@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Main.Models.Notice;
     using MediatR;
-    using Requests.Notice;
+    using Requests.Dashboard.Notice;
     using Services;
     using ViewModels.Dashboard.Notice;
 
@@ -12,7 +12,8 @@
         IRequestHandler<NoticeQuery, NoticeMessagesViewModel>,
         IRequestHandler<MarkMessageAsReadQuery, bool>
     {
-        private NoticeService noticeService;
+        private const string QueryNullExceptionMessage = "Query cannot be null";
+        private readonly NoticeService noticeService;
 
         public NoticeHandler(NoticeService noticeService)
         {
@@ -23,7 +24,7 @@
         {
             if (message == null)
             {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+                throw new ArgumentNullException(nameof(message), QueryNullExceptionMessage);
             }
 
             var noticeMessages = noticeService.GetNoticeMessages(
@@ -44,7 +45,7 @@
         {
             if (message == null)
             {
-                throw new ArgumentNullException(nameof(message), "Query cannot be null");
+                throw new ArgumentNullException(nameof(message), QueryNullExceptionMessage);
             }
 
             var isSuccess = noticeService.MarkMessageAsRead(message.CustId, message.MessageId);

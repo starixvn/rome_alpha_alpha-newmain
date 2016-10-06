@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
-    using Alpha.Main.Models.Enumerations;
+    using Main.Models.Enumerations;
 
     public class BrowserViewModel
     {

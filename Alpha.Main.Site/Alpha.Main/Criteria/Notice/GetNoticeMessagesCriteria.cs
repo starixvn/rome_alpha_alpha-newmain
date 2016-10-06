@@ -5,24 +5,32 @@
 
     public class GetNoticeMessagesCriteria : CriteriaBase
     {
-        public int TargetId { get; set; }
-
-        public string TargetId2 { get; set; }
-
-        public DateTime LastPostTime { get; set; }
-
-        public int TotalMessage { get; set; }
-
-        public bool IsTest { get; set; }
-
-        public override string GetSettingKey()
+        public GetNoticeMessagesCriteria(
+            int targetId,
+            string targetId2,
+            DateTime lastPostTime,
+            int totalMessage,
+            bool isTest)
         {
-            return "Age_CustomerSelMessages";
+            TargetId = targetId;
+            TargetId2 = targetId2;
+            LastPostTime = lastPostTime;
+            TotalMessage = totalMessage;
+            IsTest = isTest;
         }
 
-        public override bool IsValid()
-        {
-            return TargetId > 0 && !string.IsNullOrEmpty(TargetId2);
-        }
+        public int TargetId { get; }
+
+        public string TargetId2 { get; }
+
+        public DateTime LastPostTime { get; }
+
+        public int TotalMessage { get; }
+
+        public bool IsTest { get; }
+
+        public override string GetSettingKey() => "Age_CustomerSelMessages";
+
+        public override bool IsValid() => TargetId > 0 && !string.IsNullOrEmpty(TargetId2);
     }
 }

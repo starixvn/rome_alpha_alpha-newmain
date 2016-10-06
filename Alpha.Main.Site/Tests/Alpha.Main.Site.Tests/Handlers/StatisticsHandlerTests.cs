@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 612, 618
+
 namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
@@ -10,7 +11,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using NUnit.Framework;
     using Services;
     using Site.Handlers;
-    using Site.Requests.Statistics;
+    using Site.Requests.Dashboard.Statistics;
     using Site.ViewModels.Dashboard.Statistics;
     using Sunplus.Agent.Model.Entities;
 
@@ -39,7 +40,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             StatisticsQuery nullQuery = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => statisticsHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(() => statisticsHandler.Handle(nullQuery));
         }
 
         [Test]
@@ -49,7 +50,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             TopWinningMembersQuery nullQuery = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => statisticsHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(() => statisticsHandler.Handle(nullQuery));
         }
 
         [Test]
@@ -59,7 +60,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             TopTurnoverMembersQuery nullQuery = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => statisticsHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(() => statisticsHandler.Handle(nullQuery));
         }
 
         [Test]
@@ -69,7 +70,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             NewMembersQuery nullQuery = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => statisticsHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(() => statisticsHandler.Handle(nullQuery));
         }
 
         [Test]

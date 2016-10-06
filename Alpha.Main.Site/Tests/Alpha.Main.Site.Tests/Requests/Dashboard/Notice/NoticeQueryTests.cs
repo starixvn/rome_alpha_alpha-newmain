@@ -1,11 +1,12 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Tests.Requests.Dashboard.Notice
 {
     using System;
     using Constants;
     using NSubstitute;
     using NUnit.Framework;
-    using Site.Requests.Notice;
+    using Site.Requests.Dashboard.Notice;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]

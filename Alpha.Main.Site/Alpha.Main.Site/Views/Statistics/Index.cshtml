@@ -66,6 +66,7 @@
     {
         @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
     }
+
     @RenderDropdownTableMemberInfo(Resources.top10WinningMembers, "listTopWinningMembers", Url.Action("TopWinningMembers", "Statistics"))
     @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Url.Action("TopTurnoverMembers", "Statistics"))
     @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Url.Action("NewMembers", "Statistics"))

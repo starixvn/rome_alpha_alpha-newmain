@@ -11,7 +11,7 @@
         private const int DefaultMaxContentLength = 100;
         private const string Ellipsis = "...";
 
-        private string currentLang = Language.English;
+        private readonly string currentLang = Language.English;
 
         public NoticeMessageWrapper(NoticeMessage noticeMessage, string currentLang)
         {
@@ -20,9 +20,9 @@
             PostTime = CurrentMessage.PostTime;
         }
 
-        public NoticeMessage CurrentMessage { get; private set; }
+        public NoticeMessage CurrentMessage { get; }
 
-        public DateTime PostTime { get; private set; }
+        public DateTime PostTime { get; }
 
         public string MessageType
         {
@@ -31,15 +31,17 @@
                 var msgType = CurrentMessage.MessageType;
                 var isSticky = CurrentMessage.IsSticky;
 
-                if (msgType == 1 && isSticky != true)
+                if (msgType == 1 && !isSticky)
                 {
                     return "private";
                 }
-                else if ((msgType == 1 || msgType == 3) && isSticky == true)
+
+                if ((msgType == 1 || msgType == 3) && isSticky)
                 {
                     return "special";
                 }
-                else if (msgType == 3 && isSticky == false)
+
+                if (msgType == 3 && !isSticky)
                 {
                     return "public";
                 }

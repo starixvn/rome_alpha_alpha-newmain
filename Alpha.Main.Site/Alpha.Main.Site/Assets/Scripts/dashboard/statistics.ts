@@ -21,7 +21,7 @@
 
     private loadInfo = (url: string, dataElement: any): void => {
         if (url !== '' || typeof url !== 'undefined') {
-            $.get(url, function (responseHtml) {
+            $.get(url, (responseHtml) => {
                 dataElement.html(responseHtml);
             });
         }

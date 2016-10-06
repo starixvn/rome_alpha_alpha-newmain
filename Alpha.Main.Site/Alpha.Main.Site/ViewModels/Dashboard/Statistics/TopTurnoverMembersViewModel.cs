@@ -10,6 +10,6 @@
             Members = members;
         }
 
-        public List<TopTurnoverMember> Members { get; private set; }
+        public List<TopTurnoverMember> Members { get; }
     }
 }

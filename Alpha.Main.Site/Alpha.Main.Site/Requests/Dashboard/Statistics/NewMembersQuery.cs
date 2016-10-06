@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.Requests.Statistics
+﻿namespace Alpha.Main.Site.Requests.Dashboard.Statistics
 {
     using MediatR;
     using ViewModels.Dashboard.Statistics;
@@ -10,6 +10,6 @@
             CustId = custId;
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
     }
 }

@@ -196,9 +196,9 @@
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteria.cs" />
     <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteria.cs" />
+    <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\ResetSubAccountSecurityCodeCriteria.cs" />
-    <Compile Include="Criteria\Statistics\GetTopTurnoverMembers.cs" />
-    <Compile Include="Criteria\Statistics\GetTopWinningMembers.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCounterCriteria.cs" />

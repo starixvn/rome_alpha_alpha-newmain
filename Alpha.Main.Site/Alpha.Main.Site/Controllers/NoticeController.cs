@@ -6,7 +6,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Mvc;
     using System.Web.SessionState;
     using MediatR;
-    using Requests.Notice;
+    using Requests.Dashboard.Notice;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard.Notice;
 
@@ -42,7 +42,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpPost]
         public bool MarkMessageAsRead(int messageId)
         {
-            var isSuccess = mediator.Send(new MarkMessageAsReadQuery(this.userSession.CustId, messageId));
+            var isSuccess = mediator.Send(new MarkMessageAsReadQuery(userSession.CustId, messageId));
 
             return isSuccess;
         }

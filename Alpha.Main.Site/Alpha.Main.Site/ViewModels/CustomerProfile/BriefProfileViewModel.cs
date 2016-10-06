@@ -1,26 +1,16 @@
 ﻿namespace Alpha.Main.Site.ViewModels.CustomerProfile
 {
-    using Alpha.Main.Helpers;
+    using Main.Helpers;
 
     public class BriefProfileViewModel
     {
-        public BriefProfileViewModel()
-        {
-        }
-
         public int CustId { get; set; }
 
         public bool IsDefaultAvatar { get; set; }
 
         public string EmbedImage { get; set; }
 
-        public string OldMainRootApp
-        {
-            get
-            {
-                return MicroSites.OldMainUrl("~/");
-            }
-        }
+        public string OldMainRootApp => MicroSites.OldMainUrl("~/");
 
         public string Username { get; set; }
 

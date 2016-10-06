@@ -9,7 +9,7 @@
     public class BalanceUpDayInfoServiceImpl : BalanceUpDayInfoService
     {
         private const string BalanceUpDayKey = "SUNPLUS.AGENT.MODEL.BL.REPORTS.BALANCEUPDAY";
-        private IDynamicRepository dynamicRepository;
+        private readonly IDynamicRepository dynamicRepository;
 
         public BalanceUpDayInfoServiceImpl(IDynamicRepository dynamicRepository)
         {
@@ -24,7 +24,7 @@
             {
                 var criteria = new GetBalanceUpDayInfoCriteria();
 
-                balanceUpDayInfo = this.dynamicRepository.Get<BalanceUpDayInfo>(criteria);
+                balanceUpDayInfo = dynamicRepository.Get<BalanceUpDayInfo>(criteria);
 
                 CacheService.Set(BalanceUpDayKey, balanceUpDayInfo, new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(5)));
             }

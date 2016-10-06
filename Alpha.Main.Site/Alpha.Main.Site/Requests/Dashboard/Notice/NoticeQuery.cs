@@ -1,5 +1,6 @@
 ﻿#pragma warning disable 618, 612
-namespace Alpha.Main.Site.Requests.Notice
+
+namespace Alpha.Main.Site.Requests.Dashboard.Notice
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Alpha.Main.Site.Requests.Notice
             [UserLevel.Agent.Value] = "3000,3300"
         };
 
-        private byte roleId;
+        private readonly byte roleId;
 
         public NoticeQuery(
             IUserSession userSession,
@@ -35,16 +36,16 @@ namespace Alpha.Main.Site.Requests.Notice
 
         public UserLevel UserLevel => Enumeration.FromValue<UserLevel>(roleId);
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
-        public DateTime LastPostTime { get; private set; } = DateTime.Today;
+        public DateTime LastPostTime { get; } = DateTime.Today;
 
-        public int TotalMessage { get; private set; } = 10;
+        public int TotalMessage { get; } = 10;
 
-        public bool IsTest { get; private set; } = false;
+        public bool IsTest { get; }
 
-        public string CurrentLang { get; private set; }
+        public string CurrentLang { get; }
 
-        public string ParentSiteId => parentSitesByLevel[UserLevel.Value];               
+        public string ParentSiteId => parentSitesByLevel[UserLevel.Value];
     }
 }

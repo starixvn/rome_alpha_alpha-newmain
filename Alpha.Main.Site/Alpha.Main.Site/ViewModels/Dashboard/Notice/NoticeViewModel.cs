@@ -7,6 +7,6 @@
             TotalMessage = totalMessage;
         }
 
-        public int TotalMessage { get; private set; }
+        public int TotalMessage { get; }
     }
 }

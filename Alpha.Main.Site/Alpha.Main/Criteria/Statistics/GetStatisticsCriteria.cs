@@ -6,14 +6,14 @@
 
     public class GetStatisticsCriteria : CriteriaBase
     {
-        private Dictionary<UserLevel, string> SettingKeys = new Dictionary<UserLevel, string>
+        private static readonly Dictionary<UserLevel, string> SettingKeys = new Dictionary<UserLevel, string>
         {
             [UserLevel.Agent] = "Age_CustomerSelStatisticsInfo_Ag",
             [UserLevel.Master] = "Age_CustomerSelStatisticsInfo_MAg",
             [UserLevel.Super] = "Age_CustomerSelStatisticsInfo_SAg"
-        };        
+        };
 
-        private string settingKey;
+        private readonly string settingKey;
 
         public GetStatisticsCriteria(UserLevel userLevel, int custId)
         {
@@ -21,10 +21,10 @@
             CustId = custId;
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
         public override string GetSettingKey() => settingKey;
 
-        public override bool IsValid() => CustId > 0;       
+        public override bool IsValid() => CustId > 0;
     }
 }

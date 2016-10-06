@@ -15,8 +15,8 @@
             LastMessagePostTime = NoticeMessages.Any() ? NoticeMessages.Last().PostTime : DateTime.MinValue;
         }
 
-        public List<NoticeMessageWrapper> NoticeMessages { get; private set; }
+        public List<NoticeMessageWrapper> NoticeMessages { get; }
 
-        public DateTime LastMessagePostTime { get; private set; }
+        public DateTime LastMessagePostTime { get; }
     }
 }

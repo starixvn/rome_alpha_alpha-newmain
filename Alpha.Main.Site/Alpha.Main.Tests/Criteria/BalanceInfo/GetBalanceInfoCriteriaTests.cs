@@ -4,11 +4,10 @@
     using Main.Constants;
     using Main.Criteria.BalanceInfo;
     using Main.Models.Enumerations;
-    using NSubstitute;
     using NUnit.Framework;
 
     [TestFixture]
-    public class GetBalanceInfoCriteriaTest
+    public class GetBalanceInfoCriteriaTests
     {
         [TestCase(RoleId.Agent, "Age_CustomerSelBalanceInfo_Ag")]
         [TestCase(RoleId.Master, "Age_CustomerSelBalanceInfo_MAg")]
@@ -29,14 +28,14 @@
         [Test]
         public void IsValid_CustIdIsGreaterThanZero_ReturnTrue()
         {
-            // Arrange          
-            int custId = 69;  
+            // Arrange
+            var custId = 69;
             var criteria = new GetBalanceInfoCriteria(UserLevel.Agent, custId, DateTime.Now);
 
             // Act
-            bool actual = criteria.IsValid();
+            var actual = criteria.IsValid();
 
-            /// Assert           
+            // Assert
             Assert.AreEqual(true, actual);
         }
 
@@ -44,13 +43,13 @@
         [TestCase(-1)]
         public void IsValid_CustIdIsLessThanOrEqualToZero_ReturnFalse(int custId)
         {
-            // Arrange            
+            // Arrange
             var criteria = new GetBalanceInfoCriteria(UserLevel.Agent, custId, DateTime.Now);
 
             // Act
-            bool actual = criteria.IsValid();
+            var actual = criteria.IsValid();
 
-            /// Assert           
+            // Assert
             Assert.AreEqual(false, actual);
         }
 
@@ -71,7 +70,7 @@
             // Arrange
             var custId = 69;
             var criteria = new GetBalanceInfoCriteria(UserLevel.Agent, custId, DateTime.Now);
-                
+
             // Act & Assert
             Assert.AreEqual(custId, criteria.CustId);
         }

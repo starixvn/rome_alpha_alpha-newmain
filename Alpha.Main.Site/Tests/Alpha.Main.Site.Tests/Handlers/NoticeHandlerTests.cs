@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 612, 618
+
 namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
@@ -10,7 +11,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using NUnit.Framework;
     using Services;
     using Site.Handlers;
-    using Site.Requests.Notice;
+    using Site.Requests.Dashboard.Notice;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]

@@ -14,7 +14,7 @@
             [UserLevel.Super] = "Age_CustomerSelBalanceInfo_SAg"
         };
 
-        private string settingKey;
+        private readonly string settingKey;
 
         public GetBalanceInfoCriteria(UserLevel userLevel, int custId, DateTime moveBetsDay)
         {
@@ -23,12 +23,12 @@
             MoveBetsDay = moveBetsDay;
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
-        public DateTime MoveBetsDay { get; private set; }
+        public DateTime MoveBetsDay { get; }
 
-        public override string GetSettingKey() => settingKey;        
+        public override string GetSettingKey() => settingKey;
 
-        public override bool IsValid() => CustId > 0;               
+        public override bool IsValid() => CustId > 0;
     }
 }

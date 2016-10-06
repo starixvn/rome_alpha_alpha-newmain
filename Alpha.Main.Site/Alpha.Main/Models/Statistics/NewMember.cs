@@ -14,10 +14,10 @@
 
         public int CustId { get; set; }
 
-        public string UserName { get; private set; }
+        public string UserName { get; }
 
-        public decimal GivenCredit { get; private set; }
+        public decimal GivenCredit { get; }
 
-        public DateTime CreatedDate { get; private set; }
+        public DateTime CreatedDate { get; }
     }
 }

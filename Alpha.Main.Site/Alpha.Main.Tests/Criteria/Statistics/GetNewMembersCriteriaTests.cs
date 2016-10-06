@@ -1,11 +1,10 @@
 ﻿namespace Alpha.Main.Tests.Criteria.Statistics
 {
     using Main.Criteria.Statistics;
-    using NSubstitute;
     using NUnit.Framework;
 
     [TestFixture]
-    public class GetNewMembersCriteriaTest
+    public class GetNewMembersCriteriaTests
     {
         [Test]
         public void GetSettingKey_Always_Return_Age_CustomerSelNewMembers()
@@ -31,16 +30,17 @@
             Assert.AreEqual(custId, criteria.CustId);
         }
 
+        [Test]
         public void IsValid_CustIdIsGreaterThanZero_ReturnTrue()
         {
-            // Arrange          
-            int custId = 69;
+            // Arrange
+            var custId = 69;
             var criteria = new GetNewMembersCriteria(custId);
 
             // Act
-            bool actual = criteria.IsValid();
+            var actual = criteria.IsValid();
 
-            /// Assert           
+            // Assert
             Assert.AreEqual(true, actual);
         }
 
@@ -48,13 +48,13 @@
         [TestCase(-1)]
         public void IsValid_CustIdIsLessThanOrEqualToZero_ReturnFalse(int custId)
         {
-            // Arrange      
+            // Arrange
             var criteria = new GetNewMembersCriteria(custId);
 
             // Act
-            bool actual = criteria.IsValid();
+            var actual = criteria.IsValid();
 
-            /// Assert           
+            // Assert
             Assert.AreEqual(false, actual);
         }
     }

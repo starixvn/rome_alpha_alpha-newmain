@@ -2,7 +2,7 @@
 {
     using System;
     using MediatR;
-    using Requests.Statistics;
+    using Requests.Dashboard.Statistics;
     using Services;
     using ViewModels.Dashboard.Statistics;
 
@@ -12,7 +12,7 @@
         IRequestHandler<TopTurnoverMembersQuery, TopTurnoverMembersViewModel>,
         IRequestHandler<NewMembersQuery, NewMembersViewModel>
     {
-        private StatisticsService statisticsService;
+        private readonly StatisticsService statisticsService;
 
         public StatisticsHandler(StatisticsService statisticsService)
         {

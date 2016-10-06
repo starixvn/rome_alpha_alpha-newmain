@@ -10,8 +10,8 @@
             MoveBetsDay = moveBetsDay;
         }
 
-        public DateTime BalanceUpDay { get; private set; }
+        public DateTime BalanceUpDay { get; }
 
-        public DateTime MoveBetsDay { get; private set; }
+        public DateTime MoveBetsDay { get; }
     }
 }

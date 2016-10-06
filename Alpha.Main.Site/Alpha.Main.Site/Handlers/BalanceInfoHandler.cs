@@ -2,13 +2,13 @@
 {
     using System;
     using MediatR;
-    using Requests.BalanceInfo;
+    using Requests.Dashboard.BalanceInfo;
     using Services;
-    using ViewModels.Dashboard;
+    using ViewModels.Dashboard.BalanceInfo;
 
     public class BalanceInfoHandler : IRequestHandler<BalanceInfoQuery, BalanceInfoViewModel>
     {
-        private BalanceInfoService balanceInfoService;
+        private readonly BalanceInfoService balanceInfoService;
 
         public BalanceInfoHandler(
             BalanceInfoService balanceInfoService)

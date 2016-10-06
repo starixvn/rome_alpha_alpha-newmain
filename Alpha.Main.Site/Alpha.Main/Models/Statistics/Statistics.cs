@@ -68,28 +68,28 @@
             TotalMasterSuspended = totalMasterSuspended;
         }
 
-        public decimal Outstanding { get; private set; }
+        public decimal Outstanding { get; }
 
-        public decimal TotalOutstanding { get; private set; }
+        public decimal TotalOutstanding { get; }
 
-        public int TotalMemberActive { get; private set; }
+        public int TotalMemberActive { get; }
 
-        public int TotalMemberClosed { get; private set; }
+        public int TotalMemberClosed { get; }
 
-        public int TotalMemberSuspended { get; private set; }
+        public int TotalMemberSuspended { get; }
 
-        public int TotalAgentActive { get; private set; }
+        public int TotalAgentActive { get; }
 
-        public int TotalAgentClosed { get; private set; }
+        public int TotalAgentClosed { get; }
 
-        public int TotalAgentSuspended { get; private set; }
+        public int TotalAgentSuspended { get; }
 
-        public int TotalMasterActive { get; private set; }
+        public int TotalMasterActive { get; }
 
-        public int TotalMasterClosed { get; private set; }
+        public int TotalMasterClosed { get; }
 
-        public int TotalMasterSuspended { get; private set; }
+        public int TotalMasterSuspended { get; }
 
-        public int NumberNewMembers { get; private set; }
+        public int NumberNewMembers { get; }
     }
 }

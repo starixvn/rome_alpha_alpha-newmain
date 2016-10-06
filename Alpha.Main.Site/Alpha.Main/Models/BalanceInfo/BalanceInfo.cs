@@ -24,22 +24,22 @@
             MemberCredit = memberCredit;
         }
 
-        public string UserName { get; private set; }
+        public string UserName { get; }
 
-        public decimal CashBalance { get; private set; }
+        public decimal CashBalance { get; }
 
-        public decimal YesterdayCashBalance { get; private set; }
+        public decimal YesterdayCashBalance { get; }
 
-        public decimal TotalBalance { get; private set; }
+        public decimal TotalBalance { get; }
 
-        public decimal YesterdayTotalBalance { get; private set; }
+        public decimal YesterdayTotalBalance { get; }
 
-        public decimal TodayWinLoss { get; private set; }
+        public decimal TodayWinLoss { get; }
 
-        public decimal YesterdayWinLoss { get; private set; }
+        public decimal YesterdayWinLoss { get; }
 
-        public decimal GivenCredit { get; private set; }
+        public decimal GivenCredit { get; }
 
-        public decimal MemberCredit { get; private set; }
+        public decimal MemberCredit { get; }
     }
 }

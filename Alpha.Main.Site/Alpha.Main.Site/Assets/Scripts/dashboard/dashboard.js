@@ -20,7 +20,6 @@ var Dashboard = (function () {
         this.loadInfo('#stats', this.onCompleteLoadStats);
         this.loadInfo('#notice', this.onCompleteLoadNotice);
     }
-    ;
     return Dashboard;
 }());
 $(document).ready(function () {

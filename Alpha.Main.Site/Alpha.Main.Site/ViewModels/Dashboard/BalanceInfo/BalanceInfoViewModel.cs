@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.ViewModels.Dashboard
+﻿namespace Alpha.Main.Site.ViewModels.Dashboard.BalanceInfo
 {
     using AppResources;
     using Main.Models.BalanceInfo;
@@ -16,9 +16,9 @@
             SetLabelTextByUserLevel(userLevel);
         }
 
-        public BalanceInfo BalanceInfo { get; private set; }
+        public BalanceInfo BalanceInfo { get; }
 
-        public string Currency { get; private set; } = "UUS";
+        public string Currency { get; } = "UUS";
 
         public string UserLevelLabel { get; private set; }
 

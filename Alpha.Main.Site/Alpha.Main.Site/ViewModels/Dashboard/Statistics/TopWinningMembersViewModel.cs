@@ -10,6 +10,6 @@
             Members = members;
         }
 
-        public List<TopWinningMember> Members { get; private set; }
+        public List<TopWinningMember> Members { get; }
     }
 }

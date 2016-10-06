@@ -65,7 +65,7 @@
         {
             get
             {
-                var isAuthorized = ByPassAuthorization || authorizeUrlFunc(this.Url);
+                var isAuthorized = ByPassAuthorization || authorizeUrlFunc(Url);
 
                 return isAuthorized
                     ? getMenuStatusFunc()

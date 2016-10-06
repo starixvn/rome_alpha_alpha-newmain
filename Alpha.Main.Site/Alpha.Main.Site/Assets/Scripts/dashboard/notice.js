@@ -19,26 +19,27 @@ var NoticeMessage = (function () {
             });
         };
         this.markMessageAsRead = function (message) {
-            var isRead = message.hasClass('bold');
-            var onSuccess = function (isMarkedSuccess) {
-                if (isMarkedSuccess) {
-                    message.removeClass('bold');
-                }
-            };
-            var ajaxSetting = {
-                url: '/site-main/Notice/MarkMessageAsRead',
-                data: { messageId: message.attr('id') },
-                method: 'POST',
-                success: onSuccess
-            };
-            $.ajax(ajaxSetting);
+            var isUnRead = message.hasClass('bold');
+            if (isUnRead) {
+                var onSuccess = function (isMarkedSuccess) {
+                    if (isMarkedSuccess) {
+                        message.removeClass('bold');
+                    }
+                };
+                var ajaxSetting = {
+                    url: '/site-main/Notice/MarkMessageAsRead',
+                    data: { messageId: message.attr('id') },
+                    method: 'POST',
+                    success: onSuccess
+                };
+                $.ajax(ajaxSetting);
+            }
         };
         this.showMoreMessagesRegister = function () {
             var $moreMessagesBtn = $('.more-info');
             $moreMessagesBtn.click(function () {
                 var $content = $('#notice');
                 var onSuccess = function (htmlString) {
-                    debugger;
                     $content.html(htmlString);
                     new NoticeMessage();
                 };
@@ -55,7 +56,6 @@ var NoticeMessage = (function () {
         this.onClickMessageRegister(this.markMessageAsRead);
         this.showMoreMessagesRegister();
     }
-    ;
     return NoticeMessage;
 }());
 //# sourceMappingURL=notice.js.map

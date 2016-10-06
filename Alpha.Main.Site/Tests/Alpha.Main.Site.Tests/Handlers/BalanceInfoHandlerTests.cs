@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 612, 618
+
 namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
@@ -9,8 +10,8 @@ namespace Alpha.Main.Site.Tests.Handlers
     using NUnit.Framework;
     using Services;
     using Site.Handlers;
-    using Site.Requests.BalanceInfo;
-    using Site.ViewModels.Dashboard;
+    using Site.Requests.Dashboard.BalanceInfo;
+    using Site.ViewModels.Dashboard.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
@@ -38,7 +39,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             BalanceInfoQuery nullQuery = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => balanceInfoHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(() => balanceInfoHandler.Handle(nullQuery));
         }
 
         [Test]

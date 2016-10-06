@@ -7,10 +7,8 @@
 
     public class BalanceInfoServiceImpl : BalanceInfoService
     {
-        private const string BalanceUpDayKey = "SUNPLUS.AGENT.MODEL.BL.REPORTS.BALANCEUPDAY";
-
-        private BalanceUpDayInfoService balanceUpDayInfoService;
-        private IDynamicRepository dynamicRepository;
+        private readonly BalanceUpDayInfoService balanceUpDayInfoService;
+        private readonly IDynamicRepository dynamicRepository;
 
         public BalanceInfoServiceImpl(
             BalanceUpDayInfoService balanceUpDayInfoService,

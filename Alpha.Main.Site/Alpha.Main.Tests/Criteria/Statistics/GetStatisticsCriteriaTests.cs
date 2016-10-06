@@ -7,13 +7,13 @@
     using NUnit.Framework;
 
     [TestFixture]
-    public class GetStatisticsCriteriaTest
+    public class GetStatisticsCriteriaTests
     {
         [TestCase(RoleId.Agent, "Age_CustomerSelStatisticsInfo_Ag")]
         [TestCase(RoleId.Master, "Age_CustomerSelStatisticsInfo_MAg")]
         [TestCase(RoleId.Super, "Age_CustomerSelStatisticsInfo_SAg")]
         public void GetSettingKey_Always_ReturnValidSettingKeyByLevel(byte userLevelValue, string settingKey)
-        {            
+        {
             // Arrange
             var userLevel = Enumeration.FromValue<UserLevel>(userLevelValue);
             var criteria = new GetStatisticsCriteria(userLevel, Arg.Any<int>());
@@ -28,14 +28,14 @@
         [Test]
         public void IsValid_CustIdIsGreaterThanZero_ReturnTrue()
         {
-            // Arrange          
-            int custId = 69;
+            // Arrange
+            var custId = 69;
             var criteria = new GetStatisticsCriteria(UserLevel.Agent, custId);
 
             // Act
-            bool actual = criteria.IsValid();
+            var actual = criteria.IsValid();
 
-            /// Assert           
+            // Assert
             Assert.AreEqual(true, actual);
         }
 
@@ -43,13 +43,13 @@
         [TestCase(-1)]
         public void IsValid_CustIdIsLessThanOrEqualToZero_ReturnFalse(int custId)
         {
-            // Arrange            
+            // Arrange
             var criteria = new GetStatisticsCriteria(UserLevel.Agent, custId);
 
             // Act
-            bool actual = criteria.IsValid();
+            var actual = criteria.IsValid();
 
-            /// Assert           
+            // Assert
             Assert.AreEqual(false, actual);
         }
 

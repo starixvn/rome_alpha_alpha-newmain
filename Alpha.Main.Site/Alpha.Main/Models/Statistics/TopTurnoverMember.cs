@@ -9,10 +9,10 @@
             Turnover = turnOver;
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
-        public string UserName { get; private set; }
+        public string UserName { get; }
 
-        public decimal Turnover { get; private set; }
+        public decimal Turnover { get; }
     }
 }

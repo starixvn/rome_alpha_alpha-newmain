@@ -5,7 +5,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Mvc;
     using System.Web.SessionState;
     using MediatR;
-    using Requests.Statistics;
+    using Requests.Dashboard.Statistics;
     using Sunplus.Agent.Model.Entities;
 
     [SessionState(SessionStateBehavior.ReadOnly)]

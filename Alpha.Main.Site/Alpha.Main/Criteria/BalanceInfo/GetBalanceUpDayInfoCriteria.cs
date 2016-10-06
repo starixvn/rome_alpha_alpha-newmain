@@ -4,14 +4,8 @@
 
     public class GetBalanceUpDayInfoCriteria : CriteriaBase
     {
-        public override string GetSettingKey()
-        {
-            return "Age_SelBalanceUpDay";
-        }
+        public override string GetSettingKey() => "Age_SelBalanceUpDay";
 
-        public override bool IsValid()
-        {
-            return true;
-        }
+        public override bool IsValid() => true;
     }
 }

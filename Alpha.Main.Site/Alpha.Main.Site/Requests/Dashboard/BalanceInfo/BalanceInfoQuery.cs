@@ -1,11 +1,11 @@
 ﻿#pragma warning disable 618, 612
 
-namespace Alpha.Main.Site.Requests.BalanceInfo
+namespace Alpha.Main.Site.Requests.Dashboard.BalanceInfo
 {
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels.Dashboard;
+    using ViewModels.Dashboard.BalanceInfo;
 
     public class BalanceInfoQuery : IRequest<BalanceInfoViewModel>
     {
@@ -16,10 +16,10 @@ namespace Alpha.Main.Site.Requests.BalanceInfo
             Currency = userSession.Currency;
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
-        public UserLevel UserLevel { get; private set; }
+        public UserLevel UserLevel { get; }
 
-        public string Currency { get; private set; }
+        public string Currency { get; }
     }
 }

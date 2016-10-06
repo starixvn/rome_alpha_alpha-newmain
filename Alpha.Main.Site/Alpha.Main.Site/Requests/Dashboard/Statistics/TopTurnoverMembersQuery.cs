@@ -1,6 +1,6 @@
 ﻿#pragma warning disable 618, 612
 
-namespace Alpha.Main.Site.Requests.Statistics
+namespace Alpha.Main.Site.Requests.Dashboard.Statistics
 {
     using Main.Models.Enumerations;
     using MediatR;
@@ -15,8 +15,8 @@ namespace Alpha.Main.Site.Requests.Statistics
             UserLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
-        public UserLevel UserLevel { get; private set; }
+        public UserLevel UserLevel { get; }
     }
 }

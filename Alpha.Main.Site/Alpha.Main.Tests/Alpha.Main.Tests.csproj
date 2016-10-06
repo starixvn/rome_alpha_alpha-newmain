@@ -124,9 +124,14 @@
   <ItemGroup>
     <Compile Include="Constants\CustId.cs" />
     <Compile Include="Constants\RoleId.cs" />
-    <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTest.cs" />
-    <Compile Include="Criteria\Statistics\GetNewMembersCriteriaTest.cs" />
-    <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTest.cs" />
+    <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
+    <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
+    <Compile Include="Criteria\Notice\MarkMessageAsReadCriteriaTests.cs" />
+    <Compile Include="Criteria\Notice\GetNoticeMessagesCriteriaTests.cs" />
+    <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteriaTests.cs" />
+    <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteriaTests.cs" />
+    <Compile Include="Criteria\Statistics\GetNewMembersCriteriaTests.cs" />
+    <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />

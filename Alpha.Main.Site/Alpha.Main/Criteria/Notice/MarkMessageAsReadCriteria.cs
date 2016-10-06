@@ -4,18 +4,18 @@
 
     public class MarkMessageAsReadCriteria : NonQueryCommand
     {
-        public int UserId { get; set; }
-
-        public string MessageIds { get; set; }
-
-        public override string GetSettingKey()
+        public MarkMessageAsReadCriteria(int userId, string messageIds)
         {
-            return "Age_CustomerUpdMessagesRead";
+            UserId = userId;
+            MessageIds = messageIds;
         }
 
-        public override bool IsValid()
-        {
-            return UserId > 0;
-        }
+        public int UserId { get; }
+
+        public string MessageIds { get; }
+
+        public override string GetSettingKey() => "Age_CustomerUpdMessagesRead";
+
+        public override bool IsValid() => UserId > 0;
     }
 }

@@ -9,7 +9,7 @@
 
     public class NoticeServiceImpl : NoticeService
     {
-        private IDynamicRepository dynamicRepository;
+        private readonly IDynamicRepository dynamicRepository;
 
         public NoticeServiceImpl(
             IDynamicRepository dynamicRepository)
@@ -24,14 +24,7 @@
             int totalMessage,
             bool isTest)
         {
-            var criteria = new GetNoticeMessagesCriteria
-            {
-                TargetId = targetId,
-                TargetId2 = targetId2,
-                LastPostTime = lastPostTime,
-                TotalMessage = totalMessage,
-                IsTest = isTest
-            };
+            var criteria = new GetNoticeMessagesCriteria(targetId, targetId2, lastPostTime, totalMessage, isTest);
 
             var message = dynamicRepository.Fetch<NoticeMessage>(criteria).ToList();
 
@@ -40,11 +33,7 @@
 
         public bool MarkMessageAsRead(int custId, int messageId)
         {
-            var criteria = new MarkMessageAsReadCriteria()
-            {
-                UserId = custId,
-                MessageIds = messageId.ToString()
-            };
+            var criteria = new MarkMessageAsReadCriteria(custId, messageId.ToString());
 
             if (!criteria.IsValid())
             {

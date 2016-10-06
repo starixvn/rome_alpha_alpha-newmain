@@ -147,7 +147,7 @@ var headerNav = {
         });
 
         // Quick search component for mobile
-        headerNav.domElements.iconSearch.click(function () {
+        headerNav.domElements.iconSearch.click(() => {
             let topSearchbar = $('.top-search-bar'),
                 topSearchInput = $('.top-search-input'),
                 iconClose = $('.icon-close'),
@@ -157,12 +157,12 @@ var headerNav = {
             topSearchInput.val('');
             headerNav.domElements.sideBarContent.append("<div class='blockUI'></div>");
 
-            let onCloseSearchBar = () => {
+            const onCloseSearchBar = () => {
                 topSearchbar.removeClass(searchBarToggleClass);
                 headerNav.domElements.sideBarContent.find(".blockUI").remove();
             };
 
-            let getSuggestions = (query, process) => {
+            const getSuggestions = (query, process) => {
                 return $.get(
                     headerNav.urls.queryUserName,
                     { query: query },
@@ -181,7 +181,7 @@ var headerNav = {
                     });
             };
 
-            let afterSelectSuggestionItem = (item) => {
+            const afterSelectSuggestionItem = (item) => {
                 onCloseSearchBar();
                 menuBar.collapseLeftPanel();
                 menuBar.activateAccountInfoTab(null, item);

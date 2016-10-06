@@ -9,7 +9,7 @@
             CustId = custId;
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
         public override string GetSettingKey() => "Age_CustomerSelNewMembers";
 

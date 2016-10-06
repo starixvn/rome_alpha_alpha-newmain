@@ -5,17 +5,18 @@ class Dashboard {
     constructor() {
         this.loadInfo('#stats', this.onCompleteLoadStats);
         this.loadInfo('#notice', this.onCompleteLoadNotice);
-    };
+    }
 
     private loadInfo = (id: string, onCompleteLoading: any): void => {
         let $component = $(id),
             url = $component.attr('action-url');
 
         if (url !== '' || typeof url !== 'undefined') {
-            $.get(url, function (responseHtml) {
-                $component.html(responseHtml);
-                onCompleteLoading();
-            })
+            $.get(url,
+                (responseHtml) => {
+                    $component.html(responseHtml);
+                    onCompleteLoading();
+                });
         }
     }
 
@@ -28,6 +29,6 @@ class Dashboard {
     }
 }
 
-$(document).ready(function () {
+$(document).ready(() => {
     new Dashboard();
 });

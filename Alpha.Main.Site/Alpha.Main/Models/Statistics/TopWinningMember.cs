@@ -9,10 +9,10 @@
             WinLoss = winLoss;
         }
 
-        public int CustId { get; set; }
+        public int CustId { get; }
 
-        public string UserName { get; set; }
+        public string UserName { get; }
 
-        public decimal WinLoss { get; set; }
+        public decimal WinLoss { get; }
     }
 }

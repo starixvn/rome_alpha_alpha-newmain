@@ -2,7 +2,7 @@
     constructor() {
         this.onClickMessageRegister(this.markMessageAsRead);
         this.showMoreMessagesRegister();
-    };
+    }
 
     onClickMessageRegister = (markMessageAsRead: any) => {
         $('.msg').each(function () {
@@ -28,37 +28,38 @@
     }
 
     markMessageAsRead = (message: any) => {
-        let isRead: boolean = message.hasClass('bold');
+        const isUnRead: boolean = message.hasClass('bold');
 
-        let onSuccess = (isMarkedSuccess: any) => {
-            if (isMarkedSuccess) {
-                message.removeClass('bold');
-            }
-        };
+        if (isUnRead) {
+            const onSuccess = (isMarkedSuccess: any) => {
+                if (isMarkedSuccess) {
+                    message.removeClass('bold');
+                }
+            };
 
-        let ajaxSetting = {
-            url: '/site-main/Notice/MarkMessageAsRead',
-            data: { messageId: message.attr('id') },
-            method: 'POST',
-            success: onSuccess
-        };
+            const ajaxSetting = {
+                url: '/site-main/Notice/MarkMessageAsRead',
+                data: { messageId: message.attr('id') },
+                method: 'POST',
+                success: onSuccess
+            };
 
-        $.ajax(ajaxSetting);
+            $.ajax(ajaxSetting);
+        }
     }
 
     showMoreMessagesRegister = () => {
-        let $moreMessagesBtn = $('.more-info');
+        const $moreMessagesBtn = $('.more-info');
 
         $moreMessagesBtn.click(() => {
-            let $content = $('#notice');
+            const $content = $('#notice');
 
-            let onSuccess = (htmlString: any) => {
-                debugger
+            const onSuccess = (htmlString: any) => {
                 $content.html(htmlString);
                 new NoticeMessage();
             }
 
-            let ajaxSetting = {
+            const ajaxSetting = {
                 url: '/site-main/Notice/MoreMessages?totalMessage=' + $moreMessagesBtn.attr('totalMsg'),
                 method: 'GET',
                 success: onSuccess

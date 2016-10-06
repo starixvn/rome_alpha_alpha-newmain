@@ -1,9 +1,10 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using MediatR;
-    using Requests.BalanceInfo;
+    using Requests.Dashboard.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard;
 

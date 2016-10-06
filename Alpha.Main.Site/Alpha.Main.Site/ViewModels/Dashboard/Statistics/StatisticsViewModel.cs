@@ -13,11 +13,11 @@
             OutstandingLabel = GetOutStandingLabelByLevel(userLevel);
         }
 
-        public Statistics Statistics { get; private set; }
+        public Statistics Statistics { get; }
 
-        public UserLevel UserLevel { get; private set; }
+        public UserLevel UserLevel { get; }
 
-        public string OutstandingLabel { get; private set; }
+        public string OutstandingLabel { get; }
 
         private string GetOutStandingLabelByLevel(UserLevel userLevel)
         {
@@ -25,14 +25,13 @@
             {
                 return Resources.superOutstanding;
             }
-            else if (userLevel.IsMasterLevel())
+
+            if (userLevel.IsMasterLevel())
             {
                 return Resources.masterOutstanding;
             }
-            else
-            {
-                return Resources.agentOutstanding;
-            }
+
+            return Resources.agentOutstanding;
         }
     }
 }

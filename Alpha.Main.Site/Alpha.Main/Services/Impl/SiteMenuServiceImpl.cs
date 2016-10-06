@@ -18,7 +18,7 @@
         private readonly SiteMapReader siteMapReader;
 
         public SiteMenuServiceImpl(
-            CachingManager cacheManager, 
+            CachingManager cacheManager,
             MenuItemBuilder menuItemBuilder,
             SiteMapReader siteMapReader)
         {
@@ -48,7 +48,7 @@
 
             if (menuItems == null || isCookieLess)
             {
-                var rootNode = this.siteMapReader.GetRootNode();
+                var rootNode = siteMapReader.GetRootNode();
 
                 menuItems = BuildMenu(rootNode, userLevel);
 

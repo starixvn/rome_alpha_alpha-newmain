@@ -1,11 +1,11 @@
-﻿namespace Alpha.Main.Site.Tests.ViewModels.Dashboard.Notice
+﻿namespace Alpha.Main.Site.Tests.ViewModels.Dashboard.BalanceInfo
 {
     using Constants;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
     using NSubstitute;
     using NUnit.Framework;
-    using Site.ViewModels.Dashboard;
+    using Site.ViewModels.Dashboard.BalanceInfo;
 
     [TestFixture]
     public class BalanceViewModelTests

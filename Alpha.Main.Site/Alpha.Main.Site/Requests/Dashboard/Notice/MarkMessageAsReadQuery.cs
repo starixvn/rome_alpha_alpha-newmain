@@ -1,4 +1,4 @@
-﻿namespace Alpha.Main.Site.Requests.Notice
+﻿namespace Alpha.Main.Site.Requests.Dashboard.Notice
 {
     using MediatR;
 
@@ -10,8 +10,8 @@
             MessageId = messageId;
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
-        public int MessageId { get; private set; }
+        public int MessageId { get; }
     }
 }

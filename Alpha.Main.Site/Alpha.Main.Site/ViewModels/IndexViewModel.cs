@@ -10,7 +10,7 @@
 
     public class IndexViewModel
     {
-        private IndexQuery message;
+        private readonly IndexQuery message;
         private readonly Func<string> getDefaultUrl;
         private readonly Func<bool> isShowIntroduction;
 

@@ -10,6 +10,6 @@
             Members = members;
         }
 
-        public List<NewMember> Members { get; private set; }
+        public List<NewMember> Members { get; }
     }
 }
