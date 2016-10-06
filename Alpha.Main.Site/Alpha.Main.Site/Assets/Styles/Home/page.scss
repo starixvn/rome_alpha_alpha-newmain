@@ -54,7 +54,6 @@ html * {
     }
 }
 
-
 /********************************** Main Menu ******************************************/
 .mainmenu-container {
     overflow-x: hidden;
@@ -262,7 +261,7 @@ html * {
         color: #7f7f7f;
         cursor: pointer;
         display: inline-block;
-        position: absolute;            
+        position: absolute;
         top: 9px;
 
         &:before {
@@ -270,7 +269,7 @@ html * {
             height: 40px;
             line-height: 40px;
             text-align: center;
-            width: 40px;            
+            width: 40px;
         }
     }
 
@@ -291,6 +290,24 @@ html * {
         padding-left: 40px;
         padding-right: 40px;
         width: 100%;
+    }
+}
+
+.typeahead {
+    background-color: #fff;
+    font-size: 24px;
+    height: 400px;
+    padding: 8px 12px;
+    width: 100%;
+    background: rgba(0,0,0,0.001);
+
+    li {
+        padding-top: 8px;
+        line-height: 48px;
+
+        a {
+            color: #fff;
+        }
     }
 }
 
@@ -336,11 +353,11 @@ html * {
 }
 
 @media only screen and (max-width : $screen-device-lower768) {
-     .content-wrapper {
+    .content-wrapper {
         .content {
             top: 48px;
         }
-    } 
+    }
 }
 
 .piwik-noscript {

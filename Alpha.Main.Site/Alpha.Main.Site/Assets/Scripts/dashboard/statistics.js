@@ -22,4 +22,3 @@ var Statistics = (function () {
     }
     return Statistics;
 }());
-//# sourceMappingURL=statistics.js.map

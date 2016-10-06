@@ -174,7 +174,7 @@ var headerNav = {
             let afterSelectSuggestionItem = (item) => {
                 onCloseSearchBar();
                 menuBar.collapseLeftPanel();
-                menuBar.activateAccountInfoTab(item);
+                menuBar.activateAccountInfoTab(null, item);
             }
 
             topSearchbar.addClass(searchBarToggleClass);

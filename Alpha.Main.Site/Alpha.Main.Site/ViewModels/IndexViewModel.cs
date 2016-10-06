@@ -10,7 +10,7 @@
 
     public class IndexViewModel
     {
-        private readonly byte roleId;
+        private IndexQuery message;
         private readonly Func<string> getDefaultUrl;
         private readonly Func<bool> isShowIntroduction;
 
@@ -24,101 +24,44 @@
             UserLevel = Enumeration.FromValue<UserLevel>(message.RoleId).DisplayName.ToLower();
             IsShowIntroduction = isShowIntroduction();
             DefaultUrl = getDefaultUrl();
-            roleId = message.RoleId;            
-            CustId = message.CustId;
-            Language = message.Language;
-            LanguageKey = message.LanguageKey;
-            OnUserId = message.OnUserId;
-            SubPageAccess = message.SubPageAccess;
-            EnableSecurityCode = message.EnableSecurityCode;
-            IsInternalWebVPN = message.IsInternalWebVpn;
-            IsSubAccount = message.IsSubAccount;
             PasswordHash = Encryption.RandomString(new Random().Next(4, 8));
             this.isShowIntroduction = isShowIntroduction ?? FunctionRegistry.ShowIntroduction;
             this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
         }
 
-        public bool EnableSecurityCode { get; private set; }
+        public bool EnableSecurityCode => message.EnableSecurityCode;
 
-        public int CustId { get; private set; }
+        public int CustId => message.CustId;
 
-        public int OnUserId { get; private set; }
+        public int OnUserId => message.OnUserId;
 
-        public string UserLevel
-        {
-            get
-            {
-                return Enumeration.FromValue<UserLevel>(roleId).DisplayName.ToLower();
-            }
-        }
+        public string UserLevel => Enumeration.FromValue<UserLevel>(message.RoleId).DisplayName.ToLower();
 
-        public string Language { get; private set; }
+        public string Language => message.Language;
 
-        public string LanguageKey { get; private set; }
+        public string LanguageKey => message.LanguageKey;
 
-        [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
-        public string DefaultUrl
-        {
-            get
-            {
-                return getDefaultUrl?.Invoke() ?? MainRootPath;
-            }
-        }
+        public string OldMainRootPath => MicroSites.OldMainUrl("~/");
 
-        public string OldMainRootPath
-        {
-            get
-            {
-                return MicroSites.OldMainUrl("~/");
-            }
-        }
+        public string HowToUseRootPath => MicroSites.HowToUseUrl("~/");
 
-        public string HowToUseRootPath
-        {
-            get
-            {
-                return MicroSites.HowToUseUrl("~/");
-            }
-        }
-
-        public string MainRootPath
-        {
-            get
-            {
-                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
-            }
-        }
+        public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
 
         public string PasswordHash { get; private set; }
 
-        public string SubPageAccess { get; private set; }
+        public string SubPageAccess => message.SubPageAccess;
 
-        public bool IsSubAccount { get; private set; }
+        public bool IsSubAccount => message.IsSubAccount;
 
-        public bool IsInternalWebVPN { get; private set; }
+        public bool IsInternalWebVPN => message.IsInternalWebVpn;
 
         [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
-        public string CurrentURLCookieName
-        {
-            get
-            {
-                return CookieHelper.GetCurrentUrlCookieName();
-            }
-        }
+        public string CurrentURLCookieName => CookieHelper.GetCurrentUrlCookieName();
 
-        public bool IsShowIntroduction
-        {
-            get
-            {
-                return isShowIntroduction?.Invoke() ?? true;
-            }
-        }
-        public HeaderNavViewModel HeaderNavViewModel
-        {
-            get
-            {
-                return new HeaderNavViewModel(CustId, EnableSecurityCode);
-            }
-        }
+        public bool IsShowIntroduction => isShowIntroduction?.Invoke() ?? true;
+        [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
+        public string DefaultUrl => getDefaultUrl?.Invoke() ?? MainRootPath;
+
+        public HeaderNavViewModel HeaderNavViewModel => new HeaderNavViewModel(CustId, EnableSecurityCode, message.IsViewedMemberInfo);
     }
 }

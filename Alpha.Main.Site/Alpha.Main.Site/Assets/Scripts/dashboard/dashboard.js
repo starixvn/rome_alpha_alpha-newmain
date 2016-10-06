@@ -26,4 +26,3 @@ var Dashboard = (function () {
 $(document).ready(function () {
     new Dashboard();
 });
-//# sourceMappingURL=dashboard.js.map

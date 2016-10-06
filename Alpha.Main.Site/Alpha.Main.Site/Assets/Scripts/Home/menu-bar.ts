@@ -179,7 +179,7 @@
         menuBar.positionPTTooltip();
     },
 
-    activateAccountInfoTab: function (userName: string = '') {
+    activateAccountInfoTab: function (event?: any, userName: string = '') {
         menuBar.domElements.accountInfoHeader.addClass('active');
         menuBar.domElements.mainMenuHeader.removeClass('active');
         menuBar.domElements.mainMenuTab.hide();
@@ -192,7 +192,7 @@
             accInfoContent.attr('src', menuBar.urls.accountInfo);
         }
 
-        if (userName !== '') {
+        if (userName !== '' || typeof userName === 'undefined') {
             accInfoContent.attr('src', menuBar.urls.accountInfo + '?txtUsername=' + userName);
         }
 
