@@ -148,9 +148,14 @@ var headerNav = {
 
         // Quick search component for mobile
         headerNav.domElements.iconSearch.click(function () {
-            let topSearchbar = $(".top-search-bar"),
-                iconClose = $(".icon-close"),
-                searchBarToggleClass = "search-bar-toggle";
+            let topSearchbar = $('.top-search-bar'),
+                topSearchInput = $('.top-search-input'),
+                iconClose = $('.icon-close'),
+                searchBarToggleClass = 'search-bar-toggle';
+
+            topSearchbar.addClass(searchBarToggleClass);
+            topSearchInput.val('');
+            headerNav.domElements.sideBarContent.append("<div class='blockUI'></div>");
 
             let onCloseSearchBar = () => {
                 topSearchbar.removeClass(searchBarToggleClass);
@@ -162,12 +167,17 @@ var headerNav = {
                     headerNav.urls.queryUserName,
                     { query: query },
                     function (data) {
-                        let result = alpha.core.convertReponseToJson(data);
-                        let suggestions = result.suggestions.map(function (item) {
-                            return item[0];
-                        });
+                        let suggestions = alpha.core.convertReponseToJson(data).suggestions;
 
-                        return process(suggestions);
+                        if (typeof suggestions !== 'undefined') {
+                            let sugestionItems = suggestions.map(function (item) {
+                                return item[0];
+                            });
+
+                            return process(sugestionItems);
+                        }
+
+                        return process();
                     });
             };
 
@@ -177,14 +187,11 @@ var headerNav = {
                 menuBar.activateAccountInfoTab(null, item);
             }
 
-            topSearchbar.addClass(searchBarToggleClass);
-            headerNav.domElements.sideBarContent.append("<div class='blockUI'></div>");
-
             iconClose.click(onCloseSearchBar);
 
             $(".blockUI").click(onCloseSearchBar);
 
-            $('.top-search-input').typeahead({
+            topSearchInput.typeahead({
                 minLength: 3,
                 items: 10,
                 name: 'userNames',
