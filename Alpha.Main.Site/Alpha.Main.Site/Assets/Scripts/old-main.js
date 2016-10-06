@@ -700,6 +700,30 @@ function hasPopupOpen() {
     return hasPopUp;
 }
 
+function setSecurityCodePopupTitle(securityCodeTitle) {
+    var popupTitle = top.$('.modal[id^="page-popup"]').find('#popup-title');
+
+    if (popupTitle.length > 0) {
+        var previousTitle = popupTitle.text();
+        popupTitle.text(securityCodeTitle);
+        popupTitle.attr("data-previous-title", previousTitle);
+    }
+}
+
+function revertSecurityCodePopupTitle() {
+    var popupTitle = top.$('.modal[id^="page-popup"]').find('#popup-title');
+
+    if (popupTitle.length > 0) {
+        var previousTitle = popupTitle.attr("data-previous-title");
+        if (previousTitle) {
+            popupTitle.text(previousTitle);
+        }
+        else {
+            popupTitle.text("");
+        }
+    }
+}
+
 function clearPopupSubtitle(hasSubTitle) {
     var popUps = top.$('.modal[id^="page-popup"]');
     var popUpLength = popUps.length;

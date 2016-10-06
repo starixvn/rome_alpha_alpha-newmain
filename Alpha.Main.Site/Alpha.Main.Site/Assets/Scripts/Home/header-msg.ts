@@ -254,10 +254,10 @@ var headerMessage = {
         headerMessage.domElements.privateMessageCounter.html(unreadPriMsgCount);
     },
 
-    appendMessageToPopup: function (messsage) {
+    appendMessageToPopup: function (message) {
         headerMessage.domElements.contentMessage.append(
             '<p class="not-shown-message">'
-            + messsage
+            + message
             + '</p>');
     },
 

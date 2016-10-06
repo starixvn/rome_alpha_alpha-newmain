@@ -28,7 +28,7 @@
                     Data = new Result
                     {
                         Code = antiXSRFResult.ErrCode,
-                        Messsage = antiXSRFResult.ErrMsg
+                        Message = antiXSRFResult.ErrMsg
                     }
                 };
             }

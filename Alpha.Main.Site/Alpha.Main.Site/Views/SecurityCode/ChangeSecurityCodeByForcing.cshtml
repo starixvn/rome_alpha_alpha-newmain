@@ -18,19 +18,19 @@
                 <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
             </figure>
             <div class="rowlg">
-                <input type="password" class="txt" name="providedSC" id="txtOldSecCode" placeholder="@Security.oldSecCode">
+                <input type="password" autocomplete="off"  class="txt" name="providedSC" id="txtOldSecCode" placeholder="@Security.oldSecCode">
                 <label id="txtOldSecCode-error" class="error"></label>
                 <i class="icon-account-key"></i>
                 <i class="validation"></i>
             </div>
             <div class="rowlg help-rules">
-                <input type="password" class="txt" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode">
+                <input type="password" autocomplete="off"  class="txt" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode">
                 <label id="txtSecCode-error" class="error"></label>
                 <i class="icon-account-key"></i>
                 <i class="validation"></i>
             </div>
             <div class="rowlg">
-                <input type="password" class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode">
+                <input type="password" autocomplete="off"  class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode">
                 <label id="txtConfirmSecCode-error" class="error"></label>
                 <i class="icon-account-key"></i>
                 <i class="validation"></i>

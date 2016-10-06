@@ -4,8 +4,6 @@
 
     public class SecurityCodeBaseCondition
     {
-       // public SecurityCodeSession SecurityCodeSession { get; set; }
-
         public bool IsSecurityCodeActive { get; set; }
 
         public GetHotAnnouncementsParams HotAnnouncementsParams()

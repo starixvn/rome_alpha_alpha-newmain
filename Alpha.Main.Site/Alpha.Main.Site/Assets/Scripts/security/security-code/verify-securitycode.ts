@@ -30,6 +30,7 @@ var verifySecurityCode = {
 
         if (top.hasPopupOpen())
         {
+            top.setSecurityCodePopupTitle($("#title_header").text());
             $("#container").addClass("has-popup");
             $("#title_header").remove();
         }
@@ -57,6 +58,10 @@ var verifySecurityCode = {
             success: function (data, textStatus, jqXHR) {
                 var code = data.Code;
                 if (code === 0) { // OK
+                    if (top.hasPopupOpen()) {
+                        top.revertSecurityCodePopupTitle();
+                    }
+
                     var redirectUrl = verifySecurityCode.getUrlVars()['redirectUrl'];
                     if (redirectUrl) {
                         window.location.href = decodeURIComponent(redirectUrl);
@@ -79,11 +84,11 @@ var verifySecurityCode = {
                     securityHelper.redirectToHomePage(200);
                 }
                 else if (code === 2) { // account is closed 
-                    alert(data.Messsage);
+                    alert(data.Message);
                     securityHelper.signOut();
                 }
                 else {
-                    securityHelper.showFailMessage($messageContainer, data.Messsage);
+                    securityHelper.showFailMessage($messageContainer, data.Message);
                     $txtSecurityCode.focus();
                 }
             },

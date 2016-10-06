@@ -6,7 +6,7 @@
 
         public int Code { get; set; }
 
-        public string Messsage { get; set; }
+        public string Message { get; set; }
 
         public virtual bool IsSuccessful
         {

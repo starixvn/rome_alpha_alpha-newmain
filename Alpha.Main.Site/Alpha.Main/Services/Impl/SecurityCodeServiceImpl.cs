@@ -149,11 +149,18 @@
             return result;
         }
 
-        public Result CompareHashSecurityCodeBetweenWebAndDB(int custId, int subAccId, bool isSubAcc, string securityCodeToken, string language,  string webHashSecurityCode, string ip)
+        public Result CompareHashSecurityCodeBetweenWebAndDB(
+            int custId,
+            int subAccId,
+            bool isSubAcc,
+            string securityCodeToken,
+            string language,
+            string webHashSecurityCode, 
+            string ip)
         {
             if (string.IsNullOrEmpty(webHashSecurityCode) || string.IsNullOrEmpty(securityCodeToken))
             {
-                return new Result { Code = -1, Messsage = Security.alertInputWrongSecCode };
+                return new Result { Code = -1, Message = Security.alertInputWrongSecCode };
             }
 
             string securityCodeDB = GetDBhashSecurityCode(custId, subAccId);
@@ -173,7 +180,7 @@
             else if (!result.IsSuccessful)
             {
                 result.Code = 9009; //// wrong SC
-                result.Messsage = Security.alertInputWrongSecCode;
+                result.Message = Security.alertInputWrongSecCode;
             }
 
             return result;

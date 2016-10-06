@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using System;
+    using AppResources;
     using Main.Models;
     using Main.Models.CustomerProfiles;
     using Main.Models.Enumerations;
@@ -67,7 +68,6 @@
             return new PasswordViewModel
             {
                 CustRoleId = message.CustRoleId,
-               // EnableSecurityCode = this.securityCodeSession.IsEnableSecurityCode,
                 HashKey = GetHasKey()
             };
         }
@@ -213,7 +213,7 @@
         {
             if (message.IsSubAcc)
             {
-                return $"({message.SubUserName})";
+                return $"({Resources.subAcc.ToUpper()} {message.SubUserName})";
             }
             else
             {

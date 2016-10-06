@@ -7,9 +7,6 @@
         public DisableSecurityCodeCondition()
         {
             IsSecurityCodeActive = false;
-
-            //SecurityCodeSession = Substitute.For<SecurityCodeSession>();
-            //SecurityCodeSession.IsRequireSecurityCode.Returns(false);
         }
     }
 }

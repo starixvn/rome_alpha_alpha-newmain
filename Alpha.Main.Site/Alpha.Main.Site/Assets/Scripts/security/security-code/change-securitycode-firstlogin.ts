@@ -1,4 +1,4 @@
-﻿'use strict';
+﻿'use strict'; 
 
 var changeSecurityCodeFirstLogin = {
     initialize: function () {
@@ -48,7 +48,7 @@ var changeSecurityCodeFirstLogin = {
                 }
                 else {
                     $("#txtSecCode").addClass('error');
-                    $("#txtSecCode-error").empty().html(data.Messsage);
+                    $("#txtSecCode-error").empty().html(data.Message);
                     $txtSecurityCode.focus();
                 }
             },

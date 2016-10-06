@@ -4,6 +4,7 @@
     using MediatR;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
+
     public class ResetSecurityCodeCommand : IRequest<Result>
     {
         private readonly IUserSession userSession;

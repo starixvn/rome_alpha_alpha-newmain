@@ -34,7 +34,7 @@
                 return new Result
                 {
                     Code = code,
-                    Messsage = code == 0
+                    Message = code == 0
                         ? AppResources.Resources.UpdatedSuccessfully
                         : outputParams["errmsg"].ToString()
                 };

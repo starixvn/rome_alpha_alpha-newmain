@@ -21,6 +21,13 @@
 
         bool ValidateSecurityCode(string securityCode);
 
-        Result CompareHashSecurityCodeBetweenWebAndDB(int custId, int subAccId, bool isSubAcc, string securityCodeToken, string language, string webHashSecurityCode, string ip);
+        Result CompareHashSecurityCodeBetweenWebAndDB(
+            int custId, 
+            int subAccId, 
+            bool isSubAcc, 
+            string securityCodeToken, 
+            string language, 
+            string webHashSecurityCode, 
+            string ip);
     }
 }

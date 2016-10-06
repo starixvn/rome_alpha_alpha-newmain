@@ -5,7 +5,6 @@
     using Announcement.GetHotAnnouncement.LocalFileCondition;
     using Announcement.GetHotAnnouncement.LogInAndSettingChangedTest;
     using Main.Constants;
-    using NSubstitute;
     using NUnit.Framework;
     using Params.Announcements;
     using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
@@ -39,9 +38,8 @@
         public void GetHotAnnouncement_NotPassSecurityCode_ReturnAnnouncementWithNullContent()
         {
             // Arrange
-            //var securityCodeSession = Substitute.For<SecurityCodeSession>();
-            //securityCodeSession.IsRequireSecurityCode.Returns(true);
-
+            // var securityCodeSession = Substitute.For<SecurityCodeSession>();
+            // securityCodeSession.IsRequireSecurityCode.Returns(true);
             var announcementServiceImpl = new AnnouncementServiceImpl();
 
             var query = new GetHotAnnouncementsParams();
@@ -261,7 +259,6 @@
             Assert.AreNotEqual(null, actualHotAnnouncement.Content);
         }
 
-        [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\OnlyForceUseSecurityCode.xml", null)]
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\HasAnnouncement.xml", ExpectedAnnouncementContent)]
         [TestCase(@"\TestData\Announcements\HotAnnouncement\EmptyAnnouncement.xml", null)]
         public void GetHotAnnouncement_NotAgentDirectLoginAndNotForceUseSecurityCodeSite_ReturnCorrectContent(

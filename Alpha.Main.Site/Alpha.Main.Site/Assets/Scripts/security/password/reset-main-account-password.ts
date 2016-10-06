@@ -1,4 +1,4 @@
-﻿'use strict';
+﻿'use strict'; 
 
 var resetMainAccountPassword = {
     initialize: function () {
@@ -56,7 +56,7 @@ var resetMainAccountPassword = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.Code !== 0) {
-                    securityHelper.showFailMessage($messageContainer, data.Messsage);
+                    securityHelper.showFailMessage($messageContainer, data.Message);
                     $txtSecurityCode.focus();
                 }
                 else

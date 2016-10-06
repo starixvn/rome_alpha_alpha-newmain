@@ -3,7 +3,6 @@
     using System;
     using Alpha.SecurityCode.Services;
     using AppResources;
-    using Fanex.Security;
     using Main.Models;
     using Main.Models.CustomerProfiles;
     using Main.Models.Enumerations;
@@ -151,7 +150,7 @@
             {
                 return validateResult;
             }
-          
+
             Result result = securityCodeService.CompareHashSecurityCodeBetweenWebAndDB(
                userSession.CustId,
                userSession.SubAccId,
@@ -230,7 +229,7 @@
 
             if (userSession.IsInternal && !isResetSubAccount)
             {
-                return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
+                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
             }
 
             var validateResult = ValidateSecurityCode(message.SecurityCode);
@@ -257,12 +256,12 @@
         {
             if (userSession.IsInternal)
             {
-                return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
+                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
             }
 
             if (string.IsNullOrEmpty(message.SecurityCode))
             {
-                return new Result { Code = Result.ErrorCode, Messsage = Security.informSecCode };
+                return new Result { Code = Result.ErrorCode, Message = Security.informSecCode };
             }
 
             Result result = securityCodeService.CompareHashSecurityCodeBetweenWebAndDB(
@@ -288,13 +287,13 @@
             bool isCheckOldSecurityCode = false)
         {
             if (userSession.IsInternal)
-            { 
-                return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
+            {
+                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
             }
 
             string errorMessage = string.Empty;
 
-            if((isCheckOldSecurityCode && string.IsNullOrWhiteSpace(oldSecurityCode))
+            if ((isCheckOldSecurityCode && string.IsNullOrWhiteSpace(oldSecurityCode))
                  || string.IsNullOrWhiteSpace(securityCode))
             {
                 errorMessage = Security.alertOldSecCodeEmpty;
@@ -307,7 +306,7 @@
 
             if (errorMessage.Length != 0)
             {
-                return new Result { Code = Result.ErrorCode, Messsage = errorMessage };
+                return new Result { Code = Result.ErrorCode, Message = errorMessage };
             }
 
             return new Result();
@@ -328,7 +327,7 @@
 
             if (result != null && result.IsSuccessful)
             {
-                result.Messsage = Security.alertSecCodeChangedOK;
+                result.Message = Security.alertSecCodeChangedOK;
             }
 
             return result;
@@ -351,7 +350,7 @@
 
             if (result.IsSuccessful)
             {
-                result.Messsage = Security.alertSecCodeChangedOK;
+                result.Message = Security.alertSecCodeChangedOK;
             }
 
             return result;
@@ -371,7 +370,7 @@
 
             if (result.IsSuccessful)
             {
-                result.Messsage = Security.alertSecCodeChangedOK;
+                result.Message = Security.alertSecCodeChangedOK;
             }
 
             return result;
@@ -403,11 +402,11 @@
         {
             if (message.IsSubAcc)
             {
-                return $"({message.SubUserName})";
+                return $"({Resources.subAcc.ToUpper()} {message.SubUserName})";
             }
             else
             {
-                return string.IsNullOrEmpty(message.NickName) ? string.Empty :   $"({message.NickName})";
+                return string.IsNullOrEmpty(message.NickName) ? string.Empty : $"({message.NickName})";
             }
         }
 
@@ -428,7 +427,6 @@
             }
 
             object value = sessionManager.Get<string>(SecurityCodeResultSessionKey);
-
             if (value != null)
             {
                 return (SecurityCodeStatus)value;
@@ -454,9 +452,7 @@
             {
                 if (hasSC)
                 {
-                    status = userSession.IsInternal
-                        ? SecurityCodeStatus.ProvideSecurityCodeSuccess
-                        : SecurityCodeStatus.ProvideSecurityCode;
+                    status = userSession.IsInternal ? SecurityCodeStatus.ProvideSecurityCodeSuccess : SecurityCodeStatus.ProvideSecurityCode;
                 }
                 else
                 {

@@ -1,11 +1,11 @@
-﻿'use strict';
+﻿'use strict'; 
 
 var forceChangePassword = {
     initialize: function () {
         securityHelper.initLanguage();
         $('#pwdForm').submit(function (e) {
             e.preventDefault();
-            forceChangePassword.changeSecurityCode();
+            forceChangePassword.changePassword();
         });
 
         $("#btn-back").bind("click", function () {
@@ -27,7 +27,7 @@ var forceChangePassword = {
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
     },
-    changeSecurityCode: function () {
+    changePassword: function () {
         $.blockUI();
         var $txtOldPassword = $('#txtOldPwd');
         var $txtPassword = $('#txtNewPwd');
@@ -54,9 +54,8 @@ var forceChangePassword = {
                     securityHelper.signOut();
                 }
                 else {
-                    $("#txtOldPwd").addClass('error');
-                    $("#txtOldPwd-error").empty().html(data.Message);
-                    $txtOldPassword.focus();
+                    $txtPassword.addClass('error').focus();
+                    $("#txtNewPwd-error").empty().html(data.Message);
                 }
             },
             complete: function (jqXHR, textStatus) {

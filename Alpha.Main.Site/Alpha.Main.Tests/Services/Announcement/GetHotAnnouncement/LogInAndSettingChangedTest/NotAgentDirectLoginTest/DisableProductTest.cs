@@ -16,7 +16,7 @@
             query.AnnouncementEnableStatus = new Dictionary<int, bool>();
             query.AnnouncementEnableStatus.Add(4523901, false);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, ValidAnnouncementTimeCondition.DateTimeWrapper);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, ValidAnnouncementTimeCondition.DateTimeWrapper);
 
             var localFileAnnouncementCondition = new HasAnnouncementCondition();
             localFileAnnouncementCondition.SetUpCondition(query);

@@ -1,4 +1,4 @@
-﻿'use strict';
+﻿'use strict'; 
 
 var resetsecuritycode = {
     initialize: function () {
@@ -52,7 +52,7 @@ var resetsecuritycode = {
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.Code !== 0) {
-                    securityHelper.showFailMessage($messageContainer, data.Messsage);
+                    securityHelper.showFailMessage($messageContainer, data.Message);
                     $txtSecurityCode.focus();
                 }
                 else

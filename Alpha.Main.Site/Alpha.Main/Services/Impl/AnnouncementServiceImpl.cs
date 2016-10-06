@@ -22,16 +22,13 @@
         public const int BettingLimitChanged = 2;
 
         private readonly IDynamicRepository dynamicRepository;
-        private readonly SecurityCodeService securityCodeService;
         private readonly IDateTime dateTimeWrapper;
 
         public AnnouncementServiceImpl(
             IDynamicRepository dynamicRepository = null,
-            SecurityCodeService securityCodeService = null,
             IDateTime dateTimeWrapper = null)
         {
             this.dynamicRepository = dynamicRepository ?? new DynamicRepository();
-            this.securityCodeService = securityCodeService ?? new SecurityCodeServiceImpl();
             this.dateTimeWrapper = dateTimeWrapper ?? new DateTimeWrap();
         }
 

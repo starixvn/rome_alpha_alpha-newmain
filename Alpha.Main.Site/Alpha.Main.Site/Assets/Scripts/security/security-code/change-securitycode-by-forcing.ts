@@ -1,4 +1,4 @@
-﻿'use strict';
+﻿'use strict'; 
 
 var changeSecurityCodeByForcing = {
     initialize: function () {
@@ -52,12 +52,12 @@ var changeSecurityCodeByForcing = {
                     securityHelper.redirectToHomePage(2000);
                 }
                 else if (data.Code === 2) { // account is closed
-                    alert(data.Messsage);
+                    alert(data.Message);
                     securityHelper.signOut();
                 }
                 else {
                     $("#txtOldSecCode").addClass('error');
-                    $("#txtOldSecCode-error").empty().html(data.Messsage);
+                    $("#txtOldSecCode-error").empty().html(data.Message);
                     $txtOldSecurityCode.focus();
                     $.unblockUI();
                 }

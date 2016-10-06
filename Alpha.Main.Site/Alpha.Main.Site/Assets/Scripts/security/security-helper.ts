@@ -1,6 +1,8 @@
 ﻿interface Window {
     hasPopupOpen(): void;
     securityCodePopup: any;
+    setSecurityCodePopupTitle(securityCodeTitle): void;
+    revertSecurityCodePopupTitle(): void;
     ageWnd: any;
 }
 

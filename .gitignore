@@ -85,3 +85,25 @@ bundles
 
 
 
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/change-password.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/force-change-password.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/password-resources.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/reset-main-account-password.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/reset-sub-account-password.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/change-securitycode-by-forcing.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/change-securitycode-firstlogin.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/change-user-own-securitycode.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/reset-securitycode.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/security-code-resources.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/verify-securitycode.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/verify-securitycode.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-helper.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-helper.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/change-password.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/force-change-password.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/reset-main-account-password.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/reset-sub-account-password.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/change-securitycode-by-forcing.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/change-securitycode-firstlogin.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/change-user-own-securitycode.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/reset-securitycode.js.map

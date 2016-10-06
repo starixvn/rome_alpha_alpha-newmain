@@ -1,4 +1,4 @@
-﻿'use strict';
+﻿'use strict'; 
 
 var resetSubAccountPassword = {
     initialize: function () {
@@ -53,7 +53,7 @@ var resetSubAccountPassword = {
             data: { subAccountId: $('#subAccountId').val(), newPassword: password },
             success: function (data, textStatus, jqXHR) {
                 if (data.Code !== 0) {
-                    securityHelper.showFailMessage($messageContainer, data.Messsage);
+                    securityHelper.showFailMessage($messageContainer, data.Message);
                     $txtSecurityCode.focus();
                 }
                 else {

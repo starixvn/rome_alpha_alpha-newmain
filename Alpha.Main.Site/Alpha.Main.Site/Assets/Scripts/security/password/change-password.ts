@@ -1,4 +1,4 @@
-﻿'use strict';
+﻿'use strict'; 
 
 var changeUserOwnPassword = {
     initialize: function () {
@@ -67,11 +67,11 @@ var changeUserOwnPassword = {
                     setTimeout(changeUserOwnPassword.refreshPage, 5000);
                 }
                 else if (data.Code === 2) { // account is closed
-                    alert(data.Messsage);
+                    alert(data.Message);
                     securityHelper.signOut();
                 }
                 else {
-                    securityHelper.showFailMessage($messageContainer, data.Messsage);
+                    securityHelper.showFailMessage($messageContainer, data.Message);
                     $txtOldPassword.focus();
                 }
             },

@@ -213,23 +213,23 @@
             if ((!isResetPassword && string.IsNullOrWhiteSpace(currentPassword))
                 || string.IsNullOrWhiteSpace(newPassword))
             {
-                return new Result { Code = Result.ErrorCode, Messsage = Security.NotAuthorized };
+                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
             }
 
             if (!IsMatchedRules(newPassword, isResetMemberPassword))
             {
-                return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordRequire };
+                return new Result { Code = Result.ErrorCode, Message = Security.lblPasswordRequire };
             }
 
             if (!isResetPassword && string.Compare(newPassword, currentPassword, StringComparison.OrdinalIgnoreCase) == 0)
             {
-                return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordDOldOne }; //// will update resource later
+                return new Result { Code = Result.ErrorCode, Message = Security.lblPasswordDOldOne }; //// will update resource later
             }
 
             if (string.Compare(newPassword, "59D7!4$h", StringComparison.OrdinalIgnoreCase) == 0
                 || string.Compare(newPassword, "493abcDE", StringComparison.OrdinalIgnoreCase) == 0)
             {
-                return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordWrongRule };
+                return new Result { Code = Result.ErrorCode, Message = Security.lblPasswordWrongRule };
             }
 
             foreach (var invalidPassword in invalidPasswords)
@@ -237,7 +237,7 @@
                 if (!string.IsNullOrWhiteSpace(invalidPassword)
                     && newPassword.ToLower().Contains(invalidPassword.ToLower()))
                 {
-                    return new Result { Code = Result.ErrorCode, Messsage = Security.lblPasswordDAccountName };
+                    return new Result { Code = Result.ErrorCode, Message = Security.lblPasswordDAccountName };
                 }
             }
 

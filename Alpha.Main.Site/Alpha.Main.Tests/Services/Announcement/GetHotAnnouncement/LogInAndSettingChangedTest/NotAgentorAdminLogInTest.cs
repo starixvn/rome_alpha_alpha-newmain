@@ -22,7 +22,6 @@
 
             var announcementServiceImpl = new AnnouncementServiceImpl(
                 null,
-                showedMessageCondition.SecurityCodeService,
                 ValidAnnouncementTimeCondition.DateTimeWrapper);
 
             var localFileAnnouncementCondition = LocalFileConditionFactory.Create(hasAnnouncement);
