@@ -9,6 +9,7 @@
     using MediatR;
     using Params.Announcements;
     using Sunplus.Agent.Model.Base;
+    using Sunplus.Agent.Model.Definitions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 
@@ -88,8 +89,8 @@
                     { OfferedGoldDeluxe,  UserPermission.IsShowGoldDeluxeSettingForCredit && UserPermission.IsShowLiveCasino },
                     { OfferedSuperLive, UserPermission.IsShowSuperLive },
                     { OfferedColossusBets,  UserPermission.IsShowColossusBets },
-                    { OfferedAllbet,  UserPermission.IsSyncAllBet && UserPermission.IsShowLiveCasino },
-                    { NotOfferedAllbet,  UserPermission.IsSyncAllBet && !UserPermission.IsShowLiveCasino }
+                    { OfferedAllbet,  UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) && UserPermission.IsShowLiveCasino },
+                    { NotOfferedAllbet,  UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) && !UserPermission.IsShowLiveCasino }
                 };
             }
         }
