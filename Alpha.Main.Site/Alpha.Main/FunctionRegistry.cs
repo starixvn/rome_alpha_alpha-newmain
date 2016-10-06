@@ -143,8 +143,7 @@
         [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "Reviewed!")]
         public static readonly IDictionary<string, Func<string>> MenuItemDisplayNameRules = new Dictionary<string, Func<string>>
         {
-            ["ng2"] = () => { return ProductManager.GetProductName(ProductIdConstants.NG2); },
-            ["ng2Schedule"] = () => { return $"{ProductManager.GetProductName(ProductIdConstants.NG2)} {Alpha_sitemap.schedule}"; }
+            ["ng2"] = () => { return ProductManager.GetProductName(ProductIdConstants.NG2); }
         };
     }
 }

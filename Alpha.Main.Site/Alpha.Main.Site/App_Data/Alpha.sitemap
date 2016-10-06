@@ -41,7 +41,7 @@
 
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="OldMainAppPath" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
-      <siteMapNode menuItemType="NG2MenuItem" resourceKey="ng2Schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
+      <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
     <!--MemberInfo-->
