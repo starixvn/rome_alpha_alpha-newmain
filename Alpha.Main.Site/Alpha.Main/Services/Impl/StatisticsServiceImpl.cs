@@ -22,12 +22,9 @@
 
         public Statistics GetStatistics(int custId, UserLevel userLevel)
         {
-            var criteria = new GetStatisticsCriteria(userLevel)
-            {
-                CustId = custId
-            };
-
-            var statistics = this.dynamicRepository.Get<Statistics>(criteria);
+            var criteria = new GetStatisticsCriteria(userLevel, custId);
+            
+            var statistics = dynamicRepository.Get<Statistics>(criteria);
 
             return statistics;
         }
@@ -37,11 +34,11 @@
             var criteria = new GetTopWinningMembers(userLevel)
             {
                 CustId = custId,
-                MoveBetsDay = this.balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay,
-                BalanceUpDay = this.balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay
+                MoveBetsDay = balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay,
+                BalanceUpDay = balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay
             };
 
-            var topWinninMembers = this.dynamicRepository.Fetch<TopWinningMember>(criteria).ToList();
+            var topWinninMembers = dynamicRepository.Fetch<TopWinningMember>(criteria).ToList();
 
             return topWinninMembers;
         }
@@ -62,14 +59,11 @@
 
         public List<NewMember> GetNewMembers(int custId)
         {
-            var criteria = new GetNewMembersCriteria()
-            {
-                CustId = custId
-            };
+            var criteria = new GetNewMembersCriteria(custId);            
 
-            var newMembers = this.dynamicRepository.Fetch<NewMember>(criteria).ToList();
+            var members = this.dynamicRepository.Fetch<NewMember>(criteria).ToList();
 
-            return newMembers;
+            return members;
         }
     }
 }

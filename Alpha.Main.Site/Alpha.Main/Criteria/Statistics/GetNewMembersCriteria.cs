@@ -4,16 +4,15 @@
 
     public class GetNewMembersCriteria : CriteriaBase
     {
-        public int CustId { get; set; }
-
-        public override string GetSettingKey()
+        public GetNewMembersCriteria(int custId)
         {
-            return "Age_CustomerSelNewMembers";
+            CustId = custId;
         }
 
-        public override bool IsValid()
-        {
-            return CustId > 0;
-        }
+        public int CustId { get; private set; }
+
+        public override string GetSettingKey() => "Age_CustomerSelNewMembers";
+
+        public override bool IsValid() => CustId > 0;
     }
 }

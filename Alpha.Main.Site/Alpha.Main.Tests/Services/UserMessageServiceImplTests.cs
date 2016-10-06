@@ -28,13 +28,13 @@
         [Test]
         public void GetHotMessages_HotMessagesFileDoesNotContainAnyData_ReturnEmptyEnumeration()
         {
-            //// Arrange
+            // Arrange
             var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\EmptyToolTipMessage.xml");
 
-            //// Act
+            // Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, "English");
 
-            //// Assert
+            // Assert
             Assert.IsEmpty(actualHotMessages);
         }
 
@@ -48,39 +48,39 @@
         [TestCase("11111", "en-US")]
         public void GetHotMessages_HotMessageContainsData_ReturnHotMessage(string language, string expectedMessage)
         {
-            //// Arrange
+            // Arrange
             var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\TooltipMessage.xml");
 
-            //// Act
+            // Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, language);
 
-            //// Assert
+            // Assert
             Assert.AreEqual(expectedMessage, actualHotMessages.ElementAt(0));
         }
 
         [Test]
         public void GetHotMessage_LanguageIsVietNamese_ReturnEmpty()
         {
-            //// Arrange
+            // Arrange
             var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\TooltipMessage.xml");
 
-            //// Act
+            // Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, "vi-VN");
 
-            //// Assert
+            // Assert
             Assert.IsEmpty(actualHotMessages);
         }
 
         [Test]
         public void GetHotMessage_HotMessageIsExpired_ReturnEmpty()
         {
-            //// Arrange
+            // Arrange
             var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\ExpiredMessage.xml");
 
-            //// Act
+            // Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, "en-US");
 
-            //// Assert
+            // Assert
             Assert.IsEmpty(actualHotMessages);
         }
 
@@ -89,13 +89,13 @@
         [TestCase(4, "en-US-4")]
         public void GetHotMessage_UserWasOfferedHotMessage_ReturnHotMessage(byte roleId, string expectedMessage)
         {
-            //// Arrange
+            // Arrange
             var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\OfferMessageByRoleId.xml");
 
-            //// Act
+            // Act
             var actualHotMessages = userMessageServiceImpl.GetHotMessages(hotMessageFilePath, roleId, "en-US");
 
-            //// Assert
+            // Assert
             Assert.AreEqual(expectedMessage, actualHotMessages.ElementAt(0));
         }
 
@@ -104,10 +104,10 @@
         [TestCase("")]
         public void GetHotMessages_LangugeIsNullOrWhiteSpace_ThrowArgumentNullException(string language)
         {
-            //// Arrange
+            // Arrange
             var hotMessageFilePath = FileHelper.GetFilePath(@"\TestData\TooltipMessage.xml");
 
-            //// Act & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(() => userMessageServiceImpl.GetHotMessages(hotMessageFilePath, 0, language));
         }
     }

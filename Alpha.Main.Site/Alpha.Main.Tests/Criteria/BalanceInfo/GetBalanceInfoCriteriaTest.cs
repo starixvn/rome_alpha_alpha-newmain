@@ -15,25 +15,25 @@
         [TestCase(RoleId.Super, "Age_CustomerSelBalanceInfo_SAg")]
         public void GetSettingKey_Always_ReturnValidSettingKeyByLevel(byte userLevelValue, string settingKey)
         {
-            //// Arrange
+            // Arrange
             var userLevel = Enumeration.FromValue<UserLevel>(userLevelValue);
-            var criteria = new GetBalanceInfoCriteria(userLevel, Arg.Any<int>(), Arg.Any<DateTime>());
+            var criteria = new GetBalanceInfoCriteria(userLevel, 100, DateTime.Now);
 
-            //// Act
+            // Act
             var actualSettingKey = criteria.GetSettingKey();
 
-            //// Assert
+            // Assert
             Assert.AreEqual(settingKey, actualSettingKey);
         }
 
         [Test]
         public void IsValid_CustIdIsGreaterThanZero_ReturnTrue()
         {
-            //// Arrange          
+            // Arrange          
             int custId = 69;  
-            var criteria = new GetBalanceInfoCriteria(UserLevel.Agent, custId, Arg.Any<DateTime>());
+            var criteria = new GetBalanceInfoCriteria(UserLevel.Agent, custId, DateTime.Now);
 
-            //// Act
+            // Act
             bool actual = criteria.IsValid();
 
             /// Assert           
@@ -44,10 +44,10 @@
         [TestCase(-1)]
         public void IsValid_CustIdIsLessThanOrEqualToZero_ReturnFalse(int custId)
         {
-            //// Arrange            
-            var criteria = new GetBalanceInfoCriteria(UserLevel.Agent, custId, Arg.Any<DateTime>());
+            // Arrange            
+            var criteria = new GetBalanceInfoCriteria(UserLevel.Agent, custId, DateTime.Now);
 
-            //// Act
+            // Act
             bool actual = criteria.IsValid();
 
             /// Assert           
@@ -57,12 +57,23 @@
         [Test]
         public void MoveBetsDay_Always_ReturnValueSetFromCtor()
         {
-            //// Arrange
+            // Arrange
             var moveBetsDay = new DateTime(1981, 2, 15);
             var criteria = new GetBalanceInfoCriteria(UserLevel.Agent, 69, moveBetsDay);
 
-            //// Act & Assert
+            // Act & Assert
             Assert.AreEqual(moveBetsDay, criteria.MoveBetsDay);
+        }
+
+        [Test]
+        public void CustId_Always_ReturnValueSetFromCtor()
+        {
+            // Arrange
+            var custId = 69;
+            var criteria = new GetBalanceInfoCriteria(UserLevel.Agent, custId, DateTime.Now);
+                
+            // Act & Assert
+            Assert.AreEqual(custId, criteria.CustId);
         }
     }
 }

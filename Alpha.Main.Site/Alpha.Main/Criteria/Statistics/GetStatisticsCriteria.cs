@@ -1,49 +1,30 @@
 ﻿namespace Alpha.Main.Criteria.Statistics
 {
+    using System.Collections.Generic;
     using Fanex.Data.Repository;
     using Models.Enumerations;
 
     public class GetStatisticsCriteria : CriteriaBase
     {
-        private const string SettingKeyAgent = "Age_CustomerSelStatisticsInfo_Ag";
-        private const string SettingKeyMaster = "Age_CustomerSelStatisticsInfo_MAg";
-        private const string SettingKeySuper = "Age_CustomerSelStatisticsInfo_SAg";
+        private Dictionary<UserLevel, string> SettingKeys = new Dictionary<UserLevel, string>
+        {
+            [UserLevel.Agent] = "Age_CustomerSelStatisticsInfo_Ag",
+            [UserLevel.Master] = "Age_CustomerSelStatisticsInfo_MAg",
+            [UserLevel.Super] = "Age_CustomerSelStatisticsInfo_SAg"
+        };        
 
         private string settingKey;
 
-        public GetStatisticsCriteria(UserLevel userLevel)
+        public GetStatisticsCriteria(UserLevel userLevel, int custId)
         {
-            this.settingKey = InitSettingKey(userLevel);
+            settingKey = SettingKeys[userLevel];
+            CustId = custId;
         }
 
-        public int CustId { get; set; }
+        public int CustId { get; private set; }
 
-        public override string GetSettingKey()
-        {
-            return this.settingKey;
-        }
+        public override string GetSettingKey() => settingKey;
 
-        public override bool IsValid()
-        {
-            return CustId > 0;
-        }
-
-        private string InitSettingKey(UserLevel userLevel)
-        {
-            if (userLevel.IsAgentLevel())
-            {
-                return SettingKeyAgent;
-            }
-            else if (userLevel.IsMasterLevel())
-            {
-                return SettingKeyMaster;
-            }
-            else if (userLevel.IsSuperLevel())
-            {
-                return SettingKeySuper;
-            }
-
-            return string.Empty;
-        }
+        public override bool IsValid() => CustId > 0;       
     }
 }

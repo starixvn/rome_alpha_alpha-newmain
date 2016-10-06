@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using Helpers;
+    using Main.Constants;
     using Main.Helpers;
     using Main.Models.Enumerations;
     using Main.Models.Menus;
@@ -30,84 +31,84 @@
             siteMenuServiceImpl = new SiteMenuServiceImpl(cachingManager, menuItemBuilder, siteMapReader);
         }
 
-        [TestCase(2, "Agent")]
-        [TestCase(3, "Master")]
-        [TestCase(4, "Super")]
-        public void GetMenuByUserLevel_CacheHasSiteMapData_ReturnDataFromCache(byte userLevelId, string userLevelName)
+        [TestCase(RoleId.Agent, "Agent")]
+        [TestCase(RoleId.Master, "Master")]
+        [TestCase(RoleId.Super, "Super")]
+        public void GetMenuByUserLevel_SiteMapDataExistsInCache_ReturnDataFromCache(byte userLevelId, string userLevelName)
         {
-            //// Arrange
+            // Arrange
             var menuItems = CreateMenuItemsStub();
             cachingManager.Get<List<IMenuItem>>($"Alpha.Main.MenuForLevel.{userLevelName}").Returns(menuItems);
 
-            //// Act
+            // Act
             var actualMenuItems = siteMenuServiceImpl.GetMenuByUserLevel(Enumeration.FromValue<UserLevel>(userLevelId));
 
-            //// Assert
+            // Assert
             Assert.AreEqual(menuItems, actualMenuItems);
         }
 
-        [TestCase(2, 5)] //// Agent
-        [TestCase(3, 7)] //// Master
-        [TestCase(4, 6)] //// Super
+        [TestCase(RoleId.Agent, 5)] 
+        [TestCase(RoleId.Master, 7)]
+        [TestCase(RoleId.Super, 6)] 
         public void GetMenuByUserLevel_UserLevelIsValid_ReturnMenuItemsByUserLevelName(byte userLevelId, int numberOfAccessedMenu)
         {
-            //// Arrange
+            // Arrange
             var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelName.sitemap");
             siteMapReader.GetRootNode().Returns(rootNode);
 
-            //// Act
+            // Act
             var actualMenuItems = siteMenuServiceImpl.GetMenuByUserLevel(Enumeration.FromValue<UserLevel>(userLevelId));
 
-            //// Assert
+            // Assert
             Assert.AreEqual(numberOfAccessedMenu, CountMenuItems(actualMenuItems));
         }
 
-        [TestCase(2, 5)] //// Agent
-        [TestCase(3, 7)] //// Master
-        [TestCase(4, 6)] //// Super
+        [TestCase(RoleId.Agent, 5)]
+        [TestCase(RoleId.Master, 7)]
+        [TestCase(RoleId.Super, 6)]
         public void GetMenuByUserLevel_UserLevelIsValid_ReturnMenuItemsByUserLevelId(byte userLevelId, int numberOfAccessedMenu)
         {
-            //// Arrange
+            // Arrange
             var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelId.sitemap");
             siteMapReader.GetRootNode().Returns(rootNode);
 
-            //// Act
+            // Act
             var actualMenuItems = siteMenuServiceImpl.GetMenuByUserLevel(Enumeration.FromValue<UserLevel>(userLevelId));
 
-            //// Assert
+            // Assert
             Assert.AreEqual(numberOfAccessedMenu, CountMenuItems(actualMenuItems));
         }
 
         [Test]
         public void GetMenuByUserLevel_ReadSiteMapData_ExecuteBuildMenuItemForEachMenu()
         {
-            //// Arrange
+            // Arrange
             var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\OneUrlAgentSiteMap.sitemap");
             siteMapReader.GetRootNode().Returns(rootNode);
 
-            //// Act
+            // Act
             siteMenuServiceImpl.GetMenuByUserLevel(Enumeration.FromValue<UserLevel>(2));
 
-            //// Assert
+            // Assert
             menuItemBuilder.Received(1).BuildMenuItem(
                 Arg.Is<SiteMapNode>(siteMapNode => siteMapNode.Url == "~/Forecast"
                                                 && siteMapNode.ResourceKey == "soccer"));
         }
 
-        [TestCase(2, 5)] //// Agent
-        [TestCase(3, 7)] //// Master
-        [TestCase(4, 6)] //// Super
+        [TestCase(RoleId.Agent, 5)]
+        [TestCase(RoleId.Master, 7)]
+        [TestCase(RoleId.Super, 6)]
         public void GetMenuByUserLevel_GotSiteMapData_StoreSiteMapInCacheByUserLevel(byte userLevelId, int numberOfAccessedMenu)
         {
-            //// Arrange
+            // Arrange
             var userLevel = Enumeration.FromValue<UserLevel>(userLevelId);
             var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelName.sitemap");
             siteMapReader.GetRootNode().Returns(rootNode);
 
-            //// Act
+            // Act
             siteMenuServiceImpl.GetMenuByUserLevel(userLevel);
 
-            //// Assert
+            // Assert
             cachingManager.Received().Add(
                 $"Alpha.Main.MenuForLevel.{userLevel.DisplayName}",
                 Arg.Is<IEnumerable<IMenuItem>>(

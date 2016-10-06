@@ -31,6 +31,15 @@ namespace Alpha.Main.Site.Tests.Handlers
             userSession = Substitute.For<IUserSession>();            
         }
 
+        [TearDown]
+        public void Clean()
+        {
+            sessionManager = null;
+            securityCodeSession = null;
+            userSession = null;
+            defaultHandler = null;
+        }
+
         [Test]
         public void HandleIndexQuery_NullQuery_ThrowArgumentNullException()
         {
@@ -67,7 +76,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             var query = new IndexQuery(userSession, false);
 
             string argumentUsed = null;
-            sessionManager.Add<string>(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
+            sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
             // Act
             var viewModel = defaultHandler.Handle(query);

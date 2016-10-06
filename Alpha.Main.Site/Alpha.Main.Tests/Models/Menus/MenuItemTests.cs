@@ -14,7 +14,7 @@
         [Test]
         public void VisibileSubMenus_SubMenuItemsHasData_ReturnAllVisibledSubMenuItems()
         {
-            //// Arrange
+            // Arrange
             Predicate<string> authorizedUrlFunction = (a) =>
             {
                 return true;
@@ -30,7 +30,7 @@
                 return new MenuStatus(true, false);
             };
 
-            //// Act
+            // Act
             menuItem = new MenuItem
             {
                 SubMenus = new List<IMenuItem>
@@ -40,30 +40,30 @@
                 }
             };
 
-            //// Assert
+            // Assert
             Assert.AreEqual(1, menuItem.VisibileSubMenus.Count());
         }
 
         [Test]
         public void Status_UserIsNotAuthorizedOnMenu_ReturnStatusIsNotVisible()
         {
-            //// Arrange
+            // Arrange
             Predicate<string> authorizedUrlFunction = (a) =>
             {
                 return false;
             };
 
-            //// Act
+            // Act
             var actualMenuItem = new MenuItem(null, authorizedUrlFunction);
 
-            //// Assert
+            // Assert
             Assert.IsFalse(actualMenuItem.Status.Visible);
         }
 
         [Test]
         public void Status_UserIsAuthorizedOnMenu_ReturnMenuStatus()
         {
-            //// Arrange
+            // Arrange
             Predicate<string> authorizedUrlFunction = (a) =>
             {
                 return true;
@@ -74,10 +74,10 @@
                 return expectedMenuStatus;
             };
 
-            //// Act
+            // Act
             var actualMenuItemStatus = new MenuItem(getMenuStatusFunc, authorizedUrlFunction).Status;
 
-            //// Assert
+            // Assert
             Assert.AreEqual(expectedMenuStatus, actualMenuItemStatus);
         }
     }
