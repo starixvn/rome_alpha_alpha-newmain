@@ -1,5 +1,6 @@
 ﻿/// <reference path="../core.ts" />
 /// <reference path="index-manager.ts" />
+/// <reference path="dropdown-ext.ts" />
 
 'use strict';
 
@@ -49,10 +50,6 @@ var headerNav = {
         headerNav.cachedDomElements();
         headerNav.initLanguage();
         headerNav.registerEvents();
-
-        if (!alpha.isMobile) {
-            $('[data-toggle="tooltip"]').tooltip();
-        }
     },
 
     initClock: function () {
@@ -204,9 +201,11 @@ var headerNav = {
 
         // Annoucement popup for mobile
         headerNav.domElements.iconBell.click(function () {
-            announcement.showedMessageIds = [];
+            //announcement.showedMessageIds = [];
             announcement.loadAnnouncement();
         });
+
+        new DropDownExtension();
     },
 
     changeLanguage: function (lang) {
