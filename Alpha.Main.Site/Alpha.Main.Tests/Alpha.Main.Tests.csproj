@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Alpha.Auth, Version=3.0.0.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.0.8-MenuResponsive-01\lib\net40\Alpha.Auth.dll</HintPath>
+      <HintPath>..\packages\Alpha.Auth.3.0.0.8-MenuResponsive-03\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AutoMapper">
@@ -63,8 +63,8 @@
       <HintPath>..\packages\Fanex.CustomerSetting.Security.1.0.0.1\lib\net40\Fanex.CustomerSetting.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.Data, Version=2.0.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Data.2.0.1.1\lib\net461\Fanex.Data.dll</HintPath>
+    <Reference Include="Fanex.Data, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.2.0.1.5\lib\net461\Fanex.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Data.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using Alpha.Main.Site.Models.Requests;
-    using Alpha.Main.Site.ViewModels;
     using Helpers;
     using Main.Models.Enumerations;
     using MediatR;
+    using Models.Requests;
     using Requests;
     using Services;
+    using ViewModels;
 
     public class DefaultHandler :
         IRequestHandler<IndexQuery, IndexViewModel>,
