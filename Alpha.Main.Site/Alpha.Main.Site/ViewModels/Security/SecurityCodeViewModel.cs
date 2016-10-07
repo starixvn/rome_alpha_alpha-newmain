@@ -4,7 +4,7 @@ using Alpha.Main.Models.Enumerations;
 
 namespace Alpha.Main.Site.ViewModels.Security
 {
-    public class BaseSecurityCodeViewModel
+    public class SecurityCodeViewModel
     {
         public string SecurityCodeToken { get; set; }
 

@@ -11,16 +11,6 @@
         None = 0,
 
         /// <summary>
-        /// Require input SC 
-        /// </summary>
-        ProvideSecurityCode,
-
-        /// <summary>
-        /// Input SC successfully
-        /// </summary>
-        ProvideSecurityCodeSuccess,
-
-        /// <summary>
         /// Change SC the First login
         /// </summary>
         ChangeSecurityCodeFirstLogin,

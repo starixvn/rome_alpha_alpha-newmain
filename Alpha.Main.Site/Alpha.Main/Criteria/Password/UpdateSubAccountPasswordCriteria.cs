@@ -5,9 +5,9 @@
 
     public class UpdateSubAccountPasswordCriteria : CriteriaBase
     {
-        public int CustID { get; set; }
+        public int CustId { get; set; }
 
-        public int SubAccID { get; set; }
+        public int SubAccId { get; set; }
 
         public string UserPwd { get; set; }
 

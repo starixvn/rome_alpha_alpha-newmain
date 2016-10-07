@@ -44,14 +44,6 @@
             }
         }
 
-        public bool IsCasinoDisabled
-        {
-            get
-            {
-                return this.userSession.IsCasinoDisabled;
-            }
-        }
-
         public string NewPassword { get; set; }
 
         public string LanguageKey
@@ -62,7 +54,7 @@
             }
         }
 
-        public string Ip
+        public string IP
         {
             get
             {

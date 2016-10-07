@@ -5,15 +5,15 @@
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Security;
 
-    public class LoginSecurityCodeQuery : IRequest<LoginSecurityCodeViewModel>
+    public class ForceChangeSecurityCodeQuery : IRequest<ForceChangeSecurityCodeViewModel>
     {
         private readonly IUserSession userSession;
 
-        public LoginSecurityCodeQuery() : this(null)
+        public ForceChangeSecurityCodeQuery() : this(null)
         {
         }
 
-        public LoginSecurityCodeQuery(IUserSession userSession)
+        public ForceChangeSecurityCodeQuery(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();
         }

@@ -5,7 +5,7 @@
 
     public interface SecurityCodeDataAccess
     {
-        string GetHashSecurityCode(ICriteria criteria);
+        string GetSecurityCode(ICriteria criteria);
 
         Result UpdateSecurityCode(ICriteria criteria);
     }

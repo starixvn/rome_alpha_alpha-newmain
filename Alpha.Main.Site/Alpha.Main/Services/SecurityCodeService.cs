@@ -5,29 +5,16 @@
 
     public interface SecurityCodeService
     {
-        string GetMainAccountHashSecurityCode(int custId);
+        Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param);
 
-        string GetSubAccountHashSecurityCode(int custId, int subAccountId);
+        Result ChangeSubAccountSecurityCode(ChangeSecurityCodeParam param);
 
-        Result UpdateMainAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
+        Result ResetSubAccountSecurityCode(ResetSecurityCodeParam param);
 
-        Result UpdateSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
+        string GenerateSecurityToken();
 
-        Result ResetSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams);
+        string GenerateSalt(int custId);
 
-        string GenerateSecurityToken(int size);
-
-        string MD5Salt(int custId);
-
-        bool ValidateSecurityCode(string securityCode);
-
-        Result CompareHashSecurityCodeBetweenWebAndDB(
-            int custId, 
-            int subAccId, 
-            bool isSubAcc, 
-            string securityCodeToken, 
-            string language, 
-            string webHashSecurityCode, 
-            string ip);
+        Result VerifySecurityCode(VerifySecurityCodeParam param);
     }
 }

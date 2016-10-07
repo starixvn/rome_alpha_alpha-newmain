@@ -120,6 +120,7 @@
       <HintPath>..\packages\EnterpriseLibrary.Unity.5.0.414.0\lib\net40\Microsoft.Practices.Unity.Interception.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -141,7 +142,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Agent.Utilities, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Utilities.3.0.0.4-SecurityCode-01\lib\net40\Sunplus.Agent.Utilities.dll</HintPath>
+      <HintPath>..\packages\Sunplus.Agent.Utilities.3.0.0.4-SecurityCode-02\lib\net40\Sunplus.Agent.Utilities.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Libraries.AOP, Version=1.0.4218.28561, Culture=neutral, processorArchitecture=MSIL">
@@ -191,13 +192,13 @@
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\ResetSubAccountHashSecurityCodeCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\UpdateSubAccountHashSecurityCodeCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\UpdateMainAccountHashSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\ResetSubAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCounterCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCounterCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\GetSubAccountHashSecurityCodeCriteria.cs" />
-    <Compile Include="Criteria\SecurityCode\GetMainAccountHashSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\GetSubAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\GetMainAccountSecurityCodeCriteria.cs" />
     <Compile Include="DataAccesses\Impl\PasswordDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
     <Compile Include="DataAccesses\PasswordDataAccess.cs" />
@@ -231,7 +232,9 @@
     <Compile Include="Params\Password\ResetSubAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ChangeMainAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ChangeSubAccountPasswordParam.cs" />
-    <Compile Include="Params\SecurityCode\SecurityCodeParams.cs" />
+    <Compile Include="Params\SecurityCode\ChangeSecurityCodeParam.cs" />
+    <Compile Include="Params\SecurityCode\ResetSecurityCodeParam.cs" />
+    <Compile Include="Params\SecurityCode\VerifySecurityCodeParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppResources\Alpha.sitemap.Designer.cs">
       <DependentUpon>Alpha.sitemap.resx</DependentUpon>

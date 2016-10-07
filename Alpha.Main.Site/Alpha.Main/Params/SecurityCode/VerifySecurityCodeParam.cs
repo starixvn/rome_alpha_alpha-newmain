@@ -1,18 +1,16 @@
 ﻿namespace Alpha.Main.Params.SecurityCode
 {
-    public class SecurityCodeParams
+    public class VerifySecurityCodeParam
     {
         public int CustId { get; set; }
 
         public int SubAccId { get; set; }
 
-        public int UserId { get; set; }
-
-        public bool IsValidSecurityCode { get; set; }
+        public bool IsSubAcc { get; set; }
 
         public string SecurityCode { get; set; }
 
-        public bool IsResetMember { get; set; }
+        public string Salt { get; set; }
 
         public string Language { get; set; }
 

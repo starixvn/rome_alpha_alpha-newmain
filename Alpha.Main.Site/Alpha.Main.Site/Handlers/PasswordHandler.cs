@@ -23,7 +23,7 @@
          IRequestHandler<ResetMainAccountPasswordQuery, PasswordViewModel>,
          IRequestHandler<ResetSubAccountPasswordQuery, PasswordViewModel>
     {
-        private const string HashKeySessionKey = "ph";
+        private const string HashKeySessionKey = "Alpha.Main.PasswordHandler.PasswordHash";
 
         private readonly PasswordService passwordService;
         private readonly IUserSession userSession;
@@ -50,9 +50,14 @@
 
         public Result Handle(ResetSubAccountPasswordCommand message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
             if (!HasUpdatePermission(true, true))
             {
-                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
+                return Result.CreateErrorResult(Security.NotAuthorized);
             }
 
             var result = this.passwordService.ResetSubAccountPassword(
@@ -62,8 +67,7 @@
                     ActorName = message.ActorName,
                     CustId = message.CustId,
                     HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
-                    Ip = message.Ip,
-                    IsCasinoDisabled = message.IsCasinoDisabled,
+                    IP = message.IP,
                     LanguageKey = message.LanguageKey,
                     NewPassword = message.NewPassword,
                     SubAccountId = message.SubAccountId
@@ -74,6 +78,11 @@
 
         public PasswordViewModel Handle(ChangePasswordQuery message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
             return new PasswordViewModel
             {
                 CustRoleId = message.CustRoleId,
@@ -93,9 +102,14 @@
 
         public Result Handle(ResetMainAccountPasswordCommand message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
             if (!HasUpdatePermission(true))
             {
-                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
+                return Result.CreateErrorResult(Security.NotAuthorized);
             }
 
             var result = this.passwordService.ResetMainAccountPassword(
@@ -105,7 +119,7 @@
                     ActorName = message.ActorName,
                     CustId = message.CustId,
                     HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
-                    Ip = message.Ip,
+                    IP = message.IP,
                     IsCasinoDisabled = message.IsCasinoDisabled,
                     LanguageKey = message.LanguageKey,
                     NewPassword = message.NewPassword,
@@ -119,9 +133,14 @@
 
         public Result Handle(ChangePasswordCommand message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
             if (!HasUpdatePermission())
             {
-                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
+                return Result.CreateErrorResult(Security.NotAuthorized);
             }
 
             var result = message.IsSubAccount ? ChangeSubAccountPassword(message) : ChangeMainAccountPassword(message);
@@ -140,6 +159,11 @@
 
         private Result ChangeMainAccountPassword(ChangePasswordCommand message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
             return this.passwordService.ChangeMainAccountPassword(new ChangeMainAccountPasswordParam
             {
                 ActorId = message.ActorId,
@@ -147,7 +171,7 @@
                 CurrentPassword = message.CurrentPassword,
                 CustId = message.CustId,
                 HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
-                Ip = message.Ip,
+                IP = message.IP,
                 IsCasinoDisabled = message.IsCasinoDisabled,
                 IsCasinoSync = message.IsCasinoSync,
                 LanguageKey = message.LanguageKey,
@@ -158,12 +182,17 @@
 
         private Result ChangeSubAccountPassword(ChangePasswordCommand message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
             return this.passwordService.ChangeSubAccountPassword(
             new ChangeSubAccountPasswordParam
             {
                 CustId = message.CustId,
                 HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
-                Ip = message.Ip,
+                IP = message.IP,
                 LanguageKey = message.LanguageKey,
                 NewPassword = message.NewPassword,
                 SubAccountId = message.SubAccountId,
@@ -176,6 +205,11 @@
 
         public ForceChangePasswordViewModel Handle(ForceChangePasswordQuery message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
             var profile = customerProfileService.GetProfilePicture(this.userSession.CustId);
 
             return new ForceChangePasswordViewModel
@@ -191,6 +225,11 @@
 
         public PasswordViewModel Handle(ResetMainAccountPasswordQuery message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
             var viewModel = Handle(new ChangePasswordQuery());
 
             viewModel.CustId = message.CustId;
@@ -202,6 +241,11 @@
 
         public PasswordViewModel Handle(ResetSubAccountPasswordQuery message)
         {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
             var viewModel = Handle(new ChangePasswordQuery());
 
             viewModel.SubAccountId = message.SubAccountId;
@@ -250,7 +294,7 @@
                 return false;
             }
 
-            if(userSession.IsLimitedHostPermisionOnSubAccountFunction)
+            if (userSession.IsLimitedHostPermisionOnSubAccountFunction)
             {
                 return false;
             }

@@ -1,27 +1,11 @@
 ﻿namespace Alpha.Main.Params.Password
 {
-    public class ResetMainAccountPasswordParam
+    public class ResetMainAccountPasswordParam : ResetSubAccountPasswordParam
     {
-        public int CustId { get; set; }
-
-        public int ActorId { get; set; }
-
-        public int SubAccountId { get; set; }
-
         public bool IsCasinoDisabled { get; set; }
-
-        public string NewPassword { get; set; }
-
-        public string LanguageKey { get; set; }
-
-        public string Ip { get; set; }
 
         public bool IsCasinoSync { get; set; }
 
-        public string ActorName { get; set; }
-
         public bool IsResetMemberPassword { get; set; }
-
-        public string HashKey { get; set; }
     }
 }

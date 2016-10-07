@@ -42,7 +42,7 @@
 
                 if (this.securityCodeChecker.IsForcedChangeSecurityCode())
                 {
-                    return Redirect("~/SecurityCode/CheckLoginSecurityCode");
+                    return Redirect("~/SecurityCode/Index");
                 }
 
                 var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode());

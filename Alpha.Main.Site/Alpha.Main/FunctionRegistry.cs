@@ -105,7 +105,7 @@
                             return currentUrl.ToString();
                         }
                     }
-                catch (Exception ex)
+                    catch (Exception ex)
                     {
                         Sunplus.Agent.Utilities.Logs.WriteInfo(ex);
                     }

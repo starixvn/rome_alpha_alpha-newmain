@@ -264,7 +264,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Agent.Utilities, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Utilities.3.0.0.4-SecurityCode-01\lib\net40\Sunplus.Agent.Utilities.dll</HintPath>
+      <HintPath>..\packages\Sunplus.Agent.Utilities.3.0.0.4-SecurityCode-02\lib\net40\Sunplus.Agent.Utilities.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Core.Common, Version=1.1.4505.19054, Culture=neutral, processorArchitecture=MSIL">
@@ -840,12 +840,11 @@
     <Compile Include="Requests\Password\ResetMainAccountPasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetSubAccountPasswordCommand.cs" />
     <Compile Include="Requests\Password\ResetSubAccountPasswordQuery.cs" />
-    <Compile Include="Requests\SecurityCode\BaseSecurityCodeQuery.cs" />
+    <Compile Include="Requests\SecurityCode\SecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs" />
-    <Compile Include="Requests\SecurityCode\CheckLoginSecurityCodeQuery.cs" />
-    <Compile Include="Requests\SecurityCode\LoginSecurityCodeQuery.cs" />
+    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
@@ -861,8 +860,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
-    <Compile Include="ViewModels\Security\BaseSecurityCodeViewModel.cs" />
-    <Compile Include="ViewModels\Security\LoginSecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">

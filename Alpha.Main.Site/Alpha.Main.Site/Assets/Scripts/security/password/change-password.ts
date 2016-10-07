@@ -18,16 +18,16 @@ var changePassword = {
     },
 
     cachedDomElements: function () {
-        changePassword.domElements.form = $('.form-SC');
-        changePassword.domElements.securityCodeNav = $('#securityCodeNav');
-        changePassword.domElements.txtOldPwd = $('#txtOldPwd');
-        changePassword.domElements.txtNewPwd = $('#txtNewPwd');
-        changePassword.domElements.txtConfirmPwd = $('#txtConfirmPwd');
-        changePassword.domElements.showPasswordchk = $('#showPasswordchk');
-        changePassword.domElements.container = $('#container');
-        changePassword.domElements.hashKey = $('#hashkey');
-        changePassword.domElements.statusMessage = $('#status-message');
-        changePassword.domElements.statusConatiner = $('#status-message-content');
+        changePassword.domElements.form = $(".form-SC");
+        changePassword.domElements.securityCodeNav = $("#securityCodeNav");
+        changePassword.domElements.txtOldPwd = $("#txtOldPwd");
+        changePassword.domElements.txtNewPwd = $("#txtNewPwd");
+        changePassword.domElements.txtConfirmPwd = $("#txtConfirmPwd");
+        changePassword.domElements.showPasswordchk = $("#showPasswordchk");
+        changePassword.domElements.container = $("#container");
+        changePassword.domElements.hashKey = $("#hashkey");
+        changePassword.domElements.statusMessage = $("#status-message");
+        changePassword.domElements.statusConatiner = $("#status-message-content");
     },
 
     init: function () {
@@ -44,7 +44,7 @@ var changePassword = {
             .submit(function (e) {
                 e.preventDefault();
                 changePassword.change();
-            }).bind('reset', function (e) {
+            }).bind("reset", function (e) {
                 changePassword.resetOriginalInputStatus();
             });
 
@@ -81,7 +81,7 @@ var changePassword = {
         var $txtConfirmPassword = changePassword.domElements.txtConfirmPwd;
         var $messageContainer = changePassword.domElements.statusConatiner;
 
-        changePassword.domElements.statusMessage.removeClass('display-none');
+        changePassword.domElements.statusMessage.removeClass("display-none");
 
         var errorMessage = changePassword.checkInputParameters($txtOldPassword, $txtPassword, $txtConfirmPassword);
         if (errorMessage.length > 0) {
@@ -96,10 +96,10 @@ var changePassword = {
 
         $.blockUI();
         $.ajax({
-            type: 'POST',
+            type: "POST",
             url: alpha.urls.mainRootPath +  "Password/ChangePassword",
             data: { currentPassword: oldPassword, newPassword: password },
-            dataType: 'json',
+            dataType: "json",
             success: function (data, textStatus, jqXHR) {
                 if (data.Code === 0) { // OK
                     securityHelper.showSuccessfullyMessage($messageContainer, passwordResources.changePasswordSuccessfully);

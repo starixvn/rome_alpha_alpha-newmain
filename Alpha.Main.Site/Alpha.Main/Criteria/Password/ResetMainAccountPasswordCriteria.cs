@@ -5,17 +5,17 @@
 
     public class ResetMainAccountPasswordCriteria : CriteriaBase
     {
-        public int CustID { get; set; }
+        public int CustId { get; set; }
 
         public string UserPwd { get; set; }
 
-        public int UserID { get; set; }
+        public int UserId { get; set; }
 
         public bool DisCasino { get; set; }
 
         public string Language { get; set; }
 
-        public int SubAccID { get; set; }
+        public int SubAccId { get; set; }
 
         public string LoginIP { get; set; }
 

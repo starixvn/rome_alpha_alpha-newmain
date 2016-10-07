@@ -1,15 +1,15 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
     using System.Text.RegularExpressions;
     using Alpha.Main.Services;
     using AppResources;
     using Criteria.SecurityCode;
     using DataAccesses;
-    using DataAccesses.Impl;
-    using Fanex.Security;
     using Models;
     using Params.SecurityCode;
     using Sunplus.Agent.Model.Casino;
+    using Sunplus.Agent.Utilities;
 
     public class SecurityCodeServiceImpl : SecurityCodeService
     {
@@ -22,75 +22,93 @@
 
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
         private readonly CasinoService casinoService;
+        private readonly Encryptor encryptor;
 
-        public SecurityCodeServiceImpl(SecurityCodeDataAccess securityCodeDataAccess, CasinoService casinoService)
+        public SecurityCodeServiceImpl(
+            SecurityCodeDataAccess securityCodeDataAccess,
+            CasinoService casinoService,
+            Encryptor encryptor)
         {
-            this.securityCodeDataAccess = securityCodeDataAccess ?? new SecurityCodeDataAccessImpl();
+            this.securityCodeDataAccess = securityCodeDataAccess;
+            this.encryptor = encryptor;
             this.casinoService = casinoService;
         }
 
-        public string GetMainAccountHashSecurityCode(int custId)
+        public Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param)
         {
-            return securityCodeDataAccess.GetHashSecurityCode(
-                new GetMainAccountHashSecurityCodeCriteria
-                {
-                    CustId = custId
-                });
-        }
+            if (param == null)
+            {
+                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+            }
 
-        public string GetSubAccountHashSecurityCode(int custId, int subAccountId)
-        {
-            return securityCodeDataAccess.GetHashSecurityCode(
-                new GetSubAccountHashSecurityCodeCriteria
-                {
-                    CustId = custId,
-                    SubaccId = subAccountId
-                });
-        }
-
-        public Result UpdateMainAccountHashSecurityCode(SecurityCodeParams securityCodeParams)
-        {
-            string hashSecurityCode = HashSecurityCode(securityCodeParams.CustId, securityCodeParams.SecurityCode, securityCodeParams.IsResetMember);
+            var validateResult = Validate(param.NewSecurityCode, param);
+            if (validateResult.IsNotOk)
+            {
+                return validateResult;
+            }
 
             return securityCodeDataAccess.UpdateSecurityCode(
-                 new UpdateMainAccountHashSecurityCodeCriteria
+                 new UpdateMainAccountSecurityCodeCriteria
                  {
-                     CustId = securityCodeParams.CustId,
-                     SubaccId = securityCodeParams.SubAccId,
-                     UserId = securityCodeParams.UserId,
-                     HashedSecurityCode = hashSecurityCode,
-                     IP = securityCodeParams.IP,
-                     Language = securityCodeParams.Language
+                     CustId = param.CustId,
+                     SubaccId = param.SubAccId,
+                     UserId = param.UserId,
+                     HashedSecurityCode = HashSecurityCode(param.CustId, param.NewSecurityCode, param.IsResetMember),
+                     IP = param.IP,
+                     Language = param.Language
                  });
         }
 
-        public Result UpdateSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams)
+        public Result ChangeSubAccountSecurityCode(ChangeSecurityCodeParam param)
         {
-            string hashSecurityCode = HashSecurityCode(securityCodeParams.SubAccId, securityCodeParams.SecurityCode);
-
-            return securityCodeDataAccess.UpdateSecurityCode(new UpdateSubAccountHashSecurityCodeCriteria
+            if (param == null)
             {
-                CustId = securityCodeParams.CustId,
-                SubaccId = securityCodeParams.SubAccId,
-                UserId = securityCodeParams.UserId,
-                HashedSecurityCode = hashSecurityCode,
-                IP = securityCodeParams.IP,
-                Language = securityCodeParams.Language
-            });
+                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+            }
+
+            var validateResult = Validate(param.NewSecurityCode, param);
+            if (validateResult.IsNotOk)
+            {
+                return validateResult;
+            }
+
+            var command = new UpdateSubAccountSecurityCodeCriteria
+            {
+                CustId = param.CustId,
+                SubaccId = param.SubAccId,
+                UserId = param.UserId,
+                HashedSecurityCode = HashSecurityCode(param.SubAccId, param.NewSecurityCode),
+                IP = param.IP,
+                Language = param.Language
+            };
+
+            return securityCodeDataAccess.UpdateSecurityCode(command);
         }
 
-        public Result ResetSubAccountHashSecurityCode(SecurityCodeParams securityCodeParams)
+        public Result ResetSubAccountSecurityCode(ResetSecurityCodeParam param)
         {
-            string hashSecurityCode = HashSecurityCode(securityCodeParams.SubAccId, securityCodeParams.SecurityCode);
-            return securityCodeDataAccess.UpdateSecurityCode(new ResetSubAccountHashSecurityCodeCriteria
+            if (param == null)
             {
-                CustId = securityCodeParams.CustId,
-                SubaccId = securityCodeParams.SubAccId,
-                UserId = securityCodeParams.UserId,
-                HashedSecurityCode = hashSecurityCode,
-                IP = securityCodeParams.IP,
-                Language = securityCodeParams.Language
-            });
+                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+            }
+
+            var validateResult = Validate(param.NewSecurityCode);
+            if (!validateResult.IsOk)
+            {
+                return validateResult;
+            }
+
+            var command = new ResetSubAccountSecurityCodeCriteria
+            {
+                CustId = param.CustId,
+                SubaccId = param.SubAccId,
+                UserId = param.UserId,
+                HashedSecurityCode = HashSecurityCode(param.SubAccId, param.NewSecurityCode),
+                IP = param.IP,
+                Language = param.Language
+            };
+
+            return securityCodeDataAccess.UpdateSecurityCode(command);
         }
 
         private string HashSecurityCode(int custId, string securityCode, bool isResetMember = false)
@@ -99,20 +117,63 @@
             //// so that we must use the CfsEnCode method.
             if (isResetMember)
             {
-                return Cryptography.CfsEnCode(securityCode);
+                return encryptor.CfsEnCode(securityCode);
             }
+            
+            var salt = GenerateSalt(custId);
 
-            string salt = MD5Salt(custId);
-            return Cryptography.ComputeHash(SHA1, securityCode, salt);
+            return encryptor.ComputeHash(SHA1, securityCode, salt);
         }
 
-        public string MD5Salt(int custId)
+        public string GenerateSalt(int custId)
         {
             string plainText = custId.ToString();
-            return Cryptography.ComputeHash(MD5, plainText, SECURITYCODEPADDING);
+
+            return encryptor.ComputeHash(MD5, plainText, SECURITYCODEPADDING);
         }
 
-        public bool ValidateSecurityCode(string securityCode)
+        private Result Validate(
+            string securityCode,
+            ChangeSecurityCodeParam param = null)
+        {
+            if (string.IsNullOrWhiteSpace(securityCode))
+            {
+                return Result.CreateErrorResult(Security.alertSecCodeEmpty);
+            }
+
+            if (!IsMatchedRules(securityCode))
+            {
+                return Result.CreateErrorResult(Security.lblSecCodeWrongRule);
+            }
+
+            if (param != null && param.MustVerifyCurrentSecurityCode)
+            {
+                if (string.IsNullOrWhiteSpace(param.CurrentSecurityCode))
+                {
+                    return Result.CreateErrorResult(Security.alertOldSecCodeEmpty);
+                }
+
+                var verifyResult = VerifySecurityCode(new VerifySecurityCodeParam
+                {
+                    CustId = param.CustId,
+                    SecurityCode = param.CurrentSecurityCode,
+                    IP = param.IP,
+                    Language = param.Language,
+                    Salt = param.Salt,
+                    SubAccId = param.SubAccId,
+                    IsSubAcc = param.SubAccId > 0
+                });
+
+                if (verifyResult.IsNotOk)
+                {
+                    return verifyResult;
+                }
+            }
+
+            return new Result();
+        }
+
+        private bool IsMatchedRules(string securityCode)
         {
             int securityCodeLength = securityCode == null ? 0 : securityCode.Trim().Length;
             if (securityCodeLength != AllowSecurityCodeLength)
@@ -122,8 +183,8 @@
 
             Regex regex = new Regex(SecurityCodeRule);
             //// check digits and all of them are not the same
-            bool result = regex.IsMatch(securityCode);
-            if (result)
+            bool isMatched = regex.IsMatch(securityCode);
+            if (isMatched)
             {
                 //// check 'Forward Run' and 'Backward Run'
                 bool isForwardRun = true, isBackwardRun = true;
@@ -143,52 +204,45 @@
                     }
                 }
 
-                result = !(isForwardRun || isBackwardRun);
+                isMatched = !(isForwardRun || isBackwardRun);
             }
 
-            return result;
+            return isMatched;
         }
 
-        public Result CompareHashSecurityCodeBetweenWebAndDB(
-            int custId,
-            int subAccId,
-            bool isSubAcc,
-            string securityCodeToken,
-            string language,
-            string webHashSecurityCode, 
-            string ip)
+        public Result VerifySecurityCode(VerifySecurityCodeParam param)
         {
-            if (string.IsNullOrEmpty(webHashSecurityCode) || string.IsNullOrEmpty(securityCodeToken))
+            if (param == null)
             {
-                return new Result { Code = -1, Message = Security.alertInputWrongSecCode };
+                throw new ArgumentNullException(nameof(param), "Param cannot be null");
             }
 
-            string securityCodeDB = GetDBhashSecurityCode(custId, subAccId);
-            string hashsecurityCodeDB = Cryptography.ComputeHash(SHA256, securityCodeDB, securityCodeToken);
-            bool isValidSecurityCode = string.Equals(webHashSecurityCode, hashsecurityCodeDB);
-
-            //// update status of Security Code
-            Result result = UpdateSecurityCodeCounter(custId, isValidSecurityCode, language, subAccId, ip);
-            if (result.Code == 200)
+            if (string.IsNullOrEmpty(param.SecurityCode))
             {
-                result.Code = 2; //// account is closed
-                if (isSubAcc)
-                {
-                    CloseCasinoAccount(custId, ip);
-                }
-            }
-            else if (!result.IsSuccessful)
-            {
-                result.Code = 9009; //// wrong SC
-                result.Message = Security.alertInputWrongSecCode;
+                return Result.CreateErrorResult(Security.informSecCode);
             }
 
-            return result;
+            if (string.IsNullOrEmpty(param.SecurityCode)
+                || string.IsNullOrEmpty(param.Salt))
+            {
+                return Result.CreateErrorResult(Security.alertInputWrongSecCode);
+            }
+
+            // Database store Security Code hashed with CustID/SubAccID Salt
+            // But Security code send from client browser has been hashed with CustID/SubAccID Salt by SHA256 Algorithm
+            // So we have to hased security code from database with CustID/SubAccID Salt by SHA256 first, then compare
+            // with hased security code which was sent from client browser.
+            var actualSecurityCode = GetSecurityCode(param.CustId, param.SubAccId);
+            var hashedActualSecurityCodeWithSalt = this.encryptor.ComputeHash(SHA256, actualSecurityCode, param.Salt);
+            var isCorrectSecurityCode = string.Equals(param.SecurityCode, hashedActualSecurityCodeWithSalt);
+
+            //// update counter after verify
+            return UpdateSecurityCodeCounter(param.CustId, isCorrectSecurityCode, param.Language, param.SubAccId, param.IP);
         }
 
-        public string GenerateSecurityToken(int size)
+        public string GenerateSecurityToken()
         {
-            return Cryptography.RandomString(size);
+            return this.encryptor.RandomString(6);
         }
 
         private void CloseCasinoAccount(int custId, string ip)
@@ -196,32 +250,68 @@
             casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
         }
 
-        private string GetDBhashSecurityCode(int custId, int subAccountId)
+        private string GetSecurityCode(int custId, int subAccountId)
         {
-            return subAccountId.Equals(0) ? GetMainAccountHashSecurityCode(custId)
-                : GetSubAccountHashSecurityCode(custId, subAccountId);
+            if (subAccountId.Equals(0))
+            {
+                return securityCodeDataAccess.GetSecurityCode(
+                    new GetMainAccountSecurityCodeCriteria
+                    {
+                        CustId = custId
+                    });
+            }
+
+            return securityCodeDataAccess.GetSecurityCode(
+                    new GetSubAccountSecurityCodeCriteria
+                    {
+                        CustId = custId,
+                        SubaccId = subAccountId
+                    });
         }
 
-        private Result UpdateSecurityCodeCounter(int custId, bool isValidSecurityCode, string language, int subAccountId, string ip)
+        private Result UpdateSecurityCodeCounter(
+            int custId,
+            bool isCorrectSecurityCode,
+            string language,
+            int subAccountId,
+            string ip)
         {
-            return subAccountId.Equals(0) ?
-                securityCodeDataAccess.UpdateSecurityCode(
-                new UpdateMainAccountSecurityCodeCounterCriteria
-                {
-                    CustId = custId,
-                    CheckedSecurityCode = isValidSecurityCode,
-                    IP = ip,
-                    Language = language
-                })
+            var result = subAccountId.Equals(0)
+                ? securityCodeDataAccess.UpdateSecurityCode(
+                    new UpdateMainAccountSecurityCodeCounterCriteria
+                    {
+                        CustId = custId,
+                        CheckedSecurityCode = isCorrectSecurityCode,
+                        IP = ip,
+                        Language = language
+                    })
                 : securityCodeDataAccess.UpdateSecurityCode(
-                new UpdateSubAccountSecurityCodeCounterCriteria
+                    new UpdateSubAccountSecurityCodeCounterCriteria
+                    {
+                        CustId = custId,
+                        SubaccId = subAccountId,
+                        CheckedSecurityCode = isCorrectSecurityCode,
+                        IP = ip,
+                        Language = language
+                    });
+
+            if (result.Code == 200)
+            {
+                result.Code = 2; //// account is closed
+                // If account was closed, then close casino account also
+                if (subAccountId > 0)
                 {
-                    CustId = custId,
-                    SubaccId = subAccountId,
-                    CheckedSecurityCode = isValidSecurityCode,
-                    IP = ip,
-                    Language = language
-                });
+                    // TODO: Please check here, i don't think if current user is subacc, should be main acc
+                    CloseCasinoAccount(custId, ip);
+                }
+            }
+            else if (result.IsFailed)
+            {
+                result.Code = 9009; //// wrong SC
+                result.Message = Security.alertInputWrongSecCode;
+            }
+
+            return result;
         }
     }
 }

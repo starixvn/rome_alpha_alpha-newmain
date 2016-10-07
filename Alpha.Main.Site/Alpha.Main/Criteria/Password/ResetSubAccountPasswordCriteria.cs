@@ -13,7 +13,7 @@
 
         public string Language { get; set; }
 
-        public int LoginSubAccID
+        public int LoginSubAccId
         {
             get
             {
@@ -26,7 +26,7 @@
 
         public int ErrCode { get; set; }
 
-        public int UserID { get; set; }
+        public int UserId { get; set; }
 
         public string ErrMsg { get; set; }
 

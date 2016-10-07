@@ -10,13 +10,11 @@
 
         public string ActorName { get; set; }
 
-        public bool IsCasinoDisabled { get; set; }
-
         public string NewPassword { get; set; }
 
         public string LanguageKey { get; set; }
 
-        public string Ip { get; set; }
+        public string IP { get; set; }
 
         public string HashKey { get; set; }
     }

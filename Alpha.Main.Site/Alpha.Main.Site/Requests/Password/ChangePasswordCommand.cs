@@ -66,7 +66,7 @@
             }
         }
 
-        public string Ip
+        public string IP
         {
             get
             {

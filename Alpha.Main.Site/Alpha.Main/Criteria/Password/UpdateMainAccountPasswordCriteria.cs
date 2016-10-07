@@ -13,7 +13,7 @@
 
         public string OldPwd { get; set; }
 
-        public string LoginIp { get; set; }
+        public string LoginIP { get; set; }
 
         public int UserId { get; set; }
 

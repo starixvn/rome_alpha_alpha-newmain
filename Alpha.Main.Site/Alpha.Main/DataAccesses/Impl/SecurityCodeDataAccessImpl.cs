@@ -9,8 +9,13 @@
 
     public class SecurityCodeDataAccessImpl : SecurityCodeDataAccess
     {
-        public string GetHashSecurityCode(ICriteria criteria)
+        public string GetSecurityCode(ICriteria criteria)
         {
+            if (criteria == null)
+            {
+                throw new ArgumentNullException(nameof(criteria), "Criteria cannot be null");
+            }
+
             using (var db = new ObjectDb(criteria.GetSettingKey()))
             {
                 var reader = db.ExecuteReader(criteria.GetSpParams());
@@ -25,6 +30,11 @@
 
         public Result UpdateSecurityCode(ICriteria criteria)
         {
+            if (criteria == null)
+            {
+                throw new ArgumentNullException(nameof(criteria), "Criteria cannot be null");
+            }
+
             using (var db = new ObjectDb(criteria.GetSettingKey()))
             {
                 db.ExecuteNonQuery(criteria.GetSpParams());

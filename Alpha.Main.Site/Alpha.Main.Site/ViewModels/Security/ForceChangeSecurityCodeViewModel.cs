@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Security
 {
-    public class LoginSecurityCodeViewModel : BaseSecurityCodeViewModel
+    public class ForceChangeSecurityCodeViewModel : SecurityCodeViewModel
     {
         public bool IsDefaultAvatar { get; set; }
 

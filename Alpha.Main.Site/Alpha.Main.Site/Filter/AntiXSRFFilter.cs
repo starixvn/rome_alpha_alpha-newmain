@@ -1,10 +1,12 @@
 ﻿namespace Alpha.Main.Site.Filter
 {
+    using System;
     using System.Web.Mvc;
     using Alpha.Auth.Web.Validators;
     using Main.Models;
 
-    public class AntiXSRFFilter : ActionFilterAttribute
+    [AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
+    public sealed class AntiXsrfFilter : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
