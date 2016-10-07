@@ -539,6 +539,8 @@
     <Content Include="Assets\styles\otp\images\qr.png" />
     <Content Include="Assets\styles\otp\otp.css" />
     <Content Include="Assets\styles\otp\otp.min.css" />
+    <Content Include="typings\globals\hammerjs\typings.json" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\balance-info.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\notice.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\statistics.ts" />
@@ -843,6 +845,7 @@
     <Content Include="Views\OTP\Config.cshtml" />
     <Content Include="Views\OTP\Index.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-TW.cshtml" />
+    <Content Include="Views\Dashboard\HiddenFields.cshtml" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>
@@ -867,6 +870,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Configuration\AuthorizationSection.config" />
+    <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\DependencyConfig.cs" />

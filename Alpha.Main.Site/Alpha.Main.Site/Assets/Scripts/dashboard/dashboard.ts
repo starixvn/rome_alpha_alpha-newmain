@@ -1,13 +1,17 @@
-﻿/// <reference path="./statistics.ts" />
+﻿/// <reference path="./balance-info.ts" />
+/// <reference path="./statistics.ts" />
 /// <reference path="./notice.ts" />
 
 class Dashboard {
-    constructor() {
+    startLoading = () => {
+        const balanceInfo = new BalanceInfo();
+        balanceInfo.registerEvent();
+
         this.loadInfo('#stats', this.onCompleteLoadStats);
         this.loadInfo('#notice', this.onCompleteLoadNotice);
     }
 
-    private loadInfo = (id: string, onCompleteLoading: any): void => {
+    private loadInfo = (id: string, onCompleteLoading: any) => {
         let $component = $(id),
             url = $component.attr('action-url');
 
@@ -20,15 +24,18 @@ class Dashboard {
         }
     }
 
-    private onCompleteLoadStats = (): void => {
-        new Statistics();
+    private onCompleteLoadStats = () => {
+        const stats = new Statistics();
+        stats.registerEvent();
     }
 
-    private onCompleteLoadNotice = (): void => {
-        new NoticeMessage();
+    private onCompleteLoadNotice = () => {
+        const notice = new NoticeMessage();
+        notice.registerEvent();
     }
 }
 
 $(document).ready(() => {
-    new Dashboard();
+    const dashboard = new Dashboard();
+    dashboard.startLoading();
 });

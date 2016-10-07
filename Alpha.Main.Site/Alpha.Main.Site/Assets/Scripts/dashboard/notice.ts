@@ -1,10 +1,15 @@
-﻿class NoticeMessage {
-    constructor() {
-        this.onClickMessageRegister(this.markMessageAsRead);
-        this.showMoreMessagesRegister();
+﻿/// <reference path="../core.ts" />
+
+class NoticeMessage {
+    registerEvent = () => {
+        this.onToggleMessage(this.markMessageAsRead);
+
+        this.onToggleShowMoreMessages();
+
+        this.onSwipeInMobileView();
     }
 
-    onClickMessageRegister = (markMessageAsRead: any) => {
+    onToggleMessage = (markMessageAsRead: any) => {
         $('.msg').each(function () {
             let $this = $(this),
                 $shortContent = $this.children('.short-content'),
@@ -48,7 +53,7 @@
         }
     }
 
-    showMoreMessagesRegister = () => {
+    onToggleShowMoreMessages = () => {
         const $moreMessagesBtn = $('.more-info');
 
         $moreMessagesBtn.click(() => {
@@ -60,7 +65,7 @@
             }
 
             const ajaxSetting = {
-                url: '/site-main/Notice/MoreMessages?totalMessage=' + $moreMessagesBtn.attr('totalMsg'),
+                url: alpha.urls.mainRootPath + '/Notice/MoreMessages?totalMessage=' + $moreMessagesBtn.attr('totalMsg'),
                 method: 'GET',
                 success: onSuccess
             };
@@ -69,6 +74,23 @@
             $moreMessagesBtn.text('Loading...');
 
             $.ajax(ajaxSetting);
+        });
+    }
+
+    onSwipeInMobileView = () => {
+        const stats = document.getElementById('stats'),
+            statsTab = document.getElementById('stats-tab'),
+            notice = document.getElementById('notice'),
+            noticeTab = document.getElementById('notice-tab');
+
+        let noticeHM = new Hammer(notice);
+
+        noticeHM.on("swiperight", (ev) => {
+            notice.classList.remove('active');
+            noticeTab.classList.remove('active');
+
+            stats.classList.add('active');
+            statsTab.classList.add('active');
         });
     }
 }

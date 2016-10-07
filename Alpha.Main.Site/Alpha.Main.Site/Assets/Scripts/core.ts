@@ -31,6 +31,9 @@ var alpha = {
         isSubAccount: document.getElementById('isSubAccount') != null
             ? ((<HTMLInputElement>document.getElementById('isSubAccount')).value.toLowerCase() === "true")
             : "not found"
+        isShowIntroduction: document.getElementById('isShowIntroduction') != null
+            ? ((<HTMLInputElement>document.getElementById('isShowIntroduction')).value.toLowerCase() === "true")
+            : "not found"
     },
     core:
     {

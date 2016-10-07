@@ -14,13 +14,13 @@
 </head>
 <body>
     <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active">
+        <li role="presentation" class="active" id="balance-tab">
             <a href="#balance" aria-controls="home" role="tab" data-toggle="tab">@Resources.balance</a>
         </li>
-        <li role="presentation">
+        <li role="presentation" id="stats-tab">
             <a href="#stats" aria-controls="home" role="tab" data-toggle="tab">@Resources.stats</a>
         </li>
-        <li role="presentation">
+        <li role="presentation" id="notice-tab">
             <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">@Resources.notice</a>
         </li>
     </ul>
@@ -35,6 +35,8 @@
             Loading...
         </div>
     </div>
+
+    @Html.Partial("HiddenFields", Model)
     @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-dashboard"))" type="text/javascript"></script>
 </body>

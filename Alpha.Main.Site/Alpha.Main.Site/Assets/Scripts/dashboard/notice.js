@@ -1,6 +1,13 @@
+/// <reference path="../core.ts" />
 var NoticeMessage = (function () {
     function NoticeMessage() {
-        this.onClickMessageRegister = function (markMessageAsRead) {
+        var _this = this;
+        this.registerEvent = function () {
+            _this.onToggleMessage(_this.markMessageAsRead);
+            _this.onToggleShowMoreMessages();
+            _this.onSwipeInMobileView();
+        };
+        this.onToggleMessage = function (markMessageAsRead) {
             $('.msg').each(function () {
                 var $this = $(this), $shortContent = $this.children('.short-content'), $fullContent = $this.children('.full-content'), $icon = $this.find('.icon');
                 $this.click(function () {
@@ -35,7 +42,7 @@ var NoticeMessage = (function () {
                 $.ajax(ajaxSetting);
             }
         };
-        this.showMoreMessagesRegister = function () {
+        this.onToggleShowMoreMessages = function () {
             var $moreMessagesBtn = $('.more-info');
             $moreMessagesBtn.click(function () {
                 var $content = $('#notice');
@@ -44,7 +51,7 @@ var NoticeMessage = (function () {
                     new NoticeMessage();
                 };
                 var ajaxSetting = {
-                    url: '/site-main/Notice/MoreMessages?totalMessage=' + $moreMessagesBtn.attr('totalMsg'),
+                    url: alpha.urls.mainRootPath + '/Notice/MoreMessages?totalMessage=' + $moreMessagesBtn.attr('totalMsg'),
                     method: 'GET',
                     success: onSuccess
                 };
@@ -53,9 +60,16 @@ var NoticeMessage = (function () {
                 $.ajax(ajaxSetting);
             });
         };
-        this.onClickMessageRegister(this.markMessageAsRead);
-        this.showMoreMessagesRegister();
+        this.onSwipeInMobileView = function () {
+            var stats = document.getElementById('stats'), statsTab = document.getElementById('stats-tab'), notice = document.getElementById('notice'), noticeTab = document.getElementById('notice-tab');
+            var noticeHM = new Hammer(notice);
+            noticeHM.on("swiperight", function (ev) {
+                notice.classList.remove('active');
+                noticeTab.classList.remove('active');
+                stats.classList.add('active');
+                statsTab.classList.add('active');
+            });
+        };
     }
     return NoticeMessage;
 }());
-//# sourceMappingURL=notice.js.map
