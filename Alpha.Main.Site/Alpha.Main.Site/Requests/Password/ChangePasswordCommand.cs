@@ -8,14 +8,18 @@
     public class ChangePasswordCommand : IRequest<Result>
     {
         private readonly IUserSession userSession;
+        private readonly bool isCasinoDisabled;
 
-        public ChangePasswordCommand() : this(null)
+        public ChangePasswordCommand() : this(null, null)
         {
         }
 
-        public ChangePasswordCommand(IUserSession userSession)
+        internal ChangePasswordCommand(IUserSession userSession, bool? isCasinoDisabled)
         {
             this.userSession = userSession ?? new UserSessionExt();
+
+            // Line below follow old business, please do not modify.
+            this.isCasinoDisabled = isCasinoDisabled.HasValue ? isCasinoDisabled.Value : Sunplus.Agent.Model.BL.Definitions.AppSettings.DisabledCasino;
         }
 
         public int CustId
@@ -38,7 +42,7 @@
         {
             get
             {
-                return this.userSession.CustId;
+                return this.userSession.UserId;
             }
         }
 
@@ -46,7 +50,7 @@
         {
             get
             {
-                return this.userSession.IsCasinoDisabled;
+                return isCasinoDisabled;
             }
         }
 

@@ -17,7 +17,7 @@ var verifySecurityCode = {
             e.preventDefault();
         });
 
-        $('#txtSecCode').focus();
+        $('#txtSecCode').val("").focus();
 
         $("#txtSecCode").keyup(function () {
             securityHelper.validateSecurityCode(this);

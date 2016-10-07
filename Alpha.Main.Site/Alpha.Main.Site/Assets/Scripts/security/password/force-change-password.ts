@@ -12,13 +12,13 @@ var forceChangePassword = {
             securityHelper.signOut();
         });
 
-        $('#txtOldPwd').focus();
+        $('#txtOldPwd').val("").focus();
 
-        $("#txtNewPwd").keyup(function () {
+        $("#txtNewPwd").val("").keyup(function () {
             securityHelper.validatePassword(this);
         });
 
-        $("#txtConfirmPwd").keyup(function () {
+        $("#txtConfirmPwd").val("").keyup(function () {
             securityHelper.validatePassword(this);
         });
 

@@ -11,11 +11,11 @@ var resetsecuritycode = {
             resetsecuritycode.resetInputValue();
         });
 
-        $("#txtSecCode").focus().keyup(function () {
+        $("#txtSecCode").val("").focus().keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
 
-        $("#txtConfirmSecCode").keyup(function () {
+        $("#txtConfirmSecCode").val("").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
 

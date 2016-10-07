@@ -11,11 +11,11 @@ var resetSubAccountPassword = {
             resetSubAccountPassword.resetInputValue();
         });
 
-        $("#txtNewPwd").focus().keyup(function () {
+        $("#txtNewPwd").val("").focus().keyup(function () {
             securityHelper.validatePassword(this);
         });
 
-        $("#txtConfirmPwd").keyup(function () {
+        $("#txtConfirmPwd").val("").keyup(function () {
             securityHelper.validatePassword(this);
         });
 

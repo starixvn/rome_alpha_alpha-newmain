@@ -15,13 +15,13 @@ var changeUserOwnPassword = {
             changeUserOwnPassword.gotoSecurityCodePage();
         });
 
-        $('#txtOldPwd').focus();
+        $('#txtOldPwd').val("").focus();
 
-        $("#txtNewPwd").keyup(function () {
+        $("#txtNewPwd").val("").keyup(function () {
             securityHelper.validatePassword(this);
         });
 
-        $("#txtConfirmPwd").keyup(function () {
+        $("#txtConfirmPwd").val("").keyup(function () {
             securityHelper.validatePassword(this);
         });
 
@@ -104,9 +104,9 @@ var changeUserOwnPassword = {
         return '';
     },
     resetOriginalInputStatus: function () {
-        $("#txtOldPwd").empty();
-        $("#txtNewPwd").empty();
-        $("#txtConfirmPwd").empty();
+        $("#txtOldPwd").val("");
+        $("#txtNewPwd").val("");
+        $("#txtConfirmPwd").val("");
     },
     gotoSecurityCodePage: function () {
         window.location.href = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';

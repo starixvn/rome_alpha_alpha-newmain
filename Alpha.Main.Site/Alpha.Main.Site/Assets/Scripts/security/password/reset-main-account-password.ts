@@ -12,11 +12,11 @@ var resetMainAccountPassword = {
             resetMainAccountPassword.resetInputValue();
         });
 
-        $("#password").focus().keyup(function () {
+        $("#password").val("").focus().keyup(function () {
             securityHelper.validatePassword(this);
         });
 
-        $("#confirmPassword").keyup(function () {
+        $("#confirmPassword").val("").keyup(function () {
             securityHelper.validatePassword(this);
         });
 

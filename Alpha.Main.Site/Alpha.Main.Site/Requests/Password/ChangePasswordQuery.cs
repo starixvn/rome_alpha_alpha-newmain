@@ -13,7 +13,7 @@
         {
         }
 
-        public ChangePasswordQuery(IUserSession userSession)
+        internal ChangePasswordQuery(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();
         }

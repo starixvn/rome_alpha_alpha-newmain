@@ -50,6 +50,11 @@
 
         public Result Handle(ResetSubAccountPasswordCommand message)
         {
+            if (!HasUpdatePermission(true))
+            {
+                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
+            }
+
             var result = this.passwordService.ResetSubAccountPassword(
                 new ResetSubAccountPasswordParam
                 {
@@ -88,6 +93,11 @@
 
         public Result Handle(ResetMainAccountPasswordCommand message)
         {
+            if (!HasUpdatePermission(true))
+            {
+                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
+            }
+
             var result = this.passwordService.ResetMainAccountPassword(
                 new ResetMainAccountPasswordParam
                 {
@@ -109,41 +119,12 @@
 
         public Result Handle(ChangePasswordCommand message)
         {
-            var result = new Result();
-            if (message.IsSubAccount)
+            if (!HasUpdatePermission())
             {
-                result = this.passwordService.ChangeSubAccountPassword(
-                new ChangeSubAccountPasswordParam
-                {
-                    CustId = message.CustId,
-                    HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
-                    Ip = message.Ip,
-                    LanguageKey = message.LanguageKey,
-                    NewPassword = message.NewPassword,
-                    SubAccountId = message.SubAccountId,
-                    CurrentPassword = message.CurrentPassword,
-                    Nickname = message.NickName,
-                    SubUsername = message.SubAccountUsername,
-                    Username = message.Username,
-                });
+                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
             }
-            else
-            {
-                result = this.passwordService.ChangeMainAccountPassword(new ChangeMainAccountPasswordParam
-                {
-                    ActorId = message.ActorId,
-                    ActorName = message.Username,
-                    CurrentPassword = message.CurrentPassword,
-                    CustId = message.CustId,
-                    HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
-                    Ip = message.Ip,
-                    IsCasinoDisabled = message.IsCasinoDisabled,
-                    IsCasinoSync = message.IsCasinoSync,
-                    LanguageKey = message.LanguageKey,
-                    NewPassword = message.NewPassword,
-                    NickName = message.NickName
-                });
-            }
+
+            var result = message.IsSubAccount ? ChangeSubAccountPassword(message) : ChangeMainAccountPassword(message);
 
             if (result.IsSuccessful)
             {
@@ -155,6 +136,42 @@
             }
 
             return result;
+        }
+
+        private Result ChangeMainAccountPassword(ChangePasswordCommand message)
+        {
+            return this.passwordService.ChangeMainAccountPassword(new ChangeMainAccountPasswordParam
+            {
+                ActorId = message.ActorId,
+                ActorName = message.Username,
+                CurrentPassword = message.CurrentPassword,
+                CustId = message.CustId,
+                HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
+                Ip = message.Ip,
+                IsCasinoDisabled = message.IsCasinoDisabled,
+                IsCasinoSync = message.IsCasinoSync,
+                LanguageKey = message.LanguageKey,
+                NewPassword = message.NewPassword,
+                NickName = message.NickName
+            });
+        }
+
+        private Result ChangeSubAccountPassword(ChangePasswordCommand message)
+        {
+            return this.passwordService.ChangeSubAccountPassword(
+            new ChangeSubAccountPasswordParam
+            {
+                CustId = message.CustId,
+                HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
+                Ip = message.Ip,
+                LanguageKey = message.LanguageKey,
+                NewPassword = message.NewPassword,
+                SubAccountId = message.SubAccountId,
+                CurrentPassword = message.CurrentPassword,
+                Nickname = message.NickName,
+                SubUsername = message.SubAccountUsername,
+                Username = message.Username,
+            });
         }
 
         public ForceChangePasswordViewModel Handle(ForceChangePasswordQuery message)
@@ -224,6 +241,22 @@
             {
                 return string.IsNullOrEmpty(message.NickName) ? string.Empty : $"({message.NickName})";
             }
+        }
+
+        private bool HasUpdatePermission(bool isResetPassword = false)
+        {
+            if (userSession.IsInternal || userSession.IsLimitedHostPermisionOnSubAccountFunction)
+            {
+                return false;
+            }
+
+            if (isResetPassword
+                && (userSession.IsSubAcc && !userSession.SubPageAccess.UpdateAccount))
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

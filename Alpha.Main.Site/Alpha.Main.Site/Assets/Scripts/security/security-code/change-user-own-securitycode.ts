@@ -16,13 +16,13 @@ var changeUserOwnSecurityCode = {
             changeUserOwnSecurityCode.gotoPasswordPage()
         });
 
-        $('#txtOldSecCode').focus();
+        $('#txtOldSecCode').val("").focus();
 
-        $("#txtSecCode").keyup(function () {
+        $("#txtSecCode").val("").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
 
-        $("#txtConfirmSecCode").keyup(function () {
+        $("#txtConfirmSecCode").val("").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
 

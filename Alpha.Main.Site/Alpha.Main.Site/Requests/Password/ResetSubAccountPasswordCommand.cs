@@ -13,7 +13,7 @@
         {
         }
 
-        public ResetSubAccountPasswordCommand(IUserSession userSession)
+        internal ResetSubAccountPasswordCommand(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();
         }
@@ -32,7 +32,7 @@
         {
             get
             {
-                return this.userSession.CustId;
+                return this.userSession.UserId;
             }
         }
 

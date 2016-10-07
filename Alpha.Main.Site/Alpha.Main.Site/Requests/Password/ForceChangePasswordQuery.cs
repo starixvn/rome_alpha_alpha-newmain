@@ -13,7 +13,7 @@
         {
         }
 
-        public ForceChangePasswordQuery(IUserSession userSession)
+        internal ForceChangePasswordQuery(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();
         }
