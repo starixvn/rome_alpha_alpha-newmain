@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels.Dashboard.BalanceInfo
 {
+    using System;
     using Constants;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
@@ -19,7 +20,11 @@
             var userLevel = Enumeration.FromValue<UserLevel>(roleId);
 
             // Act
-            var viewModel = new BalanceInfoViewModel(Arg.Any<BalanceInfo>(), userLevel, Arg.Any<string>());
+            var viewModel = new BalanceInfoViewModel(
+                Arg.Any<BalanceInfo>(),
+                userLevel,
+                Arg.Any<string>(),
+                Arg.Any<int>());
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.UserLevelLabel);
@@ -34,7 +39,11 @@
             var userLevel = Enumeration.FromValue<UserLevel>(roleId);
 
             // Act
-            var viewModel = new BalanceInfoViewModel(Arg.Any<BalanceInfo>(), userLevel, Arg.Any<string>());
+            var viewModel = new BalanceInfoViewModel(
+                Arg.Any<BalanceInfo>(),
+                userLevel,
+                Arg.Any<string>(),
+                Arg.Any<int>());
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.GivenCreditLabel);
@@ -49,10 +58,54 @@
             var userLevel = Enumeration.FromValue<UserLevel>(roleId);
 
             // Act
-            var viewModel = new BalanceInfoViewModel(Arg.Any<BalanceInfo>(), userLevel, Arg.Any<string>());
+            var viewModel = new BalanceInfoViewModel(
+                Arg.Any<BalanceInfo>(),
+                userLevel,
+                Arg.Any<string>(),
+                Arg.Any<int>());
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.TotalDownlineCreditLabel);
+        }
+
+        [TestCase(RoleId.Super, "~/_Reports/Winloss/WinlossSuper.aspx?custId={0}&fdate={1}&tdate={2}")]
+        [TestCase(RoleId.Master, "~/_Reports/Winloss/WinlossMaster.aspx?custId={0}&fdate={1}&tdate={2}")]
+        [TestCase(RoleId.Agent, "~/_Reports/Winloss/WinlossAgent.aspx?custId={0}&fdate={1}&tdate={2}")]
+        public void MemberTodayWinLossReportUrl_ByUserLevel_ReturnCorrectUrl(byte roleId, string expectedUrl)
+        {
+            // Arrange
+            var userLevel = Enumeration.FromValue<UserLevel>(roleId);
+
+            // Act
+            var viewModel = new BalanceInfoViewModel(
+                Arg.Any<BalanceInfo>(),
+                userLevel,
+                Arg.Any<string>(),
+                CustId.ValidId);
+
+            // Assert
+            expectedUrl = string.Format(expectedUrl, CustId.ValidId, DateTime.Today, DateTime.Today);
+            Assert.AreEqual(expectedUrl, viewModel.MemberTodayWinLossReportPath);
+        }
+
+        [TestCase(RoleId.Super, "~/_Reports/Winloss/WinlossSuper.aspx?custId={0}&fdate={1}&tdate={2}")]
+        [TestCase(RoleId.Master, "~/_Reports/Winloss/WinlossMaster.aspx?custId={0}&fdate={1}&tdate={2}")]
+        [TestCase(RoleId.Agent, "~/_Reports/Winloss/WinlossAgent.aspx?custId={0}&fdate={1}&tdate={2}")]
+        public void MemberYerterdayWinLossReportUrl_ByUserLevelWithCustId_ReturnCorrectUrl(byte roleId, string expectedUrl)
+        {
+            // Arrange
+            var userLevel = Enumeration.FromValue<UserLevel>(roleId);
+
+            // Act
+            var viewModel = new BalanceInfoViewModel(
+                Arg.Any<BalanceInfo>(),
+                userLevel,
+                Arg.Any<string>(),
+                CustId.ValidId);
+
+            // Assert
+            expectedUrl = string.Format(expectedUrl, CustId.ValidId, DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1));
+            Assert.AreEqual(expectedUrl, viewModel.MemberYesterdayWinLossReportPath);
         }
     }
 }

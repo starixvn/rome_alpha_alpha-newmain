@@ -25,7 +25,11 @@
 
             var balanceInfo = balanceInfoService.GetBalanceInfo(message.CustId, message.UserLevel);
 
-            var viewModel = new BalanceInfoViewModel(balanceInfo, message.UserLevel, message.Currency);
+            var viewModel = new BalanceInfoViewModel(
+                balanceInfo,
+                message.UserLevel,
+                message.Currency,
+                message.CustId);
 
             return viewModel;
         }

@@ -76,7 +76,8 @@ namespace Alpha.Main.Site.Tests.Handlers
             var expectedBalanceInfoViewModel = new BalanceInfoViewModel(
                                                         balanceInfo,
                                                         query.UserLevel,
-                                                        query.Currency);
+                                                        query.Currency,
+                                                        query.CustId);
 
             // Act
             var balanceInfoViewModel = balanceInfoHandler.Handle(query);
