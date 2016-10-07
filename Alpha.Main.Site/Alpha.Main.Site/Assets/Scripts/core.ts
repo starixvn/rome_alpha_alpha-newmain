@@ -3,17 +3,33 @@
 var alpha = {
     urls:
     {
-        oldMainRootPath: (<HTMLInputElement>document.getElementById('oldMainRootPath')).value,
-        mainRootPath: (<HTMLInputElement>document.getElementById('mainRootPath')).value,
-        howToUseRootPath: (<HTMLInputElement>document.getElementById('howToUseRootPath')).value
+        oldMainRootPath: document.getElementById('oldMainRootPath') != null
+            ? (<HTMLInputElement>document.getElementById('oldMainRootPath')).value
+            : "not found",
+        mainRootPath: document.getElementById('mainRootPath') != null
+            ? (<HTMLInputElement>document.getElementById('mainRootPath')).value
+            : "not found",
+        howToUseRootPath: document.getElementById('howToUseRootPath') != null
+            ? (<HTMLInputElement>document.getElementById('howToUseRootPath')).value
+            : "not found"
     },
     user:
     {
-        onUserId: (<HTMLInputElement>document.getElementById('onUserId')).value,
-        passwordHash: (<HTMLInputElement>document.getElementById('passwordHash')).value,
-        subPageAccess: (<HTMLInputElement>document.getElementById('subPageAccess')).value,
-        level: (<HTMLInputElement>document.getElementById('userLevel')).value,
-        isSubAccount: (<HTMLInputElement>document.getElementById('isSubAccount')).value.toLowerCase() === "true"
+        onUserId: document.getElementById('onUserId') != null
+            ? (<HTMLInputElement>document.getElementById('onUserId')).value
+            : "not found",
+        passwordHash: document.getElementById('passwordHash') != null
+            ? (<HTMLInputElement>document.getElementById('passwordHash')).value
+            : "not found",
+        subPageAccess: document.getElementById('subPageAccess') != null
+            ? (<HTMLInputElement>document.getElementById('subPageAccess')).value
+            : "not found",
+        level: document.getElementById('userLevel') != null
+            ? (<HTMLInputElement>document.getElementById('userLevel')).value
+            : "not found",
+        isSubAccount: document.getElementById('isSubAccount') != null
+            ? ((<HTMLInputElement>document.getElementById('isSubAccount')).value.toLowerCase() === "true")
+            : "not found"
     },
     core:
     {
@@ -50,7 +66,7 @@ var alpha = {
     isScreenLower768: false,
     isScreenGreater768AndLower1024: false,
     isMobile: false,
-    init: function () {
+    detectResponsiveInformation: function () {
         if (alpha.core.isIe()) {
             //// Work arround because in IE, bootstrap modal dont delegate focusin event to others.
             $.fn.modal.Constructor.prototype.enforceFocus = function () { };
@@ -71,8 +87,3 @@ var alpha = {
         alpha.isMobile = isMobile.any;
     }
 };
-
-$(function () {
-    alpha.init();
-});
-

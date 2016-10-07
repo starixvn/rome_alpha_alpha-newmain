@@ -1,121 +1,171 @@
-﻿'use strict'; 
+﻿/// <reference path="../../core.ts" />
+/// <reference path="../security-helper.ts" />
 
-var changeUserOwnPassword = {
-    initialize: function () {
-        var $form = $('.form-SC');
-        $form.submit(function (e) {
-            e.preventDefault();
-            changeUserOwnPassword.change();
-        });
-        $form.bind('reset', function (e) {
-            changeUserOwnPassword.resetOriginalInputStatus();
-        });
-       
-        $('#securityCodeNav').click(function () {
-            changeUserOwnPassword.gotoSecurityCodePage();
-        });
+'use strict'; 
 
-        $('#txtOldPwd').val("").focus();
+var changePassword = {
+    domElements: {
+        form: null,
+        securityCodeNav: null,
+        txtOldPwd: null,
+        txtNewPwd: null,
+        txtConfirmPwd: null,
+        showPasswordchk: null,
+        container: null,
+        hashKey: null,
+        statusMessage: null,
+        statusConatiner: null,
+    },
 
-        $("#txtNewPwd").val("").keyup(function () {
-            securityHelper.validatePassword(this);
-        });
+    cachedDomElements: function () {
+        changePassword.domElements.form = $('.form-SC');
+        changePassword.domElements.securityCodeNav = $('#securityCodeNav');
+        changePassword.domElements.txtOldPwd = $('#txtOldPwd');
+        changePassword.domElements.txtNewPwd = $('#txtNewPwd');
+        changePassword.domElements.txtConfirmPwd = $('#txtConfirmPwd');
+        changePassword.domElements.showPasswordchk = $('#showPasswordchk');
+        changePassword.domElements.container = $('#container');
+        changePassword.domElements.hashKey = $('#hashkey');
+        changePassword.domElements.statusMessage = $('#status-message');
+        changePassword.domElements.statusConatiner = $('#status-message-content');
+    },
 
-        $("#txtConfirmPwd").val("").keyup(function () {
-            securityHelper.validatePassword(this);
-        });
-
-        $("#showPasswordchk").click(function () {
-            var isChecked = $(this).is(":checked");
-            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
-        });
+    init: function () {
+        changePassword.cachedDomElements();
+        changePassword.registerEvents();
 
         if (top.hasPopupOpen()) {
-            $("#container").addClass("has-popup");
+            changePassword.domElements.container.addClass("has-popup");
         }
     },
+
+    registerEvents: function () {
+        changePassword.domElements.form
+            .submit(function (e) {
+                e.preventDefault();
+                changePassword.change();
+            }).bind('reset', function (e) {
+                changePassword.resetOriginalInputStatus();
+            });
+
+        changePassword.domElements.securityCodeNav.click(function () {
+            changePassword.gotoSecurityCodePage();
+        });
+
+        changePassword.domElements.txtOldPwd
+            .val("")
+            .focus();
+
+        changePassword.domElements.txtNewPwd
+            .val("")
+            .keyup(function () {
+                securityHelper.validatePassword(this);
+            });
+
+        changePassword.domElements.txtConfirmPwd
+            .val("")
+            .keyup(function () {
+                securityHelper.validatePassword(this);
+            });
+
+        changePassword.domElements.showPasswordchk
+            .click(function () {
+                var isChecked = $(this).is(":checked");
+                isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+            });
+    },
+
     change: function () {
-        $.blockUI();
-        var $container = $('#status-message');
-        var $messageContainer = $('#status-message-content');
-        $container.removeClass('display-none');
-        var $txtOldPassword = $('#txtOldPwd');
-        var $txtPassword = $('#txtNewPwd');
-        var $txtConfirmPassword = $('#txtConfirmPwd');
-        var message = changeUserOwnPassword.checkInputParameters($txtOldPassword, $txtPassword, $txtConfirmPassword);
-        if (message.length !== 0) {
-            securityHelper.showFailMessage($messageContainer, message);
-            $.unblockUI();
+        var $txtOldPassword = changePassword.domElements.txtOldPwd;
+        var $txtPassword = changePassword.domElements.txtNewPwd;
+        var $txtConfirmPassword = changePassword.domElements.txtConfirmPwd;
+        var $messageContainer = changePassword.domElements.statusConatiner;
+
+        changePassword.domElements.statusMessage.removeClass('display-none');
+
+        var errorMessage = changePassword.checkInputParameters($txtOldPassword, $txtPassword, $txtConfirmPassword);
+        if (errorMessage.length > 0) {
+            securityHelper.showFailMessage($messageContainer, errorMessage);
             return;
         }
 
-        var hashKey = $('#hashkey').val();
-        var oldPassword = $txtOldPassword.val();
-        oldPassword = oldPassword.ec(hashKey).hc();
-        var password = $txtPassword.val();
-        password = password.ec(hashKey).hc();
-        var confirmPassword = $txtConfirmPassword.val();
-        confirmPassword = confirmPassword.ec(hashKey).hc();
+        var hashKey = changePassword.domElements.hashKey.val();
+        var oldPassword = $txtOldPassword.val().ec(hashKey).hc();
+        var password = $txtPassword.val().ec(hashKey).hc();
+        var confirmPassword = $txtConfirmPassword.val().ec(hashKey).hc();
+
+        $.blockUI();
         $.ajax({
             type: 'POST',
-            url: 'ChangePassword',
+            url: alpha.urls.mainRootPath +  "Password/ChangePassword",
             data: { currentPassword: oldPassword, newPassword: password },
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.Code === 0) { // OK
                     securityHelper.showSuccessfullyMessage($messageContainer, passwordResources.changePasswordSuccessfully);
-                    setTimeout(changeUserOwnPassword.refreshPage, 5000);
+                    setTimeout(changePassword.refreshPage, 3000);
+
+                    return;
                 }
-                else if (data.Code === 2) { // account is closed
+
+                if (data.Code === 2) { // account is closed
                     alert(data.Message);
                     securityHelper.signOut();
+
+                    return;
                 }
-                else {
-                    securityHelper.showFailMessage($messageContainer, data.Message);
-                    $txtOldPassword.focus();
-                }
+
+                securityHelper.showFailMessage($messageContainer, data.Message);
+                $txtOldPassword.focus();
             },
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
             }
         })
     },
+
     checkInputParameters: function ($txtOldPassword, $txtPassword, $txtConfirmPassword) {
         var oldPassword = $txtOldPassword.val();
-        var password = $txtPassword.val();
-        var confirmPassword = $txtConfirmPassword.val();
         if (oldPassword.length === 0) {
             $txtOldPassword.focus();
             return passwordResources.pleaseEnterOldPassword;
         }
-        else if (password.length === 0) {
+
+        var password = $txtPassword.val();
+        if (password.length === 0) {
             $txtPassword.focus();
             return passwordResources.passwordCannotEmpty;
         }
-        else if (password != confirmPassword) {
+
+        var confirmPassword = $txtConfirmPassword.val();
+        if (password != confirmPassword) {
             $txtConfirmPassword.focus();
             return passwordResources.confirmPasswordNotCorret;
         }
-        else if (oldPassword === password) {
+
+        if (oldPassword === password) {
             $txtPassword.focus();
             return passwordResources.newPassMustbeDiffOldPass;
         }
 
-        return '';
+        return "";
     },
+
     resetOriginalInputStatus: function () {
-        $("#txtOldPwd").val("");
-        $("#txtNewPwd").val("");
-        $("#txtConfirmPwd").val("");
+        changePassword.domElements.txtOldPwd.val("");
+        changePassword.domElements.txtNewPwd.val("");
+        changePassword.domElements.txtConfirmPwd.val("");
     },
+
     gotoSecurityCodePage: function () {
-        window.location.href = $("#mainRootPath").val() + 'SecurityCode/ChangeUserOwnSecurityCode';
+        window.location.href = alpha.urls.mainRootPath + "SecurityCode/ChangeUserOwnSecurityCode";
     },
+
     refreshPage: function () {
-        window.location.href = $("#mainRootPath").val() + 'Password/ChangePassword';
+        window.location.href = alpha.urls.mainRootPath + "Password/ChangePassword";
     }
 }
 
 $(function () {
-    changeUserOwnPassword.initialize();
+    changePassword.init();
 });

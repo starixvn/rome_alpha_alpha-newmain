@@ -50,7 +50,7 @@
 
         public Result Handle(ResetSubAccountPasswordCommand message)
         {
-            if (!HasUpdatePermission(true))
+            if (!HasUpdatePermission(true, true))
             {
                 return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
             }
@@ -243,9 +243,14 @@
             }
         }
 
-        private bool HasUpdatePermission(bool isResetPassword = false)
+        private bool HasUpdatePermission(bool isResetPassword = false, bool isResetSubAccount = false)
         {
-            if (userSession.IsInternal || userSession.IsLimitedHostPermisionOnSubAccountFunction)
+            if (userSession.IsInternal && !isResetSubAccount)
+            {
+                return false;
+            }
+
+            if(userSession.IsLimitedHostPermisionOnSubAccountFunction)
             {
                 return false;
             }

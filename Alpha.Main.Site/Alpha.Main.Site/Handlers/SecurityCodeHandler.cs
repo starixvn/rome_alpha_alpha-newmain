@@ -227,12 +227,7 @@
             message.SecurityCode = GetRC4Decryption(message.SecurityCode);
             bool isResetSubAccount = message.SubAccId.HasValue && message.SubAccId.Value > 0;
 
-            if (userSession.IsInternal && !isResetSubAccount)
-            {
-                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
-            }
-
-            var validateResult = ValidateSecurityCode(message.SecurityCode);
+            var validateResult = ValidateSecurityCode(message.SecurityCode, null, false, isResetSubAccount);
 
             if (!validateResult.IsOK)
             {
@@ -284,9 +279,10 @@
         private Result ValidateSecurityCode(
             string securityCode,
             string oldSecurityCode = null,
-            bool isCheckOldSecurityCode = false)
+            bool isCheckOldSecurityCode = false,
+            bool isResetSubAccount = false)
         {
-            if (userSession.IsInternal)
+            if (userSession.IsInternal && !isResetSubAccount)
             {
                 return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
             }

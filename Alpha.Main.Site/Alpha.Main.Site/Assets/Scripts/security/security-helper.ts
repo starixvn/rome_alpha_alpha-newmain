@@ -1,4 +1,6 @@
-﻿interface Window {
+﻿/// <reference path="../core.ts" />
+
+interface Window {
     hasPopupOpen(): void;
     securityCodePopup: any;
     setSecurityCodePopupTitle(securityCodeTitle): void;
@@ -66,11 +68,9 @@ var securityHelper = {
     redirectToHomePage: function (timeout) {
         setTimeout(securityHelper.gotoHomePage, timeout);
     },
-    signOut: function () {
-        window.location.href = $("#oldMainRootPath").val() + '_Authorization/Handlers/SignOut.ashx';
-    },
+    signOut: alpha.core.signOut,
     gotoHomePage: function () {
-        window.location.href =  $("#mainRootPath").val();
+        window.location.href = alpha.urls.mainRootPath;
     },
     initLanguage: function () {
         $(".changelanguage-link").click(function () {
