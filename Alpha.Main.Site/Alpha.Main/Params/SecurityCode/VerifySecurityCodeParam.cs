@@ -6,8 +6,6 @@
 
         public int SubAccId { get; set; }
 
-        public bool IsSubAcc { get; set; }
-
         public string SecurityCode { get; set; }
 
         public string Salt { get; set; }

@@ -282,8 +282,7 @@
                     IP = message.IP,
                     Language = userSession.Language,
                     Salt = sessionManager.Get<string>(SecurityCodeTokenSessionKey),
-                    SubAccId = message.SubAccId,
-                    IsSubAcc = message.IsSubAcc
+                    SubAccId = message.SubAccId
                 });
 
             if (result.IsSuccessful)

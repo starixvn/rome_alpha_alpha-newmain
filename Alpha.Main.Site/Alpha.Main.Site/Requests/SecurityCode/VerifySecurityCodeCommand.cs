@@ -59,13 +59,5 @@
                 return this.userSession.SubAccId;
             }
         }
-
-        public bool IsSubAcc
-        {
-            get
-            {
-                return !this.userSession.SubAccId.Equals(0);
-            }
-        }
     }
 }

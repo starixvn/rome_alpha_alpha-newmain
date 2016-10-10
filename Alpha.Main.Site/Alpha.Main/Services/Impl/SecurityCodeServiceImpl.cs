@@ -160,8 +160,7 @@
                     IP = param.IP,
                     Language = param.Language,
                     Salt = param.Salt,
-                    SubAccId = param.SubAccId,
-                    IsSubAcc = param.SubAccId > 0
+                    SubAccId = param.SubAccId
                 });
 
                 if (verifyResult.IsNotOk)
@@ -299,9 +298,8 @@
             {
                 result.Code = 2; //// account is closed
                 // If account was closed, then close casino account also
-                if (subAccountId > 0)
+                if (subAccountId == 0)
                 {
-                    // TODO: Please check here, i don't think if current user is subacc, should be main acc
                     CloseCasinoAccount(custId, ip);
                 }
             }
