@@ -37,10 +37,6 @@ body {
         margin: 0;
         padding: 0 4px;
 
-        &:hover {
-            background-color: $table-td-hover-color;
-        }
-
         .icon-plus, .icon-minus {
             top: 2px;
             position: relative;
@@ -301,6 +297,11 @@ body {
                 position: relative;
                 top: 4px;
             }
+        }
+
+        
+        .row:hover {
+            background-color: $table-td-hover-color;
         }
     }
 
