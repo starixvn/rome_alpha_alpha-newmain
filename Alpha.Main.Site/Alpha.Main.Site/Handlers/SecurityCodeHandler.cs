@@ -126,6 +126,7 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
+            // Make sure that, when user already has SC in session, then cannot be forced change by first login
             if (!string.IsNullOrWhiteSpace(userSession.SecurityCode))
             {
                 return Result.CreateErrorResult(Security.NotAuthorized);

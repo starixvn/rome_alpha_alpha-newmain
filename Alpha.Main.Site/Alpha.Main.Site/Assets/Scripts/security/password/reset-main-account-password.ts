@@ -76,7 +76,13 @@ var resetMainAccountPassword = {
             $txtSecurityCode.focus();
             return passwordResources.passwordCannotEmpty;
         }
-        else if (password != confirmPassword) {
+
+        if (!securityHelper.isValidPassword(password)) {
+            $txtSecurityCode.focus();
+            return passwordResources.passwordDoesNotMeetMinimunRequirement;
+        }
+
+        if (password != confirmPassword) {
             $txtConfirmSecurityCode.focus();
             return passwordResources.confirmPasswordNotCorret;
         }

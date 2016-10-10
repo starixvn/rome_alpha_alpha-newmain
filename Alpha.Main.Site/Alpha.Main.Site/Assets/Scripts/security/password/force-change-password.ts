@@ -74,19 +74,28 @@ var forceChangePassword = {
             $txtOldPassword.focus();
             return false;
         }
-        else if (password.length === 0) {
+
+        if (password.length === 0) {
             $("#txtNewPwd").addClass('error');
             $("#txtNewPwd-error").empty().html(passwordResources.passwordCannotEmpty).append(passwordResources.rules);
             $txtPassword.focus();
             return false;
         }
-        else if (password != confirmPassword) {
+
+        if (!securityHelper.isValidPassword(password)) {
+            $txtPassword.focus();
+            $("#txtNewPwd-error").empty().html(passwordResources.passwordDoesNotMeetMinimunRequirement).append(passwordResources.rules);
+            return false;
+        }
+
+        if (password != confirmPassword) {
             $("#txtConfirmPwd").addClass('error');
             $("#txtConfirmPwd-error").empty().html(passwordResources.confirmPasswordNotCorret);
             $txtConfirmPassword.focus();
             return false;
         }
-        else if (oldPassword === password) {
+
+        if (oldPassword === password) {
             $("#txtConfirmPwd").addClass('error');
             $("#txtConfirmPwd-error").empty().html(passwordResources.newPassMustbeDiffOldPass);
             $txtPassword.focus();

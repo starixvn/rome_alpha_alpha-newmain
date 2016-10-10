@@ -137,6 +137,11 @@ var changePassword = {
             return passwordResources.passwordCannotEmpty;
         }
 
+        if (!securityHelper.isValidPassword(password)) {
+            $txtPassword.focus();
+            return passwordResources.passwordDoesNotMeetMinimunRequirement;
+        }
+
         var confirmPassword = $txtConfirmPassword.val();
         if (password != confirmPassword) {
             $txtConfirmPassword.focus();
