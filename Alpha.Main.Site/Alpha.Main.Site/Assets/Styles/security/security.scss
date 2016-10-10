@@ -71,16 +71,17 @@ body {
     }
 }
 
-
-// It's not necessary at the moment.
-
-/*@media only screen and (max-device-width: 767px)
+// It's not necessary at the moment
+/*
+@media only screen and (max-width: 767px)
 {  
-   .msg {
-        width: 100%;
+   .msg-content .msg {
+       width: 100%;
+       max-width: initial;
    }
 
    .block {
+       max-width: initial;
        width: 100%;
 
        .txt {
@@ -88,9 +89,15 @@ body {
            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
        }   
 
-       .btn-submit {
+       .btn-submit, input[type=reset] {
            height: $height-mobile;
            width: 100%;
        }
+
+       .btn-submit {
+           margin-bottom: 12px;
+       }
+
    }
-}*/
+}
+*/
