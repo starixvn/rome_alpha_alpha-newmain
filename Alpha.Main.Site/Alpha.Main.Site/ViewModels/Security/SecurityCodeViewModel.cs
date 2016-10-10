@@ -37,5 +37,7 @@ namespace Alpha.Main.Site.ViewModels.Security
                 return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
             }
         }
+
+        public string Title { get; set; }
     }
 }

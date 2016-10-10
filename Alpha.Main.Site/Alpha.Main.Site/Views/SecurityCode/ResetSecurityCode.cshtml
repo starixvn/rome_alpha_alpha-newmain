@@ -1,7 +1,7 @@
 ﻿@model SecurityCodeViewModel
 
 @{
-    ViewBag.Title = @Security.titleResetSecCode;
+    ViewBag.Title = Model.Title;
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
 
@@ -10,7 +10,7 @@
     <link href="@StaticResources.MainSiteStyleUrl("~/Assets/bundles/security/security")" rel="stylesheet" type="text/css" />
 }
 
-<h1 id="title_header" class="page-title">@Security.SecurityCode</h1>
+<h1 id="title_header" class="page-title">@Model.Title</h1>
 <div id="status-message" class="msg-content display-none">
     <div id="status-message-content" class="msg"></div>
 </div>        

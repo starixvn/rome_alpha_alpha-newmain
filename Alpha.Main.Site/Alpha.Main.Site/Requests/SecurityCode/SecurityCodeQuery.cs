@@ -49,5 +49,7 @@
                 return this.userSession.IsSubAcc;
             }
         }
+
+        public string Username { get; set; }
     }
 }

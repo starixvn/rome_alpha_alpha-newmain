@@ -715,7 +715,8 @@ function revertSecurityCodePopupTitle() {
 
     if (popupTitle.length > 0) {
         var previousTitle = popupTitle.attr("data-previous-title");
-        if (previousTitle) {
+        var currentTitle = popupTitle.length > 1 ? $(popupTitle[1]).text() : $(popupTitle[0]).text();
+        if (previousTitle != currentTitle) {
             popupTitle.text(previousTitle);
         }
         else {

@@ -89,7 +89,8 @@
                 SecurityCodeToken = securityCodeToken,
                 SecuritySalt = GenerateSecuritySalt(),
                 HashKey = HashKey,
-                CustRoleId = message.RoleId
+                CustRoleId = message.RoleId,
+                Title = BuildSecurityCodeTitle(message.Username)
             };
         }
 
@@ -406,6 +407,16 @@
             var actualCustId = userSession.SubAccId > 0 ? userSession.SubAccId : userSession.CustId;
 
             return securityCodeService.GenerateSalt(actualCustId);
+        }
+
+        private string BuildSecurityCodeTitle(string username)
+        {
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                return Security.titleResetSecCode;
+            }
+
+            return $"{Security.titleResetSecCode} - {username}";
         }
     }
 }

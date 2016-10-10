@@ -235,6 +235,7 @@
             viewModel.CustId = message.CustId;
             viewModel.CustRoleId = message.CustRoleId;
             viewModel.IsCasinoSync = message.IsCasinoSync;
+            viewModel.Title = BuildResetPasswordTitle(message.Username);
 
             return viewModel;
         }
@@ -249,8 +250,19 @@
             var viewModel = Handle(new ChangePasswordQuery());
 
             viewModel.SubAccountId = message.SubAccountId;
+            viewModel.Title = BuildResetPasswordTitle(message.Username);
 
             return viewModel;
+        }
+
+        private string BuildResetPasswordTitle(string username)
+        {
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                return Resources.lblresetpassword;
+            }
+
+            return $"{Resources.lblresetpassword} - {username}";
         }
 
         private string GenerateImage(ProfilePicture profilePicture)

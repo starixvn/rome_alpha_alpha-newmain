@@ -10,5 +10,7 @@
         public byte CustRoleId { get; set; }
 
         public bool IsCasinoSync { get; set; }
+
+        public string Username { get; set; }
     }
 }

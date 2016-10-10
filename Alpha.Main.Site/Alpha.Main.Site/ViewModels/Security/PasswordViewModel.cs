@@ -41,5 +41,7 @@
                 return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
             }
         }
+
+        public string Title { get; set; }
     }
 }
