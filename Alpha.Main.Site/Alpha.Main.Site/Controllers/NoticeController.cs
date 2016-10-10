@@ -7,6 +7,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.SessionState;
     using MediatR;
     using Requests.Dashboard.Notice;
+    using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard.Notice;
 
@@ -34,7 +35,7 @@ namespace Alpha.Main.Site.Controllers
         public ActionResult NoticeMessages(DateTime lastPostDate, int totalMessage = 10)
         {
             var viewModel = mediator.Send(
-                new NoticeQuery(userSession, lastPostDate, totalMessage, false));
+                new NoticeQuery(userSession, lastPostDate, totalMessage, AppSettings.LocalTest));
 
             return PartialView("NoticeMessages", viewModel);
         }

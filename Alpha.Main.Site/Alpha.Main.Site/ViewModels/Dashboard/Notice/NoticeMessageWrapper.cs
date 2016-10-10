@@ -7,7 +7,7 @@
 
     public class NoticeMessageWrapper
     {
-        private const string DefaultContentPropName = "ContentEn";
+        private const string DefaultContentPropName = "ContentEN";
         private const int DefaultMaxContentLength = 100;
         private const string Ellipsis = "...";
 

@@ -126,6 +126,7 @@
     <Compile Include="Constants\RoleId.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
+    <Compile Include="Criteria\Message\GetMessageCriteriaTests.cs" />
     <Compile Include="Criteria\Notice\MarkMessageAsReadCriteriaTests.cs" />
     <Compile Include="Criteria\Notice\GetNoticeMessagesCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteriaTests.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Services\Announcement\GetHotAnnouncement\ShowedMessageCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\LogInAndSettingChangedCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\ValidAnnouncementTimeCondition.cs" />
+    <Compile Include="Services\MessageServiceImplTests.cs" />
     <Compile Include="Services\NoticeServiceImplTests.cs" />
     <Compile Include="Services\StatisticsServiceImplTests.cs" />
     <Compile Include="Services\BalanceInfoServiceImplTests.cs" />

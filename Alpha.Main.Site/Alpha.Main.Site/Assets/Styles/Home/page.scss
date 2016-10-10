@@ -296,14 +296,14 @@ html * {
 .typeahead {
     background-color: #fff;
     font-size: 18px;
-    height: 400px;
-    padding: 8px 12px;
+    height: 100%;
     width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
     background: rgba(0,0,0,0.001);
 
     li {
-        padding-top: 8px;
-        line-height: 48px;
+        margin-top: -2px;
 
         a {
             color: #fff;

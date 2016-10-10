@@ -6,6 +6,7 @@ var NoticeMessage = (function () {
             _this.onToggleMessage(_this.markMessageAsRead);
             _this.onToggleShowMoreMessages();
             _this.onSwipeInMobileView();
+            _this.hideMoreBtnIfHaveNoData();
         };
         this.onToggleMessage = function (markMessageAsRead) {
             $('.msg').each(function () {
@@ -34,7 +35,7 @@ var NoticeMessage = (function () {
                     }
                 };
                 var ajaxSetting = {
-                    url: '/site-main/Notice/MarkMessageAsRead',
+                    url: alpha.urls.mainRootPath + '/Notice/MarkMessageAsRead',
                     data: { messageId: message.attr('id') },
                     method: 'POST',
                     success: onSuccess
@@ -48,7 +49,7 @@ var NoticeMessage = (function () {
                 var $content = $('#notice');
                 var onSuccess = function (htmlString) {
                     $content.html(htmlString);
-                    new NoticeMessage();
+                    new NoticeMessage().registerEvent();
                 };
                 var ajaxSetting = {
                     url: alpha.urls.mainRootPath + '/Notice/MoreMessages?totalMessage=' + $moreMessagesBtn.attr('totalMsg'),
@@ -63,13 +64,20 @@ var NoticeMessage = (function () {
         this.onSwipeInMobileView = function () {
             var stats = document.getElementById('stats'), statsTab = document.getElementById('stats-tab'), notice = document.getElementById('notice'), noticeTab = document.getElementById('notice-tab');
             var noticeHM = new Hammer(notice);
-            noticeHM.on("swiperight", function (ev) {
+            noticeHM.on("swiperight", function () {
                 notice.classList.remove('active');
                 noticeTab.classList.remove('active');
                 stats.classList.add('active');
                 statsTab.classList.add('active');
             });
         };
+        this.hideMoreBtnIfHaveNoData = function () {
+            var noInfo = document.getElementById('no-info');
+            if (noInfo !== null) {
+                $('.more-info').hide();
+            }
+        };
     }
     return NoticeMessage;
 }());
+//# sourceMappingURL=notice.js.map

@@ -511,13 +511,34 @@
     <Content Include="Assets\bundles\default-index.min.css">
       <DependentUpon>default-index.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\default-messages.css" />
-    <Content Include="Assets\bundles\default-messages.min.css">
-      <DependentUpon>default-messages.css</DependentUpon>
+    <Content Include="Assets\bundles\default-index.min.js">
+      <DependentUpon>default-index.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-introduction.css" />
+    <Content Include="Assets\bundles\default-introduction.js" />
+    <Content Include="Assets\bundles\default-introduction.min.css">
+      <DependentUpon>default-introduction.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-introduction.min.js">
+      <DependentUpon>default-introduction.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-message.css" />
+    <Content Include="Assets\bundles\default-message.js" />
+    <Content Include="Assets\bundles\default-message.min.css">
+      <DependentUpon>default-message.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-message.min.js">
+      <DependentUpon>default-message.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\default-otp.css" />
     <Content Include="Assets\bundles\default-otp.min.css">
       <DependentUpon>default-otp.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\dropdown-ext.css">
+      <DependentUpon>dropdown-ext.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\dropdown-ext.min.css">
+      <DependentUpon>dropdown-ext.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>
@@ -525,10 +546,22 @@
     <Content Include="Assets\styles\home\home.min.css">
       <DependentUpon>home.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\messages\messages.css">
-      <DependentUpon>messages.scss</DependentUpon>
+    <Content Include="Assets\styles\home\tooltip - Copy.css">
+      <DependentUpon>dropdown-ext.scss</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\messages\messages.min.css">
+    <Content Include="Assets\styles\home\tooltip - Copy.min.css">
+      <DependentUpon>tooltip - Copy.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\message\message.css">
+      <DependentUpon>message.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\message\message.min.css">
+      <DependentUpon>message.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\message\messages.css">
+      <DependentUpon>message.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\message\messages.min.css">
       <DependentUpon>messages.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\otp\images\apple.png" />
@@ -544,19 +577,8 @@
     <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\notice.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\statistics.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\dropdown-ext.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
-    <Content Include="Assets\bundles\default-index.js" />
-    <Content Include="Assets\bundles\default-index.min.js">
-      <DependentUpon>default-index.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-introduction.css" />
-    <Content Include="Assets\bundles\default-introduction.js" />
-    <Content Include="Assets\bundles\default-introduction.min.css">
-      <DependentUpon>default-introduction.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-introduction.min.js">
-      <DependentUpon>default-introduction.js</DependentUpon>
-    </Content>
     <Content Include="Assets\bundles\security\password\change-password.js" />
     <Content Include="Assets\bundles\security\password\change-password.min.js">
       <DependentUpon>change-password.js</DependentUpon>
@@ -668,6 +690,7 @@
     <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.woff" />
     <Content Include="App_Data\securitycode.json" />
     <Content Include="Assets\styles\home\home.scss" />
+    <Content Include="Assets\styles\home\dropdown-ext.scss" />
     <None Include="Assets\styles\introduction\enjoyhint.scss" />
     <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.svg" />
     <Content Include="Assets\styles\introduction\enjoyhint.css">
@@ -788,7 +811,7 @@
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\introduction\intro.scss" />
     <Content Include="Assets\styles\security\security.scss" />
-    <Content Include="Assets\styles\messages\messages.scss" />
+    <Content Include="Assets\styles\message\message.scss" />
     <Content Include="Assets\styles\otp\otp.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -810,8 +833,8 @@
     <Content Include="Views\Password\ChangePassword.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Password\ForceChangePassword.cshtml" />
-    <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
     <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
     <Content Include="Views\BalanceInfo\Index.cshtml" />
@@ -846,6 +869,8 @@
     <Content Include="Views\OTP\Index.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-TW.cshtml" />
     <Content Include="Views\Dashboard\HiddenFields.cshtml" />
+    <Content Include="Views\Message\Messages.cshtml" />
+    <Content Include="Views\Message\HiddenFields.cshtml" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>
@@ -870,6 +895,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Configuration\AuthorizationSection.config" />
+    <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
@@ -883,7 +909,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
-    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\OtpController.cs" />
@@ -892,6 +918,7 @@
     <Compile Include="Filters\CheckBelongingFilter.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandler.cs" />
+    <Compile Include="Handlers\MessageHandler.cs" />
     <Compile Include="Handlers\NoticeHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
@@ -911,7 +938,6 @@
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfo\BalanceInfoQuery.cs" />
-    <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\Dashboard\Notice\NoticeQuery.cs" />
     <Compile Include="Requests\Dashboard\Notice\MarkMessageAsReadQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\NewMembersQuery.cs" />
@@ -921,6 +947,7 @@
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
+    <Compile Include="Requests\Message\MessageQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ForceChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetMainAccountPasswordCommand.cs" />
@@ -956,6 +983,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
+    <Compile Include="ViewModels\Message\MessagesViewModel.cs" />
+    <Compile Include="ViewModels\Message\MessageWrapper.cs" />
     <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
   </ItemGroup>

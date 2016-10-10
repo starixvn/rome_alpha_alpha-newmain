@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.App_Start
 {
     using System.Collections.Generic;
@@ -103,6 +104,7 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
             container.Register<NoticeService, NoticeServiceImpl>(Lifestyle.Transient);
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
+            container.Register<MessageService, MessageServiceImpl>(Lifestyle.Transient);
         }
 
         private static void RegisterDataAccesses(Container container)

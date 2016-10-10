@@ -34,3 +34,4 @@ $(document).ready(function () {
     var dashboard = new Dashboard();
     dashboard.startLoading();
 });
+//# sourceMappingURL=dashboard.js.map

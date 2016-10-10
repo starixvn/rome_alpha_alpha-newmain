@@ -3,11 +3,13 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
+    using System.Web.SessionState;
     using MediatR;
     using Requests.Dashboard.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard;
 
+    [SessionState(SessionStateBehavior.ReadOnly)]
     public class DashboardController : BaseController
     {
         private readonly IMediator mediator;

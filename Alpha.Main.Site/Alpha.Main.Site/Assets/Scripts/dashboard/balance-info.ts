@@ -1,6 +1,4 @@
 ﻿class BalanceInfo {
-    constructor() { }
-
     registerEvent = () => {
         this.onSwipeInBalanceInfoMobileView();
     }
@@ -13,7 +11,7 @@
 
         let balanceHM = new Hammer(balance);
 
-        balanceHM.on('swipeleft', (ev) => {
+        balanceHM.on('swipeleft', () => {
             balance.classList.remove('active');
             balanceTab.classList.remove('active');
 

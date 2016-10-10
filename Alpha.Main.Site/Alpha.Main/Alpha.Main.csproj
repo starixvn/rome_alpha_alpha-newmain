@@ -181,12 +181,14 @@
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\Language.cs" />
+    <Compile Include="Constants\MessageType.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\Message\GetMessageCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Notice\GetNoticeMessagesCriteria.cs" />
     <Compile Include="Criteria\Notice\MarkMessageAsReadCriteria.cs" />
@@ -228,6 +230,7 @@
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\Message\Message.cs" />
     <Compile Include="Models\Notice\NoticeMessage.cs" />
     <Compile Include="Models\Statistics\NewMember.cs" />
     <Compile Include="Models\Statistics\Statistics.cs" />
@@ -255,7 +258,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Services\AnnouncementService.cs" />
+    <Compile Include="Services\Impl\MessageServiceImpl.cs" />
     <Compile Include="Services\Impl\NoticeServiceImpl.cs" />
+    <Compile Include="Services\MessageService.cs" />
     <Compile Include="Services\NoticeService.cs" />
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />

@@ -1,13 +1,12 @@
-﻿
-
-'use strict';
+﻿'use strict';
 /*global indexManager*/
 
 var headerMessage = {
     urls: {
         oldMainAppNormalMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
-        //oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
-        oldMainAppPrivateMessageForm: alpha.urls.mainRootPath + 'messages/index',
+        oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
+        mainAppPrivateMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=0',
+        mainAppSpecialMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=2',
         oldMainAppSpecialMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=special',
         updatePrivateMessageCount: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
         getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'
@@ -29,7 +28,6 @@ var headerMessage = {
     scrollerPaused: null,
     topnews: null,
     scroller: null,
-
 
     domElements: {
         btnPrivateMessage: null,
@@ -80,7 +78,7 @@ var headerMessage = {
 
         headerMessage.domElements.btnSpecialMessage
             .off('click.headermsg')
-            .on('click.headermsg', headerMessage.viewLiveMessage);
+            .on('click.headermsg', headerMessage.viewSpecialMessage);
 
         headerMessage.domElements.liveMessage
             .off('click.headermsg')
@@ -99,8 +97,7 @@ var headerMessage = {
     },
 
     viewPrivateMessage: function () {
-
-        indexManager.changeMenu(headerMessage.urls.oldMainAppPrivateMessageForm);
+        indexManager.changeMenu(headerMessage.urls.mainAppPrivateMessageForm);
 
         var countPrivateMsg = headerMessage.domElements.privateMessageCounter.html().replace("+", "");
 
@@ -121,7 +118,7 @@ var headerMessage = {
     },
 
     viewSpecialMessage: function () {
-        indexManager.changeMenu(headerMessage.urls.oldMainAppSpecialMessageForm);
+        indexManager.changeMenu(headerMessage.urls.mainAppSpecialMessageForm);
     },
 
     viewLiveMessage: function () {
@@ -220,7 +217,6 @@ var headerMessage = {
 
         if (publicMessage[headerMessage.messageIdIndex]
             && publicMessage[headerMessage.messageIdIndex] !== headerMessage.publicMessageId) {
-
             headerMessage.domElements.liveMessage
                 .html(publicMessage[headerMessage.messageContentIndex] + '. ')
                 .data(url);
@@ -242,7 +238,6 @@ var headerMessage = {
         // Process Private Message: show new private message
         if (privateMessage[headerMessage.messageIdIndex]
             && headerMessage.privateMessageId !== privateMessage[headerMessage.messageIdIndex]) {
-
             //// Append Private Message to Marquee with green color format.
             var privateMessageContent = headerMessage.domElements.liveMessage.find('#private-message-content');
 

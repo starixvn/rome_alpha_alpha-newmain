@@ -7,9 +7,11 @@ class NoticeMessage {
         this.onToggleShowMoreMessages();
 
         this.onSwipeInMobileView();
+
+        this.hideMoreBtnIfHaveNoData();
     }
 
-    onToggleMessage = (markMessageAsRead: any) => {
+    private onToggleMessage = (markMessageAsRead: any) => {
         $('.msg').each(function () {
             let $this = $(this),
                 $shortContent = $this.children('.short-content'),
@@ -32,7 +34,7 @@ class NoticeMessage {
         });
     }
 
-    markMessageAsRead = (message: any) => {
+    private markMessageAsRead = (message: any) => {
         const isUnRead: boolean = message.hasClass('bold');
 
         if (isUnRead) {
@@ -43,7 +45,7 @@ class NoticeMessage {
             };
 
             const ajaxSetting = {
-                url: '/site-main/Notice/MarkMessageAsRead',
+                url: alpha.urls.mainRootPath + '/Notice/MarkMessageAsRead',
                 data: { messageId: message.attr('id') },
                 method: 'POST',
                 success: onSuccess
@@ -53,7 +55,7 @@ class NoticeMessage {
         }
     }
 
-    onToggleShowMoreMessages = () => {
+    private onToggleShowMoreMessages = () => {
         const $moreMessagesBtn = $('.more-info');
 
         $moreMessagesBtn.click(() => {
@@ -61,7 +63,8 @@ class NoticeMessage {
 
             const onSuccess = (htmlString: any) => {
                 $content.html(htmlString);
-                new NoticeMessage();
+
+                new NoticeMessage().registerEvent();
             }
 
             const ajaxSetting = {
@@ -77,7 +80,7 @@ class NoticeMessage {
         });
     }
 
-    onSwipeInMobileView = () => {
+    private onSwipeInMobileView = () => {
         const stats = document.getElementById('stats'),
             statsTab = document.getElementById('stats-tab'),
             notice = document.getElementById('notice'),
@@ -85,12 +88,20 @@ class NoticeMessage {
 
         let noticeHM = new Hammer(notice);
 
-        noticeHM.on("swiperight", (ev) => {
+        noticeHM.on("swiperight", () => {
             notice.classList.remove('active');
             noticeTab.classList.remove('active');
 
             stats.classList.add('active');
             statsTab.classList.add('active');
         });
+    }
+
+    private hideMoreBtnIfHaveNoData = () => {
+        const noInfo = document.getElementById('no-info');
+
+        if (noInfo !== null) {
+            $('.more-info').hide();
+        }
     }
 }
