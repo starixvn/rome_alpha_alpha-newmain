@@ -285,7 +285,7 @@ html * {
 
     .top-search-input {
         border: none;
-        font-size: 24px;
+        font-size: 18px;
         height: 100%;
         padding-left: 40px;
         padding-right: 40px;
@@ -295,7 +295,7 @@ html * {
 
 .typeahead {
     background-color: #fff;
-    font-size: 24px;
+    font-size: 18px;
     height: 400px;
     padding: 8px 12px;
     width: 100%;
@@ -307,6 +307,10 @@ html * {
 
         a {
             color: #fff;
+
+            &:hover, &:active {
+                color: #f8eb95;
+            }
         }
     }
 }
