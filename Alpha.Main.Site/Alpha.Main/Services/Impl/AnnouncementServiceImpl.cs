@@ -1,5 +1,9 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Xml;
     using AppResources;
     using Constants;
     using Criteria.Announcement;
@@ -9,10 +13,6 @@
     using Models.Announcements;
     using Models.Enumerations;
     using Params.Announcements;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Xml;
 
     public class AnnouncementServiceImpl : AnnouncementService
     {

@@ -5,7 +5,6 @@
     using System.Linq;
     using Helps;
     using Main.Services.Impl;
-    using NSubstitute;
     using NUnit.Framework;
 
     [TestFixture]
