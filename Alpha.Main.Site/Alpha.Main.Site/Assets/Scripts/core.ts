@@ -1,4 +1,5 @@
 ﻿declare var isMobile: any;
+declare var $: any;
 
 var alpha = {
     urls:
@@ -87,3 +88,19 @@ var alpha = {
         alpha.isMobile = isMobile.any;
     }
 };
+
+$(function () {
+    $.ajaxSetup({
+        beforeSend: function (xhr) {
+            var antiXSRFToken = document.getElementsByName("__RequestVerificationToken");
+            if (antiXSRFToken.length > 0) {
+                xhr.setRequestHeader("__RequestVerificationToken", (<HTMLInputElement>antiXSRFToken[0]).value);
+            }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            if (xhr.status === 401) {
+                alpha.core.signOut();
+            }
+        }
+    });
+});
