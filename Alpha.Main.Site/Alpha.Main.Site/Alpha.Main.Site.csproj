@@ -17,7 +17,7 @@
     <RootNamespace>Alpha.Main.Site</RootNamespace>
     <AssemblyName>Alpha.Main.Site</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -811,7 +811,6 @@
     <Content Include="Views\Password\ChangePassword.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Password\ForceChangePassword.cshtml" />
     <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
     <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
@@ -874,6 +873,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Configuration\AuthorizationSection.config" />
+    <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
