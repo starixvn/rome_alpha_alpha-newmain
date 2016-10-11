@@ -24,7 +24,8 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var messages = messageService.GetMessages(message.CustId,
+            var messages = messageService.GetMessages(
+                                message.CustId,
                                 message.ParentSites,
                                 message.SpecialType,
                                 message.TotalMessage,

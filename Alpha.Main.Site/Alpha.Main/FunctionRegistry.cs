@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 612, 618
+
 namespace Alpha.Main
 {
     using System;
@@ -117,7 +118,7 @@ namespace Alpha.Main
                     }
                     catch (Exception ex)
                     {
-                        Sunplus.Agent.Utilities.Logs.WriteInfo(ex);
+                        Logs.WriteInfo(ex);
                     }
                 }
             }

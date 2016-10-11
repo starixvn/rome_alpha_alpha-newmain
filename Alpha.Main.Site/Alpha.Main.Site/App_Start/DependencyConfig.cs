@@ -85,7 +85,6 @@ namespace Alpha.Main.Site.App_Start
         {
             container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
-            container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
 
@@ -98,13 +97,13 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<PasswordService, PasswordServiceImpl>();
             container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
             container.RegisterPerWebRequest<Encryptor, EncryptorImpl>();
-            container.Register<BalanceUpDayInfoService, BalanceUpDayInfoServiceImpl>(Lifestyle.Transient);
-            container.Register<BalanceInfoService, BalanceInfoServiceImpl>(Lifestyle.Transient);
-            container.Register<StatisticsService, StatisticsServiceImpl>(Lifestyle.Transient);
+            container.RegisterPerWebRequest<BalanceUpDayInfoService, BalanceUpDayInfoServiceImpl>();
+            container.RegisterPerWebRequest<BalanceInfoService, BalanceInfoServiceImpl>();
+            container.RegisterPerWebRequest<StatisticsService, StatisticsServiceImpl>();
+            container.RegisterPerWebRequest<NoticeService, NoticeServiceImpl>();
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
-            container.Register<NoticeService, NoticeServiceImpl>(Lifestyle.Transient);
+            container.RegisterPerWebRequest<MessageService, MessageServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
-            container.Register<MessageService, MessageServiceImpl>(Lifestyle.Transient);
         }
 
         private static void RegisterDataAccesses(Container container)
