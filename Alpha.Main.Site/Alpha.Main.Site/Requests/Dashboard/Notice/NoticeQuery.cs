@@ -6,7 +6,6 @@ namespace Alpha.Main.Site.Requests.Dashboard.Notice
     using System.Collections.Generic;
     using Main.Models.Enumerations;
     using MediatR;
-    using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard.Notice;
 

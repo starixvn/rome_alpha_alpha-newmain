@@ -457,4 +457,10 @@
   <data name="stats" xml:space="preserve">
     <value>Stats</value>
   </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>Personal Message</value>
+  </data>
+  <data name="specialNotice" xml:space="preserve">
+    <value>Special Notice</value>
+  </data>
 </root>

@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Alpha.Main.AppResources
-{
-
-
+namespace Alpha.Main.AppResources {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -584,6 +584,15 @@ namespace Alpha.Main.AppResources
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personal Message.
+        /// </summary>
+        public static string personalMessage {
+            get {
+                return ResourceManager.GetString("personalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Private Message.
         /// </summary>
         public static string PrivateMessage {
@@ -709,6 +718,15 @@ namespace Alpha.Main.AppResources
         public static string Skip {
             get {
                 return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special Notice.
+        /// </summary>
+        public static string specialNotice {
+            get {
+                return ResourceManager.GetString("specialNotice", resourceCulture);
             }
         }
         

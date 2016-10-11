@@ -43,10 +43,11 @@
         }
 
         [Test]
-        public void GetMessages_CustIdIsValidAndParentSitesIsNotNullorEmpty_ReturnBalanceInfo()
+        public void GetMessages_CustIdIsValidAndParentSitesIsNotNullorEmpty_ReturnMessages()
         {
             // Arrange
             var messages = new List<Message>();
+            messages.Add(CreateMessageData());
 
             dynamicRepository
                 .Fetch<Message>(Arg.Any<object>())
@@ -65,6 +66,39 @@
 
             // Assert
             Assert.AreEqual(messages, actualMessages);
+        }
+
+        private Message CreateMessageData()
+        {
+            var message = new Message(
+                1,
+                "en",
+                "cs",
+                "ch",
+                "jp",
+                "th",
+                "it",
+                "ko",
+                "es",
+                DateTime.Today,
+                DateTime.Today,
+                DateTime.Today,
+                1,
+                false,
+                false,
+                1,
+                true,
+                1,
+                1,
+                "name",
+                "name",
+                false,
+                "1",
+                1,
+                "name",
+                1);
+
+            return message;
         }
     }
 }

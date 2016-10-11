@@ -105,8 +105,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             var viewModel = noticeHandler.Handle(query);
 
             // Assert
-            Assert.IsTrue(viewModel.NoticeMessages.Any(msg => expectedNoticeMessages.Contains(msg.CurrentMessage))
-                && viewModel.LastMessagePostTime == expectedNoticeMessages.Last().PostTime);
+            Assert.AreEqual(expectedNoticeMessages.Count, viewModel.NoticeMessages.Count);
         }
 
         private List<NoticeMessage> CreateNoticeMessagesData(byte msgType = 1, bool isSticky = false)
