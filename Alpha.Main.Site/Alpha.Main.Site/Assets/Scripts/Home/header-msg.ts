@@ -6,6 +6,7 @@ var headerMessage = {
         oldMainAppNormalMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
         oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
         mainAppPrivateMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=0',
+        mainAppPublicMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=1',
         mainAppSpecialMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=2',
         oldMainAppSpecialMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=special',
         updatePrivateMessageCount: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
@@ -127,7 +128,7 @@ var headerMessage = {
             indexManager.changeMenu(liveMessageUrl);
         }
         else {
-            indexManager.changeMenu(headerMessage.urls.oldMainAppNormalMessageForm);
+            indexManager.changeMenu(headerMessage.urls.mainAppPublicMessageForm);
         }
     },
 
