@@ -40,7 +40,8 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleBriefProfileQuery_NotNullQuery_CallGetProfilePictureService()
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            ProfilePicture profilePicture = new ProfilePicture(0, false);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
 
             var query = new BriefProfileQuery(userSession);
 
@@ -59,10 +60,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedEmbedImage)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
-            {
-                BinaryAvatar = binaryAvatar
-            });
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, binaryAvatar));
 
             var query = new BriefProfileQuery(userSession);
 
@@ -82,10 +80,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             bool expectedIsDefaultAvatar)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
-            {
-                UseDefaultAvatar = isDefaultAvatar
-            });
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, isDefaultAvatar));
 
             var query = new BriefProfileQuery(userSession);
 
@@ -103,7 +98,8 @@ namespace Alpha.Main.Site.Tests.Handlers
             int expectedCustId)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            ProfilePicture profilePicture = new ProfilePicture(0, false);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
 
             userSession.CustId.Returns(custId);
 
@@ -123,7 +119,8 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedUsername)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            ProfilePicture profilePicture = new ProfilePicture(0, false);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
 
             userSession.UserName.Returns(username);
 
@@ -146,7 +143,8 @@ namespace Alpha.Main.Site.Tests.Handlers
             bool expectedIsNotMainAccount)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            ProfilePicture profilePicture = new ProfilePicture(0, false);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
 
             userSession.IsSubAcc.Returns(isSubAccount);
             userSession.IsInternal.Returns(isInternal);
@@ -170,7 +168,8 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedNickName)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            ProfilePicture profilePicture = new ProfilePicture(0, false);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
 
             userSession.IsSubAcc.Returns(isSubAccount);
             userSession.IsInternal.Returns(isInternal);
@@ -194,7 +193,8 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedCookieToolTipName)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            ProfilePicture profilePicture = new ProfilePicture(0, false);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
 
             userSession.CustId.Returns(custId);
 
