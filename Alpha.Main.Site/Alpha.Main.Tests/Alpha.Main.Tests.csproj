@@ -92,6 +92,14 @@
       <HintPath>..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ploeh.AutoFixture, Version=3.50.2.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoFixture.3.50.2\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.NUnit3, Version=3.50.2.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoFixture.NUnit3.3.50.2\lib\net40\Ploeh.AutoFixture.NUnit3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -128,7 +136,6 @@
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteriaTests.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteriaTests.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteriaTests.cs" />
-    <Compile Include="Criteria\Announcement\UpdateViewStatusTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
     <Compile Include="Criteria\Message\GetMessageCriteriaTests.cs" />
@@ -142,10 +149,14 @@
     <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
-    <Compile Include="Helpers\Impl\DateTimeWrapTests.cs" />
+    <Compile Include="Helpers\FakeDataHelper.cs" />
     <Compile Include="Helpers\Impl\SiteMapReaderImplTests.cs" />
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />
+    <Compile Include="Models\Dashboard\BalanceInfo\BalanceInfoTests.cs" />
     <Compile Include="Models\Enumerations\UserLevelTests.cs" />
+    <Compile Include="Models\Dashboard\BalanceInfo\BalanceUpDayInfoTests.cs" />
+    <Compile Include="Models\Dashboard\Statistics\TopTurnoverMemberTests.cs" />
+    <Compile Include="Models\Dashboard\Statistics\StatisticsTests.cs" />
     <Compile Include="Models\Menus\MenuItemBuilderImplTests.cs" />
     <Compile Include="Models\Menus\MenuItemTests.cs" />
     <Compile Include="Models\Menus\MenuStatusTests.cs" />
@@ -214,7 +225,10 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\Dashboard\Notice\" />
+    <Folder Include="Models\Message\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Alpha.Main.Site\Alpha.Main.Site.csproj">
       <Project>{4CDDEBBD-6553-4A69-A9FC-5B58E3469843}</Project>
