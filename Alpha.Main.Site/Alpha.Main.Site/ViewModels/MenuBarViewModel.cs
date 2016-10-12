@@ -24,7 +24,7 @@
 
         public bool Visible
         {
-            get { return menuBarVisibleFunc?.Invoke() ?? false;  }
+            get { return menuBarVisibleFunc?.Invoke() ?? false; }
         }
 
         public bool IsAccountInfoVisible
@@ -32,8 +32,8 @@
             get { return accountInfoVisibleFunc?.Invoke() ?? false; }
         }
 
-        public IEnumerable<IMenuItem> MenuItems { get; private set; }
+        public IEnumerable<IMenuItem> MenuItems { get; }
 
-        public bool IsSmallDevice { get; private set; }
+        public bool IsSmallDevice { get; }
     }
 }

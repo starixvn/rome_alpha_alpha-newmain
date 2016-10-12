@@ -17,8 +17,8 @@
         {
         }
 
-        public bool Visible { get; private set; }
+        public bool Visible { get; }
 
-        public bool Disabled { get; private set; }
+        public bool Disabled { get; }
     }
 }

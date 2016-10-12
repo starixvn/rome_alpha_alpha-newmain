@@ -12,15 +12,15 @@
             IsViewedMemberInfo = isViewedMemberInfo;
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
-        public bool EnableSecurityCode { get; private set; }
+        public bool EnableSecurityCode { get; }
 
         public string OldMainRootPath => MicroSites.OldMainUrl("~/");
 
         public string HowToUseRootPath => MicroSites.HowToUseUrl("~/");
 
-        public bool IsViewedMemberInfo { get; private set; }
+        public bool IsViewedMemberInfo { get; }
 
         public string MainRootPath
         {

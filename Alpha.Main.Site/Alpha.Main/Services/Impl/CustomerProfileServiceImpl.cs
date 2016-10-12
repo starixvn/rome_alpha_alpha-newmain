@@ -18,16 +18,16 @@
             if (custId <= 0)
             {
                 throw new ArgumentException("customer Id is equal or less than zero", nameof(custId));
-            }            
+            }
 
             var customerImageData = customerProfileDataAccess.GetCustomerImageData(custId);
 
             if (customerImageData.Length == 0)
             {
                 return new ProfilePicture(custId, useDefaultAvatar: true);
-            }            
+            }
 
-            return new ProfilePicture(custId, useDefaultAvatar: false, imageData: customerImageData);            
+            return new ProfilePicture(custId, useDefaultAvatar: false, imageData: customerImageData);
         }
     }
 }

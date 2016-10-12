@@ -14,9 +14,9 @@
             CurrentLanguage = currentLanguage;
         }
 
-        public Dictionary<string, string> Data { get; private set; }
+        public Dictionary<string, string> Data { get; }
 
-        public string CurrentLanguage { get; private set; }
+        public string CurrentLanguage { get; }
 
         /// <summary>
         /// Equals: used for compare two object (Unit test)

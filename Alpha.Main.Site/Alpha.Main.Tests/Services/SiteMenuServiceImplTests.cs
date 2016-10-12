@@ -47,9 +47,9 @@
             Assert.AreEqual(menuItems, actualMenuItems);
         }
 
-        [TestCase(RoleId.Agent, 5)] 
+        [TestCase(RoleId.Agent, 5)]
         [TestCase(RoleId.Master, 7)]
-        [TestCase(RoleId.Super, 6)] 
+        [TestCase(RoleId.Super, 6)]
         public void GetMenuByUserLevel_UserLevelIsValid_ReturnMenuItemsByUserLevelName(byte userLevelId, int numberOfAccessedMenu)
         {
             // Arrange
@@ -113,6 +113,42 @@
                 $"Alpha.Main.MenuForLevel.{userLevel.DisplayName}",
                 Arg.Is<IEnumerable<IMenuItem>>(
                 menuItems => CountMenuItems(menuItems) == numberOfAccessedMenu));
+        }
+
+        [TestCase(RoleId.Agent, 5)]
+        [TestCase(RoleId.Master, 7)]
+        [TestCase(RoleId.Super, 6)]
+        public void GetMenuByUserLevel_GotSiteMapDataAndCookieLess_NotStoreSiteMapInCacheByUserLevel(byte userLevelId, int numberOfAccessedMenu)
+        {
+            // Arrange
+            var userLevel = Enumeration.FromValue<UserLevel>(userLevelId);
+            var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\SiteMapByLevelName.sitemap");
+            siteMapReader.GetRootNode().Returns(rootNode);
+
+            // Act
+            siteMenuServiceImpl.GetMenuByUserLevel(userLevel, true);
+
+            // Assert
+            cachingManager.DidNotReceive().Add(
+                $"Alpha.Main.MenuForLevel.{userLevel.DisplayName}",
+                Arg.Is<IEnumerable<IMenuItem>>(
+                menuItems => CountMenuItems(menuItems) == numberOfAccessedMenu));
+        }
+
+        [TestCase(RoleId.Agent)]
+        [TestCase(RoleId.Master)]
+        [TestCase(RoleId.Super)]
+        public void GetMenuByUserLevel_EmptySiteMap_ReturnEmptyMenuItems(byte userLevelId)
+        {
+            // Arrange
+            var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\EmptySiteMap.sitemap");
+            siteMapReader.GetRootNode().Returns(rootNode);
+
+            // Act
+            var actualMenuItems = siteMenuServiceImpl.GetMenuByUserLevel(Enumeration.FromValue<UserLevel>(userLevelId));
+
+            // Assert
+            Assert.AreEqual(0, CountMenuItems(actualMenuItems));
         }
 
         private int CountMenuItems(IEnumerable<IMenuItem> menuItems)

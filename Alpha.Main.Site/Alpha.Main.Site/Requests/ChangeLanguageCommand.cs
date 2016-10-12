@@ -16,7 +16,7 @@ namespace Alpha.Main.Site.Requests
             LanguageCode = languageCode;
         }
 
-        public string LanguageCode { get; private set; }
+        public string LanguageCode { get; }
 
         [SuppressMessage(
             "Microsoft.Maintainability",

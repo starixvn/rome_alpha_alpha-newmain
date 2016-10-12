@@ -23,7 +23,7 @@
 
         public UserLevel UserLevel => Enumeration.FromValue<UserLevel>(roleId);
 
-        public string UserAgent { get; private set; }
+        public string UserAgent { get; }
 
         public bool IsSmallDevice
         {
@@ -34,6 +34,6 @@
             }
         }
 
-        public bool IsCookieLess => HttpContext.Current != null ? HttpContext.Current.Session.IsCookieless : false;      
+        public bool IsCookieLess => HttpContext.Current != null ? HttpContext.Current.Session.IsCookieless : false;
     }
 }

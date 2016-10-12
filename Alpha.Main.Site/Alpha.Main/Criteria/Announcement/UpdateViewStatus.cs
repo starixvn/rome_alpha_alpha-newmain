@@ -10,9 +10,9 @@
             IsViewed = isViewed;
         }
 
-        public int CustId { get; private set; }
+        public int CustId { get; }
 
-        public bool IsViewed { get; private set; }
+        public bool IsViewed { get; }
 
         public override string GetSettingKey()
         {

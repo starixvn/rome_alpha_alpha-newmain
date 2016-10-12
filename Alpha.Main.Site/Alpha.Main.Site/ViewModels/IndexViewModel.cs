@@ -55,7 +55,7 @@
 
         public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
 
-        public string PasswordHash { get; private set; }
+        public string PasswordHash { get; }
 
         public string SubPageAccess => message.SubPageAccess;
 
