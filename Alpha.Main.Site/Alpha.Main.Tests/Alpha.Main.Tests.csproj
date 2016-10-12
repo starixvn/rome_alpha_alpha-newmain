@@ -145,6 +145,7 @@
     <Compile Include="Helpers\Impl\DateTimeWrapTests.cs" />
     <Compile Include="Helpers\Impl\SiteMapReaderImplTests.cs" />
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />
+    <Compile Include="Models\Enumerations\UserLevelTests.cs" />
     <Compile Include="Models\Menus\MenuItemBuilderImplTests.cs" />
     <Compile Include="Models\Menus\MenuItemTests.cs" />
     <Compile Include="Models\Menus\MenuStatusTests.cs" />
