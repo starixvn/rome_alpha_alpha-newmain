@@ -12,7 +12,7 @@
             CreatedDate = createdDate;
         }
 
-        public int CustId { get; set; }
+        public int CustId { get; }
 
         public string UserName { get; }
 

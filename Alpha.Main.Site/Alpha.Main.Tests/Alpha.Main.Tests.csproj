@@ -153,10 +153,13 @@
     <Compile Include="Helpers\Impl\SiteMapReaderImplTests.cs" />
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />
     <Compile Include="Models\Dashboard\BalanceInfo\BalanceInfoTests.cs" />
-    <Compile Include="Models\Enumerations\UserLevelTests.cs" />
     <Compile Include="Models\Dashboard\BalanceInfo\BalanceUpDayInfoTests.cs" />
-    <Compile Include="Models\Dashboard\Statistics\TopTurnoverMemberTests.cs" />
+    <Compile Include="Models\Dashboard\Notice\NoticeMessageTests.cs" />
     <Compile Include="Models\Dashboard\Statistics\StatisticsTests.cs" />
+    <Compile Include="Models\Dashboard\Statistics\TopTurnoverMemberTests.cs" />
+    <Compile Include="Models\Dashboard\Statistics\TopWinningMemberTests.cs" />
+    <Compile Include="Models\Dashboard\Statistics\NewMembersTests.cs" />
+    <Compile Include="Models\Enumerations\UserLevelTests.cs" />
     <Compile Include="Models\Menus\MenuItemBuilderImplTests.cs" />
     <Compile Include="Models\Menus\MenuItemTests.cs" />
     <Compile Include="Models\Menus\MenuStatusTests.cs" />
@@ -200,11 +203,10 @@
     <Compile Include="Services\UserMessageServiceImplTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="TestData\Menus\MenuItemBuilder.sitemap">
-      <SubType>Designer</SubType>
+    <None Include="TestData\Menus\EmptySiteMap.sitemap">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestData\Menus\EmptySiteMap.sitemap">
+    <None Include="TestData\Menus\MenuItemBuilder.sitemap">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -226,7 +228,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Dashboard\Notice\" />
     <Folder Include="Models\Message\" />
   </ItemGroup>
   <ItemGroup>

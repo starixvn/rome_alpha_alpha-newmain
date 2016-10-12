@@ -57,7 +57,7 @@
             var member = FakeDataHelper.Create<NewMember>("createdDate", createdDate);
 
             // Assert
-            Assert.AreEqual(createdDate, member.GivenCredit);
+            Assert.AreEqual(createdDate, member.CreatedDate);
         }
     }
 }

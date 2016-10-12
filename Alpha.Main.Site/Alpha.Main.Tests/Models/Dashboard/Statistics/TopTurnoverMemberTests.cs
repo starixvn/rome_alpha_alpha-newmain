@@ -40,7 +40,7 @@
             decimal turnover = 10;
 
             // Act
-            var member = FakeDataHelper.Create<TopTurnoverMember>("turnover", turnover);
+            var member = FakeDataHelper.Create<TopTurnoverMember>("turnOver", turnover);
 
             // Assert
             Assert.AreEqual(turnover, member.Turnover);
