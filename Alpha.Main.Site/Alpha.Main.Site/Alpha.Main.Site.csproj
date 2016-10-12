@@ -906,12 +906,12 @@
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfo\BalanceInfoQuery.cs" />
-    <Compile Include="Requests\Dashboard\Notice\NoticeQuery.cs" />
     <Compile Include="Requests\Dashboard\Notice\MarkMessageAsReadQuery.cs" />
+    <Compile Include="Requests\Dashboard\Notice\NoticeQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\NewMembersQuery.cs" />
+    <Compile Include="Requests\Dashboard\Statistics\StatisticsQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\TopTurnoverMembersQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\TopWinningMembersQuery.cs" />
-    <Compile Include="Requests\Dashboard\Statistics\StatisticsQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />

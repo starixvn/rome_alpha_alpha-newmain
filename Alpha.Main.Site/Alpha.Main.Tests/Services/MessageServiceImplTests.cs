@@ -31,12 +31,12 @@
             var messages = messageService.GetMessages(
                 CustId.InvalidId,
                 string.Empty,
-                Arg.Any<int>(),
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+                1,
+                1,
+                DateTime.Today,
+                DateTime.Today,
+                false,
+                1);
 
             // Act & Assert
             Assert.AreEqual(messages, new List<Message>());
@@ -57,12 +57,12 @@
             var actualMessages = messageService.GetMessages(
                 CustId.ValidId,
                 "1",
-                Arg.Any<int>(),
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+                1,
+                1,
+                DateTime.Today,
+                DateTime.Today,
+                false,
+                1);
 
             // Assert
             Assert.AreEqual(messages, actualMessages);

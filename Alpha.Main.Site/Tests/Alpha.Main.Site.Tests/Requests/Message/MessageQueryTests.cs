@@ -31,11 +31,10 @@
             // Act
             var query = new MessageQuery(
                 userSession,
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+                MessageType.Public,
+                DateTime.Today,
+                DateTime.Today,
+                false);
 
             // Assert
             Assert.AreEqual(custId, query.CustId);
@@ -52,11 +51,10 @@
             // Act
             var query = new MessageQuery(
                     userSession,
-                    Arg.Any<int>(),
-                    Arg.Any<DateTime>(),
-                    Arg.Any<DateTime>(),
-                    Arg.Any<bool>(),
-                    Arg.Any<int>());
+                    MessageType.Public,
+                    DateTime.Today,
+                    DateTime.Today,
+                    false);
 
             // Assert
             Assert.AreEqual(expectedParentSitesId, query.ParentSites);
@@ -72,10 +70,9 @@
             var query = new MessageQuery(
                 userSession,
                 msgType,
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+                DateTime.Today,
+                DateTime.Today,
+                false);
 
             // Assert
             Assert.AreEqual(msgType, query.MessageType);
@@ -90,17 +87,17 @@
             var query = new MessageQuery(
                 userSession,
                 messageType,
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+                DateTime.Today,
+                DateTime.Today,
+                false);
 
             // Assert
             Assert.AreEqual(specialType, query.SpecialType);
         }
 
-        [Test]
-        public void StartDate_Always_EqualsValueSetFromCtor()
+        [TestCase(MessageType.Public)]
+        [TestCase(MessageType.Private)]
+        public void StartDate_WhenMessageTypeIsNotSpecial_EqualsValueSetFromCtor(int messageType)
         {
             // Arrange
             var startDate = DateTime.Today;
@@ -108,11 +105,28 @@
             // Act
             var query = new MessageQuery(
                 userSession,
-                Arg.Any<int>(),
+                messageType,
                 startDate,
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+                DateTime.Today,
+                false);
+
+            // Assert
+            Assert.AreEqual(startDate, query.StartDate);
+        }
+
+        [Test]
+        public void StartDate_WhenMessageTypeIsSpecial_ReturnMinDateTimeValue()
+        {
+            // Arrange
+            var startDate = new DateTime(1900, 1, 1);
+
+            // Act
+            var query = new MessageQuery(
+                userSession,
+                MessageType.Special,
+                startDate,
+                DateTime.Today,
+                false);
 
             // Assert
             Assert.AreEqual(startDate, query.StartDate);
@@ -127,11 +141,10 @@
             // Act
             var query = new MessageQuery(
                 userSession,
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
+                MessageType.Public,
+                DateTime.Today,
                 endDate,
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+                false);
 
             // Assert
             Assert.AreEqual(endDate, query.EndDate);
@@ -146,11 +159,10 @@
             // Act
             var query = new MessageQuery(
                 userSession,
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                isTest,
-                Arg.Any<int>());
+                MessageType.Public,
+                DateTime.Today,
+                DateTime.Today,
+                isTest);
 
             // Assert
             Assert.AreEqual(isTest, query.IsTest);
@@ -166,11 +178,10 @@
             // Act
             var query = new MessageQuery(
                 userSession,
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+                MessageType.Public,
+                DateTime.Today,
+                DateTime.Today,
+                false);
 
             // Assert
             Assert.AreEqual(currentLang, query.CurrentLang);
@@ -185,10 +196,10 @@
             // Act
             var query = new MessageQuery(
                 userSession,
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
+                MessageType.Public,
+                DateTime.Today,
+                DateTime.Today,
+                false,
                 totalMessage);
 
             // Assert

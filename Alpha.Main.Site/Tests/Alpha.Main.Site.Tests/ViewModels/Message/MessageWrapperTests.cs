@@ -19,10 +19,10 @@
         public void Content_WhenCurrentLanguageContentIsNull_ReturnContentDefault(string lang, string content)
         {
             // Arrange
-            var message = CreateMessageDataWithEmptyContent();
+            var message = CreateMessageDataWithDefaultContent();
 
             // Act
-            var viewModel = new MessageWrapper(message, Language.English);
+            var viewModel = new MessageWrapper(message, lang);
 
             // Assert
             Assert.AreEqual(content, viewModel.Content);
@@ -45,6 +45,58 @@
 
             // Assert
             Assert.AreEqual(content, viewModel.Content);
+        }
+
+        [Test]
+        public void Content_HasFontMarkup_RemoveMarkup()
+        {
+            // Arrange
+            var message = CreateMessageDataWithDefaultContent("<font color=red>abc</font>");
+
+            // Act
+            var viewModel = new MessageWrapper(message, Language.English);
+
+            // Assert
+            Assert.AreEqual("abc", viewModel.Content);
+        }
+
+        [Test]
+        public void Content_HasDoubleAtSymbol_ReplaceWithBetTransId()
+        {
+            // Arrange
+            var message = CreateMessageDataWithDefaultContent("abc@@");
+
+            // Act
+            var viewModel = new MessageWrapper(message, Language.English);
+
+            // Assert
+            Assert.AreEqual("abc1", viewModel.Content);
+        }
+
+        [Test]
+        public void HasRedColor_ContentHasFontMarkup_ReturnTrue()
+        {
+            // Arrange
+            var message = CreateMessageDataWithDefaultContent("<font color=red>abc</font>");
+
+            // Act
+            var viewModel = new MessageWrapper(message, Language.English);
+
+            // Assert
+            Assert.IsTrue(viewModel.HasRedColor);
+        }
+
+        [Test]
+        public void HasRedColor_ContentHasNotFontMarkup_ReturnFalse()
+        {
+            // Arrange
+            var message = CreateMessageDataWithDefaultContent("abc");
+
+            // Act
+            var viewModel = new MessageWrapper(message, Language.English);
+
+            // Assert
+            Assert.IsFalse(viewModel.HasRedColor);
         }
 
         private Message CreateMessageData()
@@ -80,11 +132,11 @@
             return message;
         }
 
-        private Message CreateMessageDataWithEmptyContent()
+        private Message CreateMessageDataWithDefaultContent(string contentDefault = "en")
         {
             var message = new Message(
                 1,
-                "en",
+                contentDefault,
                 string.Empty,
                 string.Empty,
                 string.Empty,

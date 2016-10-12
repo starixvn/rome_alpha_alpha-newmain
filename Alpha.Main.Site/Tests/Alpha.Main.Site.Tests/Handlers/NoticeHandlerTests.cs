@@ -4,7 +4,6 @@ namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using Constants;
     using Main.Models.Notice;
     using NSubstitute;
