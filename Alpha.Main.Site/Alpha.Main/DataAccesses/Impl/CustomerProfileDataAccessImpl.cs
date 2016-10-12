@@ -1,34 +1,25 @@
 ﻿namespace Alpha.Main.DataAccesses.Impl
 {
-    using System;
-    using Alpha.Main.Criteria.CustomerProfile;
     using Fanex.Common;
     using Fanex.Data;
-    using Models.CustomerProfiles;
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix", Justification = "Reviewed!")]
     public class CustomerProfileDataAccessImpl : CustomerProfileDataAccess
     {
-        public ProfilePicture GetProfilePicture(GetProfilePictureCriteria criteria)
+        public byte[] GetCustomerImageData(int custId)
         {
-            if (criteria == null)
-            {
-                throw new ArgumentNullException(nameof(criteria), "Criteria cannot be null");
-            }
+            byte[] imageData = new byte[] { };
 
-            var profilePicture = new ProfilePicture();
-            profilePicture.IsDefaultAvatar = true;
-            using (var db = new ObjectDb(criteria.GetSettingKey()))
+            using (var db = new ObjectDb("Age_CustomerSelProfilePicture"))
             {
-                var reader = db.ExecuteReader(criteria.GetSpParams());
+                var reader = db.ExecuteReader(new { custId = custId });
+
                 if (reader.Read())
                 {
-                    profilePicture.IsDefaultAvatar = false;
-                    profilePicture.BinaryAvatar = Converter.ToByteArray(reader["image"]);
+                    imageData = Converter.ToByteArray(reader["image"]);
                 }
             }
 
-            return profilePicture;
+            return imageData;
         }
     }
 }

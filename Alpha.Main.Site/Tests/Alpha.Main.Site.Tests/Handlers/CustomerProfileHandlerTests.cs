@@ -84,7 +84,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             // Arrange
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
             {
-                IsDefaultAvatar = isDefaultAvatar
+                UseDefaultAvatar = isDefaultAvatar
             });
 
             var query = new BriefProfileQuery(userSession);

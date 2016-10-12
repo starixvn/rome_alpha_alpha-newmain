@@ -31,7 +31,7 @@
 
             var viewModel = new BriefProfileViewModel
             {
-                IsDefaultAvatar = profile.IsDefaultAvatar,
+                IsDefaultAvatar = profile.UseDefaultAvatar,
                 EmbedImage = GenerateImage(profile),
                 CustId = message.CustId,
                 Username = HttpUtility.HtmlEncode(message.UserName),
@@ -61,9 +61,9 @@
 
         private string GenerateImage(ProfilePicture profilePicture)
         {
-            if (profilePicture.BinaryAvatar != null)
+            if (profilePicture.ImageData != null)
             {
-                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.BinaryAvatar)}";
+                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}";
             }
 
             return string.Empty;
