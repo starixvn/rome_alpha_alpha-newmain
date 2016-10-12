@@ -507,17 +507,23 @@
       <DependentUpon>default-home.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\default-index.css" />
+    <Content Include="Assets\bundles\default-index.js" />
     <Content Include="Assets\bundles\default-index.min.css">
       <DependentUpon>default-index.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\default-index.min.js" />
+    <Content Include="Assets\bundles\default-introduction.css" />
+    <Content Include="Assets\bundles\default-introduction.js" />
+    <Content Include="Assets\bundles\default-introduction.min.css">
+      <DependentUpon>default-introduction.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-introduction.min.js" />
+    <Content Include="Assets\bundles\default-message.css" />
     <Content Include="Assets\bundles\default-message.js" />
-    <Content Include="Assets\bundles\default-message.min.js">
-      <DependentUpon>default-message.js</DependentUpon>
+    <Content Include="Assets\bundles\default-message.min.css">
+      <DependentUpon>default-message.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\default-messages.css" />
-    <Content Include="Assets\bundles\default-messages.min.css">
-      <DependentUpon>default-messages.css</DependentUpon>
-    </Content>
+    <Content Include="Assets\bundles\default-message.min.js" />
     <Content Include="Assets\bundles\default-otp.css" />
     <Content Include="Assets\bundles\default-otp.min.css">
       <DependentUpon>default-otp.css</DependentUpon>
@@ -528,12 +534,8 @@
     <Content Include="Assets\styles\home\home.min.css">
       <DependentUpon>home.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\messages\messages.css">
-      <DependentUpon>messages.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\messages\messages.min.css">
-      <DependentUpon>messages.css</DependentUpon>
-    </Content>
+    <Content Include="Assets\styles\message\message.css" />
+    <Content Include="Assets\styles\message\message.min.css" />
     <Content Include="Assets\styles\otp\images\apple.png" />
     <Content Include="Assets\styles\otp\images\google.png" />
     <Content Include="Assets\styles\otp\images\logo.png" />
@@ -551,10 +553,6 @@
     <Content Include="Assets\bundles\security\password\change-password.js" />
     <Content Include="Assets\bundles\security\password\change-password.min.js">
       <DependentUpon>change-password.js</DependentUpon>
-    <Content Include="Assets\bundles\default-index.js" />
-    <Content Include="Assets\bundles\default-index.min.js">
-      <DependentUpon>default-index.js</DependentUpon>
-    </Content>
     <Content Include="Assets\bundles\security\password\force-change-password.js" />
     <Content Include="Assets\bundles\security\password\force-change-password.min.js">
       <DependentUpon>force-change-password.js</DependentUpon>
@@ -562,14 +560,6 @@
     <Content Include="Assets\bundles\security\password\reset-main-account-password.js" />
     <Content Include="Assets\bundles\security\password\reset-main-account-password.min.js">
       <DependentUpon>reset-main-account-password.js</DependentUpon>
-    <Content Include="Assets\bundles\default-introduction.css" />
-    <Content Include="Assets\bundles\default-introduction.js" />
-    <Content Include="Assets\bundles\default-introduction.min.css">
-      <DependentUpon>default-introduction.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-introduction.min.js">
-      <DependentUpon>default-introduction.js</DependentUpon>
-    </Content>
     <Content Include="Assets\bundles\security\password\reset-sub-account-password.js" />
     <Content Include="Assets\bundles\security\password\reset-sub-account-password.min.js">
       <DependentUpon>reset-sub-account-password.js</DependentUpon>
@@ -789,8 +779,8 @@
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\introduction\intro.scss" />
     <Content Include="Assets\styles\security\security.scss" />
-    <Content Include="Assets\styles\messages\messages.scss" />
     <Content Include="Assets\styles\otp\otp.scss" />
+    <Content Include="Assets\styles\message\message.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
