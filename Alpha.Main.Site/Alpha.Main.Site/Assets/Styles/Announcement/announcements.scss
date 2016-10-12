@@ -90,13 +90,7 @@
     display: none;
 }
 
-@media only screen and (min-width: $screen-device-greater768) and (max-width: $screen-device-greater1024) {
-    .announcement-modal {
-        left: 60px;
-    }    
-}
-
-@media only screen and (max-width : $screen-device-lower768) {          
+@media only screen and (max-device-width : $screen-device-lower768) {          
     .announcement-modal {
         &.visible-mobile {            
             left: 0;

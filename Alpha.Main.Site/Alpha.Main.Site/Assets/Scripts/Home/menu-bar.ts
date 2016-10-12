@@ -58,7 +58,7 @@
 
         var activeSubMenu = $('.menu-item.active .sub-menu');
 
-        if (alpha.isScreenLower1024) {
+        if (alpha.isScreenLower768) {
             mainContent.addClass('expanded-mobile');
             sidebar.addClass('hidden-mobile');
             return;
@@ -106,7 +106,7 @@
         menuBar.domElements.extraIcon.click(menuBar.expandSideBar);
         menuBar.domElements.hamburgerIcon.click(function (e) {
             menuBar.collapseLeftPanel();
-            if (alpha.isScreenLower1024) {
+            if (alpha.isScreenLower768) {
                 e.stopPropagation();
             }
         });
@@ -131,7 +131,7 @@
         var sidebar = menuBar.domElements.sideBar,
             content = menuBar.domElements.mainContent;
 
-        if (alpha.isScreenLower1024) {
+        if (alpha.isScreenLower768) {
             if (sidebar.hasClass('hidden-mobile')) {
                 content.addClass('expanded-mobile');
                 sidebar.removeClass('hidden-mobile').addClass('visible-mobile');
@@ -235,7 +235,7 @@
     collapseSideBar: function () {
         var sideBar = menuBar.domElements.sideBar;
 
-        if (alpha.isScreenLower1024 && sideBar.hasClass('visible-mobile')) {
+        if (alpha.isScreenLower768 && sideBar.hasClass('visible-mobile')) {
             menuBar.domElements.mainContent.addClass('expanded-mobile');
             sideBar.addClass('hidden-mobile').removeClass('visible-mobile');
         }

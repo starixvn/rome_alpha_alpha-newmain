@@ -41,7 +41,7 @@ body {
     }
 }
 
-@media only screen and (max-width : $conent-device-greater1024) {
+@media only screen and (max-device-width : $conent-device-greater1024) {
     .filter {
         .input-group.date .form-control {
             @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
@@ -50,7 +50,7 @@ body {
 }
 
 /* ----------- Mobile ----------- */
-@media only screen and (max-width : $conent-device-lower768) {
+@media only screen and (max-device-width : $conent-device-lower768) {
     body {
         background-color: #fff;
         font-size: $font-size-mobile;
@@ -93,7 +93,7 @@ body {
 }
 
 /* ----------- iPhone 5 with landscape ----------- */
-@media only screen and (max-width: 568px) {
+@media only screen and (max-device-width: 568px) {
     .filter .form-group {
         margin-right: 0;
 
@@ -119,7 +119,7 @@ body {
 }
 
 /* ----------- iPhone 5/ Iphone 6 with portrait  ----------- */
-@media only screen and (max-width: 375px) {
+  @media only screen and (max-device-width: 375px) {
     .filter {
         .group-button {
             margin-right: 0;

@@ -326,14 +326,50 @@ html * {
     z-index: 1200;
 }
 
-@media only screen and (max-width: $screen-device-greater1024) {
+.piwik-noscript {
+    border: 0;
+}
+
+@media only screen and (max-device-width: $screen-device-greater1024) {
+    .mainmenu-container {
+        .menu-item {
+           .icon {
+               font-size: 20px;
+               margin-right: 18px;
+               &.icon-totalbets {
+                    font-size: 20px;
+                }
+           }
+           > a {
+               padding: 16px 8px 16px 18px;
+           }
+       }
+        .sub-menu .sub-menu-item {
+            padding: 9px 15px 9px 54px;
+        }
+    } 
+   
+   .content-wrapper {
+       &.expanded {
+           left: 56px;
+           .header {
+               left: 56px;
+           }
+
+       }
+   }
+}
+
+@media only screen and (max-device-width: 667px) {
     body {
         background-color: #fff;
     }
 
     .content-wrapper {
+        left: 0;
         .content {
             background-color: #fff;
+            top: 48px;
         }
 
         &.expanded-mobile, .header {
@@ -342,6 +378,8 @@ html * {
     }
 
     .sidebar {
+        left: -256px;
+        width: 0;
         @include transition(all 0.2s ease-out);
 
         &.hidden-mobile {
@@ -356,17 +394,6 @@ html * {
     }
 }
 
-@media only screen and (max-width : $screen-device-lower768) {
-    .content-wrapper {
-        .content {
-            top: 48px;
-        }
-    }
-}
-
-.piwik-noscript {
-    border: 0;
-}
 
 @media \0screen\,screen\9 {
     .accountinfo-container {

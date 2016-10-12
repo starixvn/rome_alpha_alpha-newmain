@@ -82,15 +82,14 @@ var alpha = {
             //// Work arround because in IE, bootstrap modal dont delegate focusin event to others.
             $.fn.modal.Constructor.prototype.enforceFocus = function () { };
         }
-
-        var currentWindowWidth = $(window).width();
+        
+        var currentWindowWidth = window.screen.width;
 
         if (currentWindowWidth < 768) {
             alpha.isScreenLower768 = true;
         }
-
-        if (currentWindowWidth <= 1024) {
-            alpha.isScreenLower1024 = true;
+        else if (currentWindowWidth <= 1024) {
+            alpha.isScreenGreater768AndLower1024 = true;
         }
         else {
             alpha.isScreenGreater1024 = true;

@@ -136,7 +136,7 @@ div.messageBlock {
     }
 }
 
-@media only screen and (max-width : $screen-device-lower768) {
+@media only screen and (max-device-width : $screen-device-lower768) {
     .message-modal {
         left: 0;
         right: 0;
@@ -146,11 +146,5 @@ div.messageBlock {
         .modal-sm {
             width: 100%;
         }
-    }
-}
-
-@media only screen and (min-width: $screen-device-greater768) and (max-width: $screen-device-greater1024) {
-    .message-modal {
-        left: 60px;
     }
 }
