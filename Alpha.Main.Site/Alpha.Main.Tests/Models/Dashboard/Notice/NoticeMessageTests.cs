@@ -1,10 +1,11 @@
 ﻿namespace Alpha.Main.Tests.Models.Dashboard.Notice
 {
     using System;
-    using Helpers;
     using Main.Models.Notice;
     using NUnit.Framework;
+    using TestData.Helper;
 
+    [TestFixture]
     public class NoticeMessageTests
     {
         [Test]
@@ -70,6 +71,19 @@
 
             // Assert
             Assert.AreEqual(contentJP, noticeMessage.ContentJP);
+        }
+
+        [Test]
+        public void ContentTH_Always_SetValueFromCtor()
+        {
+            // Arrange
+            string contentTH = "value";
+
+            // Act
+            var noticeMessage = FakeDataHelper.Create<NoticeMessage>("contentTH", contentTH);
+
+            // Assert
+            Assert.AreEqual(contentTH, noticeMessage.ContentTH);
         }
 
         [Test]

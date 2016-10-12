@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Models.Dashboard.Statistics
 {
-    using Helpers;
     using Main.Models.Statistics;
     using NUnit.Framework;
+    using TestData.Helper;
 
     [TestFixture]
     public class TopWinningMemberTests

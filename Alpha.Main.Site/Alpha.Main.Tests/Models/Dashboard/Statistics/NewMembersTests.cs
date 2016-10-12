@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Tests.Models.Dashboard.Statistics
 {
     using System;
-    using Helpers;
     using Main.Models.Statistics;
     using NUnit.Framework;
+    using TestData.Helper;
 
     [TestFixture]
     public class NewMemberTests

@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Models.Dashboard.Statistics
 {
-    using Helpers;
     using Main.Models.Statistics;
     using NUnit.Framework;
+    using TestData.Helper;
 
     [TestFixture]
     public class StatisticsTests
@@ -79,7 +79,7 @@
             int totalAgentActive = 100;
 
             // Act
-            var statistics = new Statistics(0, 0, 0, 0, 0, totalAgentActive, 0, 0, 0);
+            var statistics = FakeDataHelper.Create<Statistics>("totalAgentActive", totalAgentActive);
 
             // Assert
             Assert.AreEqual(totalAgentActive, statistics.TotalAgentActive);
@@ -148,6 +148,19 @@
 
             // Assert
             Assert.AreEqual(totalMasterClosed, statistics.TotalMasterClosed);
+        }
+
+        [Test]
+        public void NumberNewMembers_Always_SetValueFromCtor()
+        {
+            // Arrange
+            int numberNewMembers = 9;
+
+            // Act
+            var statistics = FakeDataHelper.Create<Statistics>("numberNewMembers", numberNewMembers);
+
+            // Assert
+            Assert.AreEqual(numberNewMembers, statistics.NumberNewMembers);
         }
     }
 }

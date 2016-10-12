@@ -27,14 +27,14 @@
             int totalAgentActive,
             int totalAgentClosed,
             int totalAgentSuspended,
-            int numberNewMembers)
+            int numberNewMembers) : this(
+                    outStanding,
+                    totalOutStanding,
+                    totalMemberActive,
+                    totalMemberClosed,
+                    totalMemberSuspended,
+                    numberNewMembers)
         {
-            Outstanding = outStanding;
-            TotalOutstanding = totalOutStanding;
-            TotalMemberActive = totalMemberActive;
-            TotalMemberClosed = totalMemberClosed;
-            TotalMemberSuspended = totalMemberSuspended;
-            NumberNewMembers = numberNewMembers;
             TotalAgentActive = totalAgentActive;
             TotalAgentClosed = totalAgentClosed;
             TotalAgentSuspended = totalAgentSuspended;
@@ -52,17 +52,17 @@
             int totalMasterActive,
             int totalMasterClosed,
             int totalMasterSuspended,
-            int numberNewMembers)
+            int numberNewMembers) : this(
+                    outStanding,
+                    totalOutStanding,
+                    totalMemberActive,
+                    totalMemberClosed,
+                    totalMemberSuspended,
+                    totalAgentActive,
+                    totalAgentClosed,
+                    totalAgentSuspended,
+                    numberNewMembers)
         {
-            Outstanding = outStanding;
-            TotalOutstanding = totalOutStanding;
-            TotalMemberActive = totalMemberActive;
-            TotalMemberClosed = totalMemberClosed;
-            TotalMemberSuspended = totalMemberSuspended;
-            NumberNewMembers = numberNewMembers;
-            TotalAgentActive = totalAgentActive;
-            TotalAgentClosed = totalAgentClosed;
-            TotalAgentSuspended = totalAgentSuspended;
             TotalMasterActive = totalMasterActive;
             TotalMasterClosed = totalMasterClosed;
             TotalMasterSuspended = totalMasterSuspended;

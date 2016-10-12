@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Tests.Models.Dashboard.BalanceInfo
 {
     using System;
-    using Helpers;
     using Main.Models.BalanceInfo;
     using NUnit.Framework;
+    using TestData.Helper;
 
     public class BalanceUpDayInfoTests
     {

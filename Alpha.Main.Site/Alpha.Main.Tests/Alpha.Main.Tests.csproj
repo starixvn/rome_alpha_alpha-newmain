@@ -149,7 +149,9 @@
     <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
-    <Compile Include="Helpers\FakeDataHelper.cs" />
+    <Compile Include="Models\Message\MessageTests.cs" />
+    <Compile Include="TestData\Helper\ConstructorQuery\ParametersAmountConstructorQuery.cs" />
+    <Compile Include="TestData\Helper\FakeDataHelper.cs" />
     <Compile Include="Helpers\Impl\SiteMapReaderImplTests.cs" />
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />
     <Compile Include="Models\Dashboard\BalanceInfo\BalanceInfoTests.cs" />
@@ -227,9 +229,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Message\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Alpha.Main.Site\Alpha.Main.Site.csproj">
       <Project>{4CDDEBBD-6553-4A69-A9FC-5B58E3469843}</Project>

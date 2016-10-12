@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Models.Dashboard.BalanceInfo
 {
-    using Helpers;
     using Main.Models.BalanceInfo;
     using NUnit.Framework;
+    using TestData.Helper;
 
     [TestFixture]
     public class BalanceInfoTests
