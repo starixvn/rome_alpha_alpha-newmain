@@ -124,6 +124,7 @@
   <ItemGroup>
     <Compile Include="Constants\CustId.cs" />
     <Compile Include="Constants\RoleId.cs" />
+    <Compile Include="Criteria\Announcement\UpdateViewStatusTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
     <Compile Include="Criteria\Message\GetMessageCriteriaTests.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\Impl\DateTimeWrapTests.cs" />
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />
     <Compile Include="Models\Menus\MenuItemBuilderImplTests.cs" />
     <Compile Include="Models\Menus\MenuItemTests.cs" />

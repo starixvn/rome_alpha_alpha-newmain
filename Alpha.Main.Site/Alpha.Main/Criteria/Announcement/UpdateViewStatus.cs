@@ -4,9 +4,15 @@
 
     public class UpdateViewStatus : CriteriaBase
     {
-        public int CustId { get; set; }
+        public UpdateViewStatus(int custId, bool isViewed)
+        {
+            CustId = custId;
+            IsViewed = isViewed;
+        }
 
-        public bool IsViewed { get; set; }
+        public int CustId { get; private set; }
+
+        public bool IsViewed { get; private set; }
 
         public override string GetSettingKey()
         {
@@ -15,7 +21,7 @@
 
         public override bool IsValid()
         {
-            return true;
+            return CustId > 0;
         }
     }
 }

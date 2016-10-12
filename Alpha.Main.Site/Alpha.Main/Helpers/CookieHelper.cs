@@ -18,7 +18,7 @@
 
             var cacheUrlCookieName = string.Join("_", joinStrings);
 
-            return encodeDataFunction?.Invoke(cacheUrlCookieName) ?? string.Empty;
+            return encodeDataFunction?.Invoke(cacheUrlCookieName) ?? cacheUrlCookieName;
         }
     }
 }

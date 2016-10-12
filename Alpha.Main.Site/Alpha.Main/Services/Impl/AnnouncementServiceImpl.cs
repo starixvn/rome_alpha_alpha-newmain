@@ -114,11 +114,7 @@
                 BetTransId = "0"
             });
 
-            dynamicRepository.Fetch<bool>(new UpdateViewStatus
-            {
-                CustId = getParams.CustId,
-                IsViewed = true
-            });
+            dynamicRepository.Fetch<bool>(new UpdateViewStatus(getParams.CustId, true));
         }
 
         private List<long> GetShowedMessageIds(GetHotAnnouncementsParams getParams)
