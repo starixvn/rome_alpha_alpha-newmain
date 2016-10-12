@@ -24,6 +24,10 @@
             IsSticky = false;
             MatchId = 0;
             IsBatch = true;
+
+            Creator = 0;
+            IsTest = false;
+            CreatorName = string.Empty;
         }
 
         [SpParam(SqlParamName = "content_en")]

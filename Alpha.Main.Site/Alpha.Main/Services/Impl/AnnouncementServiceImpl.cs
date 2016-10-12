@@ -46,10 +46,7 @@
                 getParams.AdminId == 0)
             {
                 messageTypes = dynamicRepository
-                    .Fetch<byte>(new GetMessageTypeListCriteria
-                    {
-                        CustId = getParams.CustId
-                    })
+                    .Fetch<byte>(new GetMessageTypeListCriteria(getParams.CustId))
                     .Select(messageType => messageType.ToString())
                     .ToList();
             }

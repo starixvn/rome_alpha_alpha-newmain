@@ -123,7 +123,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\CustId.cs" />
+    <Compile Include="Constants\LanguageTests.cs" />
     <Compile Include="Constants\RoleId.cs" />
+    <Compile Include="Criteria\Announcement\GetMessageTypeListCriteriaTests.cs" />
+    <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteriaTests.cs" />
+    <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteriaTests.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatusTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />

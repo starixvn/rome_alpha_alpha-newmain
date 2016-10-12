@@ -4,7 +4,12 @@
 
     public class GetMessageTypeListCriteria : CriteriaBase
     {
-        public int CustId { get; set; }
+        public GetMessageTypeListCriteria(int custId)
+        {
+            CustId = custId;
+        }
+
+        public int CustId { get; private set; }
 
         public override string GetSettingKey()
         {
@@ -13,7 +18,7 @@
 
         public override bool IsValid()
         {
-            return true;
+            return CustId > 0;
         }
     }
 }
