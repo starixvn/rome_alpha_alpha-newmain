@@ -5,13 +5,13 @@
 
     public class SiteMapReaderImpl : SiteMapReader
     {
-        public SiteMapNode GetRootNode()
+        public SiteMapNode GetRootNode(SiteMapNode rootNode = null)
         {
-            var rootNode = SiteMap.RootNode;
+            var results = rootNode ?? SiteMap.RootNode;
 
-            Check.Argument.IsNotNull(rootNode, nameof(rootNode));
+            Check.Argument.IsNotNull(results, nameof(results));
 
-            return SiteMap.RootNode;
+            return results;
         }
     }
 }

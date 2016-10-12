@@ -59,10 +59,10 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedEmbedImage)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
-            (
-                1, true, binaryAvatar
-            ));
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(
+                1,
+                true,
+                binaryAvatar));
 
             var query = new BriefProfileQuery(userSession);
 
@@ -82,10 +82,10 @@ namespace Alpha.Main.Site.Tests.Handlers
             bool expectedIsDefaultAvatar)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
-            (
-                1, isDefaultAvatar, null
-            ));
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(
+                1,
+                isDefaultAvatar,
+                null));
 
             var query = new BriefProfileQuery(userSession);
 
