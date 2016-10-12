@@ -1,23 +1,24 @@
-﻿#pragma warning disable 612, 618
-namespace Alpha.Main.Helpers
+﻿namespace Alpha.Main.Helpers
 {
-    using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Utilities;
+    using System;
 
     public static class CookieHelper
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string GetCurrentUrlCookieName()
+        public static string GetCurrentUrlCookieName(
+            int custId,
+            int subAccId,
+            Func<string, string> encodeDataFunction)
         {
             var joinStrings = new string[]
-                    {
-                       UserSession.Current.CustId.ToString(),
-                       UserSession.Current.SubAccId.ToString(),
-                       "NewMain"
-                    };
+            {
+                custId.ToString(),
+                subAccId.ToString(),
+                "NewMain"
+            };
+
             var cacheUrlCookieName = string.Join("_", joinStrings);
 
-            return Encryption.PearsonEncode(cacheUrlCookieName);
+            return encodeDataFunction?.Invoke(cacheUrlCookieName) ?? string.Empty;
         }
     }
 }

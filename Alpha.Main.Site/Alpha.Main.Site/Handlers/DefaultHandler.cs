@@ -6,6 +6,7 @@
     using Models.Requests;
     using Requests;
     using Services;
+    using Sunplus.Agent.Utilities;
     using ViewModels;
 
     public class DefaultHandler :
@@ -45,7 +46,11 @@
 
         public IndexViewModel Handle(IndexQuery message)
         {
-            var viewModel = new IndexViewModel(message, FunctionRegistry.GetDefaultUrl);
+            var viewModel = new IndexViewModel(
+                message,
+                FunctionRegistry.GetDefaultUrl,
+                FunctionRegistry.ShowIntroduction,
+                Encryption.PearsonEncode);
 
             sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
 

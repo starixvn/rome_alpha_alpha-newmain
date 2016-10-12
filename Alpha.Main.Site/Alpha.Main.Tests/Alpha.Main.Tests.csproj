@@ -133,6 +133,8 @@
     <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetNewMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTests.cs" />
+    <Compile Include="Helpers\AppPathHelperTests.cs" />
+    <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />
