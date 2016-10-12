@@ -338,8 +338,16 @@ html * {
 
     .content-wrapper {
         min-width: 800px;
-    }
 
+        &.expanded {
+            min-width: 1004px;
+
+            .header {
+                left: 0;
+            }
+        }
+    }
+    
     .header {
         position: absolute;
         left: 0;
@@ -358,6 +366,8 @@ html * {
            .icon {
                font-size: 20px;
                margin-right: 18px;
+               top: 3px;
+
                &.icon-totalbets {
                     font-size: 20px;
                 }
