@@ -141,6 +141,8 @@ var headerNav = {
 
         headerNav.domElements.iconMessage.on("click touchend", function () {
             indexManager.changeMenu(headerNav.urls.messages);
+
+            $('.icon-message').find('.circle-red').hide();
         });
 
         // Quick search component for mobile
@@ -200,12 +202,13 @@ var headerNav = {
         });
 
         // Annoucement popup for mobile
-        headerNav.domElements.iconBell.click(function () {
+        headerNav.domElements.iconBell.click(() => {
             announcement.showedMessageIds = [];
             announcement.loadAnnouncement();
         });
 
-        new DropDownExtension();
+        const dropDownExtension = new DropDownExtension();
+        dropDownExtension.registerEvent();
     },
 
     changeLanguage: function (lang) {
@@ -224,9 +227,11 @@ var headerNav = {
             }
         });
     },
+
     reloadPage: function () {
         top.location.href = headerNav.removeBookmarksInUrl(top.location.href);
     },
+
     removeBookmarksInUrl: function (url) {
         if (typeof url !== 'string') {
             return null;

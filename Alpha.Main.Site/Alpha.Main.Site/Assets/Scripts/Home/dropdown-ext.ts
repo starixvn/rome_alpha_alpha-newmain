@@ -1,5 +1,5 @@
 ﻿class DropDownExtension {
-    constructor() {
+    registerEvent = () => {
         this.onClickForDropdownMultiLevel();
     }
 
