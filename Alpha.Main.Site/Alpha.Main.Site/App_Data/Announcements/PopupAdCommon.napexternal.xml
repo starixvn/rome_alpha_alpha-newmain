@@ -5,7 +5,7 @@
                      startdate="10/16/2016" enddate="10/30/2016"  effectdate="10/18/2016"
                       width="1000" height="220" top="110" left="350">
     <en-US src="">
-      Dear valued agents,<br />
+      <p>Dear valued agents,</p>
       <p>
         Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
         - Editing sub account permissions.<br/>
@@ -20,7 +20,7 @@
     </en-US>
 
     <zh-CN src="">
-      尊敬的代理们，<br />
+      <p>尊敬的代理们，</p>
       <p>
         您的隐私与安全保障非常重要。因此，我们将不断改善安全系统以维护您的资料。所以，当您采取以下动作时需输入保安码：<br />
         - 修改子账号权限<br/>
@@ -35,7 +35,7 @@
     </zh-CN>
 
     <zh-TW src="">
-      尊敬的代理們，<br />
+      <p>尊敬的代理們，</p>
       <p>
         您的隱私與安全保障非常重要因此，我們將不斷改善安全系統以維護您的資料所以，當您採取以下動作時需輸入保安碼：<br />
         - 修改子賬號權限<br/>
@@ -50,7 +50,7 @@
     </zh-TW>
 
     <ja-JP src="">
-      Dear valued agents,<br />
+      <p>Dear valued agents,</p>
       <p>
         Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
         - Editing sub account permissions.<br/>
@@ -65,7 +65,7 @@
     </ja-JP>
 
     <ko-KR src="">
-      Dear valued agents,<br />
+      <p>Dear valued agents,</p>
       <p>
         Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
         - Editing sub account permissions.<br/>
@@ -80,7 +80,7 @@
     </ko-KR>
 
     <th-TH src="">
-      เรียนเอเจนต์ทุกท่าน<br />
+      <p>เรียนเอเจนต์ทุกท่าน</p>
       <p>
         รหัสความปลอดภัยของท่านนั้นมีความสำคัญอย่างยิ่ง ดังนั้นทางเราจึงมุ่งมั่นปรับปรุงมาตราการรักษาความปลอดภัยในข้อมูลส่วนตัวของทุกท่านอย่างต่อเนื่อง ด้วยเหตุนี้ทางเราจึงใคร่ขอให้ท่านได้ใส่รหัสความปลอดภัยทุกครั้งเมื่อมีการดำเนินการใด ๆ อันสำคัญ เช่น<br />
         - การแก้ไข ขอบเขตการใช้งานของ บัญชีย่อย<br/>
@@ -95,7 +95,7 @@
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      <p>Dear valued agents,</p>
       <p>
         Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
         - Editing sub account permissions.<br/>
