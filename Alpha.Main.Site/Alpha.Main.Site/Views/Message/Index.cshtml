@@ -16,7 +16,7 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/message/message-super")
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/message/message-{Model.UserLevelName}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-message"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
