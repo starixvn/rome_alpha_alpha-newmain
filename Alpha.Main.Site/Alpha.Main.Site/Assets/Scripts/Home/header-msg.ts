@@ -234,8 +234,8 @@ var headerMessage = {
             var spanMoveBets = $("#span-movebets");
             if (spanMoveBets.length) {
                 spanMoveBets.remove();
+                }
     },
-
     showPrivateMessage: function (privateMessage, unreadPriMsgCount) {
         // Process Private Message: show new private message
         if (privateMessage[headerMessage.messageIdIndex]
@@ -291,7 +291,7 @@ var headerMessage = {
 
                     headerMessage.showPublicMessage(publicMessage);
 
-                    headerMessage.showMoveBetsMessage(movebetsMessage);
+                    headerMessage.domElements.moveBetsMessage.html(movebetsMessage || "");
 
                     headerMessage.showPrivateMessage(privateMessage, unreadPriMsgCount);
 
