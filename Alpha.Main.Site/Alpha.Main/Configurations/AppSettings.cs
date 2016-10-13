@@ -1,11 +1,15 @@
 ﻿namespace Alpha.Main.Configurations
 {
+    using System.Collections.Generic;
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
     using Fanex.Common;
 
     public static class AppSettings
     {
+        private static List<string> devicesUseCustomScrollbar;
+
         public static string AssetAppPath
         {
             get
@@ -76,6 +80,18 @@
             get
             {
                 return Converter.ToString2(ConfigurationManager.AppSettings["TotalBetsForecast:AllowedSitesToViewTBF"]);
+            }
+        }
+
+        public static List<string> DevicesUseCustomScrollbar
+        {
+            get
+            {
+                devicesUseCustomScrollbar =
+                    devicesUseCustomScrollbar ??
+                    Converter.ToString2(ConfigurationManager.AppSettings["DevicesUseCustomScrollbar"]).Split(',').ToList();
+
+                return devicesUseCustomScrollbar;
             }
         }
 

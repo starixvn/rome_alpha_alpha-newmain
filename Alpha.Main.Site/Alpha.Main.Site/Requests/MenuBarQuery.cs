@@ -1,27 +1,27 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
+    using System.Collections.Generic;
+    using System.Web;
+    using Configurations;
     using Main.Models.Enumerations;
     using MediatR;
-    using System.Collections.Generic;
     using ViewModels;
-    using System.Web;
 
     public class MenuBarQuery : IRequest<MenuBarViewModel>
     {
-        private List<string> smallDevices = new List<string>()
-        {
-            "iphone", "ipod", "ipad",
-            "android", "palm", "opera mini",
-            "blackberry", "windows ce", "iemobile"
-        };
+        private List<string> devicesUseCustomScrollbar;
 
         private byte roleId;
         private string userAgent;
 
-        public MenuBarQuery(byte roleId, string userAgent)
+        public MenuBarQuery(
+            byte roleId,
+            string userAgent,
+            List<string> devicesUseCustomScrollbar = null)
         {
             this.roleId = roleId;
             this.userAgent = userAgent;
+            this.devicesUseCustomScrollbar = devicesUseCustomScrollbar ?? AppSettings.DevicesUseCustomScrollbar;
         }
 
         public UserLevel UserLevel
@@ -45,7 +45,7 @@
             get
             {
                 var strUserAgent = (UserAgent ?? string.Empty).ToLower();
-                return smallDevices.Exists(str => strUserAgent.Contains(str.ToLower())) || strUserAgent.Contains("version");
+                return devicesUseCustomScrollbar.Exists(str => strUserAgent.Contains(str.ToLower())) || strUserAgent.Contains("version");
             }
         }
 
