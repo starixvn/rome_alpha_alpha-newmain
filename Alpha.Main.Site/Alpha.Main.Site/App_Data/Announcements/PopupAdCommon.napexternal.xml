@@ -116,7 +116,7 @@
     <en-US src="">
       Dear valued agents,<br />
       <p>
-        <b>The launching of the new product named "AllBet” is postponed until further notice. Your kind understanding is much appreciated.</b><br />
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>10/13/2016</b>.<br />
         This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
         All settings will be configured as follows:
       </p>
@@ -138,7 +138,7 @@
     <zh-CN src="">
       尊敬的代理，<br />
       <p>
-        <b>在此宣佈新产品名为 "AllBet" 将推迟发布，直到另行通知。不便之處 敬請見諒!</b><br />
+        在此宣佈新产品名为 "AllBet" 将于 <b>10/13/2016</b> 隆重推出.<br />
         此项新产品将于默认开启形式推出. 若您要关闭 "AllBet" 于特定下线, 可到设定功能里设置.<br />
         所有设定将配置如下:
       </p>
@@ -160,7 +160,7 @@
     <zh-TW src="">
       尊敬的代理，<br />
       <p>
-        <b>在此宣佈新產品名為 "AllBet" 將推遲發布，直到另行通知。不便之處 敬請見諒!</b><br />
+        在此宣佈新產品名為 "AllBet" 將于<b>10/13/2016</b> 隆重推出.<br />
         此項新產品將于默認開啟形式推出.  若您要關閉 "AllBet" 于特定下線, 可到設定功能里設置.<br />
         所有設定將配置如下:
       </p>
@@ -182,7 +182,7 @@
     <ja-JP src="">
       Dear valued agents,<br />
       <p>
-        <b>The launching of the new product named "AllBet” is postponed until further notice. Your kind understanding is much appreciated.</b><br />
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>10/13/2016</b>.<br />
         This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
         All settings will be configured as follows:
       </p>
@@ -204,7 +204,7 @@
     <ko-KR src="">
       Dear valued agents,<br />
       <p>
-        <b>The launching of the new product named "AllBet” is postponed until further notice. Your kind understanding is much appreciated.</b><br />
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>10/13/2016</b>.<br />
         This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
         All settings will be configured as follows:
       </p>
@@ -226,8 +226,7 @@
     <th-TH src="">
       เรียน ผู้มีอุปการะคุณ<br />
       <p>
-        <b>
-        การเปิดตัวผลิตภัณฑ์ "AllBet" จะเลื่อนระยะเวลาออกไป กำหนดเปิดตัวใหม่ จะแจ้งให้ทราบในภายหลัง </b><br />
+        เรามีความยินดีที่จะประกาศการเปิดตัวผลิตภัณฑ์ใหม่ "AllBet" ตั้งแต่วันที่ <b>10/13/2016</b> เป็นต้นไป<br />
         ผลิตภัณฑ์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "AllBet" ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า<br />
         การตั้งค่าทั้งหมดมีดังต่อไปนี้
       </p>
@@ -249,7 +248,7 @@
     <vi-VN src="">
       Chào quý khách hàng,<br />
       <p>
-        <b>Việc cung cấp sản phẩm cược "AllBet" tạm thời hoãn lại cho đến khi có thêm thông tin mới. Cám ơn sự thông cảm của quý khách.</b><br />
+        Bắt đầu từ ngày <b>10/13/2016</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet"<br />
         Sản phẩm này sẽ được cung cấp mặc định. Nếu quý khách muốn vô hiệu hoá "AllBet" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
         Tất cả các thiết lập sẽ được cấu hình như sau:
       </p>
@@ -275,7 +274,7 @@
     <en-US src="">
       Dear valued agents,<br />
       <p>
-        <b>The launching of the new product named "AllBet” is postponed until further notice. Your kind understanding is much appreciated.</b><br />
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>10/13/2016</b>.<br />
         This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
         Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
         All settings will be available for configuration since <b>{effectdate}</b>
@@ -289,7 +288,7 @@
     <zh-CN src="">
       亲爱的代理,<br />
       <p>
-        <b>在此宣佈新产品名为 "AllBet" 将推迟发布，直到另行通知。不便之處 敬請見諒!</b><br />
+        在此宣佈新产品名为 "AllBet" 将于<b>10/13/2016</b> 将隆重推出.<br />
         此项新产品将于默认开启形式推出. 若您要关闭 "AllBet" 于特定下线, 可到设定功能里设置.<br />
         会员投注限额不会超过 上线提供的投注限额.<br />
         所有设定将于 <b>{effectdate}</b> 开放设置.
@@ -303,7 +302,7 @@
     <zh-TW src="">
       親愛的代理,<br />
       <p>
-        <b>在此宣佈新產品名為 "AllBet" 將推遲發布，直到另行通知。不便之處 敬請見諒!</b><br />
+        在此宣佈新產品名為 "AllBet" 將于<b>10/13/2016</b>將隆重推出.<br />
         此項新產品將于默認開啟形式推出. 若您要關閉 "AllBet" 于特定下線, 可到設定功能里設置.<br />
         會員投注限額不會超過上线 提供的投注限額.<br />
         所有設定將于 <b>{effectdate}</b> 開放設置.
@@ -317,7 +316,7 @@
     <ja-JP src="">
       Dear valued agents,<br />
       <p>
-        <b>The launching of the new product named "AllBet” is postponed until further notice. Your kind understanding is much appreciated.</b><br />
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>10/13/2016</b>.<br />
         This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
         Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
         All settings will be available for configuration since <b>{effectdate}</b>
@@ -331,7 +330,7 @@
     <ko-KR src="">
       Dear valued agents,<br />
       <p>
-        <b>The launching of the new product named "AllBet” is postponed until further notice. Your kind understanding is much appreciated.</b><br />
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>10/13/2016</b>.<br />
         This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
         Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
         All settings will be available for configuration since <b>{effectdate}</b>
@@ -345,7 +344,7 @@
     <th-TH src="">
       เรียน ผู้มีอุปการะคุณ<br />
       <p>
-        <b>การเปิดตัวผลิตภัณฑ์ "AllBet" จะเลื่อนระยะเวลาออกไป กำหนดเปิดตัวใหม่ จะแจ้งให้ทราบในภายหลัง </b><br />
+        เรามีความยินดีที่จะประกาศการเปิดตัวผลิตภัณฑ์ใหม่ "AllBet" ตั้งแต่วันที่ <b>10/13/2016</b> เป็นต้นไป<br />
         ผลิตภัณฑ์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "AllBet" ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า<br />
         วงเงินเดิมพันของสมาชิกจะไม่เกินวงเงินเดิมพันที่เสนอโดย SMA<br />
         การตั้งค่าทั้งหมดจะเปิดให้ดำเนินการได้ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป
@@ -359,7 +358,7 @@
     <vi-VN src="">
       Chào quý khách hàng,<br />
       <p>
-        <b>Việc cung cấp sản phẩm cược "AllBet" tạm thời hoãn lại cho đến khi có thêm thông tin mới. Cám ơn sự thông cảm của quý khách.</b><br />
+        Bắt đầu từ ngày <b>10/13/2016</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet"<br />
         Sản phẩm này sẽ được cung cấp mặc định. Nếu quý khách muốn vô hiệu hoá "AllBet" riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
         Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br />
         Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>{effectdate}</b>
