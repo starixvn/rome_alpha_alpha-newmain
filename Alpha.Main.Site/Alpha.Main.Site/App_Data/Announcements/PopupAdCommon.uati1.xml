@@ -1,8 +1,117 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
 
+  <PopupAnnouncement id="6197901" name="Alpha_Security_Enhancement"
+                     startdate="10/10/2016" enddate="10/30/2016"  effectdate="10/18/2016"
+                      width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
+        - Editing sub account permissions.<br/>
+        - Creating a new sub account/downline.<br/>
+        - Resetting/changing password and security code.	<br/>
+        - Updating product settings.<br/>
+        - Transferring and updating credit.<br/>
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      尊敬的代理们，<br />
+      <p>
+        您的隐私与安全保障非常重要。因此，我们将不断改善安全系统以维护您的资料。所以，当您采取以下动作时需输入保安码：<br />
+        - 修改子账号权限<br/>
+        - 新增子账号/下线<br/>
+        - 重设/修改密码与保安码<br/>
+        - 更新产品设定<br/>
+        - 转账与更新余额<br/>
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      尊敬的代理們，<br />
+      <p>
+        您的隱私與安全保障非常重要因此，我們將不斷改善安全系統以維護您的資料所以，當您採取以下動作時需輸入保安碼：<br />
+        - 修改子賬號權限<br/>
+        - 新增子賬號/下線<br/>
+        - 重設/修改密碼與保安碼<br/>
+        - 更新產品設定<br/>
+        - 轉賬與更新餘額<br/>
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
+        - Editing sub account permissions.<br/>
+        - Creating a new sub account/downline.<br/>
+        - Resetting/changing password and security code.	<br/>
+        - Updating product settings.<br/>
+        - Transferring and updating credit.<br/>
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
+        - Editing sub account permissions.<br/>
+        - Creating a new sub account/downline.<br/>
+        - Resetting/changing password and security code.	<br/>
+        - Updating product settings.<br/>
+        - Transferring and updating credit.<br/>
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียนเอเจนต์ทุกท่าน<br />
+      <p>
+        รหัสความปลอดภัยของท่านนั้นมีความสำคัญอย่างยิ่ง ดังนั้นทางเราจึงมุ่งมั่นปรับปรุงมาตราการรักษาความปลอดภัยในข้อมูลส่วนตัวของทุกท่านอย่างต่อเนื่อง ด้วยเหตุนี้ทางเราจึงใคร่ขอให้ท่านได้ใส่รหัสความปลอดภัยทุกครั้งเมื่อมีการดำเนินการใด ๆ อันสำคัญ เช่น<br />
+        - การแก้ไข ขอบเขตการใช้งานของ บัญชีย่อย<br/>
+        - การสร้างบัญชีย่อยใหม่/ การสร้างลูกค้ารายใหม่<br/>
+        - การตั้งค่าใหม่/การเปลี่ยนรหัสผ่านและรหัสรักษาความปลอดภัย<br/>
+        - การอัพเดทการตั้งค่าต่าง ๆ<br/>
+        - การโอนเงิน และการอัพเดทเครดิต<br/>
+      </p>
+      <p>
+        ขอบพระคุณคะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
+        - Editing sub account permissions.<br/>
+        - Creating a new sub account/downline.<br/>
+        - Resetting/changing password and security code.	<br/>
+        - Updating product settings.<br/>
+        - Transferring and updating credit.<br/>
+      </p>
+      <p>
+        Thank you
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="62861001" name="PHAIO"
-                   startdate="10/2/2016" enddate="10/19/2016"  effectdate="10/12/2016"
+                   startdate="10/2/2016" enddate="10/10/2016"  effectdate="10/12/2016"
                     width="1000" height="220" top="110" left="350">
     <en-US src="">
       <p>
@@ -223,7 +332,7 @@
   </PopupAnnouncement>
 
   <PopupAnnouncement id="53088001" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
-                    startdate="9/5/2016" enddate="10/19/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc,BEST-ODDS"
+                    startdate="9/5/2016" enddate="10/10/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc,BEST-ODDS"
                      width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
@@ -381,7 +490,7 @@
   </PopupAnnouncement>
 
   <PopupAnnouncement id="53088002" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 0"
-                     startdate="9/5/2016" enddate="10/19/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc,BEST-ODDS"
+                     startdate="9/5/2016" enddate="10/10/2016"  effectdate="10/05/2016" privatesystem="INDO,755555,Koribc,BEST-ODDS"
                       width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
