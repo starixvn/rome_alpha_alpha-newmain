@@ -300,4 +300,8 @@ Notes: your password is cAsE sEnSiTiVe</value>
   <data name="createSecurityCode" xml:space="preserve">
     <value>Please create a Security Code which will be asked for any setting updates to make sure it is you.</value>
   </data>
+  <data name="PasswordHint04" xml:space="preserve">
+    <value>Password must be 6-10 characters without white-space and contain at least 1 uppercase letter, 1 lowercase letter, 1 numeric digit. (e.g. 493abcDE, 59D7!4$h)
+Notes: your password is cAsE sEnSiTiVe.</value>
+  </data>
 </root>

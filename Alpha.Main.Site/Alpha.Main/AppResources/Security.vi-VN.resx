@@ -299,4 +299,8 @@ Lưu ý : Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="SecurityCodeRules02" xml:space="preserve">
     <value>Ví dụ: không cho phép 123456, 456789, 765432, v.v.</value>
   </data>
+  <data name="PasswordHint04" xml:space="preserve">
+    <value>Mật khẩu phải gồm 6-10 ký tự, không có khoảng trắng và phải chứa it nhất 1 ký tự viết hoa, 1 ký tự viết thường, 1 ký tự số (ví dụ: 493abcDE, 59D7!4$h).
+Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
+  </data>
 </root>

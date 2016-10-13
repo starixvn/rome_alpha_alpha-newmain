@@ -42,6 +42,14 @@
             }
         }
 
+        public bool IsChangeMemberPassword
+        {
+            get
+            {
+                return Enumeration.FromValue<UserLevel>(this.CustRoleId).IsMemberLevel();
+            }
+        }
+
         public string Title { get; set; }
     }
 }

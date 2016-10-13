@@ -38,8 +38,7 @@
           CustomerProfileService customerProfileService,
           SessionManager sessionManager,
           Encryptor encryptor,
-          IUserSession userSession,
-          SecurityCodeChecker securityCodeChecker)
+          IUserSession userSession)
         {
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;

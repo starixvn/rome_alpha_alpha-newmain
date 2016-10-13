@@ -1,6 +1,7 @@
 ﻿'use strict'; 
 
 var resetMainAccountPassword = {
+    isChangeMemberPassword: false,
     initialize: function () {
         var $form = $('.form-SC');
         $form.submit(function (e) {
@@ -13,11 +14,11 @@ var resetMainAccountPassword = {
         });
 
         $("#password").val("").focus().keyup(function () {
-            securityHelper.validatePassword(this);
+            securityHelper.validatePassword(this, resetMainAccountPassword.isChangeMemberPassword);
         });
 
         $("#confirmPassword").val("").keyup(function () {
-            securityHelper.validatePassword(this);
+            securityHelper.validatePassword(this, resetMainAccountPassword.isChangeMemberPassword);
         });
 
         $("#showPasswordchk").click(function () {
@@ -28,6 +29,8 @@ var resetMainAccountPassword = {
         if (top.hasPopupOpen()){
             $("#container").addClass("has-popup");
         }
+
+        resetMainAccountPassword.isChangeMemberPassword = $("#isChangeMemberPassword").val() === "True";
     },
     reset: function () {
         $.blockUI();
@@ -77,7 +80,7 @@ var resetMainAccountPassword = {
             return passwordResources.passwordCannotEmpty;
         }
 
-        if (!securityHelper.isValidPassword(password)) {
+        if (!securityHelper.isValidPassword(password, resetMainAccountPassword.isChangeMemberPassword)) {
             $txtSecurityCode.focus();
             return passwordResources.passwordDoesNotMeetMinimunRequirement;
         }

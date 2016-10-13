@@ -48,10 +48,10 @@ var securityHelper = {
         var validSC = securityHelper.isValidSecurityCode(securityCode);
         validSC ? securityHelper.showSuccessfullyIcon($container) : securityHelper.showFailIcon($container);
     },
-    validatePassword: function (container) {
+    validatePassword: function (container, isChangeMemberPassword = false) {
         var $container = $(container)
         var password = $container.val();
-        var validPassword = securityHelper.isValidPassword(password);
+        var validPassword = securityHelper.isValidPassword(password, isChangeMemberPassword);
         validPassword ? securityHelper.showSuccessfullyIcon($container) : securityHelper.showFailIcon($container);
     },
     hashSecurityCode: function (securityCode) {
@@ -106,22 +106,29 @@ var securityHelper = {
         $messageContainer.removeClass('msg-success');
         $messageContainer.addClass('msg-error').empty().html(failMessage);
     },
-    isValidPassword: function(password)
+    isValidPassword: function(password, isChangeMemberPassword = false)
     {
-        var regex1 = /^(?=.{8,100}$).*\d/i;
-        var regex2 = /^(?=.{8,100}$).*[a-z]/;
-        var regex3 = /^(?=.{8,100}$).*[A-Z]/;
-        var regex4 = /^(?=.{8,100}$).*[\[\]\^\$\.\|\?\*\+\(\)\\~`\!@#%&\-_+={}'""<>:;,]/i;
-
         var whiteSpace = /^\S*$/;
+        var whiteSpaceCase = password.search(whiteSpace) != -1;
 
-        var case1 = password.search(regex1) != -1 ? 1 : 0;
-        var case2 = password.search(regex2) != -1 ? 1 : 0;
-        var case3 = password.search(regex3) != -1 ? 1 : 0;
-        var case4 = password.search(regex4) != -1 ? 1 : 0;
-        var case5 = password.search(whiteSpace) != -1;
+        if (isChangeMemberPassword) {
+            var memberRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$/;
 
-        return (case1 + case2 + case3 + case4 >= 3) && case5;
+            return (password.search(memberRegex) != -1) && whiteSpaceCase;
+        }
+        else {
+            var regex1 = /^(?=.{8,100}$).*\d/i;
+            var regex2 = /^(?=.{8,100}$).*[a-z]/;
+            var regex3 = /^(?=.{8,100}$).*[A-Z]/;
+            var regex4 = /^(?=.{8,100}$).*[\[\]\^\$\.\|\?\*\+\(\)\\~`\!@#%&\-_+={}'""<>:;,]/i;
+
+            var case1 = password.search(regex1) != -1 ? 1 : 0;
+            var case2 = password.search(regex2) != -1 ? 1 : 0;
+            var case3 = password.search(regex3) != -1 ? 1 : 0;
+            var case4 = password.search(regex4) != -1 ? 1 : 0;
+
+            return (case1 + case2 + case3 + case4 >= 3) && whiteSpaceCase;
+        }
     },
     showHint: function ()
     {
