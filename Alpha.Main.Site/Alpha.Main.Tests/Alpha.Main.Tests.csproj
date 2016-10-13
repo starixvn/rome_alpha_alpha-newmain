@@ -136,6 +136,7 @@
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteriaTests.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteriaTests.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteriaTests.cs" />
+    <Compile Include="Criteria\Announcement\UpdateViewStatusTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
     <Compile Include="Criteria\Message\GetMessageCriteriaTests.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Models\Message\MessageTests.cs" />
     <Compile Include="TestData\Helper\ConstructorQuery\ParametersAmountConstructorQuery.cs" />
+    <Compile Include="Helpers\Impl\DateTimeWrapTests.cs" />
     <Compile Include="TestData\Helper\FakeDataHelper.cs" />
     <Compile Include="Helpers\Impl\SiteMapReaderImplTests.cs" />
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />
