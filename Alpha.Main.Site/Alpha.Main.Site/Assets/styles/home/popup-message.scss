@@ -45,9 +45,13 @@ div.messageBlock {
     overflow: auto;
 }
 
-#live-message {
+#live-message, #movebets-message {
     overflow: hidden;
     cursor: pointer;
+}
+
+#movebets-message {
+    color: #da1526;
 }
 
 #scroller {

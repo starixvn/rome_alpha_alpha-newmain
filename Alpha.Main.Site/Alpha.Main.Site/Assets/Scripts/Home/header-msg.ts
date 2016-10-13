@@ -34,6 +34,7 @@ var headerMessage = {
         btnPrivateMessage: null,
         privateMessageCounter: null,
         liveMessage: null,
+        moveBetsMessage: null,
         btnSpecialMessage: null,
         marqueeMessage: null,
         hotMessages: null,
@@ -58,6 +59,7 @@ var headerMessage = {
         headerMessage.domElements.btnPrivateMessage = $('#btnPrivateMessage');
         headerMessage.domElements.privateMessageCounter = $('#privateMessageCounter');
         headerMessage.domElements.liveMessage = $('#liveMessage');
+        headerMessage.domElements.moveBetsMessage = $('#movebets-message');
         headerMessage.domElements.btnSpecialMessage = $('#btnSpecialMessage');
         headerMessage.domElements.marqueeMessage = $('#marqueeMessage');
         headerMessage.domElements.hotMessages = $('#userMessageModalBody');
@@ -86,6 +88,10 @@ var headerMessage = {
         headerMessage.domElements.marqueeMessage
             .off('click.headermsg')
             .on('click.headermsg', headerMessage.viewLiveMessage);
+
+        headerMessage.domElements.moveBetsMessage
+            .off('click.headermsg')
+            .on('click.headermsg', headerMessage.viewMoveBetsMessage);
 
         headerMessage.domElements.showMoreContainer.click(headerMessage.showMoreHotMessage);
         headerMessage.domElements.showLessContainer.click(headerMessage.showLessHotMessage);
@@ -125,6 +131,10 @@ var headerMessage = {
         else {
             indexManager.changeMenu(headerMessage.urls.oldMainAppNormalMessageForm);
         }
+    },
+
+    viewMoveBetsMessage: function (event) {
+        event.stopPropagation();
     },
 
     showHotMessages: function () {
@@ -220,6 +230,10 @@ var headerMessage = {
 
             headerMessage.publicMessageId = publicMessage[headerMessage.messageIdIndex];
         }
+        else {
+            var spanMoveBets = $("#span-movebets");
+            if (spanMoveBets.length) {
+                spanMoveBets.remove();
     },
 
     showPrivateMessage: function (privateMessage, unreadPriMsgCount) {
@@ -273,8 +287,11 @@ var headerMessage = {
                     var publicMessage = results.public_message ? results.public_message : 0,
                         privateMessage = results.private_message ? results.private_message : 0,
                         unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
+                        movebetsMessage = headerMessage.formatMoveBetsMessage(results.movebets_message || "");
 
                     headerMessage.showPublicMessage(publicMessage);
+
+                    headerMessage.showMoveBetsMessage(movebetsMessage);
 
                     headerMessage.showPrivateMessage(privateMessage, unreadPriMsgCount);
 
@@ -343,23 +360,38 @@ var headerMessage = {
         headerMessage.topnews = headerMessage.domElements.liveMessage[0];
 
         headerMessage.topnews.onmouseover = function () {
-            clearTimeout(headerMessage.scrollMessageTimeout);
-            headerMessage.scrollMessageTimeout = 0;
-            headerMessage.scrollerPaused = true;
+            headerMessage.pauseMarquee();
         };
         headerMessage.topnews.onmouseout = function () {
-            if (headerMessage.scrollerPaused) {
-                headerMessage.scrollerPaused = false;
-                headerMessage.scrollMessageTimeout = setTimeout(headerMessage.scrollMessage, 20);
-            } else {
-                headerMessage.scrollerPaused = false;
-            }
+            headerMessage.playMarquee();
+        };
+
+        headerMessage.domElements.moveBetsMessage[0].onmouseover = function () {
+            headerMessage.pauseMarquee();
+        };
+        headerMessage.domElements.moveBetsMessage[0].onmouseout = function () {
+            headerMessage.playMarquee();
         };
 
         var textNews = headerMessage.domElements.marqueeMessage[0];
         headerMessage.maskWidth = parseInt(textNews.offsetWidth);
 
         headerMessage.scrollMessage();
+    },
+
+    playMarquee: function () {
+        if (headerMessage.scrollerPaused) {
+            headerMessage.scrollerPaused = false;
+            headerMessage.scrollMessageTimeout = setTimeout(headerMessage.scrollMessage, 20);
+        } else {
+            headerMessage.scrollerPaused = false;
+        }
+    },
+
+    pauseMarquee: function () {
+        clearTimeout(headerMessage.scrollMessageTimeout);
+        headerMessage.scrollMessageTimeout = 0;
+        headerMessage.scrollerPaused = true;
     },
 
     scrollMessage: function () {
