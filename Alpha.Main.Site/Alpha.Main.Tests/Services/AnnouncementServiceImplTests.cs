@@ -57,7 +57,7 @@
                 expectedAnnouncementPrefix);
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement);
+            Assert.IsNotNull(actualHotAnnouncement);
             Assert.AreEqual(true, actualHotAnnouncement.Content.StartsWith(expectedAnnouncementPrefix));
         }
 
@@ -121,7 +121,7 @@
             var actualHotAnnouncement = test.Run(commonAnnouncementPath, privateMessagePath);
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNotNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Expired\Announcement_NotHasStartDate.xml")]
@@ -136,7 +136,7 @@
             var actualHotAnnouncement = test.Run(expiredAnnouncementPath);
 
             // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreAllSystem.xml", PublicSystem)]
@@ -151,7 +151,7 @@
             var actualHotAnnouncement = test.Run(availableAnnouncementPath, site);
 
             // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml", IncludedSite)]
@@ -164,7 +164,7 @@
             var actualHotAnnouncement = test.Run(availableAnnouncementPath, site);
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNotNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml")]
@@ -178,7 +178,7 @@
             var actualHotAnnouncement = test.Run(availableAnnouncementPath);
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNotNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(Language.Thai, @"\TestData\Announcements\HotAnnouncement\Language\Announcement_NotMatchLanguage_NotHasDefault.xml", null)]
@@ -209,7 +209,20 @@
             var actualHotAnnouncement = test.Run();
 
             // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNull(actualHotAnnouncement.Content);
+        }
+
+        [Test]
+        public void GetHotAnnouncement_NotAgentDirectLoginAndEnableProduct_ReturnsAnnouncementContent()
+        {
+            // Arrange
+            var test = new NotAgentDirectLoginTest.EnableProductTest();
+
+            // Act
+            var actualHotAnnouncement = test.Run();
+
+            // Assert
+            Assert.AreEqual("Announcement", actualHotAnnouncement.Content);
         }
 
         [TestCase(ShowedAnnouncementId, null)]
@@ -239,7 +252,7 @@
             var actualHotAnnouncement = test.Run();
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNotNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\HasAnnouncement.xml", ExpectedAnnouncementContent)]
