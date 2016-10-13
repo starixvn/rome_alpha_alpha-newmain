@@ -374,6 +374,7 @@
     </Content>
     <Content Include="App_Data\Announcements\PopupAdCommon.proi1.xml">
       <DependentUpon>PopupAdCommon.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdCommon.sit.xml">
       <DependentUpon>PopupAdCommon.xml</DependentUpon>

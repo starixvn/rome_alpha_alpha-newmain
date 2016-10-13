@@ -234,7 +234,8 @@ var headerMessage = {
             var spanMoveBets = $("#span-movebets");
             if (spanMoveBets.length) {
                 spanMoveBets.remove();
-                }
+            }
+        }
     },
     showPrivateMessage: function (privateMessage, unreadPriMsgCount) {
         // Process Private Message: show new private message
@@ -286,8 +287,8 @@ var headerMessage = {
 
                     var publicMessage = results.public_message ? results.public_message : 0,
                         privateMessage = results.private_message ? results.private_message : 0,
-                        unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
-                        movebetsMessage = headerMessage.formatMoveBetsMessage(results.movebets_message || "");
+                        unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0,
+                        movebetsMessage = results.movebets_message || "";
 
                     headerMessage.showPublicMessage(publicMessage);
 
