@@ -16,12 +16,12 @@
             string userAgent,
             List<string> devicesUseCustomScrollbar = null)
         {
-            this.roleId = roleId;
+            UserLevel = Enumeration.FromValue<UserLevel>(roleId);
             UserAgent = userAgent;
             this.devicesUseCustomScrollbar = devicesUseCustomScrollbar ?? AppSettings.DevicesUseCustomScrollbar;
         }
 
-        public UserLevel UserLevel => Enumeration.FromValue<UserLevel>(roleId);
+        public UserLevel UserLevel { get; }
 
         public string UserAgent { get; }
 
