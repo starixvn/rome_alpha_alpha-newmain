@@ -1,8 +1,9 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels.Dashboard.Notice
 {
-    using System;
+    using System.Collections.Generic;
     using Main.Constants;
     using Main.Models.Notice;
+    using Main.Tests.TestData.Helper;
     using NSubstitute;
     using NUnit.Framework;
     using Site.ViewModels.Dashboard.Notice;
@@ -18,7 +19,11 @@
         public void MessageType_ByMessageTypeAndIsSticky_ReturnTypeText(byte msgType, bool isSticky, string expectedType)
         {
             // Arrange
-            var noticeMessage = CreateNoticeMessagesData(msgType, isSticky);
+            var parameters = new Dictionary<string, dynamic>();
+            parameters.Add("type", msgType);
+            parameters.Add("isSticky", isSticky);
+
+            var noticeMessage = FakeDataHelper.Create<NoticeMessage>(parameters);
 
             // Act
             var viewModel = new NoticeMessageWrapper(noticeMessage, Arg.Any<string>());
@@ -27,36 +32,36 @@
             Assert.AreEqual(expectedType, viewModel.MessageType);
         }
 
-        [TestCase(Language.ChineseSimplified, "en")]
-        [TestCase(Language.ChineseTraditional, "en")]
-        [TestCase(Language.Thai, "en")]
-        [TestCase(Language.Japanese, "en")]
-        [TestCase(Language.Korean, "en")]
-        [TestCase(Language.Vietnamese, "en")]
-        [TestCase(Language.English, "en")]
-        public void Content_WhenCurrentLanguageContentIsNull_ReturnContentDefault(string lang, string expectedContent)
+        [TestCase(Language.ChineseSimplified, "contentCS")]
+        [TestCase(Language.ChineseTraditional, "contentCH")]
+        [TestCase(Language.Thai, "contentTH")]
+        [TestCase(Language.Japanese, "contentJP")]
+        [TestCase(Language.Korean, "contentKO")]
+        [TestCase(Language.Vietnamese, "contentVI")]
+        [TestCase(Language.English, "contentEN")]
+        public void Content_WhenCurrentLanguageContentIsNull_ReturnContentDefault(string lang, string contentPropName)
         {
             // Arrange
-            var noticeMessage = CreateNoticeMessagesDataWithEmptyContent();
+            var noticeMessage = FakeDataHelper.Create<NoticeMessage>(contentPropName, string.Empty);
 
             // Act
             var viewModel = new NoticeMessageWrapper(noticeMessage, lang);
 
             // Assert
-            Assert.AreEqual(expectedContent, viewModel.Content);
+            Assert.AreEqual(noticeMessage.ContentEN, viewModel.Content);
         }
 
-        [TestCase(Language.ChineseSimplified, "cs")]
-        [TestCase(Language.ChineseTraditional, "ch")]
-        [TestCase(Language.Thai, "th")]
-        [TestCase(Language.Japanese, "jp")]
-        [TestCase(Language.Korean, "ko")]
-        [TestCase(Language.Vietnamese, "en")]
-        [TestCase(Language.English, "en")]
+        [TestCase(Language.ChineseSimplified, "CS")]
+        [TestCase(Language.ChineseTraditional, "CH")]
+        [TestCase(Language.Thai, "TH")]
+        [TestCase(Language.Japanese, "JP")]
+        [TestCase(Language.Korean, "KO")]
+        [TestCase(Language.Vietnamese, "EN")]
+        [TestCase(Language.English, "EN")]
         public void Content_ByCurrentLanguage_ReturnContent(string lang, string expectedContent)
         {
             // Arrange
-            var noticeMessage = CreateNoticeMessagesData();
+            var noticeMessage = FakeDataHelper.Create<NoticeMessage>("content" + expectedContent, expectedContent);
 
             // Act
             var viewModel = new NoticeMessageWrapper(noticeMessage, lang);
@@ -65,67 +70,23 @@
             Assert.AreEqual(expectedContent, viewModel.Content);
         }
 
-        [TestCase(Language.ChineseSimplified, "cs")]
-        [TestCase(Language.ChineseTraditional, "ch")]
-        [TestCase(Language.Thai, "th")]
-        [TestCase(Language.Japanese, "jp")]
-        [TestCase(Language.Korean, "ko")]
-        [TestCase(Language.Vietnamese, "en")]
-        [TestCase(Language.English, "en")]
+        [TestCase(Language.ChineseSimplified, "CS")]
+        [TestCase(Language.ChineseTraditional, "CH")]
+        [TestCase(Language.Thai, "TH")]
+        [TestCase(Language.Japanese, "JP")]
+        [TestCase(Language.Korean, "KO")]
+        [TestCase(Language.Vietnamese, "EN")]
+        [TestCase(Language.English, "EN")]
         public void ShortContent_Always_ReturnData(string lang, string expectedShortContent)
         {
             // Arrange
-            var noticeMessage = CreateNoticeMessagesData();
+            var noticeMessage = FakeDataHelper.Create<NoticeMessage>("content" + expectedShortContent, expectedShortContent);
 
             // Act
             var viewModel = new NoticeMessageWrapper(noticeMessage, lang);
 
             // Assert
             Assert.AreEqual(expectedShortContent + "...", viewModel.ShortContent);
-        }
-
-        private NoticeMessage CreateNoticeMessagesData(byte msgType = 1, bool isSticky = false)
-        {
-            var noticeMessage = new NoticeMessage(
-                1,
-                "en",
-                "cs",
-                "ch",
-                "jp",
-                "th",
-                "lt",
-                "ko",
-                "es",
-                DateTime.Today,
-                msgType,
-                isSticky,
-                DateTime.Today,
-                "1",
-                true);
-
-            return noticeMessage;
-        }
-
-        private NoticeMessage CreateNoticeMessagesDataWithEmptyContent(byte msgType = 1, bool isSticky = false)
-        {
-            var noticeMessage = new NoticeMessage(
-                1,
-                "en",
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                DateTime.Today,
-                msgType,
-                isSticky,
-                DateTime.Today,
-                "1",
-                true);
-
-            return noticeMessage;
         }
     }
 }

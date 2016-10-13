@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Constants;
     using Fanex.Data.Repository;
     using Main.Models.BalanceInfo;
@@ -11,6 +12,7 @@
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using TestData.Helper;
 
     [TestFixture]
     public class StatisticsServiceImplTests
@@ -46,7 +48,7 @@
         public void GetStatistics_ValidCustId_ReturnStatisticsInfo()
         {
             // Arrange
-            var expectedStatistics = new Statistics(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+            var expectedStatistics = FakeDataHelper.Create<Statistics>();
 
             dynamicRepository.Get<Statistics>(Arg.Any<object>()).Returns(expectedStatistics);
 
@@ -71,8 +73,7 @@
         public void GetTopWinningMembers_ValidCustId_ReturnTopWinningMembers()
         {
             // Arrange
-            var expectedTopWinningMembers = new List<TopWinningMember>();
-            expectedTopWinningMembers.Add(new TopWinningMember(CustId.ValidId, "user", 1));
+            var expectedTopWinningMembers = FakeDataHelper.CreateMany<TopWinningMember>().ToList();
 
             dynamicRepository
                 .Fetch<TopWinningMember>(Arg.Any<object>())
@@ -99,8 +100,7 @@
         public void GetTopTurnoverMembers_ValidCustId_ReturnTopTurnoverMembers()
         {
             // Arrange
-            var expectedTopTurnoverMembers = new List<TopTurnoverMember>();
-            expectedTopTurnoverMembers.Add(new TopTurnoverMember(CustId.ValidId, "user", 1));
+            var expectedTopTurnoverMembers = FakeDataHelper.CreateMany<TopTurnoverMember>().ToList();
 
             dynamicRepository
                 .Fetch<TopTurnoverMember>(Arg.Any<object>())
@@ -127,8 +127,7 @@
         public void GetNewMembers_ValidCustId_ReturnNewMembers()
         {
             // Arrange
-            var expectedNewMembers = new List<NewMember>();
-            expectedNewMembers.Add(new NewMember(CustId.ValidId, "user", DateTime.Today, 1));
+            var expectedNewMembers = FakeDataHelper.CreateMany<NewMember>().ToList();
 
             dynamicRepository.Fetch<NewMember>(Arg.Any<object>()).Returns(expectedNewMembers);
 

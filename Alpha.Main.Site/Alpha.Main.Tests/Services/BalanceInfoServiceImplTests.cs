@@ -9,6 +9,7 @@
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using TestData.Helper;
 
     [TestFixture]
     public class BalanceInfoServiceImplTests
@@ -42,7 +43,7 @@
         public void GetBalanceInfo_ValidCustId_ReturnBalanceInfo()
         {
             // Arrange
-            var expectedBalanceInfo = new BalanceInfo("user", 1, 1, 1, 1, 1, 1, 1, 1);
+            var expectedBalanceInfo = FakeDataHelper.Create<BalanceInfo>();
 
             dynamicRepository
                 .Get<BalanceInfo>(Arg.Any<object>())

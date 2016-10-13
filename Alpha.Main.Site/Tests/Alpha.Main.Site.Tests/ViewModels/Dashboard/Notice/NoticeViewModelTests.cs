@@ -2,8 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using Main.Constants;
-    using Main.Models.Notice;
+    using System.Linq;
+    using Main.Tests.TestData.Helper;
     using NUnit.Framework;
     using Site.ViewModels.Dashboard.Notice;
 
@@ -27,43 +27,14 @@
         public void LastMessagePostTime_NoticeMessagesHasData_ReturnLastPostDate()
         {
             // Arrange
-            var noticeMessaseWrappers = new List<NoticeMessageWrapper>();
-
-            noticeMessaseWrappers.Add(CreateNoticeMessageWrapper(DateTime.Today));
-            noticeMessaseWrappers.Add(CreateNoticeMessageWrapper(DateTime.Today.AddDays(1)));
+            var noticeMessaseWrappers = FakeDataHelper.CreateMany<NoticeMessageWrapper>().ToList();
+            var lastPostTime = noticeMessaseWrappers.OrderByDescending(m => m.CurrentMessage.PostTime).Last().PostTime;
 
             // Act
             var viewModel = new NoticeMessagesViewModel(noticeMessaseWrappers);
 
             // Assert
-            Assert.AreEqual(DateTime.Today, viewModel.LastMessagePostTime);
-        }
-
-        private NoticeMessageWrapper CreateNoticeMessageWrapper(
-            DateTime postTime,
-            byte msgType = 1,
-            bool isSticky = false)
-        {
-            var noticeMessage = new NoticeMessage(
-                1,
-                "en",
-                "cs",
-                "ch",
-                "jp",
-                "th",
-                "lt",
-                "ko",
-                "es",
-                postTime,
-                msgType,
-                isSticky,
-                DateTime.Today,
-                "1",
-                true);
-
-            var noticeMessageWrapper = new NoticeMessageWrapper(noticeMessage, Language.Default);
-
-            return noticeMessageWrapper;
+            Assert.AreEqual(lastPostTime, viewModel.LastMessagePostTime);
         }
     }
 }

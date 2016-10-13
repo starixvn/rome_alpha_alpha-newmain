@@ -36,7 +36,12 @@
 
             var messageWrappers = new List<MessageWrapper>(messages.Select(m => new MessageWrapper(m, message.CurrentLang)));
 
-            var viewModel = new MessagesViewModel(messageWrappers, message.StartDate, message.EndDate, message.MessageType);
+            var viewModel = new MessagesViewModel(
+                messageWrappers,
+                message.StartDate,
+                message.EndDate,
+                message.MessageType,
+                message.RoleId);
 
             return viewModel;
         }

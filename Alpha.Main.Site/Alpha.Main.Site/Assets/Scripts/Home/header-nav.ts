@@ -201,7 +201,7 @@ var headerNav = {
 
         // Annoucement popup for mobile
         headerNav.domElements.iconBell.click(function () {
-            //announcement.showedMessageIds = [];
+            announcement.showedMessageIds = [];
             announcement.loadAnnouncement();
         });
 

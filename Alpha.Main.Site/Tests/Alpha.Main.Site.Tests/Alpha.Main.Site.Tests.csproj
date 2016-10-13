@@ -138,6 +138,10 @@
       <Project>{4cddebbd-6553-4a69-a9fc-5b58e3469843}</Project>
       <Name>Alpha.Main.Site</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Alpha.Main.Tests\Alpha.Main.Tests.csproj">
+      <Project>{27d51e95-ab7f-47ae-ba78-8a8381acec94}</Project>
+      <Name>Alpha.Main.Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Alpha.Main\Alpha.Main.csproj">
       <Project>{2ceef496-572b-4c3e-9675-573c57a66107}</Project>
       <Name>Alpha.Main</Name>

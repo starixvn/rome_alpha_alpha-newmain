@@ -1,9 +1,11 @@
 ﻿namespace Alpha.Main.Tests.Criteria.Notice
 {
     using System;
+    using System.Collections.Generic;
     using Main.Criteria.Notice;
     using NSubstitute;
     using NUnit.Framework;
+    using TestData.Helper;
 
     [TestFixture]
     public class GetNoticeMessagesCriteriaTests
@@ -12,12 +14,7 @@
         public void GetSettingKey_Always_Return_Age_CustomerSelMessages()
         {
             // Arrange
-            var criteria = new GetNoticeMessagesCriteria(
-                Arg.Any<int>(),
-                Arg.Any<string>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<int>(),
-                Arg.Any<bool>());
+            var criteria = FakeDataHelper.Create<GetNoticeMessagesCriteria>();
 
             // Act
             var actualSettingKey = criteria.GetSettingKey();
@@ -30,12 +27,11 @@
         public void IsValid_TargetIdAndTargetId2IsValid_ReturnTrue(int targetId, string targetId2)
         {
             // Arrange
-            var criteria = new GetNoticeMessagesCriteria(
-                targetId,
-                targetId2,
-                Arg.Any<DateTime>(),
-                Arg.Any<int>(),
-                Arg.Any<bool>());
+            var parameters = new Dictionary<string, dynamic>();
+            parameters.Add("targetId", targetId);
+            parameters.Add("targetId2", targetId2);
+
+            var criteria = FakeDataHelper.Create<GetNoticeMessagesCriteria>(parameters);
 
             // Act
             var actual = criteria.IsValid();
@@ -49,12 +45,11 @@
         public void IsValid_TargetIdAndTargetId2IsInvalid_ReturnFalse(int targetId, string targetId2)
         {
             // Arrange
-            var criteria = new GetNoticeMessagesCriteria(
-                targetId,
-                targetId2,
-                Arg.Any<DateTime>(),
-                Arg.Any<int>(),
-                Arg.Any<bool>());
+            var parameters = new Dictionary<string, dynamic>();
+            parameters.Add("targetId", targetId);
+            parameters.Add("targetId2", targetId2);
+
+            var criteria = FakeDataHelper.Create<GetNoticeMessagesCriteria>(parameters);
 
             // Act
             var actual = criteria.IsValid();
@@ -68,12 +63,7 @@
         {
             // Arrange
             var lastPostTime = DateTime.Today;
-            var criteria = new GetNoticeMessagesCriteria(
-                Arg.Any<int>(),
-                Arg.Any<string>(),
-                lastPostTime,
-                Arg.Any<int>(),
-                Arg.Any<bool>());
+            var criteria = FakeDataHelper.Create<GetNoticeMessagesCriteria>("lastPostTime", lastPostTime);
 
             // Act
             var actualLastPostTime = criteria.LastPostTime;
@@ -87,12 +77,7 @@
         {
             // Arrange
             var totalMessage = 10;
-            var criteria = new GetNoticeMessagesCriteria(
-                Arg.Any<int>(),
-                Arg.Any<string>(),
-                Arg.Any<DateTime>(),
-                totalMessage,
-                Arg.Any<bool>());
+            var criteria = FakeDataHelper.Create<GetNoticeMessagesCriteria>("totalMessage", totalMessage);
 
             // Act
             var actualTotalMessage = criteria.TotalMessage;
@@ -105,12 +90,7 @@
         public void IsTest_Always_ReturnValueSetWhenInit()
         {
             // Arrange
-            var criteria = new GetNoticeMessagesCriteria(
-                Arg.Any<int>(),
-                Arg.Any<string>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<int>(),
-                false);
+            var criteria = FakeDataHelper.Create<GetNoticeMessagesCriteria>("isTest", false);
 
             // Act
             var actualIsTest = criteria.IsTest;

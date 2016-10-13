@@ -44,6 +44,7 @@
             IsTest = isTest;
             TotalMessage = totalMessage;
             CurrentLang = userSession.Language;
+            RoleId = userSession.RoleId;
         }
 
         public int CustId { get; }
@@ -63,5 +64,7 @@
         public bool IsTest { get; }
 
         public string CurrentLang { get; }
+
+        public byte RoleId { get; }
     }
 }

@@ -1,10 +1,12 @@
 ﻿namespace Alpha.Main.Tests.Criteria.Message
 {
     using System;
+    using System.Collections.Generic;
     using Main.Constants;
     using Main.Criteria.Message;
     using NSubstitute;
     using NUnit.Framework;
+    using TestData.Helper;
 
     [TestFixture]
     public class GetMessageCriteriaTests
@@ -12,18 +14,10 @@
         [TestCase(MessageType.Private, "Dot_Msg_GetPrivateMessage")]
         [TestCase(MessageType.Public, "Dot_Msg_GetPublicMessage")]
         [TestCase(MessageType.Special, "Dot_Msg_GetSpecialMessage")]
-        public void GetSettingKey_Always_ReturnValidSettingKeyByLevel(byte messageType, string settingKey)
+        public void GetSettingKey_Always_ReturnValidSettingKeyByLevel(int messageType, string settingKey)
         {
             // Arrange
-            var criteria = new GetMessageCriteria(
-                Arg.Any<int>(),
-                Arg.Any<string>(),
-                Arg.Any<int>(),
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                messageType);
+            var criteria = FakeDataHelper.Create<GetMessageCriteria>("messageType", messageType);
 
             // Act
             var actualSettingKey = criteria.GetSettingKey();
@@ -36,18 +30,12 @@
         public void IsValid_CustIdIsGreaterThanZeroAndParentSitesIsNotEmpty_ReturnTrue()
         {
             // Arrange
-            var custId = 69;
-            var parentSites = "1";
+            var parameters = new Dictionary<string, dynamic>();
+            parameters.Add("messageType", MessageType.Public);
+            parameters.Add("custId", 69);
+            parameters.Add("parentSites", "1");
 
-            var criteria = new GetMessageCriteria(
-                custId,
-                parentSites,
-                Arg.Any<int>(),
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+            var criteria = FakeDataHelper.Create<GetMessageCriteria>(parameters);
 
             // Act
             var actual = criteria.IsValid();
@@ -57,21 +45,16 @@
         }
 
         [TestCase(0, "")]
-        [TestCase(0, null)]
         [TestCase(-1, "")]
-        [TestCase(-1, null)]
         public void IsValid_CustIdIsLessThanOrEqualToZeroAndParentSitesIsEmpty_ReturnFalse(int custId, string parentSites)
         {
             // Arrange
-            var criteria = new GetMessageCriteria(
-                custId,
-                parentSites,
-                Arg.Any<int>(),
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<bool>(),
-                Arg.Any<int>());
+            var parameters = new Dictionary<string, dynamic>();
+            parameters.Add("messageType", MessageType.Public);
+            parameters.Add("custId", custId);
+            parameters.Add("parentSites", parentSites);
+
+            var criteria = FakeDataHelper.Create<GetMessageCriteria>(parameters);
 
             // Act
             var actual = criteria.IsValid();

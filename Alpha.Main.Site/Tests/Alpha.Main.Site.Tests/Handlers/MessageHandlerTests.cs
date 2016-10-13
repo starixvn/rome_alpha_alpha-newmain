@@ -4,8 +4,10 @@ namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Constants;
     using Main.Models.Message;
+    using Main.Tests.TestData.Helper;
     using NSubstitute;
     using NUnit.Framework;
     using Services;
@@ -46,7 +48,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleMessageQuery_NotNullQuery_CallGetMessageService()
         {
             // Arrange
-            var messages = CreateMessagesData();
+            var messages = FakeDataHelper.CreateMany<Message>().ToList();
             FakeReturnGetMessagesService(messages);
 
             var query = new MessageQuery(
@@ -77,7 +79,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleMessageQuery_NotNullQuery_ReturnMessagesViewModel()
         {
             // Arrange
-            var messages = CreateMessagesData();
+            var messages = FakeDataHelper.CreateMany<Message>().ToList();
             FakeReturnGetMessagesService(messages);
 
             var query = new MessageQuery(
@@ -93,42 +95,6 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             // Assert
             Assert.AreEqual(messages.Count, viewModel.Messages.Count);
-        }
-
-        private List<Message> CreateMessagesData()
-        {
-            var message = new Message(
-                1,
-                "en",
-                "cs",
-                "ch",
-                "jp",
-                "th",
-                "it",
-                "ko",
-                "es",
-                DateTime.Today,
-                DateTime.Today,
-                DateTime.Today,
-                1,
-                false,
-                false,
-                1,
-                true,
-                1,
-                1,
-                "name",
-                "name",
-                false,
-                "1",
-                1,
-                "name",
-                1);
-
-            var messages = new List<Message>();
-            messages.Add(message);
-
-            return messages;
         }
 
         private void FakeReturnGetMessagesService(List<Message> messages)

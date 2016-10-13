@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels.Message
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using Main.Constants;
-    using Main.Models.Message;
+    using Main.Tests.TestData.Helper;
     using NUnit.Framework;
     using Site.ViewModels.Message;
+    using RoleId = Constants.RoleId;
 
     public class MessagesViewModelTests
     {
@@ -14,8 +14,7 @@
         public void StartDate_Always_EqualsValueSetFromCtor()
         {
             // Arrange
-            var messageWrappers = new List<MessageWrapper>();
-            messageWrappers.Add(CreateMessageWrapperDataWithPostTime(DateTime.Today));
+            var messageWrappers = FakeDataHelper.CreateMany<MessageWrapper>().ToList();
             var startDate = DateTime.Today;
 
             // Act
@@ -23,7 +22,8 @@
                 messageWrappers,
                 startDate,
                 DateTime.Today,
-                MessageType.Public);
+                MessageType.Public,
+                RoleId.Agent);
 
             // Assert
             Assert.AreEqual(startDate, viewModel.StartDate);
@@ -33,8 +33,7 @@
         public void EndDate_Always_EqualsValueSetFromCtor()
         {
             // Arrange
-            var messageWrappers = new List<MessageWrapper>();
-            messageWrappers.Add(CreateMessageWrapperDataWithPostTime(DateTime.Today));
+            var messageWrappers = FakeDataHelper.CreateMany<MessageWrapper>().ToList();
             var endDate = DateTime.Today;
 
             // Act
@@ -42,7 +41,8 @@
                 messageWrappers,
                 DateTime.Today,
                 endDate,
-                MessageType.Public);
+                MessageType.Public,
+                RoleId.Agent);
 
             // Assert
             Assert.AreEqual(endDate, viewModel.EndDate);
@@ -52,8 +52,7 @@
         public void MessageType_Always_EqualsValueSetFromCtor()
         {
             // Arrange
-            var messageWrappers = new List<MessageWrapper>();
-            messageWrappers.Add(CreateMessageWrapperDataWithPostTime(DateTime.Today));
+            var messageWrappers = FakeDataHelper.CreateMany<MessageWrapper>().ToList();
             var msgType = MessageType.Public;
 
             // Act
@@ -61,7 +60,8 @@
                 messageWrappers,
                 DateTime.Today,
                 DateTime.Today,
-                msgType);
+                msgType,
+                RoleId.Agent);
 
             // Assert
             Assert.AreEqual(msgType, viewModel.MessageType);
@@ -73,72 +73,59 @@
         public void MessageTypeName_Always_ReturnValueByMessageType(int messageType, string messageTypeName)
         {
             // Arrange
-            var messageWrappers = new List<MessageWrapper>();
-            messageWrappers.Add(CreateMessageWrapperDataWithPostTime(DateTime.Today));
+            var messageWrappers = FakeDataHelper.CreateMany<MessageWrapper>().ToList();
 
             // Act
             var viewModel = new MessagesViewModel(
                 messageWrappers,
                 DateTime.Today,
                 DateTime.Today,
-                messageType);
+                messageType,
+                RoleId.Agent);
 
             // Assert
             Assert.AreEqual(messageTypeName, viewModel.MessageTypeName);
+        }
+
+        [TestCase(RoleId.Super, "super")]
+        [TestCase(RoleId.Master, "master")]
+        [TestCase(RoleId.Agent, "agent")]
+        public void UserLevelName_Always_ReturnValueByUserLevel(byte roleId, string userLevelName)
+        {
+            // Arrange
+            var messageWrappers = FakeDataHelper.CreateMany<MessageWrapper>().ToList();
+
+            // Act
+            var viewModel = new MessagesViewModel(
+                messageWrappers,
+                DateTime.Today,
+                DateTime.Today,
+                MessageType.Public,
+                roleId);
+
+            // Assert
+            Assert.AreEqual(userLevelName, viewModel.UserLevelName);
         }
 
         [Test]
         public void Messages_Always_OrderByDescendingPostTime()
         {
             // Arrange
-            var messageWrappers = new List<MessageWrapper>();
-            messageWrappers.Add(CreateMessageWrapperDataWithPostTime(DateTime.Today));
-            messageWrappers.Add(CreateMessageWrapperDataWithPostTime(DateTime.Today.AddDays(1)));
+            var messageWrappers = FakeDataHelper.CreateMany<MessageWrapper>().ToList();
+            var firstPostTime = messageWrappers.OrderByDescending(mw => mw.CurrentMessage.PostTime).First().CurrentMessage.PostTime;
 
             // Act
             var viewModel = new MessagesViewModel(
                 messageWrappers,
                 DateTime.Today,
                 DateTime.Today,
-                MessageType.Public);
+                MessageType.Public,
+                RoleId.Agent);
 
             // Assert
             Assert.AreEqual(
-                messageWrappers.Last().CurrentMessage.PostTime,
+                firstPostTime,
                 viewModel.Messages.First().CurrentMessage.PostTime);
-        }
-
-        private MessageWrapper CreateMessageWrapperDataWithPostTime(DateTime? postTime)
-        {
-            var message = new Message(
-                1,
-                "en",
-                "cs",
-                "ch",
-                "jp",
-                "th",
-                "it",
-                "ko",
-                "es",
-                postTime ?? DateTime.Today,
-                DateTime.Today,
-                DateTime.Today,
-                1,
-                false,
-                false,
-                1,
-                true,
-                1,
-                1,
-                "name",
-                "name",
-                false,
-                "1",
-                1,
-                "name",
-                1);
-
-            return new MessageWrapper(message, Language.English);
         }
     }
 }

@@ -4,8 +4,10 @@ namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Constants;
     using Main.Models.Notice;
+    using Main.Tests.TestData.Helper;
     using NSubstitute;
     using NUnit.Framework;
     using Services;
@@ -38,20 +40,20 @@ namespace Alpha.Main.Site.Tests.Handlers
             NoticeQuery nullQuery = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => noticeHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(() => noticeHandler.Handle(nullQuery));
         }
 
         [Test]
         public void HandleNoticeQuery_NotNullQuery_CallGetNoticeService()
         {
             // Arrange
-            var noticeMessages = CreateNoticeMessagesData();
+            var noticeMessages = FakeDataHelper.CreateMany<NoticeMessage>().ToList();
             FakeReturnGetNoticeMessagesService(noticeMessages);
 
             var query = new NoticeQuery(userSession, DateTime.Today, 10, false);
 
             // Act
-            var viewModel = noticeHandler.Handle(query);
+            noticeHandler.Handle(query);
 
             // Assert
             noticeService
@@ -71,7 +73,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             MarkMessageAsReadQuery nullQuery = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => noticeHandler.Handle(nullQuery)));
+            Assert.Throws<ArgumentNullException>(() => noticeHandler.Handle(nullQuery));
         }
 
         [Test]
@@ -81,7 +83,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             var query = new MarkMessageAsReadQuery(CustId.ValidId, 1);
 
             // Act
-            var viewModel = noticeHandler.Handle(query);
+            noticeHandler.Handle(query);
 
             // Assert
             noticeService
@@ -95,7 +97,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleNoticeQuery_NotNullQuery_ReturnNoticeViewModel()
         {
             // Arrange
-            var expectedNoticeMessages = CreateNoticeMessagesData();
+            var expectedNoticeMessages = FakeDataHelper.CreateMany<NoticeMessage>().ToList();
             FakeReturnGetNoticeMessagesService(expectedNoticeMessages);
 
             var query = new NoticeQuery(userSession, DateTime.Today, 100, false);
@@ -105,31 +107,6 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             // Assert
             Assert.AreEqual(expectedNoticeMessages.Count, viewModel.NoticeMessages.Count);
-        }
-
-        private List<NoticeMessage> CreateNoticeMessagesData(byte msgType = 1, bool isSticky = false)
-        {
-            var noticeMessage = new NoticeMessage(
-                1,
-                "en",
-                "cs",
-                "ch",
-                "jp",
-                "th",
-                "lt",
-                "ko",
-                "es",
-                DateTime.Today,
-                msgType,
-                isSticky,
-                DateTime.Today,
-                "1",
-                true);
-
-            var noticeMessages = new List<NoticeMessage>();
-            noticeMessages.Add(noticeMessage);
-
-            return noticeMessages;
         }
 
         private void FakeReturnGetNoticeMessagesService(List<NoticeMessage> noticeMessages)

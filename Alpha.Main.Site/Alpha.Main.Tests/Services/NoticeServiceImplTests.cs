@@ -2,12 +2,14 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Constants;
     using Fanex.Data.Repository;
     using Main.Models.Notice;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using TestData.Helper;
 
     [TestFixture]
     public class NoticeServiceImplTests
@@ -42,7 +44,7 @@
         public void GetNoticeMessages_ValidCustIdAndParentSiteIds_ReturnNoticeMessages()
         {
             // Arrange
-            var expectedNoticeMessages = new List<NoticeMessage>();
+            var expectedNoticeMessages = FakeDataHelper.CreateMany<NoticeMessage>().ToList();
 
             dynamicRepository.Fetch<NoticeMessage>(Arg.Any<CriteriaBase>())
                 .Returns(expectedNoticeMessages);

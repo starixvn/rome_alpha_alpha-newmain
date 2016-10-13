@@ -1,13 +1,13 @@
 ﻿namespace Alpha.Main.Site.Tests.Requests.Message
 {
     using System;
-    using Constants;
     using Main.Constants;
     using NSubstitute;
     using NUnit.Framework;
     using Site.Requests.Message;
     using Sunplus.Agent.Model.Entities;
     using Language = Constants.Language;
+    using RoleId = Constants.RoleId;
 
     [TestFixture]
     public class MessageQueryTests
@@ -204,6 +204,25 @@
 
             // Assert
             Assert.AreEqual(totalMessage, query.TotalMessage);
+        }
+
+        [Test]
+        public void RoleId_Always_EqualsValueSetFromCtor()
+        {
+            // Arrange
+            userSession.RoleId.Returns(RoleId.Agent);
+
+            // Act
+            var query = new MessageQuery(
+                userSession,
+                MessageType.Public,
+                DateTime.Today,
+                DateTime.Today,
+                false,
+                50);
+
+            // Assert
+            Assert.AreEqual(RoleId.Agent, query.RoleId);
         }
     }
 }

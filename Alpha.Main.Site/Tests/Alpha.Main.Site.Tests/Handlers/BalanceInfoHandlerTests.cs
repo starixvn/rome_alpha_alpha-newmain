@@ -6,6 +6,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Constants;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
+    using Main.Tests.TestData.Helper;
     using NSubstitute;
     using NUnit.Framework;
     using Services;
@@ -46,7 +47,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleBalanceInfoQuery_NotNullQuery_CallGetBalanceInfoService()
         {
             // Arrange
-            var balanceInfo = new BalanceInfo("user", 1, 1, 1, 1, 1, 1, 1, 1);
+            var balanceInfo = FakeDataHelper.Create<BalanceInfo>();
             balanceInfoService
                 .GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>())
                 .Returns(balanceInfo);
@@ -54,7 +55,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             var query = new BalanceInfoQuery(userSession);
 
             // Act
-            var viewModel = balanceInfoHandler.Handle(query);
+            balanceInfoHandler.Handle(query);
 
             // Assert
             balanceInfoService
@@ -66,7 +67,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleBalanceInfoQuery_NotNullQuery_ReturnBalanceInfoViewModel()
         {
             // Arrange
-            var balanceInfo = new BalanceInfo("user", 1, 1, 1, 1, 1, 1, 1, 1);
+            var balanceInfo = FakeDataHelper.Create<BalanceInfo>();
             balanceInfoService
                 .GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>())
                 .Returns(balanceInfo);
