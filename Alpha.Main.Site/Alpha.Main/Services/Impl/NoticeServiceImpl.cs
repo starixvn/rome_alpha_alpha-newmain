@@ -18,13 +18,13 @@
         }
 
         public List<NoticeMessage> GetNoticeMessages(
-            int targetId,
-            string targetId2,
+            int custId,
+            string parentSites,
             DateTime lastPostTime,
             int totalMessage,
             bool isTest)
         {
-            var criteria = new GetNoticeMessagesCriteria(targetId, targetId2, lastPostTime, totalMessage, isTest);
+            var criteria = new GetNoticeMessagesCriteria(custId, parentSites, lastPostTime, totalMessage, isTest);
 
             var message = dynamicRepository.Fetch<NoticeMessage>(criteria).ToList();
 

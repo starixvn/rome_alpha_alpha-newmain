@@ -32,7 +32,7 @@ namespace Alpha.Main.Site.Tests.Requests.Dashboard.Notice
             var query = new NoticeQuery(userSession, DateTime.Today, 10, false);
 
             // Assert
-            Assert.AreEqual(expectedParentSitesId, query.ParentSiteId);
+            Assert.AreEqual(expectedParentSitesId, query.ParentSites);
         }
     }
 }

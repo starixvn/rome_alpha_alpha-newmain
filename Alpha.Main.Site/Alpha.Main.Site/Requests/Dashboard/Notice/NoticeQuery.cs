@@ -46,6 +46,6 @@ namespace Alpha.Main.Site.Requests.Dashboard.Notice
 
         public string CurrentLang { get; }
 
-        public string ParentSiteId => parentSitesByLevel[UserLevel.Value];
+        public string ParentSites => parentSitesByLevel[UserLevel.Value];
     }
 }

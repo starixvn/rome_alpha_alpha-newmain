@@ -7,8 +7,8 @@
     public interface NoticeService
     {
         List<NoticeMessage> GetNoticeMessages(
-            int targetId,
-            string targetId2,
+            int custId,
+            string parentSites,
             DateTime lastPostTime,
             int totalMessage,
             bool isTest);

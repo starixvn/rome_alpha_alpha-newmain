@@ -16,10 +16,6 @@
     "inputFile": "Assets/Styles/home/tooltip.scss"
   },
   {
-    "outputFile": "Assets/Styles/home/dropdown-ext.css",
-    "inputFile": "Assets/Styles/home/dropdown-ext.scss"
-  },
-  {
     "outputFile": "Assets/Styles/customer-profiles/customer-profile.css",
     "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss"
   },

@@ -60,7 +60,7 @@ namespace Alpha.Main.Site.Tests.Handlers
                 .Received()
                 .GetNoticeMessages(
                     Arg.Is<int>(cid => cid == query.CustId),
-                    Arg.Is<string>(pid => pid == query.ParentSiteId),
+                    Arg.Is<string>(pid => pid == query.ParentSites),
                     Arg.Is<DateTime>(lpt => lpt == query.LastPostTime),
                     Arg.Is<int>(tm => tm == query.TotalMessage),
                     Arg.Is<bool>(it => it == query.IsTest));

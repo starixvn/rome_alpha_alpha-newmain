@@ -24,12 +24,12 @@
         }
 
         [TestCase(69, "69")]
-        public void IsValid_TargetIdAndTargetId2IsValid_ReturnTrue(int targetId, string targetId2)
+        public void IsValid_TargetIdAndTargetId2IsValid_ReturnTrue(int custId, string parentSites)
         {
             // Arrange
             var parameters = new Dictionary<string, dynamic>();
-            parameters.Add("targetId", targetId);
-            parameters.Add("targetId2", targetId2);
+            parameters.Add("custId", custId);
+            parameters.Add("parentSites", parentSites);
 
             var criteria = FakeDataHelper.Create<GetNoticeMessagesCriteria>(parameters);
 
@@ -42,12 +42,12 @@
 
         [TestCase(0, "")]
         [TestCase(-1, "")]
-        public void IsValid_TargetIdAndTargetId2IsInvalid_ReturnFalse(int targetId, string targetId2)
+        public void IsValid_TargetIdAndTargetId2IsInvalid_ReturnFalse(int custId, string parentSites)
         {
             // Arrange
             var parameters = new Dictionary<string, dynamic>();
-            parameters.Add("targetId", targetId);
-            parameters.Add("targetId2", targetId2);
+            parameters.Add("custId", custId);
+            parameters.Add("parentSites", parentSites);
 
             var criteria = FakeDataHelper.Create<GetNoticeMessagesCriteria>(parameters);
 

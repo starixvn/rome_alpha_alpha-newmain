@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Main.Models.Notice;
     using MediatR;
     using Requests.Dashboard.Notice;
@@ -29,14 +30,15 @@
 
             var noticeMessages = noticeService.GetNoticeMessages(
                                     message.CustId,
-                                    message.ParentSiteId,
+                                    message.ParentSites,
                                     message.LastPostTime,
                                     message.TotalMessage,
                                     message.IsTest);
 
-            var noticeMessageViewModels = CreateNoticeMessageViewModels(noticeMessages, message.CurrentLang);
+            var noticeMessageWrappers = new List<NoticeMessageWrapper>(
+                noticeMessages.Select(m => new NoticeMessageWrapper(m, message.CurrentLang)));
 
-            var viewModel = new NoticeMessagesViewModel(noticeMessageViewModels);
+            var viewModel = new NoticeMessagesViewModel(noticeMessageWrappers);
 
             return viewModel;
         }
@@ -51,19 +53,6 @@
             var isSuccess = noticeService.MarkMessageAsRead(message.CustId, message.MessageId);
 
             return isSuccess;
-        }
-
-        private List<NoticeMessageWrapper> CreateNoticeMessageViewModels(List<NoticeMessage> noticeMessages, string currentLang)
-        {
-            var noticeMessageViewWrappers = new List<NoticeMessageWrapper>();
-
-            foreach (var noticeMessage in noticeMessages)
-            {
-                var noticeMessageWrapper = new NoticeMessageWrapper(noticeMessage, currentLang);
-                noticeMessageViewWrappers.Add(noticeMessageWrapper);
-            }
-
-            return noticeMessageViewWrappers;
         }
     }
 }

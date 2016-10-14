@@ -1,27 +1,30 @@
 ﻿namespace Alpha.Main.Criteria.Notice
 {
     using System;
+    using Fanex.Data;
     using Fanex.Data.Repository;
 
     public class GetNoticeMessagesCriteria : CriteriaBase
     {
         public GetNoticeMessagesCriteria(
-            int targetId,
-            string targetId2,
+            int custId,
+            string parentSites,
             DateTime lastPostTime,
             int totalMessage,
             bool isTest)
         {
-            TargetId = targetId;
-            TargetId2 = targetId2;
+            CustId = custId;
+            ParentSites = parentSites;
             LastPostTime = lastPostTime;
             TotalMessage = totalMessage;
             IsTest = isTest;
         }
 
-        public int TargetId { get; }
+        [SpParam(SqlParamName = "targetId")]
+        public int CustId { get; }
 
-        public string TargetId2 { get; }
+        [SpParam(SqlParamName = "targetId2")]
+        public string ParentSites { get; }
 
         public DateTime LastPostTime { get; }
 
@@ -31,6 +34,6 @@
 
         public override string GetSettingKey() => "Age_CustomerSelMessages";
 
-        public override bool IsValid() => TargetId > 0 && !string.IsNullOrEmpty(TargetId2);
+        public override bool IsValid() => CustId > 0 && !string.IsNullOrEmpty(ParentSites);
     }
 }
