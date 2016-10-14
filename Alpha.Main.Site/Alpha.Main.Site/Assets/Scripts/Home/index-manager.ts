@@ -138,15 +138,15 @@ var indexManager = {
 
     closeAllOpenDropdowns: function (iframeWindow) {
         const closeDropdownSubMenu = () => {
-            const $dropdownSubMenu = $('.dropdown-submenu').find('.dropdown-menu');
-
-            if ($dropdownSubMenu.is(':visible')) {
-                $dropdownSubMenu.toggle();
-            }
+            $('.dropdown-submenu').find('.dropdown-menu').hide();
         }
 
-        $(iframeWindow.document).click(function () {
-            $('.dropdown-toggle').each(function (index, dropdown) {
+        $(document).click(closeDropdownSubMenu);
+
+        $('#btn-header-menu').click(closeDropdownSubMenu);
+
+        $(iframeWindow.document).click(() => {
+            $('.dropdown-toggle').each((index, dropdown) => {
                 var $dropdown = $(dropdown);
 
                 if ($dropdown.parent().hasClass('open')) {
@@ -156,8 +156,6 @@ var indexManager = {
 
             closeDropdownSubMenu();
         });
-
-        $(document).mouseup(closeDropdownSubMenu);
     }
 };
 

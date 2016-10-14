@@ -210,16 +210,7 @@ var headerNav = {
 
         // Language show options for mobile
         headerNav.domElements.languageDropdownSubMenu.click((e) => {
-            const listLanguage = headerNav.domElements.languageDropdownSubMenu.find('.list-language');
-
-            listLanguage.toggle(240);
-
-            listLanguage.find('li').click(() => {
-                if (listLanguage.is(':visible')) {
-                    listLanguage.toggle();
-                }
-            });
-
+            headerNav.domElements.languageDropdownSubMenu.find('.list-language').toggle();
             e.stopPropagation();
         });
     },

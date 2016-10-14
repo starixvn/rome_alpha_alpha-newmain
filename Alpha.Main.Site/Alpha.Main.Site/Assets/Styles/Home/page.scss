@@ -405,12 +405,13 @@ html * {
         }
     }
 
-    .dropdown-submenu.language {
+    .list-setting .dropdown-submenu.language {
         overflow: visible !important;
 
         .dropdown-menu.list-language {
+            top: 0;
             left: -160px;
-            top: 0px;
+            position: absolute !important;
         }
     }
 
