@@ -144,5 +144,10 @@
 
             return PartialView(viewModel);
         }
+
+        public ActionResult LearnMore()
+        {
+            return View($"~/Views/SecurityCode/LearnMore/SecurityCode_{this.userSession.Language}.cshtml");
+        }
     }
 }

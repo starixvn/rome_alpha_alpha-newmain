@@ -469,35 +469,6 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
-    <Content Include="App_Themes\Apo\Security\howtouse.css" />
-    <Content Include="App_Themes\Apo\Security\howtouse.min.css" />
-    <Content Include="App_Themes\Apo\Security\images\bg_buttonsite.jpg" />
-    <Content Include="App_Themes\Apo\Security\images\bg_buttonsiteOV.jpg" />
-    <Content Include="App_Themes\Apo\Security\images\bg_conts.jpg" />
-    <Content Include="App_Themes\Apo\Security\images\bg_header01.jpg" />
-    <Content Include="App_Themes\Apo\Security\images\bg_header02.jpg" />
-    <Content Include="App_Themes\Apo\Security\images\emsg_1_1.gif" />
-    <Content Include="App_Themes\Apo\Security\images\emsg_1_2.gif" />
-    <Content Include="App_Themes\Apo\Security\images\emsg_1_3.gif" />
-    <Content Include="App_Themes\Apo\Security\images\emsg_2_1.gif" />
-    <Content Include="App_Themes\Apo\Security\images\emsg_2_2.gif" />
-    <Content Include="App_Themes\Apo\Security\images\emsg_3_1.gif" />
-    <Content Include="App_Themes\Apo\Security\images\emsg_3_2.gif" />
-    <Content Include="App_Themes\Apo\Security\images\emsg_3_3.gif" />
-    <Content Include="App_Themes\Apo\Security\images\error.gif" />
-    <Content Include="App_Themes\Apo\Security\images\success.gif" />
-    <Content Include="App_Themes\Apo\Security\images\succ_1_1.gif" />
-    <Content Include="App_Themes\Apo\Security\images\succ_1_2.gif" />
-    <Content Include="App_Themes\Apo\Security\images\succ_1_3.gif" />
-    <Content Include="App_Themes\Apo\Security\images\succ_2_1.gif" />
-    <Content Include="App_Themes\Apo\Security\images\succ_2_2.gif" />
-    <Content Include="App_Themes\Apo\Security\images\succ_3_1.gif" />
-    <Content Include="App_Themes\Apo\Security\images\succ_3_2.gif" />
-    <Content Include="App_Themes\Apo\Security\images\succ_3_3.gif" />
-    <Content Include="App_Themes\Apo\Security\images\tick.png" />
-    <Content Include="App_Themes\Apo\Security\images\x5.gif" />
-    <Content Include="App_Themes\Apo\Security\securityCode.css" />
-    <Content Include="App_Themes\Apo\Security\securityCode.min.css" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\reset-sub-account-password.ts" />
@@ -574,6 +545,13 @@
     <Content Include="Assets\styles\security\images\6.jpg" />
     <Content Include="Assets\styles\security\images\7.jpg" />
     <Content Include="Assets\styles\security\images\8.jpg" />
+    <Content Include="Assets\styles\security\images\bg_header01.jpg" />
+    <Content Include="Assets\styles\security\lean-more.css">
+      <DependentUpon>lean-more.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security\lean-more.min.css">
+      <DependentUpon>lean-more.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\security\security.css" />
     <Content Include="Assets\styles\security\security.min.css" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
@@ -729,8 +707,7 @@
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\core.ts" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
-    <Content Include="App_Themes\Apo\Security\howtouse.scss" />
-    <Content Include="App_Themes\Apo\Security\securityCode.scss" />
+    <Content Include="Assets\styles\security\lean-more.scss" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -779,6 +756,13 @@
     <Content Include="Views\SecurityCode\VerifySecurityCode.cshtml" />
     <Content Include="Views\Password\Shared\_Layout.cshtml" />
     <Content Include="Views\SecurityCode\Languages.cshtml" />
+    <Content Include="Views\SecurityCode\LearnMore\SecurityCode_en-US.cshtml" />
+    <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ja-JP.cshtml" />
+    <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ko-KR.cshtml" />
+    <Content Include="Views\SecurityCode\LearnMore\SecurityCode_th-TH.cshtml" />
+    <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
+    <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-CN.cshtml" />
+    <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-TW.cshtml" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>
