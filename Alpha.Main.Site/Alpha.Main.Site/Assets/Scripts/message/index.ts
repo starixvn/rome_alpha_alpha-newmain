@@ -24,9 +24,11 @@ class Message {
                         newDoc.write(responseHtml);
                         newDoc.close();
                     }, 300);
-                }
+                },
+                error: () => $.unblockUI()
             };
 
+            $.blockUI();
             $.ajax(ajaxSetting);
         });
     }

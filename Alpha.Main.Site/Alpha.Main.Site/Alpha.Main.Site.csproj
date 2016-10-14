@@ -525,7 +525,9 @@
     <Content Include="Assets\bundles\default-message.min.css">
       <DependentUpon>default-message.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\default-message.min.js" />
+    <Content Include="Assets\bundles\default-message.min.js">
+      <DependentUpon>default-message.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-otp.css" />
     <Content Include="Assets\bundles\default-otp.min.css">
       <DependentUpon>default-otp.css</DependentUpon>
