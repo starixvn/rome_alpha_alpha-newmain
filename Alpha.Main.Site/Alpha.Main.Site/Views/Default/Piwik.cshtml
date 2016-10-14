@@ -1,9 +1,5 @@
 ﻿@using ModuleSettings = Sunplus.Agent.Model.BL.Definitions;
 
-@Html.Hidden("piwik-isenable", ModuleSettings.AppSettings.PiwikEnable)
-@Html.Hidden("piwik-url", ModuleSettings.AppSettings.PiwikUrl)
-@Html.Hidden("piwik-siteid", ModuleSettings.AppSettings.PiwikSiteId)
-
 @if (ModuleSettings.AppSettings.PiwikEnable)
 {
     <script type="text/javascript">
@@ -12,8 +8,12 @@
         _paq.push(['enableLinkTracking']);
         _paq.push(['setTrackerUrl', '@ModuleSettings.AppSettings.PiwikUrl']);
         _paq.push(['setSiteId', '@ModuleSettings.AppSettings.PiwikSiteId']);
+
+        setTimeout(function () {
+            var d = document, g = d.createElement('script');
+            g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = "@ModuleSettings.AppSettings.PiwikScript"; d.body.appendChild(g);
+        }, 500);
     </script>
-    <script type="text/javascript" async defer src="@ModuleSettings.AppSettings.PiwikScript"></script>
     <noscript>
         <p>
             <img src="@ModuleSettings.AppSettings.PiwikUrl?idsite=@ModuleSettings.AppSettings.PiwikSiteId" alt="" class="piwik-noscript" />

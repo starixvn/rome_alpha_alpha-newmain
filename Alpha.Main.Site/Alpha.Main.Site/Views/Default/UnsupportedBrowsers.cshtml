@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     @StaticResources.AssetStyles.Render($"/bundles/site-main/unsupport-browser/{Model.UserLevel}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/styles/home/pageIElower10"))" rel="stylesheet" type="text/css" />
-    <title>@Resources.BrowserIsOutOfDate</title>
+    <title>Your browser is out of date</title>
 </head>
 <body class="unsupport-browser">
     <div id="warning-browser-message" class="warning-browser-message">
@@ -21,6 +21,6 @@
             <span>@Resources.BrowserIsOutOfDate</span><a href="@Model.DownloadNewBrowserUrl" target="_blank"> @(Resources.ClickToUpdateBrowser).</a>
         </div>
     </div>
-
+    @Html.Partial("Piwik")
 </body>
 </html>
