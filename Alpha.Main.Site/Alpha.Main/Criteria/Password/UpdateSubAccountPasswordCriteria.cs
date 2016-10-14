@@ -25,10 +25,5 @@
         {
             return "UpdateSubAccountPassword";
         }
-
-        public override bool IsValid()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

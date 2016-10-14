@@ -34,10 +34,5 @@
         {
             return "ResetSubAccountPassword";
         }
-
-        public override bool IsValid()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

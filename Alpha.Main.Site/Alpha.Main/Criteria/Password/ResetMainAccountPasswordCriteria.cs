@@ -27,10 +27,5 @@
         {
             return "ResetMainAccountPassword";
         }
-
-        public override bool IsValid()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

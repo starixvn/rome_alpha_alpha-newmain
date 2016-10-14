@@ -268,6 +268,11 @@ var AgeWnd = function () {
             popUp.find(".icon-close").unbind("click").click(function () {
                 popUp.find('.modal-body #target').remove();
                 popUp.remove();
+
+                if (this.onClosing && typeof (this.onClosing) == "function") {
+                    this.onClosing();
+                }
+                
             });
 
             popUp.tinyDraggable();
@@ -281,6 +286,10 @@ var AgeWnd = function () {
             }
             popUp.find('.modal-body #target').remove();
             popUp.remove();
+
+            if (this.onClosing && typeof (this.onClosing) == "function") {
+                this.onClosing();
+            }
         },
         setRect: function (left, top, width, height) {
         },
@@ -420,19 +429,10 @@ function ShowSecCodePopup(preUrl, callerAge) {
     };
 
     top.securityCodePopup = popupSecurityCode;
-    popupSecurityCode.open(url, '', x, y, popW, popH, function () {
-        var c = top.frames.length;
-        for (var i = 0; i < c; i++) {
-            var w = top.frames[i];
-            unLockChildWindow(w);
-        }
 
-        top.age.UnLock();
-        return true;
-    	},
-        {
-            preUrl: preUrl
-        });
+    top.popupManager.openWithHanlder(top.securityCodePopup, url, '', popW, popH, null, null, null, null, null, {
+        preUrl: preUrl
+    });
 }
 
 //Javascript code snippet to create a div dynamically in Javascript.
