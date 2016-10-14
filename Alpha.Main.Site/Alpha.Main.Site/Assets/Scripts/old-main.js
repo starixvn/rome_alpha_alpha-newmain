@@ -269,8 +269,8 @@ var AgeWnd = function () {
                 popUp.find('.modal-body #target').remove();
                 popUp.remove();
 
-                if (this.onClosing && typeof (this.onClosing) == "function") {
-                    this.onClosing();
+                if (currentAgeWnd.onClosing && typeof (currentAgeWnd.onClosing) == "function") {
+                    currentAgeWnd.onClosing();
                 }
                 
             });
