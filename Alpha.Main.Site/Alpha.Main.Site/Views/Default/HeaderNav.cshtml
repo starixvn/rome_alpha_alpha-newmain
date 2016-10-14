@@ -31,7 +31,7 @@
             </a>
 
             <ul id="header-dropdown-menu" class="dropdown-menu list-setting">
-                <li class="visible-mobile dropdown-submenu">@Html.Action("List", "Language")</li>
+                <li class="visible-mobile dropdown-submenu language">@Html.Action("List", "Language")</li>
                 <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.LoginOption</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
                 <li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>

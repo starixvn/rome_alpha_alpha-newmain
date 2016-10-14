@@ -139,9 +139,15 @@ var indexManager = {
     closeAllOpenDropdowns: function (iframeWindow) {
         $(iframeWindow.document).click(function () {
             $('.dropdown-toggle').each(function (index, dropdown) {
-                var $dropdown = $(dropdown);
+                var $dropdown = $(dropdown),
+                    $dropdownSubMenu = $('.dropdown-submenu').find('.dropdown-menu');
+
                 if ($dropdown.parent().hasClass('open')) {
                     $dropdown.dropdown('toggle');
+                }
+
+                if ($dropdownSubMenu.is(':visible')) {
+                    $dropdownSubMenu.toggle();
                 }
             });
         });

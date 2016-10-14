@@ -293,28 +293,6 @@ html * {
     }
 }
 
-.typeahead {
-    background-color: #fff;
-    font-size: 18px;
-    height: 100%;
-    width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-    background: rgba(0,0,0,0.001);
-
-    li {
-        margin-top: -2px;
-
-        a {
-            color: #fff;
-
-            &:hover, &:active {
-                color: #f8eb95;
-            }
-        }
-    }
-}
-
 .blockUI {
     background-color: #000;
     opacity: 0.8;
@@ -347,7 +325,7 @@ html * {
             }
         }
     }
-    
+
     .header {
         position: absolute;
         left: 0;
@@ -360,36 +338,37 @@ html * {
 }
 
 @media only screen and (max-device-width: $screen-device-greater1024) {
-    
     .mainmenu-container {
         .menu-item {
-           .icon {
-               font-size: 20px;
-               margin-right: 18px;
-               top: 3px;
+            .icon {
+                font-size: 20px;
+                margin-right: 18px;
+                top: 3px;
 
-               &.icon-totalbets {
+                &.icon-totalbets {
                     font-size: 20px;
                 }
-           }
-           > a {
-               padding: 16px 8px 16px 18px;
-           }
-       }
+            }
+
+            > a {
+                padding: 16px 8px 16px 18px;
+            }
+        }
+
         .sub-menu .sub-menu-item {
             padding: 9px 15px 9px 54px;
         }
-    } 
-   
-   .content-wrapper {
-       &.expanded {
-           left: 56px;
-           .header {
-               left: 56px;
-           }
+    }
 
-       }
-   }
+    .content-wrapper {
+        &.expanded {
+            left: 56px;
+
+            .header {
+                left: 56px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-device-width: $screen-device-lower768) {
@@ -399,6 +378,7 @@ html * {
 
     .content-wrapper {
         left: 0;
+
         .content {
             background-color: #fff;
             top: 48px;
@@ -424,8 +404,38 @@ html * {
             width: 256px;
         }
     }
-}
 
+    .dropdown-submenu.language {
+        overflow: visible !important;
+
+        .dropdown-menu.list-language {
+            left: -160px;
+            top: 0px;
+        }
+    }
+
+    .typeahead {
+        background-color: #fff;
+        font-size: 18px;
+        height: 100%;
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        background: rgba(0,0,0,0.001);
+
+        li {
+            margin-top: -2px;
+
+            a {
+                color: #fff;
+
+                &:hover, &:active {
+                    color: #f8eb95;
+                }
+            }
+        }
+    }
+}
 
 @media \0screen\,screen\9 {
     .accountinfo-container {

@@ -15,7 +15,6 @@
     "outputFile": "Assets/Styles/home/tooltip.css",
     "inputFile": "Assets/Styles/home/tooltip.scss"
   },
-
   {
     "outputFile": "Assets/Styles/home/dropdown-ext.css",
     "inputFile": "Assets/Styles/home/dropdown-ext.scss"

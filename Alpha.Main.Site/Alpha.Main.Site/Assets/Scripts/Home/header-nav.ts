@@ -1,6 +1,5 @@
 ﻿/// <reference path="../core.ts" />
 /// <reference path="index-manager.ts" />
-/// <reference path="dropdown-ext.ts" />
 
 'use strict';
 
@@ -19,6 +18,7 @@ var headerNav = {
         linkLogout: null,
         iconBell: null,
         iconMessage: null,
+        languageSelector: null,
 
         sideBar: null,
         sideBarContent: null,
@@ -110,6 +110,7 @@ var headerNav = {
         headerNav.domElements.linkLogout = $(".link-logout");
         headerNav.domElements.iconBell = $(".icon-bell");
         headerNav.domElements.iconMessage = $(".icon-message");
+        headerNav.domElements.languageSelector = $('.language-selector-container');
 
         headerNav.domElements.sideBar = $("#side-bar");
         headerNav.domElements.sideBarContent = $(".content-wrapper");
@@ -207,8 +208,18 @@ var headerNav = {
             announcement.loadAnnouncement();
         });
 
-        const dropDownExtension = new DropDownExtension();
-        dropDownExtension.registerEvent();
+        // Language show options for mobile
+        headerNav.domElements.languageSelector.click((e) => {
+            const listLanguage = headerNav.domElements.languageSelector.next('.list-language');
+            listLanguage.toggle(240);
+            listLanguage.find('li').click(() => {
+                if (listLanguage.is(':visible')) {
+                    listLanguage.toggle();
+                }
+            });
+
+            e.stopPropagation();
+        });
     },
 
     changeLanguage: function (lang) {

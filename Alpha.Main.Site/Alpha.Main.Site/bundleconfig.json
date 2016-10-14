@@ -10,8 +10,7 @@
       "Assets/scripts/home/menu-bar.js",
       "Assets/scripts/announcement/announcement.js",
       "Assets/scripts/announcement/announcementForMobile.js",
-      "Assets/scripts/customer-profiles/brief-profile.js",
-      "Assets/scripts/home/dropdown-ext.js"
+      "Assets/scripts/customer-profiles/brief-profile.js"
     ]
   },
   {
