@@ -137,20 +137,27 @@ var indexManager = {
     },
 
     closeAllOpenDropdowns: function (iframeWindow) {
+        const closeDropdownSubMenu = () => {
+            const $dropdownSubMenu = $('.dropdown-submenu').find('.dropdown-menu');
+
+            if ($dropdownSubMenu.is(':visible')) {
+                $dropdownSubMenu.toggle();
+            }
+        }
+
         $(iframeWindow.document).click(function () {
             $('.dropdown-toggle').each(function (index, dropdown) {
-                var $dropdown = $(dropdown),
-                    $dropdownSubMenu = $('.dropdown-submenu').find('.dropdown-menu');
+                var $dropdown = $(dropdown);
 
                 if ($dropdown.parent().hasClass('open')) {
                     $dropdown.dropdown('toggle');
                 }
-
-                if ($dropdownSubMenu.is(':visible')) {
-                    $dropdownSubMenu.toggle();
-                }
             });
+
+            closeDropdownSubMenu();
         });
+
+        $(document).mouseup(closeDropdownSubMenu);
     }
 };
 

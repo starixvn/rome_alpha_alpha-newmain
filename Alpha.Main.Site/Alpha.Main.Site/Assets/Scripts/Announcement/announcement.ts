@@ -31,10 +31,9 @@ var announcement = {
     },
 
     init: function () {
-        announcement.loadAnnouncementPeriodically(10000);
-
         if (!alpha.isScreenLower768) {
             announcement.loadAnnouncement();
+            announcement.loadAnnouncementPeriodically(10000);
         }
     },
 
