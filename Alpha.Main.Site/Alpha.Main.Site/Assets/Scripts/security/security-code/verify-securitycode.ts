@@ -58,6 +58,8 @@ var verifySecurityCode = {
             success: function (data, textStatus, jqXHR) {
                 var code = data.Code;
                 if (code === 0) { // OK
+                    $txtSecurityCode.attr("disabled", "disabled");
+                    $("#btn-submit").remove();
                     if (top.hasPopupOpen()) {
                         top.revertSecurityCodePopupTitle();
                     }
