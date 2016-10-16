@@ -3,7 +3,7 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
-    using Filter;
+    using Filters;
     using MediatR;
     using Requests.Password;
 
@@ -33,6 +33,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
+        [CheckBelongingFilter]
         public ActionResult ResetMainAccountPassword(ResetMainAccountPasswordQuery query)
         {
             var viewModel = this.mediator.Send(query);
@@ -40,6 +41,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
+        [CheckBelongingFilter]
         public ActionResult ResetSubAccountPassword(ResetSubAccountPasswordQuery query)
         {
             var viewModel = this.mediator.Send(query);
@@ -63,7 +65,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpPost, AntiXsrfFilter]
+        [HttpPost, AntiXsrfFilter, CheckBelongingFilter]
         public ActionResult ResetMainAccountPassword(ResetMainAccountPasswordCommand command)
         {
             var result = this.mediator.Send(command);
@@ -71,7 +73,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpPost, AntiXsrfFilter]
+        [HttpPost, AntiXsrfFilter, CheckBelongingFilter]
         public ActionResult ResetSubAccountPassword(ResetSubAccountPasswordCommand command)
         {
             var result = this.mediator.Send(command);

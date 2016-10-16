@@ -3,7 +3,7 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
-    using Filter;
+    using Filters;
     using Main.Models.SecurityCode;
     using MediatR;
     using Models.Request.SecurityCode;
@@ -100,7 +100,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpGet]
+        [HttpGet, CheckBelongingFilter]
         public ActionResult ResetSecurityCode(SecurityCodeQuery query)
         {
             var viewModel = mediator.Send(query);
@@ -110,7 +110,7 @@
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost]
-        [AntiXsrfFilter]
+        [AntiXsrfFilter, CheckBelongingFilter]
         public JsonResult ResetSecurityCode(ResetSecurityCodeCommand query)
         {
             var viewModel = mediator.Send(query);

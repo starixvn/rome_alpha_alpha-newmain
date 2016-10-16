@@ -44,8 +44,8 @@
 </div>
 
 @Html.Hidden("hashkey", Model.HashKey)
-@Html.Hidden("custid", Request["custid"])
-@Html.Hidden("subaccid", Request["subaccid"])
+@Html.Hidden("custid", Request["custid"]) @*Todo: Magic, please review here*@
+@Html.Hidden("subaccid", Request["subaccid"]) @*Todo: Magic, please review here*@
 @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 @Html.Hidden("mainRootPath", Model.MainRootPath)
 
