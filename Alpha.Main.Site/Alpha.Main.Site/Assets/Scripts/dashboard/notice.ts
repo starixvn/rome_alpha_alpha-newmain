@@ -98,9 +98,11 @@ class NoticeMessage {
     }
 
     private hideMoreBtnIfHaveNoData = () => {
-        const noInfo = document.getElementById('no-info');
+        const noInfo = document.getElementById('no-info'),
+            messageAmount = $('.msg-contents').length,
+            moreTotalMessage = $('.more-info').attr('totalMsg');
 
-        if (noInfo !== null) {
+        if (noInfo !== null || moreTotalMessage > messageAmount) {
             $('.more-info').hide();
         }
     }

@@ -26,7 +26,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var viewModel = new NoticeViewModel(10);
+            var viewModel = new NoticeViewModel();
 
             return View(viewModel);
         }

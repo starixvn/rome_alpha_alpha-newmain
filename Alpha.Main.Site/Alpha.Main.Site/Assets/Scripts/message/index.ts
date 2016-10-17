@@ -23,7 +23,7 @@ class Message {
                         const newDoc = document.open("text/html", "replace");
                         newDoc.write(responseHtml);
                         newDoc.close();
-                    }, 300);
+                    }, 100);
                 },
                 error: () => $.unblockUI()
             };
