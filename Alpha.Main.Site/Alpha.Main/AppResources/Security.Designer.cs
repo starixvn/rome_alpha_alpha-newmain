@@ -70,7 +70,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Security Code was not correctly confirmed..
+        ///   Looks up a localized string similar to Security Codes do not match..
         /// </summary>
         public static string alertErrorSecCodeConfirm {
             get {
@@ -108,7 +108,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your provided Security Code is not correct. Please try again.
+        ///   Looks up a localized string similar to Wrong Security Code. Please try again..
         /// </summary>
         public static string alertInputWrongSecCode {
             get {
@@ -144,7 +144,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Security Code has been changed successfully..
+        ///   Looks up a localized string similar to Your Security Code has been changed..
         /// </summary>
         public static string alertSecCodeChangedOK {
             get {
@@ -153,7 +153,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, Security Code cannot be empty.
+        ///   Looks up a localized string similar to This field is required..
         /// </summary>
         public static string alertSecCodeEmpty {
             get {
@@ -333,7 +333,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your provided Security Code does not meet the requirements..
+        ///   Looks up a localized string similar to The Security Code does not meet the security requirements..
         /// </summary>
         public static string lblSecCodeWrongRule {
             get {
@@ -455,7 +455,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to hi {0}, please create your own password.
+        ///   Looks up a localized string similar to Hi {0}, please change your password..
         /// </summary>
         public static string PasswordShower {
             get {
@@ -509,7 +509,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi {0}, please input the security code provided by your upline and create your own one..
+        ///   Looks up a localized string similar to Hi {0}, your security code has been reset. Please set up a new one..
         /// </summary>
         public static string SecurityCodeShower {
             get {

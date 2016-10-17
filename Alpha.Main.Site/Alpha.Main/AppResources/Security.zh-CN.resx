@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
-    <value>您的机密码无法被确认。</value>
+    <value>保安码不正确</value>
   </data>
   <data name="alertForcedChangeSCTitle" xml:space="preserve">
     <value>您需要更改机密码。您的新机密码必须要与您上线所提供不相同。&lt;br/&gt;
@@ -129,7 +129,7 @@
 请使用下面的表格设置您现在的机密码。</value>
   </data>
   <data name="alertInputWrongSecCode" xml:space="preserve">
-    <value>您所提供的保安码是不正确的。请再试一次。</value>
+    <value>保安码不正确。请再重试。</value>
   </data>
   <data name="alertOldSecCodeEmpty" xml:space="preserve">
     <value>请输入您的旧保安码。</value>
@@ -138,10 +138,10 @@
     <value>您的新保安码必须与当前的不相同。</value>
   </data>
   <data name="alertSecCodeChangedOK" xml:space="preserve">
-    <value>您已成功更改您的保安码。</value>
+    <value>保安码已更改。</value>
   </data>
   <data name="alertSecCodeEmpty" xml:space="preserve">
-    <value>抱歉, 保安码不能空置</value>
+    <value>必填栏</value>
   </data>
   <data name="ConfirmSecurityCode" xml:space="preserve">
     <value>确认保安码</value>
@@ -168,7 +168,7 @@
     <value>提交</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
-    <value>保安码显示</value>
+    <value>保安码验证</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>了解更多</value>
@@ -183,7 +183,7 @@
     <value>您没有使用此功能的权限</value>
   </data>
   <data name="SecurityCodeRules" xml:space="preserve">
-    <value>Security code rules</value>
+    <value>保安码条规</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>嗨{0}，您的保安码已被重置。请设置一个新的。</value>
@@ -261,7 +261,7 @@
 &lt;p&gt;&lt;strong&gt;注意： &lt;/strong&gt;您的密码需有大小写&lt;/p&gt;</value>
   </data>
   <data name="PasswordRules" xml:space="preserve">
-    <value>Password rules</value>
+    <value>密码条规</value>
   </data>
   <data name="PasswordShower" xml:space="preserve">
     <value>嗨 {0}，请更改您的密码。</value>

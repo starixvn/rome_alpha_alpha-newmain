@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
-    <value>The Security Code was not correctly confirmed.</value>
+    <value>Security Codes do not match.</value>
   </data>
   <data name="alertForcedChangeSCTitle" xml:space="preserve">
     <value>You're required to change Security Code. Your new Security Code must be different from the one provided by your upline/CSD.&lt;br/&gt;
@@ -129,7 +129,7 @@ Please use the form below to change your Security Code now.</value>
 Please use the form below to set your Security Code now.</value>
   </data>
   <data name="alertInputWrongSecCode" xml:space="preserve">
-    <value>Your provided Security Code is not correct. Please try again</value>
+    <value>Wrong Security Code. Please try again.</value>
   </data>
   <data name="alertOldSecCodeEmpty" xml:space="preserve">
     <value>Please enter old Security Code</value>
@@ -138,10 +138,10 @@ Please use the form below to set your Security Code now.</value>
     <value>Your new Security Code must be different from the current one.</value>
   </data>
   <data name="alertSecCodeChangedOK" xml:space="preserve">
-    <value>Your Security Code has been changed successfully.</value>
+    <value>Your Security Code has been changed.</value>
   </data>
   <data name="alertSecCodeEmpty" xml:space="preserve">
-    <value>Sorry, Security Code cannot be empty</value>
+    <value>This field is required.</value>
   </data>
   <data name="ConfirmSecurityCode" xml:space="preserve">
     <value>Confirm Security Code</value>
@@ -150,7 +150,7 @@ Please use the form below to set your Security Code now.</value>
     <value>Please input your security code before proceeding!</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
-    <value>Your provided Security Code does not meet the requirements.</value>
+    <value>The Security Code does not meet the security requirements.</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>Learn more</value>
@@ -192,7 +192,7 @@ Please use the form below to set your Security Code now.</value>
     <value>For example: 123456, 765432, 456789, etc. are NOT allowed.</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
-    <value>Hi {0}, please input the security code provided by your upline and create your own one.</value>
+    <value>Hi {0}, your security code has been reset. Please set up a new one.</value>
   </data>
   <data name="errUserName" xml:space="preserve">
     <value>Please input username and password</value>
@@ -269,7 +269,7 @@ Please use the form below to change your password now.</value>
     <value>Password rules</value>
   </data>
   <data name="PasswordShower" xml:space="preserve">
-    <value>hi {0}, please create your own password</value>
+    <value>Hi {0}, please change your password.</value>
   </data>
   <data name="lblBack" xml:space="preserve">
     <value>Back</value>

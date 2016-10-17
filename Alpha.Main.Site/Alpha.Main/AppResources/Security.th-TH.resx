@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
-    <value>The Security Code was not correctly confirmed.</value>
+    <value>รหัสรักษาความปลอดภัยไม่ตรงกัน</value>
   </data>
   <data name="alertForcedChangeSCTitle" xml:space="preserve">
     <value>กรุณาเปลี่ยนรหัสความปลอดภัยของคุณ รหัสรักษาความปลอดภัยใหม่จะต้องมีความแตกต่างจากที่ตั้งไว้ให้โดย uplineของท่าน</value>
@@ -128,37 +128,37 @@
 กรุณาใช้แบบฟอร์มด้านล่างเพื่อตั้งรหัสลับของคุณตอนนี้</value>
   </data>
   <data name="alertInputWrongSecCode" xml:space="preserve">
-    <value>Your provided Security Code is not correct. Please try again</value>
+    <value>รหัสรักษาความปลอดภัยไม่ถูกต้อง โปรดลองใหม่อีกครั้ง</value>
   </data>
   <data name="alertOldSecCodeEmpty" xml:space="preserve">
-    <value>Please enter old Security Code</value>
+    <value>โปรดใส่รหัสรักษาความปลอดภัยเก่าของท่าน</value>
   </data>
   <data name="alertSameSecCode" xml:space="preserve">
-    <value>Your new Security Code must be different from the current one.</value>
+    <value>รหัสรักษาความปลอดภัยใหม่ต้องแตกต่างกับรหัสรักษาความปลอดภัยที่ใช้อยู่ในปัจจุบัน</value>
   </data>
   <data name="alertSecCodeChangedOK" xml:space="preserve">
-    <value>Your Security Code has been changed successfully.</value>
+    <value>รหัสรักษาความปลอดภัยทำการเปลี่ยนเรียบร้อยแล้ว</value>
   </data>
   <data name="alertSecCodeEmpty" xml:space="preserve">
-    <value>Sorry, Security Code cannot be empty</value>
+    <value>จำเป็นต้องใส่ข้อมูลนี้</value>
   </data>
   <data name="ConfirmSecurityCode" xml:space="preserve">
-    <value>Confirm Security Code</value>
+    <value>ยืนยันรหัสรักษาความปลอดภัย</value>
   </data>
   <data name="informSecCode" xml:space="preserve">
-    <value>Please input your security code before proceeding!</value>
+    <value>โปรดใส่รหัสรักษาความปลอดภัยของท่านก่อนการดำเนินการต่อไป</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
-    <value>Your provided Security Code does not meet the requirements.</value>
+    <value>รหัสรักษาความปลอดภัยไม่สอดคล้องกับกฎการตั้งค่ารหัสรักษาความปลอดภัย</value>
   </data>
   <data name="oldSecCode" xml:space="preserve">
-    <value>Old Security Code</value>
+    <value>รหัสรักษาความปลอดภัยเก่า</value>
   </data>
   <data name="SecurityCode" xml:space="preserve">
-    <value>Security Code</value>
+    <value>รหัสรักษาความปลอดภัย</value>
   </data>
   <data name="titleResetSecCode" xml:space="preserve">
-    <value>Reset Security Code</value>
+    <value>ตั้งค่ารหัสรักษาความปลอดภัยใหม่</value>
   </data>
   <data name="Reset" xml:space="preserve">
     <value>ตั้งค่าใหม่</value>
@@ -167,7 +167,7 @@
     <value>ตกลง</value>
   </data>
   <data name="titleVerifySecurityCode" xml:space="preserve">
-    <value>โชว์รหัสลับ</value>
+    <value>ตรวจสอบรหัสรักษาความปลอดภัย</value>
   </data>
   <data name="LearnMore" xml:space="preserve">
     <value>Learn more</value>
@@ -182,7 +182,7 @@
     <value>คุณไม่มีอำนาจในการเข้าใช้งานฟังก์ชันนี้</value>
   </data>
   <data name="SecurityCodeRules" xml:space="preserve">
-    <value>Security code rules</value>
+    <value>กฎการตั้งค่ารหัสรักษาความปลอดภัย</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>สวัสดี {0} รหัสรักษาความปลอดภัยของคุณได้รับการตั้งค่า, โปรดตั้งค่าใหม่</value>
@@ -261,7 +261,7 @@
 &lt;p&gt;&lt;strong&gt;หมายเหตุ&lt;/strong&gt;รหัสผ่านของคุณเป็นสิ่งที่สำคัญ&lt;/p&gt;</value>
   </data>
   <data name="PasswordRules" xml:space="preserve">
-    <value>Password rules</value>
+    <value>กฎการตั้งค่ารหัสผ่าน</value>
   </data>
   <data name="PasswordShower" xml:space="preserve">
     <value>สวัสดีคะ {0} โปรดเปลี่ยนรหัสผ่านของคุณ</value>

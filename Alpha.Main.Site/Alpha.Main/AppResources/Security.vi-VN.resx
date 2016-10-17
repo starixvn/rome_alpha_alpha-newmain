@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
-    <value>Mã bảo mật xác nhận không chính xác.</value>
+    <value>Các Mã Bảo Mật không khớp.</value>
   </data>
   <data name="alertForcedChangeSCTitle" xml:space="preserve">
     <value>Bạn buộc phải thay đổi Mã bảo mật. Mã bảo mật mới phải khác với Mã bảo mật mà bạn đã nhận được từ CSD hoặc cấp trên của bạn.</value>
@@ -128,7 +128,7 @@
 Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
   </data>
   <data name="alertInputWrongSecCode" xml:space="preserve">
-    <value>Bạn đã cung cấp sai Mã bảo mật. Vui lòng thử lại.</value>
+    <value>Sai Mã Bảo Mật. Vui lòng thử lại.</value>
   </data>
   <data name="alertOldSecCodeEmpty" xml:space="preserve">
     <value>Vui lòng nhập Mã bảo mật hiện tại</value>
@@ -137,10 +137,10 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Mã bảo mật mới phải khác với Mã bảo mật hiện tại.</value>
   </data>
   <data name="alertSecCodeChangedOK" xml:space="preserve">
-    <value>Mã bảo mật đã được thay đổi thành công.</value>
+    <value>Mã Bảo Mật của bạn đã được thay đổi.</value>
   </data>
   <data name="alertSecCodeEmpty" xml:space="preserve">
-    <value>Mã bảo mật phải có giá trị, không thể trống</value>
+    <value>Thông tin này bắt buộc phải nhập.</value>
   </data>
   <data name="ConfirmSecurityCode" xml:space="preserve">
     <value>Xác nhận mã bảo mật mới</value>
@@ -149,7 +149,7 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Vui lòng nhập Mã bảo mật trước khi thực hiện các thiết lập.!</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
-    <value>Mã bảo mật do bạn cung cấp không thỏa quy tắc đặt ra.</value>
+    <value>Mã Bảo Mật không đáp ứng đủ các yêu cầu bảo mật.</value>
   </data>
   <data name="oldSecCode" xml:space="preserve">
     <value>Mã bảo mật cũ</value>
@@ -182,7 +182,7 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Bạn không được cho phép sử dụng chức năng này</value>
   </data>
   <data name="SecurityCodeRules" xml:space="preserve">
-    <value>Security code rules</value>
+    <value>Quy tắc mã bảo mật</value>
   </data>
   <data name="SecurityCodeShower" xml:space="preserve">
     <value>Xin chào {0}, Mã Bảo Mật của bạn đã được đặt lại. Vui lòng tạo lại Mã Bảo Mật mới.</value>
@@ -259,7 +259,7 @@ Vui lòng điền vào mẩu bên dưới để thay đổi mật khẩu.</value
 &lt;p&gt;&lt;strong&gt;Lưu ý :&lt;/strong&gt;Mật khẩu có phân biệt chữ hoa và chữ thường.&lt;/p&gt;</value>
   </data>
   <data name="PasswordRules" xml:space="preserve">
-    <value>Password rules</value>
+    <value>Quy tắc mật khẩu</value>
   </data>
   <data name="PasswordShower" xml:space="preserve">
     <value>Xin chào {0}, vui lòng thay đổi Mật Khẩu của bạn.</value>

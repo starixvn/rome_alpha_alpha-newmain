@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="alertErrorSecCodeConfirm" xml:space="preserve">
-    <value>The Security Code was not correctly confirmed.</value>
+    <value>Security Codes do not match.</value>
   </data>
   <data name="alertForcedChangeSCTitle" xml:space="preserve">
     <value>You're required to change Security Code. Your new Security Code must be different from the one provided by your upline/CSD.&lt;br/&gt;
@@ -129,7 +129,7 @@ Please use the form below to change your Security Code now.</value>
 Please use the form below to set your Security Code now.</value>
   </data>
   <data name="alertInputWrongSecCode" xml:space="preserve">
-    <value>Your provided Security Code is not correct. Please try again</value>
+    <value>Wrong Security Code. Please try again.</value>
   </data>
   <data name="alertOldSecCodeEmpty" xml:space="preserve">
     <value>Please enter old Security Code</value>
@@ -141,7 +141,7 @@ Please use the form below to set your Security Code now.</value>
     <value>Your Security Code has been changed successfully.</value>
   </data>
   <data name="alertSecCodeEmpty" xml:space="preserve">
-    <value>Sorry, Security Code cannot be empty</value>
+    <value>This field is required.</value>
   </data>
   <data name="ConfirmSecurityCode" xml:space="preserve">
     <value>Confirm Security Code</value>
@@ -150,7 +150,7 @@ Please use the form below to set your Security Code now.</value>
     <value>Please input your security code before proceeding!</value>
   </data>
   <data name="lblSecCodeWrongRule" xml:space="preserve">
-    <value>Your provided Security Code does not meet the requirements.</value>
+    <value>The Security Code does not meet the security requirements.</value>
   </data>
   <data name="oldSecCode" xml:space="preserve">
     <value>Old Security Code</value>
