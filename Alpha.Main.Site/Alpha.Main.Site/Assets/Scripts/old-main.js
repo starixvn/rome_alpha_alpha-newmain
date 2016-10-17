@@ -695,7 +695,7 @@ function setSecurityCodePopupTitle(securityCodeTitle) {
     var popupTitle = top.$('.modal[id^="page-popup"]').find('#popup-title');
 
     if (popupTitle.length > 0) {
-        var previousTitle = popupTitle.text();
+        var previousTitle = popupTitle.length > 1 ? $(popupTitle[1]).text() : $(popupTitle[0]).text();
         popupTitle.text(securityCodeTitle);
         popupTitle.attr("data-previous-title", previousTitle);
     }
