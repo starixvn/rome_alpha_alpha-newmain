@@ -40,7 +40,7 @@
     <ul>
         <li>@Security.SecurityCodeRules02</li>
     </ul>
-    <a href="~/SecurityCode/LearnMore" target="_blank">@Security.LearnMore</a>
+    <a href="@($"{Model.MainRootPath}SecurityCode/LearnMore")" target="_blank">@Security.LearnMore</a>
 </div>
 
 @Html.Hidden("hashkey", Model.HashKey)

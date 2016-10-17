@@ -11,7 +11,7 @@
 
 <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" id="passwordNav">
-        <a href="~/Password/ChangePassword" role="tab" data-toggle="tab">@Security.Password</a>
+        <a href="@($"{Model.MainRootPath}Password/ChangePassword")" role="tab" data-toggle="tab">@Security.Password</a>
     </li>
     <li role="presentation" class="active">
         <a>@Security.SecurityCode</a>
@@ -52,7 +52,7 @@
             <ul>
                 <li>@Security.SecurityCodeRules02</li>
             </ul>
-            <a href="~/SecurityCode/LearnMore" target="_blank">@Security.LearnMore</a>
+            <a href="@($"{Model.MainRootPath}SecurityCode/LearnMore")" target="_blank">@Security.LearnMore</a>
         </div>
     </div>
 </div>
