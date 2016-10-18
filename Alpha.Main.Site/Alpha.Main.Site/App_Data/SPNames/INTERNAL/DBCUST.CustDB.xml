@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Statistics">
-    <Setting Key="Age_CustomerSelNewMembers" SpName="Age_CustomerSelNewMembers" DbName="DBCUST.CustDB.BODBDownlineNetViewView" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelNewMembers" SpName="Age_CustomerSelNewMembers" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="creatdate" ObjectProperty="Createddate" />
       <Mapping DataField="credit" ObjectProperty="GivenCredit" />
