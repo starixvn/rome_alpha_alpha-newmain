@@ -140,10 +140,10 @@
     <value>Nickname</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>&lt;div&gt;Dear Customers! In an effort to help you identify the real site,
- we’re now offering the option &lt;/div&gt; &lt;div&gt;to personalize your own profile
-picture. Once the image has been uploaded successfully,&lt;/div&gt; &lt;div&gt;you
-can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;</value>
+    <value>&lt;div&gt;Dear Customers! In an effort to help you identify the real site,&lt;/div&gt;
+&lt;div&gt; we’re now offering the option to personalize your own profile&lt;/div&gt;
+&lt;div&gt; picture. Once the image has been uploaded successfully, you&lt;/div&gt;
+&lt;div&gt; can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>Click here</value>
@@ -426,5 +426,17 @@ can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;</value
   </data>
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>Quick tour</value>
+  </data>
+  <data name="UpdatedSuccessfully" xml:space="preserve">
+    <value>Updated successfully!</value>
+  </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="lblChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="lblresetpassword" xml:space="preserve">
+    <value>Reset Password</value>
   </data>
 </root>

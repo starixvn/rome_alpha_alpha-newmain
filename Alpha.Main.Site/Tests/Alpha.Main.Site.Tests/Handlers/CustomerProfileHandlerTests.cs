@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
     using Constants;
     using Main.Models.CustomerProfiles;
     using Models.Requests.CustomerProfile;
@@ -8,7 +9,6 @@
     using Services;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
-    using System;
 
     [TestFixture]
     public class CustomerProfileHandlerTests

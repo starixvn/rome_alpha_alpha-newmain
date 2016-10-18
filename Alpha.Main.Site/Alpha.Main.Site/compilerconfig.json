@@ -34,5 +34,13 @@
   {
     "outputFile": "Assets/styles/introduction/enjoyhint.css",
     "inputFile": "Assets/styles/introduction/enjoyhint.scss"
+  },
+  {
+    "outputFile": "Assets/styles/security/security.css",
+    "inputFile": "Assets/styles/security/security.scss"
+  },
+  {
+    "outputFile": "Assets/styles/security/lean-more.css",
+    "inputFile": "Assets/styles/security/lean-more.scss"
   }
 ]

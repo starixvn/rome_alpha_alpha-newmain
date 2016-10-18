@@ -1,4 +1,7 @@
-﻿@model IndexViewModel
+﻿@{ 
+    Layout = null;
+}
+@model IndexViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +20,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"><span aria-hidden="true"></span></button>
-                    <h4 class="modal-title" id="result-detail-title"><span class="popup-title"></span></h4>
+                    <h4 class="modal-title" id="result-detail-title"><span class="popup-title" id="popup-title"></span></h4>
                 </div>
                 <div class="modal-body">
                     <iframe frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto"
@@ -59,7 +62,6 @@
     @Html.Hidden("subPageAccess", Model.SubPageAccess)
     @Html.Hidden("isInternalWebVPN", Model.IsInternalWebVPN)
     @Html.Hidden("currentURLCookieName", Model.CurrentURLCookieName)
-    @Html.Hidden("isShowIntroduction", Model.IsShowIntroduction)
     @Html.Hidden("userLevel", Model.UserLevel)
     @Html.Hidden("isSubAccount", Model.IsSubAccount)
 

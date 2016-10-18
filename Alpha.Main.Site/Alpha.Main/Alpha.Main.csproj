@@ -36,8 +36,24 @@
       <HintPath>..\packages\Alpha.Auth.3.0.0.7\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Alpha.SecurityCode, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3\lib\net40\Alpha.SecurityCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CasinoLibrary, Version=1.0.2.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CasinoSetting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoSetting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CasinoUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoUtility.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Common, Version=1.0.404.97, Culture=neutral, processorArchitecture=MSIL">
@@ -48,16 +64,16 @@
       <HintPath>..\packages\Fanex.CustomerSetting.1.0.2.5\lib\net40\Fanex.CustomerSetting.Client40.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Fanex.CustomerSetting.Module.Casino, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\Fanex.CustomerSetting.Module.Casino.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.CustomerSetting.Module.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.CustomerSetting.Module.Core.Alpha.1.0.0.1\lib\net40\Fanex.CustomerSetting.Module.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.CustomerSetting.Module.KenoStatus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.CustomerSetting.Module.KenoStatus.1.0.0.2\lib\net40\Fanex.CustomerSetting.Module.KenoStatus.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Fanex.CustomerSetting.Security, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.CustomerSetting.Security.1.0.0.1\lib\net40\Fanex.CustomerSetting.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Data, Version=0.5.404.63, Culture=neutral, processorArchitecture=MSIL">
@@ -76,8 +92,16 @@
       <HintPath>..\packages\Fanex.Logging.1.0.0.0\lib\net40\Fanex.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.Razorbill.Security, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Razorbill.Security.3.0.0.2\lib\net40\Fanex.Razorbill.Security.dll</HintPath>
+    <Reference Include="HandHistoryLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\HandHistoryLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ILogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ILogger.1.0.0.0\lib\net40\ILogger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <HintPath>..\packages\log4net.1.2.9.0\lib\net11\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -104,6 +128,11 @@
       <HintPath>..\packages\EnterpriseLibrary.Unity.5.0.414.0\lib\net40\Microsoft.Practices.Unity.Interception.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NetUtility, Version=1.0.4199.22106, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetUtility.1.0.4199.22106\lib\net40\NetUtility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -112,12 +141,32 @@
       <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.1.10\lib\net40\Sunplus.Agent.Model.Base.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.2\lib\net40\Sunplus.Agent.Model.Casino.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Sunplus.Agent.Model.Definitions, Version=3.0.1.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Definitions.3.0.1.5\lib\net40\Sunplus.Agent.Model.Definitions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sunplus.Agent.Utilities, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Utilities.3.0.0.2\lib\net40\Sunplus.Agent.Utilities.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.DataAccessLibrary, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.DataAccessLibrary.3.0.0.1\lib\net40\Sunplus.Agent.Model.DataAccessLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Agent.Utilities, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Utilities.3.0.0.4\lib\net40\Sunplus.Agent.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.AOP, Version=1.0.4218.28561, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Libraries.AOP.1.0.4218.28561\lib\net40\Sunplus.Libraries.AOP.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.APILogger, Version=1.0.4218.28561, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Libraries.APILogger.1.0.4218.28561\lib\net40\Sunplus.Libraries.APILogger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sunplus.Libraries.ThirdPartyTestData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Libraries.ThirdPartyTestData.1.0.0.0\lib\net40\Sunplus.Libraries.ThirdPartyTestData.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -135,9 +184,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppResources\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="AppResources\Security.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>Security.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\Language.cs" />
@@ -146,6 +200,21 @@
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
+    <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\ResetSubAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCounterCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCounterCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\GetSubAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\SecurityCode\GetMainAccountSecurityCodeCriteria.cs" />
+    <Compile Include="DataAccesses\Impl\PasswordDataAccessImpl.cs" />
+    <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
+    <Compile Include="DataAccesses\PasswordDataAccess.cs" />
+    <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
     <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
     <Compile Include="FunctionRegistry.cs" />
@@ -168,7 +237,16 @@
     <Compile Include="Models\Menus\MenuItemBuilder.cs" />
     <Compile Include="Models\Menus\MenuItemBuilderImpl.cs" />
     <Compile Include="Models\Menus\MenuStatus.cs" />
+    <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\SecurityCode\SecurityCodeStatus.cs" />
     <Compile Include="Params\Announcements\GetHotAnnouncementsParams.cs" />
+    <Compile Include="Params\Password\ResetMainAccountPasswordParam.cs" />
+    <Compile Include="Params\Password\ResetSubAccountPasswordParam.cs" />
+    <Compile Include="Params\Password\ChangeMainAccountPasswordParam.cs" />
+    <Compile Include="Params\Password\ChangeSubAccountPasswordParam.cs" />
+    <Compile Include="Params\SecurityCode\ChangeSecurityCodeParam.cs" />
+    <Compile Include="Params\SecurityCode\ResetSecurityCodeParam.cs" />
+    <Compile Include="Params\SecurityCode\VerifySecurityCodeParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppResources\Alpha.sitemap.Designer.cs">
       <DependentUpon>Alpha.sitemap.resx</DependentUpon>
@@ -181,10 +259,12 @@
     <Compile Include="Services\Impl\AnnouncementServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingManagerImpl.cs" />
     <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
+    <Compile Include="Services\Impl\PasswordServiceImpl.cs" />
     <Compile Include="Services\Impl\SecurityCodeServiceImpl.cs" />
     <Compile Include="Services\Impl\SessionManagerImpl.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
     <Compile Include="Services\Impl\UserMessageServiceImpl.cs" />
+    <Compile Include="Services\PasswordService.cs" />
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\SessionManager.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
@@ -192,6 +272,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="App_Data\securitycode.json" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -211,16 +292,34 @@
     <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-TW.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.ja-JP.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.ko-KR.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.th-TH.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.vi-VN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.zh-CN.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.zh-TW.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.ja-JP.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.ko-KR.resx">
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.th-TH.resx">
       <SubType>Designer</SubType>
@@ -234,10 +333,16 @@
     <EmbeddedResource Include="AppResources\Resources.zh-TW.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\Security.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Security.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -161,7 +161,8 @@ var AgeWnd = function () {
     return {
         popUp: [],
         callback: [],
-
+        id: null,
+        iframeAttributes: null,
         calculateWidthHeight: function (width, height, position) {
             var realHeight = height;
             var maxWidth = window.top.window.innerWidth;
@@ -179,7 +180,7 @@ var AgeWnd = function () {
                 height: realHeight
             };
         },
-        open: function (url, title, left, popUpTop, width, height, callBack) {
+        open: function (url, title, left, popUpTop, width, height, windowCss, titleCss, closeBtnCss, iframeAttributes) {
             popUpTop = popUpTop || 200;
 
             var widthHeight = this.calculateWidthHeight(width, height, { top: popUpTop });
@@ -196,8 +197,9 @@ var AgeWnd = function () {
 
             var popUp = this.popUp.length >= 1 ? this.popUp.pop() : $("#page-popup").clone();
 
-            popUp.attr("id", "page-popup-" + Math.random().toString(36).substring(7));
-
+            var popupId = "page-popup-" + Math.random().toString(36).substring(7);
+            popUp.attr("id", popupId);
+            this.id = popupId;
             // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
             var scrollTop = oldMainUltilities.getScrollTop(window.document.body);
             var scrollLeft = oldMainUltilities.getScrollLeft(window.document.body);
@@ -241,9 +243,14 @@ var AgeWnd = function () {
                 ageWnd.setIframeInfo(iframe, popUp, iframeHeight, left, popUpTop, isAutoHeight);
             }
 
-            ageWnd.openPopUpAfterSetIframeSrc(popUp, callBack, isAutoHeight, this);
+            if (iframeAttributes) {
+                this.iframeAttributes = iframeAttributes;
+                this.iframeAttributes.src = url;
+            }
+
+            ageWnd.openPopUpAfterSetIframeSrc(popUp, isAutoHeight, this);
         },
-        openPopUpAfterSetIframeSrc: function (popUp, callBack, isAutoHeight, currentAgeWnd) {
+        openPopUpAfterSetIframeSrc: function (popUp, isAutoHeight, currentAgeWnd) {
             popUp.on('shown.bs.modal', function () {
                 // transform property make objectFlash not show (MacauGames Result) 
                 popUp.find('.modal-dialog').css({
@@ -261,24 +268,27 @@ var AgeWnd = function () {
             popUp.find(".icon-close").unbind("click").click(function () {
                 popUp.find('.modal-body #target').remove();
                 popUp.remove();
-                if (callBack && typeof (callBack) == "function") {
-                    callBack();
+
+                if (currentAgeWnd.onClosing && typeof (currentAgeWnd.onClosing) == "function") {
+                    currentAgeWnd.onClosing();
                 }
+                
             });
 
             popUp.tinyDraggable();
 
             currentAgeWnd.popUp.push(popUp);
-            currentAgeWnd.callback.push(callBack);
         },
         close: function () {
             var popUp = this.popUp.pop();
+            if (!popUp) {
+                return;
+            }
             popUp.find('.modal-body #target').remove();
             popUp.remove();
 
-            var callBack = this.callback.pop();
-            if (callBack && typeof (callBack) == "function") {
-                callBack();
+            if (this.onClosing && typeof (this.onClosing) == "function") {
+                this.onClosing();
             }
         },
         setRect: function (left, top, width, height) {
@@ -380,9 +390,9 @@ function getBootboxPostion(handleElement, popUpOptions) {
 }
 
 function ShowSecCodePopup(preUrl, callerAge) {
-
-    preUrl = 'url=' + escape(preUrl);
-    var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
+    //preUrl = 'url=' + escape(preUrl);
+    //var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
+    var url = top.mainRootPath + 'SecurityCode/VerifySecurityCode';
     var popH = 190, popW = 396, verticalOffset = -75;
     var x = (screen.width / 2) - (popW / 2) + verticalOffset;
     var y = (screen.height / 2) - (popH / 2);
@@ -419,15 +429,9 @@ function ShowSecCodePopup(preUrl, callerAge) {
     };
 
     top.securityCodePopup = popupSecurityCode;
-    popupSecurityCode.open(url, '', x, y, popW, popH, function () {
-        var c = top.frames.length;
-        for (var i = 0; i < c; i++) {
-            var w = top.frames[i];
-            unLockChildWindow(w);
-        }
 
-        top.age.UnLock();
-        return true;
+    top.popupManager.openWithHanlder(top.securityCodePopup, url, '', popW, popH, null, null, null, null, null, {
+        preUrl: preUrl
     });
 }
 
@@ -687,6 +691,31 @@ function hasPopupOpen() {
     return hasPopUp;
 }
 
+function setSecurityCodePopupTitle(securityCodeTitle) {
+    var popupTitle = top.$('.modal[id^="page-popup"]').find('#popup-title');
+
+    if (popupTitle.length > 0) {
+        var previousTitle = popupTitle.length > 1 ? $(popupTitle[1]).text() : $(popupTitle[0]).text();
+        popupTitle.text(securityCodeTitle);
+        popupTitle.attr("data-previous-title", previousTitle);
+    }
+}
+
+function revertSecurityCodePopupTitle() {
+    var popupTitle = top.$('.modal[id^="page-popup"]').find('#popup-title');
+
+    if (popupTitle.length > 0) {
+        var previousTitle = popupTitle.attr("data-previous-title");
+        var currentTitle = popupTitle.length > 1 ? $(popupTitle[1]).text() : $(popupTitle[0]).text();
+        if (previousTitle != currentTitle) {
+            popupTitle.text(previousTitle);
+        }
+        else {
+            popupTitle.text("");
+        }
+    }
+}
+
 function clearPopupSubtitle(hasSubTitle) {
     var popUps = top.$('.modal[id^="page-popup"]');
     var popUpLength = popUps.length;
@@ -834,21 +863,21 @@ var popupManager = {
     defaultHeight: 1000,
 
     defaultWidth: 480,
-    openByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
-        window.top.popupManager.open(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top);
+    openByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
+        window.top.popupManager.open(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes);
     },
-    openMultipleByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
-        window.top.popupManager.openMultiple(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top);
+    openMultipleByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
+        window.top.popupManager.openMultiple(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes);
     },
-    open: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
+    open: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
         var handler = window.top.ageWnd;
-        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top);
+        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes);
     },
-    openMultiple: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
+    openMultiple: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
         var handler = window.top.ageWnd.createInstance();
-        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top);
+        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes);
     },
-    openWithHanlder: function (handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top) {
+    openWithHanlder: function (handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
         left = left || window.top.popupManager.leftPosition;
         top = top || window.top.popupManager.topPosition;
 
@@ -856,7 +885,7 @@ var popupManager = {
         height = height || window.top.popupManager.defaultHeight;
         title = title || '';
 
-        handler.open(url, title, left, top, width, height, windowCss, titleCss, closeBtnCss);
+        handler.open(url, title, left, top, width, height, windowCss, titleCss, closeBtnCss, iframeAttributes);
     },
     close: function () {
         top.ageWnd.close();

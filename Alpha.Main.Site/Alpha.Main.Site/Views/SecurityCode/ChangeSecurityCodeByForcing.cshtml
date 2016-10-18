@@ -1,0 +1,77 @@
+﻿@model ForceChangeSecurityCodeViewModel
+
+@{
+    Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
+}
+
+@section css {
+    @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
+}
+<div class="block">
+    <form class="form-SC form-validation">
+        @Html.Action("Languages", "SecurityCode")
+        <h1 class="title">@Security.SecurityCode</h1>        
+        <p>
+            @(string.Format(@Security.SecurityCodeShower, @Model.UsernameShower))
+            <figure class="avatar">
+                <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="Avatar" />
+                <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
+            </figure>
+            <div class="rowlg">
+                <input type="password" autocomplete="off"  class="txt" name="providedSC" id="txtOldSecCode" placeholder="@Security.oldSecCode" maxlength="6">
+                <label id="txtOldSecCode-error" class="error"></label>
+                <i class="icon-account-key"></i>
+                <i class="validation"></i>
+            </div>
+            <div class="rowlg help-rules">
+                <input type="password" autocomplete="off"  class="txt" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode" maxlength="6">
+                <label id="txtSecCode-error" class="error"></label>
+                <i class="icon-account-key"></i>
+                <i class="validation"></i>
+            </div>
+            <div class="rowlg">
+                <input type="password" autocomplete="off"  class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode" maxlength="6">
+                <label id="txtConfirmSecCode-error" class="error"></label>
+                <i class="icon-account-key"></i>
+                <i class="validation"></i>
+            </div>
+            <div class="rowlg">
+                <label><input type="checkbox" id="showSCchk"/> @Security.ShowSecurityCode</label>
+            </div>
+            <div class="list-button">
+                <input type="button" class="btn-cancel" id="btn-back" value="@Security.lblBack" />
+                <input type="submit" class="btn-submit" value="@Security.Submit" />
+            </div>
+    </form>
+    <div class="rules" id="rules">
+        <div class="rules-title" id="rules-title" data-toggle="modal" data-target="#sc"><span class="icon-information-outline icon-rules"></span>@Security.SecurityCodeRules</div>
+        <!-- Modal -->
+        <div class="modal fade information" id="sc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="icon icon-close close" data-dismiss="modal" aria-label="Close"></span>
+                        <h4 class="modal-title" id="myModalLabel"><span class="icon-information-outline icon-rules"></span>@Security.SecurityCodeRules</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>@Security.SecurityCodeRules01</p>
+                        <ul>
+                            <li>@Security.SecurityCodeRules02</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Hidden("securitycode-token", Model.SecurityCodeToken)
+@Html.Hidden("security-salt", Model.SecuritySalt)
+@Html.Hidden("hashkey", Model.HashKey)
+@Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
+@Html.Hidden("mainRootPath", Model.MainRootPath)
+
+@section js {
+    @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
+    <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/change-securitycode-by-forcing")" type="text/javascript"></script>
+}
+

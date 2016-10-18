@@ -2,5 +2,6 @@
 <Functions>
   <Function Name="Write/View Logs">
     <Setting Key="IS_UpdFunctionUsage" SpName="IS_UpdFunctionUsage" DbName="DBLOG.bodb_CustomerLog.BODBDownlineNetView" Plain="0" />
+    <Setting Key="WriteLog_UserLog_CasinoAPI" SpName="WriteLog_UserLog_CasinoAPI" DbName="DBLOG.bodb_CustomerLog.BODBDownlineNetView" Plain="0" />
   </Function>
 </Functions>

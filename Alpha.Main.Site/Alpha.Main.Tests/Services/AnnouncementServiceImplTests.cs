@@ -1,14 +1,12 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
     using Alpha.Main.Services.Impl;
     using Announcement.GetHotAnnouncement.LocalFileCondition;
     using Announcement.GetHotAnnouncement.LogInAndSettingChangedTest;
-    using Fanex.Razorbill.Security.Sessions;
     using Main.Constants;
-    using NSubstitute;
     using NUnit.Framework;
     using Params.Announcements;
-    using System;
     using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
     using NotAgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest;
 
@@ -40,13 +38,11 @@
         public void GetHotAnnouncement_NotPassSecurityCode_ReturnAnnouncementWithNullContent()
         {
             // Arrange
-            var isSecurityCodeActive = true;
-            var securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            securityCodeSession.IsRequireSecurityCode.Returns(true);
-
+            // var securityCodeSession = Substitute.For<SecurityCodeSession>();
+            // securityCodeSession.IsRequireSecurityCode.Returns(true);
             var announcementServiceImpl = new AnnouncementServiceImpl();
 
-            var query = new GetHotAnnouncementsParams(securityCodeSession, isSecurityCodeActive);
+            var query = new GetHotAnnouncementsParams();
 
             // Action
             var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
@@ -263,7 +259,6 @@
             Assert.AreNotEqual(null, actualHotAnnouncement.Content);
         }
 
-        [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\OnlyForceUseSecurityCode.xml", null)]
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\HasAnnouncement.xml", ExpectedAnnouncementContent)]
         [TestCase(@"\TestData\Announcements\HotAnnouncement\EmptyAnnouncement.xml", null)]
         public void GetHotAnnouncement_NotAgentDirectLoginAndNotForceUseSecurityCodeSite_ReturnCorrectContent(

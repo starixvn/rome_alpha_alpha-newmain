@@ -7,7 +7,6 @@
 
     public class MenuBarViewModel
     {
-        private Func<bool> menuBarVisibleFunc;
         private Func<bool> accountInfoVisibleFunc;
         private IEnumerable<IMenuItem> menuItems;
         private bool isSmallDevice;
@@ -15,19 +14,12 @@
         public MenuBarViewModel(
             IEnumerable<IMenuItem> menuItems,
             bool isSmallDevice = false,
-            Func<bool> menuBarVisibleFunc = null,
             Func<bool> accountInfoVisibleFunc = null)
         {
             this.menuItems = menuItems;
             this.isSmallDevice = isSmallDevice;
 
-            this.menuBarVisibleFunc = menuBarVisibleFunc ?? FunctionRegistry.ShowMenuBar;
             this.accountInfoVisibleFunc = accountInfoVisibleFunc ?? FunctionRegistry.ShowAccountInfo;
-        }
-
-        public bool Visible
-        {
-            get { return this.menuBarVisibleFunc(); }
         }
 
         public bool IsAccountInfoVisible

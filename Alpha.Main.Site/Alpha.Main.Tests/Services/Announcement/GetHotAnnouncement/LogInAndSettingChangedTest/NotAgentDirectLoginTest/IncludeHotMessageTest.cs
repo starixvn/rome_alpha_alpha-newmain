@@ -13,7 +13,7 @@
             var showedMessageCondition = new ShowedMessageCondition(false);
             showedMessageCondition.SetUpCondition(query);
 
-            var announcementServiceImpl = new AnnouncementServiceImpl(null, showedMessageCondition.SecurityCodeService, ValidAnnouncementTimeCondition.DateTimeWrapper);
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, ValidAnnouncementTimeCondition.DateTimeWrapper);
 
             var localFileAnnouncementCondition = new HasPrivateOrCommonAnnouncementCondition(availableAnnouncementPath);
             localFileAnnouncementCondition.SetUpCondition(query);

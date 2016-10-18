@@ -9,19 +9,21 @@
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
-    using Fanex.Razorbill.Security.Sessions;
     using Handlers;
     using Main.Helpers;
     using Main.Helpers.Impl;
     using Main.Models.Menus;
     using MediatR;
+    using SecurityCode.Services;
     using Services;
     using Services.Impl;
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
     using Sunplus.Agent.Model.Base;
+    using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Utilities;
 
     public static class DependencyConfig
     {
@@ -80,20 +82,6 @@
         {
             container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
 
-            container.Register(
-                () =>
-                {
-                    if (HttpContext.Current != null
-                       && (HttpContext.Current.Handler is IRequiresSessionState
-                       || HttpContext.Current.Handler is IReadOnlySessionState))
-                    {
-                        return CookieLessSessionFactory.SecurityCodeSession;
-                    }
-
-                    return new SecurityCodeSession(string.Empty);
-                },
-                Lifestyle.Transient);
-
             //// Singleton
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
@@ -105,13 +93,19 @@
             container.RegisterPerWebRequest<SecurityCodeService, SecurityCodeServiceImpl>();
             container.RegisterPerWebRequest<UserMessageService, UserMessageServiceImpl>();
             container.RegisterPerWebRequest<SessionManager, SessionManagerImpl>();
+            container.RegisterPerWebRequest<PasswordService, PasswordServiceImpl>();
             container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
+            container.RegisterPerWebRequest<Encryptor, EncryptorImpl>();
+            container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
+            container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)
         {
             container.RegisterPerWebRequest<IDynamicRepository, DynamicRepository>();
             container.RegisterPerWebRequest<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>();
+            container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
+            container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
         }
     }
 }

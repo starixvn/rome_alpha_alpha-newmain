@@ -75,10 +75,6 @@
       <HintPath>..\packages\Fanex.Logging.1.0.0.0\lib\net40\Fanex.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.Razorbill.Security">
-      <HintPath>..\packages\Fanex.Razorbill.Security.3.0.0.2\lib\net40\Fanex.Razorbill.Security.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\EnterpriseLibrary.Common.5.0.414.0\lib\net40\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
       <Private>True</Private>
@@ -123,8 +119,8 @@
       <HintPath>..\packages\Sunplus.Agent.Model.Definitions.3.0.1.5\lib\net40\Sunplus.Agent.Model.Definitions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sunplus.Agent.Utilities, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Utilities.3.0.0.2\lib\net40\Sunplus.Agent.Utilities.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Utilities, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Utilities.3.0.0.4\lib\net40\Sunplus.Agent.Utilities.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -165,17 +161,17 @@
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\ShowedAnnouncementTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentOrAdminLogInTest.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\NotAgentDirectLoginBaseTest.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\DisableSecurityCodeCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\EmptyAnnouncementCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\HasAnnouncementCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\HasPrivateOrCommonAnnouncementCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\LocalFileBaseCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LocalFileCondition\LocalFileConditionFactory.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\NotAgentDirectLoginCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\ShowedMessageCondition.cs" />
-    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\LogInAndSettingChangedCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\DisableSecurityCodeCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\NotRequireSecurityCodeCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\SecurityCodeCondition\SecurityCodeBaseCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\ShowedMessageCondition.cs" />
+    <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedCondition\LogInAndSettingChangedCondition.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\ValidAnnouncementTimeCondition.cs" />
     <Compile Include="Services\CustomerProfileServiceImplTests.cs" />
     <Compile Include="Services\SiteMenuServiceImplTests.cs" />

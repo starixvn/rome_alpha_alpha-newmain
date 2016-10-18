@@ -10,7 +10,9 @@
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
         public static readonly UserLevel Master = new UserLevel(3, "Master");
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
-        public static readonly UserLevel Agent = new UserLevel(2, "Agent");        
+        public static readonly UserLevel Agent = new UserLevel(2, "Agent");
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
+        public static readonly UserLevel Member = new UserLevel(1, "Member");
 
         public UserLevel()
         {
@@ -49,6 +51,11 @@
         public bool IsNotSuperLevel()
         {
             return !IsSuperLevel();
+        }
+
+        public bool IsMemberLevel()
+        {
+            return this == Member;
         }
 
         public bool IsDirectUplineOf(byte downlineLevelValue)

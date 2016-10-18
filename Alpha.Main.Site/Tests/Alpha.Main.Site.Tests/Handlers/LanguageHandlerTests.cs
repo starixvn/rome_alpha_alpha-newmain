@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
     using Main.Constants;
     using Models.Requests;
     using NSubstitute;
@@ -7,7 +8,6 @@
     using Site.Handlers;
     using Site.Requests;
     using Sunplus.Agent.Model.Entities;
-    using System;
     using ViewModels;
 
     [TestFixture]

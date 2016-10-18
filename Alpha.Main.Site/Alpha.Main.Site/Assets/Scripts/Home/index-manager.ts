@@ -22,6 +22,7 @@ var indexManager = {
     },
 
     init: function () {
+        alpha.detectResponsiveInformation();
         $.material.init();
         indexManager.cachedDomElements();
         indexManager.loadPartialViews();

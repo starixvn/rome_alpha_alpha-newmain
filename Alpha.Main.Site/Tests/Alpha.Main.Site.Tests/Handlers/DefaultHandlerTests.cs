@@ -1,13 +1,12 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using Fanex.Razorbill.Security.Sessions;
+    using System;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
     using Services;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
-    using System;
 
     [TestFixture]
     public class DefaultHandlerTests
@@ -16,7 +15,6 @@
         private SessionManager sessionManager;
         private DefaultHandler defaultHandler;
         private IUserSession userSession;
-        private ISecurityCodeSession securityCodeSession;
 
         [SetUp]
         public void SetUp()
@@ -24,7 +22,6 @@
             sessionManager = Substitute.For<SessionManager>();
             defaultHandler = new DefaultHandler(sessionManager);
             userSession = Substitute.For<IUserSession>();
-            securityCodeSession = Substitute.For<ISecurityCodeSession>();
         }
 
         [Test]
@@ -43,7 +40,7 @@
             // Arrange
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, securityCodeSession, false);
+            var query = new IndexQuery(userSession, false);
 
             // Action 
             var viewModel = defaultHandler.Handle(query);
@@ -58,7 +55,7 @@
             // Arrange
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, securityCodeSession, false);
+            var query = new IndexQuery(userSession, false);
 
             string argumentUsed = null;
             sessionManager.Add<string>(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));

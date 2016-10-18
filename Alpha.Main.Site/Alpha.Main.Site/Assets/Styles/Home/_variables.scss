@@ -3,9 +3,29 @@ $font-size: 13px;
 $font-family: Roboto, Arial, Tahoma,helvetica,sans-serif;
 $text-color: #333;
 $border-color: #dfdfdf;
+$height-normal: 28px;
+$height-mobile: 36px;
 
 /*******************************************/
 /* Popup */
 /*******************************************/
 $popup-bg: #fff;
 $popup-border: $border-color;
+
+/*******************************************/
+/* Messages */
+/*******************************************/
+$msg-success-bg: #eefbe9;
+$msg-success-color: #52a220;
+$msg-success-border: #1db51a;
+
+$msg-error-bg: #fadddd;
+$msg-error-color: #fe0000;
+$msg-error-border: #ef2d2d;
+$msg-warning-color: #7e3d00;
+$msg-warning-border: #bcba7d;
+$msg-warning-icon-color: #f08708;
+
+$msg-error-bg: #fadddd;
+$msg-error-color: #fe0000;
+$msg-error-border: #ef2d2d;

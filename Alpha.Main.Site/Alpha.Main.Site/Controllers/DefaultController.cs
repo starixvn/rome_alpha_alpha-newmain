@@ -1,28 +1,28 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
-    using Fanex.Razorbill.Security.Sessions;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
+    using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
 
     public class DefaultController : BaseController
     {
         private readonly IUserSession userSession;
-        private readonly ISecurityCodeSession securityCodeSession;
         private readonly IMediator mediator;
+        private readonly SecurityCodeChecker securityCodeChecker;
 
         public DefaultController(
             IUserSession userSession,
-            ISecurityCodeSession securityCodeSession,
-            IMediator mediator)
+            IMediator mediator,
+            SecurityCodeChecker securityCodeChecker)
         {
             this.userSession = userSession;
-            this.securityCodeSession = securityCodeSession;
             this.mediator = mediator;
+            this.securityCodeChecker = securityCodeChecker;
         }
 
         public ActionResult Index()
@@ -34,9 +34,20 @@
                 return View("UnsupportedBrowsers", browser);
             }
 
-            var query = new IndexQuery(userSession, securityCodeSession, UserPermission.IsShowSecurityVerify);
+                if (!this.userSession.IsLogged
+                    || this.userSession.IsPasswordExpired)
+                {
+                    return Redirect("~/Password/ForceChangePassword");
+                }
 
-            var viewModel = mediator.Send(query);
+                if (this.securityCodeChecker.IsForcedChangeSecurityCode())
+                {
+                    return Redirect("~/SecurityCode/Index");
+                }
+
+                var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode());
+
+                var viewModel = mediator.Send(query);
 
             return View(viewModel);
         }

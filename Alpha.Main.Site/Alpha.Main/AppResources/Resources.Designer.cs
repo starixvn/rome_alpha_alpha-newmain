@@ -323,6 +323,33 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string lblBack {
+            get {
+                return ResourceManager.GetString("lblBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Password.
+        /// </summary>
+        public static string lblChangePassword {
+            get {
+                return ResourceManager.GetString("lblChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset Password.
+        /// </summary>
+        public static string lblresetpassword {
+            get {
+                return ResourceManager.GetString("lblresetpassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to less.
         /// </summary>
         public static string Less {
@@ -539,10 +566,10 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;Dear Customers! In an effort to help you identify the real site,
-        /// we’re now offering the option &lt;/div&gt; &lt;div&gt;to personalize your own profile
-        ///picture. Once the image has been uploaded successfully,&lt;/div&gt; &lt;div&gt;you
-        ///can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;.
+        ///   Looks up a localized string similar to &lt;div&gt;Dear Customers! In an effort to help you identify the real site,&lt;/div&gt;
+        ///&lt;div&gt; we’re now offering the option to personalize your own profile&lt;/div&gt;
+        ///&lt;div&gt; picture. Once the image has been uploaded successfully, you&lt;/div&gt;
+        ///&lt;div&gt; can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;.
         /// </summary>
         public static string ProfileLoginTip {
             get {
@@ -871,6 +898,15 @@ namespace Alpha.Main.AppResources {
         public static string turnover {
             get {
                 return ResourceManager.GetString("turnover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated successfully!.
+        /// </summary>
+        public static string UpdatedSuccessfully {
+            get {
+                return ResourceManager.GetString("UpdatedSuccessfully", resourceCulture);
             }
         }
         

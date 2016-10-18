@@ -1,22 +1,20 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
     using System.Diagnostics.CodeAnalysis;
-    using Fanex.Razorbill.Security.Sessions;
     using MediatR;
+    using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
     public class IndexQuery : IRequest<IndexViewModel>
     {
-        private readonly bool showSecurityVerify;
+        private readonly bool isEnableSecurityCode;
         private readonly IUserSession userSession;
-        private readonly ISecurityCodeSession securityCodeSession;
 
-        public IndexQuery(IUserSession userSession, ISecurityCodeSession securityCodeSession, bool showSecurityVerify)
+        public IndexQuery(IUserSession userSession, bool isEnableSecurityCode)
         {
             this.userSession = userSession;
-            this.securityCodeSession = securityCodeSession;
-            this.showSecurityVerify = showSecurityVerify;
+            this.isEnableSecurityCode = isEnableSecurityCode;
         }
 
         public int CustId
@@ -89,7 +87,7 @@
             {
                 return userSession.IsLogged &&
                     !userSession.IsPasswordExpired &&
-                    (securityCodeSession.IsEnableSecurityCode || this.showSecurityVerify);
+                    this.isEnableSecurityCode;
             }
         }
 

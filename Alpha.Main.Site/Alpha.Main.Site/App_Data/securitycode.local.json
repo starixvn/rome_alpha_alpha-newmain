@@ -1,0 +1,15 @@
+{
+  "isActive": true,
+  "siteMainApp": "/site-main",
+  "urls": [
+    "SecurityCode/ResetSecurityCode",
+    "SecurityCode/ChangeUserOwnSecurityCode",
+    "Password/ChangePassword",
+    "Password/ResetMainAccountPassword",
+    "Password/ResetSubAccountPassword"
+  ],
+  "sites": [
+  ],
+  "verifyingSecurityCodeUrl": "SecurityCode/VerifySecurityCode",
+  "changeSecurityCodeUrl": "SecurityCode/ChangeSecurityCode"
+}

@@ -1,14 +1,20 @@
 ﻿namespace Alpha.Main.Services
 {
-    using System.Diagnostics.CodeAnalysis;
-    using Fanex.Razorbill.Security.Entities;
-    using Fanex.Razorbill.Security.Sessions;
+    using Models;
+    using Params.SecurityCode;
 
     public interface SecurityCodeService
     {
-        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", MessageId = "0#", Justification = "Reviewed!")]
-        bool IsIgnoreSecurityCode(string url);
+        Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param);
 
-        bool IsForceUseSecurityCode(string site, SecurityCodeStatus securityCodeResult, ISecurityCodeSession securityCodeSession);
+        Result ChangeSubAccountSecurityCode(ChangeSecurityCodeParam param);
+
+        Result ResetSubAccountSecurityCode(ResetSecurityCodeParam param);
+
+        string GenerateSecurityToken();
+
+        string GenerateSalt(int custId);
+
+        Result VerifySecurityCode(VerifySecurityCodeParam param);
     }
 }

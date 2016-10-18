@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    @RenderSection("css", required: false)
+    <title> @ViewBag.Title</title>
+</head>
+<body>
+    @RenderBody()
+    @Html.AntiForgeryToken()
+
+    @Html.Hidden("please-enter-oldPassword", Security.alertInputOldPwd)
+    @Html.Hidden("password-cannot-empty", Security.alertPasswordEmpty)
+    @Html.Hidden("not-correct-confirm-password", Security.alertErrorConfirm)
+    @Html.Hidden("password-at-least-8chars", Security.lblPasswordRequire)
+    @Html.Hidden("password-change-successfully", Security.lblPasswordChangedOK)
+    @Html.Hidden("password-does-not-min-requirement", Security.lblPasswordWrongRule)
+    @Html.Hidden("newPassword-must-be-diff-old", Security.lblPasswordDOldOne)
+    @Html.Hidden("password-not-contain-nickname-username", Security.lblPasswordDAccountName)
+    @RenderSection("js", required: false)
+</body>
+</html>

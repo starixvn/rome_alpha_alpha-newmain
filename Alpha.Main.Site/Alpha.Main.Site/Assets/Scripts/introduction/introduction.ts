@@ -44,22 +44,20 @@ var introduction = {
     },
 
     init: function () {
-        if (!alpha.user.isShowIntroduction) {
+        var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
+
+        if (isReadIntroduction) {
             return;
         }
-        
+
         introduction.cacheDOMElements();
         introduction.registerEvents();
 
-        if (!introduction.isCookieLess) {
-            var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
-            //// Hard code always show
-            if (!isReadIntroduction) {
-                introduction.domElements.beginModal.modal('show');
-                $('.modal-backdrop').css('z-index', 1051);
+        if (!introduction.isCookieLess && !isReadIntroduction) {
+            introduction.domElements.beginModal.modal('show');
+            $('.modal-backdrop').css('z-index', 1051);
 
-                introduction.showDelayFirstIntroduction();
-            }
+            introduction.showDelayFirstIntroduction();
         }
     },
 

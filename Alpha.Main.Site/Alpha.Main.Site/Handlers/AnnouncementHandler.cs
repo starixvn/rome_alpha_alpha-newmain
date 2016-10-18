@@ -1,26 +1,22 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using Fanex.Razorbill.Security.Sessions;
+    using System;
     using Main.Models.Announcements;
     using MediatR;
     using Models.Requests.Announcement;
     using Params.Announcements;
     using Services;
     using Sunplus.Agent.Utilities;
-    using System;
 
     public class AnnouncementHandler :
          IRequestHandler<HotAnnouncementQuery, HotAnnouncement>
     {
         private readonly AnnouncementService _announcementService;
-        private readonly ISecurityCodeSession securityCodeSession;
 
         public AnnouncementHandler(
-            AnnouncementService announcementService,
-            ISecurityCodeSession securityCodeSession = null)
+            AnnouncementService announcementService)
         {
             _announcementService = announcementService;
-            this.securityCodeSession = securityCodeSession ?? CookieLessSessionFactory.SecurityCodeSession;
         }
 
         public HotAnnouncement Handle(HotAnnouncementQuery message)
@@ -30,7 +26,7 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var hotAnnouncementsParams = new GetHotAnnouncementsParams(securityCodeSession, message.IsSecurityCodeActive);
+            var hotAnnouncementsParams = new GetHotAnnouncementsParams();
             message.AssignValue(hotAnnouncementsParams);
 
             var hotAnnouncement = _announcementService.GetHotAnnouncement(hotAnnouncementsParams);

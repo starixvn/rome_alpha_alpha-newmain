@@ -17,6 +17,11 @@
   }
 }
 
+@mixin box-shadow-multiple($string) {
+    @include css3-prefix('box-shadow', $string);
+}
+
+
 /// Border Radius
 /// @param {Size} $radius [5px] - Radius
 /// @require {mixin} css3-prefix

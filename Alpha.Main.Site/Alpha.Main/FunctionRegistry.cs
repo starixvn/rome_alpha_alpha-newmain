@@ -5,12 +5,8 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
-    using Fanex.Razorbill.Security.Configurations;
-    using Fanex.Razorbill.Security.Entities;
-    using Fanex.Razorbill.Security.Sessions;
     using Helpers;
     using Models.Menus;
-    using Sunplus.Agent.Model.BL.Definitions;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
 
@@ -75,33 +71,6 @@
                 })
         };
 
-        private static Func<bool> showMenuBar = () =>
-        {
-            const int ForceChangeSecurityCode = 4;
-            const int ForceChangeSecurityCodeWithoutValidation = 3;
-
-            if (!Current.IsLogged || Current.IsPasswordExpired)
-            {
-                return false;
-            }
-
-            var securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-            var newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
-            if (newFlowOfSC)
-            {
-                return false;
-            }
-
-            var oldStatus = Convert.ToInt32(Current.SecurityCodeResult);
-            if (!securityCodeSession.IsInternal &&
-                (oldStatus == ForceChangeSecurityCode || oldStatus == ForceChangeSecurityCodeWithoutValidation))
-            {
-                return false;
-            }
-
-            return true;
-        };
-
         private static Func<bool> showAccountInfo = () =>
         {
             return Current.SubPageAccess.ViewMemberInfo;
@@ -110,44 +79,6 @@
         private static Func<string> getDefaultUrl = () =>
         {
             var _defaultMainPage = MicroSites.OldMainUrl("~/_Reports/PortalPage/PortalPage.aspx");
-
-            if (!Current.IsLogged)
-            {
-                return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?firstLogin=true");
-            }
-
-            if (Current.IsPasswordExpired)
-            {
-                return MicroSites.OldMainUrl("~/_MemberInfo/ChangePassword/ChangePassword.aspx?expired=true");
-            }
-
-            ISecurityCodeSession securityCodeSession = CookieLessSessionFactory.SecurityCodeSession;
-            bool newFlowOfSC = SecurityCodeConfig.IsActive && securityCodeSession.IsRequireSecurityCode;
-            var status = (SecurityCodeStatus)securityCodeSession.SecurityCodeResult;
-            var oldStatus = Current.SecurityCodeResult;
-
-            if (newFlowOfSC)
-            {
-                switch (status)
-                {
-                    case SecurityCodeStatus.FORCED_CHANGE_SC:
-                        return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCode");
-
-                    case SecurityCodeStatus.FORCED_CHANGE_SC_WITHOUT_VALIDATION:
-                        return MicroSites.OldMainUrl("~/Security/SecurityCode/ForceChangeSecurityCodeWithoutValidation");
-
-                    default:
-                        return MicroSites.OldMainUrl("~/Security/SecurityCode/VerifySecurityCode");
-                }
-            }
-
-            if (!securityCodeSession.IsInternal &&
-                (oldStatus == SCResult.FORCED_CHANGE_SC || oldStatus == SCResult.FORCED_CHANGE_SC_WITHOUT_VALIDATION))
-            {
-                // Use the OLD flow of Security Code.
-                return MicroSites.OldMainUrl("~/_MemberInfo/SecurityCode/ChangeSecurityCode.aspx");
-            }
-
             var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
             var ignoreUrls = new List<string>
             {
@@ -183,22 +114,6 @@
 
             return _defaultMainPage;
         };
-
-        public static Func<bool> ShowMenuBar
-        {
-            get
-            {
-                return showMenuBar;
-            }
-        }
-
-        public static Func<bool> ShowIntroduction
-        {
-            get
-            {
-                return showMenuBar;
-            }
-        }
 
         public static Func<bool> ShowAccountInfo
         {

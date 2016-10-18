@@ -1,7 +1,8 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
+    using System.Collections.Generic;
     using Constants;
-    using Fanex.Razorbill.Security.Sessions;
     using Main.Models.Announcements;
     using Models.Requests.Announcement;
     using NSubstitute;
@@ -10,14 +11,11 @@
     using Services;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Generic;
 
     [TestFixture]
     public class AnnouncementHandlerTests
     {
         private AnnouncementService announcementService;
-        private ISecurityCodeSession securityCodeSession;
         private AnnouncementHandler announcementHandler;
         private IUserSession userSession;
 
@@ -25,8 +23,7 @@
         public void SetUp()
         {
             announcementService = Substitute.For<AnnouncementService>();
-            securityCodeSession = Substitute.For<ISecurityCodeSession>();
-            announcementHandler = new AnnouncementHandler(announcementService, securityCodeSession);
+            announcementHandler = new AnnouncementHandler(announcementService);
             userSession = Substitute.For<IUserSession>();
         }
 
@@ -49,7 +46,7 @@
                 .Returns(hotAnnouncement);
 
             userSession.RoleId.Returns(RoleId.ValidRoleId);
-            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, false);
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty);
 
             // Action
             var viewModel = announcementHandler.Handle(query);
@@ -76,7 +73,7 @@
             userSession.UserId.Returns(userId);
             userSession.SubAccId.Returns(subAccId);
 
-            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, false);
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty);
 
             // Action
             var viewModel = announcementHandler.Handle(query);
