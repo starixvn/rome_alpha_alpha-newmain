@@ -7,24 +7,16 @@
 
     public class MenuBarViewModel
     {
-        private readonly Func<bool> menuBarVisibleFunc;
         private readonly Func<bool> accountInfoVisibleFunc;
 
         public MenuBarViewModel(
             IEnumerable<IMenuItem> menuItems,
             bool isSmallDevice = false,
-            Func<bool> menuBarVisibleFunc = null,
             Func<bool> accountInfoVisibleFunc = null)
         {
             MenuItems = menuItems.Where(menuItem => menuItem.Status.Visible);
             IsSmallDevice = isSmallDevice;
-            this.menuBarVisibleFunc = menuBarVisibleFunc ?? FunctionRegistry.ShowMenuBar;
             this.accountInfoVisibleFunc = accountInfoVisibleFunc ?? FunctionRegistry.ShowAccountInfo;
-        }
-
-        public bool Visible
-        {
-            get { return menuBarVisibleFunc?.Invoke() ?? false; }
         }
 
         public bool IsAccountInfoVisible

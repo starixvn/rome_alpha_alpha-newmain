@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
@@ -28,14 +29,13 @@ namespace Alpha.Main.Site.Tests.Handlers
             browserHelper = Substitute.For<BrowserHelper>();
             sessionManager = Substitute.For<SessionManager>();
             defaultHandler = new DefaultHandler(sessionManager, browserHelper);
-            userSession = Substitute.For<IUserSession>();            
+            userSession = Substitute.For<IUserSession>();
         }
 
         [TearDown]
         public void Clean()
         {
             sessionManager = null;
-            securityCodeSession = null;
             userSession = null;
             defaultHandler = null;
         }

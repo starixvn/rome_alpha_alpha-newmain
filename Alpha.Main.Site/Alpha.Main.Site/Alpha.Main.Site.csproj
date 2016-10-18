@@ -519,7 +519,9 @@
     <Content Include="Assets\bundles\default-introduction.min.css">
       <DependentUpon>default-introduction.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\default-introduction.min.js" />
+    <Content Include="Assets\bundles\default-introduction.min.js">
+      <DependentUpon>default-introduction.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-message.css" />
     <Content Include="Assets\bundles\default-message.js" />
     <Content Include="Assets\bundles\default-message.min.css">
@@ -557,6 +559,7 @@
     <Content Include="Assets\bundles\security\password\change-password.js" />
     <Content Include="Assets\bundles\security\password\change-password.min.js">
       <DependentUpon>change-password.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security\password\force-change-password.js" />
     <Content Include="Assets\bundles\security\password\force-change-password.min.js">
       <DependentUpon>force-change-password.js</DependentUpon>
@@ -564,6 +567,7 @@
     <Content Include="Assets\bundles\security\password\reset-main-account-password.js" />
     <Content Include="Assets\bundles\security\password\reset-main-account-password.min.js">
       <DependentUpon>reset-main-account-password.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security\password\reset-sub-account-password.js" />
     <Content Include="Assets\bundles\security\password\reset-sub-account-password.min.js">
       <DependentUpon>reset-sub-account-password.js</DependentUpon>

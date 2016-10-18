@@ -49,7 +49,6 @@
             var viewModel = new IndexViewModel(
                 message,
                 FunctionRegistry.GetDefaultUrl,
-                FunctionRegistry.ShowIntroduction,
                 Encryption.PearsonEncode);
 
             sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);

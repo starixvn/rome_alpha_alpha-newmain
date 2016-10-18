@@ -22,10 +22,6 @@
 
         public bool IsViewedMemberInfo { get; }
 
-        public string MainRootPath
-        {
-            get
-            {
-                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
+        public string MainRootPath { get; } = AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
     }
 }

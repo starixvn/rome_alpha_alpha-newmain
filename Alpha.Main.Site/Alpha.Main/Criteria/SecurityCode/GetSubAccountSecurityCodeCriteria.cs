@@ -12,5 +12,7 @@
         {
             return "Age_GetSubAccountSecurityCode";
         }
+
+        public override bool IsValid() => CustId > 0;
     }
 }

@@ -10,5 +10,7 @@
         {
             return "Age_GetMainAccountSecurityCode";
         }
+
+        public override bool IsValid() => CustId > 0;
     }
 }

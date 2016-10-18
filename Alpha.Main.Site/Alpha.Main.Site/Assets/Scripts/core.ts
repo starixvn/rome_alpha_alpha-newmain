@@ -30,7 +30,7 @@ var alpha = {
             : "not found",
         isSubAccount: document.getElementById('isSubAccount') != null
             ? ((<HTMLInputElement>document.getElementById('isSubAccount')).value.toLowerCase() === "true")
-            : "not found"
+            : "not found",
         isShowIntroduction: document.getElementById('isShowIntroduction') != null
             ? ((<HTMLInputElement>document.getElementById('isShowIntroduction')).value.toLowerCase() === "true")
             : "not found"
@@ -82,7 +82,7 @@ var alpha = {
             //// Work arround because in IE, bootstrap modal dont delegate focusin event to others.
             $.fn.modal.Constructor.prototype.enforceFocus = function () { };
         }
-        
+
         var currentWindowWidth = window.screen.width;
 
         if (currentWindowWidth < 768) {

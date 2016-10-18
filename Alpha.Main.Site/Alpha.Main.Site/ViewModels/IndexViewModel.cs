@@ -12,13 +12,11 @@
     {
         private readonly IndexQuery message;
         private readonly Func<string> getDefaultUrl;
-        private readonly Func<bool> isShowIntroduction;
         private readonly Func<string, string> encodeDataFunction;
 
         public IndexViewModel(
             IndexQuery message,
             Func<string> getDefaultUrl,
-            Func<bool> isShowIntroduction,
             Func<string, string> encodeDataFunction)
         {
             if (message == null)
@@ -26,11 +24,8 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            UserLevel = Enumeration.FromValue<UserLevel>(message.RoleId).DisplayName.ToLower();
-            IsShowIntroduction = isShowIntroduction();
-            DefaultUrl = getDefaultUrl();
+            this.message = message;
             PasswordHash = Encryption.RandomString(new Random().Next(4, 8));
-            this.isShowIntroduction = isShowIntroduction ?? FunctionRegistry.ShowIntroduction;
             this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
             this.encodeDataFunction = encodeDataFunction;
         }
@@ -66,7 +61,8 @@
         [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
         public string CurrentURLCookieName => CookieHelper.GetCurrentUrlCookieName(CustId, SubAccId, encodeDataFunction);
 
-        public bool IsShowIntroduction => isShowIntroduction?.Invoke() ?? true;
+        public bool IsShowIntroduction => true;
+
         [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
         public string DefaultUrl => getDefaultUrl?.Invoke() ?? MainRootPath;
 

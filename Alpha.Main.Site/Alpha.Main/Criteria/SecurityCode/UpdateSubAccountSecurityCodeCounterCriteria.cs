@@ -22,5 +22,7 @@
         {
             return "Age_UpdateSubAccountSecurityCodeCounter";
         }
+
+        public override bool IsValid() => CustId > 0;
     }
 }

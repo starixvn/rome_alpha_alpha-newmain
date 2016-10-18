@@ -38,14 +38,18 @@
   {
     "outputFile": "Assets/styles/security/security.css",
     "inputFile": "Assets/styles/security/security.scss"
+  },
+  {
     "outputFile": "Assets/styles/home/home.css",
     "inputFile": "Assets/styles/home/home.scss"
   },
   {
     "outputFile": "Assets/styles/security/lean-more.css",
     "inputFile": "Assets/styles/security/lean-more.scss"
-    "outputFile": "Assets/styles/messages/messages.css",
-    "inputFile": "Assets/styles/messages/messages.scss"
+  },
+  {
+    "outputFile": "Assets/styles/message/message.css",
+    "inputFile": "Assets/styles/message/message.scss"
   },
   {
     "outputFile": "Assets/styles/otp/otp.css",

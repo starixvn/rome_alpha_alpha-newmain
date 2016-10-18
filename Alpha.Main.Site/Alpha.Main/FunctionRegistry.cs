@@ -9,9 +9,9 @@ namespace Alpha.Main
     using System.Web;
     using Helpers;
     using Models.Menus;
+    using Sunplus.Agent.Utilities;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
-    using Sunplus.Agent.Utilities;
 
     public static class FunctionRegistry
     {
@@ -74,9 +74,6 @@ namespace Alpha.Main
                 })
         };
 
-            if (Current != null)
-            {
-            }
         private static Func<bool> showAccountInfo = () =>
         {
             return Current == null ? false : Current.SubPageAccess.ViewMemberInfo;

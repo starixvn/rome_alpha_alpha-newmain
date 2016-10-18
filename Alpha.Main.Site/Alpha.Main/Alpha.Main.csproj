@@ -46,12 +46,14 @@
     </Reference>
     <Reference Include="CasinoLibrary, Version=1.0.2.13, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CasinoSetting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoSetting.dll</HintPath>
+    </Reference>
     <Reference Include="Fanex.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Caching.2.0.0\lib\net461\Fanex.Caching.dll</HintPath>
       <Private>True</Private>
@@ -357,7 +359,7 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
