@@ -102,7 +102,7 @@ class NoticeMessage {
             messageAmount = $('.msg-contents').length,
             moreTotalMessage = $('.more-info').attr('totalMsg');
 
-        if (noInfo !== null || moreTotalMessage > messageAmount) {
+        if (noInfo !== null || moreTotalMessage > (messageAmount + 10)) {
             $('.more-info').hide();
         }
     }

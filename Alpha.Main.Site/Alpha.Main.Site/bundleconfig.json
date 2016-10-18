@@ -59,7 +59,7 @@
   {
     "outputFileName": "Assets/bundles/security/security.css",
     "inputFiles": [
-      "Assets/styles/security/security.css",
+      "Assets/styles/security/security.css"
     ]
   },
   {

@@ -26,7 +26,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var viewModel = new NoticeViewModel();
+            var viewModel = new NoticeViewModel(10);
 
             return View(viewModel);
         }
@@ -49,7 +49,7 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [HttpGet]
-        public ActionResult MoreMessages(int totalMessage = 10)
+        public ActionResult MoreMessages(int totalMessage)
         {
             var viewModel = new NoticeViewModel(totalMessage);
 

@@ -486,6 +486,7 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
+    <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\reset-sub-account-password.ts" />
@@ -555,7 +556,6 @@
     <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\notice.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\statistics.ts" />
-    <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\bundles\security\password\change-password.js" />
     <Content Include="Assets\bundles\security\password\change-password.min.js">
       <DependentUpon>change-password.js</DependentUpon>
@@ -613,7 +613,6 @@
     </Content>
     <Content Include="Assets\styles\security\security.css" />
     <Content Include="Assets\styles\security\security.min.css" />
-    <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\old-main.js" />
     <Content Include="Assets\styles\announcement\announcements.css">
@@ -808,11 +807,9 @@
     <Content Include="Views\Default\Piwik.cshtml" />
     <Content Include="Views\Password\ChangePassword.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Password\ForceChangePassword.cshtml" />
     <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
     <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
-    <Content Include="Views\BalanceInfo\Index.cshtml" />
     <Content Include="Views\Statistics\Index.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeByForcing.cshtml" />
     <Content Include="Views\SecurityCode\ChangeSecurityCodeFirstLogin.cshtml" />

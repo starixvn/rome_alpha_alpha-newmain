@@ -2,7 +2,7 @@
 {
     public class NoticeViewModel
     {
-        public NoticeViewModel(int totalMessage = 0)
+        public NoticeViewModel(int totalMessage)
         {
             TotalMessage = totalMessage;
         }
