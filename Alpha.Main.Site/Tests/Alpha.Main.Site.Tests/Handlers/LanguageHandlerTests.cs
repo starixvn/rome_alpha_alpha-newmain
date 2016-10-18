@@ -115,7 +115,6 @@
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => languageHandler.Handle(nullQuery)));
         }
 
-        [TestCase(null, Language.Default)]
         [TestCase("", Language.Default)]
         [TestCase(" ", Language.Default)]
         [TestCase("af-ZA ", Language.Default)]

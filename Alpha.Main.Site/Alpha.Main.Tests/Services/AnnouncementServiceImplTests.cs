@@ -34,23 +34,6 @@
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => announcementServiceImpl.GetHotAnnouncement(nullParam)));
         }
 
-        [Test]
-        public void GetHotAnnouncement_NotPassSecurityCode_ReturnAnnouncementWithNullContent()
-        {
-            // Arrange
-            // var securityCodeSession = Substitute.For<SecurityCodeSession>();
-            // securityCodeSession.IsRequireSecurityCode.Returns(true);
-            var announcementServiceImpl = new AnnouncementServiceImpl();
-
-            var query = new GetHotAnnouncementsParams();
-
-            // Action
-            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(query);
-
-            // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
-        }
-
         [TestCase(true, true, true, "Your minimum position taking and betting limit value have been changed by the upline.")]
         [TestCase(true, false, true, "Your minimum position taking value has been changed by the upline.")]
         [TestCase(false, true, true, "Your betting limit value has been changed by the upline.")]

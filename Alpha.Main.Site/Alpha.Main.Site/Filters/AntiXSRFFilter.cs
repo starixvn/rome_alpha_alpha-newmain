@@ -2,7 +2,9 @@
 {
     using System;
     using System.Web.Mvc;
+    using System.Web.Security;
     using Alpha.Auth.Web.Validators;
+    using Main.Helpers;
     using Main.Models;
 
     /// <summary>
@@ -39,10 +41,7 @@
             }
             else
             {
-                filterContext.Result = new ViewResult
-                {
-                    ViewName = "~/Areas/CustomerSetting/Views/Security/AccessDenied.cshtml"
-                };
+                filterContext.Result = new RedirectResult(MicroSites.OldMainUrl(FormsAuthentication.LoginUrl));
             }
         }
     }

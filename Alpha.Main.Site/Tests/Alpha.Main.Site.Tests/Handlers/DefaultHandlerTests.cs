@@ -1,14 +1,14 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
+    using Helpers;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
     using Services;
     using Site.Handlers;
-    using Sunplus.Agent.Model.Entities;
-    using Helpers;
     using Site.Requests;
+    using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
     [TestFixture]
@@ -24,7 +24,6 @@
         [SetUp]
         public void SetUp()
         {
-            securityCodeSession = Substitute.For<ISecurityCodeSession>();
             browserHelper = Substitute.For<BrowserHelper>();
             sessionManager = Substitute.For<SessionManager>();
             defaultHandler = new DefaultHandler(sessionManager, browserHelper);
@@ -49,10 +48,10 @@
 
             var query = new IndexQuery(userSession, false);
 
-            // Action 
+            // Action
             var viewModel = defaultHandler.Handle(query);
 
-            // Assert 
+            // Assert
             sessionManager.Received().Add<string>(PasswordHashSessionKey, Arg.Any<string>());
         }
 
@@ -67,10 +66,10 @@
             string argumentUsed = null;
             sessionManager.Add<string>(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
-            // Action 
+            // Action
             var viewModel = defaultHandler.Handle(query);
 
-            // Assert 
+            // Assert
             Assert.AreEqual(argumentUsed, viewModel.PasswordHash);
         }
 
@@ -87,10 +86,10 @@
                 IsUnsupportedBrowser = true
             });
 
-            //// Action 
+            //// Action
             var viewModel = defaultHandler.Handle(browserQuery);
 
-            //// 
+            ////
             Assert.IsTrue(viewModel.IsUnsupportedBrowser);
         }
 
@@ -105,10 +104,10 @@
                 IsUnsupportedBrowser = true
             });
 
-            //// Action 
+            //// Action
             defaultHandler.Handle(browserQuery);
 
-            //// 
+            ////
             this.sessionManager.Received().Add<bool>(SawBrowserWarningPageSessionKey, true);
         }
 
@@ -119,13 +118,13 @@
             this.sessionManager.Get<bool>(SawBrowserWarningPageSessionKey).Returns(true);
             var browserQuery = new BrowserQuery(userSession);
 
-            //// Action 
+            //// Action
             var viewModel = defaultHandler.Handle(browserQuery);
 
-            //// 
+            ////
             Assert.IsFalse(viewModel.IsUnsupportedBrowser);
         }
 
-        #endregion
+        #endregion Handle BrowserQuery
     }
 }
