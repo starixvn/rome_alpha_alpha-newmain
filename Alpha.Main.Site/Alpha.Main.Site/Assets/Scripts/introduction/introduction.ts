@@ -46,12 +46,12 @@ var introduction = {
     init: function () {
         var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
 
+        introduction.cacheDOMElements();
+        introduction.registerEvents();
+
         if (isReadIntroduction) {
             return;
         }
-
-        introduction.cacheDOMElements();
-        introduction.registerEvents();
 
         if (!introduction.isCookieLess && !isReadIntroduction) {
             introduction.domElements.beginModal.modal('show');
