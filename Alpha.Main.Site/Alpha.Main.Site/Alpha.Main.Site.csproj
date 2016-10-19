@@ -497,6 +497,10 @@
     <Content Include="Assets\bundles\default-introduction.min.js">
       <DependentUpon>default-introduction.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\otp\otp.css" />
+    <Content Include="Assets\bundles\otp\otp.min.css">
+      <DependentUpon>otp.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security\password\change-password.js" />
     <Content Include="Assets\bundles\security\password\change-password.min.js">
       <DependentUpon>change-password.js</DependentUpon>
@@ -537,6 +541,15 @@
     <Content Include="Assets\bundles\security\security.min.css">
       <DependentUpon>security.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\otp\images\1.jpg" />
+    <Content Include="Assets\styles\otp\images\apple.png" />
+    <Content Include="Assets\styles\otp\images\google.png" />
+    <Content Include="Assets\styles\otp\images\logo.png" />
+    <Content Include="Assets\styles\otp\images\manual-android.png" />
+    <Content Include="Assets\styles\otp\images\manual-ios.png" />
+    <Content Include="Assets\styles\otp\images\qr.png" />
+    <Content Include="Assets\styles\otp\otp.css" />
+    <Content Include="Assets\styles\otp\otp.min.css" />
     <Content Include="Assets\styles\security\images\1.jpg" />
     <Content Include="Assets\styles\security\images\2.jpg" />
     <Content Include="Assets\styles\security\images\3.jpg" />
@@ -629,6 +642,7 @@
     <Content Include="Assets\styles\introduction\intro.min.css">
       <DependentUpon>intro.css</DependentUpon>
     </Content>
+    <Content Include="Content\Site.css" />
     <Content Include="Web.local.config" />
     <Content Include="Web.napexternal.config">
       <DependentUpon>Web.local.config</DependentUpon>
@@ -727,6 +741,7 @@
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\introduction\intro.scss" />
     <Content Include="Assets\styles\security\security.scss" />
+    <Content Include="Assets\styles\otp\otp.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -763,6 +778,9 @@
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-CN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-TW.cshtml" />
+    <Content Include="Views\OTP\Index.cshtml" />
+    <Content Include="Views\OTP\Config.cshtml" />
+    <Content Include="Views\OTP\Validate.cshtml" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>
@@ -796,6 +814,7 @@
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\OTPController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="Filters\AntiXSRFFilter.cs" />

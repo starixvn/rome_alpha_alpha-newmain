@@ -1,0 +1,276 @@
+﻿@import '../Home/_variables.scss';
+@import '../Home/_mixins.scss';
+
+body {
+    background-color: transparent;
+    font-size: $font-size;
+    font-family: $font-family;
+}
+
+label {
+    font-weight: normal;
+}
+
+[class^='btn'] {
+    height: auto;
+    min-height: $height-normal;
+}
+
+// Messages
+.msg-content {
+    padding-top: 12px;
+    .msg {
+        max-width: 500px;
+        margin: 0;
+    }
+}
+
+.block {
+    max-width: 400px;
+    padding-top: 22px;
+    width: 400px;
+
+    .txt {
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%;
+    }
+}
+
+// OTP Steps
+.otp-config {
+    padding: 16px 0;
+
+    .panel-group {
+        &.panel-table {
+            .panel-heading .panel-title a {
+                color: #666;
+                border: none;            
+            }
+
+            .panel-heading + .panel-collapse > .panel-body {
+                border-top: 1px solid #dcdcdc;
+                padding: 16px 0;
+            }
+
+            .panel-body {
+                background-color: #fff;
+            }
+
+            .panel {
+                border-color: #dcdcdc;
+                @include border-radius(0);
+                @include box-shadow-multiple(none);
+
+                &.success {
+                    .panel-heading .panel-title a {
+                        color: #03b224;         
+                    }
+                    
+                    .icon-check-circle {
+                        color: #03b224;
+                        font-size: 18px;
+                        display: inline-block;
+                        margin-left: 10px;
+                        position: relative;
+                        top: 4px;
+                    }
+                }
+            }        
+        }
+
+        &.manualQRCode {
+            .panel {
+                border: none;
+            }
+
+            .panel-heading .panel-title a {
+                background-color: transparent;
+                color: #038dee;
+                padding: 0;
+            }
+
+            .panel-heading + .panel-collapse > .panel-body {
+                border-top: none;
+                padding-top: 8px;            
+            }
+
+            .icon-content-copy {
+                cursor: pointer;
+                color: #038dee;
+                display: inline-block;
+                font-size: 18px;
+                margin-left: 6px;
+                position: relative;
+                top: 2px;
+
+                &:hover {
+                    color: $icon-hover-color;
+                }
+            }
+
+            .example {
+                .col-left, .col-right  {
+                    float: left;
+                }
+
+                .col-right {
+                    margin-left: 40px;
+                }
+            }
+        }
+    }
+
+    .list-requirements {
+        margin-bottom: 0;
+        padding-left: 30px;
+
+        li {
+            list-style-type: decimal;
+        }
+        
+        .download-content, .qr-code, .manualQRCode, .block, .note {
+            margin-left: -12px;
+        }
+
+        // Download Sophos
+         .download-content {
+            display: table;
+            padding: 12px 0 16px;
+
+            .logo-sophos {
+                float: left;
+            }
+
+            .list-download {
+                float: right;
+                margin-left: 16px;
+
+                h2 {
+                    font-size: 20px;
+                    font-weight: normal;
+                    margin: 0;
+                }
+
+                p {
+                    color: #666;
+                    font-size: 14px;
+                    margin: 4px 0 8px;
+                }
+            }
+        }
+
+         .note {
+             padding-bottom: 16px;
+         }
+
+        // QR code
+        .qr-code {
+            padding: 12px 0;
+        }
+
+        .block {
+            padding-top: 12px;
+
+            .txt {
+                @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+            }
+        }
+    }
+
+    .list-enableDisable {
+        padding-left: 18px;
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        .btn-submit {
+            margin-top: 4px;
+        }
+    }
+
+    .register-succeess {
+        padding: 0 16px;
+    }
+}
+
+@media only screen and (max-device-width : $conent-device-lower768) {
+    body {
+        background-color: #fff;
+        font-size: $font-size-mobile;
+    }
+
+    [class^='btn'] {
+        height: auto;
+        min-height: $height-mobile;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .nav-tabs {
+        display: table;
+        width: 100%;
+
+        li {
+            display: table-cell;
+            float: none;            
+
+            a {                
+                text-align: center;
+            }
+        }
+    }
+
+    .otp-config {
+        .panel-group {
+            &.panel-table {
+                .panel {
+                    border: none;
+                }
+
+                .panel-heading .panel-title a {
+                    border: 1px solid #dcdcdc;
+                }
+
+                .panel-heading + .panel-collapse > .panel-body {
+                    border-top: none;
+                }
+            }
+
+            &.manualQRCode {
+                .panel-heading .panel-title a {
+                    border: none;
+                }
+
+                .example {
+                    margin-top: 20px;
+
+                    .col-left, .col-right  {
+                        float: none;
+                        text-align: center;
+                    }
+
+                    .col-right {
+                        margin-left: 0;
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+
+        .block {
+            width: 100%;
+        }
+
+        .list-requirements {
+            padding-left: 18px;
+        }
+
+        .list-enableDisable {
+            padding-left: 0;
+        }
+        
+    }
+}
+

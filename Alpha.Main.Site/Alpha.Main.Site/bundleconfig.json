@@ -123,5 +123,11 @@
       "Assets/scripts/security/security-helper.js",
       "Assets/scripts/security/password/reset-sub-account-password.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/otp/otp.css",
+    "inputFiles": [
+      "Assets/styles/otp/otp.css"
+    ]
   }
 ]

@@ -1,0 +1,35 @@
+﻿@model ForceChangeSecurityCodeViewModel
+
+@{
+    Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
+}
+
+@section css {
+    @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
+}
+
+<div class="block">
+    <form class="form-SC form-validation">
+        @Html.Action("Languages", "SecurityCode")
+        <h1 class="title">OTP</h1>
+        <p> Hi John88, you are signing in using a different IP/ Device/ Browser from your last login. Please enter an OTP to coninue.</p>
+        <figure class="avatar">
+            <img id="logoProfileImg" src='~/Assets/styles/otp/images/1.jpg' alt="Avatar" />
+            <figcaption><span class="username">S688H</span><br /><span class="nickname">(John88)</span></figcaption>
+        </figure>
+        <div class="rowlg">
+            <input type="password" autocomplete="off" class="txt" name="otp" id="txtOTP" placeholder="OTP" />
+            <label id="txtOTP-error" class="error"></label>
+            <i class="icon-lock"></i>
+            <i class="validation"></i>
+        </div>
+        <div class="list-button">
+            <input type="button" class="btn-cancel" id="btn-back" value="Back" />
+            <input type="submit" class="btn-submit" value="Submit" />
+        </div>
+    </form>
+</div>
+
+@section js {
+    @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
+}
