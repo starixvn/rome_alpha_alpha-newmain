@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
+    using System;
     using System.Diagnostics.CodeAnalysis;
+    using Fanex.Data;
     using Fanex.Data.Repository;
 
     public class InsertPersonalMessageCriteria : CriteriaBase
@@ -68,6 +70,11 @@
         public override string GetSettingKey()
         {
             return "Dot_Msg_SetMessage";
+        }
+
+        public override bool IsValid()
+        {
+            throw new NotImplementedException();
         }
     }
 }

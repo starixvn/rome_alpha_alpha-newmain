@@ -23,4 +23,5 @@
     <Setting Key="ResetSubAccountPassword" SpName="Age_CustSubPwdUpd" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
     <Setting Key="UpdateSubAccountPassword" SpName="Age_CustSubPwdUpd2" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
   </Function>
+
 </Functions>

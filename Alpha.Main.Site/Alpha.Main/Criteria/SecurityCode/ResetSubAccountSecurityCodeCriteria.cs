@@ -1,5 +1,7 @@
 ﻿namespace Alpha.Main.Criteria.SecurityCode
 {
+    using System;
+    using Fanex.Data;
     using Fanex.Data.Repository;
 
     public class ResetSubAccountSecurityCodeCriteria : CriteriaBase
@@ -24,6 +26,11 @@
         public override string GetSettingKey()
         {
             return "Age_ResetSubAccountSecurityCode";
+        }
+
+        public override bool IsValid()
+        {
+            throw new NotImplementedException();
         }
     }
 }

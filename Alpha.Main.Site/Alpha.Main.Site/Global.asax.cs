@@ -8,12 +8,14 @@
     using System.Web.Routing;
     using Alpha.Auth.Web;
     using Alpha.Main.Site.App_Start;
+    using Fanex.Data;
+    using Fanex.Data.OldConnectionStringProvider;
     using ONEbook.UM.Filters;
     using Sunplus.Agent.Utilities;
 
     public class MvcApplication : System.Web.HttpApplication
     {
-        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", 
+        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters",
             MessageId = "Sunplus.Agent.Utilities.Logs.WriteInfo(System.String)", Justification = "Reviewed!")]
         protected void Application_Start()
         {
@@ -24,9 +26,16 @@
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-           DependencyConfig.Init();
+            DependencyConfig.Init();
 
-            Fanex.Data.Configuration.DbSettingProviderManager.Current.Start();
+            DbSettingProviderManager
+              .StartNewSession()
+              .Use(new OldConnectionStringProvider())
+              .UseDefaultDbSettingProvider(
+                resourcePath: "~/App_Data",
+                ignoreRedundantParameters: false,
+                enableWatching: true)
+              .Run();
 
             ShareSession.Init();
 

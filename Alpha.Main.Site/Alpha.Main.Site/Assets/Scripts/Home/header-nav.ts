@@ -149,7 +149,7 @@ var headerNav = {
         });
     },
     reloadPage: function () {
-        top.location = headerNav.removeBookmarksInUrl(top.location.href);
+        top.location.href = headerNav.removeBookmarksInUrl(top.location.href);
     },
     removeBookmarksInUrl: function (url) {
         if (typeof url != 'string') {

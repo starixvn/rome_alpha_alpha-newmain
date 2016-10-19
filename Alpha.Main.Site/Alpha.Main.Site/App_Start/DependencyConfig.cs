@@ -100,6 +100,7 @@
             container.RegisterPerWebRequest<Encryptor, EncryptorImpl>();
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
+            container.RegisterPerWebRequest<CustomerOtpService, CustomerOtpServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

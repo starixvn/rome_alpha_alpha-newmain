@@ -44,6 +44,10 @@
       <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CasinoLibrary, Version=1.0.2.13, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoLibrary.dll</HintPath>
       <Private>True</Private>
@@ -54,6 +58,10 @@
     </Reference>
     <Reference Include="CasinoUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CasinoLibrary.1.0.2.13\lib\net40\CasinoUtility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Common, Version=1.0.404.97, Culture=neutral, processorArchitecture=MSIL">
@@ -76,8 +84,12 @@
       <HintPath>..\packages\Fanex.CustomerSetting.Module.KenoStatus.1.0.0.2\lib\net40\Fanex.CustomerSetting.Module.KenoStatus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.Data, Version=0.5.404.63, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Data.0.5.404.63\lib\net40\Fanex.Data.dll</HintPath>
+    <Reference Include="Fanex.Data, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.2.0.1.5\lib\net461\Fanex.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Data.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.Repository.1.0.0\lib\net461\Fanex.Data.Repository.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.GoldDeluxe.CoreSetting, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -90,6 +102,10 @@
     </Reference>
     <Reference Include="Fanex.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Logging.1.0.0.0\lib\net40\Fanex.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="HandHistoryLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -133,6 +149,14 @@
       <HintPath>..\packages\NetUtility.1.0.4199.22106\lib\net40\NetUtility.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ONEbook.OTP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ONEbook.OTP.1.0.0-beta2\lib\net461\ONEbook.OTP.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OtpSharp, Version=1.3.0.4, Culture=neutral, PublicKeyToken=1ec2a4a54aeffc1e, processorArchitecture=MSIL">
+      <HintPath>..\packages\OtpSharp.1.3.0.4\lib\net40\OtpSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -174,6 +198,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -199,7 +225,13 @@
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
+    <Compile Include="Criteria\Otp\CheckEnableOtpCommand.cs" />
     <Compile Include="Criteria\CustomerProfile\GetProfilePictureCriteria.cs" />
+    <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommand.cs" />
+    <Compile Include="Criteria\Otp\GetCustomerOtpCriteria.cs" />
+    <Compile Include="Criteria\Otp\InsertCustomerOtpCommand.cs" />
+    <Compile Include="Criteria\Otp\UpdateCustomerOtpStatusCommand.cs" />
+    <Compile Include="Criteria\Otp\UpdateCustomerStatusAfterVerifyOTPCommand.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteria.cs" />
@@ -223,7 +255,9 @@
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\IDateTime.cs" />
     <Compile Include="Helpers\Impl\DateTimeWrap.cs" />
+    <Compile Include="Helpers\Impl\JsonHelperImpl.cs" />
     <Compile Include="Helpers\Impl\SiteMapReaderImpl.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\MicroSites.cs" />
     <Compile Include="Helpers\SiteMapReader.cs" />
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
@@ -237,9 +271,14 @@
     <Compile Include="Models\Menus\MenuItemBuilder.cs" />
     <Compile Include="Models\Menus\MenuItemBuilderImpl.cs" />
     <Compile Include="Models\Menus\MenuStatus.cs" />
+    <Compile Include="Models\Otp\CustomerOtpDto.cs" />
+    <Compile Include="Models\Otp\DeviceInfo.cs" />
+    <Compile Include="Models\Otp\CustomerOtp.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\SecurityCode\SecurityCodeStatus.cs" />
     <Compile Include="Params\Announcements\GetHotAnnouncementsParams.cs" />
+    <Compile Include="Params\Otp\ChangeOtpStatusParam.cs" />
+    <Compile Include="Params\Otp\RemoveSecretKeyParam.cs" />
     <Compile Include="Params\Password\ResetMainAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ResetSubAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ChangeMainAccountPasswordParam.cs" />
@@ -259,12 +298,13 @@
     <Compile Include="Services\Impl\AnnouncementServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingManagerImpl.cs" />
     <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
+    <Compile Include="Services\Impl\CustomerOtpServiceImpl.cs" />
     <Compile Include="Services\Impl\PasswordServiceImpl.cs" />
     <Compile Include="Services\Impl\SecurityCodeServiceImpl.cs" />
     <Compile Include="Services\Impl\SessionManagerImpl.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
     <Compile Include="Services\Impl\UserMessageServiceImpl.cs" />
-    <Compile Include="Services\OtpService.cs" />
+    <Compile Include="Services\CustomerOtpService.cs" />
     <Compile Include="Services\PasswordService.cs" />
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\SessionManager.cs" />

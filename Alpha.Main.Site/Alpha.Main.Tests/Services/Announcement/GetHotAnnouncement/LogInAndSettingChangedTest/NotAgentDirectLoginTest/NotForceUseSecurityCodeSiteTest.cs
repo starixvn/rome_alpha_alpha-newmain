@@ -6,7 +6,7 @@
 
     public class NotForceUseSecurityCodeSiteTest : NotAgentDirectLoginBaseTest
     {
-        public HotAnnouncement Run(string announcementPath, string expectedAnnouncementContent)
+        public HotAnnouncement Run(string announcementPath)
         {
             var query = HotAnnouncementsParams;
 

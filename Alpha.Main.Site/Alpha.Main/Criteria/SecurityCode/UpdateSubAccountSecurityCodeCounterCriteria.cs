@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Criteria.SecurityCode
 {
+    using System;
     using Fanex.Data.Repository;
 
     public class UpdateSubAccountSecurityCodeCounterCriteria : CriteriaBase
@@ -21,6 +22,11 @@
         public override string GetSettingKey()
         {
             return "Age_UpdateSubAccountSecurityCodeCounter";
+        }
+
+        public override bool IsValid()
+        {
+            throw new NotImplementedException();
         }
     }
 }
