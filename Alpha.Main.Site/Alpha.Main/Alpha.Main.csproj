@@ -264,6 +264,7 @@
     <Compile Include="Services\Impl\SessionManagerImpl.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
     <Compile Include="Services\Impl\UserMessageServiceImpl.cs" />
+    <Compile Include="Services\OtpService.cs" />
     <Compile Include="Services\PasswordService.cs" />
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\SessionManager.cs" />
