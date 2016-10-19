@@ -1,6 +1,5 @@
 ﻿/// <reference path="../home/menu-bar.ts" />
 
-
 declare var EnjoyHint: any;
 
 var introduction = {
@@ -53,7 +52,7 @@ var introduction = {
             return;
         }
 
-        if (!introduction.isCookieLess && !isReadIntroduction) {
+        if (!introduction.isCookieLess && !isReadIntroduction && !alpha.isScreenLower768) {
             introduction.domElements.beginModal.modal('show');
             $('.modal-backdrop').css('z-index', 1051);
 
@@ -113,7 +112,6 @@ var introduction = {
                 introduction.setReadIntroduction();
                 introduction.showNotNowSteps();
             });
-
 
         $(document)
             .off('click.replay-introduction', '.replay-introduction')
@@ -215,7 +213,6 @@ var introduction = {
             if (typeof (step.permission) === undefined
                 || step.permission == null
                 || alpha.user.subPageAccess.indexOf(step.permission) > -1) {
-
                 if (!step.nextButton) {
                     step.nextButton = { text: introduction.resources.Next }
                 }
