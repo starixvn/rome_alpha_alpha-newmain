@@ -10,6 +10,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Services;
     using Site.Handlers;
     using Site.Requests;
+    using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
