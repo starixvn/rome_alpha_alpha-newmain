@@ -319,3 +319,17 @@ html * {
        }
    }
 }
+
+@media \0screen\,screen\9 {
+    .accountinfo-container {
+        #accountinfo-content {
+            min-height: initial;
+            height: 95%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 40px;
+        }
+    }
+}

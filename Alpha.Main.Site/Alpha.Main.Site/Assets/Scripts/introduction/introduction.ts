@@ -46,12 +46,12 @@ var introduction = {
     init: function () {
         var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
 
+        introduction.cacheDOMElements();
+        introduction.registerEvents();
+
         if (isReadIntroduction) {
             return;
         }
-
-        introduction.cacheDOMElements();
-        introduction.registerEvents();
 
         if (!introduction.isCookieLess && !isReadIntroduction) {
             introduction.domElements.beginModal.modal('show');
@@ -188,7 +188,8 @@ var introduction = {
                     introduction.domElements.oldViewLink.data('old-link', introduction.domElements.oldViewLink.attr('href'));
                     introduction.domElements.oldViewLink.attr('href', '#');
                 },
-                addLeftOffset: 70
+                addLeftOffset: 70,
+                isOldViewLink: true
             },
             {
                 "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
@@ -223,9 +224,12 @@ var introduction = {
                     step.skipButton = { text: introduction.resources.Skip }
                 }
 
-                introductionSteps.push(step);
+                if (step.isOldViewLink
+                    && $('#old-view-link').length === 0) {
+                    return;
+                }
 
-                return;
+                introductionSteps.push(step);
             }
         });
 

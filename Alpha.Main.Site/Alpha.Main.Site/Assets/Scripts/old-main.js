@@ -847,14 +847,14 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFr
 
 var popupManager = {
     positionPadding: 5,
-    get leftPosition() {
+    leftPosition: function() {
         // top-left main frame
         var accountInfoWidth = top.$('.sidebar').width();
 
         return accountInfoWidth + top.popupManager.positionPadding;
     },
 
-    get topPosition() {
+    topPosition: function() {
         // top-left main frame
         return 90 + top.popupManager.positionPadding;
     },
@@ -878,8 +878,8 @@ var popupManager = {
         window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes);
     },
     openWithHanlder: function (handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
-        left = left || window.top.popupManager.leftPosition;
-        top = top || window.top.popupManager.topPosition;
+        left = left || window.top.popupManager.leftPosition();
+        top = top || window.top.popupManager.topPosition();
 
         width = width || window.top.popupManager.defaultWidth;
         height = height || window.top.popupManager.defaultHeight;

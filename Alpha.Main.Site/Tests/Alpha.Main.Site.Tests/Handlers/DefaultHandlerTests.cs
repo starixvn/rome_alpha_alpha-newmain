@@ -1,26 +1,32 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
+    using Helpers;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
     using Services;
     using Site.Handlers;
+    using Site.Requests;
     using Sunplus.Agent.Model.Entities;
+    using ViewModels;
 
     [TestFixture]
     public class DefaultHandlerTests
     {
         private const string PasswordHashSessionKey = "ph";
+        private const string SawBrowserWarningPageSessionKey = "DefaultHandler.SawBrowserWarningPageSessionKey";
         private SessionManager sessionManager;
         private DefaultHandler defaultHandler;
         private IUserSession userSession;
+        private BrowserHelper browserHelper;
 
         [SetUp]
         public void SetUp()
         {
+            browserHelper = Substitute.For<BrowserHelper>();
             sessionManager = Substitute.For<SessionManager>();
-            defaultHandler = new DefaultHandler(sessionManager);
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper);
             userSession = Substitute.For<IUserSession>();
         }
 
@@ -42,10 +48,10 @@
 
             var query = new IndexQuery(userSession, false);
 
-            // Action 
+            // Action
             var viewModel = defaultHandler.Handle(query);
 
-            // Assert 
+            // Assert
             sessionManager.Received().Add<string>(PasswordHashSessionKey, Arg.Any<string>());
         }
 
@@ -60,11 +66,65 @@
             string argumentUsed = null;
             sessionManager.Add<string>(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
-            // Action 
+            // Action
             var viewModel = defaultHandler.Handle(query);
 
-            // Assert 
+            // Assert
             Assert.AreEqual(argumentUsed, viewModel.PasswordHash);
         }
+
+        #region Handle BrowserQuery
+
+        [Test]
+        public void HandleBrowserQuery_BrowserIsUnsupported_ReturnIsUnsupportedBrowserIsTrue()
+        {
+            //// Arrange
+            userSession.RoleId.Returns((byte)4);
+            var browserQuery = new BrowserQuery(userSession);
+            browserHelper.CheckSupportedBrowsers().Returns(new BrowserViewModel
+            {
+                IsUnsupportedBrowser = true
+            });
+
+            //// Action
+            var viewModel = defaultHandler.Handle(browserQuery);
+
+            ////
+            Assert.IsTrue(viewModel.IsUnsupportedBrowser);
+        }
+
+        [Test]
+        public void HandleBrowserQuery_UserSawBrowserWarningPageOneTime_SetSawBrowserWarningPageFlagInSession()
+        {
+            //// Arrange
+            userSession.RoleId.Returns((byte)4);
+            var browserQuery = new BrowserQuery(userSession);
+            browserHelper.CheckSupportedBrowsers().Returns(new BrowserViewModel
+            {
+                IsUnsupportedBrowser = true
+            });
+
+            //// Action
+            defaultHandler.Handle(browserQuery);
+
+            ////
+            this.sessionManager.Received().Add<bool>(SawBrowserWarningPageSessionKey, true);
+        }
+
+        [Test]
+        public void HandleBrowserQuery_UserSawBrowserWarningPageAlready_ReturnIsUnsupportedBrowserIsFalse()
+        {
+            //// Arrange
+            this.sessionManager.Get<bool>(SawBrowserWarningPageSessionKey).Returns(true);
+            var browserQuery = new BrowserQuery(userSession);
+
+            //// Action
+            var viewModel = defaultHandler.Handle(browserQuery);
+
+            ////
+            Assert.IsFalse(viewModel.IsUnsupportedBrowser);
+        }
+
+        #endregion Handle BrowserQuery
     }
 }

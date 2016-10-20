@@ -23,7 +23,10 @@ var indexManager = {
 
     init: function () {
         alpha.detectResponsiveInformation();
-        $.material.init();
+        if (!alpha.core.IsIe8OrLower()) {
+            $.material.init();
+        }
+
         indexManager.cachedDomElements();
         indexManager.loadPartialViews();
         indexManager.registerEvents();

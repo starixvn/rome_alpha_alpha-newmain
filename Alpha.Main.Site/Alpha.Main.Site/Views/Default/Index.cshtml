@@ -11,10 +11,16 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
-    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-introduction"))" rel="stylesheet" type="text/css" />
+    <!--[if (gt IE 8)|!(IE)]><!--><link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-introduction"))" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
-
     <div id="page-popup" class="modal fade hidden" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog ex-modal" role="document">
             <div class="modal-content">
@@ -68,9 +74,9 @@
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
 
-    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-introduction"))" type="text/javascript"></script>
+    <!--[if (gt IE 8)|!(IE)]><!--><script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-introduction"))" type="text/javascript"></script><!--<![endif]-->
 
-    @Html.Partial("Piwik", Model)
+    @Html.Partial("Piwik")
 
 
 </body>
