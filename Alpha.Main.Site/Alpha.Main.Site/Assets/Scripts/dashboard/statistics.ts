@@ -1,10 +1,10 @@
-﻿class Statistics {
+﻿class Statistics extends Dashboard {
     registerEvent = () => {
         $('[data-toggle="tooltip"]').tooltip({ html: true });
 
-        this.onToggleDropdown('#listTopWinningMembers', this.loadInfo);
-        this.onToggleDropdown('#listTopTurnoverMembers', this.loadInfo);
-        this.onToggleDropdown('#listNewMembers', this.loadInfo);
+        this.onToggleDropdown('#listTopWinningMembers', this.loadDropdownInfo);
+        this.onToggleDropdown('#listTopTurnoverMembers', this.loadDropdownInfo);
+        this.onToggleDropdown('#listNewMembers', this.loadDropdownInfo);
 
         this.onSwipeInMobileView();
     }
@@ -21,7 +21,7 @@
         });
     }
 
-    private loadInfo = (url: string, dataElement: any): void => {
+    private loadDropdownInfo = (url: string, dataElement: any): void => {
         if (url !== '' || typeof url !== 'undefined') {
             $.get(url, (responseHtml) => {
                 dataElement.html(responseHtml);
@@ -56,3 +56,6 @@
         });
     }
 }
+
+const stats = new Statistics($);
+stats.loadInfo('#stats', stats.registerEvent);

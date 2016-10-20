@@ -532,6 +532,7 @@
       <DependentUpon>default-message.js</DependentUpon>
     </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
+    <Content Include="Assets\scripts\tests\libs\jquery-1.11.3.js" />
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>
     </Content>
@@ -854,6 +855,7 @@
     </Content>
     <Content Include="Web.Configuration\AuthorizationSection.config" />
     <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tests\dashboard\balance-info-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />

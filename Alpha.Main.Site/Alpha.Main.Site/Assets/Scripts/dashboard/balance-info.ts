@@ -20,3 +20,6 @@
         });
     }
 }
+
+const balanceInfo = new BalanceInfo();
+balanceInfo.registerEvent();

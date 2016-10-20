@@ -3,39 +3,32 @@
 /// <reference path="./notice.ts" />
 
 class Dashboard {
-    startLoading = () => {
-        const balanceInfo = new BalanceInfo();
-        balanceInfo.registerEvent();
+    protected $: any;
 
-        this.loadInfo('#stats', this.onCompleteLoadStats);
-        this.loadInfo('#notice', this.onCompleteLoadNotice);
+    constructor($: any) {
+        this.$ = $;
     }
 
-    private loadInfo = (id: string, onCompleteLoading: any) => {
-        let $component = $(id),
+    loadInfo = (id: string, handleOnSuccessLoading: any) => {
+        let $component = this.$(id),
             url = $component.attr('action-url');
 
-        if (url !== '' || typeof url !== 'undefined') {
-            $.get(url,
-                (responseHtml) => {
-                    $component.html(responseHtml);
-                    onCompleteLoading();
-                });
+        if (url !== '' && typeof url !== 'undefined') {
+            const ajaxSettings = this.createAjaxSettings(url, $component, handleOnSuccessLoading);
+
+            this.$.get(ajaxSettings);
         }
     }
 
-    private onCompleteLoadStats = () => {
-        const stats = new Statistics();
-        stats.registerEvent();
-    }
+    private createAjaxSettings = (url: string, component: any, handleOnSuccessLoading: any) => {
+        const ajaxSetting = {
+            url: url,
+            onSuccess: (responseHtml) => {
+                component.html(responseHtml);
+                handleOnSuccessLoading();
+            }
+        };
 
-    private onCompleteLoadNotice = () => {
-        const notice = new NoticeMessage();
-        notice.registerEvent();
+        return ajaxSetting;
     }
 }
-
-$(document).ready(() => {
-    const dashboard = new Dashboard();
-    dashboard.startLoading();
-});

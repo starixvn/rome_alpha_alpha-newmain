@@ -1,6 +1,6 @@
 ﻿/// <reference path="../core.ts" />
 
-class NoticeMessage {
+class NoticeMessage extends Dashboard {
     registerEvent = () => {
         this.onToggleMessage(this.markMessageAsRead);
 
@@ -64,7 +64,7 @@ class NoticeMessage {
             const onSuccess = (htmlString: any) => {
                 $content.html(htmlString);
 
-                new NoticeMessage().registerEvent();
+                new NoticeMessage($).registerEvent();
             }
 
             const ajaxSetting = {
@@ -107,3 +107,6 @@ class NoticeMessage {
         }
     }
 }
+
+const notice = new NoticeMessage($);
+notice.loadInfo('#notice', notice.registerEvent);
