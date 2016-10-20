@@ -5,7 +5,6 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
-    using AppResources;
     using Fanex.Products;
     using Helpers;
     using Models.Menus;
