@@ -31,9 +31,11 @@ var announcement = {
     },
 
     init: function () {
-        announcement.loadAnnouncementPeriodically(5000);
         if (!alpha.isScreenLower768) {
             announcement.loadAnnouncement();
+        }
+        else if (alpha.isScreenLower768) {
+            announcement.loadAnnouncementPeriodically(5000);
         }
     },
 

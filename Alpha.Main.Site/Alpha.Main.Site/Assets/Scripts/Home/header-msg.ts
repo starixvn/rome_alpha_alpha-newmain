@@ -122,8 +122,9 @@ var headerMessage = {
         indexManager.changeMenu(headerMessage.urls.mainAppSpecialMessageForm);
     },
 
-    viewLiveMessage: function () {
-        var liveMessageUrl = headerMessage.domElements.liveMessage.data('live-message-url');
+    viewLiveMessage: (event) => {
+        var liveMessageUrl = $(event.target).attr('live-message-url');
+
         if (liveMessageUrl) {
             indexManager.changeMenu(liveMessageUrl);
         }
@@ -214,13 +215,13 @@ var headerMessage = {
 
     showPublicMessage: function (publicMessage) {
         // Process Public Message: show new public message and its link to message form
-        var url = headerMessage.urls.oldMainAppNormalMessageForm + publicMessage[headerMessage.messageTypeIndex];
+        const url = headerMessage.urls.mainAppPublicMessageForm;
 
         if (publicMessage[headerMessage.messageIdIndex]
             && publicMessage[headerMessage.messageIdIndex] !== headerMessage.publicMessageId) {
             headerMessage.domElements.liveMessage
                 .html(publicMessage[headerMessage.messageContentIndex] + '. ')
-                .data(url);
+                .find('font').attr('live-message-url', url);
 
             if (headerMessage.publicMessageId !== 0) {
                 headerMessage.appendMessageToPopup(publicMessage[headerMessage.messageContentIndex]);
@@ -237,6 +238,8 @@ var headerMessage = {
     },
     showPrivateMessage: function (privateMessage, unreadPriMsgCount) {
         // Process Private Message: show new private message
+        const url = headerMessage.urls.mainAppPrivateMessageForm;
+
         if (privateMessage[headerMessage.messageIdIndex]
             && headerMessage.privateMessageId !== privateMessage[headerMessage.messageIdIndex]) {
             //// Append Private Message to Marquee with green color format.
@@ -247,11 +250,13 @@ var headerMessage = {
             }
             else {
                 var liveMessageContent = headerMessage.domElements.liveMessage.html();
-                headerMessage.domElements.liveMessage.html(
-                    liveMessageContent
-                    + "<font id='private-message-content' color=\"green\">Private message: "
-                    + privateMessage[headerMessage.messageContentIndex]
-                    + "</font>");
+
+                headerMessage.domElements.liveMessage
+                    .html(liveMessageContent +
+                    "<font id='private-message-content' color=\"green\">Private message: " +
+                    privateMessage[headerMessage.messageContentIndex] +
+                    "</font>")
+                    .find('#private-message-content').attr('live-message-url', url);
             }
 
             if (headerMessage.privateMessageId !== 0) {
