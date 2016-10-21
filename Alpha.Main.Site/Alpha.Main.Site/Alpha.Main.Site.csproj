@@ -486,6 +486,7 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\index.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\change-password.ts" />
@@ -532,7 +533,9 @@
       <DependentUpon>default-message.js</DependentUpon>
     </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
+    <Content Include="Assets\scripts\tests\libs\hammer.js" />
     <Content Include="Assets\scripts\tests\libs\jquery-1.11.3.js" />
+    <Content Include="Assets\scripts\tests\libs\jquery.hammer.js" />
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>
     </Content>
@@ -830,6 +833,13 @@
     <Content Include="Views\Message\HiddenFields.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Message\Messages.cshtml" />
+    <Content Include="typings\globals\jasmine\typings.json" />
+    <Content Include="typings\globals\jquery.blockui\typings.json" />
+    <Content Include="typings\globals\jquery\typings.json" />
+    <Content Include="typings\globals\jquery.cookie\typings.json" />
+    <Content Include="typings\globals\bootstrap\typings.json" />
+    <Content Include="typings\globals\jqueryui\typings.json" />
+    <Content Include="typings\globals\toastr\typings.json" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>
@@ -857,7 +867,14 @@
     <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\dashboard\balance-info-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\dashboard\dashboard-tests.ts" />
+    <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jquery.blockui\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jquery.cookie\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jqueryui\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jquery\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\toastr\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
   <ItemGroup>

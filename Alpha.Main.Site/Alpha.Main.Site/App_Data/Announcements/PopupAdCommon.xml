@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
-    <!--effectdate format: dd/mm/yyyy-->
-    <!--
+  <!--effectdate format: dd/mm/yyyy-->
+  <!--
     announcementid noted:
     - bingo = 4,
       virtual sports: 20130404,
@@ -10,17 +10,17 @@
   -->
 
   <PopupAnnouncement id="6197901" name="Alpha_Security_Enhancement"
-                     startdate="10/16/2016" enddate="10/30/2016"  effectdate="10/18/2016"
+                     startdate="10/30/2016" enddate="10/30/2016"  effectdate="10/18/2016"
                       width="1000" height="220" top="110" left="350">
     <en-US src="">
       Dear valued agents,<br />
       <p>
         Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
-        - Editing sub account permissions.<br/>
-        - Creating a new sub account/downline.<br/>
-        - Resetting/changing password and security code.	<br/>
-        - Updating product settings.<br/>
-        - Transferring and updating credit.<br/>
+        - Editing sub account permissions.<br />
+        - Creating a new sub account/downline.<br />
+        - Resetting/changing password and security code.	<br />
+        - Updating product settings.<br />
+        - Transferring and updating credit.<br />
       </p>
       <p>
         Thank you
@@ -31,11 +31,11 @@
       尊敬的代理们，<br />
       <p>
         您的隐私与安全保障非常重要。因此，我们将不断改善安全系统以维护您的资料。所以，当您采取以下动作时需输入保安码：<br />
-        - 修改子账号权限<br/>
-        - 新增子账号/下线<br/>
-        - 重设/修改密码与保安码<br/>
-        - 更新产品设定<br/>
-        - 转账与更新余额<br/>
+        - 修改子账号权限<br />
+        - 新增子账号/下线<br />
+        - 重设/修改密码与保安码<br />
+        - 更新产品设定<br />
+        - 转账与更新余额<br />
       </p>
       <p>
         谢谢
@@ -46,11 +46,11 @@
       尊敬的代理們，<br />
       <p>
         您的隱私與安全保障非常重要因此，我們將不斷改善安全系統以維護您的資料所以，當您採取以下動作時需輸入保安碼：<br />
-        - 修改子賬號權限<br/>
-        - 新增子賬號/下線<br/>
-        - 重設/修改密碼與保安碼<br/>
-        - 更新產品設定<br/>
-        - 轉賬與更新餘額<br/>
+        - 修改子賬號權限<br />
+        - 新增子賬號/下線<br />
+        - 重設/修改密碼與保安碼<br />
+        - 更新產品設定<br />
+        - 轉賬與更新餘額<br />
       </p>
       <p>
         謝謝
@@ -61,11 +61,11 @@
       Dear valued agents,<br />
       <p>
         Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
-        - Editing sub account permissions.<br/>
-        - Creating a new sub account/downline.<br/>
-        - Resetting/changing password and security code.	<br/>
-        - Updating product settings.<br/>
-        - Transferring and updating credit.<br/>
+        - Editing sub account permissions.<br />
+        - Creating a new sub account/downline.<br />
+        - Resetting/changing password and security code.	<br />
+        - Updating product settings.<br />
+        - Transferring and updating credit.<br />
       </p>
       <p>
         Thank you
@@ -76,11 +76,11 @@
       Dear valued agents,<br />
       <p>
         Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
-        - Editing sub account permissions.<br/>
-        - Creating a new sub account/downline.<br/>
-        - Resetting/changing password and security code.	<br/>
-        - Updating product settings.<br/>
-        - Transferring and updating credit.<br/>
+        - Editing sub account permissions.<br />
+        - Creating a new sub account/downline.<br />
+        - Resetting/changing password and security code.	<br />
+        - Updating product settings.<br />
+        - Transferring and updating credit.<br />
       </p>
       <p>
         Thank you
@@ -91,11 +91,11 @@
       เรียนเอเจนต์ทุกท่าน<br />
       <p>
         รหัสความปลอดภัยของท่านนั้นมีความสำคัญอย่างยิ่ง ดังนั้นทางเราจึงมุ่งมั่นปรับปรุงมาตราการรักษาความปลอดภัยในข้อมูลส่วนตัวของทุกท่านอย่างต่อเนื่อง ด้วยเหตุนี้ทางเราจึงใคร่ขอให้ท่านได้ใส่รหัสความปลอดภัยทุกครั้งเมื่อมีการดำเนินการใด ๆ อันสำคัญ เช่น<br />
-        - การแก้ไข ขอบเขตการใช้งานของ บัญชีย่อย<br/>
-        - การสร้างบัญชีย่อยใหม่/ การสร้างลูกค้ารายใหม่<br/>
-        - การตั้งค่าใหม่/การเปลี่ยนรหัสผ่านและรหัสรักษาความปลอดภัย<br/>
-        - การอัพเดทการตั้งค่าต่าง ๆ<br/>
-        - การโอนเงิน และการอัพเดทเครดิต<br/>
+        - การแก้ไข ขอบเขตการใช้งานของ บัญชีย่อย<br />
+        - การสร้างบัญชีย่อยใหม่/ การสร้างลูกค้ารายใหม่<br />
+        - การตั้งค่าใหม่/การเปลี่ยนรหัสผ่านและรหัสรักษาความปลอดภัย<br />
+        - การอัพเดทการตั้งค่าต่าง ๆ<br />
+        - การโอนเงิน และการอัพเดทเครดิต<br />
       </p>
       <p>
         ขอบพระคุณคะ
@@ -106,11 +106,11 @@
       Dear valued agents,<br />
       <p>
         Your security and privacy are extremely important to us. Therefore, we continuously strive to improve our security precautions to protect your data. For this reason, you're required to enter your security code when performing sensitive actions such as:<br />
-        - Editing sub account permissions.<br/>
-        - Creating a new sub account/downline.<br/>
-        - Resetting/changing password and security code.	<br/>
-        - Updating product settings.<br/>
-        - Transferring and updating credit.<br/>
+        - Editing sub account permissions.<br />
+        - Creating a new sub account/downline.<br />
+        - Resetting/changing password and security code.	<br />
+        - Updating product settings.<br />
+        - Transferring and updating credit.<br />
       </p>
       <p>
         Thank you
@@ -125,25 +125,25 @@
       Dear valued agents,<br />
       <p>
         We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
-        - Exact 2nd Half Goals<br/>
-        - Both Teams To Score/Result<br/>
-        - Both Teams To Score/Total Goal<br/>
-        - Which Half First Goal<br/>
-        - Home Team Which Half First Goal<br/>
-        - Away Team Which Half First Goal<br/>
-        - First Team 2 Goals<br/>
-        - First Team 3 Goals<br/>
-        - First Goal Method<br/>
-        - To Win From Behind<br/>
-        - 1H Winning Margin<br/>
-        - Both Team To Score in 1H/ 2H<br/>
-        - Home 1H To Score/2H To Score<br/>
-        - Away 1H To Score/2H To Score<br/>
+        - Exact 2nd Half Goals<br />
+        - Both Teams To Score/Result<br />
+        - Both Teams To Score/Total Goal<br />
+        - Which Half First Goal<br />
+        - Home Team Which Half First Goal<br />
+        - Away Team Which Half First Goal<br />
+        - First Team 2 Goals<br />
+        - First Team 3 Goals<br />
+        - First Goal Method<br />
+        - To Win From Behind<br />
+        - 1H Winning Margin<br />
+        - Both Team To Score in 1H/ 2H<br />
+        - Home 1H To Score/2H To Score<br />
+        - Away 1H To Score/2H To Score<br />
       </p>
       <p>
-        These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b/>
-        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b/>
+        These bet types are also available for Parlay and all settings are configured as follows:<br />
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b />
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b />
       </p>
       <p>
         Thank you
@@ -154,25 +154,25 @@
       尊敬的代理们，<br />
       <p>
         在此通知于 <b>{effectdate}</b> 将新推出 14 种足球新投注类别：<br />
-        - 准确下半场总进球<br/>
-        - 两队皆进球/赛果<br/>
-        - 两队皆进球/总进球数<br/>
-        - 预测进第一个球的半场<br/>
-        - 主队于哪个半场最先进球<br/>
-        - 客队于哪个半场最先进球<br/>
-        - 最先进两个球的球队<br/>
-        - 最先进三个球的球队<br/>
-        - 第一个进球方式<br/>
-        - 落后反超获胜的球队<br/>
-        - 上半场净胜球数<br/>
-        - 两队皆进球 上半场/下半场<br/>
-        - 主队均进球 上半场/下半场<br/>
-        - 客队均进球 上半场/下半场<br/>
+        - 准确下半场总进球<br />
+        - 两队皆进球/赛果<br />
+        - 两队皆进球/总进球数<br />
+        - 预测进第一个球的半场<br />
+        - 主队于哪个半场最先进球<br />
+        - 客队于哪个半场最先进球<br />
+        - 最先进两个球的球队<br />
+        - 最先进三个球的球队<br />
+        - 第一个进球方式<br />
+        - 落后反超获胜的球队<br />
+        - 上半场净胜球数<br />
+        - 两队皆进球 上半场/下半场<br />
+        - 主队均进球 上半场/下半场<br />
+        - 客队均进球 上半场/下半场<br />
       </p>
       <p>
-        这些投注类别亦有开放在过关盘口及所有设定根据以下配置：<br/>
-        - 准确下半场总进球的占成数将根据足球总进球的设置及其佣金则将根据其它投注类别设置。<b/>
-        - 剩余投注类别的占成数及佣金将根据足球的其它投注类别设置。<b/>
+        这些投注类别亦有开放在过关盘口及所有设定根据以下配置：<br />
+        - 准确下半场总进球的占成数将根据足球总进球的设置及其佣金则将根据其它投注类别设置。<b />
+        - 剩余投注类别的占成数及佣金将根据足球的其它投注类别设置。<b />
       </p>
       <p>
         谢谢。
@@ -183,25 +183,25 @@
       尊敬的代理們，<br />
       <p>
         在此通知於<b>{effectdate}</b>將新推出14種足球新投注類別：<br />
-        - 准確下半場總進球<br/>
-        - 兩隊皆進球/賽果<br/>
-        - 兩隊皆進球/總進球數<br/>
-        - 預測進第一個球的半場<br/>
-        - 主隊於哪個半場最先進球<br/>
-        - 客隊於哪個半場最先進球<br/>
-        - 最先進兩個球的球隊<br/>
-        - 最先進三個球的球隊<br/>
-        - 第一個進球方式<br/>
-        - 落後反超獲勝的球隊<br/>
-        - 上半場淨勝球數<br/>
-        - 兩隊皆進球 上半場/下半場<br/>
-        - 主隊均進球 上半場/下半場<br/>
-        - 客隊均進球 上半場/下半場<br/>
+        - 准確下半場總進球<br />
+        - 兩隊皆進球/賽果<br />
+        - 兩隊皆進球/總進球數<br />
+        - 預測進第一個球的半場<br />
+        - 主隊於哪個半場最先進球<br />
+        - 客隊於哪個半場最先進球<br />
+        - 最先進兩個球的球隊<br />
+        - 最先進三個球的球隊<br />
+        - 第一個進球方式<br />
+        - 落後反超獲勝的球隊<br />
+        - 上半場淨勝球數<br />
+        - 兩隊皆進球 上半場/下半場<br />
+        - 主隊均進球 上半場/下半場<br />
+        - 客隊均進球 上半場/下半場<br />
       </p>
       <p>
-        這些投注類別亦有開放在過關盤口及所有設定根據以下配置：<br/>
-        - 準確下半場總進球的佔成數將根據足球總進球的設置及其佣金則將根據其它投注類別設置。<b/>
-        - 剩餘投注類別的佔成數及佣金將根據足球的其它投注類別設置。<b/>
+        這些投注類別亦有開放在過關盤口及所有設定根據以下配置：<br />
+        - 準確下半場總進球的佔成數將根據足球總進球的設置及其佣金則將根據其它投注類別設置。<b />
+        - 剩餘投注類別的佔成數及佣金將根據足球的其它投注類別設置。<b />
       </p>
       <p>
         謝謝。
@@ -212,25 +212,25 @@
       Dear valued agents,<br />
       <p>
         We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
-        - Exact 2nd Half Goals<br/>
-        - Both Teams To Score/Result<br/>
-        - Both Teams To Score/Total Goal<br/>
-        - Which Half First Goal<br/>
-        - Home Team Which Half First Goal<br/>
-        - Away Team Which Half First Goal<br/>
-        - First Team 2 Goals<br/>
-        - First Team 3 Goals<br/>
-        - First Goal Method<br/>
-        - To Win From Behind<br/>
-        - 1H Winning Margin<br/>
-        - Both Team To Score in 1H/ 2H<br/>
-        - Home 1H To Score/2H To Score<br/>
-        - Away 1H To Score/2H To Score<br/>
+        - Exact 2nd Half Goals<br />
+        - Both Teams To Score/Result<br />
+        - Both Teams To Score/Total Goal<br />
+        - Which Half First Goal<br />
+        - Home Team Which Half First Goal<br />
+        - Away Team Which Half First Goal<br />
+        - First Team 2 Goals<br />
+        - First Team 3 Goals<br />
+        - First Goal Method<br />
+        - To Win From Behind<br />
+        - 1H Winning Margin<br />
+        - Both Team To Score in 1H/ 2H<br />
+        - Home 1H To Score/2H To Score<br />
+        - Away 1H To Score/2H To Score<br />
       </p>
       <p>
-        These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b/>
-        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b/>
+        These bet types are also available for Parlay and all settings are configured as follows:<br />
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b />
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b />
       </p>
       <p>
         Thank you
@@ -241,25 +241,25 @@
       Dear valued agents,<br />
       <p>
         We are pleased to announce the launching of 14 new bet types of Soccer with effect from <b>{effectdate}</b> including:<br />
-        - Exact 2nd Half Goals<br/>
-        - Both Teams To Score/Result<br/>
-        - Both Teams To Score/Total Goal<br/>
-        - Which Half First Goal<br/>
-        - Home Team Which Half First Goal<br/>
-        - Away Team Which Half First Goal<br/>
-        - First Team 2 Goals<br/>
-        - First Team 3 Goals<br/>
-        - First Goal Method<br/>
-        - To Win From Behind<br/>
-        - 1H Winning Margin<br/>
-        - Both Team To Score in 1H/ 2H<br/>
-        - Home 1H To Score/2H To Score<br/>
-        - Away 1H To Score/2H To Score<br/>
+        - Exact 2nd Half Goals<br />
+        - Both Teams To Score/Result<br />
+        - Both Teams To Score/Total Goal<br />
+        - Which Half First Goal<br />
+        - Home Team Which Half First Goal<br />
+        - Away Team Which Half First Goal<br />
+        - First Team 2 Goals<br />
+        - First Team 3 Goals<br />
+        - First Goal Method<br />
+        - To Win From Behind<br />
+        - 1H Winning Margin<br />
+        - Both Team To Score in 1H/ 2H<br />
+        - Home 1H To Score/2H To Score<br />
+        - Away 1H To Score/2H To Score<br />
       </p>
       <p>
-        These bet types are also available for Parlay and all settings are configured as follows:<br/>
-        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b/>
-        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b/>
+        These bet types are also available for Parlay and all settings are configured as follows:<br />
+        - For Exact 2nd Half Goals, the Position Taking will follow Soccer Total Goal’s settings and Commission will follow Others bet type’s settings.<b />
+        - For remaining bet types, the Position Taking and Commission will follow Soccer Others bet type's settings.<b />
       </p>
       <p>
         Thank you
@@ -270,25 +270,25 @@
       เรียนเอเจนต์ทุกท่าน<br />
       <p>
         ทางบริษัทใคร่ขอเรียนให้ทราบว่าทางเวปไซค์จะนำเสนอ 14 ชนิดการทายผลของกีฬาฟุตบอลซึ่งจะมีผลภายในวันที่ <b>{effectdate}</b><br />
-        - เต็งผลประตูในครึ่งหลัง<br/>
-        - ทั้งสองทีมทำประตูได้/ผลประตู<br/>
-        - ทั้งสองทีมทำประตูได้/ผลประตูรวม<br/>
-        - ประตูแรกจะเกิดขึ้นในครึ่งแรกหรือครึ่งหลัง<br/>
-        - ทีมเจ้าบ้านจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br/>
-        - ทีมยืนจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br/>
-        - ทีมแรกที่จะทำได้ 2 ประตูก่อน<br/>
-        - ทีมแรกที่จะทำได้ 3 ประตูก่อน<br/>
-        - วิธีที่ทำประตูแรกได้<br/>
-        - จากแพ้พลิกกับมาชนะ<br/>
-        - ผลต่างประตูที่ชนะในครึ่งแรก<br/>
-        - ทั้งสองทีมทำประตูใน ครึ่งแรก/ครึ่งหลัง<br/>
-        - ทีมเจ้าบ้าน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br/>
-        - ทีมเยือน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br/>
+        - เต็งผลประตูในครึ่งหลัง<br />
+        - ทั้งสองทีมทำประตูได้/ผลประตู<br />
+        - ทั้งสองทีมทำประตูได้/ผลประตูรวม<br />
+        - ประตูแรกจะเกิดขึ้นในครึ่งแรกหรือครึ่งหลัง<br />
+        - ทีมเจ้าบ้านจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br />
+        - ทีมยืนจะได้ประตุแรกในครึ่งแรกหรือครึ่งหลัง<br />
+        - ทีมแรกที่จะทำได้ 2 ประตูก่อน<br />
+        - ทีมแรกที่จะทำได้ 3 ประตูก่อน<br />
+        - วิธีที่ทำประตูแรกได้<br />
+        - จากแพ้พลิกกับมาชนะ<br />
+        - ผลต่างประตูที่ชนะในครึ่งแรก<br />
+        - ทั้งสองทีมทำประตูใน ครึ่งแรก/ครึ่งหลัง<br />
+        - ทีมเจ้าบ้าน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br />
+        - ทีมเยือน ทำประตูครึ่งแรก/ทำประตูครึ่งหลัง<br />
       </p>
       <p>
-        ประเภทการทายผลเหล่านี้ ยังสามารถทายผลในบอลชุดได้อีกด้วย และการตั้งค่าทั้งหมดจะตั้งค่าดังต่อไปนี้<br/>
-        - สำหรับการเต็งประตูในครึ่งหลังค่าความเสี่ยงจะตั้งค่าตาม ฟุตบอล การตั้งค่าประตูรวมและคอมมิชชั่นจะตังค่าตามการตั้งค่าอื่น ๆ <b/>
-        - ประเภทเดิมพันในส่วนที่เหลือ ค่าความเสี่ยงและค่าคอมมิชชั่นจะตั้งค่าตาม การตั้งค่าเดิมพันกีฬาฟุตบอลประเภทอื่น ๆ <b/>
+        ประเภทการทายผลเหล่านี้ ยังสามารถทายผลในบอลชุดได้อีกด้วย และการตั้งค่าทั้งหมดจะตั้งค่าดังต่อไปนี้<br />
+        - สำหรับการเต็งประตูในครึ่งหลังค่าความเสี่ยงจะตั้งค่าตาม ฟุตบอล การตั้งค่าประตูรวมและคอมมิชชั่นจะตังค่าตามการตั้งค่าอื่น ๆ <b />
+        - ประเภทเดิมพันในส่วนที่เหลือ ค่าความเสี่ยงและค่าคอมมิชชั่นจะตั้งค่าตาม การตั้งค่าเดิมพันกีฬาฟุตบอลประเภทอื่น ๆ <b />
       </p>
       <p>
         กราบขอบพระคุณคะ
@@ -299,25 +299,25 @@
       Kính gửi quý khách hàng,<br />
       <p>
         Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp thêm 14 loại cược mới cho môn Bóng Đá gồm có:<br />
-        - Số Bàn Thắng Hiệp 2<br/>
-        - Hai Đội Ghi Bàn/Đội Thắng<br/>
-        - Hai Đội Ghi Bàn/Tổng Bàn Thắng<br/>
-        - Hiệp Ghi Bàn Đầu Tiên<br/>
-        - Hiệp Ghi Bàn Đầu Tiên Của Home<br/>
-        - Hiệp Ghi Bàn Đầu Tiên Của Away<br/>
-        - Đội Ghi 2 Bàn Trước<br/>
-        - Đội Ghi 3 Bàn Trước<br/>
-        - Đội Thắng Lội Ngược Dòng<br/>
-        - To Win From Behind<br/>
-        - Số Bàn Cách Biệt trong Hiệp 1<br/>
-        - Hai Đội Cùng Ghi Bàn trong Hiệp 1/Hiệp 2<br/>
-        - Home Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br/>
-        - Away Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br/>
+        - Số Bàn Thắng Hiệp 2<br />
+        - Hai Đội Ghi Bàn/Đội Thắng<br />
+        - Hai Đội Ghi Bàn/Tổng Bàn Thắng<br />
+        - Hiệp Ghi Bàn Đầu Tiên<br />
+        - Hiệp Ghi Bàn Đầu Tiên Của Home<br />
+        - Hiệp Ghi Bàn Đầu Tiên Của Away<br />
+        - Đội Ghi 2 Bàn Trước<br />
+        - Đội Ghi 3 Bàn Trước<br />
+        - Đội Thắng Lội Ngược Dòng<br />
+        - To Win From Behind<br />
+        - Số Bàn Cách Biệt trong Hiệp 1<br />
+        - Hai Đội Cùng Ghi Bàn trong Hiệp 1/Hiệp 2<br />
+        - Home Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br />
+        - Away Ghi Bàn Hiệp 1/Ghi Bàn Hiệp 2<br />
       </p>
       <p>
-        Những loại cược mới này đều cho phép chơi Parlay và tất cả các thiết lập sẽ được cấu hình như sau:<br/>
-        - Đối với loại cược "Số Bàn Thắng Hiệp 2",  Position Taking sẽ theo thiết lập của loại cược "Tổng Số Bàn Thắng" trong Bóng Đá và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<b/>
-        - Đối với các loại cược còn lại, Position Taking và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<b/>
+        Những loại cược mới này đều cho phép chơi Parlay và tất cả các thiết lập sẽ được cấu hình như sau:<br />
+        - Đối với loại cược "Số Bàn Thắng Hiệp 2",  Position Taking sẽ theo thiết lập của loại cược "Tổng Số Bàn Thắng" trong Bóng Đá và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<b />
+        - Đối với các loại cược còn lại, Position Taking và Hoa Hồng sẽ theo thiết lập của "Loại Cược Khác" trong Bóng Đá.<b />
       </p>
       <p>
         Trân trọng.
@@ -336,13 +336,13 @@
         All settings will be configured as follows:
       </p>
       <p>
-        - Position taking will be copied from Live Casino's settings.<br/>
-        - Commission will be copied from Live Casino's settings.<br/>
-        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
+        - Position taking will be copied from Live Casino's settings.<br />
+        - Commission will be copied from Live Casino's settings.<br />
+        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
         - Member Win Limit will be copied from Live Casino's settings.
       </p>
       <p>
-        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
+        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br />
         All settings will be available for configuration since <b>{effectdate}</b>.
       </p>
       <p>
@@ -358,13 +358,13 @@
         所有设定将配置如下:
       </p>
       <p>
-        - 占成数将複製真人娱乐厅的设定.<br/>
-        - 佣金将複製真人娱乐厅的设定.<br/>
-        - 会员投注限额不会超过 上线提供的投注限额.<br/>
+        - 占成数将複製真人娱乐厅的设定.<br />
+        - 佣金将複製真人娱乐厅的设定.<br />
+        - 会员投注限额不会超过 上线提供的投注限额.<br />
         - 会员赢额限额将複製真人娱乐厅设定.
       </p>
       <p>
-        尚若真人娱乐厅无设定可複製，需在 AllBet 开启下注前配置设定.<br/>
+        尚若真人娱乐厅无设定可複製，需在 AllBet 开启下注前配置设定.<br />
         所有设定将于<b>{effectdate}</b> 开放设置.
       </p>
       <p>
@@ -380,13 +380,13 @@
         所有設定將配置如下:
       </p>
       <p>
-        - 占成數將複製真人娛樂廳的設定.<br/>
-        - 傭金將複製真人娛樂廳的設定.<br/>
-        - 會員投注限額不會超過 上线提供的投注限額.<br/>
+        - 占成數將複製真人娛樂廳的設定.<br />
+        - 傭金將複製真人娛樂廳的設定.<br />
+        - 會員投注限額不會超過 上线提供的投注限額.<br />
         - 會員贏額限額將複製真人娛樂廳設定.
       </p>
       <p>
-        尚若真人娛樂廳無設定可複製，需在 AllBet 開啟下注前配置設定.<br/>
+        尚若真人娛樂廳無設定可複製，需在 AllBet 開啟下注前配置設定.<br />
         所有設定將于 <b>{effectdate}</b> 開放設置.
       </p>
       <p>
@@ -402,13 +402,13 @@
         All settings will be configured as follows:
       </p>
       <p>
-        - Position taking will be copied from Live Casino's settings.<br/>
-        - Commission will be copied from Live Casino's settings.<br/>
-        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
+        - Position taking will be copied from Live Casino's settings.<br />
+        - Commission will be copied from Live Casino's settings.<br />
+        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
         - Member Win Limit will be copied from Live Casino's settings.
       </p>
       <p>
-        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
+        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br />
         All settings will be available for configuration since <b>{effectdate}</b>.
       </p>
       <p>
@@ -424,13 +424,13 @@
         All settings will be configured as follows:
       </p>
       <p>
-        - Position taking will be copied from Live Casino's settings.<br/>
-        - Commission will be copied from Live Casino's settings.<br/>
-        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
+        - Position taking will be copied from Live Casino's settings.<br />
+        - Commission will be copied from Live Casino's settings.<br />
+        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
         - Member Win Limit will be copied from Live Casino's settings.
       </p>
       <p>
-        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
+        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br />
         All settings will be available for configuration since <b>{effectdate}</b>.
       </p>
       <p>
@@ -446,13 +446,13 @@
         การตั้งค่าทั้งหมดมีดังต่อไปนี้
       </p>
       <p>
-        - การรับสถานะเงินลงทุนจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br/>
-        - ค่านายหน้าจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br/>
-        - วงเงินเดิมพันของสมาชิกจะไม่เกินวงเงินเดิมพันที่เสนอโดย SMA<br/>
+        - การรับสถานะเงินลงทุนจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br />
+        - ค่านายหน้าจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br />
+        - วงเงินเดิมพันของสมาชิกจะไม่เกินวงเงินเดิมพันที่เสนอโดย SMA<br />
         - วงเงินชนะของสมาชิกจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด
       </p>
       <p>
-        หากไม่นำการตั้งค่ามาจากคาสิโนสด ต้องกำหนดการตั้งค่าสำหรับ AllBet ก่อนที่ผลิตภัณฑ์นี้จะเปิดให้วางเดิมพันได้<br/>
+        หากไม่นำการตั้งค่ามาจากคาสิโนสด ต้องกำหนดการตั้งค่าสำหรับ AllBet ก่อนที่ผลิตภัณฑ์นี้จะเปิดให้วางเดิมพันได้<br />
         การตั้งค่าทั้งหมดจะเปิดให้ดำเนินการได้ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป
       </p>
       <p>
@@ -468,13 +468,13 @@
         Tất cả các thiết lập sẽ được cấu hình như sau:
       </p>
       <p>
-        - Position Taking sẽ được sao chép từ Live Casino.<br/>
-        - Các thiết lập về hoa hồng sẽ được sao chép từ Live Casino.<br/>
-        - Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br/>
+        - Position Taking sẽ được sao chép từ Live Casino.<br />
+        - Các thiết lập về hoa hồng sẽ được sao chép từ Live Casino.<br />
+        - Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br />
         - Giới hạn thắng cược của member sẽ được sao chép từ Live Casino.
       </p>
       <p>
-        Nếu không có thiết lập nào được sao chép từ Live Casino, bạn phải cấu hình các thiết lập cho AllBet trước khi sản phẩm này được cho phép đặt cược.<br/>
+        Nếu không có thiết lập nào được sao chép từ Live Casino, bạn phải cấu hình các thiết lập cho AllBet trước khi sản phẩm này được cho phép đặt cược.<br />
         Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>{effectdate}</b>.
       </p>
       <p>
@@ -494,7 +494,7 @@
         Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
         All settings will be available for configuration since <b>{effectdate}</b>
       </p>
-      
+
       <p>
         Thank you
       </p>
@@ -584,7 +584,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-  
+
   <PopupAnnouncement id="61726001" name="Casino DB Migration - RNG: Sync and Enable = true, LCS: sync and enable = false"
                      startdate="08/21/2016" enddate="09/01/2016"  effectdate="31/08/2016"
                       width="1000" height="220" top="110" left="350">
@@ -595,16 +595,16 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br/>
-        - Main Menu » Member Information » Casino Position Taking (%)<br/>
-        - Main Menu » Member Information » Member Commission » Casino<br/>
-        - Account Info » Setting » Enable Casino<br/>
-        - Account Info » Setting » Edit Casino<br/>
-        - Account Info » Downline List » Edit » Casino<br/>
-        - Bet List » View Details » View Result<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br />
+        - Main Menu » Member Information » Casino Position Taking (%)<br />
+        - Main Menu » Member Information » Member Commission » Casino<br />
+        - Account Info » Setting » Enable Casino<br />
+        - Account Info » Setting » Edit Casino<br />
+        - Account Info » Downline List » Edit » Casino<br />
+        - Bet List » View Details » View Result<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance. We care about your business!
@@ -620,16 +620,16 @@
         在此宣布 娱乐城 产品将在 <b>{effectdate}</b> 从 <b>13:00</b> 至 <b>15:00</b> 进行维护。 在这维护期间，以下功能将无法使用：
       </p>
       <p>
-        - 主要目录 >> 会员资料 >> 新增 下线<br/>
-        - [智能型手机] >> 会员 >> 新增会员<br/>
-        - 主要目录 >> 会员资料>> 下线名单 >> 修改 >> 娱乐城<br/>
-        - 主要目录 >> 会员资料 >> 下线名单 >> {多重} >> 修改多重娱乐城<br/>
-        - 主要目录 >> 会员资料>> 娱乐城占成数 (%)<br/>
-        - 主要目录 >> 会员资料 >> 会员佣金 >> 娱乐城<br/>
-        - 用户资料 >> 设定 >> 开启娱乐城<br/>
-        - 用户资料 >> 设定 >> 修改娱乐城<br/>
-        - 用户资料 >> 下线名单 >> 修改 >> 娱乐城<br/>
-        - 投注历史 >> 查看内容 >> 查看成绩<br/>
+        - 主要目录 >> 会员资料 >> 新增 下线<br />
+        - [智能型手机] >> 会员 >> 新增会员<br />
+        - 主要目录 >> 会员资料>> 下线名单 >> 修改 >> 娱乐城<br />
+        - 主要目录 >> 会员资料 >> 下线名单 >> {多重} >> 修改多重娱乐城<br />
+        - 主要目录 >> 会员资料>> 娱乐城占成数 (%)<br />
+        - 主要目录 >> 会员资料 >> 会员佣金 >> 娱乐城<br />
+        - 用户资料 >> 设定 >> 开启娱乐城<br />
+        - 用户资料 >> 设定 >> 修改娱乐城<br />
+        - 用户资料 >> 下线名单 >> 修改 >> 娱乐城<br />
+        - 投注历史 >> 查看内容 >> 查看成绩<br />
       </p>
       <p>
         对于此服务中断所造成的不便，我们深感抱歉。相信经过此维护我们的产品将改善成更出色，更稳定。因为我们更在乎敝公司的优良信誉！
@@ -645,16 +645,16 @@
         在此宣布 娛樂城 產品將在 <b>{effectdate}</b> 從 <b>13:00</b> 至 <b>15:00</b> 進行維護。在這維護期間，以下功能將無法使用：
       </p>
       <p>
-        - 主要目錄 >> 會員資料 >> 新增 下線<br/>
-        - [智能型手機] >> 會員 >> 新增會員<br/>
-        - 主要目錄 >> 會員資料 >> 下線名單 >> 修改 >> 娛樂城<br/>
-        - 主要目錄 >> 會員資料 >> 下線名單 >> {多重} >> 修改多重娛樂城<br/>
-        - 主要目錄 >> 會員資料>> 娛樂城佔成數 (%)<br/>
-        - 主要目錄 >> 會員資料 >> 會員佣金 >> 娛樂城<br/>
-        - 用戶資料 >> 設定 >> 開啟娛樂城<br/>
-        - 用戶資料 >> 設定 >> 修改娛樂城<br/>
-        - 用戶資料 >> 下線名單 >> 修改 >> 娛樂城<br/>
-        - 投注歷史 >> 查看內容 >> 查看成績<br/>
+        - 主要目錄 >> 會員資料 >> 新增 下線<br />
+        - [智能型手機] >> 會員 >> 新增會員<br />
+        - 主要目錄 >> 會員資料 >> 下線名單 >> 修改 >> 娛樂城<br />
+        - 主要目錄 >> 會員資料 >> 下線名單 >> {多重} >> 修改多重娛樂城<br />
+        - 主要目錄 >> 會員資料>> 娛樂城佔成數 (%)<br />
+        - 主要目錄 >> 會員資料 >> 會員佣金 >> 娛樂城<br />
+        - 用戶資料 >> 設定 >> 開啟娛樂城<br />
+        - 用戶資料 >> 設定 >> 修改娛樂城<br />
+        - 用戶資料 >> 下線名單 >> 修改 >> 娛樂城<br />
+        - 投注歷史 >> 查看內容 >> 查看成績<br />
       </p>
       <p>
         對於此服務中斷所造成的不便，我們深感抱歉。相信經過此維護我們的產品將改善成更出色，更穩定。因為我們更在乎敝公司的優良信譽！
@@ -671,16 +671,16 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br/>
-        - Main Menu » Member Information » Casino Position Taking (%)<br/>
-        - Main Menu » Member Information » Member Commission » Casino<br/>
-        - Account Info » Setting » Enable Casino<br/>
-        - Account Info » Setting » Edit Casino<br/>
-        - Account Info » Downline List » Edit » Casino<br/>
-        - Bet List » View Details » View Result<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br />
+        - Main Menu » Member Information » Casino Position Taking (%)<br />
+        - Main Menu » Member Information » Member Commission » Casino<br />
+        - Account Info » Setting » Enable Casino<br />
+        - Account Info » Setting » Edit Casino<br />
+        - Account Info » Downline List » Edit » Casino<br />
+        - Bet List » View Details » View Result<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance. We care about your business!
@@ -697,16 +697,16 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br/>
-        - Main Menu » Member Information » Casino Position Taking (%)<br/>
-        - Main Menu » Member Information » Member Commission » Casino<br/>
-        - Account Info » Setting » Enable Casino<br/>
-        - Account Info » Setting » Edit Casino<br/>
-        - Account Info » Downline List » Edit » Casino<br/>
-        - Bet List » View Details » View Result<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br />
+        - Main Menu » Member Information » Casino Position Taking (%)<br />
+        - Main Menu » Member Information » Member Commission » Casino<br />
+        - Account Info » Setting » Enable Casino<br />
+        - Account Info » Setting » Edit Casino<br />
+        - Account Info » Downline List » Edit » Casino<br />
+        - Bet List » View Details » View Result<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance. We care about your business!
@@ -722,16 +722,16 @@
         ทางบริษัทใคร่ขอแจ้งให้ทราบว่า OneRNG  จะทำการปิดปรับปรุงระบบในวันที่ <b>{effectdate}</b> from <b>13:00</b> to <b>15:00</b>.  เมนูดังต่อไปนี้จะไม่สามารถใช้งานได้จนกว่าจะแล้วเสร็จ
       </p>
       <p>
-        - เมนูหลัก >> ขอมูลสมาชิก >> สมาชิกใหม่<br/>
-        - [Smartphone] » สมาชิกใหม่ » เพิ่มสมาชิกใหม่<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >> รายชื่อลูกค้า >> แก้ไข >> คาสิโน<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >>  รายชื่อลูกค้า >> {Multiple} » แก้ไขคาสิโนแบบหลายบัญชี<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >> แบ่งสู้ในคาสิโน(%)<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >> คอมมิชชั่นของสมาชิก >> คาสิโน<br/>
-        - ข้อมูลบัญชี >> ตั้งค่า >> เปิดการใช้งานคาสิโน<br/>
-        - ข้อมูลบัญชี >> ตั้งค่า >> แก้ไขคาสิโน<br/>
-        - ข้อมูลบัญชี >>  รายชื่อลูกค้า >> แก้ไข >> คาสิโน<br/>
-        - รายการวางเดิมพัน >> ดูรายละเอียด >> ดูผลการแข่งขัน<br/>
+        - เมนูหลัก >> ขอมูลสมาชิก >> สมาชิกใหม่<br />
+        - [Smartphone] » สมาชิกใหม่ » เพิ่มสมาชิกใหม่<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >> รายชื่อลูกค้า >> แก้ไข >> คาสิโน<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >>  รายชื่อลูกค้า >> {Multiple} » แก้ไขคาสิโนแบบหลายบัญชี<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >> แบ่งสู้ในคาสิโน(%)<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >> คอมมิชชั่นของสมาชิก >> คาสิโน<br />
+        - ข้อมูลบัญชี >> ตั้งค่า >> เปิดการใช้งานคาสิโน<br />
+        - ข้อมูลบัญชี >> ตั้งค่า >> แก้ไขคาสิโน<br />
+        - ข้อมูลบัญชี >>  รายชื่อลูกค้า >> แก้ไข >> คาสิโน<br />
+        - รายการวางเดิมพัน >> ดูรายละเอียด >> ดูผลการแข่งขัน<br />
       </p>
       <p>
         บริษัทกราบขออภัยในความไม่สะดวก ซึ่งอาจส่งผลให้บริการเหล่านี้หยุดชะงักลงชั่วครวาว อย่างไรก็ตาม เราเชื่อว่าบริการของเราจะมีประสิทธิภาพและเสถียรมากขึ้นอีกเพื่อการดูแลธุรกิจของเอเจนต์ทุกๆ ท่าน
@@ -748,16 +748,16 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br/>
-        - Main Menu » Member Information » Casino Position Taking (%)<br/>
-        - Main Menu » Member Information » Member Commission » Casino<br/>
-        - Account Info » Setting » Enable Casino<br/>
-        - Account Info » Setting » Edit Casino<br/>
-        - Account Info » Downline List » Edit » Casino<br/>
-        - Bet List » View Details » View Result<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br />
+        - Main Menu » Member Information » Casino Position Taking (%)<br />
+        - Main Menu » Member Information » Member Commission » Casino<br />
+        - Account Info » Setting » Enable Casino<br />
+        - Account Info » Setting » Edit Casino<br />
+        - Account Info » Downline List » Edit » Casino<br />
+        - Bet List » View Details » View Result<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance. We care about your business!
@@ -778,12 +778,12 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Live Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br/>
-        - Account Info » Setting » Edit Live Casino<br/>
-        - Account Info » Downline List » Edit » Live Casino<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Live Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br />
+        - Account Info » Setting » Edit Live Casino<br />
+        - Account Info » Downline List » Edit » Live Casino<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance.
@@ -800,12 +800,12 @@
         在此宣布 娱乐厅 产品将在 <b>{effectdate}</b> 从 <b>13:00</b> 至 <b>15:00</b> 进行维护。 在这维护期间，以下功能将无法使用：
       </p>
       <p>
-        - 主要目录 >> 会员资料 >> 新增 下线<br/>
-        - [智能型手机] >> 会员 >> 新增会员<br/>
-        - 主要目录 >> 会员资料 >>  下线名单 >> 修改 >> 娱乐厅<br/>
-        - 主要目录 >> 会员资料 >> 下线名单 >> {多重} >> 修改多重真人荷官<br/>
-        - 用户资料 >> 设定 >> 修改娱乐厅<br/>
-        - 用户资料 >> 下线名单 >> 修改 >> 娱乐厅<br/>
+        - 主要目录 >> 会员资料 >> 新增 下线<br />
+        - [智能型手机] >> 会员 >> 新增会员<br />
+        - 主要目录 >> 会员资料 >>  下线名单 >> 修改 >> 娱乐厅<br />
+        - 主要目录 >> 会员资料 >> 下线名单 >> {多重} >> 修改多重真人荷官<br />
+        - 用户资料 >> 设定 >> 修改娱乐厅<br />
+        - 用户资料 >> 下线名单 >> 修改 >> 娱乐厅<br />
       </p>
       <p>
         对于此服务中断所造成的不便，我们深感抱歉。相信经过此维护我们的产品将改善成更出色，更稳定。因为我们更在乎敝公司的优良信誉！
@@ -821,12 +821,12 @@
         在此宣布 娛樂廳 產品將在 <b>{effectdate}</b> 從 <b>13:00</b> 至 <b>15:00</b> 進行維護。在這維護期間，以下功能將無法使用：
       </p>
       <p>
-        - 主要目錄 >> 會員資料 >> 新增 下線<br/>
-        - [智能型手機] >> 會員 >> 新增會員<br/>
-        - 主要目錄 >> 會員資料 >> 下線名單 >> 修改 >> 娛樂廳<br/>
-        - 主要目錄 >> 會員資料 >> 下線名單 >> {多重} >> 修改多重真人荷官<br/>
-        - 用戶資料 >> 設定 >> 修改娛樂廳<br/>
-        - 用戶資料 >> 下線名單 >> 修改 >> 娛樂廳<br/>
+        - 主要目錄 >> 會員資料 >> 新增 下線<br />
+        - [智能型手機] >> 會員 >> 新增會員<br />
+        - 主要目錄 >> 會員資料 >> 下線名單 >> 修改 >> 娛樂廳<br />
+        - 主要目錄 >> 會員資料 >> 下線名單 >> {多重} >> 修改多重真人荷官<br />
+        - 用戶資料 >> 設定 >> 修改娛樂廳<br />
+        - 用戶資料 >> 下線名單 >> 修改 >> 娛樂廳<br />
       </p>
       <p>
         對於此服務中斷所造成的不便，我們深感抱歉。相信經過此維護我們的產品將改善成更出色，更穩定。因為我們更在乎敝公司的優良信譽！
@@ -843,12 +843,12 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Live Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br/>
-        - Account Info » Setting » Edit Live Casino<br/>
-        - Account Info » Downline List » Edit » Live Casino<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Live Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br />
+        - Account Info » Setting » Edit Live Casino<br />
+        - Account Info » Downline List » Edit » Live Casino<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance.
@@ -866,12 +866,12 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Live Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br/>
-        - Account Info » Setting » Edit Live Casino<br/>
-        - Account Info » Downline List » Edit » Live Casino<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Live Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br />
+        - Account Info » Setting » Edit Live Casino<br />
+        - Account Info » Downline List » Edit » Live Casino<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance.
@@ -888,12 +888,12 @@
         ทางบริษัทใคร่ขอแจ้งให้ทราบว่า คาสิโนเกมสด  จะทำการปิดปรับปรุงระบบในวันที่ <b>{effectdate}</b> from <b>13:00</b> to <b>15:00</b>.  เมนูดังต่อไปนี้จะไม่สามารถใช้งานได้จนกว่าจะแล้วเสร็จ
       </p>
       <p>
-        - เมนูหลัก >> ขอมูลสมาชิก >> สมาชิกใหม่<br/>
-        - [Smartphone] » สมาชิกใหม่ » เพิ่มสมาชิกใหม่<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >>   รายชื่อลูกค้า > >> แก้ไข » แก้ไขคาสิโนสด<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >>  รายชื่อลูกค้า >> แก้ไข »  {Multiple} >> แก้ไขคาสิโนสดแบบหลายบัญชี<br/>
-        - ข้อมูลบัญชี >> ตั้งค่า >> แก้ไขคาสิโนสด<br/>
-        - ข้อมูลบัญชี >> รายชื่อลูกค้า >> แก้ไข » คาสิโนสด<br/>
+        - เมนูหลัก >> ขอมูลสมาชิก >> สมาชิกใหม่<br />
+        - [Smartphone] » สมาชิกใหม่ » เพิ่มสมาชิกใหม่<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >>   รายชื่อลูกค้า > >> แก้ไข » แก้ไขคาสิโนสด<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >>  รายชื่อลูกค้า >> แก้ไข »  {Multiple} >> แก้ไขคาสิโนสดแบบหลายบัญชี<br />
+        - ข้อมูลบัญชี >> ตั้งค่า >> แก้ไขคาสิโนสด<br />
+        - ข้อมูลบัญชี >> รายชื่อลูกค้า >> แก้ไข » คาสิโนสด<br />
       </p>
       <p>
         บริษัทกราบขออภัยในความไม่สะดวก ซึ่งอาจส่งผลให้บริการเหล่านี้หยุดชะงักลงชั่วครวาว อย่างไรก็ตาม เราเชื่อว่าบริการของเราจะมีประสิทธิภาพและเสถียรมากขึ้นอีกเพื่อการดูแลธุรกิจของเอเจนต์ทุกๆ ท่าน
@@ -910,12 +910,12 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Live Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br/>
-        - Account Info » Setting » Edit Live Casino<br/>
-        - Account Info » Downline List » Edit » Live Casino<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Live Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br />
+        - Account Info » Setting » Edit Live Casino<br />
+        - Account Info » Downline List » Edit » Live Casino<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance.
@@ -937,20 +937,20 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br/>
-        - Main Menu » Member Information » Casino Position Taking (%)<br/>
-        - Main Menu » Member Information » Member Commission » Casino<br/>
-        - Account Info » Setting » Enable Casino<br/>
-        - Account Info » Setting » Edit Casino<br/>
-        - Account Info » Downline List » Edit » Casino<br/>
-        - Bet List » View Details » View Result<br/>
-        - Main Menu » Member Information » Downline List » Edit » Live Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br/>
-        - Account Info » Setting » Edit Live Casino<br/>
-        - Account Info » Downline List » Edit » Live Casino<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br />
+        - Main Menu » Member Information » Casino Position Taking (%)<br />
+        - Main Menu » Member Information » Member Commission » Casino<br />
+        - Account Info » Setting » Enable Casino<br />
+        - Account Info » Setting » Edit Casino<br />
+        - Account Info » Downline List » Edit » Casino<br />
+        - Bet List » View Details » View Result<br />
+        - Main Menu » Member Information » Downline List » Edit » Live Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br />
+        - Account Info » Setting » Edit Live Casino<br />
+        - Account Info » Downline List » Edit » Live Casino<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance.
@@ -967,20 +967,20 @@
         在此宣布 娱乐城 及 娱乐厅 产品将在 <b>{effectdate}</b> 从 <b>13:00</b> 至 <b>15:00</b> 进行维护。 在这维护期间，以下功能将无法使用：
       </p>
       <p>
-        - 主要目录 >> 会员资料 >> 新增 下线<br/>
-        - [智能型手机] >> 会员 >> 新增会员<br/>
-        - 主要目录 >> 会员资料>> 下线名单 >> 修改 >> 娱乐城<br/>
-        - 主要目录 >> 会员资料 >> 下线名单 >> {多重} >> 修改多重娱乐城<br/>
-        - 主要目录 >> 会员资料>> 娱乐城占成数 (%)<br/>
-        - 主要目录 >> 会员资料 >> 会员佣金 >> 娱乐城<br/>
-        - 用户资料 >> 设定 >> 开启娱乐城<br/>
-        - 用户资料 >> 设定 >> 修改娱乐城<br/>
-        - 用户资料 >> 下线名单 >> 修改 >> 娱乐城<br/>
-        - 投注历史 >> 查看内容 >> 查看成绩<br/>
-        - 主要目录 >> 会员资料 >>  下线名单 >> 修改 >> 娱乐厅<br/>
-        - 主要目录 >> 会员资料 >> 下线名单 >> {多重} >> 修改多重真人荷官<br/>
-        - 用户资料 >> 设定 >> 修改娱乐厅<br/>
-        - 用户资料 >> 下线名单 >> 修改 >> 娱乐厅<br/>
+        - 主要目录 >> 会员资料 >> 新增 下线<br />
+        - [智能型手机] >> 会员 >> 新增会员<br />
+        - 主要目录 >> 会员资料>> 下线名单 >> 修改 >> 娱乐城<br />
+        - 主要目录 >> 会员资料 >> 下线名单 >> {多重} >> 修改多重娱乐城<br />
+        - 主要目录 >> 会员资料>> 娱乐城占成数 (%)<br />
+        - 主要目录 >> 会员资料 >> 会员佣金 >> 娱乐城<br />
+        - 用户资料 >> 设定 >> 开启娱乐城<br />
+        - 用户资料 >> 设定 >> 修改娱乐城<br />
+        - 用户资料 >> 下线名单 >> 修改 >> 娱乐城<br />
+        - 投注历史 >> 查看内容 >> 查看成绩<br />
+        - 主要目录 >> 会员资料 >>  下线名单 >> 修改 >> 娱乐厅<br />
+        - 主要目录 >> 会员资料 >> 下线名单 >> {多重} >> 修改多重真人荷官<br />
+        - 用户资料 >> 设定 >> 修改娱乐厅<br />
+        - 用户资料 >> 下线名单 >> 修改 >> 娱乐厅<br />
       </p>
       <p>
         对于此服务中断所造成的不便，我们深感抱歉。相信经过此维护我们的产品将改善成更出色，更稳定。因为我们更在乎敝公司的优良信誉！
@@ -996,20 +996,20 @@
         在此宣布 娛樂城 及 娛樂廳 產品將在 <b>{effectdate}</b> 從 <b>13:00</b> 至 <b>15:00</b> 進行維護。在這維護期間，以下功能將無法使用：
       </p>
       <p>
-        - 主要目錄 >> 會員資料 >> 新增 下線<br/>
-        - [智能型手機] >> 會員 >> 新增會員<br/>
-        - 主要目錄 >> 會員資料 >> 下線名單 >> 修改 >> 娛樂城<br/>
-        - 主要目錄 >> 會員資料 >> 下線名單 >> {多重} >> 修改多重娛樂城<br/>
-        - 主要目錄 >> 會員資料>> 娛樂城佔成數 (%)<br/>
-        - 主要目錄 >> 會員資料 >> 會員佣金 >> 娛樂城<br/>
-        - 用戶資料 >> 設定 >> 開啟娛樂城<br/>
-        - 用戶資料 >> 設定 >> 修改娛樂城<br/>
-        - 用戶資料 >> 下線名單 >> 修改 >> 娛樂城<br/>
-        - 投注歷史 >> 查看內容 >> 查看成績<br/>
-        - 主要目錄 >> 會員資料 >> 下線名單 >> 修改 >> 娛樂廳<br/>
-        - 主要目錄 >> 會員資料 >> 下線名單 >> {多重} >> 修改多重真人荷官<br/>
-        - 用戶資料 >> 設定 >> 修改娛樂廳<br/>
-        - 用戶資料 >> 下線名單 >> 修改 >> 娛樂廳<br/>
+        - 主要目錄 >> 會員資料 >> 新增 下線<br />
+        - [智能型手機] >> 會員 >> 新增會員<br />
+        - 主要目錄 >> 會員資料 >> 下線名單 >> 修改 >> 娛樂城<br />
+        - 主要目錄 >> 會員資料 >> 下線名單 >> {多重} >> 修改多重娛樂城<br />
+        - 主要目錄 >> 會員資料>> 娛樂城佔成數 (%)<br />
+        - 主要目錄 >> 會員資料 >> 會員佣金 >> 娛樂城<br />
+        - 用戶資料 >> 設定 >> 開啟娛樂城<br />
+        - 用戶資料 >> 設定 >> 修改娛樂城<br />
+        - 用戶資料 >> 下線名單 >> 修改 >> 娛樂城<br />
+        - 投注歷史 >> 查看內容 >> 查看成績<br />
+        - 主要目錄 >> 會員資料 >> 下線名單 >> 修改 >> 娛樂廳<br />
+        - 主要目錄 >> 會員資料 >> 下線名單 >> {多重} >> 修改多重真人荷官<br />
+        - 用戶資料 >> 設定 >> 修改娛樂廳<br />
+        - 用戶資料 >> 下線名單 >> 修改 >> 娛樂廳<br />
       </p>
       <p>
         對於此服務中斷所造成的不便，我們深感抱歉。相信經過此維護我們的產品將改善成更出色，更穩定。因為我們更在乎敝公司的優良信譽！
@@ -1026,20 +1026,20 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br/>
-        - Main Menu » Member Information » Casino Position Taking (%)<br/>
-        - Main Menu » Member Information » Member Commission » Casino<br/>
-        - Account Info » Setting » Enable Casino<br/>
-        - Account Info » Setting » Edit Casino<br/>
-        - Account Info » Downline List » Edit » Casino<br/>
-        - Bet List » View Details » View Result<br/>
-        - Main Menu » Member Information » Downline List » Edit » Live Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br/>
-        - Account Info » Setting » Edit Live Casino<br/>
-        - Account Info » Downline List » Edit » Live Casino<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br />
+        - Main Menu » Member Information » Casino Position Taking (%)<br />
+        - Main Menu » Member Information » Member Commission » Casino<br />
+        - Account Info » Setting » Enable Casino<br />
+        - Account Info » Setting » Edit Casino<br />
+        - Account Info » Downline List » Edit » Casino<br />
+        - Bet List » View Details » View Result<br />
+        - Main Menu » Member Information » Downline List » Edit » Live Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br />
+        - Account Info » Setting » Edit Live Casino<br />
+        - Account Info » Downline List » Edit » Live Casino<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance.
@@ -1057,20 +1057,20 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br/>
-        - Main Menu » Member Information » Casino Position Taking (%)<br/>
-        - Main Menu » Member Information » Member Commission » Casino<br/>
-        - Account Info » Setting » Enable Casino<br/>
-        - Account Info » Setting » Edit Casino<br/>
-        - Account Info » Downline List » Edit » Casino<br/>
-        - Bet List » View Details » View Result<br/>
-        - Main Menu » Member Information » Downline List » Edit » Live Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br/>
-        - Account Info » Setting » Edit Live Casino<br/>
-        - Account Info » Downline List » Edit » Live Casino<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br />
+        - Main Menu » Member Information » Casino Position Taking (%)<br />
+        - Main Menu » Member Information » Member Commission » Casino<br />
+        - Account Info » Setting » Enable Casino<br />
+        - Account Info » Setting » Edit Casino<br />
+        - Account Info » Downline List » Edit » Casino<br />
+        - Bet List » View Details » View Result<br />
+        - Main Menu » Member Information » Downline List » Edit » Live Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br />
+        - Account Info » Setting » Edit Live Casino<br />
+        - Account Info » Downline List » Edit » Live Casino<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance.
@@ -1087,20 +1087,20 @@
         ทางบริษัทใคร่ขอแจ้งให้ทราบว่า OneRNG และ คาสิโนสด จะทำการปิดปรับปรุงระบบในวันที่ <b>{effectdate}</b> from <b>13:00</b> to <b>15:00</b>.  เมนูดังต่อไปนี้จะไม่สามารถใช้งานได้จนกว่าจะแล้วเสร็จ
       </p>
       <p>
-        - เมนูหลัก >> ขอมูลสมาชิก >> สมาชิกใหม่<br/>
-        - [Smartphone] » สมาชิกใหม่ » เพิ่มสมาชิกใหม่<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >> รายชื่อลูกค้า >> แก้ไข >> คาสิโน<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >>  รายชื่อลูกค้า >> {Multiple} » แก้ไขคาสิโนแบบหลายบัญชี<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >> แบ่งสู้ในคาสิโน(%)<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >> คอมมิชชั่นของสมาชิก >> คาสิโน<br/>
-        - ข้อมูลบัญชี >> ตั้งค่า >> เปิดการใช้งานคาสิโน<br/>
-        - ข้อมูลบัญชี >> ตั้งค่า >> แก้ไขคาสิโน<br/>
-        - ข้อมูลบัญชี >>  รายชื่อลูกค้า >> แก้ไข >> คาสิโน<br/>
-        - รายการวางเดิมพัน >> ดูรายละเอียด >> ดูผลการแข่งขัน<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >>   รายชื่อลูกค้า > >> แก้ไข » แก้ไขคาสิโนสด<br/>
-        - เมนูหลัก >> ขอมูลสมาชิก >>  รายชื่อลูกค้า >> แก้ไข »  {Multiple} >> แก้ไขคาสิโนสดแบบหลายบัญชี<br/>
-        - ข้อมูลบัญชี >> ตั้งค่า >> แก้ไขคาสิโนสด<br/>
-        - ข้อมูลบัญชี >> รายชื่อลูกค้า >> แก้ไข » คาสิโนสด<br/>
+        - เมนูหลัก >> ขอมูลสมาชิก >> สมาชิกใหม่<br />
+        - [Smartphone] » สมาชิกใหม่ » เพิ่มสมาชิกใหม่<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >> รายชื่อลูกค้า >> แก้ไข >> คาสิโน<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >>  รายชื่อลูกค้า >> {Multiple} » แก้ไขคาสิโนแบบหลายบัญชี<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >> แบ่งสู้ในคาสิโน(%)<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >> คอมมิชชั่นของสมาชิก >> คาสิโน<br />
+        - ข้อมูลบัญชี >> ตั้งค่า >> เปิดการใช้งานคาสิโน<br />
+        - ข้อมูลบัญชี >> ตั้งค่า >> แก้ไขคาสิโน<br />
+        - ข้อมูลบัญชี >>  รายชื่อลูกค้า >> แก้ไข >> คาสิโน<br />
+        - รายการวางเดิมพัน >> ดูรายละเอียด >> ดูผลการแข่งขัน<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >>   รายชื่อลูกค้า > >> แก้ไข » แก้ไขคาสิโนสด<br />
+        - เมนูหลัก >> ขอมูลสมาชิก >>  รายชื่อลูกค้า >> แก้ไข »  {Multiple} >> แก้ไขคาสิโนสดแบบหลายบัญชี<br />
+        - ข้อมูลบัญชี >> ตั้งค่า >> แก้ไขคาสิโนสด<br />
+        - ข้อมูลบัญชี >> รายชื่อลูกค้า >> แก้ไข » คาสิโนสด<br />
       </p>
       <p>
         บริษัทกราบขออภัยในความไม่สะดวก ซึ่งอาจส่งผลให้บริการเหล่านี้หยุดชะงักลงชั่วครวาว อย่างไรก็ตาม เราเชื่อว่าบริการของเราจะมีประสิทธิภาพและเสถียรมากขึ้นอีกเพื่อการดูแลธุรกิจของเอเจนต์ทุกๆ ท่าน
@@ -1117,20 +1117,20 @@
         During this time these following relevant functions will not be available:
       </p>
       <p>
-        - Main Menu» Member Information» New Downline<br/>
-        - [Smartphone]» Member» Add New Member<br/>
-        - Main Menu » Member Information » Downline List » Edit » Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br/>
-        - Main Menu » Member Information » Casino Position Taking (%)<br/>
-        - Main Menu » Member Information » Member Commission » Casino<br/>
-        - Account Info » Setting » Enable Casino<br/>
-        - Account Info » Setting » Edit Casino<br/>
-        - Account Info » Downline List » Edit » Casino<br/>
-        - Bet List » View Details » View Result<br/>
-        - Main Menu » Member Information » Downline List » Edit » Live Casino<br/>
-        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br/>
-        - Account Info » Setting » Edit Live Casino<br/>
-        - Account Info » Downline List » Edit » Live Casino<br/>
+        - Main Menu» Member Information» New Downline<br />
+        - [Smartphone]» Member» Add New Member<br />
+        - Main Menu » Member Information » Downline List » Edit » Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Casino<br />
+        - Main Menu » Member Information » Casino Position Taking (%)<br />
+        - Main Menu » Member Information » Member Commission » Casino<br />
+        - Account Info » Setting » Enable Casino<br />
+        - Account Info » Setting » Edit Casino<br />
+        - Account Info » Downline List » Edit » Casino<br />
+        - Bet List » View Details » View Result<br />
+        - Main Menu » Member Information » Downline List » Edit » Live Casino<br />
+        - Main Menu » Member Information » Downline List » {Multiple} » Edit Multiple Live Casino<br />
+        - Account Info » Setting » Edit Live Casino<br />
+        - Account Info » Downline List » Edit » Live Casino<br />
       </p>
       <p>
         We apologize in advance for any inconveniences generated by these service interruptions, but we believe that our products will become more powerful and more stable after this maintenance.
@@ -1141,5 +1141,4 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-
 </FileDB>

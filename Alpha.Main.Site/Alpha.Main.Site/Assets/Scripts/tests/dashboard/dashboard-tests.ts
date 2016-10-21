@@ -5,17 +5,17 @@ describe("Test Dashboard class", () => {
     const dashBoard = new Dashboard($);
     const fakeElement = $("<div></div>");
 
-    let jquerySelectorInit, jqueryGetElementAttribute, jquerySetElementHtml, jqueryGet;
-
-    // Setup
-    beforeEach(() => {
-        jquerySelectorInit = spyOn($.fn, 'init').and.returnValue(fakeElement);
-        jqueryGetElementAttribute = spyOn(fakeElement, 'attr').and.returnValue('url');
-        jquerySetElementHtml = spyOn(fakeElement, 'html');
-        jqueryGet = spyOn($, 'get').and.callFake(() => { });
-    });
+    let jquerySelectorInit, jqueryGetElementAttribute, jquerySetElementHtml, jqueryAjax;
 
     describe("Test loadInfo method", () => {
+        // Setup
+        beforeEach(() => {
+            jquerySelectorInit = spyOn($.fn, 'init').and.returnValue(fakeElement);
+            jqueryGetElementAttribute = spyOn(fakeElement, 'attr').and.returnValue('url');
+            jquerySetElementHtml = spyOn(fakeElement, 'html');
+            jqueryAjax = spyOn($, 'ajax').and.callFake(() => { });
+        });
+
         it('Call jquerySelectorInit', () => {
             // Act
             dashBoard.loadInfo('#fakeId', null);
@@ -40,7 +40,7 @@ describe("Test Dashboard class", () => {
             dashBoard.loadInfo('#fakeId', null);
 
             // Assert
-            expect(jqueryGet).toHaveBeenCalled();
+            expect(jqueryAjax).toHaveBeenCalled();
         });
 
         [
@@ -55,7 +55,7 @@ describe("Test Dashboard class", () => {
                 dashBoard.loadInfo('#fakeId', null);
 
                 // Assert
-                expect(jqueryGet).not.toHaveBeenCalled();
+                expect(jqueryAjax).not.toHaveBeenCalled();
             });
         });
 
@@ -63,28 +63,27 @@ describe("Test Dashboard class", () => {
             // Arrange
             const url = 'url';
             const ajaxSettings = {
+                method: 'GET',
                 url: url,
-                onSuccess: () => { }
+                success: jasmine.any(Function)
             }
 
             jqueryGetElementAttribute.and.returnValue(url);
-            const createAjaxSettings = spyOn(dashBoard, 'createAjaxSettings').and.returnValue(ajaxSettings);
+            const createAjaxSettings = spyOn(dashBoard, 'createAjaxSettings').and.callThrough();
 
             // Act
             dashBoard.loadInfo('#fakeId', null);
 
             // Assert
-            expect(createAjaxSettings).toHaveBeenCalledWith(url, fakeElement, null);
-            expect(jqueryGet).toHaveBeenCalledWith(ajaxSettings);
+            expect(createAjaxSettings).toHaveBeenCalledWith(url, 'GET', fakeElement, null);
+            expect(jqueryAjax).toHaveBeenCalledWith(ajaxSettings);
         });
-    });
 
-    describe("Test createAjaxSettings method", () => {
-        it('Call exact methods on success', () => {
+        it('createAjaxSettings Call exact methods on success', () => {
             // Arrange
             const handleOnSuccessLoading = jasmine.createSpy('handleOnSuccessLoading');
-            jqueryGet.and.callFake((options) => {
-                options.onSuccess('responseHtml');
+            jqueryAjax.and.callFake((options) => {
+                options.success('responseHtml');
             });
 
             // Act
