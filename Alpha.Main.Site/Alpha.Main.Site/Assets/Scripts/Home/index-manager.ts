@@ -59,8 +59,7 @@ var indexManager = {
             type: "POST",
             url: indexManager.urls.reCheckinUrl,
             data: { onid: alpha.user.onUserId },
-            responseType: "json",
-            success: function (result) {
+            success: (result) => {
                 result = alpha.core.convertReponseToJson(result);
                 var errCode = result.errCode;
                 if (errCode === 0) {

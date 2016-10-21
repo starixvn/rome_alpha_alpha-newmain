@@ -1,4 +1,4 @@
-﻿class BalanceInfo {
+﻿class BalanceInfo extends Dashboard {
     registerEvent = () => {
         this.onSwipeInBalanceInfoMobileView();
     }
@@ -9,9 +9,7 @@
             stats = document.getElementById('stats'),
             statsTab = document.getElementById('stats-tab');
 
-        let balanceHM = new Hammer(balance);
-
-        balanceHM.on('swipeleft', () => {
+        this.$('#balance').hammer().on('swipeleft', () => {
             balance.classList.remove('active');
             balanceTab.classList.remove('active');
 
@@ -20,6 +18,3 @@
         });
     }
 }
-
-const balanceInfo = new BalanceInfo();
-balanceInfo.registerEvent();

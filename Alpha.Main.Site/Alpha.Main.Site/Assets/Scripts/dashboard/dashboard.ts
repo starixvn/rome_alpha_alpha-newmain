@@ -14,16 +14,17 @@ class Dashboard {
             url = $component.attr('action-url');
 
         if (url !== '' && typeof url !== 'undefined') {
-            const ajaxSettings = this.createAjaxSettings(url, $component, handleOnSuccessLoading);
+            const ajaxSettings = this.createAjaxSettings(url, 'GET', $component, handleOnSuccessLoading);
 
-            this.$.get(ajaxSettings);
+            this.$.ajax(ajaxSettings);
         }
     }
 
-    private createAjaxSettings = (url: string, component: any, handleOnSuccessLoading: any) => {
+    private createAjaxSettings = (url: string, method: string, component: any, handleOnSuccessLoading: any) => {
         const ajaxSetting = {
+            method: method,
             url: url,
-            onSuccess: (responseHtml) => {
+            success: (responseHtml) => {
                 component.html(responseHtml);
                 handleOnSuccessLoading();
             }

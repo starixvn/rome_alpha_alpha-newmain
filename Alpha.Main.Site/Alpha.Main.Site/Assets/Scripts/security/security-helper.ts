@@ -82,7 +82,6 @@ var securityHelper = {
             type: "POST",
             url: $("#mainRootPath").val() + 'Language/Change',
             data: { languageCode: lang },
-            responseType: "json",
             success: function (result) {
                 if (result !== undefined) {
                     window.location.reload();
@@ -106,8 +105,7 @@ var securityHelper = {
         $messageContainer.removeClass('msg-success');
         $messageContainer.addClass('msg-error').empty().html(failMessage);
     },
-    isValidPassword: function(password, isChangeMemberPassword = false)
-    {
+    isValidPassword: function (password, isChangeMemberPassword = false) {
         var whiteSpace = /^\S*$/;
         var whiteSpaceCase = password.search(whiteSpace) != -1;
 
@@ -130,8 +128,7 @@ var securityHelper = {
             return (case1 + case2 + case3 + case4 >= 3) && whiteSpaceCase;
         }
     },
-    showHint: function ()
-    {
+    showHint: function () {
         $('input[type=password]').each(function () {
             $(this).removeAttr("type").prop('type', 'text');
         })

@@ -86,9 +86,7 @@ class NoticeMessage extends Dashboard {
             notice = document.getElementById('notice'),
             noticeTab = document.getElementById('notice-tab');
 
-        let noticeHM = new Hammer(notice);
-
-        noticeHM.on("swiperight", () => {
+        $('#notice').hammer().on("swiperight", () => {
             notice.classList.remove('active');
             noticeTab.classList.remove('active');
 
@@ -98,9 +96,9 @@ class NoticeMessage extends Dashboard {
     }
 
     private hideMoreBtnIfHaveNoData = () => {
-        const noInfo = document.getElementById('no-info'),
-            messageAmount = $('.msg-contents').length,
-            moreTotalMessage = $('.more-info').attr('totalMsg');
+        const noInfo: Element = document.getElementById('no-info'),
+            messageAmount: number = $('.msg-contents').length,
+            moreTotalMessage: number = Number($('.more-info').attr('totalMsg'));
 
         if (noInfo !== null || moreTotalMessage > (messageAmount + 10)) {
             $('.more-info').hide();

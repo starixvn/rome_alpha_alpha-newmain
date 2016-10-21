@@ -2,6 +2,28 @@
 
 declare var EnjoyHint: any;
 
+interface IStep {
+    permission?: any;
+    nextButton?: any;
+    skipButton?: any;
+    isOldViewLink?: boolean;
+    "next #main-menu-items"?: string;
+    "next #menu-TRANSFER"?: string;
+    "next #menu-VIEWLOG"?: string;
+    "click #hamburger-icon"?: string;
+    'next #home-icon'?: string;
+    "next #btn-header-menu"?: string;
+    "next #old-view-link"?: string;
+    "next #replay-instruction"?: string;
+    shape?: any;
+    radius?: number;
+    showSkip?: boolean;
+    onBeforeStart?: () => void;
+    moveUp?: number;
+    arrowPointer?: Array<string>;
+    addLeftOffset?: number;
+}
+
 var introduction = {
     enjoyHint: null,
     readIntroductionCookieName: 'Instruction',
@@ -136,7 +158,7 @@ var introduction = {
 
     showMainSteps: function () {
         var isSiteBarCollapsed = menuBar.isSideBarCollapsed();
-        var fullSteps = [
+        var fullSteps: Array<IStep> = [
             {
                 "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
                 '<p>' + introduction.resources.MainMenuIntroduction + '</p>',

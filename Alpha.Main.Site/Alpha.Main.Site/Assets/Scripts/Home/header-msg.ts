@@ -107,7 +107,6 @@ var headerMessage = {
             $.ajax({
                 url: headerMessage.urls.updatePrivateMessageCount,
                 type: 'POST',
-                responseType: 'json',
                 success: function (rawResult) {
                     var result = alpha.core.convertReponseToJson(rawResult);
                     if (result.errCode === 0) {
@@ -282,7 +281,6 @@ var headerMessage = {
         $.ajax({
             type: "POST",
             url: headerMessage.urls.getMessages,
-            responseType: "json",
             success: function (rawResults) {
                 try {
                     var results = alpha.core.convertReponseToJson(rawResults);

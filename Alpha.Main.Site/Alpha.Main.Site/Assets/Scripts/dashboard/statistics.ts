@@ -37,9 +37,7 @@
             notice = document.getElementById('notice'),
             noticeTab = document.getElementById('notice-tab');
 
-        let statsHM = new Hammer(stats);
-
-        statsHM.on("swiperight", () => {
+        $('#stats').hammer().on("swiperight", () => {
             stats.classList.remove('active');
             statsTab.classList.remove('active');
 
@@ -47,7 +45,7 @@
             balanceTab.classList.add('active');
         });
 
-        statsHM.on("swipeleft", () => {
+        $('#stats').hammer().on("swipeleft", () => {
             stats.classList.remove('active');
             statsTab.classList.remove('active');
 

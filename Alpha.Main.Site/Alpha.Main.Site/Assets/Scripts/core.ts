@@ -1,5 +1,5 @@
 ﻿declare var isMobile: any;
-declare var $: any;
+//declare var $: any;
 
 var alpha = {
     urls:

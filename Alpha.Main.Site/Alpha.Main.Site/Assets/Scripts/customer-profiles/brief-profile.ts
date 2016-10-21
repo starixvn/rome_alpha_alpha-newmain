@@ -1,7 +1,7 @@
 ﻿/// <reference path="../core.ts" />
 
 'use strict';
-declare var $: any;
+//declare var $: any;
 
 var briefProfile = {
     maxCountShowTooltip: 4,

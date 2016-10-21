@@ -191,7 +191,7 @@ var headerNav = {
 
             $(".blockUI").click(onCloseSearchBar);
 
-            topSearchInput.typeahead({
+            const typeaheadOptions: TypeaheadOptions = {
                 minLength: 3,
                 items: 10,
                 name: 'userNames',
@@ -199,7 +199,9 @@ var headerNav = {
                 delay: 200,
                 source: getSuggestions,
                 afterSelect: afterSelectSuggestionItem
-            });
+            };
+
+            topSearchInput.typeahead(typeaheadOptions);
         });
 
         // Annoucement popup for mobile
@@ -220,7 +222,6 @@ var headerNav = {
             type: "POST",
             url: headerNav.urls.changeLanguage,
             data: { languageCode: lang },
-            responseType: "json",
             success: function (result) {
                 if (result !== undefined) {
                     // Remove www so that subdomain can override LANGUAGE value
