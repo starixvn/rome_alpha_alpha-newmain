@@ -22,10 +22,15 @@ body {
     }
 
     .row-first {
-        color: #8c8c8c;
+        color: #666;
+        font:{
+            style: italic;
+            size: 12px;
+        }
 
         .messageId {
-            margin-left: 4px;
+            margin-left: 16px;
+            color: #b25900;
         }
     }
 
