@@ -1,5 +1,4 @@
 ﻿#pragma warning disable 612, 618
-
 namespace Alpha.Main
 {
     using System;
@@ -8,10 +7,10 @@ namespace Alpha.Main
     using System.Linq;
     using System.Web;
     using Helpers;
-    using Models.Menus;
-    using Sunplus.Agent.Utilities;
+    using Models.Menus;    
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
+    using Sunplus.Agent.Utilities;
 
     public static class FunctionRegistry
     {
@@ -86,7 +85,7 @@ namespace Alpha.Main
                 return string.Empty;
             }
 
-            var _defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
+            var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
             var currentUrlCookieName = CookieHelper.GetCurrentUrlCookieName(Current.CustId, Current.SubAccId, Encryption.PearsonEncode);
 
             var currentURLCookie = HttpContext.Current.Request.Cookies[currentUrlCookieName];
@@ -101,7 +100,7 @@ namespace Alpha.Main
             if (currentURLCookie != null &&
                 !string.IsNullOrWhiteSpace(currentURLCookie.Value) &&
                 !Current.IsInternal &&
-                !ignoreUrls.Where(str => currentURLCookie.Value.Contains(str)).Any())
+                !ignoreUrls.Any(str => currentURLCookie.Value.Contains(str)))
             {
                 if (!string.IsNullOrWhiteSpace(currentURLCookie.Value)
                 && (currentURLCookie.Value.ToLower().Contains("http") || currentURLCookie.Value.ToLower().Contains("https")))
@@ -122,7 +121,7 @@ namespace Alpha.Main
                 }
             }
 
-            return _defaultMainPage;
+            return defaultMainPage;
         };
 
         public static Func<bool> ShowAccountInfo
