@@ -47,3 +47,32 @@
 @Html.Hidden("ReplayInstruction", Resources.ReplayInstruction)
 @Html.Hidden("TakeTourInstruction", Resources.TakeTourInstruction)
 @Html.Hidden("IsCookieLess", HttpContext.Current.Session.IsCookieless ? "1" : "0")
+
+<!-- For mobile -->
+<div class="blockUI-mobile"></div>
+<div class="modal fade instruction-mobile in" id="instruction-mobile">
+    <div class="modal-dialog ex-modal">
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <!-- Line -->
+                <div class="line-pointer search"></div>
+                <div class="line-pointer message"></div>
+                <div class="line-pointer announcement"></div>
+                <div class="line-pointer setting"></div>
+
+                <div class="txt-instru search">Search account</div>
+                <div class="txt-instru message">View message</div>
+                <div class="txt-instru announcement">View announcement</div>
+                <div class="txt-instru setting">
+                    <ul>
+                        <li>Change language</li>
+                        <li>Logout</li>
+                    </ul>
+                    
+                </div>
+                <div class="button-close"><span class="icon-close"></span></div>
+            </div>
+        </div>
+    </div>
+</div>

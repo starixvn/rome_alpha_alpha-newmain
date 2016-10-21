@@ -1,4 +1,7 @@
-﻿//-------------------------------MODAL STYLE----------------------//
+﻿@import '../Home/_variables.scss';
+@import '../Home/_mixins.scss';
+
+//-------------------------------MODAL STYLE----------------------//
 .modal-dialog.largeModal {
     @media (min-width: 768px) {
         width: 900px;
@@ -331,5 +334,212 @@
     100% {
         opacity: 1;
         transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+// For mobile 
+
+.instruction-mobile, .blockUI-mobile {
+    display: none;
+
+    .line-pointer, .txt-instru {
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-device-width: $screen-device-lower768) {
+    .blockUI-mobile {
+        display: block;
+        background-color: #000;
+        opacity: 0.8;
+        position: fixed;
+        top: 48px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+         z-index: 99998; 
+    }
+
+    .instruction-mobile {
+        background: none;
+        display: block;
+        position: fixed;
+        top: 48px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99999;        
+
+        .modal-dialog.ex-modal {
+            height: 100%;
+        }
+
+        .modal-content {
+            background: none;
+
+            .modal-body {
+                padding: 16px 20px 0;
+                position: absolute;
+                top: 0;
+                bottom: 40px;
+                width: 100%;
+                max-height: initial;
+
+                .line-pointer {
+                    width: 3px;
+                    top: 5px;
+                    position: fixed;
+
+                    &:before {
+                        content: '';
+                        width: 10px;
+                        height: 10px;
+                        @include border-radius(50%);
+                        border: 2px solid #fff;
+                        position: absolute;
+                        top: 0;
+                    }
+
+                    &:after {
+                        content: '';
+                        background: #fff;
+                        width: 1px;
+                        left: 5px;
+                        position: absolute;
+                        top: 8px;
+                    }
+
+                    &.search {
+                        @include animation('LineHighlight 0.2s ease-out 1.4s forwards 1');
+                        right: 164px;
+
+                        &:after {
+                            height: 54px;
+                        }
+                    }
+
+                    &.message {
+                        right: 116px;
+                        @include animation('LineHighlight 0.2s ease-out 3s forwards 1');
+
+                        &:after {
+                            height: 109px;
+                        }
+                    }
+
+                    &.announcement {
+                        right: 74px;
+                        @include animation('LineHighlight 0.2s ease-out 4.6s forwards 1');
+
+                        &:after {
+                            height: 163px;
+                        }
+                    }
+
+                    &.setting {
+                        right: 29px;
+                        @include animation('LineHighlight 0.2s ease-out 6.2s forwards 1');
+
+                        &:after {
+                            height: 219px;
+                        }
+                    }
+                }
+                
+                .txt-instru {
+                    background-color: #67151b;
+                    padding: 12px 20px;
+                    position: absolute;
+                    color: #fff;
+                    white-space: nowrap;
+                    font-size: 20px;
+                    @include border-radius(2px);
+
+                    &.search {
+                        top: 30px;
+                        right: 148px; 
+                        @include animation('slideLeftForText 0.4s ease-out 0.4s forwards 1');
+                    }
+
+                    &.message {
+                        top: 86px;
+                        right: 100px;
+                        @include animation('slideLeftForText 0.4s ease-out 2s forwards 1');
+                    }
+
+                    &.announcement {
+                        top: 143px;
+                        right: 56px;
+                        @include animation('slideLeftForText 0.4s ease-out 3.6s forwards 1');
+                    }
+
+                    &.setting {
+                        top: 201px;
+                        right: 15px;
+                        @include animation('slideLeftForText 0.4s ease-out 5.2s forwards 1');
+
+                        ul {
+                            list-style-type: disc;
+                            padding-left: 20px;
+                            margin-bottom: 0;
+
+                            li {
+                                padding: 4px 0;
+                            }
+                        }
+                    }
+                }
+
+                .button-close {
+                    background-color: #e53935;
+                    position: fixed;
+                    right: 20px;
+                    bottom: 20px;
+                    width: 74px;
+                    height: 74px;
+                    font-size: 24px;
+                    color: #fff!important;
+                    text-align: center;
+                    @include border-radius(50%);
+                    @include box-shadow('0 6px 10px rgba(0,0,0,.15)');
+
+                    .icon-close {
+                        position: relative;
+                        top: 20px;
+                        font-size: 32px;
+                    }
+                }
+            }
+
+            @keyframes LineHighlight {
+                0% {
+                    opacity: 0;
+                    transform: translate3d(0, 20px, 0);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            @keyframes slideLeftForText {
+                0% {
+                    opacity: 0;
+                    transform: translate3d(200px, 0, 0);
+                }
+
+                90% {
+                    opacity: 1;
+                    transform: translate3d(6px, 0, 0);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+        }
     }
 }
