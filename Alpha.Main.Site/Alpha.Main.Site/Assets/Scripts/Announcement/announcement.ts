@@ -12,6 +12,7 @@ var announcement = {
         popUpPanel: null,
         popUpContainer: null,
         popUpContainerText: null,
+        popUpContainerTextNoContent: null,
         hideAdvertisement: null,
         announcementCookieId: null,
         prevButton: null,
@@ -45,20 +46,21 @@ var announcement = {
         announcement.domElements.popUpPanel = $("#popup_panel");
         announcement.domElements.popUpContainer = $('#popup-container');
         announcement.domElements.popUpContainerText = $('#popup-container-text');
+        announcement.domElements.popUpContainerTextNoContent = $('#popup-container-text-no-content');
         announcement.domElements.hideAdvertisement = $("#popup-container #chkHide");
         announcement.domElements.announcementCookieId = $("#announcement-cookies-id");
         announcement.domElements.prevButton = $("#prevButton");
         announcement.domElements.nextButton = $("#nextButton");
     },
 
-    loadAnnouncement: function () {
+    loadAnnouncement: () => {
         $.ajax({
             type: "POST",
             url: announcement.urls.hotAnnouncement,
             data: {
                 messageIds: announcement.showedMessageIds.join(',')
             },
-            success: function (data) {
+            success: (data) => {
                 announcement.showAnnouncement(data);
 
                 if (!alpha.isScreenLower768) {
@@ -99,7 +101,6 @@ var announcement = {
                 messageIds: announcement.showedMessageIds.join(','),
                 announmentNext: 1
             },
-            responseType: "json",
             success: function (data) {
                 announcement.showAnnouncement(data);
                 announcement
@@ -112,7 +113,9 @@ var announcement = {
     showAnnouncement: function (result) {
         var text = result;
         if (text.length < 10) {
-            return;
+            toastr.options.positionClass = 'toast-top-full-width';
+            toastr.options.timeOut = 1000;
+            toastr.info('No Announcement Is Available!').css('background-color', 'red');
         }
 
         announcement.removeAnnouncement();
@@ -267,7 +270,6 @@ var announcement = {
                 messageIds: announcement.showedMessageIds.join(','),
                 announmentNext: 1
             },
-            responseType: "json",
             success: (result) => {
                 announcement.appendNewAnnouncementToPopup(result);
 
@@ -289,7 +291,6 @@ var announcement = {
                     messageIds: announcement.showedMessageIds.join(','),
                     announmentNext: 1
                 },
-                responseType: "json",
                 success: (result: string) => {
                     if (result.length > 10) {
                         announcement.showRedCircleInIconAnnouncementMobile();
@@ -311,7 +312,6 @@ var announcement = {
                 messageIds: announcement.showedMessageIds.join(','),
                 announmentNext: 1
             },
-            responseType: "json",
             success: callBack
         });
     },
