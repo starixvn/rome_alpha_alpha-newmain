@@ -428,7 +428,7 @@
                     }
 
                     &.announcement {
-                        right: 74px;
+                        right: 71px;
                         @include animation('LineHighlight 0.2s ease-out 4.6s forwards 1');
 
                         &:after {
@@ -437,7 +437,7 @@
                     }
 
                     &.setting {
-                        right: 29px;
+                        right: 26px;
                         @include animation('LineHighlight 0.2s ease-out 6.2s forwards 1');
 
                         &:after {
@@ -494,7 +494,7 @@
                     background-color: #e53935;
                     position: fixed;
                     right: 20px;
-                    bottom: 20px;
+                    bottom: 42px;
                     width: 74px;
                     height: 74px;
                     font-size: 24px;

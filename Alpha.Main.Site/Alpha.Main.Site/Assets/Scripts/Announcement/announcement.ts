@@ -115,7 +115,7 @@ var announcement = {
         if (text.length < 10) {
             if (alpha.isScreenLower768) {
                 toastr.options.positionClass = 'toast-top-full-width';
-                toastr.options.timeOut = 1000;
+                toastr.options.timeOut = 2000;
                 toastr.info('No Announcement Is Available!');
             }
 
