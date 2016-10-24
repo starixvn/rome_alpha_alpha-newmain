@@ -10,6 +10,7 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=0.7, minimum-scale=0.1, maximum-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.Render($"/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
     <!--[if (gt IE 8)|!(IE)]><!-->
