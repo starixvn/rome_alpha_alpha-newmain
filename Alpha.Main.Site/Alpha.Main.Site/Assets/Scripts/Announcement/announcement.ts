@@ -113,9 +113,13 @@ var announcement = {
     showAnnouncement: function (result) {
         var text = result;
         if (text.length < 10) {
-            toastr.options.positionClass = 'toast-top-full-width';
-            toastr.options.timeOut = 1000;
-            toastr.info('No Announcement Is Available!').css('background-color', 'red');
+            if (alpha.isScreenLower768) {
+                toastr.options.positionClass = 'toast-top-full-width';
+                toastr.options.timeOut = 1000;
+                toastr.info('No Announcement Is Available!').css('background-color', 'red');
+            }
+
+            return;
         }
 
         announcement.removeAnnouncement();
