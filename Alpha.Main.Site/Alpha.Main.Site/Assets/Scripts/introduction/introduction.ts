@@ -1,4 +1,5 @@
 ﻿/// <reference path="../home/menu-bar.ts" />
+/// <reference path="./mobile-introduction.ts" />
 
 declare var EnjoyHint: any;
 
@@ -26,8 +27,9 @@ interface IStep {
 
 var introduction = {
     enjoyHint: null,
-    readIntroductionCookieName: 'Instruction',
+    readIntroductionKey: 'Instruction',
     isCookieLess: (<HTMLInputElement>document.getElementById('IsCookieLess')).value === "1",
+    mobileIntroduction: null,
 
     domElements: {
         beginModal: null,
@@ -36,10 +38,7 @@ var introduction = {
         markInner: null,
         replayInstruction: null,
         modalInstructionBody: null,
-        oldViewLink: null,
-        mobileBlockUI: null,
-        mobileIntroModal: null,
-        mobileCloseIntroBtn: null
+        oldViewLink: null
     },
 
     resources: {
@@ -67,21 +66,29 @@ var introduction = {
         TakeTourInstruction: (<HTMLInputElement>document.getElementById('TakeTourInstruction')).value
     },
 
-    init: function () {
-        var isReadIntroduction = $.cookie(introduction.readIntroductionCookieName);
+    init: () => {
+        if (!alpha.isScreenLower768) {
+            const isReadIntroduction = alpha.localStorage.get(introduction.readIntroductionKey);
 
-        introduction.cacheDOMElements();
-        introduction.registerEvents();
+            introduction.cacheDOMElements();
+            introduction.registerEvents();
 
-        if (isReadIntroduction) {
-            return;
+            if (isReadIntroduction) {
+                return;
+            }
+
+            if (!introduction.isCookieLess && !isReadIntroduction) {
+                introduction.domElements.beginModal.modal('show');
+                $('.modal-backdrop').css('z-index', 1051);
+
+                introduction.showDelayFirstIntroduction();
+            }
         }
-
-        if (!introduction.isCookieLess && !isReadIntroduction && !alpha.isScreenLower768) {
-            introduction.domElements.beginModal.modal('show');
-            $('.modal-backdrop').css('z-index', 1051);
-
-            introduction.showDelayFirstIntroduction();
+        else if (alpha.isScreenLower768) {
+            introduction.mobileIntroduction = new Introduction.MobileIntroduction($);
+            if (!introduction.mobileIntroduction.readIntroduction()) {
+                introduction.mobileIntroduction.showIntroduction();
+            }
         }
     },
 
@@ -93,9 +100,6 @@ var introduction = {
         introduction.domElements.notNowIntroductionBtn = $("#not-now-introduction-btn");
         introduction.domElements.modalInstructionBody = $('#instruction-modal-body');
         introduction.domElements.oldViewLink = $('#old-view-link a');
-        introduction.domElements.mobileBlockUI = $('.blockUI-mobile');
-        introduction.domElements.mobileIntroModal = $('#instruction-mobile');
-        introduction.domElements.mobileCloseIntroBtn = $('#instruction-mobile').find('.button-close');
     },
 
     showDelayFirstIntroduction: function () {
@@ -111,7 +115,7 @@ var introduction = {
             $span.css({
                 "transition-delay": i * delay + "ms"
             });
-            $tempEl.append($span)
+            $tempEl.append($span);
         });
 
         $p.html($tempEl.html());
@@ -148,11 +152,6 @@ var introduction = {
         introduction.domElements.replayInstruction
             .off('click.replay-introduction')
             .on('click.replay-introduction', introduction.showMainSteps);
-
-        introduction.domElements.mobileCloseIntroBtn.on('click', () => {
-            introduction.domElements.mobileBlockUI.hide();
-            introduction.domElements.mobileIntroModal.hide();
-        });
     },
 
     showNotNowSteps: function () {
@@ -278,21 +277,11 @@ var introduction = {
         }
     },
 
-    getCookieExpireOptions: function () {
-        var cookieExpire: any = { expires: 365, path: window.location.pathname };
-
-        if (alpha.core.isIe()) {
-            cookieExpire = { expires: 365 };
-        }
-
-        return cookieExpire;
-    },
-
     setReadIntroduction: function () {
-        $.cookie(introduction.readIntroductionCookieName, true, introduction.getCookieExpireOptions());
+        alpha.localStorage.set(introduction.readIntroductionKey, true);
     }
 };
 
-$(function () {
+$(() => {
     introduction.init();
 });

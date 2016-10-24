@@ -840,6 +840,7 @@
     <Content Include="typings\globals\bootstrap\typings.json" />
     <Content Include="typings\globals\jqueryui\typings.json" />
     <Content Include="typings\globals\toastr\typings.json" />
+    <Content Include="typings\globals\storejs\typings.json" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>
@@ -874,6 +875,7 @@
     <TypeScriptCompile Include="typings\globals\jquery.cookie\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jqueryui\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jquery\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\storejs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\toastr\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>

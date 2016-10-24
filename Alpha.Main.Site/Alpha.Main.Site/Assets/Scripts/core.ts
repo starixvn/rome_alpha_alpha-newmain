@@ -58,7 +58,8 @@ var alpha = {
             var ua = window.navigator.userAgent;
             var msie = ua.indexOf("MSIE ");
 
-            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))
+            // If Internet Explorer, return version number
             {
                 return true;
             }
@@ -87,19 +88,37 @@ var alpha = {
 
         if (currentWindowWidth < 768) {
             alpha.isScreenLower768 = true;
-        }
-        else if (currentWindowWidth <= 1024) {
+        } else if (currentWindowWidth <= 1024) {
             alpha.isScreenGreater768AndLower1024 = true;
-        }
-        else {
+        } else {
             alpha.isScreenGreater1024 = true;
         }
 
         alpha.isMobile = isMobile.any;
+    },
+
+    localStorage: {
+        get: (key: string) => {
+            return store.enabled ? store.get(key) : $.cookie(key);
+        },
+
+        set: (key: string, value: any) => {
+            store.enabled ? store.set(key, value) : $.cookie(key, value, this.getCookieExpireOptions());
+        },
+
+        getCookieExpireOptions: () => {
+            var cookieExpire: any = { expires: 365, path: window.location.pathname };
+
+            if (alpha.core.isIe()) {
+                cookieExpire = { expires: 365 };
+            }
+
+            return cookieExpire;
+        },
     }
 };
 
-$(function () {
+$(() => {
     $.ajaxSetup({
         beforeSend: function (xhr) {
             var antiXSRFToken = document.getElementsByName("__RequestVerificationToken");
