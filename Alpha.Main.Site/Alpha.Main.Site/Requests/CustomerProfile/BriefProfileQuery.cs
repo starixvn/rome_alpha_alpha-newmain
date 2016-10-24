@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Models.Requests.CustomerProfile
 {
     using MediatR;
+    using SecurityCode.Web;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.CustomerProfile;
 
@@ -66,6 +67,14 @@
             get
             {
                 return this.userSession.AdminName;
+            }
+        }
+
+        public bool IsEnabledOtp
+        {
+            get
+            {
+                return SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
             }
         }
     }

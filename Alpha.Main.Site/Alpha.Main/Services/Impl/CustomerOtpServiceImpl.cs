@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
     using System;
+    using AppResources;
     using Criteria.Otp;
     using Fanex.Data.Repository;
     using Helpers;
@@ -113,9 +114,11 @@
                 throw new ArgumentNullException(nameof(param), "Set Up Otp Parameters cannot be null");
             }
 
-            if (string.IsNullOrWhiteSpace(param.Language))
+            var isCorrect = otpService.VerifyOtp(param.SecretKey, param.Otp, TimePeriod, OtpSize);
+
+            if (!isCorrect)
             {
-                throw new ArgumentOutOfRangeException(nameof(param.Language), "Language cannot be null or white space");
+                return Result.CreateErrorResult(Security.OtpIsInvalidOrExpired);
             }
 
             var deviceInfoSerialized = jsonHelper.Serialize(param.DeviceInfo);
@@ -163,7 +166,7 @@
             var result = new Result
             {
                 Code = changeStatusCommand.ErrCode,
-                Message = changeStatusCommand.ErrMsg
+                Message = isCorrect ? changeStatusCommand.ErrMsg : Security.OtpIsInvalidOrExpired
             };
 
             if (!isCorrect
@@ -203,6 +206,11 @@
                     SubAccID = subAccountId
                 });
 
+            if(customerOtpDto == null)
+            {
+                return new CustomerOtp();
+            }
+
             return new CustomerOtp
             {
                 CustID = customerOtpDto.CustID,
@@ -237,7 +245,7 @@
                 Message = command.ErrMsg
             };
 
-            if (param.IsDisableOtp 
+            if (param.IsDisableOtp
                 && deleteResult.IsSuccessful)
             {
                 return ChangeOtpStatus(new ChangeOtpStatusParam

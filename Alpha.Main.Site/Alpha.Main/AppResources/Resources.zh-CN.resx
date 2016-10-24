@@ -412,4 +412,7 @@
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>快速游览手册教学</value>
   </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>禁用</value>
+  </data>
 </root>

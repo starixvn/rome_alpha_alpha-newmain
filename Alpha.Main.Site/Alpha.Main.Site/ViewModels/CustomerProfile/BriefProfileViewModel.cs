@@ -26,5 +26,7 @@ namespace Alpha.Main.Site.ViewModels.CustomerProfile
         public string NickName { get; set; }
 
         public string IntroduceNickNameTooltipCookieName { get; set; }
+
+        public bool IsEnableOtp { get; set; }
     }
 }

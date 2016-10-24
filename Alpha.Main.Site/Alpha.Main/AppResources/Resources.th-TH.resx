@@ -412,4 +412,7 @@
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>คู่มือรวบรัด</value>
   </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>ปิดการใช้งาน</value>
+  </data>
 </root>

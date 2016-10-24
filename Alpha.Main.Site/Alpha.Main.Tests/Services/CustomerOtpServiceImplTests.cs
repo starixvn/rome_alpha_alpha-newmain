@@ -1,13 +1,12 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using System;
-    using CasinoLibrary.SBAgent;
+    using AppResources;
     using Criteria.Otp;
     using Fanex.Data.Repository;
     using Main.Helpers;
     using Main.Models;
     using Main.Models.Otp;
-    using Main.Services;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
@@ -224,12 +223,28 @@
             Assert.Throws<ArgumentNullException>(() => customerOtpService.SetUpOtp(null));
         }
 
-        [TestCase("")]
-        [TestCase(" ")]
-        [TestCase(null)]
-        public void SetUpOtp_LanguageIsNullOrWhiteSpace_ThrowArgumentOutOfRangeException(string language)
+        [Test]
+        public void SetUpOtp_CurrentOtpDoesNotMatchWithSecretKey_ReturnErrorResult()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => customerOtpService.SetUpOtp(new CustomerOtp { Language = language }));
+            // Arrange
+            var customerOtp = new CustomerOtp
+            {
+                CustID = 1,
+                SubAccId = 2,
+                Enabled = true,
+                Otp = "333",
+                QrCode = "aaa",
+                SecretKey = "4545",
+                Language = "E"
+            };
+
+            otpService.VerifyOtp(customerOtp.SecretKey, customerOtp.Otp, 30, 6).Returns(false);
+
+            // Act
+            var result = customerOtpService.SetUpOtp(customerOtp);
+
+            // Assert
+            Assert.IsTrue(result.IsNotOk);
         }
 
         [Test]
@@ -253,6 +268,7 @@
                 SecretKey = "4545",
                 Language = "E"
             };
+            otpService.VerifyOtp(customerOtp.SecretKey, customerOtp.Otp, 30, 6).Returns(true);
 
             // Act
             customerOtpService.SetUpOtp(customerOtp);
@@ -287,6 +303,7 @@
                 SecretKey = "4545",
                 Language = "E"
             };
+            otpService.VerifyOtp(customerOtp.SecretKey, customerOtp.Otp, 30, 6).Returns(true);
             var deviceInfoSerialized = "deviceInfoSerialized";
             jsonHelper.Serialize(Arg.Any<object>()).Returns(deviceInfoSerialized);
 
@@ -321,6 +338,7 @@
                 Code = 3,
                 Message = "Message"
             };
+            otpService.VerifyOtp(customerOtp.SecretKey, customerOtp.Otp, 30, 6).Returns(true);
             dynamicRepository
                 .When(repo => repo.Execute(Arg.Any<InsertCustomerOtpCommand>()))
                 .Do((callInfo) =>
@@ -370,7 +388,7 @@
             // Assert
             dynamicRepository.Received()
                 .Get<CustomerOtpDto>(
-                    Arg.Is<GetCustomerOtpCriteria>(criteria => 
+                    Arg.Is<GetCustomerOtpCriteria>(criteria =>
                         criteria.CustID == custId
                         && criteria.SubAccID == subAccountId));
         }
@@ -384,11 +402,11 @@
             var customerDeviceInfoJson = "customerDeviceInfoJson";
             dynamicRepository.Get<CustomerOtpDto>(Arg.Any<GetCustomerOtpCriteria>())
                 .Returns(new CustomerOtpDto
-            {
-                DeviceInfo = customerDeviceInfoJson,
-                CustID = custId,
-                SubAccId = subAccountId
-            });
+                {
+                    DeviceInfo = customerDeviceInfoJson,
+                    CustID = custId,
+                    SubAccId = subAccountId
+                });
 
             // Act
             customerOtpService.GetCustomerOtp(custId, subAccountId);
@@ -435,7 +453,7 @@
                 && actualCustomerOtp.DeviceInfo.DeviceVersion == deserializedDevicedInfo.DeviceVersion);
         }
 
-        #endregion
+        #endregion Get Cutomer OTP
 
         #region Verify Otp
 
@@ -555,6 +573,28 @@
         }
 
         [Test]
+        public void VerifyOtp_OtpIsInCorrect_ReturnInvalidOtpMessage()
+        {
+            // Arrange
+            var actualCustomerOtp = new CustomerOtp
+            {
+                CustID = 1,
+                SubAccId = 0,
+                Otp = "OTP",
+                DeviceInfo = new DeviceInfo { IP = "IP" },
+                Language = "E"
+            };
+            customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp());
+            otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(false);
+
+            // Act
+            var actualResult = customerOtpService.VerifyOtp(actualCustomerOtp);
+
+            // Assert
+            Assert.AreEqual(actualResult.Message, Security.OtpIsInvalidOrExpired);
+        }
+
+        [Test]
         public void VerifyOtp_OtpIsCorrect_ReturnOKResult()
         {
             // Arrange
@@ -589,7 +629,7 @@
         [Test]
         public void RemoveSecretKey_CallExecuteDeleteCustOtpSecretKeyCommand()
         {
-            // Arrange 
+            // Arrange
             var param = new RemoveSecretKeyParam
             {
                 CustId = 1,
@@ -614,7 +654,7 @@
         [Test]
         public void RemoveSecretKey_ResetDownlineOtp_CallChangeOtpStatusToDisableDownlineStatus()
         {
-            // Arrange 
+            // Arrange
             var param = new RemoveSecretKeyParam
             {
                 CustId = 1,
@@ -650,7 +690,7 @@
         [TestCase(false)]
         public void RemoveSecretKey_RemovedSecretKey_ReturnRemovingStatus(bool isRemoved)
         {
-            // Arrange 
+            // Arrange
             var param = new RemoveSecretKeyParam
             {
                 CustId = 1,
@@ -675,6 +715,6 @@
             Assert.AreEqual(removeStatus.Code, isRemoved ? 0 : 1);
         }
 
-        #endregion
+        #endregion Remove Secret Key
     }
 }

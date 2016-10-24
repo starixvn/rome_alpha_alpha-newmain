@@ -49,12 +49,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Alpha.Auth, Version=3.0.0.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.0.9\lib\net40\Alpha.Auth.dll</HintPath>
+    <Reference Include="Alpha.Auth, Version=3.0.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Auth.3.0.0.8-MenuResponsive-04\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.SecurityCode, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3\lib\net40\Alpha.SecurityCode.dll</HintPath>
+    <Reference Include="Alpha.SecurityCode, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.4-OTP-03\lib\net40\Alpha.SecurityCode.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
@@ -499,6 +499,10 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\reset-sub-account-password.ts" />
@@ -808,9 +812,13 @@
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-CN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-TW.cshtml" />
-    <Content Include="Views\OTP\Index.cshtml" />
-    <Content Include="Views\OTP\Config.cshtml" />
-    <Content Include="Views\OTP\Validate.cshtml" />
+    <Content Include="Views\Otp\VerifyOtpDifferenceDevice.cshtml" />
+    <Content Include="Views\Otp\Index.cshtml" />
+    <Content Include="Views\Otp\VerifyOtp.cshtml" />
+    <Content Include="Views\Otp\ResetOtp.cshtml" />
+    <Content Include="Views\Otp\RegisterAuthenticatorApp.cshtml" />
+    <Content Include="Views\Otp\RemoveSecretKey.cshtml" />
+    <Content Include="Views\Otp\ChangeOtpStatus.cshtml" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>
@@ -844,13 +852,14 @@
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
-    <Compile Include="Controllers\OTPController.cs" />
+    <Compile Include="Controllers\OtpController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="Filters\AntiXSRFFilter.cs" />
     <Compile Include="Filters\CheckBelongingFilter.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandler.cs" />
+    <Compile Include="Handlers\CustomerOtpHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
@@ -869,6 +878,14 @@
     <Compile Include="Requests\HeaderNavQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
+    <Compile Include="Requests\Otp\ChangeOtpStatusCommand.cs" />
+    <Compile Include="Requests\Otp\RemoveOtpCommand.cs" />
+    <Compile Include="Requests\Otp\ResetOtpCommand.cs" />
+    <Compile Include="Requests\Otp\ResetOtpQuery.cs" />
+    <Compile Include="Requests\Otp\SetUpOtpCommand.cs" />
+    <Compile Include="Requests\Otp\SetUpOtpQuery.cs" />
+    <Compile Include="Requests\Otp\VerifyOtpCommand.cs" />
+    <Compile Include="Requests\Otp\VerifyOtpDifferentDeviceQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
     <Compile Include="Requests\Password\ChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ForceChangePasswordQuery.cs" />
@@ -895,9 +912,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\Security\OtpViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
+    <Compile Include="ViewModels\Security\ResetOtpViewModel.cs" />
     <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\Security\VerifyOtpDifferenceDeviceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">

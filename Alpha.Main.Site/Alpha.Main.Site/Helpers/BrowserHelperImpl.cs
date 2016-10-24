@@ -1,8 +1,10 @@
 ﻿namespace Alpha.Main.Site.Helpers
 {
+    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Text.RegularExpressions;
     using System.Web;
+    using Main.Models.Otp;
     using ViewModels;
 
     /// <summary>
@@ -80,6 +82,11 @@
             }
 
             return browserViewModel;
+        }
+
+        public DeviceInfo GetDeviceInfo()
+        {
+            throw new NotImplementedException();
         }
     }
 }

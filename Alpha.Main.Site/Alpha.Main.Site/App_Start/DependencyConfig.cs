@@ -15,6 +15,8 @@
     using Main.Helpers.Impl;
     using Main.Models.Menus;
     using MediatR;
+    using ONEbook.OTP.Helpers;
+    using ONEbook.OTP.Services;
     using SecurityCode.Services;
     using Services;
     using Services.Impl;
@@ -100,7 +102,13 @@
             container.RegisterPerWebRequest<Encryptor, EncryptorImpl>();
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
+
             container.RegisterPerWebRequest<CustomerOtpService, CustomerOtpServiceImpl>();
+            container.RegisterPerWebRequest<OtpService, OtpServiceImpl>();
+            container.RegisterPerWebRequest<OtpAdapter, OtpAdapterImpl>();
+            container.RegisterPerWebRequest<QrCodeAdapter, QrCodeAdapterImpl>();
+            container.RegisterPerWebRequest<RandomHelper, RandomHelperImpl>();
+            container.RegisterPerWebRequest<JsonHelper, JsonHelperImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

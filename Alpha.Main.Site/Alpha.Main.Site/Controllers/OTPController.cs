@@ -1,25 +1,85 @@
-﻿using System.Web.Mvc;
-
-namespace Alpha.Main.Site.Controllers
+﻿namespace Alpha.Main.Site.Controllers
 {
-    public class OTPController : Controller
+    using System.Web.Mvc;
+    using MediatR;
+    using Requests.Otp;
+
+    public class OtpController : Controller
     {
-        // GET: OTP
-        public ActionResult Index()
+        private readonly IMediator mediator;
+
+        public OtpController(IMediator mediator)
+        {
+            this.mediator = mediator;
+        }
+
+        public ActionResult Index(SetUpOtpQuery query)
+        {
+            var customerOtp = mediator.Send(new SetUpOtpQuery());
+
+            return View(customerOtp);
+        }
+
+        [HttpGet]
+        public ActionResult VerifyOtp()
         {
             return View();
         }
 
-        // GET: OTP
-        public ActionResult Validate()
+        [HttpPost]
+        public JsonResult VerifyOtp(VerifyOtpCommand command)
         {
-            return View();
+            var result = mediator.Send(command);
+
+            return Json(result);
         }
 
-        // GET: OTP
-        public ActionResult Config()
+        [HttpGet]
+        public ActionResult VerifyOtpDifferenceDevice()
         {
-            return View();
+            var viewModel = mediator.Send(new VerifyOtpDifferentDeviceQuery());
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public JsonResult SetUpOtp(SetUpOtpCommand command)
+        {
+            var result = mediator.Send(command);
+
+            return Json(result);
+        }
+
+        [HttpGet]
+        public ActionResult ResetOtp(ResetOtpQuery query)
+        {
+            var viewModel = mediator.Send(query);
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public JsonResult ResetOtp(ResetOtpCommand command)
+        {
+            var result = mediator.Send(command);
+
+            return Json(result);
+        }
+
+        [HttpPost]
+        public JsonResult RemoveOtp(RemoveOtpCommand command)
+        {
+            var result = mediator.Send(command);
+
+            return Json(result);
+        }
+
+        [HttpPost]
+        public JsonResult ChangeOtpStatus(ChangeOtpStatusCommand command)
+        {
+            var result = mediator.Send(command);
+
+            return Json(result);
         }
     }
 }

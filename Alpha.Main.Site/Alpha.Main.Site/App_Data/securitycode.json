@@ -10,6 +10,7 @@
   ],
   "sites": [
   ],
+  "verifyingOtpPath": "Otp/VerifyOtp",
   "verifyingSecurityCodePath": "SecurityCode/VerifySecurityCode",
   "resetSecurityCodePath": "SecurityCode/ChangeSecurityCode"
 }

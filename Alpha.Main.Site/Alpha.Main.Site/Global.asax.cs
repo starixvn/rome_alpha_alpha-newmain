@@ -32,7 +32,7 @@
               .StartNewSession()
               .Use(new OldConnectionStringProvider())
               .UseDefaultDbSettingProvider(
-                resourcePath: "~/App_Data",
+                resourcePath: "~/App_Data/SPNames/LOCAL",
                 ignoreRedundantParameters: false,
                 enableWatching: true)
               .Run();

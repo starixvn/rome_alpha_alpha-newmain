@@ -1,4 +1,4 @@
-﻿@model ForceChangeSecurityCodeViewModel
+﻿@model VerifyOtpDifferenceDeviceViewModel
 
 @{
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
@@ -12,10 +12,10 @@
     <form class="form-SC form-validation">
         @Html.Action("Languages", "SecurityCode")
         <h1 class="title">OTP</h1>
-        <p> Hi John88, you are signing in using a different IP/ Device/ Browser from your last login. Please enter an OTP to coninue.</p>
+        <p> @string.Format(Security.OtpHiMessage, Model.UsernameShower)</p>
         <figure class="avatar">
-            <img id="logoProfileImg" src='~/Assets/styles/otp/images/1.jpg' alt="Avatar" />
-            <figcaption><span class="username">S688H</span><br /><span class="nickname">(John88)</span></figcaption>
+            <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="Avatar" />
+            <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
         </figure>
         <div class="rowlg">
             <input type="password" autocomplete="off" class="txt" name="otp" id="txtOTP" placeholder="OTP" />
@@ -24,8 +24,8 @@
             <i class="validation"></i>
         </div>
         <div class="list-button">
-            <input type="button" class="btn-cancel" id="btn-back" value="Back" />
-            <input type="submit" class="btn-submit" value="Submit" />
+            <input type="button" class="btn-cancel" id="btn-back" value="@Security.lblBack" />
+            <input type="submit" class="btn-submit" value="@Security.Submit" />
         </div>
     </form>
 </div>

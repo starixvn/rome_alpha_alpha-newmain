@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Alpha.SecurityCode, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Alpha.SecurityCode.3.0.0.4-OTP-03\lib\net40\Alpha.SecurityCode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -142,11 +146,13 @@
     <Compile Include="Handlers\DefaultHandlerTests.cs" />
     <Compile Include="Handlers\MenuBarHandlerTests.cs" />
     <Compile Include="Handlers\LanguageHandlerTests.cs" />
+    <Compile Include="Handlers\CustomerOtpHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\ChangeLanguageCommandTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="App_Data\securitycode.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

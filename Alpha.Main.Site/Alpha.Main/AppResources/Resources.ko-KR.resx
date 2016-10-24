@@ -334,4 +334,7 @@
   <data name="Skip" xml:space="preserve">
     <value>다음</value>
   </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>비활성화</value>
+  </data>
 </root>
