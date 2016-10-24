@@ -36,7 +36,10 @@ var introduction = {
         markInner: null,
         replayInstruction: null,
         modalInstructionBody: null,
-        oldViewLink: null
+        oldViewLink: null,
+        mobileBlockUI: null,
+        mobileIntroModal: null,
+        mobileCloseIntroBtn: null
     },
 
     resources: {
@@ -90,6 +93,9 @@ var introduction = {
         introduction.domElements.notNowIntroductionBtn = $("#not-now-introduction-btn");
         introduction.domElements.modalInstructionBody = $('#instruction-modal-body');
         introduction.domElements.oldViewLink = $('#old-view-link a');
+        introduction.domElements.mobileBlockUI = $('.blockUI-mobile');
+        introduction.domElements.mobileIntroModal = $('#instruction-mobile');
+        introduction.domElements.mobileCloseIntroBtn = $('#instruction-mobile').find('.button-close');
     },
 
     showDelayFirstIntroduction: function () {
@@ -142,6 +148,11 @@ var introduction = {
         introduction.domElements.replayInstruction
             .off('click.replay-introduction')
             .on('click.replay-introduction', introduction.showMainSteps);
+
+        introduction.domElements.mobileCloseIntroBtn.on('click', () => {
+            introduction.domElements.mobileBlockUI.hide();
+            introduction.domElements.mobileIntroModal.hide();
+        });
     },
 
     showNotNowSteps: function () {
