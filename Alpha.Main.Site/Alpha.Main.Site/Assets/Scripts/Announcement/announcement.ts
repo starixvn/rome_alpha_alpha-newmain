@@ -36,6 +36,7 @@ var announcement = {
             announcement.loadAnnouncement();
         }
         else if (alpha.isScreenLower768) {
+            announcement.showRedCircleInIconAnnouncementMobile(false);
             announcement.loadAnnouncementPeriodically(5000);
         }
     },
@@ -70,7 +71,7 @@ var announcement = {
                 }
 
                 announcement.checkNextAnnouncement((result) => {
-                    if (result.length < 10) {
+                    if (announcement.hasEmptyAnnouncementData(result)) {
                         announcement.showRedCircleInIconAnnouncementMobile(false);
                     }
                 });
@@ -112,11 +113,12 @@ var announcement = {
 
     showAnnouncement: function (result) {
         var text = result;
-        if (text.length < 10) {
+        if (announcement.hasEmptyAnnouncementData(text)) {
             if (alpha.isScreenLower768) {
                 toastr.options.positionClass = 'toast-top-full-width';
                 toastr.options.timeOut = 2000;
-                toastr.info('No Announcement Is Available!');
+                toastr.options.preventDuplicates = true;
+                toastr.info($(text).val());
             }
 
             return;
@@ -278,7 +280,7 @@ var announcement = {
                 announcement.appendNewAnnouncementToPopup(result);
 
                 announcement.checkNextAnnouncement((result) => {
-                    if (result.length < 10) {
+                    if (announcement.hasEmptyAnnouncementData(result)) {
                         announcement.showRedCircleInIconAnnouncementMobile(false);
                     }
                 });
@@ -296,10 +298,10 @@ var announcement = {
                     announmentNext: 1
                 },
                 success: (result: string) => {
-                    if (result.length > 10) {
-                        announcement.showRedCircleInIconAnnouncementMobile();
-                    } else {
+                    if (announcement.hasEmptyAnnouncementData(result)) {
                         announcement.showRedCircleInIconAnnouncementMobile(false);
+                    } else {
+                        announcement.showRedCircleInIconAnnouncementMobile();
                     }
                 }
             });
@@ -325,7 +327,7 @@ var announcement = {
         var newId = newAnnouncement.find("#popup-id").val();
 
         var text = result;
-        if (text.length < 10) {
+        if (announcement.hasEmptyAnnouncementData(text)) {
             return;
         }
 
@@ -351,6 +353,12 @@ var announcement = {
         } else {
             $('.icon-bell').find('.circle-red').hide();
         }
+    },
+
+    hasEmptyAnnouncementData: (html: any): boolean => {
+        const id: string = $(html).attr('id');
+
+        return id === "no-info";
     }
 };
 
