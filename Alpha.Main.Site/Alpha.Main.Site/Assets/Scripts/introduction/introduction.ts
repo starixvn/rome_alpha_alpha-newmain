@@ -86,6 +86,7 @@ var introduction = {
         }
         else if (alpha.isScreenLower768) {
             introduction.mobileIntroduction = new Introduction.MobileIntroduction($);
+
             if (!introduction.mobileIntroduction.readIntroduction()) {
                 introduction.mobileIntroduction.showIntroduction();
             }

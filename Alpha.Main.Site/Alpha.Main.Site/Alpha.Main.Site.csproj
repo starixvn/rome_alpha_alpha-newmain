@@ -486,8 +486,9 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
-    <TypeScriptCompile Include="Assets\scripts\dashboard\index.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
+    <TypeScriptCompile Include="Assets\scripts\introduction\mobile-introduction.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\reset-sub-account-password.ts" />
@@ -546,7 +547,7 @@
     <Content Include="Assets\styles\message\message.min.css" />
     <Content Include="typings\globals\hammerjs\typings.json" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\balance-info.ts" />
-    <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\base-dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\notice.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\statistics.ts" />
     <Content Include="Assets\bundles\security\password\change-password.js" />
