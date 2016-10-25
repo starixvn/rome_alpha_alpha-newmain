@@ -27,4 +27,3 @@ var Dashboard;
     }());
     Dashboard.BaseDashBoard = BaseDashBoard;
 })(Dashboard || (Dashboard = {}));
-//# sourceMappingURL=base-dashboard.js.map

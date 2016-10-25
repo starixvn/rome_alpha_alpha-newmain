@@ -64,6 +64,10 @@
             return;
         }
 
+        if (alpha.isScreenGreater768AndLower1024) {
+            menuBar.collapseLeftPanel();
+        }
+
         if (alpha.isScreenGreater1024) {
             activeSubMenu.show();
             sidebar.removeClass('collapsed').removeClass('collapsed-smallsize');
