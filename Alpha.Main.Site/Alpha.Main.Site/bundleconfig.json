@@ -9,7 +9,7 @@
       "Assets/scripts/home/index-manager.js",
       "Assets/scripts/home/menu-bar.js",
       "Assets/scripts/announcement/announcement.js",
-      "Assets/scripts/announcement/announcementForMobile.js",
+      "Assets/scripts/announcement/announcement-mobile.js",
       "Assets/scripts/customer-profiles/brief-profile.js"
     ]
   },

@@ -206,8 +206,8 @@ var headerNav = {
 
         // Annoucement popup for mobile
         headerNav.domElements.iconBell.click(() => {
-            announcement.showedMessageIds = [];
-            announcement.loadAnnouncement();
+            const announcementMobile = new Announcement.Mobile($);
+            announcementMobile.startLoading();
         });
 
         // Language show options for mobile

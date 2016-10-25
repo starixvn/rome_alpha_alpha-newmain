@@ -3222,6 +3222,8 @@ interface JQuery {
     hammer(): JQuery;
 
     datetimepicker(settings: any): JQuery;
+
+    tinyDraggable(settings: any): JQuery;
 }
 declare module "jquery" {
     export = $;

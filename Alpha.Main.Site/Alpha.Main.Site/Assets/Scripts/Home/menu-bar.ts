@@ -66,6 +66,7 @@
 
         if (alpha.isScreenGreater768AndLower1024) {
             menuBar.collapseLeftPanel();
+            return;
         }
 
         if (alpha.isScreenGreater1024) {

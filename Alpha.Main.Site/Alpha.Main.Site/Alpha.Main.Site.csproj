@@ -486,6 +486,8 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
+    <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
+    <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\mobile-introduction.ts" />
@@ -756,7 +758,6 @@
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml">
       <SubType>Designer</SubType>
     </Content>
-    <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\core.ts" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="Assets\styles\security\lean-more.scss" />

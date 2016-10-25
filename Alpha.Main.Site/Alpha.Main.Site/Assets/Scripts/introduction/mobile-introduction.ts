@@ -35,7 +35,7 @@
                 this.hideIntroduction();
             });
 
-            this.$('.header-nav').click(() => {
+            this.$('.header-nav, .header-nav .icon-collapse').click(() => {
                 this.hideIntroduction();
             });
         }
