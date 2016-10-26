@@ -48,13 +48,13 @@
                 <td colspan="2" class="text-center">@Resources.noInfo</td>
             </tr>
         }
-        @foreach (var message in Model.Messages)
+        @foreach (var message in Model.Messages.Select((value, index) => new { index, value }))
         {
             <tr>
-                <td class="col-order">@message.CurrentMessage.RowNum</td>
+                <td class="col-order">@(message.index + 1)</td>
                 <td>
-                    <div class="row-first">@message.CurrentMessage.PostTime<span class="messageId">@message.CurrentMessage.Id</span></div>
-                    <div class="message-content @(message.HasRedColor ? "text-red" : string.Empty)">@message.Content</div>
+                    <div class="row-first">@message.value.CurrentMessage.PostTime<span class="messageId">@message.value.CurrentMessage.Id</span></div>
+                    <div class="message-content @(message.value.HasRedColor ? "text-red" : string.Empty)">@message.value.Content</div>
                 </td>
             </tr>
         }

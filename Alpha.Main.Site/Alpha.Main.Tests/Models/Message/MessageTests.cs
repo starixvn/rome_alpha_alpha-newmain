@@ -252,7 +252,7 @@
             var message = FakeDataHelper.Create<Message>("lastUpdator", lastUpdator);
 
             // Assert
-            Assert.AreEqual(lastUpdator, message.LastUpdatorId);
+            Assert.AreEqual(lastUpdator, message.LastUpdator);
         }
 
         [Test]
@@ -291,7 +291,7 @@
             var message = FakeDataHelper.Create<Message>("lastUpdateName", lastUpdateName);
 
             // Assert
-            Assert.AreEqual(lastUpdateName, message.LastUpdatorName);
+            Assert.AreEqual(lastUpdateName, message.LastUpdateName);
         }
 
         [Test]

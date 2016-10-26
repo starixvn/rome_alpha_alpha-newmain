@@ -4,6 +4,10 @@
 
     public class Message
     {
+        public Message()
+        {
+        }
+
         public Message(
             int id,
             string contentEN,
@@ -50,9 +54,9 @@
             MatchId = matchId;
             IsPublic = isPublic;
             CreatorId = creator;
-            LastUpdatorId = lastUpdator;
+            LastUpdator = lastUpdator;
             CreatorName = creatorName;
-            LastUpdatorName = lastUpdateName;
+            LastUpdateName = lastUpdateName;
             IsBatch = isBatch;
             BetTransId = bettransId;
             UserId = userId;
@@ -186,56 +190,56 @@
         {
         }
 
-        public int Id { get; }
+        public int Id { get; private set; }
 
-        public string ContentEN { get; }
+        public string ContentEN { get; private set; }
 
-        public string ContentCS { get; }
+        public string ContentCS { get; private set; }
 
-        public string ContentCH { get; }
+        public string ContentCH { get; private set; }
 
-        public string ContentJP { get; }
+        public string ContentJP { get; private set; }
 
-        public string ContentTH { get; }
+        public string ContentTH { get; private set; }
 
-        public string ContentIT { get; }
+        public string ContentIT { get; private set; }
 
-        public string ContentKO { get; }
+        public string ContentKO { get; private set; }
 
-        public string ContentES { get; }
+        public string ContentES { get; private set; }
 
-        public DateTime PostTime { get; }
+        public DateTime PostTime { get; private set; }
 
-        public DateTime CreateTime { get; }
+        public DateTime CreateTime { get; private set; }
 
-        public DateTime LastUpdateTime { get; }
+        public DateTime LastUpdateTime { get; private set; }
 
-        public byte MessageType { get; }
+        public byte MessageType { get; private set; }
 
-        public bool IsSticky { get; }
+        public bool IsSticky { get; private set; }
 
-        public bool IsTest { get; }
+        public bool IsTest { get; private set; }
 
-        public int MatchId { get; }
+        public int MatchId { get; private set; }
 
-        public bool IsPublic { get; }
+        public bool IsPublic { get; private set; }
 
-        public int CreatorId { get; }
+        public int CreatorId { get; private set; }
 
-        public int LastUpdatorId { get; }
+        public int LastUpdator { get; private set; }
 
-        public string CreatorName { get; }
+        public string CreatorName { get; private set; }
 
-        public string LastUpdatorName { get; }
+        public string LastUpdateName { get; private set; }
 
-        public bool IsBatch { get; }
+        public bool IsBatch { get; private set; }
 
-        public string BetTransId { get; }
+        public string BetTransId { get; private set; }
 
-        public int UserId { get; }
+        public int UserId { get; private set; }
 
-        public string UserName { get; }
+        public string UserName { get; private set; }
 
-        public long RowNum { get; }
+        public long RowNum { get; private set; }
     }
 }
