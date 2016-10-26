@@ -1,5 +1,6 @@
 ﻿declare var isMobile: any;
 declare var $: any;
+declare var bootbox: any;
 
 var alpha = {
     urls:
@@ -92,6 +93,24 @@ var alpha = {
         }
 
         alpha.isMobile = isMobile.any;
+    },
+    showMessage: function ($target: any, result: Result) {
+        $target.empty();
+
+        if (result.isSuccessful) {
+            $target.html("<div class='msg msg-success'>" + result.message + "</div>");
+            return;
+        }
+
+        if (result.isWarning) {
+            $target.html("<div class='msg msg-warning'>" + result.message + "</div>");
+            return;
+        }
+
+        if (result.isFailed) {
+            $target.html("<div class='msg msg-error'>" + result.message + "</div>");
+            return;
+        }
     }
 };
 
@@ -110,3 +129,21 @@ $(function () {
         }
     });
 });
+
+class Result {
+    static warningCode: number = -1000;
+
+    code: number;
+    message: string;
+    isSuccessful: boolean;
+    isFailed: boolean;
+    isWarning: boolean;
+
+    constructor(data?: any) {
+        this.code = data.Code;
+        this.message = data.Message || "";
+        this.isFailed = this.code !== 0;
+        this.isSuccessful = this.code === 0;
+        this.isWarning = data.Code === Result.warningCode;
+    }
+}

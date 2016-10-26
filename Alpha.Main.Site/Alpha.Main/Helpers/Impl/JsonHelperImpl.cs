@@ -1,17 +1,17 @@
 ﻿namespace Alpha.Main.Helpers.Impl
 {
-    using System;
+    using Newtonsoft.Json;
 
     public class JsonHelperImpl : JsonHelper
     {
         public T Deserialize<T>(string json)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<T>(json);
         }
 
         public string Serialize(object data)
         {
-            throw new NotImplementedException();
+            return JsonConvert.SerializeObject(data);
         }
     }
 }

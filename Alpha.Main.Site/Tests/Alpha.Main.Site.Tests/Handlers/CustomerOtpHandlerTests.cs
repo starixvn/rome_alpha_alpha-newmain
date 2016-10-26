@@ -124,11 +124,11 @@
             var command = new ResetOtpCommand(userSession);
 
             // Act
-            var result = customerOtpHandler.Handle(command);
+            var viewModel = customerOtpHandler.Handle(command);
 
             // Assert
-            Assert.IsTrue(result.IsNotOk
-                && result.Message == Security.NotAuthorized);
+            Assert.IsTrue(viewModel.Result.IsNotOk
+                && viewModel.Result.Message == Security.NotAuthorized);
         }
 
         [Test]
@@ -187,10 +187,10 @@
                 });
 
             // Act
-            var result = customerOtpHandler.Handle(command);
+            var viewModel = customerOtpHandler.Handle(command);
 
             // Assert
-            Assert.IsTrue(result.Code == 1 && result.Message == "Changed");
+            Assert.IsTrue(viewModel.Result.Code == 1 && viewModel.Result.Message == "Changed");
         }
 
         #endregion Handle Reset Otp Command Command

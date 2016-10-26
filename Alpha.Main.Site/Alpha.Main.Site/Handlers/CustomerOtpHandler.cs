@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using System;
+    using Alpha.SecurityCode.Web;
     using AppResources;
     using Helpers;
     using Main.Models;
@@ -18,10 +19,11 @@
         IRequestHandler<ResetOtpQuery, ResetOtpViewModel>,
         IRequestHandler<ChangeOtpStatusCommand, Result>,
         IRequestHandler<RemoveOtpCommand, Result>,
-        IRequestHandler<ResetOtpCommand, Result>,
+        IRequestHandler<ResetOtpCommand, ResetOtpViewModel>,
         IRequestHandler<SetUpOtpCommand, Result>,
         IRequestHandler<VerifyOtpCommand, Result>,
-        IRequestHandler<VerifyOtpDifferentDeviceQuery, VerifyOtpDifferenceDeviceViewModel>
+        IRequestHandler<VerifyOtpDifferentDeviceQuery, VerifyOtpDifferenceDeviceViewModel>,
+        IRequestHandler<CheckDifferenceDeviceCommand, bool>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
 
@@ -67,32 +69,46 @@
                 SubAccountId = message.SubAccountId
             });
 
+            if(result.IsSuccessful)
+            {
+                SetOtpStatusToSession(message.IsEnable);
+            }
+
             return result;
         }
 
-        public Result Handle(ResetOtpCommand message)
+        public ResetOtpViewModel Handle(ResetOtpCommand message)
         {
             if (message == null)
             {
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            if (!HasUpdatePermission(true, message.SubAccountId > 0))
-            {
-                return Result.CreateErrorResult(Security.NotAuthorized);
-            }
-
-            var result = customerOtpService.RemoveSecretKey(new RemoveSecretKeyParam
+            var viewModel = new ResetOtpViewModel
             {
                 CustId = message.CustId,
-                ActorId = message.ActorId,
-                IP = message.IP,
-                Language = message.Language,
-                IsDisableOtp = true,
-                SubAccountId = message.SubAccountId
-            });
+                SubAccountId = message.SubAccountId,
+                Username = message.Username
+            };
 
-            return result;
+            if (!HasUpdatePermission(true, message.SubAccountId > 0))
+            {
+                viewModel.Result = Result.CreateErrorResult(Security.NotAuthorized);
+            }
+            else
+            {
+                viewModel.Result = customerOtpService.RemoveSecretKey(new RemoveSecretKeyParam
+                {
+                    CustId = message.CustId,
+                    ActorId = message.ActorId,
+                    IP = message.IP,
+                    Language = message.Language,
+                    IsDisableOtp = true,
+                    SubAccountId = message.SubAccountId
+                });
+            }
+
+            return viewModel;
         }
 
         public Result Handle(SetUpOtpCommand message)
@@ -174,7 +190,7 @@
                 ActorId = message.CustId,
                 IP = message.IP,
                 Language = message.Language,
-                IsDisableOtp = true,
+                IsDisableOtp = false,
                 SubAccountId = message.SubAccountId
             });
 
@@ -191,7 +207,8 @@
             return new ResetOtpViewModel
             {
                 CustId = message.CustId,
-                SubAccountId = message.SubAccountId
+                SubAccountId = message.SubAccountId,
+                Username = message.Username
             };
         }
 
@@ -270,6 +287,36 @@
             }
 
             return string.IsNullOrWhiteSpace(nickName) ? string.Empty : $"({nickName})";
+        }
+
+        public bool Handle(CheckDifferenceDeviceCommand message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
+            var customerOtp = customerOtpService.GetCustomerOtp(message.CustId, message.SubAccountId);
+
+            SetOtpStatusToSession(customerOtp.Enabled);
+
+            if (!customerOtp.Enabled)
+            {
+                return false;
+            }
+
+            var deviceInfo = browserHelper.GetDeviceInfo();
+
+            return deviceInfo.IP != customerOtp.DeviceInfo.IP
+                || deviceInfo.BrowserName != customerOtp.DeviceInfo.BrowserName
+                || deviceInfo.BrowserVersion != customerOtp.DeviceInfo.BrowserVersion
+                || deviceInfo.DeviceName != customerOtp.DeviceInfo.DeviceName
+                || deviceInfo.DeviceVersion != customerOtp.DeviceInfo.DeviceVersion;
+        }
+
+        private void SetOtpStatusToSession(bool isEnabledOtp)
+        {
+            SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp = isEnabledOtp;
         }
     }
 }

@@ -590,6 +590,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove OTP for {0}.
+        /// </summary>
+        public static string RemoveOtpForCust {
+            get {
+                return ResourceManager.GetString("RemoveOtpForCust", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have successfully removed your current OTP settings..
         /// </summary>
         public static string RemoveOtpSuccessMessage {
@@ -613,6 +622,15 @@ namespace Alpha.Main.AppResources {
         public static string Reset {
             get {
                 return ResourceManager.GetString("Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resetting a user&apos;s OTP will remove the registered authenticator app key and disable his OTP status.
+        /// </summary>
+        public static string ResetOtpWarning {
+            get {
+                return ResourceManager.GetString("ResetOtpWarning", resourceCulture);
             }
         }
         
@@ -757,6 +775,15 @@ namespace Alpha.Main.AppResources {
         public static string undermaintenance {
             get {
                 return ResourceManager.GetString("undermaintenance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update OTP status successfully.
+        /// </summary>
+        public static string UpdateOtpStatusSuccess {
+            get {
+                return ResourceManager.GetString("UpdateOtpStatusSuccess", resourceCulture);
             }
         }
     }

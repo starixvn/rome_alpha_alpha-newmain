@@ -9,10 +9,6 @@
 
         public int SubAccID { get; set; }
 
-        public int ErrCode { get; set; }
-
-        public string ErrMsg { get; set; }
-
         public override string GetSettingKey()
         {
             return "Age_OTP_CustomerOTPSel";

@@ -1,10 +1,15 @@
 ﻿namespace Alpha.Main.Criteria.Otp
 {
-    using System;
     using Fanex.Data.Repository;
 
     public class UpdateCustomerStatusAfterVerifyOTPCommand : NonQueryCommand
     {
+        public UpdateCustomerStatusAfterVerifyOTPCommand()
+        {
+            ErrCode = 0;
+            ErrMsg = string.Empty;
+        }
+
         public int CustID { get; set; }
 
         public int SubAccID { get; set; }
@@ -28,7 +33,10 @@
 
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            return CustID > 0
+                   && SubAccID >= 0
+                   && !string.IsNullOrWhiteSpace(Language)
+                   && !string.IsNullOrWhiteSpace(IP);
         }
     }
 }

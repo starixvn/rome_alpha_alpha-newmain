@@ -43,7 +43,7 @@
       "Assets/styles/security/security.css"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/security-code/verify-securitycode.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -52,7 +52,7 @@
       "Assets/scripts/security/security-code/verify-securitycode.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/security-code/change-securitycode-by-forcing.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -61,7 +61,7 @@
       "Assets/scripts/security/security-code/change-securitycode-by-forcing.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/security-code/change-securitycode-firstlogin.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -88,7 +88,7 @@
       "Assets/scripts/security/security-code/reset-securitycode.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/password/change-password.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -97,7 +97,7 @@
       "Assets/scripts/security/password/change-password.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/password/reset-main-account-password.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -106,7 +106,7 @@
       "Assets/scripts/security/password/reset-main-account-password.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/password/force-change-password.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -115,7 +115,7 @@
       "Assets/scripts/security/password/force-change-password.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/password/reset-sub-account-password.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -128,6 +128,13 @@
     "outputFileName": "Assets/bundles/otp/otp.css",
     "inputFiles": [
       "Assets/styles/otp/otp.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/setup-otp.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/otp/setup-otp.js"
     ]
   }
 ]

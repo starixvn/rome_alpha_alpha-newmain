@@ -5,6 +5,12 @@
 
     public class DeleteCustOtpSecretKeyCommand : NonQueryCommand
     {
+        public DeleteCustOtpSecretKeyCommand()
+        {
+            ErrCode = 0;
+            ErrMsg = string.Empty;
+        }
+
         public int UserID { get; set; }
 
         public int CustID { get; set; }

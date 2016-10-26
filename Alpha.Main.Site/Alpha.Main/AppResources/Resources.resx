@@ -445,4 +445,7 @@
   <data name="Disabled" xml:space="preserve">
     <value>Disabled</value>
   </data>
+  <data name="ThereIsNoChange" xml:space="preserve">
+    <value>There is no change to update</value>
+  </data>
 </root>

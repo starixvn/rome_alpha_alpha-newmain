@@ -59,17 +59,17 @@
         }
 
         [HttpPost]
-        public JsonResult ResetOtp(ResetOtpCommand command)
+        public ActionResult ResetOtp(ResetOtpCommand command)
         {
             var result = mediator.Send(command);
 
-            return Json(result);
+            return View(result);
         }
 
         [HttpPost]
-        public JsonResult RemoveOtp(RemoveOtpCommand command)
+        public JsonResult RemoveOtp()
         {
-            var result = mediator.Send(command);
+            var result = mediator.Send(new RemoveOtpCommand());
 
             return Json(result);
         }

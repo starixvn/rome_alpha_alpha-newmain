@@ -5,6 +5,12 @@
 
     public class UpdateCustomerOtpStatusCommand : NonQueryCommand
     {
+        public UpdateCustomerOtpStatusCommand()
+        {
+            ErrCode = 0;
+            ErrMsg = string.Empty;
+        }
+
         public int UserID { get; set; }
 
         public int CustID { get; set; }
@@ -28,7 +34,11 @@
 
         public override bool IsValid()
         {
-            throw new NotImplementedException();
+            return CustID > 0
+               && SubAccID >= 0
+               && UserID > 0
+               && !string.IsNullOrWhiteSpace(Language)
+               && !string.IsNullOrWhiteSpace(IP);
         }
     }
 }

@@ -46,7 +46,7 @@
             {
                 return browserViewModel;
             }
-
+            
             if (currentRequest.Browser.Browser.ToLower() == "ie"
                 && currentRequest.Browser.MajorVersion <= 9)
             {
@@ -73,20 +73,26 @@
                 return browserViewModel;
             }
 
-            if (currentRequest.Browser.Type.ToLower().Contains("chrome")
-                && currentRequest.Browser.MajorVersion <= 20)
-            {
-                browserViewModel.IsUnsupportedBrowser = true;
-                browserViewModel.DownloadNewBrowserUrl = "https://www.google.com/chrome/browser/";
-                return browserViewModel;
-            }
-
             return browserViewModel;
         }
 
         public DeviceInfo GetDeviceInfo()
         {
-            throw new NotImplementedException();
+            var browser = HttpContext.Current.Request.Browser;
+
+            return new DeviceInfo
+            {
+                IP = GetIP(),
+                BrowserName = browser.Browser,
+                BrowserVersion = browser.Version,
+                DeviceName = browser.Platform
+            };
+        }
+
+        private string GetIP()
+        {
+            var ip = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] ?? HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+            return ip.Equals("::1") ? "127.0.0.1" : (string.IsNullOrEmpty(ip) ? "127.0.0.1" : ip.Split(',')[0]);
         }
     }
 }

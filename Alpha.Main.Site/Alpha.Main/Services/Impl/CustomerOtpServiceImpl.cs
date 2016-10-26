@@ -13,7 +13,7 @@
 
     public class CustomerOtpServiceImpl : CustomerOtpService
     {
-        private const int TimePeriod = 30;
+        private const int TimePeriod = 200;
         private const int OtpSize = 6;
         private const string Issuer = "Application Name";
 
@@ -56,7 +56,7 @@
             return new Result
             {
                 Code = command.ErrCode,
-                Message = command.ErrMsg
+                Message = command.ErrCode == 0 ? Security.UpdateOtpStatusSuccess : command.ErrMsg
             };
         }
 
@@ -137,7 +137,7 @@
             return new Result
             {
                 Code = command.ErrCode,
-                Message = command.ErrMsg
+                Message = command.ErrCode == 0 ? Security.AuthenticatorAppVerified : command.ErrMsg
             };
         }
 
@@ -206,7 +206,7 @@
                     SubAccID = subAccountId
                 });
 
-            if(customerOtpDto == null)
+            if (customerOtpDto == null)
             {
                 return new CustomerOtp();
             }
@@ -242,7 +242,7 @@
             var deleteResult = new Result
             {
                 Code = command.ErrCode,
-                Message = command.ErrMsg
+                Message = command.ErrCode == 0 ? Security.RemoveOtpSuccessMessage : command.ErrMsg
             };
 
             if (param.IsDisableOtp

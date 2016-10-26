@@ -8,8 +8,9 @@
     using MediatR;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
+    using ViewModels.Security;
 
-    public class ResetOtpCommand : IRequest<Result>
+    public class ResetOtpCommand : IRequest<ResetOtpViewModel>
     {
         private readonly IUserSession userSession;
 
@@ -25,6 +26,8 @@
         public int CustId { get; set; }
 
         public int SubAccountId { get; set; }
+
+        public string Username { get; set; }
 
         public int ActorId
         {

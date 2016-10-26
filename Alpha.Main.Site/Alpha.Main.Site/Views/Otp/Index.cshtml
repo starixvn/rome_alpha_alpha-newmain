@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>Setup Otp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.Render($"/bundles/site-main/otp/otp-super")
@@ -35,6 +35,7 @@
             <p>
                 @Security.OtpNotes
             </p>
+
             <div class="panel-group panel-table" id="accordion" role="tablist" aria-multiselectable="true">
                 
                 @Html.Partial("RegisterAuthenticatorApp", Model)
@@ -44,6 +45,17 @@
             </div>
         </div>
     </div>
+
+    @Html.Hidden("RemoveOtpWarning", Security.RemoveOtpWarning)
+    @Html.Hidden("RemoveOtpSuccessMessage", Security.RemoveOtpSuccessMessage)
+    @Html.Hidden("OtpIsInvalidOrExpired", Security.OtpIsInvalidOrExpired)
+    @Html.Hidden("AuthenticatorAppVerified", Security.AuthenticatorAppVerified)
+    @Html.Hidden("ThereIsNoChange", Resources.ThereIsNoChange)
+
+    @Html.Hidden("oldMainRootPath", Alpha.Main.Helpers.MicroSites.OldMainUrl())
+    @Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())
     @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
+
+    <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/setup-otp")" type="text/javascript"></script>
 </body>
 </html>

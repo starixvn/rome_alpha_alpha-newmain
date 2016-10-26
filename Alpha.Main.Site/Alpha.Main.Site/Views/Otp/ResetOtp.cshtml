@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model ResetOtpViewModel
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,30 +11,23 @@
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/otp/otp"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    Reset Otp
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane" id="profilePicture">
-            Profile Picture
+    @if (Model.Result != null)
+    {
+        <div class="msg @(Model.Result.IsSuccessful ? "msg-success" : "msg-error")">@Model.Result.Message</div>
+    }
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.CustId)
+        @Html.HiddenFor(model => model.SubAccountId)
+        @Html.HiddenFor(model => model.Username)
+        <div>
+            @Model.ResetTitle
         </div>
-        <div role="tabpanel" class="tab-pane" id="nickname">
-            Nickname
+        <div>
+            <button id="btn-change-status" class="btn-submit">@Security.Submit</button>
         </div>
-        <div role="tabpanel" class="tab-pane active" id="otp">
-            <div class="msg-content">
-                <div class="msg msg-warning">@Security.InputOtpBeforeProceeding</div>
-            </div>
-            <form class="form-validation block">
-                <div class="form-group">
-                    <label>OTP</label>
-                    <input type="password" class="txt form-control" name="otp" id="otp" />
-                    <i class="validation"></i>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn-submit" id="btnSubmit" value="@Security.Submit" />
-                </div>
-            </form>
-        </div>
-    </div>
-    @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
+            <div>@Security.ResetOtpWarning</div>
+    }
 </body>
 </html>

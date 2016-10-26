@@ -361,4 +361,13 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="RemoveOtpSuccessMessage" xml:space="preserve">
     <value>You have successfully removed your current OTP settings.</value>
   </data>
+  <data name="UpdateOtpStatusSuccess" xml:space="preserve">
+    <value>Update OTP status successfully</value>
+  </data>
+  <data name="RemoveOtpForCust" xml:space="preserve">
+    <value>Remove OTP for {0}</value>
+  </data>
+  <data name="ResetOtpWarning" xml:space="preserve">
+    <value>Resetting a user's OTP will remove the registered authenticator app key and disable his OTP status</value>
+  </data>
 </root>

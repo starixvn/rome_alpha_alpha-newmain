@@ -5,6 +5,12 @@
 
     public class CheckEnableOtpCommand : NonQueryCommand
     {
+        public CheckEnableOtpCommand()
+        {
+            ErrCode = 0;
+            ErrMsg = string.Empty;
+        }
+
         public int CustID { get; set; }
 
         public int SubAccID { get; set; }

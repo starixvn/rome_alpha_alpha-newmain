@@ -10,21 +10,24 @@
             </a>
         </h4>
     </div>
-    <div id="enableDisableOTP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEnableDisable">
+    <div id="enableDisableOTP" class="panel-collapse" role="tabpanel" aria-labelledby="headingEnableDisable">
         <div class="panel-body">
+            <div id="change-status-message"></div>
             <ul class="list-enableDisable">
                 <li>
                     <label>
-                        <input 
-                               id="cbkEnableOtp" 
-                               type="checkbox" 
-                               @(Model.CustomerOtp.Enabled ? "checked" : "") 
+                        <input id="cbkEnableOtp"
+                               type="checkbox"
+                               @(Model.IsAlreadySetup ? "" : "disabled ")
+                               @(Model.CustomerOtp.Enabled ? "checked " : "")
                                data-is-already-setup="@Model.IsAlreadySetup.ToString().ToLower()"
-                               />
+                               data-is-checked="@Model.CustomerOtp.Enabled.ToString().ToLower()" />
                         @Security.EnableOtpViaSophos
                     </label>
                 </li>
-                <li><button class="btn-submit">@Security.Submit</button></li>
+                <li>
+                    <button id="btn-change-status" class="btn-submit" @(Model.IsAlreadySetup ? "" : "disabled")>@Security.Submit</button>
+                </li>
             </ul>
         </div>
     </div>

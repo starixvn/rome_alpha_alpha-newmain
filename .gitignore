@@ -109,3 +109,10 @@ Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/change-use
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/reset-securitycode.js.map
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/password/password-resources.js.map
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/security/security-code/security-code-resources.js.map
+
+
+*/**/[Ss]cripts/[Ss]ecurity/*.js.map
+*/**/[Ss]cripts/[Ss]ecurity/*.js
+
+*/**/[Ss]cripts/[Ss]ecurity/**/*.js.map
+*/**/[Ss]cripts/[Ss]ecurity/**/*.js
