@@ -103,7 +103,7 @@ var alpha = {
         },
 
         set: (key: string, value: any) => {
-            store.enabled ? store.set(key, value) : $.cookie(key, value, this.getCookieExpireOptions());
+            store.enabled ? store.set(key, value) : $.cookie(key, value, alpha.localStorage.getCookieExpireOptions());
         },
 
         getCookieExpireOptions: () => {
