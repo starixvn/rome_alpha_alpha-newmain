@@ -13,9 +13,10 @@ body {
 }
 
 .block {
-    max-width: 400px;
+    max-width: 350px;
     padding-top: 22px;
-    width: 400px;    
+    width: 350px;    
+    clear: both;
 
     label {
         font-weight: normal;
@@ -67,8 +68,8 @@ body {
 
     .msg {
         line-height: 20px;
-        max-width: 500px;
         margin: 0;
+        float: left;
     }
 }
 

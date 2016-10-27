@@ -23,16 +23,17 @@ label {
 // Messages
 .msg-content {
     padding-top: 12px;
+    float: left;
     .msg {
-        max-width: 500px;
         margin: 0;
     }
 }
 
 .block {
-    max-width: 400px;
+    clear: both;
+    max-width: 350px;
     padding-top: 22px;
-    width: 400px;
+    width: 350px;
 
     .txt {
         padding-top: 0;
@@ -183,6 +184,7 @@ label {
     }
 
     .list-enableDisable {
+        clear: both;
         padding-left: 18px;
 
         label {
@@ -191,6 +193,15 @@ label {
 
         .btn-submit {
             margin-top: 4px;
+        }
+    }
+
+    #change-status-message {
+        float: left;
+        margin-left: 20px;
+
+        .msg {
+            margin-top: 0;
         }
     }
 
