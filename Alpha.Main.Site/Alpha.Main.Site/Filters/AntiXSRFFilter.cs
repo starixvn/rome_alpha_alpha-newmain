@@ -3,9 +3,9 @@
     using System;
     using System.Web.Mvc;
     using System.Web.Security;
-    using Alpha.Auth.Web.Validators;
     using Main.Helpers;
     using Main.Models;
+    using Web.Validators;
 
     /// <summary>
     /// Ricky: should review more in here, we temporary keep this code.
@@ -24,7 +24,7 @@
             base.OnActionExecuting(filterContext);
         }
 
-        private static void ActionDenied(ActionExecutingContext filterContext, Alpha.Auth.Models.Result antiXSRFResult)
+        private static void ActionDenied(ActionExecutingContext filterContext, Alpha.Web.Models.Result antiXSRFResult)
         {
             var request = filterContext.HttpContext.Request;
             if (request.IsAjaxRequest())

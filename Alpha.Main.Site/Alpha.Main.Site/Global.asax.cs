@@ -6,13 +6,13 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
-    using Alpha.Auth.Web;
-    using Alpha.Main.Site.App_Start;
+    using App_Start;
     using Configurations;
     using Fanex.Data;
     using Fanex.Data.OldConnectionStringProvider;
     using ONEbook.UM.Filters;
     using Sunplus.Agent.Utilities;
+    using Web;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -27,7 +27,7 @@
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-           DependencyConfig.Init();
+            DependencyConfig.Init();
 
             DbSettingProviderManager
                 .StartNewSession()
