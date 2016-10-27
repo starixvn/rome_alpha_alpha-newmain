@@ -21,13 +21,11 @@
         @Html.HiddenFor(model => model.CustId)
         @Html.HiddenFor(model => model.SubAccountId)
         @Html.HiddenFor(model => model.Username)
-        <div>
-            @Model.ResetTitle
-        </div>
-        <div>
-            <button id="btn-change-status" class="btn-submit">@Security.Submit</button>
-        </div>
-            <div>@Security.ResetOtpWarning</div>
+        <div class="otp-reset">
+            @*<p>@Model.ResetTitle</p>*@
+            <button id="btn-change-status" class="btn-remove">Remove</button>
+            <p class="note">@Security.ResetOtpWarning</p>
+        </div>        
     }
 </body>
 </html>

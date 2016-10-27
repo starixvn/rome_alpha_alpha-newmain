@@ -199,6 +199,16 @@ label {
     }
 }
 
+// OTP reset
+.otp-reset {
+    padding: 12px 0;
+
+    .note {
+        color: #666;
+        margin: 10px 0;
+    }
+}
+
 @media only screen and (max-device-width : $conent-device-lower768) {
     body {
         background-color: #fff;

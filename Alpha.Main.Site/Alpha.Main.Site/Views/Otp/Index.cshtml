@@ -12,13 +12,12 @@
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/otp/otp"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1 id="title_header" class="page-title">Security Recommendation</h1>
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation">
-            <a id="profilePicture" href="@Alpha.Main.Helpers.MicroSites.OldMainUrl($"~/LoginOption/?custid={Model.CustomerOtp.CustID}")">@Resources.EditProfilePicture</a>
+            <a id="profilePicture" href="@Alpha.Main.Helpers.MicroSites.OldMainUrl($"~/ProfilePicture/?custid={Model.CustomerOtp.CustID}")">@Resources.EditProfilePicture</a>
         </li>
         <li role="presentation">
-            <a href="@Alpha.Main.Helpers.MicroSites.OldMainUrl($"~/ProfilePicture/?custid={Model.CustomerOtp.CustID}")">@Resources.nickname</a>
+            <a href="@Alpha.Main.Helpers.MicroSites.OldMainUrl($"~/LoginOption/?custid={Model.CustomerOtp.CustID}")">@Resources.nickname</a>
         </li>
         <li role="presentation" class="active">
             <a href="#otp" aria-controls="home" role="tab" data-toggle="tab">OTP</a>
