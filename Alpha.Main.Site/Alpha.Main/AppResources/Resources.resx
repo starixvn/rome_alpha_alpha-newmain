@@ -448,4 +448,7 @@
   <data name="ThereIsNoChange" xml:space="preserve">
     <value>There is no change to update</value>
   </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
 </root>

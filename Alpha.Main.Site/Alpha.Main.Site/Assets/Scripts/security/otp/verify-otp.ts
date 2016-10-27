@@ -4,6 +4,8 @@
 class VerifyOtp {
     $otpForm: any;
     $txtOtp: any;
+    $btnSubmit: any;
+    $otpMessage: any;
 
     resources = {
         requiredFieldMessage: (<HTMLInputElement>document.getElementById('requiredFieldMessage')).value
@@ -20,6 +22,8 @@ class VerifyOtp {
     cachedElements = () => {
         this.$otpForm = this.$("#otp-form");
         this.$txtOtp = this.$("#txtOTP");
+        this.$btnSubmit = this.$("#btnSubmit");
+        this.$otpMessage = this.$("#otp-message");
     }
 
     registerEvents = () => {
@@ -37,7 +41,8 @@ class VerifyOtp {
 
         var otp = this.$txtOtp.val();
         if (otp.length === 0) {
-            this.$txtOtp.addClass("error").next().text(this.resources.requiredFieldMessage);
+            alpha.showMessage(this.$otpMessage, new Result({ Code: 1, Message: this.resources.requiredFieldMessage }));
+            this.$txtOtp.focus();
             return;
         }
 
@@ -57,9 +62,12 @@ class VerifyOtp {
 
         if (result.isSuccessful) {
             securityHelper.afterVerifed();
+            this.$txtOtp.attr("disbaled");
+            this.$btnSubmit.attr("disbaled");
         }
         else {
-            this.$txtOtp.addClass("error").next().text(result.message);
+            alpha.showMessage(this.$otpMessage, result);
+            this.$txtOtp.focus();
         }
     }
 
@@ -67,7 +75,6 @@ class VerifyOtp {
         this.$.unblockUI();
     }
 }
-
 
 var verifyOtp = new VerifyOtp($);
 

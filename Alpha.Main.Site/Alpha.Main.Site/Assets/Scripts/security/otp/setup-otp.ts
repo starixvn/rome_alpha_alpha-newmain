@@ -92,7 +92,7 @@ class SetupOtp {
             alpha.showMessage(this.$changeStatusMessage, warning);
             return;
         }
-        
+
         this.$.blockUI();
         this.$.ajax({
             type: "POST",
@@ -109,9 +109,6 @@ class SetupOtp {
         alpha.showMessage(this.$changeStatusMessage, result);
 
         this.previousStatus = this.$cbkEnableOtp.is(":checked");
-        ////if (result.Code === 0) {
-        ////    alert(this.resources.removeOtpSuccessMessage);
-        ////}
     }
 
     removeOtpEvent = (e: any) => {
@@ -137,7 +134,7 @@ class SetupOtp {
     }
 
     onComplete = () => {
-        this.$.unblockUI(); 
+        this.$.unblockUI();
     }
 }
 

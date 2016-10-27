@@ -365,9 +365,15 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>Update OTP status successfully</value>
   </data>
   <data name="RemoveOtpForCust" xml:space="preserve">
-    <value>Remove OTP for {0}</value>
+    <value>Remove OTP - {0}</value>
   </data>
   <data name="ResetOtpWarning" xml:space="preserve">
     <value>Resetting a user's OTP will remove the registered authenticator app key and disable his OTP status</value>
+  </data>
+  <data name="OtpValidation" xml:space="preserve">
+    <value>OTP Validation</value>
+  </data>
+  <data name="ResetDownlineOtpWarning" xml:space="preserve">
+    <value>Are you sure you want to remove OTP of this user?</value>
   </data>
 </root>

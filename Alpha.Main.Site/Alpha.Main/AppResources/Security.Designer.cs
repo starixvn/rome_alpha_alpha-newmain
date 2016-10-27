@@ -504,6 +504,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OTP Validation.
+        /// </summary>
+        public static string OtpValidation {
+            get {
+                return ResourceManager.GetString("OtpValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -590,7 +599,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove OTP for {0}.
+        ///   Looks up a localized string similar to Remove OTP - {0}.
         /// </summary>
         public static string RemoveOtpForCust {
             get {
@@ -622,6 +631,15 @@ namespace Alpha.Main.AppResources {
         public static string Reset {
             get {
                 return ResourceManager.GetString("Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to remove OTP of this user?.
+        /// </summary>
+        public static string ResetDownlineOtpWarning {
+            get {
+                return ResourceManager.GetString("ResetDownlineOtpWarning", resourceCulture);
             }
         }
         

@@ -9,7 +9,7 @@ class VerifyOtpDefferenceDevice {
     resources = {
         requiredFieldMessage: (<HTMLInputElement>document.getElementById('requiredFieldMessage')).value
     }
-    
+
     constructor(public $) {
     }
 
@@ -66,7 +66,6 @@ class VerifyOtpDefferenceDevice {
         this.$.unblockUI();
     }
 }
-
 
 var verifyOtpDefferenceDevice = new VerifyOtpDefferenceDevice($);
 

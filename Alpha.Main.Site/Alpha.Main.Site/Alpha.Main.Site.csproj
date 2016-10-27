@@ -475,6 +475,7 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp.ts" />
@@ -509,6 +510,10 @@
     <Content Include="Assets\bundles\otp\otp.css" />
     <Content Include="Assets\bundles\otp\otp.min.css">
       <DependentUpon>otp.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security\otp\reset-otp.js" />
+    <Content Include="Assets\bundles\security\otp\reset-otp.min.js">
+      <DependentUpon>reset-otp.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\security\otp\setup-otp.js" />
     <Content Include="Assets\bundles\security\otp\setup-otp.min.js">
