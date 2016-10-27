@@ -13,9 +13,9 @@
 
     public class CustomerOtpServiceImpl : CustomerOtpService
     {
-        private const int TimePeriod = 200;
+        private const int TimePeriod = 30;
         private const int OtpSize = 6;
-        private const string Issuer = "Application Name";
+        private const string Issuer = "MyAppName";
 
         private readonly IDynamicRepository dynamicRepository;
         private readonly OtpService otpService;

@@ -34,7 +34,7 @@
                 <li>
                     <strong>@Security.ScanQRCode</strong>
                     <div class="qr-code">
-                        <img src="@Model.CustomerOtp.QrCode" />
+                        <img src="@Html.Raw(Model.CustomerOtp.QrCode)" />
                     </div>
                     <div class="panel-group manualQRCode" id="manualQRCode" role="tablist" aria-multiselectable="true">
                         <div class="panel">
@@ -48,7 +48,7 @@
                             <div id="unableScan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingQR">
                                 <div class="panel-body">
                                     <p>@Security.ManualInputOtpKey</p>
-                                    <p>Key: <strong>@Model.CustomerOtp.SecretKey</strong> <span class="icon-content-copy"></span></p>
+                                    <p>Key: <strong>@Html.Raw(Model.CustomerOtp.SecretKey)</strong> <span class="icon-content-copy"></span></p>
                                     <div class="example">
                                         <div class="col-left">
                                             <img src="~/Assets/Styles/otp/images/manual-ios.png" title="IOS" />
