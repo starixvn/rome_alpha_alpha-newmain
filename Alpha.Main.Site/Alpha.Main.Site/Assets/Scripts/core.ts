@@ -31,7 +31,11 @@ var alpha = {
             : "not found",
         isSubAccount: document.getElementById('isSubAccount') != null
             ? ((<HTMLInputElement>document.getElementById('isSubAccount')).value.toLowerCase() === "true")
-            : "not found"
+            : "not found",
+        isEnableOtp: document.getElementById('isEnabledOtp') != null
+            ? ((<HTMLInputElement>document.getElementById('isEnabledOtp')).value.toLowerCase() === "true")
+            : false,
+
     },
     core:
     {

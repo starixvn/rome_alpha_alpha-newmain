@@ -10,10 +10,11 @@
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/otp/otp"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <form class="form-validation block">
+    <form class="form-validation block" id="otp-form">
         <div class="form-group">
             <label>OTP</label>
-            <input type="password" class="txt form-control" name="otp" id="otp" />
+            <input type="password" class="txt form-control" name="otp" id="txtOTP" />
+            <label class="error"></label>
             <i class="validation"></i>
         </div>
         <div class="form-group">
@@ -21,6 +22,10 @@
         </div>
     </form>
 
+    @Html.Hidden("requiredFieldMessage", Security.alertSecCodeEmpty)
+    @Html.Hidden("oldMainRootPath", Alpha.Main.Helpers.MicroSites.OldMainUrl())
+    @Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())
     @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
+    <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/verify-otp")" type="text/javascript"></script>
 </body>
 </html>

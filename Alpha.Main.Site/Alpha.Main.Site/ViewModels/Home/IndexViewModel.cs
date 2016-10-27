@@ -6,6 +6,7 @@
     using Main.Helpers;
     using Main.Models.Enumerations;
     using Models.Requests;
+    using SecurityCode.Web;
     using Sunplus.Agent.Utilities;
 
     public class IndexViewModel
@@ -161,6 +162,14 @@
             get
             {
                 return CookieHelper.GetCurrentUrlCookieName();
+            }
+        }
+
+        public bool IsEnabledOtp
+        {
+            get
+            {
+                return SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
             }
         }
     }

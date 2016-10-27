@@ -475,7 +475,6 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
-    <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp.ts" />
@@ -514,6 +513,14 @@
     <Content Include="Assets\bundles\security\otp\setup-otp.js" />
     <Content Include="Assets\bundles\security\otp\setup-otp.min.js">
       <DependentUpon>setup-otp.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security\otp\verify-otp-difference-device.js" />
+    <Content Include="Assets\bundles\security\otp\verify-otp-difference-device.min.js">
+      <DependentUpon>verify-otp-difference-device.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security\otp\verify-otp.js" />
+    <Content Include="Assets\bundles\security\otp\verify-otp.min.js">
+      <DependentUpon>verify-otp.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\security\password\change-password.js" />
     <Content Include="Assets\bundles\security\password\change-password.min.js">

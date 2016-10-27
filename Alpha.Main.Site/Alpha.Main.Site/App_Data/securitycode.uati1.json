@@ -6,7 +6,8 @@
     "SecurityCode/ChangeUserOwnSecurityCode",
     "Password/ChangePassword",
     "Password/ResetMainAccountPassword",
-    "Password/ResetSubAccountPassword"
+    "Password/ResetSubAccountPassword",
+    "Otp/Index"
   ],
   "sites": [
   ],

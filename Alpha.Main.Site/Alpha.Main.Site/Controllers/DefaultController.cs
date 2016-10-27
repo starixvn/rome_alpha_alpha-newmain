@@ -11,11 +11,10 @@
 
     public class DefaultController : BaseController
     {
-        const string ForceChangePasswordPath = "~/Password/ForceChangePassword";
-        const string SecurityCodePath = "~/SecurityCode/Index";
-        const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
-        const string UnSupportedBrowsers = "UnsupportedBrowsers";
-
+        private const string ForceChangePasswordPath = "~/Password/ForceChangePassword";
+        private const string SecurityCodePath = "~/SecurityCode/Index";
+        private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
+        private const string UnSupportedBrowsers = "UnsupportedBrowsers";
 
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
@@ -51,7 +50,7 @@
                 return Redirect(SecurityCodePath);
             }
 
-            if(this.mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
+            if (this.mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
             {
                 return Redirect(OtpVerifyDifferenceDevicePath);
             }

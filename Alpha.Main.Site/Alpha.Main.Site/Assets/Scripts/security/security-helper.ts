@@ -140,6 +140,42 @@ var securityHelper = {
         $('input[type=text]').each(function () {
             $(this).removeAttr("type").prop('type', 'password');
         })
+    },
+    afterVerifed: function () {
+        if (top.hasPopupOpen()) {
+            top.revertSecurityCodePopupTitle();
+        }
+
+        var redirectUrl = securityHelper.getUrlVars()['redirectUrl'];
+        if (redirectUrl) {
+            window.location.href = decodeURIComponent(redirectUrl);
+            return;
+        }
+
+        if (top.securityCodePopup && top.securityCodePopup.iframeAttributes.preUrl) {
+            var preUrl = top.securityCodePopup.iframeAttributes.preUrl as string;
+            top[preUrl]();
+            top.securityCodePopup.close();
+            return;
+        }
+
+        if (top.ageWnd && top.ageWnd.iframeAttributes.preUrl) {
+            var preUrl = top.ageWnd.iframeAttributes.preUrl as string;
+            top[preUrl]();
+            return;
+        }
+
+        securityHelper.redirectToHomePage(200);
+    },
+    getUrlVars: function () {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
     }
 }
 

@@ -35,5 +35,13 @@
         }
 
         public string Otp { get; set; }
+
+        public string Language
+        {
+            get
+            {
+                return this.userSession.Language;
+            }
+        }
     }
 }

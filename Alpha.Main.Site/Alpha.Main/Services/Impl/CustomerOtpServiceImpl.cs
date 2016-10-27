@@ -74,7 +74,7 @@
 
             var customerOtp = new CustomerOtp
             {
-                SecretKey = otpService.GenerateSecretKey(),
+                SecretKey = otpService.GenerateSecretKey(20),
                 CustID = custId,
                 SubAccId = subAccountId
             };
@@ -151,6 +151,11 @@
             var customerOtp = GetCustomerOtp(param.CustID, param.SubAccId);
 
             var isCorrect = otpService.VerifyOtp(customerOtp.SecretKey, param.Otp, TimePeriod, OtpSize);
+
+            if (isCorrect)
+            {
+                UpdateDeviceInfo(customerOtp);
+            }
 
             var changeStatusCommand = new UpdateCustomerStatusAfterVerifyOTPCommand
             {
@@ -260,6 +265,20 @@
             }
 
             return deleteResult;
+        }
+
+        private void UpdateDeviceInfo(CustomerOtp customerOtp)
+        {
+            var command = new UpdateCustomerDeviceInfoCommand
+            {
+                CustID = customerOtp.CustID,
+                DeviceInfo = jsonHelper.Serialize(customerOtp.DeviceInfo),
+                IP = customerOtp.DeviceInfo.IP,
+                Language = customerOtp.Language,
+                SubAccID = customerOtp.SubAccId
+            };
+
+            dynamicRepository.Execute(command);
         }
     }
 }

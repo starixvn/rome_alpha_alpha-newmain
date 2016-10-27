@@ -9,7 +9,7 @@
 }
 
 <div class="block">
-    <form class="form-SC form-validation">
+    <form class="form-SC form-validation" id="otp-form">
         @Html.Action("Languages", "SecurityCode")
         <h1 class="title">OTP</h1>
         <p> @string.Format(Security.OtpHiMessage, Model.UsernameShower)</p>
@@ -18,9 +18,9 @@
             <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
         </figure>
         <div class="rowlg">
-            <input type="password" autocomplete="off" class="txt" name="otp" id="txtOTP" placeholder="OTP" />
-            <label id="txtOTP-error" class="error"></label>
             <i class="icon-lock"></i>
+            <input maxlength="6" type="password" autocomplete="off" class="txt" name="otp" id="txtOTP" placeholder="OTP" />
+            <label class="error"></label>
             <i class="validation"></i>
         </div>
         <div class="list-button">
@@ -30,6 +30,12 @@
     </form>
 </div>
 
+@Html.Hidden("requiredFieldMessage", Security.alertSecCodeEmpty)
+@Html.Hidden("oldMainRootPath", Alpha.Main.Helpers.MicroSites.OldMainUrl())
+@Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())
+
 @section js {
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
+
+    <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/verify-otp-difference-device")" type="text/javascript"></script>
 }

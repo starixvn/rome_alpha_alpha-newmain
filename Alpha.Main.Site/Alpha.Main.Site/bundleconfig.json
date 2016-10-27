@@ -136,5 +136,21 @@
       "Assets/scripts/core.js",
       "Assets/scripts/security/otp/setup-otp.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/verify-otp-difference-device.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/security-helper.js",
+      "Assets/scripts/security/otp/verify-otp-difference-device.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/verify-otp.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/security-helper.js",
+      "Assets/scripts/security/otp/verify-otp.js"
+    ]
   }
 ]

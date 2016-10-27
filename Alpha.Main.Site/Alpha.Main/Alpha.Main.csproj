@@ -214,6 +214,7 @@
     <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommand.cs" />
     <Compile Include="Criteria\Otp\GetCustomerOtpCriteria.cs" />
     <Compile Include="Criteria\Otp\InsertCustomerOtpCommand.cs" />
+    <Compile Include="Criteria\Otp\UpdateCustomerDeviceInfoCommand.cs" />
     <Compile Include="Criteria\Otp\UpdateCustomerOtpStatusCommand.cs" />
     <Compile Include="Criteria\Otp\UpdateCustomerStatusAfterVerifyOTPCommand.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />

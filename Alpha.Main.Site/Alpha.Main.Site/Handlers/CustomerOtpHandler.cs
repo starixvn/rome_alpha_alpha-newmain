@@ -69,7 +69,7 @@
                 SubAccountId = message.SubAccountId
             });
 
-            if(result.IsSuccessful)
+            if (result.IsSuccessful)
             {
                 SetOtpStatusToSession(message.IsEnable);
             }
@@ -133,7 +133,14 @@
                 DeviceInfo = browserHelper.GetDeviceInfo()
             };
 
-            return customerOtpService.SetUpOtp(customerOtp);
+            var result = customerOtpService.SetUpOtp(customerOtp);
+
+            if (result.IsSuccessful)
+            {
+                SetVerifiedOtp();
+            }
+
+            return result;
         }
 
         public VerifyOtpDifferenceDeviceViewModel Handle(VerifyOtpDifferentDeviceQuery message)
@@ -162,12 +169,20 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
+            var deviceInfo = browserHelper.GetDeviceInfo();
             var result = customerOtpService.VerifyOtp(new CustomerOtp
             {
                 CustID = message.CustId,
                 SubAccId = message.SubAccountId,
-                Otp = message.Otp
+                Otp = message.Otp,
+                DeviceInfo = deviceInfo,
+                Language = message.Language
             });
+
+            if (result.IsSuccessful)
+            {
+                SetVerifiedOtp();
+            }
 
             return result;
         }
@@ -317,6 +332,11 @@
         private void SetOtpStatusToSession(bool isEnabledOtp)
         {
             SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp = isEnabledOtp;
+        }
+
+        private void SetVerifiedOtp()
+        {
+            SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode = true;
         }
     }
 }
