@@ -6,8 +6,6 @@
             this.onToggleDropdown('#listTopWinningMembers', this.loadDropdownInfo);
             this.onToggleDropdown('#listTopTurnoverMembers', this.loadDropdownInfo);
             this.onToggleDropdown('#listNewMembers', this.loadDropdownInfo);
-
-            this.onSwipeInMobileView();
         }
 
         private onToggleDropdown = (id: string, loadInfo: (url: string, dataElement: JQuery) => void) => {

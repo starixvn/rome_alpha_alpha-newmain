@@ -1,7 +1,6 @@
 ﻿module Dashboard {
     export class BalanceInfo extends BaseDashBoard {
         registerEvent = () => {
-            this.onSwipeInBalanceInfoMobileView();
         }
 
         private onSwipeInBalanceInfoMobileView = () => {

@@ -5,8 +5,6 @@
 
             this.onToggleShowMoreMessages();
 
-            this.onSwipeInMobileView();
-
             this.hideMoreBtnIfHaveNoData();
         }
 
