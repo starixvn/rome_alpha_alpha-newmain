@@ -316,11 +316,6 @@ body {
                 top: 4px;
             }
         }
-
-        
-        .row:hover {
-            background-color: $table-td-hover-color;
-        }
     }
 
     .msg-contents {
@@ -336,6 +331,14 @@ body {
             .time {
                 width: 116px;
             }
+        }
+    }
+}
+
+@media only screen and (min-device-width : $screen-device-greater1200) {
+    .tab-content > .tab-pane {        
+        .row:hover {
+            background-color: $table-td-hover-color;
         }
     }
 }

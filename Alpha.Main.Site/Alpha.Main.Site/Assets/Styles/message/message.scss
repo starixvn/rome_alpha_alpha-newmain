@@ -88,11 +88,6 @@ body {
                 height: 36px;
                 margin-right: 0;
             }
-        }
-
-        .input-group.date .form-control {
-            height: 36px;
-            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
-        }
+        }        
     }
 }
