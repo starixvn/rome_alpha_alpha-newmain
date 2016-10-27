@@ -209,6 +209,11 @@ label {
     }
 }
 
+// Modals
+.bootbox-confirm .modal-dialog {
+    margin: 100px auto 0;
+}
+
 @media only screen and (max-device-width : $conent-device-lower768) {
     body {
         background-color: #fff;
