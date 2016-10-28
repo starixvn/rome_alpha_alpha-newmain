@@ -1,8 +1,10 @@
 ﻿/// <reference path="../../core.ts" />
+declare var Clipboard: any;
 
 class SetupOtp {
     $: any;
     bootbox: any;
+    clipboard: any;
 
     $otpForm: any;
     $txtOtp: any;
@@ -14,6 +16,7 @@ class SetupOtp {
     $changeStatusMessage: any;
     $removeOtpMessage: any;
     $setupOtpMessage: any;
+    $btnSubmitOtp: any;
 
     isAlreadySetup: boolean;
     previousStatus: boolean;
@@ -26,9 +29,10 @@ class SetupOtp {
         thereIsNoChange: (<HTMLInputElement>document.getElementById('ThereIsNoChange')).value
     }
 
-    constructor($: any, bootbox: any) {
+    constructor($: any, bootbox: any, clipboard: any) {
         this.$ = $;
         this.bootbox = bootbox;
+        this.clipboard = clipboard;
     }
 
     init = () => {
@@ -41,7 +45,7 @@ class SetupOtp {
 
     cachedDomElements = () => {
         this.$otpForm = this.$("#otp-form");
-        this.$txtOtp = this.$("#txtOtp");
+        this.$txtOtp = this.$("#txtOtp").val("");
         this.$registerPanel = this.$("#register-panel");
         this.$removeSecretKeyPanel = this.$("#remove-secret-key-panel");
         this.$btnRemoveOtp = this.$("#btn-remove-otp");
@@ -50,12 +54,23 @@ class SetupOtp {
         this.$changeStatusMessage = this.$("#change-status-message");
         this.$removeOtpMessage = this.$("#remove-otp-message");
         this.$setupOtpMessage = this.$("#setup-otp-message");
+        this.$btnSubmitOtp = this.$("#btnSubmitOtp");
     }
 
     registerEvents = () => {
         this.$otpForm.submit(this.setUpEvent);
         this.$btnRemoveOtp.click(this.removeOtpEvent);
         this.$btnChangeStatus.click(this.changeStatusEvent);
+
+        var that = this;
+        this.clipboard
+            .on("success", function (e) {
+                that.$(e.trigger).attr("title", "Copied!").tooltip("show");
+            })
+            .on("error", function (e) {
+            window.console.error("Action:", e.action);
+            window.console.error("Trigger:", e.trigger);
+        });
     }
 
     setUpEvent = (e: any) => {
@@ -74,14 +89,19 @@ class SetupOtp {
 
     onSetupSuccess = (data: any) => {
         var result = new Result(data);
+        alpha.showMessage(this.$setupOtpMessage, result);
+
         if (result.isSuccessful) {
-            this.$registerPanel.hide();
-            this.$removeSecretKeyPanel.show();
+            var that = this;
+            setTimeout(() => {
+                that.$registerPanel.hide(400);
+                that.$removeSecretKeyPanel.show(400);
+            }, 3000);
+
+            this.$btnSubmitOtp.attr("disabled", "disabled");
+            this.$txtOtp.attr("disabled", "disabled");
             this.$btnChangeStatus.removeAttr("disabled");
             this.$cbkEnableOtp.removeAttr("disabled");
-        }
-        else {
-            alpha.showMessage(this.$setupOtpMessage, result);
         }
     }
 
@@ -130,7 +150,9 @@ class SetupOtp {
     onRemoveOtpSuccess = (data: any) => {
         var result = new Result(data);
         alpha.showMessage(this.$removeOtpMessage, result);
-        window.location.href = window.location.href;
+        setTimeout(() => {
+            window.location.href = window.location.href;
+        }, 2000);
     }
 
     onComplete = () => {
@@ -138,7 +160,7 @@ class SetupOtp {
     }
 }
 
-var setUpOtp = new SetupOtp($, bootbox);
+var setUpOtp = new SetupOtp($, bootbox, new Clipboard('.icon-content-copy'));
 
 $(function () {
     setUpOtp.init();

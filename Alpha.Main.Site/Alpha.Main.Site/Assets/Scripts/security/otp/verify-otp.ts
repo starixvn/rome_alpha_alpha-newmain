@@ -21,7 +21,7 @@ class VerifyOtp {
 
     cachedElements = () => {
         this.$otpForm = this.$("#otp-form");
-        this.$txtOtp = this.$("#txtOTP");
+        this.$txtOtp = this.$("#txtOTP").val("");
         this.$btnSubmit = this.$("#btnSubmit");
         this.$otpMessage = this.$("#otp-message");
     }

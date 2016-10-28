@@ -36,8 +36,10 @@
             </p>
 
             <div class="panel-group panel-table" id="accordion" role="tablist" aria-multiselectable="true">
-                
-                @Html.Partial("RegisterAuthenticatorApp", Model)
+                @if (!Model.IsAlreadySetup)
+                {
+                    @Html.Partial("RegisterAuthenticatorApp", Model)
+                }
                 @Html.Partial("RemoveSecretKey", Model)
                 @Html.Partial("ChangeOtpStatus", Model)
                 
