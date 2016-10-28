@@ -175,12 +175,34 @@ label {
             padding: 12px 0;
         }
 
-        .block {
-            padding-top: 12px;
-
-            .txt {
+        .block, .username-customize {
+             .txt {
                 @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
             }
+        }
+
+        .username-customize {
+            a {
+                color: $link-color;
+                &:hover {
+                    color: $link-hover-color;
+                    text-decoration: none;
+                }
+            }
+
+            .form-inline {
+                padding-bottom: 12px;
+
+            
+            
+                * {
+                    margin-right: 8px;
+                }
+            }
+        } 
+
+        .block {
+            padding-top: 12px;
         }
     }
 

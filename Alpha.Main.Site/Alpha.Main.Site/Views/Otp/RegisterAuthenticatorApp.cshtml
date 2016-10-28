@@ -29,7 +29,10 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="note">@Security.OtherAuthenticators</p>
+                    <div class="note">
+                        <p>@Security.OtherAuthenticators</p>
+                        <p class="bold">The date and time setting on your mobile device must be set to automatic.</p>
+                    </div>                    
                 </li>
                 <li>
                     <strong>@Security.ScanQRCode</strong>
@@ -37,13 +40,12 @@
                         <img src="@Html.Raw(Model.CustomerOtp.QrCode)" />
                     </div>
                     <div class="username-customize">
-                        <form class="block last" id="username-form" method="get">
+                        <p>The new account will be named after your username <strong>@Model.CustomerOtp.OtpUsername</strong>. <a href="#">Change it?</a></p>
+                        <form class="form-inline" id="username-form" method="get">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input maxlength="30" type="text" class="txt form-control" name="username" id="username" value="@Model.CustomerOtp.OtpUsername" />
-                            </div>
-                            <div class="form-group last">
-                                <input type="submit" class="btn-submit" id="btnChangeUsername" value="Change" />
+                                <label>Account</label>
+                                <input maxlength="30" type="text" class="txt form-control" name="account" id="account" value="@Model.CustomerOtp.OtpUsername" />
+                                <input type="submit" class="btn-submit" id="btnChangeUsername" value="Regenerate QR" />
                             </div>
                         </form>
                     </div>
