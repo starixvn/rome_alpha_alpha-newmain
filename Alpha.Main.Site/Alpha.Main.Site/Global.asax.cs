@@ -8,6 +8,7 @@
     using System.Web.Routing;
     using Alpha.Auth.Web;
     using Alpha.Main.Site.App_Start;
+    using Configurations;
     using Fanex.Data;
     using Fanex.Data.OldConnectionStringProvider;
     using ONEbook.UM.Filters;
@@ -32,7 +33,7 @@
               .StartNewSession()
               .Use(new OldConnectionStringProvider())
               .UseDefaultDbSettingProvider(
-                resourcePath: "~/App_Data/SPNames/LOCAL",
+                resourcePath: AppSettings.StoreProcedurePath,
                 ignoreRedundantParameters: false,
                 enableWatching: true)
               .Run();

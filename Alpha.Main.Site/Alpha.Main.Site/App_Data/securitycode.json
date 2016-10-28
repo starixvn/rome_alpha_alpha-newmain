@@ -1,6 +1,5 @@
 {
   "isActive": true,
-  "siteMainApp": "/site-main",
   "paths": [
     "SecurityCode/ResetSecurityCode",
     "SecurityCode/ChangeUserOwnSecurityCode",
