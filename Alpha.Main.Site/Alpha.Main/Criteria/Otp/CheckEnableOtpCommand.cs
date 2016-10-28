@@ -1,16 +1,9 @@
 ﻿namespace Alpha.Main.Criteria.Otp
 {
-    using System;
     using Fanex.Data.Repository;
 
     public class CheckEnableOtpCommand : NonQueryCommand
     {
-        public CheckEnableOtpCommand()
-        {
-            ErrCode = 0;
-            ErrMsg = string.Empty;
-        }
-
         public int CustID { get; set; }
 
         public int SubAccID { get; set; }

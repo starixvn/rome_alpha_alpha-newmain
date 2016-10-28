@@ -16,22 +16,26 @@
         private const int TimePeriod = 30;
         private const int OtpSize = 6;
         private const string Issuer = "MyAppName";
+        private const string DateFormat = "yyyyMMdd_HHmm";
 
         private readonly IDynamicRepository dynamicRepository;
         private readonly OtpService otpService;
         private readonly JsonHelper jsonHelper;
         private readonly CasinoService casinoService;
+        private readonly IDateTime dateTime;
 
         public CustomerOtpServiceImpl(
             IDynamicRepository dynamicRepository,
             OtpService otpService,
             JsonHelper jsonHelper,
-            CasinoService casinoService)
+            CasinoService casinoService,
+            IDateTime dateTime)
         {
             this.dynamicRepository = dynamicRepository;
             this.otpService = otpService;
             this.jsonHelper = jsonHelper;
             this.casinoService = casinoService;
+            this.dateTime = dateTime;
         }
 
         public virtual Result ChangeOtpStatus(ChangeOtpStatusParam param)
@@ -60,7 +64,7 @@
             };
         }
 
-        public CustomerOtp GenerateCustomerOtp(int custId, int subAccountId = 0)
+        public CustomerOtp GenerateCustomerOtp(int custId, string username, int subAccountId = 0)
         {
             if (custId <= 0)
             {
@@ -79,7 +83,9 @@
                 SubAccId = subAccountId
             };
 
-            customerOtp.QrCode = otpService.GenerateQrCode(customerOtp.SecretKey, TimePeriod, OtpSize, Issuer);
+            var otpUsername = BuildOtpUsername(username);
+
+            customerOtp.QrCode = otpService.GenerateQrCode(customerOtp.SecretKey, TimePeriod, OtpSize, Issuer, otpUsername);
 
             return customerOtp;
         }
@@ -154,7 +160,7 @@
 
             if (isCorrect)
             {
-                UpdateDeviceInfo(customerOtp);
+                UpdateDeviceInfo(param);
             }
 
             var changeStatusCommand = new UpdateCustomerStatusAfterVerifyOTPCommand
@@ -279,6 +285,22 @@
             };
 
             dynamicRepository.Execute(command);
+        }
+
+        private string BuildOtpUsername(string username)
+        {
+            if (string.IsNullOrWhiteSpace(username)
+                || username.Length < 3)
+            {
+                throw new ArgumentOutOfRangeException(nameof(username), "Username is not valid");
+            }
+
+            var currentTime = this.dateTime.Now.ToString(DateFormat);
+
+            var nameNeedToCensor = username.Substring(0, username.Length - 2);
+            nameNeedToCensor = username.Replace(nameNeedToCensor, new string('*', nameNeedToCensor.Length));
+
+            return $"Acc_{nameNeedToCensor}_{currentTime}";
         }
     }
 }

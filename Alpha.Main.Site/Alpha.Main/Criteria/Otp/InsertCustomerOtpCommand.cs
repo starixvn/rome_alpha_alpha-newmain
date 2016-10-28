@@ -1,16 +1,9 @@
 ﻿namespace Alpha.Main.Criteria.Otp
 {
-    using System;
     using Fanex.Data.Repository;
 
     public class InsertCustomerOtpCommand : NonQueryCommand
     {
-        public InsertCustomerOtpCommand()
-        {
-            ErrCode = 0;
-            ErrMsg = string.Empty;
-        }
-
         public int CustID { get; set; }
 
         public int SubAccID { get; set; }

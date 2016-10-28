@@ -243,7 +243,7 @@
             if (!viewModel.CustomerOtp.Enabled
                 && string.IsNullOrWhiteSpace(viewModel.CustomerOtp.SecretKey))
             {
-                viewModel.CustomerOtp = customerOtpService.GenerateCustomerOtp(message.CustId, message.SubAccountId);
+                viewModel.CustomerOtp = customerOtpService.GenerateCustomerOtp(message.CustId, message.Username, message.SubAccountId);
                 viewModel.IsAlreadySetup = false;
                 sessionManager.Add(SecretKeySessionKey, viewModel.CustomerOtp.SecretKey);
             }

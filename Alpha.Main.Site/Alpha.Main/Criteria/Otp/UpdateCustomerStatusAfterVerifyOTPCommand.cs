@@ -4,12 +4,6 @@
 
     public class UpdateCustomerStatusAfterVerifyOTPCommand : NonQueryCommand
     {
-        public UpdateCustomerStatusAfterVerifyOTPCommand()
-        {
-            ErrCode = 0;
-            ErrMsg = string.Empty;
-        }
-
         public int CustID { get; set; }
 
         public int SubAccID { get; set; }

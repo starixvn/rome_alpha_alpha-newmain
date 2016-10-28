@@ -431,14 +431,15 @@
             var setUpOtpQuery = new SetUpOtpQuery(userSession);
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
+            userSession.SubUserName.Returns("a");
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = false });
-            customerOtpService.GenerateCustomerOtp(1, 2).Returns(new CustomerOtp());
+            customerOtpService.GenerateCustomerOtp(1, "a", 2).Returns(new CustomerOtp());
 
             // Act
             customerOtpHandler.Handle(setUpOtpQuery);
 
             // Assert
-            customerOtpService.Received().GenerateCustomerOtp(1, 2);
+            customerOtpService.Received().GenerateCustomerOtp(1, "a", 2);
         }
 
         [Test]

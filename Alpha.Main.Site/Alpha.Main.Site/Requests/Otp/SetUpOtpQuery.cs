@@ -34,5 +34,13 @@
                 return userSession.SubAccId;
             }
         }
+
+        public string Username
+        {
+            get
+            {
+                return userSession.IsSubAcc ? userSession.SubUserName : userSession.UserName;
+            }
+        }
     }
 }

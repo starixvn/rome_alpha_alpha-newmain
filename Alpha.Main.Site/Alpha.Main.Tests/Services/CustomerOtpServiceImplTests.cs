@@ -103,21 +103,21 @@
         [TestCase(-1)]
         public void GenerateCustomerOtp_CustIdIsNegativeOrZero_ThrowArgumentOutOfRangeException(int custId)
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => customerOtpService.GenerateCustomerOtp(custId));
+            Assert.Throws<ArgumentOutOfRangeException>(() => customerOtpService.GenerateCustomerOtp(custId, "username"));
         }
 
         [TestCase(-1)]
         [TestCase(-2)]
         public void GenerateCustomerOtp_SubAccountIdCannotBeNegative_ThrowArgumentOutOfRangeException(int subAccountId)
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() => customerOtpService.GenerateCustomerOtp(1, subAccountId));
+            Assert.Throws<ArgumentOutOfRangeException>(() => customerOtpService.GenerateCustomerOtp(1, "username", subAccountId));
         }
 
         [Test]
         public void GenerateCustomerOtp_ExecuteGenerateSecretKey()
         {
             // Arrange & Act
-            customerOtpService.GenerateCustomerOtp(10);
+            customerOtpService.GenerateCustomerOtp(10, "username");
 
             // Assert
             otpService.Received().GenerateSecretKey();
@@ -131,7 +131,7 @@
             otpService.GenerateSecretKey().Returns(secretKey);
 
             // Act
-            customerOtpService.GenerateCustomerOtp(10);
+            customerOtpService.GenerateCustomerOtp(10, "username");
 
             // Assert
             otpService.Received().GenerateQrCode(secretKey);
@@ -149,7 +149,7 @@
             var subAccountId = 1;
 
             // Act
-            var actualCustomerOtp = customerOtpService.GenerateCustomerOtp(custId, subAccountId);
+            var actualCustomerOtp = customerOtpService.GenerateCustomerOtp(custId, "username", subAccountId);
 
             // Assert
             Assert.IsTrue(actualCustomerOtp.CustID == custId

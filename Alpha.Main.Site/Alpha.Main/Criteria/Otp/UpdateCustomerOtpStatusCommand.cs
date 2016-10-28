@@ -1,16 +1,9 @@
 ﻿namespace Alpha.Main.Criteria.Otp
 {
-    using System;
     using Fanex.Data.Repository;
 
     public class UpdateCustomerOtpStatusCommand : NonQueryCommand
     {
-        public UpdateCustomerOtpStatusCommand()
-        {
-            ErrCode = 0;
-            ErrMsg = string.Empty;
-        }
-
         public int UserID { get; set; }
 
         public int CustID { get; set; }

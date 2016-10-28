@@ -14,7 +14,7 @@
 
         Result ChangeOtpStatus(ChangeOtpStatusParam param);
 
-        CustomerOtp GenerateCustomerOtp(int custId, int subAccountId = 0);
+        CustomerOtp GenerateCustomerOtp(int custId, string username, int subAccountId = 0);
 
         CustomerOtp GetCustomerOtp(int custId, int subAccountId = 0);
 
