@@ -62,14 +62,23 @@ body {
 }
 
 // Messages
-
 .msg-content {
-    padding-top: 12px;
+    float: left;
+    min-width: 350px;
+    padding-top: 12px;    
 
     .msg {
         line-height: 20px;
         margin: 0;
-        float: left;
+    }
+}
+
+.learn-more {
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: none;
     }
 }
 

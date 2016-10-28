@@ -7,10 +7,6 @@ body {
     font-family: $font-family;
 }
 
-.page-title {
-    border-bottom: none;
-}
-
 label {
     font-weight: normal;
 }
@@ -21,9 +17,11 @@ label {
 }
 
 // Messages
-.msg-content {
-    padding-top: 12px;
+.msg-content {    
     float: left;
+    min-width: 350px;
+    padding-top: 12px;
+
     .msg {
         margin: 0;
     }
@@ -199,6 +197,7 @@ label {
     #change-status-message {
         float: left;
         margin-left: 20px;
+        min-width: 350px;
 
         .msg {
             margin-top: 0;
