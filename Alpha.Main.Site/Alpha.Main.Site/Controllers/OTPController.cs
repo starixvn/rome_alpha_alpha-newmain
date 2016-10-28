@@ -15,7 +15,7 @@
 
         public ActionResult Index(SetUpOtpQuery query)
         {
-            var customerOtp = mediator.Send(new SetUpOtpQuery());
+            var customerOtp = mediator.Send(query);
 
             return View(customerOtp);
         }

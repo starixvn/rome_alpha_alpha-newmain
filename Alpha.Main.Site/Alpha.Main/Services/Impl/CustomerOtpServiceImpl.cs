@@ -83,9 +83,8 @@
                 SubAccId = subAccountId
             };
 
-            var otpUsername = BuildOtpUsername(username);
-
-            customerOtp.QrCode = otpService.GenerateQrCode(customerOtp.SecretKey, TimePeriod, OtpSize, Issuer, otpUsername);
+            customerOtp.OtpUsername = username;
+            customerOtp.QrCode = otpService.GenerateQrCode(customerOtp.SecretKey, TimePeriod, OtpSize, Issuer, customerOtp.OtpUsername);
 
             return customerOtp;
         }
@@ -287,20 +286,20 @@
             dynamicRepository.Execute(command);
         }
 
-        private string BuildOtpUsername(string username)
-        {
-            if (string.IsNullOrWhiteSpace(username)
-                || username.Length < 3)
-            {
-                throw new ArgumentOutOfRangeException(nameof(username), "Username is not valid");
-            }
+        ////private string BuildOtpUsername(string username)
+        ////{
+        ////    if (string.IsNullOrWhiteSpace(username)
+        ////        || username.Length < 3)
+        ////    {
+        ////        throw new ArgumentOutOfRangeException(nameof(username), "Username is not valid");
+        ////    }
 
-            var currentTime = this.dateTime.Now.ToString(DateFormat);
+        ////    var currentTime = this.dateTime.Now.ToString(DateFormat);
 
-            var nameNeedToCensor = username.Substring(0, username.Length - 2);
-            nameNeedToCensor = username.Replace(nameNeedToCensor, new string('*', nameNeedToCensor.Length));
+        ////    var nameNeedToCensor = username.Substring(0, username.Length - 2);
+        ////    nameNeedToCensor = username.Replace(nameNeedToCensor, new string('*', nameNeedToCensor.Length));
 
-            return $"Acc_{nameNeedToCensor}_{currentTime}";
-        }
+        ////    return $"Acc_{nameNeedToCensor}_{currentTime}";
+        ////}
     }
 }

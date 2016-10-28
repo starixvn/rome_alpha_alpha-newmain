@@ -243,6 +243,11 @@
             if (!viewModel.CustomerOtp.Enabled
                 && string.IsNullOrWhiteSpace(viewModel.CustomerOtp.SecretKey))
             {
+                if (string.IsNullOrWhiteSpace(message.Username))
+                {
+                    message.Username = userSession.IsSubAcc ? userSession.SubUserName : userSession.UserName;
+                }
+
                 viewModel.CustomerOtp = customerOtpService.GenerateCustomerOtp(message.CustId, message.Username, message.SubAccountId);
                 viewModel.IsAlreadySetup = false;
                 sessionManager.Add(SecretKeySessionKey, viewModel.CustomerOtp.SecretKey);

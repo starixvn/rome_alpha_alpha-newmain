@@ -4,6 +4,8 @@
     {
         public int CustID { get; set; }
 
+        public string OtpUsername { get; set; }
+
         public int SubAccId { get; set; }
 
         public string SecretKey { get; set; }
