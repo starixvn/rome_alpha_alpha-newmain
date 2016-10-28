@@ -17,14 +17,17 @@ label {
 }
 
 // Messages
-.msg-content {    
-    float: left;
-    min-width: 350px;
+.msg-content {      
     padding-top: 12px;
 
     .msg {
         margin: 0;
     }
+}
+
+.msg {
+    float: left;
+    min-width: 350px;
 }
 
 .block {
@@ -211,6 +214,7 @@ label {
 
 // OTP reset
 .otp-reset {
+    clear: both;
     padding: 12px 0;
 
     .note {
