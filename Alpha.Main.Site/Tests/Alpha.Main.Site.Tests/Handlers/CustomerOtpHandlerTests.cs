@@ -8,6 +8,7 @@
     using NSubstitute;
     using NUnit.Framework;
     using Params.Otp;
+    using SecurityCode.Web;
     using Services;
     using Site.Handlers;
     using Site.Requests.Otp;
@@ -31,6 +32,7 @@
             sessionManager = Substitute.For<SessionManager>();
             customerProfileService = Substitute.For<CustomerProfileService>();
             browserHelper = Substitute.For<BrowserHelper>();
+            SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
             customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, customerProfileService, browserHelper);
         }
 
@@ -71,6 +73,8 @@
             userSession.UserLoginIp.Returns("ip");
             userSession.Language.Returns("language");
 
+            customerOtpService.ChangeOtpStatus(Arg.Any<ChangeOtpStatusParam>()).Returns(new Result { Code = 1 });
+
             // Act
             customerOtpHandler.Handle(command);
 
@@ -83,6 +87,26 @@
                         && param.IP == command.IP
                         && param.Language == command.Language
                         && param.IsEnable == command.IsEnable));
+        }
+
+        [Test]
+        public void HandleChangeOtpStatusCommand_OtpStatusChanged_SetOtpStatusToSession()
+        {
+            // Arrange
+            var command = new ChangeOtpStatusCommand(userSession);
+            command.IsEnable = true;
+            userSession.CustId.Returns(1);
+            userSession.SubAccId.Returns(2);
+            userSession.UserLoginIp.Returns("ip");
+            userSession.Language.Returns("language");
+
+            customerOtpService.ChangeOtpStatus(Arg.Any<ChangeOtpStatusParam>()).Returns(new Result());
+
+            // Act
+            customerOtpHandler.Handle(command);
+
+            // Assert
+            SecurityCodeSessionManager.SecurityCodeSession.Received().IsEnabledOtp = true;
         }
 
         [Test]
@@ -322,6 +346,7 @@
         {
             // Arrange
             var command = new SetUpOtpCommand(userSession);
+            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -335,6 +360,7 @@
         {
             // Arrange
             var command = new SetUpOtpCommand(userSession);
+            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -359,13 +385,14 @@
             browserHelper.GetDeviceInfo().Returns(expectedDeviceInfo);
             var expectedSecretKey = "expectedSecretKey";
             sessionManager.Get<string>(Arg.Any<string>()).Returns(expectedSecretKey);
+            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
 
             // Act
             customerOtpHandler.Handle(command);
 
             // Assert
             customerOtpService.Received().SetUpOtp(Arg.Is<CustomerOtp>(
-                customerOtp => customerOtp.CustID == command.CustId
+                customerOtp => customerOtp.CustId == command.CustId
                             && customerOtp.SubAccId == command.SubAccountId
                             && customerOtp.SecretKey == expectedSecretKey
                             && customerOtp.DeviceInfo.IP == expectedDeviceInfo.IP
@@ -373,6 +400,20 @@
                             && customerOtp.DeviceInfo.BrowserName == expectedDeviceInfo.BrowserName
                             && customerOtp.DeviceInfo.BrowserVersion == expectedDeviceInfo.BrowserVersion
                             && customerOtp.DeviceInfo.DeviceVersion == expectedDeviceInfo.DeviceVersion));
+        }
+
+        [Test]
+        public void HandleSetUpOtpCommand_DidSetUpOtp_SetVerifiedOtpToSession()
+        {
+            // Arrange
+            var command = new SetUpOtpCommand(userSession);
+            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
+
+            // Act
+            customerOtpHandler.Handle(command);
+
+            // Assert
+            SecurityCodeSessionManager.SecurityCodeSession.Received().IsAlreadyInputSecurityCode = true;
         }
 
         [Test]
@@ -431,9 +472,11 @@
             var setUpOtpQuery = new SetUpOtpQuery(userSession);
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
+            userSession.IsSubAcc.Returns(true);
             userSession.SubUserName.Returns("a");
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = false });
-            customerOtpService.GenerateCustomerOtp(1, "a", 2).Returns(new CustomerOtp());
+            customerOtpService.GenerateCustomerOtp(Arg.Any<int>(), Arg.Any<string>(), Arg.Any<int>())
+                .Returns(new CustomerOtp());
 
             // Act
             customerOtpHandler.Handle(setUpOtpQuery);
@@ -451,7 +494,7 @@
             userSession.SubAccId.Returns(2);
             var expectedCustomerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 Enabled = true,
                 QrCode = "QrCode",
                 SubAccId = 2,
@@ -467,7 +510,7 @@
             var actualCustomerOtp = customerOtpHandler.Handle(setUpOtpQuery);
 
             // Assert
-            Assert.IsTrue(expectedCustomerOtp.CustID == actualCustomerOtp.CustomerOtp.CustID
+            Assert.IsTrue(expectedCustomerOtp.CustId == actualCustomerOtp.CustomerOtp.CustId
                 && expectedCustomerOtp.SubAccId == actualCustomerOtp.CustomerOtp.SubAccId
                 && expectedCustomerOtp.QrCode == actualCustomerOtp.CustomerOtp.QrCode
                 && expectedCustomerOtp.SecretKey == actualCustomerOtp.CustomerOtp.SecretKey
@@ -495,15 +538,33 @@
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
             command.Otp = "Otp";
+            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
 
             // Act
             customerOtpHandler.Handle(command);
 
             // Assert
             customerOtpService.Received().VerifyOtp(Arg.Is<CustomerOtp>(customerOtp
-                => customerOtp.CustID == command.CustId
+                => customerOtp.CustId == command.CustId
                     && customerOtp.SubAccId == command.SubAccountId
                     && customerOtp.Otp == command.Otp));
+        }
+
+        [Test]
+        public void HandleVerifyOtpCommand_DidVerifyOtp_SetVerifiedOtpToSession()
+        {
+            // Arrange
+            var command = new VerifyOtpCommand(userSession);
+            userSession.CustId.Returns(1);
+            userSession.SubAccId.Returns(2);
+            command.Otp = "Otp";
+            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
+
+            // Act
+            customerOtpHandler.Handle(command);
+
+            // Assert
+            SecurityCodeSessionManager.SecurityCodeSession.Received().IsAlreadyInputSecurityCode = true;
         }
 
         [Test]

@@ -40,12 +40,12 @@
                         <img src="@Html.Raw(Model.CustomerOtp.QrCode)" />
                     </div>
                     <div class="username-customize">
-                        <p>The new account will be named after your username <strong>@Model.CustomerOtp.OtpUsername</strong>. <a href="#">Change it?</a></p>
+                        <p>@Security.UsernameWarning <strong>@Model.CustomerOtp.OtpUsername</strong>. <a href="#">@Security.ChangeIt</a></p>
                         <form class="form-inline" id="username-form" method="get">
                             <div class="form-group">
                                 <label>Account</label>
                                 <input maxlength="30" type="text" class="txt form-control" name="account" id="account" value="@Model.CustomerOtp.OtpUsername" />
-                                <input type="submit" class="btn-submit" id="btnChangeUsername" value="Regenerate QR" />
+                                <input type="submit" class="btn-submit" id="btnChangeUsername" value="@Security.RegenerateQR" />
                             </div>
                         </form>
                     </div>

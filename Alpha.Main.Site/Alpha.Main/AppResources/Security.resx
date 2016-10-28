@@ -376,4 +376,13 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="ResetDownlineOtpWarning" xml:space="preserve">
     <value>Are you sure you want to remove OTP of this user?</value>
   </data>
+  <data name="RegenerateQR" xml:space="preserve">
+    <value>Regenerate QR</value>
+  </data>
+  <data name="UsernameWarning" xml:space="preserve">
+    <value>The new account will be named after your username</value>
+  </data>
+  <data name="ChangeIt" xml:space="preserve">
+    <value>Change it?</value>
+  </data>
 </root>

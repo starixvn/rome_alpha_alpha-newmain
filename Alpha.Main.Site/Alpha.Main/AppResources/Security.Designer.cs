@@ -171,6 +171,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change it?.
+        /// </summary>
+        public static string ChangeIt {
+            get {
+                return ResourceManager.GetString("ChangeIt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click the button below to remove your current OTP settings.
         /// </summary>
         public static string ClickToRemoveOtp {
@@ -581,6 +590,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Regenerate QR.
+        /// </summary>
+        public static string RegenerateQR {
+            get {
+                return ResourceManager.GetString("RegenerateQR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register Mobile Application.
         /// </summary>
         public static string RegisterMobileApplication {
@@ -802,6 +820,15 @@ namespace Alpha.Main.AppResources {
         public static string UpdateOtpStatusSuccess {
             get {
                 return ResourceManager.GetString("UpdateOtpStatusSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The new account will be named after your username.
+        /// </summary>
+        public static string UsernameWarning {
+            get {
+                return ResourceManager.GetString("UsernameWarning", resourceCulture);
             }
         }
     }

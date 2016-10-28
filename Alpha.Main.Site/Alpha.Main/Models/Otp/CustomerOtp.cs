@@ -2,7 +2,7 @@
 {
     public class CustomerOtp
     {
-        public int CustID { get; set; }
+        public int CustId { get; set; }
 
         public string OtpUsername { get; set; }
 

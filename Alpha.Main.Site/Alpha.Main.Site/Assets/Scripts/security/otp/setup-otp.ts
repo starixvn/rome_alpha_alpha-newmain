@@ -128,6 +128,10 @@ class SetupOtp {
         var result = new Result(data);
         alpha.showMessage(this.$changeStatusMessage, result);
 
+        setTimeout(() => {
+            parent.window.location.href = parent.window.location.href;
+        }, 2000);
+
         this.previousStatus = this.$cbkEnableOtp.is(":checked");
     }
 

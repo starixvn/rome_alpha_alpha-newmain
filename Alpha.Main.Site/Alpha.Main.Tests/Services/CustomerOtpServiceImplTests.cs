@@ -22,6 +22,7 @@
         private OtpService otpService;
         private JsonHelper jsonHelper;
         private CasinoService casinoService;
+        private IDateTime dateTime;
 
         [SetUp]
         public void SetUp()
@@ -30,7 +31,8 @@
             otpService = Substitute.For<OtpService>();
             jsonHelper = Substitute.For<JsonHelper>();
             casinoService = Substitute.For<CasinoService>();
-            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, casinoService);
+            dateTime = Substitute.For<IDateTime>();
+            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, casinoService, dateTime);
         }
 
         #region Change Otp Status
@@ -116,11 +118,14 @@
         [Test]
         public void GenerateCustomerOtp_ExecuteGenerateSecretKey()
         {
-            // Arrange & Act
+            // Arrange
+            var secretKeyLength = 20; 
+
+            // Act
             customerOtpService.GenerateCustomerOtp(10, "username");
 
             // Assert
-            otpService.Received().GenerateSecretKey();
+            otpService.Received().GenerateSecretKey(secretKeyLength);
         }
 
         [Test]
@@ -128,13 +133,13 @@
         {
             // Arrange
             var secretKey = "SecretKey";
-            otpService.GenerateSecretKey().Returns(secretKey);
+            otpService.GenerateSecretKey(20).Returns(secretKey);
 
             // Act
             customerOtpService.GenerateCustomerOtp(10, "username");
 
             // Assert
-            otpService.Received().GenerateQrCode(secretKey);
+            otpService.Received().GenerateQrCode(secretKey, 30, 6, "MyAppName", "username");
         }
 
         [Test]
@@ -142,9 +147,10 @@
         {
             // Arrange
             var secretKey = "SecretKey";
-            otpService.GenerateSecretKey().Returns(secretKey);
+            otpService.GenerateSecretKey(length: 20).Returns(secretKey);
             var quickResponseCode = "qrCode";
-            otpService.GenerateQrCode(Arg.Any<string>()).Returns(quickResponseCode);
+            otpService.GenerateQrCode(Arg.Any<string>(), Arg.Any<int>(), Arg.Any<int>(), Arg.Any<string>(), Arg.Any<string>())
+                .Returns(quickResponseCode);
             var custId = 1;
             var subAccountId = 1;
 
@@ -152,7 +158,7 @@
             var actualCustomerOtp = customerOtpService.GenerateCustomerOtp(custId, "username", subAccountId);
 
             // Assert
-            Assert.IsTrue(actualCustomerOtp.CustID == custId
+            Assert.IsTrue(actualCustomerOtp.CustId == custId
                 && actualCustomerOtp.SubAccId == subAccountId
                 && actualCustomerOtp.QrCode == quickResponseCode
                 && actualCustomerOtp.SecretKey == secretKey
@@ -229,7 +235,7 @@
             // Arrange
             var customerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 2,
                 Enabled = true,
                 Otp = "333",
@@ -253,7 +259,7 @@
             // Arrange
             var customerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 2,
                 Enabled = true,
                 DeviceInfo = new DeviceInfo
@@ -288,7 +294,7 @@
             // Arrange
             var customerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 0,
                 Enabled = true,
                 DeviceInfo = new DeviceInfo
@@ -312,7 +318,7 @@
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<InsertCustomerOtpCommand>(
-                command => command.CustID == customerOtp.CustID
+                command => command.CustID == customerOtp.CustId
                 && command.SubAccID == customerOtp.SubAccId
                 && command.SecretKey == customerOtp.SecretKey
                 && command.DeviceInfo == deviceInfoSerialized
@@ -325,7 +331,7 @@
             // Arrange
             var customerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 0,
                 DeviceInfo = new DeviceInfo
                 {
@@ -443,7 +449,7 @@
             var actualCustomerOtp = customerOtpService.GetCustomerOtp(custId, subAccountId);
 
             // Assert
-            Assert.IsTrue(actualCustomerOtp.CustID == custId
+            Assert.IsTrue(actualCustomerOtp.CustId == custId
                 && actualCustomerOtp.SubAccId == subAccountId
                 && actualCustomerOtp.SecretKey == secretKey
                 && actualCustomerOtp.DeviceInfo.IP == deserializedDevicedInfo.IP
@@ -469,7 +475,7 @@
             // Arrange
             var actualCustomerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 2,
                 Otp = "OTP",
                 DeviceInfo = new DeviceInfo { IP = "IP" }
@@ -482,7 +488,7 @@
             customerOtpService.VerifyOtp(actualCustomerOtp);
 
             // Assert
-            customerOtpService.Received().GetCustomerOtp(actualCustomerOtp.CustID, actualCustomerOtp.SubAccId);
+            customerOtpService.Received().GetCustomerOtp(actualCustomerOtp.CustId, actualCustomerOtp.SubAccId);
         }
 
         [Test]
@@ -498,7 +504,7 @@
                 .Returns(returnCustomerOtp);
             var needVerifiedCustomerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 2,
                 Otp = "OTP",
                 DeviceInfo = new DeviceInfo { IP = "IP" }
@@ -518,7 +524,7 @@
             // Arrange
             var actualCustomerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 2,
                 Otp = "OTP",
                 DeviceInfo = new DeviceInfo { IP = "IP" },
@@ -534,7 +540,7 @@
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<UpdateCustomerStatusAfterVerifyOTPCommand>(
-                    command => command.CustID == actualCustomerOtp.CustID
+                    command => command.CustID == actualCustomerOtp.CustId
                     && command.SubAccID == actualCustomerOtp.SubAccId
                     && command.CheckedOTP == isCorrectOtp
                     && command.IP == actualCustomerOtp.DeviceInfo.IP
@@ -547,7 +553,7 @@
             // Arrange
             var actualCustomerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 0,
                 Otp = "OTP",
                 DeviceInfo = new DeviceInfo { IP = "IP" },
@@ -569,7 +575,7 @@
             customerOtpService.VerifyOtp(actualCustomerOtp);
 
             // Assert
-            customerOtpService.Received().CloseCasinoAccount(actualCustomerOtp.CustID, actualCustomerOtp.DeviceInfo.IP);
+            customerOtpService.Received().CloseCasinoAccount(actualCustomerOtp.CustId, actualCustomerOtp.DeviceInfo.IP);
         }
 
         [Test]
@@ -578,7 +584,7 @@
             // Arrange
             var actualCustomerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 0,
                 Otp = "OTP",
                 DeviceInfo = new DeviceInfo { IP = "IP" },
@@ -600,7 +606,7 @@
             // Arrange
             var actualCustomerOtp = new CustomerOtp
             {
-                CustID = 1,
+                CustId = 1,
                 SubAccId = 0,
                 Otp = "OTP",
                 DeviceInfo = new DeviceInfo { IP = "IP" },

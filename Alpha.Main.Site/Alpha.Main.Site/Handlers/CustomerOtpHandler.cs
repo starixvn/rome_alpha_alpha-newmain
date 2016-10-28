@@ -125,7 +125,7 @@
 
             var customerOtp = new CustomerOtp
             {
-                CustID = message.CustId,
+                CustId = message.CustId,
                 Otp = message.Otp,
                 Language = message.Language,
                 SubAccId = message.SubAccountId,
@@ -172,7 +172,7 @@
             var deviceInfo = browserHelper.GetDeviceInfo();
             var result = customerOtpService.VerifyOtp(new CustomerOtp
             {
-                CustID = message.CustId,
+                CustId = message.CustId,
                 SubAccId = message.SubAccountId,
                 Otp = message.Otp,
                 DeviceInfo = deviceInfo,

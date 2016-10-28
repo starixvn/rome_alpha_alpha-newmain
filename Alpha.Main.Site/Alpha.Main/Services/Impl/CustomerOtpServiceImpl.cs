@@ -15,6 +15,7 @@
     {
         private const int TimePeriod = 30;
         private const int OtpSize = 6;
+        private const int SecretKeyLength = 20;
         private const string Issuer = "MyAppName";
         private const string DateFormat = "yyyyMMdd_HHmm";
 
@@ -78,8 +79,8 @@
 
             var customerOtp = new CustomerOtp
             {
-                SecretKey = otpService.GenerateSecretKey(20),
-                CustID = custId,
+                SecretKey = otpService.GenerateSecretKey(SecretKeyLength),
+                CustId = custId,
                 SubAccId = subAccountId
             };
 
@@ -129,7 +130,7 @@
             var deviceInfoSerialized = jsonHelper.Serialize(param.DeviceInfo);
             var command = new InsertCustomerOtpCommand
             {
-                CustID = param.CustID,
+                CustID = param.CustId,
                 DeviceInfo = deviceInfoSerialized,
                 IP = param.DeviceInfo.IP,
                 Language = param.Language,
@@ -153,7 +154,7 @@
                 throw new ArgumentNullException(nameof(param), "Verify Otp Param Parameters cannot be null");
             }
 
-            var customerOtp = GetCustomerOtp(param.CustID, param.SubAccId);
+            var customerOtp = GetCustomerOtp(param.CustId, param.SubAccId);
 
             var isCorrect = otpService.VerifyOtp(customerOtp.SecretKey, param.Otp, TimePeriod, OtpSize);
 
@@ -167,7 +168,7 @@
                 CheckedOTP = isCorrect,
                 IP = param.DeviceInfo.IP,
                 Language = param.Language,
-                CustID = param.CustID,
+                CustID = param.CustId,
                 SubAccID = param.SubAccId
             };
 
@@ -183,7 +184,7 @@
                 && result.Code == 200
                 && param.SubAccId == 0)
             {
-                CloseCasinoAccount(param.CustID, param.DeviceInfo.IP);
+                CloseCasinoAccount(param.CustId, param.DeviceInfo.IP);
             }
 
             return result;
@@ -223,7 +224,7 @@
 
             return new CustomerOtp
             {
-                CustID = customerOtpDto.CustID,
+                CustId = customerOtpDto.CustID,
                 Enabled = customerOtpDto.Enabled,
                 DeviceInfo = jsonHelper.Deserialize<DeviceInfo>(customerOtpDto.DeviceInfo),
                 SecretKey = customerOtpDto.SecretKey,
@@ -276,7 +277,7 @@
         {
             var command = new UpdateCustomerDeviceInfoCommand
             {
-                CustID = customerOtp.CustID,
+                CustID = customerOtp.CustId,
                 DeviceInfo = jsonHelper.Serialize(customerOtp.DeviceInfo),
                 IP = customerOtp.DeviceInfo.IP,
                 Language = customerOtp.Language,
