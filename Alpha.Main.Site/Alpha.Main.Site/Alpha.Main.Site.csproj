@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Alpha.Auth, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.1.0-MenuResponsive-06\lib\net40\Alpha.Auth.dll</HintPath>
+      <HintPath>..\packages\Alpha.Auth.3.0.1.0-MenuResponsive-07\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.SecurityCode, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
@@ -479,7 +479,8 @@
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
-    <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\init.ts" />
+    <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\mobile-introduction.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
@@ -540,7 +541,7 @@
     <Content Include="Assets\styles\message\message.min.css" />
     <Content Include="typings\globals\hammerjs\typings.json" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\balance-info.ts" />
-    <TypeScriptCompile Include="Assets\scripts\dashboard\base-dashboard.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\notice.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\statistics.ts" />
     <Content Include="Assets\bundles\security\password\change-password.js" />
@@ -831,6 +832,7 @@
     <Content Include="typings\globals\jqueryui\typings.json" />
     <Content Include="typings\globals\toastr\typings.json" />
     <Content Include="typings\globals\storejs\typings.json" />
+    <Content Include="typings\globals\moment\typings.json" />
     <None Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </None>
@@ -865,6 +867,7 @@
     <TypeScriptCompile Include="typings\globals\jquery.cookie\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jqueryui\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jquery\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\moment\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\storejs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\toastr\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
