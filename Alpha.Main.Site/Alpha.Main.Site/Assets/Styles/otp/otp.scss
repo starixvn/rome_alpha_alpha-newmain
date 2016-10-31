@@ -125,6 +125,15 @@ label {
                 }
             }
         }
+
+        .username-form {
+            display: none;
+
+            .form-group {
+                clear: both;
+                display: block;
+            }
+        }
     }
 
     .list-requirements {
@@ -135,7 +144,7 @@ label {
             list-style-type: decimal;
         }
         
-        .download-content, .qr-code, .manualQRCode, .block, .note {
+        .download-content, .qr-code, .manualQRCode, .block, .note, #setup-otp-message {
             margin-left: -12px;
         }
 
@@ -182,18 +191,18 @@ label {
         }
 
         .username-customize {
-            a {
-                color: $link-color;
+            .btn-change-username {
+                color: #038dee;
+                font-weight: bold;
                 &:hover {
-                    color: $link-hover-color;
+                    cursor: pointer;
+                    color: #038dee;
                     text-decoration: none;
                 }
             }
 
             .form-inline {
-                padding-bottom: 12px;
-
-            
+                padding-bottom: 12px;            
             
                 * {
                     margin-right: 8px;
@@ -203,6 +212,10 @@ label {
 
         .block {
             padding-top: 12px;
+        }
+
+        #setup-otp-message .msg {
+            margin-bottom: 0;
         }
     }
 
