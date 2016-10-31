@@ -305,13 +305,13 @@ Notes: your password is cAsE sEnSiTiVe</value>
 Notes: your password is cAsE sEnSiTiVe.</value>
   </data>
   <data name="OtpHiMessage" xml:space="preserve">
-    <value>Hi {0}, you are signing in using a different IP/ Device/ Browser from your last login. Please enter an OTP to coninue.</value>
+    <value>Hi {0}, you are signing in using a different Device/ Browser from your last login. Please enter an OTP to coninue.</value>
   </data>
   <data name="InputOtpBeforeProceeding" xml:space="preserve">
     <value>Please input your OTP before proceeding!</value>
   </data>
   <data name="OtpNotes" xml:space="preserve">
-    <value>Once enabled, the One-Time Password (OTP) will replace your security code. It will only be required once per session before you do a sensitive action, login with a different IP / Device / Browser or when your password has been reset.</value>
+    <value>Once enabled, the One-Time Password (OTP) will replace your security code. It will only be required once per session before you do a sensitive action, login with a different Device / Browser or when your password has been reset.</value>
   </data>
   <data name="RegisterMobileApplication" xml:space="preserve">
     <value>Register Mobile Application</value>

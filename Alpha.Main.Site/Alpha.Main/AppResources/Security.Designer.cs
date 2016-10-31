@@ -495,7 +495,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi {0}, you are signing in using a different IP/ Device/ Browser from your last login. Please enter an OTP to coninue..
+        ///   Looks up a localized string similar to Hi {0}, you are signing in using a different Device/ Browser from your last login. Please enter an OTP to coninue..
         /// </summary>
         public static string OtpHiMessage {
             get {
@@ -513,7 +513,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Once enabled, the One-Time Password (OTP) will replace your security code. It will only be required once per session before you do a sensitive action, login with a different IP / Device / Browser or when your password has been reset..
+        ///   Looks up a localized string similar to Once enabled, the One-Time Password (OTP) will replace your security code. It will only be required once per session before you do a sensitive action, login with a different Device / Browser or when your password has been reset..
         /// </summary>
         public static string OtpNotes {
             get {
