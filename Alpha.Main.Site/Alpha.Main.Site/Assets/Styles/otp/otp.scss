@@ -242,9 +242,14 @@ label {
         }
     }
 
-    .register-succeess {
+    .register-succeess, #remove-otp-message {
+        clear: both;
         padding: 0 16px;
     }
+
+     #remove-otp-message .msg {
+        margin-top: 0;
+     }
 }
 
 // OTP reset
