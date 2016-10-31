@@ -20,6 +20,7 @@ class SetupOtp {
     $usernameForm: any;
     $usernameMessage: any;
     $txtUsername: any;
+    $btnChangeUsername: any;
 
     isAlreadySetup: boolean;
     previousStatus: boolean;
@@ -62,6 +63,7 @@ class SetupOtp {
         this.$usernameForm = this.$("#username-form");
         this.$usernameMessage = this.$("#username-message");
         this.$txtUsername = this.$("#username");
+        this.$btnChangeUsername = this.$("#btn-change-username");
     }
 
     registerEvents = () => {
@@ -70,6 +72,7 @@ class SetupOtp {
         this.$btnRemoveOtp.click(this.removeOtpEvent);
         this.$btnChangeStatus.click(this.changeStatusEvent);
         this.$cbkEnableOtp.change(this.onChangedOtpStatusEvent);
+        this.$btnChangeUsername.click(this.changeUsernameButtonEvent);
 
         var that = this;
         this.clipboard
@@ -80,6 +83,10 @@ class SetupOtp {
             window.console.error("Action:", e.action);
             window.console.error("Trigger:", e.trigger);
         });
+    }
+
+    changeUsernameButtonEvent = () => {
+        this.$usernameForm.toggle(200);
     }
 
     changeUsernameEvent = (e: any) => {
