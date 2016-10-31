@@ -9,8 +9,6 @@
 
         public int SubaccId { get; set; }
 
-        public int UserId { get; set; }
-
         [SpParam(SqlParamName = "securitycode")]
         public string HashedSecurityCode { get; set; }
 

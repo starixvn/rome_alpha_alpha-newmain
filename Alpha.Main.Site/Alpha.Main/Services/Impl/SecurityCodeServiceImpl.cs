@@ -76,7 +76,6 @@
             {
                 CustId = param.CustId,
                 SubaccId = param.SubAccId,
-                UserId = param.UserId,
                 HashedSecurityCode = HashSecurityCode(param.SubAccId, param.NewSecurityCode),
                 IP = param.IP,
                 Language = param.Language
@@ -119,7 +118,7 @@
             {
                 return encryptor.CfsEnCode(securityCode);
             }
-            
+
             var salt = GenerateSalt(custId);
 
             return encryptor.ComputeHash(SHA1, securityCode, salt);
