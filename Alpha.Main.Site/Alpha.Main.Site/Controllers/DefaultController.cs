@@ -45,14 +45,14 @@
                 return Redirect(ForceChangePasswordPath);
             }
 
-            if (this.securityCodeChecker.IsForcedChangeSecurityCode())
-            {
-                return Redirect(SecurityCodePath);
-            }
-
             if (this.mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
             {
                 return Redirect(OtpVerifyDifferenceDevicePath);
+            }
+
+            if (this.securityCodeChecker.IsForcedChangeSecurityCode())
+            {
+                return Redirect(SecurityCodePath);
             }
 
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode());

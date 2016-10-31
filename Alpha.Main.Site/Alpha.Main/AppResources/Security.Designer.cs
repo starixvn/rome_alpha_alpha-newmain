@@ -486,6 +486,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The date and time setting on your mobile device must be set to automatic..
+        /// </summary>
+        public static string OtpDatetimeWarning {
+            get {
+                return ResourceManager.GetString("OtpDatetimeWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hi {0}, you are signing in using a different IP/ Device/ Browser from your last login. Please enter an OTP to coninue..
         /// </summary>
         public static string OtpHiMessage {

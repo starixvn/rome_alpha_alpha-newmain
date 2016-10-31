@@ -8,7 +8,79 @@
       LCS: 7,
       domain: 5
   -->
+  <PopupAnnouncement id="6197902" name="Alpha_Security_Enhancement"
+                     startdate="10/16/2016" enddate="11/29/2016"  effectdate="10/18/2016"
+                      width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, from Mmm dd, yyyy, we release the One-Time Password (OTP) function which is more secured than the Security Code. Once enabled, the OTP will replace your security code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
 
+    <zh-CN src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, from Mmm dd, yyyy, we release the One-Time Password (OTP) function which is more secured than the Security Code. Once enabled, the OTP will replace your security code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, from Mmm dd, yyyy, we release the One-Time Password (OTP) function which is more secured than the Security Code. Once enabled, the OTP will replace your security code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, from Mmm dd, yyyy, we release the One-Time Password (OTP) function which is more secured than the Security Code. Once enabled, the OTP will replace your security code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, from Mmm dd, yyyy, we release the One-Time Password (OTP) function which is more secured than the Security Code. Once enabled, the OTP will replace your security code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, from Mmm dd, yyyy, we release the One-Time Password (OTP) function which is more secured than the Security Code. Once enabled, the OTP will replace your security code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Dear valued agents,<br />
+      <p>
+        Your security and privacy are extremely important to us. Therefore, from Mmm dd, yyyy, we release the One-Time Password (OTP) function which is more secured than the Security Code. Once enabled, the OTP will replace your security code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
   <PopupAnnouncement id="6197901" name="Alpha_Security_Enhancement"
                      startdate="10/16/2016" enddate="10/30/2016"  effectdate="10/18/2016"
                       width="1000" height="220" top="110" left="350">

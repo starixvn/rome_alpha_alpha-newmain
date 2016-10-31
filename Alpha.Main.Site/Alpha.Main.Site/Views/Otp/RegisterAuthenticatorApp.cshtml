@@ -24,14 +24,14 @@
                             <h2>Sophos Authenticator</h2>
                             <p><strong>Sophos Gmbh</strong></p>
                             <ul class="list-inline">
-                                <li><a href="#" class="btn-download-ios"><img src="~/Assets/Styles/otp/images/apple.png" /></a></li>
-                                <li><a href="#" class="btn-download-android"><img src="~/Assets/Styles/otp/images/google.png" /></a></li>
+                                <li><a href="https://itunes.apple.com/vn/app/sophos-authenticator/id864224575?mt=8" class="btn-download-ios" target="_blank" ><img src="~/Assets/Styles/otp/images/apple.png" /></a></li>
+                                <li><a href="https://play.google.com/store/apps/details?id=com.sophos.sophtoken&hl=en" target="_blank" class="btn-download-android"><img src="~/Assets/Styles/otp/images/google.png" /></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="note">
                         <p>@Security.OtherAuthenticators</p>
-                        <p class="bold">The date and time setting on your mobile device must be set to automatic.</p>
+                        <p class="bold">@Security.OtpDatetimeWarning</p>
                     </div>                    
                 </li>
                 <li>
@@ -42,9 +42,10 @@
                     <div class="username-customize">
                         <p>@Security.UsernameWarning <strong>@Model.CustomerOtp.OtpUsername</strong>. <a href="#">@Security.ChangeIt</a></p>
                         <form class="form-inline" id="username-form" method="get">
+                            <div class="form-group" id="username-message"></div>
                             <div class="form-group">
                                 <label>Account</label>
-                                <input maxlength="30" type="text" class="txt form-control" name="account" id="account" value="@Model.CustomerOtp.OtpUsername" />
+                                <input maxlength="30" type="text" class="txt form-control" name="username" id="username" value="@Model.CustomerOtp.OtpUsername" />
                                 <input type="submit" class="btn-submit" id="btnChangeUsername" value="@Security.RegenerateQR" />
                             </div>
                         </form>

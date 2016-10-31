@@ -52,6 +52,7 @@
     @Html.Hidden("OtpIsInvalidOrExpired", Security.OtpIsInvalidOrExpired)
     @Html.Hidden("AuthenticatorAppVerified", Security.AuthenticatorAppVerified)
     @Html.Hidden("ThereIsNoChange", Resources.ThereIsNoChange)
+    @Html.Hidden("ThisFieldRequired", Security.alertSecCodeEmpty)
 
     @Html.Hidden("oldMainRootPath", Alpha.Main.Helpers.MicroSites.OldMainUrl())
     @Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())

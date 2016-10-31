@@ -17,6 +17,9 @@ class SetupOtp {
     $removeOtpMessage: any;
     $setupOtpMessage: any;
     $btnSubmitOtp: any;
+    $usernameForm: any;
+    $usernameMessage: any;
+    $txtUsername: any;
 
     isAlreadySetup: boolean;
     previousStatus: boolean;
@@ -26,7 +29,8 @@ class SetupOtp {
         removeOtpSuccessMessage: (<HTMLInputElement>document.getElementById('RemoveOtpSuccessMessage')).value,
         otpIsInvalidOrExpired: (<HTMLInputElement>document.getElementById('OtpIsInvalidOrExpired')).value,
         authenticatorAppVerified: (<HTMLInputElement>document.getElementById('AuthenticatorAppVerified')).value,
-        thereIsNoChange: (<HTMLInputElement>document.getElementById('ThereIsNoChange')).value
+        thereIsNoChange: (<HTMLInputElement>document.getElementById('ThereIsNoChange')).value,
+        thisFieldRequired: (<HTMLInputElement>document.getElementById('ThisFieldRequired')).value
     }
 
     constructor($: any, bootbox: any, clipboard: any) {
@@ -55,12 +59,17 @@ class SetupOtp {
         this.$removeOtpMessage = this.$("#remove-otp-message");
         this.$setupOtpMessage = this.$("#setup-otp-message");
         this.$btnSubmitOtp = this.$("#btnSubmitOtp");
+        this.$usernameForm = this.$("#username-form");
+        this.$usernameMessage = this.$("#username-message");
+        this.$txtUsername = this.$("#username");
     }
 
     registerEvents = () => {
         this.$otpForm.submit(this.setUpEvent);
+        this.$usernameForm.submit(this.changeUsernameEvent);
         this.$btnRemoveOtp.click(this.removeOtpEvent);
         this.$btnChangeStatus.click(this.changeStatusEvent);
+        this.$cbkEnableOtp.change(this.onChangedOtpStatusEvent);
 
         var that = this;
         this.clipboard
@@ -73,14 +82,30 @@ class SetupOtp {
         });
     }
 
+    changeUsernameEvent = (e: any) => {
+        var username = this.$txtUsername.val();
+        if (username.length === 0) {
+            alpha.showMessage(this.$usernameMessage, new Result({ Code: 1, Message: this.resources.thisFieldRequired }));
+            this.$txtUsername.focus();
+            e.preventDefault();
+        }
+    }
+
     setUpEvent = (e: any) => {
         e.preventDefault();
+
+        var otp = this.$txtOtp.val();
+        if (otp.length === 0) {
+            this.$txtOtp.focus();
+            alpha.showMessage(this.$setupOtpMessage, new Result({ Code: 1, Message: this.resources.thisFieldRequired }));
+            return;
+        }
 
         this.$.blockUI();
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "Otp/SetUpOtp",
-            data: { otp: this.$txtOtp.val() },
+            data: { otp: otp },
             dataType: "json",
             success: this.onSetupSuccess,
             complete: this.onComplete
@@ -105,19 +130,22 @@ class SetupOtp {
         }
     }
 
-    changeStatusEvent = (e: any) => {
+    onChangedOtpStatusEvent = (e: any) => {
         var newStatus = this.$cbkEnableOtp.is(":checked");
-        if (newStatus === this.previousStatus) {
-            var warning = new Result({ Code: Result.warningCode, Message: this.resources.thereIsNoChange });
-            alpha.showMessage(this.$changeStatusMessage, warning);
-            return;
+        if (newStatus !== this.previousStatus) {
+            this.$btnChangeStatus.removeAttr("disabled");
         }
+        else {
+            this.$btnChangeStatus.attr("disabled", "disabled");
+        }
+    }
 
+    changeStatusEvent = (e: any) => {
         this.$.blockUI();
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "Otp/ChangeOtpStatus",
-            data: { isEnable: newStatus },
+            data: { isEnable: this.$cbkEnableOtp.is(":checked") },
             dataType: "json",
             success: this.onChangeStatusSuccess,
             complete: this.onComplete
