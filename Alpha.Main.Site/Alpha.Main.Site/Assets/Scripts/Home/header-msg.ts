@@ -47,12 +47,17 @@ var headerMessage = {
         showLessContainer: null
     },
 
-    init: function () {
+    init: () => {
         headerMessage.cacheElements();
         headerMessage.registerEvents();
 
         headerMessage.showHotMessages();
         headerMessage.getMessages();
+
+        if (alpha.isScreenLower768) {
+            const headerMessageMobile = new Home.HeaderMessageMobile();
+            headerMessageMobile.showMoveBetsMessagePopUp();
+        }
     },
 
     cacheElements: function () {
@@ -235,6 +240,7 @@ var headerMessage = {
             }
         }
     },
+
     showPrivateMessage: function (privateMessage, unreadPriMsgCount) {
         // Process Private Message: show new private message
         const url = headerMessage.urls.mainAppPrivateMessageForm;

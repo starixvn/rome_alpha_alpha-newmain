@@ -1,5 +1,5 @@
 ﻿module Dashboard {
-    export class BalanceInfo extends BaseDashBoard {
+    export class BalanceInfo extends Base {
         registerEvent = () => {
         }
 

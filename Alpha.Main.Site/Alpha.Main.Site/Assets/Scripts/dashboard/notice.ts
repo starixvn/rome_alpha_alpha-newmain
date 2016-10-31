@@ -1,5 +1,5 @@
 ﻿module Dashboard {
-    export class NoticeMessage extends BaseDashBoard {
+    export class NoticeMessage extends Base {
         registerEvent = () => {
             this.onToggleMessage(this.markMessageAsRead);
 

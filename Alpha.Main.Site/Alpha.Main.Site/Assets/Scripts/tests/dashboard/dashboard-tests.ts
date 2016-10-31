@@ -2,7 +2,7 @@
 /// <chutzpah_reference path="../libs/jquery-1.11.3.js" />
 
 describe("Test Dashboard class", () => {
-    const dashBoard = new Dashboard.BaseDashBoard($);
+    const dashBoard = new Dashboard.Base($);
     const fakeElement = $("<div></div>");
 
     let jquerySelectorInit, jqueryGetElementAttribute, jquerySetElementHtml, jqueryAjax;
