@@ -26,6 +26,7 @@
         IRequestHandler<CheckDifferenceDeviceCommand, bool>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
+        private const string NotDetectedDevice = "N/A";
 
         private readonly CustomerOtpService customerOtpService;
         private readonly IUserSession userSession;
@@ -327,11 +328,9 @@
 
             var deviceInfo = browserHelper.GetDeviceInfo();
 
-            return deviceInfo.IP != customerOtp.DeviceInfo.IP
-                || deviceInfo.BrowserName != customerOtp.DeviceInfo.BrowserName
-                || deviceInfo.BrowserVersion != customerOtp.DeviceInfo.BrowserVersion
-                || deviceInfo.DeviceName != customerOtp.DeviceInfo.DeviceName
-                || deviceInfo.DeviceVersion != customerOtp.DeviceInfo.DeviceVersion;
+            return deviceInfo.Id != NotDetectedDevice
+                && customerOtp.DeviceInfo.Id != NotDetectedDevice
+                && deviceInfo.Id != customerOtp.DeviceInfo.Id;
         }
 
         private void SetOtpStatusToSession(bool isEnabledOtp)
