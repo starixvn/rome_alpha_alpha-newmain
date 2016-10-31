@@ -361,6 +361,7 @@
     .instruction-mobile {
         background: none;
         display: none;
+        font-size: 20px;
         position: fixed;
         top: 48px;
         left: 0;
@@ -408,17 +409,17 @@
                     }
 
                     &.search {
-                        @include animation('LineHighlight 0.2s ease-out 1.4s forwards 1');
+                        @include animation('LineHighlight 0.1s ease-out 0.6s forwards 1');
                         right: 164px;
 
                         &:after {
-                            height: 54px;
+                            height: 48px;
                         }
                     }
 
                     &.message {
                         right: 116px;
-                        @include animation('LineHighlight 0.2s ease-out 3s forwards 1');
+                        @include animation('LineHighlight 0.1s ease-out 1.2s forwards 1');
 
                         &:after {
                             height: 109px;
@@ -427,7 +428,7 @@
 
                     &.announcement {
                         right: 71px;
-                        @include animation('LineHighlight 0.2s ease-out 4.6s forwards 1');
+                        @include animation('LineHighlight 0.1s ease-out 1.8s forwards 1');
 
                         &:after {
                             height: 163px;
@@ -436,7 +437,7 @@
 
                     &.setting {
                         right: 26px;
-                        @include animation('LineHighlight 0.2s ease-out 6.2s forwards 1');
+                        @include animation('LineHighlight 0.1s ease-out 2.2s forwards 1');
 
                         &:after {
                             height: 219px;
@@ -445,36 +446,35 @@
                 }
 
                 .txt-instru {
-                    background-color: #67151b;
+                    background-color: #75171f;
                     padding: 12px 20px;
                     position: absolute;
                     color: #fff;
-                    white-space: nowrap;
-                    font-size: 20px;
+                    white-space: nowrap;                    
                     @include border-radius(2px);
 
                     &.search {
                         top: 30px;
                         right: 148px;
-                        @include animation('slideLeftForText 0.4s ease-out 0.4s forwards 1');
+                        @include animation('slideLeftForText 0.1s ease-out 0.4s forwards 1');
                     }
 
                     &.message {
                         top: 86px;
                         right: 100px;
-                        @include animation('slideLeftForText 0.4s ease-out 2s forwards 1');
+                        @include animation('slideLeftForText 0.1s ease-out 1s forwards 1');
                     }
 
                     &.announcement {
                         top: 143px;
                         right: 56px;
-                        @include animation('slideLeftForText 0.4s ease-out 3.6s forwards 1');
+                        @include animation('slideLeftForText 0.1s ease-out 1.6s forwards 1');
                     }
 
                     &.setting {
                         top: 201px;
                         right: 15px;
-                        @include animation('slideLeftForText 0.4s ease-out 5.2s forwards 1');
+                        @include animation('slideLeftForText 0.1s ease-out 2s forwards 1');
 
                         ul {
                             list-style-type: disc;
@@ -489,22 +489,20 @@
                 }
 
                 .button-close {
-                    background-color: #e53935;
+                    background-color: transparent;
+                    border: 1px solid #fff;
+                    bottom: 42px;
+                    color: #fff !important;
+                    padding: 12px 20px;
                     position: fixed;
                     right: 20px;
-                    bottom: 42px;
-                    width: 74px;
-                    height: 74px;
-                    font-size: 24px;
-                    color: #fff !important;
                     text-align: center;
-                    @include border-radius(50%);
-                    @include box-shadow('0 6px 10px rgba(0,0,0,.15)');
+                    @include border-radius(2px);
+                    @include transition('background-color 0.3s cubic-bezier(0, 0, 0, 0)');
 
-                    .icon-close {
-                        position: relative;
-                        top: 20px;
-                        font-size: 32px;
+                    &:hover {
+                        background-color: #75171f;
+                        border-color: #75171f;
                     }
                 }
             }
