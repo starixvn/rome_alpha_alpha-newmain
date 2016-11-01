@@ -190,7 +190,7 @@ class SetupOtp {
         var result = new Result(data);
         alpha.showMessage(this.$removeOtpMessage, result);
         setTimeout(() => {
-            window.location.href = window.location.href;
+            parent.window.location.href = parent.window.location.href;
         }, 2000);
     }
 

@@ -657,41 +657,6 @@
                         && command.IP == param.IP));
         }
 
-        [Test]
-        public void RemoveSecretKey_ResetDownlineOtp_CallChangeOtpStatusToDisableDownlineStatus()
-        {
-            // Arrange
-            var param = new RemoveSecretKeyParam
-            {
-                CustId = 1,
-                ActorId = 2,
-                SubAccountId = 3,
-                IP = "IP",
-                Language = "E",
-                IsDisableOtp = true
-            };
-
-            dynamicRepository
-              .When(repo => repo.Execute(Arg.Any<DeleteCustOtpSecretKeyCommand>()))
-              .Do((callInfo) =>
-              {
-                  var command = callInfo[0] as DeleteCustOtpSecretKeyCommand;
-                  command.ErrCode = 0; // Successfully
-              });
-
-            // Act
-            customerOtpService.RemoveSecretKey(param);
-
-            // Assert
-            customerOtpService.Received().ChangeOtpStatus(Arg.Is<ChangeOtpStatusParam>(
-                statusParam => statusParam.CustId == param.CustId
-                    && statusParam.SubAccountId == param.SubAccountId
-                    && statusParam.ActorId == param.ActorId
-                    && statusParam.IsEnable == false
-                    && statusParam.Language == param.Language
-                    && statusParam.IP == param.IP));
-        }
-
         [TestCase(true)]
         [TestCase(false)]
         public void RemoveSecretKey_RemovedSecretKey_ReturnRemovingStatus(bool isRemoved)

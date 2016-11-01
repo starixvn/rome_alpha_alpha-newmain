@@ -388,4 +388,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="OtpDatetimeWarning" xml:space="preserve">
     <value>The date and time setting on your mobile device must be set to automatic.</value>
   </data>
+  <data name="Copied" xml:space="preserve">
+    <value>Copied</value>
+  </data>
 </root>

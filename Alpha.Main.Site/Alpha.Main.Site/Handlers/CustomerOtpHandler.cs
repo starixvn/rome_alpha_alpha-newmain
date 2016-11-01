@@ -104,7 +104,6 @@
                     ActorId = message.ActorId,
                     IP = message.IP,
                     Language = message.Language,
-                    IsDisableOtp = true,
                     SubAccountId = message.SubAccountId
                 });
             }
@@ -206,7 +205,6 @@
                 ActorId = message.CustId,
                 IP = message.IP,
                 Language = message.Language,
-                IsDisableOtp = true,
                 SubAccountId = message.SubAccountId
             });
 

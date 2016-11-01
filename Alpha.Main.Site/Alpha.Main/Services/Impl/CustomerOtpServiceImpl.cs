@@ -256,20 +256,6 @@
                 Message = command.ErrCode == 0 ? Security.RemoveOtpSuccessMessage : command.ErrMsg
             };
 
-            if (param.IsDisableOtp
-                && deleteResult.IsSuccessful)
-            {
-                return ChangeOtpStatus(new ChangeOtpStatusParam
-                {
-                    CustId = param.CustId,
-                    SubAccountId = param.SubAccountId,
-                    ActorId = param.ActorId,
-                    IsEnable = false,
-                    IP = param.IP,
-                    Language = param.Language
-                });
-            }
-
             return deleteResult;
         }
 
@@ -286,21 +272,5 @@
 
             dynamicRepository.Execute(command);
         }
-
-        ////private string BuildOtpUsername(string username)
-        ////{
-        ////    if (string.IsNullOrWhiteSpace(username)
-        ////        || username.Length < 3)
-        ////    {
-        ////        throw new ArgumentOutOfRangeException(nameof(username), "Username is not valid");
-        ////    }
-
-        ////    var currentTime = this.dateTime.Now.ToString(DateFormat);
-
-        ////    var nameNeedToCensor = username.Substring(0, username.Length - 2);
-        ////    nameNeedToCensor = username.Replace(nameNeedToCensor, new string('*', nameNeedToCensor.Length));
-
-        ////    return $"Acc_{nameNeedToCensor}_{currentTime}";
-        ////}
     }
 }

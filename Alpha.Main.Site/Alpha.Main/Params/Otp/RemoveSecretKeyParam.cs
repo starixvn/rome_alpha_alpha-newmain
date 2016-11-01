@@ -10,8 +10,6 @@
 
         public string Language { get; set; }
 
-        public bool IsDisableOtp { get; set; }
-
         public string IP { get; set; }
     }
 }

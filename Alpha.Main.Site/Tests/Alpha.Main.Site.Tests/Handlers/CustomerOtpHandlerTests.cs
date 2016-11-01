@@ -1,9 +1,11 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
+    using System.Text;
     using AppResources;
     using Helpers;
     using Main.Models;
+    using Main.Models.CustomerProfiles;
     using Main.Models.Otp;
     using NSubstitute;
     using NUnit.Framework;
@@ -169,8 +171,7 @@
 
             // Assert
             customerOtpService.Received().RemoveSecretKey(Arg.Is<RemoveSecretKeyParam>(
-                param => param.IsDisableOtp
-                    && param.CustId == command.CustId
+                param => param.CustId == command.CustId
                     && param.SubAccountId == command.SubAccountId
                     && param.ActorId == command.ActorId));
         }
@@ -276,7 +277,6 @@
             customerOtpService.RemoveSecretKey(Arg.Is<RemoveSecretKeyParam>(
                 param => param.CustId == 1
                     && param.SubAccountId == 2
-                    && !param.IsDisableOtp
                     && param.ActorId == 1
                     && param.Language == "ee"
                     && param.IP == "4"));
@@ -588,5 +588,162 @@
         }
 
         #endregion Verify Otp Command
+
+        #region Handle Verify Otp Different Device Query
+
+        [Test]
+        public void HandleVerifyOtpDifferentDeviceQuery_MessageIsNull_ThrowArgumentNullException()
+        {
+            VerifyOtpDifferentDeviceQuery message = null;
+
+            Assert.Throws<ArgumentNullException>(() => customerOtpHandler.Handle(message));
+        }
+
+        [Test]
+        public void HandleVerifyOtpDifferentDeviceQuery_CallGetProfilePicture()
+        {
+            // Arrange
+            var query = new VerifyOtpDifferentDeviceQuery(userSession);
+            var custId = 10;
+            this.userSession.CustId.Returns(custId);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+
+            // Act
+            customerOtpHandler.Handle(query);
+
+            // Assert
+            customerProfileService.Received().GetProfilePicture(custId);
+        }
+
+        [Test]
+        public void HandleVerifyOtpDifferentDeviceQuery_UserIsSubAcc_ReturnFormattedSubUsername()
+        {
+            // Arrange
+            var query = new VerifyOtpDifferentDeviceQuery(userSession);
+            var subUsername = "subUsername";
+            userSession.IsSubAcc.Returns(true);
+            userSession.SubUserName.Returns(subUsername);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+
+            // Act
+            var viewModel = customerOtpHandler.Handle(query);
+
+            // Assert
+            Assert.AreEqual("(SUB-ACC subUsername)", viewModel.AlternateUsername);
+        }
+
+        [Test]
+        public void HandleVerifyOtpDifferentDeviceQuery_UserHasNickname_ReturnFormattedNickname()
+        {
+            // Arrange
+            var query = new VerifyOtpDifferentDeviceQuery(userSession);
+            var nickname = "nickname";
+            userSession.NickName.Returns(nickname);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+
+            // Act
+            var viewModel = customerOtpHandler.Handle(query);
+
+            // Assert
+            Assert.AreEqual("(nickname)", viewModel.AlternateUsername);
+        }
+
+        [Test]
+        public void HandleVerifyOtpDifferentDeviceQuery_UserDoesNotHaveNickname_ReturnEmptyAltenativeUsername()
+        {
+            // Arrange
+            var query = new VerifyOtpDifferentDeviceQuery(userSession);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+
+            // Act
+            var viewModel = customerOtpHandler.Handle(query);
+
+            // Assert
+            Assert.IsEmpty(viewModel.AlternateUsername);
+        }
+
+        [Test]
+        public void HandleVerifyOtpDifferentDeviceQuery_UserHadProfilePicture_ReturnBased64Image()
+        {
+            // Arrange
+            var userProfileImage = Encoding.ASCII.GetBytes("userProfileImage");
+            var query = new VerifyOtpDifferentDeviceQuery(userSession);
+            customerProfileService.GetProfilePicture(Arg.Any<int>())
+                .Returns(
+                new ProfilePicture
+                {
+                    BinaryAvatar = userProfileImage
+                });
+
+            // Act
+            var viewModel = customerOtpHandler.Handle(query);
+
+            // Assert
+            Assert.AreEqual($"data:image/jpeg;base64,{Convert.ToBase64String(userProfileImage)}", viewModel.EmbedImage);
+        }
+
+        #endregion Handle Verify Otp Different Device Query
+
+        #region Check Difference Device Command
+
+        [Test]
+        public void HandleCheckDifferenceDeviceCommand_MessageIsNull_ThrowArgumentNullException()
+        {
+            CheckDifferenceDeviceCommand message = null;
+
+            Assert.Throws<ArgumentNullException>(() => customerOtpHandler.Handle(message));
+        }
+
+        [Test]
+        public void HandleCheckDifferenceDeviceCommand_CallGetCustomerOtp()
+        {
+            // Arrange
+            var command = new CheckDifferenceDeviceCommand(this.userSession);
+            userSession.CustId.Returns(10);
+            userSession.SubAccId.Returns(20);
+
+            customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp());
+
+            // Act
+            customerOtpHandler.Handle(command);
+
+            // Assert
+            customerOtpService.Received().GetCustomerOtp(10, 20);
+        }
+
+        [TestCase(true)]
+        [TestCase(false)]
+        public void HandleCheckDifferenceDeviceCommand_GotCustomerOtp_SetOtpStatusToSession(bool otpStatus)
+        {
+            // Arrange
+            var command = new CheckDifferenceDeviceCommand(this.userSession);
+
+            customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = otpStatus, DeviceInfo = new DeviceInfo() });
+            browserHelper.GetDeviceInfo().Returns(new DeviceInfo());
+
+            // Act
+            customerOtpHandler.Handle(command);
+
+            // Assert
+            SecurityCodeSessionManager.SecurityCodeSession.Received().IsEnabledOtp = otpStatus;
+        }
+
+        [Test]
+        public void HandleCheckDifferenceDeviceCommand_UserDoesNotEnableOtp_ReturnFalse()
+        {
+            // Arrange
+            var command = new CheckDifferenceDeviceCommand(this.userSession);
+
+            customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = false, DeviceInfo = new DeviceInfo() });
+            browserHelper.GetDeviceInfo().Returns(new DeviceInfo());
+
+            // Act
+            var isDifferenceDevice = customerOtpHandler.Handle(command);
+
+            // Assert
+            Assert.IsFalse(isDifferenceDevice);
+        }
+
+        #endregion Check Difference Device Command
     }
 }
