@@ -104,6 +104,10 @@
                     contentLangPropName += "KO";
                     break;
 
+                case Language.Vietnamese:
+                    contentLangPropName += "VN";
+                    break;
+
                 default:
                     contentLangPropName += "EN";
                     break;

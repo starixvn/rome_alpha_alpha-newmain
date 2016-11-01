@@ -54,7 +54,7 @@
                 <td class="col-order">@(message.index + 1)</td>
                 <td>
                     <div class="row-first">@message.value.CurrentMessage.PostTime<span class="messageId">@message.value.CurrentMessage.Id</span></div>
-                    <div class="message-content @(message.value.HasRedColor ? "text-red" : string.Empty)">@message.value.Content</div>
+                    <div class="message-content @(message.value.HasRedColor ? "text-red" : string.Empty)">@Html.Raw(message.value.Content)</div>
                 </td>
             </tr>
         }

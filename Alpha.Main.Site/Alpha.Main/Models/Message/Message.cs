@@ -121,6 +121,7 @@
                 userName,
                 rowNum)
         {
+            ContentVN = contentVN;
         }
 
         public Message(
@@ -207,6 +208,8 @@
         public string ContentKO { get; private set; }
 
         public string ContentES { get; private set; }
+
+        public string ContentVN { get; private set; }
 
         public DateTime PostTime { get; private set; }
 

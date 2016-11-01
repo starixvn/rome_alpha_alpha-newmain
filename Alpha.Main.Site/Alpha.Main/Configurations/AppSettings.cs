@@ -33,7 +33,7 @@
                 return ConfigurationManager.AppSettings["HowToUseAppPath"];
             }
         }
-        
+
         public static string SiteMainAppPath
         {
             get
@@ -115,5 +115,7 @@
         {
             return ConfigurationManager.AppSettings[name];
         }
+
+        public static string GetMessagesDataPath => ConfigurationManager.AppSettings["MessagesDataPath"];
     }
 }
