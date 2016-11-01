@@ -19,5 +19,7 @@
         public string NickName { get; set; }
 
         public string IntroduceNickNameTooltipCookieName { get; set; }
+
+        public bool IsEnableOtp { get; set; }
     }
 }

@@ -23,4 +23,14 @@
     <Setting Key="ResetSubAccountPassword" SpName="Age_CustSubPwdUpd" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
     <Setting Key="UpdateSubAccountPassword" SpName="Age_CustSubPwdUpd2" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
   </Function>
+
+  <Function Name="Otp">
+    <Setting Key="Age_OTP_CustomerOTPIns" SpName="Age_OTP_CustomerOTPIns" DbName="DBCUST.CustDB.BODBDownlineNetView"/>
+    <Setting Key="Age_OTP_CustomerOTPSel" SpName="Age_OTP_CustomerOTPSel" DbName="DBCUST.CustDB.BODBDownlineNetView"/>
+    <Setting Key="Age_OTP_CustomerOTPStatusUpd" SpName="Age_OTP_CustomerOTPStatusUpd" DbName="DBCUST.CustDB.BODBDownlineNetView"/>
+    <Setting Key="Age_OTP_CustomerCheckEnableOTP" SpName="Age_OTP_CustomerCheckEnableOTP" DbName="DBCUST.CustDB.BODBDownlineNetView"/>
+    <Setting Key="Age_OTP_CustomerOTPDel" SpName="Age_OTP_CustomerOTPDel" DbName="DBCUST.CustDB.BODBDownlineNetView"/>
+    <Setting Key="Age_OTP_CustomerStatusUpdAfterVerifiedOTP" SpName="Age_OTP_CustomerStatusUpdAfterVerifiedOTP" DbName="DBCUST.CustDB.BODBDownlineNetView"/>
+    <Setting Key="Age_OTP_CustomerOTPDeviceInfoUpd" SpName="Age_OTP_CustomerOTPDeviceInfoUpd" DbName="DBCUST.CustDB.BODBDownlineNetView"/>
+  </Function>
 </Functions>

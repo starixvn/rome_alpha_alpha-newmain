@@ -1,5 +1,4 @@
-﻿
-$font-size: 13px;
+﻿$font-size: 13px;
 $font-size-mobile: 14px;
 $font-family: Roboto, Arial, Tahoma,helvetica,sans-serif;
 $text-color: #333;
@@ -8,6 +7,8 @@ $border-color-dark: #cecece;
 $height-normal: 28px;
 $height-mobile: 36px;
 
+$link-color: #045ace;
+$link-hover-color: #F60;
 
 /*******************************************/
 /* Popup */
@@ -37,9 +38,11 @@ $msg-error-bg: #fadddd;
 $msg-error-color: #fe0000;
 $msg-error-border: #ef2d2d;
 
-/*******************************************/
-/* Devices */
-/*******************************************/
+$icon-color: #888;
+$icon-color-dark: #333;
+$icon-hover-color: #e38514;
+
+// Devices
 $screen-device-lower768: 767px;
 $screen-device-greater768: 768px;
 $screen-device-greater1024: 1024px;

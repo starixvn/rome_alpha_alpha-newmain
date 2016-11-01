@@ -1,0 +1,36 @@
+﻿@model ResetOtpViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Model.ResetTitle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/otp/otp-super")
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/otp/otp"))" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1 id="title_header" class="page-title">@Model.ResetTitle</h1>
+
+    @if (Model.Result != null)
+    {
+        <div class="msg @(Model.Result.IsSuccessful ? "msg-success" : "msg-error")">@Model.Result.Message</div>
+    }
+
+    @using (Html.BeginForm("resetotp", "otp", FormMethod.Post, new { @id = "otp-form" }))
+    {
+        @Html.HiddenFor(model => model.CustId)
+        @Html.HiddenFor(model => model.SubAccountId)
+        @Html.HiddenFor(model => model.Username)
+        <div class="otp-reset">
+            <button id="btn-change-status" class="btn-remove">@Resources.Remove</button>
+            <p class="note">@Security.ResetOtpWarning</p>
+        </div>        
+    }
+
+    @Html.Hidden("ResetOtpWarning", Security.ResetDownlineOtpWarning)
+    @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
+    <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/reset-otp")" type="text/javascript"></script>
+</body>
+</html>

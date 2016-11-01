@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 612, 618
+
 namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
@@ -7,6 +8,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Models.Requests.CustomerProfile;
     using NSubstitute;
     using NUnit.Framework;
+    using SecurityCode.Web;
     using Services;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
@@ -23,6 +25,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             customerProfileService = Substitute.For<CustomerProfileService>();
             customerProfileHandler = new CustomerProfileHandler(customerProfileService);
+            SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
             userSession = Substitute.For<IUserSession>();
         }
 
@@ -205,6 +208,22 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             // Assert
             Assert.AreEqual(expectedCookieToolTipName, viewModel.IntroduceNickNameTooltipCookieName);
+        }
+
+        [Test]
+        public void HandleBriefProfileQuery_UserIsEnabledOtp_ReturnEnabledOtp()
+        {
+            // Arrange
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
+
+            var query = new BriefProfileQuery(userSession);
+
+            // Act
+            var viewModel = customerProfileHandler.Handle(query);
+
+            // Assert
+            Assert.IsTrue(viewModel.IsEnableOtp);
         }
     }
 }

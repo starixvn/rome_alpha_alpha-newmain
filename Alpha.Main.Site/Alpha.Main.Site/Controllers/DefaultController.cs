@@ -6,11 +6,17 @@ namespace Alpha.Main.Site.Controllers
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
+    using Requests.Otp;
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
 
     public class DefaultController : BaseController
     {
+        private const string ForceChangePasswordPath = "~/Password/ForceChangePassword";
+        private const string SecurityCodePath = "~/SecurityCode/Index";
+        private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
+        private const string UnSupportedBrowsers = "UnsupportedBrowsers";
+
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
         private readonly SecurityCodeChecker securityCodeChecker;
@@ -31,18 +37,23 @@ namespace Alpha.Main.Site.Controllers
 
             if (browser.IsUnsupportedBrowser)
             {
-                return View("UnsupportedBrowsers", browser);
+                return View(UnSupportedBrowsers, browser);
             }
 
             if (!this.userSession.IsLogged
                 || this.userSession.IsPasswordExpired)
             {
-                return Redirect("~/Password/ForceChangePassword");
+                return Redirect(ForceChangePasswordPath);
+            }
+
+            if (this.mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
+            {
+                return Redirect(OtpVerifyDifferenceDevicePath);
             }
 
             if (this.securityCodeChecker.IsForcedChangeSecurityCode())
             {
-                return Redirect("~/SecurityCode/Index");
+                return Redirect(SecurityCodePath);
             }
 
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode());

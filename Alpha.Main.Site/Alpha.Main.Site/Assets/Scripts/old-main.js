@@ -9,6 +9,7 @@ top.userNames = [];
 
 top.baseUrl = alpha.urls.oldMainRootPath;
 top.mainRootPath = alpha.urls.mainRootPath;
+top.isEnableOtp = alpha.user.isEnableOtp;
 top.IsInternalWebVPN = $("#isInternalWebVPN");
 top.AGE = top.AGE || {};
 top.AGE.PERMISSIONS = alpha.user.subPageAccess;
@@ -392,7 +393,7 @@ function getBootboxPostion(handleElement, popUpOptions) {
 function ShowSecCodePopup(preUrl, callerAge) {
     //preUrl = 'url=' + escape(preUrl);
     //var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
-    var url = top.mainRootPath + 'SecurityCode/VerifySecurityCode';
+    var url = top.mainRootPath + alpha.user.isEnableOtp ? 'otp/verifyotp' : 'SecurityCode/VerifySecurityCode';
     var popH = 190, popW = 396, verticalOffset = -75;
     var x = (screen.width / 2) - (popW / 2) + verticalOffset;
     var y = (screen.height / 2) - (popH / 2);

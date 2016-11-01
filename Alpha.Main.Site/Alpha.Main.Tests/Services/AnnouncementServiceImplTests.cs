@@ -265,7 +265,7 @@
             var test = new NotAgentDirectLoginTest.NotForceUseSecurityCodeSiteTest();
 
             // Act
-            var actualHotAnnouncement = test.Run(announcementPath, expectedAnnouncementContent);
+            var actualHotAnnouncement = test.Run(announcementPath);
 
             // Assert
             Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);

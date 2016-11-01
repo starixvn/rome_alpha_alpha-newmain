@@ -469,4 +469,16 @@
   <data name="submit" xml:space="preserve">
     <value>Submit</value>
   </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="ThereIsNoChange" xml:space="preserve">
+    <value>There is no change to update</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
 </root>

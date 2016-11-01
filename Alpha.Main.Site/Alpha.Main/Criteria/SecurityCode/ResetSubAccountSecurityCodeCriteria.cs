@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Criteria.SecurityCode
 {
+   
     using Fanex.Data;
     using Fanex.Data.Repository;
 
@@ -26,6 +27,8 @@
         {
             return "Age_ResetSubAccountSecurityCode";
         }
+
+  
 
         public override bool IsValid() => CustId > 0;
     }

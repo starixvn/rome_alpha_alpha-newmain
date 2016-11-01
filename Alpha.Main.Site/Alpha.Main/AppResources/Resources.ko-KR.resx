@@ -336,6 +336,9 @@
   </data>
   <data name="stats" xml:space="preserve">
     <value>통계</value>
+     </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>비활성화</value>
   </data>
   <data name="balance" xml:space="preserve">
     <value>잔액정보</value>

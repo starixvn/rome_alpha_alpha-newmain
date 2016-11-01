@@ -10,9 +10,18 @@
     background: none;
 }
 
-.adminAndSubAcc {
+.adminAndSubAcc, .otp  {
     font-size: 12px;
-    margin-top: 8px;
+    margin-top: 4px;
+}
+
+.otp, .otp:hover, .otp:focus {
+    display: inline-block;
+    color: #fff;
+}
+
+.otp:focus {
+    text-decoration: none;
 }
 
 .nickname-box {

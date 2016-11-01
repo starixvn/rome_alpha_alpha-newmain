@@ -157,5 +157,41 @@
     "inputFiles": [
       "Assets/styles/message/message.css"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/otp/otp.css",
+    "inputFiles": [
+      "Assets/styles/otp/otp.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/setup-otp.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/otp/setup-otp.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/verify-otp-difference-device.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/security-helper.js",
+      "Assets/scripts/security/otp/verify-otp-difference-device.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/verify-otp.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/security-helper.js",
+      "Assets/scripts/security/otp/verify-otp.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/reset-otp.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/otp/reset-otp.js"
+    ]
   }
 ]

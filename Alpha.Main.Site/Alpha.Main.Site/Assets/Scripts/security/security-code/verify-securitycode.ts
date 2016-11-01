@@ -64,26 +64,7 @@ var verifySecurityCode = {
                         top.revertSecurityCodePopupTitle();
                     }
 
-                    var redirectUrl = verifySecurityCode.getUrlVars()['redirectUrl'];
-                    if (redirectUrl) {
-                        window.location.href = decodeURIComponent(redirectUrl);
-                        return;
-                    }
-                    
-                    if (top.securityCodePopup && top.securityCodePopup.iframeAttributes.preUrl) {
-                        var preUrl = top.securityCodePopup.iframeAttributes.preUrl as string;
-                        top[preUrl]();
-                        top.securityCodePopup.close();
-                        return;
-                    }
-
-                    if (top.ageWnd && top.ageWnd.iframeAttributes.preUrl) {
-                        var preUrl = top.ageWnd.iframeAttributes.preUrl as string;
-                        top[preUrl]();
-                        return;
-                    }
-
-                    securityHelper.redirectToHomePage(200);
+                    securityHelper.afterVerifed();
                 }
                 else if (code === 2) { // account is closed 
                     alert(data.Message);
@@ -107,16 +88,6 @@ var verifySecurityCode = {
             $txtSecurityCode.focus();
         }
         return message;
-    },
-    getUrlVars: function () {
-        var vars = [], hash;
-        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-        for (var i = 0; i < hashes.length; i++) {
-            hash = hashes[i].split('=');
-            vars.push(hash[0]);
-            vars[hash[0]] = hash[1];
-        }
-        return vars;
     }
 }
 

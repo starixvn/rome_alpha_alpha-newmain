@@ -63,5 +63,9 @@
     "outputFile": "Assets/styles/message/message.css",
     "inputFile": "Assets/styles/message/message.scss",
     "sourceMap": false
+  },
+  {
+    "outputFile": "Assets/styles/otp/otp.css",
+    "inputFile": "Assets/styles/otp/otp.scss"    
   }
 ]

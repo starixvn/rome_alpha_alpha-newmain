@@ -132,6 +132,13 @@ Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/dashboard/notice.js
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/dashboard/notice.js.map
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/dashboard/statistics.js
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/message/index.js
+
+
+*/**/[Ss]cripts/[Ss]ecurity/*.js.map
+*/**/[Ss]cripts/[Ss]ecurity/*.js
+
+*/**/[Ss]cripts/[Ss]ecurity/**/*.js.map
+*/**/[Ss]cripts/[Ss]ecurity/**/*.js
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/message/index.js.map
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/dashboard/dashboard.js.map
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/dashboard/statistics.js.map

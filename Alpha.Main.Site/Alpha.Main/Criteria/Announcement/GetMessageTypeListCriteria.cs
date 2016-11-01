@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
+    using System;
     using Fanex.Data.Repository;
 
     public class GetMessageTypeListCriteria : CriteriaBase

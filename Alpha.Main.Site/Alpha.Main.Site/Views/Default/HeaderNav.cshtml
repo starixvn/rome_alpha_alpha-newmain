@@ -32,7 +32,7 @@
 
             <ul id="header-dropdown-menu" class="dropdown-menu list-setting">
                 <li class="visible-mobile dropdown-submenu language">@Html.Action("List", "Language")</li>
-                <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.LoginOption</a></li>
+                <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.nickname</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
                 <li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
 
@@ -41,6 +41,7 @@
                     <li><a href="@($"{Model.MainRootPath}SecurityCode/ChangeUserOwnSecurityCode")" target="main"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
                 }
                 <li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="_blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
+                <li><a href="@($"{Model.MainRootPath}otp/index")" target="main"><span class="icon icon-otp"></span>OTP</a></li>
                 <li><a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a></li>
                 <li class="visible-mobile"><a class="link-logout"><span class="icon icon-logout"></span>@Resources.LogOut</a></li>
             </ul>

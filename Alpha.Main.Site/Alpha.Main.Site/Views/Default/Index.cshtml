@@ -44,6 +44,7 @@
     @Html.Partial("HiddenFields", Model)
 
     @StaticResources.AssetScripts.Render("/bundles/common/common")
+    @Html.Hidden("isEnabledOtp", Model.IsEnabledOtp)
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
     <!--[if (gt IE 8)|!(IE)]><!-->

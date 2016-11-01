@@ -52,8 +52,8 @@
       <HintPath>..\packages\Alpha.Auth.3.0.1.0-MenuResponsive-07\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.SecurityCode, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.3\lib\net40\Alpha.SecurityCode.dll</HintPath>
+    <Reference Include="Alpha.SecurityCode, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.SecurityCode.3.0.0.4-OTP-05\lib\net40\Alpha.SecurityCode.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -64,12 +64,36 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr3.Runtime.3.3.1.7705\lib\net20\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.Age.UI, Version=3.0.2.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Age.UI.3.0.2.5\lib\net40\Fanex.Age.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Fanex.Data, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.2.0.1.5\lib\net461\Fanex.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.Data.DNAide, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Data.DNAide.1.0.0\lib\net461\Fanex.Data.DNAide.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Data.OldConnectionStringProvider, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.OldConnectionStringProvider.1.0.1\lib\net461\Fanex.Data.OldConnectionStringProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Data.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Data.Repository.1.0.0\lib\net461\Fanex.Data.Repository.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ILogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -82,10 +106,6 @@
     </Reference>
     <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
       <HintPath>..\packages\log4net.1.2.9.1\lib\net40\log4net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0.2\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CasinoLibrary, Version=1.0.2.14, Culture=neutral, processorArchitecture=MSIL">
@@ -112,28 +132,12 @@
       <HintPath>..\packages\Fanex.Common.1.0.404.97\lib\net40\Fanex.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.CustomerSetting.Client40, Version=1.0.2.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.CustomerSetting.1.0.2.7\lib\net40\Fanex.CustomerSetting.Client40.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Fanex.CustomerSetting.Module.Casino, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CasinoLibrary.1.0.2.14\lib\net40\Fanex.CustomerSetting.Module.Casino.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.CustomerSetting.Module.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.CustomerSetting.Module.Core.Alpha.1.0.0.2\lib\net40\Fanex.CustomerSetting.Module.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Fanex.CustomerSetting.Module.KenoStatus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.CustomerSetting.Module.KenoStatus.1.0.0.2\lib\net40\Fanex.CustomerSetting.Module.KenoStatus.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Fanex.Data, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Data.2.0.1.5\lib\net461\Fanex.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Fanex.Data.DbSettingProviderExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Data.DbSettingProviderExtension.1.0.0.1\lib\net40\Fanex.Data.DbSettingProviderExtension.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Data.OldConnectionStringProvider, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -142,14 +146,6 @@
     </Reference>
     <Reference Include="Fanex.Data.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Data.Repository.1.0.0\lib\net461\Fanex.Data.Repository.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Fanex.GoldDeluxe.CoreSetting, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0.2\lib\net40\Fanex.GoldDeluxe.CoreSetting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Fanex.LiveCasino.CoreSetting, Version=1.2.2.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.LiveCasino.CoreSetting.Alpha.1.2.2.3\lib\net40\Fanex.LiveCasino.CoreSetting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -207,12 +203,20 @@
       <HintPath>..\packages\MvcPager.1.5.0.28157\lib\net40\MvcPager.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.Alpha.4.5.0.0\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ONEbook.OTP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ONEbook.OTP.1.0.0-beta2\lib\net461\ONEbook.OTP.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ONEbook.UM, Version=2.0.2.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ONEbook.UM.2.0.2.7\lib\net40\ONEbook.UM.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OtpSharp, Version=1.3.0.4, Culture=neutral, PublicKeyToken=1ec2a4a54aeffc1e, processorArchitecture=MSIL">
+      <HintPath>..\packages\OtpSharp.1.3.0.4\lib\net40\OtpSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RemotingRef, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -491,6 +495,10 @@
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\init.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />
+    <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
     <TypeScriptCompile Include="Assets\scripts\introduction\mobile-introduction.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
@@ -537,6 +545,14 @@
     <Content Include="Assets\bundles\default-message.min.js">
       <DependentUpon>default-message.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\otp\otp.css" />
+    <Content Include="Assets\bundles\otp\otp.min.css">
+      <DependentUpon>otp.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security\otp\reset-otp.js" />
+    <Content Include="Assets\bundles\security\otp\reset-otp.min.js">
+      <DependentUpon>reset-otp.js</DependentUpon>
+    </Content>
     <Content Include="Assets\scripts\introduction\enjoyhint.js" />
     <Content Include="Assets\scripts\tests\libs\hammer.js" />
     <Content Include="Assets\scripts\tests\libs\jquery-1.11.3.js" />
@@ -549,6 +565,18 @@
     </Content>
     <Content Include="Assets\styles\message\message.css" />
     <Content Include="Assets\styles\message\message.min.css" />
+    <Content Include="Assets\bundles\security\otp\setup-otp.js" />
+    <Content Include="Assets\bundles\security\otp\setup-otp.min.js">
+      <DependentUpon>setup-otp.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security\otp\verify-otp-difference-device.js" />
+    <Content Include="Assets\bundles\security\otp\verify-otp-difference-device.min.js">
+      <DependentUpon>verify-otp-difference-device.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security\otp\verify-otp.js" />
+    <Content Include="Assets\bundles\security\otp\verify-otp.min.js">
+      <DependentUpon>verify-otp.js</DependentUpon>
+    </Content>
     <Content Include="typings\globals\hammerjs\typings.json" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\balance-info.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
@@ -594,6 +622,15 @@
     <Content Include="Assets\bundles\security\security.min.css">
       <DependentUpon>security.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\otp\images\1.jpg" />
+    <Content Include="Assets\styles\otp\images\apple.png" />
+    <Content Include="Assets\styles\otp\images\google.png" />
+    <Content Include="Assets\styles\otp\images\logo.png" />
+    <Content Include="Assets\styles\otp\images\manual-android.png" />
+    <Content Include="Assets\styles\otp\images\manual-ios.png" />
+    <Content Include="Assets\styles\otp\images\qr.png" />
+    <Content Include="Assets\styles\otp\otp.css" />
+    <Content Include="Assets\styles\otp\otp.min.css" />
     <Content Include="Assets\styles\security\images\1.jpg" />
     <Content Include="Assets\styles\security\images\2.jpg" />
     <Content Include="Assets\styles\security\images\3.jpg" />
@@ -784,6 +821,7 @@
     <Content Include="Assets\styles\introduction\intro.scss" />
     <Content Include="Assets\styles\security\security.scss" />
     <Content Include="Assets\styles\message\message.scss" />
+    <Content Include="Assets\styles\otp\otp.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -838,6 +876,13 @@
     <Content Include="typings\globals\jasmine\typings.json" />
     <Content Include="typings\globals\jquery.blockui\typings.json" />
     <Content Include="typings\globals\jquery\typings.json" />
+    <Content Include="Views\Otp\VerifyOtpDifferenceDevice.cshtml" />
+    <Content Include="Views\Otp\Index.cshtml" />
+    <Content Include="Views\Otp\VerifyOtp.cshtml" />
+    <Content Include="Views\Otp\ResetOtp.cshtml" />
+    <Content Include="Views\Otp\RegisterAuthenticatorApp.cshtml" />
+    <Content Include="Views\Otp\RemoveSecretKey.cshtml" />
+    <Content Include="Views\Otp\ChangeOtpStatus.cshtml" />
     <Content Include="typings\globals\jquery.cookie\typings.json" />
     <Content Include="typings\globals\bootstrap\typings.json" />
     <Content Include="typings\globals\jqueryui\typings.json" />
@@ -895,6 +940,7 @@
     <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\OtpController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="Filters\AntiXSRFFilter.cs" />
@@ -902,6 +948,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\MessageHandler.cs" />
+    <Compile Include="Handlers\CustomerOtpHandler.cs" />
     <Compile Include="Handlers\NoticeHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
@@ -929,6 +976,15 @@
     <Compile Include="Requests\Dashboard\Statistics\TopWinningMembersQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
+    <Compile Include="Requests\Otp\ChangeOtpStatusCommand.cs" />
+    <Compile Include="Requests\Otp\CheckDifferenceDeviceCommand.cs" />
+    <Compile Include="Requests\Otp\RemoveOtpCommand.cs" />
+    <Compile Include="Requests\Otp\ResetOtpCommand.cs" />
+    <Compile Include="Requests\Otp\ResetOtpQuery.cs" />
+    <Compile Include="Requests\Otp\SetUpOtpCommand.cs" />
+    <Compile Include="Requests\Otp\SetUpOtpQuery.cs" />
+    <Compile Include="Requests\Otp\VerifyOtpCommand.cs" />
+    <Compile Include="Requests\Otp\VerifyOtpDifferentDeviceQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
     <Compile Include="Requests\Message\MessageQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordQuery.cs" />
@@ -965,11 +1021,14 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\Security\OtpViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
     <Compile Include="ViewModels\Message\MessagesViewModel.cs" />
+    <Compile Include="ViewModels\Security\ResetOtpViewModel.cs" />
     <Compile Include="ViewModels\Message\MessageWrapper.cs" />
     <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
+    <Compile Include="ViewModels\Security\VerifyOtpDifferenceDeviceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">

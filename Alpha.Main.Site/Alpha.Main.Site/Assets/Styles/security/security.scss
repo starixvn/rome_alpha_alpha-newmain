@@ -13,9 +13,10 @@ body {
 }
 
 .block {
-    max-width: 400px;
+    max-width: 350px;
     padding-top: 22px;
-    width: 360px;    
+    width: 350px;    
+    clear: both;
 
     label {
         font-weight: normal;
@@ -61,13 +62,23 @@ body {
 }
 
 // Messages
-
 .msg-content {
-    padding-top: 12px;
+    float: left;
+    min-width: 350px;
+    padding-top: 12px;    
 
     .msg {
-        max-width: 500px;
+        line-height: 20px;
         margin: 0;
+    }
+}
+
+.learn-more {
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: none;
     }
 }
 

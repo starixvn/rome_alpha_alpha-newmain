@@ -1,5 +1,6 @@
 ﻿declare var isMobile: any;
 //declare var $: any;
+declare var bootbox: any;
 
 var alpha = {
     urls:
@@ -33,7 +34,11 @@ var alpha = {
             : "not found",
         isShowIntroduction: document.getElementById('isShowIntroduction') != null
             ? ((<HTMLInputElement>document.getElementById('isShowIntroduction')).value.toLowerCase() === "true")
-            : "not found"
+            : "not found",
+        isEnableOtp: document.getElementById('isEnabledOtp') != null
+            ? ((<HTMLInputElement>document.getElementById('isEnabledOtp')).value.toLowerCase() === "true")
+            : false
+
     },
     core:
     {
@@ -115,7 +120,26 @@ var alpha = {
 
             return cookieExpire;
         },
+    },
+    showMessage: function ($target: any, result: Result) {
+        $target.empty();
+
+        if (result.isSuccessful) {
+            $target.html("<div class='msg msg-success'>" + result.message + "</div>");
+            return;
+        }
+
+        if (result.isWarning) {
+            $target.html("<div class='msg msg-warning'>" + result.message + "</div>");
+            return;
+        }
+
+        if (result.isFailed) {
+            $target.html("<div class='msg msg-error'>" + result.message + "</div>");
+            return;
+        }
     }
+            
 };
 
 $(() => {
@@ -133,3 +157,21 @@ $(() => {
         }
     });
 });
+
+class Result {
+    static warningCode: number = -1000;
+
+    code: number;
+    message: string;
+    isSuccessful: boolean;
+    isFailed: boolean;
+    isWarning: boolean;
+
+    constructor(data?: any) {
+        this.code = data.Code;
+        this.message = data.Message || "";
+        this.isFailed = this.code !== 0;
+        this.isSuccessful = this.code === 0;
+        this.isWarning = data.Code === Result.warningCode;
+    }
+}

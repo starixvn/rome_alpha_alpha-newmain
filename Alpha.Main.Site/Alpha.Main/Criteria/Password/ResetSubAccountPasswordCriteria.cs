@@ -34,6 +34,6 @@
             return "ResetSubAccountPassword";
         }
 
-        public override bool IsValid() => CustId > 0;
+        public override bool IsValid() => CustId > 0;        
     }
 }

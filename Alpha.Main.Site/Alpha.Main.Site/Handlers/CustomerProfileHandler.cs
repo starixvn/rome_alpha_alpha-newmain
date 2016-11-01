@@ -37,7 +37,8 @@
                 Username = HttpUtility.HtmlEncode(message.UserName),
                 LoginUserIsNotMainAccount = message.IsSubAcc || message.IsInternal,
                 NickName = BuildNickName(message),
-                IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{message.CustId}")
+                IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{message.CustId}"),
+                IsEnableOtp = message.IsEnabledOtp
             };
 
             return viewModel;
