@@ -1,6 +1,10 @@
 ﻿module Home {
     export class HeaderMessageMobile {
+        private storedMoveBetsEndTime: Date = new Date();
+
         init = () => {
+            this.showMoveBetsMessagePopUp();
+            setInterval(this.showMoveBetsMessagePopUp, 5000);
         }
 
         showMoveBetsMessagePopUp = () => {
@@ -13,16 +17,12 @@
 
         private onSuccessGetMessages = (rawResults: string) => {
             var results = alpha.core.convertReponseToJson(rawResults);
-
             var movebetsMessage: string = results.movebets_message || "",
-                today: Date = new Date(),
-                movebetsEndTime: Date = results.movebets_endtime ? new Date(results.movebets_endtime) : today;
+                movebetsEndTime: Date = results.movebets_endtime ? new Date(results.movebets_endtime) : null;
 
-            if (movebetsEndTime > today) {
-                alpha.localStorage.set('movebets_endtime', movebetsEndTime);
+            if (movebetsEndTime !== null && movebetsEndTime > this.storedMoveBetsEndTime) {
                 this.showMoveBetsMessageToaster(movebetsMessage);
-
-                //setInterval(this.showMoveBetsMessagePopUp, movebetsEndTime.getTime() - today.getTime());
+                this.storedMoveBetsEndTime = movebetsEndTime;
             }
         }
 

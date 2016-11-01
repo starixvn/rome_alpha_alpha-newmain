@@ -166,18 +166,18 @@ var headerNav = {
                 return $.get(
                     headerNav.urls.queryUserName,
                     { query: query },
-                    function (data) {
+                    (data) => {
                         let suggestions = alpha.core.convertReponseToJson(data).suggestions;
 
-                        if (typeof suggestions !== 'undefined') {
-                            let sugestionItems = suggestions.map(function (item) {
+                        if (typeof suggestions !== 'undefined' && suggestions !== null && suggestions.length !== 0) {
+                            let sugestionItems = suggestions.map((item) => {
                                 return item[0];
                             });
 
                             return process(sugestionItems);
                         }
 
-                        return process();
+                        return process(["Not found"]);
                     });
             };
 

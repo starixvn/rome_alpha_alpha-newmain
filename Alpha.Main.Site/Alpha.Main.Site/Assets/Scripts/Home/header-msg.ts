@@ -56,7 +56,7 @@ var headerMessage = {
 
         if (alpha.isScreenLower768) {
             const headerMessageMobile = new Home.HeaderMessageMobile();
-            headerMessageMobile.showMoveBetsMessagePopUp();
+            headerMessageMobile.init();
         }
     },
 

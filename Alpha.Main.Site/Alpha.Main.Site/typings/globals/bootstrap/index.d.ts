@@ -70,6 +70,7 @@ interface TypeaheadOptions {
     autoSelect?: boolean;
     delay?: number;
     afterSelect?: any;
+    addItem?: any;
 }
 
 interface AffixOptions {
