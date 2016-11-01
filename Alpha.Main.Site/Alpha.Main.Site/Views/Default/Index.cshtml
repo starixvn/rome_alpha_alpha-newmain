@@ -42,6 +42,8 @@
         </main>
     </div>
     @Html.Partial("HiddenFields", Model)
+
+    @StaticResources.AssetScripts.Render("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
     <!--[if (gt IE 8)|!(IE)]><!-->

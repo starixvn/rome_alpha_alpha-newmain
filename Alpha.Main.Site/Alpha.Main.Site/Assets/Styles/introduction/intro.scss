@@ -347,7 +347,6 @@
 
 @media only screen and (max-device-width: $screen-device-lower768) {
     .blockUI-mobile {
-        display: none;
         background-color: #000;
         opacity: 0.8;
         position: fixed;
@@ -356,11 +355,14 @@
         right: 0;
         bottom: 0;
         z-index: 99998;
+
+        &:before {
+            display: none;
+        }
     }
 
     .instruction-mobile {
         background: none;
-        display: none;
         font-size: 20px;
         position: fixed;
         top: 48px;
@@ -368,6 +370,10 @@
         right: 0;
         bottom: 0;
         z-index: 99999;
+
+        &:before {
+            display: none;
+        }
 
         .modal-dialog.ex-modal {
             height: 100%;
@@ -450,7 +456,7 @@
                     padding: 12px 20px;
                     position: absolute;
                     color: #fff;
-                    white-space: nowrap;                    
+                    white-space: nowrap;
                     @include border-radius(2px);
 
                     &.search {

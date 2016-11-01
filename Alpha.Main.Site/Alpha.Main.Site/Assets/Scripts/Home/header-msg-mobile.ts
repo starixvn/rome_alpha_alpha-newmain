@@ -16,8 +16,8 @@
         }
 
         private onSuccessGetMessages = (rawResults: string) => {
-            var results = alpha.core.convertReponseToJson(rawResults);
-            var movebetsMessage: string = results.movebets_message || "",
+            const results = alpha.core.convertReponseToJson(rawResults),
+                movebetsMessage: string = results.movebets_message || "",
                 movebetsEndTime: Date = results.movebets_endtime ? new Date(results.movebets_endtime) : null;
 
             if (movebetsEndTime !== null && movebetsEndTime > this.storedMoveBetsEndTime) {
@@ -29,7 +29,7 @@
         private showMoveBetsMessageToaster = (message: string) => {
             toastr.options.positionClass = 'toast-top-full-width toastr-announcement';
             toastr.options.closeButton = true;
-            toastr.options.timeOut = 11115000;
+            toastr.options.timeOut = 10000;
             toastr.options.preventDuplicates = true;
             toastr.warning(message);
         }
