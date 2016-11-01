@@ -27,10 +27,11 @@
         }
 
         private showMoveBetsMessageToaster = (message: string) => {
-            toastr.options.positionClass = 'toast-top-full-width';
-            toastr.options.timeOut = 5000;
+            toastr.options.positionClass = 'toast-top-full-width toastr-announcement';
+            toastr.options.closeButton = true;
+            toastr.options.timeOut = 11115000;
             toastr.options.preventDuplicates = true;
-            toastr.error(message);
+            toastr.warning(message);
         }
     }
 }
