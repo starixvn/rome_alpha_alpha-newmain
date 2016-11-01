@@ -414,4 +414,7 @@
   <data name="stats" xml:space="preserve">
     <value>Thống kê</value>
   </data>
+  <data name="balance" xml:space="preserve">
+    <value>Tài Khoản</value>
+  </data>
 </root>

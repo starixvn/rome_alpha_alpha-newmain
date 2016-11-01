@@ -463,4 +463,10 @@
   <data name="specialNotice" xml:space="preserve">
     <value>Special Notice</value>
   </data>
+  <data name="message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
 </root>

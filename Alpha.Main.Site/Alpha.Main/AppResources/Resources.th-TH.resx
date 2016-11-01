@@ -415,4 +415,7 @@
   <data name="stats" xml:space="preserve">
     <value>สถิติของคุณ</value>
   </data>
+  <data name="balance" xml:space="preserve">
+    <value>ข้อมูลยอดเงินคงเหลือ</value>
+  </data>
 </root>

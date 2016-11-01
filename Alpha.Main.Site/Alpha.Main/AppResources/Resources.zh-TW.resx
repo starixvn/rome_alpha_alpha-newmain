@@ -415,4 +415,7 @@
   <data name="stats" xml:space="preserve">
     <value>您的統計</value>
   </data>
+  <data name="balance" xml:space="preserve">
+    <value>餘額資料</value>
+  </data>
 </root>

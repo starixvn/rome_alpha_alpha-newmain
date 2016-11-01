@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Alpha.Main.AppResources
-{
-
-
+namespace Alpha.Main.AppResources {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -476,6 +476,15 @@ namespace Alpha.Main.AppResources
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string message {
+            get {
+                return ResourceManager.GetString("message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your betting limit value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
         /// </summary>
         public static string modifiedBettingLimitValue {
@@ -763,6 +772,15 @@ namespace Alpha.Main.AppResources
         public static string subAcc {
             get {
                 return ResourceManager.GetString("subAcc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        public static string submit {
+            get {
+                return ResourceManager.GetString("submit", resourceCulture);
             }
         }
         

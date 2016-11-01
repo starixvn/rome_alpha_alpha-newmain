@@ -1,21 +1,14 @@
 ﻿module Dashboard {
     export class Statistics extends Base {
         registerEvent = () => {
-            this.handleTooltip();
+            this.$('[data-toggle="tooltip"]').tooltip({
+                html: true,
+                trigger: 'hover'
+            });;
+
             this.onToggleDropdown('#listTopWinningMembers', this.loadDropdownInfo);
             this.onToggleDropdown('#listTopTurnoverMembers', this.loadDropdownInfo);
             this.onToggleDropdown('#listNewMembers', this.loadDropdownInfo);
-        }
-
-        private handleTooltip = () => {
-            const thisTooltip = this.$('[data-toggle="tooltip"]');
-
-            thisTooltip.tooltip({ html: true });
-
-            $('body').on('touchend', () => {
-                thisTooltip.tooltip('hide');
-                thisTooltip.tooltip({ html: true });
-            });
         }
 
         private onToggleDropdown = (id: string, loadInfo: (url: string, dataElement: JQuery) => void) => {
