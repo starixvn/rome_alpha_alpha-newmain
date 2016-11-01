@@ -6,6 +6,7 @@
     using Main.Helpers;
     using Main.Models.Enumerations;
     using Models.Requests;
+    using SecurityCode.Web;
     using Sunplus.Agent.Utilities;
 
     public class IndexViewModel
@@ -67,5 +68,7 @@
         public string DefaultUrl => getDefaultUrl?.Invoke() ?? MainRootPath;
 
         public HeaderNavViewModel HeaderNavViewModel => new HeaderNavViewModel(CustId, EnableSecurityCode, message.IsViewedMemberInfo);
+
+        public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
     }
 }
