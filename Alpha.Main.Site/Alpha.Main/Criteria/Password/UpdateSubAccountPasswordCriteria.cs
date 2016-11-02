@@ -26,6 +26,5 @@
         }
 
         public override bool IsValid() => CustId > 0;
-      
     }
 }

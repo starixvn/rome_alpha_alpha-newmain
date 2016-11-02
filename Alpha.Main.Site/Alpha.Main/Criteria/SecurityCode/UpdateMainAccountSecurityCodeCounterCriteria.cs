@@ -22,7 +22,6 @@
             return "Age_UpdateMainAccountSecurityCodeCounter";
         }
 
-
         public override bool IsValid() => CustId > 0;
     }
 }

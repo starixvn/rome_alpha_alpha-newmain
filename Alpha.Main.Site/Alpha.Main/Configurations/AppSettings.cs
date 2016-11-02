@@ -103,19 +103,13 @@
             }
         }
 
-        public static string StoreProcedurePath
-        {
-            get
-            {
-                return ConfigurationManager.AppSettings["StoreProcedurePath"];
-            }
-        }
+        public static string StoreProcedurePath => ConfigurationManager.AppSettings["StoreProcedurePath"];
+
+        public static string GetMessagesDataPath => ConfigurationManager.AppSettings["MessagesDataPath"];
 
         public static string GetAppPath(string name)
         {
             return ConfigurationManager.AppSettings[name];
         }
-
-        public static string GetMessagesDataPath => ConfigurationManager.AppSettings["MessagesDataPath"];
     }
 }
