@@ -191,6 +191,8 @@ label {
         }
 
         .username-customize {
+            margin-left: -12px;
+
             .btn-change-username {
                 color: #038dee;
                 font-weight: bold;
@@ -212,6 +214,11 @@ label {
 
         .block {
             padding-top: 12px;
+
+            &.username-form {
+                margin-left: 2px;
+                padding-top: 0;
+            }
         }
 
         #setup-otp-message .msg {
@@ -236,10 +243,6 @@ label {
         float: left;
         margin-left: 20px;
         min-width: 350px;
-
-        .msg {
-            margin-top: 0;
-        }
     }
 
     .register-succeess, #remove-otp-message {
@@ -247,8 +250,10 @@ label {
         padding: 0 16px;
     }
 
-     #remove-otp-message .msg {
-        margin-top: 0;
+     #username-message , #change-status-message, #remove-otp-message {
+         .msg {
+             margin-top: 0;
+         }        
      }
 }
 
@@ -299,6 +304,10 @@ label {
             width: 100%;
         }
 
+        .msg {
+            float: none;
+        }
+
         .panel-group {
             &.panel-table {
                 .panel {
@@ -338,13 +347,6 @@ label {
         .block {
             max-width: initial; 
             width: 100%;
-        }
-
-        .username-form {
-            .txt {
-                width: 100%;
-                margin-bottom: 16px;
-            }
         }
 
         .list-requirements {
