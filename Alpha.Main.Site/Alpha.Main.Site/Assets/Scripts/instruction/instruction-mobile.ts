@@ -1,10 +1,10 @@
-﻿module Introduction {
-    export class MobileIntroduction {
+﻿module Instruction {
+    export class Mobile {
         private mobileBlockUI: JQuery;
         private mobileIntroModal: JQuery;
         private mobileCloseIntroBtn: JQuery;
         private $: JQueryStatic;
-        private readMobileIntroductionKey: string = 'ReadMobileIntroduction';
+        static mobileInstructionKey: string = 'MobileInstruction';
 
         constructor($: JQueryStatic) {
             this.$ = $;
@@ -27,12 +27,13 @@
         }
 
         readIntroduction = (): boolean => {
-            return alpha.localStorage.get(this.readMobileIntroductionKey);
+            return alpha.localStorage.get(Mobile.mobileInstructionKey);
         }
 
         private registerEvent = () => {
             this.mobileCloseIntroBtn.click(() => {
                 this.hideIntroduction();
+                headerMessage.init();
             });
 
             this.$('.header-nav, .header-nav .icon-collapse').click(() => {
@@ -41,7 +42,7 @@
         }
 
         private setReadIntroduction = () => {
-            alpha.localStorage.set(this.readMobileIntroductionKey, true);
+            alpha.localStorage.set(Mobile.mobileInstructionKey, true);
         }
     }
 }

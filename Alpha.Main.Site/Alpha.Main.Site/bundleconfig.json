@@ -45,18 +45,18 @@
     ]
   },
   {
-    "outputFileName": "Assets/bundles/default-introduction.js",
+    "outputFileName": "Assets/bundles/default-instruction.js",
     "inputFiles": [
-      "Assets/scripts/introduction/enjoyhint.js",
-      "Assets/scripts/introduction/introduction.js",
-      "Assets/scripts/introduction/mobile-introduction.js"
+      "Assets/scripts/instruction/enjoyhint.js",
+      "Assets/scripts/instruction/instruction.js",
+      "Assets/scripts/instruction/instruction-mobile.js"
     ]
   },
   {
-    "outputFileName": "Assets/bundles/default-introduction.css",
+    "outputFileName": "Assets/bundles/default-instruction.css",
     "inputFiles": [
-      "Assets/styles/introduction/enjoyhint.css",
-      "Assets/styles/introduction/intro.css"
+      "Assets/styles/instruction/enjoyhint.css",
+      "Assets/styles/instruction/instruction.css"
     ]
   },
   {

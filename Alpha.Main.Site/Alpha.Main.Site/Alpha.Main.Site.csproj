@@ -499,8 +499,8 @@
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp.ts" />
-    <TypeScriptCompile Include="Assets\scripts\introduction\introduction.ts" />
-    <TypeScriptCompile Include="Assets\scripts\introduction\mobile-introduction.ts" />
+    <TypeScriptCompile Include="Assets\scripts\instruction\instruction.ts" />
+    <TypeScriptCompile Include="Assets\scripts\instruction\instruction-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\reset-sub-account-password.ts" />
@@ -529,6 +529,14 @@
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\default-instruction.css" />
+    <Content Include="Assets\bundles\default-instruction.js" />
+    <Content Include="Assets\bundles\default-instruction.min.css">
+      <DependentUpon>default-instruction.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-instruction.min.js">
+      <DependentUpon>default-instruction.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-introduction.css" />
     <Content Include="Assets\bundles\default-introduction.js" />
     <Content Include="Assets\bundles\default-introduction.min.css">
@@ -553,7 +561,7 @@
     <Content Include="Assets\bundles\security\otp\reset-otp.min.js">
       <DependentUpon>reset-otp.js</DependentUpon>
     </Content>
-    <Content Include="Assets\scripts\introduction\enjoyhint.js" />
+    <Content Include="Assets\scripts\instruction\enjoyhint.js" />
     <Content Include="Assets\scripts\tests\libs\hammer.js" />
     <Content Include="Assets\scripts\tests\libs\jquery-1.11.3.js" />
     <Content Include="Assets\scripts\tests\libs\jquery.hammer.js" />
@@ -562,6 +570,12 @@
     </Content>
     <Content Include="Assets\styles\home\home.min.css">
       <DependentUpon>home.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\instruction\instruction.css">
+      <DependentUpon>instruction.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\instruction\instruction.min.css">
+      <DependentUpon>instruction.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\message\message.css" />
     <Content Include="Assets\styles\message\message.min.css" />
@@ -695,31 +709,31 @@
       <DependentUpon>pageIElower10.css</DependentUpon>
     </Content>
     <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />
-    <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.eot" />
-    <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.ttf" />
-    <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.woff" />
+    <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.eot" />
+    <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.ttf" />
+    <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.woff" />
     <Content Include="App_Data\securitycode.json" />
     <Content Include="Assets\styles\home\home.scss" />
-    <None Include="Assets\styles\introduction\enjoyhint.scss" />
-    <Content Include="Assets\styles\introduction\Casino_Hand\casino_hand-webfont.svg" />
-    <Content Include="Assets\styles\introduction\enjoyhint.css">
+    <None Include="Assets\styles\instruction\enjoyhint.scss" />
+    <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.svg" />
+    <Content Include="Assets\styles\instruction\enjoyhint.css">
       <DependentUpon>enjoyhint.scss</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\introduction\enjoyhint.min.css">
+    <Content Include="Assets\styles\instruction\enjoyhint.min.css">
       <DependentUpon>enjoyhint.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\introduction\images\agent.png" />
-    <Content Include="Assets\styles\introduction\images\master.png" />
-    <Content Include="Assets\styles\introduction\images\OldUI-1.png" />
-    <Content Include="Assets\styles\introduction\images\OldUI-2-1.png" />
-    <Content Include="Assets\styles\introduction\images\OldUI-2-2.png" />
-    <Content Include="Assets\styles\introduction\images\OldUI-2.png" />
-    <Content Include="Assets\styles\introduction\images\OldUI-3.png" />
-    <Content Include="Assets\styles\introduction\images\super.png" />
-    <Content Include="Assets\styles\introduction\intro.css">
-      <DependentUpon>intro.scss</DependentUpon>
+    <Content Include="Assets\styles\instruction\images\agent.png" />
+    <Content Include="Assets\styles\instruction\images\master.png" />
+    <Content Include="Assets\styles\instruction\images\OldUI-1.png" />
+    <Content Include="Assets\styles\instruction\images\OldUI-2-1.png" />
+    <Content Include="Assets\styles\instruction\images\OldUI-2-2.png" />
+    <Content Include="Assets\styles\instruction\images\OldUI-2.png" />
+    <Content Include="Assets\styles\instruction\images\OldUI-3.png" />
+    <Content Include="Assets\styles\instruction\images\super.png" />
+    <Content Include="Assets\styles\instruction\intro.css">
+      <DependentUpon>instruction.scss</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\introduction\intro.min.css">
+    <Content Include="Assets\styles\instruction\intro.min.css">
       <DependentUpon>intro.css</DependentUpon>
     </Content>
     <Content Include="Views\SpecialMessage.xml" />
@@ -818,7 +832,7 @@
     <Content Include="Assets\styles\home\_mixins.scss" />
     <Content Include="Assets\styles\home\tooltip.scss" />
     <Content Include="Assets\styles\home\pageIElower10.scss" />
-    <Content Include="Assets\styles\introduction\intro.scss" />
+    <Content Include="Assets\styles\instruction\instruction.scss" />
     <Content Include="Assets\styles\security\security.scss" />
     <Content Include="Assets\styles\message\message.scss" />
     <Content Include="Assets\styles\otp\otp.scss" />

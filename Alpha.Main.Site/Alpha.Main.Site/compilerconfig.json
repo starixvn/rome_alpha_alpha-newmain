@@ -35,13 +35,13 @@
     "sourceMap": false
   },
   {
-    "outputFile": "Assets/styles/introduction/intro.css",
-    "inputFile": "Assets/styles/introduction/intro.scss",
+    "outputFile": "Assets/styles/instruction/instruction.css",
+    "inputFile": "Assets/styles/instruction/instruction.scss",
     "sourceMap": false
   },
   {
-    "outputFile": "Assets/styles/introduction/enjoyhint.css",
-    "inputFile": "Assets/styles/introduction/enjoyhint.scss",
+    "outputFile": "Assets/styles/instruction/enjoyhint.css",
+    "inputFile": "Assets/styles/instruction/enjoyhint.scss",
     "sourceMap": false
   },
   {
@@ -66,6 +66,6 @@
   },
   {
     "outputFile": "Assets/styles/otp/otp.css",
-    "inputFile": "Assets/styles/otp/otp.scss"    
+    "inputFile": "Assets/styles/otp/otp.scss"
   }
 ]

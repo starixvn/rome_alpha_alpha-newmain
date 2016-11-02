@@ -31,7 +31,17 @@
             toastr.options.closeButton = true;
             toastr.options.timeOut = 10000;
             toastr.options.preventDuplicates = true;
-            toastr.warning(message);
+            toastr.warning(message).css('top', this.getHotMessageHeight() + 'px');
+        }
+
+        private getHotMessageHeight = (): number => {
+            const hotMessage = $('#userMessageModal');
+
+            if (hotMessage.is(':visible')) {
+                return hotMessage.height();
+            }
+
+            return 0;
         }
     }
 }

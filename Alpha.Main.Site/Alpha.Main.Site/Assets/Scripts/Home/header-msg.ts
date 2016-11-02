@@ -413,9 +413,16 @@ var headerMessage = {
 
         headerMessage.scroller.style.left = (headerMessage.scrollerLeft--) + 'px';
         headerMessage.scrollMessageTimeout = setTimeout(headerMessage.scrollMessage, 20);
+    },
+
+    hasReadInstruction: (): boolean => {
+        return alpha.localStorage.check(introduction.readIntroductionKey)
+            || alpha.localStorage.check(Instruction.Mobile.mobileInstructionKey);
     }
 };
 
-$(function () {
-    headerMessage.init();
+$(() => {
+    if (headerMessage.hasReadInstruction()) {
+        headerMessage.init();
+    }
 });

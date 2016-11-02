@@ -38,7 +38,6 @@ var alpha = {
         isEnableOtp: document.getElementById('isEnabledOtp') != null
             ? ((<HTMLInputElement>document.getElementById('isEnabledOtp')).value.toLowerCase() === "true")
             : false
-
     },
     core:
     {
@@ -111,6 +110,10 @@ var alpha = {
             store.enabled ? store.set(key, value) : $.cookie(key, value, alpha.localStorage.getCookieExpireOptions());
         },
 
+        check: (key: string): boolean => {
+            return typeof store.get(key) !== "undefined";
+        },
+
         getCookieExpireOptions: () => {
             var cookieExpire: any = { expires: 365, path: window.location.pathname };
 
@@ -139,7 +142,6 @@ var alpha = {
             return;
         }
     }
-            
 };
 
 $(() => {
