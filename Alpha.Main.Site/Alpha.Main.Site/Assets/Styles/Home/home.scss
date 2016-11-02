@@ -137,8 +137,9 @@ body {
         }
 
         .msg-contents {
-            .msg {
+            .message {
                 padding: 0 16px;
+                display: table;
 
                 &:hover {
                     background-color: $table-td-hover-color;
@@ -157,13 +158,17 @@ body {
                 }
 
                 .time {
+                    width: 120px;
                     [class^="icon"] {
                         margin-right: 8px;
+                        position: relative;
+                        top: 1px;
                     }
                 }
 
                 .time, .content {
-                    line-height: 20px;
+                    display: table-cell;
+                    line-height: 30px;
                 }
 
                 .full-content {
@@ -289,9 +294,10 @@ body {
 
         &.notice {
             float: left;
-            width: 100%;            
-            @include box-shadow-multiple('1px 2px 6px rgba(0,0,0,.2)');
-
+            width: 100%;
+            .notice-container {
+                @include box-shadow-multiple('1px 2px 6px rgba(0,0,0,.2)');
+            }
             .panel-title {
                 background-color: #fff;
                 padding: 6px 16px;
@@ -379,7 +385,12 @@ body {
             padding-bottom: 34px;         
 
             .msg-contents {
-                .msg {
+                .message {
+                    .time, .content {
+                        display: block;
+                        line-height: 20px;
+                    }
+
                     .time {
                         padding-top: 8px;
                     }

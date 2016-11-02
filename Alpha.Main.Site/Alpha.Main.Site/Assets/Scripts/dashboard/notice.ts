@@ -9,7 +9,7 @@
         }
 
         private onToggleMessage = (markMessageAsRead: (message: JQuery) => void) => {
-            $('.msg').each((index: number, element: Element) => {
+            $('.message').each((index: number, element: Element) => {
                 let $this = this.$(element),
                     shortContent = $this.children('.short-content'),
                     fullContent = $this.children('.full-content'),

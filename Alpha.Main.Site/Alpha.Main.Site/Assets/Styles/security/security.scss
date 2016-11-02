@@ -83,7 +83,7 @@ body {
 }
 
 // It's not necessary at the moment
-/*
+
 @media only screen and (max-width: 767px)
 {  
    .msg-content .msg {
@@ -94,6 +94,7 @@ body {
    .block {
        max-width: initial;
        width: 100%;
+       padding: 22px 2px 0;
 
        .txt {
            height: $height-mobile;
@@ -111,4 +112,3 @@ body {
 
    }
 }
-*/

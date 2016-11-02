@@ -274,13 +274,11 @@ label {
         font-size: $font-size-mobile;
     }
 
-    [class^='btn'] {
+    %btn {
         height: auto;
         min-height: $height-mobile;
-        width: 100%;
         margin-right: 0;
     }
-
     .nav-tabs {
         display: table;
         width: 100%;
@@ -296,6 +294,11 @@ label {
     }
 
     .otp-config {
+        [class^='btn'] {
+            @extend %btn;
+            width: 100%;
+        }
+
         .panel-group {
             &.panel-table {
                 .panel {
@@ -333,7 +336,15 @@ label {
         }
 
         .block {
+            max-width: initial; 
             width: 100%;
+        }
+
+        .username-form {
+            .txt {
+                width: 100%;
+                margin-bottom: 16px;
+            }
         }
 
         .list-requirements {
@@ -342,8 +353,18 @@ label {
 
         .list-enableDisable {
             padding-left: 0;
-        }
-        
+        }        
+    }
+
+    .otp-reset .btn-remove {
+         @extend %btn;
+         width: 100%;
+    }
+
+    .bootbox-confirm .modal-dialog {
+        margin: 100px auto 0;
+
+
     }
 }
 

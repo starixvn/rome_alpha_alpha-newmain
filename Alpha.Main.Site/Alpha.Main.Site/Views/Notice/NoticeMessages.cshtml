@@ -22,7 +22,7 @@
 
             <div class="msg-contents">
                 <div id="@message.CurrentMessage.Id"
-                     class="msg pointer @message.MessageType @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
+                     class="message pointer @message.MessageType @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
                     <div class="time"><span class="icon icon-plus"></span>@message.PostTime.ToLongTimeString()</div>
                     <div class="content short-content">
                         @message.ShortContent
