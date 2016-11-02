@@ -29,6 +29,7 @@
         private showMoveBetsMessageToaster = (message: string) => {
             toastr.options.positionClass = 'toast-top-full-width toastr-announcement';
             toastr.options.closeButton = true;
+            toastr.options.closeHtml = '<button type="button" class="icon icon-close" data-dismiss="modal" aria-label="Close"></button>';
             toastr.options.timeOut = 10000;
             toastr.options.preventDuplicates = true;
             toastr.warning(message).css('top', this.getHotMessageHeight() + 'px');
