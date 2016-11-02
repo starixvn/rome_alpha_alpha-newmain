@@ -83,12 +83,14 @@ body {
 }
 
 // It's not necessary at the moment
-
-@media only screen and (max-width: 767px)
+@media only screen and (max-device-width: $conent-device-lower768)
 {  
-   .msg-content .msg {
-       width: 100%;
-       max-width: initial;
+   .msg-content {
+       float: none;
+       .msg {
+           width: 100%;
+           max-width: initial;
+       }
    }
 
    .block {
@@ -104,11 +106,8 @@ body {
        .btn-submit, input[type=reset] {
            height: $height-mobile;
            width: 100%;
-       }
-
-       .btn-submit {
            margin-bottom: 12px;
+           margin-right: 0;
        }
-
    }
 }

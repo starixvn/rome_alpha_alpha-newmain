@@ -75,7 +75,7 @@ body {
     }
 
     .icon-plus, .icon-minus {
-        @include ripple-effect-icon($top: -3px, $margin-left: -7px);
+        @include ripple-effect-icon($top: -3px, $margin-left: -6px);
     }
 
     &.statistic {       
@@ -140,6 +140,7 @@ body {
             .message {
                 padding: 0 16px;
                 display: table;
+                width: 100%;
 
                 &:hover {
                     background-color: $table-td-hover-color;
@@ -397,6 +398,10 @@ body {
 
                     .content {
                         padding-bottom: 4px;
+
+                        &.full-content {
+                            display: none;
+                        }
                     }
                 }
             }
