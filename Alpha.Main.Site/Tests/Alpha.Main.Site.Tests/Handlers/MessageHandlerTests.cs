@@ -109,6 +109,9 @@ namespace Alpha.Main.Site.Tests.Handlers
                         Arg.Any<bool>(),
                         Arg.Any<int>())
                   .Returns(messages);
+
+            messageService.GetMessagesFromXml(Arg.Any<string>(), Arg.Any<int>(), Arg.Any<byte>())
+                .Returns(messages);
         }
     }
 }

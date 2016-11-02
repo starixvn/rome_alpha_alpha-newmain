@@ -20,6 +20,13 @@
             [UserLevel.Agent.Value] = "3000,3300"
         };
 
+        private static readonly Dictionary<int, string> MessageFileNameByType = new Dictionary<int, string>()
+        {
+            [Constants.MessageType.Public] = "NormalMessage.xml",
+            [Constants.MessageType.Special] = "SpecialMessage.xml",
+            [Constants.MessageType.Private] = "PersonalMessage.xml"
+        };
+
         private static readonly Dictionary<int, int> SpecialTypes = new Dictionary<int, int>
         {
             [Constants.MessageType.Public] = 0,
@@ -66,5 +73,7 @@
         public string CurrentLang { get; }
 
         public byte RoleId { get; }
+
+        public string MessageXmlFileName => MessageFileNameByType[MessageType];
     }
 }

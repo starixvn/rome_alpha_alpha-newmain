@@ -15,5 +15,7 @@
             DateTime endDate,
             bool isTest,
             int messageType);
+
+        List<Message> GetMessagesFromXml(string xmlFileName, int messageType, byte userRoleId);
     }
 }
