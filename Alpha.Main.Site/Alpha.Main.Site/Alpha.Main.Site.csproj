@@ -537,14 +537,6 @@
     <Content Include="Assets\bundles\default-instruction.min.js">
       <DependentUpon>default-instruction.js</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\default-introduction.css" />
-    <Content Include="Assets\bundles\default-introduction.js" />
-    <Content Include="Assets\bundles\default-introduction.min.css">
-      <DependentUpon>default-introduction.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-introduction.min.js">
-      <DependentUpon>default-introduction.js</DependentUpon>
-    </Content>
     <Content Include="Assets\bundles\default-message.css" />
     <Content Include="Assets\bundles\default-message.js" />
     <Content Include="Assets\bundles\default-message.min.css">
@@ -730,12 +722,6 @@
     <Content Include="Assets\styles\instruction\images\OldUI-2.png" />
     <Content Include="Assets\styles\instruction\images\OldUI-3.png" />
     <Content Include="Assets\styles\instruction\images\super.png" />
-    <Content Include="Assets\styles\instruction\intro.css">
-      <DependentUpon>instruction.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\instruction\intro.min.css">
-      <DependentUpon>intro.css</DependentUpon>
-    </Content>
     <Content Include="Views\SpecialMessage.xml" />
     <Content Include="Web.local.config" />
     <Content Include="Web.napexternal.config">
