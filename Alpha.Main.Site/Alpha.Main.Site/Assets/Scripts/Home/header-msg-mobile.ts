@@ -32,17 +32,13 @@
             toastr.options.closeHtml = '<button type="button" class="icon icon-close" data-dismiss="modal" aria-label="Close"></button>';
             toastr.options.timeOut = 10000;
             toastr.options.preventDuplicates = true;
-            toastr.warning(message).css('top', this.getHotMessageHeight() + 'px');
+            toastr.warning(message).parent().css("top", 48 + this.getHotMessageHeight() + 2 + 'px');
         }
 
         private getHotMessageHeight = (): number => {
             const hotMessage = $('#userMessageModal');
 
-            if (hotMessage.is(':visible')) {
-                return hotMessage.height();
-            }
-
-            return 0;
+            return hotMessage.is(':visible') ? hotMessage.height() : 0;
         }
     }
 }
