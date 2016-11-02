@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
@@ -46,10 +47,10 @@ namespace Alpha.Main.Site.Controllers
                 return Redirect(ForceChangePasswordPath);
             }
 
-            if (this.mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
-            {
-                return Redirect(OtpVerifyDifferenceDevicePath);
-            }
+            ////if (this.mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
+            ////{
+            ////    return Redirect(OtpVerifyDifferenceDevicePath);
+            ////}
 
             if (this.securityCodeChecker.IsForcedChangeSecurityCode())
             {
