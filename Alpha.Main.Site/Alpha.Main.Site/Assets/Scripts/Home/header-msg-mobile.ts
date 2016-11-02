@@ -1,6 +1,8 @@
 ﻿module Home {
     export class HeaderMessageMobile {
+        private toastCloseButtonHtml = '<button type="button" class="icon icon-close" data-dismiss="modal" aria-label="Close"></button>';
         private storedMoveBetsEndTime: Date = new Date();
+        private hotMessageModal: JQuery = $('#userMessageModal');
 
         init = () => {
             this.showMoveBetsMessagePopUp();
@@ -29,16 +31,22 @@
         private showMoveBetsMessageToaster = (message: string) => {
             toastr.options.positionClass = 'toast-top-full-width toastr-announcement';
             toastr.options.closeButton = true;
-            toastr.options.closeHtml = '<button type="button" class="icon icon-close" data-dismiss="modal" aria-label="Close"></button>';
+            toastr.options.closeHtml = this.toastCloseButtonHtml;
             toastr.options.timeOut = 10000;
             toastr.options.preventDuplicates = true;
-            toastr.warning(message).parent().css("top", 48 + this.getHotMessageHeight() + 2 + 'px');
+            toastr.warning(message).parent().css('top', this.getHotMessageHeight());
+
+            this.handleHotMessageClick();
         }
 
         private getHotMessageHeight = (): number => {
-            const hotMessage = $('#userMessageModal');
+            return this.hotMessageModal.is(':visible') ? (48 + this.hotMessageModal.height() + 2) : 48;
+        }
 
-            return hotMessage.is(':visible') ? hotMessage.height() : 0;
+        private handleHotMessageClick = () => {
+            this.hotMessageModal.click(() => {
+                $('#toast-container').css('top', this.getHotMessageHeight());
+            });
         }
     }
 }
