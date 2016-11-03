@@ -244,7 +244,7 @@
             // Arrange
             var messageXmlDirPath = "dirpath";
 
-            //  Act
+            // Act
             var query = new MessageQuery(
                 userSession,
                 messageType,

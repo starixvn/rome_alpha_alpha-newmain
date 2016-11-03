@@ -2,13 +2,13 @@
 {
     using Fanex.Data.Repository;
 
-    public class UpdateCustomerStatusAfterVerifyOTPCommand : NonQueryCommand
+    public class UpdateCustomerStatusAfterVerifyOtpCommand : NonQueryCommand
     {
-        public int CustID { get; set; }
+        public int CustId { get; set; }
 
-        public int SubAccID { get; set; }
+        public int SubAccId { get; set; }
 
-        public bool CheckedOTP { get; set; }
+        public bool CheckedOtp { get; set; }
 
         public string FunctionName { get; set; }
 
@@ -27,8 +27,8 @@
 
         public override bool IsValid()
         {
-            return CustID > 0
-                   && SubAccID >= 0
+            return CustId > 0
+                   && SubAccId >= 0
                    && !string.IsNullOrWhiteSpace(Language)
                    && !string.IsNullOrWhiteSpace(IP);
         }

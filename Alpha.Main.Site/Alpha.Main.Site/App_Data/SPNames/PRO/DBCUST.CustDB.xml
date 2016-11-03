@@ -31,6 +31,7 @@
     <Setting Key="Age_OTP_CustomerCheckEnableOTP" SpName="Age_OTP_CustomerCheckEnableOTP" DbName="DBCUST.CustDB.BODBDownlineNet"/>
     <Setting Key="Age_OTP_CustomerOTPDel" SpName="Age_OTP_CustomerOTPDel" DbName="DBCUST.CustDB.BODBDownlineNet"/>
     <Setting Key="Age_OTP_CustomerStatusUpdAfterVerifiedOTP" SpName="Age_OTP_CustomerStatusUpdAfterVerifiedOTP" DbName="DBCUST.CustDB.BODBDownlineNet"/>
-    <Setting Key="Age_OTP_CustomerOTPDeviceInfoUpd" SpName="Age_OTP_CustomerOTPDeviceInfoUpd" DbName="DBCUST.CustDB.BODBDownlineNet"/>
+    <Setting Key="Age_OTP_CustomerOTPDeviceInfoIns" SpName="Age_OTP_CustomerOTPDeviceInfoIns" DbName="DBCUST.CustDB.BODBDownlineNet"/>
+    <Setting Key="Age_OTP_CustomerOTPDeviceInfoSel" SpName="Age_OTP_CustomerOTPDeviceInfoSel" DbName="DBCUST.CustDB.BODBDownlineNet"/>
   </Function>
 </Functions>

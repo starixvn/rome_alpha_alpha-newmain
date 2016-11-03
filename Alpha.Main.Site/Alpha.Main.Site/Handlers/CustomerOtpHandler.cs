@@ -26,7 +26,6 @@
         IRequestHandler<CheckDifferenceDeviceCommand, bool>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
-        private const string NotDetectedDevice = "N/A";
 
         private readonly CustomerOtpService customerOtpService;
         private readonly IUserSession userSession;
@@ -67,7 +66,7 @@
                 IP = message.IP,
                 Language = message.Language,
                 IsEnable = message.IsEnable,
-                SubAccountId = message.SubAccountId
+                SubAccId = message.SubAccountId
             });
 
             if (result.IsSuccessful)
@@ -98,13 +97,15 @@
             }
             else
             {
+                var device = browserHelper.GetDevice();
                 viewModel.Result = customerOtpService.RemoveSecretKey(new RemoveSecretKeyParam
                 {
                     CustId = message.CustId,
                     ActorId = message.ActorId,
                     IP = message.IP,
                     Language = message.Language,
-                    SubAccountId = message.SubAccountId
+                    SubAccId = message.SubAccountId,
+                    DeviceInfo = device.Info
                 });
             }
 
@@ -130,7 +131,7 @@
                 Language = message.Language,
                 SubAccId = message.SubAccountId,
                 SecretKey = sessionManager.Get<string>(SecretKeySessionKey),
-                DeviceInfo = browserHelper.GetDeviceInfo()
+                Device = browserHelper.GetDevice()
             };
 
             var result = customerOtpService.SetUpOtp(customerOtp);
@@ -168,13 +169,13 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var deviceInfo = browserHelper.GetDeviceInfo();
+            var deviceInfo = browserHelper.GetDevice();
             var result = customerOtpService.VerifyOtp(new CustomerOtp
             {
                 CustId = message.CustId,
                 SubAccId = message.SubAccountId,
                 Otp = message.Otp,
-                DeviceInfo = deviceInfo,
+                Device = deviceInfo,
                 Language = message.Language
             });
 
@@ -204,7 +205,7 @@
                 ActorId = message.CustId,
                 IP = message.IP,
                 Language = message.Language,
-                SubAccountId = message.SubAccountId
+                SubAccId = message.SubAccountId
             });
 
             return result;
@@ -314,20 +315,18 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var customerOtp = customerOtpService.GetCustomerOtp(message.CustId, message.SubAccountId);
+            var enabled = customerOtpService.IsEnabledOtp(message.CustId, message.SubAccountId);
 
-            SetOtpStatusToSession(customerOtp.Enabled);
+            SetOtpStatusToSession(enabled);
 
-            if (!customerOtp.Enabled)
+            if (!enabled)
             {
                 return false;
             }
 
-            var deviceInfo = browserHelper.GetDeviceInfo();
+            var deviceId = browserHelper.GetDeviceId();
 
-            return deviceInfo.Id != NotDetectedDevice
-                && customerOtp.DeviceInfo.Id != NotDetectedDevice
-                && deviceInfo.Id != customerOtp.DeviceInfo.Id;
+            return customerOtpService.IsDifferenceDevice(message.CustId, deviceId, message.SubAccountId);
         }
 
         private void SetOtpStatusToSession(bool isEnabledOtp)

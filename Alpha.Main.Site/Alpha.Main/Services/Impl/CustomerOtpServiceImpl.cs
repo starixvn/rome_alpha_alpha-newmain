@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
     using System;
+    using System.Linq;
     using AppResources;
     using Criteria.Otp;
     using Fanex.Data.Repository;
@@ -10,33 +11,38 @@
     using ONEbook.OTP.Services;
     using Params.Otp;
     using Sunplus.Agent.Model.Casino;
+    using Sunplus.Agent.Utilities;
 
     public class CustomerOtpServiceImpl : CustomerOtpService
     {
         private const int TimePeriod = 30;
         private const int OtpSize = 6;
         private const int SecretKeyLength = 20;
+        private const int DisabledAccountErrorCode = 200;
         private const string Issuer = "MyAppName";
         private const string DateFormat = "yyyyMMdd_HHmm";
+        private const string NotDetectedDevice = "N/A";
+        private const int InvalidDataErrorCode = 1;
+        private const string InvalidDataMessage = "Data is not valid";
 
         private readonly IDynamicRepository dynamicRepository;
         private readonly OtpService otpService;
         private readonly JsonHelper jsonHelper;
         private readonly CasinoService casinoService;
-        private readonly IDateTime dateTime;
+        private readonly Logger logger;
 
         public CustomerOtpServiceImpl(
             IDynamicRepository dynamicRepository,
             OtpService otpService,
             JsonHelper jsonHelper,
             CasinoService casinoService,
-            IDateTime dateTime)
+            Logger logger)
         {
             this.dynamicRepository = dynamicRepository;
             this.otpService = otpService;
             this.jsonHelper = jsonHelper;
             this.casinoService = casinoService;
-            this.dateTime = dateTime;
+            this.logger = logger;
         }
 
         public virtual Result ChangeOtpStatus(ChangeOtpStatusParam param)
@@ -48,12 +54,14 @@
 
             var command = new UpdateCustomerOtpStatusCommand
             {
-                CustID = param.CustId,
-                SubAccID = param.SubAccountId,
+                CustId = param.CustId,
+                SubAccId = param.SubAccId,
                 Enable = param.IsEnable,
                 IP = param.IP,
                 Language = param.Language,
-                UserID = param.ActorId
+                UserId = param.ActorId,
+                ErrCode = InvalidDataErrorCode,
+                ErrMsg = InvalidDataMessage
             };
 
             dynamicRepository.Execute(command);
@@ -65,14 +73,14 @@
             };
         }
 
-        public CustomerOtp GenerateCustomerOtp(int custId, string username, int subAccountId = 0)
+        public CustomerOtp GenerateCustomerOtp(int custId, string username, int subAccId = 0)
         {
             if (custId <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(custId), "Cust Id cannot be negative or zero");
             }
 
-            if (subAccountId < 0)
+            if (subAccId < 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(custId), "Sub account Id cannot be negative");
             }
@@ -81,11 +89,11 @@
             {
                 SecretKey = otpService.GenerateSecretKey(SecretKeyLength),
                 CustId = custId,
-                SubAccId = subAccountId
+                SubAccId = subAccId
             };
 
             customerOtp.OtpUsername = username;
-            customerOtp.QrCode = otpService.GenerateQrCode(customerOtp.SecretKey, TimePeriod, OtpSize, Issuer, customerOtp.OtpUsername);
+            customerOtp.QRCode = otpService.GenerateQrCode(customerOtp.SecretKey, TimePeriod, OtpSize, Issuer, customerOtp.OtpUsername);
 
             return customerOtp;
         }
@@ -104,8 +112,8 @@
 
             var command = new CheckEnableOtpCommand
             {
-                CustID = custId,
-                SubAccID = subAccId
+                CustId = custId,
+                SubAccId = subAccId
             };
 
             dynamicRepository.Execute(command);
@@ -127,15 +135,18 @@
                 return Result.CreateErrorResult(Security.OtpIsInvalidOrExpired);
             }
 
-            var deviceInfoSerialized = jsonHelper.Serialize(param.DeviceInfo);
+            var deviceInfoSerialized = jsonHelper.Serialize(param.Device.Info);
             var command = new InsertCustomerOtpCommand
             {
-                CustID = param.CustId,
+                CustId = param.CustId,
+                DeviceId = param.Device.Id,
                 DeviceInfo = deviceInfoSerialized,
-                IP = param.DeviceInfo.IP,
+                IP = param.Device.Info.IP,
                 Language = param.Language,
                 SecretKey = param.SecretKey,
-                SubAccID = param.SubAccId
+                SubAccId = param.SubAccId,
+                ErrCode = InvalidDataErrorCode,
+                ErrMsg = InvalidDataMessage
             };
 
             dynamicRepository.Execute(command);
@@ -160,16 +171,18 @@
 
             if (isCorrect)
             {
-                UpdateDeviceInfo(param);
+                UpdateDevice(param);
             }
 
-            var changeStatusCommand = new UpdateCustomerStatusAfterVerifyOTPCommand
+            var changeStatusCommand = new UpdateCustomerStatusAfterVerifyOtpCommand
             {
-                CheckedOTP = isCorrect,
-                IP = param.DeviceInfo.IP,
+                CheckedOtp = isCorrect,
+                IP = param.Device.Info.IP,
                 Language = param.Language,
-                CustID = param.CustId,
-                SubAccID = param.SubAccId
+                CustId = param.CustId,
+                SubAccId = param.SubAccId,
+                ErrCode = InvalidDataErrorCode,
+                ErrMsg = InvalidDataMessage
             };
 
             dynamicRepository.Execute(changeStatusCommand);
@@ -181,10 +194,10 @@
             };
 
             if (!isCorrect
-                && result.Code == 200
+                && result.Code == DisabledAccountErrorCode
                 && param.SubAccId == 0)
             {
-                CloseCasinoAccount(param.CustId, param.DeviceInfo.IP);
+                CloseCasinoAccount(param.CustId, param.Device.Info.IP);
             }
 
             return result;
@@ -198,14 +211,14 @@
             }
         }
 
-        public virtual CustomerOtp GetCustomerOtp(int custId, int subAccountId = 0)
+        public virtual CustomerOtp GetCustomerOtp(int custId, int subAccId = 0)
         {
             if (custId <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(custId), "Cust Id cannot be negative or zero");
             }
 
-            if (subAccountId < 0)
+            if (subAccId < 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(custId), "Sub account Id cannot be negative");
             }
@@ -213,20 +226,20 @@
             var customerOtpDto = dynamicRepository.Get<CustomerOtpDto>(
                 new GetCustomerOtpCriteria
                 {
-                    CustID = custId,
-                    SubAccID = subAccountId
+                    CustId = custId,
+                    SubAccId = subAccId
                 });
 
-            if (customerOtpDto == null)
+            if (customerOtpDto == null
+                || customerOtpDto.IsDelete)
             {
                 return new CustomerOtp();
             }
 
             return new CustomerOtp
             {
-                CustId = customerOtpDto.CustID,
+                CustId = customerOtpDto.CustId,
                 Enabled = customerOtpDto.Enabled,
-                DeviceInfo = jsonHelper.Deserialize<DeviceInfo>(customerOtpDto.DeviceInfo),
                 SecretKey = customerOtpDto.SecretKey,
                 SubAccId = customerOtpDto.SubAccId
             };
@@ -241,11 +254,14 @@
 
             var command = new DeleteCustOtpSecretKeyCommand
             {
-                CustID = param.CustId,
-                SubAccID = param.SubAccountId,
+                CustId = param.CustId,
+                SubAccId = param.SubAccId,
                 IP = param.IP,
                 Language = param.Language,
-                UserID = param.ActorId
+                UserId = param.ActorId,
+                ErrCode = InvalidDataErrorCode,
+                ErrMsg = InvalidDataMessage,
+                DeviceInfo = jsonHelper.Serialize(param.DeviceInfo)
             };
 
             dynamicRepository.Execute(command);
@@ -259,18 +275,49 @@
             return deleteResult;
         }
 
-        private void UpdateDeviceInfo(CustomerOtp customerOtp)
+        private void UpdateDevice(CustomerOtp customerOtp)
         {
-            var command = new UpdateCustomerDeviceInfoCommand
+            var command = new InsertCustomerDeviceInfoCommand
             {
-                CustID = customerOtp.CustId,
-                DeviceInfo = jsonHelper.Serialize(customerOtp.DeviceInfo),
-                IP = customerOtp.DeviceInfo.IP,
+                CustId = customerOtp.CustId,
+                DeviceId = customerOtp.Device.Id,
+                DeviceInfo = jsonHelper.Serialize(customerOtp.Device.Info),
+                IP = customerOtp.Device.Info.IP,
                 Language = customerOtp.Language,
-                SubAccID = customerOtp.SubAccId
+                SubAccId = customerOtp.SubAccId
             };
 
             dynamicRepository.Execute(command);
+        }
+
+        public bool IsDifferenceDevice(int custId, string deviceId, int subAccId = 0)
+        {
+            if (custId <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(custId), "Cust Id cannot be negative or zero");
+            }
+
+            if (string.IsNullOrWhiteSpace(deviceId))
+            {
+                throw new ArgumentOutOfRangeException(nameof(deviceId), "Device Id cannot be negative");
+            }
+
+            if (deviceId == NotDetectedDevice)
+            {
+                logger.WriteInfo(logger.FullExceptionToString(new NotSupportedException("User device was not detected"), custId));
+                return false;
+            }
+
+            var devices = dynamicRepository.Fetch<Device>(
+                new GetDevicesCriteria
+                {
+                    CustId = custId,
+                    SubAccId = subAccId
+                });
+
+            var currentDevice = devices.FirstOrDefault(device => device.Id == deviceId);
+
+            return currentDevice == null;
         }
     }
 }

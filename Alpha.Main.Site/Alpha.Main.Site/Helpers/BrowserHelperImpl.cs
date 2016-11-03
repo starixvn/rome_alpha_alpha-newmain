@@ -78,21 +78,24 @@
             return browserViewModel;
         }
 
-        public DeviceInfo GetDeviceInfo()
+        public Device GetDevice()
         {
             var browser = HttpContext.Current.Request.Browser;
 
-            return new DeviceInfo
+            return new Device
             {
                 Id = GetDeviceId(),
-                IP = GetIP(),
-                BrowserName = browser.Browser,
-                BrowserVersion = browser.Version,
-                DeviceName = browser.Platform
+                Info = new DeviceInfo
+                {
+                    IP = GetIP(),
+                    BrowserName = browser.Browser,
+                    BrowserVersion = browser.Version,
+                    DeviceName = browser.Platform
+                }
             };
         }
 
-        private string GetDeviceId()
+        public string GetDeviceId()
         {
             var deviceId = HttpContext.Current.Session[DeviceIdSessionKey] ?? "N/A";
 

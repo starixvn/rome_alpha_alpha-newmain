@@ -4,11 +4,11 @@
 
     public class UpdateCustomerOtpStatusCommand : NonQueryCommand
     {
-        public int UserID { get; set; }
+        public int UserId { get; set; }
 
-        public int CustID { get; set; }
+        public int CustId { get; set; }
 
-        public int SubAccID { get; set; }
+        public int SubAccId { get; set; }
 
         public bool Enable { get; set; }
 
@@ -27,9 +27,9 @@
 
         public override bool IsValid()
         {
-            return CustID > 0
-               && SubAccID >= 0
-               && UserID > 0
+            return CustId > 0
+               && SubAccId >= 0
+               && UserId > 0
                && !string.IsNullOrWhiteSpace(Language)
                && !string.IsNullOrWhiteSpace(IP);
         }

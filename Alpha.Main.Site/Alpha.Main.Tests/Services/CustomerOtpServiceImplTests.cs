@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using AppResources;
     using Fanex.Data.Repository;
     using Main.Criteria.Otp;
@@ -13,6 +15,7 @@
     using ONEbook.OTP.Services;
     using Params.Otp;
     using Sunplus.Agent.Model.Casino;
+    using Sunplus.Agent.Utilities;
 
     [TestFixture]
     public class CustomerOtpServiceImplTests
@@ -22,7 +25,7 @@
         private OtpService otpService;
         private JsonHelper jsonHelper;
         private CasinoService casinoService;
-        private IDateTime dateTime;
+        private Logger logger;
 
         [SetUp]
         public void SetUp()
@@ -31,8 +34,9 @@
             otpService = Substitute.For<OtpService>();
             jsonHelper = Substitute.For<JsonHelper>();
             casinoService = Substitute.For<CasinoService>();
-            dateTime = Substitute.For<IDateTime>();
-            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, casinoService, dateTime);
+            logger = Substitute.For<Logger>();
+
+            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, casinoService, logger);
         }
 
         #region Change Otp Status
@@ -51,7 +55,7 @@
             {
                 ActorId = 1,
                 CustId = 2,
-                SubAccountId = 3,
+                SubAccId = 3,
                 IP = "192.168.1.1",
                 Language = "E"
             };
@@ -64,9 +68,9 @@
                 Arg.Is<UpdateCustomerOtpStatusCommand>(
                     command => command.Language == param.Language
                                 && command.IP == param.IP
-                                && command.CustID == param.CustId
-                                && command.SubAccID == param.SubAccountId
-                                && command.UserID == param.ActorId
+                                && command.CustId == param.CustId
+                                && command.SubAccId == param.SubAccId
+                                && command.UserId == param.ActorId
                                 && command.Enable == param.IsEnable));
         }
 
@@ -160,7 +164,7 @@
             // Assert
             Assert.IsTrue(actualCustomerOtp.CustId == custId
                 && actualCustomerOtp.SubAccId == subAccountId
-                && actualCustomerOtp.QrCode == quickResponseCode
+                && actualCustomerOtp.QRCode == quickResponseCode
                 && actualCustomerOtp.SecretKey == secretKey
                 && !actualCustomerOtp.Enabled);
         }
@@ -195,8 +199,8 @@
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<CheckEnableOtpCommand>(
-                criteria => criteria.CustID == custId
-                        && criteria.SubAccID == subAccId));
+                criteria => criteria.CustId == custId
+                        && criteria.SubAccId == subAccId));
         }
 
         [TestCase(true)]
@@ -239,7 +243,7 @@
                 SubAccId = 2,
                 Enabled = true,
                 Otp = "333",
-                QrCode = "aaa",
+                QRCode = "aaa",
                 SecretKey = "4545",
                 Language = "E"
             };
@@ -262,15 +266,18 @@
                 CustId = 1,
                 SubAccId = 2,
                 Enabled = true,
-                DeviceInfo = new DeviceInfo
+                Device = new Device
                 {
-                    IP = "2323232",
-                    BrowserName = "BrowserName",
-                    BrowserVersion = "BrowserVersion",
-                    DeviceName = "DeviceName",
-                    DeviceVersion = "DeviceVersion"
+                    Info = new DeviceInfo
+                    {
+                        IP = "2323232",
+                        BrowserName = "BrowserName",
+                        BrowserVersion = "BrowserVersion",
+                        DeviceName = "DeviceName",
+                        DeviceVersion = "DeviceVersion"
+                    }
                 },
-                QrCode = "aaa",
+                QRCode = "aaa",
                 SecretKey = "4545",
                 Language = "E"
             };
@@ -281,11 +288,11 @@
 
             // Assert
             jsonHelper.Received().Serialize(Arg.Is<DeviceInfo>(deviceInfo =>
-                deviceInfo.IP == customerOtp.DeviceInfo.IP
-                && deviceInfo.BrowserName == customerOtp.DeviceInfo.BrowserName
-                && deviceInfo.BrowserVersion == customerOtp.DeviceInfo.BrowserVersion
-                && deviceInfo.DeviceName == customerOtp.DeviceInfo.DeviceName
-                && deviceInfo.DeviceVersion == customerOtp.DeviceInfo.DeviceVersion));
+                deviceInfo.IP == customerOtp.Device.Info.IP
+                && deviceInfo.BrowserName == customerOtp.Device.Info.BrowserName
+                && deviceInfo.BrowserVersion == customerOtp.Device.Info.BrowserVersion
+                && deviceInfo.DeviceName == customerOtp.Device.Info.DeviceName
+                && deviceInfo.DeviceVersion == customerOtp.Device.Info.DeviceVersion));
         }
 
         [Test]
@@ -297,15 +304,18 @@
                 CustId = 1,
                 SubAccId = 0,
                 Enabled = true,
-                DeviceInfo = new DeviceInfo
+                Device = new Device
                 {
-                    IP = "2323232",
-                    BrowserName = "BrowserName",
-                    BrowserVersion = "BrowserVersion",
-                    DeviceName = "DeviceName",
-                    DeviceVersion = "DeviceVersion"
+                    Info = new DeviceInfo
+                    {
+                        IP = "2323232",
+                        BrowserName = "BrowserName",
+                        BrowserVersion = "BrowserVersion",
+                        DeviceName = "DeviceName",
+                        DeviceVersion = "DeviceVersion"
+                    }
                 },
-                QrCode = "aaa",
+                QRCode = "aaa",
                 SecretKey = "4545",
                 Language = "E"
             };
@@ -318,8 +328,8 @@
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<InsertCustomerOtpCommand>(
-                command => command.CustID == customerOtp.CustId
-                && command.SubAccID == customerOtp.SubAccId
+                command => command.CustId == customerOtp.CustId
+                && command.SubAccId == customerOtp.SubAccId
                 && command.SecretKey == customerOtp.SecretKey
                 && command.DeviceInfo == deviceInfoSerialized
                 && command.Language == customerOtp.Language));
@@ -333,9 +343,12 @@
             {
                 CustId = 1,
                 SubAccId = 0,
-                DeviceInfo = new DeviceInfo
+                Device = new Device
                 {
-                    IP = "2323232"
+                    Info = new DeviceInfo
+                    {
+                        IP = "2323232"
+                    }
                 },
                 Language = "E"
             };
@@ -395,30 +408,63 @@
             dynamicRepository.Received()
                 .Get<CustomerOtpDto>(
                     Arg.Is<GetCustomerOtpCriteria>(criteria =>
-                        criteria.CustID == custId
-                        && criteria.SubAccID == subAccountId));
+                        criteria.CustId == custId
+                        && criteria.SubAccId == subAccountId));
         }
 
+        ////[Test]
+        ////public void GetCustomerOtp_DeserializeCustomerDeviceInfo_CallDeserialize()
+        ////{
+        ////    // Arrange
+        ////    var custId = 1;
+        ////    var subAccountId = 3;
+        ////    var customerDeviceInfoJson = "customerDeviceInfoJson";
+        ////    dynamicRepository.Get<CustomerOtpDto>(Arg.Any<GetCustomerOtpCriteria>())
+        ////        .Returns(new CustomerOtpDto
+        ////        {
+        ////            DeviceInfo = customerDeviceInfoJson,
+        ////            CustID = custId,
+        ////            SubAccId = subAccountId
+        ////        });
+
+        ////    // Act
+        ////    customerOtpService.GetCustomerOtp(custId, subAccountId);
+
+        ////    // Assert
+        ////    jsonHelper.Received().Deserialize<Device>(customerDeviceInfoJson);
+        ////}
+
         [Test]
-        public void GetCustomerOtp_DeserializeCustomerDeviceInfo_CallDeserialize()
+        public void GetCustomerOtp_UserHaveNotSetup_ReturnDefaultCustomerOtp()
         {
             // Arrange
             var custId = 1;
             var subAccountId = 3;
-            var customerDeviceInfoJson = "customerDeviceInfoJson";
+            CustomerOtpDto customerOtpDto = null;
             dynamicRepository.Get<CustomerOtpDto>(Arg.Any<GetCustomerOtpCriteria>())
-                .Returns(new CustomerOtpDto
-                {
-                    DeviceInfo = customerDeviceInfoJson,
-                    CustID = custId,
-                    SubAccId = subAccountId
-                });
+                .Returns(customerOtpDto);
 
             // Act
-            customerOtpService.GetCustomerOtp(custId, subAccountId);
+            var customerOtp = customerOtpService.GetCustomerOtp(custId, subAccountId);
 
             // Assert
-            jsonHelper.Received().Deserialize<DeviceInfo>(customerDeviceInfoJson);
+            Assert.IsTrue(!customerOtp.Enabled && string.IsNullOrWhiteSpace(customerOtp.SecretKey));
+        }
+
+        [Test]
+        public void GetCustomerOtp_UserRemovedOtpBefore_ReturnDefaultCustomerOtp()
+        {
+            // Arrange
+            var custId = 1;
+            var subAccountId = 3;
+            dynamicRepository.Get<CustomerOtpDto>(Arg.Any<GetCustomerOtpCriteria>())
+                .Returns(new CustomerOtpDto { IsDelete = true });
+
+            // Act
+            var customerOtp = customerOtpService.GetCustomerOtp(custId, subAccountId);
+
+            // Assert
+            Assert.IsTrue(!customerOtp.Enabled && string.IsNullOrWhiteSpace(customerOtp.SecretKey));
         }
 
         [Test]
@@ -432,18 +478,9 @@
                 .Returns(new CustomerOtpDto
                 {
                     SecretKey = secretKey,
-                    CustID = custId,
+                    CustId = custId,
                     SubAccId = subAccountId
                 });
-            var deserializedDevicedInfo = new DeviceInfo
-            {
-                IP = "2",
-                BrowserName = "BrowserName",
-                BrowserVersion = "BrowserVersion",
-                DeviceName = "DeviceName",
-                DeviceVersion = "DeviceVersion"
-            };
-            jsonHelper.Deserialize<DeviceInfo>(Arg.Any<string>()).Returns(deserializedDevicedInfo);
 
             // Act
             var actualCustomerOtp = customerOtpService.GetCustomerOtp(custId, subAccountId);
@@ -451,12 +488,7 @@
             // Assert
             Assert.IsTrue(actualCustomerOtp.CustId == custId
                 && actualCustomerOtp.SubAccId == subAccountId
-                && actualCustomerOtp.SecretKey == secretKey
-                && actualCustomerOtp.DeviceInfo.IP == deserializedDevicedInfo.IP
-                && actualCustomerOtp.DeviceInfo.BrowserName == deserializedDevicedInfo.BrowserName
-                && actualCustomerOtp.DeviceInfo.BrowserVersion == deserializedDevicedInfo.BrowserVersion
-                && actualCustomerOtp.DeviceInfo.DeviceName == deserializedDevicedInfo.DeviceName
-                && actualCustomerOtp.DeviceInfo.DeviceVersion == deserializedDevicedInfo.DeviceVersion);
+                && actualCustomerOtp.SecretKey == secretKey);
         }
 
         #endregion Get Cutomer OTP
@@ -478,7 +510,13 @@
                 CustId = 1,
                 SubAccId = 2,
                 Otp = "OTP",
-                DeviceInfo = new DeviceInfo { IP = "IP" }
+                Device = new Device
+                {
+                    Info = new DeviceInfo
+                    {
+                        IP = "IP"
+                    }
+                }
             };
             customerOtpService
                 .GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>())
@@ -507,7 +545,13 @@
                 CustId = 1,
                 SubAccId = 2,
                 Otp = "OTP",
-                DeviceInfo = new DeviceInfo { IP = "IP" }
+                Device = new Device
+                {
+                    Info = new DeviceInfo
+                    {
+                        IP = "IP"
+                    }
+                }
             };
 
             // Act
@@ -527,7 +571,13 @@
                 CustId = 1,
                 SubAccId = 2,
                 Otp = "OTP",
-                DeviceInfo = new DeviceInfo { IP = "IP" },
+                Device = new Device
+                {
+                    Info = new DeviceInfo
+                    {
+                        IP = "IP"
+                    }
+                },
                 Language = "E"
             };
             customerOtpService
@@ -539,11 +589,11 @@
             customerOtpService.VerifyOtp(actualCustomerOtp);
 
             // Assert
-            dynamicRepository.Received().Execute(Arg.Is<UpdateCustomerStatusAfterVerifyOTPCommand>(
-                    command => command.CustID == actualCustomerOtp.CustId
-                    && command.SubAccID == actualCustomerOtp.SubAccId
-                    && command.CheckedOTP == isCorrectOtp
-                    && command.IP == actualCustomerOtp.DeviceInfo.IP
+            dynamicRepository.Received().Execute(Arg.Is<UpdateCustomerStatusAfterVerifyOtpCommand>(
+                    command => command.CustId == actualCustomerOtp.CustId
+                    && command.SubAccId == actualCustomerOtp.SubAccId
+                    && command.CheckedOtp == isCorrectOtp
+                    && command.IP == actualCustomerOtp.Device.Info.IP
                     && command.Language == actualCustomerOtp.Language));
         }
 
@@ -556,7 +606,13 @@
                 CustId = 1,
                 SubAccId = 0,
                 Otp = "OTP",
-                DeviceInfo = new DeviceInfo { IP = "IP" },
+                Device = new Device
+                {
+                    Info = new DeviceInfo
+                    {
+                        IP = "IP"
+                    }
+                },
                 Language = "E"
             };
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp());
@@ -564,10 +620,10 @@
             otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(incorrect);
             var closedErrorCode = 200;
             dynamicRepository
-               .When(repo => repo.Execute(Arg.Any<UpdateCustomerStatusAfterVerifyOTPCommand>()))
+               .When(repo => repo.Execute(Arg.Any<UpdateCustomerStatusAfterVerifyOtpCommand>()))
                .Do((callInfo) =>
                {
-                   var command = callInfo[0] as UpdateCustomerStatusAfterVerifyOTPCommand;
+                   var command = callInfo[0] as UpdateCustomerStatusAfterVerifyOtpCommand;
                    command.ErrCode = closedErrorCode;
                });
 
@@ -575,7 +631,7 @@
             customerOtpService.VerifyOtp(actualCustomerOtp);
 
             // Assert
-            customerOtpService.Received().CloseCasinoAccount(actualCustomerOtp.CustId, actualCustomerOtp.DeviceInfo.IP);
+            customerOtpService.Received().CloseCasinoAccount(actualCustomerOtp.CustId, actualCustomerOtp.Device.Info.IP);
         }
 
         [Test]
@@ -587,7 +643,13 @@
                 CustId = 1,
                 SubAccId = 0,
                 Otp = "OTP",
-                DeviceInfo = new DeviceInfo { IP = "IP" },
+                Device = new Device
+                {
+                    Info = new DeviceInfo
+                    {
+                        IP = "IP"
+                    }
+                },
                 Language = "E"
             };
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp());
@@ -609,11 +671,24 @@
                 CustId = 1,
                 SubAccId = 0,
                 Otp = "OTP",
-                DeviceInfo = new DeviceInfo { IP = "IP" },
+                Device = new Device
+                {
+                    Info = new DeviceInfo
+                    {
+                        IP = "IP"
+                    }
+                },
                 Language = "E"
             };
             customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp());
             otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(true);
+            dynamicRepository
+               .When(repo => repo.Execute(Arg.Any<UpdateCustomerStatusAfterVerifyOtpCommand>()))
+               .Do((callInfo) =>
+               {
+                   var command = callInfo[0] as UpdateCustomerStatusAfterVerifyOtpCommand;
+                   command.ErrCode = 0;
+               });
 
             // Act
             var actualResult = customerOtpService.VerifyOtp(actualCustomerOtp);
@@ -640,7 +715,7 @@
             {
                 CustId = 1,
                 ActorId = 2,
-                SubAccountId = 3,
+                SubAccId = 3,
                 IP = "IP",
                 Language = "E"
             };
@@ -650,9 +725,9 @@
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<DeleteCustOtpSecretKeyCommand>(
-                    command => command.CustID == param.CustId
-                        && command.SubAccID == param.SubAccountId
-                        && command.UserID == param.ActorId
+                    command => command.CustId == param.CustId
+                        && command.SubAccId == param.SubAccId
+                        && command.UserId == param.ActorId
                         && command.Language == param.Language
                         && command.IP == param.IP));
         }
@@ -666,7 +741,7 @@
             {
                 CustId = 1,
                 ActorId = 2,
-                SubAccountId = 3,
+                SubAccId = 3,
                 IP = "IP",
                 Language = "E",
             };
@@ -687,5 +762,76 @@
         }
 
         #endregion Remove Secret Key
+
+        #region Is Difference Device
+
+        [TestCase(0)]
+        [TestCase(-1)]
+        public void IsDifferenceDevice_CustIdIsNegativeOrZero_ThrowArgumentOutOfRangeException(int custId)
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => customerOtpService.IsDifferenceDevice(custId, "2"));
+        }
+
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase(" ")]
+        public void IsDifferenceDevice_DeviceIdIsNullOrWhiteSpace_ThrowArgumentOutOfRangeException(string deviceId)
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => customerOtpService.IsDifferenceDevice(1, deviceId));
+        }
+
+        [Test]
+        public void IsDifferenceDevice_DeviceIsNotDetected_CallWriteLog()
+        {
+            // Arrange
+            var deviceId = "N/A";
+            var custId = 3;
+            logger.FullExceptionToString(Arg.Any<Exception>(), custId).Returns("Full Log");
+            dynamicRepository.Fetch<Device>(Arg.Any<CriteriaBase>()).Returns(Enumerable.Empty<Device>());
+
+            // Act
+            customerOtpService.IsDifferenceDevice(custId, deviceId);
+
+            // Assert
+            logger.Received().WriteInfo("Full Log");
+        }
+
+        [Test]
+        public void IsDifferenceDevice_UserUseNewDevice_ReturnTrue()
+        {
+            // Arrange
+            var deviceUsed = new List<Device>
+            {
+                new Device { Id = "2" }
+            };
+            var deviceId = "3";
+            dynamicRepository.Fetch<Device>(Arg.Any<GetDevicesCriteria>()).Returns(deviceUsed);
+
+            // Act
+            var isDiff = customerOtpService.IsDifferenceDevice(2, deviceId);
+
+            // Assert
+            Assert.IsTrue(isDiff);
+        }
+
+        [Test]
+        public void IsDifferenceDevice_UserUseCurrentDevice_ReturnFalse()
+        {
+            // Arrange
+            var deviceUsed = new List<Device>
+            {
+                new Device { Id = "3" }
+            };
+            var deviceId = "3";
+            dynamicRepository.Fetch<Device>(Arg.Any<GetDevicesCriteria>()).Returns(deviceUsed);
+
+            // Act
+            var isDiff = customerOtpService.IsDifferenceDevice(2, deviceId);
+
+            // Assert
+            Assert.IsFalse(isDiff);
+        }
+
+        #endregion
     }
 }

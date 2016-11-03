@@ -2,11 +2,13 @@
 {
     using Fanex.Data.Repository;
 
-    public class UpdateCustomerDeviceInfoCommand : NonQueryCommand
+    public class InsertCustomerDeviceInfoCommand : NonQueryCommand
     {
-        public int CustID { get; set; }
+        public int CustId { get; set; }
 
-        public int SubAccID { get; set; }
+        public int SubAccId { get; set; }
+
+        public string DeviceId { get; set; }
 
         public string DeviceInfo { get; set; }
 
@@ -20,13 +22,13 @@
 
         public override string GetSettingKey()
         {
-            return "Age_OTP_CustomerOTPDeviceInfoUpd";
+            return "Age_OTP_CustomerOTPDeviceInfoIns";
         }
 
         public override bool IsValid()
         {
-            return CustID > 0
-                && SubAccID >= 0
+            return CustId > 0
+                && SubAccId >= 0
                 && !string.IsNullOrWhiteSpace(Language)
                 && !string.IsNullOrWhiteSpace(IP);
         }

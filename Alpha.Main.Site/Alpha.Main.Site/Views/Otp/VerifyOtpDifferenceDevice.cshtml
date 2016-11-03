@@ -15,7 +15,7 @@
         <h1 class="title">OTP</h1>
         <p> @string.Format(Security.OtpHiMessage, Model.UsernameShower)</p>
         <figure class="avatar">
-            <img id="logoProfileImg" src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="Avatar" />
+            <img id="logoProfileImg" src='@(Model.EmbedImage == null ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="Avatar" />
             <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
         </figure>
         <div class="rowlg">

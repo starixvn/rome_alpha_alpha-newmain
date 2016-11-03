@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using MediatR;
     using Requests.Otp;
@@ -13,6 +14,7 @@
             this.mediator = mediator;
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         public ActionResult Index(SetUpOtpQuery query)
         {
             var customerOtp = mediator.Send(query);
@@ -26,6 +28,7 @@
             return View();
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost]
         public JsonResult VerifyOtp(VerifyOtpCommand command)
         {
@@ -42,6 +45,7 @@
             return View(viewModel);
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost]
         public JsonResult SetUpOtp(SetUpOtpCommand command)
         {
@@ -58,6 +62,7 @@
             return View(viewModel);
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost]
         public ActionResult ResetOtp(ResetOtpCommand command)
         {
@@ -74,6 +79,7 @@
             return Json(result);
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost]
         public JsonResult ChangeOtpStatus(ChangeOtpStatusCommand command)
         {

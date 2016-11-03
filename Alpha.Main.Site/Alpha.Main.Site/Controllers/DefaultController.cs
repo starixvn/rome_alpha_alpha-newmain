@@ -7,6 +7,7 @@ namespace Alpha.Main.Site.Controllers
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
+    using Requests.Otp;
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
     using Web;
@@ -47,10 +48,10 @@ namespace Alpha.Main.Site.Controllers
                 return Redirect(ForceChangePasswordPath);
             }
 
-            ////if (this.mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
-            ////{
-            ////    return Redirect(OtpVerifyDifferenceDevicePath);
-            ////}
+            if (this.mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
+            {
+                return Redirect(OtpVerifyDifferenceDevicePath);
+            }
 
             if (this.securityCodeChecker.IsForcedChangeSecurityCode())
             {

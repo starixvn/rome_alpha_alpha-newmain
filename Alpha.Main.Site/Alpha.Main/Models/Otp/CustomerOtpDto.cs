@@ -4,7 +4,7 @@
 
     public class CustomerOtpDto
     {
-        public int CustID { get; set; }
+        public int CustId { get; set; }
 
         public int SubAccId { get; set; }
 
@@ -12,8 +12,8 @@
 
         public bool Enabled { get; set; }
 
-        public string DeviceInfo { get; set; }
-
         public DateTime? CreatedDate { get; set; }
+
+        public bool IsDelete { get; set; }
     }
 }

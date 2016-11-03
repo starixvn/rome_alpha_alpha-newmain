@@ -37,7 +37,7 @@
                 <li>
                     <strong>@Security.ScanQRCode</strong>
                     <div class="qr-code">
-                        <img src="@Html.Raw(Model.CustomerOtp.QrCode)" />
+                        <img src="@Html.Raw(Model.CustomerOtp.QRCode)" />
                     </div>
                     <div class="username-customize">
                         <p>@Security.UsernameWarning <strong>@Model.CustomerOtp.OtpUsername</strong>. <span id="btn-change-username" class="btn-change-username">@Security.ChangeIt</span></p>

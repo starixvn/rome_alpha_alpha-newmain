@@ -8,6 +8,7 @@ namespace Alpha.Main.Site.App_Start
     using System.Web;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Configurations;
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
@@ -30,6 +31,7 @@ namespace Alpha.Main.Site.App_Start
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
 
+    [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
@@ -85,10 +87,12 @@ namespace Alpha.Main.Site.App_Start
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
         private static void RegisterServices(Container container)
         {
-            container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
-            container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
+            container.Register<Logger, LoggerImpl>(Lifestyle.Singleton);
+
+            container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
+            container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
 
             container.RegisterPerWebRequest<AnnouncementService, AnnouncementServiceImpl>();
             container.RegisterPerWebRequest<SiteMenuService, SiteMenuServiceImpl>();
@@ -107,12 +111,18 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<MessageService, MessageServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
 
-            container.RegisterPerWebRequest<CustomerOtpService, CustomerOtpServiceImpl>();
             container.RegisterPerWebRequest<OtpService, OtpServiceImpl>();
             container.RegisterPerWebRequest<OtpAdapter, OtpAdapterImpl>();
             container.RegisterPerWebRequest<QrCodeAdapter, QrCodeAdapterImpl>();
             container.RegisterPerWebRequest<RandomHelper, RandomHelperImpl>();
             container.RegisterPerWebRequest<JsonHelper, JsonHelperImpl>();
+            container.RegisterPerWebRequest<CustomerOtpService>(() => 
+            new CustomerOtpServiceImpl(
+                container.GetInstance<IDynamicRepository>(),
+                container.GetInstance<OtpService>(),
+                container.GetInstance<JsonHelper>(),
+                container.GetInstance<CasinoService>(),
+                container.GetInstance<Logger>()));
         }
 
         private static void RegisterDataAccesses(Container container)

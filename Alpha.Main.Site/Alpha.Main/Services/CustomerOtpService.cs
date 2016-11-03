@@ -14,10 +14,12 @@
 
         Result ChangeOtpStatus(ChangeOtpStatusParam param);
 
-        CustomerOtp GenerateCustomerOtp(int custId, string username, int subAccountId = 0);
+        CustomerOtp GenerateCustomerOtp(int custId, string username, int subAccId = 0);
 
-        CustomerOtp GetCustomerOtp(int custId, int subAccountId = 0);
+        CustomerOtp GetCustomerOtp(int custId, int subAccId = 0);
 
         bool IsEnabledOtp(int custId, int subAccId = 0);
+
+        bool IsDifferenceDevice(int custId, string deviceId, int subAccId = 0);
     }
 }

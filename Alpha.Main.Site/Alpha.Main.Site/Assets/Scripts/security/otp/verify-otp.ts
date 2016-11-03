@@ -63,7 +63,7 @@ class VerifyOtp {
         if (result.isSuccessful) {
             securityHelper.afterVerifed();
             this.$txtOtp.attr("disbaled");
-            this.$btnSubmit.attr("disbaled");
+            this.$btnSubmit.attr("disbaled").remove();
         }
         else {
             alpha.showMessage(this.$otpMessage, result);

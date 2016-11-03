@@ -85,7 +85,7 @@
                 Arg.Is<ChangeOtpStatusParam>(
                     param => param.CustId == command.CustId
                         && param.ActorId == command.CustId
-                        && param.SubAccountId == command.SubAccountId
+                        && param.SubAccId == command.SubAccountId
                         && param.IP == command.IP
                         && param.Language == command.Language
                         && param.IsEnable == command.IsEnable));
@@ -158,6 +158,57 @@
         }
 
         [Test]
+        public void HandleResetOtpCommand_SubAccountHasLimitedHostPermision_ReturnUnAuthorizedResult()
+        {
+            // Arrange
+            userSession.IsLimitedHostPermisionOnSubAccountFunction.Returns(true);
+            var command = new ResetOtpCommand(userSession);
+
+            // Act
+            var viewModel = customerOtpHandler.Handle(command);
+
+            // Assert
+            Assert.IsTrue(viewModel.Result.IsNotOk
+                && viewModel.Result.Message == Security.NotAuthorized);
+        }
+
+        [Test]
+        public void HandleResetOtpCommand_SubAccountDoesHasHostPermissionOnUpdate_ReturnUnAuthorizedResult()
+        {
+            // Arrange
+            userSession.IsSubAcc.Returns(true);
+            userSession.SubPageAccess.Returns(new PageAccess
+            {
+                UpdateAccount = false
+            });
+            var command = new ResetOtpCommand(userSession);
+
+            // Act
+            var viewModel = customerOtpHandler.Handle(command);
+
+            // Assert
+            Assert.IsTrue(viewModel.Result.IsNotOk
+                && viewModel.Result.Message == Security.NotAuthorized);
+        }
+
+        [Test]
+        public void HandleResetOtpCommand_UserHasPermission_CallGetDeviceInfo()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(true);
+            var command = new ResetOtpCommand(userSession);
+            command.SubAccountId = 3;
+            command.CustId = 3;
+            browserHelper.GetDevice().Returns(new Device());
+
+            // Act
+            customerOtpHandler.Handle(command);
+
+            // Assert
+            browserHelper.Received().GetDevice();
+        }
+
+        [Test]
         public void HandleResetOtpCommand_AdminResetsSubAccountOtp_CallRemoveSecretKey()
         {
             // Arrange
@@ -165,6 +216,7 @@
             var command = new ResetOtpCommand(userSession);
             command.SubAccountId = 3;
             command.CustId = 3;
+            browserHelper.GetDevice().Returns(new Device());
 
             // Act
             var result = customerOtpHandler.Handle(command);
@@ -172,7 +224,7 @@
             // Assert
             customerOtpService.Received().RemoveSecretKey(Arg.Is<RemoveSecretKeyParam>(
                 param => param.CustId == command.CustId
-                    && param.SubAccountId == command.SubAccountId
+                    && param.SubAccId == command.SubAccountId
                     && param.ActorId == command.ActorId));
         }
 
@@ -185,6 +237,7 @@
             command.SubAccountId = 2;
             userSession.UserLoginIp.Returns("ip");
             userSession.Language.Returns("language");
+            browserHelper.GetDevice().Returns(new Device());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -194,7 +247,7 @@
                 Arg.Is<RemoveSecretKeyParam>(
                     param => param.CustId == command.CustId
                         && param.ActorId == command.ActorId
-                        && param.SubAccountId == command.SubAccountId
+                        && param.SubAccId == command.SubAccountId
                         && param.IP == command.IP
                         && param.Language == command.Language));
         }
@@ -204,6 +257,7 @@
         {
             // Arrange
             var command = new ResetOtpCommand(userSession);
+            browserHelper.GetDevice().Returns(new Device());
             customerOtpService.RemoveSecretKey(Arg.Any<RemoveSecretKeyParam>())
                 .Returns(new Result
                 {
@@ -276,7 +330,7 @@
             // Assert
             customerOtpService.RemoveSecretKey(Arg.Is<RemoveSecretKeyParam>(
                 param => param.CustId == 1
-                    && param.SubAccountId == 2
+                    && param.SubAccId == 2
                     && param.ActorId == 1
                     && param.Language == "ee"
                     && param.IP == "4"));
@@ -366,7 +420,7 @@
             customerOtpHandler.Handle(command);
 
             // Assert
-            browserHelper.Received().GetDeviceInfo();
+            browserHelper.Received().GetDevice();
         }
 
         [Test]
@@ -374,15 +428,18 @@
         {
             // Arrange
             var command = new SetUpOtpCommand(userSession);
-            var expectedDeviceInfo = new DeviceInfo
+            var expectedDeviceInfo = new Device
             {
-                IP = "IP",
-                DeviceName = "DeviceName",
-                BrowserName = "BrowserName",
-                BrowserVersion = "BrowserVersion",
-                DeviceVersion = "DeviceVersion"
+                Info = new DeviceInfo
+                {
+                    IP = "IP",
+                    DeviceName = "DeviceName",
+                    BrowserName = "BrowserName",
+                    BrowserVersion = "BrowserVersion",
+                    DeviceVersion = "DeviceVersion"
+                }
             };
-            browserHelper.GetDeviceInfo().Returns(expectedDeviceInfo);
+            browserHelper.GetDevice().Returns(expectedDeviceInfo);
             var expectedSecretKey = "expectedSecretKey";
             sessionManager.Get<string>(Arg.Any<string>()).Returns(expectedSecretKey);
             customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
@@ -395,11 +452,11 @@
                 customerOtp => customerOtp.CustId == command.CustId
                             && customerOtp.SubAccId == command.SubAccountId
                             && customerOtp.SecretKey == expectedSecretKey
-                            && customerOtp.DeviceInfo.IP == expectedDeviceInfo.IP
-                            && customerOtp.DeviceInfo.DeviceName == expectedDeviceInfo.DeviceName
-                            && customerOtp.DeviceInfo.BrowserName == expectedDeviceInfo.BrowserName
-                            && customerOtp.DeviceInfo.BrowserVersion == expectedDeviceInfo.BrowserVersion
-                            && customerOtp.DeviceInfo.DeviceVersion == expectedDeviceInfo.DeviceVersion));
+                            && customerOtp.Device.Info.IP == expectedDeviceInfo.Info.IP
+                            && customerOtp.Device.Info.DeviceName == expectedDeviceInfo.Info.DeviceName
+                            && customerOtp.Device.Info.BrowserName == expectedDeviceInfo.Info.BrowserName
+                            && customerOtp.Device.Info.BrowserVersion == expectedDeviceInfo.Info.BrowserVersion
+                            && customerOtp.Device.Info.DeviceVersion == expectedDeviceInfo.Info.DeviceVersion));
         }
 
         [Test]
@@ -496,11 +553,14 @@
             {
                 CustId = 1,
                 Enabled = true,
-                QrCode = "QrCode",
+                QRCode = "QrCode",
                 SubAccId = 2,
-                DeviceInfo = new DeviceInfo
+                Device = new Device
                 {
-                    IP = "1"
+                    Info = new DeviceInfo
+                    {
+                        IP = "1"
+                    }
                 },
                 SecretKey = "SecretKey",
             };
@@ -512,9 +572,9 @@
             // Assert
             Assert.IsTrue(expectedCustomerOtp.CustId == actualCustomerOtp.CustomerOtp.CustId
                 && expectedCustomerOtp.SubAccId == actualCustomerOtp.CustomerOtp.SubAccId
-                && expectedCustomerOtp.QrCode == actualCustomerOtp.CustomerOtp.QrCode
+                && expectedCustomerOtp.QRCode == actualCustomerOtp.CustomerOtp.QRCode
                 && expectedCustomerOtp.SecretKey == actualCustomerOtp.CustomerOtp.SecretKey
-                && expectedCustomerOtp.DeviceInfo.IP == actualCustomerOtp.CustomerOtp.DeviceInfo.IP
+                && expectedCustomerOtp.Device.Info.IP == actualCustomerOtp.CustomerOtp.Device.Info.IP
                 && expectedCustomerOtp.Enabled);
         }
 
@@ -698,13 +758,11 @@
             userSession.CustId.Returns(10);
             userSession.SubAccId.Returns(20);
 
-            customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp());
-
             // Act
             customerOtpHandler.Handle(command);
 
             // Assert
-            customerOtpService.Received().GetCustomerOtp(10, 20);
+            customerOtpService.Received().IsEnabledOtp(10, 20);
         }
 
         [TestCase(true)]
@@ -714,8 +772,8 @@
             // Arrange
             var command = new CheckDifferenceDeviceCommand(this.userSession);
 
-            customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = otpStatus, DeviceInfo = new DeviceInfo() });
-            browserHelper.GetDeviceInfo().Returns(new DeviceInfo());
+            customerOtpService.IsEnabledOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(otpStatus);
+            browserHelper.GetDevice().Returns(new Device());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -730,8 +788,8 @@
             // Arrange
             var command = new CheckDifferenceDeviceCommand(this.userSession);
 
-            customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = false, DeviceInfo = new DeviceInfo() });
-            browserHelper.GetDeviceInfo().Returns(new DeviceInfo());
+            customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp { Enabled = false, Device = new Device() });
+            browserHelper.GetDevice().Returns(new Device());
 
             // Act
             var isDifferenceDevice = customerOtpHandler.Handle(command);

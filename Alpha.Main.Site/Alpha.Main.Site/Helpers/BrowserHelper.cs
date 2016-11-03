@@ -9,6 +9,8 @@
 
         BrowserViewModel CheckSupportedBrowsers();
 
-        DeviceInfo GetDeviceInfo();
+        Device GetDevice();
+
+        string GetDeviceId();
     }
 }
