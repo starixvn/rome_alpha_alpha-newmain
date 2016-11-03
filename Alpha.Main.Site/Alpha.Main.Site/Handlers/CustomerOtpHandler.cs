@@ -105,7 +105,8 @@
                     IP = message.IP,
                     Language = message.Language,
                     SubAccId = message.SubAccountId,
-                    DeviceInfo = device.Info
+                    DeviceInfo = device.Info,
+                    IsResetDownlineOrSubAccount = true
                 });
             }
 

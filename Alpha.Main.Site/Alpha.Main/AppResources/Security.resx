@@ -368,13 +368,13 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>Remove OTP - {0}</value>
   </data>
   <data name="ResetOtpWarning" xml:space="preserve">
-    <value>Resetting a user's OTP will remove the registered authenticator app key and disable his OTP status</value>
+    <value>Click the button below to remove the user's registered device and set his/her OTP status to Disabled.</value>
   </data>
   <data name="OtpValidation" xml:space="preserve">
     <value>OTP Validation</value>
   </data>
   <data name="ResetDownlineOtpWarning" xml:space="preserve">
-    <value>Are you sure you want to remove OTP of this user?</value>
+    <value>Do you want to remove this user's registered device?</value>
   </data>
   <data name="RegenerateQR" xml:space="preserve">
     <value>Regenerate QR</value>
@@ -390,5 +390,17 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   </data>
   <data name="Copied" xml:space="preserve">
     <value>Copied</value>
+  </data>
+  <data name="NoRegisterDeviceError" xml:space="preserve">
+    <value>This user has no registered device to be removed.</value>
+  </data>
+  <data name="RemoveRegisteredDeviceSuccess" xml:space="preserve">
+    <value>Removed the registered device successfully.</value>
+  </data>
+  <data name="RemoveDisableOtpDownline" xml:space="preserve">
+    <value>Failed to remove the registered device from disabled user.</value>
+  </data>
+  <data name="FailedToRemoveOtp" xml:space="preserve">
+    <value>Failed to remove registered device!</value>
   </data>
 </root>

@@ -261,6 +261,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to remove registered device!.
+        /// </summary>
+        public static string FailedToRemoveOtp {
+            get {
+                return ResourceManager.GetString("FailedToRemoveOtp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have to change your password at the first login..
         /// </summary>
         public static string forcechangepwd {
@@ -468,6 +477,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This user has no registered device to be removed..
+        /// </summary>
+        public static string NoRegisterDeviceError {
+            get {
+                return ResourceManager.GetString("NoRegisterDeviceError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You are not authorized on this function.
         /// </summary>
         public static string NotAuthorized {
@@ -626,6 +644,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to remove the registered device from disabled user..
+        /// </summary>
+        public static string RemoveDisableOtpDownline {
+            get {
+                return ResourceManager.GetString("RemoveDisableOtpDownline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove OTP.
         /// </summary>
         public static string RemoveOtp {
@@ -662,6 +689,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Removed the registered device successfully..
+        /// </summary>
+        public static string RemoveRegisteredDeviceSuccess {
+            get {
+                return ResourceManager.GetString("RemoveRegisteredDeviceSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset.
         /// </summary>
         public static string Reset {
@@ -671,7 +707,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to remove OTP of this user?.
+        ///   Looks up a localized string similar to Do you want to remove this user&apos;s registered device?.
         /// </summary>
         public static string ResetDownlineOtpWarning {
             get {
@@ -680,7 +716,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Resetting a user&apos;s OTP will remove the registered authenticator app key and disable his OTP status.
+        ///   Looks up a localized string similar to Click the button below to remove the user&apos;s registered device and set his/her OTP status to Disabled..
         /// </summary>
         public static string ResetOtpWarning {
             get {

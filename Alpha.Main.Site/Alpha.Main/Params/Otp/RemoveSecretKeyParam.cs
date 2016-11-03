@@ -15,5 +15,7 @@
         public string Language { get; set; }
 
         public string IP { get; set; }
+
+        public bool IsResetDownlineOrSubAccount { get; set; }
     }
 }

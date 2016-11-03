@@ -24,6 +24,9 @@
         private const string NotDetectedDevice = "N/A";
         private const int InvalidDataErrorCode = 1;
         private const string InvalidDataMessage = "Data is not valid";
+        private const int DownlineIsDisabledErrorCode = 600;
+        private const int DownlineDoesNotHaveRegisteredDeviceErrorCode = 100;
+        private const int FailedToRemoveDownlineOtpErrorCode = 101;
 
         private readonly IDynamicRepository dynamicRepository;
         private readonly OtpService otpService;
@@ -273,6 +276,32 @@
             };
 
             return deleteResult;
+        }
+
+        private string GetRemovedOtpMessage(int code, bool isResetDownlineOrSubAccount, string errorMessage)
+        {
+            if (isResetDownlineOrSubAccount)
+            {
+                switch (code)
+                {
+                    case DownlineIsDisabledErrorCode:
+                        return Security.RemoveDisableOtpDownline;
+
+                    case DownlineDoesNotHaveRegisteredDeviceErrorCode:
+                        return Security.NoRegisterDeviceError;
+
+                    case FailedToRemoveDownlineOtpErrorCode:
+                        return Security.FailedToRemoveOtp;
+
+                    case 0:
+                        return Security.RemoveRegisteredDeviceSuccess;
+
+                    default:
+                        return errorMessage;
+                }
+            }
+
+            return code == 0 ? Security.RemoveOtpSuccessMessage : errorMessage;
         }
 
         private void UpdateDevice(CustomerOtp customerOtp)
