@@ -4,9 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Web;
     using System.Xml;
-    using Configurations;
     using Criteria.Message;
     using Fanex.Data.Repository;
     using Models.Message;
@@ -45,11 +43,10 @@
             return messages.ToList();
         }
 
-        public List<Message> GetMessagesFromXml(string xmlFileName, int messageType, byte userRoleId)
+        public List<Message> GetMessagesFromXml(string xmlFilePath, int messageType, byte userRoleId)
         {
             var messages = new List<Message>();
             var xmlMessages = new XmlDocument();
-            var xmlFilePath = $"{HttpContext.Current.Server.MapPath(AppSettings.GetMessagesDataPath)}/{xmlFileName}";
 
             if (!File.Exists(xmlFilePath))
             {

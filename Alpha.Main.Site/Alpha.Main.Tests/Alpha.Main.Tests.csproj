@@ -372,6 +372,17 @@
     <Content Include="TestData\EmptyToolTipMessage.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestData\Messages\ErrorMessage.xml" />
+    <Content Include="TestData\Messages\MessageLevelMaster.xml" />
+    <Content Include="TestData\Messages\MessageLevelInValid.xml" />
+    <Content Include="TestData\Messages\MessageLevelSuper.xml" />
+    <Content Include="TestData\Messages\MessageLevelAgent.xml" />
+    <Content Include="TestData\Messages\MessageShowdateGreaterThanToday.xml" />
+    <Content Include="TestData\Messages\MessageShowdateEmpty.xml" />
+    <Content Include="TestData\Messages\MessageIdEmtpy.xml" />
+    <Content Include="TestData\Messages\MessagePostTimeEmpty.xml" />
+    <Content Include="TestData\Messages\MessageLevelEmpty.xml" />
+    <Content Include="TestData\Messages\Message.xml" />
     <Content Include="TestData\OfferMessageByRoleId.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

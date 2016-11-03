@@ -20,18 +20,18 @@
             [UserLevel.Agent.Value] = "3000,3300"
         };
 
-        private static readonly Dictionary<int, string> MessageFileNameByType = new Dictionary<int, string>()
-        {
-            [Constants.MessageType.Public] = "NormalMessage.xml",
-            [Constants.MessageType.Special] = "SpecialMessage.xml",
-            [Constants.MessageType.Private] = "PersonalMessage.xml"
-        };
-
         private static readonly Dictionary<int, int> SpecialTypes = new Dictionary<int, int>
         {
             [Constants.MessageType.Public] = 0,
             [Constants.MessageType.Special] = 1,
             [Constants.MessageType.Private] = 2
+        };
+
+        private static readonly Dictionary<int, string> MessageFileNameByType = new Dictionary<int, string>()
+        {
+            [Constants.MessageType.Public] = "NormalMessage.xml",
+            [Constants.MessageType.Special] = "SpecialMessage.xml",
+            [Constants.MessageType.Private] = "PrivateMessage.xml"
         };
 
         public MessageQuery(
@@ -40,6 +40,7 @@
             DateTime startDate,
             DateTime endDate,
             bool isTest,
+            string messagesXmlDirPath,
             int totalMessage = DefaultTotalMessage)
         {
             CustId = userSession.CustId;
@@ -52,6 +53,7 @@
             TotalMessage = totalMessage;
             CurrentLang = userSession.Language;
             RoleId = userSession.RoleId;
+            MessageXmlFilePath = $"{messagesXmlDirPath}/{MessageFileNameByType[messageType]}";
         }
 
         public int CustId { get; }
@@ -74,6 +76,6 @@
 
         public byte RoleId { get; }
 
-        public string MessageXmlFileName => MessageFileNameByType[MessageType];
+        public string MessageXmlFilePath { get; }
     }
 }

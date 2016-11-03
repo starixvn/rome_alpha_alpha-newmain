@@ -34,7 +34,8 @@
                 MessageType.Public,
                 DateTime.Today,
                 DateTime.Today,
-                false);
+                false,
+                string.Empty);
 
             // Assert
             Assert.AreEqual(custId, query.CustId);
@@ -54,7 +55,8 @@
                     MessageType.Public,
                     DateTime.Today,
                     DateTime.Today,
-                    false);
+                    false,
+                    string.Empty);
 
             // Assert
             Assert.AreEqual(expectedParentSitesId, query.ParentSites);
@@ -72,7 +74,8 @@
                 msgType,
                 DateTime.Today,
                 DateTime.Today,
-                false);
+                false,
+                string.Empty);
 
             // Assert
             Assert.AreEqual(msgType, query.MessageType);
@@ -89,7 +92,8 @@
                 messageType,
                 DateTime.Today,
                 DateTime.Today,
-                false);
+                false,
+                string.Empty);
 
             // Assert
             Assert.AreEqual(specialType, query.SpecialType);
@@ -108,7 +112,8 @@
                 messageType,
                 startDate,
                 DateTime.Today,
-                false);
+                false,
+                string.Empty);
 
             // Assert
             Assert.AreEqual(startDate, query.StartDate);
@@ -126,7 +131,8 @@
                 MessageType.Special,
                 startDate,
                 DateTime.Today,
-                false);
+                false,
+                string.Empty);
 
             // Assert
             Assert.AreEqual(startDate, query.StartDate);
@@ -144,7 +150,8 @@
                 MessageType.Public,
                 DateTime.Today,
                 endDate,
-                false);
+                false,
+                string.Empty);
 
             // Assert
             Assert.AreEqual(endDate, query.EndDate);
@@ -162,7 +169,8 @@
                 MessageType.Public,
                 DateTime.Today,
                 DateTime.Today,
-                isTest);
+                isTest,
+                string.Empty);
 
             // Assert
             Assert.AreEqual(isTest, query.IsTest);
@@ -181,7 +189,8 @@
                 MessageType.Public,
                 DateTime.Today,
                 DateTime.Today,
-                false);
+                false,
+                string.Empty);
 
             // Assert
             Assert.AreEqual(currentLang, query.CurrentLang);
@@ -200,6 +209,7 @@
                 DateTime.Today,
                 DateTime.Today,
                 false,
+                string.Empty,
                 totalMessage);
 
             // Assert
@@ -219,10 +229,33 @@
                 DateTime.Today,
                 DateTime.Today,
                 false,
+                string.Empty,
                 50);
 
             // Assert
             Assert.AreEqual(RoleId.Agent, query.RoleId);
+        }
+
+        [TestCase(MessageType.Public, "NormalMessage.xml")]
+        [TestCase(MessageType.Special, "SpecialMessage.xml")]
+        [TestCase(MessageType.Private, "PrivateMessage.xml")]
+        public void MessageXmlFilePath_Always_GetByMessageType(int messageType, string messageXmlFileName)
+        {
+            // Arrange
+            var messageXmlDirPath = "dirpath";
+
+            //  Act
+            var query = new MessageQuery(
+                userSession,
+                messageType,
+                DateTime.Today,
+                DateTime.Today,
+                false,
+                messageXmlDirPath,
+                50);
+
+            // Assert
+            Assert.AreEqual($"{messageXmlDirPath}/{messageXmlFileName}", query.MessageXmlFilePath);
         }
     }
 }

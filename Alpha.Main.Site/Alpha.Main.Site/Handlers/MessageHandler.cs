@@ -35,7 +35,7 @@
                                 message.MessageType);
 
             var messagesFromXml = messageService.GetMessagesFromXml(
-                message.MessageXmlFileName,
+                message.MessageXmlFilePath,
                 message.MessageType,
                 message.RoleId);
 

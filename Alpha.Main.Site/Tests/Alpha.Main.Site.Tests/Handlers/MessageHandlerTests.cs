@@ -56,7 +56,8 @@ namespace Alpha.Main.Site.Tests.Handlers
                 1,
                 DateTime.Today,
                 DateTime.Today,
-                false);
+                false,
+                string.Empty);
 
             // Act
             messageHandler.Handle(query);
@@ -83,12 +84,12 @@ namespace Alpha.Main.Site.Tests.Handlers
             FakeReturnGetMessagesService(messages);
 
             var query = new MessageQuery(
-                    userSession,
-                    Arg.Any<int>(),
-                    Arg.Any<DateTime>(),
-                    Arg.Any<DateTime>(),
-                    Arg.Any<bool>(),
-                    Arg.Any<int>());
+                userSession,
+                1,
+                DateTime.Today,
+                DateTime.Today,
+                false,
+                string.Empty);
 
             // Act
             var viewModel = messageHandler.Handle(query);
