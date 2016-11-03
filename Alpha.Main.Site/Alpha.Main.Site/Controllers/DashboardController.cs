@@ -8,6 +8,7 @@ namespace Alpha.Main.Site.Controllers
     using Requests.Dashboard.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard;
+    using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class DashboardController : BaseController

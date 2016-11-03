@@ -7,9 +7,9 @@ namespace Alpha.Main.Site.Controllers
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
-    using Requests.Otp;
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
+    using Web;
 
     public class DefaultController : BaseController
     {

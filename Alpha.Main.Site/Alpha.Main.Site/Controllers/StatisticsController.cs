@@ -7,6 +7,7 @@ namespace Alpha.Main.Site.Controllers
     using MediatR;
     using Requests.Dashboard.Statistics;
     using Sunplus.Agent.Model.Entities;
+    using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class StatisticsController : BaseController

@@ -3,12 +3,13 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
-    using Filters;
-    using Main.Models.SecurityCode;
+    using Auth.Filters;
     using MediatR;
     using Models.Request.SecurityCode;
     using Models.Requests;
     using Sunplus.Agent.Model.Entities;
+    using Web;
+    using Web.Filters;
 
     [SessionState(SessionStateBehavior.Default)]
     public class SecurityCodeController : BaseController

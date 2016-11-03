@@ -8,6 +8,7 @@
     using Requests.Message;
     using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
+    using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class MessageController : BaseController

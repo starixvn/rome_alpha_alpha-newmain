@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
@@ -6,6 +7,7 @@ namespace Alpha.Main.Site.Controllers
     using MediatR;
     using Models.Requests.CustomerProfile;
     using Sunplus.Agent.Model.Entities;
+    using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class CustomerProfileController : BaseController

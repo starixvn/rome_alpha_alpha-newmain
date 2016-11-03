@@ -7,6 +7,7 @@
     using System.Web.Mvc;
     using System.Web.Routing;
     using App_Start;
+    using Auth.Filters;
     using Configurations;
     using Fanex.Data;
     using Fanex.Data.OldConnectionStringProvider;
@@ -41,6 +42,7 @@
             ShareSession.Init();
 
             GlobalFilters.Filters.Add(new CheckUMFilter());
+            GlobalFilters.Filters.Add(new CheckBelongingFilter());
 
             Logs.WriteInfo("Alpha - New Main - Application Start");
         }

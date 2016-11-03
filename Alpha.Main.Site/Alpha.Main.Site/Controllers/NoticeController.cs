@@ -10,6 +10,7 @@ namespace Alpha.Main.Site.Controllers
     using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard.Notice;
+    using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class NoticeController : BaseController
