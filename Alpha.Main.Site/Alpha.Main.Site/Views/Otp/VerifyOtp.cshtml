@@ -24,6 +24,8 @@
         </div>
     </form>
 
+    @Html.AntiForgeryToken()
+    
     @Html.Hidden("requiredFieldMessage", Security.alertSecCodeEmpty)
     @Html.Hidden("oldMainRootPath", Alpha.Main.Helpers.MicroSites.OldMainUrl())
     @Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())

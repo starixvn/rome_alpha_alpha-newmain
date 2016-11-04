@@ -4,6 +4,7 @@
     using System.Web.Mvc;
     using MediatR;
     using Requests.Otp;
+    using Web.Filters;
 
     public class OtpController : Controller
     {
@@ -29,7 +30,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         public JsonResult VerifyOtp(VerifyOtpCommand command)
         {
             var result = mediator.Send(command);
@@ -46,7 +47,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         public JsonResult SetUpOtp(SetUpOtpCommand command)
         {
             var result = mediator.Send(command);
@@ -63,7 +64,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public ActionResult ResetOtp(ResetOtpCommand command)
         {
             var result = mediator.Send(command);
@@ -71,7 +72,7 @@
             return View(result);
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         public JsonResult RemoveOtp()
         {
             var result = mediator.Send(new RemoveOtpCommand());
@@ -80,7 +81,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         public JsonResult ChangeOtpStatus(ChangeOtpStatusCommand command)
         {
             var result = mediator.Send(command);
