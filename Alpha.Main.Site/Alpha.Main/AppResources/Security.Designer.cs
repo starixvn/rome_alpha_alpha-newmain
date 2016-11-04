@@ -189,7 +189,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click the button below to remove your current OTP settings.
+        ///   Looks up a localized string similar to Click the button below to remove the registered device from your account..
         /// </summary>
         public static string ClickToRemoveOtp {
             get {
