@@ -16,7 +16,7 @@
         private readonly IMediator mediator;
         private readonly IUserSession userSession;
 
-        private readonly string MessagesXmlDirPath =
+        private readonly string messagesXmlDirPath =
             System.Web.HttpContext.Current.Server.MapPath(Configurations.AppSettings.GetMessagesDataPath);
 
         public MessageController(IMediator mediator, IUserSession userSession)
@@ -33,7 +33,7 @@
                 DateTime.Today.AddDays(-3),
                 DateTime.Today,
                 AppSettings.LocalTest,
-                MessagesXmlDirPath));
+                messagesXmlDirPath));
 
             return View(viewModel);
         }
@@ -49,7 +49,7 @@
                 startDate ?? DateTime.Today.AddDays(-3),
                 endDate ?? DateTime.Today,
                 AppSettings.LocalTest,
-                MessagesXmlDirPath));
+                messagesXmlDirPath));
 
             return View("Index", viewModel);
         }

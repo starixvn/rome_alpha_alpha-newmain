@@ -77,7 +77,7 @@ class SetupOtp {
         var that = this;
         this.clipboard
             .on("success", function (e) {
-                that.$(e.trigger).attr("title", "Copied!").tooltip("show");
+                that.$(e.trigger).tooltip("show");
             })
             .on("error", function (e) {
             window.console.error("Action:", e.action);

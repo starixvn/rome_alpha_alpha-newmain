@@ -15,7 +15,7 @@
         <div class="panel-body">
             <ul class="list-requirements">
                 <li>
-                    <strong>@Security.DownloadSophos</strong>
+                    <strong>1. @Security.DownloadSophos</strong>
                     <div class="download-content">
                         <div class="logo-sophos">
                             <img src="~/Assets/Styles/otp/images/logo.png" />
@@ -35,7 +35,7 @@
                     </div>
                 </li>
                 <li>
-                    <strong>@Security.ScanQRCode</strong>
+                    <strong>2. @Security.ScanQRCode</strong>
                     <div class="qr-code">
                         <img src="@Html.Raw(Model.CustomerOtp.QRCode)" />
                     </div>
@@ -44,7 +44,7 @@
                         <div id="username-message"></div>
                         <form class="block username-form" id="username-form" method="get">                            
                             <div class="form-group">
-                                <label>Account</label>
+                                <label>@Security.AccountName</label>
                                 <input maxlength="30" type="text" class="txt form-control" name="username" id="username" value="@Model.CustomerOtp.OtpUsername" />
                             </div>
                             <div class="form-group last">
@@ -64,7 +64,7 @@
                             <div id="unableScan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingQR">
                                 <div class="panel-body">
                                     <p>@Security.ManualInputOtpKey</p>
-                                    <p>Key: <strong id="secret-key">@Html.Raw(Model.CustomerOtp.SecretKey)</strong> <span class="icon-content-copy" data-clipboard-action="copy" data-clipboard-target="#secret-key"></span></p>
+                                    <p>Key: <strong id="secret-key">@Html.Raw(Model.CustomerOtp.SecretKey)</strong> <span class="icon-content-copy" data-clipboard-action="copy" data-clipboard-target="#secret-key" title="@Security.Copied"></span></p>
                                     <div class="example">
                                         <div class="col-left">
                                             <img src="~/Assets/Styles/otp/images/manual-ios.png" title="IOS" />
@@ -79,7 +79,7 @@
                     </div>
                 </li>
                 <li>
-                    <strong>@Security.Enter6DigitsOtp</strong>
+                    <strong>3. @Security.Enter6DigitsOtp</strong>
                     <div id="setup-otp-message"></div>
                     <form class="block last" id="otp-form">
                         <div class="form-group">
@@ -87,7 +87,7 @@
                             <input maxlength="6" type="password" class="txt form-control" name="otp" id="txtOtp" />
                         </div>
                         <div class="form-group last">
-                            <input type="submit" class="btn-submit" id="btnSubmitOtp" value="@Security.Submit" />
+                            <input type="submit" class="btn-submit" id="btnSubmitOtp" value="@Security.Verify" />
                         </div>
                     </form>
                 </li>

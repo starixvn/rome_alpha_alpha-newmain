@@ -31,7 +31,7 @@ class VerifyOtp {
 
         if (top.hasPopupOpen()) {
             top.setSecurityCodePopupTitle(this.$("#title_header").text());
-            this.$("#container").addClass("has-popup");
+            this.$otpForm.addClass("has-popup");
             this.$("#title_header").remove();
         }
     }
