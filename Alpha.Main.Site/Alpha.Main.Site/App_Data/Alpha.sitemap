@@ -5,14 +5,17 @@
     <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]">
       <siteMapNode resourceKey="memberWinLoss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberwinlossdetail" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="WinLossDetail/Member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=2" roles="Agent"></siteMapNode>
 
       <siteMapNode resourceKey="agentwinloss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=3" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="agentwinlostdetail" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailMaster.aspx" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="WinLossDetail/Agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="agentOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=3" roles="Master"></siteMapNode>
 
       <siteMapNode resourceKey="masterwinloss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=4" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="masterwinlostdetail" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailSuper.aspx" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="WinLossDetail/Master" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="masterOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=4" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="matchwinloss" appPath="OldMainAppPath" url="_Reports/MatchWinloss/MatchWinLoss.aspx" roles="Agent"></siteMapNode>
