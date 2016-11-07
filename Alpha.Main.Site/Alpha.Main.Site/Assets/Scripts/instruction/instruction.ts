@@ -24,7 +24,7 @@ interface IStep {
     addLeftOffset?: number;
 }
 
-var introduction = {
+var instruction = {
     enjoyHint: null,
     readIntroductionKey: 'Instruction',
     isCookieLess: (<HTMLInputElement>document.getElementById('IsCookieLess')).value === "1",
@@ -67,43 +67,43 @@ var introduction = {
 
     init: () => {
         if (!alpha.isScreenLower768) {
-            const isReadIntroduction = alpha.localStorage.get(introduction.readIntroductionKey);
+            const isReadIntroduction = alpha.localStorage.get(instruction.readIntroductionKey);
 
-            introduction.cacheDOMElements();
-            introduction.registerEvents();
+            instruction.cacheDOMElements();
+            instruction.registerEvents();
 
             if (isReadIntroduction) {
                 return;
             }
 
-            if (!introduction.isCookieLess && !isReadIntroduction) {
-                introduction.domElements.beginModal.modal('show');
+            if (!instruction.isCookieLess && !isReadIntroduction) {
+                instruction.domElements.beginModal.modal('show');
                 $('.modal-backdrop').css('z-index', 1051);
 
-                introduction.showDelayFirstIntroduction();
+                instruction.showDelayFirstIntroduction();
             }
         }
         else if (alpha.isScreenLower768) {
-            introduction.mobileIntroduction = new Instruction.Mobile($);
+            instruction.mobileIntroduction = new Instruction.Mobile($);
 
-            if (!introduction.mobileIntroduction.readIntroduction()) {
-                introduction.mobileIntroduction.showIntroduction();
+            if (!instruction.mobileIntroduction.readIntroduction()) {
+                instruction.mobileIntroduction.showIntroduction();
             }
         }
     },
 
     cacheDOMElements: function () {
-        introduction.domElements.beginModal = $('#beginModal');
-        introduction.domElements.startIntroductionBtn = $('#start-introduction-btn');
-        introduction.domElements.markInner = $("#mask-inner");
-        introduction.domElements.replayInstruction = $('#replay-instruction');
-        introduction.domElements.notNowIntroductionBtn = $("#not-now-introduction-btn");
-        introduction.domElements.modalInstructionBody = $('#instruction-modal-body');
-        introduction.domElements.oldViewLink = $('#old-view-link a');
+        instruction.domElements.beginModal = $('#beginModal');
+        instruction.domElements.startIntroductionBtn = $('#start-introduction-btn');
+        instruction.domElements.markInner = $("#mask-inner");
+        instruction.domElements.replayInstruction = $('#replay-instruction');
+        instruction.domElements.notNowIntroductionBtn = $("#not-now-introduction-btn");
+        instruction.domElements.modalInstructionBody = $('#instruction-modal-body');
+        instruction.domElements.oldViewLink = $('#old-view-link a');
     },
 
     showDelayFirstIntroduction: function () {
-        var $p = introduction.domElements.markInner.find("p");
+        var $p = instruction.domElements.markInner.find("p");
         var words = $p.text().split(" ");
         var delay = 100;
         var $tempEl = $("<div>");
@@ -121,7 +121,7 @@ var introduction = {
         $p.html($tempEl.html());
 
         setTimeout(function () {
-            introduction.domElements.markInner.addClass("in");
+            instruction.domElements.markInner.addClass("in");
             setTimeout(function () {
                 $p.addClass("in");
             }, 250);
@@ -129,49 +129,49 @@ var introduction = {
     },
 
     registerEvents: function () {
-        introduction.domElements.startIntroductionBtn
+        instruction.domElements.startIntroductionBtn
             .off('click.introduction')
             .on('click.introduction', function () {
-                introduction.domElements.beginModal.modal('hide');
-                introduction.setReadIntroduction();
-                introduction.showMainSteps();
+                instruction.domElements.beginModal.modal('hide');
+                instruction.setReadIntroduction();
+                instruction.showMainSteps();
             });
 
-        introduction.domElements.notNowIntroductionBtn
+        instruction.domElements.notNowIntroductionBtn
             .off('click.introduction')
             .on('click.introduction', function () {
-                introduction.domElements.beginModal.modal('hide');
-                introduction.setReadIntroduction();
-                introduction.showNotNowSteps();
+                instruction.domElements.beginModal.modal('hide');
+                instruction.setReadIntroduction();
+                instruction.showNotNowSteps();
             });
 
         $(document)
             .off('click.replay-introduction', '.replay-introduction')
-            .on('click.replay-introduction', '.replay-introduction', introduction.showMainSteps);
+            .on('click.replay-introduction', '.replay-introduction', instruction.showMainSteps);
 
-        introduction.domElements.replayInstruction
+        instruction.domElements.replayInstruction
             .off('click.replay-introduction')
-            .on('click.replay-introduction', introduction.showMainSteps);
+            .on('click.replay-introduction', instruction.showMainSteps);
     },
 
     showNotNowSteps: function () {
-        introduction.enjoyHint = new EnjoyHint({});
-        introduction.enjoyHint.set([{
-            "next #replay-instruction": '<p>' + introduction.resources.TakeTourInstruction + '</p>',
-            nextButton: { className: "myNext", text: introduction.resources.GotIt },
+        instruction.enjoyHint = new EnjoyHint({});
+        instruction.enjoyHint.set([{
+            "next #replay-instruction": '<p>' + instruction.resources.TakeTourInstruction + '</p>',
+            nextButton: { className: "myNext", text: instruction.resources.GotIt },
             showSkip: false,
             shape: 'circle',
             radius: 20
         }]);
-        introduction.enjoyHint.run();
+        instruction.enjoyHint.run();
     },
 
     showMainSteps: function () {
         var isSiteBarCollapsed = menuBar.isSideBarCollapsed();
         var fullSteps: Array<IStep> = [
             {
-                "next #main-menu-items": '<p class="title">' + introduction.resources.MainMenu + '</p>' +
-                '<p>' + introduction.resources.MainMenuIntroduction + '</p>',
+                "next #main-menu-items": '<p class="title">' + instruction.resources.MainMenu + '</p>' +
+                '<p>' + instruction.resources.MainMenuIntroduction + '</p>',
                 onBeforeStart: function () {
                     briefProfile.hideAllTooltips();
                     if (isSiteBarCollapsed) {
@@ -183,52 +183,52 @@ var introduction = {
                 arrowPointer: alpha.isScreenGreater1024 || window.innerHeight > window.innerWidth ? null : ['left', 'right', 'bottom']
             },
             {
-                "next #menu-TRANSFER": '<p>' + introduction.resources.TransferMenuIntroduction + '</p>',
+                "next #menu-TRANSFER": '<p>' + instruction.resources.TransferMenuIntroduction + '</p>',
                 permission: '[C]'
             },
             {
-                "next #menu-VIEWLOG": '<p>' + introduction.resources.ViewLogMenuIntroduction + '</p>',
+                "next #menu-VIEWLOG": '<p>' + instruction.resources.ViewLogMenuIntroduction + '</p>',
                 permission: '[G]'
             },
             {
-                "click #hamburger-icon": '<p class="title">' + introduction.resources.CollapseExpandIcon + '</p>' +
-                '<p class="blinker">' + introduction.resources.CollapseExpandIconIntroduction + '</p>',
+                "click #hamburger-icon": '<p class="title">' + instruction.resources.CollapseExpandIcon + '</p>' +
+                '<p class="blinker">' + instruction.resources.CollapseExpandIconIntroduction + '</p>',
                 shape: 'circle',
                 radius: 25,
                 showSkip: false
             },
             {
-                'next #home-icon': '<p>' + introduction.resources.HomeIconIntroduction + '</p>',
+                'next #home-icon': '<p>' + instruction.resources.HomeIconIntroduction + '</p>',
                 shape: 'circle',
                 radius: 20
             },
             {
-                "next #btn-header-menu": '<p class="title">' + introduction.resources.QuickMenu + '</p>' +
-                '<p>' + introduction.resources.QuickMenuIntroduction + '</p>' +
+                "next #btn-header-menu": '<p class="title">' + instruction.resources.QuickMenu + '</p>' +
+                '<p>' + instruction.resources.QuickMenuIntroduction + '</p>' +
                 '<p><img class="quick-menu-introduction-image" src="Assets/styles/introduction/images/' + alpha.user.level + '.png" /></p>',
                 shape: 'circle',
                 radius: 20,
                 moveUp: 60
             },
             {
-                "next #old-view-link": '<p class="title">' + introduction.resources.SwitchView + '</p>' +
-                '<p>' + introduction.resources.BackOldViewIntroduction + '</p>' +
-                '<p>' + introduction.resources.WarningOldVersionDeadline + ' 10/20/2016.</p>',
+                "next #old-view-link": '<p class="title">' + instruction.resources.SwitchView + '</p>' +
+                '<p>' + instruction.resources.BackOldViewIntroduction + '</p>' +
+                '<p>' + instruction.resources.WarningOldVersionDeadline + ' 10/20/2016.</p>',
                 onBeforeStart: function () {
-                    introduction.domElements.oldViewLink.data('old-link', introduction.domElements.oldViewLink.attr('href'));
-                    introduction.domElements.oldViewLink.attr('href', '#');
+                    instruction.domElements.oldViewLink.data('old-link', instruction.domElements.oldViewLink.attr('href'));
+                    instruction.domElements.oldViewLink.attr('href', '#');
                 },
                 addLeftOffset: 70,
                 isOldViewLink: true
             },
             {
-                "next #replay-instruction": '<p class="title">' + introduction.resources.Replay + '?</p>' +
-                '<p>' + introduction.resources.ReplayInstruction + '</p>',
-                nextButton: { className: "myNext", text: introduction.resources.GotIt },
+                "next #replay-instruction": '<p class="title">' + instruction.resources.Replay + '?</p>' +
+                '<p>' + instruction.resources.ReplayInstruction + '</p>',
+                nextButton: { className: "myNext", text: instruction.resources.GotIt },
                 showSkip: false,
                 shape: 'circle',
                 radius: 20,
-                onBeforeStart: introduction.setOldViewLink
+                onBeforeStart: instruction.setOldViewLink
             }
         ];
 
@@ -246,11 +246,11 @@ var introduction = {
                 || step.permission == null
                 || alpha.user.subPageAccess.indexOf(step.permission) > -1) {
                 if (!step.nextButton) {
-                    step.nextButton = { text: introduction.resources.Next }
+                    step.nextButton = { text: instruction.resources.Next }
                 }
 
                 if (!step.skipButton) {
-                    step.skipButton = { text: introduction.resources.Skip }
+                    step.skipButton = { text: instruction.resources.Skip }
                 }
 
                 if (step.isOldViewLink
@@ -262,26 +262,26 @@ var introduction = {
             }
         });
 
-        introduction.enjoyHint = new EnjoyHint({
-            onSkip: introduction.setOldViewLink
+        instruction.enjoyHint = new EnjoyHint({
+            onSkip: instruction.setOldViewLink
         });
-        introduction.enjoyHint.set(introductionSteps);
-        introduction.enjoyHint.run();
+        instruction.enjoyHint.set(introductionSteps);
+        instruction.enjoyHint.run();
     },
 
     setOldViewLink: function () {
-        if (introduction.domElements.oldViewLink.data('old-link')
-            && introduction.domElements.oldViewLink.data('old-link') !== ""
-            && introduction.domElements.oldViewLink.attr('href') === "#") {
-            introduction.domElements.oldViewLink.attr('href', introduction.domElements.oldViewLink.data('old-link'));
+        if (instruction.domElements.oldViewLink.data('old-link')
+            && instruction.domElements.oldViewLink.data('old-link') !== ""
+            && instruction.domElements.oldViewLink.attr('href') === "#") {
+            instruction.domElements.oldViewLink.attr('href', instruction.domElements.oldViewLink.data('old-link'));
         }
     },
 
     setReadIntroduction: function () {
-        alpha.localStorage.set(introduction.readIntroductionKey, true);
+        alpha.localStorage.set(instruction.readIntroductionKey, true);
     }
 };
 
 $(() => {
-    introduction.init();
+    instruction.init();
 });

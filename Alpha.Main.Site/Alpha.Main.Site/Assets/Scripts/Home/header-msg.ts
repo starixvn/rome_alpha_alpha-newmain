@@ -416,8 +416,8 @@ var headerMessage = {
     },
 
     hasReadInstruction: (): boolean => {
-        return alpha.localStorage.check(introduction.readIntroductionKey)
-            || alpha.localStorage.check(Instruction.Mobile.mobileInstructionKey);
+        return alpha.localStorage.check('Instruction')
+            || alpha.localStorage.check('MobileInstruction');
     }
 };
 
