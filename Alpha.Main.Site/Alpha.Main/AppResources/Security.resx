@@ -308,7 +308,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>Hi {0}, you are signing in using a different Device/ Browser from your last login. Please enter an OTP to coninue.</value>
   </data>
   <data name="InputOtpBeforeProceeding" xml:space="preserve">
-    <value>Please input your OTP before proceeding!</value>
+    <value>Please enter your OTP before proceeding!</value>
   </data>
   <data name="OtpNotes" xml:space="preserve">
     <value>The OTP will be required when you make sensitive actions or log in with a different Device/Browser. You will need to register for the Mobile Authenticator App before enabling the OTP option.</value>

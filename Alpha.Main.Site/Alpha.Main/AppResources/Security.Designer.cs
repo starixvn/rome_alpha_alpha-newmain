@@ -297,7 +297,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please input your OTP before proceeding!.
+        ///   Looks up a localized string similar to Please enter your OTP before proceeding!.
         /// </summary>
         public static string InputOtpBeforeProceeding {
             get {
