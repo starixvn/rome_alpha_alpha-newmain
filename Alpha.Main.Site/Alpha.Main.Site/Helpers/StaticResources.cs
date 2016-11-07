@@ -52,9 +52,9 @@
                 return System.Web.Optimization.Styles.Render(paths.Select(path => $"{AppSettings.AssetAppPath}{path}{MinText}.css?v={StaticResourcesVersion}").ToArray());
             }
 
-            public static IHtmlString RenderCommon(string path, bool enableVersion = false)
+            public static IHtmlString RenderCommon(string path, string version = "")
             {
-                var version = enableVersion ? $"?v={StaticResourcesVersion}" : string.Empty;
+                version = !string.IsNullOrEmpty(version) ? $"?v={version}" : string.Empty;
 
                 return System.Web.Optimization.Styles.Render($"{AppSettings.AssetAppPath}{path}{MinText}.css{version}");
             }
@@ -68,9 +68,9 @@
                 return System.Web.Optimization.Scripts.Render(paths.Select(path => $"{AppSettings.AssetAppPath}{path}{MinText}.js?v={StaticResourcesVersion}").ToArray());
             }
 
-            public static IHtmlString RenderCommon(string path, bool enableVersion = false)
+            public static IHtmlString RenderCommon(string path, string version = "")
             {
-                var version = enableVersion ? $"?v={StaticResourcesVersion}" : string.Empty;
+                version = !string.IsNullOrEmpty(version) ? $"?v={version}" : string.Empty;
 
                 return System.Web.Optimization.Scripts.Render($"{AppSettings.AssetAppPath}{path}{MinText}.js{version}");
             }

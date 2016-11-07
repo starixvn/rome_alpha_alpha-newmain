@@ -39,6 +39,9 @@
 
     @Html.Partial("HiddenFields", Model)
 
+    <!--[if IE 8]><!-->
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/es5-shim")
+    <!--<![endif]-->
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-dashboard"))" type="text/javascript"></script>
