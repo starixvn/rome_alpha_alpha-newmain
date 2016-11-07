@@ -174,6 +174,7 @@ body {
 
                 .full-content {
                     display: none;
+                    line-height: 24px;
                 }
             }
         }
@@ -439,6 +440,98 @@ body {
 
         .panel-title {
             display: none;
+        }
+    }
+}
+
+@media \0screen\,screen\9 {
+    body {
+        line-height: 30px;
+    }
+
+    .nav-tabs {
+        display: none;
+    }
+
+    .tab-content > .tab-pane {
+        display: block;
+        margin-top: 12px;
+        padding: 0 4px;
+
+        &.balance-info, &.statistic {
+            float: left;
+            width: 50%;
+            @include box-sizing;
+
+            .container {
+                background-color: #fff;
+                padding: 0 16px 8px;
+                width: 100%;
+                @include box-shadow-multiple('1px 2px 6px rgba(0,0,0,.2)');
+            }
+        }
+
+        &.balance-info {
+            padding-right: 8px;
+        }
+
+        &.statistic {
+            padding-left: 8px;
+
+            .dropdown-stast {
+                width: 350px;
+            }
+        }
+
+        &.notice {
+            float: left;
+            width: 100%;
+            .notice-container {
+                @include box-shadow-multiple('1px 2px 6px rgba(0,0,0,.2)');
+            }
+            .panel-title {
+                background-color: #fff;
+                padding: 6px 16px;
+                line-height: 20px;
+            }
+        }
+
+        .label {
+            line-height: 30px;
+        }
+
+        .panel-title {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 8px 0;
+            text-transform: uppercase;
+
+            [class^="icon"] {
+                font-size: 20px;
+                margin-right: 8px;
+                position: relative;
+                top: 4px;
+            }
+        }
+
+        .row:hover {
+            background-color: $table-td-hover-color;
+        }
+    }
+
+    .msg-contents {
+        .msg {
+            display: table;
+            width: 100%;
+
+            .time, .content {
+                padding: 4px 0;
+                display: table-cell;
+            }
+
+            .time {
+                width: 116px;
+            }
         }
     }
 }
