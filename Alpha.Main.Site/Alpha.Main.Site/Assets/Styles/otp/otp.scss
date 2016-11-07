@@ -257,6 +257,16 @@ label {
      }
 }
 
+.note {
+    color: #666;
+    margin-top: 20px;
+
+    &-red {
+        color: #ff0101;
+        padding-right: 6px;
+    }
+}
+
 // OTP reset
 .otp-reset {
     clear: both;
