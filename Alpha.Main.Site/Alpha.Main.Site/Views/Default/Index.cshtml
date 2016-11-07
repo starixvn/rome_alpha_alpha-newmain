@@ -10,7 +10,7 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=yes">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
-    @StaticResources.AssetStyles.Render($"/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
     <!--[if (gt IE 8)|!(IE)]><!-->
@@ -43,7 +43,7 @@
     </div>
     @Html.Partial("HiddenFields", Model)
 
-    @StaticResources.AssetScripts.Render("/bundles/common/common")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @Html.Hidden("isEnabledOtp", Model.IsEnabledOtp)
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>

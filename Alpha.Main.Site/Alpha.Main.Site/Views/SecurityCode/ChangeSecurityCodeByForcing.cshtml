@@ -5,7 +5,7 @@
 }
 
 @section css {
-    @StaticResources.AssetStyles.Render($"/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
 }
 <div class="block">
@@ -72,6 +72,7 @@
 @Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
-    @StaticResources.AssetScripts.Render("/bundles/common/common", "/bundles/site-main/security/before-home-page")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
     <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/change-securitycode-by-forcing")" type="text/javascript"></script>
 }

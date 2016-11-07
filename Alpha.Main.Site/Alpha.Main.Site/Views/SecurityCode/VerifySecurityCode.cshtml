@@ -5,7 +5,7 @@
 }
 
 @section css {
-    @StaticResources.AssetStyles.Render($"/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     <link href="@StaticResources.MainSiteStyleUrl("~/Assets/bundles/security/security")" rel="stylesheet" type="text/css" />
 }
 
@@ -36,6 +36,7 @@
 @Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
-    @StaticResources.AssetScripts.Render("/bundles/common/common", "/bundles/site-main/default", "/bundles/site-main/security/before-home-page")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.Render("/bundles/site-main/default", "/bundles/site-main/security/before-home-page")
     <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/verify-securitycode")" type="text/javascript"></script>
 }
