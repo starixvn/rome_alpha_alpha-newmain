@@ -21,17 +21,18 @@
         </div>
         <div class="form-group">
             <input type="submit" class="btn-submit" id="btnSubmit" value="@Security.Submit" />
-        </div>        
+        </div>
     </form>
     <div class="note">
         <span class="note-red">*</span>@Security.OtpDatetimeWarning
     </div>
 
     @Html.AntiForgeryToken()
-    
+
     @Html.Hidden("requiredFieldMessage", Security.alertSecCodeEmpty)
     @Html.Hidden("oldMainRootPath", Alpha.Main.Helpers.MicroSites.OldMainUrl())
     @Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
     <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/verify-otp")" type="text/javascript"></script>
 </body>

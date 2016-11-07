@@ -29,9 +29,9 @@
         <div class="otp-reset">
             <p class="note">@Security.ResetOtpWarning</p>
             <button id="btn-change-status" class="btn-remove">@Resources.Remove</button>
-        </div>        
+        </div>
     }
-    
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
     <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/reset-otp")" type="text/javascript"></script>
 </body>

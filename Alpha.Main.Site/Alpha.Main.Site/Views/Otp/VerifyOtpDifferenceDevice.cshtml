@@ -39,6 +39,7 @@
 @Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())
 
 @section js {
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
 
     <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/verify-otp-difference-device")" type="text/javascript"></script>
