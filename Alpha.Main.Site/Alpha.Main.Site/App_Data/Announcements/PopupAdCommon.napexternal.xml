@@ -1,6 +1,131 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="6605801" name="Max Keno 2"
+                         startdate="11/9/2016" enddate="11/23/2016"  effectdate="11/16/2016"
+                          width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launch of new market named "Max Keno 2" for Keno product with effect from <b>{effectdate}</b>.<br/>
+        - Bet settings and offer statuses will be copied from Max Keno market.<br/>
+        - The Position Taking settings will follow the Australia market settings.<br/>
+      </p>
+      <p>
+        All settings will be available for configuration in Edit Keno feature, located at Account Info on <b>{effectdate}</b>.
+      </p>
+      <p>
+        Massachusetts and Malta markets will be removed on <b>{effectdate}</b>.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
 
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        在此通知于 <b>{effectdate}</b> 将推出新盘口名为 "Max Keno 2"<br/>
+        - 投注设定和提供状态将复制从Max Keno市场。<br/>
+        - 占成设置将根据澳洲市场设置。<br/>
+      </p>
+      <p>
+        所有设置将可用于快乐彩功能中的配置, 位于用户资料于 <b>{effectdate}</b>。
+      </p>
+      <p>
+        马萨诸塞和马耳他市场将删除于<b>{effectdate}</b>。
+      </p>
+      <p>谢谢</p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        在此通知於 <b>{effectdate}</b> 將推出新盤口名為 "Max Keno 2"<br/>
+        - 投注設定和提供狀態將復制從Max Keno市場。<br/>
+        - 占成設置將根據澳洲市場設置。<br/>
+      </p>
+      <p>
+        所有設置將可用於快樂彩功能中的配置, 位於用戶資料於 <b>{effectdate}</b>。
+      </p>
+      <p>
+        馬薩諸塞和馬耳他市場將刪除於<b>{effectdate}</b>。
+      </p>
+      <p>謝謝</p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launch of new market named "Max Keno 2" for Keno product with effect from <b>{effectdate}</b>.<br/>
+        - Bet settings and offer statuses will be copied from Max Keno market.<br/>
+        - The Position Taking settings will follow the Australia market settings.<br/>
+      </p>
+      <p>
+        All settings will be available for configuration in Edit Keno feature, located at Account Info on <b>{effectdate}</b>.
+      </p>
+      <p>
+        Massachusetts and Malta markets will be removed on <b>{effectdate}</b>.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launch of new market named "Max Keno 2" for Keno product with effect from <b>{effectdate}</b>.<br/>
+        - Bet settings and offer statuses will be copied from Max Keno market.<br/>
+        - The Position Taking settings will follow the Australia market settings.<br/>
+      </p>
+      <p>
+        All settings will be available for configuration in Edit Keno feature, located at Account Info on <b>{effectdate}</b>.
+      </p>
+      <p>
+        Massachusetts and Malta markets will be removed on <b>{effectdate}</b>.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>เรียน เอเจนต์</p>
+      <p>
+        ทางบริษัทใคร่ขอประกาศให้ทราบว่าทางเราจะเปิดตลาดใหม่ชื่อว่า "Max Keno 2" ซึ่งเกม Keno นี้จะใช้งานได้ตั้งแต่วันที่ <b>{effectdate}</b>.<br/>
+        - การตั้งค่าการแทง และสถานะต่าง ๆ จะคัดลอกจาก Max Keno<br/>
+        - การตั้งค่าเอี่ยวจะตั้งค่าตาม การตั้งค่าของ Keno ออสเตรเลีย<br/>
+      </p>
+      <p>
+        ทุกการตั้งค่าจะสามารถทำได้ในส่วนของ Keno ซึ่งอยู่ที่ รายละเอียดบัญชีในวันที่ <b>{effectdate}</b>.
+      </p>
+      <p>
+        ตลาด แมสซาชูเซตส์ และ มอลตา Keno จะถูกถอดออกในวันที่ <b>{effectdate}</b>.
+      </p>
+      <p>
+        ขอบพระคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>Kính gửi quý khách hàng,</p>
+      <p>
+        Chúng tôi trân trọng giới thiệu thị trường mới mang tên "Max Keno 2" dành cho sản phẩm Keno sẽ được ra mắt vào ngày <b>{effectdate}</b>.<br/>
+        - Giới hạn cược và Trạng thái của thị trường này sẽ được sao chép từ thị trường Max Keno.<br/>
+        - Position Taking sẽ theo thiết lập của thị trường Australia.<br/>
+      </p>
+      <p>
+        Từ ngày <b>{effectdate}</b>, tất cả thiết lập sẽ sẵn sàng cho việc cấu hình bằng tính năng Edit Keno trong thiết lập của Account Info.
+      </p>
+      <p>
+        Thị trường Massachusetts và Malta sẽ được xoá khỏi hệ thống vào ngày <b>{effectdate}</b>.
+      </p>
+      <p>
+        Trân trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="6197901" name="Alpha_Security_Enhancement"
                      startdate="10/16/2016" enddate="10/30/2016"  effectdate="10/18/2016"
                       width="1000" height="220" top="110" left="350">
