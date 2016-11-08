@@ -97,15 +97,15 @@
             }
             else
             {
-                var device = browserHelper.GetDevice();
+                var deviceInfo = browserHelper.GetDevice().Info;
                 viewModel.Result = customerOtpService.RemoveSecretKey(new RemoveSecretKeyParam
                 {
                     CustId = message.CustId,
                     ActorId = message.ActorId,
-                    IP = message.IP,
+                    IP = deviceInfo.IP,
                     Language = message.Language,
                     SubAccId = message.SubAccountId,
-                    DeviceInfo = device.Info,
+                    DeviceInfo = deviceInfo,
                     IsResetDownlineOrSubAccount = true
                 });
             }
@@ -206,7 +206,8 @@
                 ActorId = message.CustId,
                 IP = message.IP,
                 Language = message.Language,
-                SubAccId = message.SubAccountId
+                SubAccId = message.SubAccountId,
+                DeviceInfo = browserHelper.GetDevice().Info
             });
 
             return result;

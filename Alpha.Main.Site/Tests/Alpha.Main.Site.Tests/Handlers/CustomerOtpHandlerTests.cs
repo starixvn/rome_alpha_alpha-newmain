@@ -199,7 +199,7 @@
             var command = new ResetOtpCommand(userSession);
             command.SubAccountId = 3;
             command.CustId = 3;
-            browserHelper.GetDevice().Returns(new Device());
+            browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo() });
 
             // Act
             customerOtpHandler.Handle(command);
@@ -216,7 +216,7 @@
             var command = new ResetOtpCommand(userSession);
             command.SubAccountId = 3;
             command.CustId = 3;
-            browserHelper.GetDevice().Returns(new Device());
+            browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo() });
 
             // Act
             var result = customerOtpHandler.Handle(command);
@@ -237,7 +237,7 @@
             command.SubAccountId = 2;
             userSession.UserLoginIp.Returns("ip");
             userSession.Language.Returns("language");
-            browserHelper.GetDevice().Returns(new Device());
+            browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo { IP = "10" } });
 
             // Act
             customerOtpHandler.Handle(command);
@@ -248,7 +248,7 @@
                     param => param.CustId == command.CustId
                         && param.ActorId == command.ActorId
                         && param.SubAccId == command.SubAccountId
-                        && param.IP == command.IP
+                        && param.IP == "10"
                         && param.Language == command.Language));
         }
 
@@ -257,7 +257,7 @@
         {
             // Arrange
             var command = new ResetOtpCommand(userSession);
-            browserHelper.GetDevice().Returns(new Device());
+            browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo() });
             customerOtpService.RemoveSecretKey(Arg.Any<RemoveSecretKeyParam>())
                 .Returns(new Result
                 {
@@ -323,6 +323,7 @@
             userSession.SubAccId.Returns(2);
             userSession.Language.Returns("ee");
             userSession.UserLoginIp.Returns("4");
+            browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo() });
 
             // Act
             customerOtpHandler.Handle(command);
@@ -361,6 +362,7 @@
                     Code = 1,
                     Message = "Changed"
                 });
+            browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo() });
 
             // Act
             var result = customerOtpHandler.Handle(command);

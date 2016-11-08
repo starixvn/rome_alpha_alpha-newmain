@@ -4,9 +4,10 @@
     using System.Web.Mvc;
     using MediatR;
     using Requests.Otp;
+    using Web;
     using Web.Filters;
 
-    public class OtpController : Controller
+    public class OtpController : BaseController
     {
         private readonly IMediator mediator;
 

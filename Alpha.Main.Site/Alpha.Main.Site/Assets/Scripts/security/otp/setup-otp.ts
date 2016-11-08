@@ -21,6 +21,7 @@ class SetupOtp {
     $usernameMessage: any;
     $txtUsername: any;
     $btnChangeUsername: any;
+    $copyIcon: any;
 
     isAlreadySetup: boolean;
     previousStatus: boolean;
@@ -64,6 +65,7 @@ class SetupOtp {
         this.$usernameMessage = this.$("#username-message");
         this.$txtUsername = this.$("#username");
         this.$btnChangeUsername = this.$("#btn-change-username");
+        this.$copyIcon = this.$("#copy-icon");
     }
 
     registerEvents = () => {
@@ -75,14 +77,22 @@ class SetupOtp {
         this.$btnChangeUsername.click(this.changeUsernameButtonEvent);
 
         var that = this;
-        this.clipboard
-            .on("success", function (e) {
-                that.$(e.trigger).tooltip("show");
-            })
-            .on("error", function (e) {
-            window.console.error("Action:", e.action);
-            window.console.error("Trigger:", e.trigger);
-        });
+
+        if (window.document.queryCommandSupported
+            && window.document.queryCommandSupported("copy")) {
+            this.clipboard
+                .on("success", function (e) {
+                    that.$(e.trigger).tooltip("show");
+                })
+                .on("error", function (e) {
+                    that.$(e.trigger).remove();
+                    window.console.error("Action:", e.action);
+                    window.console.error("Trigger:", e.trigger);
+                });
+        }
+        else {
+            this.$copyIcon.remove();
+        }
     }
 
     changeUsernameButtonEvent = () => {

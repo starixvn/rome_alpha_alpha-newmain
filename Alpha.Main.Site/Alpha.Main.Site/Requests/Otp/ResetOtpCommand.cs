@@ -37,27 +37,11 @@
             }
         }
 
-        public int SubActorId
-        {
-            get
-            {
-                return this.userSession.SubAccId;
-            }
-        }
-
         public string Language
         {
             get
             {
                 return this.userSession.LangKey;
-            }
-        }
-
-        public string IP
-        {
-            get
-            {
-                return this.userSession.UserLoginIp;
             }
         }
     }

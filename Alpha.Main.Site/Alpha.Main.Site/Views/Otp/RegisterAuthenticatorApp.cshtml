@@ -64,7 +64,7 @@
                             <div id="unableScan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingQR">
                                 <div class="panel-body">
                                     <p>@Security.ManualInputOtpKey</p>
-                                    <p>Key: <strong id="secret-key">@Html.Raw(Model.CustomerOtp.SecretKey)</strong> <span class="icon-content-copy" data-clipboard-action="copy" data-clipboard-target="#secret-key" title="@Security.Copied"></span></p>
+                                    <p>Key: <strong id="secret-key">@Html.Raw(Model.CustomerOtp.SecretKey)</strong> <span id="copy-icon" class="icon-content-copy" data-clipboard-action="copy" data-clipboard-target="#secret-key" title="@Security.Copied"></span></p>
                                     <div class="example">
                                         <div class="col-left">
                                             <img src="~/Assets/Styles/otp/images/manual-ios.png" title="IOS" />

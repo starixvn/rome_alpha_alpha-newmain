@@ -272,7 +272,7 @@
             var deleteResult = new Result
             {
                 Code = command.ErrCode,
-                Message = command.ErrCode == 0 ? Security.RemoveOtpSuccessMessage : command.ErrMsg
+                Message = GetRemovedOtpMessage(command.ErrCode, param.IsResetDownlineOrSubAccount, command.ErrMsg)
             };
 
             return deleteResult;
