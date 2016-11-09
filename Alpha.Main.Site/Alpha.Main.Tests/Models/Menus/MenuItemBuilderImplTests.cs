@@ -12,8 +12,9 @@
     public class MenuItemBuilderImplTests
     {
         private MenuItemBuilderImpl menuItemBuilderImpl;
-        private IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
         private IAuthorizationService authorizationService;
+        private IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
+        private IDictionary<string, Func<string>> menuItemDisplayName;
 
         [SetUp]
         public void SetUp()
@@ -23,8 +24,12 @@
             {
                 { string.Empty, null }
             };
+            menuItemDisplayName = new Dictionary<string, Func<string>>
+            {
+                { string.Empty, null }
+            };
 
-            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration);
+            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, menuItemDisplayName);
         }
 
         [Test]

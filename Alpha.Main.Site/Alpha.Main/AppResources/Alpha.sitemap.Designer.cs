@@ -619,6 +619,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Schedule.
+        /// </summary>
+        public static string schedule {
+            get {
+                return ResourceManager.GetString("schedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Score Map.
         /// </summary>
         public static string scoreMap {
