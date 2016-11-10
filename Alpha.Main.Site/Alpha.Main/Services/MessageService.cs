@@ -16,6 +16,6 @@
             bool isTest,
             int messageType);
 
-        List<Message> GetMessagesFromXml(string xmlFileName, int messageType, byte userRoleId);
+        List<Message> GetMessagesFromXml(string xmlFilePath, int messageType, byte userRoleId);
     }
 }
