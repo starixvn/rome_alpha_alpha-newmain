@@ -3,7 +3,7 @@
         this.$('[data-toggle="tooltip"]').tooltip({
             html: true,
             trigger: 'hover'
-        });;
+        });
 
         this.onToggleDropdown('#listTopWinningMembers', this.loadDropdownInfo);
         this.onToggleDropdown('#listTopTurnoverMembers', this.loadDropdownInfo);
@@ -23,9 +23,11 @@
     }
 
     private loadDropdownInfo = (url: string, dataElement: JQuery): void => {
-        if (url !== '' || typeof url !== 'undefined') {
-            this.$.get(url, (responseHtml) => {
-                dataElement.html(responseHtml);
+        if (url !== '' && typeof url !== 'undefined') {
+            this.$.ajax({
+                method: 'GET',
+                url: 'url',
+                success: (responseHtml) => dataElement.html(responseHtml)
             });
         }
     }

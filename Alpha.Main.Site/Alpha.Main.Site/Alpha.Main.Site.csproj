@@ -542,9 +542,16 @@
       <DependentUpon>reset-otp.js</DependentUpon>
     </Content>
     <Content Include="Assets\scripts\instruction\enjoyhint.js" />
-    <Content Include="Assets\scripts\tests\libs\hammer.js" />
-    <Content Include="Assets\scripts\tests\libs\jquery-1.11.3.js" />
-    <Content Include="Assets\scripts\tests\libs\jquery.hammer.js" />
+    <Content Include="Assets\scripts\tests\fixtures\statistics.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\scripts\tests\libs\jasmine-jquery.js" />
+    <Content Include="Assets\scripts\tests\libs\jasmine.js" />
+    <Content Include="Assets\scripts\tests\libs\jquery.js" />
+    <Content Include="Assets\scripts\tests\fixtures\notice.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\scripts\tests\libs\tooltip.js" />
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>
     </Content>
@@ -683,6 +690,7 @@
     <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.woff" />
     <Content Include="App_Data\securitycode.json" />
     <Content Include="Assets\styles\home\home.scss" />
+    <Content Include="Assets\scripts\tests\chutzpah.json" />
     <None Include="Assets\styles\instruction\enjoyhint.scss" />
     <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.svg" />
     <Content Include="Assets\styles\instruction\enjoyhint.css">
@@ -893,6 +901,8 @@
     <Content Include="Web.Configuration\AuthorizationSection.config" />
     <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\dashboard\dashboard-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tests\dashboard\notice-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tests\dashboard\statistics-tests.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />

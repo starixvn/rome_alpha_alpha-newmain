@@ -2,6 +2,7 @@
   "globalDependencies": {
     "bootstrap": "registry:dt/bootstrap#3.3.5+20160619023404",
     "hammerjs": "registry:dt/hammerjs#2.0.8+20160724063812",
+    "jasmine-jquery": "registry:dt/jasmine-jquery#0.0.0+20160317120654",
     "jquery": "registry:dt/jquery#1.10.0+20160929162922",
     "jquery.blockui": "registry:dt/jquery.blockui#0.0.0+20160316155526",
     "jquery.cookie": "registry:dt/jquery.cookie#1.4.1+20160316155526",

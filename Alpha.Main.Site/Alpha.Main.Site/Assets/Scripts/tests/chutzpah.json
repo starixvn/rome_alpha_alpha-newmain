@@ -1,0 +1,17 @@
+﻿{
+  "Framework": "jasmine",
+  "TestHarnessLocationMode": "TestFileAdjacent",
+  "References": [
+    { "Path": "libs/jquery.js" },
+    { "Path": "libs/tooltip.js" },
+    { "Path": "libs/jasmine.js" },
+    { "Path": "libs/jasmine-jquery.js" },
+    { "Path": "../core.js" },
+    { "Path": "../dashboard/dashboard.js" },
+    { "Path": "../dashboard/statistics.js" },
+    { "Path": "../dashboard/notice.js" }
+  ],
+  "Tests": [
+    { "Path": "dashboard" }
+  ]
+}

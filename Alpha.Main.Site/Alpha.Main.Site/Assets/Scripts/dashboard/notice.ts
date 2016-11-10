@@ -32,7 +32,7 @@
 
     private markMessageAsRead = (message: JQuery) => {
         const isUnRead: boolean = message.hasClass('bold');
-
+        debugger
         if (isUnRead) {
             const onSuccess = (isMarkedSuccess: any) => {
                 if (isMarkedSuccess) {

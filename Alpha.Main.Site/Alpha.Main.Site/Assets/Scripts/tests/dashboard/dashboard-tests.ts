@@ -1,7 +1,4 @@
-﻿/// <chutzpah_reference path="../../dashboard/dashboard.js" />
-/// <chutzpah_reference path="../libs/jquery-1.11.3.js" />
-
-describe("Test Dashboard class", () => {
+﻿describe("Test Dashboard class", () => {
     const dashBoard = new DashboardBase($);
     const fakeElement = $("<div></div>");
 
