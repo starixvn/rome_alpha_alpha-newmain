@@ -572,7 +572,6 @@
       <DependentUpon>verify-otp.js</DependentUpon>
     </Content>
     <Content Include="typings\globals\hammerjs\typings.json" />
-    <TypeScriptCompile Include="Assets\scripts\dashboard\balance-info.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\notice.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\statistics.ts" />
@@ -893,7 +892,6 @@
     </Content>
     <Content Include="Web.Configuration\AuthorizationSection.config" />
     <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
-    <TypeScriptCompile Include="Assets\scripts\tests\dashboard\balance-info-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />

@@ -1,12 +1,7 @@
-﻿module Dashboard {
-    $(document).ready(() => {
-        const balanceInfo = new BalanceInfo($);
-        balanceInfo.registerEvent();
+﻿$(document).ready(() => {
+    const stats = new Statistics($);
+    stats.loadInfo('#stats', stats.registerEvent);
 
-        const stats = new Statistics($);
-        stats.loadInfo('#stats', stats.registerEvent);
-
-        const notice = new NoticeMessage($);
-        notice.loadInfo('#notice', notice.registerEvent);
-    });
-}
+    const notice = new NoticeMessage($);
+    notice.loadInfo('#notice', notice.registerEvent);
+});
