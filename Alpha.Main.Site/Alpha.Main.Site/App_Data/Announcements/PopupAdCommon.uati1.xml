@@ -1,6 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="6197902" name="OTP"
+                   startdate="10/16/2016" enddate="11/29/2016"  effectdate="10/18/2016"
+                    width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+    <zh-TW src="">
+      Dear valued agents,<br />
+      <p>
+        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </zh-TW>
 
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      Dear valued agents,<br />
+      <p>
+        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Dear valued agents,<br />
+      <p>
+        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
   <PopupAnnouncement id="6197901" name="Alpha_Security_Enhancement"
                      startdate="10/10/2016" enddate="10/30/2016"  effectdate="10/18/2016"
                       width="1000" height="220" top="110" left="350">
