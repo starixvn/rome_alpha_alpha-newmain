@@ -297,6 +297,9 @@
   <data name="announcements" xml:space="preserve">
     <value>Announcements</value>
   </data>
+  <data name="customerSetting" xml:space="preserve">
+    <value>Customer Setting</value>
+  </data>
   <data name="login" xml:space="preserve">
     <value>入力</value>
   </data>
@@ -345,5 +348,8 @@
   </data>
   <data name="Setting" xml:space="preserve">
     <value>Setting</value>
+  </data>
+  <data name="schedule" xml:space="preserve">
+    <value>Schedule</value>
   </data>
 </root>

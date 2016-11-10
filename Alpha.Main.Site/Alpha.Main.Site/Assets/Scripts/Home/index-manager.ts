@@ -60,19 +60,36 @@ var indexManager = {
             url: indexManager.urls.reCheckinUrl,
             data: { onid: alpha.user.onUserId },
             success: (result) => {
-                result = alpha.core.convertReponseToJson(result);
-                var errCode = result.errCode;
-                if (errCode === 0) {
-                    setTimeout(indexManager.reCheckin, 30000);
-                } else {
+                try {
+                    result = alpha.core.convertReponseToJson(result);
+                    var errCode = result.errCode;
                     var errMsg = result.errMsg;
-                    if (errMsg) {
-                        alert(errMsg);
+                    if (errCode !== 0) {
+                        if (errMsg) {
+                            alert(errMsg);
+                            alpha.core.signOut();
+                        } else {
+                            alert('Could not contact the server. Please check your network connection.');
+                        }
+                    }
+                }
+                catch (e) {
+                    if (typeof (result) === "string"
+                        && result.indexOf("Oops... you are here because of a system error") > 0) {
                         alpha.core.signOut();
-                    } else {
                         alert('Could not contact the server. Please check your network connection.');
                     }
                 }
+            },
+            error: (xhr) => {
+                // If internal server error
+                if (xhr.status === 500) {
+                    alpha.core.signOut();
+                    alert('Could not contact the server. Please check your network connection.');
+                }
+            },
+            complete: () => {
+                setTimeout(indexManager.reCheckin, 30000);
             }
         });
     },

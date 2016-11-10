@@ -6,8 +6,10 @@ namespace Alpha.Main
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Fanex.Products;
     using Helpers;
     using Models.Menus;    
+    using Sunplus.Agent.Model.Definitions;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
     using Sunplus.Agent.Utilities;
@@ -70,6 +72,11 @@ namespace Alpha.Main
                 () =>
                 {
                     return Current.IsShowBetChoiceLimit;
+                }),
+            ["NG2MenuItem"] = () => new MenuStatus(
+                () =>
+                {
+                    return ProductManager.IsShowSettings(ProductIdConstants.NG2);
                 })
         };
 
@@ -139,5 +146,12 @@ namespace Alpha.Main
                 return getDefaultUrl;
             }
         }
+
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
+        [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "Reviewed!")]
+        public static readonly IDictionary<string, Func<string>> MenuItemDisplayNameRules = new Dictionary<string, Func<string>>
+        {
+            ["ng2"] = () => { return ProductManager.GetProductName(ProductIdConstants.NG2); }
+        };
     }
 }
