@@ -76,11 +76,14 @@ bundles
 */**/[Ss]cripts/[Aa]nnouncement/*.js
 */**/[Ss]cripts/customer-profiles/*.js
 */**/[Ss]cripts/[Hh]ome/*.js
+*/**/[Ss]cripts/[Tt]ests/app/*.js
 
 */**/[Ss]cripts/core.js.map
 */**/[Ss]cripts/[Aa]nnouncement/*.js.map
 */**/[Ss]cripts/customer-profiles/*.js.map
 */**/[Ss]cripts/[Hh]ome/*.js.map
+*/**/[Ss]cripts/[Tt]ests/app/*.js.map
+
 
 
 
@@ -165,3 +168,9 @@ Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/tests/dashboard/statistics-tests.
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/tests/dashboard/statistics-tests.js.map
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/dashboard/dashboard-init.js
 Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/dashboard/dashboard-init.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/tests/app/dashboard/notice-tests.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/tests/app/dashboard/notice-tests.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/tests/app/dashboard/statistics-tests.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/tests/app/dashboard/statistics-tests.js.map
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/tests/app/message/message-tests.js
+Alpha.Main.Site/Alpha.Main.Site/Assets/Scripts/tests/app/message/message-tests.js.map

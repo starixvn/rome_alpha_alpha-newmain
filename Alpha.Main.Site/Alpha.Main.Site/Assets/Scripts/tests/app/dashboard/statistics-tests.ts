@@ -9,7 +9,7 @@
     beforeEach(() => {
         setFixtures(
             '<strong data-toggle="tooltip" data-placement="top" title="<div>test</div>">' +
-            '<span class="active">1</span>' +
+            '   <span class="active">1</span>' +
             '</strong>' +
             '<div id="id" action-url="url">' +
             '</div>' +

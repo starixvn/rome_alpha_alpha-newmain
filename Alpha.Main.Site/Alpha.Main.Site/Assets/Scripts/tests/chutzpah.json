@@ -9,9 +9,10 @@
     { "Path": "../core.js" },
     { "Path": "../dashboard/dashboard.js" },
     { "Path": "../dashboard/statistics.js" },
-    { "Path": "../dashboard/notice.js" }
+    { "Path": "../dashboard/notice.js" },
+    { "Path": "../message/index.js" }
   ],
   "Tests": [
-    { "Path": "dashboard" }
+    { "Path": "app/dashboard" }
   ]
 }

@@ -542,15 +542,9 @@
       <DependentUpon>reset-otp.js</DependentUpon>
     </Content>
     <Content Include="Assets\scripts\instruction\enjoyhint.js" />
-    <Content Include="Assets\scripts\tests\fixtures\statistics.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Assets\scripts\tests\libs\jasmine-jquery.js" />
     <Content Include="Assets\scripts\tests\libs\jasmine.js" />
     <Content Include="Assets\scripts\tests\libs\jquery.js" />
-    <Content Include="Assets\scripts\tests\fixtures\notice.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Assets\scripts\tests\libs\tooltip.js" />
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>
@@ -707,7 +701,6 @@
     <Content Include="Assets\styles\instruction\images\OldUI-2.png" />
     <Content Include="Assets\styles\instruction\images\OldUI-3.png" />
     <Content Include="Assets\styles\instruction\images\super.png" />
-    <Content Include="Views\SpecialMessage.xml" />
     <Content Include="Web.local.config" />
     <Content Include="Web.napexternal.config">
       <DependentUpon>Web.local.config</DependentUpon>
@@ -900,9 +893,10 @@
     </Content>
     <Content Include="Web.Configuration\AuthorizationSection.config" />
     <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
-    <TypeScriptCompile Include="Assets\scripts\tests\dashboard\dashboard-tests.ts" />
-    <TypeScriptCompile Include="Assets\scripts\tests\dashboard\notice-tests.ts" />
-    <TypeScriptCompile Include="Assets\scripts\tests\dashboard\statistics-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\statistics-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tests\app\message\message-tests.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
