@@ -3,6 +3,7 @@
     using Constants;
     using Main.Models.Enumerations;
     using Main.Models.Statistics;
+    using Main.Tests.TestData.Helper;
     using NSubstitute;
     using NUnit.Framework;
     using Site.ViewModels.Dashboard.Statistics;
@@ -16,10 +17,11 @@
         public void OutstandingLabel_ByUserLevel_ReturnCorrectLabel(byte roleId, string expectedLabel)
         {
             // Arrange
+            var stats = FakeDataHelper.Create<Statistics>();
             var userLevel = Enumeration.FromValue<UserLevel>(roleId);
 
             // Act
-            var viewModel = new StatisticsViewModel(Arg.Any<Statistics>(), userLevel);
+            var viewModel = new StatisticsViewModel(stats, userLevel);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.OutstandingLabel);

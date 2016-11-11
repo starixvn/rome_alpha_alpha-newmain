@@ -16,7 +16,7 @@
         {
             // Arrange
             var userLevel = Enumeration.FromValue<UserLevel>(userLevelValue);
-            var criteria = new GetStatisticsCriteria(userLevel, Arg.Any<int>());
+            var criteria = new GetStatisticsCriteria(userLevel, 1);
 
             // Act
             var actualSettingKey = criteria.GetSettingKey();

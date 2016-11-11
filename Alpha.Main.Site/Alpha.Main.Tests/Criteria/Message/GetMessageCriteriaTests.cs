@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using Main.Constants;
     using Main.Criteria.Message;
-    using NSubstitute;
     using NUnit.Framework;
     using TestData.Helper;
 
@@ -83,7 +82,7 @@
                 startDate,
                 endDate,
                 isTest,
-                Arg.Any<int>());
+                MessageType.Private);
 
             // Act & Assert
             Assert.IsTrue(custId == criteria.CustId &&

@@ -15,7 +15,7 @@
     public class BalanceInfoServiceImplTests
     {
         private IDynamicRepository dynamicRepository;
-        private BalanceUpDayInfoService balanceUpDateInfoService;
+        private BalanceUpDayInfoService balanceUpDayInfoService;
         private BalanceInfoServiceImpl balanceInfoService;
 
         [SetUp]
@@ -23,10 +23,10 @@
         {
             dynamicRepository = Substitute.For<IDynamicRepository>();
 
-            balanceUpDateInfoService = Substitute.For<BalanceUpDayInfoService>();
-            balanceUpDateInfoService.GetBalanceUpDayInfo().Returns(new BalanceUpDayInfo(DateTime.Today, DateTime.Today));
+            balanceUpDayInfoService = Substitute.For<BalanceUpDayInfoService>();
+            balanceUpDayInfoService.GetBalanceUpDayInfo().Returns(new BalanceUpDayInfo(DateTime.Today, DateTime.Today));
 
-            balanceInfoService = new BalanceInfoServiceImpl(balanceUpDateInfoService, dynamicRepository);
+            balanceInfoService = new BalanceInfoServiceImpl(balanceUpDayInfoService, dynamicRepository);
         }
 
         [Test]
@@ -44,10 +44,7 @@
         {
             // Arrange
             var expectedBalanceInfo = FakeDataHelper.Create<BalanceInfo>();
-
-            dynamicRepository
-                .Get<BalanceInfo>(Arg.Any<object>())
-                .Returns(expectedBalanceInfo);
+            dynamicRepository.Get<BalanceInfo>(Arg.Any<ICriteria>()).Returns(expectedBalanceInfo);
 
             // Act
             var balanceInfo = balanceInfoService.GetBalanceInfo(CustId.ValidId, UserLevel.Agent);

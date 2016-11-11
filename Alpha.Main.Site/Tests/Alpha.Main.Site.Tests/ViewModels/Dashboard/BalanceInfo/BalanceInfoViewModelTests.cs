@@ -4,13 +4,21 @@
     using Constants;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
-    using NSubstitute;
+    using Main.Tests.TestData.Helper;
     using NUnit.Framework;
     using Site.ViewModels.Dashboard.BalanceInfo;
 
     [TestFixture]
     public class BalanceViewModelTests
     {
+        private BalanceInfo balanceInfo;
+
+        [SetUp]
+        public void Setup()
+        {
+            balanceInfo = FakeDataHelper.Create<BalanceInfo>();
+        }
+
         [TestCase(RoleId.Super, "Super")]
         [TestCase(RoleId.Master, "Master")]
         [TestCase(RoleId.Agent, "Agent")]
@@ -21,10 +29,10 @@
 
             // Act
             var viewModel = new BalanceInfoViewModel(
-                Arg.Any<BalanceInfo>(),
+                balanceInfo,
                 userLevel,
-                Arg.Any<string>(),
-                Arg.Any<int>());
+                "UUS",
+                1);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.UserLevelLabel);
@@ -40,10 +48,10 @@
 
             // Act
             var viewModel = new BalanceInfoViewModel(
-                Arg.Any<BalanceInfo>(),
+                balanceInfo,
                 userLevel,
-                Arg.Any<string>(),
-                Arg.Any<int>());
+                "UUS",
+                1);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.GivenCreditLabel);
@@ -59,10 +67,10 @@
 
             // Act
             var viewModel = new BalanceInfoViewModel(
-                Arg.Any<BalanceInfo>(),
+                balanceInfo,
                 userLevel,
-                Arg.Any<string>(),
-                Arg.Any<int>());
+                "UUS",
+                1);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.TotalDownlineCreditLabel);
@@ -78,9 +86,9 @@
 
             // Act
             var viewModel = new BalanceInfoViewModel(
-                Arg.Any<BalanceInfo>(),
+                balanceInfo,
                 userLevel,
-                Arg.Any<string>(),
+                "UUS",
                 CustId.ValidId);
 
             // Assert
@@ -98,9 +106,9 @@
 
             // Act
             var viewModel = new BalanceInfoViewModel(
-                Arg.Any<BalanceInfo>(),
+                balanceInfo,
                 userLevel,
-                Arg.Any<string>(),
+                "UUS",
                 CustId.ValidId);
 
             // Assert

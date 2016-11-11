@@ -29,7 +29,7 @@
         public void GetAppPath_WithEmptyAppName_ThrowsArgumentException(string appName)
         {
             // Act & Assert
-            Assert.Throws<ArgumentException>(new TestDelegate(() => AppPathHelper.GetAppPath(appName, Arg.Any<string>())));
+            Assert.Throws<ArgumentException>(new TestDelegate(() => AppPathHelper.GetAppPath(appName, "1")));
         }
 
         [TestCase(null)]
@@ -39,7 +39,7 @@
         public void GetAppPath_WithEmptyVirtualPath_ThrowsArgumentException(string virtualPath)
         {
             // Act & Assert
-            Assert.Throws<ArgumentException>(new TestDelegate(() => AppPathHelper.GetAppPath(Arg.Any<string>(), virtualPath)));
+            Assert.Throws<ArgumentException>(new TestDelegate(() => AppPathHelper.GetAppPath("1", virtualPath)));
         }
     }
 }

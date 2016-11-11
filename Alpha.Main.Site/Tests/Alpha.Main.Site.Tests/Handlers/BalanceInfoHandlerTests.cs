@@ -48,9 +48,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var balanceInfo = FakeDataHelper.Create<BalanceInfo>();
-            balanceInfoService
-                .GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>())
-                .Returns(balanceInfo);
+            balanceInfoService.GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(balanceInfo);
 
             var query = new BalanceInfoQuery(userSession);
 
@@ -68,9 +66,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var balanceInfo = FakeDataHelper.Create<BalanceInfo>();
-            balanceInfoService
-                .GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>())
-                .Returns(balanceInfo);
+            balanceInfoService.GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(balanceInfo);
 
             var query = new BalanceInfoQuery(userSession);
 

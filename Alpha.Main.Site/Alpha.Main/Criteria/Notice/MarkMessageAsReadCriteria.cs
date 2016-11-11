@@ -2,7 +2,7 @@
 {
     using Fanex.Data.Repository;
 
-    public class MarkMessageAsReadCriteria : NonQueryCommand
+    public class MarkMessageAsReadCriteria : CriteriaBase
     {
         public MarkMessageAsReadCriteria(int userId, string messageIds)
         {

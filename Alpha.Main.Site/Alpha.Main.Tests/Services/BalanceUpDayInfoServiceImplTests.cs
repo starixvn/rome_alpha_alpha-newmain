@@ -26,9 +26,7 @@
         {
             // Arrange
             var expectedBalanceUpDayInfo = new BalanceUpDayInfo(DateTime.Today, DateTime.Today);
-            dynamicRepository
-                .Get<BalanceUpDayInfo>(Arg.Any<object>())
-                .Returns(expectedBalanceUpDayInfo);
+            dynamicRepository.Get<BalanceUpDayInfo>(Arg.Any<ICriteria>()).Returns(expectedBalanceUpDayInfo);
 
             // Act
             var balanceUpDayInfo = balanceUpDayInfoService.GetBalanceUpDayInfo();

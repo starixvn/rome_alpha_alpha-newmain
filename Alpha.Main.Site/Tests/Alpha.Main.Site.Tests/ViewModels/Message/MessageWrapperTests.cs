@@ -3,6 +3,7 @@
     using System;
     using Constants;
     using Main.Models.Message;
+    using Main.Tests.TestData.Helper;
     using NUnit.Framework;
     using Site.ViewModels.Message;
 

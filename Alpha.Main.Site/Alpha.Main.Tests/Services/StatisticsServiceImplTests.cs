@@ -50,7 +50,7 @@
             // Arrange
             var expectedStatistics = FakeDataHelper.Create<Statistics>();
 
-            dynamicRepository.Get<Statistics>(Arg.Any<object>()).Returns(expectedStatistics);
+            dynamicRepository.Get<Statistics>(Arg.Any<ICriteria>()).Returns(expectedStatistics);
 
             // Act
             var statistics = statisticsService.GetStatistics(CustId.ValidId, UserLevel.Agent);
@@ -75,9 +75,7 @@
             // Arrange
             var expectedTopWinningMembers = FakeDataHelper.CreateMany<TopWinningMember>().ToList();
 
-            dynamicRepository
-                .Fetch<TopWinningMember>(Arg.Any<object>())
-                .Returns(expectedTopWinningMembers);
+            dynamicRepository.Fetch<TopWinningMember>(Arg.Any<ICriteria>()).Returns(expectedTopWinningMembers);
 
             // Act
             var topWinningMembers = statisticsService.GetTopWinningMembers(CustId.ValidId, UserLevel.Agent);
@@ -102,9 +100,7 @@
             // Arrange
             var expectedTopTurnoverMembers = FakeDataHelper.CreateMany<TopTurnoverMember>().ToList();
 
-            dynamicRepository
-                .Fetch<TopTurnoverMember>(Arg.Any<object>())
-                .Returns(expectedTopTurnoverMembers);
+            dynamicRepository.Fetch<TopTurnoverMember>(Arg.Any<ICriteria>()).Returns(expectedTopTurnoverMembers);
 
             // Act
             var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(CustId.ValidId, UserLevel.Agent);
@@ -129,7 +125,7 @@
             // Arrange
             var expectedNewMembers = FakeDataHelper.CreateMany<NewMember>().ToList();
 
-            dynamicRepository.Fetch<NewMember>(Arg.Any<object>()).Returns(expectedNewMembers);
+            dynamicRepository.Fetch<NewMember>(Arg.Any<CriteriaBase>()).Returns(expectedNewMembers);
 
             // Act
             var newMembers = statisticsService.GetNewMembers(CustId.ValidId);

@@ -80,9 +80,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var statistics = FakeDataHelper.Create<Statistics>();
-            statisticsService
-                .GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>())
-                .Returns(statistics);
+            statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(statistics);
 
             var query = new StatisticsQuery(userSession);
 
@@ -98,9 +96,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var topWinningMembers = FakeDataHelper.CreateMany<TopWinningMember>().ToList();
-            statisticsService
-                .GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
-                .Returns(topWinningMembers);
+            statisticsService.GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(topWinningMembers);
 
             var query = new TopWinningMembersQuery(userSession);
 
@@ -116,9 +112,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var topTurnoverMembers = FakeDataHelper.CreateMany<TopTurnoverMember>().ToList();
-            statisticsService
-                .GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
-                .Returns(topTurnoverMembers);
+            statisticsService.GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(topTurnoverMembers);
 
             var query = new TopTurnoverMembersQuery(userSession);
 
@@ -134,9 +128,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var newMembers = FakeDataHelper.CreateMany<NewMember>().ToList();
-            statisticsService
-                .GetNewMembers(Arg.Any<int>())
-                .Returns(newMembers);
+            statisticsService.GetNewMembers(Arg.Any<int>()).Returns(newMembers);
 
             var query = new NewMembersQuery(CustId.ValidId);
 
@@ -152,9 +144,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var expectedStatistics = FakeDataHelper.Create<Statistics>();
-            statisticsService
-                .GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>())
-                .Returns(expectedStatistics);
+            statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(expectedStatistics);
 
             var query = new StatisticsQuery(userSession);
 
@@ -170,9 +160,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var expectedTopWinningMembers = FakeDataHelper.CreateMany<TopWinningMember>().ToList();
-            statisticsService
-                .GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
-                .Returns(expectedTopWinningMembers);
+            statisticsService.GetTopWinningMembers(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(expectedTopWinningMembers);
 
             var query = new TopWinningMembersQuery(userSession);
 
@@ -188,9 +176,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var expectedTopTurnoverMembers = FakeDataHelper.CreateMany<TopTurnoverMember>().ToList();
-            statisticsService
-                .GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>())
-                .Returns(expectedTopTurnoverMembers);
+            statisticsService.GetTopTurnoverMembers(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(expectedTopTurnoverMembers);
 
             var query = new TopTurnoverMembersQuery(userSession);
 
@@ -206,9 +192,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var expectedNewMembers = FakeDataHelper.CreateMany<NewMember>().ToList();
-            statisticsService
-                .GetNewMembers(Arg.Any<int>())
-                .Returns(expectedNewMembers);
+            statisticsService.GetNewMembers(Arg.Any<int>()).Returns(expectedNewMembers);
 
             var query = new NewMembersQuery(CustId.ValidId);
 
@@ -224,9 +208,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             var statistics = FakeDataHelper.Create<Statistics>();
-            statisticsService
-                .GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>())
-                .Returns(statistics);
+            statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(statistics);
 
             var query = new StatisticsQuery(userSession);
 

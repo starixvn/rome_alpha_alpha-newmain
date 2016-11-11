@@ -4,14 +4,12 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Xml;
     using Constants;
     using Fanex.Data.Repository;
     using Main.Constants;
     using Main.Models.Message;
     using Main.Services.Impl;
     using NSubstitute;
-    using NSubstitute.ReturnsExtensions;
     using NUnit.Framework;
     using TestData.Helper;
     using Assert = NUnit.Framework.Assert;
@@ -55,9 +53,7 @@
             // Arrange
             var messages = FakeDataHelper.CreateMany<Message>();
 
-            dynamicRepository
-                .Fetch<Message>(Arg.Any<object>())
-                .Returns(messages);
+            dynamicRepository.Fetch<Message>(Arg.Any<ICriteria>()).Returns(messages);
 
             // Act
             var actualMessages = messageService.GetMessages(

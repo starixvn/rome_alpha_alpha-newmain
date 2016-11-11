@@ -19,9 +19,9 @@
             var userLevel = Enumeration.FromValue<UserLevel>(userLevelValue);
             var criteria = new GetTopTurnoverMembersCriteria(
                 userLevel,
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>());
+                1,
+                DateTime.Today,
+                DateTime.Today);
 
             // Act
             var actualSettingKey = criteria.GetSettingKey();
@@ -38,8 +38,8 @@
             var criteria = new GetTopTurnoverMembersCriteria(
                 UserLevel.Agent,
                 custId,
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>());
+                DateTime.Today,
+                DateTime.Today);
 
             // Act & Assert
             Assert.AreEqual(custId, criteria.CustId);
@@ -53,8 +53,8 @@
             var criteria = new GetTopTurnoverMembersCriteria(
                 UserLevel.Agent,
                 custId,
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>());
+                DateTime.Today,
+                DateTime.Today);
 
             // Act
             var actual = criteria.IsValid();
@@ -71,8 +71,8 @@
             var criteria = new GetTopTurnoverMembersCriteria(
                 UserLevel.Agent,
                 custId,
-                Arg.Any<DateTime>(),
-                Arg.Any<DateTime>());
+                DateTime.Today,
+                DateTime.Today);
 
             // Act
             var actual = criteria.IsValid();
@@ -88,9 +88,9 @@
             var balanceUpDay = DateTime.Today;
             var criteria = new GetTopTurnoverMembersCriteria(
                 UserLevel.Agent,
-                Arg.Any<int>(),
+                1,
                 balanceUpDay,
-                Arg.Any<DateTime>());
+                DateTime.Today);
 
             // Act
             var actualBalanceUpday = criteria.BalanceUpDay;
@@ -106,8 +106,8 @@
             var moveBetsDay = DateTime.Today;
             var criteria = new GetTopTurnoverMembersCriteria(
                 UserLevel.Agent,
-                Arg.Any<int>(),
-                Arg.Any<DateTime>(),
+                1,
+                DateTime.Today,
                 moveBetsDay);
 
             // Act
