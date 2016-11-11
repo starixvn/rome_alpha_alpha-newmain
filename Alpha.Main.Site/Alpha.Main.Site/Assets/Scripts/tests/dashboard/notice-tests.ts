@@ -9,10 +9,12 @@
     beforeEach(() => {
         setFixtures(
             '<div id="notice">' +
-            '   <div class="message">' +
-            '       <div class="short-content">ShortContent</div>' +
-            '       <div class="full-content">FullContent</div>' +
-            '       <div class="time"><span class="icon icon-plus"></span>17/08/2016</div>' +
+            '   <div class="msg-contents">' +
+            '       <div class="message">' +
+            '           <div class="time"><span class="icon icon-plus"></span>17/08/2016</div>' +
+            '           <div class="short-content">ShortContent</div>' +
+            '           <div class="full-content">FullContent</div>' +
+            '       </div>' +
             '   </div>' +
             '   <div class="more-info" totalMsg="10">' +
             '       <span class="icon-arrow-down icon-more"></span>' +
@@ -27,7 +29,7 @@
     });
 
     describe('registerEvent()', () => {
-        it('Always - Calls Specific Methods', () => {
+        it('Always -> Calls Specific Methods', () => {
             // Act
             notice.registerEvent();
 
@@ -57,7 +59,7 @@
             });
         });
 
-        it('When ShortContent Is Visible - Show Full Content', () => {
+        it('When ShortContent Is Visible -> Show Full Content', () => {
             // Arrange
             shortContent.show();
             fullContent.hide();
@@ -72,7 +74,7 @@
             expect(icon).toHaveClass('icon-minus');
         });
 
-        it('When ShortContent Is Hidden - Hide Full Content', () => {
+        it('When ShortContent Is Hidden -> Hide Full Content', () => {
             // Arrange
             shortContent.hide();
             fullContent.show();
@@ -99,7 +101,7 @@
             markMessageAsRead.and.callThrough();
         });
 
-        it('When Message Has Not "Bold" Class - Not Send Ajax POST', () => {
+        it('When Message Has Not "Bold" Class -> Not Send Ajax POST', () => {
             // Act
             markMessageAsRead.call(this, $message);
 
@@ -107,7 +109,7 @@
             expect($ajax).not.toHaveBeenCalled();
         });
 
-        it('When Message Has "Bold" Class and Marked Failed Ajax POST - Not Remove "Bold" Class', () => {
+        it('When Message Has "Bold" Class - Marked Failed Ajax POST -> Not Remove "Bold" Class', () => {
             // Arrange
             $message.addClass('bold');
             $ajax.and.callFake((options) => {
@@ -121,7 +123,7 @@
             expect($message).toHaveClass('bold');
         });
 
-        it('When Message Has "Bold" Class and Marked Success Ajax POST - Remove "Bold" Class', () => {
+        it('When Message Has "Bold" Class - Marked Success Ajax POST -> Remove "Bold" Class', () => {
             // Arrange
             $message.addClass('bold');
             $ajax.and.callFake((options) => {
@@ -135,20 +137,21 @@
             expect($message).not.toHaveClass('bold');
         });
 
-        it('When Send Ajax POST - Has Exact Params', () => {
+        it('When Send Ajax POST -> Has Exact Ajax Settings', () => {
             // Arrange
             $message.addClass('bold');
             $message.attr('id', 'id');
             $ajax.and.callFake((options) => {
                 options.success(true);
             });
+            alpha.urls.mainRootPath = 'path';
 
             // Act
             markMessageAsRead.call(this, $message);
 
             // Assert
             expect($ajax).toHaveBeenCalledWith({
-                url: alpha.urls.mainRootPath + '/Notice/MarkMessageAsRead',
+                url: 'path/Notice/MarkMessageAsRead',
                 data: { messageId: 'id' },
                 method: 'POST',
                 success: jasmine.any(Function)
@@ -171,16 +174,74 @@
             onToggleShowMoreMessages.call(this);
         });
 
-        it('On Click More Info Button and Success Ajax Get - Set Response Html', () => {
+        it('On Click More Info Button -> Change Button State', () => {
+            // Act
+            $moreBtn.trigger('click');
+
+            // Assert
+            expect($moreBtn).toHaveAttr('disabled', 'disabled');
+            expect($moreBtn).toHaveText('Loading...');
+        });
+
+        it('On Click More Info Button and Success Ajax Get -> Set Response Html', () => {
             // Arrange
             const $notice: JQuery = $('#notice');
+            spyOn(notice, 'registerEvent');
 
             // Act
             $moreBtn.trigger('click');
 
             // Assert
             expect($notice.html()).toEqual(responseHtml);
-            expect(spyOn(notice, 'registerEvent')).toHaveBeenCalled();
-        })
+            expect(notice.registerEvent).toHaveBeenCalled();
+        });
+
+        it('Always -> Send Ajax With Correct AjaxSettings', () => {
+            // Arrange
+            $moreBtn.attr('totalMsg', 10);
+            alpha.urls.mainRootPath = 'path';
+
+            // Act
+            $moreBtn.trigger('click');
+
+            // Assert
+            expect($ajax).toHaveBeenCalledWith({
+                method: 'GET',
+                url: 'path/Notice/MoreMessages?totalMessage=10',
+                success: jasmine.any(Function)
+            });
+        });
+    });
+
+    describe('hideMoreBtnIfHaveNoData()', () => {
+        let $moreBtn: JQuery;
+
+        beforeEach(() => {
+            $moreBtn = $('.more-info');
+            $moreBtn.show();
+            hideMoreBtnIfHaveNoData.and.callThrough();
+        });
+
+        it('When Has No Info -> Hide More Button', () => {
+            // Arrange
+            appendSetFixtures('<div id="no-info"></div>');
+
+            // Act
+            hideMoreBtnIfHaveNoData.call(this);
+
+            // Assert
+            expect($moreBtn).toBeHidden();
+        });
+
+        it('When More Total Message Is Greater Than Current Message Amount(+10) -> Hide More Button', () => {
+            // Arrange
+            $moreBtn.attr('totalMsg', 20);
+
+            // Act
+            hideMoreBtnIfHaveNoData.call(this);
+
+            // Assert
+            expect($moreBtn).toBeHidden();
+        });
     });
 });

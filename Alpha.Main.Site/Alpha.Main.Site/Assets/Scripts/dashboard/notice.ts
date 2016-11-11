@@ -32,7 +32,7 @@
 
     private markMessageAsRead = (message: JQuery) => {
         const isUnRead: boolean = message.hasClass('bold');
-        debugger
+
         if (isUnRead) {
             const onSuccess = (isMarkedSuccess: any) => {
                 if (isMarkedSuccess) {
@@ -60,7 +60,7 @@
             const onSuccess = (htmlString: any) => {
                 content.html(htmlString);
 
-                new NoticeMessage($).registerEvent();
+                this.registerEvent();
             }
 
             const ajaxSetting: JQueryAjaxSettings = {

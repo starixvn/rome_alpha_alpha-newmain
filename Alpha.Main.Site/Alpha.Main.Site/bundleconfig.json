@@ -18,11 +18,10 @@
     "outputFileName": "Assets/bundles/default-dashboard.js",
     "inputFiles": [
       "Assets/scripts/core.js",
-      "Assets/scripts/dashboard/init.js",
       "Assets/scripts/dashboard/dashboard.js",
-      "Assets/scripts/dashboard/balance-info.js",
       "Assets/scripts/dashboard/statistics.js",
-      "Assets/scripts/dashboard/notice.js"
+      "Assets/scripts/dashboard/notice.js",
+      "Assets/scripts/dashboard/dashboard-init.js"
     ]
   },
   {

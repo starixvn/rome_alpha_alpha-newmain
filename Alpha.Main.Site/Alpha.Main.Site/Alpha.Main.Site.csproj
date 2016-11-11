@@ -481,7 +481,7 @@
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
-    <TypeScriptCompile Include="Assets\scripts\dashboard\init.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard-init.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
@@ -542,6 +542,7 @@
       <DependentUpon>reset-otp.js</DependentUpon>
     </Content>
     <Content Include="Assets\scripts\instruction\enjoyhint.js" />
+    <TypeScriptCompile Include="Assets\scripts\tests\dashboard\dashboard-init-tests.ts" />
     <Content Include="Assets\scripts\tests\fixtures\statistics.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

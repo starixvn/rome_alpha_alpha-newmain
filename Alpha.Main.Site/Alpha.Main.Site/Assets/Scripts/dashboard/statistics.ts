@@ -26,7 +26,7 @@
         if (url !== '' && typeof url !== 'undefined') {
             this.$.ajax({
                 method: 'GET',
-                url: 'url',
+                url: url,
                 success: (responseHtml) => dataElement.html(responseHtml)
             });
         }
