@@ -326,7 +326,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>Other two-factor authenticator applications such as Google Authenticator, Microsoft Authenticator ect. are also supported</value>
   </data>
   <data name="ScanQRCode" xml:space="preserve">
-    <value>2. Create an account by scanning this QR code with Sophos</value>
+    <value>Create an account by scanning this QR code with Sophos</value>
   </data>
   <data name="UnableScanQRCode" xml:space="preserve">
     <value>Unable to scan the QR code?</value>

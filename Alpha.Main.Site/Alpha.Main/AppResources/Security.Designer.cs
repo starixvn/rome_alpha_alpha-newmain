@@ -734,7 +734,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2. Create an account by scanning this QR code with Sophos.
+        ///   Looks up a localized string similar to Create an account by scanning this QR code with Sophos.
         /// </summary>
         public static string ScanQRCode {
             get {

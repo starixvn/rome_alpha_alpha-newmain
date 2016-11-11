@@ -53,6 +53,10 @@ var forceChangePassword = {
                     alert(data.Message);
                     securityHelper.signOut();
                 }
+                else if (data.Code === 101) {
+                    $txtOldPassword.addClass('error').focus();
+                    $("#txtOldPwd-error").empty().html(data.Message);
+                }
                 else {
                     $txtPassword.addClass('error').focus();
                     $("#txtNewPwd-error").empty().html(data.Message);
@@ -68,36 +72,39 @@ var forceChangePassword = {
         var oldPassword = $txtOldPassword.val();
         var password = $txtPassword.val();
         var confirmPassword = $txtConfirmPassword.val();
+        var oldPasswordError = $("#txtOldPwd-error");
+        var newPasswordError = $("#txtNewPwd-error");
+        var confirmPasswordError = $("#txtConfirmPwd-error");
         if (oldPassword.length === 0) {
-            $("#txtOldPwd").addClass('error');
-            $("#txtOldPwd-error").empty().html(passwordResources.pleaseEnterOldPassword);
+            $txtOldPassword.addClass('error');
+            oldPasswordError.html(passwordResources.pleaseEnterOldPassword);
             $txtOldPassword.focus();
             return false;
         }
 
         if (password.length === 0) {
-            $("#txtNewPwd").addClass('error');
-            $("#txtNewPwd-error").empty().html(passwordResources.passwordCannotEmpty).append(passwordResources.rules);
+            $txtPassword.addClass('error');
+            newPasswordError.html(passwordResources.passwordCannotEmpty).append(passwordResources.rules);
             $txtPassword.focus();
             return false;
         }
 
         if (!securityHelper.isValidPassword(password)) {
             $txtPassword.focus();
-            $("#txtNewPwd-error").empty().html(passwordResources.passwordDoesNotMeetMinimunRequirement).append(passwordResources.rules);
+            newPasswordError.html(passwordResources.passwordDoesNotMeetMinimunRequirement).append(passwordResources.rules);
             return false;
         }
 
         if (password != confirmPassword) {
-            $("#txtConfirmPwd").addClass('error');
-            $("#txtConfirmPwd-error").empty().html(passwordResources.confirmPasswordNotCorret);
+            $txtConfirmPassword.addClass('error');
+            confirmPasswordError.html(passwordResources.confirmPasswordNotCorret);
             $txtConfirmPassword.focus();
             return false;
         }
 
         if (oldPassword === password) {
-            $("#txtConfirmPwd").addClass('error');
-            $("#txtConfirmPwd-error").empty().html(passwordResources.newPassMustbeDiffOldPass);
+            $txtConfirmPassword.addClass('error');
+            confirmPasswordError.html(passwordResources.newPassMustbeDiffOldPass);
             $txtPassword.focus();
             return false;
         }
