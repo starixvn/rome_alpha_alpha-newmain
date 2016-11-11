@@ -6,3 +6,4 @@
 \\*.sit.config
 \\*.napinternal.config
 \\*.napexternal.config
+\\Assets\\scripts\\tests\\*
