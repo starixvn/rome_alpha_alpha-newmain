@@ -322,7 +322,7 @@
   <data name="PrivateMessage" xml:space="preserve">
     <value>個人訊息</value>
   </data>
-  <data name="Less" xml:space="preserve">
+  <data name="less" xml:space="preserve">
     <value>少</value>
   </data>
   <data name="LogOut" xml:space="preserve">

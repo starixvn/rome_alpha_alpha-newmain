@@ -322,7 +322,7 @@
   <data name="PrivateMessage" xml:space="preserve">
     <value>Private Message</value>
   </data>
-  <data name="Less" xml:space="preserve">
+  <data name="less" xml:space="preserve">
     <value>less</value>
   </data>
   <data name="LogOut" xml:space="preserve">
@@ -480,5 +480,35 @@
   </data>
   <data name="Remove" xml:space="preserve">
     <value>Remove</value>
+  </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>Outstanding</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="closed" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="suspended" xml:space="preserve">
+    <value>Suspended</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="searchAccount" xml:space="preserve">
+    <value>Search Account</value>
+  </data>
+  <data name="viewMessage" xml:space="preserve">
+    <value>View Message</value>
+  </data>
+  <data name="viewAnnouncement" xml:space="preserve">
+    <value>View Announcement</value>
+  </data>
+  <data name="changeLanguage" xml:space="preserve">
+    <value>Change Language</value>
   </data>
 </root>

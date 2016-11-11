@@ -70,6 +70,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string active {
+            get {
+                return ResourceManager.GetString("active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin.
         /// </summary>
         public static string admin {
@@ -169,6 +178,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Language.
+        /// </summary>
+        public static string changeLanguage {
+            get {
+                return ResourceManager.GetString("changeLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click here.
         /// </summary>
         public static string clickHere {
@@ -201,6 +219,15 @@ namespace Alpha.Main.AppResources {
         public static string close {
             get {
                 return ResourceManager.GetString("close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Closed.
+        /// </summary>
+        public static string closed {
+            get {
+                return ResourceManager.GetString("closed", resourceCulture);
             }
         }
         
@@ -388,9 +415,18 @@ namespace Alpha.Main.AppResources {
         /// <summary>
         ///   Looks up a localized string similar to less.
         /// </summary>
-        public static string Less {
+        public static string less {
             get {
-                return ResourceManager.GetString("Less", resourceCulture);
+                return ResourceManager.GetString("less", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading.
+        /// </summary>
+        public static string loading {
+            get {
+                return ResourceManager.GetString("loading", resourceCulture);
             }
         }
         
@@ -602,6 +638,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Outstanding.
+        /// </summary>
+        public static string outstanding {
+            get {
+                return ResourceManager.GetString("outstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string password {
@@ -718,6 +763,15 @@ namespace Alpha.Main.AppResources {
         public static string ReportMenuIntroduction {
             get {
                 return ResourceManager.GetString("ReportMenuIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search Account.
+        /// </summary>
+        public static string searchAccount {
+            get {
+                return ResourceManager.GetString("searchAccount", resourceCulture);
             }
         }
         
@@ -839,6 +893,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Suspended.
+        /// </summary>
+        public static string suspended {
+            get {
+                return ResourceManager.GetString("suspended", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Switch View.
         /// </summary>
         public static string SwitchView {
@@ -871,6 +934,15 @@ namespace Alpha.Main.AppResources {
         public static string TitleUnsupportBrowser {
             get {
                 return ResourceManager.GetString("TitleUnsupportBrowser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        public static string to {
+            get {
+                return ResourceManager.GetString("to", resourceCulture);
             }
         }
         
@@ -1046,11 +1118,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View Announcement.
+        /// </summary>
+        public static string viewAnnouncement {
+            get {
+                return ResourceManager.GetString("viewAnnouncement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Log is now located in the Main Menu.
         /// </summary>
         public static string ViewLogMenuIntroduction {
             get {
                 return ResourceManager.GetString("ViewLogMenuIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Message.
+        /// </summary>
+        public static string viewMessage {
+            get {
+                return ResourceManager.GetString("viewMessage", resourceCulture);
             }
         }
         

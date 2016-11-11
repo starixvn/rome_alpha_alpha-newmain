@@ -823,7 +823,7 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
-    <Content Include="Views\Default\Introduction.cshtml" />
+    <Content Include="Views\Default\Instruction.cshtml" />
     <Content Include="Views\Default\Piwik.cshtml" />
     <Content Include="Views\Password\ChangePassword.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
