@@ -34,7 +34,10 @@ var alpha = {
             : "not found",
         isShowIntroduction: document.getElementById('isShowIntroduction') != null
             ? ((<HTMLInputElement>document.getElementById('isShowIntroduction')).value.toLowerCase() === "true")
-            : "not found"
+            : "not found",
+        isEnableOtp: document.getElementById('isEnabledOtp') != null
+            ? ((<HTMLInputElement>document.getElementById('isEnabledOtp')).value.toLowerCase() === "true")
+            : false
     },
     core:
     {

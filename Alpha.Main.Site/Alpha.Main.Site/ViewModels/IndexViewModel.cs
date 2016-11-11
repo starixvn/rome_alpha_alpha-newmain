@@ -68,5 +68,7 @@
         public string DefaultUrl => getDefaultUrl?.Invoke() ?? MainRootPath;
 
         public HeaderNavViewModel HeaderNavViewModel => new HeaderNavViewModel(CustId, EnableSecurityCode, message.IsViewedMemberInfo);
+
+        public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
     }
 }
