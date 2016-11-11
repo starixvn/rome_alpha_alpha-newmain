@@ -8,7 +8,7 @@
 
         init = () => {
             this.showRedCircleInIconAnnouncement(false);
-            this.loadAnnouncementPeriodically(5000, this.getReadMessageIdsFromLocalStorage());
+            this.loadAnnouncementPeriodically(5000);
         }
 
         bindEvents = () => {
@@ -60,7 +60,7 @@
             toastr.info(text);
         }
 
-        private loadAnnouncementPeriodically = (interval: number, readMessageIds: Array<string>) => {
+        private loadAnnouncementPeriodically = (interval: number) => {
             const onSuccess = (result: string) => {
                 if (this.hasEmptyAnnouncementData(result)) {
                     this.showRedCircleInIconAnnouncement(false);
@@ -69,8 +69,12 @@
                 }
             }
 
-            const loadAnnouncement = () => this.loadAnnouncement(this.createLoadAnnoucementData(readMessageIds, 1), onSuccess);
+            const loadAnnouncement = () =>
+                this.loadAnnouncement(
+                    this.createLoadAnnoucementData(this.getReadMessageIdsFromLocalStorage(), 1),
+                    onSuccess);
 
+            loadAnnouncement();
             setInterval(loadAnnouncement, interval);
         }
 
@@ -123,13 +127,29 @@
         }
 
         private saveReadMessageIdsToLocalStorage = (readMessageIds: Array<string>) => {
-            alpha.localStorage.set(this.readMessageIdsKey, readMessageIds);
+            let storedReadMessageIds: Array<string>
+                = this.deduplicateArray(this.getReadMessageIdsFromLocalStorage().concat(readMessageIds));
+
+            alpha.localStorage.set(this.generateReadMessageIdsKey(), storedReadMessageIds);
         }
 
         private getReadMessageIdsFromLocalStorage = (): Array<string> => {
-            const readMessageIds = alpha.localStorage.get(this.readMessageIdsKey);
+            const readMessageIds = alpha.localStorage.get(this.generateReadMessageIdsKey());
 
             return (readMessageIds !== null && typeof readMessageIds !== "undefined") ? readMessageIds : [];
+        }
+
+        private generateReadMessageIdsKey(): string {
+            const userId = $('#userId').val();
+            const subUserId = $('#subUserId').val();
+
+            return this.readMessageIdsKey + '-' + userId + '-' + subUserId;
+        }
+
+        private deduplicateArray = (array: Array<string>) => {
+            return array.filter((value, index, arr) => {
+                return arr.indexOf(value) === index;
+            });
         }
     }
 }

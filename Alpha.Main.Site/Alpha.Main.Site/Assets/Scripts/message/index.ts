@@ -1,6 +1,4 @@
-﻿/// <reference path="../core.ts" />
-
-class Message {
+﻿class Message {
     registerEvent = () => {
         this.onClickTab('.public-tab');
         this.onClickTab('.special-tab');

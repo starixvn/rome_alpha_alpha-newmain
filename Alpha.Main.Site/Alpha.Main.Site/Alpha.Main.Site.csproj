@@ -542,7 +542,6 @@
       <DependentUpon>reset-otp.js</DependentUpon>
     </Content>
     <Content Include="Assets\scripts\instruction\enjoyhint.js" />
-    <TypeScriptCompile Include="Assets\scripts\tests\dashboard\dashboard-init-tests.ts" />
     <Content Include="Assets\scripts\tests\fixtures\statistics.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
