@@ -11,7 +11,7 @@
         public void GetSettingKey_Always_Return_Age_CustomerUpdMessagesRead()
         {
             // Arrange
-            var criteria = new MarkMessageAsReadCriteria(1, "1");
+            var criteria = new MarkMessageAsReadCommand(1, "1");
 
             // Act
             var actualSettingKey = criteria.GetSettingKey();
@@ -24,7 +24,7 @@
         public void IsValid_UserIdIsGreaterThanZero_ReturnTrue()
         {
             // Arrange
-            var criteria = new MarkMessageAsReadCriteria(69, "1");
+            var criteria = new MarkMessageAsReadCommand(69, "1");
 
             // Act
             var actual = criteria.IsValid();
@@ -38,7 +38,7 @@
         public void IsValid_UserIdIsLessThanOrEqualZero_ReturnFalse(int userId)
         {
             // Arrange
-            var criteria = new MarkMessageAsReadCriteria(userId, "1");
+            var criteria = new MarkMessageAsReadCommand(userId, "1");
 
             // Act
             var actual = criteria.IsValid();
@@ -52,7 +52,7 @@
         {
             // Arrange
             var userId = 69;
-            var criteria = new MarkMessageAsReadCriteria(userId, "1");
+            var criteria = new MarkMessageAsReadCommand(userId, "1");
 
             // Act
             var actualUserId = criteria.UserId;
@@ -66,7 +66,7 @@
         {
             // Arrange
             var messageIds = "3000";
-            var criteria = new MarkMessageAsReadCriteria(69, messageIds);
+            var criteria = new MarkMessageAsReadCommand(69, messageIds);
 
             // Act
             var actualMessageIds = criteria.MessageIds;

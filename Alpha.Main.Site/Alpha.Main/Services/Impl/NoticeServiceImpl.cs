@@ -33,14 +33,14 @@
 
         public bool MarkMessageAsRead(int custId, int messageId)
         {
-            var criteria = new MarkMessageAsReadCriteria(custId, messageId.ToString());
+            var command = new MarkMessageAsReadCommand(custId, messageId.ToString());
 
-            if (!criteria.IsValid())
+            if (!command.IsValid())
             {
                 return false;
             }
 
-            dynamicRepository.Execute(criteria);
+            dynamicRepository.Execute(command);
 
             return true;
         }
