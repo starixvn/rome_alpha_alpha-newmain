@@ -305,4 +305,103 @@
     <value>รหัสผ่านต้องมี6-10 อักขระและต้องไม่มีช่องเว้นวรรค ต้องมีภาษาอังกฤษตัวพิมพ์เล็กอย่างน้อย 1ตัว และภาษาอังกฤษตัวพิมพ์ใหญ่อย่างน้อย 1ตัวและตามด้วยตัวเลข
 ยกตัวอย่างเช่น : ( 493abcDE, 59D7!4$h)</value>
   </data>
+  <data name="InputOtpBeforeProceeding" xml:space="preserve">
+    <value>โปรดใส่ OTP ก่อนดำเนินการ</value>
+  </data>
+  <data name="OtpNotes" xml:space="preserve">
+    <value>จะต้องใช้ OTP ต่อเมื่อคุณมีการดำเนินการเปลี่ยนแปลงการตั้งค่าที่สำคัญหรือเข้าสู่ระบบด้วยบราวเซอร์ที่แตกต่างกัน สำหรับมือถือคุณจะต้องลงทะเบียน Authenticator App ก่อนเปิดใช้งานตัวเลือก OTP</value>
+  </data>
+  <data name="DownloadSophos" xml:space="preserve">
+    <value>ดาวน์โหลด Sophos Authenticator Mobile App สู่เครื่องของคุณ</value>
+  </data>
+  <data name="SophosAuthenticator" xml:space="preserve">
+    <value>Sophos Authenticator</value>
+  </data>
+  <data name="OtherAuthenticators" xml:space="preserve">
+    <value>อีก 2 ตัวนอกเหนือจาก authenticator applications คือ Google Authenticator หรือ Microsoft Authenticator ก็รอบรับเช่นเดียวกัน</value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>สร้างบัญชีผู้ใช้โดยการสแกน QR โค้ดนี้กับSophos</value>
+  </data>
+  <data name="UnableScanQRCode" xml:space="preserve">
+    <value>ไม่สามารถแสกน QR code ?</value>
+  </data>
+  <data name="ManualInputOtpKey" xml:space="preserve">
+    <value>โปรดใส่ เงื่อนไขด้านล่างเพื่อเป็นการเพิ่มหน้าใน Sophos และคลิ๊ก Done (iOS) หรือ Add (Android)</value>
+  </data>
+  <data name="Enter6DigitsOtp" xml:space="preserve">
+    <value> ใส่ตัวเลข 6 ตัวที่สร้างโดย Sophos ลงไปในกล่องข้อความด้านล่างแล้วคลิ๊กยืนยันเพื่อเป็นการลงทะเบียน</value>
+  </data>
+  <data name="ClickToRemoveOtp" xml:space="preserve">
+    <value>คลิกที่ปุ่มด้านล่างนี้เพื่อลบผู้ใช้ที่ลงทะเบียนอุปกรณ์และการตั้งค่า/ สถานะของผู้ใช้งาน OTP เพื่อปิดการใช้งาน</value>
+  </data>
+  <data name="RemoveOtp" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="EnableDisableOtp" xml:space="preserve">
+    <value>เปิดการใช้งาน/ปิดการใช้งาน OTP</value>
+  </data>
+  <data name="EnableOtpViaSophos" xml:space="preserve">
+    <value>เปิดการใช้งาน OTP ทาง Authenticator Mobile App</value>
+  </data>
+  <data name="OtpIsInvalidOrExpired" xml:space="preserve">
+    <value>OTP ไม่ถูกต้องหรือหมดอายุแล้ว</value>
+  </data>
+  <data name="AuthenticatorAppVerified" xml:space="preserve">
+    <value>App Authenticator ของคุณได้รับการยืนยัน</value>
+  </data>
+  <data name="RemoveOtpWarning" xml:space="preserve">
+    <value>ระบบจะไม่ยอมรับรหัส OTP ที่สร้างบนอุปกรณ์ที่ลงทะเบียนคุณต้องการที่จะดำเนินการต่อหรือไม่</value>
+  </data>
+  <data name="RemoveOtpSuccessMessage" xml:space="preserve">
+    <value>ถอดอุปกรณ์ที่ลงทะเบียนเรียบร้อยแล้ว</value>
+  </data>
+  <data name="UpdateOtpStatusSuccess" xml:space="preserve">
+    <value>อัพเดทสถานะ OPT ประสบความสำเร็จ</value>
+  </data>
+  <data name="RemoveOtpForCust" xml:space="preserve">
+    <value>ลบ OTP - {0}</value>
+  </data>
+  <data name="ResetOtpWarning" xml:space="preserve">
+    <value>คลิกที่ปุ่มด้านล่างนี้เพื่อลบอุปกรณ์ที่ลงทะเบียนจากบัญชีของคุณออก</value>
+  </data>
+  <data name="OtpValidation" xml:space="preserve">
+    <value>การตรวจสอบ OTP</value>
+  </data>
+  <data name="ResetDownlineOtpWarning" xml:space="preserve">
+    <value>คุณต้องการที่จะลบผู้ใช้นี้จากการลงทะเบียนอุปกรณ์หรือไม่?</value>
+  </data>
+  <data name="RegenerateQR" xml:space="preserve">
+    <value>สร้าง QR ใหม่</value>
+  </data>
+  <data name="OtpDatetimeWarning" xml:space="preserve">
+    <value>การตั้งค่าวันที่ และเวลาบนเครื่องของท่านต้องตั้งให้เป็นอัตโนมัติเท่านั้น</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>คัดลอกเรียบร้อยแล้ว</value>
+  </data>
+  <data name="NoRegisterDeviceError" xml:space="preserve">
+    <value>ผู้ใช้นี้ไม่มีอุปกรณ์ที่ลงทะเบียนจะถูกลบออก</value>
+  </data>
+  <data name="UsernameWarning" xml:space="preserve">
+    <value>บัญชีใหม่จะได้รับการตั้งชื่อตามชื่อผู้ใช้ของคุณ  {0}</value>
+  </data>
+  <data name="ChangeIt" xml:space="preserve">
+    <value>ต้องการเปลี่ยนมันหรือไม่</value>
+  </data>
+  <data name="RemoveRegisteredDeviceSuccess" xml:space="preserve">
+    <value>ถอดอุปกรณ์ที่ลงทะเบียนเรียบร้อยแล้ว</value>
+  </data>
+  <data name="RemoveDisableOtpDownline" xml:space="preserve">
+    <value>ไม่สามารถลบผู้ที่ลงทะเบียนอุปกรณ์ไว้แล้วจากการปิดการใช้งานของผู้ใช้</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>ชื่อบัญชี</value>
+  </data>
+  <data name="RegisterMobileApplication" xml:space="preserve">
+    <value>ลงทะเบียน Authenticator Mobile App</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>ยืนยัน</value>
+  </data>
 </root>

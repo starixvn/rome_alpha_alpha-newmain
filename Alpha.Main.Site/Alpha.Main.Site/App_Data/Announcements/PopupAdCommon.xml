@@ -146,13 +146,22 @@
         Thank you
       </p>
     </en-US>
-    <zh-TW src="">
-      Dear valued agents,<br />
+    <zh-CN src="">
+      尊敬的代理们，<br />
       <p>
-        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code. 
+        您的隐私和安全是我们的最高优先。 为了增强我们系统的安全性，一次性密码（OTP）功能将发布于mm / dd / yyyy，一旦启用，OTP将代替您的保安码。
       </p>
       <p>
-        Thank you
+        谢谢
+      </p>
+    </zh-CN>
+    <zh-TW src="">
+      尊敬的代理們，<br />
+      <p>
+        您的隱私和安全是我們的最高優先。為了增強我們系統的安全性，一次性密碼（OTP）功能將發佈於mm / dd / yyyy，一旦啟用，OTP將代替您的保安碼。
+      </p>
+      <p>
+        謝謝
       </p>
     </zh-TW>
 
@@ -177,22 +186,22 @@
     </ko-KR>
 
     <th-TH src="">
-      Dear valued agents,<br />
+      เรียน เอเจนต์<br />
       <p>
-        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code. 
+        ข้อมูลส่วนตัว และความปลอดภัยของท่าน เป็นมีความสำคัญเป็นอย่างสูงสำหรับเรา ระบบ ใส่พาสเวิร์ดครั้งเดียว (OTP) จะถูกนำไปใช้ในวันที่ mm/dd/yyyy เพื่อเป็นการเพิ่มความปลอดภัยในกับระบบของเรา เมื่อมีการเปิดใช้งาน OTP ก็จะเป็นตัวที่ใช้แทน รหัสความปลอดภัยของท่าน
       </p>
       <p>
-        Thank you
+        ขอบพระคุณ
       </p>
     </th-TH>
 
     <vi-VN src="">
-      Dear valued agents,<br />
+      Kính gửi quý khách hàng,<br />
       <p>
-        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code. 
+        Sự an toàn và bảo mật của quý vị là ưu tiên hàng đầu của chúng tôi. Nhằm tăng tính bảo mật cho hệ thống, kể từ ngày dd/mm/yyyy, tính năng One-Time Password (OTP) sẽ được đưa vào hoạt động. Khi được kích hoạt, tính năng OTP sẽ thay thế cho Security Code.
       </p>
       <p>
-        Thank you
+        Trân trọng
       </p>
     </vi-VN>
   </PopupAnnouncement>

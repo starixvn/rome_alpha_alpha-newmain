@@ -40,7 +40,7 @@
                         <img src="@Html.Raw(Model.CustomerOtp.QRCode)" />
                     </div>
                     <div class="username-customize">
-                        <p>@Security.UsernameWarning <strong>@Model.CustomerOtp.OtpUsername</strong>. <span id="btn-change-username" class="btn-change-username">@Security.ChangeIt</span></p>
+                        <p>@Html.Raw(string.Format(Security.UsernameWarning, $"<strong>{Model.CustomerOtp.OtpUsername}</strong>")) <span id="btn-change-username" class="btn-change-username">@Security.ChangeIt</span></p>
                         <div id="username-message"></div>
                         <form class="block username-form" id="username-form" method="get">                            
                             <div class="form-group">

@@ -417,4 +417,10 @@
   <data name="balance" xml:space="preserve">
     <value>Tài Khoản</value>
   </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>đã kích hoạt</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>chưa kích hoạt</value>
+  </data>
 </root>

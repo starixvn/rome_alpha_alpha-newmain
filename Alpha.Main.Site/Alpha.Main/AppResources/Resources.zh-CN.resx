@@ -418,4 +418,10 @@
   <data name="balance" xml:space="preserve">
     <value>余额资料</value>
   </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>禁用</value>
+  </data>
 </root>

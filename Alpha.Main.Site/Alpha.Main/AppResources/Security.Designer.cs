@@ -887,7 +887,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The new account will be named after your username.
+        ///   Looks up a localized string similar to The new account will be named after your username {0}.
         /// </summary>
         public static string UsernameWarning {
             get {

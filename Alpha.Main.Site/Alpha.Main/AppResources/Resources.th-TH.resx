@@ -418,4 +418,10 @@
   <data name="balance" xml:space="preserve">
     <value>ข้อมูลยอดเงินคงเหลือ</value>
   </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>เปิดการใช้งาน</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value> ปิดการใช้งาน</value>
+  </data>
 </root>

@@ -303,4 +303,100 @@ Lưu ý : Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
     <value>Mật khẩu phải gồm 6-10 ký tự, không có khoảng trắng và phải chứa it nhất 1 ký tự viết hoa, 1 ký tự viết thường, 1 ký tự số (ví dụ: 493abcDE, 59D7!4$h).
 Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   </data>
+  <data name="InputOtpBeforeProceeding" xml:space="preserve">
+    <value>Xin nhập mã OTP để tiến hành.</value>
+  </data>
+  <data name="OtpNotes" xml:space="preserve">
+    <value>Mã OTP sẽ được yêu cầu khi quý khách thực hiện các tác động nhạy cảm, hoặc đăng nhập bằng thiết bị/trình duyệt khác so với lần sử dụng trước. Quý khách cần phải đăng ký ứng dụng Authenticator trên di động trước khi kích hoạt tính năng này.</value>
+  </data>
+  <data name="DownloadSophos" xml:space="preserve">
+    <value>Tải Sophos Authenticator về thiết bị.</value>
+  </data>
+  <data name="SophosAuthenticator" xml:space="preserve">
+    <value>Sophos Authenticator</value>
+  </data>
+  <data name="OtherAuthenticators" xml:space="preserve">
+    <value>Các ứng dụng bảo mật 2 lớp khác như Google Authenticator, Microsoft Authenticator, v..v... cũng được hỗ trợ.</value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Tạo tài khoản bằng cách quét mã QR này bằng ứng dụng Sophos</value>
+  </data>
+  <data name="UnableScanQRCode" xml:space="preserve">
+    <value>Không quét được mã QR?</value>
+  </data>
+  <data name="ManualInputOtpKey" xml:space="preserve">
+    <value>Vui lòng điền dãy số dưới đây vào phần "Manual Add" trong ứng dụng Sophos và nhấn Done (iOS) hoặc Add (Android)</value>
+  </data>
+  <data name="Enter6DigitsOtp" xml:space="preserve">
+    <value>Điền mã 6 kí tự được tạo ra bởi Sophos vào ô dưới đây và nhấn Verify để hoàn tất quá trình đăng ký.</value>
+  </data>
+  <data name="ClickToRemoveOtp" xml:space="preserve">
+    <value>Nhấn nút bên dưới để xoá thiết bị của người dùng này và chuyển trạng thái OTP của họ thành Chưa kích hoạt.</value>
+  </data>
+  <data name="RemoveOtp" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="EnableDisableOtp" xml:space="preserve">
+    <value>Kích hoạt/tắt tính năng OTP</value>
+  </data>
+  <data name="EnableOtpViaSophos" xml:space="preserve">
+    <value>Kích hoạt tính năng OTP thông qua ứng dụng Authenticator trên di động</value>
+  </data>
+  <data name="OtpIsInvalidOrExpired" xml:space="preserve">
+    <value>Mã OTP không phù hợp hoặc hết hạn.</value>
+  </data>
+  <data name="AuthenticatorAppVerified" xml:space="preserve">
+    <value>Ứng dụng Authenticator của bạn đã được xác nhận.</value>
+  </data>
+  <data name="RemoveOtpWarning" xml:space="preserve">
+    <value>Hệ thống sẽ không chấp nhận mã OTP được tạo ra bởi thiết bị này nữa. Bạn có muốn tiếp tục?</value>
+  </data>
+  <data name="RemoveOtpSuccessMessage" xml:space="preserve">
+    <value>Xoá thiết bị thành công.</value>
+  </data>
+  <data name="UpdateOtpStatusSuccess" xml:space="preserve">
+    <value>Cập nhật trạng thái OTP thành công.</value>
+  </data>
+  <data name="RemoveOtpForCust" xml:space="preserve">
+    <value>Xoá OTP - {0}</value>
+  </data>
+  <data name="ResetOtpWarning" xml:space="preserve">
+    <value>Nhấn nút bên dưới để xoá thiết bị này khỏi tài khoản của bạn.</value>
+  </data>
+  <data name="OtpValidation" xml:space="preserve">
+    <value>Xác minh mã OTP</value>
+  </data>
+  <data name="ResetDownlineOtpWarning" xml:space="preserve">
+    <value>Bạn có muốn xoá thiết bị của người dùng này?</value>
+  </data>
+  <data name="RegenerateQR" xml:space="preserve">
+    <value>Tạo mới mã QR</value>
+  </data>
+  <data name="UsernameWarning" xml:space="preserve">
+    <value>Tài khoản mới sẽ được đặt tên theo tên đăng nhập của bạn {0}</value>
+  </data>
+  <data name="ChangeIt" xml:space="preserve">
+    <value>Thay đổi?</value>
+  </data>
+  <data name="OtpDatetimeWarning" xml:space="preserve">
+    <value>Thiết lập Date &amp; Time trong thiết bị phải được chuyển sang chế độ "Tự động".</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>Đã lưu!</value>
+  </data>
+  <data name="NoRegisterDeviceError" xml:space="preserve">
+    <value>Người dùng này không có thiết bị nào để xoá.</value>
+  </data>
+  <data name="RemoveRegisteredDeviceSuccess" xml:space="preserve">
+    <value>Xoá thiết bị thành công.</value>
+  </data>
+  <data name="RemoveDisableOtpDownline" xml:space="preserve">
+    <value>Không thể xoá thiết bị của người dùng đang bị vô hiệu hoá.</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>Tên tài khoản</value>
+  </data>
+  <data name="RegisterMobileApplication" xml:space="preserve">
+    <value>Đăng ký ứng dụng Authenticator trên di động</value>
+  </data>
 </root>

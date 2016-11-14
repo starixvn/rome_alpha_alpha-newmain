@@ -380,7 +380,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>Regenerate QR</value>
   </data>
   <data name="UsernameWarning" xml:space="preserve">
-    <value>The new account will be named after your username</value>
+    <value>The new account will be named after your username {0}</value>
   </data>
   <data name="ChangeIt" xml:space="preserve">
     <value>Change it?</value>
