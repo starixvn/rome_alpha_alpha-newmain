@@ -128,7 +128,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ONEbook.OTP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ONEbook.OTP.1.0.0-beta2\lib\net461\ONEbook.OTP.dll</HintPath>
+      <HintPath>..\packages\ONEbook.OTP.1.0.0-beta3\lib\net461\ONEbook.OTP.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OtpSharp, Version=1.3.0.4, Culture=neutral, PublicKeyToken=1ec2a4a54aeffc1e, processorArchitecture=MSIL">
