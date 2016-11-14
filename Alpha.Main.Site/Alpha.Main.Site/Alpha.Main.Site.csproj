@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Alpha.Auth, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.1.0-MenuResponsive-11\lib\net40\Alpha.Auth.dll</HintPath>
+      <HintPath>..\packages\Alpha.Auth.3.0.1.0-MenuResponsive-10\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.SecurityCode, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
@@ -196,7 +196,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ONEbook.OTP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ONEbook.OTP.1.0.0-beta3\lib\net461\ONEbook.OTP.dll</HintPath>
+      <HintPath>..\packages\ONEbook.OTP.1.0.0-beta2\lib\net461\ONEbook.OTP.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ONEbook.UM, Version=2.0.2.7, Culture=neutral, processorArchitecture=MSIL">
@@ -542,9 +542,13 @@
       <DependentUpon>reset-otp.js</DependentUpon>
     </Content>
     <Content Include="Assets\scripts\instruction\enjoyhint.js" />
+    <Content Include="Assets\scripts\tests\libs\bootstrap-datetimepicker.js" />
+    <Content Include="Assets\scripts\tests\libs\datepicker.js" />
     <Content Include="Assets\scripts\tests\libs\jasmine-jquery.js" />
     <Content Include="Assets\scripts\tests\libs\jasmine.js" />
+    <Content Include="Assets\scripts\tests\libs\jquery-blockui.js" />
     <Content Include="Assets\scripts\tests\libs\jquery.js" />
+    <Content Include="Assets\scripts\tests\libs\moment.js" />
     <Content Include="Assets\scripts\tests\libs\tooltip.js" />
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>

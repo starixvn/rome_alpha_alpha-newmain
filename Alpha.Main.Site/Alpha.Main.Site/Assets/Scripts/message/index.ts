@@ -1,4 +1,10 @@
 ﻿class Message {
+    private $: JQueryStatic;
+
+    constructor($: JQueryStatic) {
+        this.$ = $;
+    }
+
     registerEvent = () => {
         this.onClickTab('.public-tab');
         this.onClickTab('.special-tab');
@@ -9,7 +15,7 @@
     }
 
     private onClickTab = (tabName: string) => {
-        let thisTab = $(tabName);
+        let thisTab = this.$(tabName);
 
         thisTab.click(() => {
             const ajaxSetting = {
@@ -17,29 +23,31 @@
                 data: { messageType: thisTab.attr('id') },
                 method: 'GET',
                 success: (responseHtml) => {
-                    setTimeout(() => {
-                        const newDoc = document.open("text/html", "replace");
-                        newDoc.write(responseHtml);
-                        newDoc.close();
-                    }, 100);
+                    setTimeout(this.writeDocument(responseHtml), 100);
                 },
-                error: () => $.unblockUI()
+                error: () => this.$.unblockUI()
             };
 
-            $.blockUI();
-            $.ajax(ajaxSetting);
+            this.$.blockUI();
+            this.$.ajax(ajaxSetting);
         });
     }
 
     private initDateTimePicker = (id: string) => {
-        $(id).datetimepicker({
+        this.$(id).datetimepicker({
             allowInputToggle: true,
             format: 'MM/DD/YYYY'
         });
     }
+
+    private writeDocument = (html: string) => {
+        const newDoc = document.open("text/html", "replace");
+        newDoc.write(html);
+        newDoc.close();
+    }
 }
 
-$(document).ready(() => {
-    const message = new Message();
+$(() => {
+    const message = new Message($);
     message.registerEvent();
 });

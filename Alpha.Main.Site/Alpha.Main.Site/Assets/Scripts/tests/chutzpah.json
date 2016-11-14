@@ -4,8 +4,13 @@
   "References": [
     { "Path": "libs/jquery.js" },
     { "Path": "libs/tooltip.js" },
+    { "Path": "libs/moment.js" },
+    { "Path": "libs/datepicker.js" },
+    { "Path": "libs/jquery-blockui.js" },
+    { "Path": "libs/bootstrap-datetimepicker.js" },
     { "Path": "libs/jasmine.js" },
     { "Path": "libs/jasmine-jquery.js" },
+
     { "Path": "../core.js" },
     { "Path": "../dashboard/dashboard.js" },
     { "Path": "../dashboard/statistics.js" },
@@ -13,6 +18,7 @@
     { "Path": "../message/index.js" }
   ],
   "Tests": [
-    { "Path": "app/dashboard" }
+    { "Path": "app/dashboard" },
+    { "Path": "app/message" }
   ]
 }
