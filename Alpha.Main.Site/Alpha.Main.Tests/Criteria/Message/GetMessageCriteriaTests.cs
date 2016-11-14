@@ -74,6 +74,7 @@
             var endDate = DateTime.Today;
             var isTest = false;
 
+            // Act
             var criteria = new GetMessageCriteria(
                 custId,
                 parentSites,
@@ -84,7 +85,7 @@
                 isTest,
                 MessageType.Private);
 
-            // Act & Assert
+            // Assert
             Assert.IsTrue(custId == criteria.CustId &&
                           parentSites == criteria.ParentSites &&
                           specialType == criteria.Special &&
