@@ -2,7 +2,7 @@
 
 declare var EnjoyHint: any;
 
-interface IStep {
+interface Step {
     permission?: any;
     nextButton?: any;
     skipButton?: any;
@@ -24,13 +24,12 @@ interface IStep {
     addLeftOffset?: number;
 }
 
-var instruction = {
-    enjoyHint: null,
-    readIntroductionKey: 'Instruction',
-    isCookieLess: (<HTMLInputElement>document.getElementById('IsCookieLess')).value === "1",
-    mobileIntroduction: null,
-
-    domElements: {
+class Instruction {
+    protected $: JQueryStatic;
+    private enjoyHint;
+    private readIntroductionKey: string = 'Instruction';
+    private isCookieLess: boolean = (<HTMLInputElement>document.getElementById('IsCookieLess')).value === "1";
+    private domElements = {
         beginModal: null,
         startIntroductionBtn: null,
         notNowIntroductionBtn: null,
@@ -38,9 +37,8 @@ var instruction = {
         replayInstruction: null,
         modalInstructionBody: null,
         oldViewLink: null
-    },
-
-    resources: {
+    };
+    private resources = {
         HomeIconIntroduction: (<HTMLInputElement>document.getElementById('HomeIconIntroduction')).value,
         TransferAndViewLogIntroduction: (<HTMLInputElement>document.getElementById('TransferAndViewLogIntroduction')).value,
         QuickMenuIntroduction: (<HTMLInputElement>document.getElementById('QuickMenuIntroduction')).value,
@@ -63,55 +61,56 @@ var instruction = {
         ShowMainMenu: (<HTMLInputElement>document.getElementById('ShowMainMenu')).value,
         ReplayInstruction: (<HTMLInputElement>document.getElementById('ReplayInstruction')).value,
         TakeTourInstruction: (<HTMLInputElement>document.getElementById('TakeTourInstruction')).value
-    },
+    };
 
-    init: () => {
+    constructor($: JQueryStatic) {
+        this.$ = $;
+    }
+
+    init = () => {
         if (!alpha.isScreenLower768) {
-            const isReadIntroduction = alpha.localStorage.get(instruction.readIntroductionKey);
-
-            instruction.cacheDOMElements();
-            instruction.registerEvents();
+            const isReadIntroduction = alpha.localStorage.get(this.readIntroductionKey);
 
             if (isReadIntroduction) {
                 return;
             }
 
-            if (!instruction.isCookieLess && !isReadIntroduction) {
-                instruction.domElements.beginModal.modal('show');
-                $('.modal-backdrop').css('z-index', 1051);
+            this.cacheDOMElements();
+            this.registerEvents();
 
-                instruction.showDelayFirstIntroduction();
+            if (!this.isCookieLess && !isReadIntroduction) {
+                this.domElements.beginModal.modal('show');
+                this.$('.modal-backdrop').css('z-index', 1051);
+
+                this.showDelayFirstIntroduction();
             }
         }
         else if (alpha.isScreenLower768) {
-            instruction.mobileIntroduction = new Instruction.Mobile($);
-
-            if (!instruction.mobileIntroduction.readIntroduction()) {
-                instruction.mobileIntroduction.showIntroduction();
-            }
+            const mobile = new InstructionMobile(this.$);
+            mobile.init();
         }
-    },
+    }
 
-    cacheDOMElements: function () {
-        instruction.domElements.beginModal = $('#beginModal');
-        instruction.domElements.startIntroductionBtn = $('#start-introduction-btn');
-        instruction.domElements.markInner = $("#mask-inner");
-        instruction.domElements.replayInstruction = $('#replay-instruction');
-        instruction.domElements.notNowIntroductionBtn = $("#not-now-introduction-btn");
-        instruction.domElements.modalInstructionBody = $('#instruction-modal-body');
-        instruction.domElements.oldViewLink = $('#old-view-link a');
-    },
+    cacheDOMElements = () => {
+        this.domElements.beginModal = this.$('#beginModal');
+        this.domElements.startIntroductionBtn = this.$('#start-introduction-btn');
+        this.domElements.markInner = this.$("#mask-inner");
+        this.domElements.replayInstruction = this.$('#replay-instruction');
+        this.domElements.notNowIntroductionBtn = this.$("#not-now-introduction-btn");
+        this.domElements.modalInstructionBody = this.$('#instruction-modal-body');
+        this.domElements.oldViewLink = this.$('#old-view-link a');
+    }
 
-    showDelayFirstIntroduction: function () {
-        var $p = instruction.domElements.markInner.find("p");
-        var words = $p.text().split(" ");
-        var delay = 100;
-        var $tempEl = $("<div>");
+    showDelayFirstIntroduction = () => {
+        let $p = this.domElements.markInner.find("p");
+        let words = $p.text().split(" ");
+        let delay = 100;
+        let $tempEl = this.$("<div>");
 
         $p.empty().show();
 
-        $.each(words, function (i, word) {
-            var $span = $("<span>").text(word + " ");
+        this.$.each(words, (i, word) => {
+            let $span = this.$("<span>").text(word + " ");
             $span.css({
                 "transition-delay": i * delay + "ms"
             });
@@ -120,59 +119,61 @@ var instruction = {
 
         $p.html($tempEl.html());
 
-        setTimeout(function () {
-            instruction.domElements.markInner.addClass("in");
-            setTimeout(function () {
+        setTimeout(() => {
+            this.domElements.markInner.addClass("in");
+            setTimeout(() => {
                 $p.addClass("in");
             }, 250);
         }, 250);
-    },
+    }
 
-    registerEvents: function () {
-        instruction.domElements.startIntroductionBtn
+    registerEvents = () => {
+        this.domElements.startIntroductionBtn
             .off('click.introduction')
-            .on('click.introduction', function () {
-                instruction.domElements.beginModal.modal('hide');
-                instruction.setReadIntroduction();
-                instruction.showMainSteps();
+            .on('click.introduction', () => {
+                this.domElements.beginModal.modal('hide');
+                this.setReadIntroduction();
+                this.showMainSteps();
             });
 
-        instruction.domElements.notNowIntroductionBtn
+        this.domElements.notNowIntroductionBtn
             .off('click.introduction')
-            .on('click.introduction', function () {
-                instruction.domElements.beginModal.modal('hide');
-                instruction.setReadIntroduction();
-                instruction.showNotNowSteps();
+            .on('click.introduction', () => {
+                this.domElements.beginModal.modal('hide');
+                this.setReadIntroduction();
+                this.showNotNowSteps();
             });
 
-        $(document)
+        this.$(document)
             .off('click.replay-introduction', '.replay-introduction')
-            .on('click.replay-introduction', '.replay-introduction', instruction.showMainSteps);
+            .on('click.replay-introduction', '.replay-introduction', this.showMainSteps);
 
-        instruction.domElements.replayInstruction
+        this.domElements.replayInstruction
             .off('click.replay-introduction')
-            .on('click.replay-introduction', instruction.showMainSteps);
-    },
+            .on('click.replay-introduction', this.showMainSteps);
+    }
 
-    showNotNowSteps: function () {
-        instruction.enjoyHint = new EnjoyHint({});
-        instruction.enjoyHint.set([{
-            "next #replay-instruction": '<p>' + instruction.resources.TakeTourInstruction + '</p>',
-            nextButton: { className: "myNext", text: instruction.resources.GotIt },
+    showNotNowSteps = () => {
+        let enjoyHint = new EnjoyHint({});
+
+        enjoyHint.set([{
+            "next #replay-instruction": '<p>' + this.resources.TakeTourInstruction + '</p>',
+            nextButton: { className: "myNext", text: this.resources.GotIt },
             showSkip: false,
             shape: 'circle',
             radius: 20
         }]);
-        instruction.enjoyHint.run();
-    },
 
-    showMainSteps: function () {
-        var isSiteBarCollapsed = menuBar.isSideBarCollapsed();
-        var fullSteps: Array<IStep> = [
+        enjoyHint.run();
+    }
+
+    showMainSteps = () => {
+        let isSiteBarCollapsed = menuBar.isSideBarCollapsed();
+        let fullSteps: Array<Step> = [
             {
-                "next #main-menu-items": '<p class="title">' + instruction.resources.MainMenu + '</p>' +
-                '<p>' + instruction.resources.MainMenuIntroduction + '</p>',
-                onBeforeStart: function () {
+                "next #main-menu-items": '<p class="title">' + this.resources.MainMenu + '</p>' +
+                '<p>' + this.resources.MainMenuIntroduction + '</p>',
+                onBeforeStart: () => {
                     briefProfile.hideAllTooltips();
                     if (isSiteBarCollapsed) {
                         menuBar.domElements.hamburgerIcon.trigger('click');
@@ -183,52 +184,52 @@ var instruction = {
                 arrowPointer: alpha.isScreenGreater1024 || window.innerHeight > window.innerWidth ? null : ['left', 'right', 'bottom']
             },
             {
-                "next #menu-TRANSFER": '<p>' + instruction.resources.TransferMenuIntroduction + '</p>',
+                "next #menu-TRANSFER": '<p>' + this.resources.TransferMenuIntroduction + '</p>',
                 permission: '[C]'
             },
             {
-                "next #menu-VIEWLOG": '<p>' + instruction.resources.ViewLogMenuIntroduction + '</p>',
+                "next #menu-VIEWLOG": '<p>' + this.resources.ViewLogMenuIntroduction + '</p>',
                 permission: '[G]'
             },
             {
-                "click #hamburger-icon": '<p class="title">' + instruction.resources.CollapseExpandIcon + '</p>' +
-                '<p class="blinker">' + instruction.resources.CollapseExpandIconIntroduction + '</p>',
+                "click #hamburger-icon": '<p class="title">' + this.resources.CollapseExpandIcon + '</p>' +
+                '<p class="blinker">' + this.resources.CollapseExpandIconIntroduction + '</p>',
                 shape: 'circle',
                 radius: 25,
                 showSkip: false
             },
             {
-                'next #home-icon': '<p>' + instruction.resources.HomeIconIntroduction + '</p>',
+                'next #home-icon': '<p>' + this.resources.HomeIconIntroduction + '</p>',
                 shape: 'circle',
                 radius: 20
             },
             {
-                "next #btn-header-menu": '<p class="title">' + instruction.resources.QuickMenu + '</p>' +
-                '<p>' + instruction.resources.QuickMenuIntroduction + '</p>' +
-                '<p><img class="quick-menu-introduction-image" src="Assets/styles/introduction/images/' + alpha.user.level + '.png" /></p>',
+                "next #btn-header-menu": '<p class="title">' + this.resources.QuickMenu + '</p>' +
+                '<p>' + this.resources.QuickMenuIntroduction + '</p>' +
+                '<p><img class="quick-menu-introduction-image" src="Assets/styles/instruction/images/' + alpha.user.level + '.png" /></p>',
                 shape: 'circle',
                 radius: 20,
                 moveUp: 60
             },
             {
-                "next #old-view-link": '<p class="title">' + instruction.resources.SwitchView + '</p>' +
-                '<p>' + instruction.resources.BackOldViewIntroduction + '</p>' +
-                '<p>' + instruction.resources.WarningOldVersionDeadline + ' 10/20/2016.</p>',
-                onBeforeStart: function () {
-                    instruction.domElements.oldViewLink.data('old-link', instruction.domElements.oldViewLink.attr('href'));
-                    instruction.domElements.oldViewLink.attr('href', '#');
+                "next #old-view-link": '<p class="title">' + this.resources.SwitchView + '</p>' +
+                '<p>' + this.resources.BackOldViewIntroduction + '</p>' +
+                '<p>' + this.resources.WarningOldVersionDeadline + ' 10/20/2016.</p>',
+                onBeforeStart: () => {
+                    this.domElements.oldViewLink.data('old-link', this.domElements.oldViewLink.attr('href'));
+                    this.domElements.oldViewLink.attr('href', '#');
                 },
                 addLeftOffset: 70,
                 isOldViewLink: true
             },
             {
-                "next #replay-instruction": '<p class="title">' + instruction.resources.Replay + '?</p>' +
-                '<p>' + instruction.resources.ReplayInstruction + '</p>',
-                nextButton: { className: "myNext", text: instruction.resources.GotIt },
+                "next #replay-instruction": '<p class="title">' + this.resources.Replay + '?</p>' +
+                '<p>' + this.resources.ReplayInstruction + '</p>',
+                nextButton: { className: "myNext", text: this.resources.GotIt },
                 showSkip: false,
                 shape: 'circle',
                 radius: 20,
-                onBeforeStart: instruction.setOldViewLink
+                onBeforeStart: this.setOldViewLink
             }
         ];
 
@@ -241,20 +242,20 @@ var instruction = {
         //[H]: Member Information
         //[G]: View Log
         var introductionSteps = [];
-        $.each(fullSteps, function (index, step) {
+        this.$.each(fullSteps, (index, step) => {
             if (typeof (step.permission) === undefined
                 || step.permission == null
                 || alpha.user.subPageAccess.indexOf(step.permission) > -1) {
                 if (!step.nextButton) {
-                    step.nextButton = { text: instruction.resources.Next }
+                    step.nextButton = { text: this.resources.Next }
                 }
 
                 if (!step.skipButton) {
-                    step.skipButton = { text: instruction.resources.Skip }
+                    step.skipButton = { text: this.resources.Skip }
                 }
 
                 if (step.isOldViewLink
-                    && $('#old-view-link').length === 0) {
+                    && this.$('#old-view-link').length === 0) {
                     return;
                 }
 
@@ -262,26 +263,28 @@ var instruction = {
             }
         });
 
-        instruction.enjoyHint = new EnjoyHint({
-            onSkip: instruction.setOldViewLink
+        let enjoyHint = new EnjoyHint({
+            onSkip: this.setOldViewLink
         });
-        instruction.enjoyHint.set(introductionSteps);
-        instruction.enjoyHint.run();
-    },
 
-    setOldViewLink: function () {
-        if (instruction.domElements.oldViewLink.data('old-link')
-            && instruction.domElements.oldViewLink.data('old-link') !== ""
-            && instruction.domElements.oldViewLink.attr('href') === "#") {
-            instruction.domElements.oldViewLink.attr('href', instruction.domElements.oldViewLink.data('old-link'));
-        }
-    },
-
-    setReadIntroduction: function () {
-        alpha.localStorage.set(instruction.readIntroductionKey, true);
+        enjoyHint.set(introductionSteps);
+        enjoyHint.run();
     }
-};
+
+    setOldViewLink = () => {
+        if (this.domElements.oldViewLink.data('old-link')
+            && this.domElements.oldViewLink.data('old-link') !== ""
+            && this.domElements.oldViewLink.attr('href') === "#") {
+            this.domElements.oldViewLink.attr('href', this.domElements.oldViewLink.data('old-link'));
+        }
+    }
+
+    setReadIntroduction = () => {
+        alpha.localStorage.set(this.readIntroductionKey, true);
+    }
+}
 
 $(() => {
+    const instruction = new Instruction($);
     instruction.init();
 });

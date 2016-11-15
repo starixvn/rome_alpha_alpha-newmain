@@ -1,48 +1,56 @@
-﻿module Instruction {
-    export class Mobile {
-        private mobileBlockUI: JQuery;
-        private mobileIntroModal: JQuery;
-        private mobileCloseIntroBtn: JQuery;
-        private $: JQueryStatic;
-        static mobileInstructionKey: string = 'MobileInstruction';
+﻿class InstructionMobile {
+    private mobileBlockUI: JQuery;
+    private mobileIntroModal: JQuery;
+    private mobileCloseIntroBtn: JQuery;
+    private $: JQueryStatic;
+    private mobileInstructionKey: string = 'MobileInstruction';
 
-        constructor($: JQueryStatic) {
-            this.$ = $;
-            this.mobileBlockUI = $('.blockUI-mobile');
-            this.mobileIntroModal = $('#instruction-mobile');
-            this.mobileCloseIntroBtn = $('#instruction-mobile').find('.button-close');
+    constructor($: JQueryStatic) {
+        this.$ = $;
+    }
 
+    init = () => {
+        if (!this.readInstruction()) {
+            this.cacheDom();
             this.registerEvent();
+            this.showInstruction();
         }
+    }
 
-        showIntroduction = () => {
-            this.mobileBlockUI.show();
-            this.mobileIntroModal.show();
-        }
+    showInstruction = () => {
+        this.mobileBlockUI.show();
+        this.mobileIntroModal.show();
+    }
 
-        hideIntroduction = () => {
-            this.setReadIntroduction();
+    hideInstruction = () => {
+        if (this.mobileBlockUI.is(':visible') || this.mobileIntroModal.is(':visible')) {
+            this.setReadInstruction();
             this.mobileBlockUI.hide();
-            this.mobileIntroModal.hide();
+            this.mobileIntroModal.hide(0, headerMessage.init);
         }
+    }
 
-        readIntroduction = (): boolean => {
-            return alpha.localStorage.get(Mobile.mobileInstructionKey);
-        }
+    readInstruction = (): boolean => {
+        return alpha.localStorage.get(this.mobileInstructionKey);
+    }
 
-        private registerEvent = () => {
-            this.mobileCloseIntroBtn.click(() => {
-                this.hideIntroduction();
-                headerMessage.init();
-            });
+    setReadInstruction = () => {
+        alpha.localStorage.set(this.mobileInstructionKey, true);
+    }
 
-            this.$('.header-nav, .header-nav .icon-collapse').click(() => {
-                this.hideIntroduction();
-            });
-        }
+    private cacheDom = () => {
+        this.mobileBlockUI = this.$('.blockUI-mobile');
+        this.mobileIntroModal = this.$('#instruction-mobile');
+        this.mobileCloseIntroBtn = this.$('#instruction-mobile').find('.button-close');
+    }
 
-        private setReadIntroduction = () => {
-            alpha.localStorage.set(Mobile.mobileInstructionKey, true);
-        }
+    private registerEvent = () => {
+        this.mobileCloseIntroBtn.click(() => {
+            this.hideInstruction();
+        });
+
+        this.$('.header-nav, .header-nav .icon-collapse').click(() => {
+            this.hideInstruction();
+        });
     }
 }

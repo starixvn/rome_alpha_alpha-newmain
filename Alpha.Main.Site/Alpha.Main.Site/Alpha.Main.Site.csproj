@@ -549,6 +549,7 @@
     <Content Include="Assets\scripts\tests\libs\jquery-blockui.js" />
     <Content Include="Assets\scripts\tests\libs\jquery.js" />
     <Content Include="Assets\scripts\tests\libs\moment.js" />
+    <Content Include="Assets\scripts\tests\libs\store.js" />
     <Content Include="Assets\scripts\tests\libs\tooltip.js" />
     <Content Include="Assets\styles\home\home.css">
       <DependentUpon>home.scss</DependentUpon>
@@ -900,6 +901,7 @@
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\statistics-tests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\tests\app\instruction\instruction-mobile-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\message\message-tests.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
