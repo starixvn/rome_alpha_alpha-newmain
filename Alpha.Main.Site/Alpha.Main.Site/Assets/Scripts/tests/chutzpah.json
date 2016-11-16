@@ -16,6 +16,7 @@
     { "Path": "libs/jasmine-jquery.js" },
 
     { "Path": "../core.ts" },
+    { "Path": "../home/header-msg.ts" },
     { "Path": "../dashboard/dashboard.ts" },
     { "Path": "../dashboard/statistics.ts" },
     { "Path": "../dashboard/notice.ts" },
