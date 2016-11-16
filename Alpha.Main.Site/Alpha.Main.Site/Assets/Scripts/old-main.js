@@ -276,7 +276,7 @@ var AgeWnd = function () {
                 
             });
 
-            popUp.tinyDraggable();
+            popUp.tinyDraggable({ exclude: "a.icon-information-outline.icon-info, button.icon.icon-close.close" });
 
             currentAgeWnd.popUp.push(popUp);
         },
