@@ -71,7 +71,7 @@ var indexManager = {
                             alert(errMsg);
                             alpha.core.signOut();
                         } else {
-                            alert('Could not contact the server. Please check your network connection.');
+                            alert('Oops... you are here because of a system error, please notify the administrators.');
                         }
                     }
                 }
@@ -79,7 +79,7 @@ var indexManager = {
                     if (typeof (result) === "string"
                         && result.indexOf("Oops... you are here because of a system error") > 0) {
                         alpha.core.signOut();
-                        alert('Could not contact the server. Please check your network connection.');
+                        alert('Oops... you are here because of a system error, please notify the administrators.');
                     }
                 }
             },
@@ -87,7 +87,7 @@ var indexManager = {
                 // If internal server error
                 if (xhr.status === 500) {
                     alpha.core.signOut();
-                    alert('Could not contact the server. Please check your network connection.');
+                    alert('Oops... you are here because of a system error, please notify the administrators.');
                 }
             },
             complete: () => {
