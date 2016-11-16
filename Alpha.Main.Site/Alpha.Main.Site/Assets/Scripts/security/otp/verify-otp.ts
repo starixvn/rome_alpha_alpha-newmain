@@ -6,6 +6,7 @@ class VerifyOtp {
     $txtOtp: any;
     $btnSubmit: any;
     $otpMessage: any;
+    closedAccountCode: number = 200;
 
     resources = {
         requiredFieldMessage: (<HTMLInputElement>document.getElementById('requiredFieldMessage')).value
@@ -68,6 +69,10 @@ class VerifyOtp {
         else {
             alpha.showMessage(this.$otpMessage, result);
             this.$txtOtp.focus();
+
+            if (result.code === this.closedAccountCode) {
+                alpha.core.signOut();
+            }
         }
     }
 
