@@ -222,7 +222,7 @@
 
             return new ResetOtpViewModel
             {
-                CustId = message.CustId,
+                CustId = message.SubAccountId > 0 ? userSession.CustId : message.CustId,
                 SubAccountId = message.SubAccountId,
                 Username = message.Username
             };
