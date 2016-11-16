@@ -115,10 +115,10 @@
                 e.stopPropagation();
             }
         });
-        menuBar.registerMouseHoverForDestopBrowsers();
+        menuBar.registerMouseHoverForDesktopBrowsers();
     },
 
-    registerMouseHoverForDestopBrowsers: function () {
+    registerMouseHoverForDesktopBrowsers: function () {
         if (!alpha.isMobile) {
             menuBar.domElements.sideBar
                 .off('mouseenter.menubar')

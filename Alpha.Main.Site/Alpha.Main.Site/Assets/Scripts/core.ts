@@ -75,6 +75,10 @@ var alpha = {
             return (userAgent.indexOf('msie') != -1)
                 ? (parseInt(userAgent.split('msie')[1]) < 9)
                 : false;
+        },
+
+        IsAndroid: () => {
+            return /Android/i.test(navigator.userAgent);
         }
     },
     isScreenGreater1024: false,
