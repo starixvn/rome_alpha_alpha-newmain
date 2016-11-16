@@ -48,7 +48,7 @@
             MessageType = messageType;
             SpecialType = SpecialTypes[messageType];
             StartDate = MessageType == Constants.MessageType.Special ? MinDateTime : startDate;
-            EndDate = endDate;
+            EndDate = endDate.AddDays(1).AddTicks(-1);
             IsTest = isTest;
             TotalMessage = totalMessage;
             CurrentLang = userSession.Language;
