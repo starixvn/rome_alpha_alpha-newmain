@@ -6,7 +6,7 @@
 
         init = () => {
             this.showMoveBetsMessagePopUp();
-            setInterval(this.showMoveBetsMessagePopUp, 10000);
+            setInterval(this.showMoveBetsMessagePopUp, 60000);
         }
 
         showMoveBetsMessagePopUp = () => {

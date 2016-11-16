@@ -8,7 +8,7 @@
 
         init = () => {
             this.showRedCircleInIconAnnouncement(false);
-            this.loadAnnouncementPeriodically(5000);
+            this.loadAnnouncementPeriodically(60000);
         }
 
         bindEvents = () => {
