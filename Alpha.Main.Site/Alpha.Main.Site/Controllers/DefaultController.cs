@@ -42,23 +42,23 @@ namespace Alpha.Main.Site.Controllers
                 return View(UnSupportedBrowsers, browser);
             }
 
-            if (!this.userSession.IsLogged
-                || this.userSession.IsPasswordExpired)
+            if (!userSession.IsLogged
+                || userSession.IsPasswordExpired)
             {
                 return Redirect(ForceChangePasswordPath);
             }
 
-            if (this.mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
+            if (mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
             {
                 return Redirect(OtpVerifyDifferenceDevicePath);
             }
 
-            if (this.securityCodeChecker.IsForcedChangeSecurityCode())
+            if (securityCodeChecker.IsForcedChangeSecurityCode())
             {
                 return Redirect(SecurityCodePath);
             }
 
-            var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode());
+            var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), Request.UserAgent);
 
             var viewModel = mediator.Send(query);
 

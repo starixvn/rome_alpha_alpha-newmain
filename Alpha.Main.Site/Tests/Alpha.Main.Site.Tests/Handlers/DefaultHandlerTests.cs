@@ -57,7 +57,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             // Arrange
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false);
+            var query = new IndexQuery(userSession, false, string.Empty);
 
             // Act
             var viewModel = defaultHandler.Handle(query);
@@ -74,7 +74,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             userSession.IsPasswordExpired.Returns(true);
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false);
+            var query = new IndexQuery(userSession, false, string.Empty);
 
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));

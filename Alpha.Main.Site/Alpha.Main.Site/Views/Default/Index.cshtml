@@ -1,14 +1,20 @@
-﻿@{
+﻿@model IndexViewModel
+@{
     Layout = null;
+    var initialScale = 0.7;
+
+    if (Model.IsAndroidDevice)
+    {
+        initialScale = 0.4;
+    }
 }
-@model IndexViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home</title>
-    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=@initialScale, user-scalable=yes">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
@@ -46,7 +52,8 @@
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
     <!--[if (gt IE 8)|!(IE)]><!-->
-    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-instruction"))" type="text/javascript"></script><!--<![endif]-->
+    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-instruction"))" type="text/javascript"></script>
+    <!--<![endif]-->
     @Html.Partial("Piwik")
 </body>
 </html>

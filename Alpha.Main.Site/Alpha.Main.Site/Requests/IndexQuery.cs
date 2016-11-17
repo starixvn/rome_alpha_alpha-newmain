@@ -3,7 +3,6 @@
 namespace Alpha.Main.Site.Models.Requests
 {
     using MediatR;
-    using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
@@ -12,10 +11,13 @@ namespace Alpha.Main.Site.Models.Requests
         private readonly bool isEnableSecurityCode;
         private readonly IUserSession userSession;
 
-        public IndexQuery(IUserSession userSession, bool isEnableSecurityCode)
+        public IndexQuery(IUserSession userSession,
+            bool isEnableSecurityCode,
+            string userAgent)
         {
             this.userSession = userSession;
             this.isEnableSecurityCode = isEnableSecurityCode;
+            UserAgent = userAgent;
         }
 
         public int CustId => userSession.CustId;
@@ -41,5 +43,7 @@ namespace Alpha.Main.Site.Models.Requests
                     this.isEnableSecurityCode;
 
         public bool IsViewedMemberInfo => userSession.SubPageAccess.ViewMemberInfo;
+
+        public string UserAgent { get; }
     }
 }

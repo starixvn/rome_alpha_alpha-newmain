@@ -70,5 +70,7 @@
         public HeaderNavViewModel HeaderNavViewModel => new HeaderNavViewModel(CustId, EnableSecurityCode, message.IsViewedMemberInfo);
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
+
+        public bool IsAndroidDevice => message.UserAgent.Contains("Android");
     }
 }

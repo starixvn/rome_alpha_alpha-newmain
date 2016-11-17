@@ -32,7 +32,6 @@ var indexManager = {
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
         indexManager.setTouchActionStyleToAllHtml();
-        indexManager.removeViewPortInAndroid();
     },
 
     registerEvents: function () {
@@ -182,12 +181,6 @@ var indexManager = {
             $('iframe').contents().find('html').css('touch-action', 'manipulation');
         });
     },
-
-    removeViewPortInAndroid: () => {
-        if (alpha.core.IsAndroid()) {
-            document.getElementById('viewport').setAttribute('content', '');
-        }
-    }
 };
 
 $(function () {
