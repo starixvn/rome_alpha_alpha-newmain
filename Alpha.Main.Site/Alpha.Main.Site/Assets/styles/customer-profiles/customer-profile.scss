@@ -13,6 +13,9 @@
 .adminAndSubAcc, .otp  {
     font-size: 12px;
     margin-top: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .otp, .otp:hover, .otp:focus {

@@ -293,6 +293,7 @@
                 CustId = 1,
                 SubAccountId = 2
             };
+            userSession.CustId.Returns(1);
 
             // Act
             var viewModel = customerOtpHandler.Handle(query);

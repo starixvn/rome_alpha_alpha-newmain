@@ -20,7 +20,7 @@
 
         @if (Model.LoginUserIsNotMainAccount)
         {
-            <div class="adminAndSubAcc">@Html.Raw(Model.NickName)</div>
+            <div class="adminAndSubAcc" title="@(Model.NickName)">@Model.NickName</div>
         }
         else
         {
