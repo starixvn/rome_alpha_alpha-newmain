@@ -11,7 +11,8 @@ namespace Alpha.Main.Site.Models.Requests
         private readonly bool isEnableSecurityCode;
         private readonly IUserSession userSession;
 
-        public IndexQuery(IUserSession userSession,
+        public IndexQuery(
+            IUserSession userSession,
             bool isEnableSecurityCode,
             string userAgent)
         {

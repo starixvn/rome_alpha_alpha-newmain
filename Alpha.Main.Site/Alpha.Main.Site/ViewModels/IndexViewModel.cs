@@ -71,6 +71,6 @@
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 
-        public bool IsAndroidDevice => message.UserAgent.Contains("Android");
+        public double InitialScaleViewPort => message.UserAgent.Contains("Android") ? 0.4 : 0.7;
     }
 }

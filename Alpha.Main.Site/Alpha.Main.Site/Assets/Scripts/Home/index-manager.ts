@@ -130,9 +130,7 @@ var indexManager = {
                 .on('load.newmain', function () {
                     var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
                     indexManager.closeAllOpenDropdowns(iframeWindow);
-
                     indexManager.cacheCurrentUrl();
-
                     $(iframeWindow.document)
                         .off('click.closeMenu touchstart.closemenu')
                         .on('click.closeMenu touchstart.closemenu',
@@ -162,7 +160,7 @@ var indexManager = {
 
         $('#btn-header-menu').click(closeDropdownSubMenu);
 
-        $(iframeWindow.document).click(() => {
+        $(iframeWindow.document).on('click touchend', () => {
             $('.dropdown-toggle').each((index, dropdown) => {
                 var $dropdown = $(dropdown);
 

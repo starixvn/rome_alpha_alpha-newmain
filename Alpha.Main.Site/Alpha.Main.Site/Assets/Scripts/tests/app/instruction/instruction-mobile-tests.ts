@@ -136,20 +136,4 @@
             expect(setKey).toHaveBeenCalledWith('MobileInstruction', true);
         });
     });
-
-    describe('cacheDom()', () => {
-        it('Always -> Set DOM', () => {
-            // Arrange
-            const mobileBlockUISpy = spyOn(instructionMobile, 'mobileBlockUI');
-            const mobileIntroModalSpy = spyOn(instructionMobile, 'mobileIntroModal');
-            const mobileCloseIntroBtnSpy = spyOn(instructionMobile, 'mobileCloseIntroBtn');
-
-            // Act
-            cacheDom.and.callThrough();
-            cacheDom.call(this);
-
-            // Arrange
-            expect(mobileBlockUISpy).toBe($('.blockUI-mobile'))
-        });
-    });
 });

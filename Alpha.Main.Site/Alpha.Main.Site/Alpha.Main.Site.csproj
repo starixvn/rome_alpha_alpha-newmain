@@ -543,6 +543,7 @@
     </Content>
     <Content Include="Assets\scripts\instruction\enjoyhint.js" />
     <Content Include="Assets\scripts\tests\libs\bootstrap-datetimepicker.js" />
+    <Content Include="Assets\scripts\tests\libs\bootstrap-modal.js" />
     <Content Include="Assets\scripts\tests\libs\datepicker.js" />
     <Content Include="Assets\scripts\tests\libs\jasmine-jquery.js" />
     <Content Include="Assets\scripts\tests\libs\jasmine.js" />

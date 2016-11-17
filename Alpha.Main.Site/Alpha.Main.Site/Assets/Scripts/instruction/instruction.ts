@@ -26,9 +26,8 @@ interface Step {
 
 class Instruction {
     protected $: JQueryStatic;
+    protected readIntroductionKey: string = 'Instruction';
     private enjoyHint;
-    private readIntroductionKey: string = 'Instruction';
-    private isCookieLess: boolean = (<HTMLInputElement>document.getElementById('IsCookieLess')).value === "1";
     private domElements = {
         beginModal: null,
         startIntroductionBtn: null,
@@ -39,28 +38,28 @@ class Instruction {
         oldViewLink: null
     };
     private resources = {
-        HomeIconIntroduction: (<HTMLInputElement>document.getElementById('HomeIconIntroduction')).value,
-        TransferAndViewLogIntroduction: (<HTMLInputElement>document.getElementById('TransferAndViewLogIntroduction')).value,
-        QuickMenuIntroduction: (<HTMLInputElement>document.getElementById('QuickMenuIntroduction')).value,
-        QuickMenu: (<HTMLInputElement>document.getElementById('QuickMenu')).value,
-        SwitchView: (<HTMLInputElement>document.getElementById('SwitchView')).value,
-        BackOldViewIntroduction: (<HTMLInputElement>document.getElementById('BackOldViewIntroduction')).value,
-        WarningOldVersionDeadline: (<HTMLInputElement>document.getElementById('WarningOldVersionDeadline')).value,
-        MainMenuIntroduction: (<HTMLInputElement>document.getElementById('MainMenuIntroduction')).value,
-        ReportMenuIntroduction: (<HTMLInputElement>document.getElementById('ReportMenuIntroduction')).value,
-        WinLossAnalysisChartIntroduction: (<HTMLInputElement>document.getElementById('WinLossAnalysisChartIntroduction')).value,
-        CollapseExpandIcon: (<HTMLInputElement>document.getElementById('CollapseExpandIcon')).value,
-        CollapseExpandIconIntroduction: (<HTMLInputElement>document.getElementById('CollapseExpandIconIntroduction')).value,
-        MainMenu: (<HTMLInputElement>document.getElementById('MainMenu')).value,
-        TransferMenuIntroduction: (<HTMLInputElement>document.getElementById('TransferMenuIntroduction')).value,
-        ViewLogMenuIntroduction: (<HTMLInputElement>document.getElementById('ViewLogMenuIntroduction')).value,
-        Skip: (<HTMLInputElement>document.getElementById('Skip')).value,
-        Next: (<HTMLInputElement>document.getElementById('Next')).value,
-        Replay: (<HTMLInputElement>document.getElementById('Replay')).value,
-        GotIt: (<HTMLInputElement>document.getElementById('GotIt')).value,
-        ShowMainMenu: (<HTMLInputElement>document.getElementById('ShowMainMenu')).value,
-        ReplayInstruction: (<HTMLInputElement>document.getElementById('ReplayInstruction')).value,
-        TakeTourInstruction: (<HTMLInputElement>document.getElementById('TakeTourInstruction')).value
+        HomeIconIntroduction: null,
+        TransferAndViewLogIntroduction: null,
+        QuickMenuIntroduction: null,
+        QuickMenu: null,
+        SwitchView: null,
+        BackOldViewIntroduction: null,
+        WarningOldVersionDeadline: null,
+        MainMenuIntroduction: null,
+        ReportMenuIntroduction: null,
+        WinLossAnalysisChartIntroduction: null,
+        CollapseExpandIcon: null,
+        CollapseExpandIconIntroduction: null,
+        MainMenu: null,
+        TransferMenuIntroduction: null,
+        ViewLogMenuIntroduction: null,
+        Skip: null,
+        Next: null,
+        Replay: null,
+        GotIt: null,
+        ShowMainMenu: null,
+        ReplayInstruction: null,
+        TakeTourInstruction: null
     };
 
     constructor($: JQueryStatic) {
@@ -68,45 +67,23 @@ class Instruction {
     }
 
     init = () => {
-        if (!alpha.isScreenLower768) {
-            const isReadIntroduction = alpha.localStorage.get(this.readIntroductionKey);
+        this.cacheDOM();
+        this.cacheResources();
+        this.registerEvents();
 
-            if (isReadIntroduction) {
-                return;
-            }
-
-            this.cacheDOMElements();
-            this.registerEvents();
-
-            if (!this.isCookieLess && !isReadIntroduction) {
-                this.domElements.beginModal.modal('show');
-                this.$('.modal-backdrop').css('z-index', 1051);
-
-                this.showDelayFirstIntroduction();
-            }
-        }
-        else if (alpha.isScreenLower768) {
-            const mobile = new InstructionMobile(this.$);
-            mobile.init();
+        if (!this.isCookieLess() && !this.readInstruction()) {
+            this.showFirstInstruction();
         }
     }
 
-    cacheDOMElements = () => {
-        this.domElements.beginModal = this.$('#beginModal');
-        this.domElements.startIntroductionBtn = this.$('#start-introduction-btn');
-        this.domElements.markInner = this.$("#mask-inner");
-        this.domElements.replayInstruction = this.$('#replay-instruction');
-        this.domElements.notNowIntroductionBtn = this.$("#not-now-introduction-btn");
-        this.domElements.modalInstructionBody = this.$('#instruction-modal-body');
-        this.domElements.oldViewLink = this.$('#old-view-link a');
-    }
-
-    showDelayFirstIntroduction = () => {
+    showFirstInstruction = () => {
         let $p = this.domElements.markInner.find("p");
         let words = $p.text().split(" ");
         let delay = 100;
         let $tempEl = this.$("<div>");
 
+        this.domElements.beginModal.modal('show');
+        this.$('.modal-backdrop').css('z-index', 1051);
         $p.empty().show();
 
         this.$.each(words, (i, word) => {
@@ -125,32 +102,6 @@ class Instruction {
                 $p.addClass("in");
             }, 250);
         }, 250);
-    }
-
-    registerEvents = () => {
-        this.domElements.startIntroductionBtn
-            .off('click.introduction')
-            .on('click.introduction', () => {
-                this.domElements.beginModal.modal('hide');
-                this.setReadIntroduction();
-                this.showMainSteps();
-            });
-
-        this.domElements.notNowIntroductionBtn
-            .off('click.introduction')
-            .on('click.introduction', () => {
-                this.domElements.beginModal.modal('hide');
-                this.setReadIntroduction();
-                this.showNotNowSteps();
-            });
-
-        this.$(document)
-            .off('click.replay-introduction', '.replay-introduction')
-            .on('click.replay-introduction', '.replay-introduction', this.showMainSteps);
-
-        this.domElements.replayInstruction
-            .off('click.replay-introduction')
-            .on('click.replay-introduction', this.showMainSteps);
     }
 
     showNotNowSteps = () => {
@@ -279,12 +230,77 @@ class Instruction {
         }
     }
 
-    setReadIntroduction = () => {
+    readInstruction = (): boolean => {
+        return alpha.localStorage.get(this.readIntroductionKey);
+    }
+
+    setReadInstruction = () => {
         alpha.localStorage.set(this.readIntroductionKey, true);
+    }
+
+    isCookieLess = () => {
+        return this.$('#IsCookieLess').val() === '1';
+    }
+
+    private cacheDOM = () => {
+        this.domElements.beginModal = this.$('#beginModal');
+        this.domElements.startIntroductionBtn = this.$('#start-introduction-btn');
+        this.domElements.markInner = this.$("#mask-inner");
+        this.domElements.replayInstruction = this.$('#replay-instruction');
+        this.domElements.notNowIntroductionBtn = this.$("#not-now-introduction-btn");
+        this.domElements.modalInstructionBody = this.$('#instruction-modal-body');
+        this.domElements.oldViewLink = this.$('#old-view-link a');
+    }
+
+    private cacheResources = () => {
+        this.resources.HomeIconIntroduction = this.$('#HomeIconIntroduction').val();
+        this.resources.TransferAndViewLogIntroduction = this.$('#TransferAndViewLogIntroduction').val()
+        this.resources.QuickMenuIntroduction = this.$('#QuickMenuIntroduction').val();
+        this.resources.QuickMenu = this.$('#QuickMenu').val();
+        this.resources.SwitchView = this.$('#SwitchView').val();
+        this.resources.BackOldViewIntroduction = this.$('#BackOldViewIntroduction').val();
+        this.resources.WarningOldVersionDeadline = this.$('#WarningOldVersionDeadline').val();
+        this.resources.MainMenuIntroduction = this.$('#MainMenuIntroduction').val();
+        this.resources.ReportMenuIntroduction = this.$('#ReportMenuIntroduction').val();
+        this.resources.WinLossAnalysisChartIntroduction = this.$('#WinLossAnalysisChartIntroduction').val();
+        this.resources.CollapseExpandIcon = this.$('#CollapseExpandIcon').val();
+        this.resources.CollapseExpandIconIntroduction = this.$('#CollapseExpandIconIntroduction').val();
+        this.resources.MainMenu = this.$('#MainMenu').val();
+        this.resources.TransferMenuIntroduction = this.$('#TransferMenuIntroduction').val();
+        this.resources.ViewLogMenuIntroduction = this.$('#ViewLogMenuIntroduction').val();
+        this.resources.Skip = this.$('#Skip').val();
+        this.resources.Next = this.$('#Next').val();
+        this.resources.Replay = this.$('#Replay').val();
+        this.resources.GotIt = this.$('#GotIt').val();
+        this.resources.ShowMainMenu = this.$('#ShowMainMenu').val();
+        this.resources.ReplayInstruction = this.$('#ReplayInstruction').val();
+        this.resources.TakeTourInstruction = this.$('#TakeTourInstruction').val();
+    }
+
+    private registerEvents = () => {
+        this.domElements.startIntroductionBtn.click(() => {
+            this.domElements.beginModal.modal('hide');
+            this.setReadInstruction();
+            this.showMainSteps();
+        });
+
+        this.domElements.notNowIntroductionBtn.click(() => {
+            this.domElements.beginModal.modal('hide');
+            this.setReadInstruction();
+            this.showNotNowSteps();
+        });
+
+        this.domElements.replayInstruction.click(this.showMainSteps);
     }
 }
 
 $(() => {
-    const instruction = new Instruction($);
-    instruction.init();
+    if (!alpha.isScreenLower768) {
+        const instruction = new Instruction($);
+        instruction.init();
+    }
+    else if (alpha.isScreenLower768) {
+        const mobile = new InstructionMobile($);
+        mobile.init();
+    }
 });

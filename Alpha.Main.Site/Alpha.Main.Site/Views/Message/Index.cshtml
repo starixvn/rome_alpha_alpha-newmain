@@ -23,10 +23,10 @@
 <body>
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="public-tab @(Model.MessageType == MessageType.Public ? "active" : string.Empty)" id="1">
-            <a href="#public" aria-controls="home" role="tab" data-toggle="tab">@Resources.notice</a>
+            <a href="#public" aria-controls="home" role="tab" data-toggle="tab">Normal Announcement</a>
         </li>
         <li role="presentation" class="special-tab @(Model.MessageType == MessageType.Special ? "active" : string.Empty)" id="2">
-            <a href="#special" aria-controls="home" role="tab" data-toggle="tab">@Resources.specialNotice</a>
+            <a href="#special" aria-controls="home" role="tab" data-toggle="tab">Special Announcement</a>
         </li>
         <li role="presentation" class="private-tab @(Model.MessageType == MessageType.Private ? "active" : string.Empty)" id="0">
             <a href="#private" aria-controls="home" role="tab" data-toggle="tab">@Resources.personalMessage</a>

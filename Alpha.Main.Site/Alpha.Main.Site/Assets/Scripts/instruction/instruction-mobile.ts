@@ -1,12 +1,11 @@
-﻿class InstructionMobile {
+﻿class InstructionMobile extends Instruction {
     private mobileBlockUI: JQuery;
     private mobileIntroModal: JQuery;
     private mobileCloseIntroBtn: JQuery;
-    private $: JQueryStatic;
-    private mobileInstructionKey: string = 'MobileInstruction';
 
     constructor($: JQueryStatic) {
-        this.$ = $;
+        super($);
+        this.readIntroductionKey = 'MobileInstruction';
     }
 
     init = () => {
@@ -28,14 +27,6 @@
             this.mobileBlockUI.hide();
             this.mobileIntroModal.hide(0, headerMessage.init);
         }
-    }
-
-    readInstruction = (): boolean => {
-        return alpha.localStorage.get(this.mobileInstructionKey);
-    }
-
-    setReadInstruction = () => {
-        alpha.localStorage.set(this.mobileInstructionKey, true);
     }
 
     private cacheDom = () => {

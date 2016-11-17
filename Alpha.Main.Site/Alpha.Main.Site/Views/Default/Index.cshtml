@@ -1,12 +1,6 @@
 ﻿@model IndexViewModel
 @{
     Layout = null;
-    var initialScale = 0.7;
-
-    if (Model.IsAndroidDevice)
-    {
-        initialScale = 0.4;
-    }
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=@initialScale, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=@Model.InitialScaleViewPort, user-scalable=yes">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
