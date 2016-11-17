@@ -273,7 +273,7 @@ var AgeWnd = function () {
                 if (currentAgeWnd.onClosing && typeof (currentAgeWnd.onClosing) == "function") {
                     currentAgeWnd.onClosing();
                 }
-                
+
             });
 
             popUp.tinyDraggable({ exclude: "a.icon-information-outline.icon-info, button.icon.icon-close.close" });
@@ -480,29 +480,16 @@ var menuBarManager = {
 
         return parseFloat(top.$('#mCSB_2_container').css('top').replace(/px/g, ''));
     },
-    getMainFrameScrollTop: function () {
-        var scrollTop = top.main.scrollY;
-        if (scrollTop == undefined) {
-            scrollTop = document.documentElement ?
-                document.documentElement.scrollTop :
-                document.body.scrollTop;
-        }
-
-        scrollTop = -scrollTop;
-
-        return scrollTop;
-    },
 
     getPopupEditStatusPosition_CustomerList: function (handleElement) {
         var handleElementPosition = oldMainUltilities.getOffset(handleElement);
 
         var startTop = 0;
-        var scrollTop = menuBarManager.getMainFrameScrollTop();
 
         var popUpTop = 0;
         var left = 0;
         startTop = 146;
-        popUpTop = startTop + handleElementPosition.top + scrollTop;
+        popUpTop = startTop + handleElementPosition.top;
         left = handleElementPosition.left - 200 + top.$('.sidebar').width();
 
         var position = {
@@ -572,12 +559,10 @@ var menuBarManager = {
         var handleElementPosition = oldMainUltilities.getOffset(handleElement);
 
         var startTop = 0;
-        var scrollTop = menuBarManager.getMainFrameScrollTop();
-
         var popUpTop = 0;
         var left = 0;
         startTop = 111;
-        popUpTop = startTop + handleElementPosition.top + scrollTop;
+        popUpTop = startTop + handleElementPosition.top;
         left = handleElementPosition.left - 150 + top.$('.sidebar').width();
 
         var position = {
@@ -848,14 +833,14 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFr
 
 var popupManager = {
     positionPadding: 5,
-    leftPosition: function() {
+    leftPosition: function () {
         // top-left main frame
         var accountInfoWidth = top.$('.sidebar').width();
 
         return accountInfoWidth + top.popupManager.positionPadding;
     },
 
-    topPosition: function() {
+    topPosition: function () {
         // top-left main frame
         return 90 + top.popupManager.positionPadding;
     },
