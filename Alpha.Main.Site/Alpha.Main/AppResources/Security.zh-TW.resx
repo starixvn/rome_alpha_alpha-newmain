@@ -403,4 +403,7 @@
   <data name="Verify" xml:space="preserve">
     <value>驗證</value>
   </data>
+  <data name="OtpHiMessage" xml:space="preserve">
+    <value>您好 {0} ， 您使用的設備 / 瀏覽器 是與上次使用的不同。請輸入OTP以繼續。</value>
+  </data>
 </root>

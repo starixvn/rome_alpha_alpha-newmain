@@ -305,7 +305,7 @@ Notes: your password is cAsE sEnSiTiVe</value>
 Notes: your password is cAsE sEnSiTiVe.</value>
   </data>
   <data name="OtpHiMessage" xml:space="preserve">
-    <value>Hi {0}, you are signing in using a different Device/ Browser from your last login. Please enter an OTP to coninue.</value>
+    <value>Hi {0}, you are signed in with a different Device/Browser than the previous use. Please enter an OTP to continue.</value>
   </data>
   <data name="InputOtpBeforeProceeding" xml:space="preserve">
     <value>Please enter your OTP before proceeding!</value>
@@ -323,7 +323,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
     <value>Sophos Authenticator</value>
   </data>
   <data name="OtherAuthenticators" xml:space="preserve">
-    <value>Other two-factor authenticator applications such as Google Authenticator, Microsoft Authenticator ect. are also supported</value>
+    <value>Other two-factor authenticator applications such as Google Authenticator, Microsoft Authenticator etc. are also supported</value>
   </data>
   <data name="ScanQRCode" xml:space="preserve">
     <value>Create an account by scanning this QR code with Sophos</value>

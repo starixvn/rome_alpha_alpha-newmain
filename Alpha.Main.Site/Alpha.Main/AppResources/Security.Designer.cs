@@ -513,7 +513,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other two-factor authenticator applications such as Google Authenticator, Microsoft Authenticator ect. are also supported.
+        ///   Looks up a localized string similar to Other two-factor authenticator applications such as Google Authenticator, Microsoft Authenticator etc. are also supported.
         /// </summary>
         public static string OtherAuthenticators {
             get {
@@ -531,7 +531,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi {0}, you are signing in using a different Device/ Browser from your last login. Please enter an OTP to coninue..
+        ///   Looks up a localized string similar to Hi {0}, you are signed in with a different Device/Browser than the previous use. Please enter an OTP to continue..
         /// </summary>
         public static string OtpHiMessage {
             get {

@@ -398,4 +398,7 @@
   <data name="Verify" xml:space="preserve">
     <value>验证</value>
   </data>
+  <data name="OtpHiMessage" xml:space="preserve">
+    <value>您好 {0} ， 您使用的设备 / 浏览器 是与上次使用的不同。 请输入OTP以继续。</value>
+  </data>
 </root>

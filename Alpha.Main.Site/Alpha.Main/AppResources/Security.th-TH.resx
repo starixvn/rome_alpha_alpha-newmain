@@ -404,4 +404,7 @@
   <data name="Verify" xml:space="preserve">
     <value>ยืนยัน</value>
   </data>
+  <data name="OtpHiMessage" xml:space="preserve">
+    <value>สวัสดีค่ะ {0}, คุณเข้าใช้งานในระบบโดยใช้อุปกรณ์หรือ เบราว์เซอร์ ที่แตกต่างจากการใช้ก่อนหน้านี้ กรุณากรอก OTP เพื่อดำเนินการต่อค่ะ</value>
+  </data>
 </root>
