@@ -511,4 +511,10 @@
   <data name="changeLanguage" xml:space="preserve">
     <value>Change Language</value>
   </data>
+  <data name="normalAnnouncement" xml:space="preserve">
+    <value>Normal Announcement</value>
+  </data>
+  <data name="specialAnnounement" xml:space="preserve">
+    <value>Special Announcement</value>
+  </data>
 </root>

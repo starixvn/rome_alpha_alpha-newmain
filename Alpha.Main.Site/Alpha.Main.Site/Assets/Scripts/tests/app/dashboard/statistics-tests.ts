@@ -2,19 +2,21 @@
     const stats: Statistics = new Statistics($);
     const responseHtml = 'responseHtml';
 
-    let onToggleDropdown: jasmine.Spy,
+    let registerTooltip: jasmine.Spy,
+        onToggleDropdown: jasmine.Spy,
         loadDropdownInfo: jasmine.Spy,
         $ajax: jasmine.Spy;
 
     beforeEach(() => {
         setFixtures(
-            '<strong data-toggle="tooltip" data-placement="top" title="<div>test</div>">' +
+            '<strong class="tooltip-stats-member" data-toggle="tooltip" data-placement="top" title="<div>test</div>">' +
             '   <span class="active">1</span>' +
             '</strong>' +
             '<div id="id" action-url="url">' +
             '</div>' +
             '<div id="data"></div>')
 
+        registerTooltip = spyOn(stats, 'registerTooltip');
         onToggleDropdown = spyOn(stats, 'onToggleDropdown');
         loadDropdownInfo = spyOn(stats, 'loadDropdownInfo');
 
@@ -24,17 +26,12 @@
     });
 
     describe('registerEvent()', () => {
-        it('On MouseOver -> Show Tooltip', () => {
-            // Arrange
-            const $tooltip = $('[data-toggle="tooltip"]');
+        it('Always -> Call registerTooltip method', () => {
+            // Act
             stats.registerEvents();
 
-            // Act
-            $tooltip.trigger('mouseover');
-
             // Assert
-            expect($tooltip).toHaveAttr('aria-describedby');
-            expect($tooltip.next()).toHaveId($tooltip.attr('aria-describedby'));
+            expect(registerTooltip).toHaveBeenCalled();
         });
 
         it('Always -> Call onToggleDropdown method', () => {
@@ -46,6 +43,69 @@
             expect(onToggleDropdown).toHaveBeenCalledWith('#listTopWinningMembers', loadDropdownInfo);
             expect(onToggleDropdown).toHaveBeenCalledWith('#listTopTurnoverMembers', loadDropdownInfo);
             expect(onToggleDropdown).toHaveBeenCalledWith('#listNewMembers', loadDropdownInfo);
+        });
+    });
+
+    describe('registerTooltip()', () => {
+        beforeEach(() => {
+            registerTooltip.and.callThrough();
+            registerTooltip.call(this);
+        });
+
+        it('Always -> Call hideTooltipOnTouchOutInMobile() method', () => {
+            // Arrange
+            const hideTooltipOnTouchOutInMobile = spyOn(stats, 'hideTooltipOnTouchOutInMobile');
+
+            // Act
+            registerTooltip.call(this);
+
+            // Assert
+            expect(hideTooltipOnTouchOutInMobile).toHaveBeenCalledWith('tooltip-stats-member');
+        });
+
+        it('On MouseOver -> Show Tooltip', () => {
+            // Arrange
+            const $tooltip = $('.tooltip-stats-member');
+
+            // Act
+            $tooltip.trigger('mouseover');
+
+            // Assert
+            expect($tooltip).toHaveAttr('aria-describedby');
+            expect($tooltip.next()).toHaveId($tooltip.attr('aria-describedby'));
+        });
+    });
+
+    describe('hideTooltipOnTouchOutInMobile()', () => {
+        beforeEach(() => {
+            registerTooltip.and.callThrough();
+            registerTooltip.call(this);
+        });
+
+        it('On touch out of tooltip -> Hide tooltip', () => {
+            // Arrange
+            const $tooltip = $('.tooltip-stats-member');
+            $tooltip.tooltip('show');
+
+            // Act
+            $('body').trigger('touchend');
+
+            // Assert
+            expect($tooltip).not.toHaveAttr('aria-describedby');
+            expect($tooltip.next()).not.toHaveId($tooltip.attr('aria-describedby'));
+        });
+
+        it('On touch on tooltip -> Show tooltip', () => {
+            // Arrange
+            const $tooltip = $('.tooltip-stats-member');
+            $tooltip.tooltip('hide');
+
+            // Act
+            $tooltip.trigger('touchend');
+
+            // Assert
+            expect($tooltip).toHaveAttr('aria-describedby');
+            expect($tooltip.next()).toHaveId($tooltip.attr('aria-describedby'));
         });
     });
 

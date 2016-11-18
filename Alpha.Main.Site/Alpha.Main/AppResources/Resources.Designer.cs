@@ -611,6 +611,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Normal Announcement.
+        /// </summary>
+        public static string normalAnnouncement {
+            get {
+                return ResourceManager.GetString("normalAnnouncement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notice.
         /// </summary>
         public static string notice {
@@ -808,6 +817,15 @@ namespace Alpha.Main.AppResources {
         public static string Skip {
             get {
                 return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special Announcement.
+        /// </summary>
+        public static string specialAnnounement {
+            get {
+                return ResourceManager.GetString("specialAnnounement", resourceCulture);
             }
         }
         
