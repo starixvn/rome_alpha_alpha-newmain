@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Message">
-    <Setting Key="Age_CustomerSelMessages" SpName="Age_CustomerSelMessages" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0" >
+    <Setting Key="Age_CustomerSelMessages" SpName="Age_CustomerSelMessages" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEn" />
       <Mapping DataField="Content_cs" ObjectProperty="ContentCs" />
@@ -19,6 +19,59 @@
       <Mapping DataField="messageId" ObjectProperty="Id" />
     </Setting>
     <Setting Key="Dot_Msg_SetUsrMessage" SpName="Dot_Msg_SetUsrMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+    </Setting>
+    <Setting Key="Age_CustomerUpdMessagesRead" SpName="Age_CustomerUpdMessagesRead" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+    </Setting>
+    <Setting Key="Dot_Msg_GetPublicMessage" SpName="Dot_Msg_GetPublicMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+      <Mapping DataField="MessageId" ObjectProperty="Id" />
+      <Mapping DataField="Content_en" ObjectProperty="ContentEn" />
+      <Mapping DataField="Content_cs" ObjectProperty="ContentCs" />
+      <Mapping DataField="Content_ch" ObjectProperty="ContentCh" />
+      <Mapping DataField="Content_jp" ObjectProperty="ContentJp" />
+      <Mapping DataField="Content_th" ObjectProperty="ContentTh" />
+      <Mapping DataField="Content_it" ObjectProperty="ContentIt" />
+      <Mapping DataField="Content_ko" ObjectProperty="ContentKo" />
+      <Mapping DataField="Content_es" ObjectProperty="ContentEs" />
+      <Mapping DataField="MsgType" ObjectProperty="MessageType" />
+      <Mapping DataField="TargetId" ObjectProperty="UserId" />
+    </Setting>
+    <Setting Key="Dot_Msg_GetSpecialMessage" SpName="Dot_Msg_GetSpecialMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+      <Mapping DataField="MessageId" ObjectProperty="Id" />
+      <Mapping DataField="Content_en" ObjectProperty="ContentEn" />
+      <Mapping DataField="Content_cs" ObjectProperty="ContentCs" />
+      <Mapping DataField="Content_ch" ObjectProperty="ContentCh" />
+      <Mapping DataField="Content_jp" ObjectProperty="ContentJp" />
+      <Mapping DataField="Content_th" ObjectProperty="ContentTh" />
+      <Mapping DataField="Content_it" ObjectProperty="ContentIt" />
+      <Mapping DataField="Content_ko" ObjectProperty="ContentKo" />
+      <Mapping DataField="Content_es" ObjectProperty="ContentEs" />
+      <Mapping DataField="MsgType" ObjectProperty="MessageType" />
+      <Mapping DataField="TargetId" ObjectProperty="UserId" />
+      <Mapping DataField="BContent_en" ObjectProperty="BingoContentEn" />
+      <Mapping DataField="BContent_cs" ObjectProperty="BingoContentCs" />
+      <Mapping DataField="BContent_ch" ObjectProperty="BingoContentCh" />
+      <Mapping DataField="BContent_jp" ObjectProperty="BingoContentJp" />
+      <Mapping DataField="BContent_th" ObjectProperty="BingoContentTh" />
+      <Mapping DataField="BContent_it" ObjectProperty="BingoContentIt" />
+      <Mapping DataField="BContent_ko" ObjectProperty="BingoContentKo" />
+      <Mapping DataField="BContent_es" ObjectProperty="BingoContentEs" />
+    </Setting>
+    <Setting Key="Dot_Msg_GetPrivateMessage" SpName="Dot_Msg_GetPrivateMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+      <Mapping DataField="MessageId" ObjectProperty="Id" />
+      <Mapping DataField="Content_en" ObjectProperty="ContentEn" />
+      <Mapping DataField="Content_cs" ObjectProperty="ContentCs" />
+      <Mapping DataField="Content_ch" ObjectProperty="ContentCh" />
+      <Mapping DataField="Content_jp" ObjectProperty="ContentJp" />
+      <Mapping DataField="Content_th" ObjectProperty="ContentTh" />
+      <Mapping DataField="Content_it" ObjectProperty="ContentIt" />
+      <Mapping DataField="Content_ko" ObjectProperty="ContentKo" />
+      <Mapping DataField="Content_es" ObjectProperty="ContentEs" />
+      <Mapping DataField="Content_vn" ObjectProperty="ContentVn" />
+      <Mapping DataField="Content_id" ObjectProperty="ContentId" />
+      <Mapping DataField="Content_el" ObjectProperty="ContentEl" />
+      <Mapping DataField="Content_mx" ObjectProperty="ContentMx" />
+      <Mapping DataField="MsgType" ObjectProperty="MessageType" />
+      <Mapping DataField="TargetId" ObjectProperty="UserId" />
     </Setting>
   </Function>
 </Functions>
