@@ -22,14 +22,14 @@
 </head>
 <body>
     <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="public-tab @(Model.MessageType == MessageType.Public ? "active" : string.Empty)" id="1">
-            <a href="#public" aria-controls="home" role="tab" data-toggle="tab">@Resources.normalAnnouncement</a>
+        <li role="presentation" class="@(Model.MessageType == MessageType.Public ? "active" : string.Empty) ">
+            @Html.ActionLink(Resources.normalAnnouncement, "Messages", new { messageType = MessageType.Public })
         </li>
-        <li role="presentation" class="special-tab @(Model.MessageType == MessageType.Special ? "active" : string.Empty)" id="2">
-            <a href="#special" aria-controls="home" role="tab" data-toggle="tab">@Resources.specialAnnounement</a>
+        <li role="presentation" class="@(Model.MessageType == MessageType.Special ? "active" : string.Empty) ">
+            @Html.ActionLink(Resources.specialAnnounement, "Messages", new { messageType = MessageType.Special })
         </li>
-        <li role="presentation" class="private-tab @(Model.MessageType == MessageType.Private ? "active" : string.Empty)" id="0">
-            <a href="#private" aria-controls="home" role="tab" data-toggle="tab">@Resources.personalMessage</a>
+        <li role="presentation" class="@(Model.MessageType == MessageType.Private ? "active" : string.Empty) ">
+            @Html.ActionLink(Resources.personalMessage, "Messages", new { messageType = MessageType.Private })
         </li>
     </ul>
 

@@ -1,111 +1,71 @@
-﻿describe('Message', () => {
+﻿describe('Message_', () => {
     const message = new Message($);
 
-    let onClickTab: jasmine.Spy,
-        initDateTimePicker: jasmine.Spy,
-        writeDocument: jasmine.Spy;
+    let initDateTimePicker: jasmine.Spy;
 
     beforeEach(() => {
         setFixtures(
-            '<div class="tab"></div>' +
-            '   <div class="input-group date" id="fromDateContainer" style="position: relative">' +
-            '       <input class="form-control" id="fromDate" name="StartDate" type="text" />' +
-            '       <span class="input-group-addon">' +
-            '           <span class="icon-calendar"></span>' +
-            '       </span>' +
+            '<div class="nav-tabs">' +
+            '   <li role="presentation" class="active">' +
+            '       <a href="">Personal Message</a>' +
+            '   </li>' +
+            '</div>' +
+            '<div class="input-group date" id="fromDateContainer" style="position: relative">' +
+            '   <input class="form-control" id="fromDate" name="StartDate" type="text" />' +
+            '   <span class="input-group-addon">' +
+            '       <span class="icon-calendar"></span>' +
+            '   </span>' +
+            '   <button class="btn-submit"></button>' +
             '</div>'
         );
 
-        onClickTab = spyOn(message, 'onClickTab');
         initDateTimePicker = spyOn(message, 'initDateTimePicker');
-        writeDocument = spyOn(message, 'writeDocument');
     });
 
-    describe('registerEvent()', () => {
+    describe('registerEvent()_', () => {
         it('Always -> Call Specific Methods', () => {
             // Act
             message.registerEvents();
 
             // Assert
-            expect(onClickTab).toHaveBeenCalledTimes(3);
-            expect(onClickTab).toHaveBeenCalledWith('.public-tab');
-            expect(onClickTab).toHaveBeenCalledWith('.special-tab');
-            expect(onClickTab).toHaveBeenCalledWith('.private-tab');
-
             expect(initDateTimePicker).toHaveBeenCalledTimes(2);
             expect(initDateTimePicker).toHaveBeenCalledWith('#fromDateContainer');
             expect(initDateTimePicker).toHaveBeenCalledWith('#toDateContainer');
         });
     });
 
-    describe('onClickTab()', () => {
-        let $blockUI: jasmine.Spy,
-            $unBlockUI: jasmine.Spy,
-            $ajax: jasmine.Spy,
-            $setTimeout: jasmine.Spy,
-            $tab: JQuery;
+    describe('onClick()_', () => {
+        let $blockUI: jasmine.Spy;
 
         beforeEach(() => {
-            $tab = $('.tab');
             $blockUI = spyOn($, 'blockUI');
-            $unBlockUI = spyOn($, 'unblockUI');
-            $ajax = spyOn($, 'ajax');
-            $setTimeout = spyOn(window, 'setTimeout');
-
-            onClickTab.and.callThrough();
-            onClickTab.call(this, '.tab');
+            message.registerEvents();
         });
 
-        it('On Click Tab -> Call Block UI and Send Ajax With Correct AjaxSettings', () => {
+        it('On Click Tab -> Call Block UI', () => {
             // Arrange
-            alpha.urls.mainRootPath = 'path';
-            $tab.attr('id', 'type');
+            const $tab = $('.nav-tabs > li');
 
             // Act
             $tab.trigger('click');
 
             // Assert
             expect($blockUI).toHaveBeenCalled();
-            expect($ajax).toHaveBeenCalledWith({
-                url: 'path/Message/Index',
-                data: { messageType: 'type' },
-                method: 'GET',
-                success: jasmine.any(Function),
-                error: jasmine.any(Function)
-            });
         });
 
-        it('On Click Tab and Send Ajax Success -> Call Set Timeout', () => {
+        it('On Click Submit -> Call Block UI', () => {
             // Arrange
-            $ajax.and.callFake((options) => {
-                options.success('responseHtml');
-            });
-
-            writeDocument.and.callFake((responseHtml) => { });
+            const $submit = $('.btn-submit');
 
             // Act
-            $tab.trigger('click');
+            $submit.trigger('click');
 
             // Assert
-            expect($setTimeout).toHaveBeenCalledWith(writeDocument(), 100);
-            expect(writeDocument).toHaveBeenCalledWith('responseHtml');
-        });
-
-        it('On Click Tab and Send Ajax Error -> Call UnBlockUI', () => {
-            // Arrange
-            $ajax.and.callFake((options) => {
-                options.error();
-            });
-
-            // Act
-            $tab.trigger('click');
-
-            // Assert
-            expect($.unblockUI).toHaveBeenCalled();
+            expect($blockUI).toHaveBeenCalled();
         });
     });
 
-    describe('initDateTimePicker()', () => {
+    describe('initDateTimePicker()_', () => {
         beforeEach(() => {
             initDateTimePicker.and.callThrough();
         });

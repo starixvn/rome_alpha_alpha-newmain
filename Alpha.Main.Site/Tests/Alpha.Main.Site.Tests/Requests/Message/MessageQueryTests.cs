@@ -154,7 +154,7 @@
                 string.Empty);
 
             // Assert
-            Assert.AreEqual(endDate, query.EndDate);
+            Assert.AreEqual(endDate.AddDays(1).AddTicks(-1), query.EndDate);
         }
 
         [Test]

@@ -1,10 +1,10 @@
-﻿describe("Test Dashboard class", () => {
+﻿describe("Dashboard_", () => {
     const dashBoard = new DashboardBase($);
     const fakeElement = $("<div></div>");
 
     let jquerySelectorInit, jqueryGetElementAttribute, jquerySetElementHtml, jqueryAjax;
 
-    describe("Test loadInfo method", () => {
+    describe("loadInfo()_", () => {
         // Setup
         beforeEach(() => {
             jquerySelectorInit = spyOn($.fn, 'init').and.returnValue(fakeElement);
@@ -13,7 +13,7 @@
             jqueryAjax = spyOn($, 'ajax').and.callFake(() => { });
         });
 
-        it('Call jquerySelectorInit', () => {
+        it('Always -> Call jquerySelectorInit', () => {
             // Act
             dashBoard.loadInfo('#fakeId', null);
 
@@ -21,7 +21,7 @@
             expect(jquerySelectorInit).toHaveBeenCalledWith('#fakeId', undefined);
         });
 
-        it('Call jqueryGetElementAttribute', () => {
+        it('Always -> Call jqueryGetElementAttribute', () => {
             // Act
             dashBoard.loadInfo('#fakeId', null);
 
@@ -29,7 +29,7 @@
             expect(jqueryGetElementAttribute).toHaveBeenCalledWith('action-url');
         });
 
-        it('Call jqueryGet method if url is not empty or undefined', () => {
+        it('When URL Is Not Empty or Undefined -> Call jQueryGet Method ', () => {
             // Arrange
             jqueryGetElementAttribute.and.returnValue('url');
 
@@ -44,7 +44,7 @@
             '',
             undefined
         ].forEach((url) => {
-            it('Not call jqueryGet method if url is empty or undefined', () => {
+            it('When URL Is Empty or Undefined -> Not Call jQueryGet Method ', () => {
                 // Arrange
                 jqueryGetElementAttribute.and.returnValue(url);
 
@@ -56,7 +56,7 @@
             });
         });
 
-        it('Call createAjaxSettings and jqueryGet methods if url is not empty or undefined', () => {
+        it('When URL Is Not Empty or Undefined -> Call CreateAjaxSettings and jQueryGet Methods ', () => {
             // Arrange
             const url = 'url';
             const ajaxSettings = {
@@ -76,7 +76,7 @@
             expect(jqueryAjax).toHaveBeenCalledWith(ajaxSettings);
         });
 
-        it('createAjaxSettings Call exact methods on success', () => {
+        it('On Success -> createAjaxSettings Calls Exact Methods', () => {
             // Arrange
             const handleOnSuccessLoading = jasmine.createSpy('handleOnSuccessLoading');
             jqueryAjax.and.callFake((options) => {

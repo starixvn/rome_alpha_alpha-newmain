@@ -1,4 +1,4 @@
-﻿describe('NoticeMessage', () => {
+﻿describe('NoticeMessage_', () => {
     const notice = new NoticeMessage($);
     let onToggleMessage: jasmine.Spy,
         onToggleShowMoreMessages: jasmine.Spy,
@@ -28,7 +28,7 @@
         markMessageAsRead = spyOn(notice, 'markMessageAsRead');
     });
 
-    describe('registerEvents()', () => {
+    describe('registerEvents()_', () => {
         it('Always -> Calls Specific Methods', () => {
             // Act
             notice.registerEvents();
@@ -40,7 +40,7 @@
         });
     });
 
-    describe('onToggleMessage()', () => {
+    describe('onToggleMessage()_', () => {
         let $message: JQuery,
             shortContent: JQuery,
             fullContent: JQuery,
@@ -91,7 +91,7 @@
         });
     });
 
-    describe('markMessageAsRead()', () => {
+    describe('markMessageAsRead()_', () => {
         let $message: JQuery,
             $ajax: jasmine.Spy;
 
@@ -159,7 +159,7 @@
         });
     });
 
-    describe('onToggleShowMoreMessages', () => {
+    describe('onToggleShowMoreMessages()_', () => {
         const responseHtml = 'responseHtml';
         let $moreBtn: JQuery,
             $ajax: jasmine.Spy;
@@ -213,7 +213,7 @@
         });
     });
 
-    describe('hideMoreBtnIfHaveNoData()', () => {
+    describe('hideMoreBtnIfHaveNoData()_', () => {
         let $moreBtn: JQuery;
 
         beforeEach(() => {

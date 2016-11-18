@@ -28,7 +28,6 @@
         showMoreContainer: null,
         showLessContainer: null
     };
-
     protected urls = {
         mainAppPrivateMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=0',
         mainAppPublicMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=1',
@@ -197,7 +196,7 @@
         }
     }
 
-    showPrivateMessage = (privateMessage, unreadPriMsgCount) => {
+    showPrivateMessage = (privateMessage: Array<number>, unreadPriMsgCount: number) => {
         // Process Private Message: show new private message
         const url = this.urls.mainAppPrivateMessageForm;
 
@@ -227,9 +226,9 @@
             this.privateMessageId = privateMessage[this.messageIdIndex];
         }
 
-        unreadPriMsgCount = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
+        const unreadPriMsgCountText = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
 
-        this.domElements.privateMessageCounter.html(unreadPriMsgCount);
+        this.domElements.privateMessageCounter.html(unreadPriMsgCountText);
     }
 
     appendMessageToPopup = (message) => {
@@ -391,11 +390,6 @@
 }
 
 $(() => {
-    const isReadInstruction = alpha.localStorage.check(alpha.key.instruction)
-        || alpha.localStorage.check(alpha.key.mobileInstruction);
-
-    if (isReadInstruction) {
-        const headerMessage = new HeaderMessage($);
-        headerMessage.init();
-    }
+    const headerMessage = new HeaderMessage($);
+    headerMessage.init();
 });

@@ -1,4 +1,4 @@
-﻿describe('Statistics', () => {
+﻿describe('Statistics_', () => {
     const stats: Statistics = new Statistics($);
     const responseHtml = 'responseHtml';
 
@@ -25,7 +25,7 @@
         });
     });
 
-    describe('registerEvent()', () => {
+    describe('registerEvent()_', () => {
         it('Always -> Call registerTooltip method', () => {
             // Act
             stats.registerEvents();
@@ -46,7 +46,7 @@
         });
     });
 
-    describe('registerTooltip()', () => {
+    describe('registerTooltip()_', () => {
         beforeEach(() => {
             registerTooltip.and.callThrough();
             registerTooltip.call(this);
@@ -76,7 +76,7 @@
         });
     });
 
-    describe('hideTooltipOnTouchOutInMobile()', () => {
+    describe('hideTooltipOnTouchOutInMobile()_', () => {
         beforeEach(() => {
             registerTooltip.and.callThrough();
             registerTooltip.call(this);
@@ -109,7 +109,7 @@
         });
     });
 
-    describe('onToggleDropdown()', () => {
+    describe('onToggleDropdown()_', () => {
         const id: string = '#id';
         const actionUrl: string = 'url';
 
@@ -157,7 +157,7 @@
         });
     });
 
-    describe('loadDropdownInfo', () => {
+    describe('loadDropdownInfo()_', () => {
         it('When Call loadDropdownInfo() - Call Ajax With Exact Params', () => {
             // Act
             loadDropdownInfo.and.callThrough();

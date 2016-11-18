@@ -239,7 +239,7 @@ class Instruction {
         alpha.localStorage.set(this.readInstructionKey, true);
     }
 
-    isCookieLess = () => {
+    isCookieLess = (): boolean => {
         return this.$('#IsCookieLess').val() === '1';
     }
 
@@ -299,9 +299,5 @@ $(() => {
     if (!alpha.isScreenLower768) {
         const instruction = new Instruction($);
         instruction.init();
-    }
-    else if (alpha.isScreenLower768) {
-        const mobile = new InstructionMobile($);
-        mobile.init();
     }
 });

@@ -1,4 +1,4 @@
-﻿describe('InstructionMobile', () => {
+﻿describe('InstructionMobile_', () => {
     const instructionMobile = new InstructionMobile($);
     let init: jasmine.Spy,
         cacheDom: jasmine.Spy,
@@ -28,7 +28,7 @@
         mobileInstructionModal = $('#instruction-mobile');
     });
 
-    describe('init()', () => {
+    describe('init()_', () => {
         it('When Not Read Instruction -> Call Correct Methods', () => {
             // Arrange
             readInstruction.and.returnValue(false);
@@ -56,7 +56,7 @@
         });
     });
 
-    describe('showInstruction()', () => {
+    describe('showInstruction()_', () => {
         it('Always -> Show BlockUI and InstructionModal', () => {
             // Arrange
             cacheDom.and.callThrough();
@@ -74,13 +74,13 @@
         });
     });
 
-    describe('hideInstruction()', () => {
+    describe('hideInstruction()_', () => {
         beforeEach(() => {
             cacheDom.and.callThrough();
             cacheDom.call(this);
         })
 
-        it('When Instruction Is Visible', () => {
+        it('When Instruction Is Visible -> Hide Instruction', () => {
             // Arrange
             mobileBlockUI.show();
             mobileInstructionModal.show();
@@ -94,7 +94,7 @@
             expect(setReadInstruction).toHaveBeenCalled();
         });
 
-        it('When Instruction Is Hidden', () => {
+        it('When Instruction Is Hidden -> Do Nothing', () => {
             // Arrange
             mobileBlockUI.hide();
             mobileInstructionModal.hide();
@@ -108,7 +108,7 @@
         });
     });
 
-    describe('readInstruction()', () => {
+    describe('readInstruction()_', () => {
         it('Always -> Get From Local Storage', () => {
             // Arrange
             let getKey = spyOn(alpha.localStorage, 'get').and.returnValue(true);
@@ -123,7 +123,7 @@
         });
     });
 
-    describe('setReadInstruction()', () => {
+    describe('setReadInstruction()_', () => {
         it('Always -> Get From Local Storage', () => {
             // Arrange
             let setKey = spyOn(alpha.localStorage, 'set');

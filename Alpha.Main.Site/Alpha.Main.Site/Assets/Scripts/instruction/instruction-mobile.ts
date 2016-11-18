@@ -3,10 +3,6 @@
     private mobileIntroModal: JQuery;
     private mobileCloseIntroBtn: JQuery;
 
-    constructor($: JQueryStatic) {
-        super($);
-    }
-
     init = () => {
         this.readInstructionKey = alpha.key.mobileInstruction
 
@@ -30,12 +26,9 @@
         }
     }
 
-    private initHeaderMessage = () => {
-        const headerMessage = new HeaderMessage(this.$)
+    initHeaderMessage = () => {
+        const headerMessage = new HeaderMessageMobile(this.$);
         headerMessage.init();
-
-        const headerMessageMobile = new HeaderMessageMobile(this.$);
-        headerMessageMobile.init();
     }
 
     private cacheDom = () => {
@@ -54,3 +47,10 @@
         });
     }
 }
+
+$(() => {
+    if (alpha.isScreenLower768) {
+        const mobile = new InstructionMobile($);
+        mobile.init();
+    }
+});
