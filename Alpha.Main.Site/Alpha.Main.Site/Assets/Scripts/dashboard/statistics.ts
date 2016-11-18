@@ -1,5 +1,5 @@
 ﻿class Statistics extends DashboardBase {
-    registerEvent = () => {
+    registerEvents = () => {
         this.$('[data-toggle="tooltip"]').tooltip({
             html: true,
             trigger: 'hover'
@@ -32,3 +32,8 @@
         }
     }
 }
+
+$(() => {
+    const stats = new Statistics($);
+    stats.loadInfo('#stats', stats.registerEvents);
+})

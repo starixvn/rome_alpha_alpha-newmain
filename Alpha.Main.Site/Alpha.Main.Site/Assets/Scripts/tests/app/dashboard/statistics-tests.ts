@@ -27,7 +27,7 @@
         it('On MouseOver -> Show Tooltip', () => {
             // Arrange
             const $tooltip = $('[data-toggle="tooltip"]');
-            stats.registerEvent();
+            stats.registerEvents();
 
             // Act
             $tooltip.trigger('mouseover');
@@ -39,7 +39,7 @@
 
         it('Always -> Call onToggleDropdown method', () => {
             // Act
-            stats.registerEvent();
+            stats.registerEvents();
 
             // Assert
             expect(onToggleDropdown).toHaveBeenCalledTimes(3);

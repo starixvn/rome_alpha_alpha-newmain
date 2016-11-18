@@ -1,5 +1,5 @@
 ﻿class NoticeMessage extends DashboardBase {
-    registerEvent = () => {
+    registerEvents = () => {
         this.onToggleMessage(this.markMessageAsRead);
 
         this.onToggleShowMoreMessages();
@@ -54,13 +54,13 @@
     private onToggleShowMoreMessages = () => {
         const moreMessagesBtn = this.$('.more-info');
 
-        moreMessagesBtn.click(() => {
+        moreMessagesBtn.on('click', () => {
             const content = this.$('#notice');
 
             const onSuccess = (htmlString: any) => {
                 content.html(htmlString);
 
-                this.registerEvent();
+                this.registerEvents();
             }
 
             const ajaxSetting: JQueryAjaxSettings = {
@@ -86,3 +86,8 @@
         }
     }
 }
+
+$(() => {
+    const notice = new NoticeMessage($);
+    notice.loadInfo('#notice', notice.registerEvents);
+})

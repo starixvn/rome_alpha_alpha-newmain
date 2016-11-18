@@ -24,7 +24,7 @@
     describe('registerEvent()', () => {
         it('Always -> Call Specific Methods', () => {
             // Act
-            message.registerEvent();
+            message.registerEvents();
 
             // Assert
             expect(onClickTab).toHaveBeenCalledTimes(3);

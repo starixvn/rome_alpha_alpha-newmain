@@ -28,10 +28,10 @@
         markMessageAsRead = spyOn(notice, 'markMessageAsRead');
     });
 
-    describe('registerEvent()', () => {
+    describe('registerEvents()', () => {
         it('Always -> Calls Specific Methods', () => {
             // Act
-            notice.registerEvent();
+            notice.registerEvents();
 
             // Assert
             expect(onToggleMessage).toHaveBeenCalledWith(markMessageAsRead);
@@ -186,14 +186,14 @@
         it('On Click More Info Button and Success Ajax Get -> Set Response Html', () => {
             // Arrange
             const $notice: JQuery = $('#notice');
-            spyOn(notice, 'registerEvent');
+            spyOn(notice, 'registerEvents');
 
             // Act
             $moreBtn.trigger('click');
 
             // Assert
             expect($notice.html()).toEqual(responseHtml);
-            expect(notice.registerEvent).toHaveBeenCalled();
+            expect(notice.registerEvents).toHaveBeenCalled();
         });
 
         it('Always -> Send Ajax With Correct AjaxSettings', () => {

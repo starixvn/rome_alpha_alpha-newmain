@@ -5,7 +5,7 @@
         this.$ = $;
     }
 
-    registerEvent = () => {
+    registerEvents = () => {
         this.onClickTab('.public-tab');
         this.onClickTab('.special-tab');
         this.onClickTab('.private-tab');
@@ -49,5 +49,5 @@
 
 $(() => {
     const message = new Message($);
-    message.registerEvent();
+    message.registerEvents();
 });
