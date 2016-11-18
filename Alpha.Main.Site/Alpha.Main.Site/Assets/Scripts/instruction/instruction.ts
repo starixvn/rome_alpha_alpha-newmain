@@ -26,7 +26,7 @@ interface Step {
 
 class Instruction {
     protected $: JQueryStatic;
-    protected readIntroductionKey: string = 'Instruction';
+    protected readInstructionKey: string = 'Instruction';
     private enjoyHint;
     private domElements = {
         beginModal: null,
@@ -67,6 +67,7 @@ class Instruction {
     }
 
     init = () => {
+        this.readInstructionKey = alpha.key.instruction;
         this.cacheDOM();
         this.cacheResources();
         this.registerEvents();
@@ -231,11 +232,11 @@ class Instruction {
     }
 
     readInstruction = (): boolean => {
-        return alpha.localStorage.get(this.readIntroductionKey);
+        return alpha.localStorage.get(this.readInstructionKey);
     }
 
     setReadInstruction = () => {
-        alpha.localStorage.set(this.readIntroductionKey, true);
+        alpha.localStorage.set(this.readInstructionKey, true);
     }
 
     isCookieLess = () => {

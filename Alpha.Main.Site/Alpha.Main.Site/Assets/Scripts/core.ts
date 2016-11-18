@@ -1,5 +1,4 @@
 ﻿declare var isMobile: any;
-//declare var $: any;
 declare var bootbox: any;
 
 var alpha = {
@@ -104,7 +103,6 @@ var alpha = {
 
         alpha.isMobile = isMobile.any;
     },
-
     localStorage: {
         get: (key: string) => {
             return store.enabled ? store.get(key) : $.cookie(key);
@@ -145,6 +143,11 @@ var alpha = {
             $target.html("<div class='msg msg-error'>" + result.message + "</div>");
             return;
         }
+    },
+
+    key: {
+        instruction: 'Instruction',
+        mobileInstruction: 'MobileInstruction'
     }
 };
 

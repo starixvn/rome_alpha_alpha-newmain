@@ -1,36 +1,19 @@
-﻿'use strict';
-/*global indexManager*/
-
-var headerMessage = {
-    urls: {
-        oldMainAppNormalMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
-        oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
-        mainAppPrivateMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=0',
-        mainAppPublicMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=1',
-        mainAppSpecialMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=2',
-        oldMainAppSpecialMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=special',
-        updatePrivateMessageCount: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
-        getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'
-    },
-
-    messageIndex: 0,
-    messages: [],
-
-    messageIdIndex: 0,
-    messageContentIndex: 1,
-    messageTypeIndex: 2,
-    publicMessageId: 0,
-    privateMessageId: 0,
-    scrollMessageTimeout: null,
-
-    scrollerLeft: null,
-    scrollerWidth: null,
-    maskWidth: null,
-    scrollerPaused: null,
-    topnews: null,
-    scroller: null,
-
-    domElements: {
+﻿class HeaderMessage {
+    private messageIndex: number = 0;
+    private messageIdIndex: number = 0;
+    private messageContentIndex: number = 1;
+    private messageTypeIndex: number = 2;
+    private messages: Array<string> = [];
+    private publicMessageId: number = 0;
+    private privateMessageId: number = 0;
+    private scrollMessageTimeout: number;
+    private scrollerLeft: number = 0;
+    private scrollerWidth: number = 0;
+    private maskWidth: number = 0;
+    private scrollerPaused: boolean;
+    private topNews: HTMLElement;
+    private scroller: HTMLElement;
+    private domElements = {
         btnPrivateMessage: null,
         privateMessageCounter: null,
         liveMessage: null,
@@ -42,386 +25,377 @@ var headerMessage = {
         currentHotMessage: null,
         scroller: null,
         contentMessage: null,
-
         showMoreContainer: null,
         showLessContainer: null
-    },
+    };
 
-    init: () => {
-        headerMessage.cacheElements();
-        headerMessage.registerEvents();
+    protected urls = {
+        mainAppPrivateMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=0',
+        mainAppPublicMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=1',
+        mainAppSpecialMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=2',
+        oldMainAppNormalMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
+        oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
+        oldMainAppSpecialMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=special',
+        updatePrivateMessageCount: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
+        getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'
+    };
+    protected $: JQueryStatic;
 
-        headerMessage.showHotMessages();
-        headerMessage.getMessages();
+    constructor($: JQueryStatic) {
+        this.$ = $;
+    }
 
-        if (alpha.isScreenLower768) {
-            const headerMessageMobile = new Home.HeaderMessageMobile();
-            headerMessageMobile.init();
-        }
-    },
+    init = () => {
+        this.cacheElements();
+        this.registerEvents();
+        this.showHotMessages();
+        this.getMessages();
+    }
 
-    cacheElements: function () {
-        headerMessage.domElements.btnPrivateMessage = $('#btnPrivateMessage');
-        headerMessage.domElements.privateMessageCounter = $('#privateMessageCounter');
-        headerMessage.domElements.liveMessage = $('#liveMessage');
-        headerMessage.domElements.moveBetsMessage = $('#movebets-message');
-        headerMessage.domElements.btnSpecialMessage = $('#btnSpecialMessage');
-        headerMessage.domElements.marqueeMessage = $('#marqueeMessage');
-        headerMessage.domElements.hotMessages = $('#userMessageModalBody');
-        headerMessage.domElements.contentMessage = $('#msg-content');
-        headerMessage.domElements.userMessageModal = $('#userMessageModal');
-        headerMessage.domElements.currentHotMessage = headerMessage.domElements.hotMessages.find('p.current-hot-message');
-        headerMessage.domElements.scroller = $('#scroller');
-
-        headerMessage.domElements.showMoreContainer = $(".showmore-container");
-        headerMessage.domElements.showLessContainer = $(".showless-container");
-    },
-
-    registerEvents: function () {
-        headerMessage.domElements.btnPrivateMessage
-            .off('click.headermsg')
-            .on('click.headermsg', headerMessage.viewPrivateMessage);
-
-        headerMessage.domElements.btnSpecialMessage
-            .off('click.headermsg')
-            .on('click.headermsg', headerMessage.viewSpecialMessage);
-
-        headerMessage.domElements.liveMessage
-            .off('click.headermsg')
-            .on('click.headermsg', headerMessage.viewLiveMessage);
-
-        headerMessage.domElements.marqueeMessage
-            .off('click.headermsg')
-            .on('click.headermsg', headerMessage.viewLiveMessage);
-
-        headerMessage.domElements.moveBetsMessage
-            .off('click.headermsg')
-            .on('click.headermsg', headerMessage.viewMoveBetsMessage);
-
-        headerMessage.domElements.showMoreContainer.click(headerMessage.showMoreHotMessage);
-        headerMessage.domElements.showLessContainer.click(headerMessage.showLessHotMessage);
-    },
-
-    viewPrivateMessage: function () {
-        indexManager.changeMenu(headerMessage.urls.mainAppPrivateMessageForm);
-
-        var countPrivateMsg = headerMessage.domElements.privateMessageCounter.html().replace("+", "");
+    viewPrivateMessage = () => {
+        indexManager.changeMenu(this.urls.mainAppPrivateMessageForm);
+        const countPrivateMsg = this.domElements.privateMessageCounter.html().replace("+", "");
 
         if (parseInt(countPrivateMsg) > 0) {
             //// Reset private message after click on view private message link
-            $.ajax({
-                url: headerMessage.urls.updatePrivateMessageCount,
+            this.$.ajax({
+                url: this.urls.updatePrivateMessageCount,
                 type: 'POST',
-                success: function (rawResult) {
-                    var result = alpha.core.convertReponseToJson(rawResult);
+                success: (rawResult) => {
+                    const result = alpha.core.convertReponseToJson(rawResult);
+
                     if (result.errCode === 0) {
-                        headerMessage.domElements.privateMessageCounter.html(0);
+                        this.domElements.privateMessageCounter.html('0');
                     }
                 }
             });
         }
-    },
+    }
 
-    viewSpecialMessage: function () {
-        indexManager.changeMenu(headerMessage.urls.mainAppSpecialMessageForm);
-    },
+    viewSpecialMessage = () => {
+        indexManager.changeMenu(this.urls.mainAppSpecialMessageForm);
+    }
 
-    viewLiveMessage: (event) => {
-        var liveMessageUrl = $(event.target).attr('live-message-url');
+    viewLiveMessage = (event: JQueryEventObject) => {
+        const liveMessageUrl = this.$(event.target).attr('live-message-url');
 
         if (liveMessageUrl) {
             indexManager.changeMenu(liveMessageUrl);
         }
         else {
-            indexManager.changeMenu(headerMessage.urls.mainAppPublicMessageForm);
+            indexManager.changeMenu(this.urls.mainAppPublicMessageForm);
         }
-    },
+    }
 
-    viewMoveBetsMessage: function (event) {
+    viewMoveBetsMessage = (event: JQueryEventObject) => {
         event.stopPropagation();
-    },
+    }
 
-    showHotMessages: function () {
-        if (headerMessage.domElements.currentHotMessage.length > 0) {
-            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false })
+    showHotMessages = () => {
+        if (this.domElements.currentHotMessage.length > 0) {
+            this.domElements
+                .userMessageModal
+                .modal({ show: true, backdrop: false })
                 .tinyDraggable({ exclude: 'button.icon.icon-close.close, a' });
-            headerMessage.calculateHotMessagePopupHeight(false);
+
+            this.calculateHotMessagePopupHeight(false);
         }
 
-        setInterval(headerMessage.swapMessage, 18 * 1000);
-    },
+        setInterval(this.swapMessage, 18 * 1000);
+    }
 
-    resetHotMessageElements: function (showFullMessage) {
-        var minMessageHeight = 40;
-        headerMessage.domElements.currentHotMessage.css('min-height', minMessageHeight);
+    resetHotMessageElements = (showFullMessage) => {
+        const minMessageHeight = 40;
+        this.domElements.currentHotMessage.css('min-height', minMessageHeight);
 
         if (showFullMessage) {
-            headerMessage.domElements.showMoreContainer.addClass("hide");
-            headerMessage.domElements.currentHotMessage.removeClass("brief-content");
-            headerMessage.domElements.currentHotMessage.css('height', '');
+            this.domElements.showMoreContainer.addClass("hide");
+            this.domElements.currentHotMessage.removeClass("brief-content");
+            this.domElements.currentHotMessage.css('height', '');
         } else {
-            headerMessage.domElements.showLessContainer.addClass("hide");
-            headerMessage.domElements.currentHotMessage.removeClass("brief-content");
+            this.domElements.showLessContainer.addClass("hide");
+            this.domElements.currentHotMessage.removeClass("brief-content");
         }
-    },
-    setHotMessageElementStyleByMessageHeight: function (showFullMessage, messageHeight, maxMessageHeight) {
+    }
+
+    setHotMessageElementStyleByMessageHeight = (showFullMessage, messageHeight, maxMessageHeight) => {
         if (showFullMessage) {
             if (messageHeight <= maxMessageHeight) {
-                headerMessage.domElements.showLessContainer.addClass("hide");
+                this.domElements.showLessContainer.addClass("hide");
             } else {
-                headerMessage.domElements.showLessContainer.removeClass("hide");
+                this.domElements.showLessContainer.removeClass("hide");
             }
         }
         else {
             if (messageHeight <= maxMessageHeight) {
-                headerMessage.domElements.showMoreContainer.addClass("hide");
+                this.domElements.showMoreContainer.addClass("hide");
             } else {
-                headerMessage.domElements.currentHotMessage.addClass("brief-content").height(maxMessageHeight);
-                headerMessage.domElements.showMoreContainer.removeClass("hide");
+                this.domElements.currentHotMessage.addClass("brief-content").height(maxMessageHeight);
+                this.domElements.showMoreContainer.removeClass("hide");
             }
         }
-    },
-    calculateHotMessageHeight: function (showFullMessage, maxMessageHeight) {
-        var messageHeight = headerMessage.domElements.currentHotMessage.height();
-        headerMessage.setHotMessageElementStyleByMessageHeight(showFullMessage, messageHeight, maxMessageHeight);
+    }
+
+    calculateHotMessageHeight = (showFullMessage, maxMessageHeight) => {
+        const bodyBorderHeight = 2;
+        const bodyPaddingHeight = 5 + bodyBorderHeight;
+        let messageHeight = this.domElements.currentHotMessage.height();
+
+        this.setHotMessageElementStyleByMessageHeight(showFullMessage, messageHeight, maxMessageHeight);
 
         if (maxMessageHeight < messageHeight) {
             messageHeight = showFullMessage ?
-                messageHeight + headerMessage.domElements.showLessContainer.height() :
-                maxMessageHeight + headerMessage.domElements.showMoreContainer.height();
+                messageHeight + this.domElements.showLessContainer.height() :
+                maxMessageHeight + this.domElements.showMoreContainer.height();
         }
 
-        var bodyBorderHeight = 2;
-        var bodyPaddingHeight = 5 + bodyBorderHeight;
         messageHeight += bodyPaddingHeight;
 
         return messageHeight;
-    },
-    calculateHotMessagePopupHeight: function (showFullMessage) {
-        headerMessage.resetHotMessageElements(showFullMessage);
+    }
 
-        var maxMessageHeight = 53;
-        var messageHeight = headerMessage.calculateHotMessageHeight(showFullMessage, maxMessageHeight);
+    calculateHotMessagePopupHeight = (showFullMessage) => {
+        this.resetHotMessageElements(showFullMessage);
 
-        var headerHeight = 10;
-        var popUpHeight = headerHeight + messageHeight;
+        const maxMessageHeight = 53;
+        const messageHeight = this.calculateHotMessageHeight(showFullMessage, maxMessageHeight);
+        const headerHeight = 10;
+        const popUpHeight = headerHeight + messageHeight;
 
-        headerMessage.domElements.userMessageModal.height(popUpHeight);
-    },
+        this.domElements.userMessageModal.height(popUpHeight);
+    };
 
-    showMoreHotMessage: function () {
-        headerMessage.calculateHotMessagePopupHeight(true);
-    },
+    showMoreHotMessage = () => {
+        this.calculateHotMessagePopupHeight(true);
+    }
 
-    showLessHotMessage: function () {
-        headerMessage.calculateHotMessagePopupHeight(false);
-    },
+    showLessHotMessage = () => {
+        this.calculateHotMessagePopupHeight(false);
+    }
 
-    showPublicMessage: function (publicMessage) {
+    showPublicMessage = (publicMessage: Array<number>) => {
         // Process Public Message: show new public message and its link to message form
-        const url = headerMessage.urls.mainAppPublicMessageForm;
+        const url = this.urls.mainAppPublicMessageForm;
 
-        if (publicMessage[headerMessage.messageIdIndex]
-            && publicMessage[headerMessage.messageIdIndex] !== headerMessage.publicMessageId) {
-            headerMessage.domElements.liveMessage
-                .html(publicMessage[headerMessage.messageContentIndex] + '. ')
+        if (publicMessage[this.messageIdIndex]
+            && publicMessage[this.messageIdIndex] !== this.publicMessageId) {
+            this.domElements.liveMessage
+                .html(publicMessage[this.messageContentIndex] + '. ')
                 .find('font').attr('live-message-url', url);
 
-            if (headerMessage.publicMessageId !== 0) {
-                headerMessage.appendMessageToPopup(publicMessage[headerMessage.messageContentIndex]);
+            if (this.publicMessageId !== 0) {
+                this.appendMessageToPopup(publicMessage[this.messageContentIndex]);
             }
 
-            headerMessage.publicMessageId = publicMessage[headerMessage.messageIdIndex];
+            this.publicMessageId = publicMessage[this.messageIdIndex];
         }
         else {
-            var spanMoveBets = $("#span-movebets");
+            const spanMoveBets = this.$("#span-movebets");
             if (spanMoveBets.length) {
                 spanMoveBets.remove();
             }
         }
-    },
+    }
 
-    showPrivateMessage: function (privateMessage, unreadPriMsgCount) {
+    showPrivateMessage = (privateMessage, unreadPriMsgCount) => {
         // Process Private Message: show new private message
-        const url = headerMessage.urls.mainAppPrivateMessageForm;
+        const url = this.urls.mainAppPrivateMessageForm;
 
-        if (privateMessage[headerMessage.messageIdIndex]
-            && headerMessage.privateMessageId !== privateMessage[headerMessage.messageIdIndex]) {
+        if (privateMessage[this.messageIdIndex]
+            && this.privateMessageId !== privateMessage[this.messageIdIndex]) {
             //// Append Private Message to Marquee with green color format.
-            var privateMessageContent = headerMessage.domElements.liveMessage.find('#private-message-content');
+            const privateMessageContent = this.domElements.liveMessage.find('#private-message-content');
 
             if (privateMessageContent.length > 0) {
-                privateMessageContent.html("Private message: " + privateMessage[headerMessage.messageContentIndex]);
+                privateMessageContent.html("Private message: " + privateMessage[this.messageContentIndex]);
             }
             else {
-                var liveMessageContent = headerMessage.domElements.liveMessage.html();
+                const liveMessageContent = this.domElements.liveMessage.html();
 
-                headerMessage.domElements.liveMessage
-                    .html(liveMessageContent +
+                this.domElements.liveMessage.html(
+                    liveMessageContent +
                     "<font id='private-message-content' color=\"green\">Private message: " +
-                    privateMessage[headerMessage.messageContentIndex] +
+                    privateMessage[this.messageContentIndex] +
                     "</font>")
                     .find('#private-message-content').attr('live-message-url', url);
             }
 
-            if (headerMessage.privateMessageId !== 0) {
-                headerMessage.appendMessageToPopup(privateMessage[headerMessage.messageContentIndex]);
+            if (this.privateMessageId !== 0) {
+                this.appendMessageToPopup(privateMessage[this.messageContentIndex]);
             }
 
-            headerMessage.privateMessageId = privateMessage[headerMessage.messageIdIndex];
+            this.privateMessageId = privateMessage[this.messageIdIndex];
         }
 
         unreadPriMsgCount = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
 
-        headerMessage.domElements.privateMessageCounter.html(unreadPriMsgCount);
-    },
+        this.domElements.privateMessageCounter.html(unreadPriMsgCount);
+    }
 
-    appendMessageToPopup: function (message) {
-        headerMessage.domElements.contentMessage.append(
+    appendMessageToPopup = (message) => {
+        this.domElements.contentMessage.append(
             '<p class="not-shown-message">'
             + message
             + '</p>');
-    },
+    }
 
-    getMessages: function () {
-        $.ajax({
+    getMessages = () => {
+        this.$.ajax({
             type: "POST",
-            url: headerMessage.urls.getMessages,
-            success: function (rawResults) {
-                try {
-                    var results = alpha.core.convertReponseToJson(rawResults);
+            url: this.urls.getMessages,
+            success: (rawResults) => {
+                const results = alpha.core.convertReponseToJson(rawResults),
+                    publicMessage = results.public_message ? results.public_message : 0,
+                    privateMessage = results.private_message ? results.private_message : 0,
+                    unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0,
+                    movebetsMessage = results.movebets_message || "";
 
-                    var publicMessage = results.public_message ? results.public_message : 0,
-                        privateMessage = results.private_message ? results.private_message : 0,
-                        unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0,
-                        movebetsMessage = results.movebets_message || "";
+                this.showPublicMessage(publicMessage);
 
-                    headerMessage.showPublicMessage(publicMessage);
+                this.domElements.moveBetsMessage.html(movebetsMessage || "");
 
-                    headerMessage.domElements.moveBetsMessage.html(movebetsMessage || "");
+                this.showPrivateMessage(privateMessage, unreadPriMsgCount);
 
-                    headerMessage.showPrivateMessage(privateMessage, unreadPriMsgCount);
+                this.applyScroller();
 
-                    headerMessage.applyScroller();
-                } catch (e) { }
-
-                setTimeout(headerMessage.getMessages, 60 * 1000);
+                setTimeout(this.getMessages, 60 * 1000);
             }
         });
-    },
+    }
 
-    swapMessage: function () {
-        var nextMessage = [];
+    swapMessage = () => {
+        let nextMessage: JQuery;
 
-        if (headerMessage.domElements.currentHotMessage.length === 0) {
-            nextMessage = headerMessage.domElements.hotMessages.find('p.not-shown-message:first');
+        if (this.domElements.currentHotMessage.length === 0) {
+            nextMessage = this.domElements.hotMessages.find('p.not-shown-message:first');
         }
         else {
-            nextMessage = headerMessage.domElements.currentHotMessage.next();
+            nextMessage = this.domElements.currentHotMessage.next();
         }
 
         if (nextMessage.length > 0) {
-            if (headerMessage.domElements.currentHotMessage.length > 0) {
+            if (this.domElements.currentHotMessage.length > 0) {
                 //// Hide old Message
-                headerMessage.domElements.currentHotMessage.animate({
+                this.domElements.currentHotMessage.animate({
                     opacity: 0.0
                 },
                     1500,
-                    function () {
+                    () => {
                         //// Remove Old Message and Show New Message
-                        headerMessage.domElements.currentHotMessage.remove();
-                        headerMessage.showNextMessage(nextMessage);
+                        this.domElements.currentHotMessage.remove();
+                        this.showNextMessage(nextMessage);
                     });
             }
             else {
-                headerMessage.showNextMessage(nextMessage);
+                this.showNextMessage(nextMessage);
             }
 
-            headerMessage.domElements.userMessageModal.modal({ show: true, backdrop: false })
+            this.domElements.userMessageModal.modal({ show: true, backdrop: false })
                 .tinyDraggable({ exclude: 'button.icon.icon-close.close, a' });
-            headerMessage.calculateHotMessagePopupHeight(false);
+            this.calculateHotMessagePopupHeight(false);
         }
-    },
-
-    showNextMessage: function (nextMessage) {
-        nextMessage.show().removeClass('not-shown-message');
-        headerMessage.domElements.currentHotMessage = nextMessage;
-        headerMessage.calculateHotMessagePopupHeight(false);
-        nextMessage.animate({
-            opacity: 1.0
-        },
-            1500,
-            function () {
-            });
-    },
-
-    applyScroller: function () {
-        if (headerMessage.scrollerLeft) {
-            return;
-        }
-
-        headerMessage.scrollerLeft = 100;
-        headerMessage.scrollerWidth = headerMessage.domElements.scroller.width();
-
-        headerMessage.scroller = headerMessage.domElements.scroller[0];
-        headerMessage.topnews = headerMessage.domElements.liveMessage[0];
-
-        headerMessage.topnews.onmouseover = function () {
-            headerMessage.pauseMarquee();
-        };
-        headerMessage.topnews.onmouseout = function () {
-            headerMessage.playMarquee();
-        };
-
-        headerMessage.domElements.moveBetsMessage[0].onmouseover = function () {
-            headerMessage.pauseMarquee();
-        };
-        headerMessage.domElements.moveBetsMessage[0].onmouseout = function () {
-            headerMessage.playMarquee();
-        };
-
-        var textNews = headerMessage.domElements.marqueeMessage[0];
-        headerMessage.maskWidth = parseInt(textNews.offsetWidth);
-
-        headerMessage.scrollMessage();
-    },
-
-    playMarquee: function () {
-        if (headerMessage.scrollerPaused) {
-            headerMessage.scrollerPaused = false;
-            headerMessage.scrollMessageTimeout = setTimeout(headerMessage.scrollMessage, 20);
-        } else {
-            headerMessage.scrollerPaused = false;
-        }
-    },
-
-    pauseMarquee: function () {
-        clearTimeout(headerMessage.scrollMessageTimeout);
-        headerMessage.scrollMessageTimeout = 0;
-        headerMessage.scrollerPaused = true;
-    },
-
-    scrollMessage: function () {
-        if (headerMessage.scrollerPaused) {
-            return;
-        }
-
-        if (headerMessage.scrollerLeft + headerMessage.scrollerWidth < -5) {
-            headerMessage.scrollerLeft = headerMessage.maskWidth + 5;
-            headerMessage.scrollerWidth = parseInt(headerMessage.topnews.offsetWidth);
-        }
-
-        headerMessage.scroller.style.left = (headerMessage.scrollerLeft--) + 'px';
-        headerMessage.scrollMessageTimeout = setTimeout(headerMessage.scrollMessage, 20);
-    },
-
-    hasReadInstruction: (): boolean => {
-        return alpha.localStorage.check('Instruction') && alpha.localStorage.check('MobileInstruction');
     }
-};
+
+    showNextMessage = (nextMessage: JQuery) => {
+        nextMessage.show().removeClass('not-shown-message');
+        this.domElements.currentHotMessage = nextMessage;
+        this.calculateHotMessagePopupHeight(false);
+        nextMessage.animate({ opacity: 1.0 }, 1500);
+    }
+
+    applyScroller = () => {
+        if (this.scrollerLeft) {
+            return;
+        }
+
+        this.scrollerLeft = 100;
+        this.scrollerWidth = this.domElements.scroller.width();
+
+        this.scroller = this.domElements.scroller[0];
+        this.topNews = this.domElements.liveMessage[0];
+
+        this.topNews.onmouseover = () => {
+            this.pauseMarquee();
+        };
+        this.topNews.onmouseout = () => {
+            this.playMarquee();
+        };
+
+        this.domElements.moveBetsMessage[0].onmouseover = () => {
+            this.pauseMarquee();
+        };
+        this.domElements.moveBetsMessage[0].onmouseout = () => {
+            this.playMarquee();
+        };
+
+        const textNews = this.domElements.marqueeMessage[0];
+        this.maskWidth = textNews.offsetWidth;
+
+        this.scrollMessage();
+    }
+
+    playMarquee = () => {
+        if (this.scrollerPaused) {
+            this.scrollerPaused = false;
+            this.scrollMessageTimeout = setTimeout(this.scrollMessage, 20);
+        } else {
+            this.scrollerPaused = false;
+        }
+    }
+
+    pauseMarquee = () => {
+        clearTimeout(this.scrollMessageTimeout);
+        this.scrollMessageTimeout = 0;
+        this.scrollerPaused = true;
+    }
+
+    scrollMessage = () => {
+        if (this.scrollerPaused) {
+            return;
+        }
+
+        if (this.scrollerLeft + this.scrollerWidth < -5) {
+            this.scrollerLeft = this.maskWidth + 5;
+            this.scrollerWidth = this.topNews.offsetWidth;
+        }
+
+        this.scroller.style.left = (this.scrollerLeft--) + 'px';
+        this.scrollMessageTimeout = setTimeout(this.scrollMessage, 20);
+    }
+
+    private cacheElements = () => {
+        this.domElements.btnPrivateMessage = this.$('#btnPrivateMessage');
+        this.domElements.privateMessageCounter = this.$('#privateMessageCounter');
+        this.domElements.liveMessage = this.$('#liveMessage');
+        this.domElements.moveBetsMessage = this.$('#movebets-message');
+        this.domElements.btnSpecialMessage = this.$('#btnSpecialMessage');
+        this.domElements.marqueeMessage = this.$('#marqueeMessage');
+        this.domElements.hotMessages = this.$('#userMessageModalBody');
+        this.domElements.contentMessage = this.$('#msg-content');
+        this.domElements.userMessageModal = this.$('#userMessageModal');
+        this.domElements.currentHotMessage = this.domElements.hotMessages.find('p.current-hot-message');
+        this.domElements.scroller = this.$('#scroller');
+        this.domElements.showMoreContainer = this.$(".showmore-container");
+        this.domElements.showLessContainer = this.$(".showless-container");
+    };
+
+    private registerEvents = () => {
+        this.domElements.btnPrivateMessage.click(this.viewPrivateMessage);
+        this.domElements.btnSpecialMessage.click(this.viewSpecialMessage);
+        this.domElements.liveMessage.click(this.viewLiveMessage);
+        this.domElements.marqueeMessage.click(this.viewLiveMessage);
+        this.domElements.moveBetsMessage.click(this.viewMoveBetsMessage);
+        this.domElements.showMoreContainer.click(this.showMoreHotMessage);
+        this.domElements.showLessContainer.click(this.showLessHotMessage);
+    };
+}
 
 $(() => {
-    if (headerMessage.hasReadInstruction()) {
+    const isReadInstruction = alpha.localStorage.check(alpha.key.instruction)
+        || alpha.localStorage.check(alpha.key.mobileInstruction);
+
+    if (isReadInstruction) {
+        const headerMessage = new HeaderMessage($);
         headerMessage.init();
     }
 });

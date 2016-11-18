@@ -5,10 +5,11 @@
 
     constructor($: JQueryStatic) {
         super($);
-        this.readIntroductionKey = 'MobileInstruction';
     }
 
     init = () => {
+        this.readInstructionKey = alpha.key.mobileInstruction
+
         if (!this.readInstruction()) {
             this.cacheDom();
             this.registerEvent();
@@ -25,8 +26,16 @@
         if (this.mobileBlockUI.is(':visible') || this.mobileIntroModal.is(':visible')) {
             this.setReadInstruction();
             this.mobileBlockUI.hide();
-            this.mobileIntroModal.hide(0, headerMessage.init);
+            this.mobileIntroModal.hide(0, this.initHeaderMessage);
         }
+    }
+
+    private initHeaderMessage = () => {
+        const headerMessage = new HeaderMessage(this.$)
+        headerMessage.init();
+
+        const headerMessageMobile = new HeaderMessageMobile(this.$);
+        headerMessageMobile.init();
     }
 
     private cacheDom = () => {
