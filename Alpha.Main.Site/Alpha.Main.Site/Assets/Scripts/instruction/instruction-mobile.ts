@@ -38,11 +38,11 @@
     }
 
     private registerEvent = () => {
-        this.mobileCloseIntroBtn.click(() => {
+        this.mobileCloseIntroBtn.on('click', () => {
             this.hideInstruction();
         });
 
-        this.$('.header-nav, .header-nav .icon-collapse').click(() => {
+        this.$('.header-nav, .header-nav .icon-collapse').on('click', () => {
             this.hideInstruction();
         });
     }

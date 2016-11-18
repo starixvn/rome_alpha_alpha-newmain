@@ -279,19 +279,19 @@ class Instruction {
     }
 
     private registerEvents = () => {
-        this.domElements.startIntroductionBtn.click(() => {
+        this.domElements.startIntroductionBtn.on('click', () => {
             this.domElements.beginModal.modal('hide');
             this.setReadInstruction();
             this.showMainSteps();
         });
 
-        this.domElements.notNowIntroductionBtn.click(() => {
+        this.domElements.notNowIntroductionBtn.on('click', () => {
             this.domElements.beginModal.modal('hide');
             this.setReadInstruction();
             this.showNotNowSteps();
         });
 
-        this.domElements.replayInstruction.click(this.showMainSteps);
+        this.domElements.replayInstruction.on('click', this.showMainSteps);
     }
 }
 

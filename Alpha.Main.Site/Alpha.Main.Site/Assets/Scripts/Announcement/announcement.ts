@@ -58,15 +58,15 @@
         }
 
         bindCommonEvents = () => {
-            this.domElements.popUpContainerText.find('.icon-close').click(() => {
+            this.domElements.popUpContainerText.find('.icon-close').on('click', () => {
                 this.removeAnnouncement();
             });
 
-            this.domElements.popUpContainer.find('.icon-close').click(() => {
+            this.domElements.popUpContainer.find('.icon-close').on('click', () => {
                 parent['announcement'].removeAnnouncement();
             });
 
-            this.domElements.hideAdvertisement.click(() => {
+            this.domElements.hideAdvertisement.on('click', () => {
                 this.doNotShowAnnouncement(this.$(this).is(':checked'));
             });
         }

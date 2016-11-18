@@ -379,13 +379,13 @@
     };
 
     private registerEvents = () => {
-        this.domElements.btnPrivateMessage.click(this.viewPrivateMessage);
-        this.domElements.btnSpecialMessage.click(this.viewSpecialMessage);
-        this.domElements.liveMessage.click(this.viewLiveMessage);
-        this.domElements.marqueeMessage.click(this.viewLiveMessage);
-        this.domElements.moveBetsMessage.click(this.viewMoveBetsMessage);
-        this.domElements.showMoreContainer.click(this.showMoreHotMessage);
-        this.domElements.showLessContainer.click(this.showLessHotMessage);
+        this.domElements.btnPrivateMessage.on('click', this.viewPrivateMessage);
+        this.domElements.btnSpecialMessage.on('click', this.viewSpecialMessage);
+        this.domElements.liveMessage.on('click', this.viewLiveMessage);
+        this.domElements.marqueeMessage.on('click', this.viewLiveMessage);
+        this.domElements.moveBetsMessage.on('click', this.viewMoveBetsMessage);
+        this.domElements.showMoreContainer.on('click', this.showMoreHotMessage);
+        this.domElements.showLessContainer.on('click', this.showLessHotMessage);
     };
 }
 

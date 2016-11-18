@@ -14,7 +14,7 @@
                 fullContent = $this.children('.full-content'),
                 icon = $this.find('.icon');
 
-            $this.click(() => {
+            $this.on('click', () => {
                 if (!shortContent.is(':hidden')) {
                     shortContent.hide();
                     fullContent.show();

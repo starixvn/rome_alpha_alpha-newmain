@@ -127,27 +127,27 @@ var headerNav = {
     },
 
     registerEvents: function () {
-        headerNav.domElements.iconLogOut.on("click touchend", alpha.core.signOut);
+        headerNav.domElements.iconLogOut.on("click", alpha.core.signOut);
 
-        headerNav.domElements.iconHome.on("click touchend", function () {
+        headerNav.domElements.iconHome.on("click", () => {
             indexManager.changeMenu(headerNav.urls.home);
         });
 
-        headerNav.domElements.changeLanguageLink.click(function () {
+        headerNav.domElements.changeLanguageLink.on('click', () => {
             headerNav.changeLanguage($(this).data("value"));
         });
 
         // Logout link for mobile
-        headerNav.domElements.linkLogout.on("click touchend", alpha.core.signOut);
+        headerNav.domElements.linkLogout.on("click", alpha.core.signOut);
 
-        headerNav.domElements.iconMessage.on("click touchend", function () {
+        headerNav.domElements.iconMessage.on("click", () => {
             indexManager.changeMenu(headerNav.urls.messages);
 
             $('.icon-message').find('.circle-red').hide();
         });
 
         // Quick search component for mobile
-        headerNav.domElements.iconSearch.click(() => {
+        headerNav.domElements.iconSearch.on('click', () => {
             let topSearchbar = $('.top-search-bar'),
                 topSearchInput = $('.top-search-input'),
                 iconClose = $('.icon-close'),
@@ -187,9 +187,9 @@ var headerNav = {
                 menuBar.activateAccountInfoTab(null, item);
             }
 
-            iconClose.click(onCloseSearchBar);
+            iconClose.on('click', onCloseSearchBar);
 
-            $(".blockUI").click(onCloseSearchBar);
+            $(".blockUI").on('click', onCloseSearchBar);
 
             const typeaheadOptions: TypeaheadOptions = {
                 minLength: 3,
@@ -205,13 +205,13 @@ var headerNav = {
         });
 
         // Annoucement popup for mobile
-        headerNav.domElements.iconBell.click(() => {
+        headerNav.domElements.iconBell.on('click', () => {
             const announcementMobile = new Announcement.Mobile($);
             announcementMobile.startLoading();
         });
 
         // Language show options for mobile
-        headerNav.domElements.languageDropdownSubMenu.click((e) => {
+        headerNav.domElements.languageDropdownSubMenu.on('click', (e) => {
             headerNav.domElements.languageDropdownSubMenu.find('.list-language').toggle();
             e.stopPropagation();
         });

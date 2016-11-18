@@ -126,15 +126,12 @@ var indexManager = {
             indexManager.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentUrl + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
             indexManager.domElements.mainFrame = $('#main');
             indexManager.domElements.mainFrame
-                .off('load.newmain')
                 .on('load.newmain', function () {
                     var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
                     indexManager.closeAllOpenDropdowns(iframeWindow);
                     indexManager.cacheCurrentUrl();
-                    $(iframeWindow.document)
-                        .off('click.closeMenu touchstart.closemenu')
-                        .on('click.closeMenu touchstart.closemenu',
-                        function () {
+                    $(iframeWindow.document).on('click touchend',
+                        () => {
                             menuBar.collapseSideBar();
                         });
 
@@ -156,9 +153,9 @@ var indexManager = {
             $('.dropdown-submenu').find('.dropdown-menu').hide();
         }
 
-        $(document).click(closeDropdownSubMenu);
+        $(document).on('click touchend', closeDropdownSubMenu);
 
-        $('#btn-header-menu').click(closeDropdownSubMenu);
+        $('#btn-header-menu').on('click', closeDropdownSubMenu);
 
         $(iframeWindow.document).on('click touchend', () => {
             $('.dropdown-toggle').each((index, dropdown) => {

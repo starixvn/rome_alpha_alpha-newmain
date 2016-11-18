@@ -14,11 +14,11 @@
         bindEvents = () => {
             this.bindCommonEvents();
 
-            this.$("#prevButton").click(() => {
+            this.$("#prevButton").on('click', () => {
                 this.loadPreviousAnnouncement();
             });
 
-            this.$("#nextButton").click(() => {
+            this.$("#nextButton").on('click', () => {
                 this.loadAnnouncement(this.createLoadAnnoucementData(this.showedMessageIds, 1), this.onSuccessLoadNextAnnouncement);
             });
 

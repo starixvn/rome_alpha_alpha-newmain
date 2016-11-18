@@ -12,7 +12,7 @@
             dataElement = $this.next(),
             url = $this.attr('action-url');
 
-        $this.click(() => {
+        $this.on('click', () => {
             if (dataElement.is(':hidden')) {
                 loadInfo(url, dataElement);
             }
@@ -38,7 +38,7 @@
     private hideTooltipOnTouchOutInMobile = (className: string) => {
         const $tooltip = this.$('.' + className);
 
-        this.$(window.document).on('touchend', (event) => {
+        this.$(window.document).on('click touchend', (event) => {
             const target = $(event.target);
 
             if (target.hasClass(className) || target.parent().hasClass(className)) {

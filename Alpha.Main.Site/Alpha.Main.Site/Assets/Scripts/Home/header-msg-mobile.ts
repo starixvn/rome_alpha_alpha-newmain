@@ -45,7 +45,7 @@
     }
 
     private handleHotMessageClick = () => {
-        this.hotMessageModal.click(() => {
+        this.hotMessageModal.on('click', () => {
             this.$('#toast-container').css('top', this.getHotMessageHeight());
         });
     }
