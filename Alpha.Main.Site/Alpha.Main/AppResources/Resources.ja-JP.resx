@@ -346,4 +346,7 @@
   <data name="from" xml:space="preserve">
     <value>送金元</value>
   </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>未払い</value>
+  </data>
 </root>

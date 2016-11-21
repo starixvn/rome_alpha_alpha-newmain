@@ -463,4 +463,7 @@
   <data name="from" xml:space="preserve">
     <value>从</value>
   </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>未完成交易</value>
+  </data>
 </root>

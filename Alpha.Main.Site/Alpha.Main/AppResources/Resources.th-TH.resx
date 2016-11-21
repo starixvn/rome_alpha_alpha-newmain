@@ -460,4 +460,7 @@
   <data name="from" xml:space="preserve">
     <value>จาก</value>
   </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>การเดิมพันที่ยังไม่สิ้นสุด</value>
+  </data>
 </root>

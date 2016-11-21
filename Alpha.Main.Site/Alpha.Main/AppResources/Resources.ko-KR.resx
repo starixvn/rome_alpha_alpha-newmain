@@ -379,4 +379,7 @@
   <data name="from" xml:space="preserve">
     <value>시작일</value>
   </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>대기 포인트</value>
+  </data>
 </root>

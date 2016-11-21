@@ -462,4 +462,7 @@
   <data name="from" xml:space="preserve">
     <value>Từ</value>
   </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>Tiền chưa xử lý</value>
+  </data>
 </root>
