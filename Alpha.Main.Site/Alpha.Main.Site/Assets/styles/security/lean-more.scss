@@ -1,4 +1,9 @@
-﻿body{
+﻿// To remove the 300-350ms tap delay
+html {
+  touch-action: manipulation;
+}
+
+body{
 	line-height: 28px;
     padding: 0 20px;
 }

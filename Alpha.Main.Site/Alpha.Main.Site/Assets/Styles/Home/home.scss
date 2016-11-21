@@ -3,6 +3,11 @@
 
 @include keyframes-ripple;
 
+// To remove the 300-350ms tap delay
+html {
+  touch-action: manipulation;
+}
+
 body {
     background-color: transparent;
     font-size: $font-size;

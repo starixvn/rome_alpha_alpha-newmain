@@ -1,6 +1,11 @@
 ﻿@import '../Home/_variables.scss';
 @import '../Home/_mixins.scss';
 
+// To remove the 300-350ms tap delay
+html {
+  touch-action: manipulation;
+}
+
 body {
     background-color: transparent;
     font-size: $font-size;
