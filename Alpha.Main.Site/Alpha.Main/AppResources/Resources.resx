@@ -514,13 +514,16 @@
   <data name="normalAnnouncement" xml:space="preserve">
     <value>Normal Announcement</value>
   </data>
-  <data name="ข้อความ เฉพาะ" xml:space="preserve">
-    <value>ข้อความ เฉพาะ</value>
-  <comment>ข้อความ เฉพาะ</comment></data>
   <data name="specialAnnouncement" xml:space="preserve">
     <value>Special Announcement</value>
   </data>
   <data name="from" xml:space="preserve">
     <value>From</value>
+  </data>
+  <data name="firstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="lastName" xml:space="preserve">
+    <value>Last Name</value>
   </data>
 </root>
