@@ -31,7 +31,6 @@ var indexManager = {
         indexManager.loadPartialViews();
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
-        indexManager.setTouchActionStyleToAllHtml();
     },
 
     registerEvents: function () {
@@ -168,14 +167,7 @@ var indexManager = {
 
             closeDropdownSubMenu();
         });
-    },
-
-    setTouchActionStyleToAllHtml: () => {
-        $('html').css('touch-action', 'manipulation');
-        $('iframe').load(() => {
-            $('iframe').contents().find('html').css('touch-action', 'manipulation');
-        });
-    },
+    }
 };
 
 $(function () {

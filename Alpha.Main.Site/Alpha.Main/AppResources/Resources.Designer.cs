@@ -331,6 +331,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string from {
+            get {
+                return ResourceManager.GetString("from", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Given Credit.
         /// </summary>
         public static string givenCredit {
@@ -823,9 +832,9 @@ namespace Alpha.Main.AppResources {
         /// <summary>
         ///   Looks up a localized string similar to Special Announcement.
         /// </summary>
-        public static string specialAnnounement {
+        public static string specialAnnouncement {
             get {
-                return ResourceManager.GetString("specialAnnounement", resourceCulture);
+                return ResourceManager.GetString("specialAnnouncement", resourceCulture);
             }
         }
         
@@ -1249,6 +1258,15 @@ namespace Alpha.Main.AppResources {
         public static string yesterdayWinLoss {
             get {
                 return ResourceManager.GetString("yesterdayWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ข้อความ เฉพาะ.
+        /// </summary>
+        public static string ข้อความ_เฉพาะ {
+            get {
+                return ResourceManager.GetString("ข้อความ เฉพาะ", resourceCulture);
             }
         }
     }

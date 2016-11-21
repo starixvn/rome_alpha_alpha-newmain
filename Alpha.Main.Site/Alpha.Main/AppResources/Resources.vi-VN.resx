@@ -423,4 +423,43 @@
   <data name="Disabled" xml:space="preserve">
     <value>chưa kích hoạt</value>
   </data>
+  <data name="normalAnnouncement" xml:space="preserve">
+    <value>Thông báo chung</value>
+  </data>
+  <data name="specialNotice" xml:space="preserve">
+    <value>Thông báo đăc biệt</value>
+  </data>
+  <data name="ข้อความ เฉพาะ" xml:space="preserve">
+    <value>ข้อความ เฉพาะ</value>
+  </data>
+  <data name="specialAnnouncement" xml:space="preserve">
+    <value>Thông báo đăc biệt</value>
+  </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>Tin nhắn cá nhân</value>
+  </data>
+  <data name="notice" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="winloss" xml:space="preserve">
+    <value>Thắng thua</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>Hoạt Động</value>
+  </data>
+  <data name="closed" xml:space="preserve">
+    <value>Khóa</value>
+  </data>
+  <data name="suspended" xml:space="preserve">
+    <value>Đình Chỉ</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>Đến</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>Từ</value>
+  </data>
 </root>
