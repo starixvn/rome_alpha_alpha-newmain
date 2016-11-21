@@ -30,19 +30,22 @@
     }
 
     private registerTooltip = () => {
-        this.$('.tooltip-stats-member').tooltip({ html: true });
+        this.$('[data-toggle="tooltip"]').tooltip({ html: true });
 
-        this.hideTooltipOnTouchOutInMobile('tooltip-stats-member');
+        this.hideTooltipOnTouchOutInMobile();
     }
 
-    private hideTooltipOnTouchOutInMobile = (className: string) => {
-        const $tooltip = this.$('.' + className);
+    private hideTooltipOnTouchOutInMobile = () => {
+        const $tooltip = this.$('[data-toggle="tooltip"]');
 
-        this.$(window.document).on('click touchend', (event) => {
+        this.$(window.document).on('touchend', (event) => {
             const target = $(event.target);
 
-            if (target.hasClass(className) || target.parent().hasClass(className)) {
-                $tooltip.tooltip('show');
+            if (target.attr('data-toggle') === 'tooltip') {
+                target.tooltip('show');
+            }
+            else if (target.parent().attr('data-toggle') === 'tooltip') {
+                target.parent().tooltip('show');
             }
             else {
                 $tooltip.tooltip('hide');

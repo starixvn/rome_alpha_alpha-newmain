@@ -171,7 +171,7 @@ var headerNav = {
 
                         if (typeof suggestions !== 'undefined' && suggestions !== null && suggestions.length !== 0) {
                             let sugestionItems = suggestions.map((item) => {
-                                return (item[0].indexOf(query) !== -1) ? item[0] : item[1] + item[2];
+                                return item[0];
                             });
 
                             return process(sugestionItems);
