@@ -5,7 +5,8 @@
         registerEvent: jasmine.Spy,
         showInstruction: jasmine.Spy,
         readInstruction: jasmine.Spy,
-        setReadInstruction: jasmine.Spy;
+        setReadInstruction: jasmine.Spy,
+        initHeaderMessage: jasmine.Spy;
 
     let mobileBlockUI: JQuery,
         mobileInstructionModal: JQuery;
@@ -23,6 +24,7 @@
         showInstruction = spyOn(instructionMobile, 'showInstruction');
         readInstruction = spyOn(instructionMobile, 'readInstruction');
         setReadInstruction = spyOn(instructionMobile, 'setReadInstruction');
+        initHeaderMessage = spyOn(instructionMobile, 'initHeaderMessage');
 
         mobileBlockUI = $('.blockUI-mobile');
         mobileInstructionModal = $('#instruction-mobile');
@@ -92,6 +94,7 @@
             expect(mobileBlockUI).toBeHidden();
             expect(mobileInstructionModal).toBeHidden();
             expect(setReadInstruction).toHaveBeenCalled();
+            expect(initHeaderMessage).toHaveBeenCalled();
         });
 
         it('When Instruction Is Hidden -> Do Nothing', () => {

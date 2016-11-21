@@ -17,13 +17,10 @@
     { "Path": "libs/jasmine-jquery.js" },
 
     { "Path": "../core.ts" },
-    { "Path": "../home/header-msg.ts" },
     { "Path": "../dashboard/dashboard.ts" },
     { "Path": "../dashboard/statistics.ts" },
     { "Path": "../dashboard/notice.ts" },
     { "Path": "../message/index.ts" },
-    { "Path": "../home/header-msg.ts" },
-    { "Path": "../home/header-msg-mobile.ts" },
     { "Path": "../instruction/instruction.ts" },
     { "Path": "../instruction/instruction-mobile.ts" }
   ],
