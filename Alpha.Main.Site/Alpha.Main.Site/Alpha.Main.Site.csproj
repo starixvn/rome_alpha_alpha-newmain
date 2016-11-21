@@ -771,11 +771,7 @@
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-CN.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_zh-TW.cshtml" />
-    <None Include="Web.AppSettings.config">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web.AppSettings.local.config">
-      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    <Content Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.AppSettings.napexternal.config">
