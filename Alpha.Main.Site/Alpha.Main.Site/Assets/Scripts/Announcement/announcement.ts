@@ -66,8 +66,8 @@
                 parent['announcement'].removeAnnouncement();
             });
 
-            this.domElements.hideAdvertisement.on('click', () => {
-                this.doNotShowAnnouncement(this.$(this).is(':checked'));
+            this.domElements.hideAdvertisement.on('click', (event) => {
+                this.doNotShowAnnouncement(this.$(event.target).is(':checked'));
             });
         }
 

@@ -133,8 +133,8 @@ var headerNav = {
             indexManager.changeMenu(headerNav.urls.home);
         });
 
-        headerNav.domElements.changeLanguageLink.on('click', () => {
-            headerNav.changeLanguage($(this).data("value"));
+        headerNav.domElements.changeLanguageLink.on('click touchend', (event) => {
+            headerNav.changeLanguage($(event.target).data("value"));
         });
 
         // Logout link for mobile
