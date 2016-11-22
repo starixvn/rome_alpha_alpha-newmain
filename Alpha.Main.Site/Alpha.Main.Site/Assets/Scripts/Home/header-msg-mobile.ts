@@ -2,31 +2,38 @@
     private toastCloseButtonHtml = '<button type="button" class="icon icon-close" data-dismiss="modal" aria-label="Close"></button>';
     private storedMoveBetsEndTime: Date = new Date();
     private hotMessageModal: JQuery;
+    private baseInit = this.init;
 
     init = () => {
         this.hotMessageModal = this.$('#userMessageModal');
 
-        this.showMoveBetsMessagePopUp();
-        setInterval(this.showMoveBetsMessagePopUp, 60000);
+        this.baseInit();
     }
 
-    showMoveBetsMessagePopUp = () => {
-        this.$.ajax({
-            type: "POST",
-            url: this.urls.getMessages,
-            success: this.onSuccessGetMessages
-        });
+    onSuccessGetMessages = (rawResults: string) => {
+        const results = alpha.core.convertReponseToJson(rawResults);
+
+        this.showPublicMessage(results);
+        this.showPrivateMessage(results);
+        this.showPrivateMessageNotification(results);
+        this.showMoveBetsMessage(results);
     }
 
-    private onSuccessGetMessages = (rawResults: string) => {
-        const results = alpha.core.convertReponseToJson(rawResults),
-            movebetsMessage: string = results.movebets_message || "",
+    showMoveBetsMessage = (results: any) => {
+        const movebetsMessage: string = results.movebets_message || "",
             movebetsEndTime: Date = results.movebets_endtime ? new Date(results.movebets_endtime) : null;
 
         if (movebetsEndTime !== null && movebetsEndTime > this.storedMoveBetsEndTime) {
             this.showMoveBetsMessageToaster(movebetsMessage);
             this.storedMoveBetsEndTime = movebetsEndTime;
         }
+    }
+
+    showPrivateMessageNotification = (results: any) => {
+        const unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
+        const notification = $('.icon-message').find('.circle-red');
+
+        (unreadPriMsgCount > 0) ? notification.show() : notification.hide();
     }
 
     private showMoveBetsMessageToaster = (message: string) => {
@@ -37,17 +44,17 @@
         toastr.options.preventDuplicates = true;
         toastr.warning(message).parent().css('top', this.getHotMessageHeight());
 
-        this.handleHotMessageClick();
+        this.resizeOnHotMessageClose();
+    }
+
+    private resizeOnHotMessageClose = () => {
+        this.hotMessageModal.on('click', () => {
+            this.$('#toast-container').css('top', this.getHotMessageHeight());
+        });
     }
 
     private getHotMessageHeight = (): number => {
         return this.hotMessageModal.is(':visible') ? (48 + this.hotMessageModal.height() + 2) : 48;
-    }
-
-    private handleHotMessageClick = () => {
-        this.hotMessageModal.on('click', () => {
-            this.$('#toast-container').css('top', this.getHotMessageHeight());
-        });
     }
 }
 

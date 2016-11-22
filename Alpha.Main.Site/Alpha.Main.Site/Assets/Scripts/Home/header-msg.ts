@@ -49,6 +49,7 @@
         this.registerEvents();
         this.showHotMessages();
         this.getMessages();
+        setInterval(this.getMessages, 60 * 1000);
     }
 
     viewPrivateMessage = () => {
@@ -172,7 +173,31 @@
         this.calculateHotMessagePopupHeight(false);
     }
 
-    showPublicMessage = (publicMessage: Array<number>) => {
+    getMessages = () => {
+        this.$.ajax({
+            type: "POST",
+            url: this.urls.getMessages,
+            success: this.onSuccessGetMessages
+        });
+    }
+
+    onSuccessGetMessages = (rawResults) => {
+        const results = alpha.core.convertReponseToJson(rawResults),
+            movebetsMessage = results.movebets_message || "";
+
+        this.showPublicMessage(results);
+
+        this.domElements.moveBetsMessage.html(movebetsMessage);
+
+        this.showPrivateMessage(results);
+
+        this.applyScroller();
+    }
+
+    showPublicMessage = (results: any) => {
+        const publicMessage = results.public_message ? results.public_message : 0,
+            privateMessage = results.private_message ? results.private_message : 0;
+
         // Process Public Message: show new public message and its link to message form
         const url = this.urls.mainAppPublicMessageForm;
 
@@ -196,7 +221,10 @@
         }
     }
 
-    showPrivateMessage = (privateMessage: Array<number>, unreadPriMsgCount: number) => {
+    showPrivateMessage = (results: any) => {
+        const privateMessage = results.private_message ? results.private_message : 0,
+            unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
+
         // Process Private Message: show new private message
         const url = this.urls.mainAppPrivateMessageForm;
 
@@ -218,7 +246,6 @@
                     "</font>")
                     .find('#private-message-content').attr('live-message-url', url);
             }
-
             if (this.privateMessageId !== 0) {
                 this.appendMessageToPopup(privateMessage[this.messageContentIndex]);
             }
@@ -236,30 +263,6 @@
             '<p class="not-shown-message">'
             + message
             + '</p>');
-    }
-
-    getMessages = () => {
-        this.$.ajax({
-            type: "POST",
-            url: this.urls.getMessages,
-            success: (rawResults) => {
-                const results = alpha.core.convertReponseToJson(rawResults),
-                    publicMessage = results.public_message ? results.public_message : 0,
-                    privateMessage = results.private_message ? results.private_message : 0,
-                    unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0,
-                    movebetsMessage = results.movebets_message || "";
-
-                this.showPublicMessage(publicMessage);
-
-                this.domElements.moveBetsMessage.html(movebetsMessage || "");
-
-                this.showPrivateMessage(privateMessage, unreadPriMsgCount);
-
-                this.applyScroller();
-
-                setTimeout(this.getMessages, 60 * 1000);
-            }
-        });
     }
 
     swapMessage = () => {
@@ -362,7 +365,7 @@
         this.scrollMessageTimeout = setTimeout(this.scrollMessage, 20);
     }
 
-    private cacheElements = () => {
+    protected cacheElements = () => {
         this.domElements.btnPrivateMessage = this.$('#btnPrivateMessage');
         this.domElements.privateMessageCounter = this.$('#privateMessageCounter');
         this.domElements.liveMessage = this.$('#liveMessage');
@@ -378,7 +381,7 @@
         this.domElements.showLessContainer = this.$(".showless-container");
     };
 
-    private registerEvents = () => {
+    protected registerEvents = () => {
         this.domElements.btnPrivateMessage.on('click', this.viewPrivateMessage);
         this.domElements.btnSpecialMessage.on('click', this.viewSpecialMessage);
         this.domElements.liveMessage.on('click', this.viewLiveMessage);
@@ -390,6 +393,8 @@
 }
 
 $(() => {
-    const headerMessage = new HeaderMessage($);
-    headerMessage.init();
+    if (!alpha.isScreenLower768) {
+        const headerMessage = new HeaderMessage($);
+        headerMessage.init();
+    }
 });
