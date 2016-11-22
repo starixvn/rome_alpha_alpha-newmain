@@ -294,10 +294,3 @@ class Instruction {
         this.domElements.replayInstruction.on('click', this.showMainSteps);
     }
 }
-
-$(() => {
-    if (!alpha.isScreenLower768) {
-        const instruction = new Instruction($);
-        instruction.init();
-    }
-});
