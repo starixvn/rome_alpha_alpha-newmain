@@ -14,7 +14,8 @@ var briefProfile = {
         profileTooltip: null,
         changePictureLink: null,
         profileContent: null,
-        profilePicture: null
+        profilePicture: null,
+        adminAndSubAcc: null
     },
 
     countNickNameToolTipCookieName: null,
@@ -69,6 +70,10 @@ var briefProfile = {
         briefProfile.domElements.profilePicture.click(function () {
             menuBar.collapseSideBar();
         });
+
+        if (briefProfile.domElements.adminAndSubAcc.length > 0) {
+            briefProfile.domElements.adminAndSubAcc.tooltip();
+        }
     },
 
     cachedDomElements: function () {
@@ -77,6 +82,7 @@ var briefProfile = {
         briefProfile.domElements.changePictureLink = $('#changePictureLink');
         briefProfile.domElements.profileContent = $('#profile-content');
         briefProfile.domElements.profilePicture = $("#logoProfileImg");
+        briefProfile.domElements.adminAndSubAcc = $("#adminAndSubAcc");
     },
 
     hideTooltipIntroNickname: function () {

@@ -17,10 +17,9 @@
     <div class="userinfo">
         <span class="userName">@Model.Username</span>
         <br />
-
         @if (Model.LoginUserIsNotMainAccount)
         {
-            <div class="adminAndSubAcc" title="@(Model.NickName)">@Model.NickName</div>
+            <div id="adminAndSubAcc" class="adminAndSubAcc" title="@(Model.NickName)" data-placement="right" data-toggle="tooltip">@Model.NickName</div>
         }
         else
         {
