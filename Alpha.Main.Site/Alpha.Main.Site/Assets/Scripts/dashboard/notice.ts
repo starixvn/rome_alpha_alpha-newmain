@@ -66,6 +66,7 @@
             const ajaxSetting: JQueryAjaxSettings = {
                 url: alpha.urls.mainRootPath + '/Notice/MoreMessages?totalMessage=' + moreMessagesBtn.attr('totalMsg'),
                 method: 'GET',
+                cache: false,
                 success: onSuccess
             };
 

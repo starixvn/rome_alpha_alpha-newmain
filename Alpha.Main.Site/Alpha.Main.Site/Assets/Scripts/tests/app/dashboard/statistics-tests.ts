@@ -60,7 +60,7 @@
             registerTooltip.call(this);
 
             // Assert
-            expect(hideTooltipOnTouchOutInMobile).toHaveBeenCalledWith('tooltip-stats-member');
+            expect(hideTooltipOnTouchOutInMobile).toHaveBeenCalled();
         });
 
         it('On MouseOver -> Show Tooltip', () => {
@@ -164,7 +164,7 @@
             loadDropdownInfo.call(this, 'url', $('<div></div>'));
 
             // Assert
-            expect($ajax).toHaveBeenCalledWith({ method: 'GET', url: 'url', success: jasmine.any(Function) });
+            expect($ajax).toHaveBeenCalledWith({ method: 'GET', url: 'url', cache: false, success: jasmine.any(Function) });
         });
     });
 });

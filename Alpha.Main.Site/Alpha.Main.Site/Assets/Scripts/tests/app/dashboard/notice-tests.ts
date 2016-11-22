@@ -208,6 +208,7 @@
             expect($ajax).toHaveBeenCalledWith({
                 method: 'GET',
                 url: 'path/Notice/MoreMessages?totalMessage=10',
+                cache: false,
                 success: jasmine.any(Function)
             });
         });

@@ -62,6 +62,7 @@
             const ajaxSettings = {
                 method: 'GET',
                 url: url,
+                cache: false,
                 success: jasmine.any(Function)
             }
 

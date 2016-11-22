@@ -174,6 +174,7 @@
                 type: methodType,
                 url: url,
                 data: data,
+                cache: false,
                 success: onSuccess
             };
 

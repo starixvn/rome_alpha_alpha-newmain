@@ -20,6 +20,7 @@
         const ajaxSetting: JQueryAjaxSettings = {
             method: method,
             url: url,
+            cache: false,
             success: (responseHtml) => {
                 component.html(responseHtml);
                 handleOnSuccessLoading();

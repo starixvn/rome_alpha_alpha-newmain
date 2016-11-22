@@ -24,6 +24,7 @@
             this.$.ajax({
                 method: 'GET',
                 url: url,
+                cache: false,
                 success: (responseHtml) => dataElement.html(responseHtml)
             });
         }
