@@ -355,6 +355,11 @@ body {
         .row:hover {
             background-color: $table-td-hover-color;
         }
+
+        .message-content {
+            max-height: 300px;
+            overflow: auto;
+        }
     }
 }
 
@@ -391,7 +396,6 @@ body {
 
         &.notice {
             padding-top: 12px;
-            padding-bottom: 34px;
 
             .msg-contents {
                 .message {
