@@ -334,9 +334,6 @@
   <data name="Next" xml:space="preserve">
     <value>次へ</value>
   </data>
-  <data name="ข้อความ เฉพาะ" xml:space="preserve">
-    <value>ข้อความ เฉพาะ</value>
-  </data>
   <data name="submit" xml:space="preserve">
     <value>送信</value>
   </data>

@@ -430,9 +430,6 @@
   <data name="specialNotice" xml:space="preserve">
     <value>特殊公告</value>
   </data>
-  <data name="ข้อความ เฉพาะ" xml:space="preserve">
-    <value>ข้อความ เฉพาะ</value>
-  </data>
   <data name="specialAnnouncement" xml:space="preserve">
     <value>特殊公告</value>
   </data>
