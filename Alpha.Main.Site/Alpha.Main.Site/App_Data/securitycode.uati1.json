@@ -7,7 +7,7 @@
     "Password/ChangePassword",
     "Password/ResetMainAccountPassword",
     "Password/ResetSubAccountPassword",
-    "Otp/Index",
+    "Otp/SetUpOtp",
     "Otp/ResetOtp"
   ],
   "sites": [

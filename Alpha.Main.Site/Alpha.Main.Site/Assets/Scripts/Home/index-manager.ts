@@ -67,10 +67,11 @@ var indexManager = {
                     if (errCode !== 0) {
                         if (errMsg) {
                             alert(errMsg);
-                            alpha.core.signOut();
                         } else {
                             alert('Oops... you are here because of a system error, please notify the administrators.');
                         }
+
+                        alpha.core.signOut();
                     }
                 }
                 catch (e) {

@@ -861,7 +861,7 @@
     <Content Include="typings\globals\jquery.blockui\typings.json" />
     <Content Include="typings\globals\jquery\typings.json" />
     <Content Include="Views\Otp\VerifyOtpDifferenceDevice.cshtml" />
-    <Content Include="Views\Otp\Index.cshtml" />
+    <Content Include="Views\Otp\SetUpOtp.cshtml" />
     <Content Include="Views\Otp\VerifyOtp.cshtml" />
     <Content Include="Views\Otp\ResetOtp.cshtml" />
     <Content Include="Views\Otp\RegisterAuthenticatorApp.cshtml" />

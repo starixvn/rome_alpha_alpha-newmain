@@ -17,7 +17,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        public ActionResult Index(SetUpOtpQuery query)
+        public ActionResult SetUpOtp(SetUpOtpQuery query)
         {
             var customerOtp = mediator.Send(query);
 
