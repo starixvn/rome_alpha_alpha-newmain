@@ -112,12 +112,12 @@ body {
             padding: 0;
             @include border-radius(0);
 
-            .width-100per {
-                width: 100%;
-            }
-
             .newMemCol {
                 width: 100px;
+            }
+
+            .width-50per {
+                width: 50%;
             }
         }
     }
@@ -283,6 +283,9 @@ body {
 
         &.statistic {
             padding-left: 8px;
+            .dropdown-stast {
+                min-width: 350px;
+            }
         }
 
         &.notice {
@@ -425,6 +428,8 @@ body {
 
             .dropdown-stast {
                 width: 100%;
+                min-width: initial;
+
                 .username {
                     width: 147px;
                     word-break: break-all;
