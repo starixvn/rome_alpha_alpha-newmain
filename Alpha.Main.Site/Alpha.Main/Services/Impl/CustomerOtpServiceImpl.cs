@@ -197,11 +197,14 @@
             };
 
             if (!isCorrect
-                && result.Code == DisabledAccountErrorCode
-                && param.SubAccId == 0)
+                && result.Code == DisabledAccountErrorCode)
             {
                 result.Message = Security.CloseAccountOtpMessage;
-                CloseCasinoAccount(param.CustId, param.Device.Info.IP);
+
+                if (param.SubAccId == 0)
+                {
+                    CloseCasinoAccount(param.CustId, param.Device.Info.IP);
+                }
             }
 
             return result;
