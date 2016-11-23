@@ -113,7 +113,7 @@ var alpha = {
         },
 
         check: (key: string): boolean => {
-            return typeof store.get(key) !== "undefined";
+            return typeof store.get(key) !== 'undefined' || typeof $.cookie(key) !== 'undefined';
         },
 
         getCookieExpireOptions: () => {
