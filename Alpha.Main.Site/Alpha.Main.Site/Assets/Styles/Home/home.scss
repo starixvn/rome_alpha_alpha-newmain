@@ -116,18 +116,8 @@ body {
                 width: 100%;
             }
 
-            .username {
-                width: 147px;
-                word-break: break-all;
-                white-space: normal;
-            }
-
             .newMemCol {
                 width: 100px;
-            }
-
-            .datetime {
-                font-size: $font-size - 4;
             }
         }
     }
@@ -293,10 +283,6 @@ body {
 
         &.statistic {
             padding-left: 8px;
-
-            .dropdown-stast {
-                width: 350px;
-            }
         }
 
         &.notice {
@@ -439,6 +425,11 @@ body {
 
             .dropdown-stast {
                 width: 100%;
+                .username {
+                    width: 147px;
+                    word-break: break-all;
+                    white-space: normal;
+                }
             }
         }
 
@@ -486,10 +477,6 @@ body {
 
         &.statistic {
             padding-left: 8px;
-
-            .dropdown-stast {
-                width: 350px;
-            }
         }
 
         &.notice {
