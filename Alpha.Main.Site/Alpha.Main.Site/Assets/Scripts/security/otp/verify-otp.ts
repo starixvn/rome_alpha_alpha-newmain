@@ -71,6 +71,7 @@ class VerifyOtp {
             this.$txtOtp.focus();
 
             if (result.code === this.closedAccountCode) {
+                alert(result.message);
                 alpha.core.signOut();
             }
         }

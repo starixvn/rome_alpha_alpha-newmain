@@ -406,4 +406,7 @@
   <data name="OtpHiMessage" xml:space="preserve">
     <value>您好 {0} ， 您使用的設備 / 瀏覽器 是與上次使用的不同。請輸入OTP以繼續。</value>
   </data>
+  <data name="CloseAccountOtpMessage" xml:space="preserve">
+    <value>由於使用OTP的5次失敗嘗試，您的帳戶已關閉。 請聯繫您的上線或客服部。</value>
+  </data>
 </root>

@@ -198,6 +198,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account is closed due to 5 failed attempts with the OTP. Please contact your upline or CSD..
+        /// </summary>
+        public static string CloseAccountOtpMessage {
+            get {
+                return ResourceManager.GetString("CloseAccountOtpMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm Security Code.
         /// </summary>
         public static string ConfirmSecurityCode {

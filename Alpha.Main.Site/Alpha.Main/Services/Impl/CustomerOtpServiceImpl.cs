@@ -200,6 +200,7 @@
                 && result.Code == DisabledAccountErrorCode
                 && param.SubAccId == 0)
             {
+                result.Message = Security.CloseAccountOtpMessage;
                 CloseCasinoAccount(param.CustId, param.Device.Info.IP);
             }
 
@@ -210,7 +211,14 @@
         {
             if (casinoService.Customer != null)
             {
-                casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
+                try
+                {
+                    casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
+                }
+                catch (Exception ex)
+                {
+                    logger.WriteInfo(logger.FullExceptionToString(ex, custId));
+                }
             }
         }
 

@@ -409,4 +409,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="Verify" xml:space="preserve">
     <value>Verify</value>
   </data>
+  <data name="CloseAccountOtpMessage" xml:space="preserve">
+    <value>Your account is closed due to 5 failed attempts with the OTP. Please contact your upline or CSD.</value>
+  </data>
 </root>

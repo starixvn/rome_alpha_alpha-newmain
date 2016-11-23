@@ -402,4 +402,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="OtpHiMessage" xml:space="preserve">
     <value>Xin chào {0}, quý khách đã đăng nhập với thiết bị/trình duyệt khác với lần sử dụng trước. Xin vui lòng nhập mã OTP để tiếp tục.</value>
   </data>
+  <data name="CloseAccountOtpMessage" xml:space="preserve">
+    <value>Tài khoản của quý khách đã bị đóng vì nhập sai 5 lần mã OTP. Xin vui lòng liên hệ cấp trên hoặc CSD.</value>
+  </data>
 </root>

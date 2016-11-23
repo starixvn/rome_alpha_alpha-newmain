@@ -149,14 +149,18 @@ var securityHelper = {
             return;
         }
 
-        if (top.securityCodePopup && top.securityCodePopup.iframeAttributes.preUrl) {
+        if (top.securityCodePopup
+            && top.securityCodePopup.iframeAttributes
+            && top.securityCodePopup.iframeAttributes.preUrl) {
             var preUrl = top.securityCodePopup.iframeAttributes.preUrl as string;
             top[preUrl]();
             top.securityCodePopup.close();
             return;
         }
 
-        if (top.ageWnd && top.ageWnd.iframeAttributes.preUrl) {
+        if (top.ageWnd
+            && top.ageWnd.iframeAttributes
+            && top.ageWnd.iframeAttributes.preUrl) {
             var preUrl = top.ageWnd.iframeAttributes.preUrl as string;
             top[preUrl]();
             return;
