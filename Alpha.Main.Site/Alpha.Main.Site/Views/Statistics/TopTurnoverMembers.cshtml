@@ -1,27 +1,29 @@
 ﻿@using Alpha.Main.Site.ViewModels.Dashboard.Statistics
 @model TopTurnoverMembersViewModel
 
-@if (!Model.Members.Any())
-{
-    <div class="text-center">@Resources.noInfo</div>
-}
-else
-{
-    <table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover width-100per">
-        <thead>
-            <tr>
-                <th class="width-50per">@Resources.username</th>
-                <th class="width-50per">@Resources.turnover</th>
+<table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover width-100per">
+    <thead>
+        <tr>
+            <th class="width-50per">@Resources.username</th>
+            <th class="width-50per">@Resources.turnover</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Members.Any())
+            {
+            <tr class="text-center">
+                <td colspan="2">@Resources.noInfo</td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var member in Model.Members)
+        }
+        else
+        {
+            foreach (var member in Model.Members)
             {
                 <tr>
                     <td class="username">@member.UserName</td>
                     <td class="text-right bold">@member.Turnover.ToString("#,##0.00")</td>
                 </tr>
             }
-        </tbody>
-    </table>
-}
+        }
+    </tbody>
+</table>

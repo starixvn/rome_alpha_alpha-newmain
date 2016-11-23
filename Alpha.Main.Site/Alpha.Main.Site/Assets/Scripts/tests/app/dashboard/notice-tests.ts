@@ -180,7 +180,7 @@
 
             // Assert
             expect($moreBtn).toHaveAttr('disabled', 'disabled');
-            expect($moreBtn).toHaveText('Loading...');
+            expect($moreBtn).toContainHtml('<span class="block-icon-small"></span>');
         });
 
         it('On Click More Info Button and Success Ajax Get -> Set Response Html', () => {

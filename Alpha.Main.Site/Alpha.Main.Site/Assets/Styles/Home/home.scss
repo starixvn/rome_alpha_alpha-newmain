@@ -5,7 +5,7 @@
 
 // To remove the 300-350ms tap delay
 html {
-  touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 body {
@@ -283,6 +283,7 @@ body {
 
         &.statistic {
             padding-left: 8px;
+
             .dropdown-stast {
                 min-width: 350px;
             }

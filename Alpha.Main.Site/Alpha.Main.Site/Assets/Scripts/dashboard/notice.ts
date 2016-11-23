@@ -71,7 +71,7 @@
             };
 
             moreMessagesBtn.attr('disabled', 'disabled');
-            moreMessagesBtn.text('Loading...');
+            moreMessagesBtn.html('<span class="block-icon-small"></span>');
 
             this.$.ajax(ajaxSetting);
         });

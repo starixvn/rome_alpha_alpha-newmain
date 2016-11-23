@@ -1,23 +1,24 @@
 ﻿@using Alpha.Main.Site.ViewModels.Dashboard.Statistics
 @model NewMembersViewModel
 
-@if (!Model.Members.Any())
-{
-    <div class="text-center">@Resources.noInfo</div>
-}
-else
-{
-    <table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover width-100per">
-        <thead>
-            <tr>
-                <th class="c">@Resources.username</th>
-                <th class="c newMemCol">@Resources.givenCredit</th>
-                <th class="c newMemCol">@Resources.createdDate</th>
+<table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover width-100per">
+    <thead>
+        <tr>
+            <th class="c">@Resources.username</th>
+            <th class="c newMemCol">@Resources.givenCredit</th>
+            <th class="c newMemCol">@Resources.createdDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Members.Any())
+            {
+            <tr class="text-center">
+                <td colspan="3">@Resources.noInfo</td>
             </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var member in Model.Members)
+        }
+        else
+        {
+            foreach (var member in Model.Members)
             {
                 <tr class="oddRow">
                     <td class="username">@member.UserName</td>
@@ -25,6 +26,6 @@ else
                     <td class="text-center datetime">@member.CreatedDate</td>
                 </tr>
             }
-        </tbody>
-    </table>
-}
+        }
+    </tbody>
+</table>
