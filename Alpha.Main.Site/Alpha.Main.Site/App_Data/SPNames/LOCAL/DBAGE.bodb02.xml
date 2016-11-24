@@ -34,7 +34,7 @@
     </Setting>
   </Function>
   <Function Name="Statistics">
-    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag_xtest" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
       <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
       <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
@@ -42,7 +42,7 @@
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
       <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
       <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
@@ -53,7 +53,7 @@
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="total_memberActive" ObjectProperty="TotalMemberActive" />
       <Mapping DataField="total_memberClosed" ObjectProperty="TotalMemberClosed" />
       <Mapping DataField="total_memberSuspended" ObjectProperty="TotalMemberSuspended" />
@@ -67,7 +67,6 @@
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
     </Setting>
-
     <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />
@@ -80,7 +79,6 @@
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
-
     <Setting Key="Age_CustomerSelTopTurnoverMembers_SAg" SpName="Age_CustomerSelTopTurnoverMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="turnover" ObjectProperty="Turnover" />

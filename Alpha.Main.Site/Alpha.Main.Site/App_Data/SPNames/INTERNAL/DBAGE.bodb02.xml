@@ -34,7 +34,7 @@
     </Setting>
   </Function>
   <Function Name="Statistics">
-    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="total_csTransfer" ObjectProperty="CasinoTransfer" />
       <Mapping DataField="total_csOutStanding" ObjectProperty="CasinoOutstanding" />
       <Mapping DataField="total_BITransfer" ObjectProperty="BingoTransfer" />
@@ -48,7 +48,7 @@
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="total_csTransfer" ObjectProperty="CasinoTransfer" />
       <Mapping DataField="total_csOutStanding" ObjectProperty="CasinoOutstanding" />
       <Mapping DataField="total_BITransfer" ObjectProperty="BingoTransfer" />
@@ -65,7 +65,7 @@
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg_xtest" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="total_csTransfer" ObjectProperty="CasinoTransfer" />
       <Mapping DataField="total_csOutStanding" ObjectProperty="CasinoOutstanding" />
       <Mapping DataField="total_BITransfer" ObjectProperty="BingoTransfer" />
@@ -85,7 +85,6 @@
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
     </Setting>
-
     <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />
@@ -98,7 +97,6 @@
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
-
     <Setting Key="Age_CustomerSelTopTurnoverMembers_SAg" SpName="Age_CustomerSelTopTurnoverMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="turnover" ObjectProperty="Turnover" />
