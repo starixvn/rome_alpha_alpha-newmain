@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main
+﻿#pragma warning disable 612, 618
+namespace Alpha.Main
 {
     using System;
     using System.Collections.Generic;
@@ -7,10 +8,11 @@
     using System.Web;
     using Fanex.Products;
     using Helpers;
-    using Models.Menus;
+    using Models.Menus;    
     using Sunplus.Agent.Model.Definitions;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
+    using Sunplus.Agent.Utilities;
 
     public static class FunctionRegistry
     {
@@ -80,13 +82,20 @@
 
         private static Func<bool> showAccountInfo = () =>
         {
-            return Current.SubPageAccess.ViewMemberInfo;
+            return Current == null ? false : Current.SubPageAccess.ViewMemberInfo;
         };
 
         private static Func<string> getDefaultUrl = () =>
         {
-            var _defaultMainPage = MicroSites.OldMainUrl("~/_Reports/PortalPage/PortalPage.aspx");
-            var currentURLCookie = HttpContext.Current.Request.Cookies[CookieHelper.GetCurrentUrlCookieName()];
+            if (HttpContext.Current == null)
+            {
+                return string.Empty;
+            }
+
+            var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
+            var currentUrlCookieName = CookieHelper.GetCurrentUrlCookieName(Current.CustId, Current.SubAccId, Encryption.PearsonEncode);
+
+            var currentURLCookie = HttpContext.Current.Request.Cookies[currentUrlCookieName];
             var ignoreUrls = new List<string>
             {
                 "Error.aspx",
@@ -96,9 +105,9 @@
             };
 
             if (currentURLCookie != null &&
-                !string.IsNullOrEmpty(currentURLCookie.Value) &&
+                !string.IsNullOrWhiteSpace(currentURLCookie.Value) &&
                 !Current.IsInternal &&
-                !ignoreUrls.Where(str => currentURLCookie.Value.Contains(str)).Any())
+                !ignoreUrls.Any(str => currentURLCookie.Value.Contains(str)))
             {
                 if (!string.IsNullOrWhiteSpace(currentURLCookie.Value)
                 && (currentURLCookie.Value.ToLower().Contains("http") || currentURLCookie.Value.ToLower().Contains("https")))
@@ -114,12 +123,12 @@
                     }
                     catch (Exception ex)
                     {
-                        Sunplus.Agent.Utilities.Logs.WriteInfo(ex);
+                        Logs.WriteInfo(ex);
                     }
                 }
             }
 
-            return _defaultMainPage;
+            return defaultMainPage;
         };
 
         public static Func<bool> ShowAccountInfo

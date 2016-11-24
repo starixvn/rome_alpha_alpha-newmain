@@ -1,72 +1,70 @@
 ﻿@{ Layout = null; }
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Security Code FAQS</title>
+    <link href="/assets/bundles/common/common.min.css" rel="stylesheet" type="text/css" />
     <link href="~/assets/styles/security/lean-more.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="bgCont">
-        <div id="page_main">
-            <div id="header_cont">
-                <span>Security Code FAQS</span></div>
-            <div style="width: 860px; height: 310px; margin-top: 1px; font-size: 13px; text-align: justify">
-                <p style="font-size: 12px; font-weight:bold;">
-                    1. What is Security Code?</p>
+    <h1 class="page-title">Security Code FAQS</h1>
+    <div class="content">
+        <ol class="list-faqs">
+            <li>
+                <strong>What is Security Code?</strong>
                 <p>
                     It is 6 numeric digits [0-9] and you will be asked to enter this security code each time you log-in for additional authentication.
                 </p>
-                
-                <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    2. How to setup security code?</p>
-
+            </li>
+            <li>
+                <strong>How to setup security code?</strong>
+                <div>
+                    <p>Input the security code and confirm it, follow the notes below.</p>
+                    <div class="italic">Note:</div>
+                    <ul class="setup">
+                        <li>
+                            Security code must be 6 numeric digits [0-9] and contains at
+                            least 2 different digits.
+                        </li>
+                        <li>
+                            Security code must not a ‘Forward Run or ‘Backward Run’ number
+                            ( A ‘Forward Run’ number is an integer whose digits are all in consecutive, ascending
+                            order, left to right; whereas a ‘Backward Run’ number is an interger whose digits are all in
+                            consecutive, descending order, left to right. For example: 123456, 456789, 764321, etc.. are
+                            not allowed.)
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <strong>Does the security code expire?</strong>
                 <p>
-                    Input the security code and confirm it, follow the notes below.</br>
-
-					<span style="font-style: italic;">Note:</span>
-                    </br>
-                    <span style="font-style:italic; margin-left:15px;">
-					. Security code must be 6 numeric digits [0-9] and contains at
-                    least 2 different digits.</font>
-					</span></br>
-                    <span style="font-style:italic; margin-left:15px;">
-					. Security code must not a ‘Forward Run or ‘Backward Run’ number 
-                    ( A ‘Forward Run’ number is an integer whose digits are all in consecutive, ascending 
-                    order, left to right; whereas a ‘Backward Run’ number is an interger whose digits are all in 
-                    consecutive, descending order, left to right. For example: 123456, 456789, 764321, etc.. are 
-                    not allowed.)</font>
-					</span>
-				</p>
-                
-                
-                <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    3. Does the security code expire?</p>
-                
+                    It is not expired but you should change it periodically.
+                </p>
+            </li>
+            <li>
+                <strong>What happens if I entered wrong security code?</strong>
                 <p>
-                    It is not expired but you should change it periodically.</p>
-                
-                
-                <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    4. What happens if I entered wrong security code?</p>
+                    It will require you to re-enter security code again, be noted that your account
+                    will be closed after entering the wrong security code over 5 times. Please contact your upline or
+                    CSD in this case.
+                </p>
+            </li>
+            <li>
+                <strong>What if I have forgotten my security code?</strong>
                 <p>
-                    It will require you to re-enter security code again, be noted that your account 
-                    will be closed after entering the wrong security code over 5 times. Please contact your upline or 
-                    CSD in this case. </p>
-                    
-                
-                <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    5. What if I have forgotten my security code?</p> 
+                    Contact your upline or CSD to reset your security code.
+                </p>
+            </li>
+            <li>
+                <strong>How do I change my security code?</strong>
                 <p>
-                    Contact your upline or CSD to reset your security code. </p>
-                    
-               
-                <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    6. How do I change my security code?</p>
-                <p>
-                    At the Home page, go to Security tab, then choose Security Code link, then change your security code. </p>
-	
-            </div>
-        </div>
+                    At the Home page, go to Security tab, then choose Security Code link, then change your security code.
+                </p>
+            </li>
+        </ol>
     </div>
-
-
-</body></html>
+</body>
+</html>

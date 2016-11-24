@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Models.Requests.Announcement
+﻿#pragma warning disable 618, 612
+namespace Alpha.Main.Site.Models.Requests.Announcement
 {
     using System;
     using System.Collections.Generic;
@@ -59,7 +60,8 @@
         {
             get
             {
-                return commonAnnouncementFilePath ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAdCommon.xml");
+                return commonAnnouncementFilePath 
+                    ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAdCommon.xml");
             }
         }
 

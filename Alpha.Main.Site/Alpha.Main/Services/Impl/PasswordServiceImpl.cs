@@ -13,12 +13,13 @@
 
     public class PasswordServiceImpl : PasswordService
     {
+        private const int AgentSystem = 2;
         private static readonly Regex PasswordRule1 = new Regex(@"^(?=.*\d).{8,100}$");
         private static readonly Regex PasswordRule2 = new Regex(@"^(?=.*[a-z]).{8,100}$");
         private static readonly Regex PasswordRule3 = new Regex(@"^(?=.*[A-Z]).{8,100}$");
         private static readonly Regex PasswordRule4 = new Regex(@"^(?=.*[\[\]\^\$\.\|\?\*\+\(\)\\~`\!@#%&\-_+={}'""<>:;,]).{8,100}$");
         private static readonly Regex MemberPasswordRule = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$");
-        private static readonly Regex NoWhiteSpace = new Regex(@"^\S*$");
+        private static readonly Regex NoWhiteSpace = new Regex(@"^\S*$");        
 
         private readonly Encryptor encryptor;
         private readonly PasswordDataAccess passwordDataAccess;
@@ -98,7 +99,7 @@
                     ip,
                     actorId,
                     actorName,
-                    Sunplus.Agent.Model.BL.Casino.CasinoBO.AgentSystem);
+                    AgentSystem);
             }
         }
 

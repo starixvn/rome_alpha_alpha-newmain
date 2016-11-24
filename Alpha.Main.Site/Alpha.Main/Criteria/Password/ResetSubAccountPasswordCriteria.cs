@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Criteria.Password
 {
-    using System;
     using Fanex.Data.Repository;
 
     public class ResetSubAccountPasswordCriteria : CriteriaBase
@@ -34,5 +33,7 @@
         {
             return "ResetSubAccountPassword";
         }
+
+        public override bool IsValid() => CustId > 0;        
     }
 }

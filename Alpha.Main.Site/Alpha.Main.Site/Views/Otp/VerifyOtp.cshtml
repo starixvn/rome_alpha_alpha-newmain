@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Security.OtpValidation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.Render($"/bundles/common/common")
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/otp/otp"))" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1 id="title_header" class="page-title">@Security.OtpValidation</h1>
+    <div class="msg-content" id="otp-message">
+        <div class="msg msg-warning">@Security.InputOtpBeforeProceeding</div>
+    </div>
+    <form class="form-validation block" id="otp-form">
+        <div class="form-group">
+            <label>OTP</label>
+            <input maxlength="6" type="password" class="txt form-control" name="otp" id="txtOTP" />
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn-submit" id="btnSubmit" value="@Security.Submit" />
+        </div>
+    </form>
+    <div class="note">
+        <span class="note-red">*</span>@Security.OtpDatetimeWarning
+    </div>
+
+    @Html.AntiForgeryToken()
+
+    @Html.Hidden("requiredFieldMessage", Security.alertSecCodeEmpty)
+    @Html.Hidden("oldMainRootPath", Alpha.Main.Helpers.MicroSites.OldMainUrl())
+    @Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
+    <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/verify-otp")" type="text/javascript"></script>
+</body>
+</html>

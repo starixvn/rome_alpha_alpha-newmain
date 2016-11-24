@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
+    using System;
     using System.Diagnostics.CodeAnalysis;
+    using Fanex.Data;
     using Fanex.Data.Repository;
 
     public class InsertPersonalMessageCriteria : CriteriaBase
@@ -23,6 +25,10 @@
             IsSticky = false;
             MatchId = 0;
             IsBatch = true;
+
+            Creator = 0;
+            IsTest = false;
+            CreatorName = string.Empty;
         }
 
         [SpParam(SqlParamName = "content_en")]
@@ -68,6 +74,11 @@
         public override string GetSettingKey()
         {
             return "Dot_Msg_SetMessage";
+        }
+
+        public override bool IsValid()
+        {
+            return true;
         }
     }
 }

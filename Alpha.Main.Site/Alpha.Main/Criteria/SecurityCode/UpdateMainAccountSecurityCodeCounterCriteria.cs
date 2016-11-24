@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Criteria.SecurityCode
 {
+    using System;
     using Fanex.Data.Repository;
 
     public class UpdateMainAccountSecurityCodeCounterCriteria : CriteriaBase
@@ -20,5 +21,7 @@
         {
             return "Age_UpdateMainAccountSecurityCodeCounter";
         }
+
+        public override bool IsValid() => CustId > 0;
     }
 }

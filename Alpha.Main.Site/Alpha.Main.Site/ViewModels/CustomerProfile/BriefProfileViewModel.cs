@@ -1,8 +1,7 @@
-﻿using Alpha.Main.Helpers;
-using Alpha.Main.Site.Helpers;
-
-namespace Alpha.Main.Site.ViewModels.CustomerProfile
+﻿namespace Alpha.Main.Site.ViewModels.CustomerProfile
 {
+    using Main.Helpers;
+
     public class BriefProfileViewModel
     {
         public int CustId { get; set; }
@@ -11,13 +10,7 @@ namespace Alpha.Main.Site.ViewModels.CustomerProfile
 
         public string EmbedImage { get; set; }
 
-        public string OldMainRootApp
-        {
-            get
-            {
-                return MicroSites.OldMainUrl("~/");
-            }
-        }
+        public string OldMainRootApp => MicroSites.OldMainUrl("~/");
 
         public string Username { get; set; }
 
@@ -26,5 +19,7 @@ namespace Alpha.Main.Site.ViewModels.CustomerProfile
         public string NickName { get; set; }
 
         public string IntroduceNickNameTooltipCookieName { get; set; }
+
+        public bool IsEnableOtp { get; set; }
     }
 }

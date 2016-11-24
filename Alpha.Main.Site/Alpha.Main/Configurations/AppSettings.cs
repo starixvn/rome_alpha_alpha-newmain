@@ -33,7 +33,7 @@
                 return ConfigurationManager.AppSettings["HowToUseAppPath"];
             }
         }
-        
+
         public static string SiteMainAppPath
         {
             get
@@ -102,6 +102,10 @@
                 return devicesUseCustomScrollbar;
             }
         }
+
+        public static string StoreProcedurePath => ConfigurationManager.AppSettings["StoreProcedurePath"];
+
+        public static string GetMessagesDataPath => ConfigurationManager.AppSettings["MessagesDataPath"];
 
         public static string GetAppPath(string name)
         {

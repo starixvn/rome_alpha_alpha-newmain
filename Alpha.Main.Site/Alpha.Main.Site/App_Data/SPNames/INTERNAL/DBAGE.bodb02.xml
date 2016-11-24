@@ -85,7 +85,6 @@
       <Mapping DataField="total_outstanding" ObjectProperty="TotalOutStanding" />
       <Mapping DataField="number_newMembers" ObjectProperty="NumberNewMembers" />
     </Setting>
-
     <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />
@@ -98,16 +97,15 @@
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="winlost" ObjectProperty="WinLoss" />
     </Setting>
-
     <Setting Key="Age_CustomerSelTopTurnoverMembers_SAg" SpName="Age_CustomerSelTopTurnoverMembers_SAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="turnover" ObjectProperty="Turnover" />
     </Setting>
-    <Setting Key="Age_CustomerSelTopTurnoverMembers_MAg" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_MAg" SpName="Age_CustomerSelTopTurnoverMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="turnover" ObjectProperty="Turnover" />
     </Setting>
-    <Setting Key="Age_CustomerSelTopTurnoverMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_MAg" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelTopTurnoverMembers_Ag" SpName="Age_CustomerSelTopTurnoverMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
       <Mapping DataField="turnover" ObjectProperty="Turnover" />
     </Setting>

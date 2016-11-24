@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
+    using System;
     using Fanex.Data.Repository;
 
     public class InsertPersonalMessageTargetCriteria : CriteriaBase
@@ -17,6 +18,11 @@
         public override string GetSettingKey()
         {
             return "Dot_Msg_SetUsrMessage";
+        }
+
+        public override bool IsValid()
+        {
+            return MessageId > 0;
         }
     }
 }

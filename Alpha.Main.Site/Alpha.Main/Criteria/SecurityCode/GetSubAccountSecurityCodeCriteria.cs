@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Criteria.SecurityCode
 {
+    using System;
     using Fanex.Data.Repository;
 
     public class GetSubAccountSecurityCodeCriteria : CriteriaBase
@@ -12,5 +13,7 @@
         {
             return "Age_GetSubAccountSecurityCode";
         }
+
+        public override bool IsValid() => CustId > 0;
     }
 }

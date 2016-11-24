@@ -1,0 +1,63 @@
+﻿@using Alpha.Main.Constants
+@model Alpha.Main.Site.ViewModels.Message.MessagesViewModel
+
+@if (Model.MessageType != MessageType.Special)
+{
+    <div class="filter">
+        @using (Html.BeginForm("Messages", "Message", new { messageType = Model.MessageType }))
+        {
+            <div class="form-group">
+                <label class="txt">@Resources.from:</label>
+                <div class="control date">
+                    <div class="input-group date" id="fromDateContainer">
+                        <input class="form-control" id="fromDate" name="StartDate" type="text" value=@Model.StartDate />
+                        <span class="input-group-addon">
+                            <span class="icon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="txt">@Resources.to:</label>
+                <div class="control date">
+                    <div class="input-group date" id="toDateContainer">
+                        <input class="form-control" id="toDate" name="EndDate" type="text" value=@Model.EndDate />
+                        <span class="input-group-addon">
+                            <span class="icon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group group-button">
+                <input type="submit" value="@Resources.submit" class="btn-submit" />
+            </div>
+        }
+    </div>
+}
+
+<table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover">
+    <thead>
+        <tr>
+            <th class="col-order">#</th>
+            <th>@Resources.message</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Messages.Any())
+        {
+            <tr>
+                <td colspan="2" class="text-center">@Resources.noInfo</td>
+            </tr>
+        }
+        @foreach (var message in Model.Messages.Select((value, index) => new { index, value }))
+        {
+            <tr>
+                <td class="col-order">@(message.index + 1)</td>
+                <td>
+                    <div class="row-first">@message.value.CurrentMessage.PostTime<span class="messageId">@message.value.CurrentMessage.Id</span></div>
+                    <div class="message-content @(message.value.HasRedColor ? "text-red" : string.Empty)">@Html.Raw(message.value.Content)</div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

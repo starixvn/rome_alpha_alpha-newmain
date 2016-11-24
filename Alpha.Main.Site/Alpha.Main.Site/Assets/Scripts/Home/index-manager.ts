@@ -59,8 +59,7 @@ var indexManager = {
             type: "POST",
             url: indexManager.urls.reCheckinUrl,
             data: { onid: alpha.user.onUserId },
-            responseType: "json",
-            success: function (result) {
+            success: (result) => {
                 try {
                     result = alpha.core.convertReponseToJson(result);
                     var errCode = result.errCode;
@@ -68,17 +67,18 @@ var indexManager = {
                     if (errCode !== 0) {
                         if (errMsg) {
                             alert(errMsg);
-                            alpha.core.signOut();
                         } else {
-                            alert('Could not contact the server. Please check your network connection.');
+                            alert('Oops... you are here because of a system error, please notify the administrators.');
                         }
+
+                        alpha.core.signOut();
                     }
                 }
                 catch (e) {
                     if (typeof (result) === "string"
                         && result.indexOf("Oops... you are here because of a system error") > 0) {
                         alpha.core.signOut();
-                        alert('Could not contact the server. Please check your network connection.');
+                        alert('Oops... you are here because of a system error, please notify the administrators.');
                     }
                 }
             },
@@ -86,7 +86,7 @@ var indexManager = {
                 // If internal server error
                 if (xhr.status === 500) {
                     alpha.core.signOut();
-                    alert('Could not contact the server. Please check your network connection.');
+                    alert('Oops... you are here because of a system error, please notify the administrators.');
                 }
             },
             complete: () => {
@@ -126,17 +126,12 @@ var indexManager = {
             indexManager.domElements.content.append('<iframe frameborder="0" id="main" src="' + currentUrl + '" width="100%" height="100%" scrolling="auto" name="main" marginwidth="0" marginheight="0" allowtransparency="true" class="iframe-content"></iframe>');
             indexManager.domElements.mainFrame = $('#main');
             indexManager.domElements.mainFrame
-                .off('load.newmain')
                 .on('load.newmain', function () {
                     var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
                     indexManager.closeAllOpenDropdowns(iframeWindow);
-
                     indexManager.cacheCurrentUrl();
-
-                    $(iframeWindow.document)
-                        .off('click.closeMenu touchstart.closemenu')
-                        .on('click.closeMenu touchstart.closemenu',
-                        function () {
+                    $(iframeWindow.document).on('click touchend',
+                        () => {
                             menuBar.collapseSideBar();
                         });
 
@@ -154,13 +149,24 @@ var indexManager = {
     },
 
     closeAllOpenDropdowns: function (iframeWindow) {
-        $(iframeWindow.document).click(function () {
-            $('.dropdown-toggle').each(function (index, dropdown) {
+        const closeDropdownSubMenu = () => {
+            $('.dropdown-submenu').find('.dropdown-menu').hide();
+        }
+
+        $(document).on('click touchend', closeDropdownSubMenu);
+
+        $('#btn-header-menu').on('click', closeDropdownSubMenu);
+
+        $(iframeWindow.document).on('click touchend', () => {
+            $('.dropdown-toggle').each((index, dropdown) => {
                 var $dropdown = $(dropdown);
+
                 if ($dropdown.parent().hasClass('open')) {
                     $dropdown.dropdown('toggle');
                 }
             });
+
+            closeDropdownSubMenu();
         });
     }
 };

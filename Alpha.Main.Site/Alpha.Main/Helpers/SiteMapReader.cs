@@ -4,6 +4,6 @@
 
     public interface SiteMapReader
     {
-        SiteMapNode GetRootNode();
+        SiteMapNode GetRootNode(SiteMapNode rootNode = null);
     }
 }

@@ -1,5 +1,9 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Xml;
     using AppResources;
     using Constants;
     using Criteria.Announcement;
@@ -9,10 +13,6 @@
     using Models.Announcements;
     using Models.Enumerations;
     using Params.Announcements;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Xml;
 
     public class AnnouncementServiceImpl : AnnouncementService
     {
@@ -46,10 +46,7 @@
                 getParams.AdminId == 0)
             {
                 messageTypes = dynamicRepository
-                    .Fetch<byte>(new GetMessageTypeListCriteria
-                    {
-                        CustId = getParams.CustId
-                    })
+                    .Fetch<byte>(new GetMessageTypeListCriteria(getParams.CustId))
                     .Select(messageType => messageType.ToString())
                     .ToList();
             }
@@ -114,11 +111,7 @@
                 BetTransId = "0"
             });
 
-            dynamicRepository.Fetch<bool>(new UpdateViewStatus
-            {
-                CustId = getParams.CustId,
-                IsViewed = true
-            });
+            dynamicRepository.Fetch<bool>(new UpdateViewStatus(getParams.CustId, true));
         }
 
         private List<long> GetShowedMessageIds(GetHotAnnouncementsParams getParams)

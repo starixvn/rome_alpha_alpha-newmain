@@ -1,22 +1,26 @@
 ﻿namespace Alpha.Main.Helpers
 {
-    using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Utilities;
+    using System;
+    using System.Diagnostics.CodeAnalysis;
 
     public static class CookieHelper
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string GetCurrentUrlCookieName()
+        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
+        public static string GetCurrentUrlCookieName(
+            int custId,
+            int subAccId,
+            Func<string, string> encodeDataFunction)
         {
             var joinStrings = new string[]
-                    {
-                       UserSession.Current.CustId.ToString(),
-                       UserSession.Current.SubAccId.ToString(),
-                       "NewMain"
-                    };
+            {
+                custId.ToString(),
+                subAccId.ToString(),
+                "NewMain"
+            };
+
             var cacheUrlCookieName = string.Join("_", joinStrings);
 
-            return Encryption.PearsonEncode(cacheUrlCookieName);
+            return encodeDataFunction?.Invoke(cacheUrlCookieName) ?? cacheUrlCookieName;
         }
     }
 }

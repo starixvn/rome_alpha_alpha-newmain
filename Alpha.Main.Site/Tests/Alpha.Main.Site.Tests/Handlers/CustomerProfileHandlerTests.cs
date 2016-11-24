@@ -1,4 +1,6 @@
-﻿namespace Alpha.Main.Site.Tests.Handlers
+﻿#pragma warning disable 612, 618
+
+namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using Constants;
@@ -6,6 +8,7 @@
     using Models.Requests.CustomerProfile;
     using NSubstitute;
     using NUnit.Framework;
+    using SecurityCode.Web;
     using Services;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
@@ -22,6 +25,7 @@
         {
             customerProfileService = Substitute.For<CustomerProfileService>();
             customerProfileHandler = new CustomerProfileHandler(customerProfileService);
+            SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
             userSession = Substitute.For<IUserSession>();
         }
 
@@ -31,7 +35,7 @@
             // Arrange
             BriefProfileQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => customerProfileHandler.Handle(nullQuery)));
         }
 
@@ -39,11 +43,11 @@
         public void HandleBriefProfileQuery_NotNullQuery_CallGetProfilePictureService()
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -57,17 +61,17 @@
             byte[] binaryAvatar,
             string expectedEmbedImage)
         {
-            // Arrange                                                             
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
-            {
-                BinaryAvatar = binaryAvatar
-            });
+            // Arrange
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(
+                1,
+                true,
+                binaryAvatar));
 
             var query = new BriefProfileQuery(userSession);
 
             var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -81,14 +85,14 @@
             bool expectedIsDefaultAvatar)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture
-            {
-                IsDefaultAvatar = isDefaultAvatar
-            });
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(
+                1,
+                isDefaultAvatar,
+                null));
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -102,13 +106,13 @@
             int expectedCustId)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
 
             userSession.CustId.Returns(custId);
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -122,13 +126,13 @@
             string expectedUsername)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
 
             userSession.UserName.Returns(username);
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -145,14 +149,14 @@
             bool expectedIsNotMainAccount)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
 
             userSession.IsSubAcc.Returns(isSubAccount);
             userSession.IsInternal.Returns(isInternal);
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -168,8 +172,8 @@
             bool isInternal,
             string expectedNickName)
         {
-            // Arrange                                                             
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            // Arrange
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
 
             userSession.IsSubAcc.Returns(isSubAccount);
             userSession.IsInternal.Returns(isInternal);
@@ -179,7 +183,7 @@
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
@@ -193,17 +197,33 @@
             string expectedCookieToolTipName)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture());
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
 
             userSession.CustId.Returns(custId);
 
             var query = new BriefProfileQuery(userSession);
 
-            // Action
+            // Act
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
             Assert.AreEqual(expectedCookieToolTipName, viewModel.IntroduceNickNameTooltipCookieName);
+        }
+
+        [Test]
+        public void HandleBriefProfileQuery_UserIsEnabledOtp_ReturnEnabledOtp()
+        {
+            // Arrange
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
+
+            var query = new BriefProfileQuery(userSession);
+
+            // Act
+            var viewModel = customerProfileHandler.Handle(query);
+
+            // Assert
+            Assert.IsTrue(viewModel.IsEnableOtp);
         }
     }
 }

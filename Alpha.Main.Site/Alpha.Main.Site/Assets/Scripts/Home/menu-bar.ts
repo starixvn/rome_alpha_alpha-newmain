@@ -57,14 +57,15 @@
             mainContent = menuBar.domElements.mainContent;
 
         var activeSubMenu = $('.menu-item.active .sub-menu');
-        if (alpha.isScreenLower768
-            || alpha.isScreenGreater768AndLower1024) {
-            activeSubMenu.hide();
-            sidebar.addClass('collapsed').addClass('collapsed-smallsize');
-            mainContent.addClass('expanded');
 
-            menuBar.positionPTTooltip();
+        if (alpha.isScreenLower768) {
+            mainContent.addClass('expanded-mobile');
+            sidebar.addClass('hidden-mobile');
+            return;
+        }
 
+        if (alpha.isScreenGreater768AndLower1024) {
+            menuBar.collapseLeftPanel();
             return;
         }
 
@@ -109,13 +110,15 @@
         menuBar.domElements.header.click(menuBar.collapseSideBar);
         menuBar.domElements.extraIcon.click(menuBar.expandSideBar);
         menuBar.domElements.hamburgerIcon.click(function (e) {
-            menuBar.collapseLeftPanel($(this));
-            //e.stopPropagation();
+            menuBar.collapseLeftPanel();
+            if (alpha.isScreenLower768) {
+                e.stopPropagation();
+            }
         });
-        menuBar.registerMouseHoverForDestopBrowsers();
+        menuBar.registerMouseHoverForDesktopBrowsers();
     },
 
-    registerMouseHoverForDestopBrowsers: function () {
+    registerMouseHoverForDesktopBrowsers: function () {
         if (!alpha.isMobile) {
             menuBar.domElements.sideBar
                 .off('mouseenter.menubar')
@@ -129,46 +132,59 @@
         }
     },
 
-    collapseLeftPanel: function (collapseButton) {
-        var collapsedClass = 'collapsed',
-            expandedClass = 'expanded',
-            collapseImageClass = 'collapse-image',
-            dockedClass = 'docked',
-            sidebar = menuBar.domElements.sideBar,
-            content = menuBar.domElements.mainContent,
-            isCollapsed = sidebar.hasClass(collapsedClass),
-            isHidenMobile = sidebar.hasClass('hidden-mobile'),
-            activeSubMenu = $('.menu-item.active .sub-menu'),
-            profileImage = menuBar.domElements.profileImage;
+    collapseLeftPanel: function () {
+        var sidebar = menuBar.domElements.sideBar,
+            content = menuBar.domElements.mainContent;
 
-        if (isCollapsed) {
-            activeSubMenu.show();
-            sidebar.addClass(dockedClass).removeClass(collapsedClass);
-            content.removeClass(expandedClass);
-            profileImage.removeClass(collapseImageClass);
-
-            //// When expanding, check current active tab, and active it
-            if (menuBar.domElements.accountInfoHeader.hasClass('active')) {
-                menuBar.domElements.mainMenuTab.hide();
-                menuBar.domElements.accountInfoTab.show()
+        if (alpha.isScreenLower768) {
+            if (sidebar.hasClass('hidden-mobile')) {
+                content.addClass('expanded-mobile');
+                sidebar.removeClass('hidden-mobile').addClass('visible-mobile');
             }
             else {
+                content.removeClass('expanded-mobile');
+                sidebar.addClass('hidden-mobile').removeClass('visible-mobile');
+            }
+        }
+        else {
+            var collapsedClass = 'collapsed',
+                expandedClass = 'expanded',
+                collapseImageClass = 'collapse-image',
+                dockedClass = 'docked',
+                isCollapsed = sidebar.hasClass(collapsedClass),
+                isHidenMobile = sidebar.hasClass('hidden-mobile'),
+                activeSubMenu = $('.menu-item.active .sub-menu'),
+                profileImage = menuBar.domElements.profileImage;
+
+            if (isCollapsed) {
+                activeSubMenu.show();
+                sidebar.addClass(dockedClass).removeClass(collapsedClass);
+                content.removeClass(expandedClass);
+                profileImage.removeClass(collapseImageClass);
+
+                //// When expanding, check current active tab, and active it
+                if (menuBar.domElements.accountInfoHeader.hasClass('active')) {
+                    menuBar.domElements.mainMenuTab.hide();
+                    menuBar.domElements.accountInfoTab.show()
+                }
+                else {
+                    menuBar.domElements.mainMenuTab.show();
+                    menuBar.domElements.accountInfoTab.hide();
+                }
+            } else {
+                activeSubMenu.hide();
+                sidebar.removeClass(dockedClass).addClass(collapsedClass);
+                content.addClass(expandedClass);
+                profileImage.addClass(collapseImageClass);
                 menuBar.domElements.mainMenuTab.show();
                 menuBar.domElements.accountInfoTab.hide();
             }
-        } else {
-            activeSubMenu.hide();
-            sidebar.removeClass(dockedClass).addClass(collapsedClass);
-            content.addClass(expandedClass);
-            profileImage.addClass(collapseImageClass);
-            menuBar.domElements.mainMenuTab.show();
-            menuBar.domElements.accountInfoTab.hide();
         }
 
         menuBar.positionPTTooltip();
     },
 
-    activateAccountInfoTab: function () {
+    activateAccountInfoTab: function (event?: any, userName: string = '') {
         menuBar.domElements.accountInfoHeader.addClass('active');
         menuBar.domElements.mainMenuHeader.removeClass('active');
         menuBar.domElements.mainMenuTab.hide();
@@ -179,6 +195,10 @@
 
         if (!accountInfoUrl) {
             accInfoContent.attr('src', menuBar.urls.accountInfo);
+        }
+
+        if (userName !== '' || typeof userName === 'undefined') {
+            accInfoContent.attr('src', menuBar.urls.accountInfo + '?txtUsername=' + userName);
         }
 
         // To work on IE, use plain-old javascript onload event
@@ -220,19 +240,26 @@
     collapseSideBar: function () {
         var sideBar = menuBar.domElements.sideBar;
 
-        if (sideBar.hasClass('docked')) {
-            return;
+        if (alpha.isScreenLower768 && sideBar.hasClass('visible-mobile')) {
+            menuBar.domElements.mainContent.addClass('expanded-mobile');
+            sideBar.addClass('hidden-mobile').removeClass('visible-mobile');
         }
-        if (sideBar.hasClass('collapsed')) {
-            sideBar.removeClass('hovered').addClass('focusout');
+        else {
+            if (sideBar.hasClass('docked')) {
+                return;
+            }
 
-            //// Hide all expanded sub menus
-            var activeSubMenus = $('.menu-item.active .sub-menu');
-            activeSubMenus.css('display', 'none');
+            if (sideBar.hasClass('collapsed')) {
+                sideBar.removeClass('hovered').addClass('focusout');
 
-            //// Show all menu bar icon
-            menuBar.domElements.mainMenuTab.show();
-            menuBar.domElements.accountInfoTab.hide();
+                //// Hide all expanded sub menus
+                var activeSubMenus = $('.menu-item.active .sub-menu');
+                activeSubMenus.css('display', 'none');
+
+                //// Show all menu bar icon
+                menuBar.domElements.mainMenuTab.show();
+                menuBar.domElements.accountInfoTab.hide();
+            }
         }
     },
 
@@ -265,7 +292,6 @@
             if (subMenuContainer.is('ul')) {
                 subMenuContainer.slideUp('fast');
             }
-
         } else {
             //// Expand selected menu
             mainMenu.addClass('active');

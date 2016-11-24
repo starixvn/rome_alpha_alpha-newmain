@@ -1,205 +1,252 @@
-﻿'use strict';
+﻿module Announcement {
+    interface ILoadAnnouncementData {
+        messageIds: string;
+        announcementNext: number;
+    }
 
-var announcement = {
-    showedMessageIds: [],
-    securityCodeId: '20130426,20130526',
-    timeoutAnnouncement: 0,
-    announcementCookieName: null,
+    export class Base {
+        protected $: JQueryStatic;
+        protected showedMessageIds: Array<string> = [];
+        protected securityCodeId: string = '20130426,20130526';
+        protected timeoutAnnouncement: number = 0;
+        protected announcementCookieName: string = '';
+        protected constants = {
+            maximumTimeToShowAnnouncementPopUp: 5,
+            normalExpiredDays: 30,
+            securityCodeAnnouncementExpiredDay: 1,
+            timeToRemoveAnnouncement: 120000,
+            announcementsTransitionTime: 30000
+        }
+        protected domElements = {
+            announcementId: null,
+            popUpId: null,
+            popUpPanel: null,
+            popUpContainer: null,
+            popUpContainerText: null,
+            popUpContainerTextNoContent: null,
+            hideAdvertisement: null,
+            announcementCookieId: null
+        }
 
-    domElements: {
-        announcementId: null,
-        popUpId: null,
-        popUpPanel: null,
-        popUpContainer: null,
-        popUpContainerText: null,
-        hideAdvertisement: null,
-        announcementCookieId: null,
-    },
-    constants: {
-        maximumTimeToShowAnnoucementPopUp: 5,
-        normalExpiredDays: 30,
-        securityCodeAnnoucementExpiredDay: 1,
-        timeToShowAnnouncement: 120000,
-        annoucementsTransitionTime: 30000
-    },
-    urls: {
-        hotAnnoucement: alpha.urls.mainRootPath + 'Announcement/HotAnnouncement'
-    },
+        constructor($: JQueryStatic) {
+            this.$ = $;
+        }
 
-    init: function () {
-        announcement.loadAnnouncement();
-    },
-    cacheElements: function () {
-        announcement.domElements.announcementId = $('#announcement-id');
-        announcement.domElements.popUpId = $("#popup-id");
-        announcement.domElements.popUpPanel = $("#popup_panel");
-        announcement.domElements.popUpContainer = $('#popup-container');
-        announcement.domElements.popUpContainerText = $('#popup-container-text');
-        announcement.domElements.hideAdvertisement = $("#popup-container #chkHide");
-        announcement.domElements.announcementCookieId = $("#announcement-cookies-id");
-    },
-    loadAnnouncement: function () {
-        $.ajax({
-            type: "POST",
-            url: announcement.urls.hotAnnoucement,
-            data: {
-                messageIds: announcement.showedMessageIds.join(',')
-            },
-            success: function (data) {
-                announcement.showAnnouncement(data);
-                announcement.timeoutAnnouncement = setTimeout(announcement.removeAnnouncement, announcement.constants.timeToShowAnnouncement);
+        url = alpha.urls.mainRootPath + 'Announcement/HotAnnouncement';
+
+        init = () => {
+            this.loadAnnouncement(this.createLoadAnnoucementData(this.showedMessageIds), this.onSuccessLoadAnnouncement);
+        }
+
+        cacheElements = () => {
+            this.domElements.announcementId = this.$('#announcement-id');
+            this.domElements.popUpId = this.$("#popup-id");
+            this.domElements.popUpPanel = this.$("#popup_panel");
+            this.domElements.popUpContainer = this.$('#popup-container');
+            this.domElements.popUpContainerText = this.$('#popup-container-text');
+            this.domElements.popUpContainerTextNoContent = this.$('#popup-container-text-no-content');
+            this.domElements.hideAdvertisement = this.$("#popup-container #chkHide");
+            this.domElements.announcementCookieId = this.$("#announcement-cookies-id");
+        }
+
+        bindEvents = () => {
+            this.bindCommonEvents();
+
+            setTimeout(() => {
+                this.registerAnnouncementModal();
+            }, 2000);
+        }
+
+        bindCommonEvents = () => {
+            this.domElements.popUpContainerText.find('.icon-close').on('click', () => {
+                this.removeAnnouncement();
+            });
+
+            this.domElements.popUpContainer.find('.icon-close').on('click', () => {
+                parent['announcement'].removeAnnouncement();
+            });
+
+            this.domElements.hideAdvertisement.on('click', (event) => {
+                this.doNotShowAnnouncement(this.$(event.target).is(':checked'));
+            });
+        }
+
+        loadAnnouncement = (data: ILoadAnnouncementData, onSuccess: (result: string) => void) => {
+            const ajaxSettings = this.createAjaxSettings('POST', this.url, data, onSuccess);
+
+            this.$.ajax(ajaxSettings);
+        }
+
+        showAnnouncement = (result: string) => {
+            if (this.hasEmptyAnnouncementData(result)) {
+                return;
             }
-        });
-    },
 
-    removeAnnouncement: function () {
-        var announcementId = announcement.domElements.announcementId;
-        if (announcementId != null) {
-            announcementId.remove();
-            clearTimeout(announcement.timeoutAnnouncement);
-            setTimeout(function () {
-                announcement.loadAnnouncementNext();
-            }, announcement.constants.annoucementsTransitionTime);
+            this.showAnnouncementBase(result);
         }
-    },
 
-    loadAnnouncementNext: function () {
-        $.ajax({
-            type: "POST",
-            url: announcement.urls.hotAnnoucement,
-            data: {
-                messageIds: announcement.showedMessageIds.join(','),
-                announmentNext: 1
-            },
-            responseType: "json",
-            success: function (data) {
-                announcement.showAnnouncement(data);
-                announcement.timeoutAnnouncement = setTimeout(announcement.removeAnnouncement, announcement.constants.timeToShowAnnouncement);
+        showAnnouncementBase = (result: string) => {
+            this.removeAnnouncement();
+
+            var div = document.createElement('div');
+            div.innerHTML = result;
+            div.setAttribute('id', 'announcement-id');
+            document.body.appendChild(div);
+
+            this.cacheElements();
+            this.announcementCookieName = this.getAnnouncementCookieName();
+
+            var popUp = this.domElements.popUpId;
+            var id = popUp.length ? popUp.val() : 0;
+
+            if (!this.checkShowedMessage(id)) {
+                this.showedMessageIds.push(id);
             }
-        });
-    },
 
-    showAnnouncement: function (result) {
-        var text = result;
-        if (text.length < 10) {
-            return;
+            if (!alpha.isScreenLower768) {
+                var count = this.getAnnouncementShowCount();
+                if (count > this.constants.maximumTimeToShowAnnouncementPopUp) {
+                    setTimeout(this.removeAnnouncement, 1000);
+                    return;
+                }
+
+                this.increaseAnnouncementShowTimes();
+            }
+
+            var popUpPanel = this.domElements.popUpPanel;
+            if (id < 0 && popUpPanel) {
+                popUpPanel.css('display', 'none');
+            }
+
+            this.bindEvents();
         }
 
-        announcement.removeAnnouncement();
+        removeAnnouncement = () => {
+            var announcementId = this.domElements.announcementId;
+            if (announcementId != null) {
+                announcementId.remove();
+                clearTimeout(this.timeoutAnnouncement);
 
-        var div = document.createElement('div');
-        div.innerHTML = text;
-        div.style.display = 'none';
-        div.setAttribute('id', 'announcement-id');
-        document.body.appendChild(div);
-
-        announcement.cacheElements();
-        announcement.announcementCookieName = announcement.getAnnoucementCookieName();
-
-        var popUp = announcement.domElements.popUpId;
-        var id = popUp.length ? popUp.val() : 0;
-        if (!announcement.checkShowedMessage(id)) {
-            announcement.showedMessageIds.push(id);
+                if (!alpha.isScreenLower768) {
+                    setTimeout(() => {
+                        this.loadAnnouncement(this.createLoadAnnoucementData(this.showedMessageIds, 1), this.onSuccessLoadAnnouncement);
+                    }, this.constants.announcementsTransitionTime);
+                }
+            }
         }
 
-        var count = announcement.getAnnoucementShowCount();
-        if (count > announcement.constants.maximumTimeToShowAnnoucementPopUp) {
-            setTimeout(announcement.removeAnnouncement, 1000);
-            return;
+        onSuccessLoadAnnouncement = (result: string) => {
+            this.showAnnouncement(result);
+
+            this.timeoutAnnouncement = setTimeout(this.removeAnnouncement, this.constants.timeToRemoveAnnouncement);
         }
 
-        announcement.increaseAnnoucementShowTimes();
-        var popUpPanel = announcement.domElements.popUpPanel;
-        if (id < 0 && popUpPanel) {
-            popUpPanel.css('display', 'none');
+        hasEmptyAnnouncementData = (html: any): boolean => {
+            const id: string = this.$(html).attr('id');
+
+            return id === "no-info";
         }
 
-        announcement.bindEvents();
-    },
+        checkShowedMessage = (id) => {
+            const count = this.showedMessageIds.length;
 
-    bindEvents: function () {
-        announcement.domElements.popUpContainerText.find('.icon-close').click(function () {
-            announcement.removeAnnouncement();
-        });
+            for (let i = 0; i < count; i++) {
+                if (id === this.showedMessageIds[i]) {
+                    return true;
+                }
+            }
 
-        announcement.domElements.popUpContainer.find('.icon-close').click(function () {
-            //// Re-test again
-            parent['announcement'].removeAnnouncement();
-        });
+            return false;
+        }
 
-        announcement.domElements.hideAdvertisement.click(function () {
-            announcement.doNotShowAnnoucement($(this).is(':checked'));
-        });
+        registerAnnouncementModal = () => {
+            var popUpContainer = this.domElements.popUpContainerText.length
+                ? this.domElements.popUpContainerText
+                : this.domElements.popUpContainer;
 
-        setTimeout(function () {
-            announcement.domElements.announcementId.css('display', 'block');
-            var popUpContainer = announcement.domElements.popUpContainerText.length ?
-                announcement.domElements.popUpContainerText :
-                announcement.domElements.popUpContainer;
             popUpContainer
                 .modal({ show: true, backdrop: false })
                 .tinyDraggable({ exclude: 'button.icon.icon-close.close, .modal-body, p' });
-        }, 2000);
-    },
-    checkShowedMessage: function (id) {
-        var count = announcement.showedMessageIds.length;
-        for (var i = 0; i < count; i++) {
-            if (id == announcement.showedMessageIds[i]) {
-                return true;
+        }
+
+        createAjaxSettings = (methodType: string, url: string, data: any, onSuccess: any): JQueryAjaxSettings => {
+            let ajaxSettings: JQueryAjaxSettings = {
+                type: methodType,
+                url: url,
+                data: data,
+                cache: false,
+                success: onSuccess
+            };
+
+            return ajaxSettings;
+        }
+
+        createLoadAnnoucementData = (messageIds: Array<string>, announcementNext: number = 0): ILoadAnnouncementData => {
+            return {
+                messageIds: messageIds.join(','),
+                announcementNext: announcementNext
             }
         }
 
-        return false;
-    },
-
-    getAnnoucementShowCount: function () {
-        var cookieName = announcement.announcementCookieName;
-        if (cookieName == null) {
-            return 0;
+        private doNotShowAnnouncement = (hide) => {
+            this.$.cookie(
+                this.announcementCookieName,
+                hide ? this.constants.maximumTimeToShowAnnouncementPopUp : 1,
+                { expires: this.constants.normalExpiredDays, path: '/' });
         }
 
-        var value = $.cookie(cookieName);
-        var count = parseInt(value, 10);
-        if (isNaN(count)) {
-            count = 0;
+        private increaseAnnouncementShowTimes = () => {
+            var count = this.getAnnouncementShowCount();
+            var popUpId = this.domElements.popUpId;
+            var cookieDays = this.securityCodeId.indexOf(popUpId.val()) == -1
+                ? this.constants.normalExpiredDays
+                : this.constants.securityCodeAnnouncementExpiredDay;
+            this.$.cookie(this.announcementCookieName, ++count, { expires: cookieDays, path: '/' });
         }
 
-        return count;
-    },
+        private getAnnouncementShowCount = (): number => {
+            var cookieName = this.announcementCookieName;
 
-    getAnnoucementCookieName: function () {
-        try {
-            var popUpId = announcement.domElements.popUpId;
-            if (popUpId.length == 0) {
+            if (cookieName == null) {
+                return 0;
+            }
+
+            var value = this.$.cookie(cookieName);
+            var count = parseInt(value, 10);
+
+            if (isNaN(count)) {
+                count = 0;
+            }
+
+            return count;
+        }
+
+        private getAnnouncementCookieName = () => {
+            try {
+                const popUpId = this.domElements.popUpId;
+
+                if (popUpId.length === 0) {
+                    return null;
+                }
+
+                if (parseInt(popUpId.val()) < 0) {
+                    return null;
+                }
+
+                return "-" + popUpId.val() + this.domElements.announcementCookieId.val();
+            } catch (e) {
                 return null;
             }
-
-            if (parseInt(popUpId.val()) < 0) {
-                return null;
-            }
-
-            return "-" + popUpId.val() + announcement.domElements.announcementCookieId.val();
         }
-        catch (e) {
-            return null;
-        }
-    },
-    increaseAnnoucementShowTimes: function () {
-        var count = announcement.getAnnoucementShowCount();
-        var popUpId = announcement.domElements.popUpId;
-        var cookieDays = announcement.securityCodeId.indexOf(popUpId.val()) == -1 ?
-            announcement.constants.normalExpiredDays :
-            announcement.constants.securityCodeAnnoucementExpiredDay;
-        $.cookie(announcement.announcementCookieName, ++count, { expires: cookieDays, path: '/' });
-    },
-    doNotShowAnnoucement: function (hide) {
-        $.cookie(
-            announcement.announcementCookieName,
-            hide ? announcement.constants.maximumTimeToShowAnnoucementPopUp : 1,
-            { expires: announcement.constants.normalExpiredDays, path: '/' });
     }
-};
+}
 
-$(function () {
-    announcement.init();
-});
+$(document).ready(() => {
+    if (alpha.isScreenLower768) {
+        const mobileAnnouncement = new Announcement.Mobile($);
+        mobileAnnouncement.init();
+    } else {
+        const announcement = new Announcement.Base($);
+        announcement.init();
+    }
+})

@@ -12,7 +12,7 @@
     {
         public IEnumerable<string> GetHotMessages(string hotMessageFilePath, byte roleId, string language)
         {
-            if (language == null)
+            if (string.IsNullOrWhiteSpace(language))
             {
                 throw new ArgumentNullException(nameof(language), "Language cannot be null");
             }

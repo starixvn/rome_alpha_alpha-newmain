@@ -45,10 +45,10 @@
             var rootNode = CustomSiteMapProvider.CreateRootNodeStub(@"\TestData\Menus\MenuItemBuilder.sitemap");
             var testNode = rootNode.ChildNodes[0];
 
-            //// Act
+            // Act
             var actualMenuItem = menuItemBuilderImpl.BuildMenuItem(testNode);
 
-            //// Assert
+            // Assert
             Assert.IsTrue(
                 actualMenuItem.ResourceKey == "soccer"
                 && actualMenuItem.AppPath == "TotalbetsForecastSiteVirtualPath"

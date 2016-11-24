@@ -322,7 +322,7 @@
   <data name="PrivateMessage" xml:space="preserve">
     <value>个人讯息</value>
   </data>
-  <data name="Less" xml:space="preserve">
+  <data name="less" xml:space="preserve">
     <value>少</value>
   </data>
   <data name="LogOut" xml:space="preserve">
@@ -411,5 +411,56 @@
   </data>
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>快速游览手册教学</value>
+  </data>
+  <data name="stats" xml:space="preserve">
+    <value>您的统计</value>
+    </data>
+  <data name="balance" xml:space="preserve">
+    <value>余额资料</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="normalAnnouncement" xml:space="preserve">
+    <value>一般公告</value>
+  </data>
+  <data name="specialNotice" xml:space="preserve">
+    <value>特殊公告</value>
+  </data>
+  <data name="specialAnnouncement" xml:space="preserve">
+    <value>特殊公告</value>
+  </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>个人讯息</value>
+  </data>
+  <data name="notice" xml:space="preserve">
+    <value>通告</value>
+  </data>
+  <data name="winloss" xml:space="preserve">
+    <value>输赢</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>活跃</value>
+  </data>
+  <data name="closed" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="suspended" xml:space="preserve">
+    <value>暫停</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>到</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>从</value>
+  </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>未完成交易</value>
   </data>
 </root>

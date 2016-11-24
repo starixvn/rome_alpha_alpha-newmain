@@ -1,36 +1,35 @@
-﻿
+﻿// To remove the 300-350ms tap delay
+html {
+  touch-action: manipulation;
+}
+
 body{
-	font-family:Arial,Tahoma ,helvetica ,sans-serif;
-	font-size:12px;
-	line-height:18px;
-	color:#333;
-	margin:0;
-	text-align:left;
-	background-attachment:fixed;
-	background-color:#FFFFFF;
+	line-height: 28px;
+    padding: 0 20px;
 }
-td{
-	padding-left:2px;
-	padding-right:2px;
+
+.content {
+    padding: 20px 0;
+    width: 860px;
 }
-#clear{
-	clear: both;
-	height:10px;
+
+.list-faqs {
+    list-style-type: decimal;
+    margin-left: 16px;
 }
-#page_main{
-	text-align:left;
-	min-width:550px;
+
+.italic {
+    font-style: italic;
 }
-#header_cont{
-	width:720px;
-	height:24px;
-	background:url(images/bg_header01.jpg) no-repeat left bottom;
-	color:#af1a1a;
-	font-weight:bold;
-	padding-left:15px;
-	text-transform:uppercase;
+
+.setup {
+    font-style: italic;
+    list-style-type: disc;
+    margin-left: 15px;
 }
-#box{
-	border: 1px solid rgb(204, 204, 204); 
-	margin-top: 1px;
+
+@media screen and (max-width: 860px) {
+    .content {
+        width: 100%;
+    }
 }

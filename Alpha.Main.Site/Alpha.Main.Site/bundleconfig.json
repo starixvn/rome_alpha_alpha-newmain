@@ -3,13 +3,31 @@
     "outputFileName": "Assets/bundles/default-index.js",
     "inputFiles": [
       "Assets/scripts/core.js",
+      "Assets/scripts/home/index-manager.js",
       "Assets/scripts/old-main.js",
       "Assets/scripts/home/header-nav.js",
       "Assets/scripts/home/header-msg.js",
-      "Assets/scripts/home/index-manager.js",
+      "Assets/scripts/home/header-msg-mobile.js",
       "Assets/scripts/home/menu-bar.js",
       "Assets/scripts/announcement/announcement.js",
+      "Assets/scripts/announcement/announcement-mobile.js",
       "Assets/scripts/customer-profiles/brief-profile.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/default-dashboard.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/dashboard/dashboard.js",
+      "Assets/scripts/dashboard/statistics.js",
+      "Assets/scripts/dashboard/notice.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/default-message.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/message/index.js"
     ]
   },
   {
@@ -19,22 +37,24 @@
       "Assets/Styles/home/popup-message.css",
       "Assets/Styles/home/tooltip.css",
       "Assets/Styles/home/old-main.css",
+      "Assets/Styles/home/dropdown-ext.css",
       "Assets/Styles/customer-profiles/customer-profile.css",
       "Assets/Styles/announcement/announcements.css"
     ]
   },
   {
-    "outputFileName": "Assets/bundles/default-introduction.js",
+    "outputFileName": "Assets/bundles/default-instruction.js",
     "inputFiles": [
-      "Assets/scripts/introduction/enjoyhint.js",
-      "Assets/scripts/introduction/introduction.js"
+      "Assets/scripts/instruction/enjoyhint.js",
+      "Assets/scripts/instruction/instruction.js",
+      "Assets/scripts/instruction/instruction-mobile.js"
     ]
   },
   {
-    "outputFileName": "Assets/bundles/default-introduction.css",
+    "outputFileName": "Assets/bundles/default-instruction.css",
     "inputFiles": [
-      "Assets/styles/introduction/enjoyhint.css",
-      "Assets/styles/introduction/intro.css"
+      "Assets/styles/instruction/enjoyhint.css",
+      "Assets/styles/instruction/instruction.css"
     ]
   },
   {
@@ -43,7 +63,13 @@
       "Assets/styles/security/security.css"
     ]
   },
-   {
+  {
+    "outputFileName": "Assets/bundles/default-home.css",
+    "inputFiles": [
+      "Assets/Styles/home/home.css"
+    ]
+  },
+  {
     "outputFileName": "Assets/bundles/security/security-code/verify-securitycode.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -52,7 +78,7 @@
       "Assets/scripts/security/security-code/verify-securitycode.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/security-code/change-securitycode-by-forcing.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -61,7 +87,7 @@
       "Assets/scripts/security/security-code/change-securitycode-by-forcing.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/security-code/change-securitycode-firstlogin.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -88,7 +114,7 @@
       "Assets/scripts/security/security-code/reset-securitycode.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/password/change-password.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -97,7 +123,7 @@
       "Assets/scripts/security/password/change-password.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/password/reset-main-account-password.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -106,7 +132,7 @@
       "Assets/scripts/security/password/reset-main-account-password.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/password/force-change-password.js",
     "inputFiles": [
       "Assets/scripts/core.js",
@@ -115,13 +141,55 @@
       "Assets/scripts/security/password/force-change-password.js"
     ]
   },
-   {
+  {
     "outputFileName": "Assets/bundles/security/password/reset-sub-account-password.js",
     "inputFiles": [
       "Assets/scripts/core.js",
       "Assets/scripts/security/password/password-resources.js",
       "Assets/scripts/security/security-helper.js",
       "Assets/scripts/security/password/reset-sub-account-password.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/default-message.css",
+    "inputFiles": [
+      "Assets/styles/message/message.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/otp/otp.css",
+    "inputFiles": [
+      "Assets/styles/otp/otp.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/setup-otp.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/otp/setup-otp.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/verify-otp-difference-device.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/security-helper.js",
+      "Assets/scripts/security/otp/verify-otp-difference-device.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/verify-otp.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/security-helper.js",
+      "Assets/scripts/security/otp/verify-otp.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/otp/reset-otp.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/otp/reset-otp.js"
     ]
   }
 ]

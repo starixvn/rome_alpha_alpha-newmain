@@ -8,11 +8,11 @@
     using System.Web;
     using System.Web.Configuration;
     using Configurations;
-    using Main.Helpers;
 
     public static class StaticResources
     {
         private static readonly string StaticResourcesVersion;
+
         [SuppressMessage("Microsoft.Performance", "CA1802:UseLiteralsWhereAppropriate", Justification = "Reviewed!")]
         private static readonly string MinText = ".min";
 
@@ -51,6 +51,13 @@
             {
                 return System.Web.Optimization.Styles.Render(paths.Select(path => $"{AppSettings.AssetAppPath}{path}{MinText}.css?v={StaticResourcesVersion}").ToArray());
             }
+
+            public static IHtmlString RenderCommon(string path, string version = "1")
+            {
+                version = !string.IsNullOrEmpty(version) ? $"?v={version}" : string.Empty;
+
+                return System.Web.Optimization.Styles.Render($"{AppSettings.AssetAppPath}{path}{MinText}.css{version}");
+            }
         }
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Justification = "Reviewed!")]
@@ -59,6 +66,13 @@
             public static IHtmlString Render(params string[] paths)
             {
                 return System.Web.Optimization.Scripts.Render(paths.Select(path => $"{AppSettings.AssetAppPath}{path}{MinText}.js?v={StaticResourcesVersion}").ToArray());
+            }
+
+            public static IHtmlString RenderCommon(string path, string version = "1")
+            {
+                version = !string.IsNullOrEmpty(version) ? $"?v={version}" : string.Empty;
+
+                return System.Web.Optimization.Scripts.Render($"{AppSettings.AssetAppPath}{path}{MinText}.js{version}");
             }
         }
 
@@ -78,6 +92,6 @@
             return VirtualPathUtility.ToAbsolute($"{relativePath}{MinText}.css?v={StaticResourcesVersion}");
         }
 
-        #endregion
+        #endregion Current site
     }
 }

@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Services.Announcement.GetHotAnnouncement
 {
+    using System;
     using Alpha.Main.Helpers;
     using NSubstitute;
-    using System;
 
     public class ValidAnnouncementTimeCondition
     {

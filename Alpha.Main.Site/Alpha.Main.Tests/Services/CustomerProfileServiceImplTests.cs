@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using Constants;
-    using Criteria.CustomerProfile;
+    using System;
     using DataAccesses;
     using Main.Services.Impl;
     using NSubstitute;
@@ -18,21 +17,65 @@
         {
             customerProfileDataAccess = Substitute.For<CustomerProfileDataAccess>();
             customerProfileService = new CustomerProfileServiceImpl(customerProfileDataAccess);
+        }        
+
+        [TestCase(0)]
+        [TestCase(-100)]
+        public void GetProfilePicture_CustIdLessThanOrEqualToZero_ThrowArgumentException(int custId)
+        {
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => customerProfileService.GetProfilePicture(custId));
         }
 
-        [TestCase(CustId.InvalidId, CustId.InvalidId)]
-        [TestCase(CustId.ValidId, CustId.ValidId)]
-        public void GetProfilePicture_AnyCustId_CallDataAccessGetProfilePicture(
-            int custId,
-            int expectedCustId)
+        [Test]
+        public void GetProfilePicture_CustomerImageDataIsEmpty_DefaultAvatarIsTrue()
         {
             // Arrange
+            var custId = 100;            
+            byte[] emptyImageData = new byte[] { };
+            customerProfileDataAccess
+                .GetCustomerImageData(custId)
+                .ReturnsForAnyArgs(emptyImageData);
 
-            // Action
-            var profilePicture = customerProfileService.GetProfilePicture(custId);
+            // Act
+            var customerProfile = customerProfileService.GetProfilePicture(custId);
 
             // Assert
-            customerProfileDataAccess.Received().GetProfilePicture(Arg.Is<GetProfilePictureCriteria>(criteria => criteria.CustId == expectedCustId));
+            Assert.AreEqual(true, customerProfile.UseDefaultAvatar);
+        }
+
+        [Test]
+        public void GetProfilePicture_CustomerImageDataIsNotEmpty_DefaultAvatarIsFalse()
+        {
+            // Arrange
+            var custId = 100;
+            byte[] imageData = new byte[] { 68 };
+            customerProfileDataAccess
+                .GetCustomerImageData(custId)
+                .ReturnsForAnyArgs(imageData);
+
+            // Act
+            var customerProfile = customerProfileService.GetProfilePicture(custId);
+
+            // Assert
+            Assert.AreEqual(false, customerProfile.UseDefaultAvatar);
+        }
+
+        [Test]
+        public void GetProfilePicture_CustomerImageDataIsNotEmpty_DataWillBetSetToBinaryAvatar()
+        {
+            // Arrange
+            var custId = 100;
+            byte[] imageData = new byte[] { 68 };
+            customerProfileDataAccess
+                .GetCustomerImageData(custId)
+                .ReturnsForAnyArgs(imageData);
+
+            // Act
+            var customerProfile = customerProfileService.GetProfilePicture(custId);
+
+            // Assert
+            Assert.AreEqual(imageData, customerProfile.ImageData);
         }
     }
 }

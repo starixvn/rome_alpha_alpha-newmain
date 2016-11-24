@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true" >
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true">
   <siteMapNode title="Alpha Site">
     <!--Report-->
-    <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]" >
+    <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]">
       <siteMapNode resourceKey="memberWinLoss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberwinlossdetail" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossDetailAgent.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=2" roles="Agent"></siteMapNode>
@@ -117,9 +117,9 @@
       <siteMapNode resourceKey="login" appPath="ViewLogsAppPath" url="Login"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="announcements">
-      <siteMapNode resourceKey="normal" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=" byPassAuthorization="true"></siteMapNode>
-      <siteMapNode resourceKey="special" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=allSpecial" byPassAuthorization="true"></siteMapNode>
-      <siteMapNode resourceKey="personalMessage" appPath="OldMainAppPath" url="Info/NewMessageForm.aspx?pageQuery=private" byPassAuthorization="true"></siteMapNode>
+      <siteMapNode resourceKey="normal" url="Message/Index?messagetype=1" byPassAuthorization="true"></siteMapNode>
+      <siteMapNode resourceKey="special"  url="Message/Index?messagetype=2" byPassAuthorization="true"></siteMapNode>
+      <siteMapNode resourceKey="personalMessage" url="Message/Index?messagetype=0" byPassAuthorization="true"></siteMapNode>
     </siteMapNode>
   </siteMapNode>
 </siteMap>

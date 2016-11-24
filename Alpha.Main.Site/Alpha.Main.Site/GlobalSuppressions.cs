@@ -3,6 +3,16 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Scope = "namespace", Target = "Alpha.Results.Site.App_Start", Justification = "Reviewed")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1014:MarkAssembliesWithClsCompliant")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1707:IdentifiersShouldNotContainUnderscores", Scope = "namespace", Target = "Alpha.Main.Site.App_Start")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Handlers.DefaultHandler.#Handle(Alpha.Main.Site.Requests.BrowserQuery)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Dashboard.BalanceInfo.BalanceInfoQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Dashboard.Notice.NoticeQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession,System.DateTime,System.Int32,System.Boolean)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Dashboard.Statistics.StatisticsQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Dashboard.Statistics.TopTurnoverMembersQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Dashboard.Statistics.TopWinningMembersQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Message.MessageQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession,System.Int32,System.DateTime,System.DateTime,System.Boolean,System.Int32)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Scope = "member", Target = "Alpha.Main.Site.Requests.Message.MessageQuery.#.ctor(Sunplus.Agent.Model.Entities.IUserSession,System.Int32,System.DateTime,System.DateTime,System.Boolean,System.String,System.Int32)")]
+
+#pragma warning disable 618, 612
 // This file is used by Code Analysis to maintain SuppressMessage 
 // attributes that are applied to this project.
 // Project-level suppressions either have no target or are given 

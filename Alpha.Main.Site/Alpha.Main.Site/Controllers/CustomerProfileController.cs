@@ -1,10 +1,13 @@
-﻿namespace Alpha.Main.Site.Controllers
+﻿#pragma warning disable 618, 612
+
+namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
     using MediatR;
     using Models.Requests.CustomerProfile;
     using Sunplus.Agent.Model.Entities;
+    using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class CustomerProfileController : BaseController
@@ -20,7 +23,7 @@
 
         public ActionResult BriefProfile()
         {
-            var query = new BriefProfileQuery(this.userSession);
+            var query = new BriefProfileQuery(userSession);
 
             var viewModel = mediator.Send(query);
 

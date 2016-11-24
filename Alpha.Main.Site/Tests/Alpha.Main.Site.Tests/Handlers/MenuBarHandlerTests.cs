@@ -30,7 +30,7 @@
             // Arrange
             MenuBarQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => menuBarHandler.Handle(nullQuery)));
         }
 
@@ -38,7 +38,7 @@
         public void HandleMenuBarQuery_WhenCalled_ExecuteGetMenuByUserLevel()
         {
             //// Arrange
-            var menuBarQuery = new MenuBarQuery(2, "userAgent");
+            var menuBarQuery = new MenuBarQuery(2, "userAgent");            
 
             //// Act
             menuBarHandler.Handle(menuBarQuery);

@@ -1,12 +1,14 @@
-﻿namespace Alpha.Main.Site.Controllers
+﻿#pragma warning disable 618, 612
+
+namespace Alpha.Main.Site.Controllers
 {
+    using System;
+    using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
     using Requests;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Web.Mvc;
-    using System.Web.SessionState;
+    using Web;
 
     public class LanguageController : BaseController
     {

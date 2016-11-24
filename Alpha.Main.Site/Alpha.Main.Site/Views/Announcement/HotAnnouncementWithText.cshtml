@@ -1,6 +1,6 @@
 ﻿@model HotAnnouncement
-<div class="modal fade announcement-modal" id="popup-container-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog ex-modal" role="document">
+<div class="modal fade announcement-modal visible-mobile" id="popup-container-text" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog ex-modal">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"><span aria-hidden="true"></span></button>
@@ -8,7 +8,11 @@
             </div>
             <div class="modal-body" id="announcementModalBody">
                 @Html.Raw(Model.Content)
-            </div>
+            </div>                  
         </div>
     </div>
 </div>
+<div class="list-action">
+    <div id="prevButton" class="icon-chevron-left prevButton"></div>
+    <div id="nextButton" class="icon-chevron-right nextButton"></div>
+</div>      

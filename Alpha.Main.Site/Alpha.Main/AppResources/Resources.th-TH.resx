@@ -322,7 +322,7 @@
   <data name="PrivateMessage" xml:space="preserve">
     <value>ข้อความส่วนตัว</value>
   </data>
-  <data name="Less" xml:space="preserve">
+  <data name="less" xml:space="preserve">
     <value>less</value>
   </data>
   <data name="LogOut" xml:space="preserve">
@@ -411,5 +411,53 @@
   </data>
   <data name="QuickTourTooltip" xml:space="preserve">
     <value>คู่มือรวบรัด</value>
+  </data>
+  <data name="stats" xml:space="preserve">
+    <value>สถิติของคุณ</value>
+    </data>
+  <data name="balance" xml:space="preserve">
+    <value>ข้อมูลยอดเงินคงเหลือ</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>เปิดการใช้งาน</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value> ปิดการใช้งาน</value>
+  </data>
+  <data name="normalAnnouncement" xml:space="preserve">
+    <value>ประกาศธรรมดา</value>
+  </data>
+  <data name="specialNotice" xml:space="preserve">
+    <value>ข้อความ เฉพาะ</value>
+  </data>
+  <data name="specialAnnouncement" xml:space="preserve">
+    <value>ข้อความ เฉพาะ</value>
+  </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>ข้อความส่วนตัว</value>
+  </data>
+  <data name="notice" xml:space="preserve">
+    <value>ประกาศ</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>เปิด</value>
+  </data>
+  <data name="closed" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="suspended" xml:space="preserve">
+    <value>ระงับ</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>ตกลง</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>ถึง</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>จาก</value>
+  </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>การเดิมพันที่ยังไม่สิ้นสุด</value>
   </data>
 </root>

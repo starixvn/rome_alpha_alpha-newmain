@@ -1,0 +1,49 @@
+﻿@using Alpha.Main.Site.ViewModels.Dashboard
+@model DashboardViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/dashboard/dashboard-{Model.UserLevelName}")
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-home"))" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active" id="balance-tab">
+            <a href="#balance" aria-controls="home" role="tab" data-toggle="tab">@Resources.balance</a>
+        </li>
+        <li role="presentation" id="stats-tab">
+            <a href="#stats" aria-controls="home" role="tab" data-toggle="tab">@Resources.stats</a>
+        </li>
+        <li role="presentation" id="notice-tab">
+            <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">@Resources.announcement</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active balance-info" id="balance">
+            @Html.Action("BalanceInfo")
+        </div>
+        <div role="tabpanel" class="tab-pane statistic" id="stats" action-url="@Url.Action("Index", "Statistics")">
+            <div class="text-center"><span class="block-icon-small "></span></div>
+        </div>
+        <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@Url.Action("Index", "Notice")">
+            <div class="text-center"><span class="block-icon-small "></span></div>
+        </div>
+    </div>
+
+    @Html.Partial("HiddenFields", Model)
+
+    <!--[if IE 8]><!-->
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/es5-shim")
+    <!--<![endif]-->
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
+    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-dashboard"))" type="text/javascript"></script>
+</body>
+</html>

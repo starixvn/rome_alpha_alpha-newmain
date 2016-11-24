@@ -38,6 +38,22 @@
   @include css3-prefix('box-sizing', $type);
 }
 
+//Keyframes
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
 /// Transform
 /// @param {List} $params - Params
 /// @require {mixin} css3-prefix
@@ -61,4 +77,62 @@
 /*******************************************/
 @mixin transition($transition...) {
     @include css3-prefix('transition', $transition);
+}
+
+/*******************************************/
+/* Animation */
+/*******************************************/
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+/*******************************************/
+/* Ripple Effect */
+/*******************************************/
+@mixin keyframes-ripple() {
+    @include keyframes(ripple) {
+        0% {
+            @include transform(scale(0));
+        }
+
+        20% {
+            @include transform(scale(1));
+        }
+
+        100% {
+            opacity: 0;
+            @include transform(scale(1));
+        }
+    }
+    
+}
+
+@mixin ripple-effect-icon($background: #b1aea3, $top: 0, $margin-left: -3px, $margin-right: -4px, $width: 26px, $height: 26px) {
+    position: relative;
+
+    &:after {
+        position: relative;
+        content: '';
+    }      
+
+    &:hover:after {
+        position: absolute;
+        left: 0;
+        top: $top;
+        width: $width;
+        height: $height;
+        margin-left: $margin-left;
+        margin-top: $margin-right;
+        background: $background;
+        @include border-radius(100%);
+        @include transform(scale(0));
+        -moz-animation: ripple 1s ease-out;
+        -o-animation: ripple 1s ease-out;
+        -webkit-animation: ripple 1s ease-out;
+        animation: ripple 1s ease-out;
+    }
 }

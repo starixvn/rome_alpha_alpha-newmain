@@ -1,15 +1,18 @@
 ﻿namespace Alpha.Main.Models.CustomerProfiles
 {
-    using System.Drawing;
-
     public class ProfilePicture
     {
-        public int CustId { get; set; }
+        public ProfilePicture(int custId, bool useDefaultAvatar, byte[] imageData = null)
+        {
+            CustId = custId;
+            UseDefaultAvatar = useDefaultAvatar;
+            ImageData = imageData;
+        }
 
-        public bool IsDefaultAvatar { get; set; }
+        public int CustId { get; }
 
-        public Image Avatar { get; set; }
+        public bool UseDefaultAvatar { get; }
 
-        public byte[] BinaryAvatar { get; set; }
+        public byte[] ImageData { get; }
     }
 }

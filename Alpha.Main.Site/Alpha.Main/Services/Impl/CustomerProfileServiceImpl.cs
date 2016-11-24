@@ -1,26 +1,33 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using Criteria.CustomerProfile;
+    using System;
     using DataAccesses;
     using Models.CustomerProfiles;
 
     public class CustomerProfileServiceImpl : CustomerProfileService
     {
-        private readonly CustomerProfileDataAccess _customerProfileDataAccess;
+        private readonly CustomerProfileDataAccess customerProfileDataAccess;
 
         public CustomerProfileServiceImpl(CustomerProfileDataAccess customerProfileDataAccess)
         {
-            _customerProfileDataAccess = customerProfileDataAccess;
+            this.customerProfileDataAccess = customerProfileDataAccess;
         }
 
         public ProfilePicture GetProfilePicture(int custId)
         {
-            var criteria = new GetProfilePictureCriteria
+            if (custId <= 0)
             {
-                CustId = custId
-            };
+                throw new ArgumentException("customer Id is equal or less than zero", nameof(custId));
+            }
 
-            return _customerProfileDataAccess.GetProfilePicture(criteria);
+            var customerImageData = customerProfileDataAccess.GetCustomerImageData(custId);
+
+            if (customerImageData.Length == 0)
+            {
+                return new ProfilePicture(custId, useDefaultAvatar: true);
+            }
+
+            return new ProfilePicture(custId, useDefaultAvatar: false, imageData: customerImageData);
         }
     }
 }

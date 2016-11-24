@@ -3,9 +3,11 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
-    using Filters;
+    using Auth.Filters;
     using MediatR;
     using Requests.Password;
+    using Web;
+    using Web.Filters;
 
     [SessionState(SessionStateBehavior.Default)]
     public class PasswordController : BaseController

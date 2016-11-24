@@ -1,5 +1,5 @@
 ﻿declare var isMobile: any;
-declare var $: any;
+declare var bootbox: any;
 
 var alpha = {
     urls:
@@ -30,7 +30,13 @@ var alpha = {
             : "not found",
         isSubAccount: document.getElementById('isSubAccount') != null
             ? ((<HTMLInputElement>document.getElementById('isSubAccount')).value.toLowerCase() === "true")
-            : "not found"
+            : "not found",
+        isShowIntroduction: document.getElementById('isShowIntroduction') != null
+            ? ((<HTMLInputElement>document.getElementById('isShowIntroduction')).value.toLowerCase() === "true")
+            : "not found",
+        isEnableOtp: document.getElementById('isEnabledOtp') != null
+            ? ((<HTMLInputElement>document.getElementById('isEnabledOtp')).value.toLowerCase() === "true")
+            : false
     },
     core:
     {
@@ -55,7 +61,8 @@ var alpha = {
             var ua = window.navigator.userAgent;
             var msie = ua.indexOf("MSIE ");
 
-            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))
+            // If Internet Explorer, return version number
             {
                 return true;
             }
@@ -67,11 +74,16 @@ var alpha = {
             return (userAgent.indexOf('msie') != -1)
                 ? (parseInt(userAgent.split('msie')[1]) < 9)
                 : false;
+        },
+
+        IsAndroid: () => {
+            return /Android/i.test(navigator.userAgent);
         }
     },
     isScreenGreater1024: false,
     isScreenLower768: false,
     isScreenGreater768AndLower1024: false,
+    isScreenLower1024: false,
     isMobile: false,
     detectResponsiveInformation: function () {
         if (alpha.core.isIe()) {
@@ -79,23 +91,67 @@ var alpha = {
             $.fn.modal.Constructor.prototype.enforceFocus = function () { };
         }
 
-        var currentWindowWidth = $(window).width();
+        var currentWindowWidth = window.screen.width;
 
         if (currentWindowWidth < 768) {
             alpha.isScreenLower768 = true;
-        }
-        else if (currentWindowWidth <= 1024) {
+        } else if (currentWindowWidth <= 1024) {
             alpha.isScreenGreater768AndLower1024 = true;
-        }
-        else {
+        } else {
             alpha.isScreenGreater1024 = true;
         }
 
         alpha.isMobile = isMobile.any;
+    },
+    localStorage: {
+        get: (key: string) => {
+            return store.enabled ? store.get(key) : $.cookie(key);
+        },
+
+        set: (key: string, value: any) => {
+            store.enabled ? store.set(key, value) : $.cookie(key, value, alpha.localStorage.getCookieExpireOptions());
+        },
+
+        check: (key: string): boolean => {
+            return typeof store.get(key) !== 'undefined' || typeof $.cookie(key) !== 'undefined';
+        },
+
+        getCookieExpireOptions: () => {
+            var cookieExpire: any = { expires: 365, path: window.location.pathname };
+
+            if (alpha.core.isIe()) {
+                cookieExpire = { expires: 365 };
+            }
+
+            return cookieExpire;
+        },
+    },
+    showMessage: function ($target: any, result: Result) {
+        $target.empty();
+
+        if (result.isSuccessful) {
+            $target.html("<div class='msg msg-success'>" + result.message + "</div>");
+            return;
+        }
+
+        if (result.isWarning) {
+            $target.html("<div class='msg msg-warning'>" + result.message + "</div>");
+            return;
+        }
+
+        if (result.isFailed) {
+            $target.html("<div class='msg msg-error'>" + result.message + "</div>");
+            return;
+        }
+    },
+
+    key: {
+        instruction: 'Instruction',
+        mobileInstruction: 'MobileInstruction'
     }
 };
 
-$(function () {
+$(() => {
     $.ajaxSetup({
         beforeSend: function (xhr) {
             var antiXSRFToken = document.getElementsByName("__RequestVerificationToken");
@@ -110,3 +166,21 @@ $(function () {
         }
     });
 });
+
+class Result {
+    static warningCode: number = -1000;
+
+    code: number;
+    message: string;
+    isSuccessful: boolean;
+    isFailed: boolean;
+    isWarning: boolean;
+
+    constructor(data?: any) {
+        this.code = data.Code;
+        this.message = data.Message || "";
+        this.isFailed = this.code !== 0;
+        this.isSuccessful = this.code === 0;
+        this.isWarning = data.Code === Result.warningCode;
+    }
+}

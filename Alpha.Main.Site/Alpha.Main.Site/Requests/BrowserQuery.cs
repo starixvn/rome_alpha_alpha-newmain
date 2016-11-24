@@ -1,8 +1,10 @@
-﻿namespace Alpha.Main.Site.Requests
+﻿#pragma warning disable 612, 618
+
+namespace Alpha.Main.Site.Requests
 {
-    using Alpha.Main.Site.ViewModels;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
+    using ViewModels;
 
     public class BrowserQuery : IRequest<BrowserViewModel>
     {
@@ -13,12 +15,6 @@
             this.userSession = userSession;
         }
 
-        public byte UserLevelId
-        {
-            get
-            {
-                return this.userSession.RoleId;
-            }
-        }
+        public byte UserLevelId => userSession.RoleId;
     }
 }

@@ -1,0 +1,56 @@
+﻿#pragma warning disable 618, 612
+
+namespace Alpha.Main.Site.Controllers
+{
+    using System.Web.Mvc;
+    using System.Web.SessionState;
+    using MediatR;
+    using Requests.Dashboard.Statistics;
+    using Sunplus.Agent.Model.Entities;
+    using Web;
+
+    [SessionState(SessionStateBehavior.ReadOnly)]
+    public class StatisticsController : BaseController
+    {
+        private readonly IMediator mediator;
+        private readonly IUserSession userSession;
+
+        public StatisticsController(IMediator mediator, IUserSession userSession)
+        {
+            this.mediator = mediator;
+            this.userSession = userSession;
+        }
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            var viewModel = mediator.Send(new StatisticsQuery(userSession));
+
+            return PartialView(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult TopWinningMembers()
+        {
+            var viewModel = mediator.Send(new TopWinningMembersQuery(userSession));
+
+            return PartialView("TopWinningMembers", viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult TopTurnoverMembers()
+        {
+            var viewModel = mediator.Send(new TopTurnoverMembersQuery(userSession));
+
+            return PartialView("TopTurnoverMembers", viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult NewMembers()
+        {
+            var viewModel = mediator.Send(new NewMembersQuery(userSession.CustId));
+
+            return PartialView("NewMembers", viewModel);
+        }
+    }
+}

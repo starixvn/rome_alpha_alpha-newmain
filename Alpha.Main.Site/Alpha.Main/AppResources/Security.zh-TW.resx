@@ -304,4 +304,109 @@
     <value>密码必须为 6-10 字符没有空格并包含至少 1  个大写字母、1  个小写字母 、 1  个数字。（例如 493abcDE, 59D7!4$h）
 注意： 您的密码需有大小写</value>
   </data>
+  <data name="InputOtpBeforeProceeding" xml:space="preserve">
+    <value>請輸入您的一次性密碼以便繼續。</value>
+  </data>
+  <data name="OtpNotes" xml:space="preserve">
+    <value>OTP將需要當您執行敏感操作或使用其他設備/瀏覽器登錄時， 在啟用OTP選項之前，您需要注冊移動身份驗證器應用程序。</value>
+  </data>
+  <data name="DownloadSophos" xml:space="preserve">
+    <value>在您的設備上下載Sophos Authenticator。</value>
+  </data>
+  <data name="SophosAuthenticator" xml:space="preserve">
+    <value>Sophos 驗證器</value>
+  </data>
+  <data name="OtherAuthenticators" xml:space="preserve">
+    <value>還支持其他兩個因素身份驗證應用程序，如Google Authenticator ，Microsoft Authenticator 等</value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>通過使用Sophos掃描此QR碼創建帳號</value>
+  </data>
+  <data name="UnableScanQRCode" xml:space="preserve">
+    <value>無法掃描QR碼？</value>
+  </data>
+  <data name="ManualInputOtpKey" xml:space="preserve">
+    <value>請在 Sophos 手動添加頁面輸入以下的鍵，然後單擊完成（iOS）或添加（Android）</value>
+  </data>
+  <data name="Enter6DigitsOtp" xml:space="preserve">
+    <value>在下面的文本框中輸入Sophos生成的6位數代碼，然後點擊驗證以完成註冊。</value>
+  </data>
+  <data name="ClickToRemoveOtp" xml:space="preserve">
+    <value>點擊下面的按鈕刪除用戶註冊的設備，並將其OTP狀態設置為已禁用。</value>
+  </data>
+  <data name="RemoveOtp" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="EnableDisableOtp" xml:space="preserve">
+    <value>啟用 / 禁用 OTP</value>
+  </data>
+  <data name="EnableOtpViaSophos" xml:space="preserve">
+    <value>通過Authenticator Mobile App啟用 OTP</value>
+  </data>
+  <data name="OtpIsInvalidOrExpired" xml:space="preserve">
+    <value>您的OTP無效或已過期。</value>
+  </data>
+  <data name="AuthenticatorAppVerified" xml:space="preserve">
+    <value>您的Authenticator App通過驗證。</value>
+  </data>
+  <data name="RemoveOtpWarning" xml:space="preserve">
+    <value>OTP在註冊設備將不被系統接受。您要進行嗎？</value>
+  </data>
+  <data name="RemoveOtpSuccessMessage" xml:space="preserve">
+    <value>成功刪除註冊的設備。</value>
+  </data>
+  <data name="UpdateOtpStatusSuccess" xml:space="preserve">
+    <value>更新OTP狀態成功。</value>
+  </data>
+  <data name="RemoveOtpForCust" xml:space="preserve">
+    <value>刪除OTP - {0}</value>
+  </data>
+  <data name="ResetOtpWarning" xml:space="preserve">
+    <value>點擊下面的按鈕從您的帳戶中刪除已註冊的設備。</value>
+  </data>
+  <data name="OtpValidation" xml:space="preserve">
+    <value>OTP驗證</value>
+  </data>
+  <data name="ResetDownlineOtpWarning" xml:space="preserve">
+    <value>您是否要刪除註冊設備予此用戶？</value>
+  </data>
+  <data name="RegenerateQR" xml:space="preserve">
+    <value>重建QR</value>
+  </data>
+  <data name="UsernameWarning" xml:space="preserve">
+    <value>新帳戶將以您的用戶名 {0} 命名。</value>
+  </data>
+  <data name="ChangeIt" xml:space="preserve">
+    <value>需要更改嗎</value>
+  </data>
+  <data name="OtpDatetimeWarning" xml:space="preserve">
+    <value>您設備上的日期和時間設置必須設置為自動。</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>複製！</value>
+  </data>
+  <data name="NoRegisterDeviceError" xml:space="preserve">
+    <value>此用戶沒有已註冊的設備要刪除。</value>
+  </data>
+  <data name="RemoveRegisteredDeviceSuccess" xml:space="preserve">
+    <value>成功刪除註冊的設備。</value>
+  </data>
+  <data name="RemoveDisableOtpDownline" xml:space="preserve">
+    <value>無法從禁用的用戶刪除註冊的設備。</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>用戶名</value>
+  </data>
+  <data name="RegisterMobileApplication" xml:space="preserve">
+    <value>注冊Authenticator Mobile App</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>驗證</value>
+  </data>
+  <data name="OtpHiMessage" xml:space="preserve">
+    <value>您好 {0} ， 您使用的設備 / 瀏覽器 是與上次使用的不同。請輸入OTP以繼續。</value>
+  </data>
+  <data name="CloseAccountOtpMessage" xml:space="preserve">
+    <value>由於使用OTP的5次失敗嘗試，您的帳戶已關閉。 請聯繫您的上線或客服部。</value>
+  </data>
 </root>

@@ -1,0 +1,34 @@
+﻿@model OtpViewModel
+@{
+    Layout = null;
+}
+<div class="panel">
+    <div class="panel-heading" role="tab" id="headingEnableDisable">
+        <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#enableDisableOTP" aria-expanded="false" aria-controls="collapseTwo">
+                @Security.EnableDisableOtp
+            </a>
+        </h4>
+    </div>
+    <div id="enableDisableOTP" class="panel-collapse" role="tabpanel" aria-labelledby="headingEnableDisable">
+        <div class="panel-body">
+            <div id="change-status-message"></div>
+            <ul class="list-enableDisable">
+                <li>
+                    <label>
+                        <input id="cbkEnableOtp"
+                               type="checkbox"
+                               @(Model.IsAlreadySetup ? "" : "disabled ")
+                               @(Model.CustomerOtp.Enabled ? "checked " : "")
+                               data-is-already-setup="@Model.IsAlreadySetup.ToString().ToLower()"
+                               data-is-checked="@Model.CustomerOtp.Enabled.ToString().ToLower()" />
+                        @Security.EnableOtpViaSophos
+                    </label>
+                </li>
+                <li>
+                    <button id="btn-change-status" class="btn-submit" disabled>@Security.Submit</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

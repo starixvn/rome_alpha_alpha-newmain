@@ -1,12 +1,13 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using Alpha.Main.Site.Models.Requests;
-    using Alpha.Main.Site.ViewModels;
     using Helpers;
     using Main.Models.Enumerations;
     using MediatR;
+    using Models.Requests;
     using Requests;
     using Services;
+    using Sunplus.Agent.Utilities;
+    using ViewModels;
 
     public class DefaultHandler :
         IRequestHandler<IndexQuery, IndexViewModel>,
@@ -45,9 +46,12 @@
 
         public IndexViewModel Handle(IndexQuery message)
         {
-            var viewModel = new IndexViewModel(message, FunctionRegistry.GetDefaultUrl);
+            var viewModel = new IndexViewModel(
+                message,
+                FunctionRegistry.GetDefaultUrl,
+                Encryption.PearsonEncode);
 
-            this.sessionManager.Add<string>(PasswordHashSessionKey, viewModel.PasswordHash);
+            sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
 
             return viewModel;
         }

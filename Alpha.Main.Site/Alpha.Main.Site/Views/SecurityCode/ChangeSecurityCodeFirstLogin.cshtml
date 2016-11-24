@@ -5,6 +5,7 @@
 }
 
 @section css {
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
 }
 
@@ -18,19 +19,19 @@
             <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
         </figure>
         <div class="rowlg help-rules">
-            <input type="password" autocomplete="off"  class="txt" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode" maxlength="6">
+            <input type="password" autocomplete="off" class="txt" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode" maxlength="6">
             <label id="txtSecCode-error" class="error"></label>
             <i class="icon-account-key"></i>
             <i class="validation"></i>
         </div>
         <div class="rowlg">
-            <input type="password" autocomplete="off"  class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode" maxlength="6">
+            <input type="password" autocomplete="off" class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode" maxlength="6">
             <label id="txtConfirmSecCode-error" class="error"></label>
             <i class="icon-account-key"></i>
             <i class="validation"></i>
         </div>
         <div class="rowlg">
-            <label><input type="checkbox" id="showSCchk"/> @Security.ShowSecurityCode</label>
+            <label><input type="checkbox" id="showSCchk" /> @Security.ShowSecurityCode</label>
         </div>
         <div class="list-button">
             <input type="button" class="btn-cancel" id="btn-back" value="@Security.lblBack" />
@@ -64,6 +65,7 @@
 @Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
     <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/change-securitycode-firstlogin")" type="text/javascript"></script>
 }

@@ -70,6 +70,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string active {
+            get {
+                return ResourceManager.GetString("active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin.
         /// </summary>
         public static string admin {
@@ -88,7 +97,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Agent Given Credit.
+        ///   Looks up a localized string similar to Agent Given.
         /// </summary>
         public static string agentGivenCredit {
             get {
@@ -97,7 +106,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Agent Outstanding.
+        ///   Looks up a localized string similar to Agent.
         /// </summary>
         public static string agentOutstanding {
             get {
@@ -133,6 +142,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Balance.
+        /// </summary>
+        public static string balance {
+            get {
+                return ResourceManager.GetString("balance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Balance Info.
         /// </summary>
         public static string balanceInfo {
@@ -151,11 +169,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cash Balance.
+        ///   Looks up a localized string similar to Cash.
         /// </summary>
         public static string cashBalance {
             get {
                 return ResourceManager.GetString("cashBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Language.
+        /// </summary>
+        public static string changeLanguage {
+            get {
+                return ResourceManager.GetString("changeLanguage", resourceCulture);
             }
         }
         
@@ -192,6 +219,15 @@ namespace Alpha.Main.AppResources {
         public static string close {
             get {
                 return ResourceManager.GetString("close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Closed.
+        /// </summary>
+        public static string closed {
+            get {
+                return ResourceManager.GetString("closed", resourceCulture);
             }
         }
         
@@ -241,11 +277,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credit.
+        /// </summary>
+        public static string credit {
+            get {
+                return ResourceManager.GetString("credit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Currency.
         /// </summary>
         public static string currency {
             get {
                 return ResourceManager.GetString("currency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disabled.
+        /// </summary>
+        public static string Disabled {
+            get {
+                return ResourceManager.GetString("Disabled", resourceCulture);
             }
         }
         
@@ -264,6 +318,33 @@ namespace Alpha.Main.AppResources {
         public static string EditProfilePicture {
             get {
                 return ResourceManager.GetString("EditProfilePicture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enabled.
+        /// </summary>
+        public static string Enabled {
+            get {
+                return ResourceManager.GetString("Enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First Name.
+        /// </summary>
+        public static string firstName {
+            get {
+                return ResourceManager.GetString("firstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string from {
+            get {
+                return ResourceManager.GetString("from", resourceCulture);
             }
         }
         
@@ -323,6 +404,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last Name.
+        /// </summary>
+        public static string lastName {
+            get {
+                return ResourceManager.GetString("lastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string lblBack {
@@ -352,9 +442,18 @@ namespace Alpha.Main.AppResources {
         /// <summary>
         ///   Looks up a localized string similar to less.
         /// </summary>
-        public static string Less {
+        public static string less {
             get {
-                return ResourceManager.GetString("Less", resourceCulture);
+                return ResourceManager.GetString("less", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading.
+        /// </summary>
+        public static string loading {
+            get {
+                return ResourceManager.GetString("loading", resourceCulture);
             }
         }
         
@@ -422,7 +521,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Master given credit.
+        ///   Looks up a localized string similar to Master Given.
         /// </summary>
         public static string masterGivenCredit {
             get {
@@ -431,7 +530,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Master Outstanding.
+        ///   Looks up a localized string similar to Master.
         /// </summary>
         public static string masterOutstanding {
             get {
@@ -445,6 +544,24 @@ namespace Alpha.Main.AppResources {
         public static string member {
             get {
                 return ResourceManager.GetString("member", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Member Info.
+        /// </summary>
+        public static string memberInfo {
+            get {
+                return ResourceManager.GetString("memberInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string message {
+            get {
+                return ResourceManager.GetString("message", resourceCulture);
             }
         }
         
@@ -476,7 +593,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to more.
+        ///   Looks up a localized string similar to More.
         /// </summary>
         public static string more {
             get {
@@ -521,6 +638,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Normal Announcement.
+        /// </summary>
+        public static string normalAnnouncement {
+            get {
+                return ResourceManager.GetString("normalAnnouncement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notice.
+        /// </summary>
+        public static string notice {
+            get {
+                return ResourceManager.GetString("notice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not now.
         /// </summary>
         public static string NotNow {
@@ -539,11 +674,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Outstanding.
+        /// </summary>
+        public static string outstanding {
+            get {
+                return ResourceManager.GetString("outstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string password {
             get {
                 return ResourceManager.GetString("password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Message.
+        /// </summary>
+        public static string personalMessage {
+            get {
+                return ResourceManager.GetString("personalMessage", resourceCulture);
             }
         }
         
@@ -614,6 +767,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Replay.
         /// </summary>
         public static string Replay {
@@ -637,6 +799,15 @@ namespace Alpha.Main.AppResources {
         public static string ReportMenuIntroduction {
             get {
                 return ResourceManager.GetString("ReportMenuIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search Account.
+        /// </summary>
+        public static string searchAccount {
+            get {
+                return ResourceManager.GetString("searchAccount", resourceCulture);
             }
         }
         
@@ -677,7 +848,25 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your statistics.
+        ///   Looks up a localized string similar to Special Announcement.
+        /// </summary>
+        public static string specialAnnouncement {
+            get {
+                return ResourceManager.GetString("specialAnnouncement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special Notice.
+        /// </summary>
+        public static string specialNotice {
+            get {
+                return ResourceManager.GetString("specialNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
         /// </summary>
         public static string statistics {
             get {
@@ -686,7 +875,16 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry, You don&apos;t have permission to access this page..
+        ///   Looks up a localized string similar to Stats.
+        /// </summary>
+        public static string stats {
+            get {
+                return ResourceManager.GetString("stats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to public string GivenCreditLabel { get; private set; } = Resources.agentGivenCredit;.
         /// </summary>
         public static string strNotAccessPage {
             get {
@@ -704,6 +902,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        public static string submit {
+            get {
+                return ResourceManager.GetString("submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Super.
         /// </summary>
         public static string super {
@@ -713,7 +920,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Super given credit.
+        ///   Looks up a localized string similar to Super Given.
         /// </summary>
         public static string superGivenCredit {
             get {
@@ -722,11 +929,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Super Outstanding.
+        ///   Looks up a localized string similar to Super.
         /// </summary>
         public static string superOutstanding {
             get {
                 return ResourceManager.GetString("superOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suspended.
+        /// </summary>
+        public static string suspended {
+            get {
+                return ResourceManager.GetString("suspended", resourceCulture);
             }
         }
         
@@ -749,6 +965,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There is no change to update.
+        /// </summary>
+        public static string ThereIsNoChange {
+            get {
+                return ResourceManager.GetString("ThereIsNoChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browser Update Required! .
         /// </summary>
         public static string TitleUnsupportBrowser {
@@ -758,7 +983,16 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Today Win Loss.
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        public static string to {
+            get {
+                return ResourceManager.GetString("to", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today.
         /// </summary>
         public static string todayWinLoss {
             get {
@@ -794,7 +1028,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Agent Credit.
+        ///   Looks up a localized string similar to Total Agent.
         /// </summary>
         public static string totalAgentCredit {
             get {
@@ -803,7 +1037,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Balance.
+        ///   Looks up a localized string similar to Total.
         /// </summary>
         public static string totalBalance {
             get {
@@ -839,7 +1073,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Master Credit.
+        ///   Looks up a localized string similar to Total Master.
         /// </summary>
         public static string totalMasterCredit {
             get {
@@ -848,7 +1082,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Member Credit.
+        ///   Looks up a localized string similar to Total Member.
         /// </summary>
         public static string totalMemberCredit {
             get {
@@ -929,11 +1163,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View Announcement.
+        /// </summary>
+        public static string viewAnnouncement {
+            get {
+                return ResourceManager.GetString("viewAnnouncement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Log is now located in the Main Menu.
         /// </summary>
         public static string ViewLogMenuIntroduction {
             get {
                 return ResourceManager.GetString("ViewLogMenuIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Message.
+        /// </summary>
+        public static string viewMessage {
+            get {
+                return ResourceManager.GetString("viewMessage", resourceCulture);
             }
         }
         
@@ -965,6 +1217,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Win Loss.
+        /// </summary>
+        public static string winloss {
+            get {
+                return ResourceManager.GetString("winloss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Win Loss Analysis Chart is here.
         /// </summary>
         public static string WinLossAnalysisChartIntroduction {
@@ -992,7 +1253,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yesterday Cash Balance.
+        ///   Looks up a localized string similar to Yesterday Cash.
         /// </summary>
         public static string yesterdayCashBalance {
             get {
@@ -1001,7 +1262,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yesterday Total Balance.
+        ///   Looks up a localized string similar to Yesterday Total.
         /// </summary>
         public static string yesterdayTotalBalance {
             get {
@@ -1010,7 +1271,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yesterday Win Loss.
+        ///   Looks up a localized string similar to Yesterday.
         /// </summary>
         public static string yesterdayWinLoss {
             get {

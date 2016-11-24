@@ -1,0 +1,32 @@
+﻿{
+  "Framework": "jasmine",
+  "Compile": {
+    "Mode": "External",
+    "Extensions": [ ".ts" ]
+  },
+  "References": [
+    { "Path": "libs/jquery.js" },
+    { "Path": "libs/tooltip.js" },
+    { "Path": "libs/moment.js" },
+    { "Path": "libs/datepicker.js" },
+    { "Path": "libs/jquery-blockui.js" },
+    { "Path": "libs/bootstrap-datetimepicker.js" },
+    { "Path": "libs/bootstrap-modal.js" },
+    { "Path": "libs/store.js" },
+    { "Path": "libs/jasmine.js" },
+    { "Path": "libs/jasmine-jquery.js" },
+
+    { "Path": "../core.ts" },
+    { "Path": "../dashboard/dashboard.ts" },
+    { "Path": "../dashboard/statistics.ts" },
+    { "Path": "../dashboard/notice.ts" },
+    { "Path": "../message/index.ts" },
+    { "Path": "../instruction/instruction.ts" },
+    { "Path": "../instruction/instruction-mobile.ts" }
+  ],
+  "Tests": [
+    { "Path": "app/dashboard" },
+    { "Path": "app/message" },
+    { "Path": "app/instruction" }
+  ]
+}

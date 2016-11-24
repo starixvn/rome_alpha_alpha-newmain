@@ -266,7 +266,7 @@
     <value>Total Poker Transfer|Outstanding</value>
   </data>
   <data name="statistics" xml:space="preserve">
-    <value>Your statistics</value>
+    <value>Statistics</value>
   </data>
   <data name="highestTurnoverOfTheMonth" xml:space="preserve">
     <value>Highest turnover members of the month</value>
@@ -325,7 +325,7 @@
   <data name="PrivateMessage" xml:space="preserve">
     <value>Private Message</value>
   </data>
-  <data name="Less" xml:space="preserve">
+  <data name="less" xml:space="preserve">
     <value>less</value>
   </data>
   <data name="LogOut" xml:space="preserve">
@@ -333,5 +333,17 @@
   </data>
   <data name="Next" xml:space="preserve">
     <value>次へ</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>送信</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>から</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>送金元</value>
+  </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>未払い</value>
   </data>
 </root>

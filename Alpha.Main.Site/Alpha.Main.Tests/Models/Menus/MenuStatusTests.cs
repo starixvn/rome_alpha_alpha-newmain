@@ -11,46 +11,46 @@
         [Test]
         public void MenuStatus_GetVisibleFunctionIsNull_ReturnVisibleIsTrue()
         {
-            //// Act
+            // Act
             var actualMenuStatus = new MenuStatus(null, null);
 
-            //// Assert
+            // Assert
             Assert.IsTrue(actualMenuStatus.Visible);
         }
 
         [Test]
         public void MenuStatus_GetDisableFunctionIsNull_ReturnDisableIsFalse()
         {
-            //// Act
+            // Act
             var actualMenuStatus = new MenuStatus(null, null);
 
-            //// Assert
+            // Assert
             Assert.IsFalse(actualMenuStatus.Disabled);
         }
 
         [Test]
         public void MenuStatus_CreateConstructor_InvokeGetVisibleFunction()
         {
-            //// Arrange
+            // Arrange
             var getVisibleFunc = Substitute.For<Func<bool>>();
 
-            //// Act
+            // Act
             var actualMenuStatus = new MenuStatus(getVisibleFunc, null);
 
-            //// Assert
+            // Assert
             getVisibleFunc.Received().Invoke();
         }
 
         [Test]
         public void MenuStatus_CreateConstructor_InvokeGetDisableFunction()
         {
-            //// Arrange
+            // Arrange
             var getDisableFunc = Substitute.For<Func<bool>>();
 
-            //// Act
+            // Act
             var actualMenuStatus = new MenuStatus(null, getDisableFunc);
 
-            //// Assert
+            // Assert
             getDisableFunc.Received().Invoke();
         }
     }

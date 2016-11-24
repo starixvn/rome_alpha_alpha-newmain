@@ -1,4 +1,5 @@
-﻿@import '../Home/_mixins.scss';
+﻿@import '../Home/_variables.scss';
+@import '../Home/_mixins.scss';
 
 #profileTooltip .tooltip-content {
     margin: 2px 5px;
@@ -9,9 +10,21 @@
     background: none;
 }
 
-.adminAndSubAcc {
+.adminAndSubAcc, .otp  {
     font-size: 12px;
-    margin-top: 8px;
+    margin-top: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.otp, .otp:hover, .otp:focus {
+    display: inline-block;
+    color: #fff;
+}
+
+.otp:focus {
+    text-decoration: none;
 }
 
 .nickname-box {
@@ -69,7 +82,7 @@
     width: 100%;
 }
 
-@media only screen and (max-width : 1024px) {
+@media only screen and (max-device-width: $screen-device-greater1024) {
     .sidebar {
         &.collapsed.focusout, &.collapsed.collapsed-smallsize {
             #profileTooltip, #tooltip-box {
@@ -84,4 +97,10 @@
         }
     }
     
+}
+
+@media only screen and (max-device-width: $screen-device-lower768) {
+    #profileTooltip, #tooltip-box {
+        left: 48px;
+    }
 }

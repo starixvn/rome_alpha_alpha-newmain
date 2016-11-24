@@ -1,15 +1,18 @@
 {
   "isActive": true,
-  "siteMainApp": "",
+  "isSiteMain": true,
   "paths": [
     "SecurityCode/ResetSecurityCode",
     "SecurityCode/ChangeUserOwnSecurityCode",
     "Password/ChangePassword",
     "Password/ResetMainAccountPassword",
-    "Password/ResetSubAccountPassword"
+    "Password/ResetSubAccountPassword",
+    "Otp/SetUpOtp",
+    "Otp/ResetOtp"
   ],
   "sites": [
   ],
+  "verifyingOtpPath": "Otp/VerifyOtp",
   "verifyingSecurityCodePath": "SecurityCode/VerifySecurityCode",
   "resetSecurityCodePath": "SecurityCode/ChangeSecurityCode"
 }

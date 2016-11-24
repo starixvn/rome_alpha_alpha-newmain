@@ -1,0 +1,37 @@
+﻿@using Alpha.Main.Site.ViewModels.Dashboard.Notice
+@model NoticeMessagesViewModel
+
+<div class="message-content">
+    @if (!Model.NoticeMessages.Any())
+    {
+        <div class="text-center" id="no-info">@Resources.noInfo</div>
+    }
+    else
+    {
+        var tempPostTime = DateTime.MinValue;
+
+        foreach (var message in Model.NoticeMessages)
+        {
+            var currentPostTime = message.PostTime;
+
+            if (currentPostTime.Date != tempPostTime.Date)
+            {
+                <div class="group-date">@currentPostTime.ToShortDateString()</div>
+                tempPostTime = currentPostTime;
+            }
+
+            <div class="msg-contents">
+                <div id="@message.CurrentMessage.Id"
+                     class="message pointer @message.MessageType @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
+                    <div class="time"><span class="icon icon-plus"></span>@message.PostTime.ToLongTimeString()</div>
+                    <div class="content short-content">
+                        @message.ShortContent
+                    </div>
+                    <div class="content full-content">
+                        @message.Content
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

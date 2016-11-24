@@ -1,4 +1,6 @@
-﻿namespace Alpha.Main.Site.Tests.Handlers
+﻿#pragma warning disable 618, 612
+
+namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using Helpers;
@@ -8,6 +10,7 @@
     using Services;
     using Site.Handlers;
     using Site.Requests;
+    using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
     using ViewModels;
 
@@ -30,13 +33,21 @@
             userSession = Substitute.For<IUserSession>();
         }
 
+        [TearDown]
+        public void Clean()
+        {
+            sessionManager = null;
+            userSession = null;
+            defaultHandler = null;
+        }
+
         [Test]
         public void HandleIndexQuery_NullQuery_ThrowArgumentNullException()
         {
             // Arrange
             IndexQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => defaultHandler.Handle(nullQuery)));
         }
 
@@ -46,27 +57,29 @@
             // Arrange
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false);
+            var query = new IndexQuery(userSession, false, string.Empty);
 
-            // Action
+            // Act
             var viewModel = defaultHandler.Handle(query);
 
             // Assert
-            sessionManager.Received().Add<string>(PasswordHashSessionKey, Arg.Any<string>());
+            sessionManager.Received().Add(PasswordHashSessionKey, Arg.Any<string>());
         }
 
         [Test]
         public void HandleIndexQuery_NotNullCommand_ReturnPasswordHashStoredInSession()
         {
             // Arrange
+            userSession.IsLogged.Returns(false);
+            userSession.IsPasswordExpired.Returns(true);
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false);
+            var query = new IndexQuery(userSession, false, string.Empty);
 
             string argumentUsed = null;
-            sessionManager.Add<string>(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
+            sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
-            // Action
+            // Act
             var viewModel = defaultHandler.Handle(query);
 
             // Assert

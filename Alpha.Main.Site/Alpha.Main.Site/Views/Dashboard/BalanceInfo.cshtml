@@ -1,0 +1,60 @@
+﻿@using Alpha.Main.Helpers
+@using Alpha.Main.Site.ViewModels.Dashboard.BalanceInfo
+@model BalanceInfoViewModel
+
+@{
+    var balanceInfo = Model.BalanceInfo;
+}
+
+@helper TextRow(string label, string text)
+{
+    <div class="row">
+        <div class="col-xs-7">@label</div>
+        <div class="col-xs-5 value"><strong>@text</strong></div>
+    </div>
+}
+
+@helper NumericRow(string label, decimal value, string url = "")
+{
+    <div class="row">
+        <div class="col-xs-7">@label</div>
+        <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
+            @if (string.IsNullOrEmpty(url))
+            {
+                <strong>@value.ToString("#,##0.00")</strong>
+            }
+            else
+            {
+                <a href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
+            }
+        </div>
+    </div>
+}
+
+<div class="container">
+    <div class="panel-title"><span class="icon-balanceinfo"></span>@Resources.balanceInfo</div>
+    @TextRow(label: Model.UserLevelLabel, text: balanceInfo.UserName)
+    @TextRow(Resources.currency, Model.Currency)
+
+    <div class="group-title">@Resources.balance</div>
+    @NumericRow(Resources.cashBalance, balanceInfo.CashBalance)
+    @NumericRow(Resources.yesterdayCashBalance, balanceInfo.YesterdayCashBalance)
+    @NumericRow(Resources.totalBalance, balanceInfo.TotalBalance)
+    @NumericRow(Resources.yesterdayTotalBalance, balanceInfo.YesterdayTotalBalance)
+
+    <div class="group-title">@Resources.winloss</div>
+    @NumericRow(
+        $"{Resources.todayWinLoss} ({DateTime.Today.ToString("MM/dd/yyyy")})",
+        balanceInfo.TodayWinLoss,
+        MicroSites.OldMainUrl(Model.MemberTodayWinLossReportPath))
+    @NumericRow(
+        $"{Resources.yesterdayWinLoss} ({DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy")})",
+        balanceInfo.YesterdayWinLoss,
+        MicroSites.OldMainUrl(Model.MemberYesterdayWinLossReportPath))
+
+    <div class="group-title">
+        @Resources.credit
+    </div>
+    @NumericRow(Model.GivenCreditLabel, balanceInfo.GivenCredit)
+    @NumericRow(Model.TotalDownlineCreditLabel, balanceInfo.MemberCredit)
+</div>

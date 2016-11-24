@@ -1,0 +1,74 @@
+﻿@using Alpha.Main.Site.ViewModels.Dashboard.Statistics
+@model StatisticsViewModel
+
+@{
+    var statistics = Model.Statistics;
+}
+
+@helper RenderTotalMemberInfo(string labelName, int memberActive, int memberClosed, int memberSuspended)
+{
+    <div class="row">
+        <div class="col-xs-7 lable">@labelName</div>
+        <div class="col-xs-5 value">
+            <strong data-toggle="tooltip" data-placement="top" title="<div class='nowrap'>@Resources.active: <span class='active'>@memberActive</span></div><div class='nowrap'>@Resources.closed: <span class='closed'>@memberClosed</span></div><div class='nowrap'>@Resources.suspended: <span class='suspended'>@memberSuspended</span></div>">
+                <span class="active">@memberActive</span>|
+                <span class="closed">@memberClosed</span>|
+                <span class="suspended">@memberSuspended</span>
+            </strong>
+        </div>
+    </div>
+}
+
+@helper RenderDropdownTableMemberInfo(string labelName, string labelId, string actionUrl)
+{
+    <div class="row">
+        <div class="col-xs-12 label dropdown">
+            <span id="@labelId" class="dropdown-toggle pointer" type="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" action-url=@actionUrl>
+                @labelName <span class="icon icon-plus"></span>
+            </span>
+            <div class="dropdown-menu dropdown-stast" aria-labelledby="@labelName">
+                <div class="text-center"><span class="block-icon-small "></span></div>
+            </div>
+        </div>
+    </div>
+}
+
+@helper NumericRow(string label, decimal value)
+{
+    <div class="row">
+        <div class="col-xs-7 label">@label</div>
+        <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
+            <strong>@value.ToString("#,##0.00")</strong>
+        </div>
+    </div>
+}
+
+<div class="container">
+    <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
+    <div class="group-title">@Resources.outstanding</div>
+    @NumericRow(Model.OutstandingLabel, statistics.Outstanding)
+    @NumericRow(Resources.totalOutstanding, statistics.TotalOutstanding)
+
+    <div class="group-title">@Resources.memberInfo</div>
+
+    @if (Model.UserLevel.IsSuperLevel())
+    {
+        @RenderTotalMemberInfo(Resources.master, statistics.TotalMasterActive, statistics.TotalMasterClosed, statistics.TotalMasterActive);
+        @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
+        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
+    else if (Model.UserLevel.IsMasterLevel())
+    {
+        @RenderTotalMemberInfo(Resources.agent, statistics.TotalAgentActive, statistics.TotalAgentClosed, statistics.TotalAgentSuspended);
+        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
+    else if (Model.UserLevel.IsAgentLevel())
+    {
+        @RenderTotalMemberInfo(Resources.member, statistics.TotalMemberActive, statistics.TotalMemberClosed, statistics.TotalMemberSuspended);
+    }
+
+    @RenderDropdownTableMemberInfo(Resources.top10WinningMembers, "listTopWinningMembers", Url.Action("TopWinningMembers", "Statistics"))
+    @RenderDropdownTableMemberInfo(Resources.highestTurnoverOfTheMonth, "listTopTurnoverMembers", Url.Action("TopTurnoverMembers", "Statistics"))
+    @RenderDropdownTableMemberInfo($"{Resources.newMemberOfTheMonth}: {statistics.NumberNewMembers}", "listNewMembers", Url.Action("NewMembers", "Statistics"))
+</div>

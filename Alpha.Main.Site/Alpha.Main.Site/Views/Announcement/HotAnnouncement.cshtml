@@ -1,7 +1,7 @@
 ﻿@model HotAnnouncement
 @if (string.IsNullOrEmpty(Model.Content))
 {
-    @Html.Raw("-")
+    @Html.Hidden("no-info", Resources.noInfo);
 }
 else
 {
@@ -9,7 +9,8 @@ else
     {
         @Html.Partial("HotAnnouncementWithText", Model)
     }
-    else {
+    else
+    {
         @Html.Partial("HotAnnouncementWithSource", Model)
     }
 

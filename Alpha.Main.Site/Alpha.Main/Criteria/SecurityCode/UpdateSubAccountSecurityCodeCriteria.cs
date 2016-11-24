@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Criteria.SecurityCode
 {
+    using Fanex.Data;
     using Fanex.Data.Repository;
 
     public class UpdateSubAccountSecurityCodeCriteria : CriteriaBase
@@ -7,8 +8,6 @@
         public int CustId { get; set; }
 
         public int SubaccId { get; set; }
-
-        public int UserId { get; set; }
 
         [SpParam(SqlParamName = "securitycode")]
         public string HashedSecurityCode { get; set; }
@@ -25,5 +24,7 @@
         {
             return "Age_UpdateSubAccountSecurityCode";
         }
+
+        public override bool IsValid() => CustId > 0;
     }
 }

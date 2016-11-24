@@ -1,5 +1,7 @@
-﻿namespace Alpha.Main.Site.Requests
+﻿#pragma warning disable 612, 618
+namespace Alpha.Main.Site.Requests
 {
+    using System.Diagnostics.CodeAnalysis;
     using Constants;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -7,23 +9,16 @@
     public class ChangeLanguageCommand : IRequest<string>
     {
         private readonly IUserSession userSession;
-        private readonly string languageCode;
 
         public ChangeLanguageCommand(IUserSession userSession, string languageCode)
         {
             this.userSession = userSession;
-            this.languageCode = languageCode;
+            LanguageCode = languageCode;
         }
 
-        public string LanguageCode
-        {
-            get
-            {
-                return languageCode;
-            }
-        }
+        public string LanguageCode { get; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        [SuppressMessage(
             "Microsoft.Maintainability",
             "CA1500:VariableNamesShouldNotMatchFieldNames",
             MessageId = "languageCode",

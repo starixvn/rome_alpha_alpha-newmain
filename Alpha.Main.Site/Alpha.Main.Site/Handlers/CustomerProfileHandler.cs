@@ -31,13 +31,14 @@
 
             var viewModel = new BriefProfileViewModel
             {
-                IsDefaultAvatar = profile.IsDefaultAvatar,
+                IsDefaultAvatar = profile.UseDefaultAvatar,
                 EmbedImage = GenerateImage(profile),
                 CustId = message.CustId,
                 Username = HttpUtility.HtmlEncode(message.UserName),
                 LoginUserIsNotMainAccount = message.IsSubAcc || message.IsInternal,
                 NickName = BuildNickName(message),
-                IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{message.CustId}")
+                IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{message.CustId}"),
+                IsEnableOtp = message.IsEnabledOtp
             };
 
             return viewModel;
@@ -61,9 +62,9 @@
 
         private string GenerateImage(ProfilePicture profilePicture)
         {
-            if (profilePicture.BinaryAvatar != null)
+            if (profilePicture.ImageData != null)
             {
-                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.BinaryAvatar)}";
+                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}";
             }
 
             return string.Empty;

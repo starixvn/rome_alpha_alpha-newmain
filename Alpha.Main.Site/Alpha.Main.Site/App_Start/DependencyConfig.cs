@@ -1,4 +1,6 @@
-﻿namespace Alpha.Main.Site.App_Start
+﻿#pragma warning disable 618, 612
+
+namespace Alpha.Main.Site.App_Start
 {
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
@@ -6,6 +8,7 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Configurations;
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
@@ -15,6 +18,8 @@
     using Main.Helpers.Impl;
     using Main.Models.Menus;
     using MediatR;
+    using ONEbook.OTP.Helpers;
+    using ONEbook.OTP.Services;
     using SecurityCode.Services;
     using Services;
     using Services.Impl;
@@ -26,6 +31,7 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
 
+    [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
     public static class DependencyConfig
     {
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
@@ -81,14 +87,13 @@
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
         private static void RegisterServices(Container container)
         {
-            container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
-
-            //// Singleton
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
-            container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
+            container.Register<Logger, LoggerImpl>(Lifestyle.Singleton);
 
-            //// Transient
+            container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
+            container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
+
             container.RegisterPerWebRequest<AnnouncementService, AnnouncementServiceImpl>();
             container.RegisterPerWebRequest<SiteMenuService, SiteMenuServiceImpl>();
             container.RegisterPerWebRequest<CustomerProfileService, CustomerProfileServiceImpl>();
@@ -98,8 +103,26 @@
             container.RegisterPerWebRequest<PasswordService, PasswordServiceImpl>();
             container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
             container.RegisterPerWebRequest<Encryptor, EncryptorImpl>();
+            container.RegisterPerWebRequest<BalanceUpDayInfoService, BalanceUpDayInfoServiceImpl>();
+            container.RegisterPerWebRequest<BalanceInfoService, BalanceInfoServiceImpl>();
+            container.RegisterPerWebRequest<StatisticsService, StatisticsServiceImpl>();
+            container.RegisterPerWebRequest<NoticeService, NoticeServiceImpl>();
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
+            container.RegisterPerWebRequest<MessageService, MessageServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
+
+            container.RegisterPerWebRequest<OtpService, OtpServiceImpl>();
+            container.RegisterPerWebRequest<OtpAdapter, OtpAdapterImpl>();
+            container.RegisterPerWebRequest<QrCodeAdapter, QrCodeAdapterImpl>();
+            container.RegisterPerWebRequest<RandomHelper, RandomHelperImpl>();
+            container.RegisterPerWebRequest<JsonHelper, JsonHelperImpl>();
+            container.RegisterPerWebRequest<CustomerOtpService>(() => 
+            new CustomerOtpServiceImpl(
+                container.GetInstance<IDynamicRepository>(),
+                container.GetInstance<OtpService>(),
+                container.GetInstance<JsonHelper>(),
+                container.GetInstance<CasinoService>(),
+                container.GetInstance<Logger>()));
         }
 
         private static void RegisterDataAccesses(Container container)

@@ -215,7 +215,7 @@
             return new ForceChangePasswordViewModel
             {
                 HashKey = GetHasKey(),
-                IsDefaultAvatar = profile.IsDefaultAvatar,
+                IsDefaultAvatar = profile.UseDefaultAvatar,
                 Username = this.userSession.UserName,
                 AlternateUsername = this.BuildAlternateUsername(message),
                 UsernameShower = this.BuildUsernameShower(message),
@@ -267,9 +267,9 @@
 
         private string GenerateImage(ProfilePicture profilePicture)
         {
-            if (profilePicture.BinaryAvatar != null)
+            if (profilePicture.ImageData != null)
             {
-                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.BinaryAvatar)}";
+                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}";
             }
 
             return string.Empty;

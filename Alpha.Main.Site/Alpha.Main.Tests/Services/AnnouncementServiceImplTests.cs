@@ -30,7 +30,7 @@
 
             var announcementServiceImpl = new AnnouncementServiceImpl();
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => announcementServiceImpl.GetHotAnnouncement(nullParam)));
         }
 
@@ -49,7 +49,7 @@
             // Arrange
             var test = new AgentDirectLoginTest.SettingChangedTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(
                 isPositionTakingChanged,
                 isBettingLimitChanged,
@@ -57,7 +57,7 @@
                 expectedAnnouncementPrefix);
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement);
+            Assert.IsNotNull(actualHotAnnouncement);
             Assert.AreEqual(true, actualHotAnnouncement.Content.StartsWith(expectedAnnouncementPrefix));
         }
 
@@ -70,7 +70,7 @@
             // Arrange
             var test = new AgentDirectLoginTest.SettingNotChangedTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(hasAnnouncement, expectedAnnouncementContent);
 
             // Assert
@@ -96,7 +96,7 @@
             // Arrange
             var test = new NotAgentOrAdminLogInTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(
                 roleId,
                 isAdminLogIn,
@@ -117,11 +117,11 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.HasPrivateOrCommonAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(commonAnnouncementPath, privateMessagePath);
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNotNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Expired\Announcement_NotHasStartDate.xml")]
@@ -132,11 +132,11 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.ExpiredAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(expiredAnnouncementPath);
 
             // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreAllSystem.xml", PublicSystem)]
@@ -147,11 +147,11 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.ExcludeHotMessageTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(availableAnnouncementPath, site);
 
             // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml", IncludedSite)]
@@ -160,11 +160,11 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.IncludeHotMessageTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(availableAnnouncementPath, site);
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNotNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml")]
@@ -174,11 +174,11 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.AvailableAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(availableAnnouncementPath);
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNotNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(Language.Thai, @"\TestData\Announcements\HotAnnouncement\Language\Announcement_NotMatchLanguage_NotHasDefault.xml", null)]
@@ -192,7 +192,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.AvailableAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(language, availableAnnoucementPath, expectedAnnouncementContent);
 
             // Assert
@@ -205,11 +205,24 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.DisableProductTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run();
 
             // Assert
-            Assert.AreEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNull(actualHotAnnouncement.Content);
+        }
+
+        [Test]
+        public void GetHotAnnouncement_NotAgentDirectLoginAndEnableProduct_ReturnsAnnouncementContent()
+        {
+            // Arrange
+            var test = new NotAgentDirectLoginTest.EnableProductTest();
+
+            // Act
+            var actualHotAnnouncement = test.Run();
+
+            // Assert
+            Assert.AreEqual("Announcement", actualHotAnnouncement.Content);
         }
 
         [TestCase(ShowedAnnouncementId, null)]
@@ -222,7 +235,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.ShowedAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(showedAnnouncementId, expectedAnnouncementContent);
 
             // Assert
@@ -235,11 +248,11 @@
             // Arrange
             var test = new DisableSecurityCodeAndValidAnnouncementTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run();
 
             // Assert
-            Assert.AreNotEqual(null, actualHotAnnouncement.Content);
+            Assert.IsNotNull(actualHotAnnouncement.Content);
         }
 
         [TestCase(@"\TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\HasAnnouncement.xml", ExpectedAnnouncementContent)]
@@ -251,8 +264,8 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.NotForceUseSecurityCodeSiteTest();
 
-            // Action
-            var actualHotAnnouncement = test.Run(announcementPath, expectedAnnouncementContent);
+            // Act
+            var actualHotAnnouncement = test.Run(announcementPath);
 
             // Assert
             Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
@@ -268,7 +281,7 @@
             // Arrange
             var test = new NotAgentDirectLoginTest.ForceUseSecurityCodeSiteTest();
 
-            // Action
+            // Act
             var actualHotAnnouncement = test.Run(announcementPath, expectedAnnouncementContent);
 
             // Assert

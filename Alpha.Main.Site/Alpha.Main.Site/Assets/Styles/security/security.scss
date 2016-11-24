@@ -1,6 +1,11 @@
 ﻿@import '../Home/_variables.scss';
 @import '../Home/_mixins.scss';
 
+// To remove the 300-350ms tap delay
+html {
+  touch-action: manipulation;
+}
+
 body {
     background: none;
 }
@@ -13,9 +18,10 @@ body {
 }
 
 .block {
-    max-width: 400px;
+    max-width: 350px;
     padding-top: 22px;
-    width: 360px;    
+    width: 350px;    
+    clear: both;
 
     label {
         font-weight: normal;
@@ -61,28 +67,41 @@ body {
 }
 
 // Messages
-
 .msg-content {
-    padding-top: 12px;
+    float: left;
+    min-width: 350px;
+    padding-top: 12px;    
 
     .msg {
-        max-width: 500px;
+        line-height: 20px;
         margin: 0;
     }
 }
 
+.learn-more {
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: none;
+    }
+}
+
 // It's not necessary at the moment
-/*
-@media only screen and (max-width: 767px)
+@media only screen and (max-device-width: $conent-device-lower768)
 {  
-   .msg-content .msg {
-       width: 100%;
-       max-width: initial;
+   .msg-content {
+       float: none;
+       .msg {
+           width: 100%;
+           max-width: initial;
+       }
    }
 
    .block {
        max-width: initial;
        width: 100%;
+       padding: 22px 2px 0;
 
        .txt {
            height: $height-mobile;
@@ -92,12 +111,8 @@ body {
        .btn-submit, input[type=reset] {
            height: $height-mobile;
            width: 100%;
-       }
-
-       .btn-submit {
            margin-bottom: 12px;
+           margin-right: 0;
        }
-
    }
 }
-*/

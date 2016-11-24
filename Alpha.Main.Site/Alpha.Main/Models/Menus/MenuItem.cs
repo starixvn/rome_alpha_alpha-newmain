@@ -15,11 +15,6 @@
         private Predicate<string> authorizeUrlFunc;
         private Func<string> getDisplayName;
 
-        protected MenuItem()
-            : this(null, null, null)
-        {
-        }
-
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
             : this(getMenuStatusFunc, null, null)
         {
@@ -77,7 +72,7 @@
         {
             get
             {
-                var isAuthorized = ByPassAuthorization || authorizeUrlFunc(this.Url);
+                var isAuthorized = ByPassAuthorization || authorizeUrlFunc(Url);
 
                 return isAuthorized
                     ? getMenuStatusFunc()

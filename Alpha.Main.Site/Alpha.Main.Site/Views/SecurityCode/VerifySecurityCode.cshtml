@@ -5,24 +5,24 @@
 }
 
 @section css {
-    @StaticResources.AssetStyles.Render("/bundles/site-main/security/default")
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     <link href="@StaticResources.MainSiteStyleUrl("~/Assets/bundles/security/security")" rel="stylesheet" type="text/css" />
 }
 
 <h1 id="title_header" class="page-title">@Security.SecurityCodeValidation</h1>
 <div id="status-message" class="msg-content">
     <div id="status-message-content" class="msg msg-warning">@Security.informSecCode</div>
-</div>        
+</div>
 
 <div class="block " id="container">
     <form class="form-SC form-validation">
         <div class="form-group">
             <label>@Security.SecurityCode</label>
-            <input type="password" autocomplete="off"  class="txt form-control" name="txtSecCode" id="txtSecCode"  maxlength="6"/>
+            <input type="password" autocomplete="off" class="txt form-control" name="txtSecCode" id="txtSecCode" maxlength="6" />
             <i class="validation"></i>
         </div>
         <div class="form-group">
-            <label><input type="checkbox" id="showSCchk"/> @Security.ShowSecurityCode</label>
+            <label><input type="checkbox" id="showSCchk" /> @Security.ShowSecurityCode</label>
         </div>
         <div class="form-group">
             <input id="btn-submit" type="submit" class="btn-submit" value="@Security.Submit" />
@@ -36,6 +36,7 @@
 @Html.Hidden("mainRootPath", Model.MainRootPath)
 
 @section js {
-    @StaticResources.AssetScripts.Render("/bundles/site-main/default", "/bundles/site-main/security/before-home-page")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
     <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/verify-securitycode")" type="text/javascript"></script>
 }

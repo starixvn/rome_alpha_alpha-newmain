@@ -1,0 +1,31 @@
+﻿@using Alpha.Main.Site.ViewModels.Dashboard.Statistics
+@model NewMembersViewModel
+
+<table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover width-100per">
+    <thead>
+        <tr>
+            <th class="c">@Resources.username</th>
+            <th class="c newMemCol">@Resources.givenCredit</th>
+            <th class="c newMemCol">@Resources.createdDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Members.Any())
+            {
+            <tr class="text-center">
+                <td colspan="3">@Resources.noInfo</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var member in Model.Members)
+            {
+                <tr class="oddRow">
+                    <td class="username">@member.UserName</td>
+                    <td class="text-right newMemCol">@member.GivenCredit.ToString("#,##0.00")</td>
+                    <td class="text-center datetime">@member.CreatedDate</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

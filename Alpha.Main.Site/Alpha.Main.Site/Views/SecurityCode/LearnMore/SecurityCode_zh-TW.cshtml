@@ -1,57 +1,62 @@
 ﻿@{ Layout = null; }
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>保安碼常見問題</title>
+    <link href="/assets/bundles/common/common.min.css" rel="stylesheet" type="text/css" />
     <link href="~/assets/styles/security/lean-more.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="bgCont">
-        <div id="page_main">
-            <div id="header_cont">
-                <span>保安碼常見問題</span></div>
-            <div style="width: 860px; height: 310px; margin-top: 1px; font-size: 13px; text-align: justify">
-                <p style="font-size: 12px; font-weight:bold;">
-                    1. 何謂保安碼?</p>
+    <h1 class="page-title">保安碼常見問題</h1>
+    <div class="content">
+        <ol class="list-faqs">
+            <li>
+                <strong>何謂保安碼?</strong>
                 <p>
-                    您每次登錄時, 會被要求輸入[0-9]的6位數字保安碼以作為附加的身份驗證。</p>
-                
-                 <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    2. 如何設置保安碼?</p>
-                       
+                    您每次登錄時, 會被要求輸入[0-9]的6位數字保安碼以作為附加的身份驗證。
+                </p>
+            </li>
+            <li>
+                <strong>如何設置保安碼?</strong>
+                <div>
+                    <p>輸入保安碼並確認, 請按照以下註釋。</p>
+                    <div class="italic">注:</div>
+                    <ul class="setup">
+                        <li>
+                            保安碼必須是0-9的6位數字及至少兩個不同的數字.
+                        </li>
+                        <li>
+                            保安碼不能為順序號或逆序號("順序"號為整體數字組合都是連續的遞增的順序, 從左至右; 而"逆序"號位整體數字組合都是連續的遞減的順序, 從左至右。 例如: 123456, 456789, 765432等都是不被允許的。)
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <strong>保安碼是否會過期?</strong>
                 <p>
-                    輸入保安碼並確認, 請按照以下註釋。</br>
-
-					<span style="font-style: italic;">注:</span>
-                    </br>
-                    <span style="font-style:italic; margin-left:15px;">
-					. 保安碼必須是0-9的6位數字及至少兩個不同的數字..
-					</span></br>
-                    <span style="font-style:italic; margin-left:15px;">
-					. 保安碼不能為順序號或逆序號("順序"號為整體數字組合都是連續的遞增的順序, 從左至右; 而"逆序"號位整體數字組合都是連續的遞減的順序, 從左至右。 例如: 123456, 456789, 765432等都是不被允許的。)
-					</span>
-				</p>
-                
-                <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    3. 保安碼是否會過期?</p>
-                
+                    它將不會過期但您應該定期更改。
+                </p>
+            </li>
+            <li>
+                <strong>若我輸入錯誤的保安碼會發生什麼事?</strong>
                 <p>
-                    它將不會過期但您應該定期更改。</p>
-                
-                <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    4. 若我輸入錯誤的保安碼會發生什麼事?</p>
+                    你將被要求重新輸入保安碼, 請注意若您輸入錯誤的保安碼達5次以上那麼您的賬號將被關閉。此情況請聯繫您的上線或客服部。
+                </p>
+            </li>
+            <li>
+                <strong>若我忘記了我的保安碼?</strong>
                 <p>
-                    你將被要求重新輸入保安碼, 請注意若您輸入錯誤的保安碼達5次以上那麼您的賬號將被關閉。此情況請聯繫您的上線或客服部。</p>
-                    
-                <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    5. 若我忘記了我的保安碼?</p> 
+                    請聯繫您的上線或客服部以重置您的保安碼。
+                </p>
+            </li>
+            <li>
+                <strong>我如何更改我的保安碼?</strong>
                 <p>
-                    請聯繫您的上線或客服部以重置您的保安碼。</p>
-               
-                <p style="font-size: 12px; font-weight:bold; margin-top: 25px;">
-                    6. 我如何更改我的保安碼?</p>
-                <p>
-                    在主頁上, 進入"保安"選項, 然後選擇保安碼鏈接, 然後更改您的保安碼。</p>
-            </div>
-        </div>
-    </div>
-</body></html>
+                    在主頁上, 進入"保安"選項, 然後選擇保安碼鏈接, 然後更改您的保安碼。
+                </p>
+            </li>
+        </ol>
+    </div>    
+</body>
+</html>

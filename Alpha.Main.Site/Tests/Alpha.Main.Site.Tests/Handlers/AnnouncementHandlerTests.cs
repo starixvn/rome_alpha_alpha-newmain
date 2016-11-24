@@ -1,4 +1,5 @@
-﻿namespace Alpha.Main.Site.Tests.Handlers
+﻿#pragma warning disable 612, 618
+namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using System.Collections.Generic;
@@ -33,7 +34,7 @@
             // Arrange
             HotAnnouncementQuery nullQuery = null;
 
-            // Action & Assert
+            // Act & Assert
             Assert.Throws<ArgumentNullException>(new TestDelegate(() => announcementHandler.Handle(nullQuery)));
         }
 
@@ -48,7 +49,7 @@
             userSession.RoleId.Returns(RoleId.ValidRoleId);
             var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty);
 
-            // Action
+            // Act
             var viewModel = announcementHandler.Handle(query);
 
             // Assert
@@ -75,7 +76,7 @@
 
             var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty);
 
-            // Action
+            // Act
             var viewModel = announcementHandler.Handle(query);
 
             // Assert

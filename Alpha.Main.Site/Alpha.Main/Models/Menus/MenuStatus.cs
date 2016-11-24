@@ -6,8 +6,8 @@
     {
         public MenuStatus(bool visible = true, bool disabled = false)
         {
-            this.Visible = visible;
-            this.Disabled = disabled;
+            Visible = visible;
+            Disabled = disabled;
         }
 
         public MenuStatus(Func<bool> getVisibleFunc = null, Func<bool> getDisableFunc = null)

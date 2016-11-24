@@ -1,11 +1,11 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
+    using System.Linq;
     using Constants;
     using MediatR;
     using Models.Requests;
     using Requests;
-    using System;
-    using System.Linq;
     using ViewModels;
 
     public class LanguageHandler :

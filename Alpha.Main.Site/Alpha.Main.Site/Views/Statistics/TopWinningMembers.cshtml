@@ -1,0 +1,29 @@
+﻿@using Alpha.Main.Site.ViewModels.Dashboard.Statistics
+@model TopWinningMembersViewModel
+
+<table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover width-100per">
+    <thead>
+        <tr>
+            <th class="width-50per">@Resources.username</th>
+            <th class="width-50per">@Resources.winningAmount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Members.Any())
+            {
+            <tr class="text-center">
+                <td colspan="2">@Resources.noInfo</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var member in Model.Members)
+            {
+                <tr>
+                    <td class="username">@member.UserName</td>
+                    <td class="text-right bold">@member.WinLoss.ToString("#,##0.00")</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

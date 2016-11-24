@@ -1,15 +1,24 @@
-﻿namespace Alpha.Main.Site.Controllers
+﻿#pragma warning disable 618, 612
+
+namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Requests;
+    using Requests.Otp;
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
+    using Web;
 
     public class DefaultController : BaseController
     {
+        private const string ForceChangePasswordPath = "~/Password/ForceChangePassword";
+        private const string SecurityCodePath = "~/SecurityCode/Index";
+        private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
+        private const string UnSupportedBrowsers = "UnsupportedBrowsers";
+
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
         private readonly SecurityCodeChecker securityCodeChecker;
@@ -26,25 +35,30 @@
 
         public ActionResult Index()
         {
-            var browser = this.mediator.Send(new BrowserQuery(this.userSession));
+            var browser = mediator.Send(new BrowserQuery(userSession));
 
             if (browser.IsUnsupportedBrowser)
             {
-                return View("UnsupportedBrowsers", browser);
+                return View(UnSupportedBrowsers, browser);
             }
 
-            if (!this.userSession.IsLogged
-                || this.userSession.IsPasswordExpired)
+            if (!userSession.IsLogged
+                || userSession.IsPasswordExpired)
             {
-                return Redirect("~/Password/ForceChangePassword");
+                return Redirect(ForceChangePasswordPath);
             }
 
-            if (this.securityCodeChecker.IsForcedChangeSecurityCode())
+            if (mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
             {
-                return Redirect("~/SecurityCode/Index");
+                return Redirect(OtpVerifyDifferenceDevicePath);
             }
 
-            var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode());
+            if (securityCodeChecker.IsForcedChangeSecurityCode())
+            {
+                return Redirect(SecurityCodePath);
+            }
+
+            var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), Request.UserAgent);
 
             var viewModel = mediator.Send(query);
 
@@ -62,8 +76,8 @@
         {
             var query = new HotMessagesQuery
             {
-                Language = this.userSession.Language,
-                RoleId = this.userSession.RoleId
+                Language = userSession.Language,
+                RoleId = userSession.RoleId
             };
 
             var viewModel = mediator.Send(query);

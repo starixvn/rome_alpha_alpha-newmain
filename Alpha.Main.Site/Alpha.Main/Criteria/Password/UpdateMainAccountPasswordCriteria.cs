@@ -27,5 +27,7 @@
         {
             return "UpdateMainAccountPassword";
         }
+
+        public override bool IsValid() => CustId > 0;
     }
 }

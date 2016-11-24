@@ -1,42 +1,29 @@
-﻿@{ 
+﻿@model IndexViewModel
+@{
     Layout = null;
 }
-@model IndexViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=@Model.InitialScaleViewPort, user-scalable=yes">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
-    <!--[if (gt IE 8)|!(IE)]><!--><link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-introduction"))" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!--[if (gt IE 8)|!(IE)]><!-->
+    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-instruction"))" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      @StaticResources.AssetScripts.RenderCommon("/bundles/common/support-IE8")
     <![endif]-->
-
 </head>
 <body>
-    <div id="page-popup" class="modal fade hidden" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog ex-modal" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"><span aria-hidden="true"></span></button>
-                    <h4 class="modal-title" id="result-detail-title"><span class="popup-title" id="popup-title"></span></h4>
-                </div>
-                <div class="modal-body">
-                    <iframe frameborder="0" allowtransparency="yes" marginheight="0" marginwidth="0" scrolling="auto"
-                            id="popup-iframe"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-    @Html.Partial("Introduction")
-
+    @Html.Partial("Popup")
+    @Html.Partial("Instruction")
     @Html.Action("HeaderHotMsg")
     <aside class="sidebar" id="side-bar">
         <div class="partial-content customer-profile" id="profile" data-url="@Url.Action("BriefProfile", "CustomerProfile")"></div>
@@ -45,39 +32,22 @@
         </nav>
     </aside>
     <div class="content-wrapper" id="content-wrapper">
+        @Html.Partial("SearchBar")
         <header class="header" id="header">
-            @Html.Partial(
-           "HeaderNav",
-           new HeaderNavViewModel
-           {
-               CustId = Model.CustId,
-               EnableSecurityCode = Model.EnableSecurityCode
-           })
-
+            @Html.Partial("HeaderNav", Model.HeaderNavViewModel)
             @Html.Partial("HeaderMarquee")
         </header>
         <main class="content" id="content" data-default-url="@Model.DefaultUrl">
         </main>
     </div>
+    @Html.Partial("HiddenFields", Model)
 
-    @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
-    @Html.Hidden("onUserId", Model.OnUserId)
-    @Html.Hidden("mainRootPath", Model.MainRootPath)
-    @Html.Hidden("passwordHash", Model.PasswordHash)
-    @Html.Hidden("howToUseRootPath", Model.HowToUseRootPath)
-    @Html.Hidden("subPageAccess", Model.SubPageAccess)
-    @Html.Hidden("isInternalWebVPN", Model.IsInternalWebVPN)
-    @Html.Hidden("currentURLCookieName", Model.CurrentURLCookieName)
-    @Html.Hidden("userLevel", Model.UserLevel)
-    @Html.Hidden("isSubAccount", Model.IsSubAccount)
-
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-index"))" type="text/javascript"></script>
-
-    <!--[if (gt IE 8)|!(IE)]><!--><script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-introduction"))" type="text/javascript"></script><!--<![endif]-->
-
+    <!--[if (gt IE 8)|!(IE)]><!-->
+    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-instruction"))" type="text/javascript"></script>
+    <!--<![endif]-->
     @Html.Partial("Piwik")
-
-
 </body>
 </html>

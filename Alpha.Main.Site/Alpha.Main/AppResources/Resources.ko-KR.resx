@@ -322,7 +322,7 @@
   <data name="PrivateMessage" xml:space="preserve">
     <value>Private Message</value>
   </data>
-  <data name="Less" xml:space="preserve">
+  <data name="less" xml:space="preserve">
     <value>less</value>
   </data>
   <data name="LogOut" xml:space="preserve">
@@ -333,5 +333,50 @@
   </data>
   <data name="Skip" xml:space="preserve">
     <value>다음</value>
+  </data>
+  <data name="stats" xml:space="preserve">
+    <value>통계</value>
+     </data>
+  <data name="balance" xml:space="preserve">
+    <value>잔액정보</value>
+  </data>
+  <data name="normalAnnouncement" xml:space="preserve">
+    <value>일반 공지 사항</value>
+  </data>
+  <data name="specialNotice" xml:space="preserve">
+    <value>특별 공지사항</value>
+  </data>
+  <data name="specialAnnouncement" xml:space="preserve">
+    <value>특별 공지사항</value>
+  </data>
+  <data name="personalMessage" xml:space="preserve">
+    <value>개인 메세지</value>
+  </data>
+  <data name="notice" xml:space="preserve">
+    <value>공지사항</value>
+  </data>
+  <data name="winloss" xml:space="preserve">
+    <value>패배</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>유효</value>
+  </data>
+  <data name="closed" xml:space="preserve">
+    <value>정지</value>
+  </data>
+  <data name="suspended" xml:space="preserve">
+    <value>사용중지</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>종료일</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>시작일</value>
+  </data>
+  <data name="outstanding" xml:space="preserve">
+    <value>대기 포인트</value>
   </data>
 </root>
