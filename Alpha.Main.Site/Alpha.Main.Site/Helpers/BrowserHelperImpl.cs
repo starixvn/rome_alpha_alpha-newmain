@@ -116,7 +116,7 @@
 
         public string GetUserAgent()
         {
-            var userAgent = HttpContext.Current.Request.UserAgent;
+            var userAgent = HttpContext.Current.Request.UserAgent ?? "N/A";
 
             return userAgent;
         }
