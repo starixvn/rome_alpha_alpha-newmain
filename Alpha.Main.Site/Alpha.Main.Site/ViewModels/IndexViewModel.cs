@@ -3,6 +3,7 @@
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Web;
+    using Helpers;
     using Main.Helpers;
     using Main.Models.Enumerations;
     using Models.Requests;
@@ -14,11 +15,13 @@
         private readonly IndexQuery message;
         private readonly Func<string> getDefaultUrl;
         private readonly Func<string, string> encodeDataFunction;
+        private readonly BrowserHelper browserHelper;
 
         public IndexViewModel(
             IndexQuery message,
             Func<string> getDefaultUrl,
-            Func<string, string> encodeDataFunction)
+            Func<string, string> encodeDataFunction,
+            BrowserHelper browserHelper)
         {
             if (message == null)
             {
@@ -29,6 +32,7 @@
             PasswordHash = Encryption.RandomString(new Random().Next(4, 8));
             this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
             this.encodeDataFunction = encodeDataFunction;
+            this.browserHelper = browserHelper;
         }
 
         public bool EnableSecurityCode => message.EnableSecurityCode;
@@ -71,6 +75,9 @@
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 
-        public double InitialScaleViewPort => message.UserAgent.Contains("Android") ? 0.4 : 0.7;
+        public double InitialScaleViewPort
+            => browserHelper.GetDevice().Info.BrowserName.ToLower().Contains("chrome") &&
+            browserHelper.GetUserAgent().ToLower().Contains("android") &&
+            !browserHelper.IsMobile(isOnlyTablet: true) ? 0.4 : 0.7;
     }
 }

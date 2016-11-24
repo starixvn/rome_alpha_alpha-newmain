@@ -5,12 +5,14 @@
 
     public interface BrowserHelper
     {
-        bool IsMobile();
+        bool IsMobile(bool isOnlyTablet);
 
         BrowserViewModel CheckSupportedBrowsers();
 
         Device GetDevice();
 
         string GetDeviceId();
+
+        string GetUserAgent();
     }
 }
