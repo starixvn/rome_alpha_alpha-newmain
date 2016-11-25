@@ -489,10 +489,10 @@
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
     <Content Include="Web.backupMNLExNapInternal.config">
-      <DependentUpon>Web.local.config</DependentUpon>
     </Content>
     <Content Include="Web.backupMNLI1.config">
-      <DependentUpon>Web.local.config</DependentUpon>
+    </Content>
+    <Content Include="Web.backupMNLNapInternal.config">
     </Content>
     <Content Include="Web.backupMNLNapInternal.config">
       <DependentUpon>Web.local.config</DependentUpon>
@@ -725,23 +725,15 @@
     <Content Include="Assets\styles\instruction\images\OldUI-2.png" />
     <Content Include="Assets\styles\instruction\images\OldUI-3.png" />
     <Content Include="Assets\styles\instruction\images\super.png" />
-    <Content Include="Web.local.config" />
     <Content Include="Web.napexternal.config">
-      <DependentUpon>Web.local.config</DependentUpon>
     </Content>
     <Content Include="Web.napinternal.config">
-      <DependentUpon>Web.local.config</DependentUpon>
     </Content>
     <Content Include="Web.proi1.config">
-      <DependentUpon>Web.local.config</DependentUpon>
-      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.uati1.config">
-      <DependentUpon>Web.local.config</DependentUpon>
-      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.sit.config">
-      <DependentUpon>Web.local.config</DependentUpon>
     </Content>
     <TypeScriptCompile Include="Assets\scripts\home\header-msg.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-nav.ts" />
