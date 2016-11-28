@@ -332,18 +332,5 @@
             // Assert
             Assert.AreEqual(rowNum, message.RowNum);
         }
-
-        [Test]
-        public void IsPublic_Always_SetValueFromCtor()
-        {
-            // Arrange
-            bool isPublic = true;
-
-            // Act
-            var message = FakeDataHelper.Create<Message>("isPublic", isPublic);
-
-            // Assert
-            Assert.AreEqual(isPublic, message.IsPublic);
-        }
     }
 }

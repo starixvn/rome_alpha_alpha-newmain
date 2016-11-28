@@ -76,8 +76,27 @@
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 
         public double InitialScaleViewPort
-            => browserHelper.GetDevice().Info.BrowserName.ToLower().Contains("chrome") &&
-            browserHelper.GetUserAgent().ToLower().Contains("android") &&
-            !browserHelper.IsMobile(isOnlyTablet: true) ? 0.4 : 0.7;
+        {
+            get
+            {
+                var browserName = browserHelper.GetDevice().Info.BrowserName.ToLower();
+                var userAgent = browserHelper.GetUserAgent().ToLower();
+                var isTablet = browserHelper.IsMobile(isOnlyTablet: true);
+
+                if (browserName.Contains("chrome") && userAgent.Contains("android"))
+                {
+                    if (!isTablet)
+                    {
+                        return 0.4;
+                    }
+                    else
+                    {
+                        return 0.6;
+                    }
+                }
+
+                return 0.7;
+            }
+        }
     }
 }

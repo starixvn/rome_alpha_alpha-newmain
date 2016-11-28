@@ -22,7 +22,6 @@
             bool isSticky,
             bool isTest,
             int matchId,
-            bool isPublic,
             int creator,
             int lastUpdator,
             string creatorName,
@@ -50,7 +49,6 @@
             IsSticky = isSticky;
             IsTest = isTest;
             MatchId = matchId;
-            IsPublic = isPublic;
             CreatorId = creator;
             LastUpdator = lastUpdator;
             CreatorName = creatorName;
@@ -95,8 +93,6 @@
         public bool IsTest { get; private set; }
 
         public int MatchId { get; private set; }
-
-        public bool IsPublic { get; private set; }
 
         public int CreatorId { get; private set; }
 

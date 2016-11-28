@@ -213,7 +213,6 @@
                         userName: string.Empty,
                         bettransId: string.Empty,
                         userId: 0,
-                        isPublic: false,
                         rowNum: 0);
 
             return message;

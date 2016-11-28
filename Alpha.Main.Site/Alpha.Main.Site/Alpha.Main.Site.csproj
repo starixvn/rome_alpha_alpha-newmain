@@ -529,7 +529,6 @@
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp.ts" />
-    <TypeScriptCompile Include="Assets\scripts\instruction\instruction.ts" />
     <TypeScriptCompile Include="Assets\scripts\instruction\instruction-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\change-password.ts" />

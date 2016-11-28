@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Data;
-    using System.Linq;
     using Constants;
     using Fanex.Data;
     using Fanex.Data.Repository;
@@ -62,7 +61,6 @@
                        userName: Convert.ToString(reader["UserName"] ?? string.Empty),
                        bettransId: Convert.ToString(reader["BettransID"] ?? string.Empty),
                        userId: Convert.ToInt32(reader["TargetId"] ?? 0),
-                       isPublic: messageType == MessageType.Public ? Convert.ToBoolean(reader["IsPublic"] ?? false) : false,
                        rowNum: Convert.ToInt32(reader["rownum"] ?? 0));
 
             return message;
