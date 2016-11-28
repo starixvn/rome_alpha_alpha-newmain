@@ -414,8 +414,32 @@
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.uati1.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
     </Content>
+    <Content Include="App_Data\Message\NormalMessage.napexternal.xml">
+      <DependentUpon>NormalMessage.xml</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Message\NormalMessage.napinternal.xml">
+      <DependentUpon>NormalMessage.xml</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Message\NormalMessage.pro.xml">
+      <DependentUpon>NormalMessage.xml</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Message\NormalMessage.uat.xml">
+      <DependentUpon>NormalMessage.xml</DependentUpon>
+    </Content>
     <Content Include="App_Data\Message\NormalMessage.xml">
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Message\SpecialMessage.napexternal.xml">
+      <DependentUpon>SpecialMessage.xml</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Message\SpecialMessage.napinternal.xml">
+      <DependentUpon>SpecialMessage.xml</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Message\SpecialMessage.pro.xml">
+      <DependentUpon>SpecialMessage.xml</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Message\SpecialMessage.uat.xml">
+      <DependentUpon>SpecialMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\Message\SpecialMessage.xml" />
     <Content Include="App_Data\securitycode.napexternal.json">
@@ -493,6 +517,7 @@
     <Content Include="Web.backupMNLI1.config">
     </Content>
     <Content Include="Web.backupMNLNapInternal.config">
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.backupMNLNapInternal.config">
       <DependentUpon>Web.local.config</DependentUpon>

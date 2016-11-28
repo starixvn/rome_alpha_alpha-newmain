@@ -1,5 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="6619201" name="Change commission for Super level"
+                         startdate="12/1/2016" enddate="12/31/2016"  effectdate="12/15/2016"
+                          width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce that the company will increase the commission of all Live Casino Products from the current 0.7% to 0.9%.
+        The changes will take effect from <b>{effectdate}</b> onwards, all the commission setting of 'Super' will be 0.9% as the default.
+        'Super' are advised to change the downline commission setting accordingly.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        我们在此宣布公司将调整所有现场娱乐厅产品的佣金从现在的0.007提高到0.009。
+        调整佣金变更于<b>{effectdate}</b>日开始生效，所有佣金设置予“超级总代”为0.009 “超级总代”请自行调整您下线的佣金设置。
+      </p>
+      <p>谢谢</p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        我們在此宣佈公司將調整所有現場娛樂廳產品的佣金從現在的0.007 提高到0.009。
+        調整佣金變更於<b>{effectdate}</b>日開始生效，所有佣金設置予“超級總代”為0.009 “超級總代”請自行調整您下線的佣金設置。
+      </p>
+      <p>謝謝</p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce that the company will increase the commission of all Live Casino Products from the current 0.7% to 0.9%.
+        The changes will take effect from <b>{effectdate}</b> onwards, all the commission setting of 'Super' will be 0.9% as the default.
+        'Super' are advised to change the downline commission setting accordingly.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce that the company will increase the commission of all Live Casino Products from the current 0.7% to 0.9%.
+        The changes will take effect from <b>{effectdate}</b> onwards, all the commission setting of 'Super' will be 0.9% as the default.
+        'Super' are advised to change the downline commission setting accordingly.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>เรียนเอเจนต์ทุกท่าน</p>
+      <p>
+        เรามีความยินดีที่จะประกาศว่า บริษัท จะปรับค่าคอมมิชชั่นโปรดักคาสิโนเกมส์สดทั้งหมด จากปัจจุบันค่าคอมมิชชั่น 0.007 จะปรับขึ้นเป็น 0.009.
+        การเปลี่ยนแปลงดังกล่าวจะมีผลตั้งแต่ <b>{effectdate}</b> เป็นต้นไป โดยจะตั้งค่าคอมมิชชั่น 0.009.ให้กับ 'ซูปเปอร์' และซุปเปอร์จะต้องเป็นผู้ทำการเปลี่ยนแปลงการตั้งค่าคอมมิชชั่นให้กับทางดาวไลน์เอง
+      </p>
+      <p>
+        ขอบพระคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>Kính gửi quý khách hàng,</p>
+      <p>
+        Chúng tôi xin trân trọng thông báo, Hoa Hồng dành cho các sản phẩm của Live Casino sẽ tăng từ 0.7% lên 0.9%.
+        Sự thay đổi trên sẽ có hiệu lực kể từ ngày <b>{effectdate}</b>, tất cả thiết lập cho Hoa Hồng của cấp 'Super' sẽ mặc định ở mức 0.9%. 'Super' được khuyến khích thay đổi thiết lập Hoa Hồng của cấp dưới sao cho phù hợp.
+      </p>
+      <p>
+        Trân trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="6197902" name="OTP"
                    startdate="10/18/2016" enddate="11/29/2016"  effectdate="11/24/2016"
                     width="1000" height="220" top="110" left="350">
