@@ -116,7 +116,7 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<QrCodeAdapter, QrCodeAdapterImpl>();
             container.RegisterPerWebRequest<RandomHelper, RandomHelperImpl>();
             container.RegisterPerWebRequest<JsonHelper, JsonHelperImpl>();
-            container.RegisterPerWebRequest<CustomerOtpService>(() => 
+            container.RegisterPerWebRequest<CustomerOtpService>(() =>
             new CustomerOtpServiceImpl(
                 container.GetInstance<IDynamicRepository>(),
                 container.GetInstance<OtpService>(),
@@ -131,6 +131,8 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>();
             container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
             container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
+            container.RegisterPerWebRequest<StatisticsDataAccess, StatisticsDataAccessImpl>();
+            container.RegisterPerWebRequest<MessageDataAccess, MessageDataAccessImpl>();
         }
     }
 }

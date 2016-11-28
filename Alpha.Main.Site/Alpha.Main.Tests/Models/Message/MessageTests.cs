@@ -340,7 +340,7 @@
             bool isPublic = true;
 
             // Act
-            var message = FakeDataHelper.Create<Message>("isPublic", isPublic, 26);
+            var message = FakeDataHelper.Create<Message>("isPublic", isPublic);
 
             // Assert
             Assert.AreEqual(isPublic, message.IsPublic);

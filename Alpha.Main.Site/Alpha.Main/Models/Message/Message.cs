@@ -4,10 +4,6 @@
 
     public class Message
     {
-        public Message()
-        {
-        }
-
         public Message(
             int id,
             string contentEN,
@@ -18,6 +14,7 @@
             string contentIT,
             string contentKO,
             string contentES,
+            string contentVN,
             DateTime postTime,
             DateTime createTime,
             DateTime lastUpdateTime,
@@ -45,6 +42,7 @@
             ContentIT = contentIT;
             ContentKO = contentKO;
             ContentES = contentES;
+            ContentVN = contentVN;
             PostTime = postTime;
             CreateTime = createTime;
             LastUpdateTime = lastUpdateTime;
@@ -62,133 +60,6 @@
             UserId = userId;
             UserName = userName;
             RowNum = rowNum;
-        }
-
-        public Message(
-            int id,
-            string contentEN,
-            string contentCS,
-            string contentCH,
-            string contentJP,
-            string contentTH,
-            string contentIT,
-            string contentKO,
-            string contentES,
-            string contentVN,
-            string contentID,
-            string contentEL,
-            string contentMX,
-            DateTime postTime,
-            DateTime createTime,
-            DateTime lastUpdateTime,
-            byte messageType,
-            bool isSticky,
-            bool isTest,
-            int matchId,
-            bool isBatch,
-            int creator,
-            int lastUpdator,
-            string creatorName,
-            string lastUpdateName,
-            string userName,
-            string bettransId,
-            int userId,
-            long rowNum) : this(
-                id,
-                contentEN,
-                contentCS,
-                contentCH,
-                contentJP,
-                contentTH,
-                contentIT,
-                contentKO,
-                contentES,
-                postTime,
-                createTime,
-                lastUpdateTime,
-                messageType,
-                isSticky,
-                isTest,
-                matchId,
-                false,
-                creator,
-                lastUpdator,
-                creatorName,
-                lastUpdateName,
-                isBatch,
-                bettransId,
-                userId,
-                userName,
-                rowNum)
-        {
-            ContentVN = contentVN;
-        }
-
-        public Message(
-            int id,
-            string contentEN,
-            string contentCS,
-            string contentCH,
-            string contentJP,
-            string contentTH,
-            string contentIT,
-            string contentKO,
-            string contentES,
-            DateTime postTime,
-            DateTime createTime,
-            DateTime lastUpdateTime,
-            byte messageType,
-            bool isSticky,
-            bool isTest,
-            int matchId,
-            bool isBatch,
-            int creator,
-            int lastUpdator,
-            int userId,
-            int batchId,
-            string bingoContentEN,
-            string bingoContentCS,
-            string bingoContentCH,
-            string bingoContentJP,
-            string bingoContentTH,
-            string bingoContentIT,
-            string bingoContentKO,
-            string bingoContentES,
-            string creatorName,
-            string lastUpdateName,
-            string userName,
-            string bettransId,
-            long rowNum) : this(
-                id,
-                contentEN,
-                contentCS,
-                contentCH,
-                contentJP,
-                contentTH,
-                contentIT,
-                contentKO,
-                contentES,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                string.Empty,
-                postTime,
-                createTime,
-                lastUpdateTime,
-                messageType,
-                isSticky,
-                isTest,
-                matchId,
-                isBatch,
-                creator,
-                lastUpdator,
-                creatorName,
-                lastUpdateName,
-                userName,
-                bettransId,
-                userId,
-                rowNum)
-        {
         }
 
         public int Id { get; private set; }
