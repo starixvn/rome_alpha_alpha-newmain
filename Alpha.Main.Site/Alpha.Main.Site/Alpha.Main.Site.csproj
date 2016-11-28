@@ -420,10 +420,10 @@
     <Content Include="App_Data\Message\NormalMessage.napinternal.xml">
       <DependentUpon>NormalMessage.xml</DependentUpon>
     </Content>
-    <Content Include="App_Data\Message\NormalMessage.pro.xml">
+    <Content Include="App_Data\Message\NormalMessage.proi1.xml">
       <DependentUpon>NormalMessage.xml</DependentUpon>
     </Content>
-    <Content Include="App_Data\Message\NormalMessage.uat.xml">
+    <Content Include="App_Data\Message\NormalMessage.uati1.xml">
       <DependentUpon>NormalMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\Message\NormalMessage.xml">
@@ -435,10 +435,10 @@
     <Content Include="App_Data\Message\SpecialMessage.napinternal.xml">
       <DependentUpon>SpecialMessage.xml</DependentUpon>
     </Content>
-    <Content Include="App_Data\Message\SpecialMessage.pro.xml">
+    <Content Include="App_Data\Message\SpecialMessage.proi1.xml">
       <DependentUpon>SpecialMessage.xml</DependentUpon>
     </Content>
-    <Content Include="App_Data\Message\SpecialMessage.uat.xml">
+    <Content Include="App_Data\Message\SpecialMessage.uati1.xml">
       <DependentUpon>SpecialMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\Message\SpecialMessage.xml" />
