@@ -85,13 +85,13 @@
 
                 if (browserName.Contains("chrome") && userAgent.Contains("android"))
                 {
-                    if (!isTablet)
+                    if (isTablet)
                     {
-                        return 0.4;
+                        return 1.0;
                     }
                     else
                     {
-                        return 0.6;
+                        return 0.5;
                     }
                 }
 

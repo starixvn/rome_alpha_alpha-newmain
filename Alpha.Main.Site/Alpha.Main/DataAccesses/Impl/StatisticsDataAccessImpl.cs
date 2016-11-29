@@ -25,18 +25,21 @@
                 if (reader.Read())
                 {
                     statistics = new Statistics(
-                       outStanding: Convert.ToDecimal(reader["outStanding"] ?? 0),
-                       totalOutStanding: Convert.ToDecimal(reader["total_outstanding"] ?? 0),
-                       totalMemberActive: Convert.ToInt32(reader["total_memberActive"] ?? 0),
-                       totalMemberClosed: Convert.ToInt32(reader["total_memberClosed"] ?? 0),
-                       totalMemberSuspended: Convert.ToInt32(reader["total_memberSuspended"] ?? 0),
-                       totalAgentActive: userLevel.IsMasterLevel() || userLevel.IsSuperLevel() ? Convert.ToInt32(reader["total_agentActive"] ?? 0) : 0,
-                       totalAgentClosed: userLevel.IsMasterLevel() || userLevel.IsSuperLevel() ? Convert.ToInt32(reader["total_agentClosed"] ?? 0) : 0,
-                       totalAgentSuspended: userLevel.IsMasterLevel() || userLevel.IsSuperLevel() ? Convert.ToInt32(reader["total_agentSuspended"] ?? 0) : 0,
-                       totalMasterActive: userLevel.IsSuperLevel() ? Convert.ToInt32(reader["total_masterActive"] ?? 0) : 0,
-                       totalMasterClosed: userLevel.IsSuperLevel() ? Convert.ToInt32(reader["total_masterClosed"] ?? 0) : 0,
-                       totalMasterSuspended: userLevel.IsSuperLevel() ? Convert.ToInt32(reader["total_masterSuspended"] ?? 0) : 0,
-                       numberNewMembers: Convert.ToInt32(reader["number_newMembers"] ?? 0));
+                       outStanding: !Convert.IsDBNull(reader["outStanding"]) ? Convert.ToDecimal(reader["outStanding"]) : 0,
+                       totalOutStanding: !Convert.IsDBNull(reader["total_outstanding"]) ? Convert.ToDecimal(reader["total_outstanding"]) : 0,
+                       totalMemberActive: !Convert.IsDBNull(reader["total_memberActive"]) ? Convert.ToInt32(reader["total_memberActive"]) : 0,
+                       totalMemberClosed: !Convert.IsDBNull(reader["total_memberClosed"]) ? Convert.ToInt32(reader["total_memberClosed"]) : 0,
+                       totalMemberSuspended: !Convert.IsDBNull(reader["total_memberSuspended"]) ? Convert.ToInt32(reader["total_memberSuspended"]) : 0,
+                       totalAgentActive: (userLevel.IsMasterLevel() || userLevel.IsSuperLevel()) &&
+                                            !Convert.IsDBNull(reader["total_agentActive"]) ? Convert.ToInt32(reader["total_agentActive"]) : 0,
+                       totalAgentClosed: (userLevel.IsMasterLevel() || userLevel.IsSuperLevel()) &&
+                                            !Convert.IsDBNull(reader["total_agentClosed"]) ? Convert.ToInt32(reader["total_agentClosed"]) : 0,
+                       totalAgentSuspended: userLevel.IsMasterLevel() || userLevel.IsSuperLevel() &&
+                                            !Convert.IsDBNull(reader["total_agentSuspended"]) ? Convert.ToInt32(reader["total_agentSuspended"]) : 0,
+                       totalMasterActive: userLevel.IsSuperLevel() && !Convert.IsDBNull(reader["total_masterActive"]) ? Convert.ToInt32(reader["total_masterActive"]) : 0,
+                       totalMasterClosed: userLevel.IsSuperLevel() && !Convert.IsDBNull(reader["total_masterClosed"]) ? Convert.ToInt32(reader["total_masterClosed"]) : 0,
+                       totalMasterSuspended: userLevel.IsSuperLevel() && !Convert.IsDBNull(reader["total_masterSuspended"]) ? Convert.ToInt32(reader["total_masterSuspended"]) : 0,
+                       numberNewMembers: !Convert.IsDBNull(reader["number_newMembers"]) ? Convert.ToInt32(reader["number_newMembers"]) : 0);
                 }
             }
 
@@ -59,9 +62,9 @@
                 while (reader.Read())
                 {
                     var winningMember = new TopWinningMember(
-                        custId: Convert.ToInt32(reader["custid"] ?? 0),
-                        userName: Convert.ToString(reader["username"] ?? string.Empty),
-                        winLoss: Convert.ToDecimal(reader["winlost"] ?? 0));
+                        custId: !Convert.IsDBNull(reader["custid"]) ? Convert.ToInt32(reader["custid"]) : 0,
+                        userName: !Convert.IsDBNull(reader["username"]) ? Convert.ToString(reader["username"]) : string.Empty,
+                        winLoss: !Convert.IsDBNull(reader["winlost"]) ? Convert.ToDecimal(reader["winlost"]) : 0);
 
                     topWinningMembers.Add(winningMember);
                 }
@@ -86,9 +89,9 @@
                 while (reader.Read())
                 {
                     var turnoverMember = new TopTurnoverMember(
-                        custId: Convert.ToInt32(reader["custid"] ?? 0),
-                        userName: Convert.ToString(reader["username"] ?? string.Empty),
-                        turnOver: Convert.ToDecimal(reader["turnover"] ?? 0));
+                        custId: !Convert.IsDBNull(reader["custid"]) ? Convert.ToInt32(reader["custid"]) : 0,
+                        userName: !Convert.IsDBNull(reader["username"]) ? Convert.ToString(reader["username"]) : string.Empty,
+                        turnOver: !Convert.IsDBNull(reader["turnover"]) ? Convert.ToDecimal(reader["turnover"]) : 0);
 
                     topTurnoverMembers.Add(turnoverMember);
                 }
