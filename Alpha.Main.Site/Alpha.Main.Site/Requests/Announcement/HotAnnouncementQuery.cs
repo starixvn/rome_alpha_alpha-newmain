@@ -28,7 +28,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         public const int OfferedColossusBets = 4523901;
         public const int OfferedAllbet = 53088003;
         public const int NotOfferedAllbet = 53088004;
-
+        public const int ChangeCommForSuper = 6619201;
+        
         public HotAnnouncementQuery() : this(null, null, null, null)
         {
         }
@@ -92,7 +93,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
                     { OfferedSuperLive, UserPermission.IsShowSuperLive },
                     { OfferedColossusBets,  UserPermission.IsShowColossusBets },
                     { OfferedAllbet,  UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) && UserPermission.IsShowLiveCasino },
-                    { NotOfferedAllbet,  UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) && !UserPermission.IsShowLiveCasino }
+                    { NotOfferedAllbet,  UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) && !UserPermission.IsShowLiveCasino },
+                    { ChangeCommForSuper,  UserPermission.IsShowLiveCasino || UserPermission.IsShowGoldDeluxeSettingForCredit || UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) }
                 };
             }
         }
