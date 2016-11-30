@@ -503,24 +503,22 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
-    <Content Include="Web.AppSettings.backupMNLExNapInternal.config">
-      <DependentUpon>Web.AppSettings.config</DependentUpon>
-    </Content>
     <Content Include="Web.AppSettings.backupMNLI1.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
-    <Content Include="Web.AppSettings.backupMNLNapInternal.config">
-      <DependentUpon>Web.AppSettings.config</DependentUpon>
-    </Content>
-    <Content Include="Web.backupMNLExNapInternal.config">
+    <Content Include="Web.backupMNLExNap.config">
     </Content>
     <Content Include="Web.backupMNLI1.config">
-    </Content>
-    <Content Include="Web.backupMNLNapInternal.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.backupMNLNapInternal.config">
-      <DependentUpon>Web.local.config</DependentUpon>
+    <Content Include="Web.backupMNLNap.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.AppSettings.backupMNLExNap.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+    <Content Include="Web.AppSettings.backupMNLNap.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
@@ -811,7 +809,9 @@
     <Content Include="favico.ico" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
-    <Content Include="App_Data\Announcements\PopupAdCommon.xml" />
+    <Content Include="App_Data\Announcements\PopupAdCommon.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\Announcements\PopupAdMasterNeutral.xml">
       <SubType>Designer</SubType>
     </Content>
