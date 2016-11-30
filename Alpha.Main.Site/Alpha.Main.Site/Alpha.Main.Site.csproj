@@ -522,6 +522,7 @@
     </Content>
     <Content Include="Web.AppSettings.backupMNLNap.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
