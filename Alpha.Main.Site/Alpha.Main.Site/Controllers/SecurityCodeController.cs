@@ -3,10 +3,13 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using AppResources;
     using Auth.Filters;
+    using Main.Models;
     using MediatR;
     using Models.Request.SecurityCode;
     using Models.Requests;
+    using SecurityCode.Web;
     using Sunplus.Agent.Model.Entities;
     using Web;
     using Web.Filters;
@@ -57,6 +60,11 @@
         [AntiXsrfFilter]
         public JsonResult ChangeSecurityCodeFirstLogin(ChangeSecurityCodeFirstLoginCommand query)
         {
+            if (!string.IsNullOrWhiteSpace(userSession.SecurityCode))
+            {
+                return Json(Result.CreateErrorResult(Security.NotAuthorized));
+            }
+
             var viewModel = mediator.Send(query);
 
             return Json(viewModel);
@@ -123,6 +131,11 @@
         [HttpGet]
         public ActionResult VerifySecurityCode(SecurityCodeQuery query)
         {
+            if (SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
+            {
+                return Redirect("~/Otp/VerifyOtp");
+            }
+
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -133,6 +146,11 @@
         [AntiXsrfFilter]
         public JsonResult VerifySecurityCode(VerifySecurityCodeCommand query)
         {
+            if (SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
+            {
+                return Json(Result.CreateErrorResult(Security.NotAuthorized));
+            }
+
             var viewModel = mediator.Send(query);
 
             return Json(viewModel);

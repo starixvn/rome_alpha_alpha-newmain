@@ -193,7 +193,7 @@
             var result = new Result
             {
                 Code = changeStatusCommand.ErrCode,
-                Message = isCorrect ? changeStatusCommand.ErrMsg : Security.OtpIsInvalidOrExpired
+                Message = isCorrect ? changeStatusCommand.ErrMsg : Security.OtpInvalidOrExpiredAndContactUpline
             };
 
             if (!isCorrect

@@ -412,4 +412,7 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="CloseAccountOtpMessage" xml:space="preserve">
     <value>Your account is closed due to 5 failed attempts with the OTP. Please contact your upline or CSD.</value>
   </data>
+  <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
+    <value>Your OTP is invalid or expired. Please input another OTP or contact your upline to reset your OTP status.</value>
+  </data>
 </root>

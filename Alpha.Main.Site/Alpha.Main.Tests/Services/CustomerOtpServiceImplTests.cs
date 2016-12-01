@@ -659,7 +659,7 @@
             var actualResult = customerOtpService.VerifyOtp(actualCustomerOtp);
 
             // Assert
-            Assert.AreEqual(actualResult.Message, Security.OtpIsInvalidOrExpired);
+            Assert.AreEqual(actualResult.Message, Security.OtpInvalidOrExpiredAndContactUpline);
         }
 
         [Test]
