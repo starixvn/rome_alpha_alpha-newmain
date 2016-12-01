@@ -3,7 +3,7 @@
 
 // To remove the 300-350ms tap delay
 html {
-  touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 body, html {
@@ -18,8 +18,9 @@ body {
 }
 
 html * {
-    max-height: 1000000px;
+    max-height: 999999px;
 }
+
 /********************************** Customer profile ******************************************/
 .customer-profile {
     overflow: hidden;

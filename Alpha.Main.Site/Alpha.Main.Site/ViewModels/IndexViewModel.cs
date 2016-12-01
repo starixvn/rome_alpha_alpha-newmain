@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Text.RegularExpressions;
     using System.Web;
     using Helpers;
     using Main.Helpers;
@@ -83,13 +84,9 @@
                 var userAgent = browserHelper.GetUserAgent().ToLower();
                 var isTablet = browserHelper.IsMobile(isOnlyTablet: true);
 
-                if (browserName.Contains("chrome") && userAgent.Contains("android"))
+                if (browserName.Contains("chrome") && userAgent.Contains("android") && !browserHelper.IsAndroidNativeBrowser(userAgent))
                 {
-                    if (isTablet)
-                    {
-                        return 1.0;
-                    }
-                    else
+                    if (!isTablet)
                     {
                         return 0.5;
                     }

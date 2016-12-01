@@ -7,7 +7,7 @@
         @using (Html.BeginForm("Messages", "Message", new { messageType = Model.MessageType }))
         {
             <div class="form-group">
-                <label class="txt">@Resources.from:</label>
+                <label class="txt">@Resources.from</label>
                 <div class="control date">
                     <div class="input-group date" id="fromDateContainer">
                         <input class="form-control" id="fromDate" name="StartDate" type="text" value=@Model.StartDate />
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="txt">@Resources.to:</label>
+                <label class="txt">@Resources.to</label>
                 <div class="control date">
                     <div class="input-group date" id="toDateContainer">
                         <input class="form-control" id="toDate" name="EndDate" type="text" value=@Model.EndDate />
