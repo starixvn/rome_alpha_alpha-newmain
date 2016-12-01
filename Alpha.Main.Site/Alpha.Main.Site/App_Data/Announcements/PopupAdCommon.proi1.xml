@@ -1,5 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="6626501" name="Separate Bet Setting for Soccer - Parlay"
+                         startdate="11/1/2016" enddate="12/22/2016"  effectdate="12/08/2016"
+                          width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the new settings of Soccer Parlay (parlay that contains only soccer's tickets) available on <b>{effectdate}</b>.
+        The initial bet settings are copied from Soccer.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        我们在此宣布足球过关（只包含足球注单的过关）可用于<b>{effectdate}</b>. 最初投注设置从足球复制。
+      </p>
+      <p>谢谢</p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        我们在此宣佈足球過關（只包含足球注单的過關）可用于<b>{effectdate}</b>. 最初投注設置從足球複製。
+      </p>
+      <p>謝謝</p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the new settings of Soccer Parlay (parlay that contains only soccer's tickets) available on <b>{effectdate}</b>.
+        The initial bet settings are copied from Soccer.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the new settings of Soccer Parlay (parlay that contains only soccer's tickets) available on <b>{effectdate}</b>.
+        The initial bet settings are copied from Soccer.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>เรียนเอเจนต์ทุกท่าน</p>
+      <p>
+        เรามีความยินดีที่จะประกาศสำหรับการตั้งค่าใหม่ของบอลชุดฟุตบอล (เฉพาะตั๋วบอลชุดฟุตบอลเท่านั้น) เริ่มใช้ตั้งแต่ <b>{effectdate}</b>.
+        การตั้งค่าการเดิมพันครั้งแรกจะคัดลอกมาจากฟุตบอล
+      </p>
+      <p>
+        ขอบพระคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>Kính gửi quý khách hàng,</p>
+      <p>
+        Chúng tôi xin trân trọng thông báo vào ngày <b>{effectdate}</b> các thiết lập mới cho Parlay Bóng Đá (parlay chỉ chứa các vé cược của Bóng Đá) sẽ có hiệu lực.
+        Các thiết lập ban đầu sẽ được sao chép từ Bóng Đá.
+      </p>
+      <p>
+        Trân trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
   <PopupAnnouncement id="6619201" name="Change commission for Super level"
                          startdate="12/1/2016" enddate="12/31/2016"  effectdate="12/15/2016"
                           width="1000" height="220" top="110" left="350">
