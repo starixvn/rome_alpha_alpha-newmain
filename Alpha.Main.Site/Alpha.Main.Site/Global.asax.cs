@@ -12,6 +12,7 @@
     using Fanex.Data;
     using Fanex.Data.OldConnectionStringProvider;
     using ONEbook.UM.Filters;
+    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
     using Web;
 
@@ -67,7 +68,9 @@
                     return;
                 }
 
-                Logs.FilterInfoWarnOrError(ex);
+                Logs.FilterInfoWarnOrError(
+                    ex, 
+                    UserSession.Current != null ? UserSession.Current.CustId : 0);
             }
         }
 
