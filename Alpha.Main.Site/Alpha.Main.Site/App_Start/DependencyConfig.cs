@@ -5,10 +5,7 @@ namespace Alpha.Main.Site.App_Start
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
-    using System.Web;
     using System.Web.Mvc;
-    using System.Web.SessionState;
-    using Configurations;
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Data.Repository;

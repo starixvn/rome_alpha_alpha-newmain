@@ -12,6 +12,7 @@
         public Statistics GetStatistics(ICriteria criteria, UserLevel userLevel)
         {
             Statistics statistics = new Statistics();
+            bool isSuperOrMaster = userLevel.IsMasterLevel() || userLevel.IsSuperLevel();
 
             if (criteria == null)
             {
@@ -30,12 +31,9 @@
                        totalMemberActive: !Convert.IsDBNull(reader["total_memberActive"]) ? Convert.ToInt32(reader["total_memberActive"]) : 0,
                        totalMemberClosed: !Convert.IsDBNull(reader["total_memberClosed"]) ? Convert.ToInt32(reader["total_memberClosed"]) : 0,
                        totalMemberSuspended: !Convert.IsDBNull(reader["total_memberSuspended"]) ? Convert.ToInt32(reader["total_memberSuspended"]) : 0,
-                       totalAgentActive: (userLevel.IsMasterLevel() || userLevel.IsSuperLevel()) &&
-                                            !Convert.IsDBNull(reader["total_agentActive"]) ? Convert.ToInt32(reader["total_agentActive"]) : 0,
-                       totalAgentClosed: (userLevel.IsMasterLevel() || userLevel.IsSuperLevel()) &&
-                                            !Convert.IsDBNull(reader["total_agentClosed"]) ? Convert.ToInt32(reader["total_agentClosed"]) : 0,
-                       totalAgentSuspended: userLevel.IsMasterLevel() || userLevel.IsSuperLevel() &&
-                                            !Convert.IsDBNull(reader["total_agentSuspended"]) ? Convert.ToInt32(reader["total_agentSuspended"]) : 0,
+                       totalAgentActive: isSuperOrMaster && !Convert.IsDBNull(reader["total_agentActive"]) ? Convert.ToInt32(reader["total_agentActive"]) : 0,
+                       totalAgentClosed: isSuperOrMaster && !Convert.IsDBNull(reader["total_agentClosed"]) ? Convert.ToInt32(reader["total_agentClosed"]) : 0,
+                       totalAgentSuspended: isSuperOrMaster && !Convert.IsDBNull(reader["total_agentSuspended"]) ? Convert.ToInt32(reader["total_agentSuspended"]) : 0,
                        totalMasterActive: userLevel.IsSuperLevel() && !Convert.IsDBNull(reader["total_masterActive"]) ? Convert.ToInt32(reader["total_masterActive"]) : 0,
                        totalMasterClosed: userLevel.IsSuperLevel() && !Convert.IsDBNull(reader["total_masterClosed"]) ? Convert.ToInt32(reader["total_masterClosed"]) : 0,
                        totalMasterSuspended: userLevel.IsSuperLevel() && !Convert.IsDBNull(reader["total_masterSuspended"]) ? Convert.ToInt32(reader["total_masterSuspended"]) : 0,
