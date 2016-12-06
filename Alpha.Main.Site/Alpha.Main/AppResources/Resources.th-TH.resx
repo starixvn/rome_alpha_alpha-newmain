@@ -460,4 +460,7 @@
   <data name="outstanding" xml:space="preserve">
     <value>การเดิมพันที่ยังไม่สิ้นสุด</value>
   </data>
+  <data name="DefaultErrorMessage" xml:space="preserve">
+    <value>อุ้ย...คุณอยู่ที่นี่เนื่องจากระบบผิดพลาด กรุณาแจ้งผู้ให้บริการ</value>
+  </data>
 </root>

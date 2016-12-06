@@ -3,10 +3,4 @@
   <Function Name="Profile Pictures">
     <Setting Key="Age_CustomerSelProfilePicture" SpName="Age_CustomerSelProfilePicture" DbName="DBAGE.bodb_AGE.BODBDownlineNetView" />
   </Function>
-  <Function Name="Customer information">
-    <!--2-->
-    <Setting Key="Age_CustomerSelCheckBelonging" SpName="Age_CustomerSelCheckBelonging" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_CustSubPageAccessSel" SpName="Age_CustSubPageAccessSel" DbName="DBAGE.bodb02.BODBDownlineNetView" Plain="0" />
-    <!--/2-->
-  </Function>
 </Functions>

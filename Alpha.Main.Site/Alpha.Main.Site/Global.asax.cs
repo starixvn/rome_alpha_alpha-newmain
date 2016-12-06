@@ -4,6 +4,7 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
     using System.Web;
+    using System.Web.Helpers;
     using System.Web.Mvc;
     using System.Web.Routing;
     using App_Start;
@@ -44,6 +45,7 @@
 
             GlobalFilters.Filters.Add(new CheckUMFilter());
             GlobalFilters.Filters.Add(new CheckBelongingFilter());
+            AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
 
             Logs.WriteInfo("Alpha - New Main - Application Start");
         }

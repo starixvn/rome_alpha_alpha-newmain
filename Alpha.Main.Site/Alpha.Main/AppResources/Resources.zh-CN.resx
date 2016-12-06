@@ -463,4 +463,7 @@
   <data name="outstanding" xml:space="preserve">
     <value>未完成交易</value>
   </data>
+  <data name="DefaultErrorMessage" xml:space="preserve">
+    <value>哎哟..因为系统故障所以您会身在此处，请向管理层联系吧</value>
+  </data>
 </root>

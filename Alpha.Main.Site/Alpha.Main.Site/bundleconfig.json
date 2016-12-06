@@ -191,5 +191,12 @@
       "Assets/scripts/core.js",
       "Assets/scripts/security/otp/reset-otp.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/kick-out.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/home/kick-out.js"
+    ]
   }
 ]
