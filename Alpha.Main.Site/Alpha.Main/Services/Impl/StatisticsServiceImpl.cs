@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using Criteria.Statistics;
+    using DataAccesses;
     using Fanex.Data.Repository;
     using Models.Enumerations;
     using Models.Statistics;
@@ -11,20 +12,23 @@
     {
         private readonly BalanceUpDayInfoService balanceUpDayInfoService;
         private readonly IDynamicRepository dynamicRepository;
+        private readonly StatisticsDataAccess statisticsDataAccess;
 
         public StatisticsServiceImpl(
             BalanceUpDayInfoService balanceUpDayInfoService,
-            IDynamicRepository dynamicRepository)
+            IDynamicRepository dynamicRepository,
+            StatisticsDataAccess statisticsDataAccess)
         {
             this.balanceUpDayInfoService = balanceUpDayInfoService;
             this.dynamicRepository = dynamicRepository;
+            this.statisticsDataAccess = statisticsDataAccess;
         }
 
         public Statistics GetStatistics(int custId, UserLevel userLevel)
         {
             var criteria = new GetStatisticsCriteria(userLevel, custId);
 
-            var statistics = dynamicRepository.Get<Statistics>(criteria);
+            var statistics = statisticsDataAccess.GetStatistics(criteria, userLevel);
 
             return statistics;
         }
@@ -37,7 +41,7 @@
                 balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay,
                 balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay);
 
-            var topWinninMembers = dynamicRepository.Fetch<TopWinningMember>(criteria).ToList();
+            var topWinninMembers = statisticsDataAccess.GetTopWinningMembers(criteria);
 
             return topWinninMembers;
         }
@@ -50,7 +54,7 @@
                 balanceUpDayInfoService.GetBalanceUpDayInfo().BalanceUpDay,
                 balanceUpDayInfoService.GetBalanceUpDayInfo().MoveBetsDay);
 
-            var topTurnoverMembers = dynamicRepository.Fetch<TopTurnoverMember>(criteria).ToList();
+            var topTurnoverMembers = statisticsDataAccess.GetTopTurnoverMembers(criteria);
 
             return topTurnoverMembers;
         }

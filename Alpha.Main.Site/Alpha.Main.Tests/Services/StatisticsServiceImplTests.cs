@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using Constants;
+    using DataAccesses;
     using Fanex.Data.Repository;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
@@ -19,19 +20,21 @@
     {
         private IDynamicRepository dynamicRepository;
         private BalanceUpDayInfoService balanceUpDateInfoService;
+        private StatisticsDataAccess statisticsDataAccess;
         private StatisticsServiceImpl statisticsService;
 
         [SetUp]
         public void SetUp()
         {
             dynamicRepository = Substitute.For<IDynamicRepository>();
+            statisticsDataAccess = Substitute.For<StatisticsDataAccess>();
 
             balanceUpDateInfoService = Substitute.For<BalanceUpDayInfoService>();
             balanceUpDateInfoService
                 .GetBalanceUpDayInfo()
                 .Returns(new BalanceUpDayInfo(DateTime.Today, DateTime.Today));
 
-            statisticsService = new StatisticsServiceImpl(balanceUpDateInfoService, dynamicRepository);
+            statisticsService = new StatisticsServiceImpl(balanceUpDateInfoService, dynamicRepository, statisticsDataAccess);
         }
 
         [Test]
@@ -50,7 +53,7 @@
             // Arrange
             var expectedStatistics = FakeDataHelper.Create<Statistics>();
 
-            dynamicRepository.Get<Statistics>(Arg.Any<ICriteria>()).Returns(expectedStatistics);
+            statisticsDataAccess.GetStatistics(Arg.Any<ICriteria>(), Arg.Any<UserLevel>()).Returns(expectedStatistics);
 
             // Act
             var statistics = statisticsService.GetStatistics(CustId.ValidId, UserLevel.Agent);
@@ -66,7 +69,7 @@
             var topWinningMembers = statisticsService.GetTopWinningMembers(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
-            Assert.AreEqual(topWinningMembers, new List<TopWinningMember>());
+            Assert.AreEqual(topWinningMembers, null);
         }
 
         [Test]
@@ -75,7 +78,7 @@
             // Arrange
             var expectedTopWinningMembers = FakeDataHelper.CreateMany<TopWinningMember>().ToList();
 
-            dynamicRepository.Fetch<TopWinningMember>(Arg.Any<ICriteria>()).Returns(expectedTopWinningMembers);
+            statisticsDataAccess.GetTopWinningMembers(Arg.Any<ICriteria>()).Returns(expectedTopWinningMembers);
 
             // Act
             var topWinningMembers = statisticsService.GetTopWinningMembers(CustId.ValidId, UserLevel.Agent);
@@ -91,7 +94,7 @@
             var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
-            Assert.AreEqual(topTurnoverMembers, new List<TopTurnoverMember>());
+            Assert.AreEqual(topTurnoverMembers, null);
         }
 
         [Test]
@@ -100,7 +103,7 @@
             // Arrange
             var expectedTopTurnoverMembers = FakeDataHelper.CreateMany<TopTurnoverMember>().ToList();
 
-            dynamicRepository.Fetch<TopTurnoverMember>(Arg.Any<ICriteria>()).Returns(expectedTopTurnoverMembers);
+            statisticsDataAccess.GetTopTurnoverMembers(Arg.Any<ICriteria>()).Returns(expectedTopTurnoverMembers);
 
             // Act
             var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(CustId.ValidId, UserLevel.Agent);

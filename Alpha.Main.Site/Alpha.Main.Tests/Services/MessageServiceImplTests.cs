@@ -5,6 +5,7 @@
     using System.IO;
     using System.Linq;
     using Constants;
+    using DataAccesses;
     using Fanex.Data.Repository;
     using Main.Constants;
     using Main.Models.Message;
@@ -17,16 +18,15 @@
     [TestFixture]
     public class MessageServiceImplTests
     {
-        private IDynamicRepository dynamicRepository;
-
+        private MessageDataAccess messageDataAccess;
         private MessageServiceImpl messageService;
 
         [SetUp]
         public void SetUp()
         {
-            dynamicRepository = Substitute.For<IDynamicRepository>();
+            messageDataAccess = Substitute.For<MessageDataAccess>();
 
-            messageService = new MessageServiceImpl(dynamicRepository);
+            messageService = new MessageServiceImpl(messageDataAccess);
         }
 
         [Test]
@@ -44,16 +44,16 @@
                 1);
 
             // Act & Assert
-            Assert.AreEqual(messages, new List<Message>());
+            Assert.AreEqual(messages, null);
         }
 
         [Test]
         public void GetMessages_CustIdIsValidAndParentSitesIsNotNullorEmpty_ReturnMessages()
         {
             // Arrange
-            var messages = FakeDataHelper.CreateMany<Message>();
+            var messages = FakeDataHelper.CreateMany<Message>().ToList();
 
-            dynamicRepository.Fetch<Message>(Arg.Any<ICriteria>()).Returns(messages);
+            messageDataAccess.GetMessages(Arg.Any<ICriteria>(), Arg.Any<int>()).Returns(messages);
 
             // Act
             var actualMessages = messageService.GetMessages(
@@ -188,35 +188,32 @@
         private Message GetExpectedMessageObject(int messageType)
         {
             var message = new Message(
-                        88888890,
-                        "EN",
-                        "CN",
-                        "TW",
-                        "JP",
-                        "TH",
-                        string.Empty,
-                        "KR",
-                        string.Empty,
-                        "VN",
-                        string.Empty,
-                        string.Empty,
-                        string.Empty,
-                        new DateTime(2016, 1, 20, 0, 0, 0),
-                        new DateTime(2016, 1, 20, 0, 0, 0),
-                        new DateTime(2016, 1, 20, 0, 0, 0),
-                        (byte)messageType,
-                        false,
-                        false,
-                        0,
-                        false,
-                        0,
-                        0,
-                        string.Empty,
-                        string.Empty,
-                        string.Empty,
-                        string.Empty,
-                        0,
-                        0);
+                        id: 88888890,
+                        contentEN: "EN",
+                        contentCS: "CN",
+                        contentCH: "TW",
+                        contentJP: "JP",
+                        contentTH: "TH",
+                        contentIT: string.Empty,
+                        contentKO: "KR",
+                        contentES: string.Empty,
+                        contentVN: "VN",
+                        postTime: new DateTime(2016, 1, 20, 0, 0, 0),
+                        createTime: new DateTime(2016, 1, 20, 0, 0, 0),
+                        lastUpdateTime: new DateTime(2016, 1, 20, 0, 0, 0),
+                        messageType: (byte)messageType,
+                        isSticky: false,
+                        isTest: false,
+                        matchId: 0,
+                        isBatch: false,
+                        creator: 0,
+                        lastUpdator: 0,
+                        creatorName: string.Empty,
+                        lastUpdateName: string.Empty,
+                        userName: string.Empty,
+                        bettransId: string.Empty,
+                        userId: 0,
+                        rowNum: 0);
 
             return message;
         }

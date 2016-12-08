@@ -321,6 +321,11 @@ body {
                 top: 4px;
             }
         }
+
+        .message-content {
+            max-height: 300px;
+            overflow: auto;
+        }
     }
 
     .msg-contents {
@@ -344,11 +349,6 @@ body {
     .tab-content > .tab-pane {
         .row:hover {
             background-color: $table-td-hover-color;
-        }
-
-        .message-content {
-            max-height: 300px;
-            overflow: auto;
         }
     }
 }

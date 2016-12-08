@@ -42,14 +42,13 @@
         this.$(window.document).on('touchend', (event) => {
             const target = $(event.target);
 
+            $tooltip.tooltip('hide');
+
             if (target.attr('data-toggle') === 'tooltip') {
                 target.tooltip('show');
             }
             else if (target.parent().attr('data-toggle') === 'tooltip') {
                 target.parent().tooltip('show');
-            }
-            else {
-                $tooltip.tooltip('hide');
             }
         });
     }

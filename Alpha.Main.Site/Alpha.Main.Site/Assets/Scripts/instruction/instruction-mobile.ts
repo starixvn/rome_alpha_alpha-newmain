@@ -1,11 +1,15 @@
-﻿class InstructionMobile extends Instruction {
+﻿class InstructionMobile {
     private mobileBlockUI: JQuery;
     private mobileIntroModal: JQuery;
     private mobileCloseIntroBtn: JQuery;
+    protected readInstructionKey: string = alpha.key.mobileInstruction;
+    protected $: JQueryStatic;
+
+    constructor($: JQueryStatic) {
+        this.$ = $;
+    }
 
     init = () => {
-        this.readInstructionKey = alpha.key.mobileInstruction
-
         if (!this.readInstruction()) {
             this.cacheDom();
             this.registerEvent();
@@ -29,6 +33,14 @@
     initHeaderMessage = () => {
         const headerMessage = new HeaderMessageMobile(this.$);
         headerMessage.init();
+    }
+
+    readInstruction = (): boolean => {
+        return alpha.localStorage.get(this.readInstructionKey);
+    }
+
+    setReadInstruction = () => {
+        alpha.localStorage.set(this.readInstructionKey, true);
     }
 
     private cacheDom = () => {

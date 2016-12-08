@@ -13,12 +13,10 @@ namespace Alpha.Main.Site.Models.Requests
 
         public IndexQuery(
             IUserSession userSession,
-            bool isEnableSecurityCode,
-            string userAgent)
+            bool isEnableSecurityCode)
         {
             this.userSession = userSession;
             this.isEnableSecurityCode = isEnableSecurityCode;
-            UserAgent = userAgent;
         }
 
         public int CustId => userSession.CustId;
@@ -44,7 +42,5 @@ namespace Alpha.Main.Site.Models.Requests
                     this.isEnableSecurityCode;
 
         public bool IsViewedMemberInfo => userSession.SubPageAccess.ViewMemberInfo;
-
-        public string UserAgent { get; }
     }
 }

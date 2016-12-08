@@ -196,7 +196,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ONEbook.OTP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ONEbook.OTP.1.0.0\lib\net461\ONEbook.OTP.dll</HintPath>
+      <HintPath>..\packages\ONEbook.OTP.1.0.0-beta2\lib\net461\ONEbook.OTP.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ONEbook.UM, Version=2.0.2.7, Culture=neutral, processorArchitecture=MSIL">
@@ -503,12 +503,15 @@
       <DependentUpon>ToolTipMessage.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
+    <Content Include="Web.napexternal.config" />
+    <Content Include="Web.napinternal.config" />
+    <Content Include="Web.proi1.config" />
+    <Content Include="Web.sit.config" />
+    <Content Include="Web.uati1.config" />
     <Content Include="Web.AppSettings.backupMNLI1.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
     <Content Include="Web.backupMNLExNap.config">
-    </Content>
-    <Content Include="Web.backupMNLI1.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.backupMNLNap.config">
@@ -527,7 +530,6 @@
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp.ts" />
-    <TypeScriptCompile Include="Assets\scripts\instruction\instruction.ts" />
     <TypeScriptCompile Include="Assets\scripts\instruction\instruction-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\change-password.ts" />
@@ -748,16 +750,6 @@
     <Content Include="Assets\styles\instruction\images\OldUI-2.png" />
     <Content Include="Assets\styles\instruction\images\OldUI-3.png" />
     <Content Include="Assets\styles\instruction\images\super.png" />
-    <Content Include="Web.napexternal.config">
-    </Content>
-    <Content Include="Web.napinternal.config">
-    </Content>
-    <Content Include="Web.proi1.config">
-    </Content>
-    <Content Include="Web.uati1.config">
-    </Content>
-    <Content Include="Web.sit.config">
-    </Content>
     <TypeScriptCompile Include="Assets\scripts\home\header-msg.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-nav.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\menu-bar.ts" />

@@ -2,10 +2,6 @@
 {
     public class TopTurnoverMember
     {
-        public TopTurnoverMember()
-        {
-        }
-
         public TopTurnoverMember(int custId, string userName, decimal turnOver)
         {
             CustId = custId;
