@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Message">
-    <Setting Key="Age_CustomerSelMessages" SpName="Age_CustomerSelMessages" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+    <Setting Key="Age_CustomerSelMessages" SpName="Age_CustomerSelMessages_xtest" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEn" />
       <Mapping DataField="Content_cs" ObjectProperty="ContentCs" />
@@ -23,9 +23,9 @@
     </Setting>
     <Setting Key="Age_CustomerUpdMessagesRead" SpName="Age_CustomerUpdMessagesRead" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
     </Setting>
-    <Setting Key="Dot_Msg_GetPublicMessage" SpName="Dot_Msg_GetPublicMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+    <Setting Key="Dot_Msg_GetPublicMessage" SpName="Dot_Msg_GetPublicMessage_xtest" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
     </Setting>
-    <Setting Key="Dot_Msg_GetSpecialMessage" SpName="Dot_Msg_GetSpecialMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+    <Setting Key="Dot_Msg_GetSpecialMessage" SpName="Dot_Msg_GetSpecialMessage_xtest" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
     </Setting>
     <Setting Key="Dot_Msg_GetPrivateMessage" SpName="Dot_Msg_GetPrivateMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
     </Setting>
