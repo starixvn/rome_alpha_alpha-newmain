@@ -414,34 +414,6 @@
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.uati1.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
     </Content>
-    <Content Include="App_Data\Message\NormalMessage.napexternal.xml">
-      <DependentUpon>NormalMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Message\NormalMessage.napinternal.xml">
-      <DependentUpon>NormalMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Message\NormalMessage.proi1.xml">
-      <DependentUpon>NormalMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Message\NormalMessage.uati1.xml">
-      <DependentUpon>NormalMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Message\NormalMessage.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Message\SpecialMessage.napexternal.xml">
-      <DependentUpon>SpecialMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Message\SpecialMessage.napinternal.xml">
-      <DependentUpon>SpecialMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Message\SpecialMessage.proi1.xml">
-      <DependentUpon>SpecialMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Message\SpecialMessage.uati1.xml">
-      <DependentUpon>SpecialMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Message\SpecialMessage.xml" />
     <Content Include="App_Data\securitycode.napexternal.json">
       <DependentUpon>securitycode.json</DependentUpon>
     </Content>
@@ -479,6 +451,12 @@
     <Content Include="App_Data\SPNames\PRO\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\PRO\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\PRO\DBONUSER.ON_USER.xml" />
+    <Content Include="App_Data\SPNames\SIT\DBAGE.bodb02.xml" />
+    <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\SIT\DBCUST.CustDB.xml" />
+    <Content Include="App_Data\SPNames\SIT\DBLOG.bodb_CustomerLog.xml" />
+    <Content Include="App_Data\SPNames\SIT\DBMSG.bodb_Message.xml" />
+    <Content Include="App_Data\SPNames\SIT\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\UAT\DBAGE.bodb02.xml">
       <SubType>Designer</SubType>
     </Content>

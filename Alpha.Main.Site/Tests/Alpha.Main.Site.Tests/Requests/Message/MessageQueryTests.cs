@@ -235,27 +235,5 @@
             // Assert
             Assert.AreEqual(RoleId.Agent, query.RoleId);
         }
-
-        [TestCase(MessageType.Public, "NormalMessage.xml")]
-        [TestCase(MessageType.Special, "SpecialMessage.xml")]
-        [TestCase(MessageType.Private, "PrivateMessage.xml")]
-        public void MessageXmlFilePath_Always_GetByMessageType(int messageType, string messageXmlFileName)
-        {
-            // Arrange
-            var messageXmlDirPath = "dirpath";
-
-            // Act
-            var query = new MessageQuery(
-                userSession,
-                messageType,
-                DateTime.Today,
-                DateTime.Today,
-                false,
-                messageXmlDirPath,
-                50);
-
-            // Assert
-            Assert.AreEqual($"{messageXmlDirPath}/{messageXmlFileName}", query.MessageXmlFilePath);
-        }
     }
 }

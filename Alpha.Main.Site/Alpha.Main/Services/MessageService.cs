@@ -6,7 +6,7 @@
 
     public interface MessageService
     {
-        List<Message> GetMessages(
+        IList<Message> GetMessages(
             int custId,
             string parentSites,
             int specialType,
@@ -15,7 +15,5 @@
             DateTime endDate,
             bool isTest,
             int messageType);
-
-        List<Message> GetMessagesFromXml(string xmlFilePath, int messageType, byte userRoleId);
     }
 }

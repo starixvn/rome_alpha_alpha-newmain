@@ -4,6 +4,7 @@ namespace Alpha.Main.Site.Requests.Dashboard.Notice
 {
     using System;
     using System.Collections.Generic;
+    using Configurations;
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -11,12 +12,7 @@ namespace Alpha.Main.Site.Requests.Dashboard.Notice
 
     public class NoticeQuery : IRequest<NoticeMessagesViewModel>
     {
-        private readonly Dictionary<byte, string> parentSitesByLevel = new Dictionary<byte, string>
-        {
-            [UserLevel.Super.Value] = "3000,3100",
-            [UserLevel.Master.Value] = "3000,3200",
-            [UserLevel.Agent.Value] = "3000,3300"
-        };
+        private readonly Dictionary<byte, string> parentSitesByLevel;
 
         private readonly byte roleId;
 
@@ -26,6 +22,8 @@ namespace Alpha.Main.Site.Requests.Dashboard.Notice
             int totalMessage,
             bool isTest)
         {
+            parentSitesByLevel = InitiateParentSitesByLevel();
+
             roleId = userSession.RoleId;
             CustId = userSession.CustId;
             CurrentLang = userSession.Language;
@@ -47,5 +45,15 @@ namespace Alpha.Main.Site.Requests.Dashboard.Notice
         public string CurrentLang { get; }
 
         public string ParentSites => parentSitesByLevel[UserLevel.Value];
+
+        private Dictionary<byte, string> InitiateParentSitesByLevel()
+        {
+            return new Dictionary<byte, string>
+            {
+                [UserLevel.Super.Value] = string.IsNullOrWhiteSpace(AppSettings.MessageSuper) ? "3000,3100" : AppSettings.MessageSuper,
+                [UserLevel.Master.Value] = string.IsNullOrWhiteSpace(AppSettings.MessageMaster) ? "3000,3200" : AppSettings.MessageMaster,
+                [UserLevel.Agent.Value] = string.IsNullOrWhiteSpace(AppSettings.MessageAgent) ? "3000,3300" : AppSettings.MessageAgent
+            };
+        }
     }
 }

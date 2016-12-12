@@ -34,13 +34,6 @@
                                 message.IsTest,
                                 message.MessageType);
 
-            var messagesFromXml = messageService.GetMessagesFromXml(
-                message.MessageXmlFilePath,
-                message.MessageType,
-                message.RoleId);
-
-            messages.AddRange(messagesFromXml);
-
             var messageWrappers = new List<MessageWrapper>(messages.Select(m => new MessageWrapper(m, message.CurrentLang)));
 
             var viewModel = new MessagesViewModel(

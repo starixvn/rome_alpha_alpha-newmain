@@ -107,6 +107,12 @@
 
         public static string GetMessagesDataPath => ConfigurationManager.AppSettings["MessagesDataPath"];
 
+        public static string MessageSuper => ConfigurationManager.AppSettings["Message:Super"];
+
+        public static string MessageMaster => ConfigurationManager.AppSettings["Message:Master"];
+
+        public static string MessageAgent => ConfigurationManager.AppSettings["Message:Agent"];
+
         public static string GetAppPath(string name)
         {
             return ConfigurationManager.AppSettings[name];

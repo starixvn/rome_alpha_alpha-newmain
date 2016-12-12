@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Configurations;
     using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -13,13 +14,6 @@
 
         private static readonly DateTime MinDateTime = new DateTime(1900, 1, 1);
 
-        private static readonly Dictionary<byte, string> ParentSitesByLevel = new Dictionary<byte, string>
-        {
-            [UserLevel.Super.Value] = "3000,3100",
-            [UserLevel.Master.Value] = "3000,3200",
-            [UserLevel.Agent.Value] = "3000,3300"
-        };
-
         private static readonly Dictionary<int, int> SpecialTypes = new Dictionary<int, int>
         {
             [Constants.MessageType.Public] = 0,
@@ -27,12 +21,7 @@
             [Constants.MessageType.Private] = 2
         };
 
-        private static readonly Dictionary<int, string> MessageFileNameByType = new Dictionary<int, string>()
-        {
-            [Constants.MessageType.Public] = "NormalMessage.xml",
-            [Constants.MessageType.Special] = "SpecialMessage.xml",
-            [Constants.MessageType.Private] = "PrivateMessage.xml"
-        };
+        private readonly Dictionary<byte, string> parentSitesByLevel;
 
         public MessageQuery(
             IUserSession userSession,
@@ -43,8 +32,10 @@
             string messagesXmlDirPath,
             int totalMessage = DefaultTotalMessage)
         {
+            parentSitesByLevel = InitiateParentSitesByLevel();
+
             CustId = userSession.CustId;
-            ParentSites = ParentSitesByLevel[userSession.RoleId];
+            ParentSites = parentSitesByLevel[userSession.RoleId];
             MessageType = messageType;
             SpecialType = SpecialTypes[messageType];
             StartDate = MessageType == Constants.MessageType.Special ? MinDateTime : startDate;
@@ -53,7 +44,6 @@
             TotalMessage = totalMessage;
             CurrentLang = userSession.Language;
             RoleId = userSession.RoleId;
-            MessageXmlFilePath = $"{messagesXmlDirPath}/{MessageFileNameByType[messageType]}";
         }
 
         public int CustId { get; }
@@ -76,6 +66,14 @@
 
         public byte RoleId { get; }
 
-        public string MessageXmlFilePath { get; }
+        private Dictionary<byte, string> InitiateParentSitesByLevel()
+        {
+            return new Dictionary<byte, string>
+            {
+                [UserLevel.Super.Value] = string.IsNullOrWhiteSpace(AppSettings.MessageSuper) ? "3000,3100" : AppSettings.MessageSuper,
+                [UserLevel.Master.Value] = string.IsNullOrWhiteSpace(AppSettings.MessageMaster) ? "3000,3200" : AppSettings.MessageMaster,
+                [UserLevel.Agent.Value] = string.IsNullOrWhiteSpace(AppSettings.MessageAgent) ? "3000,3300" : AppSettings.MessageAgent
+            };
+        }
     }
 }
