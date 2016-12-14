@@ -549,7 +549,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your OTP is invalid or expired. Please input another OTP or contact your upline to reset your OTP status..
+        ///   Looks up a localized string similar to The OTP is invalid or expired. Please try another OTP or contact your upline to reset your OTP..
         /// </summary>
         public static string OtpInvalidOrExpiredAndContactUpline {
             get {
