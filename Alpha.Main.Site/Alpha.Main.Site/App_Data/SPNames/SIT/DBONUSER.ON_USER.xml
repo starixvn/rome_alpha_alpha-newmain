@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Functions>
+  <Function Name="Announcement">
+    <Setting Key="Age_MessageNoticeSelByCustID" SpName="Age_MessageNoticeSelByCustID" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0">
+      <Mapping DataField="typeid" ObjectProperty="TypeId" />
+    </Setting>
+    <Setting Key="Age_MessageNoticeUpdStatus" SpName="Age_MessageNoticeUpdStatus" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0">
+    </Setting>
+  </Function>
+</Functions>

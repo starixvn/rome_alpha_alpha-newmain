@@ -3,6 +3,7 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
+    using AppResources;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
@@ -83,6 +84,25 @@ namespace Alpha.Main.Site.Controllers
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
+        }
+
+        public ActionResult Kickout(string reason)
+        {
+            string message = Resources.DefaultErrorMessage;
+
+            if (!string.IsNullOrEmpty(reason))
+            {
+                if (reason == "DuplicationLogin")
+                {
+                    message = Security.stringSessionLogged;
+                }
+                else if (reason == "AccountClosed")
+                {
+                    message = Security.lblConfirmClosed;
+                }
+            }
+
+            return View(message as object);
         }
     }
 }

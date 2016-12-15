@@ -404,4 +404,7 @@
   <data name="CloseAccountOtpMessage" xml:space="preserve">
     <value>由於使用OTP的5次失敗嘗試，您的帳戶已關閉。 請聯繫您的上線或客服部。</value>
   </data>
+  <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
+    <value>OTP无效或过期。请尝试另一个OTP或联系您的上线以重置您的OTP。</value>
+  </data>
 </root>

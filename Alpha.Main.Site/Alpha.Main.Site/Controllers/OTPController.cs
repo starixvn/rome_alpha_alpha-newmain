@@ -2,8 +2,11 @@
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
+    using AppResources;
+    using Main.Models;
     using MediatR;
     using Requests.Otp;
+    using SecurityCode.Web;
     using Web;
     using Web.Filters;
 
@@ -27,6 +30,11 @@
         [HttpGet]
         public ActionResult VerifyOtp()
         {
+            if (!SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
+            {
+                return Redirect("~/SecurityCode/VerifySecurityCode");
+            }
+
             return View();
         }
 
@@ -34,6 +42,11 @@
         [HttpPost, AntiXsrfFilter]
         public JsonResult VerifyOtp(VerifyOtpCommand command)
         {
+            if (!SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
+            {
+                return Json(Result.CreateErrorResult(Security.NotAuthorized));
+            }
+
             var result = mediator.Send(command);
 
             return Json(result);

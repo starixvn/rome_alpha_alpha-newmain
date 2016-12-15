@@ -161,6 +161,7 @@ $(() => {
         },
         error: function (xhr, textStatus, errorThrown) {
             if (xhr.status === 401) {
+                alert('Oops... you are here because of a system error, please notify the administrators.');
                 alpha.core.signOut();
             }
         }

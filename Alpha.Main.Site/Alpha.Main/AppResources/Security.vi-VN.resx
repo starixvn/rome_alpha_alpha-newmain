@@ -405,4 +405,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="CloseAccountOtpMessage" xml:space="preserve">
     <value>Tài khoản của quý khách đã bị đóng vì nhập sai 5 lần mã OTP. Xin vui lòng liên hệ cấp trên hoặc CSD.</value>
   </data>
+  <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
+    <value>Mã OTP không hợp lệ hoặc đã hết hạn. Vui lòng thử lại mã OTP khác hoặc liên hệ với cấp trên để đặt lại mã OTP.</value>
+  </data>
 </root>

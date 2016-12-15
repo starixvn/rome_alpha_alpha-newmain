@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Data;
-    using Constants;
     using Fanex.Data;
     using Fanex.Data.Repository;
     using Models.Message;
@@ -45,7 +44,7 @@
                        contentIT: !Convert.IsDBNull(reader["Content_it"]) ? Convert.ToString(reader["Content_it"]) : string.Empty,
                        contentKO: !Convert.IsDBNull(reader["Content_ko"]) ? Convert.ToString(reader["Content_ko"]) : string.Empty,
                        contentES: !Convert.IsDBNull(reader["Content_es"]) ? Convert.ToString(reader["Content_es"]) : string.Empty,
-                       contentVN: messageType == MessageType.Private && !Convert.IsDBNull(reader["Content_vn"]) ? Convert.ToString(reader["Content_vn"]) : string.Empty,
+                       contentVN: !Convert.IsDBNull(reader["Content_vn"]) ? Convert.ToString(reader["Content_vn"]) : string.Empty,
                        postTime: !Convert.IsDBNull(reader["PostTime"]) ? Convert.ToDateTime(reader["PostTime"]) : DateTime.Today,
                        createTime: !Convert.IsDBNull(reader["CreateTime"]) ? Convert.ToDateTime(reader["CreateTime"]) : DateTime.Today,
                        lastUpdateTime: !Convert.IsDBNull(reader["LastUpdateTime"]) ? Convert.ToDateTime(reader["LastUpdateTime"]) : DateTime.Today,

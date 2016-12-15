@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Web;
     using Main.Helpers;
     using Main.Models.Enumerations;
@@ -23,7 +22,7 @@
             int messageType,
             byte roleId)
         {
-            Messages = messages.OrderByDescending(m => m.CurrentMessage.PostTime).ToList();
+            Messages = messages;
             StartDate = startDate;
             EndDate = endDate;
             MessageType = messageType;

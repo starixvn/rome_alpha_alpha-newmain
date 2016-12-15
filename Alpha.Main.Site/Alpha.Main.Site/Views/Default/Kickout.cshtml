@@ -1,0 +1,17 @@
+﻿@model string
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Kickout</title>
+</head>
+<body>
+
+    @Html.Hidden("message", Model)
+    @Html.Hidden("oldMainRootPath", MicroSites.OldMainUrl())
+    @Html.Hidden("mainRootPath", MicroSites.MainUrl())
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/kick-out")" type="text/javascript"></script>
+</body>
+</html>

@@ -14,6 +14,7 @@
             string contentIT,
             string contentKO,
             string contentES,
+            string contentVN,
             DateTime postTime,
             byte type,
             bool isSticky,
@@ -30,6 +31,7 @@
             ContentIT = contentIT;
             ContentKO = contentKO;
             ContentES = contentES;
+            ContentVN = contentVN;
             PostTime = postTime;
             MessageType = type;
             IsSticky = isSticky;
@@ -55,6 +57,8 @@
         public string ContentKO { get; }
 
         public string ContentES { get; }
+
+        public string ContentVN { get; }
 
         public DateTime PostTime { get; }
 

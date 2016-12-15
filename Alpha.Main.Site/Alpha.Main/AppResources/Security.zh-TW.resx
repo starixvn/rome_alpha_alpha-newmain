@@ -409,4 +409,7 @@
   <data name="CloseAccountOtpMessage" xml:space="preserve">
     <value>由於使用OTP的5次失敗嘗試，您的帳戶已關閉。 請聯繫您的上線或客服部。</value>
   </data>
+  <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
+    <value>OTP無效或過期。 請嘗試另一個OTP或聯繫您的上線以重置您的OTP。</value>
+  </data>
 </root>
