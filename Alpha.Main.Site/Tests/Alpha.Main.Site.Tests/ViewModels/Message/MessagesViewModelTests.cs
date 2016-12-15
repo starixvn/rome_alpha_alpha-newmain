@@ -106,26 +106,5 @@
             // Assert
             Assert.AreEqual(userLevelName, viewModel.UserLevelName);
         }
-
-        [Test]
-        public void Messages_Always_OrderByDescendingPostTime()
-        {
-            // Arrange
-            var messageWrappers = FakeDataHelper.CreateMany<MessageWrapper>().ToList();
-            var firstPostTime = messageWrappers.OrderByDescending(mw => mw.CurrentMessage.PostTime).First().CurrentMessage.PostTime;
-
-            // Act
-            var viewModel = new MessagesViewModel(
-                messageWrappers,
-                DateTime.Today,
-                DateTime.Today,
-                MessageType.Public,
-                RoleId.Agent);
-
-            // Assert
-            Assert.AreEqual(
-                firstPostTime,
-                viewModel.Messages.First().CurrentMessage.PostTime);
-        }
     }
 }
