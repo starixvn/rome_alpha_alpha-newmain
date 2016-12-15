@@ -1,9 +1,16 @@
 ﻿{
   "Framework": "jasmine",
+  "EnableCodeCoverage": "true",
   "Compile": {
     "Mode": "External",
     "Extensions": [ ".ts" ]
   },
+  "CodeCoverageExcludes": [
+    "*\\libs\\*"
+  ],
+  "CodeCoverageIgnores": [
+    "*\\tests\\*"
+  ],
   "References": [
     { "Path": "libs/jquery.js" },
     { "Path": "libs/tooltip.js" },
@@ -25,8 +32,17 @@
     { "Path": "../instruction/instruction-mobile.ts" }
   ],
   "Tests": [
-    { "Path": "app/dashboard" },
-    { "Path": "app/message" },
-    { "Path": "app/instruction" }
+    {
+      "Path": "app/dashboard",
+      "Excludes": [ "**.js.map" ]
+    },
+    {
+      "Path": "app/message",
+      "Excludes": [ "**.js.map" ]
+    },
+    {
+      "Path": "app/instruction",
+      "Excludes": [ "**.js.map" ]
+    }
   ]
 }
