@@ -1,4 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="6887901" name="Disable Alpha - Search_Copy"
+                       startdate="12/16/2016" enddate="12/23/2016"  effectdate="12/08/2016"
+                        width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        Due to maintenance, "Search and Copy" function is temporarily unavailable until further notice. Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>Dear valued agents,</p>
+      <p>
+        Due to maintenance, "Search and Copy" function is temporarily unavailable until further notice. Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>Dear valued agents,</p>
+      <p>
+        Due to maintenance, "Search and Copy" function is temporarily unavailable until further notice. Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        Due to maintenance, "Search and Copy" function is temporarily unavailable until further notice. Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        Due to maintenance, "Search and Copy" function is temporarily unavailable until further notice. Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>Dear valued agents,</p>
+      <p>
+        Due to maintenance, "Search and Copy" function is temporarily unavailable until further notice. Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>Dear valued agents,</p>
+      <p>
+        Due to maintenance, "Search and Copy" function is temporarily unavailable until further notice. Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
 </FileDB>
-  
