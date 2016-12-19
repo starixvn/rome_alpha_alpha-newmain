@@ -1,5 +1,154 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  
+  <PopupAnnouncement id="6842501" name="Premium Baccarat"
+                         startdate="12/19/2016" enddate="1/2/2017"  effectdate="12/22/2016"
+                          width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are excited to announce that we will bring you a better Live Casino experience with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        On <b>{effectdate}</b>, we will cease the operation of Party Baccarat and Party Roulette, Party Baccarat will be replaced as ‘Premium Baccarat’.
+      </p>
+      <p>
+        Premium Baccarat is the upgraded version of Party Baccarat which will bring you a better and pleasant experience in our Baccarat game.
+        We will also offer higher stake level limit for Premium Baccarat, agents can now offer a better quality live casino game to their prestige members with higher stakes.
+      </p>
+      <p>
+        We pride ourselves on giving our members the best gaming experience.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>
+        尊敬的代理们，
+      </p>
+      <p>
+        我们很荣兴地宣布，将为您带来一个更好的现场娱乐厅体验从 <b>{effectdate}</b>。
+      </p>
+      <p>
+        在 <b>{effectdate}</b>，我们将停止趴踢百家乐和趴踢轮盘的运作，趴踢百家乐将被替换为“专业百家乐”。
+      </p>
+      <p>
+        专业百家乐是趴踢百家乐的升级版，将为您带来一个全新以及更好的百家乐。同时，我们也为专业百家乐设有更高的赌注限额，以便代理可以提供一个更优质的赌场游戏给您们给位尊贵的会员。
+      </p>
+      <p>
+        能够提供给会员更有素质的游戏是我们的荣幸
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>
+        尊敬的代理们，
+      </p>
+      <p>
+        我們很榮興地宣布，將為您帶來一個更好的现场娱乐厅體驗從 <b>{effectdate}</b>。
+      </p>
+      <p>
+        在 <b>{effectdate}</b>，我們將停止趴踢百家乐和趴踢轮盘的運作，趴踢百家乐將被替換為“專業百家樂”。
+      </p>
+      <p>
+        專業百家樂是趴踢百家樂的升級版，將為您帶來一個全新以及更好的百家樂。同時，我們也為專業百家樂設有更高的賭注限額，以便代理們可以提供一個更優質的賭場遊戲給您們給位尊貴的會員。
+      </p>
+      <p>
+        能夠提供給會員更有素質的游戲是我們的榮幸
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are excited to announce that we will bring you a better Live Casino experience with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        On <b>{effectdate}</b>, we will cease the operation of Party Baccarat and Party Roulette, Party Baccarat will be replaced as ‘Premium Baccarat’.
+      </p>
+      <p>
+        Premium Baccarat is the upgraded version of Party Baccarat which will bring you a better and pleasant experience in our Baccarat game.
+        We will also offer higher stake level limit for Premium Baccarat, agents can now offer a better quality live casino game to their prestige members with higher stakes.
+      </p>
+      <p>
+        We pride ourselves on giving our members the best gaming experience.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are excited to announce that we will bring you a better Live Casino experience with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        On <b>{effectdate}</b>, we will cease the operation of Party Baccarat and Party Roulette, Party Baccarat will be replaced as ‘Premium Baccarat’.
+      </p>
+      <p>
+        Premium Baccarat is the upgraded version of Party Baccarat which will bring you a better and pleasant experience in our Baccarat game.
+        We will also offer higher stake level limit for Premium Baccarat, agents can now offer a better quality live casino game to their prestige members with higher stakes.
+      </p>
+      <p>
+        We pride ourselves on giving our members the best gaming experience.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        เรามีความยินดีที่จะแจ้งให้ทราบว่าเราจะนำท่านไปสู่ประสบการณ์ใหม่สำหรับค่าสิโนเกมส์สดที่ดีกว่า เริ่มตั้งแต่ <b>{effectdate}</b>
+      </p>
+      <p>
+        เริ่ม <b>{effectdate}</b> เราจะหยุดให้บริการปาร์ตี้บาคาร่าและปาร์ตี้รูเล็ท แล้วเราจะเปิด"
+        พรีเมี่ยมบาคาร่า" แทนปาร์ตี้บาคาร่า
+      </p>
+      <p>
+        พรีเมี่ยมบาคาร่าคือการอับเกรดจากปาร์ตี้บาคาร่าซึ่งจะนำคุณพบกับบาคาร่าของเราที่ใหม่และดีกว่าเดิมสำหรับพรีเมื่ยมบาคาร่าจะมีระดับค่าเดิมพันที่สูงขึ้นขณะนี้เอเจ่นต์สามารถตั้งค่าเดิมพันที่สูงขึ้นให้กับสมาชิกของท่านได้แล้ว
+      </p>
+      <p>
+        เรามีความภูมิใจที่จะให้สมาชิกของเราได้มีประสบการณ์ในการเล่นเกมส์ที่ดีที่สุด
+      </p>
+      <p>
+        ขอบคุณค่ะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>Kính gửi quý khách hàng,</p>
+      <p>
+        Chúng tôi rất háo hức mang đến cho bạn một trải nghiệm mới về Live Casino kể từ <b>{effectdate}</b>.
+      </p>
+      <p>
+        Từ <b>{effectdate}</b>, chúng tôi sẽ ngừng cung cấp Party Baccarat và Party Roulette, Party Baccarat sẽ được thay thế bằng ‘Premium Baccarat’.
+      </p>
+      <p>
+        Premium Baccarat là phiên bản nâng cấp của Party Baccarat, sản phẩm này sẽ mang đến cho bạn một trải nghiệm tốt hơn về trò chơi Baccarat. 
+        Với mức giới hạn cược cao hơn của Premium Baccarat, những trò chơi Live Casino sẽ đem lại cách chơi hấp dẫn hơn với lượng tiền cược cao hơn từ khách hàng của bạn.
+      </p>
+      <p>
+        Chúng tôi tự hào mang đến những trải nghiệm trò chơi tốt nhất cho khách hàng của mình.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="6626501" name="Separate Bet Setting for Soccer - Parlay"
                          startdate="11/1/2016" enddate="12/22/2016"  effectdate="12/08/2016"
                           width="1000" height="220" top="110" left="350">
