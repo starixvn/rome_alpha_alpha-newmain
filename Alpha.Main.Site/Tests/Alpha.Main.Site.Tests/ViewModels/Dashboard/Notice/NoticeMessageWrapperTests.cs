@@ -37,7 +37,7 @@
         [TestCase(Language.Thai, "contentTH")]
         [TestCase(Language.Japanese, "contentJP")]
         [TestCase(Language.Korean, "contentKO")]
-        [TestCase(Language.Vietnamese, "contentVI")]
+        [TestCase(Language.Vietnamese, "contentVN")]
         [TestCase(Language.English, "contentEN")]
         public void Content_WhenCurrentLanguageContentIsNull_ReturnContentDefault(string lang, string contentPropName)
         {
@@ -56,7 +56,7 @@
         [TestCase(Language.Thai, "TH")]
         [TestCase(Language.Japanese, "JP")]
         [TestCase(Language.Korean, "KO")]
-        [TestCase(Language.Vietnamese, "EN")]
+        [TestCase(Language.Vietnamese, "VN")]
         [TestCase(Language.English, "EN")]
         public void Content_ByCurrentLanguage_ReturnContent(string lang, string expectedContent)
         {
@@ -75,7 +75,7 @@
         [TestCase(Language.Thai, "TH")]
         [TestCase(Language.Japanese, "JP")]
         [TestCase(Language.Korean, "KO")]
-        [TestCase(Language.Vietnamese, "EN")]
+        [TestCase(Language.Vietnamese, "VN")]
         [TestCase(Language.English, "EN")]
         public void ShortContent_Always_ReturnData(string lang, string expectedShortContent)
         {
