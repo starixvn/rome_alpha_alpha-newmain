@@ -17,7 +17,7 @@
         }
 
         [Test]
-        public void GetDateTimeNow_Always_GetSystemTimeLessThan1Milliseconds()
+        public void GetDateTimeNow_Always_GetSystemTimeLessThan5Milliseconds()
         {
             // Arrange
             var dateTimeNow = DateTime.Now;
@@ -26,7 +26,7 @@
             var actualDateTimeNow = dateTimeWrap.Now;
 
             // Assert
-            Assert.LessOrEqual((actualDateTimeNow - dateTimeNow).TotalMilliseconds, 1);
+            Assert.LessOrEqual((actualDateTimeNow - dateTimeNow).TotalMilliseconds, 5);
         }
 
         [Test]

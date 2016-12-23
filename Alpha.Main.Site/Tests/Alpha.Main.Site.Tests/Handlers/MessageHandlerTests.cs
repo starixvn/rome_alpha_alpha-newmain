@@ -56,8 +56,7 @@ namespace Alpha.Main.Site.Tests.Handlers
                 1,
                 DateTime.Today,
                 DateTime.Today,
-                false,
-                string.Empty);
+                false);
 
             // Act
             messageHandler.Handle(query);
@@ -88,8 +87,7 @@ namespace Alpha.Main.Site.Tests.Handlers
                 1,
                 DateTime.Today,
                 DateTime.Today,
-                false,
-                string.Empty);
+                false);
 
             // Act
             var viewModel = messageHandler.Handle(query);

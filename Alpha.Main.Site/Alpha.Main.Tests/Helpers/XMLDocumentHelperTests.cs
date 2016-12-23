@@ -37,14 +37,6 @@
             Assert.Throws<ArgumentException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(emptyDocumentPath)));
         }
 
-        [TestCase(@"TestData\XMLDocumentHelper")]
-        [TestCase(@"TestData\XMLDocumentHelper\NotExistXMLDocument.xml")]
-        public void LoadDocumentFromPath_NotExistDirectoryPath_ThrowDirectoryNotFoundException(string documentPath)
-        {
-            // Act & Assert
-            Assert.Throws<DirectoryNotFoundException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(documentPath)));
-        }
-
         [Test]
         public void LoadDocumentFromPath_InvalidXMLFile_ThrowXmlException()
         {
@@ -53,13 +45,6 @@
 
             // Act & Assert
             Assert.Throws<XmlException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(absoluteDocumentPath)));
-        }
-
-        [TestCase(@"TestData\")]
-        public void LoadDocumentFromPath_FileNotFoundPath_ThrowFileNotFoundException(string documentPath)
-        {
-            // Act & Assert
-            Assert.Throws<FileNotFoundException>(new TestDelegate(() => XMLDocumentHelper.LoadDocumentFromPath(documentPath)));
         }
 
         [TestCase(@"TestData\XMLDocumentHelper\ExampleXMLDocument.xml")]

@@ -34,8 +34,7 @@
                 MessageType.Public,
                 DateTime.Today,
                 DateTime.Today,
-                false,
-                string.Empty);
+                false);
 
             // Assert
             Assert.AreEqual(custId, query.CustId);
@@ -55,8 +54,7 @@
                     MessageType.Public,
                     DateTime.Today,
                     DateTime.Today,
-                    false,
-                    string.Empty);
+                    false);
 
             // Assert
             Assert.AreEqual(expectedParentSitesId, query.ParentSites);
@@ -74,8 +72,7 @@
                 msgType,
                 DateTime.Today,
                 DateTime.Today,
-                false,
-                string.Empty);
+                false);
 
             // Assert
             Assert.AreEqual(msgType, query.MessageType);
@@ -92,8 +89,7 @@
                 messageType,
                 DateTime.Today,
                 DateTime.Today,
-                false,
-                string.Empty);
+                false);
 
             // Assert
             Assert.AreEqual(specialType, query.SpecialType);
@@ -112,8 +108,7 @@
                 messageType,
                 startDate,
                 DateTime.Today,
-                false,
-                string.Empty);
+                false);
 
             // Assert
             Assert.AreEqual(startDate, query.StartDate);
@@ -131,8 +126,7 @@
                 MessageType.Special,
                 startDate,
                 DateTime.Today,
-                false,
-                string.Empty);
+                false);
 
             // Assert
             Assert.AreEqual(startDate, query.StartDate);
@@ -150,8 +144,7 @@
                 MessageType.Public,
                 DateTime.Today,
                 endDate,
-                false,
-                string.Empty);
+                false);
 
             // Assert
             Assert.AreEqual(endDate.AddDays(1).AddTicks(-1), query.EndDate);
@@ -169,8 +162,7 @@
                 MessageType.Public,
                 DateTime.Today,
                 DateTime.Today,
-                isTest,
-                string.Empty);
+                isTest);
 
             // Assert
             Assert.AreEqual(isTest, query.IsTest);
@@ -189,8 +181,7 @@
                 MessageType.Public,
                 DateTime.Today,
                 DateTime.Today,
-                false,
-                string.Empty);
+                false);
 
             // Assert
             Assert.AreEqual(currentLang, query.CurrentLang);
@@ -209,7 +200,6 @@
                 DateTime.Today,
                 DateTime.Today,
                 false,
-                string.Empty,
                 totalMessage);
 
             // Assert
@@ -229,7 +219,6 @@
                 DateTime.Today,
                 DateTime.Today,
                 false,
-                string.Empty,
                 50);
 
             // Assert

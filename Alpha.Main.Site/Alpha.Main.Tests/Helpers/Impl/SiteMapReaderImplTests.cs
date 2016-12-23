@@ -15,12 +15,12 @@
             siteMapReaderImpl = new SiteMapReaderImpl();
         }
 
-        [Test]
-        public void GetRootNode_NotProvideRootNode_ThrowsNullReferenceException()
-        {
-            // Act & Assert
-            Assert.Throws<NullReferenceException>(new TestDelegate(() => siteMapReaderImpl.GetRootNode()));
-        }
+        ////[Test]
+        ////public void GetRootNode_NotProvideRootNode_ThrowsNullReferenceException()
+        ////{
+        ////    // Act & Assert
+        ////    Assert.Throws<NullReferenceException>(new TestDelegate(() => siteMapReaderImpl.GetRootNode()));
+        ////}
 
         [Test]
         public void GetRootNode_ProvideRootNode_ReturnsInputRootNode()

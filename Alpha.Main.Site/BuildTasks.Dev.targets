@@ -6,6 +6,10 @@
   <Target Name="MyTargets">
 	<Exec Command="_tools\Nuget\NuGet restore Alpha.Main.Site.sln"/>
 	<MSBuild Projects="Alpha.Main.Site.sln" />
+	
+	<MSBuild 
+	Projects="Alpha.Main.Site.sln" 
+	Properties="RunNunitTests=true;TreatWarningsAsErrors=true;RunCodeAnalysis=true;StyleCopEnabled=true" />
   </Target>
   
 </Project>
