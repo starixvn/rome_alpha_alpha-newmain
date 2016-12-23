@@ -3,17 +3,20 @@
   <PopupAnnouncement id="6842501" name="Premium Baccarat"
                          startdate="12/19/2016" enddate="1/2/2017"  effectdate="12/22/2016"
                           width="1000" height="220" top="110" left="350">
-    <en-US src="">
+      <en-US src="">
       <p>Dear valued agents,</p>
       <p>
         We are excited to announce that we will bring you a better Live Casino experience with effect from <b>{effectdate}</b>.
       </p>
       <p>
-        On <b>{effectdate}</b>, we will cease the operation of Party Baccarat and Party Roulette, Party Baccarat will be replaced as ‘Premium Baccarat’.
+        On <b>{effectdate}</b>, we will cease the operation of Party Baccarat and Party Roulette and Party Baccarat will be replaced and renamed as ‘Premium Baccarat’.
       </p>
       <p>
-        Premium Baccarat is the upgraded version of Party Baccarat which will bring you a better and pleasant experience in our Baccarat game.
-        We will also offer higher stake level limit for Premium Baccarat, agents can now offer a better quality live casino game to their prestige members with higher stakes.
+        Premium Baccarat is the upgraded version of Party Baccarat which will bring you a better and pleasant experience in our Baccarat game. We will offer higher stake level limit for Premium Baccarat, agents can now offer a better quality live casino game to their prestige member with higher stakes.
+      </p>
+      <p>
+        Super are required to do the setting for their downlines in order to enable them to place bets. 
+        Please note that the product name in the bet slip will change from Party Baccarat to Premium Baccarat accordingly.
       </p>
       <p>
         We pride ourselves on giving our members the best gaming experience.
@@ -31,10 +34,13 @@
         我们很荣兴地宣布，将为您带来一个更好的现场娱乐厅体验从 <b>{effectdate}</b>。
       </p>
       <p>
-        在 <b>{effectdate}</b>，我们将停止趴踢百家乐和趴踢轮盘的运作，趴踢百家乐将被替换为“专业百家乐”。
+        在 <b>{effectdate}</b>，我们将停止趴踢百家乐和趴踢轮盘的运作，趴踢百家乐将被替换并重新命名为“专业百家乐”。
       </p>
       <p>
         专业百家乐是趴踢百家乐的升级版，将为您带来一个全新以及更好的百家乐。同时，我们也为专业百家乐设有更高的赌注限额，以便代理可以提供一个更优质的赌场游戏给您们给位尊贵的会员。
+      </p>
+      <p>
+        超级总代需自行调整下线设置, 以便开启该产品让下线投注。注单的产品名称将由 "趴踢百家乐" 转换成 "专业百家乐"。
       </p>
       <p>
         能够提供给会员更有素质的游戏是我们的荣幸
@@ -52,10 +58,13 @@
         我們很榮興地宣布，將為您帶來一個更好的现场娱乐厅體驗從 <b>{effectdate}</b>。
       </p>
       <p>
-        在 <b>{effectdate}</b>，我們將停止趴踢百家乐和趴踢轮盘的運作，趴踢百家乐將被替換為“專業百家樂”。
+        在 <b>{effectdate}</b>， 我們將停止趴踢百家樂和趴踢輪盤的運作，趴踢百家樂將被替換並重新命名為“專業百家樂”。
       </p>
       <p>
         專業百家樂是趴踢百家樂的升級版，將為您帶來一個全新以及更好的百家樂。同時，我們也為專業百家樂設有更高的賭注限額，以便代理們可以提供一個更優質的賭場遊戲給您們給位尊貴的會員。
+      </p>
+      <p>
+        超級總代需自行調整下線設置, 以便開啟該產品讓下線投注。注單的產品名稱將由 "趴踢百家樂" 轉換成 "專業百家樂"。
       </p>
       <p>
         能夠提供給會員更有素質的游戲是我們的榮幸
@@ -78,6 +87,10 @@
         We will also offer higher stake level limit for Premium Baccarat, agents can now offer a better quality live casino game to their prestige members with higher stakes.
       </p>
       <p>
+        Super are required to do the setting for their downlines in order to enable them to place bets. 
+        Please note that the product name in the bet slip will change from Party Baccarat to Premium Baccarat accordingly.
+      </p>
+      <p>
         We pride ourselves on giving our members the best gaming experience.
       </p>
       <p>
@@ -96,6 +109,9 @@
       <p>
         Premium Baccarat is the upgraded version of Party Baccarat which will bring you a better and pleasant experience in our Baccarat game.
         We will also offer higher stake level limit for Premium Baccarat, agents can now offer a better quality live casino game to their prestige members with higher stakes.
+      </p>
+      <p>
+        Super are required to do the setting for their downlines in order to enable them to place bets. Please note that the product name in the bet slip will change from Party Baccarat to Premium Baccarat accordingly.
       </p>
       <p>
         We pride ourselves on giving our members the best gaming experience.
@@ -133,11 +149,14 @@
         Chúng tôi rất háo hức mang đến cho bạn một trải nghiệm mới về Live Casino kể từ <b>{effectdate}</b>.
       </p>
       <p>
-        Từ <b>{effectdate}</b>, chúng tôi sẽ ngừng cung cấp Party Baccarat và Party Roulette, Party Baccarat sẽ được thay thế bằng ‘Premium Baccarat’.
+        Từ <b>{effectdate}</b>, chúng tôi sẽ ngừng cung cấp Party Baccarat và Party Roulette, Party Baccarat sẽ được đổi tên thành ‘Premium Baccarat’.
       </p>
       <p>
         Premium Baccarat là phiên bản nâng cấp của Party Baccarat, sản phẩm này sẽ mang đến cho bạn một trải nghiệm tốt hơn về trò chơi Baccarat.
         Với mức giới hạn cược cao hơn của Premium Baccarat, những trò chơi Live Casino sẽ đem lại cách chơi hấp dẫn hơn với lượng tiền cược cao hơn từ khách hàng của bạn.
+      </p>
+      <p>
+        Super phải cấu hình các thiết lập cho cấp dưới trước khi trò chơi này được cho phép đặt cược. Lưu ý tên trò chơi trong Thiết Lập Trò Chơi được đổi tên từ Party Baccarat sang Premium Baccarat.
       </p>
       <p>
         Chúng tôi tự hào mang đến những trải nghiệm trò chơi tốt nhất cho khách hàng của mình.
