@@ -4,15 +4,18 @@
     <!--Report-->
     <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]">
       <siteMapNode resourceKey="memberWinLoss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=2" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="WinLossDetail?lv=2" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberWinLoss" appPath="ReportsAppPath" url="enteredresult/agent" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="winlossdetail/agent" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=2" roles="Agent"></siteMapNode>
 
       <siteMapNode resourceKey="agentwinloss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=3" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="WinLossDetail?lv=3" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/master" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/master" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="agentOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=3" roles="Master"></siteMapNode>
 
       <siteMapNode resourceKey="masterwinloss" appPath="OldMainAppPath" url="_Reports/Common/MatchResultEntered.aspx?lv=4" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="WinLossDetail?lv=4" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="masterwinloss" appPath="ReportsAppPath" url="enteredresult/super" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/super" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="masterOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=4" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="matchwinloss" appPath="OldMainAppPath" url="_Reports/MatchWinloss/MatchWinLoss.aspx" roles="Agent"></siteMapNode>
