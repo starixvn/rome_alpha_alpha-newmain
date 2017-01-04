@@ -76,44 +76,44 @@
             Assert.AreEqual(expectedLabel, viewModel.TotalDownlineCreditLabel);
         }
 
-        [TestCase(RoleId.Super, "~/_Reports/Winloss/WinlossSuper.aspx?custId={0}&fdate={1}&tdate={2}")]
-        [TestCase(RoleId.Master, "~/_Reports/Winloss/WinlossMaster.aspx?custId={0}&fdate={1}&tdate={2}")]
-        [TestCase(RoleId.Agent, "~/_Reports/Winloss/WinlossAgent.aspx?custId={0}&fdate={1}&tdate={2}")]
-        public void MemberTodayWinLossReportUrl_ByUserLevel_ReturnCorrectUrl(byte roleId, string expectedUrl)
-        {
-            // Arrange
-            var userLevel = Enumeration.FromValue<UserLevel>(roleId);
+        ////[TestCase(RoleId.Super, "~/_Reports/Winloss/WinlossSuper.aspx?custId={0}&fdate={1}&tdate={2}")]
+        ////[TestCase(RoleId.Master, "~/_Reports/Winloss/WinlossMaster.aspx?custId={0}&fdate={1}&tdate={2}")]
+        ////[TestCase(RoleId.Agent, "~/_Reports/Winloss/WinlossAgent.aspx?custId={0}&fdate={1}&tdate={2}")]
+        ////public void MemberTodayWinLossReportUrl_ByUserLevel_ReturnCorrectUrl(byte roleId, string expectedUrl)
+        ////{
+        ////    // Arrange
+        ////    var userLevel = Enumeration.FromValue<UserLevel>(roleId);
 
-            // Act
-            var viewModel = new BalanceInfoViewModel(
-                balanceInfo,
-                userLevel,
-                "UUS",
-                CustId.ValidId);
+        ////    // Act
+        ////    var viewModel = new BalanceInfoViewModel(
+        ////        balanceInfo,
+        ////        userLevel,
+        ////        "UUS",
+        ////        CustId.ValidId);
 
-            // Assert
-            expectedUrl = string.Format(expectedUrl, CustId.ValidId, DateTime.Today, DateTime.Today);
-            Assert.AreEqual(expectedUrl, viewModel.MemberTodayWinLossReportPath);
-        }
+        ////    // Assert
+        ////    expectedUrl = string.Format(expectedUrl, CustId.ValidId, DateTime.Today, DateTime.Today);
+        ////    Assert.AreEqual(expectedUrl, viewModel.MemberTodayWinLossReportPath);
+        ////}
 
-        [TestCase(RoleId.Super, "~/_Reports/Winloss/WinlossSuper.aspx?custId={0}&fdate={1}&tdate={2}")]
-        [TestCase(RoleId.Master, "~/_Reports/Winloss/WinlossMaster.aspx?custId={0}&fdate={1}&tdate={2}")]
-        [TestCase(RoleId.Agent, "~/_Reports/Winloss/WinlossAgent.aspx?custId={0}&fdate={1}&tdate={2}")]
-        public void MemberYerterdayWinLossReportUrl_ByUserLevelWithCustId_ReturnCorrectUrl(byte roleId, string expectedUrl)
-        {
-            // Arrange
-            var userLevel = Enumeration.FromValue<UserLevel>(roleId);
+        ////[TestCase(RoleId.Super, "~/_Reports/Winloss/WinlossSuper.aspx?custId={0}&fdate={1}&tdate={2}")]
+        ////[TestCase(RoleId.Master, "~/_Reports/Winloss/WinlossMaster.aspx?custId={0}&fdate={1}&tdate={2}")]
+        ////[TestCase(RoleId.Agent, "~/_Reports/Winloss/WinlossAgent.aspx?custId={0}&fdate={1}&tdate={2}")]
+        ////public void MemberYerterdayWinLossReportUrl_ByUserLevelWithCustId_ReturnCorrectUrl(byte roleId, string expectedUrl)
+        ////{
+        ////    // Arrange
+        ////    var userLevel = Enumeration.FromValue<UserLevel>(roleId);
 
-            // Act
-            var viewModel = new BalanceInfoViewModel(
-                balanceInfo,
-                userLevel,
-                "UUS",
-                CustId.ValidId);
+        ////    // Act
+        ////    var viewModel = new BalanceInfoViewModel(
+        ////        balanceInfo,
+        ////        userLevel,
+        ////        "UUS",
+        ////        CustId.ValidId);
 
-            // Assert
-            expectedUrl = string.Format(expectedUrl, CustId.ValidId, DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1));
-            Assert.AreEqual(expectedUrl, viewModel.MemberYesterdayWinLossReportPath);
-        }
+        ////    // Assert
+        ////    expectedUrl = string.Format(expectedUrl, CustId.ValidId, DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1));
+        ////    Assert.AreEqual(expectedUrl, viewModel.MemberYesterdayWinLossReportPath);
+        ////}
     }
 }

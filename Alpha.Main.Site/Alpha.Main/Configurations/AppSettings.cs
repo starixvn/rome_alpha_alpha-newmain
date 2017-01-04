@@ -34,6 +34,14 @@
             }
         }
 
+        public static string ReportAppPath
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["ReportsAppPath"];
+            }
+        }
+
         public static string UsersAlwaysAllowAccessBetsListMonitoring
         {
             get

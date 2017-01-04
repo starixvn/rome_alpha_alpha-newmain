@@ -8,7 +8,7 @@ namespace Alpha.Main
     using System.Web;
     using Fanex.Products;
     using Helpers;
-    using Models.Menus;    
+    using Models.Menus;
     using Sunplus.Agent.Model.Definitions;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;

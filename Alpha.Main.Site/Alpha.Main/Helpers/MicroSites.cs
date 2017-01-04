@@ -19,6 +19,12 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
+        public static string ReportSiteUrl(string virtualPath = "~/")
+        {
+            return AppPathHelper.GetAppPath(AppSettings.ReportAppPath, virtualPath);
+        }
+
+        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
         public static string MainUrl(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, virtualPath);

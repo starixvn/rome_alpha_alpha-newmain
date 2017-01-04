@@ -2,6 +2,7 @@
 {
     using System;
     using AppResources;
+    using Main.Helpers;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
 
@@ -38,9 +39,9 @@
 
         public int CustId { get; }
 
-        public string MemberTodayWinLossReportPath => GetMemberWinLossReportPathByDate(DateTime.Today, DateTime.Today);
+        public string MemberTodayWinLossReportPath => GetMemberWinLossReportPathByDate(true);
 
-        public string MemberYesterdayWinLossReportPath => GetMemberWinLossReportPathByDate(DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1));
+        public string MemberYesterdayWinLossReportPath => GetMemberWinLossReportPathByDate(false);
 
         private void SetLabelTextByUserLevel()
         {
@@ -64,11 +65,14 @@
             }
         }
 
-        private string GetMemberWinLossReportPathByDate(DateTime fromDate, DateTime toDate)
+        private string GetMemberWinLossReportPathByDate(bool isToday)
         {
-            var virtualPath = $"~/_Reports/Winloss/Winloss{userLevel.DisplayName}.aspx";
+            var reportSiteAppPath = MicroSites.ReportSiteUrl("~/");
+            var dateReport = isToday ? DateTime.Now.ToShortDateString() : DateTime.Now.AddDays(-1).ToShortDateString();
+            var userSelectedDateRangeOption = isToday ? 0 : 1;
 
-            return $"{virtualPath}?custId={CustId}&fdate={fromDate}&tdate={toDate}";
+            return $@"{reportSiteAppPath}/Winloss/Winloss?IsFilterVisible=true
+                   &UserSelectedDateRangeOption={userSelectedDateRangeOption}&FromDate={dateReport}&ToDate={dateReport}";
         }
     }
 }
