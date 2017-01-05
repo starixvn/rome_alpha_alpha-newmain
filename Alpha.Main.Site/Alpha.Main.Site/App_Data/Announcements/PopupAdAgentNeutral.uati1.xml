@@ -1,3 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="6887902" name="Enable Alpha - Search_Copy"
+                       startdate="01/05/2017" enddate="01/12/2017"  effectdate="01/05/2017"
+                        width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        The "Search and Copy" function will be available again on <b>{effectdate}</b> at 2PM (GMT + 8). Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        在<b>{effectdate}</b>下午2点(GMT+8) 开始，代理网的 “搜索与复制“ 功能将重新启用，您的谅解我们万分感激。
+      </p>
+      <p>
+        感谢您的关注。
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        在<b>{effectdate}</b>下午2點(GMT+8)開始，代理網的“搜索與復制“ 功能將重新啟用，您的諒解我們萬分感激。
+      </p>
+      <p>
+        感謝您的關注。
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        The "Search and Copy" function will be available again on <b>{effectdate}</b> at 2PM (GMT + 8). Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        The "Search and Copy" function will be available again on <b>{effectdate}</b> at 2PM (GMT + 8). Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>Dear valued agents,</p>
+      <p>
+        The "Search and Copy" function will be available again on <b>{effectdate}</b> at 2PM (GMT + 8). Your kind understanding is much appreciated.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>Kính gửi quý khách hàng,</p>
+      <p>
+        Chức năng “Tìm và sao chép” sẽ được mở lại vào lúc 2PM (GMT + 8) ngày <b>{effectdate}</b>. Cảm ơn sự thông cảm của quý khách.
+      </p>
+      <p>
+        Trân trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
 </FileDB>
