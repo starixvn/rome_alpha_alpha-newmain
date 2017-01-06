@@ -6,15 +6,18 @@
       <siteMapNode resourceKey="memberWinLoss" appPath="ReportsAppPath" url="enteredresult/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="winlossdetail/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="memberOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=2" roles="Agent"></siteMapNode>
-
+      <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="outstanding/agent" roles="Agent"></siteMapNode>
+      
       <siteMapNode resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="agentOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=3" roles="Master"></siteMapNode>
-
+      <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="outstanding/master" roles="Master"></siteMapNode>
+      
       <siteMapNode resourceKey="masterwinloss" appPath="ReportsAppPath" url="enteredresult/master" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/master" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="masterOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=4" roles="Super"></siteMapNode>
-
+      <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="outstanding/super" roles="Super"></siteMapNode>
+      
       <siteMapNode resourceKey="matchwinloss" appPath="OldMainAppPath" url="_Reports/MatchWinloss/MatchWinLoss.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="matchWinLostDetail" appPath="OldMainAppPath" url="_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
 
