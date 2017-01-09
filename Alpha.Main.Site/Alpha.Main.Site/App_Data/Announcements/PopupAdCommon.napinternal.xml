@@ -1,5 +1,267 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="53088003" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
+                      startdate="01/8/2017" enddate="01/27/2017"  effectdate="01/19/2017"
+                      excludesites="INDO,755555,KORIBC,733333,222223"
+                      width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        All settings will be configured as follows:
+      </p>
+      <p>
+        - Position taking will be copied from Live Casino's settings.<br/>
+        - Commission will be copied from Live Casino's settings.<br/>
+        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
+        - Member Win Limit will be copied from Live Casino's settings.
+      </p>
+      <p>
+        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
+        All settings will be available for configuration since <b>01/12/2017</b>.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      尊敬的代理，<br />
+      <p>
+        在此宣佈新产品名为 "AllBet" 将于 <b>{effectdate}</b> 隆重推出.<br />
+        此项新产品将于默认开启形式推出. 若您要关闭 "AllBet" 于特定下线, 可到设定功能里设置.<br />
+        所有设定将配置如下:
+      </p>
+      <p>
+        - 占成数将複製真人娱乐厅的设定.<br/>
+        - 佣金将複製真人娱乐厅的设定.<br/>
+        - 会员投注限额不会超过 上线提供的投注限额.<br/>
+        - 会员赢额限额将複製真人娱乐厅设定.
+      </p>
+      <p>
+        尚若真人娱乐厅无设定可複製，需在 AllBet 开启下注前配置设定.<br/>
+        所有设定将于<b>01/12/2017</b> 开放设置.
+      </p>
+      <p>
+        谢谢.
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      尊敬的代理，<br />
+      <p>
+        在此宣佈新產品名為 "AllBet" 將于<b>{effectdate}</b> 隆重推出.<br />
+        此項新產品將于默認開啟形式推出.  若您要關閉 "AllBet" 于特定下線, 可到設定功能里設置.<br />
+        所有設定將配置如下:
+      </p>
+      <p>
+        - 占成數將複製真人娛樂廳的設定.<br/>
+        - 傭金將複製真人娛樂廳的設定.<br/>
+        - 會員投注限額不會超過 上线提供的投注限額.<br/>
+        - 會員贏額限額將複製真人娛樂廳設定.
+      </p>
+      <p>
+        尚若真人娛樂廳無設定可複製，需在 AllBet 開啟下注前配置設定.<br/>
+        所有設定將于 <b>01/12/2017</b> 開放設置.
+      </p>
+      <p>
+        謝謝.
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        All settings will be configured as follows:
+      </p>
+      <p>
+        - Position taking will be copied from Live Casino's settings.<br/>
+        - Commission will be copied from Live Casino's settings.<br/>
+        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
+        - Member Win Limit will be copied from Live Casino's settings.
+      </p>
+      <p>
+        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
+        All settings will be available for configuration since <b>01/12/2017</b>.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        All settings will be configured as follows:
+      </p>
+      <p>
+        - Position taking will be copied from Live Casino's settings.<br/>
+        - Commission will be copied from Live Casino's settings.<br/>
+        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
+        - Member Win Limit will be copied from Live Casino's settings.
+      </p>
+      <p>
+        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
+        All settings will be available for configuration since <b>01/12/2017</b>.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียน ผู้มีอุปการะคุณ<br />
+      <p>
+        เรามีความยินดีที่จะประกาศการเปิดตัวผลิตภัณฑ์ใหม่ "AllBet" ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป<br />
+        ผลิตภัณฑ์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "AllBet" ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า<br />
+        การตั้งค่าทั้งหมดมีดังต่อไปนี้
+      </p>
+      <p>
+        - การรับสถานะเงินลงทุนจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br/>
+        - ค่านายหน้าจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br/>
+        - วงเงินเดิมพันของสมาชิกจะไม่เกินวงเงินเดิมพันที่เสนอโดย SMA<br/>
+        - วงเงินชนะของสมาชิกจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด
+      </p>
+      <p>
+        หากไม่นำการตั้งค่ามาจากคาสิโนสด ต้องกำหนดการตั้งค่าสำหรับ AllBet ก่อนที่ผลิตภัณฑ์นี้จะเปิดให้วางเดิมพันได้<br/>
+        การตั้งค่าทั้งหมดจะเปิดให้ดำเนินการได้ตั้งแต่วันที่ <b>01/12/2017</b> เป็นต้นไป
+      </p>
+      <p>
+        ขอบคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Chào quý khách hàng,<br />
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet"<br />
+        Sản phẩm này sẽ được cung cấp mặc định. Nếu quý khách muốn vô hiệu hoá "AllBet" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
+        Tất cả các thiết lập sẽ được cấu hình như sau:
+      </p>
+      <p>
+        - Position Taking sẽ được sao chép từ Live Casino.<br/>
+        - Các thiết lập về hoa hồng sẽ được sao chép từ Live Casino.<br/>
+        - Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br/>
+        - Giới hạn thắng cược của member sẽ được sao chép từ Live Casino.
+      </p>
+      <p>
+        Nếu không có thiết lập nào được sao chép từ Live Casino, quý khách phải cấu hình các thiết lập cho AllBet trước khi sản phẩm này được cho phép đặt cược.<br/>
+        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>01/12/2017</b>.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="53088004" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 0"
+                    startdate="01/8/2017" enddate="01/27/2017"  effectdate="01/19/2017"
+                      excludesites="INDO,755555,KORIBC,733333,222223"
+                      width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
+        All settings will be available for configuration since <b>01/12/2017</b>
+      </p>
+
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      亲爱的代理,<br />
+      <p>
+        在此宣佈新产品名为 "AllBet" 将于<b>{effectdate}</b> 将隆重推出.<br />
+        此项新产品将于默认开启形式推出. 若您要关闭 "AllBet" 于特定下线, 可到设定功能里设置.<br />
+        会员投注限额不会超过 上线提供的投注限额.<br />
+        所有设定将于 <b>01/12/2017</b> 开放设置.
+      </p>
+
+      <p>
+        谢谢.
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      親愛的代理,<br />
+      <p>
+        在此宣佈新產品名為 "AllBet" 將于<b>{effectdate}</b>將隆重推出.<br />
+        此項新產品將于默認開啟形式推出. 若您要關閉 "AllBet" 于特定下線, 可到設定功能里設置.<br />
+        會員投注限額不會超過上线 提供的投注限額.<br />
+        所有設定將于 <b>01/12/2017</b> 開放設置.
+      </p>
+
+      <p>
+        謝謝.
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
+        All settings will be available for configuration since <b>01/12/2017</b>
+      </p>
+
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
+        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
+        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
+        All settings will be available for configuration since <b>01/12/2017</b>
+      </p>
+
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียน ผู้มีอุปการะคุณ<br />
+      <p>
+        เรามีความยินดีที่จะประกาศการเปิดตัวผลิตภัณฑ์ใหม่ "AllBet" ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป<br />
+        ผลิตภัณฑ์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "AllBet" ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า<br />
+        วงเงินเดิมพันของสมาชิกจะไม่เกินวงเงินเดิมพันที่เสนอโดย SMA<br />
+        การตั้งค่าทั้งหมดจะเปิดให้ดำเนินการได้ตั้งแต่วันที่ <b>01/12/2017</b> เป็นต้นไป
+      </p>
+
+      <p>
+        ขอบคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Chào quý khách hàng,<br />
+      <p>
+        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet"<br />
+        Sản phẩm này sẽ được cung cấp mặc định. Nếu quý khách muốn vô hiệu hoá "AllBet" riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
+        Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br />
+        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>01/12/2017</b>
+      </p>
+
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="6842501" name="Premium Baccarat"
                          startdate="12/19/2016" enddate="1/2/2017"  effectdate="12/22/2016"
                           width="1000" height="220" top="110" left="350">
@@ -166,8 +428,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-  
-  
+    
   <PopupAnnouncement id="6626501" name="Separate Bet Setting for Soccer - Parlay"
                          startdate="11/1/2016" enddate="12/22/2016"  effectdate="12/08/2016"
                           width="1000" height="220" top="110" left="350">
@@ -627,266 +888,6 @@
       </p>
       <p>
         Thank you
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-
-  <PopupAnnouncement id="53088003" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
-                      startdate="12/15/2016" enddate="12/29/2016"  effectdate="12/22/2016" privatesystem="733333,222223"
-                      width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
-        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
-        All settings will be configured as follows:
-      </p>
-      <p>
-        - Position taking will be copied from Live Casino's settings.<br/>
-        - Commission will be copied from Live Casino's settings.<br/>
-        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
-        - Member Win Limit will be copied from Live Casino's settings.
-      </p>
-      <p>
-        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
-        All settings will be available for configuration since <b>12/16/2016</b>.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈新产品名为 "AllBet" 将于 <b>{effectdate}</b> 隆重推出.<br />
-        此项新产品将于默认开启形式推出. 若您要关闭 "AllBet" 于特定下线, 可到设定功能里设置.<br />
-        所有设定将配置如下:
-      </p>
-      <p>
-        - 占成数将複製真人娱乐厅的设定.<br/>
-        - 佣金将複製真人娱乐厅的设定.<br/>
-        - 会员投注限额不会超过 上线提供的投注限额.<br/>
-        - 会员赢额限额将複製真人娱乐厅设定.
-      </p>
-      <p>
-        尚若真人娱乐厅无设定可複製，需在 AllBet 开启下注前配置设定.<br/>
-        所有设定将于<b>12/16/2016</b> 开放设置.
-      </p>
-      <p>
-        谢谢.
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      尊敬的代理，<br />
-      <p>
-        在此宣佈新產品名為 "AllBet" 將于<b>{effectdate}</b> 隆重推出.<br />
-        此項新產品將于默認開啟形式推出.  若您要關閉 "AllBet" 于特定下線, 可到設定功能里設置.<br />
-        所有設定將配置如下:
-      </p>
-      <p>
-        - 占成數將複製真人娛樂廳的設定.<br/>
-        - 傭金將複製真人娛樂廳的設定.<br/>
-        - 會員投注限額不會超過 上线提供的投注限額.<br/>
-        - 會員贏額限額將複製真人娛樂廳設定.
-      </p>
-      <p>
-        尚若真人娛樂廳無設定可複製，需在 AllBet 開啟下注前配置設定.<br/>
-        所有設定將于 <b>12/16/2016</b> 開放設置.
-      </p>
-      <p>
-        謝謝.
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
-        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
-        All settings will be configured as follows:
-      </p>
-      <p>
-        - Position taking will be copied from Live Casino's settings.<br/>
-        - Commission will be copied from Live Casino's settings.<br/>
-        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
-        - Member Win Limit will be copied from Live Casino's settings.
-      </p>
-      <p>
-        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
-        All settings will be available for configuration since <b>12/16/2016</b>.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
-        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
-        All settings will be configured as follows:
-      </p>
-      <p>
-        - Position taking will be copied from Live Casino's settings.<br/>
-        - Commission will be copied from Live Casino's settings.<br/>
-        - Member Betting Limit will not exceed the Betting Limit offered by SMA.<br/>
-        - Member Win Limit will be copied from Live Casino's settings.
-      </p>
-      <p>
-        If there is no setting copied from Live Casino, it's required to configure setting for Allbet before this product is enabled to place bet.<br/>
-        All settings will be available for configuration since <b>12/16/2016</b>.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน ผู้มีอุปการะคุณ<br />
-      <p>
-        เรามีความยินดีที่จะประกาศการเปิดตัวผลิตภัณฑ์ใหม่ "AllBet" ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป<br />
-        ผลิตภัณฑ์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "AllBet" ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า<br />
-        การตั้งค่าทั้งหมดมีดังต่อไปนี้
-      </p>
-      <p>
-        - การรับสถานะเงินลงทุนจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br/>
-        - ค่านายหน้าจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด<br/>
-        - วงเงินเดิมพันของสมาชิกจะไม่เกินวงเงินเดิมพันที่เสนอโดย SMA<br/>
-        - วงเงินชนะของสมาชิกจะใช้แบบเดียวกันกับการตั้งค่าของคาสิโนสด
-      </p>
-      <p>
-        หากไม่นำการตั้งค่ามาจากคาสิโนสด ต้องกำหนดการตั้งค่าสำหรับ AllBet ก่อนที่ผลิตภัณฑ์นี้จะเปิดให้วางเดิมพันได้<br/>
-        การตั้งค่าทั้งหมดจะเปิดให้ดำเนินการได้ตั้งแต่วันที่ <b>12/16/2016</b> เป็นต้นไป
-      </p>
-      <p>
-        ขอบคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Chào quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet"<br />
-        Sản phẩm này sẽ được cung cấp mặc định. Nếu quý khách muốn vô hiệu hoá "AllBet" cho riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
-        Tất cả các thiết lập sẽ được cấu hình như sau:
-      </p>
-      <p>
-        - Position Taking sẽ được sao chép từ Live Casino.<br/>
-        - Các thiết lập về hoa hồng sẽ được sao chép từ Live Casino.<br/>
-        - Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br/>
-        - Giới hạn thắng cược của member sẽ được sao chép từ Live Casino.
-      </p>
-      <p>
-        Nếu không có thiết lập nào được sao chép từ Live Casino, quý khách phải cấu hình các thiết lập cho AllBet trước khi sản phẩm này được cho phép đặt cược.<br/>
-        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>12/16/2016</b>.
-      </p>
-      <p>
-        Trân Trọng
-      </p>
-    </vi-VN>
-  </PopupAnnouncement>
-
-  <PopupAnnouncement id="53088004" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 0"
-                     startdate="12/15/2016" enddate="12/29/2016"  effectdate="12/22/2016" privatesystem="733333,222223"
-                      width="1000" height="220" top="110" left="350">
-    <en-US src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
-        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
-        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
-        All settings will be available for configuration since <b>12/16/2016</b>
-      </p>
-
-      <p>
-        Thank you
-      </p>
-    </en-US>
-
-    <zh-CN src="">
-      亲爱的代理,<br />
-      <p>
-        在此宣佈新产品名为 "AllBet" 将于<b>{effectdate}</b> 将隆重推出.<br />
-        此项新产品将于默认开启形式推出. 若您要关闭 "AllBet" 于特定下线, 可到设定功能里设置.<br />
-        会员投注限额不会超过 上线提供的投注限额.<br />
-        所有设定将于 <b>12/16/2016</b> 开放设置.
-      </p>
-
-      <p>
-        谢谢.
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      親愛的代理,<br />
-      <p>
-        在此宣佈新產品名為 "AllBet" 將于<b>{effectdate}</b>將隆重推出.<br />
-        此項新產品將于默認開啟形式推出. 若您要關閉 "AllBet" 于特定下線, 可到設定功能里設置.<br />
-        會員投注限額不會超過上线 提供的投注限額.<br />
-        所有設定將于 <b>12/16/2016</b> 開放設置.
-      </p>
-
-      <p>
-        謝謝.
-      </p>
-    </zh-TW>
-
-    <ja-JP src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
-        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
-        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
-        All settings will be available for configuration since <b>12/16/2016</b>
-      </p>
-
-      <p>
-        Thank you
-      </p>
-    </ja-JP>
-
-    <ko-KR src="">
-      Dear valued agents,<br />
-      <p>
-        We are pleased to announce the launching of the new product named "AllBet" with effect from <b>{effectdate}</b>.<br />
-        This new product will be offered by default. If you wish to disable "AllBet" on a specific downline, please configure at the Setting function.<br />
-        Member Betting Limit will not exceed the Betting Limit offered by SMA.<br />
-        All settings will be available for configuration since <b>12/16/2016</b>
-      </p>
-
-      <p>
-        Thank you
-      </p>
-    </ko-KR>
-
-    <th-TH src="">
-      เรียน ผู้มีอุปการะคุณ<br />
-      <p>
-        เรามีความยินดีที่จะประกาศการเปิดตัวผลิตภัณฑ์ใหม่ "AllBet" ตั้งแต่วันที่ <b>{effectdate}</b> เป็นต้นไป<br />
-        ผลิตภัณฑ์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "AllBet" ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า<br />
-        วงเงินเดิมพันของสมาชิกจะไม่เกินวงเงินเดิมพันที่เสนอโดย SMA<br />
-        การตั้งค่าทั้งหมดจะเปิดให้ดำเนินการได้ตั้งแต่วันที่ <b>12/16/2016</b> เป็นต้นไป
-      </p>
-
-      <p>
-        ขอบคุณ
-      </p>
-    </th-TH>
-
-    <vi-VN src="">
-      Chào quý khách hàng,<br />
-      <p>
-        Bắt đầu từ ngày <b>{effectdate}</b>, chúng tôi sẽ cung cấp một sản phẩm cá cược mới "AllBet"<br />
-        Sản phẩm này sẽ được cung cấp mặc định. Nếu quý khách muốn vô hiệu hoá "AllBet" riêng cho một cấp dưới nào đó, vui lòng sử dụng chức năng Setting.<br />
-        Giới hạn cược của member sẽ không vượt quá Giới hạn cược cung cấp bởi SMA.<br />
-        Tất cả các thiết lập sẽ sẵn sàng cho việc cấu hình kể từ ngày <b>12/16/2016</b>
-      </p>
-
-      <p>
-        Trân Trọng
       </p>
     </vi-VN>
   </PopupAnnouncement>
