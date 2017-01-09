@@ -39,6 +39,8 @@
 
         public int CustId { get; }
 
+        public string ReportSiteAppPath => MicroSites.ReportSiteUrl("~/");
+
         public string MemberTodayWinLossReportPath => GetMemberWinLossReportPathByDate(true);
 
         public string MemberYesterdayWinLossReportPath => GetMemberWinLossReportPathByDate(false);
@@ -67,12 +69,11 @@
 
         private string GetMemberWinLossReportPathByDate(bool isToday)
         {
-            var reportSiteAppPath = MicroSites.ReportSiteUrl("~/");
             var dateReport = isToday ? DateTime.Now.ToShortDateString() : DateTime.Now.AddDays(-1).ToShortDateString();
             var userSelectedDateRangeOption = isToday ? 0 : 1;
+            var queryString = $"IsFilterVisible=true&UserSelectedDateRangeOption={userSelectedDateRangeOption}&FromDate={dateReport}&ToDate={dateReport}";
 
-            return $@"{reportSiteAppPath}/Winloss/Winloss?IsFilterVisible=true
-                   &UserSelectedDateRangeOption={userSelectedDateRangeOption}&FromDate={dateReport}&ToDate={dateReport}";
+            return $@"{ReportSiteAppPath}/Winloss/Index?{queryString}";
         }
     }
 }
