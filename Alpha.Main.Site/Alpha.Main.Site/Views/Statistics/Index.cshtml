@@ -34,12 +34,12 @@
     </div>
 }
 
-@helper NumericRow(string label, decimal value)
+@helper NumericRow(string label, decimal value, string url)
 {
     <div class="row">
-        <div class="col-xs-7 label">@label</div>
+        <div class="col-xs-7">@label</div>
         <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
-            <strong>@value.ToString("#,##0.00")</strong>
+            <a href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
         </div>
     </div>
 }
@@ -47,8 +47,8 @@
 <div class="container">
     <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
     <div class="group-title">@Resources.outstanding</div>
-    @NumericRow(Model.OutstandingLabel, statistics.Outstanding)
-    @NumericRow(Resources.totalOutstanding, statistics.TotalOutstanding)
+    @NumericRow(Model.OutstandingLabel, statistics.Outstanding, Model.MemberOutstandingReportPath)
+    @NumericRow(Resources.totalOutstanding, statistics.TotalOutstanding, Model.MemberOutstandingReportPath)
 
     <div class="group-title">@Resources.memberInfo</div>
 
