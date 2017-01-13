@@ -1,5 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="7011701" name="Shutting down Live Casino"
+                         startdate="01/10/2017" enddate="01/31/2017"  effectdate="01/25/2016"
+                          width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will cease the operation of 'Live Casino' from <b>{effectdate}</b> onwards until further notice. GD and Allbet Live Casino will still be available.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will cease the operation of 'Live Casino' from <b>{effectdate}</b> onwards until further notice. GD and Allbet Live Casino will still be available.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will cease the operation of 'Live Casino' from <b>{effectdate}</b> onwards until further notice. GD and Allbet Live Casino will still be available.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will cease the operation of 'Live Casino' from <b>{effectdate}</b> onwards until further notice. GD and Allbet Live Casino will still be available.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will cease the operation of 'Live Casino' from <b>{effectdate}</b> onwards until further notice. GD and Allbet Live Casino will still be available.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will cease the operation of 'Live Casino' from <b>{effectdate}</b> onwards until further notice. GD and Allbet Live Casino will still be available.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will cease the operation of 'Live Casino' from <b>{effectdate}</b> onwards until further notice. GD and Allbet Live Casino will still be available.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="53088003" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
                       startdate="01/8/2017" enddate="01/27/2017"  effectdate="01/19/2017" 
                       excludesites="INDO,755555,KORIBC,733333,222223"

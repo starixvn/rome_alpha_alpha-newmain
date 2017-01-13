@@ -26,10 +26,11 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         public const int NotOfferedGoldDeluxe = 3543502;
         public const int OfferedSuperLive = 3577701;
         public const int OfferedColossusBets = 4523901;
-        public const int OfferedAllbet = 53088003;
-        public const int NotOfferedAllbet = 53088004;
-        public const int ChangeCommForSuper = 6619201;
-        public const int PremiumBaccarat = 6842501;
+        public const int OfferedAllbet = 53088003; ////endate: 01/27/2017
+        public const int NotOfferedAllbet = 53088004; ////endate: 01/27/2017
+        public const int ChangeCommForSuper = 6619201; ////endate: 12/31/2016
+        public const int PremiumBaccarat = 6842501; ////endate: 01/02/2017
+        public const int ShuttingDownLiveCasino = 7011701; ////endate: 01/31/2017
 
         public HotAnnouncementQuery() : this(null, null, null, null)
         {
@@ -96,7 +97,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
                     { OfferedAllbet,  UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) && UserPermission.IsShowLiveCasino },
                     { NotOfferedAllbet,  UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) && !UserPermission.IsShowLiveCasino },
                     { ChangeCommForSuper,  UserPermission.IsShowLiveCasino || UserPermission.IsShowGoldDeluxeSettingForCredit || UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) },
-                    { PremiumBaccarat,  UserPermission.IsShowLiveCasino }
+                    { PremiumBaccarat,  UserPermission.IsShowLiveCasino },
+                    { ShuttingDownLiveCasino,  UserPermission.IsShowLiveCasino }
                 };
             }
         }
