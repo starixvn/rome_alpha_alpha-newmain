@@ -2,7 +2,7 @@
 <Functions>
   <Function Name="Report">
     <Setting Key="Age_SelBalanceUpDay" SpName="Age_SelBalanceUpDay" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
-    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag_xpre" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -12,7 +12,7 @@
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
     </Setting>
-    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg_xpre" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -22,7 +22,7 @@
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
     </Setting>
-    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg_xpre" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
       <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
       <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
@@ -34,11 +34,11 @@
     </Setting>
   </Function>
   <Function Name="Statistics">
-    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag_xpre" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg_xpre" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg_xpre" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>
     <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>
@@ -53,7 +53,6 @@
     <Setting Key="Age_CustomerSelTopTurnoverMembers_Ag" SpName="Age_CustomerSelTopTurnoverMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>
   </Function>
-
   <Function Name="Alpha.Auth">
     <Setting Key="Age_CustomerSelCheckBelonging" SpName="Age_CustomerSelCheckBelonging" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
     <Setting Key="Age_CustSubPageAccessSel" SpName="Age_CustSubPageAccessSel" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
