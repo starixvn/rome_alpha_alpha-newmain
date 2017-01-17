@@ -157,7 +157,8 @@
                     nodeId == 0 ||
                     showedMessages.Contains(nodeId) ||
                     IsExcludedHotMessageSite(announcementNode, getParams.Site) ||
-                    IsExpiredHotMessage(announcementNode))
+                    IsExpiredHotMessage(announcementNode) ||
+                    !IsShowProductAnnouncementByBatch(announcementNode, getParams.CustId))
                 {
                     continue;
                 }
@@ -220,6 +221,33 @@
             }
 
             return false;
+        }
+
+        private bool IsShowProductAnnouncementByBatch(XmlNode node, int custId)
+        {
+            var lastBatchAttribute = node.Attributes["islastbatch"];
+            var offeredSites = node.Attributes["productofferdsites"];
+
+            if (lastBatchAttribute != null && !string.IsNullOrEmpty(lastBatchAttribute.Value))
+            {
+                if (lastBatchAttribute.Value.Equals("0") && 
+                    (offeredSites == null || string.IsNullOrWhiteSpace(offeredSites.Value)))
+                {
+                    return false;
+                }
+
+                var checkMessageCriteria = new CheckProductAnnouncementCriteria()
+                {
+                    CustId = custId,
+                    OfferedSite = offeredSites == null ? string.Empty : offeredSites.Value,
+                    IsLastBatch = lastBatchAttribute.Value.Equals("1")
+                };
+                dynamicRepository.Get<bool>(checkMessageCriteria);
+
+                return checkMessageCriteria.IsShowAnnouncement;
+            }
+
+            return true;
         }
     }
 }

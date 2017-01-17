@@ -1,3 +1,316 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="7014603" name="Fishing World - Master - Agent"
+                         startdate="01/17/2017" enddate="02/16/2017"  effectdate="02/23/2017"
+                          width="1000" height="220" top="110" left="350"
+                          islastbatch="0" productofferdsites="733333,222223,222225,222227,222229">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launching of new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        This game will be offered by default, if not, please contact your upline.
+        If you wish to disable it on a specific downline, please configure at the Setting function.
+      </p>
+      <p>
+        All settings will be configured as follows:<br/>
+        - Commission settings and bet settings are not offered.<br/>
+        - The PT settings will be distributed by uplines.
+        You can start making the adjustment on downlines and setting your PT on existing members from <b>02/16/2017</b> onwards.
+      </p>
+      <p>
+        We pride ourselves on giving our members the best gaming experience.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        在此宣布新产品名为 "捕鱼天下" 将于<b>{effectdate}</b> 隆重推出.
+      </p>
+      <p>
+        此项新产品将于默认开启形式推出， 否则，请您联系上线。若您要禁用于特定下线, 可到设定功能里设置.
+      </p>
+      <p>
+        所有設定將配置如下:<br/>
+        - 不提供佣金设定和投注设定<br/>
+        - 此占成数设置将被预定。您可以开始为下线进行调整和設置占成数于现有的会员从<b>02/16/2017</b> 。
+      </p>
+      <p>
+        能够提供给会员更有素质的游戏是我们的荣幸。
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        在此宣布新產品名為 "捕魚天下" 將於 <b>{effectdate}</b> 隆重推出.
+      </p>
+      <p>
+        此項新產品將於默認開啟形式推出， 否則，請您聯繫上線。若您要禁用於特定下線, 可到設定功能裡設置.
+      </p>
+      <p>
+        所有設定將配置如下:<br/>
+        - 不提供佣金設定和投注設定<br/>
+        - 此占成數設置將被預定。您可以開始為下線進行調整和設置占成數於現有的會員從<b>02/16/2017</b> 。
+      </p>
+      <p>
+        能够提供给会员更有素质的游戏是我们的荣幸。
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launching of new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        This game will be offered by default, if not, please contact your upline. If you wish to disable it on a specific downline, please configure at the Setting function.
+      </p>
+      <p>
+        All settings will be configured as follows:<br/>
+        - Commission settings and bet settings are not offered.<br/>
+        - The PT settings will be distributed by uplines. You can start making the adjustment on downlines and setting your PT on existing members from <b>02/16/2017</b> onwards.
+      </p>
+      <p>
+        We pride ourselves on giving our members the best gaming experience.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launching of new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        This game will be offered by default, if not, please contact your upline. If you wish to disable it on a specific downline, please configure at the Setting function.
+      </p>
+      <p>
+        All settings will be configured as follows:<br/>
+        - Commission settings and bet settings are not offered.<br/>
+        - The PT settings will be distributed by uplines. You can start making the adjustment on downlines and setting your PT on existing members from <b>02/16/2017</b> onwards.
+      </p>
+      <p>
+        We pride ourselves on giving our members the best gaming experience.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        ทางบริษัทใคร่ขอแจ้งให้ทราบว่า ทางบริษัทจะทำการเปิดตัวเกมส์ตัวใหม่ชื่อ 'Fishing World' ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b>
+      </p>
+      <p>
+        เกมส์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "Fishing World' ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า
+      </p>
+      <p>
+        การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้<br/>
+        - ไม่มีค่าคอมมิชชั้นและการตั้งค่าเดิมพัน<br/>
+        - ค่าแบ่งสู้จะถูกจัดสรรโดยอับไลน์ ถ้ายังไม่มีการจัดสรร รบกวนติดต่ออับไลน์ของคุณ แต่ถ้ามีการจัดสรรเรียบร้อยแล้ว คุณสามารถเริ่มทำการตั้งค่าให้กับลูกค้าปัจจุบันของคุณ ตั้งแต่วันที่ <b>02/16/2017</b> เป็นต้นไป
+      </p>
+      <p>
+        เรามีความภูมิใจที่จะให้สมาชิกของเราได้มีประสบการณ์ในการเล่นเกมส์ที่ดีที่สุด
+      </p>
+      <p>
+        ขอบคุณค่ะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
+      <p>
+        Từ ngày <b>{effectdate}</b>, chúng tôi sẽ ra mắt trò chơi mới mang tên 'Bắn Cá'.
+      </p>
+      <p>
+        Trò chơi này mặc định sẽ được kích hoạt, nếu chưa, vui lòng liên hệ với cấp trên. Để vô hiệu hoá trò chơi cho cấp dưới, vui lòng cấu hình trong mục Cài Đặt.
+      </p>
+      <p>
+        Tất cả các thiết lập sẽ được cấu hình như sau:        <br/>
+        - Không hỗ trợ thiết lập Hoa Hồng và Giới Hạn Cược. <br/>
+        - Các thiết lập Position Taking sẽ được lấy từ cấp trên. Khi các thiết lập đã sẵn sàng, bạn có thể thay đổi thiết lập cho cấp dưới và thiết lập giá trị PT trên những member có sẵn từ ngày <b>02/16/2017</b>.
+      </p>
+      <p>
+        Chúng tôi tự hào mang đến những trải nghiệm trò chơi tốt nhất cho khách hàng của mình.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+
+  <PopupAnnouncement id="7014602" name="Fishing World - Master - Agent"
+                         startdate="01/17/2016" enddate="02/16/2016"  effectdate="02/23/2017"
+                          width="1000" height="220" top="110" left="350"
+                          islastbatch="0" productofferdsites="733333,222223,222225,222227,222229">    
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launching of new game named ‘Fishing World’ with effect <b>{effectdate}</b>.
+      </p>
+      <p>
+        This game is offered by default, if not, please contact your upline. If you wish to disable it on a specific downline, please configure at the Setting function.
+      </p>
+      <p>
+        All settings will be configured as follows:<br/>
+        - Commission settings and bet settings are not offered.<br/>
+        - The PT settings are distributed by upline, if not, please contact your upline. Once it is ready, you can start setting your PT on existing members.
+      </p>
+      <p>
+        Please refer here for the PT guideline of Fishing World.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        在此宣布新产品名为 "捕鱼天下" 将于 <b>{effectdate}</b> 隆重推出.
+      </p>
+      <p>
+        此项新产品将于默认开启形式推出， 否则，请您联系上线。若您要禁用于特定下线, 可到设定功能里设置.
+      </p>
+      <p>
+        所有设定将配置如下:<br/>
+        - 不提供佣金设定和投注设定<br/>
+        - 此占成数的设定将会由上线分配，否则，请您联系上线。一旦准备就绪，您可以开始为现有的会员设置占成数。
+      </p>
+      <p>
+        请参阅这里为"捕鱼天下”的占成数指南
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        在此宣布新產品名為 "捕魚天下" 將於 <b>{effectdate}</b> 隆重推出.
+      </p>
+      <p>
+        此項新產品將於默認開啟形式推出， 否則，請您聯繫上線。若您要禁用於特定下線, 可到設定功能裡設置.
+      </p>
+      <p>
+        所有設定將配置如下:<br/>
+        - 不提供佣金設定和投注設定<br/>
+        - 此佔成數的設定將會由上線分配，否則，請您聯繫上線。一旦準備就緒，您可以開始為現有的會員設置佔成數
+      </p>
+      <p>
+        請參閱這里為"捕魚天下”的佔成數指南
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launching of new game named ‘Fishing World’ with effect <b>{effectdate}</b>.
+      </p>
+      <p>
+        This game is offered by default, if not, please contact your upline. If you wish to disable it on a specific downline, please configure at the Setting function.
+      </p>
+      <p>
+        All settings will be configured as follows:<br/>
+        - Commission settings and bet settings are not offered.<br/>
+        - The PT settings are distributed by upline, if not, please contact your upline. Once it is ready, you can start setting your PT on existing members.
+      </p>
+      <p>
+        Please refer here for the PT guideline of Fishing World.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launching of new game named ‘Fishing World’ with effect <b>{effectdate}</b>.
+      </p>
+      <p>
+        This game is offered by default, if not, please contact your upline. If you wish to disable it on a specific downline, please configure at the Setting function.
+      </p>
+      <p>
+        All settings will be configured as follows:<br/>
+        - Commission settings and bet settings are not offered.<br/>
+        - The PT settings are distributed by upline, if not, please contact your upline. Once it is ready, you can start setting your PT on existing members.
+      </p>
+      <p>
+        Please refer here for the PT guideline of Fishing World.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        ทางบริษัทใคร่ขอแจ้งให้ทราบว่า ทางบริษัทจะทำการเปิดตัวเกมส์ตัวใหม่ชื่อ 'Fishing World' ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b>
+      </p>
+      <p>
+        เกมส์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "Fishing World' ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า
+      </p>
+      <p>
+        การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้<br/>
+        - ไม่มีค่าคอมมิชชั้นและการตั้งค่าเดิมพัน<br/>
+        - ค่าแบ่งสู้จะถูกจัดสรรโดยอับไลน์ ถ้ายังไม่มีการจัดสรร รบกวนติดต่ออับไลน์ของคุณ แต่ถ้ามีการจัดสรรเรียบร้อยแล้ว คุณสามารถเริ่มทำการตั้งค่าให้กับลูกค้าปัจจุบันของคุณ
+      </p>
+      <p>
+        โปรดคลิก ที่นี่ เพื่อดูข้อแนะนำในการตั้งค่าแบ่งสู้ของเกมส์'Fishing World'
+      </p>
+      <p>
+        ขอบคุณค่ะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
+      <p>
+        Từ ngày <b>{effectdate}</b>, chúng tôi sẽ ra mắt trò chơi mới mang tên 'Bắn Cá'.
+      </p>
+      <p>
+        Trò chơi này mặc định sẽ được kích hoạt, nếu chưa, vui lòng liên hệ với cấp trên. Để vô hiệu hoá trò chơi cho cấp dưới, vui lòng cấu hình trong mục Cài Đặt.
+      </p>
+      <p>
+        Tất cả các thiết lập sẽ được cấu hình như sau:        <br/>
+        - Không hỗ trợ thiết lập Hoa Hồng và Giới Hạn Cược. <br/>
+        - Các thiết lập Position Taking sẽ được lấy từ cấp trên, vui lòng liên hệ với cấp trên nếu bạn chưa có thiết lập. Khi các thiết lập đã sẵn sàng, bạn có thể thay thiết lập giá trị PT trên những member có sẵn.
+      </p>
+      <p>
+        Vui lòng tham khảo thiết lập Position Taking cho 'Bắn Cá' ở đây.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
 </FileDB>

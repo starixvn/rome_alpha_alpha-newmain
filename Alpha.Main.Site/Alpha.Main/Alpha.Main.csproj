@@ -204,6 +204,7 @@
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\MessageType.cs" />
+    <Compile Include="Criteria\Announcement\CheckProductAnnouncementCriteria.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
