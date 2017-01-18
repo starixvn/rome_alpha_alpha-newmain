@@ -16,6 +16,7 @@
       <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/master" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="matchWinLostDetail" appPath="OldMainAppPath" url="_Reports/MatchWinloss/MatchWinLossDetail.aspx"></siteMapNode>
+      <siteMapNode resourceKey="matchWinLostDetail" appPath="ReportsAppPath" url="matchwinlossdetail/index"></siteMapNode>
 
       <siteMapNode resourceKey="winlossanalysis" appPath="OldMainAppPath" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisAgent.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="winlossanalysis" appPath="OldMainAppPath" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisMaster.aspx" roles="Master"></siteMapNode>
