@@ -2,7 +2,7 @@
 {
     using System.Diagnostics.CodeAnalysis;
     using System.Web;
-    using Alpha.Main.Configurations;
+    using Configurations;
 
     public static class MicroSites
     {
