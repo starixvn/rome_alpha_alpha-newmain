@@ -619,6 +619,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Racing Commission.
+        /// </summary>
+        public static string RacingCommission {
+            get {
+                return ResourceManager.GetString("RacingCommission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Real Time Bingo Win Loss.
         /// </summary>
         public static string realTimeBingoWinloss {
