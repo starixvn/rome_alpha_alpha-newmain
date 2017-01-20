@@ -156,9 +156,8 @@
                 if (!long.TryParse(nodeIds, out nodeId) ||
                     nodeId == 0 ||
                     showedMessages.Contains(nodeId) ||
-                    IsExcludedHotMessageSite(announcementNode, getParams.Site) ||
-                    IsExpiredHotMessage(announcementNode) ||
-                    !IsShowProductAnnouncementByBatch(announcementNode, getParams.CustId))
+                    IsExcludedHotMessageSite(announcementNode, getParams.Site, getParams.CustId) ||
+                    IsExpiredHotMessage(announcementNode))
                 {
                     continue;
                 }
@@ -197,8 +196,12 @@
                 (endDate.HasValue && endDate < currentDate);
         }
 
-        private bool IsExcludedHotMessageSite(XmlNode node, string site)
+        private bool IsExcludedHotMessageSite(XmlNode node, string site, int custId)
         {
+            if (!IsShowProductAnnouncementByBatch(node, custId)) {
+                return true;
+            }
+
             var isPublicSystem = node.Attributes["privatesystem"] != null &&
                 (!node.Attributes["privatesystem"].Value.Equals("*") ||
                 !string.IsNullOrEmpty(node.Attributes["privatesystem"].Value)) &&
@@ -226,7 +229,7 @@
         private bool IsShowProductAnnouncementByBatch(XmlNode node, int custId)
         {
             var lastBatchAttribute = node.Attributes["islastbatch"];
-            var offeredSites = node.Attributes["productofferdsites"];
+            var offeredSites = node.Attributes["privatesystem"];
 
             if (lastBatchAttribute != null && !string.IsNullOrEmpty(lastBatchAttribute.Value))
             {
