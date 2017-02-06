@@ -156,7 +156,7 @@
                 if (!long.TryParse(nodeIds, out nodeId) ||
                     nodeId == 0 ||
                     showedMessages.Contains(nodeId) ||
-                    IsExcludedHotMessageSite(announcementNode, getParams.Site) ||
+                    IsExcludedHotMessageSite(announcementNode, getParams.Site, getParams.CustId) ||
                     IsExpiredHotMessage(announcementNode))
                 {
                     continue;
@@ -196,8 +196,12 @@
                 (endDate.HasValue && endDate < currentDate);
         }
 
-        private bool IsExcludedHotMessageSite(XmlNode node, string site)
+        private bool IsExcludedHotMessageSite(XmlNode node, string site, int custId)
         {
+            if (!IsShowProductAnnouncementByBatch(node, custId)) {
+                return true;
+            }
+
             var isPublicSystem = node.Attributes["privatesystem"] != null &&
                 (!node.Attributes["privatesystem"].Value.Equals("*") ||
                 !string.IsNullOrEmpty(node.Attributes["privatesystem"].Value)) &&
@@ -220,6 +224,33 @@
             }
 
             return false;
+        }
+
+        private bool IsShowProductAnnouncementByBatch(XmlNode node, int custId)
+        {
+            var lastBatchAttribute = node.Attributes["islastbatch"];
+            var offeredSites = node.Attributes["privatesystem"];
+
+            if (lastBatchAttribute != null && !string.IsNullOrEmpty(lastBatchAttribute.Value))
+            {
+                if (lastBatchAttribute.Value.Equals("0") && 
+                    (offeredSites == null || string.IsNullOrWhiteSpace(offeredSites.Value)))
+                {
+                    return false;
+                }
+
+                var checkMessageCriteria = new CheckProductAnnouncementCriteria()
+                {
+                    CustId = custId,
+                    OfferedSite = offeredSites == null ? string.Empty : offeredSites.Value,
+                    IsLastBatch = lastBatchAttribute.Value.Equals("1")
+                };
+                dynamicRepository.Get<bool>(checkMessageCriteria);
+
+                return checkMessageCriteria.IsShowAnnouncement;
+            }
+
+            return true;
         }
     }
 }

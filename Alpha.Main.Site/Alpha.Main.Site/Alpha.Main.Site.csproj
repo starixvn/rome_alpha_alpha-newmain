@@ -386,12 +386,14 @@
     </Content>
     <Content Include="App_Data\Announcements\PopupAdMasterNeutral.napexternal.xml">
       <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdMasterNeutral.napinternal.xml">
       <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdMasterNeutral.proi1.xml">
       <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdMasterNeutral.sit.xml">
       <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
@@ -401,12 +403,15 @@
     </Content>
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.napexternal.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.napinternal.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.proi1.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.sit.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
