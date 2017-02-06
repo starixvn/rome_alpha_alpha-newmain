@@ -113,6 +113,8 @@
 
         public static string MessageAgent => ConfigurationManager.AppSettings["Message:Agent"];
 
+        public static bool IsDisabledContactUsLink => ConfigurationManager.AppSettings["IsDisabledContactUsLink"] == "1";
+
         public static string GetAppPath(string name)
         {
             return ConfigurationManager.AppSettings[name];
