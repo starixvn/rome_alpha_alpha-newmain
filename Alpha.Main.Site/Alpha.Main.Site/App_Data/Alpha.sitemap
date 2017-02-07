@@ -14,7 +14,7 @@
       <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="winlossdetail/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/master" roles="Super"></siteMapNode>
-
+      
       <siteMapNode resourceKey="matchWinLostDetail" appPath="ReportsAppPath" url="matchwinlossdetail/index"></siteMapNode>
 
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/member" roles="Agent"></siteMapNode>
@@ -27,6 +27,10 @@
       <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="commissionByBettype" appPath="OldMainAppPath" url="Report/CommissionByBetType"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/member" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/agent" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/master" roles="Super"></siteMapNode>
+      
       <siteMapNode menuItemType="RacingMenuItem" resourceKey="commssionhorseracing" appPath="OldMainAppPath" url="_Reports/Commission/HRCommission.aspx"></siteMapNode>
 
       <siteMapNode resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/member" roles="Agent"></siteMapNode>
