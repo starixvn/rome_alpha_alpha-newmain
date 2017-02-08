@@ -29,7 +29,6 @@
             DateTime startDate,
             DateTime endDate,
             bool isTest,
-            string messagesXmlDirPath,
             int totalMessage = DefaultTotalMessage)
         {
             parentSitesByLevel = InitiateParentSitesByLevel();
@@ -54,7 +53,7 @@
 
         public int SpecialType { get; }
 
-        public int TotalMessage { get; } = DefaultTotalMessage;
+        public int TotalMessage { get; }
 
         public DateTime StartDate { get; }
 

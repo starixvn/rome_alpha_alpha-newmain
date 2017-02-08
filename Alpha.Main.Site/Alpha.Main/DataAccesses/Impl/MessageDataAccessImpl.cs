@@ -24,7 +24,7 @@
 
                 while (reader.Read())
                 {
-                    var message = GetMessageFromReader(reader, messageType);
+                    var message = GetMessageFromReader(reader);
                     messages.Add(message);
                 }
             }
@@ -32,7 +32,7 @@
             return messages;
         }
 
-        private Message GetMessageFromReader(IDataReader reader, int messageType)
+        private Message GetMessageFromReader(IDataReader reader)
         {
             var message = new Message(
                        id: !Convert.IsDBNull(reader["MessageId"]) ? Convert.ToInt32(reader["MessageId"]) : 0,

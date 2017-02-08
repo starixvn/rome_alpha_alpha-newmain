@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using AppResources;
     using Criteria.Otp;
@@ -210,6 +211,7 @@
             return result;
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Reviewed")]
         internal virtual void CloseCasinoAccount(int custId, string ip)
         {
             if (casinoService.Customer != null)
