@@ -166,7 +166,7 @@
 
             popUpContainer
                 .modal({ show: true, backdrop: false })
-                .tinyDraggable({ exclude: 'button.icon.icon-close.close, .modal-body, p' });
+                .tinyDraggable({ exclude: 'button.icon.icon-close.close, .modal-body, p, a' });
         }
 
         createAjaxSettings = (methodType: string, url: string, data: any, onSuccess: any): JQueryAjaxSettings => {

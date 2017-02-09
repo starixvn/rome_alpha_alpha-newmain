@@ -724,6 +724,9 @@
     <Content Include="App_Data\securitycode.json" />
     <Content Include="Assets\styles\home\home.scss" />
     <Content Include="Assets\scripts\tests\chutzpah.json" />
+    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.en-US.pdf" />
+    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.en-US.pdf" />
+    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.en-US.pdf" />
     <None Include="Assets\styles\instruction\enjoyhint.scss" />
     <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.svg" />
     <Content Include="Assets\styles\instruction\enjoyhint.css">

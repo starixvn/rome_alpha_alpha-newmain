@@ -1,5 +1,161 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="7014602" name="Fishing World - Super"
+                         startdate="02/09/2017" enddate="02/23/2017"  effectdate="02/23/2017"
+                          width="1000" height="220" top="110" left="350"
+                          islastbatch="0" privatesystem="733333,222223,222225,222227,222229">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launching of new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        This game is offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
+      </p>
+      <p>
+        All settings are configured as follows:<br/>
+        - Commission settings and bet settings are not offered.<br/>
+        - The PT settings have been preset. You can start making the adjustment on downlines and setting your PT on existing members.
+      </p>
+      <p>
+        Please refer <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">here</a> for the PT guideline of Fishing World.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        在此宣布新产品名为 "捕鱼天下" 将于<b>{effectdate}</b> 隆重推出.
+      </p>
+      <p>
+        此项新产品将于默认开启形式推出. 若您要禁用于特定下线, 可到设定功能里设置.
+      </p>
+      <p>
+        所有设定将配置如下:<br/>
+        - 不提供佣金设定和投注设定<br/>
+        - 此占成数设置将被预定。您可以开始为下线进行调整和設置占成数于现有的会员。
+      </p>
+      <p>
+        请参阅<a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">这里</a>为"捕鱼天下”的占成数指南。
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        在此宣布新產品名為 "捕魚天下" 將於 <b>{effectdate}</b> 隆重推出.
+      </p>
+      <p>
+        此項新產品將於默認開啟形式推出. 若您要禁用於特定下線, 可到設定功能裡設置.
+      </p>
+      <p>
+        所有設定將配置如下:<br/>
+        - 不提供佣金設定和投注設定<br/>
+        - 此佔成數設置將被預定。您可以開始為下線進行調整和設置佔成數於現有的會員。
+      </p>
+      <p>
+        請參閱<a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">這里</a>為"捕魚天下”的佔成數指南。
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launching of new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        This game is offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
+      </p>
+      <p>
+        All settings are configured as follows:<br/>
+        - Commission settings and bet settings are not offered.<br/>
+        - The PT settings have been preset. You can start making the adjustment on downlines and setting your PT on existing members.
+      </p>
+      <p>
+        Please refer <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">here</a> for the PT guideline of Fishing World.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launching of new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
+      </p>
+      <p>
+        This game is offered by default. If you wish to disable it on a specific downline, please configure at the Setting function.
+      </p>
+      <p>
+        All settings are configured as follows:<br/>
+        - Commission settings and bet settings are not offered.<br/>
+        - The PT settings have been preset. You can start making the adjustment on downlines and setting your PT on existing members.
+      </p>
+      <p>
+        Please refer <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">here</a> for the PT guideline of Fishing World.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        ทางบริษัทใคร่ขอแจ้งให้ทราบว่า ทางบริษัทจะทำการเปิดตัวเกมส์ตัวใหม่ชื่อ 'Fishing World' ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b>
+      </p>
+      <p>
+        เกมส์ใหม่นี้จะนำเสนอเป็นค่าเริ่มต้น หากคุณประสงค์ปิดการใช้งาน "Fishing World' ในสายสมาชิกกลุ่มใดกลุ่มหนึ่ง กรุณากำหนดค่าในส่วนการตั้งค่า
+      </p>
+      <p>
+        การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้<br/>
+        - ไม่มีค่าคอมมิชชั้นและการตั้งค่าเดิมพัน<br/>
+        - ได้มีการตั้งค่าแบ่งสู้ไว้แล้ว คุณสามารถปรับเปลี่ยนการตั้งค่าให้กับดาวไลน์และลูกค้าปัจจุบัน
+      </p>
+      <p>
+        โปรดคลิก <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">ที่นี่</a>นี่ เพื่อดูข้อแนะนำในการตั้งค่าแบ่งสู้ของเกมส์'Fishing World'
+      </p>
+      <p>
+        ขอบคุณค่ะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
+      <p>
+        Từ ngày <b>{effectdate}</b>, chúng tôi sẽ ra mắt trò chơi mới mang tên 'Fishing World'.
+      </p>
+      <p>
+        Trò chơi này mặc định sẽ được kích hoạt. Để vô hiệu hoá trò chơi cho cấp dưới, vui lòng cấu hình trong mục Cài Đặt.
+      </p>
+      <p>
+        Tất cả các thiết lập sẽ được cấu hình như sau:        <br/>
+        - Không hỗ trợ thiết lập Hoa Hồng và Giới Hạn Cược. <br/>
+        - Các thiết lập Position Taking đã được thiết lập sẵn. Bạn có thể thay đổi thiết lập cho cấp dưới và thiết lập giá trị PT trên những member có sẵn.
+      </p>
+      <p>
+        Vui lòng tham khảo thiết lập Position Taking cho 'Bắn Cá' <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">ở đây</a>.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="7014601" name="Fishing World - Master - Agent"
                          startdate="01/07/2017" enddate="02/16/2017"  effectdate="02/23/2017"
                           width="1000" height="220" top="110" left="350"
