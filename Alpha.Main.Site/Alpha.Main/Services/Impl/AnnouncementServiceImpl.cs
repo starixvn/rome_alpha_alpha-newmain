@@ -198,7 +198,8 @@
 
         private bool IsExcludedHotMessageSite(XmlNode node, string site, int custId)
         {
-            if (!IsShowProductAnnouncementByBatch(node, custId)) {
+            if (!IsShowProductAnnouncementByBatch(node, custId))
+            {
                 return true;
             }
 
