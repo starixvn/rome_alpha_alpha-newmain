@@ -465,4 +465,7 @@
   <data name="DefaultErrorMessage" xml:space="preserve">
     <value>Oh …hệ thống đang bi lỗi,Vui lòng báo với người quản lý</value>
   </data>
+  <data name="NoPermissionAccessPage" xml:space="preserve">
+    <value>Xin lỗi, bạn không được phép truy cập vào trang này</value>
+  </data>
 </root>

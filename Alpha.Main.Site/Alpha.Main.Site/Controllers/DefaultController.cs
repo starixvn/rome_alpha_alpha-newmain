@@ -88,7 +88,7 @@ namespace Alpha.Main.Site.Controllers
 
         public ActionResult Kickout(string reason)
         {
-            string message = Resources.DefaultErrorMessage;
+            string message = Resources.NoPermissionAccessPage;
 
             if (!string.IsNullOrEmpty(reason))
             {

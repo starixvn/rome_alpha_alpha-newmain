@@ -466,4 +466,7 @@
   <data name="DefaultErrorMessage" xml:space="preserve">
     <value>哎哟..因为系统故障所以您会身在此处，请向管理层联系吧</value>
   </data>
+  <data name="NoPermissionAccessPage" xml:space="preserve">
+    <value>对不起,您不被允许进入此网页.</value>
+  </data>
 </root>
