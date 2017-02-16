@@ -2,6 +2,7 @@
 {
     using System;
     using AppResources;
+    using Main.Helpers;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
 
@@ -38,9 +39,11 @@
 
         public int CustId { get; }
 
-        public string MemberTodayWinLossReportPath => GetMemberWinLossReportPathByDate(DateTime.Today, DateTime.Today);
+        public string ReportSiteAppPath => MicroSites.ReportSiteUrl("~/");
 
-        public string MemberYesterdayWinLossReportPath => GetMemberWinLossReportPathByDate(DateTime.Today.AddDays(-1), DateTime.Today.AddDays(-1));
+        public string MemberTodayWinLossReportPath => GetMemberWinLossReportPathByDate(true);
+
+        public string MemberYesterdayWinLossReportPath => GetMemberWinLossReportPathByDate(false);
 
         private void SetLabelTextByUserLevel()
         {
@@ -64,11 +67,13 @@
             }
         }
 
-        private string GetMemberWinLossReportPathByDate(DateTime fromDate, DateTime toDate)
+        private string GetMemberWinLossReportPathByDate(bool isToday)
         {
-            var virtualPath = $"~/_Reports/Winloss/Winloss{userLevel.DisplayName}.aspx";
+            var dateReport = isToday ? DateTime.Now.ToShortDateString() : DateTime.Now.AddDays(-1).ToShortDateString();
+            var userSelectedDateRangeOption = isToday ? 0 : 1;
+            var queryString = $"IsFilterVisible=true&SortPropertyName=CustName&IsDescendingSort=False";
 
-            return $"{virtualPath}?custId={CustId}&fdate={fromDate}&tdate={toDate}";
+            return $@"{ReportSiteAppPath}/Winloss/Index?{queryString}&UserSelectedDateRangeOption={userSelectedDateRangeOption}&FromDate={dateReport}&ToDate={dateReport}";
         }
     }
 }

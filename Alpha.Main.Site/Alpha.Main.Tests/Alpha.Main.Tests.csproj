@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Alpha.Auth, Version=3.0.1.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.1.2\lib\net40\Alpha.Auth.dll</HintPath>
+    <Reference Include="Alpha.Auth, Version=3.0.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Auth.3.0.1.3-DuplicationLogin-05\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.Web, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">

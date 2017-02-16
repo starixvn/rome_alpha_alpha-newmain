@@ -382,4 +382,7 @@
   <data name="DefaultErrorMessage" xml:space="preserve">
     <value>죄송합니다. 시스템에러가 발생했습니다. 관리자에게 문의 바랍니다.</value>
   </data>
+  <data name="NoPermissionAccessPage" xml:space="preserve">
+    <value>죄송합니다. 이페이지를 엑서스 할 수 있는 권한이 없습니다.</value>
+  </data>
 </root>
