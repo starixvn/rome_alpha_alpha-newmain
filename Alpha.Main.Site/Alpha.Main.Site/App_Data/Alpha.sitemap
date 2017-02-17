@@ -40,9 +40,7 @@
       <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="LastBets/Index" roles="Agent"></siteMapNode>
 
       <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="CancelledBet/Index"></siteMapNode>
-
-      <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="OldMainAppPath" url="report/consolidate/index"></siteMapNode>
-
+      <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="ReportsAppPath" url="consolidation/consolidationbyusername"></siteMapNode>
       <siteMapNode resourceKey="statement" appPath="ReportsAppPath" url="Statement/SMAStatement"></siteMapNode>
 
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
