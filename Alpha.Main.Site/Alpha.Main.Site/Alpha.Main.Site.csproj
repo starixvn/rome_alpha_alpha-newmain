@@ -926,7 +926,9 @@
       <DependentUpon>Web.AppSettings.config</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Configuration\AuthorizationSection.config" />
+    <Content Include="Web.Configuration\AuthorizationSection.config">
+      <SubType>Designer</SubType>
+    </Content>
     <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
