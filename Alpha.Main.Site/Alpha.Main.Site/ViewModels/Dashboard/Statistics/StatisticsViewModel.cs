@@ -30,7 +30,7 @@
             }
         }
 
-        internal string GetOutstandingDefaultReportLevel (UserLevel userLevel)
+        internal string GetOutstandingDefaultReportLevel(UserLevel userLevel)
         {
             if (userLevel.IsSuperLevel())
             {
