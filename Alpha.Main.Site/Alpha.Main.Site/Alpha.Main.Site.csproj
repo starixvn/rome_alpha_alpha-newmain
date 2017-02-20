@@ -455,7 +455,9 @@
     <Content Include="App_Data\SPNames\PRO\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\PRO\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\PRO\DBMSG.bodb_Message.xml" />
-    <Content Include="App_Data\SPNames\PRO\DBONUSER.ON_USER.xml" />
+    <Content Include="App_Data\SPNames\PRO\DBONUSER.ON_USER.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\SIT\DBCUST.CustDB.xml" />
