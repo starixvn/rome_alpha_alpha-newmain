@@ -20,6 +20,10 @@
       <siteMapNode resourceKey="winlossanalysis" appPath="OldMainAppPath" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisAgent.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="winlossanalysis" appPath="OldMainAppPath" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisMaster.aspx" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="winlossanalysis" appPath="OldMainAppPath" url="_Reports/WinlossAnalysis/Daily_WinlossAnalysisSuper.aspx" roles="Super"></siteMapNode>
+      
+      <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/member" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/agent" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/master" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="OldMainAppPath" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
 
