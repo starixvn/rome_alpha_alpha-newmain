@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+	
   <PopupAnnouncement id="7011701" name="Shutting down Live Casino"
                          startdate="01/10/2017" enddate="01/31/2017"  effectdate="01/25/2017"
                           width="1000" height="220" top="110" left="350">
