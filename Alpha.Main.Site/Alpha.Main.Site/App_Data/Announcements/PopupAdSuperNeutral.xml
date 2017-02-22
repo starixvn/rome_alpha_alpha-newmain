@@ -39,7 +39,7 @@
         - 此占成数设置将被预定。您可以开始为下线进行调整和设置占成数于现有的会员。
       </p>
       <p>        
-        请参阅<a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">这里</a>为"捕鱼天下”的设置指南
+        请参阅<a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.zh-CN.pdf" target="_blank">这里</a>为"捕鱼天下”的设置指南
       </p>
       <p>
         谢谢
@@ -60,7 +60,7 @@
         - 此佔成數設置將被預定。您可以開始為下線進行調整和設置佔成數於現有的會員。
       </p>
       <p>
-        請參閱<a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">這里</a>為"捕魚天下”的設置指南
+        請參閱<a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.zh-TW.pdf" target="_blank">這里</a>為"捕魚天下”的設置指南
       </p>
       <p>
         謝謝
@@ -125,7 +125,7 @@
         - การตั้งค่าส่วนแบ่งจะถูกตั้งไว้ล่วงหน้า เริ่มตั้งแต่ MM/DD/YYYY เป็นต้นไปคุณสามารถเริ่มต้นการปรับการตั้งค่าให้ดาวน์ไลน์และการตั้งค่าส่วนแบ่งของคุณในเมมเบ้อ
       </p>
       <p>        
-        คลิก <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">ที่นี่</a>เพื่อดูคู่มือ 'ฟิชชิ่งเวิล์ด'
+        คลิก <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.th-TH.pdf" target="_blank">ที่นี่</a>เพื่อดูคู่มือ 'ฟิชชิ่งเวิล์ด'
       </p>
       <p>
         ขอบคุณค่ะ
@@ -148,7 +148,7 @@
         - Các thiết lập Position Taking đã được thiết lập sẵn. Bạn có thể thay đổi thiết lập cho cấp dưới và thiết lập giá trị PT trên những member có sẵn.
       </p>
       <p>
-        Vui lòng tham khảo hướng dẫn thiết lập cho 'Bắn Cá' <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.en-US.pdf" target="_blank">ở đây</a>.
+        Vui lòng tham khảo hướng dẫn thiết lập cho 'Bắn Cá' <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Super/FishingWorldGuideline.vi-VN.pdf" target="_blank">ở đây</a>.
       </p>
       <p>
         Trân Trọng
@@ -163,7 +163,7 @@
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
-        We are pleased to announce the launching of new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
+        We are pleased to announce the launching of the new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
       </p>
       <p>
         By default, this game will be offered for Super, Master and Agent only.
@@ -226,7 +226,7 @@
     <ja-JP src="">
       <p>Dear valued agents,</p>
       <p>
-        We are pleased to announce the launching of new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
+        We are pleased to announce the launching of the new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
       </p>
       <p>
         By default, this game will be offered for Super, Master and Agent only.
@@ -247,7 +247,7 @@
     <ko-KR src="">
       <p>Dear valued agents,</p>
       <p>
-        We are pleased to announce the launching of new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
+        We are pleased to announce the launching of the new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
       </p>
       <p>
         By default, this game will be offered for Super, Master and Agent only.
