@@ -13,10 +13,13 @@ namespace Alpha.Main.Site.Requests.Dashboard.Statistics
         {
             CustId = userSession.CustId;
             UserLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
+            UserSession = userSession;
         }
 
         public int CustId { get; }
 
         public UserLevel UserLevel { get; }
+
+        public IUserSession UserSession { get; }
     }
 }

@@ -34,12 +34,19 @@
     </div>
 }
 
-@helper NumericRow(string label, decimal value, string url)
+@helper NumericRow(string label, decimal value, string url, bool canViewReports = true)
 {
     <div class="row">
         <div class="col-xs-7">@label</div>
         <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
-            <a href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
+            @if (canViewReports)
+            {
+                <a href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
+            }
+            else
+            {
+                <span class="btn-link">@value.ToString("#,##0.00")</span>
+            }
         </div>
     </div>
 }
@@ -47,8 +54,8 @@
 <div class="container">
     <div class="panel-title"><span class="icon-statistics"></span>@Resources.statistics</div>
     <div class="group-title">@Resources.outstanding</div>
-    @NumericRow(Model.OutstandingLabel, statistics.Outstanding, Model.MemberOutstandingReportPath)
-    @NumericRow(Resources.totalOutstanding, statistics.TotalOutstanding, Model.MemberOutstandingReportPath)
+    @NumericRow(Model.OutstandingLabel, statistics.Outstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
+    @NumericRow(Resources.totalOutstanding, statistics.TotalOutstanding, Model.MemberOutstandingReportPath, Model.CanViewReports)
 
     <div class="group-title">@Resources.memberInfo</div>
 

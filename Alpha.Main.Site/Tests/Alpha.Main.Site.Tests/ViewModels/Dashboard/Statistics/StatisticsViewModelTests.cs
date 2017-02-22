@@ -20,7 +20,7 @@
             var userLevel = Enumeration.FromValue<UserLevel>(roleId);
 
             // Act
-            var viewModel = new StatisticsViewModel(stats, userLevel);
+            var viewModel = new StatisticsViewModel(stats, userLevel, false);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.OutstandingLabel);
@@ -35,7 +35,7 @@
             var userLevel = Enumeration.FromValue<UserLevel>(roleId);
 
             // Act
-            var viewModel = new StatisticsViewModel(null, userLevel);
+            var viewModel = new StatisticsViewModel(null, userLevel, false);
 
             // Assert
             Assert.AreEqual(expectedDefaultLevel, viewModel.GetOutstandingDefaultReportLevel(userLevel));

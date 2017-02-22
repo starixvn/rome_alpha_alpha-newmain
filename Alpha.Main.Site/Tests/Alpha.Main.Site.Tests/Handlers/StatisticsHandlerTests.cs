@@ -31,6 +31,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             statisticsHandler = new StatisticsHandler(statisticsService);
 
             userSession = Substitute.For<IUserSession>();
+            userSession.SubPageAccess.Returns(new PageAccess());
             userSession.CustId.Returns(CustId.ValidId);
             userSession.RoleId.Returns(RoleId.Agent);
         }
@@ -212,13 +213,34 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             var query = new StatisticsQuery(userSession);
 
-            var expectedStatisticsViewModel = new StatisticsViewModel(statistics, query.UserLevel);
+            var expectedStatisticsViewModel = new StatisticsViewModel(statistics, query.UserLevel, false);
 
             // Act
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
             Assert.IsTrue(expectedStatisticsViewModel.UserLevel == viewModel.UserLevel);
+        }
+
+        [Test]
+        [TestCase(false, false)]
+        [TestCase(true, true)]
+        public void HandleStatisticsQuery_ReturnStatisticsViewModel_WithCorrectReportPermission(bool viewReports, bool expectedResult)
+        {
+            // Arrange
+            var pageAccess = new PageAccess();
+            pageAccess.ViewReports = viewReports;
+            userSession.SubPageAccess.Returns(pageAccess);
+
+            var query = new StatisticsQuery(userSession);
+
+            statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(FakeDataHelper.Create<Statistics>());
+
+            // Act
+            var result = statisticsHandler.Handle(query);
+
+            // Assert
+            Assert.IsTrue(expectedResult == result.CanViewReports);
         }
     }
 }
