@@ -140,7 +140,7 @@
       <p>
         การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้<br/>
         - ไม่มีค่าคอมมิชชั้นและการตั้งค่าเดิมพัน<br/>
-        - การตั้งค่าส่วนแบ่งล่วงหน้าจะถูกจัดสรรโดยต้นสาย, ถ้ายังไม่มีการตั้งค่า รบกวนติดต่อต้นสายของคุณ.เมื่อการตั้งค่าพร้อมแล้วคุณสามารถเริ่มต้นปรับการตั้งค่าให้กับดาวน์ไลน์และการตั้งค่าของคุณในเมมเบ้อ
+        - การตั้งค่าส่วนแบ่งล่วงหน้าจะถูกจัดสรรโดยต้นสาย, ถ้ายังไม่มีการตั้งค่า รบกวนติดต่อต้นสายของคุณ.เมื่อการตั้งค่าพร้อมแล้วคุณสามารถเริ่มต้นปรับการตั้งค่าให้กับดาวน์ไลน์และการตั้งค่าของคุณ
       </p>
       <p>
         คลิก <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Agent/FishingWorldGuideline.th-TH.pdf" target="_blank">ที่นี่</a>เพื่อดูคู่มือ 'ฟิชชิ่งเวิล์ด'
@@ -166,7 +166,8 @@
       <p>
         Tất cả các thiết lập sẽ được cấu hình như sau:        <br/>
         - Không hỗ trợ thiết lập Hoa Hồng và Giới Hạn Cược. <br/>
-        - Các thiết lập Position Taking sẽ được lấy từ cấp trên, vui lòng liên hệ với cấp trên nếu bạn chưa có thiết lập. Khi các thiết lập đã sẵn sàng, bạn có thể thay đổi thiết lập cho cấp dưới và thiết lập giá trị PT trên những member có sẵn.
+        - Các thiết lập Position Taking sẽ được lấy từ cấp trên, vui lòng liên hệ với cấp trên nếu bạn chưa có thiết lập. Khi các thiết lập đã sẵn sàng, bạn có thể thay thiết lập giá trị PT trên những member có sẵn.
+
       </p>
       <p>
         Vui lòng tham khảo hướng dẫn thiết lập cho 'Bắn Cá' <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Agent/FishingWorldGuideline.vi-VN.pdf" target="_blank">ở đây</a>.
