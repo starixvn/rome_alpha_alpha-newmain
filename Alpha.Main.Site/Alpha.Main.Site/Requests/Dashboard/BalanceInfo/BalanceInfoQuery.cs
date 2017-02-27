@@ -14,6 +14,7 @@ namespace Alpha.Main.Site.Requests.Dashboard.BalanceInfo
             CustId = userSession.CustId;
             UserLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             Currency = userSession.Currency;
+            CanViewReports = userSession.SubPageAccess.ViewReports;
         }
 
         public int CustId { get; }
@@ -21,5 +22,7 @@ namespace Alpha.Main.Site.Requests.Dashboard.BalanceInfo
         public UserLevel UserLevel { get; }
 
         public string Currency { get; }
+
+        public bool CanViewReports { get; }
     }
 }

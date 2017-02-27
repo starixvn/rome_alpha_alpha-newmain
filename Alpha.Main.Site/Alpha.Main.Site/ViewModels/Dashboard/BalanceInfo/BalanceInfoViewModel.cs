@@ -16,18 +16,22 @@
             BalanceInfo balanceInfo,
             UserLevel userLevel,
             string currency,
-            int custId)
+            int custId,
+            bool canViewReports)
         {
             BalanceInfo = balanceInfo;
             Currency = currency;
             this.userLevel = userLevel;
             CustId = custId;
             SetLabelTextByUserLevel();
+            CanViewReports = canViewReports;
         }
 
         public BalanceInfo BalanceInfo { get; }
 
         public string Currency { get; } = DefaultCurrency;
+
+        public bool CanViewReports { get; }
 
         public string UserLevelLabel { get; private set; }
 
