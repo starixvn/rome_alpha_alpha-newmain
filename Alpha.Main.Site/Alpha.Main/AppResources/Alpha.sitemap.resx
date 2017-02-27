@@ -366,4 +366,7 @@
   <data name="customerSetting" xml:space="preserve">
     <value>Customer Setting</value>
   </data>
+  <data name="winLossByProduct" xml:space="preserve">
+    <value>Win Loss By Product</value>
+  </data>
 </root>
