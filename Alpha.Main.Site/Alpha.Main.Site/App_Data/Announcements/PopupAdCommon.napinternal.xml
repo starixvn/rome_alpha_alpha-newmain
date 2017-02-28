@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
   <PopupAnnouncement id="7164601" name="Macau Game maxbet"
-                       startdate="02/02/2017" enddate="03/16/2017"  effectdate="03/02/2017"
-                        width="1000" height="220" top="110" left="350">
+                        startdate="02/02/2017" enddate="03/16/2017"  effectdate="03/02/2017"
+                         width="1000" height="220" top="110" left="350">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
@@ -21,21 +21,6 @@
         尊敬的代理们，
       </p>
       <p>
-        欲通知Macau Games 梭哈撲克 (Stud Poker) 的最高投注設置已從<b>{effectdate}</b>更改。
-      </p>
-      <p>
-        不便之處 敬請見諒!
-      </p>
-      <p>
-        謝謝
-      </p>
-    </zh-CN>
-
-    <zh-TW src="">
-      <p>
-        尊敬的代理们，
-      </p>
-      <p>
         欲通知Macau Games 梭哈扑克 (Stud Poker) 的最高投注设置已从<b>{effectdate}</b>更改。
       </p>
       <p>
@@ -43,6 +28,21 @@
       </p>
       <p>
         谢谢
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>
+        尊敬的代理們，
+      </p>
+      <p>
+        欲通知Macau Games 梭哈撲克 (Stud Poker) 的最高投注設置已從<b>{effectdate}</b>更改。
+      </p>
+      <p>
+        不便之處 敬請見諒!
+      </p>
+      <p>
+        謝謝
       </p>
     </zh-TW>
 
