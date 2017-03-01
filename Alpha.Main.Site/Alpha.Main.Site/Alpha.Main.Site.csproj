@@ -490,7 +490,9 @@
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <Content Include="Web.napexternal.config" />
-    <Content Include="Web.napinternal.config" />
+    <Content Include="Web.napinternal.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.proi1.config" />
     <Content Include="Web.sit.config" />
     <Content Include="Assets\bundles\kick-out.js" />
