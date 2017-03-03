@@ -361,6 +361,7 @@
     </Content>
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.proi1.xml">
       <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.sit.xml">
       <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
@@ -455,7 +456,9 @@
     <Content Include="App_Data\SPNames\PRO\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\PRO\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\PRO\DBMSG.bodb_Message.xml" />
-    <Content Include="App_Data\SPNames\PRO\DBONUSER.ON_USER.xml" />
+    <Content Include="App_Data\SPNames\PRO\DBONUSER.ON_USER.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\SIT\DBCUST.CustDB.xml" />
@@ -487,7 +490,9 @@
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <Content Include="Web.napexternal.config" />
-    <Content Include="Web.napinternal.config" />
+    <Content Include="Web.napinternal.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.proi1.config" />
     <Content Include="Web.sit.config" />
     <Content Include="Assets\bundles\kick-out.js" />
@@ -926,7 +931,9 @@
       <DependentUpon>Web.AppSettings.config</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Configuration\AuthorizationSection.config" />
+    <Content Include="Web.Configuration\AuthorizationSection.config">
+      <SubType>Designer</SubType>
+    </Content>
     <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+	
   <PopupAnnouncement id="53088003" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
                     startdate="01/12/2017" enddate="01/27/2017"  effectdate="01/19/2017"
                     excludesites="INDO,755555,KORIBC,733333,222223"

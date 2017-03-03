@@ -638,6 +638,13 @@ function reloadPopUpSetting(timeOut) {
         if (iframes && iframes.length && iframes.attr('src')) {
             iframes.attr('src', iframes.attr('src'));
         } else if (target && target.length) {
+            var isForcingModeElement = target.find("#isForcingMode");
+            var isForcingModeCustomerListElement = top.main.$("isForcingMode");
+
+            if (isForcingModeElement && isForcingModeCustomerListElement) {
+                isForcingModeElement.val(isForcingModeCustomerListElement.value);
+            }
+
             target.submit();
         }
     }

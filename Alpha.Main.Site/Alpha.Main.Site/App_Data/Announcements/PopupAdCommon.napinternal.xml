@@ -1,5 +1,107 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="7164601" name="Macau Game maxbet"
+                        startdate="03/02/2017" enddate="03/16/2017"  effectdate="03/02/2017"
+                         width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We would like to inform that Max Bet settings of Casino Stud Poker (Macau Games) have been changed from <b>{effectdate}</b>.
+      </p>
+      <p>
+        We are sorry for any inconvenience caused.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>
+        尊敬的代理们，
+      </p>
+      <p>
+        欲通知Macau Games 梭哈扑克 (Stud Poker) 的最高投注设置已从<b>{effectdate}</b>更改。
+      </p>
+      <p>
+        不便之处 敬请见谅!
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>
+        尊敬的代理們，
+      </p>
+      <p>
+        欲通知Macau Games 梭哈撲克 (Stud Poker) 的最高投注設置已從<b>{effectdate}</b>更改。
+      </p>
+      <p>
+        不便之處 敬請見諒!
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We would like to inform that Max Bet settings of Casino Stud Poker (Macau Games) have been changed from <b>{effectdate}</b>.
+      </p>
+      <p>
+        We are sorry for any inconvenience caused.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We would like to inform that Max Bet settings of Casino Stud Poker (Macau Games) have been changed from <b>{effectdate}</b>.
+      </p>
+      <p>
+        We are sorry for any inconvenience caused.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        เราขอแจ้งให้ทราบว่าการตั้งค่าเดิมพันสูงสุดของคาสิโนสตั๊ดโป๊กเกอร์ (มาเก๊าเกมส์) มีการเปลี่ยนแปลงตั้งแต่วันที่ <b>{effectdate}</b>
+      </p>
+      <p>
+        ขออภัยในความไม่สะดวก
+      </p>
+      <p>
+        ขอบคุณค่ะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
+      <p>
+        Tiền Cược Tối Đa của Casino Stud Poker thuộc Macau Games đã được thay đổi kể từ ngày <b>{effectdate}</b>.
+      </p>
+      <p>
+        Chúng tôi rất xin lỗi về những bất tiện không mong muốn này gây ra cho bạn.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
   <PopupAnnouncement id="7011701" name="Shutting down Live Casino"
                          startdate="01/10/2017" enddate="01/31/2017"  effectdate="01/25/2017"
                           width="1000" height="220" top="110" left="350">
