@@ -147,29 +147,29 @@
       </p>
     </th-TH>
 
-    <vi-VN src="">
-      <p>Dear valued agents,</p>
-      <p>
-        We are pleased to announce the launch of 5 new bet types of Fast Market of Soccer with effect from <b>{effectdate}</b>:
-      </p>
-      <p>
-        - Next 1 Minute <br />
-        - Next 5 Minutes <br />
-        - What will happen first in next 1 minute <br />
-        - What will happen first in next 5 minutes <br />
-        - Next 1 Minute Set Piece
-      </p>
-      <p>
-        These bet types’ settings are configured as follows:
-      </p>
-      <p>
-        - Position Taking settings follow Soccer Non-Live Others settings. <br />
-        - Commission settings follow Others bet type’s settings.
-      </p>
-      <p>
-        Thank you
-      </p>
-    </vi-VN>
+     <vi-VN src="">
+       <p>Kính gửi quý khách hàng,</p>
+       <p>
+         Chúng tôi trân trọng giới thiệu 5 loại hình cá cược mới dành cho sản phẩm Cược Nhanh của Bóng Đá sẽ được ra mắt vào ngày <b>{effectdate}</b>:
+       </p>
+       <p>
+         - Sau 1 phút <br />
+         - Sau 5 phút <br />
+         - Sự kiện đầu tiên trong 1 phút nữa <br />
+         - Sự kiện đầu tiên trong 5 phút nữa <br />
+         - Tình huống cố định trong 1 phút nữa
+       </p>
+       <p>
+         Thiết lập của 5 loại cược mới sẽ được cấu hình như sau:
+       </p>
+       <p>
+         - Position Taking sẽ theo thiết lập của Bóng Đá - Loại Cược Khác (không trực tuyến). <br />
+         - Thiết lập Hoa hồng sẽ theo thiết lập của Loại Cược Khác.
+       </p>
+       <p>
+         Trân Trọng
+       </p>
+     </vi-VN>
   </PopupAnnouncement>
 	
   <PopupAnnouncement id="53088003" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
