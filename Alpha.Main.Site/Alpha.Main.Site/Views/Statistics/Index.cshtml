@@ -39,7 +39,7 @@
     <div class="row">
         <div class="col-xs-7">@label</div>
         <div class="col-xs-5 value @(value < 0 ? "text-red" : string.Empty)">
-            @if (canViewReports)
+            @if (canViewReports && value != 0)
             {
                 <a href="@url" class="btn-link">@value.ToString("#,##0.00")</a>
             }
