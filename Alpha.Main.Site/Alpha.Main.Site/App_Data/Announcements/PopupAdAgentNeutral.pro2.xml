@@ -1,7 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="7203501" name="NG Increase Bet Limit - Agent"
+                         startdate="03/07/2017" enddate="03/21/2017"  effectdate="03/07/2017"
+                          width="1000" height="220" top="110" left="350">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We would like to inform that we have increased the bet limit for Number Game from <b>{effectdate}</b>. Please contact your upline if you also wish to adjust your bet limit.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们：</p>
+      <p>
+        在此通知数字游戏投注限额已提高于<b>{effectdate}</b>。 如果您想调整您的投注限额，请联系您的上线。
+      </p>
+      <p>
+        谢谢。
+      </p>
+    </zh-CN>
+
+    <zh-TW src="">
+      <p>
+        尊敬的代理們：
+      </p>
+      <p>
+        在此通知數字遊戲投註限額已提高於<b>{effectdate}</b>。 如果您想調整您的投註限額，請聯系您的上線。
+      </p>
+      <p>
+        謝謝。
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We would like to inform that we have increased the bet limit for Number Game from <b>{effectdate}</b>. Please contact your upline if you also wish to adjust your bet limit.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We would like to inform that we have increased the bet limit for Number Game from <b>{effectdate}</b>. Please contact your upline if you also wish to adjust your bet limit.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        เราจะแจ้งให้ทราบว่าเราได้เพิ่มวงเงินเดิมพันสำหรับเกมหมายเลข จากวันที่ <b>{effectdate}</b>. ถ้าคุณต้องการที่จะปรับวงเงินเดิมพัน กรุณาติดต่ออับไลน์ของคุณ
+      </p>
+      <p>
+        ขอบคุณค่ะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
+      <p>
+        Tiền Cược Tối Đa của Number Game đã được tăng lên kể từ ngày <b>{effectdate}</b>. Vui lòng liên hệ với cấp trên của bạn, nếu bạn cũng muốn thay đổi tiền cược tối đa của mình.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
   <PopupAnnouncement id="7014601" name="Fishing World - Master - Agent"
-                         startdate="02/07/2017" enddate="02/16/2017"  effectdate="02/23/2017"
+                         startdate="02/07/2017" enddate="02/16/2017"  effectdate="03/02/2017"
                           width="1000" height="220" top="110" left="350"
                           islastbatch="0" privatesystem="733333,222223,222225,222227,222229">
     <en-US src="">
@@ -157,7 +236,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-  
+
   <PopupAnnouncement id="6887902" name="Enable Alpha - Search_Copy"
                        startdate="01/05/2017" enddate="01/12/2017"  effectdate="01/05/2017"
                         width="1000" height="220" top="110" left="350">
@@ -231,7 +310,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-  
+
   <PopupAnnouncement id="6887901" name="Disable Alpha - Search_Copy"
                        startdate="12/16/2016" enddate="01/05/2017"  effectdate="12/08/2016"
                         width="1000" height="220" top="110" left="350">
@@ -305,7 +384,7 @@
       </p>
     </vi-VN>
   </PopupAnnouncement>
-  
+
   <PopupAnnouncement id="0003001" name="NG2" startdate="11/15/2016" enddate="12/07/2016"  effectdate="11/29/2016" width="1000" height="220" top="110" left="350">
     <en-US src="">
       <p>Dear valued agents,</p>
