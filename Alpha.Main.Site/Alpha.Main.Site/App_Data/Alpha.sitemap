@@ -3,9 +3,6 @@
   <siteMapNode title="Alpha Site">
     <!--Report-->
     <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]">
-      <siteMapNode resourceKey="memberOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=2" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=3" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterOutstanding" appPath="OldMainAppPath" url="_Reports/Common/Outstanding.aspx?lv=4" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="outstanding/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="outstanding/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="outstanding/master" roles="Super"></siteMapNode>
