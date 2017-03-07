@@ -810,7 +810,9 @@
     </Content>
     <Content Include="favico.ico" />
     <Content Include="Global.asax" />
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml" />
+    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\Announcements\PopupAdCommon.xml">
       <SubType>Designer</SubType>
     </Content>
