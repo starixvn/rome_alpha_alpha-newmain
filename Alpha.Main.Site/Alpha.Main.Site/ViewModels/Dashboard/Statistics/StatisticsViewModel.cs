@@ -1,15 +1,17 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Dashboard.Statistics
 {
     using AppResources;
+    using Main.Helpers;
     using Main.Models.Enumerations;
     using Main.Models.Statistics;
 
     public class StatisticsViewModel
     {
-        public StatisticsViewModel(Statistics statistics, UserLevel userLevel)
+        public StatisticsViewModel(Statistics statistics, UserLevel userLevel, bool canViewReports)
         {
             Statistics = statistics;
             UserLevel = userLevel;
+            CanViewReports = canViewReports;
             OutstandingLabel = GetOutStandingLabelByLevel(userLevel);
         }
 
@@ -17,7 +19,34 @@
 
         public UserLevel UserLevel { get; }
 
+        public bool CanViewReports { get; }
+
         public string OutstandingLabel { get; }
+
+        public string MemberOutstandingReportPath
+        {
+            get
+            {
+                var reportSiteAppPath = MicroSites.ReportSiteUrl("~/");
+
+                return $@"{reportSiteAppPath}/outstanding/{GetOutstandingDefaultReportLevel(UserLevel)}";
+            }
+        }
+
+        internal string GetOutstandingDefaultReportLevel(UserLevel userLevel)
+        {
+            if (userLevel.IsSuperLevel())
+            {
+                return "master";
+            }
+
+            if (userLevel.IsMasterLevel())
+            {
+                return "agent";
+            }
+
+            return "member";
+        }
 
         private string GetOutStandingLabelByLevel(UserLevel userLevel)
         {

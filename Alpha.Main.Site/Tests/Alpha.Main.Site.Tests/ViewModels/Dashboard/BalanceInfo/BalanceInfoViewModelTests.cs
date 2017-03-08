@@ -32,7 +32,8 @@
                 balanceInfo,
                 userLevel,
                 "UUS",
-                1);
+                1,
+                true);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.UserLevelLabel);
@@ -51,7 +52,8 @@
                 balanceInfo,
                 userLevel,
                 "UUS",
-                1);
+                1,
+                true);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.GivenCreditLabel);
@@ -70,7 +72,8 @@
                 balanceInfo,
                 userLevel,
                 "UUS",
-                1);
+                1,
+                true);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.TotalDownlineCreditLabel);

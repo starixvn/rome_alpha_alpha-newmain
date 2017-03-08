@@ -11,9 +11,9 @@ namespace Alpha.Main
     using Helpers;
     using Models.Menus;
     using Sunplus.Agent.Model.Definitions;
-    using Sunplus.Agent.Utilities;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
+    using Sunplus.Agent.Utilities;
 
     public static class FunctionRegistry
     {

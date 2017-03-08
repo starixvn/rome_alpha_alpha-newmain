@@ -31,6 +31,9 @@ namespace Alpha.Main.Site.Tests.Handlers
             userSession = Substitute.For<IUserSession>();
             userSession.CustId.Returns(CustId.ValidId);
             userSession.RoleId.Returns(RoleId.Agent);
+            PageAccess pageAccess = new PageAccess();
+            pageAccess.ViewReports = true;
+            userSession.SubPageAccess.Returns(pageAccess);
         }
 
         [Test]
@@ -74,7 +77,8 @@ namespace Alpha.Main.Site.Tests.Handlers
                                                         balanceInfo,
                                                         query.UserLevel,
                                                         query.Currency,
-                                                        query.CustId);
+                                                        query.CustId,
+                                                        true);
 
             // Act
             var balanceInfoViewModel = balanceInfoHandler.Handle(query);

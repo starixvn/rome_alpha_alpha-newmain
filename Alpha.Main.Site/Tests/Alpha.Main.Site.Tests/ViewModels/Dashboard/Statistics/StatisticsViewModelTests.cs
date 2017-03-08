@@ -4,7 +4,6 @@
     using Main.Models.Enumerations;
     using Main.Models.Statistics;
     using Main.Tests.TestData.Helper;
-    using NSubstitute;
     using NUnit.Framework;
     using Site.ViewModels.Dashboard.Statistics;
 
@@ -21,10 +20,25 @@
             var userLevel = Enumeration.FromValue<UserLevel>(roleId);
 
             // Act
-            var viewModel = new StatisticsViewModel(stats, userLevel);
+            var viewModel = new StatisticsViewModel(stats, userLevel, false);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.OutstandingLabel);
+        }
+
+        [TestCase(RoleId.Super, "master")]
+        [TestCase(RoleId.Master, "agent")]
+        [TestCase(RoleId.Agent, "member")]
+        public void GetOutstandingDefaultReportLevel_ByViewerLevel_ReturnCorrectLevel(byte roleId, string expectedDefaultLevel)
+        {
+            // Arrange
+            var userLevel = Enumeration.FromValue<UserLevel>(roleId);
+
+            // Act
+            var viewModel = new StatisticsViewModel(null, userLevel, false);
+
+            // Assert
+            Assert.AreEqual(expectedDefaultLevel, viewModel.GetOutstandingDefaultReportLevel(userLevel));
         }
     }
 }

@@ -29,7 +29,8 @@
                 balanceInfo,
                 message.UserLevel,
                 message.Currency,
-                message.CustId);
+                message.CustId,
+                message.CanViewReports);
 
             return viewModel;
         }
