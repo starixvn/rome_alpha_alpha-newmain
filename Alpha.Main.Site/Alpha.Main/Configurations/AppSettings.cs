@@ -10,6 +10,13 @@
     {
         private static List<string> devicesUseCustomScrollbar;
 
+        private static string googleAnalyticId;
+
+        static AppSettings()
+        {
+            googleAnalyticId = ConfigurationManager.AppSettings["GoogleAnalyticId"];
+        }
+
         public static string AssetAppPath
         {
             get
@@ -114,6 +121,8 @@
         public static string MessageAgent => ConfigurationManager.AppSettings["Message:Agent"];
 
         public static bool IsDisabledContactUsLink => ConfigurationManager.AppSettings["IsDisabledContactUsLink"] == "1";
+
+        public static string GoogleAnalyticId => googleAnalyticId;
 
         public static string GetAppPath(string name)
         {
