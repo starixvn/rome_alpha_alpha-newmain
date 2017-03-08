@@ -52,11 +52,11 @@
                 return System.Web.Optimization.Styles.Render(paths.Select(path => $"{AppSettings.AssetAppPath}{path}{MinText}.css?v={StaticResourcesVersion}").ToArray());
             }
 
-            public static IHtmlString RenderCommon(string path, string version = "1")
+            public static IHtmlString RenderCommon(string path, string version = null)
             {
-                version = !string.IsNullOrEmpty(version) ? $"?v={version}" : string.Empty;
+                version = !string.IsNullOrEmpty(version) ? version : AppSettings.StaticResourcesVersion;
 
-                return System.Web.Optimization.Styles.Render($"{AppSettings.AssetAppPath}{path}{MinText}.css{version}");
+                return System.Web.Optimization.Styles.Render($"{AppSettings.AssetAppPath}{path}{MinText}.css?v={version}");
             }
         }
 
@@ -68,11 +68,11 @@
                 return System.Web.Optimization.Scripts.Render(paths.Select(path => $"{AppSettings.AssetAppPath}{path}{MinText}.js?v={StaticResourcesVersion}").ToArray());
             }
 
-            public static IHtmlString RenderCommon(string path, string version = "1")
+            public static IHtmlString RenderCommon(string path, string version = null)
             {
-                version = !string.IsNullOrEmpty(version) ? $"?v={version}" : string.Empty;
+                version = !string.IsNullOrEmpty(version) ? version : AppSettings.StaticResourcesVersion;
 
-                return System.Web.Optimization.Scripts.Render($"{AppSettings.AssetAppPath}{path}{MinText}.js{version}");
+                return System.Web.Optimization.Scripts.Render($"{AppSettings.AssetAppPath}{path}{MinText}.js?v={version}");
             }
         }
 

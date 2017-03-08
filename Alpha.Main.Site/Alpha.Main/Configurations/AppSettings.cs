@@ -78,7 +78,7 @@
         {
             get
             {
-                return Converter.ToString2(ConfigurationManager.AppSettings["ContentApp:StaticResourcesVersion"]);
+                return Converter.ToString2(ConfigurationManager.AppSettings["AssetsApp:StaticResourcesVersion"]);
             }
         }
 
