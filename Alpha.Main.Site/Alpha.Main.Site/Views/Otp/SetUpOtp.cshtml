@@ -8,8 +8,8 @@
     <title>Setup Otp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
-    @StaticResources.AssetStyles.Render($"/bundles/common/common")
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/otp/otp-super")
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetStyles.Render("/bundles/site-main/otp/otp-super")
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/otp/otp"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -59,7 +59,7 @@
     @Html.Hidden("oldMainRootPath", Alpha.Main.Helpers.MicroSites.OldMainUrl())
     @Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetScripts.Render($"/bundles/site-main/otp/otp-default")
+    @StaticResources.AssetScripts.Render("/bundles/site-main/otp/otp-default")
 
     <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/setup-otp")" type="text/javascript"></script>
 </body>

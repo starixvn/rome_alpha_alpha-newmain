@@ -8,14 +8,9 @@
 
     public static class AppSettings
     {
-        private static List<string> devicesUseCustomScrollbar;
+        private static List<string> devicesUseCustomScrollbar = Converter.ToString2(ConfigurationManager.AppSettings["DevicesUseCustomScrollbar"]).Split(',').ToList();
 
-        private static string googleAnalyticId;
-
-        static AppSettings()
-        {
-            googleAnalyticId = ConfigurationManager.AppSettings["GoogleAnalyticId"];
-        }
+        private static string googleAnalyticId = ConfigurationManager.AppSettings["GoogleAnalyticId"];
 
         public static string AssetAppPath
         {
@@ -102,10 +97,6 @@
         {
             get
             {
-                devicesUseCustomScrollbar =
-                    devicesUseCustomScrollbar ??
-                    Converter.ToString2(ConfigurationManager.AppSettings["DevicesUseCustomScrollbar"]).Split(',').ToList();
-
                 return devicesUseCustomScrollbar;
             }
         }
