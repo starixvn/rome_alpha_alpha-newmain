@@ -8,7 +8,9 @@
 
     public static class AppSettings
     {
-        private static List<string> devicesUseCustomScrollbar;
+        private static List<string> devicesUseCustomScrollbar = Converter.ToString2(ConfigurationManager.AppSettings["DevicesUseCustomScrollbar"]).Split(',').ToList();
+
+        private static string googleAnalyticId = ConfigurationManager.AppSettings["GoogleAnalyticId"];
 
         public static string AssetAppPath
         {
@@ -78,7 +80,7 @@
         {
             get
             {
-                return Converter.ToString2(ConfigurationManager.AppSettings["ContentApp:StaticResourcesVersion"]);
+                return Converter.ToString2(ConfigurationManager.AppSettings["AssetsApp:StaticResourcesVersion"]);
             }
         }
 
@@ -95,10 +97,6 @@
         {
             get
             {
-                devicesUseCustomScrollbar =
-                    devicesUseCustomScrollbar ??
-                    Converter.ToString2(ConfigurationManager.AppSettings["DevicesUseCustomScrollbar"]).Split(',').ToList();
-
                 return devicesUseCustomScrollbar;
             }
         }
@@ -112,6 +110,10 @@
         public static string MessageMaster => ConfigurationManager.AppSettings["Message:Master"];
 
         public static string MessageAgent => ConfigurationManager.AppSettings["Message:Agent"];
+
+        public static bool IsDisabledContactUsLink => ConfigurationManager.AppSettings["IsDisabledContactUsLink"] == "1";
+
+        public static string GoogleAnalyticId => googleAnalyticId;
 
         public static string GetAppPath(string name)
         {

@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System.Web;
+    using Configurations;
     using Main.Helpers;
 
     public class HeaderNavViewModel
@@ -23,5 +24,7 @@
         public bool IsViewedMemberInfo { get; }
 
         public string MainRootPath { get; } = AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
+
+        public bool IsDisabledContactUsLink { get; } = AppSettings.IsDisabledContactUsLink;
     }
 }
