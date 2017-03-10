@@ -351,4 +351,7 @@
   <data name="schedule" xml:space="preserve">
     <value>Schedule</value>
   </data>
+  <data name="PlayForFun" xml:space="preserve">
+    <value>Play For Fun</value>
+  </data>
 </root>

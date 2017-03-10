@@ -37,6 +37,9 @@
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
 
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
+      <siteMapNode resourceKey="PlayForFun" appPath="ReportsAppPath" url="playforfun/member" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="PlayForFun" appPath="ReportsAppPath" url="playforfun/agent" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="PlayForFun" appPath="ReportsAppPath" url="playforfun/master" roles="Super"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
     <!--MemberInfo-->

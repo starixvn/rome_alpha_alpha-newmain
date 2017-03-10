@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Alpha.Main.AppResources
-{
-
-
+namespace Alpha.Main.AppResources {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -570,6 +570,15 @@ namespace Alpha.Main.AppResources
         public static string personalMessage {
             get {
                 return ResourceManager.GetString("personalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play For Fun.
+        /// </summary>
+        public static string PlayForFun {
+            get {
+                return ResourceManager.GetString("PlayForFun", resourceCulture);
             }
         }
         
