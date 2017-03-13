@@ -355,6 +355,7 @@
   <ItemGroup>
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.napexternal.xml">
       <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdAgentNeutral.napexternal2.xml">
       <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
