@@ -25,5 +25,6 @@
     @Html.Hidden("alert-same-securitycode", Security.alertSameSecCode)
     @Html.Hidden("alert-securitycode-change-ok", Security.alertSecCodeChangedOK)
     @RenderSection("js", required: false)
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
 </body>
 </html>

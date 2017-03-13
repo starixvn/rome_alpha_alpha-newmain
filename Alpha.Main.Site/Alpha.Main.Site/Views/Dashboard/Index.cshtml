@@ -45,5 +45,6 @@
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-dashboard"))" type="text/javascript"></script>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
 </body>
 </html>

@@ -27,5 +27,6 @@
     @Html.Hidden("newPassword-must-be-diff-old", Security.lblPasswordDOldOne)
     @Html.Hidden("password-not-contain-nickname-username", Security.lblPasswordDAccountName)
     @RenderSection("js", required: false)
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
 </body>
 </html>
