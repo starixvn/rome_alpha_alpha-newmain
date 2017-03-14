@@ -24,7 +24,6 @@
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/master" roles="Super"></siteMapNode>
-
       <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeAgent.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeMaster.aspx" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="Super"></siteMapNode>
