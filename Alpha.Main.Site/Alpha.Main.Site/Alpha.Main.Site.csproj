@@ -468,6 +468,7 @@
     </Content>
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.uati1.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb_AGE.xml" />
