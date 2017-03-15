@@ -42,5 +42,6 @@
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/message/message-default")
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-message"))" type="text/javascript"></script>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
 </body>
 </html>

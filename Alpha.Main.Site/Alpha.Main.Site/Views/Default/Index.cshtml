@@ -48,6 +48,6 @@
     <!--[if (gt IE 8)|!(IE)]><!-->
     <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-instruction"))" type="text/javascript"></script>
     <!--<![endif]-->
-    @Html.Partial("GoogleAnalytic")
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
 </body>
 </html>
