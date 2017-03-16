@@ -230,7 +230,7 @@
         private bool IsShowProductAnnouncementByBatch(XmlNode node, int custId)
         {
             var lastBatchAttribute = node.Attributes["islastbatch"];
-            var offeredSites = node.Attributes["privatesystem"];
+            var offeredSites = node.Attributes["offeredsite"];
 
             if (lastBatchAttribute != null && !string.IsNullOrEmpty(lastBatchAttribute.Value))
             {
