@@ -201,7 +201,7 @@
             if (!IsShowProductAnnouncementByBatch(node, custId))
             {
                 return true;
-            }
+            }          
 
             var isPublicSystem = node.Attributes["privatesystem"] != null &&
                 (!node.Attributes["privatesystem"].Value.Equals("*") ||
