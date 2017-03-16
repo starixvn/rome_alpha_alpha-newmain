@@ -465,6 +465,7 @@
     </Content>
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.uat2.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\Announcements\PopupAdSuperNeutral.uati1.xml">
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
