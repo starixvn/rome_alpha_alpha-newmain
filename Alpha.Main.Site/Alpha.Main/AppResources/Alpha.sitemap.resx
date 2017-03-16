@@ -354,4 +354,7 @@
   <data name="PlayForFun" xml:space="preserve">
     <value>Play For Fun</value>
   </data>
+  <data name="memberRequest" xml:space="preserve">
+    <value>Member Request</value>
+  </data>
 </root>
