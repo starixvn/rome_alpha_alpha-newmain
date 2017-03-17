@@ -1,38 +1,37 @@
-﻿<div class="container">
+﻿@model MemberRequestsViewModel
+
+<div class="container">
     <div class="panel-title">
         <span class="icon-dropbox"></span>
-        <span>Play For Fun - Member Request</span>
-        <span class="badge-title">15</span>
+        <span>Play For Fun - @Resources.Request</span>
+        <span class="badge-title">@Model.TotalRequest</span>
     </div>
     <div class="panel-body">
         <div>
             <div class="col-xs-7"></div>
-            <div class="col-xs-5 right-align">Member request</div>
+            <div class="col-xs-5 right-align">@Alpha_sitemap.memberRequest</div>
         </div>
-        <div>
-            <div class="col-xs-7">
-                <a class="link-color product-item" href="#">Casino</a>
-            </div>
-            <div class="col-xs-5 value">
-                <a class="link-color" href="#">10</a>
-            </div>
-        </div>
-        <div>
-            <div class="col-xs-7">
-                <a class="link-color product-item" href="#">Macau Games</a>
-            </div>
-            <div class="col-xs-5 value">
-                <a class="link-color" href="#">5</a>
-            </div>
-        </div>
-        <div>
-            <div class="col-xs-7">
-                <a class="link-color product-item" href="#">Fishing World</a>
-            </div>
-            <div class="col-xs-5 value">
-                <a class="link-color disabled" href="#">0</a>
-            </div>
-        </div>
-    </div>
 
+        @if (Model.ProductRequests.Any())
+        {
+            foreach (var productRequest in Model.ProductRequests)
+            {
+                <div>
+                    <div class="col-xs-7">
+                        <a class="link-color product-item" href="@Model.BuildViewMemberRequestReport()">@productRequest.ProductName</a>
+                    </div>
+                    <div class="col-xs-5 value">
+                        @if (productRequest.NumberOfRequest.Equals(0))
+                        {
+                            @productRequest.NumberOfRequest
+                        }
+                        else
+                        {
+                            <a class="link-color" href="@Model.BuildEnableMemberRequest(productRequest.ProductId)">@productRequest.NumberOfRequest</a>
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
 </div>

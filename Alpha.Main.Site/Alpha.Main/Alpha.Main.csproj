@@ -270,6 +270,7 @@
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\MemberRequests\ProductRequest.cs" />
     <Compile Include="Models\Message\Message.cs" />
     <Compile Include="Models\Notice\NoticeMessage.cs" />
     <Compile Include="Models\Otp\DeviceInfo.cs" />

@@ -532,4 +532,7 @@
   <data name="NoPermissionAccessPage" xml:space="preserve">
     <value>Sorry, You don't have permission to access this page.</value>
   </data>
+  <data name="Request" xml:space="preserve">
+    <value>Request</value>
+  </data>
 </root>
