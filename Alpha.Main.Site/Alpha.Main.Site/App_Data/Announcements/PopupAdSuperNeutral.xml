@@ -3,7 +3,7 @@
   <PopupAnnouncement id="7276002" name="Fishing World - Super"
                         startdate="02/23/2017" enddate="04/13/2017"  effectdate="03/30/2017"
                          width="1000" height="220" top="110" left="350"
-                         islastbatch="0" privatesystem="611111,722222,766666,789y,7aa666,XYZbet,Best-odds">
+                         islastbatch="1" offeredsite="733333,222223,222225,222227,222229,755555,Indo,KORIBC">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
@@ -159,7 +159,7 @@
   <PopupAnnouncement id="7276001" name="Fishing World - Super"
                          startdate="02/16/2017" enddate="03/23/2017"  effectdate="03/30/2017"
                           width="1000" height="220" top="110" left="350"
-                          islastbatch="0" privatesystem="611111,722222,766666,789y,7aa666,XYZbet,Best-odds">
+                          islastbatch="1" offeredsite="733333,222223,222225,222227,222229,755555,Indo,KORIBC">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
@@ -395,7 +395,7 @@
   <PopupAnnouncement id="7181002" name="Fishing World - Super"
                          startdate="02/09/2017" enddate="03/30/2017"  effectdate="03/16/2017"
                           width="1000" height="220" top="110" left="350"
-                          islastbatch="0" privatesystem="755555,Indo,KORIBC">
+                          islastbatch="0" offeredsite="755555,Indo,KORIBC">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
@@ -551,7 +551,7 @@
   <PopupAnnouncement id="7181001" name="Fishing World - Super"
                          startdate="02/02/2017" enddate="03/09/2017"  effectdate="03/16/2017"
                           width="1000" height="220" top="110" left="350"
-                          islastbatch="0" privatesystem="755555,Indo,KORIBC">
+                          islastbatch="0" offeredsite="755555,Indo,KORIBC">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
@@ -707,7 +707,7 @@
   <PopupAnnouncement id="7014602" name="Fishing World - Super"
                          startdate="02/09/2017" enddate="02/23/2017"  effectdate="02/23/2017"
                           width="1000" height="220" top="110" left="350"
-                          islastbatch="0" privatesystem="733333,222223,222225,222227,222229">
+                          islastbatch="0" offeredsite="733333,222223,222225,222227,222229">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
@@ -863,7 +863,7 @@
   <PopupAnnouncement id="7014603" name="Fishing World - Master - Agent"
                          startdate="01/17/2017" enddate="02/16/2017"  effectdate="02/23/2017"
                           width="1000" height="220" top="110" left="350"
-                          islastbatch="0" privatesystem="733333,222223,222225,222227,222229">
+                          islastbatch="0" offeredsite="733333,222223,222225,222227,222229">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
