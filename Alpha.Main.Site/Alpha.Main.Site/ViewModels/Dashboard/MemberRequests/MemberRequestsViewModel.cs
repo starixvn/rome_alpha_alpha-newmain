@@ -4,12 +4,16 @@
     using Main.Helpers;
     using Main.Models.MemberRequests;
     using System.Linq;
+    using Main.Models.Enumerations;
 
     public class MemberRequestsViewModel
     {
-        public MemberRequestsViewModel(IEnumerable<ProductRequest> productRequests)
+        public MemberRequestsViewModel(
+            IEnumerable<ProductRequest> productRequests,
+            UserLevel userLevel)
         {
             ProductRequests = productRequests;
+            UserLevel = userLevel;
         }
 
         public int TotalRequest
@@ -18,6 +22,8 @@
         }
 
         public IEnumerable<ProductRequest> ProductRequests { get; }
+
+        public UserLevel UserLevel { get; }
 
         public string BuildEnableMemberRequest(int productId)
         {

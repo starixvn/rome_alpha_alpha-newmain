@@ -107,6 +107,7 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
             container.RegisterPerWebRequest<MessageService, MessageServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
+            container.RegisterPerWebRequest<MemberRequestsService, MemberRequestsServiceImpl>();
 
             container.RegisterPerWebRequest<OtpService, OtpServiceImpl>();
             container.RegisterPerWebRequest<OtpAdapter, OtpAdapterImpl>();

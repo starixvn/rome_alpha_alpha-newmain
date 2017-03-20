@@ -477,6 +477,7 @@
     <Content Include="App_Data\SPNames\INTERNAL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBONUSER.ON_USER.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml">
       <SubType>Designer</SubType>

@@ -21,7 +21,7 @@
                         <a class="link-color product-item" href="@Model.BuildViewMemberRequestReport()">@productRequest.ProductName</a>
                     </div>
                     <div class="col-xs-5 value">
-                        @if (productRequest.NumberOfRequest.Equals(0))
+                        @if (productRequest.NumberOfRequest.Equals(0) || Model.UserLevel.IsSuperLevel() || Model.UserLevel.IsMasterLevel())
                         {
                             @productRequest.NumberOfRequest
                         }
