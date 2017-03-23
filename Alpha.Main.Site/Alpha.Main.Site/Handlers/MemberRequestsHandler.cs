@@ -34,13 +34,10 @@
                                         .Select(product => product);
          
             var viewModel = new MemberRequestsViewModel(productRequests, message.UserLevel);
-
             return viewModel;
         }
 
-        public bool IsShowProduct(int productId)
-        {
-            return productId != ProductId.FishingWorld || !userSession.GetHideProduct(productId);
-        }
+        public bool IsShowProduct(int productId) 
+            => productId != ProductId.FishingWorld || !userSession.GetHideProduct(productId);
     }
 }

@@ -24,7 +24,6 @@
             ////};
 
             var productRequestData = dynamicRepository.Fetch<ProductRequest>(new ProductRequestCriteria(custId));
-
             return productRequestData;
         }
     }

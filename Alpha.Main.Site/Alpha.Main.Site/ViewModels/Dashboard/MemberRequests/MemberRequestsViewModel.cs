@@ -16,23 +16,15 @@
             UserLevel = userLevel;
         }
 
-        public int TotalRequest
-        {
-            get { return ProductRequests.Sum(productRequest => productRequest.NumberOfRequest); }
-        }
-
         public IEnumerable<ProductRequest> ProductRequests { get; }
+
+        public int TotalRequest => ProductRequests.Sum(productRequest => productRequest.NumberOfRequest);
 
         public UserLevel UserLevel { get; }
 
-        public string BuildEnableMemberRequest(int productId)
-        {
-            return $"{MicroSites.MemberInfoSiteUrl("~/")}/MemberRequests/Index?UserSelectedProductId={productId}";
-        }
+        public string BuildEnableMemberRequest(int productId) 
+            => $"{MicroSites.MemberInfoSiteUrl("~/")}/MemberRequests/Index?UserSelectedProductId={productId}";
 
-        public string BuildViewMemberRequestReport()
-        {
-            return string.Empty;
-        }
+        public string BuildViewMemberRequestReport() => string.Empty;
     }
 }

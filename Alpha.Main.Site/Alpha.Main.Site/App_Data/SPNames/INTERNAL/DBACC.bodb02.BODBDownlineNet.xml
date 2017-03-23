@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Functions>
+  <Function Name="PlayForFun">
+    <Setting Key="Age_CustomerSelMemberRequest" SpName="Age_CustomerSelMemberRequest" DbName="DBACC.bodb02.BODBDownlineNetView" Plain="0">
+      <Mapping DataField="ProductId" ObjectProperty="ProductId" />
+      <Mapping DataField="ProductName" ObjectProperty="ProductName" />
+      <Mapping DataField="NoOfRequest" ObjectProperty="NumberOfRequest" />
+    </Setting>
+  </Function>
+</Functions>

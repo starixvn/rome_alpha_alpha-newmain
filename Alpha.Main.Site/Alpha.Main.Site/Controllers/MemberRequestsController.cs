@@ -23,9 +23,6 @@ namespace Alpha.Main.Site.Controllers
 
         [HttpGet]
         public ActionResult Index()
-        {
-            var viewModel = mediator.Send(new MemberRequestsQuery(userSession));
-            return PartialView(viewModel);
-        }
+            => PartialView(mediator.Send(new MemberRequestsQuery(userSession)));
     }
 }
