@@ -16,12 +16,13 @@ body {
 
 .badge-title {
     display: inline-block;
-    padding: 3px;
-    background: #fcb84b;
-    color: #333333;
+    padding: 3px 4px;
+    background: #da1625;
+    color: #fff;
     border-radius: 2px;
     line-height: 1;
-    font-size: 13px;
+    font-size: 14px;
+    text-transform: capitalize;
 }
 
 .tab-content > .tab-pane {
@@ -363,11 +364,11 @@ body {
             .panel-title {
                 background: #666;
                 color: #fff;
-                padding: 6px 16px;
+                padding: 5px 16px;
 
                 .badge-title {
                     float: right;
-                    margin-top: 5px;
+                    margin-top: 6px;
                 }
             }
         }
@@ -428,12 +429,26 @@ body {
         line-height: 36px;
     }
 
+    /*.scroll-tab-mobile {
+        -webkit-user-select: none;
+        display: block;
+        overflow-y: hidden;
+        padding: 0;
+        position: relative;        
+        -webkit-overflow-scrolling: touch;
+        overflow-x: scroll;
+    }*/
+
     .nav-tabs {
-        display: table;
+        //display: table;
         width: 100%;
+        display: inline-block;
+        position: relative;
+        white-space: nowrap;
+        overflow-x:scroll;
 
         li {
-            display: table-cell;
+            display: inline-block;
             float: none;
             text-transform: uppercase;
 
