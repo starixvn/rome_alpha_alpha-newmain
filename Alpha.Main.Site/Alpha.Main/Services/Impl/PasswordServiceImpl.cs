@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
     using AppResources;
+    using CasinoLibrary.Model.UserException;
     using Criteria.Password;
     using DataAccesses;
     using Models;
@@ -93,13 +94,24 @@
             var isCustomerExist = casinoService.Customer.CheckCustSetting(custId);
             if (isCustomerExist)
             {
-                casinoService.Customer.UpdateCustPwd(
-                    custId,
-                    encodedPassword,
-                    ip,
-                    actorId,
-                    actorName,
-                    AgentSystem);
+                try
+                {
+                    casinoService.Customer.UpdateCustPwd(
+                        custId,
+                        encodedPassword,
+                        ip,
+                        actorId,
+                        actorName,
+                        AgentSystem);
+                }
+                catch (ErrorException ex)
+                {
+                    Logs.WriteInfo(ex);
+                }
+                catch (Exception e)
+                {
+                    Logs.WriteInfo(e);
+                }
             }
         }
 
