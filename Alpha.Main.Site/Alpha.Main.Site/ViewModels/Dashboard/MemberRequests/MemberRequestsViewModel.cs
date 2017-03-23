@@ -25,6 +25,7 @@
         public string BuildEnableMemberRequest(int productId) 
             => $"{MicroSites.MemberInfoSiteUrl("~/")}/MemberRequests/Index?UserSelectedProductId={productId}";
 
-        public string BuildViewMemberRequestReport() => string.Empty;
+        public string BuildViewMemberRequestReport(int productId)
+            => $"{MicroSites.ReportSiteUrl("~/")}/PlayForFun/{UserLevel.GetDirectDownLineLevel().DisplayName}?UserSelectedProductId={productId}";
     }
 }

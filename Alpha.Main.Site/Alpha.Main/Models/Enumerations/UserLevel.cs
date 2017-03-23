@@ -117,5 +117,7 @@
         {
             return uplineLevelValue - downlineLevelValue;
         }
+
+        public UserLevel GetDirectDownLineLevel() => FromValue<UserLevel>((byte)(Value - 1));
     }
 }
