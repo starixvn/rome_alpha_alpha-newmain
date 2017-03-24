@@ -14,21 +14,27 @@
     <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-home"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active" id="balance-tab">
-            <a href="#balance" aria-controls="home" role="tab" data-toggle="tab">@Resources.balance</a>
-        </li>
-        <li role="presentation" id="stats-tab">
-            <a href="#stats" aria-controls="home" role="tab" data-toggle="tab">@Resources.stats</a>
-        </li>
-        <li role="presentation" id="notice-tab">
-            <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">@Resources.announcement</a>
-        </li>
-        <li>
-            <a href="#member-requests" aria-controls="home" role="tab" data-toggle="tab">Play For Fun - Member Request<span class="badge-title">15</span></a>
-        </li>
+    <div class="scroll-tabs">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active" id="balance-tab">
+                <a href="#balance" aria-controls="home" role="tab" data-toggle="tab">@Resources.balance</a>
+            </li>
+            <li role="presentation" id="stats-tab">
+                <a href="#stats" aria-controls="home" role="tab" data-toggle="tab">@Resources.stats</a>
+            </li>
+            <li role="presentation" id="notice-tab">
+                <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">@Resources.announcement</a>
+            </li>
+            <li>
+                <a href="#member-requests" aria-controls="home" role="tab" data-toggle="tab">
+                    <span>Play For Fun - Member Request</span>
+                    <span class="new-request">(0)</span>
+                    <span class="badge-title">New</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
-    </ul>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active balance-info" id="balance">
             @Html.Action("BalanceInfo")
@@ -38,7 +44,7 @@
         </div>
         <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@Url.Action("Index", "Notice")">
             <div class="text-center"><span class="block-icon-small "></span></div>
-        </div>
+        </div>        
         <div role="tabpanel" class="tab-pane member-requests" id="member-requests">
                 @Html.Action("Index", "MemberRequests")
         </div>

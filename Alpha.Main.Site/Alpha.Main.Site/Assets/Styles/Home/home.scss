@@ -427,28 +427,45 @@ body {
         background-color: #fff;
         font-size: $font-size-mobile;
         line-height: 36px;
+        overflow: hidden;
     }
-
-    /*.scroll-tab-mobile {
+    
+    .scroll-tabs {
         -webkit-user-select: none;
         display: block;
+        height: 43px;
         overflow-y: hidden;
         padding: 0;
-        position: relative;        
+        position: absolute;
+        top: 0;
         -webkit-overflow-scrolling: touch;
         overflow-x: scroll;
-    }*/
+        width: 100vw;
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        /*&:after {
+            content:"";
+            height: 1px;
+            background: #ddd;
+            display: block;
+            margin-left: -10px;
+            margin-right: -10px;
+        }*/
+    }
 
     .nav-tabs {
-        //display: table;
-        width: 100%;
-        display: inline-block;
+        display: table;
+        //width: 100%;
+        //display: inline-block;
         position: relative;
         white-space: nowrap;
-        overflow-x:scroll;
-
+        overflow: hidden;
+        //width: 100vw;
         li {
-            display: inline-block;
+            //display: inline-block;
+            display: table-cell;
             float: none;
             text-transform: uppercase;
 
@@ -460,6 +477,10 @@ body {
                 }
             }
         }
+    }
+
+    .tab-content {
+        margin-top: 43px;
     }
 
     .tab-content > .tab-pane {
