@@ -254,10 +254,6 @@
             {
                 Logs.WriteInfo(ex);
             }
-            catch (Exception e)
-            {
-                Logs.WriteInfo(e);
-            }
         }
 
         private string GetSecurityCode(int custId, int subAccountId)

@@ -91,8 +91,8 @@
             string actorName,
             string ip)
         {
-            var isCustomerExist = casinoService.Customer.CheckCustSetting(custId);
-            if (isCustomerExist)
+            // var isCustomerExist = casinoService.Customer.CheckCustSetting(custId);
+            // if (isCustomerExist)
             {
                 try
                 {
@@ -107,10 +107,6 @@
                 catch (ErrorException ex)
                 {
                     Logs.WriteInfo(ex);
-                }
-                catch (Exception e)
-                {
-                    Logs.WriteInfo(e);
                 }
             }
         }
