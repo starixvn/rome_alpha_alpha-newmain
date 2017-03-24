@@ -20,8 +20,7 @@
       "Assets/scripts/core.js",
       "Assets/scripts/dashboard/dashboard.js",
       "Assets/scripts/dashboard/statistics.js",
-      "Assets/scripts/dashboard/notice.js",
-      "Assets/scripts/dashboard/member-requests.js"
+      "Assets/scripts/dashboard/notice.js"
     ]
   },
   {
