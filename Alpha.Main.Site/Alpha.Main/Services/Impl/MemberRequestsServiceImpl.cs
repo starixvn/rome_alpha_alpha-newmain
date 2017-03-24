@@ -16,14 +16,7 @@
 
         public IEnumerable<ProductRequest> GetProductRequestData(int custId)
         {
-            var productRequestData = new List<ProductRequest>
-            {
-                new ProductRequest(5, "Casino", 5),
-                new ProductRequest(6, "Fishing World", 15),
-                new ProductRequest(7, "Macau Games", 0),
-            };
-
-            //var productRequestData = dynamicRepository.Fetch<ProductRequest>(new ProductRequestCriteria(custId));
+            var productRequestData = dynamicRepository.Fetch<ProductRequest>(new ProductRequestCriteria(custId));
             return productRequestData;
         }
     }
