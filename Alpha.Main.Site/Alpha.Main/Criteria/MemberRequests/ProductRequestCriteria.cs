@@ -11,7 +11,7 @@
 
         public int CustId { get; }
 
-        public override string GetSettingKey() => "Age_CustomerSelMemberRequest";
+        public override string GetSettingKey() => "Age_PlayForFun_MemberRequest";
 
         public override bool IsValid() => CustId > 0;
     }
