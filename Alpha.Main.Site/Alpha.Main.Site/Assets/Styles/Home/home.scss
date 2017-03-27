@@ -429,14 +429,14 @@ body {
         line-height: 36px;
         overflow: hidden;
     }
-    
+
     .scroll-tabs {
         -webkit-user-select: none;
         display: block;
-        height: 43px;
+        height: 53px;
         overflow-y: hidden;
         padding: 0;
-        position: absolute;
+        position: relative;
         top: 0;
         -webkit-overflow-scrolling: touch;
         overflow-x: scroll;
@@ -456,16 +456,16 @@ body {
     }
 
     .nav-tabs {
-        display: table;
+        //display: table;
         //width: 100%;
-        //display: inline-block;
+        display: inline-block;
         position: relative;
         white-space: nowrap;
         overflow: hidden;
         //width: 100vw;
         li {
-            //display: inline-block;
-            display: table-cell;
+            display: inline-block;
+            //display: table-cell;
             float: none;
             text-transform: uppercase;
 
@@ -480,7 +480,7 @@ body {
     }
 
     .tab-content {
-        margin-top: 43px;
+        //margin-top: 43px;
     }
 
     .tab-content > .tab-pane {
@@ -559,6 +559,12 @@ body {
         .panel-title {
             display: none;
         }
+    }
+}
+
+@media only screen and (max-device-width : $screen-device-lower768) and (orientation : landscape) {
+    .nav-tabs {
+        display: flex;
     }
 }
 
