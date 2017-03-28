@@ -234,7 +234,7 @@
 
             if (lastBatchAttribute != null && !string.IsNullOrEmpty(lastBatchAttribute.Value))
             {
-                if (lastBatchAttribute.Value.Equals("0") && 
+                if (lastBatchAttribute.Value.Equals("0") &&
                     (offeredSites == null || string.IsNullOrWhiteSpace(offeredSites.Value)))
                 {
                     return false;
