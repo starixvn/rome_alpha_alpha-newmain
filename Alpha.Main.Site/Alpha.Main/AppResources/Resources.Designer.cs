@@ -566,6 +566,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Member Request.
+        /// </summary>
+        public static string memberRequest {
+            get {
+                return ResourceManager.GetString("memberRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Message.
         /// </summary>
         public static string message {
@@ -715,6 +724,15 @@ namespace Alpha.Main.AppResources {
         public static string personalMessage {
             get {
                 return ResourceManager.GetString("personalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play For Fun.
+        /// </summary>
+        public static string playForFun {
+            get {
+                return ResourceManager.GetString("playForFun", resourceCulture);
             }
         }
         

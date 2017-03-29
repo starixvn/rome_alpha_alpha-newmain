@@ -439,15 +439,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Member Request.
-        /// </summary>
-        public static string memberRequest {
-            get {
-                return ResourceManager.GetString("memberRequest", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Member Win Limit.
         /// </summary>
         public static string MemberWinLimit {
@@ -588,6 +579,15 @@ namespace Alpha.Main.AppResources {
         public static string PlayForFun {
             get {
                 return ResourceManager.GetString("PlayForFun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play For Fun - Member Request.
+        /// </summary>
+        public static string playForFunMemberRequest {
+            get {
+                return ResourceManager.GetString("playForFunMemberRequest", resourceCulture);
             }
         }
         

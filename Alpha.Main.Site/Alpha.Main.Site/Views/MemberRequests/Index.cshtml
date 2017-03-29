@@ -3,16 +3,14 @@
 <div class="container">
     <div class="panel-title">
         <span class="icon-dropbox"></span>
-        @*<span>Play For Fun - @Resources.Request</span>
-        <span class="badge-title">@Model.TotalRequest</span>*@
-        <span>Play For Fun</span>
+        <span>@Resources.playForFun</span>
         <span class="new-request">(0)</span>
         <span class="badge-title">New</span>
     </div>
     <div class="panel-body">
         <div>
             <div class="col-xs-7"></div>
-            <div class="col-xs-5 right-align">@Alpha_sitemap.memberRequest</div>
+            <div class="col-xs-5 right-align">@Resources.memberRequest</div>
         </div>
 
         @if (Model.ProductRequests.Any())
