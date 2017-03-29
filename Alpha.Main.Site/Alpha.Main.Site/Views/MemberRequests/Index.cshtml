@@ -9,8 +9,17 @@
     </div>
     <div class="panel-body">
         <div>
-            <div class="col-xs-7"></div>
-            <div class="col-xs-5 right-align">@(Model.TotalRequest.Equals(0) ? Resources.NoInformationIsAvailable : Resources.memberRequest)</div>
+            @if (Model.TotalRequest.Equals(0))
+            {
+                <div class="col-xs-5"></div>
+                <div class="col-xs-7 left-align">@(Model.TotalRequest.Equals(0) ? Resources.NoInformationIsAvailable : Resources.memberRequest)</div>
+            }
+            else
+            {
+                <div class="col-xs-7"></div>
+                <div class="col-xs-5 right-align">@Resources.memberRequest</div>
+            }
+
         </div>
 
         @if (Model.ProductRequests.Any())
@@ -33,6 +42,6 @@
                     </div>
                 </div>
             }
-        }                
-    </div>   
+        }
+    </div>
 </div>
