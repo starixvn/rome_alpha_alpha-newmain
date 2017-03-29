@@ -346,4 +346,7 @@
   <data name="outstanding" xml:space="preserve">
     <value>未払い</value>
   </data>
+  <data name="NoInformationIsAvailable" xml:space="preserve">
+    <value>情報がありません</value>
+  </data>
 </root>

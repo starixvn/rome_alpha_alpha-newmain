@@ -541,4 +541,7 @@
   <data name="playForFun" xml:space="preserve">
     <value>Play For Fun</value>
   </data>
+  <data name="NoInformationIsAvailable" xml:space="preserve">
+    <value>No information is available</value>
+  </data>
 </root>

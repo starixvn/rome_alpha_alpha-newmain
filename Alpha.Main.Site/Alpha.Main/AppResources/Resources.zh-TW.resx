@@ -414,7 +414,7 @@
   </data>
   <data name="stats" xml:space="preserve">
     <value>您的統計</value>
-    </data>
+  </data>
   <data name="balance" xml:space="preserve">
     <value>餘額資料</value>
   </data>
@@ -468,5 +468,8 @@
   </data>
   <data name="NoPermissionAccessPage" xml:space="preserve">
     <value>對不起, 您不被允許進入此網頁.</value>
+  </data>
+  <data name="NoInformationIsAvailable" xml:space="preserve">
+    <value>沒資料顯示</value>
   </data>
 </root>

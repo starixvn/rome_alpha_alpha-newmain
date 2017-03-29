@@ -656,6 +656,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No information is available.
+        /// </summary>
+        public static string NoInformationIsAvailable {
+            get {
+                return ResourceManager.GetString("NoInformationIsAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, You don&apos;t have permission to access this page..
         /// </summary>
         public static string NoPermissionAccessPage {

@@ -413,7 +413,7 @@
   </data>
   <data name="stats" xml:space="preserve">
     <value>Thống kê</value>
-    </data>
+  </data>
   <data name="balance" xml:space="preserve">
     <value>Tài Khoản</value>
   </data>
@@ -467,5 +467,8 @@
   </data>
   <data name="NoPermissionAccessPage" xml:space="preserve">
     <value>Xin lỗi, bạn không được phép truy cập vào trang này</value>
+  </data>
+  <data name="NoInformationIsAvailable" xml:space="preserve">
+    <value>Thông tin chưa được cập nhật</value>
   </data>
 </root>

@@ -10,7 +10,7 @@
     <div class="panel-body">
         <div>
             <div class="col-xs-7"></div>
-            <div class="col-xs-5 right-align">@Resources.memberRequest</div>
+            <div class="col-xs-5 right-align">@(Model.TotalRequest.Equals(0) ? Resources.NoInformationIsAvailable : Resources.memberRequest)</div>
         </div>
 
         @if (Model.ProductRequests.Any())

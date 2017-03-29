@@ -336,7 +336,7 @@
   </data>
   <data name="stats" xml:space="preserve">
     <value>통계</value>
-     </data>
+  </data>
   <data name="balance" xml:space="preserve">
     <value>잔액정보</value>
   </data>
@@ -384,5 +384,8 @@
   </data>
   <data name="NoPermissionAccessPage" xml:space="preserve">
     <value>죄송합니다. 이페이지를 엑서스 할 수 있는 권한이 없습니다.</value>
+  </data>
+  <data name="NoInformationIsAvailable" xml:space="preserve">
+    <value>가능한 정보가 없습니다</value>
   </data>
 </root>
