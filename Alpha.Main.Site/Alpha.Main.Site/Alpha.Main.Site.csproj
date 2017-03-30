@@ -630,6 +630,7 @@
     <Content Include="Views\MemberRequests\Index.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />

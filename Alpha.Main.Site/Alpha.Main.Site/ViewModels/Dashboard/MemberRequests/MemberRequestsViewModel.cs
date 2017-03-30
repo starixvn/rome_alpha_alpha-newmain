@@ -10,15 +10,23 @@
     {
         public MemberRequestsViewModel(
             IEnumerable<ProductRequest> productRequests,
-            UserLevel userLevel)
+            UserLevel userLevel,
+            bool canViewReports,
+            bool canViewMemberInfo)
         {
             ProductRequests = productRequests;
             UserLevel = userLevel;
+            CanViewReports = canViewReports;
+            CanViewMemberInfo = canViewMemberInfo;
         }
 
         public IEnumerable<ProductRequest> ProductRequests { get; }
 
         public int TotalRequest => ProductRequests.Sum(productRequest => productRequest.NumberOfRequest);
+
+        public bool CanViewReports { get; }
+
+        public bool CanViewMemberInfo { get; }
 
         public UserLevel UserLevel { get; }
 

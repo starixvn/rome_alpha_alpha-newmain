@@ -33,7 +33,11 @@
                                         .Where(product => IsShowProduct(product.ProductId))
                                         .Select(product => product);
          
-            var viewModel = new MemberRequestsViewModel(productRequests, message.UserLevel);
+            var viewModel = new MemberRequestsViewModel(
+                productRequests, 
+                message.UserLevel, 
+                message.UserSession.SubPageAccess.ViewReports,
+                message.UserSession.SubPageAccess.ViewMemberInfo);
             return viewModel;
         }
 

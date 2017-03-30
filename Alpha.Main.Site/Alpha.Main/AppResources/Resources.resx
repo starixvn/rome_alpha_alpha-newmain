@@ -544,4 +544,7 @@
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>No information is available</value>
   </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>New</value>
+  </data>
 </root>

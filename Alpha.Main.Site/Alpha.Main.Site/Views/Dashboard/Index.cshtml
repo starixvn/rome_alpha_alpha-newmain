@@ -25,11 +25,11 @@
             <li role="presentation" id="notice-tab">
                 <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">@Resources.announcement</a>
             </li>
-            <li>
+            <li id="memberrequest-tab">
                 <a href="#member-requests" aria-controls="home" role="tab" data-toggle="tab">
-                    <span>Play For Fun - Member Request</span>
-                    <span class="new-request">(0)</span>
-                    <span class="badge-title">New</span>
+                    <span>@Resources.playForFun</span>
+                    <span class="new-request"></span>
+                    <span class="badge-title">@Resources.lblNew</span>
                 </a>
             </li>
         </ul>
@@ -45,8 +45,8 @@
         <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@Url.Action("Index", "Notice")">
             <div class="text-center"><span class="block-icon-small "></span></div>
         </div>        
-        <div role="tabpanel" class="tab-pane member-requests" id="member-requests">
-                @Html.Action("Index", "MemberRequests")
+        <div role="tabpanel" class="tab-pane member-requests" id="member-requests" action-url="@Url.Action("Index", "MemberRequests")">
+            <div class="text-center"><span class="block-icon-small "></span></div>
         </div>
     </div>
 
