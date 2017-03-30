@@ -16,7 +16,6 @@
       <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/master" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="matchWinLostDetail" appPath="ReportsAppPath" url="matchwinlossdetail/index"></siteMapNode>
-      <siteMapNode resourceKey="matchWinLostDetail" appPath="ReportsAppPath" url="matchwinlossdetail/index"></siteMapNode>
 
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/agent" roles="Master"></siteMapNode>
@@ -32,6 +31,7 @@
       <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/master" roles="Super"></siteMapNode>
+
  
   
       <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/member" roles="Agent"></siteMapNode>
