@@ -4,6 +4,7 @@
     using System.Text.RegularExpressions;
     using Alpha.Main.Services;
     using AppResources;
+    using CasinoLibrary.Model.UserException;
     using Criteria.SecurityCode;
     using DataAccesses;
     using Models;
@@ -245,7 +246,14 @@
 
         private void CloseCasinoAccount(int custId, string ip)
         {
-            casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
+            try
+            {
+                casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
+            }
+            catch (ErrorException ex)
+            {
+                Logs.WriteInfo(ex);
+            }
         }
 
         private string GetSecurityCode(int custId, int subAccountId)
