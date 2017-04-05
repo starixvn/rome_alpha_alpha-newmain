@@ -583,6 +583,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Play For Fun Detail.
+        /// </summary>
+        public static string PlayForFunDetail {
+            get {
+                return ResourceManager.GetString("PlayForFunDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Play For Fun - Member Request.
         /// </summary>
         public static string playForFunMemberRequest {

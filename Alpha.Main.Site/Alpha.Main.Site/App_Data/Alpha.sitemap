@@ -3,9 +3,6 @@
   <siteMapNode title="Alpha Site">
     <!--Report-->
     <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]">
-      <siteMapNode resourceKey="PlayForFun" appPath="ReportsAppPath" url="playforfun/member" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="PlayForFun" appPath="ReportsAppPath" url="playforfun/agent" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="PlayForFun" appPath="ReportsAppPath" url="playforfun/master" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="outstanding/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="outstanding/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="outstanding/master" roles="Super"></siteMapNode>
@@ -38,6 +35,10 @@
       <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="OldMainAppPath" url="report/consolidate/index"></siteMapNode>
       <siteMapNode resourceKey="statement" appPath="OldMainAppPath" url="Finance/StatementSMA?rptmrange=5"></siteMapNode>
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
+
+      <siteMapNode resourceKey="PlayForFunDetail" appPath="ReportsAppPath" url="playforfun/member" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="PlayForFunDetail" appPath="ReportsAppPath" url="playforfun/agent" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="PlayForFunDetail" appPath="ReportsAppPath" url="playforfun/master" roles="Super"></siteMapNode>
 
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
     </siteMapNode>
