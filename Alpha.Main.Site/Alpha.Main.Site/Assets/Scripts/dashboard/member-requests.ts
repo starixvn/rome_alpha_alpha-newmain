@@ -24,7 +24,7 @@
     showGuideline = () => {
         let title = this.$('#PlayForFunGuide').val();
         let url = this.$('#GuidelineUrl').val();
-        this.topWindow.popupManager.open(url, title, 600, 900);
+        this.topWindow.popupManager.open(url, title, 900, 600);
     };
 }
 
