@@ -36,6 +36,10 @@
             => $"{MicroSites.MemberInfoSiteUrl("~/")}/MemberRequests/Index?UserSelectedProductId={productId}";
 
         public string BuildViewMemberRequestReport(int productId)
-            => $"{MicroSites.ReportSiteUrl("~/")}/PlayForFun/{UserLevel.GetDirectDownLineLevel().DisplayName}?UserSelectedProductId={productId}";
+        {
+            var action = UserLevel.IsAgentLevel() ? "Member" : "MasterOrAgent";
+
+            return $"{MicroSites.ReportSiteUrl("~/")}/PlayForFun/{action}?UserSelectedProductId={productId}";
+        }
     }
 }

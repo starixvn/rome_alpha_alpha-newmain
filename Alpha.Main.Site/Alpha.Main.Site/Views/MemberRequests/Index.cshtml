@@ -12,11 +12,11 @@
         <div>
             @if (Model.TotalRequest.Equals(0))
             {
-            <div class="col-xs-12 center">@(Model.TotalRequest.Equals(0) ? Resources.NoInformationIsAvailable : Resources.memberRequest)</div>
+                <div class="col-xs-12 center">@(Model.TotalRequest.Equals(0) ? Resources.NoInformationIsAvailable : Resources.memberRequest)</div>
             }
             else
             {
-            <div class="col-xs-12 right-align">@Resources.memberRequest</div>
+                <div class="col-xs-12 right-align">@Resources.memberRequest</div>
             }
 
         </div>
@@ -25,32 +25,32 @@
         {
             foreach (var productRequest in Model.ProductRequests)
             {
-        <div>
-            <div class="col-xs-7">
-                @if (Model.CanViewReports)
+                <div>
+                    <div class="col-xs-7">
+                        @if (Model.CanViewReports)
                         {
-                <a class="link-color product-item" href="@Model.BuildViewMemberRequestReport(productRequest.ProductId)">@productRequest.ProductName</a>
+                            <a class="link-color product-item" href="@Model.BuildViewMemberRequestReport(productRequest.ProductId)">@productRequest.ProductName</a>
                         }
                         else
                         {
-                <span> @productRequest.ProductName</span>
+                            <span> @productRequest.ProductName</span>
                         }
-            </div>
-            <div class="col-xs-5 value">
-                @if (productRequest.NumberOfRequest.Equals(0) || Model.UserLevel.IsSuperLevel() || Model.UserLevel.IsMasterLevel() || !Model.CanViewMemberInfo)
+                    </div>
+                    <div class="col-xs-5 value">
+                        @if (productRequest.NumberOfRequest.Equals(0) || Model.UserLevel.IsSuperLevel() || Model.UserLevel.IsMasterLevel() || !Model.CanViewMemberInfo)
                         {
-                @productRequest.NumberOfRequest
+                            @productRequest.NumberOfRequest
                         }
                         else
                         {
-                <a class="link-color" href="@Model.BuildEnableMemberRequest(productRequest.ProductId)">@productRequest.NumberOfRequest</a>
+                            <a class="link-color" href="@Model.BuildEnableMemberRequest(productRequest.ProductId)">@productRequest.NumberOfRequest</a>
                         }
-            </div>
-        </div>
+                    </div>
+                </div>
             }
         }
     </div>
 </div>
 @Html.Hidden("totalRequest", Model.TotalRequest)
-@Html.Hidden("GuidelineUrl", Model.GuidelinesLink))
+@Html.Hidden("GuidelineUrl", Model.GuidelinesLink)
 @Html.Hidden("PlayForFunGuide", Resources.PlayForFunGuidelines)
