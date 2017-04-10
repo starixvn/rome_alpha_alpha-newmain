@@ -30,7 +30,9 @@
 
         public UserLevel UserLevel { get; }
 
-        public string BuildEnableMemberRequest(int productId) 
+        public string GuidelinesLink => "../Views/MemberRequests/Guidelines/" + UserLevel.DisplayName + "/Index.html";
+
+        public string BuildEnableMemberRequest(int productId)
             => $"{MicroSites.MemberInfoSiteUrl("~/")}/MemberRequests/Index?UserSelectedProductId={productId}";
 
         public string BuildViewMemberRequestReport(int productId)

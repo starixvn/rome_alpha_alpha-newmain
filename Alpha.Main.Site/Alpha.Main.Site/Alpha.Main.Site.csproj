@@ -537,6 +537,28 @@
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <Content Include="Assets\styles\home\_mixins2.scss" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Index.html" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\f1.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\f2.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\f3.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\f4.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\f5.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\f6.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\f7.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\f8.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\pencil.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\Images\sync.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Agent\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\Master\Index.html" />
+    <Content Include="Views\MemberRequests\Guidelines\Master\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Master\Styles\Images\f11.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Master\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Master\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\Super\Index.html" />
+    <Content Include="Views\MemberRequests\Guidelines\Super\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Super\Styles\Images\f12.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Super\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\Super\Styles\page.css" />
     <Content Include="Web.napinternal.config">
       <SubType>Designer</SubType>
     </Content>
@@ -628,7 +650,6 @@
     <Content Include="Views\Default\Kickout.cshtml" />
     <Content Include="typings.json" />
     <Content Include="Views\MemberRequests\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guideline.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />

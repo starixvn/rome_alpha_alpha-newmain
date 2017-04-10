@@ -6,7 +6,7 @@
         <span>@Resources.playForFun</span>
         <span class="new-request">(@Model.TotalRequest)</span>
         <span id="icon-help-play-for-fun" class="icon-information-outline"></span>
-        <span class="badge-title">@Resources.lblNew</span>        
+        <span class="badge-title">@Resources.lblNew</span>
     </div>
     <div class="panel-body">
         <div>
@@ -52,5 +52,5 @@
     </div>
 </div>
 @Html.Hidden("totalRequest", Model.TotalRequest)
-@Html.Hidden("GuidelineUrl", AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/MemberRequests/Guideline"))
-@Html.Hidden("PlayForFunGuide", "Play For Fun Guide")
+@Html.Hidden("GuidelineUrl", Model.GuidelinesLink))
+@Html.Hidden("PlayForFunGuide", Resources.PlayForFunGuidelines)

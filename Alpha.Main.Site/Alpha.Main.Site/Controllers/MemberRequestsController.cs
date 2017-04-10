@@ -24,8 +24,5 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult Index()
             => PartialView(mediator.Send(new MemberRequestsQuery(userSession)));
-
-        [HttpGet]
-        public ActionResult Guideline() => View();
     }
 }

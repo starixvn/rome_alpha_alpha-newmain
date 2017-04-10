@@ -547,4 +547,7 @@
   <data name="lblNew" xml:space="preserve">
     <value>New</value>
   </data>
+  <data name="PlayForFunGuidelines" xml:space="preserve">
+    <value>Play For Fun - Guidelines</value>
+  </data>
 </root>
