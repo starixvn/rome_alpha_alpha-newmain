@@ -19,7 +19,7 @@
             self.$(".scroll-tabs").scrollLeft(position.left);
         });
 
-        this.$('#icon-help').on('click', this.showGuideline);
+        this.$('.icon-information-outline').on('click', this.showGuideline);
     };
     showGuideline = () => {
         let title = this.$('#PlayForFunGuide').val();
