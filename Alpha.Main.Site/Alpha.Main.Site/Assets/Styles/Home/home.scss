@@ -445,6 +445,10 @@ body {
         overflow: hidden;
     }
 
+    .popup-guidelines {
+        width: 90% !important;
+    }
+
     .scroll-tabs {
         -webkit-user-select: none;
         display: block;
@@ -574,7 +578,7 @@ body {
         .panel-title {
             display: none;
         }
-    }
+    }    
 }
 
 
