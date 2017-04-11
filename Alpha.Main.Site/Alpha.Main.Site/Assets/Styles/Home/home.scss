@@ -25,6 +25,10 @@ body {
     text-transform: capitalize;
 }
 
+.icon-information-outline {
+    padding: 0 5px;
+}
+
 .tab-content > .tab-pane {
     padding: 8px 0;
 
@@ -377,6 +381,8 @@ body {
                     margin-left: 10px;
                     font-weight: normal;
                     color: #fff;
+                    font-size: 18px;
+                    margin-top: 2px;
                 }
             }
         }
