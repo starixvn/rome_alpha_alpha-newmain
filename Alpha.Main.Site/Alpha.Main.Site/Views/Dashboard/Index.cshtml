@@ -25,14 +25,17 @@
             <li role="presentation" id="notice-tab">
                 <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">@Resources.announcement</a>
             </li>
-            <li id="memberrequest-tab">
-                <a href="#member-requests" aria-controls="home" role="tab" data-toggle="tab">
-                    <span>@Resources.playForFun</span>
-                    <span class="new-request"></span>                    
-                    <span class="badge-title">@Resources.lblNew</span>
-                    <span id="icon-help-play-for-fun" class="icon-information-outline"></span>
-                </a>
-            </li>
+            @if (Model.EnablePlayForFun)
+            {
+                <li id="memberrequest-tab">
+                    <a href="#member-requests" aria-controls="home" role="tab" data-toggle="tab">
+                        <span>@Resources.playForFun</span>
+                        <span class="new-request"></span>
+                        <span class="badge-title">@Resources.lblNew</span>
+                        <span id="icon-help-play-for-fun" class="icon-information-outline"></span>
+                    </a>
+                </li>
+            }
         </ul>
     </div>
 
@@ -45,10 +48,13 @@
         </div>
         <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@Url.Action("Index", "Notice")">
             <div class="text-center"><span class="block-icon-small "></span></div>
-        </div>        
-        <div role="tabpanel" class="tab-pane member-requests" id="member-requests" action-url="@Url.Action("Index", "MemberRequests")">
-            <div class="text-center"><span class="block-icon-small "></span></div>
         </div>
+        @if (Model.EnablePlayForFun)
+        {
+            <div role="tabpanel" class="tab-pane member-requests" id="member-requests" action-url="@Url.Action("Index", "MemberRequests")">
+                <div class="text-center"><span class="block-icon-small "></span></div>
+            </div>
+        }
     </div>
 
     @Html.Partial("HiddenFields", Model)

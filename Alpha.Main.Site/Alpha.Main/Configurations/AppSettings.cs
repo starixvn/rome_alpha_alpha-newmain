@@ -121,6 +121,8 @@
 
         public static bool IsDisabledContactUsLink => ConfigurationManager.AppSettings["IsDisabledContactUsLink"] == "1";
 
+        public static bool EnablePlayForFun => ConfigurationManager.AppSettings["EnablePlayForFun"] == "true";
+
         public static string GoogleAnalyticId => googleAnalyticId;
 
         public static string GetAppPath(string name)

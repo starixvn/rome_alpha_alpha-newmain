@@ -200,6 +200,10 @@ var AgeWnd = function () {
 
             var popupId = "page-popup-" + Math.random().toString(36).substring(7);
             popUp.attr("id", popupId);
+            if (windowCss) {
+                popUp.addClass(windowCss);
+            }
+
             this.id = popupId;
             // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
             var scrollTop = oldMainUltilities.getScrollTop(window.document.body);
