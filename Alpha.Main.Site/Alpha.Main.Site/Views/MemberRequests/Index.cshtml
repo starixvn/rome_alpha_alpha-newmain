@@ -52,5 +52,5 @@
     </div>
 </div>
 @Html.Hidden("totalRequest", Model.TotalRequest)
-@Html.Hidden("GuidelineUrl", Model.GuidelinesLink)
+@Html.Hidden("GuidelineUrl", Url.Action("Guidelines", "MemberRequests"))
 @Html.Hidden("PlayForFunGuide", Resources.PlayForFunGuidelines)

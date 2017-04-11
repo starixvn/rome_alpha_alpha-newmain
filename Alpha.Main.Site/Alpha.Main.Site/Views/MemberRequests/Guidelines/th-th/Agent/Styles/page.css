@@ -1,0 +1,251 @@
+body {
+    font-size: 14px;
+    font-family: 'Roboto';
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: 700;
+}
+
+.icon {
+    padding: 0 6px;
+}
+
+ol {
+    list-style-type: none;
+    counter-reset: item;
+    margin: 0;
+    padding: 0;
+}
+
+    ol > li {
+        display: table;
+        counter-increment: item;
+        margin-bottom: 0.6em;
+    }
+
+li.feature:before {
+    content: counters(item, ".") ". ";
+    display: table-cell;
+    padding-right: 0.6em;
+}
+
+li li {
+    margin: 0;
+}
+
+.feature {
+    margin-top: 10px;
+}
+
+.feature-desc {
+    line-height: 1.5;
+}
+
+.alphabet-ordered p {
+    margin: 0;
+    margin-left: 35px;
+}
+
+.step-level {
+    margin-bottom: 15px;
+}
+
+.sublevel-desc {
+    margin-bottom: 10px;
+}
+
+.level-2 .feature-images {
+    margin-left: -20px;
+}
+
+.feature-images {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+figure {
+    margin: 8px 0 0;
+}
+
+    figure figcaption {
+        font-style: italic;
+        margin-top: 5px;
+    }
+
+    figure img {
+        width: 860px;
+    }
+
+@media only screen and (max-device-width: 900px) {
+    figure img {
+        width: 100%;
+    }
+}
+
+li.feature > ol > li:before {
+    content: counters(item, ".") " ";
+    font-weight: bold;
+    color: #ec750a;
+}
+
+.feature .feature-title, li.feature:before {
+    color: #333;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.feature .feature-title, .feature .feature-desc {
+    margin-bottom: 15px;
+}
+
+.feature-number {
+    font-weight: bold;
+    color: #ec750a;
+}
+
+.feature.setting .feature-desc {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.feature.setting .level-extra {
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+.level-extra > li {
+    list-style: none;
+}
+
+.level-extra li .extra-text {
+    color: #00b0f0;
+}
+
+.level-extra > li:before {
+    content: url("~/Views/MemberRequests/Guidelines/th-th/Agent/Styles/Images/star.png");
+    margin-right: 10px;
+}
+
+.setting .level-1 {
+    padding-left: 40px;
+}
+
+.level-1 {
+    margin-top: 10px;
+    padding-left: 20px;
+    line-height: 30px;
+    list-style: disc;
+}
+
+    .level-1 > li {
+        margin-bottom: 5px;
+    }
+
+.level-2 {
+    padding-left: 0;
+}
+
+    .level-2 li {
+        list-style: none;
+    }
+
+        .level-2 li:before {
+            content: '-';
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+.level-4 li, .level-3 li {
+    list-style: none;
+}
+
+.level-3 {
+    padding-left: 13px;
+}
+
+.level-4 {
+    padding-left: 30px;
+}
+
+    .level-4 li:before {
+        content: "\2713";
+        margin-right: 15px;
+    }
+
+.level-3 > li:before {
+    content: url("~/Views/MemberRequests/Guidelines/th-th/Agent/Styles/Images/arrow2.png");
+    margin-right: 15px;
+}
+
+.window {
+    background: url(Images/windows.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 0 48px;
+    margin-top: 3px;
+    position: relative;
+    top: 8px;
+}
+
+    .window:after, .window:before {
+        content: "\2192";
+        position: relative;
+        right: 10px;
+        font-weight: bold;
+        font-size: 26px;
+        top: -6px;
+    }
+
+    .window:before {
+        left: -33px;
+        margin-right: 8px;
+    }
+
+    .window:after {
+        margin-left: 8px;
+    }
+
+.acc-info:after {
+    content: "\2192";
+    font-weight: bold;
+    font-size: 26px;
+    margin: 0 5px;
+    position: relative;
+    top: 3px;
+}
+
+.fomular-1 {
+    padding-left: 161px;
+}
+
+.fomular-2 {
+    padding-left: 167px;
+}
+
+.fomular-3 {
+    padding-left: 187px;
+}
+
+.window.master {
+    margin: 0 30px 0 5px;
+}
+
+    .window.master:before {
+        content: '';
+    }
+
+    .window.master:after {
+        right: -5px;
+    }

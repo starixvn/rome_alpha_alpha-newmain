@@ -1,0 +1,62 @@
+﻿@{
+    var resourcePath = "~/Views/MemberRequests/Guidelines/ja-jp/Master/Styles/";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Play For Fun</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="@Url.Content(resourcePath+"/page.css")" />
+</head>
+<body>
+    <div class="container">
+        <div class="feature-desc">
+            <span><span class="bold">'Play for Fun'</span>  on member site allows members to trial new products with virtual currency before requesting a product activation for the real play. To support user in managing these requests, the new feature with the same name has been created to provide you the number of pending requests.</span>
+        </div>
+
+        <div class="feature-images">
+            <figure>
+                <img src="@Url.Content(resourcePath+"/Images/f9.png")" alt="Fig 1">
+                <figcaption>Figure 1. 'Play for Fun' Dashboard</figcaption>
+            </figure>
+        </div>
+
+        <div class="feature-list">
+            <div class="feature">
+                <div class="feature-title">Master Play For Fun Detail Report</div>
+
+                <div class="feature-desc">Click on product name of the request (or on <span class="bold">Play For Fun Detail</span> in Reports menu) to view statistics of members who have tried the products of Play for Fun.</div>
+
+                <div class="feature-images">
+                    <figure>
+                        <img src="@Url.Content(resourcePath+"Images/f10.png")" alt="F alt="Fig 2">
+                        <figcaption>Figure 2. Play For Fun in Home page</figcaption>
+                    </figure>
+                </div>
+
+                <div class="feature-desc">A Play for Fun report will be opened as below. </div>
+
+                <div class="feature-images">
+                    <figure>
+                        <img src="@Url.Content(resourcePath+"Images/f11.png")" alt="F alt="Fig 3">
+                        <figcaption>Figure 3. Master Play For Fun Detail report</figcaption>
+                    </figure>
+                </div>
+
+                <div class="feature-desc">Note that the report summarizes members’ statistics on selected product based on virtual currency only. Click on account name to drill down data to downline.</div>
+
+                <ul class="level-1">
+                    <li><span class="bold">No.Players</span>: Number of players has tried the products of Play for Fun</li>
+                    <li><span class="bold">Turnover</span>: Total member stake amount.</li>
+                    <li><span class="bold">Member Win Loss</span>: Total member win loss amount.</li>
+                    <li><span class="bold">Play count</span>: Total number of bet tickets.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
