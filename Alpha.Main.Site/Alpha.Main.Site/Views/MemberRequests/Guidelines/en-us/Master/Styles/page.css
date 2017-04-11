@@ -1,5 +1,5 @@
 body {
-    font-size: 14px;
+    font-size: 13px;
     font-family: 'Roboto';
 }
 
@@ -150,6 +150,7 @@ li.feature > ol > li:before {
 
     .level-1 > li {
         margin-bottom: 5px;
+        line-height: 1.5;
     }
 
 .level-2 {
@@ -158,6 +159,8 @@ li.feature > ol > li:before {
 
     .level-2 li {
         list-style: none;
+        line-height: 1.5;
+        margin-bottom: 5px;
     }
 
         .level-2 li:before {
