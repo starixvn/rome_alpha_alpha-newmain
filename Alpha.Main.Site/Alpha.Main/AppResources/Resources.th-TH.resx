@@ -475,4 +475,10 @@
   <data name="lblNew" xml:space="preserve">
     <value>บใหม่</value>
   </data>
+  <data name="UpdatedSuccessfully" xml:space="preserve">
+    <value>ปรับปรุงเรียบร้อยแล้ว!</value>
+  </data>
+  <data name="memberRequest" xml:space="preserve">
+    <value>คำขอสมาชิก</value>
+  </data>
 </root>

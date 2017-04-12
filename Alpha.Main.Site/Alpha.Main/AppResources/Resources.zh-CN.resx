@@ -478,4 +478,10 @@
   <data name="lblNew" xml:space="preserve">
     <value>新增</value>
   </data>
+  <data name="UpdatedSuccessfully" xml:space="preserve">
+    <value>更新成功!</value>
+  </data>
+  <data name="memberRequest" xml:space="preserve">
+    <value>会员要求</value>
+  </data>
 </root>
