@@ -8,6 +8,76 @@
       LCS: 7,
       domain: 5
   -->
+  <PopupAnnouncement id="7502802" name="Play For Fun - 2"
+                  startdate="4/10/2017" enddate="05/11/2017"  effectdate="04/13/2017">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request'. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively. The new feature is temporarily inactive, we will inform you once it is fully supported.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+    <zh-CN src="">
+      尊敬的代理们，<br />
+      <p>
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request'. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively. The new feature is temporarily inactive, we will inform you once it is fully supported.
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+    <zh-TW src="">
+      尊敬的代理們，<br />
+      <p>
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request'. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively. The new feature is temporarily inactive, we will inform you once it is fully supported.
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request'. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively. The new feature is temporarily inactive, we will inform you once it is fully supported.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request'. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively. The new feature is temporarily inactive, we will inform you once it is fully supported.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียน เอเจนต์<br />
+      <p>
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request'. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively. The new feature is temporarily inactive, we will inform you once it is fully supported.
+      </p>
+      <p>
+        ขอบพระคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Kính gửi quý khách hàng,<br />
+      <p>
+        Chúng tôi sẽ ra mắt một tính năng mới với tên gọi 'Chơi Thử - Yêu Cầu Kích Hoạt' nhằm giúp bạn thống kê toàn bộ yêu cầu kích hoạt của người chơi cùng với thông tin đặt cược. Nhờ đó, bạn có thể quản lý cũng như kích hoạt sản phẩm cho thành viên cấp dưới một cách hiệu quả hơn. Lưu ý tính năng mới này tạm thời chưa hoạt động, chúng tôi sẽ thông báo cho bạn khi nó đã sẵn sàng hoạt động.
+      </p>
+      <p>
+        Trân trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
   <PopupAnnouncement id="53088003" name="Allbet: HideAllBet = 0 and IsSyncAllBet = 1 and IsSyncLiveCasino = 1"
                       startdate="01/12/2017" enddate="01/27/2017"  effectdate="01/19/2017"
                       excludesites="INDO,755555,KORIBC,733333,222223"
