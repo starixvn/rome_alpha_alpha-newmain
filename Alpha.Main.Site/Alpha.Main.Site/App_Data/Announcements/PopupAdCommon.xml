@@ -8,11 +8,11 @@
       LCS: 7,
       domain: 5
   -->
-  <PopupAnnouncement id="7502801" name="Play For Fun - 1" startdate="4/10/2016" enddate="05/10/2016"  effectdate="04/18/2017" privatesystem="KORIBC,733333,755555,Indo">
+  <PopupAnnouncement id="7502801" name="Play For Fun - 1" startdate="4/10/2016" enddate="04/27/2016"  effectdate="04/18/2017" privatesystem="KORIBC,733333,755555,Indo">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         Thank you
@@ -21,7 +21,7 @@
     <zh-CN src="">
       尊敬的代理们，<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         谢谢
@@ -30,7 +30,7 @@
     <zh-TW src="">
       尊敬的代理們，<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         謝謝
@@ -40,7 +40,7 @@
     <ja-JP src="">
       Dear valued agents,<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         Thank you
@@ -50,7 +50,7 @@
     <ko-KR src="">
       Dear valued agents,<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         Thank you
@@ -60,7 +60,7 @@
     <th-TH src="">
       เรียน เอเจนต์<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         ขอบพระคุณ
@@ -70,7 +70,7 @@
     <vi-VN src="">
       Kính gửi quý khách hàng,<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        Từ ngày {effectdate}, chúng tôi sẽ ra mắt tính năng mới mang tên 'Chơi Thử - Yêu Cầu Kích Hoạt' nhằm giúp bạn thống kê toàn bộ yêu cầu kích hoạt của người chơi cùng với thông tin đặt cược. Nhờ đó, bạn có thể quản lý cũng như kích hoạt sản phẩm cho thành viên cấp dưới một cách hiệu quả hơn.
       </p>
       <p>
         Trân trọng
@@ -79,7 +79,7 @@
   </PopupAnnouncement>
 
   <PopupAnnouncement id="7502802" name="Play For Fun - 2"
-                  startdate="4/10/2016" enddate="05/10/2016"  effectdate="04/18/2017" excludesites="KORIBC,733333,755555,Indo">
+                  startdate="4/10/2016" enddate="05/11/2016"  effectdate="04/13/2017" excludesites="KORIBC,733333,755555,Indo">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
@@ -141,7 +141,7 @@
     <vi-VN src="">
       Kính gửi quý khách hàng,<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request'. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively. The new feature is temporarily inactive, we will inform you once it is fully supported.
+        Chúng tôi sẽ ra mắt một tính năng mới với tên gọi 'Chơi Thử - Yêu Cầu Kích Hoạt' nhằm giúp bạn thống kê toàn bộ yêu cầu kích hoạt của người chơi cùng với thông tin đặt cược. Nhờ đó, bạn có thể quản lý cũng như kích hoạt sản phẩm cho thành viên cấp dưới một cách hiệu quả hơn. Lưu ý tính năng mới này tạm thời chưa hoạt động, chúng tôi sẽ thông báo cho bạn khi nó đã sẵn sàng hoạt động.
       </p>
       <p>
         Trân trọng
@@ -940,7 +940,7 @@
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
-        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
+        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on {effectdate} to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
       </p>
       <p>
         Thank you
@@ -968,7 +968,7 @@
     <ja-JP src="">
       Dear valued agents,<br />
       <p>
-        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
+        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on {effectdate} to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
       </p>
       <p>
         Thank you
@@ -978,7 +978,7 @@
     <ko-KR src="">
       Dear valued agents,<br />
       <p>
-        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on mm/dd/yyyy to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
+        Your privacy and security are our highest priority. The One-Time Password (OTP) feature will be released on {effectdate} to provide enhanced security to our system. Once enabled, the OTP will replace your Security Code.
       </p>
       <p>
         Thank you
@@ -988,7 +988,7 @@
     <th-TH src="">
       เรียน เอเจนต์<br />
       <p>
-        ข้อมูลส่วนตัว และความปลอดภัยของท่าน เป็นมีความสำคัญเป็นอย่างสูงสำหรับเรา ระบบ ใส่พาสเวิร์ดครั้งเดียว (OTP) จะถูกนำไปใช้ในวันที่ mm/dd/yyyy เพื่อเป็นการเพิ่มความปลอดภัยในกับระบบของเรา เมื่อมีการเปิดใช้งาน OTP ก็จะเป็นตัวที่ใช้แทน รหัสความปลอดภัยของท่าน
+        ข้อมูลส่วนตัว และความปลอดภัยของท่าน เป็นมีความสำคัญเป็นอย่างสูงสำหรับเรา ระบบ ใส่พาสเวิร์ดครั้งเดียว (OTP) จะถูกนำไปใช้ในวันที่ {effectdate} เพื่อเป็นการเพิ่มความปลอดภัยในกับระบบของเรา เมื่อมีการเปิดใช้งาน OTP ก็จะเป็นตัวที่ใช้แทน รหัสความปลอดภัยของท่าน
       </p>
       <p>
         ขอบพระคุณ

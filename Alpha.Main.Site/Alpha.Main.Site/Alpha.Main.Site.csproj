@@ -740,6 +740,7 @@
     </Content>
     <Content Include="Web.napexternal.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.napexternal2.config">
       <DependentUpon>Web.uati1.config</DependentUpon>

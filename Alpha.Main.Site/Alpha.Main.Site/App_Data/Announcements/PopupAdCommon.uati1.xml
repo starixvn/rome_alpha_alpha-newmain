@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
-  <PopupAnnouncement id="7502801" name="Play For Fun - 1" startdate="4/10/2016" enddate="05/10/2016"  effectdate="04/18/2017" privatesystem="KORIBC,733333,755555,Indo">
+  <PopupAnnouncement id="7502801" name="Play For Fun - 1" startdate="4/10/2016" enddate="04/27/2016"  effectdate="04/18/2017" privatesystem="KORIBC,733333,755555,Indo">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         Thank you
@@ -13,7 +13,7 @@
     <zh-CN src="">
       尊敬的代理们，<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         谢谢
@@ -22,7 +22,7 @@
     <zh-TW src="">
       尊敬的代理們，<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         謝謝
@@ -32,7 +32,7 @@
     <ja-JP src="">
       Dear valued agents,<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         Thank you
@@ -42,7 +42,7 @@
     <ko-KR src="">
       Dear valued agents,<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         Thank you
@@ -52,7 +52,7 @@
     <th-TH src="">
       เรียน เอเจนต์<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         ขอบพระคุณ
@@ -62,7 +62,7 @@
     <vi-VN src="">
       Kính gửi quý khách hàng,<br />
       <p>
-        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from mm/dd/yyyy. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
+        We are pleased to announce the launch of the new feature named 'Play for Fun - Member Request' with effect from {effectdate}. This feature shows your member requests along with their betting statistics. Thereby, you can enable requested products for your members more effectively.
       </p>
       <p>
         Trân trọng
@@ -71,7 +71,7 @@
   </PopupAnnouncement>
 
   <PopupAnnouncement id="7502802" name="Play For Fun - 2"
-                  startdate="4/10/2016" enddate="05/10/2016"  effectdate="04/18/2017" excludesites="KORIBC,733333,755555,Indo">
+                  startdate="4/10/2016" enddate="05/11/2016"  effectdate="04/13/2017" excludesites="KORIBC,733333,755555,Indo">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
