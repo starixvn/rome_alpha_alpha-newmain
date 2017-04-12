@@ -2,12 +2,11 @@
     private toastCloseButtonHtml = '<button type="button" class="icon icon-close" data-dismiss="modal" aria-label="Close"></button>';
     private storedMoveBetsEndTime: Date = new Date();
     private hotMessageModal: JQuery;
-    private baseInit = this.init;
 
-    init = () => {
+    mobileInit = () => {
         this.hotMessageModal = this.$('#userMessageModal');
 
-        this.baseInit();
+        this.init();
     }
 
     onSuccessGetMessages = (rawResults: string) => {
@@ -63,6 +62,6 @@ $(() => {
 
     if (alpha.isScreenLower768 && isReadInstruction) {
         const headerMessageMobile = new HeaderMessageMobile($);
-        headerMessageMobile.init();
+        headerMessageMobile.mobileInit();
     }
 });
