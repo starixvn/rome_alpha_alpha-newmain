@@ -471,4 +471,7 @@
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>Thông tin chưa được cập nhật</value>
   </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>Mới</value>
+  </data>
 </root>

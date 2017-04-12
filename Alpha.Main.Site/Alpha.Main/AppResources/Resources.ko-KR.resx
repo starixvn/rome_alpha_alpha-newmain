@@ -388,4 +388,7 @@
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>가능한 정보가 없습니다</value>
   </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>새로운</value>
+  </data>
 </root>

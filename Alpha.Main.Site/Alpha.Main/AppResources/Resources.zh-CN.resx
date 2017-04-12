@@ -472,4 +472,10 @@
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>没资料显示</value>
   </data>
+  <data name="playForFun" xml:space="preserve">
+    <value>免费试玩</value>
+  </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>新增</value>
+  </data>
 </root>

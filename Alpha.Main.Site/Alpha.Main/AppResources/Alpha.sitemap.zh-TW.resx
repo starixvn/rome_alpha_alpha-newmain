@@ -351,4 +351,13 @@
   <data name="schedule" xml:space="preserve">
     <value>時間表</value>
   </data>
+  <data name="PlayForFun" xml:space="preserve">
+    <value>免費試玩</value>
+  </data>
+  <data name="playForFunMemberRequest" xml:space="preserve">
+    <value>免費試玩 - 會員要求</value>
+  </data>
+  <data name="PlayForFunDetail" xml:space="preserve">
+    <value>免費試玩資料</value>
+  </data>
 </root>

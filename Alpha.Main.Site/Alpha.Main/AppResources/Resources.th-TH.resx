@@ -469,4 +469,10 @@
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>ไม่มีข้อมูล</value>
   </data>
+  <data name="playForFun" xml:space="preserve">
+    <value>ทดลองเล่นฟรี</value>
+  </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>บใหม่</value>
+  </data>
 </root>
