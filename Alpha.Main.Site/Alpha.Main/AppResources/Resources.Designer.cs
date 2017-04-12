@@ -1208,7 +1208,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Updated successfully!.
+        ///   Looks up a localized string similar to Successfully updated..
         /// </summary>
         public static string UpdatedSuccessfully {
             get {
