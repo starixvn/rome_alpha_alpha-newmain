@@ -109,3 +109,7 @@ figure {
             font-weight: bold;
         }
 
+        .level-2 .feature-images:before {
+            content: none;
+        }
+
