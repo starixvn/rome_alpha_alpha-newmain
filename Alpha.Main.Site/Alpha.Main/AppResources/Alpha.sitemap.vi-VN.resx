@@ -351,4 +351,13 @@
   <data name="schedule" xml:space="preserve">
     <value>Lịch Mở Thưởng</value>
   </data>
+  <data name="PlayForFun" xml:space="preserve">
+    <value>Chơi Thử</value>
+  </data>
+  <data name="playForFunMemberRequest" xml:space="preserve">
+    <value>Chơi Thử - Yêu cầu kích hoạt</value>
+  </data>
+  <data name="PlayForFunDetail" xml:space="preserve">
+    <value>Chi tiết 'Chơi Thử'</value>
+  </data>
 </root>

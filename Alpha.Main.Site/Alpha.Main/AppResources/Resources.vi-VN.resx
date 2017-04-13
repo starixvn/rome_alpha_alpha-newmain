@@ -474,4 +474,16 @@
   <data name="lblNew" xml:space="preserve">
     <value>Mới</value>
   </data>
+  <data name="memberRequest" xml:space="preserve">
+    <value>Yêu cầu kích hoạt</value>
+  </data>
+  <data name="UpdatedSuccessfully" xml:space="preserve">
+    <value>Cập nhật thành công.</value>
+  </data>
+  <data name="playForFun" xml:space="preserve">
+    <value>Chơi Thử</value>
+  </data>
+  <data name="PlayForFunGuidelines" xml:space="preserve">
+    <value>Chơi thử - Hướng dẫn</value>
+  </data>
 </root>
