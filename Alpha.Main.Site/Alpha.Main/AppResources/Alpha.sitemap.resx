@@ -360,4 +360,7 @@
   <data name="PlayForFunDetail" xml:space="preserve">
     <value>Play For Fun Detail</value>
   </data>
+  <data name="customerSetting" xml:space="preserve">
+    <value>Customer Setting</value>
+  </data>
 </root>

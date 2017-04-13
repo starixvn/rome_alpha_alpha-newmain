@@ -481,4 +481,7 @@
   <data name="memberRequest" xml:space="preserve">
     <value>คำขอสมาชิก</value>
   </data>
+  <data name="PlayForFunGuidelines" xml:space="preserve">
+    <value>ทดลองเล่นฟรี-คู่มือ</value>
+  </data>
 </root>

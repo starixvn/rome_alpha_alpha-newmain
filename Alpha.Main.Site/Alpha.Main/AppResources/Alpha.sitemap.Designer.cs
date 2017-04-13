@@ -268,6 +268,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Setting.
+        /// </summary>
+        public static string customerSetting {
+            get {
+                return ResourceManager.GetString("customerSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daily Winloss Analysis.
         /// </summary>
         public static string dailywinlossanalysisreport {
