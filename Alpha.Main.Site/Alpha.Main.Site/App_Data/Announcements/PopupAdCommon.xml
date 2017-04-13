@@ -8,6 +8,160 @@
       LCS: 7,
       domain: 5
   -->
+  <PopupAnnouncement id="7455801" name="BAIO" startdate="4/10/2017" enddate="04/27/2017"  effectdate="04/13/2017" privatesystem="KORIBC,733333,755555,Indo">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce the launch of new Basketball PT setting named "Others".
+      </p>
+      <p>
+        This setting is used for the following bet types of Basketball:
+      </p>
+      <p>
+        - Winning Margin 14 Way<br />
+        - Winning Margin 12 Way<br />
+        - 1H Winning Margin 12 Way<br />
+        - Quarter X Winning Margin 7 Way
+      </p>
+      <p>
+        The initial value of Others PT setting is copied from "Handicap" and is now available to configure.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+    <zh-CN src="">
+      尊敬的代理们，<br />
+      <p>
+        我们在此宣布推出新的篮球占成设置， 名为 “其他”
+      </p>
+      <p>
+        此设置将应用于以下篮球的投注类型：
+      </p>
+      <p>
+        - 净胜分数14项<br />
+        - 净胜分数12项<br />
+        - 上半场净胜分数12项<br />
+        - 第X节净胜分数7项
+      </p>
+      <p>
+        “其他”原始占成设置将复制“亚洲盘”。您现在可以进行配置
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+    <zh-TW src="">
+      尊敬的代理們，<br />
+      <p>
+        我們在此宣布推出新的籃球占成設置， 名為 “其他”
+      </p>
+      <p>
+        此設置將應用於以下籃球的投注類型：
+      </p>
+      <p>
+        - 淨勝分數14項<br />
+        - 淨勝分數12項<br />
+        - 上半場淨勝分數12項<br />
+        - 第X節的淨勝分數7項
+      </p>
+      <p>
+        “其他”原始占成設置將復制“亞洲盤”。您現在可以進行配置
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launch of new Basketball PT setting named "Others".
+      </p>
+      <p>
+        This setting is used for the following bet types of Basketball:
+      </p>
+      <p>
+        - Winning Margin 14 Way<br />
+        - Winning Margin 12 Way<br />
+        - 1H Winning Margin 12 Way<br />
+        - Quarter X Winning Margin 7 Way
+      </p>
+      <p>
+        The initial value of Others PT setting is copied from "Handicap" and is now available to configure.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      Dear valued agents,<br />
+      <p>
+        We are pleased to announce the launch of new Basketball PT setting named "Others".
+      </p>
+      <p>
+        This setting is used for the following bet types of Basketball:
+      </p>
+      <p>
+        - Winning Margin 14 Way<br />
+        - Winning Margin 12 Way<br />
+        - 1H Winning Margin 12 Way<br />
+        - Quarter X Winning Margin 7 Way
+      </p>
+      <p>
+        The initial value of Others PT setting is copied from "Handicap" and is now available to configure.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      เรียน เอเจนต์<br />
+      <p>
+        เรามีความยินดีที่จะประกาศการเปิดตัวของบาสเก็ตใหม่การตั้งค่าความเสี่ยง "อื่นๆ"
+      </p>
+      <p>
+        การตั้งค่านี้จะนำไปใช้ต่อไปนี้ประเภทของการเดิมพันบาสเกตบอล:
+      </p>
+      <p>
+        - 14 ทางของส่วนต่างชนะ<br />
+        - 12 ทางของส่วนต่างชนะ<br />
+        - 12 ทางของส่วนต่างชนะ (ครึ่งแรก)<br />
+        - 7 ทางของส่วนต่างชนะ (ควอเตอร์ X)
+      </p>
+      <p>
+        ค่าเริ่มต้นของการตั้งค่าความเสี่ยง "อื่นๆ" จะถูกคัดลอกจาก "ราคาต่อรอง" และสามารถกำหนดการตั้งค่าได้แล้ว
+      </p>
+      <p>
+        ขอบพระคุณ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      Kính gửi quý khách hàng,<br />
+      <p>
+        Chúng tôi trân trọng thông báo một thiết lập Position Taking mới cho môn Bóng Rổ mang tên "Cược khác".
+      </p>
+      <p>
+        Thiết lập mới này sẽ được áp dụng cho các loại hình cược sau trong môn Bóng Rổ:
+      </p>
+      <p>
+        - Tỷ số thắng cách biệt 14 chiều<br />
+        - Tỷ số thắng cách biệt 12 chiều<br />
+        - Hiệp 1 - Tỷ số thắng cách biệt 12 chiều<br />
+        - Ván chơi thứ X - Tỷ số thắng cách biệt 7 chiều
+      </p>
+      <p>
+        Thiết lập mặc định cho Position Taking "Cược khác" sẽ được sao chép từ loại cược Handicap và hiện đã cho phép thay đổi.
+      </p>
+      <p>
+        Trân trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+
   <PopupAnnouncement id="7502801" name="Play For Fun - 1" startdate="4/10/2017" enddate="04/27/2017"  effectdate="04/13/2017" privatesystem="KORIBC,733333,755555,Indo">
     <en-US src="">
       <p>Dear valued agents,</p>
