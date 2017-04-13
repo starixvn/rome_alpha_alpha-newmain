@@ -440,6 +440,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        public static string lblNew {
+            get {
+                return ResourceManager.GetString("lblNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset Password.
         /// </summary>
         public static string lblresetpassword {
@@ -566,6 +575,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Member Request.
+        /// </summary>
+        public static string memberRequest {
+            get {
+                return ResourceManager.GetString("memberRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Message.
         /// </summary>
         public static string message {
@@ -647,6 +665,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No information is available.
+        /// </summary>
+        public static string NoInformationIsAvailable {
+            get {
+                return ResourceManager.GetString("NoInformationIsAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, You don&apos;t have permission to access this page..
         /// </summary>
         public static string NoPermissionAccessPage {
@@ -715,6 +742,24 @@ namespace Alpha.Main.AppResources {
         public static string personalMessage {
             get {
                 return ResourceManager.GetString("personalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play For Fun.
+        /// </summary>
+        public static string playForFun {
+            get {
+                return ResourceManager.GetString("playForFun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play For Fun - Guidelines.
+        /// </summary>
+        public static string PlayForFunGuidelines {
+            get {
+                return ResourceManager.GetString("PlayForFunGuidelines", resourceCulture);
             }
         }
         
@@ -817,6 +862,15 @@ namespace Alpha.Main.AppResources {
         public static string ReportMenuIntroduction {
             get {
                 return ResourceManager.GetString("ReportMenuIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request.
+        /// </summary>
+        public static string Request {
+            get {
+                return ResourceManager.GetString("Request", resourceCulture);
             }
         }
         
@@ -1154,7 +1208,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Updated successfully!.
+        ///   Looks up a localized string similar to Successfully updated..
         /// </summary>
         public static string UpdatedSuccessfully {
             get {

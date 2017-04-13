@@ -414,7 +414,7 @@
   </data>
   <data name="stats" xml:space="preserve">
     <value>สถิติของคุณ</value>
-    </data>
+  </data>
   <data name="balance" xml:space="preserve">
     <value>ข้อมูลยอดเงินคงเหลือ</value>
   </data>
@@ -465,5 +465,23 @@
   </data>
   <data name="NoPermissionAccessPage" xml:space="preserve">
     <value>ขออภัยคุณไม่ได้รับอนุญาติให้เข้าหน้านี้</value>
+  </data>
+  <data name="NoInformationIsAvailable" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+  <data name="playForFun" xml:space="preserve">
+    <value>ทดลองเล่นฟรี</value>
+  </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>บใหม่</value>
+  </data>
+  <data name="UpdatedSuccessfully" xml:space="preserve">
+    <value>ปรับปรุงเรียบร้อยแล้ว!</value>
+  </data>
+  <data name="memberRequest" xml:space="preserve">
+    <value>คำขอสมาชิก</value>
+  </data>
+  <data name="PlayForFunGuidelines" xml:space="preserve">
+    <value>ทดลองเล่นฟรี-คู่มือ</value>
   </data>
 </root>

@@ -471,12 +471,14 @@
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\INTERNAL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBONUSER.ON_USER.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml">
       <SubType>Designer</SubType>
@@ -487,6 +489,7 @@
     </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBLOG.bodb_CustomerLog.xml" />
+    <Content Include="App_Data\SPNames\PRO\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\PRO\DBCUST.CustDB.xml" />
@@ -495,12 +498,14 @@
     <Content Include="App_Data\SPNames\PRO\DBONUSER.ON_USER.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\SIT\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\SIT\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\SIT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\SIT\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\SIT\DBONUSER.ON_USER.xml" />
+    <Content Include="App_Data\SPNames\UAT\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\UAT\DBAGE.bodb02.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -532,6 +537,160 @@
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <Content Include="Assets\styles\home\_mixins2.scss" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f1.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f2.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f3.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f4.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f5.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f6.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f7.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f8.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\pencil.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\sync.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\Images\f11.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\Images\f12.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f1.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f2.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f3.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f4.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f5.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f6.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f7.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f8.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\pencil.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\sync.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\Images\f11.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\Images\f12.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f1.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f2.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f3.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f4.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f5.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f6.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f7.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f8.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\pencil.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\sync.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\Images\f11.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\Images\f12.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f1.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f2.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f3.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f4.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f5.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f6.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f7.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f8.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\pencil.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\sync.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\Images\f11.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\Images\f12.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f1.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f2.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f3.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f4.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f5.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f6.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f7.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f8.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\pencil.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\sync.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\Images\f11.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\Images\f12.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f1.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f2.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f3.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f4.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f5.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f6.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f7.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f8.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\pencil.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\sync.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\Images\f11.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\Images\f12.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f1.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f2.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f3.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f4.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f5.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f6.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f7.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f8.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\pencil.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\sync.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\Images\f11.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\page.css" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f10.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f12.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f9.png" />
+    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\page.css" />
     <Content Include="Web.napinternal.config">
       <SubType>Designer</SubType>
     </Content>
@@ -581,6 +740,7 @@
     </Content>
     <Content Include="Web.napexternal.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.napexternal2.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
@@ -622,8 +782,10 @@
     </Content>
     <Content Include="Views\Default\Kickout.cshtml" />
     <Content Include="typings.json" />
+    <Content Include="Views\MemberRequests\Index.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
@@ -1070,6 +1232,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NoticeController.cs" />
+    <Compile Include="Controllers\MemberRequestsController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\OtpController.cs" />
@@ -1082,6 +1245,7 @@
     <Compile Include="Handlers\NoticeHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
+    <Compile Include="Handlers\MemberRequestsHandler.cs" />
     <Compile Include="Handlers\StatisticsHandler.cs" />
     <Compile Include="Handlers\BalanceInfoHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
@@ -1098,6 +1262,7 @@
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfo\BalanceInfoQuery.cs" />
+    <Compile Include="Requests\Dashboard\MemberRequests\MemberRequestQuery.cs" />
     <Compile Include="Requests\Dashboard\Notice\MarkMessageAsReadQuery.cs" />
     <Compile Include="Requests\Dashboard\Notice\NoticeQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\NewMembersQuery.cs" />
@@ -1134,6 +1299,7 @@
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Notice\NoticeViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />

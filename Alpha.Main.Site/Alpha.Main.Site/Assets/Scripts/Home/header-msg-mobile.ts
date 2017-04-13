@@ -9,6 +9,7 @@
         this.init();
     }
 
+    private baseInit = this.init;
     onSuccessGetMessages = (rawResults: string) => {
         const results = alpha.core.convertReponseToJson(rawResults);
 

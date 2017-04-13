@@ -44,6 +44,14 @@
             }
         }
 
+        public static string MemberInfoAppPath
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["MemberInfoAppPath"];
+            }
+        }
+
         public static string UsersAlwaysAllowAccessBetsListMonitoring
         {
             get
@@ -112,6 +120,8 @@
         public static string MessageAgent => ConfigurationManager.AppSettings["Message:Agent"];
 
         public static bool IsDisabledContactUsLink => ConfigurationManager.AppSettings["IsDisabledContactUsLink"] == "1";
+
+        public static bool EnablePlayForFun => ConfigurationManager.AppSettings["EnablePlayForFun"] == "true";
 
         public static string GoogleAnalyticId => googleAnalyticId;
 

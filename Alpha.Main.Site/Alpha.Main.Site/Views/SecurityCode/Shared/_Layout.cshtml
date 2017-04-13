@@ -15,8 +15,7 @@
 </head>
 <body>
     @RenderBody()
-    @Html.AntiForgeryToken()    
-    
+    @Html.AntiForgeryToken()   
    
     @Html.Hidden("alert-old-securitycode-empty", Security.alertOldSecCodeEmpty)
     @Html.Hidden("alert-securitycode-empty", Security.alertSecCodeEmpty)

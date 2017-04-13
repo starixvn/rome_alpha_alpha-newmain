@@ -208,11 +208,13 @@
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\MessageType.cs" />
+    <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Criteria\Announcement\CheckProductAnnouncementCriteria.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
+    <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommand.cs" />
     <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommand.cs" />
     <Compile Include="Criteria\Otp\GetCustomerOtpCriteria.cs" />
@@ -270,6 +272,7 @@
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\MemberRequests\ProductRequest.cs" />
     <Compile Include="Models\Message\Message.cs" />
     <Compile Include="Models\Notice\NoticeMessage.cs" />
     <Compile Include="Models\Otp\DeviceInfo.cs" />
@@ -306,10 +309,12 @@
     <Compile Include="Services\AnnouncementService.cs" />
     <Compile Include="Services\Impl\MessageServiceImpl.cs" />
     <Compile Include="Services\Impl\NoticeServiceImpl.cs" />
+    <Compile Include="Services\Impl\MemberRequestsServiceImpl.cs" />
     <Compile Include="Services\MessageService.cs" />
     <Compile Include="Services\NoticeService.cs" />
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
+    <Compile Include="Services\MemberRequestsService.cs" />
     <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\CachingManager.cs" />
     <Compile Include="Services\CustomerProfileService.cs" />

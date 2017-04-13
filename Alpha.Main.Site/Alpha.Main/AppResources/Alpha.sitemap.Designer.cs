@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Alpha.Main.AppResources
-{
-
-
+namespace Alpha.Main.AppResources {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -264,6 +264,15 @@ namespace Alpha.Main.AppResources
         public static string customerlist {
             get {
                 return ResourceManager.GetString("customerlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Setting.
+        /// </summary>
+        public static string customerSetting {
+            get {
+                return ResourceManager.GetString("customerSetting", resourceCulture);
             }
         }
         
@@ -570,6 +579,33 @@ namespace Alpha.Main.AppResources
         public static string personalMessage {
             get {
                 return ResourceManager.GetString("personalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play For Fun.
+        /// </summary>
+        public static string PlayForFun {
+            get {
+                return ResourceManager.GetString("PlayForFun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play For Fun Detail.
+        /// </summary>
+        public static string PlayForFunDetail {
+            get {
+                return ResourceManager.GetString("PlayForFunDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play For Fun - Member Request.
+        /// </summary>
+        public static string playForFunMemberRequest {
+            get {
+                return ResourceManager.GetString("playForFunMemberRequest", resourceCulture);
             }
         }
         

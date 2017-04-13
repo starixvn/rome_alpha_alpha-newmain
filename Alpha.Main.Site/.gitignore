@@ -71,6 +71,8 @@ bundles
 */bundles/default-index.js
 */bundles/**/*.js
 *.css
+*.js
+*.js.map
 
 **/Alpha.Main.Site/Assets/[Ss]cripts/core.js
 **/[Ss]cripts/[Aa]nnouncement/*.js

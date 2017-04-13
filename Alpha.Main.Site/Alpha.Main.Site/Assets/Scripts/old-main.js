@@ -200,6 +200,10 @@ var AgeWnd = function () {
 
             var popupId = "page-popup-" + Math.random().toString(36).substring(7);
             popUp.attr("id", popupId);
+            if (windowCss) {
+                popUp.addClass(windowCss);
+            }
+
             this.id = popupId;
             // Calculate body scrolltop to fix issue: focus popup make body scroll to popup position (on device)
             var scrollTop = oldMainUltilities.getScrollTop(window.document.body);
@@ -650,8 +654,13 @@ function reloadPopUpSetting(timeOut) {
     }
 
     function doReloadMainFrame() {
-        var isCustomerList = top.main.$("arrayCustID") && top.main.$("arrayCustID").value.length &&
-            top.main.$("arrayUserName") && top.main.$("arrayUserName").value.length;
+        var isCustomerList = top.main.$("arrayCustID")
+            && top.main.$("arrayCustID").value
+            && top.main.$("arrayCustID").value.length
+            && top.main.$("arrayUserName")
+            && top.main.$("arrayUserName").value
+            && top.main.$("arrayUserName").value.length;
+
         if (isCustomerList) {
             var arrayCustId = top.main.$("arrayCustID").value;
             var arrayUserName = top.main.$("arrayUserName").value;

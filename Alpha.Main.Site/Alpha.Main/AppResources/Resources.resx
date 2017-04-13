@@ -428,7 +428,7 @@
     <value>Quick tour</value>
   </data>
   <data name="UpdatedSuccessfully" xml:space="preserve">
-    <value>Updated successfully!</value>
+    <value>Successfully updated.</value>
   </data>
   <data name="lblBack" xml:space="preserve">
     <value>Back</value>
@@ -531,5 +531,23 @@
   </data>
   <data name="NoPermissionAccessPage" xml:space="preserve">
     <value>Sorry, You don't have permission to access this page.</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="memberRequest" xml:space="preserve">
+    <value>Member Request</value>
+  </data>
+  <data name="playForFun" xml:space="preserve">
+    <value>Play For Fun</value>
+  </data>
+  <data name="NoInformationIsAvailable" xml:space="preserve">
+    <value>No information is available</value>
+  </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="PlayForFunGuidelines" xml:space="preserve">
+    <value>Play For Fun - Guidelines</value>
   </data>
 </root>
