@@ -701,6 +701,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your upline has enabled Fishing World for your downlines. Please go to setting page to configure your own PT settings..
+        /// </summary>
+        public static string Notice_EnabledFishingWorld {
+            get {
+                return ResourceManager.GetString("Notice_EnabledFishingWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not now.
         /// </summary>
         public static string NotNow {

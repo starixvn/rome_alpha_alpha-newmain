@@ -486,4 +486,7 @@
   <data name="PlayForFunGuidelines" xml:space="preserve">
     <value>Chơi thử - Hướng dẫn</value>
   </data>
+  <data name="Notice_EnabledFishingWorld" xml:space="preserve">
+    <value>Cấp dưới của bạn đã được kích hoạt sản phẩm Fishing World. Vui lòng thiết lập thông số Position Taking của bản thân.</value>
+  </data>
 </root>

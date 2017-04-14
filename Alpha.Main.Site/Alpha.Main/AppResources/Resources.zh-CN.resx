@@ -487,4 +487,7 @@
   <data name="PlayForFunGuidelines" xml:space="preserve">
     <value>免费试玩-指南</value>
   </data>
+  <data name="Notice_EnabledFishingWorld" xml:space="preserve">
+    <value>您的上线已开启“捕鱼天下”予您的下线。请到您的设定页面进行配置</value>
+  </data>
 </root>

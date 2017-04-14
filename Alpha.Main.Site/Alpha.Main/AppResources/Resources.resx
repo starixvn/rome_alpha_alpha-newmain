@@ -550,4 +550,7 @@
   <data name="PlayForFunGuidelines" xml:space="preserve">
     <value>Play For Fun - Guidelines</value>
   </data>
+  <data name="Notice_EnabledFishingWorld" xml:space="preserve">
+    <value>Your upline has enabled Fishing World for your downlines. Please go to setting page to configure your own PT settings.</value>
+  </data>
 </root>

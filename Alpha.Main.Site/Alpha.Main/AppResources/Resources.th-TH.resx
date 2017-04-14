@@ -484,4 +484,7 @@
   <data name="PlayForFunGuidelines" xml:space="preserve">
     <value>ทดลองเล่นฟรี-คู่มือ</value>
   </data>
+  <data name="Notice_EnabledFishingWorld" xml:space="preserve">
+    <value>อัพไลน์ของคุณได้เปิดใช้งานเกมส์ยิงปลาให้ดาวน์ไลน์ของคุณ. โปรดไปที่หน้าการตั้งค่าเพือกำหนดค่าการตั้งค่าส่วนแบ่งของคุณเอง</value>
+  </data>
 </root>
