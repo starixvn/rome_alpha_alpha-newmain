@@ -1,28 +1,26 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
-    using System;
+    using Fanex.Data;
     using Fanex.Data.Repository;
 
     public class UpdateViewStatus : CriteriaBase
     {
-        public UpdateViewStatus(int custId, bool isViewed)
+        public UpdateViewStatus(int custId, bool isViewed, int typeId)
         {
-            CustId = custId;
+            CustId = typeId;
             IsViewed = isViewed;
+            TypeId = typeId;
         }
 
         public int CustId { get; }
 
         public bool IsViewed { get; }
 
-        public override string GetSettingKey()
-        {
-            return "Age_MessageNoticeUpdStatus";
-        }
+        [SpParam(Ignored = true)]
+        public int TypeId { get; }
 
-        public override bool IsValid()
-        {
-            return CustId > 0;
-        }
+        public override string GetSettingKey() => "Age_MessageNoticeUpdStatus";
+
+        public override bool IsValid() => CustId > 0;
     }
 }

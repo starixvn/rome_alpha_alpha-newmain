@@ -3,6 +3,7 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Configurations;
     using MediatR;
     using Models.Requests.Announcement;
     using Web;
@@ -20,6 +21,7 @@
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         public ActionResult HotAnnouncement(HotAnnouncementQuery message)
         {
+            message.NoticeTypes = AppSettings.NoticeTypes;
             var viewModel = mediator.Send(message);
             return View(viewModel);
         }

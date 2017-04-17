@@ -593,33 +593,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your betting limit value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
-        /// </summary>
-        public static string modifiedBettingLimitValue {
-            get {
-                return ResourceManager.GetString("modifiedBettingLimitValue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Your minimum position taking and betting limit value have been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
-        /// </summary>
-        public static string modifiedMinPTBettingLimitValue {
-            get {
-                return ResourceManager.GetString("modifiedMinPTBettingLimitValue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Your minimum position taking value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
-        /// </summary>
-        public static string modifiedMinPTValueText {
-            get {
-                return ResourceManager.GetString("modifiedMinPTValueText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to More.
         /// </summary>
         public static string more {
@@ -701,11 +674,38 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your minimum position taking value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
+        /// </summary>
+        public static string Notice_1 {
+            get {
+                return ResourceManager.GetString("Notice_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your minimum position taking and betting limit value have been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
+        /// </summary>
+        public static string Notice_1_2 {
+            get {
+                return ResourceManager.GetString("Notice_1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your betting limit value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
+        /// </summary>
+        public static string Notice_2 {
+            get {
+                return ResourceManager.GetString("Notice_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your upline has enabled Fishing World for your downlines. Please go to setting page to configure your own PT settings..
         /// </summary>
-        public static string Notice_EnabledFishingWorld {
+        public static string Notice_3 {
             get {
-                return ResourceManager.GetString("Notice_EnabledFishingWorld", resourceCulture);
+                return ResourceManager.GetString("Notice_3", resourceCulture);
             }
         }
         

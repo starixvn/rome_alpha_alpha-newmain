@@ -1,17 +1,18 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
-    using System;
     using System.Diagnostics.CodeAnalysis;
     using Fanex.Data;
     using Fanex.Data.Repository;
 
     public class InsertPersonalMessageCriteria : CriteriaBase
     {
+        public const int PositionTakingChanged = 1;
+
         public InsertPersonalMessageCriteria()
         {
         }
 
-        public InsertPersonalMessageCriteria(string content, int type)
+        public InsertPersonalMessageCriteria(string content)
         {
             ContentEN = content;
             ContentCH = content;
@@ -21,7 +22,7 @@
             ContentTH = content;
             ContentKO = content;
             ContentES = string.Empty;
-            Type = type;
+            Type = PositionTakingChanged;
             IsSticky = false;
             MatchId = 0;
             IsBatch = true;

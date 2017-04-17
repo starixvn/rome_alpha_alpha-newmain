@@ -10,7 +10,7 @@
         public void GetSettingKey_Always_ReturnsValidSettingKey()
         {
             // Arrange
-            var updateViewStatus = new UpdateViewStatus(0, false);
+            var updateViewStatus = new UpdateViewStatus(0, false, 0);
             var expectedSettingKey = "Age_MessageNoticeUpdStatus";
 
             // Act
@@ -24,7 +24,7 @@
         public void IsValid_InvalidCustId_ReturnsFalse()
         {
             // Arrange
-            var updateViewStatus = new UpdateViewStatus(0, false);
+            var updateViewStatus = new UpdateViewStatus(0, false, 0);
 
             // Act
             var actualIsValid = updateViewStatus.IsValid();
@@ -34,10 +34,10 @@
         }
 
         [Test]
-        public void IsValid_InvalidCustId_ReturnsTrue()
+        public void IsValid_ValidCriteria_ReturnsTrue()
         {
             // Arrange
-            var updateViewStatus = new UpdateViewStatus(1, false);
+            var updateViewStatus = new UpdateViewStatus(1, false, 0);
 
             // Act
             var actualIsValid = updateViewStatus.IsValid();

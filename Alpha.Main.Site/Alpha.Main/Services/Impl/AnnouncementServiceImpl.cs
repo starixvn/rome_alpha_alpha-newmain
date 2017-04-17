@@ -18,9 +18,6 @@
     {
         public const int ForceUseSecurityCode = 20140512;
 
-        public const int PositionTakingChanged = 1;
-        public const int BettingLimitChanged = 2;
-
         private readonly IDynamicRepository dynamicRepository;
         private readonly IDateTime dateTimeWrapper;
 
@@ -68,30 +65,24 @@
 
         private string GetSettingChangedMessage(IEnumerable<string> messageTypes, GetHotAnnouncementsParams getParams)
         {
-            var isPositionTakingChanged = messageTypes.Contains(PositionTakingChanged.ToString());
-            var isBettingLimitChanged = messageTypes.Contains(BettingLimitChanged.ToString());
-            var messageContent = string.Empty;
-            if (isPositionTakingChanged && isBettingLimitChanged)
-            {
-                messageContent = Resources.modifiedMinPTBettingLimitValue;
-            }
-            else if (isPositionTakingChanged)
-            {
-                messageContent = Resources.modifiedMinPTValueText;
-            }
-            else if (isBettingLimitChanged)
-            {
-                messageContent = Resources.modifiedBettingLimitValue;
-            }
+            var noticeTypes = getParams.NoticeTypes;
 
-            if (!string.IsNullOrEmpty(messageContent))
+            var correctType = noticeTypes.FirstOrDefault(noticeType => ShowNotice(noticeType, messageTypes));
+            var messageContent = string.Empty;
+
+            if (correctType != null)
             {
+                messageContent = Resources.ResourceManager.GetString("Notice_" + correctType);
                 var content = messageContent.Replace("<br>", " ");
-                InsertPersonalMessage(new InsertPersonalMessageCriteria(content, PositionTakingChanged), getParams);
+                InsertPersonalMessage(new InsertPersonalMessageCriteria(content), getParams);
+                UpdateViewStatus(getParams.CustId, correctType);
             }
 
             return messageContent;
         }
+
+        private bool ShowNotice(string noticeType, IEnumerable<string> messageTypes)
+            => noticeType.Split(new[] { '_' }, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault(subMessageType => !messageTypes.Contains(subMessageType)) == null;
 
         private void InsertPersonalMessage(InsertPersonalMessageCriteria criteria, GetHotAnnouncementsParams getParams)
         {
@@ -110,8 +101,16 @@
                 IsRead = false,
                 BetTransId = "0"
             });
+        }
 
-            dynamicRepository.Fetch<bool>(new UpdateViewStatus(getParams.CustId, true));
+        private void UpdateViewStatus(int custId, string noticeType)
+        {
+            var subTypes = noticeType.Split(new[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var subType in subTypes)
+            {
+                dynamicRepository.Fetch<bool>(new UpdateViewStatus(custId, true, Converter.ToInt(subType)));
+            }
         }
 
         private List<long> GetShowedMessageIds(GetHotAnnouncementsParams getParams)
@@ -201,7 +200,7 @@
             if (!IsShowProductAnnouncementByBatch(node, custId))
             {
                 return true;
-            }          
+            }
 
             var isPublicSystem = node.Attributes["privatesystem"] != null &&
                 (!node.Attributes["privatesystem"].Value.Equals("*") ||

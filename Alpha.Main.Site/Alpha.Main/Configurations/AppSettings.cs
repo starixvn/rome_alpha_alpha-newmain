@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Configurations
 {
+    using System;
     using System.Collections.Generic;
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
@@ -125,6 +126,8 @@
         public static bool IsDisabledContactUsLink => ConfigurationManager.AppSettings["IsDisabledContactUsLink"] == "1";
 
         public static bool EnablePlayForFun => ConfigurationManager.AppSettings["EnablePlayForFun"] == "true";
+
+        public static string[] NoticeTypes => ConfigurationManager.AppSettings["NoticeTypes"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
         public static string GoogleAnalyticId => googleAnalyticId;
 

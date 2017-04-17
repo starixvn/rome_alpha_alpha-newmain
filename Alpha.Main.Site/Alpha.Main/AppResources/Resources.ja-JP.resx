@@ -310,13 +310,13 @@
   <data name="givenCredit" xml:space="preserve">
     <value>貸付金額</value>
   </data>
-  <data name="modifiedBettingLimitValue" xml:space="preserve">
+  <data name="Notice_2" xml:space="preserve">
     <value>Your betting limit value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines.</value>
   </data>
-  <data name="modifiedMinPTBettingLimitValue" xml:space="preserve">
+  <data name="Notice_1_2" xml:space="preserve">
     <value>Your minimum position taking and betting limit value have been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines.</value>
   </data>
-  <data name="modifiedMinPTValueText" xml:space="preserve">
+  <data name="Notice_1" xml:space="preserve">
     <value>Your minimum position taking value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines.</value>
   </data>
   <data name="doNotShowAgain" xml:space="preserve">
