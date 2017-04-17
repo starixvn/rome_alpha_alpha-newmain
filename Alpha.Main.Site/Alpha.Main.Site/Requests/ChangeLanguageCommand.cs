@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 612, 618
+
 namespace Alpha.Main.Site.Requests
 {
     using System.Diagnostics.CodeAnalysis;
@@ -9,11 +10,13 @@ namespace Alpha.Main.Site.Requests
     public class ChangeLanguageCommand : IRequest<string>
     {
         private readonly IUserSession userSession;
+        private readonly bool disabledVietnamese;
 
-        public ChangeLanguageCommand(IUserSession userSession, string languageCode)
+        public ChangeLanguageCommand(IUserSession userSession, string languageCode, bool disabledVietnamese)
         {
             this.userSession = userSession;
             LanguageCode = languageCode;
+            this.disabledVietnamese = disabledVietnamese;
         }
 
         public string LanguageCode { get; }
@@ -29,6 +32,11 @@ namespace Alpha.Main.Site.Requests
                 !Language.CodeKeys.ContainsKey(languageCode))
             {
                 return;
+            }
+
+            if (this.disabledVietnamese && languageCode == Language.Vietnamese)
+            {
+                languageCode = Language.English;
             }
 
             userSession.Language = languageCode;

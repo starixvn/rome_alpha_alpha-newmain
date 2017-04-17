@@ -3,7 +3,10 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
+    using System.Web.Routing;
     using AppResources;
+    using Configurations;
+    using Constants;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
@@ -103,6 +106,19 @@ namespace Alpha.Main.Site.Controllers
             }
 
             return View(message as object);
+        }
+
+        protected override void Initialize(RequestContext requestContext)
+        {
+            var cultureName = UserSession.Current.Language;
+
+            if (AppSettings.DisabledVietnamese && cultureName == Language.Vietnamese)
+            {
+                cultureName = English;
+                UserSession.Current.Language = cultureName;
+            }
+
+            base.Initialize(requestContext);
         }
     }
 }

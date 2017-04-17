@@ -12,6 +12,9 @@
 
         private static string googleAnalyticId = ConfigurationManager.AppSettings["GoogleAnalyticId"];
 
+        private static bool isMBCSite = !string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["SiteGroup"])
+                && ConfigurationManager.AppSettings["SiteGroup"] == "IBCBET";
+
         public static string AssetAppPath
         {
             get
@@ -124,6 +127,11 @@
         public static bool EnablePlayForFun => ConfigurationManager.AppSettings["EnablePlayForFun"] == "true";
 
         public static string GoogleAnalyticId => googleAnalyticId;
+
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "MBC", Justification = "Reviewed!")]
+        public static bool IsMBCSite => isMBCSite;
+
+        public static bool DisabledVietnamese => isMBCSite;
 
         public static string GetAppPath(string name)
         {
