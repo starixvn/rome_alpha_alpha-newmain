@@ -8,7 +8,9 @@
 
     public class LanguageViewModel
     {
-        public LanguageViewModel(Dictionary<string, string> data, string currentLanguage = Language.Default)
+        public LanguageViewModel(
+            Dictionary<string, string> data,
+            string currentLanguage = Language.Default)
         {
             Data = data ?? Language.CodeNames;
             CurrentLanguage = currentLanguage;

@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Tests.Requests
 {
     using Main.Constants;
@@ -36,7 +37,7 @@ namespace Alpha.Main.Site.Tests.Requests
             string expectedLanguageCode)
         {
             // Arrange
-            var command = new ChangeLanguageCommand(userSession, languageCode);
+            var command = new ChangeLanguageCommand(userSession, languageCode, false);
 
             // Act
             command.ChangeLanguage(languageCode);

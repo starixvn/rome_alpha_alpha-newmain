@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
+    using Configurations;
     using MediatR;
     using Sunplus.Agent.Model.Base;
     using ViewModels;
@@ -8,13 +9,14 @@
     {
         private string languageCode;
 
-        public AllLanguagesQuery() : this(null)
+        public AllLanguagesQuery() : this(null, null)
         {
         }
 
-        public AllLanguagesQuery(string languageCode)
+        public AllLanguagesQuery(string languageCode, bool? disabledVietnamese)
         {
             this.languageCode = languageCode ?? new UserSessionExt().Language;
+            DisabledVietnamese = disabledVietnamese ?? AppSettings.DisabledVietnamese;
         }
 
         public string LanguageCode
@@ -24,5 +26,7 @@
                 return this.languageCode;
             }
         }
+
+        public bool DisabledVietnamese { get; }
     }
 }

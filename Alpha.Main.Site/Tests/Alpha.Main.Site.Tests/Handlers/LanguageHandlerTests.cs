@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 612, 618
+
 namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
@@ -38,7 +39,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleChangeLanguageCommand_NotNullCommand_CallChangeLanguage()
         {
             // Arrange
-            var command = Substitute.For<ChangeLanguageCommand>(userSession, Arg.Any<string>());
+            var command = Substitute.For<ChangeLanguageCommand>(userSession, Arg.Any<string>(), Arg.Any<bool>());
 
             string argumentUsed = null;
             command.ChangeLanguage(Arg.Do<string>(x => argumentUsed = x));
@@ -69,7 +70,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             // Arrange
             string argumentUsed = null;
-            var command = Substitute.For<ChangeLanguageCommand>(userSession, languageCode);
+            var command = Substitute.For<ChangeLanguageCommand>(userSession, languageCode, false);
             command.ChangeLanguage(Arg.Do<string>(x => argumentUsed = x));
 
             // Act
@@ -97,13 +98,40 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedLanguageCode)
         {
             // Arrange
-            var command = new ChangeLanguageCommand(userSession, languageCode);
+            var command = new ChangeLanguageCommand(userSession, languageCode, false);
 
             // Act
             var viewModel = languageHandler.Handle(command);
 
             // Assert
             Assert.AreEqual(expectedLanguageCode, viewModel);
+        }
+
+        [TestCase(null, Language.Default)]
+        [TestCase("", Language.Default)]
+        [TestCase(" ", Language.Default)]
+        [TestCase("af-ZA ", Language.Default)]
+        [TestCase("wrong-code ", Language.Default)]
+        [TestCase(Language.Default, Language.Default)]
+        [TestCase(Language.English, Language.English)]
+        [TestCase(Language.ChineseTraditional, Language.ChineseTraditional)]
+        [TestCase(Language.ChineseSimplified, Language.ChineseSimplified)]
+        [TestCase(Language.Japanese, Language.Japanese)]
+        [TestCase(Language.Thai, Language.Thai)]
+        [TestCase(Language.Korean, Language.Korean)]
+        [TestCase(Language.Vietnamese, Language.English)]
+        public void HandleChangeLanguageCommand_DisabledVietnamese_SetUserSessionLanguage(
+            string languageCode,
+            string expectedLanguageCode)
+        {
+            // Arrange
+            var command = new ChangeLanguageCommand(userSession, languageCode, true);
+
+            // Act
+            languageHandler.Handle(command);
+
+            // Assert
+            Assert.AreEqual(expectedLanguageCode, userSession.Language);
         }
 
         [Test]
@@ -133,7 +161,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedLanguageCode)
         {
             // Arrange
-            var query = new AllLanguagesQuery(languageCode);
+            var query = new AllLanguagesQuery(languageCode, false);
 
             var expectedViewModel = new LanguageViewModel(Language.CodeNames, expectedLanguageCode);
 
@@ -142,6 +170,34 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             // Assert
             Assert.AreEqual(expectedViewModel, viewModel);
+        }
+
+        [TestCase("", Language.Default)]
+        [TestCase(" ", Language.Default)]
+        [TestCase("af-ZA ", Language.Default)]
+        [TestCase("wrong-code ", Language.Default)]
+        [TestCase(Language.Default, Language.Default)]
+        [TestCase(Language.English, Language.English)]
+        [TestCase(Language.ChineseTraditional, Language.ChineseTraditional)]
+        [TestCase(Language.ChineseSimplified, Language.ChineseSimplified)]
+        [TestCase(Language.Japanese, Language.Japanese)]
+        [TestCase(Language.Thai, Language.Thai)]
+        [TestCase(Language.Korean, Language.Korean)]
+        [TestCase(Language.Vietnamese, Language.English)]
+        public void HandleAllLanguagesQuery_DisabledVietnamese_ReturnViewModelWithCorrectDataAndLanguageCode(
+            string languageCode,
+            string expectedLanguageCode)
+        {
+            // Arrange
+            var query = new AllLanguagesQuery(languageCode, true);
+
+            var expectedViewModel = new LanguageViewModel(Language.CodeNamesWithoutVietNamese, expectedLanguageCode);
+
+            // Act
+            languageHandler.Handle(query);
+
+            // Assert
+            Assert.AreEqual(Language.CodeNamesWithoutVietNamese, expectedViewModel.Data);
         }
     }
 }

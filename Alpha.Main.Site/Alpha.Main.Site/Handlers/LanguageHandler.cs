@@ -33,7 +33,9 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var viewModel = new LanguageViewModel(Language.CodeNames, Standardize(message.LanguageCode));
+            var viewModel = new LanguageViewModel(
+                message.DisabledVietnamese ? Language.CodeNamesWithoutVietNamese : Language.CodeNames,
+                Standardize(message.LanguageCode));
 
             return viewModel;
         }

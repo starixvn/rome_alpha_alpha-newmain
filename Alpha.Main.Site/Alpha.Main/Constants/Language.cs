@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Constants
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     public static class Language
     {
@@ -37,5 +38,10 @@
             [Korean] = "한국어",
             [Vietnamese] = "Tiếng Việt"
         };
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
+        public static readonly Dictionary<string, string> CodeNamesWithoutVietNamese = CodeNames
+            .Where(langauge => langauge.Key != Vietnamese)
+            .ToDictionary(language => language.Key, language => language.Value);
     }
 }
