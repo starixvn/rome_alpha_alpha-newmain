@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
-  <PopupAnnouncement id="7455801" name="BAIO" startdate="4/10/2017" enddate="04/27/2017"  effectdate="04/13/2017">
+   <PopupAnnouncement id="7455801" name="BAIO" startdate="4/10/2017" enddate="04/27/2017"  effectdate="04/13/2017">
     <en-US src="">
       <p>Dear valued agents,</p>
       <p>
@@ -22,8 +22,7 @@
         Thank you
       </p>
     </en-US>
-    <zh-CN src="">
-      尊敬的代理，<br />
+    <zh-CN src="">尊敬的代理，<br />
       <p>
         我们在此宣布推出新的篮球占成设置， 名为 “其他”
       </p>
@@ -109,8 +108,7 @@
       </p>
     </ko-KR>
 
-    <th-TH src="">
-      เรียนเอเจนต์ทุกท่าน<br />
+    <th-TH src="">เรียนเอเจนต์ทุกท่าน<br />
       <p>
         เรามีความยินดีที่จะประกาศการเปิดตัวของบาสเก็ตใหม่การตั้งค่าความเสี่ยง "อื่นๆ"
       </p>
