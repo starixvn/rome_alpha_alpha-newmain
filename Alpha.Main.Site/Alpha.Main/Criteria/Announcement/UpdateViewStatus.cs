@@ -7,7 +7,7 @@
     {
         public UpdateViewStatus(int custId, bool isViewed, int typeId)
         {
-            CustId = typeId;
+            CustId = custId;
             IsViewed = isViewed;
             TypeId = typeId;
         }
@@ -16,7 +16,6 @@
 
         public bool IsViewed { get; }
 
-        [SpParam(Ignored = true)]
         public int TypeId { get; }
 
         public override string GetSettingKey() => "Age_MessageNoticeUpdStatus";
