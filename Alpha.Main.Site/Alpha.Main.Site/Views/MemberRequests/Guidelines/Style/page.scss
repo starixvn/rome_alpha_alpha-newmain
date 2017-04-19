@@ -1,22 +1,5 @@
-@font-face {
-  font-family: 'Roboto';
-  src: url("roboto/Roboto-Regular.woff") format("woff2");
-  src: url("roboto/Roboto-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("roboto/Roboto-Medium.woff2") format("woff2");
-  src: url("roboto/Roboto-Medium.woff") format("woff");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("roboto/Roboto-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic; }
+﻿$roboto-fonts: "/assets/styles/base/roboto-fonts.css";
+@import url($roboto-fonts);
 
 body {
     font-size: 13px;
@@ -133,5 +116,9 @@ figure {
             content: '-';
             margin-right: 8px;
             font-weight: bold;
+        }
+
+        .level-2 .feature-images:before {
+            content: none;
         }
 
