@@ -1,6 +1,7 @@
 body {
     font-size: 13px;
     font-family: 'Roboto';
+    color: #333;
 }
 
 .container {
@@ -32,6 +33,7 @@ li li {
 
 .feature-desc {
     line-height: 1.5;
+    margin-top: 10px;
 }
 
 .alphabet-ordered p {
@@ -79,6 +81,10 @@ figure {
 
 .feature .feature-title, .feature .feature-desc {
     margin-bottom: 15px;
+}
+
+.feature .feature-desc {
+    margin-top: 0;
 }
 
 .level-1 {
