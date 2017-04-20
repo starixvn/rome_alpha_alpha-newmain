@@ -538,6 +538,12 @@
     </Content>
     <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <Content Include="Assets\styles\home\_mixins2.scss" />
+    <Content Include="Views\MemberRequests\Guidelines\Style\page.css">
+      <DependentUpon>page.scss</DependentUpon>
+    </Content>
+    <Content Include="Views\MemberRequests\Guidelines\Style\page.min.css">
+      <DependentUpon>page.css</DependentUpon>
+    </Content>
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f1.png" />
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f2.png" />
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f3.png" />
@@ -552,11 +558,9 @@
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\Images\f11.png" />
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\Images\f12.png" />
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f1.png" />
     <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f2.png" />
     <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f3.png" />
@@ -571,11 +575,9 @@
     <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\Images\f11.png" />
     <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\Images\f12.png" />
     <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f1.png" />
     <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f2.png" />
     <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f3.png" />
@@ -590,11 +592,9 @@
     <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\Images\f11.png" />
     <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\Images\f12.png" />
     <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f1.png" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f2.png" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f3.png" />
@@ -605,15 +605,12 @@
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f8.png" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\pencil.png" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\sync.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\Images\f11.png" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\Images\f12.png" />
     <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f1.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f2.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f3.png" />
@@ -628,11 +625,9 @@
     <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\Images\f11.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\Images\f12.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Index.cshtml" />
     <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Index.cshtml" />
     <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Index.cshtml" />
@@ -666,11 +661,9 @@
     <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\Images\f11.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\Images\f12.png" />
     <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f1.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f2.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f3.png" />
@@ -681,17 +674,14 @@
     <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f8.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\pencil.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\sync.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Index.cshtml" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\Images\f11.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\page.css" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Index.cshtml" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f12.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\page.css" />
     <Content Include="Web.napinternal.config">
       <SubType>Designer</SubType>
     </Content>
@@ -784,6 +774,17 @@
     <Content Include="Views\Default\Kickout.cshtml" />
     <Content Include="typings.json" />
     <Content Include="Views\MemberRequests\Index.cshtml" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Italic.ttf" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Medium.woff" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Medium.woff2" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Regular.woff" />
+    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Regular.woff2" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Italic.ttf" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Medium.woff" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Medium.woff2" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Regular.woff" />
+    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Regular.woff2" />
+    <Content Include="Views\MemberRequests\Guidelines\Style\page.scss" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />

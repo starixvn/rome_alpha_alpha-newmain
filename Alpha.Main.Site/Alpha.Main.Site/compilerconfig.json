@@ -1,71 +1,62 @@
-[
+﻿[
   {
     "outputFile": "Assets/Styles/home/popup-message.css",
-    "inputFile": "Assets/Styles/home/popup-message.scss",
-    "sourceMap": false
+    "inputFile": "Assets/Styles/home/popup-message.scss"
   },
   {
     "outputFile": "Assets/Styles/home/old-main.css",
-    "inputFile": "Assets/Styles/home/old-main.scss",
-    "sourceMap": false
+    "inputFile": "Assets/Styles/home/old-main.scss"
   },
   {
     "outputFile": "Assets/Styles/home/page.css",
-    "inputFile": "Assets/Styles/home/page.scss",
-    "sourceMap": false
+    "inputFile": "Assets/Styles/home/page.scss"
   },
   {
     "outputFile": "Assets/Styles/home/tooltip.css",
-    "inputFile": "Assets/Styles/home/tooltip.scss",
-    "sourceMap": false
+    "inputFile": "Assets/Styles/home/tooltip.scss"
   },
   {
     "outputFile": "Assets/Styles/customer-profiles/customer-profile.css",
-    "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss",
-    "sourceMap": false
+    "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss"
   },
   {
     "outputFile": "Assets/Styles/announcement/announcements.css",
-    "inputFile": "Assets/Styles/announcement/announcements.scss",
-    "sourceMap": false
+    "inputFile": "Assets/Styles/announcement/announcements.scss"
   },
   {
     "outputFile": "Assets/styles/home/pageIElower10.css",
-    "inputFile": "Assets/styles/home/pageIElower10.scss",
-    "sourceMap": false
+    "inputFile": "Assets/styles/home/pageIElower10.scss"
   },
   {
     "outputFile": "Assets/styles/instruction/instruction.css",
-    "inputFile": "Assets/styles/instruction/instruction.scss",
-    "sourceMap": false
+    "inputFile": "Assets/styles/instruction/instruction.scss"
   },
   {
     "outputFile": "Assets/styles/instruction/enjoyhint.css",
-    "inputFile": "Assets/styles/instruction/enjoyhint.scss",
-    "sourceMap": false
+    "inputFile": "Assets/styles/instruction/enjoyhint.scss"
   },
   {
     "outputFile": "Assets/styles/security/security.css",
-    "inputFile": "Assets/styles/security/security.scss",
-    "sourceMap": false
+    "inputFile": "Assets/styles/security/security.scss"
   },
   {
     "outputFile": "Assets/styles/home/home.css",
-    "inputFile": "Assets/styles/home/home.scss",
-    "sourceMap": false
+    "inputFile": "Assets/styles/home/home.scss"
   },
   {
     "outputFile": "Assets/styles/security/lean-more.css",
-    "inputFile": "Assets/styles/security/lean-more.scss",
-    "sourceMap": false
+    "inputFile": "Assets/styles/security/lean-more.scss"
   },
   {
     "outputFile": "Assets/styles/message/message.css",
-    "inputFile": "Assets/styles/message/message.scss",
-    "sourceMap": false
+    "inputFile": "Assets/styles/message/message.scss"
   },
   {
     "outputFile": "Assets/styles/otp/otp.css",
     "inputFile": "Assets/styles/otp/otp.scss"
+  },
+  {
+    "outputFile": "Views/MemberRequests/Guidelines/Style/page.css",
+    "inputFile": "Views/MemberRequests/Guidelines/Style/page.scss"
   }
 ]
