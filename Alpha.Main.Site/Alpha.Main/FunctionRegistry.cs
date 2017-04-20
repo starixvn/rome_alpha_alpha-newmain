@@ -10,10 +10,10 @@ namespace Alpha.Main
     using Fanex.Products;
     using Helpers;
     using Models.Menus;
-    using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
-    using static Sunplus.Agent.Model.Entities.UserSession;
     using Sunplus.Agent.Model.Definitions;
     using Sunplus.Agent.Utilities;
+    using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
+    using static Sunplus.Agent.Model.Entities.UserSession;
 
     public static class FunctionRegistry
     {
