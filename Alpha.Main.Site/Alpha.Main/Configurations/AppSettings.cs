@@ -131,7 +131,7 @@
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "MBC", Justification = "Reviewed!")]
         public static bool IsMBCSite => isMBCSite;
 
-        public static bool DisabledVietnamese => false;
+        public static bool DisabledVietnamese => IsMBCSite;
 
         public static string GetAppPath(string name)
         {
