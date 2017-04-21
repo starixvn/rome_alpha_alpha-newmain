@@ -48,10 +48,16 @@
                     .ToList();
 
                 if (messageTypes != null &&
-                    !Enumeration.FromValue<UserLevel>(getParams.RoleId).IsAgentLevel() &&
-                    !messageTypes.Contains(FishingWorldNotice.ToString()))
+                    !Enumeration.FromValue<UserLevel>(getParams.RoleId).IsAgentLevel())
                 {
-                    messageTypes = new List<string>();
+                    if (messageTypes.Contains(FishingWorldNotice.ToString()))
+                    {
+                        messageTypes = new List<string> { FishingWorldNotice.ToString() };
+                    }
+                    else
+                    {
+                        messageTypes = new List<string>();
+                    }
                 }
             }
 
