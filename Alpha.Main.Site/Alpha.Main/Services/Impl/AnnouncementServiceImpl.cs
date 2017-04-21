@@ -17,6 +17,7 @@
     public class AnnouncementServiceImpl : AnnouncementService
     {
         public const int ForceUseSecurityCode = 20140512;
+        public const int FishingWorldNotice = 3;
 
         private readonly IDynamicRepository dynamicRepository;
         private readonly IDateTime dateTimeWrapper;
@@ -38,14 +39,20 @@
 
             var hotAnnouncement = new HotAnnouncement();
 
-            IEnumerable<string> messageTypes = null;
-            if (Enumeration.FromValue<UserLevel>(getParams.RoleId).IsAgentLevel() &&
-                getParams.AdminId == 0)
+            List<string> messageTypes = null;
+            if (getParams.AdminId == 0)
             {
                 messageTypes = dynamicRepository
                     .Fetch<byte>(new GetMessageTypeListCriteria(getParams.CustId))
                     .Select(messageType => messageType.ToString())
                     .ToList();
+
+                if (messageTypes != null &&
+                    !Enumeration.FromValue<UserLevel>(getParams.RoleId).IsAgentLevel() &&
+                    !messageTypes.Contains(FishingWorldNotice.ToString()))
+                {
+                    messageTypes = new List<string>();
+                }
             }
 
             if (messageTypes != null)

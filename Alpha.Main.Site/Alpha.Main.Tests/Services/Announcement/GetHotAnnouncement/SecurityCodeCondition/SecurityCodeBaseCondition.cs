@@ -9,6 +9,7 @@
         public GetHotAnnouncementsParams HotAnnouncementsParams()
         {
             var query = new GetHotAnnouncementsParams();
+            query.NoticeTypes = new[] { "1_2", "1", "2", "3" };
             return query;
         }
     }
