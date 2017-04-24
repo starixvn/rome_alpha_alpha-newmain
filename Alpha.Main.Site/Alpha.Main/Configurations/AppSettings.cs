@@ -127,14 +127,22 @@
 
         public static bool EnablePlayForFun => ConfigurationManager.AppSettings["EnablePlayForFun"] == "true";
 
-        public static string[] NoticeTypes => ConfigurationManager.AppSettings["NoticeTypes"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-
         public static string GoogleAnalyticId => googleAnalyticId;
 
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "MBC", Justification = "Reviewed!")]
         public static bool IsMBCSite => isMBCSite;
 
         public static bool DisabledVietnamese => IsMBCSite;
+
+        public static string[] NoticeTypes
+        {
+            get
+            {
+                var splitChars = new[] { ',' };
+
+                return ConfigurationManager.AppSettings["NoticeTypes"].Split(splitChars, StringSplitOptions.RemoveEmptyEntries);
+            }
+        }
 
         public static string GetAppPath(string name)
         {

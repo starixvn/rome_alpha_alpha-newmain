@@ -85,9 +85,9 @@
 
             if (correctType != null)
             {
-                messageContent = Resources.ResourceManager.GetString("Notice_" + correctType);
-                var content = messageContent.Replace("<br>", " ");
-                InsertPersonalMessage(new InsertPersonalMessageCriteria(content), getParams);
+                var resourceKey = "Notice_" + correctType;
+                messageContent = Resources.ResourceManager.GetString(resourceKey);
+                InsertPersonalMessage(new InsertPersonalMessageCriteria(resourceKey), getParams);
                 UpdateViewStatus(getParams.CustId, correctType);
             }
 
@@ -95,7 +95,11 @@
         }
 
         private bool ShowNotice(string noticeType, IEnumerable<string> messageTypes)
-            => noticeType.Split(new[] { '_' }, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault(subMessageType => !messageTypes.Contains(subMessageType)) == null;
+        {
+            var splitChars = new[] { '_' };
+
+            return noticeType.Split(splitChars, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault(subMessageType => !messageTypes.Contains(subMessageType)) == null;
+        }
 
         private void InsertPersonalMessage(InsertPersonalMessageCriteria criteria, GetHotAnnouncementsParams getParams)
         {
