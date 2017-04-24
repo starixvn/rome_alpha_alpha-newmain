@@ -5,6 +5,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Web;
+    using Fanex.Products;
     using Configurations;
     using Main.Helpers;
     using Main.Models.Announcements;
@@ -166,6 +167,44 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
 
         public string[] NoticeTypes { get; set; }
 
+        public IEnumerable<string> ThirdPartyProductNames
+        {
+            get
+            {
+                IList<string> thirdPartyProductNames = new List<string>();
+
+                int[] productIds = new[]
+                {
+                    ProductIdConstants.Racing,
+                    ProductIdConstants.VirtualSports,
+                    ProductIdConstants.RNGCasino,
+                    ProductIdConstants.Keno,
+                    ProductIdConstants.GoldDeluxe,
+                    ProductIdConstants.ColossusBets,
+                    ProductIdConstants.AllBet,
+                    ProductIdConstants.Voidbridge
+                };
+
+                foreach (int productId in productIds)
+                {
+                    if (UserPermission.HasPermissionOnProduct(productId))
+                    {
+                        thirdPartyProductNames.Add(ProductManager.GetProductName(productId));
+                    }
+                }
+
+                foreach (var product in ProductManager.Products)
+                {
+                    if (product.ShowSettings)
+                    {
+                        thirdPartyProductNames.Add(product.RemotingRefName);
+                    }
+                }
+
+                return thirdPartyProductNames;
+            }
+        }
+
         public void AssignValue(GetHotAnnouncementsParams hotAnnouncementsParams)
         {
             if (hotAnnouncementsParams == null)
@@ -187,6 +226,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             hotAnnouncementsParams.UserName = UserName;
             hotAnnouncementsParams.NoticeTypes = NoticeTypes;
             hotAnnouncementsParams.SiteMainReplacement = SiteMainReplacement;
+            hotAnnouncementsParams.ThirdPartyProductNames = ThirdPartyProductNames;
         }
     }
 }

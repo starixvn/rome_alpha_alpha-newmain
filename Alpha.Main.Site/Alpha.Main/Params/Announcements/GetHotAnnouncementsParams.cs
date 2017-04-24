@@ -31,5 +31,7 @@
         public string[] NoticeTypes { get; set; }
 
         public string SiteMainReplacement { get; set; }
+        
+        public IEnumerable<string> ThirdPartyProductNames { get; set; }
     }
 }

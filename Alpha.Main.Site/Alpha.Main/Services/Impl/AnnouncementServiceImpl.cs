@@ -1,5 +1,10 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Xml;
     using AppResources;
     using Constants;
     using Criteria.Announcement;
@@ -9,11 +14,6 @@
     using Models.Announcements;
     using Models.Enumerations;
     using Params.Announcements;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Xml;
-    using System.Xml.XPath;
 
     public class AnnouncementServiceImpl : AnnouncementService
     {
@@ -248,5 +248,34 @@
                 currentDate < startDate ||
                 (endDate.HasValue && endDate < currentDate);
         }
+        }
+
+        private string ReplaceProductListToHtml(string innerXml, IEnumerable<string> thirdPartyProductNames)
+        {
+            if (!thirdPartyProductNames.Any())
+            {
+                return string.Empty;
+            }
+
+            if (!innerXml.Contains("{product-list}"))
+            {
+                return innerXml;
+            }
+
+            int index = 0;
+            var productNamesBuilder = new StringBuilder("<ol>");
+
+            foreach (var name in thirdPartyProductNames)
+            {
+                productNamesBuilder.Append("<li>")
+                    .Append(++index)
+                    .Append(". ")
+                    .Append(name)
+                    .Append("</li>");
+            }
+
+            productNamesBuilder.Append("</ol>");
+
+            return innerXml.Replace("{product-list}", productNamesBuilder.ToString());
     }
 }
