@@ -8,6 +8,7 @@ top.errMsgs = [];
 top.userNames = [];
 
 top.baseUrl = alpha.urls.oldMainRootPath;
+top.exTotalBetsForecastRootPath = alpha.urls.exTotalBetsForecastRootPath;
 top.mainRootPath = alpha.urls.mainRootPath;
 top.isEnableOtp = alpha.user.isEnableOtp;
 top.IsInternalWebVPN = $("#isInternalWebVPN");
