@@ -472,6 +472,13 @@
       <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBACC.bodb02.BODBDownlineNet.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb02.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBCUST.CustDB.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBLOG.bodb_CustomerLog.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBMSG.bodb_Message.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb_AGE.xml" />
@@ -490,6 +497,15 @@
     </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBLOG.bodb_CustomerLog.xml" />
+    <Content Include="App_Data\SPNames\MNL\DBACC.bodb02.BODBDownlineNet.xml" />
+    <Content Include="App_Data\SPNames\MNL\DBAGE.bodb02.xml" />
+    <Content Include="App_Data\SPNames\MNL\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\MNL\DBCUST.CustDB.xml" />
+    <Content Include="App_Data\SPNames\MNL\DBLOG.bodb_CustomerLog.xml" />
+    <Content Include="App_Data\SPNames\MNL\DBMSG.bodb_Message.xml" />
+    <Content Include="App_Data\SPNames\MNL\DBONUSER.ON_USER.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\PRO\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb_AGE.xml" />
@@ -682,6 +698,12 @@
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f12.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f9.png" />
+    <None Include="Web.backupMNL.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </None>
+    <None Include="Web.AppSettings.backupMNL.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </None>
     <Content Include="Web.napinternal.config">
       <SubType>Designer</SubType>
     </Content>
@@ -717,9 +739,6 @@
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.backupMNLExNap2.config">
-      <DependentUpon>Web.uati1.config</DependentUpon>
-    </Content>
-    <Content Include="Web.backupMNLI1.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.backupMNLNap.config">
@@ -762,9 +781,6 @@
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.uati1.config" />
-    <Content Include="Web.AppSettings.backupMNLI1.config">
-      <DependentUpon>Web.AppSettings.config</DependentUpon>
-    </Content>
     <Content Include="Web.AppSettings.backupMNLExNap.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
