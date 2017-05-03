@@ -394,6 +394,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HIGHLIGHTS.
+        /// </summary>
+        public static string highlights {
+            get {
+                return ResourceManager.GetString("highlights", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home icon – access to home page.
         /// </summary>
         public static string HomeIconIntroduction {

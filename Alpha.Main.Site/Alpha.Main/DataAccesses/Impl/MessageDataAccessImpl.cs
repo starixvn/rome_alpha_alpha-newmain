@@ -60,7 +60,8 @@
                        userName: !Convert.IsDBNull(reader["UserName"]) ? Convert.ToString(reader["UserName"]) : string.Empty,
                        bettransId: !Convert.IsDBNull(reader["BettransID"]) ? Convert.ToString(reader["BettransID"]) : string.Empty,
                        userId: !Convert.IsDBNull(reader["TargetId"]) ? Convert.ToInt32(reader["TargetId"]) : 0,
-                       rowNum: !Convert.IsDBNull(reader["rownum"]) ? Convert.ToInt32(reader["rownum"]) : 0);
+                       rowNum: !Convert.IsDBNull(reader["rownum"]) ? Convert.ToInt32(reader["rownum"]) : 0,
+                       topLevel: !Convert.IsDBNull(reader["TopLevel"]) ? Convert.ToByte(reader["TopLevel"]) : (byte)0);
 
             return message;
         }

@@ -30,7 +30,8 @@
             string bettransId,
             int userId,
             string userName,
-            long rowNum)
+            long rowNum,
+            byte topLevel)
         {
             Id = id;
             ContentEN = contentEN;
@@ -58,6 +59,7 @@
             UserId = userId;
             UserName = userName;
             RowNum = rowNum;
+            TopLevel = topLevel;
         }
 
         public int Id { get; private set; }
@@ -111,5 +113,7 @@
         public string UserName { get; private set; }
 
         public long RowNum { get; private set; }
+
+        public byte TopLevel { get; private set; }
     }
 }
