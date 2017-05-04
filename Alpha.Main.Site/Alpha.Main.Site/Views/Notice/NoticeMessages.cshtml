@@ -8,19 +8,11 @@
     }
     else
     {
-        var tempPostTime = DateTime.MinValue;
         if (Model.HighlightMessages.Any())
         {
             <div class="group-date">@Resources.highlights</div>
             foreach (var message in Model.HighlightMessages)
             {
-                var currentPostTime = message.PostTime;
-
-                if (currentPostTime.Date != tempPostTime.Date)
-                {
-                    tempPostTime = currentPostTime;
-                }
-
                 <div class="msg-contents">
                     <div id="@message.CurrentMessage.Id"
                          class="message pointer @message.MessageType @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
@@ -36,6 +28,7 @@
             }
         }
 
+        var tempPostTime = DateTime.MinValue;
         foreach (var message in Model.NoticeMessages)
         {
             var currentPostTime = message.PostTime;
