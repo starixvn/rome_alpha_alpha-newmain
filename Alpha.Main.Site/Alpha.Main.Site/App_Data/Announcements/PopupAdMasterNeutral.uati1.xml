@@ -1,5 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+<PopupAnnouncement id="7233601" name="Change Product Status Behavior"
+                     startdate="5/4/2017" enddate="5/4/2018">
+    <en-US src="">
+      <p>Dear valued customer,</p>
+      <p>According to the new policy, all Supers, Masters and Agents have been enabled the following products:</p>
+      {product-list}
+      <p>These products' status on Members are kept intact.</p>
+      <p>You can enable these products for your members via the Enable Downlines feature. However, you cannot disable them.</p>
+      <p>Should you need any further information, please contact our Customer Service Department.</p>
+      <p>Thank you.</p>
+    </en-US>
+
+    <zh-CN src=""></zh-CN>
+
+    <zh-TW src=""></zh-TW>
+
+    <ja-JP src=""></ja-JP>
+
+    <ko-KR src=""></ko-KR>
+
+    <th-TH src=""></th-TH>
+
+    <vi-VN src=""></vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="7668001" name="Keno - Missing PT" startdate="05/15/2017" enddate="05/25/2017"  effectdate="04/13/2017"
                      custIds="62834,269822,506957,515046,632582,726433,902163,906321,1002015,1020648,1211095,1307016,1515466,1532957,1557986,1584872,1792236,2065791,2184482,2197395,2258958,2274949,2366079,3263768,3411785,3451568,3653047,3702649,3955349,3959701,4152860,4243625,4267620,4320028,4412646,4602221,4605046,4728072,4796454,5123717,5213567,5487626,5540148,5540585,5875415,5978580,6155947,6404696,7408496,7899270,8131877,8309123,9387704,9538872,9539128,9549998,9670143,9731678,10349938,10448981,10571910,10604860,11186665,11213377,11241871,11413812,11472312,11556365,11680253,11728696,12075925,12220155,12311982,12344020,12381125,12555809,12912420,12974517,12975645,13646534,13737463,13751721,13761155,13870578,14028250,14105345,14116232,14158881,14292601,14389613,14678543,14689564,14750282,14801451,14925101,15290451,15463959,15465358,15470924,15489759,15509538,15530038,15568047,15578632,15590207,15614672,15634730,15636527,15647929,15653008,15658149,15659733,15668009,15668764,15670788,15672146,15672832,15673493,15673568">
     <en-US src="">

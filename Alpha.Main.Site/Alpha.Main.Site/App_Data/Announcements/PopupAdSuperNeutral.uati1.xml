@@ -1,5 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+<PopupAnnouncement id="7233601" name="Change Product Status Behavior"
+                     startdate="5/4/2017" enddate="5/4/2018">
+    <en-US src="">
+      <p>Dear valued customer,</p>
+      <p>According to the new policy, all Supers, Masters and Agents have been enabled the following products:</p>
+      {product-list}
+      <p>These products' status on Members are kept intact.</p>
+      <p>You can enable these products for your members via the Enable Downlines feature. However, you cannot disable them.</p>
+      <p>Should you need any further information, please contact our Customer Service Department.</p>
+      <p>Thank you.</p>
+    </en-US>
+
+    <zh-CN src=""></zh-CN>
+
+    <zh-TW src=""></zh-TW>
+
+    <ja-JP src=""></ja-JP>
+
+    <ko-KR src=""></ko-KR>
+
+    <th-TH src=""></th-TH>
+
+    <vi-VN src=""></vi-VN>
+  </PopupAnnouncement>
+  
   <PopupAnnouncement id="7668001" name="Keno - Missing PT" startdate="05/15/2017" enddate="05/25/2017" effectdate="04/13/2017"
                      custIds="2,324557,324564,398615,405017,447479,524760,712439,720475,747037,838201,840993,900801,901840,966501,972747,1020356,1124040,1262078,1362437,1419459,1517951,1528410,1528414,1528419,1538183,1539693,1575555,1581733,1584511,1927603,2131553,2178402,2197674,2308589,2864145,2895571,3161673,3741448,3800272,4006796,4048531,4115476,4152553,4253707,4314665,4404031,4487258,4542800,4554012,4677048,5187839,5215598,5532706,5938255,6153706,6855660,7680792,7723444,7776236,8055869,8095139,8119630,9669693,9727510,10488307,10573500,10775412,10776607,10797628,10827167,10851205,11674030,12042691,12285701,12589170,13063323,13308147,14479158,14773243,14783808,14956535,15459128,15516774,15615851,15657985">
     <en-US src="">
