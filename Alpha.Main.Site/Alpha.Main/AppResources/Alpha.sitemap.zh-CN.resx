@@ -363,4 +363,7 @@
   <data name="PlayForFunDetail" xml:space="preserve">
     <value>免费试玩资料</value>
   </data>
+  <data name="winLossByProduct" xml:space="preserve">
+    <value>投注产品输赢</value>
+  </data>
 </root>
