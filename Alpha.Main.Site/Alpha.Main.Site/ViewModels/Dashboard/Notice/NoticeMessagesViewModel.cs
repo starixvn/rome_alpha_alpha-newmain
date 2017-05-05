@@ -16,7 +16,8 @@
 
             HighlightMessages = noticeMessages
                 .Where(m => m.CurrentMessage.TopLevel <= (byte)MessageLevel.Range.Highlight)
-                .OrderByDescending(m => m.CurrentMessage.PostTime)
+                .OrderBy(m => m.CurrentMessage.TopLevel)
+                .ThenByDescending(m => m.PostTime)
                 .ToList();
 
             LastMessagePostTime = noticeMessages.Any() ? noticeMessages.Last().PostTime : DateTime.MinValue;
