@@ -13,6 +13,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Services;
     using Site.Handlers;
     using Site.Requests.Dashboard.Notice;
+    using Site.ViewModels.Message;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
@@ -107,6 +108,25 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             // Assert
             Assert.AreEqual(expectedNoticeMessages.Count, viewModel.NoticeMessages.Count);
+        }
+
+        [Test]
+        public void HandleHightlightQuery_NotNullQuery_ReturnNoticeViewModel()
+        {
+            // Arrange
+            var expectedNoticeMessages = FakeDataHelper.CreateMany<NoticeMessage>().ToList();
+            FakeReturnGetNoticeMessagesService(expectedNoticeMessages);
+
+            var query = new NoticeQuery(userSession, DateTime.Today, 100, false);
+
+            // Act
+            var viewModel = noticeHandler.Handle(query);
+
+            // Numbers of highlight message
+            var count = expectedNoticeMessages.Where(m => m.TopLevel <= (byte)MessageLevel.Range.Highlight).Count();
+
+            // Assert
+            Assert.AreEqual(count, viewModel.HighlightMessages.Count);
         }
 
         private void FakeReturnGetNoticeMessagesService(List<NoticeMessage> noticeMessages)
