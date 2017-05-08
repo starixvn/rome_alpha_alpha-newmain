@@ -106,8 +106,13 @@ namespace Alpha.Main.Site.Tests.Handlers
             // Act
             var viewModel = noticeHandler.Handle(query);
 
+            // Numbers of notice message
+            var expectedCount = expectedNoticeMessages
+                .Where(m => m.TopLevel >= (byte)MessageLevel.Range.Normal)
+                .Count();
+
             // Assert
-            Assert.AreEqual(expectedNoticeMessages.Count, viewModel.NoticeMessages.Count);
+            Assert.AreEqual(expectedCount, viewModel.NoticeMessages.Count);
         }
 
         [Test]
@@ -123,10 +128,77 @@ namespace Alpha.Main.Site.Tests.Handlers
             var viewModel = noticeHandler.Handle(query);
 
             // Numbers of highlight message
-            var count = expectedNoticeMessages.Where(m => m.TopLevel <= (byte)MessageLevel.Range.Highlight).Count();
+            var expectedCount = expectedNoticeMessages.Where(m => m.TopLevel <= (byte)MessageLevel.Range.Highlight).Count();
 
             // Assert
-            Assert.AreEqual(count, viewModel.HighlightMessages.Count);
+            Assert.AreEqual(expectedCount, viewModel.HighlightMessages.Count);
+        }
+
+        [Test]
+        public void Handle_HightlightOrderByTopLevelAsc_ThenByPostTimeDesc_Query_NotNullQuery_ReturnNoticeViewModel()
+        {
+            // Arrange
+            var expectedNoticeMessages = FakeDataHelper.CreateMany<NoticeMessage>().ToList();
+            FakeReturnGetNoticeMessagesService(expectedNoticeMessages);
+
+            var query = new NoticeQuery(userSession, DateTime.Today, 100, false);
+
+            // Act
+            var viewModel = noticeHandler.Handle(query);
+
+            // Ordered highlight message elements
+            var expectedElements = expectedNoticeMessages
+                .Where(m => m.TopLevel <= (byte)MessageLevel.Range.Highlight)
+                .OrderBy(m => m.TopLevel)
+                .ThenByDescending(m => m.PostTime)
+                .ToList();
+
+            // Identify each message id of expected elements is equal to notice message element
+            var expectedEqual = true;
+            for (int i = 0; i < expectedElements.Count; i++)
+            {
+                if (expectedElements.ElementAt(i).Id != viewModel.HighlightMessages.ElementAt(i).CurrentMessage.Id)
+                {
+                    expectedEqual = false;
+                    break;
+                }
+            }
+
+            // Assert
+            Assert.AreEqual(expectedEqual, true);
+        }
+
+        [Test]
+        public void Handle_NormalOrderByPostTimeDesc_Query_NotNullQuery_ReturnNoticeViewModel()
+        {
+            // Arrange
+            var expectedNoticeMessages = FakeDataHelper.CreateMany<NoticeMessage>().ToList();
+            FakeReturnGetNoticeMessagesService(expectedNoticeMessages);
+
+            var query = new NoticeQuery(userSession, DateTime.Today, 100, false);
+
+            // Act
+            var viewModel = noticeHandler.Handle(query);
+
+            // Ordered normal message elements
+            var expectedElements = expectedNoticeMessages
+                .Where(m => m.TopLevel >= (byte)MessageLevel.Range.Normal)
+                .OrderByDescending(m => m.PostTime)
+                .ToList();
+
+            // Identify each message id of expected elements is equal to notice message element
+            var expectedEqual = true;
+            for (int i = 0; i < expectedElements.Count; i++)
+            {
+                if (expectedElements.ElementAt(i).Id != viewModel.NoticeMessages.ElementAt(i).CurrentMessage.Id)
+                {
+                    expectedEqual = false;
+                    break;
+                }
+            }
+
+            // Assert
+            Assert.AreEqual(expectedEqual, true);
         }
 
         private void FakeReturnGetNoticeMessagesService(List<NoticeMessage> noticeMessages)
