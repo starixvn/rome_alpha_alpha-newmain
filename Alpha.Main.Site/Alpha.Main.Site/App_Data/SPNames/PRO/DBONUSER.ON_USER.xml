@@ -4,7 +4,7 @@
     <Setting Key="Age_MessageNoticeSelByCustID" SpName="Age_MessageNoticeSelByCustID" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0">
       <Mapping DataField="typeid" ObjectProperty="TypeId" />
     </Setting>
-    <Setting Key="Age_MessageNoticeUpdStatus" SpName="Age_MessageNoticeUpdStatus" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0">
+    <Setting Key="Age_MessageNoticeUpdStatus" SpName="Age_MessageNoticeUpdStatus_xpre" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0">
     </Setting>
   </Function>
   <Function Name="Alpha.Auth">
