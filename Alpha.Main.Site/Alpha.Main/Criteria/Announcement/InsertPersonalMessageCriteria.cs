@@ -1,27 +1,30 @@
 ﻿namespace Alpha.Main.Criteria.Announcement
 {
-    using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Globalization;
+    using AppResources;
     using Fanex.Data;
     using Fanex.Data.Repository;
 
     public class InsertPersonalMessageCriteria : CriteriaBase
     {
+        public const int PositionTakingChanged = 1;
+
         public InsertPersonalMessageCriteria()
         {
         }
 
-        public InsertPersonalMessageCriteria(string content, int type)
+        public InsertPersonalMessageCriteria(string resourceKey)
         {
-            ContentEN = content;
-            ContentCH = content;
-            ContentCS = content;
-            ContentJP = content;
+            ContentEN = GetMessageByCulture(resourceKey, "en-US");
+            ContentCH = GetMessageByCulture(resourceKey, "zh-TW");
+            ContentCS = GetMessageByCulture(resourceKey, "zh-CN");
+            ContentJP = GetMessageByCulture(resourceKey, "ja-JP");
             ContentIT = string.Empty;
-            ContentTH = content;
-            ContentKO = content;
+            ContentTH = GetMessageByCulture(resourceKey, "th-TH");
+            ContentKO = GetMessageByCulture(resourceKey, "ko-KR");
             ContentES = string.Empty;
-            Type = type;
+            Type = PositionTakingChanged;
             IsSticky = false;
             MatchId = 0;
             IsBatch = true;
@@ -80,5 +83,8 @@
         {
             return true;
         }
+
+        private string GetMessageByCulture(string resourceKey, string culture)
+            => Resources.ResourceManager.GetString(resourceKey, new CultureInfo(culture)).Replace("<br>", " ");
     }
 }

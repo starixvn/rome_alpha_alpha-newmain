@@ -17,9 +17,7 @@
     public class AnnouncementServiceImpl : AnnouncementService
     {
         public const int ForceUseSecurityCode = 20140512;
-
-        public const int PositionTakingChanged = 1;
-        public const int BettingLimitChanged = 2;
+        public const int FishingWorldNotice = 3;
 
         private readonly IDynamicRepository dynamicRepository;
         private readonly IDateTime dateTimeWrapper;
@@ -41,14 +39,26 @@
 
             var hotAnnouncement = new HotAnnouncement();
 
-            IEnumerable<string> messageTypes = null;
-            if (Enumeration.FromValue<UserLevel>(getParams.RoleId).IsAgentLevel() &&
-                getParams.AdminId == 0)
+            List<string> messageTypes = null;
+            if (getParams.AdminId == 0)
             {
                 messageTypes = dynamicRepository
                     .Fetch<byte>(new GetMessageTypeListCriteria(getParams.CustId))
                     .Select(messageType => messageType.ToString())
                     .ToList();
+
+                if (messageTypes != null &&
+                    !Enumeration.FromValue<UserLevel>(getParams.RoleId).IsAgentLevel())
+                {
+                    if (messageTypes.Contains(FishingWorldNotice.ToString()))
+                    {
+                        messageTypes = new List<string> { FishingWorldNotice.ToString() };
+                    }
+                    else
+                    {
+                        messageTypes = new List<string>();
+                    }
+                }
             }
 
             if (messageTypes != null)
@@ -68,29 +78,27 @@
 
         private string GetSettingChangedMessage(IEnumerable<string> messageTypes, GetHotAnnouncementsParams getParams)
         {
-            var isPositionTakingChanged = messageTypes.Contains(PositionTakingChanged.ToString());
-            var isBettingLimitChanged = messageTypes.Contains(BettingLimitChanged.ToString());
-            var messageContent = string.Empty;
-            if (isPositionTakingChanged && isBettingLimitChanged)
-            {
-                messageContent = Resources.modifiedMinPTBettingLimitValue;
-            }
-            else if (isPositionTakingChanged)
-            {
-                messageContent = Resources.modifiedMinPTValueText;
-            }
-            else if (isBettingLimitChanged)
-            {
-                messageContent = Resources.modifiedBettingLimitValue;
-            }
+            var noticeTypes = getParams.NoticeTypes;
 
-            if (!string.IsNullOrEmpty(messageContent))
+            var correctType = noticeTypes.FirstOrDefault(noticeType => ShowNotice(noticeType, messageTypes));
+            var messageContent = string.Empty;
+
+            if (correctType != null)
             {
-                var content = messageContent.Replace("<br>", " ");
-                InsertPersonalMessage(new InsertPersonalMessageCriteria(content, PositionTakingChanged), getParams);
+                var resourceKey = "Notice_" + correctType;
+                messageContent = Resources.ResourceManager.GetString(resourceKey);
+                InsertPersonalMessage(new InsertPersonalMessageCriteria(resourceKey), getParams);
+                UpdateViewStatus(getParams.CustId, correctType);
             }
 
             return messageContent;
+        }
+
+        private bool ShowNotice(string noticeType, IEnumerable<string> messageTypes)
+        {
+            var splitChars = new[] { '_' };
+
+            return noticeType.Split(splitChars, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault(subMessageType => !messageTypes.Contains(subMessageType)) == null;
         }
 
         private void InsertPersonalMessage(InsertPersonalMessageCriteria criteria, GetHotAnnouncementsParams getParams)
@@ -110,8 +118,16 @@
                 IsRead = false,
                 BetTransId = "0"
             });
+        }
 
-            dynamicRepository.Fetch<bool>(new UpdateViewStatus(getParams.CustId, true));
+        private void UpdateViewStatus(int custId, string noticeType)
+        {
+            var subTypes = noticeType.Split(new[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var subType in subTypes)
+            {
+                dynamicRepository.Fetch<bool>(new UpdateViewStatus(custId, true, Converter.ToInt(subType)));
+            }
         }
 
         private List<long> GetShowedMessageIds(GetHotAnnouncementsParams getParams)
@@ -201,7 +217,7 @@
             if (!IsShowProductAnnouncementByBatch(node, custId))
             {
                 return true;
-            }          
+            }
 
             var isPublicSystem = node.Attributes["privatesystem"] != null &&
                 (!node.Attributes["privatesystem"].Value.Equals("*") ||

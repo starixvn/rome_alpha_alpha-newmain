@@ -310,13 +310,13 @@
   <data name="givenCredit" xml:space="preserve">
     <value>貸付金額</value>
   </data>
-  <data name="modifiedBettingLimitValue" xml:space="preserve">
+  <data name="Notice_2" xml:space="preserve">
     <value>Your betting limit value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines.</value>
   </data>
-  <data name="modifiedMinPTBettingLimitValue" xml:space="preserve">
+  <data name="Notice_1_2" xml:space="preserve">
     <value>Your minimum position taking and betting limit value have been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines.</value>
   </data>
-  <data name="modifiedMinPTValueText" xml:space="preserve">
+  <data name="Notice_1" xml:space="preserve">
     <value>Your minimum position taking value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines.</value>
   </data>
   <data name="doNotShowAgain" xml:space="preserve">
@@ -348,5 +348,8 @@
   </data>
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>情報がありません</value>
+  </data>
+  <data name="Notice_3" xml:space="preserve">
+    <value>Your upline has enabled Fishing World for your downlines. Please go to setting page to configure your own PT settings.</value>
   </data>
 </root>

@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Configurations
 {
+    using System;
     using System.Collections.Generic;
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
@@ -132,6 +133,16 @@
         public static bool IsMBCSite => isMBCSite;
 
         public static bool DisabledVietnamese => IsMBCSite;
+
+        public static string[] NoticeTypes
+        {
+            get
+            {
+                var splitChars = new[] { ',' };
+
+                return ConfigurationManager.AppSettings["NoticeTypes"].Split(splitChars, StringSplitOptions.RemoveEmptyEntries);
+            }
+        }
 
         public static string GetAppPath(string name)
         {

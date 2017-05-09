@@ -32,7 +32,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         public const int PremiumBaccarat = 6842501; ////endate: 01/02/2017
         public const int ShuttingDownLiveCasino = 7011701; ////endate: 01/31/2017
 
-        public HotAnnouncementQuery() : this(null, null, null, null)
+        public HotAnnouncementQuery() : this(null, null, null, null, null)
         {
         }
 
@@ -40,12 +40,14 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             IDictionary<int, bool> productsStatus,
             IUserSession userSession,
             string privateMessageFilePath,
-            string commonAnnouncementFilePath)
+            string commonAnnouncementFilePath,
+            string[] noticeTypes)
         {
             this.productsStatus = productsStatus;
             this.userSession = userSession ?? new UserSessionExt();
             this.commonAnnouncementFilePath = commonAnnouncementFilePath;
             this.privateMessageFilePath = privateMessageFilePath;
+            NoticeTypes = noticeTypes;
         }
 
         public string MessageIds { get; set; }
@@ -54,7 +56,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         {
             get
             {
-                return privateMessageFilePath 
+                return privateMessageFilePath
                     ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAd{Enumeration.FromValue<UserLevel>(this.userSession.RoleId)}Neutral.xml");
             }
         }
@@ -63,7 +65,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         {
             get
             {
-                return commonAnnouncementFilePath 
+                return commonAnnouncementFilePath
                     ?? HttpContext.Current.Server.MapPath($"~/App_Data/Announcements/PopupAdCommon.xml");
             }
         }
@@ -151,6 +153,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             }
         }
 
+        public string[] NoticeTypes { get; set; }
+
         public void AssignValue(GetHotAnnouncementsParams hotAnnouncementsParams)
         {
             if (hotAnnouncementsParams == null)
@@ -170,6 +174,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             hotAnnouncementsParams.Site = Site;
             hotAnnouncementsParams.SubAccId = SubAccId;
             hotAnnouncementsParams.UserName = UserName;
+            hotAnnouncementsParams.NoticeTypes = NoticeTypes;
         }
     }
 }
