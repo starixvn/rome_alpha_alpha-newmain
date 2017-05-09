@@ -1250,6 +1250,7 @@
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
+    <Compile Include="Controllers\RedirectController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NoticeController.cs" />

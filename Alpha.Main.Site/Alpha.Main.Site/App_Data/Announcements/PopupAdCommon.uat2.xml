@@ -8,6 +8,96 @@
       LCS: 7,
       domain: 5
   -->
+	<PopupAnnouncement id="6946101" name="BAIO - New Bet Types Announcement" startdate="05/09/2017" enddate="05/31/2017"  effectdate="05/18/2017">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+		  We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+	  </p>
+      <p>
+		  You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+	  </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+    <zh-CN src="">
+		<p>Dear valued agents,</p>
+		<p>
+			We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+		</p>
+		<p>
+			You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+		</p>
+		<p>
+			Thank you
+		</p>
+    </zh-CN>
+    <zh-TW src="">
+		<p>Dear valued agents,</p>
+		<p>
+			We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+		</p>
+		<p>
+			You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+		</p>
+		<p>
+			Thank you
+		</p>
+    </zh-TW>
+
+    <ja-JP src="">
+		<p>Dear valued agents,</p>
+		<p>
+			We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+		</p>
+		<p>
+			You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+		</p>
+		<p>
+			Thank you
+		</p>
+    </ja-JP>
+
+    <ko-KR src="">
+		<p>Dear valued agents,</p>
+		<p>
+			We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+		</p>
+		<p>
+			You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+		</p>
+		<p>
+			Thank you
+		</p>
+    </ko-KR>
+
+    <th-TH src="">
+		<p>Dear valued agents,</p>
+		<p>
+			We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+		</p>
+		<p>
+			You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+		</p>
+		<p>
+			Thank you
+		</p>
+    </th-TH>
+
+    <vi-VN src="">
+		<p>Dear valued agents,</p>
+		<p>
+			We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+		</p>
+		<p>
+			You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+		</p>
+		<p>
+			Thank you
+		</p>
+    </vi-VN>
+  </PopupAnnouncement>
   <PopupAnnouncement id="7502802" name="Play For Fun - 2"
                   startdate="4/10/2017" enddate="05/11/2017"  effectdate="04/13/2017">
     <en-US src="">
