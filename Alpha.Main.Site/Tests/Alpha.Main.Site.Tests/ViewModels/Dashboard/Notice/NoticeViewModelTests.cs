@@ -27,7 +27,9 @@
         public void LastMessagePostTime_NoticeMessagesHasData_ReturnLastPostDate()
         {
             // Arrange
-            var noticeMessaseWrappers = FakeDataHelper.CreateMany<NoticeMessageWrapper>().ToList();
+            var noticeMessaseWrappers = FakeDataHelper.CreateMany<NoticeMessageWrapper>()
+                .OrderByDescending(m => m.CurrentMessage.PostTime)
+                .ToList();
             var lastPostTime = noticeMessaseWrappers.OrderByDescending(m => m.CurrentMessage.PostTime).Last().PostTime;
 
             // Act

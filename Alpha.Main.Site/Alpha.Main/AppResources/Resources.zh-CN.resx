@@ -490,4 +490,7 @@
   <data name="Notice_3" xml:space="preserve">
     <value>您的上线已开启“捕鱼天下”予您的下线。请到您的设定页面进行配置</value>
   </data>
+  <data name="highlights" xml:space="preserve">
+    <value>HIGHLIGHTS</value>
+  </data>
 </root>

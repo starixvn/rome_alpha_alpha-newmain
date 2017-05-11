@@ -2,14 +2,33 @@
 @model NoticeMessagesViewModel
 
 <div class="message-content">
-    @if (!Model.NoticeMessages.Any())
+    @if (!Model.NoticeMessages.Any() && !Model.HighlightMessages.Any())
     {
         <div class="text-center" id="no-info">@Resources.noInfo</div>
     }
     else
     {
-        var tempPostTime = DateTime.MinValue;
+        if (Model.HighlightMessages.Any())
+        {
+            <div class="group-date">@Resources.highlights</div>
+            foreach (var message in Model.HighlightMessages)
+            {
+                <div class="msg-contents">
+                    <div id="@message.CurrentMessage.Id"
+                         class="message pointer @message.MessageType @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
+                        <div class="time"><span class="icon icon-plus"></span>@message.PostTime.ToString("M/d/yyyy")<div class="highlight-date-format">@message.PostTime.ToString("hh:mm:ss tt")</div></div>
+                        <div class="content short-content">
+                            @message.ShortContent
+                        </div>
+                        <div class="content full-content">
+                            @message.Content
+                        </div>
+                    </div>
+                </div>
+            }
+        }
 
+        var tempPostTime = DateTime.MinValue;
         foreach (var message in Model.NoticeMessages)
         {
             var currentPostTime = message.PostTime;

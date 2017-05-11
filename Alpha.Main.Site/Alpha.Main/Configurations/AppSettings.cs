@@ -113,7 +113,7 @@
             }
         }
 
-        public static string StoreProcedurePath => ConfigurationManager.AppSettings["StoreProcedurePath"];
+        public static string StoreProcedurePath => ConfigurationManager.AppSettings["StoredProcedurePath"];
 
         public static string GetMessagesDataPath => ConfigurationManager.AppSettings["MessagesDataPath"];
 

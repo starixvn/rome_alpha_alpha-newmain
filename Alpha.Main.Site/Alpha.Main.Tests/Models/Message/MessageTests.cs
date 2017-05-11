@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Models.Message
 {
     using System;
+    using System.Collections.Generic;
     using Main.Models.Message;
     using NUnit.Framework;
     using TestData.Helper;
@@ -331,6 +332,6 @@
 
             // Assert
             Assert.AreEqual(rowNum, message.RowNum);
-        }
+        }        
     }
 }

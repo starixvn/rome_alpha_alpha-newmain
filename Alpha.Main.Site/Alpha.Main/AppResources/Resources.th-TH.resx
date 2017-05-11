@@ -487,4 +487,7 @@
   <data name="Notice_3" xml:space="preserve">
     <value>อัพไลน์ของคุณได้เปิดใช้งานเกมส์ยิงปลาให้ดาวน์ไลน์ของคุณ. โปรดไปที่หน้าการตั้งค่าเพือกำหนดค่าการตั้งค่าส่วนแบ่งของคุณเอง</value>
   </data>
+  <data name="highlights" xml:space="preserve">
+    <value>HIGHLIGHTS</value>
+  </data>
 </root>

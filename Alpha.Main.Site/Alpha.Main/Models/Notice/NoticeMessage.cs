@@ -20,7 +20,8 @@
             bool isSticky,
             DateTime lastUpdateTime,
             string betTransId,
-            bool isRead)
+            bool isRead,
+            byte topLevel)
         {
             Id = id;
             ContentEN = contentEN;
@@ -38,6 +39,7 @@
             LastUpdateTime = lastUpdateTime;
             BetTransId = betTransId;
             IsRead = isRead;
+            TopLevel = topLevel;
         }
 
         public int Id { get; }
@@ -71,5 +73,7 @@
         public string BetTransId { get; }
 
         public bool IsRead { get; }
+
+        public byte TopLevel { get; }
     }
 }
