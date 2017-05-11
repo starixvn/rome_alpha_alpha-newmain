@@ -173,8 +173,8 @@
                     nodeId == 0 ||
                     showedMessages.Contains(nodeId) ||
                     IsExcludedHotMessageSite(announcementNode, getParams.Site, getParams.CustId) ||
-                    IsExpiredHotMessage(announcementNode) ||
-                    !IsShowForCustomerIds (announcementNode, getParams.CustId)
+                    !IsShowForCustomerIds(announcementNode, getParams.CustId) ||
+                    IsExpiredHotMessage(announcementNode)                   
                     )
                 {
                     continue;
@@ -274,7 +274,7 @@
             return true;
         }
 
-        private bool IsShowForCustomerIds(XmlNode node, int custId)
+        protected internal bool IsShowForCustomerIds(XmlNode node, int custId)
         {
             var custIds = node.Attributes["custIds"];
             return custIds == null || string.IsNullOrEmpty(custIds.Value) || custIds.Value.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList().Contains(custId.ToString());

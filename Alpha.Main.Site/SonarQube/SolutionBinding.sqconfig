@@ -1,5 +1,5 @@
 {
-  "ServerUri": "http://10.18.200.213:9000/",
+  "ServerUri": "http://10.18.200.213:9000",
   "ProjectKey": "Alpha-Main",
   "Profiles": {
     "CSharp": {

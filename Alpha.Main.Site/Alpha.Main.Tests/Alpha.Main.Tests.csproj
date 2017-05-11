@@ -360,6 +360,15 @@
     <Content Include="TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\HasAnnouncement.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\ByCustIds\CustIdsAttr.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\ByCustIds\EmptyCustIdsAttr.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Announcements\HotAnnouncement\ByCustIds\NotHaveCustIdsAttr.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
