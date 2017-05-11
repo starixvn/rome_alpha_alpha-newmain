@@ -207,11 +207,10 @@
                 .html(publicMessage[this.messageContentIndex] + '. ')
                 .find('font').attr('live-message-url', url);
 
+            this.publicMessageId = publicMessage[this.messageIdIndex];
             if (this.publicMessageId !== 0) {
                 this.appendMessageToPopup(publicMessage[this.messageContentIndex]);
             }
-
-            this.publicMessageId = publicMessage[this.messageIdIndex];
         }
         else {
             const spanMoveBets = this.$("#span-movebets");
@@ -233,6 +232,7 @@
             //// Append Private Message to Marquee with green color format.
             const privateMessageContent = this.domElements.liveMessage.find('#private-message-content');
 
+			this.privateMessageId = privateMessage[this.messageIdIndex];
             if (privateMessageContent.length > 0) {
                 privateMessageContent.html("Private message: " + privateMessage[this.messageContentIndex]);
             }
@@ -249,8 +249,6 @@
             if (this.privateMessageId !== 0) {
                 this.appendMessageToPopup(privateMessage[this.messageContentIndex]);
             }
-
-            this.privateMessageId = privateMessage[this.messageIdIndex];
         }
 
         const unreadPriMsgCountText = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
