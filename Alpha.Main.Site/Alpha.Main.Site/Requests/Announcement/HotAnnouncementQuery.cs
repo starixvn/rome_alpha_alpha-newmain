@@ -24,6 +24,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         private readonly string privateMessageFilePath;
         private readonly IUserSession userSession;
         private readonly IDictionary<int, bool> productsStatus;
+        private IList<string> thirdPartyProductNames;
 
         public const int OfferedGoldDeluxe = 7151701;
         public const int NotOfferedGoldDeluxe = 3543502;
@@ -35,7 +36,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         public const int PremiumBaccarat = 6842501; ////endate: 01/02/2017
         public const int ShuttingDownLiveCasino = 7011701; ////endate: 01/31/2017
 
-        public HotAnnouncementQuery() : this(null, null, null, null, null)
+        public HotAnnouncementQuery() : this(null, null, null, null, null, null)
         {
         }
 
@@ -44,13 +45,15 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             IUserSession userSession,
             string privateMessageFilePath,
             string commonAnnouncementFilePath,
-            string[] noticeTypes)
+            string[] noticeTypes,
+            IList<string> thirdPartyProductNames)
         {
             this.productsStatus = productsStatus;
             this.userSession = userSession ?? new UserSessionExt();
             this.commonAnnouncementFilePath = commonAnnouncementFilePath;
             this.privateMessageFilePath = privateMessageFilePath;
             NoticeTypes = noticeTypes;
+            this.thirdPartyProductNames = thirdPartyProductNames;
         }
 
         public static string SiteMainReplacement
@@ -171,33 +174,36 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         {
             get
             {
-                IList<string> thirdPartyProductNames = new List<string>();
-
-                int[] productIds = new[]
+                if (thirdPartyProductNames == null)
                 {
-                    ProductIdConstants.Racing,
-                    ProductIdConstants.VirtualSports,
-                    ProductIdConstants.RNGCasino,
-                    ProductIdConstants.Keno,
-                    ProductIdConstants.GoldDeluxe,
-                    ProductIdConstants.ColossusBets,
-                    ProductIdConstants.AllBet,
-                    ProductIdConstants.Voidbridge
-                };
+                    thirdPartyProductNames = new List<string>();
 
-                foreach (int productId in productIds)
-                {
-                    if (UserPermission.HasPermissionOnProduct(productId))
+                    int[] productIds = new[]
                     {
-                        thirdPartyProductNames.Add(ProductManager.GetProductName(productId));
+                        ProductIdConstants.Racing,
+                        ProductIdConstants.VirtualSports,
+                        ProductIdConstants.RNGCasino,
+                        ProductIdConstants.Keno,
+                        ProductIdConstants.GoldDeluxe,
+                        ProductIdConstants.ColossusBets,
+                        ProductIdConstants.AllBet,
+                        ProductIdConstants.Voidbridge
+                    };
+
+                    foreach (int productId in productIds)
+                    {
+                        if (UserPermission.HasPermissionOnProduct(productId))
+                        {
+                            thirdPartyProductNames.Add(ProductManager.GetProductName(productId));
+                        }
                     }
-                }
 
-                foreach (var product in ProductManager.Products)
-                {
-                    if (product.ShowSettings)
+                    foreach (var product in ProductManager.Products)
                     {
-                        thirdPartyProductNames.Add(product.RemotingRefName);
+                        if (product.ShowSettings)
+                        {
+                            thirdPartyProductNames.Add(product.RemotingRefName);
+                        }
                     }
                 }
 

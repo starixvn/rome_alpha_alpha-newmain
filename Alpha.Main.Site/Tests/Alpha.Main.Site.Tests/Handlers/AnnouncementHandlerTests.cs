@@ -47,7 +47,7 @@ namespace Alpha.Main.Site.Tests.Handlers
                 .Returns(hotAnnouncement);
 
             userSession.RoleId.Returns(RoleId.ValidRoleId);
-            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, null);
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, null, new List<string>());
 
             // Act
             var viewModel = announcementHandler.Handle(query);
@@ -74,7 +74,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             userSession.UserId.Returns(userId);
             userSession.SubAccId.Returns(subAccId);
 
-            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, null);
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, null, new List<string>());
 
             // Act
             var viewModel = announcementHandler.Handle(query);
