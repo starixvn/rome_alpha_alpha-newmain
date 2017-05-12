@@ -307,13 +307,13 @@
   <data name="givenCredit" xml:space="preserve">
     <value>信用額度</value>
   </data>
-  <data name="modifiedBettingLimitValue" xml:space="preserve">
+  <data name="Notice_2" xml:space="preserve">
     <value>您的上線已修改您的投注金額數值。&lt;br&gt;請務必核對您的下線的細節。</value>
   </data>
-  <data name="modifiedMinPTBettingLimitValue" xml:space="preserve">
+  <data name="Notice_1_2" xml:space="preserve">
     <value>您的上線已修改您的最低占成及投注金額數值。&lt;br&gt;請務必核對您的下線的細節。</value>
   </data>
-  <data name="modifiedMinPTValueText" xml:space="preserve">
+  <data name="Notice_1" xml:space="preserve">
     <value>您的上線已修改您的最低占成。&lt;br&gt;請務必核對您的下線的細節。</value>
   </data>
   <data name="doNotShowAgain" xml:space="preserve">
@@ -486,5 +486,11 @@
   </data>
   <data name="PlayForFunGuidelines" xml:space="preserve">
     <value>免費試玩-指南</value>
+  </data>
+  <data name="Notice_3" xml:space="preserve">
+    <value>您的上線已開啟“捕魚天下”予您的下線。請到您的設定頁面進行配置</value>
+  </data>
+  <data name="highlights" xml:space="preserve">
+    <value>HIGHLIGHTS</value>
   </data>
 </root>

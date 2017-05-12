@@ -27,5 +27,7 @@
         public string UserName { get; set; }
 
         public string Site { get; set; }
+
+        public string[] NoticeTypes { get; set; }
     }
 }

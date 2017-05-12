@@ -6,6 +6,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using System.Collections.Generic;
     using System.Linq;
     using Constants;
+    using KellermanSoftware.CompareNetObjects;
     using Main.Models.Notice;
     using Main.Tests.TestData.Helper;
     using NSubstitute;
@@ -13,6 +14,8 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Services;
     using Site.Handlers;
     using Site.Requests.Dashboard.Notice;
+    using Site.ViewModels.Dashboard.Notice;
+    using Site.ViewModels.Message;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
@@ -105,8 +108,92 @@ namespace Alpha.Main.Site.Tests.Handlers
             // Act
             var viewModel = noticeHandler.Handle(query);
 
+            // Numbers of notice message
+            var expectedCount = expectedNoticeMessages
+                .Where(m => m.TopLevel >= (byte)MessageLevel.Range.Normal)
+                .Count();
+
             // Assert
-            Assert.AreEqual(expectedNoticeMessages.Count, viewModel.NoticeMessages.Count);
+            Assert.AreEqual(expectedCount, viewModel.NoticeMessages.Count);
+        }
+
+        [Test]
+        public void HandleHightlightQuery_NotNullQuery_ReturnNoticeViewModel()
+        {
+            // Arrange
+            var expectedNoticeMessages = FakeDataHelper.CreateMany<NoticeMessage>().ToList();
+            FakeReturnGetNoticeMessagesService(expectedNoticeMessages);
+
+            var query = new NoticeQuery(userSession, DateTime.Today, 100, false);
+
+            // Act
+            var viewModel = noticeHandler.Handle(query);
+
+            // Numbers of highlight message
+            var expectedCount = expectedNoticeMessages.Where(m => m.TopLevel <= (byte)MessageLevel.Range.Highlight).Count();
+
+            // Assert
+            Assert.AreEqual(expectedCount, viewModel.HighlightMessages.Count);
+        }
+
+        [Test]
+        public void Handle_HightlightOrderByTopLevelAsc_ThenByPostTimeDesc_Query_NotNullQuery_ReturnNoticeViewModel()
+        {
+            // Arrange
+            var noticeMessages = new List<NoticeMessage>
+            {
+                CreateNoticeMessage(1, new DateTime(2017, 5, 1), 1),
+                CreateNoticeMessage(2, new DateTime(2017, 5, 2), 3),
+                CreateNoticeMessage(3, new DateTime(2017, 5, 2), 1)
+            };
+
+            FakeReturnGetNoticeMessagesService(noticeMessages);
+            var expectedMessages = new List<NoticeMessageWrapper>
+            {
+                new NoticeMessageWrapper(CreateNoticeMessage(3, new DateTime(2017, 5, 2), 1), userSession.Language),
+                new NoticeMessageWrapper(CreateNoticeMessage(1, new DateTime(2017, 5, 1), 1), userSession.Language),
+                new NoticeMessageWrapper(CreateNoticeMessage(2, new DateTime(2017, 5, 2), 3), userSession.Language)
+            };
+
+            var query = new NoticeQuery(userSession, DateTime.Today, 100, false);
+
+            var compareLogic = new CompareLogic();
+
+            // Act
+            var viewModel = noticeHandler.Handle(query);
+                                   
+            // Assert
+            Assert.True(compareLogic.Compare(expectedMessages, viewModel.HighlightMessages).AreEqual);
+        }
+
+        [Test]
+        public void Handle_NormalOrderByPostTimeDesc_Query_NotNullQuery_ReturnNoticeViewModel()
+        {
+            // Arrange
+            var noticeMessages = new List<NoticeMessage>
+            {
+                CreateNoticeMessage(1, new DateTime(2017, 5, 1), 41),
+                CreateNoticeMessage(2, new DateTime(2017, 5, 2), 33),
+                CreateNoticeMessage(3, new DateTime(2017, 5, 2), 45)
+            };
+
+            FakeReturnGetNoticeMessagesService(noticeMessages);
+            var expectedMessages = new List<NoticeMessageWrapper>
+            {
+                new NoticeMessageWrapper(CreateNoticeMessage(2, new DateTime(2017, 5, 2), 33), userSession.Language),
+                new NoticeMessageWrapper(CreateNoticeMessage(3, new DateTime(2017, 5, 2), 45), userSession.Language),
+                new NoticeMessageWrapper(CreateNoticeMessage(1, new DateTime(2017, 5, 1), 41), userSession.Language)
+            };
+                        
+            var query = new NoticeQuery(userSession, DateTime.Today, 100, false);
+
+            var compareLogic = new CompareLogic();
+
+            // Act
+            var viewModel = noticeHandler.Handle(query);
+
+            // Assert
+            Assert.True(compareLogic.Compare(expectedMessages, viewModel.NoticeMessages).AreEqual);
         }
 
         private void FakeReturnGetNoticeMessagesService(List<NoticeMessage> noticeMessages)
@@ -119,5 +206,25 @@ namespace Alpha.Main.Site.Tests.Handlers
                       Arg.Any<bool>())
                   .Returns(noticeMessages);
         }
+
+        private NoticeMessage CreateNoticeMessage(int id, DateTime postTime, byte topLevel)
+            => new NoticeMessage(
+                id, 
+                string.Empty, 
+                string.Empty, 
+                string.Empty, 
+                string.Empty, 
+                string.Empty, 
+                string.Empty, 
+                string.Empty, 
+                string.Empty, 
+                string.Empty, 
+                postTime, 
+                0, 
+                true, 
+                postTime, 
+                string.Empty, 
+                true, 
+                topLevel);
     }
 }

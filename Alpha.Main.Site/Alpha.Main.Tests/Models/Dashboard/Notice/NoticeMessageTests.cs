@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Models.Dashboard.Notice
 {
     using System;
+    using System.Collections.Generic;
     using Main.Models.Notice;
     using NUnit.Framework;
     using TestData.Helper;
@@ -201,6 +202,23 @@
 
             // Assert
             Assert.AreEqual(isRead, noticeMessage.IsRead);
+        }
+
+        [Test]
+        public void IsTopLevel_Always_SetValueFromCtor()
+        {
+            // Arrange
+            List<int> range = new List<int>();
+            for (int i = 1; i <= 255; i++)
+            {
+                range.Add(i);
+            }
+
+            // Act
+            var noticeMessage = FakeDataHelper.Create<NoticeMessage>("topLevel", range);
+
+            // Assert
+            Assert.Contains(noticeMessage.TopLevel, range);
         }
     }
 }
