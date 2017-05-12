@@ -2,6 +2,7 @@
 
 namespace Alpha.Main.Site.Controllers
 {
+    using System;
     using System.Web.Mvc;
     using Configurations;
     using Main.Helpers;
@@ -11,13 +12,10 @@ namespace Alpha.Main.Site.Controllers
     {
         private ActionResult Index(string siteAppPath, string url)
         {
-            var absolutPath = string.Format("{0}{1}", AppPathHelper.GetAppPath(siteAppPath, "~"), url);
+            var absolutPath = $"{AppPathHelper.GetAppPath(siteAppPath, "~")}{url}";
             return Redirect(absolutPath);
         }
 
-        public ActionResult SiteMemberInfo(string url)
-        {
-            return Index(AppSettings.MemberInfoAppPath, url);
-        }
+        public ActionResult SiteMemberInfo(Uri url) => Index(AppSettings.MemberInfoAppPath, url.ToString());
     }
 }
