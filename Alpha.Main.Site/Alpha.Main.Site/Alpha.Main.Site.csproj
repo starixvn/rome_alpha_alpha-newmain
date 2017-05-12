@@ -36,7 +36,7 @@
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>..\_tools\AnalysisRules\FanexRules.Error.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Alpha.Main.Site.Debug.ruleset</CodeAnalysisRuleSet>
     <NoWarn>618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -46,6 +46,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>Alpha.Main.Site.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Alpha.Auth, Version=3.0.1.4, Culture=neutral, processorArchitecture=MSIL">
@@ -698,6 +699,8 @@
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f10.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f12.png" />
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f9.png" />
+    <Content Include="Alpha.Main.Site.Debug.ruleset" />
+    <Content Include="Alpha.Main.Site.ruleset" />
     <None Include="Web.backupMNL.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </None>
@@ -1369,7 +1372,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.5.9.0.1001\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.5.9.0.1001\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.5.9.0.1001\analyzers\SonarAnalyzer.dll" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

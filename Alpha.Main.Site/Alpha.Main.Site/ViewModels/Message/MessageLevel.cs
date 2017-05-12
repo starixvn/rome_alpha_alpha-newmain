@@ -1,7 +1,11 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Message
 {
+    using System.Diagnostics.CodeAnalysis;
+
+    [SuppressMessage("Microsoft.Design", "CA1053:StaticHolderTypesShouldNotHaveConstructors", Justification = "Reviewed!")]
     public class MessageLevel
     {
+        [SuppressMessage("Microsoft.Design", "CA1008:EnumsShouldHaveZeroValue", Justification = "Reviewed!")]
         public enum Range
         {
             /// <summary>

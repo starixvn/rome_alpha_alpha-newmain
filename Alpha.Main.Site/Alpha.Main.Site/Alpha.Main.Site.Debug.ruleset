@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SonarQube - Rome / Alpha Main Sonar way" ToolsVersion="14.0">
+  <Include Path="..\sonarqube\alpha-maincsharp.ruleset" Action="Default" />
+  <Include Path="..\_tools\analysisrules\fanexrules.error.ruleset" Action="Default" />
+</RuleSet>
