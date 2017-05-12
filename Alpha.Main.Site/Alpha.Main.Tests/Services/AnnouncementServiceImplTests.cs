@@ -297,10 +297,10 @@
         {
             // Arrange
             XmlNode node = GetFirstNodeFromXmlDocument(@"\TestData\Announcements\HotAnnouncement\ByCustIds\NotHaveCustIdsAttr.xml");
-            var announcementServiceImpl = new AnnouncementServiceImpl();
+            var AnnouncementServiceImplannouncementServiceImpl = new AnnouncementServiceImpl();
 
             // Act
-            var actualIsShowForCustomerIds = announcementServiceImpl.IsShowForCustomerIds(node, 0);
+            var actualIsShowForCustomerIds = AnnouncementServiceImpl.IsShowForCustomerIds(node, 0);
 
             // Assert
             Assert.True(actualIsShowForCustomerIds);
@@ -311,10 +311,9 @@
         {
             // Arrange
             XmlNode node = GetFirstNodeFromXmlDocument(@"\TestData\Announcements\HotAnnouncement\ByCustIds\EmptyCustIdsAttr.xml");
-            var announcementServiceImpl = new AnnouncementServiceImpl();
 
             // Act
-            var actualIsShowForCustomerIds = announcementServiceImpl.IsShowForCustomerIds(node, 0);
+            var actualIsShowForCustomerIds = AnnouncementServiceImpl.IsShowForCustomerIds(node, 0);
 
             // Assert
             Assert.True(actualIsShowForCustomerIds);
@@ -328,11 +327,10 @@
         public void IsShowForCustomerIds_NodeWithExistCusIdInCustIdsAttribute_ReturnsTrue(string xmlPath, int custId, bool expectedValue)
         {
             // Arrange
-            XmlNode node = GetFirstNodeFromXmlDocument(xmlPath);
-            var announcementServiceImpl = new AnnouncementServiceImpl();
+            XmlNode node = GetFirstNodeFromXmlDocument(xmlPath);          
 
             // Act
-            var actualIsShowForCustomerIds = announcementServiceImpl.IsShowForCustomerIds(node, custId);
+            var actualIsShowForCustomerIds = AnnouncementServiceImpl.IsShowForCustomerIds(node, custId);
 
             // Assert
             Assert.AreEqual(expectedValue, actualIsShowForCustomerIds);

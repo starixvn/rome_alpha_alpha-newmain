@@ -274,7 +274,7 @@
             return true;
         }
 
-        protected internal bool IsShowForCustomerIds(XmlNode node, int custId)
+        public static bool IsShowForCustomerIds(XmlNode node, int custId)
         {
             var custIds = node.Attributes["custIds"];
             return custIds == null || string.IsNullOrEmpty(custIds.Value) || custIds.Value.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList().Contains(custId.ToString());
