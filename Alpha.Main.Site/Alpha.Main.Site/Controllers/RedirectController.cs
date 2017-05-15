@@ -13,7 +13,7 @@ namespace Alpha.Main.Site.Controllers
         private ActionResult Index(string siteAppPath, string url)
         {
             var absolutPath = $"{AppPathHelper.GetAppPath(siteAppPath, "~")}{url}";
-            return Redirect(absolutPath);
+            return RedirectPermanent(absolutPath);
         }
 
         public ActionResult SiteMemberInfo(Uri url) => Index(AppSettings.MemberInfoAppPath, url.ToString());

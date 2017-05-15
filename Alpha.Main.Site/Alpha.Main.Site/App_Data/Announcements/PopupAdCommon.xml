@@ -12,47 +12,49 @@
 		<en-US src="">
 			<p>Dear valued agents,</p>
 			<p>
-				We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+				We are pleased to announce the launch of new bet types of Basketball with effect from {effectdate}.
 			</p>
 			<p>
-				You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+				You can <strong><a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a></strong> to view the full list of new bet types and their corresponding settings.
 			</p>
 			<p>
-				Thank you
+				Thank you.
 			</p>
 		</en-US>
 		<zh-CN src="">
-			<p>Dear valued agents,</p>
+			<p>尊敬的代理们，</p>
 			<p>
-				We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+				在此宣布篮球的新投注类别将于 {effectdate} 隆重推出
 			</p>
 			<p>
-				You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+				您可以点<strong><a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">击此</a></strong>处以查询所有新推出的投注类别以及其设置
 			</p>
 			<p>
-				Thank you
+				谢谢
 			</p>
 		</zh-CN>
 		<zh-TW src="">
-			<p>Dear valued agents,</p>
+			<p>尊敬的代理們，</p>
 			<p>
-				We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+				在此宣布籃球的新投注類別將於 {effectdate} 隆重推出
 			</p>
 			<p>
-				You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+				您可以<strong><a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">點擊</a></strong>此處以查詢所有新推出的投注類別以及其設置
 			</p>
 			<p>
-				Thank you
+				謝謝
 			</p>
 		</zh-TW>
 
 		<ja-JP src="">
 			<p>Dear valued agents,</p>
 			<p>
-				We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+				We are pleased to announce the launch of new bet types of Basketball with effect from {effectdate}.
 			</p>
 			<p>
-				You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+				You can <strong>
+					<a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a>
+				</strong> to view the full list of new bet types and their corresponding settings.
 			</p>
 			<p>
 				Thank you
@@ -62,10 +64,12 @@
 		<ko-KR src="">
 			<p>Dear valued agents,</p>
 			<p>
-				We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+				We are pleased to announce the launch of new bet types of Basketball with effect from {effectdate}.
 			</p>
 			<p>
-				You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+				You can <strong>
+					<a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a>
+				</strong> to view the full list of new bet types and their corresponding settings.
 			</p>
 			<p>
 				Thank you
@@ -73,28 +77,28 @@
 		</ko-KR>
 
 		<th-TH src="">
-			<p>Dear valued agents,</p>
+			<p>เรียน เอเจ่นต์</p>
 			<p>
-				We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+				เรามีความยินดีที่จะประกาศการเปิดตัวของประเภทเดิมพันใหม่ของบาสเกตบอล มีผลตั้งแต่ {effectdate}
 			</p>
 			<p>
-				You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+				คุณสามารถคลิ<strong><a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">กที่นี่เพื่</a></strong>อดูรายการประเภทเดิมพันใหม่ทั้งหมดและการตั้งค่าที่สอดคล้อง
 			</p>
 			<p>
-				Thank you
+				ขอบคุณค่ะ
 			</p>
 		</th-TH>
 
 		<vi-VN src="">
-			<p>Dear valued agents,</p>
+			<p>Kính gửi quý khách hàng,</p>
 			<p>
-				We are pleased to announce the launching of new bet types of Basketball with effect from {effectdate}.
+				Từ ngày {effectdate}, chúng tôi sẽ ra mắt thêm 14 loại cược mới cho Bóng Rổ.
 			</p>
 			<p>
-				You can <a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">click here</a> to view the full list of new bet types and their corresponding settings.
+				Bạn có thể <strong><a href="Redirect/SiteMemberInfo?url=BaioAnnouncement/Index" target="_blank">nhấn vào đây</a></strong> để xem danh sách cùng cấu hình của các loại cược mới này.
 			</p>
 			<p>
-				Thank you
+				Trân Trọng
 			</p>
 		</vi-VN>
 	</PopupAnnouncement>
