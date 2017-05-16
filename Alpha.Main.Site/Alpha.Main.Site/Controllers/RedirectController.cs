@@ -3,19 +3,18 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System;
-    using System.Web.Mvc;
     using Configurations;
     using Main.Helpers;
     using Web;
 
     public class RedirectController : BaseController
     {
-        private ActionResult Index(string siteAppPath, string url)
+        private void Index(string siteAppPath, string url)
         {
             var absolutPath = $"{AppPathHelper.GetAppPath(siteAppPath, "~")}{url}";
-            return RedirectPermanent(absolutPath);
+            Response.Redirect(absolutPath, true);
         }
 
-        public ActionResult SiteMemberInfo(Uri url) => Index(AppSettings.MemberInfoAppPath, url.ToString());
+        public void SiteMemberInfo(Uri url) => Index(AppSettings.MemberInfoAppPath, url.ToString());
     }
 }

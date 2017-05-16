@@ -192,7 +192,9 @@
                 }
 
                 hotAnnouncement.Source = choosedNodes[0].Attributes["src"].Value;
-                hotAnnouncement.Content = choosedNodes[0].InnerXml.Replace("{effectdate}", Converter.ToString2(announcementNode.Attributes["effectdate"].Value));
+                hotAnnouncement.Content = choosedNodes[0].InnerXml
+                    .Replace("{effectdate}", Converter.ToString2(announcementNode.Attributes["effectdate"].Value))
+                    .Replace("{site-main}", getParams.SiteMainReplacement);
                 break;
             }
 
