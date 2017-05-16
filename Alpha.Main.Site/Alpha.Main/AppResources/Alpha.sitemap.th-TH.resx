@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,298 +59,301 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="agentwinloss" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="agentwinloss" xml:space="preserve">
     <value>เอเจนต์ ได้เสีย</value>
   </data>
-  <data name="agentwinlostdetail" xml:space="preserve">
+	<data name="agentwinlostdetail" xml:space="preserve">
     <value>รายละเอียดการชนะ แพ้ ของ</value>
   </data>
-  <data name="BetType24" xml:space="preserve">
+	<data name="BetType24" xml:space="preserve">
     <value>ดับเบิลชานส์</value>
   </data>
-  <data name="BetType26" xml:space="preserve">
+	<data name="BetType26" xml:space="preserve">
     <value>ทั้งสองทีม/หนึ่งทีม/ไม่ทั้งสองทีมที่ทำคะแนนได้</value>
   </data>
-  <data name="bingoPositionTaking" xml:space="preserve">
+	<data name="bingoPositionTaking" xml:space="preserve">
     <value>แบ่งสู้บิงโก (%)</value>
   </data>
-  <data name="casinoPositionTaking" xml:space="preserve">
+	<data name="casinoPositionTaking" xml:space="preserve">
     <value>แบ่งสู้ในคาสิโน</value>
   </data>
-  <data name="charts" xml:space="preserve">
+	<data name="charts" xml:space="preserve">
     <value>กราฟแผนภูมิ</value>
   </data>
-  <data name="consolidatedreport" xml:space="preserve">
+	<data name="consolidatedreport" xml:space="preserve">
     <value>รวม</value>
   </data>
-  <data name="correctscore" xml:space="preserve">
+	<data name="correctscore" xml:space="preserve">
     <value>ทายผลสกอร์</value>
   </data>
-  <data name="creditbalance" xml:space="preserve">
+	<data name="creditbalance" xml:space="preserve">
     <value>เครดิต / บัญชีคงเหลือ</value>
   </data>
-  <data name="customerlist" xml:space="preserve">
+	<data name="customerlist" xml:space="preserve">
     <value>รายชื่อลูกค้า</value>
   </data>
-  <data name="dailywinlossanalysisreport" xml:space="preserve">
+	<data name="dailywinlossanalysisreport" xml:space="preserve">
     <value>การวิเคราะห์ ผลได้เสีย รายวัน</value>
   </data>
-  <data name="fthtfglg" xml:space="preserve">
+	<data name="fthtfglg" xml:space="preserve">
     <value>ประตูแรก/ ประตูสุดท้าย</value>
   </data>
-  <data name="fthttotalgoal" xml:space="preserve">
+	<data name="fthttotalgoal" xml:space="preserve">
     <value>จำนวนรวมของประตู</value>
   </data>
-  <data name="hr" xml:space="preserve">
+	<data name="hr" xml:space="preserve">
     <value>การแข่งขันความเร็ว</value>
   </data>
-  <data name="htft" xml:space="preserve">
+	<data name="htft" xml:space="preserve">
     <value>ครึ่งเวลาแรก/ เต็มเวลา</value>
   </data>
-  <data name="lbl1x2" xml:space="preserve">
+	<data name="lbl1x2" xml:space="preserve">
     <value>ราคาพูล</value>
   </data>
-  <data name="agentList" xml:space="preserve">
+	<data name="agentList" xml:space="preserve">
     <value>รายชื่อ เอเจนต์</value>
   </data>
-  <data name="agentOutstanding" xml:space="preserve">
+	<data name="agentOutstanding" xml:space="preserve">
     <value>เอเย่นต์ยอดคงค้าง</value>
   </data>
-  <data name="cancelledBets" xml:space="preserve">
+	<data name="cancelledBets" xml:space="preserve">
     <value>ยกเลิกการวางเดิมพัน</value>
   </data>
-  <data name="commissionByBettype" xml:space="preserve">
+	<data name="commissionByBettype" xml:space="preserve">
     <value>คอมมิชั่นจากประเภทพนัน</value>
   </data>
-  <data name="commssionhorseracing" xml:space="preserve">
+	<data name="commssionhorseracing" xml:space="preserve">
     <value>คอมมิสชั่นการแข่งขันม้า</value>
   </data>
-  <data name="forecast" xml:space="preserve">
+	<data name="forecast" xml:space="preserve">
     <value>การทำนายผลล่วงหน้า</value>
   </data>
-  <data name="homeDrawAwayNoBet" xml:space="preserve">
+	<data name="homeDrawAwayNoBet" xml:space="preserve">
     <value>Home/Draw/Away No Bet</value>
   </data>
-  <data name="HOUL" xml:space="preserve">
+	<data name="HOUL" xml:space="preserve">
     <value>ราคาต่อรอง / สูง ต่ำ / เกมส์สด</value>
   </data>
-  <data name="masterList" xml:space="preserve">
+	<data name="masterList" xml:space="preserve">
     <value>รายชื่อตัวแทนหลัก</value>
   </data>
-  <data name="masterOutstanding" xml:space="preserve">
+	<data name="masterOutstanding" xml:space="preserve">
     <value>การเดิมพันที่ยังไม่สิ้นสุดของ Master</value>
   </data>
-  <data name="matchWinLostDetail" xml:space="preserve">
+	<data name="matchWinLostDetail" xml:space="preserve">
     <value>รายละเอียดการได้หรือเสีย</value>
   </data>
-  <data name="memberCommission" xml:space="preserve">
+	<data name="memberCommission" xml:space="preserve">
     <value>คอมมิชชั่นของสมาชิก</value>
   </data>
-  <data name="memberInfo" xml:space="preserve">
+	<data name="memberInfo" xml:space="preserve">
     <value>ข้อมูลสมาชิก</value>
   </data>
-  <data name="memberOutstanding" xml:space="preserve">
+	<data name="memberOutstanding" xml:space="preserve">
     <value>การเดิมพันที่ยังไม่สิ้นสุดของ สมาชิก</value>
   </data>
-  <data name="memberWinLoss" xml:space="preserve">
+	<data name="memberWinLoss" xml:space="preserve">
     <value>สมาชิก (ชนะ แพ้)</value>
   </data>
-  <data name="monitor" xml:space="preserve">
+	<data name="monitor" xml:space="preserve">
     <value>ตรวจสอบเดิมพันสุดท้าย</value>
   </data>
-  <data name="newAgent" xml:space="preserve">
+	<data name="newAgent" xml:space="preserve">
     <value>Agent ใหม่</value>
   </data>
-  <data name="newMaster" xml:space="preserve">
+	<data name="newMaster" xml:space="preserve">
     <value>ตัวแทนหลักรายใหม่</value>
   </data>
-  <data name="newMember" xml:space="preserve">
+	<data name="newMember" xml:space="preserve">
     <value>สมาชิกใหม่</value>
   </data>
-  <data name="outRight" xml:space="preserve">
+	<data name="outRight" xml:space="preserve">
     <value>ทายผลผู้ชนะ</value>
   </data>
-  <data name="positionTaking" xml:space="preserve">
+	<data name="positionTaking" xml:space="preserve">
     <value>เปอร์เซ็นที่รับความเสี่ยง</value>
   </data>
-  <data name="realTimeBingoWinloss" xml:space="preserve">
+	<data name="realTimeBingoWinloss" xml:space="preserve">
     <value>บิงโกแพ้ชนะเวลาจริง</value>
   </data>
-  <data name="realTimeCSWinloss" xml:space="preserve">
+	<data name="realTimeCSWinloss" xml:space="preserve">
     <value>ยอดได้เสียเวลาจริงในคาสิโน</value>
   </data>
-  <data name="scoreMap" xml:space="preserve">
+	<data name="scoreMap" xml:space="preserve">
     <value>กระดานผล</value>
   </data>
-  <data name="statement" xml:space="preserve">
+	<data name="statement" xml:space="preserve">
     <value>บัญชี</value>
   </data>
-  <data name="winLossByBettype" xml:space="preserve">
+	<data name="winLossByBettype" xml:space="preserve">
     <value>ชนะ แพ้ โดยชนิดของการวางเดิมพัน</value>
   </data>
-  <data name="masterwinloss" xml:space="preserve">
+	<data name="masterwinloss" xml:space="preserve">
     <value>ตัวแทนหลัก ชนะ แพ้</value>
   </data>
-  <data name="masterwinlostdetail" xml:space="preserve">
+	<data name="masterwinlostdetail" xml:space="preserve">
     <value>ตัวแทนหลัก ชนะ แพ้ รายละเอียด</value>
   </data>
-  <data name="matchwinloss" xml:space="preserve">
+	<data name="matchwinloss" xml:space="preserve">
     <value>ผลแพ้ชนะต่อแมตช์</value>
   </data>
-  <data name="MemberWinLimit" xml:space="preserve">
+	<data name="MemberWinLimit" xml:space="preserve">
     <value>วงเงินชนะของสมาชิก</value>
   </data>
-  <data name="memberwinlossdetail" xml:space="preserve">
+	<data name="memberwinlossdetail" xml:space="preserve">
     <value>รายละเอียด</value>
   </data>
-  <data name="moneyline" xml:space="preserve">
+	<data name="moneyline" xml:space="preserve">
     <value>การทายผู้เล่นหรือทีมที่จะชนะ</value>
   </data>
-  <data name="monthlywinlossanalysisreport" xml:space="preserve">
+	<data name="monthlywinlossanalysisreport" xml:space="preserve">
     <value>การวิเคราะห์ ผลได้เสีย รายเดือน</value>
   </data>
-  <data name="numbergame" xml:space="preserve">
+	<data name="numbergame" xml:space="preserve">
     <value>เกมหมายเลข</value>
   </data>
-  <data name="OE1x2DND" xml:space="preserve">
+	<data name="OE1x2DND" xml:space="preserve">
     <value>Odd/Even + 1x2 + DND</value>
   </data>
-  <data name="parlay" xml:space="preserve">
+	<data name="parlay" xml:space="preserve">
     <value>บอลชุด</value>
   </data>
-  <data name="reports" xml:space="preserve">
+	<data name="reports" xml:space="preserve">
     <value>รายงาน</value>
   </data>
-  <data name="result" xml:space="preserve">
+	<data name="result" xml:space="preserve">
     <value>ผลการแข่งขัน</value>
   </data>
-  <data name="sportconsolidatedreport" xml:space="preserve">
+	<data name="sportconsolidatedreport" xml:space="preserve">
     <value>รายงานงบการเงินรวมกีฬา</value>
   </data>
-  <data name="subaccount" xml:space="preserve">
+	<data name="subaccount" xml:space="preserve">
     <value>บัญชีย่อย</value>
   </data>
-  <data name="totalbets" xml:space="preserve">
+	<data name="totalbets" xml:space="preserve">
     <value>จำนวนการวางเดิมพันทั้งหมด</value>
   </data>
-  <data name="winlossanalysis" xml:space="preserve">
+	<data name="winlossanalysis" xml:space="preserve">
     <value>การวิเคราะห์ ผล แพ้ ชนะ</value>
   </data>
-  <data name="announcements" xml:space="preserve">
+	<data name="announcements" xml:space="preserve">
     <value>ประกาศ</value>
   </data>
-  <data name="login" xml:space="preserve">
+	<data name="login" xml:space="preserve">
     <value>เข้าระบบ</value>
   </data>
-  <data name="normal" xml:space="preserve">
+	<data name="normal" xml:space="preserve">
     <value>ธรรมดา</value>
   </data>
-  <data name="personalMessage" xml:space="preserve">
+	<data name="personalMessage" xml:space="preserve">
     <value>ข้อความส่วนตัว</value>
   </data>
-  <data name="special" xml:space="preserve">
+	<data name="special" xml:space="preserve">
     <value>พิเศษ</value>
   </data>
-  <data name="status" xml:space="preserve">
+	<data name="status" xml:space="preserve">
     <value>สถานะ</value>
   </data>
-  <data name="transfer" xml:space="preserve">
+	<data name="transfer" xml:space="preserve">
     <value>ตั้งค่าใหม่</value>
   </data>
-  <data name="viewLog" xml:space="preserve">
+	<data name="viewLog" xml:space="preserve">
     <value>ดูบันทึก</value>
   </data>
-  <data name="statistics" xml:space="preserve">
+	<data name="statistics" xml:space="preserve">
     <value>สถิติของคุณ</value>
   </data>
-  <data name="winLossAnalysisChart" xml:space="preserve">
+	<data name="winLossAnalysisChart" xml:space="preserve">
     <value>แผนภูมิวิเคราะห์ เงินได้เสีย</value>
   </data>
-  <data name="BetType13" xml:space="preserve">
+	<data name="BetType13" xml:space="preserve">
     <value>ไม่มีการยิงประตู</value>
   </data>
-  <data name="BetType27" xml:space="preserve">
+	<data name="BetType27" xml:space="preserve">
     <value>ชนะโดยไม่เสียประตู</value>
   </data>
-  <data name="BetType28" xml:space="preserve">
+	<data name="BetType28" xml:space="preserve">
     <value>แฮนดิแคป 3 ทาง</value>
   </data>
-  <data name="BetsAndForecast" xml:space="preserve">
+	<data name="BetsAndForecast" xml:space="preserve">
     <value>ยอดการเล่นและคำนวณผล &lt;span class="beta-version"&gt;เบต้า&lt;/span&gt;</value>
   </data>
-  <data name="soccer" xml:space="preserve">
+	<data name="soccer" xml:space="preserve">
     <value>ฟุตบอล</value>
   </data>
-  <data name="credit" xml:space="preserve">
+	<data name="credit" xml:space="preserve">
     <value>เครดิต</value>
   </data>
-  <data name="Setting" xml:space="preserve">
+	<data name="Setting" xml:space="preserve">
     <value>ตั้งค่า</value>
   </data>
-  <data name="BetChoiceLimit" xml:space="preserve">
+	<data name="BetChoiceLimit" xml:space="preserve">
     <value>เลือกวงเงินเดิมพัน</value>
   </data>
-  <data name="schedule" xml:space="preserve">
+	<data name="schedule" xml:space="preserve">
     <value>ตารางเวลา</value>
   </data>
+	<data name="RacingCommission" xml:space="preserve">
+		<value>คอมมิสชั่นการแข่งขันม้า</value>
+	</data>
   <data name="PlayForFun" xml:space="preserve">
     <value>ทดลองเล่นฟรี</value>
   </data>

@@ -20,16 +20,19 @@
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/master" roles="Super"></siteMapNode>
-
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="OldMainAppPath" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
 
       <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeAgent.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeMaster.aspx" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="Super"></siteMapNode>
 
-      <siteMapNode resourceKey="commissionByBettype" appPath="OldMainAppPath" url="Report/CommissionByBetType"></siteMapNode>
-      <siteMapNode menuItemType="RacingMenuItem" resourceKey="commssionhorseracing" appPath="OldMainAppPath" url="_Reports/Commission/HRCommission.aspx"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/member" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/agent" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/master" roles="Super"></siteMapNode>
 
+      <siteMapNode menuItemType="RacingMenuItem" resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/member" roles="Agent"></siteMapNode>
+      <siteMapNode menuItemType="RacingMenuItem" resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/agent" roles="Master"></siteMapNode>
+      <siteMapNode menuItemType="RacingMenuItem" resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/master" roles="Super"></siteMapNode>
       <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="monitor" appPath="OldMainAppPath" url="_Reports/LastBetMonitoring/LastBetMonitoring.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="cancelledBets" appPath="OldMainAppPath" url="_Reports/BetList/CancelBetList.aspx"></siteMapNode>
       <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="OldMainAppPath" url="report/consolidate/index"></siteMapNode>
