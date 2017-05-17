@@ -1,26 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
-  <PopupAnnouncement id="7602001" name="Keno - Missing PT"
-                        startdate="02/23/2017" enddate="07/13/2017"  effectdate="03/30/2017" custIds="14610368">
+  <PopupAnnouncement id="7668001" name="Keno - Missing PT" startdate="05/15/2017" enddate="05/25/2017"  effectdate="04/13/2017" 
+                     custIds="23003322,322047,1031997,1091688,1313781,1481826,1515476,1544785,1675217,2083801,2246960,2451625,2855555,3653123,3674229,3959730,4246050,4434956,4604383,4606201,4846462,5137283,5213585,5564758,5611459,6128630,6155986,6444852,7714963,8020835,8038006,8198209,9390891,9407562,9538892,9539205,9550165,9550776,9671943,9841262,10449820,10605259,10835666,11027166,11317957,11480369,11566937,11728711,11748793,11922116,11990054,11990749,12078166,12235602,12623947,12630692,12658462,12912897,12974990,13085520,13290737,13690362,13746269,13784220,13876845,13890823,13973304,13985413,14031260,14104781,14266673,14308367,14376725,14389678,14391049,14401749,14435949,14514141,14515371,14521520,14686042,14735945,14896490,15168242,15174779,15190365,15199704,15202311,15255533,15354735,15454136,15458934,15459286,15474280,15509718,15526543,15530118,15541030,15557276,15587385,15588468,15615502,15619054,15619210,15627779,15627787,15631372,15642739,15649130,15649149,15649155,15650487,15653062,15666341,15666665,15666946,15667151,15669625,15669655,15669891,15672158,15674028">
     <en-US src="">
-      <p>Dear valued agents,</p>
+      <p>Dear valued agents,</p>    
       <p>
-       test
-      </p>
-      <p>
-        By default, this game will be offered for Super, Master and Agent only.
-      </p>
-      <p>
-        Setting configuration is required prior to this product betting availability. To save time, you can use the multi-edit function to apply settings to different accounts at once.
-      </p>
-      <p>
-        All settings will be configured as follows:<br/>
-        - Commission and bet settings are not offered.<br/>
-        - The PT settings are distributed by upline in advance. If not, please contact your upline. Once it is ready, you can start making the adjustment to downlines and setting your PT on members.
-      </p>
-      <p>
-        Please refer <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Agent/FishingWorldGuideline.en-US.pdf" target="_blank">here</a> for the Fishing World guideline.
-      </p>
+        We noticed that some of your members have not been configured Keno settings yet. Please, kindly review the setting page again.
+      </p>      
       <p>
         Thank you
       </p>
@@ -29,46 +15,17 @@
     <zh-CN src="">
       <p>尊敬的代理们，</p>
       <p>
-        在此宣布新产品名为 "捕鱼天下" 将于<b>{effectdate}</b> 隆重推出.
-      </p>
-      <p>
-        此项新产品将于默认开启形式推出给超级总代，总代以及代理。
-      </p>
-      <p>
-        在本产品投注可用之前需要进行设置配置。为了节省时间，您可以使用多重修改功能将设置一次性应用到不同的帐户。
-      </p>
-      <p>
-        所有设定将配置如下:<br/>
-        - 不提供佣金设定和投注设定<br/>
-        - 此占成数的设定将会由上线预先分配，否则，请您联系上线。一旦准备就绪，您可以开始为下线进行调整和设置占成数于现有的会员。
-      </p>
-      <p>
-        请参阅<a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Agent/FishingWorldGuideline.zh-CN.pdf" target="_blank">这里</a>为"捕鱼天下”的设置指南
-      </p>
+        在此通知您旗下有些会员尚未在快乐彩做设置。 请您再次查看设置页面。
+      </p>    
       <p>
         谢谢
       </p>
     </zh-CN>
-
     <zh-TW src="">
       <p>尊敬的代理們，</p>
       <p>
-        在此宣布新產品名為 "捕魚天下" 將於 <b>{effectdate}</b> 隆重推出.
-      </p>
-      <p>
-        此項新產品將於默認開啟形式推出給超級總代，總代以及代理。
-      </p>
-      <p>
-        在本產品投注可用之前需要進行設置配置。為了節省時間，您可以使用多重修改功能將設置一次性應用到不同的帳戶。
-      </p>
-      <p>
-        所有設定將配置如下:<br/>
-        - 不提供佣金設定和投注設定<br/>
-        - 此佔成數的設定將會由上線預先分配，否則，請您聯繫上線。一旦準備就緒，您可以開始為下線進行調整和設置佔成數於現有的會員
-      </p>
-      <p>
-        請參閱<a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Agent/FishingWorldGuideline.zh-TW.pdf" target="_blank">這里</a>為"捕魚天下”的設置指南
-      </p>
+        在此通知您旗下有些會員尚未在快樂彩做設置。 請您再次查看設置頁面。
+      </p>   
       <p>
         謝謝
       </p>
@@ -77,21 +34,7 @@
     <ja-JP src="">
       <p>Dear valued agents,</p>
       <p>
-        We are pleased to announce the launching of the new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        By default, this game will be offered for Super, Master and Agent only.
-      </p>
-      <p>
-        Setting configuration is required prior to this product betting availability. To save time, you can use the multi-edit function to apply settings to different accounts at once.
-      </p>
-      <p>
-        All settings are configured as follows:<br/>
-        - Commission and bet settings are not offered.<br/>
-        - The PT settings are distributed by upline in advance. If not, please contact your upline. Once it is ready, you can start making the adjustment to downlines and setting your PT on members.
-      </p>
-      <p>
-        Please refer <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Agent/FishingWorldGuideline.en-US.pdf" target="_blank">here</a> for the Fishing World guideline.
+        We noticed that some of your members have not been configured Keno settings yet. Please, kindly review the setting page again.
       </p>
       <p>
         Thank you
@@ -101,21 +44,7 @@
     <ko-KR src="">
       <p>Dear valued agents,</p>
       <p>
-        We are pleased to announce the launching of the new game named ‘Fishing World’ with effect from <b>{effectdate}</b>.
-      </p>
-      <p>
-        By default, this game will be offered for Super, Master and Agent only.
-      </p>
-      <p>
-        Setting configuration is required prior to this product betting availability. To save time, you can use the multi-edit function to apply settings to different accounts at once.
-      </p>
-      <p>
-        All settings are configured as follows:<br/>
-        - Commission and bet settings are not offered.<br/>
-        - The PT settings are distributed by upline in advance. If not, please contact your upline. Once it is ready, you can start making the adjustment to downlines and setting your PT on members.
-      </p>
-      <p>
-        Please refer <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Agent/FishingWorldGuideline.en-US.pdf" target="_blank">here</a> for the Fishing World guideline.
+        We noticed that some of your members have not been configured Keno settings yet. Please, kindly review the setting page again.
       </p>
       <p>
         Thank you
@@ -127,22 +56,8 @@
         เรียนเอเจนต์ทุกท่าน
       </p>
       <p>
-        ทางบริษัทใคร่ขอแจ้งให้ทราบว่า ทางบริษัทจะทำการเปิดตัวเกมส์ตัวใหม่ชื่อ 'Fishing World' ซึ่งจะมีผลตั้งแต่วันที่ <b>{effectdate}</b>
-      </p>
-      <p>
-        การตั้งค่าเริ่มต้น เกมส์นี้จะเปิดให้กับซุปเปอร์ มาสเตอร์ และ เอเจ่นต์
-      </p>
-      <p>
-        จำเป็นจะต้องตั้งค่าให้เรียบร้อยก่อนที่จะมีการเดิมพันโปรดักส์นี้. เพื่อประหยัดเวลาในการตั้งค่าคุณสามารถใช้มัลติฟังก์ชั่นแก้ไขเพื่อใช้การตั้งค่าไปยังบัญชีที่แตกต่างกันในครั้งเดียว
-      </p>
-      <p>
-        การตั้งค่าทั้งหมดจะถูกกำหนดค่าดังต่อไปนี้<br/>
-        - ไม่มีค่าคอมมิชชั้นและการตั้งค่าเดิมพัน<br/>
-        - การตั้งค่าส่วนแบ่งล่วงหน้าจะถูกจัดสรรโดยต้นสาย, ถ้ายังไม่มีการตั้งค่า รบกวนติดต่อต้นสายของคุณ.เมื่อการตั้งค่าพร้อมแล้วคุณสามารถเริ่มต้นปรับการตั้งค่าให้กับดาวน์ไลน์และการตั้งค่าของคุณ
-      </p>
-      <p>
-        คลิก <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Agent/FishingWorldGuideline.th-TH.pdf" target="_blank">ที่นี่</a>เพื่อดูคู่มือ 'ฟิชชิ่งเวิล์ด'
-      </p>
+        จะแจ้งให้ทราบว่าสมาชิกบางส่วน คุณยังไม่ได้ทำการตั้งค่า คีโน โปรดตรวจสอบหน้าการตั้งค่าอีกครั้ง
+      </p>      
       <p>
         ขอบคุณค่ะ
       </p>
@@ -153,23 +68,8 @@
         Kính gửi quý khách hàng,
       </p>
       <p>
-        Từ ngày <b>{effectdate}</b>, chúng tôi sẽ ra mắt trò chơi mới mang tên 'Bắn Cá'.
-      </p>
-      <p>
-        Trò chơi này mặc định chỉ được kích hoạt cho cấp Super, Master và Agent.
-      </p>
-      <p>
-        Bạn cần cấu hình các thiết lập trước khi kích hoạt cho phép đặt cược. Để tiết kiệm thời gian, bạn có thể dùng chức năng tuỳ chỉnh đồng loạt  để cấu hình nhiều tài khoản cùng một lúc.
-      </p>
-      <p>
-        Tất cả các thiết lập sẽ được cấu hình như sau:        <br/>
-        - Không hỗ trợ thiết lập Hoa Hồng và Giới Hạn Cược. <br/>
-        - Các thiết lập Position Taking sẽ được lấy từ cấp trên, vui lòng liên hệ với cấp trên nếu bạn chưa có thiết lập. Khi các thiết lập đã sẵn sàng, bạn có thể thay thiết lập giá trị PT trên những member có sẵn.
-
-      </p>
-      <p>
-        Vui lòng tham khảo hướng dẫn thiết lập cho 'Bắn Cá' <a href="/site-main/Assets/LocalResources/Announcements/FishingWorld/Agent/FishingWorldGuideline.vi-VN.pdf" target="_blank">ở đây</a>.
-      </p>
+        Chúng tôi nhận thấy một số thành viên chưa được thiết lập cấu hình cho sản phẩm Keno. Vui lòng xem lại trang cài đặt.
+      </p>      
       <p>
         Trân Trọng
       </p>
