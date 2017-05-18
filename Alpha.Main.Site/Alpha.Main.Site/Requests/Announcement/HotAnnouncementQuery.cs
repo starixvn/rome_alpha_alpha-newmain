@@ -5,6 +5,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Web;
+    using Configurations;
     using Fanex.Products;
     using Configurations;
     using Main.Helpers;
@@ -174,36 +175,31 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         {
             get
             {
-                if (thirdPartyProductNames == null)
+                if (thirdPartyProductNames != null)
                 {
-                    thirdPartyProductNames = new List<string>();
+                    return thirdPartyProductNames;
+                }
 
-                    int[] productIds = new[]
-                    {
-                        ProductIdConstants.Racing,
-                        ProductIdConstants.VirtualSports,
-                        ProductIdConstants.RNGCasino,
-                        ProductIdConstants.Keno,
-                        ProductIdConstants.GoldDeluxe,
-                        ProductIdConstants.ColossusBets,
-                        ProductIdConstants.AllBet,
-                        ProductIdConstants.Voidbridge
-                    };
+                thirdPartyProductNames = new List<string>();
 
-                    foreach (int productId in productIds)
+                foreach (int productId in OldProductIds())
+                {
+                    if (UserPermission.HasPermissionOnProduct(productId))
                     {
-                        if (UserPermission.HasPermissionOnProduct(productId))
-                        {
-                            thirdPartyProductNames.Add(ProductManager.GetProductName(productId));
-                        }
+                        thirdPartyProductNames.Add(ProductManager.GetProductName(productId));
                     }
+                }
 
-                    foreach (var product in ProductManager.Products)
+                foreach (var product in ProductManager.Products)
+                {
+                    if (product.ShowSettings)
                     {
-                        if (product.ShowSettings)
+                        if (product.Id == ProductIdConstants.FishingWorld && userSession.Site != "733333")
                         {
-                            thirdPartyProductNames.Add(product.RemotingRefName);
+                            continue;
                         }
+
+                        thirdPartyProductNames.Add(product.RemotingRefName);
                     }
                 }
 
@@ -233,6 +229,36 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             hotAnnouncementsParams.NoticeTypes = NoticeTypes;
             hotAnnouncementsParams.SiteMainReplacement = SiteMainReplacement;
             hotAnnouncementsParams.ThirdPartyProductNames = ThirdPartyProductNames;
+        }
+
+        private static int[] OldProductIds()
+        {
+            if (AppSettings.ShowGoldDeluxeAnnouncement)
+            {
+                return new[]
+                {
+                    ProductIdConstants.Racing,
+                    ProductIdConstants.VirtualSports,
+                    ProductIdConstants.RNGCasino,
+                    ProductIdConstants.Keno,
+                    ProductIdConstants.GoldDeluxe,
+                    ProductIdConstants.ColossusBets,
+                    ProductIdConstants.AllBet,
+                    ProductIdConstants.Voidbridge
+                };
+            }
+
+            return new[]
+            {
+                ProductIdConstants.Racing,
+                ProductIdConstants.VirtualSports,
+                ProductIdConstants.RNGCasino,
+                ProductIdConstants.Keno,
+                //// Exclude: ProductIdConstants.GoldDeluxe.
+                ProductIdConstants.ColossusBets,
+                ProductIdConstants.AllBet,
+                ProductIdConstants.Voidbridge
+            };
         }
     }
 }

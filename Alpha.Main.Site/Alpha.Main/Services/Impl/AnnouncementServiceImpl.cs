@@ -111,6 +111,35 @@
 
             return false;
         }
+        
+        private static string ReplaceProductListToHtml(string innerXml, IEnumerable<string> thirdPartyProductNames)
+        {
+            if (!thirdPartyProductNames.Any())
+            {
+                return string.Empty;
+            }
+
+            if (!innerXml.Contains("{product-list}"))
+            {
+                return innerXml;
+            }
+
+            int index = 0;
+            var productNamesBuilder = new StringBuilder("<ol>");
+
+            foreach (var name in thirdPartyProductNames)
+            {
+                productNamesBuilder.Append("<li>")
+                    .Append(++index)
+                    .Append(". ")
+                    .Append(name)
+                    .Append("</li>");
+            }
+
+            productNamesBuilder.Append("</ol>");
+
+            return innerXml.Replace("{product-list}", productNamesBuilder.ToString());
+        }
 
         private string GetSettingChangedMessage(IEnumerable<string> messageTypes, GetHotAnnouncementsParams getParams)
         {
@@ -249,33 +278,5 @@
                 (endDate.HasValue && endDate < currentDate);
         }
         }
-
-        private string ReplaceProductListToHtml(string innerXml, IEnumerable<string> thirdPartyProductNames)
-        {
-            if (!thirdPartyProductNames.Any())
-            {
-                return string.Empty;
-            }
-
-            if (!innerXml.Contains("{product-list}"))
-            {
-                return innerXml;
-            }
-
-            int index = 0;
-            var productNamesBuilder = new StringBuilder("<ol>");
-
-            foreach (var name in thirdPartyProductNames)
-            {
-                productNamesBuilder.Append("<li>")
-                    .Append(++index)
-                    .Append(". ")
-                    .Append(name)
-                    .Append("</li>");
-            }
-
-            productNamesBuilder.Append("</ol>");
-
-            return innerXml.Replace("{product-list}", productNamesBuilder.ToString());
     }
 }
