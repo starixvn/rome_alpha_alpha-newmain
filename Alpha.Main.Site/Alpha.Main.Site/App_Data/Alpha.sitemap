@@ -45,7 +45,6 @@
       <siteMapNode resourceKey="cancelledBets" appPath="OldMainAppPath" url="_Reports/BetList/CancelBetList.aspx"></siteMapNode>
       <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="OldMainAppPath" url="report/consolidate/index"></siteMapNode>
 
-      <siteMapNode resourceKey="statement" appPath="OldMainAppPath" url="Finance/StatementSMA?rptmrange=5"></siteMapNode>
       <siteMapNode resourceKey="statement" appPath="ReportsAppPath" url="Statement/SMAStatement"></siteMapNode>
 
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
