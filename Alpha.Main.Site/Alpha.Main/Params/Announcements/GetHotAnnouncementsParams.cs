@@ -29,5 +29,7 @@
         public string Site { get; set; }
 
         public string[] NoticeTypes { get; set; }
+
+        public string SiteMainReplacement { get; set; }
     }
 }

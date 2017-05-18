@@ -5,6 +5,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Web;
+    using Configurations;
+    using Main.Helpers;
     using Main.Models.Announcements;
     using Main.Models.Enumerations;
     using MediatR;
@@ -48,6 +50,15 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             this.commonAnnouncementFilePath = commonAnnouncementFilePath;
             this.privateMessageFilePath = privateMessageFilePath;
             NoticeTypes = noticeTypes;
+        }
+
+        public static string SiteMainReplacement
+        {
+            get
+            {
+                return HttpContext.Current != null ? HttpContext.Current.Request.Browser.IsMobileDevice ?
+                    AppPathHelper.GetAppPath(AppSettings.GetAppPath("MainAppPath"), "~") : string.Empty : string.Empty;
+            }
         }
 
         public string MessageIds { get; set; }
@@ -175,6 +186,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             hotAnnouncementsParams.SubAccId = SubAccId;
             hotAnnouncementsParams.UserName = UserName;
             hotAnnouncementsParams.NoticeTypes = NoticeTypes;
+            hotAnnouncementsParams.SiteMainReplacement = SiteMainReplacement;
         }
     }
 }
