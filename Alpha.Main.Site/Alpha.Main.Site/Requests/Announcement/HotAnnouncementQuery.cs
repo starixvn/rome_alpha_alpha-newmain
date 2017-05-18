@@ -7,7 +7,6 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
     using System.Web;
     using Configurations;
     using Fanex.Products;
-    using Configurations;
     using Main.Helpers;
     using Main.Models.Announcements;
     using Main.Models.Enumerations;
