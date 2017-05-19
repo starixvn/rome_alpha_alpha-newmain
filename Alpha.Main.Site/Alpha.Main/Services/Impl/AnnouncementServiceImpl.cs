@@ -13,6 +13,7 @@
     using Models.Announcements;
     using Models.Enumerations;
     using Params.Announcements;
+    using System.Xml.XPath;
 
     public class AnnouncementServiceImpl : AnnouncementService
     {
@@ -172,8 +173,8 @@
                 if (!long.TryParse(nodeIds, out nodeId) ||
                     nodeId == 0 ||
                     showedMessages.Contains(nodeId) ||
-                    IsExcludedHotMessageSite(announcementNode, getParams.Site, getParams.CustId) ||
-                    !IsShowForCustomerIds(announcementNode, getParams.CustId) ||
+                    IsExcludedHotMessageSite(announcementNode, getParams.Site) ||
+                    !IsShowForCustomerIds(announcementNode.CreateNavigator(), getParams.CustId) ||
                     IsExpiredHotMessage(announcementNode)                   
                     )
                 {
@@ -216,17 +217,12 @@
                 (endDate.HasValue && endDate < currentDate);
         }
 
-        private bool IsExcludedHotMessageSite(XmlNode node, string site, int custId)
+        private static bool IsExcludedHotMessageSite(XmlNode node, string site)
         {
-            if (!IsShowProductAnnouncementByBatch(node, custId))
-            {
-                return true;
-            }
-
             var isPublicSystem = node.Attributes["privatesystem"] != null &&
                 (!node.Attributes["privatesystem"].Value.Equals("*") ||
                 !string.IsNullOrEmpty(node.Attributes["privatesystem"].Value)) &&
-                !node.Attributes["privatesystem"].Value.ToUpper().Split(',').Contains(site.ToUpper());
+                !node.Attributes["privatesystem"].Value.ToUpperInvariant().Split(',').Contains(site.ToUpperInvariant());
 
             if (isPublicSystem)
             {
@@ -236,7 +232,7 @@
             if (node.Attributes["excludesites"] != null &&
                 !string.IsNullOrEmpty(node.Attributes["excludesites"].Value))
             {
-                var isExcludeSite = node.Attributes["excludesites"].Value.ToUpper().Split(',').Contains(site.ToUpper());
+                var isExcludeSite = node.Attributes["excludesites"].Value.ToUpperInvariant().Split(',').Contains(site.ToUpperInvariant());
 
                 if (isExcludeSite)
                 {
@@ -247,35 +243,9 @@
             return false;
         }
 
-        private bool IsShowProductAnnouncementByBatch(XmlNode node, int custId)
+        public static bool IsShowForCustomerIds(IXPathNavigable nav, int custId)
         {
-            var lastBatchAttribute = node.Attributes["islastbatch"];
-            var offeredSites = node.Attributes["offeredsite"];
-
-            if (lastBatchAttribute != null && !string.IsNullOrEmpty(lastBatchAttribute.Value))
-            {
-                if (lastBatchAttribute.Value.Equals("0") &&
-                    (offeredSites == null || string.IsNullOrWhiteSpace(offeredSites.Value)))
-                {
-                    return false;
-                }
-
-                var checkMessageCriteria = new CheckProductAnnouncementCriteria()
-                {
-                    CustId = custId,
-                    OfferedSite = offeredSites == null ? string.Empty : offeredSites.Value,
-                    IsLastBatch = lastBatchAttribute.Value.Equals("1")
-                };
-                dynamicRepository.Get<bool>(checkMessageCriteria);
-
-                return checkMessageCriteria.IsShowAnnouncement;
-            }
-
-            return true;
-        }
-
-        public static bool IsShowForCustomerIds(XmlNode node, int custId)
-        {
+            XmlNode node = (XmlNode)(nav.CreateNavigator().UnderlyingObject);
             var custIds = node.Attributes["custIds"];
             return custIds == null || string.IsNullOrEmpty(custIds.Value) || custIds.Value.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList().Contains(custId.ToString());
         }
