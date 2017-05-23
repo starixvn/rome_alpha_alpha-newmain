@@ -11,17 +11,10 @@
 
     public static class StaticResources
     {
-        private static readonly string StaticResourcesVersion;
+        private static readonly string StaticResourcesVersion = GetBuildVersion();
 
-        private static readonly string MinText;
-
-        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = "Reviewed!")]
-        static StaticResources()
-        {
-            MinText = IsDebugMode() ? string.Empty : ".min";
-            StaticResourcesVersion = GetBuildVersion();
-        }
-
+        private static readonly string MinText = IsDebugMode() ? string.Empty : ".min";
+              
         private static string GetBuildVersion()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
