@@ -13,17 +13,12 @@
     {
         private static readonly string StaticResourcesVersion;
 
-        [SuppressMessage("Microsoft.Performance", "CA1802:UseLiteralsWhereAppropriate", Justification = "Reviewed!")]
-        private static readonly string MinText = ".min";
+        private static readonly string MinText;
 
         [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = "Reviewed!")]
         static StaticResources()
         {
-            if (IsDebugMode())
-            {
-                MinText = string.Empty;
-            }
-
+            MinText = IsDebugMode() ? string.Empty : ".min";
             StaticResourcesVersion = GetBuildVersion();
         }
 

@@ -1,9 +1,5 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Xml;
     using AppResources;
     using Constants;
     using Criteria.Announcement;
@@ -13,6 +9,10 @@
     using Models.Announcements;
     using Models.Enumerations;
     using Params.Announcements;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Xml;
     using System.Xml.XPath;
 
     public class AnnouncementServiceImpl : AnnouncementService
@@ -29,6 +29,15 @@
         {
             this.dynamicRepository = dynamicRepository ?? new DynamicRepository();
             this.dateTimeWrapper = dateTimeWrapper ?? new DateTimeWrap();
+        }
+
+        public static bool IsShowForCustomerIds(IXPathNavigable nav, int custId)
+        {
+            XmlNode node = (XmlNode)nav.CreateNavigator().UnderlyingObject;
+            var custIds = node.Attributes["custIds"];
+            return custIds == null 
+                || string.IsNullOrEmpty(custIds.Value) 
+                || custIds.Value.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList().Contains(custId.ToString());
         }
 
         public HotAnnouncement GetHotAnnouncement(GetHotAnnouncementsParams getParams)
@@ -75,6 +84,32 @@
             hotAnnouncement.Languague = getParams.Language;
 
             return hotAnnouncement;
+        }
+
+        private static bool IsExcludedHotMessageSite(XmlNode node, string site)
+        {
+            var isPublicSystem = node.Attributes["privatesystem"] != null &&
+                (!node.Attributes["privatesystem"].Value.Equals("*") ||
+                !string.IsNullOrEmpty(node.Attributes["privatesystem"].Value)) &&
+                !node.Attributes["privatesystem"].Value.ToUpperInvariant().Split(',').Contains(site.ToUpperInvariant());
+
+            if (isPublicSystem)
+            {
+                return true;
+            }
+
+            if (node.Attributes["excludesites"] != null &&
+                !string.IsNullOrEmpty(node.Attributes["excludesites"].Value))
+            {
+                var isExcludeSite = node.Attributes["excludesites"].Value.ToUpperInvariant().Split(',').Contains(site.ToUpperInvariant());
+
+                if (isExcludeSite)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private string GetSettingChangedMessage(IEnumerable<string> messageTypes, GetHotAnnouncementsParams getParams)
@@ -175,8 +210,7 @@
                     showedMessages.Contains(nodeId) ||
                     IsExcludedHotMessageSite(announcementNode, getParams.Site) ||
                     !IsShowForCustomerIds(announcementNode.CreateNavigator(), getParams.CustId) ||
-                    IsExpiredHotMessage(announcementNode)                   
-                    )
+                    IsExpiredHotMessage(announcementNode))
                 {
                     continue;
                 }
@@ -188,18 +222,16 @@
                 {
                     choosedNodes = announcementNode.SelectNodes(Language.Default);
                 }
-
-                if (choosedNodes.Count == 0)
+                
+                if (choosedNodes.Count > 0)
                 {
-                    continue;
+                    hotAnnouncement.Source = choosedNodes[0].Attributes["src"].Value;
+                    hotAnnouncement.Content = choosedNodes[0].InnerXml
+                        .Replace("{effectdate}", Converter.ToString2(announcementNode.Attributes["effectdate"].Value))
+                        .Replace("{site-main}", getParams.SiteMainReplacement);
+                    break;
                 }
-
-                hotAnnouncement.Source = choosedNodes[0].Attributes["src"].Value;
-                hotAnnouncement.Content = choosedNodes[0].InnerXml
-                    .Replace("{effectdate}", Converter.ToString2(announcementNode.Attributes["effectdate"].Value))
-                    .Replace("{site-main}", getParams.SiteMainReplacement);
-                break;
-            }
+            }    
 
             return hotAnnouncement;
         }
@@ -215,39 +247,6 @@
             return !startDate.HasValue ||
                 currentDate < startDate ||
                 (endDate.HasValue && endDate < currentDate);
-        }
-
-        private static bool IsExcludedHotMessageSite(XmlNode node, string site)
-        {
-            var isPublicSystem = node.Attributes["privatesystem"] != null &&
-                (!node.Attributes["privatesystem"].Value.Equals("*") ||
-                !string.IsNullOrEmpty(node.Attributes["privatesystem"].Value)) &&
-                !node.Attributes["privatesystem"].Value.ToUpperInvariant().Split(',').Contains(site.ToUpperInvariant());
-
-            if (isPublicSystem)
-            {
-                return true;
-            }
-
-            if (node.Attributes["excludesites"] != null &&
-                !string.IsNullOrEmpty(node.Attributes["excludesites"].Value))
-            {
-                var isExcludeSite = node.Attributes["excludesites"].Value.ToUpperInvariant().Split(',').Contains(site.ToUpperInvariant());
-
-                if (isExcludeSite)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        public static bool IsShowForCustomerIds(IXPathNavigable nav, int custId)
-        {
-            XmlNode node = (XmlNode)(nav.CreateNavigator().UnderlyingObject);
-            var custIds = node.Attributes["custIds"];
-            return custIds == null || string.IsNullOrEmpty(custIds.Value) || custIds.Value.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList().Contains(custId.ToString());
         }
     }
 }

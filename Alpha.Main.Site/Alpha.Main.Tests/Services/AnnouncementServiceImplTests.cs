@@ -297,7 +297,6 @@
         {
             // Arrange
             XmlNode node = GetFirstNodeFromXmlDocument(@"\TestData\Announcements\HotAnnouncement\ByCustIds\NotHaveCustIdsAttr.xml");
-            var AnnouncementServiceImplannouncementServiceImpl = new AnnouncementServiceImpl();
 
             // Act
             var actualIsShowForCustomerIds = AnnouncementServiceImpl.IsShowForCustomerIds(node, 0);
