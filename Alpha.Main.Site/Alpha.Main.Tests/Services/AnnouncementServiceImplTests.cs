@@ -1,12 +1,16 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
     using Alpha.Main.Services.Impl;
     using Announcement.GetHotAnnouncement.LocalFileCondition;
     using Announcement.GetHotAnnouncement.LogInAndSettingChangedTest;
+    using Helps;
     using Main.Constants;
+    using Main.Helpers;
     using NUnit.Framework;
     using Params.Announcements;
+    using System;
+    using System.Collections.Generic;
+    using System.Xml;
     using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
     using NotAgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest;
 
@@ -286,6 +290,84 @@
 
             // Assert
             Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+        }
+
+        [Test]
+        public void IsShowForCustomerIds_NodeWithNoCustIdsAttribute_ReturnsTrue()
+        {
+            // Arrange
+            XmlNode node = GetFirstNodeFromXmlDocument(@"\TestData\Announcements\HotAnnouncement\ByCustIds\NotHaveCustIdsAttr.xml");
+
+            // Act
+            var actualIsShowForCustomerIds = AnnouncementServiceImpl.IsShowForCustomerIds(node, 0);
+
+            // Assert
+            Assert.True(actualIsShowForCustomerIds);
+        }
+
+        [Test]
+        public void IsShowForCustomerIds_NodeWithEmptyCustIdsAttribute_ReturnsTrue()
+        {
+            // Arrange
+            XmlNode node = GetFirstNodeFromXmlDocument(@"\TestData\Announcements\HotAnnouncement\ByCustIds\EmptyCustIdsAttr.xml");
+
+            // Act
+            var actualIsShowForCustomerIds = AnnouncementServiceImpl.IsShowForCustomerIds(node, 0);
+
+            // Assert
+            Assert.True(actualIsShowForCustomerIds);
+        }
+
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\ByCustIds\CustIdsAttr.xml", 1, true)]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\ByCustIds\CustIdsAttr.xml", 123, true)]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\ByCustIds\CustIdsAttr.xml", 5, true)]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\ByCustIds\CustIdsAttr.xml", 12, false)]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\ByCustIds\CustIdsAttr.xml", 100, false)]
+        public void IsShowForCustomerIds_NodeWithExistCusIdInCustIdsAttribute_ReturnsTrue(string xmlPath, int custId, bool expectedValue)
+        {
+            // Arrange
+            XmlNode node = GetFirstNodeFromXmlDocument(xmlPath);          
+
+            // Act
+            var actualIsShowForCustomerIds = AnnouncementServiceImpl.IsShowForCustomerIds(node, custId);
+
+            // Assert
+            Assert.AreEqual(expectedValue, actualIsShowForCustomerIds);
+        }
+
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\ByCustIds\CustIdsAttr.xml", 1, ExpectedAnnouncementContent)]
+        [TestCase(@"\TestData\Announcements\HotAnnouncement\ByCustIds\CustIdsAttr.xml", 100, null)]
+        public void GetHotAnnouncement_NotAdminLoginAndShowForCustomerId_ReturnContentFromFile(string xmlPath, int custId, string expectedAnnouncementContent)
+        {
+            // Arrange
+            var dateTimeWrapper = NSubstitute.Substitute.For<IDateTime>();
+            dateTimeWrapper.Now = new DateTime(2017, 5, 1);
+
+            var announcementServiceImpl = new AnnouncementServiceImpl(null, dateTimeWrapper);
+            var getParams = new GetHotAnnouncementsParams
+            {
+                AdminId = 1,
+                CustId = custId,
+                PrivateMessagePath = FileHelper.GetFilePath(xmlPath),
+                CommonAnnouncementPath = FileHelper.GetFilePath(xmlPath),
+                MessageIds = string.Empty,
+                AnnouncementEnableStatus = new Dictionary<int, bool>(),
+                Language = "en-US"
+            };
+
+            // Act
+            var actualHotAnnouncement = announcementServiceImpl.GetHotAnnouncement(getParams);
+
+            // Assert
+            Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+        }
+
+        private static XmlNode GetFirstNodeFromXmlDocument(string xmlPath)
+        {
+            var xmlDocument = XMLDocumentHelper.LoadDocumentFromPath(
+                FileHelper.GetFilePath(xmlPath));
+            var node = xmlDocument.SelectNodes("FileDB/PopupAnnouncement")[0];
+            return node;
         }
     }
 }

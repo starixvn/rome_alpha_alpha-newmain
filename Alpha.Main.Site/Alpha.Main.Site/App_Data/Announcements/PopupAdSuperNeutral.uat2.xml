@@ -1,5 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FileDB>
+  <PopupAnnouncement id="7668001" name="Keno - Missing PT" startdate="05/15/2017" enddate="05/25/2017" effectdate="04/13/2017"
+                     custIds="4613190,4870194,5160163,5933382,6714757,11211891,11587193,11636481,11743112,11743279,11743380,11785654,12059263,12065076,12141435,12141492,12141495,12141505,12141621,12141628,13715703,13715739,13869629,14432634,15164836,15516974,15518562,15624183">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We noticed that some of your members have not been configured Keno settings yet. Please, kindly review the setting page again.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        在此通知您旗下有些会员尚未在快乐彩做设置。 请您再次查看设置页面。
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        在此通知您旗下有些會員尚未在快樂彩做設置。 請您再次查看設置頁面。
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We noticed that some of your members have not been configured Keno settings yet. Please, kindly review the setting page again.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We noticed that some of your members have not been configured Keno settings yet. Please, kindly review the setting page again.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        จะแจ้งให้ทราบว่าสมาชิกบางส่วน คุณยังไม่ได้ทำการตั้งค่า คีโน โปรดตรวจสอบหน้าการตั้งค่าอีกครั้ง
+      </p>
+      <p>
+        ขอบคุณค่ะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
+      <p>
+        Chúng tôi nhận thấy một số thành viên chưa được thiết lập cấu hình cho sản phẩm Keno. Vui lòng xem lại trang cài đặt.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
   <PopupAnnouncement id="7276002" name="Fishing World - Super"
                        startdate="02/23/2017" enddate="04/13/2017"  effectdate="03/30/2017"
                         width="1000" height="220" top="110" left="350"

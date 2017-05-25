@@ -11,7 +11,7 @@
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class AnnouncementController : BaseController
     {
-        private IMediator mediator;
+        private readonly IMediator mediator;
 
         public AnnouncementController(IMediator mediator)
         {

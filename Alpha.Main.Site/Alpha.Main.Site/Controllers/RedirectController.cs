@@ -2,19 +2,16 @@
 
 namespace Alpha.Main.Site.Controllers
 {
-    using System;
     using Configurations;
     using Main.Helpers;
+    using System;
+    using System.Web.Mvc;
     using Web;
 
     public class RedirectController : BaseController
     {
-        private void Index(string siteAppPath, string url)
-        {
-            var absolutPath = $"{AppPathHelper.GetAppPath(siteAppPath, "~")}{url}";
-            Response.Redirect(absolutPath, true);
-        }
-
-        public void SiteMemberInfo(Uri url) => Index(AppSettings.MemberInfoAppPath, url.ToString());
+        private static string GetAbsolutePath(string siteAppPath, string url) => $"{AppPathHelper.GetAppPath(siteAppPath, "~")}{url}"; 
+      
+        public ActionResult SiteMemberInfo(Uri url) => RedirectPermanent(GetAbsolutePath(AppSettings.MemberInfoAppPath, url.ToString()));
     }
 }
