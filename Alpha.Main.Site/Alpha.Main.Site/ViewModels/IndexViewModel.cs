@@ -54,7 +54,7 @@
 
         public string HowToUseRootPath => MicroSites.HowToUseUrl("~/");
 
-        public string ExTotalBetsForecastRootPath => MicroSites.ExTotalBetsForecastSiteUrl("~/");        
+        public string ExTotalBetsForecastRootPath => MicroSites.ExTotalBetsForecastSiteUrl();        
 
         public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
 
