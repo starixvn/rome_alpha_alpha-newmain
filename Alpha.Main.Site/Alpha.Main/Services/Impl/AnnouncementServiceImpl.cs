@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using System.Xml;
+    using System.Xml.XPath;
     using AppResources;
     using Constants;
     using Criteria.Announcement;
@@ -251,18 +252,19 @@
                 {
                     choosedNodes = announcementNode.SelectNodes(Language.Default);
                 }
-                
+
                 if (choosedNodes.Count > 0)
                 {
                     hotAnnouncement.Source = choosedNodes[0].Attributes["src"].Value;
-                var effectDateAttr = announcementNode.Attributes["effectdate"];
-                hotAnnouncement.Content = effectDateAttr != null ?
-                    choosedNodes[0].InnerXml
-                        .Replace("{effectdate}", Converter.ToString2(effectDateAttr.Value))
-                        .Replace("{site-main}", getParams.SiteMainReplacement) :
-                    ReplaceProductListToHtml(choosedNodes[0].InnerXml, getParams.ThirdPartyProductNames);
+                    var effectDateAttr = announcementNode.Attributes["effectdate"];
+                    hotAnnouncement.Content = effectDateAttr != null ?
+                        choosedNodes[0].InnerXml
+                            .Replace("{effectdate}", Converter.ToString2(effectDateAttr.Value))
+                            .Replace("{site-main}", getParams.SiteMainReplacement) :
+                        ReplaceProductListToHtml(choosedNodes[0].InnerXml, getParams.ThirdPartyProductNames);
 
-                break;
+                    break;
+                }
             }
 
             return hotAnnouncement;
@@ -279,7 +281,6 @@
             return !startDate.HasValue ||
                 currentDate < startDate ||
                 (endDate.HasValue && endDate < currentDate);
-        }
         }
     }
 }
