@@ -1,5 +1,9 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Xml;
     using Alpha.Main.Services.Impl;
     using Announcement.GetHotAnnouncement.LocalFileCondition;
     using Announcement.GetHotAnnouncement.LogInAndSettingChangedTest;
@@ -8,9 +12,6 @@
     using Main.Helpers;
     using NUnit.Framework;
     using Params.Announcements;
-    using System;
-    using System.Collections.Generic;
-    using System.Xml;
     using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
     using NotAgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest;
 
@@ -360,6 +361,60 @@
 
             // Assert
             Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+        }
+
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase("Any XML Content")]
+        public void ReplaceProductListToHtml_EmptyThirdPartyProductNames_ReturnEmptyString(string innerXml)
+        {
+            // Arrange
+            var thirdPartyProductNames = Enumerable.Empty<string>();
+
+            // Act
+            var actualContent = AnnouncementServiceImpl.ReplaceProductListToHtml(innerXml, thirdPartyProductNames);
+
+            // Assert
+            Assert.IsEmpty(actualContent);
+        }
+
+        [TestCase("")]
+        [TestCase("Any XML Content")]
+        public void ReplaceProductListToHtml_NotEmptyThirdPartyProductNamesAndNotHasProductList_ReturnOriginalInnerXml(string innerXml)
+        {
+            // Arrange
+            var thirdPartyProductNames = new List<string> { "Racing" };
+            var expectedContent = innerXml;
+
+            // Act
+            var actualContent = AnnouncementServiceImpl.ReplaceProductListToHtml(innerXml, thirdPartyProductNames);
+
+            // Assert
+            Assert.AreEqual(expectedContent, actualContent);
+        }
+
+        [Test]
+        public void ReplaceProductListToHtml_NotEmptyThirdPartyProductNamesAndNullInnerXml_ReturnOriginalInnerXml()
+        {
+            // Arrange
+            var thirdPartyProductNames = new List<string> { "Racing" };
+
+            // Act & Assert
+            Assert.Throws<NullReferenceException>(() => AnnouncementServiceImpl.ReplaceProductListToHtml(null, thirdPartyProductNames));
+        }
+
+        [TestCase("{product-list}", "<ol><li>1. Racing</li></ol>")]
+        [TestCase("Any content {product-list}", "Any content <ol><li>1. Racing</li></ol>")]
+        public void ReplaceProductListToHtml_NotEmptyThirdPartyProductNamesAndHasProductList_AssignProductListToXml(string innerXml, string expectedContent)
+        {
+            // Arrange
+            var thirdPartyProductNames = new List<string> { "Racing" };
+
+            // Act
+            var actualContent = AnnouncementServiceImpl.ReplaceProductListToHtml(innerXml, thirdPartyProductNames);
+
+            // Assert
+            Assert.AreEqual(expectedContent, actualContent);
         }
 
         private static XmlNode GetFirstNodeFromXmlDocument(string xmlPath)

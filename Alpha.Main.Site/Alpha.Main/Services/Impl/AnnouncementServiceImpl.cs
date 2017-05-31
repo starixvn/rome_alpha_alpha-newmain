@@ -112,8 +112,8 @@
 
             return false;
         }
-        
-        private static string ReplaceProductListToHtml(string innerXml, IEnumerable<string> thirdPartyProductNames)
+
+        internal static string ReplaceProductListToHtml(string innerXml, IEnumerable<string> thirdPartyProductNames)
         {
             if (!thirdPartyProductNames.Any())
             {

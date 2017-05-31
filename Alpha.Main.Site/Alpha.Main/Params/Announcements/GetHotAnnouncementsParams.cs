@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Params.Announcements
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     public class GetHotAnnouncementsParams
     {
@@ -31,7 +32,7 @@
         public string[] NoticeTypes { get; set; }
 
         public string SiteMainReplacement { get; set; }
-        
-        public IEnumerable<string> ThirdPartyProductNames { get; set; }
+
+        public IEnumerable<string> ThirdPartyProductNames { get; set; } = Enumerable.Empty<string>();
     }
 }
