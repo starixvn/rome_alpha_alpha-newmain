@@ -12,6 +12,9 @@ var alpha = {
             : "not found",
         howToUseRootPath: document.getElementById('howToUseRootPath') != null
             ? (<HTMLInputElement>document.getElementById('howToUseRootPath')).value
+            : "not found",
+        exTotalBetsForecastRootPath: document.getElementById('exTotalBetsForecastRootPath') != null
+            ? (<HTMLInputElement>document.getElementById('exTotalBetsForecastRootPath')).value
             : "not found"
     },
     user:

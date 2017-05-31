@@ -48,6 +48,14 @@
             }
         }
 
+        public static string ExTotalBetsForecastAppPath
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["ExTotalBetsForecastAppPath"];
+            }
+        }
+
         public static string MemberInfoAppPath
         {
             get

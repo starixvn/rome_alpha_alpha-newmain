@@ -7,6 +7,12 @@
     public static class MicroSites
     {
         [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
+        public static string ExTotalBetsForecastSiteUrl(string virtualPath = "~/")
+        {
+            return AppPathHelper.GetAppPath(AppSettings.ExTotalBetsForecastAppPath, virtualPath);
+        }
+
+        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
         public static string OldMainUrl(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.OldMainAppPath, virtualPath);
