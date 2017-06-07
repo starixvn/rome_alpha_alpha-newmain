@@ -1,5 +1,11 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Xml;
+    using System.Xml.XPath;
     using AppResources;
     using Constants;
     using Criteria.Announcement;
@@ -9,11 +15,6 @@
     using Models.Announcements;
     using Models.Enumerations;
     using Params.Announcements;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Xml;
-    using System.Xml.XPath;
 
     public class AnnouncementServiceImpl : AnnouncementService
     {
@@ -110,6 +111,35 @@
             }
 
             return false;
+        }
+
+        internal static string ReplaceProductListToHtml(string innerXml, IEnumerable<string> thirdPartyProductNames)
+        {
+            if (!thirdPartyProductNames.Any())
+            {
+                return string.Empty;
+            }
+
+            if (!innerXml.Contains("{product-list}"))
+            {
+                return innerXml;
+            }
+
+            int index = 0;
+            var productNamesBuilder = new StringBuilder("<ol>");
+
+            foreach (var name in thirdPartyProductNames)
+            {
+                productNamesBuilder.Append("<li>")
+                    .Append(++index)
+                    .Append(". ")
+                    .Append(name)
+                    .Append("</li>");
+            }
+
+            productNamesBuilder.Append("</ol>");
+
+            return innerXml.Replace("{product-list}", productNamesBuilder.ToString());
         }
 
         private string GetSettingChangedMessage(IEnumerable<string> messageTypes, GetHotAnnouncementsParams getParams)
@@ -222,16 +252,20 @@
                 {
                     choosedNodes = announcementNode.SelectNodes(Language.Default);
                 }
-                
+
                 if (choosedNodes.Count > 0)
                 {
                     hotAnnouncement.Source = choosedNodes[0].Attributes["src"].Value;
-                    hotAnnouncement.Content = choosedNodes[0].InnerXml
-                        .Replace("{effectdate}", Converter.ToString2(announcementNode.Attributes["effectdate"].Value))
-                        .Replace("{site-main}", getParams.SiteMainReplacement);
+                    var effectDateAttr = announcementNode.Attributes["effectdate"];
+                    hotAnnouncement.Content = effectDateAttr != null ?
+                        choosedNodes[0].InnerXml
+                            .Replace("{effectdate}", Converter.ToString2(effectDateAttr.Value))
+                            .Replace("{site-main}", getParams.SiteMainReplacement) :
+                        ReplaceProductListToHtml(choosedNodes[0].InnerXml, getParams.ThirdPartyProductNames);
+
                     break;
                 }
-            }    
+            }
 
             return hotAnnouncement;
         }

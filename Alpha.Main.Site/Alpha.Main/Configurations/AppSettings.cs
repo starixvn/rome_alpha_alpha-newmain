@@ -142,6 +142,8 @@
 
         public static bool DisabledVietnamese => IsMBCSite;
 
+        public static bool ShowGoldDeluxeAnnouncement => IsMBCSite;
+
         public static string[] NoticeTypes
         {
             get

@@ -1,16 +1,22 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Threading;
+    using System.Xml;
     using Alpha.Main.Services.Impl;
     using Announcement.GetHotAnnouncement.LocalFileCondition;
     using Announcement.GetHotAnnouncement.LogInAndSettingChangedTest;
+    using Fanex.Data.Repository;
     using Helps;
     using Main.Constants;
+    using Main.Criteria.Announcement;
     using Main.Helpers;
+    using NSubstitute;
     using NUnit.Framework;
     using Params.Announcements;
-    using System;
-    using System.Collections.Generic;
-    using System.Xml;
     using AgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.AgentDirectLoginTest;
     using NotAgentDirectLoginTest = Announcement.GetHotAnnouncement.LogInAndSettingChangedTest.NotAgentDirectLoginTest;
 
@@ -25,6 +31,13 @@
 
         private const string ShowedAnnouncementId = "4523901";
         private const string StillWaitAnnouncementId = "4523909";
+
+        [SetUp]
+        public void SetUp()
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
+        }
 
         [Test]
         public void GetHotAnnouncement_NullParams_ThrowArgumentNullException()
@@ -292,6 +305,31 @@
             Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
         }
 
+        [TestCase(3)]
+        [TestCase(4)]
+        public void GetHotAnnouncement_NotAdminLoginAndNotAgentAndHasFishingWorldNotice_ReturnsFishingWorldNotice(
+            byte roleId)
+        {
+            // Arrange
+            var dynamicRepository = Substitute.For<IDynamicRepository>();
+            dynamicRepository.Fetch<byte>(Arg.Any<GetMessageTypeListCriteria>()).Returns(new List<byte> { 1, 3 });
+
+            var announcementServiceImpl = new AnnouncementServiceImpl(dynamicRepository, null);
+            var param = new GetHotAnnouncementsParams()
+            {
+                RoleId = roleId,
+                NoticeTypes = new[] { "1_2", "1", "2", "3" }
+            };
+
+            var expectedAnnouncement = "Your upline has enabled Fishing World for your downlines. Please go to setting page to configure your own PT settings.";
+
+            // Act
+            var actualAnnouncement = announcementServiceImpl.GetHotAnnouncement(param);
+
+            // Assert
+            Assert.AreEqual(expectedAnnouncement, actualAnnouncement.Content);
+        }
+
         [Test]
         public void IsShowForCustomerIds_NodeWithNoCustIdsAttribute_ReturnsTrue()
         {
@@ -326,7 +364,7 @@
         public void IsShowForCustomerIds_NodeWithExistCusIdInCustIdsAttribute_ReturnsTrue(string xmlPath, int custId, bool expectedValue)
         {
             // Arrange
-            XmlNode node = GetFirstNodeFromXmlDocument(xmlPath);          
+            XmlNode node = GetFirstNodeFromXmlDocument(xmlPath);
 
             // Act
             var actualIsShowForCustomerIds = AnnouncementServiceImpl.IsShowForCustomerIds(node, custId);
@@ -360,6 +398,60 @@
 
             // Assert
             Assert.AreEqual(expectedAnnouncementContent, actualHotAnnouncement.Content);
+        }
+
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase("Any XML Content")]
+        public void ReplaceProductListToHtml_EmptyThirdPartyProductNames_ReturnEmptyString(string innerXml)
+        {
+            // Arrange
+            var thirdPartyProductNames = Enumerable.Empty<string>();
+
+            // Act
+            var actualContent = AnnouncementServiceImpl.ReplaceProductListToHtml(innerXml, thirdPartyProductNames);
+
+            // Assert
+            Assert.IsEmpty(actualContent);
+        }
+
+        [TestCase("")]
+        [TestCase("Any XML Content")]
+        public void ReplaceProductListToHtml_NotEmptyThirdPartyProductNamesAndNotHasProductList_ReturnOriginalInnerXml(string innerXml)
+        {
+            // Arrange
+            var thirdPartyProductNames = new List<string> { "Racing" };
+            var expectedContent = innerXml;
+
+            // Act
+            var actualContent = AnnouncementServiceImpl.ReplaceProductListToHtml(innerXml, thirdPartyProductNames);
+
+            // Assert
+            Assert.AreEqual(expectedContent, actualContent);
+        }
+
+        [Test]
+        public void ReplaceProductListToHtml_NotEmptyThirdPartyProductNamesAndNullInnerXml_ReturnOriginalInnerXml()
+        {
+            // Arrange
+            var thirdPartyProductNames = new List<string> { "Racing" };
+
+            // Act & Assert
+            Assert.Throws<NullReferenceException>(() => AnnouncementServiceImpl.ReplaceProductListToHtml(null, thirdPartyProductNames));
+        }
+
+        [TestCase("{product-list}", "<ol><li>1. Racing</li></ol>")]
+        [TestCase("Any content {product-list}", "Any content <ol><li>1. Racing</li></ol>")]
+        public void ReplaceProductListToHtml_NotEmptyThirdPartyProductNamesAndHasProductList_AssignProductListToXml(string innerXml, string expectedContent)
+        {
+            // Arrange
+            var thirdPartyProductNames = new List<string> { "Racing" };
+
+            // Act
+            var actualContent = AnnouncementServiceImpl.ReplaceProductListToHtml(innerXml, thirdPartyProductNames);
+
+            // Assert
+            Assert.AreEqual(expectedContent, actualContent);
         }
 
         private static XmlNode GetFirstNodeFromXmlDocument(string xmlPath)

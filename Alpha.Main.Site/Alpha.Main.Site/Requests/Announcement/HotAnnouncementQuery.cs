@@ -6,6 +6,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
     using System.Diagnostics.CodeAnalysis;
     using System.Web;
     using Configurations;
+    using Fanex.Products;
     using Main.Helpers;
     using Main.Models.Announcements;
     using Main.Models.Enumerations;
@@ -23,6 +24,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         private readonly string privateMessageFilePath;
         private readonly IUserSession userSession;
         private readonly IDictionary<int, bool> productsStatus;
+        private IList<string> thirdPartyProductNames;
 
         public const int OfferedGoldDeluxe = 7151701;
         public const int NotOfferedGoldDeluxe = 3543502;
@@ -34,7 +36,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         public const int PremiumBaccarat = 6842501; ////endate: 01/02/2017
         public const int ShuttingDownLiveCasino = 7011701; ////endate: 01/31/2017
 
-        public HotAnnouncementQuery() : this(null, null, null, null, null)
+        public HotAnnouncementQuery() : this(null, null, null, null, null, null)
         {
         }
 
@@ -43,13 +45,15 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             IUserSession userSession,
             string privateMessageFilePath,
             string commonAnnouncementFilePath,
-            string[] noticeTypes)
+            string[] noticeTypes,
+            IList<string> thirdPartyProductNames)
         {
             this.productsStatus = productsStatus;
             this.userSession = userSession ?? new UserSessionExt();
             this.commonAnnouncementFilePath = commonAnnouncementFilePath;
             this.privateMessageFilePath = privateMessageFilePath;
             NoticeTypes = noticeTypes;
+            this.thirdPartyProductNames = thirdPartyProductNames;
         }
 
         public static string SiteMainReplacement
@@ -166,6 +170,42 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
 
         public string[] NoticeTypes { get; set; }
 
+        public IEnumerable<string> ThirdPartyProductNames
+        {
+            get
+            {
+                if (thirdPartyProductNames != null)
+                {
+                    return thirdPartyProductNames;
+                }
+
+                thirdPartyProductNames = new List<string>();
+
+                foreach (int productId in OldProductIds())
+                {
+                    if (UserPermission.HasPermissionOnProduct(productId))
+                    {
+                        thirdPartyProductNames.Add(ProductManager.GetProductName(productId));
+                    }
+                }
+
+                foreach (var product in ProductManager.Products)
+                {
+                    if (product.ShowSettings)
+                    {
+                        if (product.Id == ProductIdConstants.FishingWorld && userSession.Site != "733333")
+                        {
+                            continue;
+                        }
+
+                        thirdPartyProductNames.Add(product.RemotingRefName);
+                    }
+                }
+
+                return thirdPartyProductNames;
+            }
+        }
+
         public void AssignValue(GetHotAnnouncementsParams hotAnnouncementsParams)
         {
             if (hotAnnouncementsParams == null)
@@ -187,6 +227,37 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             hotAnnouncementsParams.UserName = UserName;
             hotAnnouncementsParams.NoticeTypes = NoticeTypes;
             hotAnnouncementsParams.SiteMainReplacement = SiteMainReplacement;
+            hotAnnouncementsParams.ThirdPartyProductNames = ThirdPartyProductNames;
+        }
+
+        private static int[] OldProductIds()
+        {
+            if (AppSettings.ShowGoldDeluxeAnnouncement)
+            {
+                return new[]
+                {
+                    ProductIdConstants.Racing,
+                    ProductIdConstants.VirtualSports,
+                    ProductIdConstants.RNGCasino,
+                    ProductIdConstants.Keno,
+                    ProductIdConstants.GoldDeluxe,
+                    ProductIdConstants.ColossusBets,
+                    ProductIdConstants.AllBet,
+                    ProductIdConstants.Voidbridge
+                };
+            }
+
+            return new[]
+            {
+                ProductIdConstants.Racing,
+                ProductIdConstants.VirtualSports,
+                ProductIdConstants.RNGCasino,
+                ProductIdConstants.Keno,
+                //// Exclude: ProductIdConstants.GoldDeluxe.
+                ProductIdConstants.ColossusBets,
+                ProductIdConstants.AllBet,
+                ProductIdConstants.Voidbridge
+            };
         }
     }
 }
