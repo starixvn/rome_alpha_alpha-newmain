@@ -806,5 +806,14 @@ namespace Alpha.Main.AppResources {
                 return ResourceManager.GetString("winLossByBettype", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Loss By Product.
+        /// </summary>
+        public static string winLossByProduct {
+            get {
+                return ResourceManager.GetString("winLossByProduct", resourceCulture);
+            }
+        }
     }
 }

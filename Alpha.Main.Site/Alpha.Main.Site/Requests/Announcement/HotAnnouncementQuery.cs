@@ -61,7 +61,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             get
             {
                 return HttpContext.Current != null ? HttpContext.Current.Request.Browser.IsMobileDevice ?
-                    AppPathHelper.GetAppPath(AppSettings.GetAppPath("MainAppPath"), "~") : string.Empty : string.Empty;
+                    MicroSites.MainUrl("~") : string.Empty : string.Empty;
             }
         }
 

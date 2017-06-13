@@ -20,11 +20,14 @@
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="winlossanalysis" appPath="ReportsAppPath" url="winlossanalysis/master" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="winLossAnalysisChart" appPath="OldMainAppPath" url="_Charts/WinlossAnalysis/MonthlyAgent.aspx"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeAgent.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeMaster.aspx" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="winLossByBettype" appPath="OldMainAppPath" url="_Reports/Winloss/WinLossByBettypeSuper.aspx" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/member" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/agent" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/master" roles="Super"></siteMapNode>
+
+      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/member" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/agent" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/master" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/agent" roles="Master"></siteMapNode>
@@ -36,7 +39,9 @@
       <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="monitor" appPath="OldMainAppPath" url="_Reports/LastBetMonitoring/LastBetMonitoring.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="cancelledBets" appPath="OldMainAppPath" url="_Reports/BetList/CancelBetList.aspx"></siteMapNode>
       <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="OldMainAppPath" url="report/consolidate/index"></siteMapNode>
-      <siteMapNode resourceKey="statement" appPath="OldMainAppPath" url="Finance/StatementSMA?rptmrange=5"></siteMapNode>
+
+      <siteMapNode resourceKey="statement" appPath="ReportsAppPath" url="Statement/SMAStatement"></siteMapNode>
+
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
 
       <siteMapNode resourceKey="PlayForFunDetail" appPath="ReportsAppPath" url="playforfun/member" roles="Agent"></siteMapNode>
