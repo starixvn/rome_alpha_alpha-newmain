@@ -94,7 +94,7 @@ namespace Alpha.Main
             }
 
             var defaultMainPage = HttpContext.Current.Response.ApplyAppPathModifier("~/Dashboard/Index");
-            var currentUrlCookieName = CookieHelper.GetCurrentUrlCookieName(Current.CustId, Current.SubAccId, Encryption.PearsonEncode);
+            var currentUrlCookieName = CookieHelper.GetCookieNameOfCurrentPage(Current.CustId, Current.SubAccId, Encryption.PearsonEncode);
 
             var currentURLCookie = HttpContext.Current.Request.Cookies[currentUrlCookieName];
             var ignoreUrls = new List<string>

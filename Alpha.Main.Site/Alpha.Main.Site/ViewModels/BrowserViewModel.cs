@@ -8,7 +8,7 @@
         public bool IsUnsupportedBrowser { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
-        public string DownloadNewBrowserUrl { get; set; }
+        public string DownloadNewBrowserLink { get; set; }
 
         public UserLevel UserLevel { get; set; }
     }

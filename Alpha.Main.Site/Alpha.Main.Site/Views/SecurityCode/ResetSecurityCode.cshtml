@@ -7,7 +7,7 @@
 
 @section css {
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    <link href="@StaticResources.MainSiteStyleUrl("~/Assets/bundles/security/security")" rel="stylesheet" type="text/css" />
+    <link href="@StaticResources.MainSiteStylePath("~/Assets/bundles/security/security")" rel="stylesheet" type="text/css" />
 }
 
 <h1 id="title_header" class="page-title">@Model.Title</h1>
@@ -52,5 +52,5 @@
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
-    <script src="@StaticResources.MainSiteScriptUrl("~/Assets/bundles/security/security-code/reset-securitycode")" type="text/javascript"></script>
+    <script src="@StaticResources.MainSiteScriptPath("~/Assets/bundles/security/security-code/reset-securitycode")" type="text/javascript"></script>
 }

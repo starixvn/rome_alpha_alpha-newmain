@@ -26,7 +26,7 @@ namespace Alpha.Main.Site.ViewModels.Security
         {
             get
             {
-                return MicroSites.OldMainUrl("~/");
+                return MicroSites.OldMainPath("~/");
             }
         }
 

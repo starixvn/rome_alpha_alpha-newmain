@@ -42,7 +42,7 @@
 
         public string UserLevelName { get; }
 
-        public string OldMainRootPath => MicroSites.OldMainUrl("~/");
+        public string OldMainRootPath => MicroSites.OldMainPath("~/");
 
         public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
     }

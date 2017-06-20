@@ -27,7 +27,7 @@
         {
             get
             {
-                var reportSiteAppPath = MicroSites.ReportSiteUrl("~/");
+                var reportSiteAppPath = MicroSites.ReportSitePath("~/");
 
                 return $@"{reportSiteAppPath}/outstanding/{GetOutstandingDefaultReportLevel(UserLevel)}";
             }

@@ -31,7 +31,7 @@
         {
             menuItem.Key = node.Key;
             menuItem.ResourceKey = node.ResourceKey;
-            menuItem.Url = node.Url;
+            menuItem.Link = node.Url;
             menuItem.AppPath = node["AppPath"];
             menuItem.ByPassAuthorization = node["byPassAuthorization"] == null ? false : bool.Parse(node["byPassAuthorization"]);
             menuItem.SubMenus = new List<IMenuItem>();

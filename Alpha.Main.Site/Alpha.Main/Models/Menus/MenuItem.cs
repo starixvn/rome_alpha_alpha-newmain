@@ -1,16 +1,16 @@
 ﻿namespace Alpha.Main.Models.Menus
 {
+    using AppResources;
+    using Configurations;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text.RegularExpressions;
     using System.Web;
-    using AppResources;
-    using Configurations;
 
     public class MenuItem : IMenuItem
     {
-        private string url;
+        private string link;
         private Func<MenuStatus> getMenuStatusFunc;
         private Predicate<string> authorizeUrlFunc;
         private Func<string> getDisplayName;
@@ -44,11 +44,11 @@
         {
             get
             {
-                return getDisplayName != null ? getDisplayName() : Alpha_sitemap.ResourceManager.GetString(this.ResourceKey);
+                return getDisplayName != null ? getDisplayName() : Alpha_sitemap.ResourceManager.GetString(ResourceKey);
             }
         }
 
-        public virtual string Url
+        public virtual string Link
         {
             get
             {
@@ -56,15 +56,15 @@
 
                 if (!string.IsNullOrWhiteSpace(appVirtualPath))
                 {
-                    return Regex.Replace(this.url, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath);
+                    return Regex.Replace(link, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath);
                 }
 
-                return this.url;
+                return link;
             }
 
             set
             {
-                this.url = value;
+                link = value;
             }
         }
 
@@ -72,7 +72,7 @@
         {
             get
             {
-                var isAuthorized = ByPassAuthorization || authorizeUrlFunc(Url);
+                var isAuthorized = ByPassAuthorization || authorizeUrlFunc(Link);
 
                 return isAuthorized
                     ? getMenuStatusFunc()
@@ -88,7 +88,7 @@
         {
             get
             {
-                return this.SubMenus.Where(menuItem => menuItem.Status.Visible);
+                return SubMenus.Where(menuItem => menuItem.Status.Visible);
             }
         }
     }

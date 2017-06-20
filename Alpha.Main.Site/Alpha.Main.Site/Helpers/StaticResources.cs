@@ -68,14 +68,12 @@
 
         #region Current site
 
-        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string MainSiteScriptUrl(string relativePath)
+        public static string MainSiteScriptPath(string relativePath)
         {
             return VirtualPathUtility.ToAbsolute($"{relativePath}{MinText}.js?v={StaticResourcesVersion}");
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string MainSiteStyleUrl(string relativePath)
+        public static string MainSiteStylePath(string relativePath)
         {
             return VirtualPathUtility.ToAbsolute($"{relativePath}{MinText}.css?v={StaticResourcesVersion}");
         }

@@ -174,7 +174,7 @@
                 new MenuItem
                 {
                     Key = "a",
-                    Url = "~/Url",
+                    Link = "~/Url",
                     ShowSubMenus = true,
                     AppPath = "~/site-main",
                     SubMenus = new List<IMenuItem>
@@ -182,7 +182,7 @@
                         new MenuItem
                         {
                             Key = "a",
-                            Url = "~/Url",
+                            Link = "~/Url",
                             ShowSubMenus = true,
                             AppPath = "~/site-main",
                         }

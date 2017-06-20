@@ -17,9 +17,9 @@
 
         public bool EnableSecurityCode { get; }
 
-        public string OldMainRootPath => MicroSites.OldMainUrl("~/");
+        public string OldMainRootPath => MicroSites.OldMainPath("~/");
 
-        public string HowToUseRootPath => MicroSites.HowToUseUrl("~/");
+        public string HowToUseRootPath => MicroSites.HowToUsePath("~/");
 
         public bool IsViewedMemberInfo { get; }
 

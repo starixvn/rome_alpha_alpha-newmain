@@ -43,7 +43,7 @@
 
         public int CustId { get; }
 
-        public string ReportSiteAppPath => MicroSites.ReportSiteUrl("~/");
+        public string ReportSiteAppPath => MicroSites.ReportSitePath("~/");
 
         public string MemberTodayWinLossReportPath => GetMemberWinLossReportPathByDate(true);
 

@@ -62,7 +62,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             get
             {
                 return HttpContext.Current != null ? HttpContext.Current.Request.Browser.IsMobileDevice ?
-                    MicroSites.MainUrl("~") : string.Empty : string.Empty;
+                    MicroSites.MainPath("~") : string.Empty : string.Empty;
             }
         }
 

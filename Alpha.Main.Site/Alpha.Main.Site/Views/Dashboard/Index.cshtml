@@ -11,7 +11,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/dashboard/dashboard-{Model.UserLevelName}")
-    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-home"))" rel="stylesheet" type="text/css" />
+    <link href="@(StaticResources.MainSiteStylePath("~/assets/bundles/default-home"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="scroll-tabs">
@@ -64,7 +64,7 @@
     <!--<![endif]-->
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
-    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-dashboard"))" type="text/javascript"></script>
+    <script src="@(StaticResources.MainSiteScriptPath("~/assets/bundles/default-dashboard"))" type="text/javascript"></script>
     @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
 </body>
 </html>

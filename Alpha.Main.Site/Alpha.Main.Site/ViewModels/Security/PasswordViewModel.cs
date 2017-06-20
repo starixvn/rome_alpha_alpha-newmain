@@ -30,7 +30,7 @@
         {
             get
             {
-                return MicroSites.OldMainUrl("~/");
+                return MicroSites.OldMainPath("~/");
             }
         }
 

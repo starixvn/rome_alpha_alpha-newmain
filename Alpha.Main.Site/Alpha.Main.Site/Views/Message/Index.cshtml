@@ -18,7 +18,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/message/message-{Model.UserLevelName}")
-    <link href="@(StaticResources.MainSiteStyleUrl("~/assets/bundles/default-message"))" rel="stylesheet" type="text/css" />
+    <link href="@(StaticResources.MainSiteStylePath("~/assets/bundles/default-message"))" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <ul class="nav nav-tabs" role="tablist">
@@ -41,7 +41,7 @@
 
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/message/message-default")
-    <script src="@(StaticResources.MainSiteScriptUrl("~/assets/bundles/default-message"))" type="text/javascript"></script>
+    <script src="@(StaticResources.MainSiteScriptPath("~/assets/bundles/default-message"))" type="text/javascript"></script>
     @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
 </body>
 </html>

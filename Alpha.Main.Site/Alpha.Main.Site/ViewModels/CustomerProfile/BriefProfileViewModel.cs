@@ -10,7 +10,7 @@
 
         public string EmbedImage { get; set; }
 
-        public string OldMainRootApp => MicroSites.OldMainUrl("~/");
+        public string OldMainRootApp => MicroSites.OldMainPath("~/");
 
         public string Username { get; set; }
 

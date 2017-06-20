@@ -47,12 +47,12 @@
         $"{Resources.todayWinLoss} ({DateTime.Today.ToString("MM/dd/yyyy")})",
         balanceInfo.TodayWinLoss,
         Model.CanViewReports,
-        MicroSites.OldMainUrl(Model.MemberTodayWinLossReportPath))
+        MicroSites.OldMainPath(Model.MemberTodayWinLossReportPath))
     @NumericRow(
         $"{Resources.yesterdayWinLoss} ({DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy")})",
         balanceInfo.YesterdayWinLoss,
         Model.CanViewReports,
-        MicroSites.OldMainUrl(Model.MemberYesterdayWinLossReportPath))
+        MicroSites.OldMainPath(Model.MemberYesterdayWinLossReportPath))
 
     <div class="group-title">
         @Resources.credit
