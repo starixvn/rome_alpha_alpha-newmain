@@ -1,7 +1,5 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
-    using System.Linq;
     using Constants;
     using DataAccesses;
     using Fanex.Data.Repository;
@@ -9,6 +7,8 @@
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using System;
+    using System.Linq;
     using TestData.Helper;
     using Assert = NUnit.Framework.Assert;
 

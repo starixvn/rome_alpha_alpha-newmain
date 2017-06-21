@@ -21,7 +21,7 @@
         private UserLevel(byte value, string displayName)
             : base(value, displayName)
         {
-        }       
+        }
 
         public bool IsAgentLevel()
         {
@@ -117,7 +117,5 @@
         {
             return uplineLevelValue - downlineLevelValue;
         }
-
-        public UserLevel GetDirectDownLineLevel() => FromValue<UserLevel>((byte)(Value - 1));
     }
 }

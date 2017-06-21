@@ -1,8 +1,6 @@
 ﻿#pragma warning disable 612, 618
 namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
-    using System.Collections.Generic;
     using Constants;
     using Main.Models.Announcements;
     using Models.Requests.Announcement;
@@ -12,6 +10,8 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Services;
     using Site.Handlers;
     using Sunplus.Agent.Model.Entities;
+    using System;
+    using System.Collections.Generic;
 
     [TestFixture]
     public class AnnouncementHandlerTests
@@ -47,7 +47,7 @@ namespace Alpha.Main.Site.Tests.Handlers
                 .Returns(hotAnnouncement);
 
             userSession.RoleId.Returns(RoleId.ValidRoleId);
-            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, null, new List<string>());
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, new string[] { }, new List<string>());
 
             // Act
             var viewModel = announcementHandler.Handle(query);
@@ -74,7 +74,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             userSession.UserId.Returns(userId);
             userSession.SubAccId.Returns(subAccId);
 
-            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, null, new List<string>());
+            var query = new HotAnnouncementQuery(new Dictionary<int, bool>(), userSession, string.Empty, string.Empty, new string[] { }, new List<string>());
 
             // Act
             var viewModel = announcementHandler.Handle(query);

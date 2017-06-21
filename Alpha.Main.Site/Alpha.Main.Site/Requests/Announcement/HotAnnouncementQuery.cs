@@ -1,10 +1,6 @@
 ﻿#pragma warning disable 618, 612
 namespace Alpha.Main.Site.Models.Requests.Announcement
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Web;
     using Configurations;
     using Fanex.Products;
     using Main.Helpers;
@@ -16,6 +12,10 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
     using Sunplus.Agent.Model.Definitions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Entities.Permission;
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Web;
 
     [SuppressMessage("StyleCop.CSharp.StylecopPlus.Rules", "SP2100:CodeLineMustNotBeLongerThan", Justification = "Reviewed.")]
     public class HotAnnouncementQuery : IRequest<HotAnnouncement>
@@ -53,7 +53,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             this.userSession = userSession ?? new UserSessionExt();
             this.commonAnnouncementFilePath = commonAnnouncementFilePath;
             this.privateMessageFilePath = privateMessageFilePath;
-            NoticeTypes = noticeTypes;
+            NoticeTypes = noticeTypes ?? AppSettings.NoticeTypes;
             this.thirdPartyProductNames = thirdPartyProductNames;
         }
 
