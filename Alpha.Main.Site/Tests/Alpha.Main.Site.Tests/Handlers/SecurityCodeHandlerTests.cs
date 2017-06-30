@@ -96,7 +96,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         [TestCase(null)]
         [TestCase("")]
         [TestCase(" ")]
-        public void HandleForceChangeSecurityCodeQuery_UserNameIsNullOrWhiteSpace_ReturnsSecurityCodeViewModel(string userName)
+        public void HandleSecurityCodeQuery_UserNameIsNullOrWhiteSpace_ReturnsSecurityCodeViewModel(string userName)
         {
             // Arrange
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
@@ -126,7 +126,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         }
 
         [Test]
-        public void HandleForceChangeSecurityCodeQuery_UserNameIsNotNullOrWhiteSpace_ReturnsSecurityCodeViewModel()
+        public void HandleSecurityCodeQuery_UserNameIsNotNullOrWhiteSpace_ReturnsSecurityCodeViewModel()
         {
             // Arrange
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");

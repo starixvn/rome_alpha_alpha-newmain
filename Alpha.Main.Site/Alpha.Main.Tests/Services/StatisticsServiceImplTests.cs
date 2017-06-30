@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using Constants;
-    using DataAccesses;
     using Fanex.Data.Repository;
+    using Main.DataAccesses;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
     using Main.Models.Statistics;

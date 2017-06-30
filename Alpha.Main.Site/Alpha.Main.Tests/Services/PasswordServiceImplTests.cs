@@ -1,4 +1,5 @@
-﻿using Alpha.Main.Criteria.Password;
+﻿using Alpha.Main.AppResources;
+using Alpha.Main.Criteria.Password;
 using Alpha.Main.DataAccesses;
 using Alpha.Main.Models;
 using Alpha.Main.Params.Password;
@@ -44,26 +45,49 @@ namespace Alpha.Main.Tests.Services
             Assert.Throws<ArgumentNullException>(() => passwordService.ChangeMainAccountPassword(param));
         }
 
-        [Test]
-        public void ChangeMainAccountPassword_ValidatePasswordFailed_ReturnsIsNotOkResult()
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase(" ")]
+        public void ChangeMainAccountPassword_PasswordsAreNullOrWhiteSpace_ReturnsNotAuthorizedResult(string password)
         {
             // Arrange
             var param = new ChangeMainAccountPasswordParam
             {
-                NewPassword = string.Empty,
+                NewPassword = password,
+                CurrentPassword = password,
             };
 
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(string.Empty);
+            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
 
             // Act 
             var result = passwordService.ChangeMainAccountPassword(param);
 
             // Assert
-            Assert.IsTrue(result.IsNotOk);
+            Assert.IsTrue(result.IsNotOk && result.Message == Security.NotAuthorized);
         }
 
         [Test]
-        public void ChangeMainAccountPassword_ValidatePasswordFailed_CallsUpdatePassword()
+        public void ChangeMainAccountPassword_NewPasswordIsEqualCurrentPassword_ReturnsPasswordOldOneResult()
+        {
+            // Arrange
+            var password = "1234aaAA";
+            var param = new ChangeMainAccountPasswordParam
+            {
+                NewPassword = password,
+                CurrentPassword = password,
+            };
+
+            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
+
+            // Act 
+            var result = passwordService.ChangeMainAccountPassword(param);
+
+            // Assert
+            Assert.IsTrue(result.IsNotOk && result.Message == Security.lblPasswordDOldOne);
+        }
+
+        [Test]
+        public void ChangeMainAccountPassword_ValidatePasswordSuccessful_CallsUpdatePassword()
         {
             // Arrange
             var newPassword = "1234aaAA";
@@ -134,7 +158,7 @@ namespace Alpha.Main.Tests.Services
         }
 
         [Test]
-        public void ChangeSubAccountPassword_ValidatePasswordFailed_CallsUpdatePassword()
+        public void ChangeSubAccountPassword_ValidatePasswordSuccessful_CallsUpdatePassword()
         {
             // Arrange
             var newPassword = "1234aaAA";
@@ -183,6 +207,66 @@ namespace Alpha.Main.Tests.Services
             Assert.Throws<ArgumentNullException>(() => passwordService.ResetMainAccountPassword(param));
         }
 
+        [Test]
+        public void ResetMainAccountPassword_ValidatePasswordFailed_ReturnsIsNotOkResult()
+        {
+            // Arrange
+            var param = new ResetMainAccountPasswordParam();
+            param.IsResetMemberPassword = true;
+            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234 aa");
+
+            // Act
+            var result = passwordService.ResetMainAccountPassword(param);
+
+            // Assert
+            Assert.IsTrue(result.IsNotOk);
+        }
+
+        [Test]
+        public void ResetMainAccountPassword_ValidatePasswordSuccessful_CallsUpdatePassword()
+        {
+            // Arrange
+            var param = new ResetMainAccountPasswordParam
+            {
+                IsResetMemberPassword = true,
+                CustId = 1,
+                LanguageKey = "en",
+                IP = "127.0.0.1",
+                SubAccountId = 0,
+                IsCasinoDisabled = true,
+                ActorId = 1
+            };
+            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
+            encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
+
+            var criteria = new ResetMainAccountPasswordCriteria
+            {
+                CustId = param.CustId,
+                Language = param.LanguageKey,
+                LoginIP = param.IP,
+                UserPwd = "EncodedPassword",
+                SubAccId = param.SubAccountId,
+                DisCasino = param.IsCasinoDisabled,
+                UserId = param.ActorId
+            };
+
+            passwordDataAccess.UpdatePassword(Arg.Any<ResetMainAccountPasswordCriteria>()).Returns(new Result { Code = 1 });
+
+            // Act
+            passwordService.ResetMainAccountPassword(param);
+
+            // Assert
+            passwordDataAccess.Received().UpdatePassword(
+                Arg.Is<ResetMainAccountPasswordCriteria>(
+                    c => c.CustId == criteria.CustId
+                        && c.Language == criteria.Language
+                        && c.LoginIP == criteria.LoginIP
+                        && c.UserPwd == criteria.UserPwd
+                        && c.SubAccId == criteria.SubAccId
+                        && c.DisCasino == criteria.DisCasino
+                        && c.UserId == criteria.UserId));
+        }
+
         #endregion
 
         #region Reset Sub Account Password
@@ -195,6 +279,78 @@ namespace Alpha.Main.Tests.Services
 
             // Act & Assert
             Assert.Throws<ArgumentNullException>(() => passwordService.ResetSubAccountPassword(param));
+        }
+
+        [TestCase("59D7!4$h")]
+        [TestCase("493abcDE")]
+        public void ResetSubAccountPassword_WrongRulePassword_ReturnsWrongRulePasswordResult(string password)
+        {
+            // Arrange
+            var param = new ResetSubAccountPasswordParam();
+            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
+
+            // Act
+            var result = passwordService.ResetSubAccountPassword(param);
+
+            // Assert
+            Assert.IsTrue(result.IsNotOk && result.Message == Security.lblPasswordWrongRule);
+        }
+
+        [Test]
+        public void ResetSubAccountPassword_PasswordContainsActorName_ReturnsPasswordDAccountNameResult()
+        {
+            // Arrange
+            var param = new ResetSubAccountPasswordParam();
+            param.NewPassword = "1234aaAA";
+            param.ActorName = "aaAA";
+
+            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
+
+            // Act
+            var result = passwordService.ResetSubAccountPassword(param);
+
+            // Assert
+            Assert.IsTrue(result.IsNotOk && result.Message == Security.lblPasswordDAccountName);
+        }
+
+        [Test]
+        public void ResetSubAccountPassword_ValidatePasswordSuccessful_CallsUpdatePassword()
+        {
+            // Arrange
+            var param = new ResetSubAccountPasswordParam
+            {
+                NewPassword = "1234aaAA",
+                CustId = 1,
+                LanguageKey = "en",
+                IP = "127.0.0.1",
+                SubAccountId = 0,
+                ActorId = 1
+            };
+            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
+            encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
+
+            var criteria = new ResetMainAccountPasswordCriteria
+            {
+                CustId = param.CustId,
+                Language = param.LanguageKey,
+                LoginIP = param.IP,
+                UserPwd = "EncodedPassword",
+                SubAccId = param.SubAccountId,
+                UserId = param.ActorId
+            };
+
+            // Act
+            passwordService.ResetSubAccountPassword(param);
+
+            // Assert
+            passwordDataAccess.Received().UpdatePassword(
+                Arg.Is<ResetSubAccountPasswordCriteria>(
+                    c => c.CustId == criteria.CustId
+                        && c.Language == criteria.Language
+                        && c.LoginIP == criteria.LoginIP
+                        && c.UserPwd == criteria.UserPwd
+                        && c.SubAccId == criteria.SubAccId
+                        && c.UserId == criteria.UserId));
         }
 
         #endregion

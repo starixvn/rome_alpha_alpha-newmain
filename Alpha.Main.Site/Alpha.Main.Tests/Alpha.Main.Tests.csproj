@@ -265,6 +265,10 @@
     <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteriaTests.cs" />
+    <Compile Include="DataAccesses\MessageDataAccessImplTests.cs" />
+    <Compile Include="DataAccesses\PasswordDataAccessImplTests.cs" />
+    <Compile Include="DataAccesses\SecurityCodeDataAccessImplTests.cs" />
+    <Compile Include="DataAccesses\StatisticsDataAccessImplTests.cs" />
     <Compile Include="Helpers\AppPathHelperTests.cs" />
     <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />

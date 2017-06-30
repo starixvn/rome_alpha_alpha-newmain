@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using Constants;
-    using DataAccesses;
     using Fanex.Data.Repository;
+    using Main.DataAccesses;
     using Main.Models.Message;
     using Main.Services.Impl;
     using NSubstitute;

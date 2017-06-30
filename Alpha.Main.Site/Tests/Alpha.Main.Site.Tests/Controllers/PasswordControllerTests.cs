@@ -1,4 +1,5 @@
-﻿using Alpha.Main.Site.Controllers;
+﻿using Alpha.Main.Constants;
+using Alpha.Main.Site.Controllers;
 using Alpha.Main.Site.Requests.Password;
 using MediatR;
 using NSubstitute;
@@ -52,7 +53,13 @@ namespace Alpha.Main.Site.Tests.Controllers
         public void ResetMainAccountPassword_Always_CallsMediatorSendResetMainAccountPasswordQuery()
         {
             // Arrange
-            var query = new ResetMainAccountPasswordQuery();
+            var query = new ResetMainAccountPasswordQuery
+            {
+                CustId = 1,
+                CustRoleId = RoleId.Agent,
+                IsCasinoSync = true,
+                Username = "UserName"
+            };
 
             // Act
             passwordController.ResetMainAccountPassword(query);
@@ -65,7 +72,11 @@ namespace Alpha.Main.Site.Tests.Controllers
         public void ResetSubAccountPassword_Always_CallsMediatorSendResetSubAccountPasswordQuery()
         {
             // Arrange
-            var query = new ResetSubAccountPasswordQuery();
+            var query = new ResetSubAccountPasswordQuery
+            {
+                SubAccountId = 1,
+                Username = "UserName"
+            };
 
             // Act
             passwordController.ResetSubAccountPassword(query);

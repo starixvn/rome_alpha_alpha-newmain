@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using DataAccesses;
+    using Main.DataAccesses;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
