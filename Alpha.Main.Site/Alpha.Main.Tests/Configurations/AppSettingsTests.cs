@@ -1,0 +1,310 @@
+﻿using Alpha.Main.Configurations;
+using NUnit.Framework;
+using System.Collections.Specialized;
+
+namespace Alpha.Main.Tests.Configurations
+{
+    [TestFixture]
+    public class AppSettingsTests
+    {
+        [Test]
+        public void AssetAppPath_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["AssetAppPath"] = "/assets"
+            };
+
+            var expectedSetting = "/assets";
+
+            // Act
+            var actualSetting = AppSettings.AssetAppPath;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void OldMainAppPath_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["OldMainAppPath"] = "/ex-main"
+            };
+
+            var expectedSetting = "/ex-main";
+
+            // Act
+            var actualSetting = AppSettings.OldMainAppPath;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void HowToUseAppPath_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["HowToUseAppPath"] = "/site-howtouse"
+            };
+
+            var expectedSetting = "/site-howtouse";
+
+            // Act
+            var actualSetting = AppSettings.HowToUseAppPath;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void ReportAppPath_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["ReportsAppPath"] = "/site-reports"
+            };
+
+            var expectedSetting = "/site-reports";
+
+            // Act
+            var actualSetting = AppSettings.ReportAppPath;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void ExTotalBetsForecastAppPath_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["ExTotalBetsForecastAppPath"] = "/ex-totalbetsforecast"
+            };
+
+            var expectedSetting = "/ex-totalbetsforecast";
+
+            // Act
+            var actualSetting = AppSettings.ExTotalBetsForecastAppPath;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void MemberInfoAppPath_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["MemberInfoAppPath"] = "/site-memberinfo"
+            };
+
+            var expectedSetting = "/site-memberinfo";
+
+            // Act
+            var actualSetting = AppSettings.MemberInfoAppPath;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void UsersAlwaysAllowAccessBetsListMonitoring_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["UsersAlwaysAllowAccessBetsListMonitoring"] = "1176086"
+            };
+
+            var expectedSetting = "1176086";
+
+            // Act
+            var actualSetting = AppSettings.UsersAlwaysAllowAccessBetsListMonitoring;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void EnableBetsListMonitoring_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["EnableBetsListMonitoring"] = "true"
+            };
+
+            // Act
+            var actualSetting = AppSettings.EnableBetsListMonitoring;
+
+            // Assert
+            Assert.True(actualSetting);
+        }
+
+        [Test]
+        public void VirtualDirectory_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["VirtualDirectory"] = "site-main"
+            };
+
+            var expectedSetting = "site-main";
+
+            // Act
+            var actualSetting = AppSettings.VirtualDirectory;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void NonUseSecurityCodeSites_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["NonUseSecurityCodeSites"] = "789y"
+            };
+
+            var expectedSetting = "789y";
+
+            // Act
+            var actualSetting = AppSettings.NonUseSecurityCodeSites;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void StaticResourcesVersion_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["AssetsApp:StaticResourcesVersion"] = "4114434"
+            };
+
+            var expectedSetting = "4114434";
+
+            // Act
+            var actualSetting = AppSettings.StaticResourcesVersion;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void AllowedSitesToViewTBF_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["TotalBetsForecast:AllowedSitesToViewTBF"] = "site"
+            };
+
+            var expectedSetting = "site";
+
+            // Act
+            var actualSetting = AppSettings.AllowedSitesToViewTBF;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void StoreProcedurePath_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["StoredProcedurePath"] = "~/App_Data/SPNames/LOCAL"
+            };
+
+            var expectedSetting = "~/App_Data/SPNames/LOCAL";
+
+            // Act
+            var actualSetting = AppSettings.StoreProcedurePath;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void GetMessagesDataPath_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["MessagesDataPath"] = "~/App_Data/Message"
+            };
+
+            var expectedSetting = "~/App_Data/Message";
+
+            // Act
+            var actualSetting = AppSettings.GetMessagesDataPath;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void IsDisabledContactUsLink_ConfigValueIsEqualOne_ReturnsTrue()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["IsDisabledContactUsLink"] = "1"
+            };
+
+            // Act
+            var actualSetting = AppSettings.IsDisabledContactUsLink;
+
+            // Assert
+            Assert.True(actualSetting);
+        }
+
+        [Test]
+        public void IsDisabledContactUsLink_ConfigValueIsNotEqualOne_ReturnsTrue()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["IsDisabledContactUsLink"] = "0"
+            };
+
+            // Act
+            var actualSetting = AppSettings.IsDisabledContactUsLink;
+
+            // Assert
+            Assert.False(actualSetting);
+        }
+
+        [Test]
+        public void NoticeTypes_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["NoticeTypes"] = "1_2,1,2,3"
+            };
+
+            var expectedSetting = new[] { "1_2", "1", "2", "3" };
+
+            // Act
+            var actualSetting = AppSettings.NoticeTypes;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+    }
+}

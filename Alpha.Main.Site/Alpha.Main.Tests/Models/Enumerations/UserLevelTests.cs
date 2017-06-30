@@ -263,5 +263,18 @@
             // Assert
             Assert.True(result);
         }
+
+        [Test]
+        public void IsMemberLevel_UserLevelIsNotMember_ReturnsFalse()
+        {
+            // Arrange
+            var userLevel = Enumeration.FromValue<UserLevel>(UserLevel.Agent.Value);
+
+            // Act
+            var result = userLevel.IsMemberLevel();
+
+            // Assert
+            Assert.False(result);
+        }
     }
 }

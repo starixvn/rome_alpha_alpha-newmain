@@ -41,7 +41,7 @@ namespace Alpha.Main.Tests.Criteria.Otp
 
         [TestCase(0)]
         [TestCase(-1)]
-        public void IsValid_CustIdIsLessThanOrEqualZero_ReturnsFalse(int custId)
+        public void IsValid_InvalidCustId_ReturnsFalse(int custId)
         {
             // Arrange
             var command = new DeleteCustOtpSecretKeyCommand();
@@ -60,7 +60,7 @@ namespace Alpha.Main.Tests.Criteria.Otp
         }
 
         [Test]
-        public void IsValid_SubAccIdIsLessThanZero_ReturnsFalse()
+        public void IsValid_InvalidSubAccId_ReturnsFalse()
         {
             // Arrange
             var command = new DeleteCustOtpSecretKeyCommand();
@@ -80,7 +80,7 @@ namespace Alpha.Main.Tests.Criteria.Otp
 
         [TestCase(0)]
         [TestCase(-1)]
-        public void IsValid_UserIdIsLessThanOrEqualZero_ReturnsFalse(int userId)
+        public void IsValid_InvalidUserId_ReturnsFalse(int userId)
         {
             // Arrange
             var command = new DeleteCustOtpSecretKeyCommand();

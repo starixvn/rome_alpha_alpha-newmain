@@ -172,7 +172,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         }
 
         [Test]
-        public void HandleResetMainAccountPasswordCommand_DoesNotHaveUpdatePermission_ReturnUnAuthorizedResult()
+        public void HandleResetMainAccountPasswordCommand_DoesNotHaveUpdatePermission_ReturnUnauthorizedResult()
         {
             // Arrange
             userSession.IsSubAcc.Returns(true);

@@ -22,7 +22,7 @@ namespace Alpha.Main.Tests.Criteria.Otp
 
         [TestCase(1, 0)]
         [TestCase(1, 1)]
-        public void IsValid_CustIdIsGreaterThanZeroAndSubAccIdIsGreaterThanOrEqualZero_ReturnsTrue(int custId, int subAccId)
+        public void IsValid_ValidCustIdAndValidSubAccId_ReturnsTrue(int custId, int subAccId)
         {
             // Arrange
             var getCustomerOtpCriteria = new GetCustomerOtpCriteria();
@@ -41,7 +41,7 @@ namespace Alpha.Main.Tests.Criteria.Otp
         [TestCase(0, 0)]
         [TestCase(-1, 0)]
         [TestCase(1, -1)]
-        public void IsValid_CustIdIsLessThanOrEqualZeroOrSubAccIdIsLessThanZero_ReturnsFalse(int custId, int subAccId)
+        public void IsValid_InvalidCustIdOrInvalidSubAccId_ReturnsFalse(int custId, int subAccId)
         {
             // Arrange
             var getCustomerOtpCriteria = new GetCustomerOtpCriteria();

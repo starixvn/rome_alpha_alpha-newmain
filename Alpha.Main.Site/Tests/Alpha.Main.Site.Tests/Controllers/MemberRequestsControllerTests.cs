@@ -36,7 +36,7 @@ namespace Alpha.Main.Site.Tests.Controllers
             userSession.Language.Returns("en-us");
             userSession.RoleId.Returns(roleId);
             var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
-            var expectedViewName = $"~/Views/MemberRequests/Guidelines/{userSession.Language.ToLowerInvariant()}/{custLevel.DisplayName}/Index.cshtml";
+            var expectedViewName = $"~/Views/MemberRequests/Guidelines/en-us/{custLevel.DisplayName}/Index.cshtml";
 
             // Act
             var actualView = memberRequestsController.Guidelines() as ViewResult;

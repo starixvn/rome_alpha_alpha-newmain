@@ -21,7 +21,7 @@
         }
 
         [Test]
-        public void IsValid_InValidCustId_ReturnsFalse()
+        public void IsValid_InvalidCustId_ReturnsFalse()
         {
             // Arrange
             var productRequestCriteria = new ProductRequestCriteria(0);

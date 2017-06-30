@@ -206,6 +206,7 @@
     <Compile Include="Controllers\DefaultControllerTests.cs" />
     <Compile Include="Controllers\LanguageControllerTests.cs" />
     <Compile Include="Controllers\MemberRequestsControllerTests.cs" />
+    <Compile Include="Controllers\NoticeControllerTests.cs" />
     <Compile Include="Controllers\OtpControllerTests.cs" />
     <Compile Include="Controllers\PasswordControllerTests.cs" />
     <Compile Include="Controllers\SecurityCodeControllerTests.cs" />
@@ -234,6 +235,7 @@
     <Compile Include="ViewModels\Dashboard\Statistics\StatisticsViewModelTests.cs" />
     <Compile Include="ViewModels\Message\MessagesViewModelTests.cs" />
     <Compile Include="ViewModels\Message\MessageWrapperTests.cs" />
+    <Compile Include="ViewModels\Security\ResetOtpViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

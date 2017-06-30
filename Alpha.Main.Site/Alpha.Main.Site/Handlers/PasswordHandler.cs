@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using System;
     using Alpha.SecurityCode.Services;
     using AppResources;
     using Main.Models;
@@ -12,6 +11,7 @@
     using Services;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using System;
     using ViewModels.Security;
 
     public class PasswordHandler :
@@ -159,11 +159,6 @@
 
         private Result ChangeMainAccountPassword(ChangePasswordCommand message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Message cannot be null");
-            }
-
             return this.passwordService.ChangeMainAccountPassword(new ChangeMainAccountPasswordParam
             {
                 ActorId = message.ActorId,
@@ -182,11 +177,6 @@
 
         private Result ChangeSubAccountPassword(ChangePasswordCommand message)
         {
-            if (message == null)
-            {
-                throw new ArgumentNullException(nameof(message), "Message cannot be null");
-            }
-
             return this.passwordService.ChangeSubAccountPassword(
             new ChangeSubAccountPasswordParam
             {

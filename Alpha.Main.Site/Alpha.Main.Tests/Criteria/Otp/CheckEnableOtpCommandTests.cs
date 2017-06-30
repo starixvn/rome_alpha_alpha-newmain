@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Criteria.Otp
 {
-    using Alpha.Main.Criteria.Otp;
+    using Main.Criteria.Otp;
     using NUnit.Framework;
 
     [TestFixture]
@@ -25,7 +25,7 @@
         [TestCase(0, 0)]
         [TestCase(-1, 0)]
         [TestCase(1, -1)]
-        public void IsValid_CustIdIsLessThanOrEqualZeroOrSubAccIdIsLessThanZero_ReturnsFalse(int custId, int subAccId)
+        public void IsValid_InvalidCustIdOrInvalidSubAccId_ReturnsFalse(int custId, int subAccId)
         {
             // Arrange
             var checkEnableOtpCommand = new CheckEnableOtpCommand();
@@ -41,7 +41,7 @@
 
         [TestCase(1, 0)]
         [TestCase(1, 1)]
-        public void IsValid_CustIdIsGreaterThanZeroOrSubAccIdIsGreaterThanOrEqualZero_ReturnsTrue(int custid, int subAccId)
+        public void IsValid_ValidCustIdOrValidSubAccId_ReturnsTrue(int custid, int subAccId)
         {
             // Arrange
             var checkEnableOtpCommand = new CheckEnableOtpCommand();

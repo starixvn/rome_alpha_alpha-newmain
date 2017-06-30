@@ -229,6 +229,34 @@ namespace Alpha.Main.Tests.Services
 
         #endregion
 
+        #region Generate Security Token
+
+        [Test]
+        public void GenerateSecurityToken_Always_CallsEncryptorRandomString()
+        {
+            // Act
+            securityCodeService.GenerateSecurityToken();
+
+            // Assert
+            encryptor.Received().RandomString(Arg.Is(6));
+        }
+
+        [Test]
+        public void GenerateSecurityToken_Always_ReturnCorrectValue()
+        {
+            // Arrange
+            var expectedSecurityToken = "123456";
+            encryptor.RandomString(Arg.Is(6)).Returns(expectedSecurityToken);
+
+            // Act
+            var actualSecurityToken = securityCodeService.GenerateSecurityToken();
+
+            // Assert
+            Assert.AreEqual(expectedSecurityToken, actualSecurityToken);
+        }
+
+        #endregion
+
         #region Change Main Account Security Code
 
         [Test]
