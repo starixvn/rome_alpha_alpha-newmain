@@ -180,6 +180,30 @@ namespace Alpha.Main.Tests.Services
         }
 
         [Test]
+        public void VerifySecurityCode_AccountIsClosedAndSubAccountIdIsEqualZero_CallsCloseCasinoAccount()
+        {
+            // Arrange
+            var param = new VerifySecurityCodeParam
+            {
+                SecurityCode = "SecurityCode",
+                Salt = "Salt",
+                CustId = 1,
+                SubAccId = 0,
+                IP = "127.0.0.1",
+                Language = "en"
+            };
+
+            securityCodeDataAccess.UpdateSecurityCode(Arg.Any<UpdateMainAccountSecurityCodeCounterCriteria>()).Returns(new Result { Code = 200 });
+            encryptor.ComputeHash(Arg.Is("SHA256"), Arg.Any<string>(), Arg.Is(param.Salt)).Returns("SecurityCode");
+
+            // Act
+            securityCodeService.VerifySecurityCode(param);
+
+            // Assert
+            securityCodeService.Received().CloseCasinoAccount(param.CustId, param.IP);
+        }
+
+        [Test]
         public void VerifySecurityCode_UpdateSecurityCodeFailed_UpdatesResultCodeAndMessage()
         {
             // Arrange

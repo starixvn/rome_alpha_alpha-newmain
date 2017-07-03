@@ -2,7 +2,7 @@
 
 namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
+    using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
     using Models.Requests;
     using NSubstitute;
@@ -11,18 +11,21 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Site.Requests;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
+    using System;
 
     [TestFixture]
     public class LanguageHandlerTests
     {
         private LanguageHandler languageHandler;
         private IUserSession userSession;
+        private CompareLogic compareLogic;
 
         [SetUp]
         public void SetUp()
         {
             languageHandler = new LanguageHandler();
             userSession = Substitute.For<IUserSession>();
+            compareLogic = new CompareLogic();
         }
 
         [Test]
@@ -169,7 +172,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             var viewModel = languageHandler.Handle(query);
 
             // Assert
-            Assert.AreEqual(expectedViewModel, viewModel);
+            Assert.True(compareLogic.Compare(expectedViewModel, viewModel).AreEqual);
         }
 
         [TestCase("", Language.Default)]

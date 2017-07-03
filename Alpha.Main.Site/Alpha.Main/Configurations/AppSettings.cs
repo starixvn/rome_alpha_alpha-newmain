@@ -22,11 +22,6 @@
 
         private static List<string> devicesUseCustomScrollbar = Converter.ToString2(Settings["DevicesUseCustomScrollbar"]).Split(',').ToList();
 
-        private static string googleAnalyticId = Settings["GoogleAnalyticId"];
-
-        private static bool isMBCSite = !string.IsNullOrWhiteSpace(Settings["SiteGroup"])
-                && Settings["SiteGroup"] == "IBCBET";
-
         public static string AssetAppPath
         {
             get
@@ -146,10 +141,11 @@
 
         public static bool EnablePlayForFun => Settings["EnablePlayForFun"] == "true";
 
-        public static string GoogleAnalyticId => googleAnalyticId;
+        public static string GoogleAnalyticId => Settings["GoogleAnalyticId"];
 
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "MBC", Justification = "Reviewed!")]
-        public static bool IsMBCSite => isMBCSite;
+        public static bool IsMBCSite => !string.IsNullOrWhiteSpace(Settings["SiteGroup"])
+            && Settings["SiteGroup"] == "IBCBET";
 
         public static bool DisabledVietnamese => IsMBCSite;
 

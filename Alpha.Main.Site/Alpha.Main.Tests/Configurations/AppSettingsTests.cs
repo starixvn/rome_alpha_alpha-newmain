@@ -290,6 +290,98 @@ namespace Alpha.Main.Tests.Configurations
         }
 
         [Test]
+        public void GoogleAnalyticId_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["GoogleAnalyticId"] = "UA-93265717-1"
+            };
+
+            var expectedSetting = "UA-93265717-1";
+
+            // Act
+            var actualSetting = AppSettings.GoogleAnalyticId;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void IsMBCSite_HasConfigAndValueEqualIBCBET_ReturnsTrue()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["SiteGroup"] = "IBCBET"
+            };
+
+            // Act
+            var actualSetting = AppSettings.IsMBCSite;
+
+            // Assert
+            Assert.True(actualSetting);
+        }
+
+        [Test]
+        public void IsMBCSite_HasConfigAndValueNotEqualIBCBET_ReturnsFalse()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["SiteGroup"] = "ABC"
+            };
+
+            // Act
+            var actualSetting = AppSettings.IsMBCSite;
+
+            // Assert
+            Assert.False(actualSetting);
+        }
+
+        [Test]
+        public void IsMBCSite_NotHasConfig_ReturnsFalse()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection();
+
+            // Act
+            var actualSetting = AppSettings.IsMBCSite;
+
+            // Assert
+            Assert.False(actualSetting);
+        }
+
+        [Test]
+        public void ShowGoldDeluxeAnnouncement_IsMBCSiteIsFalse_ReturnsFalse()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection();
+
+            // Act
+            var actualSetting = AppSettings.ShowGoldDeluxeAnnouncement;
+
+            // Assert
+            Assert.False(actualSetting);
+        }
+
+        [Test]
+        public void ShowGoldDeluxeAnnouncement_IsMBCSiteIsTrue_ReturnsTrue()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["SiteGroup"] = "IBCBET"
+            };
+
+            // Act
+            var actualSetting = AppSettings.ShowGoldDeluxeAnnouncement;
+
+            // Assert
+            Assert.True(actualSetting);
+        }
+
+        [Test]
         public void NoticeTypes_HasConfig_ReturnsCorrectSetting()
         {
             // Arrange

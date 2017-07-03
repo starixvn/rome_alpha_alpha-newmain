@@ -1,7 +1,5 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using System;
-    using System.Text.RegularExpressions;
     using Alpha.Main.Services;
     using AppResources;
     using CasinoLibrary.Model.UserException;
@@ -11,6 +9,8 @@
     using Params.SecurityCode;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
+    using System;
+    using System.Text.RegularExpressions;
 
     public class SecurityCodeServiceImpl : SecurityCodeService
     {
@@ -244,15 +244,18 @@
             return this.encryptor.RandomString(6);
         }
 
-        private void CloseCasinoAccount(int custId, string ip)
+        internal void CloseCasinoAccount(int custId, string ip)
         {
-            try
+            if (casinoService.Customer != null)
             {
-                casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
-            }
-            catch (ErrorException ex)
-            {
-                Logs.WriteInfo(ex);
+                try
+                {
+                    casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
+                }
+                catch (ErrorException ex)
+                {
+                    Logs.WriteInfo(ex);
+                }
             }
         }
 

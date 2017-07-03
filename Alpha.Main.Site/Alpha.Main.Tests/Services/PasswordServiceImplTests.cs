@@ -4,6 +4,7 @@ using Alpha.Main.DataAccesses;
 using Alpha.Main.Models;
 using Alpha.Main.Params.Password;
 using Alpha.Main.Services.Impl;
+using Alpha.Main.Tests.Constants;
 using NSubstitute;
 using NUnit.Framework;
 using Sunplus.Agent.Model.Casino;
@@ -27,7 +28,7 @@ namespace Alpha.Main.Tests.Services
             passwordDataAccess = Substitute.For<PasswordDataAccess>();
             casinoService = Substitute.For<CasinoService>();
 
-            passwordService = new PasswordServiceImpl(
+            passwordService = Substitute.ForPartsOf<PasswordServiceImpl>(
                 encryptor,
                 passwordDataAccess,
                 casinoService);
@@ -94,10 +95,14 @@ namespace Alpha.Main.Tests.Services
             var currentPassword = "1234aa";
             var param = new ChangeMainAccountPasswordParam
             {
+                CustId = CustId.ValidId,
                 NewPassword = newPassword,
                 CurrentPassword = currentPassword,
+                IsCasinoDisabled = true,
+                LanguageKey = "en",
+                IP = "127.0.0.1",
+                ActorId = 1
             };
-
 
             encryptor.HexDecode(Arg.Is(param.CurrentPassword)).Returns("CurrentPassword");
             encryptor.HexDecode(Arg.Is(param.NewPassword)).Returns("NewPassword");
@@ -123,6 +128,45 @@ namespace Alpha.Main.Tests.Services
                         && p.OldPwd == "OldPassword"
                         && p.UserPwd == "UserPassword"
                         && p.UserId == param.ActorId));
+        }
+
+        [Test]
+        public void ChangeMainAccountPassword_UpdatePasswordSuccessfulAndIsCasinoSync_CallsChangeCasionAccountPassword()
+        {
+            // Arrange
+            var newPassword = "1234aaAA";
+            var currentPassword = "1234aa";
+            var param = new ChangeMainAccountPasswordParam
+            {
+                NewPassword = newPassword,
+                CurrentPassword = currentPassword,
+                IsCasinoSync = true,
+                ActorId = 1,
+                ActorName = "ActorName",
+                IP = "127.0.0.1"
+            };
+
+            encryptor.HexDecode(Arg.Is(param.CurrentPassword)).Returns("CurrentPassword");
+            encryptor.HexDecode(Arg.Is(param.NewPassword)).Returns("NewPassword");
+
+            encryptor.RC4(Arg.Any<string>(), Arg.Is("CurrentPassword")).Returns(currentPassword);
+            encryptor.RC4(Arg.Any<string>(), Arg.Is("NewPassword")).Returns(newPassword);
+
+            encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
+            encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
+
+            passwordDataAccess.UpdatePassword(Arg.Any<UpdateMainAccountPasswordCriteria>()).Returns(new Result { Code = 0 });
+
+            // Act
+            passwordService.ChangeMainAccountPassword(param);
+
+            // Assert
+            passwordService.Received().ChangeCasinoAccountPassword(
+                param.CustId,
+                "UserPassword",
+                param.ActorId,
+                param.ActorName,
+                param.IP);
         }
 
         #endregion
@@ -265,6 +309,50 @@ namespace Alpha.Main.Tests.Services
                         && c.SubAccId == criteria.SubAccId
                         && c.DisCasino == criteria.DisCasino
                         && c.UserId == criteria.UserId));
+        }
+
+        [Test]
+        public void ResetMainAccountPassword_UpdatePasswordSuccessfulAndIsCasinoSync_CallsChangeCasionAccountPassword()
+        {
+            // Arrange
+            var param = new ResetMainAccountPasswordParam
+            {
+                IsResetMemberPassword = true,
+                CustId = 1,
+                LanguageKey = "en",
+                IP = "127.0.0.1",
+                SubAccountId = 0,
+                IsCasinoDisabled = true,
+                ActorId = 1,
+                ActorName = "ActorName",
+                IsCasinoSync = true
+            };
+            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
+            encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
+
+            var criteria = new ResetMainAccountPasswordCriteria
+            {
+                CustId = param.CustId,
+                Language = param.LanguageKey,
+                LoginIP = param.IP,
+                UserPwd = "EncodedPassword",
+                SubAccId = param.SubAccountId,
+                DisCasino = param.IsCasinoDisabled,
+                UserId = param.ActorId
+            };
+
+            passwordDataAccess.UpdatePassword(Arg.Any<ResetMainAccountPasswordCriteria>()).Returns(new Result { Code = 0 });
+
+            // Act
+            passwordService.ResetMainAccountPassword(param);
+
+            // Assert
+            passwordService.Received().ChangeCasinoAccountPassword(
+                param.CustId,
+                "EncodedPassword",
+                param.ActorId,
+                param.ActorName,
+                param.IP);
         }
 
         #endregion
