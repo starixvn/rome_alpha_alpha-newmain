@@ -35,6 +35,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         public const int ChangeCommForSuper = 6619201; ////endate: 12/31/2016
         public const int PremiumBaccarat = 6842501; ////endate: 01/02/2017
         public const int ShuttingDownLiveCasino = 7011701; ////endate: 01/31/2017
+        public const int EnableYesterdayTransfer = 7429101; ////endate: 07/20/2017
 
         public HotAnnouncementQuery() : this(null, null, null, null, null, null)
         {
@@ -115,7 +116,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
                     { NotOfferedAllbet,  UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) && !UserPermission.IsShowLiveCasino },
                     { ChangeCommForSuper,  UserPermission.IsShowLiveCasino || UserPermission.IsShowGoldDeluxeSettingForCredit || UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) },
                     { PremiumBaccarat,  UserPermission.IsShowLiveCasino },
-                    { ShuttingDownLiveCasino,  UserPermission.IsShowLiveCasino }
+                    { ShuttingDownLiveCasino,  UserPermission.IsShowLiveCasino },
+                    { EnableYesterdayTransfer,  UserSession.Current.IsAllDayBalTransfer }
                 };
             }
         }

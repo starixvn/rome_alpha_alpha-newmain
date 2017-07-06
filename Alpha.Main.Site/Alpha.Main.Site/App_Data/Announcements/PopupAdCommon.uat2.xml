@@ -8,6 +8,87 @@
       LCS: 7,
       domain: 5
   -->
+  <PopupAnnouncement id="7429101" name="New Agent Cash Balance" startdate="07/01/2017" enddate="07/20/2017">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce that you are allowed to transfer your Cash Balance to your downlines and vice versa, from now on. Moreover, the quantity of Yesterday Balance transfer for each member is now unlimited.<br />
+        If you need further assistance, please contact our Customer Service Department.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        我们在此宣布，即日起，您可以将您的现金余额转至您的下线，反之亦然。此外，每位会员的昨天余额转账次数是无限制的。<br />
+        若您需要进一步的帮助，请联系我们的客服部。
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        我們在此宣布，即日起，您可以將您的現金余額轉至您的下線，反之亦然。此外，每位會員的昨天余額轉賬次數是無限制的。<br />
+        若您需要進一步的幫助，請聯系我們的客服部。
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce that you are allowed to transfer your Cash Balance to your downlines and vice versa, from now on. Moreover, the quantity of Yesterday Balance transfer for each member is now unlimited.<br />
+        If you need further assistance, please contact our Customer Service Department.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We are pleased to announce that you are allowed to transfer your Cash Balance to your downlines and vice versa, from now on. Moreover, the quantity of Yesterday Balance transfer for each member is now unlimited.<br />
+        If you need further assistance, please contact our Customer Service Department.
+      </p>
+      <p>
+        Thank you.
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        เรายินดีที่จะแจ้งให้ทราบว่าคุณสามารถโอนยอดคงเหลือเงินสดของคุณไปยังดาวน์ไลน์และในทางกลับกันได้<br />
+        หากคุณต้องการความช่วยเหลือเพิ่มเติมกรุณาติดต่อฝ่ายบริการลูกค้าของเรา.
+      </p>
+      <p>
+        ขอบคุณค่ะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
+      <p>
+        Chúng tôi trân trọng thông báo việc cho phép bạn thực hiện giao dịch giữa Số dư tài khoản của bạn và cấp dưới. Ngoài ra, việc thực hiện giao dịch với Tổng số tiền giao dịch cho từng tài khoản đã không còn bị giới hạn số lần thực hiện trong ngày.<br />
+        Nếu cần trợ giúp, xin quý khách hãy liên hệ bộ phận Hỗ trợ khách hàng của chúng tôi.
+      </p>
+      <p>
+        Trân Trọng.
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
 	<PopupAnnouncement id="6946101" name="BAIO - New Bet Types Announcement" startdate="05/09/2017" enddate="04/31/2017"  effectdate="05/18/2017">
 		<en-US src="">
 			<p>Dear valued agents,</p>
