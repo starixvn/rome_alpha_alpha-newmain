@@ -61,6 +61,14 @@
             }
         }
 
+        public static string MessageAppPath
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["MessageAppPath"];
+            }
+        }
+
         public static string MemberInfoAppPath
         {
             get

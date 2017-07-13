@@ -11,6 +11,12 @@
         }
 
         public static string OldMainPath(string virtualPath = "~/")
+        public static string MessageSiteUrl(string virtualPath = "~/")
+        {
+            return AppPathHelper.GetAppPath(AppSettings.MessageAppPath, virtualPath);
+        }
+
+        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
         {
             return AppPathHelper.GetAppPath(AppSettings.OldMainAppPath, virtualPath);
         }

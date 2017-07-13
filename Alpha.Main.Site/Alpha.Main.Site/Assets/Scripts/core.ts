@@ -15,6 +15,9 @@ var alpha = {
             : "not found",
         exTotalBetsForecastRootPath: document.getElementById('exTotalBetsForecastRootPath') != null
             ? (<HTMLInputElement>document.getElementById('exTotalBetsForecastRootPath')).value
+            : "not found",
+        messageRootPath: document.getElementById('messageRootPath') != null
+            ? (<HTMLInputElement>document.getElementById('messageRootPath')).value
             : "not found"
     },
     user:

@@ -9,6 +9,9 @@
       "Assets/scripts/home/header-msg.js",
       "Assets/scripts/home/header-msg-mobile.js",
       "Assets/scripts/home/menu-bar.js",
+      "Assets/scripts/lib/base64.js",
+      "Assets/scripts/lib/utf8.js",
+      "Assets/scripts/announcement/announcementCounter.js",
       "Assets/scripts/announcement/announcement.js",
       "Assets/scripts/announcement/announcement-mobile.js",
       "Assets/scripts/customer-profiles/brief-profile.js"

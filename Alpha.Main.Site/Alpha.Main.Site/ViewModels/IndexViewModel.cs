@@ -56,6 +56,8 @@
 
         public string ExTotalBetsForecastRootPath => MicroSites.ExTotalBetsForecastSitePath();        
 
+        public string MessageSiteRootPath => MicroSites.MessageSiteUrl();
+
         public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
 
         public string PasswordHash { get; }

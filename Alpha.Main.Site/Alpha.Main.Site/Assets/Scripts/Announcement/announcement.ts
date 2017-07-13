@@ -6,73 +6,58 @@
 
     export class Base {
         protected $: JQueryStatic;
-        protected showedMessageIds: Array<string> = [];
-        protected securityCodeId: string = '20130426,20130526';
-        protected timeoutAnnouncement: number = 0;
-        protected announcementCookieName: string = '';
+        protected announcementCookie: AnnouncementCounter;
+        protected intervalAnnouncementId: number = 0;
+        protected messageIndex = 0;
         protected constants = {
             maximumTimeToShowAnnouncementPopUp: 5,
-            normalExpiredDays: 30,
-            securityCodeAnnouncementExpiredDay: 1,
-            timeToRemoveAnnouncement: 120000,
             announcementsTransitionTime: 30000
         }
         protected domElements = {
+            numberAnnouncement: 0,
             announcementId: null,
             popUpId: null,
             popUpPanel: null,
             popUpContainer: null,
             popUpContainerText: null,
             popUpContainerTextNoContent: null,
-            hideAdvertisement: null,
             announcementCookieId: null
         }
 
-        constructor($: JQueryStatic) {
+        constructor($: JQueryStatic, announcementCookie: AnnouncementCounter) {
             this.$ = $;
+            this.announcementCookie = announcementCookie;
         }
 
-        url = alpha.urls.mainRootPath + 'Announcement/HotAnnouncement';
+        url = alpha.urls.messageRootPath + 'Announcement/HotAnnouncement';
 
         init = () => {
-            this.loadAnnouncement(this.createLoadAnnoucementData(this.showedMessageIds), this.onSuccessLoadAnnouncement);
+            this.getAnnouncements(this.onSuccessLoadAnnouncement);
         }
 
         cacheElements = () => {
+            this.domElements.numberAnnouncement = parseInt(this.$("#numberAnnouncement").val());
             this.domElements.announcementId = this.$('#announcement-id');
             this.domElements.popUpId = this.$("#popup-id");
             this.domElements.popUpPanel = this.$("#popup_panel");
             this.domElements.popUpContainer = this.$('#popup-container');
             this.domElements.popUpContainerText = this.$('#popup-container-text');
             this.domElements.popUpContainerTextNoContent = this.$('#popup-container-text-no-content');
-            this.domElements.hideAdvertisement = this.$("#popup-container #chkHide");
             this.domElements.announcementCookieId = this.$("#announcement-cookies-id");
-        }
-
-        bindEvents = () => {
-            this.bindCommonEvents();
-
-            setTimeout(() => {
-                this.registerAnnouncementModal();
-            }, 2000);
         }
 
         bindCommonEvents = () => {
             this.domElements.popUpContainerText.find('.icon-close').on('click', () => {
-                this.removeAnnouncement();
+                clearInterval(this.intervalAnnouncementId);
             });
 
             this.domElements.popUpContainer.find('.icon-close').on('click', () => {
-                parent['announcement'].removeAnnouncement();
-            });
-
-            this.domElements.hideAdvertisement.on('click', (event) => {
-                this.doNotShowAnnouncement(this.$(event.target).is(':checked'));
+                clearInterval(this.intervalAnnouncementId);
             });
         }
 
-        loadAnnouncement = (data: ILoadAnnouncementData, onSuccess: (result: string) => void) => {
-            const ajaxSettings = this.createAjaxSettings('POST', this.url, data, onSuccess);
+        getAnnouncements = (onSuccess: (result: string) => void) => {
+            const ajaxSettings = this.createAjaxSettings('POST', this.url, onSuccess);
 
             this.$.ajax(ajaxSettings);
         }
@@ -86,59 +71,40 @@
         }
 
         showAnnouncementBase = (result: string) => {
-            this.removeAnnouncement();
-
             var div = document.createElement('div');
             div.innerHTML = result;
             div.setAttribute('id', 'announcement-id');
             document.body.appendChild(div);
 
+            this.messageIndex = 1;
             this.cacheElements();
-            this.announcementCookieName = this.getAnnouncementCookieName();
+            this.announcementCookie.init(this.domElements.announcementCookieId.val());
+            this.bindCommonEvents();
 
-            var popUp = this.domElements.popUpId;
-            var id = popUp.length ? popUp.val() : 0;
+            this.displayAnnouncementModal(this.messageIndex);
 
-            if (!this.checkShowedMessage(id)) {
-                this.showedMessageIds.push(id);
-            }
-
-            if (!alpha.isScreenLower768) {
-                var count = this.getAnnouncementShowCount();
-                if (count > this.constants.maximumTimeToShowAnnouncementPopUp) {
-                    setTimeout(this.removeAnnouncement, 1000);
-                    return;
-                }
-
-                this.increaseAnnouncementShowTimes();
-            }
-
-            var popUpPanel = this.domElements.popUpPanel;
-            if (id < 0 && popUpPanel) {
-                popUpPanel.css('display', 'none');
-            }
-
-            this.bindEvents();
+            this.intervalAnnouncementId = setInterval(this.registerFetchNextAnnouncement, this.constants.announcementsTransitionTime);
         }
 
-        removeAnnouncement = () => {
-            var announcementId = this.domElements.announcementId;
-            if (announcementId != null) {
-                announcementId.remove();
-                clearTimeout(this.timeoutAnnouncement);
+        registerFetchNextAnnouncement = () => {
+            this.hiddenAnnouncementModal(this.messageIndex);
 
-                if (!alpha.isScreenLower768) {
-                    setTimeout(() => {
-                        this.loadAnnouncement(this.createLoadAnnoucementData(this.showedMessageIds, 1), this.onSuccessLoadAnnouncement);
-                    }, this.constants.announcementsTransitionTime);
-                }
+            if (this.domElements.numberAnnouncement > 0 &&
+                this.messageIndex < this.domElements.numberAnnouncement) {
+                this.messageIndex++;
+                this.displayAnnouncementModal(this.messageIndex);
+            } else if (this.messageIndex >= this.domElements.numberAnnouncement) {
+                clearInterval(this.intervalAnnouncementId);
             }
+        }
+
+        increaseCounter = (id: number) => {
+            var announcementId = this.$("#announcement_" + id).find("#AnnouncementId").val();
+            this.announcementCookie.increaseCounter(announcementId);
         }
 
         onSuccessLoadAnnouncement = (result: string) => {
             this.showAnnouncement(result);
-
-            this.timeoutAnnouncement = setTimeout(this.removeAnnouncement, this.constants.timeToRemoveAnnouncement);
         }
 
         hasEmptyAnnouncementData = (html: any): boolean => {
@@ -147,106 +113,46 @@
             return id === "no-info";
         }
 
-        checkShowedMessage = (id) => {
-            const count = this.showedMessageIds.length;
+        displayAnnouncementModal = (id: number) => {
+            var isExcess = this.announcementCookie.isExccess(id.toString());
+            if (!isExcess) {
+                var popUpContainer = this.$("#announcement_" + id).find(".announcement-modal");
+                popUpContainer
+                    .modal({ show: true, backdrop: false })
+                    .tinyDraggable({ exclude: 'button.icon.icon-close.close, .modal-body, p, a' });
 
-            for (let i = 0; i < count; i++) {
-                if (id === this.showedMessageIds[i]) {
-                    return true;
-                }
+                this.increaseCounter(id);
             }
-
-            return false;
         }
 
-        registerAnnouncementModal = () => {
-            var popUpContainer = this.domElements.popUpContainerText.length
-                ? this.domElements.popUpContainerText
-                : this.domElements.popUpContainer;
-
-            popUpContainer
-                .modal({ show: true, backdrop: false })
-                .tinyDraggable({ exclude: 'button.icon.icon-close.close, .modal-body, p, a' });
+        hiddenAnnouncementModal = (id: number) => {
+            var popUpContainer = this.$("#announcement_" + id).find(".announcement-modal").remove();
         }
 
-        createAjaxSettings = (methodType: string, url: string, data: any, onSuccess: any): JQueryAjaxSettings => {
+        createAjaxSettings = (methodType: string, url: string, onSuccess: any): JQueryAjaxSettings => {
             let ajaxSettings: JQueryAjaxSettings = {
                 type: methodType,
                 url: url,
-                data: data,
+                data: null,
                 cache: false,
                 success: onSuccess
             };
 
             return ajaxSettings;
         }
-
-        createLoadAnnoucementData = (messageIds: Array<string>, announcementNext: number = 0): ILoadAnnouncementData => {
-            return {
-                messageIds: messageIds.join(','),
-                announcementNext: announcementNext
-            }
-        }
-
-        private doNotShowAnnouncement = (hide) => {
-            this.$.cookie(
-                this.announcementCookieName,
-                hide ? this.constants.maximumTimeToShowAnnouncementPopUp : 1,
-                { expires: this.constants.normalExpiredDays, path: '/' });
-        }
-
-        private increaseAnnouncementShowTimes = () => {
-            var count = this.getAnnouncementShowCount();
-            var popUpId = this.domElements.popUpId;
-            var cookieDays = this.securityCodeId.indexOf(popUpId.val()) == -1
-                ? this.constants.normalExpiredDays
-                : this.constants.securityCodeAnnouncementExpiredDay;
-            this.$.cookie(this.announcementCookieName, ++count, { expires: cookieDays, path: '/' });
-        }
-
-        private getAnnouncementShowCount = (): number => {
-            var cookieName = this.announcementCookieName;
-
-            if (cookieName == null) {
-                return 0;
-            }
-
-            var value = this.$.cookie(cookieName);
-            var count = parseInt(value, 10);
-
-            if (isNaN(count)) {
-                count = 0;
-            }
-
-            return count;
-        }
-
-        private getAnnouncementCookieName = () => {
-            try {
-                const popUpId = this.domElements.popUpId;
-
-                if (popUpId.length === 0) {
-                    return null;
-                }
-
-                if (parseInt(popUpId.val()) < 0) {
-                    return null;
-                }
-
-                return "-" + popUpId.val() + this.domElements.announcementCookieId.val();
-            } catch (e) {
-                return null;
-            }
-        }
     }
 }
 
+
+
 $(document).ready(() => {
+
+    let counter = new Announcement.AnnouncementCounter($);
     if (alpha.isScreenLower768) {
-        const mobileAnnouncement = new Announcement.Mobile($);
+        const mobileAnnouncement = new Announcement.Mobile($, counter);
         mobileAnnouncement.init();
     } else {
-        const announcement = new Announcement.Base($);
+        const announcement = new Announcement.Base($, counter);
         announcement.init();
-    }
+    }      
 })
