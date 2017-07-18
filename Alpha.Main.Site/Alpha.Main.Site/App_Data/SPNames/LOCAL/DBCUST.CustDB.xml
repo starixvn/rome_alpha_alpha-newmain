@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Functions>
+<Functions SiteId="105" SiteName="Alpha">
   <Function Name="Statistics">
     <Setting Key="Age_CustomerSelNewMembers" SpName="Age_CustomerSelNewMembers" DbName="DBCUST.CustDB.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="username" ObjectProperty="Username" />
