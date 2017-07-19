@@ -90,8 +90,7 @@ namespace Alpha.Main.Site.App_Start
 
             container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
-
-            container.RegisterPerWebRequest<AnnouncementService, AnnouncementServiceImpl>();
+                        
             container.RegisterPerWebRequest<SiteMenuService, SiteMenuServiceImpl>();
             container.RegisterPerWebRequest<CustomerProfileService, CustomerProfileServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeService, SecurityCodeServiceImpl>();

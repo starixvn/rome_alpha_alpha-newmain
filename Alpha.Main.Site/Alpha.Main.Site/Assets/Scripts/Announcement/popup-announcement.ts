@@ -1,9 +1,4 @@
-﻿module Announcement {
-    interface ILoadAnnouncementData {
-        messageIds: string;
-        announcementNext: number;
-    }
-
+﻿module PopupAnnouncement {
     export class Base {
         protected $: JQueryStatic;
         protected announcementCookie: AnnouncementCounter;
@@ -29,7 +24,7 @@
             this.announcementCookie = announcementCookie;
         }
 
-        url = alpha.urls.messageRootPath + 'Announcement/HotAnnouncement';
+        url = alpha.urls.messageRootPath + 'Announcement/PopupAnnouncement';
 
         init = () => {
             this.getAnnouncements(this.onSuccessLoadAnnouncement);
@@ -44,6 +39,10 @@
             this.domElements.popUpContainerText = this.$('#popup-container-text');
             this.domElements.popUpContainerTextNoContent = this.$('#popup-container-text-no-content');
             this.domElements.announcementCookieId = this.$("#announcement-cookies-id");
+        }
+
+        bindEvents = () => {
+            this.bindCommonEvents();
         }
 
         bindCommonEvents = () => {
@@ -79,7 +78,7 @@
             this.messageIndex = 1;
             this.cacheElements();
             this.announcementCookie.init(this.domElements.announcementCookieId.val());
-            this.bindCommonEvents();
+            this.bindEvents();
 
             this.displayAnnouncementModal(this.messageIndex);
 
@@ -116,7 +115,9 @@
         displayAnnouncementModal = (id: number) => {
             var isExcess = this.announcementCookie.isExccess(id.toString());
             if (!isExcess) {
+                this.$("#announcement_" + id).find(".list-action").removeClass('hidden');
                 var popUpContainer = this.$("#announcement_" + id).find(".announcement-modal");
+                popUpContainer.removeClass('hidden');
                 popUpContainer
                     .modal({ show: true, backdrop: false })
                     .tinyDraggable({ exclude: 'button.icon.icon-close.close, .modal-body, p, a' });
@@ -126,7 +127,8 @@
         }
 
         hiddenAnnouncementModal = (id: number) => {
-            var popUpContainer = this.$("#announcement_" + id).find(".announcement-modal").remove();
+            this.$("#announcement_" + id).find(".announcement-modal").addClass('hidden');
+            this.$("#announcement_" + id).find(".list-action").addClass('hidden');
         }
 
         createAjaxSettings = (methodType: string, url: string, onSuccess: any): JQueryAjaxSettings => {
@@ -147,12 +149,12 @@
 
 $(document).ready(() => {
 
-    let counter = new Announcement.AnnouncementCounter($);
+    let counter = new PopupAnnouncement.AnnouncementCounter($);
     if (alpha.isScreenLower768) {
-        const mobileAnnouncement = new Announcement.Mobile($, counter);
+        const mobileAnnouncement = new PopupAnnouncement.Mobile($, counter);
         mobileAnnouncement.init();
     } else {
-        const announcement = new Announcement.Base($, counter);
+        const announcement = new PopupAnnouncement.Base($, counter);
         announcement.init();
     }      
 })

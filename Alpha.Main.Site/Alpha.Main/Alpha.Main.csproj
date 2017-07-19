@@ -266,8 +266,6 @@
     <Compile Include="Helpers\MicroSites.cs" />
     <Compile Include="Helpers\SiteMapReader.cs" />
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
-    <Compile Include="Models\Announcements\HotAnnouncement.cs" />
-    <Compile Include="Models\Announcements\PersonalMessage.cs" />
     <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />
     <Compile Include="Models\Enumerations\UserLevel.cs" />
@@ -291,7 +289,6 @@
     <Compile Include="Models\SecurityCode\SecurityCodeStatus.cs" />
     <Compile Include="Models\Statistics\TopTurnoverMember.cs" />
     <Compile Include="Models\Statistics\TopWinningMember.cs" />
-    <Compile Include="Params\Announcements\GetHotAnnouncementsParams.cs" />
     <Compile Include="Params\Otp\ChangeOtpStatusParam.cs" />
     <Compile Include="Params\Otp\RemoveSecretKeyParam.cs" />
     <Compile Include="Params\Password\ResetMainAccountPasswordParam.cs" />
@@ -307,7 +304,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Services\AnnouncementService.cs" />
     <Compile Include="Services\Impl\MessageServiceImpl.cs" />
     <Compile Include="Services\Impl\NoticeServiceImpl.cs" />
     <Compile Include="Services\Impl\MemberRequestsServiceImpl.cs" />
@@ -320,7 +316,6 @@
     <Compile Include="Services\CachingManager.cs" />
     <Compile Include="Services\CustomerProfileService.cs" />
     <Compile Include="Services\BalanceInfoService.cs" />
-    <Compile Include="Services\Impl\AnnouncementServiceImpl.cs" />
     <Compile Include="Services\Impl\StatisticsServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingManagerImpl.cs" />
     <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />

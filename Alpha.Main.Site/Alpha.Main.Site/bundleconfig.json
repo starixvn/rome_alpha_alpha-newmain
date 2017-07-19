@@ -10,8 +10,9 @@
       "Assets/scripts/home/header-msg-mobile.js",
       "Assets/scripts/home/menu-bar.js",      
       "Assets/scripts/announcement/announcementCounter.js",
-      "Assets/scripts/announcement/announcement.js",
-      "Assets/scripts/announcement/announcement-mobile.js",
+      "Assets/scripts/announcement/popup-announcement.js",
+      "Assets/scripts/announcement/popup-announcement-mobile.js",
+      "Assets/scripts/announcement/header-announcement.js",
       "Assets/scripts/customer-profiles/brief-profile.js"
     ]
   },

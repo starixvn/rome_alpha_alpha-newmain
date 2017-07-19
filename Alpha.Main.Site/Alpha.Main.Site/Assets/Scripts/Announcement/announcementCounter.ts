@@ -1,4 +1,4 @@
-﻿module Announcement {
+﻿module PopupAnnouncement {
     interface IAnnouncementCounter {
         Id: string;
         Count: number;

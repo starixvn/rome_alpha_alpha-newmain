@@ -354,125 +354,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.napexternal.xml">
-      <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.napexternal2.xml">
-      <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.napinternal.xml">
-      <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.napinternal2.xml">
-      <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.pro2.xml">
-      <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.proi1.xml">
-      <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.sit.xml">
-      <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.uat2.xml">
-      <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.uati1.xml">
-      <DependentUpon>PopupAdAgentNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.napexternal.xml">
-      <DependentUpon>PopupAdCommon.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.napexternal2.xml">
-      <DependentUpon>PopupAdCommon.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.napinternal.xml">
-      <DependentUpon>PopupAdCommon.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.napinternal2.xml">
-      <DependentUpon>PopupAdCommon.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.pro2.xml">
-      <DependentUpon>PopupAdCommon.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.proi1.xml">
-      <DependentUpon>PopupAdCommon.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.sit.xml">
-      <DependentUpon>PopupAdCommon.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.uat2.xml">
-      <DependentUpon>PopupAdCommon.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.uati1.xml">
-      <DependentUpon>PopupAdCommon.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.napexternal.xml">
-      <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.napexternal2.xml">
-      <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.napinternal.xml">
-      <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.napinternal2.xml">
-      <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.pro2.xml">
-      <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.proi1.xml">
-      <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.sit.xml">
-      <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.uat2.xml">
-      <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.uati1.xml">
-      <DependentUpon>PopupAdMasterNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.napexternal.xml">
-      <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.napexternal2.xml">
-      <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.napinternal.xml">
-      <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.napinternal2.xml">
-      <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.pro2.xml">
-      <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.proi1.xml">
-      <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.sit.xml">
-      <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.uat2.xml">
-      <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.uati1.xml">
-      <DependentUpon>PopupAdSuperNeutral.xml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb_AGE.xml" />
@@ -534,28 +415,6 @@
     <Content Include="App_Data\SPNames\UAT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\UAT\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml" />
-    <Content Include="App_Data\UserMessage\ToolTipMessage.napexternal.xml">
-      <DependentUpon>ToolTipMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\UserMessage\ToolTipMessage.napinternal.xml">
-      <DependentUpon>ToolTipMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\UserMessage\ToolTipMessage.pro2.xml">
-      <DependentUpon>ToolTipMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\UserMessage\ToolTipMessage.proi1.xml">
-      <DependentUpon>ToolTipMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\UserMessage\ToolTipMessage.sit.xml">
-      <DependentUpon>ToolTipMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\UserMessage\ToolTipMessage.uat2.xml">
-      <DependentUpon>ToolTipMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\UserMessage\ToolTipMessage.uati1.xml">
-      <DependentUpon>ToolTipMessage.xml</DependentUpon>
-    </Content>
-    <Content Include="App_Data\UserMessage\ToolTipMessage.xml" />
     <Content Include="Assets\styles\home\_mixins2.scss" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.css">
       <DependentUpon>page.scss</DependentUpon>
@@ -807,8 +666,9 @@
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Regular.woff" />
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Regular.woff2" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.scss" />
-    <TypeScriptCompile Include="Assets\scripts\announcement\announcement.ts" />
-    <TypeScriptCompile Include="Assets\scripts\announcement\announcement-mobile.ts" />
+    <TypeScriptCompile Include="Assets\scripts\announcement\header-announcement.ts" />
+    <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement.ts" />
+    <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcementCounter.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
@@ -1102,25 +962,12 @@
     </Content>
     <Content Include="favico.ico" />
     <Content Include="Global.asax" />
-    <Content Include="App_Data\Announcements\PopupAdAgentNeutral.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdCommon.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdMasterNeutral.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\Announcements\PopupAdSuperNeutral.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <TypeScriptCompile Include="Assets\scripts\core.ts" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
     <Content Include="Assets\styles\security\lean-more.scss" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Announcement\HotAnnouncement.cshtml" />
     <Content Include="Assets\styles\home\page.scss" />
     <Content Include="App_Data\Alpha.sitemap">
       <SubType>Designer</SubType>
@@ -1144,9 +991,6 @@
     <Content Include="Views\Default\MenuBar.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\HeaderNav.cshtml" />
-    <Content Include="Views\Default\HeaderHotMsg.cshtml" />
-    <Content Include="Views\Announcement\HotAnnouncementWithSource.cshtml" />
-    <Content Include="Views\Announcement\HotAnnouncementWithText.cshtml" />
     <Content Include="Views\Language\List.cshtml" />
     <Content Include="Assets\Styles\Announcement\announcements.scss" />
     <Content Include="deployment.ignore" />
@@ -1251,7 +1095,6 @@
   <ItemGroup>
     <Compile Include="App_Start\DependencyConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\RedirectController.cs" />
@@ -1265,7 +1108,6 @@
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Handlers\AnnouncementHandler.cs" />
     <Compile Include="Handlers\MessageHandler.cs" />
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
     <Compile Include="Handlers\NoticeHandler.cs" />
@@ -1283,7 +1125,6 @@
     <Compile Include="Helpers\BrowserHelperImpl.cs" />
     <Compile Include="Helpers\StaticResources.cs" />
     <Compile Include="Requests\AllLanguagesQuery.cs" />
-    <Compile Include="Requests\Announcement\HotAnnouncementQuery.cs" />
     <Compile Include="Requests\BrowserQuery.cs" />
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />

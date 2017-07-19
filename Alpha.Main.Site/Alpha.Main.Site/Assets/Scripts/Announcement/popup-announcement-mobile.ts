@@ -1,6 +1,7 @@
-﻿module Announcement {
+﻿module PopupAnnouncement {
     export class Mobile extends Base {
         startLoading = () => {
+            this.$("#announcement-id").remove();
             this.getAnnouncements(this.onSuccessLoadAnnouncement);
         }
 
@@ -12,12 +13,12 @@
         bindEvents = () => {
             this.bindCommonEvents();
 
-            this.$("#prevButton").on('click', () => {
-                this.registerFetchNextAnnouncement();
+            this.$(".prevButton").on('click', () => {
+                this.registerFetchPrevAnnouncement();
             });
 
-            this.$("#nextButton").on('click', () => {
-                this.registerFetchPrevAnnouncement
+            this.$(".nextButton").on('click', () => {
+                this.registerFetchNextAnnouncement();
             });
         }
 
@@ -37,11 +38,10 @@
             if (this.hasEmptyAnnouncementData(result)) {
                 this.showEmptyAnnoucementNotification(this.$(result).val());
                 this.showRedCircleInIconAnnouncement(false);
-            }else{
+            } else {
                 this.showRedCircleInIconAnnouncement();
+                this.showAnnouncementBase(result);
             }
-
-            this.showAnnouncementBase(result);
         }
 
         onSuccessLoadAnnouncement = (result: string) => {
@@ -77,6 +77,6 @@
 
             loadAnnouncement();
             setInterval(loadAnnouncement, interval);
-        }       
+        }
     }
 }
