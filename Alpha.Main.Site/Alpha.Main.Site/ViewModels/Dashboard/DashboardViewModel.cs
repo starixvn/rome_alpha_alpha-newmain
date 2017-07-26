@@ -16,7 +16,7 @@
 
         public bool EnablePlayForFun => AppSettings.EnablePlayForFun;
 
-        public string OldMainRootPath => MicroSites.OldMainUrl("~/");
+        public string OldMainRootPath => MicroSites.OldMainPath("~/");
 
         public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
     }

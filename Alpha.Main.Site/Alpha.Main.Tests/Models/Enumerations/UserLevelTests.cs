@@ -23,7 +23,7 @@
             new object[] { UserLevel.Agent,  UserLevel.Master.Value, false },
             new object[] { UserLevel.Agent,  UserLevel.Agent.Value, false }
         };
-        
+
         private static object[] downlineUserLevelAndUplineValueDataSources =
         {
             new object[] { UserLevel.Super,  UserLevel.Super.Value, false },
@@ -36,7 +36,7 @@
             new object[] { UserLevel.Agent,  UserLevel.Master.Value, true },
             new object[] { UserLevel.Agent,  UserLevel.Agent.Value, false }
         };
-        
+
         private static object[] sameUseLevelDataSource =
         {
             new object[] { UserLevel.Super,  UserLevel.Super, true },
@@ -249,6 +249,32 @@
             var actualResult = userLevel1.IsNot(userLevel2);
 
             Assert.AreEqual(!result, actualResult);
+        }
+
+        [Test]
+        public void IsMemberLevel_UserLevelIsMember_ReturnsTrue()
+        {
+            // Arrange
+            var userLevel = Enumeration.FromValue<UserLevel>(UserLevel.Member.Value);
+
+            // Act
+            var result = userLevel.IsMemberLevel();
+
+            // Assert
+            Assert.True(result);
+        }
+
+        [Test]
+        public void IsMemberLevel_UserLevelIsNotMember_ReturnsFalse()
+        {
+            // Arrange
+            var userLevel = Enumeration.FromValue<UserLevel>(UserLevel.Agent.Value);
+
+            // Act
+            var result = userLevel.IsMemberLevel();
+
+            // Assert
+            Assert.False(result);
         }
     }
 }

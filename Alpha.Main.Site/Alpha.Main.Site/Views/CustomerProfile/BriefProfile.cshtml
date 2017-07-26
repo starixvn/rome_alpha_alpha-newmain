@@ -1,11 +1,11 @@
-@model BriefProfileViewModel
+﻿@model BriefProfileViewModel
 @{
     Layout = null;
     var changeNickNameUrl = $"{Model.OldMainRootApp}LoginOption?custId={Model.CustId}";
     var viewProfileUrl = $"{Model.OldMainRootApp}ProfilePicture";
     var mainFrameName = "main";
 }
-<div id="profile-content" 
+<div id="profile-content"
      data-introduce-nick-name-tooltip-cookie-name="@(Model.IntroduceNickNameTooltipCookieName)"
      data-is-default-avatar="@(Model.IsDefaultAvatar.ToString().ToLower())"
      data-nick-name="@(Model.NickName)">
@@ -41,7 +41,7 @@
                 </div>
             }
         }
-        <a class="otp" href="@(MicroSites.MainUrl("~/otp/SetUpOtp"))" target="@mainFrameName">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</a>
+        <a class="otp" href="@(MicroSites.MainPath("~/otp/SetUpOtp")) target="@mainFrameName">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</a>
     </div>
 </div>
 

@@ -50,11 +50,11 @@
 
         public string LanguageKey => message.LanguageKey;
 
-        public string OldMainRootPath => MicroSites.OldMainUrl("~/");
+        public string OldMainRootPath => MicroSites.OldMainPath("~/");
 
-        public string HowToUseRootPath => MicroSites.HowToUseUrl("~/");
+        public string HowToUseRootPath => MicroSites.HowToUsePath("~/");
 
-        public string ExTotalBetsForecastRootPath => MicroSites.ExTotalBetsForecastSiteUrl();        
+        public string ExTotalBetsForecastRootPath => MicroSites.ExTotalBetsForecastSitePath();        
 
         public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
 
@@ -67,12 +67,11 @@
         public bool IsInternalWebVPN => message.IsInternalWebVpn;
 
         [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
-        public string CurrentURLCookieName => CookieHelper.GetCurrentUrlCookieName(CustId, SubAccId, encodeDataFunction);
+        public string CurrentURLCookieName => CookieHelper.GetCookieNameOfCurrentPage(CustId, SubAccId, encodeDataFunction);
 
         public bool IsShowIntroduction => true;
 
-        [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
-        public string DefaultUrl => getDefaultUrl?.Invoke() ?? MainRootPath;
+        public string DefaultPath => getDefaultUrl?.Invoke() ?? MainRootPath;
 
         public HeaderNavViewModel HeaderNavViewModel => new HeaderNavViewModel(CustId, EnableSecurityCode, message.IsViewedMemberInfo);
 

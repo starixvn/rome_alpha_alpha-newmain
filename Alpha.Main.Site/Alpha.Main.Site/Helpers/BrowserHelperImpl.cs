@@ -67,7 +67,7 @@
                 && currentRequest.Browser.MajorVersion <= 9)
             {
                 browserViewModel.IsUnsupportedBrowser = true;
-                browserViewModel.DownloadNewBrowserUrl = "http://windows.microsoft.com/en-us/internet-explorer/download-ie";
+                browserViewModel.DownloadNewBrowserLink = "http://windows.microsoft.com/en-us/internet-explorer/download-ie";
                 return browserViewModel;
             }
 
@@ -75,7 +75,7 @@
                 && currentRequest.Browser.MajorVersion <= 27)
             {
                 browserViewModel.IsUnsupportedBrowser = true;
-                browserViewModel.DownloadNewBrowserUrl = "https://www.mozilla.org/firefox";
+                browserViewModel.DownloadNewBrowserLink = "https://www.mozilla.org/firefox";
                 return browserViewModel;
             }
 
@@ -85,7 +85,7 @@
                         && currentRequest.Browser.MinorVersion <= 1)))
             {
                 browserViewModel.IsUnsupportedBrowser = true;
-                browserViewModel.DownloadNewBrowserUrl = "https://support.apple.com/downloads/safari";
+                browserViewModel.DownloadNewBrowserLink = "https://support.apple.com/downloads/safari";
                 return browserViewModel;
             }
 

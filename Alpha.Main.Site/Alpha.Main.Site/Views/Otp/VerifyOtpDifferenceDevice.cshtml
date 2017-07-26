@@ -1,14 +1,11 @@
 ﻿@model VerifyOtpDifferenceDeviceViewModel
-
 @{
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
-
 @section css {
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
 }
-
 <div class="block">
     <form class="form-SC form-validation" id="otp-form">
         @Html.Action("Languages", "SecurityCode")
@@ -33,14 +30,11 @@
         </div>
     </form>
 </div>
-
 @Html.Hidden("requiredFieldMessage", Security.alertSecCodeEmpty)
-@Html.Hidden("oldMainRootPath", Alpha.Main.Helpers.MicroSites.OldMainUrl())
-@Html.Hidden("mainRootPath", Alpha.Main.Helpers.MicroSites.MainUrl())
-
+@Html.Hidden("oldMainRootPath", MicroSites.OldMainPath())
+@Html.Hidden("mainRootPath", MicroSites.MainPath())
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
-
-    <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/security/otp/verify-otp-difference-device")" type="text/javascript"></script>
+    <script src="@StaticResources.MainSiteScriptPath("~/assets/bundles/security/otp/verify-otp-difference-device")" type="text/javascript"></script>
 }

@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
-    using DataAccesses;
+    using Main.DataAccesses;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using System;
 
     [TestFixture]
     public class CustomerProfileServiceImplTests
@@ -17,7 +17,7 @@
         {
             customerProfileDataAccess = Substitute.For<CustomerProfileDataAccess>();
             customerProfileService = new CustomerProfileServiceImpl(customerProfileDataAccess);
-        }        
+        }
 
         [TestCase(0)]
         [TestCase(-100)]
@@ -31,7 +31,7 @@
         public void GetProfilePicture_CustomerImageDataIsEmpty_DefaultAvatarIsTrue()
         {
             // Arrange
-            var custId = 100;            
+            var custId = 100;
             byte[] emptyImageData = new byte[] { };
             customerProfileDataAccess
                 .GetCustomerImageData(custId)

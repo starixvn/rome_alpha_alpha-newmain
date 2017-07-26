@@ -37,6 +37,10 @@
       <HintPath>..\..\packages\Alpha.SecurityCode.3.0.0.4\lib\net40\Alpha.SecurityCode.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Alpha.Web, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Alpha.Web.1.0.0.7\lib\net40\Alpha.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0.2\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -101,6 +105,14 @@
       <HintPath>..\..\packages\CompareNETObjects.3.06.0.0\lib\net46\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MediatR, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MediatR.2.0.2\lib\net45\MediatR.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NSubstitute, Version=2.0.1.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NSubstitute.2.0.1-rc\lib\net45\NSubstitute.dll</HintPath>
       <Private>True</Private>
@@ -151,6 +163,31 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -163,26 +200,59 @@
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\RoleId.cs" />
     <Compile Include="Constants\Username.cs" />
+    <Compile Include="Controllers\AnnouncementControllerTests.cs" />
+    <Compile Include="Controllers\CustomerProfileControllerTests.cs" />
+    <Compile Include="Controllers\DashboardControllerTests.cs" />
+    <Compile Include="Controllers\DefaultControllerTests.cs" />
+    <Compile Include="Controllers\LanguageControllerTests.cs" />
+    <Compile Include="Controllers\MemberRequestsControllerTests.cs" />
+    <Compile Include="Controllers\NoticeControllerTests.cs" />
+    <Compile Include="Controllers\OtpControllerTests.cs" />
+    <Compile Include="Controllers\PasswordControllerTests.cs" />
+    <Compile Include="Controllers\SecurityCodeControllerTests.cs" />
+    <Compile Include="Controllers\StatisticsControllerTests.cs" />
     <Compile Include="Handlers\AnnouncementHandlerTests.cs" />
     <Compile Include="Handlers\BalanceInfoHandlerTests.cs" />
     <Compile Include="Handlers\CustomerProfileHandlerTests.cs" />
     <Compile Include="Handlers\DefaultHandlerTests.cs" />
+    <Compile Include="Handlers\MemberRequestsHandlerTests.cs" />
     <Compile Include="Handlers\MenuBarHandlerTests.cs" />
     <Compile Include="Handlers\LanguageHandlerTests.cs" />
     <Compile Include="Handlers\CustomerOtpHandlerTests.cs" />
     <Compile Include="Handlers\MessageHandlerTests.cs" />
     <Compile Include="Handlers\NoticeHandlerTests.cs" />
+    <Compile Include="Handlers\PasswordHandlerTests.cs" />
+    <Compile Include="Handlers\SecurityCodeHandlerTests.cs" />
     <Compile Include="Handlers\StatisticsHandlerTests.cs" />
+    <Compile Include="Handlers\UserMessageHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\ChangeLanguageCommandTests.cs" />
     <Compile Include="Requests\Dashboard\Notice\NoticeQueryTests.cs" />
     <Compile Include="Requests\Message\MessageQueryTests.cs" />
+    <Compile Include="Requests\Otp\ChangeOtpStatusCommandTests.cs" />
+    <Compile Include="Requests\Otp\CheckDifferenceDeviceCommandTests.cs" />
+    <Compile Include="Requests\Otp\RemoveOtpCommandTests.cs" />
+    <Compile Include="Requests\Otp\ResetOtpCommandTests.cs" />
+    <Compile Include="Requests\Otp\SetUpOtpCommandTests.cs" />
+    <Compile Include="Requests\Otp\SetUpOtpQueryTests.cs" />
+    <Compile Include="Requests\Otp\VerifyOtpCommandTests.cs" />
+    <Compile Include="Requests\Otp\VerifyOtpDifferentDeviceQueryTests.cs" />
+    <Compile Include="Requests\Password\ForceChangePasswordQueryTests.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommandTests.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommandTests.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommandTests.cs" />
+    <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeQueryTests.cs" />
+    <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommandTests.cs" />
+    <Compile Include="Requests\SecurityCode\SecurityCodeQueryTests.cs" />
+    <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommandTests.cs" />
     <Compile Include="ViewModels\Dashboard\BalanceInfo\BalanceInfoViewModelTests.cs" />
     <Compile Include="ViewModels\Dashboard\Notice\NoticeMessageWrapperTests.cs" />
     <Compile Include="ViewModels\Dashboard\Notice\NoticeViewModelTests.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\StatisticsViewModelTests.cs" />
+    <Compile Include="ViewModels\MenuBarViewModelTests.cs" />
     <Compile Include="ViewModels\Message\MessagesViewModelTests.cs" />
     <Compile Include="ViewModels\Message\MessageWrapperTests.cs" />
+    <Compile Include="ViewModels\Security\ResetOtpViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

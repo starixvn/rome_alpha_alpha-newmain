@@ -121,6 +121,10 @@
       <HintPath>..\packages\CasinoLibrary.1.0.2.17\lib\net40\HandHistoryLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=3.6.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
+      <HintPath>..\packages\CompareNETObjects.3.06.0.0\lib\net46\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="NSubstitute, Version=1.9.2.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
       <HintPath>..\packages\NSubstitute.1.9.2.0\lib\net45\NSubstitute.dll</HintPath>
@@ -228,28 +232,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\AppSettingsTests.cs" />
     <Compile Include="Constants\CustId.cs" />
     <Compile Include="Constants\LanguageTests.cs" />
     <Compile Include="Constants\RoleId.cs" />
+    <Compile Include="Criteria\Announcement\CheckProductAnnouncementCriteriaTests.cs" />
     <Compile Include="Criteria\Announcement\GetMessageTypeListCriteriaTests.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteriaTests.cs" />
     <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteriaTests.cs" />
     <Compile Include="Criteria\Announcement\UpdateViewStatusTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
+    <Compile Include="Criteria\MemberRequests\ProductRequestCriteriaTests.cs" />
     <Compile Include="Criteria\Message\GetMessageCriteriaTests.cs" />
     <Compile Include="Criteria\Notice\GetNoticeMessagesCriteriaTests.cs" />
     <Compile Include="Criteria\Notice\MarkMessageAsReadCriteriaTests.cs" />
+    <Compile Include="Criteria\Otp\CheckEnableOtpCommandTests.cs" />
+    <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommandTests.cs" />
+    <Compile Include="Criteria\Otp\GetCustomerOtpCriteriaTests.cs" />
+    <Compile Include="Criteria\Otp\GetDevicesCriteriaTests.cs" />
+    <Compile Include="Criteria\Otp\InsertCustomerDeviceInfoCommandTests.cs" />
+    <Compile Include="Criteria\Otp\InsertCustomerOtpCommandTests.cs" />
+    <Compile Include="Criteria\Otp\UpdateCustomerOtpStatusCommandTests.cs" />
+    <Compile Include="Criteria\Otp\UpdateCustomerStatusAfterVerifyOtpCommandTests.cs" />
+    <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteriaTests.cs" />
+    <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteriaTests.cs" />
+    <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteriaTests.cs" />
+    <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteriaTests.cs" />
+    <Compile Include="Criteria\SecurityCode\GetMainAccountSecurityCodeCriteriaTests.cs" />
+    <Compile Include="Criteria\SecurityCode\GetSubAccountSecurityCodeCriteriaTests.cs" />
+    <Compile Include="Criteria\SecurityCode\ResetSubAccountSecurityCodeCriteriaTests.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCounterCriteriaTests.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCriteriaTests.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCounterCriteriaTests.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateSubAccountSecurityCodeCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetNewMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteriaTests.cs" />
+    <Compile Include="DataAccesses\MessageDataAccessImplTests.cs" />
+    <Compile Include="DataAccesses\PasswordDataAccessImplTests.cs" />
+    <Compile Include="DataAccesses\SecurityCodeDataAccessImplTests.cs" />
+    <Compile Include="DataAccesses\StatisticsDataAccessImplTests.cs" />
     <Compile Include="Helpers\AppPathHelperTests.cs" />
     <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\Impl\JsonHelperImplTests.cs" />
+    <Compile Include="Models\Enumerations\EnumerationTests.cs" />
+    <Compile Include="Models\Enumerations\UserLevelForTesting.cs" />
     <Compile Include="Models\Message\MessageTests.cs" />
     <Compile Include="Services\Announcement\GetHotAnnouncement\LogInAndSettingChangedTest\NotAgentDirectLoginTest\EnableProductTest.cs" />
+    <Compile Include="Services\MemberRequestsServiceImplTest.cs" />
+    <Compile Include="Services\PasswordServiceImplTests.cs" />
+    <Compile Include="Services\SecurityCodeServiceImplTest.cs" />
     <Compile Include="TestData\Helper\ConstructorQuery\ParametersAmountConstructorQuery.cs" />
     <Compile Include="Helpers\Impl\DateTimeWrapTests.cs" />
     <Compile Include="TestData\Helper\FakeDataHelper.cs" />
@@ -307,6 +343,7 @@
     <Compile Include="Services\UserMessageServiceImplTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AppReadme\Compare-NET-Objects-Help.chm" />
     <None Include="TestData\Menus\EmptySiteMap.sitemap">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

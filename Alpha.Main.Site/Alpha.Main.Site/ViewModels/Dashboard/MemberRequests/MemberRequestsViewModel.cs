@@ -31,13 +31,13 @@
         public UserLevel UserLevel { get; }
 
         public string BuildEnableMemberRequest(int productId)
-            => $"{MicroSites.MemberInfoSiteUrl("~/")}/MemberRequests/Index?UserSelectedProductId={productId}";
+            => $"{MicroSites.MemberInfoSitePath("~/")}/MemberRequests/Index?UserSelectedProductId={productId}";
 
         public string BuildViewMemberRequestReport(int productId)
         {
             var action = UserLevel.IsAgentLevel() ? "Member" : "MasterOrAgent";
 
-            return $"{MicroSites.ReportSiteUrl("~/")}/PlayForFun/{action}?UserSelectedProductId={productId}";
+            return $"{MicroSites.ReportSitePath("~/")}/PlayForFun/{action}?UserSelectedProductId={productId}";
         }
     }
 }

@@ -1,8 +1,5 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text.RegularExpressions;
     using AppResources;
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
@@ -11,6 +8,9 @@
     using Params.Password;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
+    using System;
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
 
     public class PasswordServiceImpl : PasswordService
     {
@@ -20,7 +20,7 @@
         private static readonly Regex PasswordRule3 = new Regex(@"^(?=.*[A-Z]).{8,100}$");
         private static readonly Regex PasswordRule4 = new Regex(@"^(?=.*[\[\]\^\$\.\|\?\*\+\(\)\\~`\!@#%&\-_+={}'""<>:;,]).{8,100}$");
         private static readonly Regex MemberPasswordRule = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$");
-        private static readonly Regex NoWhiteSpace = new Regex(@"^\S*$");        
+        private static readonly Regex NoWhiteSpace = new Regex(@"^\S*$");
 
         private readonly Encryptor encryptor;
         private readonly PasswordDataAccess passwordDataAccess;
@@ -84,15 +84,14 @@
             return updateResult;
         }
 
-        private void ChangeCasinoAccountPassword(
+        internal void ChangeCasinoAccountPassword(
             int custId,
             string encodedPassword,
             int actorId,
             string actorName,
             string ip)
         {
-            // var isCustomerExist = casinoService.Customer.CheckCustSetting(custId);
-            // if (isCustomerExist)
+            if (casinoService.Customer != null)
             {
                 try
                 {

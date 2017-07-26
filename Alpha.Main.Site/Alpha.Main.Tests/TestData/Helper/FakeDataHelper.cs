@@ -1,9 +1,9 @@
-namespace Alpha.Main.Tests.TestData.Helper
+﻿namespace Alpha.Main.Tests.TestData.Helper
 {
-    using System.Collections.Generic;
     using ConstructorQuery;
     using Ploeh.AutoFixture;
     using Ploeh.AutoFixture.Kernel;
+    using System.Collections.Generic;
 
     public static class FakeDataHelper
     {
@@ -46,17 +46,6 @@ namespace Alpha.Main.Tests.TestData.Helper
             var fixture = new Fixture();
 
             fixture = CustomizeConstructorInvoker<T>(fixture, ctorParamsAmount);
-
-            return fixture.CreateMany<T>();
-        }
-
-        public static IEnumerable<T> CreateMany<T>(string paramName, dynamic paramValue, int ctorParamsAmount = 0)
-        {
-            var fixture = new Fixture();
-
-            fixture = CustomizeConstructorInvoker<T>(fixture, ctorParamsAmount);
-
-            fixture = CustomizeParamerter(fixture, paramName, paramValue);
 
             return fixture.CreateMany<T>();
         }

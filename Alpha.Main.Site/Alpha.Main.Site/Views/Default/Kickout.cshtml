@@ -9,9 +9,9 @@
 <body>
 
     @Html.Hidden("message", Model)
-    @Html.Hidden("oldMainRootPath", MicroSites.OldMainUrl())
-    @Html.Hidden("mainRootPath", MicroSites.MainUrl())
+    @Html.Hidden("oldMainRootPath", MicroSites.OldMainPath())
+    @Html.Hidden("mainRootPath", MicroSites.MainPath())
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
-    <script src="@StaticResources.MainSiteScriptUrl("~/assets/bundles/kick-out")" type="text/javascript"></script>
+    <script src="@StaticResources.MainSiteScriptPath("~/assets/bundles/kick-out")" type="text/javascript"></script>
 </body>
 </html>

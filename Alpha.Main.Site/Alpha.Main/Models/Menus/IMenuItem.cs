@@ -10,8 +10,7 @@
 
         string DisplayName { get; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
-        string Url { get; set; }
+        string Link { get; set; }
 
         string AppPath { get; set; }
 

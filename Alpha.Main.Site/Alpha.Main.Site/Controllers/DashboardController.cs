@@ -2,11 +2,11 @@
 
 namespace Alpha.Main.Site.Controllers
 {
-    using System.Web.Mvc;
-    using System.Web.SessionState;
     using MediatR;
     using Requests.Dashboard.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
+    using System.Web.Mvc;
+    using System.Web.SessionState;
     using ViewModels.Dashboard;
     using Web;
 

@@ -1,43 +1,36 @@
 ﻿namespace Alpha.Main.Helpers
 {
-    using System.Diagnostics.CodeAnalysis;
-    using System.Web;
     using Configurations;
+    using System.Web;
 
     public static class MicroSites
     {
-        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string ExTotalBetsForecastSiteUrl(string virtualPath = "~/")
+        public static string ExTotalBetsForecastSitePath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.ExTotalBetsForecastAppPath, virtualPath);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string OldMainUrl(string virtualPath = "~/")
+        public static string OldMainPath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.OldMainAppPath, virtualPath);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string HowToUseUrl(string virtualPath = "~/")
+        public static string HowToUsePath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.HowToUseAppPath, virtualPath);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string ReportSiteUrl(string virtualPath = "~/")
+        public static string ReportSitePath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.ReportAppPath, virtualPath);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string MemberInfoSiteUrl(string virtualPath = "~/")
+        public static string MemberInfoSitePath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.MemberInfoAppPath, virtualPath);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
-        public static string MainUrl(string virtualPath = "~/")
+        public static string MainPath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, virtualPath);
         }

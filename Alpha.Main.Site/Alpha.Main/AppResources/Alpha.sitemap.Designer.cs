@@ -349,6 +349,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last Bets.
+        /// </summary>
+        public static string LastBets {
+            get {
+                return ResourceManager.GetString("LastBets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1 X 2.
         /// </summary>
         public static string lbl1x2 {

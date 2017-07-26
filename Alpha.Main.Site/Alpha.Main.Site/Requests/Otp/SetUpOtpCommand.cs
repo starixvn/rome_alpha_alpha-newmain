@@ -1,9 +1,5 @@
 ﻿namespace Alpha.Main.Site.Requests.Otp
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using Alpha.Main.Models;
     using MediatR;
     using Sunplus.Agent.Model.Base;

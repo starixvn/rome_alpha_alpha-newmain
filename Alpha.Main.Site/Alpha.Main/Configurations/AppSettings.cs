@@ -1,26 +1,32 @@
 ﻿namespace Alpha.Main.Configurations
 {
+    using Fanex.Common;
     using System;
     using System.Collections.Generic;
+    using System.Collections.Specialized;
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using Fanex.Common;
 
     public static class AppSettings
     {
-        private static List<string> devicesUseCustomScrollbar = Converter.ToString2(ConfigurationManager.AppSettings["DevicesUseCustomScrollbar"]).Split(',').ToList();
+        [ThreadStatic]
+        private static NameValueCollection settings;
 
-        private static string googleAnalyticId = ConfigurationManager.AppSettings["GoogleAnalyticId"];
+        internal static NameValueCollection Settings
+        {
+            get { return settings ?? ConfigurationManager.AppSettings; }
 
-        private static bool isMBCSite = !string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["SiteGroup"])
-                && ConfigurationManager.AppSettings["SiteGroup"] == "IBCBET";
+            set { settings = value; }
+        }
+
+        private static List<string> devicesUseCustomScrollbar = Converter.ToString2(Settings["DevicesUseCustomScrollbar"]).Split(',').ToList();
 
         public static string AssetAppPath
         {
             get
             {
-                return ConfigurationManager.AppSettings["AssetAppPath"];
+                return Settings["AssetAppPath"];
             }
         }
 
@@ -28,7 +34,7 @@
         {
             get
             {
-                return ConfigurationManager.AppSettings["OldMainAppPath"];
+                return Settings["OldMainAppPath"];
             }
         }
 
@@ -36,7 +42,7 @@
         {
             get
             {
-                return ConfigurationManager.AppSettings["HowToUseAppPath"];
+                return Settings["HowToUseAppPath"];
             }
         }
 
@@ -44,7 +50,7 @@
         {
             get
             {
-                return ConfigurationManager.AppSettings["ReportsAppPath"];
+                return Settings["ReportsAppPath"];
             }
         }
 
@@ -52,7 +58,7 @@
         {
             get
             {
-                return ConfigurationManager.AppSettings["ExTotalBetsForecastAppPath"];
+                return Settings["ExTotalBetsForecastAppPath"];
             }
         }
 
@@ -60,7 +66,7 @@
         {
             get
             {
-                return ConfigurationManager.AppSettings["MemberInfoAppPath"];
+                return Settings["MemberInfoAppPath"];
             }
         }
 
@@ -68,7 +74,7 @@
         {
             get
             {
-                return Converter.ToString2(ConfigurationManager.AppSettings["UsersAlwaysAllowAccessBetsListMonitoring"]);
+                return Converter.ToString2(Settings["UsersAlwaysAllowAccessBetsListMonitoring"]);
             }
         }
 
@@ -76,7 +82,7 @@
         {
             get
             {
-                return Converter.ToBool(ConfigurationManager.AppSettings["EnableBetsListMonitoring"]);
+                return Converter.ToBool(Settings["EnableBetsListMonitoring"]);
             }
         }
 
@@ -84,7 +90,7 @@
         {
             get
             {
-                return Converter.ToString2(ConfigurationManager.AppSettings["VirtualDirectory"]);
+                return Converter.ToString2(Settings["VirtualDirectory"]);
             }
         }
 
@@ -92,7 +98,7 @@
         {
             get
             {
-                return Converter.ToString2(ConfigurationManager.AppSettings["NonUseSecurityCodeSites"]);
+                return Converter.ToString2(Settings["NonUseSecurityCodeSites"]);
             }
         }
 
@@ -100,7 +106,7 @@
         {
             get
             {
-                return Converter.ToString2(ConfigurationManager.AppSettings["AssetsApp:StaticResourcesVersion"]);
+                return Converter.ToString2(Settings["AssetsApp:StaticResourcesVersion"]);
             }
         }
 
@@ -109,7 +115,7 @@
         {
             get
             {
-                return Converter.ToString2(ConfigurationManager.AppSettings["TotalBetsForecast:AllowedSitesToViewTBF"]);
+                return Converter.ToString2(Settings["TotalBetsForecast:AllowedSitesToViewTBF"]);
             }
         }
 
@@ -121,24 +127,25 @@
             }
         }
 
-        public static string StoreProcedurePath => ConfigurationManager.AppSettings["StoredProcedurePath"];
+        public static string StoreProcedurePath => Settings["StoredProcedurePath"];
 
-        public static string GetMessagesDataPath => ConfigurationManager.AppSettings["MessagesDataPath"];
+        public static string GetMessagesDataPath => Settings["MessagesDataPath"];
 
-        public static string MessageSuper => ConfigurationManager.AppSettings["Message:Super"];
+        public static string MessageSuper => Settings["Message:Super"];
 
-        public static string MessageMaster => ConfigurationManager.AppSettings["Message:Master"];
+        public static string MessageMaster => Settings["Message:Master"];
 
-        public static string MessageAgent => ConfigurationManager.AppSettings["Message:Agent"];
+        public static string MessageAgent => Settings["Message:Agent"];
 
-        public static bool IsDisabledContactUsLink => ConfigurationManager.AppSettings["IsDisabledContactUsLink"] == "1";
+        public static bool IsDisabledContactUsLink => Settings["IsDisabledContactUsLink"] == "1";
 
-        public static bool EnablePlayForFun => ConfigurationManager.AppSettings["EnablePlayForFun"] == "true";
+        public static bool EnablePlayForFun => Settings["EnablePlayForFun"] == "true";
 
-        public static string GoogleAnalyticId => googleAnalyticId;
+        public static string GoogleAnalyticId => Settings["GoogleAnalyticId"];
 
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "MBC", Justification = "Reviewed!")]
-        public static bool IsMBCSite => isMBCSite;
+        public static bool IsMBCSite => !string.IsNullOrWhiteSpace(Settings["SiteGroup"])
+            && Settings["SiteGroup"] == "IBCBET";
 
         public static bool DisabledVietnamese => IsMBCSite;
 
@@ -150,13 +157,13 @@
             {
                 var splitChars = new[] { ',' };
 
-                return ConfigurationManager.AppSettings["NoticeTypes"].Split(splitChars, StringSplitOptions.RemoveEmptyEntries);
+                return Settings["NoticeTypes"].Split(splitChars, StringSplitOptions.RemoveEmptyEntries);
             }
         }
 
         public static string GetAppPath(string name)
         {
-            return ConfigurationManager.AppSettings[name];
+            return Settings[name];
         }
     }
 }
