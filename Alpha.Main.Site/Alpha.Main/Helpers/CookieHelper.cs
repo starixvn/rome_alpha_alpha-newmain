@@ -9,7 +9,8 @@
             int subAccId,
             Func<string, string> encodeDataFunction)
         {
-            var joinStrings = new[] {
+            var joinStrings = new[]
+            {
                 custId.ToString(),
                 subAccId.ToString(),
                 "NewMain"

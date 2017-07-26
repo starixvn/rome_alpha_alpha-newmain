@@ -1,17 +1,18 @@
 ﻿namespace Alpha.Main.Configurations
 {
-    using Fanex.Common;
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using Fanex.Common;
 
     public static class AppSettings
     {
         [ThreadStatic]
         private static NameValueCollection settings;
+        private static List<string> devicesUseCustomScrollbar = Converter.ToString2(Settings["DevicesUseCustomScrollbar"]).Split(',').ToList();
 
         internal static NameValueCollection Settings
         {
@@ -19,8 +20,6 @@
 
             set { settings = value; }
         }
-
-        private static List<string> devicesUseCustomScrollbar = Converter.ToString2(Settings["DevicesUseCustomScrollbar"]).Split(',').ToList();
 
         public static string AssetAppPath
         {
