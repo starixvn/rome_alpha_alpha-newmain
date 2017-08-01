@@ -8,15 +8,14 @@
         public static string ExTotalBetsForecastSitePath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.ExTotalBetsForecastAppPath, virtualPath);
-        }
+        }        
 
-        public static string OldMainPath(string virtualPath = "~/")
-        public static string MessageSiteUrl(string virtualPath = "~/")
+        public static string MessageSitePath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.MessageAppPath, virtualPath);
         }
-
-        [SuppressMessage("Microsoft.Design", "CA1055:UriReturnValuesShouldNotBeStrings", Justification = "Reviewed!")]
+        
+        public static string OldMainPath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.OldMainAppPath, virtualPath);
         }

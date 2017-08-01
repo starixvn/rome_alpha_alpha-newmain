@@ -200,7 +200,6 @@
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\RoleId.cs" />
     <Compile Include="Constants\Username.cs" />
-    <Compile Include="Controllers\AnnouncementControllerTests.cs" />
     <Compile Include="Controllers\CustomerProfileControllerTests.cs" />
     <Compile Include="Controllers\DashboardControllerTests.cs" />
     <Compile Include="Controllers\DefaultControllerTests.cs" />
