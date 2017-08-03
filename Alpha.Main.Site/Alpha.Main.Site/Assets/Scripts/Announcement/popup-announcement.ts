@@ -2,20 +2,17 @@
     export class Base {
         protected $: JQueryStatic;
         protected announcementCookie: AnnouncementCounter;
-        protected intervalAnnouncementId: number = 0;
-        protected messageIndex = 0;
+        protected eventIdOfLoadNewAnnouncement: number = 0;
+        protected shownMessageIds: Array<string> = [];
+        protected selectedMessageId: string = "";
         protected constants = {
-            maximumTimeToShowAnnouncementPopUp: 5,
-            announcementsTransitionTime: 30000
+            timeToRemoveAnnouncement: 120000,
+            timeToCheckNewAnnouncement: 30000
         }
         protected domElements = {
-            numberAnnouncement: 0,
-            announcementId: null,
-            popUpId: null,
-            popUpPanel: null,
+            announcementSections: null,
             popUpContainer: null,
             popUpContainerText: null,
-            popUpContainerTextNoContent: null,
             announcementCookieId: null
         }
 
@@ -31,13 +28,9 @@
         }
 
         cacheElements = () => {
-            this.domElements.numberAnnouncement = parseInt(this.$("#numberAnnouncement").val());
-            this.domElements.announcementId = this.$('#announcement-id');
-            this.domElements.popUpId = this.$("#popup-id");
-            this.domElements.popUpPanel = this.$("#popup_panel");
-            this.domElements.popUpContainer = this.$('#popup-container');
-            this.domElements.popUpContainerText = this.$('#popup-container-text');
-            this.domElements.popUpContainerTextNoContent = this.$('#popup-container-text-no-content');
+            this.domElements.announcementSections = this.$('.js-announcement');
+            this.domElements.popUpContainer = this.$('.popup-container');
+            this.domElements.popUpContainerText = this.$('.popup-container-text');
             this.domElements.announcementCookieId = this.$("#announcement-cookies-id");
         }
 
@@ -47,11 +40,13 @@
 
         bindCommonEvents = () => {
             this.domElements.popUpContainerText.find('.icon-close').on('click', () => {
-                clearInterval(this.intervalAnnouncementId);
+                clearTimeout(this.eventIdOfLoadNewAnnouncement);
+                this.hiddenAnnouncementModal(this.selectedMessageId);
             });
 
             this.domElements.popUpContainer.find('.icon-close').on('click', () => {
-                clearInterval(this.intervalAnnouncementId);
+                clearTimeout(this.eventIdOfLoadNewAnnouncement);
+                this.hiddenAnnouncementModal(this.selectedMessageId);
             });
         }
 
@@ -62,42 +57,54 @@
         }
 
         showAnnouncement = (result: string) => {
+            this.appendAnnouncementSection(result);
+            this.cacheElements();
+            this.announcementCookie.init(this.domElements.announcementCookieId.val());
             if (this.hasEmptyAnnouncementData(result)) {
                 return;
             }
 
             this.showAnnouncementBase(result);
+
+            this.eventIdOfLoadNewAnnouncement = setTimeout(this.removeCurrentAnnouncement, this.constants.timeToRemoveAnnouncement);
         }
 
-        showAnnouncementBase = (result: string) => {
+        appendAnnouncementSection = (result: string) => {
+            this.$('#announcement-id').remove();
+
             var div = document.createElement('div');
             div.innerHTML = result;
             div.setAttribute('id', 'announcement-id');
             document.body.appendChild(div);
+        }
 
-            this.messageIndex = 1;
-            this.cacheElements();
-            this.announcementCookie.init(this.domElements.announcementCookieId.val());
+        getSelectedMessageId = () => {
+            for (var i = 0; i < this.domElements.announcementSections.length; i++) {
+                var id = this.$(this.domElements.announcementSections[i]).find('#AnnouncementId').val();
+                if (this.shownMessageIds.indexOf(id) == -1) {
+                    this.shownMessageIds.push(id);
+                    this.selectedMessageId = id;
+                    return;
+                }
+            }
+
+            this.selectedMessageId = "";
+        };
+
+        showAnnouncementBase = (result: string) => {
+            this.getSelectedMessageId();
             this.bindEvents();
 
-            this.displayAnnouncementModal(this.messageIndex);
-
-            this.intervalAnnouncementId = setInterval(this.registerFetchNextAnnouncement, this.constants.announcementsTransitionTime);
+            this.displayAnnouncementModal(this.selectedMessageId);
         }
 
-        registerFetchNextAnnouncement = () => {
-            this.hiddenAnnouncementModal(this.messageIndex);
+        removeCurrentAnnouncement = () => {
+            this.hiddenAnnouncementModal(this.selectedMessageId);
 
-            if (this.domElements.numberAnnouncement > 0 &&
-                this.messageIndex < this.domElements.numberAnnouncement) {
-                this.messageIndex++;
-                this.displayAnnouncementModal(this.messageIndex);
-            } else if (this.messageIndex >= this.domElements.numberAnnouncement) {
-                clearInterval(this.intervalAnnouncementId);
-            }
+            setTimeout(() => { this.getAnnouncements(this.onSuccessLoadAnnouncement) }, this.constants.timeToCheckNewAnnouncement);
         }
 
-        increaseCounter = (id: number) => {
+        increaseCounter = (id: string) => {
             var announcementId = this.$("#announcement_" + id).find("#AnnouncementId").val();
             this.announcementCookie.increaseCounter(announcementId);
         }
@@ -107,16 +114,23 @@
         }
 
         hasEmptyAnnouncementData = (html: any): boolean => {
-            const id: string = this.$(html).attr('id');
-
-            return id === "no-info";
+            var isEmpty = true;
+            for (var i = 0; i < this.domElements.announcementSections.length; i++) {
+                var announcementId = this.$(this.domElements.announcementSections[i]).find('#AnnouncementId').val();
+                var isExcess = this.announcementCookie.isExccess(announcementId);
+                if (!isExcess) {
+                    isEmpty = false;
+                }
+            }
+            return isEmpty;
         }
 
-        displayAnnouncementModal = (id: number) => {
-            var isExcess = this.announcementCookie.isExccess(id.toString());
+        displayAnnouncementModal = (id: string) => {
+            var isExcess = this.announcementCookie.isExccess(id);
             if (!isExcess) {
-                this.$("#announcement_" + id).find(".list-action").removeClass('hidden');
-                var popUpContainer = this.$("#announcement_" + id).find(".announcement-modal");
+                var announcement = this.$("#announcement_" + id);
+                announcement.find(".list-action").removeClass('hidden');
+                var popUpContainer = announcement.find(".announcement-modal");
                 popUpContainer.removeClass('hidden');
                 popUpContainer
                     .modal({ show: true, backdrop: false })
@@ -126,7 +140,7 @@
             }
         }
 
-        hiddenAnnouncementModal = (id: number) => {
+        hiddenAnnouncementModal = (id: string) => {
             this.$("#announcement_" + id).find(".announcement-modal").addClass('hidden');
             this.$("#announcement_" + id).find(".list-action").addClass('hidden');
         }
@@ -156,5 +170,5 @@ $(document).ready(() => {
     } else {
         const announcement = new PopupAnnouncement.Base($, counter);
         announcement.init();
-    }      
+    }
 })
