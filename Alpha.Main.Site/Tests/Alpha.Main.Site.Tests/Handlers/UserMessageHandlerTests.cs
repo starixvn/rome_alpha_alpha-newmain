@@ -12,54 +12,24 @@ namespace Alpha.Main.Site.Tests.Handlers
     public class UserMessageHandlerTests
     {
         private UserMessageHandler userMessageHandler;
-        private UserMessageService userMessageService;
 
         [SetUp]
         public void SetUp()
         {
-            userMessageService = Substitute.For<UserMessageService>();
-            userMessageHandler = new UserMessageHandler(userMessageService);
+            userMessageHandler = new UserMessageHandler();
         }
 
         [Test]
-        public void HandlerHotMessagesQuery_MessageIsNull_ThrowsArgumentNullException()
+        public void HandlerHotMessagesQuery_Always_ReturnEmptyList()
         {
             // Arrange
-            HotMessagesQuery message = null;
-
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => userMessageHandler.Handle(message));
-        }
-
-        [Test]
-        public void HandlerHotMessagesQuery_MessageIsNotNull_CallsGetHotMessages()
-        {
-            // Arrange
-            var message = new HotMessagesQuery("HotMessageFilePath");
+            var message = new HotMessagesQuery();
 
             // Act
-            userMessageHandler.Handle(message);
+            var act = userMessageHandler.Handle(message);
 
             // Assert
-            userMessageService.Received().GetHotMessages(
-                Arg.Is<string>(path => path == message.HotMessageFilePath),
-                Arg.Is<byte>(roleId => roleId == message.RoleId),
-                Arg.Is<string>(lang => lang == message.Language));
-        }
-
-        [Test]
-        public void HandlerHotMessagesQuery_MessageIsNotNull_ReturnsHotMessages()
-        {
-            // Arrange
-            var expectedHotMessages = new List<string>();
-            userMessageService.GetHotMessages(Arg.Any<string>(), Arg.Any<byte>(), Arg.Any<string>()).Returns(expectedHotMessages);
-            var message = new HotMessagesQuery("HotMessageFilePath");
-
-            // Act
-            var hotMessages = userMessageHandler.Handle(message);
-
-            // Assert
-            Assert.AreEqual(expectedHotMessages, hotMessages);
-        }
+            Assert.IsEmpty(act);
+        }        
     }
 }

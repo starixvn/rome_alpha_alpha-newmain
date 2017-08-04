@@ -306,7 +306,6 @@
     <Compile Include="Services\CustomerProfileServiceImplTests.cs" />
     <Compile Include="Services\CustomerOtpServiceImplTests.cs" />
     <Compile Include="Services\SiteMenuServiceImplTests.cs" />
-    <Compile Include="Services\UserMessageServiceImplTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AppReadme\Compare-NET-Objects-Help.chm" />

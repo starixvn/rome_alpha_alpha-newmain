@@ -94,7 +94,6 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<SiteMenuService, SiteMenuServiceImpl>();
             container.RegisterPerWebRequest<CustomerProfileService, CustomerProfileServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeService, SecurityCodeServiceImpl>();
-            container.RegisterPerWebRequest<UserMessageService, UserMessageServiceImpl>();
             container.RegisterPerWebRequest<SessionManager, SessionManagerImpl>();
             container.RegisterPerWebRequest<PasswordService, PasswordServiceImpl>();
             container.RegisterPerWebRequest<SiteMapReader, SiteMapReaderImpl>();
