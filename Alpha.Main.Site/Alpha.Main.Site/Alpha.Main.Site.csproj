@@ -562,6 +562,7 @@
     <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f9.png" />
     <Content Include="Alpha.Main.Site.Debug.ruleset" />
     <Content Include="Alpha.Main.Site.ruleset" />
+    <Content Include="Views\Default\HeaderHotMsg.cshtml" />
     <None Include="Web.backupMNL.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </None>

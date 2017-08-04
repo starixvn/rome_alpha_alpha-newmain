@@ -60,13 +60,14 @@
             this.appendAnnouncementSection(result);
             this.cacheElements();
             this.announcementCookie.init(this.domElements.announcementCookieId.val());
+
+            this.eventIdOfLoadNewAnnouncement = setTimeout(this.removeCurrentAnnouncement, this.constants.timeToRemoveAnnouncement);
+
             if (this.hasEmptyAnnouncementData(result)) {
                 return;
             }
 
-            this.showAnnouncementBase(result);
-
-            this.eventIdOfLoadNewAnnouncement = setTimeout(this.removeCurrentAnnouncement, this.constants.timeToRemoveAnnouncement);
+            this.showAnnouncementBase(result);            
         }
 
         appendAnnouncementSection = (result: string) => {
@@ -117,7 +118,7 @@
             var isEmpty = true;
             for (var i = 0; i < this.domElements.announcementSections.length; i++) {
                 var announcementId = this.$(this.domElements.announcementSections[i]).find('#AnnouncementId').val();
-                var isExcess = this.announcementCookie.isExccess(announcementId);
+                var isExcess = this.announcementCookie.isExcess(announcementId);
                 if (!isExcess) {
                     isEmpty = false;
                 }
@@ -126,7 +127,7 @@
         }
 
         displayAnnouncementModal = (id: string) => {
-            var isExcess = this.announcementCookie.isExccess(id);
+            var isExcess = this.announcementCookie.isExcess(id);
             if (!isExcess) {
                 var announcement = this.$("#announcement_" + id);
                 announcement.find(".list-action").removeClass('hidden');

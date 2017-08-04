@@ -101,7 +101,7 @@
             this.calculateHotMessagePopupHeight(false);
         }
 
-        setInterval(this.swapMessage, 18 * 1000);
+        setTimeout(this.swapMessage, 1000);
     }
 
     resetHotMessageElements = (showFullMessage) => {
@@ -232,7 +232,7 @@
             //// Append Private Message to Marquee with green color format.
             const privateMessageContent = this.domElements.liveMessage.find('#private-message-content');
 
-			this.privateMessageId = privateMessage[this.messageIdIndex];
+            this.privateMessageId = privateMessage[this.messageIdIndex];
             if (privateMessageContent.length > 0) {
                 privateMessageContent.html("Private message: " + privateMessage[this.messageContentIndex]);
             }
@@ -294,6 +294,8 @@
                 .tinyDraggable({ exclude: 'button.icon.icon-close.close, a' });
             this.calculateHotMessagePopupHeight(false);
         }
+
+        setTimeout(this.swapMessage, 18 * 1000);
     }
 
     showNextMessage = (nextMessage: JQuery) => {

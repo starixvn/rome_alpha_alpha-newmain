@@ -25,22 +25,24 @@
         }
 
         increaseCounter = (id: string) => {
-            let existed = false;
-            for (let item of this.announcements) {
-                if (item.Id == id) {
-                    item.Count++;
-                    existed = true;
+            if (id) {
+                let existed = false;
+                for (let item of this.announcements) {
+                    if (item.Id == id) {
+                        item.Count++;
+                        existed = true;
+                    }
                 }
-            }
 
-            if (!existed) {
-                this.announcements.push({ Id: id, Count: 1 })
-            }
+                if (!existed) {
+                    this.announcements.push({ Id: id, Count: 1 })
+                }
 
-            this.save();
+                this.save();
+            }            
         }
 
-        isExccess = (id: string) => {
+        isExcess = (id: string) => {
             var count = 0;
             for (let item of this.announcements) {
                 if (item.Id == id) {
