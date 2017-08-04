@@ -135,9 +135,7 @@
         }
 
         public static string StoreProcedurePath => Settings["StoredProcedurePath"];
-
-        public static string GetMessagesDataPath => Settings["MessagesDataPath"];
-
+        
         public static string MessageSuper => Settings["Message:Super"];
 
         public static string MessageMaster => Settings["Message:Master"];

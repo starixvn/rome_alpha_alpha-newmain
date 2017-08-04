@@ -237,25 +237,7 @@ namespace Alpha.Main.Tests.Configurations
 
             // Assert
             Assert.AreEqual(expectedSetting, actualSetting);
-        }
-
-        [Test]
-        public void GetMessagesDataPath_HasConfig_ReturnsCorrectSetting()
-        {
-            // Arrange
-            AppSettings.Settings = new NameValueCollection
-            {
-                ["MessagesDataPath"] = "~/App_Data/Message"
-            };
-
-            var expectedSetting = "~/App_Data/Message";
-
-            // Act
-            var actualSetting = AppSettings.GetMessagesDataPath;
-
-            // Assert
-            Assert.AreEqual(expectedSetting, actualSetting);
-        }
+        }        
 
         [Test]
         public void IsDisabledContactUsLink_ConfigValueIsEqualOne_ReturnsTrue()
