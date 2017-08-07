@@ -6,8 +6,8 @@
         protected shownMessageIds: Array<string> = [];
         protected selectedMessageId: string = "";
         protected constants = {
-            timeToRemoveAnnouncement: 120000,
-            timeToCheckNewAnnouncement: 30000
+            timeToRemoveAnnouncement: 12000,
+            timeToCheckNewAnnouncement: 3000
         }
         protected domElements = {
             announcementSections: null,
@@ -41,12 +41,12 @@
         bindCommonEvents = () => {
             this.domElements.popUpContainerText.find('.icon-close').on('click', () => {
                 clearTimeout(this.eventIdOfLoadNewAnnouncement);
-                this.hiddenAnnouncementModal(this.selectedMessageId);
+                this.removeCurrentAnnouncement();
             });
 
             this.domElements.popUpContainer.find('.icon-close').on('click', () => {
                 clearTimeout(this.eventIdOfLoadNewAnnouncement);
-                this.hiddenAnnouncementModal(this.selectedMessageId);
+                this.removeCurrentAnnouncement();
             });
         }
 
