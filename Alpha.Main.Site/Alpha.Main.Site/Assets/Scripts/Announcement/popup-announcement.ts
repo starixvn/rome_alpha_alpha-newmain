@@ -101,8 +101,9 @@
 
         removeCurrentAnnouncement = () => {
             this.hiddenAnnouncementModal(this.selectedMessageId);
-
-            setTimeout(() => { this.getAnnouncements(this.onSuccessLoadAnnouncement) }, this.constants.timeToCheckNewAnnouncement);
+            if (!alpha.isScreenLower768) {
+                setTimeout(() => { this.getAnnouncements(this.onSuccessLoadAnnouncement) }, this.constants.timeToCheckNewAnnouncement);
+            }
         }
 
         increaseCounter = (id: string) => {
