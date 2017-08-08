@@ -60,7 +60,7 @@ namespace Alpha.Main.Tests.Services
 
             encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
 
-            // Act 
+            // Act
             var result = passwordService.ChangeMainAccountPassword(param);
 
             // Assert
@@ -80,7 +80,7 @@ namespace Alpha.Main.Tests.Services
 
             encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
 
-            // Act 
+            // Act
             var result = passwordService.ChangeMainAccountPassword(param);
 
             // Assert
@@ -115,7 +115,7 @@ namespace Alpha.Main.Tests.Services
 
             passwordDataAccess.UpdatePassword(Arg.Any<UpdateMainAccountPasswordCriteria>()).Returns(new Result { Code = 1 });
 
-            // Act 
+            // Act
             passwordService.ChangeMainAccountPassword(param);
 
             // Assert
@@ -169,7 +169,7 @@ namespace Alpha.Main.Tests.Services
                 param.IP);
         }
 
-        #endregion
+        #endregion Change Main Account Passowrd
 
         #region Change SubAccount Password
 
@@ -194,7 +194,7 @@ namespace Alpha.Main.Tests.Services
 
             encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(string.Empty);
 
-            // Act 
+            // Act
             var result = passwordService.ChangeSubAccountPassword(param);
 
             // Assert
@@ -213,7 +213,6 @@ namespace Alpha.Main.Tests.Services
                 CurrentPassword = currentPassword,
             };
 
-
             encryptor.HexDecode(Arg.Is(param.CurrentPassword)).Returns("CurrentPassword");
             encryptor.HexDecode(Arg.Is(param.NewPassword)).Returns("NewPassword");
 
@@ -223,7 +222,7 @@ namespace Alpha.Main.Tests.Services
             encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
             encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
 
-            // Act 
+            // Act
             passwordService.ChangeSubAccountPassword(param);
 
             // Assert
@@ -237,7 +236,7 @@ namespace Alpha.Main.Tests.Services
                         && p.SubAccId == param.SubAccountId));
         }
 
-        #endregion
+        #endregion Change SubAccount Password
 
         #region Reset Main Account Password
 
@@ -355,7 +354,7 @@ namespace Alpha.Main.Tests.Services
                 param.IP);
         }
 
-        #endregion
+        #endregion Reset Main Account Password
 
         #region Reset Sub Account Password
 
@@ -441,6 +440,6 @@ namespace Alpha.Main.Tests.Services
                         && c.UserId == criteria.UserId));
         }
 
-        #endregion
+        #endregion Reset Sub Account Password
     }
 }

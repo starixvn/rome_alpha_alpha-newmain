@@ -9,7 +9,7 @@
 	
 	<MSBuild 
 	Projects="Alpha.Main.Site.sln" 
-	Properties="RunNunitTests=true;TreatWarningsAsErrors=true;RunCodeAnalysis=true;StyleCopEnabled=true" />
+	Properties="RunNunitTests=true;TreatWarningsAsErrors=true;RunCodeAnalysis=true" />
   </Target>
   
 </Project>

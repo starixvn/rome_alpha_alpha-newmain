@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 618, 612
+
 namespace Alpha.Main.Site.Models.Requests.Announcement
 {
     using Configurations;
@@ -36,6 +37,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         public const int PremiumBaccarat = 6842501; ////endate: 01/02/2017
         public const int ShuttingDownLiveCasino = 7011701; ////endate: 01/31/2017
         public const int EnableYesterdayTransfer = 7429101; ////endate: 07/20/2017
+        public const int OfferBetradarVirtualSportBatch01 = 7833901;
+        public const int OfferBetradarVirtualSportBatch02 = 7833902;
 
         public HotAnnouncementQuery() : this(null, null, null, null, null, null)
         {
@@ -117,7 +120,9 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
                     { ChangeCommForSuper,  UserPermission.IsShowLiveCasino || UserPermission.IsShowGoldDeluxeSettingForCredit || UserPermission.IsSyncedProduct(ProductIdConstants.AllBet) },
                     { PremiumBaccarat,  UserPermission.IsShowLiveCasino },
                     { ShuttingDownLiveCasino,  UserPermission.IsShowLiveCasino },
-                    { EnableYesterdayTransfer,  UserSession.Current.IsAllDayBalTransfer }
+                    { EnableYesterdayTransfer,  UserSession.Current.IsAllDayBalTransfer },
+                    { OfferBetradarVirtualSportBatch01, !UserSession.Current.IsHideVirtualSports },
+                    { OfferBetradarVirtualSportBatch02,  !UserSession.Current.IsHideVirtualSports }
                 };
             }
         }

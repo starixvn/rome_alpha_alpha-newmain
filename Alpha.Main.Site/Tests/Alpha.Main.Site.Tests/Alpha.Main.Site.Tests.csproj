@@ -211,6 +211,7 @@
     <Compile Include="Controllers\PasswordControllerTests.cs" />
     <Compile Include="Controllers\SecurityCodeControllerTests.cs" />
     <Compile Include="Controllers\StatisticsControllerTests.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandlerTests.cs" />
     <Compile Include="Handlers\BalanceInfoHandlerTests.cs" />
     <Compile Include="Handlers\CustomerProfileHandlerTests.cs" />
