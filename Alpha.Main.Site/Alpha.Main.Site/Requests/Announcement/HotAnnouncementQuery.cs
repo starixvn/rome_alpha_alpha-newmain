@@ -121,8 +121,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
                     { PremiumBaccarat,  UserPermission.IsShowLiveCasino },
                     { ShuttingDownLiveCasino,  UserPermission.IsShowLiveCasino },
                     { EnableYesterdayTransfer,  UserSession.Current.IsAllDayBalTransfer },
-                    { OfferBetradarVirtualSportBatch01, !UserSession.Current.IsHideVirtualSports },
-                    { OfferBetradarVirtualSportBatch02,  !UserSession.Current.IsHideVirtualSports }
+                    { OfferBetradarVirtualSportBatch01, UserPermission.HasPermissionOnProduct(5) },
+                    { OfferBetradarVirtualSportBatch02,  UserPermission.HasPermissionOnProduct(5) }
                 };
             }
         }
