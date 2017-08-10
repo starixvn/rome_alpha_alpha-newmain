@@ -36,18 +36,18 @@
         oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
         oldMainAppSpecialMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=special',
         updatePrivateMessageCount: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
-        getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'
+        getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx',
+        getHotMessages: alpha.urls.messageRootPath + 'Announcement/HeaderAnnouncement'
     };
     protected $: JQueryStatic;
 
     constructor($: JQueryStatic) {
         this.$ = $;
     }
-
     init = () => {
         this.cacheElements();
         this.registerEvents();
-        this.showHotMessages();
+        this.getHotMessages();
         this.getMessages();
         setInterval(this.getMessages, 60 * 1000);
     }
@@ -91,7 +91,15 @@
         event.stopPropagation();
     }
 
-    showHotMessages = () => {
+    getHotMessages = () => {
+        const ajaxSettings = this.createAjaxSettings('POST', this.urls.getHotMessages, this.showHotMessages);
+
+        this.$.ajax(ajaxSettings);
+    }
+
+    showHotMessages = (message) => {
+        this.appendHotMessageToPopup(message);
+        this.domElements.currentHotMessage = this.domElements.hotMessages.find('p.current-hot-message');
         if (this.domElements.currentHotMessage.length > 0) {
             this.domElements
                 .userMessageModal
@@ -101,7 +109,19 @@
             this.calculateHotMessagePopupHeight(false);
         }
 
-        setTimeout(this.swapMessage, 1000);
+        setInterval(this.swapMessage, 18 * 1000);
+    }
+
+    createAjaxSettings = (methodType: string, url: string, onSuccess: any): JQueryAjaxSettings => {
+        let ajaxSettings: JQueryAjaxSettings = {
+            type: methodType,
+            url: url,
+            data: null,
+            cache: false,
+            success: onSuccess
+        };
+
+        return ajaxSettings;
     }
 
     resetHotMessageElements = (showFullMessage) => {
@@ -261,6 +281,10 @@
             '<p class="not-shown-message">'
             + message
             + '</p>');
+    }
+
+    appendHotMessageToPopup = (message) => {
+        this.domElements.contentMessage.append(message);
     }
 
     swapMessage = () => {
