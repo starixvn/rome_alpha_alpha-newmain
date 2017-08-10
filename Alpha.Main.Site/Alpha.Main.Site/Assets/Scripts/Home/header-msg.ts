@@ -48,8 +48,6 @@
         this.cacheElements();
         this.registerEvents();
         this.getHotMessages();
-        this.getMessages();
-        setInterval(this.getMessages, 60 * 1000);
     }
 
     viewPrivateMessage = () => {
@@ -108,8 +106,9 @@
 
             this.calculateHotMessagePopupHeight(false);
         }
-
+        this.getMessages();
         setInterval(this.swapMessage, 18 * 1000);
+        setInterval(this.getMessages, 60 * 1000);
     }
 
     createAjaxSettings = (methodType: string, url: string, onSuccess: any): JQueryAjaxSettings => {
@@ -277,10 +276,9 @@
     }
 
     appendMessageToPopup = (message) => {
-        this.domElements.contentMessage.append(
-            '<p class="not-shown-message">'
-            + message
-            + '</p>');
+        this.domElements.contentMessage.append('<p class="not-shown-message"></p>');
+
+        this.domElements.contentMessage.find("p:last").html(message);
     }
 
     appendHotMessageToPopup = (message) => {
