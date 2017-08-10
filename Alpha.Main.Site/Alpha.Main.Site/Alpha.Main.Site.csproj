@@ -667,7 +667,6 @@
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Regular.woff" />
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Regular.woff2" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.scss" />
-    <TypeScriptCompile Include="Assets\scripts\announcement\header-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\announcementCounter.ts" />
