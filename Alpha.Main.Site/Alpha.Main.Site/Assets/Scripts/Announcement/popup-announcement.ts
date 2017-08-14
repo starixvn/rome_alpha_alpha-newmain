@@ -67,7 +67,7 @@
                 return;
             }
 
-            this.showAnnouncementBase(result);            
+            this.showAnnouncementBase(result);
         }
 
         appendAnnouncementSection = (result: string) => {
@@ -132,7 +132,7 @@
             if (!isExcess) {
                 var announcement = this.$("#announcement_" + id);
                 announcement.find(".list-action").removeClass('hidden');
-                var popUpContainer = announcement.find(".announcement-modal");
+                var popUpContainer = announcement.find("#popup-container-" + id);
                 popUpContainer.removeClass('hidden');
                 popUpContainer
                     .modal({ show: true, backdrop: false })
