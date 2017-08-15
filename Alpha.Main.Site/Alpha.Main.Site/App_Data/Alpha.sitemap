@@ -38,6 +38,8 @@
       <siteMapNode menuItemType="RacingMenuItem" resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/master" roles="Super"></siteMapNode>
 
       <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="monitor" appPath="OldMainAppPath" url="_Reports/LastBetMonitoring/LastBetMonitoring.aspx" roles="Agent"></siteMapNode>
+      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="LastBets/Index" roles="Agent"></siteMapNode>
+      
       <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="CancelledBet/Index"></siteMapNode>
 
       <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="OldMainAppPath" url="report/consolidate/index"></siteMapNode>
