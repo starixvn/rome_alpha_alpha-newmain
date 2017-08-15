@@ -6,8 +6,8 @@
         protected shownMessageIds: Array<string> = [];
         protected selectedMessageId: string = "";
         protected constants = {
-            timeToRemoveAnnouncement: 12000,
-            timeToCheckNewAnnouncement: 3000
+            timeToRemoveAnnouncement: 120000,
+            timeToCheckNewAnnouncement: 30000
         }
         protected domElements = {
             announcementSections: null,
