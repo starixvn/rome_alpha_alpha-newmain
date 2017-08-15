@@ -677,7 +677,6 @@
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp.ts" />
-    <TypeScriptCompile Include="Assets\scripts\instruction\instruction-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\force-change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\change-password.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\password\reset-sub-account-password.ts" />
@@ -731,7 +730,6 @@
     <Content Include="Assets\bundles\security\otp\reset-otp.min.js">
       <DependentUpon>reset-otp.js</DependentUpon>
     </Content>
-    <Content Include="Assets\scripts\instruction\enjoyhint.js" />
     <Content Include="Assets\scripts\tests\libs\bootstrap-datetimepicker.js" />
     <Content Include="Assets\scripts\tests\libs\bootstrap-modal.js" />
     <Content Include="Assets\scripts\tests\libs\datepicker.js" />
@@ -747,12 +745,6 @@
     </Content>
     <Content Include="Assets\styles\home\home.min.css">
       <DependentUpon>home.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\instruction\instruction.css">
-      <DependentUpon>instruction.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\instruction\instruction.min.css">
-      <DependentUpon>instruction.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\message\message.css" />
     <Content Include="Assets\styles\message\message.min.css" />
@@ -896,14 +888,7 @@
     <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.vi-VN.pdf" />
     <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.zh-CN.pdf" />
     <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.zh-TW.pdf" />
-    <None Include="Assets\styles\instruction\enjoyhint.scss" />
     <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.svg" />
-    <Content Include="Assets\styles\instruction\enjoyhint.css">
-      <DependentUpon>enjoyhint.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\instruction\enjoyhint.min.css">
-      <DependentUpon>enjoyhint.css</DependentUpon>
-    </Content>
     <Content Include="Assets\styles\instruction\images\agent.png" />
     <Content Include="Assets\styles\instruction\images\master.png" />
     <Content Include="Assets\styles\instruction\images\OldUI-1.png" />
@@ -981,7 +966,6 @@
     <Content Include="Assets\styles\home\_mixins.scss" />
     <Content Include="Assets\styles\home\tooltip.scss" />
     <Content Include="Assets\styles\home\pageIElower10.scss" />
-    <Content Include="Assets\styles\instruction\instruction.scss" />
     <Content Include="Assets\styles\security\security.scss" />
     <Content Include="Assets\styles\message\message.scss" />
     <Content Include="Assets\styles\otp\otp.scss" />
@@ -1078,7 +1062,6 @@
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\statistics-tests.ts" />
-    <TypeScriptCompile Include="Assets\scripts\tests\app\instruction\instruction-mobile-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\message\message-tests.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />

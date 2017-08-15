@@ -28,14 +28,6 @@
     "inputFile": "Assets/styles/home/pageIElower10.scss"
   },
   {
-    "outputFile": "Assets/styles/instruction/instruction.css",
-    "inputFile": "Assets/styles/instruction/instruction.scss"
-  },
-  {
-    "outputFile": "Assets/styles/instruction/enjoyhint.css",
-    "inputFile": "Assets/styles/instruction/enjoyhint.scss"
-  },
-  {
     "outputFile": "Assets/styles/security/security.css",
     "inputFile": "Assets/styles/security/security.scss"
   },
