@@ -8,16 +8,6 @@
       LCS: 7,
       domain: 5
   -->
-<?xml version="1.0" encoding="utf-8" ?>
-<FileDB>
-  <!--effectdate format: dd/mm/yyyy-->
-  <!--
-    announcementid noted:
-    - bingo = 4,
-      virtual sports: 20130404,
-      LCS: 7,
-      domain: 5
-  -->
   <PopupAnnouncement id="8102701" name="Lottery" startdate="07/01/2017" enddate="09/07/2017" effectdate="31/08/2017" privatesystem="755555,Indo,KORIBC,733333,222223,222225,222227" excludedCustIds="4204225,6032879,450036,877004,3589744,1266057,900371,896708,913628,1229724,1229754,1229808,1229814,1338545,1755660,1775757,1776435,1776525,2075752">
     <en-US src="">
       <p>Dear valued agents,</p>
@@ -352,7 +342,7 @@
     <ja-JP src="">
       <p>Dear valued agents,</p>
       <p>
-        We are pleased to announce the launch of the new sport types 'Virtual Soccer League', 'Virtual Soccer Nation' and bet type 'Virtual Sports Parlay' under Virtual Sports product with effect from {effectdate}
+        We are pleased to announce the upcoming new sport types named 'Virtual Soccer League', 'Virtual Soccer Nation' and bet type 'Virtual Sports Parlay' under Virtual Sports product will be launched soon.
       </p>
       <p>
         All settings will be configured as follows:
@@ -373,7 +363,7 @@
     <ko-KR src="">
       <p>Dear valued agents,</p>
       <p>
-        We are pleased to announce the launch of the new sport types 'Virtual Soccer League', 'Virtual Soccer Nation' and bet type 'Virtual Sports Parlay' under Virtual Sports product with effect from {effectdate}
+        We are pleased to announce the upcoming new sport types named 'Virtual Soccer League', 'Virtual Soccer Nation' and bet type 'Virtual Sports Parlay' under Virtual Sports product will be launched soon.
       </p>
       <p>
         All settings will be configured as follows:
