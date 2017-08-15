@@ -175,6 +175,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             }
         }
 
+        public int SRecommendId => userSession.SRecommendId;
+
         public string[] NoticeTypes { get; set; }
 
         public IEnumerable<string> ThirdPartyProductNames
@@ -235,6 +237,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
             hotAnnouncementsParams.NoticeTypes = NoticeTypes;
             hotAnnouncementsParams.SiteMainReplacement = SiteMainReplacement;
             hotAnnouncementsParams.ThirdPartyProductNames = ThirdPartyProductNames;
+            hotAnnouncementsParams.SRecommendId = SRecommendId;
         }
 
         private static int[] OldProductIds()

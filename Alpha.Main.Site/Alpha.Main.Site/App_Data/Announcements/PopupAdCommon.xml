@@ -8,6 +8,133 @@
       LCS: 7,
       domain: 5
   -->
+<?xml version="1.0" encoding="utf-8" ?>
+<FileDB>
+  <!--effectdate format: dd/mm/yyyy-->
+  <!--
+    announcementid noted:
+    - bingo = 4,
+      virtual sports: 20130404,
+      LCS: 7,
+      domain: 5
+  -->
+  <PopupAnnouncement id="8102701" name="Lottery" startdate="07/01/2017" enddate="09/07/2017" effectdate="31/08/2017" privatesystem="755555,Indo,KORIBC,733333,222223,222225,222227" excludedCustIds="4204225,6032879,450036,877004,3589744,1266057,900371,896708,913628,1229724,1229754,1229808,1229814,1338545,1755660,1775757,1776435,1776525,2075752">
+    <en-US src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will be launching ‘Lottery’ with effect from {effectdate}.
+      </p>
+      <p>
+        This product will be enabled for Super, Master and Agent by default.
+      </p>
+      <p>
+        The PT and Bet Limit settings will be copied from Keno and available for configuration from 24/08/2017.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </en-US>
+
+    <zh-CN src="">
+      <p>尊敬的代理们，</p>
+      <p>
+        在此宣布我们将于 {effectdate} 推出“彩票”。
+      </p>
+      <p>
+        此产品将会默认开启至超级总代、总代理和代理。
+      </p>
+      <p>
+        占成数和投注设置将会复制快乐彩的设定，并可以在 24/08/2017 进行配置。
+      </p>
+      <p>
+        谢谢
+      </p>
+    </zh-CN>
+    <zh-TW src="">
+      <p>尊敬的代理們，</p>
+      <p>
+        在此宣布我們將於 {effectdate} 推出“彩票”。
+      </p>
+      <p>
+        此產品將會默認開啟至超級總代、總代理和代理。
+      </p>
+      <p>
+        占成數和投註設置將會復制快樂彩的設定，並可以在 24/08/2017 進行配置。
+      </p>
+      <p>
+        謝謝
+      </p>
+    </zh-TW>
+
+    <ja-JP src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will be launching ‘Lottery’ with effect from {effectdate}.
+      </p>
+      <p>
+        This product will be enabled for Super, Master and Agent by default.
+      </p>
+      <p>
+        The PT and Bet Limit settings will be copied from Keno and available for configuration from 24/08/2017.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ja-JP>
+
+    <ko-KR src="">
+      <p>Dear valued agents,</p>
+      <p>
+        We will be launching ‘Lottery’ with effect from {effectdate}.
+      </p>
+      <p>
+        This product will be enabled for Super, Master and Agent by default.
+      </p>
+      <p>
+        The PT and Bet Limit settings will be copied from Keno and available for configuration from 24/08/2017.
+      </p>
+      <p>
+        Thank you
+      </p>
+    </ko-KR>
+
+    <th-TH src="">
+      <p>
+        เรียนเอเจนต์ทุกท่าน
+      </p>
+      <p>
+        ทางบริษัทใคร่ขอแจ้งให้ทราบว่า ทางบริษัทจะทำการเปิดตัว" ล็อตเตอรี่" ตั้งแต่วันที่ {effectdate}
+      </p>
+      <p>
+        ผลิตภัณฑ์นี้จะเปิดใช้งานโดยค่าเริ่มต้นสำหรับซุปเปอร์ มาสเตอร์และตัวแทน
+      </p>
+      <p>
+        ค่าความเสี่ยงและค่าเดิมพันจะถูกคัดลอกมาจากคีโน และสามารถกำหนดการตั้งค่าตั้งแต่วันที 24/08/2017
+      </p>
+      <p>
+        ขอบคุณค่ะ
+      </p>
+    </th-TH>
+
+    <vi-VN src="">
+      <p>
+        Kính gửi quý khách hàng,
+      </p>
+      <p>
+        We will be launching ‘Lottery’ with effect from {effectdate}.
+      </p>
+      <p>
+        This product will be enabled for Super, Master and Agent by default.
+      </p>
+      <p>
+        The PT and Bet Limit settings will be copied from Keno and available for configuration from 24/08/2017.
+      </p>
+      <p>
+        Trân Trọng
+      </p>
+    </vi-VN>
+  </PopupAnnouncement>
+
   <PopupAnnouncement id="7833902" name="Betradar Virtual Sport Batch 2" excludesites="Thai,Koribc,Indo,733333" startdate="07/01/2017" enddate="08/31/2017" >
     <en-US src="">
       <p>Dear valued agents,</p>
