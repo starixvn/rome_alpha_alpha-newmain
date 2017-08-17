@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="SonarQube - Rome / Alpha Main Sonar way" Description="This rule set was automatically generated from SonarQube.&#xD;&#xA;http://sonarqube.nexdev.net/profiles/show?key=cs-sonar-way-80515" ToolsVersion="14.0">
+<RuleSet Name="SonarQube - Alpha / Alpha Main Sonar way" Description="This rule set was automatically generated from SonarQube.&#xD;&#xA;http://sonarqube.nexdev.net/profiles/show?key=cs-sonar-way-80515" ToolsVersion="14.0">
   <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
-    <Rule Id="S100" Action="Warning" />
+    <Rule Id="S100" Action="None" />
     <Rule Id="S1006" Action="Warning" />
     <Rule Id="S101" Action="None" />
     <Rule Id="S103" Action="Warning" />
@@ -81,7 +81,7 @@
     <Rule Id="S2219" Action="Warning" />
     <Rule Id="S2223" Action="Warning" />
     <Rule Id="S2225" Action="Warning" />
-    <Rule Id="S2228" Action="Warning" />
+    <Rule Id="S2228" Action="None" />
     <Rule Id="S2234" Action="Warning" />
     <Rule Id="S2259" Action="Warning" />
     <Rule Id="S2275" Action="Warning" />
@@ -221,6 +221,20 @@
     <Rule Id="S3963" Action="Warning" />
     <Rule Id="S3967" Action="Warning" />
     <Rule Id="S3971" Action="Warning" />
+    <Rule Id="S3981" Action="Warning" />
+    <Rule Id="S3984" Action="Warning" />
+    <Rule Id="S3990" Action="None" />
+    <Rule Id="S3992" Action="None" />
+    <Rule Id="S3993" Action="Warning" />
+    <Rule Id="S3994" Action="Warning" />
+    <Rule Id="S3995" Action="Warning" />
+    <Rule Id="S3996" Action="Warning" />
+    <Rule Id="S3997" Action="Warning" />
+    <Rule Id="S3998" Action="Warning" />
+    <Rule Id="S4000" Action="Warning" />
+    <Rule Id="S4002" Action="Warning" />
+    <Rule Id="S4004" Action="None" />
+    <Rule Id="S4005" Action="Warning" />
     <Rule Id="S818" Action="Warning" />
     <Rule Id="S907" Action="Warning" />
     <Rule Id="S927" Action="Warning" />

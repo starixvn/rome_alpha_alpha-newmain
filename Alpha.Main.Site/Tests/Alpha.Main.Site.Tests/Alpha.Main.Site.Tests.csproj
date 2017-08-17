@@ -90,7 +90,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Products, Version=0.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Fanex.Products.1.0.0.0\lib\net40\Fanex.Products.dll</HintPath>
+      <HintPath>..\..\packages\Fanex.Products.1.0.0.1\lib\net40\Fanex.Products.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="IBCFile, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -149,12 +149,12 @@
       <HintPath>..\..\packages\SPSRemoting.1.0.0\lib\net40\SPSRemoting.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.2.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Sunplus.Agent.Model.Base.3.0.2.5\lib\net40\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.2.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sunplus.Agent.Model.Base.3.0.2.6\lib\net40\Sunplus.Agent.Model.Base.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Definitions, Version=3.0.1.6, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Sunplus.Agent.Model.Definitions.3.0.1.7\lib\net40\Sunplus.Agent.Model.Definitions.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Definitions, Version=3.0.1.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sunplus.Agent.Model.Definitions.3.0.1.10\lib\net40\Sunplus.Agent.Model.Definitions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Agent.Utilities, Version=3.0.0.6, Culture=neutral, processorArchitecture=MSIL">
@@ -211,6 +211,7 @@
     <Compile Include="Controllers\PasswordControllerTests.cs" />
     <Compile Include="Controllers\SecurityCodeControllerTests.cs" />
     <Compile Include="Controllers\StatisticsControllerTests.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\AnnouncementHandlerTests.cs" />
     <Compile Include="Handlers\BalanceInfoHandlerTests.cs" />
     <Compile Include="Handlers\CustomerProfileHandlerTests.cs" />
