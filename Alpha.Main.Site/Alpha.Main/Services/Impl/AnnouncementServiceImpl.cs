@@ -1,11 +1,5 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Xml;
-    using System.Xml.XPath;
     using AppResources;
     using Constants;
     using Criteria.Announcement;
@@ -15,6 +9,13 @@
     using Models.Announcements;
     using Models.Enumerations;
     using Params.Announcements;
+    using Sunplus.Agent.Model.Entities;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Xml;
+    using System.Xml.XPath;
 
     public class AnnouncementServiceImpl : AnnouncementService
     {
@@ -36,9 +37,16 @@
         {
             XmlNode node = (XmlNode)nav.CreateNavigator().UnderlyingObject;
             var custIds = node.Attributes["custIds"];
-            return custIds == null 
-                || string.IsNullOrEmpty(custIds.Value) 
+            return custIds == null
+                || string.IsNullOrEmpty(custIds.Value)
                 || custIds.Value.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList().Contains(custId.ToString());
+        }
+
+        private static bool IsExcludedByUplineIds(IXPathNavigable nav, int custId)
+        {
+            XmlNode node = (XmlNode)nav.CreateNavigator().UnderlyingObject;
+            var listExcludedUplineIds = node.Attributes["excludedCustIds"];
+            return !(listExcludedUplineIds == null || string.IsNullOrEmpty(listExcludedUplineIds.Value)) && listExcludedUplineIds.Value.Contains(custId.ToString());
         }
 
         public HotAnnouncement GetHotAnnouncement(GetHotAnnouncementsParams getParams)
@@ -240,6 +248,7 @@
                     showedMessages.Contains(nodeId) ||
                     IsExcludedHotMessageSite(announcementNode, getParams.Site) ||
                     !IsShowForCustomerIds(announcementNode.CreateNavigator(), getParams.CustId) ||
+                    IsExcludedByUplineIds(announcementNode.CreateNavigator(), getParams.SRecommendId) ||
                     IsExpiredHotMessage(announcementNode))
                 {
                     continue;
@@ -268,7 +277,7 @@
             }
 
             return hotAnnouncement;
-        }
+        }        
 
         private bool IsExpiredHotMessage(XmlNode node)
         {

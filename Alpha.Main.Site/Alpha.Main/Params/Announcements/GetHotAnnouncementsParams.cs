@@ -34,5 +34,7 @@
         public string SiteMainReplacement { get; set; }
 
         public IEnumerable<string> ThirdPartyProductNames { get; set; } = Enumerable.Empty<string>();
+
+        public int SRecommendId { get; set; }
     }
 }
