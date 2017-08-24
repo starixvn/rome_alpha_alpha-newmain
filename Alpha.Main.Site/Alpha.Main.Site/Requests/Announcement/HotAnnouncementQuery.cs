@@ -39,6 +39,7 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
         public const int EnableYesterdayTransfer = 7429101; ////endate: 07/20/2017
         public const int OfferBetradarVirtualSportBatch01 = 7833901;
         public const int OfferBetradarVirtualSportBatch02 = 7833902;
+        public const int RngCasinoNewTabletGames = 7842401;
 
         public HotAnnouncementQuery() : this(null, null, null, null, null, null)
         {
@@ -122,7 +123,8 @@ namespace Alpha.Main.Site.Models.Requests.Announcement
                     { ShuttingDownLiveCasino,  UserPermission.IsShowLiveCasino },
                     { EnableYesterdayTransfer,  UserSession.Current.IsAllDayBalTransfer },
                     { OfferBetradarVirtualSportBatch01, UserPermission.HasPermissionOnProduct(5) },
-                    { OfferBetradarVirtualSportBatch02,  UserPermission.HasPermissionOnProduct(5) }
+                    { OfferBetradarVirtualSportBatch02,  UserPermission.HasPermissionOnProduct(5) },
+                    { RngCasinoNewTabletGames,  UserSession.Current.IsCasinoSync}
                 };
             }
         }
