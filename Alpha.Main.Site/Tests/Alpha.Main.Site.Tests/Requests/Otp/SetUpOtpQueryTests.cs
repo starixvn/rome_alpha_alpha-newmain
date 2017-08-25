@@ -1,11 +1,11 @@
-﻿using Alpha.Main.Site.Requests.Otp;
-using Alpha.Main.Site.Tests.Constants;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Entities;
-
-namespace Alpha.Main.Site.Tests.Requests.Otp
+﻿namespace Alpha.Main.Site.Tests.Requests.Otp
 {
+    using Alpha.Main.Site.Requests.Otp;
+    using Alpha.Main.Site.Tests.Constants;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Entities;
+
     public class SetUpOtpQueryTests
     {
         private IUserSession userSession;

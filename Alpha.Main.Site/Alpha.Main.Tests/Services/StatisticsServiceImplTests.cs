@@ -1,5 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using Constants;
     using Fanex.Data.Repository;
     using Main.DataAccesses;
@@ -10,9 +13,6 @@
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using TestData.Helper;
 
     [TestFixture]

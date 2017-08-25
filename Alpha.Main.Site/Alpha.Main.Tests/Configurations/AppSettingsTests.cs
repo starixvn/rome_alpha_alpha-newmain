@@ -1,9 +1,9 @@
-﻿using Alpha.Main.Configurations;
-using NUnit.Framework;
-using System.Collections.Specialized;
-
-namespace Alpha.Main.Tests.Configurations
+﻿namespace Alpha.Main.Tests.Configurations
 {
+    using System.Collections.Specialized;
+    using Alpha.Main.Configurations;
+    using NUnit.Framework;
+
     [TestFixture]
     public class AppSettingsTests
     {

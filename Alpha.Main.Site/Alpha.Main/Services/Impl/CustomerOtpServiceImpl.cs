@@ -21,7 +21,6 @@
         private const int SecretKeyLength = 20;
         private const int DisabledAccountErrorCode = 200;
         private const string Issuer = "MyAppName";
-        private const string DateFormat = "yyyyMMdd_HHmm";
         private const string NotDetectedDevice = "N/A";
         private const int InvalidDataErrorCode = 1;
         private const string InvalidDataMessage = "Data is not valid";

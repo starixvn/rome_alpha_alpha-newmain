@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Criteria.Otp
 {
-    using System;
     using Fanex.Data.Repository;
 
     public class GetDevicesCriteria : CriteriaBase

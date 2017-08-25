@@ -1,16 +1,16 @@
-﻿using Alpha.Main.Site.Controllers;
-using Alpha.Main.Site.Requests.Dashboard.Notice;
-using Alpha.Main.Site.Tests.Constants;
-using Alpha.Main.Site.ViewModels.Dashboard.Notice;
-using KellermanSoftware.CompareNetObjects;
-using MediatR;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Entities;
-using System.Web.Mvc;
-
-namespace Alpha.Main.Site.Tests.Controllers
+﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System.Web.Mvc;
+    using Alpha.Main.Site.Controllers;
+    using Alpha.Main.Site.Requests.Dashboard.Notice;
+    using Alpha.Main.Site.Tests.Constants;
+    using Alpha.Main.Site.ViewModels.Dashboard.Notice;
+    using KellermanSoftware.CompareNetObjects;
+    using MediatR;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Entities;
+
     [TestFixture]
     public class NoticeControllerTests
     {

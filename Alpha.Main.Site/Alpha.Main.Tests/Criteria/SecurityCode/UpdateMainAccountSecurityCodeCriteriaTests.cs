@@ -1,8 +1,8 @@
-﻿using Alpha.Main.Criteria.SecurityCode;
-using NUnit.Framework;
-
-namespace Alpha.Main.Tests.Criteria.SecurityCode
+﻿namespace Alpha.Main.Tests.Criteria.SecurityCode
 {
+    using Alpha.Main.Criteria.SecurityCode;
+    using NUnit.Framework;
+
     [TestFixture]
     public class UpdateMainAccountSecurityCodeCriteriaTests
     {

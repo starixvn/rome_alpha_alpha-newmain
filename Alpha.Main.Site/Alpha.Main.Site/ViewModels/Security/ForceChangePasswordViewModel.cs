@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Alpha.Main.Site.ViewModels.Security
+﻿namespace Alpha.Main.Site.ViewModels.Security
 {
     public class ForceChangePasswordViewModel : PasswordViewModel
     {

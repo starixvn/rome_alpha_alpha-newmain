@@ -2,10 +2,10 @@
 
 namespace Alpha.Main.Site.Controllers
 {
-    using Configurations;
-    using Main.Helpers;
     using System;
     using System.Web.Mvc;
+    using Configurations;
+    using Main.Helpers;
     using Web;
 
     public class RedirectController : BaseController

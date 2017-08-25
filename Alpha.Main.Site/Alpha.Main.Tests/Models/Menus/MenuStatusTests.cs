@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Tests.Models.Menus
 {
+    using System;
     using Main.Models.Menus;
     using NSubstitute;
     using NUnit.Framework;
-    using System;
 
     [TestFixture]
     public class MenuStatusTests

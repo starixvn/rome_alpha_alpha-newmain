@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using MediatR;
-    using Models.Requests.UserMessages;
     using System.Collections.Generic;
     using System.Linq;
+    using MediatR;
+    using Models.Requests.UserMessages;
 
     public class UserMessageHandler :
         IRequestHandler<HotMessagesQuery, IEnumerable<string>>

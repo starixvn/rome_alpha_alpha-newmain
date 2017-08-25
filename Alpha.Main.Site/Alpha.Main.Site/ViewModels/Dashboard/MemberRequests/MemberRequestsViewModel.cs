@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Dashboard.MemberRequests
 {
     using System.Collections.Generic;
-    using Main.Helpers;
-    using Main.Models.MemberRequests;
     using System.Linq;
+    using Main.Helpers;
     using Main.Models.Enumerations;
+    using Main.Models.MemberRequests;
 
     public class MemberRequestsViewModel
     {

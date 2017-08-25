@@ -1,15 +1,15 @@
-﻿using Alpha.Main.Configurations;
-using Alpha.Main.Site.Controllers;
-using Alpha.Main.Site.Models.Requests;
-using Alpha.Main.Site.Requests;
-using MediatR;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Entities;
-using System;
-
-namespace Alpha.Main.Site.Tests.Controllers
+﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System;
+    using Alpha.Main.Configurations;
+    using Alpha.Main.Site.Controllers;
+    using Alpha.Main.Site.Models.Requests;
+    using Alpha.Main.Site.Requests;
+    using MediatR;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Entities;
+
     [TestFixture]
     public class LanguageControllerTests
     {

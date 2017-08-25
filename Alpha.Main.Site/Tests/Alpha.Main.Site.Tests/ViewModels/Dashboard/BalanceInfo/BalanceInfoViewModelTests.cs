@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels.Dashboard.BalanceInfo
 {
-    using System;
     using Constants;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;

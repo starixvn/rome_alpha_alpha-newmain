@@ -1,5 +1,7 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
+    using System.Text.RegularExpressions;
     using Alpha.Main.Services;
     using AppResources;
     using CasinoLibrary.Model.UserException;
@@ -9,8 +11,6 @@
     using Params.SecurityCode;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Text.RegularExpressions;
 
     public class SecurityCodeServiceImpl : SecurityCodeService
     {

@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Main.Models.Notice;
     using MediatR;
     using Requests.Dashboard.Notice;
     using Services;

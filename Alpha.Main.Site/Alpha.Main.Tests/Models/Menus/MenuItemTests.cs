@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Tests.Models.Menus
 {
-    using Main.Models.Menus;
-    using NUnit.Framework;
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Main.Models.Menus;
+    using NUnit.Framework;
 
     [TestFixture]
     public class MenuItemTests

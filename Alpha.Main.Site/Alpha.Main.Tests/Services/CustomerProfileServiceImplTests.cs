@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
     using Main.DataAccesses;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
-    using System;
 
     [TestFixture]
     public class CustomerProfileServiceImplTests

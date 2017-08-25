@@ -1,8 +1,8 @@
-﻿using Alpha.Main.Criteria.Password;
-using NUnit.Framework;
-
-namespace Alpha.Main.Tests.Criteria.Password
+﻿namespace Alpha.Main.Tests.Criteria.Password
 {
+    using Alpha.Main.Criteria.Password;
+    using NUnit.Framework;
+
     [TestFixture]
     public class UpdateMainAccountPasswordCriteriaTests
     {

@@ -1,8 +1,8 @@
-﻿using Alpha.Main.Site.ViewModels.Security;
-using NUnit.Framework;
-
-namespace Alpha.Main.Site.Tests.ViewModels.Security
+﻿namespace Alpha.Main.Site.Tests.ViewModels.Security
 {
+    using Alpha.Main.Site.ViewModels.Security;
+    using NUnit.Framework;
+
     [TestFixture]
     public class ResetOtpViewModelTests
     {

@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
     using Alpha.SecurityCode.Services;
     using AppResources;
     using Main.Models;
@@ -11,7 +12,6 @@
     using Services;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using System;
     using ViewModels.Security;
 
     public class PasswordHandler :

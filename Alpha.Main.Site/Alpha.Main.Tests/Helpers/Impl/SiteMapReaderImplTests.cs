@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Tests.Helpers.Impl
 {
-    using System;
     using Main.Helpers.Impl;
     using NUnit.Framework;
 
