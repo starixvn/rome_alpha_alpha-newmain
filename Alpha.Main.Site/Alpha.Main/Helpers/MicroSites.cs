@@ -8,8 +8,13 @@
         public static string ExTotalBetsForecastSitePath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.ExTotalBetsForecastAppPath, virtualPath);
-        }
+        }        
 
+        public static string MessageSitePath(string virtualPath = "~/")
+        {
+            return AppPathHelper.GetAppPath(AppSettings.MessageAppPath, virtualPath);
+        }
+        
         public static string OldMainPath(string virtualPath = "~/")
         {
             return AppPathHelper.GetAppPath(AppSettings.OldMainAppPath, virtualPath);

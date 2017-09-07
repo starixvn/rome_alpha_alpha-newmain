@@ -36,20 +36,18 @@
         oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
         oldMainAppSpecialMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=special',
         updatePrivateMessageCount: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
-        getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx'
+        getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx',
+        getHotMessages: alpha.urls.messageRootPath + 'Announcement/HeaderAnnouncement'
     };
     protected $: JQueryStatic;
 
     constructor($: JQueryStatic) {
         this.$ = $;
     }
-
     init = () => {
         this.cacheElements();
         this.registerEvents();
-        this.showHotMessages();
-        this.getMessages();
-        setInterval(this.getMessages, 60 * 1000);
+        this.getHotMessages();
     }
 
     viewPrivateMessage = () => {
@@ -91,7 +89,15 @@
         event.stopPropagation();
     }
 
-    showHotMessages = () => {
+    getHotMessages = () => {
+        const ajaxSettings = this.createAjaxSettings('POST', this.urls.getHotMessages, this.showHotMessages);
+
+        this.$.ajax(ajaxSettings);
+    }
+
+    showHotMessages = (message) => {
+        this.appendHotMessageToPopup(message);
+        this.domElements.currentHotMessage = this.domElements.hotMessages.find('p.current-hot-message');
         if (this.domElements.currentHotMessage.length > 0) {
             this.domElements
                 .userMessageModal
@@ -100,8 +106,21 @@
 
             this.calculateHotMessagePopupHeight(false);
         }
-
+        this.getMessages();
         setInterval(this.swapMessage, 18 * 1000);
+        setInterval(this.getMessages, 60 * 1000);
+    }
+
+    createAjaxSettings = (methodType: string, url: string, onSuccess: any): JQueryAjaxSettings => {
+        let ajaxSettings: JQueryAjaxSettings = {
+            type: methodType,
+            url: url,
+            data: null,
+            cache: false,
+            success: onSuccess
+        };
+
+        return ajaxSettings;
     }
 
     resetHotMessageElements = (showFullMessage) => {
@@ -232,7 +251,7 @@
             //// Append Private Message to Marquee with green color format.
             const privateMessageContent = this.domElements.liveMessage.find('#private-message-content');
 
-			this.privateMessageId = privateMessage[this.messageIdIndex];
+            this.privateMessageId = privateMessage[this.messageIdIndex];
             if (privateMessageContent.length > 0) {
                 privateMessageContent.html("Private message: " + privateMessage[this.messageContentIndex]);
             }
@@ -257,10 +276,13 @@
     }
 
     appendMessageToPopup = (message) => {
-        this.domElements.contentMessage.append(
-            '<p class="not-shown-message">'
-            + message
-            + '</p>');
+        this.domElements.contentMessage.append('<p class="not-shown-message"></p>');
+
+        this.domElements.contentMessage.find("p:last").html(message);
+    }
+
+    appendHotMessageToPopup = (message) => {
+        this.domElements.contentMessage.append(message);
     }
 
     swapMessage = () => {
@@ -294,6 +316,8 @@
                 .tinyDraggable({ exclude: 'button.icon.icon-close.close, a' });
             this.calculateHotMessagePopupHeight(false);
         }
+
+        setTimeout(this.swapMessage, 18 * 1000);
     }
 
     showNextMessage = (nextMessage: JQuery) => {

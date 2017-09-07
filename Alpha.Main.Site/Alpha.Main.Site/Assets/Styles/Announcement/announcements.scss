@@ -1,6 +1,12 @@
 ﻿@import '../Home/_variables.scss';
 @import '../Home/_mixins.scss';
 
+.announcement-section {
+    .hidden {
+        display: none;        
+    }
+}
+
 .announcement-modal {
     top: 145px;
     left: 300px;

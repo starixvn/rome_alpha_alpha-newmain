@@ -206,7 +206,8 @@ var headerNav = {
 
         // Annoucement popup for mobile
         headerNav.domElements.iconBell.on('click', () => {
-            const announcementMobile = new Announcement.Mobile($);
+            let counter = new PopupAnnouncement.AnnouncementCounter($);
+            const announcementMobile = new PopupAnnouncement.Mobile($, counter);
             announcementMobile.startLoading();
         });
 

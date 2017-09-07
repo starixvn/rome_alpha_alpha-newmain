@@ -200,7 +200,6 @@
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\RoleId.cs" />
     <Compile Include="Constants\Username.cs" />
-    <Compile Include="Controllers\AnnouncementControllerTests.cs" />
     <Compile Include="Controllers\CustomerProfileControllerTests.cs" />
     <Compile Include="Controllers\DashboardControllerTests.cs" />
     <Compile Include="Controllers\DefaultControllerTests.cs" />
@@ -212,7 +211,6 @@
     <Compile Include="Controllers\SecurityCodeControllerTests.cs" />
     <Compile Include="Controllers\StatisticsControllerTests.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Handlers\AnnouncementHandlerTests.cs" />
     <Compile Include="Handlers\BalanceInfoHandlerTests.cs" />
     <Compile Include="Handlers\CustomerProfileHandlerTests.cs" />
     <Compile Include="Handlers\DefaultHandlerTests.cs" />
