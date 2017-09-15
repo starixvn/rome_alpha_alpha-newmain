@@ -563,41 +563,67 @@
     <Content Include="Alpha.Main.Site.Debug.ruleset" />
     <Content Include="Alpha.Main.Site.ruleset" />
     <Content Include="Views\Default\HeaderHotMsg.cshtml" />
-    <None Include="Web.backupMNL.config">
+    <Content Include="Web.backupMNL.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
-    </None>
-    <None Include="Web.AppSettings.backupMNL.config">
+    </Content>
+    <Content Include="Web.AppSettings.backupMNL.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
-    </None>
+    </Content>
     <Content Include="Web.napinternal.config">
-      <SubType>Designer</SubType>
+      <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.backupMNL2.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
+	<Content Include="Web.backupMNL3.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.AppSettings.backupMNL2.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
+	<Content Include="Web.AppSettings.backupMNL3.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
     <Content Include="Web.AppSettings.backupMNLExNap2.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+	<Content Include="Web.AppSettings.backupMNLExNap3.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
     <Content Include="Web.AppSettings.backupMNLNap2.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
-      <SubType>Designer</SubType>
+    </Content>
+	<Content Include="Web.AppSettings.backupMNLNap3.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
     <Content Include="Web.AppSettings.napexternal2.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+	<Content Include="Web.AppSettings.napexternal3.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
     <Content Include="Web.AppSettings.napinternal2.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
+	<Content Include="Web.AppSettings.napinternal3.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
     <Content Include="Web.AppSettings.pro2.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+	<Content Include="Web.AppSettings.pro3.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
     <Content Include="Web.AppSettings.sit2.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
+	<Content Include="Web.AppSettings.sit3.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
     <Content Include="Web.AppSettings.uat2.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
+	<Content Include="Web.AppSettings.uat3.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
     <Content Include="Web.backupMNLExNap.config">
@@ -607,11 +633,17 @@
     <Content Include="Web.backupMNLExNap2.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
+	<Content Include="Web.backupMNLExNap3.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
     <Content Include="Web.backupMNLNap.config">
       <SubType>Designer</SubType>
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.backupMNLNap2.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
+	<Content Include="Web.backupMNLNap3.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.napexternal.config">
@@ -621,13 +653,19 @@
     <Content Include="Web.napexternal2.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
-    <Content Include="Web.napinternal.config">
+	<Content Include="Web.napexternal3.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.napinternal2.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
+	<Content Include="Web.napinternal3.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
     <Content Include="Web.pro2.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
+	<Content Include="Web.pro3.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.proi1.config">
@@ -643,7 +681,13 @@
     <Content Include="Web.sit2.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
+	<Content Include="Web.sit3.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
     <Content Include="Web.uat2.config">
+      <DependentUpon>Web.uati1.config</DependentUpon>
+    </Content>
+	<Content Include="Web.uat3.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
     <Content Include="Web.uati1.config" />
