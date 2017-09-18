@@ -45,21 +45,6 @@
     ]
   },
   {
-    "outputFileName": "Assets/bundles/default-instruction.js",
-    "inputFiles": [
-      "Assets/scripts/instruction/enjoyhint.js",
-      "Assets/scripts/instruction/instruction.js",
-      "Assets/scripts/instruction/instruction-mobile.js"
-    ]
-  },
-  {
-    "outputFileName": "Assets/bundles/default-instruction.css",
-    "inputFiles": [
-      "Assets/styles/instruction/enjoyhint.css",
-      "Assets/styles/instruction/instruction.css"
-    ]
-  },
-  {
     "outputFileName": "Assets/bundles/security/security.css",
     "inputFiles": [
       "Assets/styles/security/security.css"

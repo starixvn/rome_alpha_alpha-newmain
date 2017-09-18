@@ -13,8 +13,6 @@
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
     <link href="@(StaticResources.MainSiteStylePath("~/assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
-    <!--[if (gt IE 8)|!(IE)]><!-->
-    <link href="@(StaticResources.MainSiteStylePath("~/assets/bundles/default-instruction"))" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -23,7 +21,6 @@
 </head>
 <body>
     @Html.Partial("Popup")
-    @Html.Partial("Instruction")
     @Html.Action("HeaderHotMsg")
     <aside class="sidebar" id="side-bar">
         <div class="partial-content customer-profile" id="profile" data-url="@Url.Action("BriefProfile", "CustomerProfile")"></div>
@@ -45,9 +42,6 @@
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     <script src="@(StaticResources.MainSiteScriptPath("~/assets/bundles/default-index"))" type="text/javascript"></script>
-    <!--[if (gt IE 8)|!(IE)]><!-->
-    <script src="@(StaticResources.MainSiteScriptPath("~/assets/bundles/default-instruction"))" type="text/javascript"></script>
-    <!--<![endif]-->
     @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
 </body>
 </html>
