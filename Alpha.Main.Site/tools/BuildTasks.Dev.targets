@@ -4,11 +4,10 @@
          DefaultTargets="MyTargets"
          InitialTargets="MyTargets">
   <Target Name="MyTargets">
-	<Exec Command="_tools\Nuget\NuGet restore Alpha.Main.Site.sln"/>
-	<MSBuild Projects="Alpha.Main.Site.sln" />
+	<Exec Command="Nuget\NuGet restore ..\Alpha.Main.Site.sln"/>
 	
 	<MSBuild 
-	Projects="Alpha.Main.Site.sln" 
+	Projects="..\Alpha.Main.Site.sln" 
 	Properties="RunNunitTests=true;TreatWarningsAsErrors=true;RunCodeAnalysis=true" />
   </Target>
   
