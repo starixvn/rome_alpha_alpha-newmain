@@ -697,6 +697,9 @@
     <Content Include="Web.AppSettings.backupMNLNap.config">
       <DependentUpon>Web.AppSettings.config</DependentUpon>
     </Content>
+	<Content Include="Web.AppSettings.local3.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
     <Content Include="Views\Default\Kickout.cshtml" />
     <Content Include="typings.json" />
     <Content Include="Views\MemberRequests\Index.cshtml" />
