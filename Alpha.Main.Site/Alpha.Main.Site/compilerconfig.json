@@ -50,9 +50,5 @@
   {
     "outputFile": "Views/MemberRequests/Guidelines/Style/page.css",
     "inputFile": "Views/MemberRequests/Guidelines/Style/page.scss"
-  },
-  {
-    "outputFile": "Assets/styles/home/home3.css",
-    "inputFile": "Assets/styles/home/home3.scss"
   }
 ]
