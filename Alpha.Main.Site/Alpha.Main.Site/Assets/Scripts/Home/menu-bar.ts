@@ -257,6 +257,13 @@
         if (alpha.isScreenLower768 && sideBar.hasClass('visible-mobile')) {
             menuBar.domElements.mainContent.addClass('expanded-mobile');
             sideBar.addClass('hidden-mobile').removeClass('visible-mobile');
+
+            if (alpha.isIOS11()) {
+                setTimeout(() => {
+                    $('#navigation').show(0).hide();
+                    $('#side-bar').show(0).hide();
+                }, 500);
+            }
         }
         else {
             if (sideBar.hasClass('docked')) {
