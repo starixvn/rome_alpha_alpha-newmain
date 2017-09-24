@@ -145,6 +145,13 @@
                 content.removeClass('expanded-mobile');
                 sidebar.addClass('hidden-mobile').removeClass('visible-mobile');
             }
+
+            if (alpha.isIOS11()) {
+                setTimeout(() => {
+                    $('#navigation').hide().show(0);
+                    $('#side-bar').hide().show(0);
+                }, 500);
+            }
         }
         else {
             var collapsedClass = 'collapsed',
