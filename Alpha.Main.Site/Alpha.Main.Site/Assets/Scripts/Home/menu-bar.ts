@@ -140,17 +140,24 @@
             if (sidebar.hasClass('hidden-mobile')) {
                 content.addClass('expanded-mobile');
                 sidebar.removeClass('hidden-mobile').addClass('visible-mobile');
+
+                if (alpha.isIOS11()) {
+                    setTimeout(() => {
+                        $('#navigation').hide().show(0);
+                        $('#side-bar').hide().show(0);
+                    }, 500);
+                }
             }
             else {
                 content.removeClass('expanded-mobile');
                 sidebar.addClass('hidden-mobile').removeClass('visible-mobile');
-            }
 
-            if (alpha.isIOS11()) {
-                setTimeout(() => {
-                    $('#navigation').hide().show(0);
-                    $('#side-bar').hide().show(0);
-                }, 500);
+                if (alpha.isIOS11()) {
+                    setTimeout(() => {
+                        $('#navigation').show(0).hide();
+                        $('#side-bar').show(0).hide();
+                    }, 500);
+                }
             }
         }
         else {
