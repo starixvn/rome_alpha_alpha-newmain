@@ -140,10 +140,24 @@
             if (sidebar.hasClass('hidden-mobile')) {
                 content.addClass('expanded-mobile');
                 sidebar.removeClass('hidden-mobile').addClass('visible-mobile');
+
+                if (alpha.isIOS11()) {
+                    setTimeout(() => {
+                        $('#side-bar').hide().show(0);
+                        $('#navigation').hide().show(0);
+                    }, 500);
+                }
             }
             else {
                 content.removeClass('expanded-mobile');
                 sidebar.addClass('hidden-mobile').removeClass('visible-mobile');
+
+                if (alpha.isIOS11()) {
+                    setTimeout(() => {
+                        $('#side-bar').show(0).hide();
+                        $('#navigation').show(0).hide();
+                    }, 200);
+                }
             }
         }
         else {
@@ -243,6 +257,13 @@
         if (alpha.isScreenLower768 && sideBar.hasClass('visible-mobile')) {
             menuBar.domElements.mainContent.addClass('expanded-mobile');
             sideBar.addClass('hidden-mobile').removeClass('visible-mobile');
+
+            if (alpha.isIOS11()) {
+                setTimeout(() => {
+                    $('#side-bar').show(0).hide();
+                    $('#navigation').show(0).hide();
+                }, 200);
+            }
         }
         else {
             if (sideBar.hasClass('docked')) {
