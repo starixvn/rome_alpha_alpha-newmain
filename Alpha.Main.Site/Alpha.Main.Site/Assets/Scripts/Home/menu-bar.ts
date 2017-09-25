@@ -143,8 +143,8 @@
 
                 if (alpha.isIOS11()) {
                     setTimeout(() => {
-                        $('#navigation').hide().show(0);
                         $('#side-bar').hide().show(0);
+                        $('#navigation').hide().show(0);
                     }, 500);
                 }
             }
@@ -154,9 +154,9 @@
 
                 if (alpha.isIOS11()) {
                     setTimeout(() => {
-                        $('#navigation').show(0).hide();
                         $('#side-bar').show(0).hide();
-                    }, 500);
+                        $('#navigation').show(0).hide();
+                    }, 200);
                 }
             }
         }
@@ -260,9 +260,9 @@
 
             if (alpha.isIOS11()) {
                 setTimeout(() => {
-                    $('#navigation').show(0).hide();
                     $('#side-bar').show(0).hide();
-                }, 500);
+                    $('#navigation').show(0).hide();
+                }, 200);
             }
         }
         else {
