@@ -2,6 +2,7 @@
 
 namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
     using Models.Requests;
@@ -11,7 +12,6 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Site.Requests;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
-    using System;
 
     [TestFixture]
     public class LanguageHandlerTests

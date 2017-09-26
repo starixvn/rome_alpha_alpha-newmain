@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
     using System;
-    using Alpha.SecurityCode.Services;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Main.Models;

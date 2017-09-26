@@ -1,23 +1,23 @@
-﻿using Alpha.Main.AppResources;
-using Alpha.Main.Constants;
-using Alpha.Main.Models;
-using Alpha.Main.Models.CustomerProfiles;
-using Alpha.Main.Params.SecurityCode;
-using Alpha.Main.Services;
-using Alpha.Main.Site.Handlers.SecurityCode;
-using Alpha.Main.Site.Models.Request.SecurityCode;
-using Alpha.Main.Site.ViewModels.Security;
-using Alpha.Main.Tests.TestData.Helper;
-using Alpha.SecurityCode.Web;
-using KellermanSoftware.CompareNetObjects;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Entities;
-using Sunplus.Agent.Utilities;
-using System;
-
-namespace Alpha.Main.Site.Tests.Handlers
+﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
+    using Alpha.Main.AppResources;
+    using Alpha.Main.Constants;
+    using Alpha.Main.Models;
+    using Alpha.Main.Models.CustomerProfiles;
+    using Alpha.Main.Params.SecurityCode;
+    using Alpha.Main.Services;
+    using Alpha.Main.Site.Handlers.SecurityCode;
+    using Alpha.Main.Site.Models.Request.SecurityCode;
+    using Alpha.Main.Site.ViewModels.Security;
+    using Alpha.Main.Tests.TestData.Helper;
+    using Alpha.SecurityCode.Web;
+    using KellermanSoftware.CompareNetObjects;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Utilities;
+
     [TestFixture]
     public class SecurityCodeHandlerTests
     {

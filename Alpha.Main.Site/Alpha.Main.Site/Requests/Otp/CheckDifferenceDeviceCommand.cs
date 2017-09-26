@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Requests.Otp
 {
-    using Auth.Models;
     using MediatR;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;

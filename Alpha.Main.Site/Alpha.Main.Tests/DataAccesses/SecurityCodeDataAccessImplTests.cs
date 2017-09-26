@@ -1,10 +1,10 @@
-﻿using Alpha.Main.DataAccesses.Impl;
-using Fanex.Data.Repository;
-using NUnit.Framework;
-using System;
-
-namespace Alpha.Main.Tests.DataAccesses
+﻿namespace Alpha.Main.Tests.DataAccesses
 {
+    using System;
+    using Alpha.Main.DataAccesses.Impl;
+    using Fanex.Data.Repository;
+    using NUnit.Framework;
+
     [TestFixture]
     public class SecurityCodeDataAccessImplTests
     {

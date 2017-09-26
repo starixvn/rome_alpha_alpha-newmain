@@ -1,11 +1,11 @@
-﻿using Alpha.Main.Site.Models.Request.SecurityCode;
-using Alpha.Main.Site.Tests.Constants;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Entities;
-
-namespace Alpha.Main.Site.Tests.Requests.SecurityCode
+﻿namespace Alpha.Main.Site.Tests.Requests.SecurityCode
 {
+    using Alpha.Main.Site.Models.Request.SecurityCode;
+    using Alpha.Main.Site.Tests.Constants;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Entities;
+
     [TestFixture]
     public class ChangeSecurityCodeFirstLoginCommandTests
     {

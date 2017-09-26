@@ -1,23 +1,23 @@
-﻿using Alpha.Main.AppResources;
-using Alpha.Main.Models;
-using Alpha.Main.Models.CustomerProfiles;
-using Alpha.Main.Params.Password;
-using Alpha.Main.Services;
-using Alpha.Main.Site.Handlers;
-using Alpha.Main.Site.Requests.Password;
-using Alpha.Main.Site.Tests.Constants;
-using Alpha.Main.Site.ViewModels.Security;
-using Alpha.Main.Tests.TestData.Helper;
-using Alpha.SecurityCode.Services;
-using KellermanSoftware.CompareNetObjects;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Entities;
-using Sunplus.Agent.Utilities;
-using System;
-
-namespace Alpha.Main.Site.Tests.Handlers
+﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
+    using Alpha.Main.AppResources;
+    using Alpha.Main.Models;
+    using Alpha.Main.Models.CustomerProfiles;
+    using Alpha.Main.Params.Password;
+    using Alpha.Main.Services;
+    using Alpha.Main.Site.Handlers;
+    using Alpha.Main.Site.Requests.Password;
+    using Alpha.Main.Site.Tests.Constants;
+    using Alpha.Main.Site.ViewModels.Security;
+    using Alpha.Main.Tests.TestData.Helper;
+    using Alpha.SecurityCode.Services;
+    using KellermanSoftware.CompareNetObjects;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Utilities;
+
     [TestFixture]
     public class PasswordHandlerTests
     {

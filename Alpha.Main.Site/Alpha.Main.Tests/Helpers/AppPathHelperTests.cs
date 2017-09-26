@@ -2,7 +2,6 @@
 {
     using System;
     using Main.Helpers;
-    using NSubstitute;
     using NUnit.Framework;
 
     [TestFixture]

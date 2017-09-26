@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.DataAccesses.Impl
 {
     using System;
-    using System.Collections;
     using Alpha.Main.DataAccesses;
     using Fanex.Data;
     using Fanex.Data.Repository;

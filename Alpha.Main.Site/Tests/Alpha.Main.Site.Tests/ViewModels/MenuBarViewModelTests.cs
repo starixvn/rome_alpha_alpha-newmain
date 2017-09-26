@@ -1,10 +1,10 @@
-﻿using Alpha.Main.Models.Menus;
-using Alpha.Main.Site.ViewModels;
-using NUnit.Framework;
-using System.Linq;
-
-namespace Alpha.Main.Site.Tests.ViewModels
+﻿namespace Alpha.Main.Site.Tests.ViewModels
 {
+    using System.Linq;
+    using Alpha.Main.Models.Menus;
+    using Alpha.Main.Site.ViewModels;
+    using NUnit.Framework;
+
     [TestFixture]
     public class MenuBarViewModelTests
     {

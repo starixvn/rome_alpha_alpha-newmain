@@ -161,7 +161,7 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             // Act
             var viewModel = noticeHandler.Handle(query);
-                                   
+
             // Assert
             Assert.True(compareLogic.Compare(expectedMessages, viewModel.HighlightMessages).AreEqual);
         }
@@ -184,7 +184,7 @@ namespace Alpha.Main.Site.Tests.Handlers
                 new NoticeMessageWrapper(CreateNoticeMessage(3, new DateTime(2017, 5, 2), 45), userSession.Language),
                 new NoticeMessageWrapper(CreateNoticeMessage(1, new DateTime(2017, 5, 1), 41), userSession.Language)
             };
-                        
+
             var query = new NoticeQuery(userSession, DateTime.Today, 100, false);
 
             var compareLogic = new CompareLogic();
@@ -209,22 +209,22 @@ namespace Alpha.Main.Site.Tests.Handlers
 
         private NoticeMessage CreateNoticeMessage(int id, DateTime postTime, byte topLevel)
             => new NoticeMessage(
-                id, 
-                string.Empty, 
-                string.Empty, 
-                string.Empty, 
-                string.Empty, 
-                string.Empty, 
-                string.Empty, 
-                string.Empty, 
-                string.Empty, 
-                string.Empty, 
-                postTime, 
-                0, 
-                true, 
-                postTime, 
-                string.Empty, 
-                true, 
+                id,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                string.Empty,
+                postTime,
+                0,
+                true,
+                postTime,
+                string.Empty,
+                true,
                 topLevel);
     }
 }

@@ -1,19 +1,19 @@
-﻿using Alpha.Main.Models.MemberRequests;
-using Alpha.Main.Services;
-using Alpha.Main.Site.Handlers;
-using Alpha.Main.Site.Requests.Dashboard.MemberRequests;
-using Alpha.Main.Site.Tests.Constants;
-using Alpha.Main.Site.ViewModels.Dashboard.MemberRequests;
-using Alpha.Main.Tests.TestData.Helper;
-using KellermanSoftware.CompareNetObjects;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Entities;
-using System;
-using System.Linq;
-
-namespace Alpha.Main.Site.Tests.Handlers
+﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using System;
+    using System.Linq;
+    using Alpha.Main.Models.MemberRequests;
+    using Alpha.Main.Services;
+    using Alpha.Main.Site.Handlers;
+    using Alpha.Main.Site.Requests.Dashboard.MemberRequests;
+    using Alpha.Main.Site.Tests.Constants;
+    using Alpha.Main.Site.ViewModels.Dashboard.MemberRequests;
+    using Alpha.Main.Tests.TestData.Helper;
+    using KellermanSoftware.CompareNetObjects;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Entities;
+
     [TestFixture]
     public class MemberRequestsHandlerTests
     {

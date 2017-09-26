@@ -1,9 +1,9 @@
-﻿using System.Web;
-using Alpha.Main.Helpers;
-using Alpha.Main.Models.Enumerations;
-
-namespace Alpha.Main.Site.ViewModels.Security
+﻿namespace Alpha.Main.Site.ViewModels.Security
 {
+    using System.Web;
+    using Alpha.Main.Helpers;
+    using Alpha.Main.Models.Enumerations;
+
     public class SecurityCodeViewModel
     {
         public string SecurityCodeToken { get; set; }

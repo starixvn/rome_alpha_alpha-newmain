@@ -1,11 +1,11 @@
-﻿using Alpha.Main.Models.Enumerations;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Alpha.Main.Tests.Models.Enumerations
+﻿namespace Alpha.Main.Tests.Models.Enumerations
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Alpha.Main.Models.Enumerations;
+    using NUnit.Framework;
+
     [TestFixture]
     public class EnumerationTests
     {

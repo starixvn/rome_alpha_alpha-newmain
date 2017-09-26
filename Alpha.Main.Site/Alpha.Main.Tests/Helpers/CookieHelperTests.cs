@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Helpers
 {
+    using System;
     using Main.Helpers;
     using NUnit.Framework;
-    using System;
 
     [TestFixture]
     public class CookieHelperTests

@@ -1,13 +1,13 @@
-﻿using Alpha.Main.Constants;
-using Alpha.Main.Site.Controllers;
-using Alpha.Main.Site.Requests.Password;
-using MediatR;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Entities;
-
-namespace Alpha.Main.Site.Tests.Controllers
+﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using Alpha.Main.Constants;
+    using Alpha.Main.Site.Controllers;
+    using Alpha.Main.Site.Requests.Password;
+    using MediatR;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Entities;
+
     [TestFixture]
     public class PasswordControllerTests
     {

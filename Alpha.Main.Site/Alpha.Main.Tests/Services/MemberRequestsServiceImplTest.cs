@@ -1,15 +1,15 @@
-﻿using Alpha.Main.Models.MemberRequests;
-using Alpha.Main.Services.Impl;
-using Alpha.Main.Tests.Constants;
-using Alpha.Main.Tests.TestData.Helper;
-using Fanex.Data.Repository;
-using NSubstitute;
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Alpha.Main.Tests.Services
+﻿namespace Alpha.Main.Tests.Services
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Alpha.Main.Models.MemberRequests;
+    using Alpha.Main.Services.Impl;
+    using Alpha.Main.Tests.Constants;
+    using Alpha.Main.Tests.TestData.Helper;
+    using Fanex.Data.Repository;
+    using NSubstitute;
+    using NUnit.Framework;
+
     [TestFixture]
     public class MemberRequestsServiceImplTest
     {

@@ -1,20 +1,20 @@
-﻿using Alpha.Main.AppResources;
-using Alpha.Main.Constants;
-using Alpha.Main.Site.Controllers;
-using Alpha.Main.Site.Models.Requests;
-using Alpha.Main.Site.Models.Requests.UserMessages;
-using Alpha.Main.Site.Requests;
-using Alpha.Main.Site.Requests.Otp;
-using Alpha.Main.Site.ViewModels;
-using Alpha.SecurityCode.Services;
-using MediatR;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Entities;
-using System.Web.Mvc;
-
-namespace Alpha.Main.Site.Tests.Controllers
+﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System.Web.Mvc;
+    using Alpha.Main.AppResources;
+    using Alpha.Main.Constants;
+    using Alpha.Main.Site.Controllers;
+    using Alpha.Main.Site.Models.Requests;
+    using Alpha.Main.Site.Models.Requests.UserMessages;
+    using Alpha.Main.Site.Requests;
+    using Alpha.Main.Site.Requests.Otp;
+    using Alpha.Main.Site.ViewModels;
+    using Alpha.SecurityCode.Services;
+    using MediatR;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Entities;
+
     [TestFixture]
     public class DefaultControllerTests
     {

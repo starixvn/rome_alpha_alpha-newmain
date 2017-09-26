@@ -1,18 +1,18 @@
-﻿using Alpha.Main.AppResources;
-using Alpha.Main.Criteria.SecurityCode;
-using Alpha.Main.DataAccesses;
-using Alpha.Main.Models;
-using Alpha.Main.Params.SecurityCode;
-using Alpha.Main.Services.Impl;
-using Fanex.Data.Repository;
-using NSubstitute;
-using NUnit.Framework;
-using Sunplus.Agent.Model.Casino;
-using Sunplus.Agent.Utilities;
-using System;
-
-namespace Alpha.Main.Tests.Services
+﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
+    using Alpha.Main.AppResources;
+    using Alpha.Main.Criteria.SecurityCode;
+    using Alpha.Main.DataAccesses;
+    using Alpha.Main.Models;
+    using Alpha.Main.Params.SecurityCode;
+    using Alpha.Main.Services.Impl;
+    using Fanex.Data.Repository;
+    using NSubstitute;
+    using NUnit.Framework;
+    using Sunplus.Agent.Model.Casino;
+    using Sunplus.Agent.Utilities;
+
     [TestFixture]
     public class SecurityCodeServiceImplTest
     {

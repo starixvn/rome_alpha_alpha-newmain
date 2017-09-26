@@ -1,10 +1,10 @@
-﻿using Alpha.Main.Helpers.Impl;
-using Alpha.Main.Models.CustomerProfiles;
-using KellermanSoftware.CompareNetObjects;
-using NUnit.Framework;
-
-namespace Alpha.Main.Tests.Helpers.Impl
+﻿namespace Alpha.Main.Tests.Helpers.Impl
 {
+    using Alpha.Main.Helpers.Impl;
+    using Alpha.Main.Models.CustomerProfiles;
+    using KellermanSoftware.CompareNetObjects;
+    using NUnit.Framework;
+
     [TestFixture]
     public class JsonHelperImplTests
     {

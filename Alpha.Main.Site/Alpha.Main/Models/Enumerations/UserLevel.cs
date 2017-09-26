@@ -2,6 +2,7 @@
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+
     [Serializable]
     public class UserLevel : Enumeration
     {

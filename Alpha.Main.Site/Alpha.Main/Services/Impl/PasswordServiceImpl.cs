@@ -1,5 +1,8 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
     using AppResources;
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
@@ -8,9 +11,6 @@
     using Params.Password;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Collections.Generic;
-    using System.Text.RegularExpressions;
 
     public class PasswordServiceImpl : PasswordService
     {

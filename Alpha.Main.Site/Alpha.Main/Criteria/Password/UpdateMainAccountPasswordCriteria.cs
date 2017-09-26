@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Criteria.Password
 {
-    using System;
     using Fanex.Data.Repository;
 
     public class UpdateMainAccountPasswordCriteria : CriteriaBase

@@ -1,5 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System.Collections.Generic;
+    using System.Web;
     using Helpers;
     using Main.Constants;
     using Main.Helpers;
@@ -9,8 +11,6 @@
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
-    using System.Collections.Generic;
-    using System.Web;
 
     [TestFixture]
     public class SiteMenuServiceImplTests

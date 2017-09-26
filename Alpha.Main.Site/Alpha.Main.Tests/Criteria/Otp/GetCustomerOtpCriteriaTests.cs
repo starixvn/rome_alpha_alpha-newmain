@@ -1,8 +1,8 @@
-﻿using Alpha.Main.Criteria.Otp;
-using NUnit.Framework;
-
-namespace Alpha.Main.Tests.Criteria.Otp
+﻿namespace Alpha.Main.Tests.Criteria.Otp
 {
+    using Alpha.Main.Criteria.Otp;
+    using NUnit.Framework;
+
     [TestFixture]
     public class GetCustomerOtpCriteriaTests
     {
