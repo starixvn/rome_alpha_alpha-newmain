@@ -185,5 +185,11 @@
       "Assets/scripts/core.js",
       "Assets/scripts/home/kick-out.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/error.css",
+    "inputFiles": [
+      "Assets/styles/error/error.css"
+    ]
   }
 ]

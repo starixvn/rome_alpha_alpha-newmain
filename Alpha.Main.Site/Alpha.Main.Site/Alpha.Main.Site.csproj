@@ -415,6 +415,17 @@
     <Content Include="App_Data\SPNames\UAT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\UAT\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml" />
+    <Content Include="Assets\bundles\error.css" />
+    <Content Include="Assets\bundles\error.min.css">
+      <DependentUpon>error.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\error\error.css">
+      <DependentUpon>error.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\error\error.min.css">
+      <DependentUpon>error.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\error\images\error-bg.png" />
     <Content Include="Assets\styles\home\_mixins2.scss" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.css">
       <DependentUpon>page.scss</DependentUpon>
@@ -1009,6 +1020,7 @@
     <Content Include="Assets\styles\security\security.scss" />
     <Content Include="Assets\styles\message\message.scss" />
     <Content Include="Assets\styles\otp\otp.scss" />
+    <Content Include="Assets\styles\error\error.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
