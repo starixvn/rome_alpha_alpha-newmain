@@ -155,15 +155,6 @@ var alpha = {
     key: {
         instruction: 'Instruction',
         mobileInstruction: 'MobileInstruction'
-    },
-
-    isIOS11: function () {
-        let browserUserAgent = window.navigator.userAgent.toLowerCase();
-
-        return browserUserAgent.indexOf("iphone") > 0
-            && browserUserAgent.indexOf("safari") > 0
-            && browserUserAgent.indexOf("os 11_") > 0
-            && browserUserAgent.indexOf("applewebkit") > 0;
     }
 };
 
