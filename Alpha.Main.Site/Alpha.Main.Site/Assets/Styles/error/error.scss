@@ -5,9 +5,13 @@ body {
     background-color: #fff;
     color: $text-color;
     font-size: $font-size + 1;
+    margin: 0;
+    padding: 0;
 
     @media only screen and (min-device-width: 767px) {
         font-size: $font-size + 5;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
@@ -17,24 +21,31 @@ body {
     text-align: center;
 
     .img {        
-        width: 80%;
+         max-width: 100%;
 
-        @media only screen and (max-device-width: $screen-device-lower768) and (orientation: portrait) {
-            width: 60%;
+        @media only screen and (max-device-width: 1024px) and (orientation : landscape) {
+           width: 40%;
         }
 
-        @media only screen and (max-device-width: $screen-device-lower768) and (orientation: landscape) {
-            width: 35%;
+        @media only screen and (max-device-width: 767px) and (orientation : landscape) {
+           width: 40%;
+        }
+
+        @media only screen and (max-device-width: 374px) and (orientation: landscape) {  
+           width: 35%;
         }
     }
 
-    @media only screen and (min-device-width: $screen-device-greater1200) {
-        padding-top: 120px;
-        max-width: 800px;
+    @media only screen and (min-device-width: 768px) {
+        padding-top: 80px;
     }
 
-    @media only screen and (max-device-width: $screen-device-lower768) {
+    @media only screen and (max-device-width: 767px) and (orientation: landscape) {
         padding-top: 20px;
+    }
+
+     @media only screen and (max-device-width: 767px) and (orientation: portrait) {
+        padding-top: 40px;
     }
 }
 
@@ -61,6 +72,6 @@ body {
     margin-bottom: 0;
 
     @media only screen and (max-device-width: $screen-device-lower768) {
-        margin-top: 5px;
+        margin-top: 10px;
     }
 }
