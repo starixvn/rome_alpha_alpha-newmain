@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Alpha.Auth, Version=3.0.1.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.1.6-SecurityInJun-02\lib\net40\Alpha.Auth.dll</HintPath>
+      <HintPath>..\packages\Alpha.Auth.3.0.1.6-SecurityInJun-04\lib\net40\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.SecurityCode, Version=3.0.0.4, Culture=neutral, processorArchitecture=MSIL">
@@ -44,7 +44,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.Web, Version=1.0.0.10, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.0.11-SecurityInJun-02\lib\net40\Alpha.Web.dll</HintPath>
+      <HintPath>..\packages\Alpha.Web.1.0.0.11-SecurityInJun-03\lib\net40\Alpha.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
