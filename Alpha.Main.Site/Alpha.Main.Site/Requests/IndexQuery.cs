@@ -37,6 +37,8 @@ namespace Alpha.Main.Site.Models.Requests
 
         public bool IsInternalWebVpn => userSession.IsInternalWebVPN;
 
+        public bool IsInternal => userSession.IsInternal;
+
         public bool EnableSecurityCode => userSession.IsLogged &&
                     !userSession.IsPasswordExpired &&
                     this.isEnableSecurityCode;

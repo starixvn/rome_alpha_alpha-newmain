@@ -141,8 +141,9 @@ window.age = window.age || {
 
         index.location = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
 
-        if (index.location.href.indexOf('https://imb.') == 0 ||
-            index.location.href.indexOf('https://int.') == 0) {
+        var isInternal = index.$("#isInternal").val();
+
+        if (isInternal.toString() !== "0") {
             index.close();
         }
     },

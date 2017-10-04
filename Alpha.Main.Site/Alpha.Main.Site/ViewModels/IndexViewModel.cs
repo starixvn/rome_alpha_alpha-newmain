@@ -54,7 +54,7 @@
 
         public string HowToUseRootPath => MicroSites.HowToUsePath("~/");
 
-        public string ExTotalBetsForecastRootPath => MicroSites.ExTotalBetsForecastSitePath();        
+        public string ExTotalBetsForecastRootPath => MicroSites.ExTotalBetsForecastSitePath();
 
         public string MessageSiteRootPath => MicroSites.MessageSitePath();
 
@@ -67,6 +67,8 @@
         public bool IsSubAccount => message.IsSubAccount;
 
         public bool IsInternalWebVPN => message.IsInternalWebVpn;
+
+        public bool IsInternal => message.IsInternal;
 
         [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
         public string CurrentURLCookieName => CookieHelper.GetCookieNameOfCurrentPage(CustId, SubAccId, encodeDataFunction);
