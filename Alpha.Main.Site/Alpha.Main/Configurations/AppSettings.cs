@@ -156,6 +156,8 @@
 
         public static bool ShowGoldDeluxeAnnouncement => IsMBCSite;
 
+        public static bool ShowHelpLink => IsMBCSite;
+
         public static string[] NoticeTypes
         {
             get

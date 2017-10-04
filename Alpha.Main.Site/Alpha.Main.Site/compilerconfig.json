@@ -50,5 +50,9 @@
   {
     "outputFile": "Views/MemberRequests/Guidelines/Style/page.css",
     "inputFile": "Views/MemberRequests/Guidelines/Style/page.scss"
+  },
+  {
+    "outputFile": "Assets/styles/error/error.css",
+    "inputFile": "Assets/styles/error/error.scss"
   }
 ]

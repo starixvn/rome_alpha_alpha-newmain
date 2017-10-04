@@ -26,5 +26,7 @@
         public string MainRootPath { get; } = AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
 
         public bool IsDisabledContactUsLink { get; } = AppSettings.IsDisabledContactUsLink;
+
+        public bool ShowHelpLink { get; } = AppSettings.ShowHelpLink;
     }
 }
