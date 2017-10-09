@@ -358,7 +358,7 @@ window.bootboxConfirm = function (message, handleElement, acceptCallback, cancel
     });
 
     var dialog = $(".bootbox-confirm .modal-dialog");
-    var position = getBootboxPostion(handleElement, popUpOptions);
+    var position = getBootboxPostion(handleElement, popUpOptions, dialog);
     dialog.css({
         left: position.left,
         top: position.top
@@ -373,7 +373,7 @@ window.bootboxAlert = function (message, handleElement, callbackFunction, popUpO
     });
 
     var dialog = $(".bootbox-alert .modal-dialog");
-    var position = getBootboxPostion(handleElement, popUpOptions);
+    var position = getBootboxPostion(handleElement, popUpOptions, dialog);
 
     dialog.css({
         left: position.left || 0,
@@ -381,7 +381,7 @@ window.bootboxAlert = function (message, handleElement, callbackFunction, popUpO
     });
 };
 
-function getBootboxPostion(handleElement, popUpOptions) {
+function getBootboxPostion(handleElement, popUpOptions, dialog) {
     if (popUpOptions && popUpOptions.position) {
         return popUpOptions.position;
     }
@@ -390,8 +390,9 @@ function getBootboxPostion(handleElement, popUpOptions) {
         return menuBarManager.getPopupEditStatusPosition(handleElement, popUpOptions);
     }
 
+    var left = $(window).width() / 2 - dialog.width() / 2;
     return {
-        left: $(window).width() / 2,
+        left: left < 0 ? 0 : left,
         top: 100
     };
 }
