@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using AppResources;
     using Fanex.Data.Repository;
     using Main.Criteria.Otp;
@@ -15,7 +14,6 @@
     using ONEbook.OTP.Services;
     using Params.Otp;
     using Sunplus.Agent.Model.Casino;
-    using Sunplus.Agent.Utilities;
 
     [TestFixture]
     public class CustomerOtpServiceImplTests
@@ -25,7 +23,6 @@
         private OtpService otpService;
         private JsonHelper jsonHelper;
         private CasinoService casinoService;
-        private Logger logger;
 
         [SetUp]
         public void SetUp()
@@ -34,9 +31,8 @@
             otpService = Substitute.For<OtpService>();
             jsonHelper = Substitute.For<JsonHelper>();
             casinoService = Substitute.For<CasinoService>();
-            logger = Substitute.For<Logger>();
 
-            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, casinoService, logger);
+            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, casinoService);
         }
 
         #region Change Otp Status
@@ -778,22 +774,6 @@
         public void IsDifferenceDevice_DeviceIdIsNullOrWhiteSpace_ThrowArgumentOutOfRangeException(string deviceId)
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => customerOtpService.IsDifferenceDevice(1, deviceId));
-        }
-
-        [Test]
-        public void IsDifferenceDevice_DeviceIsNotDetected_CallWriteLog()
-        {
-            // Arrange
-            var deviceId = "N/A";
-            var custId = 3;
-            logger.FullExceptionToString(Arg.Any<Exception>(), custId).Returns("Full Log");
-            dynamicRepository.Fetch<Device>(Arg.Any<CriteriaBase>()).Returns(Enumerable.Empty<Device>());
-
-            // Act
-            customerOtpService.IsDifferenceDevice(custId, deviceId);
-
-            // Assert
-            logger.Received().WriteInfo("Full Log");
         }
 
         [Test]

@@ -4,9 +4,11 @@ namespace Alpha.Main
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Fanex.Logging.Extensions.Web;
     using Fanex.Products;
     using Helpers;
     using Models.Menus;
@@ -124,7 +126,7 @@ namespace Alpha.Main
                     }
                     catch (Exception ex)
                     {
-                        Logs.WriteInfo(ex);
+                        ExceptionHandler.Handle(ex, TraceEventType.Information);
                     }
                 }
             }

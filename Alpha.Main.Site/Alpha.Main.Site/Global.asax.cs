@@ -1,9 +1,7 @@
 ﻿namespace Alpha.Main.Site
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Reflection;
-    using System.Web;
+    using System.Collections.Generic;
     using System.Web.Helpers;
     using System.Web.Mvc;
     using System.Web.Routing;
@@ -11,16 +9,15 @@
     using Auth.Filters;
     using Configurations;
     using Fanex.Data;
+    using Fanex.Data.CrossCutting.WrappingException;
     using Fanex.Data.OldConnectionStringProvider;
+    using Fanex.Logging.Extensions.Database;
+    using Fanex.Logging.Extensions.Web;
     using ONEbook.UM.Filters;
-    using Sunplus.Agent.Model.Entities;
-    using Sunplus.Agent.Utilities;
     using Web;
 
     public class MvcApplication : System.Web.HttpApplication
     {
-        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters",
-            MessageId = "Sunplus.Agent.Utilities.Logs.WriteInfo(System.String)", Justification = "Reviewed!")]
         protected void Application_Start()
         {
             ViewEngines.Engines.Clear();
@@ -39,7 +36,8 @@
                     resourcePath: AppSettings.StoreProcedurePath,
                     ignoreRedundantParameters: false,
                     enableWatching: true)
-                .Run();
+               .Use((settingKey, commandTimeout) => new WrappingExceptionObjectDb(settingKey, commandTimeout))
+               .Run();
 
             ShareSession.Init();
 
@@ -47,7 +45,11 @@
             GlobalFilters.Filters.Add(new CheckBelongingFilter());
             AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
 
-            Logs.WriteInfo("Alpha - New Main - Application Start");
+            var loggingConfiguration = new LoggingConfiguration()
+                .HideSensitiveInfo(GetRegexToHideSensitiveInfo())
+                .UseGetDbExceptionInfo(DatabaseInfoGetters.GetDbExceptionInfo);
+
+            ExceptionHandler.UseConfig(loggingConfiguration);
         }
 
         /// <summary>
@@ -57,64 +59,27 @@
         /// <param name="e">Event arguments.</param>
         protected void Application_Error(object sender, EventArgs e)
         {
-            Exception ex = Server.GetLastError().GetBaseException();
-            if (ex is HttpException)
+            if (Request.IsLocal)
             {
                 return;
             }
 
-            if (!Request.IsLocal)
-            {
-                if (ex.Message.Contains("Extend Token Error UserID") ||
-                    ex.Message.Contains("'0' is not a valid value in Alpha.Main.Models.Enumerations.UserLevel"))
-                {
-                    return;
-                }
-
-                Logs.FilterInfoWarnOrError(
-                    ex, 
-                    UserSession.Current != null ? UserSession.Current.CustId : 0);
-            }
+            Exception ex = Server.GetLastError();
+            ExceptionHandler.Handle(ex);
         }
 
-        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "shutDownStack", Justification = "Reviewed!")]
-        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "shutDownMessage", Justification = "Reviewed!")]
-        [SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters",
-            MessageId = "Sunplus.Agent.Utilities.Logs.WriteInfo(System.String)", Justification = "Reviewed!")]
-        protected void Application_End()
+        private static List<string> GetRegexToHideSensitiveInfo()
         {
-            HttpRuntime runtime = (HttpRuntime)typeof(HttpRuntime).InvokeMember(
-                "_theRuntime",
-                BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.GetField,
-                null,
-                null,
-                null);
+            var result = new List<string>();
+            var sensitiveInfo = new[] { "password", "seccode", "securitycode" };
 
-            if (runtime == null)
+            foreach (var info in sensitiveInfo)
             {
-                return;
+                result.Add($"(?:{info}=)(?<paramValue>[^&|^\\s]+)");
+                result.Add($"(\"{info}\":)(?<paramValue>[^,|^\r]+)");
             }
 
-            string shutDownMessage = (string)runtime.GetType().InvokeMember(
-                "_shutDownMessage",
-                BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.GetField,
-                null,
-                runtime,
-                null);
-
-            string shutDownStack = (string)runtime.GetType().InvokeMember(
-                "_shutDownStack",
-                BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.GetField,
-                null,
-                runtime,
-                null);
-
-            var logMessage = string.Format(
-                "\r\n\r\n_shutDownMessage={0}\r\n\r\n_shutDownStack={1}",
-                shutDownMessage,
-                shutDownStack);
-
-            Logs.WriteInfo(logMessage);
+            return result;
         }
     }
 }

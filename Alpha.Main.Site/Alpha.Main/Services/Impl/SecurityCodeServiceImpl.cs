@@ -1,12 +1,14 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
     using System;
+    using System.Diagnostics;
     using System.Text.RegularExpressions;
     using Alpha.Main.Services;
     using AppResources;
     using CasinoLibrary.Model.UserException;
     using Criteria.SecurityCode;
     using DataAccesses;
+    using Fanex.Logging.Extensions.Web;
     using Models;
     using Params.SecurityCode;
     using Sunplus.Agent.Model.Casino;
@@ -254,7 +256,7 @@
                 }
                 catch (ErrorException ex)
                 {
-                    Logs.WriteInfo(ex);
+                    ExceptionHandler.Handle(new Exception(ex.Message), TraceEventType.Information);
                 }
             }
         }

@@ -86,11 +86,10 @@ namespace Alpha.Main.Site.App_Start
         {
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
-            container.Register<Logger, LoggerImpl>(Lifestyle.Singleton);
 
             container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
-                        
+
             container.RegisterPerWebRequest<SiteMenuService, SiteMenuServiceImpl>();
             container.RegisterPerWebRequest<CustomerProfileService, CustomerProfileServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeService, SecurityCodeServiceImpl>();
@@ -117,8 +116,7 @@ namespace Alpha.Main.Site.App_Start
                 container.GetInstance<IDynamicRepository>(),
                 container.GetInstance<OtpService>(),
                 container.GetInstance<JsonHelper>(),
-                container.GetInstance<CasinoService>(),
-                container.GetInstance<Logger>()));
+                container.GetInstance<CasinoService>()));
         }
 
         private static void RegisterDataAccesses(Container container)
