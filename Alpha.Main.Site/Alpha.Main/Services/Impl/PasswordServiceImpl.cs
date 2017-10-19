@@ -2,11 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Text.RegularExpressions;
     using AppResources;
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
     using DataAccesses;
+    using Fanex.Logging.Extensions.Web;
     using Models;
     using Params.Password;
     using Sunplus.Agent.Model.Casino;
@@ -105,7 +107,7 @@
                 }
                 catch (ErrorException ex)
                 {
-                    Logs.WriteInfo(ex);
+                    ExceptionHandler.Handle(new Exception(ex.Message), TraceEventType.Information);
                 }
             }
         }

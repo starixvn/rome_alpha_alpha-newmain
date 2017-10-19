@@ -1,18 +1,19 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
     using System;
+    using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using AppResources;
     using Criteria.Otp;
     using Fanex.Data.Repository;
+    using Fanex.Logging.Extensions.Web;
     using Helpers;
     using Models;
     using Models.Otp;
     using ONEbook.OTP.Services;
     using Params.Otp;
     using Sunplus.Agent.Model.Casino;
-    using Sunplus.Agent.Utilities;
 
     public class CustomerOtpServiceImpl : CustomerOtpService
     {
@@ -32,20 +33,17 @@
         private readonly OtpService otpService;
         private readonly JsonHelper jsonHelper;
         private readonly CasinoService casinoService;
-        private readonly Logger logger;
 
         public CustomerOtpServiceImpl(
             IDynamicRepository dynamicRepository,
             OtpService otpService,
             JsonHelper jsonHelper,
-            CasinoService casinoService,
-            Logger logger)
+            CasinoService casinoService)
         {
             this.dynamicRepository = dynamicRepository;
             this.otpService = otpService;
             this.jsonHelper = jsonHelper;
             this.casinoService = casinoService;
-            this.logger = logger;
         }
 
         public virtual Result ChangeOtpStatus(ChangeOtpStatusParam param)
@@ -221,7 +219,7 @@
                 }
                 catch (Exception ex)
                 {
-                    logger.WriteInfo(logger.FullExceptionToString(ex, custId));
+                    ExceptionHandler.Handle(ex, TraceEventType.Information);
                 }
             }
         }
@@ -345,7 +343,7 @@
 
             if (deviceId == NotDetectedDevice)
             {
-                logger.WriteInfo(logger.FullExceptionToString(new NotSupportedException("User device was not detected"), custId));
+                ExceptionHandler.Handle(new NotSupportedException("User device was not detected"), TraceEventType.Information);
                 return false;
             }
 

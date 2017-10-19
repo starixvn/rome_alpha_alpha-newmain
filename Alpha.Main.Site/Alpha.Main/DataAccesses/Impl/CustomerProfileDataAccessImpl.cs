@@ -9,7 +9,7 @@
         {
             byte[] imageData = new byte[] { };
 
-            using (var db = new ObjectDb("Age_CustomerSelProfilePicture"))
+            using (var db = ObjectDbFactory.CreateInstance("Age_CustomerSelProfilePicture"))
             {
                 var reader = db.ExecuteReader(new { custId = custId });
 

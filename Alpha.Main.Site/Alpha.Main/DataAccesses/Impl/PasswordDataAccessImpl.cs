@@ -14,7 +14,7 @@
                 throw new ArgumentNullException(nameof(criteria), "Criteria cannot be null");
             }
 
-            using (var db = new ObjectDb(criteria.GetSettingKey()))
+            using (var db = ObjectDbFactory.CreateInstance(criteria.GetSettingKey()))
             {
                 db.ExecuteNonQuery(criteria.GetSpParams());
                 var outputParams = db.GetOuputParams();
