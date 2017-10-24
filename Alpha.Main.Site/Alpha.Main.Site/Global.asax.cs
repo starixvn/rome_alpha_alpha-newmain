@@ -14,6 +14,7 @@
     using Fanex.Logging.Extensions.Database;
     using Fanex.Logging.Extensions.Web;
     using ONEbook.UM.Filters;
+    using Sunplus.Agent.Model.Entities;
     using Web;
 
     public class MvcApplication : System.Web.HttpApplication
@@ -65,7 +66,16 @@
             }
 
             Exception ex = Server.GetLastError();
-            ExceptionHandler.Handle(ex);
+            var currentCustomer = UserSession.Current;
+
+            ExceptionHandler.Handle(ex,
+                new Dictionary<string, object>
+                {
+                    ["CustId"] = currentCustomer?.CustId,
+                    ["CustName"] = currentCustomer?.UserName,
+                    ["SubAccountName"] = currentCustomer?.SubUserName,
+                    ["AdminName"] = currentCustomer?.AdminName
+                });
         }
 
         private static List<string> GetRegexToHideSensitiveInfo()
