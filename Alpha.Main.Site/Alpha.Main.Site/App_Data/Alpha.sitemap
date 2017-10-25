@@ -88,7 +88,7 @@
       <siteMapNode resourceKey="OE1x2DND" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/OddEven1x2.aspx"></siteMapNode>
       <siteMapNode resourceKey="correctscore" appPath="BetListsAppPath" url="correctscore/index"></siteMapNode>
       <siteMapNode resourceKey="fthttotalgoal" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/TotalGoal.aspx"></siteMapNode>
-      <siteMapNode resourceKey="parlay" appPath="BetListsAppPath" url="MixParlay/Index"></siteMapNode>
+      <siteMapNode resourceKey="parlay" appPath="BetListsAppPath" url="CombinationMixParlay/Index"></siteMapNode>
       <siteMapNode resourceKey="outRight" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/OutRight.aspx"></siteMapNode>
       <siteMapNode resourceKey="htft" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HTFT.aspx"></siteMapNode>
       <siteMapNode resourceKey="fthtfglg" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/FGLG.aspx"></siteMapNode>
