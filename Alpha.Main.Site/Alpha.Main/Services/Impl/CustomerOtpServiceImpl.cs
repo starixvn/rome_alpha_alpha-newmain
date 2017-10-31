@@ -5,6 +5,7 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using AppResources;
+    using CasinoLibrary.Model.UserException;
     using Criteria.Otp;
     using Fanex.Data.Repository;
     using Fanex.Logging.Extensions.Web;
@@ -217,9 +218,9 @@
                 {
                     casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
                 }
-                catch (Exception ex)
+                catch (ErrorException ex)
                 {
-                    ExceptionHandler.Handle(ex, TraceEventType.Information);
+                    ExceptionHandler.Handle(new Exception(ex.Message, ex), TraceEventType.Information);
                 }
             }
         }

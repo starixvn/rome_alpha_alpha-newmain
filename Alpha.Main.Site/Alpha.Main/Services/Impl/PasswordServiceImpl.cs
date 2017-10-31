@@ -107,7 +107,7 @@
                 }
                 catch (ErrorException ex)
                 {
-                    ExceptionHandler.Handle(new Exception(ex.Message), TraceEventType.Information);
+                    ExceptionHandler.Handle(new Exception(ex.Message, ex), TraceEventType.Information);
                 }
             }
         }
