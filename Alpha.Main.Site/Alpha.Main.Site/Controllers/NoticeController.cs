@@ -44,7 +44,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpPost]
         public bool MarkMessageAsRead(int messageId)
         {
-            var isSuccess = mediator.Send(new MarkMessageAsReadQuery(userSession.CustId, messageId));
+            var isSuccess = mediator.Send(new MarkMessageAsReadQuery(userSession.CustId, messageId, userSession.IsInternal));
 
             return isSuccess;
         }

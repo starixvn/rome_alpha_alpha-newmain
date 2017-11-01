@@ -59,7 +59,7 @@
         public void MarkMessageAsRead_InvalidCustId_ReturnFalse()
         {
             // Act
-            var isSuccess = noticeService.MarkMessageAsRead(CustId.InvalidId, 1);
+            var isSuccess = noticeService.MarkMessageAsRead(CustId.InvalidId, 1, false);
 
             // Assert
             Assert.IsFalse(isSuccess);
@@ -69,10 +69,30 @@
         public void MarkMessageAsRead_ValidCustIdAndMessageIds_ReturnTrue()
         {
             // Act
-            var isSuccess = noticeService.MarkMessageAsRead(CustId.ValidId, 1);
+            var isSuccess = noticeService.MarkMessageAsRead(CustId.ValidId, 1, false);
 
             // Assert
             Assert.IsTrue(isSuccess);
+        }
+
+        [Test]
+        public void MarkMessageAsRead_UserIsInternal_ReturnFalse()
+        {
+            // Act
+            var act = noticeService.MarkMessageAsRead(CustId.ValidId, 1, true);
+
+            // Assert
+            Assert.IsFalse(act);
+        }
+
+        [Test]
+        public void MarkMessageAsRead_UserIsInternal_NotCallRepository()
+        {
+            // Act
+            var act = noticeService.MarkMessageAsRead(CustId.ValidId, 1, true);
+
+            // Assert
+            dynamicRepository.DidNotReceive().Execute(Arg.Any<INonQueryCommand>());
         }
     }
 }

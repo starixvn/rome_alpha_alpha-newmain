@@ -83,7 +83,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleMarkMessageAsReadQuery_NotNullQuery_CallMarkMessageAsReadService()
         {
             // Arrange
-            var query = new MarkMessageAsReadQuery(CustId.ValidId, 1);
+            var query = new MarkMessageAsReadQuery(CustId.ValidId, 1, false);
 
             // Act
             noticeHandler.Handle(query);
@@ -93,7 +93,8 @@ namespace Alpha.Main.Site.Tests.Handlers
                 .Received()
                 .MarkMessageAsRead(
                     Arg.Is<int>(cid => cid == query.CustId),
-                    Arg.Is<int>(mid => mid == query.MessageId));
+                    Arg.Is<int>(mid => mid == query.MessageId),
+                    Arg.Is<bool>(mid => mid == query.IsInternal));
         }
 
         [Test]
