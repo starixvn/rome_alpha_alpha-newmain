@@ -9,10 +9,6 @@
     {
         private readonly IUserSession userSession;
 
-        public RemoveOtpCommand() : this(null)
-        {
-        }
-
         public RemoveOtpCommand(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();

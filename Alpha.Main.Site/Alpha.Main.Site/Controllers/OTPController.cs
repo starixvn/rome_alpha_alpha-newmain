@@ -1,25 +1,26 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using AppResources;
     using Main.Models;
     using MediatR;
     using Requests.Otp;
     using SecurityCode.Web;
+    using Sunplus.Agent.Model.Entities;
     using Web;
     using Web.Filters;
 
     public class OtpController : BaseController
     {
         private readonly IMediator mediator;
+        private readonly IUserSession userSession;
 
-        public OtpController(IMediator mediator)
+        public OtpController(IMediator mediator, IUserSession userSession)
         {
             this.mediator = mediator;
+            this.userSession = userSession;
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         public ActionResult SetUpOtp(SetUpOtpQuery query)
         {
             var customerOtp = mediator.Send(query);
@@ -38,7 +39,6 @@
             return View();
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost, AntiXsrfFilter]
         public JsonResult VerifyOtp(VerifyOtpCommand command)
         {
@@ -55,12 +55,11 @@
         [HttpGet]
         public ActionResult VerifyOtpDifferenceDevice()
         {
-            var viewModel = mediator.Send(new VerifyOtpDifferentDeviceQuery());
+            var viewModel = mediator.Send(new VerifyOtpDifferentDeviceQuery(userSession));
 
             return View(viewModel);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost, AntiXsrfFilter]
         public JsonResult SetUpOtp(SetUpOtpCommand command)
         {
@@ -77,7 +76,6 @@
             return View(viewModel);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost, ValidateAntiForgeryToken]
         public ActionResult ResetOtp(ResetOtpCommand command)
         {
@@ -89,12 +87,11 @@
         [HttpPost, AntiXsrfFilter]
         public JsonResult RemoveOtp()
         {
-            var result = mediator.Send(new RemoveOtpCommand());
+            var result = mediator.Send(new RemoveOtpCommand(userSession));
 
             return Json(result);
         }
 
-        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost, AntiXsrfFilter]
         public JsonResult ChangeOtpStatus(ChangeOtpStatusCommand command)
         {

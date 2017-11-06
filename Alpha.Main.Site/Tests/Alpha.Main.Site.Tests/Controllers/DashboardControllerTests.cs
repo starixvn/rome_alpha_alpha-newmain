@@ -5,6 +5,7 @@
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests.Dashboard.BalanceInfo;
     using Alpha.Main.Site.ViewModels.Dashboard;
+    using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using MediatR;
     using NSubstitute;
@@ -33,11 +34,10 @@
         public void Index_Always_ReturnsViewWithDashboardViewModel()
         {
             // Arrange
+            var compareLogic = new CompareLogic();
+            UrlHelperTestSetUp.SetUp();
+
             var expectedViewModel = new DashboardViewModel(userSession.RoleId);
-            var compareLogic = new CompareLogic(new ComparisonConfig
-            {
-                MembersToIgnore = { "OldMainRootPath", "MainRootPath" }
-            });
 
             // Act
             var actualView = dashboardController.Index() as ViewResult;

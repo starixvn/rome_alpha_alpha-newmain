@@ -1,10 +1,12 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System;
     using System.Web.Mvc;
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests.Dashboard.Notice;
     using Alpha.Main.Site.Tests.Constants;
     using Alpha.Main.Site.ViewModels.Dashboard.Notice;
+    using Configurations;
     using KellermanSoftware.CompareNetObjects;
     using MediatR;
     using NSubstitute;
@@ -85,6 +87,21 @@
 
             // Assert
             Assert.True(compareLogic.Compare(expectedViewModel, result.Model).AreEqual);
+        }
+
+        [Test]
+        public void NoticeMessages_Always_CallsMediatorSendNoticeQuery()
+        {
+            // Arrange
+            userSession.RoleId.Returns(RoleId.Agent);
+            var lastPostDate = DateTime.Now;
+            var query = new NoticeQuery(userSession, lastPostDate, 10, AppSettings.LocalTest);
+
+            // Act
+            noticeController.NoticeMessages(lastPostDate);
+
+            // Assert
+            mediator.Received().Send(Arg.Is<NoticeQuery>(p => compareLogic.Compare(p, query).AreEqual));
         }
     }
 }

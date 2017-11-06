@@ -12,12 +12,10 @@
     <!--[if lt IE 9]>
       @StaticResources.AssetScripts.RenderCommon("/bundles/common/support-IE8")
     <![endif]-->
-
 </head>
 <body>
     @RenderBody()
     @Html.AntiForgeryToken()
-
     @Html.Hidden("please-enter-oldPassword", Security.alertInputOldPwd)
     @Html.Hidden("password-cannot-empty", Security.alertPasswordEmpty)
     @Html.Hidden("not-correct-confirm-password", Security.alertErrorConfirm)
@@ -27,6 +25,6 @@
     @Html.Hidden("newPassword-must-be-diff-old", Security.lblPasswordDOldOne)
     @Html.Hidden("password-not-contain-nickname-username", Security.lblPasswordDAccountName)
     @RenderSection("js", required: false)
-    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
+    @GoogleAnalyticHepler.Render()
 </body>
 </html>

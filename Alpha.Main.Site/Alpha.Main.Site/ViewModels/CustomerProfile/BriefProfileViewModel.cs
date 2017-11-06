@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels.CustomerProfile
 {
-    using Main.Helpers;
+    using Helpers;
 
     public class BriefProfileViewModel
     {
@@ -10,7 +10,7 @@
 
         public string EmbedImage { get; set; }
 
-        public string OldMainRootApp => MicroSites.OldMainPath("~/");
+        public string OldMainRootApp => UrlHelper.MapOldMainPath("~/");
 
         public string Username { get; set; }
 

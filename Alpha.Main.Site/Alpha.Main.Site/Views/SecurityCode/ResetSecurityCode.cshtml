@@ -1,15 +1,12 @@
 ﻿@model SecurityCodeViewModel
-
 @{
     ViewBag.Title = Model.Title;
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
-
 @section css {
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    <link href="@StaticResources.MainSiteStylePath("~/Assets/bundles/security/security")" rel="stylesheet" type="text/css" />
+    @StaticResources.RenderStyles("~/Assets/bundles/security/security")
 }
-
 <h1 id="title_header" class="page-title">@Model.Title</h1>
 <div id="status-message" class="msg-content display-none">
     <div id="status-message-content" class="msg"></div>
@@ -42,15 +39,13 @@
     </ul>
     <a href="@($"{Model.MainRootPath}SecurityCode/LearnMore")" target="_blank">@Security.LearnMore</a>
 </div>
-
 @Html.Hidden("hashkey", Model.HashKey)
 @Html.Hidden("custid", Request["custid"]) @*Todo: Magic, please review here*@
 @Html.Hidden("subaccid", Request["subaccid"]) @*Todo: Magic, please review here*@
 @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 @Html.Hidden("mainRootPath", Model.MainRootPath)
-
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
-    <script src="@StaticResources.MainSiteScriptPath("~/Assets/bundles/security/security-code/reset-securitycode")" type="text/javascript"></script>
+    @StaticResources.RenderScripts("~/Assets/bundles/security/security-code/reset-securitycode")
 }

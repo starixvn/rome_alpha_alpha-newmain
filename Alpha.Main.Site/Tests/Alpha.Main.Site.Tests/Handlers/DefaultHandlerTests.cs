@@ -1,14 +1,16 @@
-﻿#pragma warning disable 618, 612
-
-namespace Alpha.Main.Site.Tests.Handlers
+﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using Helpers;
+    using KellermanSoftware.CompareNetObjects;
+    using Main.Constants;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
+    using SecurityCode.Web;
     using Services;
     using Site.Handlers;
+    using Site.Helpers;
     using Site.Requests;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
@@ -22,13 +24,17 @@ namespace Alpha.Main.Site.Tests.Handlers
         private DefaultHandler defaultHandler;
         private IUserSession userSession;
         private BrowserHelper browserHelper;
+        private Func<string> getDefaultUrl;
+        private Func<string, string> encodeDataFunction;
 
         [SetUp]
         public void SetUp()
         {
             browserHelper = Substitute.For<BrowserHelper>();
             sessionManager = Substitute.For<SessionManager>();
-            defaultHandler = new DefaultHandler(sessionManager, browserHelper);
+            getDefaultUrl = Substitute.For<Func<string>>();
+            encodeDataFunction = Substitute.For<Func<string, string>>();
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper, getDefaultUrl, encodeDataFunction);
             userSession = Substitute.For<IUserSession>();
         }
 
@@ -85,6 +91,39 @@ namespace Alpha.Main.Site.Tests.Handlers
             Assert.AreEqual(argumentUsed, viewModel.PasswordHash);
         }
 
+        [Test]
+        public void HandleIndexQuery_NotNullCommand_ReturnIndexViewModel()
+        {
+            // Arrange
+            var compareLogic = new CompareLogic(new ComparisonConfig
+            {
+                MembersToIgnore = { "InitialScaleViewPort", "PasswordHash" }
+            });
+            UrlHelperTestSetUp.SetUp();
+
+            SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
+            SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
+
+            userSession.RoleId.Returns(RoleId.Agent);
+            userSession.IsLogged.Returns(false);
+            userSession.IsPasswordExpired.Returns(true);
+            userSession.SubPageAccess.Returns(new PageAccess());
+
+            var query = new IndexQuery(userSession, false);
+
+            string argumentUsed = null;
+            sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
+
+
+            var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper);
+
+            // Act
+            var viewModel = defaultHandler.Handle(query);
+
+            // Assert
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel, viewModel).AreEqual);
+        }
+
         #region Handle BrowserQuery
 
         [Test]
@@ -95,13 +134,14 @@ namespace Alpha.Main.Site.Tests.Handlers
             var browserQuery = new BrowserQuery(userSession);
             browserHelper.CheckSupportedBrowsers().Returns(new BrowserViewModel
             {
-                IsUnsupportedBrowser = true
+                IsUnsupportedBrowser = true,
+                DownloadNewBrowserLink = "https://www.mozilla.org/firefox"
             });
 
             //// Action
             var viewModel = defaultHandler.Handle(browserQuery);
 
-            ////
+            //// Assert
             Assert.IsTrue(viewModel.IsUnsupportedBrowser);
         }
 
@@ -113,13 +153,14 @@ namespace Alpha.Main.Site.Tests.Handlers
             var browserQuery = new BrowserQuery(userSession);
             browserHelper.CheckSupportedBrowsers().Returns(new BrowserViewModel
             {
-                IsUnsupportedBrowser = true
+                IsUnsupportedBrowser = true,
+                DownloadNewBrowserLink = "https://www.mozilla.org/firefox"
             });
 
             //// Action
             defaultHandler.Handle(browserQuery);
 
-            ////
+            //// Assert
             this.sessionManager.Received().Add<bool>(SawBrowserWarningPageSessionKey, true);
         }
 
@@ -133,7 +174,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             //// Action
             var viewModel = defaultHandler.Handle(browserQuery);
 
-            ////
+            //// Assert
             Assert.IsFalse(viewModel.IsUnsupportedBrowser);
         }
 

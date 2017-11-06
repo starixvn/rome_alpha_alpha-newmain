@@ -220,7 +220,7 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var viewModel = Handle(new ChangePasswordQuery());
+            var viewModel = Handle(new ChangePasswordQuery(userSession));
 
             viewModel.CustId = message.CustId;
             viewModel.CustRoleId = message.CustRoleId;
@@ -237,7 +237,7 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var viewModel = Handle(new ChangePasswordQuery());
+            var viewModel = Handle(new ChangePasswordQuery(userSession));
 
             viewModel.SubAccountId = message.SubAccountId;
             viewModel.Title = BuildResetPasswordTitle(message.Username);

@@ -6,6 +6,7 @@
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests.Otp;
     using Alpha.SecurityCode.Web;
+    using KellermanSoftware.CompareNetObjects;
     using MediatR;
     using NSubstitute;
     using NUnit.Framework;
@@ -25,7 +26,7 @@
             userSession = Substitute.For<IUserSession>();
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
-            otpController = new OtpController(mediator);
+            otpController = new OtpController(mediator, userSession);
         }
 
         [Test]
@@ -146,6 +147,34 @@
 
             // Assert
             mediator.Received().Send(command);
+        }
+
+        [Test]
+        public void VerifyOtpDifferenceDevice_Always_CallsMediatorSendVerifyOtpDifferentDeviceQuery()
+        {
+            // Arrange
+            var compareLogic = new CompareLogic();
+            var query = new VerifyOtpDifferentDeviceQuery(userSession);
+
+            // Act
+            otpController.VerifyOtpDifferenceDevice();
+
+            // Assert
+            mediator.Received().Send(Arg.Is<VerifyOtpDifferentDeviceQuery>(p => compareLogic.Compare(p, query).AreEqual));
+        }
+
+        [Test]
+        public void RemoveOtp_Always_CallsMediatorSendRemoveOtpCommand()
+        {
+            // Arrange
+            var compareLogic = new CompareLogic();
+            var command = new RemoveOtpCommand(userSession);
+
+            // Act
+            otpController.RemoveOtp();
+
+            // Assert
+            mediator.Received().Send(Arg.Is<RemoveOtpCommand>(p => compareLogic.Compare(p, command).AreEqual));
         }
     }
 }

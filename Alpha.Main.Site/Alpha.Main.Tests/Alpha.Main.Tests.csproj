@@ -38,7 +38,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.Web, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.1.0\lib\net40\Alpha.Web.dll</HintPath>
+      <HintPath>..\packages\Alpha.Web.1.0.1.1-microsites-01\lib\net40\Alpha.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -236,7 +236,6 @@
     <Compile Include="Constants\CustId.cs" />
     <Compile Include="Constants\LanguageTests.cs" />
     <Compile Include="Constants\RoleId.cs" />
-    <Compile Include="Criteria\Announcement\CheckProductAnnouncementCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteriaTests.cs" />
@@ -266,11 +265,13 @@
     <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteriaTests.cs" />
+    <Compile Include="DataAccesses\CustomerProfileDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\MessageDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\PasswordDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccessImplTests.cs" />
-    <Compile Include="Helpers\AppPathHelperTests.cs" />
+    <Compile Include="Database\Message\MessageDatabase.cs" />
+    <Compile Include="Database\Statistics\StatisticsDatabase.cs" />
     <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
@@ -350,6 +351,13 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\Message\MessageHasData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Database\Statistics\StatisticsHasData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\Announcements\HotAnnouncement\Available\Announcement_NotHasEndDate.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
     using Helpers;
     using Main.Models.Enumerations;
     using MediatR;
@@ -22,16 +23,33 @@
 
         private readonly SessionManager sessionManager;
         private readonly BrowserHelper browserHelper;
+        private readonly Func<string> getDefaultUrl;
+        private readonly Func<string, string> encodeDataFunction;
 
-        public DefaultHandler(SessionManager sessionManager, BrowserHelper browserHelper)
+        public DefaultHandler(
+            SessionManager sessionManager,
+            BrowserHelper browserHelper)
+            : this(sessionManager, browserHelper, null, null)
+        {
+
+        }
+
+        internal DefaultHandler(
+            SessionManager sessionManager,
+            BrowserHelper browserHelper,
+            Func<string> getDefaultUrl,
+            Func<string, string> encodeDataFunction)
         {
             this.sessionManager = sessionManager;
             this.browserHelper = browserHelper;
+
+            this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
+            this.encodeDataFunction = encodeDataFunction ?? Encryption.PearsonEncode;
         }
 
         public BrowserViewModel Handle(BrowserQuery message)
         {
-            if (this.sessionManager.Get<bool>(SawBrowserWarningPageSessionKey))
+            if (sessionManager.Get<bool>(SawBrowserWarningPageSessionKey))
             {
                 return new BrowserViewModel();
             }
@@ -39,18 +57,14 @@
             var browser = browserHelper.CheckSupportedBrowsers();
             browser.UserLevel = Enumeration.FromValue<UserLevel>(message.UserLevelId);
 
-            this.sessionManager.Add(SawBrowserWarningPageSessionKey, true);
+            sessionManager.Add(SawBrowserWarningPageSessionKey, true);
 
             return browser;
         }
 
         public IndexViewModel Handle(IndexQuery message)
         {
-            var viewModel = new IndexViewModel(
-                message,
-                FunctionRegistry.GetDefaultUrl,
-                Encryption.PearsonEncode,
-                browserHelper);
+            var viewModel = new IndexViewModel(message, getDefaultUrl, encodeDataFunction, browserHelper);
 
             sessionManager.Add(PasswordHashSessionKey, viewModel.PasswordHash);
 

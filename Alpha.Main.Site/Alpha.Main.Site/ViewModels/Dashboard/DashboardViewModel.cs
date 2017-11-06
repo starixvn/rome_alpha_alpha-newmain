@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Dashboard
 {
-    using System.Web;
     using Configurations;
-    using Main.Helpers;
+    using Helpers;
     using Main.Models.Enumerations;
 
     public class DashboardViewModel
@@ -16,8 +15,8 @@
 
         public bool EnablePlayForFun => AppSettings.EnablePlayForFun;
 
-        public string OldMainRootPath => MicroSites.OldMainPath("~/");
+        public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
-        public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
+        public string MainRootPath => UrlHelper.MapMainPath("~/");
     }
 }

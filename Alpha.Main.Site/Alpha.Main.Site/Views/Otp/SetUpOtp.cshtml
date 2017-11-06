@@ -9,15 +9,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render("/bundles/site-main/otp/otp-super")
-    <link href="@(StaticResources.MainSiteStylePath("~/assets/bundles/otp/otp"))" rel="stylesheet" type="text/css" />
+    @StaticResources.RenderStyles("~/assets/bundles/otp/otp")
 </head>
 <body>
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation">
-            <a id="profilePicture" href="@MicroSites.OldMainPath($"~/ProfilePicture/")">@Resources.EditProfilePicture</a>
+            <a id="profilePicture" href="@MicroSites.OldMainUrl($"~/ProfilePicture/")">@Resources.EditProfilePicture</a>
         </li>
         <li role="presentation">
-            <a href="@MicroSites.OldMainPath($"~/LoginOption/?custid={Model.CustomerOtp.CustId}")">@Resources.nickname</a>
+            <a href="@MicroSites.OldMainUrl($"~/LoginOption/?custid={Model.CustomerOtp.CustId}")">@Resources.nickname</a>
         </li>
         <li role="presentation" class="active">
             <a href="#otp" aria-controls="home" role="tab" data-toggle="tab">OTP</a>
@@ -51,11 +51,11 @@
     @Html.Hidden("AuthenticatorAppVerified", Security.AuthenticatorAppVerified)
     @Html.Hidden("ThereIsNoChange", Resources.ThereIsNoChange)
     @Html.Hidden("ThisFieldRequired", Security.alertSecCodeEmpty)
-    @Html.Hidden("oldMainRootPath", MicroSites.OldMainPath())
-    @Html.Hidden("mainRootPath", MicroSites.MainPath())
+    @Html.Hidden("oldMainRootPath", MicroSites.OldMainUrl("~/"))
+    @Html.Hidden("mainRootPath", MicroSites.MainUrl())
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/otp/otp-default")
-    <script src="@StaticResources.MainSiteScriptPath("~/assets/bundles/security/otp/setup-otp")" type="text/javascript"></script>
-    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
+    @StaticResources.RenderScripts("~/assets/bundles/security/otp/setup-otp")
+    @GoogleAnalyticHepler.Render()
 </body>
 </html>

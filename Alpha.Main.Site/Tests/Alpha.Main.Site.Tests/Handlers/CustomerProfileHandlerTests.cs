@@ -4,6 +4,8 @@ namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using Constants;
+    using Helpers;
+    using KellermanSoftware.CompareNetObjects;
     using Main.Models.CustomerProfiles;
     using Models.Requests.CustomerProfile;
     using NSubstitute;
@@ -11,6 +13,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using SecurityCode.Web;
     using Services;
     using Site.Handlers;
+    using Site.ViewModels.CustomerProfile;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
@@ -224,6 +227,42 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             // Assert
             Assert.IsTrue(viewModel.IsEnableOtp);
+        }
+
+        [Test]
+        public void HandleBriefProfileQuery_QueryIsNotNull_ReturnBriefProfileViewModel()
+        {
+            // Arrange
+            var compareLogic = new CompareLogic();
+            UrlHelperTestSetUp.SetUp();
+
+            userSession.CustId.Returns(CustId.ValidId);
+            userSession.UserName.Returns(Username.Base64Name);
+            userSession.NickName.Returns("NickName");
+
+            customerProfileService.GetProfilePicture(Arg.Any<int>())
+                .Returns(new ProfilePicture(0, false, new byte[0]));
+
+            SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
+
+            var query = new BriefProfileQuery(userSession);
+            var expectedViewModel = new BriefProfileViewModel
+            {
+                IsDefaultAvatar = false,
+                EmbedImage = "data:image/jpeg;base64,",
+                CustId = query.CustId,
+                Username = "Base64Name",
+                LoginUserIsNotMainAccount = false,
+                NickName = "NickName",
+                IntroduceNickNameTooltipCookieName = "40C8226B76C76797A38A6AC830708A",
+                IsEnableOtp = true
+            };
+
+            // Act
+            var viewModel = customerProfileHandler.Handle(query);
+
+            // Assert
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel, viewModel).AreEqual);
         }
     }
 }

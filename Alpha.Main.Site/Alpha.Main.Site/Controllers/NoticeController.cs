@@ -1,13 +1,11 @@
-﻿#pragma warning disable 618, 612
-
-namespace Alpha.Main.Site.Controllers
+﻿namespace Alpha.Main.Site.Controllers
 {
     using System;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Configurations;
     using MediatR;
     using Requests.Dashboard.Notice;
-    using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard.Notice;
     using Web;

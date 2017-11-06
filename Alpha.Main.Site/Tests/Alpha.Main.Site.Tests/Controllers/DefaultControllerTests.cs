@@ -1,18 +1,21 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System.Net;
+    using System.Web;
     using System.Web.Mvc;
-    using Alpha.Main.AppResources;
-    using Alpha.Main.Constants;
-    using Alpha.Main.Site.Controllers;
-    using Alpha.Main.Site.Models.Requests;
-    using Alpha.Main.Site.Models.Requests.UserMessages;
-    using Alpha.Main.Site.Requests;
-    using Alpha.Main.Site.Requests.Otp;
-    using Alpha.Main.Site.ViewModels;
-    using Alpha.SecurityCode.Services;
+    using AppResources;
+    using KellermanSoftware.CompareNetObjects;
+    using Main.Constants;
     using MediatR;
+    using Models.Requests;
+    using Models.Requests.UserMessages;
     using NSubstitute;
     using NUnit.Framework;
+    using SecurityCode.Services;
+    using Site.Controllers;
+    using Site.Requests;
+    using Site.Requests.Otp;
+    using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
@@ -34,7 +37,6 @@
             securityCodeChecker = Substitute.For<SecurityCodeChecker>();
 
             defaultController = new DefaultController(userSession, mediator, securityCodeChecker);
-
         }
 
         [Test]
@@ -169,6 +171,8 @@
         public void Index_IsNotForcedChangeSecurityCode_CallsMediatorSendIndexQuery()
         {
             // Arrange
+            var compareLogic = new CompareLogic();
+
             userSession.IsLogged.Returns(true);
             userSession.IsPasswordExpired.Returns(false);
             userSession.SubPageAccess.Returns(new PageAccess());
@@ -191,18 +195,7 @@
 
             // Assert
             mediator.Received().Send(
-                Arg.Is<IndexQuery>(
-                    q => q.CustId == query.CustId
-                    && q.OnUserId == query.OnUserId
-                    && q.SubAccId == query.SubAccId
-                    && q.RoleId == query.RoleId
-                    && q.Language == query.Language
-                    && q.LanguageKey == query.LanguageKey
-                    && q.SubPageAccess == query.SubPageAccess
-                    && q.IsSubAccount == query.IsSubAccount
-                    && q.IsInternalWebVpn == query.IsInternalWebVpn
-                    && q.EnableSecurityCode == query.EnableSecurityCode
-                    && q.IsViewedMemberInfo == query.IsViewedMemberInfo));
+                Arg.Is<IndexQuery>(message => compareLogic.Compare(message, query).AreEqual));
         }
 
         [Test]
@@ -253,6 +246,23 @@
 
             // Assert
             Assert.AreEqual((string)viewResult.Model, Security.lblConfirmClosed);
+        }
+
+        [Test]
+        public void MenuBar_Always_CallsMediatorSendMenuBarQuery()
+        {
+            // Arrange
+            var fakeRequest = Substitute.For<HttpRequestBase>();
+            var fakeContext = Substitute.For<HttpContextBase>();
+            fakeRequest.Headers.Returns(new WebHeaderCollection { { "X-Requested-With", "XMLHttpRequest" } });
+            fakeContext.Request.Returns(fakeRequest);
+            defaultController.ControllerContext = new ControllerContext(fakeContext, new System.Web.Routing.RouteData(), defaultController);
+
+            // Act
+            defaultController.MenuBar();
+
+            // Assert
+            mediator.Received().Send(Arg.Any<MenuBarQuery>());
         }
     }
 }

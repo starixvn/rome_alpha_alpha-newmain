@@ -42,7 +42,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleChangeLanguageCommand_NotNullCommand_CallChangeLanguage()
         {
             // Arrange
-            var command = Substitute.For<ChangeLanguageCommand>(userSession, Arg.Any<string>(), Arg.Any<bool>());
+            var command = Substitute.For<ChangeLanguageCommand>(userSession, string.Empty, false);
 
             string argumentUsed = null;
             command.ChangeLanguage(Arg.Do<string>(x => argumentUsed = x));

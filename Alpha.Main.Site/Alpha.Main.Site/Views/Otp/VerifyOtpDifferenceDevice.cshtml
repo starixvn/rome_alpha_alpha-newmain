@@ -31,10 +31,10 @@
     </form>
 </div>
 @Html.Hidden("requiredFieldMessage", Security.alertSecCodeEmpty)
-@Html.Hidden("oldMainRootPath", MicroSites.OldMainPath())
-@Html.Hidden("mainRootPath", MicroSites.MainPath())
+@Html.Hidden("oldMainRootPath", MicroSites.OldMainUrl("~/"))
+@Html.Hidden("mainRootPath", MicroSites.MainUrl())
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
-    <script src="@StaticResources.MainSiteScriptPath("~/assets/bundles/security/otp/verify-otp-difference-device")" type="text/javascript"></script>
+    @StaticResources.RenderScripts("~/assets/bundles/security/otp/verify-otp-difference-device")
 }

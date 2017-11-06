@@ -5,6 +5,7 @@
     using System.Web.SessionState;
     using AppResources;
     using Auth.Filters;
+    using Configurations;
     using Main.Models;
     using MediatR;
     using Models.Request.SecurityCode;
@@ -159,7 +160,7 @@
         [ChildActionOnly]
         public ActionResult Languages()
         {
-            var viewModel = mediator.Send(new AllLanguagesQuery());
+            var viewModel = mediator.Send(new AllLanguagesQuery(userSession.Language, AppSettings.DisabledVietnamese));
 
             return PartialView(viewModel);
         }

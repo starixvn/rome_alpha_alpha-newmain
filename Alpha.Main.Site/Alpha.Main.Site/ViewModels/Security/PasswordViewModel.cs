@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Security
 {
-    using System.Web;
-    using Alpha.Main.Helpers;
+    using Helpers;
     using Main.Models.Enumerations;
 
     public class PasswordViewModel
@@ -16,7 +15,7 @@
         {
             get
             {
-                return Enumeration.FromValue<UserLevel>(this.CustRoleId).DisplayName.ToLower();
+                return Enumeration.FromValue<UserLevel>(CustRoleId).DisplayName.ToLower();
             }
         }
 
@@ -26,27 +25,15 @@
 
         public bool EnableSecurityCode { get; set; }
 
-        public string OldMainRootPath
-        {
-            get
-            {
-                return MicroSites.OldMainPath("~/");
-            }
-        }
+        public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
-        public string MainRootPath
-        {
-            get
-            {
-                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
-            }
-        }
+        public string MainRootPath => UrlHelper.MapMainPath("~/");
 
         public bool IsChangeMemberPassword
         {
             get
             {
-                return Enumeration.FromValue<UserLevel>(this.CustRoleId).IsMemberLevel();
+                return Enumeration.FromValue<UserLevel>(CustRoleId).IsMemberLevel();
             }
         }
 

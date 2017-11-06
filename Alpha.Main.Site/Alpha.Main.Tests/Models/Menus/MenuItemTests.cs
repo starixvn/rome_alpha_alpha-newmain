@@ -80,5 +80,21 @@
             // Assert
             Assert.AreEqual(expectedMenuStatus, actualMenuItemStatus);
         }
+
+        [Test]
+        public void DisplayName_GetDisplayNameFuncIsNotNull_ReturnValueOfFunc()
+        {
+            // Arrange
+            Func<string> getDisplayName = () =>
+            {
+                return "DisplayName";
+            };
+
+            // Act
+            var actualMenuItem = new MenuItem(null, null, getDisplayName);
+
+            // Assert
+            Assert.IsTrue(actualMenuItem.DisplayName.Equals("DisplayName"));
+        }
     }
 }

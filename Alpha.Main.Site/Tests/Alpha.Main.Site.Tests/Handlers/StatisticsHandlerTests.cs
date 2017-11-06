@@ -5,6 +5,8 @@ namespace Alpha.Main.Site.Tests.Handlers
     using System;
     using System.Linq;
     using Constants;
+    using Helpers;
+    using KellermanSoftware.CompareNetObjects;
     using Main.Models.Enumerations;
     using Main.Models.Statistics;
     using Main.Tests.TestData.Helper;
@@ -207,6 +209,9 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleStatisticsQuery_NotNullQuery_ReturnStatisticsViewModel()
         {
             // Arrange
+            var compareLogic = new CompareLogic();
+            UrlHelperTestSetUp.SetUp();
+
             var statistics = FakeDataHelper.Create<Statistics>();
             statisticsService.GetStatistics(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(statistics);
 
@@ -218,7 +223,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             var viewModel = statisticsHandler.Handle(query);
 
             // Assert
-            Assert.IsTrue(expectedStatisticsViewModel.UserLevel == viewModel.UserLevel);
+            Assert.IsTrue(compareLogic.Compare(expectedStatisticsViewModel, viewModel).AreEqual);
         }
 
         [Test]

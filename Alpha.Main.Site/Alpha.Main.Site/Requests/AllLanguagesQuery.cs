@@ -9,10 +9,6 @@
     {
         private string languageCode;
 
-        public AllLanguagesQuery() : this(null, null)
-        {
-        }
-
         public AllLanguagesQuery(string languageCode, bool? disabledVietnamese)
         {
             this.languageCode = languageCode ?? new UserSessionExt().Language;
@@ -23,7 +19,7 @@
         {
             get
             {
-                return this.languageCode;
+                return languageCode;
             }
         }
 

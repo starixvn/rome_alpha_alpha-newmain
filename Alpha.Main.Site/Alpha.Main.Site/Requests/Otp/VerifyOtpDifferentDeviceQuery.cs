@@ -9,10 +9,6 @@
     {
         private readonly IUserSession userSession;
 
-        public VerifyOtpDifferentDeviceQuery() : this(null)
-        {
-        }
-
         public VerifyOtpDifferentDeviceQuery(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();

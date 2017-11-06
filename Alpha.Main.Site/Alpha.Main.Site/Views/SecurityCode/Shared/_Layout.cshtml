@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="description">
     <meta content="" name="author">
-    @RenderSection("css", required: false)      
+    @RenderSection("css", required: false)
     <title> @ViewBag.Title</title>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -15,8 +15,7 @@
 </head>
 <body>
     @RenderBody()
-    @Html.AntiForgeryToken()   
-   
+    @Html.AntiForgeryToken()
     @Html.Hidden("alert-old-securitycode-empty", Security.alertOldSecCodeEmpty)
     @Html.Hidden("alert-securitycode-empty", Security.alertSecCodeEmpty)
     @Html.Hidden("alert-securitycode-wrong-rule", Security.lblSecCodeWrongRule)
@@ -24,6 +23,6 @@
     @Html.Hidden("alert-same-securitycode", Security.alertSameSecCode)
     @Html.Hidden("alert-securitycode-change-ok", Security.alertSecCodeChangedOK)
     @RenderSection("js", required: false)
-    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
+    @GoogleAnalyticHepler.Render()
 </body>
 </html>

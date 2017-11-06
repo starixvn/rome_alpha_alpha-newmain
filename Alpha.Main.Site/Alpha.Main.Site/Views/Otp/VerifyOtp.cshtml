@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    <link href="@(StaticResources.MainSiteStylePath("~/assets/bundles/otp/otp"))" rel="stylesheet" type="text/css" />
+    @StaticResources.RenderStyles("~/assets/bundles/otp/otp")
 </head>
 <body>
     <h1 id="title_header" class="page-title">@Security.OtpValidation</h1>
@@ -26,15 +26,13 @@
     <div class="note">
         <span class="note-red">*</span>@Security.OtpDatetimeWarning
     </div>
-
     @Html.AntiForgeryToken()
-
     @Html.Hidden("requiredFieldMessage", Security.alertSecCodeEmpty)
-    @Html.Hidden("oldMainRootPath", MicroSites.OldMainPath())
-    @Html.Hidden("mainRootPath", MicroSites.MainPath())
+    @Html.Hidden("oldMainRootPath", MicroSites.OldMainUrl("~/"))
+    @Html.Hidden("mainRootPath", MicroSites.MainUrl())
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/otp/otp-default")
-    <script src="@StaticResources.MainSiteScriptPath("~/assets/bundles/security/otp/verify-otp")" type="text/javascript"></script>
-    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
+    @StaticResources.RenderScripts("~/assets/bundles/security/otp/verify-otp")
+    @GoogleAnalyticHepler.Render()
 </body>
 </html>

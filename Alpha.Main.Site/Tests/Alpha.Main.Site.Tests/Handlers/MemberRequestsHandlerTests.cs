@@ -2,16 +2,16 @@
 {
     using System;
     using System.Linq;
-    using Alpha.Main.Models.MemberRequests;
-    using Alpha.Main.Services;
-    using Alpha.Main.Site.Handlers;
-    using Alpha.Main.Site.Requests.Dashboard.MemberRequests;
-    using Alpha.Main.Site.Tests.Constants;
-    using Alpha.Main.Site.ViewModels.Dashboard.MemberRequests;
-    using Alpha.Main.Tests.TestData.Helper;
+    using Constants;
     using KellermanSoftware.CompareNetObjects;
+    using Main.Models.MemberRequests;
+    using Main.Tests.TestData.Helper;
     using NSubstitute;
     using NUnit.Framework;
+    using Services;
+    using Site.Handlers;
+    using Site.Requests.Dashboard.MemberRequests;
+    using Site.ViewModels.Dashboard.MemberRequests;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]

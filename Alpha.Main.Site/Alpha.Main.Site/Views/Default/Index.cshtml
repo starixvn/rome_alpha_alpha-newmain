@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
-    <link href="@(StaticResources.MainSiteStylePath("~/assets/bundles/default-index"))" rel="stylesheet" type="text/css" />
+    @StaticResources.RenderStyles("~/assets/bundles/default-index")
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -38,10 +38,9 @@
         </main>
     </div>
     @Html.Partial("HiddenFields", Model)
-
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
-    <script src="@(StaticResources.MainSiteScriptPath("~/assets/bundles/default-index"))" type="text/javascript"></script>
-    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
+    @StaticResources.RenderScripts("~/assets/bundles/default-index")
+    @GoogleAnalyticHepler.Render()
 </body>
 </html>

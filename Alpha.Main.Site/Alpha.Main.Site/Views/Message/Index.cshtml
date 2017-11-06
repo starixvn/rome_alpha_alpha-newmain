@@ -1,13 +1,11 @@
 ﻿@using Alpha.Main.Constants
 @model Alpha.Main.Site.ViewModels.Message.MessagesViewModel
-
 @helper RenderMessages(string messageTypeName)
 {
     <div role="tabpanel" class="tab-pane active" id="@messageTypeName">
         @Html.Partial("Messages", Model)
     </div>
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +16,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/message/message-{Model.UserLevelName}")
-    <link href="@(StaticResources.MainSiteStylePath("~/assets/bundles/default-message"))" rel="stylesheet" type="text/css" />
+    @StaticResources.RenderStyles("~/assets/bundles/default-message")
 </head>
 <body>
     <ul class="nav nav-tabs" role="tablist">
@@ -32,16 +30,13 @@
             @Html.ActionLink(Resources.personalMessage, "Messages", new { messageType = MessageType.Private })
         </li>
     </ul>
-
     <div class="tab-content">
         @RenderMessages(Model.MessageTypeName)
     </div>
-
     @Html.Partial("HiddenFields", Model)
-
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/message/message-default")
-    <script src="@(StaticResources.MainSiteScriptPath("~/assets/bundles/default-message"))" type="text/javascript"></script>
-    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
+    @StaticResources.RenderScripts("~/assets/bundles/default-message")
+    @GoogleAnalyticHepler.Render()
 </body>
 </html>
