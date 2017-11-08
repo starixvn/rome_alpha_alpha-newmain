@@ -49,7 +49,7 @@
                 throw new ArgumentNullException(nameof(message), QueryNullExceptionMessage);
             }
 
-            var isSuccess = noticeService.MarkMessageAsRead(message.CustId, message.MessageId);
+            var isSuccess = noticeService.MarkMessageAsRead(message.CustId, message.MessageId, message.IsInternal);
 
             return isSuccess;
         }

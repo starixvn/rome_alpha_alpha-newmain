@@ -31,11 +31,11 @@
             return message;
         }
 
-        public bool MarkMessageAsRead(int custId, int messageId)
+        public bool MarkMessageAsRead(int custId, int messageId, bool isInternal)
         {
             var command = new MarkMessageAsReadCommand(custId, messageId.ToString());
 
-            if (!command.IsValid())
+            if (!command.IsValid() || isInternal)
             {
                 return false;
             }
