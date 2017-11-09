@@ -178,6 +178,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bullfighting.
+        /// </summary>
+        public static string Bullfighting {
+            get {
+                return ResourceManager.GetString("Bullfighting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancelled Bets.
         /// </summary>
         public static string cancelledBets {

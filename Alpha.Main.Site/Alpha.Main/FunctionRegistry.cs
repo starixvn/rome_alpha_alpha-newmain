@@ -80,7 +80,9 @@ namespace Alpha.Main
                 () =>
                 {
                     return ProductManager.IsShowSettings(ProductIdConstants.NG2);
-                })
+                }),
+            ["BullfightingMenuItem"] = () => new MenuStatus(
+                () => HasPermissionOnProduct(ProductIdConstants.BullFighting))
         };
 
         private static Func<bool> showAccountInfo = () =>

@@ -104,6 +104,7 @@
       <!--HR-->
       <siteMapNode menuItemType="RacingMenuItem" resourceKey="hr" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/Racing.aspx"></siteMapNode>
       <!--/HR-->
+      <siteMapNode menuItemType="BullfightingMenuItem" resourceKey="Bullfighting" appPath="TotalbetsForecastSiteVirtualPath" url="~/Bullfighting"></siteMapNode>
     </siteMapNode>
     <!--/Totalbets-->
     <!--Forecast-->
