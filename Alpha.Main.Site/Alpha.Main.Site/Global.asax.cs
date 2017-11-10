@@ -1,10 +1,5 @@
 ﻿namespace Alpha.Main.Site
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Web.Helpers;
-    using System.Web.Mvc;
-    using System.Web.Routing;
     using App_Start;
     using Auth.Filters;
     using Configurations;
@@ -15,7 +10,13 @@
     using Fanex.Logging.Extensions.Web;
     using ONEbook.UM.Filters;
     using Sunplus.Agent.Model.Entities;
+    using System;
+    using System.Collections.Generic;
+    using System.Web.Helpers;
+    using System.Web.Mvc;
+    using System.Web.Routing;
     using Web;
+    using Web.Helpers;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -29,6 +30,7 @@
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             DependencyConfig.Init();
+            StaticResources.Init();
 
             DbSettingProviderManager
                 .StartNewSession()

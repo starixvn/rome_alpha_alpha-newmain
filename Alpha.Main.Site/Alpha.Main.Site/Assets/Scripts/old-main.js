@@ -894,6 +894,9 @@ var popupManager = {
     },
     close: function () {
         top.ageWnd.close();
+    },
+    closeAllPopup: function () {
+        top.$('.modal[id^="page-popup-"]').remove();
     }
 };
 
