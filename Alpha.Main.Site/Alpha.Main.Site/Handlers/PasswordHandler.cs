@@ -125,7 +125,7 @@
                     NewPassword = message.NewPassword,
                     SubAccountId = message.SubAccountId,
                     IsCasinoSync = message.IsCasinoSync,
-                    IsResetMemberPassword = Enumeration.FromValue<UserLevel>((byte)message.CustRoleId).IsMemberLevel()
+                    IsResetMemberPassword = Enumeration.FromValue<UserLevel>(message.CustRoleId).IsMemberLevel()
                 });
 
             return result;

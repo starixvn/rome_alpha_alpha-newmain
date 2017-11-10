@@ -112,16 +112,29 @@
         }
 
         [Test]
-        public void ResetMainAccountPassword_Always_CallsMediatorSendResetMainAccountPasswordCommand()
+        public void ResetMainAccountPassword_ValidParamter_CallsMediatorSendResetMainAccountPasswordCommand()
         {
             // Arrange
             var command = new ResetMainAccountPasswordCommand(userSession, true);
-
+            command.CustRoleId = 2;
             // Act
             passwordController.ResetMainAccountPassword(command);
 
             // Assert
             mediator.Received().Send(command);
+        }
+
+        [Test]
+        public void ResetMainAccountPassword_InvalidParamter_NotCallsMediatorSendResetMainAccountPasswordCommand()
+        {
+            // Arrange
+            var command = new ResetMainAccountPasswordCommand(userSession, true);
+            command.CustRoleId = 0;
+            // Act
+            passwordController.ResetMainAccountPassword(command);
+
+            // Assert
+            mediator.DidNotReceive().Send(command);
         }
 
         [Test]

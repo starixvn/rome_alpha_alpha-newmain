@@ -3,7 +3,9 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using AppResources;
     using Auth.Filters;
+    using Main.Models;
     using MediatR;
     using Requests.Password;
     using Web;
@@ -38,6 +40,11 @@
         [CheckBelongingFilter]
         public ActionResult ResetMainAccountPassword(ResetMainAccountPasswordQuery query)
         {
+            if (!query.IsValid())
+            {
+                return RedirectToAction("Index", "Error");
+            }
+
             var viewModel = this.mediator.Send(query);
             return View(viewModel);
         }
@@ -70,6 +77,11 @@
         [HttpPost, AntiXsrfFilter, CheckBelongingFilter]
         public ActionResult ResetMainAccountPassword(ResetMainAccountPasswordCommand command)
         {
+            if (!command.IsValid())
+            {
+                return Json(Result.CreateErrorResult(Security.NotAuthorized));
+            }
+
             var result = this.mediator.Send(command);
             return Json(result);
         }
