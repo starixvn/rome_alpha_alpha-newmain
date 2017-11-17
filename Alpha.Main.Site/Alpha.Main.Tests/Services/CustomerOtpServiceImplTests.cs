@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using AppResources;
     using Fanex.Data.Repository;
+    using KellermanSoftware.CompareNetObjects;
     using Main.Criteria.Otp;
     using Main.Helpers;
     using Main.Models;
@@ -18,6 +19,7 @@
     [TestFixture]
     public class CustomerOtpServiceImplTests
     {
+        private CompareLogic compareLogic;
         private CustomerOtpServiceImpl customerOtpService;
         private IDynamicRepository dynamicRepository;
         private OtpService otpService;
@@ -33,6 +35,7 @@
             casinoService = Substitute.For<CasinoService>();
 
             customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, casinoService);
+            compareLogic = new CompareLogic();
         }
 
         #region Change Otp Status
@@ -470,21 +473,28 @@
             var custId = 1;
             var subAccountId = 3;
             var secretKey = "secretKey";
+
             dynamicRepository.Get<CustomerOtpDto>(Arg.Any<GetCustomerOtpCriteria>())
                 .Returns(new CustomerOtpDto
                 {
                     SecretKey = secretKey,
                     CustId = custId,
-                    SubAccId = subAccountId
+                    SubAccId = subAccountId,
+                    CreatedDate = DateTime.Now
                 });
+
+            var expectedCustomerOtp = new CustomerOtp
+            {
+                CustId = custId,
+                SubAccId = subAccountId,
+                SecretKey = secretKey
+            };
 
             // Act
             var actualCustomerOtp = customerOtpService.GetCustomerOtp(custId, subAccountId);
 
             // Assert
-            Assert.IsTrue(actualCustomerOtp.CustId == custId
-                && actualCustomerOtp.SubAccId == subAccountId
-                && actualCustomerOtp.SecretKey == secretKey);
+            Assert.IsTrue(compareLogic.Compare(expectedCustomerOtp, actualCustomerOtp).AreEqual);
         }
 
         #endregion Get Cutomer OTP
@@ -557,12 +567,11 @@
             otpService.Received().VerifyOtp(returnCustomerOtp.SecretKey, needVerifiedCustomerOtp.Otp);
         }
 
-        [TestCase(true)]
-        [TestCase(false)]
-        public void VerifyOtp_ExecuteUpdateCustomerStatusAfterVerifyOTPCommand(bool isCorrectOtp)
+        [Test]
+        public void VerifyOtp_OtpIsCorrect_ExecuteInsertCustomerDeviceInfoCommand()
         {
             // Arrange
-            var actualCustomerOtp = new CustomerOtp
+            var param = new CustomerOtp
             {
                 CustId = 1,
                 SubAccId = 2,
@@ -576,21 +585,73 @@
                 },
                 Language = "E"
             };
+
+            customerOtpService
+                .GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>())
+                .Returns(new CustomerOtp());
+            otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(true);
+            var deviceInfoSerialized = "deviceInfoSerialized";
+            jsonHelper.Serialize(Arg.Any<object>()).Returns(deviceInfoSerialized);
+
+            var command = new InsertCustomerDeviceInfoCommand
+            {
+                CustId = param.CustId,
+                DeviceId = param.Device.Id,
+                DeviceInfo = deviceInfoSerialized,
+                IP = param.Device.Info.IP,
+                Language = param.Language,
+                SubAccId = param.SubAccId
+            };
+
+            // Act
+            customerOtpService.VerifyOtp(param);
+
+            // Assert
+            dynamicRepository.Received().Execute(Arg.Is<InsertCustomerDeviceInfoCommand>(
+                p => compareLogic.Compare(p, command).AreEqual));
+        }
+
+        [TestCase(true)]
+        [TestCase(false)]
+        public void VerifyOtp_ExecuteUpdateCustomerStatusAfterVerifyOTPCommand(bool isCorrectOtp)
+        {
+            // Arrange
+            var param = new CustomerOtp
+            {
+                CustId = 1,
+                SubAccId = 2,
+                Otp = "OTP",
+                Device = new Device
+                {
+                    Info = new DeviceInfo
+                    {
+                        IP = "IP"
+                    }
+                },
+                Language = "E"
+            };
+
+            var changeStatusCommand = new UpdateCustomerStatusAfterVerifyOtpCommand
+            {
+                CheckedOtp = isCorrectOtp,
+                IP = param.Device.Info.IP,
+                Language = param.Language,
+                CustId = param.CustId,
+                SubAccId = param.SubAccId,
+                ErrCode = 1,
+                ErrMsg = "Data is not valid"
+            };
             customerOtpService
                 .GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>())
                 .Returns(new CustomerOtp());
             otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(isCorrectOtp);
 
             // Act
-            customerOtpService.VerifyOtp(actualCustomerOtp);
+            customerOtpService.VerifyOtp(param);
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<UpdateCustomerStatusAfterVerifyOtpCommand>(
-                    command => command.CustId == actualCustomerOtp.CustId
-                    && command.SubAccId == actualCustomerOtp.SubAccId
-                    && command.CheckedOtp == isCorrectOtp
-                    && command.IP == actualCustomerOtp.Device.Info.IP
-                    && command.Language == actualCustomerOtp.Language));
+                    command => compareLogic.Compare(command, changeStatusCommand).AreEqual));
         }
 
         [Test]
@@ -716,16 +777,26 @@
                 Language = "E"
             };
 
+            var deviceInfoSerialized = "deviceInfoSerialized";
+            jsonHelper.Serialize(Arg.Any<object>()).Returns(deviceInfoSerialized);
+            var expectedCommand = new DeleteCustOtpSecretKeyCommand
+            {
+                CustId = param.CustId,
+                SubAccId = param.SubAccId,
+                IP = param.IP,
+                Language = param.Language,
+                UserId = param.ActorId,
+                ErrCode = 1,
+                ErrMsg = "Data is not valid",
+                DeviceInfo = deviceInfoSerialized
+            };
+
             // Act
             customerOtpService.RemoveSecretKey(param);
 
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<DeleteCustOtpSecretKeyCommand>(
-                    command => command.CustId == param.CustId
-                        && command.SubAccId == param.SubAccId
-                        && command.UserId == param.ActorId
-                        && command.Language == param.Language
-                        && command.IP == param.IP));
+                    command => compareLogic.Compare(command, expectedCommand).AreEqual));
         }
 
         [TestCase(true)]
@@ -755,6 +826,39 @@
 
             // Assert
             Assert.AreEqual(removeStatus.Code, isRemoved ? 0 : 1);
+        }
+
+        [TestCase(0, "Removed the registered device successfully.")]
+        [TestCase(1, "Data is not valid")]
+        [TestCase(100, "This user has no registered device to be removed.")]
+        [TestCase(101, "Failed to remove registered device!")]
+        [TestCase(600, "Failed to remove the registered device from disabled user.")]
+        public void RemovedSecretKey_IsResetDownlineOrSubAccountIsTrue_ReturnsCorrectDeleteResult(int errCode, string message)
+        {
+            // Arrange
+            var param = new RemoveSecretKeyParam
+            {
+                CustId = 1,
+                ActorId = 2,
+                SubAccId = 3,
+                IP = "IP",
+                Language = "E",
+                IsResetDownlineOrSubAccount = true
+            };
+
+            dynamicRepository
+              .When(repo => repo.Execute(Arg.Any<DeleteCustOtpSecretKeyCommand>()))
+              .Do((callInfo) =>
+              {
+                  var command = callInfo[0] as DeleteCustOtpSecretKeyCommand;
+                  command.ErrCode = errCode;
+              });
+
+            // Act
+            var deletedResult = customerOtpService.RemoveSecretKey(param);
+
+            // Assert
+            Assert.IsTrue(deletedResult.Code == errCode && deletedResult.Message.Equals(message));
         }
 
         #endregion Remove Secret Key

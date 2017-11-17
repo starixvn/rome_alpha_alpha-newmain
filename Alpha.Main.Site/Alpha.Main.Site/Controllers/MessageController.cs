@@ -3,10 +3,10 @@
     using System;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Configurations;
     using Constants;
     using MediatR;
     using Requests.Message;
-    using Sunplus.Agent.Model.BL.Definitions;
     using Sunplus.Agent.Model.Entities;
     using Web;
 

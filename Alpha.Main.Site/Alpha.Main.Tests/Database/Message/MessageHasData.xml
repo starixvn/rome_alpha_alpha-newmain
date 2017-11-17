@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Messages>
+  <Message>
+    <MessageId>1074241137</MessageId>
+    <Content_en>@@</Content_en>
+    <Content_cs>@@</Content_cs>
+    <Content_ch>@@</Content_ch>
+    <Content_jp></Content_jp>
+    <Content_th></Content_th>
+    <Content_it></Content_it>
+    <Content_ko></Content_ko>
+    <Content_es></Content_es>
+    <Content_vn></Content_vn>
+    <PostTime>2017-11-07</PostTime>
+    <CreateTime>2017-11-07</CreateTime>
+    <LastUpdateTime>2017-11-07</LastUpdateTime>
+    <MsgType>1</MsgType>
+    <IsSticky>false</IsSticky>
+    <IsTest>false</IsTest>
+    <MatchId>70000101</MatchId>
+    <IsBatch>true</IsBatch>
+    <Creator>8</Creator>
+    <LastUpdator>8</LastUpdator>
+    <CreatorName>sa</CreatorName>
+    <LastUpdateName>sa</LastUpdateName>
+    <UserName>agent01</UserName>
+    <BettransID>9799000034, 9799000035, 9799000036</BettransID>
+    <TargetId>1176086</TargetId>
+    <rownum>0</rownum>
+  </Message>
+</Messages>

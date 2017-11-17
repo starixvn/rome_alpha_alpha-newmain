@@ -1,6 +1,5 @@
 ﻿@using Alpha.Main.Site.ViewModels.Dashboard
 @model DashboardViewModel
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/dashboard/dashboard-{Model.UserLevelName}")
-    <link href="@(StaticResources.MainSiteStylePath("~/assets/bundles/default-home"))" rel="stylesheet" type="text/css" />
+    @StaticResources.RenderStyles("~/assets/bundles/default-home")
 </head>
 <body>
     <div class="scroll-tabs">
@@ -38,7 +37,6 @@
             }
         </ul>
     </div>
-
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active balance-info" id="balance">
             @Html.Action("BalanceInfo")
@@ -56,15 +54,13 @@
             </div>
         }
     </div>
-
     @Html.Partial("HiddenFields", Model)
-
     <!--[if IE 8]><!-->
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/es5-shim")
     <!--<![endif]-->
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
-    <script src="@(StaticResources.MainSiteScriptPath("~/assets/bundles/default-dashboard"))" type="text/javascript"></script>
-    @Alpha.Web.Helpers.GoogleAnalyticHepler.Render()
+    @StaticResources.RenderScripts("~/assets/bundles/default-dashboard")
+    @GoogleAnalyticHepler.Render()
 </body>
 </html>

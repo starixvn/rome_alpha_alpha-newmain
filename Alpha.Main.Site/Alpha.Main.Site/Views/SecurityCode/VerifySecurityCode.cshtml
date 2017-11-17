@@ -3,17 +3,14 @@
     ViewBag.Title = @Security.titleVerifySecurityCode;
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
-
 @section css {
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    <link href="@StaticResources.MainSiteStylePath("~/Assets/bundles/security/security")" rel="stylesheet" type="text/css" />
+    @StaticResources.RenderStyles("~/Assets/bundles/security/security")
 }
-
 <h1 id="title_header" class="page-title">@Security.SecurityCodeValidation</h1>
 <div id="status-message" class="msg-content">
     <div id="status-message-content" class="msg msg-warning">@Security.informSecCode</div>
 </div>
-
 <div class="block " id="container">
     <form class="form-SC form-validation">
         <div class="form-group">
@@ -29,14 +26,12 @@
         </div>
     </form>
 </div>
-
 @Html.Hidden("securitycode-token", Model.SecurityCodeToken)
 @Html.Hidden("security-salt", Model.SecuritySalt)
 @Html.Hidden("oldMainRootPath", Model.OldMainRootPath)
 @Html.Hidden("mainRootPath", Model.MainRootPath)
-
 @section js {
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
-    <script src="@StaticResources.MainSiteScriptPath("~/Assets/bundles/security/security-code/verify-securitycode")" type="text/javascript"></script>
+    @StaticResources.RenderScripts("~/Assets/bundles/security/security-code/verify-securitycode")
 }

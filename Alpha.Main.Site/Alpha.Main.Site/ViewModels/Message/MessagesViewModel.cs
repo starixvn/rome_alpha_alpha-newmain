@@ -2,8 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Web;
-    using Main.Helpers;
+    using Helpers;
     using Main.Models.Enumerations;
 
     public class MessagesViewModel
@@ -42,8 +41,8 @@
 
         public string UserLevelName { get; }
 
-        public string OldMainRootPath => MicroSites.OldMainPath("~/");
+        public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
-        public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
+        public string MainRootPath => UrlHelper.MapMainPath("~/");
     }
 }

@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
-    using System.Web;
     using Configurations;
-    using Main.Helpers;
+    using Helpers;
 
     public class HeaderNavViewModel
     {
@@ -17,13 +16,13 @@
 
         public bool EnableSecurityCode { get; }
 
-        public string OldMainRootPath => MicroSites.OldMainPath("~/");
+        public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
-        public string HowToUseRootPath => MicroSites.HowToUsePath("~/");
+        public string HowToUseRootPath => UrlHelper.MapHowToUsePath("~/");
 
         public bool IsViewedMemberInfo { get; }
 
-        public string MainRootPath { get; } = AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
+        public string MainRootPath { get; } = UrlHelper.MapMainPath("~/");
 
         public bool IsDisabledContactUsLink { get; } = AppSettings.IsDisabledContactUsLink;
 

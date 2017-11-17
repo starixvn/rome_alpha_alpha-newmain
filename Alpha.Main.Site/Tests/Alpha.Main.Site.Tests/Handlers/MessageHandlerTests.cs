@@ -1,11 +1,11 @@
-﻿#pragma warning disable 612, 618
-
-namespace Alpha.Main.Site.Tests.Handlers
+﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using Constants;
+    using Helpers;
+    using KellermanSoftware.CompareNetObjects;
     using Main.Models.Message;
     using Main.Tests.TestData.Helper;
     using NSubstitute;
@@ -13,6 +13,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Services;
     using Site.Handlers;
     using Site.Requests.Message;
+    using Site.ViewModels.Message;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
@@ -79,6 +80,9 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleMessageQuery_NotNullQuery_ReturnMessagesViewModel()
         {
             // Arrange
+            var compareLogic = new CompareLogic();
+            UrlHelperTestSetUp.SetUp();
+
             var messages = FakeDataHelper.CreateMany<Message>().ToList();
             FakeReturnGetMessagesService(messages);
 
@@ -88,12 +92,20 @@ namespace Alpha.Main.Site.Tests.Handlers
                 DateTime.Today,
                 DateTime.Today,
                 false);
+            var messageWrappers = new List<MessageWrapper>(messages.Select(m => new MessageWrapper(m, query.CurrentLang)));
+
+            var expectedViewModel = new MessagesViewModel(
+                messageWrappers,
+                query.StartDate,
+                query.EndDate,
+                query.MessageType,
+                query.RoleId);
 
             // Act
             var viewModel = messageHandler.Handle(query);
 
             // Assert
-            Assert.AreEqual(messages.Count, viewModel.Messages.Count);
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel, viewModel).AreEqual);
         }
 
         private void FakeReturnGetMessagesService(List<Message> messages)

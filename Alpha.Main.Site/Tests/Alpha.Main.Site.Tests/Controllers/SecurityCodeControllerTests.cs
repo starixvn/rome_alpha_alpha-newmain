@@ -6,7 +6,9 @@
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Models.Request.SecurityCode;
     using Alpha.SecurityCode.Web;
+    using Configurations;
     using MediatR;
+    using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
     using Sunplus.Agent.Model.Entities;
@@ -287,6 +289,22 @@
 
             // Assert
             Assert.AreEqual(expectedViewName, viewResult.ViewName);
+        }
+
+        [Test]
+        public void Languages_Always_CallsMediatorSendAllLanguagesQuery()
+        {
+            //Arrange
+            var query = new AllLanguagesQuery(userSession.Language, AppSettings.DisabledVietnamese);
+
+            // Act
+            securityCodeController.Languages();
+
+            // Assert
+            mediator.Received().Send(
+                Arg.Is<AllLanguagesQuery>(
+                    param => param.LanguageCode == query.LanguageCode
+                    && param.DisabledVietnamese == query.DisabledVietnamese));
         }
     }
 }

@@ -1,26 +1,28 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
-    using Alpha.Main.AppResources;
-    using Alpha.Main.Models;
-    using Alpha.Main.Models.CustomerProfiles;
-    using Alpha.Main.Params.Password;
-    using Alpha.Main.Services;
-    using Alpha.Main.Site.Handlers;
-    using Alpha.Main.Site.Requests.Password;
-    using Alpha.Main.Site.Tests.Constants;
-    using Alpha.Main.Site.ViewModels.Security;
-    using Alpha.Main.Tests.TestData.Helper;
-    using Alpha.SecurityCode.Services;
+    using AppResources;
+    using Constants;
+    using Helpers;
     using KellermanSoftware.CompareNetObjects;
+    using Main.Models;
+    using Main.Models.CustomerProfiles;
+    using Main.Tests.TestData.Helper;
     using NSubstitute;
     using NUnit.Framework;
+    using Params.Password;
+    using SecurityCode.Services;
+    using Services;
+    using Site.Handlers;
+    using Site.Requests.Password;
+    using Site.ViewModels.Security;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
 
     [TestFixture]
     public class PasswordHandlerTests
     {
+        private CompareLogic compareLogic;
         private PasswordHandler passwordHandler;
         private PasswordService passwordService;
         private IUserSession userSession;
@@ -32,6 +34,7 @@
         [SetUp]
         public void Setup()
         {
+            compareLogic = new CompareLogic();
             passwordService = Substitute.For<PasswordService>();
             encryptor = Substitute.For<Encryptor>();
             customerProfileService = Substitute.For<CustomerProfileService>();
@@ -133,12 +136,10 @@
         public void HandleChangePasswordQuery_MessageIsNotNull_ReturnPasswodViewModel()
         {
             // Arrange
+            UrlHelperTestSetUp.SetUp();
+
             var hashKey = "HashKey";
             var message = new ChangePasswordQuery(userSession);
-            var compareLogic = new CompareLogic(new ComparisonConfig
-            {
-                MembersToIgnore = { "OldMainRootPath", "MainRootPath" }
-            });
 
             encryptor.RandomString(Arg.Any<int>()).Returns(hashKey);
             securityCodeChecker.IsEnableSecurityCode().Returns(true);
@@ -527,6 +528,36 @@
             Assert.Throws<ArgumentNullException>(() => passwordHandler.Handle(message));
         }
 
+        [Test]
+        public void HandleResetMainAccountPasswordQuery_MessageIsNotNull_CallsHandleChangePasswordQuery()
+        {
+            // Arrange
+            var message = new ResetMainAccountPasswordQuery
+            {
+                CustRoleId = RoleId.Agent
+            };
+
+            var hashKey = "HashKey";
+            encryptor.RandomString(Arg.Any<int>()).Returns(hashKey);
+            securityCodeChecker.IsEnableSecurityCode().Returns(true);
+
+            var expectedViewModel = new PasswordViewModel
+            {
+                CustRoleId = message.CustRoleId,
+                HashKey = hashKey,
+                EnableSecurityCode = true,
+                CustId = message.CustId,
+                IsCasinoSync = message.IsCasinoSync,
+                Title = "Reset Password"
+            };
+
+            // Act 
+            var actualViewModel = passwordHandler.Handle(message);
+
+            // Assert
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
+        }
+
         #endregion
 
         #region Handle Reset SubAccount Password Query
@@ -539,6 +570,36 @@
 
             // Act & Assert
             Assert.Throws<ArgumentNullException>(() => passwordHandler.Handle(message));
+        }
+
+        [Test]
+        public void HandleResetSubAccountPasswordQuery_MessageIsNotNull_CallsHandleChangePasswordQuery()
+        {
+            // Arrange
+            var message = new ResetSubAccountPasswordQuery
+            {
+                SubAccountId = 1,
+                Username = "UserName"
+            };
+
+            var hashKey = "HashKey";
+            encryptor.RandomString(Arg.Any<int>()).Returns(hashKey);
+            securityCodeChecker.IsEnableSecurityCode().Returns(true);
+
+            var expectedViewModel = new PasswordViewModel
+            {
+                CustRoleId = userSession.RoleId,
+                SubAccountId = message.SubAccountId,
+                HashKey = hashKey,
+                EnableSecurityCode = true,
+                Title = "Reset Password - UserName"
+            };
+
+            // Act 
+            var actualViewModel = passwordHandler.Handle(message);
+
+            // Assert
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
         }
 
         #endregion

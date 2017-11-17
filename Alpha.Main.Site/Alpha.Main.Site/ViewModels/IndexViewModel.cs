@@ -1,9 +1,6 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Text.RegularExpressions;
-    using System.Web;
     using Helpers;
     using Main.Helpers;
     using Main.Models.Enumerations;
@@ -50,15 +47,15 @@
 
         public string LanguageKey => message.LanguageKey;
 
-        public string OldMainRootPath => MicroSites.OldMainPath("~/");
+        public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
-        public string HowToUseRootPath => MicroSites.HowToUsePath("~/");
+        public string HowToUseRootPath => UrlHelper.MapHowToUsePath("~/");
 
-        public string ExTotalBetsForecastRootPath => MicroSites.ExTotalBetsForecastSitePath();
+        public string ExTotalBetsForecastRootPath => UrlHelper.MapExTotalBetsForecastPath("~/");
 
-        public string MessageSiteRootPath => MicroSites.MessageSitePath();
+        public string MessageSiteRootPath => UrlHelper.MapMessagesPath("~/");
 
-        public string MainRootPath => AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
+        public string MainRootPath => UrlHelper.MapMainPath("~/");
 
         public string PasswordHash { get; }
 
@@ -70,7 +67,6 @@
 
         public bool IsInternal => message.IsInternal;
 
-        [SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Justification = "Reviewed!")]
         public string CurrentURLCookieName => CookieHelper.GetCookieNameOfCurrentPage(CustId, SubAccId, encodeDataFunction);
 
         public bool IsShowIntroduction => true;

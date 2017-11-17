@@ -65,7 +65,7 @@
         {
             get
             {
-                return ConfigurationManager.AppSettings["MessageAppPath"];
+                return Settings["MessageAppPath"];
             }
         }
 
@@ -135,7 +135,7 @@
         }
 
         public static string StoreProcedurePath => Settings["StoredProcedurePath"];
-        
+
         public static string MessageSuper => Settings["Message:Super"];
 
         public static string MessageMaster => Settings["Message:Master"];
@@ -172,5 +172,7 @@
         {
             return Settings[name];
         }
+
+        public static bool LocalTest => Settings["LocalTest"] == "1";
     }
 }

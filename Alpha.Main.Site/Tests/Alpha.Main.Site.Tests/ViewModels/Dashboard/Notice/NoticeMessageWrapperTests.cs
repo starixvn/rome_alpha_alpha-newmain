@@ -4,7 +4,6 @@
     using Main.Constants;
     using Main.Models.Notice;
     using Main.Tests.TestData.Helper;
-    using NSubstitute;
     using NUnit.Framework;
     using Site.ViewModels.Dashboard.Notice;
 
@@ -26,7 +25,7 @@
             var noticeMessage = FakeDataHelper.Create<NoticeMessage>(parameters);
 
             // Act
-            var viewModel = new NoticeMessageWrapper(noticeMessage, Arg.Any<string>());
+            var viewModel = new NoticeMessageWrapper(noticeMessage, string.Empty);
 
             // Assert
             Assert.AreEqual(expectedType, viewModel.MessageType);

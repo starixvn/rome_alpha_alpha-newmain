@@ -380,5 +380,39 @@
             // Assert
             Assert.AreEqual(expectedSetting, actualSetting);
         }
+
+        [Test]
+        public void MessageAppPath_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["MessageAppPath"] = "/site-messages"
+            };
+
+            var expectedSetting = "/site-messages";
+
+            // Act
+            var actualSetting = AppSettings.MessageAppPath;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void ShowHelpLink_IsMBCSite_ReturnsTrue()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["SiteGroup"] = "IBCBET"
+            };
+
+            // Act
+            var actualSetting = AppSettings.ShowHelpLink;
+
+            // Assert
+            Assert.IsTrue(actualSetting);
+        }
     }
 }

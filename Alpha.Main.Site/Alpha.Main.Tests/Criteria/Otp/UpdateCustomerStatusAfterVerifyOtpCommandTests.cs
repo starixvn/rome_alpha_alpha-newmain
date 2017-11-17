@@ -24,7 +24,7 @@
         public void IsValid_ValuesAreNotNullOrWhiteSpace_ReturnsTrue()
         {
             // Arrange
-            var command = new InsertCustomerDeviceInfoCommand();
+            var command = new UpdateCustomerStatusAfterVerifyOtpCommand();
             command.CustId = 1;
             command.SubAccId = 0;
             command.Language = "Language";

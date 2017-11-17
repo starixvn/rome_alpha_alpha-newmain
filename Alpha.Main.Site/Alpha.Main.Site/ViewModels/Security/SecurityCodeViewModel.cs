@@ -1,8 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Security
 {
-    using System.Web;
-    using Alpha.Main.Helpers;
-    using Alpha.Main.Models.Enumerations;
+    using Helpers;
+    using Main.Models.Enumerations;
 
     public class SecurityCodeViewModel
     {
@@ -18,25 +17,13 @@
         {
             get
             {
-                return Enumeration.FromValue<UserLevel>(this.CustRoleId).DisplayName.ToLower();
+                return Enumeration.FromValue<UserLevel>(CustRoleId).DisplayName.ToLower();
             }
         }
 
-        public string OldMainRootPath
-        {
-            get
-            {
-                return MicroSites.OldMainPath("~/");
-            }
-        }
+        public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
-        public string MainRootPath
-        {
-            get
-            {
-                return AppPathHelper.GetAppPath(HttpRuntime.AppDomainAppVirtualPath, "~/");
-            }
-        }
+        public string MainRootPath => UrlHelper.MapMainPath("~/");
 
         public string Title { get; set; }
     }

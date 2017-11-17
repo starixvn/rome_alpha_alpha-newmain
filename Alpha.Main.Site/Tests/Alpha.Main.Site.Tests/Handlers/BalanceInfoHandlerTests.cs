@@ -1,9 +1,9 @@
-﻿#pragma warning disable 612, 618
-
-namespace Alpha.Main.Site.Tests.Handlers
+﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
     using Constants;
+    using Helpers;
+    using KellermanSoftware.CompareNetObjects;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
     using Main.Tests.TestData.Helper;
@@ -68,6 +68,9 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleBalanceInfoQuery_NotNullQuery_ReturnBalanceInfoViewModel()
         {
             // Arrange
+            var compareLogic = new CompareLogic();
+            UrlHelperTestSetUp.SetUp();
+
             var balanceInfo = FakeDataHelper.Create<BalanceInfo>();
             balanceInfoService.GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(balanceInfo);
 
@@ -84,11 +87,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             var balanceInfoViewModel = balanceInfoHandler.Handle(query);
 
             // Assert
-            Assert.IsTrue(expectedBalanceInfoViewModel.BalanceInfo == balanceInfo
-                && expectedBalanceInfoViewModel.Currency == balanceInfoViewModel.Currency
-                && expectedBalanceInfoViewModel.GivenCreditLabel == balanceInfoViewModel.GivenCreditLabel
-                && expectedBalanceInfoViewModel.TotalDownlineCreditLabel == balanceInfoViewModel.TotalDownlineCreditLabel
-                && expectedBalanceInfoViewModel.UserLevelLabel == balanceInfoViewModel.UserLevelLabel);
+            Assert.IsTrue(compareLogic.Compare(expectedBalanceInfoViewModel, balanceInfoViewModel).AreEqual);
         }
     }
 }

@@ -7,11 +7,10 @@
     <title>Kickout</title>
 </head>
 <body>
-
     @Html.Hidden("message", Model)
-    @Html.Hidden("oldMainRootPath", MicroSites.OldMainPath())
-    @Html.Hidden("mainRootPath", MicroSites.MainPath())
+    @Html.Hidden("oldMainRootPath", MicroSites.OldMainUrl("~/"))
+    @Html.Hidden("mainRootPath", HttpContext.Current.Response.ApplyAppPathModifier("~/"))
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
-    <script src="@StaticResources.MainSiteScriptPath("~/assets/bundles/kick-out")" type="text/javascript"></script>
+    @StaticResources.RenderScripts("~/assets/bundles/kick-out")
 </body>
 </html>

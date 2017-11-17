@@ -1,15 +1,16 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using System;
-    using Alpha.Main.AppResources;
-    using Alpha.Main.Criteria.SecurityCode;
-    using Alpha.Main.DataAccesses;
-    using Alpha.Main.Models;
-    using Alpha.Main.Params.SecurityCode;
-    using Alpha.Main.Services.Impl;
+    using AppResources;
     using Fanex.Data.Repository;
+    using KellermanSoftware.CompareNetObjects;
+    using Main.Criteria.SecurityCode;
+    using Main.DataAccesses;
+    using Main.Models;
+    using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using Params.SecurityCode;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
 
@@ -20,6 +21,7 @@
         private SecurityCodeDataAccess securityCodeDataAccess;
         private CasinoService casinoService;
         private Encryptor encryptor;
+        private CompareLogic compareLogic;
 
         [SetUp]
         public void Setup()
@@ -32,6 +34,8 @@
                 securityCodeDataAccess,
                 casinoService,
                 encryptor);
+
+            compareLogic = new CompareLogic();
         }
 
         #region Verify Security Code
@@ -138,16 +142,21 @@
             securityCodeDataAccess.UpdateSecurityCode(Arg.Any<UpdateMainAccountSecurityCodeCounterCriteria>()).Returns(new Result { Code = 1 });
             encryptor.ComputeHash(Arg.Is("SHA256"), Arg.Any<string>(), Arg.Is(param.Salt)).Returns("SecurityCode");
 
+            var expectedCriteria = new UpdateMainAccountSecurityCodeCounterCriteria
+            {
+                CustId = param.CustId,
+                CheckedSecurityCode = true,
+                IP = param.IP,
+                Language = param.Language
+            };
+
             // Act
             securityCodeService.VerifySecurityCode(param);
 
             // Assert
             securityCodeDataAccess.Received().UpdateSecurityCode(
                 Arg.Is<UpdateMainAccountSecurityCodeCounterCriteria>(
-                    p => p.CustId == param.CustId
-                        && p.CheckedSecurityCode == true
-                        && p.IP == param.IP
-                        && p.Language == param.Language));
+                    p => compareLogic.Compare(p, expectedCriteria).AreEqual));
         }
 
         [Test]
@@ -167,16 +176,22 @@
             securityCodeDataAccess.UpdateSecurityCode(Arg.Any<UpdateSubAccountSecurityCodeCounterCriteria>()).Returns(new Result { Code = 1 });
             encryptor.ComputeHash(Arg.Is("SHA256"), Arg.Any<string>(), Arg.Is(param.Salt)).Returns("SecurityCode");
 
+            var expectedCriteria = new UpdateSubAccountSecurityCodeCounterCriteria
+            {
+                CustId = param.CustId,
+                SubaccId = param.SubAccId,
+                CheckedSecurityCode = true,
+                IP = param.IP,
+                Language = param.Language
+            };
+
             // Act
             securityCodeService.VerifySecurityCode(param);
 
             // Assert
             securityCodeDataAccess.Received().UpdateSecurityCode(
                 Arg.Is<UpdateSubAccountSecurityCodeCounterCriteria>(
-                    p => p.CustId == param.CustId
-                        && p.CheckedSecurityCode == true
-                        && p.IP == param.IP
-                        && p.Language == param.Language));
+                    p => compareLogic.Compare(p, expectedCriteria).AreEqual));
         }
 
         [Test]

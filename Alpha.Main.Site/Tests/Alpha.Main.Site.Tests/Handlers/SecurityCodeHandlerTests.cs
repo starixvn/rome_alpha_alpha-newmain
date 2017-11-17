@@ -1,20 +1,21 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
-    using Alpha.Main.AppResources;
-    using Alpha.Main.Constants;
-    using Alpha.Main.Models;
-    using Alpha.Main.Models.CustomerProfiles;
-    using Alpha.Main.Params.SecurityCode;
-    using Alpha.Main.Services;
-    using Alpha.Main.Site.Handlers.SecurityCode;
-    using Alpha.Main.Site.Models.Request.SecurityCode;
-    using Alpha.Main.Site.ViewModels.Security;
-    using Alpha.Main.Tests.TestData.Helper;
-    using Alpha.SecurityCode.Web;
+    using AppResources;
+    using Helpers;
     using KellermanSoftware.CompareNetObjects;
+    using Main.Constants;
+    using Main.Models;
+    using Main.Models.CustomerProfiles;
+    using Main.Tests.TestData.Helper;
+    using Models.Request.SecurityCode;
     using NSubstitute;
     using NUnit.Framework;
+    using Params.SecurityCode;
+    using SecurityCode.Web;
+    using Services;
+    using Site.Handlers.SecurityCode;
+    using Site.ViewModels.Security;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
 
@@ -27,6 +28,7 @@
         private Encryptor encryptor;
         private SecurityCodeService securityCodeService;
         private IUserSession userSession;
+        private CompareLogic compareLogic;
 
         [SetUp]
         public void SetUp()
@@ -53,6 +55,9 @@
                 sessionManager,
                 encryptor,
                 userSession);
+
+            compareLogic = new CompareLogic();
+            UrlHelperTestSetUp.SetUp();
         }
 
         #region Handle Security Code Query
@@ -113,11 +118,6 @@
                 Title = "Reset Security Code"
             };
 
-            var compareLogic = new CompareLogic(new ComparisonConfig
-            {
-                MembersToIgnore = { "OldMainRootPath", "MainRootPath" }
-            });
-
             // Act 
             var actualViewModel = securityCodeHandler.Handle(message);
 
@@ -142,11 +142,6 @@
                 CustRoleId = message.RoleId,
                 Title = "Reset Security Code - UserName"
             };
-
-            var compareLogic = new CompareLogic(new ComparisonConfig
-            {
-                MembersToIgnore = { "OldMainRootPath", "MainRootPath" }
-            });
 
             // Act 
             var actualViewModel = securityCodeHandler.Handle(message);

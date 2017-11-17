@@ -1,21 +1,23 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using System;
-    using Alpha.Main.AppResources;
-    using Alpha.Main.Criteria.Password;
-    using Alpha.Main.DataAccesses;
-    using Alpha.Main.Models;
-    using Alpha.Main.Params.Password;
-    using Alpha.Main.Services.Impl;
-    using Alpha.Main.Tests.Constants;
+    using AppResources;
+    using Constants;
+    using KellermanSoftware.CompareNetObjects;
+    using Main.Criteria.Password;
+    using Main.DataAccesses;
+    using Main.Models;
+    using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using Params.Password;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
 
     [TestFixture]
     public class PasswordServiceImplTests
     {
+        private CompareLogic compareLogic;
         private PasswordServiceImpl passwordService;
         private Encryptor encryptor;
         private PasswordDataAccess passwordDataAccess;
@@ -24,6 +26,8 @@
         [SetUp]
         public void SetUp()
         {
+            compareLogic = new CompareLogic();
+
             encryptor = Substitute.For<Encryptor>();
             passwordDataAccess = Substitute.For<PasswordDataAccess>();
             casinoService = Substitute.For<CasinoService>();
@@ -222,6 +226,8 @@
             encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
             encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
 
+            passwordDataAccess.UpdatePassword(Arg.Any<UpdateSubAccountPasswordCriteria>()).Returns(new Result { Code = 0 });
+
             // Act
             passwordService.ChangeSubAccountPassword(param);
 
@@ -301,13 +307,7 @@
             // Assert
             passwordDataAccess.Received().UpdatePassword(
                 Arg.Is<ResetMainAccountPasswordCriteria>(
-                    c => c.CustId == criteria.CustId
-                        && c.Language == criteria.Language
-                        && c.LoginIP == criteria.LoginIP
-                        && c.UserPwd == criteria.UserPwd
-                        && c.SubAccId == criteria.SubAccId
-                        && c.DisCasino == criteria.DisCasino
-                        && c.UserId == criteria.UserId));
+                    c => compareLogic.Compare(c, criteria).AreEqual));
         }
 
         [Test]
@@ -416,7 +416,7 @@
             encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
             encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
 
-            var criteria = new ResetMainAccountPasswordCriteria
+            var criteria = new ResetSubAccountPasswordCriteria
             {
                 CustId = param.CustId,
                 Language = param.LanguageKey,
@@ -432,12 +432,7 @@
             // Assert
             passwordDataAccess.Received().UpdatePassword(
                 Arg.Is<ResetSubAccountPasswordCriteria>(
-                    c => c.CustId == criteria.CustId
-                        && c.Language == criteria.Language
-                        && c.LoginIP == criteria.LoginIP
-                        && c.UserPwd == criteria.UserPwd
-                        && c.SubAccId == criteria.SubAccId
-                        && c.UserId == criteria.UserId));
+                    c => compareLogic.Compare(c, criteria).AreEqual));
         }
 
         #endregion Reset Sub Account Password

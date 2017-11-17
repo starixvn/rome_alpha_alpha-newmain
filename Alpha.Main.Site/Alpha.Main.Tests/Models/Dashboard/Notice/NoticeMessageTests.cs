@@ -127,6 +127,19 @@
         }
 
         [Test]
+        public void ContentVN_Always_SetValueFromCtor()
+        {
+            // Arrange
+            string contentVN = "value";
+
+            // Act
+            var noticeMessage = FakeDataHelper.Create<NoticeMessage>("contentVN", contentVN);
+
+            // Assert
+            Assert.AreEqual(contentVN, noticeMessage.ContentVN);
+        }
+
+        [Test]
         public void PostTime_Always_SetValueFromCtor()
         {
             // Arrange

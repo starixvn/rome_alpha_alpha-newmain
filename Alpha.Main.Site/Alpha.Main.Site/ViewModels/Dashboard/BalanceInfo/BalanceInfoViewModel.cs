@@ -2,7 +2,7 @@
 {
     using System;
     using AppResources;
-    using Main.Helpers;
+    using Helpers;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
 
@@ -43,7 +43,7 @@
 
         public int CustId { get; }
 
-        public string ReportSiteAppPath => MicroSites.ReportSitePath("~/");
+        public string ReportSiteAppPath => UrlHelper.MapReportsPath("~/");
 
         public string MemberTodayWinLossReportPath => GetMemberWinLossReportPathByDate(true);
 

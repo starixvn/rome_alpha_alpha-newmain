@@ -3,7 +3,6 @@
     using System;
     using System.Text;
     using AppResources;
-    using Helpers;
     using Main.Models;
     using Main.Models.CustomerProfiles;
     using Main.Models.Otp;
@@ -13,6 +12,7 @@
     using SecurityCode.Web;
     using Services;
     using Site.Handlers;
+    using Site.Helpers;
     using Site.Requests.Otp;
     using Sunplus.Agent.Model.Entities;
 

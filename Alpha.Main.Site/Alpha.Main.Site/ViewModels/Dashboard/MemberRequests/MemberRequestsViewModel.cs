@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Main.Helpers;
+    using Helpers;
     using Main.Models.Enumerations;
     using Main.Models.MemberRequests;
 
@@ -31,13 +31,13 @@
         public UserLevel UserLevel { get; }
 
         public string BuildEnableMemberRequest(int productId)
-            => $"{MicroSites.MemberInfoSitePath("~/")}/MemberRequests/Index?UserSelectedProductId={productId}";
+            => $"{UrlHelper.MapMemberInfoPath("~/")}/MemberRequests/Index?UserSelectedProductId={productId}";
 
         public string BuildViewMemberRequestReport(int productId)
         {
             var action = UserLevel.IsAgentLevel() ? "Member" : "MasterOrAgent";
 
-            return $"{MicroSites.ReportSitePath("~/")}/PlayForFun/{action}?UserSelectedProductId={productId}";
+            return $"{UrlHelper.MapReportsPath("~/")}/PlayForFun/{action}?UserSelectedProductId={productId}";
         }
     }
 }

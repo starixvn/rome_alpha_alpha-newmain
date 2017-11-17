@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Dashboard.Statistics
 {
     using AppResources;
-    using Main.Helpers;
+    using Helpers;
     using Main.Models.Enumerations;
     using Main.Models.Statistics;
 
@@ -27,7 +27,7 @@
         {
             get
             {
-                var reportSiteAppPath = MicroSites.ReportSitePath("~/");
+                var reportSiteAppPath = UrlHelper.MapReportsPath("~/");
 
                 return $@"{reportSiteAppPath}/outstanding/{GetOutstandingDefaultReportLevel(UserLevel)}";
             }

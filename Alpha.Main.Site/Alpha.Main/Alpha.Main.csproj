@@ -44,7 +44,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.Web, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.1.0\lib\net40\Alpha.Web.dll</HintPath>
+      <HintPath>..\packages\Alpha.Web.1.0.1.1\lib\net40\Alpha.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
@@ -226,11 +226,6 @@
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\MessageType.cs" />
     <Compile Include="Constants\ProductId.cs" />
-    <Compile Include="Criteria\Announcement\CheckProductAnnouncementCriteria.cs" />
-    <Compile Include="Criteria\Announcement\GetMessageTypeListCriteria.cs" />
-    <Compile Include="Criteria\Announcement\InsertPersonalMessageCriteria.cs" />
-    <Compile Include="Criteria\Announcement\InsertPersonalMessageTargetCriteria.cs" />
-    <Compile Include="Criteria\Announcement\UpdateViewStatus.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommand.cs" />
     <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommand.cs" />
@@ -272,14 +267,12 @@
     <Compile Include="DataAccesses\StatisticsDataAccess.cs" />
     <Compile Include="FunctionRegistry.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Helpers\AppPathHelper.cs" />
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\IDateTime.cs" />
     <Compile Include="Helpers\Impl\DateTimeWrap.cs" />
     <Compile Include="Helpers\Impl\JsonHelperImpl.cs" />
     <Compile Include="Helpers\Impl\SiteMapReaderImpl.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
-    <Compile Include="Helpers\MicroSites.cs" />
     <Compile Include="Helpers\SiteMapReader.cs" />
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
     <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />

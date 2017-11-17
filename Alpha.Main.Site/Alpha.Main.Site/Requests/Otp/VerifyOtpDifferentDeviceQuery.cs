@@ -9,69 +9,23 @@
     {
         private readonly IUserSession userSession;
 
-        public VerifyOtpDifferentDeviceQuery() : this(null)
-        {
-        }
-
         public VerifyOtpDifferentDeviceQuery(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();
         }
 
-        public int CustId
-        {
-            get
-            {
-                return this.userSession.CustId;
-            }
-        }
+        public int CustId => userSession.CustId;
 
-        public int SubAccId
-        {
-            get
-            {
-                return this.userSession.SubAccId;
-            }
-        }
+        public int SubAccId => userSession.SubAccId;
 
-        public bool IsSubAcc
-        {
-            get
-            {
-                return this.userSession.IsSubAcc;
-            }
-        }
+        public bool IsSubAcc => userSession.IsSubAcc;
 
-        public string UserName
-        {
-            get
-            {
-                return this.userSession.UserName;
-            }
-        }
+        public string UserName => userSession.UserName;
 
-        public string NickName
-        {
-            get
-            {
-                return this.userSession.NickName;
-            }
-        }
+        public string NickName => userSession.NickName;
 
-        public string Language
-        {
-            get
-            {
-                return this.userSession.Language;
-            }
-        }
+        public string Language => userSession.Language;
 
-        public string SubUserName
-        {
-            get
-            {
-                return this.userSession.SubUserName;
-            }
-        }
+        public string SubUserName => userSession.SubUserName;
     }
 }

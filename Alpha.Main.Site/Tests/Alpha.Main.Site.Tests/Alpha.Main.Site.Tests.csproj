@@ -38,7 +38,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.Web, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Alpha.Web.1.0.1.0\lib\net40\Alpha.Web.dll</HintPath>
+      <HintPath>..\..\packages\Alpha.Web.1.0.1.1\lib\net40\Alpha.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -203,8 +203,10 @@
     <Compile Include="Controllers\CustomerProfileControllerTests.cs" />
     <Compile Include="Controllers\DashboardControllerTests.cs" />
     <Compile Include="Controllers\DefaultControllerTests.cs" />
+    <Compile Include="Controllers\ErrorControllerTests.cs" />
     <Compile Include="Controllers\LanguageControllerTests.cs" />
     <Compile Include="Controllers\MemberRequestsControllerTests.cs" />
+    <Compile Include="Controllers\MessageControllerTests.cs" />
     <Compile Include="Controllers\NoticeControllerTests.cs" />
     <Compile Include="Controllers\OtpControllerTests.cs" />
     <Compile Include="Controllers\PasswordControllerTests.cs" />
@@ -224,6 +226,7 @@
     <Compile Include="Handlers\SecurityCodeHandlerTests.cs" />
     <Compile Include="Handlers\StatisticsHandlerTests.cs" />
     <Compile Include="Handlers\UserMessageHandlerTests.cs" />
+    <Compile Include="Helpers\UrlHelperTestSetUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\ChangeLanguageCommandTests.cs" />
     <Compile Include="Requests\Dashboard\Notice\NoticeQueryTests.cs" />
@@ -245,9 +248,11 @@
     <Compile Include="Requests\SecurityCode\SecurityCodeQueryTests.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommandTests.cs" />
     <Compile Include="ViewModels\Dashboard\BalanceInfo\BalanceInfoViewModelTests.cs" />
+    <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModelTests.cs" />
     <Compile Include="ViewModels\Dashboard\Notice\NoticeMessageWrapperTests.cs" />
     <Compile Include="ViewModels\Dashboard\Notice\NoticeViewModelTests.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\StatisticsViewModelTests.cs" />
+    <Compile Include="ViewModels\IndexViewModelTests.cs" />
     <Compile Include="ViewModels\MenuBarViewModelTests.cs" />
     <Compile Include="ViewModels\Message\MessagesViewModelTests.cs" />
     <Compile Include="ViewModels\Message\MessageWrapperTests.cs" />
