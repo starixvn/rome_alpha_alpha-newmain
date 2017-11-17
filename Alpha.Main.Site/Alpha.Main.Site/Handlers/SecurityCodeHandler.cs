@@ -215,7 +215,7 @@
                 return validateResult;
             }
 
-            var result = ChangeSecurityCode(new ChangeSecurityCodeParam
+            var param = new ChangeSecurityCodeParam
             {
                 CustId = message.CustId,
                 SubAccId = message.SubAccId,
@@ -226,7 +226,9 @@
                 CurrentSecurityCode = message.OldSecurityCode,
                 Salt = sessionManager.Get<string>(SecurityCodeTokenSessionKey),
                 MustVerifyCurrentSecurityCode = true
-            });
+            };
+
+            var result = ChangeSecurityCode(param);
 
             if (result.IsSuccessful)
             {

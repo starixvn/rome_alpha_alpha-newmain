@@ -18,64 +18,22 @@
             this.userSession = userSession ?? new UserSessionExt();
         }
 
-        public int CustId
-        {
-            get
-            {
-                return this.userSession.CustId;
-            }
-        }
+        public int CustId => userSession.CustId;
 
-        public int UserId
-        {
-            get
-            {
-                return this.userSession.UserId;
-            }
-        }
+        public int UserId => userSession.UserId;
 
-        public int SubAccId
-        {
-            get
-            {
-                return this.userSession.SubAccId;
-            }
-        }
+        public int SubAccId => userSession.SubAccId;
 
-        public bool IsSubAcc
-        {
-            get
-            {
-                return this.userSession.IsSubAcc;
-            }
-        }
+        public bool IsSubAcc => userSession.IsSubAcc;
 
         public string OldSecurityCode { get; set; }
 
         public string SecurityCode { get; set; }
 
-        public string SecurityCodeToken
-        {
-            get
-            {
-                return this.userSession.SecurityCodeToken;
-            }
-        }
+        public string SecurityCodeToken => userSession.SecurityCodeToken;
 
-        public string Language
-        {
-            get
-            {
-                return this.userSession.Language;
-            }
-        }
+        public string Language => userSession.Language;
 
-        public string IP
-        {
-            get
-            {
-                return this.userSession.UserLoginIp;
-            }
-        }
+        public string IP => userSession.UserLoginIp;
     }
 }
