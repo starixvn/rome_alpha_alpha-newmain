@@ -1,5 +1,6 @@
 ﻿/// <reference path="../core.ts" />
 /// <reference path="menu-bar.ts" />
+declare var popupManager: any;
 
 'use strict';
 /*global alpha, briefProfile */
@@ -129,6 +130,8 @@ var indexManager = {
                 .on('load.newmain', function () {
                     var iframeWindow = indexManager.domElements.mainFrame[0].contentWindow || indexManager.domElements.mainFrame[0].contentDocument;
                     indexManager.closeAllOpenDropdowns(iframeWindow);
+                    indexManager.closeAllPopup();
+
                     indexManager.cacheCurrentUrl();
                     $(iframeWindow.document).on('click touchend',
                         () => {
@@ -168,6 +171,38 @@ var indexManager = {
 
             closeDropdownSubMenu();
         });
+    },
+    closeAllPopup: function () {
+        var prevUrl = $.cookie(indexManager.currentUrlCookieName) || "";
+        var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href || "";
+
+        var prevUrlWithoutQueryString = prevUrl.split("?")[0];
+        var currentUrlWithoutQueryString = currentUrl.split("?")[0];
+
+        var isCloseAllPopup = !this.isSameUrl(prevUrlWithoutQueryString, currentUrlWithoutQueryString);
+
+        if (isCloseAllPopup) {
+            popupManager.closeAllPopup();
+        }
+    },
+    isSameUrl: function (url1, url2) {
+        url1 = url1.toLowerCase();
+        url2 = url2.toLowerCase();
+        if (url1 === url2) {
+            return true;
+        }
+
+        var minLength = Math.min(url1.length, url2.length);
+
+        var diff1 = url1.substring(minLength);
+        diff1 = diff1.startsWith("/") ? diff1.substring(1) : diff1;
+        diff1 = diff1 || "index";
+
+        var diff2 = url2.substring(minLength);
+        diff2 = diff2.startsWith("/") ? diff2.substring(1) : diff2;
+        diff2 = diff2 || "index";
+
+        return url1.substring(0, minLength) == url2.substring(0, minLength) && diff1 === "index" && diff2 === "index";
     }
 };
 
