@@ -781,14 +781,6 @@
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\default-message.css" />
-    <Content Include="Assets\bundles\default-message.js" />
-    <Content Include="Assets\bundles\default-message.min.css">
-      <DependentUpon>default-message.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-message.min.js">
-      <DependentUpon>default-message.js</DependentUpon>
-    </Content>
     <Content Include="Assets\bundles\otp\otp.css" />
     <Content Include="Assets\bundles\otp\otp.min.css">
       <DependentUpon>otp.css</DependentUpon>

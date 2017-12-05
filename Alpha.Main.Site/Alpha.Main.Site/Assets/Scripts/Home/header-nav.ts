@@ -38,7 +38,7 @@ var headerNav = {
 
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index",
-        messages: alpha.urls.mainRootPath + "Message/Index",
+        messages: alpha.urls.messageRootPath + "Message/Index",
         changeLanguage: alpha.urls.mainRootPath + "Language/Change",
         queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx"
     },
