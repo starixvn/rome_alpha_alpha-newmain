@@ -224,7 +224,6 @@
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\Language.cs" />
-    <Compile Include="Constants\MessageType.cs" />
     <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommand.cs" />
@@ -236,7 +235,6 @@
     <Compile Include="Criteria\Otp\UpdateCustomerOtpStatusCommand.cs" />
     <Compile Include="Criteria\Otp\UpdateCustomerStatusAfterVerifyOtpCommand.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
-    <Compile Include="Criteria\Message\GetMessageCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Notice\GetNoticeMessagesCriteria.cs" />
     <Compile Include="Criteria\Notice\MarkMessageAsReadCriteria.cs" />
@@ -255,11 +253,9 @@
     <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCounterCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\GetSubAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\GetMainAccountSecurityCodeCriteria.cs" />
-    <Compile Include="DataAccesses\Impl\MessageDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\PasswordDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\StatisticsDataAccessImpl.cs" />
-    <Compile Include="DataAccesses\MessageDataAccess.cs" />
     <Compile Include="DataAccesses\PasswordDataAccess.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
@@ -281,7 +277,6 @@
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
     <Compile Include="Models\MemberRequests\ProductRequest.cs" />
-    <Compile Include="Models\Message\Message.cs" />
     <Compile Include="Models\Notice\NoticeMessage.cs" />
     <Compile Include="Models\Otp\DeviceInfo.cs" />
     <Compile Include="Models\Statistics\NewMember.cs" />
@@ -313,10 +308,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Services\Impl\MessageServiceImpl.cs" />
     <Compile Include="Services\Impl\NoticeServiceImpl.cs" />
     <Compile Include="Services\Impl\MemberRequestsServiceImpl.cs" />
-    <Compile Include="Services\MessageService.cs" />
     <Compile Include="Services\NoticeService.cs" />
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />

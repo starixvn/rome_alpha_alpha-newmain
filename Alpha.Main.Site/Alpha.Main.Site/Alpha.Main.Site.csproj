@@ -813,8 +813,6 @@
     <Content Include="Assets\styles\home\home.min.css">
       <DependentUpon>home.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\message\message.css" />
-    <Content Include="Assets\styles\message\message.min.css" />
     <Content Include="Assets\bundles\security\otp\setup-otp.js" />
     <Content Include="Assets\bundles\security\otp\setup-otp.min.js">
       <DependentUpon>setup-otp.js</DependentUpon>
@@ -1034,7 +1032,6 @@
     <Content Include="Assets\styles\home\tooltip.scss" />
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\security\security.scss" />
-    <Content Include="Assets\styles\message\message.scss" />
     <Content Include="Assets\styles\otp\otp.scss" />
     <Content Include="Assets\styles\error\error.scss" />
     <None Include="compilerconfig.json.defaults">
@@ -1083,9 +1080,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Dashboard\HiddenFields.cshtml" />
-    <Content Include="Views\Message\HiddenFields.cshtml" />
-    <Content Include="Views\Message\Index.cshtml" />
-    <Content Include="Views\Message\Messages.cshtml" />
     <Content Include="typings\globals\jasmine\typings.json" />
     <Content Include="typings\globals\jquery.blockui\typings.json" />
     <Content Include="typings\globals\jquery\typings.json" />
@@ -1125,11 +1119,9 @@
     <Content Include="Web.Configuration\AuthorizationSection.config">
       <SubType>Designer</SubType>
     </Content>
-    <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\statistics-tests.ts" />
-    <TypeScriptCompile Include="Assets\scripts\tests\app\message\message-tests.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
@@ -1153,7 +1145,6 @@
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\MemberRequestsController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
@@ -1162,7 +1153,6 @@
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Handlers\MessageHandler.cs" />
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
     <Compile Include="Handlers\NoticeHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
@@ -1202,7 +1192,6 @@
     <Compile Include="Requests\Otp\VerifyOtpCommand.cs" />
     <Compile Include="Requests\Otp\VerifyOtpDifferentDeviceQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
-    <Compile Include="Requests\Message\MessageQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ForceChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetMainAccountPasswordCommand.cs" />
@@ -1242,9 +1231,7 @@
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\OtpViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
-    <Compile Include="ViewModels\Message\MessagesViewModel.cs" />
     <Compile Include="ViewModels\Security\ResetOtpViewModel.cs" />
-    <Compile Include="ViewModels\Message\MessageWrapper.cs" />
     <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\VerifyOtpDifferenceDeviceViewModel.cs" />

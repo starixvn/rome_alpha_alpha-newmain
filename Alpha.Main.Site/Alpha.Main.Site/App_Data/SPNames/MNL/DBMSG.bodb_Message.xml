@@ -22,12 +22,6 @@
     <Setting Key="Dot_Msg_SetUsrMessage" SpName="Dot_Msg_SetUsrMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
     </Setting>
     <Setting Key="Age_CustomerUpdMessagesRead" SpName="Age_CustomerUpdMessagesRead" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
-    </Setting>
-    <Setting Key="Dot_Msg_GetPublicMessage" SpName="Dot_Msg_GetPublicMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
-    </Setting>
-    <Setting Key="Dot_Msg_GetSpecialMessage" SpName="Dot_Msg_GetSpecialMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
-    </Setting>
-    <Setting Key="Dot_Msg_GetPrivateMessage" SpName="Dot_Msg_GetPrivateMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
-    </Setting>
+    </Setting>   
   </Function>
 </Functions>

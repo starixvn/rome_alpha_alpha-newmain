@@ -102,7 +102,6 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<StatisticsService, StatisticsServiceImpl>();
             container.RegisterPerWebRequest<NoticeService, NoticeServiceImpl>();
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
-            container.RegisterPerWebRequest<MessageService, MessageServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
             container.RegisterPerWebRequest<MemberRequestsService, MemberRequestsServiceImpl>();
 
@@ -126,7 +125,6 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
             container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
             container.RegisterPerWebRequest<StatisticsDataAccess, StatisticsDataAccessImpl>();
-            container.RegisterPerWebRequest<MessageDataAccess, MessageDataAccessImpl>();
         }
     }
 }
