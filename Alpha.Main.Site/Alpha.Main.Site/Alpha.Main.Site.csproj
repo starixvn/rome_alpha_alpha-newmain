@@ -1062,7 +1062,6 @@
     <Content Include="Views\Statistics\NewMembers.cshtml" />
     <Content Include="Views\Statistics\TopTurnoverMembers.cshtml" />
     <Content Include="Views\Password\Shared\_Layout.cshtml" />
-    <Content Include="Views\Notice\Index.cshtml" />
     <Content Include="Views\SecurityCode\Languages.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_en-US.cshtml" />
     <Content Include="Views\Default\Popup.cshtml" />
@@ -1070,7 +1069,6 @@
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ja-JP.cshtml" />
     <Content Include="Views\Default\HiddenFields.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ko-KR.cshtml" />
-    <Content Include="Views\Notice\NoticeMessages.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_th-TH.cshtml" />
     <Content Include="Views\Dashboard\BalanceInfo.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
@@ -1145,7 +1143,6 @@
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\MemberRequestsController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
@@ -1154,7 +1151,6 @@
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
-    <Compile Include="Handlers\NoticeHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
     <Compile Include="Handlers\MemberRequestsHandler.cs" />
@@ -1174,8 +1170,6 @@
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfo\BalanceInfoQuery.cs" />
     <Compile Include="Requests\Dashboard\MemberRequests\MemberRequestQuery.cs" />
-    <Compile Include="Requests\Dashboard\Notice\MarkMessageAsReadQuery.cs" />
-    <Compile Include="Requests\Dashboard\Notice\NoticeQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\NewMembersQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\StatisticsQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\TopTurnoverMembersQuery.cs" />
@@ -1210,12 +1204,9 @@
     <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\Notice\NoticeViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\BalanceInfo\BalanceInfoViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\Notice\NoticeMessageWrapper.cs" />
-    <Compile Include="ViewModels\Dashboard\Notice\NoticeMessagesViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\NewMembersViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\TopTurnoverMembersViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\TopWinningMembersViewModel.cs" />

@@ -1,27 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
   <Function Name="Message">
-    <Setting Key="Age_CustomerSelMessages" SpName="Age_CustomerSelMessages" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
-      <Mapping DataField="MessageId" ObjectProperty="Id" />
-      <Mapping DataField="Content_en" ObjectProperty="ContentEn" />
-      <Mapping DataField="Content_cs" ObjectProperty="ContentCs" />
-      <Mapping DataField="Content_ch" ObjectProperty="ContentCh" />
-      <Mapping DataField="Content_jp" ObjectProperty="ContentJp" />
-      <Mapping DataField="Content_th" ObjectProperty="ContentTh" />
-      <Mapping DataField="Content_it" ObjectProperty="ContentIt" />
-      <Mapping DataField="Content_ko" ObjectProperty="ContentKo" />
-      <Mapping DataField="Content_es" ObjectProperty="ContentEs" />
-      <Mapping DataField="Content_vn" ObjectProperty="ContentVn" />
-      <Mapping DataField="MsgType" ObjectProperty="Type" />
-      <Mapping DataField="bettransid" ObjectProperty="BetTransId" />
-      <Mapping DataField="isRead" ObjectProperty="IsRead" />
-    </Setting>
     <Setting Key="Dot_Msg_SetMessage" SpName="Dot_Msg_SetMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
       <Mapping DataField="messageId" ObjectProperty="Id" />
     </Setting>
     <Setting Key="Dot_Msg_SetUsrMessage" SpName="Dot_Msg_SetUsrMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
-    </Setting>
-    <Setting Key="Age_CustomerUpdMessagesRead" SpName="Age_CustomerUpdMessagesRead" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
-    </Setting>   
+    </Setting>  
   </Function>
 </Functions>

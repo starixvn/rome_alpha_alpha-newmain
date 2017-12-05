@@ -239,8 +239,6 @@
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteriaTests.cs" />
-    <Compile Include="Criteria\Notice\GetNoticeMessagesCriteriaTests.cs" />
-    <Compile Include="Criteria\Notice\MarkMessageAsReadCriteriaTests.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommandTests.cs" />
     <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommandTests.cs" />
     <Compile Include="Criteria\Otp\GetCustomerOtpCriteriaTests.cs" />
@@ -285,7 +283,6 @@
     <Compile Include="Helpers\XMLDocumentHelperTests.cs" />
     <Compile Include="Models\Dashboard\BalanceInfo\BalanceInfoTests.cs" />
     <Compile Include="Models\Dashboard\BalanceInfo\BalanceUpDayInfoTests.cs" />
-    <Compile Include="Models\Dashboard\Notice\NoticeMessageTests.cs" />
     <Compile Include="Models\Dashboard\Statistics\StatisticsTests.cs" />
     <Compile Include="Models\Dashboard\Statistics\TopTurnoverMemberTests.cs" />
     <Compile Include="Models\Dashboard\Statistics\TopWinningMemberTests.cs" />
@@ -295,7 +292,6 @@
     <Compile Include="Models\Menus\MenuItemTests.cs" />
     <Compile Include="Models\Menus\MenuStatusTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\NoticeServiceImplTests.cs" />
     <Compile Include="Services\StatisticsServiceImplTests.cs" />
     <Compile Include="Services\BalanceInfoServiceImplTests.cs" />
     <Compile Include="Services\BalanceUpDayInfoServiceImplTests.cs" />
@@ -347,60 +343,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\Statistics\StatisticsHasData.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Available\Announcement_NotHasEndDate.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Available\Announcement_InStartEndDateRange.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\OnlyForceUseSecurityCode.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Available\ForceUseSecurityCode\HasAnnouncement.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\ByCustIds\CustIdsAttr.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\ByCustIds\EmptyCustIdsAttr.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\ByCustIds\NotHaveCustIdsAttr.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreExcludedSite.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnorePrivateSystem.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Exclude\Announcement_IgnoreAllSystem.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\AvailableAnnouncement.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Expired\Announcement_NotReachStartDate.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Expired\Announcement_NotHasStartDate.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Expired\Announcement_OverEndDate.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\EmptyAnnouncement.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Language\Announcement_NotMatchLanguage_HasDefault.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Language\Announcement_MatchLanguage.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestData\Announcements\HotAnnouncement\Language\Announcement_NotMatchLanguage_NotHasDefault.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\EmptyToolTipMessage.xml">

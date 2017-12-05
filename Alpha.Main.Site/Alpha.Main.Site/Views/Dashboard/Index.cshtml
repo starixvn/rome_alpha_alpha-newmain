@@ -44,7 +44,7 @@
         <div role="tabpanel" class="tab-pane statistic" id="stats" action-url="@Url.Action("Index", "Statistics")">
             <div class="text-center"><span class="block-icon-small "></span></div>
         </div>
-        <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@Url.Action("Index", "Notice")">
+        <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@MicroSites.MessageUrl("~/Notice/Index")">
             <div class="text-center"><span class="block-icon-small "></span></div>
         </div>
         @if (Model.EnablePlayForFun)

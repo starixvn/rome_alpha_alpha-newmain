@@ -100,7 +100,6 @@ namespace Alpha.Main.Site.App_Start
             container.RegisterPerWebRequest<BalanceUpDayInfoService, BalanceUpDayInfoServiceImpl>();
             container.RegisterPerWebRequest<BalanceInfoService, BalanceInfoServiceImpl>();
             container.RegisterPerWebRequest<StatisticsService, StatisticsServiceImpl>();
-            container.RegisterPerWebRequest<NoticeService, NoticeServiceImpl>();
             container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
             container.RegisterPerWebRequest<MemberRequestsService, MemberRequestsServiceImpl>();
