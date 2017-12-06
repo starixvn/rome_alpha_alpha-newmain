@@ -930,21 +930,6 @@
     <Content Include="App_Data\securitycode.json" />
     <Content Include="Assets\styles\home\home.scss" />
     <Content Include="Assets\scripts\tests\chutzpah.json" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.en-US.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.en-US.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.en-US.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.th-TH.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.vi-VN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.zh-CN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.zh-TW.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.th-TH.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.vi-VN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.zh-CN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.zh-TW.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.th-TH.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.vi-VN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.zh-CN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.zh-TW.pdf" />
     <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.svg" />
     <Content Include="Assets\styles\instruction\images\agent.png" />
     <Content Include="Assets\styles\instruction\images\master.png" />
@@ -1154,7 +1139,9 @@
     <Compile Include="Handlers\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\BrowserHelper.cs" />
-    <Compile Include="Helpers\BrowserHelperImpl.cs" />
+    <Compile Include="Helpers\BrowserHelperImpl.cs" >
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Requests\AllLanguagesQuery.cs" />
     <Compile Include="Requests\BrowserQuery.cs" />
@@ -1210,7 +1197,6 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\Message\MessageLevel.cs" />
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\OtpViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />

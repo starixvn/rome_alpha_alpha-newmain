@@ -259,7 +259,9 @@
     <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
     <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccess.cs" />
-    <Compile Include="FunctionRegistry.cs" />
+    <Compile Include="FunctionRegistry.cs" >
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\IDateTime.cs" />
