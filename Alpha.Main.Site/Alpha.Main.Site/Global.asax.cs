@@ -17,6 +17,7 @@
     using System.Web.Routing;
     using Web;
     using Web.Helpers;
+    using Web.Filters;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -46,6 +47,7 @@
 
             GlobalFilters.Filters.Add(new CheckUMFilter());
             GlobalFilters.Filters.Add(new CheckBelongingFilter());
+            GlobalFilters.Filters.Add(new NoCacheFilter());
             AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
 
             var loggingConfiguration = new LoggingConfiguration()
