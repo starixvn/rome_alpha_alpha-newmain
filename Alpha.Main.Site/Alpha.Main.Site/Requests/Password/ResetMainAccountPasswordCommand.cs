@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Requests.Password
 {
     using Main.Models;
+    using Main.Models.Enumerations;
     using MediatR;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
@@ -76,6 +77,8 @@
             }
         }
 
-        public int CustRoleId { get; set; }
+        public byte CustRoleId { get; set; }
+
+        public bool IsValid() => UserLevel.Member.Value <= CustRoleId && CustRoleId <= UserLevel.Super.Value;
     }
 }
