@@ -144,7 +144,7 @@
             $ajax.and.callFake((options) => {
                 options.success(true);
             });
-            alpha.urls.messageRootPath = 'path';
+            alpha.urls.messageRootPath = 'path/';
 
             // Act
             markMessageAsRead.call(this, $message);
@@ -199,7 +199,7 @@
         it('Always -> Send Ajax With Correct AjaxSettings', () => {
             // Arrange
             $moreBtn.attr('totalMsg', 10);
-            alpha.urls.messageRootPath = 'path';
+            alpha.urls.messageRootPath = 'path/';
 
             // Act
             $moreBtn.trigger('click');

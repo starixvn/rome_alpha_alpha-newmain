@@ -4,20 +4,20 @@ declare var bootbox: any;
 var alpha = {
     urls:
     {
-        oldMainRootPath: document.getElementById('oldMainRootPath') != null
-            ? (<HTMLInputElement>document.getElementById('oldMainRootPath')).value
+        oldMainRootPath: top.document.getElementById('oldMainRootPath') != null
+            ? (<HTMLInputElement>top.document.getElementById('oldMainRootPath')).value
             : "not found",
-        mainRootPath: document.getElementById('mainRootPath') != null
-            ? (<HTMLInputElement>document.getElementById('mainRootPath')).value
+        mainRootPath: top.document.getElementById('mainRootPath') != null
+            ? (<HTMLInputElement>top.document.getElementById('mainRootPath')).value
             : "not found",
-        howToUseRootPath: document.getElementById('howToUseRootPath') != null
-            ? (<HTMLInputElement>document.getElementById('howToUseRootPath')).value
+        howToUseRootPath: top.document.getElementById('howToUseRootPath') != null
+            ? (<HTMLInputElement>top.document.getElementById('howToUseRootPath')).value
             : "not found",
-        exTotalBetsForecastRootPath: document.getElementById('exTotalBetsForecastRootPath') != null
-            ? (<HTMLInputElement>document.getElementById('exTotalBetsForecastRootPath')).value
+        exTotalBetsForecastRootPath: top.document.getElementById('exTotalBetsForecastRootPath') != null
+            ? (<HTMLInputElement>top.document.getElementById('exTotalBetsForecastRootPath')).value
             : "not found",
-        messageRootPath: document.getElementById('messageRootPath') != null
-            ? (<HTMLInputElement>document.getElementById('messageRootPath')).value
+        messageRootPath: top.document.getElementById('messageRootPath') != null
+            ? (<HTMLInputElement>top.document.getElementById('messageRootPath')).value
             : "not found"
     },
     user:

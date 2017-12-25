@@ -31,7 +31,7 @@
     protected urls = {
         mainAppPrivateMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=0',
         mainAppPublicMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=1',
-        mainAppSpecialMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=2',
+        mainAppSpecialMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=2',
         updatePrivateMessageCount: alpha.urls.messageRootPath + 'Message/UpdatePrivateMessageAsRead',
         getMessages: alpha.urls.messageRootPath + 'Message/GetLatestMessage',
         getHotMessages: alpha.urls.messageRootPath + 'Announcement/HeaderAnnouncement'
@@ -263,7 +263,7 @@
                     .find('#private-message-content').attr('live-message-url', url);
             }
             if (this.privateMessageId !== 0) {
-                this.appendMessageToPopup(privateMessage[this.messageContentIndex]);
+                this.appendMessageToPopup(privateMessage.Content);
             }
         }
 

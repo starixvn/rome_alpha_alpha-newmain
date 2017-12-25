@@ -41,7 +41,7 @@
             };
 
             const ajaxSetting = {
-                url: alpha.urls.messageRootPath + '/Notice/MarkMessageAsRead',
+                url: alpha.urls.messageRootPath + 'Notice/MarkMessageAsRead',
                 data: { messageId: message.attr('id') },
                 method: 'POST',
                 success: onSuccess
@@ -64,7 +64,7 @@
             }
 
             const ajaxSetting: JQueryAjaxSettings = {
-                url: alpha.urls.messageRootPath + '/Notice/MoreMessages?totalMessage=' + moreMessagesBtn.attr('totalMsg'),
+                url: alpha.urls.messageRootPath + 'Notice/MoreMessages?totalMessage=' + moreMessagesBtn.attr('totalMsg'),
                 method: 'GET',
                 cache: false,
                 success: onSuccess
