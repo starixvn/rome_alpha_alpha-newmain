@@ -1,17 +1,16 @@
-[
+﻿[
   {
     "outputFileName": "Assets/bundles/default-index.js",
     "inputFiles": [
       "Assets/scripts/core.js",
       "Assets/scripts/home/index-manager.js",
-      "Assets/scripts/old-main.js",      
+      "Assets/scripts/old-main.js",
       "Assets/scripts/home/header-nav.js",
       "Assets/scripts/home/header-msg.js",
       "Assets/scripts/home/header-msg-mobile.js",
-      "Assets/scripts/home/menu-bar.js",      
-      "Assets/scripts/announcement/announcementCounter.js",
+      "Assets/scripts/home/menu-bar.js",
       "Assets/scripts/announcement/popup-announcement.js",
-      "Assets/scripts/announcement/popup-announcement-mobile.js",      
+      "Assets/scripts/announcement/popup-announcement-mobile.js",
       "Assets/scripts/customer-profiles/brief-profile.js"
     ]
   },
@@ -25,7 +24,7 @@
       "Assets/scripts/dashboard/member-requests.js"
     ]
   },
-  
+
   {
     "outputFileName": "Assets/bundles/default-index.css",
     "inputFiles": [
@@ -130,7 +129,7 @@
       "Assets/scripts/security/security-helper.js",
       "Assets/scripts/security/password/reset-sub-account-password.js"
     ]
-  },  
+  },
   {
     "outputFileName": "Assets/bundles/otp/otp.css",
     "inputFiles": [
