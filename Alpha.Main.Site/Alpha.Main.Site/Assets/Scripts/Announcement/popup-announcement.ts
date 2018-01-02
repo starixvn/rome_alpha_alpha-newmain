@@ -34,7 +34,7 @@
         };
 
         cacheElements = () => {
-            this.domElements.announcementModal = this.$('.announcement-modal');
+            this.domElements.announcementModal = this.$('#announcement-modal');
             this.domElements.announcementIframe = this.$('#annoucement-iframe');
         };
 
