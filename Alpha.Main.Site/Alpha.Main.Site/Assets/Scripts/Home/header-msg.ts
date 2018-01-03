@@ -29,14 +29,11 @@
         showLessContainer: null
     };
     protected urls = {
-        mainAppPrivateMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=0',
-        mainAppPublicMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=1',
-        mainAppSpecialMessageForm: alpha.urls.mainRootPath + 'Message/Index?messageType=2',
-        oldMainAppNormalMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=',
-        oldMainAppPrivateMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=private',
-        oldMainAppSpecialMessageForm: alpha.urls.oldMainRootPath + 'Info/NewMessageForm.aspx?pageQuery=special',
-        updatePrivateMessageCount: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/UpdatePrivateMessageCount.ashx',
-        getMessages: alpha.urls.oldMainRootPath + '_UserMessage/Handlers/GetMessages.ashx',
+        mainAppPrivateMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=0',
+        mainAppPublicMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=1',
+        mainAppSpecialMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=2',
+        updatePrivateMessageCount: alpha.urls.messageRootPath + 'Message/UpdatePrivateMessageAsRead',
+        getMessages: alpha.urls.messageRootPath + 'Message/GetLatestMessage',
         getHotMessages: alpha.urls.messageRootPath + 'Announcement/HeaderAnnouncement'
     };
     protected $: JQueryStatic;
@@ -62,7 +59,7 @@
                 success: (rawResult) => {
                     const result = alpha.core.convertReponseToJson(rawResult);
 
-                    if (result.errCode === 0) {
+                    if (result === true) {
                         this.domElements.privateMessageCounter.html('0');
                     }
                 }
@@ -201,8 +198,8 @@
     }
 
     onSuccessGetMessages = (rawResults) => {
-        const results = alpha.core.convertReponseToJson(rawResults),
-            movebetsMessage = results.movebets_message || "";
+        const results = rawResults,
+            movebetsMessage = results.MoveBetsInformation.Content || "";
 
         this.showPublicMessage(results);
 
@@ -214,21 +211,21 @@
     }
 
     showPublicMessage = (results: any) => {
-        const publicMessage = results.public_message ? results.public_message : 0,
-            privateMessage = results.private_message ? results.private_message : 0;
+        const publicMessage = results.PublicMessage ? results.PublicMessage : 0,
+            privateMessage = results.PrivateMessage ? results.PrivateMessage : 0;
 
         // Process Public Message: show new public message and its link to message form
         const url = this.urls.mainAppPublicMessageForm;
 
-        if (publicMessage[this.messageIdIndex]
-            && publicMessage[this.messageIdIndex] !== this.publicMessageId) {
+        if (publicMessage.Id
+            && publicMessage.Id !== this.publicMessageId) {
             this.domElements.liveMessage
-                .html(publicMessage[this.messageContentIndex] + '. ')
+                .html(publicMessage.Content + '. ')
                 .find('font').attr('live-message-url', url);
 
-            this.publicMessageId = publicMessage[this.messageIdIndex];
+            this.publicMessageId = publicMessage.Id;
             if (this.publicMessageId !== 0) {
-                this.appendMessageToPopup(publicMessage[this.messageContentIndex]);
+                this.appendMessageToPopup(publicMessage.Content);
             }
         }
         else {
@@ -240,20 +237,20 @@
     }
 
     showPrivateMessage = (results: any) => {
-        const privateMessage = results.private_message ? results.private_message : 0,
-            unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
+        const privateMessage = results.PrivateMessage ? results.PrivateMessage : 0,
+            unreadPriMsgCount = results.NumberOfUnreadPrivateMessage ? results.NumberOfUnreadPrivateMessage : 0;
 
         // Process Private Message: show new private message
         const url = this.urls.mainAppPrivateMessageForm;
 
-        if (privateMessage[this.messageIdIndex]
-            && this.privateMessageId !== privateMessage[this.messageIdIndex]) {
+        if (privateMessage.Id
+            && this.privateMessageId !== privateMessage.Id) {
             //// Append Private Message to Marquee with green color format.
             const privateMessageContent = this.domElements.liveMessage.find('#private-message-content');
 
-            this.privateMessageId = privateMessage[this.messageIdIndex];
+            this.privateMessageId = privateMessage.Id;
             if (privateMessageContent.length > 0) {
-                privateMessageContent.html("Private message: " + privateMessage[this.messageContentIndex]);
+                privateMessageContent.html("Private message: " + privateMessage.Content);
             }
             else {
                 const liveMessageContent = this.domElements.liveMessage.html();
@@ -261,12 +258,12 @@
                 this.domElements.liveMessage.html(
                     liveMessageContent +
                     "<font id='private-message-content' color=\"green\">Private message: " +
-                    privateMessage[this.messageContentIndex] +
+                    privateMessage.Content +
                     "</font>")
                     .find('#private-message-content').attr('live-message-url', url);
             }
             if (this.privateMessageId !== 0) {
-                this.appendMessageToPopup(privateMessage[this.messageContentIndex]);
+                this.appendMessageToPopup(privateMessage.Content);
             }
         }
 

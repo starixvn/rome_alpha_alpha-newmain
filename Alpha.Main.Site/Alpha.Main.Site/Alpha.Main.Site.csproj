@@ -742,9 +742,9 @@
     <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Regular.woff2" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.scss" />
     <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Default\AnnouncementPopup.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement-mobile.ts" />
-    <TypeScriptCompile Include="Assets\scripts\announcement\announcementCounter.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
@@ -781,14 +781,6 @@
     <Content Include="Assets\bundles\default-index.min.js">
       <DependentUpon>default-index.js</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\default-message.css" />
-    <Content Include="Assets\bundles\default-message.js" />
-    <Content Include="Assets\bundles\default-message.min.css">
-      <DependentUpon>default-message.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-message.min.js">
-      <DependentUpon>default-message.js</DependentUpon>
-    </Content>
     <Content Include="Assets\bundles\otp\otp.css" />
     <Content Include="Assets\bundles\otp\otp.min.css">
       <DependentUpon>otp.css</DependentUpon>
@@ -813,8 +805,6 @@
     <Content Include="Assets\styles\home\home.min.css">
       <DependentUpon>home.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\message\message.css" />
-    <Content Include="Assets\styles\message\message.min.css" />
     <Content Include="Assets\bundles\security\otp\setup-otp.js" />
     <Content Include="Assets\bundles\security\otp\setup-otp.min.js">
       <DependentUpon>setup-otp.js</DependentUpon>
@@ -940,21 +930,6 @@
     <Content Include="App_Data\securitycode.json" />
     <Content Include="Assets\styles\home\home.scss" />
     <Content Include="Assets\scripts\tests\chutzpah.json" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.en-US.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.en-US.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.en-US.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.th-TH.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.vi-VN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.zh-CN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Agent\FishingWorldGuideline.zh-TW.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.th-TH.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.vi-VN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.zh-CN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Master\FishingWorldGuideline.zh-TW.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.th-TH.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.vi-VN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.zh-CN.pdf" />
-    <Content Include="Assets\LocalResources\Announcements\FishingWorld\Super\FishingWorldGuideline.zh-TW.pdf" />
     <Content Include="Assets\styles\instruction\Casino_Hand\casino_hand-webfont.svg" />
     <Content Include="Assets\styles\instruction\images\agent.png" />
     <Content Include="Assets\styles\instruction\images\master.png" />
@@ -1034,7 +1009,6 @@
     <Content Include="Assets\styles\home\tooltip.scss" />
     <Content Include="Assets\styles\home\pageIElower10.scss" />
     <Content Include="Assets\styles\security\security.scss" />
-    <Content Include="Assets\styles\message\message.scss" />
     <Content Include="Assets\styles\otp\otp.scss" />
     <Content Include="Assets\styles\error\error.scss" />
     <None Include="compilerconfig.json.defaults">
@@ -1065,7 +1039,6 @@
     <Content Include="Views\Statistics\NewMembers.cshtml" />
     <Content Include="Views\Statistics\TopTurnoverMembers.cshtml" />
     <Content Include="Views\Password\Shared\_Layout.cshtml" />
-    <Content Include="Views\Notice\Index.cshtml" />
     <Content Include="Views\SecurityCode\Languages.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_en-US.cshtml" />
     <Content Include="Views\Default\Popup.cshtml" />
@@ -1073,7 +1046,6 @@
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ja-JP.cshtml" />
     <Content Include="Views\Default\HiddenFields.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_ko-KR.cshtml" />
-    <Content Include="Views\Notice\NoticeMessages.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_th-TH.cshtml" />
     <Content Include="Views\Dashboard\BalanceInfo.cshtml" />
     <Content Include="Views\SecurityCode\LearnMore\SecurityCode_vi-VN.cshtml" />
@@ -1083,9 +1055,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Dashboard\HiddenFields.cshtml" />
-    <Content Include="Views\Message\HiddenFields.cshtml" />
-    <Content Include="Views\Message\Index.cshtml" />
-    <Content Include="Views\Message\Messages.cshtml" />
     <Content Include="typings\globals\jasmine\typings.json" />
     <Content Include="typings\globals\jquery.blockui\typings.json" />
     <Content Include="typings\globals\jquery\typings.json" />
@@ -1125,11 +1094,9 @@
     <Content Include="Web.Configuration\AuthorizationSection.config">
       <SubType>Designer</SubType>
     </Content>
-    <TypeScriptCompile Include="Assets\scripts\message\index.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\statistics-tests.ts" />
-    <TypeScriptCompile Include="Assets\scripts\tests\app\message\message-tests.ts" />
     <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\hammerjs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
@@ -1153,8 +1120,6 @@
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\MessageController.cs" />
-    <Compile Include="Controllers\NoticeController.cs" />
     <Compile Include="Controllers\MemberRequestsController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
@@ -1162,9 +1127,7 @@
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Handlers\MessageHandler.cs" />
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
-    <Compile Include="Handlers\NoticeHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
     <Compile Include="Handlers\MemberRequestsHandler.cs" />
@@ -1176,7 +1139,9 @@
     <Compile Include="Handlers\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\BrowserHelper.cs" />
-    <Compile Include="Helpers\BrowserHelperImpl.cs" />
+    <Compile Include="Helpers\BrowserHelperImpl.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Requests\AllLanguagesQuery.cs" />
     <Compile Include="Requests\BrowserQuery.cs" />
@@ -1184,8 +1149,6 @@
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfo\BalanceInfoQuery.cs" />
     <Compile Include="Requests\Dashboard\MemberRequests\MemberRequestQuery.cs" />
-    <Compile Include="Requests\Dashboard\Notice\MarkMessageAsReadQuery.cs" />
-    <Compile Include="Requests\Dashboard\Notice\NoticeQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\NewMembersQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\StatisticsQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\TopTurnoverMembersQuery.cs" />
@@ -1202,7 +1165,6 @@
     <Compile Include="Requests\Otp\VerifyOtpCommand.cs" />
     <Compile Include="Requests\Otp\VerifyOtpDifferentDeviceQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
-    <Compile Include="Requests\Message\MessageQuery.cs" />
     <Compile Include="Requests\Password\ChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ForceChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetMainAccountPasswordCommand.cs" />
@@ -1221,12 +1183,9 @@
     <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\Notice\NoticeViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\BalanceInfo\BalanceInfoViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\Notice\NoticeMessageWrapper.cs" />
-    <Compile Include="ViewModels\Dashboard\Notice\NoticeMessagesViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\NewMembersViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\TopTurnoverMembersViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\TopWinningMembersViewModel.cs" />
@@ -1238,13 +1197,10 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\Message\MessageLevel.cs" />
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\OtpViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
-    <Compile Include="ViewModels\Message\MessagesViewModel.cs" />
     <Compile Include="ViewModels\Security\ResetOtpViewModel.cs" />
-    <Compile Include="ViewModels\Message\MessageWrapper.cs" />
     <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\VerifyOtpDifferenceDeviceViewModel.cs" />

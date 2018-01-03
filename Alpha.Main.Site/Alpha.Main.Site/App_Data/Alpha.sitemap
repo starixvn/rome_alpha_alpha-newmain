@@ -126,9 +126,9 @@
       <siteMapNode resourceKey="login" appPath="ViewLogsAppPath" url="Login"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="announcements">
-      <siteMapNode resourceKey="normal" url="Message/Index?messagetype=1" byPassAuthorization="true"></siteMapNode>
-      <siteMapNode resourceKey="special"  url="Message/Index?messagetype=2" byPassAuthorization="true"></siteMapNode>
-      <siteMapNode resourceKey="personalMessage" url="Message/Index?messagetype=0" byPassAuthorization="true"></siteMapNode>
+      <siteMapNode resourceKey="normal" appPath="MessageAppPath" url="Message/Index?messagetype=1" byPassAuthorization="true"></siteMapNode>
+      <siteMapNode resourceKey="special"  appPath="MessageAppPath" url="Message/Index?messagetype=2" byPassAuthorization="true"></siteMapNode>
+      <siteMapNode resourceKey="personalMessage" appPath="MessageAppPath"  url="Message/Index?messagetype=0" byPassAuthorization="true"></siteMapNode>
     </siteMapNode>
   </siteMapNode>
 </siteMap>

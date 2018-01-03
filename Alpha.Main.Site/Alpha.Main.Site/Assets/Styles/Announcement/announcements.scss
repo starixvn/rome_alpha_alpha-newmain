@@ -3,7 +3,7 @@
 
 .announcement-section {
     .hidden {
-        display: none;        
+        display: none;
     }
 }
 
@@ -61,87 +61,39 @@
             max-height: 500px;
             overflow: auto;
 
-            a {
-                color: #045ace;
-            }
-        }
-    }
-}
-
-.announcement-modal#popup-container {
-    height: 530px;
-    width: 640px;
-
-    .modal-dialog.ex-modal {
-        height: 100%;
-        width: 100%;
-    }
-
-    .modal-content {
-        .modal-body {
-            height: 100%;
-            max-height: 479px;
-            padding: 0;
-
             iframe {
                 width: 100%;
                 height: 100%;
-                position: absolute;
             }
         }
     }
 }
 
-.list-action {
-    display: none;
-}
-
-@media only screen and (max-device-width : $screen-device-lower768) {          
+@media only screen and (max-device-width : $screen-device-lower768) {
     .announcement-modal {
-        &.visible-mobile {            
+        &.visible-mobile {
             left: 0;
             right: 0;
-            width: 100%;            
+            width: 100%;
 
             &.in {
                 bottom: 0;
                 top: 0;
             }
         }
+
         .modal-dialog.ex-modal {
             height: 100%;
         }
 
         .modal-content .modal-body {
-            padding: 16px 20px 0;
+            padding: 15px 20px 0;
             position: absolute;
             top: 50px;
-            bottom: 40px;
+            bottom: 0;
             width: 100%;
             max-height: initial;
-        }
-    }  
-
-    .list-action {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        z-index: 1060;
-        width: 100%;
-        height: 40px;      
-        text-align: center;
-        display: block;
-
-        .prevButton, .nextButton {
-            height: 40px;
-            width: 40px;
-            display: inline-block;            
-
-            &:before {
-                font-size: 20px;
-                line-height: 40px;
-                text-align: center;
-            }
+            overflow: hidden;
         }
     }
 }

@@ -11,7 +11,7 @@
 
     private baseInit = this.init;
     onSuccessGetMessages = (rawResults: string) => {
-        const results = alpha.core.convertReponseToJson(rawResults);
+        const results = rawResults;
 
         this.showPublicMessage(results);
         this.showPrivateMessage(results);
@@ -20,8 +20,9 @@
     }
 
     showMoveBetsMessage = (results: any) => {
-        const movebetsMessage: string = results.movebets_message || "",
-            movebetsEndTime: Date = results.movebets_endtime ? new Date(results.movebets_endtime) : null;
+        const movebet = results.MoveBetsInformation;
+        const movebetsMessage: string = movebet.Content || "",
+            movebetsEndTime: Date = movebet.MoveBetsEndTime ? new Date(movebet.MoveBetsEndTime) : null;
 
         if (movebetsEndTime !== null && movebetsEndTime > this.storedMoveBetsEndTime) {
             this.showMoveBetsMessageToaster(movebetsMessage);
@@ -30,7 +31,7 @@
     }
 
     showPrivateMessageNotification = (results: any) => {
-        const unreadPriMsgCount = results.unread_private_messages ? results.unread_private_messages : 0;
+        const unreadPriMsgCount = results.NumberOfUnreadPrivateMessage ? results.NumberOfUnreadPrivateMessage : 0;
         const notification = $('.icon-message').find('.circle-red');
 
         (unreadPriMsgCount > 0) ? notification.show() : notification.hide();
