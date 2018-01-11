@@ -31,7 +31,7 @@
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             DependencyConfig.Init();
-            StaticResources.Init();
+            StaticResources.Init(StaticResources.GetBuildVersion());
 
             DbSettingProviderManager
                 .StartNewSession()
