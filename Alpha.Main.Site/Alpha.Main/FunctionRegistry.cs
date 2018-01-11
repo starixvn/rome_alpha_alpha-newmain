@@ -8,6 +8,7 @@ namespace Alpha.Main
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Constants;
     using Fanex.Logging.Extensions.Web;
     using Fanex.Products;
     using Helpers;
@@ -80,7 +81,9 @@ namespace Alpha.Main
                     return ProductManager.IsShowSettings(ProductIdConstants.NG2);
                 }),
             ["BullfightingMenuItem"] = () => new MenuStatus(
-                () => HasPermissionOnProduct(ProductIdConstants.BullFighting))
+                () => HasPermissionOnProduct(ProductIdConstants.BullFighting)),
+            ["ProgressiveContributionMenuItem"] = () => new MenuStatus(
+                () => !Current.Currency.Equals(Currency.HKK))
         };
 
         private static Func<bool> showAccountInfo = () =>

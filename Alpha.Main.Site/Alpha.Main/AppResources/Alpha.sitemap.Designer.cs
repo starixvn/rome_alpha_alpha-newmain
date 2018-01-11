@@ -646,6 +646,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Progressive Games Contribution.
+        /// </summary>
+        public static string ProgressiveGamesContribution {
+            get {
+                return ResourceManager.GetString("ProgressiveGamesContribution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Real Time Casino Win Loss.
         /// </summary>
         public static string realTimeCSWinloss {
