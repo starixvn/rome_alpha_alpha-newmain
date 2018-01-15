@@ -334,7 +334,7 @@
     <value>Cược Chấp 3 Chiều</value>
   </data>
   <data name="BetsAndForecast" xml:space="preserve">
-    <value>Tổng Cược &amp; Dự Đoán &lt;span class="beta-version"&gt;Beta&lt;/span&gt;</value>
+    <value>Tổng Cược &amp; Dự Đoán</value>
   </data>
   <data name="soccer" xml:space="preserve">
     <value>Bóng Đá</value>
@@ -365,5 +365,8 @@
   </data>
   <data name="LastBets" xml:space="preserve">
     <value>Cược mới nhất</value>
+  </data>
+  <data name="BetLists" xml:space="preserve">
+    <value>Danh sách cược</value>
   </data>
 </root>

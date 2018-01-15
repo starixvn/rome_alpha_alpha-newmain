@@ -37,9 +37,6 @@
       <siteMapNode menuItemType="RacingMenuItem" resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/agent" roles="Master"></siteMapNode>
       <siteMapNode menuItemType="RacingMenuItem" resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/master" roles="Super"></siteMapNode>
 
-      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="LastBets/Index" roles="Agent"></siteMapNode>
-
-      <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="CancelledBet/Index"></siteMapNode>
       <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="ReportsAppPath" url="consolidation/consolidationbyusername"></siteMapNode>
       <siteMapNode resourceKey="statement" appPath="ReportsAppPath" url="Statement/SMAStatement"></siteMapNode>
 
@@ -76,45 +73,36 @@
       <siteMapNode resourceKey="BetChoiceLimit" menuItemType="BetChoiceLimitMenuItem" appPath="OldMainAppPath" url="MemberInformation/BetChoiceLimit/Index"></siteMapNode>
     </siteMapNode>
     <!--/MemberInfo-->
-    <!--New Totalbets Forecast-->
-    <siteMapNode resourceKey="BetsAndForecast" menuItemType="TotalBetsForecast">
-      <siteMapNode resourceKey="soccer" appPath="TotalbetsForecastSiteVirtualPath" url="~/Forecast"></siteMapNode>
-    </siteMapNode>
-    <!--/Forecast-->
-    <!--Totalbets-->
-    <siteMapNode resourceKey="totalbets" menuItemType="TotalBetsMenuItem" functionType="[D]">
-      <siteMapNode resourceKey="HOUL" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HDPOU.aspx"></siteMapNode>
-      <siteMapNode resourceKey="moneyline" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/MoneyLine.aspx"></siteMapNode>
-      <siteMapNode resourceKey="OE1x2DND" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/OddEven1x2.aspx"></siteMapNode>
+    <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">
+      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="LastBets/Index" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="CancelledBet/Index"></siteMapNode>
+
       <siteMapNode resourceKey="correctscore" appPath="BetListsAppPath" url="correctscore/index"></siteMapNode>
-      <siteMapNode resourceKey="fthttotalgoal" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/TotalGoal.aspx"></siteMapNode>
       <siteMapNode resourceKey="parlay" appPath="BetListsAppPath" url="CombinationMixParlay/Index"></siteMapNode>
-      <siteMapNode resourceKey="outRight" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/OutRight.aspx"></siteMapNode>
-      <siteMapNode resourceKey="htft" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HTFT.aspx"></siteMapNode>
-      <siteMapNode resourceKey="fthtfglg" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/FGLG.aspx"></siteMapNode>
       <siteMapNode resourceKey="BetType13" appPath="BetListsAppPath" url="betlistbybettype/Index?bettype=13"></siteMapNode>
       <siteMapNode resourceKey="BetType24" appPath="BetListsAppPath" url="betlistbybettype/Index?bettype=24"></siteMapNode>
-      <siteMapNode resourceKey="homeDrawAwayNoBet" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
       <siteMapNode resourceKey="BetType26" appPath="BetListsAppPath" url="betlistbybettype/Index?bettype=26"></siteMapNode>
       <siteMapNode resourceKey="BetType27" appPath="BetListsAppPath" url="betlistbybettype/Index?bettype=27"></siteMapNode>
       <siteMapNode resourceKey="BetType28" appPath="BetListsAppPath" url="betlistbybettype/Index?bettype=28"></siteMapNode>
-      <!--NG-->
-      <siteMapNode menuItemType="NumberGameMenuItem" resourceKey="numbergame" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/NumberGame.aspx"></siteMapNode>
-      <!--/NG-->
-      <!--HR-->
-      <siteMapNode menuItemType="RacingMenuItem" resourceKey="hr" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/Racing.aspx"></siteMapNode>
-      <!--/HR-->
-      <siteMapNode menuItemType="BullfightingMenuItem" resourceKey="Bullfighting" appPath="TotalbetsForecastSiteVirtualPath" url="~/Bullfighting"></siteMapNode>
     </siteMapNode>
-    <!--/Totalbets-->
-    <!--Forecast-->
-    <siteMapNode resourceKey="forecast" menuItemType="TotalBetsMenuItem">
-      <siteMapNode resourceKey="HOUL" appPath="ExTotalBetsForecastAppPath" url="_Forecast/FCHDPOU.aspx"></siteMapNode>
+
+    <siteMapNode resourceKey="BetsAndForecast" menuItemType="TotalBetsMenuItem" functionType="[D]">
+      <siteMapNode resourceKey="soccer" appPath="TotalbetsForecastSiteVirtualPath" url="~/Forecast" isBeta="true" menuItemType="TotalBetsForecast"></siteMapNode>
+      <siteMapNode resourceKey="HOUL" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HDPOU.aspx"></siteMapNode>
+      <siteMapNode resourceKey="moneyline" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/MoneyLine.aspx"></siteMapNode>
+      <siteMapNode resourceKey="OE1x2DND" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/OddEven1x2.aspx"></siteMapNode>
+      <siteMapNode resourceKey="fthttotalgoal" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/TotalGoal.aspx"></siteMapNode>
+      <siteMapNode resourceKey="outRight" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/OutRight.aspx"></siteMapNode>
+      <siteMapNode resourceKey="htft" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HTFT.aspx"></siteMapNode>
+      <siteMapNode resourceKey="fthtfglg" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/FGLG.aspx"></siteMapNode>
+      <siteMapNode resourceKey="homeDrawAwayNoBet" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
+      <siteMapNode menuItemType="NumberGameMenuItem" resourceKey="numbergame" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/NumberGame.aspx"></siteMapNode>
+      <siteMapNode menuItemType="RacingMenuItem" resourceKey="hr" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/Racing.aspx"></siteMapNode>
+      <siteMapNode menuItemType="BullfightingMenuItem" resourceKey="Bullfighting" appPath="TotalbetsForecastSiteVirtualPath" url="~/Bullfighting"></siteMapNode>
       <siteMapNode resourceKey="lbl1x2" appPath="ExTotalBetsForecastAppPath" url="_Forecast/FC1X2.aspx"></siteMapNode>
       <siteMapNode resourceKey="scoreMap" appPath="ExTotalBetsForecastAppPath" url="ForecastScoreMap/Index"></siteMapNode>
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="ng2" appPath="NG2SiteVirtualPath" url="~/Forecast/RealBet"></siteMapNode>
     </siteMapNode>
-    <!--/Forecast-->
 
     <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Agent/MemberList.aspx" functionType="[C]" roles="Agent"></siteMapNode>
     <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>

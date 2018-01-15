@@ -334,7 +334,7 @@
     <value>三项让分投注</value>
   </data>
   <data name="BetsAndForecast" xml:space="preserve">
-    <value>投注 &amp; 预测 &lt;span class="beta-version"&gt;Beta版&lt;/span&gt;</value>
+    <value>投注 &amp; 预测</value>
   </data>
   <data name="soccer" xml:space="preserve">
     <value>足球</value>
@@ -368,5 +368,11 @@
   </data>
   <data name="LastBets" xml:space="preserve">
     <value>最后投注</value>
+  </data>
+  <data name="Beta" xml:space="preserve">
+    <value>Beta版</value>
+  </data>
+  <data name="BetLists" xml:space="preserve">
+    <value>投注历史</value>
   </data>
 </root>

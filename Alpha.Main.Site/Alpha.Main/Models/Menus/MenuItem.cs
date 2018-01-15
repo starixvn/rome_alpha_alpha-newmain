@@ -40,6 +40,8 @@
 
         public bool ByPassAuthorization { get; set; }
 
+        public bool IsBeta { get; set; }
+
         public string DisplayName
         {
             get

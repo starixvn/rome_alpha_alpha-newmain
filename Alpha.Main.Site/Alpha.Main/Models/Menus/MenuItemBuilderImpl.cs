@@ -33,12 +33,11 @@
             menuItem.ResourceKey = node.ResourceKey;
             menuItem.Link = node.Url;
             menuItem.AppPath = node["AppPath"];
+            menuItem.IsBeta = node["isBeta"] != null && bool.Parse(node["isBeta"]);
             menuItem.ByPassAuthorization = node["byPassAuthorization"] == null ? false : bool.Parse(node["byPassAuthorization"]);
             menuItem.SubMenus = new List<IMenuItem>();
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", 
-            MessageId = "0", Justification = "Reviewed!")]
         public IMenuItem BuildMenuItem(SiteMapNode node)
         {
             Check.Argument.IsNotNull(node, nameof(node));

@@ -106,6 +106,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Beta.
+        /// </summary>
+        public static string Beta {
+            get {
+                return ResourceManager.GetString("Beta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bet Choice Limit.
         /// </summary>
         public static string BetChoiceLimit {
@@ -115,7 +124,16 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bets &amp; Forecast &lt;span class=&quot;beta-version&quot;&gt;Beta&lt;/span&gt;.
+        ///   Looks up a localized string similar to Bet Lists.
+        /// </summary>
+        public static string BetLists {
+            get {
+                return ResourceManager.GetString("BetLists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bets &amp; Forecast.
         /// </summary>
         public static string BetsAndForecast {
             get {
