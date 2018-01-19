@@ -253,17 +253,11 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>有効/閉鎖の合計エージェント</value>
   </data>
-  <data name="totalBGTransferOutstanding" xml:space="preserve">
-    <value>Total Bingo Transfer|Outstanding</value>
-  </data>
   <data name="totalCSTransferOutstanding" xml:space="preserve">
     <value>Total Casino Transfer|Outstanding</value>
   </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>Total Master active/closed/suspended</value>
-  </data>
-  <data name="totalP2PTransferOutstanding" xml:space="preserve">
-    <value>Total Poker Transfer|Outstanding</value>
   </data>
   <data name="statistics" xml:space="preserve">
     <value>Statistics</value>

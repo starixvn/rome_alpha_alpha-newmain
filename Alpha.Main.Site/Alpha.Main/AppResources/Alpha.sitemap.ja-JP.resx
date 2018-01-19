@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>両チーム／1 チーム／得点なし</value>
   </data>
-  <data name="bingoPositionTaking" xml:space="preserve">
-    <value>Bingo Position Taking (%)</value>
-  </data>
   <data name="casinoPositionTaking" xml:space="preserve">
     <value>Casino Position Taking (%)</value>
   </data>
@@ -230,9 +227,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>保有ポジション (%)</value>
-  </data>
-  <data name="realTimeBingoWinloss" xml:space="preserve">
-    <value>Real Time Bingo Win Loss</value>
   </data>
   <data name="realTimeCSWinloss" xml:space="preserve">
     <value>Real Time Casino Win Loss</value>
@@ -349,9 +343,6 @@
   <data name="schedule" xml:space="preserve">
     <value>Schedule</value>
   </data>
-  <data name="RacingCommission" xml:space="preserve">
-		<value>Racing Commission</value>
-	</data>
   <data name="BetLists" xml:space="preserve">
     <value>ベットリスト</value>
   </data>

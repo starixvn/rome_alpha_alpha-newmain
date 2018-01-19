@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>양 팀 득점/한 팀 득점/득점 없음</value>
   </data>
-  <data name="bingoPositionTaking" xml:space="preserve">
-    <value>빙고게임 포지션(%)</value>
-  </data>
   <data name="casinoPositionTaking" xml:space="preserve">
     <value>카지노 포지션(%)</value>
   </data>
@@ -230,9 +227,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>포지션 테이킹(%)</value>
-  </data>
-  <data name="realTimeBingoWinloss" xml:space="preserve">
-    <value>실시간 빙고 승리/패배</value>
   </data>
   <data name="realTimeCSWinloss" xml:space="preserve">
     <value>실시간 카지노 승패</value>
@@ -351,9 +345,6 @@
   <data name="schedule" xml:space="preserve">
     <value>Schedule</value>
   </data>
-  <data name="RacingCommission" xml:space="preserve">
-		<value>경마 수수료</value>
-	</data>
   <data name="BetLists" xml:space="preserve">
     <value>배팅 리스트</value>
   </data>

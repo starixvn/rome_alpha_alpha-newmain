@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>Cả hai/Một/Không Đội Nào Ghi Bàn</value>
   </data>
-  <data name="bingoPositionTaking" xml:space="preserve">
-    <value>(%) PT của Bingo</value>
-  </data>
   <data name="casinoPositionTaking" xml:space="preserve">
     <value>PT (%) của Casino</value>
   </data>
@@ -230,9 +227,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>Position Taking (%)</value>
-  </data>
-  <data name="realTimeBingoWinloss" xml:space="preserve">
-    <value>Thắng thua hiện tại của Bingo</value>
   </data>
   <data name="realTimeCSWinloss" xml:space="preserve">
     <value>Thắng thua hiện tại của Casino</value>
@@ -351,9 +345,6 @@
   <data name="schedule" xml:space="preserve">
     <value>Lịch Mở Thưởng</value>
   </data>
-  <data name="RacingCommission" xml:space="preserve">
-		<value>Hoa hồng cho Racing</value>
-	</data>
   <data name="PlayForFun" xml:space="preserve">
     <value>Chơi Thử</value>
   </data>

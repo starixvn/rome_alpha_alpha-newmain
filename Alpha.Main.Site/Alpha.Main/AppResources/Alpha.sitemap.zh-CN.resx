@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>双方/一方/两者皆不得分</value>
   </data>
-  <data name="bingoPositionTaking" xml:space="preserve">
-    <value>宾果占成 %</value>
-  </data>
   <data name="casinoPositionTaking" xml:space="preserve">
     <value>娱乐城占成数(%)</value>
   </data>
@@ -230,9 +227,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>占成数%</value>
-  </data>
-  <data name="realTimeBingoWinloss" xml:space="preserve">
-    <value>即时宾果赢输</value>
   </data>
   <data name="realTimeCSWinloss" xml:space="preserve">
     <value>即时娱乐场赢输</value>
@@ -351,9 +345,6 @@
   <data name="schedule" xml:space="preserve">
     <value>时间表</value>
   </data>
-  <data name="RacingCommission" xml:space="preserve">
-		<value>赛马佣金</value>
-	</data>
   <data name="PlayForFun" xml:space="preserve">
     <value>免费试玩</value>
   </data>

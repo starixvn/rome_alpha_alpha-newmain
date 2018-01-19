@@ -33,10 +33,6 @@
       <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/master" roles="Super"></siteMapNode>
 
-      <siteMapNode menuItemType="RacingMenuItem" resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/member" roles="Agent"></siteMapNode>
-      <siteMapNode menuItemType="RacingMenuItem" resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/agent" roles="Master"></siteMapNode>
-      <siteMapNode menuItemType="RacingMenuItem" resourceKey="RacingCommission" appPath="ReportsAppPath" url="racingcommission/master" roles="Super"></siteMapNode>
-
       <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="ReportsAppPath" url="consolidation/consolidationbyusername"></siteMapNode>
       <siteMapNode resourceKey="statement" appPath="ReportsAppPath" url="Statement/SMAStatement"></siteMapNode>
 
@@ -64,9 +60,7 @@
       <!--Casino-PositionTaking-->
       <siteMapNode menuItemType="CasinoMenuItem" resourceKey="casinoPositionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
       <!--/Casino-PositionTaking-->
-      <!--Bingo-PositionTaking-->
-      <siteMapNode resourceKey="bingoPositionTaking" menuItemType="BingoPositionTakingMenuItem" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Bingo/BingoPositionTakingList.aspx"></siteMapNode>
-      <!--/Bingo-PositionTaking-->
+      
       <siteMapNode resourceKey="memberCommission" appPath="OldMainAppPath" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
       <siteMapNode resourceKey="MemberWinLimit" appPath="OldMainAppPath" url="MemberInformation/WinLimit/Index"></siteMapNode>
       <siteMapNode resourceKey="playForFunMemberRequest" appPath="MemberInfoAppPath" url="memberrequests/index" roles="Agent"></siteMapNode>
@@ -96,8 +90,7 @@
       <siteMapNode resourceKey="htft" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HTFT.aspx"></siteMapNode>
       <siteMapNode resourceKey="fthtfglg" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/FGLG.aspx"></siteMapNode>
       <siteMapNode resourceKey="homeDrawAwayNoBet" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
-      <siteMapNode menuItemType="NumberGameMenuItem" resourceKey="numbergame" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/NumberGame.aspx"></siteMapNode>
-      <siteMapNode menuItemType="RacingMenuItem" resourceKey="hr" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/Racing.aspx"></siteMapNode>
+      <siteMapNode menuItemType="NumberGameMenuItem" resourceKey="numbergame" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/NumberGame.aspx"></siteMapNode>      
       <siteMapNode menuItemType="BullfightingMenuItem" resourceKey="Bullfighting" appPath="TotalbetsForecastSiteVirtualPath" url="~/Bullfighting"></siteMapNode>
       <siteMapNode resourceKey="lbl1x2" appPath="ExTotalBetsForecastAppPath" url="_Forecast/FC1X2.aspx"></siteMapNode>
       <siteMapNode resourceKey="scoreMap" appPath="ExTotalBetsForecastAppPath" url="ForecastScoreMap/Index"></siteMapNode>
