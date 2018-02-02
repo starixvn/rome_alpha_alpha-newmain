@@ -8,12 +8,12 @@
     using NSubstitute;
     using NUnit.Framework;
     using SecurityCode.Web;
-    using Services;
     using Site.Handlers;
     using Site.Helpers;
     using Site.Requests;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
+    using Web.Helpers;
 
     [TestFixture]
     public class DefaultHandlerTests
@@ -113,7 +113,6 @@
 
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
-
 
             var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper);
 

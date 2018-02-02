@@ -18,6 +18,7 @@
     using Site.ViewModels.Security;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using Web.Helpers;
 
     [TestFixture]
     public class SecurityCodeHandlerTests
@@ -78,7 +79,7 @@
             // Arrange
             var message = new SecurityCodeQuery(userSession);
 
-            // Act 
+            // Act
             securityCodeHandler.Handle(message);
 
             // Assert
@@ -91,7 +92,7 @@
             // Arrange
             var message = new SecurityCodeQuery(userSession);
 
-            // Act 
+            // Act
             securityCodeHandler.Handle(message);
 
             // Assert
@@ -118,7 +119,7 @@
                 Title = "Reset Security Code"
             };
 
-            // Act 
+            // Act
             var actualViewModel = securityCodeHandler.Handle(message);
 
             // Assert
@@ -143,14 +144,14 @@
                 Title = "Reset Security Code - UserName"
             };
 
-            // Act 
+            // Act
             var actualViewModel = securityCodeHandler.Handle(message);
 
             // Assert
             Assert.True(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
         }
 
-        #endregion
+        #endregion Handle Security Code Query
 
         #region Handle Force Change Security Code Query
 
@@ -171,7 +172,7 @@
             var message = new ForceChangeSecurityCodeQuery(userSession);
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
 
-            // Act 
+            // Act
             securityCodeHandler.Handle(message);
 
             // Assert
@@ -185,7 +186,7 @@
             var message = new ForceChangeSecurityCodeQuery(userSession);
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
 
-            // Act 
+            // Act
             securityCodeHandler.Handle(message);
 
             // Assert
@@ -199,7 +200,7 @@
             var message = new ForceChangeSecurityCodeQuery(userSession);
             customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
 
-            // Act 
+            // Act
             securityCodeHandler.Handle(message);
 
             // Assert
@@ -238,7 +239,7 @@
                 MembersToIgnore = { "OldMainRootPath", "MainRootPath", "EmbedImage" }
             });
 
-            // Act 
+            // Act
             var actualViewModel = securityCodeHandler.Handle(message);
 
             // Assert
@@ -276,14 +277,14 @@
                 MembersToIgnore = { "OldMainRootPath", "MainRootPath" }
             });
 
-            // Act 
+            // Act
             var actualViewModel = securityCodeHandler.Handle(message);
 
             // Assert
             Assert.True(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
         }
 
-        #endregion
+        #endregion Handle Force Change Security Code Query
 
         #region Handle Change Security Code First Login Command
 
@@ -398,7 +399,7 @@
                 && result.Message == Security.alertSecCodeChangedOK);
         }
 
-        #endregion
+        #endregion Handle Change Security Code First Login Command
 
         #region Handle Change Security Code By Forcing Command
 
@@ -483,7 +484,7 @@
                         && param.MustVerifyCurrentSecurityCode == true));
         }
 
-        #endregion
+        #endregion Handle Change Security Code By Forcing Command
 
         #region Handle Change User Own Security Code Command
 
@@ -564,7 +565,7 @@
                         && param.MustVerifyCurrentSecurityCode == true));
         }
 
-        #endregion
+        #endregion Handle Change User Own Security Code Command
 
         #region Handle Reset Security Code Command
 
@@ -648,7 +649,7 @@
                         && param.IP == message.IP));
         }
 
-        #endregion
+        #endregion Handle Reset Security Code Command
 
         #region Handle Verify Security Code Command
 
@@ -684,6 +685,6 @@
                         && param.SubAccId == message.SubAccId));
         }
 
-        #endregion
+        #endregion Handle Verify Security Code Command
     }
 }

@@ -8,10 +8,10 @@ namespace Alpha.Main
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
-    using Constants;
     using Fanex.Logging.Extensions.Web;
     using Fanex.Products;
     using Helpers;
+    using Models;
     using Models.Menus;
     using Sunplus.Agent.Model.Definitions;
     using Sunplus.Agent.Model.Entities;
@@ -82,8 +82,8 @@ namespace Alpha.Main
                 }),
             ["BullfightingMenuItem"] = () => new MenuStatus(
                 () => HasPermissionOnProduct(ProductIdConstants.BullFighting)),
-            ["ProgressiveContributionMenuItem"] = () => new MenuStatus(
-                () => !Current.Currency.Equals(Currency.HKK))
+            ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
+            ["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot)
         };
 
         private static Func<bool> showAccountInfo = () =>

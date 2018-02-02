@@ -6,9 +6,9 @@
     using MediatR;
     using Models.Requests;
     using Requests;
-    using Services;
     using Sunplus.Agent.Utilities;
     using ViewModels;
+    using Web.Helpers;
 
     public class DefaultHandler :
         IRequestHandler<IndexQuery, IndexViewModel>,
@@ -31,7 +31,6 @@
             BrowserHelper browserHelper)
             : this(sessionManager, browserHelper, null, null)
         {
-
         }
 
         internal DefaultHandler(
