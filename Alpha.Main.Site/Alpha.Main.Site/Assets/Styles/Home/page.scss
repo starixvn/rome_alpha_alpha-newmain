@@ -98,13 +98,17 @@ html * {
             width: 16px;
             position: relative;
             left: 1px;
+            top: 1px;
             color: #333;
 
             &.icon-totalbets {
                 font-size: 14px;
             }
 
-            &.icon-announcements {
+            &.icon-betlists {
+                font-size: 17px;
+                top: 3px;
+                margin-right: 13px;
             }
         }
 
@@ -352,6 +356,11 @@ html * {
 
                 &.icon-totalbets {
                     font-size: 20px;
+                }
+
+                &.icon-betlists {
+                    font-size: 21px;
+                    margin-right: 17px;
                 }
             }
 

@@ -334,7 +334,7 @@
     <value>3-Way Handicap</value>
   </data>
   <data name="BetsAndForecast" xml:space="preserve">
-    <value>Bets &amp; Forecast &lt;span class="beta-version"&gt;Beta&lt;/span&gt;</value>
+    <value>Bets &amp; Forecast</value>
   </data>
   <data name="soccer" xml:space="preserve">
     <value>Soccer</value>
@@ -374,5 +374,11 @@
   </data>
   <data name="Bullfighting" xml:space="preserve">
     <value>Bullfighting</value>
+  </data>
+  <data name="Beta" xml:space="preserve">
+    <value>Beta</value>
+  </data>
+  <data name="BetLists" xml:space="preserve">
+    <value>Bet Lists</value>
   </data>
 </root>

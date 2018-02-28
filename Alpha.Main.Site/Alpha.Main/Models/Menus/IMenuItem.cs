@@ -16,6 +16,8 @@
 
         bool ByPassAuthorization { get; set; }
 
+        bool IsBeta { get; set; }
+
         MenuStatus Status { get; }
 
         bool ShowSubMenus { get; set; }
