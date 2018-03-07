@@ -82,8 +82,8 @@ namespace Alpha.Main
                 }),
             ["BullfightingMenuItem"] = () => new MenuStatus(
                 () => HasPermissionOnProduct(ProductIdConstants.BullFighting)),
-            ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot)
-            //["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot)
+            ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
+            ["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot)
         };
 
         private static Func<bool> showAccountInfo = () =>

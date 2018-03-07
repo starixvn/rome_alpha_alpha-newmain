@@ -227,7 +227,6 @@
       <DependentUpon>Security.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
-    <Compile Include="Constants\Currency.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
