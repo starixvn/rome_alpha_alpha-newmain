@@ -655,6 +655,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Progressive Jackpot Games.
+        /// </summary>
+        public static string ProgressiveJackpotGames {
+            get {
+                return ResourceManager.GetString("ProgressiveJackpotGames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Real Time Casino Win Loss.
         /// </summary>
         public static string realTimeCSWinloss {
