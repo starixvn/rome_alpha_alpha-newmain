@@ -377,7 +377,7 @@
 
         if (this.scrollerLeft + this.scrollerWidth < -5) {
             this.scrollerLeft = this.maskWidth + 5;
-            this.scrollerWidth = this.topNews.offsetWidth;
+            this.scrollerWidth = this.domElements.scroller.width();
         }
 
         this.scroller.style.left = (this.scrollerLeft--) + 'px';
