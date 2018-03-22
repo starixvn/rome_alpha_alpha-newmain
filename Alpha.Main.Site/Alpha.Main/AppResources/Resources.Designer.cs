@@ -1136,15 +1136,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Bingo Transfer|Outstanding.
-        /// </summary>
-        public static string totalBGTransferOutstanding {
-            get {
-                return ResourceManager.GetString("totalBGTransferOutstanding", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Total Casino Transfer|Outstanding.
         /// </summary>
         public static string totalCSTransferOutstanding {
@@ -1186,15 +1177,6 @@ namespace Alpha.Main.AppResources {
         public static string totalOutstanding {
             get {
                 return ResourceManager.GetString("totalOutstanding", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total Poker Transfer|Outstanding.
-        /// </summary>
-        public static string totalP2PTransferOutstanding {
-            get {
-                return ResourceManager.GetString("totalP2PTransferOutstanding", resourceCulture);
             }
         }
         

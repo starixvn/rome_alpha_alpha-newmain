@@ -187,15 +187,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bingo Position Taking (%).
-        /// </summary>
-        public static string bingoPositionTaking {
-            get {
-                return ResourceManager.GetString("bingoPositionTaking", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Bullfighting.
         /// </summary>
         public static string Bullfighting {
@@ -651,24 +642,6 @@ namespace Alpha.Main.AppResources {
         public static string positionTaking {
             get {
                 return ResourceManager.GetString("positionTaking", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Racing Commission.
-        /// </summary>
-        public static string RacingCommission {
-            get {
-                return ResourceManager.GetString("RacingCommission", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Real Time Bingo Win Loss.
-        /// </summary>
-        public static string realTimeBingoWinloss {
-            get {
-                return ResourceManager.GetString("realTimeBingoWinloss", resourceCulture);
             }
         }
         

@@ -250,17 +250,11 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>สถานะของAgent ทั้งหมด/การแข่งขันถูกระงับ</value>
   </data>
-  <data name="totalBGTransferOutstanding" xml:space="preserve">
-    <value>Total Bingo Transfer|Outstanding</value>
-  </data>
   <data name="totalCSTransferOutstanding" xml:space="preserve">
     <value>คาซิโน ยอดรวม โอน/คงค้าง</value>
   </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>จำนวนรวมในบัญชีของตัวแทนหลัก ยังคงใช้อยู่ / ปิดแล้ว/ การแข่งขันถูกระงับ</value>
-  </data>
-  <data name="totalP2PTransferOutstanding" xml:space="preserve">
-    <value>ยอด โอน / คงค้าง ในPoker ทั้งหมด</value>
   </data>
   <data name="statistics" xml:space="preserve">
     <value>สถิติของคุณ</value>

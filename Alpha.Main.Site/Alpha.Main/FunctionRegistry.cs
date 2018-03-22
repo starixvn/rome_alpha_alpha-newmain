@@ -31,15 +31,11 @@ namespace Alpha.Main
             ["TransferMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.Transfer),
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
-            ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),
-            ["RacingMenuItem"] = () => new MenuStatus(IsShowRacing),
+            ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),            
             ["CasinoMenuItem"] = () => new MenuStatus(IsShowCasino),
-            ["BingoMenuItem"] = () => new MenuStatus(IsShowBingoReport),
-            ["BingoPositionTakingMenuItem"] = () => new MenuStatus(IsShowBingo),
             ["NumberGameMenuItem"] = () => new MenuStatus(IsShowNumberGame),
-            ["LiveCasinoMenuItem"] = () => new MenuStatus(IsShowLiveCasino),
             ["ConsolidatedReportMenuItem"] = () => new MenuStatus(Current.IsShowConsolidatedReport),
-            ["MemberWinLimitMenuItem"] = () => new MenuStatus(Current.IsLiveCasinoSync || !Current.IsHideGoldDeluxe),
+            ["MemberWinLimitMenuItem"] = () => new MenuStatus(!Current.IsHideGoldDeluxe),
             ["LastBetMonitorMenuItem"] = () => new MenuStatus(
                 null,
                 () =>

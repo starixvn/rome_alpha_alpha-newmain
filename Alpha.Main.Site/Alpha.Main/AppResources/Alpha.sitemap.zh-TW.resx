@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>雙方/一方/兩者皆不得分</value>
   </data>
-  <data name="bingoPositionTaking" xml:space="preserve">
-    <value>賓果占成 %</value>
-  </data>
   <data name="casinoPositionTaking" xml:space="preserve">
     <value>娛樂城佔成數(%)</value>
   </data>
@@ -230,9 +227,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>佔成數%</value>
-  </data>
-  <data name="realTimeBingoWinloss" xml:space="preserve">
-    <value>即時賓果贏輸</value>
   </data>
   <data name="realTimeCSWinloss" xml:space="preserve">
     <value>即時娛樂場贏輸</value>
@@ -351,9 +345,6 @@
   <data name="schedule" xml:space="preserve">
     <value>時間表</value>
   </data>
-  <data name="RacingCommission" xml:space="preserve">
-		<value>賽馬佣金</value>
-	</data>
   <data name="PlayForFun" xml:space="preserve">
     <value>免費試玩</value>
   </data>

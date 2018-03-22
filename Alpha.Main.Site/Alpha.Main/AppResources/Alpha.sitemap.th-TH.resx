@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>ทั้งสองทีม/หนึ่งทีม/ไม่ทั้งสองทีมที่ทำคะแนนได้</value>
   </data>
-  <data name="bingoPositionTaking" xml:space="preserve">
-    <value>แบ่งสู้บิงโก (%)</value>
-  </data>
   <data name="casinoPositionTaking" xml:space="preserve">
     <value>แบ่งสู้ในคาสิโน</value>
   </data>
@@ -230,9 +227,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>เปอร์เซ็นที่รับความเสี่ยง</value>
-  </data>
-  <data name="realTimeBingoWinloss" xml:space="preserve">
-    <value>บิงโกแพ้ชนะเวลาจริง</value>
   </data>
   <data name="realTimeCSWinloss" xml:space="preserve">
     <value>ยอดได้เสียเวลาจริงในคาสิโน</value>
@@ -351,9 +345,6 @@
   <data name="schedule" xml:space="preserve">
     <value>ตารางเวลา</value>
   </data>
-  <data name="RacingCommission" xml:space="preserve">
-		<value>คอมมิสชั่นการแข่งขันม้า</value>
-	</data>
   <data name="PlayForFun" xml:space="preserve">
     <value>ทดลองเล่นฟรี</value>
   </data>

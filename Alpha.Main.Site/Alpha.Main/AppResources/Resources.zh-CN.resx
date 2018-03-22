@@ -250,17 +250,11 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>代理总数"活跃/关闭/暫停"</value>
   </data>
-  <data name="totalBGTransferOutstanding" xml:space="preserve">
-    <value>Total Bingo Transfer|Outstanding</value>
-  </data>
   <data name="totalCSTransferOutstanding" xml:space="preserve">
     <value>到娱乐城的总转账额|未完成交易额</value>
   </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>总代理总数"活跃/关闭/暫停"</value>
-  </data>
-  <data name="totalP2PTransferOutstanding" xml:space="preserve">
-    <value>到扑克的总转账额|未完成交易额</value>
   </data>
   <data name="statistics" xml:space="preserve">
     <value>您的统计</value>
