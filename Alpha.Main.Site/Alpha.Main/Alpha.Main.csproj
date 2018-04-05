@@ -24,6 +24,8 @@
     <WarningLevel>4</WarningLevel>
     <WarningsNotAsErrors>612,618</WarningsNotAsErrors>
     <CodeAnalysisRuleSet>Alpha.Main.Debug.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <NoWarn>618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
