@@ -1,19 +1,17 @@
 ﻿@model MenuBarViewModel
 
-<div>
-    <ul class="main-tab">
-        <li id="main-menu-header" class="mainmenu active @(Model.IsAccountInfoVisible ? "withripple" : "disabledViewAccInfo")" data-target-container="mainmenu-container">
-            <a>@Resources.mainMenu</a>
-        </li>
-        @if (Model.IsAccountInfoVisible)
+<ul class="main-tab">
+    <li id="main-menu-header" class="mainmenu active @(Model.IsAccountInfoVisible ? "withripple" : "disabledViewAccInfo")" data-target-container="mainmenu-container">
+        <a>@Resources.mainMenu</a>
+    </li>
+    @if (Model.IsAccountInfoVisible)
             {
-            <li class="accountinfo withripple" id="account-info-header"
-                data-target-container="accountinfo-container">
-                <a>@Resources.accountInfo</a>
-            </li>
-        }
-    </ul>
-</div>
+        <li class="accountinfo withripple" id="account-info-header"
+            data-target-container="accountinfo-container">
+            <a>@Resources.accountInfo</a>
+        </li>
+    }
+</ul>
 <section id="main-menu-tab" class="mainmenu-container mCustomScrollbar @(Model.IsAccountInfoVisible ? string.Empty : "disabledViewAccInfo")" data-mcs-theme="minimal-dark" role="tablist" aria-multiselectable="true">
     <ul class="list-menu" id="main-menu-items">
         @foreach (var menuItem in Model.MenuItems)
