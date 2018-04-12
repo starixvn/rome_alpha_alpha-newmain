@@ -173,12 +173,43 @@ html * {
 }
 
 .sidebar {
-    &.docked, &.hovered, &.focusout {
+    &.focusout  .mainmenu-container {
+        top: 0;
+    }
+
+    &.docked  .mainmenu-container {
+        top: 48px;
+    }
+
+    &.collapsed {
+        .navigation { 
+            .extra-box {
+                border-top: 1px solid #dedede;
+                width: 28px;
+                margin: 0 6px;
+            }
+
+            .icon-user {
+                left: 8px;
+            }
+        }
+
         .mainmenu-container {
-            top: 56px;
+            top: 0;
+        }
+
+        &.hovered {
+            .mainmenu-container {
+                top: 48px;
+            }
         }
     }
 }
+
+#main-menu-items {
+    margin-bottom: 0;
+}
+
 
 /********************************** Account Info ******************************************/
 .accountinfo-container {
