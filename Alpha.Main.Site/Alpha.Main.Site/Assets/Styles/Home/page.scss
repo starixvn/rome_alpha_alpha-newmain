@@ -170,15 +170,53 @@ html * {
             opacity: 0.6;
         }
     }
-}
 
-.sidebar {
-    &.docked, &.hovered, &.focusout {
-        .mainmenu-container {
-            top: 56px;
+    .extra-box {
+        position: relative;
+        display: none;
+        background: #fff;
+
+        &:before {
+            content: "";
+            height: 1px;
+            background-color: #d7d7d7;
+            position: absolute;
+            left: 6px;
+            right: 6px;
+        }
+
+        .icon-user {
+            display: block;
+            padding-left: 12px;
         }
     }
 }
+
+.sidebar {
+    &.focusout  .mainmenu-container,
+    &.collapsed .mainmenu-container,
+    &.collapsed.hovered .mainmenu-container {
+        top: 0;
+
+        .extra-box {
+            display: block;
+        }
+    }
+
+    &.focusout.docked  .mainmenu-container,
+    &.collapsed.hovered .mainmenu-container {
+        top: 48px;
+
+        .extra-box {
+            display: none;
+        }
+    }
+}
+
+#main-menu-items {
+    margin-bottom: 0;
+}
+
 
 /********************************** Account Info ******************************************/
 .accountinfo-container {
@@ -195,7 +233,6 @@ html * {
     #accountinfo-content {
         width: 100%;
         min-height: 500px;
-        margin-bottom: 50px;
 
         &.small-device {
             height: 100%;
@@ -248,8 +285,10 @@ html * {
     display: none;
     position: relative;
     left: 0;
-    top: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
+
 // Quick search components
 .top-search-bar {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
@@ -371,6 +410,11 @@ html * {
 
         .sub-menu .sub-menu-item {
             padding: 9px 15px 9px 54px;
+        }
+
+        .extra-box .icon-user {
+            padding-left: 18px;
+            font-size: 20px;
         }
     }
 
