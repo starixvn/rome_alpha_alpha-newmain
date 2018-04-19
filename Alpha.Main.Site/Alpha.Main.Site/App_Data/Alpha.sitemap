@@ -42,6 +42,7 @@
       <siteMapNode resourceKey="PlayForFunDetail" appPath="ReportsAppPath" url="playforfun/masteroragent" roles="Super,Master"></siteMapNode>
 
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
+      <siteMapNode menuItemType="ProgressiveContributionMenuItem" resourceKey="ProgressiveGamesContribution" appPath="ReportsAppPath" url="progressivecontribution/index"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
     <!--MemberInfo-->
@@ -65,6 +66,7 @@
       <siteMapNode resourceKey="MemberWinLimit" appPath="OldMainAppPath" url="MemberInformation/WinLimit/Index"></siteMapNode>
       <siteMapNode resourceKey="playForFunMemberRequest" appPath="MemberInfoAppPath" url="memberrequests/index" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="BetChoiceLimit" menuItemType="BetChoiceLimitMenuItem" appPath="OldMainAppPath" url="MemberInformation/BetChoiceLimit/Index"></siteMapNode>
+      <siteMapNode resourceKey="ProgressiveJackpotGames" menuItemType="ProgressiveJackpotMenuItem" appPath="MemberInfoAppPath" url="ProgressiveJackpot/Index"></siteMapNode>
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">

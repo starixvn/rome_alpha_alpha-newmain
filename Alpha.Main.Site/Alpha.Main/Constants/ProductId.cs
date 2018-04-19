@@ -2,6 +2,8 @@
 {
     public static class ProductId
     {
+        public const int RNGCasino = 6;
+
         public const int FishingWorld = 24;
     }
 }

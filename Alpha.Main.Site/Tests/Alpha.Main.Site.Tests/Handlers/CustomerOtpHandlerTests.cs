@@ -15,6 +15,7 @@
     using Site.Helpers;
     using Site.Requests.Otp;
     using Sunplus.Agent.Model.Entities;
+    using Web.Helpers;
 
     [TestFixture]
     public class CustomerOtpHandlerTests

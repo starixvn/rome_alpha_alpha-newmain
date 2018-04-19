@@ -13,6 +13,7 @@
     using Services;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Security;
+    using Web.Helpers;
 
     public class CustomerOtpHandler :
         IRequestHandler<SetUpOtpQuery, OtpViewModel>,

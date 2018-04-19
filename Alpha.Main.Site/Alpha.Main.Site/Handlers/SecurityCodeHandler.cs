@@ -13,6 +13,7 @@
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
     using ViewModels.Security;
+    using Web.Helpers;
 
     public class SecurityCodeHandler :
         IRequestHandler<ForceChangeSecurityCodeQuery, ForceChangeSecurityCodeViewModel>,

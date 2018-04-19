@@ -372,4 +372,10 @@
   <data name="BetLists" xml:space="preserve">
     <value>Bet Lists</value>
   </data>
+  <data name="ProgressiveGamesContribution" xml:space="preserve">
+    <value>Progressive Games Contribution</value>
+  </data>
+  <data name="ProgressiveJackpotGames" xml:space="preserve">
+    <value>Progressive Jackpot Games</value>
+  </data>
 </root>

@@ -11,6 +11,7 @@ namespace Alpha.Main
     using Fanex.Logging.Extensions.Web;
     using Fanex.Products;
     using Helpers;
+    using Models;
     using Models.Menus;
     using Sunplus.Agent.Model.Definitions;
     using Sunplus.Agent.Model.Entities;
@@ -80,7 +81,9 @@ namespace Alpha.Main
                     return ProductManager.IsShowSettings(ProductIdConstants.NG2);
                 }),
             ["BullfightingMenuItem"] = () => new MenuStatus(
-                () => HasPermissionOnProduct(ProductIdConstants.BullFighting))
+                () => HasPermissionOnProduct(ProductIdConstants.BullFighting)),
+            ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
+            ["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot)
         };
 
         private static Func<bool> showAccountInfo = () =>

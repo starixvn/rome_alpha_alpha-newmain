@@ -18,6 +18,7 @@
     using Site.ViewModels.Security;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using Web.Helpers;
 
     [TestFixture]
     public class PasswordHandlerTests
@@ -118,7 +119,7 @@
                     && param.SubAccountId == command.SubAccountId));
         }
 
-        #endregion
+        #endregion Handle Reset SubAccount Password Command
 
         #region Handle Change Password Query
 
@@ -158,7 +159,7 @@
             Assert.True(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
         }
 
-        #endregion
+        #endregion Handle Change Password Query
 
         #region Handle Reset MainAccount Password Command
 
@@ -231,7 +232,7 @@
                     && param.IsResetMemberPassword == false));
         }
 
-        #endregion
+        #endregion Handle Reset MainAccount Password Command
 
         #region Handle Change Password Command
 
@@ -304,7 +305,6 @@
                     Code = 0
                 });
 
-
             // Act
             passwordHandler.Handle(message);
 
@@ -338,7 +338,6 @@
                 {
                     Code = 0
                 });
-
 
             // Act
             passwordHandler.Handle(message);
@@ -414,7 +413,7 @@
             Assert.False(userSession.IsPasswordExpired);
         }
 
-        #endregion
+        #endregion Handle Change Password Command
 
         #region Handle Force Change Password Query
 
@@ -514,7 +513,7 @@
             Assert.True(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
         }
 
-        #endregion
+        #endregion Handle Force Change Password Query
 
         #region Handle Reset MainAccount Password Query
 
@@ -551,14 +550,14 @@
                 Title = "Reset Password"
             };
 
-            // Act 
+            // Act
             var actualViewModel = passwordHandler.Handle(message);
 
             // Assert
             Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
         }
 
-        #endregion
+        #endregion Handle Reset MainAccount Password Query
 
         #region Handle Reset SubAccount Password Query
 
@@ -595,13 +594,13 @@
                 Title = "Reset Password - UserName"
             };
 
-            // Act 
+            // Act
             var actualViewModel = passwordHandler.Handle(message);
 
             // Assert
             Assert.IsTrue(compareLogic.Compare(expectedViewModel, actualViewModel).AreEqual);
         }
 
-        #endregion
+        #endregion Handle Reset SubAccount Password Query
     }
 }

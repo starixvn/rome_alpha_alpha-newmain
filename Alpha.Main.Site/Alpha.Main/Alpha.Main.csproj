@@ -24,6 +24,8 @@
     <WarningLevel>4</WarningLevel>
     <WarningsNotAsErrors>612,618</WarningsNotAsErrors>
     <CodeAnalysisRuleSet>Alpha.Main.Debug.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <NoWarn>618</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -281,6 +283,7 @@
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\MemberRequests\ProductRequest.cs" />
     <Compile Include="Models\Otp\DeviceInfo.cs" />
     <Compile Include="Models\Statistics\NewMember.cs" />
@@ -327,12 +330,10 @@
     <Compile Include="Services\Impl\PasswordServiceImpl.cs" />
     <Compile Include="Services\Impl\BalanceInfoServiceImpl.cs" />
     <Compile Include="Services\Impl\SecurityCodeServiceImpl.cs" />
-    <Compile Include="Services\Impl\SessionManagerImpl.cs" />
     <Compile Include="Services\Impl\SiteMenuServiceImpl.cs" />
     <Compile Include="Services\CustomerOtpService.cs" />
     <Compile Include="Services\PasswordService.cs" />
     <Compile Include="Services\SecurityCodeService.cs" />
-    <Compile Include="Services\SessionManager.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
   </ItemGroup>
   <ItemGroup>

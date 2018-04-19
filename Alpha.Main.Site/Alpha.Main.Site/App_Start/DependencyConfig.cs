@@ -27,6 +27,8 @@ namespace Alpha.Main.Site.App_Start
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using Web.Helpers;
+    using Web.Helpers.Impl;
 
     [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
     public static class DependencyConfig
