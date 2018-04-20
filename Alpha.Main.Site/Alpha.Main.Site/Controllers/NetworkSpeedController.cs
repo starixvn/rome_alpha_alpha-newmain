@@ -25,7 +25,7 @@
         {
             if (!IsNeedToCalculateUserConnectionSpeed())
             {
-                return new EmptyResult();
+                return View("NoInfo");
             }
 
             return View();
@@ -38,7 +38,7 @@
                 LogUserInformation(speedKbps);
             }
 
-            return new EmptyResult();
+            return View("NoInfo");
         }
 
         private bool IsNeedToCalculateUserConnectionSpeed()
