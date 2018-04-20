@@ -439,6 +439,7 @@
     <Content Include="Assets\bundles\error.min.css">
       <DependentUpon>error.css</DependentUpon>
     </Content>
+    <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\styles\error\error.css">
       <DependentUpon>error.scss</DependentUpon>
     </Content>
@@ -747,6 +748,7 @@
     <Content Include="Views\MemberRequests\Guidelines\Style\page.scss" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Default\AnnouncementPopup.cshtml" />
+    <Content Include="Views\NetworkSpeed\Index.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
@@ -1125,6 +1127,7 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\MemberRequestsController.cs" />
+    <Compile Include="Controllers\NetworkSpeedController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\OtpController.cs" />

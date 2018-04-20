@@ -95,3 +95,5 @@ bundles
 */**/[Ss]cripts/[Tt]ests/app/**/*.js.map
 */**/[Ss]cripts/[Tt]ests/app/**/*.js
 Alpha.Main.Site/_Chutzpah.coverage.html
+/Alpha.Main.Site/.vs/Alpha.Main.Site/v15/Server/sqlite3/db.lock
+/Alpha.Main.Site/.vs/Alpha.Main.Site/v15/Server/sqlite3/storage.ide
