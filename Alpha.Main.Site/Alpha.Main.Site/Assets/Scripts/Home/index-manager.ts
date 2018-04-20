@@ -32,6 +32,8 @@ var indexManager = {
         indexManager.loadPartialViews();
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
+
+        setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
     },
 
     registerEvents: function () {
@@ -172,6 +174,7 @@ var indexManager = {
             closeDropdownSubMenu();
         });
     },
+
     closeAllPopup: function () {
         var prevUrl = $.cookie(indexManager.currentUrlCookieName) || "";
         var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href || "";
@@ -185,6 +188,7 @@ var indexManager = {
             popupManager.closeAllPopup();
         }
     },
+
     isSameUrl: function (url1, url2) {
         url1 = url1.toLowerCase();
         url2 = url2.toLowerCase();
@@ -203,6 +207,19 @@ var indexManager = {
         diff2 = diff2 || "index";
 
         return url1.substring(0, minLength) == url2.substring(0, minLength) && diff1 === "index" && diff2 === "index";
+    },
+
+    calculateUserConnectionSpeed: function () {
+        var iframe = <HTMLIFrameElement>document.getElementById('connection-speed');
+
+        if (typeof (iframe) == 'undefined'
+            || iframe == null) {
+            iframe = <HTMLIFrameElement>document.createElement('iframe');
+            iframe.id = 'connection-speed';
+            iframe.style.display = 'none';
+            iframe.src = alpha.urls.mainRootPath + "NetworkSpeed/Index" ;
+            document.body.appendChild(iframe);
+        }
     }
 };
 

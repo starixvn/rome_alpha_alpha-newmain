@@ -174,5 +174,12 @@
         }
 
         public static bool LocalTest => Settings["LocalTest"] == "1";
+
+        public static IEnumerable<int> TrackingConnectionCustIds => 
+            string.IsNullOrEmpty(Settings["TrackingConnectionCustIds"])
+            ? Enumerable.Empty<int>()
+            : Settings["TrackingConnectionCustIds"]
+                .Split(',')
+                .Select(custIdString => Converter.ToInt(custIdString));
     }
 }
