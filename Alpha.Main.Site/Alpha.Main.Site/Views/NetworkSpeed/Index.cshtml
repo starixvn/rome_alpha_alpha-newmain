@@ -1,7 +1,7 @@
 ﻿@{
     Layout = null;
 }
-
+@model Alpha.Main.Site.ViewModels.NetworkSpeed.NetworkSpeedViewModel
 <!DOCTYPE html>
 
 <html>
@@ -10,74 +10,77 @@
     <title>Network Speed Calculator</title>
 </head>
 <body>
-    <div>
-        <h1 id="progress" style="text-align:center;">JavaScript is turned off, or your browser is realllllly slow</h1>
-    </div>
+    @if (Model.RequiredCalculation)
+    {
+        <div>
+            <h1 id="progress" style="text-align:center;">...</h1>
+        </div>
 
-    <script type="text/javascript">
-        var imageAddr = "@(Url.Content("~/assets/images/sample_test_network_speed_1.jpg"))";
-        var downloadSize = 234800;
+        <script type="text/javascript">
+            var imageAddr = "@(Url.Content("~/assets/images/sample_test_network_speed_1.jpg"))";
+            var downloadSize = 225800;
 
-        function ShowProgressMessage(msg) {
-            var oProgress = document.getElementById("progress");
-            if (oProgress) {
-                var actualHTML = (typeof msg == "string") ? msg : msg.join("<br />");
-                oProgress.innerHTML = actualHTML;
-            }
-        }
-
-        function InitiateSpeedDetection() {
-            ShowProgressMessage("Calculating your connection speed, please wait...");
-            window.setTimeout(MeasureConnectionSpeed, 1);
-        };
-
-        if (window.addEventListener) {
-            window.addEventListener('load', InitiateSpeedDetection, false);
-        } else if (window.attachEvent) {
-            window.attachEvent('onload', InitiateSpeedDetection);
-        }
-
-        function MeasureConnectionSpeed() {
-            var startTime, endTime;
-            var download = new Image();
-            download.onload = function () {
-                endTime = (new Date()).getTime();
-                showResults();
-            }
-
-            download.onerror = function (err, msg) {
-                ShowProgressMessage("Invalid image, or error downloading");
-            }
-
-            startTime = (new Date()).getTime();
-            var cacheBuster = "?nnn=" + startTime;
-            download.src = imageAddr + cacheBuster;
-
-            function showResults() {
-                var duration = (endTime - startTime) / 1000;
-                var bitsLoaded = downloadSize * 8;
-                var speedBps = (bitsLoaded / duration).toFixed(2);
-                var speedKbps = (speedBps / 1024).toFixed(2);
-                var speedMbps = (speedKbps / 1024).toFixed(2);
-                ShowProgressMessage([
-                    "Your connection speed is:",
-                    speedKbps + " kbps"
-                ]);
-
-                SaveConnectionSpeedResult(speedKbps);
-            }
-        }
-
-        function SaveConnectionSpeedResult(speedKbps) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', '@(Alpha.Main.Site.Helpers.UrlHelper.MapMainPath("~/NetworkSpeed/SaveResult?speedKbps="))' + speedKbps);
-            xhr.onload = function () {
-                if (console && xhr.status !== 200) {
-                    console.log(xhr);
+            function ShowProgressMessage(msg) {
+                var oProgress = document.getElementById("progress");
+                if (oProgress) {
+                    var actualHTML = (typeof msg == "string") ? msg : msg.join("<br />");
+                    oProgress.innerHTML = actualHTML;
                 }
+            }
+
+            function InitiateSpeedDetection() {
+                ShowProgressMessage("Calculating your connection speed, please wait...");
+                window.setTimeout(MeasureConnectionSpeed, 1);
             };
-            xhr.send();
-        }
-    </script>
+
+            if (window.addEventListener) {
+                window.addEventListener('load', InitiateSpeedDetection, false);
+            } else if (window.attachEvent) {
+                window.attachEvent('onload', InitiateSpeedDetection);
+            }
+
+            function MeasureConnectionSpeed() {
+                var startTime, endTime;
+                var download = new Image();
+                download.onload = function () {
+                    endTime = (new Date()).getTime();
+                    showResults();
+                }
+
+                download.onerror = function (err, msg) {
+                    ShowProgressMessage("Invalid image, or error downloading");
+                }
+
+                startTime = (new Date()).getTime();
+                var cacheBuster = "?nnn=" + startTime;
+                download.src = imageAddr + cacheBuster;
+
+                function showResults() {
+                    var duration = (endTime - startTime) / 1000;
+                    var bitsLoaded = downloadSize * 8;
+                    var speedBps = (bitsLoaded / duration).toFixed(2);
+                    var speedKbps = (speedBps / 1024).toFixed(2);
+                    var speedMbps = (speedKbps / 1024).toFixed(2);
+                    ShowProgressMessage([
+                        "Your connection speed is:",
+                        speedKbps + " kbps"
+                    ]);
+
+                    SaveConnectionSpeedResult(speedKbps);
+                }
+            }
+
+            function SaveConnectionSpeedResult(speedKbps) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '@(Alpha.Main.Site.Helpers.UrlHelper.MapMainPath("~/NetworkSpeed/SaveResult?speedKbps="))' + speedKbps);
+                xhr.onload = function () {
+                    if (console && xhr.status !== 200) {
+                        console.log(xhr);
+                    }
+                };
+                xhr.send();
+            }
+        </script>
+    }
 </body>
 </html>

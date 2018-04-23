@@ -1,12 +1,14 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System;
+    using Configurations;
     using Helpers;
     using Main.Helpers;
     using Main.Models.Enumerations;
     using Models.Requests;
     using SecurityCode.Web;
     using Sunplus.Agent.Utilities;
+    using System.Linq;
 
     public class IndexViewModel
     {
@@ -31,6 +33,7 @@
             this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
             this.encodeDataFunction = encodeDataFunction;
             this.browserHelper = browserHelper;
+            this.RequiredNetworkSpeedCalculation = message.CustId > 0 && AppSettings.TrackingConnectionCustIds.Contains(message.CustId);
         }
 
         public bool EnableSecurityCode => message.EnableSecurityCode;
@@ -96,5 +99,7 @@
                 return 0.7;
             }
         }
+
+        public bool RequiredNetworkSpeedCalculation { get; }
     }
 }
