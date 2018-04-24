@@ -29,6 +29,7 @@ namespace Alpha.Main.Site.App_Start
     using Sunplus.Agent.Utilities;
     using Web.Helpers;
     using Web.Helpers.Impl;
+    using Fanex.Logging;
 
     [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
     public static class DependencyConfig
@@ -88,6 +89,7 @@ namespace Alpha.Main.Site.App_Start
         {
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
+            container.Register(() => Fanex.Logging.Logger.Log, Lifestyle.Singleton);
 
             container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();

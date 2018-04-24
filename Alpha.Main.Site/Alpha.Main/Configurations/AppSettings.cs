@@ -175,11 +175,12 @@
 
         public static bool LocalTest => Settings["LocalTest"] == "1";
 
-        public static IEnumerable<int> TrackingConnectionCustIds => 
-            string.IsNullOrEmpty(Settings["TrackingConnectionCustIds"])
-            ? Enumerable.Empty<int>()
-            : Settings["TrackingConnectionCustIds"]
-                .Split(',')
-                .Select(custIdString => Converter.ToInt(custIdString));
+        public static IEnumerable<int> TrackingConnectionCustIds { get; } 
+            = string.IsNullOrEmpty(Settings["TrackingConnectionCustIds"])
+                ? Enumerable.Empty<int>()
+                : Settings["TrackingConnectionCustIds"]
+                    .Split(',')
+                    .Where(custIdString => !string.IsNullOrWhiteSpace(custIdString))
+                    .Select(custIdString => Converter.ToInt(custIdString));
     }
 }

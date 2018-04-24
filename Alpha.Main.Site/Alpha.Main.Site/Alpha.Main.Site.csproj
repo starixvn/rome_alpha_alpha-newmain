@@ -750,7 +750,6 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Default\AnnouncementPopup.cshtml" />
     <Content Include="Views\NetworkSpeed\Index.cshtml" />
-    <Content Include="Views\NetworkSpeed\NoInfo.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
@@ -1140,6 +1139,7 @@
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
     <Compile Include="Handlers\MemberRequestsHandler.cs" />
+    <Compile Include="Handlers\NetworkSpeedHandler.cs" />
     <Compile Include="Handlers\StatisticsHandler.cs" />
     <Compile Include="Handlers\BalanceInfoHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
@@ -1164,6 +1164,8 @@
     <Compile Include="Requests\Dashboard\Statistics\TopWinningMembersQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
+    <Compile Include="Requests\NetworkSpeed\NetworkSpeedQuery.cs" />
+    <Compile Include="Requests\NetworkSpeed\SaveNetworkSpeedCommand.cs" />
     <Compile Include="Requests\Otp\ChangeOtpStatusCommand.cs" />
     <Compile Include="Requests\Otp\CheckDifferenceDeviceCommand.cs" />
     <Compile Include="Requests\Otp\RemoveOtpCommand.cs" />
@@ -1206,6 +1208,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\NetworkSpeed\NetworkSpeedViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\OtpViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />

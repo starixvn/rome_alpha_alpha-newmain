@@ -8,6 +8,7 @@ declare var popupManager: any;
 var indexManager = {
     currentTab: null,
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
+    requiredNetworkSpeedCalculation: false,
 
     domElements: {
         mainFrame: null,
@@ -33,7 +34,9 @@ var indexManager = {
         indexManager.registerEvents();
         indexManager.setCurrentUrl();
 
-        setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
+        if (indexManager.requiredNetworkSpeedCalculation) {
+            setTimeout(indexManager.calculateUserConnectionSpeed, 8000);
+        }
     },
 
     registerEvents: function () {
@@ -48,6 +51,7 @@ var indexManager = {
         indexManager.domElements.currentURLCookieName = $('#currentURLCookieName');
         indexManager.domElements.pagePopup = $('#page-popup');
         indexManager.currentUrlCookieName = indexManager.domElements.currentURLCookieName.val();
+        indexManager.requiredNetworkSpeedCalculation = $('#requiredNetworkSpeedCalculation').val() == '1';
     },
 
     changeMenu: function (url) {
