@@ -54,6 +54,8 @@
 
         public string HowToUseRootPath => UrlHelper.MapHowToUsePath("~/");
 
+        public string MemberInfoRootPath => UrlHelper.MapMemberInfoPath("~/");
+
         public string ExTotalBetsForecastRootPath => UrlHelper.MapExTotalBetsForecastPath("~/");
 
         public string MessageSiteRootPath => UrlHelper.MapMessagesPath("~/");
