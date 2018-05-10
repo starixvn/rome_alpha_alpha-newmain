@@ -206,6 +206,7 @@
     <Compile Include="Controllers\ErrorControllerTests.cs" />
     <Compile Include="Controllers\LanguageControllerTests.cs" />
     <Compile Include="Controllers\MemberRequestsControllerTests.cs" />
+    <Compile Include="Controllers\NetworkSpeedControllerTests.cs" />
     <Compile Include="Controllers\OtpControllerTests.cs" />
     <Compile Include="Controllers\PasswordControllerTests.cs" />
     <Compile Include="Controllers\SecurityCodeControllerTests.cs" />
@@ -218,6 +219,7 @@
     <Compile Include="Handlers\MenuBarHandlerTests.cs" />
     <Compile Include="Handlers\LanguageHandlerTests.cs" />
     <Compile Include="Handlers\CustomerOtpHandlerTests.cs" />
+    <Compile Include="Handlers\NetworkSpeedHandlerTests.cs" />
     <Compile Include="Handlers\PasswordHandlerTests.cs" />
     <Compile Include="Handlers\SecurityCodeHandlerTests.cs" />
     <Compile Include="Handlers\StatisticsHandlerTests.cs" />

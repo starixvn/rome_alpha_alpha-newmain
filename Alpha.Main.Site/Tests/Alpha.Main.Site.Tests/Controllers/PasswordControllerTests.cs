@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System.Web.Mvc;
     using Alpha.Main.Constants;
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests.Password;
@@ -66,6 +67,26 @@
 
             // Assert
             mediator.Received().Send(query);
+        }
+
+        [Test]
+        public void ResetMainAccountPassword_QueryIsInvalid_RedirectToErrorPage()
+        {
+            // Arrange
+            var query = new ResetMainAccountPasswordQuery
+            {
+                CustId = 1,
+                CustRoleId = 0,
+                IsCasinoSync = true,
+                Username = "UserName"
+            };
+
+            // Act
+            var result = (RedirectToRouteResult)passwordController.ResetMainAccountPassword(query);
+
+            // Assert
+            Assert.AreEqual("Index", result.RouteValues["action"]);
+            Assert.AreEqual("Error", result.RouteValues["controller"]);
         }
 
         [Test]

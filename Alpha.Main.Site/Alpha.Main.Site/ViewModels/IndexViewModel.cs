@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System;
+    using System.Linq;
     using Configurations;
     using Helpers;
     using Main.Helpers;
@@ -8,7 +9,6 @@
     using Models.Requests;
     using SecurityCode.Web;
     using Sunplus.Agent.Utilities;
-    using System.Linq;
 
     public class IndexViewModel
     {

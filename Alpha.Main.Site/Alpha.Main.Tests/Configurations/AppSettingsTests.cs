@@ -237,7 +237,7 @@
 
             // Assert
             Assert.AreEqual(expectedSetting, actualSetting);
-        }        
+        }
 
         [Test]
         public void IsDisabledContactUsLink_ConfigValueIsEqualOne_ReturnsTrue()
@@ -413,6 +413,92 @@
 
             // Assert
             Assert.IsTrue(actualSetting);
+        }
+
+        [Test]
+        public void LocalTest_IsLocalTest_ReturnsTrue()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["LocalTest"] = "1"
+            };
+
+            // Act
+            var actualSetting = AppSettings.LocalTest;
+
+            // Assert
+            Assert.IsTrue(actualSetting);
+        }
+
+        [Test]
+        public void LocalTest_IsNotLocalTest_ReturnsFalse()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["LocalTest"] = "0"
+            };
+
+            // Act
+            var actualSetting = AppSettings.LocalTest;
+
+            // Assert
+            Assert.IsFalse(actualSetting);
+        }
+
+        [Test]
+        public void MessageSuper_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["Message:Super"] = "3000,3100"
+            };
+
+            var expectedSetting = "3000,3100";
+
+            // Act
+            var actualSetting = AppSettings.MessageSuper;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void MessageMaster_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["Message:Master"] = "3000,3200"
+            };
+
+            var expectedSetting = "3000,3200";
+
+            // Act
+            var actualSetting = AppSettings.MessageMaster;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void MessageAgent_HasConfig_ReturnsCorrectSetting()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["Message:Agent"] = "3000,3300"
+            };
+
+            var expectedSetting = "3000,3300";
+
+            // Act
+            var actualSetting = AppSettings.MessageAgent;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
         }
     }
 }
