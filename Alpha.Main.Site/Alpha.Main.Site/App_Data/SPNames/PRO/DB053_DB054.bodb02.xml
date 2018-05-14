@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Functions>
+  <Function Name="Report">
+    <Setting Key="Age_CustomerSelBalanceInfo_Ag" SpName="Age_CustomerSelBalanceInfo_Ag" DbName="DB054.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+      <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
+      <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
+      <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
+      <Mapping DataField="yesterday_totalBalance" ObjectProperty="YesterdayTotalBalance" />
+      <Mapping DataField="todayWinloss" ObjectProperty="TodayWinLoss" />
+      <Mapping DataField="yesterdayWinloss" ObjectProperty="YesterdayWinLoss" />
+      <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
+      <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
+    </Setting>
+    <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg" DbName="DB054.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+      <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
+      <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
+      <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
+      <Mapping DataField="yesterday_totalBalance" ObjectProperty="YesterdayTotalBalance" />
+      <Mapping DataField="todayWinloss" ObjectProperty="TodayWinLoss" />
+      <Mapping DataField="yesterdayWinloss" ObjectProperty="YesterdayWinLoss" />
+      <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
+      <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
+    </Setting>
+    <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg" DbName="DB054.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+      <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
+      <Mapping DataField="yesterday_CashBalance" ObjectProperty="YesterdayCashBalance" />
+      <Mapping DataField="totalBalance" ObjectProperty="TotalBalance" />
+      <Mapping DataField="yesterday_totalBalance" ObjectProperty="YesterdayTotalBalance" />
+      <Mapping DataField="todayWinloss" ObjectProperty="TodayWinLoss" />
+      <Mapping DataField="yesterdayWinloss" ObjectProperty="YesterdayWinLoss" />
+      <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
+      <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
+    </Setting>
+  </Function>
+  <Function Name="Statistics">
+    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DB054.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    </Setting>
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DB054.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    </Setting>
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DB054.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    </Setting>
+  </Function>
+</Functions>
