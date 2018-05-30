@@ -1050,6 +1050,9 @@
       <DependentUpon>tooltip.css</DependentUpon>
     </Content>
     <Content Include="favico.ico" />
+	<Content Include="favicon3.ico">
+      <DependentUpon>favico.ico</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <TypeScriptCompile Include="Assets\scripts\core.ts" />
     <Content Include="Views\CustomerProfile\BriefProfile.cshtml" />
