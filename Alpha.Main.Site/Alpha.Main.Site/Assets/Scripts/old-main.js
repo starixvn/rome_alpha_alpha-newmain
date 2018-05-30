@@ -273,13 +273,16 @@ var AgeWnd = function () {
             popUp.modal({ show: true, backdrop: false });
 
             popUp.find(".icon-close").unbind("click").click(function () {
+                var iframe = popUp.find("#popup-iframe");
+                if (iframe.length) {
+                    iframe.attr("src", "about:blank");
+                }
                 popUp.find('.modal-body #target').remove();
                 popUp.remove();
 
                 if (currentAgeWnd.onClosing && typeof (currentAgeWnd.onClosing) == "function") {
                     currentAgeWnd.onClosing();
                 }
-
             });
 
             popUp.tinyDraggable({ exclude: "a.icon-information-outline.icon-info, button.icon.icon-close.close" });
