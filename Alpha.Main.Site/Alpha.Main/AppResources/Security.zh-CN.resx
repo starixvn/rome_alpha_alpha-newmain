@@ -239,13 +239,13 @@
     <value>您的密码不符合最低安全要求</value>
   </data>
   <data name="lblConfirmPassword" xml:space="preserve">
-    <value>确定密码</value>
+    <value>确认密码</value>
   </data>
   <data name="lblOldPassword" xml:space="preserve">
     <value>旧密码</value>
   </data>
   <data name="NewPassword" xml:space="preserve">
-    <value>密码</value>
+    <value>新密码</value>
   </data>
   <data name="PasswordHint01" xml:space="preserve">
     <value>密码必须至少 8 个字符没有空格和包含至少 3个 以下：</value>
