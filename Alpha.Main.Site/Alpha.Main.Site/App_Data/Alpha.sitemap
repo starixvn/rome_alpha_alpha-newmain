@@ -70,7 +70,7 @@
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">
-      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="LastBets/Index" roles="Agent"></siteMapNode>
+      <!--<siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="LastBets/Index" roles="Agent"></siteMapNode>-->
       <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="CancelledBet/Index"></siteMapNode>
 
       <siteMapNode resourceKey="correctscore" appPath="BetListsAppPath" url="correctscore/index"></siteMapNode>
