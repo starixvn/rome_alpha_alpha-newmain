@@ -25,6 +25,9 @@
         private static Func<string, string> mapMemberInfoPath;
 
         [ThreadStatic]
+        private static Func<string, string> mapAccountInfoPath;
+
+        [ThreadStatic]
         private static Func<string, string> mapMainPath;
 
         public static Func<string, string> MapExTotalBetsForecastPath
@@ -102,6 +105,19 @@
             internal set
             {
                 mapMemberInfoPath = value;
+            }
+        }
+
+        public static Func<string, string> MapAccountInfoPath
+        {
+            get
+            {
+                return mapAccountInfoPath ?? MicroSites.AccountInfoUrl;
+            }
+
+            internal set
+            {
+                mapAccountInfoPath = value;
             }
         }
 

@@ -24,6 +24,8 @@
 
         public string MainRootPath { get; } = UrlHelper.MapMainPath("~/");
 
+        public string AccountInfoRootPath { get; } = UrlHelper.MapAccountInfoPath("~/");
+
         public bool IsDisabledContactUsLink { get; } = AppSettings.IsDisabledContactUsLink;
 
         public bool ShowHelpLink { get; } = AppSettings.ShowHelpLink;

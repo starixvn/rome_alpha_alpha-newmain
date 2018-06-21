@@ -9,6 +9,9 @@ var alpha = {
             : "not found",
         mainRootPath: top.document.getElementById('mainRootPath') != null
             ? (<HTMLInputElement>top.document.getElementById('mainRootPath')).value
+                : "not found",
+        accountInfoRootPath: top.document.getElementById('accountInfoRootPath') != null
+            ? (<HTMLInputElement>top.document.getElementById('accountInfoRootPath')).value
             : "not found",
         howToUseRootPath: top.document.getElementById('howToUseRootPath') != null
             ? (<HTMLInputElement>top.document.getElementById('howToUseRootPath')).value

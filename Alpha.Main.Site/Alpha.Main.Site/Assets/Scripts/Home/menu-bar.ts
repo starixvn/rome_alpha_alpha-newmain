@@ -23,7 +23,7 @@
     },
 
     urls: {
-        accountInfo: alpha.urls.oldMainRootPath + '_AccountInfo/AccountInfo.aspx'
+        accountInfo: alpha.urls.accountInfoRootPath + 'AccountInfo/Index'
     },
 
     init: function () {

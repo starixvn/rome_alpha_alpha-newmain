@@ -57,6 +57,8 @@
 
         public string MemberInfoRootPath => UrlHelper.MapMemberInfoPath("~/");
 
+        public string AccountInfoRootPath => UrlHelper.MapAccountInfoPath("~/");
+
         public string ExTotalBetsForecastRootPath => UrlHelper.MapExTotalBetsForecastPath("~/");
 
         public string MessageSiteRootPath => UrlHelper.MapMessagesPath("~/");
