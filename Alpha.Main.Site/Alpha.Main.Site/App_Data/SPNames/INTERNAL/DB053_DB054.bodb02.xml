@@ -33,11 +33,11 @@
     </Setting>
   </Function>
   <Function Name="Statistics">
-    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DB055.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DB042.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DB055.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DB042.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DB055.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DB042.bodb02.BODBDownlineNetView" Plain="0" TimeOut="600">
     </Setting>
   </Function>
 </Functions>
