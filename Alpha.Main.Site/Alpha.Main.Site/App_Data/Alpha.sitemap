@@ -61,7 +61,7 @@
       <!--Casino-PositionTaking-->
       <siteMapNode menuItemType="CasinoMenuItem" resourceKey="casinoPositionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Casino/CasinoPositionTakingList.aspx"></siteMapNode>
       <!--/Casino-PositionTaking-->
-      
+
       <siteMapNode resourceKey="memberCommission" appPath="OldMainAppPath" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
       <siteMapNode resourceKey="MemberWinLimit" appPath="OldMainAppPath" url="MemberInformation/WinLimit/Index"></siteMapNode>
       <siteMapNode resourceKey="playForFunMemberRequest" appPath="MemberInfoAppPath" url="memberrequests/index" roles="Agent"></siteMapNode>
@@ -70,7 +70,7 @@
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">
-      <!--<siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="LastBets/Index" roles="Agent"></siteMapNode>-->
+      <siteMapNode menuItemType="LastBetMonitorMenuItem" resourceKey="LastBets" appPath="BetListsAppPath" url="LastBets/Index" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="cancelledBets" appPath="BetListsAppPath" url="CancelledBet/Index"></siteMapNode>
 
       <siteMapNode resourceKey="correctscore" appPath="BetListsAppPath" url="correctscore/index"></siteMapNode>
@@ -92,7 +92,7 @@
       <siteMapNode resourceKey="htft" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HTFT.aspx"></siteMapNode>
       <siteMapNode resourceKey="fthtfglg" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/FGLG.aspx"></siteMapNode>
       <siteMapNode resourceKey="homeDrawAwayNoBet" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HomeDrawAwayNoBet.aspx"></siteMapNode>
-      <siteMapNode menuItemType="NumberGameMenuItem" resourceKey="numbergame" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/NumberGame.aspx"></siteMapNode>      
+      <siteMapNode menuItemType="NumberGameMenuItem" resourceKey="numbergame" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/NumberGame.aspx"></siteMapNode>
       <siteMapNode menuItemType="BullfightingMenuItem" resourceKey="Bullfighting" appPath="TotalbetsForecastSiteVirtualPath" url="~/Bullfighting"></siteMapNode>
       <siteMapNode resourceKey="lbl1x2" appPath="ExTotalBetsForecastAppPath" url="_Forecast/FC1X2.aspx"></siteMapNode>
       <siteMapNode resourceKey="scoreMap" appPath="ExTotalBetsForecastAppPath" url="ForecastScoreMap/Index"></siteMapNode>
