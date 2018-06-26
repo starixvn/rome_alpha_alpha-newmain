@@ -18,11 +18,7 @@
   {
     "outputFile": "Assets/Styles/customer-profiles/customer-profile.css",
     "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss"
-  },
-  {
-    "outputFile": "Assets/Styles/announcement/announcements.css",
-    "inputFile": "Assets/Styles/announcement/announcements.scss"
-  },
+  },  
   {
     "outputFile": "Assets/styles/home/pageIElower10.css",
     "inputFile": "Assets/styles/home/pageIElower10.scss"

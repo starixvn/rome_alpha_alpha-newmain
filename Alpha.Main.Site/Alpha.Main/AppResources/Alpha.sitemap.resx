@@ -378,4 +378,7 @@
   <data name="ProgressiveJackpotGames" xml:space="preserve">
     <value>Progressive Jackpot Games</value>
   </data>
+  <data name="systemUpdate" xml:space="preserve">
+    <value>System Update</value>
+  </data>
 </root>

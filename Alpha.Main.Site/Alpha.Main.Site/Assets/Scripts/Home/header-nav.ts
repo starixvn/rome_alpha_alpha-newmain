@@ -12,19 +12,25 @@ var headerNav = {
 
         iconLogOut: null,
         iconHome: null,
+
+        numberNewMessage: null,
+        iconNewMessage: null,
         swapView: null,
         changeLanguageLink: null,
         iconSearch: null,
         linkLogout: null,
-        iconBell: null,
-        iconMessage: null,
         languageDropdownSubMenu: null,
 
         sideBar: null,
         sideBarContent: null,
         profileImage: null
     },
-
+    messageType: {
+        Personal: 0,
+        Normal: 1,
+        Special: 2,
+        System: 3
+    },
     resources: {
         labelAM: '',
         labelPM: '',
@@ -39,8 +45,18 @@ var headerNav = {
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index",
         messages: alpha.urls.messageRootPath + "Message/Index",
+        announcements: alpha.urls.messageRootPath + "Announcement/Index",
         changeLanguage: alpha.urls.mainRootPath + "Language/Change",
-        queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx"
+        queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx",
+        checkNewMessage: alpha.urls.messageRootPath + "Message/GetNumberOfNewMessage"
+    },
+
+    unreadMessage: {
+        Normal: 0,
+        Special: 0,
+        System: 0,
+        Personal: 0,
+        Total: 0
     },
 
     init: function () {
@@ -104,12 +120,13 @@ var headerNav = {
 
         headerNav.domElements.iconLogOut = $(".icon-logout");
         headerNav.domElements.iconHome = $(".icon-home");
+
+        headerNav.domElements.iconNewMessage = $(".icon-bell");
+        headerNav.domElements.numberNewMessage = $("#numberOfNewMessage");
         headerNav.domElements.changeLanguageLink = $(".changelanguage-link");
         // For mobile
         headerNav.domElements.iconSearch = $(".icon-account-search");
         headerNav.domElements.linkLogout = $(".link-logout");
-        headerNav.domElements.iconBell = $(".icon-bell");
-        headerNav.domElements.iconMessage = $(".icon-message");
         headerNav.domElements.languageDropdownSubMenu = $('.dropdown-submenu.language');
 
         headerNav.domElements.sideBar = $("#side-bar");
@@ -126,7 +143,67 @@ var headerNav = {
         headerNav.domElements.languageSelectorContainer.html(language);
     },
 
-    registerEvents: function () {
+    buildIconNewMessage: function () {
+        headerNav.domElements.iconNewMessage.on("click", () => {
+            var firstTypeMessage = headerNav.getFirstNewMessage();
+            var remainNewMessage = headerNav.unreadMessage.Total - firstTypeMessage.NumberNewMessage;
+            if (remainNewMessage > 0) {
+                headerNav.domElements.numberNewMessage.text(remainNewMessage);
+            } else {
+                headerNav.domElements.numberNewMessage.text("");
+                headerNav.domElements.numberNewMessage.removeClass("badge-title");
+            }
+            
+            indexManager.changeMenu(firstTypeMessage.url);
+        });
+    },
+
+    checkNewMessage: function () {
+        $.ajax({
+            type: "POST",
+            url: headerNav.urls.checkNewMessage,
+            success: function (result) {
+                if (result !== undefined) {
+                    headerNav.unreadMessage = result;
+                    if (result.Total > 0) {
+                        headerNav.domElements.numberNewMessage.text(result.Total);
+                        headerNav.domElements.numberNewMessage.addClass("badge-title");
+                    } else {
+                        headerNav.domElements.numberNewMessage.text("");
+                        headerNav.domElements.numberNewMessage.removeClass("badge-title");
+                    }
+                }
+                headerNav.buildIconNewMessage();
+                setTimeout(headerNav.checkNewMessage, 2 * 60 * 1000);
+            }
+        });
+    },
+
+    getFirstNewMessage: function () {
+        if (headerNav.unreadMessage.Special > 0) {
+            return {
+                NumberNewMessage: headerNav.unreadMessage.Special,
+                url: headerNav.urls.messages + "?messageType=" + headerNav.messageType.Special
+            };
+        } else if (headerNav.unreadMessage.System > 0) {
+            return {
+                NumberNewMessage: headerNav.unreadMessage.System,
+                url: headerNav.urls.announcements
+            };
+        } else if (headerNav.unreadMessage.Personal > 0) {
+            return {
+                NumberNewMessage: headerNav.unreadMessage.Personal,
+                url: headerNav.urls.messages + "?messageType=" + headerNav.messageType.Special
+            };
+        }
+
+        return {
+            NumberNewMessage: headerNav.messageType.Normal,
+            url: headerNav.urls.messages + "?messageType=" + headerNav.messageType.Normal
+        };
+    },
+
+    registerEvents: function () {        
         headerNav.domElements.iconLogOut.on("click", alpha.core.signOut);
 
         headerNav.domElements.iconHome.on("click", () => {
@@ -138,13 +215,7 @@ var headerNav = {
         });
 
         // Logout link for mobile
-        headerNav.domElements.linkLogout.on("click", alpha.core.signOut);
-
-        headerNav.domElements.iconMessage.on("click", () => {
-            indexManager.changeMenu(headerNav.urls.messages);
-
-            $('.icon-message').find('.circle-red').hide();
-        });
+        headerNav.domElements.linkLogout.on("click", alpha.core.signOut);        
 
         // Quick search component for mobile
         headerNav.domElements.iconSearch.on('click', () => {
@@ -204,17 +275,13 @@ var headerNav = {
             topSearchInput.typeahead(typeaheadOptions);
         });
 
-        // Annoucement popup for mobile
-        headerNav.domElements.iconBell.on('click', () => {
-            const announcementMobile = new PopupAnnouncement.Mobile($);
-            announcementMobile.startLoading();
-        });
-
         // Language show options for mobile
         headerNav.domElements.languageDropdownSubMenu.on('click', (e) => {
             headerNav.domElements.languageDropdownSubMenu.find('.list-language').toggle();
             e.stopPropagation();
         });
+
+        headerNav.checkNewMessage();
     },
 
     changeLanguage: function (lang) {
