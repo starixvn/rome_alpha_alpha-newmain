@@ -26,10 +26,14 @@ var headerNav = {
         profileImage: null
     },
     messageType: {
-        Personal: 0,
-        Normal: 1,
+        Normal: 0,
+        Personal: 1,
         Special: 2,
         System: 3
+    },
+    maximunNewMessage: {
+        value: 99,
+        text: "99+"
     },
     resources: {
         labelAM: '',
@@ -44,11 +48,11 @@ var headerNav = {
 
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index",
-        messages: alpha.urls.messageRootPath + "Message/Index",
+        messages: alpha.urls.messageRootPath + "MessageHistory/Index",
         announcements: alpha.urls.messageRootPath + "Announcement/Index",
         changeLanguage: alpha.urls.mainRootPath + "Language/Change",
         queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx",
-        checkNewMessage: alpha.urls.messageRootPath + "Message/GetNumberOfNewMessage"
+        checkNewMessage: alpha.urls.messageRootPath + "NewMessage/GetNumberOfNewAnnouncement"
     },
 
     unreadMessage: {
@@ -144,18 +148,15 @@ var headerNav = {
     },
 
     buildIconNewMessage: function () {
-        headerNav.domElements.iconNewMessage.on("click", () => {
-            var firstTypeMessage = headerNav.getFirstNewMessage();
-            var remainNewMessage = headerNav.unreadMessage.Total - firstTypeMessage.NumberNewMessage;
-            if (remainNewMessage > 0) {
-                headerNav.domElements.numberNewMessage.text(remainNewMessage);
-            } else {
-                headerNav.domElements.numberNewMessage.text("");
-                headerNav.domElements.numberNewMessage.removeClass("badge-title");
-            }
-            
-            indexManager.changeMenu(firstTypeMessage.url);
-        });
+        var firstUrl = headerNav.popFirstNewMessage();        
+        if (headerNav.unreadMessage.Total > 0) {
+            headerNav.domElements.numberNewMessage.text(headerNav.unreadMessage.Total > headerNav.maximunNewMessage.value ? headerNav.maximunNewMessage.text : headerNav.unreadMessage.Total);
+        } else {
+            headerNav.domElements.numberNewMessage.text("");
+            headerNav.domElements.numberNewMessage.removeClass("badge-title");
+        }
+
+        indexManager.changeMenu(firstUrl);
     },
 
     checkNewMessage: function () {
@@ -166,44 +167,46 @@ var headerNav = {
                 if (result !== undefined) {
                     headerNav.unreadMessage = result;
                     if (result.Total > 0) {
-                        headerNav.domElements.numberNewMessage.text(result.Total);
+                        headerNav.domElements.numberNewMessage.text(result.Total > headerNav.maximunNewMessage.value ? headerNav.maximunNewMessage.text : result.Total);
                         headerNav.domElements.numberNewMessage.addClass("badge-title");
                     } else {
                         headerNav.domElements.numberNewMessage.text("");
                         headerNav.domElements.numberNewMessage.removeClass("badge-title");
                     }
                 }
-                headerNav.buildIconNewMessage();
-                setTimeout(headerNav.checkNewMessage, 2 * 60 * 1000);
+                //headerNav.domElements.iconNewMessage.on('click', headerNav.buildIconNewMessage);
+
+                setTimeout(headerNav.checkNewMessage, 1 * 60 * 1000);
             }
         });
     },
 
-    getFirstNewMessage: function () {
-        if (headerNav.unreadMessage.Special > 0) {
-            return {
-                NumberNewMessage: headerNav.unreadMessage.Special,
-                url: headerNav.urls.messages + "?messageType=" + headerNav.messageType.Special
-            };
-        } else if (headerNav.unreadMessage.System > 0) {
-            return {
-                NumberNewMessage: headerNav.unreadMessage.System,
-                url: headerNav.urls.announcements
-            };
-        } else if (headerNav.unreadMessage.Personal > 0) {
-            return {
-                NumberNewMessage: headerNav.unreadMessage.Personal,
-                url: headerNav.urls.messages + "?messageType=" + headerNav.messageType.Special
-            };
-        }
+    popFirstNewMessage: function () {
+        if (headerNav.unreadMessage.Special > 0) {                        
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Special;
+            headerNav.unreadMessage.Special = 0;
 
-        return {
-            NumberNewMessage: headerNav.messageType.Normal,
-            url: headerNav.urls.messages + "?messageType=" + headerNav.messageType.Normal
-        };
+            return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Special;
+        } else if (headerNav.unreadMessage.System > 0) {            
+
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.System;
+            headerNav.unreadMessage.System = 0;
+
+            return headerNav.urls.announcements;
+        } else if (headerNav.unreadMessage.Normal > 0) {
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Normal;
+            headerNav.unreadMessage.Normal = 0;
+
+            return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Normal;
+        }
+        
+        headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Personal;
+        headerNav.unreadMessage.Personal = 0;
+
+        return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Personal;        
     },
 
-    registerEvents: function () {        
+    registerEvents: function () {
         headerNav.domElements.iconLogOut.on("click", alpha.core.signOut);
 
         headerNav.domElements.iconHome.on("click", () => {
@@ -215,7 +218,7 @@ var headerNav = {
         });
 
         // Logout link for mobile
-        headerNav.domElements.linkLogout.on("click", alpha.core.signOut);        
+        headerNav.domElements.linkLogout.on("click", alpha.core.signOut);
 
         // Quick search component for mobile
         headerNav.domElements.iconSearch.on('click', () => {
@@ -280,6 +283,9 @@ var headerNav = {
             headerNav.domElements.languageDropdownSubMenu.find('.list-language').toggle();
             e.stopPropagation();
         });
+
+        headerNav.domElements.iconNewMessage.on("click", headerNav.buildIconNewMessage);
+        headerNav.domElements.numberNewMessage.on("click", headerNav.buildIconNewMessage);
 
         headerNav.checkNewMessage();
     },

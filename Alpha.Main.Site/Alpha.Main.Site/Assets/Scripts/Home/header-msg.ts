@@ -9,7 +9,6 @@
     private topNews: HTMLElement;
     private scroller: HTMLElement;
     private domElements = {
-        privateMessageCounter: null,
         liveMessage: null,
         moveBetsMessage: null,
         marqueeMessage: null,
@@ -22,11 +21,10 @@
         showLessContainer: null
     };
     protected urls = {
-        mainAppPrivateMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=0',
-        mainAppPublicMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=1',
-        mainAppSpecialMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=2',
-        updatePrivateMessageCount: alpha.urls.messageRootPath + 'Message/UpdatePrivateMessageAsRead',
-        getMessages: alpha.urls.messageRootPath + 'Message/GetLatestMessage'
+        mainAppPrivateMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=0',
+        mainAppPublicMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=1',
+        mainAppSpecialMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=2',        
+        getMessages: alpha.urls.messageRootPath + 'MarqueeMessage/Index'
     };
     protected $: JQueryStatic;
 
@@ -175,8 +173,7 @@
     }
 
     showPrivateMessage = (results: any) => {
-        const privateMessage = results.PrivateMessage ? results.PrivateMessage : 0,
-            unreadPriMsgCount = results.NumberOfUnreadPrivateMessage ? results.NumberOfUnreadPrivateMessage : 0;
+        const privateMessage = results.PrivateMessage ? results.PrivateMessage : 0;
 
         // Process Private Message: show new private message
         const url = this.urls.mainAppPrivateMessageForm;
@@ -203,11 +200,7 @@
             if (this.privateMessageId !== 0) {
                 this.appendMessageToPopup(privateMessage.Content);
             }
-        }
-
-        const unreadPriMsgCountText = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
-
-        this.domElements.privateMessageCounter.html(unreadPriMsgCountText);
+        }        
     }
 
     appendMessageToPopup = (message) => {
@@ -277,7 +270,6 @@
     }
 
     protected cacheElements = () => {
-        this.domElements.privateMessageCounter = this.$('#privateMessageCounter');
         this.domElements.liveMessage = this.$('#liveMessage');
         this.domElements.moveBetsMessage = this.$('#movebets-message');
         this.domElements.marqueeMessage = this.$('#marqueeMessage');
