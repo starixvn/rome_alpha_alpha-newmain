@@ -178,5 +178,11 @@
     "inputFiles": [
       "Assets/styles/error/error.css"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot.css",
+    "inputFiles": [
+      "Assets/styles/chatbot/chatbot.css"
+    ]
   }
 ]

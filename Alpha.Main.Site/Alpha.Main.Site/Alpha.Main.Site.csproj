@@ -473,11 +473,21 @@
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\bundles\chatbot\chatbot.css" />
+    <Content Include="Assets\bundles\chatbot\chatbot.min.css">
+      <DependentUpon>chatbot.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\error.css" />
     <Content Include="Assets\bundles\error.min.css">
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
+    <Content Include="Assets\styles\chatbot\chatbot.css">
+      <DependentUpon>chatbot.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\chatbot.min.css">
+      <DependentUpon>chatbot.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\error\error.css">
       <DependentUpon>error.scss</DependentUpon>
     </Content>
@@ -492,6 +502,7 @@
       <DependentUpon>popup-announcement.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\_mixins2.scss" />
+    <Content Include="Content\Site.css" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.css">
       <DependentUpon>page.scss</DependentUpon>
     </Content>
@@ -797,6 +808,9 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Default\AnnouncementPopup.cshtml" />
     <Content Include="Views\NetworkSpeed\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\ChatBot\Index.cshtml" />
+    <Content Include="Views\ChatBot\ChatBotSetting.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
@@ -1035,6 +1049,7 @@
     <Content Include="Assets\styles\otp\otp.scss" />
     <Content Include="Assets\styles\error\error.scss" />
     <Content Include="Assets\styles\home\popup-announcement.scss" />
+    <Content Include="Assets\styles\chatbot\chatbot.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1136,6 +1151,7 @@
     <Compile Include="App_Start\RouteConfig.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Controllers\ChatBotController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -1203,6 +1219,7 @@
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
+    <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />

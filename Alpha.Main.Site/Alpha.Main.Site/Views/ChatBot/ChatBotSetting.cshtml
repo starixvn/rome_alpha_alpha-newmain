@@ -1,0 +1,20 @@
+﻿@model ChatBotViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SMA Chat Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot")
+</head>
+<body>
+    <div class="page-title">
+        <span class="pull-left">@Model.Title</span>
+    </div>
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @GoogleAnalyticHepler.Render()
+</body>
+</html>

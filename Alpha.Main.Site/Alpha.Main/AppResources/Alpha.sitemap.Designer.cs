@@ -223,6 +223,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chat Bot.
+        /// </summary>
+        public static string chatbot {
+            get {
+                return ResourceManager.GetString("chatbot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Commission By Bet Type.
         /// </summary>
         public static string commissionByBettype {

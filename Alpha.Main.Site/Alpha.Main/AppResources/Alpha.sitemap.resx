@@ -384,4 +384,7 @@
   <data name="PokerGamesWinLoss" xml:space="preserve">
     <value>Poker Games Win Loss</value>
   </data>
+  <data name="chatbot" xml:space="preserve">
+    <value>Chat Bot</value>
+  </data>
 </root>

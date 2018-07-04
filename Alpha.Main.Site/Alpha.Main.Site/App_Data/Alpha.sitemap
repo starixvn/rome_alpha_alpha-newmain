@@ -119,5 +119,6 @@
       <siteMapNode resourceKey="systemUpdate"  appPath="MessageAppPath" url="Announcement/Index" byPassAuthorization="true"></siteMapNode>
       <siteMapNode resourceKey="personalMessage" appPath="MessageAppPath"  url="MessageHistory/Index?messagetype=1" byPassAuthorization="true"></siteMapNode>
     </siteMapNode>
+    <siteMapNode resourceKey="chatbot" appPath="MainAppPath" menuItemType="ChatBotMenuItem" url="ChatBot/Index"></siteMapNode>
   </siteMapNode>
 </siteMap>
