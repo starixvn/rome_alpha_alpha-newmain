@@ -187,15 +187,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chat Bot.
-        /// </summary>
-        public static string ChatBot {
-            get {
-                return ResourceManager.GetString("ChatBot", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Click here.
         /// </summary>
         public static string clickHere {

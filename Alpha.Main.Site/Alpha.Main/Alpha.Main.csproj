@@ -214,6 +214,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppResources\ChatBot.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChatBot.resx</DependentUpon>
+    </Compile>
     <Compile Include="AppResources\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -361,6 +366,29 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Alpha.sitemap.zh-TW.resx">
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\ChatBot.zh-TW.resx">
+      <LastGenOutput>ChatBot.zh-TW.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\ChatBot.zh-CN.resx">
+      <LastGenOutput>ChatBot.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\ChatBot.vi-VN.resx">
+      <LastGenOutput>ChatBot.vn-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\ChatBot.th-TH.resx">
+      <LastGenOutput>ChatBot.th-TH.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\ChatBot.ko-KR.resx">
+      <LastGenOutput>ChatBot.ko-KR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\ChatBot.ja-JP.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChatBot.ja-JP.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppResources\ChatBot.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChatBot.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.resx">
       <SubType>Designer</SubType>

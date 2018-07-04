@@ -9,86 +9,17 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.RenderCommon("/bundles/site-main/chatbot/chatbot")
-    
     @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot")
 </head>
 <body>
     <div class="page-title">
         <span class="pull-left">@Model.Title</span>
     </div>
-    <div class="panel-group panel-table" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel" id="register-panel">
-            <div class="panel-heading" role="tab" id="headingRegister">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerLetstalk" aria-expanded="false" aria-controls="registerLetstalk">
-                        Account
-                    </a>
-                </h4>
-            </div>
-
-            <div id="registerLetstalk" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
-                <div class="panel-body">
-                    <ul class="list-requirements">
-                        <li>
-                            <strong>Download Letstalk IM on your device and create an account.</strong>
-                            <div class="download-content">
-                                <div class="logo-letstalk">
-                                    <img src="~/Assets/Styles/chatbot/images/lettalk.png" />
-                                </div>
-                                <div class="list-download">
-                                    <h2>Letstalk IM</h2>
-                                    <p><strong>Letstalk Technology Limited</strong></p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <a href="#" class="btn-download-ios" target="_parent">
-                                                <img src="~/Assets/Styles/chatbot/images/apple.png" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="_blank" class="btn-download-android">
-                                                <img src="~/Assets/Styles/chatbot/images/google.png" />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <strong>Add Chatbot to your Letstalk account.</strong>
-                            <div class="add-letstalk">
-                                <label>Your Letstalk Account</label>
-                                <input type="text" class="letstalk-textbox" value="LTacc1" />
-                                <button class="btn-submit">Add</button>
-                                <button class="btn-remove">Unsubscribe</button>
-                            </div>
-                            <div class="chatbot-example">
-                                <p>A bot named "<strong>Chatbot</strong>" has sent you a 6-digits verification code via Letstalk.</p>
-                                <img src="~/Assets/Styles/chatbot/images/Chat0.png" alt="Chatbot" />
-                            </div>
-                        </li>
-                        <li>
-                            <strong>Verify yout Letstalk account by entering the verification code.</strong>
-                            <div id="setup-letstalk-message"><div class="msg msg-error">This field is required.</div></div>
-                            <form class="block">
-                                <div class="form-group">
-                                    <label>Verification code</label>
-                                    <input maxlength="6" type="password" class="txt form-control" />
-                                </div>
-                                <div class="form-group last">
-                                    <button class="btn-submit">Verify</button>
-                                    <button class="btn-reset">Resend</button>
-                                </div>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div class="tab-content">
+        @Html.Partial("RegisterAccount")
     </div>
-    
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetScripts.Render("bundles/site-main/otp/otp-default")
-    
+    @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")
     @GoogleAnalyticHepler.Render()
 </body>
 </html>

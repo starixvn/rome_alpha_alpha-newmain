@@ -823,6 +823,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\ChatBot\Index.cshtml" />
     <Content Include="Views\ChatBot\ChatBotSetting.cshtml" />
+    <Content Include="Views\ChatBot\RegisterAccount.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
