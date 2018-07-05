@@ -2,54 +2,97 @@
 @import '../Home/_mixins.scss';
 
 // To remove the 300-350ms tap delay
-html {
-  touch-action: manipulation;
-}
+html { touch-action: manipulation; }
 
-body {
-    background-color: transparent;
-}
+body { background-color: transparent; }
 
-label {
-    font-weight: normal;
-}
+.page-title { margin-bottom: 12px; }
 
 [class^='btn'] {
     height: auto;
     min-height: $height-normal;
 }
 
-.panel-group.panel-table {
-    margin-top: 12px;
+.panel {
+    @include border-radius(0);
+    @include box-shadow-multiple(none);
+    margin-bottom: 5px;
+    background: none;
+    border-color: #dcdcdc;
 
-    .panel-heading .panel-title a {
-        color: #666;
-        border: none;            
+    &.level-2 .panel-heading .panel-title a {
+        background-color: #eff2f9;
     }
 
-    .panel-heading + .panel-collapse > .panel-body {
-        border-top: 1px solid #dcdcdc;
-        padding: 16px 0;
+    input[type='text'],
+    input[type='password'] {
+        border: 1px solid $border-color;
     }
-
-    .panel-body {
-        background-color: #fff;
-    }
-
-    .panel {
-        border-color: #dcdcdc;
-        @include border-radius(0);
-        @include box-shadow-multiple(none);
-    }  
 }
+
+.panel-heading {
+    padding: 0;
+    border-bottom: 0;
+    @include border-radius(0);
+
+    .panel-title a {
+        @include box-sizing;
+        display: block;
+        height: 36px;
+        line-height: 30px; 
+        padding: 0 6px;
+        border: none; 
+        background-color: #f9f9f9;
+        color: #666;
+        font-weight: bold;
+        font-size: 13px;         
+        cursor: pointer;
+
+        &:focus { outline: none; }
+
+        &:before {
+            font-family: 'Iconalpha';
+            font-size: 16px;
+            margin-right: 2px;
+            position: relative;
+            top: 2px;
+        }
+
+        &.collapsed:before {
+            content: '\e929';
+        }
+
+        &:not(.collapsed) {
+            border-color: #b3b3b3;
+
+            &:before {
+                content: '\e928';
+            }
+        }
+
+        &:hover, &:focus {
+            border-color: #b3b3b3;
+            text-decoration: none;
+        }
+    }        
+}
+
+.panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #dcdcdc;
+    padding: 16px 0;
+    background-color: #fff;
+
+    &.has-padding { padding: 12px 16px !important; }
+}
+
+
+// Register Letstalk
 
 .list-requirements {
     margin-bottom: 0;
     padding-left: 30px;
 
-    li {
-        list-style-type: decimal;
-    }
+    li { list-style-type: decimal; }
 }
 
 .download-content {
@@ -57,16 +100,7 @@ label {
     padding: 12px 0 16px;
     margin-left: -10px;
 
-    .logo-letstalk {
-        float: left;
-        width: 90px;
-        height: 90px;
-        border-radius: 20px;
-        img {
-            @include border-radius(20px);
-            width: 100%;
-        }
-    }
+    .logo-letstalk { float: left; }
 
     .list-download {
         float: right;
@@ -92,31 +126,148 @@ label {
     padding-top: 10px;
 
     .letstalk-textbox {
-        margin-right: 8px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
 .chatbot-example {
     padding-bottom: 20px;
 
-    img {
-        margin-top: 8px;
-    }
+    img { margin-top: 8px; }
 }
 
 .block {
     clear: both;
-    max-width: 400px;
-    width: 400px;
+    max-width: 240px;
+    width: 240px;
 
     .txt {
         padding-top: 0;
         padding-bottom: 0;
         width: 100%;
     }
+
+    .group-captcha {
+        position: relative;
+        display: table;
+        width: 100%;
+    }
+
+    .inputCaptcha, .codeCaptcha {
+        display: table-cell;
+    }
+
+    .inputCaptcha {
+        position: relative;
+        top: -6px;
+        width: 130px;
+        margin-right: 10px;
+    }
+
+    .icon-refresh {
+        position: absolute;
+        right: -31px;
+        top: 5px;
+        font-size: 18px;
+        color: #6a6a6a;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .icon-refresh:hover:after {
+        top: -5px;
+        left: -2px;
+        width: 36px;
+        height: 36px;
+    }
 }
 
 .msg {
     float: left;
-    min-width: 400px;
+    min-width: 240px;
+}
+
+// Setting Letstalk
+
+%advanced-buttons {
+    @include border-radius(50%);
+    @include box-shadow-multiple('0 0 4px 2px rgba(0,0,0,.2)');
+    position: fixed;
+    right: 3px;
+    width: 36px;
+    height: 38px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    text-align: center;
+    color: #424242;
+
+    &:hover {
+        background-color: #930a14;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    [class^='icon'] {
+        position: relative;
+        top: 11px;
+    }
+    
+}
+    
+.button-expaned-all {
+    @extend %advanced-buttons;
+    top: 24px;
+}
+
+.button-collapsed-all {
+    @extend %advanced-buttons;
+    top: 72px;
+}
+
+// panel
+
+.filter {
+   padding-top: 0;
+
+   .form-group { margin-bottom: 0; }
+}
+
+.language {
+    @include border-radius(1px);
+    @include box-shadow(0px, 1px, 1px, rgba(0, 0, 0, 0.3));
+    height: 28px;
+    padding: 4px;
+    border: 1px solid $border-color;
+    width: 150px;
+
+    .dropdown-toggle { padding-left: 12px; }
+    
+
+    &:hover { cursor: pointer; }
+
+    .icon-flag {
+        margin-right: 8px;
+        position: relative;
+        top: 1px;
+    }
+}
+
+.list-language {  width: 148px; }
+
+.bage {
+    @include border-radius(4px);
+    padding: 6px 8px;
+    margin: 0 10px;
+    border: 1px solid $border-color;
+    background-color: #f4f4f4;
+    color: #7f7f7f;
+}
+
+.command-example { margin-top: 6px; }
+
+.img-example {
+    margin-left: 40px;
+    margin-top: 10px;
 }

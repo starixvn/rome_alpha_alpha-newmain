@@ -489,17 +489,18 @@
       <DependentUpon>chatbot.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\chatbot\images\apple.png" />
-    <Content Include="Assets\styles\chatbot\images\Chat0.png" />
-    <Content Include="Assets\styles\chatbot\images\Chat1.png" />
-    <Content Include="Assets\styles\chatbot\images\Chat2.png" />
-    <Content Include="Assets\styles\chatbot\images\Chat3.png" />
-    <Content Include="Assets\styles\chatbot\images\Chat4.png" />
-    <Content Include="Assets\styles\chatbot\images\Chat5.png" />
-    <Content Include="Assets\styles\chatbot\images\Chat6.png" />
-    <Content Include="Assets\styles\chatbot\images\Chat7.png" />
-    <Content Include="Assets\styles\chatbot\images\Chat8.png" />
+    <Content Include="Assets\styles\chatbot\images\balance-info.png" />
+    <Content Include="Assets\styles\chatbot\images\captcha.png" />
     <Content Include="Assets\styles\chatbot\images\google.png" />
-    <Content Include="Assets\styles\chatbot\images\lettalk.png" />
+    <Content Include="Assets\styles\chatbot\images\letstalk.png" />
+    <Content Include="Assets\styles\chatbot\images\normal-announcement.png" />
+    <Content Include="Assets\styles\chatbot\images\outstanding-1.png" />
+    <Content Include="Assets\styles\chatbot\images\outstanding-2.png" />
+    <Content Include="Assets\styles\chatbot\images\personal-message.png" />
+    <Content Include="Assets\styles\chatbot\images\special-announcement.png" />
+    <Content Include="Assets\styles\chatbot\images\verify-letstalk.png" />
+    <Content Include="Assets\styles\chatbot\images\winloss.png" />
+    <Content Include="Assets\styles\chatbot\images\yesterday-win-loss.png" />
     <Content Include="Assets\styles\error\error.css">
       <DependentUpon>error.scss</DependentUpon>
     </Content>

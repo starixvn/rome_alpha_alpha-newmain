@@ -14,7 +14,207 @@
     <div class="page-title">
         <span class="pull-left">@Model.Title</span>
     </div>
+    <div class="button-expaned-all" data-toggle="tooltip" data-placement="left" title="Expand all features">
+        <span class="icon-expnadall"></span>
+    </div>
+    <div class="button-collapsed-all" data-toggle="tooltip" data-placement="left" title="Collapse all features">
+        <span class="icon-collapseall"></span>
+    </div>
+
+    <div class="panel">
+        <div class="panel-heading" role="tab" id="headingAccount">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
+                    @ChatBot.Account
+                </a>
+            </h4>
+        </div>
+        <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
+            <div class="panel-body has-padding">
+                <form class="filter">
+                    <div class="form-group">
+                        <label>Your Letstalk Account: <strong>LTacc1</strong></label>
+                        <button class="btn-remove">Unsubscribe</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Chat Bot's Language:</label>
+                        <div class="dropdown language">
+                            <div href="javascript:;" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <span class="icon-flag langFlag-en-us"></span>English
+                                <span class="caret"></span>
+                            </div>
+                            <ul class="dropdown-menu list-language" id="language" data-currentlanguage="en-US">
+                                <li class="en-US">
+                                    <a class="changelanguage-link" data-value="en-US">
+                                        <span class="icon-flag langFlag-en-us"></span>English
+                                    </a>
+                                </li>
+                                <li class="zh-TW">
+                                    <a class="changelanguage-link" data-value="zh-TW">
+                                        <span class="icon-flag langFlag-zh-tw"></span>繁體中文
+                                    </a>
+                                </li>
+                                <li class="zh-CN">
+                                    <a class="changelanguage-link" data-value="zh-CN">
+                                        <span class="icon-flag langFlag-zh-cn"></span>简体中文
+                                    </a>
+                                </li>
+                                <li class="ja-JP">
+                                    <a class="changelanguage-link" data-value="ja-JP">
+                                        <span class="icon-flag langFlag-ja-jp"></span>日本語
+                                    </a>
+                                </li>
+                                <li class="th-TH">
+                                    <a class="changelanguage-link" data-value="th-TH">
+                                        <span class="icon-flag langFlag-th-th"></span>ภาษาไทย
+                                    </a>
+                                </li>
+                                <li class="ko-KR">
+                                    <a class="changelanguage-link" data-value="ko-KR">
+                                        <span class="icon-flag langFlag-ko-kr"></span>한국어
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-heading" role="tab" id="headingReport">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report">
+                    Report
+                </a>
+            </h4>
+        </div>
+        <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
+            <div class="panel-body has-padding">
+                <div class="panel level-2">
+                    <div class="panel-heading" role="tab" id="headingOutstanding">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#outstanding" aria-expanded="false" aria-controls="outstanding">
+                                <input type="checkbox" name="reports" /> Outstanding
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="outstanding" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOutstanding">
+                        <div class="panel-body has-padding">
+                            <p class="command-example">User input commands <span class="bage">outstanding</span> or <span class="bage">out</span> or <span class="bage">os</span></p>
+                            <img class="img-example" src="~/Assets/Styles/chatbot/images/outstanding-1.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel level-2">
+                    <div class="panel-heading" role="tab" id="headingTodayWinLoss">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#todayWinLoss" aria-expanded="false" aria-controls="todayWinLoss">
+                                <input type="checkbox" name="reports" /> Today Win Loss
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="todayWinLoss" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTodayWinLoss">
+                        <div class="panel-body has-padding">
+                            <p class="command-example">User input commands <span class="bage">winloss</span> or <span class="bage">win</span> or <span class="bage">wl</span></p>
+                            <img class="img-example" src="~/Assets/Styles/chatbot/images/winloss.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel level-2">
+                    <div class="panel-heading" role="tab" id="headingBalanceInfo">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#balanceInfo" aria-expanded="false" aria-controls="balanceInfo">
+                                <input type="checkbox" name="reports" /> Balance Info
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="balanceInfo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBalanceInfo">
+                        <div class="panel-body has-padding">
+                            <p class="command-example">User input commands <span class="bage -large">balance</span> or <span class="bage -small">bal</span> or <span class="bage">bl</span></p>
+                            <img class="img-example" src="~/Assets/Styles/chatbot/images/balance-info.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-heading" role="tab" id="headingNotification">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification">
+                    Notification
+                </a>
+            </h4>
+        </div>
+        <div id="notification" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNotification">
+            <div class="panel-body has-padding">
+                <div class="panel level-2">
+                    <div class="panel-heading" role="tab" id="headingYesterdayWinLoss">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#yesterdayWinLoss" aria-expanded="false" aria-controls="yesterdayWinLoss">
+                                <input type="checkbox" name="reports" /> Yesterday Win Loss (Daily sent at 3:00 AM GMT-4)
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="yesterdayWinLoss" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingYesterdayWinLoss">
+                        <div class="panel-body has-padding">
+                            <img class="img-example" src="~/Assets/Styles/chatbot/images/yesterday-win-loss.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel level-2">
+                    <div class="panel-heading" role="tab" id="headingPersonalMessage">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#personalMessage" aria-expanded="false" aria-controls="personalMessage">
+                                <input type="checkbox" name="reports" /> Personal Message
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="personalMessage" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPersonalMessage">
+                        <div class="panel-body has-padding">
+                            <img class="img-example" src="~/Assets/Styles/chatbot/images/personal-message.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel level-2">
+                    <div class="panel-heading" role="tab" id="headingSpecialAnnouncement">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#specialAnnouncement" aria-expanded="false" aria-controls="specialAnnouncement">
+                                <input type="checkbox" name="reports" /> Special Announcement
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="specialAnnouncement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSpecialAnnouncement">
+                        <div class="panel-body has-padding">
+                            <img class="img-example" src="~/Assets/Styles/chatbot/images/special-announcement.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel level-2">
+                    <div class="panel-heading" role="tab" id="headingNormalAnnouncement">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" href="#normalAnnouncement" aria-expanded="false" aria-controls="normalAnnouncement">
+                                <input type="checkbox" name="reports" />Normal Announcement
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="normalAnnouncement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNormalAnnouncement">
+                        <div class="panel-body has-padding">
+                            <img class="img-example" src="~/Assets/Styles/chatbot/images/normal-announcement.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")
     @GoogleAnalyticHepler.Render()
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
 </html>

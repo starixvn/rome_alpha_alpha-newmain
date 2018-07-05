@@ -1,68 +1,77 @@
-﻿<div class="panel-group panel-table" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel" id="register-panel">
-        <div class="panel-heading" role="tab" id="headingRegister">
-            <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerLetstalk" aria-expanded="false" aria-controls="registerLetstalk">
-                    @ChatBot.Account
-                </a>
-            </h4>
-        </div>
-        <div id="registerLetstalk" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
-            <div class="panel-body">
-                <ul class="list-requirements">
-                    <li>
-                        <strong>@ChatBot.DownloadLetstalk</strong>
-                        <div class="download-content">
-                            <div class="logo-letstalk">
-                                <img src="~/Assets/Styles/chatbot/images/lettalk.png" />
-                            </div>
-                            <div class="list-download">
-                                <h2>Letstalk IM</h2>
-                                <p><strong>Letstalk Technology Limited</strong></p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <a href="https://itunes.apple.com/us/app/letstalk-im/id1270059337?mt=8" class="btn-download-ios" target="_blank">
-                                            <img src="~/Assets/Styles/chatbot/images/apple.png" />
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://play.google.com/store/apps/details?id=com.onelab.securecomm&hl=en" target="_blank" class="btn-download-android">
-                                            <img src="~/Assets/Styles/chatbot/images/google.png" />
-                                        </a>
-                                    </li>
-                                </ul>
+﻿
+ <div class="panel" id="register-panel">
+    <div class="panel-heading" role="tab" id="headingRegister">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerLetstalk" aria-expanded="false" aria-controls="registerLetstalk">
+                @ChatBot.Account
+            </a>
+        </h4>
+    </div>
+    <div id="registerLetstalk" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
+        <div class="panel-body">
+            <ul class="list-requirements">
+                <li>
+                    <strong>@ChatBot.DownloadLetstalk</strong>
+                    <div class="download-content">
+                        <div class="logo-letstalk">
+                            <img src="~/Assets/Styles/chatbot/images/letstalk.png" />
+                        </div>
+                        <div class="list-download">
+                            <h2>Letstalk IM</h2>
+                            <p><strong>Letstalk Technology Limited</strong></p>
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="https://itunes.apple.com/us/app/letstalk-im/id1270059337?mt=8" class="btn-download-ios" target="_blank">
+                                        <img src="~/Assets/Styles/chatbot/images/apple.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://play.google.com/store/apps/details?id=com.onelab.securecomm&hl=en" target="_blank" class="btn-download-android">
+                                        <img src="~/Assets/Styles/chatbot/images/google.png" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <strong>@ChatBot.AddLetstalkAccount</strong>
+                    <div class="add-letstalk">
+                        <label>@ChatBot.lblLetstalkAccount</label>
+                        <input type="text" class="letstalk-textbox" value="" />
+                        <button class="btn-submit">@ChatBot.Add</button>
+                        <button class="btn-remove">@ChatBot.Unsubscribe</button>
+                    </div>
+                    <div class="chatbot-example">
+                        <p>@Html.Raw(ChatBot.VerificationCodeExample)</p>
+                        <img src="~/Assets/Styles/chatbot/images/verify-letstalk.png" alt="Chatbot" />
+                    </div>
+                </li>
+                <li>
+                    <strong>@ChatBot.EnterVerificationCode</strong>
+                    <div id="setup-letstalk-message"><div class="msg msg-error">This field is required.</div></div>
+                    <form class="block">
+                        <div class="form-group">
+                            <label>@ChatBot.lblVerificationCode</label>
+                            <input maxlength="6" type="password" class="txt form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Captcha</label>
+                            <div class="group-captcha">
+                                <input type="text" class="inputCaptcha" />
+                                <div class="codeCaptcha">
+                                    <img alt="" src="~/Assets/Styles/chatbot/images/captcha.png" width="100px" height="30px" />
+                                </div>
+                                <i class="icon-refresh"></i>
                             </div>
                         </div>
-                    </li>
-                    <li>
-                        <strong>@ChatBot.AddLetstalkAccount</strong>
-                        <div class="add-letstalk">
-                            <label>@ChatBot.lblLetstalkAccount</label>
-                            <input type="text" class="letstalk-textbox" value="" />
-                            <button class="btn-submit">@ChatBot.Add</button>
-                            <button class="btn-remove">@ChatBot.Unsubscribe</button>
+                        <div class="form-group last">
+                            <button class="btn-submit">@ChatBot.Verify</button>
+                            <button class="btn-reset">@ChatBot.Resend</button>
                         </div>
-                        <div class="chatbot-example">
-                            <p>@Html.Raw(ChatBot.VerificationCodeExample)</p>
-                            <img src="~/Assets/Styles/chatbot/images/Chat0.png" alt="Chatbot" />
-                        </div>
-                    </li>
-                    <li>
-                        <strong>@ChatBot.EnterVerificationCode</strong>
-                        <div id="setup-letstalk-message"><div class="msg msg-error">This field is required.</div></div>
-                        <form class="block">
-                            <div class="form-group">
-                                <label>@ChatBot.lblVerificationCode</label>
-                                <input maxlength="6" type="password" class="txt form-control" />
-                            </div>
-                            <div class="form-group last">
-                                <button class="btn-submit">@ChatBot.Verify</button>
-                                <button class="btn-reset">@ChatBot.Resend</button>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
-            </div>
+                    </form>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
