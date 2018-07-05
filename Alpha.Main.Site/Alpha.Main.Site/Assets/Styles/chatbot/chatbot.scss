@@ -8,6 +8,10 @@ body { background-color: transparent; }
 
 .page-title { margin-bottom: 12px; }
 
+label {
+    font-weight: normal;
+}
+
 [class^='btn'] {
     height: auto;
     min-height: $height-normal;
@@ -92,7 +96,7 @@ body { background-color: transparent; }
     margin-bottom: 0;
     padding-left: 30px;
 
-    li { list-style-type: decimal; }
+    > li { list-style-type: decimal; }
 }
 
 .download-content {
@@ -131,10 +135,14 @@ body { background-color: transparent; }
     }
 }
 
-.chatbot-example {
-    padding-bottom: 20px;
+.verification-info {
+    padding-left: 2px;
+    li { list-style: disc; }
+}
 
-    img { margin-top: 8px; }
+.chatbot-example {
+    padding-top: 10px;
+    padding-bottom: 16px;
 }
 
 .block {
