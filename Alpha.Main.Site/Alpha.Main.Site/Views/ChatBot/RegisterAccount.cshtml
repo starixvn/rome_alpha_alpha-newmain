@@ -9,7 +9,7 @@
     </div>
     <div id="registerLetstalk" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
         <div class="panel-body">
-            <ul class="list-requirements">
+                <ul id="registerLetstalkPanel" class="list-requirements">
                 <li>
                     <strong>@ChatBot.DownloadLetstalk</strong>
                     <div class="download-content">
@@ -36,40 +36,13 @@
                 </li>
                 <li>
                     <strong>@ChatBot.AddLetstalkAccount</strong>
+                        <div id="add-account-message"></div>
                     <div class="add-letstalk">
                         <label>@ChatBot.lblLetstalkAccount</label>
-                        <input type="text" class="letstalk-textbox" value="" />
-                        <button class="btn-submit">@ChatBot.Add</button>
-                        <button class="btn-remove">@ChatBot.Unsubscribe</button>
+                            <input id="txtAccount" type="text" class="letstalk-textbox" value="" />
+                            <button id="btnAdd" class="btn-submit">@ChatBot.Add</button>
+                            <button id="btnUnsubscribe" class="btn-remove" style="display: none;">@ChatBot.Unsubscribe</button>
                     </div>
-                    <div class="chatbot-example">
-                        <p>@Html.Raw(ChatBot.VerificationCodeExample)</p>
-                        <img src="~/Assets/Styles/chatbot/images/verify-letstalk.png" alt="Chatbot" />
-                    </div>
-                </li>
-                <li>
-                    <strong>@ChatBot.EnterVerificationCode</strong>
-                    <div id="setup-letstalk-message"><div class="msg msg-error">This field is required.</div></div>
-                    <form class="block">
-                        <div class="form-group">
-                            <label>@ChatBot.lblVerificationCode</label>
-                            <input maxlength="6" type="password" class="txt form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label>Captcha</label>
-                            <div class="group-captcha">
-                                <input type="text" class="inputCaptcha" />
-                                <div class="codeCaptcha">
-                                    <img alt="" src="~/Assets/Styles/chatbot/images/captcha.png" width="100px" height="30px" />
-                                </div>
-                                <i class="icon-refresh"></i>
-                            </div>
-                        </div>
-                        <div class="form-group last">
-                            <button class="btn-submit">@ChatBot.Verify</button>
-                            <button class="btn-reset">@ChatBot.Resend</button>
-                        </div>
-                    </form>
                 </li>
             </ul>
         </div>

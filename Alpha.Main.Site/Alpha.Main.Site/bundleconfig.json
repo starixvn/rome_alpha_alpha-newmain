@@ -184,5 +184,12 @@
     "inputFiles": [
       "Assets/styles/chatbot/chatbot.css"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/chatbot/chatbot.js"
+    ]
   }
 ]

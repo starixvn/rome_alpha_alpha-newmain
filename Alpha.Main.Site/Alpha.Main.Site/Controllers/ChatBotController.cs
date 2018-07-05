@@ -11,5 +11,13 @@
 
         public ActionResult ChatBotSetting()
             => View(new ChatBotViewModel());
+
+        [HttpPost]
+        public ActionResult AddAccount(string account)
+        {
+            //TODO: Implement business later
+
+            return PartialView("VerifyAccount");
+        }
     }
 }

@@ -133,4 +133,16 @@
   <data name="Resend" xml:space="preserve">
     <value>Resend</value>
   </data>
+  <data name="AlertRequiredField" xml:space="preserve">
+    <value>This field is required.</value>
+  </data>
+  <data name="VerificationCodeIsInvalidOrExpired" xml:space="preserve">
+    <value>Verification code is invalid or expired</value>
+  </data>
+  <data name="UnsubscribeWarning" xml:space="preserve">
+    <value>Unsubscribing Chatbot will stop all of its features. Are you sure you want to proceed.</value>
+  </data>
+  <data name="InputVerificationCode" xml:space="preserve">
+    <value>Please verify your account by inputting the verification code into the text box below and click Verify.</value>
+  </data>
 </root>

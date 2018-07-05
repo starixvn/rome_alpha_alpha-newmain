@@ -88,6 +88,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This field is required..
+        /// </summary>
+        public static string AlertRequiredField {
+            get {
+                return ResourceManager.GetString("AlertRequiredField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chat Bot.
         /// </summary>
         public static string ChatBotTitle {
@@ -111,6 +120,15 @@ namespace Alpha.Main.AppResources {
         public static string EnterVerificationCode {
             get {
                 return ResourceManager.GetString("EnterVerificationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please verify your account by inputting the verification code into the text box below and click Verify..
+        /// </summary>
+        public static string InputVerificationCode {
+            get {
+                return ResourceManager.GetString("InputVerificationCode", resourceCulture);
             }
         }
         
@@ -151,11 +169,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unsubscribing Chatbot will stop all of its features. Are you sure you want to proceed..
+        /// </summary>
+        public static string UnsubscribeWarning {
+            get {
+                return ResourceManager.GetString("UnsubscribeWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A bot named &quot;&lt;strong&gt;Chatbot&lt;/strong&gt;&quot; has sent you a 6-digits verification code via Letstalk..
         /// </summary>
         public static string VerificationCodeExample {
             get {
                 return ResourceManager.GetString("VerificationCodeExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verification code is invalid or expired.
+        /// </summary>
+        public static string VerificationCodeIsInvalidOrExpired {
+            get {
+                return ResourceManager.GetString("VerificationCodeIsInvalidOrExpired", resourceCulture);
             }
         }
         

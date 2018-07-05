@@ -474,8 +474,16 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Assets\bundles\chatbot\chatbot.css" />
+    <Content Include="Assets\bundles\chatbot\chatbot.js" />
     <Content Include="Assets\bundles\chatbot\chatbot.min.css">
       <DependentUpon>chatbot.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\chatbot\chatbot.min.js">
+      <DependentUpon>chatbot.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\chatbot\otp\chatbot.js" />
+    <Content Include="Assets\bundles\chatbot\otp\chatbot.min.js">
+      <DependentUpon>chatbot.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\error.css" />
     <Content Include="Assets\bundles\error.min.css">
@@ -825,6 +833,8 @@
     <Content Include="Views\ChatBot\Index.cshtml" />
     <Content Include="Views\ChatBot\ChatBotSetting.cshtml" />
     <Content Include="Views\ChatBot\RegisterAccount.cshtml" />
+    <Content Include="Views\ChatBot\VerifyAccount.cshtml" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />

@@ -8,18 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommon("/bundles/site-main/chatbot/chatbot")
     @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot")
 </head>
 <body>
     <div class="page-title">
         <span class="pull-left">@Model.Title</span>
     </div>
-
-    @Html.Partial("RegisterAccount")
-
-    
+    <div class="tab-content">
+        @Html.Partial("RegisterAccount")
+    </div>
+    @Html.Hidden("ThisFieldRequired", ChatBot.AlertRequiredField)
+    @Html.Hidden("VerificationCodeIsValidOrExpired", ChatBot.VerificationCodeIsInvalidOrExpired)
+    @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
+    @Html.Hidden("mainRootPath", MicroSites.MainUrl())
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")
+    @StaticResources.RenderScripts("~/assets/bundles/chatbot/chatbot")
     @GoogleAnalyticHepler.Render()
 </body>
 </html>
