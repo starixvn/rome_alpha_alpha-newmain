@@ -1,10 +1,12 @@
-﻿<section class="header-msg" id="headerMessage">
+﻿@using Alpha.Main.Constants
+
+<section class="header-msg" id="headerMessage">
     <span class="icon icon-home withripple" id="home-icon"></span>
 
     <div id="marqueeMessage">
         <span id="scroller">
             <span id="movebets-message" class="maquee movebets-message"></span>
-            <span id="liveMessage" class="maquee live-message" data-live-message-url=""></span>
+            <span id="liveMessage" class="maquee live-message" messageType="@MessageType.Normal"></span>
         </span>
     </div>    
 </section>

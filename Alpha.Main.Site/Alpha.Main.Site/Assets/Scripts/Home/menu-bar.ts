@@ -18,7 +18,8 @@
         accountInfo: null,
         accountInfoHeader: null,
         hamburgerIcon: null,
-        profileImage: null
+        profileImage: null,
+        announcementItems: null
     },
 
     urls: {
@@ -50,6 +51,7 @@
         menuBar.domElements.mainMenuHeader = $('#main-menu-header');
         menuBar.domElements.hamburgerIcon = $('#hamburger-icon');
         menuBar.domElements.profileImage = $('#logoProfileImg');
+        menuBar.domElements.announcementItems = $("#menu-ANNOUNCEMENTS li a");
     },
 
     initSideBar: function () {
@@ -116,6 +118,21 @@
             }
         });
         menuBar.registerMouseHoverForDesktopBrowsers();
+
+        menuBar.domElements.announcementItems.click(function () {
+            menuBar.clickAnnouncementItem($(this));
+        });            
+    },
+
+    clickAnnouncementItem: function (menu) {
+        var url = menu.attr("href");
+        var parameters = url.split('?');
+        if (parameters.length == 2){
+            var messageType = parameters[1].split('=')[1];
+            headerNav.buildIconNewMessageByType(messageType);
+        } else {
+            headerNav.buildIconNewMessageByType(headerNav.messageType.System);
+        }
     },
 
     registerMouseHoverForDesktopBrowsers: function () {

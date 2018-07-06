@@ -21,9 +21,9 @@
         showLessContainer: null
     };
     protected urls = {
-        mainAppPrivateMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=0',
-        mainAppPublicMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=1',
-        mainAppSpecialMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=2',        
+        mainAppPrivateMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=1',
+        mainAppPublicMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=0',
+        mainAppSpecialMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=2',
         getMessages: alpha.urls.messageRootPath + 'MarqueeMessage/Index'
     };
     protected $: JQueryStatic;
@@ -37,22 +37,22 @@
         this.registerEvents();
         this.getMessages();
 
-    }    
-    
-    viewLiveMessage = (event: JQueryEventObject) => {
-        const liveMessageUrl = this.$(event.target).attr('live-message-url');
+    }
 
-        if (liveMessageUrl) {
-            indexManager.changeMenu(liveMessageUrl);
-        }
-        else {
+    viewLiveMessage = (event: JQueryEventObject) => {
+        const messageType = parseInt(this.$(event.target).attr('messageType'));
+
+        headerNav.buildIconNewMessageByType(messageType);
+        if (messageType == alpha.messageType.Normal) {
             indexManager.changeMenu(this.urls.mainAppPublicMessageForm);
+        } else if (messageType == alpha.messageType.Personal) {
+            indexManager.changeMenu(this.urls.mainAppPrivateMessageForm);
         }
     }
 
     viewMoveBetsMessage = (event: JQueryEventObject) => {
         event.stopPropagation();
-    }    
+    }
 
     resetHotMessageElements = (showFullMessage) => {
         const minMessageHeight = 40;
@@ -142,7 +142,7 @@
         this.showPrivateMessage(results);
 
         this.applyScroller();
-                
+
         setTimeout(this.getMessages, 1 * 60 * 1000);
     }
 
@@ -157,7 +157,7 @@
             && publicMessage.Id !== this.publicMessageId) {
             this.domElements.liveMessage
                 .html(publicMessage.Content + '. ')
-                .find('font').attr('live-message-url', url);
+                .find('font').attr('messageType', alpha.messageType.Personal);
 
             this.publicMessageId = publicMessage.Id;
             if (this.publicMessageId !== 0) {
@@ -195,19 +195,19 @@
                     "<font id='private-message-content' color=\"green\">Private message: " +
                     privateMessage.Content +
                     "</font>")
-                    .find('#private-message-content').attr('live-message-url', url);
+                    .find('#private-message-content').attr('messageType', 1);
             }
             if (this.privateMessageId !== 0) {
                 this.appendMessageToPopup(privateMessage.Content);
             }
-        }        
+        }
     }
 
     appendMessageToPopup = (message) => {
         this.domElements.contentMessage.append('<p class="not-shown-message"></p>');
 
         this.domElements.contentMessage.find("p:last").html(message);
-    }    
+    }
 
     applyScroller = () => {
         if (this.scrollerLeft) {
@@ -284,7 +284,6 @@
 
     protected registerEvents = () => {
         this.domElements.liveMessage.on('click', this.viewLiveMessage);
-        this.domElements.marqueeMessage.on('click', this.viewLiveMessage);
         this.domElements.moveBetsMessage.on('click', this.viewMoveBetsMessage);
         this.domElements.showMoreContainer.on('click', this.showMoreHotMessage);
         this.domElements.showLessContainer.on('click', this.showLessHotMessage);

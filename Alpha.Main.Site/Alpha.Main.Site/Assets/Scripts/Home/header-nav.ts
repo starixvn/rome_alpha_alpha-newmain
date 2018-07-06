@@ -147,6 +147,33 @@ var headerNav = {
         headerNav.domElements.languageSelectorContainer.html(language);
     },
 
+    markMessageAsRead: function (type) {
+        if (type == headerNav.messageType.Normal) {
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Normal;
+            headerNav.unreadMessage.Normal = 0;
+        } else if (type == headerNav.messageType.Personal) {
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Personal;
+            headerNav.unreadMessage.Personal = 0;
+        } else if (type == headerNav.messageType.System) {
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.System;
+            headerNav.unreadMessage.System = 0;
+        } else {
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Special;
+            headerNav.unreadMessage.Special = 0;
+        }
+    },
+
+    buildIconNewMessageByType: function (type) {
+        headerNav.markMessageAsRead(type);
+
+        if (headerNav.unreadMessage.Total > 0) {
+            headerNav.domElements.numberNewMessage.text(headerNav.unreadMessage.Total > headerNav.maximunNewMessage.value ? headerNav.maximunNewMessage.text : headerNav.unreadMessage.Total);
+        } else {
+            headerNav.domElements.numberNewMessage.text("");
+            headerNav.domElements.numberNewMessage.removeClass("badge-title");
+        }
+    },
+
     buildIconNewMessage: function () {
         var firstUrl = headerNav.popFirstNewMessage();        
         if (headerNav.unreadMessage.Total > 0) {
@@ -173,8 +200,7 @@ var headerNav = {
                         headerNav.domElements.numberNewMessage.text("");
                         headerNav.domElements.numberNewMessage.removeClass("badge-title");
                     }
-                }
-                //headerNav.domElements.iconNewMessage.on('click', headerNav.buildIconNewMessage);
+                }                
 
                 setTimeout(headerNav.checkNewMessage, 1 * 60 * 1000);
             }
@@ -182,26 +208,21 @@ var headerNav = {
     },
 
     popFirstNewMessage: function () {
-        if (headerNav.unreadMessage.Special > 0) {                        
-            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Special;
-            headerNav.unreadMessage.Special = 0;
+        if (headerNav.unreadMessage.Special > 0) {
+            headerNav.markMessageAsRead(headerNav.messageType.Special);
 
             return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Special;
-        } else if (headerNav.unreadMessage.System > 0) {            
-
-            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.System;
-            headerNav.unreadMessage.System = 0;
+        } else if (headerNav.unreadMessage.System > 0) {
+            headerNav.markMessageAsRead(headerNav.messageType.System);
 
             return headerNav.urls.announcements;
         } else if (headerNav.unreadMessage.Normal > 0) {
-            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Normal;
-            headerNav.unreadMessage.Normal = 0;
+            headerNav.markMessageAsRead(headerNav.messageType.Normal);
 
             return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Normal;
-        }
-        
-        headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Personal;
-        headerNav.unreadMessage.Personal = 0;
+        } 
+
+        headerNav.markMessageAsRead(headerNav.messageType.Personal);
 
         return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Personal;        
     },
