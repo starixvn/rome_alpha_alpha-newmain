@@ -1,5 +1,10 @@
 ﻿namespace Alpha.Main.Site
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Web.Helpers;
+    using System.Web.Mvc;
+    using System.Web.Routing;
     using App_Start;
     using Auth.Filters;
     using Configurations;
@@ -10,15 +15,10 @@
     using Fanex.Logging.Extensions.Web;
     using ONEbook.UM.Filters;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.Web.Helpers;
-    using System.Web.Mvc;
-    using System.Web.Routing;
     using Web;
-    using Web.Helpers;
     using Web.Filters;
     using Fanex.RemotingRef;
+    using Web.Helpers;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -31,6 +31,9 @@
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
+            //ChatbotClientManager
+            //    .UseConfig(new BotClientConfigs(AppSettings.ChatBotBaseUrl, AppSettings.ChatBotApiKey))
+            //    .UseRestClient(new RestClientHelper());
             DependencyConfig.Init();
             StaticResources.Init(StaticResources.GetBuildVersion());
 
@@ -39,7 +42,6 @@
                 .Use(new OldConnectionStringProvider())
                 .UseDefaultDbSettingProvider(
                     resourcePath: AppSettings.StoreProcedurePath,
-                    ignoreRedundantParameters: false,
                     enableWatching: true)
                .Use((settingKey, commandTimeout) => new WrappingExceptionObjectDb(settingKey, commandTimeout))
                .Run();

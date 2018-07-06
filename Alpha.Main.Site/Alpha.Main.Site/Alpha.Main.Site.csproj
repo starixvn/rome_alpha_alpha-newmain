@@ -74,6 +74,10 @@
       <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CasinoLibrary, Version=1.0.2.14, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CasinoLibrary.1.0.2.17\lib\net40\CasinoLibrary.dll</HintPath>
       <Private>True</Private>
@@ -86,8 +90,16 @@
       <HintPath>..\packages\CasinoLibrary.1.0.2.17\lib\net40\CasinoUtility.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Chatbot.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Chatbot.Client.1.0.0-beta5\lib\net461\Chatbot.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.Age.UI, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Age.UI.3.0.3.0\lib\net461\Fanex.Age.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Caching.2.0.0\lib\net461\Fanex.Caching.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.CustomerSetting.Module.Casino, Version=2.0.0.13, Culture=neutral, processorArchitecture=MSIL">
@@ -834,7 +846,12 @@
     <Content Include="Views\ChatBot\ChatBotSetting.cshtml" />
     <Content Include="Views\ChatBot\RegisterAccount.cshtml" />
     <Content Include="Views\ChatBot\VerifyAccount.cshtml" />
+    <Content Include="Views\ChatBot\Language.cshtml" />
+    <Content Include="Views\ChatBot\Captcha.cshtml" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot.ts" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
@@ -1187,7 +1204,9 @@
     <Compile Include="Controllers\OtpController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
+    <Compile Include="DummyService\SettingServiceImpl.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Handlers\ChatBotHandler.cs" />
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
@@ -1204,10 +1223,16 @@
     <Compile Include="Helpers\BrowserHelperImpl.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Helpers\RestClientHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Requests\AllLanguagesQuery.cs" />
     <Compile Include="Requests\BrowserQuery.cs" />
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
+    <Compile Include="Requests\ChatBot\AddAccountCommand.cs" />
+    <Compile Include="Requests\ChatBot\ResendVerificationCodeCommand.cs" />
+    <Compile Include="Requests\ChatBot\SetUpChatBotQuery.cs" />
+    <Compile Include="Requests\ChatBot\UnsubscribeCommand.cs" />
+    <Compile Include="Requests\ChatBot\VerifyVerificationCodeCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfo\BalanceInfoQuery.cs" />
     <Compile Include="Requests\Dashboard\MemberRequests\MemberRequestQuery.cs" />
@@ -1244,6 +1269,8 @@
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs" />
+    <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs" />
+    <Compile Include="ViewModels\ChatBot\VerifyAccountViewModel.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
@@ -1296,9 +1323,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.3.0.2862\analyzers\Google.Protobuf.dll" />
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.3.0.2862\analyzers\SonarAnalyzer.CSharp.dll" />
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.3.0.2862\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

@@ -1,0 +1,14 @@
+﻿@model LanguageViewModel
+<a href="javascript:;" data-target="#" class="dropdown-toggle language-selector-container" data-toggle="dropdown" aria-expanded="false">
+    <span class="caret"></span>
+</a>
+<ul class="dropdown-menu list-language" id="language" data-currentlanguage="@Model.CurrentLanguage">
+    @foreach (var languageItem in Model.Data)
+    {
+        <li class="@languageItem.Key">
+            <a class="changelanguage-link" data-value="@languageItem.Key">
+                <span class="icon-flag langFlag-@languageItem.Key.ToLowerInvariant()"></span>@languageItem.Value
+            </a>
+        </li>
+    }
+</ul>

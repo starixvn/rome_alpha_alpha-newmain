@@ -145,4 +145,40 @@
   <data name="InputVerificationCode" xml:space="preserve">
     <value>Please verify your account by inputting the verification code into the text box below and click Verify.</value>
   </data>
+  <data name="CollapseAll" xml:space="preserve">
+    <value>Collapse all features</value>
+  </data>
+  <data name="ExpandAll" xml:space="preserve">
+    <value>Expand all features</value>
+  </data>
+  <data name="ChatBotLanguage" xml:space="preserve">
+    <value>Chat Bot's Language</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="UserInputCommands" xml:space="preserve">
+    <value>User input commands</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="YesterdayWinLoss" xml:space="preserve">
+    <value>Yesterday Win Loss (Daily sent at 3:00 AM GMT-4)</value>
+  </data>
+  <data name="AccountDoesNotExist" xml:space="preserve">
+    <value>Account does not exist.</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>Captcha is invalid</value>
+  </data>
+  <data name="AccountHasAlreadyBeenRegistered" xml:space="preserve">
+    <value>The inputted account has already been registered by another SMA account.</value>
+  </data>
+  <data name="OverMaxAddAccountTimes" xml:space="preserve">
+    <value>You have requested too many times today, Please try again later.</value>
+  </data>
 </root>

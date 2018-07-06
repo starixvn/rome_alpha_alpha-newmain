@@ -1,4 +1,6 @@
-﻿<li>
+﻿@using CaptchaMvc.HtmlHelpers;
+@model VerifyAccountViewModel
+<li id="verification-section">
     <strong>@ChatBot.EnterVerificationCode</strong>
     <ul class="verification-info">
         <li class="chatbot-example">
@@ -9,20 +11,17 @@
     </ul>
     <div id="verification-code-message"></div>
     <form class="verification-form" id="verification-form">
+        @Html.Hidden("UserId", Model.UserId)
+        @Html.Hidden("MessengerAccount", Model.MessengerAccount)
+        @Html.Hidden("IsShowCaptcha", Model.IsShowCaptcha)
         <div class="form-group">
             <label>@ChatBot.lblVerificationCode</label>
             <input id="txtVerificationCode" maxlength="6" type="password" class="verify-text" />
         </div>
-        <div class="form-group">
-            <label>Captcha</label>
-            <div class="group-captcha">
-                <input type="text" class="captcha-text" />
-                <div class="captcha-code">
-                    <img alt="" src="~/Assets/Styles/chatbot/images/captcha.png" width="100px" height="30px" />
-                </div>
-                <i class="icon-refresh"></i>
-            </div>
-        </div>
+        @if (Model.IsShowCaptcha)
+        {
+            @Html.Captcha(4, "Captcha", ViewData)
+        }
         <div class="form-group last">
             <input id="btnVerify" class="btn-submit" type="submit" value="@ChatBot.Verify" />
             <input id="btnResend" class="btn-reset" type="button" value="@ChatBot.Resend" />

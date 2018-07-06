@@ -1,4 +1,4 @@
-﻿
+﻿@model RegisterAccountViewModel
 <div class="panel" id="register-panel">
     <div class="panel-heading" role="tab" id="headingRegister">
         <h4 class="panel-title">
@@ -42,13 +42,18 @@
                             <label>@ChatBot.lblLetstalkAccount</label>
                         </div>
                         <div class="form-group m-b-0">
-                            <input id="txtAccount" type="text" class="letstalk-text" value="" />
-                            <button id="btnAdd" class="btn-submit">@ChatBot.Add</button>
-                            <button id="btnUnsubscribe" class="btn-remove d-none">@ChatBot.Unsubscribe</button>
+                            <input id="txtAccount" type="text" class="letstalk-text" value="@Model.MessengerAccount" />
+                            <button id="btnAdd" class="btn-submit" style="@(Model.IsVerifying ? "display:none" : "")">@ChatBot.Add</button>
+                            <button id="btnUnsubscribe" class="btn-remove" style="@(Model.IsVerifying? "": "display:none")">@ChatBot.Unsubscribe</button>
                         </div>
                     </form>
                 </li>
+                @if (Model.IsVerifying)
+                {
+                    @Html.Partial("VerifyAccount", Model.VerifyAccountViewModel)
+                }
             </ul>
         </div>
     </div>
 </div>
+@Html.Hidden("IsVerifying", Model.IsVerifying)

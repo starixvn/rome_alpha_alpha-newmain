@@ -1,0 +1,62 @@
+﻿namespace Alpha.Main.Site.Helpers
+{
+    using System;
+    using System.Threading.Tasks;
+    using Chatbot.Client;
+    using RestSharp;
+
+    public class RestClientHelper : Chatbot.Client.Helpers.IRestClient
+    {
+        private readonly IRestClient restClient;
+
+        public RestClientHelper(IRestClient restClient = null)
+        {
+            this.restClient = restClient ?? CreateDefaultClient();
+        }
+
+        public static IRestClient CreateDefaultClient()
+           => new RestClient
+           {
+               BaseUrl = new Uri(ChatbotClientManager.BotClientConfigs.ApiBaseUrl)
+           };
+
+        public Task<T> ExecuteGetAsync<T>(string endPoint, object data = null)
+            => ExecuteAsync<T>(endPoint, Method.GET, data);
+
+        public Task<T> ExecutePostAsync<T>(string endPoint, object data = null)
+            => ExecuteAsync<T>(endPoint, Method.POST, data);
+
+        private async Task<T> ExecuteAsync<T>(string resource, Method method, object data)
+        {
+            ValidateResource(resource);
+
+            var request = new RestRequest(resource, method);
+
+            if (data != null)
+            {
+                request.AddJsonBody(data);
+            }
+
+            var response = await restClient.ExecuteTaskAsync<T>(request);
+
+            if (IsSuccessfulResponse(response))
+            {
+                return response.Data;
+            }
+
+            throw new InvalidOperationException(response.ErrorMessage);
+        }
+
+        private static void ValidateResource(string endPoint)
+        {
+            if (string.IsNullOrWhiteSpace(endPoint))
+            {
+                throw new ArgumentNullException(nameof(endPoint));
+            }
+        }
+
+        private static bool IsSuccessfulResponse(IRestResponse response)
+            => (int)response.StatusCode >= 200 && (int)response.StatusCode <= 299
+                && response.ResponseStatus == ResponseStatus.Completed;
+    }
+}

@@ -1,0 +1,27 @@
+﻿@model CaptchaMvc.Models.DefaultBuildInfoModel
+@{
+    string id = Guid.NewGuid().ToString("N");
+
+    string reloadCaptchaFunctionName = string.Format("______{0}________", Guid.NewGuid().ToString("N"));
+}
+@Html.Hidden("CaptchaId", id)
+@Html.Hidden("ModelRefreshUrl", Model.RefreshUrl)
+@Html.Hidden("ModelTokenParameterName", Model.TokenParameterName)
+@Html.Hidden("ModelTokenElementId", Model.TokenElementId)
+@Html.Hidden("NoInteractionTimeInMinutes", 5 * 60 * 1000)
+@Html.Hidden("ModelImageElementId", Model.ImageElementId)
+@Html.Hidden("ReloadCaptchaFunctionName", reloadCaptchaFunctionName)
+<div id="captcha-message"></div>
+<div class="form-group">
+    <label>Captcha</label>
+    <div class="group-captcha">
+        @Html.TextBox(Model.InputElementId, null, new { @id = "txtCaptcha", @class = "captcha-text", @tabindex = "4" })
+        <div class="captcha-code">
+            <img alt="" id="@Model.ImageElementId" src="@Model.ImageUrl" width="100px" height="30px" />
+            @Html.Hidden(Model.TokenElementId, Model.TokenValue)
+        </div>
+        <div class="action-refresh" id="@id" href="#@Model.ImageElementId">
+            <i class="icon-refresh" id="captcha-refresh-icon"></i>
+        </div>
+    </div>
+</div>

@@ -70,6 +70,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account does not exist..
+        /// </summary>
+        public static string AccountDoesNotExist {
+            get {
+                return ResourceManager.GetString("AccountDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The inputted account has already been registered by another SMA account..
+        /// </summary>
+        public static string AccountHasAlreadyBeenRegistered {
+            get {
+                return ResourceManager.GetString("AccountHasAlreadyBeenRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
         public static string Add {
@@ -97,11 +115,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chat Bot&apos;s Language.
+        /// </summary>
+        public static string ChatBotLanguage {
+            get {
+                return ResourceManager.GetString("ChatBotLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chat Bot.
         /// </summary>
         public static string ChatBotTitle {
             get {
                 return ResourceManager.GetString("ChatBotTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collapse all features.
+        /// </summary>
+        public static string CollapseAll {
+            get {
+                return ResourceManager.GetString("CollapseAll", resourceCulture);
             }
         }
         
@@ -124,11 +160,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expand all features.
+        /// </summary>
+        public static string ExpandAll {
+            get {
+                return ResourceManager.GetString("ExpandAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please verify your account by inputting the verification code into the text box below and click Verify..
         /// </summary>
         public static string InputVerificationCode {
             get {
                 return ResourceManager.GetString("InputVerificationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Captcha is invalid.
+        /// </summary>
+        public static string InvalidCaptcha {
+            get {
+                return ResourceManager.GetString("InvalidCaptcha", resourceCulture);
             }
         }
         
@@ -147,6 +201,42 @@ namespace Alpha.Main.AppResources {
         public static string lblVerificationCode {
             get {
                 return ResourceManager.GetString("lblVerificationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notification.
+        /// </summary>
+        public static string Notification {
+            get {
+                return ResourceManager.GetString("Notification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to or.
+        /// </summary>
+        public static string Or {
+            get {
+                return ResourceManager.GetString("Or", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have requested too many times today, Please try again later..
+        /// </summary>
+        public static string OverMaxAddAccountTimes {
+            get {
+                return ResourceManager.GetString("OverMaxAddAccountTimes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report.
+        /// </summary>
+        public static string Report {
+            get {
+                return ResourceManager.GetString("Report", resourceCulture);
             }
         }
         
@@ -178,6 +268,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User input commands.
+        /// </summary>
+        public static string UserInputCommands {
+            get {
+                return ResourceManager.GetString("UserInputCommands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A bot named &quot;&lt;strong&gt;Chatbot&lt;/strong&gt;&quot; has sent you a 6-digits verification code via Letstalk..
         /// </summary>
         public static string VerificationCodeExample {
@@ -201,6 +300,15 @@ namespace Alpha.Main.AppResources {
         public static string Verify {
             get {
                 return ResourceManager.GetString("Verify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yesterday Win Loss (Daily sent at 3:00 AM GMT-4).
+        /// </summary>
+        public static string YesterdayWinLoss {
+            get {
+                return ResourceManager.GetString("YesterdayWinLoss", resourceCulture);
             }
         }
     }

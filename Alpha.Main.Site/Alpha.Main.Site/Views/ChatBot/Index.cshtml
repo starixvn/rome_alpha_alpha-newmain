@@ -16,10 +16,21 @@
         <span class="pull-left">@Model.Title</span>
     </div>
     <div class="tab-content">
-        @Html.Partial("RegisterAccount")
+        @if (Model.IsAlreadySetup)
+        {
+            @Html.Partial("ChatBotSetting")
+        }
+        else
+        {
+            @Html.Partial("RegisterAccount", Model.RegisterAccountViewModel)
+        }
     </div>
+    @Html.Hidden("IsAlreadySetup", Model.IsAlreadySetup)
     @Html.Hidden("ThisFieldRequired", ChatBot.AlertRequiredField)
+    @Html.Hidden("AccountDoesNotExist", ChatBot.AccountDoesNotExist)
     @Html.Hidden("VerificationCodeIsValidOrExpired", ChatBot.VerificationCodeIsInvalidOrExpired)
+    @Html.Hidden("OverMaxAddAccountTimes", ChatBot.OverMaxAddAccountTimes)
+    @Html.Hidden("AccountHasAlreadyBeenRegistered", ChatBot.AccountHasAlreadyBeenRegistered)
     @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
     @Html.Hidden("mainRootPath", MicroSites.MainUrl())
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")

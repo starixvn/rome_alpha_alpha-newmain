@@ -383,7 +383,6 @@
       <LastGenOutput>ChatBot.ko-KR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\ChatBot.ja-JP.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ChatBot.ja-JP.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\ChatBot.resx">
@@ -441,9 +440,9 @@
     <CodeAnalysisDictionary Include="CodeAnalysis\CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.3.0.2862\analyzers\Google.Protobuf.dll" />
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.3.0.2862\analyzers\SonarAnalyzer.CSharp.dll" />
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.3.0.2862\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fanex.Visual-StyleCop.MSBuild.4.7.59.2\build\Fanex.Visual-StyleCop.MSBuild.Targets" Condition="Exists('..\packages\Fanex.Visual-StyleCop.MSBuild.4.7.59.2\build\Fanex.Visual-StyleCop.MSBuild.Targets')" />
