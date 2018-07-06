@@ -1,21 +1,23 @@
 ﻿<li>
     <strong>@ChatBot.EnterVerificationCode</strong>
-    <div class="chatbot-example">
-        <p>@Html.Raw(ChatBot.VerificationCodeExample)</p>
-        <img src="~/Assets/Styles/chatbot/images/verify-letstalk.png" alt="Chatbot" />
-    </div>
-    <p>@ChatBot.InputVerificationCode</p>
+    <ul class="verification-info">
+        <li class="chatbot-example">
+            <p>@Html.Raw(ChatBot.VerificationCodeExample)</p>
+            <img src="~/Assets/Styles/chatbot/images/verify-letstalk.png" alt="Chatbot" />
+        </li>
+        <li>@ChatBot.InputVerificationCode</li>
+    </ul>
     <div id="verification-code-message"></div>
-    <form class="block" id="verification-form">
+    <form class="verification-form" id="verification-form">
         <div class="form-group">
             <label>@ChatBot.lblVerificationCode</label>
-            <input id="txtVerificationCode" maxlength="6" type="password" class="txt form-control" />
+            <input id="txtVerificationCode" maxlength="6" type="password" class="verify-text" />
         </div>
         <div class="form-group">
             <label>Captcha</label>
             <div class="group-captcha">
-                <input type="text" class="inputCaptcha" />
-                <div class="codeCaptcha">
+                <input type="text" class="captcha-text" />
+                <div class="captcha-code">
                     <img alt="" src="~/Assets/Styles/chatbot/images/captcha.png" width="100px" height="30px" />
                 </div>
                 <i class="icon-refresh"></i>

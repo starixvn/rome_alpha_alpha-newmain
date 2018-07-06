@@ -12,9 +12,23 @@ label {
     font-weight: normal;
 }
 
+.m-b-0 {
+    margin-bottom: 0;
+}
+
+.d-none {
+    display: none;
+}
+
 [class^='btn'] {
     height: auto;
     min-height: $height-normal;
+}
+
+.msg {
+    float: left;
+    min-width: 240px;
+    margin-bottom: 0;
 }
 
 .panel {
@@ -125,32 +139,34 @@ label {
 }
 
 .add-letstalk {
-    margin-left: -10px;
+    clear: both;
+    min-width: 250px;
     padding-bottom: 25px;
     padding-top: 10px;
 
-    .letstalk-textbox {
-        margin-left: 10px;
+    .letstalk-text {
+        width: 140px;
         margin-right: 10px;
     }
 }
 
 .verification-info {
     padding-left: 2px;
+
     li { list-style: disc; }
+
+    .chatbot-example {
+        padding-top: 10px;
+        padding-bottom: 16px;
+    }
 }
 
-.chatbot-example {
-    padding-top: 10px;
-    padding-bottom: 16px;
-}
-
-.block {
+.verification-form {
     clear: both;
-    max-width: 240px;
     width: 240px;
+    padding-top: 12px;
 
-    .txt {
+    .verify-text {
         padding-top: 0;
         padding-bottom: 0;
         width: 100%;
@@ -162,14 +178,24 @@ label {
         width: 100%;
     }
 
-    .inputCaptcha, .codeCaptcha {
+    .captcha-text, .captcha-code {
         display: table-cell;
     }
 
-    .inputCaptcha {
+    .captcha-code {
+        width: 100px;
+        height: 30px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .captcha-text {
         position: relative;
         top: -6px;
-        width: 130px;
+        width: 140px;
         margin-right: 10px;
     }
 
@@ -192,14 +218,9 @@ label {
     }
 }
 
-.msg {
-    float: left;
-    min-width: 240px;
-}
-
 // Setting Letstalk
 
-%advanced-buttons {
+%float-button {
     @include border-radius(50%);
     @include box-shadow-multiple('0 0 4px 2px rgba(0,0,0,.2)');
     position: fixed;
@@ -225,12 +246,12 @@ label {
 }
     
 .button-expaned-all {
-    @extend %advanced-buttons;
+    @extend %float-button;
     top: 24px;
 }
 
 .button-collapsed-all {
-    @extend %advanced-buttons;
+    @extend %float-button;
     top: 72px;
 }
 
@@ -260,9 +281,9 @@ label {
         position: relative;
         top: 1px;
     }
-}
 
-.list-language {  width: 148px; }
+    .list-language {  width: 148px; }
+}
 
 .bage {
     @include border-radius(4px);
