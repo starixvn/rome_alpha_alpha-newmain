@@ -62,7 +62,7 @@ namespace Alpha.Main.Site.Controllers
                 return Redirect(SecurityCodePath);
             }
 
-            var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode());
+            var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), null);
 
             var viewModel = mediator.Send(query);
 

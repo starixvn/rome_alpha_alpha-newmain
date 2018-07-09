@@ -34,6 +34,7 @@
             this.encodeDataFunction = encodeDataFunction;
             this.browserHelper = browserHelper;
             this.RequiredNetworkSpeedCalculation = message.CustId > 0 && AppSettings.TrackingConnectionCustIds.Contains(message.CustId);
+            DisableMessages = message.DisableMessages;
         }
 
         public bool EnableSecurityCode => message.EnableSecurityCode;
@@ -103,5 +104,7 @@
         }
 
         public bool RequiredNetworkSpeedCalculation { get; }
+
+        public bool DisableMessages { get; }
     }
 }

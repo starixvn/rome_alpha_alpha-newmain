@@ -64,6 +64,10 @@
 }
 
 $(document).ready(() => {
+    if ($("#disableMessages").val() == "1") {
+        return;
+    }
+
     if (alpha.isScreenLower768) {
         const mobileAnnouncement = new PopupAnnouncement.Mobile($);
         mobileAnnouncement.init();
