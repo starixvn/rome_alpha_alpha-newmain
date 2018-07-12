@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Functions SiteId="105" SiteName="Main">
+<Functions>
   <Function Name="Message">
     <Setting Key="Dot_Msg_SetMessage" SpName="Dot_Msg_SetMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
       <Mapping DataField="messageId" ObjectProperty="Id" />
     </Setting>
     <Setting Key="Dot_Msg_SetUsrMessage" SpName="Dot_Msg_SetUsrMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
-    </Setting> 
+    </Setting>   
   </Function>
 </Functions>
