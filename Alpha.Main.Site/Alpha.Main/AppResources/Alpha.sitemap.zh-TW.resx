@@ -250,7 +250,7 @@
     <value>球賽輸贏</value>
   </data>
   <data name="MemberWinLimit" xml:space="preserve">
-    <value>會員的贏額上限</value>
+    <value>會員輸贏限制</value>
   </data>
   <data name="memberwinlossdetail" xml:space="preserve">
     <value>會員輸贏資料</value>

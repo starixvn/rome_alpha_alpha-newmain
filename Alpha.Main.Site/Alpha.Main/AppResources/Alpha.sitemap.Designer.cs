@@ -475,7 +475,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Member Win Limit.
+        ///   Looks up a localized string similar to Member Win/Loss Limit.
         /// </summary>
         public static string MemberWinLimit {
             get {
