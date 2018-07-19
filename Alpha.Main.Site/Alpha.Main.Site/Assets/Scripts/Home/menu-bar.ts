@@ -220,14 +220,14 @@
 
         // To work on IE, use plain-old javascript onload event
         accInfoContent[0].onload = function () {
+            var navigationHeight = $('#navigation').height();
+            var mainMenuHeight = $('.main-tab').height();
+            var accountInfoIframeHeight = navigationHeight - mainMenuHeight;
+            $('#account-info-tab').css("height", accountInfoIframeHeight);
+            $('#accountinfo-content').css("height", accountInfoIframeHeight - 5);
+
             if (alpha.isMobile) {
                 menuBar.domElements.accountInfoContent.addClass('small-device');
-            }
-            else {
-                var contentHeight = accInfoContent.contents().find("body").height();
-                var iframeHeightPadding = 40;
-                var iframeHeight = contentHeight + iframeHeightPadding;
-                accInfoContent.css("height", iframeHeight);
             }
         };
     },
