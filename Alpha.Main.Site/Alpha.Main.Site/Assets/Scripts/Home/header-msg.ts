@@ -44,7 +44,10 @@
     init = () => {
         this.cacheElements();
         this.registerEvents();
-        this.getHotMessages();
+
+        if (this.$("#disableMessages").val() != "1") {
+            this.getHotMessages();
+        }
     }
 
     viewPrivateMessage = () => {
@@ -412,8 +415,10 @@
 }
 
 $(() => {
-    if (!alpha.isScreenLower768) {
-        const headerMessage = new HeaderMessage($);
-        headerMessage.init();
+    if (alpha.isScreenLower768) {
+        return;
     }
+
+    const headerMessage = new HeaderMessage($);
+    headerMessage.init();
 });

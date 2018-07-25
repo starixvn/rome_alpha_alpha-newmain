@@ -62,7 +62,7 @@
             // Arrange
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false);
+            var query = new IndexQuery(userSession, false, false);
 
             // Act
             var viewModel = defaultHandler.Handle(query);
@@ -79,7 +79,7 @@
             userSession.IsPasswordExpired.Returns(true);
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false);
+            var query = new IndexQuery(userSession, false, false);
 
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
@@ -109,7 +109,7 @@
             userSession.IsPasswordExpired.Returns(true);
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false);
+            var query = new IndexQuery(userSession, false, false);
 
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));

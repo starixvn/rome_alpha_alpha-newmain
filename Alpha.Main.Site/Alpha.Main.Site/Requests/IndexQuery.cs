@@ -2,6 +2,7 @@
 
 namespace Alpha.Main.Site.Models.Requests
 {
+    using Configurations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
     using ViewModels;
@@ -10,13 +11,16 @@ namespace Alpha.Main.Site.Models.Requests
     {
         private readonly bool isEnableSecurityCode;
         private readonly IUserSession userSession;
+        private readonly bool disableMessages;
 
         public IndexQuery(
             IUserSession userSession,
-            bool isEnableSecurityCode)
+            bool isEnableSecurityCode,
+            bool? disableMessages)
         {
             this.userSession = userSession;
             this.isEnableSecurityCode = isEnableSecurityCode;
+            this.disableMessages = disableMessages ?? AppSettings.DisableMessages;
         }
 
         public int CustId => userSession.CustId;
@@ -44,5 +48,7 @@ namespace Alpha.Main.Site.Models.Requests
                     this.isEnableSecurityCode;
 
         public bool IsViewedMemberInfo => userSession.SubPageAccess.ViewMemberInfo;
+
+        public bool DisableMessages => disableMessages;
     }
 }

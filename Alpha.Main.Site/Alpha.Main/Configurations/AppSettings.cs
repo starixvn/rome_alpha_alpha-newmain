@@ -148,6 +148,8 @@
 
         public static string GoogleAnalyticId => Settings["GoogleAnalyticId"];
 
+        public static bool DisableMessages => Settings["DisableMessages"] == "1";
+
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "MBC", Justification = "Reviewed!")]
         public static bool IsMBCSite => !string.IsNullOrWhiteSpace(Settings["SiteGroup"])
             && Settings["SiteGroup"] == "IBCBET";
@@ -175,7 +177,7 @@
 
         public static bool LocalTest => Settings["LocalTest"] == "1";
 
-        public static IEnumerable<int> TrackingConnectionCustIds { get; } 
+        public static IEnumerable<int> TrackingConnectionCustIds { get; }
             = string.IsNullOrEmpty(Settings["TrackingConnectionCustIds"])
                 ? Enumerable.Empty<int>()
                 : Settings["TrackingConnectionCustIds"]

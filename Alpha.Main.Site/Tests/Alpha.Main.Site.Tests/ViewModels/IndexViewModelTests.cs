@@ -20,7 +20,7 @@
         public void SetUp()
         {
             userSession = Substitute.For<IUserSession>();
-            query = new IndexQuery(userSession, false);
+            query = new IndexQuery(userSession, false, false);
 
             browserHelper = Substitute.For<BrowserHelper>();
         }

@@ -188,7 +188,7 @@
             securityCodeChecker.IsForcedChangeSecurityCode().Returns(false);
             securityCodeChecker.IsEnableSecurityCode().Returns(true);
 
-            var query = new IndexQuery(userSession, securityCodeChecker.IsEnableSecurityCode());
+            var query = new IndexQuery(userSession, securityCodeChecker.IsEnableSecurityCode(), false);
 
             // Act
             defaultController.Index();
