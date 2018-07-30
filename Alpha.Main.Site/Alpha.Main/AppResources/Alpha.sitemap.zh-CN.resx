@@ -375,4 +375,8 @@
   <data name="systemUpdate" xml:space="preserve">
     <value>系统</value>
   </data>
+    <data name="TransferAllAndClearCredit" xml:space="preserve">
+    <value>Transfer All &amp; Clear Credit</value>
+  </data>
+
 </root>

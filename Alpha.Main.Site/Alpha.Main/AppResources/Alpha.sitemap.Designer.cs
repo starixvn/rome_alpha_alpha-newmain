@@ -826,6 +826,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transfer All &amp; Clear Credit.
+        /// </summary>
+        public static string TransferAllAndClearCredit {
+            get {
+                return ResourceManager.GetString("TransferAllAndClearCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Log.
         /// </summary>
         public static string viewLog {

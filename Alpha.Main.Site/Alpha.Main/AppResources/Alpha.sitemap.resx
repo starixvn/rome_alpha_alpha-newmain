@@ -387,4 +387,7 @@
   <data name="chatbot" xml:space="preserve">
     <value>Chatbot</value>
   </data>
+   <data name="TransferAllAndClearCredit" xml:space="preserve">
+    <value>Transfer All &amp; Clear Credit</value>
+  </data>
 </root>
