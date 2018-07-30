@@ -33,7 +33,7 @@
     @Html.Hidden("AccountHasAlreadyBeenRegistered", ChatBot.AccountHasAlreadyBeenRegistered)
     @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
     @Html.Hidden("mainRootPath", MicroSites.MainUrl())
-    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")    
     @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")
     @StaticResources.RenderScripts("~/assets/bundles/chatbot/chatbot")
     @GoogleAnalyticHepler.Render()

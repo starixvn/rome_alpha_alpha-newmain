@@ -40,7 +40,101 @@
     </div>
     <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
         <div class="panel-body has-padding">
-            @foreach (var function in Model.ReportFunctions)
+            <ul class="list-guideline">
+                <li class="guideline"><input type="checkbox" name="reports" /> Outstanding: User input commands <span class="bage">os</span></li>
+                <li class="guideline"><input type="checkbox" name="reports" /> Today Win Loss: User input commands <span class="bage">wl</span></li>
+                <li class="guideline"><input type="checkbox" name="reports" /> Balance Info: User input commands <span class="bage">bal</span></li>
+            </ul>
+            <p>&#149; Simple input the command into Letstalk and it will return you the report.</p>
+            <div class="chatbot-layout">
+                <div class="chatbot-header">
+                    <span class="icon-chatbot-back"></span>
+                    <span class="title">Chatbot</span>
+                    <span class="icon-chatbot-call"></span>
+                    <span class="icon-chatbot-down"></span>
+                </div>
+                <div class="chatbot-body" id="reportBody">
+                    <ul class="list-commands" id="reportCommands">
+                        <li class="command">
+                            <div class="user-input">os</div>
+                            <div class="status-user-input">
+                                Read <br />
+                                12:33
+                            </div>
+                        </li>
+                        <li class="command">
+                            <div class="chatbot-reponse">
+                                Outstanding <br />
+                                Total Member <br />
+                                1,000.00 <br />
+                                Total Agent <br />
+                                50.00
+                            </div>
+                            <div class="status-chatbot-reponse">
+                                12:36
+                            </div>
+                        </li>
+                        <li class="command">
+                            <div class="user-input">wl</div>
+                            <div class="status-user-input">
+                                Read <br />
+                                12:33
+                            </div>
+                        </li>
+                        <li class="command">
+                            <div class="chatbot-reponse">
+                                Today Win Loss <br />
+                                Turnover <br />
+                                30,000.00 <br />
+                                Gross Comm <br />
+                                50.00 <br />
+                                Member Win Loss <br />
+                                5000.00 <br />
+                            </div>
+                            <div class="status-chatbot-reponse">
+                                12:36
+                            </div>
+                        </li>
+                        <li class="command">
+                            <div class="user-input">bal</div>
+                            <div class="status-user-input">
+                                Read <br />
+                                12:33
+                            </div>
+                        </li>
+                        <li class="command">
+                            <div class="chatbot-reponse">
+                                Balance Info <br />
+                                Currency <br />
+                                UUS <br />
+                                Cash Balance <br />
+                                1,500,000.00 <br />
+                                Yesterday Cash Balance <br />
+                                1,500,000.00 <br />
+                            </div>
+                            <div class="status-chatbot-reponse">
+                                12:36
+                            </div>
+                        </li>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </ul>
+                </div>
+                <div class="chatbot-footer">
+                    <span class="icon-chatbot-plus"></span>
+                    <span class="icon-chatbot-gif"></span>
+                    <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" />
+                    <span class="icon-chatbot-voice"></span>
+                </div>
+            </div>
+
+            @*@foreach (var function in Model.ReportFunctions)
             {
                 <div class="panel level-2">
                     <div class="panel-heading" role="tab" id="headingOutstanding">
@@ -57,7 +151,7 @@
                         </div>
                     </div>
                 </div>
-            }
+            }*@
         </div>
     </div>
 </div>
@@ -71,7 +165,41 @@
     </div>
     <div id="notification" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNotification">
         <div class="panel-body has-padding">
-            @foreach (var function in Model.NotificationFunctions)
+            <ul class="list-guideline">
+                <li class="guideline"><input type="checkbox" name="notification" /> Yesterday Win Loss (Daily sent at 3:00 AM GMT-4)</li>
+                <li class="guideline"><input type="checkbox" name="notification" /> Personal Message</li>
+                <li class="guideline"><input type="checkbox" name="notification" /> Special Annoucement</li>
+                <li class="guideline"><input type="checkbox" name="notification" /> Normal Annoucement</li>
+                <li class="guideline"><input type="checkbox" name="notification" /> System Update</li>
+            </ul>
+            <p>Chatbot will automatically notify you new events in the system.</p>
+            <div class="chatbot-layout -notification">
+                <div class="chatbot-header">
+                    <span class="icon-chatbot-back"></span>
+                    <span class="title">Chatbot</span>
+                    <span class="icon-chatbot-call"></span>
+                    <span class="icon-chatbot-down"></span>
+                </div>
+                <div class="chatbot-body" id="notificationBody">
+                    <ul class="list-commands" id="notificationCommands">
+                        <li class="command">
+                            <div class="chatbot-reponse">
+                                Personal message <br />
+                                Your minimum position taking <br />
+                                has been changed by the upline <br />
+                                Plase kindly be informed and <br />
+                                have a check the details for your <br />
+                                downlines.
+                            </div>
+                            <div class="status-chatbot-reponse">
+                                13:20
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            @*@foreach (var function in Model.NotificationFunctions)
             {
                 <div class="panel level-2">
                     <div class="panel-heading" role="tab" id="headingYesterdayWinLoss">
@@ -87,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-            }
+            }*@
         </div>
     </div>
 </div>

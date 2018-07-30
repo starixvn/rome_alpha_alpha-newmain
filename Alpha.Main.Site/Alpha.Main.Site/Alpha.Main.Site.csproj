@@ -485,6 +485,10 @@
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\bundles\chatbot\chatbot-setting.css" />
+    <Content Include="Assets\bundles\chatbot\chatbot-setting.min.css">
+      <DependentUpon>chatbot-setting.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\chatbot\chatbot.css" />
     <Content Include="Assets\bundles\chatbot\chatbot.js" />
     <Content Include="Assets\bundles\chatbot\chatbot.min.css">
@@ -502,6 +506,7 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
+    <Content Include="Assets\scripts\chatbot\chatbot-guide.js" />
     <Content Include="Assets\styles\chatbot\chatbot.css">
       <DependentUpon>chatbot.scss</DependentUpon>
     </Content>
@@ -509,18 +514,10 @@
       <DependentUpon>chatbot.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\chatbot\images\apple.png" />
-    <Content Include="Assets\styles\chatbot\images\balance-info.png" />
     <Content Include="Assets\styles\chatbot\images\captcha.png" />
     <Content Include="Assets\styles\chatbot\images\google.png" />
     <Content Include="Assets\styles\chatbot\images\letstalk.png" />
-    <Content Include="Assets\styles\chatbot\images\normal-announcement.png" />
-    <Content Include="Assets\styles\chatbot\images\outstanding-1.png" />
-    <Content Include="Assets\styles\chatbot\images\outstanding-2.png" />
-    <Content Include="Assets\styles\chatbot\images\personal-message.png" />
-    <Content Include="Assets\styles\chatbot\images\special-announcement.png" />
-    <Content Include="Assets\styles\chatbot\images\verify-letstalk.png" />
-    <Content Include="Assets\styles\chatbot\images\winloss.png" />
-    <Content Include="Assets\styles\chatbot\images\yesterday-win-loss.png" />
+    <Content Include="Assets\styles\chatbot\images\chatbot-avatar.png" />
     <Content Include="Assets\styles\error\error.css">
       <DependentUpon>error.scss</DependentUpon>
     </Content>

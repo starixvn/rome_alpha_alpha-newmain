@@ -187,12 +187,13 @@
   },
   {
     "outputFileName": "Assets/bundles/chatbot/chatbot.js",
-    "inputFiles": [
+    "inputFiles": [      
       "Assets/scripts/core.js",
       "Assets/scripts/chatbot/base-chatbot.js",
       "Assets/scripts/chatbot/add-account.js",
       "Assets/scripts/chatbot/verify-account.js",
-      "Assets/scripts/chatbot/chatbot.js"
+      "Assets/scripts/chatbot/chatbot.js",
+      "Assets/scripts/chatbot/chatbot-guide.js"
     ]
   }
 ]
