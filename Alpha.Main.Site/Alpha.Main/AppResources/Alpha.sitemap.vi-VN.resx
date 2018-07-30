@@ -360,4 +360,7 @@
   <data name="BetLists" xml:space="preserve">
     <value>Danh sách cược</value>
   </data>
+  <data name="systemUpdate" xml:space="preserve">
+    <value>Cập nhật</value>
+  </data>
 </root>

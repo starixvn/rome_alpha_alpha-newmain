@@ -372,4 +372,7 @@
   <data name="ProgressiveGamesContribution" xml:space="preserve">
     <value>积宝游戏贡献</value>
   </data>
+  <data name="systemUpdate" xml:space="preserve">
+    <value>系统更新</value>
+  </data>
 </root>

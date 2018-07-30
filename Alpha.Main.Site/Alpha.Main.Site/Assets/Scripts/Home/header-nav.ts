@@ -5,6 +5,7 @@
 
 var headerNav = {
     domElements: {
+        isDisableToCheckNewMessage: false,
         clock: null,
         languageCode: null,
         language: null,
@@ -118,6 +119,7 @@ var headerNav = {
         return str;
     },
     cachedDomElements: function () {
+        headerNav.domElements.isDisableToCheckNewMessage = $("#disableMessages").val() == "1";
         headerNav.domElements.languageCode = $("#language-code");
         headerNav.domElements.language = $("#language");
         headerNav.domElements.languageSelectorContainer = $(".language-selector-container");
@@ -187,24 +189,26 @@ var headerNav = {
     },
 
     checkNewMessage: function () {
-        $.ajax({
-            type: "POST",
-            url: headerNav.urls.checkNewMessage,
-            success: function (result) {
-                if (result !== undefined) {
-                    headerNav.unreadMessage = result;
-                    if (result.Total > 0) {
-                        headerNav.domElements.numberNewMessage.text(result.Total > headerNav.maximunNewMessage.value ? headerNav.maximunNewMessage.text : result.Total);
-                        headerNav.domElements.numberNewMessage.addClass("badge-title");
-                    } else {
-                        headerNav.domElements.numberNewMessage.text("");
-                        headerNav.domElements.numberNewMessage.removeClass("badge-title");
+        if (!headerNav.domElements.isDisableToCheckNewMessage) {
+            $.ajax({
+                type: "POST",
+                url: headerNav.urls.checkNewMessage,
+                success: function (result) {
+                    if (result !== undefined) {
+                        headerNav.unreadMessage = result;
+                        if (result.Total > 0) {
+                            headerNav.domElements.numberNewMessage.text(result.Total > headerNav.maximunNewMessage.value ? headerNav.maximunNewMessage.text : result.Total);
+                            headerNav.domElements.numberNewMessage.addClass("badge-title");
+                        } else {
+                            headerNav.domElements.numberNewMessage.text("");
+                            headerNav.domElements.numberNewMessage.removeClass("badge-title");
+                        }
                     }
-                }                
 
-                setTimeout(headerNav.checkNewMessage, 1 * 60 * 1000);
-            }
-        });
+                    setTimeout(headerNav.checkNewMessage, 2 * 60 * 1000);
+                }
+            });
+        }
     },
 
     popFirstNewMessage: function () {

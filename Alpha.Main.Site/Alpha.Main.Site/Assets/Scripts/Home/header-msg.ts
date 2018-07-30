@@ -36,7 +36,6 @@
         this.cacheElements();
         this.registerEvents();
         this.getMessages();
-
     }
 
     viewLiveMessage = (event: JQueryEventObject) => {
