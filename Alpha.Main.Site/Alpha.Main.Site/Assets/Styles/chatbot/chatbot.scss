@@ -402,6 +402,7 @@ label {
         bottom: 0;
         left: 256px;
     }
+    
 }
 
 .chatbot-header {
@@ -489,4 +490,32 @@ label {
         opacity: 1;
         cursor: default;
     }
+}
+
+.button-refresh {
+    @include border-radius(50%);
+    position: absolute;
+    bottom: 0;
+    right: -34px;
+    width: 28px;
+    height: 28px;
+    background-color: #157ce5;
+    text-align: center;
+    cursor: pointer;
+
+    .icon-refresh {
+        position: relative;
+        top: 6px;
+        color: #fff;
+        font-weight: normal;
+
+            &:hover:after {
+            width: 36px;
+            height: 36px;
+            margin-left: -12px;
+            margin-top: -9px;
+        }
+    }
+
+
 }
