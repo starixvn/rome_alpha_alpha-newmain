@@ -1,4 +1,11 @@
 ﻿@model RegisterAccountViewModel
+@{
+    Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
+    ViewBag.Title = Model.Title;
+}
+@section Styles {
+    @StaticResources.RenderStyles("~/assets/bundles/chatbot/register-account")
+}
 <div class="panel" id="register-panel">
     <div class="panel-heading" role="tab" id="headingRegister">
         <h4 class="panel-title">
@@ -39,10 +46,10 @@
                     <div id="add-account-message"></div>
                     <form class="add-letstalk">
                         <div class="form-group m-b-0">
-                            <label>@ChatBot.lblLetstalkAccount</label>
+                            <label>@ChatBot.YourLetstalkAccount</label>
                         </div>
                         <div class="form-group m-b-0">
-                            <input id="txtAccount" type="text" class="letstalk-text" value="@Model.MessengerAccount" />
+                            <input id="txtAccount" type="text" class="letstalk-text" value="@Model.Username" @(Model.IsVerifying ? "disabled" : string.Empty) />
                             <button id="btnAdd" class="btn-submit" style="@(Model.IsVerifying ? "display:none" : "")">@ChatBot.Add</button>
                             <button id="btnUnsubscribe" class="btn-remove" style="@(Model.IsVerifying? "": "display:none")">@ChatBot.Unsubscribe</button>
                         </div>
@@ -57,3 +64,6 @@
     </div>
 </div>
 @Html.Hidden("IsVerifying", Model.IsVerifying)
+@section Scripts{
+    @StaticResources.RenderScripts("~/assets/bundles/chatbot/register-account")
+}

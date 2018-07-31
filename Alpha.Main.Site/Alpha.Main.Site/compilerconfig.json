@@ -54,5 +54,13 @@
   {
     "outputFile": "Assets/styles/chatbot/chatbot.css",
     "inputFile": "Assets/styles/chatbot/chatbot.scss"
+  },
+  {
+    "outputFile": "Assets/styles/chatbot/register-account.css",
+    "inputFile": "Assets/styles/chatbot/register-account.scss"
+  },
+  {
+    "outputFile": "Assets/styles/chatbot/chatbot-setting.css",
+    "inputFile": "Assets/styles/chatbot/chatbot-setting.scss"
   }
 ]

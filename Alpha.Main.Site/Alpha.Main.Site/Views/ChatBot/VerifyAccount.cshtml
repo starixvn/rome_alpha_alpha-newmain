@@ -10,13 +10,13 @@
         <li>@ChatBot.InputVerificationCode</li>
     </ul>
     <div id="verification-code-message"></div>
-    <form class="verification-form" id="verification-form">
-        @Html.Hidden("UserId", Model.UserId)
-        @Html.Hidden("MessengerAccount", Model.MessengerAccount)
-        @Html.Hidden("IsShowCaptcha", Model.IsShowCaptcha)
+    <form class="verification-form" id="verification-form" action="@Url.Action("VerifyVerificationCode")" method="post">
+        <input type="hidden" id="UserId" name="UserId" value="@Model.UserId" />
+        <input type="hidden" id="MessengerAccount" name="MessengerAccount" value="@Model.MessengerAccount" />
+        <input type="hidden" id="IsShowCaptcha" name="IsShowCaptcha" value="@Model.IsShowCaptcha.ToString()" />
         <div class="form-group">
             <label>@ChatBot.lblVerificationCode</label>
-            <input id="txtVerificationCode" maxlength="6" type="password" class="verify-text" />
+            <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="password" class="verify-text" />
         </div>
         @if (Model.IsShowCaptcha)
         {

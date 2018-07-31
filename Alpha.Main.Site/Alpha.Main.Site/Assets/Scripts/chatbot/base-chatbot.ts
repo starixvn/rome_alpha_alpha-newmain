@@ -8,7 +8,7 @@
     resources = {
         thisFieldRequired: (<HTMLInputElement>document.getElementById('ThisFieldRequired')).value,
         accountDoesNotExist: (<HTMLInputElement>document.getElementById('AccountDoesNotExist')).value,
-        verificationCodeIsValidOrExpired: (<HTMLInputElement>document.getElementById('VerificationCodeIsValidOrExpired')).value,
+        verificationCodeIsInvalidOrExpired: (<HTMLInputElement>document.getElementById('VerificationCodeIsInvalidOrExpired')).value,
         unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
         overMaxAddAccountTimes: (<HTMLInputElement>document.getElementById('OverMaxAddAccountTimes')).value,
         accountHasAlreadyBeenRegistered: (<HTMLInputElement>document.getElementById('AccountHasAlreadyBeenRegistered')).value

@@ -1,27 +1,39 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using CaptchaMvc.HtmlHelpers;
     using Configurations;
-    using Main.Models;
     using MediatR;
     using Models.Requests;
     using Requests.ChatBot;
+    using Sunplus.Agent.Model.Entities;
     using ViewModels.ChatBot;
     using Web;
 
     public class ChatBotController : BaseController
     {
         private readonly IMediator mediator;
+        private readonly IUserSession userSession;
 
-        public ChatBotController(IMediator mediator)
+        public ChatBotController(IMediator mediator, IUserSession userSession)
         {
             this.mediator = mediator;
+            this.userSession = userSession;
         }
 
         public async Task<ActionResult> Index()
-            => View(await mediator.SendAsync(new SetUpChatBotQuery()));
+        {
+            var model = await mediator.SendAsync(new SetUpChatBotQuery(userSession));
+
+            if (model.IsAlreadySetup)
+            {
+                return View("ChatBotSetting", new ChatBotSettingViewModel(model.User));
+            }
+
+            return View("RegisterAccount", new RegisterAccountViewModel(model.User));
+        }
 
         [HttpPost]
         public async Task<ActionResult> AddAccount(AddAccountCommand command)
@@ -44,15 +56,16 @@
         [HttpPost]
         public async Task<ActionResult> VerifyVerificationCode(VerifyVerificationCodeCommand command)
         {
-            if (command.IsShowCaptcha && !this.IsCaptchaValid(null))
+            var isCaptchaValid = this.IsCaptchaValid(null);
+            if (command.IsShowCaptcha && !isCaptchaValid)
             {
-                return Json(Result.CreateErrorResult(AppResources.ChatBot.InvalidCaptcha));
+                return Json(CaptchaErrorResult.CreateInvalidCaptchaResult(BuildCaptchaInfo()));
             }
 
             var result = await mediator.SendAsync(command);
-            if (result.IsNotOk && result.FailedTimes == 3)
+            if (result.IsNotOk && result.FailedTimes >= 3)
             {
-                var viewModel = new VerifyAccountViewModel(command.UserId, command.MessengerAccount, true);
+                var viewModel = new VerifyAccountViewModel(command.UserId, command.MessengerAccount, !isCaptchaValid);
                 return PartialView("VerifyAccount", viewModel);
             }
 
@@ -75,7 +88,28 @@
             => Json(await mediator.SendAsync(command));
 
         [HttpPost]
-        public async Task<ActionResult> UpdateLanguage(UpdateLanguageCommand command)
+        public async Task<ActionResult> ChangeLanguage(UpdateLanguageCommand command)
             => Json(await mediator.SendAsync(command));
+
+        protected override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            base.OnAuthorization(filterContext);
+
+            if (userSession != null && userSession.IsSubAcc)
+            {
+                UnAuthentication(filterContext);
+            }
+        }
+
+        private IDictionary<string, string> BuildCaptchaInfo()
+        {
+            var buildInfo = this.GenerateCaptchaValue(4);
+
+            return new Dictionary<string, string>
+            {
+                [buildInfo.ImageElementId] = buildInfo.ImageUrl,
+                [buildInfo.TokenElementId] = buildInfo.TokenValue
+            };
+        }
     }
 }

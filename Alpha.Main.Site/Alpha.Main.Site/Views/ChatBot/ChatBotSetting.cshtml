@@ -1,5 +1,13 @@
-﻿@model ChatBotViewModel
-@Html.Hidden("UserId", Model.User.Id)
+﻿@model ChatBotSettingViewModel
+@{
+    Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
+    ViewBag.Title = Model.Title;
+}
+@section Styles {
+    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot-setting")
+}
+@Html.Hidden("UserId", Model.UserId)
+@Html.Hidden("UserName", Model.Username)
 <div class="panel">
     <div class="panel-heading" role="tab" id="headingAccount">
         <h4 class="panel-title">
@@ -9,23 +17,20 @@
         </h4>
     </div>
     <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
-        @foreach (var account in Model.User.MessengerAccounts)
-        {
-            <div class="panel-body has-padding">
-                <form class="filter">
-                    <div class="form-group">
-                        <label>@string.Format(ChatBot.YourMessengerAccount, ChatBot.ResourceManager.GetString($"MessengerType_{account.Type}")) <strong>@account.Username</strong></label>
-                        <button class="btn-remove">@ChatBot.Unsubscribe</button>
+        <div class="panel-body has-padding">
+            <form class="filter">
+                <div class="form-group">
+                    <label>@ChatBot.YourLetstalkAccount <strong>@Model.Username</strong></label>
+                    <button class="btn-remove" id="btnUnsubscribe">@ChatBot.Unsubscribe</button>
+                </div>
+                <div class="form-group">
+                    <label>Chat Bot's Language:</label>
+                    <div class="dropdown language">
+                        @Html.Action("Language", new { langCode = Model.Language })
                     </div>
-                    <div class="form-group">
-                        <label>Chat Bot's Language:</label>
-                        <div class="dropdown language">
-                            @Html.Action("Language", new { langCode = Model.User.Language })
-                        </div>
-                    </div>
-                </form>
-            </div>
-        }
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 <div class="panel">
@@ -43,11 +48,11 @@
                 {
                     <li class="guideline">
                         <label>
-                            <input data-functionId="@function.Id" data-command="@function.Command" class="function" type="checkbox" 
-                                   @(function.Enabled? "checked": string.Empty) name="reports" /> @($"{function.Name}: User input commands")
-                        </label>
-                        <span class="bage">@function.Command</span>
-                    </li>
+                            <input data-functionId="@function.Id" data-command="@function.Command" class="function" type="checkbox"
+                                   @(function.Enabled ? "checked" : string.Empty) name="reports" /> @($"{function.Name}: User input commands")
+                            </label>
+                            <span class="bage">@function.Command</span>
+                        </li>
                 }
             </ul>
             <p class="bold">Simple input the command into Letstalk and it will return you the report.</p>
@@ -151,9 +156,10 @@
                 {
                     <li class="guideline">
                         <label>
-                            <input data-functionId="@function.Id" data-command="@function.Command" type="checkbox" class="function" name="notification" checked="@(function.Enabled? "checked": string.Empty)" /> @function.Name
-                        </label>                        
-                    </li>
+                            <input data-functionId="@function.Id" data-command="@function.Command" type="checkbox" class="function" name="notification"
+                                   @(function.Enabled ? "checked" : string.Empty) /> @function.Name
+                            </label>
+                        </li>
                 }
             </ul>
             <p class="bold">Chatbot will automatically notify you new events in the system.</p>
@@ -243,3 +249,6 @@
         </div>
     </div>
 </div>
+@section Scripts{
+    @StaticResources.RenderScripts("~/assets/bundles/chatbot/chatbot-setting")
+}

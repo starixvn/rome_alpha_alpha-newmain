@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Requests.ChatBot
 {
     using Chatbot.Client.Models;
+    using Constants;
     using MediatR;
 
     public class VerifyVerificationCodeCommand : IAsyncRequest<VerificationCodeResult>
@@ -11,7 +12,7 @@
 
         public string MessengerAccount { get; set; }
 
-        public int MessengerType { get; set; }
+        public int MessengerType => MessengerTypeConstants.Letstalk;
 
         public bool IsShowCaptcha { get; set; }
     }

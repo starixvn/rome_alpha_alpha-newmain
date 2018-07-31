@@ -9,12 +9,7 @@
     {
         private readonly IUserSession userSession;
 
-        public SetUpChatBotQuery()
-            : this(null)
-        {
-        }
-
-        internal SetUpChatBotQuery(IUserSession userSession)
+        public SetUpChatBotQuery(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();
         }

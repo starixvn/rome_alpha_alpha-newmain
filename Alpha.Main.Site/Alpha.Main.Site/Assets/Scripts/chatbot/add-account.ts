@@ -128,3 +128,8 @@ class AddAccount extends BaseChatBot {
         }
     }
 }
+
+$(function () {
+    const addAccount = new AddAccount($, new VerifyAccount($), bootbox);
+    addAccount.init();
+});

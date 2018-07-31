@@ -1,30 +1,33 @@
 ﻿namespace Alpha.Main.Site.ViewModels.ChatBot
 {
     using System.Linq;
+    using AppResources;
     using Chatbot.Client.Models;
+    using Constants;
 
     public class RegisterAccountViewModel
     {
+        private readonly User user;
         private readonly Messenger letstalkMessenger;
 
         public RegisterAccountViewModel(User user)
         {
-            User = user;
-            letstalkMessenger = user?.MessengerAccounts?.FirstOrDefault(m => m.Type == 1);
+            this.user = user;
+            letstalkMessenger = user?.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerTypeConstants.Letstalk && m.IsVerifying);
         }
 
-        public User User { get; }
-
-        public string MessengerAccount
+        public string Username
             => !string.IsNullOrWhiteSpace(letstalkMessenger?.Username)
                 ? letstalkMessenger.Username
                 : string.Empty;
 
-        public bool IsVerifying => letstalkMessenger != null && letstalkMessenger.IsVerifying;
+        public bool IsVerifying => letstalkMessenger != null;
 
         public VerifyAccountViewModel VerifyAccountViewModel
             => IsVerifying
-                ? new VerifyAccountViewModel(User.Id, MessengerAccount)
+                ? new VerifyAccountViewModel(user.Id, Username)
                 : null;
+
+        public string Title => ChatBot.ChatBotTitle;
     }
 }

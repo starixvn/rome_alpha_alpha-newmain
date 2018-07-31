@@ -7,6 +7,8 @@
     using System.Web.Routing;
     using App_Start;
     using Auth.Filters;
+    using CaptchaMvc.Infrastructure;
+    using CaptchaMvc.Interface;
     using Chatbot.Client;
     using Chatbot.Client.Configurations;
     using Configurations;
@@ -65,6 +67,10 @@
             RefDataTypeContainer
                 .ConnectTo(new Uri(AppSettings.RemoteRefURL))
                 .FromApplication("Alpha.Main.Site");
+            CaptchaUtils.CaptchaManager.StorageProvider = new CookieStorageProvider();
+            var defaultCaptchaManager = (DefaultCaptchaManager)CaptchaUtils.CaptchaManager;
+            defaultCaptchaManager.ImageUrlFactory = (helper, pair) => ImageUrlFactory(defaultCaptchaManager, helper, pair);
+            defaultCaptchaManager.RefreshUrlFactory = RefreshUrlFactory;
         }
 
         /// <summary>
@@ -104,6 +110,34 @@
             }
 
             return result;
+        }
+
+        private string RefreshUrlFactory(System.Web.Mvc.UrlHelper urlHelper, KeyValuePair<string, ICaptchaValue> keyValuePair)
+        {
+            return urlHelper.Action("Refresh", "DefaultCaptcha", new { area = string.Empty });
+        }
+
+        /// <summary>
+        /// Image URL Factory.
+        /// </summary>
+        /// <param name="captchaManager">Captcha Manager.</param>
+        /// <param name="urlHelper">URL Helper.</param>
+        /// <param name="keyValuePair">Key Value pair.</param>
+        /// <returns>Return Result.</returns>
+        private static string ImageUrlFactory(DefaultCaptchaManager captchaManager, System.Web.Mvc.UrlHelper urlHelper, KeyValuePair<string, ICaptchaValue> keyValuePair)
+        {
+            return urlHelper.Action(
+                "Generate",
+                "DefaultCaptcha",
+                new RouteValueDictionary
+                                {
+                                    {
+                                        "area", string.Empty
+                                    },
+                                    {
+                                        captchaManager.TokenParameterName, keyValuePair.Key
+                                    }
+                                });
         }
     }
 }

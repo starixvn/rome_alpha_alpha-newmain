@@ -15,7 +15,22 @@
 <div class="form-group">
     <label>Captcha</label>
     <div class="group-captcha">
-        @Html.TextBox(Model.InputElementId, null, new { @id = "txtCaptcha", @class = "captcha-text", @tabindex = "4" })
+        @if (Model.IsRequired)
+        {
+            @Html.TextBox(Model.InputElementId, null, new Dictionary<string, object>
+                            {
+                                {"data-val", "true"},
+                                {"data-val-required", Model.RequiredMessage},
+                                {"id", "recaptcha_response_field"},
+                                {"class", "captcha-text"},
+                                {"tabindex", "4"}
+                            })
+
+        }
+        else
+        {
+            @Html.TextBox(Model.InputElementId, null, new { @id = "txtCaptcha", @class = "captcha-text", @tabindex = "4" })
+        }
         <div class="captcha-code">
             <img alt="" id="@Model.ImageElementId" src="@Model.ImageUrl" width="100px" height="30px" />
             @Html.Hidden(Model.TokenElementId, Model.TokenValue)

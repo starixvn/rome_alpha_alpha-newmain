@@ -109,8 +109,8 @@
   <data name="AddLetstalkAccount" xml:space="preserve">
     <value>Add Chatbot to your Letstalk account.</value>
   </data>
-  <data name="YourMessengerAccount" xml:space="preserve">
-    <value>Your {0} Account</value>
+  <data name="YourLetstalkAccount" xml:space="preserve">
+    <value>Your Letstalk Account</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Add</value>

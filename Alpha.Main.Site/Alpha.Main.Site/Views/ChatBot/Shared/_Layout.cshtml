@@ -1,5 +1,4 @@
-﻿@model ChatBotViewModel
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,32 +9,25 @@
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.RenderCommon("/bundles/site-main/chatbot/chatbot")
     @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot")
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <div class="page-title">
-        <span class="pull-left">@Model.Title</span>
+        <span class="pull-left">@ViewBag.Title</span>
     </div>
     <div class="tab-content">
-        @if (Model.IsAlreadySetup)
-        {
-            @Html.Partial("ChatBotSetting")
-        }
-        else
-        {
-            @Html.Partial("RegisterAccount", Model.RegisterAccountViewModel)
-        }
+        @RenderBody()
     </div>
-    @Html.Hidden("IsAlreadySetup", Model.IsAlreadySetup)
     @Html.Hidden("ThisFieldRequired", ChatBot.AlertRequiredField)
     @Html.Hidden("AccountDoesNotExist", ChatBot.AccountDoesNotExist)
-    @Html.Hidden("VerificationCodeIsValidOrExpired", ChatBot.VerificationCodeIsInvalidOrExpired)
+    @Html.Hidden("VerificationCodeIsInvalidOrExpired", ChatBot.VerificationCodeIsInvalidOrExpired)
     @Html.Hidden("OverMaxAddAccountTimes", ChatBot.OverMaxAddAccountTimes)
     @Html.Hidden("AccountHasAlreadyBeenRegistered", ChatBot.AccountHasAlreadyBeenRegistered)
     @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
     @Html.Hidden("mainRootPath", MicroSites.MainUrl())
-    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")    
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")
-    @StaticResources.RenderScripts("~/assets/bundles/chatbot/chatbot")
+    @RenderSection("Scripts", required: false)
     @GoogleAnalyticHepler.Render()
 </body>
 </html>

@@ -53,6 +53,10 @@
       <HintPath>..\..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Chatbot.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Chatbot.Client.1.0.0-beta8\lib\net461\Chatbot.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.Common, Version=1.0.404.97, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Fanex.Common.1.0.404.97\lib\net40\Fanex.Common.dll</HintPath>
       <Private>True</Private>
@@ -196,6 +200,7 @@
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\RoleId.cs" />
     <Compile Include="Constants\Username.cs" />
+    <Compile Include="Controllers\ChatBotControllerTests.cs" />
     <Compile Include="Controllers\CustomerProfileControllerTests.cs" />
     <Compile Include="Controllers\DashboardControllerTests.cs" />
     <Compile Include="Controllers\DefaultControllerTests.cs" />

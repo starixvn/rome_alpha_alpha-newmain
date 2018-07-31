@@ -313,11 +313,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your {0} Account.
+        ///   Looks up a localized string similar to Your Letstalk Account.
         /// </summary>
-        public static string YourMessengerAccount {
+        public static string YourLetstalkAccount {
             get {
-                return ResourceManager.GetString("YourMessengerAccount", resourceCulture);
+                return ResourceManager.GetString("YourLetstalkAccount", resourceCulture);
             }
         }
     }

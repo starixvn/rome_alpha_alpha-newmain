@@ -486,20 +486,24 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Assets\bundles\chatbot\chatbot-setting.css" />
+    <Content Include="Assets\bundles\chatbot\chatbot-setting.js" />
     <Content Include="Assets\bundles\chatbot\chatbot-setting.min.css">
       <DependentUpon>chatbot-setting.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\chatbot\chatbot-setting.min.js">
+      <DependentUpon>chatbot-setting.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\chatbot\chatbot.css" />
-    <Content Include="Assets\bundles\chatbot\chatbot.js" />
     <Content Include="Assets\bundles\chatbot\chatbot.min.css">
       <DependentUpon>chatbot.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\chatbot\chatbot.min.js">
-      <DependentUpon>chatbot.js</DependentUpon>
+    <Content Include="Assets\bundles\chatbot\register-account.css" />
+    <Content Include="Assets\bundles\chatbot\register-account.js" />
+    <Content Include="Assets\bundles\chatbot\register-account.min.css">
+      <DependentUpon>register-account.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\chatbot\otp\chatbot.js" />
-    <Content Include="Assets\bundles\chatbot\otp\chatbot.min.js">
-      <DependentUpon>chatbot.js</DependentUpon>
+    <Content Include="Assets\bundles\chatbot\register-account.min.js">
+      <DependentUpon>register-account.js</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\error.css" />
     <Content Include="Assets\bundles\error.min.css">
@@ -507,6 +511,12 @@
     </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\scripts\chatbot\chatbot-guide.js" />
+    <Content Include="Assets\styles\chatbot\chatbot-setting.css">
+      <DependentUpon>chatbot-setting.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\chatbot-setting.min.css">
+      <DependentUpon>chatbot-setting.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\chatbot\chatbot.css">
       <DependentUpon>chatbot.scss</DependentUpon>
     </Content>
@@ -518,6 +528,13 @@
     <Content Include="Assets\styles\chatbot\images\google.png" />
     <Content Include="Assets\styles\chatbot\images\letstalk.png" />
     <Content Include="Assets\styles\chatbot\images\chatbot-avatar.png" />
+    <Content Include="Assets\styles\chatbot\images\verify-letstalk.png" />
+    <Content Include="Assets\styles\chatbot\register-account.css">
+      <DependentUpon>register-account.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\register-account.min.css">
+      <DependentUpon>register-account.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\error\error.css">
       <DependentUpon>error.scss</DependentUpon>
     </Content>
@@ -532,7 +549,6 @@
       <DependentUpon>popup-announcement.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\_mixins2.scss" />
-    <Content Include="Content\Site.css" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.css">
       <DependentUpon>page.scss</DependentUpon>
     </Content>
@@ -838,16 +854,15 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Default\AnnouncementPopup.cshtml" />
     <Content Include="Views\NetworkSpeed\Index.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\ChatBot\Index.cshtml" />
     <Content Include="Views\ChatBot\ChatBotSetting.cshtml" />
     <Content Include="Views\ChatBot\RegisterAccount.cshtml" />
     <Content Include="Views\ChatBot\VerifyAccount.cshtml" />
     <Content Include="Views\ChatBot\Language.cshtml" />
     <Content Include="Views\ChatBot\Captcha.cshtml" />
+    <Content Include="Views\ChatBot\Shared\_Layout.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
-    <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot.ts" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-setting.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
@@ -1088,6 +1103,8 @@
     <Content Include="Assets\styles\error\error.scss" />
     <Content Include="Assets\styles\home\popup-announcement.scss" />
     <Content Include="Assets\styles\chatbot\chatbot.scss" />
+    <Content Include="Assets\styles\chatbot\register-account.scss" />
+    <Content Include="Assets\styles\chatbot\chatbot-setting.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1266,6 +1283,8 @@
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
+    <Compile Include="ViewModels\ChatBot\CaptchaErrorResult.cs" />
+    <Compile Include="ViewModels\ChatBot\ChatBotSettingViewModel.cs" />
     <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs" />
     <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs" />
     <Compile Include="ViewModels\ChatBot\VerifyAccountViewModel.cs" />

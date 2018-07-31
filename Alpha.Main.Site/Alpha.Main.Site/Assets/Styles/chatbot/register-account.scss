@@ -1,0 +1,120 @@
+﻿// Register Letstalk
+
+.list-requirements {
+    margin-bottom: 0;
+    padding-left: 30px;
+
+    > li {
+        list-style-type: decimal;
+    }
+}
+
+.download-content {
+    display: table;
+    padding: 12px 0 16px;
+    margin-left: -10px;
+
+    .logo-letstalk {
+        float: left;
+    }
+
+    .list-download {
+        float: right;
+        margin-left: 16px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+            margin: 4px 0 8px;
+        }
+    }
+}
+
+.add-letstalk {
+    clear: both;
+    min-width: 250px;
+    padding-bottom: 25px;
+    padding-top: 10px;
+
+    .letstalk-text {
+        width: 140px;
+        margin-right: 10px;
+    }
+}
+
+.verification-info {
+    padding-left: 2px;
+
+    li {
+        list-style: disc;
+    }
+
+    .chatbot-example {
+        padding-top: 10px;
+        padding-bottom: 16px;
+    }
+}
+
+.verification-form {
+    clear: both;
+    width: 240px;
+    padding-top: 12px;
+
+    .verify-text {
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%;
+    }
+
+    .group-captcha {
+        position: relative;
+        display: table;
+        width: 100%;
+    }
+
+    .captcha-text, .captcha-code {
+        display: table-cell;
+    }
+
+    .captcha-code {
+        width: 100px;
+        height: 30px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .captcha-text {
+        position: relative;
+        top: -6px;
+        width: 140px;
+        margin-right: 10px;
+    }
+
+    .icon-refresh {
+        position: absolute;
+        right: -31px;
+        top: 5px;
+        font-size: 18px;
+        color: #6a6a6a;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .icon-refresh:hover:after {
+        top: -5px;
+        left: -2px;
+        width: 36px;
+        height: 36px;
+    }
+}

@@ -25,6 +25,8 @@ class VerifyAccount extends BaseChatBot {
     $modelRefreshUrl: JQuery;
 
     isShowCaptcha: boolean;
+    imageElementId: string;
+    tokenElementId: string;
 
     init = () => {
         this.cachedDOMElements();
@@ -43,8 +45,29 @@ class VerifyAccount extends BaseChatBot {
     }
 
     registerEvents = () => {
-        this.$verificationForm.submit(this.verifyCodeEvent);
+        this.$btnVerify.click(this.verifyCodeEvent);
         this.$btnResend.click(this.resendEvent);
+    }
+
+    cachedCaptchaDOMElements = () => {
+        var captchaId = this.$("#CaptchaId").val();
+        this.$captcha = this.$("#" + captchaId);
+        this.$captchaRefreshIcon = this.$("#captcha-refresh-icon");
+        this.$txtCaptcha = this.$("#txtCaptcha");
+        this.$captchaMessage = this.$("#captcha-message");
+
+        this.imageElementId = this.$("#ModelImageElementId").val();
+        this.$modelImageElement = this.$("#" + this.imageElementId);
+        this.$modelTokenParameterName = this.$("#ModelTokenParameterName");
+
+        this.tokenElementId = this.$("#ModelTokenElementId").val();
+        this.$modelTokenElement = this.$("#" + this.tokenElementId);
+        this.$modelRefreshUrl = this.$("#ModelRefreshUrl");
+    }
+
+    registerCaptchaEvents = () => {
+        this.$captchaRefreshIcon.click(this.refreshCaptchaEvent);
+        this.$modelImageElement.click(this.refreshCaptchaEvent);
     }
 
     verifyCodeEvent = (e: any) => {
@@ -70,14 +93,10 @@ class VerifyAccount extends BaseChatBot {
         }
 
         this.$.blockUI();
-        var userId = this.$userId.val();
-        var account = this.$messengerAccount.val();
-        var code = this.$txtVerificationCode.val();
-
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/VerifyVerificationCode",
-            data: { userId: userId, messengerAccount: account, verificationCode: code, messengerType: 1, isShowCaptcha: this.isShowCaptcha },
+            data: this.$verificationForm.serialize(),
             dataType: "text",
             success: this.onVerifySuccess,
             complete: this.onComplete,
@@ -90,25 +109,26 @@ class VerifyAccount extends BaseChatBot {
         if (result) {
             if (result.IsOk) {
                 parent.window.location.href = parent.window.location.href;
-            }
+            } else {
+                if (this.isShowCaptcha) {
+                    var captchaInfo = result.CaptchaInfo;
+                    this.$modelImageElement.attr('src', captchaInfo[this.imageElementId]);
+                    this.$modelTokenElement.attr('value', captchaInfo[this.tokenElementId]);
+                }
 
-            if (result.IsVerificationCodeExpired) {
-                alpha.showMessage(this.$verificationMessage, new Result({ Code: 3, Message: this.resources.thisFieldRequired }));
+                if (result.IsCaptchaInvalid) {
+                    alpha.showMessage(this.$captchaMessage, new Result({ Code: result.Code, Message: result.Message }));
+                } else {
+                    alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.verificationCodeIsInvalidOrExpired }));
+                }
+
                 return;
             }
-
-            if (result.IsWrongVerificationCode) {
-                alpha.showMessage(this.$verificationMessage, new Result({ Code: 4, Message: this.resources.thisFieldRequired }));
-                return;
-            }
-
-            alpha.showMessage(this.$verificationMessage, new Result({ Code: result.Code, Message: result.Message }));
-            return;
         }
 
         this.$verificationSection.replaceWith(data);
-        this.cachedDOMElements();
-        this.registerEvents();
+        this.init();
+        alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.verificationCodeIsInvalidOrExpired }))
 
         this.isShowCaptcha = this.convertAttributeToBool(this.$("#IsShowCaptcha").val());
 
@@ -123,34 +143,15 @@ class VerifyAccount extends BaseChatBot {
         e.preventDefault();
 
         this.$.blockUI();
+        var userId = this.$userId.val();
+        var account = this.$messengerAccount.val();
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/ResendVerificationCode",
+            data: { userId: userId, messengerUsername: account },
             dataType: "json",
-            success: this.onVerifySuccess,
             complete: this.onComplete,
         });
-    }
-
-    cachedCaptchaDOMElements = () => {
-        var captchaId = this.$("#CaptchaId").val();
-        this.$captcha = this.$("#" + captchaId);
-        this.$captchaRefreshIcon = this.$("#captcha-refresh-icon");
-        this.$txtCaptcha = this.$("#txtCaptcha");
-        this.$captchaMessage = this.$("#captcha-message");
-
-        var imageElementId = this.$("#ModelImageElementId").val();
-        this.$modelImageElement = this.$("#" + imageElementId);
-        this.$modelTokenParameterName = this.$("#ModelTokenParameterName");
-
-        var tokenElementId = this.$("#ModelTokenElementId").val();
-        this.$modelTokenElement = this.$("#" + tokenElementId);
-        this.$modelRefreshUrl = this.$("#ModelRefreshUrl");
-    }
-
-    registerCaptchaEvents = () => {
-        this.$captchaRefreshIcon.click(this.refreshCaptchaEvent);
-        this.$modelImageElement.click(this.refreshCaptchaEvent);
     }
 
     refreshCaptchaEvent = (e: any) => {
