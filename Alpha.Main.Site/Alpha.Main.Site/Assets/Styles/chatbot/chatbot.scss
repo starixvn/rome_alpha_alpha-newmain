@@ -313,6 +313,7 @@ label {
 
         .chatbot-body {
             height: 157px;
+            overflow: hidden;
         }
 
         .chatbot-reponse {
@@ -343,7 +344,8 @@ label {
         display: none;
         clear: both;
         overflow: hidden;
-        padding: 6px 0;        
+        margin-top: 8px;
+        margin-bottom: 8px;        
     }  
 
     %bubble {
@@ -475,10 +477,11 @@ label {
 .chatbot-body {
     top: 41px;
     height: 246px;
+    max-height: 246px;
     padding: 10px;
     background-color: #efefef;    
     color: #333;
-    overflow: hidden;
+    overflow-y: scroll;    
 }
 
 .chatbot-footer {
