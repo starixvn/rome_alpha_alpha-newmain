@@ -116,9 +116,7 @@
                 container.GetInstance<JsonHelper>(),
                 container.GetInstance<CasinoService>()));
 
-            //container.RegisterSingleton<IRestClient, RestClientHelper>();
-            //container.RegisterSingleton(() => RestClientHelper.CreateDefaultClient());
-            container.RegisterPerWebRequest<SettingService, DummyService.SettingServiceImpl>();
+            container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

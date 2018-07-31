@@ -7,12 +7,15 @@
     using System.Web.Routing;
     using App_Start;
     using Auth.Filters;
+    using Chatbot.Client;
+    using Chatbot.Client.Configurations;
     using Configurations;
     using Fanex.Data;
     using Fanex.Data.CrossCutting.WrappingException;
     using Fanex.Data.OldConnectionStringProvider;
     using Fanex.Logging.Extensions.Database;
     using Fanex.Logging.Extensions.Web;
+    using Helpers;
     using ONEbook.UM.Filters;
     using Sunplus.Agent.Model.Entities;
     using Web;
@@ -31,9 +34,9 @@
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            //ChatbotClientManager
-            //    .UseConfig(new BotClientConfigs(AppSettings.ChatBotBaseUrl, AppSettings.ChatBotApiKey))
-            //    .UseRestClient(new RestClientHelper());
+            ChatbotClientManager
+                .UseConfig(new BotClientConfigs(AppSettings.ChatBotBaseUrl, AppSettings.ChatBotApiKey))
+                .UseRestClient(new RestClientHelper());
             DependencyConfig.Init();
             StaticResources.Init(StaticResources.GetBuildVersion());
 

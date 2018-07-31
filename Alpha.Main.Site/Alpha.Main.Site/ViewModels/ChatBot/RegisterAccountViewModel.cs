@@ -16,8 +16,8 @@
         public User User { get; }
 
         public string MessengerAccount
-            => !string.IsNullOrWhiteSpace(letstalkMessenger?.Account)
-                ? letstalkMessenger.Account
+            => !string.IsNullOrWhiteSpace(letstalkMessenger?.Username)
+                ? letstalkMessenger.Username
                 : string.Empty;
 
         public bool IsVerifying => letstalkMessenger != null && letstalkMessenger.IsVerifying;

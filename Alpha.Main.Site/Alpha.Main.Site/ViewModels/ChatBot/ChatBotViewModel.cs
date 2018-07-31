@@ -14,7 +14,10 @@
 
         public User User { get; }
 
-        public bool IsAlreadySetup => User != null && User.MessengerAccounts != null && User.MessengerAccounts.Any(m => !m.IsVerifying);
+        public bool IsAlreadySetup
+            => User != null
+                && User.MessengerAccounts != null
+                && User.MessengerAccounts.Any(m => !m.IsVerifying && m.Enabled);
 
         public RegisterAccountViewModel RegisterAccountViewModel => new RegisterAccountViewModel(User);
 

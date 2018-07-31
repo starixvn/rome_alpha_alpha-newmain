@@ -95,6 +95,7 @@ class AddAccount extends BaseChatBot {
 
         this.$btnAdd.hide();
         this.$btnUnsubscribe.show();
+        this.$txtAccount.attr("disabled", "disabled");
 
         this.$registerLetstalkPanel.append(data);
         this.$userId = this.$("#UserId");
@@ -105,13 +106,14 @@ class AddAccount extends BaseChatBot {
         e.preventDefault();
         var self = this;
         var userId = self.$userId.val();
+        var userName = self.$txtAccount.val();
         this.bootbox.confirm(this.resources.unsubscribeWarning, (ok) => {
             if (ok) {
                 this.$.blockUI();
                 this.$.ajax({
                     type: "POST",
                     url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
-                    data: { userId: userId },
+                    data: { userId: userId, messengerUserName: userName },
                     dataType: "json",
                     success: self.onUnSubscribeSuccess,
                     complete: self.onComplete

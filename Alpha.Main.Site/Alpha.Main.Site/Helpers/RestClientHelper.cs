@@ -20,11 +20,11 @@
                BaseUrl = new Uri(ChatbotClientManager.BotClientConfigs.ApiBaseUrl)
            };
 
-        public Task<T> ExecuteGetAsync<T>(string endPoint, object data = null)
-            => ExecuteAsync<T>(endPoint, Method.GET, data);
+        public async Task<T> ExecuteGetAsync<T>(string endPoint, object data = null)
+            => await ExecuteAsync<T>(endPoint, Method.GET, data);
 
-        public Task<T> ExecutePostAsync<T>(string endPoint, object data = null)
-            => ExecuteAsync<T>(endPoint, Method.POST, data);
+        public async Task<T> ExecutePostAsync<T>(string endPoint, object data = null)
+            => await ExecuteAsync<T>(endPoint, Method.POST, data);
 
         private async Task<T> ExecuteAsync<T>(string resource, Method method, object data)
         {
@@ -37,7 +37,7 @@
                 request.AddJsonBody(data);
             }
 
-            var response = await restClient.ExecuteTaskAsync<T>(request);
+            var response = await restClient.ExecuteTaskAsync<T>(request).ConfigureAwait(false);
 
             if (IsSuccessfulResponse(response))
             {

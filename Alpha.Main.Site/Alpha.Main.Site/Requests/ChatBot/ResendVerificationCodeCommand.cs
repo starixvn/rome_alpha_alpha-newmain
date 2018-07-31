@@ -7,8 +7,6 @@
     {
         public int UserId { get; set; }
 
-        public string MessengerAccount { get; set; }
-
-        public int MessengerType { get; set; }
+        public string MessengerUsername { get; set; }
     }
 }

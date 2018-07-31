@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using System;
     using System.Threading.Tasks;
     using Chatbot.Client.Models;
     using Chatbot.Client.Services;
@@ -33,7 +32,7 @@
                 message.MessengerAccount);
 
         public async Task<Result> Handle(UnsubscribeCommand message)
-            => await settingService.Unsubscribe(message.UserId, message.MessengerType);
+            => await settingService.Unsubscribe(message.UserId, message.MessengerType, message.MessengerUserName);
 
         public async Task<VerificationCodeResult> Handle(VerifyVerificationCodeCommand message)
             => await settingService.VerifyVerificationCode(
@@ -42,9 +41,7 @@
                 message.MessengerAccount,
                 message.MessengerType);
 
-        public Task<Result> Handle(ResendVerificationCodeCommand message)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Result> Handle(ResendVerificationCodeCommand message)
+            => await settingService.GenerateVerificationCode(message.UserId, message.MessengerUsername);
     }
 }
