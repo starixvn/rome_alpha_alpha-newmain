@@ -1,11 +1,5 @@
 ﻿@model ChatBotViewModel
 @Html.Hidden("UserId", Model.User.Id)
-<div class="button-expaned-all" data-toggle="tooltip" data-placement="left" title="@ChatBot.ExpandAll">
-    <span class="icon-expnadall"></span>
-</div>
-<div class="button-collapsed-all" data-toggle="tooltip" data-placement="left" title="@ChatBot.CollapseAll">
-    <span class="icon-collapseall"></span>
-</div>
 <div class="panel">
     <div class="panel-heading" role="tab" id="headingAccount">
         <h4 class="panel-title">
@@ -47,10 +41,16 @@
             <ul class="list-guideline">
                 @foreach (var function in Model.ReportFunctions)
                 {
-                    <li class="guideline"><input data-functionId="@function.Id" data-command="@function.Command" class="function" type="checkbox" checked="@(function.Enabled? "checked": string.Empty)" name="reports" /> @($"{function.Name}: User input commands") <span class="bage">@function.Command</span></li>
+                    <li class="guideline">
+                        <label>
+                            <input data-functionId="@function.Id" data-command="@function.Command" class="function" type="checkbox" 
+                                   @(function.Enabled? "checked": string.Empty) name="reports" /> @($"{function.Name}: User input commands")
+                        </label>
+                        <span class="bage">@function.Command</span>
+                    </li>
                 }
             </ul>
-            <p>&#149; Simple input the command into Letstalk and it will return you the report.</p>
+            <p class="bold">Simple input the command into Letstalk and it will return you the report.</p>
             <div class="chatbot-layout">
                 <div class="chatbot-header">
                     <span class="icon-chatbot-back"></span>
@@ -126,7 +126,7 @@
                 <div class="chatbot-footer">
                     <span class="icon-chatbot-plus"></span>
                     <span class="icon-chatbot-gif"></span>
-                    <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" />
+                    <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" disabled />
                     <span class="icon-chatbot-voice"></span>
                 </div>
             </div>
@@ -136,7 +136,7 @@
 <div class="panel">
     <div class="panel-heading" role="tab" id="headingNotification">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification" class="collapsed">
                 @ChatBot.FunctionType_2
             </a>
         </h4>
@@ -146,10 +146,14 @@
             <ul class="list-guideline">
                 @foreach (var function in Model.NotificationFunctions)
                 {
-                    <li class="guideline"><input data-functionId="@function.Id" data-command="@function.Command" type="checkbox" class="function" name="notification" checked="@(function.Enabled? "checked": string.Empty)" /> @function.Name</li>
+                    <li class="guideline">
+                        <label>
+                            <input data-functionId="@function.Id" data-command="@function.Command" type="checkbox" class="function" name="notification" checked="@(function.Enabled? "checked": string.Empty)" /> @function.Name
+                        </label>                        
+                    </li>
                 }
             </ul>
-            <p>Chatbot will automatically notify you new events in the system.</p>
+            <p class="bold">Chatbot will automatically notify you new events in the system.</p>
             <div class="chatbot-layout -notification">
                 <div class="chatbot-header">
                     <span class="icon-chatbot-back"></span>
@@ -161,12 +165,67 @@
                     <ul class="list-commands" id="notificationCommands">
                         <li class="command">
                             <div class="chatbot-reponse">
+                                Yesterday Win Loss <br />
+                                Turnover <br />
+                                30,000.00 <br />
+                                Gross Comm <br />
+                                50.00 <br />
+                                Member Win Loss <br />
+                                5000.00 <br />
+                                ...
+                            </div>
+                            <div class="status-chatbot-reponse">
+                                13:20
+                            </div>
+                        </li>
+                        <li class="command">
+                            <div class="chatbot-reponse">
                                 Personal message <br />
                                 Your minimum position taking <br />
                                 has been changed by the upline <br />
                                 Plase kindly be informed and <br />
                                 have a check the details for your <br />
                                 downlines.
+                            </div>
+                            <div class="status-chatbot-reponse">
+                                13:20
+                            </div>
+                        </li>
+                        <li class="command">
+                            <div class="chatbot-reponse">
+                                Special Announcement <br />
+                                Dear Valued Customer: <br />
+                                Effective 18th Jan 2018 <br />
+                                Company will restrict access <br />
+                                our Agent Site from "Hong Kong". <br />
+                                Thank you for your kind attention! <br />
+                            </div>
+                            <div class="status-chatbot-reponse">
+                                13:20
+                            </div>
+                        </li>
+                        <li class="command">
+                            <div class="chatbot-reponse">
+                                Normal Announcement <br />
+                                Attn:[E-Sports] <br />
+                                a match has been cancelled, <br />
+                                all bets taken are considered REFUNDED. <br />
+                                Thank you!
+                            </div>
+                            <div class="status-chatbot-reponse">
+                                13:20
+                            </div>
+                        </li>
+                        <li class="command">
+                            <div class="chatbot-reponse">
+                                Systen Update <br />
+                                Dear valued agents, <br />
+                                We are pleased to inform that <br />
+                                there are new games <br />
+                                added under Macau Games. <br />
+                                You may review the Bet Limit settings <br />
+                                affected from 10/05/2018. <br />
+                                Thank you!
                             </div>
                             <div class="status-chatbot-reponse">
                                 13:20
