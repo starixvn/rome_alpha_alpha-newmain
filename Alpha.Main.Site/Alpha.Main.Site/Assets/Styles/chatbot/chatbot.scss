@@ -216,47 +216,14 @@ label {
 
 // Chatbot Setting
 
-%float-button {
-    @include border-radius(50%);
-    @include box-shadow-multiple('0 0 4px 2px rgba(0,0,0,.2)');
-    position: fixed;
-    right: 3px;
-    width: 36px;
-    height: 38px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    text-align: center;
-    color: #424242;
-
-    &:hover {
-        background-color: #930a14;
-        color: #fff;
-        cursor: pointer;
-    }
-
-    [class^='icon'] {
-        position: relative;
-        top: 11px;
-    }
-    
-}
-    
-.button-expaned-all {
-    @extend %float-button;
-    top: 24px;
-}
-
-.button-collapsed-all {
-    @extend %float-button;
-    top: 72px;
-}
-
 // panel
+
+.panel-heading + .panel-collapse > .panel-body.account-group {
+    padding: 12px 16px 0 !important;
+}
 
 .filter {
    padding-top: 0;
-
-   .form-group { margin-bottom: 0; }
 }
 
 .language {
@@ -294,7 +261,7 @@ label {
     .bage {
         @include border-radius(4px);
         padding: 4px 8px;
-        margin: 0 10px;
+        margin-left: 6px;
         border: 1px solid $border-color;
         background-color: #f4f4f4;
         color: #7f7f7f;
@@ -302,19 +269,14 @@ label {
 }
 
 .chatbot-layout {
-    @include border-radius(2px);
+    @include border-radius(5px 5px 0 0);
     position: relative;
     width: 340px;
     height: 350px;
     border: 1px solid #c8c8c8;
 
     &.-notification {
-        height: 200px;
-
-        .chatbot-body {
-            height: 157px;
-            overflow: hidden;
-        }
+        height: 289px;
 
         .chatbot-reponse {
             width: 228px;
@@ -345,7 +307,11 @@ label {
         clear: both;
         overflow: hidden;
         margin-top: 8px;
-        margin-bottom: 8px;        
+        margin-bottom: 8px;
+        
+        &.-show {
+            display: list-item;
+        }       
     }  
 
     %bubble {
@@ -436,14 +402,10 @@ label {
         bottom: 0;
         left: 256px;
     }
-
-    .invisible-content {
-        visibility: hidden;
-        height: 100px;
-    }
 }
 
-.chatbot-header {    
+.chatbot-header {
+    @include border-radius(4px 4px 0 0);
     top: 0;
     height: 40px;
     background-color: #4b4b4b;
@@ -512,7 +474,7 @@ label {
         font-size: 28px;
     }
 
-    .chatbot-text {
+    .chatbot-text[disabled] {
         @include border-radius(20px);
         @include box-shadow-multiple(none);
         position: absolute;
@@ -522,5 +484,9 @@ label {
         height: 36px;
         border: 1px solid $border-color;
         padding-left: 12px;
+        background-color: #fff;
+        color: #666;
+        opacity: 1;
+        cursor: default;
     }
 }
