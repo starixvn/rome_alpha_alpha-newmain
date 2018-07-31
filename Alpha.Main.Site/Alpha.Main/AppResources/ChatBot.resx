@@ -109,8 +109,8 @@
   <data name="AddLetstalkAccount" xml:space="preserve">
     <value>Add Chatbot to your Letstalk account.</value>
   </data>
-  <data name="lblLetstalkAccount" xml:space="preserve">
-    <value>Your Letstalk Account</value>
+  <data name="YourMessengerAccount" xml:space="preserve">
+    <value>Your {0} Account</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Add</value>
@@ -154,10 +154,10 @@
   <data name="ChatBotLanguage" xml:space="preserve">
     <value>Chat Bot's Language</value>
   </data>
-  <data name="Report" xml:space="preserve">
+  <data name="FunctionType_1" xml:space="preserve">
     <value>Report</value>
   </data>
-  <data name="Notification" xml:space="preserve">
+  <data name="FunctionType_2" xml:space="preserve">
     <value>Notification</value>
   </data>
   <data name="UserInputCommands" xml:space="preserve">
@@ -180,5 +180,8 @@
   </data>
   <data name="OverMaxAddAccountTimes" xml:space="preserve">
     <value>You have requested too many times today, Please try again later.</value>
+  </data>
+  <data name="MessengerType_1" xml:space="preserve">
+    <value>Letstalk</value>
   </data>
 </root>

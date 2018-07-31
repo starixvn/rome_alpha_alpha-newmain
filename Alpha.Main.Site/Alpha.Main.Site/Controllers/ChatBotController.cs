@@ -69,5 +69,13 @@
             var viewModel = mediator.Send(new AllLanguagesQuery(langCode, AppSettings.DisabledVietnamese));
             return PartialView(viewModel);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> UpdateFunction(UpdateFunctionCommand command)
+            => Json(await mediator.SendAsync(command));
+
+        [HttpPost]
+        public async Task<ActionResult> UpdateLanguage(UpdateLanguageCommand command)
+            => Json(await mediator.SendAsync(command));
     }
 }

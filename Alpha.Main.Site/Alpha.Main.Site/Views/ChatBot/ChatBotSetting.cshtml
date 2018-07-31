@@ -1,4 +1,5 @@
 ﻿@model ChatBotViewModel
+@Html.Hidden("UserId", Model.User.Id)
 <div class="button-expaned-all" data-toggle="tooltip" data-placement="left" title="@ChatBot.ExpandAll">
     <span class="icon-expnadall"></span>
 </div>
@@ -14,36 +15,40 @@
         </h4>
     </div>
     <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
-        <div class="panel-body has-padding">
-            <form class="filter">
-                <div class="form-group">
-                    <label>@ChatBot.lblLetstalkAccount: <strong>LTacc1</strong></label>
-                    <button class="btn-remove">@ChatBot.Unsubscribe</button>
-                </div>
-                <div class="form-group">
-                    <label>Chat Bot's Language:</label>
-                    <div class="dropdown language">
-                        @Html.Action("Language", new { langCode = "en-Us" })
+        @foreach (var account in Model.User.MessengerAccounts)
+        {
+            <div class="panel-body has-padding">
+                <form class="filter">
+                    <div class="form-group">
+                        <label>@string.Format(ChatBot.YourMessengerAccount, ChatBot.ResourceManager.GetString($"MessengerType_{account.Type}")) <strong>@account.Username</strong></label>
+                        <button class="btn-remove">@ChatBot.Unsubscribe</button>
                     </div>
-                </div>
-            </form>
-        </div>
+                    <div class="form-group">
+                        <label>Chat Bot's Language:</label>
+                        <div class="dropdown language">
+                            @Html.Action("Language", new { langCode = Model.User.Language })
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
     </div>
 </div>
 <div class="panel">
     <div class="panel-heading" role="tab" id="headingReport">
         <h4 class="panel-title">
             <a role="button" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report">
-                @ChatBot.Report
+                @ChatBot.FunctionType_1
             </a>
         </h4>
     </div>
     <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
         <div class="panel-body has-padding">
             <ul class="list-guideline">
-                <li class="guideline"><input type="checkbox" name="reports" /> Outstanding: User input commands <span class="bage">os</span></li>
-                <li class="guideline"><input type="checkbox" name="reports" /> Today Win Loss: User input commands <span class="bage">wl</span></li>
-                <li class="guideline"><input type="checkbox" name="reports" /> Balance Info: User input commands <span class="bage">bal</span></li>
+                @foreach (var function in Model.ReportFunctions)
+                {
+                    <li class="guideline"><input data-functionId="@function.Id" data-command="@function.Command" class="function" type="checkbox" checked="@(function.Enabled? "checked": string.Empty)" name="reports" /> @($"{function.Name}: User input commands") <span class="bage">@function.Command</span></li>
+                }
             </ul>
             <p>&#149; Simple input the command into Letstalk and it will return you the report.</p>
             <div class="chatbot-layout">
@@ -125,25 +130,6 @@
                     <span class="icon-chatbot-voice"></span>
                 </div>
             </div>
-
-            @*@foreach (var function in Model.ReportFunctions)
-            {
-                <div class="panel level-2">
-                    <div class="panel-heading" role="tab" id="headingOutstanding">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" href="#@function.Id" aria-expanded="false" aria-controls="@function.Name">
-                                <input type="checkbox" name="reports" /> @function.Name
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="@function.Id" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOutstanding">
-                        <div class="panel-body has-padding">
-                            <p class="command-example">@ChatBot.UserInputCommands <span class="bage">@function.Command</span></p>
-                            <img class="img-example" src="~/Assets/Styles/chatbot/images/outstanding-1.png" />
-                        </div>
-                    </div>
-                </div>
-            }*@
         </div>
     </div>
 </div>
@@ -151,18 +137,17 @@
     <div class="panel-heading" role="tab" id="headingNotification">
         <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification">
-                @ChatBot.Notification
+                @ChatBot.FunctionType_2
             </a>
         </h4>
     </div>
     <div id="notification" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNotification">
         <div class="panel-body has-padding">
             <ul class="list-guideline">
-                <li class="guideline"><input type="checkbox" name="notification" /> Yesterday Win Loss (Daily sent at 3:00 AM GMT-4)</li>
-                <li class="guideline"><input type="checkbox" name="notification" /> Personal Message</li>
-                <li class="guideline"><input type="checkbox" name="notification" /> Special Annoucement</li>
-                <li class="guideline"><input type="checkbox" name="notification" /> Normal Annoucement</li>
-                <li class="guideline"><input type="checkbox" name="notification" /> System Update</li>
+                @foreach (var function in Model.NotificationFunctions)
+                {
+                    <li class="guideline"><input data-functionId="@function.Id" data-command="@function.Command" type="checkbox" class="function" name="notification" checked="@(function.Enabled? "checked": string.Empty)" /> @function.Name</li>
+                }
             </ul>
             <p>Chatbot will automatically notify you new events in the system.</p>
             <div class="chatbot-layout -notification">
@@ -190,24 +175,6 @@
                     </ul>
                 </div>
             </div>
-
-            @*@foreach (var function in Model.NotificationFunctions)
-            {
-                <div class="panel level-2">
-                    <div class="panel-heading" role="tab" id="headingYesterdayWinLoss">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" href="#@function.Id" aria-expanded="false" aria-controls="@function.Name">
-                                <input type="checkbox" name="reports" /> @function.Name
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="yesterdayWinLoss" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingYesterdayWinLoss">
-                        <div class="panel-body has-padding">
-                            <img class="img-example" src="~/Assets/Styles/chatbot/images/yesterday-win-loss.png" />
-                        </div>
-                    </div>
-                </div>
-            }*@
         </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
     using Chatbot.Client.Models;
     using Chatbot.Client.Services;
@@ -12,7 +13,9 @@
         IAsyncRequestHandler<AddAccountCommand, AddingUserResult>,
         IAsyncRequestHandler<UnsubscribeCommand, Result>,
         IAsyncRequestHandler<VerifyVerificationCodeCommand, VerificationCodeResult>,
-        IAsyncRequestHandler<ResendVerificationCodeCommand, Result>
+        IAsyncRequestHandler<ResendVerificationCodeCommand, Result>,
+        IAsyncRequestHandler<UpdateFunctionCommand, Result>,
+        IAsyncRequestHandler<UpdateLanguageCommand, Result>
     {
         private readonly SettingService settingService;
 
@@ -43,5 +46,22 @@
 
         public async Task<Result> Handle(ResendVerificationCodeCommand message)
             => await settingService.GenerateVerificationCode(message.UserId, message.MessengerUsername);
+
+        public async Task<Result> Handle(UpdateFunctionCommand message)
+        {
+            var functions = new List<Function>
+            {
+                new Function {
+                    Id = message.FunctionId,
+                    Command=message.Command,
+                    Enabled=message.IsEnable
+                }
+            };
+
+            return await settingService.UpdateFunctions(message.UserId, functions);
+        }
+
+        public async Task<Result> Handle(UpdateLanguageCommand message)
+            => await settingService.UpdateLanguage(message.UserId, message.Language);
     }
 }

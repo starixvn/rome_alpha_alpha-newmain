@@ -169,6 +169,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Report.
+        /// </summary>
+        public static string FunctionType_1 {
+            get {
+                return ResourceManager.GetString("FunctionType_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notification.
+        /// </summary>
+        public static string FunctionType_2 {
+            get {
+                return ResourceManager.GetString("FunctionType_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please verify your account by inputting the verification code into the text box below and click Verify..
         /// </summary>
         public static string InputVerificationCode {
@@ -187,15 +205,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Letstalk Account.
-        /// </summary>
-        public static string lblLetstalkAccount {
-            get {
-                return ResourceManager.GetString("lblLetstalkAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Verification code.
         /// </summary>
         public static string lblVerificationCode {
@@ -205,11 +214,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notification.
+        ///   Looks up a localized string similar to Letstalk.
         /// </summary>
-        public static string Notification {
+        public static string MessengerType_1 {
             get {
-                return ResourceManager.GetString("Notification", resourceCulture);
+                return ResourceManager.GetString("MessengerType_1", resourceCulture);
             }
         }
         
@@ -228,15 +237,6 @@ namespace Alpha.Main.AppResources {
         public static string OverMaxAddAccountTimes {
             get {
                 return ResourceManager.GetString("OverMaxAddAccountTimes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Report.
-        /// </summary>
-        public static string Report {
-            get {
-                return ResourceManager.GetString("Report", resourceCulture);
             }
         }
         
@@ -309,6 +309,15 @@ namespace Alpha.Main.AppResources {
         public static string YesterdayWinLoss {
             get {
                 return ResourceManager.GetString("YesterdayWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your {0} Account.
+        /// </summary>
+        public static string YourMessengerAccount {
+            get {
+                return ResourceManager.GetString("YourMessengerAccount", resourceCulture);
             }
         }
     }
