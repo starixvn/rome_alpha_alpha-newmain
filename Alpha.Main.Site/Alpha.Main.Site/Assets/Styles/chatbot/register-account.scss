@@ -43,7 +43,7 @@
     padding-top: 10px;
 
     .letstalk-text {
-        width: 140px;
+        width: 220px;
         margin-right: 10px;
     }
 }
@@ -70,6 +70,10 @@
         padding-top: 0;
         padding-bottom: 0;
         width: 100%;
+    }
+
+    .btn-refresh {
+        margin-right: 0;
     }
 
     .group-captcha {

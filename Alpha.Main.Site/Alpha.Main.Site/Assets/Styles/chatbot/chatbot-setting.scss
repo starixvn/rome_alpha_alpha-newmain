@@ -1,6 +1,5 @@
 ﻿@import '../Home/_variables.scss';
 @import '../Home/_mixins.scss';
-// Chatbot Setting
 
 // panel
 
@@ -9,7 +8,13 @@
 }
 
 .filter {
-    padding-top: 0;
+   padding-top: 0;
+
+   .chatbot-name {
+       color: #54B948;
+       font-weight: bold;
+       font-size: $font-size + 1;
+   }
 }
 
 .language {
@@ -18,15 +23,12 @@
     height: 28px;
     padding: 4px;
     border: 1px solid $border-color;
-    width: 150px;
+    width: 133px;
 
-    .dropdown-toggle {
-        padding-left: 12px;
-    }
+    .dropdown-toggle { padding-left: 12px; }
+    
 
-    &:hover {
-        cursor: pointer;
-    }
+    &:hover { cursor: pointer; }
 
     .icon-flag {
         margin-right: 8px;
@@ -34,30 +36,91 @@
         top: 1px;
     }
 
-    .list-language {
-        width: 148px;
-    }
+    .list-language {  width: 133px; }
 }
 
-.list-guideline {
-    padding-left: 0;
-    padding-bottom: 12px;
-    list-style: none;
+.tbl-guideline {
+    width: 386px;
+    margin-bottom: 16px;
+    border: none;
+    border-collapse: collapse;
 
-    .guideline {
+    thead th {
         padding-top: 8px;
         padding-bottom: 8px;
+        text-align: center;
+        color: #808080;
+    }
+    
+    td {
+        padding-left: 12px;
+        padding-right: 12px;
+        line-height: 44px;
+        border: 1px solid $border-color;
     }
 
     .bage {
         @include border-radius(4px);
         padding: 4px 8px;
-        margin-left: 6px;
         border: 1px solid $border-color;
         background-color: #f4f4f4;
         color: #7f7f7f;
     }
 }
+
+// Switch Button
+
+.switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 18px;
+    margin: auto;
+    vertical-align: middle;
+    top: 2px;
+    margin-right: 3px;
+
+    input {
+        display: none;
+    }
+
+    .slider {
+        @include border-radius(8px);
+        position: absolute;    
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 30px;
+        height: 16px;
+        background-color: #8a8a8a;
+        transition: .4s;
+        cursor: pointer;
+
+        &:before {
+            @include border-radius(50%);
+            position: absolute;
+            top: 1px;
+            left: 1px;    
+            height: 14px;
+            width: 14px;    
+            background-color: #fff;
+            transition: .4s;
+            content: "";
+        }
+    }
+
+    input:checked + .slider {
+        background-color: #558b11;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(14px);
+    }
+}
+
+// Chatbot layout
 
 .chatbot-layout {
     @include border-radius(5px 5px 0 0);
@@ -77,7 +140,7 @@
             left: 289px;
         }
     }
-
+    
     .chatbot-header,
     .chatbot-body,
     .chatbot-footer {
@@ -85,7 +148,7 @@
         left: 0;
         width: 100%;
     }
-
+    
     .list-commands {
         margin: 0;
         padding: 0;
@@ -99,11 +162,11 @@
         overflow: hidden;
         margin-top: 8px;
         margin-bottom: 8px;
-
+        
         &.-show {
             display: list-item;
-        }
-    }
+        }       
+    }  
 
     %bubble {
         @include border-radius(20px);
@@ -111,15 +174,15 @@
         padding: 8px 16px;
         text-align: left;
         display: inline-block;
-        vertical-align: middle;
+        vertical-align:middle;
         font-weight: bold;
 
         &:before {
             content: "";
             position: absolute;
             top: 4px;
-            margin: auto;
-            height: 0px;
+            margin:auto;
+            height: 0px; 
             border-style: solid;
             display: block;
             width: 0;
@@ -129,26 +192,28 @@
 
     .chatbot-reponse {
         @extend %bubble;
-        float: left;
+        float: left;        
         width: 190px;
         line-height: 18px;
         margin-left: 58px;
         background-color: #fff;
         color: #333;
-
+        
         &.-large {
             width: 228px;
-        }
+        } 
+        
 
         &:after {
             content: '';
             position: absolute;
             top: 0;
             left: -57px;
-            background: url(images/chatbot-avatar.png) no-repeat;
+            background: url(images/chatbot-avatar.png)  no-repeat;
             display: inline-block;
             width: 44px;
             height: 44px;
+            
         }
 
         &:before {
@@ -163,14 +228,14 @@
         @extend %bubble;
         float: right;
         background-color: #a7e879;
-        margin-right: 10px;
-        color: #000;
+        margin-right: 10px;        
+        color: #000;        
 
         &:before {
             right: -7px;
             border-width: 31px 0 0 20px;
             border-color: transparent #a7e879;
-            transform: rotateX(184deg);
+            transform: rotateX(184deg);            
         }
     }
 
@@ -191,6 +256,7 @@
         bottom: 0;
         left: 256px;
     }
+    
 }
 
 .chatbot-header {
@@ -200,15 +266,14 @@
     background-color: #4b4b4b;
     color: #fff;
     text-align: center;
-
-    [class^='icon'] {
+    [class^='icon'] {        
         position: absolute;
         top: 10px;
         font-size: 16px;
     }
 
     .icon-chatbot-back {
-        left: 16px;
+        left: 16px;        
     }
 
     .icon-chatbot-call {
@@ -231,9 +296,9 @@
     height: 246px;
     max-height: 246px;
     padding: 10px;
-    background-color: #efefef;
+    background-color: #efefef;    
     color: #333;
-    overflow-y: scroll;
+    overflow-y: scroll;    
 }
 
 .chatbot-footer {
@@ -243,8 +308,7 @@
     background-color: #fff;
     color: #4b4b4b;
     text-align: center;
-
-    [class^='icon'] {
+    [class^='icon'] {        
         position: absolute;
         top: 17px;
     }
@@ -252,7 +316,7 @@
     .icon-chatbot-plus {
         left: 10px;
         top: 22px;
-        font-size: 17px;
+        font-size: 17px;   
     }
 
     .icon-chatbot-gif {
@@ -299,7 +363,7 @@
         color: #fff;
         font-weight: normal;
 
-        &:hover:after {
+            &:hover:after {
             width: 36px;
             height: 36px;
             margin-left: -12px;

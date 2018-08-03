@@ -16,7 +16,7 @@
         <input type="hidden" id="IsShowCaptcha" name="IsShowCaptcha" value="@Model.IsShowCaptcha.ToString()" />
         <div class="form-group">
             <label>@ChatBot.lblVerificationCode</label>
-            <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="number" class="verify-text" />
+            <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="text" class="verify-text" />
         </div>
         @if (Model.IsShowCaptcha)
         {
@@ -24,7 +24,7 @@
         }
         <div class="form-group last">
             <input id="btnVerify" class="btn-submit" type="submit" value="@ChatBot.Verify" />
-            <input id="btnResend" class="btn-reset" type="button" value="@ChatBot.Resend" />
+            <input id="btnResend" class="btn-refresh" type="button" value="@ChatBot.Resend" />
         </div>
     </form>
 </li>
