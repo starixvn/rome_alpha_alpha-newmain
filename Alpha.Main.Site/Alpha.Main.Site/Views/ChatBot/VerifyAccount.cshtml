@@ -18,11 +18,13 @@
             <label>@ChatBot.lblVerificationCode</label>
             <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="text" class="verify-text" />
         </div>
-        @if (Model.IsShowCaptcha)
+        @*@if (Model.IsShowCaptcha)
         {
             @Html.Captcha(4, "Captcha", ViewData)
-        }
-        <div class="form-group last">
+        }*@
+
+        @Html.Captcha(4, "Captcha", ViewData)
+        <div class="form-group list-button">
             <input id="btnVerify" class="btn-submit" type="submit" value="@ChatBot.Verify" />
             <input id="btnResend" class="btn-refresh" type="button" value="@ChatBot.Resend" />
         </div>

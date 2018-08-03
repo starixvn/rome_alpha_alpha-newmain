@@ -1,4 +1,6 @@
-﻿// Register Letstalk
+﻿@import '../Home/_variables.scss';
+
+// Register Letstalk
 
 .list-requirements {
     margin-bottom: 0;
@@ -63,26 +65,46 @@
 
 .verification-form {
     clear: both;
-    width: 240px;
     padding-top: 12px;
+
+    .form-group {
+        float: left;
+
+        @media (min-device-width: $screen-device-greater768) {
+            &.list-button {
+                padding-top: 24px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    label {
+        display: block;
+        width: 100%;
+    }
 
     .verify-text {
         padding-top: 0;
         padding-bottom: 0;
-        width: 100%;
+        width: 97px;
     }
 
     .btn-refresh {
         margin-right: 0;
     }
 
+    .captcha-container {
+        margin-left: 16px;
+        padding-right: 32px;
+    }
+
     .group-captcha {
         position: relative;
         display: table;
-        width: 100%;
+        width: 194px;
     }
 
-    .captcha-text, .captcha-code {
+    .captcha-text, .captcha-code, action-refresh {
         display: table-cell;
     }
 
@@ -99,7 +121,7 @@
     .captcha-text {
         position: relative;
         top: -6px;
-        width: 140px;
+        width: 97px;
         margin-right: 10px;
     }
 
@@ -121,4 +143,8 @@
         width: 36px;
         height: 36px;
     }
+
+    
+
+
 }
