@@ -10,7 +10,6 @@
 @Html.Hidden("UserId", Model.UserId)
 @Html.Hidden("UserName", Model.Username)
 
-
 <div class="panel">
     <div class="panel-heading" role="tab" id="headingAccount">
         <h4 class="panel-title">
@@ -21,7 +20,7 @@
     </div>
     <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
         <div class="panel-body has-padding">
-            <div id="language-message" class="container-msg"></div>
+            <div id="account-message" class="container-msg"></div>
             <form class="filter">
                 <div class="form-group">
                     <label>@ChatBot.YourLetstalkAccount: <span class="chatbot-name">@Model.Username</span></label>
@@ -32,7 +31,6 @@
                     <div class="dropdown language">
                         @Html.Action("Language", new { langCode = Model.Language })
                     </div>
-                    
                 </div>
             </form>
         </div>

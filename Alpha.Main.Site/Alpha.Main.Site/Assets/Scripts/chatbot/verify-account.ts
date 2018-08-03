@@ -108,7 +108,10 @@ class VerifyAccount extends BaseChatBot {
 
         if (result) {
             if (result.IsOk) {
-                parent.window.location.href = parent.window.location.href;
+                setTimeout(() => {
+                    parent.window.location.href = parent.window.location.href;
+                }, 2000);
+                return;
             } else {
                 if (this.isShowCaptcha) {
                     var captchaInfo = result.CaptchaInfo;

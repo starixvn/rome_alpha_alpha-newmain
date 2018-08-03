@@ -5,6 +5,7 @@
     using System.Web.Mvc;
     using CaptchaMvc.HtmlHelpers;
     using Configurations;
+    using Main.Models;
     using MediatR;
     using Models.Requests;
     using Requests.ChatBot;
@@ -38,6 +39,11 @@
         [HttpPost]
         public async Task<ActionResult> AddAccount(AddAccountCommand command)
         {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
             var result = await mediator.SendAsync(command);
 
             if (result.IsOk)
@@ -51,11 +57,23 @@
 
         [HttpPost]
         public async Task<ActionResult> Unsubscribe(UnsubscribeCommand command)
-            => Json(await mediator.SendAsync(command));
+        {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
+            return Json(await mediator.SendAsync(command));
+        }
 
         [HttpPost]
         public async Task<ActionResult> VerifyVerificationCode(VerifyVerificationCodeCommand command)
         {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
             var isCaptchaValid = this.IsCaptchaValid(null);
             if (command.IsShowCaptcha && !isCaptchaValid)
             {
@@ -74,7 +92,14 @@
 
         [HttpPost]
         public async Task<ActionResult> ResendVerificationCode(ResendVerificationCodeCommand command)
-            => Json(await mediator.SendAsync(command));
+        {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
+            return Json(await mediator.SendAsync(command));
+        }
 
         [ChildActionOnly]
         public ActionResult Language(string langCode)
@@ -85,7 +110,14 @@
 
         [HttpPost]
         public async Task<ActionResult> UpdateFunction(UpdateFunctionCommand command)
-            => Json(await mediator.SendAsync(command));
+        {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
+            return Json(await mediator.SendAsync(command));
+        }
 
         [HttpPost]
         public async Task<ActionResult> ChangeLanguage(UpdateLanguageCommand command)

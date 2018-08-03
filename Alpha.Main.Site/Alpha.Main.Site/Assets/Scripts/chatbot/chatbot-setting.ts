@@ -14,7 +14,7 @@ class ChatBotSetting extends BaseChatBot {
     $userId: JQuery;
     $userName: JQuery;
     $btnUnsubscribe: JQuery;
-    $languageMessage: JQuery;
+    $accountMessage: JQuery;
 
     constructor($: JQueryStatic, bootbox: any) {
         super($)
@@ -30,7 +30,7 @@ class ChatBotSetting extends BaseChatBot {
 
     cachedDOMElements = () => {
         this.$language = this.$("#language");
-        this.$languageMessage = this.$("#language-message");
+        this.$accountMessage = this.$("#account-message");
         this.$languageSelectorContainer = this.$(".language-selector-container");
         this.$changeLanguageLink = this.$(".changelanguage-link");
         this.$userId = this.$("#UserId");
@@ -39,17 +39,10 @@ class ChatBotSetting extends BaseChatBot {
     }
 
     registerEvents = () => {
-        var self = this;
-        this.$(".function").click((e) => {
-            var userId = self.$userId.val();
-            var checkbox = self.$(e.target);
-            var functionId = checkbox.attr("data-functionId");
-            var command = checkbox.attr("data-command");
-            var isEnable = checkbox.is(":checked");
-            self.updateFunction(userId, functionId, command, isEnable);
-        });
-
+        this.$(".function").click(this.updateFunction);
         this.$btnUnsubscribe.click(this.unsubscribeEvent);
+
+        var self = this;
         this.$changeLanguageLink.on('click touchend', (e) => {
             self.changeLanguage(self.$(e.target).data("value"));
         });
@@ -62,13 +55,27 @@ class ChatBotSetting extends BaseChatBot {
         this.$languageSelectorContainer.prepend(language);
     }
 
-    updateFunction = (userId: number, functionId: any, command: string, isEnable: boolean) => {
+    updateFunction = (e: JQueryEventObject) => {
+        var userId = this.$userId.val();
+        var checkbox = this.$(e.target);
+        var functionId = checkbox.attr("data-functionId");
+        var command = checkbox.attr("data-command");
+        var isEnable = checkbox.is(":checked");
+        var self = this;
         this.$.blockUI();
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/UpdateFunction",
             data: { command: { userId: userId, functionId: functionId, command: command, isEnable: isEnable } },
             dataType: "json",
+            success: (result) => {
+                if (result && result.IsNotOk) {
+                    if (result.IsNotAuthorized) {
+                        self.bootbox.alert(result.Message);
+                    }
+                    checkbox.prop("checked", !isEnable);
+                }
+            },
             complete: this.onComplete,
         });
     }
@@ -94,9 +101,16 @@ class ChatBotSetting extends BaseChatBot {
     }
 
     onUnSubscribeSuccess = (data: any) => {
-        if (data.IsOk) {
-            parent.window.location.href = parent.window.location.href;
+        if (data && data.IsNotAuthorized) {
+            this.bootbox.alert(data.Message);
+            return;
         }
+
+        var result = new Result(data);
+        alpha.showMessage(this.$accountMessage, result);
+        setTimeout(() => {
+            parent.window.location.href = parent.window.location.href;
+        }, 2000);
     }
 
     changeLanguage = (lang) => {
@@ -114,10 +128,17 @@ class ChatBotSetting extends BaseChatBot {
     onChangeLanguageSuccess = (result: any) => {
         if (result) {
             if (result.IsOk) {
-                //parent.window.location.href = parent.window.location.href;
-                alpha.showMessage(this.$languageMessage, new Result({ Code: 1, Message: this.resources.updateLanguageFailed }));
+                setTimeout(() => {
+                    parent.window.location.href = parent.window.location.href;
+                }, 2000);
+                return;
             } else {
-                alpha.showMessage(this.$languageMessage, new Result({ Code: 1, Message: this.resources.updateLanguageFailed }));
+                if (result.IsNotAuthorized) {
+                    this.bootbox.alert(result.Message);
+                    return;
+                }
+
+                alpha.showMessage(this.$accountMessage, new Result({ Code: 1, Message: this.resources.updateLanguageFailed }));
             }
         }
     }

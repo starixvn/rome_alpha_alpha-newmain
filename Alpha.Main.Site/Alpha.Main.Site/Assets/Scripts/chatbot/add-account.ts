@@ -123,9 +123,11 @@ class AddAccount extends BaseChatBot {
     }
 
     onUnSubscribeSuccess = (data: any) => {
-        if (data.IsOk) {
+        var result = new Result(data);
+        alpha.showMessage(this.$addAccountMessage, result);
+        setTimeout(() => {
             parent.window.location.href = parent.window.location.href;
-        }
+        }, 2000);
     }
 }
 
