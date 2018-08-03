@@ -28,6 +28,7 @@
                     <div class="dropdown language">
                         @Html.Action("Language", new { langCode = Model.Language })
                     </div>
+                    <span class="icon-check"></span>
                 </div>
             </form>
         </div>
@@ -43,7 +44,7 @@
     </div>
     <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
         <div class="panel-body has-padding">
-            <ul class="list-guideline">
+            @*<ul class="list-guideline">
                 @foreach (var function in Model.ReportFunctions)
                 {
                     <li class="guideline">
@@ -54,8 +55,50 @@
                             <span class="bage">@function.Command</span>
                         </li>
                 }
-            </ul>
-            <p class="bold">Simple input the command into Letstalk and it will return you the report.</p>
+            </ul>*@
+            <p>For active items below, you can simply command the Chatbot via Letstalk IM, it will return the report.</p>
+            <table class="tbl-guideline">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Action</th>
+                        <th>Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center"><span class="bage">/os</span></td>
+                        <td class="bold">Outstanding Report</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><span class="bage">/wl</span></tdclass="text-center">
+                        <td class="bold">Today Win Loss Report</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><span class="bage">/bal</span></td>
+                        <td class="bold">Balance Information</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>            
+            <p>Example</p>
             <div class="chatbot-layout">
                 <div class="chatbot-header">
                     <span class="icon-chatbot-back"></span>
@@ -66,7 +109,7 @@
                 <div class="chatbot-body" id="reportBody">
                     <ul class="list-commands" id="reportCommands">
                         <li class="command">
-                            <div class="user-input">os</div>
+                            <div class="user-input">/os</div>
                             <div class="status-user-input">
                                 Read <br />
                                 12:33
@@ -85,7 +128,7 @@
                             </div>
                         </li>
                         <li class="command">
-                            <div class="user-input">wl</div>
+                            <div class="user-input">/wl</div>
                             <div class="status-user-input">
                                 Read <br />
                                 12:33
@@ -106,7 +149,7 @@
                             </div>
                         </li>
                         <li class="command">
-                            <div class="user-input">bal</div>
+                            <div class="user-input">/bal</div>
                             <div class="status-user-input">
                                 Read <br />
                                 12:33
@@ -151,7 +194,7 @@
     </div>
     <div id="notification" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNotification">
         <div class="panel-body has-padding">
-            <ul class="list-guideline">
+            @*<ul class="list-guideline">
                 @foreach (var function in Model.NotificationFunctions)
                 {
                     <li class="guideline">
@@ -161,8 +204,64 @@
                             </label>
                         </li>
                 }
-            </ul>
-            <p class="bold">Chatbot will automatically notify you new events in the system.</p>
+            </ul>*@
+            <p>For active items below, Chatbot will automatically notify you new events in the system.</p>
+            <table class="tbl-guideline">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="bold">Yesterday Win Loss</span> <br /> (Daily sent at 3:00 AM GMT-4)</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Personal Message</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Normal Announcement</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bold">Special Announcement</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bold">System Update</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Example</p>
             <div class="chatbot-layout -notification">
                 <div class="chatbot-header">
                     <span class="icon-chatbot-back"></span>
