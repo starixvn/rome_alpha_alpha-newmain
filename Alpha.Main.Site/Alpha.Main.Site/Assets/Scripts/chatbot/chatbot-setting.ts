@@ -14,6 +14,7 @@ class ChatBotSetting extends BaseChatBot {
     $userId: JQuery;
     $userName: JQuery;
     $btnUnsubscribe: JQuery;
+    $languageMessage: JQuery;
 
     constructor($: JQueryStatic, bootbox: any) {
         super($)
@@ -29,6 +30,7 @@ class ChatBotSetting extends BaseChatBot {
 
     cachedDOMElements = () => {
         this.$language = this.$("#language");
+        this.$languageMessage = this.$("#language-message");
         this.$languageSelectorContainer = this.$(".language-selector-container");
         this.$changeLanguageLink = this.$(".changelanguage-link");
         this.$userId = this.$("#UserId");
@@ -98,19 +100,26 @@ class ChatBotSetting extends BaseChatBot {
     }
 
     changeLanguage = (lang) => {
-        var self = this;
         var userId = this.$userId.val();
+        this.$.blockUI();
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/ChangeLanguage",
             data: { userId: userId, language: lang },
-            success: function (result) {
-                if (result && result.IsOk) {
-                    var language = self.$(".list-language ." + lang + " > a").html();
-                    self.$languageSelectorContainer.html(language + '<span class="caret"></span>');
-                }
-            }
+            success: this.onChangeLanguageSuccess,
+            complete: this.onComplete
         });
+    }
+
+    onChangeLanguageSuccess = (result: any) => {
+        if (result) {
+            if (result.IsOk) {
+                //parent.window.location.href = parent.window.location.href;
+                alpha.showMessage(this.$languageMessage, new Result({ Code: 1, Message: this.resources.updateLanguageFailed }));
+            } else {
+                alpha.showMessage(this.$languageMessage, new Result({ Code: 1, Message: this.resources.updateLanguageFailed }));
+            }
+        }
     }
 }
 

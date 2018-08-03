@@ -98,7 +98,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ChatBotTitle" xml:space="preserve">
-    <value>Chat Bot</value>
+    <value>Chatbot</value>
   </data>
   <data name="Account" xml:space="preserve">
     <value>Account</value>
@@ -107,10 +107,10 @@
     <value>Download Letstalk IM on your device and create an account.</value>
   </data>
   <data name="AddLetstalkAccount" xml:space="preserve">
-    <value>Add Chatbot to your Letstalk account.</value>
+    <value>Add Chatbot to your Letstalk IM account.</value>
   </data>
   <data name="YourLetstalkAccount" xml:space="preserve">
-    <value>Your Letstalk Account</value>
+    <value>Your Letstalk IM Account</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Add</value>
@@ -119,10 +119,10 @@
     <value>Unsubscribe</value>
   </data>
   <data name="VerificationCodeExample" xml:space="preserve">
-    <value>A bot named "&lt;strong&gt;Chatbot&lt;/strong&gt;" has sent you a 6-digits verification code via Letstalk.</value>
+    <value>A bot named "&lt;strong&gt;Chatbot&lt;/strong&gt;" has sent you a 6-digits verification code via Letstalk IM.</value>
   </data>
   <data name="EnterVerificationCode" xml:space="preserve">
-    <value>Verify yout Letstalk account by entering the verification code.</value>
+    <value>Verify your Letstalk IM  account.</value>
   </data>
   <data name="lblVerificationCode" xml:space="preserve">
     <value>Verification code</value>
@@ -151,23 +151,14 @@
   <data name="ExpandAll" xml:space="preserve">
     <value>Expand all features</value>
   </data>
-  <data name="ChatBotLanguage" xml:space="preserve">
-    <value>Chat Bot's Language</value>
-  </data>
-  <data name="FunctionType_1" xml:space="preserve">
+  <data name="FunctionReport" xml:space="preserve">
     <value>Report</value>
   </data>
-  <data name="FunctionType_2" xml:space="preserve">
+  <data name="FunctionNotification" xml:space="preserve">
     <value>Notification</value>
   </data>
   <data name="UserInputCommands" xml:space="preserve">
     <value>User input commands</value>
-  </data>
-  <data name="Or" xml:space="preserve">
-    <value>or</value>
-  </data>
-  <data name="YesterdayWinLoss" xml:space="preserve">
-    <value>Yesterday Win Loss (Daily sent at 3:00 AM GMT-4)</value>
   </data>
   <data name="AccountDoesNotExist" xml:space="preserve">
     <value>Account does not exist.</value>
@@ -181,7 +172,46 @@
   <data name="OverMaxAddAccountTimes" xml:space="preserve">
     <value>You have requested too many times today, Please try again later.</value>
   </data>
-  <data name="MessengerType_1" xml:space="preserve">
-    <value>Letstalk</value>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>Command</value>
+  </data>
+  <data name="ChatBotLanguage" xml:space="preserve">
+    <value>Chat Bot's Language</value>
+  </data>
+  <data name="IntroReport" xml:space="preserve">
+    <value>For active items below, you can simply command the Chatbot via Letstalk IM, it will return the report.</value>
+  </data>
+  <data name="IntroNotification" xml:space="preserve">
+    <value>For active items below, Chatbot will automatically notify you new events in the system.</value>
+  </data>
+  <data name="Example" xml:space="preserve">
+    <value>Example</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="grossComm" xml:space="preserve">
+    <value>Gross Comm</value>
+  </data>
+  <data name="memberWinLoss" xml:space="preserve">
+    <value>Member Win Loss</value>
+  </data>
+  <data name="personalMessageSample" xml:space="preserve">
+    <value>Personal message&lt;br /&gt;Your minimum position taking&lt;br /&gt;has been changed by the upline&lt;br /&gt;Please kindly be informed and&lt;br /&gt;have a check the details for your&lt;br /&gt;downlines.</value>
+  </data>
+  <data name="specialAnnouncementSample" xml:space="preserve">
+    <value>Special Announcement&lt;br /&gt;Dear Valued Customer:&lt;br /&gt;Effective 18th Jan 2018&lt;br /&gt;Company will restrict access&lt;br /&gt;our Agent Site from "Hong Kong".&lt;br /&gt;Thank you for your kind attention! &lt;br /&gt;</value>
+  </data>
+  <data name="normalAnnouncementSample" xml:space="preserve">
+    <value> Normal Announcement&lt;br /&gt;Attn:[E-Sports]&lt;br /&gt;a match has been cancelled,&lt;br /&gt;all bets taken are considered REFUNDED.&lt;br /&gt;Thank you!</value>
+  </data>
+  <data name="systemUpdateAnnouncementSample" xml:space="preserve">
+    <value>System Update&lt;br /&gt;Dear valued agents,&lt;br /&gt;We are pleased to inform that&lt;br /&gt;there are new games&lt;br /&gt;added under Macau Games.&lt;br /&gt;You may review the Bet Limit settings &lt;br /&gt;affected from 10/05/2018.&lt;br /&gt;Thank you!</value>
+  </data>
+  <data name="updateLanguageFailed" xml:space="preserve">
+    <value>Update Chatbot's language failed. Please try again.</value>
   </data>
 </root>

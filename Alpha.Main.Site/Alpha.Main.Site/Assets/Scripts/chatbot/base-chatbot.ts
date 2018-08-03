@@ -11,7 +11,8 @@
         verificationCodeIsInvalidOrExpired: (<HTMLInputElement>document.getElementById('VerificationCodeIsInvalidOrExpired')).value,
         unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
         overMaxAddAccountTimes: (<HTMLInputElement>document.getElementById('OverMaxAddAccountTimes')).value,
-        accountHasAlreadyBeenRegistered: (<HTMLInputElement>document.getElementById('AccountHasAlreadyBeenRegistered')).value
+        accountHasAlreadyBeenRegistered: (<HTMLInputElement>document.getElementById('AccountHasAlreadyBeenRegistered')).value,
+        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value
     }
 
     onComplete = () => {

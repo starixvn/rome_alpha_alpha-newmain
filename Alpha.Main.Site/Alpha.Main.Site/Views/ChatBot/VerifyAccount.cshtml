@@ -16,7 +16,7 @@
         <input type="hidden" id="IsShowCaptcha" name="IsShowCaptcha" value="@Model.IsShowCaptcha.ToString()" />
         <div class="form-group">
             <label>@ChatBot.lblVerificationCode</label>
-            <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="password" class="verify-text" />
+            <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="number" class="verify-text" />
         </div>
         @if (Model.IsShowCaptcha)
         {
