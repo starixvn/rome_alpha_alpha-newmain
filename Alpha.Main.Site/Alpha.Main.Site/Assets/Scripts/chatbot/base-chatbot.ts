@@ -1,8 +1,10 @@
 ﻿class BaseChatBot {
     $: JQueryStatic;
+    bootbox: any;
 
-    constructor($: JQueryStatic) {
+    constructor($: JQueryStatic, bootbox: any) {
         this.$ = $;
+        this.bootbox = bootbox;
     }
 
     resources = {

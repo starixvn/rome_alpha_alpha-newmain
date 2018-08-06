@@ -5,7 +5,6 @@
 class ChatBotSetting extends BaseChatBot {
     $: JQueryStatic;
     addAccount: AddAccount;
-    bootbox: any;
 
     // Language
     $language: JQuery;
@@ -17,9 +16,7 @@ class ChatBotSetting extends BaseChatBot {
     $accountMessage: JQuery;
 
     constructor($: JQueryStatic, bootbox: any) {
-        super($)
-        this.$ = $;
-        this.bootbox = bootbox;
+        super($, bootbox)
     }
 
     init = () => {
@@ -101,13 +98,17 @@ class ChatBotSetting extends BaseChatBot {
     }
 
     onUnSubscribeSuccess = (data: any) => {
-        if (data && data.IsNotAuthorized) {
-            this.bootbox.alert(data.Message);
+        if (data && data.IsNotOk) {
+            if (data.IsNotAuthorized) {
+                this.bootbox.alert(data.Message);
+                return;
+            }
+
+            var result = new Result(data);
+            alpha.showMessage(this.$accountMessage, result);
             return;
         }
 
-        var result = new Result(data);
-        alpha.showMessage(this.$accountMessage, result);
         setTimeout(() => {
             parent.window.location.href = parent.window.location.href;
         }, 2000);

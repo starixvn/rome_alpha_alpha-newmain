@@ -12,13 +12,11 @@ class AddAccount extends BaseChatBot {
     $userId: JQuery;
 
     verifyAccount: VerifyAccount;
-    bootbox: any;
 
-    constructor($: JQueryStatic, verifyAccount: VerifyAccount, bootbox: any) {
-        super($);
+    constructor($: JQueryStatic, bootbox: any) {
+        super($, bootbox);
         this.$ = $;
-        this.verifyAccount = verifyAccount;
-        this.bootbox = bootbox;
+        this.verifyAccount = new VerifyAccount($, bootbox);
     }
 
     init = () => {
@@ -41,6 +39,16 @@ class AddAccount extends BaseChatBot {
     }
 
     registerEvents = () => {
+        this.$txtAccount.keypress((e) => {
+            if (e.which === 32) {
+                return false;
+            }
+
+            if (e.keyCode === 13) {
+                this.$btnAdd.click();
+            }
+        });
+
         this.$btnAdd.click(this.addAccountEvent);
         this.$btnUnsubscribe.click(this.unsubscribeEvent);
     }
@@ -73,6 +81,11 @@ class AddAccount extends BaseChatBot {
 
         if (result && result.IsNotOk) {
             this.$txtAccount.focus();
+
+            if (result.IsNotAuthorized) {
+                this.bootbox.alert(result.Message);
+                return;
+            }
 
             if (result.IsMessengerAccountDoesNotExist) {
                 alpha.showMessage(this.$addAccountMessage, new Result({ Code: 2, Message: this.resources.accountDoesNotExist }));
@@ -123,8 +136,16 @@ class AddAccount extends BaseChatBot {
     }
 
     onUnSubscribeSuccess = (data: any) => {
-        var result = new Result(data);
-        alpha.showMessage(this.$addAccountMessage, result);
+        if (data && data.IsNotOk) {
+            if (data.IsNotAuthorized) {
+                this.bootbox.alert(data.Message);
+                return;
+            }
+
+            var result = new Result(data);
+            alpha.showMessage(this.$addAccountMessage, result);
+            return;
+        }
         setTimeout(() => {
             parent.window.location.href = parent.window.location.href;
         }, 2000);
@@ -132,6 +153,6 @@ class AddAccount extends BaseChatBot {
 }
 
 $(function () {
-    const addAccount = new AddAccount($, new VerifyAccount($), bootbox);
+    const addAccount = new AddAccount($, bootbox);
     addAccount.init();
 });

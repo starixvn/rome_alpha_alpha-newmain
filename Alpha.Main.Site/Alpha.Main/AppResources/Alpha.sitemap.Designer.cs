@@ -223,7 +223,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chat Bot.
+        ///   Looks up a localized string similar to Chatbot.
         /// </summary>
         public static string chatbot {
             get {

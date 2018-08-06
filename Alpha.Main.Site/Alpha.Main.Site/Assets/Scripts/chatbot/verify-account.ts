@@ -31,6 +31,14 @@ class VerifyAccount extends BaseChatBot {
     init = () => {
         this.cachedDOMElements();
         this.registerEvents();
+
+        this.isShowCaptcha = this.convertAttributeToBool(this.$("#IsShowCaptcha").val());
+
+        if (this.isShowCaptcha) {
+            this.cachedCaptchaDOMElements();
+            this.registerCaptchaEvents();
+            this.$captcha.show();
+        }
     }
 
     cachedDOMElements = () => {
@@ -45,6 +53,12 @@ class VerifyAccount extends BaseChatBot {
     }
 
     registerEvents = () => {
+        this.$txtVerificationCode.keypress((event) => {
+            if (event.keyCode === 13) {
+                this.$btnVerify.click();
+            }
+        });
+
         this.$btnVerify.click(this.verifyCodeEvent);
         this.$btnResend.click(this.resendEvent);
     }
@@ -113,6 +127,11 @@ class VerifyAccount extends BaseChatBot {
                 }, 2000);
                 return;
             } else {
+                if (result.IsNotAuthorized) {
+                    this.bootbox.alert(result.Message);
+                    return;
+                }
+
                 if (this.isShowCaptcha) {
                     var captchaInfo = result.CaptchaInfo;
                     this.$modelImageElement.attr('src', captchaInfo[this.imageElementId]);
@@ -153,8 +172,16 @@ class VerifyAccount extends BaseChatBot {
             url: alpha.urls.mainRootPath + "ChatBot/ResendVerificationCode",
             data: { userId: userId, messengerUsername: account },
             dataType: "json",
+            success: this.onResendSuccess,
             complete: this.onComplete,
         });
+    }
+
+    onResendSuccess = (data: any) => {
+        if (data && data.IsNotAuthorized) {
+            this.bootbox.alert(data.Message);
+            return;
+        }
     }
 
     refreshCaptchaEvent = (e: any) => {

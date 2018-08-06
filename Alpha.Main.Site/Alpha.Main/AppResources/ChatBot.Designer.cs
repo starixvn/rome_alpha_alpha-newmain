@@ -376,7 +376,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A bot named &quot;&lt;strong&gt;Chatbot&lt;/strong&gt;&quot; has sent you a 6-digits verification code via Letstalk IM..
+        ///   Looks up a localized string similar to A bot named &quot;&lt;strong&gt;Chatbot&lt;/strong&gt;&quot; has sent you a 6-digits verification code via &lt;strong&gt;Letstalk IM&lt;/strong&gt;..
         /// </summary>
         public static string VerificationCodeExample {
             get {

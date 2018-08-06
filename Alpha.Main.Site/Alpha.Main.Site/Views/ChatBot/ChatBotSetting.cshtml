@@ -9,7 +9,6 @@
 }
 @Html.Hidden("UserId", Model.UserId)
 @Html.Hidden("UserName", Model.Username)
-
 <div class="panel">
     <div class="panel-heading" role="tab" id="headingAccount">
         <h4 class="panel-title">
@@ -166,7 +165,7 @@
             </a>
         </h4>
     </div>
-    <div id="notification" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNotification">
+    <div id="notification" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNotification">
         <div class="panel-body has-padding">
             <p>@ChatBot.IntroNotification</p>
             <table class="tbl-guideline">

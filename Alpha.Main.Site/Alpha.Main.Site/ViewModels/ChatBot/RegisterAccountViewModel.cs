@@ -25,7 +25,7 @@
 
         public VerifyAccountViewModel VerifyAccountViewModel
             => IsVerifying
-                ? new VerifyAccountViewModel(user.Id, Username)
+                ? new VerifyAccountViewModel(user.Id, Username, letstalkMessenger.InputWrongVerificationCodeTimes >= 3)
                 : null;
 
         public string Title => ChatBot.ChatBotTitle;

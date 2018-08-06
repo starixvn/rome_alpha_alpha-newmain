@@ -119,7 +119,7 @@
     <value>Unsubscribe</value>
   </data>
   <data name="VerificationCodeExample" xml:space="preserve">
-    <value>A bot named "&lt;strong&gt;Chatbot&lt;/strong&gt;" has sent you a 6-digits verification code via Letstalk IM.</value>
+    <value>A bot named "&lt;strong&gt;Chatbot&lt;/strong&gt;" has sent you a 6-digits verification code via &lt;strong&gt;Letstalk IM&lt;/strong&gt;.</value>
   </data>
   <data name="EnterVerificationCode" xml:space="preserve">
     <value>Verify your Letstalk IM  account.</value>
