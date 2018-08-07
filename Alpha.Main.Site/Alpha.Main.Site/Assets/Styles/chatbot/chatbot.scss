@@ -108,8 +108,18 @@ label {
     height: 350px;
     border: 1px solid #c8c8c8;
 
+    .chatbot-body {
+        height: 245px;
+        max-height: 245px;
+    }
+
     &.-register {
-        height: 265px;
+        height: 295px;
+
+        .chatbot-body {
+            height: 252px;
+            max-height: 252px;
+        }
 
         .command {
             display: block;
@@ -117,7 +127,12 @@ label {
     }
 
     &.-notification {
-        height: 289px;
+        height: 220px;
+
+        .chatbot-body {
+            height: 177px;
+            max-height: 177px;
+        }
     }
     
     .chatbot-header,
@@ -164,8 +179,6 @@ label {
 
 .chatbot-body {
     top: 41px;
-    display: table;
-    max-height: 246px;
     padding: 10px;
     background-color: #efefef;    
     color: #333;
@@ -173,11 +186,11 @@ label {
 
     &.-large {
         .chatbot-reponse {
-            width: 214px;
+            width: 210px;
         }
 
         .status-chatbot-reponse {
-            left: 277px;
+            left: 271px;
         }
     }
     
@@ -186,7 +199,7 @@ label {
         display: block;
         width: 128px;
         line-height: 40px;
-        margin: 14px auto;
+        margin: 0 auto 22px;
         border: none;
         background-color: #4b4b4b;
         color: #fff;
@@ -249,11 +262,6 @@ label {
         margin-left: 58px;
         background-color: #fff;
         color: #333;
-        
-        &.-large {
-            width: 228px;
-        } 
-        
 
         &:after {
             content: '';

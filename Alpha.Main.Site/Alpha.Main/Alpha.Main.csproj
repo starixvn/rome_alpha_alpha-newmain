@@ -391,6 +391,7 @@
     <EmbeddedResource Include="AppResources\ChatBot.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ChatBot.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Resources.resx">
       <SubType>Designer</SubType>

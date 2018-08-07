@@ -7,8 +7,13 @@
     padding-left: 30px;
 
     > li {
-        padding-bottom: 26px;
+        padding-bottom: 30px;
         list-style-type: decimal;
+    }
+
+    .msg {
+        display: inline-block;
+        margin-bottom: 0;        
     }
 }
 
@@ -65,18 +70,23 @@
 
 .verification-form {
     display: table;
+    width: 100%;
     clear: both;
     padding-top: 12px;
 
     .form-group {
-        float: left;
+        
 
-        @media (min-device-width: $screen-device-greater768) {
+        // check Iphone 5
+        @media (min-device-width: 330px) {
+            float: left;
+
             &.list-button {
                 padding-top: 24px;
                 margin-left: 10px;
             }
         }
+
     }
 
     label {
@@ -85,8 +95,6 @@
     }
 
     .verify-text {
-        padding-top: 0;
-        padding-bottom: 0;
         width: 130px;
     }
 
@@ -95,54 +103,59 @@
     }
 
     .captcha-container {
-        margin-left: 16px;
+        display: table;
+        margin-left: 0;
         padding-right: 32px;
+
+        // check Iphone 5
+        @media (min-device-width: 330px) {
+            margin-left: 16px;
+        }
     }
 
     .group-captcha {
         position: relative;
-        display: table;
-        width: 194px;
-    }
-
-    .captcha-text, .captcha-code, action-refresh {
-        display: table-cell;
     }
 
     .captcha-code {
-        width: 100px;
-        height: 30px;
+        float: left;
 
         img {
-            width: 100%;
-            height: auto;
+            width: 80px;
+            height: 28px;
         }
     }
 
     .captcha-text {
+        float: left;
         position: relative;
-        top: -6px;
         width: 130px;
         margin-right: 10px;
     }
 
     .icon-refresh {
         position: absolute;
-        right: -31px;
-        top: 5px;
-        font-size: 18px;
+        right: -30px;
+        top: 7px;
+        font-size: 16px;
         color: #6a6a6a;
+        font-weight: normal;
 
         &:hover {
             cursor: pointer;
         }
-    }
 
-    .icon-refresh:hover:after {
-        top: -5px;
-        left: -2px;
-        width: 36px;
-        height: 36px;
+        &:hover:after {
+            top: -2px;
+            left: 0;
+            width: 30px;
+            height: 30px;
+        }
     }
+}
 
+.resend-code {
+    text-decoration: underline;
+    color: #038dee;
+    font-weight: bold;
 }
