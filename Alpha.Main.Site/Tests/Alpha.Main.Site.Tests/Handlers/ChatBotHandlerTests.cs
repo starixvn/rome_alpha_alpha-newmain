@@ -53,6 +53,7 @@
             settingService.Received().AddUser(
                 Arg.Is(message.CustId),
                 Arg.Is(message.SubAccountId),
+                Arg.Is(message.CustName),
                 Arg.Is(message.Language),
                 Arg.Is(message.MessengerAccount));
         }
@@ -94,7 +95,7 @@
         public void HandleResendVerificationCodeCommand_Always_CallsSettingServiceGenerateVerificationCode()
         {
             // Arrange
-            var message = new ResendVerificationCodeCommand();
+            var message = new ResendVerificationCodeCommand(userSession);
 
             // Act
             chatbotHandler.Handle(message).ConfigureAwait(false);
@@ -102,6 +103,7 @@
             // Assert
             settingService.Received().GenerateVerificationCode(
                 Arg.Is(message.UserId),
+                Arg.Is(message.CustName),
                 Arg.Is(message.MessengerUsername));
         }
 

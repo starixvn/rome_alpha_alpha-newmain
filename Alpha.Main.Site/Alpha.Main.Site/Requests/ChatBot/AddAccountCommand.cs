@@ -23,6 +23,8 @@
 
         public int SubAccountId => userSession.SubAccId;
 
+        public string CustName => userSession.UserName;
+
         public string Language => userSession.Language;
 
         public string MessengerAccount { get; set; }

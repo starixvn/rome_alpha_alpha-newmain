@@ -31,6 +31,7 @@
             => await settingService.AddUser(
                 message.CustId,
                 message.SubAccountId,
+                message.CustName,
                 message.Language,
                 message.MessengerAccount);
 
@@ -45,7 +46,7 @@
                 message.MessengerType);
 
         public async Task<Result> Handle(ResendVerificationCodeCommand message)
-            => await settingService.GenerateVerificationCode(message.UserId, message.MessengerUsername);
+            => await settingService.GenerateVerificationCode(message.UserId, message.CustName, message.MessengerUsername);
 
         public async Task<Result> Handle(UpdateFunctionCommand message)
         {

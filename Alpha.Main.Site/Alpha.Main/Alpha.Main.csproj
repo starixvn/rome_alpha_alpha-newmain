@@ -232,6 +232,7 @@
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\ChatBotFunctionTypeConstants.cs" />
     <Compile Include="Constants\Language.cs" />
+    <Compile Include="Constants\MessageType.cs" />
     <Compile Include="Constants\MessengerTypeConstants.cs" />
     <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
