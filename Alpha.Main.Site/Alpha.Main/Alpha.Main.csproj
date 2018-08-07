@@ -230,6 +230,7 @@
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
     <Compile Include="Constants\Language.cs" />
+    <Compile Include="Constants\MessageType.cs" />
     <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommand.cs" />

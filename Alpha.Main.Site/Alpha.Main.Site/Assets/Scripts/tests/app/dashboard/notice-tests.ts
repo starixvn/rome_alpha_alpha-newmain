@@ -151,7 +151,7 @@
 
             // Assert
             expect($ajax).toHaveBeenCalledWith({
-                url: 'path/Notice/MarkMessageAsRead',
+                url: 'path/PortalMessage/MarkMessageAsRead',
                 data: { messageId: 'id' },
                 method: 'POST',
                 success: jasmine.any(Function)
@@ -207,7 +207,7 @@
             // Assert
             expect($ajax).toHaveBeenCalledWith({
                 method: 'GET',
-                url: 'path/Notice/MoreMessages?totalMessage=10',
+                url: 'path/PortalMessage/MoreMessages?totalMessage=10',
                 cache: false,
                 success: jasmine.any(Function)
             });

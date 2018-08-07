@@ -1,9 +1,4 @@
 ﻿class HeaderMessage {
-    private messageIndex: number = 0;
-    private messageIdIndex: number = 0;
-    private messageContentIndex: number = 1;
-    private messageTypeIndex: number = 2;
-    private messages: Array<string> = [];
     private publicMessageId: number = 0;
     private privateMessageId: number = 0;
     private scrollMessageTimeout: number;
@@ -14,11 +9,8 @@
     private topNews: HTMLElement;
     private scroller: HTMLElement;
     private domElements = {
-        btnPrivateMessage: null,
-        privateMessageCounter: null,
         liveMessage: null,
         moveBetsMessage: null,
-        btnSpecialMessage: null,
         marqueeMessage: null,
         hotMessages: null,
         userMessageModal: null,
@@ -29,98 +21,36 @@
         showLessContainer: null
     };
     protected urls = {
-        mainAppPrivateMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=0',
-        mainAppPublicMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=1',
-        mainAppSpecialMessageForm: alpha.urls.messageRootPath + 'Message/Index?messageType=2',
-        updatePrivateMessageCount: alpha.urls.messageRootPath + 'Message/UpdatePrivateMessageAsRead',
-        getMessages: alpha.urls.messageRootPath + 'Message/GetLatestMessage',
-        getHotMessages: alpha.urls.messageRootPath + 'Announcement/HeaderAnnouncement'
+        mainAppPrivateMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=1',
+        mainAppPublicMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=0',
+        mainAppSpecialMessageForm: alpha.urls.messageRootPath + 'MessageHistory/Index?messageType=2',
+        getMessages: alpha.urls.messageRootPath + 'MarqueeMessage/Index'
     };
     protected $: JQueryStatic;
 
     constructor($: JQueryStatic) {
         this.$ = $;
     }
+
     init = () => {
         this.cacheElements();
         this.registerEvents();
-
-        if (this.$("#disableMessages").val() != "1") {
-            this.getHotMessages();
-        }
-    }
-
-    viewPrivateMessage = () => {
-        indexManager.changeMenu(this.urls.mainAppPrivateMessageForm);
-        const countPrivateMsg = this.domElements.privateMessageCounter.html().replace("+", "");
-
-        if (parseInt(countPrivateMsg) > 0) {
-            //// Reset private message after click on view private message link
-            this.$.ajax({
-                url: this.urls.updatePrivateMessageCount,
-                type: 'POST',
-                success: (rawResult) => {
-                    const result = alpha.core.convertReponseToJson(rawResult);
-
-                    if (result === true) {
-                        this.domElements.privateMessageCounter.html('0');
-                    }
-                }
-            });
-        }
-    }
-
-    viewSpecialMessage = () => {
-        indexManager.changeMenu(this.urls.mainAppSpecialMessageForm);
+        this.getMessages();
     }
 
     viewLiveMessage = (event: JQueryEventObject) => {
-        const liveMessageUrl = this.$(event.target).attr('live-message-url');
+        const messageType = parseInt(this.$(event.target).attr('messageType'));
 
-        if (liveMessageUrl) {
-            indexManager.changeMenu(liveMessageUrl);
-        }
-        else {
+        headerNav.buildIconNewMessageByType(messageType);
+        if (messageType == alpha.messageType.Normal) {
             indexManager.changeMenu(this.urls.mainAppPublicMessageForm);
+        } else if (messageType == alpha.messageType.Personal) {
+            indexManager.changeMenu(this.urls.mainAppPrivateMessageForm);
         }
     }
 
     viewMoveBetsMessage = (event: JQueryEventObject) => {
         event.stopPropagation();
-    }
-
-    getHotMessages = () => {
-        const ajaxSettings = this.createAjaxSettings('POST', this.urls.getHotMessages, this.showHotMessages);
-
-        this.$.ajax(ajaxSettings);
-    }
-
-    showHotMessages = (message) => {
-        this.appendHotMessageToPopup(message);
-        this.domElements.currentHotMessage = this.domElements.hotMessages.find('p.current-hot-message');
-        if (this.domElements.currentHotMessage.length > 0) {
-            this.domElements
-                .userMessageModal
-                .modal({ show: true, backdrop: false })
-                .tinyDraggable({ exclude: 'button.icon.icon-close.close, a' });
-
-            this.calculateHotMessagePopupHeight(false);
-        }
-        this.getMessages();
-        setInterval(this.swapMessage, 18 * 1000);
-        setInterval(this.getMessages, 60 * 1000);
-    }
-
-    createAjaxSettings = (methodType: string, url: string, onSuccess: any): JQueryAjaxSettings => {
-        let ajaxSettings: JQueryAjaxSettings = {
-            type: methodType,
-            url: url,
-            data: null,
-            cache: false,
-            success: onSuccess
-        };
-
-        return ajaxSettings;
     }
 
     resetHotMessageElements = (showFullMessage) => {
@@ -211,6 +141,8 @@
         this.showPrivateMessage(results);
 
         this.applyScroller();
+
+        setTimeout(this.getMessages, 1 * 60 * 1000);
     }
 
     showPublicMessage = (results: any) => {
@@ -224,7 +156,7 @@
             && publicMessage.Id !== this.publicMessageId) {
             this.domElements.liveMessage
                 .html(publicMessage.Content + '. ')
-                .find('font').attr('live-message-url', url);
+                .find('font').attr('messageType', alpha.messageType.Personal);
 
             this.publicMessageId = publicMessage.Id;
             if (this.publicMessageId !== 0) {
@@ -240,8 +172,7 @@
     }
 
     showPrivateMessage = (results: any) => {
-        const privateMessage = results.PrivateMessage ? results.PrivateMessage : 0,
-            unreadPriMsgCount = results.NumberOfUnreadPrivateMessage ? results.NumberOfUnreadPrivateMessage : 0;
+        const privateMessage = results.PrivateMessage ? results.PrivateMessage : 0;
 
         // Process Private Message: show new private message
         const url = this.urls.mainAppPrivateMessageForm;
@@ -263,68 +194,18 @@
                     "<font id='private-message-content' color=\"green\">Private message: " +
                     privateMessage.Content +
                     "</font>")
-                    .find('#private-message-content').attr('live-message-url', url);
+                    .find('#private-message-content').attr('messageType', 1);
             }
             if (this.privateMessageId !== 0) {
                 this.appendMessageToPopup(privateMessage.Content);
             }
         }
-
-        const unreadPriMsgCountText = unreadPriMsgCount > 99 ? "99+" : unreadPriMsgCount;
-
-        this.domElements.privateMessageCounter.html(unreadPriMsgCountText);
     }
 
     appendMessageToPopup = (message) => {
         this.domElements.contentMessage.append('<p class="not-shown-message"></p>');
 
         this.domElements.contentMessage.find("p:last").html(message);
-    }
-
-    appendHotMessageToPopup = (message) => {
-        this.domElements.contentMessage.append(message);
-    }
-
-    swapMessage = () => {
-        let nextMessage: JQuery;
-
-        if (this.domElements.currentHotMessage.length === 0) {
-            nextMessage = this.domElements.hotMessages.find('p.not-shown-message:first');
-        }
-        else {
-            nextMessage = this.domElements.currentHotMessage.next();
-        }
-
-        if (nextMessage.length > 0) {
-            if (this.domElements.currentHotMessage.length > 0) {
-                //// Hide old Message
-                this.domElements.currentHotMessage.animate({
-                    opacity: 0.0
-                },
-                    1500,
-                    () => {
-                        //// Remove Old Message and Show New Message
-                        this.domElements.currentHotMessage.remove();
-                        this.showNextMessage(nextMessage);
-                    });
-            }
-            else {
-                this.showNextMessage(nextMessage);
-            }
-
-            this.domElements.userMessageModal.modal({ show: true, backdrop: false })
-                .tinyDraggable({ exclude: 'button.icon.icon-close.close, a' });
-            this.calculateHotMessagePopupHeight(false);
-        }
-
-        setTimeout(this.swapMessage, 18 * 1000);
-    }
-
-    showNextMessage = (nextMessage: JQuery) => {
-        nextMessage.show().removeClass('not-shown-message');
-        this.domElements.currentHotMessage = nextMessage;
-        this.calculateHotMessagePopupHeight(false);
-        nextMessage.animate({ opacity: 1.0 }, 1500);
     }
 
     applyScroller = () => {
@@ -388,11 +269,8 @@
     }
 
     protected cacheElements = () => {
-        this.domElements.btnPrivateMessage = this.$('#btnPrivateMessage');
-        this.domElements.privateMessageCounter = this.$('#privateMessageCounter');
         this.domElements.liveMessage = this.$('#liveMessage');
         this.domElements.moveBetsMessage = this.$('#movebets-message');
-        this.domElements.btnSpecialMessage = this.$('#btnSpecialMessage');
         this.domElements.marqueeMessage = this.$('#marqueeMessage');
         this.domElements.hotMessages = this.$('#userMessageModalBody');
         this.domElements.contentMessage = this.$('#msg-content');
@@ -404,10 +282,7 @@
     };
 
     protected registerEvents = () => {
-        this.domElements.btnPrivateMessage.on('click', this.viewPrivateMessage);
-        this.domElements.btnSpecialMessage.on('click', this.viewSpecialMessage);
         this.domElements.liveMessage.on('click', this.viewLiveMessage);
-        this.domElements.marqueeMessage.on('click', this.viewLiveMessage);
         this.domElements.moveBetsMessage.on('click', this.viewMoveBetsMessage);
         this.domElements.showMoreContainer.on('click', this.showMoreHotMessage);
         this.domElements.showLessContainer.on('click', this.showLessHotMessage);

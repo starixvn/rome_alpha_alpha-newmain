@@ -15,7 +15,6 @@
 
         this.showPublicMessage(results);
         this.showPrivateMessage(results);
-        this.showPrivateMessageNotification(results);
         this.showMoveBetsMessage(results);
     }
 
@@ -28,14 +27,7 @@
             this.showMoveBetsMessageToaster(movebetsMessage);
             this.storedMoveBetsEndTime = movebetsEndTime;
         }
-    }
-
-    showPrivateMessageNotification = (results: any) => {
-        const unreadPriMsgCount = results.NumberOfUnreadPrivateMessage ? results.NumberOfUnreadPrivateMessage : 0;
-        const notification = $('.icon-message').find('.circle-red');
-
-        (unreadPriMsgCount > 0) ? notification.show() : notification.hide();
-    }
+    }    
 
     private showMoveBetsMessageToaster = (message: string) => {
         toastr.options.positionClass = 'toast-top-full-width toastr-announcement';

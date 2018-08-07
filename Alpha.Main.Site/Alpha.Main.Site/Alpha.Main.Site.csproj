@@ -810,8 +810,6 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Default\AnnouncementPopup.cshtml" />
     <Content Include="Views\NetworkSpeed\Index.cshtml" />
-    <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement.ts" />
-    <TypeScriptCompile Include="Assets\scripts\announcement\popup-announcement-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
@@ -945,39 +943,6 @@
     <Content Include="Assets\styles\security\security.css" />
     <Content Include="Assets\styles\security\security.min.css" />
     <Content Include="Assets\scripts\old-main.js" />
-    <Content Include="Assets\styles\announcement\announcements.css">
-      <DependentUpon>announcements.scss</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\announcement\announcements.min.css">
-      <DependentUpon>announcements.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\styles\announcement\images\bottomborder.png" />
-    <Content Include="Assets\styles\announcement\images\CloseIcon.png" />
-    <Content Include="Assets\styles\announcement\images\CloseIcon_h.png" />
-    <Content Include="Assets\styles\announcement\images\close_button.png" />
-    <Content Include="Assets\styles\announcement\images\Greyhound_Aus.jpg" />
-    <Content Include="Assets\styles\announcement\images\Greyhound_Aus_CS.jpg" />
-    <Content Include="Assets\styles\announcement\images\Greyhound_Aus_CT.jpg" />
-    <Content Include="Assets\styles\announcement\images\Greyhound_Aus_TH.jpg" />
-    <Content Include="Assets\styles\announcement\images\Hasness_Aus.jpg" />
-    <Content Include="Assets\styles\announcement\images\Hasness_Aus_CS.jpg" />
-    <Content Include="Assets\styles\announcement\images\Hasness_Aus_CT.jpg" />
-    <Content Include="Assets\styles\announcement\images\Hasness_Aus_TH.jpg" />
-    <Content Include="Assets\styles\announcement\images\iconClose.png" />
-    <Content Include="Assets\styles\announcement\images\ico_conts.png" />
-    <Content Include="Assets\styles\announcement\images\info.gif" />
-    <Content Include="Assets\styles\announcement\images\linebg.png" />
-    <Content Include="Assets\styles\announcement\images\popup_bg.jpg" />
-    <Content Include="Assets\styles\announcement\images\popup_bg_cs.jpg" />
-    <Content Include="Assets\styles\announcement\images\popup_bg_ct.jpg" />
-    <Content Include="Assets\styles\announcement\images\popup_bg_th.jpg" />
-    <Content Include="Assets\styles\announcement\images\title.gif" />
-    <Content Include="Assets\styles\announcement\images\toptitlepopup.png" />
-    <Content Include="Assets\styles\announcement\images\toptitlepopup_hoa.png" />
-    <Content Include="Assets\styles\announcement\images\toptitlepopup_KO.png" />
-    <Content Include="Assets\styles\announcement\images\toptitlepopup_thai.png" />
-    <Content Include="Assets\styles\announcement\images\toptitlepopup_TW.png" />
-    <Content Include="Assets\styles\announcement\images\toptitlepopup_vn.png" />
     <Content Include="Assets\styles\customer-profiles\customer-profile.css">
       <DependentUpon>customer-profile.scss</DependentUpon>
     </Content>
@@ -1088,7 +1053,6 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\HeaderNav.cshtml" />
     <Content Include="Views\Language\List.cshtml" />
-    <Content Include="Assets\Styles\Announcement\announcements.scss" />
     <Content Include="deployment.ignore" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />

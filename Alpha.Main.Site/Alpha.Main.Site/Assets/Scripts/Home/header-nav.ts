@@ -5,6 +5,7 @@
 
 var headerNav = {
     domElements: {
+        isDisableToCheckNewMessage: false,
         clock: null,
         languageCode: null,
         language: null,
@@ -12,19 +13,29 @@ var headerNav = {
 
         iconLogOut: null,
         iconHome: null,
+
+        numberNewMessage: null,
+        iconNewMessage: null,
         swapView: null,
         changeLanguageLink: null,
         iconSearch: null,
         linkLogout: null,
-        iconBell: null,
-        iconMessage: null,
         languageDropdownSubMenu: null,
 
         sideBar: null,
         sideBarContent: null,
         profileImage: null
     },
-
+    messageType: {
+        Normal: 0,
+        Personal: 1,
+        Special: 2,
+        System: 3
+    },
+    maximunNewMessage: {
+        value: 99,
+        text: "99+"
+    },
     resources: {
         labelAM: '',
         labelPM: '',
@@ -38,9 +49,19 @@ var headerNav = {
 
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index",
-        messages: alpha.urls.messageRootPath + "Message/Index",
+        messages: alpha.urls.messageRootPath + "MessageHistory/Index",
+        announcements: alpha.urls.messageRootPath + "Announcement/Index",
         changeLanguage: alpha.urls.mainRootPath + "Language/Change",
-        queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx"
+        queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx",
+        checkNewMessage: alpha.urls.messageRootPath + "NewMessage/GetNumberOfNewAnnouncement"
+    },
+
+    unreadMessage: {
+        Normal: 0,
+        Special: 0,
+        System: 0,
+        Personal: 0,
+        Total: 0
     },
 
     init: function () {
@@ -98,18 +119,20 @@ var headerNav = {
         return str;
     },
     cachedDomElements: function () {
+        headerNav.domElements.isDisableToCheckNewMessage = $("#disableMessages").val() == "1";
         headerNav.domElements.languageCode = $("#language-code");
         headerNav.domElements.language = $("#language");
         headerNav.domElements.languageSelectorContainer = $(".language-selector-container");
 
         headerNav.domElements.iconLogOut = $(".icon-logout");
         headerNav.domElements.iconHome = $(".icon-home");
+
+        headerNav.domElements.iconNewMessage = $(".icon-bell");
+        headerNav.domElements.numberNewMessage = $("#numberOfNewMessage");
         headerNav.domElements.changeLanguageLink = $(".changelanguage-link");
         // For mobile
         headerNav.domElements.iconSearch = $(".icon-account-search");
         headerNav.domElements.linkLogout = $(".link-logout");
-        headerNav.domElements.iconBell = $(".icon-bell");
-        headerNav.domElements.iconMessage = $(".icon-message");
         headerNav.domElements.languageDropdownSubMenu = $('.dropdown-submenu.language');
 
         headerNav.domElements.sideBar = $("#side-bar");
@@ -126,6 +149,88 @@ var headerNav = {
         headerNav.domElements.languageSelectorContainer.html(language);
     },
 
+    markMessageAsRead: function (type) {
+        if (type == headerNav.messageType.Normal) {
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Normal;
+            headerNav.unreadMessage.Normal = 0;
+        } else if (type == headerNav.messageType.Personal) {
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Personal;
+            headerNav.unreadMessage.Personal = 0;
+        } else if (type == headerNav.messageType.System) {
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.System;
+            headerNav.unreadMessage.System = 0;
+        } else {
+            headerNav.unreadMessage.Total = headerNav.unreadMessage.Total - headerNav.unreadMessage.Special;
+            headerNav.unreadMessage.Special = 0;
+        }
+    },
+
+    buildIconNewMessageByType: function (type) {
+        headerNav.markMessageAsRead(type);
+
+        if (headerNav.unreadMessage.Total > 0) {
+            headerNav.domElements.numberNewMessage.text(headerNav.unreadMessage.Total > headerNav.maximunNewMessage.value ? headerNav.maximunNewMessage.text : headerNav.unreadMessage.Total);
+        } else {
+            headerNav.domElements.numberNewMessage.text("");
+            headerNav.domElements.numberNewMessage.removeClass("badge-title");
+        }
+    },
+
+    buildIconNewMessage: function () {
+        var firstUrl = headerNav.popFirstNewMessage();        
+        if (headerNav.unreadMessage.Total > 0) {
+            headerNav.domElements.numberNewMessage.text(headerNav.unreadMessage.Total > headerNav.maximunNewMessage.value ? headerNav.maximunNewMessage.text : headerNav.unreadMessage.Total);
+        } else {
+            headerNav.domElements.numberNewMessage.text("");
+            headerNav.domElements.numberNewMessage.removeClass("badge-title");
+        }
+
+        indexManager.changeMenu(firstUrl);
+    },
+
+    checkNewMessage: function () {
+        if (!headerNav.domElements.isDisableToCheckNewMessage) {
+            $.ajax({
+                type: "POST",
+                url: headerNav.urls.checkNewMessage,
+                success: function (result) {
+                    if (result !== undefined) {
+                        headerNav.unreadMessage = result;
+                        if (result.Total > 0) {
+                            headerNav.domElements.numberNewMessage.text(result.Total > headerNav.maximunNewMessage.value ? headerNav.maximunNewMessage.text : result.Total);
+                            headerNav.domElements.numberNewMessage.addClass("badge-title");
+                        } else {
+                            headerNav.domElements.numberNewMessage.text("");
+                            headerNav.domElements.numberNewMessage.removeClass("badge-title");
+                        }
+                    }
+
+                    setTimeout(headerNav.checkNewMessage, 2 * 60 * 1000);
+                }
+            });
+        }
+    },
+
+    popFirstNewMessage: function () {
+        if (headerNav.unreadMessage.Special > 0) {
+            headerNav.markMessageAsRead(headerNav.messageType.Special);
+
+            return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Special;
+        } else if (headerNav.unreadMessage.System > 0) {
+            headerNav.markMessageAsRead(headerNav.messageType.System);
+
+            return headerNav.urls.announcements;
+        } else if (headerNav.unreadMessage.Normal > 0) {
+            headerNav.markMessageAsRead(headerNav.messageType.Normal);
+
+            return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Normal;
+        } 
+
+        headerNav.markMessageAsRead(headerNav.messageType.Personal);
+
+        return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Personal;        
+    },
+
     registerEvents: function () {
         headerNav.domElements.iconLogOut.on("click", alpha.core.signOut);
 
@@ -139,12 +244,6 @@ var headerNav = {
 
         // Logout link for mobile
         headerNav.domElements.linkLogout.on("click", alpha.core.signOut);
-
-        headerNav.domElements.iconMessage.on("click", () => {
-            indexManager.changeMenu(headerNav.urls.messages);
-
-            $('.icon-message').find('.circle-red').hide();
-        });
 
         // Quick search component for mobile
         headerNav.domElements.iconSearch.on('click', () => {
@@ -204,17 +303,16 @@ var headerNav = {
             topSearchInput.typeahead(typeaheadOptions);
         });
 
-        // Annoucement popup for mobile
-        headerNav.domElements.iconBell.on('click', () => {
-            const announcementMobile = new PopupAnnouncement.Mobile($);
-            announcementMobile.startLoading();
-        });
-
         // Language show options for mobile
         headerNav.domElements.languageDropdownSubMenu.on('click', (e) => {
             headerNav.domElements.languageDropdownSubMenu.find('.list-language').toggle();
             e.stopPropagation();
         });
+
+        headerNav.domElements.iconNewMessage.on("click", headerNav.buildIconNewMessage);
+        headerNav.domElements.numberNewMessage.on("click", headerNav.buildIconNewMessage);
+
+        headerNav.checkNewMessage();
     },
 
     changeLanguage: function (lang) {

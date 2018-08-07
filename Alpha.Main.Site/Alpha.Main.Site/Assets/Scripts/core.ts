@@ -156,6 +156,12 @@ var alpha = {
     key: {
         instruction: 'Instruction',
         mobileInstruction: 'MobileInstruction'
+    },
+    messageType: {
+        Normal: 0,
+        Personal: 1,
+        Special: 2,
+        System: 3
     }
 };
 

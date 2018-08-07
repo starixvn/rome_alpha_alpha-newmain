@@ -7,8 +7,6 @@
         {
             <li class="visible-mobile"><span class="icon icon-account-search"></span></li>
         }
-        <li class="visible-mobile"><span class="icon icon-message"><span class="circle-red"></span></span></li>
-        <li class="visible-mobile"><span class="icon icon-bell"><span class="circle-red"></span></span></li>
         <li class="hidden-mobile datetime">
             <span class="icon icon-time"></span>
             <span class="txt-top" id="clock"
@@ -21,7 +19,13 @@
         </li>
         <li class="hidden-mobile dropdown language">
             @Html.Action("List", "Language")
+        </li>        
+
+        <li class="notification">
+            <a class="icon icon-bell withripple"></a>
+            <span id="numberOfNewMessage" class="number-msg"></span>
         </li>
+
         <li class="dropdown setting">
             <a id="btn-header-menu" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
                 <span class="icon icon-squares top-right-menu"></span>
@@ -40,7 +44,7 @@
                 @if (Model.ShowHelpLink)
                 {
                     <li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="_blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
-                }                
+                }
                 <li><a href="@($"{Model.MainRootPath}otp/SetUpOtp")" target="main"><span class="icon icon-otp"></span>OTP</a></li>
                 @if (!Model.IsDisabledContactUsLink)
                 {
@@ -50,7 +54,10 @@
                 }
                 <li class="visible-mobile"><a class="link-logout"><span class="icon icon-logout"></span>@Resources.LogOut</a></li>
             </ul>
-        </li>
+        </li>        
+        
+       
+
         <li class="hidden-mobile logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
     </ul>
 </section>
