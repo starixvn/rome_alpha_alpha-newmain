@@ -99,7 +99,260 @@ label {
     &.has-padding { padding: 12px 16px !important; }
 }
 
+// Chatbot layout
 
+.chatbot-layout {
+    @include border-radius(5px 5px 0 0);
+    position: relative;
+    width: 340px;
+    height: 350px;
+    border: 1px solid #c8c8c8;
+
+    &.-register {
+        height: 265px;
+
+        .command {
+            display: block;
+        }
+    }
+
+    &.-notification {
+        height: 289px;
+    }
+    
+    .chatbot-header,
+    .chatbot-body,
+    .chatbot-footer {
+        position: absolute;
+        left: 0;
+        width: 100%;
+    }
+    
+}
+
+.chatbot-header {
+    @include border-radius(4px 4px 0 0);
+    top: 0;
+    height: 40px;
+    background-color: #4b4b4b;
+    color: #fff;
+    text-align: center;
+    [class^='icon'] {        
+        position: absolute;
+        top: 10px;
+        font-size: 16px;
+    }
+
+    .icon-chatbot-back {
+        left: 16px;        
+    }
+
+    .icon-chatbot-call {
+        right: 16px;
+    }
+
+    .icon-chatbot-down {
+        right: 56px;
+    }
+
+    .title {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 40px;
+    }
+}
+
+.chatbot-body {
+    top: 41px;
+    display: table;
+    max-height: 246px;
+    padding: 10px;
+    background-color: #efefef;    
+    color: #333;
+    overflow-y: scroll;
+
+    &.-large {
+        .chatbot-reponse {
+            width: 214px;
+        }
+
+        .status-chatbot-reponse {
+            left: 277px;
+        }
+    }
+    
+    .btn-add-friend {
+        @include border-radius(20px);
+        display: block;
+        width: 128px;
+        line-height: 40px;
+        margin: 14px auto;
+        border: none;
+        background-color: #4b4b4b;
+        color: #fff;
+        font-size: 16px;
+
+        .icon-addfriend {
+            font-size: 25px;
+            position: relative;
+            top: 6px;
+            margin-right: 4px;
+        }
+    }
+
+    .list-commands {
+        margin: 0;
+        padding: 0;
+    }
+
+    .command {
+        position: relative;
+        list-style-type: none;
+        display: none;
+        clear: both;
+        overflow: hidden;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        
+        &.-show {
+            display: list-item;
+        }       
+    }  
+
+    %msg {
+        @include border-radius(20px);
+        position: relative;
+        padding: 8px 16px;
+        text-align: left;
+        display: inline-block;
+        vertical-align:middle;
+        font-weight: bold;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 4px;
+            margin:auto;
+            height: 0px; 
+            border-style: solid;
+            display: block;
+            width: 0;
+            z-index: 1;
+        }
+    }
+
+    .chatbot-reponse {
+        @extend %msg;
+        float: left;        
+        width: 190px;
+        line-height: 18px;
+        margin-left: 58px;
+        background-color: #fff;
+        color: #333;
+        
+        &.-large {
+            width: 228px;
+        } 
+        
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -57px;
+            background: url(images/chatbot-avatar.png)  no-repeat;
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            
+        }
+
+        &:before {
+            left: -7px;
+            border-width: 31px 20px 0 0;
+            border-color: transparent #fff #fff transparent;
+            transform: rotateX(155deg);
+        }
+    }
+
+    .user-input {
+        @extend %msg;
+        float: right;
+        background-color: #a7e879;
+        margin-right: 10px;        
+        color: #000;        
+
+        &:before {
+            right: -7px;
+            border-width: 31px 0 0 20px;
+            border-color: transparent #a7e879;
+            transform: rotateX(184deg);            
+        }
+    }
+
+    .status-user-input {
+        float: right;
+        margin-right: 6px;
+        font-size: 12px;
+        position: relative;
+        top: 3px;
+        text-align: center;
+        line-height: 15px;
+    }
+
+    .status-chatbot-reponse {
+        float: left;
+        font-size: 12px;
+        position: absolute;
+        bottom: 0;
+        left: 256px;
+    }
+}
+
+.chatbot-footer {
+    bottom: 0;
+    height: 62px;
+    border-top: 1px solid #c8c8c8;
+    background-color: #fff;
+    color: #4b4b4b;
+    text-align: center;
+    [class^='icon'] {        
+        position: absolute;
+        top: 17px;
+    }
+
+    .icon-chatbot-plus {
+        left: 10px;
+        top: 22px;
+        font-size: 17px;   
+    }
+
+    .icon-chatbot-gif {
+        left: 33px;
+        font-size: 31px;
+    }
+
+    .icon-chatbot-voice {
+        right: 5px;
+        font-size: 28px;
+    }
+
+    .chatbot-text[disabled] {
+        @include border-radius(20px);
+        @include box-shadow-multiple(none);
+        position: absolute;
+        left: 72px;
+        top: 12px;
+        width: 226px;
+        height: 36px;
+        border: 1px solid $border-color;
+        padding-left: 12px;
+        background-color: #fff;
+        color: #666;
+        opacity: 1;
+        cursor: default;
+    }
+}
 
 
 

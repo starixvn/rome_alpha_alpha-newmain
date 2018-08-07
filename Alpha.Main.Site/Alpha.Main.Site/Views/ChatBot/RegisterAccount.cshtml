@@ -50,8 +50,8 @@
                         </div>
                         <div class="form-group m-b-0">
                             <input id="txtAccount" type="text" maxlength="50" class="letstalk-text" value="@Model.Username" @(Model.IsVerifying ? "disabled" : string.Empty) />
-                            <button id="btnAdd" class="btn-submit" style="@(Model.IsVerifying ? "display:none" : "")">@ChatBot.Add</button>
-                            <button id="btnUnsubscribe" class="btn-remove" style="@(Model.IsVerifying? "": "display:none")">@ChatBot.Unsubscribe</button>
+                            <button id="btnAdd" class="btn-submit @(Model.IsVerifying ? "display-none" : "")">@ChatBot.Add</button>
+                            <button id="btnUnsubscribe" class="btn-remove @(Model.IsVerifying ? "" : "display-none")">@ChatBot.Unsubscribe</button>
                         </div>
                     </form>
                 </li>

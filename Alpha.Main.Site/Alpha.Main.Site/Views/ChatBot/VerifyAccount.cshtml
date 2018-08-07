@@ -5,7 +5,32 @@
     <ul class="verification-info">
         <li class="chatbot-example">
             <p>@Html.Raw(ChatBot.VerificationCodeExample)</p>
-            <img src="~/Assets/Styles/chatbot/images/verify-letstalk.png" alt="Chatbot" />
+            <div class="chatbot-layout -register">
+                <div class="chatbot-header">
+                    <span class="icon-chatbot-back"></span>
+                    <span class="title">@ChatBot.ChatBotTitle</span>
+                    <span class="icon-chatbot-call"></span>
+                    <span class="icon-chatbot-down"></span>
+                </div>
+                <div class="chatbot-body -large" id="reportBody">
+                    <button class="btn-add-friend">
+                        <span class="icon-addfriend"></span> Add Friend
+                    </button>
+                    <ul class="list-commands" id="reportCommands">
+                        <li class="command">
+                            <div class="chatbot-reponse">
+                                You have requested to set up Chatbot for your account S********1.
+                                Please verify your action by entering verification code below.
+                                123456
+                                The code will be expired in 3 minutes.
+                            </div>
+                            <div class="status-chatbot-reponse">
+                                12:30
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </li>
         <li>@ChatBot.InputVerificationCode</li>
     </ul>
@@ -18,13 +43,15 @@
             <label>@ChatBot.lblVerificationCode</label>
             <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="text" class="verify-text" />
         </div>
-        @if (Model.IsShowCaptcha)
+        @*@if (Model.IsShowCaptcha)
         {
             @Html.Captcha(4, "Captcha", ViewData)
-        }
+        }*@
+        @Html.Captcha(4, "Captcha", ViewData)
         <div class="form-group list-button">
-            <input id="btnVerify" class="btn-submit" type="submit" value="@ChatBot.Verify" />
-            <input id="btnResend" class="btn-refresh" type="button" value="@ChatBot.Resend" />
+            <input id="btnVerify" class="btn-submit" type="submit" value="@ChatBot.Verify (180)" />
+            @*<input id="btnResend" class="btn-refresh" type="button" value="@ChatBot.Resend" />*@
         </div>
     </form>
+    <p>Expired or didn't recieve the code? <a href="#">Resend</a></p>
 </li>
