@@ -39,20 +39,19 @@
     <form class="verification-form" id="verification-form" action="@Url.Action("VerifyVerificationCode")" method="post">
         <input type="hidden" id="UserId" name="UserId" value="@Model.UserId" />
         <input type="hidden" id="MessengerAccount" name="MessengerAccount" value="@Model.MessengerAccount" />
-        <input type="hidden" id="IsShowCaptcha" name="IsShowCaptcha" value="@Model.IsShowCaptcha.ToString()" />
         <div class="form-group">
             <label>@ChatBot.lblVerificationCode</label>
             <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="text" class="verify-text" />
         </div>
-        @*@if (Model.IsShowCaptcha)
-        {
-            @Html.Captcha(4, "Captcha", ViewData)
-        }*@
-        @Html.Captcha(4, "Captcha", ViewData)
+        <div class="form-group captcha-container" id="captcha-container">
+            @if (Model.IsShowCaptcha)
+            {
+                @Html.Partial("Captcha")
+            }
+        </div>
         <div class="form-group list-button">
-            <input id="btnVerify" class="btn-submit" type="submit" value="@ChatBot.Verify (180)" />
-            @*<input id="btnResend" class="btn-refresh" type="button" value="@ChatBot.Resend" />*@
+            <button id="btnVerify" class="btn-submit" type="submit">@ChatBot.Verify (<span id="countdown">180</span>)</button>
         </div>
     </form>
-    <p>Expired or didn't recieve the code? <a href="#" class="resend-code">Resend</a></p>
+    <p>@ChatBot.expiredOrDidNotRecieveTheCode <a href="#" id="btnResend" class="resend-code">@ChatBot.Resend</a></p>
 </li>

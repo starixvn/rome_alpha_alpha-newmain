@@ -25,6 +25,7 @@ class AddAccount extends BaseChatBot {
 
         var isVerifying = this.convertAttributeToBool(this.$("#IsVerifying").val());
         if (isVerifying) {
+            this.$("#countdown").text(0);
             this.verifyAccount.init();
         }
     }

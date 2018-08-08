@@ -13,10 +13,11 @@ class VerifyAccount extends BaseChatBot {
     $messengerAccount: JQuery;
     $btnVerify: JQuery;
     $btnResend: JQuery;
+    $countDown: JQuery;
 
     // Captcha
+    $captchaContainer: JQuery;
     $txtCaptcha: JQuery;
-    $captchaMessage: JQuery;
     $captcha: JQuery;
     $captchaRefreshIcon: JQuery;
     $modelImageElement: JQuery;
@@ -39,6 +40,8 @@ class VerifyAccount extends BaseChatBot {
             this.registerCaptchaEvents();
             this.$captcha.show();
         }
+
+        this.countDownTimer();
     }
 
     cachedDOMElements = () => {
@@ -46,10 +49,12 @@ class VerifyAccount extends BaseChatBot {
         this.$verificationForm = this.$("#verification-form");
         this.$txtVerificationCode = this.$("#txtVerificationCode");
         this.$verificationMessage = this.$("#verification-code-message");
+        this.$captchaContainer = this.$("#captcha-container");
         this.$userId = this.$("#UserId");
         this.$messengerAccount = this.$("#MessengerAccount");
         this.$btnVerify = this.$("#btnVerify");
         this.$btnResend = this.$("#btnResend");
+        this.$countDown = this.$("#countdown");
     }
 
     registerEvents = () => {
@@ -63,12 +68,17 @@ class VerifyAccount extends BaseChatBot {
         this.$btnResend.click(this.resendEvent);
     }
 
+    initCaptcha = () => {
+        this.cachedCaptchaDOMElements();
+        this.registerCaptchaEvents();
+        this.$captcha.show();
+    }
+
     cachedCaptchaDOMElements = () => {
         var captchaId = this.$("#CaptchaId").val();
         this.$captcha = this.$("#" + captchaId);
         this.$captchaRefreshIcon = this.$("#captcha-refresh-icon");
         this.$txtCaptcha = this.$("#txtCaptcha");
-        this.$captchaMessage = this.$("#captcha-message");
 
         this.imageElementId = this.$("#ModelImageElementId").val();
         this.$modelImageElement = this.$("#" + this.imageElementId);
@@ -99,10 +109,10 @@ class VerifyAccount extends BaseChatBot {
         if (this.isShowCaptcha) {
             if (this.$txtCaptcha.val() === "") {
                 this.$txtCaptcha.focus();
-                alpha.showMessage(this.$captchaMessage, new Result({ Code: 1, Message: this.resources.thisFieldRequired }));
+                alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.thisFieldRequired }));
                 return;
             } else {
-                this.$captchaMessage.html("");
+                this.$verificationMessage.html("");
             }
         }
 
@@ -125,40 +135,30 @@ class VerifyAccount extends BaseChatBot {
                 setTimeout(() => {
                     parent.window.location.href = parent.window.location.href;
                 }, 2000);
-                return;
             } else {
                 if (result.IsNotAuthorized) {
                     this.bootbox.alert(result.Message);
                     return;
                 }
 
+                this.isShowCaptcha = this.convertAttributeToBool(this.$("#IsShowCaptcha").val());
                 if (this.isShowCaptcha) {
-                    var captchaInfo = result.CaptchaInfo;
-                    this.$modelImageElement.attr('src', captchaInfo[this.imageElementId]);
-                    this.$modelTokenElement.attr('value', captchaInfo[this.tokenElementId]);
+                    this.reloadCaptcha();
                 }
 
-                if (result.IsCaptchaInvalid) {
-                    alpha.showMessage(this.$captchaMessage, new Result({ Code: result.Code, Message: result.Message }));
-                } else {
+                if (result.IsVerificationCodeExpired || result.IsWrongVerificationCode) {
                     alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.verificationCodeIsInvalidOrExpired }));
+                } else {
+                    alpha.showMessage(this.$verificationMessage, new Result({ Code: result.Code, Message: result.Message }));
                 }
-
-                return;
             }
+
+            return;
         }
 
-        this.$verificationSection.replaceWith(data);
-        this.init();
+        this.$captchaContainer.html(data);
+        this.initCaptcha();
         alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.verificationCodeIsInvalidOrExpired }))
-
-        this.isShowCaptcha = this.convertAttributeToBool(this.$("#IsShowCaptcha").val());
-
-        if (this.isShowCaptcha) {
-            this.cachedCaptchaDOMElements();
-            this.registerCaptchaEvents();
-            this.$captcha.show();
-        }
     }
 
     resendEvent = (e: any) => {
@@ -178,9 +178,17 @@ class VerifyAccount extends BaseChatBot {
     }
 
     onResendSuccess = (data: any) => {
-        if (data && data.IsNotAuthorized) {
-            this.bootbox.alert(data.Message);
-            return;
+        if (data) {
+            if (data.IsNotAuthorized) {
+                this.bootbox.alert(data.Message);
+                return;
+            }
+
+            if (data.IsOk) {
+                this.$countDown.text(180);
+                this.$btnVerify.removeAttr("disabled");
+                this.countDownTimer();
+            }
         }
     }
 
@@ -197,5 +205,33 @@ class VerifyAccount extends BaseChatBot {
             });
 
         return false;
+    }
+
+    reloadCaptcha = () => {
+        this.$.blockUI();
+        var userId = this.$userId.val();
+        var account = this.$messengerAccount.val();
+        this.$.ajax({
+            type: "GET",
+            url: alpha.urls.mainRootPath + "ChatBot/Captcha",
+            dataType: "text",
+            success: (result) => {
+                this.$captchaContainer.html(result);
+                this.initCaptcha();
+            },
+            complete: this.onComplete,
+        });
+    }
+
+    countDownTimer = () => {
+        var sec = parseInt(this.$countDown.text());
+        var timer = setInterval(() => {
+            if (sec == 0) {
+                this.$btnVerify.attr("disabled", "disabled");
+                clearInterval(timer);
+            } else {
+                this.$countDown.text(--sec);
+            }
+        }, 1000)
     }
 }

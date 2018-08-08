@@ -858,8 +858,9 @@
     <Content Include="Views\ChatBot\RegisterAccount.cshtml" />
     <Content Include="Views\ChatBot\VerifyAccount.cshtml" />
     <Content Include="Views\ChatBot\Language.cshtml" />
-    <Content Include="Views\ChatBot\Captcha.cshtml" />
+    <Content Include="Views\ChatBot\CaptchaTemplate.cshtml" />
     <Content Include="Views\ChatBot\Shared\_Layout.cshtml" />
+    <Content Include="Views\ChatBot\Captcha.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-setting.ts" />
@@ -1283,7 +1284,6 @@
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
-    <Compile Include="ViewModels\ChatBot\CaptchaErrorResult.cs" />
     <Compile Include="ViewModels\ChatBot\ChatBotSettingViewModel.cs" />
     <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs" />
     <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs" />

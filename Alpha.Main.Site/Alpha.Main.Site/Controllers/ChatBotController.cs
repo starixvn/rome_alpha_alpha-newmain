@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using AppResources;
     using CaptchaMvc.HtmlHelpers;
     using Configurations;
     using Main.Models;
@@ -77,14 +77,13 @@
             var isCaptchaValid = this.IsCaptchaValid(null);
             if (command.IsShowCaptcha && !isCaptchaValid)
             {
-                return Json(CaptchaErrorResult.CreateInvalidCaptchaResult(BuildCaptchaInfo()));
+                return Json(Result.CreateErrorResult(ChatBot.InvalidCaptcha));
             }
 
             var result = await mediator.SendAsync(command);
-            if (result.IsNotOk && result.FailedTimes >= 3)
+            if (result.IsNotOk && result.FailedTimes >= 3 && !isCaptchaValid)
             {
-                var viewModel = new VerifyAccountViewModel(command.UserId, command.MessengerAccount, !isCaptchaValid);
-                return PartialView("VerifyAccount", viewModel);
+                return PartialView("Captcha");
             }
 
             return Json(result);
@@ -123,6 +122,12 @@
         public async Task<ActionResult> ChangeLanguage(UpdateLanguageCommand command)
             => Json(await mediator.SendAsync(command));
 
+        [HttpGet]
+        public ActionResult Captcha()
+        {
+            return PartialView();
+        }
+
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {
             base.OnAuthorization(filterContext);
@@ -131,17 +136,6 @@
             {
                 UnAuthentication(filterContext);
             }
-        }
-
-        private IDictionary<string, string> BuildCaptchaInfo()
-        {
-            var buildInfo = this.GenerateCaptchaValue(4);
-
-            return new Dictionary<string, string>
-            {
-                [buildInfo.ImageElementId] = buildInfo.ImageUrl,
-                [buildInfo.TokenElementId] = buildInfo.TokenValue
-            };
         }
     }
 }

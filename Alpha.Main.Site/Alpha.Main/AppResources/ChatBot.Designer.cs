@@ -196,6 +196,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expired or didn&apos;t recieve the code?.
+        /// </summary>
+        public static string expiredOrDidNotRecieveTheCode {
+            get {
+                return ResourceManager.GetString("expiredOrDidNotRecieveTheCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notification.
         /// </summary>
         public static string FunctionNotification {
