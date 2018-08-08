@@ -45,127 +45,133 @@
     </div>
     <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
         <div class="panel-body has-padding">
-            <p>&#9679; @ChatBot.IntroReport</p>
-            <table class="tbl-guideline">
-                <thead>
-                    <tr>
-                        <th class="col-command">@ChatBot.Command</th>
-                        <th>@ChatBot.Action</th>
-                        <th class="col-status">@Resources.active</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var function in Model.ReportFunctions)
-                    {
-                        <tr>
-                            <td class="text-center"><span class="bage">@function.Command</span></td>
-                            <td class="bold">@function.Name</td>
-                            <td class="text-center">
-                                <label class="switch">
-                                    <input data-functionId="@function.Id" data-command="@function.Command" type="checkbox"
-                                           class="function" @(function.Enabled ? "checked" : string.Empty) />
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            @*<p>@ChatBot.Example</p>*@
-            <p>&#9679; Simply click on the Chatbot and input the command to return the specific results match accordingly.</p>
-            <div class="chatbot-demo" id="chatbotReportDemo">
-                <span class="icon icon-play-button"></span>
-                <span class="text">Play example</span>
-            </div>
-            <div class="chatbot-layout -has-footer" id="chatbotReport">
-                <div class="chatbot-header">
-                    <span class="icon-chatbot-back"></span>
-                    <span class="title">@ChatBot.ChatBotTitle</span>
-                    <span class="icon-chatbot-call"></span>
-                    <span class="icon-chatbot-down"></span>
-                </div>
-                <div class="chatbot-body" id="reportBody">
-                    <ul class="list-commands" id="reportCommands">
-                        <li class="command">
-                            <div class="user-input">/os</div>
-                            <div class="status-user-input">
-                                @ChatBot.Read <br />
-                                12:33
-                            </div>
-                        </li>
-                        <li class="command">
-                            <div class="chatbot-reponse">
-                                @Resources.ResourceManager.GetString("outstanding", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                @Resources.ResourceManager.GetString("totalMemberCredit", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                1,000.00 <br />
-                                @Resources.ResourceManager.GetString("totalAgentCredit", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                50.00
-                            </div>
-                            <div class="status-chatbot-reponse">
-                                12:36
-                            </div>
-                        </li>
-                        <li class="command">
-                            <div class="user-input">/wl</div>
-                            <div class="status-user-input">
-                                @ChatBot.Read <br />
-                                12:33
-                            </div>
-                        </li>
-                        <li class="command">
-                            <div class="chatbot-reponse">
-                                @Resources.ResourceManager.GetString("todayWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                @Resources.ResourceManager.GetString("turnover", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                30,000.00 <br />
-                                @ChatBot.ResourceManager.GetString("grossComm", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                50.00 <br />
-                                @ChatBot.ResourceManager.GetString("memberWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                5000.00 <br />
-                            </div>
-                            <div class="status-chatbot-reponse">
-                                12:36
-                            </div>
-                        </li>
-                        <li class="command">
-                            <div class="user-input">/bal</div>
-                            <div class="status-user-input">
-                                @ChatBot.Read <br />
-                                12:33
-                            </div>
-                        </li>
-                        <li class="command">
-                            <div class="chatbot-reponse">
-                                @Resources.ResourceManager.GetString("balanceInfo", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                @Resources.ResourceManager.GetString("currency", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                UUS <br />
-                                @Resources.ResourceManager.GetString("cashBalance", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                1,500,000.00 <br />
-                                @Resources.ResourceManager.GetString("yesterdayCashBalance", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                1,500,000.00 <br />
-                            </div>
-                            <div class="status-chatbot-reponse">
-                                12:36
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="chatbot-footer">
-                    <div class="input-data">
-                        <span class="icon-chatbot-plus"></span>
-                        <span class="icon-chatbot-gif"></span>
-                        <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" disabled />
-                        <span class="icon-chatbot-voice"></span>
+            <ul class="info-list">
+                <li>
+                    <p>@ChatBot.IntroReport</p>
+                    <table class="tbl-guideline">
+                        <thead>
+                            <tr>
+                                <th class="col-command">@ChatBot.Command</th>
+                                <th>@ChatBot.Action</th>
+                                <th class="col-status">@Resources.active</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var function in Model.ReportFunctions)
+                            {
+                                <tr>
+                                    <td class="text-center"><span class="bage">@function.Command</span></td>
+                                    <td class="bold">@function.Name</td>
+                                    <td class="text-center">
+                                        <label class="switch">
+                                            <input data-functionId="@function.Id" data-command="@function.Command" type="checkbox"
+                                                   class="function" @(function.Enabled ? "checked" : string.Empty) />
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    @*<p>@ChatBot.Example</p>*@
+                    <p>Simply click on the Chatbot and input the command to return the specific results match accordingly.</p>
+                    <div class="chatbot-demo" id="chatbotReportDemo">
+                        <span class="icon icon-play-button"></span>
+                        <span class="text">Play example</span>
                     </div>
-                    <div class="actions">
-                        <div class="action-left replay-action" id="reportRefresh">
-                            <span class="icon-play-button"></span> Replay
+                    <div class="chatbot-layout -report" id="chatbotReport">
+                        <div class="chatbot-header">
+                            <span class="icon-chatbot-back"></span>
+                            <span class="title">@ChatBot.ChatBotTitle</span>
+                            <span class="icon-chatbot-call"></span>
+                            <span class="icon-chatbot-down"></span>
                         </div>
-                        <div class="action-right close-chatbotDemo" id="reportClose">
-                            <span class="icon-close-circle"></span> Close
+                        <div class="chatbot-body" id="reportBody">
+                            <ul class="list-commands" id="reportCommands">
+                                <li class="command">
+                                    <div class="user-input">/os</div>
+                                    <div class="status-user-input">
+                                        @ChatBot.Read <br />
+                                        12:33
+                                    </div>
+                                </li>
+                                <li class="command">
+                                    <div class="chatbot-reponse">
+                                        @Resources.ResourceManager.GetString("outstanding", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        @Resources.ResourceManager.GetString("totalMemberCredit", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        1,000.00 <br />
+                                        @Resources.ResourceManager.GetString("totalAgentCredit", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        50.00
+                                    </div>
+                                    <div class="status-chatbot-reponse">
+                                        12:36
+                                    </div>
+                                </li>
+                                <li class="command">
+                                    <div class="user-input">/wl</div>
+                                    <div class="status-user-input">
+                                        @ChatBot.Read <br />
+                                        12:33
+                                    </div>
+                                </li>
+                                <li class="command">
+                                    <div class="chatbot-reponse">
+                                        @Resources.ResourceManager.GetString("todayWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        @Resources.ResourceManager.GetString("turnover", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        30,000.00 <br />
+                                        @ChatBot.ResourceManager.GetString("grossComm", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        50.00 <br />
+                                        @ChatBot.ResourceManager.GetString("memberWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        5000.00 <br />
+                                    </div>
+                                    <div class="status-chatbot-reponse">
+                                        12:36
+                                    </div>
+                                </li>
+                                <li class="command">
+                                    <div class="user-input">/bal</div>
+                                    <div class="status-user-input">
+                                        @ChatBot.Read <br />
+                                        12:33
+                                    </div>
+                                </li>
+                                <li class="command">
+                                    <div class="chatbot-reponse">
+                                        @Resources.ResourceManager.GetString("balanceInfo", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        @Resources.ResourceManager.GetString("currency", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        UUS <br />
+                                        @Resources.ResourceManager.GetString("cashBalance", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        1,500,000.00 <br />
+                                        @Resources.ResourceManager.GetString("yesterdayCashBalance", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        1,500,000.00 <br />
+                                    </div>
+                                    <div class="status-chatbot-reponse">
+                                        12:36
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chatbot-footer">
+                            <div class="input-data">
+                                <span class="icon-chatbot-plus"></span>
+                                <span class="icon-chatbot-gif"></span>
+                                <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" disabled />
+                                <span class="icon-chatbot-voice"></span>
+                            </div>
+                            <div class="actions">
+                                <div class="action-left replay-action" id="reportRefresh">
+                                    <span class="icon-play-button"></span> Replay
+                                </div>
+                                <div class="action-right close-chatbotDemo" id="reportClose">
+                                    <span class="icon-close-circle"></span> Close
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -179,104 +185,110 @@
     </div>
     <div id="notification" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNotification">
         <div class="panel-body has-padding">
-            <p>&#9679; @ChatBot.IntroNotification</p>
-            <table class="tbl-guideline">
-                <thead>
-                    <tr>
-                        <th>@ChatBot.Action</th>
-                        <th class="col-status">@Resources.active</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var function in Model.NotificationFunctions)
-                    {
-                        <tr>
-                            <td class="bold">@function.Name</td>
-                            <td class="text-center">
-                                <label class="switch">
-                                    <input data-functionId="@function.Id" data-command="@function.Command" type="checkbox"
-                                           class="function" @(function.Enabled ? "checked" : string.Empty) />
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            <p>&#9679; Once you enable you desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time.</p>
-            <div class="chatbot-demo" id="chatbotNotificationDemo">
-                <span class="icon icon-play-button"></span>
-                <span class="text">Play example</span>
-            </div>
-            <div class="chatbot-layout -notification" id="chatbotNotification">
-                <div class="chatbot-header">
-                    <span class="icon-chatbot-back"></span>
-                    <span class="title">@ChatBot.ChatBotTitle</span>
-                    <span class="icon-chatbot-call"></span>
-                    <span class="icon-chatbot-down"></span>
-                </div>
-                <div class="chatbot-body -large" id="notificationBody">
-                    <ul class="list-commands" id="notificationCommands">
-                        <li class="command">
-                            <div class="chatbot-reponse">
-                                @Resources.ResourceManager.GetString("yesterdayWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                @Resources.ResourceManager.GetString("yesterdayWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                30,000.00 <br />
-                                @ChatBot.ResourceManager.GetString("grossComm", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                50.00 <br />
-                                @ChatBot.ResourceManager.GetString("memberWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
-                                5000.00 <br />
-                                ...
-                            </div>
-                            <div class="status-chatbot-reponse">
-                                13:20
-                            </div>
-                        </li>
-                        <li class="command">
-                            <div class="chatbot-reponse">
-                                @Html.Raw(ChatBot.ResourceManager.GetString("personalMessageSample", CultureInfo.GetCultureInfo(Model.Language)))
-                            </div>
-                            <div class="status-chatbot-reponse">
-                                13:20
-                            </div>
-                        </li>
-                        <li class="command">
-                            <div class="chatbot-reponse">
-                                @Html.Raw(ChatBot.ResourceManager.GetString("specialAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language)))
-                            </div>
-                            <div class="status-chatbot-reponse">
-                                13:20
-                            </div>
-                        </li>
-                        <li class="command">
-                            <div class="chatbot-reponse">
-                                @Html.Raw(ChatBot.ResourceManager.GetString("normalAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language)))
-                            </div>
-                            <div class="status-chatbot-reponse">
-                                13:20
-                            </div>
-                        </li>
-                        <li class="command">
-                            <div class="chatbot-reponse">
-                                @Html.Raw(ChatBot.ResourceManager.GetString("systemUpdateAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language)))
-                            </div>
-                            <div class="status-chatbot-reponse">
-                                13:20
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="chatbot-footer">
-                    <div class="actions">
-                        <div class="action-left replay-action" id="notificationRefresh">
-                            <span class="icon-play-button"></span> Replay
+            <ul class="info-list">
+                <li>
+                    <p>@ChatBot.IntroNotification</p>
+                    <table class="tbl-guideline">
+                        <thead>
+                            <tr>
+                                <th>@ChatBot.Action</th>
+                                <th class="col-status">@Resources.active</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var function in Model.NotificationFunctions)
+                            {
+                                <tr>
+                                    <td class="bold">@function.Name</td>
+                                    <td class="text-center">
+                                        <label class="switch">
+                                            <input data-functionId="@function.Id" data-command="@function.Command" type="checkbox"
+                                                   class="function" @(function.Enabled ? "checked" : string.Empty) />
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <p>Once you enable you desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time.</p>
+                    <div class="chatbot-demo" id="chatbotNotificationDemo">
+                        <span class="icon icon-play-button"></span>
+                        <span class="text">Play example</span>
+                    </div>
+                    <div class="chatbot-layout -notification" id="chatbotNotification">
+                        <div class="chatbot-header">
+                            <span class="icon-chatbot-back"></span>
+                            <span class="title">@ChatBot.ChatBotTitle</span>
+                            <span class="icon-chatbot-call"></span>
+                            <span class="icon-chatbot-down"></span>
                         </div>
-                        <div class="action-right close-chatbotDemo" id="notificationClose">
-                            <span class="icon-close-circle"></span> Close
+                        <div class="chatbot-body -large" id="notificationBody">
+                            <ul class="list-commands" id="notificationCommands">
+                                <li class="command">
+                                    <div class="chatbot-reponse">
+                                        @Resources.ResourceManager.GetString("yesterdayWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        @Resources.ResourceManager.GetString("yesterdayWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        30,000.00 <br />
+                                        @ChatBot.ResourceManager.GetString("grossComm", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        50.00 <br />
+                                        @ChatBot.ResourceManager.GetString("memberWinLoss", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        5000.00 <br />
+                                        ...
+                                    </div>
+                                    <div class="status-chatbot-reponse">
+                                        13:20
+                                    </div>
+                                </li>
+                                <li class="command">
+                                    <div class="chatbot-reponse">
+                                        @Html.Raw(ChatBot.ResourceManager.GetString("personalMessageSample", CultureInfo.GetCultureInfo(Model.Language)))
+                                    </div>
+                                    <div class="status-chatbot-reponse">
+                                        13:20
+                                    </div>
+                                </li>
+                                <li class="command">
+                                    <div class="chatbot-reponse">
+                                        @Html.Raw(ChatBot.ResourceManager.GetString("specialAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language)))
+                                    </div>
+                                    <div class="status-chatbot-reponse">
+                                        13:20
+                                    </div>
+                                </li>
+                                <li class="command">
+                                    <div class="chatbot-reponse">
+                                        @Html.Raw(ChatBot.ResourceManager.GetString("normalAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language)))
+                                    </div>
+                                    <div class="status-chatbot-reponse">
+                                        13:20
+                                    </div>
+                                </li>
+                                <li class="command">
+                                    <div class="chatbot-reponse">
+                                        @Html.Raw(ChatBot.ResourceManager.GetString("systemUpdateAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language)))
+                                    </div>
+                                    <div class="status-chatbot-reponse">
+                                        13:20
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chatbot-footer">
+                            <div class="actions">
+                                <div class="action-left replay-action" id="notificationRefresh">
+                                    <span class="icon-play-button"></span> Replay
+                                </div>
+                                <div class="action-right close-chatbotDemo" id="notificationClose">
+                                    <span class="icon-close-circle"></span> Close
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

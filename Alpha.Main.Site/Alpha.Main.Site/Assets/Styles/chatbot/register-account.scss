@@ -1,4 +1,5 @@
 ﻿@import '../Home/_variables.scss';
+@import '../Home/_mixins.scss';
 
 // Register Letstalk
 
@@ -55,12 +56,8 @@
     }
 }
 
-.verification-info {
-    padding-left: 2px;
-
-    li {
-        list-style: disc;
-    }
+.info-list {
+    padding-left: 0;
 
     .chatbot-example {
         padding-top: 10px;
@@ -74,8 +71,7 @@
     clear: both;
     padding-top: 12px;
 
-    .form-group {
-        
+    .form-group {        
 
         // check Iphone 5
         @media (min-device-width: 330px) {
@@ -161,5 +157,38 @@
 
     &:hover {
         color: $link-hover-color;
+    }
+}
+
+.chatbot-layout.-register {
+    height: 295px;
+    margin-bottom: 10px;
+
+    .chatbot-body {
+        height: 252px;
+        max-height: 252px;
+    }
+
+    .command {
+        display: block;
+    }
+}
+
+.chatbot-body .btn-add-friend {
+    @include border-radius(20px);
+    display: block;
+    width: 128px;
+    line-height: 40px;
+    margin: 0 auto 22px;
+    border: none;
+    background-color: #4b4b4b;
+    color: #fff;
+    font-size: 16px;
+
+    .icon-addfriend {
+        font-size: 25px;
+        position: relative;
+        top: 6px;
+        margin-right: 4px;
     }
 }

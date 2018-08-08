@@ -99,45 +99,19 @@ label {
     &.has-padding { padding: 16px !important; }
 }
 
+.info-list {
+    li {
+        list-style: disc;
+    }
+}
+
 // Chatbot layout
 
 .chatbot-layout {
     @include border-radius(5px 5px 0 0);
     position: relative;
-    width: 340px;
-    height: 387px;
+    width: 340px;    
     border: 1px solid #c8c8c8;
-
-    .chatbot-body {
-        height: 245px;
-        max-height: 245px;
-    }
-
-    &.-register {
-        height: 295px;
-
-        .chatbot-body {
-            height: 252px;
-            max-height: 252px;
-        }
-
-        .command {
-            display: block;
-        }
-    }
-
-    &.-notification {
-        height: 272px;
-
-        .chatbot-body {
-            height: 190px;
-            max-height: 190px;
-        }
-
-        .chatbot-footer {
-            height: 39px;
-        }
-    }
     
     .chatbot-header,
     .chatbot-body,
@@ -195,25 +169,6 @@ label {
 
         .status-chatbot-reponse {
             left: 271px;
-        }
-    }
-    
-    .btn-add-friend {
-        @include border-radius(20px);
-        display: block;
-        width: 128px;
-        line-height: 40px;
-        margin: 0 auto 22px;
-        border: none;
-        background-color: #4b4b4b;
-        color: #fff;
-        font-size: 16px;
-
-        .icon-addfriend {
-            font-size: 25px;
-            position: relative;
-            top: 6px;
-            margin-right: 4px;
         }
     }
 
@@ -323,56 +278,10 @@ label {
 
 .chatbot-footer {
     bottom: 0;
-    height: 100px;
     border-top: 1px solid #c8c8c8;
     background-color: #fff;
     color: #4b4b4b;
-    text-align: center;
-
-    .input-data{
-        position: relative;
-        top: 0;
-        left: 0;
-        height: 60px;
-        width: 100%;
-
-        [class^='icon'] {        
-            position: absolute;
-            top: 17px;
-        }
-
-        .icon-chatbot-plus {
-            left: 10px;
-            top: 22px;
-            font-size: 17px;   
-        }
-
-        .icon-chatbot-gif {
-            left: 33px;
-            font-size: 31px;
-        }
-
-        .icon-chatbot-voice {
-            right: 5px;
-            font-size: 28px;
-        }
-
-        .chatbot-text[disabled] {
-            @include border-radius(20px);
-            @include box-shadow-multiple(none);
-            position: absolute;
-            left: 72px;
-            top: 12px;
-            width: 226px;
-            height: 36px;
-            border: 1px solid $border-color;
-            padding-left: 12px;
-            background-color: #fff;
-            color: #666;
-            opacity: 1;
-            cursor: default;
-        }
-    }
+    text-align: center;    
     
     .actions {
         position: absolute;

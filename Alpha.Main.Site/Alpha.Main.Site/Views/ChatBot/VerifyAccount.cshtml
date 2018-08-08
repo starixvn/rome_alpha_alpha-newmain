@@ -2,7 +2,7 @@
 @model VerifyAccountViewModel
 <li id="verification-section">
     <strong>@ChatBot.EnterVerificationCode</strong>
-    <ul class="verification-info">
+    <ul class="info-list">
         <li class="chatbot-example">
             <p>@Html.Raw(ChatBot.VerificationCodeExample)</p>
             <div class="chatbot-layout -register">
@@ -40,10 +40,10 @@
         <input type="hidden" id="UserId" name="UserId" value="@Model.UserId" />
         <input type="hidden" id="MessengerAccount" name="MessengerAccount" value="@Model.MessengerAccount" />
         <div class="form-group">
-            <label>@ChatBot.lblVerificationCode</label>
+            <label f>@ChatBot.lblVerificationCode</label>
             <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="text" class="verify-text" />
         </div>
-        <div class="form-group captcha-container" id="captcha-container">
+        <div id="captcha-container">
             @if (Model.IsShowCaptcha)
             {
                 @Html.Partial("Captcha")
