@@ -3,7 +3,7 @@
 
 // panel
 
-.panel-heading + .panel-collapse > .panel-body.account-group {
+.panel-heading + .panel-collapse > .panel-body.account-info {
     padding: 12px 16px 0 !important;
 }
 
@@ -40,31 +40,38 @@
 }
 
 .tbl-guideline {
-    width: 386px;
-    margin-bottom: 16px;
+    min-width: 338px;
+    margin-bottom: 30px;
     border: none;
     border-collapse: collapse;
 
     thead th {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-bottom: 6px;
         text-align: center;
-        color: #808080;
+        color: #7d7d7d;
     }
     
     td {
-        padding-left: 12px;
-        padding-right: 12px;
-        line-height: 44px;
-        border: 1px solid $border-color;
+        padding-left: 10px;
+        padding-right: 10px;
+        line-height: 30px;
+        border: 1px solid #c7c7c7;
     }
 
     .bage {
         @include border-radius(4px);
         padding: 4px 8px;
         border: 1px solid $border-color;
-        background-color: #f4f4f4;
-        color: #7f7f7f;
+        background-color: #fbfbfb;
+        color: #6c6c6c;
+    }
+
+    .col-command {
+        width: 64px;
+    }
+
+    .col-status {
+        width: 60px;
     }
 }
 
@@ -77,9 +84,7 @@
     width: 30px;
     height: 18px;
     margin: auto;
-    vertical-align: middle;
-    top: 2px;
-    margin-right: 3px;
+    vertical-align: middle;    
 
     input {
         display: none;
@@ -144,5 +149,46 @@
             margin-left: -12px;
             margin-top: -9px;
         }
+    }
+}
+
+.chatbot-demo {
+    position: relative;
+    padding-left: 24px;
+    color: #038dee;
+    font-weight: bold;    
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+
+    [class^='icon'] {
+        position: absolute;
+               
+    }
+
+    .icon-play-button {
+        top: 0;
+        left: 2px; 
+        font-size: 15px;
+    }
+
+    .icon-close-circle {
+        top: -2px;
+        left: 0; 
+        font-size: 19px;
+    }
+
+    &.text-red {
+        color: #930a14 !important;
+    }
+}
+
+.chatbot-setting {
+    .chatbot-layout {
+        display: none;
+        margin-top: 14px;
     }
 }

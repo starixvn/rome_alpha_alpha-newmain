@@ -154,8 +154,12 @@
     }
 }
 
-.resend-code {
+.resend-code {    
+    color: $link-color;
     text-decoration: underline;
-    color: #038dee;
     font-weight: bold;
+
+    &:hover {
+        color: $link-hover-color;
+    }
 }

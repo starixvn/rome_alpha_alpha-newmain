@@ -18,7 +18,7 @@
         </h4>
     </div>
     <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
-        <div class="panel-body has-padding">
+        <div class="panel-body account-info">
             <div id="account-message" class="container-msg"></div>
             <form class="filter">
                 <div class="form-group">
@@ -35,7 +35,7 @@
         </div>
     </div>
 </div>
-<div class="panel">
+<div class="panel chatbot-setting">
     <div class="panel-heading" role="tab" id="headingReport">
         <h4 class="panel-title">
             <a role="button" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report">
@@ -45,13 +45,13 @@
     </div>
     <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
         <div class="panel-body has-padding">
-            <p>@ChatBot.IntroReport</p>
+            <p>&#9679; @ChatBot.IntroReport</p>
             <table class="tbl-guideline">
                 <thead>
                     <tr>
-                        <th>@ChatBot.Command</th>
+                        <th class="col-command">@ChatBot.Command</th>
                         <th>@ChatBot.Action</th>
-                        <th>@Resources.active</th>
+                        <th class="col-status">@Resources.active</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,8 +71,13 @@
                     }
                 </tbody>
             </table>
-            <p>@ChatBot.Example</p>
-            <div class="chatbot-layout -has-footer">
+            @*<p>@ChatBot.Example</p>*@
+            <p>&#9679; Simply click on the Chatbot and input the command to return the specific results match accordingly.</p>
+            <div class="chatbot-demo" id="chatbotReportDemo">
+                <span class="icon icon-play-button"></span>
+                <span class="text">Play example</span>
+            </div>
+            <div class="chatbot-layout -has-footer" id="chatbotReport">
                 <div class="chatbot-header">
                     <span class="icon-chatbot-back"></span>
                     <span class="title">@ChatBot.ChatBotTitle</span>
@@ -145,34 +150,41 @@
                     </ul>
                 </div>
                 <div class="chatbot-footer">
-                    <span class="icon-chatbot-plus"></span>
-                    <span class="icon-chatbot-gif"></span>
-                    <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" disabled />
-                    <span class="icon-chatbot-voice"></span>
-                </div>
-                <div class="button-refresh" id="reportRefresh">
-                    <span class="icon-refresh"></span>
+                    <div class="input-data">
+                        <span class="icon-chatbot-plus"></span>
+                        <span class="icon-chatbot-gif"></span>
+                        <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" disabled />
+                        <span class="icon-chatbot-voice"></span>
+                    </div>
+                    <div class="actions">
+                        <div class="action-left replay-action" id="reportRefresh">
+                            <span class="icon-play-button"></span> Replay
+                        </div>
+                        <div class="action-right close-chatbotDemo" id="reportClose">
+                            <span class="icon-close-circle"></span> Close
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="panel">
+<div class="panel chatbot-setting">
     <div class="panel-heading" role="tab" id="headingNotification">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification" class="collapsed">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification" >
                 @ChatBot.FunctionNotification
             </a>
         </h4>
     </div>
     <div id="notification" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNotification">
         <div class="panel-body has-padding">
-            <p>@ChatBot.IntroNotification</p>
+            <p>&#9679; @ChatBot.IntroNotification</p>
             <table class="tbl-guideline">
                 <thead>
                     <tr>
                         <th>@ChatBot.Action</th>
-                        <th>@Resources.active</th>
+                        <th class="col-status">@Resources.active</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -191,8 +203,12 @@
                     }
                 </tbody>
             </table>
-            <p>@ChatBot.Example</p>
-            <div class="chatbot-layout -notification">
+            <p>&#9679; Once you enable you desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time.</p>
+            <div class="chatbot-demo" id="chatbotNotificationDemo">
+                <span class="icon icon-play-button"></span>
+                <span class="text">Play example</span>
+            </div>
+            <div class="chatbot-layout -notification" id="chatbotNotification">
                 <div class="chatbot-header">
                     <span class="icon-chatbot-back"></span>
                     <span class="title">@ChatBot.ChatBotTitle</span>
@@ -250,8 +266,15 @@
                         </li>
                     </ul>
                 </div>
-                <div class="button-refresh" id="notificationRefresh">
-                    <span class="icon-refresh"></span>
+                <div class="chatbot-footer">
+                    <div class="actions">
+                        <div class="action-left replay-action" id="notificationRefresh">
+                            <span class="icon-play-button"></span> Replay
+                        </div>
+                        <div class="action-right close-chatbotDemo" id="notificationClose">
+                            <span class="icon-close-circle"></span> Close
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

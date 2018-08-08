@@ -96,7 +96,7 @@ label {
     padding: 16px 0;
     background-color: #fff;
 
-    &.has-padding { padding: 12px 16px !important; }
+    &.has-padding { padding: 16px !important; }
 }
 
 // Chatbot layout
@@ -105,7 +105,7 @@ label {
     @include border-radius(5px 5px 0 0);
     position: relative;
     width: 340px;
-    height: 350px;
+    height: 387px;
     border: 1px solid #c8c8c8;
 
     .chatbot-body {
@@ -127,11 +127,15 @@ label {
     }
 
     &.-notification {
-        height: 220px;
+        height: 272px;
 
         .chatbot-body {
-            height: 177px;
-            max-height: 177px;
+            height: 190px;
+            max-height: 190px;
+        }
+
+        .chatbot-footer {
+            height: 39px;
         }
     }
     
@@ -319,46 +323,104 @@ label {
 
 .chatbot-footer {
     bottom: 0;
-    height: 62px;
+    height: 100px;
     border-top: 1px solid #c8c8c8;
     background-color: #fff;
     color: #4b4b4b;
     text-align: center;
-    [class^='icon'] {        
+
+    .input-data{
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 60px;
+        width: 100%;
+
+        [class^='icon'] {        
+            position: absolute;
+            top: 17px;
+        }
+
+        .icon-chatbot-plus {
+            left: 10px;
+            top: 22px;
+            font-size: 17px;   
+        }
+
+        .icon-chatbot-gif {
+            left: 33px;
+            font-size: 31px;
+        }
+
+        .icon-chatbot-voice {
+            right: 5px;
+            font-size: 28px;
+        }
+
+        .chatbot-text[disabled] {
+            @include border-radius(20px);
+            @include box-shadow-multiple(none);
+            position: absolute;
+            left: 72px;
+            top: 12px;
+            width: 226px;
+            height: 36px;
+            border: 1px solid $border-color;
+            padding-left: 12px;
+            background-color: #fff;
+            color: #666;
+            opacity: 1;
+            cursor: default;
+        }
+    }
+    
+    .actions {
         position: absolute;
-        top: 17px;
-    }
+        bottom: 0;
+        left: 0;    
+        width: 100%;        
+        line-height: 38px;
+        padding: 0 10px;
+        border-top: 1px solid $border-color;
+        background-color: #ebebeb;
 
-    .icon-chatbot-plus {
-        left: 10px;
-        top: 22px;
-        font-size: 17px;   
-    }
+        [class^='icon'] {   
+            position: relative;     
+            cursor: pointer;
+        }
 
-    .icon-chatbot-gif {
-        left: 33px;
-        font-size: 31px;
-    }
+        .action-left {
+            float: left;
+            cursor: pointer;
+            color: #038dee;
 
-    .icon-chatbot-voice {
-        right: 5px;
-        font-size: 28px;
-    }
+            &:hover {
+                color: darken(#038dee, 5%);
+            }
+        }
 
-    .chatbot-text[disabled] {
-        @include border-radius(20px);
-        @include box-shadow-multiple(none);
-        position: absolute;
-        left: 72px;
-        top: 12px;
-        width: 226px;
-        height: 36px;
-        border: 1px solid $border-color;
-        padding-left: 12px;
-        background-color: #fff;
-        color: #666;
-        opacity: 1;
-        cursor: default;
+        .action-right {
+            float: right;
+            cursor: pointer;
+            color: #930a14;
+
+            &:hover {
+                color: darken(#930a14, 5%);
+            }
+        }
+
+        .icon-play-button {
+            top: 3px;
+            margin-right: 4px;
+            font-size: 15px;
+        }
+
+        .icon-close-circle {            
+            top: 4px;
+            font-size: 19px;
+            margin-right: 2px;
+        }
+            
     }
 }
 
