@@ -51,12 +51,30 @@ class ChatBotSetting extends BaseChatBot {
 
         this.$openReportExample.on('click touchend', () => {
             var language = this.$language.data("currentlanguage");
-            this.showPopup(alpha.urls.mainRootPath + "ChatBot/ReportExample?language=" + language, "Report Example");
+            this.$.ajax({
+                type: "GET",
+                url: alpha.urls.mainRootPath + "ChatBot/ReportExample",
+                data: { language: language },
+                dataType: "text",
+                success: (result) => {
+                    this.bootbox.dialog({ message: result });
+                },
+                complete: this.onComplete,
+            });
         });
 
         this.$openNotificationExample.on('click touchend', () => {
             var language = this.$language.data("currentlanguage");
-            this.showPopup(alpha.urls.mainRootPath + "ChatBot/NotificationExample?language=" + language, "Notification Example");
+            this.$.ajax({
+                type: "GET",
+                url: alpha.urls.mainRootPath + "ChatBot/NotificationExample",
+                data: { language: language },
+                dataType: "text",
+                success: (result) => {
+                    this.bootbox.dialog({ message: result });
+                },
+                complete: this.onComplete,
+            });
         });
     }
 
