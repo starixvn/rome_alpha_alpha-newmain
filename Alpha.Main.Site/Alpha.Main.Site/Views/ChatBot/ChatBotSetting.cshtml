@@ -77,9 +77,13 @@
                 <li>
                     @*<p>@ChatBot.Example</p>*@
                     <p>Simply click on the Chatbot and input the command to return the specific results match accordingly.</p>
-                    <div class="chatbot-demo" id="chatbotReportDemo">
+                    <div class="chatbot-demo" id="playReportExample">
                         <span class="icon icon-play-button"></span>
                         <span class="text">Play example</span>
+                    </div>
+                    <div class="chatbot-demo text-red display-none" id="closeReportExample">
+                        <span class="icon icon-close-circle"></span>
+                        <span class="text">Close example</span>
                     </div>
                     <div class="chatbot-layout -report" id="chatbotReport">
                         <div class="chatbot-header">
@@ -178,7 +182,7 @@
 <div class="panel chatbot-setting">
     <div class="panel-heading" role="tab" id="headingNotification">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification" >
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification">
                 @ChatBot.FunctionNotification
             </a>
         </h4>
@@ -214,9 +218,13 @@
                 </li>
                 <li>
                     <p>Once you enable you desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time.</p>
-                    <div class="chatbot-demo" id="chatbotNotificationDemo">
+                    <div class="chatbot-demo" id="playNotificationExample">
                         <span class="icon icon-play-button"></span>
                         <span class="text">Play example</span>
+                    </div>
+                    <div class="chatbot-demo text-red display-none" id="closeNotificationExample">
+                        <span class="icon icon-play-button"></span>
+                        <span class="text">Close example</span>
                     </div>
                     <div class="chatbot-layout -notification" id="chatbotNotification">
                         <div class="chatbot-header">

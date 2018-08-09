@@ -4,7 +4,7 @@
 
 class ChatBotSetting extends BaseChatBot {
     $: JQueryStatic;
-    addAccount: AddAccount;
+    chatbotGuide: ChatBotGuide;
 
     // Language
     $language: JQuery;
@@ -17,12 +17,15 @@ class ChatBotSetting extends BaseChatBot {
 
     constructor($: JQueryStatic, bootbox: any) {
         super($, bootbox)
+        this.chatbotGuide = new ChatBotGuide($);
     }
 
     init = () => {
         this.cachedDOMElements();
         this.initLanguage();
         this.registerEvents();
+
+        this.chatbotGuide.init();
     }
 
     cachedDOMElements = () => {

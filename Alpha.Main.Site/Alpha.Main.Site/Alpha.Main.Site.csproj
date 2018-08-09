@@ -510,7 +510,6 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
-    <Content Include="Assets\scripts\chatbot\chatbot-guide.js" />
     <Content Include="Assets\styles\chatbot\chatbot-setting.css">
       <DependentUpon>chatbot-setting.scss</DependentUpon>
     </Content>
@@ -863,6 +862,7 @@
     <Content Include="Views\ChatBot\Captcha.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-guide.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-setting.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
