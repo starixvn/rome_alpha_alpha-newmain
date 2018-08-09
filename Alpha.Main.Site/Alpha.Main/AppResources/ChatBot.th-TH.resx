@@ -100,4 +100,10 @@
   <data name="AlertRequiredField" xml:space="preserve">
     <value>จำเป็นต้องใส่ข้อมูลนี้</value>
   </data>
+  <data name="personalMessageSample" xml:space="preserve">
+    <value>เอี่ยวขั้นต่ำของท่าน ถูกเปลี่ยนโดยทางต้นสายเป็นที่เรียบร้อยแล้ว กรุณาตรวจสอบรายละเอียดต่าง ๆ ของลูกค้าของท่านอีกครั้ง</value>
+  </data>
+  <data name="systemUpdateAnnouncementSample" xml:space="preserve">
+    <value>เรียน ลูกค้าที่เคารพ&lt;br /&gt;ทางเราขอแจ้งให้ทราบว่า บริษัทได้เพิ่มเกมส์ตัวใหม่เข้าไปยัง "Macau Games" คุณสามารถเข้าไปทำการตั้งค่าต่างๆ ได้ตั้งแต่วันที่ 10/05/2018.&lt;br /&gt;ขอบพระคุณ</value>
+  </data>
 </root>

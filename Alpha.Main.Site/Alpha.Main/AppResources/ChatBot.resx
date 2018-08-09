@@ -116,10 +116,10 @@
     <value>Link</value>
   </data>
   <data name="unLink" xml:space="preserve">
-    <value>UnLink</value>
+    <value>Unlink</value>
   </data>
   <data name="VerificationCodeExample" xml:space="preserve">
-    <value>A bot named "&lt;strong&gt;Chatbot&lt;/strong&gt;" has sent you a 6-digits verification code via &lt;strong&gt;Letstalk IM&lt;/strong&gt;.</value>
+    <value>&lt;strong&gt;"Chatbot"&lt;/strong&gt; has sent you a 6-digits verification code via &lt;strong&gt;Letstalk&lt;/strong&gt;.</value>
   </data>
   <data name="EnterVerificationCode" xml:space="preserve">
     <value>Verify your Letstalk IM  account.</value>
@@ -137,13 +137,13 @@
     <value>This field is required.</value>
   </data>
   <data name="VerificationCodeIsInvalidOrExpired" xml:space="preserve">
-    <value>Verification code is invalid or expired</value>
+    <value>Invalid/expired verification code, please try again or request a new one.</value>
   </data>
   <data name="UnsubscribeWarning" xml:space="preserve">
     <value>Unsubscribing Chatbot will stop all of its features. Are you sure you want to proceed.</value>
   </data>
   <data name="InputVerificationCode" xml:space="preserve">
-    <value>To verify your account, please input the verification code sent to your &lt;strong&gt;Letstalk IM&lt;/strong&gt;</value>
+    <value>Input the received code to verify your account.</value>
   </data>
   <data name="CollapseAll" xml:space="preserve">
     <value>Collapse all features</value>
@@ -172,8 +172,8 @@
   <data name="OverMaxAddAccountTimes" xml:space="preserve">
     <value>You have requested too many times today, Please try again later.</value>
   </data>
-  <data name="Action" xml:space="preserve">
-    <value>Action</value>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
   </data>
   <data name="Command" xml:space="preserve">
     <value>Command</value>
@@ -182,13 +182,10 @@
     <value>Chat Bot's Language</value>
   </data>
   <data name="IntroReport" xml:space="preserve">
-    <value>For active items below, you can simply command the Chatbot via Letstalk IM, it will return the report.</value>
+    <value>Please activate commands you would like to use with Chatbot.</value>
   </data>
   <data name="IntroNotification" xml:space="preserve">
-    <value>For active items below, Chatbot will automatically notify you new events in the system.</value>
-  </data>
-  <data name="Example" xml:space="preserve">
-    <value>Example</value>
+    <value>Please enable notifications that you would like to receive from Chatbot.</value>
   </data>
   <data name="Read" xml:space="preserve">
     <value>Read</value>
@@ -200,16 +197,16 @@
     <value>Member Win Loss</value>
   </data>
   <data name="personalMessageSample" xml:space="preserve">
-    <value>Personal message&lt;br /&gt;Your minimum position taking&lt;br /&gt;has been changed by the upline&lt;br /&gt;Please kindly be informed and&lt;br /&gt;have a check the details for your&lt;br /&gt;downlines.</value>
+    <value>Your minimum position taking value has been changed by the upline. Please kindly be informed and have a check the details for your downlines.</value>
   </data>
   <data name="specialAnnouncementSample" xml:space="preserve">
-    <value>Special Announcement&lt;br /&gt;Dear Valued Customer:&lt;br /&gt;Effective 18th Jan 2018&lt;br /&gt;Company will restrict access&lt;br /&gt;our Agent Site from "Hong Kong".&lt;br /&gt;Thank you for your kind attention! &lt;br /&gt;</value>
+    <value>Dear Valued Customer: Effective 18th Jan 2018 Company will restrict access our Agent Site from "Hong Kong". Thank you for your kind attention! </value>
   </data>
   <data name="normalAnnouncementSample" xml:space="preserve">
-    <value>Normal Announcement&lt;br /&gt;Attn:[E-Sports]&lt;br /&gt;a match has been cancelled,&lt;br /&gt;all bets taken are considered REFUNDED.&lt;br /&gt;Thank you!</value>
+    <value>Attn:[E-Sports] a match has been cancelled, all bets taken are considered REFUNDED.Thank you!</value>
   </data>
   <data name="systemUpdateAnnouncementSample" xml:space="preserve">
-    <value>System Update&lt;br /&gt;Dear valued agents,&lt;br /&gt;We are pleased to inform that&lt;br /&gt;there are new games&lt;br /&gt;added under Macau Games.&lt;br /&gt;You may review the Bet Limit settings &lt;br /&gt;affected from 10/05/2018.&lt;br /&gt;Thank you!</value>
+    <value>Dear valued agents,&lt;br /&gt;We are pleased to inform that there are new games added under Macau Games. You may review the Bet Limit settings affected from 10/05/2018.&lt;br /&gt;Thank you.</value>
   </data>
   <data name="updateLanguageFailed" xml:space="preserve">
     <value>Update Chatbot's language failed. Please try again.</value>
@@ -218,10 +215,10 @@
     <value>Expired or didn't recieve the code?</value>
   </data>
   <data name="IntroLetstalk" xml:space="preserve">
-    <value>Letstalk IM is the most secured messenger which heavily encrypts your conversations. "Chatbot" function integrated with this Letstalk IM allows you to receive reports and notifications of your business conveniently and securely without the need to access to this site. To start setting up Chatbot, please follow below steps:</value>
+    <value>&lt;strong&gt;Letstalk IM&lt;/strong&gt; is the most secured messenger which heavily encrypts your conversations. &lt;strong&gt;"Chatbot"&lt;/strong&gt; function integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive reports and notifications of your business conveniently and securely without the need to access to this site. To start setting up Chatbot, please follow below steps:</value>
   </data>
   <data name="createLetstalkAccount" xml:space="preserve">
-    <value>Create a free Letstalk IM account.</value>
+    <value>Install Letstalk and create a free account.</value>
   </data>
   <data name="letstalkIM" xml:space="preserve">
     <value>Letstalk IM</value>
@@ -230,15 +227,39 @@
     <value>Letstalk Technology Limited</value>
   </data>
   <data name="pleaseInputLetstalkAccount" xml:space="preserve">
-    <value>Please input your &lt;strong&gt;Letstalk IM&lt;/strong&gt; account that you wish to link with &lt;strong&gt;"Chatbot"&lt;/strong&gt;</value>
+    <value>Input your &lt;strong&gt;Letstalk&lt;/strong&gt; account to link with &lt;strong&gt;Chatbot&lt;/strong&gt;.</value>
   </data>
   <data name="AccountIsRequired" xml:space="preserve">
-    <value>Please input your account</value>
+    <value>Please input your account.</value>
   </data>
   <data name="verifyMessageSample" xml:space="preserve">
-    <value>You have requested to set up Chatbot for your account Supertest1. Your verification code is 123456. The code will be expired in 3 minutes. To secure your information, please delete this message after completing verification.</value>
+    <value>You have requested to set up Chatbot for your account Supertest1. Your verification code is 123456.The code will be expired in 3 minutes.For security reason, message will be automatically deleted after 3 minutes.</value>
   </data>
   <data name="lblCaptcha" xml:space="preserve">
     <value>Captcha</value>
+  </data>
+  <data name="playExample" xml:space="preserve">
+    <value>Play Example</value>
+  </data>
+  <data name="closeExample" xml:space="preserve">
+    <value>closeExample</value>
+  </data>
+  <data name="replay" xml:space="preserve">
+    <value>Replay</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="introReportExample" xml:space="preserve">
+    <value>Simply send a command to Chatbox to receive your desired report.</value>
+  </data>
+  <data name="introNotificationExample" xml:space="preserve">
+    <value>Once you enable your desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time.</value>
+  </data>
+  <data name="verificationCodeIsRequired" xml:space="preserve">
+    <value>Please input verification code</value>
+  </data>
+  <data name="captchaIsRequired" xml:space="preserve">
+    <value>Please input captcha</value>
   </data>
 </root>

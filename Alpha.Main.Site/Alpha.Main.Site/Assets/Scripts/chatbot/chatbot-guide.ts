@@ -51,7 +51,7 @@
         this.$reportRefresh.click(this.replayReportExample);
 
         this.$playNotificationExample.click(this.showNotificationExample);
-        this.$closeReportExample.click(this.closeNotificationExample);
+        this.$closeNotificationExample.click(this.closeNotificationExample);
         this.$notificationClose.click(this.closeNotificationExample);
         this.$notificationRefresh.click(this.replayNotificationExample);
     }
@@ -96,8 +96,8 @@
     closeNotificationExample = () => {
         var self = this;
         this.$notificationDemo.slideToggle('fast', function () {
-            self.$playNotificationExample.hide();
-            self.$closeNotificationExample.show();
+            self.$closeNotificationExample.hide();
+            self.$playNotificationExample.show();
             self.$notificationCommands.find(".command").each(function () {
                 self.$(this).hide();
             })

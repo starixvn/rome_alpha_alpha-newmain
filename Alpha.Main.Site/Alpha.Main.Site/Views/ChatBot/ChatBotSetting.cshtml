@@ -52,8 +52,8 @@
                         <thead>
                             <tr>
                                 <th class="col-command">@ChatBot.Command</th>
-                                <th>@ChatBot.Action</th>
-                                <th class="col-status">@Resources.active</th>
+                                <th>@ChatBot.View</th>
+                                <th class="col-status">@Alpha_sitemap.status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,15 +75,14 @@
                     </table>
                 </li>
                 <li>
-                    @*<p>@ChatBot.Example</p>*@
-                    <p>Simply click on the Chatbot and input the command to return the specific results match accordingly.</p>
+                    <p>@ChatBot.introReportExample</p>
                     <div class="toggle-chatbot-example" id="playReportExample">
                         <span class="icon icon-play-button"></span>
-                        <span class="text">Play example</span>
+                        <span class="text">@ChatBot.playExample</span>
                     </div>
                     <div class="toggle-chatbot-example text-red display-none" id="closeReportExample">
                         <span class="icon icon-close-circle"></span>
-                        <span class="text">Close example</span>
+                        <span class="text">@ChatBot.closeExample</span>
                     </div>
                     <div class="chatbot-layout -report" id="chatbotReport">
                         <div class="chatbot-header">
@@ -165,14 +164,13 @@
                         </div>
                         <div class="list-actions">
                             <div class="action-left replay-action" id="reportRefresh">
-                                <span class="icon-play-button"></span> Replay
+                                <span class="icon-play-button"></span> @ChatBot.replay
                             </div>
                             <div class="action-right close-chatbotDemo" id="reportClose">
-                                <span class="icon-close-circle"></span> Close
+                                <span class="icon-close-circle"></span> @ChatBot.close
                             </div>
                         </div>
                     </div>
-
                 </li>
             </ul>
         </div>
@@ -194,8 +192,8 @@
                     <table class="tbl-guideline">
                         <thead>
                             <tr>
-                                <th>@ChatBot.Action</th>
-                                <th class="col-status">@Resources.active</th>
+                                <th>@ChatBot.View</th>
+                                <th class="col-status">@Alpha_sitemap.status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -216,14 +214,14 @@
                     </table>
                 </li>
                 <li>
-                    <p>Once you enable you desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time.</p>
+                    <p>@ChatBot.introNotificationExample</p>
                     <div class="toggle-chatbot-example" id="playNotificationExample">
                         <span class="icon icon-play-button"></span>
-                        <span class="text">Play example</span>
+                        <span class="text">@ChatBot.playExample</span>
                     </div>
                     <div class="toggle-chatbot-example text-red display-none" id="closeNotificationExample">
-                        <span class="icon icon-play-button"></span>
-                        <span class="text">Close example</span>
+                        <span class="icon icon-close-circle"></span>
+                        <span class="text">@ChatBot.closeExample</span>
                     </div>
                     <div class="chatbot-layout -notification" id="chatbotNotification">
                         <div class="chatbot-header">
@@ -251,7 +249,8 @@
                                 </li>
                                 <li class="command">
                                     <div class="chatbot-reponse">
-                                        @Html.Raw(ChatBot.ResourceManager.GetString("personalMessageSample", CultureInfo.GetCultureInfo(Model.Language)))
+                                        @Resources.ResourceManager.GetString("personalMessage", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        @ChatBot.ResourceManager.GetString("personalMessageSample", CultureInfo.GetCultureInfo(Model.Language))
                                     </div>
                                     <div class="status-chatbot-reponse">
                                         13:20
@@ -259,7 +258,8 @@
                                 </li>
                                 <li class="command">
                                     <div class="chatbot-reponse">
-                                        @Html.Raw(ChatBot.ResourceManager.GetString("specialAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language)))
+                                        @Resources.ResourceManager.GetString("specialAnnouncement", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        @ChatBot.ResourceManager.GetString("specialAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language))
                                     </div>
                                     <div class="status-chatbot-reponse">
                                         13:20
@@ -267,7 +267,8 @@
                                 </li>
                                 <li class="command">
                                     <div class="chatbot-reponse">
-                                        @Html.Raw(ChatBot.ResourceManager.GetString("normalAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language)))
+                                        @Resources.ResourceManager.GetString("normalAnnouncement", CultureInfo.GetCultureInfo(Model.Language)) <br />
+                                        @ChatBot.ResourceManager.GetString("normalAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language))
                                     </div>
                                     <div class="status-chatbot-reponse">
                                         13:20
@@ -275,6 +276,7 @@
                                 </li>
                                 <li class="command">
                                     <div class="chatbot-reponse">
+                                        @Resources.ResourceManager.GetString("systemUpdate", CultureInfo.GetCultureInfo(Model.Language)) <br />
                                         @Html.Raw(ChatBot.ResourceManager.GetString("systemUpdateAnnouncementSample", CultureInfo.GetCultureInfo(Model.Language)))
                                     </div>
                                     <div class="status-chatbot-reponse">
@@ -285,10 +287,10 @@
                         </div>
                         <div class="list-actions">
                             <div class="action-left replay-action" id="notificationRefresh">
-                                <span class="icon-play-button"></span> Replay
+                                <span class="icon-play-button"></span> @ChatBot.replay
                             </div>
                             <div class="action-right close-chatbotDemo" id="notificationClose">
-                                <span class="icon-close-circle"></span> Close
+                                <span class="icon-close-circle"></span> @ChatBot.close
                             </div>
                         </div>
                     </div>

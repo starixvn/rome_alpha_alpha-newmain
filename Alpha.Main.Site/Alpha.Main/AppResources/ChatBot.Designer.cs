@@ -88,20 +88,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please input your account.
+        ///   Looks up a localized string similar to Please input your account..
         /// </summary>
         public static string AccountIsRequired {
             get {
                 return ResourceManager.GetString("AccountIsRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Action.
-        /// </summary>
-        public static string Action {
-            get {
-                return ResourceManager.GetString("Action", resourceCulture);
             }
         }
         
@@ -111,6 +102,15 @@ namespace Alpha.Main.AppResources {
         public static string AlertRequiredField {
             get {
                 return ResourceManager.GetString("AlertRequiredField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please input captcha.
+        /// </summary>
+        public static string captchaIsRequired {
+            get {
+                return ResourceManager.GetString("captchaIsRequired", resourceCulture);
             }
         }
         
@@ -133,6 +133,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string close {
+            get {
+                return ResourceManager.GetString("close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to closeExample.
+        /// </summary>
+        public static string closeExample {
+            get {
+                return ResourceManager.GetString("closeExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Collapse all features.
         /// </summary>
         public static string CollapseAll {
@@ -151,7 +169,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create a free Letstalk IM account..
+        ///   Looks up a localized string similar to Install Letstalk and create a free account..
         /// </summary>
         public static string createLetstalkAccount {
             get {
@@ -165,15 +183,6 @@ namespace Alpha.Main.AppResources {
         public static string EnterVerificationCode {
             get {
                 return ResourceManager.GetString("EnterVerificationCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Example.
-        /// </summary>
-        public static string Example {
-            get {
-                return ResourceManager.GetString("Example", resourceCulture);
             }
         }
         
@@ -223,7 +232,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To verify your account, please input the verification code sent to your &lt;strong&gt;Letstalk IM&lt;/strong&gt;.
+        ///   Looks up a localized string similar to Input the received code to verify your account..
         /// </summary>
         public static string InputVerificationCode {
             get {
@@ -241,7 +250,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Letstalk IM is the most secured messenger which heavily encrypts your conversations. &quot;Chatbot&quot; function integrated with this Letstalk IM allows you to receive reports and notifications of your business conveniently and securely without the need to access to this site. To start setting up Chatbot, please follow below steps:.
+        ///   Looks up a localized string similar to &lt;strong&gt;Letstalk IM&lt;/strong&gt; is the most secured messenger which heavily encrypts your conversations. &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt; function integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive reports and notifications of your business conveniently and securely without the need to access to this site. To start setting up Chatbot, please follow below steps:.
         /// </summary>
         public static string IntroLetstalk {
             get {
@@ -250,7 +259,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For active items below, Chatbot will automatically notify you new events in the system..
+        ///   Looks up a localized string similar to Please enable notifications that you would like to receive from Chatbot..
         /// </summary>
         public static string IntroNotification {
             get {
@@ -259,11 +268,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For active items below, you can simply command the Chatbot via Letstalk IM, it will return the report..
+        ///   Looks up a localized string similar to Once you enable your desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time..
+        /// </summary>
+        public static string introNotificationExample {
+            get {
+                return ResourceManager.GetString("introNotificationExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please activate commands you would like to use with Chatbot..
         /// </summary>
         public static string IntroReport {
             get {
                 return ResourceManager.GetString("IntroReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simply send a command to Chatbox to receive your desired report..
+        /// </summary>
+        public static string introReportExample {
+            get {
+                return ResourceManager.GetString("introReportExample", resourceCulture);
             }
         }
         
@@ -340,7 +367,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Normal Announcement&lt;br /&gt;Attn:[E-Sports]&lt;br /&gt;a match has been cancelled,&lt;br /&gt;all bets taken are considered REFUNDED.&lt;br /&gt;Thank you!.
+        ///   Looks up a localized string similar to Attn:[E-Sports] a match has been cancelled, all bets taken are considered REFUNDED.Thank you!.
         /// </summary>
         public static string normalAnnouncementSample {
             get {
@@ -358,7 +385,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal message&lt;br /&gt;Your minimum position taking&lt;br /&gt;has been changed by the upline&lt;br /&gt;Please kindly be informed and&lt;br /&gt;have a check the details for your&lt;br /&gt;downlines..
+        ///   Looks up a localized string similar to Your minimum position taking value has been changed by the upline. Please kindly be informed and have a check the details for your downlines..
         /// </summary>
         public static string personalMessageSample {
             get {
@@ -367,7 +394,16 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please input your &lt;strong&gt;Letstalk IM&lt;/strong&gt; account that you wish to link with &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt;.
+        ///   Looks up a localized string similar to Play Example.
+        /// </summary>
+        public static string playExample {
+            get {
+                return ResourceManager.GetString("playExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input your &lt;strong&gt;Letstalk&lt;/strong&gt; account to link with &lt;strong&gt;Chatbot&lt;/strong&gt;..
         /// </summary>
         public static string pleaseInputLetstalkAccount {
             get {
@@ -385,6 +421,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Replay.
+        /// </summary>
+        public static string replay {
+            get {
+                return ResourceManager.GetString("replay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resend.
         /// </summary>
         public static string Resend {
@@ -394,7 +439,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Special Announcement&lt;br /&gt;Dear Valued Customer:&lt;br /&gt;Effective 18th Jan 2018&lt;br /&gt;Company will restrict access&lt;br /&gt;our Agent Site from &quot;Hong Kong&quot;.&lt;br /&gt;Thank you for your kind attention! &lt;br /&gt;.
+        ///   Looks up a localized string similar to Dear Valued Customer: Effective 18th Jan 2018 Company will restrict access our Agent Site from &quot;Hong Kong&quot;. Thank you for your kind attention! .
         /// </summary>
         public static string specialAnnouncementSample {
             get {
@@ -403,7 +448,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System Update&lt;br /&gt;Dear valued agents,&lt;br /&gt;We are pleased to inform that&lt;br /&gt;there are new games&lt;br /&gt;added under Macau Games.&lt;br /&gt;You may review the Bet Limit settings &lt;br /&gt;affected from 10/05/2018.&lt;br /&gt;Thank you!.
+        ///   Looks up a localized string similar to Dear valued agents,&lt;br /&gt;We are pleased to inform that there are new games added under Macau Games. You may review the Bet Limit settings affected from 10/05/2018.&lt;br /&gt;Thank you..
         /// </summary>
         public static string systemUpdateAnnouncementSample {
             get {
@@ -412,7 +457,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UnLink.
+        ///   Looks up a localized string similar to Unlink.
         /// </summary>
         public static string unLink {
             get {
@@ -448,7 +493,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A bot named &quot;&lt;strong&gt;Chatbot&lt;/strong&gt;&quot; has sent you a 6-digits verification code via &lt;strong&gt;Letstalk IM&lt;/strong&gt;..
+        ///   Looks up a localized string similar to &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt; has sent you a 6-digits verification code via &lt;strong&gt;Letstalk&lt;/strong&gt;..
         /// </summary>
         public static string VerificationCodeExample {
             get {
@@ -457,11 +502,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verification code is invalid or expired.
+        ///   Looks up a localized string similar to Invalid/expired verification code, please try again or request a new one..
         /// </summary>
         public static string VerificationCodeIsInvalidOrExpired {
             get {
                 return ResourceManager.GetString("VerificationCodeIsInvalidOrExpired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please input verification code.
+        /// </summary>
+        public static string verificationCodeIsRequired {
+            get {
+                return ResourceManager.GetString("verificationCodeIsRequired", resourceCulture);
             }
         }
         
@@ -475,11 +529,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have requested to set up Chatbot for your account Supertest1. Your verification code is 123456. The code will be expired in 3 minutes. To secure your information, please delete this message after completing verification..
+        ///   Looks up a localized string similar to You have requested to set up Chatbot for your account Supertest1. Your verification code is 123456.The code will be expired in 3 minutes.For security reason, message will be automatically deleted after 3 minutes..
         /// </summary>
         public static string verifyMessageSample {
             get {
                 return ResourceManager.GetString("verifyMessageSample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View.
+        /// </summary>
+        public static string View {
+            get {
+                return ResourceManager.GetString("View", resourceCulture);
             }
         }
         

@@ -60,7 +60,7 @@ class AddAccount extends BaseChatBot {
         var account = this.$txtAccount.val();
         if (account.length === 0) {
             this.$txtAccount.focus();
-            alpha.showMessage(this.$addAccountMessage, new Result({ Code: 1, Message: this.resources.thisFieldRequired }));
+            alpha.showMessage(this.$addAccountMessage, new Result({ Code: 1, Message: this.resources.accountIsRequired }));
             return;
         } else {
             this.$addAccountMessage.html("");

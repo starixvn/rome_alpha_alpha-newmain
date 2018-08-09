@@ -14,7 +14,10 @@
         unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
         overMaxAddAccountTimes: (<HTMLInputElement>document.getElementById('OverMaxAddAccountTimes')).value,
         accountHasAlreadyBeenRegistered: (<HTMLInputElement>document.getElementById('AccountHasAlreadyBeenRegistered')).value,
-        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value
+        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value,
+        accountIsRequired: (<HTMLInputElement>document.getElementById('AccountIsRequired')).value,
+        verificationCodeIsRequired: (<HTMLInputElement>document.getElementById('VerificationCodeIsRequired')).value,
+        captchaIsRequired: (<HTMLInputElement>document.getElementById('CaptchaIsRequired')).value
     }
 
     onComplete = () => {

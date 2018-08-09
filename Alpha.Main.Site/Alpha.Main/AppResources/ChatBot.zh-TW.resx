@@ -100,4 +100,13 @@
   <data name="AlertRequiredField" xml:space="preserve">
     <value>必填欄</value>
   </data>
+  <data name="personalMessageSample" xml:space="preserve">
+    <value>您的上線已修改您的最低占成。 請務必核對您的下線的細節。</value>
+  </data>
+  <data name="specialAnnouncementSample" xml:space="preserve">
+    <value>尊敬的客戶: 在此通知您從2018年1月18日起，本公司將禁止在"香港"登入管理網。感謝您的關註!</value>
+  </data>
+  <data name="systemUpdateAnnouncementSample" xml:space="preserve">
+    <value>尊敬的代理們，&lt;br /&gt;我們在此宣佈將會增加新遊戲於"Macau Games"產品。 您可以在10/05/2018 查看相關的投註限額設置。&lt;br /&gt;謝謝。</value>
+  </data>
 </root>

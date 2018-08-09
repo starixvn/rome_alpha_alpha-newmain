@@ -101,7 +101,7 @@ class VerifyAccount extends BaseChatBot {
         var verificationCode = this.$txtVerificationCode.val();
         if (verificationCode.length === 0) {
             this.$txtVerificationCode.focus();
-            alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.thisFieldRequired }));
+            alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.verificationCodeIsRequired }));
             return;
         } else {
             this.$verificationMessage.html("");
@@ -110,7 +110,7 @@ class VerifyAccount extends BaseChatBot {
         if (this.isShowCaptcha) {
             if (this.$txtCaptcha.val() === "") {
                 this.$txtCaptcha.focus();
-                alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.thisFieldRequired }));
+                alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.captchaIsRequired }));
                 return;
             } else {
                 this.$verificationMessage.html("");

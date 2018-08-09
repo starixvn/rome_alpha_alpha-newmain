@@ -1046,6 +1046,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System Update.
+        /// </summary>
+        public static string systemUpdate {
+            get {
+                return ResourceManager.GetString("systemUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You can take the tour by clicking on this icon..
         /// </summary>
         public static string TakeTourInstruction {
