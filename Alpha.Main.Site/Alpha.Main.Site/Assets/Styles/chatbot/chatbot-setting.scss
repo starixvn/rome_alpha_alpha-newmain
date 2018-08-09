@@ -195,13 +195,13 @@
     }
 
     &.-notification {
-        height: 269px;
+        height: 324px;
 
         .chatbot-body {
             @include border-radius(0 0 2px 2px);
             border-bottom-width: 1px;
-            height: 190px;
-            max-height: 190px;
+            height: 245px;
+            max-height: 245px;
         }
     }
 }

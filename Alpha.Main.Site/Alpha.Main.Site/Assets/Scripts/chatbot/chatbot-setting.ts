@@ -61,7 +61,7 @@ class ChatBotSetting extends BaseChatBot {
     }
 
     showPopup = (url: string, title?: string) => {
-        this.topWindow.popupManager.openMultiple(url, title, 350, 400);
+        this.topWindow.popupManager.open(url, title, 350, 400);
     }
 
     initLanguage = () => {
