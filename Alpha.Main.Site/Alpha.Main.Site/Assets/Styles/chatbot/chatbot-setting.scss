@@ -42,27 +42,18 @@
 .tbl-guideline {
     min-width: 376px;
     width: 100%;
-    border: none;
-    border-collapse: collapse;
 
     @media (min-device-width: $screen-device-lower768) {
        width: auto;
     }
 
-    thead th {
-        padding-bottom: 6px;
-        text-align: center;
-        color: #7d7d7d;
-    }
-    
-    td {
-        padding-left: 10px;
-        padding-right: 10px;
-        line-height: 40px;
-        border: 1px solid #c7c7c7;
+    thead th, tbody td {
+        padding-top: 9px;
+        padding-bottom: 9px;
 
         @media (min-device-width: $screen-device-greater1024) {
-            line-height: 36px;
+            padding-top: 7px;
+            padding-bottom: 7px;
         }
     }
 
