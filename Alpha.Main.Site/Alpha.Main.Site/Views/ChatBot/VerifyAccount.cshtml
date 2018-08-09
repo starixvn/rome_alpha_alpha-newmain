@@ -1,36 +1,7 @@
 ﻿@model VerifyAccountViewModel
 <li id="verification-section">
-    <p><strong>@ChatBot.EnterVerificationCode</strong></p>    
+    <p><strong>@ChatBot.EnterVerificationCode</strong></p>
     <p>A bot named "Chatbot" has sent you a 6-digits verification code via Letstalk IM. To verify your account, please input the verification code </p>
-        @*<ul class="info-list">
-        <li class="chatbot-example">
-            <p>@Html.Raw(ChatBot.VerificationCodeExample)</p>
-            <div class="chatbot-layout -register">
-                <div class="chatbot-header">
-                    <span class="icon-chatbot-back"></span>
-                    <span class="title">@ChatBot.ChatBotTitle</span>
-                    <span class="icon-chatbot-call"></span>
-                    <span class="icon-chatbot-down"></span>
-                </div>
-                <div class="chatbot-body -large" id="reportBody">
-                    <button class="btn-add-friend">
-                        <span class="icon-addfriend"></span> Add Friend
-                    </button>
-                    <ul class="list-commands" id="reportCommands">
-                        <li class="command">
-                            <div class="chatbot-reponse">
-                                @ChatBot.verifyMessageSample
-                            </div>
-                            <div class="status-chatbot-reponse">
-                                12:30
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li></li>
-    </ul>*@
     <div id="verification-code-message"></div>
     <form class="verification-form" id="verification-form" action="@Url.Action("VerifyVerificationCode")" method="post">
         <input type="hidden" id="UserId" name="UserId" value="@Model.UserId" />

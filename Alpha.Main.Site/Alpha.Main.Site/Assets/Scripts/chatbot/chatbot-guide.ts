@@ -1,21 +1,15 @@
 ﻿class ChatBotGuide {
     $: JQueryStatic;
 
-    $playReportExample: JQuery;
-    $closeReportExample: JQuery;
     $reportDemo: JQuery;
     $reportBody: JQuery;
     $reportCommands: JQuery;
     $reportRefresh: JQuery;
-    $reportClose: JQuery;
 
-    $playNotificationExample: JQuery;
-    $closeNotificationExample: JQuery;
     $notificationDemo: JQuery;
     $notificationBody: JQuery;
     $notificationCommands: JQuery;
     $notificationRefresh: JQuery;
-    $notificationClose: JQuery;
 
     constructor($: JQueryStatic) {
         this.$ = $;
@@ -24,56 +18,30 @@
     init = () => {
         this.cacheDOMElement();
         this.registerEvents();
+        this.showReportExample();
+        this.showNotificationExample();
     }
 
     cacheDOMElement = () => {
-        this.$playReportExample = this.$("#playReportExample");
-        this.$closeReportExample = this.$("#closeReportExample");
         this.$reportDemo = this.$("#chatbotReport");
         this.$reportBody = this.$("#reportBody");
         this.$reportCommands = this.$("#reportCommands");
         this.$reportRefresh = this.$("#reportRefresh");
-        this.$reportClose = this.$("#reportClose");
 
-        this.$playNotificationExample = this.$("#playNotificationExample");
-        this.$closeNotificationExample = this.$("#closeNotificationExample");
         this.$notificationDemo = this.$("#chatbotNotification");
         this.$notificationBody = this.$("#notificationBody");
         this.$notificationCommands = this.$("#notificationCommands");
         this.$notificationRefresh = this.$("#notificationRefresh");
-        this.$notificationClose = this.$("#notificationClose");
     }
 
     registerEvents = () => {
-        this.$playReportExample.click(this.showReportExample);
-        this.$closeReportExample.click(this.closeReportExample);
-        this.$reportClose.click(this.closeReportExample);
         this.$reportRefresh.click(this.replayReportExample);
 
-        this.$playNotificationExample.click(this.showNotificationExample);
-        this.$closeNotificationExample.click(this.closeNotificationExample);
-        this.$notificationClose.click(this.closeNotificationExample);
         this.$notificationRefresh.click(this.replayNotificationExample);
     }
 
     showReportExample = () => {
-        var self = this;
-        this.$reportDemo.slideToggle('fast', function () {
-            self.$playReportExample.hide();
-            self.$closeReportExample.show();
-            self.showMessageChat(self.$reportCommands, self.$reportBody)
-        });
-    }
-
-    closeReportExample = () => {
-        var self = this;
-        this.$reportDemo.slideToggle('fast', function () {
-            self.$closeReportExample.hide();
-            self.$playReportExample.show();
-            self.$reportCommands.find(".command").each(function () {
-                self.$(this).hide();
-            })
-        });
+        this.showMessageChat(this.$reportCommands, this.$reportBody)
     }
 
     replayReportExample = () => {
@@ -85,23 +53,7 @@
     }
 
     showNotificationExample = () => {
-        var self = this;
-        this.$notificationDemo.slideToggle('fast', function () {
-            self.$playNotificationExample.hide();
-            self.$closeNotificationExample.show();
-            self.showMessageChat(self.$notificationCommands, self.$notificationBody)
-        });
-    }
-
-    closeNotificationExample = () => {
-        var self = this;
-        this.$notificationDemo.slideToggle('fast', function () {
-            self.$closeNotificationExample.hide();
-            self.$playNotificationExample.show();
-            self.$notificationCommands.find(".command").each(function () {
-                self.$(this).hide();
-            })
-        });
+        this.showMessageChat(this.$notificationCommands, this.$notificationBody);
     }
 
     replayNotificationExample = () => {
@@ -161,3 +113,8 @@
         }, 1000);
     }
 }
+
+$(function () {
+    var chatbotGuide = new ChatBotGuide($);
+    chatbotGuide.init();
+});

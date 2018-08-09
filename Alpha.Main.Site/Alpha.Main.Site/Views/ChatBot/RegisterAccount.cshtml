@@ -1,67 +1,71 @@
 ﻿@model RegisterAccountViewModel
 @{
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
-    ViewBag.Title = Model.Title;
 }
 @section Styles {
     @StaticResources.RenderStyles("~/assets/bundles/chatbot/register-account")
 }
-<div class="panel" id="register-panel">
-    <div class="panel-heading" role="tab" id="headingRegister">
-        <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerLetstalk" aria-expanded="false" aria-controls="registerLetstalk">
-                @ChatBot.Account
-            </a>
-        </h4>
-    </div>
-    <div id="registerLetstalk" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
-        <div class="panel-body has-padding">
-            <p>@Html.Raw(ChatBot.IntroLetstalk)</p>
-            <ul id="registerLetstalkPanel" class="list-requirements">
-                <li>
-                    <p class="bold">@ChatBot.InstallLetstalk</p>
-                    <p>@ChatBot.createLetstalkAccount</p>
-                    <div class="download-content">
-                        <div class="logo-letstalk">
-                            <img src="~/Assets/Styles/chatbot/images/letstalk.png" />
+<div class="page-title">
+    <span class="pull-left">@Model.Title</span>
+</div>
+<div class="tab-content">
+    <div class="panel" id="register-panel">
+        <div class="panel-heading" role="tab" id="headingRegister">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerLetstalk" aria-expanded="false" aria-controls="registerLetstalk">
+                    @ChatBot.Account
+                </a>
+            </h4>
+        </div>
+        <div id="registerLetstalk" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
+            <div class="panel-body has-padding">
+                <p>@Html.Raw(ChatBot.IntroLetstalk)</p>
+                <ul id="registerLetstalkPanel" class="list-requirements">
+                    <li>
+                        <p class="bold">@ChatBot.InstallLetstalk</p>
+                        <p>@ChatBot.createLetstalkAccount</p>
+                        <div class="download-content">
+                            <div class="logo-letstalk">
+                                <img src="~/Assets/Styles/chatbot/images/letstalk.png" />
+                            </div>
+                            <div class="list-download">
+                                <h2>@ChatBot.letstalkIM</h2>
+                                <p><strong>@ChatBot.letstalkTechLmd</strong></p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="https://itunes.apple.com/us/app/letstalk-im/id1270059337?mt=8" class="btn-download-ios" target="_blank">
+                                            <img src="~/Assets/Styles/chatbot/images/apple.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://play.google.com/store/apps/details?id=com.onelab.securecomm&hl=en" target="_blank" class="btn-download-android">
+                                            <img src="~/Assets/Styles/chatbot/images/google.png" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="list-download">
-                            <h2>@ChatBot.letstalkIM</h2>
-                            <p><strong>@ChatBot.letstalkTechLmd</strong></p>
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="https://itunes.apple.com/us/app/letstalk-im/id1270059337?mt=8" class="btn-download-ios" target="_blank">
-                                        <img src="~/Assets/Styles/chatbot/images/apple.png" />
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://play.google.com/store/apps/details?id=com.onelab.securecomm&hl=en" target="_blank" class="btn-download-android">
-                                        <img src="~/Assets/Styles/chatbot/images/google.png" />
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <p class="bold">@ChatBot.LinkChatbot</p>
-                    <div id="add-account-message"></div>
-                    <form class="add-letstalk">
-                        <div class="form-group m-b-0">
-                            <label>@Html.Raw(ChatBot.pleaseInputLetstalkAccount)</label>
-                        </div>
-                        <div class="form-group m-b-0">
-                            <input id="txtAccount" type="text" maxlength="50" class="letstalk-text" value="@Model.Username" @(Model.IsVerifying ? "disabled" : string.Empty) />
-                            <button id="btnAdd" class="btn-submit @(Model.IsVerifying ? "display-none" : "")">@ChatBot.link</button>
-                            <button id="btnUnsubscribe" class="btn-remove @(Model.IsVerifying ? "" : "display-none")">@ChatBot.unLink</button>
-                        </div>
-                    </form>
-                </li>
-                @if (Model.IsVerifying)
-                {
-                    @Html.Partial("VerifyAccount", Model.VerifyAccountViewModel)
-                }
-            </ul>
+                    </li>
+                    <li>
+                        <p class="bold">@ChatBot.LinkChatbot</p>
+                        <div id="add-account-message"></div>
+                        <form class="add-letstalk">
+                            <div class="form-group m-b-0">
+                                <label>@Html.Raw(ChatBot.pleaseInputLetstalkAccount)</label>
+                            </div>
+                            <div class="form-group m-b-0">
+                                <input id="txtAccount" type="text" maxlength="50" class="letstalk-text" value="@Model.Username" @(Model.IsVerifying ? "disabled" : string.Empty) />
+                                <button id="btnAdd" class="btn-submit @(Model.IsVerifying ? "display-none" : "")">@ChatBot.link</button>
+                                <button id="btnUnsubscribe" class="btn-remove @(Model.IsVerifying ? "" : "display-none")">@ChatBot.unLink</button>
+                            </div>
+                        </form>
+                    </li>
+                    @if (Model.IsVerifying)
+                    {
+                        @Html.Partial("VerifyAccount", Model.VerifyAccountViewModel)
+                    }
+                </ul>
+            </div>
         </div>
     </div>
 </div>

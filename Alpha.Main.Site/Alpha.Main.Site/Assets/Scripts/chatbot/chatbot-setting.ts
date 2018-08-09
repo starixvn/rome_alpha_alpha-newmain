@@ -4,7 +4,7 @@
 
 class ChatBotSetting extends BaseChatBot {
     $: JQueryStatic;
-    chatbotGuide: ChatBotGuide;
+    topWindow: any;
 
     // Language
     $language: JQuery;
@@ -14,18 +14,18 @@ class ChatBotSetting extends BaseChatBot {
     $userName: JQuery;
     $btnUnsubscribe: JQuery;
     $accountMessage: JQuery;
+    $openReportExample: JQuery;
+    $openNotificationExample: JQuery;
 
-    constructor($: JQueryStatic, bootbox: any) {
+    constructor($: JQueryStatic, bootbox: any, topWindow: any) {
         super($, bootbox)
-        this.chatbotGuide = new ChatBotGuide($);
+        this.topWindow = topWindow;
     }
 
     init = () => {
         this.cachedDOMElements();
         this.initLanguage();
         this.registerEvents();
-
-        this.chatbotGuide.init();
     }
 
     cachedDOMElements = () => {
@@ -36,6 +36,8 @@ class ChatBotSetting extends BaseChatBot {
         this.$userId = this.$("#UserId");
         this.$userName = this.$("#UserName");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
+        this.$openReportExample = this.$("#openReportExample");
+        this.$openNotificationExample = this.$("#openNotificationExample");
     }
 
     registerEvents = () => {
@@ -46,6 +48,20 @@ class ChatBotSetting extends BaseChatBot {
         this.$changeLanguageLink.on('click touchend', (e) => {
             self.changeLanguage(self.$(e.target).data("value"));
         });
+
+        this.$openReportExample.on('click touchend', () => {
+            var language = this.$language.data("currentlanguage");
+            this.showPopup(alpha.urls.mainRootPath + "ChatBot/ReportExample?language=" + language, "Report Example");
+        });
+
+        this.$openNotificationExample.on('click touchend', () => {
+            var language = this.$language.data("currentlanguage");
+            this.showPopup(alpha.urls.mainRootPath + "ChatBot/NotificationExample?language=" + language, "Notification Example");
+        });
+    }
+
+    showPopup = (url: string, title?: string) => {
+        this.topWindow.popupManager.openMultiple(url, title, 350, 400);
     }
 
     initLanguage = () => {
@@ -149,6 +165,6 @@ class ChatBotSetting extends BaseChatBot {
 }
 
 $(function () {
-    var chatBotSetting = new ChatBotSetting($, bootbox);
+    var chatBotSetting = new ChatBotSetting($, bootbox, window.top);
     chatBotSetting.init();
 });

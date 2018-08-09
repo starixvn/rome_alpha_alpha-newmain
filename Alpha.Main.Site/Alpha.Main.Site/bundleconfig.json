@@ -214,5 +214,11 @@
       "Assets/scripts/chatbot/chatbot-setting.js",
       "Assets/scripts/chatbot/chatbot-guide.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot-guide.js",
+    "inputFiles": [
+      "Assets/scripts/chatbot/chatbot-guide.js"
+    ]
   }
 ]

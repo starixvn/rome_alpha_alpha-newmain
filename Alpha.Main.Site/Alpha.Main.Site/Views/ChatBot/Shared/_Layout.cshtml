@@ -11,12 +11,7 @@
     @RenderSection("Styles", required: false)
 </head>
 <body>
-    <div class="page-title">
-        <span class="pull-left">@ViewBag.Title</span>
-    </div>
-    <div class="tab-content">
-        @RenderBody()
-    </div>
+    @RenderBody()
     @Html.Hidden("ThisFieldRequired", ChatBot.AlertRequiredField)
     @Html.Hidden("AccountDoesNotExist", ChatBot.AccountDoesNotExist)
     @Html.Hidden("VerificationCodeIsInvalidOrExpired", ChatBot.VerificationCodeIsInvalidOrExpired)

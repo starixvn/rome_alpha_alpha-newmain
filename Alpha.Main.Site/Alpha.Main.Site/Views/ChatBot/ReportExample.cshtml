@@ -1,0 +1,99 @@
+﻿@using System.Globalization
+@model string
+@{
+    Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
+}
+@section Styles {
+    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot-setting")
+}
+<ul class="info-list">
+    <li>
+        <div class="chatbot-layout -report" id="chatbotReport">
+            <div class="chatbot-header">
+                <span class="icon-chatbot-back"></span>
+                <span class="title">@ChatBot.ChatBotTitle</span>
+                <span class="icon-chatbot-call"></span>
+                <span class="icon-chatbot-down"></span>
+            </div>
+            <div class="chatbot-body" id="reportBody">
+                <ul class="list-commands" id="reportCommands">
+                    <li class="command">
+                        <div class="user-input">/os</div>
+                        <div class="status-user-input">
+                            @ChatBot.Read <br />
+                            12:33
+                        </div>
+                    </li>
+                    <li class="command">
+                        <div class="chatbot-reponse">
+                            @Resources.ResourceManager.GetString("outstanding", CultureInfo.GetCultureInfo(Model)) <br />
+                            @Resources.ResourceManager.GetString("totalMemberCredit", CultureInfo.GetCultureInfo(Model)) <br />
+                            1,000.00 <br />
+                            @Resources.ResourceManager.GetString("totalAgentCredit", CultureInfo.GetCultureInfo(Model)) <br />
+                            50.00
+                        </div>
+                        <div class="status-chatbot-reponse">
+                            12:36
+                        </div>
+                    </li>
+                    <li class="command">
+                        <div class="user-input">/wl</div>
+                        <div class="status-user-input">
+                            @ChatBot.Read <br />
+                            12:33
+                        </div>
+                    </li>
+                    <li class="command">
+                        <div class="chatbot-reponse">
+                            @Resources.ResourceManager.GetString("todayWinLoss", CultureInfo.GetCultureInfo(Model)) <br />
+                            @Resources.ResourceManager.GetString("turnover", CultureInfo.GetCultureInfo(Model)) <br />
+                            30,000.00 <br />
+                            @ChatBot.ResourceManager.GetString("grossComm", CultureInfo.GetCultureInfo(Model)) <br />
+                            50.00 <br />
+                            @ChatBot.ResourceManager.GetString("memberWinLoss", CultureInfo.GetCultureInfo(Model)) <br />
+                            5000.00 <br />
+                        </div>
+                        <div class="status-chatbot-reponse">
+                            12:36
+                        </div>
+                    </li>
+                    <li class="command">
+                        <div class="user-input">/bal</div>
+                        <div class="status-user-input">
+                            @ChatBot.Read <br />
+                            12:33
+                        </div>
+                    </li>
+                    <li class="command">
+                        <div class="chatbot-reponse">
+                            @Resources.ResourceManager.GetString("balanceInfo", CultureInfo.GetCultureInfo(Model)) <br />
+                            @Resources.ResourceManager.GetString("currency", CultureInfo.GetCultureInfo(Model)) <br />
+                            UUS <br />
+                            @Resources.ResourceManager.GetString("cashBalance", CultureInfo.GetCultureInfo(Model)) <br />
+                            1,500,000.00 <br />
+                            @Resources.ResourceManager.GetString("yesterdayCashBalance", CultureInfo.GetCultureInfo(Model)) <br />
+                            1,500,000.00 <br />
+                        </div>
+                        <div class="status-chatbot-reponse">
+                            12:36
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="data-input">
+                <span class="icon-chatbot-plus"></span>
+                <span class="icon-chatbot-gif"></span>
+                <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" disabled />
+                <span class="icon-chatbot-voice"></span>
+            </div>
+            <div class="list-actions">
+                <div class="action-left replay-action" id="reportRefresh">
+                    <span class="icon-play-button"></span> @ChatBot.replay
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+@section Scripts{
+    @StaticResources.RenderScripts("~/assets/bundles/chatbot/chatbot-guide")
+}

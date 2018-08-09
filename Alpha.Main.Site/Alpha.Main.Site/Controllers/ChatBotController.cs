@@ -124,9 +124,15 @@
 
         [HttpGet]
         public ActionResult Captcha()
-        {
-            return PartialView();
-        }
+            => PartialView();
+
+        [HttpGet]
+        public ActionResult ReportExample(string language)
+            => View("ReportExample", (object)language);
+
+        [HttpGet]
+        public ActionResult NotificationExample(string language)
+            => View("NotificationExample", (object)language);
 
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {
