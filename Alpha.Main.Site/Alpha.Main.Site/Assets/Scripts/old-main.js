@@ -828,10 +828,10 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFr
         }
 
         var mainFrame = top.main;
-        var isCustomerList = mainFrame.$("arrayCustID") &&
-            mainFrame.$("arrayCustID").value.length &&
-            mainFrame.$("arrayUserName") &&
-            mainFrame.$("arrayUserName").value.length;
+        var isCustomerList = mainFrame.document.getElementById("arrayCustID") &&
+            mainFrame.document.getElementById("arrayCustID").value.length &&
+            mainFrame.document.getElementById("arrayUserName") &&
+            mainFrame.document.getElementById("arrayUserName").value.length;
         storeAndRestoreFrameData(isCustomerList);
 
         top.main.location.reload(true);
