@@ -54,13 +54,17 @@
     td {
         padding-left: 10px;
         padding-right: 10px;
-        line-height: 30px;
+        line-height: 40px;
         border: 1px solid #c7c7c7;
+
+        @media (min-device-width: $screen-device-greater1024) {
+            line-height: 32px;
+        }
     }
 
     .bage {
-        @include border-radius(4px);
-        padding: 4px 8px;
+        @include border-radius(2px);
+        padding: 2px 10px;
         border: 1px solid $border-color;
         background-color: #fbfbfb;
         color: #6c6c6c;
@@ -90,8 +94,9 @@
         display: none;
     }
 
-    .slider {
+    .slider {        
         @include border-radius(8px);
+        @include transition(.4s);
         position: absolute;    
         top: 0;
         left: 0;
@@ -100,18 +105,17 @@
         width: 30px;
         height: 16px;
         background-color: #8a8a8a;
-        transition: .4s;
         cursor: pointer;
 
         &:before {
             @include border-radius(50%);
+            @include transition(.4s);
             position: absolute;
             top: 1px;
             left: 1px;    
             height: 14px;
             width: 14px;    
             background-color: #fff;
-            transition: .4s;
             content: "";
         }
     }
@@ -121,40 +125,13 @@
     }
 
     input:checked + .slider:before {
-        transform: translateX(14px);
+        @include transform(translateX(14px));
     }
 }
 
-
-.button-refresh {
-    @include border-radius(50%);
-    position: absolute;
-    bottom: 0;
-    right: -34px;
-    width: 28px;
-    height: 28px;
-    background-color: #157ce5;
-    text-align: center;
-    cursor: pointer;
-
-    .icon-refresh {
-        position: relative;
-        top: 6px;
-        color: #fff;
-        font-weight: normal;
-
-            &:hover:after {
-            width: 36px;
-            height: 36px;
-            margin-left: -12px;
-            margin-top: -9px;
-        }
-    }
-}
-
-.chatbot-demo {
+.toggle-chatbot-example {
     position: relative;
-    padding-left: 24px;
+    padding-left: 23px;
     color: #038dee;
     font-weight: bold;    
     text-transform: capitalize;
@@ -176,9 +153,9 @@
     }
 
     .icon-close-circle {
-        top: -2px;
+        top: -1px;
         left: 0; 
-        font-size: 19px;
+        font-size: 18px;
     }
 
     &.text-red {
@@ -200,58 +177,56 @@
 // Chatbot Layout
 .chatbot-layout {
     &.-report {
-        height: 387px;
+        height: 364px;
 
         .chatbot-body {
             height: 245px;
             max-height: 245px;
         }
 
-        .chatbot-footer {
-            height: 100px;
+        .data-input {
+            top: 284px;
+            height: 40px;
         }
     }
 
     &.-notification {
-        height: 272px;
+        height: 269px;
 
         .chatbot-body {
+            @include border-radius(0 0 2px 2px);
+            border-bottom-width: 1px;
             height: 190px;
             max-height: 190px;
-        }
-
-        .chatbot-footer {
-            height: 39px;
         }
     }
 }
 
-.chatbot-footer .input-data{
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 60px;
-    width: 100%;
+.data-input {
+    @include border-radius(0 0 2px 2px);
+    border-width: 0 1px 1px 1px;
+    background-color: #fff;
+    color: #4b4b4b;
 
     [class^='icon'] {        
         position: absolute;
-        top: 17px;
+        top: 6px;
     }
 
     .icon-chatbot-plus {
         left: 10px;
-        top: 22px;
-        font-size: 17px;   
+        top: 12px;
+        font-size: 15px;   
     }
 
     .icon-chatbot-gif {
         left: 33px;
-        font-size: 31px;
+        font-size: 28px;
     }
 
     .icon-chatbot-voice {
         right: 5px;
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .chatbot-text[disabled] {
@@ -259,14 +234,57 @@
         @include box-shadow-multiple(none);
         position: absolute;
         left: 72px;
-        top: 12px;
+        top: 6px;
         width: 226px;
-        height: 36px;
-        border: 1px solid $border-color;
+        line-height: 28px;
+        border: 1px solid #d8d8d8;
         padding-left: 12px;
         background-color: #fff;
         color: #666;
         opacity: 1;
         cursor: default;
     }
+}
+
+.list-actions {
+    bottom: 0;        
+    line-height: 34px;
+
+    [class^='icon'] {   
+        position: relative;     
+        cursor: pointer;
+    }
+
+    .action-left {
+        float: left;
+        cursor: pointer;
+        color: #038dee;
+
+        &:hover {
+            color: darken(#038dee, 5%);
+        }
+    }
+
+    .action-right {
+        float: right;
+        cursor: pointer;
+        color: #930a14;
+
+        &:hover {
+            color: darken(#930a14, 5%);
+        }
+    }
+
+    .icon-play-button {
+        top: 1px;
+        margin-right: 4px;
+        font-size: 15px;
+    }
+
+    .icon-close-circle {            
+        top: 4px;
+        font-size: 19px;
+        margin-right: 2px;
+    }
+            
 }

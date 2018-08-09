@@ -77,11 +77,11 @@
                 <li>
                     @*<p>@ChatBot.Example</p>*@
                     <p>Simply click on the Chatbot and input the command to return the specific results match accordingly.</p>
-                    <div class="chatbot-demo" id="playReportExample">
+                    <div class="toggle-chatbot-example" id="playReportExample">
                         <span class="icon icon-play-button"></span>
                         <span class="text">Play example</span>
                     </div>
-                    <div class="chatbot-demo text-red display-none" id="closeReportExample">
+                    <div class="toggle-chatbot-example text-red display-none" id="closeReportExample">
                         <span class="icon icon-close-circle"></span>
                         <span class="text">Close example</span>
                     </div>
@@ -157,23 +157,22 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="chatbot-footer">
-                            <div class="input-data">
-                                <span class="icon-chatbot-plus"></span>
-                                <span class="icon-chatbot-gif"></span>
-                                <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" disabled />
-                                <span class="icon-chatbot-voice"></span>
+                        <div class="data-input">
+                            <span class="icon-chatbot-plus"></span>
+                            <span class="icon-chatbot-gif"></span>
+                            <input type="text" id="reportText" class="chatbot-text" placeholder="Input command" disabled />
+                            <span class="icon-chatbot-voice"></span>
+                        </div>
+                        <div class="list-actions">
+                            <div class="action-left replay-action" id="reportRefresh">
+                                <span class="icon-play-button"></span> Replay
                             </div>
-                            <div class="actions">
-                                <div class="action-left replay-action" id="reportRefresh">
-                                    <span class="icon-play-button"></span> Replay
-                                </div>
-                                <div class="action-right close-chatbotDemo" id="reportClose">
-                                    <span class="icon-close-circle"></span> Close
-                                </div>
+                            <div class="action-right close-chatbotDemo" id="reportClose">
+                                <span class="icon-close-circle"></span> Close
                             </div>
                         </div>
                     </div>
+
                 </li>
             </ul>
         </div>
@@ -218,11 +217,11 @@
                 </li>
                 <li>
                     <p>Once you enable you desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time.</p>
-                    <div class="chatbot-demo" id="playNotificationExample">
+                    <div class="toggle-chatbot-example" id="playNotificationExample">
                         <span class="icon icon-play-button"></span>
                         <span class="text">Play example</span>
                     </div>
-                    <div class="chatbot-demo text-red display-none" id="closeNotificationExample">
+                    <div class="toggle-chatbot-example text-red display-none" id="closeNotificationExample">
                         <span class="icon icon-play-button"></span>
                         <span class="text">Close example</span>
                     </div>
@@ -284,14 +283,12 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="chatbot-footer">
-                            <div class="actions">
-                                <div class="action-left replay-action" id="notificationRefresh">
-                                    <span class="icon-play-button"></span> Replay
-                                </div>
-                                <div class="action-right close-chatbotDemo" id="notificationClose">
-                                    <span class="icon-close-circle"></span> Close
-                                </div>
+                        <div class="list-actions">
+                            <div class="action-left replay-action" id="notificationRefresh">
+                                <span class="icon-play-button"></span> Replay
+                            </div>
+                            <div class="action-right close-chatbotDemo" id="notificationClose">
+                                <span class="icon-close-circle"></span> Close
                             </div>
                         </div>
                     </div>

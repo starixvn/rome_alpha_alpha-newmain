@@ -95,6 +95,9 @@ label {
     border-top: 1px solid #dcdcdc;
     padding: 16px 0;
     background-color: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
 
     &.has-padding { padding: 16px !important; }
 }
@@ -110,15 +113,17 @@ label {
 .chatbot-layout {
     @include border-radius(5px 5px 0 0);
     position: relative;
-    width: 340px;    
-    border: 1px solid #c8c8c8;
+    width: 340px;
     
     .chatbot-header,
     .chatbot-body,
-    .chatbot-footer {
+    .data-input,
+    .list-actions {
         position: absolute;
         left: 0;
         width: 100%;
+        border-color: #c8c8c8;
+        border-style: solid;     
     }
     
 }
@@ -128,6 +133,7 @@ label {
     top: 0;
     height: 40px;
     background-color: #4b4b4b;
+    border-width: 1px 1px 0 1px;
     color: #fff;
     text-align: center;
     [class^='icon'] {        
@@ -156,8 +162,9 @@ label {
 }
 
 .chatbot-body {
-    top: 41px;
-    padding: 10px;
+    top: 39px;
+    padding: 10px;    
+    border-width: 0 1px;    
     background-color: #efefef;    
     color: #333;
     overflow-y: scroll;
@@ -275,63 +282,3 @@ label {
         left: 256px;
     }
 }
-
-.chatbot-footer {
-    bottom: 0;
-    border-top: 1px solid #c8c8c8;
-    background-color: #fff;
-    color: #4b4b4b;
-    text-align: center;    
-    
-    .actions {
-        position: absolute;
-        bottom: 0;
-        left: 0;    
-        width: 100%;        
-        line-height: 38px;
-        padding: 0 10px;
-        border-top: 1px solid $border-color;
-        background-color: #ebebeb;
-
-        [class^='icon'] {   
-            position: relative;     
-            cursor: pointer;
-        }
-
-        .action-left {
-            float: left;
-            cursor: pointer;
-            color: #038dee;
-
-            &:hover {
-                color: darken(#038dee, 5%);
-            }
-        }
-
-        .action-right {
-            float: right;
-            cursor: pointer;
-            color: #930a14;
-
-            &:hover {
-                color: darken(#930a14, 5%);
-            }
-        }
-
-        .icon-play-button {
-            top: 3px;
-            margin-right: 4px;
-            font-size: 15px;
-        }
-
-        .icon-close-circle {            
-            top: 4px;
-            font-size: 19px;
-            margin-right: 2px;
-        }
-            
-    }
-}
-
-
-

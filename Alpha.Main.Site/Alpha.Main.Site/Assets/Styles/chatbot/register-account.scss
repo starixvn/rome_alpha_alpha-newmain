@@ -5,11 +5,15 @@
 
 .list-requirements {
     margin-bottom: 0;
-    padding-left: 30px;
+    padding-left: 12px;
 
     > li {
         padding-bottom: 30px;
         list-style-type: decimal;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
     }
 
     .msg {
@@ -165,6 +169,8 @@
     margin-bottom: 10px;
 
     .chatbot-body {
+        @include border-radius(0 0 2px 2px);
+        border-bottom-width: 1px;
         height: 252px;
         max-height: 252px;
     }
@@ -177,13 +183,16 @@
 .chatbot-body .btn-add-friend {
     @include border-radius(20px);
     display: block;
-    width: 128px;
+    width: 136px;
     line-height: 40px;
     margin: 0 auto 22px;
+    padding: 0;
     border: none;
     background-color: #4b4b4b;
     color: #fff;
     font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
 
     .icon-addfriend {
         font-size: 25px;
