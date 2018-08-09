@@ -5,6 +5,7 @@
 
 .list-requirements {
     margin-bottom: 0;
+    padding-top: 10px;
     padding-left: 12px;
 
     > li {
@@ -24,7 +25,6 @@
 
 .download-content {
     display: table;
-    padding-top: 12px;
     margin-left: -10px;
 
     .logo-letstalk {
@@ -52,7 +52,6 @@
 .add-letstalk {
     clear: both;
     min-width: 250px;
-    padding-top: 10px;
 
     .letstalk-text {
         width: 220px;
@@ -73,7 +72,7 @@
     display: table;
     width: 100%;
     clear: both;
-    padding-top: 12px;
+    /*padding-top: 12px;*/
 
     .form-group {        
 
