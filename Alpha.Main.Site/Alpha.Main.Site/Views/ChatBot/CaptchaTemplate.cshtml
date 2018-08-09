@@ -12,7 +12,7 @@
 @Html.Hidden("ModelImageElementId", Model.ImageElementId)
 @Html.Hidden("ReloadCaptchaFunctionName", reloadCaptchaFunctionName)
 <div class="form-group captcha-container">
-    <label>Captcha</label>
+    <label>@ChatBot.lblCaptcha</label>
     <div class="group-captcha">
         @if (Model.IsRequired)
         {

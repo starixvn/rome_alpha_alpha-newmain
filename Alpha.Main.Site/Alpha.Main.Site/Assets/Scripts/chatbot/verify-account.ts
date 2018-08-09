@@ -28,6 +28,7 @@ class VerifyAccount extends BaseChatBot {
     isShowCaptcha: boolean;
     imageElementId: string;
     tokenElementId: string;
+    timer: number;
 
     init = () => {
         this.cachedDOMElements();
@@ -185,6 +186,7 @@ class VerifyAccount extends BaseChatBot {
             }
 
             if (data.IsOk) {
+                clearInterval(this.timer);
                 this.$countDown.text(180);
                 this.$btnVerify.removeAttr("disabled");
                 this.countDownTimer();
@@ -225,10 +227,10 @@ class VerifyAccount extends BaseChatBot {
 
     countDownTimer = () => {
         var sec = parseInt(this.$countDown.text());
-        var timer = setInterval(() => {
+        this.timer = setInterval(() => {
             if (sec == 0) {
                 this.$btnVerify.attr("disabled", "disabled");
-                clearInterval(timer);
+                clearInterval(this.timer);
             } else {
                 this.$countDown.text(--sec);
             }

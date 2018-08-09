@@ -1,5 +1,4 @@
-﻿@using CaptchaMvc.HtmlHelpers;
-@model VerifyAccountViewModel
+﻿@model VerifyAccountViewModel
 <li id="verification-section">
     <strong>@ChatBot.EnterVerificationCode</strong>
     <ul class="info-list">
@@ -19,11 +18,7 @@
                     <ul class="list-commands" id="reportCommands">
                         <li class="command">
                             <div class="chatbot-reponse">
-                                You have requested to set up Chatbot for your account Supertest1.
-                                Your verification code is 123456.
-                                The code will be expired in 3 minutes.
-                                To secure your information, please delete this message
-                                after completing verification.
+                                @ChatBot.verifyMessageSample
                             </div>
                             <div class="status-chatbot-reponse">
                                 12:30
@@ -33,14 +28,14 @@
                 </div>
             </div>
         </li>
-        <li>@ChatBot.InputVerificationCode</li>
+        <li>@Html.Raw(ChatBot.InputVerificationCode)</li>
     </ul>
     <div id="verification-code-message"></div>
     <form class="verification-form" id="verification-form" action="@Url.Action("VerifyVerificationCode")" method="post">
         <input type="hidden" id="UserId" name="UserId" value="@Model.UserId" />
         <input type="hidden" id="MessengerAccount" name="MessengerAccount" value="@Model.MessengerAccount" />
         <div class="form-group">
-            <label f>@ChatBot.lblVerificationCode</label>
+            <label>@ChatBot.lblVerificationCode</label>
             <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="text" class="verify-text" />
         </div>
         <div id="captcha-container">

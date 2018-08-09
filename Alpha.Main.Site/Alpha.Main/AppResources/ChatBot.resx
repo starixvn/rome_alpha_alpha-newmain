@@ -103,20 +103,20 @@
   <data name="Account" xml:space="preserve">
     <value>Account</value>
   </data>
-  <data name="DownloadLetstalk" xml:space="preserve">
-    <value>Download Letstalk IM on your device and create an account.</value>
+  <data name="InstallLetstalk" xml:space="preserve">
+    <value>Install Letstalk IM</value>
   </data>
-  <data name="AddLetstalkAccount" xml:space="preserve">
-    <value>Add Chatbot to your Letstalk IM account.</value>
+  <data name="LinkChatbot" xml:space="preserve">
+    <value>Link Chatbot to your Letstalk account</value>
   </data>
   <data name="YourLetstalkAccount" xml:space="preserve">
     <value>Your Letstalk IM Account</value>
   </data>
-  <data name="Add" xml:space="preserve">
-    <value>Add</value>
+  <data name="link" xml:space="preserve">
+    <value>Link</value>
   </data>
-  <data name="Unsubscribe" xml:space="preserve">
-    <value>Unsubscribe</value>
+  <data name="unLink" xml:space="preserve">
+    <value>UnLink</value>
   </data>
   <data name="VerificationCodeExample" xml:space="preserve">
     <value>A bot named "&lt;strong&gt;Chatbot&lt;/strong&gt;" has sent you a 6-digits verification code via &lt;strong&gt;Letstalk IM&lt;/strong&gt;.</value>
@@ -143,7 +143,7 @@
     <value>Unsubscribing Chatbot will stop all of its features. Are you sure you want to proceed.</value>
   </data>
   <data name="InputVerificationCode" xml:space="preserve">
-    <value>Please verify your account by inputting the verification code into the text box below and click Verify.</value>
+    <value>To verify your account, please input the verification code sent to your &lt;strong&gt;Letstalk IM&lt;/strong&gt;</value>
   </data>
   <data name="CollapseAll" xml:space="preserve">
     <value>Collapse all features</value>
@@ -206,7 +206,7 @@
     <value>Special Announcement&lt;br /&gt;Dear Valued Customer:&lt;br /&gt;Effective 18th Jan 2018&lt;br /&gt;Company will restrict access&lt;br /&gt;our Agent Site from "Hong Kong".&lt;br /&gt;Thank you for your kind attention! &lt;br /&gt;</value>
   </data>
   <data name="normalAnnouncementSample" xml:space="preserve">
-    <value> Normal Announcement&lt;br /&gt;Attn:[E-Sports]&lt;br /&gt;a match has been cancelled,&lt;br /&gt;all bets taken are considered REFUNDED.&lt;br /&gt;Thank you!</value>
+    <value>Normal Announcement&lt;br /&gt;Attn:[E-Sports]&lt;br /&gt;a match has been cancelled,&lt;br /&gt;all bets taken are considered REFUNDED.&lt;br /&gt;Thank you!</value>
   </data>
   <data name="systemUpdateAnnouncementSample" xml:space="preserve">
     <value>System Update&lt;br /&gt;Dear valued agents,&lt;br /&gt;We are pleased to inform that&lt;br /&gt;there are new games&lt;br /&gt;added under Macau Games.&lt;br /&gt;You may review the Bet Limit settings &lt;br /&gt;affected from 10/05/2018.&lt;br /&gt;Thank you!</value>
@@ -216,5 +216,29 @@
   </data>
   <data name="expiredOrDidNotRecieveTheCode" xml:space="preserve">
     <value>Expired or didn't recieve the code?</value>
+  </data>
+  <data name="IntroLetstalk" xml:space="preserve">
+    <value>Letstalk IM is the most secured messenger which heavily encrypts your conversations. "Chatbot" function integrated with this Letstalk IM allows you to receive reports and notifications of your business conveniently and securely without the need to access to this site. To start setting up Chatbot, please follow below steps:</value>
+  </data>
+  <data name="createLetstalkAccount" xml:space="preserve">
+    <value>Create a free Letstalk IM account.</value>
+  </data>
+  <data name="letstalkIM" xml:space="preserve">
+    <value>Letstalk IM</value>
+  </data>
+  <data name="letstalkTechLmd" xml:space="preserve">
+    <value>Letstalk Technology Limited</value>
+  </data>
+  <data name="pleaseInputLetstalkAccount" xml:space="preserve">
+    <value>Please input your &lt;strong&gt;Letstalk IM&lt;/strong&gt; account that you wish to link with &lt;strong&gt;"Chatbot"&lt;/strong&gt;</value>
+  </data>
+  <data name="AccountIsRequired" xml:space="preserve">
+    <value>Please input your account</value>
+  </data>
+  <data name="verifyMessageSample" xml:space="preserve">
+    <value>You have requested to set up Chatbot for your account Supertest1. Your verification code is 123456. The code will be expired in 3 minutes. To secure your information, please delete this message after completing verification.</value>
+  </data>
+  <data name="lblCaptcha" xml:space="preserve">
+    <value>Captcha</value>
   </data>
 </root>
