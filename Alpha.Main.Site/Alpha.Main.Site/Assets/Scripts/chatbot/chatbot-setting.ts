@@ -57,7 +57,10 @@ class ChatBotSetting extends BaseChatBot {
                 data: { language: language },
                 dataType: "text",
                 success: (result) => {
-                    this.bootbox.dialog({ message: result });
+                    this.bootbox.dialog({
+                        title: "Report Example",
+                        message: result
+                    });
                 },
                 complete: this.onComplete,
             });
@@ -71,7 +74,10 @@ class ChatBotSetting extends BaseChatBot {
                 data: { language: language },
                 dataType: "text",
                 success: (result) => {
-                    this.bootbox.dialog({ message: result });
+                    this.bootbox.dialog({
+                        title: "Notification Example",
+                        message: result
+                    });
                 },
                 complete: this.onComplete,
             });
