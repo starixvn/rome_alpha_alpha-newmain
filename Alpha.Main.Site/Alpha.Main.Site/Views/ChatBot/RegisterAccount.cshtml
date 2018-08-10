@@ -70,6 +70,14 @@
     </div>
 </div>
 @Html.Hidden("IsVerifying", Model.IsVerifying)
+@Html.Hidden("AccountIsRequired", ChatBot.AccountIsRequired)
+@Html.Hidden("AccountDoesNotExist", ChatBot.AccountDoesNotExist)
+@Html.Hidden("AccountHasAlreadyBeenRegistered", ChatBot.AccountHasAlreadyBeenRegistered)
+@Html.Hidden("OverMaxAddAccountTimes", ChatBot.OverMaxAddAccountTimes)
+@Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
+@Html.Hidden("VerificationCodeIsRequired", ChatBot.verificationCodeIsRequired)
+@Html.Hidden("CaptchaIsRequired", ChatBot.captchaIsRequired)
+@Html.Hidden("VerificationCodeIsInvalidOrExpired", ChatBot.VerificationCodeIsInvalidOrExpired)
 @section Scripts{
     @StaticResources.RenderScripts("~/assets/bundles/chatbot/register-account")
 }

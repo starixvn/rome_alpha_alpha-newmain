@@ -30,6 +30,12 @@ class VerifyAccount extends BaseChatBot {
     tokenElementId: string;
     timer: number;
 
+    resources = {
+        verificationCodeIsInvalidOrExpired: (<HTMLInputElement>document.getElementById('VerificationCodeIsInvalidOrExpired')).value,
+        verificationCodeIsRequired: (<HTMLInputElement>document.getElementById('VerificationCodeIsRequired')).value,
+        captchaIsRequired: (<HTMLInputElement>document.getElementById('CaptchaIsRequired')).value
+    }
+
     init = () => {
         this.cachedDOMElements();
         this.registerEvents();

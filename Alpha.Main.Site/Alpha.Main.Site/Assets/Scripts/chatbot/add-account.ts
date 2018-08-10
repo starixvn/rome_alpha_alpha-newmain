@@ -16,6 +16,14 @@ class AddAccount extends BaseChatBot {
         this.verifyAccount = new VerifyAccount($, topWindow);
     }
 
+    resources = {
+        accountDoesNotExist: (<HTMLInputElement>document.getElementById('AccountDoesNotExist')).value,
+        unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
+        overMaxAddAccountTimes: (<HTMLInputElement>document.getElementById('OverMaxAddAccountTimes')).value,
+        accountHasAlreadyBeenRegistered: (<HTMLInputElement>document.getElementById('AccountHasAlreadyBeenRegistered')).value,
+        accountIsRequired: (<HTMLInputElement>document.getElementById('AccountIsRequired')).value,
+    }
+
     init = () => {
         this.cachedDOMElements();
         this.registerEvents();
@@ -118,18 +126,16 @@ class AddAccount extends BaseChatBot {
         var self = this;
         var userId = self.$userId.val();
         var userName = self.$txtAccount.val();
-        this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, (ok) => {
-            if (ok) {
-                this.$.blockUI();
-                this.$.ajax({
-                    type: "POST",
-                    url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
-                    data: { userId: userId, messengerUserName: userName },
-                    dataType: "json",
-                    success: self.onUnSubscribeSuccess,
-                    complete: self.onComplete
-                });
-            }
+        this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, () => {
+            this.$.blockUI();
+            this.$.ajax({
+                type: "POST",
+                url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
+                data: { userId: userId, messengerUserName: userName },
+                dataType: "json",
+                success: self.onUnSubscribeSuccess,
+                complete: self.onComplete
+            });
         });
     }
 

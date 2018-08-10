@@ -18,6 +18,11 @@ class ChatBotSetting extends BaseChatBot {
         super($, topWindow)
     }
 
+    resources = {
+        unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
+        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value,
+    }
+
     init = () => {
         this.cachedDOMElements();
         this.initLanguage();
@@ -54,7 +59,7 @@ class ChatBotSetting extends BaseChatBot {
         });
     }
 
-    openExample = (title: string, url: string, height:number) => {
+    openExample = (title: string, url: string, height: number) => {
         this.$.blockUI();
         var language = this.$language.data("currentlanguage");
         var src = alpha.urls.mainRootPath + url + "?language=" + language;
@@ -101,18 +106,16 @@ class ChatBotSetting extends BaseChatBot {
         var self = this;
         var userId = self.$userId.val();
         var userName = self.$userName.val();
-        this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, (ok) => {
-            if (ok) {
-                this.$.blockUI();
-                this.$.ajax({
-                    type: "POST",
-                    url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
-                    data: { userId: userId, messengerUserName: userName },
-                    dataType: "json",
-                    success: self.onUnSubscribeSuccess,
-                    complete: self.onComplete
-                });
-            }
+        this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, () => {
+            this.$.blockUI();
+            this.$.ajax({
+                type: "POST",
+                url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
+                data: { userId: userId, messengerUserName: userName },
+                dataType: "json",
+                success: self.onUnSubscribeSuccess,
+                complete: self.onComplete
+            });
         });
     }
 
