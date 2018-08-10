@@ -3,6 +3,7 @@
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
 }
 @section Styles {
+    @StaticResources.AssetStyles.RenderCommon("/bundles/site-main/chatbot/chatbot-default")
     @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot-setting")
 }
 <div class="page-title">
