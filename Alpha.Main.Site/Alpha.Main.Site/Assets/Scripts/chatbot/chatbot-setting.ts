@@ -46,18 +46,22 @@ class ChatBotSetting extends BaseChatBot {
         });
 
         this.$openReportExample.on('click touchend', () => {
-            this.openExample("Report Example", "ChatBot/ReportExample");
+            this.openExample("Report Example", "ChatBot/ReportExample", 363);
         });
 
         this.$openNotificationExample.on('click touchend', () => {
-            this.openExample("Notification Example", "ChatBot/NotificationExample");
+            this.openExample("Notification Example", "ChatBot/NotificationExample", 324);
         });
     }
 
-    openExample = (title: string, url: string) => {
+    openExample = (title: string, url: string, height:number) => {
+        this.$.blockUI();
         var language = this.$language.data("currentlanguage");
         var src = alpha.urls.mainRootPath + url + "?language=" + language;
-        this.topWindow.bootboxDialog(title, '<iframe class="iframe-content" src="' + src + '"></iframe>');
+        this.topWindow.bootboxDialog(title, '<iframe height="' + height + 'px" width="100%" src="' + src + '"></iframe>');
+        var dialog = this.topWindow.$(".bootbox .modal-dialog");
+        dialog.width(374);
+        this.$.unblockUI();
     }
 
     initLanguage = () => {
