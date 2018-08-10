@@ -1,4 +1,5 @@
-﻿@model ChatBotSettingViewModel
+﻿@using System.Globalization
+@model ChatBotSettingViewModel
 @{
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
 }
@@ -52,7 +53,7 @@
                     <thead>
                         <tr>
                             <th class="col-command">@ChatBot.Command</th>
-                            <th>@ChatBot.View</th>
+                            <th>@ChatBot.FunctionReport</th>
                             <th class="col-status">@Alpha_sitemap.status</th>
                         </tr>
                     </thead>
@@ -119,6 +120,8 @@
 @Html.Hidden("UserName", Model.Username)
 @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
 @Html.Hidden("UpdateLanguageFailed", ChatBot.updateLanguageFailed)
+@Html.Hidden("ReportExample", ChatBot.ResourceManager.GetString("reportExample", CultureInfo.GetCultureInfo(Model.Language)))
+@Html.Hidden("NotificationExample", ChatBot.ResourceManager.GetString("notificationExample", CultureInfo.GetCultureInfo(Model.Language)))
 @section Scripts{
     @StaticResources.RenderScripts("~/assets/bundles/chatbot/chatbot-setting")
 }

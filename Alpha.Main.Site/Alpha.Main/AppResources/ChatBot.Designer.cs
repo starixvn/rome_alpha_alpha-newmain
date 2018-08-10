@@ -97,15 +97,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This field is required..
-        /// </summary>
-        public static string AlertRequiredField {
-            get {
-                return ResourceManager.GetString("AlertRequiredField", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please input captcha.
         /// </summary>
         public static string captchaIsRequired {
@@ -142,24 +133,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to closeExample.
-        /// </summary>
-        public static string closeExample {
-            get {
-                return ResourceManager.GetString("closeExample", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Collapse all features.
-        /// </summary>
-        public static string CollapseAll {
-            get {
-                return ResourceManager.GetString("CollapseAll", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Command.
         /// </summary>
         public static string Command {
@@ -169,7 +142,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Install Letstalk and create a free account..
+        ///   Looks up a localized string similar to &lt;strong&gt;Letstalk IM&lt;/strong&gt; is the most &lt;strong&gt;secured messenger&lt;/strong&gt; which heavily &lt;strong&gt;encrypts&lt;/strong&gt; your conversations. .
         /// </summary>
         public static string createLetstalkAccount {
             get {
@@ -183,15 +156,6 @@ namespace Alpha.Main.AppResources {
         public static string EnterVerificationCode {
             get {
                 return ResourceManager.GetString("EnterVerificationCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Expand all features.
-        /// </summary>
-        public static string ExpandAll {
-            get {
-                return ResourceManager.GetString("ExpandAll", resourceCulture);
             }
         }
         
@@ -241,7 +205,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Install Letstalk IM.
+        ///   Looks up a localized string similar to Install Letstalk and create a free account..
         /// </summary>
         public static string InstallLetstalk {
             get {
@@ -250,7 +214,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;strong&gt;Letstalk IM&lt;/strong&gt; is the most secured messenger which heavily encrypts your conversations. &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt; function integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive reports and notifications of your business conveniently and securely without the need to access to this site. To start setting up Chatbot, please follow below steps:.
+        ///   Looks up a localized string similar to &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt; function integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt;&lt;br /&gt;To start setting up Chatbot, please follow below steps:.
         /// </summary>
         public static string IntroLetstalk {
             get {
@@ -376,6 +340,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notification Example.
+        /// </summary>
+        public static string notificationExample {
+            get {
+                return ResourceManager.GetString("notificationExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have requested too many times today, Please try again later..
         /// </summary>
         public static string OverMaxAddAccountTimes {
@@ -394,16 +367,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Play Example.
-        /// </summary>
-        public static string playExample {
-            get {
-                return ResourceManager.GetString("playExample", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Input your &lt;strong&gt;Letstalk&lt;/strong&gt; account to link with &lt;strong&gt;Chatbot&lt;/strong&gt;..
+        ///   Looks up a localized string similar to Input your Letstalk account to link with Chatbot..
         /// </summary>
         public static string pleaseInputLetstalkAccount {
             get {
@@ -426,6 +390,15 @@ namespace Alpha.Main.AppResources {
         public static string replay {
             get {
                 return ResourceManager.GetString("replay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report Example.
+        /// </summary>
+        public static string reportExample {
+            get {
+                return ResourceManager.GetString("reportExample", resourceCulture);
             }
         }
         
@@ -466,7 +439,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unsubscribing Chatbot will stop all of its features. Are you sure you want to proceed..
+        ///   Looks up a localized string similar to Unlink Chatbot will stop all of its features. Are you sure you want to proceed..
         /// </summary>
         public static string UnsubscribeWarning {
             get {

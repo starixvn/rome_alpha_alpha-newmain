@@ -23,7 +23,7 @@
                 <ul id="registerLetstalkPanel" class="list-requirements">
                     <li>
                         <p class="bold">@ChatBot.InstallLetstalk</p>
-                        <p>@ChatBot.createLetstalkAccount</p>
+                        <p>@Html.Raw(@ChatBot.createLetstalkAccount)</p>
                         <div class="download-content">
                             <div class="logo-letstalk">
                                 <img src="~/Assets/Styles/chatbot/images/letstalk.png" />
@@ -47,12 +47,9 @@
                         </div>
                     </li>
                     <li>
-                        <p class="bold">@ChatBot.LinkChatbot</p>
+                        <p class="bold">ChatBot.pleaseInputLetstalkAccount</p>
                         <div id="add-account-message"></div>
                         <form class="add-letstalk">
-                            <div class="form-group m-b-0">
-                                <label>@Html.Raw(ChatBot.pleaseInputLetstalkAccount)</label>
-                            </div>
                             <div class="form-group m-b-0">
                                 <input id="txtAccount" type="text" maxlength="50" class="letstalk-text" value="@Model.Username" @(Model.IsVerifying ? "disabled" : string.Empty) />
                                 <button id="btnAdd" class="btn-submit @(Model.IsVerifying ? "display-none" : "")">@ChatBot.link</button>

@@ -21,6 +21,8 @@ class ChatBotSetting extends BaseChatBot {
     resources = {
         unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
         updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value,
+        reportExample: (<HTMLInputElement>document.getElementById('ReportExample')).value,
+        notificationExample: (<HTMLInputElement>document.getElementById('NotificationExample')).value
     }
 
     init = () => {
@@ -52,11 +54,11 @@ class ChatBotSetting extends BaseChatBot {
         });
 
         this.$openReportExample.on('click touchend', () => {
-            this.openExample("Report Example", "ChatBot/ReportExample", 375);
+            this.openExample(this.resources.reportExample, "ChatBot/ReportExample", 375);
         });
 
         this.$openNotificationExample.on('click touchend', () => {
-            this.openExample("Notification Example", "ChatBot/NotificationExample", 336);
+            this.openExample(this.resources.notificationExample, "ChatBot/NotificationExample", 336);
         });
     }
 

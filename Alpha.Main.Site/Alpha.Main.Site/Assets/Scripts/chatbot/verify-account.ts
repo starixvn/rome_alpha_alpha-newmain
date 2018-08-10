@@ -37,10 +37,9 @@ class VerifyAccount extends BaseChatBot {
     }
 
     init = () => {
+        this.isShowCaptcha = this.convertAttributeToBool(this.$("#IsShowCaptcha").val());
         this.cachedDOMElements();
         this.registerEvents();
-
-        this.isShowCaptcha = this.convertAttributeToBool(this.$("#IsShowCaptcha").val());
 
         if (this.isShowCaptcha) {
             this.cachedCaptchaDOMElements();
@@ -74,11 +73,13 @@ class VerifyAccount extends BaseChatBot {
             }
         });
 
-        this.$txtCaptcha.keypress((event) => {
-            if (event.keyCode === 13 && !this.$btnVerify.is(":disabled")) {
-                this.$btnVerify.click();
-            }
-        });
+        if (this.isShowCaptcha) {
+            this.$txtCaptcha.keypress((event) => {
+                if (event.keyCode === 13 && !this.$btnVerify.is(":disabled")) {
+                    this.$btnVerify.click();
+                }
+            });
+        }
     }
 
     initCaptcha = () => {

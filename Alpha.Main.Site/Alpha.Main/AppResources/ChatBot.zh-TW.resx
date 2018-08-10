@@ -97,9 +97,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AlertRequiredField" xml:space="preserve">
-    <value>必填欄</value>
-  </data>
   <data name="personalMessageSample" xml:space="preserve">
     <value>您的上線已修改您的最低占成。 請務必核對您的下線的細節。</value>
   </data>

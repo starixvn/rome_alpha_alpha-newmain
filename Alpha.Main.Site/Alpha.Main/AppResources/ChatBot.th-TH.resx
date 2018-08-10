@@ -97,9 +97,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AlertRequiredField" xml:space="preserve">
-    <value>จำเป็นต้องใส่ข้อมูลนี้</value>
-  </data>
   <data name="personalMessageSample" xml:space="preserve">
     <value>เอี่ยวขั้นต่ำของท่าน ถูกเปลี่ยนโดยทางต้นสายเป็นที่เรียบร้อยแล้ว กรุณาตรวจสอบรายละเอียดต่าง ๆ ของลูกค้าของท่านอีกครั้ง</value>
   </data>
