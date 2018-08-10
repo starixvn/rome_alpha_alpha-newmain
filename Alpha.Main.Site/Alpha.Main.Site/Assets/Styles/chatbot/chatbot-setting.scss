@@ -176,6 +176,7 @@
     @include border-radius(5px 5px 0 0);
     position: relative;
     width: 340px;
+    margin: auto;
 
     &.-report {
         height: 363px;
