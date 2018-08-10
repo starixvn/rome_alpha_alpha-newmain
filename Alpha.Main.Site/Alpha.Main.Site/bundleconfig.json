@@ -211,7 +211,12 @@
     "inputFiles": [
       "Assets/scripts/core.js",
       "Assets/scripts/chatbot/base-chatbot.js",
-      "Assets/scripts/chatbot/chatbot-setting.js",
+      "Assets/scripts/chatbot/chatbot-setting.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot-guide.js",
+    "inputFiles": [
       "Assets/scripts/chatbot/chatbot-guide.js"
     ]
   }

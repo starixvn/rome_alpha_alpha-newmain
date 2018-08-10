@@ -3,9 +3,6 @@
 "use strict";
 
 class ChatBotSetting extends BaseChatBot {
-    $: JQueryStatic;
-    topWindow: any;
-
     // Language
     $language: JQuery;
     $languageSelectorContainer: JQuery;
@@ -17,9 +14,8 @@ class ChatBotSetting extends BaseChatBot {
     $openReportExample: JQuery;
     $openNotificationExample: JQuery;
 
-    constructor($: JQueryStatic, bootbox: any, topWindow: any) {
-        super($, bootbox)
-        this.topWindow = topWindow;
+    constructor($: JQueryStatic, topWindow: any) {
+        super($, topWindow)
     }
 
     init = () => {
@@ -50,42 +46,18 @@ class ChatBotSetting extends BaseChatBot {
         });
 
         this.$openReportExample.on('click touchend', () => {
-            var language = this.$language.data("currentlanguage");
-            this.$.ajax({
-                type: "GET",
-                url: alpha.urls.mainRootPath + "ChatBot/ReportExample",
-                data: { language: language },
-                dataType: "text",
-                success: (result) => {
-                    this.bootbox.dialog({
-                        title: "Report Example",
-                        message: result
-                    });
-                },
-                complete: this.onComplete,
-            });
+            this.openExample("Report Example", "ChatBot/ReportExample");
         });
 
         this.$openNotificationExample.on('click touchend', () => {
-            var language = this.$language.data("currentlanguage");
-            this.$.ajax({
-                type: "GET",
-                url: alpha.urls.mainRootPath + "ChatBot/NotificationExample",
-                data: { language: language },
-                dataType: "text",
-                success: (result) => {
-                    this.bootbox.dialog({
-                        title: "Notification Example",
-                        message: result
-                    });
-                },
-                complete: this.onComplete,
-            });
+            this.openExample("Notification Example", "ChatBot/NotificationExample");
         });
     }
 
-    showPopup = (url: string, title?: string) => {
-        this.topWindow.popupManager.open(url, title, 350, 400);
+    openExample = (title: string, url: string) => {
+        var language = this.$language.data("currentlanguage");
+        var src = alpha.urls.mainRootPath + url + "?language=" + language;
+        this.topWindow.bootboxDialog(title, '<iframe class="iframe-content" src="' + src + '"></iframe>');
     }
 
     initLanguage = () => {
@@ -111,7 +83,7 @@ class ChatBotSetting extends BaseChatBot {
             success: (result) => {
                 if (result && result.IsNotOk) {
                     if (result.IsNotAuthorized) {
-                        self.bootbox.alert(result.Message);
+                        self.topWindow.bootboxAlert(result.Message);
                     }
                     checkbox.prop("checked", !isEnable);
                 }
@@ -125,7 +97,7 @@ class ChatBotSetting extends BaseChatBot {
         var self = this;
         var userId = self.$userId.val();
         var userName = self.$userName.val();
-        this.bootbox.confirm(this.resources.unsubscribeWarning, (ok) => {
+        this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, (ok) => {
             if (ok) {
                 this.$.blockUI();
                 this.$.ajax({
@@ -143,7 +115,7 @@ class ChatBotSetting extends BaseChatBot {
     onUnSubscribeSuccess = (data: any) => {
         if (data && data.IsNotOk) {
             if (data.IsNotAuthorized) {
-                this.bootbox.alert(data.Message);
+                this.topWindow.bootboxAlert(data.Message);
                 return;
             }
 
@@ -178,7 +150,7 @@ class ChatBotSetting extends BaseChatBot {
                 return;
             } else {
                 if (result.IsNotAuthorized) {
-                    this.bootbox.alert(result.Message);
+                    this.topWindow.bootboxAlert(result.Message);
                     return;
                 }
 
@@ -189,6 +161,6 @@ class ChatBotSetting extends BaseChatBot {
 }
 
 $(function () {
-    var chatBotSetting = new ChatBotSetting($, bootbox, window.top);
+    var chatBotSetting = new ChatBotSetting($, window.top);
     chatBotSetting.init();
 });

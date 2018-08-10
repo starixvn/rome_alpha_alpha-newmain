@@ -1,8 +1,6 @@
 ﻿/// <reference path="../core.ts" />
 
 class AddAccount extends BaseChatBot {
-    $: JQueryStatic
-
     // Add Account
     $registerLetstalkPanel: JQuery;
     $txtAccount: JQuery;
@@ -13,10 +11,9 @@ class AddAccount extends BaseChatBot {
 
     verifyAccount: VerifyAccount;
 
-    constructor($: JQueryStatic, bootbox: any) {
-        super($, bootbox);
-        this.$ = $;
-        this.verifyAccount = new VerifyAccount($, bootbox);
+    constructor($: JQueryStatic, topWindow: any) {
+        super($, topWindow);
+        this.verifyAccount = new VerifyAccount($, topWindow);
     }
 
     init = () => {
@@ -84,7 +81,7 @@ class AddAccount extends BaseChatBot {
             this.$txtAccount.focus();
 
             if (result.IsNotAuthorized) {
-                this.bootbox.alert(result.Message);
+                this.topWindow.bootboxAlert(result.Message);
                 return;
             }
 
@@ -121,7 +118,7 @@ class AddAccount extends BaseChatBot {
         var self = this;
         var userId = self.$userId.val();
         var userName = self.$txtAccount.val();
-        this.bootbox.confirm(this.resources.unsubscribeWarning, (ok) => {
+        this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, (ok) => {
             if (ok) {
                 this.$.blockUI();
                 this.$.ajax({
@@ -139,7 +136,7 @@ class AddAccount extends BaseChatBot {
     onUnSubscribeSuccess = (data: any) => {
         if (data && data.IsNotOk) {
             if (data.IsNotAuthorized) {
-                this.bootbox.alert(data.Message);
+                this.topWindow.bootboxAlert(data.Message);
                 return;
             }
 
@@ -154,6 +151,6 @@ class AddAccount extends BaseChatBot {
 }
 
 $(function () {
-    const addAccount = new AddAccount($, bootbox);
+    const addAccount = new AddAccount($, window.top);
     addAccount.init();
 });

@@ -138,7 +138,7 @@ class VerifyAccount extends BaseChatBot {
                 }, 2000);
             } else {
                 if (result.IsNotAuthorized) {
-                    this.bootbox.alert(result.Message);
+                    this.topWindow.bootboxAlert(result.Message);
                     return;
                 }
 
@@ -181,7 +181,7 @@ class VerifyAccount extends BaseChatBot {
     onResendSuccess = (data: any) => {
         if (data) {
             if (data.IsNotAuthorized) {
-                this.bootbox.alert(data.Message);
+                this.topWindow.bootboxAlert(data.Message);
                 return;
             }
 

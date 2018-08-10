@@ -1,5 +1,11 @@
 ﻿@using System.Globalization
 @model string
+@{
+    Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
+}
+@section Styles {
+    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot-setting")
+}
 <div class="chatbot-layout -notification" id="chatbotLayout">
     <div class="chatbot-header">
         <span class="icon-chatbot-back"></span>
@@ -66,3 +72,6 @@
         <span class="icon-play-button"></span> @ChatBot.replay
     </div>
 </div>
+@section Scripts{
+    @StaticResources.RenderScripts("~/assets/bundles/chatbot/chatbot-guide")
+}
