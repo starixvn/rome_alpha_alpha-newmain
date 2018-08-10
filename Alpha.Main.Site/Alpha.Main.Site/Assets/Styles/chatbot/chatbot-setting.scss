@@ -169,7 +169,6 @@
     }
 }
 
-// Chatbot Layout
 // Chatbot layout
 
 .chatbot-layout {
@@ -179,7 +178,7 @@
     margin: auto;
 
     &.-report {
-        height: 363px;
+        height: 375px;
 
         .chatbot-body {
             height: 245px;
@@ -193,7 +192,7 @@
     }
 
     &.-notification {
-        height: 324px;
+        height: 336px;
 
         .chatbot-body {
             @include border-radius(0 0 2px 2px);
@@ -378,7 +377,7 @@
 
     [class^='icon'] {        
         position: absolute;
-        top: 6px;
+        top: 7px;
     }
 
     .icon-chatbot-plus {
@@ -398,7 +397,7 @@
     }
 
     .chatbot-text[disabled] {
-        @include border-radius(20px);
+        @include border-radius(14px);
         @include box-shadow-multiple(none);
         position: absolute;
         left: 72px;
@@ -417,24 +416,30 @@
 .list-actions {
     position: absolute;
     left: 0;
-    bottom: 0;  
-    width: auto;      
-    padding-left: 10px;    
-    line-height: 28px;
-    white-space: nowrap;
-    cursor: pointer;
-    color: #038dee;
+    bottom: 0; 
+    width: 100%;
 
-    &:hover {
-        color: darken(#038dee, 5%);
-    }
+    .btn-replay {
+        @include border-radius(18px);
+        width: 120px;
+        padding: 0 20px;
+        margin: auto;
+        line-height: 36px;
+        background-color: #147be4;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(#147be4, 5%);
+        }
+    }    
 
     .icon-play-button {
-        @include ripple-effect-icon($top: -2px,$margin-left: -6px);
         position: relative;     
         cursor: pointer;
-        top: 1px;
-        margin-right: 4px;
+        top: 2px;
+        margin-right: 8px;
         font-size: 15px;
 
     }

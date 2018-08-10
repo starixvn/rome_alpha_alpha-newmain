@@ -52,11 +52,11 @@ class ChatBotSetting extends BaseChatBot {
         });
 
         this.$openReportExample.on('click touchend', () => {
-            this.openExample("Report Example", "ChatBot/ReportExample", 363);
+            this.openExample("Report Example", "ChatBot/ReportExample", 375);
         });
 
         this.$openNotificationExample.on('click touchend', () => {
-            this.openExample("Notification Example", "ChatBot/NotificationExample", 324);
+            this.openExample("Notification Example", "ChatBot/NotificationExample", 336);
         });
     }
 
