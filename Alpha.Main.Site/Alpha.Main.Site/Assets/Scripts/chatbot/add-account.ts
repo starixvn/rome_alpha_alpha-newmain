@@ -150,9 +150,7 @@ class AddAccount extends BaseChatBot {
             alpha.showMessage(this.$addAccountMessage, result);
             return;
         }
-        setTimeout(() => {
-            parent.window.location.href = parent.window.location.href;
-        }, 2000);
+        parent.window.location.href = parent.window.location.href;
     }
 }
 

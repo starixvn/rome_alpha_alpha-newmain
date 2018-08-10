@@ -65,14 +65,20 @@ class VerifyAccount extends BaseChatBot {
     }
 
     registerEvents = () => {
+        this.$btnVerify.click(this.verifyCodeEvent);
+        this.$btnResend.click(this.resendEvent);
+
         this.$txtVerificationCode.keypress((event) => {
-            if (event.keyCode === 13) {
+            if (event.keyCode === 13 && !this.$btnVerify.is(":disabled")) {
                 this.$btnVerify.click();
             }
         });
 
-        this.$btnVerify.click(this.verifyCodeEvent);
-        this.$btnResend.click(this.resendEvent);
+        this.$txtCaptcha.keypress((event) => {
+            if (event.keyCode === 13 && !this.$btnVerify.is(":disabled")) {
+                this.$btnVerify.click();
+            }
+        });
     }
 
     initCaptcha = () => {
@@ -139,9 +145,7 @@ class VerifyAccount extends BaseChatBot {
 
         if (result) {
             if (result.IsOk) {
-                setTimeout(() => {
-                    parent.window.location.href = parent.window.location.href;
-                }, 2000);
+                parent.window.location.href = parent.window.location.href;
             } else {
                 if (result.IsNotAuthorized) {
                     this.topWindow.bootboxAlert(result.Message);

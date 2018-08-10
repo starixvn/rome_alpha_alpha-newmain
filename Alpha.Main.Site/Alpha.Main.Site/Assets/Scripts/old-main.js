@@ -382,20 +382,6 @@ window.bootboxAlert = function (message, handleElement, callbackFunction, popUpO
     });
 };
 
-window.bootboxDialog = function (title, message, handleElement, callbackFunction, popUpOptions) {
-    bootbox.dialog({
-        title: title,
-        message: message
-    });
-    var dialog = $(".bootbox .modal-dialog");
-    var position = getBootboxPostion(handleElement, popUpOptions, dialog);
-
-    dialog.css({
-        left: position.left || 0,
-        top: position.top || 0
-    });
-};
-
 function getBootboxPostion(handleElement, popUpOptions, dialog) {
     if (popUpOptions && popUpOptions.position) {
         return popUpOptions.position;

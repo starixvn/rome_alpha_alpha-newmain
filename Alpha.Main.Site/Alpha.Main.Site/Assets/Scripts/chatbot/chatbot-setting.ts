@@ -24,6 +24,7 @@ class ChatBotSetting extends BaseChatBot {
     }
 
     init = () => {
+        alpha.detectResponsiveInformation();
         this.cachedDOMElements();
         this.initLanguage();
         this.registerEvents();
@@ -60,13 +61,20 @@ class ChatBotSetting extends BaseChatBot {
     }
 
     openExample = (title: string, url: string, height: number) => {
-        this.$.blockUI();
         var language = this.$language.data("currentlanguage");
         var src = alpha.urls.mainRootPath + url + "?language=" + language;
-        this.topWindow.bootboxDialog(title, '<iframe height="' + height + 'px" width="100%" src="' + src + '"></iframe>');
+
+        this.topWindow.bootbox.dialog({
+            title: title,
+            message: '<iframe height="' + height + 'px" width="100%" src="' + src + '"></iframe>'
+        });
+
         var dialog = this.topWindow.$(".bootbox .modal-dialog");
         dialog.width(374);
-        this.$.unblockUI();
+        dialog.css({
+            left: this.topWindow.$(this.topWindow.window).width() / 2 - dialog.width() / 2,
+            top: 100
+        });
     }
 
     initLanguage = () => {
@@ -131,9 +139,7 @@ class ChatBotSetting extends BaseChatBot {
             return;
         }
 
-        setTimeout(() => {
-            parent.window.location.href = parent.window.location.href;
-        }, 2000);
+        parent.window.location.href = parent.window.location.href;
     }
 
     changeLanguage = (lang) => {
@@ -151,10 +157,7 @@ class ChatBotSetting extends BaseChatBot {
     onChangeLanguageSuccess = (result: any) => {
         if (result) {
             if (result.IsOk) {
-                setTimeout(() => {
-                    parent.window.location.href = parent.window.location.href;
-                }, 2000);
-                return;
+                parent.window.location.href = parent.window.location.href;
             } else {
                 if (result.IsNotAuthorized) {
                     this.topWindow.bootboxAlert(result.Message);
