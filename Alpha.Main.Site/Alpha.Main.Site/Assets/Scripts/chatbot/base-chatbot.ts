@@ -1,5 +1,4 @@
-﻿/// <reference path="../core.ts" />
-class BaseChatBot {
+﻿class BaseChatBot {
     $: JQueryStatic;
     topWindow: any;
     expiredTimeKey = "ChatbotVerificationExpiredTime";
@@ -29,6 +28,6 @@ class BaseChatBot {
     updateExpiredTime = () => {
         var currentTime = new Date();
         var expiredTime = currentTime.getTime() + (3 * 60000);//3 minutes
-        alpha.localStorage.set(this.expiredTimeKey, expiredTime);
+        localStorage.setItem(this.expiredTimeKey, expiredTime.toString());
     }
 }
