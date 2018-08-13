@@ -1091,7 +1091,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Today.
+        ///   Looks up a localized string similar to Today Win Loss.
         /// </summary>
         public static string todayWinLoss {
             get {
