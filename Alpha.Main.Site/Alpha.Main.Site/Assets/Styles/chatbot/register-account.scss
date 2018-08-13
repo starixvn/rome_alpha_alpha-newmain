@@ -19,7 +19,6 @@
 
     .msg {
         display: inline-block;
-        margin-bottom: 0;        
     }
 }
 
@@ -72,9 +71,7 @@
     width: 100%;
     clear: both;
     /*padding-top: 12px;*/
-
-    .form-group {        
-
+    .form-group {
         // check Iphone 5
         @media (min-device-width: 330px) {
             float: left;
@@ -84,7 +81,6 @@
                 margin-left: 10px;
             }
         }
-
     }
 
     label {
@@ -104,7 +100,6 @@
         display: table;
         margin-left: 0;
         padding-right: 32px;
-
         // check Iphone 5
         @media (min-device-width: 330px) {
             margin-left: 16px;
@@ -152,7 +147,7 @@
     }
 }
 
-.resend-code {    
+.resend-code {
     color: $link-color;
     text-decoration: underline;
     font-weight: bold;
@@ -161,4 +156,3 @@
         color: $link-hover-color;
     }
 }
-

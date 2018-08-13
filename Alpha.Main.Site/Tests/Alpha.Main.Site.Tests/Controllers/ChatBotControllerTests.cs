@@ -1,12 +1,18 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using System.Web.Mvc;
+    using Chatbot.Client.Models;
     using Configurations;
+    using KellermanSoftware.CompareNetObjects;
     using MediatR;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
     using Site.Controllers;
     using Site.Requests.ChatBot;
+    using Site.ViewModels.ChatBot;
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
@@ -143,6 +149,71 @@
                 Arg.Is<UpdateLanguageCommand>(
                     c => c.UserId == command.UserId
                         && c.Language == command.Language));
+        }
+
+        [Test]
+        public void Captcha_Always_ReturnsPartialView()
+        {
+            // Act
+            var result = chatbotController.Captcha();
+
+            // Assert
+            Assert.IsTrue(result is PartialViewResult);
+        }
+
+        [Test]
+        public void ReportExample_Always_returnCorrectView()
+        {
+            // Arrange
+            var language = "en-US";
+
+            // Act
+            var result = chatbotController.ReportExample(language) as ViewResult;
+
+            // Assert
+            Assert.IsTrue(result.ViewName.Equals("ReportExample") && result.Model == (object)language);
+        }
+
+        [Test]
+        public void NotificationExample_Always_returnCorrectView()
+        {
+            // Arrange
+            var language = "en-US";
+
+            // Act
+            var result = chatbotController.NotificationExample(language) as ViewResult;
+
+            // Assert
+            Assert.IsTrue(result.ViewName.Equals("NotificationExample") && result.Model == (object)language);
+        }
+
+        [Test]
+        public void Index_AlreadySetup_ReturnsCorrectView()
+        {
+            // Arrange
+            var compareLogic = new CompareLogic();
+            var user = new User
+            {
+                CustId = 1,
+                MessengerAccounts = new List<Messenger>
+                {
+                    new Messenger {
+                        Type= MessengerType.Letstalk,
+                        Enabled=true
+                    }
+                }
+            };
+
+            var viewModel = new ChatBotViewModel(user);
+
+            mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
+
+            // Act
+            var result = chatbotController.Index().GetAwaiter().GetResult() as ViewResult;
+
+            // Assert
+            Assert.True(result.ViewName.Equals("ChatBotSetting")
+                && compareLogic.Compare(new ChatBotSettingViewModel(user), result.Model).AreEqual);
         }
     }
 }
