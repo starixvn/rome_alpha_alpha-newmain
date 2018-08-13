@@ -72,14 +72,6 @@ class VerifyAccount extends BaseChatBot {
                 this.$btnVerify.click();
             }
         });
-
-        if (this.isShowCaptcha) {
-            this.$txtCaptcha.keypress((event) => {
-                if (event.keyCode === 13 && !this.$btnVerify.is(":disabled")) {
-                    this.$btnVerify.click();
-                }
-            });
-        }
     }
 
     initCaptcha = () => {
@@ -106,6 +98,11 @@ class VerifyAccount extends BaseChatBot {
     registerCaptchaEvents = () => {
         this.$captchaRefreshIcon.click(this.refreshCaptchaEvent);
         this.$modelImageElement.click(this.refreshCaptchaEvent);
+        this.$txtCaptcha.keypress((event) => {
+            if (event.keyCode === 13 && !this.$btnVerify.is(":disabled")) {
+                this.$btnVerify.click();
+            }
+        });
     }
 
     verifyCodeEvent = (e: any) => {

@@ -6,6 +6,7 @@
     using Chatbot.Client.Models;
     using Configurations;
     using KellermanSoftware.CompareNetObjects;
+    using Main.Models;
     using MediatR;
     using Models.Requests;
     using NSubstitute;
@@ -21,6 +22,7 @@
         private IMediator mediator;
         private IUserSession userSession;
         private ChatBotController chatbotController;
+        private CompareLogic compareLogic;
 
         [SetUp]
         public void SetUp()
@@ -28,6 +30,7 @@
             mediator = Substitute.For<IMediator>();
             userSession = Substitute.For<IUserSession>();
             chatbotController = new ChatBotController(mediator, userSession);
+            compareLogic = new CompareLogic();
         }
 
         [Test]
@@ -48,9 +51,95 @@
         }
 
         [Test]
-        public void AddAccount_Always_CallsMediatorSendAddAccountCommand()
+        public void Index_AlreadySetup_ReturnsCorrectView()
         {
             // Arrange
+            var user = new Chatbot.Client.Models.User
+            {
+                CustId = 1,
+                MessengerAccounts = new List<Messenger>
+                {
+                    new Messenger {
+                        Type= MessengerType.Letstalk,
+                        Enabled=true
+                    }
+                }
+            };
+
+            var viewModel = new ChatBotViewModel(user);
+
+            mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
+
+            // Act
+            var result = chatbotController.Index().GetAwaiter().GetResult() as ViewResult;
+
+            // Assert
+            Assert.True(result.ViewName.Equals("ChatBotSetting")
+                && compareLogic.Compare(new ChatBotSettingViewModel(user), result.Model).AreEqual);
+        }
+
+        [Test]
+        public void Index_IsNotAlreadySetup_ReturnsCorrectView()
+        {
+            // Arrange
+            var user = new Chatbot.Client.Models.User
+            {
+                CustId = 1,
+                MessengerAccounts = new List<Messenger>()
+            };
+
+            var viewModel = new ChatBotViewModel(user);
+
+            mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
+
+            // Act
+            var result = chatbotController.Index().GetAwaiter().GetResult() as ViewResult;
+
+            // Assert
+            Assert.True(result.ViewName.Equals("RegisterAccount")
+                && compareLogic.Compare(new RegisterAccountViewModel(user), result.Model).AreEqual);
+        }
+
+        [Test]
+        public void AddAccount_IsInternal_ReturnsUnauthorizedResult()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(true);
+            var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
+
+            // Act
+            var result = chatbotController.AddAccount(new AddAccountCommand(userSession))
+                .GetAwaiter().GetResult() as JsonResult;
+
+            // Assert
+            Assert.True(compareLogic.Compare(expectedData, result.Data).AreEqual);
+        }
+
+        [Test]
+        public void AddAccount_IsNotInternal_CallsMediatorSendAddAccountCommand()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(false);
+            var command = new AddAccountCommand(userSession);
+            command.MessengerAccount = "MessengerAccount";
+
+            // Act
+            chatbotController.AddAccount(command).ConfigureAwait(false);
+
+            // Assert
+            mediator.Received().SendAsync(
+                Arg.Is<AddAccountCommand>(
+                    c => c.CustId == command.CustId
+                        && c.SubAccountId == command.SubAccountId
+                        && c.Language == command.Language
+                        && c.MessengerAccount == command.MessengerAccount));
+        }
+
+        [Test]
+        public void AddAccount_ResultIsOk_ReturnsCorrectViewModel()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(false);
             var command = new AddAccountCommand(userSession);
             command.MessengerAccount = "MessengerAccount";
 
@@ -185,35 +274,6 @@
 
             // Assert
             Assert.IsTrue(result.ViewName.Equals("NotificationExample") && result.Model == (object)language);
-        }
-
-        [Test]
-        public void Index_AlreadySetup_ReturnsCorrectView()
-        {
-            // Arrange
-            var compareLogic = new CompareLogic();
-            var user = new User
-            {
-                CustId = 1,
-                MessengerAccounts = new List<Messenger>
-                {
-                    new Messenger {
-                        Type= MessengerType.Letstalk,
-                        Enabled=true
-                    }
-                }
-            };
-
-            var viewModel = new ChatBotViewModel(user);
-
-            mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
-
-            // Act
-            var result = chatbotController.Index().GetAwaiter().GetResult() as ViewResult;
-
-            // Assert
-            Assert.True(result.ViewName.Equals("ChatBotSetting")
-                && compareLogic.Compare(new ChatBotSettingViewModel(user), result.Model).AreEqual);
         }
     }
 }
