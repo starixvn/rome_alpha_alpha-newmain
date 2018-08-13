@@ -47,7 +47,16 @@ class VerifyAccount extends BaseChatBot {
             this.$captcha.show();
         }
 
-        this.countDownTimer();
+        var expiredTime = Number(localStorage.getItem(this.expiredTimeKey));
+        var currentTime = new Date().getTime();
+        if (expiredTime && currentTime < expiredTime) {
+            var sec = (expiredTime - currentTime) / 1000;
+            this.$countDown.text(Math.floor(sec));
+            this.countDownTimer();
+        } else {
+            this.$countDown.text(0);
+            this.$btnVerify.attr("disabled", "disabled");
+        }
     }
 
     cachedDOMElements = () => {
@@ -195,6 +204,7 @@ class VerifyAccount extends BaseChatBot {
 
             if (data.IsOk) {
                 clearInterval(this.timer);
+                this.updateExpiredTime();
                 this.$countDown.text(180);
                 this.$btnVerify.removeAttr("disabled");
                 this.countDownTimer();

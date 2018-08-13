@@ -30,7 +30,6 @@ class AddAccount extends BaseChatBot {
 
         var isVerifying = this.convertAttributeToBool(this.$("#IsVerifying").val());
         if (isVerifying) {
-            this.$("#countdown").text(0);
             this.verifyAccount.init();
         }
     }
@@ -118,6 +117,8 @@ class AddAccount extends BaseChatBot {
 
         this.$registerLetstalkPanel.append(data);
         this.$userId = this.$("#UserId");
+
+        this.updateExpiredTime();
         this.verifyAccount.init();
     }
 
