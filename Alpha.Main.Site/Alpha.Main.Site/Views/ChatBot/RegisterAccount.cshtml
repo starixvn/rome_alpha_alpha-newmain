@@ -19,17 +19,17 @@
         </div>
         <div id="registerLetstalk" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
             <div class="panel-body has-padding">
-                <p>@Html.Raw(ChatBot.IntroLetstalk)</p>
+                <p>@Html.Raw(ChatBot.IntroChatbot)</p>
                 <ul id="registerLetstalkPanel" class="list-requirements">
                     <li>
                         <p class="bold">@ChatBot.InstallLetstalk</p>
-                        <p>@Html.Raw(@ChatBot.createLetstalkAccount)</p>
+                        <p><a href="https://www.letstalk.net/" target="_blank"><strong>@ChatBot.letstalkIM</strong></a> @Html.Raw(@ChatBot.IntroLetstalk)</p>
                         <div class="download-content">
                             <div class="logo-letstalk">
                                 <img src="~/Assets/Styles/chatbot/images/letstalk.png" />
                             </div>
                             <div class="list-download">
-                                <h2><a href="https://www.letstalk.net/" target="_blank">@ChatBot.letstalkIM</a></h2>
+                                <h2>@ChatBot.letstalkIM</h2>
                                 <p><strong>@ChatBot.letstalkTechLmd</strong></p>
                                 <ul class="list-inline">
                                     <li>

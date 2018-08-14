@@ -142,15 +142,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;strong&gt;Letstalk IM&lt;/strong&gt; is the most &lt;strong&gt;secured messenger&lt;/strong&gt; which heavily &lt;strong&gt;encrypts&lt;/strong&gt; your conversations. .
-        /// </summary>
-        public static string createLetstalkAccount {
-            get {
-                return ResourceManager.GetString("createLetstalkAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Verify your Letstalk IM  account..
         /// </summary>
         public static string EnterVerificationCode {
@@ -224,6 +215,15 @@ namespace Alpha.Main.AppResources {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt; function integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt;&lt;br /&gt;To start setting up Chatbot, please follow below steps:.
+        /// </summary>
+        public static string IntroChatbot {
+            get {
+                return ResourceManager.GetString("IntroChatbot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is the most &lt;strong&gt;secured messenger&lt;/strong&gt; which heavily &lt;strong&gt;encrypts&lt;/strong&gt; your conversations. .
         /// </summary>
         public static string IntroLetstalk {
             get {

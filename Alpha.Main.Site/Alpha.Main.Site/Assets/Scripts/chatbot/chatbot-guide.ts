@@ -46,7 +46,8 @@
             this.showMessage(i, currentHeight);
         }
 
-        setInterval(() => {
+        var interval = setInterval(() => {
+            clearInterval(interval);
             this.$btnPlaying.addClass("hide");
             this.$btnReplay.removeClass("hide");
         }, 15000)

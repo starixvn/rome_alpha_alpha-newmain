@@ -205,11 +205,11 @@
   <data name="expiredOrDidNotRecieveTheCode" xml:space="preserve">
     <value>Expired or didn't recieve the code?</value>
   </data>
-  <data name="IntroLetstalk" xml:space="preserve">
+  <data name="IntroChatbot" xml:space="preserve">
     <value>&lt;strong&gt;"Chatbot"&lt;/strong&gt; function integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt;&lt;br /&gt;To start setting up Chatbot, please follow below steps:</value>
   </data>
-  <data name="createLetstalkAccount" xml:space="preserve">
-    <value>&lt;strong&gt;Letstalk IM&lt;/strong&gt; is the most &lt;strong&gt;secured messenger&lt;/strong&gt; which heavily &lt;strong&gt;encrypts&lt;/strong&gt; your conversations. </value>
+  <data name="IntroLetstalk" xml:space="preserve">
+    <value>is the most &lt;strong&gt;secured messenger&lt;/strong&gt; which heavily &lt;strong&gt;encrypts&lt;/strong&gt; your conversations. </value>
   </data>
   <data name="letstalkIM" xml:space="preserve">
     <value>Letstalk IM</value>
