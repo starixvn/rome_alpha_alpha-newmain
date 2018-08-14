@@ -447,17 +447,8 @@
         position: relative;
         top: 2px;
         margin-right: 6px;
-    }
-
-    .icon-play-button {
-        //margin-right: 14px;
         font-size: 15px;
     }
-    
-    .icon-pause-button {        
-        //margin-right: 6px;
-        font-size: 15px;
-    }   
 }
 
 .link {
@@ -470,21 +461,3 @@
     }
 }
 
-// Customize UI for popup
-
-.bootbox .modal-dialog {
-    margin: 0 auto;
-    width: 360px;
-    top: 100px
-}
-
-.bootbox .modal-body {
-    padding: 16px 16px 6px;
-    font-size: $font-size;
-}
-
-.bootbox .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-}
