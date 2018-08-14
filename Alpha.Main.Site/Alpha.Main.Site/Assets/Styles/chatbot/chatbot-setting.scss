@@ -76,6 +76,10 @@
 
 // Switch Button
 
+.toggle-img {
+    margin: 0 6px;
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -178,7 +182,7 @@
     margin: auto;
 
     &.-report {
-        height: 375px;
+        height: 380px;
 
         .chatbot-body {
             height: 245px;
@@ -187,7 +191,7 @@
 
         .data-input {
             top: 284px;
-            height: 40px;
+            height: 48px;
         }
     }
 
@@ -377,12 +381,12 @@
 
     [class^='icon'] {        
         position: absolute;
-        top: 7px;
+        top: 12px;
     }
 
     .icon-chatbot-plus {
         left: 10px;
-        top: 12px;
+        top: 18px;
         font-size: 15px;   
     }
 
@@ -401,7 +405,7 @@
         @include box-shadow-multiple(none);
         position: absolute;
         left: 72px;
-        top: 6px;
+        top: 10px;
         width: 226px;
         line-height: 28px;
         border: 1px solid #d8d8d8;
@@ -419,7 +423,7 @@
     bottom: 0; 
     width: 100%;
 
-    .btn-replay {
+    .btn-play {
         @include border-radius(18px);
         width: 120px;
         padding: 0 20px;
@@ -433,17 +437,27 @@
         &:hover {
             background-color: darken(#147be4, 5%);
         }
+
+        &.disabled {
+            opacity: .4;
+        }
     }    
 
-    .icon-play-button {
-        position: relative;     
-        cursor: pointer;
+    [class^=icon] {
+        position: relative;
         top: 2px;
-        margin-right: 8px;
-        font-size: 15px;
-
+        margin-right: 6px;
     }
-            
+
+    .icon-play-button {
+        //margin-right: 14px;
+        font-size: 15px;
+    }
+    
+    .icon-pause-button {        
+        //margin-right: 6px;
+        font-size: 15px;
+    }   
 }
 
 .link {

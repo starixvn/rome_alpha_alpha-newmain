@@ -54,7 +54,7 @@ class ChatBotSetting extends BaseChatBot {
         });
 
         this.$openReportExample.on('click touchend', () => {
-            this.openExample(this.resources.reportExample, "ChatBot/ReportExample", 375);
+            this.openExample(this.resources.reportExample, "ChatBot/ReportExample", 380);
         });
 
         this.$openNotificationExample.on('click touchend', () => {
