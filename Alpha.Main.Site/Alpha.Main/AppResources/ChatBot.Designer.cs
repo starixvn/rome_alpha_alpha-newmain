@@ -196,6 +196,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How function works.
+        /// </summary>
+        public static string howFunctionWorks {
+            get {
+                return ResourceManager.GetString("howFunctionWorks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input the received code to verify your account..
         /// </summary>
         public static string InputVerificationCode {
@@ -223,7 +232,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enable notifications that you would like to receive from Chatbot..
+        ///   Looks up a localized string similar to to enable notifications that you would like to receive automatically via Chatbot..
         /// </summary>
         public static string IntroNotification {
             get {
@@ -232,29 +241,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Once you enable your desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time..
-        /// </summary>
-        public static string introNotificationExample {
-            get {
-                return ResourceManager.GetString("introNotificationExample", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please activate commands you would like to use with Chatbot..
+        ///   Looks up a localized string similar to to activate commands of report you would like to receive via Chatbot..
         /// </summary>
         public static string IntroReport {
             get {
                 return ResourceManager.GetString("IntroReport", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Simply send a command to Chatbox to receive your desired report..
-        /// </summary>
-        public static string introReportExample {
-            get {
-                return ResourceManager.GetString("introReportExample", resourceCulture);
             }
         }
         
@@ -367,6 +358,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Play.
+        /// </summary>
+        public static string play {
+            get {
+                return ResourceManager.GetString("play", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Playing.
+        /// </summary>
+        public static string playing {
+            get {
+                return ResourceManager.GetString("playing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input your Letstalk account to link with Chatbot..
         /// </summary>
         public static string pleaseInputLetstalkAccount {
@@ -376,20 +385,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please set.
+        /// </summary>
+        public static string pleaseSet {
+            get {
+                return ResourceManager.GetString("pleaseSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Read.
         /// </summary>
         public static string Read {
             get {
                 return ResourceManager.GetString("Read", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Replay.
-        /// </summary>
-        public static string replay {
-            get {
-                return ResourceManager.GetString("replay", resourceCulture);
             }
         }
         

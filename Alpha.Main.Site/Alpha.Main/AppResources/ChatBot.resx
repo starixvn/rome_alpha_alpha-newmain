@@ -173,10 +173,10 @@
     <value>Chat Bot's Language</value>
   </data>
   <data name="IntroReport" xml:space="preserve">
-    <value>Please activate commands you would like to use with Chatbot.</value>
+    <value>to activate commands of report you would like to receive via Chatbot.</value>
   </data>
   <data name="IntroNotification" xml:space="preserve">
-    <value>Please enable notifications that you would like to receive from Chatbot.</value>
+    <value>to enable notifications that you would like to receive automatically via Chatbot.</value>
   </data>
   <data name="Read" xml:space="preserve">
     <value>Read</value>
@@ -229,17 +229,8 @@
   <data name="lblCaptcha" xml:space="preserve">
     <value>Captcha</value>
   </data>
-  <data name="replay" xml:space="preserve">
-    <value>Replay</value>
-  </data>
   <data name="close" xml:space="preserve">
     <value>Close</value>
-  </data>
-  <data name="introReportExample" xml:space="preserve">
-    <value>Simply send a command to Chatbox to receive your desired report.</value>
-  </data>
-  <data name="introNotificationExample" xml:space="preserve">
-    <value>Once you enable your desired notifications, Chatbot will automatically forward these notifications to your Letstalk account on time.</value>
   </data>
   <data name="verificationCodeIsRequired" xml:space="preserve">
     <value>Please input verification code</value>
@@ -252,5 +243,17 @@
   </data>
   <data name="notificationExample" xml:space="preserve">
     <value>Notification Example</value>
+  </data>
+  <data name="howFunctionWorks" xml:space="preserve">
+    <value>How function works</value>
+  </data>
+  <data name="pleaseSet" xml:space="preserve">
+    <value>Please set</value>
+  </data>
+  <data name="play" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="playing" xml:space="preserve">
+    <value>Playing</value>
   </data>
 </root>

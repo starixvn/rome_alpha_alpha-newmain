@@ -14,7 +14,7 @@
     <div class="panel">
         <div class="panel-heading" role="tab" id="headingAccount">
             <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">                    
+                <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
                     @ChatBot.Account
                 </a>
             </h4>
@@ -47,9 +47,8 @@
         </div>
         <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
             <div class="panel-body has-padding">
-                @*<p>@ChatBot.IntroReport</p>*@
-                <p>Please set <img class="toggle-img" src="~/Assets/Styles/chatbot/images/toogle.png" alt="Toggle Button" /> to activate commands you would like to use with Chatbot.</p>
-                <p><a href="#" class="link" id="openReportExample">How function works</a></p>
+                <p>@ChatBot.pleaseSet <img class="toggle-img" src="~/Assets/Styles/chatbot/images/toogle.png" alt="Toggle Button" /> @ChatBot.IntroReport</p>
+                <p><a href="#" class="link" id="openReportExample">@ChatBot.howFunctionWorks</a></p>
                 <table class="tblRpt tblRpt-bordered tbl-guideline">
                     <thead>
                         <tr>
@@ -88,9 +87,8 @@
         </div>
         <div id="notification" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNotification">
             <div class="panel-body has-padding">
-                <p>Please set <img class="toggle-img" src="~/Assets/Styles/chatbot/images/toogle.png" alt="Toggle Button" /> to enable notifications that you would like to receive automatically via Chatbot.</p>
-                @*<p>@ChatBot.IntroNotification</p>*@
-                <p><a href="#" class="link" id="openNotificationExample">How function works</a></p>
+                <p>@ChatBot.pleaseSet <img class="toggle-img" src="~/Assets/Styles/chatbot/images/toogle.png" alt="Toggle Button" /> @ChatBot.IntroNotification</p>
+                <p><a href="#" class="link" id="openNotificationExample">@ChatBot.howFunctionWorks</a></p>
                 <table class="tblRpt tblRpt-bordered tbl-guideline">
                     <thead>
                         <tr>

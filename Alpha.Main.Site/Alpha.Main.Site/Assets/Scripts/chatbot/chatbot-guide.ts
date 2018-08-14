@@ -4,6 +4,7 @@
     $chatbotBody: JQuery;
     $listCommand: JQuery;
     $btnReplay: JQuery;
+    $btnPlaying: JQuery;
 
     constructor($: JQueryStatic) {
         this.$ = $;
@@ -20,6 +21,7 @@
         this.$chatbotBody = this.$("#chatbotBody");
         this.$listCommand = this.$("#listCommand");
         this.$btnReplay = this.$("#btnReplay");
+        this.$btnPlaying = this.$("#btnPlaying");
     }
 
     registerEvents = () => {
@@ -27,25 +29,33 @@
     }
 
     replayExample = () => {
+        this.$btnReplay.addClass("hide");
+        this.$btnPlaying.removeClass("hide");
         var self = this;
         this.$listCommand.find(".command").each(function () {
             self.$(this).hide();
         });
+
         this.showMessageChat();
     }
 
     showMessageChat = () => {
         var messageNumbers = this.$listCommand.find(".command").length;
         var currentHeight = this.$chatbotBody.prop("scrollHeight");
-
         for (var i = 1; i <= messageNumbers; i++) {
             this.showMessage(i, currentHeight);
         }
+
+        setInterval(() => {
+            this.$btnPlaying.addClass("hide");
+            this.$btnReplay.removeClass("hide");
+        }, 15000)
     }
 
     showMessage = (order, currentHeight) => {
         var firstMessage = 1;
         var self = this;
+
         setTimeout(function (order) {
             if (order === firstMessage) {
                 setTimeout(function () {

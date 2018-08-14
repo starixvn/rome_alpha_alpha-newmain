@@ -866,6 +866,9 @@
     <Content Include="Views\ChatBot\Captcha.cshtml" />
     <Content Include="Views\ChatBot\ReportExample.cshtml" />
     <Content Include="Views\ChatBot\NotificationExample.cshtml" />
+    <Content Include="Web.AppSettings.dev.config">
+      <DependentUpon>Web.AppSettings.config</DependentUpon>
+    </Content>
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-guide.ts" />
