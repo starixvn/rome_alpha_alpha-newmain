@@ -40,11 +40,10 @@
 }
 
 .tbl-guideline {
-    min-width: 376px;
     width: 100%;
 
     @media (min-device-width: $screen-device-lower768) {
-       width: auto;
+       width: 420px;
     }
 
     thead th, tbody td {
@@ -55,6 +54,10 @@
             padding-top: 7px;
             padding-bottom: 7px;
         }
+    }
+
+    tbody td {
+        white-space: initial;
     }
 
     .bage {
