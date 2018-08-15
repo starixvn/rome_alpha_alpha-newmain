@@ -18,6 +18,7 @@
     using Web;
     using Web.Helpers;
     using Web.Filters;
+    using Fanex.RemotingRef;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -55,6 +56,10 @@
                 .UseGetDbExceptionInfo(DatabaseInfoGetters.GetDbExceptionInfo);
 
             ExceptionHandler.UseConfig(loggingConfiguration);
+
+            RefDataTypeContainer
+                .ConnectTo(new Uri(AppSettings.RemoteRefURL))
+                .FromApplication("Alpha.Main.Site");
         }
 
         /// <summary>

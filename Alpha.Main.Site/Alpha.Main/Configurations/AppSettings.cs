@@ -184,5 +184,7 @@
                     .Split(',')
                     .Where(custIdString => !string.IsNullOrWhiteSpace(custIdString))
                     .Select(custIdString => Converter.ToInt(custIdString));
+
+        public static string RemoteRefURL => Settings["RemoteRefURL"];
     }
 }
