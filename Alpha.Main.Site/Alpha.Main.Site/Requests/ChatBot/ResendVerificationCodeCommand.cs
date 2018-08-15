@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Requests.ChatBot
 {
     using Chatbot.Client.Models;
+    using Configurations;
     using MediatR;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
@@ -24,5 +25,7 @@
         public int UserId { get; set; }
 
         public string MessengerUsername { get; set; }
+
+        public int IntervalThresholdToSendRequestInSeconds => AppSettings.IntervalThresholdToSendRequestInSeconds;
     }
 }

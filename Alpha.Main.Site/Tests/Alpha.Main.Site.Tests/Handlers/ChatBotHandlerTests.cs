@@ -8,6 +8,7 @@
     using Site.Handlers;
     using Site.Requests.ChatBot;
     using Sunplus.Agent.Model.Entities;
+    using Web.Helpers;
 
     [TestFixture]
     public class ChatBotHandlerTests
@@ -21,7 +22,7 @@
         {
             userSession = Substitute.For<IUserSession>();
             settingService = Substitute.For<SettingService>();
-            chatbotHandler = new ChatBotHandler(settingService);
+            chatbotHandler = new ChatBotHandler(settingService, Substitute.For<SessionManager>());
         }
 
         [Test]

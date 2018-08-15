@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Chatbot.Client.Models;
@@ -7,6 +8,7 @@
     using MediatR;
     using Requests.ChatBot;
     using ViewModels.ChatBot;
+    using Web.Helpers;
 
     public class ChatBotHandler :
         IAsyncRequestHandler<SetUpChatBotQuery, ChatBotViewModel>,
@@ -17,11 +19,16 @@
         IAsyncRequestHandler<UpdateFunctionCommand, Result>,
         IAsyncRequestHandler<UpdateLanguageCommand, Result>
     {
+        private const string LastResendTimeKey = "Alpha.Main.Site.Handlers.ChatBotHandler.LastResendTimeKey";
         private readonly SettingService settingService;
+        private readonly SessionManager sessionManager;
 
-        public ChatBotHandler(SettingService settingService)
+        public ChatBotHandler(
+            SettingService settingService,
+            SessionManager sessionManager)
         {
             this.settingService = settingService;
+            this.sessionManager = sessionManager;
         }
 
         public async Task<ChatBotViewModel> Handle(SetUpChatBotQuery message)
@@ -46,7 +53,18 @@
                 message.MessengerType);
 
         public async Task<Result> Handle(ResendVerificationCodeCommand message)
-            => await settingService.GenerateVerificationCode(message.UserId, message.CustName, message.MessengerUsername);
+        {
+            var result = new Result();
+            var lastResendTime = sessionManager.Get<DateTime>(LastResendTimeKey);
+
+            if (lastResendTime.AddSeconds(message.IntervalThresholdToSendRequestInSeconds) < DateTime.Now)
+            {
+                result = await settingService.GenerateVerificationCode(message.UserId, message.CustName, message.MessengerUsername);
+                sessionManager.Add(LastResendTimeKey, DateTime.Now);
+            }
+
+            return result;
+        }
 
         public async Task<Result> Handle(UpdateFunctionCommand message)
         {

@@ -190,5 +190,7 @@
         public static string ChatBotBaseUrl => Settings["Chatbot:BaseUrl"];
 
         public static string ChatBotApiKey => Settings["Chatbot:ApiKey"];
+
+        public static int IntervalThresholdToSendRequestInSeconds => int.Parse(Settings["IntervalThresholdToSendRequestInSeconds"] ?? "2");
     }
 }
