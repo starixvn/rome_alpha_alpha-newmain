@@ -209,10 +209,10 @@ class VerifyAccount extends BaseChatBot {
                 this.$btnVerify.removeAttr("disabled");
                 this.countDownTimer();
 
-                this.$btnResend.addClass("disabled");
+                this.$btnResend.attr("disabled", "disabled");
                 var interval = setInterval(() => {
                     clearInterval(interval);
-                    this.$btnResend.removeClass("disabled");
+                    this.$btnResend.removeAttr("disabled");
                 }, 2000)
             }
         }
