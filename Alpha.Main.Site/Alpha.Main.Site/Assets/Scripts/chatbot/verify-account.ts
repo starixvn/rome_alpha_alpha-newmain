@@ -205,7 +205,7 @@ class VerifyAccount extends BaseChatBot {
             if (data.IsOk) {
                 clearInterval(this.timer);
                 this.updateExpiredTime();
-                this.$countDown.text(180);
+                this.$countDown.text(179);
                 this.$btnVerify.removeAttr("disabled");
                 this.countDownTimer();
             }

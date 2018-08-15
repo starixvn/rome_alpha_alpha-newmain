@@ -137,7 +137,7 @@
     <value>Invalid/expired verification code, please try again or request a new one.</value>
   </data>
   <data name="UnsubscribeWarning" xml:space="preserve">
-    <value>Unlink Chatbot will stop all of its features. Are you sure you want to proceed.</value>
+    <value>Unlink Chatbot will stop all of its features. Are you sure you want to proceed?</value>
   </data>
   <data name="InputVerificationCode" xml:space="preserve">
     <value>Input the received code to verify your account.</value>

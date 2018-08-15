@@ -448,7 +448,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unlink Chatbot will stop all of its features. Are you sure you want to proceed..
+        ///   Looks up a localized string similar to Unlink Chatbot will stop all of its features. Are you sure you want to proceed?.
         /// </summary>
         public static string UnsubscribeWarning {
             get {
