@@ -79,7 +79,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The inputted account has already been registered by another SMA account..
+        ///   Looks up a localized string similar to The inputted account has already been linked to and verified by another SMA account..
         /// </summary>
         public static string AccountHasAlreadyBeenRegistered {
             get {

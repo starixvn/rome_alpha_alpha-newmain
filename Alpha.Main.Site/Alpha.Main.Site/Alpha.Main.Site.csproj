@@ -91,7 +91,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Chatbot.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Chatbot.Client.1.0.0-beta8-7\lib\net461\Chatbot.Client.dll</HintPath>
+      <HintPath>..\packages\Chatbot.Client.1.0.0-beta8-71\lib\net461\Chatbot.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Age.UI, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -456,7 +456,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\PRO\DBACC.bodb02.BODBDownlineNet.xml" />
-    <Content Include="App_Data\SPNames\PRO\DB053_DB054.bodb02.xml" />
+    <Content Include="App_Data\SPNames\PRO\DB053_DB054.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\PRO\DBCUST.CustDB.xml" />
@@ -467,7 +469,9 @@
     </Content>
     <Content Include="App_Data\SPNames\SIT\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb02.xml" />
-    <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\SIT\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\SIT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\SIT\DBMSG.bodb_Message.xml" />

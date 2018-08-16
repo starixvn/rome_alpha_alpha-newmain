@@ -158,7 +158,7 @@
     <value>Captcha is invalid</value>
   </data>
   <data name="AccountHasAlreadyBeenRegistered" xml:space="preserve">
-    <value>The inputted account has already been registered by another SMA account.</value>
+    <value>The inputted account has already been linked to and verified by another SMA account.</value>
   </data>
   <data name="OverMaxAddAccountTimes" xml:space="preserve">
     <value>You have requested too many times today, Please try again later.</value>

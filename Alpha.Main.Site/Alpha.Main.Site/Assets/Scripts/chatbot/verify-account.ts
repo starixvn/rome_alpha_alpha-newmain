@@ -33,7 +33,8 @@ class VerifyAccount extends BaseChatBot {
     resources = {
         verificationCodeIsInvalidOrExpired: (<HTMLInputElement>document.getElementById('VerificationCodeIsInvalidOrExpired')).value,
         verificationCodeIsRequired: (<HTMLInputElement>document.getElementById('VerificationCodeIsRequired')).value,
-        captchaIsRequired: (<HTMLInputElement>document.getElementById('CaptchaIsRequired')).value
+        captchaIsRequired: (<HTMLInputElement>document.getElementById('CaptchaIsRequired')).value,
+        accountHasAlreadyBeenRegistered: (<HTMLInputElement>document.getElementById('AccountHasAlreadyBeenRegistered')).value
     }
 
     init = () => {
@@ -166,6 +167,8 @@ class VerifyAccount extends BaseChatBot {
 
                 if (result.IsVerificationCodeExpired || result.IsWrongVerificationCode) {
                     alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.verificationCodeIsInvalidOrExpired }));
+                } else if (result.IsMessengerAccountHasBeenRegisteredByAnotherCustomer) {
+                    alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.accountHasAlreadyBeenRegistered }));
                 } else {
                     alpha.showMessage(this.$verificationMessage, new Result({ Code: result.Code, Message: result.Message }));
                 }
