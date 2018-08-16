@@ -5,6 +5,7 @@
     using AppResources;
     using CaptchaMvc.HtmlHelpers;
     using Configurations;
+    using Fanex.Logging;
     using Main.Models;
     using MediatR;
     using Models.Requests;
@@ -15,13 +16,19 @@
 
     public class ChatBotController : BaseController
     {
+        private const string ChatbotLogCategory = "Chatbot";
         private readonly IMediator mediator;
         private readonly IUserSession userSession;
+        private readonly ILogger logger;
 
-        public ChatBotController(IMediator mediator, IUserSession userSession)
+        public ChatBotController(
+            IMediator mediator,
+            IUserSession userSession,
+            ILogger logger)
         {
             this.mediator = mediator;
             this.userSession = userSession;
+            this.logger = logger;
         }
 
         public async Task<ActionResult> Index()
@@ -44,8 +51,9 @@
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
 
-            var result = await mediator.SendAsync(command);
+            logger.Info($"Link messenger account {command.MessengerAccount} to {command.CustName}", ChatbotLogCategory);
 
+            var result = await mediator.SendAsync(command);
             if (result.IsOk)
             {
                 var viewModel = new VerifyAccountViewModel(result.UserId, command.MessengerAccount);
@@ -62,6 +70,8 @@
             {
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
+
+            logger.Info($"Unlink message {command.MessengerUserName} with {userSession.UserName}", ChatbotLogCategory);
 
             return Json(await mediator.SendAsync(command));
         }
@@ -80,6 +90,8 @@
                 return Json(Result.CreateErrorResult(ChatBot.InvalidCaptcha));
             }
 
+            logger.Info($"Verify messenger account {command.MessengerAccount} by {userSession.UserName}", ChatbotLogCategory);
+
             var result = await mediator.SendAsync(command);
             if (result.IsNotOk && result.FailedTimes >= 3 && !isCaptchaValid)
             {
@@ -97,6 +109,8 @@
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
 
+            logger.Info($"Resend verification code to messenger account {command.MessengerUsername}", ChatbotLogCategory);
+
             return Json(await mediator.SendAsync(command));
         }
 
@@ -104,6 +118,7 @@
         public ActionResult Language(string langCode)
         {
             var viewModel = mediator.Send(new AllLanguagesQuery(langCode, AppSettings.DisabledVietnamese));
+
             return PartialView(viewModel);
         }
 
@@ -115,12 +130,18 @@
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
 
+            logger.Info($"Update function: {command.FunctionId}, enable: {command.IsEnable}", ChatbotLogCategory);
+
             return Json(await mediator.SendAsync(command));
         }
 
         [HttpPost]
         public async Task<ActionResult> ChangeLanguage(UpdateLanguageCommand command)
-            => Json(await mediator.SendAsync(command));
+        {
+            logger.Info($"Change Chatbot's language to {command.Language}", ChatbotLogCategory);
+
+            return Json(await mediator.SendAsync(command));
+        }
 
         [HttpGet]
         public ActionResult Captcha()

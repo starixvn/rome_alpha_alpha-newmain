@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Reflection;
     using System.Web.Helpers;
     using System.Web.Mvc;
     using System.Web.Routing;
@@ -40,7 +42,7 @@
                 .UseConfig(new BotClientConfigs(AppSettings.ChatBotBaseUrl, AppSettings.ChatBotApiKey))
                 .UseRestClient(new RestClientHelper());
             DependencyConfig.Init();
-            StaticResources.Init(StaticResources.GetBuildVersion());
+            StaticResources.Init(GetBuildVersion());
 
             DbSettingProviderManager
                 .StartNewSession()
@@ -96,6 +98,14 @@
                     ["SubAccountName"] = currentCustomer?.SubUserName,
                     ["AdminName"] = currentCustomer?.AdminName
                 });
+        }
+
+        private static string GetBuildVersion()
+        {
+            Assembly assembly = Assembly.GetCallingAssembly();
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+            return versionInfo.FileVersion;
         }
 
         private static List<string> GetRegexToHideSensitiveInfo()
