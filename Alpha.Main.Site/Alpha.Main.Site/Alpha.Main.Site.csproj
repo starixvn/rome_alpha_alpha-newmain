@@ -549,6 +549,7 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\error\images\error-bg.png" />
+    <Content Include="Assets\styles\home\images\chatbot-intro.svg" />
     <Content Include="Assets\styles\home\popup-announcement.css">
       <DependentUpon>popup-announcement.scss</DependentUpon>
     </Content>
