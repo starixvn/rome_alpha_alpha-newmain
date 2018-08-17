@@ -5,7 +5,7 @@
     using AppResources;
     using CaptchaMvc.HtmlHelpers;
     using Configurations;
-    using Fanex.Logging;
+    using Filters;
     using Main.Models;
     using MediatR;
     using Models.Requests;
@@ -16,19 +16,15 @@
 
     public class ChatBotController : BaseController
     {
-        private const string ChatbotLogCategory = "Chatbot";
         private readonly IMediator mediator;
         private readonly IUserSession userSession;
-        private readonly ILogger logger;
 
         public ChatBotController(
             IMediator mediator,
-            IUserSession userSession,
-            ILogger logger)
+            IUserSession userSession)
         {
             this.mediator = mediator;
             this.userSession = userSession;
-            this.logger = logger;
         }
 
         public async Task<ActionResult> Index()
@@ -44,14 +40,13 @@
         }
 
         [HttpPost]
+        [ChatbotLoggingFilter("Link Account")]
         public async Task<ActionResult> AddAccount(AddAccountCommand command)
         {
             if (userSession.IsInternal)
             {
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
-
-            logger.Info($"Link messenger account {command.MessengerAccount} to {command.CustName}", ChatbotLogCategory);
 
             var result = await mediator.SendAsync(command);
             if (result.IsOk)
@@ -64,6 +59,7 @@
         }
 
         [HttpPost]
+        [ChatbotLoggingFilter("Unlink Account")]
         public async Task<ActionResult> Unsubscribe(UnsubscribeCommand command)
         {
             if (userSession.IsInternal)
@@ -71,12 +67,11 @@
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
 
-            logger.Info($"Unlink message {command.MessengerUserName} with {userSession.UserName}", ChatbotLogCategory);
-
             return Json(await mediator.SendAsync(command));
         }
 
         [HttpPost]
+        [ChatbotLoggingFilter("Verify Verification Code")]
         public async Task<ActionResult> VerifyVerificationCode(VerifyVerificationCodeCommand command)
         {
             if (userSession.IsInternal)
@@ -90,8 +85,6 @@
                 return Json(Result.CreateErrorResult(ChatBot.InvalidCaptcha));
             }
 
-            logger.Info($"Verify messenger account {command.MessengerAccount} by {userSession.UserName}", ChatbotLogCategory);
-
             var result = await mediator.SendAsync(command);
             if (result.IsNotOk && result.FailedTimes >= 3 && !isCaptchaValid)
             {
@@ -102,14 +95,13 @@
         }
 
         [HttpPost]
+        [ChatbotLoggingFilter("Resend Verification Code")]
         public async Task<ActionResult> ResendVerificationCode(ResendVerificationCodeCommand command)
         {
             if (userSession.IsInternal)
             {
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
-
-            logger.Info($"Resend verification code to messenger account {command.MessengerUsername}", ChatbotLogCategory);
 
             return Json(await mediator.SendAsync(command));
         }
@@ -123,6 +115,7 @@
         }
 
         [HttpPost]
+        [ChatbotLoggingFilter("Update Function")]
         public async Task<ActionResult> UpdateFunction(UpdateFunctionCommand command)
         {
             if (userSession.IsInternal)
@@ -130,16 +123,13 @@
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
 
-            logger.Info($"Update function: {command.FunctionId}, enable: {command.IsEnable}", ChatbotLogCategory);
-
             return Json(await mediator.SendAsync(command));
         }
 
         [HttpPost]
+        [ChatbotLoggingFilter("Change Chatbot's Language")]
         public async Task<ActionResult> ChangeLanguage(UpdateLanguageCommand command)
         {
-            logger.Info($"Change Chatbot's language to {command.Language}", ChatbotLogCategory);
-
             return Json(await mediator.SendAsync(command));
         }
 

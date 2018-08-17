@@ -90,6 +90,7 @@ class ChatBotSetting extends BaseChatBot {
         var userId = this.$userId.val();
         var checkbox = this.$(e.target);
         var functionId = checkbox.attr("data-functionId");
+        var functionName = checkbox.attr("data-functionName");
         var command = checkbox.attr("data-command");
         var isEnable = checkbox.is(":checked");
         var self = this;
@@ -97,7 +98,7 @@ class ChatBotSetting extends BaseChatBot {
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/UpdateFunction",
-            data: { command: { userId: userId, functionId: functionId, command: command, isEnable: isEnable } },
+            data: { command: { userId: userId, functionId: functionId, functionName: functionName, command: command, isEnable: isEnable } },
             dataType: "json",
             success: (result) => {
                 if (result && result.IsNotOk) {

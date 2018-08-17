@@ -5,7 +5,6 @@
     using System.Web.Mvc;
     using Chatbot.Client.Models;
     using Configurations;
-    using Fanex.Logging;
     using KellermanSoftware.CompareNetObjects;
     using Main.Models;
     using MediatR;
@@ -30,7 +29,7 @@
         {
             mediator = Substitute.For<IMediator>();
             userSession = Substitute.For<IUserSession>();
-            chatbotController = new ChatBotController(mediator, userSession, Substitute.For<ILogger>());
+            chatbotController = new ChatBotController(mediator, userSession);
             compareLogic = new CompareLogic();
         }
 

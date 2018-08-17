@@ -9,6 +9,8 @@
 
         public int FunctionId { get; set; }
 
+        public string FunctionName { get; set; }
+
         public string Command { get; set; }
 
         public bool IsEnable { get; set; }

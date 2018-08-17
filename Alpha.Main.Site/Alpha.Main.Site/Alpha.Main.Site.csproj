@@ -1232,6 +1232,7 @@
     <Compile Include="Controllers\OtpController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
+    <Compile Include="Filters\ChatbotLoggingFilterAttribute.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\ChatBotHandler.cs" />
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
