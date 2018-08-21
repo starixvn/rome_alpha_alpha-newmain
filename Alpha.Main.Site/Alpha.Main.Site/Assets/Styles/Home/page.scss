@@ -113,6 +113,13 @@ html * {
                 margin-right: 13px;
             }
 
+            &.icon-announcements {
+                top: 4px;
+                margin-right: 10px;
+                line-height: 0;
+                font-size: 20px;                
+            }
+
             &.icon-chatbot {
                 background: url(Images/chatbot-intro.svg) no-repeat;
                 height: 18px;
@@ -135,22 +142,17 @@ html * {
                 }
 
                 &:after {
-                    background-color: transparent;
-                    -webkit-animation: cd-pulse 2s infinite;
-                    -moz-animation: cd-pulse 2s infinite;
-                    animation: cd-pulse 2s infinite;
+                    @include animation(cd-pulse 2s infinite);
                 }
 
                 &:before {
-                    -webkit-animation: cd-pulse 2s infinite 4s;
-                    -moz-animation: cd-pulse 2s infinite 4s;
-                    animation: cd-pulse 2s infinite 4s;
+                    @include animation(cd-pulse 2s infinite 4s);
                 }
             }
 
             @include keyframes(bounce) {
                 50% {
-                     transform: translateY(-5px);
+                    @include transform(translateY(-5px));
                 }
             }
 
@@ -161,7 +163,7 @@ html * {
                }
 
               50% {
-                  @include box-shadow-multiple(inset 0 0 1px 4px rgba(154, 223, 254, 0.8));
+                    @include box-shadow-multiple(inset 0 0 1px 4px rgba(154, 223, 254, 0.8));
               }
 
               100% {
@@ -462,6 +464,10 @@ html * {
                 &.icon-betlists {
                     font-size: 21px;
                     margin-right: 17px;
+                }
+
+                &.icon-announcements {
+                    font-size: 24px;
                 }
 
                 &.icon-chatbot {
