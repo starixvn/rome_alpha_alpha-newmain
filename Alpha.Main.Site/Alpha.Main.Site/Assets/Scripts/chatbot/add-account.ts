@@ -61,7 +61,9 @@ class AddAccount extends BaseChatBot {
     addAccountEvent = (e: any) => {
         e.preventDefault();
 
-        var account = this.$txtAccount.val();
+        var account = this.$txtAccount.val().trim();
+        this.$txtAccount.val(account);
+
         if (account.length === 0) {
             this.$txtAccount.focus();
             alpha.showMessage(this.$addAccountMessage, new Result({ Code: 1, Message: this.resources.accountIsRequired }));
