@@ -55,8 +55,8 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    @Resources.ResourceManager.GetString("systemUpdate", CultureInfo.GetCultureInfo(Model)) <br />
-                    @Html.Raw(ChatBot.ResourceManager.GetString("systemUpdateAnnouncementSample", CultureInfo.GetCultureInfo(Model)))
+                    @ChatBot.ResourceManager.GetString("systemAnnouncement", CultureInfo.GetCultureInfo(Model)) <br />
+                    @Html.Raw(ChatBot.ResourceManager.GetString("systemAnnouncementSample", CultureInfo.GetCultureInfo(Model)))
                 </div>
                 <div class="status-chatbot-reponse">
                     13:24

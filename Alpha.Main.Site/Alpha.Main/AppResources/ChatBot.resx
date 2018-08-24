@@ -107,7 +107,7 @@
     <value>Install Letstalk and create a free account.</value>
   </data>
   <data name="YourLetstalkAccount" xml:space="preserve">
-    <value>Your Letstalk IM Account</value>
+    <value>Your Letstalk ID</value>
   </data>
   <data name="link" xml:space="preserve">
     <value>Link</value>
@@ -137,13 +137,13 @@
     <value>Notification</value>
   </data>
   <data name="AccountDoesNotExist" xml:space="preserve">
-    <value>Account does not exist.</value>
+    <value>Letstalk ID does not exist.</value>
   </data>
   <data name="InvalidCaptcha" xml:space="preserve">
-    <value>Captcha is invalid</value>
+    <value>Captcha is invalid.</value>
   </data>
   <data name="AccountHasAlreadyBeenRegistered" xml:space="preserve">
-    <value>The inputted account has already been linked to and verified by another SMA account.</value>
+    <value>The inputted ID has already been linked to and verified by another SMA account.</value>
   </data>
   <data name="OverMaxAddAccountTimes" xml:space="preserve">
     <value>You have requested too many times today, Please try again later.</value>
@@ -155,10 +155,10 @@
     <value>Chat Bot's Language</value>
   </data>
   <data name="IntroReport" xml:space="preserve">
-    <value>to activate commands of report you would like to receive via Chatbot.</value>
+    <value>to activate the reports you'd like to query.</value>
   </data>
   <data name="IntroNotification" xml:space="preserve">
-    <value>to enable notifications that you would like to receive automatically via Chatbot.</value>
+    <value>to enable the notification that you'd like to receive.</value>
   </data>
   <data name="Read" xml:space="preserve">
     <value>Read</value>
@@ -178,7 +178,7 @@
   <data name="normalAnnouncementSample" xml:space="preserve">
     <value>Attn:[E-Sports] a match has been cancelled, all bets taken are considered REFUNDED.Thank you!</value>
   </data>
-  <data name="systemUpdateAnnouncementSample" xml:space="preserve">
+  <data name="systemAnnouncementSample" xml:space="preserve">
     <value>Dear valued agents,&lt;br /&gt;We are pleased to inform that there are new games added under Macau Games. You may review the Bet Limit settings affected from 10/05/2018.&lt;br /&gt;Thank you.</value>
   </data>
   <data name="updateLanguageFailed" xml:space="preserve">
@@ -200,19 +200,19 @@
     <value>Letstalk Technology Limited</value>
   </data>
   <data name="pleaseInputLetstalkAccount" xml:space="preserve">
-    <value>Input your Letstalk account to link with Chatbot.</value>
+    <value>Input your Letstalk ID (not the screen name) to link with Chatbot.</value>
   </data>
   <data name="AccountIsRequired" xml:space="preserve">
-    <value>Please input your account.</value>
+    <value>Please input your Letstalk ID.</value>
   </data>
   <data name="lblCaptcha" xml:space="preserve">
     <value>Captcha</value>
   </data>
   <data name="verificationCodeIsRequired" xml:space="preserve">
-    <value>Please input verification code</value>
+    <value>Please input verification code.</value>
   </data>
   <data name="captchaIsRequired" xml:space="preserve">
-    <value>Please input captcha</value>
+    <value>Please input captcha.</value>
   </data>
   <data name="reportExample" xml:space="preserve">
     <value>Report Example</value>
@@ -233,12 +233,15 @@
     <value>Playing</value>
   </data>
   <data name="EnterVerificationCode" xml:space="preserve">
-    <value>Verify your Letstalk IM  account.</value>
+    <value>Verify your Letstalk ID.</value>
   </data>
   <data name="IntroVerificationCode" xml:space="preserve">
-    <value>A bot named "Chatbot" has sent you a 6-digits verification code via Letstalk IM. To verify your account, please input the verification code</value>
+    <value>A bot named "Chatbot" has sent you a 6-digits verification code via Letstalk IM. To verify your Letstalk ID, please input the verification code.</value>
   </data>
   <data name="inputCommand" xml:space="preserve">
     <value>Input command</value>
+  </data>
+  <data name="systemAnnouncement" xml:space="preserve">
+    <value>System Announcement</value>
   </data>
 </root>

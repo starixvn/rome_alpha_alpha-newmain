@@ -70,7 +70,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account does not exist..
+        ///   Looks up a localized string similar to Letstalk ID does not exist..
         /// </summary>
         public static string AccountDoesNotExist {
             get {
@@ -79,7 +79,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The inputted account has already been linked to and verified by another SMA account..
+        ///   Looks up a localized string similar to The inputted ID has already been linked to and verified by another SMA account..
         /// </summary>
         public static string AccountHasAlreadyBeenRegistered {
             get {
@@ -88,7 +88,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please input your account..
+        ///   Looks up a localized string similar to Please input your Letstalk ID..
         /// </summary>
         public static string AccountIsRequired {
             get {
@@ -97,7 +97,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please input captcha.
+        ///   Looks up a localized string similar to Please input captcha..
         /// </summary>
         public static string captchaIsRequired {
             get {
@@ -133,7 +133,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verify your Letstalk IM  account..
+        ///   Looks up a localized string similar to Verify your Letstalk ID..
         /// </summary>
         public static string EnterVerificationCode {
             get {
@@ -223,7 +223,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to to enable notifications that you would like to receive automatically via Chatbot..
+        ///   Looks up a localized string similar to to enable the notification that you&apos;d like to receive..
         /// </summary>
         public static string IntroNotification {
             get {
@@ -232,7 +232,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to to activate commands of report you would like to receive via Chatbot..
+        ///   Looks up a localized string similar to to activate the reports you&apos;d like to query..
         /// </summary>
         public static string IntroReport {
             get {
@@ -241,7 +241,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A bot named &quot;Chatbot&quot; has sent you a 6-digits verification code via Letstalk IM. To verify your account, please input the verification code.
+        ///   Looks up a localized string similar to A bot named &quot;Chatbot&quot; has sent you a 6-digits verification code via Letstalk IM. To verify your Letstalk ID, please input the verification code..
         /// </summary>
         public static string IntroVerificationCode {
             get {
@@ -250,7 +250,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Captcha is invalid.
+        ///   Looks up a localized string similar to Captcha is invalid..
         /// </summary>
         public static string InvalidCaptcha {
             get {
@@ -367,7 +367,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input your Letstalk account to link with Chatbot..
+        ///   Looks up a localized string similar to Input your Letstalk ID (not the screen name) to link with Chatbot..
         /// </summary>
         public static string pleaseInputLetstalkAccount {
             get {
@@ -421,11 +421,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System Announcement.
+        /// </summary>
+        public static string systemAnnouncement {
+            get {
+                return ResourceManager.GetString("systemAnnouncement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dear valued agents,&lt;br /&gt;We are pleased to inform that there are new games added under Macau Games. You may review the Bet Limit settings affected from 10/05/2018.&lt;br /&gt;Thank you..
         /// </summary>
-        public static string systemUpdateAnnouncementSample {
+        public static string systemAnnouncementSample {
             get {
-                return ResourceManager.GetString("systemUpdateAnnouncementSample", resourceCulture);
+                return ResourceManager.GetString("systemAnnouncementSample", resourceCulture);
             }
         }
         
@@ -466,7 +475,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please input verification code.
+        ///   Looks up a localized string similar to Please input verification code..
         /// </summary>
         public static string verificationCodeIsRequired {
             get {
@@ -484,7 +493,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Letstalk IM Account.
+        ///   Looks up a localized string similar to Your Letstalk ID.
         /// </summary>
         public static string YourLetstalkAccount {
             get {
