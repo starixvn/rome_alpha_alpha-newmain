@@ -1046,7 +1046,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System Update.
+        ///   Looks up a localized string similar to System.
         /// </summary>
         public static string systemUpdate {
             get {

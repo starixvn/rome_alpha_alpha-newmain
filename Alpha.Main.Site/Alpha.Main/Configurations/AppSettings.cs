@@ -191,6 +191,10 @@
 
         public static string ChatBotApiKey => Settings["Chatbot:ApiKey"];
 
-        public static int IntervalThresholdToSendRequestInSeconds => int.Parse(Settings["IntervalThresholdToSendRequestInSeconds"] ?? "2");
+        public static int IntervalThresholdToSendRequestInSeconds
+            => int.Parse(Settings["IntervalThresholdToSendRequestInSeconds"] ?? "2");
+
+        public static string[] OfferChatbotSites
+            => Settings["OfferChatbotSites"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
     }
 }
