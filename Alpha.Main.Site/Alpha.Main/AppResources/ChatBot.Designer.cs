@@ -124,15 +124,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Close.
-        /// </summary>
-        public static string close {
-            get {
-                return ResourceManager.GetString("close", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Command.
         /// </summary>
         public static string Command {
@@ -196,11 +187,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input the received code to verify your account..
+        ///   Looks up a localized string similar to Input command.
         /// </summary>
-        public static string InputVerificationCode {
+        public static string inputCommand {
             get {
-                return ResourceManager.GetString("InputVerificationCode", resourceCulture);
+                return ResourceManager.GetString("inputCommand", resourceCulture);
             }
         }
         
@@ -246,6 +237,15 @@ namespace Alpha.Main.AppResources {
         public static string IntroReport {
             get {
                 return ResourceManager.GetString("IntroReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A bot named &quot;Chatbot&quot; has sent you a 6-digits verification code via Letstalk IM. To verify your account, please input the verification code.
+        /// </summary>
+        public static string IntroVerificationCode {
+            get {
+                return ResourceManager.GetString("IntroVerificationCode", resourceCulture);
             }
         }
         
@@ -300,15 +300,6 @@ namespace Alpha.Main.AppResources {
         public static string link {
             get {
                 return ResourceManager.GetString("link", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Link Chatbot to your Letstalk account.
-        /// </summary>
-        public static string LinkChatbot {
-            get {
-                return ResourceManager.GetString("LinkChatbot", resourceCulture);
             }
         }
         
@@ -466,24 +457,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User input commands.
-        /// </summary>
-        public static string UserInputCommands {
-            get {
-                return ResourceManager.GetString("UserInputCommands", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt; has sent you a 6-digits verification code via &lt;strong&gt;Letstalk&lt;/strong&gt;..
-        /// </summary>
-        public static string VerificationCodeExample {
-            get {
-                return ResourceManager.GetString("VerificationCodeExample", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Invalid/expired verification code, please try again or request a new one..
         /// </summary>
         public static string VerificationCodeIsInvalidOrExpired {
@@ -507,24 +480,6 @@ namespace Alpha.Main.AppResources {
         public static string Verify {
             get {
                 return ResourceManager.GetString("Verify", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You have requested to set up Chatbot for your account Supertest1. Your verification code is 123456.The code will be expired in 3 minutes.For security reason, message will be automatically deleted after 3 minutes..
-        /// </summary>
-        public static string verifyMessageSample {
-            get {
-                return ResourceManager.GetString("verifyMessageSample", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to View.
-        /// </summary>
-        public static string View {
-            get {
-                return ResourceManager.GetString("View", resourceCulture);
             }
         }
         

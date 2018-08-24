@@ -8,7 +8,7 @@
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class ChatbotLoggingFilterAttribute : ActionFilterAttribute
     {
-        private const string ChatbotLogCategory = "Alpha Chatbot";
+        private const string ChatbotLogCategory = "Alpha-Chatbot";
         private readonly string actionName;
 
         public ChatbotLoggingFilterAttribute(string actionName)

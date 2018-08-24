@@ -44,7 +44,11 @@
                 return response.Data;
             }
 
-            throw new InvalidOperationException(response.ErrorMessage);
+            throw new InvalidOperationException(
+                string.Join(
+                    "\r\n",
+                    $"Content: {response.Content}",
+                    $"ErrorMessage: {response.ErrorMessage}"));
         }
 
         private static void ValidateResource(string endPoint)

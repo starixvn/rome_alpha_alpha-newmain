@@ -106,9 +106,6 @@
   <data name="InstallLetstalk" xml:space="preserve">
     <value>Install Letstalk and create a free account.</value>
   </data>
-  <data name="LinkChatbot" xml:space="preserve">
-    <value>Link Chatbot to your Letstalk account</value>
-  </data>
   <data name="YourLetstalkAccount" xml:space="preserve">
     <value>Your Letstalk IM Account</value>
   </data>
@@ -117,12 +114,6 @@
   </data>
   <data name="unLink" xml:space="preserve">
     <value>Unlink</value>
-  </data>
-  <data name="VerificationCodeExample" xml:space="preserve">
-    <value>&lt;strong&gt;"Chatbot"&lt;/strong&gt; has sent you a 6-digits verification code via &lt;strong&gt;Letstalk&lt;/strong&gt;.</value>
-  </data>
-  <data name="EnterVerificationCode" xml:space="preserve">
-    <value>Verify your Letstalk IM  account.</value>
   </data>
   <data name="lblVerificationCode" xml:space="preserve">
     <value>Verification code</value>
@@ -139,17 +130,11 @@
   <data name="UnsubscribeWarning" xml:space="preserve">
     <value>Unlink Chatbot will stop all of its features. Are you sure you want to proceed?</value>
   </data>
-  <data name="InputVerificationCode" xml:space="preserve">
-    <value>Input the received code to verify your account.</value>
-  </data>
   <data name="FunctionReport" xml:space="preserve">
     <value>Report</value>
   </data>
   <data name="FunctionNotification" xml:space="preserve">
     <value>Notification</value>
-  </data>
-  <data name="UserInputCommands" xml:space="preserve">
-    <value>User input commands</value>
   </data>
   <data name="AccountDoesNotExist" xml:space="preserve">
     <value>Account does not exist.</value>
@@ -162,9 +147,6 @@
   </data>
   <data name="OverMaxAddAccountTimes" xml:space="preserve">
     <value>You have requested too many times today, Please try again later.</value>
-  </data>
-  <data name="View" xml:space="preserve">
-    <value>View</value>
   </data>
   <data name="Command" xml:space="preserve">
     <value>Command</value>
@@ -223,14 +205,8 @@
   <data name="AccountIsRequired" xml:space="preserve">
     <value>Please input your account.</value>
   </data>
-  <data name="verifyMessageSample" xml:space="preserve">
-    <value>You have requested to set up Chatbot for your account Supertest1. Your verification code is 123456.The code will be expired in 3 minutes.For security reason, message will be automatically deleted after 3 minutes.</value>
-  </data>
   <data name="lblCaptcha" xml:space="preserve">
     <value>Captcha</value>
-  </data>
-  <data name="close" xml:space="preserve">
-    <value>Close</value>
   </data>
   <data name="verificationCodeIsRequired" xml:space="preserve">
     <value>Please input verification code</value>
@@ -255,5 +231,14 @@
   </data>
   <data name="playing" xml:space="preserve">
     <value>Playing</value>
+  </data>
+  <data name="EnterVerificationCode" xml:space="preserve">
+    <value>Verify your Letstalk IM  account.</value>
+  </data>
+  <data name="IntroVerificationCode" xml:space="preserve">
+    <value>A bot named "Chatbot" has sent you a 6-digits verification code via Letstalk IM. To verify your account, please input the verification code</value>
+  </data>
+  <data name="inputCommand" xml:space="preserve">
+    <value>Input command</value>
   </data>
 </root>

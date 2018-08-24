@@ -1,7 +1,7 @@
 ﻿@model VerifyAccountViewModel
 <li id="verification-section">
     <p><strong>@ChatBot.EnterVerificationCode</strong></p>
-    <p>A bot named "Chatbot" has sent you a 6-digits verification code via Letstalk IM. To verify your account, please input the verification code </p>
+    <p>@ChatBot.IntroVerificationCode</p>
     <div id="verification-code-message"></div>
     <form class="verification-form" id="verification-form" action="@Url.Action("VerifyVerificationCode")" method="post">
         <input type="hidden" id="UserId" name="UserId" value="@Model.UserId" />

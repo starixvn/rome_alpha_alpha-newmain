@@ -437,7 +437,9 @@
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBMSG.bodb_Message.xml">
       <SubType>Designer</SubType>
     </Content>
