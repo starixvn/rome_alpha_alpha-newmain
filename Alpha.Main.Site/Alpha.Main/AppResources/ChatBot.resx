@@ -167,7 +167,7 @@
     <value>Gross Comm</value>
   </data>
   <data name="memberWinLoss" xml:space="preserve">
-    <value>Member Win Loss</value>
+    <value>Member WL</value>
   </data>
   <data name="personalMessageSample" xml:space="preserve">
     <value>Your minimum position taking value has been changed by the upline. Please kindly be informed and have a check the details for your downlines.</value>
@@ -243,5 +243,8 @@
   </data>
   <data name="systemAnnouncement" xml:space="preserve">
     <value>System Announcement</value>
+  </data>
+  <data name="yesterdayWinLoss" xml:space="preserve">
+    <value>Yesterday Win Loss</value>
   </data>
 </root>

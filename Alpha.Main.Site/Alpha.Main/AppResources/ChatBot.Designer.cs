@@ -304,7 +304,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Member Win Loss.
+        ///   Looks up a localized string similar to Member WL.
         /// </summary>
         public static string memberWinLoss {
             get {
@@ -489,6 +489,15 @@ namespace Alpha.Main.AppResources {
         public static string Verify {
             get {
                 return ResourceManager.GetString("Verify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yesterday Win Loss.
+        /// </summary>
+        public static string yesterdayWinLoss {
+            get {
+                return ResourceManager.GetString("yesterdayWinLoss", resourceCulture);
             }
         }
         
