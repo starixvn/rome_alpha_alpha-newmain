@@ -8,7 +8,7 @@
         <input type="hidden" id="MessengerAccount" name="MessengerAccount" value="@Model.MessengerAccount" />
         <div class="form-group">
             <label>@ChatBot.lblVerificationCode</label>
-            <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="text" class="verify-text" />
+            <input name="VerificationCode" id="txtVerificationCode" maxlength="6" type="tel" class="verify-text" />
         </div>
         <div id="captcha-container">
             @if (Model.IsShowCaptcha)
