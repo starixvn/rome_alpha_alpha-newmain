@@ -54,7 +54,6 @@
             settingService.Received().AddUser(
                 Arg.Is(message.CustId),
                 Arg.Is(message.SubAccountId),
-                Arg.Is(message.CustName),
                 Arg.Is(message.Language),
                 Arg.Is(message.MessengerAccount));
         }
@@ -104,7 +103,6 @@
             // Assert
             settingService.Received().GenerateVerificationCode(
                 Arg.Is(message.UserId),
-                Arg.Is(message.CustName),
                 Arg.Is(message.MessengerUsername));
         }
 

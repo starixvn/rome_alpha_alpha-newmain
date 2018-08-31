@@ -54,7 +54,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Chatbot.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Chatbot.Client.1.0.0-beta8-71\lib\net461\Chatbot.Client.dll</HintPath>
+      <HintPath>..\..\packages\Chatbot.Client.1.0.0-beta8-79\lib\net461\Chatbot.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Common, Version=1.0.404.97, Culture=neutral, processorArchitecture=MSIL">

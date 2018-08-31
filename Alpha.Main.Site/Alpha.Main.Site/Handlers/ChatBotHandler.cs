@@ -38,7 +38,6 @@
             => await settingService.AddUser(
                 message.CustId,
                 message.SubAccountId,
-                message.CustName,
                 message.Language,
                 message.MessengerAccount);
 
@@ -59,7 +58,7 @@
 
             if (lastResendTime.AddSeconds(message.IntervalThresholdToSendRequestInSeconds) < DateTime.Now)
             {
-                result = await settingService.GenerateVerificationCode(message.UserId, message.CustName, message.MessengerUsername);
+                result = await settingService.GenerateVerificationCode(message.UserId, message.MessengerUsername);
                 sessionManager.Add(LastResendTimeKey, DateTime.Now);
             }
 
