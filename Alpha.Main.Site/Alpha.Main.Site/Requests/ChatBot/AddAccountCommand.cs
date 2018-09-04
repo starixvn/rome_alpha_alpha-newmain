@@ -21,6 +21,8 @@
 
         public int CustId => userSession.CustId;
 
+        public int CustLevel => userSession.RoleId;
+
         public int SubAccountId => userSession.SubAccId;
 
         public string Language => userSession.Language;

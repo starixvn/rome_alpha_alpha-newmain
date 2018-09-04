@@ -37,6 +37,7 @@
         public async Task<AddingUserResult> Handle(AddAccountCommand message)
             => await settingService.AddUser(
                 message.CustId,
+                message.CustLevel,
                 message.SubAccountId,
                 message.Language,
                 message.MessengerAccount);

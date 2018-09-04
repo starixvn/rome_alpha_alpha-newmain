@@ -53,6 +53,7 @@
             // Assert
             settingService.Received().AddUser(
                 Arg.Is(message.CustId),
+                Arg.Is(message.CustLevel),
                 Arg.Is(message.SubAccountId),
                 Arg.Is(message.Language),
                 Arg.Is(message.MessengerAccount));
