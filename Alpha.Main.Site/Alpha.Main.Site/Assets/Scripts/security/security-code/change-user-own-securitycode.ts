@@ -2,6 +2,8 @@
 
 var changeUserOwnSecurityCode = {
     initialize: function () {
+        var cons = new ConstraintInput();
+        cons.bind(".txt-number-pass", 6);
         var $form = $('.form-SC');
         $form.submit(function (e) {
             changeUserOwnSecurityCode.change();
@@ -25,10 +27,9 @@ var changeUserOwnSecurityCode = {
         $("#txtConfirmSecCode").val("").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
-            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+            isChecked ? securityHelper.showSC() : securityHelper.hideSC();
         });
     },
     change: function () {

@@ -18,10 +18,9 @@ var resetsecuritycode = {
         $("#txtConfirmSecCode").val("").keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
-
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
-            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+            isChecked ? securityHelper.showSC() : securityHelper.hideSC();
         });
 
         if (top.hasPopupOpen()) {

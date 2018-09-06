@@ -5,6 +5,8 @@
 'use strict';
 var verifySecurityCode = {
     initialize: function () {
+        var cons = new ConstraintInput();
+        cons.bind("#txtSecCode", 6);
         $('#txtSecCode').keypress(function (e) {
             if (e.which == 13) {
                 verifySecurityCode.verify();
@@ -25,7 +27,7 @@ var verifySecurityCode = {
 
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
-            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+            isChecked ? securityHelper.showSC() : securityHelper.hideSC();
         });
 
         if (top.hasPopupOpen())

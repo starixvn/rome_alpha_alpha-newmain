@@ -4,6 +4,7 @@
 }
 @section css {
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/pass-font")
     @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
 }
 <div class="block">
@@ -17,19 +18,19 @@
                 <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
             </figure>
             <div class="rowlg">
-                <input type="password" autocomplete="off" class="txt" name="providedSC" id="txtOldSecCode" placeholder="@Security.oldSecCode" maxlength="6">
+                <input type="number" pattern="\d*" inputmode="numeric" autocomplete="off" class="txt form-control txt-number-pass" name="providedSC" id="txtOldSecCode" placeholder="@Security.oldSecCode" maxlength="6">
                 <label id="txtOldSecCode-error" class="error"></label>
                 <i class="icon-account-key"></i>
                 <i class="validation"></i>
             </div>
             <div class="rowlg help-rules">
-                <input type="password" autocomplete="off" class="txt" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode" maxlength="6">
+                <input type="tel" pattern="\d*" inputmode="numeric" autocomplete="off" class="txt form-control txt-number-pass" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode" maxlength="6">
                 <label id="txtSecCode-error" class="error"></label>
                 <i class="icon-account-key"></i>
                 <i class="validation"></i>
             </div>
             <div class="rowlg">
-                <input type="password" autocomplete="off" class="txt" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode" maxlength="6">
+                <input type="number" pattern="\d*" inputmode="numeric" autocomplete="off" class="txt form-control txt-number-pass" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode" maxlength="6">
                 <label id="txtConfirmSecCode-error" class="error"></label>
                 <i class="icon-account-key"></i>
                 <i class="validation"></i>

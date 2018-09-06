@@ -158,6 +158,11 @@
       <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <HintPath>..\packages\log4net.1.2.9.1\lib\net11\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+
     <Reference Include="ONEbook.OTP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ONEbook.OTP.1.0.0\lib\net461\ONEbook.OTP.dll</HintPath>
       <Private>True</Private>

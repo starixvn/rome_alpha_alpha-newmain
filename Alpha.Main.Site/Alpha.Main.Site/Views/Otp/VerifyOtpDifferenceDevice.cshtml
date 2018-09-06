@@ -4,6 +4,7 @@
 }
 @section css {
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+@StaticResources.AssetStyles.RenderCommon("/bundles/common/pass-font")
     @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
 }
 <div class="block">
@@ -17,7 +18,7 @@
         </figure>
         <div class="rowlg">
             <i class="icon-lock"></i>
-            <input maxlength="6" type="password" autocomplete="off" class="txt" name="otp" id="txtOTP" placeholder="OTP" />
+            <input type="number" pattern="\d*" inputmode="numeric" autocomplete="off" class="txt txt-number-pass" name="otp" id="txtOTP" placeholder="OTP" />
             <label class="error"></label>
             <i class="validation"></i>
         </div>

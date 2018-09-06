@@ -134,12 +134,25 @@ var securityHelper = {
         $('input[type=password]').each(function () {
             $(this).removeAttr("type").prop('type', 'text');
         })
+       
     },
     hideHint: function () {
         $('input[type=text]').each(function () {
             $(this).removeAttr("type").prop('type', 'password');
         })
+       
     },
+    showSC: function () {
+        $('input[type=number]').each(function () {
+            $(this).addClass('show-hint');
+        });
+    },
+    hideSC: function () {
+        $('input[type=number]').each(function () {
+            $(this).removeClass('show-hint');
+        });
+    },
+
     afterVerifed: function () {
         if (top.hasPopupOpen()) {
             top.revertSecurityCodePopupTitle();

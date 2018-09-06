@@ -1,10 +1,12 @@
 ﻿/// <reference path="../../core.ts" />
 declare var Clipboard: any;
+declare var ConstraintInput: any;
 
 class SetupOtp {
     $: any;
     bootbox: any;
     clipboard: any;
+    ConstraintInput: any;
 
     $otpForm: any;
     $txtOtp: any;
@@ -35,10 +37,11 @@ class SetupOtp {
         thisFieldRequired: (<HTMLInputElement>document.getElementById('ThisFieldRequired')).value
     }
 
-    constructor($: any, bootbox: any, clipboard: any) {
+    constructor($: any, bootbox: any, ConstraintInput: any, clipboard: any) {
         this.$ = $;
         this.bootbox = bootbox;
         this.clipboard = clipboard;
+        this.ConstraintInput = ConstraintInput;
     }
 
     init = () => {
@@ -47,6 +50,7 @@ class SetupOtp {
 
         this.isAlreadySetup = this.$cbkEnableOtp.data("is-already-setup");
         this.previousStatus = this.$cbkEnableOtp.data("is-checked");
+        this.ConstraintInput.bind("txtOtp", 6);
     }
 
     cachedDomElements = () => {
@@ -209,7 +213,7 @@ class SetupOtp {
     }
 }
 
-var setUpOtp = new SetupOtp($, bootbox, new Clipboard('.icon-content-copy'));
+var setUpOtp = new SetupOtp($, bootbox, new ConstraintInput(), new Clipboard('.icon-content-copy'));
 
 $(function () {
     setUpOtp.init();

@@ -92,8 +92,6 @@
     </Reference>
     <Reference Include="Chatbot.Client, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Chatbot.Client.1.0.5\lib\net461\Chatbot.Client.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Fanex.Age.UI, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Age.UI.3.0.3.0\lib\net461\Fanex.Age.UI.dll</HintPath>
       <Private>True</Private>
@@ -563,8 +561,6 @@
     <Content Include="Assets\styles\home\popup-announcement.min.css">
       <DependentUpon>popup-announcement.css</DependentUpon>
     </Content>
-
-    </Content>
     <Content Include="Assets\styles\home\home-mobile-calculate-07.min.css">
       <DependentUpon>home-mobile-calculate-07.css</DependentUpon>
     </Content>
@@ -881,6 +877,7 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Default\AnnouncementPopup.cshtml" />
     <Content Include="Views\NetworkSpeed\Index.cshtml" />
+    <Content Include="Views\Otp\SetUpOtp.cshtml" />
     <Content Include="Views\ChatBot\ChatBotSetting.cshtml" />
     <Content Include="Views\ChatBot\RegisterAccount.cshtml" />
     <Content Include="Views\ChatBot\VerifyAccount.cshtml" />
@@ -1188,7 +1185,6 @@
     <Content Include="typings\globals\jquery.blockui\typings.json" />
     <Content Include="typings\globals\jquery\typings.json" />
     <Content Include="Views\Otp\VerifyOtpDifferenceDevice.cshtml" />
-    <Content Include="Views\Otp\SetUpOtp.cshtml" />
     <Content Include="Views\Otp\VerifyOtp.cshtml" />
     <Content Include="Views\Otp\ResetOtp.cshtml" />
     <Content Include="Views\Otp\RegisterAuthenticatorApp.cshtml" />
