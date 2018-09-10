@@ -61,3 +61,31 @@
         }
     }
 }
+@media only screen and (max-device-width : $screen-device-lower768) {
+    .announcement-modal {
+        &.visible-mobile {
+            left: 0;
+            right: 0;
+            width: 100%;
+
+            &.in {
+                bottom: 0;
+                top: 0;
+            }
+        }
+
+        .modal-dialog.ex-modal {
+            height: 100%;
+        }
+
+        .modal-content .modal-body {
+            padding: 15px 20px 0;
+            position: absolute;
+            top: 50px;
+            bottom: 0;
+            width: 100%;
+            max-height: initial;
+            overflow: hidden;
+        }
+    }
+}
