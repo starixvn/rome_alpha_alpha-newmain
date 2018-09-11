@@ -459,6 +459,12 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\error\images\error-bg.png" />
+    <Content Include="Assets\styles\home\popup-announcement.css">
+      <DependentUpon>popup-announcement.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\popup-announcement.min.css">
+      <DependentUpon>popup-announcement.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\_mixins2.scss" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.css">
       <DependentUpon>page.scss</DependentUpon>
@@ -766,6 +772,7 @@
     <Content Include="Views\Default\AnnouncementPopup.cshtml" />
     <Content Include="Views\NetworkSpeed\Index.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
+    <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
@@ -1001,6 +1008,7 @@
     <Content Include="Assets\styles\security\security.scss" />
     <Content Include="Assets\styles\otp\otp.scss" />
     <Content Include="Assets\styles\error\error.scss" />
+    <Content Include="Assets\styles\home\popup-announcement.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
