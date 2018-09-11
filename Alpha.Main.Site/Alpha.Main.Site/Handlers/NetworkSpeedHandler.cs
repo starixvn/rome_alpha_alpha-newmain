@@ -63,8 +63,7 @@
                                     $"Sub Account Name: {userSession.SubUserName}"))
                                 .AddSection("request info", () => WebInfoGetters.GetRequestInfo(request))
                                 .AddSection("browser info", () => WebInfoGetters.GetBrowserInfo(request.Browser))
-                                .AddSection("server info", () => WebInfoGetters.GetRequestHeader(request.Headers))
-                                .AddSection("session info", () => WebInfoGetters.GetSessionInfo(HttpContext.Current.Session))
+                                .AddSection("server info", () => WebInfoGetters.GetRequestHeader(request.Headers))                                
                                 .ToString();
 
             logger.Info(logMessage);
