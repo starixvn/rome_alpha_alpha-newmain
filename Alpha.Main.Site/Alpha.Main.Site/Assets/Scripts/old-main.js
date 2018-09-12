@@ -183,7 +183,8 @@ var AgeWnd = function () {
                 height: realHeight
             };
         },
-        open: function (url, title, left, popUpTop, width, height, windowCss, titleCss, closeBtnCss, iframeAttributes) {
+        open: function (url, title, left, popUpTop, width, height, windowCss, titleCss, closeBtnCss, iframeAttributes, options) {
+            options = options || {};
             popUpTop = popUpTop || 200;
 
             var widthHeight = this.calculateWidthHeight(width, height, { top: popUpTop });
@@ -221,6 +222,10 @@ var AgeWnd = function () {
                 top: popUpTop + scrollTop
             };
 
+            if (options.resizable) {
+                popupCss.overflow = "hidden";
+            }
+
             if (isAutoHeight) {
                 $.extend(popupCss, { 'overflow-y': 'visible', 'overflow-x': 'auto' });
             }
@@ -257,9 +262,17 @@ var AgeWnd = function () {
                 this.iframeAttributes.src = url;
             }
 
-            ageWnd.openPopUpAfterSetIframeSrc(popUp, isAutoHeight, this);
+            ageWnd.openPopUpAfterSetIframeSrc(popUp, isAutoHeight, this, options);
         },
-        openPopUpAfterSetIframeSrc: function (popUp, isAutoHeight, currentAgeWnd) {
+        openPopUpAfterSetIframeSrc: function (popUp, isAutoHeight, currentAgeWnd, options) {
+            function getElementSize(element) {
+                var style = element[0].style;
+                return {
+                    width: parseInt(style.width.substring(0, style.width.length - 2)),
+                    height: parseInt(style.height.substring(0, style.height.length - 2))
+                };
+            }
+
             popUp.on('shown.bs.modal', function () {
                 // transform property make objectFlash not show (MacauGames Result)
                 popUp.find('.modal-dialog').css({
@@ -274,6 +287,41 @@ var AgeWnd = function () {
 
             popUp.modal({ show: true, backdrop: false });
 
+            if (options.resizable) {
+                var prevPosition = {};
+                var prevSize = {};
+
+                popUp.resizable({
+                    minHeight: 100,
+                    minWidth: 100,
+                    direction: ['right', 'bottom'],
+                    start: function () {
+                        prevPosition = popUp.offset();
+                        prevSize = getElementSize(popUp);
+                    },
+                    resize: function () {
+                        var size = getElementSize(popUp);
+
+                        popUp.find(".ex-modal").css("height", size.height + "px");
+
+                        var headerHeight = 40;
+                        var contentBorder = 2;
+                        var bodyHeightPadding = 18;
+                        popUp.find(".modal-content .modal-body").css("height", (size.height - headerHeight - contentBorder) + "px");
+                    },
+                    stop: function () {
+                        var size = getElementSize(popUp);
+
+                        if (prevSize.width == size.width && prevSize.height == size.height) {
+                            return;
+                        }
+
+                        prevSize = size;
+                        popUp.offset(prevPosition);
+                    }
+                });
+            }
+
             popUp.find(".icon-close").unbind("click").click(function () {
                 popUp.find('.modal-body #target').remove();
                 popUp.remove();
@@ -283,7 +331,10 @@ var AgeWnd = function () {
                 }
             });
 
-            popUp.tinyDraggable({ exclude: "a.icon-information-outline.icon-info, button.icon.icon-close.close" });
+            popUp.tinyDraggable({
+                exclude: "a.icon-information-outline.icon-info, button.icon.icon-close.close",
+                resizeElement: options.resizable ? ".resizable-handle" : ""
+            });
 
             currentAgeWnd.popUp.push(popUp);
         },
@@ -866,21 +917,21 @@ var popupManager = {
     defaultHeight: 1000,
 
     defaultWidth: 480,
-    openByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
-        window.top.popupManager.open(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes);
+    openByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options) {
+        window.top.popupManager.open(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options);
     },
-    openMultipleByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
-        window.top.popupManager.openMultiple(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes);
+    openMultipleByRelativeUrl: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options) {
+        window.top.popupManager.openMultiple(age.GetBaseUrl() + url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options);
     },
-    open: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
+    open: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options) {
         var handler = window.top.ageWnd;
-        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes);
+        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options);
     },
-    openMultiple: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
+    openMultiple: function (url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options) {
         var handler = window.top.ageWnd.createInstance();
-        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes);
+        window.top.popupManager.openWithHanlder(handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options);
     },
-    openWithHanlder: function (handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes) {
+    openWithHanlder: function (handler, url, title, width, height, windowCss, titleCss, closeBtnCss, left, top, iframeAttributes, options) {
         left = left || window.top.popupManager.leftPosition();
         top = top || window.top.popupManager.topPosition();
 
@@ -888,7 +939,7 @@ var popupManager = {
         height = height || window.top.popupManager.defaultHeight;
         title = title || '';
 
-        handler.open(url, title, left, top, width, height, windowCss, titleCss, closeBtnCss, iframeAttributes);
+        handler.open(url, title, left, top, width, height, windowCss, titleCss, closeBtnCss, iframeAttributes, options);
     },
     close: function () {
         top.ageWnd.close();
