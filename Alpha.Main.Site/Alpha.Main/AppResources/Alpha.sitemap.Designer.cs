@@ -637,6 +637,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Poker Games Win Loss.
+        /// </summary>
+        public static string PokerGamesWinLoss {
+            get {
+                return ResourceManager.GetString("PokerGamesWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Position Taking (%).
         /// </summary>
         public static string positionTaking {
