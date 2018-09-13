@@ -146,7 +146,7 @@
     <value>The inputted ID has already been linked to and verified by another SMA account.</value>
   </data>
   <data name="OverMaxAddAccountTimes" xml:space="preserve">
-    <value>You have requested too many times today, Please try again later.</value>
+    <value>You have requested too many times today. Please try again later.</value>
   </data>
   <data name="Command" xml:space="preserve">
     <value>Command</value>

@@ -331,7 +331,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have requested too many times today, Please try again later..
+        ///   Looks up a localized string similar to You have requested too many times today. Please try again later..
         /// </summary>
         public static string OverMaxAddAccountTimes {
             get {

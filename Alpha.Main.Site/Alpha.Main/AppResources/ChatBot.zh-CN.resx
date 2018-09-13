@@ -106,4 +106,7 @@
   <data name="systemAnnouncementSample" xml:space="preserve">
     <value>尊敬的代理们，&lt;br /&gt;我们在此宣佈将会增加新游戏于"Macau Games"产品。 您可以在10/05/2018 查看相关的投注限额设置。&lt;br /&gt;谢谢。</value>
   </data>
+  <data name="grossComm" xml:space="preserve">
+    <value>总佣金</value>
+  </data>
 </root>

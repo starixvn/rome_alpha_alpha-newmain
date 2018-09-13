@@ -103,4 +103,7 @@
   <data name="systemAnnouncementSample" xml:space="preserve">
     <value>เรียน ลูกค้าที่เคารพ&lt;br /&gt;ทางเราขอแจ้งให้ทราบว่า บริษัทได้เพิ่มเกมส์ตัวใหม่เข้าไปยัง "Macau Games" คุณสามารถเข้าไปทำการตั้งค่าต่างๆ ได้ตั้งแต่วันที่ 10/05/2018.&lt;br /&gt;ขอบพระคุณ</value>
   </data>
+  <data name="grossComm" xml:space="preserve">
+    <value>ยอดรวมของคอมมิชชั่น</value>
+  </data>
 </root>
