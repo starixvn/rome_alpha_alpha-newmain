@@ -6,8 +6,6 @@
 
     public class UnsubscribeCommand : IAsyncRequest<Result>
     {
-        public int UserId { get; set; }
-
         public int MessengerType => MessengerTypeConstants.Letstalk;
 
         public string MessengerUserName { get; set; }

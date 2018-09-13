@@ -19,6 +19,7 @@
         IAsyncRequestHandler<UpdateFunctionCommand, Result>,
         IAsyncRequestHandler<UpdateLanguageCommand, Result>
     {
+        private const string ChatbotUserIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.UserId";
         private const string LastResendTimeKey = "Alpha.Main.Site.Handlers.ChatBotHandler.LastResendTimeKey";
         private readonly SettingService settingService;
         private readonly SessionManager sessionManager;
@@ -32,7 +33,16 @@
         }
 
         public async Task<ChatBotViewModel> Handle(SetUpChatBotQuery message)
-            => new ChatBotViewModel(await settingService.GetUser(message.CustId, message.SubAccountId, message.Language));
+        {
+            var user = await settingService.GetUser(message.CustId, message.SubAccountId, message.Language);
+
+            if (user != null)
+            {
+                sessionManager.Add(ChatbotUserIdSessionKey, user.Id);
+            }
+
+            return new ChatBotViewModel(user);
+        }
 
         public async Task<AddingUserResult> Handle(AddAccountCommand message)
             => await settingService.AddUser(
@@ -43,11 +53,14 @@
                 message.MessengerAccount);
 
         public async Task<Result> Handle(UnsubscribeCommand message)
-            => await settingService.Unsubscribe(message.UserId, message.MessengerType, message.MessengerUserName);
+            => await settingService.Unsubscribe(
+                sessionManager.Get<int>(ChatbotUserIdSessionKey),
+                message.MessengerType,
+                message.MessengerUserName);
 
         public async Task<VerificationCodeResult> Handle(VerifyVerificationCodeCommand message)
             => await settingService.VerifyVerificationCode(
-                message.UserId,
+                sessionManager.Get<int>(ChatbotUserIdSessionKey),
                 message.VerificationCode,
                 message.MessengerAccount,
                 message.MessengerType);
@@ -59,7 +72,10 @@
 
             if (lastResendTime.AddSeconds(message.IntervalThresholdToSendRequestInSeconds) < DateTime.Now)
             {
-                result = await settingService.GenerateVerificationCode(message.UserId, message.MessengerUsername);
+                result = await settingService.GenerateVerificationCode(
+                    sessionManager.Get<int>(ChatbotUserIdSessionKey),
+                    message.MessengerUsername);
+
                 sessionManager.Add(LastResendTimeKey, DateTime.Now);
             }
 
@@ -77,10 +93,14 @@
                 }
             };
 
-            return await settingService.UpdateFunctions(message.UserId, functions);
+            return await settingService.UpdateFunctions(
+                sessionManager.Get<int>(ChatbotUserIdSessionKey),
+                functions);
         }
 
         public async Task<Result> Handle(UpdateLanguageCommand message)
-            => await settingService.UpdateLanguage(message.UserId, message.Language);
+            => await settingService.UpdateLanguage(
+                sessionManager.Get<int>(ChatbotUserIdSessionKey),
+                message.Language);
     }
 }

@@ -17,8 +17,6 @@
             lestalkAccount = user.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerTypeConstants.Letstalk && m.Enabled);
         }
 
-        public int UserId => user.Id;
-
         public string Language => user.Language;
 
         public string Username => lestalkAccount.Username;

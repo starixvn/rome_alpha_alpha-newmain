@@ -7,12 +7,10 @@
 
     public class RegisterAccountViewModel
     {
-        private readonly User user;
         private readonly Messenger letstalkMessenger;
 
         public RegisterAccountViewModel(User user)
         {
-            this.user = user;
             letstalkMessenger = user?.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerTypeConstants.Letstalk && m.IsVerifying);
         }
 
@@ -25,7 +23,7 @@
 
         public VerifyAccountViewModel VerifyAccountViewModel
             => IsVerifying
-                ? new VerifyAccountViewModel(user.Id, Username, letstalkMessenger.InputWrongVerificationCodeTimes >= 3)
+                ? new VerifyAccountViewModel(Username, letstalkMessenger.InputWrongVerificationCodeTimes >= 3)
                 : null;
 
         public string Title => ChatBot.ChatBotTitle;

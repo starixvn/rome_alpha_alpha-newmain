@@ -7,7 +7,6 @@ class AddAccount extends BaseChatBot {
     $addAccountMessage: JQuery;
     $btnAdd: JQuery;
     $btnUnsubscribe: JQuery;
-    $userId: JQuery;
 
     verifyAccount: VerifyAccount;
 
@@ -40,7 +39,6 @@ class AddAccount extends BaseChatBot {
         this.$addAccountMessage = this.$("#add-account-message");
         this.$btnAdd = this.$("#btnAdd");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
-        this.$userId = this.$("#UserId");
     }
 
     registerEvents = () => {
@@ -118,7 +116,6 @@ class AddAccount extends BaseChatBot {
         this.$txtAccount.attr("disabled", "disabled");
 
         this.$registerLetstalkPanel.append(data);
-        this.$userId = this.$("#UserId");
 
         this.updateExpiredTime();
         this.verifyAccount.init();
@@ -127,14 +124,13 @@ class AddAccount extends BaseChatBot {
     unsubscribeEvent = (e: any) => {
         e.preventDefault();
         var self = this;
-        var userId = self.$userId.val();
         var userName = self.$txtAccount.val();
         this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, () => {
             this.$.blockUI();
             this.$.ajax({
                 type: "POST",
                 url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
-                data: { userId: userId, messengerUserName: userName },
+                data: { messengerUserName: userName },
                 dataType: "json",
                 success: self.onUnSubscribeSuccess,
                 complete: self.onComplete

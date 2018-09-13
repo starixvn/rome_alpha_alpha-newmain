@@ -13,8 +13,11 @@
     [TestFixture]
     public class ChatBotHandlerTests
     {
+        private const string ChatbotUserIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.UserId";
+
         private IUserSession userSession;
         private SettingService settingService;
+        private SessionManager sessionManager;
         private ChatBotHandler chatbotHandler;
 
         [SetUp]
@@ -22,7 +25,9 @@
         {
             userSession = Substitute.For<IUserSession>();
             settingService = Substitute.For<SettingService>();
-            chatbotHandler = new ChatBotHandler(settingService, Substitute.For<SessionManager>());
+            sessionManager = Substitute.For<SessionManager>();
+
+            chatbotHandler = new ChatBotHandler(settingService, sessionManager);
         }
 
         [Test]
@@ -63,6 +68,8 @@
         public void HandleUnsubscribeCommand_Always_CallsSettingServiceUnsubscribe()
         {
             // Arrange
+            var userId = 1;
+            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
             var message = new UnsubscribeCommand();
 
             // Act
@@ -70,7 +77,7 @@
 
             // Assert
             settingService.Received().Unsubscribe(
-                Arg.Is(message.UserId),
+                Arg.Is(userId),
                 Arg.Is(message.MessengerType),
                 Arg.Is(message.MessengerUserName));
         }
@@ -79,6 +86,8 @@
         public void HandleVerifyVerificationCodeCommand_Always_CallsSettingServiceVerifyVerificationCode()
         {
             // Arrange
+            var userId = 1;
+            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
             var message = new VerifyVerificationCodeCommand();
 
             // Act
@@ -86,7 +95,7 @@
 
             // Assert
             settingService.Received().VerifyVerificationCode(
-                Arg.Is(message.UserId),
+                Arg.Is(userId),
                 Arg.Is(message.VerificationCode),
                 Arg.Is(message.MessengerAccount),
                 Arg.Is(message.MessengerType));
@@ -96,14 +105,16 @@
         public void HandleResendVerificationCodeCommand_Always_CallsSettingServiceGenerateVerificationCode()
         {
             // Arrange
-            var message = new ResendVerificationCodeCommand(userSession);
+            var userId = 1;
+            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
+            var message = new ResendVerificationCodeCommand();
 
             // Act
             chatbotHandler.Handle(message).ConfigureAwait(false);
 
             // Assert
             settingService.Received().GenerateVerificationCode(
-                Arg.Is(message.UserId),
+                Arg.Is(userId),
                 Arg.Is(message.MessengerUsername));
         }
 
@@ -111,6 +122,8 @@
         public void HandleUpdateFunctionCommand_Always_CallsSettingServiceUpdateFunctions()
         {
             // Arrange
+            var userId = 1;
+            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
             var message = new UpdateFunctionCommand();
 
             // Act
@@ -118,7 +131,7 @@
 
             // Assert
             settingService.Received().UpdateFunctions(
-                Arg.Is(message.UserId),
+                Arg.Is(userId),
                 Arg.Any<IEnumerable<Function>>());
         }
 
@@ -126,6 +139,8 @@
         public void HandleUpdateLanguageCommand_Always_CallsSettingServicUpdateLanguage()
         {
             // Arrange
+            var userId = 1;
+            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
             var message = new UpdateLanguageCommand();
 
             // Act
@@ -133,7 +148,7 @@
 
             // Assert
             settingService.Received().UpdateLanguage(
-                Arg.Is(message.UserId),
+                Arg.Is(userId),
                 Arg.Is(message.Language));
         }
     }

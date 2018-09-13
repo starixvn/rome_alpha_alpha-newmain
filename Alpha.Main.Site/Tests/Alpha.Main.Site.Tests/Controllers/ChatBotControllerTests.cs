@@ -168,8 +168,7 @@
             mediator.Received().SendAsync(
                 Arg.Is<UnsubscribeCommand>(
                     c => c.MessengerType == command.MessengerType
-                        && c.MessengerUserName == command.MessengerUserName
-                        && c.UserId == command.UserId));
+                        && c.MessengerUserName == command.MessengerUserName));
         }
 
         [Test]
@@ -184,9 +183,7 @@
             // Assert
             mediator.Received().SendAsync(
                 Arg.Is<ResendVerificationCodeCommand>(
-                    c => c.UserId == command.UserId
-                        && c.MessengerUsername == command.MessengerUsername
-                        && c.UserId == command.UserId));
+                    c => c.MessengerUsername == command.MessengerUsername));
         }
 
         [TestCase("en-us")]
@@ -218,8 +215,7 @@
             // Assert
             mediator.Received().SendAsync(
                 Arg.Is<UpdateFunctionCommand>(
-                    c => c.UserId == command.UserId
-                        && c.FunctionId == command.FunctionId
+                    c => c.FunctionId == command.FunctionId
                         && c.Command == command.Command
                         && c.IsEnable == command.IsEnable));
         }
@@ -235,9 +231,7 @@
 
             // Assert
             mediator.Received().SendAsync(
-                Arg.Is<UpdateLanguageCommand>(
-                    c => c.UserId == command.UserId
-                        && c.Language == command.Language));
+                Arg.Is<UpdateLanguageCommand>(c => c.Language == command.Language));
         }
 
         [Test]

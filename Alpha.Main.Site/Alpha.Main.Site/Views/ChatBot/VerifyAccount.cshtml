@@ -4,7 +4,6 @@
     <p>@ChatBot.IntroVerificationCode</p>
     <div id="verification-code-message"></div>
     <form class="verification-form" id="verification-form" action="@Url.Action("VerifyVerificationCode")" method="post">
-        <input type="hidden" id="UserId" name="UserId" value="@Model.UserId" />
         <input type="hidden" id="MessengerAccount" name="MessengerAccount" value="@Model.MessengerAccount" />
         <div class="form-group">
             <label>@ChatBot.lblVerificationCode</label>

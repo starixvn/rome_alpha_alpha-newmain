@@ -7,7 +7,6 @@ class ChatBotSetting extends BaseChatBot {
     $language: JQuery;
     $languageSelectorContainer: JQuery;
     $changeLanguageLink: JQuery;
-    $userId: JQuery;
     $userName: JQuery;
     $btnUnsubscribe: JQuery;
     $accountMessage: JQuery;
@@ -37,7 +36,6 @@ class ChatBotSetting extends BaseChatBot {
         this.$accountMessage = this.$("#account-message");
         this.$languageSelectorContainer = this.$(".language-selector-container");
         this.$changeLanguageLink = this.$(".changelanguage-link");
-        this.$userId = this.$("#UserId");
         this.$userName = this.$("#UserName");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
         this.$openReportExample = this.$("#openReportExample");
@@ -87,7 +85,6 @@ class ChatBotSetting extends BaseChatBot {
     }
 
     updateFunction = (e: JQueryEventObject) => {
-        var userId = this.$userId.val();
         var checkbox = this.$(e.target);
         var functionId = checkbox.attr("data-functionId");
         var functionName = checkbox.attr("data-functionName");
@@ -98,7 +95,7 @@ class ChatBotSetting extends BaseChatBot {
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/UpdateFunction",
-            data: { command: { userId: userId, functionId: functionId, functionName: functionName, command: command, isEnable: isEnable } },
+            data: { command: { functionId: functionId, functionName: functionName, command: command, isEnable: isEnable } },
             dataType: "json",
             success: (result) => {
                 if (result && result.IsNotOk) {
@@ -115,14 +112,13 @@ class ChatBotSetting extends BaseChatBot {
     unsubscribeEvent = (e: any) => {
         e.preventDefault();
         var self = this;
-        var userId = self.$userId.val();
         var userName = self.$userName.val();
         this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, () => {
             this.$.blockUI();
             this.$.ajax({
                 type: "POST",
                 url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
-                data: { userId: userId, messengerUserName: userName },
+                data: { messengerUserName: userName },
                 dataType: "json",
                 success: self.onUnSubscribeSuccess,
                 complete: self.onComplete
@@ -146,12 +142,11 @@ class ChatBotSetting extends BaseChatBot {
     }
 
     changeLanguage = (lang) => {
-        var userId = this.$userId.val();
         this.$.blockUI();
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/ChangeLanguage",
-            data: { userId: userId, language: lang },
+            data: { language: lang },
             success: this.onChangeLanguageSuccess,
             complete: this.onComplete
         });

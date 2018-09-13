@@ -6,8 +6,6 @@
 
     public class VerifyVerificationCodeCommand : IAsyncRequest<VerificationCodeResult>
     {
-        public int UserId { get; set; }
-
         public string VerificationCode { get; set; }
 
         public string MessengerAccount { get; set; }

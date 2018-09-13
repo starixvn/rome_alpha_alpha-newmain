@@ -5,8 +5,6 @@
 
     public class UpdateFunctionCommand : IAsyncRequest<Result>
     {
-        public int UserId { get; set; }
-
         public int FunctionId { get; set; }
 
         public string FunctionName { get; set; }
