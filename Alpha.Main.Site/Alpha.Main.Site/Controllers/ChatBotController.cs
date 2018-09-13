@@ -131,6 +131,11 @@
         [ChatbotLoggingFilter("Change Chatbot's Language")]
         public async Task<ActionResult> ChangeLanguage(UpdateLanguageCommand command)
         {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
             return Json(await mediator.SendAsync(command));
         }
 
