@@ -557,21 +557,22 @@
      <Content Include="Assets\styles\home\popup-announcement.css">
       <DependentUpon>popup-announcement.scss</DependentUpon>
     </Content>
+     <Content Include="Assets\styles\home\home-mobile-calculate-07.css">
+      <DependentUpon>home-mobile-calculate-07.scss</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\popup-announcement.min.css">
       <DependentUpon>popup-announcement.css</DependentUpon>
     </Content>
 
-    <Content Include="Assets\styles\home\home-calculate-07.css">
-      <DependentUpon>home-calculate-07.scss</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\home\home-calculate-07.min.css">
-      <DependentUpon>home-calculate-07.css</DependentUpon>
+    <Content Include="Assets\styles\home\home-mobile-calculate-07.min.css">
+      <DependentUpon>home-mobile-calculate-07.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\home\page-calculate-07.css">
-      <DependentUpon>page-calculate-07.scss</DependentUpon>
+    <Content Include="Assets\styles\home\page-mobile-calculate-07.css">
+      <DependentUpon>page-mobile-calculate-07.scss</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\home\page-calculate-07.min.css">
-      <DependentUpon>page-calculate-07.css</DependentUpon>
+    <Content Include="Assets\styles\home\page-mobile-calculate-07.min.css">
+      <DependentUpon>page-mobile-calculate-07.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\_mixins2.scss" />
     <Content Include="Scripts\aes.js" />
@@ -1134,8 +1135,9 @@
     <Content Include="Assets\styles\otp\otp.scss" />
     <Content Include="Assets\styles\error\error.scss" />
     <Content Include="Assets\styles\home\popup-announcement.scss" />
+    <Content Include="Assets\styles\home\home-mobile-calculate-07.scss" />
     <Content Include="Assets\styles\home\home-calculate-07.scss" /> 
-    <Content Include="Assets\styles\home\page-calculate-07.scss" />
+    <Content Include="Assets\styles\home\page-mobile-calculate-07.scss" />
     <Content Include="Assets\styles\chatbot\chatbot.scss" />
     <Content Include="Assets\styles\chatbot\register-account.scss" />
     <Content Include="Assets\styles\chatbot\chatbot-setting.scss" />

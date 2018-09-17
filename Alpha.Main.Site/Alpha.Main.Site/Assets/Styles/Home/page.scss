@@ -370,8 +370,8 @@ html * {
         top: 88px;
         z-index: 80;
         padding: 0 12px 8px;
-        -webkit-overflow-scrolling: touch;
-        overflow: auto;
+        //-webkit-overflow-scrolling: touch;
+        //overflow: auto;
 
         .iframe-content {
             width: 100%;
@@ -544,133 +544,6 @@ html * {
             }
         }
     }
-}
-
-@media only screen and (max-device-width: $screen-device-lower768) {
-    body {
-        background-color: #fff;
-    }
-
-    .header-nav .list-top {
-        margin: 0;
-    }
-
-    .header-nav .list-top > li.dropdown.setting {
-        display: block;
-        top: 5px;
-    }
-
-    .header-nav .list-top li.dropdown .dropdown-menu.list-setting { 
-        right: -270px;
-    }
-
-    .header-nav .list-top > li.dropdown.setting > a {
-        display: inline-block;
-        padding-top: 12px;
-        padding-bottom: 12px;
-    }
-   
-    .navbar-nav .setting.open .dropdown-menu {
-        width: 160px;
-
-        li {
-            display: block;
-        }
-    }
-
-    .list-setting .dropdown-submenu.language {
-        overflow: visible !important;
-
-        .dropdown-menu.list-language {
-            top: 0;
-            left: -113px;
-            position: absolute !important;
-        }
-    }
-
-    .content-wrapper {
-        @include transition(all 0.2s ease-out);
-        position: fixed;
-        left: 0;
-
-        .content {
-            background-color: #fff;
-            top: 48px;
-        }
-
-        /*&.expanded-mobile, .header {
-            left: 0;
-        }*/
-        .header {            
-            left: 0;
-        }
-
-        &.expanded-mobile, .header.expanded-header-mobile {
-            @include transition(all 0.2s ease-out);
-            left: 428px;
-            right: auto;
-            width: 100%;
-        }
-    }
-        
-    // Remove avatar
-    .customer-profile {
-        display: none;
-    }
-
-    .navigation {
-        top: 0;        
-    }
-
-    .navigation .main-tab li a {
-        height: 48px;
-        line-height: 48px;
-    }
-
-    .sidebar {
-        left: -256px;
-        width: 0;
-        @include transition(all 0.2s ease-out);
-
-        &.hidden-mobile {
-            left: -256px;
-            width: 0;
-        }
-
-        &.visible-mobile {
-            left: 0;
-            width: 256px;
-        }
-    }
-
-    // Account search tool typeahead
-    .typeahead {
-        background-color: #fff;
-        font-size: 18px;
-        height: 100%;
-        width: 100%;
-        padding-left: 16px;
-        padding-right: 16px;
-        background: rgba(0,0,0,0.001);
-
-        li {
-            padding: 2px 0;
-
-            a {
-                color: #fff;
-
-                &:hover, &:active {
-                    color: #f8eb95;
-                }
-            }
-        }
-    }
-
-    // Show toast message
-    .toast-top-full-width {
-        top: 48px;
-    }
-
 }
 
 @media \0screen\,screen\9 {
