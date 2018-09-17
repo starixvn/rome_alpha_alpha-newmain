@@ -19,41 +19,82 @@ html * {
     max-height: 999999px;
 }
 
+%avatar {
+    @include border-radius(50%);
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+
+    img {
+        @include border-radius(50%);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Move profile picture to header nav
+
+.icon-squares {
+    display: block;
+}
+
+.profile-avatar {
+    @extend %avatar;
+    display: none;
+    width: 24px;
+    height: 24px;    
+}
+
+.profile-group {
+    display: table;
+    padding: 10px;
+    border-bottom: 1px solid #d3d3d3;
+
+    .profile-avatar {
+        display: table-cell;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+    }
+
+    .userinfo {
+        vertical-align: middle;
+        display: table-cell;
+        padding-left: 8px;
+
+        .info {
+            color: $text-color;
+            line-height: 20px;
+        }
+
+        .level {
+            color: #67151b;
+        }
+    }
+}
+
+
+.bg-light {
+    border-top: 1px solid #d3d3d3;
+    background-color: #f7f7f9;
+}
+
 /********************************** Customer profile ******************************************/
 .customer-profile {
     overflow: hidden;
     height: 88px;
 
     .profile-avatar {
-        @include border-radius(50%);
-        display: inline-block;
+        @extend %avatar;
         height: 56px;
         width: 56px;
         border: 3px solid rgba(255, 255, 255, 0.1);
-        float: left;
         margin: 14px 12px;
-        cursor: pointer;
-
-        img {
-            @include border-radius(50%);
-            width: 100%;
-            height: 100%;
-        }
     }
 
     .userinfo {
         color: #fff;
         padding-top: 16px;
-
-        > p {
-            font-size: $font-size - 1;
-            margin-top: 8px;
-
-            a {
-                color: #fff;
-                text-decoration: none;
-            }
-        }
     }
 }
 
@@ -96,6 +137,7 @@ html * {
         }
 
         .icon {
+            line-height: 0;
             margin-right: 14px;
             width: 16px;
             position: relative;
@@ -221,7 +263,7 @@ html * {
         padding: 9px 15px 9px 44px;
 
         a {
-            color: #555555;
+            color: #555;
             display: table;
             text-decoration: none;
             font-weight: 600;
@@ -253,9 +295,7 @@ html * {
         }
     }
 }
-.icon-bell{    
-    font-size: 20px;
-}
+
 .sidebar {
     &.focusout  .mainmenu-container,
     &.collapsed .mainmenu-container,
@@ -288,7 +328,7 @@ html * {
     padding: 0;
     display: none;
     -webkit-overflow-scrolling: touch;
-    overflow: scroll;
+    overflow: auto;
 
     &.container {
         width: 100%;
@@ -330,6 +370,8 @@ html * {
         top: 88px;
         z-index: 80;
         padding: 0 12px 8px;
+        -webkit-overflow-scrolling: touch;
+        overflow: auto;
 
         .iframe-content {
             width: 100%;
@@ -509,7 +551,46 @@ html * {
         background-color: #fff;
     }
 
+    .header-nav .list-top {
+        margin: 0;
+    }
+
+    .header-nav .list-top > li.dropdown.setting {
+        display: block;
+        top: 5px;
+    }
+
+    .header-nav .list-top li.dropdown .dropdown-menu.list-setting { 
+        right: -270px;
+    }
+
+    .header-nav .list-top > li.dropdown.setting > a {
+        display: inline-block;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+   
+    .navbar-nav .setting.open .dropdown-menu {
+        width: 160px;
+
+        li {
+            display: block;
+        }
+    }
+
+    .list-setting .dropdown-submenu.language {
+        overflow: visible !important;
+
+        .dropdown-menu.list-language {
+            top: 0;
+            left: -113px;
+            position: absolute !important;
+        }
+    }
+
     .content-wrapper {
+        @include transition(all 0.2s ease-out);
+        position: fixed;
         left: 0;
 
         .content {
@@ -517,9 +598,33 @@ html * {
             top: 48px;
         }
 
-        &.expanded-mobile, .header {
+        /*&.expanded-mobile, .header {
+            left: 0;
+        }*/
+        .header {            
             left: 0;
         }
+
+        &.expanded-mobile, .header.expanded-header-mobile {
+            @include transition(all 0.2s ease-out);
+            left: 428px;
+            right: auto;
+            width: 100%;
+        }
+    }
+        
+    // Remove avatar
+    .customer-profile {
+        display: none;
+    }
+
+    .navigation {
+        top: 0;        
+    }
+
+    .navigation .main-tab li a {
+        height: 48px;
+        line-height: 48px;
     }
 
     .sidebar {
@@ -535,16 +640,6 @@ html * {
         &.visible-mobile {
             left: 0;
             width: 256px;
-        }
-    }
-
-    .list-setting .dropdown-submenu.language {
-        overflow: visible !important;
-
-        .dropdown-menu.list-language {
-            top: 0;
-            left: -113px;
-            position: absolute !important;
         }
     }
 
@@ -575,6 +670,7 @@ html * {
     .toast-top-full-width {
         top: 48px;
     }
+
 }
 
 @media \0screen\,screen\9 {
@@ -589,4 +685,8 @@ html * {
             top: 40px;
         }
     }
+}
+
+.icon-close-left-panel {
+    display: none;
 }

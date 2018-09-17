@@ -57,17 +57,21 @@ body {
             color: #fe0002;
 
             .btn-link {
-                border: 1px solid #fe0002;
-                color: #fe0002;
+                color: #ff0000;
             }
         }
 
         .btn-link {
-            border: 1px solid #a6a6a6;
-            color: $text-color;
+            @include border-radius(2px);
+            background: #ffffff; /* Old browsers */
+            background: linear-gradient(to bottom, #ffffff 0%,#e1e1e1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            border: 1px solid #9d9d9d;
+            color: #068200;
             padding: 2px 8px;
+            font-weight: bold;
 
             &:hover {
+                background: #e1e1e1;
                 text-decoration: none;
             }
         }
@@ -141,14 +145,26 @@ body {
     }
     // Announcement
     &.notice {
-        .group-date {
-            background-color: #e3e3e3;
+        %group {
             font-weight: bold;
             line-height: 28px;
             padding: 0 16px;
         }
 
+        .group-date {
+            @extend %group;
+            background-color: #e3e3e3;            
+        }
+
+        .group-highlight {
+            @extend %group;
+            background-color: #ffe3e2;
+        }
+
         .msg-contents {
+            padding-bottom: 4px;
+            padding-top: 4px;
+
             .message {
                 padding: 0 16px;
                 display: table;
@@ -171,23 +187,32 @@ body {
                 }
 
                 .time {
-                    width: 120px;
+                    font-weight: bold;
 
                     [class^="icon"] {
-                        margin-right: 8px;
                         position: relative;
-                        top: 1px;
+                        top: 2px;
+                        left: -2px;
+                        margin-right: 3px;
+                        margin-left: 0;
                     }
                 }
 
                 .time, .content {
-                    display: table-cell;
-                    line-height: 30px;
+                    display: block;
+                    width: 100%;
+                    line-height: 24px;
                 }
 
                 .full-content {
                     display: none;
                     line-height: 24px;
+                }
+
+                .highlight-date-format{
+                    display: inline-block;
+                    text-indent: 10px;
+                    line-height: 15px;
                 }
             }
         }
@@ -462,27 +487,16 @@ body {
         ::-webkit-scrollbar {
             display: none;
         }
-        /*&:after {
-            content:"";
-            height: 1px;
-            background: #ddd;
-            display: block;
-            margin-left: -10px;
-            margin-right: -10px;
-        }*/
     }
 
     .nav-tabs {
-        //display: table;
-        //width: 100%;
         display: inline-block;
         position: relative;
         white-space: nowrap;
         overflow: hidden;
-        //width: 100vw;
+
         li {
             display: inline-block;
-            //display: table-cell;
             float: none;
             text-transform: uppercase;
 
@@ -494,10 +508,6 @@ body {
                 }
             }
         }
-    }
-
-    .tab-content {
-        //margin-top: 43px;
     }
 
     .tab-content > .tab-pane {

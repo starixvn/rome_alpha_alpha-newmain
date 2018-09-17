@@ -1,0 +1,389 @@
+﻿@import "_variables.scss";
+@import "_mixins.scss";
+
+// sidebar
+.sidebar {
+    left: -100%;
+    z-index: 9999;
+
+    &.hidden-mobile {
+        left: -100%;
+    }
+
+    &.visible-mobile {
+        width: 100%;
+        font-size: calculateScale($font-size);
+    }
+}
+    
+.navigation {
+    width: 100%;
+    z-index: 1500;
+
+    .main-tab li a {
+        height: calculateScale(52px);
+        line-height: calculateScale(52px);
+    }
+
+    .main-tab li {
+        width: 50%;
+
+        &.nav-close {
+            width: 0;
+        }
+
+        &.accountinfo {
+            padding-right: 58px;
+        }
+    }
+
+    
+    .icon-close-left-panel {
+        display: block;
+        position: absolute;
+        top: 11px;
+        right: 0;
+        height: calculateScale(36px);
+        border-radius: 30px 0 0 30px;
+        padding: 8px 8px 8px 14px;
+        background-color: #e3e3e3;
+        font-size: 33px;
+        color: #67151b;
+        z-index: 99;
+        
+        &:before {
+            position: relative;
+            top: 2px;
+        }    
+    }
+}
+   
+.mainmenu-container {        
+    top: calculateScale(52px);
+
+    .menu-item > a {
+        padding: calculateScale(16px) calculateScale(8px) calculateScale(16px) calculateScale(18px);
+    }
+
+    .menu-item > a .icon-arrow-right {
+        font-size: calculateScale(16px);
+    }
+
+    .menu-item .icon {
+        font-size: calculateScale(16px);
+        margin-right: calculateScale(18px);
+        top: 2px;
+
+        &.icon-announcements {
+            margin-right: calculateScale(17px);
+            font-size: calculateScale(20px);
+            top: 5px;
+        }
+
+        &.icon-betlists {
+            font-size: calculateScale(17px);
+            margin-right: 24px;
+        }
+    }
+
+    .sub-menu .sub-menu-item {
+        padding: calculateScale(9px) calculateScale(15px) calculateScale(9px) calculateScale(54px);
+    }
+
+    .menu-item .beta-version {
+        font-size: calculateScale(10px);
+        padding: calculateScale(2px);
+        margin-left: calculateScale(3px);
+    }
+}
+
+.accountinfo-container {
+    width: 100%;
+}
+
+// Quick search
+.top-search-bar {
+    height: calculateScale(60px);
+
+    .top-search-input {
+        font-size: calculateScale(18px);
+        padding-left: calculateScale(40px);
+        padding-right: calculateScale(40px);
+    }
+
+    .icon-search,
+    .icon-close {
+        top: calculateScale(15px);
+    }
+
+    .icon-search {
+        left: calculateScale(2px);
+        font-size: calculateScale(16px);
+    }
+
+    .icon-close {
+        right: calculateScale(2px);
+        font-size: calculateScale(22px);
+    }
+}
+
+.typeahead {
+    font-size: calculateScale(18px);
+    padding-left: calculateScale(16px);
+    padding-right: calculateScale(16px);
+}
+
+.dropdown-menu > li > a {
+    padding: calculateScale(3px) calculateScale(20px);
+}
+
+// Header
+.header-nav {
+    height: calculateScale(48px);
+
+    .icon-collapse {
+        padding: calculateScale(8px);
+        margin: calculateScale(8px) 0 calculateScale(9px) calculateScale(7px);
+        font-size: calculateScale(18px);
+    }
+
+    .icon-squares {
+        display: none;
+    }
+
+    .profile-avatar {
+        display: block;
+    }
+}
+
+.content-wrapper.expanded-mobile, 
+.content-wrapper .header,
+.header-nav .list-top,
+.dropdown-menu,
+.header-nav .list-top > li.dropdown .dropdown-menu li > a {
+    font-size: calculateScale(13px);
+}
+
+.header-nav .list-top {
+    > li.visible-mobile .icon {
+        height: calculateScale(48px);
+        width: calculateScale(46px);
+        line-height: calculateScale(48px);
+
+        &.icon-home {
+            top: 1px;
+        }
+
+        &.icon-account-search {
+            top: 2px;
+        }
+    }
+
+    > li.notification {
+        top: 5px;
+        padding: calculateScale(9px) calculateScale(6px);
+
+        > .icon-bell {
+            padding: calculateScale(5px) calculateScale(6px);
+        }
+
+        .number-msg {
+            @include border-radius(calculateScale(3px));
+            top: calculateScale(4px);
+            left: calculateScale(25px);
+            padding: 0 calculateScale(4px);
+            font-size: calculateScale(12px);
+            line-height: calculateScale(16px);
+        }
+    }
+
+    > li.dropdown.setting > a {
+        display: inline-block;
+        padding: calculateScale(10px) calculateScale(14px);
+    }
+
+    li .list-setting > li a,
+    > li .list-language > li a {
+        padding: 0 calculateScale(15px);
+        line-height: calculateScale(36px);
+
+        .icon-flag {
+            margin-right: calculateScale(14px);
+            top: calculateScale(1px);
+        }
+    }
+
+    > li .list-setting > li a {
+        .icon {
+            top: calculateScale(3px);
+            margin-right: calculateScale(10px);
+        }
+
+        .icon-help,
+        .icon-contactus {
+            font-size: calculateScale(17px);
+        }
+
+        .icon-otp {
+            font-size: calculateScale(20px);
+            left: calculateScale(-2px);
+        }
+
+    }
+
+    .setting > a:hover:after {
+        width: calculateScale(40px);
+        height: calculateScale(40px);
+        margin-top: 0;
+        margin-left: calculateScale(4px);
+    }
+    
+    .icon-home:before {
+        top: calculateScale(-2px);
+        font-size: calculateScale(18px);
+    }
+
+    // ripple effect
+    .icon-home:hover:after {
+        top: calculateScale(6px);
+        width: calculateScale(40px);
+        height: calculateScale(40px);
+        margin-left: calculateScale(2px);
+        margin-top: calculateScale(-4px);
+    }
+
+    .icon-account-search:before {
+        font-size: calculateScale(23px);
+    }
+
+    // ripple effect
+    .icon-account-search:hover:after {
+        top: calculateScale(8px);
+        width: calculateScale(40px);
+        height: calculateScale(40px);
+        margin-left: calculateScale(6px);
+        margin-top: calculateScale(-4px);
+    }
+        
+    .icon-bell:before {
+        font-size: calculateScale(21px);
+    }
+
+    // ripple effect
+    .icon-bell:hover:after {
+        top: calculateScale(-5px);
+        width: calculateScale(40px);
+        height: calculateScale(40px);
+        margin-left: calculateScale(-4px);
+    }
+
+    li.dropdown .dropdown-menu.list-setting { 
+        right: calculateScale(-270px);
+    }
+}
+
+.navbar-nav .setting.open .dropdown-menu {
+    width: calculateScale(160px);
+}
+
+.profile-avatar {
+    width: calculateScale(22px);
+    height: calculateScale(22px);
+}
+
+.profile-group {
+    padding: calculateScale(10px);
+    border-bottom-width: calculateScale(1px);
+
+    .profile-avatar {
+        width: calculateScale(30px);
+        height: calculateScale(30px);
+    }
+
+    .userinfo {
+        padding-left: calculateScale(8px);
+    }
+
+    .userinfo .info {
+        line-height: calculateScale(20px);
+    }
+}
+
+.icon {
+    font-size: calculateScale(20px);
+} 
+
+.bg-light {
+    border-top-width: calculateScale(1px);
+}
+
+
+.list-setting .dropdown-submenu.language .dropdown-menu.list-language {
+    left: calculateScale(-163px);
+}
+
+// language flags
+
+.icon-flag:before {
+    background-size: calculateScale(32px) calculateScale(36px);
+    width: calculateScale(16px);
+    height: calculateScale(12px);
+}
+
+.langFlag-en-us:before {
+    position: relative;
+    top: 1px;
+    background-position: calculateScale(-16px) calculateScale(-24px);
+}
+
+.langFlag-zh-tw:before {
+    background-position: 0 calculateScale(-13px);
+}
+
+.langFlag-zh-cn:before {
+    background-position: 0 calculateScale(-13px);
+}
+
+.langFlag-ko-kr:before {
+    background-position: calculateScale(-16px) 0;
+}
+
+.langFlag-th-th:before {
+    background-position: calculateScale(-16px) calculateScale(-12px);
+}
+
+.langFlag-ja-jp:before {
+    background-position: 0 0;
+}
+
+.langFlag-vi-vn:before {
+    background-position: calculateScale(1px) calculateScale(-24px);
+}
+
+
+// ripple effect
+.icon-logout:hover:after,
+.icon-collapse:hover:after,
+.icon-add:hover:after{
+    top: calculateScale(3px);
+    width: calculateScale(40px);
+    height: calculateScale(40px);
+    margin-left: calculateScale(-2px);
+    margin-top: calculateScale(-4px);
+}
+
+// Content
+.content-wrapper .content {
+    top: calculateScale(48px);
+}
+
+/*.block-ui-dark {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.3);
+    z-index: 98;
+}*/
+

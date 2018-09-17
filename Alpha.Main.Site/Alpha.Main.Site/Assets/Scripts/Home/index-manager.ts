@@ -139,10 +139,10 @@ var indexManager = {
                     indexManager.closeAllPopup();
 
                     indexManager.cacheCurrentUrl();
-                    $(iframeWindow.document).on('click touchend',
-                        () => {
-                            menuBar.collapseSideBar();
-                        });
+                    //$(iframeWindow.document).on('click touchend',
+                    //    () => {
+                    //        menuBar.collapseSideBar();
+                    //    });
 
                     if (alpha.isMobile) {
                         $(iframeWindow.document).find(':focus').blur();

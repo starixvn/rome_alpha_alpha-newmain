@@ -18,7 +18,7 @@
   {
     "outputFile": "Assets/Styles/customer-profiles/customer-profile.css",
     "inputFile": "Assets/Styles/customer-profiles/customer-profile.scss"
-  },  
+  },
   {
     "outputFile": "Assets/styles/home/pageIElower10.css",
     "inputFile": "Assets/styles/home/pageIElower10.scss"
@@ -50,6 +50,14 @@
   {
     "outputFile": "Assets/Styles/home/popup-announcement.css",
     "inputFile": "Assets/Styles/home/popup-announcement.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/page-calculate-07.css",
+    "inputFile": "Assets/styles/home/page-calculate-07.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/home-calculate-07.css",
+    "inputFile": "Assets/styles/home/home-calculate-07.scss"
   },
   {
     "outputFile": "Assets/styles/chatbot/chatbot.css",

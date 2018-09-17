@@ -19,7 +19,8 @@
         accountInfoHeader: null,
         hamburgerIcon: null,
         profileImage: null,
-        announcementItems: null
+        announcementItems: null,
+        closeIconOnMobile: null
     },
 
     urls: {
@@ -52,6 +53,7 @@
         menuBar.domElements.hamburgerIcon = $('#hamburger-icon');
         menuBar.domElements.profileImage = $('#logoProfileImg');
         menuBar.domElements.announcementItems = $("#menu-ANNOUNCEMENTS li a");
+        menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
     },
 
     initSideBar: function () {
@@ -61,7 +63,7 @@
         var activeSubMenu = $('.menu-item.active .sub-menu');
 
         if (alpha.isScreenLower768) {
-            mainContent.addClass('expanded-mobile');
+            //mainContent.addClass('expanded-mobile');
             sidebar.addClass('hidden-mobile');
             return;
         }
@@ -109,7 +111,7 @@
         menuBar.domElements.accountInfoHeader.click(menuBar.activateAccountInfoTab);
         menuBar.domElements.userIcon.click(menuBar.activateAccountInfoTab);
         menuBar.domElements.redirectItems.click(menuBar.collapseSideBar);
-        menuBar.domElements.header.click(menuBar.collapseSideBar);
+        //menuBar.domElements.header.click(menuBar.collapseSideBar);
         menuBar.domElements.extraIcon.click(menuBar.expandSideBar);
         menuBar.domElements.hamburgerIcon.click(function (e) {
             menuBar.collapseLeftPanel();
@@ -122,6 +124,8 @@
         menuBar.domElements.announcementItems.click(function () {
             menuBar.clickAnnouncementItem($(this));
         });            
+
+        menuBar.domElements.closeIconOnMobile.click(menuBar.collapseSideBar);
     },
 
     clickAnnouncementItem: function (menu) {
@@ -151,16 +155,24 @@
 
     collapseLeftPanel: function () {
         var sidebar = menuBar.domElements.sideBar,
-            content = menuBar.domElements.mainContent;
+            content = menuBar.domElements.mainContent,
+            header = menuBar.domElements.header,
+            mainContent = menuBar.domElements.mainContent,
+            closeIconOnMobile = menuBar.domElements.closeIconOnMobile,
+            hamburgerIcon = menuBar.domElements.hamburgerIcon;
 
         if (alpha.isScreenLower768) {
             if (sidebar.hasClass('hidden-mobile')) {
                 content.addClass('expanded-mobile');
                 sidebar.removeClass('hidden-mobile').addClass('visible-mobile');
+                header.addClass('expanded-header-mobile');
+                hamburgerIcon.hide();
+                closeIconOnMobile.addClass('active');
             }
             else {
                 content.removeClass('expanded-mobile');
-                sidebar.addClass('hidden-mobile').removeClass('visible-mobile');
+                sidebar.addClass('hidden-mobile collapse-mobile').removeClass('visible-mobile');
+                header.removeClass('expanded-header-mobile');
             }
         }
         else {
@@ -223,11 +235,13 @@
             var navigationHeight = $('#navigation').height();
             var mainMenuHeight = $('.main-tab').height();
             var accountInfoIframeHeight = navigationHeight - mainMenuHeight;
-            $('#account-info-tab').css("height", accountInfoIframeHeight);
-            $('#accountinfo-content').css("height", accountInfoIframeHeight - 5);
+            menuBar.domElements.accountInfoTab.css("height", accountInfoIframeHeight);   
 
             if (alpha.isMobile) {
+                $('#accountinfo-content').css("height", accountInfoIframeHeight - 20);
                 menuBar.domElements.accountInfoContent.addClass('small-device');
+            } else {
+                $('#accountinfo-content').css("height", accountInfoIframeHeight - 5);
             }
         };
     },
@@ -255,11 +269,16 @@
     },
 
     collapseSideBar: function () {
-        var sideBar = menuBar.domElements.sideBar;
+        var sideBar = menuBar.domElements.sideBar,
+            closeIconOnMobile = menuBar.domElements.closeIconOnMobile,
+            hamburgerIcon = menuBar.domElements.hamburgerIcon;
 
         if (alpha.isScreenLower768 && sideBar.hasClass('visible-mobile')) {
-            menuBar.domElements.mainContent.addClass('expanded-mobile');
+            menuBar.domElements.mainContent.removeClass('expanded-mobile');
+            menuBar.domElements.header.removeClass('expanded-header-mobile');
             sideBar.addClass('hidden-mobile').removeClass('visible-mobile');
+            closeIconOnMobile.removeClass('active');
+            hamburgerIcon.show();
         }
         else {
             if (sideBar.hasClass('docked')) {

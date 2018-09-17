@@ -35,10 +35,23 @@
     font-weight: bold;
 }
 
-#linkNickNameID {
+.linkConfigNow {
+    color: #FFF;
+
+    outline: 0;
+    &:hover {
+        color: #FFF;
+    }
+}
+
+.linkNickName {
     color: #FFF;
     text-decoration: none;
     outline: 0;
+    &:hover {
+        color: #FFF;
+        text-decoration: none;
+    }
 }
 
 .introNickname {

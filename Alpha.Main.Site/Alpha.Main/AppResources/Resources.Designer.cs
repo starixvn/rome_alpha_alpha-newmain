@@ -151,7 +151,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Balance Info.
+        ///   Looks up a localized string similar to Balance.
         /// </summary>
         public static string balanceInfo {
             get {
