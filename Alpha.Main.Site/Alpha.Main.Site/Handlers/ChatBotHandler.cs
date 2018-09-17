@@ -45,12 +45,18 @@
         }
 
         public async Task<AddingUserResult> Handle(AddAccountCommand message)
-            => await settingService.AddUser(
-                message.CustId,
-                message.CustLevel,
-                message.SubAccountId,
-                message.Language,
-                message.MessengerAccount);
+        {
+            var result = await settingService.AddUser(
+                 message.CustId,
+                 message.CustLevel,
+                 message.SubAccountId,
+                 message.Language,
+                 message.MessengerAccount);
+
+            sessionManager.Add(ChatbotUserIdSessionKey, result.UserId);
+
+            return result;
+        }
 
         public async Task<Result> Handle(UnsubscribeCommand message)
             => await settingService.Unsubscribe(
