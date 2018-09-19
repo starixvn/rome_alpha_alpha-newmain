@@ -348,7 +348,7 @@ html * {
 /********************************** Content-wrapper ******************************************/
 .content-wrapper {
     position: absolute;
-    left: 256px;
+    left: $sidebar-width;
     right: 0;
     top: 0;
     bottom: 0;
@@ -370,8 +370,8 @@ html * {
         top: 88px;
         z-index: 80;
         padding: 0 12px 8px;
-        //-webkit-overflow-scrolling: touch;
-        //overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow: auto;
 
         .iframe-content {
             width: 100%;
