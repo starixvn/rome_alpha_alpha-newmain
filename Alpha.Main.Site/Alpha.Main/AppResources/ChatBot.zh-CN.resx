@@ -232,4 +232,13 @@
   <data name="EnterVerificationCode" xml:space="preserve">
     <value>验证您的Letstalk ID。</value>
   </data>
+  <data name="captchaIsRequired" xml:space="preserve">
+    <value>请输入验证码</value>
+  </data>
+  <data name="pleaseSetNotification" xml:space="preserve">
+    <value>请启动您</value>
+  </data>
+  <data name="lblCaptcha" xml:space="preserve">
+    <value>验证码</value>
+  </data>
 </root>

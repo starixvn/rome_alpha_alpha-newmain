@@ -259,4 +259,7 @@
   <data name="hideQRCode" xml:space="preserve">
     <value>Hide QR code</value>
   </data>
+  <data name="pleaseSetNotification" xml:space="preserve">
+    <value>Please set</value>
+  </data>
 </root>

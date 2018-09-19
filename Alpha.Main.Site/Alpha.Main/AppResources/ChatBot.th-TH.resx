@@ -235,4 +235,10 @@
   <data name="hideQRCode" xml:space="preserve">
     <value>ซ่อน QR Code</value>
   </data>
+  <data name="captchaIsRequired" xml:space="preserve">
+    <value>กรุณาใส่ Captcha</value>
+  </data>
+  <data name="pleaseSetNotification" xml:space="preserve">
+    <value>โปรดตั้งค่า</value>
+  </data>
 </root>

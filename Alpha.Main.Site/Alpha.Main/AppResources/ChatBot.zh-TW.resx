@@ -233,4 +233,13 @@
   <data name="EnterVerificationCode" xml:space="preserve">
     <value>驗證您的Letstalk ID。</value>
   </data>
+  <data name="captchaIsRequired" xml:space="preserve">
+    <value>請輸入驗證碼</value>
+  </data>
+  <data name="pleaseSetNotification" xml:space="preserve">
+    <value>請啟動您</value>
+  </data>
+  <data name="lblCaptcha" xml:space="preserve">
+    <value>驗證碼</value>
+  </data>
 </root>

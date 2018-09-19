@@ -412,6 +412,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please set.
+        /// </summary>
+        public static string pleaseSetNotification {
+            get {
+                return ResourceManager.GetString("pleaseSetNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Read.
         /// </summary>
         public static string Read {
