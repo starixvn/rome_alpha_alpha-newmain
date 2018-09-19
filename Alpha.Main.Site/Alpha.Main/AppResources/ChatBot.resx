@@ -253,4 +253,10 @@
   <data name="Atom" xml:space="preserve">
     <value>Atom</value>
   </data>
+  <data name="showQRCode" xml:space="preserve">
+    <value>Show QR code</value>
+  </data>
+  <data name="hideQRCode" xml:space="preserve">
+    <value>Hide QR code</value>
+  </data>
 </root>

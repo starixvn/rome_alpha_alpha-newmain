@@ -8,6 +8,11 @@ class AddAccount extends BaseChatBot {
     $btnAdd: JQuery;
     $btnUnsubscribe: JQuery;
 
+    $logoLetstalk: JQuery;
+    $imgQRCode: JQuery;
+    $linkShowQRCode: JQuery;
+    $linkHideQRCode: JQuery;
+
     verifyAccount: VerifyAccount;
 
     constructor($: JQueryStatic, topWindow: any) {
@@ -39,6 +44,11 @@ class AddAccount extends BaseChatBot {
         this.$addAccountMessage = this.$("#add-account-message");
         this.$btnAdd = this.$("#btnAdd");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
+
+        this.$logoLetstalk = this.$("#logoLetstalk");
+        this.$imgQRCode = this.$("#imgQRCode");
+        this.$linkShowQRCode = this.$("#showQRCode");
+        this.$linkHideQRCode = this.$("#hideQRCode");
     }
 
     registerEvents = () => {
@@ -54,6 +64,20 @@ class AddAccount extends BaseChatBot {
 
         this.$btnAdd.click(this.addAccountEvent);
         this.$btnUnsubscribe.click(this.unsubscribeEvent);
+
+        this.$linkShowQRCode.click(() => {
+            this.$logoLetstalk.addClass("hide");
+            this.$imgQRCode.removeClass("hide");
+            this.$linkShowQRCode.addClass("hide");
+            this.$linkHideQRCode.removeClass("hide");
+        });
+
+        this.$linkHideQRCode.click(() => {
+            this.$imgQRCode.addClass("hide");
+            this.$logoLetstalk.removeClass("hide");
+            this.$linkHideQRCode.addClass("hide");
+            this.$linkShowQRCode.removeClass("hide");
+        });
     }
 
     addAccountEvent = (e: any) => {

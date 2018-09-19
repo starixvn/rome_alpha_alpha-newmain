@@ -100,7 +100,6 @@
         display: table;
         margin-left: 0;
         padding-right: 32px;
-
         // check Iphone 5
         @media (min-device-width: 330px) {
             margin-left: 16px;
@@ -156,8 +155,17 @@
     font-weight: bold;
 }
 
-.resend-code[disabled] {        
+.resend-code[disabled] {
     cursor: not-allowed;
     opacity: 0.5;
     color: $link-color;
+}
+
+.qr-code {
+    width: 90px;
+    height: 90px;
+}
+
+.qr-code-link {
+    display: block;
 }

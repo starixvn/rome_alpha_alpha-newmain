@@ -26,7 +26,10 @@
                         <p><a href="https://www.letstalk.net/" target="_blank"><strong>@ChatBot.letstalkIM</strong></a> @Html.Raw(@ChatBot.IntroLetstalk)</p>
                         <div class="download-content">
                             <div class="logo-letstalk">
-                                <img src="~/Assets/Styles/chatbot/images/letstalk.png" />
+                                <img id="logoLetstalk" src="~/Assets/Styles/chatbot/images/letstalk.png" />
+                                <img class="qr-code hide" id="imgQRCode" src="~/Assets/styles/chatbot/images/qrcode.png" />
+                                <a href="#" class="qr-code-link" id="showQRCode">@ChatBot.showQRCode</a>
+                                <a href="#" class="qr-code-link hide" id="hideQRCode">@ChatBot.hideQRCode</a>
                             </div>
                             <div class="list-download">
                                 <h2>@ChatBot.letstalkIM</h2>

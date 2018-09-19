@@ -196,6 +196,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide QR code.
+        /// </summary>
+        public static string hideQRCode {
+            get {
+                return ResourceManager.GetString("hideQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How function works.
         /// </summary>
         public static string howFunctionWorks {
@@ -426,6 +435,15 @@ namespace Alpha.Main.AppResources {
         public static string Resend {
             get {
                 return ResourceManager.GetString("Resend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show QR code.
+        /// </summary>
+        public static string showQRCode {
+            get {
+                return ResourceManager.GetString("showQRCode", resourceCulture);
             }
         }
         

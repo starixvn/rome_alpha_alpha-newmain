@@ -537,6 +537,7 @@
     <Content Include="Assets\styles\chatbot\images\google.png" />
     <Content Include="Assets\styles\chatbot\images\letstalk.png" />
     <Content Include="Assets\styles\chatbot\images\chatbot-avatar.png" />
+    <Content Include="Assets\styles\chatbot\images\qrcode.png" />
     <Content Include="Assets\styles\chatbot\images\toogle.png" />
     <Content Include="Assets\styles\chatbot\register-account.css">
       <DependentUpon>register-account.scss</DependentUpon>
