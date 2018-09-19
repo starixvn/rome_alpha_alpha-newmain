@@ -109,4 +109,128 @@
   <data name="grossComm" xml:space="preserve">
     <value>總佣金</value>
   </data>
+  <data name="IntroChatbot" xml:space="preserve">
+    <value>&lt;strong&gt;“Chatbot”&lt;/strong&gt; 功能與 &lt;strong&gt;Letstalk IM&lt;/strong&gt;的結合讓您在&lt;strong&gt;無需登入管理網，讓您更方便及安全的接收到最新資訊。&lt;/strong&gt;&lt;br /&gt;請按照以下操作步驟開始設置 Chatbot：</value>
+  </data>
+  <data name="InstallLetstalk" xml:space="preserve">
+    <value>下載 Letstalk 並免費創建賬號。</value>
+  </data>
+  <data name="IntroLetstalk" xml:space="preserve">
+    <value>是最具保障的&lt;strong&gt;信息通訊軟體並加強&lt;/strong&gt;您對話內容的&lt;strong&gt;隱秘性。&lt;/strong&gt;</value>
+  </data>
+  <data name="pleaseInputLetstalkAccount" xml:space="preserve">
+    <value>輸入您的Letstalk ID (不是屏幕名稱）與Atom鏈接。</value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>鏈接</value>
+  </data>
+  <data name="unLink" xml:space="preserve">
+    <value>取消鏈接</value>
+  </data>
+  <data name="lblVerificationCode" xml:space="preserve">
+    <value>驗證碼</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>帳戶</value>
+  </data>
+  <data name="YourLetstalkAccount" xml:space="preserve">
+    <value>您的Letstalk ID</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>驗證</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>重新發送</value>
+  </data>
+  <data name="VerificationCodeIsInvalidOrExpired" xml:space="preserve">
+    <value>驗證碼無效/終止、，請再次嘗試或重新獲取新的驗證碼。</value>
+  </data>
+  <data name="UnsubscribeWarning" xml:space="preserve">
+    <value>取消鏈接Atom將會停止所有功能，請確認是否要繼續此動作？</value>
+  </data>
+  <data name="FunctionReport" xml:space="preserve">
+    <value>報表</value>
+  </data>
+  <data name="FunctionNotification" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="AccountDoesNotExist" xml:space="preserve">
+    <value>Letstalk ID 不存在。</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>驗證碼不正確。</value>
+  </data>
+  <data name="AccountHasAlreadyBeenRegistered" xml:space="preserve">
+    <value>此 ID 已經被其他賬號鏈接並驗證。</value>
+  </data>
+  <data name="OverMaxAddAccountTimes" xml:space="preserve">
+    <value>您今日提出的要求已超出負荷，請稍後再試。</value>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>指令</value>
+  </data>
+  <data name="ChatBotLanguage" xml:space="preserve">
+    <value>Chatbot語言</value>
+  </data>
+  <data name="ChatbotName" xml:space="preserve">
+    <value>Chatbot 名稱</value>
+  </data>
+  <data name="pleaseSet" xml:space="preserve">
+    <value>請設置激</value>
+  </data>
+  <data name="IntroReport" xml:space="preserve">
+    <value>活您要查詢的報表。</value>
+  </data>
+  <data name="IntroNotification" xml:space="preserve">
+    <value>想要接收的通知。</value>
+  </data>
+  <data name="memberWinLoss" xml:space="preserve">
+    <value>會員輸贏</value>
+  </data>
+  <data name="normalAnnouncementSample" xml:space="preserve">
+    <value>請註意:[電子競技] 因賽事被取消.所有投註金額已被退還. 謝謝!</value>
+  </data>
+  <data name="updateLanguageFailed" xml:space="preserve">
+    <value>更新 Chatbot的語言失敗，請再次嘗試。</value>
+  </data>
+  <data name="expiredOrDidNotRecieveTheCode" xml:space="preserve">
+    <value>未收到驗證碼？。</value>
+  </data>
+  <data name="AccountIsRequired" xml:space="preserve">
+    <value>請輸入您的Letstalk ID。</value>
+  </data>
+  <data name="verificationCodeIsRequired" xml:space="preserve">
+    <value>請輸入驗證碼</value>
+  </data>
+  <data name="reportExample" xml:space="preserve">
+    <value>報表示例</value>
+  </data>
+  <data name="notificationExample" xml:space="preserve">
+    <value>通告示例</value>
+  </data>
+  <data name="howFunctionWorks" xml:space="preserve">
+    <value>功能運作</value>
+  </data>
+  <data name="play" xml:space="preserve">
+    <value>玩</value>
+  </data>
+  <data name="playing" xml:space="preserve">
+    <value>正在玩</value>
+  </data>
+  <data name="IntroVerificationCode" xml:space="preserve">
+    <value>“&lt;strong&gt;Atom&lt;/strong&gt;” 已透過 Letstalk IM 發送 6位數驗證碼給您。核實您的 Letstalk ID，請輸入驗證碼。
+ 。</value>
+  </data>
+  <data name="inputCommand" xml:space="preserve">
+    <value>輸入指令</value>
+  </data>
+  <data name="systemAnnouncement" xml:space="preserve">
+    <value>系統公告</value>
+  </data>
+  <data name="yesterdayWinLoss" xml:space="preserve">
+    <value>昨日輸贏</value>
+  </data>
+  <data name="EnterVerificationCode" xml:space="preserve">
+    <value>驗證您的Letstalk ID。</value>
+  </data>
 </root>

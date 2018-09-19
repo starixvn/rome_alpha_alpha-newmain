@@ -128,7 +128,7 @@
     <value>Invalid/expired verification code, please try again or request a new one.</value>
   </data>
   <data name="UnsubscribeWarning" xml:space="preserve">
-    <value>Unlink Chatbot will stop all of its features. Are you sure you want to proceed?</value>
+    <value>Unlink Atom will stop all of its features. Are you sure you want to proceed?</value>
   </data>
   <data name="FunctionReport" xml:space="preserve">
     <value>Report</value>
@@ -182,10 +182,10 @@
     <value>Dear valued agents,&lt;br /&gt;We are pleased to inform that there are new games added under Macau Games. You may review the Bet Limit settings affected from 10/05/2018.&lt;br /&gt;Thank you.</value>
   </data>
   <data name="updateLanguageFailed" xml:space="preserve">
-    <value>Update Chatbot's language failed. Please try again.</value>
+    <value>Fail to update Chatbot's language. Please try again.</value>
   </data>
   <data name="expiredOrDidNotRecieveTheCode" xml:space="preserve">
-    <value>Expired or didn't recieve the code?</value>
+    <value>Didn't receive a code?</value>
   </data>
   <data name="IntroChatbot" xml:space="preserve">
     <value>&lt;strong&gt;"Chatbot"&lt;/strong&gt; function integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt;&lt;br /&gt;To start setting up Chatbot, please follow below steps:</value>
@@ -200,7 +200,7 @@
     <value>Letstalk Technology Limited</value>
   </data>
   <data name="pleaseInputLetstalkAccount" xml:space="preserve">
-    <value>Input your Letstalk ID (not the screen name) to link with Chatbot.</value>
+    <value>Input your Letstalk ID (not the screen name) to link with a chatbot.</value>
   </data>
   <data name="AccountIsRequired" xml:space="preserve">
     <value>Please input your Letstalk ID.</value>
@@ -236,7 +236,7 @@
     <value>Verify your Letstalk ID.</value>
   </data>
   <data name="IntroVerificationCode" xml:space="preserve">
-    <value>A bot named "Chatbot" has sent you a 6-digits verification code via Letstalk IM. To verify your Letstalk ID, please input the verification code.</value>
+    <value>A bot named "&lt;strong&gt;Atom&lt;/strong&gt;" has sent you a 6-digits verification code via Letstalk IM. To verify your Letstalk ID, please input the verification code.</value>
   </data>
   <data name="inputCommand" xml:space="preserve">
     <value>Input command</value>
@@ -246,5 +246,11 @@
   </data>
   <data name="yesterdayWinLoss" xml:space="preserve">
     <value>Yesterday Win Loss</value>
+  </data>
+  <data name="ChatbotName" xml:space="preserve">
+    <value>Chatbot's name</value>
+  </data>
+  <data name="Atom" xml:space="preserve">
+    <value>Atom</value>
   </data>
 </root>

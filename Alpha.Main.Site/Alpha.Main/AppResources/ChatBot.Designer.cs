@@ -97,6 +97,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Atom.
+        /// </summary>
+        public static string Atom {
+            get {
+                return ResourceManager.GetString("Atom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please input captcha..
         /// </summary>
         public static string captchaIsRequired {
@@ -111,6 +120,15 @@ namespace Alpha.Main.AppResources {
         public static string ChatBotLanguage {
             get {
                 return ResourceManager.GetString("ChatBotLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chatbot&apos;s name.
+        /// </summary>
+        public static string ChatbotName {
+            get {
+                return ResourceManager.GetString("ChatbotName", resourceCulture);
             }
         }
         
@@ -142,7 +160,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Expired or didn&apos;t recieve the code?.
+        ///   Looks up a localized string similar to Didn&apos;t receive a code?.
         /// </summary>
         public static string expiredOrDidNotRecieveTheCode {
             get {
@@ -241,7 +259,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A bot named &quot;Chatbot&quot; has sent you a 6-digits verification code via Letstalk IM. To verify your Letstalk ID, please input the verification code..
+        ///   Looks up a localized string similar to A bot named &quot;&lt;strong&gt;Atom&lt;/strong&gt;&quot; has sent you a 6-digits verification code via Letstalk IM. To verify your Letstalk ID, please input the verification code..
         /// </summary>
         public static string IntroVerificationCode {
             get {
@@ -367,7 +385,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input your Letstalk ID (not the screen name) to link with Chatbot..
+        ///   Looks up a localized string similar to Input your Letstalk ID (not the screen name) to link with a chatbot..
         /// </summary>
         public static string pleaseInputLetstalkAccount {
             get {
@@ -448,7 +466,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unlink Chatbot will stop all of its features. Are you sure you want to proceed?.
+        ///   Looks up a localized string similar to Unlink Atom will stop all of its features. Are you sure you want to proceed?.
         /// </summary>
         public static string UnsubscribeWarning {
             get {
@@ -457,7 +475,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update Chatbot&apos;s language failed. Please try again..
+        ///   Looks up a localized string similar to Fail to update Chatbot&apos;s language. Please try again..
         /// </summary>
         public static string updateLanguageFailed {
             get {

@@ -1,7 +1,7 @@
 ﻿@model VerifyAccountViewModel
 <li id="verification-section">
     <p><strong>@ChatBot.EnterVerificationCode</strong></p>
-    <p>@ChatBot.IntroVerificationCode</p>
+    <p>@Html.Raw(ChatBot.IntroVerificationCode)</p>
     <div id="verification-code-message"></div>
     <form class="verification-form" id="verification-form" action="@Url.Action("VerifyVerificationCode")" method="post">
         <input type="hidden" id="MessengerAccount" name="MessengerAccount" value="@Model.MessengerAccount" />

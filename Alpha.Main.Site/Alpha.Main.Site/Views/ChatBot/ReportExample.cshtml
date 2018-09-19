@@ -9,7 +9,7 @@
 <div class="chatbot-layout -report" id="chatbotLayout">
     <div class="chatbot-header">
         <span class="icon-chatbot-back"></span>
-        <span class="title">@ChatBot.ChatBotTitle</span>
+        <span class="title">@ChatBot.Atom</span>
         <span class="icon-chatbot-call"></span>
         <span class="icon-chatbot-down"></span>
     </div>
@@ -73,7 +73,7 @@
     <div class="data-input">
         <span class="icon-chatbot-plus"></span>
         <span class="icon-chatbot-gif"></span>
-        <input type="text" id="reportText" class="chatbot-text" placeholder="@ChatBot.inputCommand" disabled />
+        <input type="text" id="reportText" class="chatbot-text" placeholder="@ChatBot.ResourceManager.GetString("inputCommand", CultureInfo.GetCultureInfo(Model))" disabled />
         <span class="icon-chatbot-voice"></span>
     </div>
     <div class="list-actions">
