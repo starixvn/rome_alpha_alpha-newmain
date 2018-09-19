@@ -119,7 +119,7 @@
     <value>是最具保障的&lt;strong&gt;信息通訊軟體並加強&lt;/strong&gt;您對話內容的&lt;strong&gt;隱秘性。&lt;/strong&gt;</value>
   </data>
   <data name="pleaseInputLetstalkAccount" xml:space="preserve">
-    <value>輸入您的Letstalk ID (不是屏幕名稱）與Atom鏈接。</value>
+    <value>輸入您的Letstalk ID (不是屏幕名稱）與chatbot鏈接。</value>
   </data>
   <data name="link" xml:space="preserve">
     <value>鏈接</value>

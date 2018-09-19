@@ -116,7 +116,7 @@
     <value>คือเครื่องมือสื่อสารที่&lt;strong&gt;มีความปลอดภัยสูง&lt;/strong&gt;</value>
   </data>
   <data name="pleaseInputLetstalkAccount" xml:space="preserve">
-    <value>ป้อนรหัส Letstalk (ไม่ใช่ชื่อหน้าจอ) เพื่อเชื่อมโยงกับ Atom</value>
+    <value>ป้อนรหัส Letstalk (ไม่ใช่ชื่อหน้าจอ) เพื่อเชื่อมโยงกับ chatbot</value>
   </data>
   <data name="link" xml:space="preserve">
     <value>เชื่อมต่อ</value>
