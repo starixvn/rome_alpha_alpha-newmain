@@ -363,4 +363,7 @@
   <data name="systemUpdate" xml:space="preserve">
     <value>Cập nhật</value>
   </data>
+  <data name="PokerGamesWinLoss" xml:space="preserve">
+    <value>Thắng thua của Poker</value>
+  </data>
 </root>

@@ -381,4 +381,7 @@
   <data name="systemUpdate" xml:space="preserve">
     <value>System Update</value>
   </data>
+  <data name="PokerGamesWinLoss" xml:space="preserve">
+    <value>Poker Games Win Loss</value>
+  </data>
 </root>

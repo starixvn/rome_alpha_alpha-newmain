@@ -43,6 +43,10 @@
 
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
       <siteMapNode menuItemType="ProgressiveContributionMenuItem" resourceKey="ProgressiveGamesContribution" appPath="ReportsAppPath" url="progressivecontribution/index"></siteMapNode>
+
+      <siteMapNode resourceKey="PokerGamesWinLoss" appPath="ReportsAppPath" url="pokergameswinlossdetail/member" roles="Agent" menuItemType="PokerGamesMenuItem"></siteMapNode>
+      <siteMapNode resourceKey="PokerGamesWinLoss" appPath="ReportsAppPath" url="pokergameswinlossdetail/agent" roles="Master" menuItemType="PokerGamesMenuItem"></siteMapNode>
+      <siteMapNode resourceKey="PokerGamesWinLoss" appPath="ReportsAppPath" url="pokergameswinlossdetail/master" roles="Super" menuItemType="PokerGamesMenuItem"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
     <!--MemberInfo-->
