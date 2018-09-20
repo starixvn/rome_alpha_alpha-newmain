@@ -242,4 +242,10 @@
   <data name="lblCaptcha" xml:space="preserve">
     <value>驗證碼</value>
   </data>
+  <data name="showQRCode" xml:space="preserve">
+    <value>顯示行動條碼</value>
+  </data>
+  <data name="hideQRCode" xml:space="preserve">
+    <value>隱藏行動條碼</value>
+  </data>
 </root>
