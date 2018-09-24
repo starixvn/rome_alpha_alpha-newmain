@@ -41,9 +41,10 @@
 
     showMessageChat = () => {
         var messageNumbers = this.$listCommand.find(".command").length;
-        var currentHeight = this.$chatbotBody.prop("scrollHeight");
+        var delay = 0;
         for (var i = 1; i <= messageNumbers; i++) {
-            this.showMessage(i, currentHeight);
+            this.showMessage(i, delay);
+            delay = delay + 2000;
         }
 
         var interval = setInterval(() => {
@@ -53,37 +54,29 @@
         }, 15000)
     }
 
-    showMessage = (order, currentHeight) => {
+    showMessage = (order, delay) => {
         var firstMessage = 1;
         var self = this;
 
-        setTimeout(function (order) {
-            if (order === firstMessage) {
-                setTimeout(function () {
-                    self.messageWithDataInput(self.$listCommand, order);
-                }, 400);
-            } else {
-                self.$listCommand.parent(".chatbot-body").delay(1000).animate({
-                    scrollTop: currentHeight
-                }, 1200, function () {
-                    self.messageWithDataInput(self.$listCommand, order);
-                });
-            }
-        }, (10), order);
+        setTimeout(function (order, delay) {
+            self.messageWithDataInput(self.$listCommand, order, delay);
+        }, (1000), order, delay);
     }
 
-    messageWithDataInput = ($listCommands: JQuery, order) => {
+    messageWithDataInput = ($listCommands: JQuery, order, delay) => {
         var chatContainer = $listCommands.find(".command:nth-child(" + order + ")");
         var reportText = null;
+        setTimeout(() => {
+            if (this.$('#reportText') && chatContainer.find('.user-input')) {
+                reportText = this.$('#reportText');
+                var chatContent = chatContainer.find('.user-input').text();
+                reportText.val(chatContent);
+            }
+        }, delay);
 
-        if (this.$('#reportText') && chatContainer.find('.user-input')) {
-            reportText = this.$('#reportText');
-            var chatContent = chatContainer.find('.user-input').text();
-            reportText.val(chatContent);
-        }
-
-        setTimeout(function () {
+        setTimeout(() => {
             if (this.$('#reportText')) {
+                reportText = this.$('#reportText');
                 reportText.val('');
             }
 
@@ -91,7 +84,11 @@
                 direction: "down",
                 easing: 'easeInOutExpo'
             }, 1000);
-        }, 1000);
+
+            this.$chatbotBody.delay(1000).animate({
+                scrollTop: this.$chatbotBody.get(0).scrollHeight
+            }, 1200);
+        }, delay + 1000);
     }
 }
 
