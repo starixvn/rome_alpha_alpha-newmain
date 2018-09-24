@@ -369,4 +369,13 @@
   <data name="TransferAllAndClearCredit" xml:space="preserve">
     <value>Tất toán và Xóa tín dụng</value>
   </data>
+  <data name="winLossByProduct" xml:space="preserve">
+    <value>Thắng Thua Trên Sản Phẩm</value>
+  </data>
+  <data name="ProgressiveGamesContribution" xml:space="preserve">
+    <value>Tích Lũy Trò Chơi Lũy Tiến</value>
+  </data>
+  <data name="ProgressiveJackpotGames" xml:space="preserve">
+    <value>Trò chơi Jackpot lũy tiến</value>
+  </data>
 </root>
