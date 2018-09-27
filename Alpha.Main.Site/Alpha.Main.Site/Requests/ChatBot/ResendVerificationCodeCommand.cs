@@ -6,8 +6,6 @@
 
     public class ResendVerificationCodeCommand : IAsyncRequest<Result>
     {
-        public string MessengerUsername { get; set; }
-
         public int IntervalThresholdToSendRequestInSeconds => AppSettings.IntervalThresholdToSendRequestInSeconds;
     }
 }

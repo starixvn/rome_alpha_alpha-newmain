@@ -7,7 +7,6 @@ class ChatBotSetting extends BaseChatBot {
     $language: JQuery;
     $languageSelectorContainer: JQuery;
     $changeLanguageLink: JQuery;
-    $userName: JQuery;
     $btnUnsubscribe: JQuery;
     $accountMessage: JQuery;
     $openReportExample: JQuery;
@@ -36,7 +35,6 @@ class ChatBotSetting extends BaseChatBot {
         this.$accountMessage = this.$("#account-message");
         this.$languageSelectorContainer = this.$(".language-selector-container");
         this.$changeLanguageLink = this.$(".changelanguage-link");
-        this.$userName = this.$("#UserName");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
         this.$openReportExample = this.$("#openReportExample");
         this.$openNotificationExample = this.$("#openNotificationExample");
@@ -112,13 +110,11 @@ class ChatBotSetting extends BaseChatBot {
     unsubscribeEvent = (e: any) => {
         e.preventDefault();
         var self = this;
-        var userName = self.$userName.val();
         this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, () => {
             this.$.blockUI();
             this.$.ajax({
                 type: "POST",
                 url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
-                data: { messengerUserName: userName },
                 dataType: "json",
                 success: self.onUnSubscribeSuccess,
                 complete: self.onComplete

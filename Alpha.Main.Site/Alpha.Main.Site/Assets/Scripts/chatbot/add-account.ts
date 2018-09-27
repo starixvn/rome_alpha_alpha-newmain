@@ -83,10 +83,10 @@ class AddAccount extends BaseChatBot {
     addAccountEvent = (e: any) => {
         e.preventDefault();
 
-        var account = this.$txtAccount.val().trim();
-        this.$txtAccount.val(account);
+        var letstalkId = this.$txtAccount.val().trim();
+        this.$txtAccount.val(letstalkId);
 
-        if (account.length === 0) {
+        if (letstalkId.length === 0) {
             this.$txtAccount.focus();
             alpha.showMessage(this.$addAccountMessage, new Result({ Code: 1, Message: this.resources.accountIsRequired }));
             return;
@@ -98,7 +98,7 @@ class AddAccount extends BaseChatBot {
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/AddAccount",
-            data: { messengerAccount: account },
+            data: { letstalkId: letstalkId },
             dataType: "text",
             success: this.onAddAccountSuccess,
             complete: this.onComplete,
@@ -148,13 +148,11 @@ class AddAccount extends BaseChatBot {
     unsubscribeEvent = (e: any) => {
         e.preventDefault();
         var self = this;
-        var userName = self.$txtAccount.val();
         this.topWindow.bootboxConfirm(this.resources.unsubscribeWarning, undefined, () => {
             this.$.blockUI();
             this.$.ajax({
                 type: "POST",
                 url: alpha.urls.mainRootPath + "ChatBot/Unsubscribe",
-                data: { messengerUserName: userName },
                 dataType: "json",
                 success: self.onUnSubscribeSuccess,
                 complete: self.onComplete

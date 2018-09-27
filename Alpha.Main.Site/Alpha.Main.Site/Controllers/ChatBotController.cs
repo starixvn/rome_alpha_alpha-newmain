@@ -52,7 +52,7 @@
             var result = await mediator.SendAsync(command);
             if (result.IsOk)
             {
-                var viewModel = new VerifyAccountViewModel(command.MessengerAccount);
+                var viewModel = new VerifyAccountViewModel();
                 return PartialView("VerifyAccount", viewModel);
             }
 

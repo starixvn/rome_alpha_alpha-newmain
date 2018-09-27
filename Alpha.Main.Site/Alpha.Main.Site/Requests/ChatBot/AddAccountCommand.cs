@@ -27,6 +27,6 @@
 
         public string Language => userSession.Language;
 
-        public string MessengerAccount { get; set; }
+        public string LetstalkId { get; set; }
     }
 }

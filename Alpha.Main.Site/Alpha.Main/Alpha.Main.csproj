@@ -134,7 +134,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
-      <HintPath>..\packages\log4net.1.2.9.0\lib\net11\log4net.dll</HintPath>
+      <HintPath>..\packages\log4net.1.2.9.1\lib\net40\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -230,10 +230,9 @@
       <DependentUpon>Security.resx</DependentUpon>
     </Compile>
     <Compile Include="Configurations\AppSettings.cs" />
-    <Compile Include="Constants\ChatBotFunctionTypeConstants.cs" />
+    <Compile Include="Constants\ChatBotFunctionType.cs" />
     <Compile Include="Constants\Language.cs" />
     <Compile Include="Constants\MessageType.cs" />
-    <Compile Include="Constants\MessengerTypeConstants.cs" />
     <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommand.cs" />

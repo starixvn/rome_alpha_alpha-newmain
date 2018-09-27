@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using Chatbot.Client.Models;
     using Chatbot.Client.Services;
@@ -20,6 +21,7 @@
         IAsyncRequestHandler<UpdateLanguageCommand, Result>
     {
         private const string ChatbotUserIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.UserId";
+        private const string LetstalkIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.LetstalkId";
         private const string LastResendTimeKey = "Alpha.Main.Site.Handlers.ChatBotHandler.LastResendTimeKey";
         private readonly SettingService settingService;
         private readonly SessionManager sessionManager;
@@ -39,6 +41,15 @@
             if (user != null)
             {
                 sessionManager.Add(ChatbotUserIdSessionKey, user.Id);
+
+                var letstalkAccount = user.MessengerAccounts.FirstOrDefault(
+                    account => account.Type == MessengerType.Letstalk
+                            && (account.Enabled || account.IsVerifying));
+
+                if (letstalkAccount != null)
+                {
+                    sessionManager.Add(LetstalkIdSessionKey, letstalkAccount.Username);
+                }
             }
 
             return new ChatBotViewModel(user);
@@ -51,9 +62,13 @@
                  message.CustLevel,
                  message.SubAccountId,
                  message.Language,
-                 message.MessengerAccount);
+                 message.LetstalkId);
 
-            sessionManager.Add(ChatbotUserIdSessionKey, result.UserId);
+            if (result.IsOk)
+            {
+                sessionManager.Add(ChatbotUserIdSessionKey, result.UserId);
+                sessionManager.Add(LetstalkIdSessionKey, message.LetstalkId);
+            }
 
             return result;
         }
@@ -61,15 +76,14 @@
         public async Task<Result> Handle(UnsubscribeCommand message)
             => await settingService.Unsubscribe(
                 sessionManager.Get<int>(ChatbotUserIdSessionKey),
-                message.MessengerType,
-                message.MessengerUserName);
+                MessengerType.Letstalk,
+                sessionManager.Get<string>(LetstalkIdSessionKey));
 
         public async Task<VerificationCodeResult> Handle(VerifyVerificationCodeCommand message)
             => await settingService.VerifyVerificationCode(
                 sessionManager.Get<int>(ChatbotUserIdSessionKey),
                 message.VerificationCode,
-                message.MessengerAccount,
-                message.MessengerType);
+                sessionManager.Get<string>(LetstalkIdSessionKey));
 
         public async Task<Result> Handle(ResendVerificationCodeCommand message)
         {
@@ -80,7 +94,7 @@
             {
                 result = await settingService.GenerateVerificationCode(
                     sessionManager.Get<int>(ChatbotUserIdSessionKey),
-                    message.MessengerUsername);
+                    sessionManager.Get<string>(LetstalkIdSessionKey));
 
                 sessionManager.Add(LastResendTimeKey, DateTime.Now);
             }
