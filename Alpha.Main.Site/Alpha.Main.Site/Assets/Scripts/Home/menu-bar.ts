@@ -223,7 +223,7 @@
             accountInfoUrl = accInfoContent.attr('src');
 
         if (!accountInfoUrl) {
-            accInfoContent.attr('src', menuBar.urls.accountInfo);
+            accInfoContent.attr('src', menuBar.urls.accountInfo +'?mobileView=' + alpha.isMobile);
         }
 
         if (userName !== '' || typeof userName === 'undefined') {

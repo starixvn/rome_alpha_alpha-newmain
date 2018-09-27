@@ -552,10 +552,10 @@
     </Content>
     <Content Include="Assets\styles\error\images\error-bg.png" />
     <Content Include="Assets\styles\home\images\chatbot-intro.svg" />
-     <Content Include="Assets\styles\home\popup-announcement.css">
+    <Content Include="Assets\styles\home\popup-announcement.css">
       <DependentUpon>popup-announcement.scss</DependentUpon>
     </Content>
-     <Content Include="Assets\styles\home\home-mobile-calculate-07.css">
+    <Content Include="Assets\styles\home\home-mobile-calculate-07.css">
       <DependentUpon>home-mobile-calculate-07.scss</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\popup-announcement.min.css">
@@ -1133,7 +1133,6 @@
     <Content Include="Assets\styles\error\error.scss" />
     <Content Include="Assets\styles\home\popup-announcement.scss" />
     <Content Include="Assets\styles\home\home-mobile-calculate-07.scss" />
-    <Content Include="Assets\styles\home\home-calculate-07.scss" /> 
     <Content Include="Assets\styles\home\page-mobile-calculate-07.scss" />
     <Content Include="Assets\styles\chatbot\chatbot.scss" />
     <Content Include="Assets\styles\chatbot\register-account.scss" />
