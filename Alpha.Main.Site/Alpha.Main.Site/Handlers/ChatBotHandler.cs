@@ -23,6 +23,8 @@
         private const string ChatbotUserIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.UserId";
         private const string LetstalkIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.LetstalkId";
         private const string LastResendTimeKey = "Alpha.Main.Site.Handlers.ChatBotHandler.LastResendTimeKey";
+        private const string LetstalkAccountEnabledStatusKey = "Alpha.Main.Site.Handlers.ChatBotHandler.Status.Enabled";
+        private const string LetstalkAccountIsVerifyingStatusKey = "Alpha.Main.Site.Handlers.ChatBotHandler.Status.IsVerifying";
         private readonly SettingService settingService;
         private readonly SessionManager sessionManager;
 
@@ -38,18 +40,28 @@
         {
             var user = await settingService.GetUser(message.CustId, message.SubAccountId, message.Language);
 
-            if (user != null)
+            if (user == null)
             {
-                sessionManager.Add(ChatbotUserIdSessionKey, user.Id);
+                return new ChatBotViewModel(user);
+            }
 
-                var letstalkAccount = user.MessengerAccounts.FirstOrDefault(
-                    account => account.Type == MessengerType.Letstalk
-                            && (account.Enabled || account.IsVerifying));
+            sessionManager.Add(ChatbotUserIdSessionKey, user.Id);
 
-                if (letstalkAccount != null)
-                {
-                    sessionManager.Add(LetstalkIdSessionKey, letstalkAccount.Username);
-                }
+            var letstalkAccount = user.MessengerAccounts.FirstOrDefault(
+                account => account.Type == MessengerType.Letstalk
+                        && (account.Enabled || account.IsVerifying));
+
+            if (letstalkAccount != null)
+            {
+                sessionManager.Add(LetstalkIdSessionKey, letstalkAccount.Username);
+                sessionManager.Add(LetstalkAccountEnabledStatusKey, letstalkAccount.Enabled);
+                sessionManager.Add(LetstalkAccountIsVerifyingStatusKey, letstalkAccount.IsVerifying);
+            }
+            else
+            {
+                sessionManager.Remove(LetstalkIdSessionKey);
+                sessionManager.Remove(LetstalkAccountEnabledStatusKey);
+                sessionManager.Remove(LetstalkAccountIsVerifyingStatusKey);
             }
 
             return new ChatBotViewModel(user);
@@ -57,6 +69,15 @@
 
         public async Task<AddingUserResult> Handle(AddAccountCommand message)
         {
+            var isNotAllowLinkAccount =
+                sessionManager.Get<bool>(LetstalkAccountIsVerifyingStatusKey)
+                || sessionManager.Get<bool>(LetstalkAccountEnabledStatusKey);
+
+            if (isNotAllowLinkAccount)
+            {
+                return new AddingUserResult { Code = 1 };
+            }
+
             var result = await settingService.AddUser(
                  message.CustId,
                  message.CustLevel,
@@ -68,6 +89,8 @@
             {
                 sessionManager.Add(ChatbotUserIdSessionKey, result.UserId);
                 sessionManager.Add(LetstalkIdSessionKey, message.LetstalkId);
+                sessionManager.Add(LetstalkAccountIsVerifyingStatusKey, true);
+                sessionManager.Add(LetstalkAccountEnabledStatusKey, false);
             }
 
             return result;
@@ -80,26 +103,38 @@
                 sessionManager.Get<string>(LetstalkIdSessionKey));
 
         public async Task<VerificationCodeResult> Handle(VerifyVerificationCodeCommand message)
-            => await settingService.VerifyVerificationCode(
-                sessionManager.Get<int>(ChatbotUserIdSessionKey),
-                message.VerificationCode,
-                sessionManager.Get<string>(LetstalkIdSessionKey));
+        {
+            if (sessionManager.Get<bool>(LetstalkAccountIsVerifyingStatusKey))
+            {
+                return await settingService.VerifyVerificationCode(
+                    sessionManager.Get<int>(ChatbotUserIdSessionKey),
+                    message.VerificationCode,
+                    sessionManager.Get<string>(LetstalkIdSessionKey));
+            }
+
+            return new VerificationCodeResult { Code = 1 };
+        }
 
         public async Task<Result> Handle(ResendVerificationCodeCommand message)
         {
-            var result = new Result();
-            var lastResendTime = sessionManager.Get<DateTime>(LastResendTimeKey);
-
-            if (lastResendTime.AddSeconds(message.IntervalThresholdToSendRequestInSeconds) < DateTime.Now)
+            if (sessionManager.Get<bool>(LetstalkAccountIsVerifyingStatusKey))
             {
-                result = await settingService.GenerateVerificationCode(
-                    sessionManager.Get<int>(ChatbotUserIdSessionKey),
-                    sessionManager.Get<string>(LetstalkIdSessionKey));
+                var result = new Result();
+                var lastResendTime = sessionManager.Get<DateTime>(LastResendTimeKey);
 
-                sessionManager.Add(LastResendTimeKey, DateTime.Now);
+                if (lastResendTime.AddSeconds(message.IntervalThresholdToSendRequestInSeconds) < DateTime.Now)
+                {
+                    result = await settingService.GenerateVerificationCode(
+                        sessionManager.Get<int>(ChatbotUserIdSessionKey),
+                        sessionManager.Get<string>(LetstalkIdSessionKey));
+
+                    sessionManager.Add(LastResendTimeKey, DateTime.Now);
+                }
+
+                return result;
             }
 
-            return result;
+            return new Result { Code = 1 };
         }
 
         public async Task<Result> Handle(UpdateFunctionCommand message)
