@@ -2,7 +2,6 @@
 {
     using System.Linq;
     using Chatbot.Client.Models;
-    using Constants;
 
     public class ChatBotViewModel
     {
@@ -14,6 +13,6 @@
         public User User { get; }
 
         public bool IsAlreadySetup
-            => User != null && User.MessengerAccounts.Any(m => m.Type == MessengerTypeConstants.Letstalk && m.Enabled);
+            => User != null && User.MessengerAccounts.Any(m => m.Type == MessengerType.Letstalk && m.Enabled);
     }
 }

@@ -121,7 +121,7 @@
             // Arrange
             userSession.IsInternal.Returns(false);
             var command = new AddAccountCommand(userSession);
-            command.MessengerAccount = "MessengerAccount";
+            command.LetstalkId = "MessengerAccount";
 
             // Act
             chatbotController.AddAccount(command).ConfigureAwait(false);
@@ -132,7 +132,7 @@
                     c => c.CustId == command.CustId
                         && c.SubAccountId == command.SubAccountId
                         && c.Language == command.Language
-                        && c.MessengerAccount == command.MessengerAccount));
+                        && c.LetstalkId == command.LetstalkId));
         }
 
         [Test]
@@ -141,7 +141,7 @@
             // Arrange
             userSession.IsInternal.Returns(false);
             var command = new AddAccountCommand(userSession);
-            command.MessengerAccount = "MessengerAccount";
+            command.LetstalkId = "MessengerAccount";
 
             // Act
             chatbotController.AddAccount(command).ConfigureAwait(false);
@@ -152,7 +152,7 @@
                     c => c.CustId == command.CustId
                         && c.SubAccountId == command.SubAccountId
                         && c.Language == command.Language
-                        && c.MessengerAccount == command.MessengerAccount));
+                        && c.LetstalkId == command.LetstalkId));
         }
 
         [Test]
@@ -165,10 +165,7 @@
             chatbotController.Unsubscribe(command).ConfigureAwait(false);
 
             // Assert
-            mediator.Received().SendAsync(
-                Arg.Is<UnsubscribeCommand>(
-                    c => c.MessengerType == command.MessengerType
-                        && c.MessengerUserName == command.MessengerUserName));
+            mediator.Received().SendAsync(Arg.Is<UnsubscribeCommand>(c => c == command));
         }
 
         [Test]
@@ -183,7 +180,7 @@
             // Assert
             mediator.Received().SendAsync(
                 Arg.Is<ResendVerificationCodeCommand>(
-                    c => c.MessengerUsername == command.MessengerUsername));
+                    c => c.IntervalThresholdToSendRequestInSeconds == command.IntervalThresholdToSendRequestInSeconds));
         }
 
         [TestCase("en-us")]

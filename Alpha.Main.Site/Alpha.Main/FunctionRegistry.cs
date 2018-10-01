@@ -87,7 +87,8 @@ namespace Alpha.Main
             ["PokerGamesMenuItem"] = () => new MenuStatus(() => !Current.GetHideProduct(ProductIdConstants.PokerGames)),
             ["ChatBotMenuItem"] = () => new MenuStatus(
                 () => !Current.IsSubAcc
-                    && Configurations.AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase))
+                    && (Configurations.AppSettings.OfferChatbotSites.Contains("*")
+                        || Configurations.AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase)))
         };
 
         private static Func<bool> showAccountInfo = () =>

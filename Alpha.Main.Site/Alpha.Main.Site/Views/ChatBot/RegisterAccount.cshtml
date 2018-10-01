@@ -27,7 +27,7 @@
                         <div class="download-content">
                             <div class="logo-letstalk">
                                 <img id="logoLetstalk" src="~/Assets/Styles/chatbot/images/letstalk.png" />
-                                <img class="qr-code hide" id="imgQRCode" src="~/Assets/styles/chatbot/images/qrcode.png" />                             
+                                <img class="qr-code hide" id="imgQRCode" src="~/Assets/styles/chatbot/images/qrcode.png" />
                                 <a href="#" class="link qr-code-link" id="showQRCode">@ChatBot.showQRCode</a>
                                 <a href="#" class="link qr-code-link hide" id="hideQRCode">@ChatBot.hideQRCode</a>
                             </div>
@@ -54,7 +54,7 @@
                         <div id="add-account-message"></div>
                         <form class="add-letstalk">
                             <div class="form-group m-b-0">
-                                <input id="txtAccount" type="text" maxlength="50" class="letstalk-text" value="@Model.Username" @(Model.IsVerifying ? "disabled" : string.Empty) />
+                                <input id="txtAccount" type="text" maxlength="50" class="letstalk-text" value="@Model.LetstalkId" @(Model.IsVerifying ? "disabled" : string.Empty) />
                                 <button id="btnAdd" class="btn-submit @(Model.IsVerifying ? "display-none" : "")">@ChatBot.link</button>
                                 <button id="btnUnsubscribe" class="btn-remove @(Model.IsVerifying ? "" : "display-none")">@ChatBot.unLink</button>
                             </div>

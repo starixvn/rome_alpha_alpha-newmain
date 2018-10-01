@@ -3,27 +3,26 @@
     using System.Linq;
     using AppResources;
     using Chatbot.Client.Models;
-    using Constants;
 
     public class RegisterAccountViewModel
     {
-        private readonly Messenger letstalkMessenger;
+        private readonly Messenger letstalkAccount;
 
         public RegisterAccountViewModel(User user)
         {
-            letstalkMessenger = user?.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerTypeConstants.Letstalk && m.IsVerifying);
+            letstalkAccount = user?.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerType.Letstalk && m.IsVerifying);
         }
 
-        public string Username
-            => !string.IsNullOrWhiteSpace(letstalkMessenger?.Username)
-                ? letstalkMessenger.Username
+        public string LetstalkId
+            => !string.IsNullOrWhiteSpace(letstalkAccount?.Username)
+                ? letstalkAccount.Username
                 : string.Empty;
 
-        public bool IsVerifying => letstalkMessenger != null;
+        public bool IsVerifying => letstalkAccount != null;
 
         public VerifyAccountViewModel VerifyAccountViewModel
             => IsVerifying
-                ? new VerifyAccountViewModel(Username, letstalkMessenger.InputWrongVerificationCodeTimes >= 3)
+                ? new VerifyAccountViewModel(letstalkAccount.InputWrongVerificationCodeTimes >= 3)
                 : null;
 
         public string Title => ChatBot.ChatBotTitle;

@@ -12,6 +12,7 @@
 </head>
 <body>
     @RenderBody()
+    @Html.AntiForgeryToken()
     @Html.Hidden("mainRootPath", MicroSites.MainUrl())
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")

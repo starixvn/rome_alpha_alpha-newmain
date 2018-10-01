@@ -23,7 +23,7 @@
                 <div id="account-message" class="container-msg"></div>
                 <form class="filter">
                     <div class="form-group">
-                        <label>@ChatBot.YourLetstalkAccount: <span class="chatbot-name">@Model.Username</span></label>
+                        <label>@ChatBot.YourLetstalkAccount: <span class="chatbot-name">@Model.LetstalkId</span></label>
                         <button class="btn-remove" id="btnUnsubscribe">@ChatBot.unLink</button>
                     </div>
                     <div class="form-group">
@@ -118,7 +118,6 @@
         </div>
     </div>
 </div>
-@Html.Hidden("UserName", Model.Username)
 @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
 @Html.Hidden("UpdateLanguageFailed", ChatBot.updateLanguageFailed)
 @Html.Hidden("ReportExample", ChatBot.reportExample)

@@ -9,7 +9,6 @@ class VerifyAccount extends BaseChatBot {
     $verificationForm: JQuery;
     $txtVerificationCode: JQuery;
     $verificationMessage: JQuery;
-    $messengerAccount: JQuery;
     $btnVerify: JQuery;
     $btnResend: JQuery;
     $countDown: JQuery;
@@ -65,7 +64,6 @@ class VerifyAccount extends BaseChatBot {
         this.$txtVerificationCode = this.$("#txtVerificationCode");
         this.$verificationMessage = this.$("#verification-code-message");
         this.$captchaContainer = this.$("#captcha-container");
-        this.$messengerAccount = this.$("#MessengerAccount");
         this.$btnVerify = this.$("#btnVerify");
         this.$btnResend = this.$("#btnResend");
         this.$countDown = this.$("#countdown");
@@ -184,11 +182,9 @@ class VerifyAccount extends BaseChatBot {
         e.preventDefault();
 
         this.$.blockUI();
-        var account = this.$messengerAccount.val();
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/ResendVerificationCode",
-            data: { messengerUsername: account },
             dataType: "json",
             success: this.onResendSuccess,
             complete: this.onComplete,
@@ -235,7 +231,6 @@ class VerifyAccount extends BaseChatBot {
 
     reloadCaptcha = () => {
         this.$.blockUI();
-        var account = this.$messengerAccount.val();
         this.$.ajax({
             type: "GET",
             url: alpha.urls.mainRootPath + "ChatBot/Captcha",

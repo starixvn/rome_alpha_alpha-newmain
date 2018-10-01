@@ -14,6 +14,9 @@
     public class ChatBotHandlerTests
     {
         private const string ChatbotUserIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.UserId";
+        private const string LetstalkIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.LetstalkId";
+        private const string LetstalkAccountEnabledStatusKey = "Alpha.Main.Site.Handlers.ChatBotHandler.Status.Enabled";
+        private const string LetstalkAccountIsVerifyingStatusKey = "Alpha.Main.Site.Handlers.ChatBotHandler.Status.IsVerifying";
 
         private IUserSession userSession;
         private SettingService settingService;
@@ -47,7 +50,7 @@
         }
 
         [Test]
-        public void HandleAddAccountCommand_Always_CallsSettingServiceAddUser()
+        public void HandleAddAccountCommand_IsAllowLinkAccount_CallsSettingServiceAddUser()
         {
             // Arrange
             var message = new AddAccountCommand(userSession);
@@ -61,7 +64,37 @@
                 Arg.Is(message.CustLevel),
                 Arg.Is(message.SubAccountId),
                 Arg.Is(message.Language),
-                Arg.Is(message.MessengerAccount));
+                Arg.Is(message.LetstalkId));
+        }
+
+        [Test]
+        public void HandleAddAccountCommand_AccountStatusIsVerifying_ReturnsErrorResult()
+        {
+            // Arrange
+            var message = new AddAccountCommand(userSession);
+            sessionManager.Get<bool>(LetstalkAccountIsVerifyingStatusKey).Returns(true);
+            var expectedResult = new AddingUserResult { Code = 1 };
+
+            // Act
+            var actualResult = chatbotHandler.Handle(message).GetAwaiter().GetResult();
+
+            // Assert
+            Assert.AreEqual(expectedResult.Code, actualResult.Code);
+        }
+
+        [Test]
+        public void HandleAddAccountCommand_AccountStatusIsEnabled_ReturnsErrorResult()
+        {
+            // Arrange
+            var message = new AddAccountCommand(userSession);
+            sessionManager.Get<bool>(LetstalkAccountEnabledStatusKey).Returns(true);
+            var expectedResult = new AddingUserResult { Code = 1 };
+
+            // Act
+            var actualResult = chatbotHandler.Handle(message).GetAwaiter().GetResult();
+
+            // Assert
+            Assert.AreEqual(expectedResult.Code, actualResult.Code);
         }
 
         [Test]
@@ -69,8 +102,11 @@
         {
             // Arrange
             var userId = 1;
-            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
+            var letstalkId = "LetstalkId";
             var message = new UnsubscribeCommand();
+
+            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
+            sessionManager.Get<string>(LetstalkIdSessionKey).Returns(letstalkId);
 
             // Act
             chatbotHandler.Handle(message).ConfigureAwait(false);
@@ -78,17 +114,21 @@
             // Assert
             settingService.Received().Unsubscribe(
                 Arg.Is(userId),
-                Arg.Is(message.MessengerType),
-                Arg.Is(message.MessengerUserName));
+                Arg.Is(MessengerType.Letstalk),
+                Arg.Is(letstalkId));
         }
 
         [Test]
-        public void HandleVerifyVerificationCodeCommand_Always_CallsSettingServiceVerifyVerificationCode()
+        public void HandleVerifyVerificationCodeCommand_AccountStatusIsVerifying_CallsSettingServiceVerifyVerificationCode()
         {
             // Arrange
             var userId = 1;
-            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
+            var letstalkId = "LetstalkId";
             var message = new VerifyVerificationCodeCommand();
+
+            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
+            sessionManager.Get<string>(LetstalkIdSessionKey).Returns(letstalkId);
+            sessionManager.Get<bool>(LetstalkAccountIsVerifyingStatusKey).Returns(true);
 
             // Act
             chatbotHandler.Handle(message).ConfigureAwait(false);
@@ -97,17 +137,20 @@
             settingService.Received().VerifyVerificationCode(
                 Arg.Is(userId),
                 Arg.Is(message.VerificationCode),
-                Arg.Is(message.MessengerAccount),
-                Arg.Is(message.MessengerType));
+                Arg.Is(letstalkId));
         }
 
         [Test]
-        public void HandleResendVerificationCodeCommand_Always_CallsSettingServiceGenerateVerificationCode()
+        public void HandleResendVerificationCodeCommand_AccountStatusIsVerifying_CallsSettingServiceGenerateVerificationCode()
         {
             // Arrange
             var userId = 1;
-            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
+            var letstalkId = "LetstalkId";
             var message = new ResendVerificationCodeCommand();
+
+            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
+            sessionManager.Get<string>(LetstalkIdSessionKey).Returns(letstalkId);
+            sessionManager.Get<bool>(LetstalkAccountIsVerifyingStatusKey).Returns(true);
 
             // Act
             chatbotHandler.Handle(message).ConfigureAwait(false);
@@ -115,7 +158,7 @@
             // Assert
             settingService.Received().GenerateVerificationCode(
                 Arg.Is(userId),
-                Arg.Is(message.MessengerUsername));
+                Arg.Is(letstalkId));
         }
 
         [Test]

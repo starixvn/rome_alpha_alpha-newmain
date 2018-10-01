@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Constants
 {
-    public static class ChatBotFunctionTypeConstants
+    public static class ChatBotFunctionType
     {
         public const int Report = 1;
 

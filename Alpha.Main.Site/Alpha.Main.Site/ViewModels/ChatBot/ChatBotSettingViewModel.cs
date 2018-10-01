@@ -14,16 +14,16 @@
         public ChatBotSettingViewModel(User user)
         {
             this.user = user;
-            lestalkAccount = user.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerTypeConstants.Letstalk && m.Enabled);
+            lestalkAccount = user.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerType.Letstalk && m.Enabled);
         }
 
         public string Language => user.Language;
 
-        public string Username => lestalkAccount.Username;
+        public string LetstalkId => lestalkAccount.Username;
 
-        public IEnumerable<Function> ReportFunctions => user.Functions?.Where(f => f.Type == ChatBotFunctionTypeConstants.Report);
+        public IEnumerable<Function> ReportFunctions => user.Functions?.Where(f => f.Type == ChatBotFunctionType.Report);
 
-        public IEnumerable<Function> NotificationFunctions => user.Functions?.Where(f => f.Type == ChatBotFunctionTypeConstants.Notification);
+        public IEnumerable<Function> NotificationFunctions => user.Functions?.Where(f => f.Type == ChatBotFunctionType.Notification);
 
         public string Title => ChatBot.ChatBotTitle;
     }

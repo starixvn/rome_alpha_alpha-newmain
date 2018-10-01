@@ -14,6 +14,7 @@
     using Sunplus.Agent.Model.Entities;
     using ViewModels.ChatBot;
     using Web;
+    using Web.Filters;
 
     public class ChatBotController : BaseController
     {
@@ -40,7 +41,7 @@
             return View("RegisterAccount", new RegisterAccountViewModel(model.User));
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         [ChatbotLoggingFilter("Link Account")]
         public async Task<ActionResult> AddAccount(AddAccountCommand command)
         {
@@ -52,14 +53,14 @@
             var result = await mediator.SendAsync(command);
             if (result.IsOk)
             {
-                var viewModel = new VerifyAccountViewModel(command.MessengerAccount);
+                var viewModel = new VerifyAccountViewModel();
                 return PartialView("VerifyAccount", viewModel);
             }
 
             return Json(result);
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         [ChatbotLoggingFilter("Unlink Account")]
         public async Task<ActionResult> Unsubscribe(UnsubscribeCommand command)
         {
@@ -71,7 +72,7 @@
             return Json(await mediator.SendAsync(command));
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         [ChatbotLoggingFilter("Verify Verification Code")]
         public async Task<ActionResult> VerifyVerificationCode(VerifyVerificationCodeCommand command)
         {
@@ -95,7 +96,7 @@
             return Json(result);
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         [ChatbotLoggingFilter("Resend Verification Code")]
         public async Task<ActionResult> ResendVerificationCode(ResendVerificationCodeCommand command)
         {
@@ -115,7 +116,7 @@
             return PartialView(viewModel);
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         [ChatbotLoggingFilter("Update Function")]
         public async Task<ActionResult> UpdateFunction(UpdateFunctionCommand command)
         {
@@ -127,7 +128,7 @@
             return Json(await mediator.SendAsync(command));
         }
 
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         [ChatbotLoggingFilter("Change Chatbot's Language")]
         public async Task<ActionResult> ChangeLanguage(UpdateLanguageCommand command)
         {
