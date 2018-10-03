@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
@@ -157,7 +158,9 @@
             base.OnAuthorization(filterContext);
 
             if (userSession != null
-                && (userSession.IsSubAcc || !AppSettings.OfferChatbotSites.Contains(userSession.Site)))
+                && (userSession.IsSubAcc
+                    || !(AppSettings.OfferChatbotSites.Contains(userSession.Site, StringComparer.OrdinalIgnoreCase)
+                        || AppSettings.OfferChatbotSites.Contains("*"))))
             {
                 UnAuthentication(filterContext);
             }
