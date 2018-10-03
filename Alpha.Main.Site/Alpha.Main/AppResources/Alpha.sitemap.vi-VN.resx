@@ -295,13 +295,13 @@
     <value>Đăng nhập</value>
   </data>
   <data name="normal" xml:space="preserve">
-    <value>Thông dụng</value>
+    <value>Chung</value>
   </data>
   <data name="personalMessage" xml:space="preserve">
     <value>Tin nhắn cá nhân</value>
   </data>
   <data name="special" xml:space="preserve">
-    <value>Special</value>
+    <value>Đặc biệt</value>
   </data>
   <data name="status" xml:space="preserve">
     <value>Trạng thái</value>
@@ -364,6 +364,6 @@
     <value>Thắng thua của Poker</value>
   </data>
   <data name="systemUpdate" xml:space="preserve">
-    <value>Cập nhật</value>
+    <value>Hệ thống</value>
   </data>
 </root>
