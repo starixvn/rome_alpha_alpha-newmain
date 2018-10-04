@@ -188,6 +188,12 @@
     ]
   },
   {
+    "outputFileName": "Assets/bundles/home-mobile-calculate-07.css",
+    "inputFiles": [
+      "Assets/styles/home/home-mobile-calculate-07.css"
+    ]
+  },
+  {
     "outputFileName": "Assets/bundles/chatbot/chatbot.css",
     "inputFiles": [
       "Assets/styles/chatbot/chatbot.css"

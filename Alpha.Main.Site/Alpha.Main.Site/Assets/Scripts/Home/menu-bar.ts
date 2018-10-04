@@ -219,15 +219,16 @@
         menuBar.domElements.mainMenuTab.hide();
         menuBar.domElements.accountInfoTab.show();
 
+        var mobileView = alpha.isMobile && alpha.isScreenLower768;
         var accInfoContent = menuBar.domElements.accountInfoContent,
             accountInfoUrl = accInfoContent.attr('src');
 
         if (!accountInfoUrl) {
-            accInfoContent.attr('src', menuBar.urls.accountInfo +'?mobileView=' + alpha.isMobile);
+            accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isMobile);
         }
 
         if (userName !== '' || typeof userName === 'undefined') {
-            accInfoContent.attr('src', menuBar.urls.accountInfo + '?txtUsername=' + userName);
+            accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isMobile + '&SearchAccountName=' + userName);
         }
 
         // To work on IE, use plain-old javascript onload event
