@@ -8,8 +8,6 @@ html {
 
 body {
     background-color: transparent;
-    font-size: $font-size;
-    font-family: $font-family;
 }
 
 label {
@@ -45,6 +43,7 @@ label {
         padding-top: 0;
         padding-bottom: 0;
         width: 100%;
+        border: 1px solid $border-color;
     }
 }
 
@@ -149,7 +148,7 @@ label {
             list-style-type: decimal;
         }
         
-        .download-content, .qr-code, .manualQRCode, .block, .note, #setup-otp-message {
+        .download-content, .manualQRCode, .block, .note, #setup-otp-message {
             margin-left: -12px;
         }
 
@@ -165,6 +164,7 @@ label {
             .list-download {
                 float: right;
                 margin-left: 16px;
+                padding-top: 4px;
 
                 h2 {
                     font-size: 20px;
@@ -180,14 +180,18 @@ label {
             }
         }
 
-         .note {
+         .additional-information {
              padding-bottom: 16px;
-         }
+             margin-left: -12px;
 
-        // QR code
-        .qr-code {
-            padding: 12px 0;
-        }
+             p {
+                 margin-bottom: 5px;
+             }
+         }
+         
+         .qr-code {
+             margin-left: -27px;
+         }
 
         .block, .username-customize {
              .txt {

@@ -12,8 +12,6 @@ body, html {
 
 body {
     margin: 0;
-    font-family: $font-family;
-    font-size: $font-size;
     overflow: hidden;
 }
 
@@ -93,6 +91,10 @@ html * {
         font-weight: 600;
         padding: 0;
 
+        &#menu-CHATBOT .txt-item {
+            color: #0776c1
+        }
+
         .icon {
             margin-right: 14px;
             width: 16px;
@@ -110,6 +112,66 @@ html * {
                 top: 3px;
                 margin-right: 13px;
             }
+
+            &.icon-announcements {
+                top: 4px;
+                margin-right: 10px;
+                line-height: 0;
+                font-size: 20px;                
+            }
+
+            &.icon-chatbot {
+                background: url(Images/chatbot-intro.svg) no-repeat;
+                height: 18px;
+                width: 18px;
+                float: left;
+                top: -2px;
+                animation: bounce 1s infinite;
+                
+
+                &:before, &:after {
+                    content: '';
+                    position: absolute;
+                    border-radius: 50%;
+                    z-index: 1;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: transparent;
+                }
+
+                &:after {
+                    @include animation(cd-pulse 2s infinite);
+                }
+
+                &:before {
+                    @include animation(cd-pulse 2s infinite 4s);
+                }
+            }
+
+            @include keyframes(bounce) {
+                50% {
+                    @include transform(translateY(-5px));
+                }
+            }
+
+            @include keyframes(cd-pulse) {
+               0% {
+                    @include transform(scale(1));
+                    @include box-shadow-multiple(inset 0 0 1px 4px rgba(154, 223, 254, 0.8));
+               }
+
+              50% {
+                    @include box-shadow-multiple(inset 0 0 1px 4px rgba(154, 223, 254, 0.8));
+              }
+
+              100% {
+                    @include transform(scale(3));
+                    @include box-shadow-multiple(inset 0 0 1px 4px rgba(154, 223, 254, 0));
+              }
+            }
+
         }
 
         > a {
@@ -403,6 +465,17 @@ html * {
                     font-size: 21px;
                     margin-right: 17px;
                 }
+
+                &.icon-announcements {
+                    font-size: 24px;
+                }
+
+                &.icon-chatbot {
+                    height: 20px;
+                    width: 20px;
+                    margin-right: 20px;
+                }
+                
             }
 
             > a {

@@ -74,24 +74,32 @@
       <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CasinoLibrary, Version=1.0.2.14, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CasinoLibrary.1.0.2.17\lib\net40\CasinoLibrary.dll</HintPath>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CasinoLibrary, Version=2.0.2.28015, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoLibrary.2.0.2.28015\lib\net40\CasinoLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CasinoSetting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CasinoLibrary.1.0.2.17\lib\net40\CasinoSetting.dll</HintPath>
+      <HintPath>..\packages\CasinoLibrary.2.0.2.28015\lib\net40\CasinoSetting.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CasinoUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CasinoLibrary.1.0.2.17\lib\net40\CasinoUtility.dll</HintPath>
+    <Reference Include="CasinoUtility, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CasinoUtility.2.3.1\lib\net40\CasinoUtility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Chatbot.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Chatbot.Client.1.0.0-beta8-82\lib\net461\Chatbot.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Age.UI, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Age.UI.3.0.3.0\lib\net461\Fanex.Age.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Fanex.CustomerSetting.Module.Casino, Version=2.0.0.13, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.CustomerSetting.Module.Casino.Alpha.2.0.0.13\lib\net40\Fanex.CustomerSetting.Module.Casino.dll</HintPath>
+    <Reference Include="Fanex.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Caching.2.0.0\lib\net461\Fanex.Caching.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Data, Version=2.1.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -139,23 +147,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="HandHistoryLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CasinoLibrary.1.0.2.17\lib\net40\HandHistoryLibrary.dll</HintPath>
+      <HintPath>..\packages\CasinoLibrary.2.0.2.28015\lib\net40\HandHistoryLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ILogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ILogger.1.0.0.0\lib\net40\ILogger.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MessagePack, Version=1.7.3.4, Culture=neutral, PublicKeyToken=b4a0369545f0a1be, processorArchitecture=MSIL">
       <HintPath>..\packages\MessagePack.1.7.3.4\lib\net45\MessagePack.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NetUtility, Version=1.0.4199.22106, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NetUtility.1.0.4199.22106\lib\net40\NetUtility.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
-      <HintPath>..\packages\log4net.1.2.9.1\lib\net40\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -219,6 +223,10 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MvcPager, Version=1.5.0.28157, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvcPager.1.5.0.28157\lib\net40\MvcPager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NetUtility, Version=4.5.6325.30210, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetUtility.4.5.6325.30210\lib\net40\NetUtility.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -425,7 +433,9 @@
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBMSG.bodb_Message.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -444,7 +454,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\PRO\DBACC.bodb02.BODBDownlineNet.xml" />
-    <Content Include="App_Data\SPNames\PRO\DB053_DB054.bodb02.xml" />
+    <Content Include="App_Data\SPNames\PRO\DB053_DB054.bodb02.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\PRO\DBCUST.CustDB.xml" />
@@ -455,7 +467,9 @@
     </Content>
     <Content Include="App_Data\SPNames\SIT\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb02.xml" />
-    <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\SIT\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\SIT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\SIT\DBMSG.bodb_Message.xml" />
@@ -473,11 +487,60 @@
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\bundles\chatbot\chatbot-guide.js" />
+    <Content Include="Assets\bundles\chatbot\chatbot-guide.min.js">
+      <DependentUpon>chatbot-guide.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\chatbot\chatbot-setting.css" />
+    <Content Include="Assets\bundles\chatbot\chatbot-setting.js" />
+    <Content Include="Assets\bundles\chatbot\chatbot-setting.min.css">
+      <DependentUpon>chatbot-setting.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\chatbot\chatbot-setting.min.js">
+      <DependentUpon>chatbot-setting.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\chatbot\chatbot.css" />
+    <Content Include="Assets\bundles\chatbot\chatbot.min.css">
+      <DependentUpon>chatbot.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\chatbot\register-account.css" />
+    <Content Include="Assets\bundles\chatbot\register-account.js" />
+    <Content Include="Assets\bundles\chatbot\register-account.min.css">
+      <DependentUpon>register-account.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\chatbot\register-account.min.js">
+      <DependentUpon>register-account.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\error.css" />
     <Content Include="Assets\bundles\error.min.css">
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
+    <Content Include="Assets\styles\chatbot\chatbot-setting.css">
+      <DependentUpon>chatbot-setting.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\chatbot-setting.min.css">
+      <DependentUpon>chatbot-setting.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\chatbot.css">
+      <DependentUpon>chatbot.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\chatbot.min.css">
+      <DependentUpon>chatbot.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\images\apple.png" />
+    <Content Include="Assets\styles\chatbot\images\captcha.png" />
+    <Content Include="Assets\styles\chatbot\images\google.png" />
+    <Content Include="Assets\styles\chatbot\images\letstalk.png" />
+    <Content Include="Assets\styles\chatbot\images\chatbot-avatar.png" />
+    <Content Include="Assets\styles\chatbot\images\qrcode.png" />
+    <Content Include="Assets\styles\chatbot\images\toogle.png" />
+    <Content Include="Assets\styles\chatbot\register-account.css">
+      <DependentUpon>register-account.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\register-account.min.css">
+      <DependentUpon>register-account.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\error\error.css">
       <DependentUpon>error.scss</DependentUpon>
     </Content>
@@ -485,6 +548,7 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\error\images\error-bg.png" />
+    <Content Include="Assets\styles\home\images\chatbot-intro.svg" />
     <Content Include="Assets\styles\home\popup-announcement.css">
       <DependentUpon>popup-announcement.scss</DependentUpon>
     </Content>
@@ -797,6 +861,20 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Default\AnnouncementPopup.cshtml" />
     <Content Include="Views\NetworkSpeed\Index.cshtml" />
+    <Content Include="Views\ChatBot\ChatBotSetting.cshtml" />
+    <Content Include="Views\ChatBot\RegisterAccount.cshtml" />
+    <Content Include="Views\ChatBot\VerifyAccount.cshtml" />
+    <Content Include="Views\ChatBot\Language.cshtml" />
+    <Content Include="Views\ChatBot\CaptchaTemplate.cshtml" />
+    <Content Include="Views\ChatBot\Shared\_Layout.cshtml" />
+    <Content Include="Views\ChatBot\Captcha.cshtml" />
+    <Content Include="Views\ChatBot\ReportExample.cshtml" />
+    <Content Include="Views\ChatBot\NotificationExample.cshtml" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-guide.ts" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-setting.ts" />
+    <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\header-msg-mobile.ts" />
@@ -1035,6 +1113,9 @@
     <Content Include="Assets\styles\otp\otp.scss" />
     <Content Include="Assets\styles\error\error.scss" />
     <Content Include="Assets\styles\home\popup-announcement.scss" />
+    <Content Include="Assets\styles\chatbot\chatbot.scss" />
+    <Content Include="Assets\styles\chatbot\register-account.scss" />
+    <Content Include="Assets\styles\chatbot\chatbot-setting.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1136,6 +1217,7 @@
     <Compile Include="App_Start\RouteConfig.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Controllers\ChatBotController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -1147,7 +1229,9 @@
     <Compile Include="Controllers\OtpController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
+    <Compile Include="Filters\ChatbotLoggingFilterAttribute.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Handlers\ChatBotHandler.cs" />
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
@@ -1164,10 +1248,19 @@
     <Compile Include="Helpers\BrowserHelperImpl.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Helpers\HmacAuthenticator.cs" />
+    <Compile Include="Helpers\RestClientHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Requests\AllLanguagesQuery.cs" />
     <Compile Include="Requests\BrowserQuery.cs" />
     <Compile Include="Requests\ChangeLanguageCommand.cs" />
+    <Compile Include="Requests\ChatBot\AddAccountCommand.cs" />
+    <Compile Include="Requests\ChatBot\ResendVerificationCodeCommand.cs" />
+    <Compile Include="Requests\ChatBot\SetUpChatBotQuery.cs" />
+    <Compile Include="Requests\ChatBot\UnsubscribeCommand.cs" />
+    <Compile Include="Requests\ChatBot\UpdateFunctionCommand.cs" />
+    <Compile Include="Requests\ChatBot\UpdateLanguageCommand.cs" />
+    <Compile Include="Requests\ChatBot\VerifyVerificationCodeCommand.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfo\BalanceInfoQuery.cs" />
     <Compile Include="Requests\Dashboard\MemberRequests\MemberRequestQuery.cs" />
@@ -1203,6 +1296,10 @@
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
+    <Compile Include="ViewModels\ChatBot\ChatBotSettingViewModel.cs" />
+    <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs" />
+    <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs" />
+    <Compile Include="ViewModels\ChatBot\VerifyAccountViewModel.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
@@ -1255,9 +1352,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.3.0.2862\analyzers\Google.Protobuf.dll" />
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.3.0.2862\analyzers\SonarAnalyzer.CSharp.dll" />
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.3.0.2862\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

@@ -20,7 +20,10 @@
                 {
                 <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)" id="menu-@(menuItem.ResourceKey.ToUpper())">
                     <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)">
-                        <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@Html.Raw(menuItem.DisplayName)</span>
+                        <span class="txt-item pull-left txt-@menuItem.ResourceKey.ToLower()">
+                            <span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>
+                            @Html.Raw(menuItem.DisplayName)
+                        </span>
                         <span class="pull-right icon-arrow-right"></span>
                     </a>
                     <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">

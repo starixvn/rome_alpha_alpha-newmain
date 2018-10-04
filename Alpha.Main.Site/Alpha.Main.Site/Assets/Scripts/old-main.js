@@ -261,7 +261,7 @@ var AgeWnd = function () {
         },
         openPopUpAfterSetIframeSrc: function (popUp, isAutoHeight, currentAgeWnd) {
             popUp.on('shown.bs.modal', function () {
-                // transform property make objectFlash not show (MacauGames Result) 
+                // transform property make objectFlash not show (MacauGames Result)
                 popUp.find('.modal-dialog').css({
                     transform: 'none'
                 });
@@ -430,7 +430,6 @@ function ShowSecCodePopup(preUrl, callerAge) {
             if (callerAge) {
                 callerAge.UnLock();
             }
-
         } catch (e) {
         }
 
@@ -446,7 +445,6 @@ function ShowSecCodePopup(preUrl, callerAge) {
 
 //Javascript code snippet to create a div dynamically in Javascript.
 function CreateDiv(id, html, className, left, top, position) {
-
     var newdiv = document.createElement('div');
     newdiv.setAttribute('id', id);
 
@@ -619,7 +617,6 @@ var oldMainUltilities = {
     },
     getScrollLeft: function (element) {
         return element.pageXOffset || element.scrollX || element.scrollLeft || 0;
-
     },
     getScrollTop: function (element) {
         return element.pageYOffset || element.scrollY || element.scrollTop || 0;
@@ -900,5 +897,3 @@ var popupManager = {
         top.$('.modal[id^="page-popup-"]').remove();
     }
 };
-
-

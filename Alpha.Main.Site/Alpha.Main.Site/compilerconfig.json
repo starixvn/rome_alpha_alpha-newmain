@@ -34,7 +34,7 @@
   {
     "outputFile": "Assets/styles/security/lean-more.css",
     "inputFile": "Assets/styles/security/lean-more.scss"
-  },  
+  },
   {
     "outputFile": "Assets/styles/otp/otp.css",
     "inputFile": "Assets/styles/otp/otp.scss"
@@ -50,5 +50,17 @@
   {
     "outputFile": "Assets/Styles/home/popup-announcement.css",
     "inputFile": "Assets/Styles/home/popup-announcement.scss"
+  },
+  {
+    "outputFile": "Assets/styles/chatbot/chatbot.css",
+    "inputFile": "Assets/styles/chatbot/chatbot.scss"
+  },
+  {
+    "outputFile": "Assets/styles/chatbot/register-account.css",
+    "inputFile": "Assets/styles/chatbot/register-account.scss"
+  },
+  {
+    "outputFile": "Assets/styles/chatbot/chatbot-setting.css",
+    "inputFile": "Assets/styles/chatbot/chatbot-setting.scss"
   }
 ]

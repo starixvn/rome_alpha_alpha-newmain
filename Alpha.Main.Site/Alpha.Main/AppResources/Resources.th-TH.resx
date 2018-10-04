@@ -484,4 +484,7 @@
   <data name="highlights" xml:space="preserve">
     <value>HIGHLIGHTS</value>
   </data>
+  <data name="systemUpdate" xml:space="preserve">
+    <value>ระบบ</value>
+  </data>
 </root>

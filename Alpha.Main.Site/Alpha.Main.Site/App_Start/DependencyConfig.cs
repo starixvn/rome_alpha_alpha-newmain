@@ -1,11 +1,10 @@
-﻿#pragma warning disable 618, 612
-
-namespace Alpha.Main.Site.App_Start
+﻿namespace Alpha.Main.Site.App_Start
 {
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
     using System.Web.Mvc;
+    using Chatbot.Client.Services;
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
@@ -29,12 +28,9 @@ namespace Alpha.Main.Site.App_Start
     using Sunplus.Agent.Utilities;
     using Web.Helpers;
     using Web.Helpers.Impl;
-    using Fanex.Logging;
 
-    [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
     public static class DependencyConfig
     {
-        [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed")]
         public static void Init()
         {
             var container = new Container();
@@ -119,6 +115,8 @@ namespace Alpha.Main.Site.App_Start
                 container.GetInstance<OtpService>(),
                 container.GetInstance<JsonHelper>(),
                 container.GetInstance<CasinoService>()));
+
+            container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

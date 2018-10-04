@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChatBotTitle" xml:space="preserve">
+    <value>Chatbot</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="InstallLetstalk" xml:space="preserve">
+    <value>Install Letstalk and create a free account.</value>
+  </data>
+  <data name="YourLetstalkAccount" xml:space="preserve">
+    <value>Your Letstalk ID</value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="unLink" xml:space="preserve">
+    <value>Unlink</value>
+  </data>
+  <data name="lblVerificationCode" xml:space="preserve">
+    <value>Verification code</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>Resend</value>
+  </data>
+  <data name="VerificationCodeIsInvalidOrExpired" xml:space="preserve">
+    <value>Invalid/expired verification code, please try again or request a new one.</value>
+  </data>
+  <data name="UnsubscribeWarning" xml:space="preserve">
+    <value>Unlink Atom will stop all of its features. Are you sure you want to proceed?</value>
+  </data>
+  <data name="FunctionReport" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="FunctionNotification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="AccountDoesNotExist" xml:space="preserve">
+    <value>Letstalk ID does not exist.</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>Captcha is invalid.</value>
+  </data>
+  <data name="AccountHasAlreadyBeenRegistered" xml:space="preserve">
+    <value>The inputted ID has already been linked to and verified by another SMA account.</value>
+  </data>
+  <data name="OverMaxAddAccountTimes" xml:space="preserve">
+    <value>You have requested too many times today. Please try again later.</value>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>Command</value>
+  </data>
+  <data name="ChatBotLanguage" xml:space="preserve">
+    <value>Chat Bot's Language</value>
+  </data>
+  <data name="IntroReport" xml:space="preserve">
+    <value>to activate the reports you'd like to query.</value>
+  </data>
+  <data name="IntroNotification" xml:space="preserve">
+    <value>to enable the notification that you'd like to receive.</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="grossComm" xml:space="preserve">
+    <value>Gross Comm</value>
+  </data>
+  <data name="memberWinLoss" xml:space="preserve">
+    <value>Member WL</value>
+  </data>
+  <data name="personalMessageSample" xml:space="preserve">
+    <value>Your minimum position taking value has been changed by the upline. Please kindly be informed and have a check the details for your downlines.</value>
+  </data>
+  <data name="specialAnnouncementSample" xml:space="preserve">
+    <value>Dear Valued Customer: Effective 18th Jan 2018 Company will restrict access our Agent Site from "Hong Kong". Thank you for your kind attention! </value>
+  </data>
+  <data name="normalAnnouncementSample" xml:space="preserve">
+    <value>Attn:[E-Sports] a match has been cancelled, all bets taken are considered REFUNDED.Thank you!</value>
+  </data>
+  <data name="systemAnnouncementSample" xml:space="preserve">
+    <value>Dear valued agents,&lt;br /&gt;We are pleased to inform that there are new games added under Macau Games. You may review the Bet Limit settings affected from 10/05/2018.&lt;br /&gt;Thank you.</value>
+  </data>
+  <data name="updateLanguageFailed" xml:space="preserve">
+    <value>Fail to update Chatbot's language. Please try again.</value>
+  </data>
+  <data name="expiredOrDidNotRecieveTheCode" xml:space="preserve">
+    <value>Didn't receive a code?</value>
+  </data>
+  <data name="IntroChatbot" xml:space="preserve">
+    <value>&lt;strong&gt;"Chatbot"&lt;/strong&gt; function integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt;&lt;br /&gt;To start setting up Chatbot, please follow below steps:</value>
+  </data>
+  <data name="IntroLetstalk" xml:space="preserve">
+    <value>is the most &lt;strong&gt;secured messenger&lt;/strong&gt; which heavily &lt;strong&gt;encrypts&lt;/strong&gt; your conversations. </value>
+  </data>
+  <data name="letstalkIM" xml:space="preserve">
+    <value>Letstalk IM</value>
+  </data>
+  <data name="letstalkTechLmd" xml:space="preserve">
+    <value>Letstalk Technology Limited</value>
+  </data>
+  <data name="pleaseInputLetstalkAccount" xml:space="preserve">
+    <value>Input your Letstalk ID (not the screen name) to link with a chatbot.</value>
+  </data>
+  <data name="AccountIsRequired" xml:space="preserve">
+    <value>Please input your Letstalk ID.</value>
+  </data>
+  <data name="lblCaptcha" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+  <data name="verificationCodeIsRequired" xml:space="preserve">
+    <value>Please input verification code.</value>
+  </data>
+  <data name="captchaIsRequired" xml:space="preserve">
+    <value>Please input captcha.</value>
+  </data>
+  <data name="reportExample" xml:space="preserve">
+    <value>Report Example</value>
+  </data>
+  <data name="notificationExample" xml:space="preserve">
+    <value>Notification Example</value>
+  </data>
+  <data name="howFunctionWorks" xml:space="preserve">
+    <value>How function works</value>
+  </data>
+  <data name="pleaseSet" xml:space="preserve">
+    <value>Please set</value>
+  </data>
+  <data name="play" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="playing" xml:space="preserve">
+    <value>Playing</value>
+  </data>
+  <data name="EnterVerificationCode" xml:space="preserve">
+    <value>Verify your Letstalk ID.</value>
+  </data>
+  <data name="IntroVerificationCode" xml:space="preserve">
+    <value>A bot named "&lt;strong&gt;Atom&lt;/strong&gt;" has sent you a 6-digits verification code via Letstalk IM. To verify your Letstalk ID, please input the verification code.</value>
+  </data>
+  <data name="inputCommand" xml:space="preserve">
+    <value>Input command</value>
+  </data>
+  <data name="systemAnnouncement" xml:space="preserve">
+    <value>System Announcement</value>
+  </data>
+  <data name="yesterdayWinLoss" xml:space="preserve">
+    <value>Yesterday Win Loss</value>
+  </data>
+  <data name="ChatbotName" xml:space="preserve">
+    <value>Chatbot's name</value>
+  </data>
+  <data name="Atom" xml:space="preserve">
+    <value>Atom</value>
+  </data>
+  <data name="showQRCode" xml:space="preserve">
+    <value>Show QR code</value>
+  </data>
+  <data name="hideQRCode" xml:space="preserve">
+    <value>Hide QR code</value>
+  </data>
+  <data name="pleaseSetNotification" xml:space="preserve">
+    <value>Please set</value>
+  </data>
+</root>

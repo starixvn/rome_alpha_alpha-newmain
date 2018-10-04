@@ -1,0 +1,78 @@
+﻿@using System.Globalization
+@model string
+@{
+    Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
+}
+@section Styles {
+    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot-setting")
+}
+<div class="chatbot-layout -notification" id="chatbotLayout">
+    <div class="chatbot-header">
+        <span class="icon-chatbot-back"></span>
+        <span class="title">@ChatBot.Atom</span>
+        <span class="icon-chatbot-call"></span>
+        <span class="icon-chatbot-down"></span>
+    </div>
+    <div class="chatbot-body -large" id="chatbotBody">
+        <ul class="list-commands" id="listCommand">
+            <li class="command">
+                <div class="chatbot-reponse">
+                    @ChatBot.ResourceManager.GetString("yesterdayWinLoss", CultureInfo.GetCultureInfo(Model)) (08/30) <br />
+                    @Resources.ResourceManager.GetString("turnover", CultureInfo.GetCultureInfo(Model)): 30,000.00 <br />
+                    @ChatBot.ResourceManager.GetString("grossComm", CultureInfo.GetCultureInfo(Model)): 50.00 <br />
+                    @ChatBot.ResourceManager.GetString("memberWinLoss", CultureInfo.GetCultureInfo(Model)): 5,000.00 <br />
+                </div>
+                <div class="status-chatbot-reponse">
+                    13:20
+                </div>
+            </li>
+            <li class="command">
+                <div class="chatbot-reponse">
+                    @Resources.ResourceManager.GetString("personalMessage", CultureInfo.GetCultureInfo(Model)) <br />
+                    @ChatBot.ResourceManager.GetString("personalMessageSample", CultureInfo.GetCultureInfo(Model))
+                </div>
+                <div class="status-chatbot-reponse">
+                    13:21
+                </div>
+            </li>
+            <li class="command">
+                <div class="chatbot-reponse">
+                    @Resources.ResourceManager.GetString("specialAnnouncement", CultureInfo.GetCultureInfo(Model)) <br />
+                    @ChatBot.ResourceManager.GetString("specialAnnouncementSample", CultureInfo.GetCultureInfo(Model))
+                </div>
+                <div class="status-chatbot-reponse">
+                    13:22
+                </div>
+            </li>
+            <li class="command">
+                <div class="chatbot-reponse">
+                    @Resources.ResourceManager.GetString("normalAnnouncement", CultureInfo.GetCultureInfo(Model)) <br />
+                    @ChatBot.ResourceManager.GetString("normalAnnouncementSample", CultureInfo.GetCultureInfo(Model))
+                </div>
+                <div class="status-chatbot-reponse">
+                    13:23
+                </div>
+            </li>
+            <li class="command">
+                <div class="chatbot-reponse">
+                    @ChatBot.ResourceManager.GetString("systemAnnouncement", CultureInfo.GetCultureInfo(Model)) <br />
+                    @Html.Raw(ChatBot.ResourceManager.GetString("systemAnnouncementSample", CultureInfo.GetCultureInfo(Model)))
+                </div>
+                <div class="status-chatbot-reponse">
+                    13:24
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="list-actions">
+        <div class="btn-play hide" id="btnReplay">
+            <span class="icon-play-button"></span> @ChatBot.play
+        </div>
+        <div class="btn-play disabled" id="btnPlaying">
+            <span class="icon-pause-button"></span> @ChatBot.playing
+        </div>
+    </div>
+</div>
+@section Scripts{
+    @StaticResources.RenderScripts("~/assets/bundles/chatbot/chatbot-guide")
+}

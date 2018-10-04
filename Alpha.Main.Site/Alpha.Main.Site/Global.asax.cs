@@ -1,24 +1,31 @@
 ﻿namespace Alpha.Main.Site
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Reflection;
+    using System.Web.Helpers;
+    using System.Web.Mvc;
+    using System.Web.Routing;
     using App_Start;
     using Auth.Filters;
+    using CaptchaMvc.Infrastructure;
+    using CaptchaMvc.Interface;
+    using Chatbot.Client;
+    using Chatbot.Client.Configurations;
     using Configurations;
     using Fanex.Data;
     using Fanex.Data.CrossCutting.WrappingException;
     using Fanex.Data.OldConnectionStringProvider;
     using Fanex.Logging.Extensions.Database;
     using Fanex.Logging.Extensions.Web;
+    using Helpers;
     using ONEbook.UM.Filters;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.Web.Helpers;
-    using System.Web.Mvc;
-    using System.Web.Routing;
     using Web;
-    using Web.Helpers;
     using Web.Filters;
     using Fanex.RemotingRef;
+    using Web.Helpers;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -31,15 +38,17 @@
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
+            ChatbotClientManager
+                .UseConfig(new BotClientConfigs(AppSettings.ChatBotBaseUrl, AppSettings.ChatBotApiKey))
+                .UseRestClient(new RestClientHelper());
             DependencyConfig.Init();
-            StaticResources.Init(StaticResources.GetBuildVersion());
+            StaticResources.Init(GetBuildVersion());
 
             DbSettingProviderManager
                 .StartNewSession()
                 .Use(new OldConnectionStringProvider())
                 .UseDefaultDbSettingProvider(
                     resourcePath: AppSettings.StoreProcedurePath,
-                    ignoreRedundantParameters: false,
                     enableWatching: true)
                .Use((settingKey, commandTimeout) => new WrappingExceptionObjectDb(settingKey, commandTimeout))
                .Run();
@@ -60,6 +69,10 @@
             RefDataTypeContainer
                 .ConnectTo(new Uri(AppSettings.RemoteRefURL))
                 .FromApplication("Alpha.Main.Site");
+            CaptchaUtils.CaptchaManager.StorageProvider = new CookieStorageProvider();
+            var defaultCaptchaManager = (DefaultCaptchaManager)CaptchaUtils.CaptchaManager;
+            defaultCaptchaManager.ImageUrlFactory = (helper, pair) => ImageUrlFactory(defaultCaptchaManager, helper, pair);
+            defaultCaptchaManager.RefreshUrlFactory = RefreshUrlFactory;
         }
 
         /// <summary>
@@ -87,6 +100,14 @@
                 });
         }
 
+        private static string GetBuildVersion()
+        {
+            Assembly assembly = Assembly.GetCallingAssembly();
+            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
+
+            return versionInfo.FileVersion;
+        }
+
         private static List<string> GetRegexToHideSensitiveInfo()
         {
             var result = new List<string>();
@@ -99,6 +120,34 @@
             }
 
             return result;
+        }
+
+        private string RefreshUrlFactory(System.Web.Mvc.UrlHelper urlHelper, KeyValuePair<string, ICaptchaValue> keyValuePair)
+        {
+            return urlHelper.Action("Refresh", "DefaultCaptcha", new { area = string.Empty });
+        }
+
+        /// <summary>
+        /// Image URL Factory.
+        /// </summary>
+        /// <param name="captchaManager">Captcha Manager.</param>
+        /// <param name="urlHelper">URL Helper.</param>
+        /// <param name="keyValuePair">Key Value pair.</param>
+        /// <returns>Return Result.</returns>
+        private static string ImageUrlFactory(DefaultCaptchaManager captchaManager, System.Web.Mvc.UrlHelper urlHelper, KeyValuePair<string, ICaptchaValue> keyValuePair)
+        {
+            return urlHelper.Action(
+                "Generate",
+                "DefaultCaptcha",
+                new RouteValueDictionary
+                                {
+                                    {
+                                        "area", string.Empty
+                                    },
+                                    {
+                                        captchaManager.TokenParameterName, keyValuePair.Key
+                                    }
+                                });
         }
     }
 }

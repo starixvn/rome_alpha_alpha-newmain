@@ -487,4 +487,7 @@
   <data name="highlights" xml:space="preserve">
     <value>HIGHLIGHTS</value>
   </data>
+  <data name="systemUpdate" xml:space="preserve">
+    <value>系統</value>
+  </data>
 </root>

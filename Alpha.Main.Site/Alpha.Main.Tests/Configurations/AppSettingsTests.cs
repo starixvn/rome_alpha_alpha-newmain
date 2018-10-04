@@ -451,12 +451,11 @@
         public void MessageSuper_HasConfig_ReturnsCorrectSetting()
         {
             // Arrange
+            var expectedSetting = "3000,3100";
             AppSettings.Settings = new NameValueCollection
             {
-                ["Message:Super"] = "3000,3100"
+                ["Message:Super"] = expectedSetting
             };
-
-            var expectedSetting = "3000,3100";
 
             // Act
             var actualSetting = AppSettings.MessageSuper;
@@ -469,12 +468,11 @@
         public void MessageMaster_HasConfig_ReturnsCorrectSetting()
         {
             // Arrange
+            var expectedSetting = "3000,3200";
             AppSettings.Settings = new NameValueCollection
             {
-                ["Message:Master"] = "3000,3200"
+                ["Message:Master"] = expectedSetting
             };
-
-            var expectedSetting = "3000,3200";
 
             // Act
             var actualSetting = AppSettings.MessageMaster;
@@ -487,15 +485,83 @@
         public void MessageAgent_HasConfig_ReturnsCorrectSetting()
         {
             // Arrange
+            var expectedSetting = "3000,3300";
             AppSettings.Settings = new NameValueCollection
             {
-                ["Message:Agent"] = "3000,3300"
+                ["Message:Agent"] = expectedSetting
             };
-
-            var expectedSetting = "3000,3300";
 
             // Act
             var actualSetting = AppSettings.MessageAgent;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void ChatBotBaseUrl_HasConfig_ReturnCorrectSetting()
+        {
+            // Arrange
+            var expectedSetting = "Url";
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["Chatbot:BaseUrl"] = expectedSetting
+            };
+
+            // Act
+            var actualSetting = AppSettings.ChatBotBaseUrl;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void ChatBotApiKey_HasConfig_ReturnCorrectSetting()
+        {
+            // Arrange
+            var expectedSetting = "ApiKey";
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["Chatbot:ApiKey"] = expectedSetting
+            };
+
+            // Act
+            var actualSetting = AppSettings.ChatBotApiKey;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void ChatbotLogCategory_HasConfig_ReturnCorrectSetting()
+        {
+            // Arrange
+            var expectedSetting = "Alpha-Chatbot";
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["ChatbotLogCategory"] = expectedSetting
+            };
+
+            // Act
+            var actualSetting = AppSettings.ChatbotLogCategory;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
+
+        [Test]
+        public void OfferChatbotSites_HasConfig_ReturnCorrectSetting()
+        {
+            // Arrange
+
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["OfferChatbotSites"] = "BEST-ODDS,733333"
+            };
+            var expectedSetting = new[] { "BEST-ODDS", "733333" };
+
+            // Act
+            var actualSetting = AppSettings.OfferChatbotSites;
 
             // Assert
             Assert.AreEqual(expectedSetting, actualSetting);

@@ -178,5 +178,46 @@
     "inputFiles": [
       "Assets/styles/error/error.css"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot.css",
+    "inputFiles": [
+      "Assets/styles/chatbot/chatbot.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/register-account.css",
+    "inputFiles": [
+      "Assets/styles/chatbot/register-account.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/register-account.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/chatbot/base-chatbot.js",
+      "Assets/scripts/chatbot/verify-account.js",
+      "Assets/scripts/chatbot/add-account.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot-setting.css",
+    "inputFiles": [
+      "Assets/styles/chatbot/chatbot-setting.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot-setting.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/chatbot/base-chatbot.js",
+      "Assets/scripts/chatbot/chatbot-setting.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot-guide.js",
+    "inputFiles": [
+      "Assets/scripts/chatbot/chatbot-guide.js"
+    ]
   }
 ]

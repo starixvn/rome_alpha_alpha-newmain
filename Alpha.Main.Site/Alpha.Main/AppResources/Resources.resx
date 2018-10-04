@@ -218,7 +218,7 @@
     <value>Currency</value>
   </data>
   <data name="todayWinLoss" xml:space="preserve">
-    <value>Today</value>
+    <value>Today Win Loss</value>
   </data>
   <data name="totalBalance" xml:space="preserve">
     <value>Total</value>
@@ -549,5 +549,8 @@
   </data>
   <data name="highlights" xml:space="preserve">
     <value>HIGHLIGHTS</value>
+  </data>
+  <data name="systemUpdate" xml:space="preserve">
+    <value>System</value>
   </data>
 </root>

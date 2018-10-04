@@ -379,9 +379,12 @@
     <value>Progressive Jackpot Games</value>
   </data>
   <data name="systemUpdate" xml:space="preserve">
-    <value>System Update</value>
+    <value>System</value>
   </data>
   <data name="PokerGamesWinLoss" xml:space="preserve">
     <value>Poker Games Win Loss</value>
+  </data>
+  <data name="chatbot" xml:space="preserve">
+    <value>Chatbot</value>
   </data>
 </root>

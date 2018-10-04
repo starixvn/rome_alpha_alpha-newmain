@@ -85,6 +85,10 @@ namespace Alpha.Main
             ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
             ["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
             ["PokerGamesMenuItem"] = () => new MenuStatus(() => !Current.GetHideProduct(ProductIdConstants.PokerGames)),
+            ["ChatBotMenuItem"] = () => new MenuStatus(
+                () => !Current.IsSubAcc
+                    && (Configurations.AppSettings.OfferChatbotSites.Contains("*")
+                        || Configurations.AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase)))
         };
 
         private static Func<bool> showAccountInfo = () =>
