@@ -370,8 +370,8 @@ html * {
         top: 88px;
         z-index: 80;
         padding: 0 12px 8px;
-        -webkit-overflow-scrolling: touch;
-        overflow: auto;
+        /*-webkit-overflow-scrolling: touch;
+        overflow: auto;*/
 
         .iframe-content {
             width: 100%;
