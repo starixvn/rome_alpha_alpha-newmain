@@ -50,7 +50,7 @@
         public void BalanceInfo_Always_CallsMediatorSendBalanceInfoQuery()
         {
             // Arrange
-            var query = new BalanceInfoQuery(userSession);
+            var query = new BalanceInfoQuery(userSession, productId => true);
 
             // Act
             dashboardController.BalanceInfo();

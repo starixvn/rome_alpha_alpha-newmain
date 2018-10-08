@@ -53,7 +53,7 @@
             var balanceInfo = FakeDataHelper.Create<BalanceInfo>();
             balanceInfoService.GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(balanceInfo);
 
-            var query = new BalanceInfoQuery(userSession);
+            var query = new BalanceInfoQuery(userSession, productId => true);
 
             // Act
             balanceInfoHandler.Handle(query);
@@ -74,14 +74,15 @@
             var balanceInfo = FakeDataHelper.Create<BalanceInfo>();
             balanceInfoService.GetBalanceInfo(Arg.Any<int>(), Arg.Any<UserLevel>()).Returns(balanceInfo);
 
-            var query = new BalanceInfoQuery(userSession);
+            var query = new BalanceInfoQuery(userSession, productId => false);
 
             var expectedBalanceInfoViewModel = new BalanceInfoViewModel(
                                                         balanceInfo,
                                                         query.UserLevel,
                                                         query.Currency,
                                                         query.CustId,
-                                                        true);
+                                                        true,
+                                                        query.CanViewProduct);
 
             // Act
             var balanceInfoViewModel = balanceInfoHandler.Handle(query);

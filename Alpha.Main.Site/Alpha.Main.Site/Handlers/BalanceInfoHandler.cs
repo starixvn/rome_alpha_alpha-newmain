@@ -30,7 +30,8 @@
                 message.UserLevel,
                 message.Currency,
                 message.CustId,
-                message.CanViewReports);
+                message.CanViewReports,
+                message.CanViewProduct);
 
             return viewModel;
         }
