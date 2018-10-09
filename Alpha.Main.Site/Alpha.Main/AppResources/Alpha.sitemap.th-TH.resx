@@ -375,8 +375,7 @@
   <data name="systemUpdate" xml:space="preserve">
     <value>ระบบ</value>
   </data>
-    <data name="TransferAllAndClearCredit" xml:space="preserve">
-    <value>Transfer All &amp; Clear Credit</value>
+  <data name="TransferAllAndClearCredit" xml:space="preserve">
+    <value>โอนยอดทั้งหมด และเคลียร์เครดิต</value>
   </data>
-
 </root>

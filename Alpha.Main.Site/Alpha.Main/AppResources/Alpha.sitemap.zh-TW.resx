@@ -375,8 +375,7 @@
   <data name="systemUpdate" xml:space="preserve">
     <value>系統</value>
   </data>
-    <data name="TransferAllAndClearCredit" xml:space="preserve">
-    <value>Transfer All &amp; Clear Credit</value>
+  <data name="TransferAllAndClearCredit" xml:space="preserve">
+    <value>轉全部的賬並清除信用額度</value>
   </data>
-
 </root>
