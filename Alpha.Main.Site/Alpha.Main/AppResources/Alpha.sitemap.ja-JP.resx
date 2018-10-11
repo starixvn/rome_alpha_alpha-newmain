@@ -346,4 +346,7 @@
   <data name="BetLists" xml:space="preserve">
     <value>ベットリスト</value>
   </data>
+  <data name="TransferAllAndClearCredit" xml:space="preserve">
+    <value>Transfer All &amp; Clear Credit</value>
+  </data>
 </root>
