@@ -11,6 +11,7 @@
     using Web.Helpers;
 
     [TestFixture]
+    [Category("Chabot")]
     public class ChatBotHandlerTests
     {
         private const string ChatbotUserIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.UserId";
@@ -27,6 +28,9 @@
         public void SetUp()
         {
             userSession = Substitute.For<IUserSession>();
+            userSession.CustId.Returns(1);
+            userSession.UserLoginIp.Returns("127.0.0.1");
+
             settingService = Substitute.For<SettingService>();
             sessionManager = Substitute.For<SessionManager>();
 
@@ -54,17 +58,22 @@
         {
             // Arrange
             var message = new AddAccountCommand(userSession);
+            var logParam = CreateLogParam(message.CustId, message.CustId, message.IP);
 
             // Act
             chatbotHandler.Handle(message).ConfigureAwait(false);
 
             // Assert
             settingService.Received().AddUser(
-                Arg.Is(message.CustId),
-                Arg.Is(message.CustLevel),
-                Arg.Is(message.SubAccountId),
-                Arg.Is(message.Language),
-                Arg.Is(message.LetstalkId));
+                message.CustId,
+                message.CustLevel,
+                message.SubAccountId,
+                message.Language,
+                message.LetstalkId,
+                MessengerType.Letstalk,
+                Arg.Is<LogParam>(p => p.ActorId == logParam.ActorId
+                                    && p.CustId == logParam.CustId
+                                    && p.IP == logParam.IP));
         }
 
         [Test]
@@ -103,7 +112,8 @@
             // Arrange
             var userId = 1;
             var letstalkId = "LetstalkId";
-            var message = new UnsubscribeCommand();
+            var message = new UnsubscribeCommand(userSession);
+            var logParam = CreateLogParam(message.CustId, message.CustId, message.IP);
 
             sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
             sessionManager.Get<string>(LetstalkIdSessionKey).Returns(letstalkId);
@@ -113,9 +123,12 @@
 
             // Assert
             settingService.Received().Unsubscribe(
-                Arg.Is(userId),
-                Arg.Is(MessengerType.Letstalk),
-                Arg.Is(letstalkId));
+                userId,
+                MessengerType.Letstalk,
+                letstalkId,
+                Arg.Is<LogParam>(p => p.ActorId == logParam.ActorId
+                                    && p.CustId == logParam.CustId
+                                    && p.IP == logParam.IP));
         }
 
         [Test]
@@ -124,7 +137,8 @@
             // Arrange
             var userId = 1;
             var letstalkId = "LetstalkId";
-            var message = new VerifyVerificationCodeCommand();
+            var message = new VerifyVerificationCodeCommand(userSession);
+            var logParam = CreateLogParam(message.CustId, message.CustId, message.IP);
 
             sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
             sessionManager.Get<string>(LetstalkIdSessionKey).Returns(letstalkId);
@@ -135,9 +149,13 @@
 
             // Assert
             settingService.Received().VerifyVerificationCode(
-                Arg.Is(userId),
-                Arg.Is(message.VerificationCode),
-                Arg.Is(letstalkId));
+                userId,
+                message.VerificationCode,
+                letstalkId,
+                MessengerType.Letstalk,
+                Arg.Is<LogParam>(p => p.ActorId == logParam.ActorId
+                                    && p.CustId == logParam.CustId
+                                    && p.IP == logParam.IP));
         }
 
         [Test]
@@ -156,9 +174,7 @@
             chatbotHandler.Handle(message).ConfigureAwait(false);
 
             // Assert
-            settingService.Received().GenerateVerificationCode(
-                Arg.Is(userId),
-                Arg.Is(letstalkId));
+            settingService.Received().GenerateVerificationCode(userId, letstalkId);
         }
 
         [Test]
@@ -167,15 +183,19 @@
             // Arrange
             var userId = 1;
             sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
-            var message = new UpdateFunctionCommand();
+            var message = new UpdateFunctionCommand(userSession);
+            var logParam = CreateLogParam(message.CustId, message.CustId, message.IP);
 
             // Act
             chatbotHandler.Handle(message).ConfigureAwait(false);
 
             // Assert
             settingService.Received().UpdateFunctions(
-                Arg.Is(userId),
-                Arg.Any<IEnumerable<Function>>());
+                userId,
+                Arg.Any<IEnumerable<Function>>(),
+                Arg.Is<LogParam>(p => p.ActorId == logParam.ActorId
+                                    && p.CustId == logParam.CustId
+                                    && p.IP == logParam.IP));
         }
 
         [Test]
@@ -184,15 +204,27 @@
             // Arrange
             var userId = 1;
             sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
-            var message = new UpdateLanguageCommand();
+            var message = new UpdateLanguageCommand(userSession) { Language = "en-US" };
+            var logParam = CreateLogParam(message.CustId, message.CustId, message.IP);
 
             // Act
             chatbotHandler.Handle(message).ConfigureAwait(false);
 
             // Assert
             settingService.Received().UpdateLanguage(
-                Arg.Is(userId),
-                Arg.Is(message.Language));
+                userId,
+                message.Language,
+                Arg.Is<LogParam>(p => p.ActorId == logParam.ActorId
+                                    && p.CustId == logParam.CustId
+                                    && p.IP == logParam.IP));
         }
+
+        private static LogParam CreateLogParam(int actorId, int custId, string ip)
+            => new LogParam
+            {
+                ActorId = actorId,
+                CustId = custId,
+                IP = ip
+            };
     }
 }

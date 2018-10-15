@@ -83,7 +83,9 @@
                  message.CustLevel,
                  message.SubAccountId,
                  message.Language,
-                 message.LetstalkId);
+                 message.LetstalkId,
+                 MessengerType.Letstalk,
+                 CreateLogParam(message.CustId, message.CustId, message.IP));
 
             if (result.IsOk)
             {
@@ -98,9 +100,10 @@
 
         public async Task<Result> Handle(UnsubscribeCommand message)
             => await settingService.Unsubscribe(
-                sessionManager.Get<int>(ChatbotUserIdSessionKey),
-                MessengerType.Letstalk,
-                sessionManager.Get<string>(LetstalkIdSessionKey));
+                  sessionManager.Get<int>(ChatbotUserIdSessionKey),
+                  MessengerType.Letstalk,
+                  sessionManager.Get<string>(LetstalkIdSessionKey),
+                  CreateLogParam(message.CustId, message.CustId, message.IP));
 
         public async Task<VerificationCodeResult> Handle(VerifyVerificationCodeCommand message)
         {
@@ -109,7 +112,9 @@
                 return await settingService.VerifyVerificationCode(
                     sessionManager.Get<int>(ChatbotUserIdSessionKey),
                     message.VerificationCode,
-                    sessionManager.Get<string>(LetstalkIdSessionKey));
+                    sessionManager.Get<string>(LetstalkIdSessionKey),
+                    MessengerType.Letstalk,
+                    CreateLogParam(message.CustId, message.CustId, message.IP));
             }
 
             return new VerificationCodeResult { Code = 1 };
@@ -150,12 +155,22 @@
 
             return await settingService.UpdateFunctions(
                 sessionManager.Get<int>(ChatbotUserIdSessionKey),
-                functions);
+                functions,
+                CreateLogParam(message.CustId, message.CustId, message.IP));
         }
 
         public async Task<Result> Handle(UpdateLanguageCommand message)
             => await settingService.UpdateLanguage(
                 sessionManager.Get<int>(ChatbotUserIdSessionKey),
-                message.Language);
+                message.Language,
+                CreateLogParam(message.CustId, message.CustId, message.IP));
+
+        private static LogParam CreateLogParam(int actorId, int custId, string ip)
+            => new LogParam
+            {
+                ActorId = actorId,
+                CustId = custId,
+                IP = ip
+            };
     }
 }

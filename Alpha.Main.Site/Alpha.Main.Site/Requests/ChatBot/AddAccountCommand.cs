@@ -27,6 +27,8 @@
 
         public string Language => userSession.Language;
 
+        public string IP => userSession.UserLoginIp;
+
         public string LetstalkId { get; set; }
     }
 }

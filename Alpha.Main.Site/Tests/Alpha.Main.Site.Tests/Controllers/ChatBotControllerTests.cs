@@ -17,6 +17,7 @@
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
+    [Category("Chabot")]
     public class ChatBotControllerTests
     {
         private IMediator mediator;
@@ -173,13 +174,16 @@
         public void Unsubscribe_IsNotInternal_CallMediatorSendUnsubscribeCommand()
         {
             // Arrange
-            var command = new UnsubscribeCommand();
+            var command = new UnsubscribeCommand(userSession);
 
             // Act
-            chatbotController.Unsubscribe(command).ConfigureAwait(false);
+            chatbotController.Unsubscribe().ConfigureAwait(false);
 
             // Assert
-            mediator.Received().SendAsync(Arg.Is<UnsubscribeCommand>(c => c == command));
+            mediator.Received().SendAsync(
+                Arg.Is<UnsubscribeCommand>(
+                    c => c.CustId == command.CustId
+                        && c.IP == command.IP));
         }
 
         [Test]
@@ -219,7 +223,7 @@
             var command = new ResendVerificationCodeCommand();
 
             // Act
-            chatbotController.ResendVerificationCode(command).ConfigureAwait(false);
+            chatbotController.ResendVerificationCode().ConfigureAwait(false);
 
             // Assert
             mediator.Received().SendAsync(
