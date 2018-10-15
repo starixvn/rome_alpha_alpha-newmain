@@ -24,7 +24,7 @@
     },
 
     urls: {
-        accountInfo: alpha.urls.accountInfoRootPath + 'AccountInfo/Index'
+        accountInfo: alpha.urls.accountInfoRootPath + 'SearchAccount'
     },
 
     init: function () {
@@ -123,7 +123,7 @@
 
         menuBar.domElements.announcementItems.click(function () {
             menuBar.clickAnnouncementItem($(this));
-        });            
+        });
 
         menuBar.domElements.closeIconOnMobile.click(menuBar.collapseSideBar);
     },
@@ -131,7 +131,7 @@
     clickAnnouncementItem: function (menu) {
         var url = menu.attr("href");
         var parameters = url.split('?');
-        if (parameters.length == 2){
+        if (parameters.length == 2) {
             var messageType = parameters[1].split('=')[1];
             headerNav.buildIconNewMessageByType(messageType);
         } else {
@@ -219,7 +219,6 @@
         menuBar.domElements.mainMenuTab.hide();
         menuBar.domElements.accountInfoTab.show();
 
-        var mobileView = alpha.isMobile && alpha.isScreenLower768;
         var accInfoContent = menuBar.domElements.accountInfoContent,
             accountInfoUrl = accInfoContent.attr('src');
 
@@ -236,7 +235,7 @@
             var navigationHeight = $('#navigation').height();
             var mainMenuHeight = $('.main-tab').height();
             var accountInfoIframeHeight = navigationHeight - mainMenuHeight;
-            menuBar.domElements.accountInfoTab.css("height", accountInfoIframeHeight);   
+            menuBar.domElements.accountInfoTab.css("height", accountInfoIframeHeight);
 
             if (alpha.isMobile) {
                 $('#accountinfo-content').css("height", accountInfoIframeHeight - 20);
