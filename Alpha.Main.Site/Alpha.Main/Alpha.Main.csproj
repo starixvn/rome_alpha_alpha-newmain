@@ -271,7 +271,6 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\IDateTime.cs" />
-    <Compile Include="Helpers\Impl\DateTimeWrap.cs" />
     <Compile Include="Helpers\Impl\JsonHelperImpl.cs" />
     <Compile Include="Helpers\Impl\SiteMapReaderImpl.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
