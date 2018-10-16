@@ -2,6 +2,7 @@
 {
     using System;
     using AppResources;
+    using Constants;
     using Helpers;
     using Main.Models.BalanceInfo;
     using Main.Models.Enumerations;
@@ -17,7 +18,8 @@
             UserLevel userLevel,
             string currency,
             int custId,
-            bool canViewReports)
+            bool canViewReports,
+            Func<int, bool> canViewProduct)
         {
             BalanceInfo = balanceInfo;
             Currency = currency;
@@ -25,6 +27,7 @@
             CustId = custId;
             SetLabelTextByUserLevel();
             CanViewReports = canViewReports;
+            CanViewProduct = canViewProduct;
         }
 
         public BalanceInfo BalanceInfo { get; }
@@ -32,6 +35,8 @@
         public string Currency { get; } = DefaultCurrency;
 
         public bool CanViewReports { get; }
+
+        public Func<int, bool> CanViewProduct { get; }
 
         public string UserLevelLabel { get; private set; }
 
@@ -76,8 +81,14 @@
             var dateReport = isToday ? DateTime.Now.ToShortDateString() : DateTime.Now.AddDays(-1).ToShortDateString();
             var userSelectedDateRangeOption = isToday ? 0 : 1;
             var queryString = $"IsFilterVisible=true&SortPropertyName=CustName&IsDescendingSort=False";
+            var path = $@"{ReportSiteAppPath}/Winloss/Index?{queryString}&UserSelectedDateRangeOption={userSelectedDateRangeOption}&FromDate={dateReport}&ToDate={dateReport}";
 
-            return $@"{ReportSiteAppPath}/Winloss/Index?{queryString}&UserSelectedDateRangeOption={userSelectedDateRangeOption}&FromDate={dateReport}&ToDate={dateReport}";
+            if (CanViewProduct(ProductId.PokerGames))
+            {
+                path += $"&UserSelectedExcludeProductIds={ProductId.PokerGames}";
+            }
+
+            return path;
         }
     }
 }

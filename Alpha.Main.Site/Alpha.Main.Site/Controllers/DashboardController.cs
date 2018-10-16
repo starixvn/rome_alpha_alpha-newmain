@@ -7,6 +7,7 @@ namespace Alpha.Main.Site.Controllers
     using MediatR;
     using Requests.Dashboard.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Model.Entities.Permission;
     using ViewModels.Dashboard;
     using Web;
 
@@ -34,7 +35,7 @@ namespace Alpha.Main.Site.Controllers
         [ChildActionOnly]
         public ActionResult BalanceInfo()
         {
-            var viewModel = mediator.Send(new BalanceInfoQuery(userSession));
+            var viewModel = mediator.Send(new BalanceInfoQuery(userSession, UserPermission.HasPermissionOnProduct));
 
             return PartialView(viewModel);
         }

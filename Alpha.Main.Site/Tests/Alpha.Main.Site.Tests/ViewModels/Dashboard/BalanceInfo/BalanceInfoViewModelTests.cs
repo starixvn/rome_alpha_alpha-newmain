@@ -32,7 +32,8 @@
                 userLevel,
                 "UUS",
                 1,
-                true);
+                true,
+                productId => true);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.UserLevelLabel);
@@ -52,7 +53,8 @@
                 userLevel,
                 "UUS",
                 1,
-                true);
+                true,
+                productId => true);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.GivenCreditLabel);
@@ -72,7 +74,8 @@
                 userLevel,
                 "UUS",
                 1,
-                true);
+                true,
+                productId => true);
 
             // Assert
             Assert.AreEqual(expectedLabel, viewModel.TotalDownlineCreditLabel);
