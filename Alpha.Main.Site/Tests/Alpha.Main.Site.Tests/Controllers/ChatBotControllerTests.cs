@@ -142,21 +142,35 @@
             userSession.IsInternal.Returns(false);
             var command = new AddAccountCommand(userSession);
             command.LetstalkId = "MessengerAccount";
+            var result = new AddingUserResult { Code = 0 };
+            mediator.SendAsync(Arg.Any<AddAccountCommand>()).Returns(Task.FromResult(result));
+            var viewModel = new VerifyAccountViewModel();
 
             // Act
-            chatbotController.AddAccount(command).ConfigureAwait(false);
+            var viewResult = chatbotController.AddAccount(command).GetAwaiter().GetResult() as PartialViewResult;
 
             // Assert
-            mediator.Received().SendAsync(
-                Arg.Is<AddAccountCommand>(
-                    c => c.CustId == command.CustId
-                        && c.SubAccountId == command.SubAccountId
-                        && c.Language == command.Language
-                        && c.LetstalkId == command.LetstalkId));
+            Assert.IsTrue(viewResult.ViewName.Equals("VerifyAccount")
+                && compareLogic.Compare(viewModel, viewResult.Model).AreEqual);
         }
 
         [Test]
-        public void Unsubscribe_Always_CallMediatorSendUnsubscribeCommand()
+        public void Unsubscribe_IsInternal_ReturnsUnauthorizedResult()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(true);
+            var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
+
+            // Act
+            var result = chatbotController.Unsubscribe(new UnsubscribeCommand())
+                .GetAwaiter().GetResult() as JsonResult;
+
+            // Assert
+            Assert.True(compareLogic.Compare(expectedData, result.Data).AreEqual);
+        }
+
+        [Test]
+        public void Unsubscribe_IsNotInternal_CallMediatorSendUnsubscribeCommand()
         {
             // Arrange
             var command = new UnsubscribeCommand();
@@ -169,7 +183,37 @@
         }
 
         [Test]
-        public void ResendVerificationCode_Always_CallMediatorSendResendVerificationCodeCommand()
+        public void VerifyVerificationCode_IsInternal_ReturnsUnauthorizedResult()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(true);
+            var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
+
+            // Act
+            var result = chatbotController.VerifyVerificationCode(new VerifyVerificationCodeCommand())
+                .GetAwaiter().GetResult() as JsonResult;
+
+            // Assert
+            Assert.True(compareLogic.Compare(expectedData, result.Data).AreEqual);
+        }
+
+        [Test]
+        public void ResendVerificationCode_IsInternal_ReturnsUnauthorizedResult()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(true);
+            var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
+
+            // Act
+            var result = chatbotController.ResendVerificationCode(new ResendVerificationCodeCommand())
+                .GetAwaiter().GetResult() as JsonResult;
+
+            // Assert
+            Assert.True(compareLogic.Compare(expectedData, result.Data).AreEqual);
+        }
+
+        [Test]
+        public void ResendVerificationCode_IsNotInternal_CallMediatorSendResendVerificationCodeCommand()
         {
             // Arrange
             var command = new ResendVerificationCodeCommand();
@@ -201,7 +245,22 @@
         }
 
         [Test]
-        public void UpdateFunction_Always_CallMediatorSendUpdateFunctionCommand()
+        public void UpdateFunction_IsInternal_ReturnsUnauthorizedResult()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(true);
+            var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
+
+            // Act
+            var result = chatbotController.UpdateFunction(new UpdateFunctionCommand())
+                .GetAwaiter().GetResult() as JsonResult;
+
+            // Assert
+            Assert.True(compareLogic.Compare(expectedData, result.Data).AreEqual);
+        }
+
+        [Test]
+        public void UpdateFunction_IsNotInternal_CallMediatorSendUpdateFunctionCommand()
         {
             // Arrange
             var command = new UpdateFunctionCommand();
@@ -218,7 +277,22 @@
         }
 
         [Test]
-        public void ChangeLanguage_Always_CallMediatorSendUpdateLanguageCommand()
+        public void ChangeLanguage_IsInternal_ReturnsUnauthorizedResult()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(true);
+            var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
+
+            // Act
+            var result = chatbotController.ChangeLanguage(new UpdateLanguageCommand())
+                .GetAwaiter().GetResult() as JsonResult;
+
+            // Assert
+            Assert.True(compareLogic.Compare(expectedData, result.Data).AreEqual);
+        }
+
+        [Test]
+        public void ChangeLanguage_IsNotInternal_CallMediatorSendUpdateLanguageCommand()
         {
             // Arrange
             var command = new UpdateLanguageCommand();
