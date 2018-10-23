@@ -163,7 +163,7 @@
             var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
 
             // Act
-            var result = chatbotController.Unsubscribe(new UnsubscribeCommand())
+            var result = chatbotController.Unsubscribe()
                 .GetAwaiter().GetResult() as JsonResult;
 
             // Assert
@@ -209,7 +209,7 @@
             var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
 
             // Act
-            var result = chatbotController.ResendVerificationCode(new ResendVerificationCodeCommand())
+            var result = chatbotController.ResendVerificationCode()
                 .GetAwaiter().GetResult() as JsonResult;
 
             // Assert
