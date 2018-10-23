@@ -51,9 +51,9 @@
     <!--/Report-->
     <!--MemberInfo-->
     <siteMapNode resourceKey="memberInfo" menuItemType="MemberInfoMenuItem" functionType="[H]">
-      <siteMapNode resourceKey="newMaster" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=4" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="newAgent" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=3" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="newMember" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=2" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="newMaster" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=4" menuItemType="CreateAccountMenuItem" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="newAgent" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=3" menuItemType="CreateAccountMenuItem" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="newMember" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=2" menuItemType="CreateAccountMenuItem" roles="Agent"></siteMapNode>
       <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx"></siteMapNode>
 
       <siteMapNode resourceKey="customerlist" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
