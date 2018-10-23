@@ -152,7 +152,7 @@
     <value>Command</value>
   </data>
   <data name="ChatBotLanguage" xml:space="preserve">
-    <value>Chat Bot's Language</value>
+    <value>Chatbot's Language</value>
   </data>
   <data name="IntroReport" xml:space="preserve">
     <value>to activate the reports you'd like to query.</value>
