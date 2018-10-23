@@ -104,14 +104,18 @@
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="ng2" appPath="NG2SiteVirtualPath" url="~/Forecast/RealBet"></siteMapNode>
     </siteMapNode>
 
-    <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" functionType="[C]" roles="Super,Master">
+    <!--<siteMapNode resourceKey="transfer" menuItemType="TransferMenuItem" functionType="[C]">
+      <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Master/AgentList.aspx" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index" roles="Super,Master"></siteMapNode>
-    </siteMapNode>
-    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx" roles="Agent" menuItemType="TransferMenuItem" functionType="[C]"></siteMapNode>
+    </siteMapNode>-->
 
+    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Agent/MemberList.aspx" functionType="[C]" roles="Agent"></siteMapNode>
+    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
+    <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Super/MasterList.aspx" functionType="[C]" roles="Super"></siteMapNode>
+    
     <siteMapNode resourceKey="viewLog" menuItemType="ViewLogMenuItem" functionType="[G]">
       <siteMapNode resourceKey="Setting" appPath="ViewLogsAppPath" url="Setting"></siteMapNode>
       <siteMapNode resourceKey="status" appPath="ViewLogsAppPath" url="Status"></siteMapNode>
