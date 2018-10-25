@@ -39,8 +39,6 @@
 
             RegisterMediator(container);
 
-            RegisterCrossCuttingConcerns(container);
-
             RegisterDataAccesses(container);
 
             RegisterServices(container);
@@ -73,12 +71,7 @@
         {
             yield return typeof(DefaultHandler).Assembly;
         }
-
-        private static void RegisterCrossCuttingConcerns(Container container)
-        {
-            container.Register<IDateTime, DateTimeWrap>(Lifestyle.Singleton);
-        }
-
+        
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed!")]
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
         private static void RegisterServices(Container container)
