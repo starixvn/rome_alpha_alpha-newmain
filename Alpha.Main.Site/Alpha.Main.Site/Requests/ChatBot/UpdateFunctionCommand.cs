@@ -2,26 +2,19 @@
 {
     using Chatbot.Client.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
 
-    public class UpdateFunctionCommand : IAsyncRequest<Result>
+    public class UpdateFunctionCommand : WriteLogCommandBase, IAsyncRequest<Result>
     {
-        private readonly IUserSession userSession;
-
         public UpdateFunctionCommand()
             : this(null)
         {
         }
 
         internal UpdateFunctionCommand(IUserSession userSession)
+            : base(userSession)
         {
-            this.userSession = userSession ?? new UserSessionExt();
         }
-
-        public int CustId => userSession.CustId;
-
-        public string IP => userSession.UserLoginIp;
 
         public int FunctionId { get; set; }
 

@@ -1260,6 +1260,7 @@
     <Compile Include="Requests\ChatBot\UpdateFunctionCommand.cs" />
     <Compile Include="Requests\ChatBot\UpdateLanguageCommand.cs" />
     <Compile Include="Requests\ChatBot\VerifyVerificationCodeCommand.cs" />
+    <Compile Include="Requests\ChatBot\WriteLogCommandBase.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfo\BalanceInfoQuery.cs" />
     <Compile Include="Requests\Dashboard\MemberRequests\MemberRequestQuery.cs" />

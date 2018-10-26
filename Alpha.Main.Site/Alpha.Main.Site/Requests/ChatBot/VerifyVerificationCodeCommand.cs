@@ -2,26 +2,19 @@
 {
     using Chatbot.Client.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
 
-    public class VerifyVerificationCodeCommand : IAsyncRequest<VerificationCodeResult>
+    public class VerifyVerificationCodeCommand : WriteLogCommandBase, IAsyncRequest<VerificationCodeResult>
     {
-        private readonly IUserSession userSession;
-
         public VerifyVerificationCodeCommand()
             : this(null)
         {
         }
 
         internal VerifyVerificationCodeCommand(IUserSession userSession)
+                : base(userSession)
         {
-            this.userSession = userSession ?? new UserSessionExt();
         }
-
-        public int CustId => userSession.CustId;
-
-        public string IP => userSession.UserLoginIp;
 
         public string VerificationCode { get; set; }
 
