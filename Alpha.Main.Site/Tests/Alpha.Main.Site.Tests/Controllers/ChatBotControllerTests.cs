@@ -329,7 +329,7 @@
             var result = chatbotController.ReportExample(language) as ViewResult;
 
             // Assert
-            Assert.IsTrue(result.ViewName.Equals("ReportExample") && result.Model == (object)language);
+            Assert.IsTrue(result != null && result.Model == (object)language);
         }
 
         [Test]
@@ -342,7 +342,7 @@
             var result = chatbotController.NotificationExample(language) as ViewResult;
 
             // Assert
-            Assert.IsTrue(result.ViewName.Equals("NotificationExample") && result.Model == (object)language);
+            Assert.IsTrue(result != null && result.Model == (object)language);
         }
     }
 }

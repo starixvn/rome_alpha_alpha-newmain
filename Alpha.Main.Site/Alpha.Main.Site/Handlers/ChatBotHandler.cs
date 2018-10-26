@@ -85,7 +85,7 @@
                  message.Language,
                  message.LetstalkId,
                  MessengerType.Letstalk,
-                 CreateLogParam(message.CustId, message.CustId, message.IP));
+                 CreateLogParam(message));
 
             if (result.IsOk)
             {
@@ -103,7 +103,7 @@
                   sessionManager.Get<int>(ChatbotUserIdSessionKey),
                   MessengerType.Letstalk,
                   sessionManager.Get<string>(LetstalkIdSessionKey),
-                  CreateLogParam(message.CustId, message.CustId, message.IP));
+                  CreateLogParam(message));
 
         public async Task<VerificationCodeResult> Handle(VerifyVerificationCodeCommand message)
         {
@@ -114,7 +114,7 @@
                     message.VerificationCode,
                     sessionManager.Get<string>(LetstalkIdSessionKey),
                     MessengerType.Letstalk,
-                    CreateLogParam(message.CustId, message.CustId, message.IP));
+                    CreateLogParam(message));
             }
 
             return new VerificationCodeResult { Code = 1 };
@@ -156,21 +156,21 @@
             return await settingService.UpdateFunctions(
                 sessionManager.Get<int>(ChatbotUserIdSessionKey),
                 functions,
-                CreateLogParam(message.CustId, message.CustId, message.IP));
+                CreateLogParam(message));
         }
 
         public async Task<Result> Handle(UpdateLanguageCommand message)
             => await settingService.UpdateLanguage(
                 sessionManager.Get<int>(ChatbotUserIdSessionKey),
                 message.Language,
-                CreateLogParam(message.CustId, message.CustId, message.IP));
+                CreateLogParam(message));
 
-        private static LogParam CreateLogParam(int actorId, int custId, string ip)
+        private static LogParam CreateLogParam(WriteLogCommandBase command)
             => new LogParam
             {
-                ActorId = actorId,
-                CustId = custId,
-                IP = ip
+                ActorId = command.CustId,
+                CustId = command.CustId,
+                IP = command.IP
             };
     }
 }

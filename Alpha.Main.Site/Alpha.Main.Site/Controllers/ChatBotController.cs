@@ -137,11 +137,11 @@
 
         [HttpGet]
         public ActionResult ReportExample(string language)
-            => View("ReportExample", (object)language);
+            => View((object)language);
 
         [HttpGet]
         public ActionResult NotificationExample(string language)
-            => View("NotificationExample", (object)language);
+            => View((object)language);
 
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {
