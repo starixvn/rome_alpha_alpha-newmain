@@ -533,23 +533,6 @@
         }
 
         [Test]
-        public void ChatbotLogCategory_HasConfig_ReturnCorrectSetting()
-        {
-            // Arrange
-            var expectedSetting = "Alpha-Chatbot";
-            AppSettings.Settings = new NameValueCollection
-            {
-                ["ChatbotLogCategory"] = expectedSetting
-            };
-
-            // Act
-            var actualSetting = AppSettings.ChatbotLogCategory;
-
-            // Assert
-            Assert.AreEqual(expectedSetting, actualSetting);
-        }
-
-        [Test]
         public void OfferChatbotSites_HasConfig_ReturnCorrectSetting()
         {
             // Arrange

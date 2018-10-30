@@ -53,8 +53,8 @@
       <HintPath>..\..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Chatbot.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Chatbot.Client.1.0.0-beta8-82\lib\net461\Chatbot.Client.dll</HintPath>
+    <Reference Include="Chatbot.Client, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Chatbot.Client.1.0.1\lib\net461\Chatbot.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Common, Version=1.0.404.97, Culture=neutral, processorArchitecture=MSIL">

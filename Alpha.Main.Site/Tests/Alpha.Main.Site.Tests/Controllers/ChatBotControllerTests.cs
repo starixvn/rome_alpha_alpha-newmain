@@ -17,6 +17,7 @@
     using Sunplus.Agent.Model.Entities;
 
     [TestFixture]
+    [Category("Chabot")]
     public class ChatBotControllerTests
     {
         private IMediator mediator;
@@ -162,7 +163,7 @@
             var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
 
             // Act
-            var result = chatbotController.Unsubscribe(new UnsubscribeCommand())
+            var result = chatbotController.Unsubscribe()
                 .GetAwaiter().GetResult() as JsonResult;
 
             // Assert
@@ -173,13 +174,16 @@
         public void Unsubscribe_IsNotInternal_CallMediatorSendUnsubscribeCommand()
         {
             // Arrange
-            var command = new UnsubscribeCommand();
+            var command = new UnsubscribeCommand(userSession);
 
             // Act
-            chatbotController.Unsubscribe(command).ConfigureAwait(false);
+            chatbotController.Unsubscribe().ConfigureAwait(false);
 
             // Assert
-            mediator.Received().SendAsync(Arg.Is<UnsubscribeCommand>(c => c == command));
+            mediator.Received().SendAsync(
+                Arg.Is<UnsubscribeCommand>(
+                    c => c.CustId == command.CustId
+                        && c.IP == command.IP));
         }
 
         [Test]
@@ -205,7 +209,7 @@
             var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
 
             // Act
-            var result = chatbotController.ResendVerificationCode(new ResendVerificationCodeCommand())
+            var result = chatbotController.ResendVerificationCode()
                 .GetAwaiter().GetResult() as JsonResult;
 
             // Assert
@@ -219,7 +223,7 @@
             var command = new ResendVerificationCodeCommand();
 
             // Act
-            chatbotController.ResendVerificationCode(command).ConfigureAwait(false);
+            chatbotController.ResendVerificationCode().ConfigureAwait(false);
 
             // Assert
             mediator.Received().SendAsync(
@@ -325,7 +329,7 @@
             var result = chatbotController.ReportExample(language) as ViewResult;
 
             // Assert
-            Assert.IsTrue(result.ViewName.Equals("ReportExample") && result.Model == (object)language);
+            Assert.IsTrue(result != null && result.Model == (object)language);
         }
 
         [Test]
@@ -338,7 +342,7 @@
             var result = chatbotController.NotificationExample(language) as ViewResult;
 
             // Assert
-            Assert.IsTrue(result.ViewName.Equals("NotificationExample") && result.Model == (object)language);
+            Assert.IsTrue(result != null && result.Model == (object)language);
         }
     }
 }

@@ -115,7 +115,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chat Bot&apos;s Language.
+        ///   Looks up a localized string similar to Chatbot&apos;s Language.
         /// </summary>
         public static string ChatBotLanguage {
             get {

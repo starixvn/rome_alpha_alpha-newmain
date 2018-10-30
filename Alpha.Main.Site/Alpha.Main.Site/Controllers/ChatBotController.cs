@@ -7,7 +7,6 @@
     using AppResources;
     using CaptchaMvc.HtmlHelpers;
     using Configurations;
-    using Filters;
     using Main.Models;
     using MediatR;
     using Models.Requests;
@@ -22,9 +21,7 @@
         private readonly IMediator mediator;
         private readonly IUserSession userSession;
 
-        public ChatBotController(
-            IMediator mediator,
-            IUserSession userSession)
+        public ChatBotController(IMediator mediator, IUserSession userSession)
         {
             this.mediator = mediator;
             this.userSession = userSession;
@@ -43,7 +40,6 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        [ChatbotLoggingFilter("Link Account")]
         public async Task<ActionResult> AddAccount(AddAccountCommand command)
         {
             if (userSession.IsInternal)
@@ -62,19 +58,17 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        [ChatbotLoggingFilter("Unlink Account")]
-        public async Task<ActionResult> Unsubscribe(UnsubscribeCommand command)
+        public async Task<ActionResult> Unsubscribe()
         {
             if (userSession.IsInternal)
             {
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
 
-            return Json(await mediator.SendAsync(command));
+            return Json(await mediator.SendAsync(new UnsubscribeCommand(userSession)));
         }
 
         [HttpPost, AntiXsrfFilter]
-        [ChatbotLoggingFilter("Verify Verification Code")]
         public async Task<ActionResult> VerifyVerificationCode(VerifyVerificationCodeCommand command)
         {
             if (userSession.IsInternal)
@@ -98,15 +92,14 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        [ChatbotLoggingFilter("Resend Verification Code")]
-        public async Task<ActionResult> ResendVerificationCode(ResendVerificationCodeCommand command)
+        public async Task<ActionResult> ResendVerificationCode()
         {
             if (userSession.IsInternal)
             {
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
 
-            return Json(await mediator.SendAsync(command));
+            return Json(await mediator.SendAsync(new ResendVerificationCodeCommand()));
         }
 
         [ChildActionOnly]
@@ -118,7 +111,6 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        [ChatbotLoggingFilter("Update Function")]
         public async Task<ActionResult> UpdateFunction(UpdateFunctionCommand command)
         {
             if (userSession.IsInternal)
@@ -130,7 +122,6 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        [ChatbotLoggingFilter("Change Chatbot's Language")]
         public async Task<ActionResult> ChangeLanguage(UpdateLanguageCommand command)
         {
             if (userSession.IsInternal)
@@ -142,16 +133,15 @@
         }
 
         [HttpGet]
-        public ActionResult Captcha()
-            => PartialView();
+        public ActionResult Captcha() => PartialView();
 
         [HttpGet]
         public ActionResult ReportExample(string language)
-            => View("ReportExample", (object)language);
+            => View((object)language);
 
         [HttpGet]
         public ActionResult NotificationExample(string language)
-            => View("NotificationExample", (object)language);
+            => View((object)language);
 
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {
