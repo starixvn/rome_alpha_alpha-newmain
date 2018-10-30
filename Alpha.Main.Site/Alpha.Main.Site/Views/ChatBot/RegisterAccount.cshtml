@@ -3,6 +3,7 @@
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
 }
 @section Styles {
+    @StaticResources.AssetStyles.RenderCommon("/bundles/site-main/chatbot/chatbot-default")
     @StaticResources.RenderStyles("~/assets/bundles/chatbot/register-account")
 }
 <div class="page-title">
@@ -62,12 +63,13 @@
                     </li>
                     @if (Model.IsVerifying)
                     {
-                        @Html.Partial("VerifyAccount", Model.VerifyAccountViewModel)
+                        Html.RenderPartial("VerifyAccount", Model.VerifyAccountViewModel);
                     }
                 </ul>
             </div>
         </div>
     </div>
+    @{ Html.RenderPartial("LetstalkFunction", Model.ChatBotViewModel); }
 </div>
 @Html.Hidden("IsVerifying", Model.IsVerifying)
 @Html.Hidden("AccountIsRequired", ChatBot.AccountIsRequired)

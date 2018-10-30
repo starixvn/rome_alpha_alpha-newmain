@@ -1,30 +1,25 @@
 ﻿namespace Alpha.Main.Site.ViewModels.ChatBot
 {
-    using System.Collections.Generic;
     using System.Linq;
     using AppResources;
     using Chatbot.Client.Models;
-    using Constants;
 
     public class ChatBotSettingViewModel
     {
-        private readonly User user;
         private readonly Messenger lestalkAccount;
 
-        public ChatBotSettingViewModel(User user)
+        public ChatBotSettingViewModel(ChatBotViewModel chatbotViewModel)
         {
-            this.user = user;
-            lestalkAccount = user.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerType.Letstalk && m.Enabled);
+            lestalkAccount = chatbotViewModel.User.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerType.Letstalk && m.Enabled);
+            ChatBotViewModel = chatbotViewModel;
         }
 
-        public string Language => user.Language;
+        public string Language => ChatBotViewModel.User.Language;
 
         public string LetstalkId => lestalkAccount.Username;
 
-        public IEnumerable<Function> ReportFunctions => user.Functions?.Where(f => f.Type == ChatBotFunctionType.Report);
-
-        public IEnumerable<Function> NotificationFunctions => user.Functions?.Where(f => f.Type == ChatBotFunctionType.Notification);
-
         public string Title => ChatBot.ChatBotTitle;
+
+        public ChatBotViewModel ChatBotViewModel { get; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using Chatbot.Client.Models;
@@ -67,7 +68,7 @@
                 }
             };
 
-            var viewModel = new ChatBotViewModel(user);
+            var viewModel = new ChatBotViewModel(user, Enumerable.Empty<Function>());
 
             mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
 
@@ -76,7 +77,7 @@
 
             // Assert
             Assert.True(result.ViewName.Equals("ChatBotSetting")
-                && compareLogic.Compare(new ChatBotSettingViewModel(user), result.Model).AreEqual);
+                && compareLogic.Compare(new ChatBotSettingViewModel(viewModel), result.Model).AreEqual);
         }
 
         [Test]
@@ -89,7 +90,7 @@
                 MessengerAccounts = new List<Messenger>()
             };
 
-            var viewModel = new ChatBotViewModel(user);
+            var viewModel = new ChatBotViewModel(user, Enumerable.Empty<Function>());
 
             mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
 
@@ -98,7 +99,7 @@
 
             // Assert
             Assert.True(result.ViewName.Equals("RegisterAccount")
-                && compareLogic.Compare(new RegisterAccountViewModel(user), result.Model).AreEqual);
+                && compareLogic.Compare(new RegisterAccountViewModel(viewModel), result.Model).AreEqual);
         }
 
         [Test]

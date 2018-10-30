@@ -31,12 +31,9 @@
         {
             var model = await mediator.SendAsync(new SetUpChatBotQuery(userSession));
 
-            if (model.IsAlreadySetup)
-            {
-                return View("ChatBotSetting", new ChatBotSettingViewModel(model.User));
-            }
-
-            return View("RegisterAccount", new RegisterAccountViewModel(model.User));
+            return model.IsAlreadySetup
+                ? View("ChatBotSetting", new ChatBotSettingViewModel(model))
+                : View("RegisterAccount", new RegisterAccountViewModel(model));
         }
 
         [HttpPost, AntiXsrfFilter]
