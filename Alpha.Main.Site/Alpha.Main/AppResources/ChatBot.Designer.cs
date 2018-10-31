@@ -133,6 +133,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chatbot Setup.
+        /// </summary>
+        public static string ChatbotSetup {
+            get {
+                return ResourceManager.GetString("ChatbotSetup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chatbot.
         /// </summary>
         public static string ChatBotTitle {
@@ -232,7 +241,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt; function integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt;&lt;br /&gt;To start setting up Chatbot, please follow below steps:.
+        ///   Looks up a localized string similar to &lt;strong&gt;Agency Chatbot service&lt;/strong&gt; integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt;&lt;br /&gt;To start setting up Chatbot, please follow below steps:.
         /// </summary>
         public static string IntroChatbot {
             get {
@@ -331,6 +340,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please link your Letstalk ID with our chatbot service to use the below functions..
+        /// </summary>
+        public static string LinkTooltip {
+            get {
+                return ResourceManager.GetString("LinkTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Member WL.
         /// </summary>
         public static string memberWinLoss {
@@ -394,7 +412,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Input your Letstalk ID (not the screen name) to link with a chatbot..
+        ///   Looks up a localized string similar to Input your Letstalk ID (not the screen name) to link with our chatbot service..
         /// </summary>
         public static string pleaseInputLetstalkAccount {
             get {
@@ -534,6 +552,15 @@ namespace Alpha.Main.AppResources {
         public static string Verify {
             get {
                 return ResourceManager.GetString("Verify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please verify your Letstalk ID to use the below functions..
+        /// </summary>
+        public static string VerifyTooltip {
+            get {
+                return ResourceManager.GetString("VerifyTooltip", resourceCulture);
             }
         }
         

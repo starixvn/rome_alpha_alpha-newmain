@@ -8,10 +8,11 @@
     {
         private readonly Messenger letstalkAccount;
 
-        public RegisterAccountViewModel(ChatBotViewModel chatbotViewModel)
+        public RegisterAccountViewModel(ChatBotViewModel chatbotViewModel, string language)
         {
             letstalkAccount = chatbotViewModel.User?.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerType.Letstalk && m.IsVerifying);
             ChatBotViewModel = chatbotViewModel;
+            Language = language;
         }
 
         public string LetstalkId
@@ -29,5 +30,7 @@
         public string Title => ChatBot.ChatBotTitle;
 
         public ChatBotViewModel ChatBotViewModel { get; }
+
+        public string Language { get; }
     }
 }

@@ -12,6 +12,7 @@ class AddAccount extends BaseChatBot {
     $imgQRCode: JQuery;
     $linkShowQRCode: JQuery;
     $linkHideQRCode: JQuery;
+    $divLinkTooltip: JQuery;
 
     verifyAccount: VerifyAccount;
 
@@ -26,6 +27,7 @@ class AddAccount extends BaseChatBot {
         overMaxAddAccountTimes: (<HTMLInputElement>document.getElementById('OverMaxAddAccountTimes')).value,
         accountHasAlreadyBeenRegistered: (<HTMLInputElement>document.getElementById('AccountHasAlreadyBeenRegistered')).value,
         accountIsRequired: (<HTMLInputElement>document.getElementById('AccountIsRequired')).value,
+        language: (<HTMLInputElement>document.getElementById('Language')).value
     }
 
     init = () => {
@@ -36,6 +38,8 @@ class AddAccount extends BaseChatBot {
         if (isVerifying) {
             this.verifyAccount.init();
         }
+
+        this.cacheDOMAndRegisterFunctionExample(() => this.resources.language);
     }
 
     cachedDOMElements = () => {
@@ -49,6 +53,7 @@ class AddAccount extends BaseChatBot {
         this.$imgQRCode = this.$("#imgQRCode");
         this.$linkShowQRCode = this.$("#showQRCode");
         this.$linkHideQRCode = this.$("#hideQRCode");
+        this.$divLinkTooltip = this.$("#divLinkTooltip");
     }
 
     registerEvents = () => {
@@ -138,6 +143,7 @@ class AddAccount extends BaseChatBot {
         this.$btnAdd.hide();
         this.$btnUnsubscribe.show();
         this.$txtAccount.attr("disabled", "disabled");
+        this.$divLinkTooltip.remove();
 
         this.$registerLetstalkPanel.append(data);
 

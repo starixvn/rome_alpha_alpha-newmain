@@ -99,7 +99,7 @@
 
             // Assert
             Assert.True(result.ViewName.Equals("RegisterAccount")
-                && compareLogic.Compare(new RegisterAccountViewModel(viewModel), result.Model).AreEqual);
+                && compareLogic.Compare(new RegisterAccountViewModel(viewModel, string.Empty), result.Model).AreEqual);
         }
 
         [Test]

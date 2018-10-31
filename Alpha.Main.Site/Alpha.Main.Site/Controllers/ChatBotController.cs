@@ -29,11 +29,12 @@
 
         public async Task<ActionResult> Index()
         {
+            var language = userSession.Language;
             var model = await mediator.SendAsync(new SetUpChatBotQuery(userSession));
 
             return model.IsAlreadySetup
                 ? View("ChatBotSetting", new ChatBotSettingViewModel(model))
-                : View("RegisterAccount", new RegisterAccountViewModel(model));
+                : View("RegisterAccount", new RegisterAccountViewModel(model, language));
         }
 
         [HttpPost, AntiXsrfFilter]
