@@ -188,8 +188,8 @@
   {
     "outputFileName": "Assets/bundles/chatbot/register-account.css",
     "inputFiles": [
-      "Assets/styles/chatbot/register-account.css",
-      "Assets/styles/chatbot/chatbot-setting.css"
+      "Assets/styles/chatbot/chatbot-setting.css",
+      "Assets/styles/chatbot/register-account.css"
     ]
   },
   {

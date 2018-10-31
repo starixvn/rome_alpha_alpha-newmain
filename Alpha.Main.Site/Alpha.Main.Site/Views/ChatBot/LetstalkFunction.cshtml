@@ -28,7 +28,7 @@
                             <td class="text-center"><span class="bage">@function.Command</span></td>
                             <td class="bold">@function.Name</td>
                             <td class="text-center">
-                                <label class="switch">
+                                <label class="switch @(enableEditStatus ? string.Empty : "disabled")">
                                     <input data-functionId="@function.Id" data-functionName="@function.Name" data-command="@function.Command" type="checkbox"
                                            class="function" @(function.Enabled ? "checked" : string.Empty)
                                            @(enableEditStatus ? string.Empty : "disabled=disabled") />
@@ -67,7 +67,7 @@
                         <tr>
                             <td class="bold">@function.Name</td>
                             <td class="text-center">
-                                <label class="switch">
+                                <label class="switch @(enableEditStatus ? string.Empty : "disabled")">
                                     <input data-functionId="@function.Id" data-functionName="@function.Name" data-command="@function.Command" type="checkbox"
                                            class="function" @(function.Enabled ? "checked" : string.Empty)
                                            @(enableEditStatus ? string.Empty : "disabled=disabled") />
