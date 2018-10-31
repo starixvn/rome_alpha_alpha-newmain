@@ -174,3 +174,59 @@
     opacity: 0.5;
     color: $link-color;
 }
+
+
+/* call action */
+
+.call-action {
+    display: inline-block;
+    position: relative;
+
+    .popover-simple {
+        left: 28px;
+        top: -13px;
+    }
+}
+
+
+.pulse-css {
+  @include circle(10px);
+  background: tomato;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    @include circle(10px);
+    background-color: tomato;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transform: scale(0.5);
+    transform-origin: center center;
+    animation: pulse-me 3s linear infinite;
+  }
+  &:after {
+    animation-delay: 2s;
+  }
+}
+
+@include keyframes($animationName: "pulse-me") {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+  }
+}

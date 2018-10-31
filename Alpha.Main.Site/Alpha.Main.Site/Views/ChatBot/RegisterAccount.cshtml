@@ -58,6 +58,14 @@
                                 <input id="txtAccount" type="text" maxlength="50" class="letstalk-text" value="@Model.LetstalkId" @(Model.IsVerifying ? "disabled" : string.Empty) />
                                 <button id="btnAdd" class="btn-submit @(Model.IsVerifying ? "display-none" : "")">@ChatBot.link</button>
                                 <button id="btnUnsubscribe" class="btn-remove @(Model.IsVerifying ? "" : "display-none")">@ChatBot.unLink</button>
+                                <div class="call-action">
+                                    <div class="pulse-box">
+                                        <div class="pulse-css"></div>
+                                    </div>
+                                    <div class="popover-simple arrow-left">
+                                        Please link your <strong>Letstalk ID</strong> with our chatbot service to use the below functions.
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </li>

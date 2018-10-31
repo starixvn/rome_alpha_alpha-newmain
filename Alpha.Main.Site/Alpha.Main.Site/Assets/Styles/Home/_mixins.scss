@@ -136,3 +136,9 @@
         animation: ripple 1s ease-out;
     }
 }
+
+@mixin circle($circleSize) {
+  width: $circleSize;
+  height: $circleSize;
+  border-radius: $circleSize/2;
+}
