@@ -196,5 +196,8 @@
 
         public static string[] OfferChatbotSites
             => Settings["OfferChatbotSites"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+        public static string[] OfferClearGivenCredit
+            => Settings["OfferClearGivenCredit"].ToUpper().Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
     }
 }

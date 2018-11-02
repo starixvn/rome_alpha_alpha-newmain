@@ -8,6 +8,7 @@ namespace Alpha.Main
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Configurations;
     using Fanex.Logging.Extensions.Web;
     using Fanex.Products;
     using Helpers;
@@ -30,7 +31,8 @@ namespace Alpha.Main
             ["ReportMenuItem"] = () => new MenuStatus(() => !Current.IsSubAcc || Current.SubPageAccess.ViewReports, null),
             ["TotalBetsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets),
             ["MemberInfoMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo),
-            ["TransferMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.Transfer),
+            ["TransferMenuItem"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) && !AppSettings.OfferClearGivenCredit.Contains(Current.Site.ToUpper())),
+            ["TransferMenuItemBySite"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) && AppSettings.OfferClearGivenCredit.Contains(Current.Site.ToUpper())),
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
             ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),

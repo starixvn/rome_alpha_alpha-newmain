@@ -567,5 +567,23 @@
             // Assert
             Assert.AreEqual(expectedSetting, actualSetting);
         }
+
+        [Test]
+        public void OfferClearGivenCredit_HasConfig_ReturnCorrectSetting()
+        {
+            // Arrange
+
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["OfferClearGivenCredit"] = "KORIBC,INDO"
+            };
+            var expectedSetting = new[] { "KORIBC", "INDO" };
+
+            // Act
+            var actualSetting = AppSettings.OfferClearGivenCredit;
+
+            // Assert
+            Assert.AreEqual(expectedSetting, actualSetting);
+        }
     }
 }
