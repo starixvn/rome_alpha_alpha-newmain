@@ -31,8 +31,10 @@ namespace Alpha.Main
             ["ReportMenuItem"] = () => new MenuStatus(() => !Current.IsSubAcc || Current.SubPageAccess.ViewReports, null),
             ["TotalBetsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets),
             ["MemberInfoMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo),
-            ["TransferMenuItem"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) && !AppSettings.OfferClearGivenCredit.Contains(Current.Site.ToUpper())),
-            ["TransferMenuItemBySite"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) && AppSettings.OfferClearGivenCredit.Contains(Current.Site.ToUpper())),
+            ["TransferMenuItem"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
+                !AppSettings.OfferClearGivenCredit.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase))),
+            ["TransferMenuItemBySite"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
+                AppSettings.OfferClearGivenCredit.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase))),
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
             ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),
