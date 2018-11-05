@@ -41,7 +41,7 @@
     cacheDOMAndRegisterFunctionExample = (getLanguageFunc: Function) => {
         this.$openReportExample = this.$("#openReportExample");
         this.$openReportExample.on('click touchend', () => {
-            this.openExample(this.baseResources.reportExample, "ChatBot/ReportExample", 380, getLanguageFunc());
+            this.openExample(this.baseResources.reportExample, "ChatBot/ReportExample", 400, getLanguageFunc());
         });
 
         this.$openNotificationExample = this.$("#openNotificationExample");
@@ -59,7 +59,7 @@
         });
 
         var dialog = this.topWindow.$(".bootbox .modal-dialog");
-        dialog.width(374);
+        dialog.width(400);
         dialog.css({
             left: this.topWindow.$(this.topWindow.window).width() / 2 - dialog.width() / 2,
             top: 100

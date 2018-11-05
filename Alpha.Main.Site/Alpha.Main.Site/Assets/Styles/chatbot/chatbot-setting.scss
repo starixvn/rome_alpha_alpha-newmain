@@ -193,7 +193,7 @@
 .chatbot-layout {
     @include border-radius(5px 5px 0 0);
     position: relative;
-    width: 340px;
+    width: 366px;
     margin: auto;
 
     &.-report {
@@ -274,14 +274,17 @@
     color: #333;
     overflow-y: scroll;
 
-    &.-large {
-        .chatbot-reponse {
-            width: 210px;
-        }
+    .list-style-number {
+        padding-left: 13px;
+        list-style: decimal;
 
-        .status-chatbot-reponse {
-            left: 271px;
+        p {
+            margin-bottom: 5px;
         }
+    }
+
+    .p-l-13px {
+        padding-left: 13px;
     }
 
     .list-commands {
@@ -328,7 +331,7 @@
     .chatbot-reponse {
         @extend %msg;
         float: left;        
-        width: 190px;
+        width: 218px;
         line-height: 18px;
         margin-left: 58px;
         background-color: #fff;
@@ -384,7 +387,7 @@
         font-size: 12px;
         position: absolute;
         bottom: 0;
-        left: 256px;
+        left: 278px;
     }
 }
 
