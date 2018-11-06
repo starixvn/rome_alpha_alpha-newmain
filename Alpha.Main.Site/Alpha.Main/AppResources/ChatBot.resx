@@ -291,4 +291,10 @@
   <data name="Account" xml:space="preserve">
     <value>Account</value>
   </data>
+  <data name="OutstandingHiddenDownlinesCount" xml:space="preserve">
+    <value>97 more members are not shown.</value>
+  </data>
+  <data name="OutstandingHint" xml:space="preserve">
+    <value>Hint: You can type /os 50 to view top 50 outstanding members</value>
+  </data>
 </root>

@@ -376,6 +376,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 97 more members are not shown..
+        /// </summary>
+        public static string OutstandingHiddenDownlinesCount {
+            get {
+                return ResourceManager.GetString("OutstandingHiddenDownlinesCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hint: You can type /os 50 to view top 50 outstanding members.
+        /// </summary>
+        public static string OutstandingHint {
+            get {
+                return ResourceManager.GetString("OutstandingHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have requested too many times today. Please try again later..
         /// </summary>
         public static string OverMaxAddAccountTimes {

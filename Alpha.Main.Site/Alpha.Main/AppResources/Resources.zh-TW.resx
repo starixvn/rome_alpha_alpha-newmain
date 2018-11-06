@@ -490,4 +490,7 @@
   <data name="systemUpdate" xml:space="preserve">
     <value>系統</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>總和</value>
+  </data>
 </root>

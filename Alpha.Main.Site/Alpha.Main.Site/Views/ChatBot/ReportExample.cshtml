@@ -24,10 +24,10 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    <div>[Outstanding - 20181015]</div>
-                    <div>Username / Member • Agent </div>
+                    <div>[@Resources.member - 20181015]</div>
+                    <div>@Resources.member / @Resources.member • @Resources.agent </div>
                     <div>------------------------------------</div>
-                    <div>TOTAL</div>
+                    <div>@Resources.Total.ToUpperInvariant()</div>
                     <div class="p-l-13px">1,000,000.00 • 100,000.00</div>
 
                     <ul class="list-style-number">
@@ -44,9 +44,9 @@
                             <p>60,000.00 • 6,000.00</p>
                         </li>
                     </ul>
-                    <p>97 more members are not shown.</p>
+                    <p>@ChatBot.OutstandingHiddenDownlinesCount</p>
                     <p>
-                        * Hint: You can type /os 50 to view top 50 outstanding members
+                        * @ChatBot.OutstandingHint
                     </p>
                 </div>
                 <div class="status-chatbot-reponse">
@@ -62,12 +62,12 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">                    
-                    <div>[Outstanding - 20181015]</div>
-                    <div>Username</div>
+                    <div>[@Resources.outstanding - 20181015]</div>
+                    <div>@Resources.member</div>
                     <div class="p-l-13px">Member2</div>
-                    <div>Member</div>
+                    <div>@Resources.member</div>
                     <div class="p-l-13px">1,000.00</div>
-                    <div>Agent</div>
+                    <div>@Resources.agent</div>
                     <div class="p-l-13px">50.00</div>
                 </div>
                 <div class="status-chatbot-reponse">
