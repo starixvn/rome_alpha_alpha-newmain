@@ -136,3 +136,5 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Sonar Code Smell", "S1541:Methods and properties should not be too complex", Justification = "<Pending>", Scope = "member", Target = "~M:Alpha.Main.Services.Impl.AnnouncementServiceImpl.GetHotAnnouncementFromLocalFiles(Alpha.Main.Params.Announcements.GetHotAnnouncementsParams)~Alpha.Main.Models.Announcements.HotAnnouncement")]
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3996:URI properties should not be strings", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Configurations.AppSettings.ChatBotBaseUrl")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S1449:Culture should be specified for \"string\" operations", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Configurations.AppSettings.OfferClearGivenCredit")]
+
