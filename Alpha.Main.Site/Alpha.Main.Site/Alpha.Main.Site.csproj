@@ -1249,6 +1249,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Helpers\HmacAuthenticator.cs" />
+    <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\RestClientHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Requests\AllLanguagesQuery.cs" />

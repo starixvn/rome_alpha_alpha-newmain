@@ -130,7 +130,7 @@
     <value>总佣金</value>
   </data>
   <data name="IntroChatbot" xml:space="preserve">
-    <value>&lt;strong&gt;Agency Chatbot service&lt;/strong&gt; integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt;&lt;br /&gt;请按照以下操作步骤开始设置 Chatbot：</value>
+    <value>&lt;strong&gt;代理网的 Chatbot 服务&lt;/strong&gt;功能与 &lt;strong&gt;Letstalk IM&lt;/strong&gt;的结合让您在&lt;strong&gt;无需登入管理网，让您更方便及安全的接收到最新资讯。&lt;/strong&gt;&lt;br /&gt;请按照以下操作步骤开始设置 Chatbot：</value>
   </data>
   <data name="InstallLetstalk" xml:space="preserve">
     <value>下载 Letstalk 并免费创建账号。</value>
@@ -266,5 +266,20 @@
   </data>
   <data name="Account" xml:space="preserve">
     <value>帐户</value>
+  </data>
+  <data name="ChatbotSetup" xml:space="preserve">
+    <value>Chatbot 设置</value>
+  </data>
+  <data name="LinkTooltip" xml:space="preserve">
+    <value>请将您的Letstalk ID与我们的 Chatbot 服务链接，以使用以下功能。</value>
+  </data>
+  <data name="OutstandingHint" xml:space="preserve">
+    <value>提示：快速指令，请输入：/os 50</value>
+  </data>
+  <data name="VerifyTooltip" xml:space="preserve">
+    <value>请验证您的Letstalk ID使用以下功能。</value>
+  </data>
+  <data name="OutstandingHiddenDownlinesCount" xml:space="preserve">
+    <value>超过 97 会员就不会显示</value>
   </data>
 </root>

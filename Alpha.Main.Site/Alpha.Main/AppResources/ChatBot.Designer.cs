@@ -340,7 +340,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please link your Letstalk ID with our chatbot service to use the below functions..
+        ///   Looks up a localized string similar to Please link your Letstalk ID with our chatbot service to use the functions below..
         /// </summary>
         public static string LinkTooltip {
             get {
@@ -385,7 +385,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hint: You can type /os 50 to view top 50 outstanding members.
+        ///   Looks up a localized string similar to Hint: For quick commands, please type: /os 50.
         /// </summary>
         public static string OutstandingHint {
             get {

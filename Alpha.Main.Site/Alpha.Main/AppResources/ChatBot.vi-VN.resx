@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChatBotTitle" xml:space="preserve">
-    <value>Chatbot</value>
-  </data>
   <data name="InstallLetstalk" xml:space="preserve">
     <value>Cài đặt Letstalk và tạo một tài khoản miễn phí.</value>
   </data>
@@ -193,7 +190,7 @@
     <value>Không nhận được mã?</value>
   </data>
   <data name="IntroChatbot" xml:space="preserve">
-    <value>&lt;strong&gt;Agency Chatbot service&lt;/strong&gt; integrated with this &lt;strong&gt;Letstalk IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt;&lt;br /&gt;Để bắt đầu cấu hình Chatbot, vui lòng thực hiện các bước sau:</value>
+    <value>&lt;strong&gt;Tính năng Chatbot trong trang web đại lý&lt;/strong&gt; tích hợp với &lt;strong&gt;Letstalk IM&lt;/strong&gt; giúp bạn &lt;strong&gt;cập nhật thông tin kinh doanh một cách thuận tiện và bảo mật mà không cần vào trang web này.&lt;/strong&gt;&lt;br /&gt;Để bắt đầu cấu hình Chatbot, vui lòng thực hiện các bước sau:</value>
   </data>
   <data name="IntroLetstalk" xml:space="preserve">
     <value>là ứng dụng nhắn tin &lt;strong&gt;bảo mật&lt;/strong&gt; tốt nhất hiện nay giúp &lt;strong&gt;mã hóa&lt;/strong&gt; tin nhắn của bạn. </value>
@@ -269,5 +266,17 @@
   </data>
   <data name="Account" xml:space="preserve">
     <value>Tài khoản</value>
+  </data>
+  <data name="OutstandingHint" xml:space="preserve">
+    <value>*Gợi ý: để xem nhanh, vui lòng nhập: /os 50</value>
+  </data>
+  <data name="VerifyTooltip" xml:space="preserve">
+    <value>Vui lòng xác thực ID Letstalk của bạn để sử dụng những tính năng sau.</value>
+  </data>
+  <data name="LinkTooltip" xml:space="preserve">
+    <value>Vui lòng liên kết tài khoản Letstalk của bạn với chatbot để sử dụng các tính năng sau.</value>
+  </data>
+  <data name="OutstandingHiddenDownlinesCount" xml:space="preserve">
+    <value>Còn 97 members nữa chưa hiện ra.</value>
   </data>
 </root>

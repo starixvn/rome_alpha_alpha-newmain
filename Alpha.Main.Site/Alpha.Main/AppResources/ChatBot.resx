@@ -283,7 +283,7 @@
     <value>Please set</value>
   </data>
   <data name="LinkTooltip" xml:space="preserve">
-    <value>Please link your Letstalk ID with our chatbot service to use the below functions.</value>
+    <value>Please link your Letstalk ID with our chatbot service to use the functions below.</value>
   </data>
   <data name="VerifyTooltip" xml:space="preserve">
     <value>Please verify your Letstalk ID to use the below functions.</value>
@@ -295,6 +295,6 @@
     <value>97 more members are not shown.</value>
   </data>
   <data name="OutstandingHint" xml:space="preserve">
-    <value>Hint: You can type /os 50 to view top 50 outstanding members</value>
+    <value>Hint: For quick commands, please type: /os 50</value>
   </data>
 </root>
