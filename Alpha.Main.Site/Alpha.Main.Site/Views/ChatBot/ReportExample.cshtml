@@ -24,10 +24,10 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    <div>[@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.member), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
-                    <div>@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.member), Model) / @ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.member), Model) • @ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.agent), Model) </div>
+                    <div>[@ResourceHelper.GetResource(nameof(Resources.member), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.member), Model) / @ResourceHelper.GetResource(nameof(Resources.member), Model) • @ResourceHelper.GetResource(nameof(Resources.agent), Model) </div>
                     <br />
-                    <div>@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.Total), Model).ToUpperInvariant()</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.Total), Model).ToUpperInvariant()</div>
                     <div class="p-l-13px">1,000,000.00 • 100,000.00</div>
                     <ul class="list-style-number">
                         <li>
@@ -43,9 +43,9 @@
                             <p>60,000.00 • 6,000.00</p>
                         </li>
                     </ul>
-                    <p>@ResourceHelper.GetResource(ChatBot.ResourceManager, nameof(ChatBot.OutstandingHiddenDownlinesCount), Model)</p>
+                    <p>@ResourceHelper.GetChatbotResource(nameof(ChatBot.OutstandingHiddenDownlinesCount), Model)</p>
                     <p>
-                        * @ResourceHelper.GetResource(ChatBot.ResourceManager, nameof(ChatBot.OutstandingHint), Model)
+                        * @ResourceHelper.GetChatbotResource(nameof(ChatBot.OutstandingHint), Model)
                     </p>
                 </div>
                 <div class="status-chatbot-reponse">
@@ -61,12 +61,12 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    <div>[@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.outstanding), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
-                    <div>@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.member), Model)</div>
+                    <div>[@ResourceHelper.GetResource(nameof(Resources.outstanding), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.member), Model)</div>
                     <div class="p-l-13px">Member2</div>
-                    <div>@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.member), Model)</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.member), Model)</div>
                     <div class="p-l-13px">1,000.00</div>
-                    <div>@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.agent), Model)</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.agent), Model)</div>
                     <div class="p-l-13px">50.00</div>
                 </div>
                 <div class="status-chatbot-reponse">
@@ -82,12 +82,12 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    <div>[@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.todayWinLoss), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
-                    <div>@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.turnover), Model)</div>
+                    <div>[@ResourceHelper.GetResource(nameof(Resources.todayWinLoss), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.turnover), Model)</div>
                     <div class="p-l-13px">30,000.00</div>
-                    <div>@ResourceHelper.GetResource(ChatBot.ResourceManager, nameof(ChatBot.grossComm), Model)</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.grossComm), Model)</div>
                     <div class="p-l-13px">50.00</div>
-                    <div>@ResourceHelper.GetResource(ChatBot.ResourceManager, nameof(ChatBot.memberWinLoss), Model)</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.memberWinLoss), Model)</div>
                     <div class="p-l-13px">5,000.00</div>
                 </div>
                 <div class="status-chatbot-reponse">
@@ -103,12 +103,12 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    <div>[@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.balanceInfo), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
-                    <div>@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.currency), Model)<br /></div>
+                    <div>[@ResourceHelper.GetResource(nameof(Resources.balanceInfo), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.currency), Model)<br /></div>
                     <div class="p-l-13px">UUS</div>
-                    <div>@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.cashBalance), Model)</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.cashBalance), Model)</div>
                     <div class="p-l-13px">1,500,000.00</div>
-                    <div>@ResourceHelper.GetResource(Resources.ResourceManager, nameof(Resources.yesterdayCashBalance), Model)</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.yesterdayCashBalance), Model)</div>
                     <div class="p-l-13px">1,500,000.00</div>
                 </div>
                 <div class="status-chatbot-reponse">
@@ -120,7 +120,8 @@
     <div class="data-input">
         <span class="icon-chatbot-plus"></span>
         <span class="icon-chatbot-gif"></span>
-        <input type="text" id="reportText" class="chatbot-text" placeholder="@ResourceHelper.GetResource(ChatBot.ResourceManager, nameof(ChatBot.inputCommand), Model)" dis disabled />
+        <input type="text" id="reportText" class="chatbot-text" placeholder="@ResourceHelper.GetChatbotResource(nameof(ChatBot.inputCommand), Model)" dis disabled />
+        dis disabled />
         <span class="icon-chatbot-voice"></span>
     </div>
     <div class="list-actions">

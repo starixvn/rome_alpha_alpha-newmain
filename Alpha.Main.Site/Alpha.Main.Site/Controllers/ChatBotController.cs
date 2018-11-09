@@ -145,13 +145,16 @@
         {
             base.OnAuthorization(filterContext);
 
-            if (userSession != null
-                && (userSession.IsSubAcc
-                    || !(AppSettings.OfferChatbotSites.Contains(userSession.Site, StringComparer.OrdinalIgnoreCase)
-                        || AppSettings.OfferChatbotSites.Contains("*"))))
+            if (IsNotAllowedAccess(userSession))
             {
                 UnAuthentication(filterContext);
             }
         }
+
+        internal bool IsNotAllowedAccess(IUserSession session)
+            => session != null
+            && (session.IsSubAcc
+                || !(AppSettings.OfferChatbotSites.Contains(session.Site, StringComparer.OrdinalIgnoreCase)
+                    || AppSettings.OfferChatbotSites.Contains("*")));
     }
 }

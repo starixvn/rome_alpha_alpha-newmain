@@ -345,5 +345,60 @@
             // Assert
             Assert.IsTrue(result != null && result.Model == (object)language);
         }
+
+        [Test]
+        public void IsInvalidSession_IsSubAcc_ReturnTrue()
+        {
+            // Arrange
+            userSession.IsSubAcc.Returns(true);
+
+            // Act & Assert
+            Assert.IsTrue(chatbotController.IsNotAllowedAccess(userSession));
+        }
+
+        [Test]
+        public void IsInvalidSession_SiteIsNOTOfferChatbot_ReturnTrue()
+        {
+            // Arrange
+            userSession.IsSubAcc.Returns(false);
+            userSession.Site.Returns("TEST");
+            AppSettings.Settings = new System.Collections.Specialized.NameValueCollection
+            {
+                ["OfferChatbotSites"] = "ABC"
+            };
+
+            // Act & Assert
+            Assert.IsTrue(chatbotController.IsNotAllowedAccess(userSession));
+        }
+
+        [Test]
+        public void IsInvalidSession_SiteIsOfferChatbot_ReturnFalse()
+        {
+            // Arrange
+            userSession.IsSubAcc.Returns(false);
+            userSession.Site.Returns("TEST");
+            AppSettings.Settings = new System.Collections.Specialized.NameValueCollection
+            {
+                ["OfferChatbotSites"] = "TEST"
+            };
+
+            // Act & Assert
+            Assert.IsFalse(chatbotController.IsNotAllowedAccess(userSession));
+        }
+
+        [Test]
+        public void IsInvalidSession_OfferChatbotAll_ReturnFalse()
+        {
+            // Arrange
+            userSession.IsSubAcc.Returns(false);
+            userSession.Site.Returns("TEST");
+            AppSettings.Settings = new System.Collections.Specialized.NameValueCollection
+            {
+                ["OfferChatbotSites"] = "*"
+            };
+
+            // Act & Assert
+            Assert.IsFalse(chatbotController.IsNotAllowedAccess(userSession));
+        }
     }
 }

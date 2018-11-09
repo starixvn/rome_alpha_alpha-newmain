@@ -130,7 +130,7 @@
     <value>总佣金</value>
   </data>
   <data name="IntroChatbot" xml:space="preserve">
-    <value>&lt;strong&gt;代理网的 Chatbot 服务&lt;/strong&gt;功能与 &lt;strong&gt;Letstalk IM&lt;/strong&gt;的结合让您在&lt;strong&gt;无需登入管理网，让您更方便及安全的接收到最新资讯。&lt;/strong&gt;&lt;br /&gt;请按照以下操作步骤开始设置 Chatbot：</value>
+    <value>代理网的 Chatbot 服务是集成于Letstalk IM，让您无需登入网站也能更方便及安全地接收到最新并重要的资讯。&lt;br /&gt;请按照以下操作步骤开始设置 Chatbot：</value>
   </data>
   <data name="InstallLetstalk" xml:space="preserve">
     <value>下载 Letstalk 并免费创建账号。</value>
