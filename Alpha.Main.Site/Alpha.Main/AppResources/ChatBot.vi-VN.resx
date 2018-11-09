@@ -279,4 +279,22 @@
   <data name="OutstandingHiddenDownlinesCount" xml:space="preserve">
     <value>Còn 97 members nữa chưa hiện ra.</value>
   </data>
+  <data name="YesterdayTotalBalance" xml:space="preserve">
+    <value>Giao dịch đến hết hôm qua</value>
+  </data>
+  <data name="TodayWinLoss" xml:space="preserve">
+    <value>Thắng thua trong ngày</value>
+  </data>
+  <data name="YesterdayWL" xml:space="preserve">
+    <value>Thắng thua hôm qua</value>
+  </data>
+  <data name="MemberOutstanding" xml:space="preserve">
+    <value>Số tiền chưa xử lý của Member</value>
+  </data>
+  <data name="MemberCredit" xml:space="preserve">
+    <value>Mức tín dụng của Member</value>
+  </data>
+  <data name="AgentOutstanding" xml:space="preserve">
+    <value>Số tiền chưa xử lý của Agent</value>
+  </data>
 </root>

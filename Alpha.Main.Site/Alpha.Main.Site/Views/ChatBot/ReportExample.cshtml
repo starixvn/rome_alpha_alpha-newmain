@@ -24,7 +24,7 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    <div>[@ResourceHelper.GetResource(nameof(Resources.member), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
+                    <div>[@ResourceHelper.GetResource(nameof(Resources.outstanding), Model) - @DateTime.Now.ToString("yyyyMMdd")]</div>
                     <div>@ResourceHelper.GetResource(nameof(Resources.member), Model) / @ResourceHelper.GetResource(nameof(Resources.member), Model) • @ResourceHelper.GetResource(nameof(Resources.agent), Model) </div>
                     <br />
                     <div>@ResourceHelper.GetResource(nameof(Resources.Total), Model).ToUpperInvariant()</div>
@@ -110,6 +110,24 @@
                     <div class="p-l-13px">1,500,000.00</div>
                     <div>@ResourceHelper.GetResource(nameof(Resources.yesterdayCashBalance), Model)</div>
                     <div class="p-l-13px">1,500,000.00</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.balance), Model)</div>
+                    <div class="p-l-13px">-52,918.47</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.YesterdayTotalBalance), Model)</div>
+                    <div class="p-l-13px">-59,283.30</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.TodayWinLoss), Model)</div>
+                    <div class="p-l-13px">-2,732.36</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.YesterdayWL), Model)</div>
+                    <div class="p-l-13px">-2,732.36</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.YesterdayWL), Model)</div>
+                    <div class="p-l-13px">21,838.31</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.givenCredit), Model)</div>
+                    <div class="p-l-13px">60,000,000.00</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.MemberCredit), Model)</div>
+                    <div class="p-l-13px">9,183,161.50</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.MemberOutstanding), Model)</div>
+                    <div class="p-l-13px">2,030,126.00</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.AgentOutstanding), Model)</div>
+                    <div class="p-l-13px">795,867.85</div>
                 </div>
                 <div class="status-chatbot-reponse">
                     12:39

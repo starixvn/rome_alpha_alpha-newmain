@@ -297,4 +297,22 @@
   <data name="OutstandingHint" xml:space="preserve">
     <value>Hint: For quick commands, please type: /os 50</value>
   </data>
+  <data name="YesterdayTotalBalance" xml:space="preserve">
+    <value>Yesterday Bal</value>
+  </data>
+  <data name="TodayWinLoss" xml:space="preserve">
+    <value>Today WL</value>
+  </data>
+  <data name="YesterdayWL" xml:space="preserve">
+    <value>Yesterday WL</value>
+  </data>
+  <data name="MemberOutstanding" xml:space="preserve">
+    <value>Member Outstanding</value>
+  </data>
+  <data name="MemberCredit" xml:space="preserve">
+    <value>Member Credit</value>
+  </data>
+  <data name="AgentOutstanding" xml:space="preserve">
+    <value>Agent Outstanding</value>
+  </data>
 </root>

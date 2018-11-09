@@ -130,7 +130,7 @@
     <value>总佣金</value>
   </data>
   <data name="IntroChatbot" xml:space="preserve">
-    <value>代理网的 Chatbot 服务是集成于Letstalk IM，让您无需登入网站也能更方便及安全地接收到最新并重要的资讯。&lt;br /&gt;请按照以下操作步骤开始设置 Chatbot：</value>
+    <value>&lt;strong&gt;代理网的 Chatbot 服务&lt;/strong&gt;是集成于&lt;strong&gt;Letstalk IM&lt;/strong&gt;，让您&lt;strong&gt;无需登入网站也能更方便及安全地&lt;/strong&gt;接收到&lt;strong&gt;最新并重要的资讯。&lt;/strong&gt;&lt;br /&gt;请按照以下操作步骤开始设置 Chatbot：</value>
   </data>
   <data name="InstallLetstalk" xml:space="preserve">
     <value>下载 Letstalk 并免费创建账号。</value>
@@ -281,5 +281,23 @@
   </data>
   <data name="OutstandingHiddenDownlinesCount" xml:space="preserve">
     <value>超过 97 会员就不会显示</value>
+  </data>
+  <data name="YesterdayTotalBalance" xml:space="preserve">
+    <value>昨天餘額</value>
+  </data>
+  <data name="TodayWinLoss" xml:space="preserve">
+    <value>今日输赢</value>
+  </data>
+  <data name="YesterdayWL" xml:space="preserve">
+    <value>昨日输赢</value>
+  </data>
+  <data name="MemberOutstanding" xml:space="preserve">
+    <value>会员未结束交易</value>
+  </data>
+  <data name="MemberCredit" xml:space="preserve">
+    <value>会员信用额度</value>
+  </data>
+  <data name="AgentOutstanding" xml:space="preserve">
+    <value>代理未结束交易</value>
   </data>
 </root>

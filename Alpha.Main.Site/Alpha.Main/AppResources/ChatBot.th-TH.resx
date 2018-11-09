@@ -127,7 +127,7 @@
     <value>ยอดรวมของคอมมิชชั่น</value>
   </data>
   <data name="IntroChatbot" xml:space="preserve">
-    <value>ฟังก์ชัน &lt;strong&gt;"Chatbot"&lt;/strong&gt; ที่รวมเข้ากับ &lt;strong&gt;Letstalk IM&lt;/strong&gt; ช่วยให้คุณได้รับ&lt;strong&gt;ข้อมูลสำคัญเกี่ยวกับธุรกิจของคุณอย่างสะดวกและปลอดภัยโดยไม่จำเป็นต้องเข้าถึงไซต์นี้&lt;/strong&gt;&lt;br /&gt;เริ่มต้นการตั้งค่า Chatbot, โปรดทำตามขั้นตอนด้านล่าง:</value>
+    <value>&lt;strong&gt;ฟังก์ชัน "Chatbot"&lt;/strong&gt; ที่รวมเข้ากับ &lt;strong&gt;Letstalk IM&lt;/strong&gt; ช่วยให้คุณได้รับ&lt;strong&gt;ข้อมูลสำคัญเ&lt;/strong&gt;กี่ยวกับธุรกิจของคุณอย่าง&lt;strong&gt;สะดวกและปลอดภัย&lt;/strong&gt;โดยไม่จำเป็นต้องเข้าถึงไซต์นี้&lt;br /&gt;เริ่มต้นการตั้งค่า Chatbot, โปรดทำตามขั้นตอนด้านล่าง:</value>
   </data>
   <data name="InstallLetstalk" xml:space="preserve">
     <value>ติดตั้ง Letstalk สร้างฟรียูเซอร์</value>
@@ -275,5 +275,23 @@
   </data>
   <data name="OutstandingHiddenDownlinesCount" xml:space="preserve">
     <value>มี 97 สมาชิกที่ไม่ได้แสดงผล</value>
+  </data>
+  <data name="YesterdayTotalBalance" xml:space="preserve">
+    <value>ยอดคงเหลือเมื่อวาน</value>
+  </data>
+  <data name="TodayWinLoss" xml:space="preserve">
+    <value>ยอดได้เสียวันนี้</value>
+  </data>
+  <data name="YesterdayWL" xml:space="preserve">
+    <value>ยอดได้เสียเมื่อวาน</value>
+  </data>
+  <data name="MemberOutstanding" xml:space="preserve">
+    <value>การเดิมพันที่ยังไม่สิ้นสุดของ สมาชิก</value>
+  </data>
+  <data name="MemberCredit" xml:space="preserve">
+    <value>เครดิตเมมเบอร์</value>
+  </data>
+  <data name="AgentOutstanding" xml:space="preserve">
+    <value>เอเย่นต์ยอดคงค้าง</value>
   </data>
 </root>

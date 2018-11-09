@@ -97,6 +97,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agent Outstanding.
+        /// </summary>
+        public static string AgentOutstanding {
+            get {
+                return ResourceManager.GetString("AgentOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Atom.
         /// </summary>
         public static string Atom {
@@ -349,6 +358,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Member Credit.
+        /// </summary>
+        public static string MemberCredit {
+            get {
+                return ResourceManager.GetString("MemberCredit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Member Outstanding.
+        /// </summary>
+        public static string MemberOutstanding {
+            get {
+                return ResourceManager.GetString("MemberOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Member WL.
         /// </summary>
         public static string memberWinLoss {
@@ -520,6 +547,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Today WL.
+        /// </summary>
+        public static string TodayWinLoss {
+            get {
+                return ResourceManager.GetString("TodayWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unlink.
         /// </summary>
         public static string unLink {
@@ -583,11 +619,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yesterday Bal.
+        /// </summary>
+        public static string YesterdayTotalBalance {
+            get {
+                return ResourceManager.GetString("YesterdayTotalBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yesterday Win Loss.
         /// </summary>
         public static string yesterdayWinLoss {
             get {
                 return ResourceManager.GetString("yesterdayWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yesterday WL.
+        /// </summary>
+        public static string YesterdayWL {
+            get {
+                return ResourceManager.GetString("YesterdayWL", resourceCulture);
             }
         }
         
