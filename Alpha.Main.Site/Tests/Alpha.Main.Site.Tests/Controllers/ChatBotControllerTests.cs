@@ -347,7 +347,7 @@
         }
 
         [Test]
-        public void IsInvalidSession_IsSubAcc_ReturnTrue()
+        public void IsNotAllowedAccess_IsSubAcc_ReturnTrue()
         {
             // Arrange
             userSession.IsSubAcc.Returns(true);
@@ -357,7 +357,7 @@
         }
 
         [Test]
-        public void IsInvalidSession_SiteIsNOTOfferChatbot_ReturnTrue()
+        public void IsNotAllowedAccess_SiteIsNOTOfferChatbot_ReturnTrue()
         {
             // Arrange
             userSession.IsSubAcc.Returns(false);
@@ -372,7 +372,7 @@
         }
 
         [Test]
-        public void IsInvalidSession_SiteIsOfferChatbot_ReturnFalse()
+        public void IsNotAllowedAccess_SiteIsOfferChatbot_ReturnFalse()
         {
             // Arrange
             userSession.IsSubAcc.Returns(false);
@@ -387,7 +387,7 @@
         }
 
         [Test]
-        public void IsInvalidSession_OfferChatbotAll_ReturnFalse()
+        public void IsNotAllowedAccess_OfferChatbotAll_ReturnFalse()
         {
             // Arrange
             userSession.IsSubAcc.Returns(false);
