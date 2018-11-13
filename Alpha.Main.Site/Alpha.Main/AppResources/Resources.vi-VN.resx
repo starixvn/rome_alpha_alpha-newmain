@@ -489,4 +489,7 @@
   <data name="systemUpdate" xml:space="preserve">
     <value>Cập nhật</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>Tổng cộng</value>
+  </data>
 </root>

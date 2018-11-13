@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using Chatbot.Client.Models;
@@ -67,7 +68,7 @@
                 }
             };
 
-            var viewModel = new ChatBotViewModel(user);
+            var viewModel = new ChatBotViewModel(user, Enumerable.Empty<Function>());
 
             mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
 
@@ -76,7 +77,7 @@
 
             // Assert
             Assert.True(result.ViewName.Equals("ChatBotSetting")
-                && compareLogic.Compare(new ChatBotSettingViewModel(user), result.Model).AreEqual);
+                && compareLogic.Compare(new ChatBotSettingViewModel(viewModel), result.Model).AreEqual);
         }
 
         [Test]
@@ -89,7 +90,7 @@
                 MessengerAccounts = new List<Messenger>()
             };
 
-            var viewModel = new ChatBotViewModel(user);
+            var viewModel = new ChatBotViewModel(user, Enumerable.Empty<Function>());
 
             mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
 
@@ -98,7 +99,7 @@
 
             // Assert
             Assert.True(result.ViewName.Equals("RegisterAccount")
-                && compareLogic.Compare(new RegisterAccountViewModel(user), result.Model).AreEqual);
+                && compareLogic.Compare(new RegisterAccountViewModel(viewModel, string.Empty), result.Model).AreEqual);
         }
 
         [Test]
@@ -343,6 +344,61 @@
 
             // Assert
             Assert.IsTrue(result != null && result.Model == (object)language);
+        }
+
+        [Test]
+        public void IsNotAllowedAccess_IsSubAcc_ReturnTrue()
+        {
+            // Arrange
+            userSession.IsSubAcc.Returns(true);
+
+            // Act & Assert
+            Assert.IsTrue(chatbotController.IsNotAllowedAccess(userSession));
+        }
+
+        [Test]
+        public void IsNotAllowedAccess_SiteIsNOTOfferChatbot_ReturnTrue()
+        {
+            // Arrange
+            userSession.IsSubAcc.Returns(false);
+            userSession.Site.Returns("TEST");
+            AppSettings.Settings = new System.Collections.Specialized.NameValueCollection
+            {
+                ["OfferChatbotSites"] = "ABC"
+            };
+
+            // Act & Assert
+            Assert.IsTrue(chatbotController.IsNotAllowedAccess(userSession));
+        }
+
+        [Test]
+        public void IsNotAllowedAccess_SiteIsOfferChatbot_ReturnFalse()
+        {
+            // Arrange
+            userSession.IsSubAcc.Returns(false);
+            userSession.Site.Returns("TEST");
+            AppSettings.Settings = new System.Collections.Specialized.NameValueCollection
+            {
+                ["OfferChatbotSites"] = "TEST"
+            };
+
+            // Act & Assert
+            Assert.IsFalse(chatbotController.IsNotAllowedAccess(userSession));
+        }
+
+        [Test]
+        public void IsNotAllowedAccess_OfferChatbotAll_ReturnFalse()
+        {
+            // Arrange
+            userSession.IsSubAcc.Returns(false);
+            userSession.Site.Returns("TEST");
+            AppSettings.Settings = new System.Collections.Specialized.NameValueCollection
+            {
+                ["OfferChatbotSites"] = "*"
+            };
+
+            // Act & Assert
+            Assert.IsFalse(chatbotController.IsNotAllowedAccess(userSession));
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@using System.Globalization
+﻿@using Alpha.Main.Site.Helpers
 @model string
 @{
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
@@ -17,10 +17,13 @@
         <ul class="list-commands" id="listCommand">
             <li class="command">
                 <div class="chatbot-reponse">
-                    [@ChatBot.ResourceManager.GetString("yesterdayWinLoss", CultureInfo.GetCultureInfo(Model)) - @DateTime.Now.AddDays(-1).ToString("yyyyMMdd")]<br />
-                    @Resources.ResourceManager.GetString("turnover", CultureInfo.GetCultureInfo(Model)): 30,000.00 <br />
-                    @ChatBot.ResourceManager.GetString("grossComm", CultureInfo.GetCultureInfo(Model)): 50.00 <br />
-                    @ChatBot.ResourceManager.GetString("memberWinLoss", CultureInfo.GetCultureInfo(Model)): 5,000.00 <br />
+                    [@ResourceHelper.GetChatbotResource(nameof(ChatBot.yesterdayWinLoss), Model) - @DateTime.Now.AddDays(-1).ToString("yyyyMMdd")]<br />
+                    <div>@ResourceHelper.GetResource(nameof(Resources.turnover), Model):</div>
+                    <div class="p-l-13px">30,000.00</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.grossComm), Model):</div>
+                    <div class="p-l-13px">50.00</div>
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.memberWinLoss), Model):</div>
+                    <div class="p-l-13px">5,000.00</div>
                 </div>
                 <div class="status-chatbot-reponse">
                     13:20
@@ -28,8 +31,8 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    [@Resources.ResourceManager.GetString("personalMessage", CultureInfo.GetCultureInfo(Model)) - @DateTime.Now.ToString("yyyyMMdd")]<br />
-                    @ChatBot.ResourceManager.GetString("personalMessageSample", CultureInfo.GetCultureInfo(Model))
+                    [@ResourceHelper.GetResource(nameof(Resources.personalMessage), Model) - @DateTime.Now.ToString("yyyyMMdd")]<br />
+                    @ResourceHelper.GetChatbotResource(nameof(ChatBot.personalMessageSample), Model)
                 </div>
                 <div class="status-chatbot-reponse">
                     13:21
@@ -37,8 +40,8 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    [@Resources.ResourceManager.GetString("specialAnnouncement", CultureInfo.GetCultureInfo(Model)) - @DateTime.Now.ToString("yyyyMMdd")]<br />
-                    @ChatBot.ResourceManager.GetString("specialAnnouncementSample", CultureInfo.GetCultureInfo(Model))
+                    [@ResourceHelper.GetResource(nameof(Resources.specialAnnouncement), Model) - @DateTime.Now.ToString("yyyyMMdd")]<br />
+                    @ResourceHelper.GetChatbotResource(nameof(ChatBot.specialAnnouncementSample), Model)
                 </div>
                 <div class="status-chatbot-reponse">
                     13:22
@@ -46,8 +49,8 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    [@Resources.ResourceManager.GetString("normalAnnouncement", CultureInfo.GetCultureInfo(Model)) - @DateTime.Now.ToString("yyyyMMdd")]<br />
-                    @ChatBot.ResourceManager.GetString("normalAnnouncementSample", CultureInfo.GetCultureInfo(Model))
+                    [@ResourceHelper.GetResource(nameof(Resources.normalAnnouncement), Model) - @DateTime.Now.ToString("yyyyMMdd")]<br />
+                    @ResourceHelper.GetChatbotResource(nameof(ChatBot.normalAnnouncementSample), Model)
                 </div>
                 <div class="status-chatbot-reponse">
                     13:23
@@ -55,8 +58,8 @@
             </li>
             <li class="command">
                 <div class="chatbot-reponse">
-                    [@ChatBot.ResourceManager.GetString("systemAnnouncement", CultureInfo.GetCultureInfo(Model)) - @DateTime.Now.ToString("yyyyMMdd")]<br />
-                    @Html.Raw(ChatBot.ResourceManager.GetString("systemAnnouncementSample", CultureInfo.GetCultureInfo(Model)))
+                    [@ResourceHelper.GetChatbotResource(nameof(ChatBot.systemAnnouncement), Model) - @DateTime.Now.ToString("yyyyMMdd")]<br />
+                    @Html.Raw(@ResourceHelper.GetChatbotResource(nameof(ChatBot.systemAnnouncementSample), Model))
                 </div>
                 <div class="status-chatbot-reponse">
                     13:24

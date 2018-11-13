@@ -38,11 +38,12 @@
 
         public async Task<ChatBotViewModel> Handle(SetUpChatBotQuery message)
         {
-            var user = await settingService.GetUser(message.CustId, message.SubAccountId, message.Language);
+            var language = message.Language;
+            var user = await settingService.GetUser(message.CustId, message.SubAccountId, language);
 
             if (user == null)
             {
-                return new ChatBotViewModel(user);
+                return new ChatBotViewModel(null, await GetAllFunctions(language));
             }
 
             sessionManager.Add(ChatbotUserIdSessionKey, user.Id);
@@ -64,7 +65,9 @@
                 sessionManager.Remove(LetstalkAccountIsVerifyingStatusKey);
             }
 
-            return new ChatBotViewModel(user);
+            return new ChatBotViewModel(
+                user,
+                user.Functions.Any() ? user.Functions : await GetAllFunctions(language));
         }
 
         public async Task<AddingUserResult> Handle(AddAccountCommand message)
@@ -172,5 +175,8 @@
                 CustId = command.CustId,
                 IP = command.IP
             };
+
+        private async Task<IEnumerable<Function>> GetAllFunctions(string language)
+            => await settingService.GetAllFunctions(language);
     }
 }

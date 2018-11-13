@@ -487,4 +487,7 @@
   <data name="systemUpdate" xml:space="preserve">
     <value>ระบบ</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>ยอดรวม</value>
+  </data>
 </root>

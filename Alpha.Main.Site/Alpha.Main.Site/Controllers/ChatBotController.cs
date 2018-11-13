@@ -29,14 +29,12 @@
 
         public async Task<ActionResult> Index()
         {
+            var language = userSession.Language;
             var model = await mediator.SendAsync(new SetUpChatBotQuery(userSession));
 
-            if (model.IsAlreadySetup)
-            {
-                return View("ChatBotSetting", new ChatBotSettingViewModel(model.User));
-            }
-
-            return View("RegisterAccount", new RegisterAccountViewModel(model.User));
+            return model.IsAlreadySetup
+                ? View("ChatBotSetting", new ChatBotSettingViewModel(model))
+                : View("RegisterAccount", new RegisterAccountViewModel(model, language));
         }
 
         [HttpPost, AntiXsrfFilter]
@@ -147,13 +145,16 @@
         {
             base.OnAuthorization(filterContext);
 
-            if (userSession != null
-                && (userSession.IsSubAcc
-                    || !(AppSettings.OfferChatbotSites.Contains(userSession.Site, StringComparer.OrdinalIgnoreCase)
-                        || AppSettings.OfferChatbotSites.Contains("*"))))
+            if (IsNotAllowedAccess(userSession))
             {
                 UnAuthentication(filterContext);
             }
         }
+
+        internal bool IsNotAllowedAccess(IUserSession session)
+            => session != null
+            && (session.IsSubAcc
+                || !(AppSettings.OfferChatbotSites.Contains(session.Site, StringComparer.OrdinalIgnoreCase)
+                    || AppSettings.OfferChatbotSites.Contains("*")));
     }
 }

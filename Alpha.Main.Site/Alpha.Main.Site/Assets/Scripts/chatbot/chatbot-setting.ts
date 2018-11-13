@@ -9,8 +9,6 @@ class ChatBotSetting extends BaseChatBot {
     $changeLanguageLink: JQuery;
     $btnUnsubscribe: JQuery;
     $accountMessage: JQuery;
-    $openReportExample: JQuery;
-    $openNotificationExample: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         super($, topWindow)
@@ -18,9 +16,7 @@ class ChatBotSetting extends BaseChatBot {
 
     resources = {
         unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
-        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value,
-        reportExample: (<HTMLInputElement>document.getElementById('ReportExample')).value,
-        notificationExample: (<HTMLInputElement>document.getElementById('NotificationExample')).value
+        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value
     }
 
     init = () => {
@@ -28,6 +24,7 @@ class ChatBotSetting extends BaseChatBot {
         this.cachedDOMElements();
         this.initLanguage();
         this.registerEvents();
+        this.cacheDOMAndRegisterFunctionExample(() => this.$language.data("currentlanguage"));
     }
 
     cachedDOMElements = () => {
@@ -36,8 +33,6 @@ class ChatBotSetting extends BaseChatBot {
         this.$languageSelectorContainer = this.$(".language-selector-container");
         this.$changeLanguageLink = this.$(".changelanguage-link");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
-        this.$openReportExample = this.$("#openReportExample");
-        this.$openNotificationExample = this.$("#openNotificationExample");
     }
 
     registerEvents = () => {
@@ -47,31 +42,6 @@ class ChatBotSetting extends BaseChatBot {
         var self = this;
         this.$changeLanguageLink.on('click touchend', (e) => {
             self.changeLanguage(self.$(e.target).data("value"));
-        });
-
-        this.$openReportExample.on('click touchend', () => {
-            this.openExample(this.resources.reportExample, "ChatBot/ReportExample", 380);
-        });
-
-        this.$openNotificationExample.on('click touchend', () => {
-            this.openExample(this.resources.notificationExample, "ChatBot/NotificationExample", 336);
-        });
-    }
-
-    openExample = (title: string, url: string, height: number) => {
-        var language = this.$language.data("currentlanguage");
-        var src = alpha.urls.mainRootPath + url + "?language=" + language;
-
-        this.topWindow.bootbox.dialog({
-            title: title,
-            message: '<iframe height="' + height + 'px" width="100%" src="' + src + '"></iframe>'
-        });
-
-        var dialog = this.topWindow.$(".bootbox .modal-dialog");
-        dialog.width(374);
-        dialog.css({
-            left: this.topWindow.$(this.topWindow.window).width() / 2 - dialog.width() / 2,
-            top: 100
         });
     }
 

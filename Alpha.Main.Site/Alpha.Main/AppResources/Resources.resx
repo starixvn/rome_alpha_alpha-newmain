@@ -553,4 +553,7 @@
   <data name="systemUpdate" xml:space="preserve">
     <value>System</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
 </root>

@@ -3,6 +3,7 @@
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
 }
 @section Styles {
+    @StaticResources.AssetStyles.RenderCommon("/bundles/site-main/chatbot/chatbot-default")
     @StaticResources.RenderStyles("~/assets/bundles/chatbot/register-account")
 }
 <div class="page-title">
@@ -13,7 +14,7 @@
         <div class="panel-heading" role="tab" id="headingRegister">
             <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerLetstalk" aria-expanded="false" aria-controls="registerLetstalk">
-                    @ChatBot.Account
+                    @ChatBot.ChatbotSetup
                 </a>
             </h4>
         </div>
@@ -57,17 +58,27 @@
                                 <input id="txtAccount" type="text" maxlength="50" class="letstalk-text" value="@Model.LetstalkId" @(Model.IsVerifying ? "disabled" : string.Empty) />
                                 <button id="btnAdd" class="btn-submit @(Model.IsVerifying ? "display-none" : "")">@ChatBot.link</button>
                                 <button id="btnUnsubscribe" class="btn-remove @(Model.IsVerifying ? "" : "display-none")">@ChatBot.unLink</button>
+                                @if (!Model.IsVerifying)
+                                {
+                                    <div class="call-action" id="divLinkTooltip">
+                                        <div class="pulse-box">
+                                            <div class="pulse-css"></div>
+                                        </div>
+                                        <div class="popover-simple arrow-left">@ChatBot.LinkTooltip</div>
+                                    </div>
+                                }
                             </div>
                         </form>
                     </li>
                     @if (Model.IsVerifying)
                     {
-                        @Html.Partial("VerifyAccount", Model.VerifyAccountViewModel)
+                        Html.RenderPartial("VerifyAccount", Model.VerifyAccountViewModel);
                     }
                 </ul>
             </div>
         </div>
     </div>
+    @{ Html.RenderPartial("LetstalkFunction", Model.ChatBotViewModel); }
 </div>
 @Html.Hidden("IsVerifying", Model.IsVerifying)
 @Html.Hidden("AccountIsRequired", ChatBot.AccountIsRequired)
@@ -78,6 +89,9 @@
 @Html.Hidden("VerificationCodeIsRequired", ChatBot.verificationCodeIsRequired)
 @Html.Hidden("CaptchaIsRequired", ChatBot.captchaIsRequired)
 @Html.Hidden("VerificationCodeIsInvalidOrExpired", ChatBot.VerificationCodeIsInvalidOrExpired)
+@Html.Hidden("ReportExample", ChatBot.reportExample)
+@Html.Hidden("NotificationExample", ChatBot.notificationExample)
+@Html.Hidden("Language", Model.Language)
 @section Scripts{
     @StaticResources.RenderScripts("~/assets/bundles/chatbot/register-account")
 }

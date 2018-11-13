@@ -391,4 +391,7 @@
   <data name="highlights" xml:space="preserve">
     <value>HIGHLIGHTS</value>
   </data>
+  <data name="Total" xml:space="preserve">
+    <value>총</value>
+  </data>
 </root>
