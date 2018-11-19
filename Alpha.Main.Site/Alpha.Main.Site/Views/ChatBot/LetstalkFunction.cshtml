@@ -1,13 +1,44 @@
 ﻿@model ChatBotViewModel
 @{ var enableEditStatus = Model.IsAlreadySetup; }
-
 <div class="panel chatbot-setting">
-    <div class="panel-heading" role="tab" id="headingReport">
+    <div class="panel-heading" role="tab" id="headingAction">
         <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report">
-                @ChatBot.FunctionReport
+            <a role="button" data-toggle="collapse" href="#action" aria-expanded="false" aria-controls="action">
+                @ChatBot.FunctionAction
             </a>
         </h4>
+    </div>
+    <div id="action" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAction">
+        <div class="panel-body has-padding">
+            <p>@ChatBot.PleaseSetAction <img class="toggle-img" src="~/Assets/Styles/chatbot/images/toogle.png" alt="Toggle Button" /> @ChatBot.IntroAction</p>
+            <p><a href="#" class="link" id="openReportExample">@ChatBot.howFunctionWorks</a></p>
+            <table class="tblRpt tblRpt-bordered tbl-guideline">
+                <thead>
+                    <tr>
+                        <th class="col-command">@ChatBot.Command</th>
+                        <th>@ChatBot.FunctionAction</th>
+                        <th class="col-status">@Alpha_sitemap.status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var function in Model.ActionFunctions)
+                    {
+                        <tr>
+                            <td class="text-center"><span class="bage">@function.Command</span></td>
+                            <td class="bold">@function.Name</td>
+                            <td class="text-center">
+                                <label class="switch @(enableEditStatus ? string.Empty : "disabled")">
+                                    <input data-functionId="@function.Id" data-functionName="@function.Name" data-command="@function.Command" type="checkbox"
+                                           class="function" @(function.Enabled ? "checked" : string.Empty)
+                                           @(enableEditStatus ? string.Empty : "disabled=disabled") />
+                                    <span class="slider"></span>
+                                </label>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
     <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
         <div class="panel-body has-padding">

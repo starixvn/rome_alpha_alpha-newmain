@@ -205,6 +205,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Action.
+        /// </summary>
+        public static string FunctionAction {
+            get {
+                return ResourceManager.GetString("FunctionAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notification.
         /// </summary>
         public static string FunctionNotification {
@@ -264,6 +273,15 @@ namespace Alpha.Main.AppResources {
         public static string InstallLetstalk {
             get {
                 return ResourceManager.GetString("InstallLetstalk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to to activate the actions you&apos;d like to query..
+        /// </summary>
+        public static string IntroAction {
+            get {
+                return ResourceManager.GetString("IntroAction", resourceCulture);
             }
         }
         
@@ -516,6 +534,15 @@ namespace Alpha.Main.AppResources {
         public static string pleaseSet {
             get {
                 return ResourceManager.GetString("pleaseSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please set.
+        /// </summary>
+        public static string PleaseSetAction {
+            get {
+                return ResourceManager.GetString("PleaseSetAction", resourceCulture);
             }
         }
         
