@@ -21,18 +21,21 @@
    }
 }
 
-.language {
+%dropdown-style {
     @include border-radius(1px);
     @include box-shadow(0px, 1px, 1px, rgba(0, 0, 0, 0.3));
     height: 28px;
     padding: 4px;
     border: 1px solid $border-color;
+
+    &:hover { cursor: pointer; }
+}
+
+.language {
+    @extend %dropdown-style;
     width: 160px;
 
     .dropdown-toggle { padding-left: 12px; }
-    
-
-    &:hover { cursor: pointer; }
 
     .icon-flag {
         margin-right: 8px;
@@ -41,6 +44,17 @@
     }
 
     .list-language {  width: 160px; }
+}
+
+.reload-time {
+    @extend %dropdown-style;
+    width: 110px;
+
+    .li { padding: 8px; }
+
+    .list-time {
+        width: 110px;
+    }
 }
 
 .tbl-guideline {
