@@ -187,6 +187,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 15 days.
+        /// </summary>
+        public static string FifteenDays {
+            get {
+                return ResourceManager.GetString("FifteenDays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 15 minutes.
+        /// </summary>
+        public static string FifteenMinutes {
+            get {
+                return ResourceManager.GetString("FifteenMinutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notification.
         /// </summary>
         public static string FunctionNotification {
@@ -313,6 +331,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chatbot&apos;s messages will self-destruct after.
+        /// </summary>
+        public static string lblMessageSelfDestruct {
+            get {
+                return ResourceManager.GetString("lblMessageSelfDestruct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Verification code.
         /// </summary>
         public static string lblVerificationCode {
@@ -399,6 +426,24 @@ namespace Alpha.Main.AppResources {
         public static string notificationExample {
             get {
                 return ResourceManager.GetString("notificationExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 day.
+        /// </summary>
+        public static string OneDay {
+            get {
+                return ResourceManager.GetString("OneDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 hour.
+        /// </summary>
+        public static string OneHour {
+            get {
+                return ResourceManager.GetString("OneHour", resourceCulture);
             }
         }
         
@@ -511,11 +556,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 7 days.
+        /// </summary>
+        public static string SevenDays {
+            get {
+                return ResourceManager.GetString("SevenDays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show QR code.
         /// </summary>
         public static string showQRCode {
             get {
                 return ResourceManager.GetString("showQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6 hours.
+        /// </summary>
+        public static string SixHours {
+            get {
+                return ResourceManager.GetString("SixHours", resourceCulture);
             }
         }
         
@@ -547,11 +610,56 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 30 days.
+        /// </summary>
+        public static string ThirtyDays {
+            get {
+                return ResourceManager.GetString("ThirtyDays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 30 minutes.
+        /// </summary>
+        public static string ThirtyMinutes {
+            get {
+                return ResourceManager.GetString("ThirtyMinutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3 days.
+        /// </summary>
+        public static string ThreeDays {
+            get {
+                return ResourceManager.GetString("ThreeDays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3 hours.
+        /// </summary>
+        public static string ThreeHours {
+            get {
+                return ResourceManager.GetString("ThreeHours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Today WL.
         /// </summary>
         public static string TodayWinLoss {
             get {
                 return ResourceManager.GetString("TodayWinLoss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 12 hours.
+        /// </summary>
+        public static string TwelveHours {
+            get {
+                return ResourceManager.GetString("TwelveHours", resourceCulture);
             }
         }
         
@@ -579,6 +687,15 @@ namespace Alpha.Main.AppResources {
         public static string updateLanguageFailed {
             get {
                 return ResourceManager.GetString("updateLanguageFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update self-destruction time unsuccessfully, please try again..
+        /// </summary>
+        public static string UpdateMessageSelfDestructMessageFailedMessage {
+            get {
+                return ResourceManager.GetString("UpdateMessageSelfDestructMessageFailedMessage", resourceCulture);
             }
         }
         

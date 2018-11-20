@@ -18,7 +18,8 @@
         IAsyncRequestHandler<VerifyVerificationCodeCommand, VerificationCodeResult>,
         IAsyncRequestHandler<ResendVerificationCodeCommand, Result>,
         IAsyncRequestHandler<UpdateFunctionCommand, Result>,
-        IAsyncRequestHandler<UpdateLanguageCommand, Result>
+        IAsyncRequestHandler<UpdateLanguageCommand, Result>,
+        IAsyncRequestHandler<UpdateSelfdestructionPeriodCommand, Result>
     {
         private const string ChatbotUserIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.UserId";
         private const string LetstalkIdSessionKey = "Alpha.Main.Site.Handlers.ChatBotHandler.LetstalkId";
@@ -166,6 +167,12 @@
             => await settingService.UpdateLanguage(
                 sessionManager.Get<int>(ChatbotUserIdSessionKey),
                 message.Language,
+                CreateLogParam(message));
+
+        public async Task<Result> Handle(UpdateSelfdestructionPeriodCommand message)
+            => await settingService.UpdateSelfdestructionPeriod(
+                sessionManager.Get<int>(ChatbotUserIdSessionKey),
+                message.Minutes,
                 CreateLogParam(message));
 
         private static LogParam CreateLogParam(WriteLogCommandBase command)

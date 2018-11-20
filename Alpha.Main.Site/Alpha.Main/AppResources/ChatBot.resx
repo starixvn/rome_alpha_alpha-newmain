@@ -315,4 +315,43 @@
   <data name="AgentOutstanding" xml:space="preserve">
     <value>Agent Outstanding</value>
   </data>
+  <data name="FifteenMinutes" xml:space="preserve">
+    <value>15 minutes</value>
+  </data>
+  <data name="ThirtyMinutes" xml:space="preserve">
+    <value>30 minutes</value>
+  </data>
+  <data name="OneHour" xml:space="preserve">
+    <value>1 hour</value>
+  </data>
+  <data name="ThreeHours" xml:space="preserve">
+    <value>3 hours</value>
+  </data>
+  <data name="SixHours" xml:space="preserve">
+    <value>6 hours</value>
+  </data>
+  <data name="TwelveHours" xml:space="preserve">
+    <value>12 hours</value>
+  </data>
+  <data name="OneDay" xml:space="preserve">
+    <value>1 day</value>
+  </data>
+  <data name="ThreeDays" xml:space="preserve">
+    <value>3 days</value>
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value>7 days</value>
+  </data>
+  <data name="FifteenDays" xml:space="preserve">
+    <value>15 days</value>
+  </data>
+  <data name="ThirtyDays" xml:space="preserve">
+    <value>30 days</value>
+  </data>
+  <data name="lblMessageSelfDestruct" xml:space="preserve">
+    <value>Chatbot's messages will self-destruct after</value>
+  </data>
+  <data name="UpdateMessageSelfDestructMessageFailedMessage" xml:space="preserve">
+    <value>Update self-destruction time unsuccessfully, please try again.</value>
+  </data>
 </root>

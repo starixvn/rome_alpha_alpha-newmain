@@ -9,6 +9,7 @@ class ChatBotSetting extends BaseChatBot {
     $changeLanguageLink: JQuery;
     $btnUnsubscribe: JQuery;
     $accountMessage: JQuery;
+    $messageSelfDestructTimeDropdown: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         super($, topWindow)
@@ -16,7 +17,8 @@ class ChatBotSetting extends BaseChatBot {
 
     resources = {
         unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
-        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value
+        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value,
+        updateMessageSelfDestructMessageFailedMessage: (<HTMLInputElement>document.getElementById('UpdateMessageSelfDestructMessageFailedMessage')).value
     }
 
     init = () => {
@@ -33,6 +35,7 @@ class ChatBotSetting extends BaseChatBot {
         this.$languageSelectorContainer = this.$(".language-selector-container");
         this.$changeLanguageLink = this.$(".changelanguage-link");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
+        this.$messageSelfDestructTimeDropdown = this.$("#messageSelfDestructTime");
     }
 
     registerEvents = () => {
@@ -43,6 +46,7 @@ class ChatBotSetting extends BaseChatBot {
         this.$changeLanguageLink.on('click touchend', (e) => {
             self.changeLanguage(self.$(e.target).data("value"));
         });
+        this.$messageSelfDestructTimeDropdown.change(this.changeMessageSelfDestructTime);
     }
 
     initLanguage = () => {
@@ -129,6 +133,34 @@ class ChatBotSetting extends BaseChatBot {
                 }
 
                 alpha.showMessage(this.$accountMessage, new Result({ Code: 1, Message: this.resources.updateLanguageFailed }));
+            }
+        }
+    }
+
+    changeMessageSelfDestructTime = (e: any) => {
+        e.preventDefault();
+        this.$.blockUI();
+        var minutes = this.$messageSelfDestructTimeDropdown.find('option:selected').val();
+        this.$.ajax({
+            type: "POST",
+            url: alpha.urls.mainRootPath + "ChatBot/UpdateMessageSelfDestructTime",
+            data: { minutes: minutes },
+            success: this.onChangeMessageSelfDestructSuccess,
+            complete: this.onComplete
+        });
+    }
+
+    onChangeMessageSelfDestructSuccess = (result: any) => {
+        if (result) {
+            if (result.IsOk) {
+                parent.window.location.href = parent.window.location.href;
+            } else {
+                if (result.IsNotAuthorized) {
+                    this.topWindow.bootboxAlert(result.Message);
+                    return;
+                }
+
+                alpha.showMessage(this.$accountMessage, new Result({ Code: 1, Message: this.resources.updateMessageSelfDestructMessageFailedMessage }));
             }
         }
     }
