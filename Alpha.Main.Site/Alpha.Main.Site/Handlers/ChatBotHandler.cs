@@ -170,10 +170,17 @@
                 CreateLogParam(message));
 
         public async Task<Result> Handle(UpdateSelfdestructionPeriodCommand message)
-            => await settingService.UpdateSelfdestructionPeriod(
+        {
+            if (!Constants.SelfdestructionPeriod.Options.ContainsKey(message.Minutes))
+            {
+                return new Result { Code = 1 };
+            }
+
+            return await settingService.UpdateSelfdestructionPeriod(
                 sessionManager.Get<int>(ChatbotUserIdSessionKey),
                 message.Minutes,
                 CreateLogParam(message));
+        }
 
         private static LogParam CreateLogParam(WriteLogCommandBase command)
             => new LogParam
