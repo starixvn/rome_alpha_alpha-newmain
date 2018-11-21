@@ -17,7 +17,7 @@
         public const int FifteenDays = 21600;
         public const int ThirtyDays = 43200;
 
-        public static readonly IDictionary<int, string> Options = new Dictionary<int, string>
+        public static IDictionary<int, string> Options { get; } = new Dictionary<int, string>
         {
             [FifteenMinutes] = ChatBot.FifteenMinutes,
             [ThirtyMinutes] = ChatBot.ThirtyMinutes,

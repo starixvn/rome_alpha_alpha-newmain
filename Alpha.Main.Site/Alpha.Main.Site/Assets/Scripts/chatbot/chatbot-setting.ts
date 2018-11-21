@@ -9,7 +9,8 @@ class ChatBotSetting extends BaseChatBot {
     $changeLanguageLink: JQuery;
     $btnUnsubscribe: JQuery;
     $accountMessage: JQuery;
-    $messageSelfDestructTimeDropdown: JQuery;
+    $selfdestructionPeriod: JQuery;
+    $selfdestructionPeriodContainer: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         super($, topWindow)
@@ -25,6 +26,7 @@ class ChatBotSetting extends BaseChatBot {
         alpha.detectResponsiveInformation();
         this.cachedDOMElements();
         this.initLanguage();
+        this.initSelfdestructionPeriod();
         this.registerEvents();
         this.cacheDOMAndRegisterFunctionExample(() => this.$language.data("currentlanguage"));
     }
@@ -35,7 +37,8 @@ class ChatBotSetting extends BaseChatBot {
         this.$languageSelectorContainer = this.$(".language-selector-container");
         this.$changeLanguageLink = this.$(".changelanguage-link");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
-        this.$messageSelfDestructTimeDropdown = this.$("#messageSelfDestructTime");
+        this.$selfdestructionPeriod = this.$("#period");
+        this.$selfdestructionPeriodContainer = this.$(".period-container");
     }
 
     registerEvents = () => {
@@ -46,7 +49,9 @@ class ChatBotSetting extends BaseChatBot {
         this.$changeLanguageLink.on('click touchend', (e) => {
             self.changeLanguage(self.$(e.target).data("value"));
         });
-        this.$messageSelfDestructTimeDropdown.change(this.changeMessageSelfDestructTime);
+        this.$selfdestructionPeriod.on('click touchend', (e) => {
+            self.changeSelfdestructionPeriod(self.$(e.target).data("value"));
+        });
     }
 
     initLanguage = () => {
@@ -54,6 +59,13 @@ class ChatBotSetting extends BaseChatBot {
         var language = this.$(".list-language ." + currentLanguage + " > a").html();
 
         this.$languageSelectorContainer.prepend(language);
+    }
+
+    initSelfdestructionPeriod = () => {
+        var currentPeriod = this.$selfdestructionPeriod.data("currentperiod");
+        var period = this.$(".list-time ." + currentPeriod + " > a").html();
+
+        this.$selfdestructionPeriodContainer.prepend(period);
     }
 
     updateFunction = (e: JQueryEventObject) => {
@@ -137,20 +149,18 @@ class ChatBotSetting extends BaseChatBot {
         }
     }
 
-    changeMessageSelfDestructTime = (e: any) => {
-        e.preventDefault();
+    changeSelfdestructionPeriod = (minutes) => {
         this.$.blockUI();
-        var minutes = this.$messageSelfDestructTimeDropdown.find('option:selected').val();
         this.$.ajax({
             type: "POST",
-            url: alpha.urls.mainRootPath + "ChatBot/UpdateMessageSelfDestructTime",
+            url: alpha.urls.mainRootPath + "ChatBot/UpdateSelfdestructionPeriod",
             data: { minutes: minutes },
-            success: this.onChangeMessageSelfDestructSuccess,
+            success: this.onChangeSelfdestructionPeriodSuccess,
             complete: this.onComplete
         });
     }
 
-    onChangeMessageSelfDestructSuccess = (result: any) => {
+    onChangeSelfdestructionPeriodSuccess = (result: any) => {
         if (result) {
             if (result.IsOk) {
                 parent.window.location.href = parent.window.location.href;

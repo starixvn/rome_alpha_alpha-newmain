@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using System.Web.Mvc;
     using AppResources;
     using Chatbot.Client.Models;
 
@@ -24,17 +23,12 @@
 
         public ChatBotViewModel ChatBotViewModel { get; }
 
-        public int MessageSelfDestructTime
+        public int SelfdestructionPeriod
             => ChatBotViewModel.User.SelfdestructionPeriod.HasValue
             ? ChatBotViewModel.User.SelfdestructionPeriod.Value
             : Constants.SelfdestructionPeriod.ThreeHours;
 
-        public IEnumerable<SelectListItem> SelfdestructionPeriodOptions
-            => Constants.SelfdestructionPeriod.Options.Select(o => new SelectListItem
-            {
-                Text = o.Value,
-                Value = o.Key.ToString(),
-                Selected = o.Key == MessageSelfDestructTime
-            });
+        public IDictionary<int, string> SelfdestructionPeriodOptions
+            => Constants.SelfdestructionPeriod.Options;
     }
 }

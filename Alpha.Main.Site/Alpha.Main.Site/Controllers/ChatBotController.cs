@@ -131,7 +131,7 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        public async Task<ActionResult> UpdateMessageSelfDestructTime(UpdateSelfdestructionPeriodCommand command)
+        public async Task<ActionResult> UpdateSelfdestructionPeriod(UpdateSelfdestructionPeriodCommand command)
         {
             if (userSession.IsInternal)
             {
