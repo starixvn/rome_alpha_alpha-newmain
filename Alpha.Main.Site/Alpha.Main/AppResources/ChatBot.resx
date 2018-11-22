@@ -352,6 +352,6 @@
     <value>Chatbot's messages will self-destruct after</value>
   </data>
   <data name="UpdateMessageSelfDestructMessageFailedMessage" xml:space="preserve">
-    <value>Update self-destruction time unsuccessfully, please try again.</value>
+    <value>Update self-destruction period unsuccessfully, please try again.</value>
   </data>
 </root>

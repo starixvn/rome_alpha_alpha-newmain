@@ -151,28 +151,30 @@ class ChatBotSetting extends BaseChatBot {
 
     changeSelfdestructionPeriod = (minutes) => {
         this.$.blockUI();
+        var self = this;
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/UpdateSelfdestructionPeriod",
             data: { minutes: minutes },
-            success: this.onChangeSelfdestructionPeriodSuccess,
+            success: (result) => {
+                if (result) {
+                    if (result.IsNotOk) {
+                        if (result.IsNotAuthorized) {
+                            self.topWindow.bootboxAlert(result.Message);
+                            return;
+                        }
+                        alpha.showMessage(
+                            this.$accountMessage,
+                            new Result({ Code: 1, Message: this.resources.updateMessageSelfDestructMessageFailedMessage }));
+                    } else {
+                        self.$selfdestructionPeriod.data("currentperiod", minutes);
+                        var period = this.$(".list-time ." + minutes + " > a").html();
+                        this.$selfdestructionPeriodContainer.html(period + '<span class="caret"></span>');
+                    }
+                }
+            },
             complete: this.onComplete
         });
-    }
-
-    onChangeSelfdestructionPeriodSuccess = (result: any) => {
-        if (result) {
-            if (result.IsOk) {
-                parent.window.location.href = parent.window.location.href;
-            } else {
-                if (result.IsNotAuthorized) {
-                    this.topWindow.bootboxAlert(result.Message);
-                    return;
-                }
-
-                alpha.showMessage(this.$accountMessage, new Result({ Code: 1, Message: this.resources.updateMessageSelfDestructMessageFailedMessage }));
-            }
-        }
     }
 }
 

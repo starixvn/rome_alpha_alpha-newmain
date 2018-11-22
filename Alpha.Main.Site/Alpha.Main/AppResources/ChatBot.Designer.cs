@@ -691,7 +691,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update self-destruction time unsuccessfully, please try again..
+        ///   Looks up a localized string similar to Update self-destruction period unsuccessfully, please try again..
         /// </summary>
         public static string UpdateMessageSelfDestructMessageFailedMessage {
             get {
