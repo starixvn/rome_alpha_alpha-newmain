@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using System.Web.Mvc;
     using AppResources;
     using Chatbot.Client.Models;
 
@@ -11,24 +12,31 @@
 
         public ChatBotSettingViewModel(ChatBotViewModel chatbotViewModel)
         {
-            lestalkAccount = chatbotViewModel.User.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerType.Letstalk && m.Enabled);
             ChatBotViewModel = chatbotViewModel;
+            lestalkAccount = chatbotViewModel.User.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerType.Letstalk && m.Enabled);
+            Language = chatbotViewModel.User.Language;
+
+            var selfdestructionPeriod = chatbotViewModel.User.SelfdestructionPeriod.HasValue
+                ? chatbotViewModel.User.SelfdestructionPeriod.Value
+                : Constants.SelfdestructionPeriod.ThreeHours;
+
+            SelfdestructionPeriodOptions = Constants.SelfdestructionPeriod.Options
+                .Select(o => new SelectListItem
+                {
+                    Text = o.Value,
+                    Value = o.Key.ToString(),
+                    Selected = o.Key == selfdestructionPeriod
+                });
         }
 
-        public string Language => ChatBotViewModel.User.Language;
+        public ChatBotViewModel ChatBotViewModel { get; }
+
+        public string Language { get; }
 
         public string LetstalkId => lestalkAccount.Username;
 
         public string Title => ChatBot.ChatBotTitle;
 
-        public ChatBotViewModel ChatBotViewModel { get; }
-
-        public int SelfdestructionPeriod
-            => ChatBotViewModel.User.SelfdestructionPeriod.HasValue
-            ? ChatBotViewModel.User.SelfdestructionPeriod.Value
-            : Constants.SelfdestructionPeriod.ThreeHours;
-
-        public IDictionary<int, string> SelfdestructionPeriodOptions
-            => Constants.SelfdestructionPeriod.Options;
+        public IEnumerable<SelectListItem> SelfdestructionPeriodOptions { get; }
     }
 }

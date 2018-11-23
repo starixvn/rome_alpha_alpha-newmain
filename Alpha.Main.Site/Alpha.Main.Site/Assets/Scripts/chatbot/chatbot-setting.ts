@@ -26,7 +26,6 @@ class ChatBotSetting extends BaseChatBot {
         alpha.detectResponsiveInformation();
         this.cachedDOMElements();
         this.initLanguage();
-        this.initSelfdestructionPeriod();
         this.registerEvents();
         this.cacheDOMAndRegisterFunctionExample(() => this.$language.data("currentlanguage"));
     }
@@ -38,7 +37,6 @@ class ChatBotSetting extends BaseChatBot {
         this.$changeLanguageLink = this.$(".changelanguage-link");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
         this.$selfdestructionPeriod = this.$("#period");
-        this.$selfdestructionPeriodContainer = this.$(".period-container");
     }
 
     registerEvents = () => {
@@ -49,9 +47,7 @@ class ChatBotSetting extends BaseChatBot {
         this.$changeLanguageLink.on('click touchend', (e) => {
             self.changeLanguage(self.$(e.target).data("value"));
         });
-        this.$selfdestructionPeriod.on('click touchend', (e) => {
-            self.changeSelfdestructionPeriod(self.$(e.target).data("value"));
-        });
+        this.$selfdestructionPeriod.change(this.changeSelfdestructionPeriod);
     }
 
     initLanguage = () => {
@@ -59,13 +55,6 @@ class ChatBotSetting extends BaseChatBot {
         var language = this.$(".list-language ." + currentLanguage + " > a").html();
 
         this.$languageSelectorContainer.prepend(language);
-    }
-
-    initSelfdestructionPeriod = () => {
-        var currentPeriod = this.$selfdestructionPeriod.data("currentperiod");
-        var period = this.$(".list-time ." + currentPeriod + " > a").html();
-
-        this.$selfdestructionPeriodContainer.prepend(period);
     }
 
     updateFunction = (e: JQueryEventObject) => {
@@ -125,6 +114,13 @@ class ChatBotSetting extends BaseChatBot {
 
     changeLanguage = (lang) => {
         this.$.blockUI();
+        var currentLanguage = this.$language.data("currentlanguage");
+
+        if (lang == currentLanguage) {
+            this.onComplete();
+            return;
+        }
+
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/ChangeLanguage",
@@ -149,32 +145,29 @@ class ChatBotSetting extends BaseChatBot {
         }
     }
 
-    changeSelfdestructionPeriod = (minutes) => {
+    changeSelfdestructionPeriod = (e: any) => {
+        e.preventDefault();
         this.$.blockUI();
-        var self = this;
+        var minutes = this.$selfdestructionPeriod.find('option:selected').val();
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/UpdateSelfdestructionPeriod",
             data: { minutes: minutes },
-            success: (result) => {
-                if (result) {
-                    if (result.IsNotOk) {
-                        if (result.IsNotAuthorized) {
-                            self.topWindow.bootboxAlert(result.Message);
-                            return;
-                        }
-                        alpha.showMessage(
-                            this.$accountMessage,
-                            new Result({ Code: 1, Message: this.resources.updateMessageSelfDestructMessageFailedMessage }));
-                    } else {
-                        self.$selfdestructionPeriod.data("currentperiod", minutes);
-                        var period = this.$(".list-time ." + minutes + " > a").html();
-                        this.$selfdestructionPeriodContainer.html(period + '<span class="caret"></span>');
-                    }
-                }
-            },
+            success: this.onChangeSelfdestructionPeriodSuccess,
             complete: this.onComplete
         });
+    }
+
+    onChangeSelfdestructionPeriodSuccess = (result: any) => {
+        if (result && result.IsNotOk) {
+            if (result.IsNotAuthorized) {
+                this.topWindow.bootboxAlert(result.Message);
+                return;
+            }
+            alpha.showMessage(
+                this.$accountMessage,
+                new Result({ Code: 1, Message: this.resources.updateMessageSelfDestructMessageFailedMessage }));
+        }
     }
 }
 

@@ -37,19 +37,12 @@
                     </div>
                     <div class="form-group width-100per">
                         <label>@ChatBot.lblMessageSelfDestruct</label>
-                        <div class="dropdown reload-time">
-                            <div href="javascript:;" data-target="#" class="dropdown-toggle period-container" data-toggle="dropdown" aria-expanded="false">
-                                <span class="caret"></span>
-                            </div>
-                            <ul class="dropdown-menu list-time" id="period" data-currentperiod="@Model.SelfdestructionPeriod">
-                                @foreach (var item in Model.SelfdestructionPeriodOptions)
-                                {
-                                    <li class="@item.Key">
-                                        <a class="changePeriod-link" data-value="@item.Key">@item.Value</a>
-                                    </li>
-                                }
-                            </ul>
-                        </div>
+                        <select class="dropdown reload-time" id="period">
+                            @foreach (var item in Model.SelfdestructionPeriodOptions)
+                            {
+                                <option value="@item.Value" @(item.Selected ? " selected=\"selected\"" : string.Empty)>@item.Text</option>
+                            }
+                        </select>
                     </div>
                 </form>
             </div>
