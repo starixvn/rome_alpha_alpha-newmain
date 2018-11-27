@@ -3,6 +3,8 @@
     using System.Collections.Generic;
     using Chatbot.Client.Models;
     using Chatbot.Client.Services;
+    using KellermanSoftware.CompareNetObjects;
+    using Main.Constants;
     using NSubstitute;
     using NUnit.Framework;
     using Site.Handlers;
@@ -214,6 +216,52 @@
             settingService.Received().UpdateLanguage(
                 userId,
                 message.Language,
+                Arg.Is<LogParam>(p => p.ActorId == logParam.ActorId
+                                    && p.CustId == logParam.CustId
+                                    && p.IP == logParam.IP));
+        }
+
+        [Test]
+        public void HandleUpdateSelfdestructionPeriodCommand_InvalidPeriod_ReturnsErrorResult()
+        {
+            // Arrange
+            var command = new UpdateSelfdestructionPeriodCommand { Minutes = 13 };
+            var expectedResult = new Result { Code = 1 };
+            var compareLogic = new CompareLogic();
+
+            // Act
+            var result = chatbotHandler.Handle(command).GetAwaiter().GetResult();
+
+            // Assert
+            Assert.IsTrue(compareLogic.Compare(expectedResult, result).AreEqual);
+        }
+
+        [TestCase(SelfdestructionPeriod.FifteenDays)]
+        [TestCase(SelfdestructionPeriod.FifteenMinutes)]
+        [TestCase(SelfdestructionPeriod.OneDay)]
+        [TestCase(SelfdestructionPeriod.OneHour)]
+        [TestCase(SelfdestructionPeriod.SevenDays)]
+        [TestCase(SelfdestructionPeriod.SixHours)]
+        [TestCase(SelfdestructionPeriod.ThirtyDays)]
+        [TestCase(SelfdestructionPeriod.ThirtyMinutes)]
+        [TestCase(SelfdestructionPeriod.ThreeDays)]
+        [TestCase(SelfdestructionPeriod.ThreeHours)]
+        [TestCase(SelfdestructionPeriod.TwelveHours)]
+        public void HandleUpdateSelfdestructionPeriodCommand_ValidPeriod_CallsUpdateSelfdestructionPeriod(int period)
+        {
+            // Arrange
+            var userId = 1;
+            sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
+            var command = new UpdateSelfdestructionPeriodCommand(userSession) { Minutes = period };
+            var logParam = CreateLogParam(command.CustId, command.CustId, command.IP);
+
+            // Act
+            chatbotHandler.Handle(command).ConfigureAwait(false);
+
+            // Assert
+            settingService.Received().UpdateSelfdestructionPeriod(
+                userId,
+                period,
                 Arg.Is<LogParam>(p => p.ActorId == logParam.ActorId
                                     && p.CustId == logParam.CustId
                                     && p.IP == logParam.IP));
