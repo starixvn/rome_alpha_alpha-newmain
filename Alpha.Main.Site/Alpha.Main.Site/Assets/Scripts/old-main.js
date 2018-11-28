@@ -677,6 +677,15 @@ var oldMainUltilities = {
 function reloadPopUpSetting(timeOut) {
     var popUp = top.ageWnd.popUp[top.ageWnd.popUp.length - 1];
     if (typeof (popUp) === 'undefined') {
+        if (timeOut) {
+            setTimeout(function () {
+                location.reload(true);
+            }, timeOut);
+        }
+        else {
+            location.reload(true);
+        }
+
         return;
     }
     var iframes = popUp.find('#popup-iframe');
