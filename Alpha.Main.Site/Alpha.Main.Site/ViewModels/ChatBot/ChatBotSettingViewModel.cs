@@ -23,7 +23,7 @@
             SelfdestructionPeriodOptions = Constants.SelfdestructionPeriod.Options
                 .Select(o => new SelectListItem
                 {
-                    Text = o.Value,
+                    Text = ChatBot.ResourceManager.GetString(o.Value),
                     Value = o.Key.ToString(),
                     Selected = o.Key == selfdestructionPeriod
                 });

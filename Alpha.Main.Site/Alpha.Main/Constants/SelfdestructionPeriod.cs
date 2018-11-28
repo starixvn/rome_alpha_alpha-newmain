@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Constants
 {
     using System.Collections.Generic;
-    using AppResources;
 
     public static class SelfdestructionPeriod
     {
@@ -19,17 +18,17 @@
 
         public static IDictionary<int, string> Options { get; } = new Dictionary<int, string>
         {
-            [FifteenMinutes] = ChatBot.FifteenMinutes,
-            [ThirtyMinutes] = ChatBot.ThirtyMinutes,
-            [OneHour] = ChatBot.OneHour,
-            [ThreeHours] = ChatBot.ThreeHours,
-            [SixHours] = ChatBot.SixHours,
-            [TwelveHours] = ChatBot.TwelveHours,
-            [OneDay] = ChatBot.OneDay,
-            [ThreeDays] = ChatBot.ThreeDays,
-            [SevenDays] = ChatBot.SevenDays,
-            [FifteenDays] = ChatBot.FifteenDays,
-            [ThirtyDays] = ChatBot.ThirtyDays
+            [FifteenMinutes] = "FifteenMinutes",
+            [ThirtyMinutes] = "ThirtyMinutes",
+            [OneHour] = "OneHour",
+            [ThreeHours] = "ThreeHours",
+            [SixHours] = "SixHours",
+            [TwelveHours] = "TwelveHours",
+            [OneDay] = "OneDay",
+            [ThreeDays] = "ThreeDays",
+            [SevenDays] = "SevenDays",
+            [FifteenDays] = "FifteenDays",
+            [ThirtyDays] = "ThirtyDays"
         };
     }
 }
