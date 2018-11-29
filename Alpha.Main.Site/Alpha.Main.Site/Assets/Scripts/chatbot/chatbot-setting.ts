@@ -9,6 +9,8 @@ class ChatBotSetting extends BaseChatBot {
     $changeLanguageLink: JQuery;
     $btnUnsubscribe: JQuery;
     $accountMessage: JQuery;
+    $selfdestructionPeriod: JQuery;
+    $selfdestructionPeriodContainer: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         super($, topWindow)
@@ -16,7 +18,8 @@ class ChatBotSetting extends BaseChatBot {
 
     resources = {
         unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
-        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value
+        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value,
+        updateMessageSelfDestructMessageFailedMessage: (<HTMLInputElement>document.getElementById('UpdateMessageSelfDestructMessageFailedMessage')).value
     }
 
     init = () => {
@@ -33,6 +36,7 @@ class ChatBotSetting extends BaseChatBot {
         this.$languageSelectorContainer = this.$(".language-selector-container");
         this.$changeLanguageLink = this.$(".changelanguage-link");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
+        this.$selfdestructionPeriod = this.$("#period");
     }
 
     registerEvents = () => {
@@ -43,6 +47,7 @@ class ChatBotSetting extends BaseChatBot {
         this.$changeLanguageLink.on('click touchend', (e) => {
             self.changeLanguage(self.$(e.target).data("value"));
         });
+        this.$selfdestructionPeriod.change(this.changeSelfdestructionPeriod);
     }
 
     initLanguage = () => {
@@ -109,6 +114,13 @@ class ChatBotSetting extends BaseChatBot {
 
     changeLanguage = (lang) => {
         this.$.blockUI();
+        var currentLanguage = this.$language.data("currentlanguage");
+
+        if (lang == currentLanguage) {
+            this.onComplete();
+            return;
+        }
+
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "ChatBot/ChangeLanguage",
@@ -130,6 +142,31 @@ class ChatBotSetting extends BaseChatBot {
 
                 alpha.showMessage(this.$accountMessage, new Result({ Code: 1, Message: this.resources.updateLanguageFailed }));
             }
+        }
+    }
+
+    changeSelfdestructionPeriod = (e: any) => {
+        e.preventDefault();
+        this.$.blockUI();
+        var minutes = this.$selfdestructionPeriod.find('option:selected').val();
+        this.$.ajax({
+            type: "POST",
+            url: alpha.urls.mainRootPath + "ChatBot/UpdateSelfdestructionPeriod",
+            data: { minutes: minutes },
+            success: this.onChangeSelfdestructionPeriodSuccess,
+            complete: this.onComplete
+        });
+    }
+
+    onChangeSelfdestructionPeriodSuccess = (result: any) => {
+        if (result && result.IsNotOk) {
+            if (result.IsNotAuthorized) {
+                this.topWindow.bootboxAlert(result.Message);
+                return;
+            }
+            alpha.showMessage(
+                this.$accountMessage,
+                new Result({ Code: 1, Message: this.resources.updateMessageSelfDestructMessageFailedMessage }));
         }
     }
 }

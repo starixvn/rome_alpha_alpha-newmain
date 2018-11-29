@@ -1,7 +1,7 @@
 ﻿/// <reference path="../core.ts" />
 
 interface Window {
-    hasPopupOpen(): void;
+    hasPopupOpen(): boolean;
     securityCodePopup: any;
     setSecurityCodePopupTitle(securityCodeTitle): void;
     revertSecurityCodePopupTitle(): void;

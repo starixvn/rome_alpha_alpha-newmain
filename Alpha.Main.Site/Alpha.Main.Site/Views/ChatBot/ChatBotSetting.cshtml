@@ -35,6 +35,15 @@
                             @Html.Action("Language", new { langCode = Model.Language })
                         </div>
                     </div>
+                    <div class="form-group width-100per">
+                        <label>@ChatBot.lblMessageSelfDestruct</label>
+                        <select class="dropdown reload-time" id="period">
+                            @foreach (var item in Model.SelfdestructionPeriodOptions)
+                            {
+                                <option value="@item.Value" @(item.Selected ? " selected=\"selected\"" : string.Empty)>@item.Text</option>
+                            }
+                        </select>
+                    </div>
                 </form>
             </div>
         </div>
@@ -43,6 +52,7 @@
 </div>
 @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeWarning)
 @Html.Hidden("UpdateLanguageFailed", ChatBot.updateLanguageFailed)
+@Html.Hidden("UpdateMessageSelfDestructMessageFailedMessage", ChatBot.UpdateMessageSelfDestructMessageFailedMessage)
 @Html.Hidden("ReportExample", ChatBot.reportExample)
 @Html.Hidden("NotificationExample", ChatBot.notificationExample)
 @section Scripts{

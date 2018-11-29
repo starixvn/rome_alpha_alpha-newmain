@@ -138,3 +138,6 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3996:URI properties should not be strings", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Configurations.AppSettings.ChatBotBaseUrl")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S1449:Culture should be specified for \"string\" operations", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Configurations.AppSettings.OfferClearGivenCredit")]
 
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Bug", "S3887:Mutable, non-private fields should not be \"readonly\"", Justification = "<Pending>", Scope = "member", Target = "~F:Alpha.Main.Constants.MessageSelfDestructTime.Options")]
+
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Vulnerability", "S2386:Mutable fields should not be \"public static\"", Justification = "<Pending>", Scope = "member", Target = "~F:Alpha.Main.Constants.MessageSelfDestructTime.Options")]

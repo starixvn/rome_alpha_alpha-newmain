@@ -130,6 +130,17 @@
             return Json(await mediator.SendAsync(command));
         }
 
+        [HttpPost, AntiXsrfFilter]
+        public async Task<ActionResult> UpdateSelfdestructionPeriod(UpdateSelfdestructionPeriodCommand command)
+        {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
+            return Json(await mediator.SendAsync(command));
+        }
+
         [HttpGet]
         public ActionResult Captcha() => PartialView();
 

@@ -297,4 +297,43 @@
   <data name="AgentOutstanding" xml:space="preserve">
     <value>Số tiền chưa xử lý của Agent</value>
   </data>
+  <data name="lblMessageSelfDestruct" xml:space="preserve">
+    <value>Tin nhắn Chatbot sẽ tự xóa sau</value>
+  </data>
+  <data name="UpdateMessageSelfDestructMessageFailedMessage" xml:space="preserve">
+    <value>Cập nhật thời gian tự xóa không thành công. Vui lòng thử lại.</value>
+  </data>
+  <data name="FifteenMinutes" xml:space="preserve">
+    <value>15 phút</value>
+  </data>
+  <data name="ThirtyMinutes" xml:space="preserve">
+    <value>30 phút</value>
+  </data>
+  <data name="OneHour" xml:space="preserve">
+    <value>1 giờ</value>
+  </data>
+  <data name="ThreeHours" xml:space="preserve">
+    <value>3 giờ</value>
+  </data>
+  <data name="SixHours" xml:space="preserve">
+    <value>6 giờ</value>
+  </data>
+  <data name="TwelveHours" xml:space="preserve">
+    <value>12 giờ</value>
+  </data>
+  <data name="OneDay" xml:space="preserve">
+    <value>1 ngày</value>
+  </data>
+  <data name="ThreeDays" xml:space="preserve">
+    <value>3 ngày</value>
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value>7 ngày</value>
+  </data>
+  <data name="FifteenDays" xml:space="preserve">
+    <value>15 ngày</value>
+  </data>
+  <data name="ThirtyDays" xml:space="preserve">
+    <value>30 ngày</value>
+  </data>
 </root>

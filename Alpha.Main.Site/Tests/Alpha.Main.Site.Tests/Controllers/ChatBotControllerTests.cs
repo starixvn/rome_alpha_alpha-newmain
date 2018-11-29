@@ -118,6 +118,21 @@
         }
 
         [Test]
+        public void AddAccount_DefaultCtor_IsInternal_ReturnsUnauthorizedResult()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(true);
+            var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
+
+            // Act
+            var result = chatbotController.AddAccount(new AddAccountCommand())
+                .GetAwaiter().GetResult() as JsonResult;
+
+            // Assert
+            Assert.True(compareLogic.Compare(expectedData, result.Data).AreEqual);
+        }
+
+        [Test]
         public void AddAccount_IsNotInternal_CallsMediatorSendAddAccountCommand()
         {
             // Arrange
@@ -136,7 +151,7 @@
                         && c.Language == command.Language
                         && c.LetstalkId == command.LetstalkId));
         }
-
+        
         [Test]
         public void AddAccount_ResultIsOk_ReturnsCorrectViewModel()
         {
@@ -399,6 +414,38 @@
 
             // Act & Assert
             Assert.IsFalse(chatbotController.IsNotAllowedAccess(userSession));
+        }
+
+        [Test]
+        public void UpdateSelfdestructionPeriod_IsInternal_ReturnsUnauthorizedResult()
+        {
+            // Arrange
+            userSession.IsInternal.Returns(true);
+            var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
+
+            // Act
+            var result = chatbotController.UpdateSelfdestructionPeriod(new UpdateSelfdestructionPeriodCommand(userSession))
+                .GetAwaiter().GetResult() as JsonResult;
+
+            // Assert
+            Assert.IsTrue(compareLogic.Compare(expectedData, result.Data).AreEqual);
+        }
+
+        [Test]
+        public void UpdateSelfdestructionPeriod_IsNotInternal_CallMediatorSendUpdateLanguageCommand()
+        {
+            // Arrange
+            var command = new UpdateSelfdestructionPeriodCommand(userSession);
+
+            // Act
+            chatbotController.UpdateSelfdestructionPeriod(command).ConfigureAwait(false);
+
+            // Assert
+            mediator.Received().SendAsync(
+                Arg.Is<UpdateSelfdestructionPeriodCommand>(
+                    c => c.Minutes == command.Minutes
+                        && c.CustId == command.CustId
+                        && c.IP == command.IP));
         }
     }
 }
