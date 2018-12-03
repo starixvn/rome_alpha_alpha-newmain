@@ -333,4 +333,7 @@
   <data name="ThirtyDays" xml:space="preserve">
     <value>30 วัน</value>
   </data>
+  <data name="HintMessage" xml:space="preserve">
+    <value>*หมายเหตุ：คำสั่งแบบรวดเร็ว กรุณาพิมพ์ </value>
+  </data>
 </root>

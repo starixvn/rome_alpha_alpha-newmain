@@ -339,4 +339,7 @@
   <data name="ThirtyDays" xml:space="preserve">
     <value>三十天</value>
   </data>
+  <data name="HintMessage" xml:space="preserve">
+    <value>*提示：快速指令，请输入：</value>
+  </data>
 </root>

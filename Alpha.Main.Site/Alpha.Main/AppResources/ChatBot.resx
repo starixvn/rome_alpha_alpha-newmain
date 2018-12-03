@@ -354,7 +354,7 @@
   <data name="UpdateMessageSelfDestructMessageFailedMessage" xml:space="preserve">
     <value>Update self-destruction period unsuccessfully, please try again.</value>
   </data>
-    <data name="FunctionAction" xml:space="preserve">
+  <data name="FunctionAction" xml:space="preserve">
     <value>Action</value>
   </data>
   <data name="PleaseSetAction" xml:space="preserve">
@@ -362,5 +362,17 @@
   </data>
   <data name="IntroAction" xml:space="preserve">
     <value>to activate the actions you'd like to query.</value>
+  </data>
+  <data name="cloneAccountNotification" xml:space="preserve">
+    <value>The creation process might take several minutes. I will inform you once it's completed.</value>
+  </data>
+  <data name="cloneAccountSuccessMsg" xml:space="preserve">
+    <value>A new member has been cloned from member01.</value>
+  </data>
+  <data name="HintMessage" xml:space="preserve">
+    <value>*Hint: for quick command,  please type: </value>
+  </data>
+  <data name="actionExample" xml:space="preserve">
+    <value>Action Example</value>
   </data>
 </root>

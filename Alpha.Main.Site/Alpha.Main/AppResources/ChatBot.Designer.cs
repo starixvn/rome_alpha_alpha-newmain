@@ -97,6 +97,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Action Example.
+        /// </summary>
+        public static string actionExample {
+            get {
+                return ResourceManager.GetString("actionExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent Outstanding.
         /// </summary>
         public static string AgentOutstanding {
@@ -156,6 +165,24 @@ namespace Alpha.Main.AppResources {
         public static string ChatBotTitle {
             get {
                 return ResourceManager.GetString("ChatBotTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The creation process might take several minutes. I will inform you once it&apos;s completed..
+        /// </summary>
+        public static string cloneAccountNotification {
+            get {
+                return ResourceManager.GetString("cloneAccountNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A new member has been cloned from member01..
+        /// </summary>
+        public static string cloneAccountSuccessMsg {
+            get {
+                return ResourceManager.GetString("cloneAccountSuccessMsg", resourceCulture);
             }
         }
         
@@ -246,6 +273,15 @@ namespace Alpha.Main.AppResources {
         public static string hideQRCode {
             get {
                 return ResourceManager.GetString("hideQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *Hint: for quick command,  please type: .
+        /// </summary>
+        public static string HintMessage {
+            get {
+                return ResourceManager.GetString("HintMessage", resourceCulture);
             }
         }
         
