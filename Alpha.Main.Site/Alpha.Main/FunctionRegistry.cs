@@ -32,9 +32,11 @@ namespace Alpha.Main
             ["TotalBetsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets),
             ["MemberInfoMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo),
             ["TransferMenuItem"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
-                !AppSettings.OfferClearGivenCredit.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase))),
+                !AppSettings.OfferClearGivenCredit.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
+                                                            string.Equals(s, "*", StringComparison.OrdinalIgnoreCase))),
             ["TransferMenuItemBySite"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
-                AppSettings.OfferClearGivenCredit.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase))),
+                AppSettings.OfferClearGivenCredit.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
+                                                           string.Equals(s, "*", StringComparison.OrdinalIgnoreCase))),
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
             ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),
@@ -46,12 +48,12 @@ namespace Alpha.Main
                 null,
                 () =>
                 {
-                    if (Current.IsInternal || Configurations.AppSettings.EnableBetsListMonitoring)
+                    if (Current.IsInternal || AppSettings.EnableBetsListMonitoring)
                     {
                         return false;
                     }
 
-                    var usersAlwaysToAccessThisFunction = Configurations.AppSettings.UsersAlwaysAllowAccessBetsListMonitoring;
+                    var usersAlwaysToAccessThisFunction = AppSettings.UsersAlwaysAllowAccessBetsListMonitoring;
                     var disabled = string.IsNullOrWhiteSpace(usersAlwaysToAccessThisFunction) ||
                         !usersAlwaysToAccessThisFunction.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                         .ToList()
@@ -67,8 +69,8 @@ namespace Alpha.Main
                         return false;
                     }
 
-                    if (!string.IsNullOrWhiteSpace(Configurations.AppSettings.AllowedSitesToViewTBF)
-                        && !Configurations.AppSettings.AllowedSitesToViewTBF.ToLower().Contains(Current.Site.ToLower()))
+                    if (!string.IsNullOrWhiteSpace(AppSettings.AllowedSitesToViewTBF)
+                        && !(AppSettings.AllowedSitesToViewTBF.IndexOf(Current.Site, StringComparison.OrdinalIgnoreCase) >= 0))
                     {
                         return false;
                     }
@@ -76,15 +78,9 @@ namespace Alpha.Main
                     return true;
                 }),
             ["BetChoiceLimitMenuItem"] = () => new MenuStatus(
-                () =>
-                {
-                    return Current.IsShowBetChoiceLimit;
-                }),
+                () => Current.IsShowBetChoiceLimit),
             ["NG2MenuItem"] = () => new MenuStatus(
-                () =>
-                {
-                    return ProductManager.IsShowSettings(ProductIdConstants.NG2);
-                }),
+                () => ProductManager.IsShowSettings(ProductIdConstants.NG2)),
             ["BullfightingMenuItem"] = () => new MenuStatus(
                 () => HasPermissionOnProduct(ProductIdConstants.BullFighting)),
             ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
@@ -92,8 +88,8 @@ namespace Alpha.Main
             ["PokerGamesMenuItem"] = () => new MenuStatus(() => !Current.GetHideProduct(ProductIdConstants.PokerGames)),
             ["ChatBotMenuItem"] = () => new MenuStatus(
                 () => !Current.IsSubAcc
-                    && (Configurations.AppSettings.OfferChatbotSites.Contains("*")
-                        || Configurations.AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase)))
+                    && (AppSettings.OfferChatbotSites.Contains("*")
+                        || AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase)))
         };
 
         private static Func<bool> showAccountInfo = () =>
@@ -126,7 +122,7 @@ namespace Alpha.Main
                 !ignoreUrls.Any(str => currentURLCookie.Value.Contains(str)))
             {
                 if (!string.IsNullOrWhiteSpace(currentURLCookie.Value)
-                && (currentURLCookie.Value.ToLower().Contains("http") || currentURLCookie.Value.ToLower().Contains("https")))
+                && (currentURLCookie.Value.IndexOf("http", StringComparison.OrdinalIgnoreCase) >= 0 || currentURLCookie.Value.IndexOf("https", StringComparison.OrdinalIgnoreCase) >= 0))
                 {
                     try
                     {
