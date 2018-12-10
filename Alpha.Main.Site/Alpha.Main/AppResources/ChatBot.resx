@@ -364,10 +364,10 @@
     <value>to activate the actions you'd like to query.</value>
   </data>
   <data name="cloneAccountNotification" xml:space="preserve">
-    <value>The creation process might take several minutes. I will inform you once it's completed.</value>
+    <value>Your request is being processed now, please wait...</value>
   </data>
   <data name="cloneAccountSuccessMsg" xml:space="preserve">
-    <value>A new member has been cloned from member01.</value>
+    <value>A new member has been copied from member01.</value>
   </data>
   <data name="HintMessage" xml:space="preserve">
     <value>*Hint: for quick command,  please type: </value>

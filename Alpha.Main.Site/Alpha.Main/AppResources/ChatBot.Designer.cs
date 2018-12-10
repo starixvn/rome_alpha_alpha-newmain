@@ -169,7 +169,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The creation process might take several minutes. I will inform you once it&apos;s completed..
+        ///   Looks up a localized string similar to Your request is being processed now, please wait....
         /// </summary>
         public static string cloneAccountNotification {
             get {
@@ -178,7 +178,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A new member has been cloned from member01..
+        ///   Looks up a localized string similar to A new member has been copied from member01..
         /// </summary>
         public static string cloneAccountSuccessMsg {
             get {
