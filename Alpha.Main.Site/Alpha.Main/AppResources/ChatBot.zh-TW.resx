@@ -343,4 +343,22 @@
   <data name="HintMessage" xml:space="preserve">
     <value>*提示：快速指令，請輸入：</value>
   </data>
+  <data name="FunctionAction" xml:space="preserve">
+    <value>動作</value>
+  </data>
+  <data name="PleaseSetAction" xml:space="preserve">
+    <value>請設置</value>
+  </data>
+  <data name="IntroAction" xml:space="preserve">
+    <value>以激活您要查詢的操作</value>
+  </data>
+  <data name="cloneAccountNotification" xml:space="preserve">
+    <value>您的要求正在處理中，請稍候…</value>
+  </data>
+  <data name="cloneAccountSuccessMsg" xml:space="preserve">
+    <value>已從 member01 復制新的會員。</value>
+  </data>
+  <data name="actionExample" xml:space="preserve">
+    <value>動作示例</value>
+  </data>
 </root>

@@ -342,4 +342,22 @@
   <data name="HintMessage" xml:space="preserve">
     <value>*提示：快速指令，请输入：</value>
   </data>
+  <data name="FunctionAction" xml:space="preserve">
+    <value>动作</value>
+  </data>
+  <data name="PleaseSetAction" xml:space="preserve">
+    <value>请设置</value>
+  </data>
+  <data name="IntroAction" xml:space="preserve">
+    <value>以激活您要查询的操作</value>
+  </data>
+  <data name="cloneAccountNotification" xml:space="preserve">
+    <value>您的要求正在处理中，请稍候…</value>
+  </data>
+  <data name="cloneAccountSuccessMsg" xml:space="preserve">
+    <value>已从 member01 复制新的会员。</value>
+  </data>
+  <data name="actionExample" xml:space="preserve">
+    <value>动作示例</value>
+  </data>
 </root>

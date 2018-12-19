@@ -336,4 +336,22 @@
   <data name="HintMessage" xml:space="preserve">
     <value>*หมายเหตุ：คำสั่งแบบรวดเร็ว กรุณาพิมพ์ </value>
   </data>
+  <data name="FunctionAction" xml:space="preserve">
+    <value>การกระทำ</value>
+  </data>
+  <data name="PleaseSetAction" xml:space="preserve">
+    <value>โปรดตั้งค่า</value>
+  </data>
+  <data name="IntroAction" xml:space="preserve">
+    <value>เพื่อเปิดใช้งานข้อมูลการดำเนินการที่คุณต้องการสอบถาม</value>
+  </data>
+  <data name="cloneAccountNotification" xml:space="preserve">
+    <value>กำลังประมวลผลคำขอของคุณตอนนี้โปรดรอสักครู่ …</value>
+  </data>
+  <data name="cloneAccountSuccessMsg" xml:space="preserve">
+    <value>คัดลอกสมาชิกใหม่จาก member01 แล้ว</value>
+  </data>
+  <data name="actionExample" xml:space="preserve">
+    <value>ตัวอย่างการกระทำ</value>
+  </data>
 </root>
