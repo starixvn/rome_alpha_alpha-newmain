@@ -33,19 +33,22 @@
         private readonly SessionManager sessionManager;
         private readonly CustomerProfileService customerProfileService;
         private readonly BrowserHelper browserHelper;
+        private readonly IUser user;
 
         public CustomerOtpHandler(
             CustomerOtpService customerOtpService,
             IUserSession userSession,
             SessionManager sessionManager,
             CustomerProfileService customerProfileService,
-            BrowserHelper browserHelper)
+            BrowserHelper browserHelper,
+            IUser user)
         {
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
             this.sessionManager = sessionManager;
             this.customerProfileService = customerProfileService;
             this.browserHelper = browserHelper;
+            this.user = user;
         }
 
         public Result Handle(ChangeOtpStatusCommand message)
@@ -274,6 +277,11 @@
 
             if (isResetOtp
                 && (userSession.IsSubAcc && !userSession.SubPageAccess.UpdateAccount))
+            {
+                return false;
+            }
+
+            if (isResetSubAccount && !user.IsAdminCanUpdateSubAccount)
             {
                 return false;
             }

@@ -32,6 +32,7 @@
         private readonly Encryptor encryptor;
         private readonly CustomerProfileService customerProfileService;
         private readonly SecurityCodeChecker securityCodeChecker;
+        private readonly IUser user;
 
         public PasswordHandler(
             PasswordService passwordService,
@@ -39,7 +40,8 @@
             CustomerProfileService customerProfileService,
             SessionManager sessionManager,
             Encryptor encryptor,
-            SecurityCodeChecker securityCodeChecker)
+            SecurityCodeChecker securityCodeChecker,
+            IUser user)
         {
             this.passwordService = passwordService;
             this.userSession = userSession;
@@ -47,6 +49,7 @@
             this.encryptor = encryptor;
             this.customerProfileService = customerProfileService;
             this.securityCodeChecker = securityCodeChecker;
+            this.user = user;
         }
 
         public Result Handle(ResetSubAccountPasswordCommand message)
@@ -304,6 +307,11 @@
 
             if (isResetPassword
                 && (userSession.IsSubAcc && !userSession.SubPageAccess.UpdateAccount))
+            {
+                return false;
+            }
+
+            if (isResetSubAccount && !user.IsAdminCanUpdateSubAccount)
             {
                 return false;
             }

@@ -12,6 +12,7 @@
     using Helpers;
     using Main.Helpers;
     using Main.Helpers.Impl;
+    using Main.Models;
     using Main.Models.Menus;
     using MediatR;
     using ONEbook.OTP.Helpers;
@@ -110,6 +111,8 @@
                 container.GetInstance<CasinoService>()));
 
             container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
+
+            container.RegisterPerWebRequest<IUser, User>();
         }
 
         private static void RegisterDataAccesses(Container container)
