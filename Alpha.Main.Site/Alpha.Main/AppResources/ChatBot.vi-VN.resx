@@ -339,4 +339,22 @@
   <data name="HintMessage" xml:space="preserve">
     <value>*Gợi ý: để xem nhanh, vui lòng nhập:</value>
   </data>
+  <data name="FunctionAction" xml:space="preserve">
+    <value>Câu lệnh</value>
+  </data>
+  <data name="PleaseSetAction" xml:space="preserve">
+    <value>Vui lòng bật</value>
+  </data>
+  <data name="IntroAction" xml:space="preserve">
+    <value>để kích hoạt câu lệnh bạn muốn dùng.</value>
+  </data>
+  <data name="cloneAccountNotification" xml:space="preserve">
+    <value>Yêu cầu của bạn đang được xử lý, vui lòng đợi ...</value>
+  </data>
+  <data name="cloneAccountSuccessMsg" xml:space="preserve">
+    <value>Một tài khoản Member mới được sao chép từ member01.</value>
+  </data>
+  <data name="actionExample" xml:space="preserve">
+    <value>Ví dụ</value>
+  </data>
 </root>
