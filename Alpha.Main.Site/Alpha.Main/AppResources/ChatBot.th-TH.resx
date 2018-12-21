@@ -136,7 +136,7 @@
     <value>คือเครื่องมือสื่อสารที่&lt;strong&gt;มีความปลอดภัยสูง&lt;/strong&gt;</value>
   </data>
   <data name="pleaseInputLetstalkAccount" xml:space="preserve">
-    <value>Input your Letstalk ID (not the screen name) to link with our chatbot service.</value>
+    <value>ป้อนรหัส Letstalk (ไม่ใช่ชื่อหน้าจอ) เพื่อเชื่อมโยงกับ Chatbot.</value>
   </data>
   <data name="link" xml:space="preserve">
     <value>เชื่อมต่อ</value>

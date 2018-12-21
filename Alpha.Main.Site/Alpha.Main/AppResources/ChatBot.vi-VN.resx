@@ -202,7 +202,7 @@
     <value>Letstalk Technology Limited</value>
   </data>
   <data name="pleaseInputLetstalkAccount" xml:space="preserve">
-    <value>Input your Letstalk ID (not the screen name) to link with our chatbot service.</value>
+    <value>Nhập ID Letstalk (không phải tên tài khoản) để liên kết với chatbot.</value>
   </data>
   <data name="AccountIsRequired" xml:space="preserve">
     <value>Nhập ID Letstalk của bạn.</value>
