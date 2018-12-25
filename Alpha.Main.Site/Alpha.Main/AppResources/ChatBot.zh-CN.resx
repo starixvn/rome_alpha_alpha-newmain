@@ -139,7 +139,7 @@
     <value>是最具保障的&lt;strong&gt;信息通讯软体并加强&lt;/strong&gt;您对话内容的&lt;strong&gt;隐秘性。&lt;/strong&gt;</value>
   </data>
   <data name="pleaseInputLetstalkAccount" xml:space="preserve">
-    <value>Input your Letstalk ID (not the screen name) to link with our chatbot service.</value>
+    <value>输入您的Letstalk ID（不是屏幕名称）以链接我们的 Chatbot 服务。</value>
   </data>
   <data name="link" xml:space="preserve">
     <value>链接</value>
@@ -338,5 +338,26 @@
   </data>
   <data name="ThirtyDays" xml:space="preserve">
     <value>三十天</value>
+  </data>
+  <data name="HintMessage" xml:space="preserve">
+    <value>*提示：快速指令，请输入：</value>
+  </data>
+  <data name="FunctionAction" xml:space="preserve">
+    <value>动作</value>
+  </data>
+  <data name="PleaseSetAction" xml:space="preserve">
+    <value>请设置</value>
+  </data>
+  <data name="IntroAction" xml:space="preserve">
+    <value>以激活您要查询的操作</value>
+  </data>
+  <data name="cloneAccountNotification" xml:space="preserve">
+    <value>您的要求正在处理中，请稍候…</value>
+  </data>
+  <data name="cloneAccountSuccessMsg" xml:space="preserve">
+    <value>已从 member01 复制新的会员。</value>
+  </data>
+  <data name="actionExample" xml:space="preserve">
+    <value>动作示例</value>
   </data>
 </root>

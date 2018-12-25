@@ -97,6 +97,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Action Example.
+        /// </summary>
+        public static string actionExample {
+            get {
+                return ResourceManager.GetString("actionExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent Outstanding.
         /// </summary>
         public static string AgentOutstanding {
@@ -160,6 +169,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your request is being processed now, please wait....
+        /// </summary>
+        public static string cloneAccountNotification {
+            get {
+                return ResourceManager.GetString("cloneAccountNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A new member has been copied from member01..
+        /// </summary>
+        public static string cloneAccountSuccessMsg {
+            get {
+                return ResourceManager.GetString("cloneAccountSuccessMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Command.
         /// </summary>
         public static string Command {
@@ -205,6 +232,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Action.
+        /// </summary>
+        public static string FunctionAction {
+            get {
+                return ResourceManager.GetString("FunctionAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notification.
         /// </summary>
         public static string FunctionNotification {
@@ -241,6 +277,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to *Hint: for quick command,  please type: .
+        /// </summary>
+        public static string HintMessage {
+            get {
+                return ResourceManager.GetString("HintMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How function works.
         /// </summary>
         public static string howFunctionWorks {
@@ -264,6 +309,15 @@ namespace Alpha.Main.AppResources {
         public static string InstallLetstalk {
             get {
                 return ResourceManager.GetString("InstallLetstalk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to to activate the actions you&apos;d like to query..
+        /// </summary>
+        public static string IntroAction {
+            get {
+                return ResourceManager.GetString("IntroAction", resourceCulture);
             }
         }
         
@@ -516,6 +570,15 @@ namespace Alpha.Main.AppResources {
         public static string pleaseSet {
             get {
                 return ResourceManager.GetString("pleaseSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please set.
+        /// </summary>
+        public static string PleaseSetAction {
+            get {
+                return ResourceManager.GetString("PleaseSetAction", resourceCulture);
             }
         }
         

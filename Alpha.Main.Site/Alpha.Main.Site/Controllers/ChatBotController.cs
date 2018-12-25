@@ -152,6 +152,10 @@
         public ActionResult NotificationExample(string language)
             => View((object)language);
 
+        [HttpGet]
+        public ActionResult ActionExample(string language)
+            => View((object)language);
+
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {
             base.OnAuthorization(filterContext);

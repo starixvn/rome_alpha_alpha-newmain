@@ -1,0 +1,66 @@
+﻿@using Alpha.Main.Site.Helpers
+@model string
+@{
+    Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
+}
+@section Styles {
+    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot-setting")
+}
+<div class="chatbot-layout -report" id="chatbotLayout">
+    <div class="chatbot-header">
+        <span class="icon-chatbot-back"></span>
+        <span class="title">@ChatBot.Atom</span>
+        <span class="icon-chatbot-call"></span>
+        <span class="icon-chatbot-down"></span>
+    </div>
+    <div class="chatbot-body" id="chatbotBody">
+        <ul class="list-commands" id="listCommand">
+            <li class="command">
+                <div class="user-input">/copy member01 1000</div>
+                <div class="status-user-input">
+                    @ChatBot.Read <br />
+                    12:31
+                </div>
+            </li>
+            <li class="command">
+                <div class="chatbot-reponse">
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.cloneAccountNotification), Model)</div>
+                </div>
+                <div class="status-chatbot-reponse">
+                    12:32
+                </div>
+            </li>
+            <li class="command">
+                <div class="chatbot-reponse">
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.cloneAccountSuccessMsg), Model)</div>
+                    <br />
+                    <div>@ResourceHelper.GetResource(nameof(Resources.username), Model) : member02</div>
+                    <div>@ResourceHelper.GetResource(nameof(Resources.password), Model) : x1ngqit1An</div>
+                    <br />
+                    <div>@ResourceHelper.GetChatbotResource(nameof(ChatBot.HintMessage), Model)</div>
+                    <div>/copy member01 1000</div>
+                </div>
+                <div class="status-chatbot-reponse">
+                    12:33
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="data-input">
+        <span class="icon-chatbot-plus"></span>
+        <span class="icon-chatbot-gif"></span>
+        <input type="text" id="reportText" class="chatbot-text" placeholder="@ResourceHelper.GetChatbotResource(nameof(ChatBot.inputCommand), Model)" disabled />
+        <span class="icon-chatbot-voice"></span>
+    </div>
+    <div class="list-actions">
+        <div class="btn-play hide" id="btnReplay">
+            <span class="icon-play-button"></span> @ChatBot.play
+        </div>
+        <div class="btn-play disabled" id="btnPlaying">
+            <span class="icon-pause-button"></span> @ChatBot.playing
+        </div>
+    </div>
+</div>
+@section Scripts{
+    @StaticResources.RenderScripts("~/assets/bundles/chatbot/chatbot-guide")
+}

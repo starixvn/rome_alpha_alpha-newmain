@@ -4,6 +4,7 @@
     expiredTimeKey = "ChatbotVerificationExpiredTime";
     $openReportExample: JQuery;
     $openNotificationExample: JQuery;
+    $openActionExample: JQuery;
 
     constructor($: JQueryStatic, topWindow: any) {
         this.$ = $;
@@ -12,7 +13,8 @@
 
     baseResources = {
         reportExample: (<HTMLInputElement>document.getElementById('ReportExample')).value,
-        notificationExample: (<HTMLInputElement>document.getElementById('NotificationExample')).value
+        notificationExample: (<HTMLInputElement>document.getElementById('NotificationExample')).value,
+        actionExample: (<HTMLInputElement>document.getElementById('ActionExample')).value
     }
 
     onComplete = () => {
@@ -47,6 +49,11 @@
         this.$openNotificationExample = this.$("#openNotificationExample");
         this.$openNotificationExample.on('click touchend', () => {
             this.openExample(this.baseResources.notificationExample, "ChatBot/NotificationExample", 336, getLanguageFunc());
+        });
+
+        this.$openActionExample = this.$("#openActionExample");
+        this.$openActionExample.on('click touchend', () => {
+            this.openExample(this.baseResources.actionExample, "ChatBot/ActionExample", 400, getLanguageFunc());
         });
     }
 
