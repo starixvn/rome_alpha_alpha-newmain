@@ -26,6 +26,7 @@
     using Web.Filters;
     using Fanex.RemotingRef;
     using Web.Helpers;
+    using System.Linq;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -89,6 +90,12 @@
 
             Exception ex = Server.GetLastError();
             var currentCustomer = UserSession.Current;
+
+            if (ex is FormatException &&
+                Request.Params.AllKeys.Any(key => Auth.Configurations.AuthorizationSection.Instance.CustIdQueryStringParamNames.Any(cf => string.Equals(key, cf, StringComparison.OrdinalIgnoreCase))))
+            {
+                return;
+            }
 
             ExceptionHandler.Handle(ex,
                 new Dictionary<string, object>
