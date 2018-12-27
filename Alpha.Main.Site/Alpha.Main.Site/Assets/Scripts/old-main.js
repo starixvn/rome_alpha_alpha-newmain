@@ -679,11 +679,11 @@ function reloadPopUpSetting(timeOut) {
     if (typeof (popUp) === 'undefined') {
         if (timeOut) {
             setTimeout(function () {
-                location.reload(true);
+                window.top.main.location.reload(true);
             }, timeOut);
         }
         else {
-            location.reload(true);
+            window.top.main.location.reload(true);
         }
 
         return;
