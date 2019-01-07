@@ -26,6 +26,7 @@
         private IUserSession userSession;
         private CustomerProfileService customerProfileService;
         private BrowserHelper browserHelper;
+        private IUser user;
 
         [SetUp]
         public void SetUp()
@@ -36,7 +37,11 @@
             customerProfileService = Substitute.For<CustomerProfileService>();
             browserHelper = Substitute.For<BrowserHelper>();
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
-            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, customerProfileService, browserHelper);
+
+            user = Substitute.For<IUser>();
+            user.IsAdminCanUpdateSubAccount.Returns(true);
+
+            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, customerProfileService, browserHelper, user);
         }
 
         #region Handle Change Otp Status Command
