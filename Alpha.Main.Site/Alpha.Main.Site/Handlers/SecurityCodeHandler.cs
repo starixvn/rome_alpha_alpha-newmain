@@ -32,19 +32,22 @@
         private readonly Encryptor encryptor;
         private readonly SecurityCodeService securityCodeService;
         private readonly IUserSession userSession;
+        private readonly IUser user;
 
         public SecurityCodeHandler(
           SecurityCodeService securityCodeService,
           CustomerProfileService customerProfileService,
           SessionManager sessionManager,
           Encryptor encryptor,
-          IUserSession userSession)
+          IUserSession userSession,
+          IUser user)
         {
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
             this.customerProfileService = customerProfileService;
             this.securityCodeService = securityCodeService;
             this.userSession = userSession;
+            this.user = user;
         }
 
         private string HashKey
@@ -299,6 +302,11 @@
         {
             if (userSession.IsInternal
                 && !isResetSubAccount)
+            {
+                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
+            }
+
+            if (isResetSubAccount && !user.IsAdminCanUpdateSubAccount)
             {
                 return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
             }

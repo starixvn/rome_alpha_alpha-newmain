@@ -31,6 +31,7 @@
         private Encryptor encryptor;
         private CustomerProfileService customerProfileService;
         private SecurityCodeChecker securityCodeChecker;
+        private IUser user;
 
         [SetUp]
         public void Setup()
@@ -46,13 +47,17 @@
             userSession.CustId.Returns(CustId.ValidId);
             userSession.RoleId.Returns(RoleId.Agent);
 
+            user = Substitute.For<IUser>();
+            user.IsAdminCanUpdateSubAccount.Returns(true);
+
             passwordHandler = new PasswordHandler(
                 passwordService,
                 userSession,
                 customerProfileService,
                 sessionManager,
                 encryptor,
-                securityCodeChecker);
+                securityCodeChecker,
+                user);
         }
 
         #region Handle Reset SubAccount Password Command

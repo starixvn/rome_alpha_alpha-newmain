@@ -29,6 +29,7 @@
         private Encryptor encryptor;
         private SecurityCodeService securityCodeService;
         private IUserSession userSession;
+        private IUser user;
         private CompareLogic compareLogic;
 
         [SetUp]
@@ -50,12 +51,16 @@
             userSession = Substitute.For<IUserSession>();
             userSession.RoleId.Returns(RoleId.Agent);
 
+            user = Substitute.For<IUser>();
+            user.IsAdminCanUpdateSubAccount.Returns(true);
+
             securityCodeHandler = new SecurityCodeHandler(
                 securityCodeService,
                 customerProfileService,
                 sessionManager,
                 encryptor,
-                userSession);
+                userSession,
+                user);
 
             compareLogic = new CompareLogic();
             UrlHelperTestSetUp.SetUp();
