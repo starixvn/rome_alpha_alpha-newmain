@@ -5,16 +5,18 @@ interface Window {
     securityCodePopup: any;
     setSecurityCodePopupTitle(securityCodeTitle): void;
     revertSecurityCodePopupTitle(): void;
-    ageWnd: any;
+    ageWnd: any;    
 }
 
 interface String {
-    hc(): void;
-    ec(text: string): void;
+    hc(): string;
+    ec(text: string): string;
+    encrypt(): string;
 }
 
 declare var Sha1: any;
 declare var Sha256: any;
+declare var CryptoJS: any;
 
 var securityHelper = {
     isValidSecurityCode: function (secCode) {
@@ -219,4 +221,23 @@ String.prototype.hc = function () {
         result[i] = b16_map[this.charCodeAt(i)];
     }
     return result.join('');
+};
+
+String.prototype.encrypt = function () {
+    var plainText = this;
+    plainText = plainText.toString();
+    var secretKey = $('#hashkey').val();    
+    var passPhrase = 'a5s8d2e9c172';
+    var key = CryptoJS.enc.Utf8.parse(passPhrase + secretKey);
+    var iv = key;
+
+    var pwd = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(plainText), key,
+    {
+        keySize: 128 / 8,
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+
+    return pwd.toString();
 };

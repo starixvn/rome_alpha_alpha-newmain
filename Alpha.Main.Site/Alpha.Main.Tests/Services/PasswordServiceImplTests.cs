@@ -1,18 +1,19 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
     using AppResources;
     using Constants;
     using KellermanSoftware.CompareNetObjects;
     using Main.Criteria.Password;
     using Main.DataAccesses;
     using Main.Models;
+    using Main.Services;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
     using Params.Password;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
+    using System;
 
     [TestFixture]
     public class PasswordServiceImplTests
@@ -22,6 +23,7 @@
         private Encryptor encryptor;
         private PasswordDataAccess passwordDataAccess;
         private CasinoService casinoService;
+        private AesService aes;
 
         [SetUp]
         public void SetUp()
@@ -31,11 +33,13 @@
             encryptor = Substitute.For<Encryptor>();
             passwordDataAccess = Substitute.For<PasswordDataAccess>();
             casinoService = Substitute.For<CasinoService>();
+            aes = Substitute.For<AesService>();
 
             passwordService = Substitute.ForPartsOf<PasswordServiceImpl>(
                 encryptor,
                 passwordDataAccess,
-                casinoService);
+                casinoService,
+                aes);
         }
 
         #region Change Main Account Passowrd
@@ -62,7 +66,7 @@
                 CurrentPassword = password,
             };
 
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
+            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
 
             // Act
             var result = passwordService.ChangeMainAccountPassword(param);
@@ -82,7 +86,7 @@
                 CurrentPassword = password,
             };
 
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
+            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
 
             // Act
             var result = passwordService.ChangeMainAccountPassword(param);
@@ -105,17 +109,18 @@
                 IsCasinoDisabled = true,
                 LanguageKey = "en",
                 IP = "127.0.0.1",
-                ActorId = 1
+                ActorId = 1,
+                HashKey = "HashKey"
             };
 
-            encryptor.HexDecode(Arg.Is(param.CurrentPassword)).Returns("CurrentPassword");
-            encryptor.HexDecode(Arg.Is(param.NewPassword)).Returns("NewPassword");
+            encryptor.HexDecode(param.CurrentPassword).Returns("CurrentPassword");
+            encryptor.HexDecode(param.NewPassword).Returns("NewPassword");
 
-            encryptor.RC4(Arg.Any<string>(), Arg.Is("CurrentPassword")).Returns(currentPassword);
-            encryptor.RC4(Arg.Any<string>(), Arg.Is("NewPassword")).Returns(newPassword);
+            aes.Decrypt(currentPassword, "HashKey").Returns(currentPassword);
+            aes.Decrypt(newPassword, "HashKey").Returns(newPassword);
 
-            encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
-            encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
+            encryptor.CfsEnCode(currentPassword).Returns("OldPassword");
+            encryptor.CfsEnCode(newPassword).Returns("UserPassword");
 
             passwordDataAccess.UpdatePassword(Arg.Any<UpdateMainAccountPasswordCriteria>()).Returns(new Result { Code = 1 });
 
@@ -153,8 +158,8 @@
             encryptor.HexDecode(Arg.Is(param.CurrentPassword)).Returns("CurrentPassword");
             encryptor.HexDecode(Arg.Is(param.NewPassword)).Returns("NewPassword");
 
-            encryptor.RC4(Arg.Any<string>(), Arg.Is("CurrentPassword")).Returns(currentPassword);
-            encryptor.RC4(Arg.Any<string>(), Arg.Is("NewPassword")).Returns(newPassword);
+            aes.Decrypt(Arg.Any<string>(), Arg.Is("CurrentPassword")).Returns(currentPassword);
+            aes.Decrypt(Arg.Any<string>(), Arg.Is("NewPassword")).Returns(newPassword);
 
             encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
             encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
@@ -196,7 +201,7 @@
                 NewPassword = string.Empty,
             };
 
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(string.Empty);
+            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns(string.Empty);
 
             // Act
             var result = passwordService.ChangeSubAccountPassword(param);
@@ -215,13 +220,14 @@
             {
                 NewPassword = newPassword,
                 CurrentPassword = currentPassword,
+                HashKey = "HashKey"
             };
 
             encryptor.HexDecode(Arg.Is(param.CurrentPassword)).Returns("CurrentPassword");
             encryptor.HexDecode(Arg.Is(param.NewPassword)).Returns("NewPassword");
 
-            encryptor.RC4(Arg.Any<string>(), Arg.Is("CurrentPassword")).Returns(currentPassword);
-            encryptor.RC4(Arg.Any<string>(), Arg.Is("NewPassword")).Returns(newPassword);
+            aes.Decrypt(currentPassword, "HashKey").Returns(currentPassword);
+            aes.Decrypt(newPassword, "HashKey").Returns(newPassword);
 
             encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
             encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
@@ -262,7 +268,7 @@
             // Arrange
             var param = new ResetMainAccountPasswordParam();
             param.IsResetMemberPassword = true;
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234 aa");
+            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns("1234 aa");
 
             // Act
             var result = passwordService.ResetMainAccountPassword(param);
@@ -285,7 +291,7 @@
                 IsCasinoDisabled = true,
                 ActorId = 1
             };
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
+            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
             encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
 
             var criteria = new ResetMainAccountPasswordCriteria
@@ -326,7 +332,7 @@
                 ActorName = "ActorName",
                 IsCasinoSync = true
             };
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
+            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
             encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
 
             var criteria = new ResetMainAccountPasswordCriteria
@@ -374,7 +380,7 @@
         {
             // Arrange
             var param = new ResetSubAccountPasswordParam();
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
+            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns(password);
 
             // Act
             var result = passwordService.ResetSubAccountPassword(param);
@@ -391,7 +397,7 @@
             param.NewPassword = "1234aaAA";
             param.ActorName = "aaAA";
 
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
+            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
 
             // Act
             var result = passwordService.ResetSubAccountPassword(param);
@@ -413,7 +419,7 @@
                 SubAccountId = 0,
                 ActorId = 1
             };
-            encryptor.RC4(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
+            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
             encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
 
             var criteria = new ResetSubAccountPasswordCriteria

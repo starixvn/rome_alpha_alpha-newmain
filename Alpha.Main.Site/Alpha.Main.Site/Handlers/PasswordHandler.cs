@@ -97,7 +97,7 @@
 
         private string GetHasKey()
         {
-            var hashKey = this.encryptor.RandomString(new Random().Next(4, 8));
+            var hashKey = this.encryptor.RandomString(4);
 
             this.sessionManager.Add(HashKeySessionKey, hashKey);
 

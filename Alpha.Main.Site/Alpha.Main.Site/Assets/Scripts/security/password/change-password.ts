@@ -90,9 +90,9 @@ var changePassword = {
         }
 
         var hashKey = changePassword.domElements.hashKey.val();
-        var oldPassword = $txtOldPassword.val().ec(hashKey).hc();
-        var password = $txtPassword.val().ec(hashKey).hc();
-        var confirmPassword = $txtConfirmPassword.val().ec(hashKey).hc();
+        var oldPassword = $txtOldPassword.val().encrypt();
+        var password = $txtPassword.val().encrypt();
+        var confirmPassword = $txtConfirmPassword.val().encrypt();
 
         $.blockUI();
         $.ajax({

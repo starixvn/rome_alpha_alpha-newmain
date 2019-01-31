@@ -1,9 +1,5 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Text.RegularExpressions;
     using AppResources;
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
@@ -13,6 +9,10 @@
     using Params.Password;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Text.RegularExpressions;
 
     public class PasswordServiceImpl : PasswordService
     {
@@ -27,15 +27,18 @@
         private readonly Encryptor encryptor;
         private readonly PasswordDataAccess passwordDataAccess;
         private readonly CasinoService casinoService;
+        private readonly AesService aes;
 
         public PasswordServiceImpl(
             Encryptor encryptor,
             PasswordDataAccess passwordDataAccess,
-            CasinoService casinoService)
+            CasinoService casinoService,
+            AesService aes)
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
             this.casinoService = casinoService;
+            this.aes = aes;
         }
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
@@ -265,7 +268,7 @@
             foreach (var invalidPassword in invalidPasswords)
             {
                 if (!string.IsNullOrWhiteSpace(invalidPassword)
-                    && newPassword.ToLower().Contains(invalidPassword.ToLower()))
+                    && newPassword.IndexOf(invalidPassword, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     return Result.CreateErrorResult(Security.lblPasswordDAccountName);
                 }
@@ -306,7 +309,7 @@
 
         private string Decrypt(string password, string encryptKey)
         {
-            return encryptor.RC4(encryptKey, encryptor.HexDecode(password));
+            return aes.Decrypt(password, encryptKey);
         }
     }
 }

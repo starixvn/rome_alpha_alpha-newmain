@@ -29,7 +29,7 @@
             }
 
             this.message = message;
-            PasswordHash = Encryption.RandomString(new Random().Next(4, 8));
+            PasswordHash = Encryption.RandomString(4);
             this.getDefaultUrl = getDefaultUrl ?? FunctionRegistry.GetDefaultUrl;
             this.encodeDataFunction = encodeDataFunction;
             this.browserHelper = browserHelper;
