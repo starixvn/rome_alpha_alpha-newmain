@@ -44,9 +44,9 @@ var resetSubAccountPassword = {
 
         var hashKey = $('#hashkey').val();
         var password = $txtSecurityCode.val();
-        password = password.ec(hashKey).hc();
+        password = password.encrypt();
         var confirmPassword = $txtConfirmSecurityCode.val();
-        confirmPassword = confirmPassword.ec(hashKey).hc();
+        confirmPassword = confirmPassword.encrypt();
         $.ajax({
             type: 'POST',
             url: 'ResetSubAccountPassword',

@@ -41,7 +41,7 @@ var changeSecurityCodeByForcing = {
         oldSecCode = securityHelper.hashSecurityCode(oldSecCode);
         var secCode = $txtSecurityCode.val();
         var hashKey = $('#hashkey').val();
-        secCode = secCode.ec(hashKey).hc();
+        secCode = secCode.encrypt();
         $.ajax({
             type: 'POST',
             url: 'ChangeSecurityCodeByForcing',

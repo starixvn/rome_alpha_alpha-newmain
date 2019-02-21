@@ -61,6 +61,7 @@
   {
     "outputFileName": "Assets/bundles/security/security-code/change-securitycode-by-forcing.js",
     "inputFiles": [
+      "Assets/scripts/aes.js",
       "Assets/scripts/core.js",
       "Assets/scripts/security/security-code/security-code-resources.js",
       "Assets/scripts/security/security-helper.js",
@@ -70,6 +71,7 @@
   {
     "outputFileName": "Assets/bundles/security/security-code/change-securitycode-firstlogin.js",
     "inputFiles": [
+      "Assets/scripts/aes.js",
       "Assets/scripts/core.js",
       "Assets/scripts/security/security-code/security-code-resources.js",
       "Assets/scripts/security/security-helper.js",
@@ -79,6 +81,7 @@
   {
     "outputFileName": "Assets/bundles/security/security-code/change-user-own-securitycode.js",
     "inputFiles": [
+      "Assets/scripts/aes.js",
       "Assets/scripts/core.js",
       "Assets/scripts/security/security-code/security-code-resources.js",
       "Assets/scripts/security/security-helper.js",
@@ -88,6 +91,7 @@
   {
     "outputFileName": "Assets/bundles/security/security-code/reset-securitycode.js",
     "inputFiles": [
+      "Assets/scripts/aes.js",
       "Assets/scripts/core.js",
       "Assets/scripts/security/security-code/security-code-resources.js",
       "Assets/scripts/security/security-helper.js",
@@ -97,6 +101,7 @@
   {
     "outputFileName": "Assets/bundles/security/password/change-password.js",
     "inputFiles": [
+      "Assets/scripts/aes.js",
       "Assets/scripts/core.js",
       "Assets/scripts/security/password/password-resources.js",
       "Assets/scripts/security/security-helper.js",
@@ -106,6 +111,7 @@
   {
     "outputFileName": "Assets/bundles/security/password/reset-main-account-password.js",
     "inputFiles": [
+      "Assets/scripts/aes.js",
       "Assets/scripts/core.js",
       "Assets/scripts/security/password/password-resources.js",
       "Assets/scripts/security/security-helper.js",
@@ -115,6 +121,7 @@
   {
     "outputFileName": "Assets/bundles/security/password/force-change-password.js",
     "inputFiles": [
+      "Assets/scripts/aes.js",
       "Assets/scripts/core.js",
       "Assets/scripts/security/password/password-resources.js",
       "Assets/scripts/security/security-helper.js",
@@ -124,6 +131,7 @@
   {
     "outputFileName": "Assets/bundles/security/password/reset-sub-account-password.js",
     "inputFiles": [
+      "Assets/scripts/aes.js",
       "Assets/scripts/core.js",
       "Assets/scripts/security/password/password-resources.js",
       "Assets/scripts/security/security-helper.js",

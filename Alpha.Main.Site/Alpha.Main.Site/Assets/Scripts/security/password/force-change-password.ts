@@ -38,8 +38,8 @@ var forceChangePassword = {
         }
 
         var hashKey = $('#hashkey').val();
-        var oldPassword = $txtOldPassword.val().ec(hashKey).hc();
-        var password = $txtPassword.val().ec(hashKey).hc();
+        var oldPassword = $txtOldPassword.val().encrypt();
+        var password = $txtPassword.val().encrypt();
         $.ajax({
             type: 'POST',
             url: 'ForceChangePassword',

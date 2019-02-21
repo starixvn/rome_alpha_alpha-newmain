@@ -102,6 +102,10 @@
       <HintPath>..\packages\Fanex.Caching.2.0.0\lib\net461\Fanex.Caching.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Fanex.Cryptography.Aes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Cryptography.Aes.1.0.0.0\lib\net461\Fanex.Cryptography.Aes.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Fanex.Data, Version=2.1.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Data.2.1.0.1\lib\net461\Fanex.Data.dll</HintPath>
       <Private>True</Private>
@@ -516,6 +520,7 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
+    <Content Include="Assets\scripts\aes.js" />
     <Content Include="Assets\styles\chatbot\chatbot-setting.css">
       <DependentUpon>chatbot-setting.scss</DependentUpon>
     </Content>
@@ -556,6 +561,7 @@
       <DependentUpon>popup-announcement.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\_mixins2.scss" />
+    <Content Include="Scripts\aes.js" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.css">
       <DependentUpon>page.scss</DependentUpon>
     </Content>

@@ -113,6 +113,7 @@
             container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
 
             container.RegisterPerWebRequest<IUser, User>();
+            container.RegisterSingleton<AesService, AesServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

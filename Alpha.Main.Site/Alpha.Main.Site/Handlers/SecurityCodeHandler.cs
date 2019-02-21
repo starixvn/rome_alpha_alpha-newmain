@@ -14,6 +14,7 @@
     using Sunplus.Agent.Utilities;
     using ViewModels.Security;
     using Web.Helpers;
+    using Fanex.Cryptography.Aes;
 
     public class SecurityCodeHandler :
         IRequestHandler<ForceChangeSecurityCodeQuery, ForceChangeSecurityCodeViewModel>,
@@ -33,6 +34,7 @@
         private readonly SecurityCodeService securityCodeService;
         private readonly IUserSession userSession;
         private readonly IUser user;
+        private readonly AesService aes;
 
         public SecurityCodeHandler(
           SecurityCodeService securityCodeService,
@@ -40,7 +42,8 @@
           SessionManager sessionManager,
           Encryptor encryptor,
           IUserSession userSession,
-          IUser user)
+          IUser user,
+          AesService aes)
         {
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
@@ -48,6 +51,7 @@
             this.securityCodeService = securityCodeService;
             this.userSession = userSession;
             this.user = user;
+            this.aes = aes;
         }
 
         private string HashKey
@@ -56,7 +60,7 @@
             {
                 if (string.IsNullOrWhiteSpace(sessionManager.Get<string>(HashKeySessionKey)))
                 {
-                    var hashKey = encryptor.RandomString(new Random().Next(4, 8));
+                    var hashKey = encryptor.RandomString(4);
 
                     sessionManager.Add(HashKeySessionKey, hashKey);
                 }
@@ -72,7 +76,7 @@
                 return string.Empty;
             }
 
-            return encryptor.RC4(HashKey, encryptor.HexDecode(encryptedData));
+            return aes.Decrypt(encryptedData, HashKey);
         }
 
         public SecurityCodeViewModel Handle(SecurityCodeQuery message)

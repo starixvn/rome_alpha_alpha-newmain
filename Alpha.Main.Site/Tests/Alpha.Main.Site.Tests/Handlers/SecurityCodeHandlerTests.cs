@@ -31,6 +31,7 @@
         private IUserSession userSession;
         private IUser user;
         private CompareLogic compareLogic;
+        private AesService aes;
 
         [SetUp]
         public void SetUp()
@@ -60,10 +61,12 @@
                 sessionManager,
                 encryptor,
                 userSession,
-                user);
+                user,
+                aes);
 
-            compareLogic = new CompareLogic();
+            compareLogic = new CompareLogic();            
             UrlHelperTestSetUp.SetUp();
+            aes = Substitute.For<AesService>();
         }
 
         #region Handle Security Code Query
@@ -442,7 +445,7 @@
 
             var message = new ChangeSecurityCodeByForcingCommand(userSession);
             message.SecurityCode = "NewSecurityCode";
-            encryptor.RC4(Arg.Any<string>(), Arg.Is(message.SecurityCode)).Returns("DecryptedCode");
+            aes.Decrypt(Arg.Any<string>(), Arg.Is(message.SecurityCode)).Returns("DecryptedCode");
 
             securityCodeService.ChangeMainAccountSecurityCode(Arg.Any<ChangeSecurityCodeParam>()).Returns(new Result { Code = 0 });
 

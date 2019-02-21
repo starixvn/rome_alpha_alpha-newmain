@@ -44,7 +44,7 @@ var resetsecuritycode = {
 
         var hashKey = $('#hashkey').val();
         var secCode = $txtSecurityCode.val();
-        secCode = secCode.ec(hashKey).hc();
+        secCode = secCode.encrypt();
         $.ajax({
             type: 'POST',
             url: 'ResetSecurityCode',
