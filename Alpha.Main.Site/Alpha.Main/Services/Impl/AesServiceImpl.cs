@@ -6,7 +6,14 @@ namespace Alpha.Main.Services.Impl
     {
         public string Decrypt(string cipherText, string secretKey)
         {
-            return AesExtension.Decrypt(cipherText, secretKey);
+            try
+            {
+                return AesExtension.Decrypt(cipherText, secretKey);
+            }
+            catch
+            {
+                return string.Empty;
+            }
         }
 
         public string Encrypt(string plainText, string secretKey)
