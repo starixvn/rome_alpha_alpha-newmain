@@ -57,7 +57,9 @@ var alpha = {
             var index: any = window;
             while (index != index.parent) {
                 index = index.parent;
-            }
+			}
+
+			localStorage.removeItem('lastSearchUsername');
 
             index.location.href = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
 
