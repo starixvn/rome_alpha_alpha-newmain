@@ -9,13 +9,19 @@ body {
     position: fixed;
     opacity: 0;
 }
-       
-.navbar-nav .setting.open .dropdown-menu {
-    width: calculateScale(160px);
 
-    li {
-        display: block;
-    }
+.navbar-nav .setting.open .dropdown-menu {
+	width: 418px;
+
+	li {
+		display: block;
+	}
+
+	.linkConfigNow {
+		display: inline-block;
+		color: #337ab7;
+		padding: 0 8px;
+	}
 }
 
 

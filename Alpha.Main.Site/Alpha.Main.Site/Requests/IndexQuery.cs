@@ -25,6 +25,10 @@ namespace Alpha.Main.Site.Models.Requests
 
         public int CustId => userSession.CustId;
 
+        public string UserName => userSession.UserName;
+
+        public string NickName => userSession.NickName;
+
         public int OnUserId => userSession.OnUserId;
 
         public int SubAccId => userSession.SubAccId;
@@ -50,5 +54,7 @@ namespace Alpha.Main.Site.Models.Requests
         public bool IsViewedMemberInfo => userSession.SubPageAccess.ViewMemberInfo;
 
         public bool DisableMessages => disableMessages;
+
+      //  public bool DisableOTP => userSession.otp
     }
 }

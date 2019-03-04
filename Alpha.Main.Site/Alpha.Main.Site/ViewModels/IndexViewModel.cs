@@ -81,7 +81,14 @@
 
         public string DefaultPath => getDefaultUrl?.Invoke() ?? MainRootPath;
 
-        public HeaderNavViewModel HeaderNavViewModel => new HeaderNavViewModel(CustId, EnableSecurityCode, message.IsViewedMemberInfo);
+        public HeaderNavViewModel HeaderNavViewModel => 
+            new HeaderNavViewModel(
+                CustId, 
+                message.UserName,
+                message.NickName,
+                EnableSecurityCode, 
+                message.IsViewedMemberInfo,
+                IsEnabledOtp);
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 
