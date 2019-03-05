@@ -11,7 +11,7 @@ body {
 }
 
 .navbar-nav .setting.open .dropdown-menu {
-	width: 418px;
+	width: calculateScale(220px);
 
 	li {
 		display: block;
@@ -19,8 +19,19 @@ body {
 
 	.linkConfigNow {
 		display: inline-block;
-		color: #337ab7;
+		color: #106cd3;
 		padding: 0 8px;
+		line-height: normal;
+	}
+
+	.username {
+		line-height: calculateScale(15px);
+		word-break: break-word;
+	}
+
+	.nickname {
+		line-height: calculateScale(15px);
+		margin: 5px 0;
 	}
 }
 
@@ -152,43 +163,47 @@ body {
 
 // sidebar
 
-.mainmenu-container {        
-    top: calculateScale(52px);
+.mainmenu-container {
+	top: calculateScale(52px);
 
-    .menu-item > a {
-        padding: calculateScale(16px) calculateScale(8px) calculateScale(16px) calculateScale(18px);
-    }
+	&.disabledViewAccInfo {
+		top: calculateScale(52px);
+	}
 
-    .menu-item > a .icon-arrow-right {
-        font-size: calculateScale(16px);
-    }
+	.menu-item > a {
+		padding: calculateScale(16px) calculateScale(8px) calculateScale(16px) calculateScale(18px);
+	}
 
-    .menu-item .icon {
-        font-size: calculateScale(16px);
-        margin-right: calculateScale(18px);
-        top: 2px;
+	.menu-item > a .icon-arrow-right {
+		font-size: calculateScale(16px);
+	}
 
-        &.icon-announcements {
-            margin-right: calculateScale(17px);
-            font-size: calculateScale(20px);
-            top: 5px;
-        }
+	.menu-item .icon {
+		font-size: calculateScale(16px);
+		margin-right: calculateScale(18px);
+		top: 2px;
 
-        &.icon-betlists {
-            font-size: calculateScale(17px);
-            margin-right: 24px;
-        }
-    }
+		&.icon-announcements {
+			margin-right: calculateScale(17px);
+			font-size: calculateScale(20px);
+			top: 5px;
+		}
 
-    .sub-menu .sub-menu-item {
-        padding: calculateScale(9px) calculateScale(15px) calculateScale(9px) calculateScale(54px);
-    }
+		&.icon-betlists {
+			font-size: calculateScale(17px);
+			margin-right: 24px;
+		}
+	}
 
-    .menu-item .beta-version {
-        font-size: calculateScale(10px);
-        padding: calculateScale(2px);
-        margin-left: calculateScale(3px);
-    }
+	.sub-menu .sub-menu-item {
+		padding: calculateScale(9px) calculateScale(15px) calculateScale(9px) calculateScale(54px);
+	}
+
+	.menu-item .beta-version {
+		font-size: calculateScale(10px);
+		padding: calculateScale(2px);
+		margin-left: calculateScale(3px);
+	}
 }
 
 
@@ -382,21 +397,21 @@ body {
 }
 
 .profile-group {
-    padding: calculateScale(10px);
-    border-bottom-width: calculateScale(1px);
+	padding: 9px 10px 6px;
+	border-bottom-width: calculateScale(1px);
 
-    .profile-avatar {
-        width: calculateScale(30px);
-        height: calculateScale(30px);
-    }
+	.profile-avatar {
+		width: calculateScale(30px);
+		height: calculateScale(30px);
+	}
 
-    .userinfo {
-        padding-left: calculateScale(8px);
-    }
+	.userinfo {
+		padding-left: calculateScale(8px);
+	}
 
-    .userinfo .info {
-        line-height: calculateScale(20px);
-    }
+	.userinfo .info {
+		line-height: calculateScale(20px);
+	}
 }
 
 .icon {
