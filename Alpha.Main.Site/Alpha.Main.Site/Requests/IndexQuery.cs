@@ -31,7 +31,11 @@ namespace Alpha.Main.Site.Models.Requests
 
         public int OnUserId => userSession.OnUserId;
 
+        public bool IsSubAcc => userSession.IsSubAcc;
+
         public int SubAccId => userSession.SubAccId;
+
+        public string SubUserName => userSession.SubUserName;
 
         public byte RoleId => userSession.RoleId;
 
@@ -47,6 +51,8 @@ namespace Alpha.Main.Site.Models.Requests
 
         public bool IsInternal => userSession.IsInternal;
 
+        public string AdminName => userSession.AdminName;
+
         public bool EnableSecurityCode => userSession.IsLogged &&
                     !userSession.IsPasswordExpired &&
                     this.isEnableSecurityCode;
@@ -54,7 +60,5 @@ namespace Alpha.Main.Site.Models.Requests
         public bool IsViewedMemberInfo => userSession.SubPageAccess.ViewMemberInfo;
 
         public bool DisableMessages => disableMessages;
-
-      //  public bool DisableOTP => userSession.otp
     }
 }

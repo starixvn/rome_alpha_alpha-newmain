@@ -2,6 +2,8 @@
 {
     using System;
     using System.Linq;
+    using System.Web;
+    using Alpha.Main.AppResources;
     using Configurations;
     using Helpers;
     using Main.Helpers;
@@ -85,7 +87,7 @@
             new HeaderNavViewModel(
                 CustId, 
                 message.UserName,
-                message.NickName,
+                BuildNickName(message),
                 EnableSecurityCode, 
                 message.IsViewedMemberInfo,
                 IsEnabledOtp);
@@ -115,5 +117,10 @@
         public bool RequiredNetworkSpeedCalculation { get; }
 
         public bool DisableMessages { get; }
+
+        internal string BuildNickName(IndexQuery message)
+            => message.IsSubAcc ? $"{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}" :
+               message.IsInternal ? $"{Resources.admin} {HttpUtility.HtmlEncode(message.AdminName)}" :
+               HttpUtility.HtmlEncode(message.NickName);
     }
 }
