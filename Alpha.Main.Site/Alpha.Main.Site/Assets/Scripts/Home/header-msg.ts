@@ -46,6 +46,8 @@
             indexManager.changeMenu(this.urls.mainAppPublicMessageForm);
         } else if (messageType == alpha.messageType.Personal) {
             indexManager.changeMenu(this.urls.mainAppPrivateMessageForm);
+        } else if (messageType == alpha.messageType.Special) {
+            indexManager.changeMenu(this.urls.mainAppSpecialMessageForm);
         }
     }
 
@@ -146,8 +148,7 @@
     }
 
     showPublicMessage = (results: any) => {
-        const publicMessage = results.PublicMessage ? results.PublicMessage : 0,
-            privateMessage = results.PrivateMessage ? results.PrivateMessage : 0;
+        const publicMessage = results.PublicMessage ? results.PublicMessage : 0;
 
         // Process Public Message: show new public message and its link to message form
         const url = this.urls.mainAppPublicMessageForm;
@@ -156,7 +157,7 @@
             && publicMessage.Id !== this.publicMessageId) {
             this.domElements.liveMessage
                 .html(publicMessage.Content + '. ')
-                .find('font').attr('messageType', alpha.messageType.Personal);
+                .find('font').attr('messageType', alpha.messageType.Special);
 
             this.publicMessageId = publicMessage.Id;
             if (this.publicMessageId !== 0) {
