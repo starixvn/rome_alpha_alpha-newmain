@@ -223,11 +223,11 @@
             accountInfoUrl = accInfoContent.attr('src');
 
         if (!accountInfoUrl) {
-            accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isMobile);
+			accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768);
         }
 
         if (userName !== '' || typeof userName === 'undefined') {
-            accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isMobile + '&SearchAccountName=' + userName);
+			accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768 + '&SearchAccountName=' + userName);
         }
 
         // To work on IE, use plain-old javascript onload event
