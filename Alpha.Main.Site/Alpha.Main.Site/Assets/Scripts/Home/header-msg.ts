@@ -6,10 +6,12 @@
     private scrollerWidth: number = 0;
     private maskWidth: number = 0;
     private scrollerPaused: boolean;
-    private topNews: HTMLElement;
+    private privateMsg: HTMLElement;
+    private publicMsg: HTMLElement;
     private scroller: HTMLElement;
     private domElements = {
-        liveMessage: null,
+        privateMessage: null,
+        publicMessage: null,
         moveBetsMessage: null,
         marqueeMessage: null,
         hotMessages: null,
@@ -39,7 +41,7 @@
     }
 
     viewLiveMessage = (event: JQueryEventObject) => {
-        const messageType = parseInt(this.$(event.target).attr('messageType'));
+        const messageType = parseInt(this.$(event.currentTarget).attr('messageType'));
 
         headerNav.buildIconNewMessageByType(messageType);
         if (messageType == alpha.messageType.Normal) {
@@ -155,9 +157,9 @@
 
         if (publicMessage.Id
             && publicMessage.Id !== this.publicMessageId) {
-            this.domElements.liveMessage
+            this.domElements.publicMessage
                 .html(publicMessage.Content + '. ')
-                .find('font').attr('messageType', alpha.messageType.Special);
+                .attr('messageType', publicMessage.MessageType);
 
             this.publicMessageId = publicMessage.Id;
             if (this.publicMessageId !== 0) {
@@ -181,22 +183,12 @@
         if (privateMessage.Id
             && this.privateMessageId !== privateMessage.Id) {
             //// Append Private Message to Marquee with green color format.
-            const privateMessageContent = this.domElements.liveMessage.find('#private-message-content');
+            this.domElements.privateMessage.html(
+                "<font id='private-message-content' color=\"green\">Private message: " +
+                privateMessage.Content +
+                "</font>")
+                .attr('messageType', privateMessage.MessageType);
 
-            this.privateMessageId = privateMessage.Id;
-            if (privateMessageContent.length > 0) {
-                privateMessageContent.html("Private message: " + privateMessage.Content);
-            }
-            else {
-                const liveMessageContent = this.domElements.liveMessage.html();
-
-                this.domElements.liveMessage.html(
-                    liveMessageContent +
-                    "<font id='private-message-content' color=\"green\">Private message: " +
-                    privateMessage.Content +
-                    "</font>")
-                    .find('#private-message-content').attr('messageType', 1);
-            }
             if (this.privateMessageId !== 0) {
                 this.appendMessageToPopup(privateMessage.Content);
             }
@@ -218,19 +210,13 @@
         this.scrollerWidth = this.domElements.scroller.width();
 
         this.scroller = this.domElements.scroller[0];
-        this.topNews = this.domElements.liveMessage[0];
+        this.privateMsg = this.domElements.privateMessage[0];
+        this.publicMsg = this.domElements.publicMessage[0];
 
-        this.topNews.onmouseover = () => {
+        this.privateMsg.onmouseover = this.publicMsg.onmouseover = this.domElements.moveBetsMessage[0].onmouseover = () => {
             this.pauseMarquee();
         };
-        this.topNews.onmouseout = () => {
-            this.playMarquee();
-        };
-
-        this.domElements.moveBetsMessage[0].onmouseover = () => {
-            this.pauseMarquee();
-        };
-        this.domElements.moveBetsMessage[0].onmouseout = () => {
+        this.privateMsg.onmouseout = this.publicMsg.onmouseout = this.domElements.moveBetsMessage[0].onmouseout = () => {
             this.playMarquee();
         };
 
@@ -270,7 +256,8 @@
     }
 
     protected cacheElements = () => {
-        this.domElements.liveMessage = this.$('#liveMessage');
+        this.domElements.privateMessage = this.$('#private-message');
+        this.domElements.publicMessage = this.$('#public-message');
         this.domElements.moveBetsMessage = this.$('#movebets-message');
         this.domElements.marqueeMessage = this.$('#marqueeMessage');
         this.domElements.hotMessages = this.$('#userMessageModalBody');
@@ -283,7 +270,8 @@
     };
 
     protected registerEvents = () => {
-        this.domElements.liveMessage.on('click', this.viewLiveMessage);
+        this.domElements.privateMessage.on('click', this.viewLiveMessage);
+        this.domElements.publicMessage.on('click', this.viewLiveMessage);
         this.domElements.moveBetsMessage.on('click', this.viewMoveBetsMessage);
         this.domElements.showMoreContainer.on('click', this.showMoreHotMessage);
         this.domElements.showLessContainer.on('click', this.showLessHotMessage);
