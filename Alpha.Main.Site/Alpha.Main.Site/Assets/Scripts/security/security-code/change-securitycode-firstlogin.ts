@@ -21,7 +21,7 @@ var changeSecurityCodeFirstLogin = {
 
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
-            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+			isChecked ? securityHelper.showSC() : securityHelper.hideSC();
         });
     },
 
