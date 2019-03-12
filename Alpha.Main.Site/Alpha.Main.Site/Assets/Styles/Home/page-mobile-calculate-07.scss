@@ -32,6 +32,7 @@ body {
 	.nickname {
 		line-height: calculateScale(15px);
 		margin: 5px 0;
+        word-break: break-word;
 	}
 }
 
@@ -312,7 +313,7 @@ body {
 	}
 
 	li.dropdown .dropdown-menu.list-setting {
-		right: calculateScale(-270px);
+		right: -446px;
 
 		.profile-group.visible-mobile {
 			display: table !important;
