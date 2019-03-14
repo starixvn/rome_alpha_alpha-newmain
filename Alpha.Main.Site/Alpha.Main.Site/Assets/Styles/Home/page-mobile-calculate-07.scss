@@ -405,8 +405,18 @@ body {
 
 	.profile-avatar {
 		display: table-cell;
-		width: calculateScale(30px);
-		height: calculateScale(30px);
+		float: none;
+		vertical-align: top;
+		width: calculateScale(40px);
+		height: calculateScale(40px);
+		padding-left: calculateScale(5px);
+
+		.img-link {
+			display: inline-block;
+			width: calculateScale(30px);
+			height: calculateScale(30px);
+			padding: 0 !important;
+		}
 	}
 
 	.userinfo {

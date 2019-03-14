@@ -2,6 +2,8 @@
 @{
 	var changeNickNameUrl = $"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}";
 	var mainFrameName = "main";
+	var viewProfileUrl = $"{Model.OldMainRootPath}ProfilePicture";
+	var profileImageSrc = Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage;
 }
 
 <section class="navbar header-nav" id="header-nav">
@@ -35,14 +37,16 @@
 			<a id="btn-header-menu" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
 				<span class="icon icon-squares top-right-menu"></span>
 				<span class="profile-avatar">
-					<img id="userPicture" width="50" height="50" src="/site-main/assets/images/icon_user_default.png" alt="" />
+					<img id="userPicture" width="50" height="50" src='@profileImageSrc' alt="" title="@Resources.ProfileClickTootip" />
 				</span>
 			</a>
 
 			<ul id="header-dropdown-menu" class="dropdown-menu list-setting">
 				<li class="profile-group visible-mobile">
 					<div class="profile-avatar">
-						<img id="userPicture" width="50" height="50" src="/site-main/assets/images/icon_user_default.png" alt="" />
+						<a href="@(viewProfileUrl)" target="@mainFrameName" class="img-link">
+							<img width="50" height="50" src='@profileImageSrc' alt="" title="@Resources.ProfileClickTootip" />
+						</a>
 					</div>
 					<div class="userinfo">
 						<div class="info level username">@Model.Username</div>

@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
+    using Alpha.Main.Models.CustomerProfiles;
+    using Alpha.Main.Services;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
@@ -26,16 +28,26 @@
         private BrowserHelper browserHelper;
         private Func<string> getDefaultUrl;
         private Func<string, string> encodeDataFunction;
+        private CustomerProfileService customerProfileService;
+        private ProfilePicture profilePicture;
 
         [SetUp]
         public void SetUp()
         {
             browserHelper = Substitute.For<BrowserHelper>();
             sessionManager = Substitute.For<SessionManager>();
+            customerProfileService = Substitute.For<CustomerProfileService>();
             getDefaultUrl = Substitute.For<Func<string>>();
             encodeDataFunction = Substitute.For<Func<string, string>>();
-            defaultHandler = new DefaultHandler(sessionManager, browserHelper, getDefaultUrl, encodeDataFunction);
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper, getDefaultUrl, encodeDataFunction, customerProfileService);
             userSession = Substitute.For<IUserSession>();
+
+            profilePicture = new ProfilePicture(12, true);
+            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
+            SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
+
+            userSession = Substitute.For<IUserSession>();
+            userSession.SubPageAccess.Returns(new PageAccess());
         }
 
         [TearDown]
@@ -44,16 +56,6 @@
             sessionManager = null;
             userSession = null;
             defaultHandler = null;
-        }
-
-        [Test]
-        public void HandleIndexQuery_NullQuery_ThrowArgumentNullException()
-        {
-            // Arrange
-            IndexQuery nullQuery = null;
-
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(new TestDelegate(() => defaultHandler.Handle(nullQuery)));
         }
 
         [Test]
@@ -114,7 +116,7 @@
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
 
-            var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper);
+            var expectedViewModel = new IndexViewModel(query, getDefaultUrl, encodeDataFunction, browserHelper, profilePicture);
 
             // Act
             var viewModel = defaultHandler.Handle(query);

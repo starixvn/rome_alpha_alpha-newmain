@@ -11,7 +11,9 @@
             string nickname,
             bool enableSecurityCode, 
             bool isViewedMemberInfo,
-            bool isEnabledOtp)
+            bool isEnabledOtp,
+            bool isDefaultAvatar,
+            string embedImage)
         {
             CustId = custId;
             EnableSecurityCode = enableSecurityCode;
@@ -19,6 +21,8 @@
             Username = username;
             NickName = nickname;
             IsEnabledOtp = isEnabledOtp;
+            IsDefaultAvatar = isDefaultAvatar;
+            EmbedImage = embedImage;
         }
 
         public int CustId { get; }
@@ -45,6 +49,8 @@
 
         public bool ShowHelpLink { get; } = AppSettings.ShowHelpLink;
 
-        public string LoginOptionLink => $"{OldMainRootPath}LoginOption?custId={CustId}";
+        public bool IsDefaultAvatar { get; }
+
+        public string EmbedImage { get;}
     }
 }
