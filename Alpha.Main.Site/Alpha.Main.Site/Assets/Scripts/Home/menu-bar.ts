@@ -252,7 +252,6 @@
 
 		$('#main').contents().find("head").append($("#AssetCommonCssLink").val());
 		$('#main').contents().find('body').empty().block();
-		$('#main').contents().find('frameset').empty();
 		$('#main').attr('src', subMenu.data("url")).attr("target", "main");
     },
 
