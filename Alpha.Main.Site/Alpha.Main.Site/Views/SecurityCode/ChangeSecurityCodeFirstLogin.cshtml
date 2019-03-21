@@ -17,13 +17,13 @@
             <figcaption><span class="username">@Model.Username</span><br /><span class="nickname">@Model.AlternateUsername</span></figcaption>
         </figure>
         <div class="rowlg help-rules">
-            <input type="tel" pattern="\d*" inputmode="numeric" autocomplete="off" class="txt form-control txt-number-pass" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode" maxlength="6" />
+            <input type="tel" pattern="[0-9]{6}" inputmode="numeric" autocomplete="off" class="txt form-control txt-number-pass" name="SC" id="txtSecCode" placeholder="@Security.SecurityCode" maxlength="6" />
             <label id="txtSecCode-error" class="error"></label>
             <i class="icon-account-key"></i>
             <i class="validation"></i>
         </div>
         <div class="rowlg">
-            <input type="tel" pattern="\d*" inputmode="numeric" autocomplete="off" class="txt form-control txt-number-pass" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode" maxlength="6" />
+            <input type="tel" pattern="[0-9]{6}" inputmode="numeric" autocomplete="off" class="txt form-control txt-number-pass" name="confirmSC" id="txtConfirmSecCode" placeholder="@Security.ConfirmSecurityCode" maxlength="6" />
             <label id="txtConfirmSecCode-error" class="error"></label>
             <i class="icon-account-key"></i>
             <i class="validation"></i>
