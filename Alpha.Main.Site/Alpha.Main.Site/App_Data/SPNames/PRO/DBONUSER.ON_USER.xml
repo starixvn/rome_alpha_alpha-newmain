@@ -9,5 +9,6 @@
   </Function>
   <Function Name="Alpha.Auth">
     <Setting Key="Age_ReCheckin" SpName="Age_ReCheckin" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CheckOut" SpName="Age_CheckOut" DbName="DBONUSER.ON_USER.BODBDownlineNet" Plain="0" />
   </Function>
 </Functions>

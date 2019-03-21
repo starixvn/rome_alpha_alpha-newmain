@@ -1299,6 +1299,7 @@
     <Compile Include="Requests\Dashboard\Statistics\TopTurnoverMembersQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\TopWinningMembersQuery.cs" />
     <Compile Include="Requests\IndexQuery.cs" />
+    <Compile Include="Requests\KickoutQuery.cs" />
     <Compile Include="Requests\MenuBarQuery.cs" />
     <Compile Include="Requests\NetworkSpeed\NetworkSpeedQuery.cs" />
     <Compile Include="Requests\NetworkSpeed\SaveNetworkSpeedCommand.cs" />
