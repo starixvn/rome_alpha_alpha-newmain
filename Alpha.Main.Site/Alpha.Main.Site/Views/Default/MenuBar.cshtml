@@ -1,78 +1,79 @@
 ﻿@model MenuBarViewModel
 
 <ul class="main-tab">
-    <li id="main-menu-header" class="mainmenu active @(Model.IsAccountInfoVisible ? "withripple" : "disabledViewAccInfo")" data-target-container="mainmenu-container">
-        <a>@Resources.mainMenu</a>
-    </li>
-    @if (Model.IsAccountInfoVisible)
-            {
-        <li class="accountinfo withripple" id="account-info-header"
-            data-target-container="accountinfo-container">
-            <a>@Resources.accountInfo</a>
-        </li>
-    }
-    <li class="visible-mobile nav-close">
-        <span class='icon-close icon-close-left-panel' id="closeIconOnMobile"></span>
-    </li>
+	<li id="main-menu-header" class="mainmenu active @(Model.IsAccountInfoVisible ? "withripple" : "disabledViewAccInfo")" data-target-container="mainmenu-container">
+		<a>@Resources.mainMenu</a>
+	</li>
+	@if (Model.IsAccountInfoVisible)
+	{
+		<li class="accountinfo withripple" id="account-info-header"
+			data-target-container="accountinfo-container">
+			<a>@Resources.accountInfo</a>
+		</li>
+	}
+	<li class="visible-mobile nav-close">
+		<span class='icon-close icon-close-left-panel' id="closeIconOnMobile"></span>
+	</li>
 </ul>
 <section id="main-menu-tab" class="mainmenu-container mCustomScrollbar @(Model.IsAccountInfoVisible ? string.Empty : "disabledViewAccInfo")" data-mcs-theme="minimal-dark" role="tablist" aria-multiselectable="true">
-    <ul class="list-menu" id="main-menu-items">
-        @foreach (var menuItem in Model.MenuItems)
-            {
-                if (menuItem.VisibileSubMenus.Any())
-                {
-                <li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)" id="menu-@(menuItem.ResourceKey.ToUpper())">
-                    <a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)">
-                        <span class="txt-item pull-left txt-@menuItem.ResourceKey.ToLower()">
-                            <span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>
-                            @Html.Raw(menuItem.DisplayName)
-                        </span>
-                        <span class="pull-right icon-arrow-right"></span>
-                    </a>
-                    <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
-                        @foreach (var subMenuItem in menuItem.VisibileSubMenus)
-                        {
-                            <li class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)" id="sub-menu-@(subMenuItem.ResourceKey.ToUpper())">
-                                <a href="@subMenuItem.Link" target="main" class="redirect-item">
-                                    @subMenuItem.DisplayName
-                                    @Html.Raw(subMenuItem.IsBeta ? "<span class=\"beta-version\">" + Alpha_sitemap.Beta + "</span>" : string.Empty)
-                                </a>
-                            </li>
-                        }
-                    </ul>
-                </li>
-            }
-            else
-            {
-                <li class="menu-item" id="menu-@(menuItem.ResourceKey.ToUpper())">
-                    <a class="withripple menu-opener parent-menu redirect-item" href="@menuItem.Link" target="main">
-                        <span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
-                    </a>
-                </li>
-            }
-        }
-    </ul>
-    <div class="extra-box">
-        @if (Model.IsAccountInfoVisible)
-            {
-            <span class="icon icon-user" id="user-icon"></span>
-        }
-    </div>
+	<ul class="list-menu" id="main-menu-items">
+		@foreach (var menuItem in Model.MenuItems)
+		{
+			if (menuItem.VisibileSubMenus.Any())
+			{
+				<li class="menu-item @(menuItem.ShowSubMenus ? "active" : string.Empty)" id="menu-@(menuItem.ResourceKey.ToUpper())">
+					<a class="withripple menu-opener parent-menu @(menuItem.ShowSubMenus ? "active" : string.Empty)">
+						<span class="txt-item pull-left txt-@menuItem.ResourceKey.ToLower()">
+							<span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>
+							@Html.Raw(menuItem.DisplayName)
+						</span>
+						<span class="pull-right icon-arrow-right"></span>
+					</a>
+					<ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
+						@foreach (var subMenuItem in menuItem.VisibileSubMenus)
+						{
+							<li data-url="@subMenuItem.Link" class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)" id="sub-menu-@(subMenuItem.ResourceKey.ToUpper())">
+								<a href="#" class="redirect-item">
+									@subMenuItem.DisplayName
+									@Html.Raw(subMenuItem.IsBeta ? "<span class=\"beta-version\">" + Alpha_sitemap.Beta + "</span>" : string.Empty)
+								</a>
+							</li>
+						}
+					</ul>
+				</li>
+			}
+			else
+			{
+				<li class="menu-item" id="menu-@(menuItem.ResourceKey.ToUpper())">
+					<a class="withripple menu-opener parent-menu redirect-item" href="@menuItem.Link" target="main">
+						<span class="txt-item pull-left"><span class="icon icon-@menuItem.ResourceKey.ToLower()"></span>@menuItem.DisplayName</span>
+					</a>
+				</li>
+			}
+		}
+	</ul>
+	<div class="extra-box">
+		@if (Model.IsAccountInfoVisible)
+		{
+			<span class="icon icon-user" id="user-icon"></span>
+		}
+	</div>
 </section>
 
+@Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommon("/bundles/common/common"))
 
 @if (Model.IsAccountInfoVisible)
 {
-        <!--[if (gt IE 8)|!(IE)]><!-->
-    <section id="account-info-tab" class="accountinfo-container @(Model.IsSmallDevice ? string.Empty : "mCustomScrollbar")" data-mcs-theme="minimal-dark">
-        <iframe frameborder="0" id="accountinfo-content"
-                name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content" scrolling="auto"></iframe>
-    </section>
-        <!--<![endif]-->
-    <!--[if lt IE 9]>
-        <section id="account-info-tab" class="accountinfo-container">
-            <iframe frameborder="0" id="accountinfo-content"
-                    name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content" scrolling="auto"></iframe>
-        </section>
-    <![endif]-->
+	<!--[if (gt IE 8)|!(IE)]><!-->
+	<section id="account-info-tab" class="accountinfo-container @(Model.IsSmallDevice ? string.Empty : "mCustomScrollbar")" data-mcs-theme="minimal-dark">
+		<iframe frameborder="0" id="accountinfo-content"
+				name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content" scrolling="auto"></iframe>
+	</section>
+	<!--<![endif]-->
+	<!--[if lt IE 9]>
+		<section id="account-info-tab" class="accountinfo-container">
+			<iframe frameborder="0" id="accountinfo-content"
+					name="menu" marginwidth="0" marginheight="0" allowtransparency="true" class="accinfo-content" scrolling="auto"></iframe>
+		</section>
+	<![endif]-->
 }
