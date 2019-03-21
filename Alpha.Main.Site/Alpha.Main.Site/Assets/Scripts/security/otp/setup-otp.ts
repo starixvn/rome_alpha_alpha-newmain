@@ -50,7 +50,7 @@ class SetupOtp {
 
         this.isAlreadySetup = this.$cbkEnableOtp.data("is-already-setup");
         this.previousStatus = this.$cbkEnableOtp.data("is-checked");
-        this.ConstraintInput.bind("txtOtp", 6);
+        this.ConstraintInput.bind("#txtOtp");
     }
 
     cachedDomElements = () => {

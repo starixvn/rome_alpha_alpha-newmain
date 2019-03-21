@@ -141,12 +141,12 @@ var securityHelper = {
         })
     },
     showSC: function () {
-        $('input[type=number]').each(function () {
+        $('input[type=tel]').each(function () {
             $(this).addClass('show-hint');
         });
     },
     hideSC: function () {
-        $('input[type=number]').each(function () {
+        $('input[type=tel]').each(function () {
             $(this).removeClass('show-hint');
         });
     },

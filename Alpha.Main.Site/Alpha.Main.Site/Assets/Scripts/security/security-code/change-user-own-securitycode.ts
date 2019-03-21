@@ -3,7 +3,7 @@
 var changeUserOwnSecurityCode = {
     initialize: function () {
         var cons = new ConstraintInput();
-        cons.bind(".txt-number-pass", 6);
+        cons.bind(".txt-number-pass");
         var $form = $('.form-SC');
         $form.submit(function (e) {
             changeUserOwnSecurityCode.change();
