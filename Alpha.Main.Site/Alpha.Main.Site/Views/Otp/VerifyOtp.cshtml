@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/pass-font")
     @StaticResources.RenderStyles("~/assets/bundles/otp/otp")
 </head>
 <body>
@@ -18,7 +17,7 @@
     <form class="form-validation block" id="otp-form">
         <div class="form-group">
             <label>OTP</label>
-            <input type="tel" pattern="[0-9]{6}" inputmode="numeric" class="txt form-control txt-number-pass" name="otp" id="txtOTP" maxlength="6"/>
+            <input maxlength="6" type="password" class="txt form-control" name="otp" id="txtOTP" />
         </div>
         <div class="form-group">
             <input type="submit" class="btn-submit" id="btnSubmit" value="@Security.Submit" />
