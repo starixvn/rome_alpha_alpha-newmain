@@ -522,6 +522,10 @@
     <Content Include="Assets\bundles\home-mobile-calculate-07.min.css">
       <DependentUpon>home-mobile-calculate-07.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\page-mobile-calculate-07.css" />
+    <Content Include="Assets\bundles\page-mobile-calculate-07.min.css">
+      <DependentUpon>page-mobile-calculate-07.css</DependentUpon>
+    </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\scripts\aes.js" />
     <Content Include="Assets\styles\chatbot\chatbot-setting.css">
