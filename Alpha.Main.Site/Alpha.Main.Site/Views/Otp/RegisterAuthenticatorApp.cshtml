@@ -42,7 +42,7 @@
                     <div class="username-customize">
                         <p>@Html.Raw(string.Format(Security.UsernameWarning, $"<strong>{Model.CustomerOtp.OtpUsername}</strong>")) <span id="btn-change-username" class="btn-change-username">@Security.ChangeIt</span></p>
                         <div id="username-message"></div>
-                        <form class="block username-form" id="username-form" method="get">                            
+                        <form class="block username-form" id="username-form" method="get">
                             <div class="form-group">
                                 <label>@Security.AccountName</label>
                                 <input maxlength="30" type="text" class="txt form-control" name="username" id="username" value="@Model.CustomerOtp.OtpUsername" />

@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels
 {
     using System;
+    using Alpha.Main.Models.CustomerProfiles;
+    using Alpha.SecurityCode.Web;
     using Main.Models.Otp;
     using Models.Requests;
     using NSubstitute;
@@ -15,12 +17,17 @@
         private IUserSession userSession;
         private BrowserHelper browserHelper;
         private IndexQuery query;
+        private ProfilePicture profilePicture;
 
         [SetUp]
         public void SetUp()
         {
+          
             userSession = Substitute.For<IUserSession>();
+            userSession.SubPageAccess.Returns(new PageAccess());
             query = new IndexQuery(userSession, false, false);
+            profilePicture = new ProfilePicture(12, true);
+            SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
             browserHelper = Substitute.For<BrowserHelper>();
         }
@@ -46,7 +53,7 @@
             browserHelper.GetUserAgent().Returns("android");
 
             // Act
-            var viewModel = new IndexViewModel(query, null, null, browserHelper);
+            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture);
 
             // Assert
             Assert.AreEqual(0.5, viewModel.InitialScaleViewPort);
@@ -71,9 +78,10 @@
             };
             browserHelper.GetDevice().Returns(device);
             browserHelper.GetUserAgent().Returns("ios");
+            SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
 
             // Act
-            var viewModel = new IndexViewModel(query, null, null, browserHelper);
+            var viewModel = new IndexViewModel(query, null, null, browserHelper, profilePicture);
 
             // Assert
             Assert.AreEqual(0.7, viewModel.InitialScaleViewPort);

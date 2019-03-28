@@ -21,7 +21,7 @@
       "Assets/scripts/dashboard/statistics.js",
       "Assets/scripts/dashboard/notice.js",
       "Assets/scripts/dashboard/member-requests.js"
-      
+
     ]
   },
 
@@ -185,6 +185,18 @@
     "outputFileName": "Assets/bundles/error.css",
     "inputFiles": [
       "Assets/styles/error/error.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/home-mobile-calculate-07.css",
+    "inputFiles": [
+      "Assets/styles/home/home-mobile-calculate-07.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/page-mobile-calculate-07.css",
+    "inputFiles": [
+      "Assets/styles/home/page-mobile-calculate-07.css"
     ]
   },
   {

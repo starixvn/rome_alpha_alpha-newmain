@@ -19,11 +19,12 @@
         accountInfoHeader: null,
         hamburgerIcon: null,
         profileImage: null,
-        announcementItems: null
+        announcementItems: null,
+        closeIconOnMobile: null
     },
 
     urls: {
-        accountInfo: alpha.urls.oldMainRootPath + '_AccountInfo/AccountInfo.aspx'
+        accountInfo: alpha.urls.accountInfoRootPath + 'SearchAccount'
     },
 
     init: function () {
@@ -52,6 +53,7 @@
         menuBar.domElements.hamburgerIcon = $('#hamburger-icon');
         menuBar.domElements.profileImage = $('#logoProfileImg');
         menuBar.domElements.announcementItems = $("#menu-ANNOUNCEMENTS li a");
+        menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
     },
 
     initSideBar: function () {
@@ -61,7 +63,7 @@
         var activeSubMenu = $('.menu-item.active .sub-menu');
 
         if (alpha.isScreenLower768) {
-            mainContent.addClass('expanded-mobile');
+            //mainContent.addClass('expanded-mobile');
             sidebar.addClass('hidden-mobile');
             return;
         }
@@ -109,7 +111,7 @@
         menuBar.domElements.accountInfoHeader.click(menuBar.activateAccountInfoTab);
         menuBar.domElements.userIcon.click(menuBar.activateAccountInfoTab);
         menuBar.domElements.redirectItems.click(menuBar.collapseSideBar);
-        menuBar.domElements.header.click(menuBar.collapseSideBar);
+        //menuBar.domElements.header.click(menuBar.collapseSideBar);
         menuBar.domElements.extraIcon.click(menuBar.expandSideBar);
         menuBar.domElements.hamburgerIcon.click(function (e) {
             menuBar.collapseLeftPanel();
@@ -121,13 +123,15 @@
 
         menuBar.domElements.announcementItems.click(function () {
             menuBar.clickAnnouncementItem($(this));
-        });            
+        });
+
+        menuBar.domElements.closeIconOnMobile.click(menuBar.collapseSideBar);
     },
 
     clickAnnouncementItem: function (menu) {
         var url = menu.attr("href");
         var parameters = url.split('?');
-        if (parameters.length == 2){
+        if (parameters.length == 2) {
             var messageType = parameters[1].split('=')[1];
             headerNav.buildIconNewMessageByType(messageType);
         } else {
@@ -151,16 +155,24 @@
 
     collapseLeftPanel: function () {
         var sidebar = menuBar.domElements.sideBar,
-            content = menuBar.domElements.mainContent;
+            content = menuBar.domElements.mainContent,
+            header = menuBar.domElements.header,
+            mainContent = menuBar.domElements.mainContent,
+            closeIconOnMobile = menuBar.domElements.closeIconOnMobile,
+            hamburgerIcon = menuBar.domElements.hamburgerIcon;
 
         if (alpha.isScreenLower768) {
             if (sidebar.hasClass('hidden-mobile')) {
                 content.addClass('expanded-mobile');
                 sidebar.removeClass('hidden-mobile').addClass('visible-mobile');
+                header.addClass('expanded-header-mobile');
+                hamburgerIcon.hide();
+                closeIconOnMobile.addClass('active');
             }
             else {
                 content.removeClass('expanded-mobile');
-                sidebar.addClass('hidden-mobile').removeClass('visible-mobile');
+                sidebar.addClass('hidden-mobile collapse-mobile').removeClass('visible-mobile');
+                header.removeClass('expanded-header-mobile');
             }
         }
         else {
@@ -211,30 +223,36 @@
             accountInfoUrl = accInfoContent.attr('src');
 
         if (!accountInfoUrl) {
-            accInfoContent.attr('src', menuBar.urls.accountInfo);
+			accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768);
         }
 
         if (userName !== '' || typeof userName === 'undefined') {
-            accInfoContent.attr('src', menuBar.urls.accountInfo + '?txtUsername=' + userName);
+			accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768 + '&SearchAccountName=' + userName);
         }
 
         // To work on IE, use plain-old javascript onload event
         accInfoContent[0].onload = function () {
+            var navigationHeight = $('#navigation').height();
+            var mainMenuHeight = $('.main-tab').height();
+            var accountInfoIframeHeight = navigationHeight - mainMenuHeight;
+            menuBar.domElements.accountInfoTab.css("height", accountInfoIframeHeight);
+
             if (alpha.isMobile) {
+                $('#accountinfo-content').css("height", accountInfoIframeHeight - 20);
                 menuBar.domElements.accountInfoContent.addClass('small-device');
-            }
-            else {
-                var contentHeight = accInfoContent.contents().find("body").height();
-                var iframeHeightPadding = 40;
-                var iframeHeight = contentHeight + iframeHeightPadding;
-                accInfoContent.css("height", iframeHeight);
+            } else {
+                $('#accountinfo-content').css("height", accountInfoIframeHeight - 5);
             }
         };
     },
 
-    activateSubMenuItem: function (subMenu) {
+	activateSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');
-        subMenu.addClass('active');
+		subMenu.addClass('active');
+
+		$('#main').contents().find("head").append($("#AssetCommonCssLink").val());
+		$('#main').contents().find('body').empty().block();
+		$('#main').attr('src', subMenu.data("url")).attr("target", "main");
     },
 
     expandSideBar: function () {
@@ -255,11 +273,16 @@
     },
 
     collapseSideBar: function () {
-        var sideBar = menuBar.domElements.sideBar;
+        var sideBar = menuBar.domElements.sideBar,
+            closeIconOnMobile = menuBar.domElements.closeIconOnMobile,
+            hamburgerIcon = menuBar.domElements.hamburgerIcon;
 
         if (alpha.isScreenLower768 && sideBar.hasClass('visible-mobile')) {
-            menuBar.domElements.mainContent.addClass('expanded-mobile');
+            menuBar.domElements.mainContent.removeClass('expanded-mobile');
+            menuBar.domElements.header.removeClass('expanded-header-mobile');
             sideBar.addClass('hidden-mobile').removeClass('visible-mobile');
+            closeIconOnMobile.removeClass('active');
+            hamburgerIcon.show();
         }
         else {
             if (sideBar.hasClass('docked')) {

@@ -2,6 +2,9 @@
 {
     using System;
     using System.Linq;
+    using System.Web;
+    using Alpha.Main.AppResources;
+    using Alpha.Main.Models.CustomerProfiles;
     using Configurations;
     using Helpers;
     using Main.Helpers;
@@ -16,12 +19,13 @@
         private readonly Func<string> getDefaultUrl;
         private readonly Func<string, string> encodeDataFunction;
         private readonly BrowserHelper browserHelper;
-
+        private readonly ProfilePicture profilePicture;
         public IndexViewModel(
             IndexQuery message,
             Func<string> getDefaultUrl,
             Func<string, string> encodeDataFunction,
-            BrowserHelper browserHelper)
+            BrowserHelper browserHelper,
+            ProfilePicture profilePicture)
         {
             if (message == null)
             {
@@ -35,6 +39,7 @@
             this.browserHelper = browserHelper;
             this.RequiredNetworkSpeedCalculation = message.CustId > 0 && AppSettings.TrackingConnectionCustIds.Contains(message.CustId);
             DisableMessages = message.DisableMessages;
+            this.profilePicture = profilePicture;
         }
 
         public bool EnableSecurityCode => message.EnableSecurityCode;
@@ -56,6 +61,8 @@
         public string HowToUseRootPath => UrlHelper.MapHowToUsePath("~/");
 
         public string MemberInfoRootPath => UrlHelper.MapMemberInfoPath("~/");
+
+        public string AccountInfoRootPath => UrlHelper.MapAccountInfoPath("~/");
 
         public string ExTotalBetsForecastRootPath => UrlHelper.MapExTotalBetsForecastPath("~/");
 
@@ -79,7 +86,16 @@
 
         public string DefaultPath => getDefaultUrl?.Invoke() ?? MainRootPath;
 
-        public HeaderNavViewModel HeaderNavViewModel => new HeaderNavViewModel(CustId, EnableSecurityCode, message.IsViewedMemberInfo);
+        public HeaderNavViewModel HeaderNavViewModel => 
+            new HeaderNavViewModel(
+                CustId,
+                message.UserName,
+                BuildNickName(message),
+                EnableSecurityCode,
+                message.IsViewedMemberInfo,
+                IsEnabledOtp,
+                profilePicture.UseDefaultAvatar,
+                profilePicture.ImageData != null ? $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}" : string.Empty);
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 
@@ -106,5 +122,10 @@
         public bool RequiredNetworkSpeedCalculation { get; }
 
         public bool DisableMessages { get; }
+
+        internal string BuildNickName(IndexQuery message)
+            => message.IsSubAcc ? $"{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}" :
+               message.IsInternal ? $"{Resources.admin} {HttpUtility.HtmlEncode(message.AdminName)}" :
+               HttpUtility.HtmlEncode(message.NickName);
     }
 }

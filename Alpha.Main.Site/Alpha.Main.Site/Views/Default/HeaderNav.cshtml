@@ -1,63 +1,98 @@
 ﻿@model HeaderNavViewModel
+@{
+	var changeNickNameUrl = $"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}";
+	var mainFrameName = "main";
+	var viewProfileUrl = $"{Model.OldMainRootPath}ProfilePicture";
+	var profileImageSrc = Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage;
+}
+
 <section class="navbar header-nav" id="header-nav">
-    <span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
-    <ul class="nav navbar-nav list-top">
-        <li class="visible-mobile"><span class="icon icon-home"></span></li>
-        @if (Model.IsViewedMemberInfo)
-        {
-            <li class="visible-mobile"><span class="icon icon-account-search"></span></li>
-        }
-        <li class="hidden-mobile datetime">
-            <span class="icon icon-time"></span>
-            <span class="txt-top" id="clock"
-                  data-year="@DateTime.Now.Year"
-                  data-month="@DateTime.Now.Month"
-                  data-day="@DateTime.Now.Day"
-                  data-hour="@DateTime.Now.Hour"
-                  data-minute="@DateTime.Now.Minute"
-                  data-second="@DateTime.Now.Second"></span>
-        </li>
-        <li class="hidden-mobile dropdown language">
-            @Html.Action("List", "Language")
-        </li>        
+	<span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
+	<ul class="nav navbar-nav list-top">
+		<li class="visible-mobile"><span class="icon icon-home"></span></li>
+		@if (Model.IsViewedMemberInfo)
+		{
+			<li class="visible-mobile"><span class="icon icon-account-search"></span></li>
+		}
+		<li class="hidden-mobile datetime">
+			<span class="icon icon-time"></span>
+			<span class="txt-top" id="clock"
+				  data-year="@DateTime.Now.Year"
+				  data-month="@DateTime.Now.Month"
+				  data-day="@DateTime.Now.Day"
+				  data-hour="@DateTime.Now.Hour"
+				  data-minute="@DateTime.Now.Minute"
+				  data-second="@DateTime.Now.Second"></span>
+		</li>
+		<li class="hidden-mobile dropdown language">
+			@Html.Action("List", "Language")
+		</li>
 
-        <li class="notification">
-            <a class="icon icon-bell withripple"></a>
-            <span id="numberOfNewMessage" class="number-msg"></span>
-        </li>
+		<li class="notification">
+			<a class="icon icon-bell withripple"></a>
+			<span id="numberOfNewMessage" class="number-msg"></span>
+		</li>
 
-        <li class="dropdown setting">
-            <a id="btn-header-menu" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
-                <span class="icon icon-squares top-right-menu"></span>
-            </a>
+		<li class="dropdown setting">
+			<a id="btn-header-menu" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
+				<span class="icon icon-squares top-right-menu"></span>
+				<span class="profile-avatar">
+					<img id="userPicture" width="50" height="50" src='@profileImageSrc' alt="" title="@Resources.ProfileClickTootip" />
+				</span>
+			</a>
 
-            <ul id="header-dropdown-menu" class="dropdown-menu list-setting">
-                <li class="visible-mobile dropdown-submenu language">@Html.Action("List", "Language")</li>
-                <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.nickname</a></li>
-                <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
-                <li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
+			<ul id="header-dropdown-menu" class="dropdown-menu list-setting">
+				<li class="profile-group visible-mobile">
+					<div class="profile-avatar">
+						<a href="@(viewProfileUrl)" target="@mainFrameName" class="img-link">
+							<img width="50" height="50" src='@profileImageSrc' alt="" title="@Resources.ProfileClickTootip" />
+						</a>
+					</div>
+					<div class="userinfo">
+						<div class="info level username">@Model.Username</div>
+						<div class="info level nickname">
+							@if (!string.IsNullOrEmpty(Model.NickName))
+							{
+								@Model.NickName
+							}
+							else
+							{
+								<span id="spanNickNameID">@Resources.nickname: </span>
+								<a href="@changeNickNameUrl" class="linkConfigNow" id="linkNickNameID" target="@mainFrameName">
+									<span id="labelNickname">@Resources.configNow</span>
+								</a>
+							}
+						</div>
+						<div class="info">OTP: @(Model.IsEnabledOtp ? Resources.Enabled : Resources.Disabled)</div>
+					</div>
+				</li>
+				<li class="visible-mobile dropdown-submenu language">@Html.Action("List", "Language")</li>
+				<li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.nickname</a></li>
+				<li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
+				<li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
+				@if (Model.EnableSecurityCode)
+				{
+					<li><a href="@($"{Model.MainRootPath}SecurityCode/ChangeUserOwnSecurityCode")" target="main"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
+				}
+				<li><a href="@($"{Model.MainRootPath}otp/SetUpOtp")" target="main"><span class="icon icon-otp"></span>OTP</a></li>
+				<li class="bg-light">
+					<ul class="list-unstyled">
+						@if (Model.ShowHelpLink)
+						{
+							<li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="_blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
+						}
 
-                @if (Model.EnableSecurityCode)
-                {
-                    <li><a href="@($"{Model.MainRootPath}SecurityCode/ChangeUserOwnSecurityCode")" target="main"><span class="icon icon-sercuritycode"></span>@Resources.SecurityCode</a></li>
-                }
-                @if (Model.ShowHelpLink)
-                {
-                    <li><a href="@($"{Model.HowToUseRootPath}Index.aspx")" target="_blank"><span class="icon icon-help"></span>@Resources.Help</a></li>
-                }
-                <li><a href="@($"{Model.MainRootPath}otp/SetUpOtp")" target="main"><span class="icon icon-otp"></span>OTP</a></li>
-                @if (!Model.IsDisabledContactUsLink)
-                {
-                    <li>
-                        <a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
-                    </li>
-                }
-                <li class="visible-mobile"><a class="link-logout"><span class="icon icon-logout"></span>@Resources.LogOut</a></li>
-            </ul>
-        </li>        
-        
-       
-
-        <li class="hidden-mobile logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
-    </ul>
+						@if (!Model.IsDisabledContactUsLink)
+						{
+							<li>
+								<a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
+							</li>
+						}
+						<li class="visible-mobile"><a class="link-logout"><span class="icon icon-logout"></span>@Resources.LogOut</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="hidden-mobile logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
+	</ul>
 </section>

@@ -5,14 +5,33 @@
 
     public class HeaderNavViewModel
     {
-        public HeaderNavViewModel(int custId, bool enableSecurityCode, bool isViewedMemberInfo)
+        public HeaderNavViewModel(
+            int custId, 
+            string username,
+            string nickname,
+            bool enableSecurityCode, 
+            bool isViewedMemberInfo,
+            bool isEnabledOtp,
+            bool isDefaultAvatar,
+            string embedImage)
         {
             CustId = custId;
             EnableSecurityCode = enableSecurityCode;
             IsViewedMemberInfo = isViewedMemberInfo;
+            Username = username;
+            NickName = nickname;
+            IsEnabledOtp = isEnabledOtp;
+            IsDefaultAvatar = isDefaultAvatar;
+            EmbedImage = embedImage;
         }
 
         public int CustId { get; }
+
+        public string Username { get; }
+
+        public string NickName { get; }
+
+        public bool IsEnabledOtp { get; }
 
         public bool EnableSecurityCode { get; }
 
@@ -24,8 +43,14 @@
 
         public string MainRootPath { get; } = UrlHelper.MapMainPath("~/");
 
+        public string AccountInfoRootPath { get; } = UrlHelper.MapAccountInfoPath("~/");
+
         public bool IsDisabledContactUsLink { get; } = AppSettings.IsDisabledContactUsLink;
 
         public bool ShowHelpLink { get; } = AppSettings.ShowHelpLink;
+
+        public bool IsDefaultAvatar { get; }
+
+        public string EmbedImage { get;}
     }
 }

@@ -140,6 +140,17 @@ var securityHelper = {
             $(this).removeAttr("type").prop('type', 'password');
         })
     },
+    showSC: function () {
+        $('input[type=tel]').each(function () {
+            $(this).addClass('show-hint');
+        });
+    },
+    hideSC: function () {
+        $('input[type=tel]').each(function () {
+            $(this).removeClass('show-hint');
+        });
+    },
+
     afterVerifed: function () {
         if (top.hasPopupOpen()) {
             top.revertSecurityCodePopupTitle();
