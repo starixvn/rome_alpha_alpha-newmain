@@ -8,7 +8,8 @@
             string subUserName,
             string nickName,
             byte custRoleId,
-            int serverId)
+            int serverId,
+            string reason)
         {
             OnlineUserId = onlineUserId;
             CustName = custName;
@@ -16,6 +17,7 @@
             NickName = nickName;
             CustRoleId = custRoleId;
             ServerId = serverId;
+            Reason = reason;
         }
 
         public int OnlineUserId { get; }
@@ -29,5 +31,7 @@
         public byte CustRoleId { get; }
 
         public int ServerId { get; }
+
+        public string Reason { get; }
     }
 }

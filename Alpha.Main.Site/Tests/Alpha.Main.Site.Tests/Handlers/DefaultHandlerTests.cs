@@ -42,7 +42,7 @@
             getDefaultUrl = Substitute.For<Func<string>>();
             encodeDataFunction = Substitute.For<Func<string, string>>();
             logoutService = Substitute.For<LogoutService>();
-            defaultHandler = new DefaultHandler(sessionManager, browserHelper, getDefaultUrl, encodeDataFunction, customerProfileService);
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService);
             userSession = Substitute.For<IUserSession>();
 
             profilePicture = new ProfilePicture(12, true);

@@ -14,12 +14,13 @@
         private const byte CustRoleId = 4;
         private const int ServerId = 30001;
         private const string Nickname = "";
+        private const string Reason = " Kicked out: Session Changed";
 
         [Test]
         public void GetSettingKey_Always_Return_Age_CheckOut()
         {
             // Arrange
-            var criteria = new LogoutCommand(OnlineUserId, Username, CustRoleId, ServerId, Nickname);
+            var criteria = new LogoutCommand(OnlineUserId, Username, CustRoleId, ServerId, Nickname, Reason);
 
             // Act
             var settingKey = criteria.GetSettingKey();
@@ -33,7 +34,7 @@
         {
             // Arrange
             var criteria = new LogoutCommand(
-                new LogoutParam(OnlineUserId, Username, SubUserName, Nickname, CustRoleId, ServerId));
+                new LogoutParam(OnlineUserId, Username, SubUserName, Nickname, CustRoleId, ServerId, Reason));
 
             // Act
             var settingKey = criteria.GetSettingKey();
@@ -46,7 +47,7 @@
         public void Constructor_Always_SetCorrectProperties()
         {
             // Arrange
-            var criteria = new LogoutCommand(OnlineUserId, Username, CustRoleId, ServerId, Nickname);
+            var criteria = new LogoutCommand(OnlineUserId, Username, CustRoleId, ServerId, Nickname, Reason);
 
             // Act & Assert
             Assert.True(
@@ -62,7 +63,7 @@
         {
             // Arrange
             var criteria = new LogoutCommand(
-                new LogoutParam(OnlineUserId, Username, SubUserName, Nickname, CustRoleId, ServerId));
+                new LogoutParam(OnlineUserId, Username, SubUserName, Nickname, CustRoleId, ServerId, Reason));
 
             // Act & Assert
             Assert.True(
@@ -80,7 +81,7 @@
         {
             // Arrange
             var criteria = new LogoutCommand(
-                new LogoutParam(onUserId, Username, SubUserName, Nickname, CustRoleId, ServerId));
+                new LogoutParam(onUserId, Username, SubUserName, Nickname, CustRoleId, ServerId, Reason));
 
             // Act
             var actual = criteria.IsValid();
@@ -96,7 +97,7 @@
         {
             // Arrange
             var criteria = new LogoutCommand(
-                new LogoutParam(OnlineUserId, username, SubUserName, Nickname, CustRoleId, ServerId));
+                new LogoutParam(OnlineUserId, username, SubUserName, Nickname, CustRoleId, ServerId, Reason));
 
             // Act
             var actual = criteria.IsValid();
@@ -111,7 +112,7 @@
         {
             // Arrange
             var criteria = new LogoutCommand(
-                new LogoutParam(OnlineUserId, Username, SubUserName, Nickname, roleId, ServerId));
+                new LogoutParam(OnlineUserId, Username, SubUserName, Nickname, roleId, ServerId, Reason));
 
             // Act
             var actual = criteria.IsValid();
@@ -127,7 +128,7 @@
         {
             // Arrange
             var criteria = new LogoutCommand(
-                new LogoutParam(OnlineUserId, Username, SubUserName, Nickname, CustRoleId, serverId));
+                new LogoutParam(OnlineUserId, Username, SubUserName, Nickname, CustRoleId, serverId, Reason));
 
             // Act
             var actual = criteria.IsValid();

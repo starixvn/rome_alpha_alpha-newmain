@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using System;
-    using Alpha.Main.Services;
+    using Fanex.Logging.Extensions.Web;
     using Helpers;
     using Main.Models.Enumerations;
     using MediatR;
@@ -86,13 +86,22 @@
 
         public bool Handle(KickoutQuery message)
         {
-            logoutService.Logout(new LogoutParam(
-                message.OnlineUserId,
-                message.ActorName,
-                message.SubUserName,
-                message.NickName ?? string.Empty,
-                message.ActorLevelId,
-                message.ServerId));
+            try
+            {
+                logoutService.Logout(new LogoutParam(
+                    message.OnlineUserId,
+                    message.ActorName,
+                    message.SubUserName,
+                    message.NickName ?? string.Empty,
+                    message.ActorLevelId,
+                    message.ServerId,
+                    " Kicked out: Session Changed"));
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.Handle(ex);
+                return false;
+            }
 
             return true;
         }
