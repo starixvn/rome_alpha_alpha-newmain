@@ -252,7 +252,10 @@
 
 		$('#main').contents().find("head").append($("#AssetCommonCssLink").val());
 		$('#main').contents().find('body').empty().block();
-		$('#main').attr('src', subMenu.data("url")).attr("target", "main");
+
+		setTimeout(function () {
+			$('#main').attr('src', subMenu.data("url")).attr("target", "main");
+		}, 300);
     },
 
     expandSideBar: function () {
