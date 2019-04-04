@@ -10,6 +10,7 @@
     using NSubstitute;
     using NUnit.Framework;
     using SecurityCode.Web;
+    using Services;
     using Site.Handlers;
     using Site.Helpers;
     using Site.Requests;
@@ -28,6 +29,7 @@
         private BrowserHelper browserHelper;
         private Func<string> getDefaultUrl;
         private Func<string, string> encodeDataFunction;
+        private LogoutService logoutService;
         private CustomerProfileService customerProfileService;
         private ProfilePicture profilePicture;
 
@@ -39,7 +41,8 @@
             customerProfileService = Substitute.For<CustomerProfileService>();
             getDefaultUrl = Substitute.For<Func<string>>();
             encodeDataFunction = Substitute.For<Func<string, string>>();
-            defaultHandler = new DefaultHandler(sessionManager, browserHelper, getDefaultUrl, encodeDataFunction, customerProfileService);
+            logoutService = Substitute.For<LogoutService>();
+            defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService);
             userSession = Substitute.For<IUserSession>();
 
             profilePicture = new ProfilePicture(12, true);
@@ -56,6 +59,7 @@
             sessionManager = null;
             userSession = null;
             defaultHandler = null;
+            logoutService = null;
         }
 
         [Test]

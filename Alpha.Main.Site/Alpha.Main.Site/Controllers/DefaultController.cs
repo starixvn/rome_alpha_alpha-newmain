@@ -4,6 +4,7 @@ namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using System.Web.Routing;
+    using System.Web.Security;
     using AppResources;
     using Configurations;
     using Constants;
@@ -105,6 +106,9 @@ namespace Alpha.Main.Site.Controllers
                 }
             }
 
+            mediator.Send(new KickoutQuery(userSession));
+            ClearSession();
+
             return View(message as object);
         }
 
@@ -119,6 +123,17 @@ namespace Alpha.Main.Site.Controllers
             }
 
             base.Initialize(requestContext);
+        }
+
+        private void ClearSession()
+        {
+            Session.RemoveAll();
+            Session.Abandon();
+
+            if (!Session.IsCookieless)
+            {
+                FormsAuthentication.SignOut();
+            }
         }
     }
 }

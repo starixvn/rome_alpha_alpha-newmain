@@ -235,6 +235,7 @@
     <Compile Include="Constants\RoleId.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
+    <Compile Include="Criteria\LogoutCommandTests.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteriaTests.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommandTests.cs" />
     <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommandTests.cs" />

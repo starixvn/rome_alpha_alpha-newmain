@@ -217,37 +217,6 @@
                     && q.RoleId == query.RoleId));
         }
 
-        [TestCase(null)]
-        [TestCase("")]
-        public void Kickout_ReasonIsNullOrEmpty_ReturnsViewWithNoPermissionAccessPageMessage(string reason)
-        {
-            // Act
-            var viewResult = defaultController.Kickout(reason) as ViewResult;
-
-            // Assert
-            Assert.AreEqual((string)viewResult.Model, Resources.NoPermissionAccessPage);
-        }
-
-        [Test]
-        public void Kickout_ReasonIsDuplicationLoggin_ReturnsViewWithSessionLoggedMessage()
-        {
-            // Act
-            var viewResult = defaultController.Kickout("DuplicationLogin") as ViewResult;
-
-            // Assert
-            Assert.AreEqual((string)viewResult.Model, Security.stringSessionLogged);
-        }
-
-        [Test]
-        public void Kickout_ReasonIsAccountClosed_ReturnsViewWithSessionLoggedMessage()
-        {
-            // Act
-            var viewResult = defaultController.Kickout("AccountClosed") as ViewResult;
-
-            // Assert
-            Assert.AreEqual((string)viewResult.Model, Security.lblConfirmClosed);
-        }
-
         [Test]
         public void MenuBar_Always_CallsMediatorSendMenuBarQuery()
         {
