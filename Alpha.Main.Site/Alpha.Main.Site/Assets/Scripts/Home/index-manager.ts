@@ -1,5 +1,4 @@
-﻿/// <reference path="../core.ts" />
-/// <reference path="menu-bar.ts" />
+﻿/// <reference path="menu-bar.ts" />
 declare var popupManager: any;
 declare interface String {
 	startsWith(text: string, position: string): boolean;

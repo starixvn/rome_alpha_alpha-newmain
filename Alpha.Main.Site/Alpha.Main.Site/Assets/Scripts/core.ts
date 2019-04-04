@@ -70,16 +70,7 @@ var alpha = {
             }
         },
         isIe: function () {
-            var ua = window.navigator.userAgent;
-            var msie = ua.indexOf("MSIE ");
-
-            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))
-            // If Internet Explorer, return version number
-            {
-                return true;
-            }
-
-            return false;
+            return /(MSIE|Trident\/|Edge\/)/i.test(navigator.userAgent);
         },
         IsIe8OrLower: function () {
             var userAgent = window.navigator.userAgent.toLowerCase();
