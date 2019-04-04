@@ -250,12 +250,12 @@
         menuBar.domElements.subMenuItems.removeClass('active');
 		subMenu.addClass('active');
 
-		$('#main').contents().find("head").append($("#AssetCommonCssLink").val());
-		$('#main').contents().find('body').empty().block();
+		//$('#main').contents().find("head").append($("#AssetCommonCssLink").val());
+		//$('#main').contents().find('body').empty().block();
 
-		setTimeout(function () {
+		//setTimeout(function () {
 			$('#main').attr('src', subMenu.data("url")).attr("target", "main");
-		}, 300);
+		//}, 300);
     },
 
     expandSideBar: function () {
