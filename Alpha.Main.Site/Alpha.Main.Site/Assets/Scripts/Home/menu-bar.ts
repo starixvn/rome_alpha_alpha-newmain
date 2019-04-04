@@ -250,12 +250,14 @@
         menuBar.domElements.subMenuItems.removeClass('active');
 		subMenu.addClass('active');
 
-		//$('#main').contents().find("head").append($("#AssetCommonCssLink").val());
-		//$('#main').contents().find('body').empty().block();
+        var isIE = /(MSIE|Trident\/|Edge\/)/i.test(navigator.userAgent);
 
-		//setTimeout(function () {
-			$('#main').attr('src', subMenu.data("url")).attr("target", "main");
-		//}, 300);
+        if (!isIE) {
+            $('#main').contents().find("head").append($("#AssetCommonCssLink").val());
+            $('#main').contents().find('body').empty().block();
+        }
+
+        $('#main').attr('src', subMenu.data("url")).attr("target", "main");
     },
 
     expandSideBar: function () {
