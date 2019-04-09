@@ -1,6 +1,14 @@
-﻿/// <reference path="../core.ts" />
-/// <reference path="menu-bar.ts" />
+﻿/// <reference path="menu-bar.ts" />
 declare var popupManager: any;
+declare interface String {
+	startsWith(text: string, position: string): boolean;
+}
+
+if (typeof String.prototype.startsWith != 'function') {
+	String.prototype.startsWith = function (prefix) {
+		return this.slice(0, prefix.length) == prefix;
+	};
+}
 
 'use strict';
 /*global alpha, briefProfile */

@@ -639,7 +639,7 @@ var menuBarManager = {
 
 var oldMainUltilities = {
     isIE: function () {
-        return (/msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent));
+        return (/(MSIE|Trident\/|Edge\/)/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent));
     },
     isSmallDevice: function () {
         var isSmallDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);

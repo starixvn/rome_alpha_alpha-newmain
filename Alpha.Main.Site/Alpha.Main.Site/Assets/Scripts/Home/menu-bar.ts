@@ -1,4 +1,6 @@
-﻿var menuBar = {
+﻿/// <reference path="../core.ts" />
+
+var menuBar = {
     domElements: {
         subMenuItems: null,
         menuOpeners: null,
@@ -250,9 +252,12 @@
         menuBar.domElements.subMenuItems.removeClass('active');
 		subMenu.addClass('active');
 
-		$('#main').contents().find("head").append($("#AssetCommonCssLink").val());
-		$('#main').contents().find('body').empty().block();
-		$('#main').attr('src', subMenu.data("url")).attr("target", "main");
+        if (!alpha.core.isIe()) {
+            $('#main').contents().find("head").append($("#AssetCommonCssLink").val());
+            $('#main').contents().find('body').empty().block();
+        }
+
+        $('#main').attr('src', subMenu.data("url")).attr("target", "main");
     },
 
     expandSideBar: function () {
