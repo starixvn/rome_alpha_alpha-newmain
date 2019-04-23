@@ -19,8 +19,6 @@ namespace Alpha.Main.Site.Controllers
 
     public class DefaultController : BaseController
     {
-        private const string ForceChangePasswordPath = "~/Password/ForceChangePassword";
-        private const string SecurityCodePath = "~/SecurityCode/Index";
         private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
         private const string UnSupportedBrowsers = "UnsupportedBrowsers";
 
@@ -40,27 +38,16 @@ namespace Alpha.Main.Site.Controllers
 
         public ActionResult Index()
         {
-            var browser = mediator.Send(new BrowserQuery(userSession));
-
-            if (browser.IsUnsupportedBrowser)
-            {
-                return View(UnSupportedBrowsers, browser);
-            }
-
-            if (!userSession.IsLogged
-                || userSession.IsPasswordExpired)
-            {
-                return Redirect(ForceChangePasswordPath);
-            }
-
             if (mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
             {
                 return Redirect(OtpVerifyDifferenceDevicePath);
             }
 
-            if (securityCodeChecker.IsForcedChangeSecurityCode())
+            var browser = mediator.Send(new BrowserQuery(userSession));
+
+            if (browser.IsUnsupportedBrowser)
             {
-                return Redirect(SecurityCodePath);
+                return View(UnSupportedBrowsers, browser);
             }
 
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), null);
