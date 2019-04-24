@@ -1,1 +1,49 @@
-﻿
+﻿@model ForceChangePasswordViewModel
+@{
+    ViewBag.Title = Security.lblChangePassword;
+    Layout = "~/Views/Password/Shared/_Layout.cshtml";
+}
+@section css {
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
+    @StaticResources.RenderStyles("~/Assets/bundles/nickname/nickname")
+}
+<div class="block">
+    <form class="form-SC form-validation" action="" method="post" id="pwdForm" novalidate="novalidate">
+        <h1 class="title">Nickname</h1>
+        <p>You are required to log in by your nickname only as a company policy. 
+            <br />
+            <span class="text-red">This new policy will effect from &lt;dd/mm/yyyy&gt;</span>
+        </p>
+        <p class="lblUsername">Username: <strong class="txtAccent">S688HHX88</strong></p>
+        <div class="rowlg">
+            <input type="text" autocomplete="off" class="txt" name="txtNickname" placeholder="Nickname" />
+            <label id="nickname-error" class="error"></label>
+            <i class="icon-user"></i>
+            <i class="validation"></i>
+            
+        </div>
+        <div class="rowlg">
+            <div class="radio">
+                <input type="radio" id="loginByUsernameOrNickname" name="loginOption" checked>
+                <label class="label-text txtAccent" for="loginByUsernameOrNickname">Login by username or nickname</label>
+            </div>    
+            <div class="radio">
+                <input type="radio" id="loginByNickname" name="loginOption">
+                <label class="label-text txtAccent bold" for="loginByNickname">Login by nickname only</label>
+            </div>                 
+        </div>
+    </form>
+    <div class="rules" id="rules">
+        <div class="bold"><span class="text-red">*</span> Note:</div>
+        <ul class="list-note">
+            <li>You are not allowed to change your nickname afterward.</li>
+            <li>Only your direct upline can see your nickname.</li>
+        </ul>
+    </div>
+    <div class="list-buttons">
+        <button class="btn-cancel">Back</button>
+        <button class="btn-submit">Submit</button>
+    </div>
+    <p class="skipOption">Skip this step and go to Home Page</p>
+</div>

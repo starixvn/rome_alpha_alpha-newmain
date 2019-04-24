@@ -47,11 +47,10 @@
     "outputFile": "Assets/styles/error/error.css",
     "inputFile": "Assets/styles/error/error.scss"
   },
-   {
+  {
     "outputFile": "Assets/Styles/home/popup-announcement.css",
     "inputFile": "Assets/Styles/home/popup-announcement.scss"
   },
-
   {
     "outputFile": "Assets/styles/home/page-mobile-calculate-07.css",
     "inputFile": "Assets/styles/home/page-mobile-calculate-07.scss"
@@ -71,5 +70,9 @@
   {
     "outputFile": "Assets/styles/chatbot/chatbot-setting.css",
     "inputFile": "Assets/styles/chatbot/chatbot-setting.scss"
+  },
+  {
+    "outputFile": "Assets/styles/nickname/nickname.css",
+    "inputFile": "Assets/styles/nickname/nickname.scss"
   }
 ]

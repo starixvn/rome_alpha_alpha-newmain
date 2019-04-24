@@ -240,5 +240,11 @@
     "inputFiles": [
       "Assets/scripts/chatbot/chatbot-guide.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/nickname/nickname.css",
+    "inputFiles": [
+      "Assets/styles/nickname/nickname.css"
+    ]
   }
 ]
