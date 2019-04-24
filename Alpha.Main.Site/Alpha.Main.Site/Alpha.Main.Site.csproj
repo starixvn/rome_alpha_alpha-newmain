@@ -897,6 +897,7 @@
     <Content Include="Views\ChatBot\NotificationExample.cshtml" />
     <Content Include="Views\ChatBot\LetstalkFunction.cshtml" />
     <Content Include="Views\ChatBot\ActionExample.cshtml" />
+    <Content Include="Views\Nickname\Index.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-guide.ts" />
@@ -1250,6 +1251,7 @@
     <Compile Include="Controllers\CustomerProfileController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\NicknameController.cs" />
     <Compile Include="Controllers\MemberRequestsController.cs" />
     <Compile Include="Controllers\NetworkSpeedController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
