@@ -493,4 +493,10 @@
   <data name="Total" xml:space="preserve">
     <value>总和</value>
   </data>
+  <data name="ConfiguredNicknameSuccessfully" xml:space="preserve">
+    <value>您的昵称创建成功</value>
+  </data>
+  <data name="NicknameRule" xml:space="preserve">
+    <value>昵称必须是独特的，只含有字母或数字，至少五个字符，最多十五个字符</value>
+  </data>
 </root>

@@ -116,6 +116,8 @@
             container.RegisterSingleton<AesService, AesServiceImpl>();
 
             container.RegisterPerWebRequest<LogoutService, LogoutServiceImpl>();
+
+            container.RegisterPerWebRequest<NicknameService, NicknameServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

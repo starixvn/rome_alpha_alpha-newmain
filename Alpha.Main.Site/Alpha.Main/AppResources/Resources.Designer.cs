@@ -259,6 +259,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your nickname was configured successfully.
+        /// </summary>
+        public static string ConfiguredNicknameSuccessfully {
+            get {
+                return ResourceManager.GetString("ConfiguredNicknameSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Us.
         /// </summary>
         public static string ContactUs {
@@ -634,6 +643,15 @@ namespace Alpha.Main.AppResources {
         public static string nickname {
             get {
                 return ResourceManager.GetString("nickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nickname must be unique, only alphabet or numeric and should have at least a minimum of 5 characters and maximum of 15 characters..
+        /// </summary>
+        public static string NicknameRule {
+            get {
+                return ResourceManager.GetString("NicknameRule", resourceCulture);
             }
         }
         

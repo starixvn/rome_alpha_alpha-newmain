@@ -492,4 +492,10 @@
   <data name="Total" xml:space="preserve">
     <value>Tổng cộng</value>
   </data>
+  <data name="ConfiguredNicknameSuccessfully" xml:space="preserve">
+    <value>Biệt Danh của bạn đã được thiết lập xong</value>
+  </data>
+  <data name="NicknameRule" xml:space="preserve">
+    <value>Biệt danh không được giống nhau và chỉ chứa ký tự chữ cái và số đếm .Phải có ít nhất từ 5 đến 15 ký tự</value>
+  </data>
 </root>

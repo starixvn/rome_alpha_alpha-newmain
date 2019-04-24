@@ -394,4 +394,10 @@
   <data name="Total" xml:space="preserve">
     <value>총</value>
   </data>
+  <data name="ConfiguredNicknameSuccessfully" xml:space="preserve">
+    <value>닉네임이 성공적으로 설정되었습니다.</value>
+  </data>
+  <data name="NicknameRule" xml:space="preserve">
+    <value>닉네임은 독특하고 알파벳이나 숫자이여야합니다. 최소5~최대15자리이여야 합니다.</value>
+  </data>
 </root>

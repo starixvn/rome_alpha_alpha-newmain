@@ -490,4 +490,10 @@
   <data name="Total" xml:space="preserve">
     <value>ยอดรวม</value>
   </data>
+  <data name="ConfiguredNicknameSuccessfully" xml:space="preserve">
+    <value>ชื่อเล่นของคุณได้กำหนดเรียบร้อยแล้ว</value>
+  </data>
+  <data name="NicknameRule" xml:space="preserve">
+    <value>ชื่อเล่นต้องไม่ซ้ำกัน ตัวอักษรหรือตัวเลขเท่านั้น ควรมีขั้นต่ำ 5 ตัวอักษร และสูงสุด 15 ตัวอักษร</value>
+  </data>
 </root>

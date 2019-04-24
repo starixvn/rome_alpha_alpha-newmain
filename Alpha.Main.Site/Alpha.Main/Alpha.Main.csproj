@@ -49,8 +49,9 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.3.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.3.2\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="Alpha.Web, Version=1.0.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.3.3-nickname01\lib\net461\Alpha.Web.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
       <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
@@ -235,6 +236,9 @@
     <Compile Include="Constants\ProductId.cs" />
     <Compile Include="Criteria\LogoutCommand.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
+    <Compile Include="Criteria\Nickname\CreateNicknameCommand.cs" />
+    <Compile Include="Criteria\Nickname\NicknameNonQueryCommand.cs" />
+    <Compile Include="Criteria\Nickname\UpdateNicknameLoginOnlyCommand.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommand.cs" />
     <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommand.cs" />
     <Compile Include="Criteria\Otp\GetCustomerOtpCriteria.cs" />
@@ -303,6 +307,8 @@
     <Compile Include="Models\Statistics\TopTurnoverMember.cs" />
     <Compile Include="Models\Statistics\TopWinningMember.cs" />
     <Compile Include="Params\LogoutParam.cs" />
+    <Compile Include="Params\Nickname\CreateNicknameParam.cs" />
+    <Compile Include="Params\Nickname\UpdateNicknameLoginOnlyParam.cs" />
     <Compile Include="Params\Otp\ChangeOtpStatusParam.cs" />
     <Compile Include="Params\Otp\RemoveSecretKeyParam.cs" />
     <Compile Include="Params\Password\ResetMainAccountPasswordParam.cs" />
@@ -324,8 +330,10 @@
     <Compile Include="Services\Impl\MemberRequestsServiceImpl.cs" />
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
+    <Compile Include="Services\Impl\NicknameServiceImpl.cs" />
     <Compile Include="Services\LogoutService.cs" />
     <Compile Include="Services\MemberRequestsService.cs" />
+    <Compile Include="Services\NicknameService.cs" />
     <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\CachingManager.cs" />
     <Compile Include="Services\CustomerProfileService.cs" />

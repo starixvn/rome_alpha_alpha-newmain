@@ -27,21 +27,6 @@
             this.userSession = userSession;
         }
 
-        [HttpGet]
-        public ActionResult Index()
-        {
-            if (userSession.IsForcedSecurityCode)
-            {
-                bool hasSC = !string.IsNullOrWhiteSpace(userSession.SecurityCode);
-
-                return hasSC
-                    ? RedirectToAction("ChangeSecurityCodeByForcing")
-                    : RedirectToAction("ChangeSecurityCodeFirstLogin");
-            }
-
-            return Redirect("~/");
-        }
-
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpGet]
         public ActionResult ChangeSecurityCodeFirstLogin(ForceChangeSecurityCodeQuery query)
