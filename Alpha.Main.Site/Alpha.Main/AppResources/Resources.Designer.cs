@@ -647,11 +647,74 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You are required to log in by your nickname only as a company policy..
+        /// </summary>
+        public static string NicknameCompanyPolicy {
+            get {
+                return ResourceManager.GetString("NicknameCompanyPolicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This new policy will take effect from {0}..
+        /// </summary>
+        public static string NicknameEffectedFrom {
+            get {
+                return ResourceManager.GetString("NicknameEffectedFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are not allowed to change your nickname afterward..
+        /// </summary>
+        public static string NicknameNote1 {
+            get {
+                return ResourceManager.GetString("NicknameNote1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only your direct upline can see your nickname..
+        /// </summary>
+        public static string NicknameNote2 {
+            get {
+                return ResourceManager.GetString("NicknameNote2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login by username or nickname.
+        /// </summary>
+        public static string NicknameOption1 {
+            get {
+                return ResourceManager.GetString("NicknameOption1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login by nickname only.
+        /// </summary>
+        public static string NicknameOption2 {
+            get {
+                return ResourceManager.GetString("NicknameOption2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nickname must be unique, only alphabet or numeric and should have at least a minimum of 5 characters and maximum of 15 characters..
         /// </summary>
         public static string NicknameRule {
             get {
                 return ResourceManager.GetString("NicknameRule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skip this step and go to Home Page.
+        /// </summary>
+        public static string NicknameSkipText {
+            get {
+                return ResourceManager.GetString("NicknameSkipText", resourceCulture);
             }
         }
         
@@ -688,6 +751,15 @@ namespace Alpha.Main.AppResources {
         public static string normalAnnouncement {
             get {
                 return ResourceManager.GetString("normalAnnouncement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note.
+        /// </summary>
+        public static string Note {
+            get {
+                return ResourceManager.GetString("Note", resourceCulture);
             }
         }
         

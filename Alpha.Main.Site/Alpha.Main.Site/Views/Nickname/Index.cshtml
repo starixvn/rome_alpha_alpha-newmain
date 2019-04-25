@@ -1,49 +1,85 @@
-﻿@model ForceChangePasswordViewModel
+﻿@using Alpha.Main.Site.ViewModels.Nickname
+@model CreateNicknameViewModel
 @{
-    ViewBag.Title = Security.lblChangePassword;
-    Layout = "~/Views/Password/Shared/_Layout.cshtml";
+    Layout = null;
 }
-@section css {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
     @StaticResources.RenderStyles("~/Assets/bundles/nickname/nickname")
-}
-<div class="block">
-    <form class="form-SC form-validation" action="" method="post" id="pwdForm" novalidate="novalidate">
-        <h1 class="title">Nickname</h1>
-        <p>You are required to log in by your nickname only as a company policy. 
-            <br />
-            <span class="text-red">This new policy will effect from &lt;dd/mm/yyyy&gt;</span>
-        </p>
-        <p class="lblUsername">Username: <strong class="txtAccent">S688HHX88</strong></p>
-        <div class="rowlg">
-            <input type="text" autocomplete="off" class="txt" name="txtNickname" placeholder="Nickname" />
-            <label id="nickname-error" class="error"></label>
-            <i class="icon-user"></i>
-            <i class="validation"></i>
-            
-        </div>
-        <div class="rowlg">
-            <div class="radio">
-                <input type="radio" id="loginByUsernameOrNickname" name="loginOption" checked>
-                <label class="label-text txtAccent" for="loginByUsernameOrNickname">Login by username or nickname</label>
-            </div>    
-            <div class="radio">
-                <input type="radio" id="loginByNickname" name="loginOption">
-                <label class="label-text txtAccent bold" for="loginByNickname">Login by nickname only</label>
-            </div>                 
-        </div>
-    </form>
-    <div class="rules" id="rules">
-        <div class="bold"><span class="text-red">*</span> Note:</div>
-        <ul class="list-note">
-            <li>You are not allowed to change your nickname afterward.</li>
-            <li>Only your direct upline can see your nickname.</li>
-        </ul>
+    <title>@Resources.nickname</title>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      @StaticResources.AssetScripts.RenderCommon("/bundles/common/support-IE8")
+    <![endif]-->
+</head>
+<body>
+    <div class="block">
+        @using (Html.BeginForm("Index", "Nickname", FormMethod.Post, new { id = "frmNickname", @class = "form-SC form-validation", novalidate = "novalidate" }))
+        {
+            @Html.AntiForgeryToken()
+            <h1 class="title">@Resources.nickname</h1>
+            <p>
+                @Resources.NicknameCompanyPolicy
+                @if (Model.IsRecommendLoginByNickname)
+                {
+                    <br />
+                    <span class="text-red">@Model.NicknameEffectedFrom</span>
+                }
+            </p>
+            <p class="lblUsername">@Resources.username: <strong class="txtAccent">@Model.Username</strong></p>
+            <div class="rowlg">
+                <input type="text" id="nickname" name="nickname" value="@Model.Nickname" class="txt" autocomplete="off" placeholder="@Resources.nickname" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>
+                <label id="nickname-error" class="error">
+                    @if (Model.Result?.IsFailed == true)
+                    {
+                        @Model.Result.Message
+                    }
+                </label>
+                <i class="icon-user"></i>
+                <i class="validation"></i>
+            </div>
+            <div class="rowlg">
+                @if (Model.IsDisableUpdateNickname)
+                {
+                    <div class="radio">
+                        <input type="radio" id="loginByUsernameOrNickname" name="nickNameLoginOnly" checked>
+                        <label class="label-text txtAccent" for="loginByUsernameOrNickname">@Resources.NicknameOption1</label>
+                    </div>
+                }
+                <div class="radio">
+                    <input type="radio" id="loginByNickname" name="nickNameLoginOnly" @(Model.IsDisableUpdateNickname ? string.Empty : "checked")>
+                    <label class="label-text txtAccent bold" for="loginByNickname">@Resources.NicknameOption2</label>
+                </div>
+            </div>
+            <div class="rules" id="rules">
+                <div class="bold"><span class="text-red">*</span> @Resources.Note:</div>
+                <ul class="list-note">
+                    <li>@Resources.NicknameNote1</li>
+                    <li>@Resources.NicknameNote2</li>
+                </ul>
+            </div>
+            <div class="list-buttons">
+                <button type="button" class="btn-cancel" id="buttonBack">@Resources.lblBack</button>
+                <button type="submit" class="btn-submit" id="buttonSubmit" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>@Resources.submit</button>
+            </div>
+        }
+        @if (Model.IsRecommendLoginByNickname)
+        {
+            @Html.ActionLink(Resources.NicknameSkipText, "Index", "Default", null, new { @class = "skipOption" })
+        }
     </div>
-    <div class="list-buttons">
-        <button class="btn-cancel">Back</button>
-        <button class="btn-submit">Submit</button>
-    </div>
-    <p class="skipOption">Skip this step and go to Home Page</p>
-</div>
+    @Html.Hidden("oldMainRootPath", CreateNicknameViewModel.OldMainRootPath)
+    @Html.Hidden("nicknameRule", Resources.NicknameRule)
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.RenderScripts("~/Assets/bundles/nickname/create-nickname")
+    @GoogleAnalyticHepler.Render()
+</body>
+</html>

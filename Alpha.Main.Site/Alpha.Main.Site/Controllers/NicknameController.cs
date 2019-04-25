@@ -31,7 +31,10 @@
         [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Index(string nickname)
         {
-            var message = new CreateNicknameCommand(userSession);
+            var message = new CreateNicknameCommand(userSession)
+            {
+                Nickname = nickname
+            };
 
             var result = message.IsValid()
                 ? mediator.Send(message)
@@ -39,7 +42,7 @@
 
             return result.IsSuccessful
                 ? ToDefaultPage()
-                : View(new CreateNicknameViewModel(userSession) { Result = result });
+                : View(new CreateNicknameViewModel(userSession, nickname) { Result = result });
         }
 
         private ActionResult ToDefaultPage()

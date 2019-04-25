@@ -6,7 +6,5 @@
     public interface NicknameService
     {
         Result CreateNickname(CreateNicknameParam param);
-
-        Result UpdateNicknameLoginOnly(UpdateNicknameLoginOnlyParam param);
     }
 }

@@ -6,12 +6,14 @@
             int custId,
             string nickname,
             string ip,
-            string languageKey)
+            string languageKey,
+            bool isEnableUpdateNickname)
         {
             CustId = custId;
             Nickname = nickname;
             IP = ip;
             LanguageKey = languageKey;
+            IsEnableUpdateNickname = isEnableUpdateNickname;
         }
 
         public int CustId { get; }
@@ -21,5 +23,7 @@
         public string IP { get; }
 
         public string LanguageKey { get; }
+
+        public bool IsEnableUpdateNickname { get; }
     }
 }

@@ -32,52 +32,6 @@
         }
 
         [Test]
-        public void Index_IsForcedSecurityCodeIsFalse_RedirectToRoot()
-        {
-            // Arrange
-            userSession.IsForcedSecurityCode.Returns(false);
-            var expectedUrl = "~/";
-
-            // Act
-            var result = securityCodeController.Index() as RedirectResult;
-
-            // Assert
-            Assert.AreEqual(expectedUrl, result.Url);
-        }
-
-        [TestCase(null)]
-        [TestCase("")]
-        [TestCase(" ")]
-        public void Index_IsForcedSecurityCodeIsTrueAndSecurityCodeIsNullOrWhiteSpace_RedirectToActionChangeSecurityCodeFirstLogin(string securityCode)
-        {
-            // Arrange
-            userSession.IsForcedSecurityCode.Returns(true);
-            userSession.SecurityCode.Returns(securityCode);
-            var actionName = "ChangeSecurityCodeFirstLogin";
-
-            // Act
-            var result = securityCodeController.Index() as RedirectToRouteResult;
-
-            // Assert
-            Assert.AreEqual(actionName, result.RouteValues["action"].ToString());
-        }
-
-        [Test]
-        public void Index_IsForcedSecurityCodeIsTrueAndSecurityCodeIsNotNullOrWhiteSpace_RedirectToActionChangeSecurityCodeByForcing()
-        {
-            // Arrange
-            userSession.IsForcedSecurityCode.Returns(true);
-            userSession.SecurityCode.Returns("1234aa");
-            var actionName = "ChangeSecurityCodeByForcing";
-
-            // Act
-            var result = securityCodeController.Index() as RedirectToRouteResult;
-
-            // Assert
-            Assert.AreEqual(actionName, result.RouteValues["action"].ToString());
-        }
-
-        [Test]
         public void ChangeSecurityCodeFirstLogin_SecurityCodeIsNotNullOrWhiteSpace_RedirectToRoot()
         {
             // Arrange

@@ -22,19 +22,18 @@
 
         public Result Handle(CreateNicknameCommand message)
         {
+            var isEnableUpdateNickname = !message.IsDisableUpdateNickname;
             var nickname = message.Nickname == null ? string.Empty : message.Nickname.Trim();
 
             var result = nicknameService.CreateNickname(
-                new CreateNicknameParam(message.ActorId, nickname, message.IP, message.LanguageKey));
+                new CreateNicknameParam(message.ActorId, nickname, message.IP, message.LanguageKey, isEnableUpdateNickname));
 
             if (result.IsSuccessful)
             {
-                result = nicknameService.UpdateNicknameLoginOnly(
-                    new UpdateNicknameLoginOnlyParam(message.ActorId, true, message.IP, message.LanguageKey));
+                userSession.IsNicknameLoginOnly = true;
 
-                if (result.IsSuccessful)
+                if (isEnableUpdateNickname)
                 {
-                    userSession.IsNicknameLoginOnly = true;
                     userSession.NickName = nickname;
                 }
             }

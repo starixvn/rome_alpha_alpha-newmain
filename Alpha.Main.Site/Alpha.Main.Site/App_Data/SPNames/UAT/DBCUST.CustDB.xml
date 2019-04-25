@@ -36,4 +36,9 @@
       <Mapping DataField="DeviceId" ObjectProperty="Id" />
     </Setting>
   </Function>
+
+  <Function Name="Nickname">
+    <Setting Key="Age_CustomerInsNickName" SpName="Age_CustomerInsNickName" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CustomerUpdNicknameLoginOnly" SpName="Age_CustomerUpdNicknameLoginOnly" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+  </Function>
 </Functions>

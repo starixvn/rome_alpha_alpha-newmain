@@ -1,38 +1,97 @@
 ﻿"use strict";
 class Nickname {
     $: JQueryStatic;
-    $nickname: JQuery;
-    $messsageContainer: JQuery;
     nicknameRule: string;
+    $nickname: JQuery;
+    $nicknameLabel: JQuery;
+    $loginByUsernameOrNickname: JQuery;
+    $loginByNickname: JQuery;
+    $buttonSubmit: JQuery;
 
     constructor($: JQueryStatic) {
         this.$ = $;
     }
 
     init(): void {
-        let self: any = this;
+        this.cacheElements();
+        this.bindEvents();
+    }
 
+    cacheElements(): void {
+        this.nicknameRule = this.$("#nicknameRule").val();
         this.$nickname = this.$("#nickname");
-        this.$nickname.focus();
-        this.$messsageContainer = this.$("#message-container");
-        this.nicknameRule = this.$("#nicknameRule").html();
+        this.$nicknameLabel = this.$("#nickname-error");
+        this.$loginByUsernameOrNickname = this.$("#loginByUsernameOrNickname");
+        this.$loginByNickname = this.$("#loginByNickname");
+        this.$buttonSubmit = this.$("#buttonSubmit");
+    }
+
+    bindEvents(): void {
+        const self: any = this;
+
+        this.$nickname
+            .focus()
+            .keyup(function (): void {
+                const nickname = self.$.trim(self.$nickname.val());
+
+                if (nickname.length > 0) {
+                    const validNickname: boolean = self.isValidNickname(nickname);
+                    if (validNickname) {
+                        self.showValidIcon();
+                        self.removeErrorMessage();
+                    } else {
+                        self.showErrorIcon();
+                    }
+                }
+            });
+
+        this.$loginByUsernameOrNickname.change(function (): void {
+            self.$buttonSubmit.prop("disabled", true);
+        });
+
+        this.$loginByNickname.change(function (): void {
+            self.$buttonSubmit.prop("disabled", false);
+        });
 
         this.$("#frmNickname").submit(function (): boolean {
             self.$.blockUI();
-            const nicknameRuleRegExp: RegExp = new RegExp(/^[a-zA-Z0-9]{5,15}$/i);
-            const isMatch: boolean = nicknameRuleRegExp.test(self.$.trim(self.$nickname.val()));
 
-            if (!isMatch) {
+            const nickname = self.$.trim(self.$nickname.val());
+            const validNickname: boolean = self.isValidNickname(nickname);
+
+            if (!validNickname) {
                 self.$.unblockUI();
-                const result: Result = new Result({ Code: 1, Message: self.nicknameRule });
-                alpha.showMessage(self.$messsageContainer, result);
+                self.showErrorIcon();
+                self.showErrorMessage(self.nicknameRule);
                 self.$nickname.focus();
             }
 
-            return isMatch;
+            return validNickname;
         });
 
         this.$("#buttonBack").click(alpha.core.signOut);
+    }
+
+    isValidNickname(nickname: string): boolean {
+        const nicknameRuleRegExp: RegExp = new RegExp(/^[a-zA-Z0-9]{5,15}$/i);
+
+        return nicknameRuleRegExp.test(nickname);
+    }
+
+    showValidIcon(): void {
+        this.$nickname.removeClass("error").addClass("valid");
+    }
+
+    showErrorIcon(): void {
+        this.$nickname.removeClass("valid").addClass("error");
+    }
+
+    showErrorMessage(): void {
+        this.$nicknameLabel.addClass("error").html(this.nicknameRule);
+    }
+
+    removeErrorMessage(): void {
+        this.$nicknameLabel.empty().removeClass("error");
     }
 }
 

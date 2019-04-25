@@ -2,6 +2,7 @@
 
 namespace Alpha.Main.Site.Controllers
 {
+    using System;
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
@@ -16,6 +17,7 @@ namespace Alpha.Main.Site.Controllers
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
     using Web;
+    using Web.Helpers;
 
     public class DefaultController : BaseController
     {
@@ -25,19 +27,27 @@ namespace Alpha.Main.Site.Controllers
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
         private readonly SecurityCodeChecker securityCodeChecker;
+        private readonly NicknameChecker nicknameChecker;
 
         public DefaultController(
             IUserSession userSession,
             IMediator mediator,
-            SecurityCodeChecker securityCodeChecker)
+            SecurityCodeChecker securityCodeChecker,
+            NicknameChecker nicknameChecker)
         {
             this.userSession = userSession;
             this.mediator = mediator;
             this.securityCodeChecker = securityCodeChecker;
+            this.nicknameChecker = nicknameChecker;
         }
 
         public ActionResult Index()
         {
+            if (IsRedirectToNicknamePage())
+            {
+                return RedirectToAction("Index", "Nickname");
+            }
+
             if (mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
             {
                 return Redirect(OtpVerifyDifferenceDevicePath);
@@ -121,6 +131,18 @@ namespace Alpha.Main.Site.Controllers
             {
                 FormsAuthentication.SignOut();
             }
+        }
+
+        private bool IsRedirectToNicknamePage()
+        {
+            if (nicknameChecker.IsRecommendLoginByNickname)
+            {
+                var urlReferrer = Request.UrlReferrer?.AbsolutePath;
+
+                return urlReferrer != null && urlReferrer.IndexOf("nickname", StringComparison.OrdinalIgnoreCase) == -1;
+            }
+
+            return false;
         }
     }
 }

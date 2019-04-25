@@ -19,15 +19,29 @@
         }
 
         public Result CreateNickname(CreateNicknameParam param)
-            => IsValidNickName(param.Nickname)
-            ? Execute(new CreateNicknameCommand(param))
-            : Result.CreateErrorResult(Resources.NicknameRule, 100);
+        {
+            if (param.IsEnableUpdateNickname)
+            {
+                var result = IsValidNickName(param.Nickname)
+                    ? Execute(new CreateNicknameCommand(param))
+                    : Result.CreateErrorResult(Resources.NicknameRule, 100);
 
-        public Result UpdateNicknameLoginOnly(UpdateNicknameLoginOnlyParam param)
-            => Execute(new UpdateNicknameLoginOnlyCommand(param));
+                if (result.IsFailed)
+                {
+                    return result;
+                }
+            }
+
+            return UpdateNicknameLoginOnly(
+                new UpdateNicknameLoginOnlyParam(param.CustId, true, param.IP, param.LanguageKey));
+        }
+        
 
         private static bool IsValidNickName(string nickName)
             => NicknameRule.IsMatch(nickName);
+
+        private Result UpdateNicknameLoginOnly(UpdateNicknameLoginOnlyParam param)
+            => Execute(new UpdateNicknameLoginOnlyCommand(param));
 
         private Result Execute(NicknameNonQueryCommand command)
         {
