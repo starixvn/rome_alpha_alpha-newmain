@@ -36,7 +36,7 @@
             </p>
             <p class="lblUsername">@Resources.username: <strong class="txtAccent">@Model.Username</strong></p>
             <div class="rowlg">
-                <input type="text" id="nickname" name="nickname" value="@Model.Nickname" class="txt" autocomplete="off" placeholder="@Resources.nickname" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>
+                <input type="text" id="nickname" name="nickname" value="@Model.Nickname" class="txt nickname" autocomplete="off" placeholder="@Resources.nickname" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>
                 <label id="nickname-error" class="error">
                     @if (Model.Result?.IsFailed == true)
                     {

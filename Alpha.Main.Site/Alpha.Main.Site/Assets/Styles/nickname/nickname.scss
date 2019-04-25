@@ -47,6 +47,12 @@
     color: #333333;
 }
 
-.block label.bold {
-    font-weight: bold;
+.block {
+    .nickname {
+        opacity: 1 !important;
+    }
+
+    label.bold {
+        font-weight: bold;
+    }
 }
