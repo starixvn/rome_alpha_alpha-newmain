@@ -7,6 +7,7 @@ class Nickname {
     $loginByUsernameOrNickname: JQuery;
     $loginByNickname: JQuery;
     $buttonSubmit: JQuery;
+    mainRootPath: string;
 
     constructor($: JQueryStatic) {
         this.$ = $;
@@ -24,6 +25,7 @@ class Nickname {
         this.$loginByUsernameOrNickname = this.$("#loginByUsernameOrNickname");
         this.$loginByNickname = this.$("#loginByNickname");
         this.$buttonSubmit = this.$("#buttonSubmit");
+        this.mainRootPath = this.$("#mainRootPath").val();
     }
 
     bindEvents(): void {
@@ -70,6 +72,10 @@ class Nickname {
         });
 
         this.$("#buttonBack").click(alpha.core.signOut);
+
+        this.$(".changelanguage-link").click(function (): void {
+            self.changeLanguage(self.$(this).data("value"));
+        });
     }
 
     isValidNickname(nickname: string): boolean {
@@ -92,6 +98,19 @@ class Nickname {
 
     removeErrorMessage(): void {
         this.$nicknameLabel.empty().removeClass("error");
+    }
+
+    changeLanguage(lang: string): void {
+        this.$.ajax({
+            type: "POST",
+            url: this.mainRootPath + "Language/Change",
+            data: { languageCode: lang },
+            success: function (result) {
+                if (result) {
+                    window.location.reload(true);
+                }
+            }
+        });
     }
 }
 

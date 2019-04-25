@@ -24,6 +24,7 @@
     <div class="block">
         @using (Html.BeginForm("Index", "Nickname", FormMethod.Post, new { id = "frmNickname", @class = "form-SC form-validation", novalidate = "novalidate" }))
         {
+            @Html.Action("Languages", "SecurityCode")
             @Html.AntiForgeryToken()
             <h1 class="title">@Resources.nickname</h1>
             <p>
@@ -36,7 +37,7 @@
             </p>
             <p class="lblUsername">@Resources.username: <strong class="txtAccent">@Model.Username</strong></p>
             <div class="rowlg">
-                <input type="text" id="nickname" name="nickname" value="@Model.Nickname" class="txt nickname" autocomplete="off" placeholder="@Resources.nickname" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>
+                <input type="text" id="nickname" name="nickname" value="@Model.Nickname" class="txt nickname" autocomplete="off" placeholder="@Resources.nickname" maxlength="15" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>
                 <label id="nickname-error" class="error">
                     @if (Model.Result?.IsFailed == true)
                     {
@@ -76,6 +77,7 @@
             @Html.ActionLink(Resources.NicknameSkipText, "Index", "Default", null, new { @class = "skipOption" })
         }
     </div>
+    @Html.Hidden("mainRootPath", CreateNicknameViewModel.MainRootPath)
     @Html.Hidden("oldMainRootPath", CreateNicknameViewModel.OldMainRootPath)
     @Html.Hidden("nicknameRule", Resources.NicknameRule)
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")

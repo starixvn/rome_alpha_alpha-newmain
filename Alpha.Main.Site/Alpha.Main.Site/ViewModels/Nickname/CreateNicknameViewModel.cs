@@ -35,6 +35,9 @@
         public string Username
             => userSession.UserName;
 
+        public static string MainRootPath
+            => UrlHelper.MapMainPath("~");
+
         public static string OldMainRootPath
             => UrlHelper.MapOldMainPath("~");
 
