@@ -342,7 +342,7 @@
     <value>您的OTP无效或已过期。</value>
   </data>
   <data name="AuthenticatorAppVerified" xml:space="preserve">
-    <value>您的c 已通过验证。</value>
+    <value>您的Authenticator App通过验证。</value>
   </data>
   <data name="RemoveOtpWarning" xml:space="preserve">
     <value>OTP在注册设备将不被系统接受。 您要进行吗？</value>
