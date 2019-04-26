@@ -500,10 +500,10 @@
     <value>昵称必须是独特的，只含有字母或数字，至少五个字符，最多十五个字符</value>
   </data>
   <data name="NicknameCompanyPolicy" xml:space="preserve">
-    <value>You are required to log in by your nickname only as a company policy.</value>
+    <value>To increase security and protect your account, you are required to login only by nickname.</value>
   </data>
   <data name="NicknameEffectedFrom" xml:space="preserve">
-    <value>This new policy will take effect from {0}.</value>
+    <value>New policy will take effect from {0}.</value>
   </data>
   <data name="NicknameNote1" xml:space="preserve">
     <value>You are not allowed to change your nickname afterward.</value>
@@ -520,7 +520,13 @@
   <data name="NicknameSkipText" xml:space="preserve">
     <value>Skip this step and go to Home Page</value>
   </data>
-  <data name="Note" xml:space="preserve">
-    <value>Note</value>
+  <data name="NicknameRules" xml:space="preserve">
+    <value>Nickname rules</value>
+  </data>
+  <data name="PleaseChooseNickname" xml:space="preserve">
+    <value>Please choose your desired nickname</value>
+  </data>
+  <data name="PleaseSelectLoginByNickname" xml:space="preserve">
+    <value>Please select Login by nickname only</value>
   </data>
 </root>

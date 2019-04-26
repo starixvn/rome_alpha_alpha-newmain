@@ -17,10 +17,9 @@
     }
 }
 
-.list-note {
+.modal.information .modal-content .modal-body ul.list-note {
     list-style: none;
-    color: #666;
-    font-style: italic;
+    padding: 0;
 
     li {
         line-height: 24px;

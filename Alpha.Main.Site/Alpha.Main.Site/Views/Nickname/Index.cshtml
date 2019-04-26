@@ -32,10 +32,10 @@
                 @if (Model.IsRecommendLoginByNickname)
                 {
                     <br />
-                    <span class="text-red">@Model.NicknameEffectedFrom</span>
+                    <span class="text-red bold">@Model.NicknameEffectedFrom</span>
                 }
             </p>
-            <p class="lblUsername">@Resources.username: <strong class="txtAccent">@Model.Username</strong></p>
+            <p class="lblUsername">@(Model.IsDisableUpdateNickname ? Resources.PleaseSelectLoginByNickname : Resources.PleaseChooseNickname):</p>
             <div class="rowlg">
                 <input type="text" id="nickname" name="nickname" value="@Model.Nickname" class="txt nickname" autocomplete="off" placeholder="@Resources.nickname" maxlength="15" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>
                 <label id="nickname-error" class="error">
@@ -60,23 +60,36 @@
                     <label class="label-text txtAccent bold" for="loginByNickname">@Resources.NicknameOption2</label>
                 </div>
             </div>
-            <div class="rules" id="rules">
-                <div class="bold"><span class="text-red">*</span> @Resources.Note:</div>
-                <ul class="list-note">
-                    <li>@Resources.NicknameNote1</li>
-                    <li>@Resources.NicknameNote2</li>
-                </ul>
-            </div>
             <div class="list-buttons">
                 <button type="button" class="btn-cancel" id="buttonBack">@Resources.lblBack</button>
                 <button type="submit" class="btn-submit" id="buttonSubmit" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>@Resources.submit</button>
             </div>
         }
-        @if (Model.IsRecommendLoginByNickname)
-        {
-            @Html.ActionLink(Resources.NicknameSkipText, "Index", "Default", null, new { @class = "skipOption" })
-        }
+        <div class="rules" id="rules">
+            <div class="rules-title" data-toggle="modal" data-target="#nicknameRules"><span class="icon-information-outline icon-rules"></span>@Resources.NicknameRules</div>
+            <!-- Modal -->
+            <div class="modal fade information" id="nicknameRules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="icon icon-close close" data-dismiss="modal" aria-label="Close"></span>
+                            <h4 class="modal-title" id="myModalLabel"><span class="icon-information-outline icon-rules"></span>@Resources.NicknameRules</h4>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="list-note">
+                                <li>@Resources.NicknameNote1</li>
+                                <li>@Resources.NicknameNote2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    @if (Model.IsRecommendLoginByNickname)
+    {
+        @Html.ActionLink(Resources.NicknameSkipText, "Index", "Default", null, new { @class = "skipOption rules-title" })
+    }
     @Html.Hidden("mainRootPath", CreateNicknameViewModel.MainRootPath)
     @Html.Hidden("oldMainRootPath", CreateNicknameViewModel.OldMainRootPath)
     @Html.Hidden("nicknameRule", Resources.NicknameRule)

@@ -647,7 +647,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You are required to log in by your nickname only as a company policy..
+        ///   Looks up a localized string similar to To increase security and protect your account, you are required to login only by nickname..
         /// </summary>
         public static string NicknameCompanyPolicy {
             get {
@@ -656,7 +656,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This new policy will take effect from {0}..
+        ///   Looks up a localized string similar to New policy will take effect from {0}..
         /// </summary>
         public static string NicknameEffectedFrom {
             get {
@@ -710,6 +710,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nickname rules.
+        /// </summary>
+        public static string NicknameRules {
+            get {
+                return ResourceManager.GetString("NicknameRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skip this step and go to Home Page.
         /// </summary>
         public static string NicknameSkipText {
@@ -751,15 +760,6 @@ namespace Alpha.Main.AppResources {
         public static string normalAnnouncement {
             get {
                 return ResourceManager.GetString("normalAnnouncement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Note.
-        /// </summary>
-        public static string Note {
-            get {
-                return ResourceManager.GetString("Note", resourceCulture);
             }
         }
         
@@ -868,6 +868,24 @@ namespace Alpha.Main.AppResources {
         public static string PlayForFunGuidelines {
             get {
                 return ResourceManager.GetString("PlayForFunGuidelines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose your desired nickname.
+        /// </summary>
+        public static string PleaseChooseNickname {
+            get {
+                return ResourceManager.GetString("PleaseChooseNickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select Login by nickname only.
+        /// </summary>
+        public static string PleaseSelectLoginByNickname {
+            get {
+                return ResourceManager.GetString("PleaseSelectLoginByNickname", resourceCulture);
             }
         }
         
