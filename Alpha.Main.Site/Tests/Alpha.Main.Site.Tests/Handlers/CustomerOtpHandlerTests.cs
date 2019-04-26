@@ -27,6 +27,7 @@
         private CustomerProfileService customerProfileService;
         private BrowserHelper browserHelper;
         private IUser user;
+        private NicknameChecker nicknameChecker;
 
         [SetUp]
         public void SetUp()
@@ -41,7 +42,9 @@
             user = Substitute.For<IUser>();
             user.IsAdminCanUpdateSubAccount.Returns(true);
 
-            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, customerProfileService, browserHelper, user);
+            nicknameChecker = Substitute.For<NicknameChecker>();
+
+            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, customerProfileService, browserHelper, user, nicknameChecker);
         }
 
         #region Handle Change Otp Status Command

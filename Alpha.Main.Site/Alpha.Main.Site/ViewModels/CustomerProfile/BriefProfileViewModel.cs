@@ -21,5 +21,7 @@
         public string IntroduceNickNameTooltipCookieName { get; set; }
 
         public bool IsEnableOtp { get; set; }
+
+        public bool IsHideNicknameLink { get; set; }
     }
 }

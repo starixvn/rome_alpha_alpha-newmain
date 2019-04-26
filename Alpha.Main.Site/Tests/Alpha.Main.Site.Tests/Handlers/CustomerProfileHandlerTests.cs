@@ -15,6 +15,7 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Site.Handlers;
     using Site.ViewModels.CustomerProfile;
     using Sunplus.Agent.Model.Entities;
+    using Web.Helpers;
 
     [TestFixture]
     public class CustomerProfileHandlerTests
@@ -22,12 +23,14 @@ namespace Alpha.Main.Site.Tests.Handlers
         private CustomerProfileService customerProfileService;
         private CustomerProfileHandler customerProfileHandler;
         private IUserSession userSession;
+        private NicknameChecker nicknameChecker;
 
         [SetUp]
         public void SetUp()
         {
             customerProfileService = Substitute.For<CustomerProfileService>();
-            customerProfileHandler = new CustomerProfileHandler(customerProfileService);
+            nicknameChecker = Substitute.For<NicknameChecker>();
+            customerProfileHandler = new CustomerProfileHandler(customerProfileService, nicknameChecker);
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
             userSession = Substitute.For<IUserSession>();
         }
@@ -72,7 +75,7 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             var query = new BriefProfileQuery(userSession);
 
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService);
+            var customerProfileHandler = new CustomerProfileHandler(customerProfileService, nicknameChecker);
 
             // Act
             var viewModel = customerProfileHandler.Handle(query);
