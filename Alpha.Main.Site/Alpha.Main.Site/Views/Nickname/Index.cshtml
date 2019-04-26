@@ -60,7 +60,7 @@
                     <label class="label-text txtAccent bold" for="loginByNickname">@Resources.NicknameOption2</label>
                 </div>
             </div>
-            <div class="list-buttons">
+            <div>
                 <button type="button" class="btn-cancel" id="buttonBack">@Resources.lblBack</button>
                 <button type="submit" class="btn-submit" id="buttonSubmit" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>@Resources.submit</button>
             </div>
@@ -86,9 +86,12 @@
             </div>
         </div>
     </div>
+    
     @if (Model.IsRecommendLoginByNickname)
     {
-        @Html.ActionLink(Resources.NicknameSkipText, "Index", "Default", null, new { @class = "skipOption rules-title" })
+        <div class="skipOption">
+            @Html.ActionLink(Resources.NicknameSkipText, "Index", "Default", null, new { @class = "link" })
+        </div>        
     }
     @Html.Hidden("mainRootPath", CreateNicknameViewModel.MainRootPath)
     @Html.Hidden("oldMainRootPath", CreateNicknameViewModel.OldMainRootPath)
