@@ -95,7 +95,8 @@
                 message.IsViewedMemberInfo,
                 IsEnabledOtp,
                 profilePicture.UseDefaultAvatar,
-                profilePicture.ImageData != null ? $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}" : string.Empty);
+                profilePicture.ImageData != null ? $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}" : string.Empty,
+                message.ShowNicknameMenu);
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 

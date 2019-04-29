@@ -5,6 +5,8 @@ namespace Alpha.Main.Site.Models.Requests
     using Configurations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
+    using System;
+    using System.Linq;
     using ViewModels;
 
     public class IndexQuery : IRequest<IndexViewModel>
@@ -60,5 +62,16 @@ namespace Alpha.Main.Site.Models.Requests
         public bool IsViewedMemberInfo => userSession.SubPageAccess.ViewMemberInfo;
 
         public bool DisableMessages => disableMessages;
+
+        public bool ShowNicknameMenu
+            => Web.Configurations.AppSettings.ForceLoginNicknameDate > DateTime.Now
+                || (Web.Configurations.AppSettings.ForceLoginNicknameIgnoreList.Count > 0
+                    && new[]
+                    {
+                        userSession.SRecommendId,
+                        userSession.MRecommendId,
+                        userSession.ARecommendId,
+                        userSession.CustId
+                    }.Any(id => id != 0 && Web.Configurations.AppSettings.ForceLoginNicknameIgnoreList.ContainsKey(id)));
     }
 }
