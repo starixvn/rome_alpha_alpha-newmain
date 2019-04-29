@@ -139,7 +139,8 @@ namespace Alpha.Main.Site.Controllers
             {
                 var urlReferrer = Request.UrlReferrer?.AbsolutePath;
 
-                return urlReferrer != null && urlReferrer.IndexOf("nickname", StringComparison.OrdinalIgnoreCase) == -1;
+                return urlReferrer != null && urlReferrer.IndexOf("nickname", StringComparison.OrdinalIgnoreCase) == -1 &&
+                    urlReferrer.IndexOf("site-main", StringComparison.OrdinalIgnoreCase) == -1;
             }
 
             return false;
