@@ -41,9 +41,9 @@ namespace Alpha.Main.Site.Controllers
             this.nicknameChecker = nicknameChecker;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string action = null)
         {
-            if (IsRedirectToNicknamePage())
+            if (IsRedirectToNicknamePage(action))
             {
                 return RedirectToAction("Index", "Nickname");
             }
@@ -133,14 +133,13 @@ namespace Alpha.Main.Site.Controllers
             }
         }
 
-        private bool IsRedirectToNicknamePage()
+        private bool IsRedirectToNicknamePage(string action)
         {
-            if (nicknameChecker.IsRecommendLoginByNickname)
-            {
-                var urlReferrer = Request.UrlReferrer?.AbsolutePath;
-
-                return urlReferrer != null && urlReferrer.IndexOf("nickname", StringComparison.OrdinalIgnoreCase) == -1 &&
-                    urlReferrer.IndexOf("site-main", StringComparison.OrdinalIgnoreCase) == -1;
+            if (nicknameChecker.IsRecommendLoginByNickname) {
+                return Request.UrlReferrer?.AbsolutePath != null
+                    && Request.UrlReferrer?.AbsolutePath.IndexOf("nickname", StringComparison.OrdinalIgnoreCase) == -1
+                    && Request.UrlReferrer?.AbsolutePath.IndexOf("default", StringComparison.OrdinalIgnoreCase) == -1
+                    || string.IsNullOrWhiteSpace(action);
             }
 
             return false;

@@ -90,7 +90,7 @@
     @if (Model.IsRecommendLoginByNickname)
     {
         <div class="skipOption">
-            @Html.ActionLink(Resources.NicknameSkipText, "Index", "Default", null, new { @class = "link" })
+            <a class="link" href="~/Default/Index?action=Skip">@Resources.NicknameSkipText</a>
         </div>        
     }
     @Html.Hidden("mainRootPath", CreateNicknameViewModel.MainRootPath)
