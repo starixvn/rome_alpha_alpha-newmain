@@ -407,4 +407,7 @@
   <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
     <value>OTP无效或过期。请尝试另一个OTP或联系您的上线以重置您的OTP。</value>
   </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>退回</value>
+  </data>
 </root>

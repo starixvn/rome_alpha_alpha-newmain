@@ -500,33 +500,33 @@
     <value>昵稱必須是獨特的，只含有字母或數字，至少五個字符，最多十五個字符</value>
   </data>
   <data name="NicknameCompanyPolicy" xml:space="preserve">
-    <value>To increase security and protect your account, you are required to login only by nickname.</value>
+    <value>為了提高安全性並保護您的帳戶，您必須用昵稱登錄。</value>
   </data>
   <data name="NicknameEffectedFrom" xml:space="preserve">
-    <value>New policy will take effect from {0}.</value>
+    <value>新政策將生效予 {0}.</value>
   </data>
   <data name="NicknameNote1" xml:space="preserve">
-    <value>You are not allowed to change your nickname afterward.</value>
+    <value>暱稱之後將不允許更改.</value>
   </data>
   <data name="NicknameNote2" xml:space="preserve">
-    <value>Only your direct upline can see your nickname.</value>
+    <value>只有您的直系上線才能看到您的昵稱。</value>
   </data>
   <data name="NicknameOption1" xml:space="preserve">
-    <value>Login by username or nickname</value>
+    <value>用戶名或昵稱登入</value>
   </data>
   <data name="NicknameOption2" xml:space="preserve">
-    <value>Login by nickname only</value>
+    <value>僅昵稱登入</value>
   </data>
   <data name="NicknameSkipText" xml:space="preserve">
-    <value>Skip this step and go to Home Page</value>
+    <value>略過此步驟並前往首頁</value>
   </data>
   <data name="NicknameRules" xml:space="preserve">
-    <value>Nickname rules</value>
+    <value>暱稱規則</value>
   </data>
   <data name="PleaseChooseNickname" xml:space="preserve">
-    <value>Please choose your desired nickname</value>
+    <value>請設定您的暱稱</value>
   </data>
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
-    <value>Please select Login by nickname only</value>
+    <value>請選擇"僅限暱稱登錄”</value>
   </data>
 </root>
