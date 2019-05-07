@@ -3,7 +3,6 @@
     using System.Net;
     using System.Web;
     using System.Web.Mvc;
-    using AppResources;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
     using MediatR;
@@ -17,6 +16,7 @@
     using Site.Requests.Otp;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
+    using Web.Helpers;
 
     [TestFixture]
     public class DefaultControllerTests
@@ -24,6 +24,7 @@
         private IUserSession userSession;
         private IMediator mediator;
         private SecurityCodeChecker securityCodeChecker;
+        private NicknameChecker nicknameChecker;
         private DefaultController defaultController;
 
         [SetUp]
@@ -35,8 +36,9 @@
 
             mediator = Substitute.For<IMediator>();
             securityCodeChecker = Substitute.For<SecurityCodeChecker>();
+            nicknameChecker = Substitute.For<NicknameChecker>();
 
-            defaultController = new DefaultController(userSession, mediator, securityCodeChecker);
+            defaultController = new DefaultController(userSession, mediator, securityCodeChecker, nicknameChecker);
         }
 
         [Test]

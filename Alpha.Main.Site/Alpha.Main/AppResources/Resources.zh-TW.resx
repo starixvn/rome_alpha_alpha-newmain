@@ -493,4 +493,40 @@
   <data name="Total" xml:space="preserve">
     <value>總和</value>
   </data>
+  <data name="ConfiguredNicknameSuccessfully" xml:space="preserve">
+    <value>您的暱稱創建成功</value>
+  </data>
+  <data name="NicknameRule" xml:space="preserve">
+    <value>昵稱必須是獨特的，只含有字母或數字，至少五個字符，最多十五個字符</value>
+  </data>
+  <data name="NicknameCompanyPolicy" xml:space="preserve">
+    <value>為了提高安全性並保護您的帳戶，您必須用昵稱登錄。</value>
+  </data>
+  <data name="NicknameEffectedFrom" xml:space="preserve">
+    <value>新政策將生效予 {0}.</value>
+  </data>
+  <data name="NicknameNote1" xml:space="preserve">
+    <value>暱稱之後將不允許更改.</value>
+  </data>
+  <data name="NicknameNote2" xml:space="preserve">
+    <value>只有您的直系上線才能看到您的昵稱。</value>
+  </data>
+  <data name="NicknameOption1" xml:space="preserve">
+    <value>用戶名或昵稱登入</value>
+  </data>
+  <data name="NicknameOption2" xml:space="preserve">
+    <value>僅昵稱登入</value>
+  </data>
+  <data name="NicknameSkipText" xml:space="preserve">
+    <value>略過此步驟並前往首頁</value>
+  </data>
+  <data name="NicknameRules" xml:space="preserve">
+    <value>暱稱規則</value>
+  </data>
+  <data name="PleaseChooseNickname" xml:space="preserve">
+    <value>請設定您的暱稱</value>
+  </data>
+  <data name="PleaseSelectLoginByNickname" xml:space="preserve">
+    <value>請選擇"僅限暱稱登錄”</value>
+  </data>
 </root>

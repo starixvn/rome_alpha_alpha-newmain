@@ -2,6 +2,7 @@
 
 namespace Alpha.Main.Site.Controllers
 {
+    using System;
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
@@ -16,41 +17,35 @@ namespace Alpha.Main.Site.Controllers
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
     using Web;
+    using Web.Helpers;
 
     public class DefaultController : BaseController
     {
-        private const string ForceChangePasswordPath = "~/Password/ForceChangePassword";
-        private const string SecurityCodePath = "~/SecurityCode/Index";
         private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
         private const string UnSupportedBrowsers = "UnsupportedBrowsers";
 
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
         private readonly SecurityCodeChecker securityCodeChecker;
+        private readonly NicknameChecker nicknameChecker;
 
         public DefaultController(
             IUserSession userSession,
             IMediator mediator,
-            SecurityCodeChecker securityCodeChecker)
+            SecurityCodeChecker securityCodeChecker,
+            NicknameChecker nicknameChecker)
         {
             this.userSession = userSession;
             this.mediator = mediator;
             this.securityCodeChecker = securityCodeChecker;
+            this.nicknameChecker = nicknameChecker;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string action = null)
         {
-            var browser = mediator.Send(new BrowserQuery(userSession));
-
-            if (browser.IsUnsupportedBrowser)
+            if (IsRedirectToNicknamePage(action))
             {
-                return View(UnSupportedBrowsers, browser);
-            }
-
-            if (!userSession.IsLogged
-                || userSession.IsPasswordExpired)
-            {
-                return Redirect(ForceChangePasswordPath);
+                return RedirectToAction("Index", "Nickname");
             }
 
             if (mediator.Send(new CheckDifferenceDeviceCommand(this.userSession)))
@@ -58,9 +53,11 @@ namespace Alpha.Main.Site.Controllers
                 return Redirect(OtpVerifyDifferenceDevicePath);
             }
 
-            if (securityCodeChecker.IsForcedChangeSecurityCode())
+            var browser = mediator.Send(new BrowserQuery(userSession));
+
+            if (browser.IsUnsupportedBrowser)
             {
-                return Redirect(SecurityCodePath);
+                return View(UnSupportedBrowsers, browser);
             }
 
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), null);
@@ -134,6 +131,18 @@ namespace Alpha.Main.Site.Controllers
             {
                 FormsAuthentication.SignOut();
             }
+        }
+
+        private bool IsRedirectToNicknamePage(string action)
+        {
+            if (nicknameChecker.IsRecommendLoginByNickname) {
+                return Request.UrlReferrer?.AbsolutePath != null
+                    && Request.UrlReferrer?.AbsolutePath.IndexOf("nickname", StringComparison.OrdinalIgnoreCase) == -1
+                    && Request.UrlReferrer?.AbsolutePath.IndexOf("default", StringComparison.OrdinalIgnoreCase) == -1
+                    || string.IsNullOrWhiteSpace(action);
+            }
+
+            return false;
         }
     }
 }

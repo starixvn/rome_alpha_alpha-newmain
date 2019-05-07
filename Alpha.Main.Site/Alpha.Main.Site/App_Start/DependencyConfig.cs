@@ -72,7 +72,7 @@
         {
             yield return typeof(DefaultHandler).Assembly;
         }
-        
+
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "Reviewed!")]
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
         private static void RegisterServices(Container container)
@@ -116,6 +116,11 @@
             container.RegisterSingleton<AesService, AesServiceImpl>();
 
             container.RegisterPerWebRequest<LogoutService, LogoutServiceImpl>();
+
+            container.RegisterPerWebRequest<NicknameService, NicknameServiceImpl>();
+
+            container.RegisterPerWebRequest<NicknameChecker>(() =>
+                new NicknameCheckerImpl(userSession: container.GetInstance<IUserSession>()));
         }
 
         private static void RegisterDataAccesses(Container container)

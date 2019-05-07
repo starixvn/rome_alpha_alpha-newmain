@@ -240,5 +240,18 @@
     "inputFiles": [
       "Assets/scripts/chatbot/chatbot-guide.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/nickname/create-nickname.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/nickname/create-nickname.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/nickname/nickname.css",
+    "inputFiles": [
+      "Assets/styles/nickname/nickname.css"
+    ]
   }
 ]

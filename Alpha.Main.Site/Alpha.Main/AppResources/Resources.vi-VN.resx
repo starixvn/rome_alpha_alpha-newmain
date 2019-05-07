@@ -130,7 +130,7 @@
     <value>Người quản trị</value>
   </data>
   <data name="nickname" xml:space="preserve">
-    <value>Biệt danh</value>
+    <value>Biệt Danh</value>
   </data>
   <data name="configNow" xml:space="preserve">
     <value>Cấu hình ngay</value>
@@ -491,5 +491,41 @@
   </data>
   <data name="Total" xml:space="preserve">
     <value>Tổng cộng</value>
+  </data>
+  <data name="ConfiguredNicknameSuccessfully" xml:space="preserve">
+    <value>Biệt Danh của bạn đã được thiết lập xong</value>
+  </data>
+  <data name="NicknameRule" xml:space="preserve">
+    <value>Biệt Danh không được giống nhau và chỉ chứa ký tự chữ cái và số đếm. Phải có ít nhất từ 5 đến 15 ký tự</value>
+  </data>
+  <data name="NicknameCompanyPolicy" xml:space="preserve">
+    <value>Để tăng cường bảo mật và bảo vệ tài khoản của bạn, bạn được yêu cầu chỉ sử dụng Biệt Danh để đăng nhập.</value>
+  </data>
+  <data name="NicknameEffectedFrom" xml:space="preserve">
+    <value>Chính sách mới có hiệu tực từ ngày {0}.</value>
+  </data>
+  <data name="NicknameNote1" xml:space="preserve">
+    <value>Sau này bạn sẽ không được thay đổi Biệt Danh.</value>
+  </data>
+  <data name="NicknameNote2" xml:space="preserve">
+    <value>Chỉ có cấp trên trực tiếp thấy được Biệt Danh của bạn.</value>
+  </data>
+  <data name="NicknameOption1" xml:space="preserve">
+    <value>Đăng nhập bằng tên đăng nhập hoặc Biệt Danh</value>
+  </data>
+  <data name="NicknameOption2" xml:space="preserve">
+    <value>Chỉ đăng nhập bằng Biệt Danh</value>
+  </data>
+  <data name="NicknameSkipText" xml:space="preserve">
+    <value>Bỏ qua bước này và đi đến Trang Chủ</value>
+  </data>
+  <data name="NicknameRules" xml:space="preserve">
+    <value>Quy tắc Biệt Danh</value>
+  </data>
+  <data name="PleaseChooseNickname" xml:space="preserve">
+    <value>Vui lòng đặt tên Biệt Danh mong muốn của bạn</value>
+  </data>
+  <data name="PleaseSelectLoginByNickname" xml:space="preserve">
+    <value>Vui lòng chọn Chỉ đăng nhập bằng Biệt Danh</value>
   </data>
 </root>

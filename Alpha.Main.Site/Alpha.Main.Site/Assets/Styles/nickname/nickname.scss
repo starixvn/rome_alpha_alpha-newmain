@@ -1,0 +1,52 @@
+﻿.text-red {
+    color: #ff0000;
+}
+
+.lblUsername {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.radio label {
+    &:before {
+        top: 3px;
+    }
+
+    &:after {
+        top: 6px;
+    }
+}
+
+.modal.information .modal-content .modal-body ul.list-note {
+    list-style: none;
+    padding: 0;
+
+    li {
+        line-height: 24px;
+
+        &:before {
+            content: "-";
+            display: inline-block;
+            margin-right: 4px;
+        }
+    }
+}
+
+.skipOption {
+    padding-top: 16px;
+    text-align: center;
+}
+
+.txtAccent {
+    color: #333;
+}
+
+.block {
+    .nickname {
+        opacity: 1 !important;
+    }
+
+    label.bold {
+        font-weight: bold;
+    }
+}

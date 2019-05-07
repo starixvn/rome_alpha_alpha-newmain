@@ -7,5 +7,7 @@
         public CustomerOtp CustomerOtp { get; set; }
 
         public bool IsAlreadySetup { get; set; }
+
+        public bool IsShowNicknameLink { get; set; }
     }
 }

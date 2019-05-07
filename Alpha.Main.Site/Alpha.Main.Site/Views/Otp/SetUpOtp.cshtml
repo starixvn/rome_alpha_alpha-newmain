@@ -16,9 +16,12 @@
         <li role="presentation">
             <a id="profilePicture" href="@MicroSites.OldMainUrl($"~/ProfilePicture/")">@Resources.EditProfilePicture</a>
         </li>
-        <li role="presentation">
-            <a href="@MicroSites.OldMainUrl($"~/LoginOption/?custid={Model.CustomerOtp.CustId}")">@Resources.nickname</a>
-        </li>
+        @if (Model.IsShowNicknameLink)
+        {
+            <li role="presentation">
+                <a href="@MicroSites.OldMainUrl($"~/LoginOption/?custid={Model.CustomerOtp.CustId}")">@Resources.nickname</a>
+            </li>
+        }
         <li role="presentation" class="active">
             <a href="#otp" aria-controls="home" role="tab" data-toggle="tab">OTP</a>
         </li>
@@ -27,9 +30,12 @@
         <div role="tabpanel" class="tab-pane" id="profilePicture">
             @Resources.EditProfilePicture
         </div>
-        <div role="tabpanel" class="tab-pane" id="nickname">
-            @Resources.nickname
-        </div>
+        @if (Model.IsShowNicknameLink)
+        {
+            <div role="tabpanel" class="tab-pane" id="nickname">
+                @Resources.nickname
+            </div>
+        }
         <div role="tabpanel" class="tab-pane active otp-config" id="otp">
             <p>
                 @Security.OtpNotes

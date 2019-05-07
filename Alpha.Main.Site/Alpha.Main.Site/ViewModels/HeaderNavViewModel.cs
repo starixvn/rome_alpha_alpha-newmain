@@ -13,7 +13,8 @@
             bool isViewedMemberInfo,
             bool isEnabledOtp,
             bool isDefaultAvatar,
-            string embedImage)
+            string embedImage,
+            bool showNicknameMenu)
         {
             CustId = custId;
             EnableSecurityCode = enableSecurityCode;
@@ -23,6 +24,7 @@
             IsEnabledOtp = isEnabledOtp;
             IsDefaultAvatar = isDefaultAvatar;
             EmbedImage = embedImage;
+            ShowNicknameMenu = showNicknameMenu;
         }
 
         public int CustId { get; }
@@ -52,5 +54,7 @@
         public bool IsDefaultAvatar { get; }
 
         public string EmbedImage { get;}
+
+        public bool ShowNicknameMenu { get; }
     }
 }

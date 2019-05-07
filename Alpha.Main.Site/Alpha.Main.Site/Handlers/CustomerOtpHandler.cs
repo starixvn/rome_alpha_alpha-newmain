@@ -34,6 +34,7 @@
         private readonly CustomerProfileService customerProfileService;
         private readonly BrowserHelper browserHelper;
         private readonly IUser user;
+        private readonly NicknameChecker nicknameChecker;
 
         public CustomerOtpHandler(
             CustomerOtpService customerOtpService,
@@ -41,7 +42,8 @@
             SessionManager sessionManager,
             CustomerProfileService customerProfileService,
             BrowserHelper browserHelper,
-            IUser user)
+            IUser user,
+            NicknameChecker nicknameChecker)
         {
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
@@ -49,6 +51,7 @@
             this.customerProfileService = customerProfileService;
             this.browserHelper = browserHelper;
             this.user = user;
+            this.nicknameChecker = nicknameChecker;
         }
 
         public Result Handle(ChangeOtpStatusCommand message)
@@ -242,7 +245,8 @@
             var viewModel = new OtpViewModel
             {
                 CustomerOtp = customerOtpService.GetCustomerOtp(message.CustId, message.SubAccountId),
-                IsAlreadySetup = true
+                IsAlreadySetup = true,
+                IsShowNicknameLink = !nicknameChecker.IsOfferForceLoginAndOverDueDate
             };
 
             if (!viewModel.CustomerOtp.Enabled

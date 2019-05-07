@@ -9,15 +9,20 @@
     using MediatR;
     using Services;
     using ViewModels.CustomerProfile;
+    using Web.Helpers;
 
     public class CustomerProfileHandler :
          IRequestHandler<BriefProfileQuery, BriefProfileViewModel>
     {
         private readonly CustomerProfileService customerProfileService;
+        private readonly NicknameChecker nicknameChecker;
 
-        public CustomerProfileHandler(CustomerProfileService customerProfileService)
+        public CustomerProfileHandler(
+            CustomerProfileService customerProfileService,
+            NicknameChecker nicknameChecker)
         {
             this.customerProfileService = customerProfileService;
+            this.nicknameChecker = nicknameChecker;
         }
 
         public BriefProfileViewModel Handle(BriefProfileQuery message)
@@ -38,7 +43,8 @@
                 LoginUserIsNotMainAccount = message.IsSubAcc || message.IsInternal,
                 NickName = BuildNickName(message),
                 IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{message.CustId}"),
-                IsEnableOtp = message.IsEnabledOtp
+                IsEnableOtp = message.IsEnabledOtp,
+                IsHideNicknameLink = nicknameChecker.IsOfferForceLoginAndOverDueDate
             };
 
             return viewModel;
