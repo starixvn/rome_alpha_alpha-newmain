@@ -33,6 +33,9 @@
                 {
                     <br />
                     <span class="text-red bold">@Model.NicknameEffectedFrom</span>
+                    <div>
+                        <a class="link" href="@Alpha.Web.Helpers.MicroSites.MainUrl("~/Default/Index?action=Skip")">@Resources.NicknameSkipText</a>
+                    </div>
                 }
             </p>
             <p class="lblUsername">@(Model.IsDisableUpdateNickname ? Resources.PleaseSelectLoginByNickname : Resources.PleaseChooseNickname):</p>
@@ -88,12 +91,6 @@
         </div>
     </div>
     
-    @if (Model.IsRecommendLoginByNickname)
-    {
-        <div class="skipOption">
-            <a class="link" href="@Alpha.Web.Helpers.MicroSites.MainUrl("~/Default/Index?action=Skip")">@Resources.NicknameSkipText</a>
-        </div>        
-    }
     @Html.Hidden("mainRootPath", CreateNicknameViewModel.MainRootPath)
     @Html.Hidden("oldMainRootPath", CreateNicknameViewModel.OldMainRootPath)
     @Html.Hidden("nicknameRule", Resources.NicknameRule)
