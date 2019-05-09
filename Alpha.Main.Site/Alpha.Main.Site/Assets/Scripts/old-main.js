@@ -429,7 +429,8 @@ window.bootboxAlert = function (message, handleElement, callbackFunction, popUpO
 
     dialog.css({
         left: position.left || 0,
-        top: position.top || 0
+        top: position.top || 0,
+        width: popUpOptions.width || 500
     });
 };
 
