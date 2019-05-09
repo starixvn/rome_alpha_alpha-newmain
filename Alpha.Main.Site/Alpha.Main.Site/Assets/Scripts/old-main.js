@@ -413,7 +413,8 @@ window.bootboxConfirm = function (message, handleElement, acceptCallback, cancel
     var position = getBootboxPostion(handleElement, popUpOptions, dialog);
     dialog.css({
         left: position.left,
-        top: position.top
+        top: position.top,
+        width: popUpOptions.width || 500
     });
 };
 
