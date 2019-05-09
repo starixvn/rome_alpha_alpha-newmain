@@ -413,8 +413,7 @@ window.bootboxConfirm = function (message, handleElement, acceptCallback, cancel
     var position = getBootboxPostion(handleElement, popUpOptions, dialog);
     dialog.css({
         left: position.left,
-        top: position.top,
-        width: popUpOptions.width || 500
+        top: position.top
     });
 };
 
@@ -430,8 +429,7 @@ window.bootboxAlert = function (message, handleElement, callbackFunction, popUpO
 
     dialog.css({
         left: position.left || 0,
-        top: position.top || 0,
-        width: popUpOptions.width || 500
+        top: position.top || 0
     });
 };
 
