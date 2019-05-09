@@ -496,7 +496,7 @@
     <value>Biệt Danh của bạn đã được thiết lập xong</value>
   </data>
   <data name="NicknameRule" xml:space="preserve">
-    <value>Biệt Danh không được giống nhau và chỉ chứa ký tự chữ cái và số đếm. Phải có ít nhất từ 5 đến 15 ký tự</value>
+    <value>Biệt Danh không được giống nhau và chỉ chứa ký tự chữ cái và số đếm. Phải có ít nhất từ 5 đến 20 ký tự</value>
   </data>
   <data name="NicknameCompanyPolicy" xml:space="preserve">
     <value>Để tăng cường bảo mật và bảo vệ tài khoản của bạn, bạn được yêu cầu chỉ sử dụng Biệt Danh để đăng nhập.</value>

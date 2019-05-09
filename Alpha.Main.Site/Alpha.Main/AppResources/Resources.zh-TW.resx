@@ -497,7 +497,7 @@
     <value>您的暱稱創建成功</value>
   </data>
   <data name="NicknameRule" xml:space="preserve">
-    <value>昵稱必須是獨特的，只含有字母或數字，至少五個字符，最多十五個字符</value>
+    <value>昵稱必須是獨特的，只含有字母或數字，至少5個字符，最多20個字符</value>
   </data>
   <data name="NicknameCompanyPolicy" xml:space="preserve">
     <value>為了提高安全性並保護您的帳戶，您必須用昵稱登錄。</value>

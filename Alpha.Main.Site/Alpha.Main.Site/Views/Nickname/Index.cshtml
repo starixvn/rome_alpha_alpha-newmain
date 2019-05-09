@@ -21,7 +21,7 @@
     <![endif]-->
 </head>
 <body>
-    <div class="block">
+    <div class="block nickname">
         @using (Html.BeginForm("Index", "Nickname", FormMethod.Post, new { id = "frmNickname", @class = "form-SC form-validation", novalidate = "novalidate" }))
         {
             @Html.Action("Languages", "SecurityCode")
