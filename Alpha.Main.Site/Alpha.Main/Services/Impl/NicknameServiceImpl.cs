@@ -9,7 +9,7 @@
 
     public class NicknameServiceImpl : NicknameService
     {
-        private static readonly Regex NicknameRule = new Regex(@"^[a-zA-Z0-9]{5,15}$");
+        private static readonly Regex NicknameRule = new Regex(@"^[a-zA-Z0-9]{5,20}$");
 
         private readonly IDynamicRepository dynamicRepository;
 

@@ -40,7 +40,7 @@
             </p>
             <p class="lblUsername">@(Model.IsDisableUpdateNickname ? Resources.PleaseSelectLoginByNickname : Resources.PleaseChooseNickname):</p>
             <div class="rowlg">
-                <input type="text" id="nickname" name="nickname" value="@Model.Nickname" class="txt nickname" autocomplete="off" placeholder="@Resources.nickname" maxlength="15" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>
+                <input type="text" id="nickname" name="nickname" value="@Model.Nickname" class="txt nickname" autocomplete="off" placeholder="@Resources.nickname" maxlength="20" @(Model.IsDisableUpdateNickname ? "disabled" : string.Empty)>
                 <label id="nickname-error" class="error">
                     @if (Model.Result?.IsFailed == true)
                     {
