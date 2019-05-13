@@ -515,15 +515,15 @@
     <value>เข้าสู่ระบบด้วยชื่อเล่นเท่านั้น</value>
   </data>
   <data name="NicknameSkipText" xml:space="preserve">
-    <value>Skip this step and go to Home Page</value>
+    <value>ข้ามขั้นตอนนี้และกลับไปหน้าเวป</value>
   </data>
   <data name="NicknameRules" xml:space="preserve">
-    <value>Nickname rules</value>
+    <value>กฏการตั้งชื่อเล่น</value>
   </data>
   <data name="PleaseChooseNickname" xml:space="preserve">
-    <value>Please choose your desired nickname</value>
+    <value>กรุณาเลือกชื่อเล่นที่คุณต้องการ</value>
   </data>
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
-    <value>Please select Login by nickname only</value>
+    <value>กรุณาเลือก เข้าสู่ระบบด้วยชื่อเล่นเท่านั้น</value>
   </data>
 </root>
