@@ -79,7 +79,7 @@ class Nickname {
     }
 
     isValidNickname(nickname: string): boolean {
-        const nicknameRuleRegExp: RegExp = new RegExp(/^[a-zA-Z0-9]{5,15}$/i);
+        const nicknameRuleRegExp: RegExp = new RegExp(/^[a-zA-Z0-9]{5,20}$/i);
 
         return nicknameRuleRegExp.test(nickname);
     }
