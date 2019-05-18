@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# cmd "/C _build\assets.build.cmd"
+
+cd Alpha.Main.Site
+cmd "/C build.cmd"
