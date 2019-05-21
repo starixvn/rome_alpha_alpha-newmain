@@ -53,7 +53,7 @@
                         <div class="info level nickname">
                             @if (!string.IsNullOrEmpty(Model.NickName))
                             {
-                                @Model.NickName
+                                @Html.Raw(Model.NickName)
                             }
                             else
                             {

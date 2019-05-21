@@ -74,30 +74,6 @@
             Assert.AreEqual(expectedViewName, result.ViewName);
         }
 
-        [TestCase(false, true)]
-        [TestCase(false, false)]
-        [TestCase(true, true)]
-        public void Index_UserIsNotLoggedOrPasswordIsExpired_RedirectToForceChangePasswordPath(bool isLogged, bool isPasswordExpired)
-        {
-            // Arrange
-            var forceChangePasswordPath = "~/Password/ForceChangePassword";
-
-            userSession.IsLogged.Returns(isLogged);
-            userSession.IsPasswordExpired.Returns(isPasswordExpired);
-
-            mediator.Send(Arg.Any<BrowserQuery>()).Returns(
-                new BrowserViewModel
-                {
-                    IsUnsupportedBrowser = false
-                });
-
-            // Act
-            var result = defaultController.Index() as RedirectResult;
-
-            // Assert
-            Assert.AreEqual(forceChangePasswordPath, result.Url);
-        }
-
         [Test]
         public void Index_VerifyDifferenceDevideCommand_CallsMediatorSendCheckDifferenceDeviceCommand()
         {
@@ -145,31 +121,6 @@
         }
 
         [Test]
-        public void Index_IsForcedChangeSecurityCode_RedirectToSecurityCodePath()
-        {
-            // Arrange
-            userSession.IsLogged.Returns(true);
-            userSession.IsPasswordExpired.Returns(false);
-
-            var securityCodePath = "~/SecurityCode/Index";
-
-            mediator.Send(Arg.Any<BrowserQuery>()).Returns(
-                new BrowserViewModel
-                {
-                    IsUnsupportedBrowser = false
-                });
-
-            mediator.Send(Arg.Any<CheckDifferenceDeviceCommand>()).Returns(false);
-            securityCodeChecker.IsForcedChangeSecurityCode().Returns(true);
-
-            // Act
-            var result = defaultController.Index() as RedirectResult;
-
-            // Assert
-            Assert.AreEqual(securityCodePath, result.Url);
-        }
-
-        [Test]
         public void Index_IsNotForcedChangeSecurityCode_CallsMediatorSendIndexQuery()
         {
             // Arrange
@@ -190,7 +141,7 @@
             securityCodeChecker.IsForcedChangeSecurityCode().Returns(false);
             securityCodeChecker.IsEnableSecurityCode().Returns(true);
 
-            var query = new IndexQuery(userSession, securityCodeChecker.IsEnableSecurityCode(), false);
+            var query = new IndexQuery(userSession, securityCodeChecker.IsEnableSecurityCode(), false, nicknameChecker);
 
             // Act
             defaultController.Index();

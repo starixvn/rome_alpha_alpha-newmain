@@ -32,6 +32,7 @@
         private LogoutService logoutService;
         private CustomerProfileService customerProfileService;
         private ProfilePicture profilePicture;
+        private NicknameChecker nicknameChecker;
 
         [SetUp]
         public void SetUp()
@@ -51,6 +52,8 @@
 
             userSession = Substitute.For<IUserSession>();
             userSession.SubPageAccess.Returns(new PageAccess());
+
+            nicknameChecker = Substitute.For<NicknameChecker>();
         }
 
         [TearDown]
@@ -68,7 +71,7 @@
             // Arrange
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false, false);
+            var query = new IndexQuery(userSession, false, false, nicknameChecker);
 
             // Act
             var viewModel = defaultHandler.Handle(query);
@@ -85,7 +88,7 @@
             userSession.IsPasswordExpired.Returns(true);
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false, false);
+            var query = new IndexQuery(userSession, false, false, nicknameChecker);
 
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));
@@ -115,7 +118,7 @@
             userSession.IsPasswordExpired.Returns(true);
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var query = new IndexQuery(userSession, false, false);
+            var query = new IndexQuery(userSession, false, false, nicknameChecker);
 
             string argumentUsed = null;
             sessionManager.Add(PasswordHashSessionKey, Arg.Do<string>(x => argumentUsed = x));

@@ -120,7 +120,7 @@
             container.RegisterPerWebRequest<NicknameService, NicknameServiceImpl>();
 
             container.RegisterPerWebRequest<NicknameChecker>(() =>
-                new NicknameCheckerImpl(userSession: container.GetInstance<IUserSession>()));
+                new NicknameCheckerImpl(container.GetInstance<IUserSession>()));
         }
 
         private static void RegisterDataAccesses(Container container)

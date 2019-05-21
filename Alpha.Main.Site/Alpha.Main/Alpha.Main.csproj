@@ -49,8 +49,8 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.3.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.3.3\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="Alpha.Web, Version=1.0.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.3.4-nn01\lib\net461\Alpha.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
@@ -237,8 +237,10 @@
     <Compile Include="Criteria\LogoutCommand.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
     <Compile Include="Criteria\Nickname\CreateNicknameCommand.cs" />
+    <Compile Include="Criteria\Nickname\CreateSubAccountNicknameCommand.cs" />
     <Compile Include="Criteria\Nickname\NicknameNonQueryCommand.cs" />
     <Compile Include="Criteria\Nickname\UpdateNicknameLoginOnlyCommand.cs" />
+    <Compile Include="Criteria\Nickname\UpdateSubAccountNicknameLoginOnlyCommand.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommand.cs" />
     <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommand.cs" />
     <Compile Include="Criteria\Otp\GetCustomerOtpCriteria.cs" />

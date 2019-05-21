@@ -18,7 +18,7 @@
         {
             this.userSession = userSession;
             Nickname = string.IsNullOrWhiteSpace(this.userSession.NickName) ? nickname : this.userSession.NickName;
-            this.nicknameChecker = nicknameChecker ?? new NicknameCheckerImpl(userSession: this.userSession);
+            this.nicknameChecker = nicknameChecker ?? new NicknameCheckerImpl(this.userSession);
         }
 
         public string Nickname { get; }

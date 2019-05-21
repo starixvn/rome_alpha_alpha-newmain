@@ -40,31 +40,21 @@
                 EmbedImage = GenerateImage(profile),
                 CustId = message.CustId,
                 Username = HttpUtility.HtmlEncode(message.UserName),
-                LoginUserIsNotMainAccount = message.IsSubAcc || message.IsInternal,
+                IsInternal = message.IsInternal,
                 NickName = BuildNickName(message),
                 IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{message.CustId}"),
                 IsEnableOtp = message.IsEnabledOtp,
-                IsHideNicknameLink = nicknameChecker.IsOfferForceLoginAndOverDueDate
-            };
+                IsHideNicknameLink = nicknameChecker.IsOfferForceLoginAndOverDueDate,
+                SubAccountTooltip = message.IsSubAcc ? $"{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}" : string.Empty
+        };
 
             return viewModel;
         }
 
         private string BuildNickName(BriefProfileQuery message)
-        {
-            if (message.IsSubAcc)
-            {
-                return $"{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}";
-            }
-            else if (message.IsInternal)
-            {
-                return $"{Resources.admin} {HttpUtility.HtmlEncode(message.AdminName)}";
-            }
-            else
-            {
-                return HttpUtility.HtmlEncode(message.NickName);
-            }
-        }
+            => message.IsInternal
+                ? $"{Resources.admin} {HttpUtility.HtmlEncode(message.AdminName)}"
+                : HttpUtility.HtmlEncode(message.NickName);
 
         private string GenerateImage(ProfilePicture profilePicture)
         {

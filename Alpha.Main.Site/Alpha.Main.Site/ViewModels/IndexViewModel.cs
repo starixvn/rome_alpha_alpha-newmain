@@ -125,8 +125,18 @@
         public bool DisableMessages { get; }
 
         internal string BuildNickName(IndexQuery message)
-            => message.IsSubAcc ? $"{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}" :
-               message.IsInternal ? $"{Resources.admin} {HttpUtility.HtmlEncode(message.AdminName)}" :
-               HttpUtility.HtmlEncode(message.NickName);
+        {
+            if (message.IsSubAcc)
+            {
+                return $"<p>{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}</p><p>{HttpUtility.HtmlEncode(message.NickName)}</p>";
+            }
+
+            if (message.IsInternal)
+            {
+                return $"{Resources.admin} {HttpUtility.HtmlEncode(message.AdminName)}";
+            }
+
+            return HttpUtility.HtmlEncode(message.NickName);
+        }
     }
 }

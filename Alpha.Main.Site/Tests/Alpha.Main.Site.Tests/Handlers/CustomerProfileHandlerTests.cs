@@ -147,7 +147,7 @@ namespace Alpha.Main.Site.Tests.Handlers
 
         [TestCase(false, false, false)]
         [TestCase(false, true, true)]
-        [TestCase(true, false, true)]
+        [TestCase(true, false, false)]
         [TestCase(true, true, true)]
         public void HandleBriefProfileQuery_QueryMatchProfile_ReturnIsNotMainAccountMatchWithAccountType(
             bool isSubAccount,
@@ -166,11 +166,11 @@ namespace Alpha.Main.Site.Tests.Handlers
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
-            Assert.AreEqual(expectedIsNotMainAccount, viewModel.LoginUserIsNotMainAccount);
+            Assert.AreEqual(expectedIsNotMainAccount, viewModel.IsInternal);
         }
 
-        [TestCase(true, false, "Sub-Acc ")]
-        [TestCase(true, true, "Sub-Acc ")]
+        [TestCase(true, false, "")]
+        [TestCase(true, true, "Admin ")]
         [TestCase(false, true, "Admin ")]
         [TestCase(false, false, "")]
         public void HandleBriefProfileQuery_QueryMatchProfileWithEmptyName_ReturnNickNameMatchWithAccountType(
@@ -255,10 +255,11 @@ namespace Alpha.Main.Site.Tests.Handlers
                 EmbedImage = "data:image/jpeg;base64,",
                 CustId = query.CustId,
                 Username = "Base64Name",
-                LoginUserIsNotMainAccount = false,
+                IsInternal = false,
                 NickName = "NickName",
                 IntroduceNickNameTooltipCookieName = "40C8226B76C76797A38A6AC830708A",
-                IsEnableOtp = true
+                IsEnableOtp = true,
+                SubAccountTooltip = string.Empty
             };
 
             // Act

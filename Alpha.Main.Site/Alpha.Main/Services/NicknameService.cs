@@ -5,6 +5,6 @@
 
     public interface NicknameService
     {
-        Result CreateNickname(CreateNicknameParam param);
+        Result CreateNickname(CreateNicknameParam param, bool nickNameLoginOnly);
     }
 }
