@@ -370,6 +370,9 @@
   <data name="NicknameNote2" xml:space="preserve">
     <value>Only your direct upline can see your nickname.</value>
   </data>
+  <data name="SubAccNicknameNote2" xml:space="preserve">
+    <value>Only the main account user can see your nickname.</value>
+  </data>
   <data name="NicknameOption1" xml:space="preserve">
     <value>Login by username or nickname</value>
   </data>

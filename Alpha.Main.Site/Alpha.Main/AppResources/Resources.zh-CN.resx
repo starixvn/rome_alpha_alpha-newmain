@@ -511,6 +511,9 @@
   <data name="NicknameNote2" xml:space="preserve">
     <value>只有您的直系上线才能看到您的昵称。</value>
   </data>
+  <data name="SubAccNicknameNote2" xml:space="preserve">
+    <value>Only the main account user can see your nickname.</value>
+  </data>
   <data name="NicknameOption1" xml:space="preserve">
     <value>用户名或昵称登入</value>
   </data>

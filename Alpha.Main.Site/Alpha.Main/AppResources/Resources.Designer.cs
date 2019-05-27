@@ -1100,6 +1100,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Only the main account user can see your nickname..
+        /// </summary>
+        public static string SubAccNicknameNote2 {
+            get {
+                return ResourceManager.GetString("SubAccNicknameNote2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submit.
         /// </summary>
         public static string submit {

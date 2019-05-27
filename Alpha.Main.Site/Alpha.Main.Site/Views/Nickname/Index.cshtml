@@ -82,7 +82,7 @@
                             <ul class="list-note">
                                 <li>@Resources.NicknameRule</li>
                                 <li>@Resources.NicknameNote1</li>
-                                <li>@Resources.NicknameNote2</li>
+                                <li>@(UserSession.Current.IsSubAcc ? Resources.SubAccNicknameNote2 : Resources.NicknameNote2)</li>
                             </ul>
                         </div>
                     </div>
