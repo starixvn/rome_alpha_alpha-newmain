@@ -163,7 +163,7 @@
     <value>半场 / 全场</value>
   </data>
   <data name="lbl1x2" xml:space="preserve">
-    <value>1 X 2</value>
+    <value>独赢盘</value>
   </data>
   <data name="agentList" xml:space="preserve">
     <value>代理</value>
@@ -256,7 +256,7 @@
     <value>会员输赢资料</value>
   </data>
   <data name="moneyline" xml:space="preserve">
-    <value>独赢</value>
+    <value>胜负盘</value>
   </data>
   <data name="monthlywinlossanalysisreport" xml:space="preserve">
     <value>每月输赢分析</value>
