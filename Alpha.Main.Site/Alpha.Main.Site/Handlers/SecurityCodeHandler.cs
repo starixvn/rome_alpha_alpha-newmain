@@ -14,7 +14,6 @@
     using Sunplus.Agent.Utilities;
     using ViewModels.Security;
     using Web.Helpers;
-    using Fanex.Cryptography.Aes;
 
     public class SecurityCodeHandler :
         IRequestHandler<ForceChangeSecurityCodeQuery, ForceChangeSecurityCodeViewModel>,
