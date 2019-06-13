@@ -508,6 +508,9 @@
   <data name="NicknameNote2" xml:space="preserve">
     <value>เฉพาะอัพไลน์ของคุณเท่านั้นที่จะเห็นชื่อเล่นของคุณ</value>
   </data>
+  <data name="SubAccNicknameNote2" xml:space="preserve">
+    <value>เฉพาะอัพไลน์ของคุณเท่านั้นที่จะเห็นชื่อเล่นของคุณ</value>
+  </data>
   <data name="NicknameOption1" xml:space="preserve">
     <value>เข้าสู่ระบบด้วยชื่อผู้ใช้หรือชื่อเล่น</value>
   </data>

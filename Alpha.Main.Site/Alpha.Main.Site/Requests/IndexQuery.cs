@@ -5,24 +5,26 @@ namespace Alpha.Main.Site.Models.Requests
     using Configurations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Linq;
     using ViewModels;
+    using Web.Helpers;
 
     public class IndexQuery : IRequest<IndexViewModel>
     {
         private readonly bool isEnableSecurityCode;
         private readonly IUserSession userSession;
         private readonly bool disableMessages;
+        private readonly NicknameChecker nicknameChecker;
 
         public IndexQuery(
             IUserSession userSession,
             bool isEnableSecurityCode,
-            bool? disableMessages)
+            bool? disableMessages,
+            NicknameChecker nicknameChecker)
         {
             this.userSession = userSession;
             this.isEnableSecurityCode = isEnableSecurityCode;
             this.disableMessages = disableMessages ?? AppSettings.DisableMessages;
+            this.nicknameChecker = nicknameChecker;
         }
 
         public int CustId => userSession.CustId;
@@ -64,14 +66,6 @@ namespace Alpha.Main.Site.Models.Requests
         public bool DisableMessages => disableMessages;
 
         public bool ShowNicknameMenu
-            => Web.Configurations.AppSettings.ForceLoginNicknameDate > DateTime.Now
-                || (Web.Configurations.AppSettings.ForceLoginNicknameIgnoreList.Count > 0
-                    && new[]
-                    {
-                        userSession.SRecommendId,
-                        userSession.MRecommendId,
-                        userSession.ARecommendId,
-                        userSession.CustId
-                    }.Any(id => id != 0 && Web.Configurations.AppSettings.ForceLoginNicknameIgnoreList.ContainsKey(id)));
+            => !nicknameChecker.IsOfferForceLoginAndOverDueDate;
     }
 }

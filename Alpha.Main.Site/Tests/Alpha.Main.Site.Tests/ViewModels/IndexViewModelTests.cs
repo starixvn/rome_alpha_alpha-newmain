@@ -10,6 +10,7 @@
     using Site.Helpers;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
+    using Web.Helpers;
 
     [TestFixture]
     public class IndexViewModelTests
@@ -18,6 +19,7 @@
         private BrowserHelper browserHelper;
         private IndexQuery query;
         private ProfilePicture profilePicture;
+        private NicknameChecker nicknameChecker;
 
         [SetUp]
         public void SetUp()
@@ -25,7 +27,8 @@
           
             userSession = Substitute.For<IUserSession>();
             userSession.SubPageAccess.Returns(new PageAccess());
-            query = new IndexQuery(userSession, false, false);
+            nicknameChecker= Substitute.For<NicknameChecker>();
+            query = new IndexQuery(userSession, false, false, nicknameChecker);
             profilePicture = new ProfilePicture(12, true);
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 

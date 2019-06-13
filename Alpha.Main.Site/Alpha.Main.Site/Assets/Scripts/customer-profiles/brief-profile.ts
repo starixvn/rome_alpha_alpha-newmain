@@ -74,6 +74,8 @@ var briefProfile = {
         if (briefProfile.domElements.adminAndSubAcc.length > 0) {
             briefProfile.domElements.adminAndSubAcc.tooltip();
         }
+
+        $(".nickname-box").tooltip();
     },
 
     cachedDomElements: function () {

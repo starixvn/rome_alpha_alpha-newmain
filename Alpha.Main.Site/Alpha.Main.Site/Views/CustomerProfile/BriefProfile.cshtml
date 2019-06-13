@@ -17,35 +17,33 @@
     <div class="userinfo">
         <span class="userName">@Model.Username</span>
         <br />
-        @if (Model.LoginUserIsNotMainAccount || Model.IsHideNicknameLink)
+        @if (Model.IsHideNicknameLink)
         {
-            <div id="adminAndSubAcc" class="adminAndSubAcc" title="@(Model.NickName)" data-placement="right" data-toggle="tooltip">@Model.NickName</div>
+            <div id="adminAndSubAcc" class="adminAndSubAcc" title="@(Model.SubAccountTooltip.Length == 0 ? Model.NickName : Model.SubAccountTooltip)" data-placement="right" data-toggle="tooltip">@Model.NickName</div>
         }
         else
         {
-            if (!string.IsNullOrEmpty(Model.NickName))
+            <div class="nickname-box" title="@Model.SubAccountTooltip" data-placement="right" data-toggle="tooltip">
+            @if (!string.IsNullOrEmpty(Model.NickName))
             {
-                <div class="nickname-box">
-                    <a href="@changeNickNameUrl" class="linkNickName" id="linkNickNameID" target="@mainFrameName">
-                        <span id="labelNickname">@Model.NickName</span>
-                    </a>
-                </div>
+                <a href="@changeNickNameUrl" class="linkNickName" id="linkNickNameID" target="@mainFrameName">
+                    <span id="labelNickname">@Model.NickName</span>
+                </a>
             }
             else
             {
-                <div class="nickname-box">
-                    <span id="spanNickNameID">@Resources.nickname: </span>
-                    <a href="@changeNickNameUrl" class="linkConfigNow" id="linkNickNameID" target="@mainFrameName">
-                        <span id="labelNickname">@Resources.configNow</span>
-                    </a>
-                </div>
+                <span id="spanNickNameID">@Resources.nickname: </span>
+                <a href="@changeNickNameUrl" class="linkConfigNow" id="linkNickNameID" target="@mainFrameName">
+                    <span id="labelNickname">@Resources.configNow</span>
+                </a>
             }
+            </div>
         }
         <a class="otp" href="@(MicroSites.MainUrl("~/otp/SetUpOtp"))" target="@mainFrameName">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</a>
     </div>
 </div>
 
-@if (!Model.LoginUserIsNotMainAccount)
+@if (!Model.IsInternal)
 {
     if (string.IsNullOrEmpty(Model.NickName))
     {

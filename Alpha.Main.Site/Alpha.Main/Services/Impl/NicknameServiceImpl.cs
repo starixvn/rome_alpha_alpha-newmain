@@ -18,13 +18,11 @@
             this.dynamicRepository = dynamicRepository;
         }
 
-        public Result CreateNickname(CreateNicknameParam param)
+        public Result CreateNickname(CreateNicknameParam param, bool nickNameLoginOnly)
         {
             if (param.IsEnableUpdateNickname)
             {
-                var result = IsValidNickName(param.Nickname)
-                    ? Execute(new CreateNicknameCommand(param))
-                    : Result.CreateErrorResult(Resources.NicknameRule, 100);
+                var result = ValidateAndCreateNickname(param);
 
                 if (result.IsFailed)
                 {
@@ -33,15 +31,34 @@
             }
 
             return UpdateNicknameLoginOnly(
-                new UpdateNicknameLoginOnlyParam(param.CustId, true, param.IP, param.LanguageKey));
+                new UpdateNicknameLoginOnlyParam(param, nickNameLoginOnly));
         }
-        
 
         private static bool IsValidNickName(string nickName)
             => NicknameRule.IsMatch(nickName);
 
+        private Result ValidateAndCreateNickname(CreateNicknameParam param)
+        {
+            if (IsValidNickName(param.Nickname))
+            {
+                NicknameNonQueryCommand command = param.IsSubAccount
+                    ? new CreateSubAccountNicknameCommand(param)
+                    : new CreateNicknameCommand(param);
+
+                return Execute(command);
+            }
+
+            return Result.CreateErrorResult(Resources.NicknameRule, 100);
+        }
+
         private Result UpdateNicknameLoginOnly(UpdateNicknameLoginOnlyParam param)
-            => Execute(new UpdateNicknameLoginOnlyCommand(param));
+        {
+            NicknameNonQueryCommand command = param.IsSubAccount
+                ? new UpdateSubAccountNicknameLoginOnlyCommand(param)
+                : new UpdateNicknameLoginOnlyCommand(param);
+
+            return Execute(command);
+        }
 
         private Result Execute(NicknameNonQueryCommand command)
         {

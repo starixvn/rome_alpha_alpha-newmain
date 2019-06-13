@@ -15,7 +15,7 @@
             NicknameChecker nicknameChecker = null)
         {
             this.userSession = userSession;
-            this.nicknameChecker = nicknameChecker ?? new NicknameCheckerImpl(userSession: this.userSession);
+            this.nicknameChecker = nicknameChecker ?? new NicknameCheckerImpl(this.userSession);
         }
 
         public string Nickname { get; set; }
@@ -24,6 +24,8 @@
             => !string.IsNullOrWhiteSpace(userSession.NickName);
 
         public int ActorId => userSession.CustId;
+
+        public int SubAccountId => userSession.SubAccId;
 
         public string IP => userSession.UserLoginIp;
 

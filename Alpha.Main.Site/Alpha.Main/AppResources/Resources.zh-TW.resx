@@ -511,6 +511,9 @@
   <data name="NicknameNote2" xml:space="preserve">
     <value>只有您的直系上線才能看到您的昵稱。</value>
   </data>
+  <data name="SubAccNicknameNote2" xml:space="preserve">
+    <value>只有您的直系上線才能看到您的昵稱。</value>
+  </data>
   <data name="NicknameOption1" xml:space="preserve">
     <value>用戶名或昵稱登入</value>
   </data>

@@ -14,7 +14,7 @@
 
         public string Username { get; set; }
 
-        public bool LoginUserIsNotMainAccount { get; set; }
+        public bool IsInternal { get; set; }
 
         public string NickName { get; set; }
 
@@ -23,5 +23,7 @@
         public bool IsEnableOtp { get; set; }
 
         public bool IsHideNicknameLink { get; set; }
+
+        public string SubAccountTooltip { get; set; }
     }
 }

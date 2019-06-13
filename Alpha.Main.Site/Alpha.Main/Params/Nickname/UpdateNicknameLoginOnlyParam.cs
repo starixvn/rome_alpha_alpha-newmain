@@ -3,23 +3,27 @@
     public class UpdateNicknameLoginOnlyParam
     {
         public UpdateNicknameLoginOnlyParam(
-            int custId,
-            bool nickNameLoginOnly,
-            string ip,
-            string languageKey)
+            CreateNicknameParam param,
+            bool nickNameLoginOnly)
         {
-            CustId = custId;
+            CustId = param.CustId;
+            SubAccountId = param.SubAccountId;
             NickNameLoginOnly = nickNameLoginOnly;
-            IP = ip;
-            LanguageKey = languageKey;
+            IP = param.IP;
+            LanguageKey = param.LanguageKey;
+            IsSubAccount = param.IsSubAccount;
         }
 
         public int CustId { get; }
+
+        public int SubAccountId { get; }
 
         public bool NickNameLoginOnly { get; }
 
         public string IP { get; }
 
         public string LanguageKey { get; }
+
+        public bool IsSubAccount { get; }
     }
 }

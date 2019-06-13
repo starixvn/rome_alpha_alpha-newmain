@@ -40,5 +40,7 @@
   <Function Name="Nickname">
     <Setting Key="Age_CustomerInsNickName" SpName="Age_CustomerInsNickName" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
     <Setting Key="Age_CustomerUpdNicknameLoginOnly" SpName="Age_CustomerUpdNicknameLoginOnly" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CustSubInsNickname" SpName="Age_CustSubInsNickname" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CustSubUpdNicknameLoginOnly" SpName="Age_CustSubUpdNicknameLoginOnly" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
   </Function>
 </Functions>

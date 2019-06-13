@@ -510,6 +510,9 @@
   <data name="NicknameNote2" xml:space="preserve">
     <value>Chỉ có cấp trên trực tiếp thấy được Biệt Danh của bạn.</value>
   </data>
+  <data name="SubAccNicknameNote2" xml:space="preserve">
+    <value>Chỉ có cấp trên trực tiếp thấy được biệt danh của bạn.</value>
+  </data>
   <data name="NicknameOption1" xml:space="preserve">
     <value>Đăng nhập bằng tên đăng nhập hoặc Biệt Danh</value>
   </data>

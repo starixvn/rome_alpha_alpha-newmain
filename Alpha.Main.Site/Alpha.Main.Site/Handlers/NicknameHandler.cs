@@ -24,17 +24,25 @@
         {
             var isEnableUpdateNickname = !message.IsDisableUpdateNickname;
             var nickname = message.Nickname == null ? string.Empty : message.Nickname.Trim();
+            var isNicknameLoginOnly = true;
 
             var result = nicknameService.CreateNickname(
-                new CreateNicknameParam(message.ActorId, nickname, message.IP, message.LanguageKey, isEnableUpdateNickname));
+                new CreateNicknameParam(
+                    message.ActorId,
+                    message.SubAccountId,
+                    nickname,
+                    message.IP,
+                    message.LanguageKey,
+                    isEnableUpdateNickname),
+                isNicknameLoginOnly);
 
             if (result.IsSuccessful)
             {
-                userSession.IsNicknameLoginOnly = true;
+                userSession.IsNicknameLoginOnly = isNicknameLoginOnly;
 
                 if (isEnableUpdateNickname)
                 {
-                    userSession.NickName = nickname;
+                    userSession.NickName = nickname.ToUpperInvariant();
                 }
             }
 
