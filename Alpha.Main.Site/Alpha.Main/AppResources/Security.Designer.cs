@@ -315,6 +315,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have been logged out because your account&apos;s password has been reset by your upline. Please log in again with the new password. If you have any questions, please contact your upline for assistance..
+        /// </summary>
+        public static string KickoutMessageByForceChangePassword {
+            get {
+                return ResourceManager.GetString("KickoutMessageByForceChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string lblBack {

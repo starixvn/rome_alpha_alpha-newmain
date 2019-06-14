@@ -300,4 +300,7 @@ Notes: your password is cAsE sEnSiTiVe</value>
   <data name="SecurityCodeRules02" xml:space="preserve">
     <value>For example: 123456, 765432, 456789, etc. are NOT allowed.</value>
   </data>
+  <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
+    <value>You have been logged out because your account's password has been reset by your upline. Please log in again with the new password. If you have any questions, please contact your upline for assistance.</value>
+  </data>
 </root>

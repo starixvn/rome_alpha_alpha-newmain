@@ -413,4 +413,7 @@
   <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
     <value>รหัสผ่านครั้งเดียวไม่ถูกต้องหรือหมดอายุแล้ว ลองรหัสผ่านครั้งเดียวอีกครั้งหรือติดต่อต้นสายของคุณเพื่อรีเซ็ตรหัสผ่านครั้งเดียวของคุณ</value>
   </data>
+  <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
+    <value>You have been logged out because your account's password has been reset by your upline. Please log in again with the new password. If you have any questions, please contact your upline for assistance.</value>
+  </data>
 </root>

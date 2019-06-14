@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Alpha.Auth, Version=3.0.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.2.1\lib\net461\Alpha.Auth.dll</HintPath>
+    <Reference Include="Alpha.Auth, Version=3.0.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Auth.3.0.2.2-pwd01\lib\net461\Alpha.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Alpha.SubAccount, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -236,6 +236,7 @@
     <Compile Include="Constants\RoleId.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceInfoCriteriaTests.cs" />
     <Compile Include="Criteria\BalanceInfo\GetBalanceUpDayInfoCriteriaTests.cs" />
+    <Compile Include="Criteria\KickoutCustomerCriteriaTests.cs" />
     <Compile Include="Criteria\LogoutCommandTests.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteriaTests.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommandTests.cs" />
@@ -272,6 +273,7 @@
     <Compile Include="Helpers\Impl\JsonHelperImplTests.cs" />
     <Compile Include="Models\Enumerations\EnumerationTests.cs" />
     <Compile Include="Models\Enumerations\UserLevelForTesting.cs" />
+    <Compile Include="Services\KickoutCustomerServiceImplTests.cs" />
     <Compile Include="Services\MemberRequestsServiceImplTest.cs" />
     <Compile Include="Services\PasswordServiceImplTests.cs" />
     <Compile Include="Services\SecurityCodeServiceImplTest.cs" />

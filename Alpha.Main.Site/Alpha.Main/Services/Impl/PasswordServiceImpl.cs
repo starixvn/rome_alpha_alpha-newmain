@@ -205,7 +205,6 @@
                 KickoutCustomer(new KickoutCustomerParam(
                     param.CustId,
                     param.CustLevel,
-                    param.ActorName,
                     param.ServerId,
                     param.IP));
             }
@@ -253,7 +252,6 @@
                 KickoutCustomer(new KickoutCustomerParam(
                     param.CustId,
                     param.CustLevel,
-                    param.ActorName,
                     param.ServerId,
                     param.IP,
                     param.SubAccountId));

@@ -412,4 +412,7 @@
   <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
     <value>OTP無效或過期。 請嘗試另一個OTP或聯繫您的上線以重置您的OTP。</value>
   </data>
+  <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
+    <value>You have been logged out because your account's password has been reset by your upline. Please log in again with the new password. If you have any questions, please contact your upline for assistance.</value>
+  </data>
 </root>

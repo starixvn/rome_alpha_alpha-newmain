@@ -1,19 +1,21 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
     using AppResources;
     using Constants;
     using KellermanSoftware.CompareNetObjects;
     using Main.Criteria.Password;
     using Main.DataAccesses;
     using Main.Models;
+    using Main.Models.Enumerations;
     using Main.Services;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using Params;
     using Params.Password;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
-    using System;
 
     [TestFixture]
     public class PasswordServiceImplTests
@@ -24,6 +26,7 @@
         private PasswordDataAccess passwordDataAccess;
         private CasinoService casinoService;
         private AesService aes;
+        private KickoutCustomerService kickoutCustomerService;
 
         [SetUp]
         public void SetUp()
@@ -34,12 +37,14 @@
             passwordDataAccess = Substitute.For<PasswordDataAccess>();
             casinoService = Substitute.For<CasinoService>();
             aes = Substitute.For<AesService>();
+            kickoutCustomerService= Substitute.For<KickoutCustomerService>();
 
             passwordService = Substitute.ForPartsOf<PasswordServiceImpl>(
                 encryptor,
                 passwordDataAccess,
                 casinoService,
-                aes);
+                aes,
+                kickoutCustomerService);
         }
 
         #region Change Main Account Passowrd
@@ -417,28 +422,20 @@
                 LanguageKey = "en",
                 IP = "127.0.0.1",
                 SubAccountId = 0,
-                ActorId = 1
+                ActorId = 1,
+                CustLevel = UserLevel.Super,
+                ServerId = 90
             };
             aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
             encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
-
-            var criteria = new ResetSubAccountPasswordCriteria
-            {
-                CustId = param.CustId,
-                Language = param.LanguageKey,
-                LoginIP = param.IP,
-                UserPwd = "EncodedPassword",
-                SubAccId = param.SubAccountId,
-                UserId = param.ActorId
-            };
+            
+            passwordDataAccess.UpdatePassword(Arg.Any<ResetSubAccountPasswordCriteria>()).Returns(new Result());
 
             // Act
             passwordService.ResetSubAccountPassword(param);
 
             // Assert
-            passwordDataAccess.Received().UpdatePassword(
-                Arg.Is<ResetSubAccountPasswordCriteria>(
-                    c => compareLogic.Compare(c, criteria).AreEqual));
+            kickoutCustomerService.Received().Kickout(Arg.Any<KickoutCustomerParam>());
         }
 
         #endregion Reset Sub Account Password

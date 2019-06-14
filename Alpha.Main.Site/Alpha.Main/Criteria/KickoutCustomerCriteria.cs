@@ -9,7 +9,6 @@
         {
             CustId = param.CustId;
             RoleId = param.CustLevel.Value;
-            UplineUsername = param.UplineUsername;
             ServerId = param.ServerId;
             IP = param.IP;
             SubAccId = param.SubAccountId;
@@ -18,8 +17,6 @@
         public int CustId { get; }
 
         public byte RoleId { get; }
-
-        public string UplineUsername { get; }
 
         public int ServerId { get; }
 
@@ -31,6 +28,6 @@
             => "Age_OnUser_ForceKickedout";
 
         public override bool IsValid()
-            => CustId > 0 && RoleId > 0 && !string.IsNullOrWhiteSpace(UplineUsername) && ServerId > 0;
+            => CustId > 0 && RoleId > 0 && ServerId > 0;
     }
 }
