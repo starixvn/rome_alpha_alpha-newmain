@@ -79,6 +79,8 @@
 
         public byte CustRoleId { get; set; }
 
+        public int ServerId => userSession.ServerId;
+
         public bool IsValid() => UserLevel.Member.Value <= CustRoleId && CustRoleId <= UserLevel.Super.Value;
     }
 }

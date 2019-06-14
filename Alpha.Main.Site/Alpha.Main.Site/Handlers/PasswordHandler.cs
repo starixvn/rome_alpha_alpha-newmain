@@ -64,7 +64,7 @@
                 return Result.CreateErrorResult(Security.NotAuthorized);
             }
 
-            var result = this.passwordService.ResetSubAccountPassword(
+            return this.passwordService.ResetSubAccountPassword(
                 new ResetSubAccountPasswordParam
                 {
                     ActorId = message.ActorId,
@@ -74,10 +74,10 @@
                     IP = message.IP,
                     LanguageKey = message.LanguageKey,
                     NewPassword = message.NewPassword,
-                    SubAccountId = message.SubAccountId
+                    SubAccountId = message.SubAccountId,
+                    CustLevel = Enumeration.FromValue<UserLevel>(message.CustRoleId),
+                    ServerId = message.ServerId
                 });
-
-            return result;
         }
 
         public PasswordViewModel Handle(ChangePasswordQuery message)
@@ -116,7 +116,9 @@
                 return Result.CreateErrorResult(Security.NotAuthorized);
             }
 
-            var result = this.passwordService.ResetMainAccountPassword(
+            var custLevel = Enumeration.FromValue<UserLevel>(message.CustRoleId);
+
+            return this.passwordService.ResetMainAccountPassword(
                 new ResetMainAccountPasswordParam
                 {
                     ActorId = message.ActorId,
@@ -129,10 +131,10 @@
                     NewPassword = message.NewPassword,
                     SubAccountId = message.SubAccountId,
                     IsCasinoSync = message.IsCasinoSync,
-                    IsResetMemberPassword = Enumeration.FromValue<UserLevel>(message.CustRoleId).IsMemberLevel()
+                    IsResetMemberPassword = custLevel.IsMemberLevel(),
+                    CustLevel = custLevel,
+                    ServerId = message.ServerId
                 });
-
-            return result;
         }
 
         public Result Handle(ChangePasswordCommand message)

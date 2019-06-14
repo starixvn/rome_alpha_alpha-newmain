@@ -121,6 +121,8 @@
 
             container.RegisterPerWebRequest<NicknameChecker>(() =>
                 new NicknameCheckerImpl(container.GetInstance<IUserSession>()));
+
+            container.RegisterPerWebRequest<KickoutCustomerService, KickoutCustomerServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

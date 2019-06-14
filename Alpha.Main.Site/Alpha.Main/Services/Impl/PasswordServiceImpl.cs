@@ -1,18 +1,19 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Text.RegularExpressions;
     using AppResources;
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
     using DataAccesses;
     using Fanex.Logging.Extensions.Web;
     using Models;
+    using Params;
     using Params.Password;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Text.RegularExpressions;
 
     public class PasswordServiceImpl : PasswordService
     {
@@ -28,17 +29,20 @@
         private readonly PasswordDataAccess passwordDataAccess;
         private readonly CasinoService casinoService;
         private readonly AesService aes;
+        private readonly KickoutCustomerService kickoutCustomerService;
 
         public PasswordServiceImpl(
             Encryptor encryptor,
             PasswordDataAccess passwordDataAccess,
             CasinoService casinoService,
-            AesService aes)
+            AesService aes,
+            KickoutCustomerService kickoutCustomerService)
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
             this.casinoService = casinoService;
             this.aes = aes;
+            this.kickoutCustomerService = kickoutCustomerService;
         }
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
@@ -191,10 +195,19 @@
 
             var updateResult = passwordDataAccess.UpdatePassword(criteria);
 
-            if (updateResult.IsSuccessful
-              && param.IsCasinoSync)
+            if (updateResult.IsSuccessful)
             {
-                ChangeCasinoAccountPassword(param.CustId, encodedPassword, param.ActorId, param.ActorName, param.IP);
+                if (param.IsCasinoSync)
+                {
+                    ChangeCasinoAccountPassword(param.CustId, encodedPassword, param.ActorId, param.ActorName, param.IP);
+                }
+
+                KickoutCustomer(new KickoutCustomerParam(
+                    param.CustId,
+                    param.CustLevel,
+                    param.ActorName,
+                    param.ServerId,
+                    param.IP));
             }
 
             return updateResult;
@@ -233,7 +246,32 @@
                 UserId = param.ActorId
             };
 
-            return passwordDataAccess.UpdatePassword(criteria);
+            var updateResult = passwordDataAccess.UpdatePassword(criteria);
+
+            if (updateResult.IsSuccessful)
+            {
+                KickoutCustomer(new KickoutCustomerParam(
+                    param.CustId,
+                    param.CustLevel,
+                    param.ActorName,
+                    param.ServerId,
+                    param.IP,
+                    param.SubAccountId));
+            }
+
+            return updateResult;
+        }
+
+        internal void KickoutCustomer(KickoutCustomerParam param)
+        {
+            try
+            {
+                kickoutCustomerService.Kickout(param);
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.Handle(ex);
+            }
         }
 
         private Result Validate(

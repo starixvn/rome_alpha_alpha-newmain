@@ -234,6 +234,7 @@
     <Compile Include="Constants\SelfdestructionPeriod.cs" />
     <Compile Include="Constants\MessageType.cs" />
     <Compile Include="Constants\ProductId.cs" />
+    <Compile Include="Criteria\KickoutCustomerCriteria.cs" />
     <Compile Include="Criteria\LogoutCommand.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
     <Compile Include="Criteria\Nickname\CreateNicknameCommand.cs" />
@@ -308,6 +309,7 @@
     <Compile Include="Models\SecurityCode\SecurityCodeStatus.cs" />
     <Compile Include="Models\Statistics\TopTurnoverMember.cs" />
     <Compile Include="Models\Statistics\TopWinningMember.cs" />
+    <Compile Include="Params\KickoutCustomerParam.cs" />
     <Compile Include="Params\LogoutParam.cs" />
     <Compile Include="Params\Nickname\CreateNicknameParam.cs" />
     <Compile Include="Params\Nickname\UpdateNicknameLoginOnlyParam.cs" />
@@ -328,11 +330,13 @@
     </Compile>
     <Compile Include="Services\AesService.cs" />
     <Compile Include="Services\Impl\AesServiceImpl.cs" />
+    <Compile Include="Services\Impl\KickoutCustomerServiceImpl.cs" />
     <Compile Include="Services\Impl\LogoutServiceImpl.cs" />
     <Compile Include="Services\Impl\MemberRequestsServiceImpl.cs" />
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
     <Compile Include="Services\Impl\NicknameServiceImpl.cs" />
+    <Compile Include="Services\KickoutCustomerService.cs" />
     <Compile Include="Services\LogoutService.cs" />
     <Compile Include="Services\MemberRequestsService.cs" />
     <Compile Include="Services\NicknameService.cs" />

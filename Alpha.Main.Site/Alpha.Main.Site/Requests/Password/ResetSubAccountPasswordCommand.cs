@@ -61,5 +61,9 @@
                 return this.userSession.UserLoginIp;
             }
         }
+
+        public byte CustRoleId => userSession.RoleId;
+
+        public int ServerId => userSession.ServerId;
     }
 }

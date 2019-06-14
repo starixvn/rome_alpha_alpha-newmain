@@ -1,4 +1,6 @@
-﻿namespace Alpha.Main.Params.Password
+﻿using Alpha.Main.Models.Enumerations;
+
+namespace Alpha.Main.Params.Password
 {
     public class ResetSubAccountPasswordParam
     {
@@ -17,5 +19,9 @@
         public string IP { get; set; }
 
         public string HashKey { get; set; }
+
+        public UserLevel CustLevel { get; set; }
+
+        public int ServerId { get; set; }
     }
 }
