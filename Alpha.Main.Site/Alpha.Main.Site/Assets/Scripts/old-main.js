@@ -908,6 +908,10 @@ function closePopupAndReloadMainFrameAfterUpdateSuccess(timeOut, afterLoadMainFr
     }
 }
 
+function reloadPage() {
+    setTimeout("window.location.href = window.location.href", 2000);
+}
+
 var popupManager = {
     positionPadding: 5,
     leftPosition: function () {
