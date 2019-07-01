@@ -414,6 +414,7 @@
     <value>รหัสผ่านครั้งเดียวไม่ถูกต้องหรือหมดอายุแล้ว ลองรหัสผ่านครั้งเดียวอีกครั้งหรือติดต่อต้นสายของคุณเพื่อรีเซ็ตรหัสผ่านครั้งเดียวของคุณ</value>
   </data>
   <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
-    <value>You have been logged out because your account's password has been reset by your upline. Please log in again with the new password. If you have any questions, please contact your upline for assistance.</value>
+    <value>คุณได้ออกจากระบบเนื่องจากรหัสผ่านได้ถูกเปลี่ยนโดยอัพไลน์ของคุณ
+กรุณาเข้าสู่ระบบอีกครั้งด้วยรหัสผ่านใหม่ หากมีข้อสงสัยหรือต้องการความช่วยเหลือ โปรดสอบถามจากอัพไลน์ของคุณ</value>
   </data>
 </root>

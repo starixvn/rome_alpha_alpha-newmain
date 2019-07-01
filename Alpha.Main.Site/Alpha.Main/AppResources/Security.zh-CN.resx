@@ -411,6 +411,6 @@
     <value>退回</value>
   </data>
   <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
-    <value>You have been logged out because your account's password has been reset by your upline. Please log in again with the new password. If you have any questions, please contact your upline for assistance.</value>
+    <value>您已注销。您的上线变更您的密码。请使用新密码重新登入。若有任何问题，请联系您的上线取得协助。</value>
   </data>
 </root>
