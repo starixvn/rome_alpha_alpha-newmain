@@ -17,9 +17,9 @@
     <Setting Key="Age_GetSubAccountSecurityCode" SpName="Age_CustomerSelSecurityCode_Sub" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
   </Function>
   <Function Name="Password">
-    <Setting Key="ResetMainAccountPassword" SpName="Age_CustomerUpdPwd_uat1" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="ResetMainAccountPassword" SpName="Age_CustomerUpdPwd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
     <Setting Key="UpdateMainAccountPassword" SpName="Age_CustomerPwdUpd2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
-    <Setting Key="ResetSubAccountPassword" SpName="Age_CustSubPwdUpd_uat1" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="ResetSubAccountPassword" SpName="Age_CustSubPwdUpd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
     <Setting Key="UpdateSubAccountPassword" SpName="Age_CustSubPwdUpd2" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
   </Function>
   <Function Name="Otp">
