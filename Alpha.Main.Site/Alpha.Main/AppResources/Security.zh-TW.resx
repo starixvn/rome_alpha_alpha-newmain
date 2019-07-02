@@ -412,4 +412,7 @@
   <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
     <value>OTP無效或過期。 請嘗試另一個OTP或聯繫您的上線以重置您的OTP。</value>
   </data>
+  <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
+    <value>您已登出。您的上線變更您的密碼。請使用新密碼重新登入。若有任何問題，請聯繫您的上線取得協助。</value>
+  </data>
 </root>

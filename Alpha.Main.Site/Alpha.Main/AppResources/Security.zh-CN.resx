@@ -410,4 +410,7 @@
   <data name="lblBack" xml:space="preserve">
     <value>退回</value>
   </data>
+  <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
+    <value>您已注销。您的上线变更您的密码。请使用新密码重新登入。若有任何问题，请联系您的上线取得协助。</value>
+  </data>
 </root>

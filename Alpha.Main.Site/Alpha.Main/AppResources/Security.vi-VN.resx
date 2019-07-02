@@ -408,4 +408,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
     <value>Mã OTP không hợp lệ hoặc đã hết hạn. Vui lòng thử lại mã OTP khác hoặc liên hệ với cấp trên để đặt lại mã OTP.</value>
   </data>
+  <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
+    <value>Bạn buộc phải đăng xuất do cấp trên thay đổi mật khẩu tài khoản của bạn. Hãy đăng nhập lại bằng mật khẩu mới. Nếu có bất kỳ thắc mắc, xin hãy liên hệ với cấp trên để được hỗ trợ.</value>
+  </data>
 </root>

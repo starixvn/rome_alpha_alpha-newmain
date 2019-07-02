@@ -101,6 +101,10 @@ namespace Alpha.Main.Site.Controllers
                 {
                     message = Security.lblConfirmClosed;
                 }
+                else if (reason == "KickoutByForceChangePassword")
+                {
+                    message = Security.KickoutMessageByForceChangePassword;
+                }
             }
 
             mediator.Send(new KickoutQuery(userSession));
