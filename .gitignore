@@ -23,6 +23,7 @@ Thumbs.db
 [Dd]ebug*/
 *.lib
 *.sbr
+*.sh
 obj/
 [Rr]elease*/
 _ReSharper*/
@@ -59,11 +60,9 @@ Libraries/Fanex.Age.Business.Interface/obj/Debug/DesignTimeResolveAssemblyRefere
 /packages/*
 /PrecompiledWeb
 *.suo
-.vs/config/applicationhost.config
+.vs/
 Fanex_Razorbill_Website/vwd.webinfo
-.vs/config/applicationhost.config
 Fanex_Razorbill_Website_I7/vwd.webinfo
-.vs/config/applicationhost.config
 /OpenCover/*
 
 *.min.js
