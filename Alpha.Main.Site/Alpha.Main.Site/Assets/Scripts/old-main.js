@@ -384,6 +384,8 @@ var AgeWnd = function () {
                     // Issue: click any point on popup trigger open keyboard/dropdown (default focus elements)
                     iframe.contents().find(':focus').blur();
                 }
+
+                ageWnd.fixIOSHeight(iframe);
             });
         },
         updatePopupTitleAfterLoad: function (popUp, iframe) {
@@ -394,6 +396,50 @@ var AgeWnd = function () {
             if (title == '' && iframeTitle != 'Home') {
                 popUp.find(".popup-title").html(iframeTitle);
             }
+        },
+        fixIOSHeight: function (iframe) {
+            var isAutoHeight = oldMainUltilities.isiOS();
+            if (!isAutoHeight) {
+                return;
+            }
+
+            var fixHeightInterval = setInterval(function () {
+                var iframe0 = iframe[0];
+                var iframeDoc = iframe0.contentDocument || (iframe0.contentWindow ? iframe0.contentWindow.document : null);
+                if (!iframeDoc) {
+                    return;
+                }
+
+                var isReady = iframeDoc.readyState == 'complete' || iframeDoc.readyState == 'interactive';
+                if (!isReady) {
+                    return;
+                }
+
+                var iframeBody = iframe.contents().find('body');
+                var bodyCss = {
+                    height: 'auto',
+                    position: "relative",
+                    float: 'left'
+                };
+
+                iframeBody.css(bodyCss);
+
+                if (iframeBody.height()) {
+                    iframeBody.css(bodyCss);
+                    var maxHeight = $(window).height() - 200;
+                    var minHeight = iframeBody.height() + 100;
+
+                    iframe.css({
+                        "min-height": Math.min(minHeight, maxHeight) + "px"
+                    });
+
+                    iframeBody.css({
+                        float: 'none'
+                    });
+
+                    clearInterval(fixHeightInterval);
+                }
+            }, 200);
         }
     }
 };
@@ -736,10 +782,10 @@ function reloadPopUpSetting(timeOut) {
                 });
         } else {
             window.top.$('#main')
-               .on('load.oldmain', function () {
-                   doReloadPopup();
-                   window.top.$('#main').off('load.oldmain');
-               });
+                .on('load.oldmain', function () {
+                    doReloadPopup();
+                    window.top.$('#main').off('load.oldmain');
+                });
         }
         window.top.main.location.reload(true);
         window.top.clearPopupSubtitle(true);
@@ -811,6 +857,8 @@ function clearPopupSubtitle(hasSubTitle) {
         clearSubTitleAfterInframeLoad(iframe);
         clearInterval(timer);
     }, 200);
+
+    top.ageWnd.fixIOSHeight($(iframe));
 
     iframe.onload = function () {
         clearSubTitleAfterInframeLoad(iframe);
