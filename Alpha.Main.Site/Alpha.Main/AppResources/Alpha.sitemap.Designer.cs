@@ -385,7 +385,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1 X 2.
+        ///   Looks up a localized string similar to 1X2.
         /// </summary>
         public static string lbl1x2 {
             get {
