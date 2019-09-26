@@ -139,7 +139,7 @@
     <value>Consolidation</value>
   </data>
   <data name="correctscore" xml:space="preserve">
-    <value>コレクトスコア</value>
+    <value>正しいスコア</value>
   </data>
   <data name="creditbalance" xml:space="preserve">
     <value>貸付金額 / 残高</value>

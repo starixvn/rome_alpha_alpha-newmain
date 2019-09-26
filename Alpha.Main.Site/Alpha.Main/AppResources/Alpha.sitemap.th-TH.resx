@@ -139,7 +139,7 @@
     <value>รวม</value>
   </data>
   <data name="correctscore" xml:space="preserve">
-    <value>ทายผลสกอร์</value>
+    <value>คะแนนที่ถูกต้อง</value>
   </data>
   <data name="creditbalance" xml:space="preserve">
     <value>เครดิต / บัญชีคงเหลือ</value>

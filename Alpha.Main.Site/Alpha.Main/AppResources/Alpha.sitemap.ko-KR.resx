@@ -139,7 +139,7 @@
     <value>Consolidation</value>
   </data>
   <data name="correctscore" xml:space="preserve">
-    <value>정확한 점수</value>
+    <value>정확한 득점</value>
   </data>
   <data name="creditbalance" xml:space="preserve">
     <value>크레딧/잔액</value>
