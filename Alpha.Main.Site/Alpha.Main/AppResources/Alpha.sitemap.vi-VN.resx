@@ -360,9 +360,6 @@
   <data name="BetLists" xml:space="preserve">
     <value>Danh sách cược</value>
   </data>
-  <data name="PokerGamesWinLoss" xml:space="preserve">
-    <value>Thắng thua của Poker</value>
-  </data>
   <data name="systemUpdate" xml:space="preserve">
     <value>Hệ thống</value>
   </data>

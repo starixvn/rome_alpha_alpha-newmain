@@ -363,9 +363,6 @@
   <data name="LastBets" xml:space="preserve">
     <value>Last Bets</value>
   </data>
-  <data name="Bullfighting" xml:space="preserve">
-    <value>Bullfighting</value>
-  </data>
   <data name="Beta" xml:space="preserve">
     <value>Beta</value>
   </data>
@@ -380,9 +377,6 @@
   </data>
   <data name="systemUpdate" xml:space="preserve">
     <value>System</value>
-  </data>
-  <data name="PokerGamesWinLoss" xml:space="preserve">
-    <value>Poker Games Win Loss</value>
   </data>
   <data name="chatbot" xml:space="preserve">
     <value>Chatbot</value>

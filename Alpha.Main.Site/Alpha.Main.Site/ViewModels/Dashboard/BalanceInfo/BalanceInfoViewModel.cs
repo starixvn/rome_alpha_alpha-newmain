@@ -83,11 +83,6 @@
             var queryString = $"IsFilterVisible=true&SortPropertyName=CustName&IsDescendingSort=False";
             var path = $@"{ReportSiteAppPath}/Winloss/Index?{queryString}&UserSelectedDateRangeOption={userSelectedDateRangeOption}&FromDate={dateReport}&ToDate={dateReport}";
 
-            if (CanViewProduct(ProductId.PokerGames))
-            {
-                path += $"&UserSelectedExcludeProductIds={ProductId.PokerGames}";
-            }
-
             return path;
         }
     }
