@@ -270,7 +270,7 @@ var headerNav = {
 
                         if (typeof suggestions !== 'undefined' && suggestions !== null && suggestions.length !== 0) {
                             let sugestionItems = suggestions.map((item) => {
-                                return item[0];
+                                return item[0] + (item[3] ? " (" + item[3] + ")" : "");
                             });
 
                             return process(sugestionItems);
@@ -283,7 +283,7 @@ var headerNav = {
             const afterSelectSuggestionItem = (item) => {
                 onCloseSearchBar();
                 menuBar.collapseLeftPanel();
-                menuBar.activateAccountInfoTab(null, item);
+                menuBar.activateAccountInfoTab(null, item.replace(/\(\S+?\)/g, "").trim());
             }
 
             iconClose.on('click', onCloseSearchBar);
