@@ -531,4 +531,7 @@
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
     <value>Vui lòng chọn Chỉ đăng nhập bằng Biệt Danh</value>
   </data>
+  <data name="DataProcessingIsInProgress" xml:space="preserve">
+    <value>Dữ liệu đang được xử lý.</value>
+  </data>
 </root>

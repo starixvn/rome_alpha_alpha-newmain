@@ -529,4 +529,7 @@
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
     <value>กรุณาเลือก เข้าสู่ระบบด้วยชื่อเล่นเท่านั้น</value>
   </data>
+  <data name="DataProcessingIsInProgress" xml:space="preserve">
+    <value>อยู่ในช่วงการการประมวลผลข้อมูล.</value>
+  </data>
 </root>

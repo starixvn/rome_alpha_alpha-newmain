@@ -1,13 +1,13 @@
 ﻿/// <reference path="menu-bar.ts" />
 declare var popupManager: any;
 declare interface String {
-	startsWith(text: string, position: string): boolean;
+    startsWith(text: string, position: string): boolean;
 }
 
 if (typeof String.prototype.startsWith != 'function') {
-	String.prototype.startsWith = function (prefix) {
-		return this.slice(0, prefix.length) == prefix;
-	};
+    String.prototype.startsWith = function (prefix) {
+        return this.slice(0, prefix.length) == prefix;
+    };
 }
 
 'use strict';
@@ -229,7 +229,7 @@ var indexManager = {
             iframe = <HTMLIFrameElement>document.createElement('iframe');
             iframe.id = 'connection-speed';
             iframe.style.display = 'none';
-            iframe.src = alpha.urls.mainRootPath + "NetworkSpeed/Index" ;
+            iframe.src = alpha.urls.mainRootPath + "NetworkSpeed/Index";
             document.body.appendChild(iframe);
         }
     }
