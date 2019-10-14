@@ -490,3 +490,54 @@ body {
     margin-left: calculateScale(-2px);
     margin-top: calculateScale(-4px);
 }
+
+// Data Processing Notification
+.progress-box {
+    border-left-width: calculateScale(4px);
+    height: calculateScale(52px);
+    line-height: calculateScale(52px);
+    margin-top: calculateScale(10px);
+    bottom: calculateScale(15px);
+
+    &.collapsed {
+        border-width: calculateScale(1px);
+        @include transition(width 0.5s linear);
+        width: calculateScale(52px);
+    }
+
+    .icon-progress {
+        font-size: calculateScale(24px);
+        line-height: calculateScale(52px);
+        padding: 0 calculateScale(8px) 0 calculateScale(16px);
+    }
+
+    .txt-progress {
+        font-size: calculateScale(13px);
+    }
+}
+
+.modal-progress {
+    height: calculateScale(160px);
+
+    .modal-content {
+        padding: 0 calculateScale(12px);
+    }
+
+    .modal-header {
+        line-height: calculateScale(51px);
+
+        .icon-progress {
+            font-size: calculateScale(24px);
+            padding-right: calculateScale(12px);
+        }
+
+        .modal-title {
+            font-size: calculateScale(14px);
+        }
+    }
+
+    .modal-body {
+        padding: calculateScale(8px) 0 calculateScale(16px);
+        font-size: calculateScale(13px);
+    }
+}
