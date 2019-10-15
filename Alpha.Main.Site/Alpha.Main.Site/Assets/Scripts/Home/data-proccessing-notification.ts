@@ -70,7 +70,7 @@
         setTimeout(() => {
             this.$progressBox
                 .addClass("collapsed")
-                .draggable({ disabled: false });
+                .draggable({ disabled: false, containment: "#content-wrapper" });
         }, this.progressBoxCollapseTimeout);
     }
 
