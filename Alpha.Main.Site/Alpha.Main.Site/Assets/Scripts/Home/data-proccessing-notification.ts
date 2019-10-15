@@ -46,13 +46,12 @@
     };
 
     registerEvents(): void {
-        this.$progressBox.click(this.onProgressBoxClick);
-
         this.$progressBox.on("touchstart", () => {
             this.startPosition = this.$progressBox.position();
         });
 
         this.$progressBox.on("touchend", (event) => {
+            event.preventDefault();
             const endPosition = this.$progressBox.position();
             if (Math.abs(this.startPosition.top - endPosition.top) < 3
                 && Math.abs(this.startPosition.left - endPosition.left) < 3) {
@@ -76,9 +75,7 @@
     }
 
     onProgressBoxClick = () => {
-        if (this.$progressBox.hasClass("collapsed")) {
-            this.$dataNotificationModal.modal("show");
-        }
+        this.$dataNotificationModal.modal("show");
     };
 }
 
