@@ -535,4 +535,7 @@
   <data name="DataProcessingIsInProgress" xml:space="preserve">
     <value>数据处理正在进行中。</value>
   </data>
+  <data name="DataProcessingNotification" xml:space="preserve">
+    <value>数据处理通知</value>
+  </data>
 </root>

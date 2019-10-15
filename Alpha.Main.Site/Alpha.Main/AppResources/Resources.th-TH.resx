@@ -532,4 +532,7 @@
   <data name="DataProcessingIsInProgress" xml:space="preserve">
     <value>อยู่ในช่วงการการประมวลผลข้อมูล.</value>
   </data>
+  <data name="DataProcessingNotification" xml:space="preserve">
+    <value>แจ้งเตือนการประมวลผลข้อมูล</value>
+  </data>
 </root>
