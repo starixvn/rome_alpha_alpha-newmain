@@ -462,6 +462,7 @@ html * {
 
 // Data Processing Notification
 .progress-box {
+    background-color: #fff;
     width: 100%;
     color: #FF5C00;
     border-left: 4px solid #FF5C00;
@@ -490,6 +491,7 @@ html * {
         line-height: 52px;
         padding: 0 8px 0 16px;
         vertical-align: middle;
+        font-weight: bold;
     }
 
     .txt-progress {
