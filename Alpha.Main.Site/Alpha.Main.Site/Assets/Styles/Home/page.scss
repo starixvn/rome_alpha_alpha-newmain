@@ -504,7 +504,6 @@ html * {
     top: 35%;
     transform: translateY(-35%);
     margin: 0 auto;
-    height: 160px;
 
     .modal-content {
         padding: 0 12px;
@@ -637,7 +636,7 @@ html * {
 }
 
 @media only screen and (min-device-width: $screen-device-greater768) {
-    .process-box {
+    .progress-box {
         display: none;
     }
 }
