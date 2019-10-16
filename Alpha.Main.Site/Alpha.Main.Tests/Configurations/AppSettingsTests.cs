@@ -575,12 +575,12 @@
 
             AppSettings.Settings = new NameValueCollection
             {
-                ["OfferClearGivenCredit"] = "KORIBC,INDO"
+                ["OfferClearGivenCredit:Sites"] = "KORIBC,INDO"
             };
             var expectedSetting = new[] { "KORIBC", "INDO" };
 
             // Act
-            var actualSetting = AppSettings.OfferClearGivenCredit;
+            var actualSetting = AppSettings.OfferClearGivenCreditSites;
 
             // Assert
             Assert.AreEqual(expectedSetting, actualSetting);

@@ -32,11 +32,13 @@ namespace Alpha.Main
             ["TotalBetsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets),
             ["MemberInfoMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo),
             ["TransferMenuItem"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
-                !AppSettings.OfferClearGivenCredit.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
-                                                            string.Equals(s, "*", StringComparison.OrdinalIgnoreCase))),
+                !AppSettings.OfferClearGivenCreditSites.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
+                                                            string.Equals(s, "*", StringComparison.OrdinalIgnoreCase)) ||
+                AppSettings.OfferClearGivenCreditExcludeCustIds.Any(s => string.Equals(s, Current.CustId.ToString()))),
             ["TransferMenuItemBySite"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
-                AppSettings.OfferClearGivenCredit.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
-                                                           string.Equals(s, "*", StringComparison.OrdinalIgnoreCase))),
+                AppSettings.OfferClearGivenCreditSites.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
+                                                           string.Equals(s, "*", StringComparison.OrdinalIgnoreCase)) &&
+                !AppSettings.OfferClearGivenCreditExcludeCustIds.Any(s => string.Equals(s, Current.CustId.ToString()))),
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
             ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),
