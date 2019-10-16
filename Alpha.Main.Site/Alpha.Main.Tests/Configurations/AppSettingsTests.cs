@@ -3,6 +3,7 @@
     using System.Collections.Specialized;
     using Alpha.Main.Configurations;
     using NUnit.Framework;
+    using System;
 
     [TestFixture]
     public class AppSettingsTests
@@ -580,7 +581,7 @@
             var expectedSetting = new[] { "KORIBC", "INDO" };
 
             // Act
-            var actualSetting = AppSettings.OfferClearGivenCreditSites;
+            var actualSetting = AppSettings.Settings["OfferClearGivenCredit:Sites"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
             // Assert
             Assert.AreEqual(expectedSetting, actualSetting);

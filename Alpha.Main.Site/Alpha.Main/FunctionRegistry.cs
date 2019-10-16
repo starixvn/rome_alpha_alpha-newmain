@@ -19,6 +19,7 @@ namespace Alpha.Main
     using Sunplus.Agent.Utilities;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
+    using AuthAppSettings = Alpha.Auth.Configurations.AppSettings;
 
     public static class FunctionRegistry
     {
@@ -32,13 +33,19 @@ namespace Alpha.Main
             ["TotalBetsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewTotalBets),
             ["MemberInfoMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo),
             ["TransferMenuItem"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
-                !AppSettings.OfferClearGivenCreditSites.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
+                !AuthAppSettings.OfferClearGivenCreditSites.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
                                                             string.Equals(s, "*", StringComparison.OrdinalIgnoreCase)) ||
-                AppSettings.OfferClearGivenCreditExcludeCustIds.Any(s => string.Equals(s, Current.CustId.ToString()))),
+                AuthAppSettings.OfferClearGivenCreditExcludeCustIds.Any(s => string.Equals(s, Current.CustId.ToString()) ||
+                                                                            string.Equals(s, Current.SRecommendId.ToString()) ||
+                                                                            string.Equals(s, Current.MRecommendId.ToString()) ||
+                                                                            string.Equals(s, Current.ARecommendId.ToString()))),
             ["TransferMenuItemBySite"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
-                AppSettings.OfferClearGivenCreditSites.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
+                AuthAppSettings.OfferClearGivenCreditSites.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
                                                            string.Equals(s, "*", StringComparison.OrdinalIgnoreCase)) &&
-                !AppSettings.OfferClearGivenCreditExcludeCustIds.Any(s => string.Equals(s, Current.CustId.ToString()))),
+                !AuthAppSettings.OfferClearGivenCreditExcludeCustIds.Any(s => string.Equals(s, Current.CustId.ToString()) ||
+                                                                            string.Equals(s, Current.SRecommendId.ToString()) ||
+                                                                            string.Equals(s, Current.MRecommendId.ToString()) ||
+                                                                            string.Equals(s, Current.ARecommendId.ToString()))),
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
             ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),

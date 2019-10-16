@@ -196,11 +196,5 @@
 
         public static string[] OfferChatbotSites
             => Settings["OfferChatbotSites"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-
-        public static string[] OfferClearGivenCreditSites
-            => Settings["OfferClearGivenCredit:Sites"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-
-        public static string[] OfferClearGivenCreditExcludeCustIds
-            => Settings["OfferClearGivenCredit:ExcludeCustIds"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
     }
 }
