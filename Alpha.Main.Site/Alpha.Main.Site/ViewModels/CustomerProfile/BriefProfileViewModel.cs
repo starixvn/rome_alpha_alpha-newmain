@@ -12,6 +12,8 @@
 
         public string OldMainRootApp => UrlHelper.MapOldMainPath("~/");
 
+        public string AccountInfoRootApp => UrlHelper.MapAccountInfoPath("~/");
+
         public string Username { get; set; }
 
         public bool IsInternal { get; set; }
