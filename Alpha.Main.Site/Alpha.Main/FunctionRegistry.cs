@@ -70,7 +70,7 @@ namespace Alpha.Main
                     }
 
                     if (!string.IsNullOrWhiteSpace(AppSettings.AllowedSitesToViewTBF)
-                        && !(AppSettings.AllowedSitesToViewTBF.IndexOf(Current.Site, StringComparison.OrdinalIgnoreCase) >= 0))
+                        && (AppSettings.AllowedSitesToViewTBF.IndexOf(Current.Site, StringComparison.OrdinalIgnoreCase) < 0))
                     {
                         return false;
                     }
