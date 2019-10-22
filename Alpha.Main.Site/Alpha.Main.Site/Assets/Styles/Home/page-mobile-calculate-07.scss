@@ -490,3 +490,30 @@ body {
     margin-left: calculateScale(-2px);
     margin-top: calculateScale(-4px);
 }
+
+// Data Processing Notification
+.progress-box {
+    .icon-progress {
+        font-size: calculateScale(18px);
+    }
+
+    .txt-progress {
+        font-size: calculateScale(13px);
+    }
+}
+
+.modal-progress {
+    .modal-header {
+        .icon-progress {
+            font-size: calculateScale(24px);
+        }
+
+        .modal-title {
+            font-size: calculateScale(14px);
+        }
+    }
+
+    .modal-body {
+        font-size: calculateScale(13px);
+    }
+}

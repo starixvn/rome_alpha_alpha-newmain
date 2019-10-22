@@ -7,7 +7,7 @@
       "Assets/scripts/old-main.js",
       "Assets/scripts/home/header-nav.js",
       "Assets/scripts/home/header-msg.js",
-      "Assets/scripts/home/header-msg-mobile.js",
+      "Assets/scripts/home/data-proccessing-notification.js",
       "Assets/scripts/home/menu-bar.js",
       "Assets/scripts/customer-profiles/brief-profile.js",
       "Assets/scripts/dashboard/popup-announcement.js"

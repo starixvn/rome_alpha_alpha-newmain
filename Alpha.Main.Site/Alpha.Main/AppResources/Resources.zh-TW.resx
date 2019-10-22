@@ -532,4 +532,10 @@
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
     <value>請選擇"僅限暱稱登錄”</value>
   </data>
+  <data name="DataProcessingIsInProgress" xml:space="preserve">
+    <value>數據處理正在進行中。</value>
+  </data>
+  <data name="DataProcessingNotification" xml:space="preserve">
+    <value>數據處理通知</value>
+  </data>
 </root>

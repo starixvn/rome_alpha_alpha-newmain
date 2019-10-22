@@ -14,7 +14,6 @@
     @StaticResources.AssetStyles.Render($"/bundles/site-main/{Model.UserLevel}")
     @StaticResources.RenderStyles("~/assets/bundles/default-index")
     @StaticResources.RenderStylesWithMedia(767, "~/assets/bundles/page-mobile-calculate-07")
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -38,9 +37,14 @@
         </header>
         <main class="content" id="content" data-default-url="@Model.DefaultPath">
         </main>
+        <div class="progress-box hide" id="progress-box" data-toggle="modal">
+            <span class="icon-progress"></span>
+            <span class="txt-progress">@Resources.DataProcessingIsInProgress</span>
+        </div>
     </div>
     @Html.Partial("HiddenFields", Model)
     @Html.Partial("AnnouncementPopup")
+    @Html.Partial("DataProccessingPopup")
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     @StaticResources.RenderScripts("~/assets/bundles/default-index")

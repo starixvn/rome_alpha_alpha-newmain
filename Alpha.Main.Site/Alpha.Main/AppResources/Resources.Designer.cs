@@ -304,6 +304,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data processing is in progress..
+        /// </summary>
+        public static string DataProcessingIsInProgress {
+            get {
+                return ResourceManager.GetString("DataProcessingIsInProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Processing Notification.
+        /// </summary>
+        public static string DataProcessingNotification {
+            get {
+                return ResourceManager.GetString("DataProcessingNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Oops... you are here because of a system error, please notify the administrators.
         /// </summary>
         public static string DefaultErrorMessage {

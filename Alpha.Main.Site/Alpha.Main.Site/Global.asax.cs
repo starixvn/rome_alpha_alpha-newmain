@@ -3,10 +3,12 @@
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Linq;
     using System.Reflection;
     using System.Web.Helpers;
     using System.Web.Mvc;
     using System.Web.Routing;
+    using Alpha.Logging;
     using App_Start;
     using Auth.Filters;
     using CaptchaMvc.Infrastructure;
@@ -19,14 +21,13 @@
     using Fanex.Data.OldConnectionStringProvider;
     using Fanex.Logging.Extensions.Database;
     using Fanex.Logging.Extensions.Web;
+    using Fanex.RemotingRef;
     using Helpers;
     using ONEbook.UM.Filters;
     using Sunplus.Agent.Model.Entities;
     using Web;
     using Web.Filters;
-    using Fanex.RemotingRef;
     using Web.Helpers;
-    using System.Linq;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -38,6 +39,9 @@
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            var sensitivteInfo = new[] { "password", "seccode", "securitycode" };
+            LoggingConfig.Init(sensitivteInfo, DatabaseInfoGetters.GetDbExceptionInfo);
 
             ChatbotClientManager
                 .UseConfig(new BotClientConfigs(AppSettings.ChatBotBaseUrl, AppSettings.ChatBotApiKey))
@@ -61,12 +65,6 @@
             GlobalFilters.Filters.Add(new NoCacheFilter());
             GlobalFilters.Filters.Add(new AfterLoginFlowFilter());
             AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
-
-            var loggingConfiguration = new LoggingConfiguration()
-                .HideSensitiveInfo(GetRegexToHideSensitiveInfo())
-                .UseGetDbExceptionInfo(DatabaseInfoGetters.GetDbExceptionInfo);
-
-            ExceptionHandler.UseConfig(loggingConfiguration);
 
             RefDataTypeContainer
                 .ConnectTo(new Uri(AppSettings.RemoteRefURL))
@@ -114,20 +112,6 @@
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
 
             return versionInfo.FileVersion;
-        }
-
-        private static List<string> GetRegexToHideSensitiveInfo()
-        {
-            var result = new List<string>();
-            var sensitiveInfo = new[] { "password", "seccode", "securitycode" };
-
-            foreach (var info in sensitiveInfo)
-            {
-                result.Add($"(?:{info}=)(?<paramValue>[^&|^\\s]+)");
-                result.Add($"(\"{info}\":)(?<paramValue>[^,|^\r]+)");
-            }
-
-            return result;
         }
 
         private string RefreshUrlFactory(System.Web.Mvc.UrlHelper urlHelper, KeyValuePair<string, ICaptchaValue> keyValuePair)

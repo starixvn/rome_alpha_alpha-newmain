@@ -595,4 +595,10 @@
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
     <value>Please select Login by nickname only</value>
   </data>
+  <data name="DataProcessingNotification" xml:space="preserve">
+    <value>Data Processing Notification</value>
+  </data>
+  <data name="DataProcessingIsInProgress" xml:space="preserve">
+    <value>Data processing is in progress.</value>
+  </data>
 </root>
