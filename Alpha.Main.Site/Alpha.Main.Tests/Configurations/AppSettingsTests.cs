@@ -3,6 +3,7 @@
     using System.Collections.Specialized;
     using Alpha.Main.Configurations;
     using NUnit.Framework;
+    using System;
 
     [TestFixture]
     public class AppSettingsTests
@@ -575,12 +576,12 @@
 
             AppSettings.Settings = new NameValueCollection
             {
-                ["OfferClearGivenCredit"] = "KORIBC,INDO"
+                ["OfferClearGivenCredit:Sites"] = "KORIBC,INDO"
             };
             var expectedSetting = new[] { "KORIBC", "INDO" };
 
             // Act
-            var actualSetting = AppSettings.OfferClearGivenCredit;
+            var actualSetting = AppSettings.Settings["OfferClearGivenCredit:Sites"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
             // Assert
             Assert.AreEqual(expectedSetting, actualSetting);
