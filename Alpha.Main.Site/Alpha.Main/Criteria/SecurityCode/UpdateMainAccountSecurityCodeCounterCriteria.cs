@@ -1,27 +1,12 @@
 ﻿namespace Alpha.Main.Criteria.SecurityCode
 {
-    using System;
-    using Fanex.Data.Repository;
-
-    public class UpdateMainAccountSecurityCodeCounterCriteria : CriteriaBase
+    public class UpdateMainAccountSecurityCodeCounterCriteria : UpdateSecurityCodeCriteria
     {
-        public int CustId { get; set; }
-
-        public bool CheckedSecurityCode { get; set; }
-
-        public string Language { get; set; }
-
-        public string IP { get; set; }
-
-        public int ErrCode { get; set; }
-
-        public string ErrMsg { get; set; }
-
-        public override string GetSettingKey()
+        public UpdateMainAccountSecurityCodeCounterCriteria()
         {
-            return "Age_UpdateMainAccountSecurityCodeCounter";
+            SettingKey = "Age_UpdateMainAccountSecurityCodeCounter";
         }
 
-        public override bool IsValid() => CustId > 0;
+        public bool CheckedSecurityCode { get; set; }
     }
 }

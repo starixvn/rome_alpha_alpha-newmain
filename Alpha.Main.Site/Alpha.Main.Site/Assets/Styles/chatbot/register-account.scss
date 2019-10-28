@@ -3,14 +3,6 @@
 
 // Register Letstalk
 
-.link {
-    color: #038dee;
-
-    &:hover {
-        color: $link-hover-color;
-    }
-}
-
 .list-requirements {
     margin-bottom: 0;
     padding-top: 10px;
@@ -68,15 +60,6 @@
     .letstalk-text {
         width: 220px;
         margin-right: 10px;
-    }
-}
-
-.info-list {
-    padding-left: 0;
-
-    .chatbot-example {
-        padding-top: 10px;
-        padding-bottom: 16px;
     }
 }
 

@@ -233,6 +233,10 @@
     <Compile Include="Criteria\KickoutCustomerCriteriaTests.cs" />
     <Compile Include="Criteria\LogoutCommandTests.cs" />
     <Compile Include="Criteria\MemberRequests\ProductRequestCriteriaTests.cs" />
+    <Compile Include="Criteria\Nickname\CreateNicknameCommandTests.cs" />
+    <Compile Include="Criteria\Nickname\CreateSubAccountNicknameCommandTests.cs" />
+    <Compile Include="Criteria\Nickname\UpdateNicknameLoginOnlyCommand Tests.cs" />
+    <Compile Include="Criteria\Nickname\UpdateSubAccountNicknameLoginOnlyCommandTests.cs" />
     <Compile Include="Criteria\Otp\CheckEnableOtpCommandTests.cs" />
     <Compile Include="Criteria\Otp\DeleteCustOtpSecretKeyCommandTests.cs" />
     <Compile Include="Criteria\Otp\GetCustomerOtpCriteriaTests.cs" />
@@ -269,6 +273,7 @@
     <Compile Include="Models\Enumerations\UserLevelForTesting.cs" />
     <Compile Include="Services\KickoutCustomerServiceImplTests.cs" />
     <Compile Include="Services\MemberRequestsServiceImplTest.cs" />
+    <Compile Include="Services\NicknameServiceImplTests.cs" />
     <Compile Include="Services\PasswordServiceImplTests.cs" />
     <Compile Include="Services\SecurityCodeServiceImplTest.cs" />
     <Compile Include="TestData\Helper\ConstructorQuery\ParametersAmountConstructorQuery.cs" />
@@ -321,7 +326,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Alpha.Main.Site\Alpha.Main.Site.csproj">
       <Project>{4CDDEBBD-6553-4A69-A9FC-5B58E3469843}</Project>
@@ -339,7 +346,6 @@
     <Content Include="Database\Statistics\StatisticsHasData.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Scripts\aes.js" />
     <Content Include="TestData\EmptyToolTipMessage.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

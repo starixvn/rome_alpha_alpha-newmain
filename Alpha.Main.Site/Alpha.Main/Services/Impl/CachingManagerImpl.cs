@@ -132,7 +132,12 @@
 
         private void ValidateKey(string key)
         {
-            if (string.IsNullOrWhiteSpace(key))
+            if (key == null)
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+
+            if (key.Trim() == string.Empty)
             {
                 throw new ArgumentOutOfRangeException(nameof(key), @"Cache keys cannot be empty or whitespace");
             }

@@ -19,6 +19,11 @@ label {
     min-height: $height-normal;
 }
 
+.msg {
+    float: left;
+    min-width: 350px;
+}
+
 // Messages
 .msg-content {      
     padding-top: 12px;
@@ -26,11 +31,6 @@ label {
     .msg {
         margin: 0;
     }
-}
-
-.msg {
-    float: left;
-    min-width: 350px;
 }
 
 .block {
@@ -47,6 +47,27 @@ label {
     }
 }
 
+.note {
+    color: #666;
+    margin-top: 20px;
+
+    &-red {
+        color: #ff0101;
+        padding-right: 6px;
+    }
+}
+
+// OTP reset
+.otp-reset {
+    clear: both;
+    padding: 12px 0;
+
+    .note {
+        color: #666;
+        margin: 10px 0;
+    }
+}
+
 // OTP Steps
 .otp-config {
     padding: 20px 0;
@@ -55,7 +76,11 @@ label {
         &.panel-table {
             .panel-heading .panel-title a {
                 color: #666;
-                border: none;            
+                border: none;
+            }
+
+            .panel-body {
+                background-color: #fff;
             }
 
             .panel-heading + .panel-collapse > .panel-body {
@@ -63,30 +88,26 @@ label {
                 padding: 16px 0;
             }
 
-            .panel-body {
-                background-color: #fff;
-            }
-
             .panel {
                 border-color: #dcdcdc;
                 @include border-radius(0);
                 @include box-shadow-multiple(none);
+            }
+        }
 
-                &.success {
-                    .panel-heading .panel-title a {
-                        color: #03b224;         
-                    }
-                    
-                    .icon-check-circle {
-                        color: #03b224;
-                        font-size: 18px;
-                        display: inline-block;
-                        margin-left: 10px;
-                        position: relative;
-                        top: 4px;
-                    }
-                }
-            }        
+        .success {
+            .panel-heading .panel-title a {
+                color: #03b224;
+            }
+
+            .icon-check-circle {
+                color: #03b224;
+                font-size: 18px;
+                display: inline-block;
+                margin-left: 10px;
+                position: relative;
+                top: 4px;
+            }
         }
 
         &.manualQRCode {
@@ -102,7 +123,7 @@ label {
 
             .panel-heading + .panel-collapse > .panel-body {
                 border-top: none;
-                padding-top: 8px;            
+                padding-top: 8px;
             }
 
             .icon-content-copy {
@@ -120,7 +141,7 @@ label {
             }
 
             .example {
-                .col-left, .col-right  {
+                .col-left, .col-right {
                     float: left;
                 }
 
@@ -140,6 +161,12 @@ label {
         }
     }
 
+    #username-message, #change-status-message, #remove-otp-message {
+        .msg {
+            margin-top: 0;
+        }
+    }
+
     .list-requirements {
         margin-bottom: 0;
         padding-left: 30px;
@@ -147,13 +174,21 @@ label {
         li {
             list-style-type: decimal;
         }
-        
+
         .download-content, .manualQRCode, .block, .note, #setup-otp-message {
             margin-left: -12px;
         }
 
+        .additional-information {
+            padding-bottom: 16px;
+            margin-left: -12px;
+
+            p {
+                margin-bottom: 5px;
+            }
+        }
         // Download Sophos
-         .download-content {
+        .download-content {
             display: table;
             padding: 12px 0 16px;
 
@@ -180,21 +215,12 @@ label {
             }
         }
 
-         .additional-information {
-             padding-bottom: 16px;
-             margin-left: -12px;
-
-             p {
-                 margin-bottom: 5px;
-             }
-         }
-         
-         .qr-code {
-             margin-left: -27px;
-         }
+        .qr-code {
+            margin-left: -27px;
+        }
 
         .block, .username-customize {
-             .txt {
+            .txt {
                 @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
             }
         }
@@ -205,6 +231,7 @@ label {
             .btn-change-username {
                 color: #038dee;
                 font-weight: bold;
+
                 &:hover {
                     cursor: pointer;
                     color: #038dee;
@@ -213,13 +240,13 @@ label {
             }
 
             .form-inline {
-                padding-bottom: 12px;            
-            
+                padding-bottom: 12px;
+
                 * {
                     margin-right: 8px;
                 }
             }
-        } 
+        }
 
         .block {
             padding-top: 12px;
@@ -257,33 +284,6 @@ label {
     .register-succeess, #remove-otp-message {
         clear: both;
         padding: 0 16px;
-    }
-
-     #username-message , #change-status-message, #remove-otp-message {
-         .msg {
-             margin-top: 0;
-         }        
-     }
-}
-
-.note {
-    color: #666;
-    margin-top: 20px;
-
-    &-red {
-        color: #ff0101;
-        padding-right: 6px;
-    }
-}
-
-// OTP reset
-.otp-reset {
-    clear: both;
-    padding: 12px 0;
-
-    .note {
-        color: #666;
-        margin: 10px 0;
     }
 }
 

@@ -18,7 +18,6 @@ body {
     padding: 2px 4px;
     background: #da1625;
     color: #fff;
-    border-radius: 2px;
     line-height: 1;
     font-size: 11px;
     font-style: normal;
@@ -55,14 +54,6 @@ body {
         text-transform: uppercase;
         text-align: right;
 
-        &.text-red {
-            color: #fe0002;
-
-            .btn-link {
-                color: #ff0000;
-            }
-        }
-
         .btn-link {
             @include border-radius(2px);
             background: #ffffff; /* Old browsers */
@@ -77,6 +68,18 @@ body {
                 text-decoration: none;
             }
         }
+
+        &.text-red {
+            color: #fe0002;
+
+            .btn-link {
+                color: #ff0000;
+            }
+        }
+    }
+
+    .icon-plus, .icon-minus {
+        @include ripple-effect-icon($top: -3px, $margin-left: -6px);
     }
 
     .row {
@@ -101,10 +104,6 @@ body {
         padding-top: 8px;
         padding-bottom: 4px;
         text-transform: uppercase;
-    }
-
-    .icon-plus, .icon-minus {
-        @include ripple-effect-icon($top: -3px, $margin-left: -6px);
     }
 
     &.statistic {
@@ -155,7 +154,7 @@ body {
 
         .group-date {
             @extend %group;
-            background-color: #e3e3e3;            
+            background-color: #e3e3e3;
         }
 
         .group-highlight {
@@ -211,7 +210,7 @@ body {
                     line-height: 24px;
                 }
 
-                .highlight-date-format{
+                .highlight-date-format {
                     display: inline-block;
                     text-indent: 10px;
                     line-height: 15px;
@@ -274,6 +273,15 @@ body {
         opacity: 1;
     }
 
+    .tooltip-inner {
+        border: 1px solid #ccc;
+        color: $text-color;
+        font-weight: bold;
+        background-color: #f2f2f2;
+        text-align: left;
+        @include border-radius(2px);
+    }
+
     &.top {
         .tooltip-arrow {
             display: none;
@@ -307,15 +315,6 @@ body {
             }
         }
     }
-
-    .tooltip-inner {
-        border: 1px solid #ccc;
-        color: $text-color;
-        font-weight: bold;
-        background-color: #f2f2f2;
-        text-align: left;
-        @include border-radius(2px);
-    }
 }
 
 @media only screen and (min-device-width : $screen-device-greater768) {
@@ -336,6 +335,20 @@ body {
         display: block;
         margin-top: 12px;
         padding: 0 4px;
+
+        .panel-title {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 8px 0;
+            text-transform: uppercase;
+
+            [class^="icon"] {
+                font-size: 20px;
+                margin-right: 8px;
+                position: relative;
+                top: 4px;
+            }
+        }
 
         &.balance-info, &.statistic, &.member-requests {
             float: left;
@@ -417,20 +430,6 @@ body {
             line-height: 30px;
         }
 
-        .panel-title {
-            font-weight: bold;
-            font-size: 14px;
-            padding: 8px 0;
-            text-transform: uppercase;
-
-            [class^="icon"] {
-                font-size: 20px;
-                margin-right: 8px;
-                position: relative;
-                top: 4px;
-            }
-        }
-
         .message-content {
             max-height: 300px;
             overflow: auto;
@@ -477,6 +476,20 @@ body {
         margin-top: 12px;
         padding: 0 4px;
 
+        .panel-title {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 8px 0;
+            text-transform: uppercase;
+
+            [class^="icon"] {
+                font-size: 20px;
+                margin-right: 8px;
+                position: relative;
+                top: 4px;
+            }
+        }
+
         &.balance-info, &.statistic {
             float: left;
             width: 50%;
@@ -515,20 +528,6 @@ body {
 
         .label {
             line-height: 30px;
-        }
-
-        .panel-title {
-            font-weight: bold;
-            font-size: 14px;
-            padding: 8px 0;
-            text-transform: uppercase;
-
-            [class^="icon"] {
-                font-size: 20px;
-                margin-right: 8px;
-                position: relative;
-                top: 4px;
-            }
         }
 
         .row:hover {
