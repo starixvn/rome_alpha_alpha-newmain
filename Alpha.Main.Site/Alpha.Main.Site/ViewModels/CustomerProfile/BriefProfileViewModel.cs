@@ -12,7 +12,7 @@
 
         public string OldMainRootApp => UrlHelper.MapOldMainPath("~/");
 
-        public string AccountInfoRootApp => UrlHelper.MapAccountInfoPath("~/");
+        public string AccountInfoRootPath => UrlHelper.MapAccountInfoPath("~/");
 
         public string Username { get; set; }
 

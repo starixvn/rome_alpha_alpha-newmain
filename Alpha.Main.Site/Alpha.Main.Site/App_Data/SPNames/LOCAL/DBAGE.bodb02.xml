@@ -27,6 +27,6 @@
     <Setting Key="Age_CustomerShowAnnouncement" SpName="Age_CustomerShowAnnouncement" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" />
   </Function>
   <Function Name="Profile Pictures">
-    <Setting Key="Age_CustomerSelProfilePicture" SpName="Age_CustomerSelProfilePicture" DbName="DBAGE.bodb02.BODBDownlineNet" />
+    <Setting Key="Age_CustomerSelProfilePicture" SpName="Age_CustomerSelProfilePicture_xtest" DbName="DBAGE.bodb02.BODBDownlineNet" />
   </Function>
 </Functions>
