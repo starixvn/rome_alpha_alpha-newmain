@@ -265,7 +265,7 @@
     <value>數字游戲</value>
   </data>
   <data name="OE1x2DND" xml:space="preserve">
-    <value>Odd/Even + 1x2 + DND</value>
+    <value>單雙盤 + 1x2 + DND</value>
   </data>
   <data name="parlay" xml:space="preserve">
     <value>过关</value>

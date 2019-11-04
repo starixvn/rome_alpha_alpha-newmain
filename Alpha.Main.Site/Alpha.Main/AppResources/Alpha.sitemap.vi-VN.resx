@@ -124,10 +124,10 @@
     <value>Chi tiết thắng thua của Agent</value>
   </data>
   <data name="BetType24" xml:space="preserve">
-    <value>Nhân Đôi Cơ Hội</value>
+    <value>Cơ Hội Kép</value>
   </data>
   <data name="BetType26" xml:space="preserve">
-    <value>Cả hai/Một/Không Đội Nào Ghi Bàn</value>
+    <value>Cả Hai/Một/Không Đội Ghi Bàn</value>
   </data>
   <data name="casinoPositionTaking" xml:space="preserve">
     <value>PT (%) của Casino</value>
@@ -160,7 +160,7 @@
     <value>Racing</value>
   </data>
   <data name="htft" xml:space="preserve">
-    <value>Hiệp 1/Toàn trận</value>
+    <value>H1/Cả Trận</value>
   </data>
   <data name="lbl1x2" xml:space="preserve">
     <value>1 X 2</value>

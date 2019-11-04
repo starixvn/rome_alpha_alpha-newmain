@@ -124,7 +124,7 @@
     <value>รายละเอียดการชนะ แพ้ ของ</value>
   </data>
   <data name="BetType24" xml:space="preserve">
-    <value>ดับเบิลชานส์</value>
+    <value>ดับเบิ้ลชานส์</value>
   </data>
   <data name="BetType26" xml:space="preserve">
     <value>ทั้งสองทีม/หนึ่งทีม/ไม่ทั้งสองทีมที่ทำคะแนนได้</value>
@@ -265,7 +265,7 @@
     <value>เกมหมายเลข</value>
   </data>
   <data name="OE1x2DND" xml:space="preserve">
-    <value>Odd/Even + 1x2 + DND</value>
+    <value>คี่/คู่ + 1x2 + DND</value>
   </data>
   <data name="parlay" xml:space="preserve">
     <value>บอลชุด</value>
