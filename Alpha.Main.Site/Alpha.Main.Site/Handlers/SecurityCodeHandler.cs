@@ -89,13 +89,17 @@
 
             sessionManager.Add(SecurityCodeTokenSessionKey, securityCodeToken);
 
+            var profile = customerProfileService.GetProfilePicture(userSession.CustId);
+
             return new SecurityCodeViewModel
             {
                 SecurityCodeToken = securityCodeToken,
                 SecuritySalt = GenerateSecuritySalt(),
                 HashKey = HashKey,
                 CustRoleId = message.RoleId,
-                Title = BuildSecurityCodeTitle(message.Username)
+                Title = BuildSecurityCodeTitle(message.Username),
+                EmbedImage = GenerateImage(profile),
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.Username)
             };
         }
 
@@ -120,7 +124,7 @@
                 IsDefaultAvatar = profile.UseDefaultAvatar,
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message),
-                UsernameShower = BuildUsernameShower(message),
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
                 EmbedImage = GenerateImage(profile)
             };
         }
@@ -394,14 +398,14 @@
             return string.Empty;
         }
 
-        private string BuildUsernameShower(ForceChangeSecurityCodeQuery message)
+        private string BuildUsernameShower(bool isSubAcc, string subUsername, string nickName, string username)
         {
-            if (message.IsSubAcc)
+            if (isSubAcc)
             {
-                return message.SubUserName;
+                return subUsername;
             }
 
-            return string.IsNullOrWhiteSpace(message.NickName) ? message.UserName : message.NickName;
+            return string.IsNullOrWhiteSpace(nickName) ? username : nickName;
         }
 
         private string BuildAlternateUsername(ForceChangeSecurityCodeQuery message)

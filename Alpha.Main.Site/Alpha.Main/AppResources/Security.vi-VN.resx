@@ -414,6 +414,9 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="Verify" xml:space="preserve">
     <value>Xác nhận</value>
   </data>
+   <data name="VerifySecurityCodeShower" xml:space="preserve">
+    <value>Xin chào {0}</value>
+  </data>
   <data name="FailedToRemoveOtp" xml:space="preserve">
     <value>Xóa đăng ký thiết bị thất bại</value>
   </data>

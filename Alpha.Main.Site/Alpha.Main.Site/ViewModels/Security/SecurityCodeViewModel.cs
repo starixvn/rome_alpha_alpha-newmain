@@ -13,18 +13,16 @@
 
         public byte CustRoleId { get; set; }
 
-        public string UserLevel
-        {
-            get
-            {
-                return Enumeration.FromValue<UserLevel>(CustRoleId).DisplayName.ToLower();
-            }
-        }
+        public string UserLevel => Enumeration.FromValue<UserLevel>(CustRoleId).DisplayName.ToLower();
 
         public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
         public string MainRootPath => UrlHelper.MapMainPath("~/");
 
         public string Title { get; set; }
+
+        public string EmbedImage { get; set; }
+
+        public string UsernameShower { get; set; }
     }
 }

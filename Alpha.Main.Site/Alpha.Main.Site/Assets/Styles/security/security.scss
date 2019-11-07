@@ -16,76 +16,100 @@ body {
         style: normal;
     }
 }
+.verify-security-code {
+    display: flex;
+    align-items: flex-end;
+    padding-top: 10px;
+    padding-left: 5px;
 
-.block {
-    max-width: 350px;
-    padding-top: 22px;
-    width: 350px;    
-    clear: both;
-
-    label {
-        font-weight: normal;
-        margin-bottom: 4px;
+    .profile-avatar {
+        height: 240px;
+        width: 240px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+        margin-right: 24px;
     }
 
-    .txt {
-        padding-top: 0;
-        padding-bottom: 0;
-        width: 100%;
-    } 
-    
-    &.has-popup {
-        .form-group {
-            margin-left: 2px;
+    .wrapper-right {
+        position: relative;
+        bottom: -16px;
+
+        .block {
+            max-width: 350px;
+            padding-top: 22px;
+            width: 350px;
+            clear: both;
+
+            label {
+                font-weight: normal;
+
+                &.security-code-title {
+                    padding-top: 10px;
+                }
+            }
+
+            .txt {
+                padding-top: 0;
+                padding-bottom: 0;
+                width: 100%;
+            }
+
+            &.has-popup {
+                .form-group {
+                    margin-left: 2px;
+                }
+
+                .txt {
+                    @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+                }
+            }
+        }
+        // Rules
+        .rules {
+            color: #666;
+            padding-top: 12px;
+
+            .note-red {
+                color: #ff0101;
+                padding-right: 6px;
+            }
+
+            ul {
+                list-style: initial;
+                padding-left: 32px;
+
+                li {
+                    list-style-type: disc;
+                    line-height: 24px;
+                }
+            }
+        }
+        // Messages
+        .msg-content {
+            float: left;
+            min-width: 350px;
+            padding-top: 12px;
+
+            .msg {
+                line-height: 20px;
+                margin: 0;
+            }
         }
 
-        .txt {
-            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
-        }
-    }   
-}
+        .learn-more {
+            color: $link-color;
 
-// Rules
-.rules {
-    color: #666;   
-    padding-top: 12px;    
-
-    .note-red {
-        color: #ff0101;
-        padding-right: 6px;
-    }
-
-    ul {
-        list-style: initial;
-        padding-left: 32px;
-
-        li {
-            list-style-type: disc;
-            line-height: 24px;
+            &:hover {
+                color: $link-hover-color;
+                text-decoration: none;
+            }
         }
     }
 }
 
-// Messages
-.msg-content {
-    float: left;
-    min-width: 350px;
-    padding-top: 12px;    
 
-    .msg {
-        line-height: 20px;
-        margin: 0;
-    }
-}
 
-.learn-more {
-    color: $link-color;
-
-    &:hover {
-        color: $link-hover-color;
-        text-decoration: none;
-    }
-}
 
 // It's not necessary at the moment
 @media only screen and (max-device-width: $conent-device-lower768)
