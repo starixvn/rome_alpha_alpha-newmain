@@ -104,6 +104,7 @@ var securityHelper = {
         $messageContainer.addClass('msg-success').empty().html(successfullyMessage);
     },
     showFailMessage: function ($messageContainer, failMessage) {
+        $($messageContainer).parent().removeClass('hidden');
         $messageContainer.removeClass('msg-success');
         $messageContainer.addClass('msg-error').empty().html(failMessage);
     },

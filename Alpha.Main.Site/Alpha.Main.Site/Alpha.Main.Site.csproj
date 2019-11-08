@@ -569,6 +569,10 @@
     <Content Include="Assets\bundles\page-mobile-calculate-07.min.css">
       <DependentUpon>page-mobile-calculate-07.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\security\verify-security-code.css" />
+    <Content Include="Assets\bundles\security\verify-security-code.min.css">
+      <DependentUpon>verify-security-code.css</DependentUpon>
+    </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\scripts\aes.js" />
     <Content Include="Assets\styles\chatbot\chatbot-setting.css">
@@ -625,6 +629,12 @@
     <Content Include="Assets\styles\home\_mixins2.scss" />
     <Content Include="Assets\styles\nickname\nickname.css" />
     <Content Include="Assets\styles\nickname\nickname.min.css" />
+    <Content Include="Assets\styles\security\verify-security-code.css">
+      <DependentUpon>verify-security-code.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security\verify-security-code.min.css">
+      <DependentUpon>verify-security-code.css</DependentUpon>
+    </Content>
     <Content Include="Scripts\aes.js" />
     <Content Include="Views\MemberRequests\Guidelines\Style\page.css">
       <DependentUpon>page.scss</DependentUpon>
@@ -1108,7 +1118,7 @@
     <Content Include="Assets\styles\home\_mixins.scss" />
     <Content Include="Assets\styles\home\tooltip.scss" />
     <Content Include="Assets\styles\home\pageIElower10.scss" />
-    <Content Include="Assets\styles\security\security.scss" />
+    <Content Include="Assets\styles\security\verify-security-code.scss" />
     <Content Include="Assets\styles\otp\otp.scss" />
     <Content Include="Assets\styles\error\error.scss" />
     <Content Include="Assets\styles\home\popup-announcement.scss" />
@@ -1118,6 +1128,7 @@
     <Content Include="Assets\styles\chatbot\register-account.scss" />
     <Content Include="Assets\styles\chatbot\chatbot-setting.scss" />
     <Content Include="Assets\styles\nickname\nickname.scss" />
+    <Content Include="Assets\styles\security\security.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1285,6 +1296,7 @@
     <Compile Include="Requests\Otp\ResetOtpCommand.cs" />
     <Compile Include="Requests\Otp\ResetOtpQuery.cs" />
     <Compile Include="Requests\Otp\SetUpOtpCommand.cs" />
+    <Compile Include="Requests\Otp\VerifyOtpQuery.cs" />
     <Compile Include="Requests\Otp\SetUpOtpQuery.cs" />
     <Compile Include="Requests\Otp\VerifyOtpCommand.cs" />
     <Compile Include="Requests\Otp\VerifyOtpDifferentDeviceQuery.cs" />
@@ -1331,6 +1343,7 @@
     <Compile Include="ViewModels\Security\OtpViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\ResetOtpViewModel.cs" />
+    <Compile Include="ViewModels\Security\VerifyOTPViewModel.cs" />
     <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\VerifyOtpDifferenceDeviceViewModel.cs" />

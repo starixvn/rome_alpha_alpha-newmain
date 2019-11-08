@@ -24,7 +24,8 @@
         IRequestHandler<SetUpOtpCommand, Result>,
         IRequestHandler<VerifyOtpCommand, Result>,
         IRequestHandler<VerifyOtpDifferentDeviceQuery, VerifyOtpDifferenceDeviceViewModel>,
-        IRequestHandler<CheckDifferenceDeviceCommand, bool>
+        IRequestHandler<CheckDifferenceDeviceCommand, bool>,
+        IRequestHandler<VerifyOtpQuery, VerifyOTPViewModel>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
 
@@ -232,6 +233,22 @@
                 CustId = message.SubAccountId > 0 ? userSession.CustId : message.CustId,
                 SubAccountId = message.SubAccountId,
                 Username = message.Username
+            };
+        }
+
+        public VerifyOTPViewModel Handle(VerifyOtpQuery message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
+            var profile = customerProfileService.GetProfilePicture(userSession.CustId);
+
+            return new VerifyOTPViewModel
+            {
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
+                EmbedImage = GenerateImage(profile)
             };
         }
 

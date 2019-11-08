@@ -24,7 +24,6 @@
 
     ]
   },
-
   {
     "outputFileName": "Assets/bundles/default-index.css",
     "inputFiles": [
@@ -41,6 +40,12 @@
     "outputFileName": "Assets/bundles/security/security.css",
     "inputFiles": [
       "Assets/styles/security/security.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/verify-security-code.css",
+    "inputFiles": [
+      "Assets/styles/security/verify-security-code.css"
     ]
   },
   {
