@@ -71,7 +71,7 @@
                 {
                 <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.nickname</a></li>
                 }
-                <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
+                <li><a href="@viewProfileUrl" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
                 <li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
                 @if (Model.EnableSecurityCode)
                 {
