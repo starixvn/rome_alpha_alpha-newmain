@@ -278,6 +278,7 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\CookieHelper.cs" />
+    <Compile Include="Helpers\ImageConverter.cs" />
     <Compile Include="Helpers\Impl\JsonHelperImpl.cs" />
     <Compile Include="Helpers\Impl\SiteMapReaderImpl.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />

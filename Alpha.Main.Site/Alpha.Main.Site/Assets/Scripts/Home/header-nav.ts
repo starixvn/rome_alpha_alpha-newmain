@@ -2,6 +2,9 @@
 /// <reference path="index-manager.ts" />
 
 'use strict';
+interface Window {
+    profilePictureBase64: string
+}
 
 var headerNav = {
     domElements: {
@@ -333,6 +336,11 @@ var headerNav = {
 
     reloadPage: function () {
         top.location.href = headerNav.removeBookmarksInUrl(top.location.href);
+    },
+
+    setProfilePictureOnNav: function (profilePicure) {
+        $('#userPicture').attr('src', profilePicure);
+        $('#profile-avatar-image').attr('src', profilePicure);
     },
 
     removeBookmarksInUrl: function (url) {
