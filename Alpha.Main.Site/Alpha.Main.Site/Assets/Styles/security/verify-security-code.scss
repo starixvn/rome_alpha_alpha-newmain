@@ -149,6 +149,10 @@ body {
             padding: 22px 2px 0;
             max-width: unset;
 
+            label {
+                display: block;
+            }
+
             .txt {
                 height: calculateScale(28px);
                 @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
