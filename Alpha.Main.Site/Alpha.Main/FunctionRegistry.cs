@@ -90,11 +90,8 @@ namespace Alpha.Main
                 () => Current.IsShowBetChoiceLimit),
             ["NG2MenuItem"] = () => new MenuStatus(
                 () => ProductManager.IsShowSettings(ProductIdConstants.NG2)),
-            ["BullfightingMenuItem"] = () => new MenuStatus(
-                () => HasPermissionOnProduct(ProductIdConstants.BullFighting)),
             ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
             ["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
-            ["PokerGamesMenuItem"] = () => new MenuStatus(() => !Current.GetHideProduct(ProductIdConstants.PokerGames)),
             ["ChatBotMenuItem"] = () => new MenuStatus(
                 () => !Current.IsSubAcc
                     && (AppSettings.OfferChatbotSites.Contains("*")
