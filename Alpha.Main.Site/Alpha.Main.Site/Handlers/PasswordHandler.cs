@@ -219,47 +219,35 @@
 
         public ForceChangePasswordViewModel Handle(ForceChangePasswordQuery message)
         {
-            try
+            if (message == null)
             {
-                if (message == null)
-                {
-                    throw new ArgumentNullException(nameof(message), "Message cannot be null");
-                }
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
 
+            var profile = customerProfileService.GetActorProfilePicture(this.userSession.CustId);
+            if (profile == null || string.IsNullOrEmpty(profile.ImageBase64String))
+            {
                 var result = customerProfileService.UpdateActorProfilePicture(
-                  new UpdateActorProfilePictureParam(
-                      this.userSession.CustId,
-                      null,
-                      null,
-                      getInsertProfilePictureSiteMode(),
-                      true,
-                      this.userSession.UserLoginIp));
+                    new UpdateActorProfilePictureParam(
+                        this.userSession.CustId,
+                        null,
+                        null,
+                        getInsertProfilePictureSiteMode(),
+                        true,
+                        this.userSession.UserLoginIp));
 
-
-                var profile = result.IsSuccess ? customerProfileService.GetActorProfilePicture(this.userSession.CustId) : new ActorProfilePictureModel();
-
-                return new ForceChangePasswordViewModel
-                {
-                    HashKey = GetHasKey(),
-                    IsDefaultAvatar = string.IsNullOrEmpty(profile.ImageBase64String),
-                    Username = this.userSession.UserName,
-                    AlternateUsername = this.BuildAlternateUsername(message),
-                    UsernameShower = this.BuildUsernameShower(message),
-                    EmbedImage = profile.ImageBase64String
-                };
+                profile = result.IsSuccess ? customerProfileService.GetActorProfilePicture(this.userSession.CustId) : new ActorProfilePictureModel();
             }
-            catch
+
+            return new ForceChangePasswordViewModel
             {
-                return new ForceChangePasswordViewModel
-                {
-                    HashKey = GetHasKey(),
-                    IsDefaultAvatar = true,
-                    Username = this.userSession.UserName,
-                    AlternateUsername = this.BuildAlternateUsername(message),
-                    UsernameShower = this.BuildUsernameShower(message),
-                    EmbedImage = string.Empty
-                };
-            }
+                HashKey = GetHasKey(),
+                IsDefaultAvatar = string.IsNullOrEmpty(profile.ImageBase64String),
+                Username = this.userSession.UserName,
+                AlternateUsername = this.BuildAlternateUsername(message),
+                UsernameShower = this.BuildUsernameShower(message),
+                EmbedImage = profile.ImageBase64String
+            };
         }
 
         public PasswordViewModel Handle(ResetMainAccountPasswordQuery message)
