@@ -1,4 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Functions>
-
+  <Function Name="Profile Picture">
+    <Setting Key="Age_CustomerSelProfilePicture" SpName="Age_CustomerSelProfilePicture_xtest" DbName="DBAGE.bodb_AGE.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CustomerUpdProfilePicture" SpName="Age_CustomerUpdProfilePicture_xtest" DbName="DBAGE.bodb_AGE.BODBDownlineNet" Plain="0" />
+  </Function>
 </Functions>
