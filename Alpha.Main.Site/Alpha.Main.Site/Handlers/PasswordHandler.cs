@@ -1,10 +1,11 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using System;
+    using Alpha.ProfilePicture.Models;
+    using Alpha.ProfilePicture.Params;
+    using Alpha.ProfilePicture.Services;
     using Alpha.SecurityCode.Services;
     using AppResources;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
     using Main.Models.Enumerations;
     using MediatR;
     using Params.Password;
@@ -12,6 +13,7 @@
     using Services;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using System;
     using ViewModels.Security;
     using Web.Helpers;
 
@@ -30,18 +32,32 @@
         private readonly IUserSession userSession;
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
-        private readonly CustomerProfileService customerProfileService;
+        private readonly ProfilePictureServices customerProfileService;
         private readonly SecurityCodeChecker securityCodeChecker;
         private readonly IUser user;
+        private readonly Func<int> getInsertProfilePictureSiteMode;
 
         public PasswordHandler(
             PasswordService passwordService,
             IUserSession userSession,
-            CustomerProfileService customerProfileService,
+            ProfilePictureServices customerProfileService,
             SessionManager sessionManager,
             Encryptor encryptor,
             SecurityCodeChecker securityCodeChecker,
             IUser user)
+           : this(passwordService, userSession, customerProfileService, sessionManager, encryptor, securityCodeChecker, user, null)
+        {
+        }
+
+        internal PasswordHandler(
+            PasswordService passwordService,
+            IUserSession userSession,
+            ProfilePictureServices customerProfileService,
+            SessionManager sessionManager,
+            Encryptor encryptor,
+            SecurityCodeChecker securityCodeChecker,
+            IUser user,
+            Func<int> getInsertProfilePictureSiteMode)
         {
             this.passwordService = passwordService;
             this.userSession = userSession;
@@ -50,6 +66,8 @@
             this.customerProfileService = customerProfileService;
             this.securityCodeChecker = securityCodeChecker;
             this.user = user;
+            this.getInsertProfilePictureSiteMode = getInsertProfilePictureSiteMode ??
+             SimpleServiceLocator.GetService<Func<int>>();
         }
 
         public Result Handle(ResetSubAccountPasswordCommand message)
@@ -201,22 +219,47 @@
 
         public ForceChangePasswordViewModel Handle(ForceChangePasswordQuery message)
         {
-            if (message == null)
+            try
             {
-                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+                if (message == null)
+                {
+                    throw new ArgumentNullException(nameof(message), "Message cannot be null");
+                }
+
+                var result = customerProfileService.UpdateActorProfilePicture(
+                  new UpdateActorProfilePictureParam(
+                      this.userSession.CustId,
+                      null,
+                      null,
+                      getInsertProfilePictureSiteMode(),
+                      true,
+                      this.userSession.UserLoginIp));
+
+
+                var profile = result.IsSuccess ? customerProfileService.GetActorProfilePicture(this.userSession.CustId) : new ActorProfilePictureModel();
+
+                return new ForceChangePasswordViewModel
+                {
+                    HashKey = GetHasKey(),
+                    IsDefaultAvatar = string.IsNullOrEmpty(profile.ImageBase64String),
+                    Username = this.userSession.UserName,
+                    AlternateUsername = this.BuildAlternateUsername(message),
+                    UsernameShower = this.BuildUsernameShower(message),
+                    EmbedImage = profile.ImageBase64String
+                };
             }
-
-            var profile = customerProfileService.GetProfilePicture(this.userSession.CustId);
-
-            return new ForceChangePasswordViewModel
+            catch
             {
-                HashKey = GetHasKey(),
-                IsDefaultAvatar = profile.UseDefaultAvatar,
-                Username = this.userSession.UserName,
-                AlternateUsername = this.BuildAlternateUsername(message),
-                UsernameShower = this.BuildUsernameShower(message),
-                EmbedImage = this.GenerateImage(profile)
-            };
+                return new ForceChangePasswordViewModel
+                {
+                    HashKey = GetHasKey(),
+                    IsDefaultAvatar = true,
+                    Username = this.userSession.UserName,
+                    AlternateUsername = this.BuildAlternateUsername(message),
+                    UsernameShower = this.BuildUsernameShower(message),
+                    EmbedImage = string.Empty
+                };
+            }
         }
 
         public PasswordViewModel Handle(ResetMainAccountPasswordQuery message)
@@ -259,16 +302,6 @@
             }
 
             return $"{Resources.lblresetpassword} - {username}";
-        }
-
-        private string GenerateImage(ProfilePicture profilePicture)
-        {
-            if (profilePicture.ImageData != null)
-            {
-                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}";
-            }
-
-            return string.Empty;
         }
 
         private string BuildUsernameShower(ForceChangePasswordQuery message)

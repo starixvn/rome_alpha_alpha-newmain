@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
     using System;
+    using Alpha.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Main.Models;
@@ -27,7 +28,7 @@
         private const string HashKeySessionKey = "ph";
         private const string SecurityCodeTokenSessionKey = "SECURITYCODETOKEN";
 
-        private readonly CustomerProfileService customerProfileService;
+        private readonly ProfilePictureServices customerProfileService;
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
         private readonly SecurityCodeService securityCodeService;
@@ -37,7 +38,7 @@
 
         public SecurityCodeHandler(
           SecurityCodeService securityCodeService,
-          CustomerProfileService customerProfileService,
+          ProfilePictureServices customerProfileService,
           SessionManager sessionManager,
           Encryptor encryptor,
           IUserSession userSession,
@@ -89,7 +90,7 @@
 
             sessionManager.Add(SecurityCodeTokenSessionKey, securityCodeToken);
 
-            var profile = customerProfileService.GetProfilePicture(userSession.CustId);
+            var profile = customerProfileService.GetActorProfilePicture(userSession.CustId);
 
             return new SecurityCodeViewModel
             {
@@ -98,7 +99,7 @@
                 HashKey = HashKey,
                 CustRoleId = message.RoleId,
                 Title = BuildSecurityCodeTitle(message.Username),
-                EmbedImage = GenerateImage(profile),
+                EmbedImage = profile.ImageBase64String,
                 UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.Username)
             };
         }
@@ -110,7 +111,7 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(userSession.CustId);
+            var profile = customerProfileService.GetActorProfilePicture(userSession.CustId);
             var securityCodeToken = securityCodeService.GenerateSecurityToken();
 
             sessionManager.Add(SecurityCodeTokenSessionKey, securityCodeToken);
@@ -121,11 +122,11 @@
                 SecuritySalt = GenerateSecuritySalt(),
                 HashKey = HashKey,
                 CustRoleId = message.RoleId,
-                IsDefaultAvatar = profile.UseDefaultAvatar,
+                IsDefaultAvatar = string.IsNullOrEmpty(profile.ImageBase64String),
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message),
                 UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
-                EmbedImage = GenerateImage(profile)
+                EmbedImage = profile.ImageBase64String
             };
         }
 
@@ -386,16 +387,6 @@
             }
 
             return result;
-        }
-
-        private string GenerateImage(ProfilePicture profilePicture)
-        {
-            if (profilePicture.ImageData != null)
-            {
-                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}";
-            }
-
-            return string.Empty;
         }
 
         private string BuildUsernameShower(bool isSubAcc, string subUsername, string nickName, string username)

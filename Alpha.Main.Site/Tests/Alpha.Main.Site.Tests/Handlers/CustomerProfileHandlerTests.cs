@@ -2,7 +2,8 @@
 
 namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
+    using Alpha.ProfilePicture.Models;
+    using Alpha.ProfilePicture.Services;
     using Constants;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
@@ -11,16 +12,16 @@ namespace Alpha.Main.Site.Tests.Handlers
     using NSubstitute;
     using NUnit.Framework;
     using SecurityCode.Web;
-    using Services;
     using Site.Handlers;
     using Site.ViewModels.CustomerProfile;
     using Sunplus.Agent.Model.Entities;
+    using System;
     using Web.Helpers;
 
     [TestFixture]
     public class CustomerProfileHandlerTests
     {
-        private CustomerProfileService customerProfileService;
+        private ProfilePictureServices customerProfileService;
         private CustomerProfileHandler customerProfileHandler;
         private IUserSession userSession;
         private NicknameChecker nicknameChecker;
@@ -28,7 +29,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         [SetUp]
         public void SetUp()
         {
-            customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService = Substitute.For<ProfilePictureServices>();
             nicknameChecker = Substitute.For<NicknameChecker>();
             customerProfileHandler = new CustomerProfileHandler(customerProfileService, nicknameChecker);
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
@@ -49,7 +50,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleBriefProfileQuery_NotNullQuery_CallGetProfilePictureService()
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             var query = new BriefProfileQuery(userSession);
 
@@ -57,7 +58,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             var viewModel = customerProfileHandler.Handle(query);
 
             // Assert
-            customerProfileService.Received().GetProfilePicture(Arg.Is<int>(custId => custId == query.CustId));
+            customerProfileService.Received().GetActorProfilePicture(Arg.Is<int>(custId => custId == query.CustId));
         }
 
         [TestCase(null, "")]
@@ -68,10 +69,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedEmbedImage)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(
-                1,
-                true,
-                binaryAvatar));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             var query = new BriefProfileQuery(userSession);
 
@@ -91,10 +89,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             bool expectedIsDefaultAvatar)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(
-                1,
-                isDefaultAvatar,
-                null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             var query = new BriefProfileQuery(userSession);
 
@@ -112,7 +107,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             int expectedCustId)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             userSession.CustId.Returns(custId);
 
@@ -132,7 +127,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedUsername)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             userSession.UserName.Returns(username);
 
@@ -155,7 +150,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             bool expectedIsNotMainAccount)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             userSession.IsSubAcc.Returns(isSubAccount);
             userSession.IsInternal.Returns(isInternal);
@@ -179,7 +174,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedNickName)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             userSession.IsSubAcc.Returns(isSubAccount);
             userSession.IsInternal.Returns(isInternal);
@@ -203,7 +198,7 @@ namespace Alpha.Main.Site.Tests.Handlers
             string expectedCookieToolTipName)
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(1, true, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             userSession.CustId.Returns(custId);
 
@@ -220,7 +215,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         public void HandleBriefProfileQuery_UserIsEnabledOtp_ReturnEnabledOtp()
         {
             // Arrange
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
             SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
 
             var query = new BriefProfileQuery(userSession);
@@ -243,8 +238,8 @@ namespace Alpha.Main.Site.Tests.Handlers
             userSession.UserName.Returns(Username.Base64Name);
             userSession.NickName.Returns("NickName");
 
-            customerProfileService.GetProfilePicture(Arg.Any<int>())
-                .Returns(new ProfilePicture(0, false, new byte[0]));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>())
+                .Returns(new ActorProfilePictureModel());
 
             SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
 

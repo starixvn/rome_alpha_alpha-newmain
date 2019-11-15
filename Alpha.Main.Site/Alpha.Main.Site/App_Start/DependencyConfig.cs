@@ -1,9 +1,6 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Reflection;
-    using System.Web.Mvc;
+    using Alpha.ProfilePicture.Services;
     using Chatbot.Client.Services;
     using DataAccesses;
     using DataAccesses.Impl;
@@ -27,6 +24,11 @@
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Reflection;
+    using System.Web.Mvc;
     using Web.Helpers;
     using Web.Helpers.Impl;
 
@@ -34,6 +36,8 @@
     {
         public static void Init()
         {
+            RegisterProductConfiguration();
+
             var container = new Container();
 
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
@@ -85,7 +89,7 @@
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
 
             container.RegisterPerWebRequest<SiteMenuService, SiteMenuServiceImpl>();
-            container.RegisterPerWebRequest<CustomerProfileService, CustomerProfileServiceImpl>();
+            container.Register<ProfilePictureServices, ProfilePictureServicesImpl>(Lifestyle.Scoped);
             container.RegisterPerWebRequest<SecurityCodeService, SecurityCodeServiceImpl>();
             container.RegisterPerWebRequest<SessionManager, SessionManagerImpl>();
             container.RegisterPerWebRequest<PasswordService, PasswordServiceImpl>();
@@ -132,6 +136,13 @@
             container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
             container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
             container.RegisterPerWebRequest<StatisticsDataAccess, StatisticsDataAccessImpl>();
+        }
+
+        private static void RegisterProductConfiguration()
+        {
+            SimpleServiceLocator
+              .Instance
+              .Register<Func<int>>(AppSettingsHelper.GetInsertProfilePictureSiteMode);
         }
     }
 }

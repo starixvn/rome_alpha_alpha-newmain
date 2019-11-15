@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
+    using Alpha.ProfilePicture.Models;
+    using Alpha.ProfilePicture.Services;
     using AppResources;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
@@ -24,7 +26,7 @@
     public class SecurityCodeHandlerTests
     {
         private SecurityCodeHandler securityCodeHandler;
-        private CustomerProfileService customerProfileService;
+        private ProfilePictureServices customerProfileService;
         private SessionManager sessionManager;
         private Encryptor encryptor;
         private SecurityCodeService securityCodeService;
@@ -42,7 +44,7 @@
             sessionManager = Substitute.For<SessionManager>();
             sessionManager.Get<string>(Arg.Is("SECURITYCODETOKEN")).Returns("SecurityCode");
 
-            customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService = Substitute.For<ProfilePictureServices>();
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
             securityCodeService = Substitute.For<SecurityCodeService>();
@@ -178,13 +180,13 @@
         {
             // Arrange
             var message = new ForceChangeSecurityCodeQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ActorProfilePictureModel>());
 
             // Act
             securityCodeHandler.Handle(message);
 
             // Assert
-            customerProfileService.Received().GetProfilePicture(Arg.Is<int>(custId => custId == userSession.CustId));
+            customerProfileService.Received().GetActorProfilePicture(Arg.Is<int>(custId => custId == userSession.CustId));
         }
 
         [Test]
@@ -192,7 +194,7 @@
         {
             // Arrange
             var message = new ForceChangeSecurityCodeQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ActorProfilePictureModel>());
 
             // Act
             securityCodeHandler.Handle(message);
@@ -206,7 +208,7 @@
         {
             // Arrange
             var message = new ForceChangeSecurityCodeQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ActorProfilePictureModel>());
 
             // Act
             securityCodeHandler.Handle(message);
@@ -226,8 +228,8 @@
 
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
 
-            var profile = FakeDataHelper.Create<ProfilePicture>();
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profile);
+            var profile = FakeDataHelper.Create<ActorProfilePictureModel>();
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profile);
 
             var expectedViewModel = new ForceChangeSecurityCodeViewModel
             {
@@ -235,7 +237,7 @@
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                IsDefaultAvatar = profile.UseDefaultAvatar,
+                IsDefaultAvatar = true,
                 Username = message.UserName,
                 AlternateUsername = string.Empty,
                 UsernameShower = "UserName",
@@ -264,8 +266,8 @@
 
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
 
-            var profile = new ProfilePicture(message.CustId, true);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profile);
+            var profile = new ActorProfilePictureModel();
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profile);
 
             var expectedViewModel = new ForceChangeSecurityCodeViewModel
             {
@@ -273,7 +275,7 @@
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                IsDefaultAvatar = profile.UseDefaultAvatar,
+                IsDefaultAvatar = false,
                 Username = message.UserName,
                 AlternateUsername = "(SUB-ACC SubUserName)",
                 UsernameShower = "SubUserName",

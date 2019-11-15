@@ -1,24 +1,24 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using System;
-    using System.Web;
     using Alpha.Main.Site.Models.Requests.CustomerProfile;
+    using Alpha.ProfilePicture.Services;
     using AppResources;
     using Fanex.Common;
     using Main.Models.CustomerProfiles;
     using MediatR;
-    using Services;
+    using System;
+    using System.Web;
     using ViewModels.CustomerProfile;
     using Web.Helpers;
 
     public class CustomerProfileHandler :
          IRequestHandler<BriefProfileQuery, BriefProfileViewModel>
     {
-        private readonly CustomerProfileService customerProfileService;
+        private readonly ProfilePictureServices customerProfileService;
         private readonly NicknameChecker nicknameChecker;
 
         public CustomerProfileHandler(
-            CustomerProfileService customerProfileService,
+            ProfilePictureServices customerProfileService,
             NicknameChecker nicknameChecker)
         {
             this.customerProfileService = customerProfileService;
@@ -32,12 +32,12 @@
                 throw new ArgumentNullException(nameof(message), "Query cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(message.CustId);
+            var profile = customerProfileService.GetActorProfilePicture(message.CustId);
 
             var viewModel = new BriefProfileViewModel
             {
-                IsDefaultAvatar = profile.UseDefaultAvatar,
-                EmbedImage = GenerateImage(profile),
+                IsDefaultAvatar = string.IsNullOrEmpty(profile.ImageBase64String),
+                EmbedImage = profile.ImageBase64String,
                 CustId = message.CustId,
                 Username = HttpUtility.HtmlEncode(message.UserName),
                 IsInternal = message.IsInternal,
@@ -55,15 +55,5 @@
             => message.IsInternal
                 ? $"{Resources.admin} {HttpUtility.HtmlEncode(message.AdminName)}"
                 : HttpUtility.HtmlEncode(message.NickName);
-
-        private string GenerateImage(ProfilePicture profilePicture)
-        {
-            if (profilePicture.ImageData != null)
-            {
-                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}";
-            }
-
-            return string.Empty;
-        }
     }
 }

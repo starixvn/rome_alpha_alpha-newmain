@@ -1,6 +1,8 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using System;
+    using Alpha.ProfilePicture.Models;
+    using Alpha.ProfilePicture.Services;
     using AppResources;
     using Constants;
     using Helpers;
@@ -29,7 +31,7 @@
         private IUserSession userSession;
         private SessionManager sessionManager;
         private Encryptor encryptor;
-        private CustomerProfileService customerProfileService;
+        private ProfilePictureServices customerProfileService;
         private SecurityCodeChecker securityCodeChecker;
         private IUser user;
 
@@ -39,7 +41,7 @@
             compareLogic = new CompareLogic();
             passwordService = Substitute.For<PasswordService>();
             encryptor = Substitute.For<Encryptor>();
-            customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService = Substitute.For<ProfilePictureServices>();
             securityCodeChecker = Substitute.For<SecurityCodeChecker>();
             sessionManager = Substitute.For<SessionManager>();
 
@@ -437,13 +439,13 @@
         {
             // Arrange
             var message = new ForceChangePasswordQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ActorProfilePictureModel>());
 
             // Act
             passwordHandler.Handle(message);
 
             // Assert
-            customerProfileService.Received().GetProfilePicture(
+            customerProfileService.Received().GetActorProfilePicture(
                 Arg.Is<int>(custId => custId == userSession.CustId));
         }
 
@@ -458,13 +460,13 @@
             var message = new ForceChangePasswordQuery(userSession);
             encryptor.RandomString(Arg.Any<int>()).Returns("HashKey");
 
-            var profilePicture = FakeDataHelper.Create<ProfilePicture>();
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
+            var profilePicture = FakeDataHelper.Create<ActorProfilePictureModel>();
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profilePicture);
 
             var expectedViewModel = new ForceChangePasswordViewModel
             {
                 HashKey = "HashKey",
-                IsDefaultAvatar = profilePicture.UseDefaultAvatar,
+                IsDefaultAvatar = false,
                 Username = userSession.UserName,
                 AlternateUsername = string.Empty,
                 UsernameShower = "UserName",
@@ -493,13 +495,13 @@
             var message = new ForceChangePasswordQuery(userSession);
             encryptor.RandomString(Arg.Any<int>()).Returns("HashKey");
 
-            var profilePicture = new ProfilePicture(message.CustId, true);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
+            var profilePicture = new ActorProfilePictureModel();
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profilePicture);
 
             var expectedViewModel = new ForceChangePasswordViewModel
             {
                 HashKey = "HashKey",
-                IsDefaultAvatar = profilePicture.UseDefaultAvatar,
+                IsDefaultAvatar = true,
                 Username = userSession.UserName,
                 AlternateUsername = "(SUB-ACC SubUserName)",
                 UsernameShower = "SubUserName",

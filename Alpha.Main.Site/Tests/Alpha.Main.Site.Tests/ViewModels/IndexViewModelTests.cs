@@ -2,6 +2,7 @@
 {
     using System;
     using Alpha.Main.Models.CustomerProfiles;
+    using Alpha.ProfilePicture.Models;
     using Alpha.SecurityCode.Web;
     using Main.Models.Otp;
     using Models.Requests;
@@ -18,7 +19,7 @@
         private IUserSession userSession;
         private BrowserHelper browserHelper;
         private IndexQuery query;
-        private ProfilePicture profilePicture;
+        private ActorProfilePictureModel profilePicture;
         private NicknameChecker nicknameChecker;
 
         [SetUp]
@@ -29,7 +30,7 @@
             userSession.SubPageAccess.Returns(new PageAccess());
             nicknameChecker= Substitute.For<NicknameChecker>();
             query = new IndexQuery(userSession, false, false, nicknameChecker);
-            profilePicture = new ProfilePicture(12, true);
+            profilePicture = new ActorProfilePictureModel();
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
             browserHelper = Substitute.For<BrowserHelper>();

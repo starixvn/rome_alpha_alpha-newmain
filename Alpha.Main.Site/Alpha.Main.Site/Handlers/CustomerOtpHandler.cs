@@ -1,17 +1,17 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using System;
+    using Alpha.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Helpers;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
     using Main.Models.Otp;
     using MediatR;
     using Params.Otp;
     using Requests.Otp;
     using Services;
     using Sunplus.Agent.Model.Entities;
+    using System;
     using ViewModels.Security;
     using Web.Helpers;
 
@@ -32,7 +32,7 @@
         private readonly CustomerOtpService customerOtpService;
         private readonly IUserSession userSession;
         private readonly SessionManager sessionManager;
-        private readonly CustomerProfileService customerProfileService;
+        private readonly ProfilePictureServices customerProfileService;
         private readonly BrowserHelper browserHelper;
         private readonly IUser user;
         private readonly NicknameChecker nicknameChecker;
@@ -41,7 +41,7 @@
             CustomerOtpService customerOtpService,
             IUserSession userSession,
             SessionManager sessionManager,
-            CustomerProfileService customerProfileService,
+            ProfilePictureServices customerProfileService,
             BrowserHelper browserHelper,
             IUser user,
             NicknameChecker nicknameChecker)
@@ -160,14 +160,14 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(userSession.CustId);
+            var profile = customerProfileService.GetActorProfilePicture(userSession.CustId);
 
             return new VerifyOtpDifferenceDeviceViewModel
             {
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message.IsSubAcc, message.SubUserName, message.NickName),
                 UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
-                EmbedImage = GenerateImage(profile)
+                EmbedImage = profile.ImageBase64String
             };
         }
 
@@ -243,12 +243,12 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(userSession.CustId);
+            var profile = customerProfileService.GetActorProfilePicture(userSession.CustId);
 
             return new VerifyOTPViewModel
             {
                 UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
-                EmbedImage = GenerateImage(profile)
+                EmbedImage = profile.ImageBase64String
             };
         }
 
@@ -308,16 +308,6 @@
             }
 
             return true;
-        }
-
-        private string GenerateImage(ProfilePicture profilePicture)
-        {
-            if (profilePicture.ImageData != null)
-            {
-                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}";
-            }
-
-            return string.Empty;
         }
 
         private string BuildUsernameShower(bool isSubAcc, string subAccName, string nickName, string username)

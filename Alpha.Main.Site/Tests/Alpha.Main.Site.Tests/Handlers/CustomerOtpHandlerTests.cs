@@ -1,10 +1,9 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
-    using System.Text;
+    using Alpha.ProfilePicture.Models;
+    using Alpha.ProfilePicture.Services;
     using AppResources;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
     using Main.Models.Otp;
     using NSubstitute;
     using NUnit.Framework;
@@ -15,6 +14,8 @@
     using Site.Helpers;
     using Site.Requests.Otp;
     using Sunplus.Agent.Model.Entities;
+    using System;
+    using System.Text;
     using Web.Helpers;
 
     [TestFixture]
@@ -24,7 +25,7 @@
         private CustomerOtpService customerOtpService;
         private SessionManager sessionManager;
         private IUserSession userSession;
-        private CustomerProfileService customerProfileService;
+        private ProfilePictureServices customerProfileService;
         private BrowserHelper browserHelper;
         private IUser user;
         private NicknameChecker nicknameChecker;
@@ -35,7 +36,7 @@
             customerOtpService = Substitute.For<CustomerOtpService>();
             userSession = Substitute.For<IUserSession>();
             sessionManager = Substitute.For<SessionManager>();
-            customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService = Substitute.For<ProfilePictureServices>();
             browserHelper = Substitute.For<BrowserHelper>();
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
@@ -678,13 +679,13 @@
             var query = new VerifyOtpDifferentDeviceQuery(userSession);
             var custId = 10;
             this.userSession.CustId.Returns(custId);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             // Act
             customerOtpHandler.Handle(query);
 
             // Assert
-            customerProfileService.Received().GetProfilePicture(custId);
+            customerProfileService.Received().GetActorProfilePicture(custId);
         }
 
         [Test]
@@ -695,7 +696,7 @@
             var subUsername = "subUsername";
             userSession.IsSubAcc.Returns(true);
             userSession.SubUserName.Returns(subUsername);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             // Act
             var viewModel = customerOtpHandler.Handle(query);
@@ -711,7 +712,7 @@
             var query = new VerifyOtpDifferentDeviceQuery(userSession);
             var nickname = "nickname";
             userSession.NickName.Returns(nickname);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             // Act
             var viewModel = customerOtpHandler.Handle(query);
@@ -725,7 +726,7 @@
         {
             // Arrange
             var query = new VerifyOtpDifferentDeviceQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             // Act
             var viewModel = customerOtpHandler.Handle(query);
@@ -740,8 +741,8 @@
             // Arrange
             var userProfileImage = Encoding.ASCII.GetBytes("userProfileImage");
             var query = new VerifyOtpDifferentDeviceQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>())
-                .Returns(new ProfilePicture(0, false, userProfileImage));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>())
+                .Returns(new ActorProfilePictureModel());
 
             // Act
             var viewModel = customerOtpHandler.Handle(query);
