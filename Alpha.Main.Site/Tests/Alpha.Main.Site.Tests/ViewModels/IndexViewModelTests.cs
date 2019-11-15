@@ -1,7 +1,5 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels
 {
-    using System;
-    using Alpha.Main.Models.CustomerProfiles;
     using Alpha.ProfilePicture.Models;
     using Alpha.SecurityCode.Web;
     using Main.Models.Otp;
@@ -11,6 +9,7 @@
     using Site.Helpers;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
+    using System;
     using Web.Helpers;
 
     [TestFixture]

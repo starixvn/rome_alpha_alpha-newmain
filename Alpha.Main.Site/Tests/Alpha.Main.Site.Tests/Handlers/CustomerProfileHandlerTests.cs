@@ -7,7 +7,6 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Constants;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
-    using Main.Models.CustomerProfiles;
     using Models.Requests.CustomerProfile;
     using NSubstitute;
     using NUnit.Framework;

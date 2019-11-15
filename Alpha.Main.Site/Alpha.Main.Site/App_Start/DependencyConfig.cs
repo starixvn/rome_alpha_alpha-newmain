@@ -132,7 +132,6 @@
         private static void RegisterDataAccesses(Container container)
         {
             container.RegisterPerWebRequest<IDynamicRepository, DynamicRepository>();
-            container.RegisterPerWebRequest<CustomerProfileDataAccess, CustomerProfileDataAccessImpl>();
             container.RegisterPerWebRequest<SecurityCodeDataAccess, SecurityCodeDataAccessImpl>();
             container.RegisterPerWebRequest<PasswordDataAccess, PasswordDataAccessImpl>();
             container.RegisterPerWebRequest<StatisticsDataAccess, StatisticsDataAccessImpl>();

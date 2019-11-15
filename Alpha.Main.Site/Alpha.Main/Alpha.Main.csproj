@@ -269,8 +269,6 @@
     <Compile Include="DataAccesses\Impl\StatisticsDataAccessImpl.cs" />
     <Compile Include="DataAccesses\PasswordDataAccess.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
-    <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
-    <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccess.cs" />
     <Compile Include="FunctionRegistry.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
@@ -282,7 +280,6 @@
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\SiteMapReader.cs" />
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
-    <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
@@ -339,11 +336,9 @@
     <Compile Include="Services\SimpleServiceLocator.cs" />
     <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\CachingManager.cs" />
-    <Compile Include="Services\CustomerProfileService.cs" />
     <Compile Include="Services\BalanceInfoService.cs" />
     <Compile Include="Services\Impl\StatisticsServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingManagerImpl.cs" />
-    <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
     <Compile Include="Services\Impl\CustomerOtpServiceImpl.cs" />
     <Compile Include="Services\Impl\PasswordServiceImpl.cs" />
     <Compile Include="Services\Impl\BalanceInfoServiceImpl.cs" />

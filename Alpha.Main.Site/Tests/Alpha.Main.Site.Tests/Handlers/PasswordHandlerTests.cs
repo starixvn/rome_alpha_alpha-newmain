@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
     using Alpha.ProfilePicture.Models;
     using Alpha.ProfilePicture.Services;
     using AppResources;
@@ -8,7 +7,6 @@
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
     using Main.Tests.TestData.Helper;
     using NSubstitute;
     using NUnit.Framework;
@@ -20,6 +18,7 @@
     using Site.ViewModels.Security;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using System;
     using Web.Helpers;
 
     [TestFixture]

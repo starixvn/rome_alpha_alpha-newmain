@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using Alpha.Main.Models.CustomerProfiles;
     using Alpha.Main.Services;
     using Alpha.ProfilePicture.Models;
     using Alpha.ProfilePicture.Services;

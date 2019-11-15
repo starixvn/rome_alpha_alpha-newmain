@@ -4,7 +4,6 @@
     using Alpha.ProfilePicture.Services;
     using AppResources;
     using Fanex.Common;
-    using Main.Models.CustomerProfiles;
     using MediatR;
     using System;
     using System.Web;

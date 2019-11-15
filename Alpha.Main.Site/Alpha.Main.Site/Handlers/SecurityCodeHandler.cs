@@ -1,11 +1,9 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
-    using System;
     using Alpha.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
     using Main.Models.Enumerations;
     using MediatR;
     using Models.Request.SecurityCode;
@@ -13,6 +11,7 @@
     using Services;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using System;
     using ViewModels.Security;
     using Web.Helpers;
 

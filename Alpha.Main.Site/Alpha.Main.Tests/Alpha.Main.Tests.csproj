@@ -259,7 +259,6 @@
     <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteriaTests.cs" />
-    <Compile Include="DataAccesses\CustomerProfileDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\PasswordDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccessImplTests.cs" />
@@ -267,7 +266,6 @@
     <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
-    <Compile Include="Helpers\Impl\JsonHelperImplTests.cs" />
     <Compile Include="Models\Enumerations\EnumerationTests.cs" />
     <Compile Include="Models\Enumerations\UserLevelForTesting.cs" />
     <Compile Include="Services\KickoutCustomerServiceImplTests.cs" />
@@ -293,7 +291,6 @@
     <Compile Include="Services\StatisticsServiceImplTests.cs" />
     <Compile Include="Services\BalanceInfoServiceImplTests.cs" />
     <Compile Include="Services\BalanceUpDayInfoServiceImplTests.cs" />
-    <Compile Include="Services\CustomerProfileServiceImplTests.cs" />
     <Compile Include="Services\CustomerOtpServiceImplTests.cs" />
     <Compile Include="Services\SiteMenuServiceImplTests.cs" />
   </ItemGroup>
