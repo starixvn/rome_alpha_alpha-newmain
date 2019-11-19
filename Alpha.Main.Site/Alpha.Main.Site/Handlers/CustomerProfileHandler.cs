@@ -44,7 +44,8 @@
                 IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{message.CustId}"),
                 IsEnableOtp = message.IsEnabledOtp,
                 IsHideNicknameLink = nicknameChecker.IsOfferForceLoginAndOverDueDate,
-                SubAccountTooltip = message.IsSubAcc ? $"{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}" : string.Empty
+                SubAccountTooltip = message.IsSubAcc ? $"{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}" : string.Empty,
+                IsShowProfilePictureTooltip = !profile.Modified.HasValue
         };
 
             return viewModel;

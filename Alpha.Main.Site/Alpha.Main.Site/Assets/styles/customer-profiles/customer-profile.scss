@@ -62,13 +62,14 @@
 #profileTooltip, #tooltip-box {
     background-color: #f6f6f6;
     font-size: 12px;
-	top: 12px; 
-	left: 203px;
-	position: fixed;
-	z-index: 1000;
+    top: 12px; 
+    left: 203px;
+    position: fixed;
+    z-index: 1000;
     color: #c30101;
     line-height: 15px;
-    max-width: 514px;
+    max-width: 330px;
+    text-align: justify;
     padding: 5px 16px;
     @include border-radius(1px);
     @include box-shadow(0, 0, 8px, rgba(0, 0, 0, 0.4));

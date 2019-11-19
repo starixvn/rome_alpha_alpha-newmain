@@ -30,8 +30,7 @@ var briefProfile = {
     },
 
     checkAndSetShowEditProfilePictureTooltip: function () {
-        briefProfile.isShowEditProfilePictureTooltip = briefProfile.domElements.profileContent.data('is-default-avatar')
-            && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountShowTooltip;
+        briefProfile.isShowEditProfilePictureTooltip = briefProfile.domElements.profileContent.data('is-show-profile-picture-tooltip')
     },
 
     checkAndShowNickNameTooltip: function () {

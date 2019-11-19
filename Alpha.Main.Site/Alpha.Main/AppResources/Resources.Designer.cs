@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -926,14 +926,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;Dear Customers! In an effort to help you identify the real site,&lt;/div&gt;
-        ///&lt;div&gt; we’re now offering the option to personalize your own profile&lt;/div&gt;
-        ///&lt;div&gt; picture. Once the image has been uploaded successfully, you&lt;/div&gt;
-        ///&lt;div&gt; can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;.
+        ///   Looks up a localized string similar to Dear value agent! We have selected a default profile picture for you, which could help to distinguish our site with other fake sites. You can.
         /// </summary>
         public static string ProfileLoginTip {
             get {
                 return ResourceManager.GetString("ProfileLoginTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  to pick up a new one. If you already have your own profile picture, please ignore this message. Thank you..
+        /// </summary>
+        public static string ProfileLoginTip1 {
+            get {
+                return ResourceManager.GetString("ProfileLoginTip1", resourceCulture);
             }
         }
         

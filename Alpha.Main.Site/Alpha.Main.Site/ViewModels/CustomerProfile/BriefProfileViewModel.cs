@@ -27,5 +27,7 @@
         public bool IsHideNicknameLink { get; set; }
 
         public string SubAccountTooltip { get; set; }
+
+        public bool IsShowProfilePictureTooltip { get; set; }
     }
 }

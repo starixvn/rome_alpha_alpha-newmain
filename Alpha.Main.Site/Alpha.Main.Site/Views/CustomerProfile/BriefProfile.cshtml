@@ -8,6 +8,7 @@
 <div id="profile-content"
      data-introduce-nick-name-tooltip-cookie-name="@(Model.IntroduceNickNameTooltipCookieName)"
      data-is-default-avatar="@(Model.IsDefaultAvatar.ToString().ToLower())"
+     data-is-show-profile-picture-tooltip="@(Model.IsShowProfilePictureTooltip.ToString().ToLower())"
      data-nick-name="@(Model.NickName)">
 
     <a href="@(viewProfileUrl)" target="@mainFrameName" class="profile-avatar">
@@ -24,19 +25,19 @@
         else
         {
             <div class="nickname-box" title="@Model.SubAccountTooltip" data-placement="right" data-toggle="tooltip">
-            @if (!string.IsNullOrEmpty(Model.NickName))
-            {
-                <a href="@changeNickNameUrl" class="linkNickName" id="linkNickNameID" target="@mainFrameName">
-                    <span id="labelNickname">@Model.NickName</span>
-                </a>
-            }
-            else
-            {
-                <span id="spanNickNameID">@Resources.nickname: </span>
-                <a href="@changeNickNameUrl" class="linkConfigNow" id="linkNickNameID" target="@mainFrameName">
-                    <span id="labelNickname">@Resources.configNow</span>
-                </a>
-            }
+                @if (!string.IsNullOrEmpty(Model.NickName))
+                {
+                    <a href="@changeNickNameUrl" class="linkNickName" id="linkNickNameID" target="@mainFrameName">
+                        <span id="labelNickname">@Model.NickName</span>
+                    </a>
+                }
+                else
+                {
+                    <span id="spanNickNameID">@Resources.nickname: </span>
+                    <a href="@changeNickNameUrl" class="linkConfigNow" id="linkNickNameID" target="@mainFrameName">
+                        <span id="labelNickname">@Resources.configNow</span>
+                    </a>
+                }
             </div>
         }
         <a class="otp" href="@(MicroSites.MainUrl("~/otp/SetUpOtp"))" target="@mainFrameName">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</a>
@@ -59,6 +60,6 @@
         <a class="change-picture-link" href="@(viewProfileUrl)" target="main" id="changePictureLink">
             @Resources.clickHere
         </a>
-        &nbsp;@Resources.uploadNow
+        @Resources.ProfileLoginTip1
     </div>
 }

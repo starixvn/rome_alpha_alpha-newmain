@@ -225,6 +225,7 @@
             }
 
             var profile = customerProfileService.GetActorProfilePicture(this.userSession.CustId);
+
             if (profile == null || string.IsNullOrEmpty(profile.ImageBase64String))
             {
                 var result = customerProfileService.UpdateActorProfilePicture(

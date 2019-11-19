@@ -140,10 +140,7 @@
 &lt;div&gt;...ปลอดภัยและเป็นส่วนตัวมากขึ้น.&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>&lt;div&gt;เรียนท่านลูกค้าที่เคารพ เพื่อเป็นการแยกแยะเวปไซค์จริงกับปลอมออกจากกัน &lt;/div&gt;
-&lt;div&gt; ทางบริษัทใคร่ขอนำเสนอตัวเลือกให้ท่านได้ทำการปรับแต่งรูปภาพของท่านเองได้&lt;/div&gt;
-&lt;div&gt; แล้วในขณะนี้ เมื่อรูปภาพได้ทำการอัพโหลดเป็นที่เรียบร้อยแล้ว ท่านสามารถเห็น&lt;/div&gt;
-&lt;div&gt; รูปภาพดังกล่าวได้เมื่อเปิดเวปไซค์ของเราขึ้นมา มิเช่นนั้นแล้วเวปที่เปิดก็จะเป็นเวปไซค์ปลอม &lt;/div&gt;</value>
+    <value>เรียน ลูกค้าที่เคารพ, เพื่อแยกเว็บไซต์ของเราออกจากเว็บไซต์ปลอมเราได้เลือกรูปภาพโปรไฟล์สำหรับคุณแล้ว. คุณสามารถ </value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>คลิ๊ก</value>
@@ -534,5 +531,8 @@
   </data>
   <data name="DataProcessingNotification" xml:space="preserve">
     <value>แจ้งเตือนการประมวลผลข้อมูล</value>
+  </data>
+  <data name="ProfileLoginTip1" xml:space="preserve">
+    <value> เพื่อเปลี่ยนใหม่. หากคุณมีรูปโปรไฟล์ของคุณเองโปรดเพิกเฉยต่อข้อความนี้. ขอบพระคุณ</value>
   </data>
 </root>
