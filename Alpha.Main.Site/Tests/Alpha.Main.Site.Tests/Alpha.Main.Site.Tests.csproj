@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Alpha.ProfilePicture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Alpha.ProfilePicture.1.0.0-ForceChangeProfilePicture3\lib\net461\Alpha.ProfilePicture.dll</HintPath>
+      <HintPath>..\..\packages\Alpha.ProfilePicture.1.0.0-ForceChangeProfilePicture4\lib\net461\Alpha.ProfilePicture.dll</HintPath>
     </Reference>
     <Reference Include="Alpha.SecurityCode, Version=3.0.0.6, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Alpha.SecurityCode.3.0.0.6\lib\net461\Alpha.SecurityCode.dll</HintPath>
