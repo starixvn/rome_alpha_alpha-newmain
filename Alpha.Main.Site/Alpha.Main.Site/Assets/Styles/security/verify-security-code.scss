@@ -114,18 +114,19 @@ body {
     }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px) and (orientation : portrait) {
     .verify-security-code {
         flex-direction: column;
+
         .wrapper-right {
             bottom: 0;
+
             .block {
                 width: 100%;
                 max-width: unset;
             }
         }
     }
-   
 }
 
 // It's not necessary at the moment
