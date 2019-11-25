@@ -29,6 +29,17 @@ body {
     }
 }
 
+.nav-tabs > li > a {
+    font-size: calculateScale($font-size);
+    padding: calculateScale(10px) calculateScale(20px) calculateScale(8px);
+}
+
+.badge-title {
+    @include border-radius(calculateScale(3px));
+    padding: calculateScale(2px) calculateScale(4px);
+    font-size: calculateScale(11px);
+}
+
 .nav-tabs {
     display: inline-block;
     position: relative;
@@ -50,16 +61,7 @@ body {
     }
 }
 
-.nav.nav-tabs > li > a {
-    font-size: calculateScale($font-size);
-    padding: calculateScale(10px) calculateScale(20px) calculateScale(8px);
-}
 
-.badge-title {
-    @include border-radius(calculateScale(3px));
-    padding: calculateScale(2px) calculateScale(4px);
-    font-size: calculateScale(11px);
-}
 
 
 .icon-information-outline {

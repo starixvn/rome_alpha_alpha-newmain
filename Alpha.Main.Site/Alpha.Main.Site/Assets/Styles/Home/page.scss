@@ -19,6 +19,10 @@ html * {
     max-height: 999999px;
 }
 
+.profile-avatar {
+    background: none;
+}
+
 %avatar {
     @include border-radius(50%);
     display: inline-block;
@@ -38,7 +42,7 @@ html * {
     display: block;
 }
 
-.profile-avatar {
+.setting .profile-avatar {
     @extend %avatar;
     display: none;
     width: 24px;
@@ -99,6 +103,14 @@ html * {
 }
 
 /********************************** Main Menu ******************************************/
+.icon-user {
+    display: none;
+    position: relative;
+    left: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
 .mainmenu-container {
     overflow-x: hidden;
     overflow-y: auto;
@@ -215,6 +227,14 @@ html * {
             }
         }
 
+        .icon-arrow-right {
+            @include transform(rotate(0));
+            font-size: 16px;
+            position: relative;
+            top: 2px;
+            @include transition(transform 0.3s ease-out);
+        }
+
         > a {
             cursor: pointer;
             color: #222;
@@ -226,14 +246,6 @@ html * {
             min-height: 3rem;
             background: transparent;
             padding: 14px 8px 14px 12px;
-
-            .icon-arrow-right {
-                @include transform(rotate(0));
-                font-size: 16px;
-                position: relative;
-                top: 2px;
-                @include transition(transform 0.3s ease-out);
-            }
 
             &.active {
                 background: #e5e5e5;
@@ -385,14 +397,6 @@ html * {
     z-index: 99;
 }
 
-.icon-user {
-    display: none;
-    position: relative;
-    left: 0;
-    padding-top: 16px;
-    padding-bottom: 16px;
-}
-
 // Quick search components
 .top-search-bar {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
@@ -474,6 +478,10 @@ html * {
     z-index: 100;
     bottom: 15px;
 
+    .txt-progress {
+        font-size: 13px;
+    }
+
     &.collapsed {
         border: 1px solid #FF5C00;
         background-color: #fff;
@@ -492,10 +500,6 @@ html * {
         padding: 0 8px 0 16px;
         vertical-align: middle;
         font-weight: bold;
-    }
-
-    .txt-progress {
-        font-size: 13px;
     }
 }
 
@@ -540,6 +544,16 @@ html * {
         overflow: auto;
     }
 
+    .header {
+        position: absolute;
+        left: 0;
+        min-width: 800px;
+
+        .header-nav .list-top {
+            margin: 0;
+        }
+    }
+
     .content-wrapper {
         min-width: 800px;
 
@@ -552,15 +566,7 @@ html * {
         }
     }
 
-    .header {
-        position: absolute;
-        left: 0;
-        min-width: 800px;
-
-        .header-nav .list-top {
-            margin: 0;
-        }
-    }
+    
 }
 
 @media only screen and (max-device-width: $screen-device-greater1024) {

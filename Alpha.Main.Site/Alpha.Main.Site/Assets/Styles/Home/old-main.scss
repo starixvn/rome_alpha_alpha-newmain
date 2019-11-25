@@ -74,13 +74,14 @@
 }
 
 .AGEWndCloseButton {
-	display: block;
-	cursor: pointer;
+    display: block;
+    cursor: pointer;
 
-     &:after {                
+    &:after {
         content: '\e92c';
-        font:{
-            family: 'Iconalpha';
+
+        font: {
+            family: 'Iconalpha', sans-serif;
             size: 14px;
             weight: bold;
         }

@@ -29,12 +29,12 @@
     "outputFileName": "Assets/bundles/default-index.css",
     "inputFiles": [
       "Assets/Styles/home/page.css",
-      "Assets/Styles/home/popup-message.css",
-      "Assets/Styles/home/tooltip.css",
-      "Assets/Styles/home/old-main.css",
-      "Assets/Styles/home/dropdown-ext.css",
       "Assets/Styles/customer-profiles/customer-profile.css",
-      "Assets/Styles/home/popup-announcement.css"
+      "Assets/Styles/home/dropdown-ext.css",
+      "Assets/Styles/home/popup-announcement.css",
+      "Assets/Styles/home/tooltip.css",
+      "Assets/Styles/home/popup-message.css",
+      "Assets/Styles/home/old-main.css"
     ]
   },
   {
