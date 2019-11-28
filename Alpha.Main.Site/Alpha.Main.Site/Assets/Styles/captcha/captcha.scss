@@ -1,0 +1,60 @@
+﻿@import '../Home/_variables.scss';
+
+$block-padding: 20px;
+$captcha-img-width: 120px;
+$captcha-img-height: 60px;
+$icon-refresh-color: #6a6a6a;
+$button-height: 30px;
+$margin: 7px;
+$textbox-width: 80px;
+$textbox-font-size: 16px;
+
+.block {
+    display: table;
+    padding: $block-padding;
+
+    .captcha-code img {
+        width: $captcha-img-width;
+        height: $captcha-img-height;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .captcha-code, .action-refresh, .form-captcha {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .icon-refresh {
+        color: $icon-refresh-color;
+        font-size: $textbox-font-size;
+        font-weight: normal;
+        margin-left: $margin;
+
+        &:hover {
+            cursor: pointer
+        }
+
+        &:hover:after {
+            width: $button-height;
+            height: $button-height
+        }
+    }
+
+    .txt {
+        font-size: $textbox-font-size;
+        margin: 0 $margin;
+        padding: 0 10px;
+        width: $textbox-width;
+    }
+
+    .btn-submit {
+        font-size: $font-size;
+        height: $button-height;
+        line-height: $button-height;
+        text-transform: none;
+        width: auto;
+    }
+}

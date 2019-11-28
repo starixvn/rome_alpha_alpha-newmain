@@ -196,5 +196,11 @@
 
         public static string[] OfferChatbotSites
             => Settings["OfferChatbotSites"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+        public static int RobotMaxCaptchaFailedCount
+            => int.Parse(Settings["Robot:MaxCaptchaFailedCount"]);
+
+        public static bool RobotIsIgnoreInputCaptcha
+            => "1" == Settings["Robot:IsIgnoreInputCaptcha"];
     }
 }

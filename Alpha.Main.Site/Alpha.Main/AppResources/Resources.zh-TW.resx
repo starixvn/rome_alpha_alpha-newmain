@@ -538,4 +538,7 @@
   <data name="ProfileLoginTip1" xml:space="preserve">
     <value>以挑選新的。謝謝。</value>
   </data>
+  <data name="invalidCaptcha" xml:space="preserve">
+    <value>識別碼錯誤</value>
+  </data>
 </root>

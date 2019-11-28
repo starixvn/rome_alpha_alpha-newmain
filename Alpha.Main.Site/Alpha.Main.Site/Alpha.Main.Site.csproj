@@ -51,6 +51,9 @@
     <CodeAnalysisRuleSet>Alpha.Main.Site.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Alpha.ActivityTracking, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.ActivityTracking.1.0.0.2-robot\lib\net461\Alpha.ActivityTracking.dll</HintPath>
+    </Reference>
     <Reference Include="Alpha.Auth, Version=3.0.2.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Alpha.Auth.3.0.2.3\lib\net461\Alpha.Auth.dll</HintPath>
     </Reference>
@@ -65,8 +68,8 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.3.6, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.3.6\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="Alpha.Web, Version=1.0.3.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.3.7-robot3\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -97,6 +100,12 @@
     </Reference>
     <Reference Include="EasyNetQ, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\EasyNetQ.2.3.3\lib\net451\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.ActivityTracking, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.ActivityTracking.1.0.0.3\lib\net40\Fanex.ActivityTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.ActivityTracking.Web, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.ActivityTracking.Web.1.0.0.3\lib\net40\Fanex.ActivityTracking.Web.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Age.UI, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Age.UI.3.0.3.0\lib\net461\Fanex.Age.UI.dll</HintPath>
@@ -297,9 +306,8 @@
       <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.1.2\lib\net461\Sunplus.Agent.Model.Auth.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.4.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.4.4\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.4.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.4.5-robot3\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
@@ -524,6 +532,14 @@
     <Content Include="App_Data\SPNames\UAT\DBONUSER.ON_USER.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\bundles\captcha\captcha.css" />
+    <Content Include="Assets\bundles\captcha\captcha.js" />
+    <Content Include="Assets\bundles\captcha\captcha.min.css">
+      <DependentUpon>captcha.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\captcha\captcha.min.js">
+      <DependentUpon>captcha.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\chatbot\chatbot-guide.js" />
     <Content Include="Assets\bundles\chatbot\chatbot-guide.min.js">
       <DependentUpon>chatbot-guide.js</DependentUpon>
@@ -574,6 +590,12 @@
     </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\scripts\aes.js" />
+    <Content Include="Assets\styles\captcha\captcha.css">
+      <DependentUpon>captcha.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\captcha\captcha.min.css">
+      <DependentUpon>captcha.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\chatbot\chatbot-setting.css">
       <DependentUpon>chatbot-setting.scss</DependentUpon>
     </Content>
@@ -877,6 +899,9 @@
     <Content Include="Views\ChatBot\ActionExample.cshtml" />
     <Content Include="Views\Nickname\Index.cshtml" />
     <Content Include="Views\Default\DataProccessingPopup.cshtml" />
+    <Content Include="Views\RobotCaptcha\Index.cshtml" />
+    <Content Include="Views\RobotCaptcha\CaptchaTemplate.cshtml" />
+    <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-guide.ts" />
@@ -1128,6 +1153,14 @@
     <Content Include="Assets\styles\chatbot\chatbot-setting.scss" />
     <Content Include="Assets\styles\nickname\nickname.scss" />
     <Content Include="Assets\styles\security\security.scss" />
+    <Content Include="Assets\styles\captcha\captcha.scss" />
+    <Content Include="App_Data\activitytracking.json" />
+    <Content Include="App_Data\activitytracking.uati1.json" />
+    <Content Include="App_Data\activitytracking.napinternal.json" />
+    <Content Include="App_Data\activitytracking.uat2.json" />
+    <Content Include="App_Data\activitytracking.napinternal2.json" />
+    <Content Include="App_Data\activitytracking.proi1.json" />
+    <Content Include="App_Data\activitytracking.pro2.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1228,6 +1261,7 @@
     <Compile Include="App_Start\RouteConfig.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Controllers\RobotCaptchaController.cs" />
     <Compile Include="Controllers\ChatBotController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\CustomerProfileController.cs" />

@@ -449,6 +449,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You input an invalid code.
+        /// </summary>
+        public static string invalidCaptcha {
+            get {
+                return ResourceManager.GetString("invalidCaptcha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last Name.
         /// </summary>
         public static string lastName {
