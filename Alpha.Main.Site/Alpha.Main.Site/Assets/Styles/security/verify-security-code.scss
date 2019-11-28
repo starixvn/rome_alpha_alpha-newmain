@@ -165,6 +165,10 @@ body {
                 margin-bottom: 12px;
                 margin-right: 0;
             }
+
+            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
+                top: 112px !important;
+            }
         }
     }
     
