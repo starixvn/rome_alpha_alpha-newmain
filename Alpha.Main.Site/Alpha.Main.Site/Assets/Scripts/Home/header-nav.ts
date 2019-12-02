@@ -2,9 +2,6 @@
 /// <reference path="index-manager.ts" />
 
 'use strict';
-interface Window {
-    profilePictureBase64: string
-}
 
 var headerNav = {
     domElements: {
