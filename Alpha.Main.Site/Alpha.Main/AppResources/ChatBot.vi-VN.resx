@@ -357,4 +357,10 @@
   <data name="actionExample" xml:space="preserve">
     <value>Ví dụ</value>
   </data>
+  <data name="ChatbotSetup" xml:space="preserve">
+    <value>Cài đặt Chatbot</value>
+  </data>
+  <data name="ChatBotTitle" xml:space="preserve">
+    <value>Chatbot</value>
+  </data>
 </root>
