@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using Alpha.Main.AppResources;
-    using Alpha.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Models;
     using Configurations;
     using Helpers;
     using Main.Helpers;

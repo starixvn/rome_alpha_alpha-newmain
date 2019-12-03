@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Services;
     using Alpha.Main.Services;
-    using Alpha.ProfilePicture.Models;
-    using Alpha.ProfilePicture.Services;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;

@@ -12,7 +12,11 @@
      data-nick-name="@(Model.NickName)">
 
     <a href="@(viewProfileUrl)" target="@mainFrameName" class="profile-avatar">
-        <img id="logoProfileImg" width="50" height="50" src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' alt="" title="@Resources.ProfileClickTootip" />
+        <img id="logoProfileImg" width="50" height="50" 
+             profile-image-id="@Model.ProfileImageId" 
+             default-avatar="@Model.IsDefaultAvatar.ToString().ToLower()" 
+             src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' 
+             alt="" title="@Resources.ProfileClickTootip" />
     </a>
 
     <div class="userinfo">

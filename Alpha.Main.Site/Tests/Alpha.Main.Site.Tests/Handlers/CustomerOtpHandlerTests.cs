@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using Alpha.ProfilePicture.Models;
-    using Alpha.ProfilePicture.Services;
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Services;
     using AppResources;
     using Main.Models;
     using Main.Models.Otp;

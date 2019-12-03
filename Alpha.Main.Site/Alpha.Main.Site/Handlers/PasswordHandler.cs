@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using Alpha.ProfilePicture.Models;
-    using Alpha.ProfilePicture.Params;
-    using Alpha.ProfilePicture.Services;
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Params;
+    using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Services;
     using AppResources;
     using Main.Models;
@@ -237,7 +237,7 @@
                         true,
                         this.userSession.UserLoginIp));
 
-                profile = result.IsSuccess ? customerProfileService.GetActorProfilePicture(this.userSession.CustId) : new ActorProfilePictureModel();
+                profile = result.IsOk ? customerProfileService.GetActorProfilePicture(this.userSession.CustId) : new ActorProfilePictureModel();
             }
 
             return new ForceChangePasswordViewModel

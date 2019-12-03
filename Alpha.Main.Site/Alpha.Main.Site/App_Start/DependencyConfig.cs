@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
-    using Alpha.ProfilePicture.Services;
+    using Alpha.Main.ProfilePicture.Services;
     using Chatbot.Client.Services;
     using DataAccesses;
     using DataAccesses.Impl;

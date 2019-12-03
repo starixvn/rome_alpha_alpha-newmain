@@ -10,6 +10,8 @@
 
         public string EmbedImage { get; set; }
 
+        public int ProfileImageId { get; set; }
+
         public string OldMainRootApp => UrlHelper.MapOldMainPath("~/");
 
         public string AccountInfoRootPath => UrlHelper.MapAccountInfoPath("~/");

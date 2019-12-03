@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels
 {
-    using Alpha.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Models;
     using Alpha.SecurityCode.Web;
     using Main.Models.Otp;
     using Models.Requests;

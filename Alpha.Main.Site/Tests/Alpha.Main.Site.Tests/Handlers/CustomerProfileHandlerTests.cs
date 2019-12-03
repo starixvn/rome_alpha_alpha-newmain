@@ -2,8 +2,8 @@
 
 namespace Alpha.Main.Site.Tests.Handlers
 {
-    using Alpha.ProfilePicture.Models;
-    using Alpha.ProfilePicture.Services;
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Services;
     using Constants;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
@@ -30,7 +30,7 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             customerProfileService = Substitute.For<ProfilePictureServices>();
             nicknameChecker = Substitute.For<NicknameChecker>();
-            customerProfileHandler = new CustomerProfileHandler(customerProfileService, nicknameChecker);
+            customerProfileHandler = new CustomerProfileHandler(customerProfileService, null, nicknameChecker);
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
             userSession = Substitute.For<IUserSession>();
         }
@@ -72,7 +72,7 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             var query = new BriefProfileQuery(userSession);
 
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService, nicknameChecker);
+            var customerProfileHandler = new CustomerProfileHandler(customerProfileService, null, nicknameChecker);
 
             // Act
             var viewModel = customerProfileHandler.Handle(query);

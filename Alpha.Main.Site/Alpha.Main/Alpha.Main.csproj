@@ -247,6 +247,8 @@
     <Compile Include="Criteria\Otp\UpdateCustomerStatusAfterVerifyOtpCommand.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\ProfilePicture\SelectActorProfilePictureCriteria.cs" />
+    <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureCommand.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetNewMembersCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetStatisticsCriteria.cs" />
@@ -284,6 +286,7 @@
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\ProfilePicture\ActorProfilePictureModel.cs" />
     <Compile Include="Models\UnauthorizedResult.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\MemberRequests\ProductRequest.cs" />
@@ -315,6 +318,7 @@
     <Compile Include="Params\SecurityCode\ChangeSecurityCodeParam.cs" />
     <Compile Include="Params\SecurityCode\ResetSecurityCodeParam.cs" />
     <Compile Include="Params\SecurityCode\VerifySecurityCodeParam.cs" />
+    <Compile Include="Params\ProfilePicture\UpdateActorProfilePictureParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppResources\Alpha.sitemap.Designer.cs">
       <DependentUpon>Alpha.sitemap.resx</DependentUpon>
@@ -329,6 +333,7 @@
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
     <Compile Include="Services\Impl\NicknameServiceImpl.cs" />
+    <Compile Include="Services\Impl\ProfilePictureServices.cs" />
     <Compile Include="Services\KickoutCustomerService.cs" />
     <Compile Include="Services\LogoutService.cs" />
     <Compile Include="Services\MemberRequestsService.cs" />

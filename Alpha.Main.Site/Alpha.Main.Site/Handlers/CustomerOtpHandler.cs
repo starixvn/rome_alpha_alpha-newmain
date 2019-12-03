@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using Alpha.ProfilePicture.Services;
+    using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Helpers;

@@ -21,8 +21,6 @@
 
         public string Title { get; set; }
 
-        public string EmbedImage { get; set; }
-
         public string UsernameShower { get; set; }
     }
 }

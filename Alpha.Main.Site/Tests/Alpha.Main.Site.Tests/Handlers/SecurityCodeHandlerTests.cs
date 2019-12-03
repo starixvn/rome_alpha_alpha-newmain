@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using Alpha.ProfilePicture.Models;
-    using Alpha.ProfilePicture.Services;
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Services;
     using AppResources;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
@@ -25,7 +25,6 @@
     public class SecurityCodeHandlerTests
     {
         private SecurityCodeHandler securityCodeHandler;
-        private ProfilePictureServices customerProfileService;
         private SessionManager sessionManager;
         private Encryptor encryptor;
         private SecurityCodeService securityCodeService;
@@ -43,7 +42,6 @@
             sessionManager = Substitute.For<SessionManager>();
             sessionManager.Get<string>(Arg.Is("SECURITYCODETOKEN")).Returns("SecurityCode");
 
-            customerProfileService = Substitute.For<ProfilePictureServices>();
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
             securityCodeService = Substitute.For<SecurityCodeService>();
@@ -58,7 +56,6 @@
 
             securityCodeHandler = new SecurityCodeHandler(
                 securityCodeService,
-                customerProfileService,
                 sessionManager,
                 encryptor,
                 userSession,
@@ -175,25 +172,10 @@
         }
 
         [Test]
-        public void HandleForceChangeSecurityCodeQuery_MessageIsNotNull_CallsGetProfilePicture()
-        {
-            // Arrange
-            var message = new ForceChangeSecurityCodeQuery(userSession);
-            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ActorProfilePictureModel>());
-
-            // Act
-            securityCodeHandler.Handle(message);
-
-            // Assert
-            customerProfileService.Received().GetActorProfilePicture(Arg.Is<int>(custId => custId == userSession.CustId));
-        }
-
-        [Test]
         public void HandleForceChangeSecurityCodeQuery_MessageIsNotNull_CallsGenerateSecurityToken()
         {
             // Arrange
             var message = new ForceChangeSecurityCodeQuery(userSession);
-            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ActorProfilePictureModel>());
 
             // Act
             securityCodeHandler.Handle(message);
@@ -207,7 +189,6 @@
         {
             // Arrange
             var message = new ForceChangeSecurityCodeQuery(userSession);
-            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ActorProfilePictureModel>());
 
             // Act
             securityCodeHandler.Handle(message);
@@ -226,9 +207,6 @@
             var message = new ForceChangeSecurityCodeQuery(userSession);
 
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
-
-            var profile = FakeDataHelper.Create<ActorProfilePictureModel>();
-            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profile);
 
             var expectedViewModel = new ForceChangeSecurityCodeViewModel
             {
@@ -264,9 +242,6 @@
             var message = new ForceChangeSecurityCodeQuery(userSession);
 
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
-
-            var profile = new ActorProfilePictureModel();
-            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profile);
 
             var expectedViewModel = new ForceChangeSecurityCodeViewModel
             {

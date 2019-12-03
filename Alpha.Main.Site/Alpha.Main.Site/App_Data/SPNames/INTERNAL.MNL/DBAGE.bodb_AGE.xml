@@ -2,5 +2,6 @@
 <Functions>
   <Function Name="Profile Picture">
     <Setting Key="Age_CustomerSelProfilePicture" SpName="Age_CustomerSelProfilePicture" DbName="DBAGE.bodb_AGE.BODBDownlineNetView" Plain="0" />
+    <Setting Key="Age_CustomerUpdProfilePicture" SpName="Age_CustomerUpdProfilePicture_xtest" DbName="DBAGE.bodb_AGE.BODBDownlineNetView" Plain="0" />
   </Function>
 </Functions>
