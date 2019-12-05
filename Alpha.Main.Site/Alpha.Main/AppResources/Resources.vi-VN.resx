@@ -538,7 +538,7 @@
     <value>Yêu cầu</value>
   </data>
   <data name="ProfileLoginTip1" xml:space="preserve">
-    <value>để chọn ảnh khác. Nếu bạn đã chọn ảnh đại diện, vui lòng bỏ qua tin nhắn này. Trân trọng.</value>
+    <value>để chọn ảnh khác. Trân trọng.</value>
   </data>
   <data name="firstName" xml:space="preserve">
     <value>Họ</value>

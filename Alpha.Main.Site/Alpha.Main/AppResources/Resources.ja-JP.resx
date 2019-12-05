@@ -140,7 +140,7 @@
     <value>ニックネーム</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>Dear value agent! We have selected a default profile picture for you, which could help to distinguish our site with other fake sites. You can</value>
+    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>Click here</value>
@@ -389,6 +389,6 @@
     <value>Please select Login by nickname only</value>
   </data>
   <data name="ProfileLoginTip1" xml:space="preserve">
-    <value> to pick up a new one. If you already have your own profile picture, please ignore this message. Thank you.</value>
+    <value>to pick up a new one. Thank you.</value>
   </data>
 </root>

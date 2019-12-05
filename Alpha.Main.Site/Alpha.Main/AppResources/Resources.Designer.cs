@@ -926,7 +926,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dear value agent! We have selected a default profile picture for you, which could help to distinguish our site with other fake sites. You can.
+        ///   Looks up a localized string similar to Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can .
         /// </summary>
         public static string ProfileLoginTip {
             get {
@@ -935,7 +935,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  to pick up a new one. If you already have your own profile picture, please ignore this message. Thank you..
+        ///   Looks up a localized string similar to to pick up a new one. Thank you..
         /// </summary>
         public static string ProfileLoginTip1 {
             get {
