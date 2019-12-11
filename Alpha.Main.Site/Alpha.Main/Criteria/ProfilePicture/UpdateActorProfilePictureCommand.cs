@@ -5,41 +5,21 @@
 
     public class UpdateActorProfilePictureCommand : NonQueryCommand
     {
-        public UpdateActorProfilePictureCommand(
-            int actorId,
-            int? imageId,
-            byte[] image,
-            bool isDefault,
-            int mode,
-            string ip)
+        public UpdateActorProfilePictureCommand(int actorId, int mode, string ip)
         {
             ActorId = actorId;
-            if(imageId != null && imageId < 0)
-            {
-                ImageId = null;
-                Image = image;
-            }
-            else
-            {
-                ImageId = imageId;
-                Image = null;
-            }
-          
-            IsDefault = isDefault;
+            IsDefault = true;
             Mode = mode;
             IP = ip;
+            IsMainServer = true;
         }
 
         [SpParam(SqlParamName = "CustId")]
         public int ActorId { get; }
 
-        public int? ImageId { get;}
-
-        public byte[] Image { get; }
-
         public bool IsDefault { get; }
 
-        public bool IsMainServer => true;
+        public bool IsMainServer { get; }
 
         public int Mode { get; }
 

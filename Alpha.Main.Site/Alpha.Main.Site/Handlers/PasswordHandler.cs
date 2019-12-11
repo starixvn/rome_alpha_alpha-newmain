@@ -231,10 +231,7 @@
                 var result = customerProfileService.UpdateActorProfilePicture(
                     new UpdateActorProfilePictureParam(
                         this.userSession.CustId,
-                        null,
-                        null,
                         getInsertProfilePictureSiteMode(),
-                        true,
                         this.userSession.UserLoginIp));
 
                 profile = result.IsOk ? customerProfileService.GetActorProfilePicture(this.userSession.CustId) : new ActorProfilePictureModel();

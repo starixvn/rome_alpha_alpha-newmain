@@ -48,11 +48,9 @@
             {
                 var command = new UpdateActorProfilePictureCommand(
                         param.ActorId,
-                        param.ImageId,
-                        param.Image,
-                        param.IsDefault,
                         param.Mode,
                         param.IP);
+
                 dynamicRepository.Execute(command);
                 return Result.CreateErrorResult(command.ErrMsg, command.ErrCode);
             }
