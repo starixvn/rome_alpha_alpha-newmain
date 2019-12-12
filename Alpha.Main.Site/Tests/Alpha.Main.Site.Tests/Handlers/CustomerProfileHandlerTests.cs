@@ -4,6 +4,7 @@ namespace Alpha.Main.Site.Tests.Handlers
 {
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.Main.Services;
     using Constants;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
@@ -30,9 +31,16 @@ namespace Alpha.Main.Site.Tests.Handlers
         {
             customerProfileService = Substitute.For<ProfilePictureServices>();
             nicknameChecker = Substitute.For<NicknameChecker>();
-            customerProfileHandler = new CustomerProfileHandler(customerProfileService, null, nicknameChecker);
-            SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
+            SimpleServiceLocator
+             .Instance
+             .Register<Func<int>>(() => 1);
             userSession = Substitute.For<IUserSession>();
+            userSession.CustId.Returns(CustId.ValidId);
+            userSession.RoleId.Returns(RoleId.Agent);
+
+            SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
+
+            customerProfileHandler = new CustomerProfileHandler(customerProfileService, userSession, nicknameChecker);
         }
 
         [Test]
@@ -58,45 +66,6 @@ namespace Alpha.Main.Site.Tests.Handlers
 
             // Assert
             customerProfileService.Received().GetActorProfilePicture(Arg.Is<int>(custId => custId == query.CustId));
-        }
-
-        [TestCase(null, "")]
-        [TestCase(new byte[0], "data:image/jpeg;base64,")]
-        [TestCase(new byte[2] { (byte)1, (byte)2 }, "data:image/jpeg;base64,AQI=")]
-        public void HandleBriefProfileQuery_QueryMatchProfile_ReturnEmbedImage(
-            byte[] binaryAvatar,
-            string expectedEmbedImage)
-        {
-            // Arrange
-            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
-
-            var query = new BriefProfileQuery(userSession);
-
-            var customerProfileHandler = new CustomerProfileHandler(customerProfileService, null, nicknameChecker);
-
-            // Act
-            var viewModel = customerProfileHandler.Handle(query);
-
-            // Assert
-            Assert.AreEqual(expectedEmbedImage, viewModel.EmbedImage);
-        }
-
-        [TestCase(false, false)]
-        [TestCase(true, true)]
-        public void HandleBriefProfileQuery_QueryMatchProfile_ReturnCorrectIsDefaultAvatar(
-            bool isDefaultAvatar,
-            bool expectedIsDefaultAvatar)
-        {
-            // Arrange
-            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
-
-            var query = new BriefProfileQuery(userSession);
-
-            // Act
-            var viewModel = customerProfileHandler.Handle(query);
-
-            // Assert
-            Assert.AreEqual(expectedIsDefaultAvatar, viewModel.IsDefaultAvatar);
         }
 
         [TestCase(CustId.InvalidId, CustId.InvalidId)]
@@ -245,15 +214,18 @@ namespace Alpha.Main.Site.Tests.Handlers
             var query = new BriefProfileQuery(userSession);
             var expectedViewModel = new BriefProfileViewModel
             {
-                IsDefaultAvatar = false,
-                EmbedImage = "data:image/jpeg;base64,",
+                IsDefaultAvatar = true,
+                EmbedImage = string.Empty,
+                ProfileImageId = 0,
                 CustId = query.CustId,
                 Username = "Base64Name",
                 IsInternal = false,
                 NickName = "NickName",
                 IntroduceNickNameTooltipCookieName = "40C8226B76C76797A38A6AC830708A",
                 IsEnableOtp = true,
-                SubAccountTooltip = string.Empty
+                SubAccountTooltip = string.Empty,
+                IsHideNicknameLink = false,
+                IsShowProfilePictureTooltip = true
             };
 
             // Act

@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
     using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Params;
     using Alpha.Main.ProfilePicture.Services;
     using AppResources;
     using Constants;
@@ -50,6 +51,10 @@
 
             user = Substitute.For<IUser>();
             user.IsAdminCanUpdateSubAccount.Returns(true);
+
+            SimpleServiceLocator
+              .Instance
+              .Register<Func<int>>(() => 1);
 
             passwordHandler = new PasswordHandler(
                 passwordService,
@@ -496,6 +501,7 @@
 
             var profilePicture = new ActorProfilePictureModel();
             customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profilePicture);
+            customerProfileService.UpdateActorProfilePicture(Arg.Any<UpdateActorProfilePictureParam>()).Returns(new Result() { Code = 0 });
 
             var expectedViewModel = new ForceChangePasswordViewModel
             {
