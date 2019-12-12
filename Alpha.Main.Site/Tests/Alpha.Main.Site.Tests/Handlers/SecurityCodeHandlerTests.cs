@@ -1,5 +1,8 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Services;
+    using Alpha.Main.Tests.TestData.Helper;
     using AppResources;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
@@ -25,6 +28,7 @@
         private SessionManager sessionManager;
         private Encryptor encryptor;
         private SecurityCodeService securityCodeService;
+        private ProfilePictureServices customerProfileService;
         private IUserSession userSession;
         private IUser user;
         private CompareLogic compareLogic;
@@ -45,6 +49,10 @@
             securityCodeService.GenerateSecurityToken().Returns("SecurityCodeToken");
             securityCodeService.GenerateSalt(Arg.Any<int>()).Returns("SecuritySalt");
 
+            customerProfileService = Substitute.For<ProfilePictureServices>();
+            var profilePicture = new ActorProfilePictureModel(null, 0, null);
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profilePicture);
+
             userSession = Substitute.For<IUserSession>();
             userSession.RoleId.Returns(RoleId.Agent);
 
@@ -53,6 +61,7 @@
 
             securityCodeHandler = new SecurityCodeHandler(
                 securityCodeService,
+                customerProfileService,
                 sessionManager,
                 encryptor,
                 userSession,
@@ -219,7 +228,9 @@
                 CustRoleId = message.RoleId,
                 Username = message.UserName,
                 AlternateUsername = string.Empty,
-                UsernameShower = "UserName"
+                UsernameShower = "UserName",
+                IsDefaultAvatar = true,
+                EmbedImage = string.Empty
             };
 
             var compareLogic = new CompareLogic(new ComparisonConfig
@@ -252,7 +263,9 @@
                 CustRoleId = message.RoleId,
                 Username = message.UserName,
                 AlternateUsername = "(SUB-ACC SubUserName)",
-                UsernameShower = "SubUserName"
+                UsernameShower = "SubUserName",
+                IsDefaultAvatar = true,
+                EmbedImage = string.Empty
             };
 
             var compareLogic = new CompareLogic(new ComparisonConfig

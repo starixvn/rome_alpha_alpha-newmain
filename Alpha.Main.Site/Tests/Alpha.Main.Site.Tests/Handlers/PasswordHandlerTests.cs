@@ -464,13 +464,14 @@
             var message = new ForceChangePasswordQuery(userSession);
             encryptor.RandomString(Arg.Any<int>()).Returns("HashKey");
 
-            var profilePicture = FakeDataHelper.Create<ActorProfilePictureModel>();
+            var profilePicture = new ActorProfilePictureModel(null, 0, null);
             customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profilePicture);
-
+            customerProfileService.UpdateActorProfilePicture(Arg.Any<UpdateActorProfilePictureParam>()).Returns(new Result() { Code = 0});
+            
             var expectedViewModel = new ForceChangePasswordViewModel
             {
                 HashKey = "HashKey",
-                IsDefaultAvatar = false,
+                IsDefaultAvatar = true,
                 Username = userSession.UserName,
                 AlternateUsername = string.Empty,
                 UsernameShower = "UserName",

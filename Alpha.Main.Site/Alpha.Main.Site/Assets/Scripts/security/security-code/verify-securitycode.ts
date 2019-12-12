@@ -7,6 +7,7 @@ var verifySecurityCode = {
     initialize: function () {
         const actorProfilePicture = JSON.parse(localStorage.getItem('actorProfilePicture'));
         $('.profile-avatar').attr("src", actorProfilePicture.Image);
+
         $('#txtSecCode').keypress(function (e) {
             if (e.which == 13) {
                 verifySecurityCode.verify();

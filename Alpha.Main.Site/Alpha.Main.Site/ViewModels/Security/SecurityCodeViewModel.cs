@@ -22,5 +22,9 @@
         public string Title { get; set; }
 
         public string UsernameShower { get; set; }
+
+        public bool IsDefaultAvatar { get; set; }
+
+        public string EmbedImage { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
+    using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Main.Models;
@@ -29,12 +30,14 @@
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
         private readonly SecurityCodeService securityCodeService;
+        private readonly ProfilePictureServices customerProfileService;
         private readonly IUserSession userSession;
         private readonly IUser user;
         private readonly AesService aes;
 
         public SecurityCodeHandler(
           SecurityCodeService securityCodeService,
+          ProfilePictureServices customerProfileService,
           SessionManager sessionManager,
           Encryptor encryptor,
           IUserSession userSession,
@@ -44,6 +47,7 @@
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
             this.securityCodeService = securityCodeService;
+            this.customerProfileService = customerProfileService;
             this.userSession = userSession;
             this.user = user;
             this.aes = aes;
@@ -107,6 +111,8 @@
 
             sessionManager.Add(SecurityCodeTokenSessionKey, securityCodeToken);
 
+            var profile = customerProfileService.GetActorProfilePicture(this.userSession.CustId);
+
             return new ForceChangeSecurityCodeViewModel
             {
                 SecurityCodeToken = securityCodeToken,
@@ -115,7 +121,9 @@
                 CustRoleId = message.RoleId,
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message),
-                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName)
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
+                IsDefaultAvatar = string.IsNullOrEmpty(profile.ImageBase64String),
+                EmbedImage = profile.ImageBase64String
             };
         }
 
