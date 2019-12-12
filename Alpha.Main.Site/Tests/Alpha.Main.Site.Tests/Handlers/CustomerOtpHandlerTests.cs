@@ -45,7 +45,7 @@
 
             nicknameChecker = Substitute.For<NicknameChecker>();
 
-            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, customerProfileService, browserHelper, user, nicknameChecker);
+            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, browserHelper, user, nicknameChecker);
         }
 
         #region Handle Change Otp Status Command
@@ -673,22 +673,6 @@
         }
 
         [Test]
-        public void HandleVerifyOtpDifferentDeviceQuery_CallGetProfilePicture()
-        {
-            // Arrange
-            var query = new VerifyOtpDifferentDeviceQuery(userSession);
-            var custId = 10;
-            this.userSession.CustId.Returns(custId);
-            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
-
-            // Act
-            customerOtpHandler.Handle(query);
-
-            // Assert
-            customerProfileService.Received().GetActorProfilePicture(custId);
-        }
-
-        [Test]
         public void HandleVerifyOtpDifferentDeviceQuery_UserIsSubAcc_ReturnFormattedSubUsername()
         {
             // Arrange
@@ -734,23 +718,6 @@
             // Assert
             Assert.IsEmpty(viewModel.AlternateUsername);
         }
-
-        [Test]
-        public void HandleVerifyOtpDifferentDeviceQuery_UserHadProfilePicture_ReturnBased64Image()
-        {
-            // Arrange
-            var userProfileImage = Encoding.ASCII.GetBytes("userProfileImage");
-            var query = new VerifyOtpDifferentDeviceQuery(userSession);
-            customerProfileService.GetActorProfilePicture(Arg.Any<int>())
-                .Returns(new ActorProfilePictureModel());
-
-            // Act
-            var viewModel = customerOtpHandler.Handle(query);
-
-            // Assert
-            Assert.AreEqual($"data:image/jpeg;base64,{Convert.ToBase64String(userProfileImage)}", viewModel.EmbedImage);
-        }
-
         #endregion Handle Verify Otp Different Device Query
 
         #region Check Difference Device Command

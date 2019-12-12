@@ -32,7 +32,6 @@
         private readonly CustomerOtpService customerOtpService;
         private readonly IUserSession userSession;
         private readonly SessionManager sessionManager;
-        private readonly ProfilePictureServices customerProfileService;
         private readonly BrowserHelper browserHelper;
         private readonly IUser user;
         private readonly NicknameChecker nicknameChecker;
@@ -41,7 +40,6 @@
             CustomerOtpService customerOtpService,
             IUserSession userSession,
             SessionManager sessionManager,
-            ProfilePictureServices customerProfileService,
             BrowserHelper browserHelper,
             IUser user,
             NicknameChecker nicknameChecker)
@@ -49,7 +47,6 @@
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
             this.sessionManager = sessionManager;
-            this.customerProfileService = customerProfileService;
             this.browserHelper = browserHelper;
             this.user = user;
             this.nicknameChecker = nicknameChecker;
@@ -160,14 +157,11 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var profile = customerProfileService.GetActorProfilePicture(userSession.CustId);
-
             return new VerifyOtpDifferenceDeviceViewModel
             {
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message.IsSubAcc, message.SubUserName, message.NickName),
-                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
-                EmbedImage = profile.ImageBase64String
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName)
             };
         }
 
@@ -243,12 +237,9 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var profile = customerProfileService.GetActorProfilePicture(userSession.CustId);
-
             return new VerifyOTPViewModel
             {
-                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
-                EmbedImage = profile.ImageBase64String
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName)
             };
         }
 

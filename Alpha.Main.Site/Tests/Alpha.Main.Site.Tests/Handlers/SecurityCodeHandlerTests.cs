@@ -1,13 +1,10 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using Alpha.Main.ProfilePicture.Models;
-    using Alpha.Main.ProfilePicture.Services;
     using AppResources;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
     using Main.Models;
-    using Main.Tests.TestData.Helper;
     using Models.Request.SecurityCode;
     using NSubstitute;
     using NUnit.Framework;
@@ -113,8 +110,10 @@
             // Arrange
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
 
-            var message = new SecurityCodeQuery(userSession);
-            message.Username = userName;
+            var message = new SecurityCodeQuery(userSession)
+            {
+                Username = userName
+            };
 
             var expectedViewModel = new SecurityCodeViewModel
             {
@@ -122,7 +121,8 @@
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                Title = "Reset Security Code"
+                Title = "Reset Security Code",
+                UsernameShower = userName
             };
 
             // Act
@@ -138,8 +138,10 @@
             // Arrange
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
 
-            var message = new SecurityCodeQuery(userSession);
-            message.Username = "UserName";
+            var message = new SecurityCodeQuery(userSession)
+            {
+                Username = "UserName"
+            };
 
             var expectedViewModel = new SecurityCodeViewModel
             {
@@ -147,7 +149,8 @@
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                Title = "Reset Security Code - UserName"
+                Title = "Reset Security Code - UserName",
+                UsernameShower = "UserName"
             };
 
             // Act
@@ -214,11 +217,9 @@
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                IsDefaultAvatar = true,
                 Username = message.UserName,
                 AlternateUsername = string.Empty,
-                UsernameShower = "UserName",
-                EmbedImage = string.Empty
+                UsernameShower = "UserName"
             };
 
             var compareLogic = new CompareLogic(new ComparisonConfig
@@ -249,11 +250,9 @@
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                IsDefaultAvatar = false,
                 Username = message.UserName,
                 AlternateUsername = "(SUB-ACC SubUserName)",
-                UsernameShower = "SubUserName",
-                EmbedImage = string.Empty
+                UsernameShower = "SubUserName"
             };
 
             var compareLogic = new CompareLogic(new ComparisonConfig
