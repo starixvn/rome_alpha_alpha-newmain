@@ -170,7 +170,7 @@ label {
             list-style-type: decimal;
         }
 
-        .download-content, .manualQRCode, .block, .note, #setup-otp-message {
+        .download-content, .manualQRCode, .block, .note {
             margin-left: -12px;
         }
 
@@ -252,9 +252,9 @@ label {
             }
         }
 
-        #setup-otp-message .msg {
+        /*#setup-otp-message .msg {
             margin-bottom: 0;
-        }
+        }*/
     }
 
     .list-enableDisable {
@@ -270,13 +270,13 @@ label {
         }
     }
 
-    #change-status-message {
+    /*#change-status-message {
         float: left;
         margin-left: 20px;
         min-width: 350px;
-    }
+    }*/
 
-    .register-succeess, #remove-otp-message {
+    .register-succeess {
         clear: both;
         padding: 0 16px;
     }
@@ -379,10 +379,23 @@ label {
     }
 }
 
+#change-status-message {
+    float: left;
+    margin-left: 20px;
+    min-width: 350px;
+}
 
-// Modals
-.bootbox-confirm .modal-dialog {
-    margin: 100px auto 0;
+#remove-otp-message {
+    clear: both;
+    padding: 0 16px;
+}
+
+#setup-otp-message {
+    margin-left: -12px;
+
+    .msg {
+        margin-bottom: 0;
+    }
 }
 
 #username-message, #change-status-message, #remove-otp-message {
@@ -390,6 +403,12 @@ label {
         margin-top: 0;
     }
 }
+
+// Modals
+.bootbox-confirm .modal-dialog {
+    margin: 100px auto 0;
+}
+
 @media only screen and (max-device-width : $conent-device-lower768) {
     body {
         background-color: #fff;
@@ -401,15 +420,16 @@ label {
         min-height: $height-mobile;
         margin-right: 0;
     }
+
     .nav-tabs {
         display: table;
         width: 100%;
 
         li {
             display: table-cell;
-            float: none;            
+            float: none;
 
-            a {                
+            a {
                 text-align: center;
             }
         }
@@ -448,7 +468,7 @@ label {
                 .example {
                     margin-top: 20px;
 
-                    .col-left, .col-right  {
+                    .col-left, .col-right {
                         float: none;
                         text-align: center;
                     }
@@ -462,7 +482,7 @@ label {
         }
 
         .block {
-            max-width: initial; 
+            max-width: initial;
             width: 100%;
         }
 
@@ -472,18 +492,16 @@ label {
 
         .list-enableDisable {
             padding-left: 0;
-        }        
+        }
     }
 
     .otp-reset .btn-remove {
-         @extend %btn;
-         width: 100%;
+        @extend %btn;
+        width: 100%;
     }
 
     .bootbox-confirm .modal-dialog {
         margin: 100px auto 0;
-
-
     }
 }
 
