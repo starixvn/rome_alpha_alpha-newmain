@@ -184,10 +184,10 @@
     <value>Dự đoán</value>
   </data>
   <data name="homeDrawAwayNoBet" xml:space="preserve">
-    <value>Home/Draw/Away No Bet</value>
+    <value>Nhà/Hoà/Khách Không Tính</value>
   </data>
   <data name="HOUL" xml:space="preserve">
-    <value>Cược chấp/Tài Xỉu/Trực tuyến</value>
+    <value>Cược chấp/Tài Xỉu/Trực tiếp</value>
   </data>
   <data name="masterList" xml:space="preserve">
     <value>Danh sách Master</value>
@@ -265,10 +265,10 @@
     <value>Number Game</value>
   </data>
   <data name="OE1x2DND" xml:space="preserve">
-    <value>Lẻ/Chẵn + 1x2 + DND</value>
+    <value>Lẻ/Chẵn + 1x2 + Hòa/Không Hòa</value>
   </data>
   <data name="parlay" xml:space="preserve">
-    <value>Cá cược tổng hợp</value>
+    <value>Cược Tổng Hợp</value>
   </data>
   <data name="reports" xml:space="preserve">
     <value>Báo cáo</value>
@@ -322,7 +322,7 @@
     <value>Giữ Sạch Lưới</value>
   </data>
   <data name="BetType27" xml:space="preserve">
-    <value>To win to nil</value>
+    <value>Cược Thắng Áp Đảo</value>
   </data>
   <data name="BetType28" xml:space="preserve">
     <value>Cược Chấp 3 Chiều</value>
@@ -374,5 +374,14 @@
   </data>
   <data name="ProgressiveJackpotGames" xml:space="preserve">
     <value>Trò chơi Jackpot lũy tiến</value>
+  </data>
+  <data name="customerSetting" xml:space="preserve">
+    <value>Thiết lập của Khách hàng</value>
+  </data>
+  <data name="Beta" xml:space="preserve">
+    <value>Beta</value>
+  </data>
+  <data name="chatbot" xml:space="preserve">
+    <value>Chatbot</value>
   </data>
 </root>

@@ -343,7 +343,7 @@
     <value>Phiên bản cũ sẽ được duy trì đến hết ngày</value>
   </data>
   <data name="WarningText" xml:space="preserve">
-    <value>Lưu ý:</value>
+    <value>Lưu ý: </value>
   </data>
   <data name="HomeIconIntroduction" xml:space="preserve">
     <value>Biểu tượng Trang Chủ - truy cập vào trang chủ</value>
@@ -536,5 +536,68 @@
   </data>
   <data name="DataProcessingNotification" xml:space="preserve">
     <value>Thông báo xử lý dữ liệu</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>Yêu cầu</value>
+  </data>
+  <data name="firstName" xml:space="preserve">
+    <value>Họ</value>
+  </data>
+  <data name="lastName" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Đang tải</value>
+  </data>
+  <data name="searchAccount" xml:space="preserve">
+    <value>Tìm kiếm tài khoản</value>
+  </data>
+  <data name="viewMessage" xml:space="preserve">
+    <value>Xem thông báo</value>
+  </data>
+  <data name="viewAnnouncement" xml:space="preserve">
+    <value>Xem thông báo</value>
+  </data>
+  <data name="changeLanguage" xml:space="preserve">
+    <value>Thay đổi ngôn ngữ</value>
+  </data>
+  <data name="ThereIsNoChange" xml:space="preserve">
+    <value>Không có thay đổi để cập nhật</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="memberInfo" xml:space="preserve">
+    <value>Thông tin Member</value>
+  </data>
+  <data name="credit" xml:space="preserve">
+    <value>Tín dụng</value>
+  </data>
+  <data name="lblresetpassword" xml:space="preserve">
+    <value>Thiết lập lại mật khẩu</value>
+  </data>
+  <data name="lblChangePassword" xml:space="preserve">
+    <value>Thay đổi mật khẩu</value>
+  </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="ShowMainMenu" xml:space="preserve">
+    <value>Hiện Menu Chính</value>
+  </data>
+  <data name="TitleUnsupportBrowser" xml:space="preserve">
+    <value>Yêu cầu cập nhật trình duyệt</value>
+  </data>
+  <data name="TransferAndViewLogIntroduction" xml:space="preserve">
+    <value>Chuyển Khoản và Nhật Ký được đưa vào Menu Chính</value>
+  </data>
+  <data name="ReportMenuIntroduction" xml:space="preserve">
+    <value>Có gì mới trong những Báo cáo này? Bấm vào đây</value>
+  </data>
+  <data name="WinLossAnalysisChartIntroduction" xml:space="preserve">
+    <value>Biểu đồ phân tích thắng thua ở đây</value>
   </data>
 </root>
