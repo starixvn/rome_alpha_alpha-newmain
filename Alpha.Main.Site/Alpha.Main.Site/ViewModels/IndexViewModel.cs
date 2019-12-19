@@ -1,10 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
-    using System;
-    using System.Linq;
-    using System.Web;
     using Alpha.Main.AppResources;
-    using Alpha.Main.Models.CustomerProfiles;
+    using Alpha.Main.ProfilePicture.Models;
     using Configurations;
     using Helpers;
     using Main.Helpers;
@@ -12,6 +9,9 @@
     using Models.Requests;
     using SecurityCode.Web;
     using Sunplus.Agent.Utilities;
+    using System;
+    using System.Linq;
+    using System.Web;
 
     public class IndexViewModel
     {
@@ -19,13 +19,13 @@
         private readonly Func<string> getDefaultUrl;
         private readonly Func<string, string> encodeDataFunction;
         private readonly BrowserHelper browserHelper;
-        private readonly ProfilePicture profilePicture;
+        private readonly ActorProfilePictureModel profilePicture;
         public IndexViewModel(
             IndexQuery message,
             Func<string> getDefaultUrl,
             Func<string, string> encodeDataFunction,
             BrowserHelper browserHelper,
-            ProfilePicture profilePicture)
+            ActorProfilePictureModel profilePicture)
         {
             if (message == null)
             {
@@ -94,8 +94,8 @@
                 EnableSecurityCode,
                 message.IsViewedMemberInfo,
                 IsEnabledOtp,
-                profilePicture.UseDefaultAvatar,
-                profilePicture.ImageData != null ? $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}" : string.Empty,
+                string.IsNullOrEmpty(profilePicture.ImageBase64String),
+                profilePicture.ImageBase64String,
                 message.ShowNicknameMenu);
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;

@@ -18,6 +18,9 @@ class VerifyOtp {
     init = () => {
         this.cachedElements();
         this.registerEvents();
+
+        const actorProfilePicture = JSON.parse(localStorage.getItem('actorProfilePicture'));
+        this.$('.profile-avatar').attr("src", actorProfilePicture.Image);
     }
 
     cachedElements = () => {
@@ -42,6 +45,7 @@ class VerifyOtp {
 
         var otp = this.$txtOtp.val();
         if (otp.length === 0) {
+            this.$(this.$otpMessage).removeClass('hidden');
             alpha.showMessage(this.$otpMessage, new Result({ Code: 1, Message: this.resources.requiredFieldMessage }));
             this.$txtOtp.focus();
             return;
@@ -67,6 +71,7 @@ class VerifyOtp {
             this.$btnSubmit.attr("disabled", "disabled").remove();
         }
         else {
+            this.$(this.$otpMessage).removeClass('hidden');
             alpha.showMessage(this.$otpMessage, result);
             this.$txtOtp.focus();
 

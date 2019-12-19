@@ -25,13 +25,12 @@ var briefProfile = {
 
         briefProfile.checkAndSetShowEditProfilePictureTooltip();
         briefProfile.checkAndShowNickNameTooltip();
-
+        briefProfile.setProfilePictureStorage();
         briefProfile.registerEvents();
     },
 
     checkAndSetShowEditProfilePictureTooltip: function () {
-        briefProfile.isShowEditProfilePictureTooltip = briefProfile.domElements.profileContent.data('is-default-avatar')
-            && briefProfile.getCountNickNameToolTip() < briefProfile.maxCountShowTooltip;
+        briefProfile.isShowEditProfilePictureTooltip = briefProfile.domElements.profileContent.data('is-show-profile-picture-tooltip')
     },
 
     checkAndShowNickNameTooltip: function () {
@@ -43,7 +42,7 @@ var briefProfile = {
         }
 
         briefProfile.setCountNickNameToolTip(++countNickNameToolTip);
-
+        
         briefProfile.showTooltipIntroNickname();
     },
 
@@ -56,6 +55,14 @@ var briefProfile = {
 
     setCountNickNameToolTip: function (value) {
         $.cookie(briefProfile.countNickNameToolTipCookieName, value, { expires: 30, path: '/' });
+    },
+
+    setProfilePictureStorage: function () {
+        localStorage.setItem('actorProfilePicture', JSON.stringify({
+            ImageId: briefProfile.domElements.profilePicture.attr('profile-image-id'),
+            Image: briefProfile.domElements.profilePicture.attr('src'),
+            IsDefaultAvatar: briefProfile.domElements.profilePicture.attr('default-avatar')
+        }));
     },
 
     registerEvents: function () {

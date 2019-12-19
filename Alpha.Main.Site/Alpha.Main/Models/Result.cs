@@ -42,7 +42,7 @@
 
         public static Result CreateErrorResult(string message, int? code = null)
         {
-            return new Result { Code = code.HasValue ? code.Value : ErrorCode, Message = message };
+            return new Result { Code = code ?? ErrorCode, Message = message };
         }
     }
 }

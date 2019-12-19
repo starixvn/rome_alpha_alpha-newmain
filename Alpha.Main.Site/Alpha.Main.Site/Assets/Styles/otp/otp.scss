@@ -68,6 +68,7 @@ label {
     }
 }
 
+
 // OTP Steps
 .otp-config {
     padding: 20px 0;
@@ -161,12 +162,6 @@ label {
         }
     }
 
-    #username-message, #change-status-message, #remove-otp-message {
-        .msg {
-            margin-top: 0;
-        }
-    }
-
     .list-requirements {
         margin-bottom: 0;
         padding-left: 30px;
@@ -175,7 +170,7 @@ label {
             list-style-type: decimal;
         }
 
-        .download-content, .manualQRCode, .block, .note, #setup-otp-message {
+        .download-content, .manualQRCode, .block, .note {
             margin-left: -12px;
         }
 
@@ -257,9 +252,9 @@ label {
             }
         }
 
-        #setup-otp-message .msg {
+        /*#setup-otp-message .msg {
             margin-bottom: 0;
-        }
+        }*/
     }
 
     .list-enableDisable {
@@ -275,15 +270,137 @@ label {
         }
     }
 
-    #change-status-message {
+    /*#change-status-message {
         float: left;
         margin-left: 20px;
         min-width: 350px;
-    }
+    }*/
 
-    .register-succeess, #remove-otp-message {
+    .register-succeess {
         clear: both;
         padding: 0 16px;
+    }
+}
+
+.verify-otp {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-left: 5px;
+
+    .profile-avatar {
+        height: 240px;
+        width: 240px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+        margin-right: 24px;
+    }
+
+    .wrapper-right {
+        position: relative;
+        bottom: -16px;
+
+        .form-validation .txt.error ~ .validation,
+        .form-validation .txt.valid ~ .validation {
+            top: 80px !important;
+        }
+
+        .block {
+            max-width: 350px;
+            padding-top: 22px;
+            width: 350px;
+            clear: both;
+
+            label {
+                font-weight: normal;
+
+                &.otp-title {
+                    padding-top: 10px;
+                }
+            }
+
+            .txt {
+                padding-top: 0;
+                padding-bottom: 0;
+                width: 100%;
+            }
+
+            &.has-popup {
+                .form-group {
+                    margin-left: 2px;
+                }
+
+                .txt {
+                    @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+                }
+            }
+        }
+        // Rules
+        .rules {
+            color: #666;
+            padding-top: 12px;
+
+            .note-red {
+                color: #ff0101;
+                padding-right: 6px;
+            }
+
+            ul {
+                list-style: initial;
+                padding-left: 32px;
+
+                li {
+                    list-style-type: disc;
+                    line-height: 24px;
+                }
+            }
+        }
+        // Messages
+        .msg-content {
+            float: left;
+            min-width: 350px;
+            padding-top: 12px;
+
+            .msg {
+                line-height: 20px;
+                margin: 0;
+            }
+        }
+
+        .learn-more {
+            color: $link-color;
+
+            &:hover {
+                color: $link-hover-color;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#change-status-message {
+    float: left;
+    margin-left: 20px;
+    min-width: 350px;
+}
+
+#remove-otp-message {
+    clear: both;
+    padding: 0 16px;
+}
+
+#setup-otp-message {
+    margin-left: -12px;
+
+    .msg {
+        margin-bottom: 0;
+    }
+}
+
+#username-message, #change-status-message, #remove-otp-message {
+    .msg {
+        margin-top: 0;
     }
 }
 
@@ -303,15 +420,16 @@ label {
         min-height: $height-mobile;
         margin-right: 0;
     }
+
     .nav-tabs {
         display: table;
         width: 100%;
 
         li {
             display: table-cell;
-            float: none;            
+            float: none;
 
-            a {                
+            a {
                 text-align: center;
             }
         }
@@ -350,7 +468,7 @@ label {
                 .example {
                     margin-top: 20px;
 
-                    .col-left, .col-right  {
+                    .col-left, .col-right {
                         float: none;
                         text-align: center;
                     }
@@ -364,7 +482,7 @@ label {
         }
 
         .block {
-            max-width: initial; 
+            max-width: initial;
             width: 100%;
         }
 
@@ -374,18 +492,16 @@ label {
 
         .list-enableDisable {
             padding-left: 0;
-        }        
+        }
     }
 
     .otp-reset .btn-remove {
-         @extend %btn;
-         width: 100%;
+        @extend %btn;
+        width: 100%;
     }
 
     .bootbox-confirm .modal-dialog {
         margin: 100px auto 0;
-
-
     }
 }
 

@@ -48,9 +48,8 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.3.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.3.4\lib\net461\Alpha.Web.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Alpha.Web, Version=1.0.3.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.3.6\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
       <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
@@ -248,6 +247,8 @@
     <Compile Include="Criteria\Otp\UpdateCustomerStatusAfterVerifyOtpCommand.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\ProfilePicture\SelectActorProfilePictureCriteria.cs" />
+    <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureCommand.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetNewMembersCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetStatisticsCriteria.cs" />
@@ -270,8 +271,6 @@
     <Compile Include="DataAccesses\Impl\StatisticsDataAccessImpl.cs" />
     <Compile Include="DataAccesses\PasswordDataAccess.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
-    <Compile Include="DataAccesses\CustomerProfileDataAccess.cs" />
-    <Compile Include="DataAccesses\Impl\CustomerProfileDataAccessImpl.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccess.cs" />
     <Compile Include="FunctionRegistry.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
@@ -283,11 +282,11 @@
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\SiteMapReader.cs" />
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
-    <Compile Include="Models\CustomerProfiles\ProfilePicture.cs" />
     <Compile Include="Models\Enumerations\Enumeration.cs" />
     <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
+    <Compile Include="Models\ProfilePicture\ActorProfilePictureModel.cs" />
     <Compile Include="Models\UnauthorizedResult.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\MemberRequests\ProductRequest.cs" />
@@ -319,6 +318,7 @@
     <Compile Include="Params\SecurityCode\ChangeSecurityCodeParam.cs" />
     <Compile Include="Params\SecurityCode\ResetSecurityCodeParam.cs" />
     <Compile Include="Params\SecurityCode\VerifySecurityCodeParam.cs" />
+    <Compile Include="Params\ProfilePicture\UpdateActorProfilePictureParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppResources\Alpha.sitemap.Designer.cs">
       <DependentUpon>Alpha.sitemap.resx</DependentUpon>
@@ -333,17 +333,17 @@
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
     <Compile Include="Services\Impl\NicknameServiceImpl.cs" />
+    <Compile Include="Services\Impl\ProfilePictureServices.cs" />
     <Compile Include="Services\KickoutCustomerService.cs" />
     <Compile Include="Services\LogoutService.cs" />
     <Compile Include="Services\MemberRequestsService.cs" />
     <Compile Include="Services\NicknameService.cs" />
+    <Compile Include="Services\SimpleServiceLocator.cs" />
     <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\CachingManager.cs" />
-    <Compile Include="Services\CustomerProfileService.cs" />
     <Compile Include="Services\BalanceInfoService.cs" />
     <Compile Include="Services\Impl\StatisticsServiceImpl.cs" />
     <Compile Include="Services\Impl\CachingManagerImpl.cs" />
-    <Compile Include="Services\Impl\CustomerProfileServiceImpl.cs" />
     <Compile Include="Services\Impl\CustomerOtpServiceImpl.cs" />
     <Compile Include="Services\Impl\PasswordServiceImpl.cs" />
     <Compile Include="Services\Impl\BalanceInfoServiceImpl.cs" />

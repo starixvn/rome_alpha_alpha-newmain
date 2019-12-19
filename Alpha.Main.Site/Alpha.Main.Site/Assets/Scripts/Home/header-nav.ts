@@ -335,6 +335,11 @@ var headerNav = {
         top.location.href = headerNav.removeBookmarksInUrl(top.location.href);
     },
 
+    setProfilePictureOnNav: function (profilePicure) {
+        $('#userPicture').attr('src', profilePicure);
+        $('#profile-avatar-image').attr('src', profilePicure);
+    },
+
     removeBookmarksInUrl: function (url) {
         if (typeof url !== 'string') {
             return null;

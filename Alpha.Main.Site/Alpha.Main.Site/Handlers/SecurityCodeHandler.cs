@@ -1,10 +1,9 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
-    using System;
+    using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
     using Main.Models.Enumerations;
     using MediatR;
     using Models.Request.SecurityCode;
@@ -12,6 +11,7 @@
     using Services;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using System;
     using ViewModels.Security;
     using Web.Helpers;
 
@@ -27,17 +27,17 @@
         private const string HashKeySessionKey = "ph";
         private const string SecurityCodeTokenSessionKey = "SECURITYCODETOKEN";
 
-        private readonly CustomerProfileService customerProfileService;
         private readonly SessionManager sessionManager;
         private readonly Encryptor encryptor;
         private readonly SecurityCodeService securityCodeService;
+        private readonly ProfilePictureServices customerProfileService;
         private readonly IUserSession userSession;
         private readonly IUser user;
         private readonly AesService aes;
 
         public SecurityCodeHandler(
           SecurityCodeService securityCodeService,
-          CustomerProfileService customerProfileService,
+          ProfilePictureServices customerProfileService,
           SessionManager sessionManager,
           Encryptor encryptor,
           IUserSession userSession,
@@ -46,8 +46,8 @@
         {
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
-            this.customerProfileService = customerProfileService;
             this.securityCodeService = securityCodeService;
+            this.customerProfileService = customerProfileService;
             this.userSession = userSession;
             this.user = user;
             this.aes = aes;
@@ -95,7 +95,8 @@
                 SecuritySalt = GenerateSecuritySalt(),
                 HashKey = HashKey,
                 CustRoleId = message.RoleId,
-                Title = BuildSecurityCodeTitle(message.Username)
+                Title = BuildSecurityCodeTitle(message.Username),
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.Username)
             };
         }
 
@@ -106,10 +107,11 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(userSession.CustId);
             var securityCodeToken = securityCodeService.GenerateSecurityToken();
 
             sessionManager.Add(SecurityCodeTokenSessionKey, securityCodeToken);
+
+            var profile = customerProfileService.GetActorProfilePicture(this.userSession.CustId);
 
             return new ForceChangeSecurityCodeViewModel
             {
@@ -117,11 +119,11 @@
                 SecuritySalt = GenerateSecuritySalt(),
                 HashKey = HashKey,
                 CustRoleId = message.RoleId,
-                IsDefaultAvatar = profile.UseDefaultAvatar,
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message),
-                UsernameShower = BuildUsernameShower(message),
-                EmbedImage = GenerateImage(profile)
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
+                IsDefaultAvatar = string.IsNullOrEmpty(profile.ImageBase64String),
+                EmbedImage = profile.ImageBase64String
             };
         }
 
@@ -384,24 +386,14 @@
             return result;
         }
 
-        private string GenerateImage(ProfilePicture profilePicture)
+        private string BuildUsernameShower(bool isSubAcc, string subUsername, string nickName, string username)
         {
-            if (profilePicture.ImageData != null)
+            if (isSubAcc)
             {
-                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}";
+                return subUsername;
             }
 
-            return string.Empty;
-        }
-
-        private string BuildUsernameShower(ForceChangeSecurityCodeQuery message)
-        {
-            if (message.IsSubAcc)
-            {
-                return message.SubUserName;
-            }
-
-            return string.IsNullOrWhiteSpace(message.NickName) ? message.UserName : message.NickName;
+            return string.IsNullOrWhiteSpace(nickName) ? username : nickName;
         }
 
         private string BuildAlternateUsername(ForceChangeSecurityCodeQuery message)

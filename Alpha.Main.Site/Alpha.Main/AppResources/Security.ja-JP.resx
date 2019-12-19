@@ -303,4 +303,7 @@ Notes: your password is cAsE sEnSiTiVe</value>
   <data name="KickoutMessageByForceChangePassword" xml:space="preserve">
     <value>You have been logged out because your account's password has been reset by your upline. Please log in again with the new password. If you have any questions, please contact your upline for assistance.</value>
   </data>
+  <data name="VerifySecurityCodeShower" xml:space="preserve">
+    <value>Hi {0}</value>
+  </data>
 </root>

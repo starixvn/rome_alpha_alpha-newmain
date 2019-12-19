@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
-    using Alpha.Main.Models.CustomerProfiles;
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Services;
     using Alpha.Main.Services;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
@@ -15,6 +15,7 @@
     using Site.Requests;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
+    using System;
     using Web.Helpers;
 
     [TestFixture]
@@ -29,8 +30,8 @@
         private Func<string> getDefaultUrl;
         private Func<string, string> encodeDataFunction;
         private LogoutService logoutService;
-        private CustomerProfileService customerProfileService;
-        private ProfilePicture profilePicture;
+        private ProfilePictureServices customerProfileService;
+        private ActorProfilePictureModel profilePicture;
         private NicknameChecker nicknameChecker;
 
         [SetUp]
@@ -38,15 +39,15 @@
         {
             browserHelper = Substitute.For<BrowserHelper>();
             sessionManager = Substitute.For<SessionManager>();
-            customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService = Substitute.For<ProfilePictureServices>();
             getDefaultUrl = Substitute.For<Func<string>>();
             encodeDataFunction = Substitute.For<Func<string, string>>();
             logoutService = Substitute.For<LogoutService>();
             defaultHandler = new DefaultHandler(sessionManager, browserHelper, logoutService, getDefaultUrl, encodeDataFunction, customerProfileService);
             userSession = Substitute.For<IUserSession>();
 
-            profilePicture = new ProfilePicture(12, true);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
+            profilePicture = new ActorProfilePictureModel();
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profilePicture);
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
             userSession = Substitute.For<IUserSession>();

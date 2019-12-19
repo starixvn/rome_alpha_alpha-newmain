@@ -140,10 +140,7 @@
 &lt;div&gt;... more secure and personalized.&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>&lt;div&gt;친애하는 고객님.고객님께서 진짜 사이트를 식별할 수 있도록 돕기 위하여 , 현재&lt;/div&gt;
-&lt;div&gt; 고객님의 포로필 사진을 개인화 할 수있는 옵션을 제공하고 있습니다. 이미지가&lt;/div&gt;
-&lt;div&gt; 성공적으로 업로드 한 후에는 사진을 저희 사이트에서 보실수 있습니다. 사진이 &lt;/div&gt;
-&lt;div&gt; 보이지 않을 경우에는 사기사이트일 수 있습니다. 지금 &lt;/div&gt;</value>
+    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>여기를 클릭</value>
@@ -432,5 +429,8 @@
   </data>
   <data name="PleaseSelectLoginByNickname" xml:space="preserve">
     <value>Please select Login by nickname only</value>
+  </data>
+  <data name="ProfileLoginTip1" xml:space="preserve">
+    <value>to pick up a new one. Thank you.</value>
   </data>
 </root>

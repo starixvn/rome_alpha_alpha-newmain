@@ -140,10 +140,7 @@
     <value>Nickname</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>&lt;div&gt;Dear Customers! In an effort to help you identify the real site,&lt;/div&gt;
-&lt;div&gt; we’re now offering the option to personalize your own profile&lt;/div&gt;
-&lt;div&gt; picture. Once the image has been uploaded successfully, you&lt;/div&gt;
-&lt;div&gt; can see it here otherwise you could be on a fraudulent site. &lt;/div&gt;</value>
+    <value>Dear valued agents, To distinguish our site from fake sites, we have selected a default profile picture for you. You can </value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>Click here</value>
@@ -600,5 +597,8 @@
   </data>
   <data name="DataProcessingIsInProgress" xml:space="preserve">
     <value>Data processing is in progress.</value>
+  </data>
+  <data name="ProfileLoginTip1" xml:space="preserve">
+    <value>to pick up a new one. Thank you.</value>
   </data>
 </root>

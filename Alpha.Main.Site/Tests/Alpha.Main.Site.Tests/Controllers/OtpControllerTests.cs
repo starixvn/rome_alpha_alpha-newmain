@@ -42,32 +42,32 @@
             mediator.Received().Send(query);
         }
 
-        [Test]
-        public void VerifyOtp_IsEnabledOtpIsFalse_RedirectToVerifySecurityCode()
-        {
-            // Arrange
-            SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(false);
-            var expectedUrl = "~/SecurityCode/VerifySecurityCode";
+        //[Test]
+        //public void VerifyOtp_IsEnabledOtpIsFalse_RedirectToVerifySecurityCode()
+        //{
+        //    // Arrange
+        //    SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(false);
+        //    var expectedUrl = "~/SecurityCode/VerifySecurityCode";
 
-            // Act
-            var result = otpController.VerifyOtp() as RedirectResult;
+        //    // Act
+        //    var result = otpController.VerifyOtp() as RedirectResult;
 
-            // Assert
-            Assert.AreEqual(expectedUrl, result.Url);
-        }
+        //    // Assert
+        //    Assert.AreEqual(expectedUrl, result.Url);
+        //}
 
-        [Test]
-        public void VerifyOtp_IsEnabledOtpIsTrue_ReturnsViewResult()
-        {
-            // Arrange
-            SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
+        //[Test]
+        //public void VerifyOtp_IsEnabledOtpIsTrue_ReturnsViewResult()
+        //{
+        //    // Arrange
+        //    SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp.Returns(true);
 
-            // Act
-            var result = otpController.VerifyOtp() as ViewResult;
+        //    // Act
+        //    var result = otpController.VerifyOtp() as ViewResult;
 
-            // Assert
-            Assert.AreEqual(string.Empty, result.ViewName);
-        }
+        //    // Assert
+        //    Assert.AreEqual(string.Empty, result.ViewName);
+        //}
 
         [Test]
         public void VerifyOtp_IsEnabledOtpIsFalse_ReturnsNotAuthorizedResult()

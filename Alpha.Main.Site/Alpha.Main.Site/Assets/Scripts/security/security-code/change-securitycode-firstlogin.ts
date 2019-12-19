@@ -22,7 +22,10 @@ var changeSecurityCodeFirstLogin = {
 		$("#showSCchk").click(function () {
 			var isChecked = $(this).is(":checked");
 			isChecked ? securityHelper.showHint() : securityHelper.hideHint();
-		});
+        });
+
+        const actorProfilePicture = JSON.parse(localStorage.getItem('actorProfilePicture'));
+        $('.profile-avatar').attr("src", actorProfilePicture.Image);
 	},
 
 	changeSecurityCode: function () {

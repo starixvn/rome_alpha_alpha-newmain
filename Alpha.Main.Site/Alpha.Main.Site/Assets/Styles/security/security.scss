@@ -3,7 +3,7 @@
 
 // To remove the 300-350ms tap delay
 html {
-  touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 }
 
 %alphaIcon {
-    font:{
+    font: {
         family: 'Iconalpha';
         style: normal;
     }
@@ -20,7 +20,7 @@ body {
 .block {
     max-width: 350px;
     padding-top: 22px;
-    width: 350px;    
+    width: 350px;
     clear: both;
 
     label {
@@ -32,8 +32,8 @@ body {
         padding-top: 0;
         padding-bottom: 0;
         width: 100%;
-    } 
-    
+    }
+
     &.has-popup {
         .form-group {
             margin-left: 2px;
@@ -42,13 +42,13 @@ body {
         .txt {
             @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
         }
-    }   
+    }
 }
 
 // Rules
 .rules {
-    color: #666;   
-    padding-top: 12px;    
+    color: #666;
+    padding-top: 12px;
 
     .note-red {
         color: #ff0101;
@@ -70,7 +70,7 @@ body {
 .msg-content {
     float: left;
     min-width: 350px;
-    padding-top: 12px;    
+    padding-top: 12px;
 
     .msg {
         line-height: 20px;
@@ -88,31 +88,31 @@ body {
 }
 
 // It's not necessary at the moment
-@media only screen and (max-device-width: $conent-device-lower768)
-{  
-   .msg-content {
-       float: none;
-       .msg {
-           width: 100%;
-           max-width: initial;
-       }
-   }
+@media only screen and (max-device-width: $conent-device-lower768) {
+    .msg-content {
+        float: none;
 
-   .block {
-       max-width: initial;
-       width: 100%;
-       padding: 22px 2px 0;
+        .msg {
+            width: 100%;
+            max-width: initial;
+        }
+    }
 
-       .txt {
-           height: $height-mobile;
-           @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
-       }   
+    .block {
+        max-width: initial;
+        width: 100%;
+        padding: 22px 2px 0;
 
-       .btn-submit, input[type=reset] {
-           height: $height-mobile;
-           width: 100%;
-           margin-bottom: 12px;
-           margin-right: 0;
-       }
-   }
+        .txt {
+            height: $height-mobile;
+            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+        }
+
+        .btn-submit, input[type=reset] {
+            height: $height-mobile;
+            width: 100%;
+            margin-bottom: 12px;
+            margin-right: 0;
+        }
+    }
 }

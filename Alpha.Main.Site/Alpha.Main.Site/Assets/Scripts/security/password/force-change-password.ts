@@ -26,6 +26,16 @@ var forceChangePassword = {
             var isChecked = $(this).is(":checked");
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
+
+        forceChangePassword.setProfilePictureStorage();
+    },
+    setProfilePictureStorage: function () {
+        const profilePicture = $('#logoProfileImg');
+        localStorage.setItem('actorProfilePicture', JSON.stringify({
+            ImageId: profilePicture.attr('profile-image-id'),
+            Image: profilePicture.attr('src'),
+            IsDefaultAvatar: profilePicture.attr('default-avatar')
+        }));
     },
     changePassword: function () {
         $.blockUI();

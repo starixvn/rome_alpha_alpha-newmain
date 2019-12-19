@@ -140,10 +140,7 @@
 &lt;div&gt;... 更安全化及个性化.&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>&lt;div&gt;尊敬的客户! 为了帮助您识别真正的网站, &lt;/div&gt;
-&lt;div&gt; 我们现在提供您个性化个人头像的选项. &lt;/div&gt;
-&lt;div&gt; 一旦图片上载成功, &lt;/div&gt;
-&lt;div&gt; 您将可以于此见到否则您可能会处于欺诈性的网站. 马上&lt;/div&gt;</value>
+    <value>尊敬的代理们，为了区分我们的网站与假冒网站，我们为您选择了默认的个人资料图像。您可以</value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>点击此处</value>
@@ -537,5 +534,8 @@
   </data>
   <data name="DataProcessingNotification" xml:space="preserve">
     <value>数据处理通知</value>
+  </data>
+  <data name="ProfileLoginTip1" xml:space="preserve">
+    <value>以挑选新的。谢谢。</value>
   </data>
 </root>

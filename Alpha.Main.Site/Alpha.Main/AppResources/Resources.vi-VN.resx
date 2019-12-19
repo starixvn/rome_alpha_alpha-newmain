@@ -139,10 +139,7 @@
     <value>&lt;div&gt;Chào những thành viên thân mến !.Bây giò bạn có thể đăng nhập bằng chính Biệt Danh của mình&lt;/div&gt;</value>
   </data>
   <data name="ProfileLoginTip" xml:space="preserve">
-    <value>&lt;div&gt;Chào quý khách hàng !  Nhằm giúp bạn tránh được các trang web lừa đảo,&lt;/div&gt;
-&lt;div&gt;chúng tôi sẽ cung cấp cho bạn một tùy chọn sử dụng hình đại diện cho riêng bạn. &lt;/div&gt;
-&lt;div&gt;Khi hình này được tải lên thành công, bạn có thể thấy nó ở đây, nếu không, &lt;/div&gt;
-&lt;div&gt;trang web đó có thể là một trang lừa đảo.  &lt;/div&gt;</value>
+    <value>Kính gửi quý khách hàng, Để phân biệt trang web của chúng tôi với các trang giả mạo, chúng tôi đã chọn ảnh đại diện mặc định cho bạn. Bạn có thể </value>
   </data>
   <data name="clickHere" xml:space="preserve">
     <value>Nhấn vào đây</value>
@@ -539,6 +536,9 @@
   </data>
   <data name="Request" xml:space="preserve">
     <value>Yêu cầu</value>
+  </data>
+  <data name="ProfileLoginTip1" xml:space="preserve">
+    <value>để chọn ảnh khác. Trân trọng.</value>
   </data>
   <data name="firstName" xml:space="preserve">
     <value>Họ</value>

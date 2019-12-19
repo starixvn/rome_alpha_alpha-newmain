@@ -2,8 +2,6 @@
 {
     public class VerifyOtpDifferenceDeviceViewModel
     {
-        public string EmbedImage { get; set; }
-
         public string Username { get; set; }
 
         public string AlternateUsername { get; set; }

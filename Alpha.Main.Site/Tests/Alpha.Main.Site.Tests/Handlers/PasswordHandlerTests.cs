@@ -1,12 +1,13 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Params;
+    using Alpha.Main.ProfilePicture.Services;
     using AppResources;
     using Constants;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
     using Main.Tests.TestData.Helper;
     using NSubstitute;
     using NUnit.Framework;
@@ -18,6 +19,7 @@
     using Site.ViewModels.Security;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using System;
     using Web.Helpers;
 
     [TestFixture]
@@ -29,7 +31,7 @@
         private IUserSession userSession;
         private SessionManager sessionManager;
         private Encryptor encryptor;
-        private CustomerProfileService customerProfileService;
+        private ProfilePictureServices customerProfileService;
         private SecurityCodeChecker securityCodeChecker;
         private IUser user;
 
@@ -39,7 +41,7 @@
             compareLogic = new CompareLogic();
             passwordService = Substitute.For<PasswordService>();
             encryptor = Substitute.For<Encryptor>();
-            customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService = Substitute.For<ProfilePictureServices>();
             securityCodeChecker = Substitute.For<SecurityCodeChecker>();
             sessionManager = Substitute.For<SessionManager>();
 
@@ -49,6 +51,10 @@
 
             user = Substitute.For<IUser>();
             user.IsAdminCanUpdateSubAccount.Returns(true);
+
+            SimpleServiceLocator
+              .Instance
+              .Register<Func<int>>(() => 1);
 
             passwordHandler = new PasswordHandler(
                 passwordService,
@@ -437,13 +443,13 @@
         {
             // Arrange
             var message = new ForceChangePasswordQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ActorProfilePictureModel>());
 
             // Act
             passwordHandler.Handle(message);
 
             // Assert
-            customerProfileService.Received().GetProfilePicture(
+            customerProfileService.Received().GetActorProfilePicture(
                 Arg.Is<int>(custId => custId == userSession.CustId));
         }
 
@@ -458,13 +464,14 @@
             var message = new ForceChangePasswordQuery(userSession);
             encryptor.RandomString(Arg.Any<int>()).Returns("HashKey");
 
-            var profilePicture = FakeDataHelper.Create<ProfilePicture>();
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
-
+            var profilePicture = new ActorProfilePictureModel(null, 0, null);
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profilePicture);
+            customerProfileService.UpdateActorProfilePicture(Arg.Any<UpdateActorProfilePictureParam>()).Returns(new Result() { Code = 0});
+            
             var expectedViewModel = new ForceChangePasswordViewModel
             {
                 HashKey = "HashKey",
-                IsDefaultAvatar = profilePicture.UseDefaultAvatar,
+                IsDefaultAvatar = true,
                 Username = userSession.UserName,
                 AlternateUsername = string.Empty,
                 UsernameShower = "UserName",
@@ -493,13 +500,14 @@
             var message = new ForceChangePasswordQuery(userSession);
             encryptor.RandomString(Arg.Any<int>()).Returns("HashKey");
 
-            var profilePicture = new ProfilePicture(message.CustId, true);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profilePicture);
+            var profilePicture = new ActorProfilePictureModel();
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profilePicture);
+            customerProfileService.UpdateActorProfilePicture(Arg.Any<UpdateActorProfilePictureParam>()).Returns(new Result() { Code = 0 });
 
             var expectedViewModel = new ForceChangePasswordViewModel
             {
                 HashKey = "HashKey",
-                IsDefaultAvatar = profilePicture.UseDefaultAvatar,
+                IsDefaultAvatar = true,
                 Username = userSession.UserName,
                 AlternateUsername = "(SUB-ACC SubUserName)",
                 UsernameShower = "SubUserName",

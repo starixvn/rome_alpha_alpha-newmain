@@ -1,13 +1,13 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Services;
+    using Alpha.Main.Tests.TestData.Helper;
     using AppResources;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
-    using Main.Tests.TestData.Helper;
     using Models.Request.SecurityCode;
     using NSubstitute;
     using NUnit.Framework;
@@ -18,16 +18,17 @@
     using Site.ViewModels.Security;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using System;
     using Web.Helpers;
 
     [TestFixture]
     public class SecurityCodeHandlerTests
     {
         private SecurityCodeHandler securityCodeHandler;
-        private CustomerProfileService customerProfileService;
         private SessionManager sessionManager;
         private Encryptor encryptor;
         private SecurityCodeService securityCodeService;
+        private ProfilePictureServices customerProfileService;
         private IUserSession userSession;
         private IUser user;
         private CompareLogic compareLogic;
@@ -42,12 +43,15 @@
             sessionManager = Substitute.For<SessionManager>();
             sessionManager.Get<string>(Arg.Is("SECURITYCODETOKEN")).Returns("SecurityCode");
 
-            customerProfileService = Substitute.For<CustomerProfileService>();
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
             securityCodeService = Substitute.For<SecurityCodeService>();
             securityCodeService.GenerateSecurityToken().Returns("SecurityCodeToken");
             securityCodeService.GenerateSalt(Arg.Any<int>()).Returns("SecuritySalt");
+
+            customerProfileService = Substitute.For<ProfilePictureServices>();
+            var profilePicture = new ActorProfilePictureModel(null, 0, null);
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(profilePicture);
 
             userSession = Substitute.For<IUserSession>();
             userSession.RoleId.Returns(RoleId.Agent);
@@ -115,8 +119,10 @@
             // Arrange
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
 
-            var message = new SecurityCodeQuery(userSession);
-            message.Username = userName;
+            var message = new SecurityCodeQuery(userSession)
+            {
+                Username = userName
+            };
 
             var expectedViewModel = new SecurityCodeViewModel
             {
@@ -124,7 +130,8 @@
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                Title = "Reset Security Code"
+                Title = "Reset Security Code",
+                UsernameShower = userName
             };
 
             // Act
@@ -140,8 +147,10 @@
             // Arrange
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
 
-            var message = new SecurityCodeQuery(userSession);
-            message.Username = "UserName";
+            var message = new SecurityCodeQuery(userSession)
+            {
+                Username = "UserName"
+            };
 
             var expectedViewModel = new SecurityCodeViewModel
             {
@@ -149,7 +158,8 @@
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                Title = "Reset Security Code - UserName"
+                Title = "Reset Security Code - UserName",
+                UsernameShower = "UserName"
             };
 
             // Act
@@ -174,25 +184,10 @@
         }
 
         [Test]
-        public void HandleForceChangeSecurityCodeQuery_MessageIsNotNull_CallsGetProfilePicture()
-        {
-            // Arrange
-            var message = new ForceChangeSecurityCodeQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
-
-            // Act
-            securityCodeHandler.Handle(message);
-
-            // Assert
-            customerProfileService.Received().GetProfilePicture(Arg.Is<int>(custId => custId == userSession.CustId));
-        }
-
-        [Test]
         public void HandleForceChangeSecurityCodeQuery_MessageIsNotNull_CallsGenerateSecurityToken()
         {
             // Arrange
             var message = new ForceChangeSecurityCodeQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
 
             // Act
             securityCodeHandler.Handle(message);
@@ -206,7 +201,6 @@
         {
             // Arrange
             var message = new ForceChangeSecurityCodeQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(FakeDataHelper.Create<ProfilePicture>());
 
             // Act
             securityCodeHandler.Handle(message);
@@ -226,19 +220,16 @@
 
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
 
-            var profile = FakeDataHelper.Create<ProfilePicture>();
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profile);
-
             var expectedViewModel = new ForceChangeSecurityCodeViewModel
             {
                 SecurityCodeToken = "SecurityCodeToken",
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                IsDefaultAvatar = profile.UseDefaultAvatar,
                 Username = message.UserName,
                 AlternateUsername = string.Empty,
                 UsernameShower = "UserName",
+                IsDefaultAvatar = true,
                 EmbedImage = string.Empty
             };
 
@@ -264,19 +255,16 @@
 
             sessionManager.Get<string>(Arg.Is("ph")).Returns("HashKey");
 
-            var profile = new ProfilePicture(message.CustId, true);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(profile);
-
             var expectedViewModel = new ForceChangeSecurityCodeViewModel
             {
                 SecurityCodeToken = "SecurityCodeToken",
                 SecuritySalt = "SecuritySalt",
                 HashKey = "HashKey",
                 CustRoleId = message.RoleId,
-                IsDefaultAvatar = profile.UseDefaultAvatar,
                 Username = message.UserName,
                 AlternateUsername = "(SUB-ACC SubUserName)",
                 UsernameShower = "SubUserName",
+                IsDefaultAvatar = true,
                 EmbedImage = string.Empty
             };
 

@@ -18,6 +18,9 @@ class VerifyOtpDefferenceDevice {
 
         this.cachedElements();
         this.registerEvents();
+
+        const actorProfilePicture = JSON.parse(localStorage.getItem('actorProfilePicture'));
+        this.$('.profile-avatar').attr("src", actorProfilePicture.Image);
     }
 
     cachedElements = () => {

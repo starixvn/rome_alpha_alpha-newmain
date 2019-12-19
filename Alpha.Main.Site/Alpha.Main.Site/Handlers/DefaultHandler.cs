@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using System;
+    using Alpha.Main.ProfilePicture.Services;
     using Fanex.Logging.Extensions.Web;
     using Helpers;
     using Main.Models.Enumerations;
@@ -10,6 +10,7 @@
     using Requests;
     using Services;
     using Sunplus.Agent.Utilities;
+    using System;
     using ViewModels;
     using Web.Helpers;
 
@@ -29,13 +30,13 @@
         private readonly BrowserHelper browserHelper;
         private readonly Func<string> getDefaultUrl;
         private readonly Func<string, string> encodeDataFunction;
-        private readonly CustomerProfileService customerProfileService;
+        private readonly ProfilePictureServices customerProfileService;
         private readonly LogoutService logoutService;
 
         public DefaultHandler(
             SessionManager sessionManager,
             BrowserHelper browserHelper,
-            CustomerProfileService customerProfileService,
+            ProfilePictureServices customerProfileService,
             LogoutService logoutService)
             : this(sessionManager, browserHelper, logoutService, null, null, customerProfileService)
         {
@@ -47,7 +48,7 @@
             LogoutService logoutService,
             Func<string> getDefaultUrl,
             Func<string, string> encodeDataFunction,
-            CustomerProfileService customerProfileService)
+            ProfilePictureServices customerProfileService)
         {
             this.sessionManager = sessionManager;
             this.browserHelper = browserHelper;
@@ -75,7 +76,7 @@
 
         public IndexViewModel Handle(IndexQuery message)
         {
-            var profile = customerProfileService.GetProfilePicture(message.CustId);
+            var profile = customerProfileService.GetActorProfilePicture(message.CustId);
 
             var viewModel = new IndexViewModel(message, getDefaultUrl, encodeDataFunction, browserHelper, profile);
 

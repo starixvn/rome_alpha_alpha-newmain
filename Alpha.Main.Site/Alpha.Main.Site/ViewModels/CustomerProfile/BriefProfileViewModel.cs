@@ -10,7 +10,11 @@
 
         public string EmbedImage { get; set; }
 
+        public int ProfileImageId { get; set; }
+
         public string OldMainRootApp => UrlHelper.MapOldMainPath("~/");
+
+        public string AccountInfoRootPath => UrlHelper.MapAccountInfoPath("~/");
 
         public string Username { get; set; }
 
@@ -25,5 +29,7 @@
         public bool IsHideNicknameLink { get; set; }
 
         public string SubAccountTooltip { get; set; }
+
+        public bool IsShowProfilePictureTooltip { get; set; }
     }
 }

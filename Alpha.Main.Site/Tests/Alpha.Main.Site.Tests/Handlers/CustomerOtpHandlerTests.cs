@@ -1,10 +1,9 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
-    using System.Text;
+    using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Main.ProfilePicture.Services;
     using AppResources;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
     using Main.Models.Otp;
     using NSubstitute;
     using NUnit.Framework;
@@ -15,6 +14,8 @@
     using Site.Helpers;
     using Site.Requests.Otp;
     using Sunplus.Agent.Model.Entities;
+    using System;
+    using System.Text;
     using Web.Helpers;
 
     [TestFixture]
@@ -24,7 +25,7 @@
         private CustomerOtpService customerOtpService;
         private SessionManager sessionManager;
         private IUserSession userSession;
-        private CustomerProfileService customerProfileService;
+        private ProfilePictureServices customerProfileService;
         private BrowserHelper browserHelper;
         private IUser user;
         private NicknameChecker nicknameChecker;
@@ -35,7 +36,7 @@
             customerOtpService = Substitute.For<CustomerOtpService>();
             userSession = Substitute.For<IUserSession>();
             sessionManager = Substitute.For<SessionManager>();
-            customerProfileService = Substitute.For<CustomerProfileService>();
+            customerProfileService = Substitute.For<ProfilePictureServices>();
             browserHelper = Substitute.For<BrowserHelper>();
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
@@ -44,7 +45,7 @@
 
             nicknameChecker = Substitute.For<NicknameChecker>();
 
-            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, customerProfileService, browserHelper, user, nicknameChecker);
+            customerOtpHandler = new CustomerOtpHandler(customerOtpService, userSession, sessionManager, browserHelper, user, nicknameChecker);
         }
 
         #region Handle Change Otp Status Command
@@ -672,22 +673,6 @@
         }
 
         [Test]
-        public void HandleVerifyOtpDifferentDeviceQuery_CallGetProfilePicture()
-        {
-            // Arrange
-            var query = new VerifyOtpDifferentDeviceQuery(userSession);
-            var custId = 10;
-            this.userSession.CustId.Returns(custId);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
-
-            // Act
-            customerOtpHandler.Handle(query);
-
-            // Assert
-            customerProfileService.Received().GetProfilePicture(custId);
-        }
-
-        [Test]
         public void HandleVerifyOtpDifferentDeviceQuery_UserIsSubAcc_ReturnFormattedSubUsername()
         {
             // Arrange
@@ -695,7 +680,7 @@
             var subUsername = "subUsername";
             userSession.IsSubAcc.Returns(true);
             userSession.SubUserName.Returns(subUsername);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             // Act
             var viewModel = customerOtpHandler.Handle(query);
@@ -711,7 +696,7 @@
             var query = new VerifyOtpDifferentDeviceQuery(userSession);
             var nickname = "nickname";
             userSession.NickName.Returns(nickname);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             // Act
             var viewModel = customerOtpHandler.Handle(query);
@@ -725,7 +710,7 @@
         {
             // Arrange
             var query = new VerifyOtpDifferentDeviceQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>()).Returns(new ProfilePicture(0, false, null));
+            customerProfileService.GetActorProfilePicture(Arg.Any<int>()).Returns(new ActorProfilePictureModel());
 
             // Act
             var viewModel = customerOtpHandler.Handle(query);
@@ -733,23 +718,6 @@
             // Assert
             Assert.IsEmpty(viewModel.AlternateUsername);
         }
-
-        [Test]
-        public void HandleVerifyOtpDifferentDeviceQuery_UserHadProfilePicture_ReturnBased64Image()
-        {
-            // Arrange
-            var userProfileImage = Encoding.ASCII.GetBytes("userProfileImage");
-            var query = new VerifyOtpDifferentDeviceQuery(userSession);
-            customerProfileService.GetProfilePicture(Arg.Any<int>())
-                .Returns(new ProfilePicture(0, false, userProfileImage));
-
-            // Act
-            var viewModel = customerOtpHandler.Handle(query);
-
-            // Assert
-            Assert.AreEqual($"data:image/jpeg;base64,{Convert.ToBase64String(userProfileImage)}", viewModel.EmbedImage);
-        }
-
         #endregion Handle Verify Otp Different Device Query
 
         #region Check Difference Device Command

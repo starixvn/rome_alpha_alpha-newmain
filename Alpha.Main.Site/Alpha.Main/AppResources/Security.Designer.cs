@@ -930,5 +930,14 @@ namespace Alpha.Main.AppResources {
                 return ResourceManager.GetString("Verify", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi {0}.
+        /// </summary>
+        public static string VerifySecurityCodeShower {
+            get {
+                return ResourceManager.GetString("VerifySecurityCodeShower", resourceCulture);
+            }
+        }
     }
 }

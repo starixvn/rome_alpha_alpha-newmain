@@ -29,14 +29,16 @@
         }
 
         [HttpGet]
-        public ActionResult VerifyOtp()
+        public ActionResult VerifyOtp(VerifyOtpQuery query)
         {
             if (!SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp)
             {
                 return Redirect("~/SecurityCode/VerifySecurityCode");
             }
 
-            return View();
+            var verifyOtp = mediator.Send(query);
+
+            return View(verifyOtp);
         }
 
         [HttpPost, AntiXsrfFilter]

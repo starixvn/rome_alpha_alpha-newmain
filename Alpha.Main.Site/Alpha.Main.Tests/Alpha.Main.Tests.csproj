@@ -40,9 +40,8 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.3.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.3.4\lib\net461\Alpha.Web.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Alpha.Web, Version=1.0.3.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.3.6\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0.2\lib\net40\AutoMapper.dll</HintPath>
@@ -114,6 +113,12 @@
     </Reference>
     <Reference Include="Fanex.Logging, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Logging.2.0.1\lib\net461\Fanex.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Logging.Extensions, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Logging.Extensions.1.0.6\lib\net461\Fanex.Logging.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Logging.Extensions.Web, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Logging.Extensions.Web.1.0.8\lib\net461\Fanex.Logging.Extensions.Web.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Products, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Products.1.0.0.5\lib\net461\Fanex.Products.dll</HintPath>
@@ -249,6 +254,8 @@
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteriaTests.cs" />
     <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteriaTests.cs" />
     <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteriaTests.cs" />
+    <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureCommandTests.cs" />
+    <Compile Include="Criteria\ProfilePicture\SelectActorProfilePictureCriteriaTests.cs" />
     <Compile Include="Criteria\SecurityCode\GetMainAccountSecurityCodeCriteriaTests.cs" />
     <Compile Include="Criteria\SecurityCode\GetSubAccountSecurityCodeCriteriaTests.cs" />
     <Compile Include="Criteria\SecurityCode\ResetSubAccountSecurityCodeCriteriaTests.cs" />
@@ -260,7 +267,6 @@
     <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteriaTests.cs" />
-    <Compile Include="DataAccesses\CustomerProfileDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\PasswordDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccessImplTests.cs" />
@@ -268,9 +274,9 @@
     <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
-    <Compile Include="Helpers\Impl\JsonHelperImplTests.cs" />
     <Compile Include="Models\Enumerations\EnumerationTests.cs" />
     <Compile Include="Models\Enumerations\UserLevelForTesting.cs" />
+    <Compile Include="Services\ProfilePictureServicesTests.cs" />
     <Compile Include="Services\KickoutCustomerServiceImplTests.cs" />
     <Compile Include="Services\MemberRequestsServiceImplTest.cs" />
     <Compile Include="Services\NicknameServiceImplTests.cs" />
@@ -294,7 +300,6 @@
     <Compile Include="Services\StatisticsServiceImplTests.cs" />
     <Compile Include="Services\BalanceInfoServiceImplTests.cs" />
     <Compile Include="Services\BalanceUpDayInfoServiceImplTests.cs" />
-    <Compile Include="Services\CustomerProfileServiceImplTests.cs" />
     <Compile Include="Services\CustomerOtpServiceImplTests.cs" />
     <Compile Include="Services\SiteMenuServiceImplTests.cs" />
   </ItemGroup>

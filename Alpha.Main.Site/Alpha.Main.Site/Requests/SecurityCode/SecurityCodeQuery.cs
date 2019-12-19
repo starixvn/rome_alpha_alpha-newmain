@@ -50,6 +50,22 @@
             }
         }
 
+        public string NickName
+        {
+            get
+            {
+                return this.userSession.NickName;
+            }
+        }
+
+        public string SubUserName
+        {
+            get
+            {
+                return this.userSession.SubUserName;
+            }
+        }
+
         public string Username { get; set; }
     }
 }

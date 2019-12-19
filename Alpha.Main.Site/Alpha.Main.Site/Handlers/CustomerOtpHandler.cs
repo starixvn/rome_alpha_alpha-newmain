@@ -1,17 +1,17 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using System;
+    using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using AppResources;
     using Helpers;
     using Main.Models;
-    using Main.Models.CustomerProfiles;
     using Main.Models.Otp;
     using MediatR;
     using Params.Otp;
     using Requests.Otp;
     using Services;
     using Sunplus.Agent.Model.Entities;
+    using System;
     using ViewModels.Security;
     using Web.Helpers;
 
@@ -24,14 +24,14 @@
         IRequestHandler<SetUpOtpCommand, Result>,
         IRequestHandler<VerifyOtpCommand, Result>,
         IRequestHandler<VerifyOtpDifferentDeviceQuery, VerifyOtpDifferenceDeviceViewModel>,
-        IRequestHandler<CheckDifferenceDeviceCommand, bool>
+        IRequestHandler<CheckDifferenceDeviceCommand, bool>,
+        IRequestHandler<VerifyOtpQuery, VerifyOTPViewModel>
     {
         private const string SecretKeySessionKey = "CustomerOtpHandler.SecretKeySessionKey";
 
         private readonly CustomerOtpService customerOtpService;
         private readonly IUserSession userSession;
         private readonly SessionManager sessionManager;
-        private readonly CustomerProfileService customerProfileService;
         private readonly BrowserHelper browserHelper;
         private readonly IUser user;
         private readonly NicknameChecker nicknameChecker;
@@ -40,7 +40,6 @@
             CustomerOtpService customerOtpService,
             IUserSession userSession,
             SessionManager sessionManager,
-            CustomerProfileService customerProfileService,
             BrowserHelper browserHelper,
             IUser user,
             NicknameChecker nicknameChecker)
@@ -48,7 +47,6 @@
             this.customerOtpService = customerOtpService;
             this.userSession = userSession;
             this.sessionManager = sessionManager;
-            this.customerProfileService = customerProfileService;
             this.browserHelper = browserHelper;
             this.user = user;
             this.nicknameChecker = nicknameChecker;
@@ -159,14 +157,11 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            var profile = customerProfileService.GetProfilePicture(userSession.CustId);
-
             return new VerifyOtpDifferenceDeviceViewModel
             {
                 Username = message.UserName,
                 AlternateUsername = BuildAlternateUsername(message.IsSubAcc, message.SubUserName, message.NickName),
-                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName),
-                EmbedImage = GenerateImage(profile)
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName)
             };
         }
 
@@ -235,6 +230,19 @@
             };
         }
 
+        public VerifyOTPViewModel Handle(VerifyOtpQuery message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
+            return new VerifyOTPViewModel
+            {
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.UserName)
+            };
+        }
+
         public OtpViewModel Handle(SetUpOtpQuery message)
         {
             if (message == null)
@@ -291,16 +299,6 @@
             }
 
             return true;
-        }
-
-        private string GenerateImage(ProfilePicture profilePicture)
-        {
-            if (profilePicture.ImageData != null)
-            {
-                return $"data:image/jpeg;base64,{Convert.ToBase64String(profilePicture.ImageData)}";
-            }
-
-            return string.Empty;
         }
 
         private string BuildUsernameShower(bool isSubAcc, string subAccName, string nickName, string username)

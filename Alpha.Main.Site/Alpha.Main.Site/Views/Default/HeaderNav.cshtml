@@ -1,9 +1,9 @@
 ﻿@model HeaderNavViewModel
 @{
-	var changeNickNameUrl = $"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}";
-	var mainFrameName = "main";
-	var viewProfileUrl = $"{Model.OldMainRootPath}ProfilePicture";
-	var profileImageSrc = Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage;
+    var changeNickNameUrl = $"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}";
+    var mainFrameName = "main";
+    var viewProfileUrl = $"{Model.AccountInfoRootPath}ProfilePicture";
+    var profileImageSrc = Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage;
 }
 
 <section class="navbar header-nav" id="header-nav">
@@ -45,7 +45,7 @@
                 <li class="profile-group visible-mobile">
                     <div class="profile-avatar">
                         <a href="@(viewProfileUrl)" target="@mainFrameName" class="img-link">
-                            <img width="50" height="50" src='@profileImageSrc' alt="" title="@Resources.ProfileClickTootip" />
+                            <img id="profile-avatar-image" width="50" height="50" src='@profileImageSrc' alt="" title="@Resources.ProfileClickTootip" />
                         </a>
                     </div>
                     <div class="userinfo">
@@ -71,7 +71,7 @@
                 {
                 <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.nickname</a></li>
                 }
-                <li><a href="@($"{Model.OldMainRootPath}ContextualCustomer/ProfilePicture?custId={Model.CustId}")" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
+                <li><a href="@viewProfileUrl" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
                 <li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
                 @if (Model.EnableSecurityCode)
                 {
