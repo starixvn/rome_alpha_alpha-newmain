@@ -62,10 +62,10 @@
             var expectedResult = new Result() { Code = 0 };
 
             dynamicRepository
-               .When(repo => repo.Execute(Arg.Any<UpdateActorProfilePictureCommand>()))
+               .When(repo => repo.Execute(Arg.Any<UpdateActorProfilePictureMainServerCommand>()))
                .Do((callInfo) =>
                {
-                   var command = callInfo[0] as UpdateActorProfilePictureCommand;
+                   var command = callInfo[0] as UpdateActorProfilePictureMainServerCommand;
                    command.ErrCode = expectedResult.Code;
                    command.ErrMsg = expectedResult.Message;
                });

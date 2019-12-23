@@ -21,7 +21,7 @@
         private const int ErrorCodeDefault = 100;
         private readonly IDynamicRepository dynamicRepository;
         private readonly Result ErrorDefaultResult =
-            Result.CreateErrorResult("Auto insert Profile Picture Failed!",ErrorCodeDefault);
+            Result.CreateErrorResult("Auto insert Profile Picture Failed!", ErrorCodeDefault);
 
         public ProfilePictureServicesImpl(IDynamicRepository dynamicRepository)
         {
@@ -46,18 +46,41 @@
         {
             try
             {
-                var command = new UpdateActorProfilePictureCommand(
+                var command = new UpdateActorProfilePictureMainServerCommand(
                         param.ActorId,
                         param.Mode,
                         param.IP);
 
                 dynamicRepository.Execute(command);
+
+                if (command.ErrCode.Equals(0))
+                {
+                    UpdateActorProfilePictureStandbyServerAsync(param);
+                }
+
                 return Result.CreateErrorResult(command.ErrMsg, command.ErrCode);
             }
             catch (Exception ex)
             {
                 ExceptionHandler.Handle(ex);
                 return ErrorDefaultResult;
+            }
+        }
+
+        internal void UpdateActorProfilePictureStandbyServerAsync(UpdateActorProfilePictureParam param)
+        {
+            try
+            {
+                var command = new UpdateActorProfilePictureStandbyServerCommand(
+                            param.ActorId,
+                            param.Mode,
+                            param.IP);
+
+                dynamicRepository.Execute(command);
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.Handle(ex);
             }
         }
     }

@@ -10,7 +10,7 @@
         public void GetSettingKey_Always_ReturnsValidSettingKey()
         {
             // Arrange
-            var criteria = new UpdateActorProfilePictureCommand(1, 1, "192.168.1.1");
+            var criteria = new UpdateActorProfilePictureMainServerCommand(1, 1, "192.168.1.1");
             var expectedSettingKey = "Age_CustomerUpdProfilePicture";
 
             // Act
@@ -26,7 +26,7 @@
         public void IsValid_InvalidCustId_ReturnsFalse(int actorId, bool expectedResult)
         {
             // Arrange
-            var criteria = new UpdateActorProfilePictureCommand(actorId ,1, "192.168.1.1");
+            var criteria = new UpdateActorProfilePictureMainServerCommand(actorId ,1, "192.168.1.1");
 
             // Act
             var actualResult = criteria.IsValid();

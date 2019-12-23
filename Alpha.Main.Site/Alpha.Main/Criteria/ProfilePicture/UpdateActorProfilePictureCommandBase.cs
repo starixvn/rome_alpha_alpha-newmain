@@ -3,15 +3,15 @@
     using Fanex.Data;
     using Fanex.Data.Repository;
 
-    public class UpdateActorProfilePictureCommand : NonQueryCommand
+    public class UpdateActorProfilePictureCommandBase : NonQueryCommand
     {
-        public UpdateActorProfilePictureCommand(int actorId, int mode, string ip)
+        public UpdateActorProfilePictureCommandBase(int actorId, int mode, string ip, bool isMainServer)
         {
             ActorId = actorId;
             IsDefault = true;
             Mode = mode;
             IP = ip;
-            IsMainServer = true;
+            IsMainServer = isMainServer;
         }
 
         [SpParam(SqlParamName = "CustId")]
@@ -29,7 +29,7 @@
 
         public string ErrMsg { get; set; }
 
-        public override string GetSettingKey() => "Age_CustomerUpdProfilePicture";
+        public override string GetSettingKey() =>string.Empty;
 
         public override bool IsValid() => ActorId > 0;
     }
