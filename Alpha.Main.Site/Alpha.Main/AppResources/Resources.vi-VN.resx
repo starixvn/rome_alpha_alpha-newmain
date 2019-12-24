@@ -600,4 +600,7 @@
   <data name="WinLossAnalysisChartIntroduction" xml:space="preserve">
     <value>Biểu đồ phân tích thắng thua ở đây</value>
   </data>
+  <data name="invalidCaptcha" xml:space="preserve">
+    <value>Đoạn mã  bạn nhập không có thực</value>
+  </data>
 </root>

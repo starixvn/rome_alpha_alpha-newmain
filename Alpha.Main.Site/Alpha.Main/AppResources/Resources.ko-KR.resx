@@ -433,4 +433,7 @@
   <data name="ProfileLoginTip1" xml:space="preserve">
     <value>to pick up a new one. Thank you.</value>
   </data>
+  <data name="invalidCaptcha" xml:space="preserve">
+    <value>잘못된 코드가 입력되었습니다</value>
+  </data>
 </root>

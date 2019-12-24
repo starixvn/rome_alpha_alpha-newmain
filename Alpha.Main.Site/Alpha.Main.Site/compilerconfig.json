@@ -78,5 +78,9 @@
   {
     "outputFile": "Assets/styles/nickname/nickname.css",
     "inputFile": "Assets/styles/nickname/nickname.scss"
+  },
+  {
+    "outputFile": "Assets/styles/captcha/captcha.css",
+    "inputFile": "Assets/styles/captcha/captcha.scss"
   }
 ]

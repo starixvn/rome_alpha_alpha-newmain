@@ -535,4 +535,7 @@
   <data name="ProfileLoginTip1" xml:space="preserve">
     <value>เพื่อเปลี่ยนใหม่. ขอบพระคุณ</value>
   </data>
+  <data name="invalidCaptcha" xml:space="preserve">
+    <value>คุณใส่รหัสที่หมดอายุแล้วในการเข้าระบบ</value>
+  </data>
 </root>

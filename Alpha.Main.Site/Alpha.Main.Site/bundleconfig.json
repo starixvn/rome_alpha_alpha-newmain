@@ -21,7 +21,6 @@
       "Assets/scripts/dashboard/statistics.js",
       "Assets/scripts/dashboard/notice.js",
       "Assets/scripts/dashboard/member-requests.js"
-
     ]
   },
   {
@@ -257,6 +256,18 @@
     "outputFileName": "Assets/bundles/nickname/nickname.css",
     "inputFiles": [
       "Assets/styles/nickname/nickname.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/captcha/captcha.css",
+    "inputFiles": [
+      "Assets/styles/captcha/captcha.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/captcha/captcha.js",
+    "inputFiles": [
+      "Assets/scripts/captcha/captcha.js"
     ]
   }
 ]
