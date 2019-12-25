@@ -10,13 +10,19 @@
         public void GetSettingKey_Always_ReturnsValidSettingKey()
         {
             // Arrange
-            var criteria = new UpdateActorProfilePictureMainServerCommand(1, 1, "192.168.1.1");
+            var ip = "192.168.1.1";
+            var command = new UpdateActorProfilePictureMainServerCommand(1, 1, ip);
             var expectedSettingKey = "Age_CustomerUpdProfilePicture";
 
             // Act
-            var actualSettingKey = criteria.GetSettingKey();
+            var actualSettingKey = command.GetSettingKey();
 
             // Assert
+            Assert.AreEqual(command.ActorId, 1);
+            Assert.AreEqual(command.IsDefault, true);
+            Assert.AreEqual(command.IsMainServer, true);
+            Assert.AreEqual(command.Mode, 1);
+            Assert.AreEqual(command.IP, ip);
             Assert.AreEqual(expectedSettingKey, actualSettingKey);
         }
     }

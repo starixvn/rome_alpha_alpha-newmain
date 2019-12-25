@@ -8,7 +8,5 @@
         }
 
         public override string GetSettingKey() => "Age_CustomerUpdProfilePicture_Standby";
-
-        public override bool IsValid() => ActorId > 0;
     }
 }

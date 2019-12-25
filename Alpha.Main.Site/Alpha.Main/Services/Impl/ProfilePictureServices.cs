@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.ProfilePicture.Services
 {
+    using Alpha.Main.Helpers.Impl;
     using Alpha.Main.Models;
     using Alpha.Main.ProfilePicture.Commands;
     using Alpha.Main.ProfilePicture.Criteria;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Params;
     using Fanex.Data.Repository;
-    using Fanex.Logging.Extensions.Web;
     using System;
 
     public interface ProfilePictureServices
@@ -20,12 +20,14 @@
     {
         private const int ErrorCodeDefault = 100;
         private readonly IDynamicRepository dynamicRepository;
+        private readonly ExceptionHandlerWrapper exceptionHandlerWrapper;
         private readonly Result ErrorDefaultResult =
             Result.CreateErrorResult("Auto insert Profile Picture Failed!", ErrorCodeDefault);
 
-        public ProfilePictureServicesImpl(IDynamicRepository dynamicRepository)
+        public ProfilePictureServicesImpl(IDynamicRepository dynamicRepository, ExceptionHandlerWrapper exceptionHandlerWrapper)
         {
             this.dynamicRepository = dynamicRepository;
+            this.exceptionHandlerWrapper = exceptionHandlerWrapper;
         }
 
         public ActorProfilePictureModel GetActorProfilePicture(int custId)
@@ -37,7 +39,7 @@
             }
             catch (Exception ex)
             {
-                ExceptionHandler.Handle(ex);
+                exceptionHandlerWrapper.Handle(ex);
                 return new ActorProfilePictureModel();
             }
         }
@@ -55,19 +57,19 @@
 
                 if (command.ErrCode.Equals(0))
                 {
-                    UpdateActorProfilePictureStandbyServerAsync(param);
+                    UpdateActorProfilePictureStandbyServer(param);
                 }
 
                 return Result.CreateErrorResult(command.ErrMsg, command.ErrCode);
             }
             catch (Exception ex)
             {
-                ExceptionHandler.Handle(ex);
+                exceptionHandlerWrapper.Handle(ex);
                 return ErrorDefaultResult;
             }
         }
 
-        internal void UpdateActorProfilePictureStandbyServerAsync(UpdateActorProfilePictureParam param)
+        internal void UpdateActorProfilePictureStandbyServer(UpdateActorProfilePictureParam param)
         {
             try
             {
@@ -80,7 +82,7 @@
             }
             catch (Exception ex)
             {
-                ExceptionHandler.Handle(ex);
+                exceptionHandlerWrapper.Handle(ex);
             }
         }
     }

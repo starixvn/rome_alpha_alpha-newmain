@@ -106,7 +106,8 @@
             container.RegisterPerWebRequest<OtpAdapter, OtpAdapterImpl>();
             container.RegisterPerWebRequest<QrCodeAdapter, QrCodeAdapterImpl>();
             container.RegisterPerWebRequest<RandomHelper, RandomHelperImpl>();
-            container.RegisterPerWebRequest<JsonHelper, JsonHelperImpl>();
+            container.RegisterSingleton<JsonHelper, JsonHelperImpl>();
+            container.RegisterSingleton<ExceptionHandlerWrapper, ExceptionHandlerWrapperImpl>();
             container.RegisterPerWebRequest<CustomerOtpService>(() =>
             new CustomerOtpServiceImpl(
                 container.GetInstance<IDynamicRepository>(),

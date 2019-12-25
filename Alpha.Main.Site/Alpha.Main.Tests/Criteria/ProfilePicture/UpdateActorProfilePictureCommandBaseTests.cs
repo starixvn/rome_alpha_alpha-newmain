@@ -20,5 +20,15 @@
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [Test]
+        public void GetSettingKey_Always_ReturnsemptySettingKey()
+        {
+            var criteria = new UpdateActorProfilePictureCommandBase(1, 1, "192.168.1.1", true);
+
+            var actualSettingKey = criteria.GetSettingKey();
+
+            Assert.AreEqual(actualSettingKey, string.Empty);
+        }
     }
 }
