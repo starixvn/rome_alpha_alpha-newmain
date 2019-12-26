@@ -15,7 +15,6 @@
     using Site.Requests.Otp;
     using Sunplus.Agent.Model.Entities;
     using System;
-    using System.Text;
     using Web.Helpers;
 
     [TestFixture]
