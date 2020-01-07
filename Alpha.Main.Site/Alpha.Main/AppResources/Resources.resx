@@ -604,4 +604,7 @@
   <data name="invalidCaptcha" xml:space="preserve">
     <value>You input an invalid code</value>
   </data>
+  <data name="IamNotARobot" xml:space="preserve">
+    <value>I'm not a robot</value>
+  </data>
 </root>

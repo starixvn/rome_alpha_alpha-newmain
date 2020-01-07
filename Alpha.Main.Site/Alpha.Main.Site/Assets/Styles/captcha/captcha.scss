@@ -1,17 +1,19 @@
 ﻿@import '../Home/_variables.scss';
 
 $block-padding: 20px;
+$block-width: 380px;
 $captcha-img-width: 120px;
 $captcha-img-height: 60px;
 $icon-refresh-color: #6a6a6a;
 $button-height: 30px;
 $margin: 7px;
-$textbox-width: 80px;
+$textbox-width: 90px;
 $textbox-font-size: 16px;
 
 .block {
     display: table;
     padding: $block-padding;
+    width: $block-width;
 
     .captcha-code img {
         width: $captcha-img-width;
@@ -56,5 +58,19 @@ $textbox-font-size: 16px;
         line-height: $button-height;
         text-transform: none;
         width: auto;
+    }
+
+    .hint-text {
+        position: relative;
+
+        .icon-check-circle {
+            color: #32cd32;
+            font-size: 1.9rem;
+            position: absolute;
+        }
+
+        .text {
+            padding-left: 25px;
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿@using CaptchaMvc.HtmlHelpers;   
+﻿@using CaptchaMvc.HtmlHelpers;
 @{
     Layout = null;
 }
@@ -21,6 +21,10 @@
 </head>
 <body>
     <div class="block">
+        <p class="hint-text">
+            <span class="icon-check-circle"></span>
+            <span class="text">@Resources.IamNotARobot</span>
+        </p>
         @Html.Captcha(6, "CaptchaTemplate", ViewData)
     </div>
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")

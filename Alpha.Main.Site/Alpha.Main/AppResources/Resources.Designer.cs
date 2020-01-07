@@ -439,6 +439,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I&apos;m not a robot.
+        /// </summary>
+        public static string IamNotARobot {
+            get {
+                return ResourceManager.GetString("IamNotARobot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;Dear customers! Now you can login with your own nickname&lt;/div&gt;
         ///&lt;div&gt;... more secure and personalized.&lt;/div&gt;.
         /// </summary>
