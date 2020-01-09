@@ -456,6 +456,9 @@
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE_STANDBY.bodb_AGE.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBMSG.bodb_Message.xml" />
@@ -468,12 +471,18 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\INTERNAL\DBAGE_STANDBY.bodb_AGE.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\INTERNAL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DB053_DB054.bodb02.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBACC.bodb02.BODBDownlineNet.xml" />
+    <Content Include="App_Data\SPNames\LOCAL\DBAGE_STANDBY.bodb_AGE.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\LOCAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml">
       <SubType>Designer</SubType>
@@ -492,6 +501,9 @@
     <Content Include="App_Data\SPNames\MNL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\MNL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\MNL\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\MNL\DBAGE_STANDBY.bodb_AGE.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\MNL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\MNL\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\MNL\DBMSG.bodb_Message.xml" />
@@ -504,6 +516,9 @@
     </Content>
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\PRO\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\PRO\DBAGE_STANDBY.bodb_AGE.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\PRO\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\PRO\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\PRO\DBMSG.bodb_Message.xml" />
@@ -513,6 +528,9 @@
     <Content Include="App_Data\SPNames\SIT\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\SPNames\SIT\DBAGE_STANDBY.bodb_AGE.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\SIT\DBCUST.CustDB.xml" />
@@ -526,6 +544,9 @@
       </SubType>
     </Content>
     <Content Include="App_Data\SPNames\UAT\DBAGE.bodb_AGE.xml" />
+    <Content Include="App_Data\SPNames\UAT\DBAGE_STANDBY.bodb_AGE.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\SPNames\UAT\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\UAT\DBLOG.bodb_CustomerLog.xml" />
     <Content Include="App_Data\SPNames\UAT\DBMSG.bodb_Message.xml" />

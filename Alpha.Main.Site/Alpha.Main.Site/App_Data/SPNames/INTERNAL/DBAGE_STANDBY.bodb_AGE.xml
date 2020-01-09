@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Functions SiteId="" SiteName="Account Info">
+  <Function Name="Profile Picture">
+    <Setting Key="Age_CustomerUpdProfilePicture_Standby" SpName="Age_CustomerUpdProfilePicture" DbName="DBAGE_STANDBY.bodb_AGE.BODBDownlineNetView" Plain="0" />
+  </Function>
+</Functions>
