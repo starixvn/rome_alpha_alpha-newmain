@@ -384,4 +384,10 @@
   <data name="chatbot" xml:space="preserve">
     <value>Chatbot</value>
   </data>
+  <data name="BetStatistics" xml:space="preserve">
+    <value>Bet Statistics</value>
+  </data>
+  <data name="IPMatching" xml:space="preserve">
+    <value>IP Matching</value>
+  </data>
 </root>

@@ -378,4 +378,10 @@
   <data name="TransferAllAndClearCredit" xml:space="preserve">
     <value>โอนยอดทั้งหมด และเคลียร์เครดิต</value>
   </data>
+  <data name="BetStatistics" xml:space="preserve">
+    <value>Bet Statistics</value>
+  </data>
+  <data name="IPMatching" xml:space="preserve">
+    <value>IP Matching</value>
+  </data>
 </root>
