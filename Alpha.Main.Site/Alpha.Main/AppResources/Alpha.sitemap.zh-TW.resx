@@ -384,6 +384,9 @@
     <value>問題賬號列表</value>
   </data>
   <data name="IPMatching" xml:space="preserve">
-    <value>IP核對</value>
+    <value>IP核對</value></data>
+
+  <data name="BetChoiceMatching" xml:space="preserve">
+    <value>Bet Choice Matching</value>
   </data>
 </root>

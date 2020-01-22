@@ -383,6 +383,8 @@
   <data name="problemAccountList" xml:space="preserve">
     <value>问题账号列表</value>
   </data>
+  <data name="BetChoiceMatching" xml:space="preserve">
+    <value>Bet Choice Matching</value></data>
   <data name="IPMatching" xml:space="preserve">
     <value>IP核对</value>
   </data>

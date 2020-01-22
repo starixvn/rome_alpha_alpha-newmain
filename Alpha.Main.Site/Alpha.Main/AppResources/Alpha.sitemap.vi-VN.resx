@@ -394,4 +394,7 @@
   <data name="problemAccountList" xml:space="preserve">
     <value>Danh Sách Tài Khoản Có Vấn Đề</value>
   </data>
+  <data name="BetChoiceMatching" xml:space="preserve">
+    <value>Bet Choice Matching</value>
+  </data>
 </root>
