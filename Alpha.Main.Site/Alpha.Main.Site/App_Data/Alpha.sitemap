@@ -100,8 +100,8 @@
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="ng2" appPath="NG2SiteVirtualPath" url="~/Forecast/RealBet"></siteMapNode>
     </siteMapNode>
 
-    <siteMapNode resourceKey="BetStatistics" menuItemType="BetStatisticsMenuItem" functionType="[E]">
-      <siteMapNode resourceKey="IPMatching" appPath="ReportsAppPath" url="~/RiskAnalysisIPMatching"></siteMapNode>
+    <siteMapNode resourceKey="BetStatistics" menuItemType="BetStatisticsMenuItem" functionType="[E]" roles="Super">
+      <siteMapNode resourceKey="IPMatching" appPath="ReportsAppPath" url="~/RiskAnalysisIPMatching" roles="Super"></siteMapNode>
     </siteMapNode>
     
     <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
