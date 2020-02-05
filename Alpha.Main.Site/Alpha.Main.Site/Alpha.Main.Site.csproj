@@ -452,6 +452,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\activitytracking.napinternal.json">
+      <DependentUpon>activitytracking.json</DependentUpon>
+    </Content>
+    <Content Include="App_Data\activitytracking.napinternal2.json">
+      <DependentUpon>activitytracking.json</DependentUpon>
+    </Content>
+    <Content Include="App_Data\activitytracking.pro2.json">
+      <DependentUpon>activitytracking.json</DependentUpon>
+    </Content>
+    <Content Include="App_Data\activitytracking.proi1.json">
+      <DependentUpon>activitytracking.json</DependentUpon>
+    </Content>
+    <Content Include="App_Data\activitytracking.uat2.json">
+      <DependentUpon>activitytracking.json</DependentUpon>
+    </Content>
+    <Content Include="App_Data\activitytracking.uati1.json">
+      <DependentUpon>activitytracking.json</DependentUpon>
+    </Content>
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DB053_DB054.bodb02.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb02.xml" />
@@ -1176,12 +1194,6 @@
     <Content Include="Assets\styles\security\security.scss" />
     <Content Include="Assets\styles\captcha\captcha.scss" />
     <Content Include="App_Data\activitytracking.json" />
-    <Content Include="App_Data\activitytracking.uati1.json" />
-    <Content Include="App_Data\activitytracking.napinternal.json" />
-    <Content Include="App_Data\activitytracking.uat2.json" />
-    <Content Include="App_Data\activitytracking.napinternal2.json" />
-    <Content Include="App_Data\activitytracking.proi1.json" />
-    <Content Include="App_Data\activitytracking.pro2.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
