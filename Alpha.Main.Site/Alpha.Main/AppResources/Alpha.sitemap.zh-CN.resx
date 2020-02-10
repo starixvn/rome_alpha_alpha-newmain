@@ -379,7 +379,7 @@
     <value>转全部的账并清除信用额度</value>
   </data>
   <data name="BetStatistics" xml:space="preserve">
-    <value>Bet Statistics</value>
+    <value>Risk Analysis</value>
   </data>
   <data name="IPMatching" xml:space="preserve">
     <value>IP Matching</value>

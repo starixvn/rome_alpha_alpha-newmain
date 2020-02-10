@@ -142,7 +142,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bet Statistics.
+        ///   Looks up a localized string similar to Risk Analysis.
         /// </summary>
         public static string BetStatistics {
             get {
