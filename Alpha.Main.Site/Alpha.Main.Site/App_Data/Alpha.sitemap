@@ -85,7 +85,7 @@
     </siteMapNode>
 
     <siteMapNode resourceKey="BetsAndForecast" menuItemType="TotalBetsMenuItem" functionType="[D]">
-      <siteMapNode resourceKey="soccer" appPath="TotalbetsForecastSiteVirtualPath" url="~/Forecast" isBeta="true" menuItemType="TotalBetsForecast"></siteMapNode>
+      <siteMapNode resourceKey="soccer" appPath="TotalbetsForecastSiteVirtualPath" url="~/Forecast" menuItemType="TotalBetsForecast"></siteMapNode>
       <siteMapNode resourceKey="HOUL" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/HDPOU.aspx"></siteMapNode>
       <siteMapNode resourceKey="moneyline" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/MoneyLine.aspx"></siteMapNode>
       <siteMapNode resourceKey="OE1x2DND" appPath="ExTotalBetsForecastAppPath" url="_TotalBets/OddEven1x2.aspx"></siteMapNode>
