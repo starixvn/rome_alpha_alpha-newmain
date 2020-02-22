@@ -269,5 +269,17 @@
     "inputFiles": [
       "Assets/scripts/captcha/captcha.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/newcustomer-captcha/captcha.css",
+    "inputFiles": [
+      "Assets/styles/newcustomer-captcha/captcha.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/newcustomer-captcha/captcha.js",
+    "inputFiles": [
+      "Assets/scripts/newcustomer-captcha/captcha.js"
+    ]
   }
 ]
