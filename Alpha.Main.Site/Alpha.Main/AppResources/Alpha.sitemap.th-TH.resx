@@ -379,9 +379,9 @@
     <value>โอนยอดทั้งหมด และเคลียร์เครดิต</value>
   </data>
   <data name="BetStatistics" xml:space="preserve">
-    <value>Risk Analysis</value>
+    <value>วิเคราะห์ความเสี่ยง</value>
   </data>
   <data name="IPMatching" xml:space="preserve">
-    <value>IP Matching</value>
+    <value>ตรวจสอบไอพี</value>
   </data>
 </root>
