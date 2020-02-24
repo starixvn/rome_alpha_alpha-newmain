@@ -1,0 +1,32 @@
+﻿@model CaptchaMvc.Models.DefaultBuildInfoModel
+@{
+    string id = Guid.NewGuid().ToString("N");
+    string reloadCaptchaFunctionName = string.Format("______{0}________", Guid.NewGuid().ToString("N"));
+    string errorMessage = (string)TempData["ErrorMessage"];
+}
+@Html.Hidden("CaptchaId", id)
+@Html.Hidden("ModelRefreshUrl", Model.RefreshUrl)
+@Html.Hidden("ModelTokenParameterName", Model.TokenParameterName)
+@Html.Hidden("ModelTokenElementId", Model.TokenElementId)
+@Html.Hidden("NoInteractionTimeInMinutes", 5 * 60 * 1000)
+@Html.Hidden("ModelImageElementId", Model.ImageElementId)
+@Html.Hidden("ReloadCaptchaFunctionName", reloadCaptchaFunctionName)
+@using (Html.BeginForm("Check", "NewCustomerCaptcha", FormMethod.Post))
+{
+    @Html.Hidden("returnUrl", ViewData["returnUrl"])
+    <div class="captcha-code">
+        <img alt="captcha" id="@Model.ImageElementId" src="@Model.ImageUrl" />
+        @Html.Hidden(Model.TokenElementId, Model.TokenValue)
+    </div>
+    <div class="action-refresh" id="@id" href="#@Model.ImageElementId">
+        <i class="icon-refresh" id="captcha-refresh-icon"></i>
+    </div>
+    <div class="form-captcha">
+        @Html.TextBox(Model.InputElementId, null, new { @class = "txt", autocomplete = "off", autofocus = "true" })
+        <button type="submit" class="btn-submit">@Resources.submit</button>
+        @if (!string.IsNullOrWhiteSpace(errorMessage))
+        {
+            <label class="error">@errorMessage</label>
+        }
+    </div>
+}

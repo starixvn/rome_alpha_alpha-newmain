@@ -611,6 +611,14 @@
     <Content Include="Assets\bundles\home-mobile-calculate-07.min.css">
       <DependentUpon>home-mobile-calculate-07.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\newcustomer-captcha\captcha.css" />
+    <Content Include="Assets\bundles\newcustomer-captcha\captcha.js" />
+    <Content Include="Assets\bundles\newcustomer-captcha\captcha.min.css">
+      <DependentUpon>captcha.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\newcustomer-captcha\captcha.min.js">
+      <DependentUpon>captcha.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\nickname\create-nickname.js" />
     <Content Include="Assets\bundles\nickname\create-nickname.min.js">
       <DependentUpon>create-nickname.js</DependentUpon>
@@ -687,6 +695,12 @@
       <DependentUpon>page-mobile-calculate-07.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\_mixins2.scss" />
+    <Content Include="Assets\styles\newcustomer-captcha\captcha.css">
+      <DependentUpon>captcha.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\newcustomer-captcha\captcha.min.css">
+      <DependentUpon>captcha.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\nickname\nickname.css" />
     <Content Include="Assets\styles\nickname\nickname.min.css" />
     <Content Include="Assets\styles\security\verify-security-code.css">
@@ -940,6 +954,8 @@
     <Content Include="Views\Default\DataProccessingPopup.cshtml" />
     <Content Include="Views\RobotCaptcha\Index.cshtml" />
     <Content Include="Views\RobotCaptcha\CaptchaTemplate.cshtml" />
+    <Content Include="Views\NewCustomerCaptcha\Index.cshtml" />
+    <Content Include="Views\NewCustomerCaptcha\CaptchaTemplate.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -950,6 +966,7 @@
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\data-proccessing-notification.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
+    <TypeScriptCompile Include="Assets\scripts\newcustomer-captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\nickname\create-nickname.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
@@ -1194,6 +1211,7 @@
     <Content Include="Assets\styles\security\security.scss" />
     <Content Include="Assets\styles\captcha\captcha.scss" />
     <Content Include="App_Data\activitytracking.json" />
+    <Content Include="Assets\styles\newcustomer-captcha\captcha.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1294,6 +1312,7 @@
     <Compile Include="App_Start\RouteConfig.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
+    <Compile Include="Controllers\NewCustomerCaptchaController.cs" />
     <Compile Include="Controllers\RobotCaptchaController.cs" />
     <Compile Include="Controllers\ChatBotController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />

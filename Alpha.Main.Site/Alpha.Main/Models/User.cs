@@ -11,6 +11,8 @@
         bool IsEnabledJackpot { get; }
 
         bool IsAdminCanUpdateSubAccount { get; }
+
+        void SetNewCaptchaByCurrency();
     }
 
     public class User : IUser
@@ -18,6 +20,7 @@
         private const string Jackpot = "Jackpot";
         private const string GameEnableSessionKey = "_GameEnable_";
         private const string IsAdminCanUpdateSubAccountSessionKey = "IsAdminCanUpdateSubAccount";
+        private const string NewCaptchaByCurrencySessionKey = "NewCaptchaByCurrency";
 
         public bool IsEnabledJackpot
         {
@@ -36,6 +39,11 @@
 
         public bool IsAdminCanUpdateSubAccount
             => GetSessionValue<bool>(IsAdminCanUpdateSubAccountSessionKey);
+
+        public void SetNewCaptchaByCurrency()
+        {
+            HttpContext.Current.Session[NewCaptchaByCurrencySessionKey] = false;
+        }
 
         private static T GetSessionValue<T>(string sessionKey)
         {

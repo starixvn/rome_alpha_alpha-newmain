@@ -82,5 +82,9 @@
   {
     "outputFile": "Assets/styles/captcha/captcha.css",
     "inputFile": "Assets/styles/captcha/captcha.scss"
+  },
+  {
+    "outputFile": "Assets/styles/newcustomer-captcha/captcha.css",
+    "inputFile": "Assets/styles/newcustomer-captcha/captcha.scss"
   }
 ]
