@@ -379,7 +379,9 @@
     <value>โอนยอดทั้งหมด และเคลียร์เครดิต</value>
   </data>
   <data name="BetStatistics" xml:space="preserve">
-    <value>วิเคราะห์ความเสี่ยง</value>
+    <value>วิเคราะห์ความเสี่ยง</value></data>
+  <data name="problemAccountList" xml:space="preserve">
+    <value>รายการบัญชีที่มีปัญหา</value>
   </data>
   <data name="IPMatching" xml:space="preserve">
     <value>ตรวจสอบไอพี</value>
