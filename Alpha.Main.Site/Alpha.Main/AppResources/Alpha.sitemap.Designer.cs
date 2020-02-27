@@ -142,6 +142,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Risk Analysis.
+        /// </summary>
+        public static string BetStatistics {
+            get {
+                return ResourceManager.GetString("BetStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clean Sheet.
         /// </summary>
         public static string BetType13 {
@@ -363,6 +372,15 @@ namespace Alpha.Main.AppResources {
         public static string htft {
             get {
                 return ResourceManager.GetString("htft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IP Matching.
+        /// </summary>
+        public static string IPMatching {
+            get {
+                return ResourceManager.GetString("IPMatching", resourceCulture);
             }
         }
         

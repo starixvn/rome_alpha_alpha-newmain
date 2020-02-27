@@ -384,4 +384,11 @@
   <data name="chatbot" xml:space="preserve">
     <value>Chatbot</value>
   </data>
+  <data name="BetStatistics" xml:space="preserve">
+    <value>Phân tích rủi ro</value>
+  </data>
+  <data name="IPMatching" xml:space="preserve">
+    <value>IP trùng lặp
+</value>
+  </data>
 </root>

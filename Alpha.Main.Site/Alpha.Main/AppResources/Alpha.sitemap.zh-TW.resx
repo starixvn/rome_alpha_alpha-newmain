@@ -378,4 +378,10 @@
   <data name="TransferAllAndClearCredit" xml:space="preserve">
     <value>轉全部的賬並清除信用額度</value>
   </data>
+  <data name="BetStatistics" xml:space="preserve">
+    <value>風險分析</value>
+  </data>
+  <data name="IPMatching" xml:space="preserve">
+    <value>IP核對</value>
+  </data>
 </root>

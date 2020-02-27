@@ -351,4 +351,10 @@
   <data name="TransferAllAndClearCredit" xml:space="preserve">
     <value>Transfer All &amp; Clear Credit</value>
   </data>
+  <data name="BetStatistics" xml:space="preserve">
+    <value>Risk Analysis</value>
+  </data>
+  <data name="IPMatching" xml:space="preserve">
+    <value>IP Matching</value>
+  </data>
 </root>
