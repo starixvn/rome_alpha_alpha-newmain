@@ -388,13 +388,12 @@
     <value>Phân tích rủi ro</value>
   </data>
   <data name="IPMatching" xml:space="preserve">
-    <value>IP trùng lặp
-</value>
+    <value>IP trùng lặp</value>
   </data>
   <data name="problemAccountList" xml:space="preserve">
     <value>Danh Sách Tài Khoản Có Vấn Đề</value>
   </data>
-  <data name="BetChoiceMatching" xml:space="preserve">
-    <value>Bet Choice Matching</value>
+  <data name="MatchingBetChoice" xml:space="preserve">
+    <value>Cược trùng lặp</value>
   </data>
 </root>

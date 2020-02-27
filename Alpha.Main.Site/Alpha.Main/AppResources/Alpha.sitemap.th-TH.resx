@@ -386,7 +386,7 @@
   <data name="IPMatching" xml:space="preserve">
     <value>ตรวจสอบไอพี</value>
   </data>
-  <data name="BetChoiceMatching" xml:space="preserve">
-    <value>Bet Choice Matching</value>
+  <data name="MatchingBetChoice" xml:space="preserve">
+    <value>ตรวจสอบตัวเลือกการเดิมพัน</value>
   </data>
 </root>

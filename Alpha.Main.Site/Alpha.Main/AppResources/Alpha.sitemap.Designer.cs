@@ -124,15 +124,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bet Choice Matching.
-        /// </summary>
-        public static string BetChoiceMatching {
-            get {
-                return ResourceManager.GetString("BetChoiceMatching", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Bet Lists.
         /// </summary>
         public static string BetLists {
@@ -147,15 +138,6 @@ namespace Alpha.Main.AppResources {
         public static string BetsAndForecast {
             get {
                 return ResourceManager.GetString("BetsAndForecast", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bet Statistics.
-        /// </summary>
-        public static string BetStatistics {
-            get {
-                return ResourceManager.GetString("BetStatistics", resourceCulture);
             }
         }
         
@@ -462,6 +444,15 @@ namespace Alpha.Main.AppResources {
         public static string masterwinlostdetail {
             get {
                 return ResourceManager.GetString("masterwinlostdetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matching Bet Choice.
+        /// </summary>
+        public static string MatchingBetChoice {
+            get {
+                return ResourceManager.GetString("MatchingBetChoice", resourceCulture);
             }
         }
         
