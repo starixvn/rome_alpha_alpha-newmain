@@ -74,3 +74,24 @@ $textbox-font-size: 16px;
         }
     }
 }
+
+.captcha-row {
+    margin: 5px 0;
+}
+
+.row-image {
+    height: 50px;
+}
+
+.captcha-input {
+    width: 220px;
+}
+
+.refresh-icon {
+    margin-left: 5px;
+    margin-top: 15px;
+    vertical-align: top;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}

@@ -1,10 +1,11 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Web.Mvc;
+    using Alpha.Captcha.Mvc;
     using Alpha.Main.AppResources;
     using Alpha.Main.Models;
     using Alpha.Web;
     using CaptchaMvc.HtmlHelpers;
+    using System.Web.Mvc;
 
     public class NewCustomerCaptchaController : BaseController
     {
@@ -23,9 +24,10 @@
         }
 
         [HttpPost]
+        [CaptchaValidation]
         public ActionResult Check(string returnUrl)
         {
-            if (this.IsCaptchaValid(null))
+            if (ModelState.IsValid)
             {
                 user.SetNewCaptchaByCurrency();
 

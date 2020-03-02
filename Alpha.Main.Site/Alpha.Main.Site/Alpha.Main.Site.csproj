@@ -57,6 +57,9 @@
     <Reference Include="Alpha.Auth, Version=3.0.2.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Alpha.Auth.3.0.2.3\lib\net461\Alpha.Auth.dll</HintPath>
     </Reference>
+    <Reference Include="Alpha.Captcha, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Captcha.0.0.3\lib\net461\Alpha.Captcha.dll</HintPath>
+    </Reference>
     <Reference Include="Alpha.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Alpha.Logging.1.0.1\lib\net461\Alpha.Logging.dll</HintPath>
     </Reference>
