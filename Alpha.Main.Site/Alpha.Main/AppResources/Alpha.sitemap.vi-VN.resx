@@ -393,7 +393,7 @@
   <data name="problemAccountList" xml:space="preserve">
     <value>Danh Sách Tài Khoản Có Vấn Đề</value>
   </data>
-  <data name="MatchingBetChoice" xml:space="preserve">
+  <data name="BetChoiceMatching" xml:space="preserve">
     <value>Cược trùng lặp</value>
   </data>
 </root>

@@ -357,7 +357,4 @@
   <data name="IPMatching" xml:space="preserve">
     <value>IP Matching</value>
   </data>
-  <data name="MatchingBetChoice" xml:space="preserve">
-    <value>Matching Bet Choice</value>
-  </data>
 </root>
