@@ -36,7 +36,7 @@
 
             TempData["ErrorMessage"] = Resources.invalidCaptcha;
 
-            return RedirectToAction(nameof(Index), new { returnUrl });
+            return View("~/Views/NewCustomerCaptcha/Index.cshtml");
         }
 
         private ActionResult ToDefaultPage()
