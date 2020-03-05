@@ -664,6 +664,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Problem Account List.
+        /// </summary>
+        public static string problemAccountList {
+            get {
+                return ResourceManager.GetString("problemAccountList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Progressive Games Contribution.
         /// </summary>
         public static string ProgressiveGamesContribution {

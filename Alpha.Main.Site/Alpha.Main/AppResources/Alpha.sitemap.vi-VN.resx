@@ -391,4 +391,7 @@
     <value>IP trùng lặp
 </value>
   </data>
+  <data name="problemAccountList" xml:space="preserve">
+    <value>Danh Sách Tài Khoản Có Vấn Đề</value>
+  </data>
 </root>
