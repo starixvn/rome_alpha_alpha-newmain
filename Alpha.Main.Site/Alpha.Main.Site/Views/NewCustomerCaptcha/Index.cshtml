@@ -1,4 +1,5 @@
 ﻿@using Alpha.Captcha.Mvc;
+@model Alpha.Captcha.Models.CaptchaLevels
 @{
     Layout = null;
 }
@@ -29,7 +30,7 @@
         {
             var errorMessage = (string)TempData["ErrorMessage"];
             @Html.Hidden("returnUrl", ViewData["returnUrl"])
-            @Html.Captcha()
+            @Html.Captcha(Model)
             <div class="form-captcha">
                 <button type="submit" class="btn-submit">@Resources.submit</button>
                 @if (!string.IsNullOrWhiteSpace(errorMessage))

@@ -1,10 +1,12 @@
 ﻿namespace Alpha.Main.Models
 {
+    using Alpha.Main.Configurations;
+    using Constants;
+    using Sunplus.Agent.Model.Entities;
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
-    using Constants;
-    using Sunplus.Agent.Model.Entities;
 
     public interface IUser
     {
@@ -12,7 +14,7 @@
 
         bool IsAdminCanUpdateSubAccount { get; }
 
-        void SetNewCaptchaByCurrency();
+        void RemoveNewCaptchaByCurrency();
     }
 
     public class User : IUser
@@ -20,7 +22,6 @@
         private const string Jackpot = "Jackpot";
         private const string GameEnableSessionKey = "_GameEnable_";
         private const string IsAdminCanUpdateSubAccountSessionKey = "IsAdminCanUpdateSubAccount";
-        private const string NewCaptchaByCurrencySessionKey = "NewCaptchaByCurrency";
 
         public bool IsEnabledJackpot
         {
@@ -40,9 +41,9 @@
         public bool IsAdminCanUpdateSubAccount
             => GetSessionValue<bool>(IsAdminCanUpdateSubAccountSessionKey);
 
-        public void SetNewCaptchaByCurrency()
+        public void RemoveNewCaptchaByCurrency()
         {
-            HttpContext.Current.Session[NewCaptchaByCurrencySessionKey] = false;
+            HttpContext.Current.Session[AppSettings.CreatedSettingLastDateSessionKey] = DateTime.MinValue;
         }
 
         private static T GetSessionValue<T>(string sessionKey)
