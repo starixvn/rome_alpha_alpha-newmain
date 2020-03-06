@@ -39,8 +39,8 @@
             }
 
             TempData["ErrorMessage"] = Resources.invalidCaptcha;
-
-            return View("~/Views/NewCustomerCaptcha/Index.cshtml");
+            var captchaLevel = GetCaptchaLevel();
+            return View("~/Views/NewCustomerCaptcha/Index.cshtml", captchaLevel);
         }
 
         private CaptchaLevels GetCaptchaLevel()
@@ -48,11 +48,11 @@
             var createdSettingLastDateObject = Session[AppSettings.CreatedSettingLastDateSessionKey];
             if (createdSettingLastDateObject == null)
             {
-                return CaptchaLevels.Medium;
+                return CaptchaLevels.Low;
             }
 
             var createdSettingLastDate = (DateTime)createdSettingLastDateObject;
-            return DateTime.Now.Subtract(createdSettingLastDate).TotalMinutes < 1 ? CaptchaLevels.Extreme : CaptchaLevels.Medium;
+            return DateTime.Now.Subtract(createdSettingLastDate).TotalMinutes < 1 ? CaptchaLevels.High : CaptchaLevels.Low;
         }
 
         private ActionResult ToDefaultPage()
