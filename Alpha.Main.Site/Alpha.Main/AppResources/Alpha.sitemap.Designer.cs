@@ -124,6 +124,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bet Choice Matching.
+        /// </summary>
+        public static string BetChoiceMatching {
+            get {
+                return ResourceManager.GetString("BetChoiceMatching", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bet Lists.
         /// </summary>
         public static string BetLists {

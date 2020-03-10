@@ -386,4 +386,7 @@
   <data name="IPMatching" xml:space="preserve">
     <value>IP核對</value>
   </data>
+  <data name="BetChoiceMatching" xml:space="preserve">
+    <value>以投注選擇核對</value>
+  </data>
 </root>
