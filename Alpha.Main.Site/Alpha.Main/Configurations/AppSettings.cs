@@ -202,5 +202,7 @@
 
         public static bool RobotIsIgnoreInputCaptcha
             => "1" == Settings["Robot:IsIgnoreInputCaptcha"];
+
+        public static string CreatedSettingLastDateSessionKey => "CreatedSettingLastDate";
     }
 }

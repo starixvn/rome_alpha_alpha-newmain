@@ -1,4 +1,5 @@
-﻿@using CaptchaMvc.HtmlHelpers;
+﻿@using Alpha.Captcha.Mvc;
+@model Alpha.Captcha.Models.CaptchaLevels
 @{
     Layout = null;
 }
@@ -25,7 +26,19 @@
             <span class="icon-check-circle"></span>
             <span class="text">@Resources.IamNotARobot</span>
         </p>
-        @Html.Captcha(6, "CaptchaTemplate", ViewData)
+        @using (Html.BeginForm("Check", "NewCustomerCaptcha", FormMethod.Post))
+        {
+            var errorMessage = (string)TempData["ErrorMessage"];
+            @Html.Hidden("returnUrl", ViewData["returnUrl"])
+            @Html.Captcha(Model)
+            <div class="form-captcha">
+                <button type="submit" class="btn-submit">@Resources.submit</button>
+                @if (!string.IsNullOrWhiteSpace(errorMessage))
+                {
+                    <label class="error">@errorMessage</label>
+                }
+            </div>
+        }
     </div>
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.RenderScripts("~/assets/bundles/newcustomer-captcha/captcha")

@@ -1,10 +1,13 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System.Web.Mvc;
+    using Alpha.Captcha.Models;
+    using Alpha.Captcha.Mvc;
     using Alpha.Main.AppResources;
+    using Alpha.Main.Configurations;
     using Alpha.Main.Models;
     using Alpha.Web;
-    using CaptchaMvc.HtmlHelpers;
+    using System;
+    using System.Web.Mvc;
 
     public class NewCustomerCaptchaController : BaseController
     {
@@ -18,16 +21,17 @@
         public ActionResult Index(string returnUrl)
         {
             ViewData[nameof(returnUrl)] = returnUrl;
-
-            return View();
+            var captchaLevel = GetCaptchaLevel();
+            return View(captchaLevel);
         }
 
         [HttpPost]
+        [CaptchaValidation]
         public ActionResult Check(string returnUrl)
         {
-            if (this.IsCaptchaValid(null))
+            if (ModelState.IsValid)
             {
-                user.SetNewCaptchaByCurrency();
+                user.RemoveNewCaptchaByCurrency();
 
                 return string.IsNullOrWhiteSpace(returnUrl)
                     ? ToDefaultPage()
@@ -35,8 +39,20 @@
             }
 
             TempData["ErrorMessage"] = Resources.invalidCaptcha;
+            var captchaLevel = GetCaptchaLevel();
+            return View("~/Views/NewCustomerCaptcha/Index.cshtml", captchaLevel);
+        }
 
-            return View("~/Views/NewCustomerCaptcha/Index.cshtml");
+        private CaptchaLevels GetCaptchaLevel()
+        {
+            var createdSettingLastDateObject = Session[AppSettings.CreatedSettingLastDateSessionKey];
+            if (createdSettingLastDateObject == null)
+            {
+                return CaptchaLevels.Low;
+            }
+
+            var createdSettingLastDate = (DateTime)createdSettingLastDateObject;
+            return DateTime.Now.Subtract(createdSettingLastDate).TotalMinutes < 1 ? CaptchaLevels.High : CaptchaLevels.Low;
         }
 
         private ActionResult ToDefaultPage()
