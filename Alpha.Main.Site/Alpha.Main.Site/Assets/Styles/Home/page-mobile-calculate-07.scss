@@ -359,6 +359,10 @@ body {
             top: 1px;
         }
 
+        &.icon-qr-code-top {
+            top: 1px;
+        }
+
         &.icon-account-search {
             top: 2px;
         }
@@ -446,6 +450,19 @@ body {
     }
     // ripple effect
     .icon-home:hover:after {
+        top: calculateScale(6px);
+        width: calculateScale(40px);
+        height: calculateScale(40px);
+        margin-left: calculateScale(2px);
+        margin-top: calculateScale(-4px);
+    }
+
+    .icon-qr-code-top:before {
+        top: calculateScale(-2px);
+        font-size: calculateScale(18px);
+    }
+    // ripple effect
+    .icon-qr-code-top:hover:after {
         top: calculateScale(6px);
         width: calculateScale(40px);
         height: calculateScale(40px);

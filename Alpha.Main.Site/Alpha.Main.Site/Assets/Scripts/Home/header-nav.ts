@@ -13,6 +13,7 @@ var headerNav = {
 
         iconLogOut: null,
         iconHome: null,
+        iconQRCodeTop: null,
 
         numberNewMessage: null,
         iconNewMessage: null,
@@ -50,6 +51,7 @@ var headerNav = {
 
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index",
+        qrCodeTop: alpha.urls.memberInfoRootPath + "QRCodeMemberSignIn",
         messages: alpha.urls.messageRootPath + "MessageHistory/Index",
         announcements: alpha.urls.messageRootPath + "Announcement/Index",
         changeLanguage: alpha.urls.mainRootPath + "Language/Change",
@@ -164,6 +166,7 @@ var headerNav = {
 
         headerNav.domElements.iconLogOut = $(".icon-logout");
         headerNav.domElements.iconHome = $(".icon-home");
+        headerNav.domElements.iconQRCodeTop = $(".icon-qr-code-top");
 
         headerNav.domElements.iconNewMessage = $(".icon-bell");
         headerNav.domElements.numberNewMessage = $("#numberOfNewMessage");
@@ -276,6 +279,10 @@ var headerNav = {
 
         headerNav.domElements.iconHome.on("click", () => {
             indexManager.changeMenu(headerNav.urls.home);
+        });
+
+        headerNav.domElements.iconQRCodeTop.on("click", () => {
+            indexManager.changeMenu(headerNav.urls.qrCodeTop);
         });
 
         headerNav.domElements.changeLanguageLink.on('click touchend', (event) => {
