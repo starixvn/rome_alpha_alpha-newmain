@@ -7,9 +7,12 @@
 }
 
 <section class="navbar header-nav" id="header-nav">
-	<span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
+    <span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
     <ul class="nav navbar-nav list-top">
-        <li class="visible-mobile"><span class="icon icon-qr-code-top"></span></li>
+        @if (Model.ShowCreateMemberByQRCode)
+        {
+            <li class="visible-mobile"><span class="icon icon-qr-code-top"></span></li>
+        }
         <li class="visible-mobile"><span class="icon icon-home"></span></li>
         @if (Model.IsViewedMemberInfo)
         {
@@ -29,9 +32,12 @@
             @Html.Action("List", "Language")
         </li>
 
-        <li class="hidden-mobile dropdown language">
-            <a class="icon icon-qr-code-top withripple"></a>
-        </li>
+        @if (Model.ShowCreateMemberByQRCode)
+        {
+            <li class="hidden-mobile dropdown language">
+                <a class="icon icon-qr-code-top withripple"></a>
+            </li>
+        }
 
         <li class="notification">
             <a class="icon icon-bell withripple"></a>

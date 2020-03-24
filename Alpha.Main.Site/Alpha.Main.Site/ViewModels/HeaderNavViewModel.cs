@@ -14,7 +14,8 @@
             bool isEnabledOtp,
             bool isDefaultAvatar,
             string embedImage,
-            bool showNicknameMenu)
+            bool showNicknameMenu,
+            bool showCreateMemberByQRCode)
         {
             CustId = custId;
             EnableSecurityCode = enableSecurityCode;
@@ -25,6 +26,7 @@
             IsDefaultAvatar = isDefaultAvatar;
             EmbedImage = embedImage;
             ShowNicknameMenu = showNicknameMenu;
+            ShowCreateMemberByQRCode = showCreateMemberByQRCode;
         }
 
         public int CustId { get; }
@@ -56,5 +58,7 @@
         public string EmbedImage { get;}
 
         public bool ShowNicknameMenu { get; }
+
+        public bool ShowCreateMemberByQRCode { get; }
     }
 }

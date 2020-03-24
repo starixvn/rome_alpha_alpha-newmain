@@ -2,6 +2,7 @@
 
 namespace Alpha.Main.Site.Models.Requests
 {
+    using Alpha.Main.Models.Enumerations;
     using Configurations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -67,5 +68,7 @@ namespace Alpha.Main.Site.Models.Requests
 
         public bool ShowNicknameMenu
             => !nicknameChecker.IsOfferForceLoginAndOverDueDate;
+
+        public bool ShowCreateMemberByQRCode => Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel();
     }
 }
