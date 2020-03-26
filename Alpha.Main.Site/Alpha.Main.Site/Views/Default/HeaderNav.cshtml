@@ -11,7 +11,7 @@
     <ul class="nav navbar-nav list-top">
         @if (Model.ShowCreateMemberByQRCode)
         {
-            <li class="visible-mobile"><span class="icon icon-qr-code-top"></span></li>
+            <li class="visible-mobile"><span class="icon icon-qr-code-top" title="@Resources.CreateMemberWithQRCode"></span></li>
         }
         <li class="visible-mobile"><span class="icon icon-home"></span></li>
         @if (Model.IsViewedMemberInfo)
@@ -35,7 +35,7 @@
         @if (Model.ShowCreateMemberByQRCode)
         {
             <li class="hidden-mobile dropdown language">
-                <a class="icon icon-qr-code-top withripple"></a>
+                <a class="icon icon-qr-code-top withripple" title="@Resources.CreateMemberWithQRCode"></a>
             </li>
         }
 

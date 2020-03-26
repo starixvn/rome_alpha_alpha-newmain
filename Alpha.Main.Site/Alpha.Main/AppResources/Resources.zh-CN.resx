@@ -544,4 +544,7 @@
   <data name="IamNotARobot" xml:space="preserve">
     <value>我不是机器人</value>
   </data>
+  <data name="CreateMemberWithQRCode" xml:space="preserve">
+    <value>Create Member With QR Code</value>
+  </data>
 </root>
