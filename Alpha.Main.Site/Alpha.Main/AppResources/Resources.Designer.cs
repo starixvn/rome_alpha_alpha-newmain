@@ -286,7 +286,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Member With QR Code.
+        ///   Looks up a localized string similar to Create Member via QR Code.
         /// </summary>
         public static string CreateMemberWithQRCode {
             get {

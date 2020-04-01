@@ -608,6 +608,6 @@
     <value>I'm not a robot</value>
   </data>
   <data name="CreateMemberWithQRCode" xml:space="preserve">
-    <value>Create Member With QR Code</value>
+    <value>Create Member via QR Code</value>
   </data>
 </root>

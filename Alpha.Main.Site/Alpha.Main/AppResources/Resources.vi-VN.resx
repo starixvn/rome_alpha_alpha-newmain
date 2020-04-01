@@ -607,6 +607,6 @@
     <value>Tôi không phải là người máy</value>
   </data>
   <data name="CreateMemberWithQRCode" xml:space="preserve">
-    <value>Create Member With QR Code</value>
+    <value>Tạo Member bằng mã QR</value>
   </data>
 </root>
