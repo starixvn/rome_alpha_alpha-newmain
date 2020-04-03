@@ -62,8 +62,6 @@ var alpha = {
                 index = index.parent;
 			}
 
-            localStorage.clear();
-
             index.location.href = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
 
             var isInternal = index.$("#isInternal").val();
