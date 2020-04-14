@@ -46,6 +46,7 @@ var headerNav = {
     languageCode: null,
     clockTime: null,
     hideHeaderDropdownMenuTimeout: null,
+    randomBannerClassName:'',
 
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index",
@@ -74,7 +75,9 @@ var headerNav = {
         headerNav.registerEvents();
     },
 
-	setBackgroundImage: function () {
+    setBackgroundImage: function () {
+        $("#header-nav").removeClass(headerNav.randomBannerClassName);
+
 		var language = $("#currentLanguage").val();
 
         if (!language || language === "ja-JP" || language === "ko-KR" || language === "th-TH")
@@ -86,8 +89,8 @@ var headerNav = {
         var bannerClassNames = alpha.isScreenLower768
 			? ["m-banner-1", "m-banner-2", "m-banner-3", "m-banner-4"]
 			: ["banner-1", "banner-2", "banner-3", "banner-4"];
-		var randomClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)];
-        $("#header-nav").addClass(randomClassName + "-" + language);
+        headerNav.randomBannerClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)] + "-" + language;
+        $("#header-nav").addClass(headerNav.randomBannerClassName);
 	},
 
     initClock: function () {
@@ -373,4 +376,8 @@ var headerNav = {
 
 $(function () {
     headerNav.init();
+});
+
+$(window).on("orientationchange", function (event) {
+    headerNav.setBackgroundImage();
 });
