@@ -65,6 +65,7 @@ var headerNav = {
     },
 
     init: function () {
+		headerNav.setBackgroundImage();
         headerNav.initClock();
         headerNav.runClock();
 
@@ -72,6 +73,23 @@ var headerNav = {
         headerNav.initLanguage();
         headerNav.registerEvents();
     },
+
+	setBackgroundImage: function () {
+		var language = $("#currentLanguage").val();
+
+        if (!language || language === "ja-JP" || language === "ko-KR" || language === "th-TH")
+        {
+            language = "en-US";
+        }
+
+		alpha.detectResponsiveInformation();
+		var bannerClassNames = alpha.isMobile
+			? ["m-banner-1-", "m-banner-2-", "m-banner-3-", "m-banner-4-"]
+			: ["banner-1-", "banner-2-", "banner-3-", "banner-4-"];
+		var randomClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)];
+
+		$("#header-nav").addClass(randomClassName);
+	},
 
     initClock: function () {
         // to keep the clock difference least to the actual time,

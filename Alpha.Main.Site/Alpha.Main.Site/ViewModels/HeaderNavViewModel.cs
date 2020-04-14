@@ -14,8 +14,7 @@
             bool isEnabledOtp,
             bool isDefaultAvatar,
             string embedImage,
-            bool showNicknameMenu,
-            string language)
+            bool showNicknameMenu)
         {
             CustId = custId;
             EnableSecurityCode = enableSecurityCode;
@@ -26,8 +25,6 @@
             IsDefaultAvatar = isDefaultAvatar;
             EmbedImage = embedImage;
             ShowNicknameMenu = showNicknameMenu;
-            DesktopHeaderBanner = new HeaderBannerViewModel(language);
-            MobileHeaderBanner = new HeaderBannerViewModel(language, isMobile: true);
         }
 
         public int CustId { get; }
@@ -59,9 +56,5 @@
         public string EmbedImage { get;}
 
         public bool ShowNicknameMenu { get; }
-
-        public HeaderBannerViewModel DesktopHeaderBanner { get; }
-
-        public HeaderBannerViewModel MobileHeaderBanner { get; }
     }
 }
