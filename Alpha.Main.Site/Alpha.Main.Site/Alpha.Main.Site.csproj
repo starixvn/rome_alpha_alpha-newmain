@@ -1412,6 +1412,7 @@
     <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModel.cs" />
+    <Compile Include="ViewModels\HeaderBannerViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\BalanceInfo\BalanceInfoViewModel.cs" />

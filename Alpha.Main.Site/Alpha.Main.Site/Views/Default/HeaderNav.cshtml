@@ -4,9 +4,15 @@
     var mainFrameName = "main";
     var viewProfileUrl = $"{Model.AccountInfoRootPath}ProfilePicture";
     var profileImageSrc = Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage;
+
+    var desktopHeaderBanner = Model.DesktopHeaderBanner.GetRandomImageFileName();
+    var desktopHeaderBannerUrl = string.IsNullOrWhiteSpace(desktopHeaderBanner) ? string.Empty : Url.Content(desktopHeaderBanner);
+
+    var mobileHeaderBanner = Model.MobileHeaderBanner.GetRandomImageFileName();
+    var mobileHeaderBannerUrl = string.IsNullOrWhiteSpace(mobileHeaderBanner) ? string.Empty : Url.Content(mobileHeaderBanner);
 }
 
-<section class="navbar header-nav header-banner" id="header-nav">
+<section class="navbar header-nav header-banner" id="header-nav" style="background: @desktopHeaderBannerUrl">
 	<span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
 	<ul class="nav navbar-nav list-top">
 		<li class="visible-mobile"><span class="icon icon-home"></span></li>

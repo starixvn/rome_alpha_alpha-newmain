@@ -96,7 +96,8 @@
                 IsEnabledOtp,
                 string.IsNullOrEmpty(profilePicture.ImageBase64String),
                 profilePicture.ImageBase64String,
-                message.ShowNicknameMenu);
+                message.ShowNicknameMenu,
+                Language);
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 
