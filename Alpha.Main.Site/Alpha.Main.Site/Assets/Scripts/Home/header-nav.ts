@@ -83,8 +83,7 @@ var headerNav = {
         }
 
         alpha.detectResponsiveInformation();
-        var isMobile = alpha.isMobile;
-        var bannerClassNames = isMobile
+        var bannerClassNames = alpha.isScreenLower768
 			? ["m-banner-1", "m-banner-2", "m-banner-3", "m-banner-4"]
 			: ["banner-1", "banner-2", "banner-3", "banner-4"];
 		var randomClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)];
