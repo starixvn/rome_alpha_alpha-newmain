@@ -638,6 +638,8 @@
     <Content Include="Assets\bundles\security\verify-security-code.min.css">
       <DependentUpon>verify-security-code.css</DependentUpon>
     </Content>
+    <Content Include="Assets\Images\HeaderBanner\zh-CN\Desktop\image3.png" />
+    <Content Include="Assets\Images\HeaderBanner\zh-CN\Mobile\image1.png" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\scripts\aes.js" />
     <Content Include="Assets\styles\captcha\captcha.css">
@@ -1464,7 +1466,11 @@
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\SonarAnalyzer.CSharp.dll" />
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.6.7.1.4347\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assets\Images\HeaderBanner\en-US\Mobile\" />
+    <Folder Include="Assets\Images\HeaderBanner\vi-VN\Mobile\" />
+    <Folder Include="Assets\Images\HeaderBanner\zh-TW\Mobile\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

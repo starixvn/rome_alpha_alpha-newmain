@@ -477,6 +477,12 @@ body {
     }
 }
 
+
+.header-banner {
+    background: url('../../Images/HeaderBanner/zh-CN/Mobile/image1.png') no-repeat;
+    background-size: calculateScale(375px) calculateScale(48px);
+}
+
 .profile-group {
     padding: 9px 10px 6px;
     border-bottom-width: calculateScale(1px);
