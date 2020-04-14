@@ -76,8 +76,9 @@ var headerNav = {
     },
 
     setBackgroundImage: function () {
-        $("#header-nav").removeClass(headerNav.randomBannerClassName);
-
+        if (headerNav.randomBannerClassName != '') { 
+            $("#header-nav").removeClass(headerNav.randomBannerClassName);
+        }
 		var language = $("#currentLanguage").val();
 
         if (!language || language === "ja-JP" || language === "ko-KR" || language === "th-TH")
