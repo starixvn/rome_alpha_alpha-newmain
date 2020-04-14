@@ -82,14 +82,13 @@ var headerNav = {
             language = "en-US";
         }
 
-		alpha.detectResponsiveInformation();
-		var bannerClassNames = alpha.isMobile
+        alpha.detectResponsiveInformation();
+        var isMobile = alpha.isMobile;
+        var bannerClassNames = isMobile
 			? ["m-banner-1", "m-banner-2", "m-banner-3", "m-banner-4"]
 			: ["banner-1", "banner-2", "banner-3", "banner-4"];
 		var randomClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)];
-		randomClassName += " " + randomClassName + "-" + language;
-
-		$("#header-nav").addClass(randomClassName)
+        $("#header-nav").addClass(randomClassName + "-" + language);
 	},
 
     initClock: function () {
