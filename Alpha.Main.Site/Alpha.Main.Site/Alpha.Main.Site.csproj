@@ -642,7 +642,7 @@
     <Content Include="Assets\Images\HeaderBanner\en-US\EuroCup_forLic_EN.png" />
     <Content Include="Assets\Images\HeaderBanner\en-US\Mobile\2KNBA_forLic_EN.png" />
     <Content Include="Assets\Images\HeaderBanner\en-US\Mobile\EPL_forLic_EN.png" />
-	<Content Include="Assets\Images\HeaderBanner\en-US\EPL_forLic_EN.png" />
+    <Content Include="Assets\Images\HeaderBanner\en-US\EPL_forLic_EN.png" />
     <Content Include="Assets\Images\HeaderBanner\en-US\Mobile\EuroCup_forLic_EN.png" />
     <Content Include="Assets\Images\HeaderBanner\en-US\Mobile\WC_forLic_EN.png" />
     <Content Include="Assets\Images\HeaderBanner\en-US\WC_forLic_EN.png" />
@@ -1442,7 +1442,6 @@
     <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModel.cs" />
-    <Compile Include="ViewModels\HeaderBannerViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\BalanceInfo\BalanceInfoViewModel.cs" />
