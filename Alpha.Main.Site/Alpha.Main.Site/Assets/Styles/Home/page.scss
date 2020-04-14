@@ -646,6 +646,16 @@ html * {
     display: none;
 }
 
+$images: 
+    "1" "US" url("../../Images/HeaderBanner/en-US/Mobile/2KNBA_forLic_EN.png"), 
+    "1" "CN" url('../../Images/HeaderBanner/zh-CN/Mobile/2KNBA_forLic_CS.png');
+
+@each $number, $languague, $path in $images {
+    .banner-#{$number}-#{$languague} {
+        background: $path;
+    }
+}
+
 @media only screen and (min-device-width: $screen-device-greater768) {
     .progress-box {
         display: none;
