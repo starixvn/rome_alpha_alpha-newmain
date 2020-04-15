@@ -24,7 +24,10 @@ var headerNav = {
 
         sideBar: null,
         sideBarContent: null,
-        profileImage: null
+        profileImage: null,
+        currentLanguage: null,
+        isHideHeaderBanner: null,
+        headerNavElement: null
     },
     messageType: {
         Normal: 0,
@@ -46,7 +49,7 @@ var headerNav = {
     languageCode: null,
     clockTime: null,
     hideHeaderDropdownMenuTimeout: null,
-    randomBannerClassName:'',
+    randomBannerClassName: "",
 
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index",
@@ -66,33 +69,41 @@ var headerNav = {
     },
 
     init: function () {
-		headerNav.setBackgroundImage();
         headerNav.initClock();
         headerNav.runClock();
 
         headerNav.cachedDomElements();
+        headerNav.setBackgroundImage();
         headerNav.initLanguage();
         headerNav.registerEvents();
     },
 
     setBackgroundImage: function () {
-        if (headerNav.randomBannerClassName != '') { 
-            $("#header-nav").removeClass(headerNav.randomBannerClassName);
-        }
-		var language = $("#currentLanguage").val();
+        if ("1" !== headerNav.domElements.isHideHeaderBanner.val()) {
+            if (headerNav.randomBannerClassName.length !== 0) {
+                headerNav.domElements.headerNavElement.removeClass(headerNav.randomBannerClassName);
+            }
 
-        if (!language || language === "ja-JP" || language === "ko-KR" || language === "th-TH")
-        {
-            language = "en-US";
-        }
+            var language = headerNav.domElements.currentLanguage.val();
 
-        alpha.detectResponsiveInformation();
-        var bannerClassNames = alpha.isScreenLower768
-			? ["m-banner-1", "m-banner-2", "m-banner-3", "m-banner-4"]
-			: ["banner-1", "banner-2", "banner-3", "banner-4"];
-        headerNav.randomBannerClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)] + "-" + language;
-        $("#header-nav").addClass(headerNav.randomBannerClassName);
-	},
+            if (!language || language === "ja-JP" || language === "ko-KR" || language === "th-TH") {
+                language = "en-US";
+            }
+
+            alpha.isScreenGreater1024 = false;
+            alpha.isScreenLower768 = false;
+            alpha.isScreenGreater768AndLower1024 = false;
+            alpha.isScreenLower1024 = false;
+            alpha.isMobile = false;
+            alpha.detectResponsiveInformation();
+
+            var bannerClassNames = alpha.isScreenLower768
+                ? ["m-banner-1-", "m-banner-3-"]
+                : ["banner-1-", "banner-2-", "banner-3-"];
+            headerNav.randomBannerClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)] + language;
+            headerNav.domElements.headerNavElement.addClass(headerNav.randomBannerClassName);
+        }
+    },
 
     initClock: function () {
         // to keep the clock difference least to the actual time,
@@ -159,6 +170,10 @@ var headerNav = {
         headerNav.domElements.sideBar = $("#side-bar");
         headerNav.domElements.sideBarContent = $(".content-wrapper");
         headerNav.domElements.profileImage = $("#logoProfileImg");
+
+        headerNav.domElements.currentLanguage = $("#currentLanguage");
+        headerNav.domElements.isHideHeaderBanner = $("#isHideHeaderBanner");
+        headerNav.domElements.headerNavElement = $("#header-nav");
     },
 
     initLanguage: function () {
@@ -198,7 +213,7 @@ var headerNav = {
     },
 
     buildIconNewMessage: function () {
-        var firstUrl = headerNav.popFirstNewMessage();        
+        var firstUrl = headerNav.popFirstNewMessage();
         if (headerNav.unreadMessage.Total > 0) {
             headerNav.domElements.numberNewMessage.text(headerNav.unreadMessage.Total > headerNav.maximunNewMessage.value ? headerNav.maximunNewMessage.text : headerNav.unreadMessage.Total);
         } else {
@@ -245,11 +260,11 @@ var headerNav = {
             headerNav.markMessageAsRead(headerNav.messageType.Normal);
 
             return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Normal;
-        } 
+        }
 
         headerNav.markMessageAsRead(headerNav.messageType.Personal);
 
-        return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Personal;        
+        return headerNav.urls.messages + "?messageType=" + headerNav.messageType.Personal;
     },
 
     registerEvents: function () {
@@ -379,6 +394,6 @@ $(function () {
     headerNav.init();
 });
 
-$(window).on("orientationchange", function (event) {
+$(window).on("orientationchange", function () {
     headerNav.setBackgroundImage();
 });
