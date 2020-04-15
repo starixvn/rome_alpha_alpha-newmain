@@ -138,5 +138,7 @@
 
             return HttpUtility.HtmlEncode(message.NickName);
         }
+
+        public bool IsHideHeaderBanner => AppSettings.HideHeaderBanner;
     }
 }

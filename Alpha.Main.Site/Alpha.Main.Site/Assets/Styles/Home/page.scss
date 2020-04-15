@@ -83,6 +83,11 @@ html * {
     background-color: #f7f7f9;
 }
 
+/********************************** Header  Banner ******************************************/
+.header-banner {
+    background: url('../../Images/HeaderBanner/zh-CN/Desktop/image3.png');
+}
+
 /********************************** Customer profile ******************************************/
 .customer-profile {
     overflow: hidden;
@@ -639,6 +644,30 @@ html * {
 
 .icon-close-left-panel {
     display: none;
+}
+
+$images: 
+    "1" "en-US" url("../../Images/HeaderBanner/en-US/2KNBA_forLic_EN.png"), 
+    "1" "zh-CN" url('../../Images/HeaderBanner/zh-CN/2KNBA_forLic_CS.png'), 
+    "1" "zh-TW" url('../../Images/HeaderBanner/zh-TW/2KNBA_forLic_CH.png'), 
+    "1" "vi-VN" url('../../Images/HeaderBanner/vi-VN/2KNBA_forLic_VN.png'), 
+    "2" "en-US" url('../../Images/HeaderBanner/en-US/EPL_forLic_EN.png'), 
+    "2" "zh-CN" url('../../Images/HeaderBanner/zh-CN/EPL_forLic_CS.png'), 
+    "2" "zh-TW" url('../../Images/HeaderBanner/zh-TW/EPL_forLic_CH.png'), 
+    "2" "vi-VN" url('../../Images/HeaderBanner/vi-VN/EPL_forLic_VN.png'), 
+    "3" "en-US" url('../../Images/HeaderBanner/en-US/EuroCup_forLic_EN.png'), 
+    "3" "zh-CN" url('../../Images/HeaderBanner/zh-CN/EuroCup_forLic_CS.png'), 
+    "3" "zh-TW" url('../../Images/HeaderBanner/zh-TW/EPL_forLic_CH.png'), 
+    "3" "vi-VN" url('../../Images/HeaderBanner/vi-VN/EuroCup_forLic_VN.png'), 
+    "4" "en-US" url('../../Images/HeaderBanner/en-US/WC_forLic_EN.png'), 
+    "4" "zh-CN" url('../../Images/HeaderBanner/zh-CN/WC_forLic_CS.png'), 
+    "4" "zh-TW" url('../../Images/HeaderBanner/zh-TW/WC_forLic_CH.png'), 
+    "4" "vi-VN" url('../../Images/HeaderBanner/vi-VN/WC_forLic_VN.png');
+
+@each $number, $languague, $path in $images {
+    .banner-#{$number}-#{$languague} {
+        background: $path;
+    }
 }
 
 @media only screen and (min-device-width: $screen-device-greater768) {

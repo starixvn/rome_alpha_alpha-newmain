@@ -169,3 +169,4 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3994:URI Parameters should not be strings", Justification = "<Pending>", Scope = "member", Target = "~M:Alpha.Main.Site.Controllers.NewCustomerCaptchaController.Index(System.String)~System.Web.Mvc.ActionResult")]
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3994:URI Parameters should not be strings", Justification = "<Pending>", Scope = "member", Target = "~M:Alpha.Main.Site.Controllers.NewCustomerCaptchaController.Check(System.String)~System.Web.Mvc.ActionResult")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S2325:Methods and properties that don't access instance data should be static", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Site.ViewModels.IndexViewModel.IsHideHeaderBanner")]

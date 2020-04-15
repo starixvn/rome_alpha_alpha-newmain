@@ -204,5 +204,7 @@
             => "1" == Settings["Robot:IsIgnoreInputCaptcha"];
 
         public static string CreatedSettingLastDateSessionKey => "CreatedSettingLastDate";
+
+        public static bool HideHeaderBanner => "1" == Settings["HideHeaderBanner"];
     }
 }
