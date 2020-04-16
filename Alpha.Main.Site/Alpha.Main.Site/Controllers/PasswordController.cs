@@ -74,6 +74,18 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
+        [HttpPost, AntiXsrfFilter]
+        public ActionResult SkipForceChangePassword(SkipForceChangePasswordCommand command)
+        {
+            if(command.IsSkipForceChangePassword && command.ConfirmMessage.ToUpper() == "OK")
+            {
+                return Json(new Result { Code = 0 });
+            }
+            
+            return Json(new Result { Code = 999, Message= "Can not skip force change Password" });
+        }
+
+        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost, AntiXsrfFilter, CheckBelongingFilter]
         public ActionResult ResetMainAccountPassword(ResetMainAccountPasswordCommand command)
         {

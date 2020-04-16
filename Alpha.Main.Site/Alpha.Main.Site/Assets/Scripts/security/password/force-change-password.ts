@@ -27,6 +27,48 @@ var forceChangePassword = {
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
 
+        $('#skip-force-change').click(() => {
+            $('#force-change-password-container').addClass('hidden');
+            $('#skip-container').removeClass('hidden');
+        });
+
+        $('#skip-text').keyup(() => {
+            if ($('#skip-text').val().toUpperCase() === 'OK') {
+                $('#btn-back-skip').removeAttr("disabled");
+                $('#btn-submit-skip').removeAttr("disabled");
+            }
+            else {
+                $('#btn-back-skip').attr('disabled', 'disabled');
+                $('#btn-submit-skip').attr('disabled', 'disabled');
+            }
+        });
+
+        $('#btn-back-skip').click(() => {
+            $('#force-change-password-container').removeClass('hidden');
+            $('#skip-container').addClass('hidden');
+        });
+
+        $('#btn-submit-skip').click(() => {
+            $.ajax({
+                type: 'POST',
+                url: 'SkipForceChangePassword',
+                data: { ConfirmMessage: $('#skip-text').val() },
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    if (data.Code === 0) { // OK
+                        securityHelper.redirectToHomePage(2000);
+                    }
+                    else {
+                        alert(data.Message);
+                        securityHelper.signOut();
+                    }
+                },
+                complete: function (jqXHR, textStatus) {
+                    $.unblockUI();
+                }
+            })
+        });
+
         forceChangePassword.setProfilePictureStorage();
     },
     setProfilePictureStorage: function () {

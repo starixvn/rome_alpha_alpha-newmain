@@ -1459,6 +1459,7 @@
     <Compile Include="Requests\Otp\SetUpOtpQuery.cs" />
     <Compile Include="Requests\Otp\VerifyOtpCommand.cs" />
     <Compile Include="Requests\Otp\VerifyOtpDifferentDeviceQuery.cs" />
+    <Compile Include="Requests\Password\SkipForceChangePasswordCommand.cs" />
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
     <Compile Include="Requests\Password\ChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ForceChangePasswordQuery.cs" />
