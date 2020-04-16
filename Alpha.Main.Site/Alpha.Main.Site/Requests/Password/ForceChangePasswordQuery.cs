@@ -73,5 +73,13 @@
                 return this.userSession.SubUserName;
             }
         }
+
+        public bool IsSkipForceChangePassword
+        {
+            get
+            {
+                return this.userSession.IsSkipForceChangePassword;
+            }
+        }
     }
 }

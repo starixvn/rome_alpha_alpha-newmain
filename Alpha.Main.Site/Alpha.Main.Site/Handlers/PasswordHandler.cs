@@ -245,7 +245,8 @@
                 AlternateUsername = this.BuildAlternateUsername(message),
                 UsernameShower = this.BuildUsernameShower(message),
                 EmbedImage = profile.ImageBase64String,
-                ProfileImageId = profile.ImageId
+                ProfileImageId = profile.ImageId,
+                IsSkipForceChangePassword = message.IsSkipForceChangePassword
             };
         }
 

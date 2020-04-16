@@ -13,5 +13,7 @@
         public string AlternateUsername { get; set; }
 
         public string UsernameShower { get; set; }
+
+        public bool IsSkipForceChangePassword { get; set; }
     }
 }
