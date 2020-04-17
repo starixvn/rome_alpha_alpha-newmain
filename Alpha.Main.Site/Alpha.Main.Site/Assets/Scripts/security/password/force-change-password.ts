@@ -49,24 +49,7 @@ var forceChangePassword = {
         });
 
         $('#btn-submit-skip').click(() => {
-            $.ajax({
-                type: 'POST',
-                url: 'SkipForceChangePassword',
-                data: { ConfirmMessage: $('#skip-text').val() },
-                dataType: 'json',
-                success: function (data, textStatus, jqXHR) {
-                    if (data.Code === 0) { // OK
-                        securityHelper.redirectToHomePage(2000);
-                    }
-                    else {
-                        alert(data.Message);
-                        securityHelper.signOut();
-                    }
-                },
-                complete: function (jqXHR, textStatus) {
-                    $.unblockUI();
-                }
-            })
+            $('#SkipForceChangePasswordForm').submit();
         });
 
         forceChangePassword.setProfilePictureStorage();

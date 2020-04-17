@@ -3,6 +3,7 @@
     using System;
     using AppResources;
     using Constants;
+    using Fanex.Data.Repository;
     using KellermanSoftware.CompareNetObjects;
     using Main.Criteria.Password;
     using Main.DataAccesses;
@@ -27,6 +28,7 @@
         private CasinoService casinoService;
         private AesService aes;
         private KickoutCustomerService kickoutCustomerService;
+        private IDynamicRepository repository;
 
         [SetUp]
         public void SetUp()
@@ -38,13 +40,15 @@
             casinoService = Substitute.For<CasinoService>();
             aes = Substitute.For<AesService>();
             kickoutCustomerService= Substitute.For<KickoutCustomerService>();
+            repository = Substitute.For<IDynamicRepository>();
 
             passwordService = Substitute.ForPartsOf<PasswordServiceImpl>(
                 encryptor,
                 passwordDataAccess,
                 casinoService,
                 aes,
-                kickoutCustomerService);
+                kickoutCustomerService,
+                repository);
         }
 
         #region Change Main Account Passowrd

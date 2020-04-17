@@ -8,6 +8,7 @@
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
     using DataAccesses;
+    using Fanex.Data.Repository;
     using Fanex.Logging.Extensions.Web;
     using Models;
     using Params;
@@ -30,19 +31,22 @@
         private readonly CasinoService casinoService;
         private readonly AesService aes;
         private readonly KickoutCustomerService kickoutCustomerService;
+        private readonly IDynamicRepository dynamicRepository;
 
         public PasswordServiceImpl(
             Encryptor encryptor,
             PasswordDataAccess passwordDataAccess,
             CasinoService casinoService,
             AesService aes,
-            KickoutCustomerService kickoutCustomerService)
+            KickoutCustomerService kickoutCustomerService,
+            IDynamicRepository dynamicRepository)
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
             this.casinoService = casinoService;
             this.aes = aes;
             this.kickoutCustomerService = kickoutCustomerService;
+            this.dynamicRepository = dynamicRepository;
         }
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
@@ -210,6 +214,30 @@
             }
 
             return updateResult;
+        }
+
+        public Result SkipForceChangePassword(SkipForceChangePasswordParam param)
+        {
+            if (param == null)
+            {
+                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+            }
+
+            var command = new SkipForceChangePasswordCommand
+            {
+                CustId = param.CustId,
+                Language = param.LanguageKey,
+                LoginIP = param.IP,
+                SubAccId = param.SubAccountId
+            };
+
+            dynamicRepository.Execute(command);
+
+            return new Result
+            {
+                Code = command.ErrCode,
+                Message = command.ErrMsg
+            };
         }
 
         public Result ResetSubAccountPassword(ResetSubAccountPasswordParam param)
