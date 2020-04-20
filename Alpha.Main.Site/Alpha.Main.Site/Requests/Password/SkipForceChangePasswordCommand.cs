@@ -26,6 +26,6 @@
 
         public string IP => userSession.UserLoginIp;
 
-        public bool IsSkipForceChangePassword => userSession.IsSkipForceChangePassword;
+        public bool IsShowSkipForceChangePassword => userSession.IsShowSkipForceChangePassword;
     }
 }

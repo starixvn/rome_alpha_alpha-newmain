@@ -189,7 +189,7 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            if (!message.IsSkipForceChangePassword ||
+            if (!message.IsShowSkipForceChangePassword ||
                 passwordService.SkipForceChangePassword(new SkipForceChangePasswordParam
                 {
                     CustId = message.CustId,
@@ -275,7 +275,7 @@
                 UsernameShower = this.BuildUsernameShower(message),
                 EmbedImage = profile.ImageBase64String,
                 ProfileImageId = profile.ImageId,
-                IsSkipForceChangePassword = message.IsSkipForceChangePassword
+                IsShowSkipForceChangePassword = message.IsShowSkipForceChangePassword
             };
         }
 

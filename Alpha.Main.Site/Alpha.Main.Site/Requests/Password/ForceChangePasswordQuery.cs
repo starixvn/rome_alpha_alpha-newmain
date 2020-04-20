@@ -74,11 +74,11 @@
             }
         }
 
-        public bool IsSkipForceChangePassword
+        public bool IsShowSkipForceChangePassword
         {
             get
             {
-                return this.userSession.IsSkipForceChangePassword;
+                return this.userSession.IsShowSkipForceChangePassword;
             }
         }
     }

@@ -14,6 +14,6 @@
 
         public string UsernameShower { get; set; }
 
-        public bool IsSkipForceChangePassword { get; set; }
+        public bool IsShowSkipForceChangePassword { get; set; }
     }
 }
