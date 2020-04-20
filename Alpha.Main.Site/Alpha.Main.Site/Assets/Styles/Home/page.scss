@@ -666,7 +666,11 @@ $images:
     "5" "en-US" url('../../Images/HeaderBanner/en-US/Saba_EN.png'), 
     "5" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Saba_CS.png'), 
     "5" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Saba_CH.png'), 
-    "5" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Saba_VN.png');
+    "5" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Saba_VN.png'),
+    "6" "en-US" url('../../Images/HeaderBanner/en-US/Cricket_EN.png'), 
+    "6" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Cricket_CS.png'), 
+    "6" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Cricket_CH.png'), 
+    "6" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Cricket_VN.png');
 
 @each $number, $languague, $path in $images {
     .banner-#{$number}-#{$languague} {

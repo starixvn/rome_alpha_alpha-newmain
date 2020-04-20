@@ -98,8 +98,8 @@ var headerNav = {
             alpha.detectResponsiveInformation();
 
             var bannerClassNames = alpha.isScreenLower768
-                ? ["m-banner-1-", "m-banner-3-", "m-banner-4-", "m-banner-5-"]
-                : ["banner-1-", "banner-2-", "banner-3-", "banner-4-", "banner-5-"];
+                ? ["m-banner-1-", "m-banner-3-", "m-banner-4-", "m-banner-5-", "m-banner-6-"]
+                : ["banner-1-", "banner-2-", "banner-3-", "banner-4-", "banner-5-", "banner-6-"];
             headerNav.randomBannerClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)] + language;
             headerNav.domElements.headerNavElement.addClass(headerNav.randomBannerClassName);
         }
