@@ -655,14 +655,22 @@ $images:
     "2" "zh-CN" url('../../Images/HeaderBanner/zh-CN/EPL_forLic_CS.png'), 
     "2" "zh-TW" url('../../Images/HeaderBanner/zh-TW/EPL_forLic_CH.png'), 
     "2" "vi-VN" url('../../Images/HeaderBanner/vi-VN/EPL_forLic_VN.png'), 
-    "3" "en-US" url('../../Images/HeaderBanner/en-US/EuroCup_forLic_EN.png'), 
-    "3" "zh-CN" url('../../Images/HeaderBanner/zh-CN/EuroCup_forLic_CS.png'), 
-    "3" "zh-TW" url('../../Images/HeaderBanner/zh-TW/EuroCup_forLic_CH.png'), 
-    "3" "vi-VN" url('../../Images/HeaderBanner/vi-VN/EuroCup_forLic_VN.png'), 
     "4" "en-US" url('../../Images/HeaderBanner/en-US/WC_forLic_EN.png'), 
     "4" "zh-CN" url('../../Images/HeaderBanner/zh-CN/WC_forLic_CS.png'), 
     "4" "zh-TW" url('../../Images/HeaderBanner/zh-TW/WC_forLic_CH.png'), 
-    "4" "vi-VN" url('../../Images/HeaderBanner/vi-VN/WC_forLic_VN.png');
+    "4" "vi-VN" url('../../Images/HeaderBanner/vi-VN/WC_forLic_VN.png'),
+    "5" "en-US" url('../../Images/HeaderBanner/en-US/Saba_EN.png'), 
+    "5" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Saba_CS.png'), 
+    "5" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Saba_CH.png'), 
+    "5" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Saba_VN.png'),
+    "6" "en-US" url('../../Images/HeaderBanner/en-US/Cricket_EN.png'),
+    "6" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Cricket_CS.png'),
+    "6" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Cricket_CH.png'),
+    "6" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Cricket_VN.png'),
+    "7" "en-US" url('../../Images/HeaderBanner/en-US/Laliga_EN.png'),
+    "7" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Laliga_CS.png'),
+    "7" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Laliga_CH.png'),
+    "7" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Laliga_VN.png');
 
 @each $number, $languague, $path in $images {
     .banner-#{$number}-#{$languague} {

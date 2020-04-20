@@ -477,84 +477,6 @@ body {
     }
 }
 
-/*.banner {
-    background-size: calculateScale(375px) calculateScale(48px);
-    background-repeat: no-repeat;
-}
-.m-banner-1 {
-    background-color: #4362d7;
-}
-.m-banner-1-en-US {
-    background-image: url('../../Images/HeaderBanner/en-US/Mobile/2KNBA_forLic_EN.png');
-}
-.m-banner-1-zh-CN {
-    background-image: url('../../Images/HeaderBanner/zh-CN/Mobile/2KNBA_forLic_CS.png');
-}
-
-.m-banner-1-zh-TW {
-    background-image: url('../../Images/HeaderBanner/zh-TW/Mobile/2KNBA_forLic_CH.png');
-}
-.m-banner-1-vi-VN {
-    background-image: url('../../Images/HeaderBanner/vi-VN/Mobile/2KNBA_forLic_VN.png');
-}
-
-.m-banner-2 {
-    background-color: #2e0041;
-}
-.m-banner-2-en-US {
-    background-image: url('../../Images/HeaderBanner/en-US/Mobile/EPL_forLic_EN.png');
-}
-
-.m-banner-2-zh-CN {
-    background-image: url('../../Images/HeaderBanner/zh-CN/Mobile/EPL_forLic_CS.png');
-}
-
-.m-banner-2-zh-TW {
-    background-image: url('../../Images/HeaderBanner/zh-TW/Mobile/EPL_forLic_CH.png');
-}
-
-.m-banner-2-vi-VN {
-    background-image: url('../../Images/HeaderBanner/vi-VN/Mobile/EPL_forLic_VN.png');
-}
-
-.m-banner-3 {
-    background-color: #028b9d;
-}
-
-.m-banner-3-en-US {
-    background-image: url('../../Images/HeaderBanner/en-US/Mobile/EuroCup_forLic_EN.png');
-}
-
-.m-banner-3-zh-CN {
-    background-image: url('../../Images/HeaderBanner/zh-CN/Mobile/EuroCup_forLic_CS.png');
-}
-
-.m-banner-3-zh-TW {
-    background-image: url('../../Images/HeaderBanner/zh-TW/Mobile/EuroCup_forLic_CH.png');
-}
-
-.m-banner-3-vi-VN {
-    background-image: url('../../Images/HeaderBanner/vi-VN/Mobile/EuroCup_forLic_VN.png');
-}
-.m-banner-4 {
-    background-color: #050230;
-}
-.m-banner-4-en-US {
-    background-image: url('../../Images/HeaderBanner/en-US/Mobile/WC_forLic_EN.png');
-}
-
-.m-banner-4-zh-CN {
-    background-image: url('../../Images/HeaderBanner/zh-CN/Mobile/WC_forLic_CS.png');
-}
-
-.m-banner-4-zh-TW {
-    background-image: url('../../Images/HeaderBanner/zh-TW/Mobile/WC_forLic_CH.png');
-}
-
-.m-banner-4-vi-VN {
-    background-image: url('../../Images/HeaderBanner/vi-VN/Mobile/WC_forLic_VN.png');
-}*/
-
 $images: 
     "1" "en-US" url("../../Images/HeaderBanner/en-US/Mobile/2KNBA_forLic_EN.png") #4362d7, 
     "1" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/2KNBA_forLic_CS.png') #4362d7, 
@@ -564,14 +486,22 @@ $images:
     "2" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/EPL_forLic_CS.png') #2e0041, 
     "2" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/EPL_forLic_CH.png') #2e0041, 
     "2" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/EPL_forLic_VN.png') #2e0041, 
-    "3" "en-US" url('../../Images/HeaderBanner/en-US/Mobile/EuroCup_forLic_EN.png') #028b9d, 
-    "3" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/EuroCup_forLic_CS.png') #028b9d, 
-    "3" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/EuroCup_forLic_CH.png') #028b9d, 
-    "3" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/EuroCup_forLic_VN.png') #028b9d, 
     "4" "en-US" url('../../Images/HeaderBanner/en-US/Mobile/WC_forLic_EN.png') #050230, 
     "4" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/WC_forLic_CS.png') #050230, 
     "4" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/WC_forLic_CH.png') #050230, 
-    "4" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/WC_forLic_VN.png') #050230;
+    "4" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/WC_forLic_VN.png') #050230,
+    "5" "en-US" url('../../Images/HeaderBanner/en-US/Mobile/Saba_EN.png') #0f136d, 
+    "5" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/Saba_CS.png') #0f136d, 
+    "5" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/Saba_CH.png') #0f136d, 
+    "5" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/Saba_VN.png') #0f136d,
+    "6" "en-US" url('../../Images/HeaderBanner/en-US/Mobile/Cricket_EN.png') #ff8d12,
+    "6" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/Cricket_CS.png') #ff8d12,
+    "6" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/Cricket_CH.png') #ff8d12,
+    "6" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/Cricket_VN.png') #ff8d12,
+    "7" "en-US" url('../../Images/HeaderBanner/en-US/Mobile/Laliga_EN.png') #0b1262,
+    "7" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/Laliga_CS.png') #0b1262,
+    "7" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/Laliga_CH.png') #0b1262,
+    "7" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/Laliga_VN.png') #0b1262;
 
 @each $number, $languague, $path, $color in $images {
     .m-banner-#{$number}-#{$languague} {
