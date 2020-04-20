@@ -27,25 +27,23 @@ var forceChangePassword = {
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
 
-        $('#skip-force-change').click(() => {
-            $('#force-change-password-container').addClass('hidden');
-            $('#skip-container').removeClass('hidden');
+        $('.skip-force-change').click(() => {
+            $('.force-change-password-container').addClass('hidden');
+            $('.skip-force-change-container').removeClass('hidden');
         });
 
         $('#skip-text').keyup(() => {
             if ($('#skip-text').val().toUpperCase() === 'OK') {
-                $('#btn-back-skip').removeAttr("disabled");
                 $('#btn-submit-skip').removeAttr("disabled");
             }
             else {
-                $('#btn-back-skip').attr('disabled', 'disabled');
                 $('#btn-submit-skip').attr('disabled', 'disabled');
             }
         });
 
         $('#btn-back-skip').click(() => {
-            $('#force-change-password-container').removeClass('hidden');
-            $('#skip-container').addClass('hidden');
+            $('.force-change-password-container').removeClass('hidden');
+            $('.skip-force-change-container').addClass('hidden');
         });
 
         $('#btn-submit-skip').click(() => {
@@ -53,7 +51,14 @@ var forceChangePassword = {
         });
 
         forceChangePassword.setProfilePictureStorage();
+        forceChangePassword.setSkipForceChangeContainerHeight();
     },
+
+    setSkipForceChangeContainerHeight: function () {
+        var containerHeight = $(".force-change-password-container").height();
+        $(".skip-force-change-container").height(containerHeight);
+    },
+
     setProfilePictureStorage: function () {
         const profilePicture = $('#logoProfileImg');
         localStorage.setItem('actorProfilePicture', JSON.stringify({

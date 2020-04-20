@@ -189,7 +189,7 @@
                 throw new ArgumentNullException(nameof(message), "Message cannot be null");
             }
 
-            if (!message.IsSkipForceChangePassword && 
+            if (!message.IsSkipForceChangePassword ||
                 passwordService.SkipForceChangePassword(new SkipForceChangePasswordParam
                 {
                     CustId = message.CustId,
