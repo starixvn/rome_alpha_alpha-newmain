@@ -498,10 +498,14 @@ $images:
     "5" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/Saba_CS.png') #0f136d, 
     "5" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/Saba_CH.png') #0f136d, 
     "5" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/Saba_VN.png') #0f136d,
-    "6" "en-US" url('../../Images/HeaderBanner/en-US/Mobile/Cricket_EN.png') #ff8d12, 
-    "6" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/Cricket_CS.png') #ff8d12, 
-    "6" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/Cricket_CH.png') #ff8d12, 
-    "6" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/Cricket_VN.png') #ff8d12;
+    "6" "en-US" url('../../Images/HeaderBanner/en-US/Mobile/Cricket_EN.png') #ff8d12,
+    "6" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/Cricket_CS.png') #ff8d12,
+    "6" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/Cricket_CH.png') #ff8d12,
+    "6" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/Cricket_VN.png') #ff8d12,
+    "7" "en-US" url('../../Images/HeaderBanner/en-US/Mobile/Laliga_EN.png') #0b1262,
+    "7" "zh-CN" url('../../Images/HeaderBanner/zh-CN/Mobile/Laliga_CS.png') #0b1262,
+    "7" "zh-TW" url('../../Images/HeaderBanner/zh-TW/Mobile/Laliga_CH.png') #0b1262,
+    "7" "vi-VN" url('../../Images/HeaderBanner/vi-VN/Mobile/Laliga_VN.png') #0b1262;
 
 @each $number, $languague, $path, $color in $images {
     .m-banner-#{$number}-#{$languague} {
