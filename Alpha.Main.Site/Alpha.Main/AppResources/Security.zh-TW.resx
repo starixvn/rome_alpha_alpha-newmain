@@ -418,4 +418,13 @@
   <data name="VerifySecurityCodeShower" xml:space="preserve">
     <value>嗨{0}</value>
   </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Skip</value>
+  </data>
+  <data name="SkipForceChangePasswordPlaceHolder" xml:space="preserve">
+    <value>Type "OK" to skip and accept the risk</value>
+  </data>
+  <data name="SkipForceChangePasswordWarning" xml:space="preserve">
+    <value>Are you sure you want to keep your old password? Your security will be at risk if you don't change the password often.</value>
+  </data>
 </root>

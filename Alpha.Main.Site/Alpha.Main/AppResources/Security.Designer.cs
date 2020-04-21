@@ -842,6 +842,33 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Skip.
+        /// </summary>
+        public static string Skip {
+            get {
+                return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type &quot;OK&quot; to skip and accept the risk.
+        /// </summary>
+        public static string SkipForceChangePasswordPlaceHolder {
+            get {
+                return ResourceManager.GetString("SkipForceChangePasswordPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to keep your old password? Your security will be at risk if you don&apos;t change the password often..
+        /// </summary>
+        public static string SkipForceChangePasswordWarning {
+            get {
+                return ResourceManager.GetString("SkipForceChangePasswordWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sophos Authenticator.
         /// </summary>
         public static string SophosAuthenticator {
