@@ -85,9 +85,14 @@ var headerNav = {
             }
 
             var language = headerNav.domElements.currentLanguage.val();
+            var vnMobileBanner = [];
+            var vnDesktopBanner = [];
 
             if (!language || language === "ja-JP" || language === "ko-KR" || language === "th-TH") {
                 language = "en-US";
+            } else if (language === "vi-VN") {
+                vnMobileBanner.push("m-banner-9-");
+                vnDesktopBanner.push("banner-9-");
             }
 
             alpha.isScreenGreater1024 = false;
@@ -98,8 +103,8 @@ var headerNav = {
             alpha.detectResponsiveInformation();
 
             var bannerClassNames = alpha.isScreenLower768
-                ? ["m-banner-1-", "m-banner-4-", "m-banner-5-", "m-banner-6-", "m-banner-7-"]
-                : ["banner-1-", "banner-2-", "banner-4-", "banner-5-", "banner-6-", "banner-7-"];
+                ? ["m-banner-1-", "m-banner-4-", "m-banner-5-", "m-banner-6-", "m-banner-7-"].concat(vnMobileBanner)
+                : ["banner-1-", "banner-2-", "banner-4-", "banner-5-", "banner-6-", "banner-7-"].concat(vnDesktopBanner);
             headerNav.randomBannerClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)] + language;
             headerNav.domElements.headerNavElement.addClass(headerNav.randomBannerClassName);
         }
