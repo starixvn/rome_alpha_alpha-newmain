@@ -661,9 +661,11 @@
     <Content Include="Assets\Images\HeaderBanner\vi-VN\Mobile\EPL_forLic_VN.png" />
     <Content Include="Assets\Images\HeaderBanner\vi-VN\Mobile\Laliga_VN.png" />
     <Content Include="Assets\Images\HeaderBanner\vi-VN\Mobile\NBA2K20_2_VN.png" />
+    <Content Include="Assets\Images\HeaderBanner\vi-VN\Mobile\Saba_Club_VN.png" />
     <Content Include="Assets\Images\HeaderBanner\vi-VN\Mobile\Saba_VN.png" />
     <Content Include="Assets\Images\HeaderBanner\vi-VN\Mobile\WC_forLic_VN.png" />
     <Content Include="Assets\Images\HeaderBanner\vi-VN\NBA2K20_2_VN.png" />
+    <Content Include="Assets\Images\HeaderBanner\vi-VN\Saba_Club_VN.png" />
     <Content Include="Assets\Images\HeaderBanner\vi-VN\Saba_VN.png" />
     <Content Include="Assets\Images\HeaderBanner\vi-VN\WC_forLic_VN.png" />
     <Content Include="Assets\Images\HeaderBanner\zh-CN\2KNBA_forLic_CS.png" />

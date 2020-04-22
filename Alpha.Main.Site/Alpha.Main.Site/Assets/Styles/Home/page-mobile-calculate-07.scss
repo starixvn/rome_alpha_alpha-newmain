@@ -516,6 +516,12 @@ $images:
     }
 }
 
+.m-banner-9-vi-VN {
+    background-image: url('../../Images/HeaderBanner/vi-VN/Mobile/Saba_Club_VN.png');
+    background-size: calculateScale(375px) calculateScale(48px);
+    background-repeat: no-repeat;
+}
+
 .profile-group {
     padding: 9px 10px 6px;
     border-bottom-width: calculateScale(1px);
