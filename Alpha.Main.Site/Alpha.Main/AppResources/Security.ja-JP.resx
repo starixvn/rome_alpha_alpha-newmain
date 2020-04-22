@@ -313,6 +313,6 @@ Notes: your password is cAsE sEnSiTiVe</value>
     <value>Type "OK" to skip and accept the risk</value>
   </data>
   <data name="SkipForceChangePasswordWarning" xml:space="preserve">
-    <value>Are you sure you want to keep your old password? Your security will be at risk if you don't change the password often.</value>
+    <value>Are you sure you want to keep your current password? Your security may be at risk if you don't change your password frequently.</value>
   </data>
 </root>

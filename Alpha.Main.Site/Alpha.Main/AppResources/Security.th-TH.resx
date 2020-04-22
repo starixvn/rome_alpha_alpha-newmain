@@ -421,12 +421,12 @@
     <value>สวัสดี {0}</value>
   </data>
   <data name="Skip" xml:space="preserve">
-    <value>Skip</value>
+    <value>ข้าม</value>
   </data>
   <data name="SkipForceChangePasswordPlaceHolder" xml:space="preserve">
-    <value>Type "OK" to skip and accept the risk</value>
+    <value>พิมพ์ "OK" เพื่อข้ามและยอมรับความเสี่ยง</value>
   </data>
   <data name="SkipForceChangePasswordWarning" xml:space="preserve">
-    <value>Are you sure you want to keep your old password? Your security will be at risk if you don't change the password often.</value>
+    <value>คุณแน่ใจหรือไม่ว่าต้องการเก็บรหัสผ่านปัจจุบันของคุณ? ความปลอดภัยของคุณอาจมีความเสี่ยงหากคุณไม่เปลี่ยนรหัสผ่านบ่อยๆ</value>
   </data>
 </root>
