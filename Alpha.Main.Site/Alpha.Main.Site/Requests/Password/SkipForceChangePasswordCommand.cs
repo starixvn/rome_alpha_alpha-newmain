@@ -13,7 +13,7 @@
         {
         }
 
-        internal SkipForceChangePasswordCommand(IUserSession userSession, bool? isCasinoDisabled)
+        internal SkipForceChangePasswordCommand(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();
         }

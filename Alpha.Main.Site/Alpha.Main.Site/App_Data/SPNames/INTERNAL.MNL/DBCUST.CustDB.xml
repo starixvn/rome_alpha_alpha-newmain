@@ -22,7 +22,7 @@
     <Setting Key="UpdateMainAccountPassword" SpName="Age_CustomerPwdUpd2" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
     <Setting Key="ResetSubAccountPassword" SpName="Age_CustSubPwdUpd" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
     <Setting Key="UpdateSubAccountPassword" SpName="Age_CustSubPwdUpd2" DbName="DBCUST.CustDB.BODBDownlineNetView" Plain="0" />
-    <Setting Key="Age_CustomerSkipForceUpdPwd" SpName="Age_CustomerSkipForceUpdPwd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CustomerSkipForceUpdPwd" SpName="Age_CustomerSkipForceUpdPwd" DbName="DBCust.CustDB.BODBDownlineNetView" Plain="0" />
   </Function>
 
   <Function Name="Otp">

@@ -74,7 +74,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpPost]
+        [HttpPost, AntiXsrfFilter]
         public ActionResult SkipForceChangePassword(SkipForceChangePasswordCommand command)
         {
             var result = mediator.Send(command);
