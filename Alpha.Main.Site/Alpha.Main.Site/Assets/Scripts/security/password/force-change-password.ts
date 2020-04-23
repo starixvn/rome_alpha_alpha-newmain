@@ -49,7 +49,7 @@ var forceChangePassword = {
         });
 
         $('#btn-submit-skip').click(() => {
-            localStorage.clear();
+            localStorage.removeItem('isSkipChangePassword');
             $('#SkipForceChangePasswordForm').submit();
         });
 
