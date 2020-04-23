@@ -5,7 +5,7 @@ interface Window {
     securityCodePopup: any;
     setSecurityCodePopupTitle(securityCodeTitle): void;
     revertSecurityCodePopupTitle(): void;
-    ageWnd: any;    
+    ageWnd: any;
 }
 
 interface String {

@@ -28,6 +28,7 @@ var forceChangePassword = {
         });
 
         $('.skip-force-change').click(() => {
+            forceChangePassword.setSkipChangePasswordStorage("true");
             $('.force-change-password-container').addClass('hidden');
             $('.skip-force-change-container').removeClass('hidden');
         });
@@ -42,16 +43,19 @@ var forceChangePassword = {
         });
 
         $('#btn-back-skip').click(() => {
+            forceChangePassword.setSkipChangePasswordStorage("false");
             $('.force-change-password-container').removeClass('hidden');
             $('.skip-force-change-container').addClass('hidden');
         });
 
         $('#btn-submit-skip').click(() => {
+            localStorage.clear();
             $('#SkipForceChangePasswordForm').submit();
         });
 
         forceChangePassword.setProfilePictureStorage();
         forceChangePassword.setSkipForceChangeContainerHeight();
+        forceChangePassword.setSkipFormStatus();
     },
 
     setSkipForceChangeContainerHeight: function () {
@@ -66,6 +70,18 @@ var forceChangePassword = {
             Image: profilePicture.attr('src'),
             IsDefaultAvatar: profilePicture.attr('default-avatar')
         }));
+    },
+    setSkipChangePasswordStorage: function (isSkip: string) {
+        localStorage.setItem('isSkipChangePassword', isSkip);
+    },
+    getSkipChangePasswordStorage: function () {
+        return localStorage.getItem("isSkipChangePassword") === "true";
+    },
+    setSkipFormStatus: function () {
+        if (forceChangePassword.getSkipChangePasswordStorage()) {
+            $('.force-change-password-container').addClass('hidden');
+            $('.skip-force-change-container').removeClass('hidden');
+        }
     },
     changePassword: function () {
         $.blockUI();

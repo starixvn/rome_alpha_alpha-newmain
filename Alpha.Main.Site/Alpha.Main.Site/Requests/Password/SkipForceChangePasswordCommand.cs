@@ -9,7 +9,7 @@
     {
         private readonly IUserSession userSession;
 
-        public SkipForceChangePasswordCommand() : this(null, null)
+        public SkipForceChangePasswordCommand() : this(null)
         {
         }
 
