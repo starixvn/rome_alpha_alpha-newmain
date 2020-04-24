@@ -414,10 +414,19 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="Verify" xml:space="preserve">
     <value>Xác nhận</value>
   </data>
-   <data name="VerifySecurityCodeShower" xml:space="preserve">
+  <data name="VerifySecurityCodeShower" xml:space="preserve">
     <value>Xin chào {0}</value>
   </data>
   <data name="FailedToRemoveOtp" xml:space="preserve">
     <value>Xóa đăng ký thiết bị thất bại</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Bỏ qua</value>
+  </data>
+  <data name="SkipForceChangePasswordPlaceHolder" xml:space="preserve">
+    <value>Gõ "OK" để bỏ qua bước này và chấp nhận rủi ro.</value>
+  </data>
+  <data name="SkipForceChangePasswordWarning" xml:space="preserve">
+    <value>Bạn có chắc rằng muốn giữ lại mật khẩu hiện tại? Bảo mật của bạn có thể gặp rủi ro nếu không thường xuyên thay đổi mật khẩu.</value>
   </data>
 </root>

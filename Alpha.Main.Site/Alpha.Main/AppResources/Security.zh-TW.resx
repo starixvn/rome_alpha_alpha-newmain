@@ -418,4 +418,13 @@
   <data name="VerifySecurityCodeShower" xml:space="preserve">
     <value>嗨{0}</value>
   </data>
+  <data name="Skip" xml:space="preserve">
+    <value>略過</value>
+  </data>
+  <data name="SkipForceChangePasswordPlaceHolder" xml:space="preserve">
+    <value>輸入“OK" 以略過並且接受風險。</value>
+  </data>
+  <data name="SkipForceChangePasswordWarning" xml:space="preserve">
+    <value>您確定要保留當前密碼？如果您選擇不更换密碼，您的賬號防護措施將會有風險。</value>
+  </data>
 </root>

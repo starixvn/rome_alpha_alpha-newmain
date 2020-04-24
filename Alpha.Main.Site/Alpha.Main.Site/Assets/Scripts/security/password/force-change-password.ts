@@ -27,8 +27,42 @@ var forceChangePassword = {
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
 
+        $('.skip-force-change').click(() => {
+            forceChangePassword.setSkipChangePasswordStorage("true");
+            $('.force-change-password-container').addClass('hidden');
+            $('.skip-force-change-container').removeClass('hidden');
+        });
+
+        $('#skip-text').keyup(() => {
+            if ($('#skip-text').val().toUpperCase() === 'OK') {
+                $('#btn-submit-skip').removeAttr("disabled");
+            }
+            else {
+                $('#btn-submit-skip').attr('disabled', 'disabled');
+            }
+        });
+
+        $('#btn-back-skip').click(() => {
+            forceChangePassword.setSkipChangePasswordStorage("false");
+            $('.force-change-password-container').removeClass('hidden');
+            $('.skip-force-change-container').addClass('hidden');
+        });
+
+        $('#btn-submit-skip').click(() => {
+            localStorage.removeItem('isSkipChangePassword');
+            $('#SkipForceChangePasswordForm').submit();
+        });
+
         forceChangePassword.setProfilePictureStorage();
+        forceChangePassword.setSkipForceChangeContainerHeight();
+        forceChangePassword.setSkipFormStatus();
     },
+
+    setSkipForceChangeContainerHeight: function () {
+        var containerHeight = $(".force-change-password-container").height();
+        $(".skip-force-change-container").height(containerHeight);
+    },
+
     setProfilePictureStorage: function () {
         const profilePicture = $('#logoProfileImg');
         localStorage.setItem('actorProfilePicture', JSON.stringify({
@@ -36,6 +70,18 @@ var forceChangePassword = {
             Image: profilePicture.attr('src'),
             IsDefaultAvatar: profilePicture.attr('default-avatar')
         }));
+    },
+    setSkipChangePasswordStorage: function (isSkip: string) {
+        localStorage.setItem('isSkipChangePassword', isSkip);
+    },
+    getSkipChangePasswordStorage: function () {
+        return localStorage.getItem("isSkipChangePassword") === "true";
+    },
+    setSkipFormStatus: function () {
+        if (forceChangePassword.getSkipChangePasswordStorage()) {
+            $('.force-change-password-container').addClass('hidden');
+            $('.skip-force-change-container').removeClass('hidden');
+        }
     },
     changePassword: function () {
         $.blockUI();

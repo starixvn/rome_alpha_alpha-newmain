@@ -24,7 +24,8 @@
          IRequestHandler<ChangePasswordQuery, PasswordViewModel>,
          IRequestHandler<ForceChangePasswordQuery, ForceChangePasswordViewModel>,
          IRequestHandler<ResetMainAccountPasswordQuery, PasswordViewModel>,
-         IRequestHandler<ResetSubAccountPasswordQuery, PasswordViewModel>
+         IRequestHandler<ResetSubAccountPasswordQuery, PasswordViewModel>,
+         IRequestHandler<SkipForceChangePasswordCommand, Result>
     {
         private const string HashKeySessionKey = "Alpha.Main.PasswordHandler.PasswordHash";
 
@@ -181,6 +182,34 @@
             return result;
         }
 
+        public Result Handle(SkipForceChangePasswordCommand message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), "Message cannot be null");
+            }
+
+            if (!message.IsShowSkipForceChangePassword ||
+                passwordService.SkipForceChangePassword(new SkipForceChangePasswordParam
+                {
+                    CustId = message.CustId,
+                    SubAccountId = message.SubAccId,
+                    LanguageKey = message.Language,
+                    IP = message.IP
+                }).IsNotOk)
+            {
+                return Result.CreateErrorResult("Can not skip force change Password");
+            }
+
+            //// Update is first login status
+            this.userSession.IsLogged = true;
+
+            //// Update last change pwd date
+            this.userSession.IsPasswordExpired = false;
+
+            return new Result { Code = 0 };
+        }
+
         private Result ChangeMainAccountPassword(ChangePasswordCommand message)
         {
             return this.passwordService.ChangeMainAccountPassword(new ChangeMainAccountPasswordParam
@@ -245,7 +274,8 @@
                 AlternateUsername = this.BuildAlternateUsername(message),
                 UsernameShower = this.BuildUsernameShower(message),
                 EmbedImage = profile.ImageBase64String,
-                ProfileImageId = profile.ImageId
+                ProfileImageId = profile.ImageId,
+                IsShowSkipForceChangePassword = message.IsShowSkipForceChangePassword
             };
         }
 

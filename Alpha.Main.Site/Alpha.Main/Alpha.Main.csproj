@@ -48,8 +48,8 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.3.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.3.7\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="Alpha.Web, Version=1.0.6.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.6.1\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
       <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
@@ -160,8 +160,8 @@
       <HintPath>..\packages\SPSRemoting.1.0.0\lib\net40\SPSRemoting.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.4.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.4.5\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.4.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.4.8\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
@@ -246,6 +246,7 @@
     <Compile Include="Criteria\Otp\UpdateCustomerStatusAfterVerifyOtpCommand.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
+    <Compile Include="Criteria\Password\SkipForceChangePasswordCommand.cs" />
     <Compile Include="Criteria\ProfilePicture\SelectActorProfilePictureCriteria.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureStandbyServerCommand.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureMainServerCommand.cs" />
@@ -313,6 +314,7 @@
     <Compile Include="Params\Nickname\UpdateNicknameLoginOnlyParam.cs" />
     <Compile Include="Params\Otp\ChangeOtpStatusParam.cs" />
     <Compile Include="Params\Otp\RemoveSecretKeyParam.cs" />
+    <Compile Include="Params\Password\SkipForceChangePasswordParam.cs" />
     <Compile Include="Params\Password\ResetMainAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ResetSubAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ChangeMainAccountPasswordParam.cs" />

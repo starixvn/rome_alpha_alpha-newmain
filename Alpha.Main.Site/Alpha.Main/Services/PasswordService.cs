@@ -1,10 +1,5 @@
 ﻿namespace Alpha.Main.Services
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Models;
     using Params.Password;
 
@@ -17,5 +12,7 @@
         Result ResetSubAccountPassword(ResetSubAccountPasswordParam param);
 
         Result ChangeSubAccountPassword(ChangeSubAccountPasswordParam param);
+
+        Result SkipForceChangePassword(SkipForceChangePasswordParam param);
     }
 }

@@ -74,6 +74,16 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult SkipForceChangePassword(SkipForceChangePasswordCommand command)
+        {
+            var result = mediator.Send(command);
+            return Redirect(result.IsSuccessful ?
+                Helpers.UrlHelper.MapMainPath("~/") :
+                Helpers.UrlHelper.MapOldMainPath("~/_Authorization/Handlers/SignOut.ashx"));
+        }
+
+        [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost, AntiXsrfFilter, CheckBelongingFilter]
         public ActionResult ResetMainAccountPassword(ResetMainAccountPasswordCommand command)
         {
