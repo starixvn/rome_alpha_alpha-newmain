@@ -647,6 +647,10 @@ html * {
 }
 
 $images: 
+    "1" "en-US" url('../../Images/HeaderBanner/en-US/EuroChampionsCup_EN.png'), 
+    "1" "zh-CN" url('../../Images/HeaderBanner/zh-CN/EuroChampionsCup_CS.png'), 
+    "1" "zh-TW" url('../../Images/HeaderBanner/zh-TW/EuroChampionsCup_CH.png'), 
+    "1" "vi-VN" url('../../Images/HeaderBanner/vi-VN/EuroChampionsCup_VN.png'),
     "2" "en-US" url('../../Images/HeaderBanner/en-US/EPL_forLic_EN.png'), 
     "2" "zh-CN" url('../../Images/HeaderBanner/zh-CN/EPL_forLic_CS.png'), 
     "2" "zh-TW" url('../../Images/HeaderBanner/zh-TW/EPL_forLic_CH.png'), 
