@@ -69,6 +69,8 @@ namespace Alpha.Main.Site.Models.Requests
         public bool ShowNicknameMenu
             => !nicknameChecker.IsOfferForceLoginAndOverDueDate;
 
-        public bool ShowCreateMemberByQRCode => Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel();
+        public bool ShowCreateMemberByQRCode =>
+            userSession.SubPageAccess.ViewMemberInfo &&
+            Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel();
     }
 }
