@@ -70,7 +70,7 @@ namespace Alpha.Main.Site.Models.Requests
             => !nicknameChecker.IsOfferForceLoginAndOverDueDate;
 
         public bool ShowCreateMemberByQRCode =>
-            userSession.SubPageAccess.ViewMemberInfo &&
-            Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel();
+            userSession.SubPageAccess.CreateAccount 
+            && Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel();
     }
 }
