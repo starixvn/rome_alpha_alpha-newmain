@@ -545,6 +545,6 @@
     <value>我不是机器人</value>
   </data>
   <data name="CreateMemberWithQRCode" xml:space="preserve">
-    <value>通过二维码创建会员</value>
+    <value>用二维码创建会员</value>
   </data>
 </root>

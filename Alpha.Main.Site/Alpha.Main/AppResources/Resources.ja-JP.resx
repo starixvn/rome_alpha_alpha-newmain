@@ -395,6 +395,6 @@
     <value>You input an invalid code</value>
   </data>
   <data name="CreateMemberWithQRCode" xml:space="preserve">
-    <value>Create Member via QR Code</value>
+    <value>Create Member with QR Code</value>
   </data>
 </root>

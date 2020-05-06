@@ -542,6 +542,6 @@
     <value>ฉันไม่ใช่หุ่นยนต์</value>
   </data>
   <data name="CreateMemberWithQRCode" xml:space="preserve">
-    <value>สร้างสมาชิกผ่านคิวอาร์โค้ด</value>
+    <value>สร้างสมาชิกด้วยคิวอาร์โค้ด</value>
   </data>
 </root>
