@@ -205,6 +205,10 @@
 
         public static string CreatedSettingLastDateSessionKey => "CreatedSettingLastDate";
 
-        public static bool HideHeaderBanner => "1" == Settings["HideHeaderBanner"];
+        public static bool BannerIsHide => "1" == Settings["Banner:IsHide"];
+
+        public static string BannerEnvironment => Settings["Banner:Environment"];
+
+        public static string SiteGroup => Settings["SiteGroup"];
     }
 }

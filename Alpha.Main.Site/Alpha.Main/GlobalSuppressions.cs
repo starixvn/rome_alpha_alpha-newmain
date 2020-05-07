@@ -141,3 +141,4 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Bug", "S3887:Mutable, non-private fields should not be \"readonly\"", Justification = "<Pending>", Scope = "member", Target = "~F:Alpha.Main.Constants.MessageSelfDestructTime.Options")]
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Vulnerability", "S2386:Mutable fields should not be \"public static\"", Justification = "<Pending>", Scope = "member", Target = "~F:Alpha.Main.Constants.MessageSelfDestructTime.Options")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Critical Code Smell", "S1067:Expressions should not be too complex", Justification = "<Pending>", Scope = "member", Target = "~M:Alpha.Main.Criteria.Banner.GetBannerCriteria.IsValid~System.Boolean")]

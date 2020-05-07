@@ -128,6 +128,7 @@
                 new NicknameCheckerImpl(container.GetInstance<IUserSession>()));
 
             container.RegisterPerWebRequest<KickoutCustomerService, KickoutCustomerServiceImpl>();
+            container.RegisterPerWebRequest<BannerService, BannerServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

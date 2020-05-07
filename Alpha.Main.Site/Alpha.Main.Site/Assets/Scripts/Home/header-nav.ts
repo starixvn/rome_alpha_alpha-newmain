@@ -25,8 +25,6 @@ var headerNav = {
         sideBar: null,
         sideBarContent: null,
         profileImage: null,
-        currentLanguage: null,
-        isHideHeaderBanner: null,
         headerNavElement: null
     },
     messageType: {
@@ -49,7 +47,6 @@ var headerNav = {
     languageCode: null,
     clockTime: null,
     hideHeaderDropdownMenuTimeout: null,
-    randomBannerClassName: "",
 
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index",
@@ -57,7 +54,8 @@ var headerNav = {
         announcements: alpha.urls.messageRootPath + "Announcement/Index",
         changeLanguage: alpha.urls.mainRootPath + "Language/Change",
         queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx",
-        checkNewMessage: alpha.urls.messageRootPath + "NewMessage/GetNumberOfNewAnnouncement"
+        checkNewMessage: alpha.urls.messageRootPath + "NewMessage/GetNumberOfNewAnnouncement",
+        banner: alpha.urls.mainRootPath + "Banner/Get?type="
     },
 
     unreadMessage: {
@@ -73,42 +71,43 @@ var headerNav = {
         headerNav.runClock();
 
         headerNav.cachedDomElements();
-        headerNav.setBackgroundImage();
+        headerNav.setBannerBackgroundImage();
         headerNav.initLanguage();
         headerNav.registerEvents();
     },
 
-    setBackgroundImage: function () {
-        if ("1" !== headerNav.domElements.isHideHeaderBanner.val()) {
-            if (headerNav.randomBannerClassName.length !== 0) {
-                headerNav.domElements.headerNavElement.removeClass(headerNav.randomBannerClassName);
+    setBannerBackgroundImage: function () {
+        const type = headerNav.detectBannerTypeHandler();
+
+        $.ajax({
+            type: "GET",
+            url: headerNav.urls.banner + type,
+            success: function (result) {
+                headerNav.getBannerSuccessullyHandler(result, type === 2);
             }
+        });
+    },
 
-            var language = headerNav.domElements.currentLanguage.val();
-            var vnMobileBanner = [];
-            var vnDesktopBanner = [];
+    detectBannerTypeHandler: function () {
+        alpha.isScreenGreater1024 = false;
+        alpha.isScreenLower768 = false;
+        alpha.isScreenGreater768AndLower1024 = false;
+        alpha.isScreenLower1024 = false;
+        alpha.isMobile = false;
+        alpha.detectResponsiveInformation();
+        // Desktop: 1, Mobile: 2
+        return alpha.isScreenLower768 ? 2 : 1;
+    },
 
-            if (!language || language === "ja-JP" || language === "ko-KR" || language === "th-TH") {
-                language = "en-US";
-            } else if (language === "vi-VN") {
-                vnMobileBanner.push("m-banner-2-");
-                vnMobileBanner.push("m-banner-9-");
-                vnDesktopBanner.push("banner-2-");
-                vnDesktopBanner.push("banner-9-");
+    getBannerSuccessullyHandler: function (result: any, isMobile: boolean) {
+        if (result.ImageContent) {
+            headerNav.domElements.headerNavElement
+                .addClass("m-banner")
+                .css("background-image", "url(" + result.ImageContent + ")");
+
+            if (isMobile && result.MobileBackgroundColor) {
+                headerNav.domElements.headerNavElement.css("background-color", result.MobileBackgroundColor);
             }
-
-            alpha.isScreenGreater1024 = false;
-            alpha.isScreenLower768 = false;
-            alpha.isScreenGreater768AndLower1024 = false;
-            alpha.isScreenLower1024 = false;
-            alpha.isMobile = false;
-            alpha.detectResponsiveInformation();
-
-            var bannerClassNames = alpha.isScreenLower768
-                ? ["m-banner-1-", "m-banner-5-", "m-banner-6-", "m-banner-7-", "m-banner-8-"].concat(vnMobileBanner)
-                : ["banner-1-", "banner-5-", "banner-6-", "banner-7-", "banner-8-"].concat(vnDesktopBanner);
-            headerNav.randomBannerClassName = bannerClassNames[Math.floor(Math.random() * bannerClassNames.length)] + language;
-            headerNav.domElements.headerNavElement.addClass(headerNav.randomBannerClassName);
         }
     },
 
@@ -178,8 +177,6 @@ var headerNav = {
         headerNav.domElements.sideBarContent = $(".content-wrapper");
         headerNav.domElements.profileImage = $("#logoProfileImg");
 
-        headerNav.domElements.currentLanguage = $("#currentLanguage");
-        headerNav.domElements.isHideHeaderBanner = $("#isHideHeaderBanner");
         headerNav.domElements.headerNavElement = $("#header-nav");
     },
 
@@ -402,5 +399,5 @@ $(function () {
 });
 
 $(window).on("orientationchange", function () {
-    headerNav.setBackgroundImage();
+    headerNav.setBannerBackgroundImage();
 });
