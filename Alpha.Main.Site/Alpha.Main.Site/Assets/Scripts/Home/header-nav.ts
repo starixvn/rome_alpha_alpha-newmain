@@ -91,7 +91,9 @@ var headerNav = {
             if (!language || language === "ja-JP" || language === "ko-KR" || language === "th-TH") {
                 language = "en-US";
             } else if (language === "vi-VN") {
+                vnMobileBanner.push("m-banner-2-");
                 vnMobileBanner.push("m-banner-9-");
+                vnDesktopBanner.push("banner-2-");
                 vnDesktopBanner.push("banner-9-");
             }
 
