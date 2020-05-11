@@ -2,11 +2,10 @@
 {
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.SecurityCode.Web;
-    using Main.Models.Otp;
+    using Alpha.Web.Models;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
-    using Site.Helpers;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
     using System;

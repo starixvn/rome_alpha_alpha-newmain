@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Requests.Password
 {
     using Alpha.Main.Site.ViewModels.Security;
-    using Main.Models.Enumerations;
+    using Alpha.Web.Models;
     using MediatR;
 
     public class ResetMainAccountPasswordQuery : IRequest<PasswordViewModel>

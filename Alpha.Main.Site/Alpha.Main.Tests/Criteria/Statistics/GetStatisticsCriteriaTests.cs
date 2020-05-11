@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Tests.Criteria.Statistics
 {
+    using Alpha.Web.Models;
     using Main.Constants;
     using Main.Criteria.Statistics;
-    using Main.Models.Enumerations;
-    using NSubstitute;
     using NUnit.Framework;
 
     [TestFixture]

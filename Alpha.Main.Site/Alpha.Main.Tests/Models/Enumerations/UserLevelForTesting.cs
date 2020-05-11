@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Models.Enumerations
 {
+    using Alpha.Web.Models;
     using System.Diagnostics.CodeAnalysis;
-    using Alpha.Main.Models.Enumerations;
 
     public class UserLevelForTesting : UserLevel
     {

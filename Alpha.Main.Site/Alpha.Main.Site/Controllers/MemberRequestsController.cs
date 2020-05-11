@@ -2,12 +2,12 @@
 
 namespace Alpha.Main.Site.Controllers
 {
-    using System.Web.Mvc;
-    using System.Web.SessionState;
-    using Main.Models.Enumerations;
+    using Alpha.Web.Models;
     using MediatR;
     using Requests.Dashboard.MemberRequests;
     using Sunplus.Agent.Model.Entities;
+    using System.Web.Mvc;
+    using System.Web.SessionState;
     using Web;
 
     [SessionState(SessionStateBehavior.ReadOnly)]

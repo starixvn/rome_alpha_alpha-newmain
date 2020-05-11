@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Site.Requests.Password
 {
-    using Main.Models;
-    using Main.Models.Enumerations;
+    using Alpha.Web.Models;
     using MediatR;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
+    using CustomResult = Alpha.Main.Models.Result;
 
-    public class ResetMainAccountPasswordCommand : IRequest<Result>
+    public class ResetMainAccountPasswordCommand : IRequest<CustomResult>
     {
         private readonly IUserSession userSession;
         private readonly bool isCasinoDisabled;

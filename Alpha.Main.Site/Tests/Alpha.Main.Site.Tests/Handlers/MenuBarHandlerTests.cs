@@ -1,15 +1,15 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Main.Models.Enumerations;
+    using Alpha.Web.Models;
     using Main.Models.Menus;
     using Models.Requests;
     using NSubstitute;
     using NUnit.Framework;
     using Services;
     using Site.Handlers;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     [TestFixture]
     public class MenuBarHandlerTests

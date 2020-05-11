@@ -2,9 +2,9 @@
 
 namespace Alpha.Main.Site.Requests
 {
+    using Alpha.Web.Models;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
-    using ViewModels;
 
     public class BrowserQuery : IRequest<BrowserViewModel>
     {

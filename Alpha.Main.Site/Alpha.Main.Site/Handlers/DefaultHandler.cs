@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.Web.Models;
     using Fanex.Logging.Extensions.Web;
-    using Helpers;
-    using Main.Models.Enumerations;
     using MediatR;
     using Models.Requests;
     using Params;

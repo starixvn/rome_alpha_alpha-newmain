@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using System.Collections.Generic;
-    using System.Linq;
+    using Alpha.Web.Models;
     using Criteria.Statistics;
     using DataAccesses;
     using Fanex.Data.Repository;
-    using Models.Enumerations;
     using Models.Statistics;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class StatisticsServiceImpl : StatisticsService
     {

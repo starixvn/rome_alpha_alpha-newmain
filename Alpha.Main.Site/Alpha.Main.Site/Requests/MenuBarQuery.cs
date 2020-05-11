@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Site.Models.Requests
 {
+    using Alpha.Web.Models;
+    using Configurations;
+    using MediatR;
     using System.Collections.Generic;
     using System.Web;
-    using Configurations;
-    using Main.Models.Enumerations;
-    using MediatR;
     using ViewModels;
 
     public class MenuBarQuery : IRequest<MenuBarViewModel>

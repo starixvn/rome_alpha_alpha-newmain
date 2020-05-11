@@ -1,11 +1,11 @@
 ﻿namespace Alpha.Main.DataAccesses.Impl
 {
-    using System;
-    using System.Collections.Generic;
+    using Alpha.Web.Models;
     using Fanex.Data;
     using Fanex.Data.Repository;
-    using Models.Enumerations;
     using Models.Statistics;
+    using System;
+    using System.Collections.Generic;
 
     public class StatisticsDataAccessImpl : StatisticsDataAccess
     {

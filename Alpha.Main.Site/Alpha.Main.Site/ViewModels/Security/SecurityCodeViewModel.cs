@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Security
 {
+    using Alpha.Web.Models;
     using Helpers;
-    using Main.Models.Enumerations;
 
     public class SecurityCodeViewModel
     {

@@ -4,6 +4,7 @@
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using Alpha.Web.Models;
     using AppResources;
     using CasinoLibrary.Model.UserException;
     using Criteria.Otp;
@@ -15,6 +16,7 @@
     using ONEbook.OTP.Services;
     using Params.Otp;
     using Sunplus.Agent.Model.Casino;
+    using CustomResult = Alpha.Main.Models.Result;
 
     public class CustomerOtpServiceImpl : CustomerOtpService
     {
@@ -47,7 +49,7 @@
             this.casinoService = casinoService;
         }
 
-        public virtual Result ChangeOtpStatus(ChangeOtpStatusParam param)
+        public virtual CustomResult ChangeOtpStatus(ChangeOtpStatusParam param)
         {
             if (param == null)
             {
@@ -68,7 +70,7 @@
 
             dynamicRepository.Execute(command);
 
-            return new Result
+            return new CustomResult
             {
                 Code = command.ErrCode,
                 Message = command.ErrCode == 0 ? Security.UpdateOtpStatusSuccess : command.ErrMsg
@@ -123,7 +125,7 @@
             return command.Enable;
         }
 
-        public Result SetUpOtp(CustomerOtp param)
+        public CustomResult SetUpOtp(CustomerOtp param)
         {
             if (param == null)
             {
@@ -134,7 +136,7 @@
 
             if (!isCorrect)
             {
-                return Result.CreateErrorResult(Security.OtpIsInvalidOrExpired);
+                return CustomResult.CreateErrorResult(Security.OtpIsInvalidOrExpired);
             }
 
             var deviceInfoSerialized = jsonHelper.Serialize(param.Device.Info);
@@ -153,14 +155,14 @@
 
             dynamicRepository.Execute(command);
 
-            return new Result
+            return new CustomResult
             {
                 Code = command.ErrCode,
                 Message = command.ErrCode == 0 ? Security.AuthenticatorAppVerified : command.ErrMsg
             };
         }
 
-        public Result VerifyOtp(CustomerOtp param)
+        public CustomResult VerifyOtp(CustomerOtp param)
         {
             if (param == null)
             {
@@ -189,7 +191,7 @@
 
             dynamicRepository.Execute(changeStatusCommand);
 
-            var result = new Result
+            var result = new CustomResult
             {
                 Code = changeStatusCommand.ErrCode,
                 Message = isCorrect ? changeStatusCommand.ErrMsg : Security.OtpInvalidOrExpiredAndContactUpline
@@ -259,7 +261,7 @@
             };
         }
 
-        public Result RemoveSecretKey(RemoveSecretKeyParam param)
+        public CustomResult RemoveSecretKey(RemoveSecretKeyParam param)
         {
             if (param == null)
             {
@@ -280,7 +282,7 @@
 
             dynamicRepository.Execute(command);
 
-            var deleteResult = new Result
+            var deleteResult = new CustomResult
             {
                 Code = command.ErrCode,
                 Message = GetRemovedOtpMessage(command.ErrCode, param.IsResetDownlineOrSubAccount, command.ErrMsg)

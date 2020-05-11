@@ -1333,10 +1333,6 @@
     <Compile Include="Handlers\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\UMMessageHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
-    <Compile Include="Helpers\BrowserHelper.cs" />
-    <Compile Include="Helpers\BrowserHelperImpl.cs">
-      <SonarQubeExclude>true</SonarQubeExclude>
-    </Compile>
     <Compile Include="Helpers\HmacAuthenticator.cs" />
     <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\RestClientHelper.cs" />
@@ -1400,7 +1396,6 @@
     <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs" />
     <Compile Include="ViewModels\ChatBot\VerifyAccountViewModel.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
-    <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />

@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Services
 {
+    using Alpha.Web.Models;
     using Models.BalanceInfo;
-    using Models.Enumerations;
 
     public interface BalanceInfoService
     {

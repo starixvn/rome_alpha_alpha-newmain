@@ -326,8 +326,6 @@
     <Compile Include="Helpers\SiteMapReader.cs" />
     <Compile Include="Helpers\XMLDocumentHelper.cs" />
     <Compile Include="Models\Banner\BannerItem.cs" />
-    <Compile Include="Models\Enumerations\Enumeration.cs" />
-    <Compile Include="Models\Enumerations\UserLevel.cs" />
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
     <Compile Include="Models\ProfilePicture\ActorProfilePictureModel.cs" />
@@ -338,7 +336,6 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Models\MemberRequests\ProductRequest.cs" />
-    <Compile Include="Models\Otp\DeviceInfo.cs" />
     <Compile Include="Models\Statistics\NewMember.cs" />
     <Compile Include="Models\Statistics\Statistics.cs" />
     <Compile Include="Models\Menus\IMenuItem.cs" />
@@ -347,7 +344,6 @@
     <Compile Include="Models\Menus\MenuItemBuilderImpl.cs" />
     <Compile Include="Models\Menus\MenuStatus.cs" />
     <Compile Include="Models\Otp\CustomerOtpDto.cs" />
-    <Compile Include="Models\Otp\Device.cs" />
     <Compile Include="Models\Otp\CustomerOtp.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\SecurityCode\SecurityCodeStatus.cs" />

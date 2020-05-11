@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Params.Otp
 {
-    using Alpha.Main.Models.Otp;
+    using Alpha.Web.Models;
 
     public class RemoveSecretKeyParam
     {

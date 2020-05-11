@@ -2,9 +2,9 @@
 {
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
+    using Alpha.Web.Models;
     using AppResources;
     using Main.Models;
-    using Main.Models.Enumerations;
     using MediatR;
     using Models.Request.SecurityCode;
     using Params.SecurityCode;
@@ -14,15 +14,16 @@
     using System;
     using ViewModels.Security;
     using Web.Helpers;
+    using CustomResult = Alpha.Main.Models.Result;
 
     public class SecurityCodeHandler :
         IRequestHandler<ForceChangeSecurityCodeQuery, ForceChangeSecurityCodeViewModel>,
         IRequestHandler<SecurityCodeQuery, SecurityCodeViewModel>,
-        IRequestHandler<ChangeSecurityCodeFirstLoginCommand, Result>,
-        IRequestHandler<ChangeSecurityCodeByForcingCommand, Result>,
-        IRequestHandler<ChangeUserOwnSecurityCodeCommand, Result>,
-        IRequestHandler<ResetSecurityCodeCommand, Result>,
-        IRequestHandler<VerifySecurityCodeCommand, Result>
+        IRequestHandler<ChangeSecurityCodeFirstLoginCommand, CustomResult>,
+        IRequestHandler<ChangeSecurityCodeByForcingCommand, CustomResult>,
+        IRequestHandler<ChangeUserOwnSecurityCodeCommand, CustomResult>,
+        IRequestHandler<ResetSecurityCodeCommand, CustomResult>,
+        IRequestHandler<VerifySecurityCodeCommand, CustomResult>
     {
         private const string HashKeySessionKey = "ph";
         private const string SecurityCodeTokenSessionKey = "SECURITYCODETOKEN";
@@ -127,7 +128,7 @@
             };
         }
 
-        public Result Handle(ChangeSecurityCodeFirstLoginCommand message)
+        public CustomResult Handle(ChangeSecurityCodeFirstLoginCommand message)
         {
             if (message == null)
             {
@@ -137,7 +138,7 @@
             // Make sure that, when user already has SC in session, then cannot be forced change by first login
             if (!string.IsNullOrWhiteSpace(userSession.SecurityCode))
             {
-                return Result.CreateErrorResult(Security.NotAuthorized);
+                return CustomResult.CreateErrorResult(Security.NotAuthorized);
             }
 
             message.SecurityCode = Decrypt(message.SecurityCode);
@@ -172,7 +173,7 @@
             return result;
         }
 
-        public Result Handle(ChangeSecurityCodeByForcingCommand message)
+        public CustomResult Handle(ChangeSecurityCodeByForcingCommand message)
         {
             if (message == null)
             {
@@ -209,7 +210,7 @@
             return result;
         }
 
-        public Result Handle(ChangeUserOwnSecurityCodeCommand message)
+        public CustomResult Handle(ChangeUserOwnSecurityCodeCommand message)
         {
             if (message == null)
             {
@@ -247,7 +248,7 @@
             return result;
         }
 
-        public Result Handle(ResetSecurityCodeCommand message)
+        public CustomResult Handle(ResetSecurityCodeCommand message)
         {
             if (message == null)
             {
@@ -264,7 +265,7 @@
                 return validateResult;
             }
 
-            Result result = new Result();
+            var result = new CustomResult();
             if (message.CustId.HasValue && message.CustId.Value > 0)
             {
                 result = ResetDownlineSecurityCode(message);
@@ -277,7 +278,7 @@
             return result;
         }
 
-        public Result Handle(VerifySecurityCodeCommand message)
+        public CustomResult Handle(VerifySecurityCodeCommand message)
         {
             if (message == null)
             {
@@ -303,20 +304,20 @@
             return result;
         }
 
-        private Result HasUpdatePermission(bool isResetSubAccount = false)
+        private CustomResult HasUpdatePermission(bool isResetSubAccount = false)
         {
             if (userSession.IsInternal
                 && !isResetSubAccount)
             {
-                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
+                return new CustomResult { Code = CustomResult.ErrorCode, Message = Security.NotAuthorized };
             }
 
             if (isResetSubAccount && !user.IsAdminCanUpdateSubAccount)
             {
-                return new Result { Code = Result.ErrorCode, Message = Security.NotAuthorized };
+                return new CustomResult { Code = CustomResult.ErrorCode, Message = Security.NotAuthorized };
             }
 
-            return new Result();
+            return new CustomResult();
         }
 
         private void ResetToken()
@@ -326,7 +327,7 @@
             SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode = true;
         }
 
-        private Result ChangeSecurityCode(ChangeSecurityCodeParam param)
+        private CustomResult ChangeSecurityCode(ChangeSecurityCodeParam param)
         {
             var result = param.SubAccId.Equals(0)
                 ? securityCodeService.ChangeMainAccountSecurityCode(param)
@@ -340,7 +341,7 @@
             return result;
         }
 
-        private Result ResetDownlineSecurityCode(ResetSecurityCodeCommand command)
+        private CustomResult ResetDownlineSecurityCode(ResetSecurityCodeCommand command)
         {
             var isResetMember = Enumeration.FromValue<UserLevel>(userSession.RoleId).Equals(UserLevel.Agent);
 
@@ -365,7 +366,7 @@
             return result;
         }
 
-        private Result ResetSubAccountSecurityCode(ResetSecurityCodeCommand command)
+        private CustomResult ResetSubAccountSecurityCode(ResetSecurityCodeCommand command)
         {
             var result = securityCodeService.ResetSubAccountSecurityCode(
                 new ResetSecurityCodeParam

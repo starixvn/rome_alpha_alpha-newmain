@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
-    using System.Collections.Generic;
+    using Alpha.Web.Models;
     using AppResources;
     using Fanex.Data.Repository;
     using KellermanSoftware.CompareNetObjects;
@@ -15,6 +14,9 @@
     using ONEbook.OTP.Services;
     using Params.Otp;
     using Sunplus.Agent.Model.Casino;
+    using System;
+    using System.Collections.Generic;
+    using CustomResult = Alpha.Main.Models.Result;
 
     [TestFixture]
     public class CustomerOtpServiceImplTests
@@ -78,7 +80,7 @@
         {
             // Arrange
             var param = new ChangeOtpStatusParam();
-            var expectedResult = new Result
+            var expectedResult = new CustomResult
             {
                 Code = 1,
                 Message = "Message"
@@ -351,7 +353,7 @@
                 },
                 Language = "E"
             };
-            var expectedResult = new Result
+            var expectedResult = new CustomResult
             {
                 Code = 3,
                 Message = "Message"

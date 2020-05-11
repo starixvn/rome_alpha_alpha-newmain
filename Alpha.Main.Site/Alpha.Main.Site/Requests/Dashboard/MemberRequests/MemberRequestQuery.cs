@@ -2,7 +2,7 @@
 
 namespace Alpha.Main.Site.Requests.Dashboard.MemberRequests
 {
-    using Main.Models.Enumerations;
+    using Alpha.Web.Models;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
     using ViewModels.Dashboard.MemberRequests;

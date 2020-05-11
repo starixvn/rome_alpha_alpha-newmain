@@ -1,8 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
-    using System.Net;
-    using System.Web;
-    using System.Web.Mvc;
+    using Alpha.Web.Models;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
     using MediatR;
@@ -14,8 +12,10 @@
     using Site.Controllers;
     using Site.Requests;
     using Site.Requests.Otp;
-    using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
+    using System.Net;
+    using System.Web;
+    using System.Web.Mvc;
     using Web.Helpers;
 
     [TestFixture]

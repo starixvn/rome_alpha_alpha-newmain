@@ -1,19 +1,19 @@
 ﻿namespace Alpha.Main.Tests.DataAccesses
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Data;
+    using Alpha.Web.Models;
     using Database.Statistics;
     using Fanex.Data;
     using Fanex.Data.Repository;
     using KellermanSoftware.CompareNetObjects;
     using Main.Criteria.Statistics;
     using Main.DataAccesses.Impl;
-    using Main.Models.Enumerations;
     using Main.Models.Statistics;
     using NSubstitute;
     using NUnit.Framework;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Data;
 
     [TestFixture]
     public class StatisticsDataAccessImplTests

@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Dashboard
 {
+    using Alpha.Web.Models;
     using Configurations;
     using Helpers;
-    using Main.Models.Enumerations;
 
     public class DashboardViewModel
     {

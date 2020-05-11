@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Params
 {
-    using Models.Enumerations;
+    using Alpha.Web.Models;
 
     public class KickoutCustomerParam
     {

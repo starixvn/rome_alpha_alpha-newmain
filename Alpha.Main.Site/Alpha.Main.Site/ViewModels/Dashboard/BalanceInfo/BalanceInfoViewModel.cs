@@ -1,11 +1,10 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Dashboard.BalanceInfo
 {
-    using System;
+    using Alpha.Web.Models;
     using AppResources;
-    using Constants;
     using Helpers;
     using Main.Models.BalanceInfo;
-    using Main.Models.Enumerations;
+    using System;
 
     public class BalanceInfoViewModel
     {
