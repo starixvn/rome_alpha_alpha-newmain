@@ -4,4 +4,7 @@
     <Setting Key="Age_CustomerSelProfilePicture" SpName="Age_CustomerSelProfilePicture" DbName="DBAGE.bodb_AGE.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_CustomerUpdProfilePicture" SpName="Age_CustomerUpdProfilePicture" DbName="DBAGE.bodb_AGE.BODBDownlineNetView" Plain="0" />
   </Function>
+  <Function Name="Banner">
+    <Setting Key="Age_Banner_SelectRandomBanner" SpName="Age_Banner_SelectRandomBanner" DbName="DBAGE.bodb_AGE.BODBDownlineNetView" Plain="0" />
+  </Function>
 </Functions>

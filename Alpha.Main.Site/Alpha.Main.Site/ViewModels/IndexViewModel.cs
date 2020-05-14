@@ -1,5 +1,8 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
+    using System;
+    using System.Linq;
+    using System.Web;
     using Alpha.Main.AppResources;
     using Alpha.Main.ProfilePicture.Models;
     using Configurations;
@@ -9,9 +12,6 @@
     using Models.Requests;
     using SecurityCode.Web;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Linq;
-    using System.Web;
 
     public class IndexViewModel
     {
@@ -138,7 +138,5 @@
 
             return HttpUtility.HtmlEncode(message.NickName);
         }
-
-        public bool IsHideHeaderBanner => AppSettings.HideHeaderBanner;
     }
 }
