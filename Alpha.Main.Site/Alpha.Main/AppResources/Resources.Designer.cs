@@ -286,6 +286,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Member with QR Code.
+        /// </summary>
+        public static string CreateMemberWithQRCode {
+            get {
+                return ResourceManager.GetString("CreateMemberWithQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credit.
         /// </summary>
         public static string credit {

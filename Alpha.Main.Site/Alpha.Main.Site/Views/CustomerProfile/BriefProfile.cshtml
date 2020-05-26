@@ -12,10 +12,10 @@
      data-nick-name="@(Model.NickName)">
 
     <a href="@(viewProfileUrl)" target="@mainFrameName" class="profile-avatar">
-        <img id="logoProfileImg" width="50" height="50" 
-             profile-image-id="@Model.ProfileImageId" 
-             default-avatar="@Model.IsDefaultAvatar.ToString().ToLower()" 
-             src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' 
+        <img id="logoProfileImg" width="50" height="50"
+             profile-image-id="@Model.ProfileImageId"
+             default-avatar="@Model.IsDefaultAvatar.ToString().ToLower()"
+             src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)'
              alt="" title="@Resources.ProfileClickTootip" />
     </a>
 
@@ -46,6 +46,8 @@
         }
         <a class="otp" href="@(MicroSites.MainUrl("~/otp/SetUpOtp"))" target="@mainFrameName">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</a>
     </div>
+
+    @Html.HiddenFor(m => m.Username)
 </div>
 
 @if (!Model.IsInternal)

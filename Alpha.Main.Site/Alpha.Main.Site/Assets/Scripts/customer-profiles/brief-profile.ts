@@ -26,6 +26,7 @@ var briefProfile = {
         briefProfile.checkAndSetShowEditProfilePictureTooltip();
         briefProfile.checkAndShowNickNameTooltip();
         briefProfile.setProfilePictureStorage();
+        briefProfile.setActorNameStorage();
         briefProfile.registerEvents();
     },
 
@@ -65,6 +66,15 @@ var briefProfile = {
         }));
     },
 
+    setActorNameStorage: function () {
+        const actorNameStorage = localStorage.getItem('actorName');
+        const actorName = $('#Username').val();
+        const IsOldActor = actorName === actorNameStorage;
+        localStorage.setItem('IsOldActor', JSON.stringify(IsOldActor));
+        if (!IsOldActor) {
+            localStorage.setItem('actorName', actorName);
+        }
+    },
     registerEvents: function () {
         briefProfile.domElements.profileTooltip
             .off('click')

@@ -436,4 +436,7 @@
   <data name="invalidCaptcha" xml:space="preserve">
     <value>잘못된 코드가 입력되었습니다</value>
   </data>
+  <data name="CreateMemberWithQRCode" xml:space="preserve">
+    <value>Create Member with QR Code</value>
+  </data>
 </root>

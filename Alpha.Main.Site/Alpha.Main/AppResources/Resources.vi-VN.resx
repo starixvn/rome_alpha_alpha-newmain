@@ -606,4 +606,7 @@
   <data name="IamNotARobot" xml:space="preserve">
     <value>Tôi không phải là người máy</value>
   </data>
+  <data name="CreateMemberWithQRCode" xml:space="preserve">
+    <value>Tạo Member với mã QR</value>
+  </data>
 </root>

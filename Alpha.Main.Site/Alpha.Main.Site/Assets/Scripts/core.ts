@@ -13,6 +13,9 @@ var alpha = {
         accountInfoRootPath: top.document.getElementById('accountInfoRootPath') != null
             ? (<HTMLInputElement>top.document.getElementById('accountInfoRootPath')).value
             : "not found",
+        memberInfoRootPath: top.document.getElementById('memberInfoRootPath') != null
+            ? (<HTMLInputElement>top.document.getElementById('memberInfoRootPath')).value
+            : "not found",
         howToUseRootPath: top.document.getElementById('howToUseRootPath') != null
             ? (<HTMLInputElement>top.document.getElementById('howToUseRootPath')).value
             : "not found",
@@ -58,8 +61,6 @@ var alpha = {
             while (index != index.parent) {
                 index = index.parent;
 			}
-
-            localStorage.clear();
 
             index.location.href = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
 

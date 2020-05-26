@@ -7,39 +7,50 @@
 }
 
 <section class="navbar header-nav" id="header-nav">
-	<span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
-	<ul class="nav navbar-nav list-top">
-		<li class="visible-mobile"><span class="icon icon-home"></span></li>
-		@if (Model.IsViewedMemberInfo)
-		{
-			<li class="visible-mobile"><span class="icon icon-account-search"></span></li>
-		}
-		<li class="hidden-mobile datetime">
-			<span class="icon icon-time"></span>
-			<span class="txt-top" id="clock"
-				  data-year="@DateTime.Now.Year"
-				  data-month="@DateTime.Now.Month"
-				  data-day="@DateTime.Now.Day"
-				  data-hour="@DateTime.Now.Hour"
-				  data-minute="@DateTime.Now.Minute"
-				  data-second="@DateTime.Now.Second"></span>
-		</li>
-		<li class="hidden-mobile dropdown language">
-			@Html.Action("List", "Language")
-		</li>
+    <span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
+    <ul class="nav navbar-nav list-top">
+        @if (Model.ShowCreateMemberByQRCode)
+        {
+            <li class="visible-mobile"><span class="icon icon-qr-code-top" title="@Resources.CreateMemberWithQRCode"></span></li>
+        }
+        <li class="visible-mobile"><span class="icon icon-home"></span></li>
+        @if (Model.IsViewedMemberInfo)
+        {
+            <li class="visible-mobile"><span class="icon icon-account-search"></span></li>
+        }
+        <li class="hidden-mobile datetime">
+            <span class="icon icon-time"></span>
+            <span class="txt-top" id="clock"
+                  data-year="@DateTime.Now.Year"
+                  data-month="@DateTime.Now.Month"
+                  data-day="@DateTime.Now.Day"
+                  data-hour="@DateTime.Now.Hour"
+                  data-minute="@DateTime.Now.Minute"
+                  data-second="@DateTime.Now.Second"></span>
+        </li>
+        <li class="hidden-mobile dropdown language">
+            @Html.Action("List", "Language")
+        </li>
 
-		<li class="notification">
-			<a class="icon icon-bell withripple"></a>
-			<span id="numberOfNewMessage" class="number-msg"></span>
-		</li>
+        @if (Model.ShowCreateMemberByQRCode)
+        {
+            <li class="hidden-mobile dropdown language">
+                <a class="icon icon-qr-code-top withripple" title="@Resources.CreateMemberWithQRCode"></a>
+            </li>
+        }
 
-		<li class="dropdown setting">
-			<a id="btn-header-menu" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
-				<span class="icon icon-squares top-right-menu"></span>
-				<span class="profile-avatar">
-					<img id="userPicture" width="50" height="50" src='@profileImageSrc' alt="" title="@Resources.ProfileClickTootip" />
-				</span>
-			</a>
+        <li class="notification">
+            <a class="icon icon-bell withripple"></a>
+            <span id="numberOfNewMessage" class="number-msg"></span>
+        </li>
+
+        <li class="dropdown setting">
+            <a id="btn-header-menu" data-target="#" class="dropdown-toggle withripple" data-toggle="dropdown">
+                <span class="icon icon-squares top-right-menu"></span>
+                <span class="profile-avatar">
+                    <img id="userPicture" width="50" height="50" src='@profileImageSrc' alt="" title="@Resources.ProfileClickTootip" />
+                </span>
+            </a>
 
             <ul id="header-dropdown-menu" class="dropdown-menu list-setting">
                 <li class="profile-group visible-mobile">
@@ -69,7 +80,7 @@
                 <li class="visible-mobile dropdown-submenu language">@Html.Action("List", "Language")</li>
                 @if (Model.ShowNicknameMenu)
                 {
-                <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.nickname</a></li>
+                    <li><a href="@($"{Model.OldMainRootPath}LoginOption?custId={Model.CustId}")" target="main"><span class="icon icon-account-key"></span>@Resources.nickname</a></li>
                 }
                 <li><a href="@viewProfileUrl" target="main"><span class="icon icon-account-circle"></span>@Resources.EditProfilePicture</a></li>
                 <li><a href="@($"{Model.MainRootPath}Password/ChangePassword")" target="main"><span class="icon icon-lock"></span>@Resources.password</a></li>
@@ -95,7 +106,7 @@
                     </ul>
                 </li>
             </ul>
-		</li>
-		<li class="hidden-mobile logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
-	</ul>
+        </li>
+        <li class="hidden-mobile logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
+    </ul>
 </section>
