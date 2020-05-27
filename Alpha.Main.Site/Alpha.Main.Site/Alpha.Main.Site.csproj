@@ -65,7 +65,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Alpha.ActivityTracking, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.ActivityTracking.1.0.0.3-robot\lib\net461\Alpha.ActivityTracking.dll</HintPath>
+      <HintPath>..\packages\Alpha.ActivityTracking.1.0.0.3\lib\net461\Alpha.ActivityTracking.dll</HintPath>
     </Reference>
     <Reference Include="Alpha.Auth, Version=3.0.2.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Alpha.Auth.3.0.2.3\lib\net461\Alpha.Auth.dll</HintPath>
@@ -323,7 +323,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.4.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.4.9-robot2\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.4.9\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
