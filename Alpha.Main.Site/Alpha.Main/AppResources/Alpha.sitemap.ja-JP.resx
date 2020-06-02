@@ -355,4 +355,13 @@
   <data name="IPMatching" xml:space="preserve">
     <value>IP Matching</value>
   </data>
+  <data name="agentOutstandingNew" xml:space="preserve">
+    <value>Agent Outstanding (New)</value>
+  </data>
+  <data name="masterOutstandingNew" xml:space="preserve">
+    <value>Master Outstanding (New)</value>
+  </data>
+  <data name="memberOutstandingNew" xml:space="preserve">
+    <value>Member Outstanding (New)</value>
+  </data>
 </root>

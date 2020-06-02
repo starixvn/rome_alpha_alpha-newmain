@@ -379,7 +379,8 @@
     <value>转全部的账并清除信用额度</value>
   </data>
   <data name="BetStatistics" xml:space="preserve">
-    <value>风险分析</value></data>
+    <value>风险分析</value>
+  </data>
   <data name="problemAccountList" xml:space="preserve">
     <value>问题账号列表</value>
   </data>
@@ -388,6 +389,15 @@
   </data>
   <data name="IPMatching" xml:space="preserve">
     <value>IP核对</value>
+  </data>
+  <data name="agentOutstandingNew" xml:space="preserve">
+    <value>Agent Outstanding (New)</value>
+  </data>
+  <data name="masterOutstandingNew" xml:space="preserve">
+    <value>Master Outstanding (New)</value>
+  </data>
+  <data name="memberOutstandingNew" xml:space="preserve">
+    <value>Member Outstanding (New)</value>
   </data>
   <data name="IndirectLoginAccount" xml:space="preserve">
     <value>非间接登录账户</value>

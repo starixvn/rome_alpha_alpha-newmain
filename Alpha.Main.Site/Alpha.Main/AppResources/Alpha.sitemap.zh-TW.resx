@@ -379,7 +379,8 @@
     <value>轉全部的賬並清除信用額度</value>
   </data>
   <data name="BetStatistics" xml:space="preserve">
-    <value>風險分析</value></data>
+    <value>風險分析</value>
+  </data>
   <data name="problemAccountList" xml:space="preserve">
     <value>問題賬號列表</value>
   </data>
@@ -388,6 +389,15 @@
   </data>
   <data name="BetChoiceMatching" xml:space="preserve">
     <value>以投注選擇核對</value>
+  </data>
+  <data name="agentOutstandingNew" xml:space="preserve">
+    <value>Agent Outstanding (New)</value>
+  </data>
+  <data name="masterOutstandingNew" xml:space="preserve">
+    <value>Master Outstanding (New)</value>
+  </data>
+  <data name="memberOutstandingNew" xml:space="preserve">
+    <value>Member Outstanding (New)</value>
   </data>
   <data name="IndirectLoginAccount" xml:space="preserve">
     <value>非間接登入帳戶</value>
