@@ -547,4 +547,7 @@
   <data name="CreateMemberWithQRCode" xml:space="preserve">
     <value>用二維碼創建會員</value>
   </data>
+  <data name="PendingTransfer3rd" xml:space="preserve">
+    <value>第三方待定轉賬</value>
+  </data>
 </root>

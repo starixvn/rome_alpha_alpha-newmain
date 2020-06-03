@@ -397,4 +397,7 @@
   <data name="CreateMemberWithQRCode" xml:space="preserve">
     <value>Create Member with QR Code</value>
   </data>
+  <data name="PendingTransfer3rd" xml:space="preserve">
+    <value>3rd Party Pending Transfer</value>
+  </data>
 </root>

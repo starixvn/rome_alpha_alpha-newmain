@@ -4,7 +4,6 @@
     {
         public BalanceInfo()
         {
-
         }
 
         public BalanceInfo(

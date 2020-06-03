@@ -142,3 +142,5 @@
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Vulnerability", "S2386:Mutable fields should not be \"public static\"", Justification = "<Pending>", Scope = "member", Target = "~F:Alpha.Main.Constants.MessageSelfDestructTime.Options")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Critical Code Smell", "S1067:Expressions should not be too complex", Justification = "<Pending>", Scope = "member", Target = "~M:Alpha.Main.Criteria.Banner.GetBannerCriteria.IsValid~System.Boolean")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S107:Methods should not have too many parameters", Justification = "<Pending>", Scope = "member", Target = "~M:Alpha.Main.Models.BalanceInfo.BalanceInfo.#ctor(System.String,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal)")]
+

@@ -10,6 +10,7 @@
       <Mapping DataField="yesterdayWinloss" ObjectProperty="YesterdayWinLoss" />
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
+      <Mapping DataField="3rdPendingTransfer" ObjectProperty="PendingTransfer3rd" />
     </Setting>
     <Setting Key="Age_CustomerSelBalanceInfo_MAg" SpName="Age_CustomerSelBalanceInfo_MAg" DbName="DB053.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
@@ -20,6 +21,7 @@
       <Mapping DataField="yesterdayWinloss" ObjectProperty="YesterdayWinLoss" />
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
+      <Mapping DataField="3rdPendingTransfer" ObjectProperty="PendingTransfer3rd" />
     </Setting>
     <Setting Key="Age_CustomerSelBalanceInfo_SAg" SpName="Age_CustomerSelBalanceInfo_SAg" DbName="DB053.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
       <Mapping DataField="cashBalance" ObjectProperty="CashBalance" />
@@ -30,6 +32,7 @@
       <Mapping DataField="yesterdayWinloss" ObjectProperty="YesterdayWinLoss" />
       <Mapping DataField="givenCredit" ObjectProperty="GivenCredit" />
       <Mapping DataField="memberCredit" ObjectProperty="MemberCredit" />
+      <Mapping DataField="3rdPendingTransfer" ObjectProperty="PendingTransfer3rd" />
     </Setting>
   </Function>
   <Function Name="Statistics">
