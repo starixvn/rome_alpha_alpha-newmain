@@ -890,6 +890,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 3rd Party Pending Transfer.
+        /// </summary>
+        public static string PendingTransfer3rd {
+            get {
+                return ResourceManager.GetString("PendingTransfer3rd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal Message.
         /// </summary>
         public static string personalMessage {

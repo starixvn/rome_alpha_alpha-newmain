@@ -31,32 +31,32 @@
     </div>
 }
 
-<div class="container">
-    <div class="panel-title"><span class="icon-balance"></span>@Resources.balanceInfo</div>
-    @TextRow(label: Model.UserLevelLabel, text: balanceInfo.UserName)
-    @TextRow(Resources.currency, Model.Currency)
+    <div class="container">
+        <div class="panel-title"><span class="icon-balance"></span>@Resources.balanceInfo</div>
+        @TextRow(label: Model.UserLevelLabel, text: balanceInfo.UserName)
+        @TextRow(Resources.currency, Model.Currency)
 
-    <div class="group-title">@Resources.balance</div>
-    @NumericRow(Resources.cashBalance, balanceInfo.CashBalance)
-    @NumericRow(Resources.yesterdayCashBalance, balanceInfo.YesterdayCashBalance)
-    @NumericRow(Resources.totalBalance, balanceInfo.TotalBalance)
-    @NumericRow(Resources.yesterdayTotalBalance, balanceInfo.YesterdayTotalBalance)
+        <div class="group-title">@Resources.balance</div>
+        @NumericRow(Resources.cashBalance, balanceInfo.CashBalance)
+        @NumericRow(Resources.yesterdayCashBalance, balanceInfo.YesterdayCashBalance)
+        @NumericRow(Resources.totalBalance, balanceInfo.TotalBalance)
+        @NumericRow(Resources.yesterdayTotalBalance, balanceInfo.YesterdayTotalBalance)
+        @NumericRow(Resources.PendingTransfer3rd, balanceInfo.PendingTransfer3rd)
+        <div class="group-title">@Resources.winloss</div>
+        @NumericRow(
+            $"{Resources.todayWinLoss} ({DateTime.Today.ToString("MM/dd/yyyy")})",
+            balanceInfo.TodayWinLoss,
+            Model.CanViewReports,
+            MicroSites.OldMainUrl(Model.MemberTodayWinLossReportPath))
+        @NumericRow(
+            $"{Resources.yesterdayWinLoss} ({DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy")})",
+            balanceInfo.YesterdayWinLoss,
+            Model.CanViewReports,
+            MicroSites.OldMainUrl(Model.MemberYesterdayWinLossReportPath))
 
-    <div class="group-title">@Resources.winloss</div>
-    @NumericRow(
-        $"{Resources.todayWinLoss} ({DateTime.Today.ToString("MM/dd/yyyy")})",
-        balanceInfo.TodayWinLoss,
-        Model.CanViewReports,
-        MicroSites.OldMainUrl(Model.MemberTodayWinLossReportPath))
-    @NumericRow(
-        $"{Resources.yesterdayWinLoss} ({DateTime.Today.AddDays(-1).ToString("MM/dd/yyyy")})",
-        balanceInfo.YesterdayWinLoss,
-        Model.CanViewReports,
-        MicroSites.OldMainUrl(Model.MemberYesterdayWinLossReportPath))
-
-    <div class="group-title">
-        @Resources.credit
+        <div class="group-title">
+            @Resources.credit
+        </div>
+        @NumericRow(Model.GivenCreditLabel, balanceInfo.GivenCredit)
+        @NumericRow(Model.TotalDownlineCreditLabel, balanceInfo.MemberCredit)
     </div>
-    @NumericRow(Model.GivenCreditLabel, balanceInfo.GivenCredit)
-    @NumericRow(Model.TotalDownlineCreditLabel, balanceInfo.MemberCredit)
-</div>
