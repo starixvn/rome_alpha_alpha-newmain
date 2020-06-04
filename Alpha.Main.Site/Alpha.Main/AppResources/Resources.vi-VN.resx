@@ -609,4 +609,7 @@
   <data name="CreateMemberWithQRCode" xml:space="preserve">
     <value>Tạo Member với mã QR</value>
   </data>
+  <data name="PendingTransfer3rd" xml:space="preserve">
+    <value>Tiền Chưa Chuyển Về Từ Trò Chơi</value>
+  </data>
 </root>

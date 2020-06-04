@@ -2,6 +2,10 @@
 {
     public class BalanceInfo
     {
+        public BalanceInfo()
+        {
+        }
+
         public BalanceInfo(
             string userName,
             decimal cashBalance,
@@ -11,7 +15,8 @@
             decimal todayWinLoss,
             decimal yesterdayWinLoss,
             decimal givenCredit,
-            decimal memberCredit)
+            decimal memberCredit,
+            decimal pendingTransfer3rd)
         {
             UserName = userName;
             CashBalance = cashBalance;
@@ -22,6 +27,7 @@
             YesterdayWinLoss = yesterdayWinLoss;
             GivenCredit = givenCredit;
             MemberCredit = memberCredit;
+            PendingTransfer3rd = pendingTransfer3rd;
         }
 
         public string UserName { get; }
@@ -41,5 +47,7 @@
         public decimal GivenCredit { get; }
 
         public decimal MemberCredit { get; }
+
+        public decimal PendingTransfer3rd { get; }
     }
 }
