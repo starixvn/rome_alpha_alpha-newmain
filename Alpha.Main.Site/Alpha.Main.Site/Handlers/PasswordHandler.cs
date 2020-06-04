@@ -95,7 +95,11 @@
                     NewPassword = message.NewPassword,
                     SubAccountId = message.SubAccountId,
                     CustLevel = Enumeration.FromValue<UserLevel>(message.CustRoleId),
-                    ServerId = message.ServerId
+                    ServerId = message.ServerId,
+                    IndirectCustId = message.IndirectCustId,
+                    IsIndirectLoggedIn = message.IsIndirectLoggedIn,
+                    IndirectSubAccId = message.IndirectSubAccId,
+                    IndirectUsername = message.IndirectUsername
                 });
         }
 
@@ -152,7 +156,11 @@
                     IsCasinoSync = message.IsCasinoSync,
                     IsResetMemberPassword = custLevel.IsMemberLevel(),
                     CustLevel = custLevel,
-                    ServerId = message.ServerId
+                    ServerId = message.ServerId,
+                    IndirectCustId = message.IndirectCustId,
+                    IsIndirectLoggedIn = message.IsIndirectLoggedIn,
+                    IndirectSubAccId = message.IndirectSubAccId,
+                    IndirectUsername = message.IndirectUsername
                 });
         }
 
@@ -224,7 +232,9 @@
                 IsCasinoSync = message.IsCasinoSync,
                 LanguageKey = message.LanguageKey,
                 NewPassword = message.NewPassword,
-                NickName = message.NickName
+                NickName = message.NickName,
+                IsIndirectLoggedIn = message.IsIndirectLoggedIn,
+                IndirectCustId = message.IndirectCustId
             });
         }
 
@@ -243,6 +253,8 @@
                 Nickname = message.NickName,
                 SubUsername = message.SubAccountUsername,
                 Username = message.Username,
+                IsIndirectLoggedIn = message.IsIndirectLoggedIn,
+                IndirectCustId = message.IndirectCustId
             });
         }
 

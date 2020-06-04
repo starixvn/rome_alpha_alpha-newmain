@@ -23,5 +23,13 @@ namespace Alpha.Main.Params.Password
         public UserLevel CustLevel { get; set; }
 
         public int ServerId { get; set; }
+
+        public bool IsIndirectLoggedIn { get; set; }
+
+        public int IndirectCustId { get; set; }
+
+        public int IndirectSubAccId { get; internal set; }
+
+        public string IndirectUsername { get; internal set; }
     }
 }

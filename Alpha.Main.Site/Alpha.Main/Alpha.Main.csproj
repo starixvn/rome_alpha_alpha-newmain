@@ -161,7 +161,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5-indirectlogin-01\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5-indirectlogin-02\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
@@ -248,6 +248,7 @@
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteria.cs" />
     <Compile Include="Criteria\Password\SkipForceChangePasswordCommand.cs" />
+    <Compile Include="Criteria\Password\UpdateLastChangePasswordIndirectAccountCriteria.cs" />
     <Compile Include="Criteria\ProfilePicture\SelectActorProfilePictureCriteria.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureStandbyServerCommand.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureMainServerCommand.cs" />
@@ -316,6 +317,7 @@
     <Compile Include="Params\Nickname\UpdateNicknameLoginOnlyParam.cs" />
     <Compile Include="Params\Otp\ChangeOtpStatusParam.cs" />
     <Compile Include="Params\Otp\RemoveSecretKeyParam.cs" />
+    <Compile Include="Params\Password\UpdateLastChangePasswordIndirectAccountParam.cs" />
     <Compile Include="Params\Password\SkipForceChangePasswordParam.cs" />
     <Compile Include="Params\Password\ResetMainAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ResetSubAccountPasswordParam.cs" />

@@ -65,5 +65,13 @@
         public byte CustRoleId => userSession.RoleId;
 
         public int ServerId => userSession.ServerId;
+
+        public int IndirectCustId => userSession.IndirectCustId;
+
+        public bool IsIndirectLoggedIn => userSession.IsIndirectLoggedIn;
+
+        public int IndirectSubAccId => userSession.IndirectSubAccId;
+
+        public string IndirectUsername => userSession.IndirectUsername;
     }
 }

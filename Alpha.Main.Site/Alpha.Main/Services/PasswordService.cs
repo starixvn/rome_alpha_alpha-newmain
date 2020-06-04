@@ -14,5 +14,7 @@
         Result ChangeSubAccountPassword(ChangeSubAccountPasswordParam param);
 
         Result SkipForceChangePassword(SkipForceChangePasswordParam param);
+
+        void UpdateLastChangePasswordIndirectAccount(UpdateLastChangePasswordIndirectAccountParam param);
     }
 }
