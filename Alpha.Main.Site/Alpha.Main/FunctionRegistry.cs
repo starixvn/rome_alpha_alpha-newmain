@@ -90,7 +90,7 @@ namespace Alpha.Main
                 () => !Current.IsSubAcc
                     && (AppSettings.OfferChatbotSites.Contains("*")
                         || AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase))),
-            ["IndirectLoginAccountMenuItem"] = () => new MenuStatus(() => Current.IsSuper || Current.IsMaster)
+            ["IndirectLoginAccountMenuItem"] = () => new MenuStatus(() => !Current.IsIndirectLoggedIn && (Current.IsSuper || Current.IsMaster))
         };
 
         private static Func<bool> showAccountInfo = () =>

@@ -21,6 +21,10 @@
 
     <div class="userinfo">
         <span class="userName">@Model.Username</span>
+        @if (Sunplus.Agent.Model.Entities.UserSession.Current.IsIndirectLoggedIn)
+        {
+            <span class="indirect-login">&nbsp;</span>
+        }
         <br />
         @if (Model.IsHideNicknameLink)
         {
