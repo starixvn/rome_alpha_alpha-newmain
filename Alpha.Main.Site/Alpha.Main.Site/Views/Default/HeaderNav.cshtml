@@ -60,7 +60,13 @@
                         </a>
                     </div>
                     <div class="userinfo">
-                        <div class="info level username">@Model.Username</div>
+                        <div class="info level username">
+                            @Model.Username
+                            @if (Sunplus.Agent.Model.Entities.UserSession.Current.IsIndirectLoggedIn)
+                            {
+                                <span class="icon-account-circle">&nbsp;</span>
+                            }
+                        </div>
                         <div class="info level nickname">
                             @if (!string.IsNullOrEmpty(Model.NickName))
                             {
