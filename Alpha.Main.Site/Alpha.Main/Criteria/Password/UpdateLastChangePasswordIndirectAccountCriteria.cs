@@ -2,7 +2,7 @@
 
 namespace Alpha.Main.Criteria.Password
 {
-    public class UpdateLastChangePasswordIndirectAccountCriteria : CriteriaBase
+    public class UpdateLastChangePasswordIndirectAccountCriteria : NonQueryCommand
     {
         public int SubAccId { get; set; }
 

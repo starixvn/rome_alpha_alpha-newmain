@@ -234,7 +234,9 @@
                 NewPassword = message.NewPassword,
                 NickName = message.NickName,
                 IsIndirectLoggedIn = message.IsIndirectLoggedIn,
-                IndirectCustId = message.IndirectCustId
+                IndirectCustId = message.IndirectCustId,
+                IndirectSubAccId = message.IndirectSubAccId,
+                IndirectUsername = message.IndirectUsername
             });
         }
 
@@ -254,7 +256,9 @@
                 SubUsername = message.SubAccountUsername,
                 Username = message.Username,
                 IsIndirectLoggedIn = message.IsIndirectLoggedIn,
-                IndirectCustId = message.IndirectCustId
+                IndirectCustId = message.IndirectCustId,
+                IndirectSubAccId = message.IndirectSubAccId,
+                IndirectUsername = message.IndirectUsername
             });
         }
 

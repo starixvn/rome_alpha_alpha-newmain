@@ -117,5 +117,9 @@
         public bool IsIndirectLoggedIn => userSession.IsIndirectLoggedIn;
 
         public int IndirectCustId => userSession.IndirectCustId;
+
+        public int IndirectSubAccId => userSession.IndirectSubAccId;
+
+        public string IndirectUsername => userSession.IndirectUsername;
     }
 }

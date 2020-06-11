@@ -88,6 +88,21 @@
 
             var updateResult = passwordDataAccess.UpdatePassword(criteria);
 
+            if (updateResult.IsSuccessful && param.IsIndirectLoggedIn)
+            {
+                UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                {
+                    CustId = param.IndirectCustId,
+                    CustIdIndirect = param.CustId,
+                    DownlineUsername = param.ActorName,
+                    IP = param.IP,
+                    Language = param.LanguageKey,
+                    SubAccId = param.IndirectSubAccId,
+                    SubAccIdIndirect = param.SubAccountId,
+                    UplineUsername = param.IndirectUsername
+                });
+            }
+
             if (updateResult.IsSuccessful
                 && param.IsCasinoSync)
             {
@@ -159,7 +174,23 @@
                 SubAccId = param.SubAccountId
             };
 
-            return passwordDataAccess.UpdatePassword(criteria);
+            var updateResult = passwordDataAccess.UpdatePassword(criteria);
+            if (updateResult.IsSuccessful && param.IsIndirectLoggedIn)
+            {
+                UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                {
+                    CustId = param.IndirectCustId,
+                    CustIdIndirect = param.CustId,
+                    DownlineUsername = param.ActorName,
+                    IP = param.IP,
+                    Language = param.LanguageKey,
+                    SubAccId = param.IndirectSubAccId,
+                    SubAccIdIndirect = param.SubAccountId,
+                    UplineUsername = param.IndirectUsername
+                });
+            }
+
+            return updateResult;
         }
 
         public Result ResetMainAccountPassword(ResetMainAccountPasswordParam param)
@@ -201,21 +232,6 @@
 
             if (updateResult.IsSuccessful)
             {
-                if (param.IsIndirectLoggedIn)
-                {
-                    UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
-                    {
-                        CustId = param.IndirectCustId,
-                        CustIdIndirect = param.CustId,
-                        DownlineUsername = param.ActorName,
-                        IP = param.IP,
-                        Language = param.LanguageKey,
-                        SubAccId = param.IndirectSubAccId,
-                        SubAccIdIndirect = param.SubAccountId,
-                        UplineUsername = param.IndirectUsername
-                    });
-                }
-
                 if (param.IsCasinoSync)
                 {
                     ChangeCasinoAccountPassword(param.CustId, encodedPassword, param.ActorId, param.ActorName, param.IP);
@@ -292,21 +308,6 @@
 
             if (updateResult.IsSuccessful)
             {
-                if (param.IsIndirectLoggedIn)
-                {
-                    UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
-                    {
-                        CustId = param.IndirectCustId,
-                        CustIdIndirect = param.CustId,
-                        DownlineUsername = param.ActorName,
-                        IP = param.IP,
-                        Language = param.LanguageKey,
-                        SubAccId = param.IndirectSubAccId,
-                        SubAccIdIndirect = param.SubAccountId,
-                        UplineUsername = param.IndirectUsername
-                    });
-                }
-
                 KickoutCustomer(new KickoutCustomerParam(
                     param.CustId,
                     param.CustLevel,
