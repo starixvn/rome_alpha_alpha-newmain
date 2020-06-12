@@ -35,18 +35,10 @@ namespace Alpha.Main
             ["MemberInfoMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewMemberInfo),
             ["TransferMenuItem"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
                 !AuthAppSettings.OfferClearGivenCreditSites.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
-                                                            string.Equals(s, "*", StringComparison.OrdinalIgnoreCase)) ||
-                AuthAppSettings.OfferClearGivenCreditExcludeCustIds.Any(s => string.Equals(s, Current.CustId.ToString()) ||
-                                                                            string.Equals(s, Current.SRecommendId.ToString()) ||
-                                                                            string.Equals(s, Current.MRecommendId.ToString()) ||
-                                                                            string.Equals(s, Current.ARecommendId.ToString()))),
+                                                            string.Equals(s, "*", StringComparison.OrdinalIgnoreCase))),
             ["TransferMenuItemBySite"] = () => new MenuStatus((!Current.IsSubAcc || Current.SubPageAccess.Transfer) &&
                 AuthAppSettings.OfferClearGivenCreditSites.Any(s => string.Equals(s, Current.Site, StringComparison.OrdinalIgnoreCase) ||
-                                                           string.Equals(s, "*", StringComparison.OrdinalIgnoreCase)) &&
-                !AuthAppSettings.OfferClearGivenCreditExcludeCustIds.Any(s => string.Equals(s, Current.CustId.ToString()) ||
-                                                                            string.Equals(s, Current.SRecommendId.ToString()) ||
-                                                                            string.Equals(s, Current.MRecommendId.ToString()) ||
-                                                                            string.Equals(s, Current.ARecommendId.ToString()))),
+                                                           string.Equals(s, "*", StringComparison.OrdinalIgnoreCase))),
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
             ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),
