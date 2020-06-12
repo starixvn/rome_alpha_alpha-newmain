@@ -72,5 +72,7 @@ namespace Alpha.Main.Site.Models.Requests
         public bool ShowCreateMemberByQRCode =>
             userSession.SubPageAccess.CreateAccount 
             && Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel();
+
+        public bool IsIndirectLoggedIn => userSession.IsIndirectLoggedIn;
     }
 }
