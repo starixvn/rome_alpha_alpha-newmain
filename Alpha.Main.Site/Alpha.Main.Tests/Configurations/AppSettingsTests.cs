@@ -307,7 +307,7 @@
         }
 
         [Test]
-        public void IsMBCSite_HasConfigAndValueNotEqualIBCBET_ReturnsFalse()
+        public void IsMBCSite_HasConfigAndValueNotEqual789Y_ReturnsTrue()
         {
             // Arrange
             AppSettings.Settings = new NameValueCollection
@@ -319,7 +319,7 @@
             var actualSetting = AppSettings.IsMBCSite;
 
             // Assert
-            Assert.False(actualSetting);
+            Assert.True(actualSetting);
         }
 
         [Test]

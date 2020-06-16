@@ -153,7 +153,7 @@
 
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "MBC", Justification = "Reviewed!")]
         public static bool IsMBCSite => !string.IsNullOrWhiteSpace(Settings["SiteGroup"])
-            && Settings["SiteGroup"] == "IBCBET";
+            && !Settings["SiteGroup"].Equals("789y", StringComparison.OrdinalIgnoreCase);
 
         public static bool DisabledVietnamese => IsMBCSite;
 
