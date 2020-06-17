@@ -40,7 +40,8 @@
         {
             get
             {
-                return this.userSession.UserName;
+                return userSession.IsSubAcc ? 
+                    userSession.SubUserName : userSession.UserName;
             }
         }
 

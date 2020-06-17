@@ -258,7 +258,9 @@
                 IsIndirectLoggedIn = message.IsIndirectLoggedIn,
                 IndirectCustId = message.IndirectCustId,
                 IndirectSubAccId = message.IndirectSubAccId,
-                IndirectUsername = message.IndirectUsername
+                IndirectUsername = message.IndirectUsername,
+                ActorName = message.SubAccountUsername,
+                ActorId = message.ActorId
             });
         }
 
