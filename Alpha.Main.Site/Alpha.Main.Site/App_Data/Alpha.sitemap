@@ -10,6 +10,10 @@
       <siteMapNode resourceKey="memberOutstandingNew" appPath="ReportsAppPath" url="outstanding/membernew" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="agentOutstandingNew" appPath="ReportsAppPath" url="outstanding/agentnew" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="masterOutstandingNew" appPath="ReportsAppPath" url="outstanding/masternew" roles="Super"></siteMapNode>
+
+      <siteMapNode resourceKey="memberOutstandingNew" appPath="ReportsAppPath" url="outstanding/membernew1" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="agentOutstandingNew" appPath="ReportsAppPath" url="outstanding/agentnew1" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="masterOutstandingNew" appPath="ReportsAppPath" url="outstanding/masternew1" roles="Super"></siteMapNode>
       
       <siteMapNode resourceKey="memberWinLoss" appPath="ReportsAppPath" url="enteredresult/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/agent" roles="Master"></siteMapNode>
