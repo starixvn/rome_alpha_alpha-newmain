@@ -216,11 +216,13 @@
             .Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
             .Select
             (
-                id => string.IsNullOrWhiteSpace(id) ? 0 : 
-                id.Equals("*", StringComparison.OrdinalIgnoreCase) ? int.MaxValue : Convert.ToInt32(id)
+                id => string.IsNullOrWhiteSpace(id) ? 0 : ValueOfNotNullOrWhiteSpace(id)
             );
 
         public static bool IsAllowedIndirectLogin(int srecommend)
             => IndirectLoginSuperIds.Contains(srecommend) || IndirectLoginSuperIds.Any(id => id == int.MaxValue);
+
+        private static int ValueOfNotNullOrWhiteSpace(string value)
+            => value.Equals("*", StringComparison.OrdinalIgnoreCase) ? int.MaxValue : Convert.ToInt32(value);
     }
 }
