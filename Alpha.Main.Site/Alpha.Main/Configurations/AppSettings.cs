@@ -210,5 +210,17 @@
         public static string BannerEnvironment => Settings["Banner:Environment"];
 
         public static string SiteGroup => Settings["SiteGroup"];
+
+        public static IEnumerable<int> IndirectLoginSuperIds
+            => Settings["IndirectLogin:AllowSuperIds"]
+            .Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select
+            (
+                id => string.IsNullOrWhiteSpace(id) ? 0 : 
+                id.Equals("*", StringComparison.OrdinalIgnoreCase) ? int.MaxValue : Convert.ToInt32(id)
+            );
+
+        public static bool IsAllowedIndirectLogin(int srecommend)
+            => IndirectLoginSuperIds.Contains(srecommend) || IndirectLoginSuperIds.Any(id => id == int.MaxValue);
     }
 }
