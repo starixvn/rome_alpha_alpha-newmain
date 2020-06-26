@@ -396,4 +396,7 @@
   <data name="BetChoiceMatching" xml:space="preserve">
     <value>Cược trùng lặp</value>
   </data>
+  <data name="IndirectLoginAccount" xml:space="preserve">
+    <value>Đăng nhập tài khoản gián tiếp</value>
+  </data>
 </root>

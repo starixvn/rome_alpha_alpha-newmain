@@ -389,4 +389,7 @@
   <data name="BetChoiceMatching" xml:space="preserve">
     <value>ตรวจสอบตัวเลือกการเดิมพัน</value>
   </data>
+  <data name="IndirectLoginAccount" xml:space="preserve">
+    <value>บัญชีเพื่อการเข้าสู่ระบบทางอ้อม</value>
+  </data>
 </root>
