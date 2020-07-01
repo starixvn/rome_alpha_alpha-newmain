@@ -34,6 +34,7 @@
             menuItem.Link = node.Url;
             menuItem.AppPath = node["AppPath"];
             menuItem.IsBeta = node["isBeta"] != null && bool.Parse(node["isBeta"]);
+            menuItem.IsNew = node["isNew"] != null && bool.Parse(node["isNew"]);
             menuItem.ByPassAuthorization = node["byPassAuthorization"] == null ? false : bool.Parse(node["byPassAuthorization"]);
             menuItem.SubMenus = new List<IMenuItem>();
         }

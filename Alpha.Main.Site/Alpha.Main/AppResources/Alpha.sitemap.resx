@@ -385,7 +385,8 @@
     <value>Transfer All &amp; Clear Credit</value>
   </data>
   <data name="BetStatistics" xml:space="preserve">
-    <value>Risk Analysis</value></data>
+    <value>Risk Analysis</value>
+  </data>
   <data name="problemAccountList" xml:space="preserve">
     <value>Problem Account List</value>
   </data>
@@ -394,5 +395,8 @@
   </data>
   <data name="BetChoiceMatching" xml:space="preserve">
     <value>Bet Choice Matching</value>
+  </data>
+  <data name="IndirectLoginAccount" xml:space="preserve">
+    <value>Indirect Login Account</value>
   </data>
 </root>

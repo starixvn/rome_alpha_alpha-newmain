@@ -93,5 +93,7 @@
                 return SubMenus.Where(menuItem => menuItem.Status.Visible);
             }
         }
+
+        public bool IsNew { get; set; }
     }
 }

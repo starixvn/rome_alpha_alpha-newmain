@@ -78,7 +78,7 @@
 
         public bool IsInternalWebVPN => message.IsInternalWebVpn;
 
-        public bool IsInternal => message.IsInternal;
+        public bool IsInternal => message.IsInternal || message.IsIndirectLoggedIn;
 
         public string CurrentURLCookieName => CookieHelper.GetCookieNameOfCurrentPage(CustId, SubAccId, encodeDataFunction);
 

@@ -18,6 +18,8 @@
 
         bool IsBeta { get; set; }
 
+        bool IsNew { get; set; }
+
         MenuStatus Status { get; }
 
         bool ShowSubMenus { get; set; }

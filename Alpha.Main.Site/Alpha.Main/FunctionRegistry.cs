@@ -8,6 +8,7 @@ namespace Alpha.Main
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Alpha.Main.Models.Enumerations;
     using Configurations;
     using Fanex.Logging.Extensions.Web;
     using Fanex.Products;
@@ -88,7 +89,9 @@ namespace Alpha.Main
             ["ChatBotMenuItem"] = () => new MenuStatus(
                 () => !Current.IsSubAcc
                     && (AppSettings.OfferChatbotSites.Contains("*")
-                        || AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase)))
+                        || AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase))),
+            ["IndirectLoginAccountMenuItem"] = () => new MenuStatus(
+                () => AppSettings.IsAllowedIndirectLogin(Current.SRecommendId) && !Current.IsIndirectLoggedIn && (Current.IsSuper || Current.IsMaster))
         };
 
         private static Func<bool> showAccountInfo = () =>

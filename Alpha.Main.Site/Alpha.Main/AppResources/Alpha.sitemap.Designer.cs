@@ -385,6 +385,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Indirect Login Account.
+        /// </summary>
+        public static string IndirectLoginAccount {
+            get {
+                return ResourceManager.GetString("IndirectLoginAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IP Matching.
         /// </summary>
         public static string IPMatching {

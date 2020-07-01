@@ -389,4 +389,7 @@
   <data name="BetChoiceMatching" xml:space="preserve">
     <value>以投注選擇核對</value>
   </data>
+  <data name="IndirectLoginAccount" xml:space="preserve">
+    <value>非間接登入帳戶</value>
+  </data>
 </root>

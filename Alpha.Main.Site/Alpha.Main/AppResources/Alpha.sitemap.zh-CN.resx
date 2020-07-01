@@ -389,4 +389,7 @@
   <data name="IPMatching" xml:space="preserve">
     <value>IP核对</value>
   </data>
+  <data name="IndirectLoginAccount" xml:space="preserve">
+    <value>非间接登录账户</value>
+  </data>
 </root>

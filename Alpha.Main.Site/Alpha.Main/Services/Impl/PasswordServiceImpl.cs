@@ -88,6 +88,21 @@
 
             var updateResult = passwordDataAccess.UpdatePassword(criteria);
 
+            if (updateResult.IsSuccessful && param.IsIndirectLoggedIn)
+            {
+                UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                {
+                    CustId = param.IndirectCustId,
+                    CustIdIndirect = param.CustId,
+                    DownlineUsername = param.ActorName,
+                    IP = param.IP,
+                    Language = param.LanguageKey,
+                    SubAccId = param.IndirectSubAccId,
+                    SubAccIdIndirect = param.SubAccountId,
+                    UplineUsername = param.IndirectUsername
+                });
+            }
+
             if (updateResult.IsSuccessful
                 && param.IsCasinoSync)
             {
@@ -159,7 +174,23 @@
                 SubAccId = param.SubAccountId
             };
 
-            return passwordDataAccess.UpdatePassword(criteria);
+            var updateResult = passwordDataAccess.UpdatePassword(criteria);
+            if (updateResult.IsSuccessful && param.IsIndirectLoggedIn)
+            {
+                UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                {
+                    CustId = param.IndirectCustId,
+                    CustIdIndirect = param.CustId,
+                    DownlineUsername = param.ActorName,
+                    IP = param.IP,
+                    Language = param.LanguageKey,
+                    SubAccId = param.IndirectSubAccId,
+                    SubAccIdIndirect = param.SubAccountId,
+                    UplineUsername = param.IndirectUsername
+                });
+            }
+
+            return updateResult;
         }
 
         public Result ResetMainAccountPassword(ResetMainAccountPasswordParam param)
@@ -374,6 +405,23 @@
         private string Decrypt(string password, string encryptKey)
         {
             return aes.Decrypt(password, encryptKey);
+        }
+
+        public void UpdateLastChangePasswordIndirectAccount(UpdateLastChangePasswordIndirectAccountParam param)
+        {
+            var criteria = new UpdateLastChangePasswordIndirectAccountCriteria
+            {
+                CustId = param.CustId,
+                CustIdIndirect = param.CustIdIndirect,
+                DownlineUsername = param.DownlineUsername,
+                IP = param.IP,
+                Language = param.Language,
+                SubAccId = param.SubAccId,
+                SubAccIdIndirect = param.SubAccIdIndirect,
+                UplineUsername = param.UplineUsername
+            };
+
+            dynamicRepository.Execute(criteria);
         }
     }
 }

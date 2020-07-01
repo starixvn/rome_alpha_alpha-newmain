@@ -139,12 +139,17 @@ window.age = window.age || {
             index = index.parent;
         }
 
-        index.location = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
-
         var isInternal = index.$("#isInternal").val();
+        var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
 
         if (isInternal.toString() !== "0") {
-            index.close();
+            $.getJSON(signOutUrl);
+            setTimeout(() => {
+                index.close();
+            }, 1000);
+        }
+        else {
+            index.location = signOutUrl;
         }
     },
     updatePopupTitleAfterLoad: function (popUp, iframe) {
