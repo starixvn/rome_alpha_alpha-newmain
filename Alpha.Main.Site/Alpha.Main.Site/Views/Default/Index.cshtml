@@ -41,10 +41,15 @@
             <span class="icon-progress"></span>
             <span class="txt-progress">@Resources.DataProcessingIsInProgress</span>
         </div>
+        <div class="progress-box collapsed hide" id="um-message-box">
+            <span class="icon-progress"></span>
+            <span class="txt-progress">UM Message is in-progress</span>
+        </div>
     </div>
     @Html.Partial("HiddenFields", Model)
     @Html.Partial("AnnouncementPopup")
     @Html.Partial("DataProccessingPopup")
+    @Html.Partial("UMMessagePopup")
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     @StaticResources.RenderScripts("~/assets/bundles/default-index")

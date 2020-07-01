@@ -129,6 +129,7 @@
 
             container.RegisterPerWebRequest<KickoutCustomerService, KickoutCustomerServiceImpl>();
             container.RegisterPerWebRequest<BannerService, BannerServiceImpl>();
+            container.RegisterPerWebRequest<UMMessageService, UMMessageServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)

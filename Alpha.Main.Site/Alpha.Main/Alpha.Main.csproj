@@ -269,6 +269,7 @@
     <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCounterCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\GetSubAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\GetMainAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\UMMessage\GetUMMessageCriteria.cs" />
     <Compile Include="DataAccesses\Impl\BaseDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\PasswordDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\SecurityCodeDataAccessImpl.cs" />
@@ -293,6 +294,7 @@
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
     <Compile Include="Models\ProfilePicture\ActorProfilePictureModel.cs" />
+    <Compile Include="Models\UMMessage\UMMessageItem.cs" />
     <Compile Include="Models\UnauthorizedResult.cs" />
     <Compile Include="Models\User.cs" >
       <SonarQubeExclude>true</SonarQubeExclude>
@@ -346,6 +348,7 @@
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
     <Compile Include="Services\Impl\NicknameServiceImpl.cs" />
     <Compile Include="Services\Impl\ProfilePictureServices.cs" />
+    <Compile Include="Services\Impl\UMMessageServiceImpl.cs" />
     <Compile Include="Services\KickoutCustomerService.cs" />
     <Compile Include="Services\LogoutService.cs" />
     <Compile Include="Services\MemberRequestsService.cs" />
@@ -365,6 +368,7 @@
     <Compile Include="Services\PasswordService.cs" />
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
+    <Compile Include="Services\UMMessageService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Alpha.Main.Debug.ruleset" />
