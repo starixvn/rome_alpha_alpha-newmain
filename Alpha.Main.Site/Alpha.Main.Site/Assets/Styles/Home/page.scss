@@ -475,6 +475,31 @@ html * {
     border: 0;
 }
 
+
+.float-section {
+    position: fixed;
+    z-index: 100;
+    bottom: 15px;
+    right: 0;
+
+    .maintenance-box {
+        background-color: #fff;
+        border: 1px solid #FF5C00;
+        width: 52px;
+        cursor: pointer;
+        height: 52px;
+        line-height: 52px;
+        box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.15);
+        text-align: center;
+
+        .icon-under-maintenance {
+            font-size: 18px;
+            color: #FF5C00;
+            font-weight: bold;
+        }
+    }
+}
+
 // Data Processing Notification
 .progress-box {
     background-color: #fff;
@@ -485,9 +510,6 @@ html * {
     line-height: 52px;
     margin-top: 10px;
     box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.15);
-    position: absolute;
-    z-index: 100;
-    bottom: 15px;
 
     .txt-progress {
         font-size: 13px;
@@ -514,9 +536,9 @@ html * {
     }
 }
 
-.modal-progress {
+.modal-float {
     position: relative;
-    top: 35%;
+    top: 30%;
     transform: translateY(-35%);
     margin: 0 auto;
 
@@ -529,8 +551,8 @@ html * {
         padding: 0;
         line-height: 51px;
 
-        .icon-progress {
-            font-size: 24px;
+        [class*="icon-"] {
+            font-size: 16px;
             vertical-align: middle;
             padding-right: 12px;
         }
@@ -539,15 +561,27 @@ html * {
             font-size: 14px;
             color: #FF5C00;
         }
+
+        .icon-close {
+            top: 8px;
+        }
     }
 
     .modal-body {
         padding: 8px 0 16px;
         font-size: 13px;
     }
+
+    .modal-footer {
+        padding: 0;
+        text-align: left;
+        label {
+            color: inherit;
+            font-size: inherit;
+            cursor: pointer;
+        }
+    }
 }
-
-
 
 @media only screen and (min-device-width: 1043px) {
     body {
