@@ -491,6 +491,8 @@ html * {
         line-height: 52px;
         box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.15);
         text-align: center;
+        animation: float 6s ease-in-out infinite;
+        transform: translatey(0px);
 
         .icon-under-maintenance {
             font-size: 18px;
@@ -580,6 +582,23 @@ html * {
             font-size: inherit;
             cursor: pointer;
         }
+    }
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+        transform: translatey(-20px);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
     }
 }
 
