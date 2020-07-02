@@ -63,9 +63,9 @@ body {
     margin-left: calculateScale(-2px);
     margin-top: calculateScale(-4px);
 }
-
+/*************************  Float section ******************************/  
 .float-section {
-    left: 0;
+    left: 16px;
 
     .icon-under-maintenance {
         font-size: calculateScale(18px);

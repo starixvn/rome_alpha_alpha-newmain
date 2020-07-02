@@ -619,12 +619,15 @@ html * {
     }
 
     .modal-footer {
-        padding: 0;
+        padding: 0 0 12px 0;
         text-align: left;
         label {
             color: inherit;
             font-size: inherit;
             cursor: pointer;
+            input[type="checkbox"] {
+                padding-right: 12px;
+            }
         }
     }
 }
