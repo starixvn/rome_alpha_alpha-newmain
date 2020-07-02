@@ -67,12 +67,13 @@ var alpha = {
 
             if (isInternal.toString() !== "0") {
                 $.getJSON(signOutUrl);
-                setTimeout(() => {
-                    index.close();
-                }, 1000);
             }
             else {
                 index.location = signOutUrl;
+            }
+
+            if (isInternal.toString() !== "0") {
+                setTimeout(index.close(), 1000);
             }
         },
         isIe: function () {
