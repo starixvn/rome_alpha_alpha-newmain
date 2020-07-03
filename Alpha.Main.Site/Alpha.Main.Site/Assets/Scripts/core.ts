@@ -66,14 +66,14 @@ var alpha = {
             var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
 
             if (isInternal.toString() !== "0") {
-                $.getJSON(signOutUrl);
+                $.ajax(signOutUrl, {
+                    success: function () {
+                        index.close();
+                    }
+                });
             }
             else {
                 index.location = signOutUrl;
-            }
-
-            if (isInternal.toString() !== "0") {
-                setTimeout(index.close(), 1000);
             }
         },
         isIe: function () {
