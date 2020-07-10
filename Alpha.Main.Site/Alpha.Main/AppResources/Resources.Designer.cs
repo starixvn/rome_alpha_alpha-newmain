@@ -1223,6 +1223,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System is under maintenance.
+        /// </summary>
+        public static string SystemUnderMaintenance {
+            get {
+                return ResourceManager.GetString("SystemUnderMaintenance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to System.
         /// </summary>
         public static string systemUpdate {

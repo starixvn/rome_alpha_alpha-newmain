@@ -613,4 +613,7 @@
   <data name="PendingTransfer3rd" xml:space="preserve">
     <value>3rd Party Pending Transfer</value>
   </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>System is under maintenance</value>
+  </data>
 </root>
