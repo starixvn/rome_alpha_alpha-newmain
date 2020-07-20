@@ -616,6 +616,18 @@ html * {
     .modal-body {
         padding: 8px 0 16px;
         font-size: 13px;
+        max-height: 500px;
+        overflow: auto;
+    }
+
+    #um-message-popup-body {
+        margin-top: 6px;
+        @media only screen and (max-device-width: $screen-device-greater768) {
+            line-height: 26px;
+        }
+        .um-message-item {
+            margin-bottom: 6px;
+        }
     }
 
     .modal-footer {
@@ -759,5 +771,5 @@ html * {
 }
 
 .modal-maintenance {
-    top: 10%;
+    top: 20%;
 }
