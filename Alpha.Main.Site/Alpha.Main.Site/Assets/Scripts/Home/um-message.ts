@@ -88,7 +88,9 @@
         for (var i = 0, max = data.length; i < max; i++) {
             const datum = data[i];
             idArray.push(datum.Id);
-            messageArray.push("- " + datum.Message);
+            messageArray.push('<p class="um-message-item">- ');
+            messageArray.push(datum.Message);
+            messageArray.push("</p>");
 
             if (this.umMessageData.indexOf(datum.Id) === -1) {
                 hasNewMessage = true;
@@ -99,7 +101,7 @@
 
         return {
             hasNewMessage: hasNewMessage,
-            message: messageArray.join("<br/>")
+            message: messageArray.join("")
         };
     }
 
