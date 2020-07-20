@@ -4,7 +4,7 @@
     $umMessagePopup: JQuery;
     $umMessagePopupBody: JQuery;
     umMessageData: Array<number> = [];
-    getUMMessagesTimeout = 1000 * 60; // 1min
+    getUMMessagesTimeout = 1000 * 5; // 1min
     getUMMessagesUrl = alpha.urls.mainRootPath + "UMMessage/Get";
     doNotShowAgainKey = "UMMessageDoNotShowAgain";
 
@@ -21,7 +21,7 @@
     private cacheDOMElements() {
         this.$umMessageBox = this.$("#um-message-box");
         this.$umMessagePopup = this.$("#um-message-popup");
-        this.$umMessagePopupBody = this.$umMessagePopup.find(".modal-body");
+        this.$umMessagePopupBody = this.$umMessagePopup.find("#um-message-popup-body");
     }
 
     private registerEvents() {
@@ -88,7 +88,7 @@
         for (var i = 0, max = data.length; i < max; i++) {
             const datum = data[i];
             idArray.push(datum.Id);
-            messageArray.push(datum.Message);
+            messageArray.push("- " + datum.Message);
 
             if (this.umMessageData.indexOf(datum.Id) === -1) {
                 hasNewMessage = true;
@@ -99,7 +99,7 @@
 
         return {
             hasNewMessage: hasNewMessage,
-            message: messageArray.join("<br/><br/>")
+            message: messageArray.join("<br/>")
         };
     }
 

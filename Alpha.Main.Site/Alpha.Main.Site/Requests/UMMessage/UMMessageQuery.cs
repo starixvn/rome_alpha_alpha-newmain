@@ -6,7 +6,7 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
 
-    public class UMMessageQuery : IAsyncRequest<IEnumerable<UMMessageItem>>
+    public class UMMessageQuery : IAsyncRequest<IEnumerable<MessageDTO>>
     {
         private readonly IUserSession userSession;
 
@@ -19,6 +19,8 @@
         {
             this.userSession = userSession;
         }
+
+        public int CustId => userSession.CustId;
 
         public string Language => userSession.Language;
     }

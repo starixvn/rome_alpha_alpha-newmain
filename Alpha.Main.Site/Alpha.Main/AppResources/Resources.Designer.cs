@@ -403,6 +403,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GMT+8.
+        /// </summary>
+        public static string GMT8 {
+            get {
+                return ResourceManager.GetString("GMT8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Got it.
         /// </summary>
         public static string GotIt {
@@ -1408,6 +1417,60 @@ namespace Alpha.Main.AppResources {
         public static string turnover {
             get {
                 return ResourceManager.GetString("turnover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Settings.
+        /// </summary>
+        public static string UMCustomerSettings {
+            get {
+                return ResourceManager.GetString("UMCustomerSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UM for.
+        /// </summary>
+        public static string UMFor {
+            get {
+                return ResourceManager.GetString("UMFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to from.
+        /// </summary>
+        public static string UMFrom {
+            get {
+                return ResourceManager.GetString("UMFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here is the maintenance schedule:.
+        /// </summary>
+        public static string UMSchedule {
+            get {
+                return ResourceManager.GetString("UMSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to During the maintenance period, these settings cannot be changed. We are sorry for any inconvenience caused..
+        /// </summary>
+        public static string UMSorryForInconvenience {
+            get {
+                return ResourceManager.GetString("UMSorryForInconvenience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to to.
+        /// </summary>
+        public static string UMTo {
+            get {
+                return ResourceManager.GetString("UMTo", resourceCulture);
             }
         }
         

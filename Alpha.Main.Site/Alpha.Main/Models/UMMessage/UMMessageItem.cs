@@ -1,53 +1,47 @@
 ﻿namespace Alpha.Main.Models.UMMessage
 {
+    using System;
+
     public class UMMessageItem
     {
         public UMMessageItem()
         {
         }
 
-        public UMMessageItem(int id, string message)
-        {
-            Id = id;
-            Message = message;
-        }
-
         public UMMessageItem(
-            int id,
-            string message_EN,
-            string message_CS,
-            string message_CH,
-            string message_TH,
-            string message_JP,
-            string message_KO,
-            string message_VI)
+            int productId,
+            int sportType,
+            int betType,
+            bool isLive,
+            byte settingType,
+            DateTime beginTime,
+            DateTime endTime,
+            byte[] time_Stamp)
         {
-            Id = id;
-            Message_EN = message_EN;
-            Message_CS = message_CS;
-            Message_CH = message_CH;
-            Message_TH = message_TH;
-            Message_JP = message_JP;
-            Message_KO = message_KO;
-            Message_VI = message_VI;
+            ProductId = productId;
+            SportType = sportType;
+            BetType = betType;
+            IsLive = isLive;
+            SettingType = settingType;
+            BeginTime = beginTime;
+            EndTime = endTime;
+            Time_Stamp = time_Stamp;
         }
 
-        public int Id { get; }
+        public int ProductId { get; }
 
-        public string Message { get; }
+        public int SportType { get; }
 
-        public string Message_EN { get; }
+        public int BetType { get; }
 
-        public string Message_CS { get; }
+        public bool IsLive { get; }
 
-        public string Message_CH { get; }
+        public byte SettingType { get; }
 
-        public string Message_TH { get; }
+        public DateTime BeginTime { get; }
 
-        public string Message_JP { get; }
+        public DateTime EndTime { get; }
 
-        public string Message_KO { get; }
-
-        public string Message_VI { get; }
+        public byte[] Time_Stamp { get; }
     }
 }

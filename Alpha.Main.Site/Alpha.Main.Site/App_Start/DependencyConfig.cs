@@ -1,10 +1,16 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Reflection;
+    using System.Web.Mvc;
     using Alpha.Main.ProfilePicture.Services;
     using Chatbot.Client.Services;
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Data.Repository;
+    using Fanex.RemotingRef;
     using Handlers;
     using Helpers;
     using Main.Helpers;
@@ -24,11 +30,6 @@
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Reflection;
-    using System.Web.Mvc;
     using Web.Helpers;
     using Web.Helpers.Impl;
 
@@ -81,12 +82,14 @@
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Reviewed!")]
         private static void RegisterServices(Container container)
         {
+            container.Register<IRemotingRefService, RemotingRefService>(Lifestyle.Singleton);
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
             container.Register(() => Fanex.Logging.Logger.Log, Lifestyle.Singleton);
 
             container.RegisterPerWebRequest<IUserSession, UserSessionExt>();
             container.RegisterPerWebRequest<MenuItemBuilder, MenuItemBuilderImpl>();
+            container.RegisterSingleton<CacheRefService, CacheRefServiceImpl>();
 
             container.RegisterPerWebRequest<SiteMenuService, SiteMenuServiceImpl>();
             container.Register<ProfilePictureServices, ProfilePictureServicesImpl>(Lifestyle.Scoped);

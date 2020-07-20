@@ -3,9 +3,10 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using Alpha.Main.Models.UMMessage;
+    using Alpha.Main.Params.UMMessage;
 
     public interface UMMessageService
     {
-        Task<IEnumerable<UMMessageItem>> GetMessagesAsync(string language);
+        Task<IEnumerable<MessageDTO>> GetMessagesAsync(UMMessageParam param);
     }
 }

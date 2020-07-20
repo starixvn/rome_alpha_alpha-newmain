@@ -3,10 +3,14 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Resources;
     using System.Threading;
     using System.Threading.Tasks;
+    using Alpha.Main.AppResources;
     using Alpha.Main.Criteria.UMMessage;
+    using Alpha.Main.Extensions;
     using Alpha.Main.Models.UMMessage;
+    using Alpha.Main.Params.UMMessage;
     using Fanex.Caching;
     using Fanex.Data.Repository;
 
@@ -16,15 +20,19 @@
         private const string UMMessageCacheKey = "Alpha.Main.Services.Impl.UMMessageService";
 
         private readonly IDynamicRepository dynamicRepository;
+        private readonly CacheRefService cacheRefService;
+        private readonly ResourceManager settingTypeResource;
 
-        public UMMessageServiceImpl(IDynamicRepository dynamicRepository)
+        public UMMessageServiceImpl(IDynamicRepository dynamicRepository, CacheRefService cacheRefService)
         {
             this.dynamicRepository = dynamicRepository;
+            this.cacheRefService = cacheRefService;
+            settingTypeResource = new ResourceManager(typeof(SettingType));
         }
 
-        public async Task<IEnumerable<UMMessageItem>> GetMessagesAsync(string language)
+        public async Task<IEnumerable<MessageDTO>> GetMessagesAsync(UMMessageParam param)
         {
-            var messages = CacheService.Get<List<UMMessageItem>>(UMMessageCacheKey);
+            IEnumerable<MessageDTO> messages = CacheService.Get<List<MessageDTO>>(GetUMMessageCacheKey(param.Language));
 
             if (messages == null)
             {
@@ -34,7 +42,7 @@
 
                     try
                     {
-                        await GetMessagesAsync();
+                        messages = await GetRawMessagesAsync(param);
                     }
                     finally
                     {
@@ -43,56 +51,45 @@
                 }
             }
 
-            return messages.Select(message => GetMessage(message, language));
+            return messages;
         }
 
-        private async Task<List<UMMessageItem>> GetMessagesAsync()
+        private async Task<IEnumerable<MessageDTO>> GetRawMessagesAsync(UMMessageParam param)
         {
-            var messages = (await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria())).ToList();
+            var rawMessages = await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param));
+            var messages = BuildMessages(rawMessages).ToList();
+
             CacheService.Set(
-                UMMessageCacheKey,
+                GetUMMessageCacheKey(param.Language),
                 messages,
                 new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(CacheInSeconds)));
 
             return messages;
         }
 
-        private static UMMessageItem GetMessage(UMMessageItem message, string language)
+        private IEnumerable<MessageDTO> BuildMessages(IEnumerable<UMMessageItem> messages)
         {
-            string content;
-
-            switch (language)
+            foreach (var message in messages)
             {
-                case "ja-JP":
-                    content = message.Message_JP;
-                    break;
-
-                case "ko-KR":
-                    content = message.Message_KO;
-                    break;
-
-                case "th-TH":
-                    content = message.Message_TH;
-                    break;
-
-                case "vi-VN":
-                    content = message.Message_VI;
-                    break;
-
-                case "zh-CN":
-                    content = message.Message_CS;
-                    break;
-
-                case "zh-TW":
-                    content = message.Message_CH;
-                    break;
-
-                default:
-                    content = message.Message_EN;
-                    break;
+                yield return BuildMessage(message);
             }
-
-            return new UMMessageItem(message.Id, content);
         }
+
+        private MessageDTO BuildMessage(UMMessageItem message)
+            => new MessageDTO(
+                BitConverter.ToInt64(message.Time_Stamp, 0),
+                string.Format(
+                    "{0}: {1} {2} {3} {4} ({5}) {6} {7} ({5})",
+                    cacheRefService.GetProductName(message.ProductId),
+                    Resources.UMFor,
+                    message.SettingType == 0 ? Resources.UMCustomerSettings : settingTypeResource.GetString($"_{message.SettingType}"),
+                    Resources.UMFrom,
+                    message.BeginTime.ToLongDateWithSlash(),
+                    Resources.GMT8,
+                    Resources.UMTo,
+                    message.EndTime.ToLongDateWithSlash()));
+
+        private static string GetUMMessageCacheKey(string language)
+            => $"{UMMessageCacheKey}-{language}";
     }
 }

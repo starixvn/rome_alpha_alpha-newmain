@@ -547,4 +547,10 @@
   <data name="PendingTransfer3rd" xml:space="preserve">
     <value>บุคคลที่สามรอการถ่ายโอน</value>
   </data>
+  <data name="UMFrom" xml:space="preserve">
+    <value>จาก</value>
+  </data>
+  <data name="UMTo" xml:space="preserve">
+    <value>ถึง</value>
+  </data>
 </root>

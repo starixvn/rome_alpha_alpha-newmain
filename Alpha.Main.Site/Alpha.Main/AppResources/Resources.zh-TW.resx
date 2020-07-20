@@ -550,4 +550,10 @@
   <data name="PendingTransfer3rd" xml:space="preserve">
     <value>第三方待定轉賬</value>
   </data>
+  <data name="UMFrom" xml:space="preserve">
+    <value>從</value>
+  </data>
+  <data name="UMTo" xml:space="preserve">
+    <value>到</value>
+  </data>
 </root>

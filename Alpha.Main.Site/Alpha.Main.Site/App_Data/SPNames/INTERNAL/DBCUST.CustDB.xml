@@ -44,7 +44,12 @@
     <Setting Key="Age_CustSubInsNickname" SpName="Age_CustSubInsNickname" DbName="DBCust.CustDB.BODBDownlineNetView" Plain="0" />
     <Setting Key="Age_CustSubUpdNicknameLoginOnly" SpName="Age_CustSubUpdNicknameLoginOnly" DbName="DBCust.CustDB.BODBDownlineNetView" Plain="0" />
   </Function>
+  
   <Function Name="Indirect login">
     <Setting Key="Age_CustomerIndirectLoginAccountUpd" SpName="Age_CustomerIndirectLoginAccountUpd" DbName="DBCust.CustDB.BODBDownlineNetView" Plain="0" />
+  </Function>
+
+  <Function Name="UM Message">
+    <Setting Key="Acc_CheckUM" SpName="Acc_CheckUM" DbName="DBCust.CustDB.BODBDownlineNetView" Plain="0" />
   </Function>
 </Functions>
