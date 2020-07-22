@@ -6,7 +6,7 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
 
-    public class UMMessageQuery : IAsyncRequest<IEnumerable<MessageDTO>>
+    public class UMMessageQuery : IAsyncRequest<IEnumerable<UMMessageDTO>>
     {
         private readonly IUserSession userSession;
 

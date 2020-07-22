@@ -315,7 +315,9 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\Impl\ExceptionHandlerWrapper.cs" />
-    <Compile Include="Helpers\Impl\JsonHelperImpl.cs" />
+    <Compile Include="Helpers\Impl\JsonHelperImpl.cs">
+	  <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Helpers\Impl\SiteMapReaderImpl.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\SiteMapReader.cs" />
@@ -326,7 +328,7 @@
     <Compile Include="Models\BalanceInfo\BalanceInfo.cs" />
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
     <Compile Include="Models\ProfilePicture\ActorProfilePictureModel.cs" />
-    <Compile Include="Models\UMMessage\MessageDTO.cs" />
+    <Compile Include="Models\UMMessage\UMMessageDTO.cs" />
     <Compile Include="Models\UMMessage\UMMessageItem.cs" />
     <Compile Include="Models\UnauthorizedResult.cs" />
     <Compile Include="Models\User.cs" >
@@ -374,7 +376,9 @@
     <Compile Include="Services\AesService.cs" />
     <Compile Include="Services\BannerService.cs" />
     <Compile Include="Services\CacheRefService.cs" />
-    <Compile Include="Services\Impl\AesServiceImpl.cs" />
+    <Compile Include="Services\Impl\AesServiceImpl.cs">
+	  <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Services\Impl\BannerServiceImpl.cs" />
     <Compile Include="Services\Impl\CacheRefServiceImpl.cs" />
     <Compile Include="Services\Impl\KickoutCustomerServiceImpl.cs" />

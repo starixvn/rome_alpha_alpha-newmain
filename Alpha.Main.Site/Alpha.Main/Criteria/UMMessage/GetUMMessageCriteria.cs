@@ -32,6 +32,6 @@
             => "Acc_CheckUM";
 
         public override bool IsValid()
-            => true;
+            => CustId > 0;
     }
 }

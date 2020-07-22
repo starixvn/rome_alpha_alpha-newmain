@@ -8,9 +8,9 @@
     using Alpha.Main.Site.Requests.UMMessage;
     using MediatR;
 
-    public class UMMessageHandler : IAsyncRequestHandler<UMMessageQuery, IEnumerable<MessageDTO>>
+    public class UMMessageHandler : IAsyncRequestHandler<UMMessageQuery, IEnumerable<UMMessageDTO>>
     {
-        private const int LockEditFunctionType = 1;
+        private const byte LockEditFunctionType = 1;
 
         private readonly UMMessageService messageService;
 
@@ -19,7 +19,7 @@
             this.messageService = messageService;
         }
 
-        public async Task<IEnumerable<MessageDTO>> Handle(UMMessageQuery message)
+        public async Task<IEnumerable<UMMessageDTO>> Handle(UMMessageQuery message)
             => await messageService.GetMessagesAsync(
                 new UMMessageParam(message.CustId, LockEditFunctionType, message.Language));
     }

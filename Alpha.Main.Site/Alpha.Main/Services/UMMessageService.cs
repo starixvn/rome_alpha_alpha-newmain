@@ -7,6 +7,6 @@
 
     public interface UMMessageService
     {
-        Task<IEnumerable<MessageDTO>> GetMessagesAsync(UMMessageParam param);
+        Task<IEnumerable<UMMessageDTO>> GetMessagesAsync(UMMessageParam param);
     }
 }

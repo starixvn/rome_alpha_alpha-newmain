@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Models.UMMessage
 {
-    public class MessageDTO
+    public class UMMessageDTO
     {
-        public MessageDTO(long id, string message)
+        public UMMessageDTO(long id, string message)
         {
             Id = id;
             Message = message;

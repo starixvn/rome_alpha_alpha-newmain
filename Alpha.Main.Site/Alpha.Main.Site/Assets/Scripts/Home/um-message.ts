@@ -85,7 +85,7 @@
         let messageArray: Array<string> = [];
         let hasNewMessage = false;
 
-        for (var i = 0, max = data.length; i < max; i++) {
+        for (let i = 0, max = data.length; i < max; i++) {
             const datum = data[i];
             idArray.push(datum.Id);
             messageArray.push('<li class="um-message-item">- ');

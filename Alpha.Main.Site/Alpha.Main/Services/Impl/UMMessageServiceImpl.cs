@@ -30,9 +30,9 @@
             settingTypeResource = new ResourceManager(typeof(SettingType));
         }
 
-        public async Task<IEnumerable<MessageDTO>> GetMessagesAsync(UMMessageParam param)
+        public async Task<IEnumerable<UMMessageDTO>> GetMessagesAsync(UMMessageParam param)
         {
-            IEnumerable<MessageDTO> messages = CacheService.Get<List<MessageDTO>>(GetUMMessageCacheKey(param.Language));
+            IEnumerable<UMMessageDTO> messages = CacheService.Get<List<UMMessageDTO>>(GetUMMessageCacheKey(param.Language));
 
             if (messages == null)
             {
@@ -42,7 +42,7 @@
 
                     try
                     {
-                        messages = await GetRawMessagesAsync(param);
+                        messages = await GetMessagesDTOAsync(param);
                     }
                     finally
                     {
@@ -54,7 +54,7 @@
             return messages;
         }
 
-        private async Task<IEnumerable<MessageDTO>> GetRawMessagesAsync(UMMessageParam param)
+        private async Task<IEnumerable<UMMessageDTO>> GetMessagesDTOAsync(UMMessageParam param)
         {
             var rawMessages = await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param));
             var messages = BuildMessages(rawMessages).ToList();
@@ -67,7 +67,7 @@
             return messages;
         }
 
-        private IEnumerable<MessageDTO> BuildMessages(IEnumerable<UMMessageItem> messages)
+        private IEnumerable<UMMessageDTO> BuildMessages(IEnumerable<UMMessageItem> messages)
         {
             foreach (var message in messages)
             {
@@ -75,8 +75,8 @@
             }
         }
 
-        private MessageDTO BuildMessage(UMMessageItem message)
-            => new MessageDTO(
+        private UMMessageDTO BuildMessage(UMMessageItem message)
+            => new UMMessageDTO(
                 BitConverter.ToInt64(message.Time_Stamp, 0),
                 string.Format(
                     "{0}: {1} {2} {3} {4} ({5}) {6} {7} ({5})",
