@@ -616,17 +616,34 @@ html * {
     .modal-body {
         padding: 8px 0 16px;
         font-size: 13px;
-        max-height: 500px;
+        max-height: 600px;
         overflow: auto;
+        line-height: 18px;
+
+        @media only screen and (max-device-width: $screen-device-greater768) {
+            line-height: 22px;
+        }
+
+        @media screen and (max-device-width: $screen-device-greater768) and (orientation: "portrait") {
+            max-height: 600px;
+        }
+
+        @media screen and (max-device-width: $screen-device-greater768) and (orientation : landscape) {
+            max-height: 320px;
+        }
     }
 
     #um-message-popup-body {
         margin-top: 6px;
-        @media only screen and (max-device-width: $screen-device-greater768) {
-            line-height: 26px;
-        }
+        padding-left: 16px;
+
         .um-message-item {
             margin-bottom: 6px;
+            line-height: 18px;
+
+            @media only screen and (max-device-width: $screen-device-greater768) {
+                line-height: 26px;
+            }
         }
     }
 
