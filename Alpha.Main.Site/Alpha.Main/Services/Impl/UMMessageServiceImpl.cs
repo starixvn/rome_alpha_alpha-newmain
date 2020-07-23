@@ -7,6 +7,7 @@
     using System.Threading;
     using System.Threading.Tasks;
     using Alpha.Main.AppResources;
+    using Alpha.Main.Constants;
     using Alpha.Main.Criteria.UMMessage;
     using Alpha.Main.Extensions;
     using Alpha.Main.Models.UMMessage;
@@ -71,23 +72,34 @@
         {
             foreach (var message in messages)
             {
-                yield return BuildMessage(message);
+                if (message.FunctionType == UMFunctionType.LockEdit)
+                {
+                    yield return BuildCustomerSettingsMessage(message);
+                }
             }
         }
 
-        private UMMessageDTO BuildMessage(UMMessageItem message)
+        private UMMessageDTO BuildCustomerSettingsMessage(UMMessageItem message)
             => new UMMessageDTO(
                 BitConverter.ToInt64(message.Time_Stamp, 0),
                 string.Format(
-                    "{0}: {1} {2} {3} {4} ({5}) {6} {7} ({5})",
-                    cacheRefService.GetProductName(message.ProductId),
-                    Resources.UMFor,
-                    message.SettingType == 0 ? Resources.UMCustomerSettings : settingTypeResource.GetString($"_{message.SettingType}"),
+                    "{0}: {1} {2} {3} {4} {5}",
+                    GetProductOrSportType(message.ProductId, message.SportType),
+                    settingTypeResource.GetString($"_{message.SettingType}"),
                     Resources.UMFrom,
                     message.BeginTime.ToLongDateWithSlash(),
-                    Resources.GMT8,
                     Resources.UMTo,
                     message.EndTime.ToLongDateWithSlash()));
+
+        private string GetProductOrSportType(int productId, int sportTypeId)
+        {
+            if (sportTypeId > 0)
+            {
+                return cacheRefService.GetSportName(sportTypeId);
+            }
+
+            return productId == 0 ? Resources.AllProducts : cacheRefService.GetProductName(productId);
+        }
 
         private static string GetUMMessageCacheKey(string language)
             => $"{UMMessageCacheKey}-{language}";

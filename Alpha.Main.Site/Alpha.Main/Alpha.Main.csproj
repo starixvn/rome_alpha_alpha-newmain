@@ -259,6 +259,7 @@
     <Compile Include="Constants\SelfdestructionPeriod.cs" />
     <Compile Include="Constants\MessageType.cs" />
     <Compile Include="Constants\ProductId.cs" />
+    <Compile Include="Constants\UMFunctionType.cs" />
     <Compile Include="Criteria\Banner\GetBannerCriteria.cs" />
     <Compile Include="Criteria\KickoutCustomerCriteria.cs" />
     <Compile Include="Criteria\LogoutCommand.cs" />
@@ -308,7 +309,9 @@
     <Compile Include="DataAccesses\PasswordDataAccess.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccess.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccess.cs" />
-    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="FunctionRegistry.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -316,7 +319,7 @@
     <Compile Include="Helpers\CookieHelper.cs" />
     <Compile Include="Helpers\Impl\ExceptionHandlerWrapper.cs" />
     <Compile Include="Helpers\Impl\JsonHelperImpl.cs">
-	  <SonarQubeExclude>true</SonarQubeExclude>
+      <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Helpers\Impl\SiteMapReaderImpl.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
@@ -377,7 +380,7 @@
     <Compile Include="Services\BannerService.cs" />
     <Compile Include="Services\CacheRefService.cs" />
     <Compile Include="Services\Impl\AesServiceImpl.cs">
-	  <SonarQubeExclude>true</SonarQubeExclude>
+      <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Services\Impl\BannerServiceImpl.cs" />
     <Compile Include="Services\Impl\CacheRefServiceImpl.cs" />

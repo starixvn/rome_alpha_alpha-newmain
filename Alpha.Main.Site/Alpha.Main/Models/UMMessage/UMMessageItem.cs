@@ -11,18 +11,16 @@
         public UMMessageItem(
             int productId,
             int sportType,
-            int betType,
-            bool isLive,
             byte settingType,
+            byte functionType,
             DateTime beginTime,
             DateTime endTime,
             byte[] time_Stamp)
         {
             ProductId = productId;
             SportType = sportType;
-            BetType = betType;
-            IsLive = isLive;
             SettingType = settingType;
+            FunctionType = functionType;
             BeginTime = beginTime;
             EndTime = endTime;
             Time_Stamp = time_Stamp;
@@ -32,11 +30,9 @@
 
         public int SportType { get; }
 
-        public int BetType { get; }
-
-        public bool IsLive { get; }
-
         public byte SettingType { get; }
+
+        public byte FunctionType { get; }
 
         public DateTime BeginTime { get; }
 

@@ -12,6 +12,9 @@
             this.remotingRefService = remotingRefService;
         }
 
+        public string GetSportName(int sportTypeId)
+            => remotingRefService.GetSportName(sportTypeId.ToString(), LanguageCode);
+
         public string GetProductName(int productId)
             => remotingRefService.GetResourceDataByRefIdAndResourceId(
                 "Product",

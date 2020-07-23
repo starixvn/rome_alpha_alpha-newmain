@@ -10,8 +10,6 @@
 
     public class UMMessageHandler : IAsyncRequestHandler<UMMessageQuery, IEnumerable<UMMessageDTO>>
     {
-        private const byte LockEditFunctionType = 1;
-
         private readonly UMMessageService messageService;
 
         public UMMessageHandler(UMMessageService messageService)
@@ -20,7 +18,6 @@
         }
 
         public async Task<IEnumerable<UMMessageDTO>> Handle(UMMessageQuery message)
-            => await messageService.GetMessagesAsync(
-                new UMMessageParam(message.CustId, LockEditFunctionType, message.Language));
+            => await messageService.GetMessagesAsync(new UMMessageParam(message.CustId, message.Language));
     }
 }

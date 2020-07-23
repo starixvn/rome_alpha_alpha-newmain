@@ -4,8 +4,7 @@
     {
         public UMMessageParam(
             int custId,
-            byte functionType,
-            string language) : this(custId, null, null, null, functionType, language)
+            string language) : this(custId, null, null, null, null, language)
         {
         }
 
@@ -14,7 +13,7 @@
             int? productId,
             int? sportType,
             byte? settingType,
-            byte functionType,
+            byte? functionType,
             string language)
         {
             CustId = custId;
@@ -33,7 +32,7 @@
 
         public byte? SettingType { get; }
 
-        public byte FunctionType { get; }
+        public byte? FunctionType { get; }
 
         public string Language { get; }
     }

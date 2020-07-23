@@ -115,6 +115,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All products.
+        /// </summary>
+        public static string AllProducts {
+            get {
+                return ResourceManager.GetString("AllProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Announcement.
         /// </summary>
         public static string announcement {
@@ -399,15 +408,6 @@ namespace Alpha.Main.AppResources {
         public static string givenCredit {
             get {
                 return ResourceManager.GetString("givenCredit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to GMT+8.
-        /// </summary>
-        public static string GMT8 {
-            get {
-                return ResourceManager.GetString("GMT8", resourceCulture);
             }
         }
         
@@ -1421,24 +1421,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customer Settings.
-        /// </summary>
-        public static string UMCustomerSettings {
-            get {
-                return ResourceManager.GetString("UMCustomerSettings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to UM for.
-        /// </summary>
-        public static string UMFor {
-            get {
-                return ResourceManager.GetString("UMFor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to from.
         /// </summary>
         public static string UMFrom {
@@ -1448,7 +1430,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Here is the maintenance schedule:.
+        ///   Looks up a localized string similar to Here is the maintenance schedule (GTM +8):.
         /// </summary>
         public static string UMSchedule {
             get {

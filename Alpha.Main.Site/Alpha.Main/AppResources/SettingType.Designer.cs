@@ -61,6 +61,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Settings.
+        /// </summary>
+        internal static string _0 {
+            get {
+                return ResourceManager.GetString("_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Position Taking.
         /// </summary>
         internal static string _1 {
@@ -79,7 +88,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status.
+        ///   Looks up a localized string similar to Product Status.
         /// </summary>
         internal static string _11 {
             get {
@@ -88,7 +97,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WinLossLimit.
+        ///   Looks up a localized string similar to Win Loss Limit.
         /// </summary>
         internal static string _12 {
             get {
@@ -97,7 +106,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status.
+        ///   Looks up a localized string similar to Product Status.
         /// </summary>
         internal static string _13 {
             get {
@@ -133,7 +142,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to StakeLevel.
+        ///   Looks up a localized string similar to Stake Level.
         /// </summary>
         internal static string _17 {
             get {
@@ -178,7 +187,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status.
+        ///   Looks up a localized string similar to Product Status.
         /// </summary>
         internal static string _4 {
             get {
@@ -196,7 +205,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WinLossLimit.
+        ///   Looks up a localized string similar to Win Loss Limit.
         /// </summary>
         internal static string _6 {
             get {
@@ -205,7 +214,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to StakeLevel.
+        ///   Looks up a localized string similar to Stake Level.
         /// </summary>
         internal static string _7 {
             get {
@@ -214,7 +223,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to StakeLevel.
+        ///   Looks up a localized string similar to Stake Level.
         /// </summary>
         internal static string _8 {
             get {

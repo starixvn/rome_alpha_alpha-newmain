@@ -22,7 +22,7 @@
 
         public byte? SettingType { get; }
 
-        public byte FunctionType { get; }
+        public byte? FunctionType { get; }
 
         public int ErrCode { get; set; }
 
