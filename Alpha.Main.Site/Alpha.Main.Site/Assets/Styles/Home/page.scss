@@ -582,6 +582,10 @@ html * {
     }
 }
 
+#um-message-popup {
+    z-index: 1055;
+}
+
 .modal-float {
     position: relative;
     top: 30%;
