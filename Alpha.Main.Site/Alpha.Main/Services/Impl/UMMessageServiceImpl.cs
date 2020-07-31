@@ -83,12 +83,10 @@
             => new UMMessageDTO(
                 BitConverter.ToInt64(message.Time_Stamp, 0),
                 string.Format(
-                    "{0}: {1} {2} {3} {4} {5}",
+                    Resources.UMCustomerSettingsPattern,
                     GetProductOrSportType(message.ProductId, message.SportType),
                     settingTypeResource.GetString($"_{message.SettingType}"),
-                    Resources.UMFrom,
                     message.BeginTime.ToLongDateWithSlash(),
-                    Resources.UMTo,
                     message.EndTime.ToLongDateWithSlash()));
 
         private string GetProductOrSportType(int productId, int sportTypeId)

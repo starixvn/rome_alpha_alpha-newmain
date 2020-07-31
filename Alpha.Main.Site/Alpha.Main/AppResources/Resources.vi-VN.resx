@@ -618,4 +618,19 @@
   <data name="UMTo" xml:space="preserve">
     <value>đến</value>
   </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>Bảo trì hệ thống</value>
+  </data>
+  <data name="UMCustomerSettingsPattern" xml:space="preserve">
+    <value>{0}: {1} từ {2} đến {3}</value>
+  </data>
+  <data name="UMSorryForInconvenience" xml:space="preserve">
+    <value>Trong thời gian bảo trì, các thiết lập này không thể thay đổi. Chúng tôi rất xin lỗi vì sự bất tiện gây ra.</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>Tất cả sản phẩm</value>
+  </data>
+  <data name="UMSchedule" xml:space="preserve">
+    <value>Lịch bảo trì hệ thống (GMT +8) như sau:</value>
+  </data>
 </root>

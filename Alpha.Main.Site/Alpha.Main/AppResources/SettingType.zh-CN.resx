@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="_0" xml:space="preserve">
-    <value>Customer Settings</value>
+    <value>客户设定</value>
   </data>
   <data name="_1" xml:space="preserve">
     <value>占成数</value>
@@ -145,7 +145,7 @@
     <value>投注设定</value>
   </data>
   <data name="_17" xml:space="preserve">
-    <value>Stake Level</value>
+    <value>投注额级别</value>
   </data>
   <data name="_18" xml:space="preserve">
     <value>占成数</value>
@@ -169,10 +169,10 @@
     <value>输赢限额</value>
   </data>
   <data name="_7" xml:space="preserve">
-    <value>Stake Level</value>
+    <value>投注额级别</value>
   </data>
   <data name="_8" xml:space="preserve">
-    <value>Stake Level</value>
+    <value>投注额级别</value>
   </data>
   <data name="_9" xml:space="preserve">
     <value>投注设定</value>

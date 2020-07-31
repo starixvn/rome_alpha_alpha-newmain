@@ -46,6 +46,6 @@
   </Function>
 
   <Function Name="UM Message">
-    <Setting Key="Acc_CheckUM" SpName="Acc_CheckUM_uat4" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Acc_CheckUM" SpName="Acc_CheckUM" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
   </Function>
 </Functions>

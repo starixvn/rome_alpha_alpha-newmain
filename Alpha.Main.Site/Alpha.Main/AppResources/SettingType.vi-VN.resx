@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="_0" xml:space="preserve">
-    <value>Customer Settings</value>
+    <value>Thiết lập khách hàng</value>
   </data>
   <data name="_1" xml:space="preserve">
     <value>Position Taking</value>
@@ -127,13 +127,13 @@
     <value>Hoa hồng</value>
   </data>
   <data name="_11" xml:space="preserve">
-    <value>Product Status</value>
+    <value>Trạng Thái Sản Phẩm</value>
   </data>
   <data name="_12" xml:space="preserve">
     <value>Giới hạn thắng thua</value>
   </data>
   <data name="_13" xml:space="preserve">
-    <value>Product Status</value>
+    <value>Trạng Thái Sản Phẩm</value>
   </data>
   <data name="_14" xml:space="preserve">
     <value>Hoa hồng</value>
@@ -145,7 +145,7 @@
     <value>Giới hạn cược</value>
   </data>
   <data name="_17" xml:space="preserve">
-    <value>Stake Level</value>
+    <value>Mức cược</value>
   </data>
   <data name="_18" xml:space="preserve">
     <value>Position Taking</value>
@@ -160,7 +160,7 @@
     <value>Hoa hồng</value>
   </data>
   <data name="_4" xml:space="preserve">
-    <value>Product Status</value>
+    <value>Trạng Thái Sản Phẩm</value>
   </data>
   <data name="_5" xml:space="preserve">
     <value>Hoa hồng</value>
@@ -169,10 +169,10 @@
     <value>Giới hạn thắng thua</value>
   </data>
   <data name="_7" xml:space="preserve">
-    <value>Stake Level</value>
+    <value>Mức cược</value>
   </data>
   <data name="_8" xml:space="preserve">
-    <value>Stake Level</value>
+    <value>Mức cược</value>
   </data>
   <data name="_9" xml:space="preserve">
     <value>Giới hạn cược</value>

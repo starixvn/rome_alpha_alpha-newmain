@@ -1421,6 +1421,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}: {1} from {2} to {3}.
+        /// </summary>
+        public static string UMCustomerSettingsPattern {
+            get {
+                return ResourceManager.GetString("UMCustomerSettingsPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to from.
         /// </summary>
         public static string UMFrom {
