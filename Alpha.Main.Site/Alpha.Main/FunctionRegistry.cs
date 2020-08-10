@@ -85,7 +85,7 @@ namespace Alpha.Main
             ["NG2MenuItem"] = () => new MenuStatus(
                 () => ProductManager.IsShowSettings(ProductIdConstants.NG2)),
             ["ProgressiveContributionMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
-            ["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().IsEnabledJackpot),
+            ["ProgressiveJackpotMenuItem"] = () => new MenuStatus(() => new User().ShowProgressiveJackpotGames),
             ["ChatBotMenuItem"] = () => new MenuStatus(
                 () => !Current.IsSubAcc
                     && (AppSettings.OfferChatbotSites.Contains("*")

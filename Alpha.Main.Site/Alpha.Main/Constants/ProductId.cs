@@ -5,5 +5,6 @@
         public const int RNGCasino = 6;
 
         public const int FishingWorld = 24;
+        public const int Pragmatic = 32;
     }
 }
