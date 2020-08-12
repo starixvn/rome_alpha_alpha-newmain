@@ -294,7 +294,9 @@
     <Compile Include="Models\BalanceInfo\BalanceUpDayInfo.cs" />
     <Compile Include="Models\ProfilePicture\ActorProfilePictureModel.cs" />
     <Compile Include="Models\UnauthorizedResult.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\User.cs" >
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Models\MemberRequests\ProductRequest.cs" />
     <Compile Include="Models\Otp\DeviceInfo.cs" />
     <Compile Include="Models\Statistics\NewMember.cs" />
