@@ -1466,6 +1466,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transfer: The feature is not available from {0} to {1}.
+        /// </summary>
+        public static string UMTransferPattern {
+            get {
+                return ResourceManager.GetString("UMTransferPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Successfully updated..
         /// </summary>
         public static string UpdatedSuccessfully {

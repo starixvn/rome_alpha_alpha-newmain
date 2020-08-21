@@ -634,4 +634,7 @@
   <data name="UMCustomerSettingsPattern" xml:space="preserve">
     <value>{0}: {1} from {2} to {3}</value>
   </data>
+  <data name="UMTransferPattern" xml:space="preserve">
+    <value>Transfer: The feature is not available from {0} to {1}</value>
+  </data>
 </root>

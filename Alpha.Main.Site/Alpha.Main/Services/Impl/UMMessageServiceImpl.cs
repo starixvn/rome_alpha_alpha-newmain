@@ -68,13 +68,25 @@
             return messages;
         }
 
+        private static string GetUMMessageCacheKey(string language)
+            => $"{UMMessageCacheKey}-{language}";
+
         private IEnumerable<UMMessageDTO> BuildMessages(IEnumerable<UMMessageItem> messages)
         {
             foreach (var message in messages)
             {
-                if (message.FunctionType == UMFunctionType.LockEdit)
+                switch (message.FunctionType)
                 {
-                    yield return BuildCustomerSettingsMessage(message);
+                    case UMFunctionType.LockEdit:
+                        yield return BuildCustomerSettingsMessage(message);
+                        break;
+
+                    case UMFunctionType.Transfer:
+                        yield return BuildTransferMessage(message);
+                        break;
+
+                    default:
+                        yield break;
                 }
             }
         }
@@ -99,7 +111,12 @@
             return productId == 0 ? Resources.AllProducts : cacheRefService.GetProductName(productId);
         }
 
-        private static string GetUMMessageCacheKey(string language)
-            => $"{UMMessageCacheKey}-{language}";
+        private static UMMessageDTO BuildTransferMessage(UMMessageItem message)
+            => new UMMessageDTO(
+                BitConverter.ToInt64(message.Time_Stamp, 0),
+                string.Format(
+                    Resources.UMTransferPattern,
+                    message.BeginTime.ToLongDateWithSlash(),
+                    message.EndTime.ToLongDateWithSlash()));
     }
 }
