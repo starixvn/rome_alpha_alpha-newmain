@@ -97,6 +97,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agent Win Loss (New).
+        /// </summary>
+        public static string agentwinlossNew {
+            get {
+                return ResourceManager.GetString("agentwinlossNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent Win Loss Detail.
         /// </summary>
         public static string agentwinlostdetail {
@@ -475,6 +484,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Master Win Loss (New).
+        /// </summary>
+        public static string masterwinlossNew {
+            get {
+                return ResourceManager.GetString("masterwinlossNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Master Win Loss Detail.
         /// </summary>
         public static string masterwinlostdetail {
@@ -561,6 +579,15 @@ namespace Alpha.Main.AppResources {
         public static string memberwinlossdetail {
             get {
                 return ResourceManager.GetString("memberwinlossdetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Member Win Loss (New).
+        /// </summary>
+        public static string memberWinLossNew {
+            get {
+                return ResourceManager.GetString("memberWinLossNew", resourceCulture);
             }
         }
         
