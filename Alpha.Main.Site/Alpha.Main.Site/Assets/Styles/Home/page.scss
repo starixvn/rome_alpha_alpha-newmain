@@ -267,6 +267,17 @@ html * {
             text-transform: initial;
             padding: 2px;
             margin-left: 3px;
+            animation: bounce-ex 1s infinite;
+            position: relative;
+        }
+
+        @include keyframes(bounce-ex) {
+            from {
+                top: 0;
+            }
+            to {
+                top: -8px;
+            }
         }
     }
 
