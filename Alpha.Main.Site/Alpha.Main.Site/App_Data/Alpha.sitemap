@@ -67,6 +67,10 @@
 
       <siteMapNode resourceKey="problemAccountList" appPath="MemberInfoAppPath" url="ProblemAccount" ></siteMapNode>
 
+      <siteMapNode resourceKey="customerlist" appPath="MemberInfoAppPath" url="CustomerList/member" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="agentList" appPath="MemberInfoAppPath" url="CustomerList/agent" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="masterList" appPath="MemberInfoAppPath" url="CustomerList/master" roles="Super"></siteMapNode>
+      
       <siteMapNode resourceKey="creditbalance" appPath="MemberInfoAppPath" url="CreditBalance"></siteMapNode>
       <siteMapNode resourceKey="positionTaking" appPath="OldMainAppPath" url="_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx"></siteMapNode>
       <!--Casino-PositionTaking-->
