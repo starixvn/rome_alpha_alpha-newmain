@@ -6,7 +6,8 @@
     umMessageData: Array<number> = [];
     getUMMessagesTimeout = 1000 * 60; // 1min
     getUMMessagesUrl = alpha.urls.mainRootPath + "UMMessage/Get";
-    doNotShowAgainKey = "UMMessageDoNotShowAgain";
+    doNotShowAgainKey = "UMMessageDoNotShowAgain_";
+    userId = "";
 
     constructor($: JQueryStatic) {
         this.$ = $;
@@ -22,6 +23,9 @@
         this.$umMessageBox = this.$("#um-message-box");
         this.$umMessagePopup = this.$("#um-message-popup");
         this.$umMessagePopupBody = this.$umMessagePopup.find("#um-message-popup-body");
+
+        const subUserId = this.$("#subUserId").val();
+        this.userId = subUserId === "0" ? this.$("#userId").val() : subUserId;
     }
 
     private registerEvents() {
@@ -106,11 +110,11 @@
     }
 
     private setDontShowAgainLocalStorage(value: boolean) {
-        alpha.localStorage.set(this.doNotShowAgainKey, value ? "1" : "0");
+        alpha.localStorage.set(this.doNotShowAgainKey + this.userId, value ? "1" : "0");
     }
 
     private getDontShowAgainLocalStorage(): boolean {
-        return alpha.localStorage.get(this.doNotShowAgainKey) === "1";
+        return alpha.localStorage.get(this.doNotShowAgainKey + this.userId) === "1";
     }
 }
 

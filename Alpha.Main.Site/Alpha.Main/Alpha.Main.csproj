@@ -334,7 +334,7 @@
     <Compile Include="Models\UMMessage\UMMessageDTO.cs" />
     <Compile Include="Models\UMMessage\UMMessageItem.cs" />
     <Compile Include="Models\UnauthorizedResult.cs" />
-    <Compile Include="Models\User.cs" >
+    <Compile Include="Models\User.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Models\MemberRequests\ProductRequest.cs" />

@@ -21,6 +21,7 @@
         private IDynamicRepository dynamicRepository;
         private CacheRefService cacheRefService;
         private UMMessageService umMessageService;
+        private static readonly UMMessageParam ParamTest = new UMMessageParam(1, "Sitename", 2, 3);
 
         [SetUp]
         public void SetUp()
@@ -28,21 +29,20 @@
             dynamicRepository = Substitute.For<IDynamicRepository>();
             cacheRefService = Substitute.For<CacheRefService>();
             umMessageService = new UMMessageServiceImpl(dynamicRepository, cacheRefService);
-            CacheService.Remove("Alpha.Main.Services.Impl.UMMessageService-en-US");
+            CacheService.Remove($"Alpha.Main.Services.Impl.UMMessageService_{ParamTest.Site}_{ParamTest.CurrencyId}_{ParamTest.SuperId}");
         }
 
         [Test]
         public async Task GetMessagesAsync_EmptyResult_ReturnsEmptyMessageDTOList()
         {
             // Arrange
-            var param = new UMMessageParam(1, "en-US");
             var rawMessages = Enumerable.Empty<UMMessageItem>();
             dynamicRepository
                 .FetchAsync<UMMessageItem>(Arg.Any<GetUMMessageCriteria>())
                 .Returns(rawMessages);
 
             // Act
-            var messages = await umMessageService.GetMessagesAsync(param);
+            var messages = await umMessageService.GetMessagesAsync(ParamTest);
 
             // Assert
             Assert.IsEmpty(messages);
@@ -52,7 +52,6 @@
         public async Task GetMessagesAsync_AllProductsUM_ReturnsCorrectMessageDTOList()
         {
             // Arrange
-            var param = new UMMessageParam(1, "en-US");
             var rawMessages = new List<UMMessageItem>
             {
                 new UMMessageItem(0, 0, 0, UMFunctionType.LockEdit, DateTime.Now, DateTime.Now.AddHours(1), new byte[] { 0, 0, 0, 0, 18, 206, 158, 173 })
@@ -62,7 +61,7 @@
                 .Returns(rawMessages);
 
             // Act
-            var messages = (await umMessageService.GetMessagesAsync(param)).ToList();
+            var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
             Assert.IsTrue(messages[0].Message.StartsWith("All products: Customer Settings"));
@@ -72,7 +71,6 @@
         public async Task GetMessagesAsync_AllSportsAndAllSettingsUM_ReturnsCorrectMessageDTOList()
         {
             // Arrange
-            var param = new UMMessageParam(1, "en-US");
             var rawMessages = new List<UMMessageItem>
             {
                 new UMMessageItem(5, 0, 0, UMFunctionType.LockEdit, DateTime.Now, DateTime.Now.AddHours(1), new byte[] { 0, 0, 0, 0, 18, 206, 158, 173 })
@@ -83,7 +81,7 @@
             cacheRefService.GetProductName(5).Returns("Live Casino");
 
             // Act
-            var messages = (await umMessageService.GetMessagesAsync(param)).ToList();
+            var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
             Assert.IsTrue(messages[0].Message.StartsWith("Live Casino: Customer Settings"));
@@ -93,7 +91,6 @@
         public async Task GetMessagesAsync_AllSportsAndOneSettingUM_ReturnsCorrectMessageDTOList()
         {
             // Arrange
-            var param = new UMMessageParam(1, "en-US");
             var rawMessages = new List<UMMessageItem>
             {
                 new UMMessageItem(5, 5, 9, UMFunctionType.LockEdit, DateTime.Now, DateTime.Now.AddHours(1), new byte[] { 0, 0, 0, 0, 18, 206, 158, 173 })
@@ -104,7 +101,7 @@
             cacheRefService.GetSportName(5).Returns("Live Casino");
 
             // Act
-            var messages = (await umMessageService.GetMessagesAsync(param)).ToList();
+            var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
             Assert.IsTrue(messages[0].Message.StartsWith("Live Casino: Bet Setting"));

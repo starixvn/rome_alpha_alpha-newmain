@@ -22,6 +22,10 @@
 
         public int CustId => userSession.CustId;
 
-        public string Language => userSession.Language;
+        public string Site => userSession.Site;
+
+        public int CurrencyId => userSession.CurrencyId;
+
+        public int SuperId => userSession.SRecommendId;
     }
 }

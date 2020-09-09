@@ -4,36 +4,22 @@
     {
         public UMMessageParam(
             int custId,
-            string language) : this(custId, null, null, null, null, language)
-        {
-        }
-
-        private UMMessageParam(
-            int custId,
-            int? productId,
-            int? sportType,
-            byte? settingType,
-            byte? functionType,
-            string language)
+            string site,
+            int currencyId,
+            int superId)
         {
             CustId = custId;
-            ProductId = productId;
-            SportType = sportType;
-            SettingType = settingType;
-            FunctionType = functionType;
-            Language = language;
+            Site = site;
+            CurrencyId = currencyId;
+            SuperId = superId;
         }
 
         public int CustId { get; }
 
-        public int? ProductId { get; }
+        public string Site { get; }
 
-        public int? SportType { get; }
+        public int CurrencyId { get; }
 
-        public byte? SettingType { get; }
-
-        public byte? FunctionType { get; }
-
-        public string Language { get; }
+        public int SuperId { get; }
     }
 }

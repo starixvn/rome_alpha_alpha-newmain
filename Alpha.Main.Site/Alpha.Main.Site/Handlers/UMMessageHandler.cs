@@ -18,6 +18,9 @@
         }
 
         public async Task<IEnumerable<UMMessageDTO>> Handle(UMMessageQuery message)
-            => await messageService.GetMessagesAsync(new UMMessageParam(message.CustId, message.Language));
+            => await messageService.GetMessagesAsync(ToUMMessageParam(message));
+
+        private static UMMessageParam ToUMMessageParam(UMMessageQuery message)
+            => new UMMessageParam(message.CustId, message.Site, message.CurrencyId, message.SuperId);
     }
 }

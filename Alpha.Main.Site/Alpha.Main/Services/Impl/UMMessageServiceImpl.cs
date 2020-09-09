@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Resources;
     using System.Threading;
     using System.Threading.Tasks;
@@ -32,8 +31,12 @@
         }
 
         public async Task<IEnumerable<UMMessageDTO>> GetMessagesAsync(UMMessageParam param)
+            => BuildMessages(await GetUMMessageItemAsync(param));
+
+        private async Task<IEnumerable<UMMessageItem>> GetUMMessageItemAsync(UMMessageParam param)
         {
-            IEnumerable<UMMessageDTO> messages = CacheService.Get<List<UMMessageDTO>>(GetUMMessageCacheKey(param.Language));
+            var cacheKey = $"{UMMessageCacheKey}_{param.Site}_{param.CurrencyId}_{param.SuperId}";
+            var messages = CacheService.Get<IEnumerable<UMMessageItem>>(cacheKey);
 
             if (messages == null)
             {
@@ -43,7 +46,12 @@
 
                     try
                     {
-                        messages = await GetMessagesDTOAsync(param);
+                        messages = await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param.CustId));
+
+                        CacheService.Set(
+                            cacheKey,
+                            messages,
+                            new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(CacheInSeconds)));
                     }
                     finally
                     {
@@ -54,22 +62,6 @@
 
             return messages;
         }
-
-        private async Task<IEnumerable<UMMessageDTO>> GetMessagesDTOAsync(UMMessageParam param)
-        {
-            var rawMessages = await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param));
-            var messages = BuildMessages(rawMessages).ToList();
-
-            CacheService.Set(
-                GetUMMessageCacheKey(param.Language),
-                messages,
-                new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(CacheInSeconds)));
-
-            return messages;
-        }
-
-        private static string GetUMMessageCacheKey(string language)
-            => $"{UMMessageCacheKey}-{language}";
 
         private IEnumerable<UMMessageDTO> BuildMessages(IEnumerable<UMMessageItem> messages)
         {
