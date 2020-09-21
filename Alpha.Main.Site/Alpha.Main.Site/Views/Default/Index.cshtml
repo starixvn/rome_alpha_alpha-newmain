@@ -37,14 +37,20 @@
         </header>
         <main class="content" id="content" data-default-url="@Model.DefaultPath">
         </main>
-        <div class="progress-box hide" id="progress-box" data-toggle="modal">
-            <span class="icon-progress"></span>
-            <span class="txt-progress">@Resources.DataProcessingIsInProgress</span>
+        <div class="float-section">
+            <div class="maintenance-box collapsed hide" id="um-message-box">
+                <span class="icon-under-maintenance"></span>
+            </div>
+            <div class="progress-box hide" id="progress-box" data-toggle="modal">
+                <span class="icon-progress"></span>
+                <span class="txt-progress">@Resources.DataProcessingIsInProgress</span>
+            </div>
         </div>
     </div>
     @Html.Partial("HiddenFields", Model)
     @Html.Partial("AnnouncementPopup")
     @Html.Partial("DataProccessingPopup")
+    @Html.Partial("UMMessagePopup")
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     @StaticResources.RenderScripts("~/assets/bundles/default-index")

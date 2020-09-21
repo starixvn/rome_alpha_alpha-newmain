@@ -475,6 +475,77 @@ html * {
     border: 0;
 }
 
+
+.float-section {
+    position: fixed;
+    z-index: 100;
+    bottom: 15px;
+    right: 16px;
+
+    .maintenance-box {
+        background-color: #fff;
+        border: 1px solid #FF5C00;
+        width: 52px;
+        cursor: pointer;
+        height: 52px;
+        line-height: 52px;
+        box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        animation: bounce-ex 1s infinite;
+        border-radius: 50%;
+
+        .icon-under-maintenance {
+            font-size: 18px;
+            color: #FF5C00;
+            font-weight: bold;
+        }
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
+
+        &:after {
+            @include animation(cd-pulse-ex 2s infinite);
+        }
+
+        &:before {
+            @include animation(cd-pulse-ex 2s infinite 4s);
+        }
+    }
+
+    @include keyframes(bounce-ex) {
+        50% {
+            @include transform(translateY(-5px));
+        }
+    }
+
+    @include keyframes(cd-pulse-ex) {
+        0% {
+            @include transform(scale(1));
+            @include box-shadow-multiple(inset 0 0 1px 4px rgba(255,92, 0, 0.3));
+        }
+
+        50% {
+            @include box-shadow-multiple(inset 0 0 1px 4px rgba(255,92, 0, 0.1));
+        }
+
+        100% {
+            @include transform(scale(2));
+            @include box-shadow-multiple(inset 0 0 1px 4px rgba(255,92, 0, 0));
+        }
+    }
+}
+
+
+
 // Data Processing Notification
 .progress-box {
     background-color: #fff;
@@ -485,9 +556,6 @@ html * {
     line-height: 52px;
     margin-top: 10px;
     box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.15);
-    position: absolute;
-    z-index: 100;
-    bottom: 15px;
 
     .txt-progress {
         font-size: 13px;
@@ -514,9 +582,13 @@ html * {
     }
 }
 
-.modal-progress {
+#um-message-popup {
+    z-index: 1055;
+}
+
+.modal-float {
     position: relative;
-    top: 35%;
+    top: 30%;
     transform: translateY(-35%);
     margin: 0 auto;
 
@@ -529,8 +601,8 @@ html * {
         padding: 0;
         line-height: 51px;
 
-        .icon-progress {
-            font-size: 24px;
+        [class*="icon-"] {
+            font-size: 16px;
             vertical-align: middle;
             padding-right: 12px;
         }
@@ -539,15 +611,78 @@ html * {
             font-size: 14px;
             color: #FF5C00;
         }
+
+        .icon-close {
+            top: 8px;
+        }
     }
 
     .modal-body {
         padding: 8px 0 16px;
         font-size: 13px;
+        max-height: 600px;
+        overflow: auto;
+        line-height: 18px;
+
+        @media only screen and (max-device-width: $screen-device-greater768) {
+            line-height: 22px;
+        }
+
+        @media screen and (max-device-width: $screen-device-greater768) and (orientation: "portrait") {
+            max-height: 600px;
+        }
+
+        @media screen and (max-device-width: $screen-device-greater768) and (orientation : landscape) {
+            max-height: 320px;
+        }
+    }
+
+    #um-message-popup-body {
+        margin-top: 6px;
+        padding-left: 16px;
+
+        .um-message-item {
+            margin-bottom: 6px;
+            line-height: 18px;
+
+            @media only screen and (max-device-width: $screen-device-greater768) {
+                line-height: 26px;
+            }
+        }
+    }
+
+    .modal-footer {
+        padding: 0 0 12px 0;
+        text-align: left;
+
+        label {
+            color: inherit;
+            font-size: inherit;
+            cursor: pointer;
+
+            input[type="checkbox"] {
+                padding-right: 12px;
+            }
+        }
     }
 }
 
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
 
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+        transform: translatey(-20px);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+    }
+}
 
 @media only screen and (min-device-width: 1043px) {
     body {
@@ -576,8 +711,6 @@ html * {
             }
         }
     }
-
-    
 }
 
 @media only screen and (max-device-width: $screen-device-greater1024) {
@@ -656,4 +789,8 @@ html * {
     .progress-box {
         display: none;
     }
+}
+
+.modal-maintenance {
+    top: 20%;
 }

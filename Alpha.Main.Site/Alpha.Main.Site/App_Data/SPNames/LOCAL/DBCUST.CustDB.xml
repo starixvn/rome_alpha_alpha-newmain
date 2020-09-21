@@ -44,4 +44,8 @@
   <Function Name="Indirect login">
     <Setting Key="Age_CustomerIndirectLoginAccountUpd" SpName="Age_CustomerIndirectLoginAccountUpd" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
   </Function>
+
+  <Function Name="UM Message">
+    <Setting Key="Acc_CheckUM" SpName="Acc_CheckUM" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+  </Function>
 </Functions>

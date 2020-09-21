@@ -63,6 +63,14 @@ body {
     margin-left: calculateScale(-2px);
     margin-top: calculateScale(-4px);
 }
+/*************************  Float section ******************************/  
+.float-section {
+    left: 16px;
+
+    .icon-under-maintenance {
+        font-size: calculateScale(18px);
+    }
+}
 
 // Data Processing Notification
 .progress-box {
@@ -528,10 +536,10 @@ body {
     }
 }
 
-.modal-progress {
+.modal-float {
     .modal-header {
-        .icon-progress {
-            font-size: calculateScale(24px);
+        [class*="icon-"] {
+            font-size: calculateScale(16px);
         }
 
         .modal-title {
@@ -539,7 +547,12 @@ body {
         }
     }
 
-    .modal-body {
+    .modal-body, .modal-footer {
         font-size: calculateScale(13px);
+    }
+
+    input[type=checkbox] {
+        width: 20px;
+        height: 20px;
     }
 }

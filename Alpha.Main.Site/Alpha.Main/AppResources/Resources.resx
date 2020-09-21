@@ -613,4 +613,28 @@
   <data name="PendingTransfer3rd" xml:space="preserve">
     <value>3rd Party Pending Transfer</value>
   </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>System is under maintenance</value>
+  </data>
+  <data name="UMFrom" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="UMSchedule" xml:space="preserve">
+    <value>Here is the maintenance schedule (GTM +8):</value>
+  </data>
+  <data name="UMSorryForInconvenience" xml:space="preserve">
+    <value>During the maintenance period, these settings cannot be changed. We are sorry for any inconvenience caused.</value>
+  </data>
+  <data name="UMTo" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>All products</value>
+  </data>
+  <data name="UMCustomerSettingsPattern" xml:space="preserve">
+    <value>{0}: {1} from {2} to {3}</value>
+  </data>
+  <data name="UMTransferPattern" xml:space="preserve">
+    <value>Transfer: The feature is not available from {0} to {1}</value>
+  </data>
 </root>

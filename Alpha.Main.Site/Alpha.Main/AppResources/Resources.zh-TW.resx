@@ -550,4 +550,25 @@
   <data name="PendingTransfer3rd" xml:space="preserve">
     <value>第三方待定轉賬</value>
   </data>
+  <data name="UMFrom" xml:space="preserve">
+    <value>從</value>
+  </data>
+  <data name="UMTo" xml:space="preserve">
+    <value>到</value>
+  </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>系統正在維護中</value>
+  </data>
+  <data name="UMCustomerSettingsPattern" xml:space="preserve">
+    <value>{0}: {1} 正在維護 {2} 至 {3}</value>
+  </data>
+  <data name="UMSorryForInconvenience" xml:space="preserve">
+    <value>在維護期間，這些設置將無法更改。不便之處，敬請見諒。</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>所有產品</value>
+  </data>
+  <data name="UMSchedule" xml:space="preserve">
+    <value>這是維護時間表 （GMT+8）</value>
+  </data>
 </root>

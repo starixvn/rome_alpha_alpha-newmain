@@ -115,6 +115,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All products.
+        /// </summary>
+        public static string AllProducts {
+            get {
+                return ResourceManager.GetString("AllProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Announcement.
         /// </summary>
         public static string announcement {
@@ -1223,6 +1232,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System is under maintenance.
+        /// </summary>
+        public static string SystemUnderMaintenance {
+            get {
+                return ResourceManager.GetString("SystemUnderMaintenance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to System.
         /// </summary>
         public static string systemUpdate {
@@ -1399,6 +1417,60 @@ namespace Alpha.Main.AppResources {
         public static string turnover {
             get {
                 return ResourceManager.GetString("turnover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: {1} from {2} to {3}.
+        /// </summary>
+        public static string UMCustomerSettingsPattern {
+            get {
+                return ResourceManager.GetString("UMCustomerSettingsPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to from.
+        /// </summary>
+        public static string UMFrom {
+            get {
+                return ResourceManager.GetString("UMFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here is the maintenance schedule (GTM +8):.
+        /// </summary>
+        public static string UMSchedule {
+            get {
+                return ResourceManager.GetString("UMSchedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to During the maintenance period, these settings cannot be changed. We are sorry for any inconvenience caused..
+        /// </summary>
+        public static string UMSorryForInconvenience {
+            get {
+                return ResourceManager.GetString("UMSorryForInconvenience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to to.
+        /// </summary>
+        public static string UMTo {
+            get {
+                return ResourceManager.GetString("UMTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfer: The feature is not available from {0} to {1}.
+        /// </summary>
+        public static string UMTransferPattern {
+            get {
+                return ResourceManager.GetString("UMTransferPattern", resourceCulture);
             }
         }
         

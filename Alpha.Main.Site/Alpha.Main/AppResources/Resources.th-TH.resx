@@ -547,4 +547,25 @@
   <data name="PendingTransfer3rd" xml:space="preserve">
     <value>บุคคลที่สามรอการถ่ายโอน</value>
   </data>
+  <data name="UMFrom" xml:space="preserve">
+    <value>จาก</value>
+  </data>
+  <data name="UMTo" xml:space="preserve">
+    <value>ถึง</value>
+  </data>
+  <data name="SystemUnderMaintenance" xml:space="preserve">
+    <value>ระบบอยู่ระหว่างการบำรุงรักษา</value>
+  </data>
+  <data name="UMCustomerSettingsPattern" xml:space="preserve">
+    <value>{0}: {1} จาก {2} ถึง {3}</value>
+  </data>
+  <data name="UMSorryForInconvenience" xml:space="preserve">
+    <value>ในช่วงเวลาการบำรุงรักษา การตั้งค่าเหล่านี้ไม่สามารถเปลี่ยนแปลงได้ ขออภัยในความไม่สะดวก มา ณ ที่นี้ด้วย</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>โปรดักส์ทั้งหมด</value>
+  </data>
+  <data name="UMSchedule" xml:space="preserve">
+    <value>ตารางเวลาการบำรุงรักษาระบบ (GMT + 8)</value>
+  </data>
 </root>
