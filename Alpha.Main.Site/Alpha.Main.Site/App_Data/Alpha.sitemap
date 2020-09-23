@@ -3,13 +3,9 @@
   <siteMapNode title="Alpha Site">
     <!--Report-->
     <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]">
-      <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="outstanding/member" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="outstanding/agent" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="outstanding/master" roles="Super"></siteMapNode>
-
-      <siteMapNode resourceKey="memberOutstandingNew" appPath="ReportsAppPath" url="outstanding/membernew" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentOutstandingNew" appPath="ReportsAppPath" url="outstanding/agentnew" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterOutstandingNew" appPath="ReportsAppPath" url="outstanding/masternew" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="outstanding/membernew" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="outstanding/agentnew" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="outstanding/masternew" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="memberWinLoss" appPath="ReportsAppPath" url="enteredresult/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/agent" roles="Master"></siteMapNode>
