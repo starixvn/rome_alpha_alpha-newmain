@@ -71,7 +71,7 @@
                     {
                         if (node.Roles.Count == 0
                             || node.Roles.Contains(userLevel.DisplayName)
-                            || node.Roles.Contains(userLevel.DisplayName.ToLower())
+                            || node.Roles.Contains(userLevel.DisplayName.ToLowerInvariant())
                             || node.Roles.Contains(userLevel.Value.ToString()))
                         {
                             var menuItem = menuItemBuilder.BuildMenuItem(node);
