@@ -79,6 +79,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agent Outstanding (New).
+        /// </summary>
+        public static string agentOutstandingNew {
+            get {
+                return ResourceManager.GetString("agentOutstandingNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent Win Loss.
         /// </summary>
         public static string agentwinloss {
@@ -448,6 +457,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Master Outstanding (New).
+        /// </summary>
+        public static string masterOutstandingNew {
+            get {
+                return ResourceManager.GetString("masterOutstandingNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Master Win Loss.
         /// </summary>
         public static string masterwinloss {
@@ -507,6 +525,15 @@ namespace Alpha.Main.AppResources {
         public static string memberOutstanding {
             get {
                 return ResourceManager.GetString("memberOutstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Member Outstanding (New).
+        /// </summary>
+        public static string memberOutstandingNew {
+            get {
+                return ResourceManager.GetString("memberOutstandingNew", resourceCulture);
             }
         }
         

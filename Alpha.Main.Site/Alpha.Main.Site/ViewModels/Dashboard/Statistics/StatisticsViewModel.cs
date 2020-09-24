@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Site.ViewModels.Dashboard.Statistics
 {
+    using Alpha.Web.Models;
     using AppResources;
     using Helpers;
-    using Main.Models.Enumerations;
     using Main.Models.Statistics;
 
     public class StatisticsViewModel

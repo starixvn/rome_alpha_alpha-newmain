@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Models.Enumerations
 {
+    using Alpha.Web.Models;
     using Main.Constants;
-    using Main.Models.Enumerations;
     using NUnit.Framework;
 
     [TestFixture]

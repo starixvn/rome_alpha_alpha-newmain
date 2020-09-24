@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Services
 {
-    using System.Collections.Generic;
-    using Models.Enumerations;
+    using Alpha.Web.Models;
     using Models.Menus;
+    using System.Collections.Generic;
 
     public interface SiteMenuService
     {

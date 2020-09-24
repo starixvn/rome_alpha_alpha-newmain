@@ -1,6 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
+    using Alpha.Web.Models;
     using AppResources;
     using Constants;
     using Fanex.Data.Repository;
@@ -8,7 +8,6 @@
     using Main.Criteria.Password;
     using Main.DataAccesses;
     using Main.Models;
-    using Main.Models.Enumerations;
     using Main.Services;
     using Main.Services.Impl;
     using NSubstitute;
@@ -17,6 +16,8 @@
     using Params.Password;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
+    using System;
+    using CustomResult = Alpha.Main.Models.Result;
 
     [TestFixture]
     public class PasswordServiceImplTests
@@ -131,7 +132,7 @@
             encryptor.CfsEnCode(currentPassword).Returns("OldPassword");
             encryptor.CfsEnCode(newPassword).Returns("UserPassword");
 
-            passwordDataAccess.UpdatePassword(Arg.Any<UpdateMainAccountPasswordCriteria>()).Returns(new Result { Code = 1 });
+            passwordDataAccess.UpdatePassword(Arg.Any<UpdateMainAccountPasswordCriteria>()).Returns(new CustomResult { Code = 1 });
 
             // Act
             passwordService.ChangeMainAccountPassword(param);
@@ -173,7 +174,7 @@
             encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
             encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
 
-            passwordDataAccess.UpdatePassword(Arg.Any<UpdateMainAccountPasswordCriteria>()).Returns(new Result { Code = 0 });
+            passwordDataAccess.UpdatePassword(Arg.Any<UpdateMainAccountPasswordCriteria>()).Returns(new CustomResult { Code = 0 });
 
             // Act
             passwordService.ChangeMainAccountPassword(param);
@@ -241,7 +242,7 @@
             encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
             encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
 
-            passwordDataAccess.UpdatePassword(Arg.Any<UpdateSubAccountPasswordCriteria>()).Returns(new Result { Code = 0 });
+            passwordDataAccess.UpdatePassword(Arg.Any<UpdateSubAccountPasswordCriteria>()).Returns(new CustomResult { Code = 0 });
 
             // Act
             passwordService.ChangeSubAccountPassword(param);
@@ -314,7 +315,7 @@
                 UserId = param.ActorId
             };
 
-            passwordDataAccess.UpdatePassword(Arg.Any<ResetMainAccountPasswordCriteria>()).Returns(new Result { Code = 1 });
+            passwordDataAccess.UpdatePassword(Arg.Any<ResetMainAccountPasswordCriteria>()).Returns(new CustomResult { Code = 1 });
 
             // Act
             passwordService.ResetMainAccountPassword(param);
@@ -355,7 +356,7 @@
                 UserId = param.ActorId
             };
 
-            passwordDataAccess.UpdatePassword(Arg.Any<ResetMainAccountPasswordCriteria>()).Returns(new Result { Code = 0 });
+            passwordDataAccess.UpdatePassword(Arg.Any<ResetMainAccountPasswordCriteria>()).Returns(new CustomResult { Code = 0 });
 
             // Act
             passwordService.ResetMainAccountPassword(param);
@@ -433,7 +434,7 @@
             aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
             encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
             
-            passwordDataAccess.UpdatePassword(Arg.Any<ResetSubAccountPasswordCriteria>()).Returns(new Result());
+            passwordDataAccess.UpdatePassword(Arg.Any<ResetSubAccountPasswordCriteria>()).Returns(new CustomResult());
 
             // Act
             passwordService.ResetSubAccountPassword(param);

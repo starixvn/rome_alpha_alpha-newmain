@@ -3,6 +3,7 @@
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.Main.Services;
+    using Alpha.Web.Models;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;

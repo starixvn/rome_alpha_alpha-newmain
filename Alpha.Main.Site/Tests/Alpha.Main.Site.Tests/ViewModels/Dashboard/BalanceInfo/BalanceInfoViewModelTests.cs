@@ -1,8 +1,8 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels.Dashboard.BalanceInfo
 {
+    using Alpha.Web.Models;
     using Constants;
     using Main.Models.BalanceInfo;
-    using Main.Models.Enumerations;
     using Main.Tests.TestData.Helper;
     using NUnit.Framework;
     using Site.ViewModels.Dashboard.BalanceInfo;

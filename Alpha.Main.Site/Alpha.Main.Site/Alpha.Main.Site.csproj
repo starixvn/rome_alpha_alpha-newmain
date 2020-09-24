@@ -81,8 +81,8 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.7.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.7.2\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="Alpha.Web, Version=1.0.7.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.7.4\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -1333,10 +1333,6 @@
     <Compile Include="Handlers\SecurityCodeHandler.cs" />
     <Compile Include="Handlers\UMMessageHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
-    <Compile Include="Helpers\BrowserHelper.cs" />
-    <Compile Include="Helpers\BrowserHelperImpl.cs">
-      <SonarQubeExclude>true</SonarQubeExclude>
-    </Compile>
     <Compile Include="Helpers\HmacAuthenticator.cs" />
     <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\RestClientHelper.cs" />
@@ -1400,7 +1396,6 @@
     <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs" />
     <Compile Include="ViewModels\ChatBot\VerifyAccountViewModel.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
-    <Compile Include="ViewModels\BrowserViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />

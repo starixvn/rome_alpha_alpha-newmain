@@ -4,9 +4,9 @@
     using Alpha.Main.ProfilePicture.Params;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Services;
+    using Alpha.Web.Models;
     using AppResources;
     using Main.Models;
-    using Main.Models.Enumerations;
     using MediatR;
     using Params.Password;
     using Requests.Password;
@@ -16,16 +16,17 @@
     using System;
     using ViewModels.Security;
     using Web.Helpers;
+    using CustomResult = Alpha.Main.Models.Result;
 
     public class PasswordHandler :
-         IRequestHandler<ChangePasswordCommand, Result>,
-         IRequestHandler<ResetMainAccountPasswordCommand, Result>,
-         IRequestHandler<ResetSubAccountPasswordCommand, Result>,
+         IRequestHandler<ChangePasswordCommand, CustomResult>,
+         IRequestHandler<ResetMainAccountPasswordCommand, CustomResult>,
+         IRequestHandler<ResetSubAccountPasswordCommand, CustomResult>,
          IRequestHandler<ChangePasswordQuery, PasswordViewModel>,
          IRequestHandler<ForceChangePasswordQuery, ForceChangePasswordViewModel>,
          IRequestHandler<ResetMainAccountPasswordQuery, PasswordViewModel>,
          IRequestHandler<ResetSubAccountPasswordQuery, PasswordViewModel>,
-         IRequestHandler<SkipForceChangePasswordCommand, Result>
+         IRequestHandler<SkipForceChangePasswordCommand, CustomResult>
     {
         private const string HashKeySessionKey = "Alpha.Main.PasswordHandler.PasswordHash";
 
@@ -71,7 +72,7 @@
              SimpleServiceLocator.GetService<Func<int>>();
         }
 
-        public Result Handle(ResetSubAccountPasswordCommand message)
+        public CustomResult Handle(ResetSubAccountPasswordCommand message)
         {
             if (message == null)
             {
@@ -80,7 +81,7 @@
 
             if (!HasUpdatePermission(true, true))
             {
-                return Result.CreateErrorResult(Security.NotAuthorized);
+                return CustomResult.CreateErrorResult(Security.NotAuthorized);
             }
 
             return this.passwordService.ResetSubAccountPassword(
@@ -127,7 +128,7 @@
             return hashKey;
         }
 
-        public Result Handle(ResetMainAccountPasswordCommand message)
+        public CustomResult Handle(ResetMainAccountPasswordCommand message)
         {
             if (message == null)
             {
@@ -136,7 +137,7 @@
 
             if (!HasUpdatePermission(true))
             {
-                return Result.CreateErrorResult(Security.NotAuthorized);
+                return CustomResult.CreateErrorResult(Security.NotAuthorized);
             }
 
             var custLevel = Enumeration.FromValue<UserLevel>(message.CustRoleId);
@@ -164,7 +165,7 @@
                 });
         }
 
-        public Result Handle(ChangePasswordCommand message)
+        public CustomResult Handle(ChangePasswordCommand message)
         {
             if (message == null)
             {
@@ -173,7 +174,7 @@
 
             if (!HasUpdatePermission())
             {
-                return Result.CreateErrorResult(Security.NotAuthorized);
+                return CustomResult.CreateErrorResult(Security.NotAuthorized);
             }
 
             var result = message.IsSubAccount ? ChangeSubAccountPassword(message) : ChangeMainAccountPassword(message);
@@ -190,7 +191,7 @@
             return result;
         }
 
-        public Result Handle(SkipForceChangePasswordCommand message)
+        public CustomResult Handle(SkipForceChangePasswordCommand message)
         {
             if (message == null)
             {
@@ -206,7 +207,7 @@
                     IP = message.IP
                 }).IsNotOk)
             {
-                return Result.CreateErrorResult("Can not skip force change Password");
+                return CustomResult.CreateErrorResult("Can not skip force change Password");
             }
 
             //// Update is first login status
@@ -215,10 +216,10 @@
             //// Update last change pwd date
             this.userSession.IsPasswordExpired = false;
 
-            return new Result { Code = 0 };
+            return new CustomResult { Code = 0 };
         }
 
-        private Result ChangeMainAccountPassword(ChangePasswordCommand message)
+        private CustomResult ChangeMainAccountPassword(ChangePasswordCommand message)
         {
             return this.passwordService.ChangeMainAccountPassword(new ChangeMainAccountPasswordParam
             {
@@ -240,7 +241,7 @@
             });
         }
 
-        private Result ChangeSubAccountPassword(ChangePasswordCommand message)
+        private CustomResult ChangeSubAccountPassword(ChangePasswordCommand message)
         {
             return this.passwordService.ChangeSubAccountPassword(
             new ChangeSubAccountPasswordParam

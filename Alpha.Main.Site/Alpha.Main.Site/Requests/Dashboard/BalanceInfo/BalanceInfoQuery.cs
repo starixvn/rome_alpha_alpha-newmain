@@ -2,10 +2,10 @@
 
 namespace Alpha.Main.Site.Requests.Dashboard.BalanceInfo
 {
-    using System;
-    using Main.Models.Enumerations;
+    using Alpha.Web.Models;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
+    using System;
     using ViewModels.Dashboard.BalanceInfo;
 
     public class BalanceInfoQuery : IRequest<BalanceInfoViewModel>

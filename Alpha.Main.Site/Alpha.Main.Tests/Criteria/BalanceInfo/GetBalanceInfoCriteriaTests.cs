@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Tests.Criteria.BalanceInfo
 {
-    using System;
+    using Alpha.Web.Models;
     using Main.Constants;
     using Main.Criteria.BalanceInfo;
-    using Main.Models.Enumerations;
     using NUnit.Framework;
+    using System;
 
     [TestFixture]
     public class GetBalanceInfoCriteriaTests

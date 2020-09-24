@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using Alpha.Web.Models;
+    using Fanex.Common.Helper;
+    using Helpers;
+    using Models.Menus;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
-    using Fanex.Common.Helper;
-    using Helpers;
-    using Models.Enumerations;
-    using Models.Menus;
 
     public class SiteMenuServiceImpl : SiteMenuService
     {
@@ -71,7 +71,7 @@
                     {
                         if (node.Roles.Count == 0
                             || node.Roles.Contains(userLevel.DisplayName)
-                            || node.Roles.Contains(userLevel.DisplayName.ToLower())
+                            || node.Roles.Contains(userLevel.DisplayName.ToLowerInvariant())
                             || node.Roles.Contains(userLevel.Value.ToString()))
                         {
                             var menuItem = menuItemBuilder.BuildMenuItem(node);

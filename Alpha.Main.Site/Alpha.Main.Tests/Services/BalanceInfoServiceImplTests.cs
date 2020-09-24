@@ -1,14 +1,14 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
+    using Alpha.Web.Models;
     using Constants;
     using Fanex.Data.Repository;
     using Main.Models.BalanceInfo;
-    using Main.Models.Enumerations;
     using Main.Services;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using System;
     using TestData.Helper;
 
     [TestFixture]

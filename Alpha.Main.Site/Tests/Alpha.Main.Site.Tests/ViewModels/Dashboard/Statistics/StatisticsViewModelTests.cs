@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels.Dashboard.Notice
 {
+    using Alpha.Web.Models;
     using Constants;
-    using Main.Models.Enumerations;
     using Main.Models.Statistics;
     using Main.Tests.TestData.Helper;
     using NUnit.Framework;

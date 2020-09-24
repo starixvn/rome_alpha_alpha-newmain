@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using Alpha.Web.Models;
     using Fanex.Data.Repository;
     using KellermanSoftware.CompareNetObjects;
     using Main.Criteria;
-    using Main.Models.Enumerations;
     using Main.Services;
     using Main.Services.Impl;
     using NSubstitute;

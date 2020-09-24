@@ -2,12 +2,10 @@
 
 namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System;
-    using System.Linq;
+    using Alpha.Web.Models;
     using Constants;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
-    using Main.Models.Enumerations;
     using Main.Models.Statistics;
     using Main.Tests.TestData.Helper;
     using NSubstitute;
@@ -17,6 +15,8 @@ namespace Alpha.Main.Site.Tests.Handlers
     using Site.Requests.Dashboard.Statistics;
     using Site.ViewModels.Dashboard.Statistics;
     using Sunplus.Agent.Model.Entities;
+    using System;
+    using System.Linq;
 
     [TestFixture]
     public class StatisticsHandlerTests

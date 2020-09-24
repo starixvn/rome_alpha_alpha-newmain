@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using Alpha.Web.Models;
     using Criteria.BalanceInfo;
     using Fanex.Data.Repository;
     using Models.BalanceInfo;
-    using Models.Enumerations;
 
     public class BalanceInfoServiceImpl : BalanceInfoService
     {

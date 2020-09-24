@@ -1,4 +1,4 @@
-﻿using Alpha.Main.Models.Enumerations;
+﻿using Alpha.Web.Models;
 
 namespace Alpha.Main.Params.Password
 {

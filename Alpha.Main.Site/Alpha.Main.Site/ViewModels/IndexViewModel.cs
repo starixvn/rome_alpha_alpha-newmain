@@ -5,10 +5,11 @@
     using System.Web;
     using Alpha.Main.AppResources;
     using Alpha.Main.ProfilePicture.Models;
+    using Alpha.Web.Helpers;
+    using Alpha.Web.Models;
     using Configurations;
     using Helpers;
     using Main.Helpers;
-    using Main.Models.Enumerations;
     using Models.Requests;
     using SecurityCode.Web;
     using Sunplus.Agent.Utilities;

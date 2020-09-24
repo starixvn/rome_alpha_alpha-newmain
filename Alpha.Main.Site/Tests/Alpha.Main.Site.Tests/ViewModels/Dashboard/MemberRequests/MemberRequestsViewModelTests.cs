@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels.Dashboard.MemberRequests
 {
-    using System.Linq;
+    using Alpha.Web.Models;
     using Helpers;
     using Main.Constants;
-    using Main.Models.Enumerations;
     using Main.Models.MemberRequests;
     using NUnit.Framework;
     using Site.ViewModels.Dashboard.MemberRequests;
+    using System.Linq;
 
     [TestFixture]
     public class MemberRequestsViewModelTests

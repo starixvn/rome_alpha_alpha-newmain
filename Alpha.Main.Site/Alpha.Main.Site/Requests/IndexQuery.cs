@@ -2,7 +2,7 @@
 
 namespace Alpha.Main.Site.Models.Requests
 {
-    using Alpha.Main.Models.Enumerations;
+    using Alpha.Web.Models;
     using Configurations;
     using MediatR;
     using Sunplus.Agent.Model.Entities;

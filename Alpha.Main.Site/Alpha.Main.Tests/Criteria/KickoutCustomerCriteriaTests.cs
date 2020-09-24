@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Criteria
 {
+    using Alpha.Web.Models;
     using Main.Criteria;
-    using Main.Models.Enumerations;
     using NUnit.Framework;
     using Params;
 

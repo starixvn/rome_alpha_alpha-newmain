@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.DataAccesses
 {
-    using System.Collections.Generic;
+    using Alpha.Web.Models;
     using Fanex.Data.Repository;
-    using Models.Enumerations;
     using Models.Statistics;
+    using System.Collections.Generic;
 
     public interface StatisticsDataAccess
     {

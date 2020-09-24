@@ -1,5 +1,7 @@
 ﻿namespace Alpha.Main.Models.Otp
 {
+    using Alpha.Web.Models;
+
     public class CustomerOtp
     {
         public int CustId { get; set; }

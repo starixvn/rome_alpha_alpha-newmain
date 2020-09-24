@@ -2,6 +2,7 @@
 {
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.Web.Models;
     using AppResources;
     using Main.Models;
     using Main.Models.Otp;
@@ -16,6 +17,7 @@
     using Sunplus.Agent.Model.Entities;
     using System;
     using Web.Helpers;
+    using CustomResult = Alpha.Main.Models.Result;
 
     [TestFixture]
     public class CustomerOtpHandlerTests
@@ -84,7 +86,7 @@
             userSession.UserLoginIp.Returns("ip");
             userSession.Language.Returns("language");
 
-            customerOtpService.ChangeOtpStatus(Arg.Any<ChangeOtpStatusParam>()).Returns(new Result { Code = 1 });
+            customerOtpService.ChangeOtpStatus(Arg.Any<ChangeOtpStatusParam>()).Returns(new CustomResult { Code = 1 });
 
             // Act
             customerOtpHandler.Handle(command);
@@ -111,7 +113,7 @@
             userSession.UserLoginIp.Returns("ip");
             userSession.Language.Returns("language");
 
-            customerOtpService.ChangeOtpStatus(Arg.Any<ChangeOtpStatusParam>()).Returns(new Result());
+            customerOtpService.ChangeOtpStatus(Arg.Any<ChangeOtpStatusParam>()).Returns(new CustomResult());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -126,7 +128,7 @@
             // Arrange
             var command = new ChangeOtpStatusCommand(userSession);
             customerOtpService.ChangeOtpStatus(Arg.Any<ChangeOtpStatusParam>())
-                .Returns(new Result
+                .Returns(new CustomResult
                 {
                     Code = 1,
                     Message = "Changed"
@@ -268,7 +270,7 @@
             var command = new ResetOtpCommand(userSession);
             browserHelper.GetDevice().Returns(new Device { Info = new DeviceInfo() });
             customerOtpService.RemoveSecretKey(Arg.Any<RemoveSecretKeyParam>())
-                .Returns(new Result
+                .Returns(new CustomResult
                 {
                     Code = 1,
                     Message = "Changed"
@@ -367,7 +369,7 @@
             // Arrange
             var command = new RemoveOtpCommand(userSession);
             customerOtpService.RemoveSecretKey(Arg.Any<RemoveSecretKeyParam>())
-                .Returns(new Result
+                .Returns(new CustomResult
                 {
                     Code = 1,
                     Message = "Changed"
@@ -412,7 +414,7 @@
         {
             // Arrange
             var command = new SetUpOtpCommand(userSession);
-            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
+            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new CustomResult());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -426,7 +428,7 @@
         {
             // Arrange
             var command = new SetUpOtpCommand(userSession);
-            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
+            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new CustomResult());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -454,7 +456,7 @@
             browserHelper.GetDevice().Returns(expectedDeviceInfo);
             var expectedSecretKey = "expectedSecretKey";
             sessionManager.Get<string>(Arg.Any<string>()).Returns(expectedSecretKey);
-            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
+            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new CustomResult());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -476,7 +478,7 @@
         {
             // Arrange
             var command = new SetUpOtpCommand(userSession);
-            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
+            customerOtpService.SetUpOtp(Arg.Any<CustomerOtp>()).Returns(new CustomResult());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -490,7 +492,7 @@
         {
             // Arrange
             var command = new SetUpOtpCommand(userSession);
-            var expectedResult = new Result
+            var expectedResult = new CustomResult
             {
                 Code = 3,
                 Message = "Message"
@@ -610,7 +612,7 @@
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
             command.Otp = "Otp";
-            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
+            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(new CustomResult());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -630,7 +632,7 @@
             userSession.CustId.Returns(1);
             userSession.SubAccId.Returns(2);
             command.Otp = "Otp";
-            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(new Result());
+            customerOtpService.VerifyOtp(Arg.Any<CustomerOtp>()).Returns(new CustomResult());
 
             // Act
             customerOtpHandler.Handle(command);
@@ -644,7 +646,7 @@
         {
             // Arrange
             var command = new VerifyOtpCommand(userSession);
-            var expectedResult = new Result
+            var expectedResult = new CustomResult
             {
                 Code = 3,
                 Message = "Message"

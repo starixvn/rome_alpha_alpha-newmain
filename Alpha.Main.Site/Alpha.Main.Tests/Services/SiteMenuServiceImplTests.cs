@@ -1,16 +1,16 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System.Collections.Generic;
-    using System.Web;
+    using Alpha.Web.Models;
     using Helpers;
     using Main.Constants;
     using Main.Helpers;
-    using Main.Models.Enumerations;
     using Main.Models.Menus;
     using Main.Services;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
+    using System.Collections.Generic;
+    using System.Web;
 
     [TestFixture]
     public class SiteMenuServiceImplTests
