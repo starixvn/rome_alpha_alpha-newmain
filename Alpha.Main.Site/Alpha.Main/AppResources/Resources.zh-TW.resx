@@ -571,4 +571,7 @@
   <data name="UMSchedule" xml:space="preserve">
     <value>這是維護時間表 （GMT+8）</value>
   </data>
+  <data name="UMTransferPattern" xml:space="preserve">
+    <value>轉賬：此功能從 {0} 至 {1} 無法使用。</value>
+  </data>
 </root>

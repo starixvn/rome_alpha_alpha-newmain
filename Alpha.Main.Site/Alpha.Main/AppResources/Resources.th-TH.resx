@@ -568,4 +568,7 @@
   <data name="UMSchedule" xml:space="preserve">
     <value>ตารางเวลาการบำรุงรักษาระบบ (GMT + 8)</value>
   </data>
+  <data name="UMTransferPattern" xml:space="preserve">
+    <value>การถ่ายโอน : รูปแบบนี้ไม่สามารถใช้งานได้ตั้งแต่ {0} ถึง {1}</value>
+  </data>
 </root>

@@ -633,4 +633,7 @@
   <data name="UMSchedule" xml:space="preserve">
     <value>Lịch bảo trì hệ thống (GMT +8) như sau:</value>
   </data>
+  <data name="UMTransferPattern" xml:space="preserve">
+    <value>Tính năng chuyển khoản hiện không khả dụng từ {0} đến {1}</value>
+  </data>
 </root>
