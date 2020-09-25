@@ -637,6 +637,10 @@ html * {
         }
     }
 
+    #um-message-popup-label {
+        font-size: 18px;
+    }
+
     #um-message-popup-body {
         margin-top: 6px;
         padding-left: 16px;
@@ -644,6 +648,10 @@ html * {
         .um-message-item {
             margin-bottom: 6px;
             line-height: 18px;
+
+            .um-message-time {
+                color: #FF0000;
+            }
 
             @media only screen and (max-device-width: $screen-device-greater768) {
                 line-height: 26px;

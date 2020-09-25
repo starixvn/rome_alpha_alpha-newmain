@@ -1421,7 +1421,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}: {1} from {2} to {3}.
+        ///   Looks up a localized string similar to &lt;strong&gt;{0}&lt;/strong&gt;: {1} from &lt;span class=&quot;um-message-time&quot;&gt;{2}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{3}&lt;/span&gt;.
         /// </summary>
         public static string UMCustomerSettingsPattern {
             get {
@@ -1466,7 +1466,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transfer: The feature is not available from {0} to {1}.
+        ///   Looks up a localized string similar to &lt;strong&gt;Transfer&lt;/strong&gt;: The feature is not available from &lt;span class=&quot;um-message-time&quot;&gt;{0}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{1}&lt;/span&gt;.
         /// </summary>
         public static string UMTransferPattern {
             get {
