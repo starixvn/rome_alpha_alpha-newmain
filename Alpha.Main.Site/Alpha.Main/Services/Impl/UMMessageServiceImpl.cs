@@ -16,7 +16,7 @@
 
     public class UMMessageServiceImpl : UMMessageService
     {
-        private const int CacheInSeconds = 60 * 60 * 24; // 1 day.
+        private const int CacheInSeconds = 60 * 10; // 10 minutes.
         private const string UMMessageCacheKey = "Alpha.Main.Services.Impl.UMMessageService";
 
         private readonly IDynamicRepository dynamicRepository;
@@ -78,7 +78,7 @@
                         break;
 
                     default:
-                        yield break;
+                        continue;
                 }
             }
         }

@@ -563,7 +563,7 @@
     <value>&lt;strong&gt;{0}&lt;/strong&gt;: {1} 正在维护 &lt;span class="um-message-time"&gt;{2}&lt;/span&gt; 至 &lt;span class="um-message-time"&gt;{3}&lt;/span&gt;</value>
   </data>
   <data name="UMSorryForInconvenience" xml:space="preserve">
-    <value>在维护期间，这些设置将无法更改。不便之处，敬请见谅。</value>
+    <value>系统维护期间所有功能将暂时无法使用。不便之处，敬请见谅。</value>
   </data>
   <data name="AllProducts" xml:space="preserve">
     <value>所有产品</value>
@@ -572,6 +572,6 @@
     <value>这是维护时间表 （GMT+8）</value>
   </data>
   <data name="UMTransferPattern" xml:space="preserve">
-    <value>&lt;strong&gt;转账&lt;/strong&gt;：此功能从 &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; 至 &lt;span class="um-message-time"&gt;{1}&lt;/span&gt; 无法使用。</value>
+    <value>&lt;strong&gt;转账&lt;/strong&gt;: 转账功能从 &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; 至 &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
   </data>
 </root>

@@ -216,6 +216,8 @@
         public static bool IsAllowedIndirectLogin(int srecommend)
             => IndirectLoginSuperIds.Contains(srecommend) || IndirectLoginSuperIds.Any(id => id == int.MaxValue);
 
+        public static bool EnableUMAnnouncementPopup => "1" == Settings["EnableUMAnnouncementPopup"];
+
         private static int ValueOfNotNullOrWhiteSpace(string value)
             => value.Equals("*", StringComparison.OrdinalIgnoreCase) ? int.MaxValue : Convert.ToInt32(value);
     }

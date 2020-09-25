@@ -64,7 +64,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.IsTrue(messages[0].Message.StartsWith("All products: Customer Settings"));
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>All products</strong>: Customer Settings"));
         }
 
         [Test]
@@ -84,7 +84,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.IsTrue(messages[0].Message.StartsWith("Live Casino: Customer Settings"));
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Live Casino</strong>: Customer Settings"));
         }
 
         [Test]
@@ -104,7 +104,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.IsTrue(messages[0].Message.StartsWith("Live Casino: Bet Setting"));
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Live Casino</strong>: Bet Setting"));
         }
     }
 }

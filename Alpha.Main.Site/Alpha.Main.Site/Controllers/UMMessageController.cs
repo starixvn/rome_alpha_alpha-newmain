@@ -1,7 +1,9 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using Alpha.Main.Models.UMMessage;
     using Alpha.Main.Site.Requests.UMMessage;
     using Alpha.Web;
     using MediatR;
@@ -16,6 +18,12 @@
         }
 
         public async Task<ActionResult> Get(UMMessageQuery request)
-            => Json(await mediator.SendAsync(request), JsonRequestBehavior.AllowGet);
+        {
+            var messages = request.EnableUMAnnouncementPopup
+                ? await mediator.SendAsync(request)
+                : Enumerable.Empty<UMMessageDTO>();
+
+            return Json(messages, JsonRequestBehavior.AllowGet);
+        }
     }
 }
