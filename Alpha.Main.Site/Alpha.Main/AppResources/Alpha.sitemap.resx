@@ -408,8 +408,17 @@
   <data name="IndirectLoginAccount" xml:space="preserve">
     <value>Indirect Login Account</value>
   </data>
-  <data name="DormantAccountList" xml:space="preserve">
+   <data name="DormantAccountList" xml:space="preserve">
     <value>Dormant Account List</value>
+  </data>
+  <data name="agentListNew" xml:space="preserve">
+    <value>Agent List (New)</value>
+  </data>
+  <data name="customerlistNew" xml:space="preserve">
+    <value>Member List (New)</value>
+  </data>
+  <data name="masterListNew" xml:space="preserve">
+    <value>Master Agent List (New)</value>
   </data>
   <data name="BonusDetail" xml:space="preserve">
     <value>Bonus Detail</value>
