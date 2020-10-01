@@ -70,6 +70,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agent List (New).
+        /// </summary>
+        public static string agentListNew {
+            get {
+                return ResourceManager.GetString("agentListNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent Outstanding.
         /// </summary>
         public static string agentOutstanding {
@@ -322,6 +331,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Member List (New).
+        /// </summary>
+        public static string customerlistNew {
+            get {
+                return ResourceManager.GetString("customerlistNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customer Setting.
         /// </summary>
         public static string customerSetting {
@@ -462,6 +480,15 @@ namespace Alpha.Main.AppResources {
         public static string masterList {
             get {
                 return ResourceManager.GetString("masterList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Master Agent List (New).
+        /// </summary>
+        public static string masterListNew {
+            get {
+                return ResourceManager.GetString("masterListNew", resourceCulture);
             }
         }
         
