@@ -1232,15 +1232,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System is under maintenance.
-        /// </summary>
-        public static string SystemUnderMaintenance {
-            get {
-                return ResourceManager.GetString("SystemUnderMaintenance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to System.
         /// </summary>
         public static string systemUpdate {
@@ -1421,6 +1412,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maintenance Announcement.
+        /// </summary>
+        public static string UMAnnouncementTitle {
+            get {
+                return ResourceManager.GetString("UMAnnouncementTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;strong&gt;{0}&lt;/strong&gt;: {1} from &lt;span class=&quot;um-message-time&quot;&gt;{2}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{3}&lt;/span&gt;.
         /// </summary>
         public static string UMCustomerSettingsPattern {
@@ -1435,6 +1435,15 @@ namespace Alpha.Main.AppResources {
         public static string UMFrom {
             get {
                 return ResourceManager.GetString("UMFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;strong&gt;New Account&lt;/strong&gt;: Under maintenance from &lt;span class=&quot;um-message-time&quot;&gt;{0}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{1}&lt;/span&gt;.
+        /// </summary>
+        public static string UMNewAccountPattern {
+            get {
+                return ResourceManager.GetString("UMNewAccountPattern", resourceCulture);
             }
         }
         
