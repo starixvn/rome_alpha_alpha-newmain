@@ -1421,7 +1421,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}: {1} from {2} to {3}.
+        ///   Looks up a localized string similar to &lt;strong&gt;{0}&lt;/strong&gt;: {1} from &lt;span class=&quot;um-message-time&quot;&gt;{2}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{3}&lt;/span&gt;.
         /// </summary>
         public static string UMCustomerSettingsPattern {
             get {
@@ -1439,7 +1439,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Here is the maintenance schedule (GTM +8):.
+        ///   Looks up a localized string similar to Here is the maintenance schedule (GMT +8):.
         /// </summary>
         public static string UMSchedule {
             get {
@@ -1448,7 +1448,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to During the maintenance period, these settings cannot be changed. We are sorry for any inconvenience caused..
+        ///   Looks up a localized string similar to During the maintenance period, these features are not available for using. We are sorry for any inconvenience caused..
         /// </summary>
         public static string UMSorryForInconvenience {
             get {
@@ -1466,7 +1466,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transfer: The feature is not available from {0} to {1}.
+        ///   Looks up a localized string similar to &lt;strong&gt;Transfer&lt;/strong&gt;: Under maintenance from &lt;span class=&quot;um-message-time&quot;&gt;{0}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{1}&lt;/span&gt;.
         /// </summary>
         public static string UMTransferPattern {
             get {

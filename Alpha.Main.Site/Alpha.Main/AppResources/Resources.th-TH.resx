@@ -557,15 +557,19 @@
     <value>ระบบอยู่ระหว่างการบำรุงรักษา</value>
   </data>
   <data name="UMCustomerSettingsPattern" xml:space="preserve">
-    <value>{0}: {1} จาก {2} ถึง {3}</value>
+    <value>&lt;strong&gt;{0}&lt;/strong&gt;: {1} จาก &lt;span class="um-message-time"&gt;{2}&lt;/span&gt; ถึง &lt;span class="um-message-time"&gt;{3}&lt;/span&gt;</value>
   </data>
   <data name="UMSorryForInconvenience" xml:space="preserve">
-    <value>ในช่วงเวลาการบำรุงรักษา การตั้งค่าเหล่านี้ไม่สามารถเปลี่ยนแปลงได้ ขออภัยในความไม่สะดวก มา ณ ที่นี้ด้วย</value>
+    <value>ในช่วงที่กำลังตรวจทานระบบ  ฟังก์ชั่นเหล่านี้จะไม่สามารถใช้งานได้
+ ขออภัยในความไม่สะดวก มา ณ ที่นี้ด้วย</value>
   </data>
   <data name="AllProducts" xml:space="preserve">
     <value>โปรดักส์ทั้งหมด</value>
   </data>
   <data name="UMSchedule" xml:space="preserve">
     <value>ตารางเวลาการบำรุงรักษาระบบ (GMT + 8)</value>
+  </data>
+  <data name="UMTransferPattern" xml:space="preserve">
+    <value>&lt;strong&gt;การโอนเงิน&lt;/strong&gt;: ไม่สามารถใช้งานได้ตั้งแต่ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; จนถึง &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
   </data>
 </root>

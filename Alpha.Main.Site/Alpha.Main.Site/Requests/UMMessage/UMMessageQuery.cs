@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Requests.UMMessage
 {
     using System.Collections.Generic;
+    using Alpha.Main.Configurations;
     using Alpha.Main.Models.UMMessage;
     using MediatR;
     using Sunplus.Agent.Model.Base;
@@ -27,5 +28,7 @@
         public int CurrencyId => userSession.CurrencyId;
 
         public int SuperId => userSession.SRecommendId;
+
+        public bool EnableUMAnnouncementPopup => AppSettings.EnableUMAnnouncementPopup;
     }
 }

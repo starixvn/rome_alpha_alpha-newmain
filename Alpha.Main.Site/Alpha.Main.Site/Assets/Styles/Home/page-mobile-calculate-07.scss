@@ -545,6 +545,10 @@ body {
         .modal-title {
             font-size: calculateScale(14px);
         }
+
+        #um-message-popup-label {
+            font-size: 24px;
+        }
     }
 
     .modal-body, .modal-footer {

@@ -620,10 +620,10 @@
     <value>from</value>
   </data>
   <data name="UMSchedule" xml:space="preserve">
-    <value>Here is the maintenance schedule (GTM +8):</value>
+    <value>Here is the maintenance schedule (GMT +8):</value>
   </data>
   <data name="UMSorryForInconvenience" xml:space="preserve">
-    <value>During the maintenance period, these settings cannot be changed. We are sorry for any inconvenience caused.</value>
+    <value>During the maintenance period, these features are not available for using. We are sorry for any inconvenience caused.</value>
   </data>
   <data name="UMTo" xml:space="preserve">
     <value>to</value>
@@ -632,9 +632,9 @@
     <value>All products</value>
   </data>
   <data name="UMCustomerSettingsPattern" xml:space="preserve">
-    <value>{0}: {1} from {2} to {3}</value>
+    <value>&lt;strong&gt;{0}&lt;/strong&gt;: {1} from &lt;span class="um-message-time"&gt;{2}&lt;/span&gt; to &lt;span class="um-message-time"&gt;{3}&lt;/span&gt;</value>
   </data>
   <data name="UMTransferPattern" xml:space="preserve">
-    <value>Transfer: The feature is not available from {0} to {1}</value>
+    <value>&lt;strong&gt;Transfer&lt;/strong&gt;: Under maintenance from &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; to &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
   </data>
 </root>
