@@ -73,8 +73,12 @@
                         yield return BuildCustomerSettingsMessage(message);
                         break;
 
+                    case UMFunctionType.NewAccount:
+                        yield return BuildUMPatternFromTo(Resources.UMNewAccountPattern, message);
+                        break;
+
                     case UMFunctionType.Transfer:
-                        yield return BuildTransferMessage(message);
+                        yield return BuildUMPatternFromTo(Resources.UMTransferPattern, message);
                         break;
 
                     default:
@@ -103,11 +107,11 @@
             return productId == 0 ? Resources.AllProducts : cacheRefService.GetProductName(productId);
         }
 
-        private static UMMessageDTO BuildTransferMessage(UMMessageItem message)
+        private static UMMessageDTO BuildUMPatternFromTo(string pattern, UMMessageItem message)
             => new UMMessageDTO(
                 BitConverter.ToInt64(message.Time_Stamp, 0),
                 string.Format(
-                    Resources.UMTransferPattern,
+                    pattern,
                     message.BeginTime.ToLongDateWithSlash(),
                     message.EndTime.ToLongDateWithSlash()));
     }
