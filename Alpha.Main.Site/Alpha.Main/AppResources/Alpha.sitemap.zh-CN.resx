@@ -402,13 +402,4 @@
   <data name="IndirectLoginAccount" xml:space="preserve">
     <value>非间接登录账户</value>
   </data>
-  <data name="agentwinlossNew" xml:space="preserve">
-    <value>Agent Win Loss (New)</value>
-  </data>
-  <data name="masterwinlossNew" xml:space="preserve">
-    <value>Master Win Loss (New)</value>
-  </data>
-  <data name="memberWinLossNew" xml:space="preserve">
-    <value>Member Win Loss (New)</value>
-  </data>
 </root>
