@@ -402,4 +402,7 @@
   <data name="IndirectLoginAccount" xml:space="preserve">
     <value>非间接登录账户</value>
   </data>
+  <data name="DormantAccountList" xml:space="preserve">
+    <value>不活跃账号名单</value>
+  </data>
 </root>

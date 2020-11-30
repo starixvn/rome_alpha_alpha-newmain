@@ -402,4 +402,7 @@
   <data name="IndirectLoginAccount" xml:space="preserve">
     <value>บัญชีเพื่อการเข้าสู่ระบบทางอ้อม</value>
   </data>
+  <data name="DormantAccountList" xml:space="preserve">
+    <value>รายชื่อบัญชีที่ไม่ได้ใช้งาน</value>
+  </data>
 </root>

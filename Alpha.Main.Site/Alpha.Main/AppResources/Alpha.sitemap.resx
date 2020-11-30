@@ -405,7 +405,10 @@
   <data name="memberOutstandingNew" xml:space="preserve">
     <value>Member Outstanding (New)</value>
   </data>
-   <data name="IndirectLoginAccount" xml:space="preserve">
+  <data name="IndirectLoginAccount" xml:space="preserve">
     <value>Indirect Login Account</value>
+  </data>
+  <data name="DormantAccountList" xml:space="preserve">
+    <value>Dormant Account List</value>
   </data>
 </root>

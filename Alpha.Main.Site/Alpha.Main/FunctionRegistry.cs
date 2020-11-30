@@ -2,6 +2,12 @@
 
 namespace Alpha.Main
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
+    using System.Web;
     using Configurations;
     using Fanex.Logging.Extensions.Web;
     using Fanex.Products;
@@ -11,12 +17,6 @@ namespace Alpha.Main
     using Sunplus.Agent.Model.Definitions;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
-    using System.Web;
     using static Sunplus.Agent.Model.Entities.Permission.UserPermission;
     using static Sunplus.Agent.Model.Entities.UserSession;
     using AuthAppSettings = Alpha.Auth.Configurations.AppSettings;
@@ -90,7 +90,8 @@ namespace Alpha.Main
                     && (AppSettings.OfferChatbotSites.Contains("*")
                         || AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase))),
             ["IndirectLoginAccountMenuItem"] = () => new MenuStatus(
-                () => AppSettings.IsAllowedIndirectLogin(Current.SRecommendId) && !Current.IsIndirectLoggedIn && (Current.IsSuper || Current.IsMaster))
+                () => AppSettings.IsAllowedIndirectLogin(Current.SRecommendId) && !Current.IsIndirectLoggedIn && (Current.IsSuper || Current.IsMaster)),
+            ["DormantAccountListMenuItem"] = () => new MenuStatus(() => Current.IsSuper || Current.IsMaster)
         };
 
         private static Func<bool> showAccountInfo = () =>

@@ -71,6 +71,7 @@
       <siteMapNode resourceKey="BetChoiceLimit" menuItemType="BetChoiceLimitMenuItem" appPath="OldMainAppPath" url="MemberInformation/BetChoiceLimit/Index"></siteMapNode>
       <siteMapNode resourceKey="ProgressiveJackpotGames" menuItemType="ProgressiveJackpotMenuItem" appPath="MemberInfoAppPath" url="ProgressiveJackpot/Index"></siteMapNode>
       <siteMapNode resourceKey="IndirectLoginAccount" menuItemType="IndirectLoginAccountMenuItem" appPath="MemberInfoAppPath" url="IndirectLoginAccount/Index" isNew="true"></siteMapNode>
+      <siteMapNode resourceKey="DormantAccountList" menuItemType="DormantAccountListMenuItem" appPath="MemberInfoAppPath" url="DormantAccount/Index"></siteMapNode>
     </siteMapNode>
     <!--/MemberInfo-->
     <siteMapNode resourceKey="BetLists" appPath="OldMainAppPath" menuItemType="BetListsMenuItem" functionType="[L]">
