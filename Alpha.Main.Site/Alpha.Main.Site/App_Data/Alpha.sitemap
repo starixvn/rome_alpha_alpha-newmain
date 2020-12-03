@@ -7,9 +7,9 @@
       <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="outstanding/agentnew" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="outstanding/masternew" roles="Super"></siteMapNode>
 
-      <siteMapNode resourceKey="memberWinLoss" appPath="ReportsAppPath" url="enteredresult/member" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/agent" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterwinloss" appPath="ReportsAppPath" url="enteredresult/master" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="memberWinLoss" appPath="ReportsAppPath" url="enteredresult/membernew" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/agentnew" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="masterwinloss" appPath="ReportsAppPath" url="enteredresult/masternew" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="winlossdetail/member" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/agent" roles="Master"></siteMapNode>
