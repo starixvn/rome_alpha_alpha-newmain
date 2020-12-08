@@ -34,11 +34,11 @@
     </Setting>
   </Function>
   <Function Name="Statistics">
-    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_Ag" SpName="Age_CustomerSelStatisticsInfo_Ag" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_MAg" SpName="Age_CustomerSelStatisticsInfo_MAg" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>
-    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
+    <Setting Key="Age_CustomerSelStatisticsInfo_SAg" SpName="Age_CustomerSelStatisticsInfo_SAg" DbName="DBBOF.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>
     <Setting Key="Age_CustomerSelTopWinningMembers_Ag" SpName="Age_CustomerSelTopWinningMembers_Ag" DbName="DBAGE.bodb02.BODBDownlineNet" Plain="0" TimeOut="600">
     </Setting>
