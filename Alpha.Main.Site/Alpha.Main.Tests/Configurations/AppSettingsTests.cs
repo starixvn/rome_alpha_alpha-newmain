@@ -683,5 +683,36 @@
             // Assert
             Assert.AreEqual(expected, actualSetting);
         }
+
+        [TestCase("", "", false)]
+        [TestCase(" ,", " ,", false)]
+        [TestCase("*", "", true)]
+        [TestCase("*", "*", false)]
+        [TestCase("", "*", false)]
+        [TestCase("", "1176071, 1176072", false)]
+        [TestCase("", "1176070, 1176071, 1176072", false)]
+        [TestCase("*", "1176071, 1176072", true)]
+        [TestCase("*", "1176070, 1176071, 1176072", false)]
+        [TestCase("733333, 733334, 733335", "", true)]
+        [TestCase("733333, 733334, 733335", "1176071, 1176072", true)]
+        [TestCase("733333, 733334, 733335", "1176070, 1176071, 1176072", false)]
+        [TestCase("733334, 733335", "", false)]
+        [TestCase("733334, 733335", "1176070, 1176071, 1176072", false)]
+        [TestCase("733334, 733335", "1176071, 1176072", false)]
+        public void IsUsedNewNewReports_HasConfig_ReturnCorrectValues(string configSites, string configSuperIds, bool expected)
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["NewReports.OfferSites"] = configSites,
+                ["NewReports.IgnoreSuperIds"] = configSuperIds
+            };
+
+            // Act
+            var actualSetting = AppSettings.IsUsedNewReports("733333", 1176070);
+
+            // Assert
+            Assert.AreEqual(expected, actualSetting);
+        }
     }
 }
