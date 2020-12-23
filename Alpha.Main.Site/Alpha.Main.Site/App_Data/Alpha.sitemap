@@ -126,6 +126,7 @@
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx?v2" roles="Super"></siteMapNode>
 
       <siteMapNode resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v2"></siteMapNode>
+      <siteMapNode resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index" menuItemType="TransferToDownlineHistoryMenuItem"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItemBySite" url="_Transfer/Agent/MemberList.aspx?v2" functionType="[C]" roles="Agent"></siteMapNode>
 

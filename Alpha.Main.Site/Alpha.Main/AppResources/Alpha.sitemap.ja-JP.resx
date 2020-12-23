@@ -364,4 +364,7 @@
   <data name="memberOutstandingNew" xml:space="preserve">
     <value>Member Outstanding (New)</value>
   </data>
+  <data name="TransferToDownlineHistory" xml:space="preserve">
+    <value>Transfer To Downline History</value>
+  </data>
 </root>

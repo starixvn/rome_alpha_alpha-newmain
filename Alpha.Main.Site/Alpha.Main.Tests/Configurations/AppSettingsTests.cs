@@ -775,5 +775,24 @@
             // Assert
             Assert.AreEqual(expected, actualSetting);
         }
+
+        [TestCase("", false)]
+        [TestCase("*", true)]
+        [TestCase("733331, 733332", false)]
+        [TestCase("733331, 733332, 733333", true)]
+        public void IsAllowedTransferToDownlineHistorySite_HasConfig_ReturnCorrectValues(string configSites, bool expected)
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["TransferToDownlineHistory.OfferSites"] = configSites
+            };
+
+            // Act
+            var actualSetting = AppSettings.IsAllowedTransferToDownlineHistorySite("733333");
+
+            // Assert
+            Assert.AreEqual(expected, actualSetting);
+        }
     }
 }

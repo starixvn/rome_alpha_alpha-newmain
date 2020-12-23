@@ -97,7 +97,9 @@ namespace Alpha.Main
             ["NewReportsMenuItem"] = () => new MenuStatus(
                 () => AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId)),
             ["BonusDetailMenuItem"] = () => new MenuStatus(
-                () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant()))
+                () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant())),
+            ["TransferToDownlineHistoryMenuItem"] = () => new MenuStatus(
+                () => AppSettings.IsAllowedTransferToDownlineHistorySite(Current.Site))
         };
 
         private static Func<bool> showAccountInfo = () =>
