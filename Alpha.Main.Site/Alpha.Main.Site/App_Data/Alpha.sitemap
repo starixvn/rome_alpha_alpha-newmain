@@ -68,9 +68,9 @@
       <siteMapNode resourceKey="problemAccountList" appPath="MemberInfoAppPath" url="ProblemAccount" ></siteMapNode>
     
 
-      <siteMapNode resourceKey="customerlistNew" appPath="MemberInfoAppPath" url="CustomerList/member" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentListNew" appPath="MemberInfoAppPath" url="CustomerList/agent" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterListNew" appPath="MemberInfoAppPath" url="CustomerList/master" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="customerlist" appPath="MemberInfoAppPath" url="CustomerList/member" roles="Agent" isNew="true"></siteMapNode>
+      <siteMapNode resourceKey="agentList" appPath="MemberInfoAppPath" url="CustomerList/agent" roles="Master" isNew="true"></siteMapNode>
+      <siteMapNode resourceKey="masterList" appPath="MemberInfoAppPath" url="CustomerList/master" roles="Super" isNew="true"></siteMapNode>
 
       <siteMapNode resourceKey="problemAccountList" appPath="MemberInfoAppPath" url="ProblemAccount" roles="Super" ></siteMapNode>
 
