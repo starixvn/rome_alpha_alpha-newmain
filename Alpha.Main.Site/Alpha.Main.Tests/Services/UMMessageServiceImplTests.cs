@@ -68,6 +68,44 @@
         }
 
         [Test]
+        public async Task GetMessagesAsync_AllProductsUM_NewAccount_ReturnsCorrectMessageDTOList()
+        {
+            // Arrange
+            var rawMessages = new List<UMMessageItem>
+            {
+                new UMMessageItem(0, 0, 0, UMFunctionType.NewAccount, DateTime.Now, DateTime.Now.AddHours(1), new byte[] { 0, 0, 0, 0, 18, 206, 158, 173 })
+            };
+            dynamicRepository
+                .FetchAsync<UMMessageItem>(Arg.Any<GetUMMessageCriteria>())
+                .Returns(rawMessages);
+
+            // Act
+            var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
+
+            // Assert
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>New Account</strong>: Under maintenance from"));
+        }
+
+        [Test]
+        public async Task GetMessagesAsync_AllProductsUM_Transfer_ReturnsCorrectMessageDTOList()
+        {
+            // Arrange
+            var rawMessages = new List<UMMessageItem>
+            {
+                new UMMessageItem(0, 0, 0, UMFunctionType.Transfer, DateTime.Now, DateTime.Now.AddHours(1), new byte[] { 0, 0, 0, 0, 18, 206, 158, 173 })
+            };
+            dynamicRepository
+                .FetchAsync<UMMessageItem>(Arg.Any<GetUMMessageCriteria>())
+                .Returns(rawMessages);
+
+            // Act
+            var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
+
+            // Assert
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Transfer</strong>: Under maintenance from"));
+        }
+
+        [Test]
         public async Task GetMessagesAsync_AllSportsAndAllSettingsUM_ReturnsCorrectMessageDTOList()
         {
             // Arrange
