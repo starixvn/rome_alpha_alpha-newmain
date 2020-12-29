@@ -1,12 +1,12 @@
 ﻿namespace Alpha.Main.Configurations
 {
+    using Fanex.Common;
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using Fanex.Common;
 
     public static class AppSettings
     {
@@ -260,5 +260,7 @@
             || NewReportsOfferSites.Contains(site, StringComparer.CurrentCultureIgnoreCase))
             && !NewReportsIgnoreSuperIds.Any(id => id == int.MaxValue)
             && !NewReportsIgnoreSuperIds.Any(id => id == srecommend);
+            
+       public static bool ShowOldCustomerList => Settings["ShowOldCustomerList"] == "1";
     }
 }

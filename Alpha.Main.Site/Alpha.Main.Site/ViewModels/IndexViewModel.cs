@@ -1,8 +1,5 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
-    using System;
-    using System.Linq;
-    using System.Web;
     using Alpha.Main.AppResources;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Web.Helpers;
@@ -13,6 +10,9 @@
     using Models.Requests;
     using SecurityCode.Web;
     using Sunplus.Agent.Utilities;
+    using System;
+    using System.Linq;
+    using System.Web;
 
     public class IndexViewModel
     {
@@ -41,6 +41,7 @@
             this.RequiredNetworkSpeedCalculation = message.CustId > 0 && AppSettings.TrackingConnectionCustIds.Contains(message.CustId);
             DisableMessages = message.DisableMessages;
             this.profilePicture = profilePicture;
+            this.ShowOldCustomerList = AppSettings.ShowOldCustomerList;
         }
 
         public bool EnableSecurityCode => message.EnableSecurityCode;
@@ -85,9 +86,11 @@
 
         public bool IsShowIntroduction => true;
 
+        public bool ShowOldCustomerList { get; }
+
         public string DefaultPath => getDefaultUrl?.Invoke() ?? MainRootPath;
 
-        public HeaderNavViewModel HeaderNavViewModel => 
+        public HeaderNavViewModel HeaderNavViewModel =>
             new HeaderNavViewModel(
                 CustId,
                 message.UserName,

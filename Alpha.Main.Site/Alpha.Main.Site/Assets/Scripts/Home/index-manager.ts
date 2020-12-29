@@ -17,6 +17,7 @@ var indexManager = {
     currentTab: null,
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
     requiredNetworkSpeedCalculation: false,
+    showOldCustomerList: false,
 
     domElements: {
         mainFrame: null,
@@ -60,6 +61,7 @@ var indexManager = {
         indexManager.domElements.pagePopup = $('#page-popup');
         indexManager.currentUrlCookieName = indexManager.domElements.currentURLCookieName.val();
         indexManager.requiredNetworkSpeedCalculation = $('#requiredNetworkSpeedCalculation').val() == '1';
+        indexManager.showOldCustomerList = $('#showOldCustomerList').val() == '1';
     },
 
     changeMenu: function (url) {
