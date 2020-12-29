@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1259
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alpha.Main.Site", "Alpha.Main.Site\Alpha.Main.Site.csproj", "{4CDDEBBD-6553-4A69-A9FC-5B58E3469843}"
 EndProject
@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SonarQube", "SonarQube", "{
 	ProjectSection(SolutionItems) = preProject
 		SonarQube\Alpha-MainCSharp.ruleset = SonarQube\Alpha-MainCSharp.ruleset
 		SonarQube\SolutionBinding.sqconfig = SonarQube\SolutionBinding.sqconfig
+		SonarQube\alpha-main\CSharp\SonarLint.xml = SonarQube\alpha-main\CSharp\SonarLint.xml
 	EndProjectSection
 EndProject
 Global
@@ -48,5 +49,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B71C0F50-27AC-4E75-AEE2-C1EA6567A9A1} = {748AB4CF-BC77-450B-AD5A-7A743F40F09A}
 		{27D51E95-AB7F-47AE-BA78-8A8381ACEC94} = {748AB4CF-BC77-450B-AD5A-7A743F40F09A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0AB68E1F-A956-44A4-959A-70760808329E}
 	EndGlobalSection
 EndGlobal
