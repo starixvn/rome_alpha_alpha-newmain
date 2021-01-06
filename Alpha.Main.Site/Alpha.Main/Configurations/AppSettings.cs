@@ -218,6 +218,27 @@
 
         public static bool EnableUMAnnouncementPopup => "1" == Settings["EnableUMAnnouncementPopup"];
 
+        private static string[] allowedSitesToViewBonusDetail;
+        public static string[] AllowedSitesToViewBonusDetail
+        {
+            get
+            {
+                if (allowedSitesToViewBonusDetail == null)
+                {
+                    var allowedSites = Settings["AllowedSitesToViewBonusDetail"];
+
+                    allowedSitesToViewBonusDetail = string.IsNullOrWhiteSpace(allowedSites)
+                        ? Array.Empty<string>()
+                        : allowedSites
+                            .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                            .Select(s => s.Trim().ToUpperInvariant())
+                            .ToArray();
+                }
+
+                return allowedSitesToViewBonusDetail;
+            }
+        }
+
         private static int ValueOfNotNullOrWhiteSpace(string value)
             => value.Equals("*", StringComparison.OrdinalIgnoreCase) ? int.MaxValue : Convert.ToInt32(value);
 

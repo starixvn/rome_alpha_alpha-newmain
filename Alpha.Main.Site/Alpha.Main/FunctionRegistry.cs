@@ -95,7 +95,9 @@ namespace Alpha.Main
             ["ReportsMenuItem"] = () => new MenuStatus(
                 () => !AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId)),
             ["NewReportsMenuItem"] = () => new MenuStatus(
-                () => AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId))
+                () => AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId)),
+            ["BonusDetailMenuItem"] = () => new MenuStatus(
+                () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant()))
         };
 
         private static Func<bool> showAccountInfo = () =>

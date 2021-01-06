@@ -214,6 +214,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bonus Detail.
+        /// </summary>
+        public static string BonusDetail {
+            get {
+                return ResourceManager.GetString("BonusDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancelled Bets.
         /// </summary>
         public static string cancelledBets {
