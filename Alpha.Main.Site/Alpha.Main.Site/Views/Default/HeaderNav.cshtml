@@ -9,6 +9,9 @@
 <section class="navbar header-nav" id="header-nav">
     <span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
     <ul class="nav navbar-nav list-top">
+        <li class="maintenance-box hide" id="um-message-box" title="@Resources.UMAnnouncementTitle">
+            <span class="icon-under-maintenance"></span>
+        </li>
         @if (Model.ShowCreateMemberByQRCode)
         {
             <li class="visible-mobile"><span class="icon icon-qr-code-top" title="@Resources.CreateMemberWithQRCode"></span></li>

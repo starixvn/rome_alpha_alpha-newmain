@@ -480,71 +480,8 @@ html * {
     position: fixed;
     z-index: 100;
     bottom: 15px;
-    right: 16px;
-
-    .maintenance-box {
-        background-color: #fff;
-        border: 1px solid #FF5C00;
-        width: 52px;
-        cursor: pointer;
-        height: 52px;
-        line-height: 52px;
-        box-shadow: 0 4px 6px 4px rgba(0, 0, 0, 0.15);
-        text-align: center;
-        animation: bounce-ex 1s infinite;
-        border-radius: 50%;
-
-        .icon-under-maintenance {
-            font-size: 18px;
-            color: #FF5C00;
-            font-weight: bold;
-        }
-
-        &:before, &:after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: transparent;
-        }
-
-        &:after {
-            @include animation(cd-pulse-ex 2s infinite);
-        }
-
-        &:before {
-            @include animation(cd-pulse-ex 2s infinite 4s);
-        }
-    }
-
-    @include keyframes(bounce-ex) {
-        50% {
-            @include transform(translateY(-5px));
-        }
-    }
-
-    @include keyframes(cd-pulse-ex) {
-        0% {
-            @include transform(scale(1));
-            @include box-shadow-multiple(inset 0 0 1px 4px rgba(255,92, 0, 0.3));
-        }
-
-        50% {
-            @include box-shadow-multiple(inset 0 0 1px 4px rgba(255,92, 0, 0.1));
-        }
-
-        100% {
-            @include transform(scale(2));
-            @include box-shadow-multiple(inset 0 0 1px 4px rgba(255,92, 0, 0));
-        }
-    }
+    right: 16px;    
 }
-
-
 
 // Data Processing Notification
 .progress-box {
@@ -579,6 +516,15 @@ html * {
         padding: 0 8px 0 16px;
         vertical-align: middle;
         font-weight: bold;
+    }
+}
+
+.icon-under-maintenance {
+    position: relative;
+    top: 3px;
+
+    &:before {
+        font-size: 15px;
     }
 }
 
