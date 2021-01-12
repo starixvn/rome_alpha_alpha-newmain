@@ -63,13 +63,23 @@ body {
     margin-left: calculateScale(-2px);
     margin-top: calculateScale(-4px);
 }
+
+.maintenance-box {
+    float: left;
+
+    .icon-under-maintenance {
+        top: 9px;
+
+        &:before {
+            font-size: calculateScale(15px);
+        }
+    }
+}
+
 /*************************  Float section ******************************/  
 .float-section {
     left: 16px;
-
-    .icon-under-maintenance {
-        font-size: calculateScale(18px);
-    }
+    
 }
 
 // Data Processing Notification
