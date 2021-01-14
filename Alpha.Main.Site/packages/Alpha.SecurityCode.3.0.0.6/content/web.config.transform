@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<configuration>
+    <system.web>
+        <httpModules>
+            <add name="Alpha.SecurityCodeHttpModule" type="Alpha.SecurityCode.HttpModules.SecurityCodeHttpModule, Alpha.SecurityCode"/>
+        </httpModules>
+    </system.web>
+    <system.webServer>
+        <modules>
+          <remove name="Alpha.SecurityCodeHttpModule" />
+          <add name="Alpha.SecurityCodeHttpModule" type="Alpha.SecurityCode.HttpModules.SecurityCodeHttpModule, Alpha.SecurityCode" preCondition="managedHandler"/>
+        </modules>
+      </system.webServer>
+</configuration>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fanex.Cryptography.Aes</name>
+    </assembly>
+    <members>
+        <member name="T:Fanex.Cryptography.Aes.AesExtension">
+            <summary>
+            Aes algorithm class for encryption and decryption with unicode characters.
+            </summary>
+        </member>
+        <member name="F:Fanex.Cryptography.Aes.AesExtension.keyVector">
+            <summary>
+            Private secret key and initialization vector constant. This value contains 12 characters.
+            And will be added more 4 characters in secretKey parameter when calling method Encrypt or Decrypt.
+            </summary>
+        </member>
+        <member name="M:Fanex.Cryptography.Aes.AesExtension.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypts an encrypted text to plain text.
+            </summary>
+            <param name="cipherText">Encrypted text.</param>
+            <param name="secretKey">A value must be 4 characters.</param>
+            <returns>Plain text.</returns>
+        </member>
+        <member name="M:Fanex.Cryptography.Aes.AesExtension.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts plain text.
+            </summary>
+            <param name="plainText">Text to encrypt.</param>
+            <param name="secretKey">A value must be 4 characters.</param>
+            <returns>Encrypted text.</returns>
+        </member>
+    </members>
+</doc>

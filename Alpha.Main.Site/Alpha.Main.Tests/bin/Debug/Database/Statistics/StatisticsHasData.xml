@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TableStatistics>
+  <Statistics>
+    <outStanding>418754.50</outStanding>
+    <total_outstanding>1156415.20</total_outstanding>
+    <total_memberActive>32</total_memberActive>
+    <total_memberClosed>709</total_memberClosed>
+    <total_memberSuspended>0</total_memberSuspended>
+    <number_newMembers>5</number_newMembers>
+  </Statistics>
+</TableStatistics>

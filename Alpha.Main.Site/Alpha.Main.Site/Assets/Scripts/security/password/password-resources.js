@@ -1,0 +1,11 @@
+'use strict';
+var passwordResources = {
+    rules: "<i class='icon-information-outline icon-rules' data-toggle='modal' data-target='#pwd'></i>",
+    pleaseEnterOldPassword: document.getElementById('please-enter-oldPassword').value,
+    passwordCannotEmpty: document.getElementById('password-cannot-empty').value,
+    confirmPasswordNotCorret: document.getElementById('not-correct-confirm-password').value,
+    changePasswordSuccessfully: document.getElementById('password-change-successfully').value,
+    newPassMustbeDiffOldPass: document.getElementById('newPassword-must-be-diff-old').value,
+    passwordDoesNotMeetMinimunRequirement: document.getElementById('password-does-not-min-requirement').value
+};
+//# sourceMappingURL=password-resources.js.map

@@ -1,0 +1,132 @@
+/*******************************************/
+/* Popup */
+/*******************************************/
+/*******************************************/
+/* Messages */
+/* Home page */
+/*******************************************/
+/*******************************************/
+/* Effect of dropdownlist */
+/*******************************************/
+/*******************************************/
+/* Transition */
+/*******************************************/
+/*******************************************/
+/* Animation */
+/*******************************************/
+/*******************************************/
+/* Ripple Effect */
+/*******************************************/
+html {
+  touch-action: manipulation; }
+
+body {
+  background: none; }
+
+.verify-security-code {
+  display: flex;
+  padding-top: 10px;
+  padding-left: 5px; }
+  .verify-security-code .profile-avatar {
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+    margin-right: 24px;
+    align-self: center; }
+
+.wrapper-right {
+  position: relative;
+  bottom: -16px; }
+  .wrapper-right .form-validation .txt.error ~ .validation,
+  .wrapper-right .form-validation .txt.valid ~ .validation {
+    top: 80px !important; }
+  .wrapper-right .block {
+    max-width: 350px;
+    padding-top: 22px;
+    width: 350px;
+    clear: both; }
+    .wrapper-right .block label {
+      font-weight: normal;
+      display: block; }
+      .wrapper-right .block label.security-code-title {
+        padding-top: 10px; }
+    .wrapper-right .block .txt {
+      padding-top: 0;
+      padding-bottom: 0;
+      width: 100%; }
+    .wrapper-right .block.has-popup .form-group {
+      margin-left: 2px; }
+    .wrapper-right .block.has-popup .txt {
+      -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+      -khtml-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+      -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); }
+  .wrapper-right .rules {
+    color: #666;
+    padding-top: 12px; }
+    .wrapper-right .rules .note-red {
+      color: #ff0101;
+      padding-right: 6px; }
+    .wrapper-right .rules ul {
+      list-style: initial;
+      padding-left: 32px; }
+      .wrapper-right .rules ul li {
+        list-style-type: disc;
+        line-height: 24px; }
+  .wrapper-right .msg-content {
+    float: left;
+    min-width: 350px;
+    padding-top: 12px; }
+    .wrapper-right .msg-content .msg {
+      line-height: 20px;
+      margin: 0; }
+  .wrapper-right .learn-more {
+    color: #045ace; }
+    .wrapper-right .learn-more:hover {
+      color: #F60;
+      text-decoration: none; }
+
+@media only screen and (max-device-width: 480px) and (orientation: portrait) {
+  .verify-security-code {
+    flex-direction: column; }
+    .verify-security-code .wrapper-right {
+      bottom: 0; }
+      .verify-security-code .wrapper-right .block {
+        width: 100%;
+        max-width: unset; } }
+
+@media only screen and (max-device-width: 743px) {
+  .msg-content {
+    float: none; }
+    .msg-content .msg {
+      width: 100%;
+      max-width: initial; }
+  .wrapper-right {
+    bottom: 0; }
+    .wrapper-right .block {
+      font-size: 18.57143px;
+      width: 500px;
+      padding: 22px 2px 0;
+      max-width: unset; }
+      .wrapper-right .block label {
+        display: block; }
+      .wrapper-right .block .txt {
+        height: 40px;
+        -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        -khtml-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); }
+      .wrapper-right .block .btn-submit, .wrapper-right .block input[type=reset] {
+        height: 40px;
+        width: 100%;
+        margin-bottom: 12px;
+        margin-right: 0; }
+      .wrapper-right .block .form-validation .txt.error ~ .validation, .wrapper-right .block .form-validation .txt.valid ~ .validation {
+        top: 112px !important; }
+  #title_header {
+    font-size: 18.57143px;
+    line-height: 55.71429px; } }
