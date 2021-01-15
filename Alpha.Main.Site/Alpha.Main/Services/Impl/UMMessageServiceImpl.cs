@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Resources;
+    using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
     using Alpha.Main.AppResources;
@@ -88,14 +89,15 @@
         }
 
         private UMMessageDTO BuildCustomerSettingsMessage(UMMessageItem message)
-            => new UMMessageDTO(
-                BitConverter.ToInt64(message.Time_Stamp, 0),
-                string.Format(
-                    Resources.UMCustomerSettingsPattern,
-                    GetProductOrSportType(message.ProductId, message.SportType),
-                    settingTypeResource.GetString($"_{message.SettingType}"),
-                    message.BeginTime.ToLongDateWithSlash(),
-                    message.EndTime.ToLongDateWithSlash()));
+        {
+            var builder = new StringBuilder(
+                string.Format(Resources.UMCustomerSettingsPattern, message.BeginTime.ToLongDateWithSlash(), message.EndTime.ToLongDateWithSlash()));
+            builder
+                .Replace("_SettingType_", settingTypeResource.GetString($"_{message.SettingType}"))
+                .Replace("_Product_", GetProductOrSportType(message.ProductId, message.SportType));
+
+            return new UMMessageDTO(BitConverter.ToInt64(message.Time_Stamp, 0), builder.ToString());
+        }
 
         private string GetProductOrSportType(int productId, int sportTypeId)
         {

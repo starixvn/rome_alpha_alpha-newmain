@@ -554,25 +554,27 @@
     <value>ถึง</value>
   </data>
   <data name="UMAnnouncementTitle" xml:space="preserve">
-    <value>ประกาศบำรุงรักษา</value>
+    <value>ประกาศการบำรุงรักษา</value>
   </data>
   <data name="UMCustomerSettingsPattern" xml:space="preserve">
-    <value>&lt;strong&gt;{0}&lt;/strong&gt;: {1} จาก &lt;span class="um-message-time"&gt;{2}&lt;/span&gt; ถึง &lt;span class="um-message-time"&gt;{3}&lt;/span&gt;</value>
+    <value>&lt;strong&gt;_SettingType_&lt;/strong&gt; ของ &lt;strong&gt;_Product_&lt;/strong&gt;: ไม่พร้อมใช้งานตั้งแต่ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; ถึง &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
   </data>
   <data name="UMSorryForInconvenience" xml:space="preserve">
-    <value>ในช่วงที่กำลังตรวจทานระบบ  ฟังก์ชั่นเหล่านี้จะไม่สามารถใช้งานได้
- ขออภัยในความไม่สะดวก มา ณ ที่นี้ด้วย</value>
+    <value>ขออภัยในความไม่สะดวก มา ณ ที่นี้ด้วย</value>
   </data>
   <data name="AllProducts" xml:space="preserve">
     <value>โปรดักส์ทั้งหมด</value>
   </data>
   <data name="UMSchedule" xml:space="preserve">
-    <value>ตารางเวลาการบำรุงรักษาระบบ (GMT + 8)</value>
+    <value>แผนการบำรุงรักษา (GMT +8) และในช่วงเวลานี้ฟังก์ชันเหล่านี้จะไม่สามารถใช้งานได้:</value>
   </data>
   <data name="UMTransferPattern" xml:space="preserve">
-    <value>&lt;strong&gt;การโอนเงิน&lt;/strong&gt;: ไม่สามารถใช้งานได้ตั้งแต่ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; จนถึง &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
+    <value>&lt;strong&gt;การถ่ายโอน&lt;/strong&gt;: ไม่สามารถใช้งานได้ตั้งแต่ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; ถึง &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
   </data>
   <data name="UMNewAccountPattern" xml:space="preserve">
-    <value>&lt;strong&gt;สร้างบัญชีใหม่&lt;/strong&gt;: อยู่ระหว่างการบำรุงรักษา ตั้งแต่ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; ถึง &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
+    <value>&lt;strong&gt;บัญชีใหม่&lt;/strong&gt;: ไม่สามารถใช้ฟังก์ชันนี้ได้ตั้งแต่ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; ถึง &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
+  </data>
+  <data name="UMDearValuedCustomers" xml:space="preserve">
+    <value>เรียน ลูกค้าที่เคารพ</value>
   </data>
 </root>
