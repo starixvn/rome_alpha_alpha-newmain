@@ -519,15 +519,6 @@ html * {
     }
 }
 
-.icon-under-maintenance {
-    position: relative;
-    top: 3px;
-
-    &:before {
-        font-size: 15px;
-    }
-}
-
 #um-message-popup {
     z-index: 1055;
 }
@@ -747,4 +738,20 @@ html * {
 
 .modal-maintenance {
     top: 20%;
+}
+
+
+.maintenance-box .icon-under-maintenance {
+    position: relative;
+    top: 3px;
+}
+
+.modal-maintenance .modal-header {
+    .modal-title {
+        cursor: default;
+    }
+
+    .icon-under-maintenance {
+        vertical-align: unset;
+    }
 }
