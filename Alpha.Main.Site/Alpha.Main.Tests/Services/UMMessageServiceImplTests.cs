@@ -144,5 +144,43 @@
             // Assert
             Assert.IsTrue(messages[0].Message.StartsWith("<strong>Live Casino</strong>: Bet Setting"));
         }
+
+        [Test]
+        public async Task GetMessagesAsync_NewAccount_ReturnsCorrectMessageDTO()
+        {
+            // Arrange
+            var rawMessages = new List<UMMessageItem>
+            {
+                new UMMessageItem(0, 0, 0, UMFunctionType.NewAccount, new DateTime(2020, 12, 3), new DateTime(2020, 12, 3, 9, 15, 10), new byte[] { 0, 0, 0, 0, 18, 206, 158, 173 })
+            };
+            dynamicRepository
+                .FetchAsync<UMMessageItem>(Arg.Any<GetUMMessageCriteria>())
+                .Returns(rawMessages);
+
+            // Act
+            var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
+
+            // Assert
+            Assert.AreEqual("<strong>New Account</strong>: Under maintenance from <span class=\"um-message-time\">03/12/2020 12:00:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15:10 AM</span>", messages[0].Message);
+        }
+
+        [Test]
+        public async Task GetMessagesAsync_Transfer_ReturnsCorrectMessageDTO()
+        {
+            // Arrange
+            var rawMessages = new List<UMMessageItem>
+            {
+                new UMMessageItem(0, 0, 0, UMFunctionType.Transfer, new DateTime(2020, 12, 3), new DateTime(2020, 12, 3, 9, 15, 10), new byte[] { 0, 0, 0, 0, 18, 206, 158, 173 })
+            };
+            dynamicRepository
+                .FetchAsync<UMMessageItem>(Arg.Any<GetUMMessageCriteria>())
+                .Returns(rawMessages);
+
+            // Act
+            var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
+
+            // Assert
+            Assert.AreEqual("<strong>Transfer</strong>: Under maintenance from <span class=\"um-message-time\">03/12/2020 12:00:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15:10 AM</span>", messages[0].Message);
+        }
     }
 }

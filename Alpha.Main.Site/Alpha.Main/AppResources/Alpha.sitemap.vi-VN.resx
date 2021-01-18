@@ -405,7 +405,10 @@
   <data name="memberOutstandingNew" xml:space="preserve">
     <value>Member Outstanding (New)</value>
   </data>
-   <data name="IndirectLoginAccount" xml:space="preserve">
+  <data name="IndirectLoginAccount" xml:space="preserve">
     <value>Đăng nhập tài khoản gián tiếp</value>
+  </data>
+  <data name="DormantAccountList" xml:space="preserve">
+    <value>Danh Sách Tài Khoản Không Hoạt Động</value>
   </data>
 </root>

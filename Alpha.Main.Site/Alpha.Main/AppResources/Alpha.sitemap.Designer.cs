@@ -331,6 +331,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dormant Account List.
+        /// </summary>
+        public static string DormantAccountList {
+            get {
+                return ResourceManager.GetString("DormantAccountList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forecast.
         /// </summary>
         public static string forecast {
