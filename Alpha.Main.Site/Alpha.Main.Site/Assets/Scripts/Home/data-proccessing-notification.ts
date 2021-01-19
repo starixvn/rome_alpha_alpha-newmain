@@ -2,6 +2,8 @@
     $: JQueryStatic;
     $progressBox: JQuery;
     $dataNotificationModal: JQuery;
+    $floatSection: JQuery;
+
     protected progressBoxCollapseTimeout = 5000;//5s
     protected getMessageTimeout = 60000;//1min
     protected getMoveBetMessageUrl = alpha.urls.messageRootPath + "MarqueeMessage/MoveBet";
@@ -21,6 +23,7 @@
     cacheDOMElements(): void {
         this.$progressBox = this.$("#progress-box");
         this.$dataNotificationModal = this.$("#data-processing-popup");
+        this.$floatSection = this.$(".float-section");
     }
 
     getMessage = () => {
@@ -71,6 +74,8 @@
             this.$progressBox
                 .addClass("collapsed")
                 .draggable({ disabled: false, containment: "#content-wrapper" });
+
+            this.$floatSection.css("width", 0);
         }, this.progressBoxCollapseTimeout);
     }
 
