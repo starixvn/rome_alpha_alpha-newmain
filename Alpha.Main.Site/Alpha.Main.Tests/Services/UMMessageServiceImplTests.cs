@@ -64,7 +64,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.IsTrue(messages[0].Message.StartsWith("<strong>All products</strong>: Customer Settings"));
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Customer Settings</strong> of <strong>All products</strong>: Unavailable from"));
         }
 
         [Test]
@@ -83,7 +83,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.IsTrue(messages[0].Message.StartsWith("<strong>New Account</strong>: Under maintenance from"));
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>New Account</strong>: Unavailable from"));
         }
 
         [Test]
@@ -102,7 +102,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Transfer</strong>: Under maintenance from"));
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Transfer</strong>: Unavailable from"));
         }
 
         [Test]
@@ -122,7 +122,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Live Casino</strong>: Customer Settings"));
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Customer Settings</strong> of <strong>Live Casino</strong>: Unavailable from"));
         }
 
         [Test]
@@ -142,7 +142,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Live Casino</strong>: Bet Setting"));
+            Assert.IsTrue(messages[0].Message.StartsWith("<strong>Bet Setting</strong> of <strong>Live Casino</strong>: Unavailable from"));
         }
 
         [Test]
@@ -161,7 +161,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.AreEqual("<strong>New Account</strong>: Under maintenance from <span class=\"um-message-time\">03/12/2020 12:00:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15:10 AM</span>", messages[0].Message);
+            Assert.AreEqual("<strong>New Account</strong>: Unavailable from <span class=\"um-message-time\">03/12/2020 12:00:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15:10 AM</span>", messages[0].Message);
         }
 
         [Test]
@@ -180,7 +180,7 @@
             var messages = (await umMessageService.GetMessagesAsync(ParamTest)).ToList();
 
             // Assert
-            Assert.AreEqual("<strong>Transfer</strong>: Under maintenance from <span class=\"um-message-time\">03/12/2020 12:00:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15:10 AM</span>", messages[0].Message);
+            Assert.AreEqual("<strong>Transfer</strong>: Unavailable from <span class=\"um-message-time\">03/12/2020 12:00:00 AM</span> to <span class=\"um-message-time\">03/12/2020 09:15:10 AM</span>", messages[0].Message);
         }
     }
 }

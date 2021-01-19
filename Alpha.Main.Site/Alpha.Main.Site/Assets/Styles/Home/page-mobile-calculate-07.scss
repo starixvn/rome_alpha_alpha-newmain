@@ -69,12 +69,13 @@ body {
 
     .icon-under-maintenance {
         top: 9px;
-
-        &:before {
-            font-size: calculateScale(15px);
-        }
     }
 }
+
+.icon-under-maintenance:before {
+    font-size: calculateScale(15px);
+}
+
 
 /*************************  Float section ******************************/  
 .float-section {

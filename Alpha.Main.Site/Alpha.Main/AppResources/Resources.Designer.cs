@@ -1412,7 +1412,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maintenance Announcement.
+        ///   Looks up a localized string similar to Maintenance Notice.
         /// </summary>
         public static string UMAnnouncementTitle {
             get {
@@ -1421,11 +1421,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;strong&gt;{0}&lt;/strong&gt;: {1} from &lt;span class=&quot;um-message-time&quot;&gt;{2}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{3}&lt;/span&gt;.
+        ///   Looks up a localized string similar to &lt;strong&gt;_SettingType_&lt;/strong&gt; of &lt;strong&gt;_Product_&lt;/strong&gt;: Unavailable from &lt;span class=&quot;um-message-time&quot;&gt;{0}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{1}&lt;/span&gt;.
         /// </summary>
         public static string UMCustomerSettingsPattern {
             get {
                 return ResourceManager.GetString("UMCustomerSettingsPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Dear valued customers,.
+        /// </summary>
+        public static string UMDearValuedCustomers {
+            get {
+                return ResourceManager.GetString("UMDearValuedCustomers", resourceCulture);
             }
         }
         
@@ -1439,7 +1448,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;strong&gt;New Account&lt;/strong&gt;: Under maintenance from &lt;span class=&quot;um-message-time&quot;&gt;{0}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{1}&lt;/span&gt;.
+        ///   Looks up a localized string similar to &lt;strong&gt;New Account&lt;/strong&gt;: Unavailable from &lt;span class=&quot;um-message-time&quot;&gt;{0}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{1}&lt;/span&gt;.
         /// </summary>
         public static string UMNewAccountPattern {
             get {
@@ -1448,7 +1457,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Here is the maintenance schedule (GMT +8):.
+        ///   Looks up a localized string similar to There&apos;s a planned maintenance (GMT +8) and during this period, these features are unavailable:.
         /// </summary>
         public static string UMSchedule {
             get {
@@ -1457,7 +1466,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to During the maintenance period, these features are not available for using. We are sorry for any inconvenience caused..
+        ///   Looks up a localized string similar to We are sorry for any inconvenience caused..
         /// </summary>
         public static string UMSorryForInconvenience {
             get {
@@ -1475,7 +1484,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;strong&gt;Transfer&lt;/strong&gt;: Under maintenance from &lt;span class=&quot;um-message-time&quot;&gt;{0}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{1}&lt;/span&gt;.
+        ///   Looks up a localized string similar to &lt;strong&gt;Transfer&lt;/strong&gt;: Unavailable from &lt;span class=&quot;um-message-time&quot;&gt;{0}&lt;/span&gt; to &lt;span class=&quot;um-message-time&quot;&gt;{1}&lt;/span&gt;.
         /// </summary>
         public static string UMTransferPattern {
             get {

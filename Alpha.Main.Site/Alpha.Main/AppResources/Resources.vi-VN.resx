@@ -619,24 +619,27 @@
     <value>đến</value>
   </data>
   <data name="UMAnnouncementTitle" xml:space="preserve">
-    <value>Thông Báo Bảo Trì</value>
+    <value>Thông báo bảo trì</value>
   </data>
   <data name="UMCustomerSettingsPattern" xml:space="preserve">
-    <value>&lt;strong&gt;{0}&lt;/strong&gt;: {1} từ &lt;span class="um-message-time"&gt;{2}&lt;/span&gt; đến &lt;span class="um-message-time"&gt;{3}&lt;/span&gt;</value>
+    <value>&lt;strong&gt;_SettingType_&lt;/strong&gt; của &lt;strong&gt;_Product_&lt;/strong&gt;: Gián đoạn từ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; đến &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
   </data>
   <data name="UMSorryForInconvenience" xml:space="preserve">
-    <value>Trong thời gian bảo trì, những chức năng trên đang tạm thời gián đoạn. Chúng tôi rất xin lỗi vì sự bất tiện gây ra.</value>
+    <value>Chúng tôi xin lỗi vì sự bất tiện gây ra.</value>
   </data>
   <data name="AllProducts" xml:space="preserve">
     <value>Tất cả sản phẩm</value>
   </data>
   <data name="UMSchedule" xml:space="preserve">
-    <value>Lịch bảo trì hệ thống (GMT +8) như sau:</value>
+    <value>Sau đây là lịch bảo trì hệ thống (theo GMT +8) và trong khoảng thời gian này, những tính năng sau tạm thời gián đoạn:</value>
   </data>
   <data name="UMTransferPattern" xml:space="preserve">
-    <value>&lt;strong&gt;Tính năng chuyển khoản&lt;/strong&gt;: Đang bảo trì từ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; đến &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
+    <value>&lt;strong&gt;Chuyển khoản&lt;/strong&gt;: Gián đoạn từ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; đến &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
   </data>
   <data name="UMNewAccountPattern" xml:space="preserve">
-    <value>&lt;strong&gt;Tạo tài khoản&lt;/strong&gt;: Tính năng hiện đang bảo trì từ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; đến &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
+    <value>&lt;strong&gt;Tạo tài khoản&lt;/strong&gt;: Gián đoạn từ &lt;span class="um-message-time"&gt;{0}&lt;/span&gt; đến &lt;span class="um-message-time"&gt;{1}&lt;/span&gt;</value>
+  </data>
+  <data name="UMDearValuedCustomers" xml:space="preserve">
+    <value>Kính gửi Quý khách hàng,</value>
   </data>
 </root>
