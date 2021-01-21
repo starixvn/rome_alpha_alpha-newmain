@@ -91,7 +91,11 @@ namespace Alpha.Main
                         || AppSettings.OfferChatbotSites.Contains(Current.Site, StringComparer.OrdinalIgnoreCase))),
             ["IndirectLoginAccountMenuItem"] = () => new MenuStatus(
                 () => AppSettings.IsAllowedIndirectLogin(Current.SRecommendId) && !Current.IsIndirectLoggedIn && (Current.IsSuper || Current.IsMaster)),
-            ["DormantAccountListMenuItem"] = () => new MenuStatus(() => Current.IsSuper || Current.IsMaster)
+            ["DormantAccountListMenuItem"] = () => new MenuStatus(() => Current.IsSuper || Current.IsMaster),
+            ["ReportsMenuItem"] = () => new MenuStatus(
+                () => !AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId)),
+            ["NewReportsMenuItem"] = () => new MenuStatus(
+                () => AppSettings.IsUsedNewReports(Current.Site, Current.SRecommendId))
         };
 
         private static Func<bool> showAccountInfo = () =>

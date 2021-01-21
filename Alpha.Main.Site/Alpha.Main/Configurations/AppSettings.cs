@@ -220,5 +220,24 @@
 
         private static int ValueOfNotNullOrWhiteSpace(string value)
             => value.Equals("*", StringComparison.OrdinalIgnoreCase) ? int.MaxValue : Convert.ToInt32(value);
+
+        public static IEnumerable<string> NewReportsOfferSites
+            => Settings["NewReports.OfferSites"]
+            .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(site => site.Trim());
+
+        public static IEnumerable<int> NewReportsIgnoreSuperIds
+            => Settings["NewReports.IgnoreSuperIds"]
+            .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select
+            (
+                id => string.IsNullOrWhiteSpace(id) ? 0 : ValueOfNotNullOrWhiteSpace(id.Trim())
+            );
+
+        public static bool IsUsedNewReports(string site, int srecommend)
+            => (NewReportsOfferSites.Contains("*", StringComparer.CurrentCultureIgnoreCase)
+            || NewReportsOfferSites.Contains(site, StringComparer.CurrentCultureIgnoreCase))
+            && !NewReportsIgnoreSuperIds.Any(id => id == int.MaxValue)
+            && !NewReportsIgnoreSuperIds.Any(id => id == srecommend);
     }
 }
