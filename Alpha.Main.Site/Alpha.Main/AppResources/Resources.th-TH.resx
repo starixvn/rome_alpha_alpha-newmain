@@ -245,13 +245,13 @@
     <value>รวมทั้งหมด เปิด/ปิด/ระงับ</value>
   </data>
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
-    <value>สถานะของAgent ทั้งหมด/การแข่งขันถูกระงับ</value>
+    <value>สถานะของAgent ทั้งหมด/ถูกระงับ</value>
   </data>
   <data name="totalCSTransferOutstanding" xml:space="preserve">
     <value>คาซิโน ยอดรวม โอน/คงค้าง</value>
   </data>
   <data name="totalMasterACS" xml:space="preserve">
-    <value>จำนวนรวมในบัญชีของตัวแทนหลัก ยังคงใช้อยู่ / ปิดแล้ว/ การแข่งขันถูกระงับ</value>
+    <value>จำนวนรวมในบัญชีของตัวแทนหลัก ยังคงใช้อยู่ / ปิดแล้ว/ ถูกระงับ</value>
   </data>
   <data name="statistics" xml:space="preserve">
     <value>สถิติของคุณ</value>
