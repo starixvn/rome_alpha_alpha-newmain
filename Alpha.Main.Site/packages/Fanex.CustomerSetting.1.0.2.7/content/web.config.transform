@@ -1,7 +1,0 @@
-﻿<?xml version="1.0"?>
-<configuration>
-    <configSections>
-        <section name="CustomerSettingConfiguration" type="Fanex.CustomerSetting.Client40.Configurations.CustomerSettingConfiguration, Fanex.CustomerSetting.Client40" />
-    </configSections>
-    <CustomerSettingConfiguration System="1" ServiceUris="http://10.18.200.124:7577/api" CdnUris="http://10.18.200.124:7576" ClientLogCategory="DCS-Setting-Client-LOCAL" AccessDeniedAction="~/User/AccessDenied" SecretKey="U6BUFHtVcq5SPQcTl7tHLBG/LF6d5YVRKHrCHD9M+Vw="/>
-</configuration>
