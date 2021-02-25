@@ -219,7 +219,7 @@ var AgeWnd = function () {
             var scrollLeft = oldMainUltilities.getScrollLeft(window.document.body);
 
             // ON iOS: there is scroll issues with popup. We must show popup with auto height
-            var isAutoHeight = oldMainUltilities.isiOS();
+            var isAutoHeight = !options.isIgnoreAutoHeightOniOS && oldMainUltilities.isiOS();
 
             var popupCss = {
                 width: popW,

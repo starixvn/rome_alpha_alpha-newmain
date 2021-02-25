@@ -755,23 +755,3 @@ html * {
         vertical-align: unset;
     }
 }
-
-
-/********************* Popup confirm payment ***********************/
-.confirm-payment-modal {
-    .modal-body {
-        position: absolute;
-        top: 39px;
-        left: 0;
-        right: 0;
-        iframe {
-            position: fixed;
-            width: 470px !important;
-            top: unset !important;
-            left: unset !important;
-        }
-    }
-}
-
-
-
