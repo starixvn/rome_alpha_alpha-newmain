@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Tests.Configurations
 {
+    using System;
+    using System.Collections.Generic;
     using System.Collections.Specialized;
     using Alpha.Main.Configurations;
     using NUnit.Framework;
-    using System;
-    using System.Collections.Generic;
 
     [TestFixture]
     public class AppSettingsTests
@@ -682,6 +682,67 @@
 
             // Assert
             Assert.AreEqual(expected, actualSetting);
+        }
+
+        //[Test]
+        //public void AllowedSitesToViewBonusDetail_HasConfig_ReturnsExpectedValue()
+        //{
+        //    // Arrange
+        //    AppSettings.Settings = new NameValueCollection
+        //    {
+        //        ["AllowedSitesToViewBonusDetail"] = "abc, def,ghi,"
+        //    };
+
+        //    // Act
+        //    var actualSetting = AppSettings.AllowedSitesToViewBonusDetail;
+
+        //    // Assert
+        //    Assert.True(actualSetting.Length == 3
+        //        && actualSetting[0] == "ABC"
+        //        && actualSetting[1] == "DEF"
+        //        && actualSetting[2] == "GHI");
+        //}
+
+        [Test]
+        public void AllowedSitesToViewBonusDetail_HasNotConfig_ReturnsEmptyArray()
+        {
+            // Arrange & Act
+            var actualSetting = AppSettings.AllowedSitesToViewBonusDetail;
+
+            // Assert
+            Assert.IsEmpty(actualSetting);
+        }
+
+        [Test]
+        public void AllowedSitesToViewBonusDetail_ConfigIsEmpty_ReturnsEmptyArray()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["AllowedSitesToViewBonusDetail"] = ""
+            };
+
+            // Act
+            var actualSetting = AppSettings.AllowedSitesToViewBonusDetail;
+
+            // Assert
+            Assert.IsEmpty(actualSetting);
+        }
+
+        [Test]
+        public void AllowedSitesToViewBonusDetail_ConfigIsWhiteSpace_ReturnsEmptyArray()
+        {
+            // Arrange
+            AppSettings.Settings = new NameValueCollection
+            {
+                ["AllowedSitesToViewBonusDetail"] = "     "
+            };
+
+            // Act
+            var actualSetting = AppSettings.AllowedSitesToViewBonusDetail;
+
+            // Assert
+            Assert.IsEmpty(actualSetting);
         }
 
         [TestCase("", "", false)]

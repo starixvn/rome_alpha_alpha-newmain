@@ -405,4 +405,7 @@
   <data name="DormantAccountList" xml:space="preserve">
     <value>รายชื่อบัญชีที่ไม่ได้ใช้งาน</value>
   </data>
+  <data name="BonusDetail" xml:space="preserve">
+    <value>Bonus Detail</value>
+  </data>
 </root>

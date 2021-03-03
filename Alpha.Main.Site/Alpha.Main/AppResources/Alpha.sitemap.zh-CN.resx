@@ -405,4 +405,7 @@
   <data name="DormantAccountList" xml:space="preserve">
     <value>不活跃账号名单</value>
   </data>
+  <data name="BonusDetail" xml:space="preserve">
+    <value>Bonus Detail</value>
+  </data>
 </root>
