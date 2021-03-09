@@ -99,7 +99,7 @@ namespace Alpha.Main
             ["BonusDetailMenuItem"] = () => new MenuStatus(
                 () => AppSettings.AllowedSitesToViewBonusDetail.Contains(Current.Site.ToUpperInvariant())),
             ["TransferToDownlineHistoryMenuItem"] = () => new MenuStatus(
-                () => AppSettings.IsAllowedTransferToDownlineHistorySite(Current.Site))
+                () => AppSettings.IsAllowedTransferToDownlineHistorySite(Current.Site) && Current.IsAllDayBalTransfer)
         };
 
         private static Func<bool> showAccountInfo = () =>
