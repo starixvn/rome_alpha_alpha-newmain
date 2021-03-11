@@ -6,6 +6,7 @@ interface Window {
     setSecurityCodePopupTitle(securityCodeTitle): void;
     revertSecurityCodePopupTitle(): void;
     ageWnd: any;
+    productPopupUrl: any;
 }
 
 interface String {
@@ -180,6 +181,11 @@ var securityHelper = {
             return;
         }
 
+        if (top.productPopupUrl) {
+            top[top.productPopupUrl]();
+            return;
+        }
+
         securityHelper.redirectToHomePage(200);
     },
     getUrlVars: function () {
@@ -238,18 +244,18 @@ String.prototype.hc = function () {
 String.prototype.encrypt = function () {
     var plainText = this;
     plainText = plainText.toString();
-    var secretKey = $('#hashkey').val();    
+    var secretKey = $('#hashkey').val();
     var passPhrase = 'a5s8d2e9c172';
     var key = CryptoJS.enc.Utf8.parse(passPhrase + secretKey);
     var iv = key;
 
     var pwd = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(plainText), key,
-    {
-        keySize: 128 / 8,
-        iv: iv,
-        mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.Pkcs7
-    });
+        {
+            keySize: 128 / 8,
+            iv: iv,
+            mode: CryptoJS.mode.CBC,
+            padding: CryptoJS.pad.Pkcs7
+        });
 
     return pwd.toString();
 };

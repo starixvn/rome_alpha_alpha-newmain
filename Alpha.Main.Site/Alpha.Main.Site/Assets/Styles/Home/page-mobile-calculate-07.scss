@@ -80,7 +80,7 @@ body {
 /*************************  Float section ******************************/  
 .float-section {
     left: 16px;
-    
+    right: unset;
 }
 
 // Data Processing Notification
@@ -107,6 +107,8 @@ body {
     .content {
         background-color: #fff;
         top: calculateScale(48px);
+
+		padding:0px !important;
     }
 
     .header {
@@ -571,3 +573,4 @@ body {
         height: 20px;
     }
 }
+
