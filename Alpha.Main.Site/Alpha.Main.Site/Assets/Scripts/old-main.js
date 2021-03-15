@@ -505,7 +505,7 @@ function ShowSecCodePopup(preUrl, callerAge) {
     //preUrl = 'url=' + escape(preUrl);
     //var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
     var url = top.mainRootPath + (alpha.user.isEnableOtp ? 'otp/verifyotp' : 'SecurityCode/VerifySecurityCode');
-    var popH = 190, popW = 396, verticalOffset = -75;
+    var popH = 320, popW = 650, verticalOffset = -75;
     var x = (screen.width / 2) - (popW / 2) + verticalOffset;
     var y = (screen.height / 2) - (popH / 2);
 
