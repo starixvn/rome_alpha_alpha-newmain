@@ -10,6 +10,7 @@
     using Chatbot.Client.Services;
     using DataAccesses;
     using DataAccesses.Impl;
+    using Fanex.Caching;
     using Fanex.Data.Repository;
     using Fanex.RemotingRef;
     using Handlers;
@@ -83,6 +84,7 @@
         private static void RegisterServices(Container container)
         {
             container.Register<IRemotingRefService, RemotingRefService>(Lifestyle.Singleton);
+            container.RegisterSingleton<ICacheService>(new CacheService());
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
             container.Register(() => Fanex.Logging.Logger.Log, Lifestyle.Singleton);

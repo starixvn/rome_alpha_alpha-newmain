@@ -10,15 +10,17 @@
     {
         private const string BalanceUpDayKey = "SUNPLUS.AGENT.MODEL.BL.REPORTS.BALANCEUPDAY";
         private readonly IDynamicRepository dynamicRepository;
+        private readonly ICacheService cacheService;
 
-        public BalanceUpDayInfoServiceImpl(IDynamicRepository dynamicRepository)
+        public BalanceUpDayInfoServiceImpl(IDynamicRepository dynamicRepository, ICacheService cacheService)
         {
             this.dynamicRepository = dynamicRepository;
+            this.cacheService = cacheService;
         }
 
         public BalanceUpDayInfo GetBalanceUpDayInfo()
         {
-            var balanceUpDayInfo = CacheService.Get<BalanceUpDayInfo>(BalanceUpDayKey);
+            var balanceUpDayInfo = cacheService.Get<BalanceUpDayInfo>(BalanceUpDayKey);
 
             if (balanceUpDayInfo == null)
             {
