@@ -26,6 +26,7 @@ body {
 
     &.has-popup {
         padding-top: 10px;
+        margin: 0 auto;
     }
 
     .profile-avatar {
@@ -51,7 +52,7 @@ body {
 
     .form-validation .txt.error ~ .validation,
     .form-validation .txt.valid ~ .validation {
-        top: 80px !important;
+        top: 66px !important;
     }
 
     .block {
@@ -157,6 +158,7 @@ body {
     .verify-security-code {
         flex-direction: column;
         width: 100%;
+
         .profile-avatar {
             align-self: center;
         }
@@ -168,6 +170,10 @@ body {
             .block {
                 width: 100%;
                 max-width: unset;
+            }
+
+            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
+                top: 98px !important;
             }
         }
 
@@ -214,7 +220,7 @@ body {
             }
 
             .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
-                top: 112px !important;
+                top: 102px !important;
             }
         }
     }
