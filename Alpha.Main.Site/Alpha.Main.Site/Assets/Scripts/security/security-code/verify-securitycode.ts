@@ -20,7 +20,7 @@ var verifySecurityCode = {
             e.preventDefault();
         });
 
-        $('#txtSecCode').val("").focus();
+        $('#txtSecCode').val("");
 
         $("#txtSecCode").keyup(function () {
             securityHelper.validateSecurityCode(this);
@@ -34,6 +34,7 @@ var verifySecurityCode = {
         if (top.hasPopupOpen()) {
             top.setSecurityCodePopupTitle($("#title_header").text());
             $("#container").addClass("has-popup");
+            $("#verify-security-code-container").addClass("has-popup");
             $("#title_header").remove();
         }
     },
