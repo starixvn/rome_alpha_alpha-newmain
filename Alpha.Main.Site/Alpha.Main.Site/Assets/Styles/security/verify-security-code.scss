@@ -52,7 +52,7 @@ body {
 
     .form-validation .txt.error ~ .validation,
     .form-validation .txt.valid ~ .validation {
-        top: 66px !important;
+        top: 81px !important;
     }
 
     .block {
@@ -91,9 +91,15 @@ body {
 
             label {
                 margin-bottom: 2px;
+
                 &.security-code-title {
                     padding-top: 4px;
                 }
+            }
+
+            .form-validation .txt.error ~ .validation,
+            .form-validation .txt.valid ~ .validation {
+                top: 66px !important;
             }
         }
     }
@@ -139,25 +145,17 @@ body {
     }
 }
 
-/*@media only screen and (max-device-width: 480px) and (orientation : portrait) {
-    .verify-security-code {
-        flex-direction: column;
-
-        .wrapper-right {
-            bottom: 0;
-
-            .block {
-                width: 100%;
-                max-width: unset;
-            }
-        }
-    }
-}*/
 
 @media only screen and (max-device-width: 767px) {
     .verify-security-code {
         flex-direction: column;
         width: 100%;
+
+        &.has-popup .wrapper-right {
+            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
+                top: 98px !important;
+            }
+        }
 
         .profile-avatar {
             align-self: center;
@@ -170,41 +168,7 @@ body {
             .block {
                 width: 100%;
                 max-width: unset;
-            }
-
-            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
-                top: 98px !important;
-            }
-        }
-
-        #txtSecCode {
-            font-size: calculateScale(16px);
-        }
-    }
-}
-
-// It's not necessary at the moment
-@media only screen and (max-device-width: $conent-device-lower768) {
-    .msg-content {
-        float: none;
-
-        .msg {
-            width: 100%;
-            max-width: initial;
-        }
-    }
-
-    .wrapper-right {
-        bottom: 0;
-
-        .block {
-            font-size: calculateScale(13px);
-            width: 500px;
-            padding: 22px 2px 0;
-            max-width: unset;
-
-            label {
-                display: block;
+                font-size: calculateScale(13px);
             }
 
             .txt {
@@ -212,22 +176,24 @@ body {
                 @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
             }
 
-            .btn-submit, input[type=reset] {
-                height: calculateScale(28px);
-                width: 100%;
-                margin-bottom: 12px;
-                margin-right: 0;
+            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
+                top: 110px !important;
             }
 
-            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
-                top: 102px !important;
+            .btn-submit, input[type=reset] {
+                height: calculateScale(28px);
             }
         }
+
+        #txtSecCode {
+            font-size: calculateScale(16px);
+        }
     }
-    
 
     #title_header {
         font-size: calculateScale(13px);
         line-height: calculateScale(39px);
     }
 }
+
+
