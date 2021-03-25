@@ -8,7 +8,8 @@ var verifySecurityCode = {
         const actorProfilePicture = JSON.parse(localStorage.getItem('actorProfilePicture'));
         $('.profile-avatar').attr("src", actorProfilePicture.Image);
 
-        $('#txtSecCode').keypress(function (e) {
+        const $txtSecCode = $('#txtSecCode');
+        $txtSecCode.keypress(function (e) {
             if (e.which == 13) {
                 verifySecurityCode.verify();
                 e.preventDefault();
@@ -20,15 +21,15 @@ var verifySecurityCode = {
             e.preventDefault();
         });
 
-        $('#txtSecCode').val("");
+        $txtSecCode.val("");
 
-        $("#txtSecCode").keyup(function () {
+        $txtSecCode.keyup(function () {
             securityHelper.validateSecurityCode(this);
         });
 
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
-            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+            isChecked ? $txtSecCode.addClass("show-hint") : $txtSecCode.removeClass("show-hint");
         });
 
         if (top.hasPopupOpen()) {
