@@ -74,6 +74,9 @@ body {
             padding-bottom: 0;
             width: 100%;
             font-family: 'password';
+            &.show-hint {
+                font-family: inherit;
+            }
         }
 
         &.has-popup {
