@@ -8,6 +8,7 @@
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
     using DataAccesses;
+    using Fanex.Cryptography.Aes;
     using Fanex.Data.Repository;
     using Fanex.Logging.Extensions.Web;
     using Models;
@@ -29,7 +30,7 @@
         private readonly Encryptor encryptor;
         private readonly PasswordDataAccess passwordDataAccess;
         private readonly CasinoService casinoService;
-        private readonly AesService aes;
+        private readonly IAesService aes;
         private readonly KickoutCustomerService kickoutCustomerService;
         private readonly IDynamicRepository dynamicRepository;
 
@@ -37,7 +38,7 @@
             Encryptor encryptor,
             PasswordDataAccess passwordDataAccess,
             CasinoService casinoService,
-            AesService aes,
+            IAesService aes,
             KickoutCustomerService kickoutCustomerService,
             IDynamicRepository dynamicRepository)
         {

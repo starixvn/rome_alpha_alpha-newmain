@@ -11,6 +11,7 @@
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Caching;
+    using Fanex.Cryptography.Aes;
     using Fanex.Data.Repository;
     using Fanex.RemotingRef;
     using Handlers;
@@ -122,7 +123,7 @@
             container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
 
             container.RegisterPerWebRequest<IUser, User>();
-            container.RegisterSingleton<AesService, AesServiceImpl>();
+            container.RegisterSingleton(() => AesService.Default);
 
             container.RegisterPerWebRequest<LogoutService, LogoutServiceImpl>();
 

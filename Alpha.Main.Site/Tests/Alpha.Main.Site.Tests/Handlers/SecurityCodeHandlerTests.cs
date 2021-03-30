@@ -4,6 +4,7 @@
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.Main.Tests.TestData.Helper;
     using AppResources;
+    using Fanex.Cryptography.Aes;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Main.Constants;
@@ -32,7 +33,7 @@
         private IUserSession userSession;
         private IUser user;
         private CompareLogic compareLogic;
-        private AesService aes;
+        private IAesService aes;
 
         [SetUp]
         public void SetUp()
@@ -70,7 +71,7 @@
 
             compareLogic = new CompareLogic();            
             UrlHelperTestSetUp.SetUp();
-            aes = Substitute.For<AesService>();
+            aes = Substitute.For<IAesService>();
         }
 
         #region Handle Security Code Query

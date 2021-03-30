@@ -4,6 +4,7 @@
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Models;
     using AppResources;
+    using Fanex.Cryptography.Aes;
     using Main.Models;
     using MediatR;
     using Models.Request.SecurityCode;
@@ -34,7 +35,7 @@
         private readonly ProfilePictureServices customerProfileService;
         private readonly IUserSession userSession;
         private readonly IUser user;
-        private readonly AesService aes;
+        private readonly IAesService aes;
 
         public SecurityCodeHandler(
           SecurityCodeService securityCodeService,
@@ -43,7 +44,7 @@
           Encryptor encryptor,
           IUserSession userSession,
           IUser user,
-          AesService aes)
+          IAesService aes)
         {
             this.sessionManager = sessionManager;
             this.encryptor = encryptor;
