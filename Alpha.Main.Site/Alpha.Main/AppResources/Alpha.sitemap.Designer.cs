@@ -907,6 +907,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transfer To Downline History.
+        /// </summary>
+        public static string TransferToDownlineHistory {
+            get {
+                return ResourceManager.GetString("TransferToDownlineHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View Log.
         /// </summary>
         public static string viewLog {

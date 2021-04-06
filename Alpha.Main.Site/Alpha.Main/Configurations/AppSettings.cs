@@ -262,5 +262,14 @@
             && !NewReportsIgnoreSuperIds.Any(id => id == srecommend);
             
        public static bool ShowOldCustomerList => Settings["ShowOldCustomerList"] == "1";
+
+        public static IEnumerable<string> TransferToDownlineHistoryOfferSites
+            => Settings["TransferToDownlineHistory.OfferSites"]
+            .Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(site => site.Trim());
+
+        public static bool IsAllowedTransferToDownlineHistorySite(string site)
+            => TransferToDownlineHistoryOfferSites.Contains("*", StringComparer.CurrentCultureIgnoreCase)
+            || TransferToDownlineHistoryOfferSites.Contains(site, StringComparer.CurrentCultureIgnoreCase);
     }
 }

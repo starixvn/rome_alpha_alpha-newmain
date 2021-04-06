@@ -81,6 +81,8 @@ body {
 .float-section {
     left: 16px;
     right: unset;
+    width: calc(100% - 32px);
+    transition: width 3s linear;
 }
 
 // Data Processing Notification
