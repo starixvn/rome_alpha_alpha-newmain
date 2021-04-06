@@ -135,7 +135,7 @@
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Super/MasterList.aspx?v3" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx?v3" roles="Agent"></siteMapNode>
 
-      <siteMapNode resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v3"></siteMapNode>
+      <siteMapNode resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v3" isNew="true"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode resourceKey="transfer" menuItemType="TransferMenuItemBySiteWithDownlineHistory" functionType="[C]">
@@ -144,7 +144,7 @@
       <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" url="_Transfer/Agent/MemberList.aspx?v4" roles="Agent"></siteMapNode>
 
       <siteMapNode resourceKey="TransferAllAndClearCredit" appPath="TransferAppPath" url="TransferAllAndClearCredit/Index?v4" roles="Super,Master"></siteMapNode>
-      <siteMapNode resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v4"></siteMapNode>
+      <siteMapNode resourceKey="TransferToDownlineHistory" appPath="TransferAppPath" url="TransferToDownlineHistory/Index?v4" isNew="true"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode resourceKey="viewLog" menuItemType="ViewLogMenuItem" functionType="[G]">
