@@ -32,6 +32,11 @@ body {
         padding-top: 0;
         padding-bottom: 0;
         width: 100%;
+        font-family: 'password';
+
+        &.show-hint {
+            font-family: inherit;
+        }
     }
 
     &.has-popup {
@@ -106,6 +111,7 @@ body {
         .txt {
             height: $height-mobile;
             @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+            font-size: calculateScale(16px);
         }
 
         .btn-submit, input[type=reset] {

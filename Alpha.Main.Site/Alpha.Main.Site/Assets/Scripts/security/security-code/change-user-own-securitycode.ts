@@ -28,7 +28,7 @@ var changeUserOwnSecurityCode = {
 
 		$("#showSCchk").click(function () {
 			var isChecked = $(this).is(":checked");
-			isChecked ? securityHelper.showHint() : securityHelper.hideHint();
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
 		});
 	},
 	change: function () {

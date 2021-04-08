@@ -133,13 +133,13 @@ var securityHelper = {
         }
     },
     showHint: function () {
-        $('input[type=password]').each(function () {
-            $(this).removeAttr("type").prop('type', 'text');
+        $('input[type=text]').each(function () {
+            $(this).addClass('show-hint');
         })
     },
     hideHint: function () {
         $('input[type=text]').each(function () {
-            $(this).removeAttr("type").prop('type', 'password');
+            $(this).removeClass('show-hint');
         })
     },
     showSC: function () {

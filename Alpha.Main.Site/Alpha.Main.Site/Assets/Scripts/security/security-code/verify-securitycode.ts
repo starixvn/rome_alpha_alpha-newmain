@@ -29,7 +29,7 @@ var verifySecurityCode = {
 
         $("#showSCchk").click(function () {
             var isChecked = $(this).is(":checked");
-            isChecked ? $txtSecCode.addClass("show-hint") : $txtSecCode.removeClass("show-hint");
+            isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
 
         if (top.hasPopupOpen()) {
