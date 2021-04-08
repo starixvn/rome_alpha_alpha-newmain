@@ -105,6 +105,10 @@ body {
             .form-validation .txt.valid ~ .validation {
                 top: 66px !important;
             }
+
+            .msg {
+                margin-top: 0;
+            }
         }
     }
     // Rules
@@ -166,7 +170,6 @@ body {
         }
 
         .wrapper-right {
-            bottom: 0;
             width: 100%;
 
             .block {
