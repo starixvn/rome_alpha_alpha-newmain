@@ -504,8 +504,13 @@ function getBootboxPostion(handleElement, popUpOptions, dialog) {
 function ShowSecCodePopup(preUrl, callerAge) {
     //preUrl = 'url=' + escape(preUrl);
     //var url = age.GetBaseUrl() + '_MemberInfo/SecurityCode/CheckSecurityCode.aspx?' + preUrl;
+    alpha.detectResponsiveInformation();
     var url = top.mainRootPath + (alpha.user.isEnableOtp ? 'otp/verifyotp' : 'SecurityCode/VerifySecurityCode');
     var popH = 380, popW = 396, verticalOffset = -75;
+    if (alpha.isMobile) {
+        popH = popH / 0.7;
+        popW = popW / 0.7;
+    }
     var x = (screen.width / 2) - (popW / 2) + verticalOffset;
     var y = (screen.height / 2) - (popH / 2);
 
