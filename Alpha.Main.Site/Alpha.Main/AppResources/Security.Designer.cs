@@ -198,15 +198,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your account is closed due to 5 failed attempts with the OTP. Please contact your upline or CSD..
-        /// </summary>
-        public static string CloseAccountOtpMessage {
-            get {
-                return ResourceManager.GetString("CloseAccountOtpMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Confirm Security Code.
         /// </summary>
         public static string ConfirmSecurityCode {
@@ -464,6 +455,15 @@ namespace Alpha.Main.AppResources {
         public static string LearnMore {
             get {
                 return ResourceManager.GetString("LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account has been locked due to multiple failed security check. Please contact your upline to unlock..
+        /// </summary>
+        public static string LockAccountOtpMessage {
+            get {
+                return ResourceManager.GetString("LockAccountOtpMessage", resourceCulture);
             }
         }
         

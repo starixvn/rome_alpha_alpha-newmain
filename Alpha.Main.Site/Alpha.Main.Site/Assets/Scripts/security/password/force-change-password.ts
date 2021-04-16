@@ -105,7 +105,7 @@ var forceChangePassword = {
                 if (data.Code === 0) { // OK
                     securityHelper.redirectToHomePage(2000);
                 }
-                else if (data.Code === 2) { // account is closed
+                else if (data.Code === 104) { // account is locked
                     alert(data.Message);
                     securityHelper.signOut();
                 }

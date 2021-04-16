@@ -200,7 +200,7 @@
             if (!isCorrect
                 && result.Code == DisabledAccountErrorCode)
             {
-                result.Message = Security.CloseAccountOtpMessage;
+                result.Message = Security.LockAccountOtpMessage;
 
                 if (param.SubAccId == 0)
                 {

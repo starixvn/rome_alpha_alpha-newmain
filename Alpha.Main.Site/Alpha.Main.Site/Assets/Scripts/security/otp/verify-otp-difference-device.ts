@@ -5,6 +5,7 @@ class VerifyOtpDefferenceDevice {
     $btnBack: any;
     $otpForm: any;
     $txtOtp: any;
+    lockedAccountCode: number = 200;
 
     resources = {
         requiredFieldMessage: (<HTMLInputElement>document.getElementById('requiredFieldMessage')).value
@@ -62,6 +63,11 @@ class VerifyOtpDefferenceDevice {
         }
         else {
             this.$txtOtp.addClass("error").next().text(result.message);
+
+            if (result.code === this.lockedAccountCode) {
+                alert(result.message);
+                alpha.core.signOut();
+            }
         }
     }
 

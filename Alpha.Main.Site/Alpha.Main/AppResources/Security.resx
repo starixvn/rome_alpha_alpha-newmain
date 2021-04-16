@@ -409,8 +409,8 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="Verify" xml:space="preserve">
     <value>Verify</value>
   </data>
-  <data name="CloseAccountOtpMessage" xml:space="preserve">
-    <value>Your account is closed due to 5 failed attempts with the OTP. Please contact your upline or CSD.</value>
+  <data name="LockAccountOtpMessage" xml:space="preserve">
+    <value>Your account has been locked due to multiple failed security check. Please contact your upline to unlock.</value>
   </data>
   <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
     <value>The OTP is invalid or expired. Please try another OTP or contact your upline to reset your OTP.</value>

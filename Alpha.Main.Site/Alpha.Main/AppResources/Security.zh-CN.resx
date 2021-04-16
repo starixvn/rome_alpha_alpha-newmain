@@ -401,8 +401,8 @@
   <data name="OtpHiMessage" xml:space="preserve">
     <value>您好 {0} ， 您使用的设备 / 浏览器 是与上次使用的不同。 请输入OTP以继续。</value>
   </data>
-  <data name="CloseAccountOtpMessage" xml:space="preserve">
-    <value>由於使用OTP的5次失敗嘗試，您的帳戶已關閉。 請聯繫您的上線或客服部。</value>
+  <data name="LockAccountOtpMessage" xml:space="preserve">
+    <value>由于检测多次失败，导致此账号已被锁定。请联系您的上线以解锁。</value>
   </data>
   <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
     <value>OTP无效或过期。请尝试另一个OTP或联系您的上线以重置您的OTP。</value>
