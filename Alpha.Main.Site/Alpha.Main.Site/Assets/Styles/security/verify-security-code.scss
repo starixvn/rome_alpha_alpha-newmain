@@ -3,7 +3,7 @@
 
 // To remove the 300-350ms tap delay
 html {
-  touch-action: manipulation;
+  //touch-action: manipulation;
 }
 
 body {
@@ -18,17 +18,26 @@ body {
 }
 .verify-security-code {
     display: flex;
-    padding-top: 10px;
+    flex-direction: column;
+    padding-top: 20px;
     padding-left: 5px;
+    -webkit-overflow-scrolling: touch !important;
+    width: 360px;
+
+    &.has-popup {
+        padding-top: 10px;
+        margin: 0 auto;
+    }
 
     .profile-avatar {
-        height: 240px;
-        width: 240px;
+        height: 120px;
+        width: 120px;
         border-radius: 50%;
         border: 3px solid #fff;
         box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
         margin-right: 24px;
         align-self: center;
+        display: block;
     }
 }
 
@@ -38,12 +47,11 @@ body {
 
     .form-validation .txt.error ~ .validation,
     .form-validation .txt.valid ~ .validation {
-        top: 80px !important;
+        top: 81px !important;
     }
 
     .block {
         max-width: 350px;
-        padding-top: 22px;
         width: 350px;
         clear: both;
 
@@ -60,15 +68,41 @@ body {
             padding-top: 0;
             padding-bottom: 0;
             width: 100%;
+            font-family: 'password';
+            &.show-hint {
+                font-family: inherit;
+            }
         }
 
         &.has-popup {
             .form-group {
                 margin-left: 2px;
+                margin-bottom: 6px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
 
             .txt {
                 @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+            }
+
+            label {
+                margin-bottom: 2px;
+
+                &.security-code-title {
+                    padding-top: 4px;
+                }
+            }
+
+            .form-validation .txt.error ~ .validation,
+            .form-validation .txt.valid ~ .validation {
+                top: 66px !important;
+            }
+
+            .msg {
+                margin-top: 0;
             }
         }
     }
@@ -114,43 +148,29 @@ body {
     }
 }
 
-@media only screen and (max-device-width: 480px) and (orientation : portrait) {
+
+@media only screen and (max-device-width: 767px) {
     .verify-security-code {
         flex-direction: column;
+        width: 100%;
+
+        &.has-popup .wrapper-right {
+            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
+                top: 98px !important;
+            }
+        }
+
+        .profile-avatar {
+            align-self: center;
+        }
 
         .wrapper-right {
-            bottom: 0;
+            width: 100%;
 
             .block {
                 width: 100%;
                 max-width: unset;
-            }
-        }
-    }
-}
-
-// It's not necessary at the moment
-@media only screen and (max-device-width: $conent-device-lower768) {
-    .msg-content {
-        float: none;
-
-        .msg {
-            width: 100%;
-            max-width: initial;
-        }
-    }
-
-    .wrapper-right {
-        bottom: 0;
-
-        .block {
-            font-size: calculateScale(13px);
-            width: 500px;
-            padding: 22px 2px 0;
-            max-width: unset;
-
-            label {
-                display: block;
+                font-size: calculateScale(13px);
             }
 
             .txt {
@@ -158,22 +178,24 @@ body {
                 @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
             }
 
-            .btn-submit, input[type=reset] {
-                height: calculateScale(28px);
-                width: 100%;
-                margin-bottom: 12px;
-                margin-right: 0;
+            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
+                top: 110px !important;
             }
 
-            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
-                top: 112px !important;
+            .btn-submit, input[type=reset] {
+                height: calculateScale(28px);
             }
         }
+
+        #txtSecCode {
+            font-size: calculateScale(16px);
+        }
     }
-    
 
     #title_header {
         font-size: calculateScale(13px);
         line-height: calculateScale(39px);
     }
 }
+
+

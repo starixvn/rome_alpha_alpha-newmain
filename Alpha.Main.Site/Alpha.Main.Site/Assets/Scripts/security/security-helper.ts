@@ -142,6 +142,16 @@ var securityHelper = {
             $(this).removeAttr("type").prop('type', 'password');
         })
     },
+    showHintSC: function () {
+        $('input[type=text]').each(function () {
+            $(this).addClass('show-hint');
+        })
+    },
+    hideHintSC: function () {
+        $('input[type=text]').each(function () {
+            $(this).removeClass('show-hint');
+        })
+    },
     showSC: function () {
         $('input[type=tel]').each(function () {
             $(this).addClass('show-hint');
