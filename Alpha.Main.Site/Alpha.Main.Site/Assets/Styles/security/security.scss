@@ -31,12 +31,7 @@ body {
     .txt {
         padding-top: 0;
         padding-bottom: 0;
-        width: 100%;
-        font-family: 'password';
-
-        &.show-hint {
-            font-family: inherit;
-        }
+        width: 100%;       
     }
 
     &.has-popup {
@@ -47,6 +42,14 @@ body {
         .txt {
             @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
         }
+    }
+}
+
+.block .form-SC-before .txt {
+    font-family: 'password';
+
+    &.show-hint {
+        font-family: inherit;
     }
 }
 
