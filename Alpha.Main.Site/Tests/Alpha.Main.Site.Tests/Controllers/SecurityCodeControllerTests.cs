@@ -25,6 +25,7 @@
         {
             mediator = Substitute.For<IMediator>();
             userSession = Substitute.For<IUserSession>();
+            userSession.IsForcedSecurityCode.Returns(true);
             SecurityCodeSessionManager.SecurityCodeSession = Substitute.For<SecurityCodeSession>();
 
 
