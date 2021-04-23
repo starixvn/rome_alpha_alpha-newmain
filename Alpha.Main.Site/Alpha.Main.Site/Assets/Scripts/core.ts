@@ -63,6 +63,7 @@ var alpha = {
 			}
 
             var isInternal = index.$("#isInternal").val();
+            isInternal = isInternal || "0";
             var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
 
             if (isInternal.toString() !== "0") {
