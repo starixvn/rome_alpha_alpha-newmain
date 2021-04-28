@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
+    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
@@ -8,6 +9,7 @@
     using Main.Models;
     using MediatR;
     using Requests.Password;
+    using Sunplus.Agent.Model.Entities;
     using Web;
     using Web.Filters;
 
@@ -15,10 +17,12 @@
     public class PasswordController : BaseController
     {
         private readonly IMediator mediator;
+        private readonly IUserSession userSession;
 
-        public PasswordController(IMediator mediator)
+        public PasswordController(IMediator mediator, IUserSession userSession)
         {
             this.mediator = mediator;
+            this.userSession = userSession;
         }
 
         // GET: Password
@@ -32,8 +36,13 @@
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         public ActionResult ForceChangePassword(ForceChangePasswordQuery query)
         {
-            var viewModel = this.mediator.Send(query);
-            return View(viewModel);
+            if (userSession.IsPasswordExpired || !userSession.IsLogged)
+            {
+                var viewModel = this.mediator.Send(query);
+                return View(viewModel);
+            }
+
+            return Redirect("~/");
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
@@ -69,8 +78,13 @@
         [HttpPost, AntiXsrfFilter]
         public ActionResult ForceChangePassword(ChangePasswordCommand command)
         {
-            var result = this.mediator.Send(command);
-            return Json(result);
+            if (userSession.IsPasswordExpired || !userSession.IsLogged)
+            {
+                var result = this.mediator.Send(command);
+                return Json(result);
+            }
+
+            return Json(Result.CreateErrorResult(Security.NotAuthorized));
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]

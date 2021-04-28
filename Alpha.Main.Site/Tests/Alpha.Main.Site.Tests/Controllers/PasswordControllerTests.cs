@@ -21,7 +21,8 @@
         {
             mediator = Substitute.For<IMediator>();
             userSession = Substitute.For<IUserSession>();
-            passwordController = new PasswordController(mediator);
+            userSession.IsPasswordExpired.Returns(true);
+            passwordController = new PasswordController(mediator, userSession);
         }
 
         [Test]

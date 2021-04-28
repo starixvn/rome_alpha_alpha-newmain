@@ -60,6 +60,11 @@
         [HttpGet]
         public ActionResult ChangeSecurityCodeByForcing(ForceChangeSecurityCodeQuery query)
         {
+            if (!userSession.IsForcedSecurityCode)
+            {
+                return Redirect("~/");
+            }
+
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -70,6 +75,11 @@
         [AntiXsrfFilter]
         public JsonResult ChangeSecurityCodeByForcing(ChangeSecurityCodeByForcingCommand query)
         {
+            if (!userSession.IsForcedSecurityCode)
+            {
+                return Json(Result.CreateErrorResult(Security.NotAuthorized));
+            }
+
             var viewModel = mediator.Send(query);
 
             return Json(viewModel);
