@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Params
 {
+    using Alpha.Auth.Configurations;
     using Alpha.Web.Models;
 
     public class KickoutCustomerParam
@@ -16,6 +17,7 @@
             ServerId = serverId;
             IP = ip;
             SubAccountId = subAccountId;
+            IsDisabledRecheckin = AppSettings.IsDisabledCheckDuplicationLogin;
         }
 
         public int CustId { get; }
@@ -27,5 +29,7 @@
         public string IP { get; }
 
         public int SubAccountId { get; }
+
+        public bool IsDisabledRecheckin { get; }
     }
 }
