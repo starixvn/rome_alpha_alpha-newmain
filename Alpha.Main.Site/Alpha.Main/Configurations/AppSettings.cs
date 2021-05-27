@@ -260,8 +260,8 @@
             || NewReportsOfferSites.Contains(site, StringComparer.CurrentCultureIgnoreCase))
             && !NewReportsIgnoreSuperIds.Any(id => id == int.MaxValue)
             && !NewReportsIgnoreSuperIds.Any(id => id == srecommend);
-            
-       public static bool ShowOldCustomerList => Settings["ShowOldCustomerList"] == "1";
+
+        public static bool ShowOldCustomerList => Settings["ShowOldCustomerList"] == "1";
 
         public static IEnumerable<string> TransferToDownlineHistoryOfferSites
             => Settings["TransferToDownlineHistory.OfferSites"]
@@ -271,5 +271,7 @@
         public static bool IsAllowedTransferToDownlineHistorySite(string site)
             => TransferToDownlineHistoryOfferSites.Contains("*", StringComparer.CurrentCultureIgnoreCase)
             || TransferToDownlineHistoryOfferSites.Contains(site, StringComparer.CurrentCultureIgnoreCase);
+
+        public static bool IsShowEmptyDashboard => "1" == Settings["IsShowEmptyDashboard"];
     }
 }

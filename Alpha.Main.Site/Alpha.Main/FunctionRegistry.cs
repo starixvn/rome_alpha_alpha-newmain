@@ -135,7 +135,8 @@ namespace Alpha.Main
                 "Error.aspx",
                 "SignIn.aspx",
                 "ChangePassword.aspx",
-                "SecurityCode"
+                "SecurityCode",
+                "Dashboard"
             };
 
             if (currentURLCookie != null &&

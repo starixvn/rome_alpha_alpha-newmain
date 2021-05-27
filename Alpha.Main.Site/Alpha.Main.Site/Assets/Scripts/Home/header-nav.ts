@@ -50,7 +50,7 @@ var headerNav = {
     hideHeaderDropdownMenuTimeout: null,
 
     urls: {
-        home: alpha.urls.mainRootPath + "Dashboard/Index",
+        home: alpha.urls.mainRootPath + "Dashboard/Index2",
         qrCodeTop: alpha.urls.memberInfoRootPath + "QRCodeMemberSignIn",
         messages: alpha.urls.messageRootPath + "MessageHistory/Index",
         announcements: alpha.urls.messageRootPath + "Announcement/Index",

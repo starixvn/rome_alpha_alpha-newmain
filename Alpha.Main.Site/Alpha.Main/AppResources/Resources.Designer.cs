@@ -322,6 +322,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please click on the &lt;span class=&quot;icon icon-home&quot;&gt;&lt;/span&gt; to view overall information..
+        /// </summary>
+        public static string DashboardViewOverallInformation {
+            get {
+                return ResourceManager.GetString("DashboardViewOverallInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data processing is in progress..
         /// </summary>
         public static string DataProcessingIsInProgress {

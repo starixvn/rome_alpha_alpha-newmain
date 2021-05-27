@@ -977,6 +977,7 @@
     <Content Include="Views\NewCustomerCaptcha\Index.cshtml" />
     <Content Include="Views\Default\UMMessagePopup.cshtml" />
     <Content Include="Views\Error\Blocked.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -1246,7 +1247,7 @@
     <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
     <Content Include="Views\Password\ChangePassword.cshtml" />
-    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\Index2.cshtml" />
     <Content Include="Views\Password\ForceChangePassword.cshtml" />
     <Content Include="Views\Password\ResetMainAccountPassword.cshtml" />
     <Content Include="Views\Password\ResetSubAccountPassword.cshtml" />
