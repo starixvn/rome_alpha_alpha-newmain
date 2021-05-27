@@ -7,8 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    <style>
+        body { background: transparent; }
+        .icon-home { cursor: default; margin-right: 0; }
+        .icon-home:after { content: none; }
+        .text { padding: 10px 0; margin: 0; font-size: 14px; }
+    </style>
 </head>
 <body>
-    <p style="padding:10px">@Html.Raw(Resources.DashboardViewOverallInformation)</p>
+    <p class="text">@Html.Raw(Resources.DashboardViewOverallInformation)</p>
 </body>
 </html>
