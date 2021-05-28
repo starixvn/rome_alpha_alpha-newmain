@@ -32,7 +32,7 @@ namespace Alpha.Main.Site.Controllers
                 return View();
             }
 
-            return RedirectToAction(nameof(Index2));
+            return Index2();
         }
 
         [HttpGet]

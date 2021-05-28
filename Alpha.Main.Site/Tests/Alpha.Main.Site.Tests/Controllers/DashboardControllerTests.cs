@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
     using System.Web.Mvc;
+    using Alpha.Main.Configurations;
     using Alpha.Main.Constants;
     using Alpha.Main.Site.Controllers;
     using Alpha.Main.Site.Requests.Dashboard.BalanceInfo;
@@ -36,6 +37,7 @@
             // Arrange
             var compareLogic = new CompareLogic();
             UrlHelperTestSetUp.SetUp();
+            AppSettings.Settings["IsShowEmptyDashboard"] = "0";
 
             var expectedViewModel = new DashboardViewModel(userSession.RoleId);
 
