@@ -18,6 +18,6 @@
     </style>
 </head>
 <body>
-    <p class="text">@Html.Raw(Resources.DashboardViewOverallInformation)</p>
+    <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span style=\"cursor:pointer\" onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
 </body>
 </html>

@@ -644,6 +644,6 @@
     <value> Dear valued customers,</value>
   </data>
   <data name="DashboardViewOverallInformation" xml:space="preserve">
-    <value>Please click on the &lt;span class="icon icon-home"&gt;&lt;/span&gt; to view overall information.</value>
+    <value>Please click on the {0} to view overall information.</value>
   </data>
 </root>

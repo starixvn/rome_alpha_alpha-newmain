@@ -643,6 +643,6 @@
     <value>Kính gửi Quý khách hàng,</value>
   </data>
   <data name="DashboardViewOverallInformation" xml:space="preserve">
-    <value>Vui lòng nhấn vào biểu tượng &lt;span class="icon icon-home"&gt;&lt;/span&gt; để xem thông tin tổng quan.</value>
+    <value>Vui lòng nhấn vào biểu tượng {0} để xem thông tin tổng quan.</value>
   </data>
 </root>

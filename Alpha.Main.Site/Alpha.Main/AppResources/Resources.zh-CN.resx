@@ -581,6 +581,6 @@
     <value>尊敬的客户，</value>
   </data>
   <data name="DashboardViewOverallInformation" xml:space="preserve">
-    <value>请点击 &lt;span class="icon icon-home"&gt;&lt;/span&gt; 以查看整体资料。</value>
+    <value>请点击 {0} 以查看整体资料。</value>
   </data>
 </root>

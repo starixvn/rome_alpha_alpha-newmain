@@ -322,7 +322,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please click on the &lt;span class=&quot;icon icon-home&quot;&gt;&lt;/span&gt; to view overall information..
+        ///   Looks up a localized string similar to Please click on the {0} to view overall information..
         /// </summary>
         public static string DashboardViewOverallInformation {
             get {
