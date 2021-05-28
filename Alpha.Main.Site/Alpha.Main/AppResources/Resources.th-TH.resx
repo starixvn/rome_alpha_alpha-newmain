@@ -577,4 +577,7 @@
   <data name="UMDearValuedCustomers" xml:space="preserve">
     <value>เรียน ลูกค้าที่เคารพ</value>
   </data>
+  <data name="DashboardViewOverallInformation" xml:space="preserve">
+    <value>โปรดคลิก &lt;span class="icon icon-home"&gt;&lt;/span&gt; เพื่อดูข้อมูลโดยรวม</value>
+  </data>
 </root>

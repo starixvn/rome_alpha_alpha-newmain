@@ -4,6 +4,7 @@ namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Main.Configurations;
     using MediatR;
     using Requests.Dashboard.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
@@ -25,6 +26,17 @@ namespace Alpha.Main.Site.Controllers
 
         [HttpGet]
         public ActionResult Index()
+        {
+            if (AppSettings.IsShowEmptyDashboard)
+            {
+                return View();
+            }
+
+            return RedirectToAction(nameof(Index2));
+        }
+
+        [HttpGet]
+        public ActionResult Index2()
         {
             var viewModel = new DashboardViewModel(userSession.RoleId);
 

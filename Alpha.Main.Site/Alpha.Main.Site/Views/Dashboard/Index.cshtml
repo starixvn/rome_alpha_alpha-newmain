@@ -1,6 +1,4 @@
-﻿@using Alpha.Main.Site.ViewModels.Dashboard
-@model DashboardViewModel
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,59 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/dashboard/dashboard-{Model.UserLevelName}")
-    @StaticResources.RenderStyles("~/assets/bundles/default-home")
-    @StaticResources.RenderStylesWithMedia(767, "~/assets/bundles/home-mobile-calculate-07")
+    <style>
+        body { background: transparent; }
+        .icon-home { cursor: default; margin-right: 0; }
+        .icon-home:after { content: none; }
+        .text { padding: 10px 0; margin: 0; font-size: 14px; }
+    </style>
+    <style media="screen and (max-device-width: 768px)">
+        .text { font-size: 20px; }
+    </style>
 </head>
 <body>
-    <div class="scroll-tabs">
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active" id="balance-tab">
-                <a href="#balance" aria-controls="home" role="tab" data-toggle="tab">@Resources.balance</a>
-            </li>
-            <li role="presentation" id="stats-tab">
-                <a href="#stats" aria-controls="home" role="tab" data-toggle="tab">@Resources.stats</a>
-            </li>
-            <li role="presentation" id="notice-tab">
-                <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">@Resources.announcement</a>
-            </li>
-            @if (Model.EnablePlayForFun)
-            {
-                <li id="memberrequest-tab">
-                    <a href="#member-requests" aria-controls="home" role="tab" data-toggle="tab">
-                        <span>@Resources.playForFun</span>
-                        <span class="new-request"></span>
-                        <span class="badge-title">@Resources.lblNew</span>
-                        <span id="icon-help-play-for-fun" class="icon-information-outline"></span>
-                    </a>
-                </li>
-            }
-        </ul>
-    </div>
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active balance-info" id="balance">
-            @Html.Action("BalanceInfo")
-        </div>
-        <div role="tabpanel" class="tab-pane statistic" id="stats" action-url="@Url.Action("Index", "Statistics")">
-            <div class="text-center"><span class="block-icon-small "></span></div>
-        </div>
-        <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@MicroSites.MessageUrl("~/PortalMessage/Index")">
-            <div class="text-center"><span class="block-icon-small "></span></div>
-        </div>
-        @if (Model.EnablePlayForFun)
-        {
-            <div role="tabpanel" class="tab-pane member-requests" id="member-requests" action-url="@Url.Action("Index", "MemberRequests")">
-                <div class="text-center"><span class="block-icon-small "></span></div>
-            </div>
-        }
-    </div>
-    @Html.Partial("HiddenFields", Model)
-    <!--[if IE 8]><!-->
-    @StaticResources.AssetScripts.RenderCommon("/bundles/common/es5-shim")
-    <!--<![endif]-->
-    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
-    @StaticResources.RenderScripts("~/assets/bundles/default-dashboard")
-    @GoogleAnalyticHepler.Render()
+    <p class="text">@Html.Raw(Resources.DashboardViewOverallInformation)</p>
 </body>
 </html>
