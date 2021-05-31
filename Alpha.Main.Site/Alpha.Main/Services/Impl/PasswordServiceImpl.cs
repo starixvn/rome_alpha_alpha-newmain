@@ -323,7 +323,10 @@
         {
             try
             {
-                kickoutCustomerService.Kickout(param);
+                if (!param.IsDisabledRecheckin)
+                {
+                    kickoutCustomerService.Kickout(param);
+                }
             }
             catch (Exception ex)
             {
