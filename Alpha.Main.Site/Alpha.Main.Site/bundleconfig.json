@@ -193,6 +193,12 @@
     ]
   },
   {
+    "outputFileName": "Assets/bundles/partial-um/partial-um.css",
+    "inputFiles": [
+      "Assets/styles/partial-um/partial-um.css"
+    ]
+  },
+  {
     "outputFileName": "Assets/bundles/home-mobile-calculate-07.css",
     "inputFiles": [
       "Assets/styles/home/home-mobile-calculate-07.css"

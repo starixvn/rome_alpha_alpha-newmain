@@ -1,0 +1,21 @@
+﻿@import "../Home/_variables.scss";
+
+body {
+    background-color: transparent;
+    font-family: $font-family;
+
+    .partial-um-announcement {
+        color: $msg-error-color;
+        font-size: $font-size + 1;
+        font-weight: 500;
+        line-height: 1.5;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    @media only screen and (max-device-width: 768px) {
+        .partial-um-announcement {
+            font-size: $font-size + 7;
+        }
+    }
+}

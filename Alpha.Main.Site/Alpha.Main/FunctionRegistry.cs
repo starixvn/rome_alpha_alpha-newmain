@@ -136,7 +136,8 @@ namespace Alpha.Main
                 "SignIn.aspx",
                 "ChangePassword.aspx",
                 "SecurityCode",
-                "Dashboard"
+                "Dashboard",
+                "PartialUM"
             };
 
             if (currentURLCookie != null &&

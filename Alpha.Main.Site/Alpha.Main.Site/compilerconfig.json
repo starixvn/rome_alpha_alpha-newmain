@@ -52,6 +52,10 @@
     "inputFile": "Assets/styles/error/error.scss"
   },
   {
+    "outputFile": "Assets/styles/partial-um/partial-um.css",
+    "inputFile": "Assets/styles/partial-um/partial-um.scss"
+  },
+  {
     "outputFile": "Assets/Styles/home/popup-announcement.css",
     "inputFile": "Assets/Styles/home/popup-announcement.scss"
   },

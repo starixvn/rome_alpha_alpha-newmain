@@ -583,4 +583,7 @@
   <data name="DashboardViewOverallInformation" xml:space="preserve">
     <value>请点击 {0} 以查看整体资料。</value>
   </data>
+  <data name="PartialUMAnnouncement" xml:space="preserve">
+    <value>由于目前服务器繁忙所以此功能暂时关闭 从 {0} 至 {1} (GMT+8), 请稍后再试。 不便之处 敬请见谅！</value>
+  </data>
 </root>
