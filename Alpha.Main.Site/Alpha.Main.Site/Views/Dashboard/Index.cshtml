@@ -9,15 +9,15 @@
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     <style>
         body { background: transparent; }
-        .icon-home { cursor: default; margin-right: 0; }
+        .icon-home { margin-right: 0; }
         .icon-home:after { content: none; }
-        .text { padding: 10px 0; margin: 0; font-size: 14px; }
+        .text { padding: 10px 0; margin: 0; font-size: 15px; }
     </style>
     <style media="screen and (max-device-width: 768px)">
         .text { font-size: 20px; }
     </style>
 </head>
 <body>
-    <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span style=\"cursor:pointer\" onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
+    <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
 </body>
 </html>

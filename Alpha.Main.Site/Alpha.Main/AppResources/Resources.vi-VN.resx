@@ -645,4 +645,7 @@
   <data name="DashboardViewOverallInformation" xml:space="preserve">
     <value>Vui lòng nhấn vào biểu tượng {0} để xem thông tin tổng quan.</value>
   </data>
+  <data name="PartialUMAnnouncement" xml:space="preserve">
+    <value>Hệ thống hiện đang bận nên chức năng này tạm thời bị gián đoạn {0} - {1} (GMT+8). Xin vui lòng thử lại sau. Chúng tôi rất xin lỗi vì sự bất tiện này.</value>
+  </data>
 </root>
