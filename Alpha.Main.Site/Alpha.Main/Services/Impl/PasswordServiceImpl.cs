@@ -4,9 +4,6 @@
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Text.RegularExpressions;
-    using Alpha.Main.Configurations;
-    using Alpha.NetThrottling;
-    using Alpha.NetThrottling.Models;
     using AppResources;
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
@@ -36,9 +33,7 @@
         private readonly IAesService aes;
         private readonly KickoutCustomerService kickoutCustomerService;
         private readonly IDynamicRepository dynamicRepository;
-        private readonly INetThrottler netThrottler;
-        private readonly IThrottlePolicy throttlePolicy = new ThrottlePolicy(NetThrottlingConfiguration.Default.Keys["Any"]);
-        private readonly IUser user;
+        private readonly INetThrottlingService netThrottlingService;
 
         public PasswordServiceImpl(
             Encryptor encryptor,
@@ -47,8 +42,7 @@
             IAesService aes,
             KickoutCustomerService kickoutCustomerService,
             IDynamicRepository dynamicRepository,
-            INetThrottler netThrottler,
-            IUser user)
+            INetThrottlingService netThrottlingService)
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
@@ -56,8 +50,7 @@
             this.aes = aes;
             this.kickoutCustomerService = kickoutCustomerService;
             this.dynamicRepository = dynamicRepository;
-            this.netThrottler = netThrottler;
-            this.user = user;
+            this.netThrottlingService = netThrottlingService;
         }
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
@@ -289,7 +282,7 @@
                 throw new ArgumentNullException(nameof(param), "Param cannot be null");
             }
 
-            if (netThrottler.IsBlacklist(CacheIdentity.From(throttlePolicy.Name, AppSettings.SiteGroup, new[] { user.Username })))
+            if (netThrottlingService.IsBlacklist())
             {
                 return Result.CreateErrorResult("Too many requests");
             }
@@ -324,6 +317,8 @@
 
             if (updateResult.IsSuccessful)
             {
+                netThrottlingService.Throttle();
+
                 KickoutCustomer(new KickoutCustomerParam(
                     param.CustId,
                     param.CustLevel,

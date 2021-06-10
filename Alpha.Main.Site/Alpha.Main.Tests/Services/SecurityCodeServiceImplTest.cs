@@ -22,22 +22,19 @@
         private SecurityCodeDataAccess securityCodeDataAccess;
         private Encryptor encryptor;
         private CompareLogic compareLogic;
-        private INetThrottler netThrottler;
-        private IUser user;
+        private INetThrottlingService netThrottlingService;
 
         [SetUp]
         public void Setup()
         {
             securityCodeDataAccess = Substitute.For<SecurityCodeDataAccess>();
             encryptor = Substitute.For<Encryptor>();
-            netThrottler = Substitute.For<INetThrottler>();
-            user = Substitute.For<IUser>();
+            netThrottlingService = Substitute.For<INetThrottlingService>();
 
             securityCodeService = Substitute.ForPartsOf<SecurityCodeServiceImpl>(
                 securityCodeDataAccess,
                 encryptor,
-                netThrottler,
-                user);
+                netThrottlingService);
 
             compareLogic = new CompareLogic();
         }

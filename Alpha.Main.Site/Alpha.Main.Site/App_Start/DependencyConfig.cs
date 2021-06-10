@@ -126,6 +126,7 @@
                 container.GetInstance<IDynamicRepository>(),
                 container.GetInstance<OtpService>(),
                 container.GetInstance<JsonHelper>()));
+                container.GetInstance<INetThrottlingService>()));
 
             container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
 
@@ -168,6 +169,7 @@
             container.Register<ILogger, NetThrottling.Utils.Logger>(Lifestyle.Scoped);
             container.Register<ICacheServiceFactory, CacheServiceFactory>(Lifestyle.Scoped);
             container.Register<IResolver, BaseResolver>(Lifestyle.Scoped);
+            container.Register<INetThrottlingService, NetThrottlingService>(Lifestyle.Scoped);
 
             container.RegisterSingleton<ICache>(() => CreateRedisCache());
             container.RegisterSingleton<ICacheService, CacheService>();

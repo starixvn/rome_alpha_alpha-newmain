@@ -2,10 +2,7 @@
 {
     using System;
     using System.Text.RegularExpressions;
-    using Alpha.Main.Configurations;
     using Alpha.Main.Services;
-    using Alpha.NetThrottling;
-    using Alpha.NetThrottling.Models;
     using AppResources;
     using Criteria.SecurityCode;
     using DataAccesses;
@@ -24,20 +21,16 @@
 
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
         private readonly Encryptor encryptor;
-        private readonly INetThrottler netThrottler;
-        private readonly IUser user;
-        private readonly IThrottlePolicy throttlePolicy = new ThrottlePolicy(NetThrottlingConfiguration.Default.Keys["Any"]);
+        private readonly INetThrottlingService netThrottlingService;
 
         public SecurityCodeServiceImpl(
             SecurityCodeDataAccess securityCodeDataAccess,
             Encryptor encryptor,
-            INetThrottler netThrottler,
-            IUser user)
+            INetThrottlingService netThrottlingService)
         {
             this.securityCodeDataAccess = securityCodeDataAccess;
             this.encryptor = encryptor;
-            this.netThrottler = netThrottler;
-            this.user = user;
+            this.netThrottlingService = netThrottlingService;
         }
 
         public Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param)
@@ -97,7 +90,7 @@
                 throw new ArgumentNullException(nameof(param), "Param cannot be null");
             }
 
-            if (netThrottler.IsBlacklist(CacheIdentity.From(throttlePolicy.Name, AppSettings.SiteGroup, new[] { user.Username })))
+            if (netThrottlingService.IsBlacklist())
             {
                 return Result.CreateErrorResult("Too many requests");
             }
@@ -118,7 +111,14 @@
                 Language = param.Language
             };
 
-            return securityCodeDataAccess.UpdateSecurityCode(command);
+            var result = securityCodeDataAccess.UpdateSecurityCode(command);
+
+            if (result != null && result.IsSuccessful)
+            {
+                netThrottlingService.Throttle();
+            }
+
+            return result;
         }
 
         private string HashSecurityCode(int custId, string securityCode, bool isResetMember = false)

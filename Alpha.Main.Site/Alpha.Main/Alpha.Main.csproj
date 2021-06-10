@@ -434,6 +434,7 @@
     <Compile Include="Services\Impl\MemberRequestsServiceImpl.cs" />
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
+    <Compile Include="Services\Impl\NetThrottlingService.cs" />
     <Compile Include="Services\Impl\NicknameServiceImpl.cs" />
     <Compile Include="Services\Impl\ProfilePictureServices.cs" />
     <Compile Include="Services\Impl\UMMessageServiceImpl.cs" />
