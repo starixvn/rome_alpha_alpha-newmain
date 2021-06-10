@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
     using System.Web.Mvc;
@@ -32,6 +33,7 @@
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
+    using StackExchange.Redis;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Model.Entities;
@@ -166,7 +168,22 @@
             container.Register<ILogger, NetThrottling.Utils.Logger>(Lifestyle.Scoped);
             container.Register<ICacheServiceFactory, CacheServiceFactory>(Lifestyle.Scoped);
             container.Register<IResolver, BaseResolver>(Lifestyle.Scoped);
+
+            container.RegisterSingleton<ICache>(() => CreateRedisCache());
             container.RegisterSingleton<ICacheService, CacheService>();
+        }
+
+        private static RedisCache CreateRedisCache()
+        {
+            var redisConfigurationString = ConfigurationManager.AppSettings["RedisConfigurationOptions:Alpha.NetThrottling"];
+            var configurationOptions = ConfigurationOptions.Parse(redisConfigurationString);
+            var redisCacheOptions = new RedisCacheOptions
+            {
+                ApplicationName = configurationOptions.ClientName,
+                ConnectionOptions = configurationOptions
+            };
+
+            return new RedisCache(redisCacheOptions);
         }
     }
 }

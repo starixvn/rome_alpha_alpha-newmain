@@ -2,7 +2,10 @@
 {
     using System;
     using System.Text.RegularExpressions;
+    using Alpha.Main.Configurations;
     using Alpha.Main.Services;
+    using Alpha.NetThrottling;
+    using Alpha.NetThrottling.Models;
     using AppResources;
     using Criteria.SecurityCode;
     using DataAccesses;
@@ -21,13 +24,20 @@
 
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
         private readonly Encryptor encryptor;
+        private readonly INetThrottler netThrottler;
+        private readonly IUser user;
+        private readonly IThrottlePolicy throttlePolicy = new ThrottlePolicy(NetThrottlingConfiguration.Default.Keys["Any"]);
 
         public SecurityCodeServiceImpl(
             SecurityCodeDataAccess securityCodeDataAccess,
-            Encryptor encryptor)
+            Encryptor encryptor,
+            INetThrottler netThrottler,
+            IUser user)
         {
             this.securityCodeDataAccess = securityCodeDataAccess;
             this.encryptor = encryptor;
+            this.netThrottler = netThrottler;
+            this.user = user;
         }
 
         public Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param)
@@ -85,6 +95,11 @@
             if (param == null)
             {
                 throw new ArgumentNullException(nameof(param), "Param cannot be null");
+            }
+
+            if (netThrottler.IsBlacklist(CacheIdentity.From(throttlePolicy.Name, AppSettings.SiteGroup, new[] { user.Username })))
+            {
+                return Result.CreateErrorResult("Too many requests");
             }
 
             var validateResult = Validate(param.NewSecurityCode);
