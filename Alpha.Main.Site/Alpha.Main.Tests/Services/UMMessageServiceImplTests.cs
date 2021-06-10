@@ -28,6 +28,7 @@
         [SetUp]
         public void SetUp()
         {
+            var cacheKey = $"Alpha.Main.Services.Impl.UMMessageService_{ParamTest.Site}_{ParamTest.CurrencyId}_{ParamTest.SuperId}";
             dynamicRepository = Substitute.For<IDynamicRepository>();
             cacheRefService = Substitute.For<CacheRefService>();
             cacheService = Substitute.For<ICacheService>();

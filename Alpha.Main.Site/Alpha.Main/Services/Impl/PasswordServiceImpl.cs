@@ -4,6 +4,9 @@
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Text.RegularExpressions;
+    using Alpha.Main.Configurations;
+    using Alpha.NetThrottling;
+    using Alpha.NetThrottling.Models;
     using AppResources;
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
@@ -33,6 +36,9 @@
         private readonly IAesService aes;
         private readonly KickoutCustomerService kickoutCustomerService;
         private readonly IDynamicRepository dynamicRepository;
+        private readonly INetThrottler netThrottler;
+        private readonly IThrottlePolicy throttlePolicy = new ThrottlePolicy(NetThrottlingConfiguration.Default.Keys["Any"]);
+        private readonly IUser user;
 
         public PasswordServiceImpl(
             Encryptor encryptor,
@@ -40,7 +46,9 @@
             CasinoService casinoService,
             IAesService aes,
             KickoutCustomerService kickoutCustomerService,
-            IDynamicRepository dynamicRepository)
+            IDynamicRepository dynamicRepository,
+            INetThrottler netThrottler,
+            IUser user)
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
@@ -48,6 +56,8 @@
             this.aes = aes;
             this.kickoutCustomerService = kickoutCustomerService;
             this.dynamicRepository = dynamicRepository;
+            this.netThrottler = netThrottler;
+            this.user = user;
         }
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
@@ -277,6 +287,11 @@
             if (param == null)
             {
                 throw new ArgumentNullException(nameof(param), "Param cannot be null");
+            }
+
+            if (netThrottler.IsBlacklist(CacheIdentity.From(throttlePolicy.Name, AppSettings.SiteGroup, new[] { user.Username })))
+            {
+                return Result.CreateErrorResult("Too many requests");
             }
 
             var rawNewPassword = Decrypt(param.NewPassword, param.HashKey);

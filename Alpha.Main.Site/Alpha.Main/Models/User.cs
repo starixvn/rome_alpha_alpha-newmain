@@ -17,6 +17,8 @@
         bool IsAdminCanUpdateSubAccount { get; }
 
         void RemoveNewCaptchaByCurrency();
+
+        string Username { get; }
     }
 
     public class User : IUser
@@ -53,6 +55,8 @@
 
         public bool IsAdminCanUpdateSubAccount
             => GetSessionValue<bool>(IsAdminCanUpdateSubAccountSessionKey);
+
+        public string Username => UserSession.Current.IsSubAcc ? UserSession.Current.SubUserName : UserSession.Current.UserName;
 
         public void RemoveNewCaptchaByCurrency()
         {

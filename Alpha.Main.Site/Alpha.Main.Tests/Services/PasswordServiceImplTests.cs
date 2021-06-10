@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using Alpha.NetThrottling;
     using Alpha.Web.Models;
     using AppResources;
     using Constants;
@@ -31,6 +32,8 @@
         private IAesService aes;
         private KickoutCustomerService kickoutCustomerService;
         private IDynamicRepository repository;
+        private INetThrottler netThrottler;
+        private IUser user;
 
         [SetUp]
         public void SetUp()
@@ -43,6 +46,8 @@
             aes = Substitute.For<IAesService>();
             kickoutCustomerService= Substitute.For<KickoutCustomerService>();
             repository = Substitute.For<IDynamicRepository>();
+            netThrottler = Substitute.For<INetThrottler>();
+            user = Substitute.For<IUser>();
 
             passwordService = Substitute.ForPartsOf<PasswordServiceImpl>(
                 encryptor,
@@ -50,7 +55,9 @@
                 casinoService,
                 aes,
                 kickoutCustomerService,
-                repository);
+                repository,
+                netThrottler,
+                user);
         }
 
         #region Change Main Account Passowrd

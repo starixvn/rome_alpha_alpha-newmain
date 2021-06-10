@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Resources;
     using System.Text;
     using System.Threading;
@@ -31,6 +32,7 @@
             this.cacheRefService = cacheRefService;
             this.cacheService = cacheService;
             settingTypeResource = new ResourceManager(typeof(SettingType));
+            CacheService = cacheService;
         }
 
         public async Task<IEnumerable<UMMessageDTO>> GetMessagesAsync(UMMessageParam param)

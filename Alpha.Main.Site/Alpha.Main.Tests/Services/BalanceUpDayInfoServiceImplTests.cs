@@ -15,6 +15,7 @@
         private IDynamicRepository dynamicRepository;
         private ICacheService cacheService;
         private BalanceUpDayInfoServiceImpl balanceUpDayInfoService;
+        private ICacheService CacheService;
 
         [SetUp]
         public void SetUp()

@@ -7,6 +7,10 @@
     using System.Web.Mvc;
     using Alpha.Captcha.Services;
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.NetThrottling;
+    using Alpha.NetThrottling.Models;
+    using Alpha.NetThrottling.Resolvers;
+    using Alpha.NetThrottling.Utils;
     using Chatbot.Client.Services;
     using DataAccesses;
     using DataAccesses.Impl;
@@ -51,6 +55,8 @@
 
             RegisterServices(container);
 
+            RegisterNetThrottling(container);
+
             // This is an extension method from the integration package.
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
 
@@ -85,7 +91,6 @@
         private static void RegisterServices(Container container)
         {
             container.Register<IRemotingRefService, RemotingRefService>(Lifestyle.Singleton);
-            container.RegisterSingleton<ICacheService>(new CacheService());
             container.Register<CachingManager, CachingManagerImpl>(Lifestyle.Singleton);
             container.Register<BrowserHelper, BrowserHelperImpl>(Lifestyle.Singleton);
             container.Register(() => Fanex.Logging.Logger.Log, Lifestyle.Singleton);
@@ -151,6 +156,17 @@
             SimpleServiceLocator
               .Instance
               .Register<Func<int>>(AppSettingsHelper.GetInsertProfilePictureSiteMode);
+        }
+
+        private static void RegisterNetThrottling(Container container)
+        {
+            container.Register<INetThrottler, NetThrottler>(Lifestyle.Scoped);
+            container.Register<IThrottleSetting, ThrottleSetting>(Lifestyle.Scoped);
+            container.Register<IClock, Clock>(Lifestyle.Scoped);
+            container.Register<ILogger, NetThrottling.Utils.Logger>(Lifestyle.Scoped);
+            container.Register<ICacheServiceFactory, CacheServiceFactory>(Lifestyle.Scoped);
+            container.Register<IResolver, BaseResolver>(Lifestyle.Scoped);
+            container.RegisterSingleton<ICacheService, CacheService>();
         }
     }
 }
