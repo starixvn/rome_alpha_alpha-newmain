@@ -157,10 +157,21 @@
                 }
             };
 
+            var logParams = CreateLogParam(message);
+            var user = await settingService.GetUser(message.CustId, 0, message.Language);
+            var userFunctions = user.Functions.Any() ? user.Functions : await GetAllFunctions(message.Language);
+
+            if (!userFunctions.Any(function => function.Id == message.FunctionId &&
+                string.Equals(function.Command, message.Command, StringComparison.OrdinalIgnoreCase)))
+            {
+                var unauthorizedResult = Main.Models.UnauthorizedResult.CreateUnauthorizedResult();
+                return new Result { Code = unauthorizedResult.Code, Message = unauthorizedResult.Message };
+            }
+
             return await settingService.UpdateFunctions(
                 sessionManager.Get<int>(ChatbotUserIdSessionKey),
                 functions,
-                CreateLogParam(message));
+                logParams);
         }
 
         public async Task<Result> Handle(UpdateLanguageCommand message)

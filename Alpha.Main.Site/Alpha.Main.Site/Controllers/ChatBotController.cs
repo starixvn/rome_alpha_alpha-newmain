@@ -111,7 +111,7 @@
         [HttpPost, AntiXsrfFilter]
         public async Task<ActionResult> UpdateFunction(UpdateFunctionCommand command)
         {
-            if (userSession.IsInternal)
+            if (!command.IsValid())
             {
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }

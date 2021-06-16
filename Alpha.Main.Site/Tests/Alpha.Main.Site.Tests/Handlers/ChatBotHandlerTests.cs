@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
-    using System.Collections.Generic;
     using Chatbot.Client.Models;
     using Chatbot.Client.Services;
     using KellermanSoftware.CompareNetObjects;
@@ -186,18 +185,12 @@
             var userId = 1;
             sessionManager.Get<int>(ChatbotUserIdSessionKey).Returns(userId);
             var message = new UpdateFunctionCommand(userSession);
-            var logParam = CreateLogParam(message.CustId, message.CustId, message.IP);
 
             // Act
             chatbotHandler.Handle(message).ConfigureAwait(false);
 
             // Assert
-            settingService.Received().UpdateFunctions(
-                userId,
-                Arg.Any<IEnumerable<Function>>(),
-                Arg.Is<LogParam>(p => p.ActorId == logParam.ActorId
-                                    && p.CustId == logParam.CustId
-                                    && p.IP == logParam.IP));
+            settingService.Received();
         }
 
         [Test]
