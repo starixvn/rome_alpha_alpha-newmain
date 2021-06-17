@@ -7,6 +7,7 @@
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using System.Web;
 
     public static class AppSettings
     {
@@ -273,5 +274,11 @@
             || TransferToDownlineHistoryOfferSites.Contains(site, StringComparer.CurrentCultureIgnoreCase);
 
         public static bool IsShowEmptyDashboard => "1" == Settings["IsShowEmptyDashboard"];
+
+        public static string[] DomainsWithViva88ContactInfo => 
+            (string.Empty + Settings["newdomains"]).Split(new[] { ",", ";" }, StringSplitOptions.RemoveEmptyEntries);
+
+        public static bool IsViva88Domain
+            => DomainsWithViva88ContactInfo.Any(domain => domain.Equals(HttpContext.Current.Request.Headers["Host"], StringComparison.OrdinalIgnoreCase));
     }
 }

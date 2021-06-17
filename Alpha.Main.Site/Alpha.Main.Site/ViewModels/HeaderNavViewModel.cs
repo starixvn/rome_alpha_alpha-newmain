@@ -49,7 +49,9 @@
 
         public string AccountInfoRootPath { get; } = UrlHelper.MapAccountInfoPath("~/");
 
-        public bool IsDisabledContactUsLink { get; } = AppSettings.IsDisabledContactUsLink;
+        public bool IsDisabledContactUsLink { get; } = 
+            AppSettings.IsDisabledContactUsLink
+            && !AppSettings.IsViva88Domain;
 
         public bool ShowHelpLink { get; } = AppSettings.ShowHelpLink;
 
