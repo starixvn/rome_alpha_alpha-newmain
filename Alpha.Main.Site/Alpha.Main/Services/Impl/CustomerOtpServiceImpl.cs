@@ -36,7 +36,7 @@
         public CustomerOtpServiceImpl(
             IDynamicRepository dynamicRepository,
             OtpService otpService,
-            JsonHelper jsonHelper)
+            JsonHelper jsonHelper,
             INetThrottlingService netThrottlingService)
         {
             this.dynamicRepository = dynamicRepository;

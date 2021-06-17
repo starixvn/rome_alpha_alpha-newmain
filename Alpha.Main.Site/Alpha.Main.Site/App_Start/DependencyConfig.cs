@@ -125,7 +125,7 @@
             new CustomerOtpServiceImpl(
                 container.GetInstance<IDynamicRepository>(),
                 container.GetInstance<OtpService>(),
-                container.GetInstance<JsonHelper>()));
+                container.GetInstance<JsonHelper>(),
                 container.GetInstance<INetThrottlingService>()));
 
             container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
