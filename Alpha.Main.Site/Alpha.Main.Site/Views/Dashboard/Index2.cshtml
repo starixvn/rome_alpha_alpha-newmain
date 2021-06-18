@@ -22,9 +22,12 @@
             <li role="presentation" id="stats-tab">
                 <a href="#stats" aria-controls="home" role="tab" data-toggle="tab">@Resources.stats</a>
             </li>
-            <li role="presentation" id="notice-tab">
-                <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">@Resources.announcement</a>
-            </li>
+            @if (Model.IsShowPortalMessage)
+            {
+                <li role="presentation" id="notice-tab">
+                    <a href="#notice" aria-controls="home" role="tab" data-toggle="tab">@Resources.announcement</a>
+                </li>
+            }
             @if (Model.EnablePlayForFun)
             {
                 <li id="memberrequest-tab">
@@ -45,9 +48,12 @@
         <div role="tabpanel" class="tab-pane statistic" id="stats" action-url="@Url.Action("Index", "Statistics")">
             <div class="text-center"><span class="block-icon-small "></span></div>
         </div>
-        <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@MicroSites.MessageUrl("~/PortalMessage/Index")">
-            <div class="text-center"><span class="block-icon-small "></span></div>
-        </div>
+        @if (Model.IsShowPortalMessage)
+        {
+            <div role="tabpanel" class="tab-pane notice" id="notice" action-url="@MicroSites.MessageUrl("~/PortalMessage/Index")">
+                <div class="text-center"><span class="block-icon-small "></span></div>
+            </div>
+        }
         @if (Model.EnablePlayForFun)
         {
             <div role="tabpanel" class="tab-pane member-requests" id="member-requests" action-url="@Url.Action("Index", "MemberRequests")">
