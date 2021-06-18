@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Configurations
 {
-    using Fanex.Common;
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
@@ -8,6 +7,7 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Web;
+    using Fanex.Common;
 
     public static class AppSettings
     {

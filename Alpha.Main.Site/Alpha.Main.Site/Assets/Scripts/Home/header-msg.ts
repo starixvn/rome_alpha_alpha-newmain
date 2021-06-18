@@ -146,7 +146,7 @@
 
         this.applyScroller();
 
-        setTimeout(this.getMessages, 1 * 60 * 1000);
+        setTimeout(this.getMessages, 5 * 60 * 1000);
     }
 
     showPublicMessage = (results: any) => {
