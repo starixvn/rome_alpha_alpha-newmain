@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Web.Mvc;
     using Alpha.Captcha.Models;
+    using Alpha.Captcha.Services;
     using Alpha.Main.AppResources;
     using Alpha.Main.Configurations;
     using Alpha.Main.Models;
@@ -14,23 +15,24 @@
 
     public class NewCustomerCaptchaController : BaseController
     {
-        private readonly string CaptchaInputName = "Captcha";
-        private readonly string CaptchaSessionValue = "Alpha.Captcha.Value";
+        private readonly string CaptchaInputName = "c_v";
+        private readonly string CaptchaFunctionName = "c_f";
 
         private readonly IUser user;
         private readonly IUserSession userSession;
+        private readonly ISessionService sessionService;
 
-        public NewCustomerCaptchaController(IUser user, IUserSession userSession)
+        public NewCustomerCaptchaController(IUser user, IUserSession userSession, ISessionService sessionService)
         {
             this.user = user;
             this.userSession = userSession;
+            this.sessionService = sessionService;
         }
 
         public ActionResult Index(string returnUrl)
         {
             ViewData[nameof(returnUrl)] = returnUrl;
-            var captchaLevel = GetCaptchaLevel();
-            return View(captchaLevel);
+            return View(GetCaptchaSetting());
         }
 
         [HttpPost]
@@ -46,9 +48,8 @@
                     : Redirect(returnUrl);
             }
 
-            TempData["ErrorMessage"] = $"{Resources.invalidCaptcha} ({validateMessage})";
-            var captchaLevel = GetCaptchaLevel();
-            return View("~/Views/NewCustomerCaptcha/Index.cshtml", captchaLevel);
+            TempData["ErrorMessage"] = validateMessage;
+            return View("~/Views/NewCustomerCaptcha/Index.cshtml", GetCaptchaSetting());
         }
 
         private string ValidateCaptcha()
@@ -56,21 +57,20 @@
             var inputCaptcha = Request.Form[CaptchaInputName];
             if (string.IsNullOrEmpty(inputCaptcha))
             {
-                return "Captcha is empty";
+                return Resources.CaptchaIsEmptyErrorMessage;
             }
 
-            var sessionCaptcha = HttpContext.Session[CaptchaSessionValue];
-            if (sessionCaptcha == null)
+            var captchaSession = sessionService.Take();
+            if (captchaSession == null)
             {
-                var message = "Captcha is null";
+                var message = Resources.CaptchaIsNullErrorMessage;
                 WriteLog(message);
                 return message;
             }
 
-            var captcha = sessionCaptcha.ToString();
-            if (!inputCaptcha.Equals(captcha, StringComparison.OrdinalIgnoreCase))
+            if (!inputCaptcha.Equals(captchaSession.Text, StringComparison.OrdinalIgnoreCase))
             {
-                var message = $"{inputCaptcha} <> {captcha}";
+                var message = $"{Resources.invalidCaptcha} ({inputCaptcha} <> {captchaSession.Text})";
                 WriteLog(message);
                 return message;
             }
@@ -80,23 +80,34 @@
 
         private void WriteLog(string message)
         {
-            if (AppSettings.TrackLogSuperIds.Any(id => id == userSession.SRecommendId))
+            var captchaFunction = Request.QueryString[CaptchaFunctionName] ?? Request.Form[CaptchaFunctionName];
+            if (AppSettings.NewCaptchaLogCurrencies.Any(c => c == userSession.Currency))
             {
                 var username = string.IsNullOrEmpty(userSession.SubUserName) ? userSession.UserName : userSession.SubUserName;
-                ExceptionHandler.Handle(new Exception($"Captcha validate result for customer {username}: {message}"), TraceEventType.Warning);
+                ExceptionHandler.Handle(new Exception($"Captcha validate result: customer={username}, function={captchaFunction}, message={message}"), TraceEventType.Warning);
             }
         }
 
-        private CaptchaLevels GetCaptchaLevel()
+        private CaptchaSetting GetCaptchaSetting()
         {
+            var captchaLevel = CaptchaLevels.Low;
             var createdSettingLastDateObject = Session[AppSettings.CreatedSettingLastDateSessionKey];
-            if (createdSettingLastDateObject == null)
+            if (createdSettingLastDateObject != null)
             {
-                return CaptchaLevels.Low;
+                var createdSettingLastDate = (DateTime)createdSettingLastDateObject;
+                if (DateTime.Now.Subtract(createdSettingLastDate).TotalMinutes < 1)
+                {
+                    captchaLevel = CaptchaLevels.High;
+                }
             }
 
-            var createdSettingLastDate = (DateTime)createdSettingLastDateObject;
-            return DateTime.Now.Subtract(createdSettingLastDate).TotalMinutes < 1 ? CaptchaLevels.High : CaptchaLevels.Low;
+            return new CaptchaSetting
+            {
+                FunctionName = "NewCustomer",
+                CaptchaLevel = captchaLevel,
+                IsForm = false,
+                IsShowButton = false
+            };
         }
 
         private ActionResult ToDefaultPage()

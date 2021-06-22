@@ -264,9 +264,9 @@
 
         public static bool ShowOldCustomerList => Settings["ShowOldCustomerList"] == "1";
 
-        public static IEnumerable<int> TrackLogSuperIds => string.IsNullOrWhiteSpace(Settings["TrackLogSuperIds"]) 
-            ? Enumerable.Empty<int>() 
-            : Settings["TrackLogSuperIds"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+        public static IEnumerable<string> NewCaptchaLogCurrencies => string.IsNullOrWhiteSpace(Settings["NewCaptcha:LogCurrencies"])
+            ? Enumerable.Empty<string>()
+            : Settings["NewCaptcha:LogCurrencies"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
 
         public static IEnumerable<string> TransferToDownlineHistoryOfferSites
             => Settings["TransferToDownlineHistory.OfferSites"]

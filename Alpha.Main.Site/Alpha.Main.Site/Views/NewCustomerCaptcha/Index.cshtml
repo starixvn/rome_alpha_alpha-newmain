@@ -1,5 +1,5 @@
 ﻿@using Alpha.Captcha.Mvc;
-@model Alpha.Captcha.Models.CaptchaLevels
+@model Alpha.Captcha.Models.CaptchaSetting
 @{
     Layout = null;
 }
@@ -22,10 +22,6 @@
 </head>
 <body>
     <div class="block">
-        <p class="hint-text">
-            <span class="icon-check-circle"></span>
-            <span class="text">@Resources.IamNotARobot</span>
-        </p>
         @using (Html.BeginForm("Check", "NewCustomerCaptcha", FormMethod.Post))
         {
             var errorMessage = (string)TempData["ErrorMessage"];
