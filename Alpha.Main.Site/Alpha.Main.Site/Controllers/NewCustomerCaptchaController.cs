@@ -70,7 +70,7 @@
 
             if (!inputCaptcha.Equals(captchaSession.Text, StringComparison.OrdinalIgnoreCase))
             {
-                var message = $"{Resources.invalidCaptcha} ({inputCaptcha} <> {captchaSession.Text})";
+                var message = $"{Resources.invalidCaptcha} ({inputCaptcha.ToUpperInvariant()} <> {captchaSession.Text})";
                 WriteLog(message);
                 return message;
             }
@@ -103,7 +103,7 @@
 
             return new CaptchaSetting
             {
-                FunctionName = "NewCustomer",
+                FunctionName = "newcustomer",
                 CaptchaLevel = captchaLevel,
                 IsForm = false,
                 IsShowButton = false
