@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
     using System.Web.Mvc;
@@ -29,14 +30,14 @@
             this.sessionService = sessionService;
         }
 
+        [HttpGet]
         public ActionResult Index(string returnUrl)
         {
-            ViewData[nameof(returnUrl)] = returnUrl;
-            return View(GetCaptchaSetting());
+            return View(GetCaptchaSetting(returnUrl));
         }
 
-        [HttpPost]
-        public ActionResult Check(string returnUrl)
+        [HttpPost, ActionName("Index")]
+        public ActionResult IndexPost(string returnUrl)
         {
             var validateMessage = ValidateCaptcha();
             if (string.IsNullOrEmpty(validateMessage))
@@ -49,7 +50,7 @@
             }
 
             TempData["ErrorMessage"] = validateMessage;
-            return View("~/Views/NewCustomerCaptcha/Index.cshtml", GetCaptchaSetting());
+            return View("~/Views/NewCustomerCaptcha/Index.cshtml", GetCaptchaSetting(returnUrl));
         }
 
         private string ValidateCaptcha()
@@ -70,7 +71,7 @@
 
             if (!inputCaptcha.Equals(captchaSession.Text, StringComparison.OrdinalIgnoreCase))
             {
-                var message = $"{Resources.invalidCaptcha} ({inputCaptcha.ToUpperInvariant()} <> {captchaSession.Text})";
+                var message = string.Format(Resources.invalidCaptcha, inputCaptcha.ToUpperInvariant(), captchaSession.Text);
                 WriteLog(message);
                 return message;
             }
@@ -88,7 +89,7 @@
             }
         }
 
-        private CaptchaSetting GetCaptchaSetting()
+        private CaptchaSetting GetCaptchaSetting(string returnUrl)
         {
             var captchaLevel = CaptchaLevels.Low;
             var createdSettingLastDateObject = Session[AppSettings.CreatedSettingLastDateSessionKey];
@@ -105,8 +106,11 @@
             {
                 FunctionName = "newcustomer",
                 CaptchaLevel = captchaLevel,
-                IsForm = false,
-                IsShowButton = false
+                ButtonClassname = "btn-submit",
+                HiddenProps = new Dictionary<string, string>
+                {
+                    [nameof(returnUrl)] = returnUrl
+                }
             };
         }
 

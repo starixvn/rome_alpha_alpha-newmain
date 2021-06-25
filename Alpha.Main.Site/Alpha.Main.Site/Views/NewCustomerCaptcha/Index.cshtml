@@ -23,13 +23,10 @@
 </head>
 <body>
     <div class="block">
-        @using (Html.BeginForm("Check", "NewCustomerCaptcha", FormMethod.Post))
-        {
+        @Html.Captcha(Model)
+        @{
             var errorMessage = (string)TempData["ErrorMessage"];
-            @Html.Hidden("returnUrl", ViewData["returnUrl"])
-            @Html.Captcha(Model)
-            <div class="form-captcha">
-                <button type="submit" class="btn-submit">@Resources.submit</button>
+            <div>
                 @if (!string.IsNullOrWhiteSpace(errorMessage))
                 {
                     <label class="error">@errorMessage</label>

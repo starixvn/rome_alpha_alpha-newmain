@@ -503,7 +503,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You input an invalid code.
+        ///   Looks up a localized string similar to You input an invalid code &quot;{0}&quot; (comparing with &quot;{1}&quot;).
         /// </summary>
         public static string invalidCaptcha {
             get {
