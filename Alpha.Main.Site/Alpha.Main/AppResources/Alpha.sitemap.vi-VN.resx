@@ -369,6 +369,9 @@
   <data name="winLossByProduct" xml:space="preserve">
     <value>Thắng Thua Trên Sản Phẩm</value>
   </data>
+  <data name="superWinLossDetailByPT" xml:space="preserve">
+    <value>Super Win Loss Detail By PT</value>
+  </data>
   <data name="ProgressiveGamesContribution" xml:space="preserve">
     <value>Tích Lũy Trò Chơi Lũy Tiến</value>
   </data>

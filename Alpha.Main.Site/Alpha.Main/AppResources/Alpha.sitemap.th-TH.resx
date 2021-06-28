@@ -357,6 +357,9 @@
   <data name="winLossByProduct" xml:space="preserve">
     <value>ยอดได้เสียตามโปรดักส์</value>
   </data>
+  <data name="superWinLossDetailByPT" xml:space="preserve">
+    <value>Super Win Loss Detail By PT</value>
+  </data>
   <data name="LastBets" xml:space="preserve">
     <value>เดิมพันล่าสุด </value>
   </data>

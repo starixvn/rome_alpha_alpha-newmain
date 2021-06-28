@@ -360,6 +360,9 @@
   <data name="winLossByProduct" xml:space="preserve">
     <value>Win Loss By Product</value>
   </data>
+  <data name="superWinLossDetailByPT" xml:space="preserve">
+    <value>Super Win Loss Detail By PT</value>
+  </data>
   <data name="LastBets" xml:space="preserve">
     <value>Last Bets</value>
   </data>

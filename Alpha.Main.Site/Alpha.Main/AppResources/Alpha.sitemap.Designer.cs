@@ -871,6 +871,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Super Win Loss Detail By PT.
+        /// </summary>
+        public static string superWinLossDetailByPT {
+            get {
+                return ResourceManager.GetString("superWinLossDetailByPT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to System.
         /// </summary>
         public static string systemUpdate {
