@@ -1,17 +1,13 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
     using System;
-    using System.Diagnostics;
     using System.Text.RegularExpressions;
     using Alpha.Main.Services;
     using AppResources;
-    using CasinoLibrary.Model.UserException;
     using Criteria.SecurityCode;
     using DataAccesses;
-    using Fanex.Logging.Extensions.Web;
     using Models;
     using Params.SecurityCode;
-    using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
 
     public class SecurityCodeServiceImpl : SecurityCodeService
@@ -24,17 +20,14 @@
         private const string SecurityCodeRule = @"^([0-9])(?!\1+$)[0-9]+$";
 
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
-        private readonly CasinoService casinoService;
         private readonly Encryptor encryptor;
 
         public SecurityCodeServiceImpl(
             SecurityCodeDataAccess securityCodeDataAccess,
-            CasinoService casinoService,
             Encryptor encryptor)
         {
             this.securityCodeDataAccess = securityCodeDataAccess;
             this.encryptor = encryptor;
-            this.casinoService = casinoService;
         }
 
         public Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param)
@@ -246,21 +239,6 @@
             return this.encryptor.RandomString(6);
         }
 
-        internal void CloseCasinoAccount(int custId, string ip)
-        {
-            if (casinoService.Customer != null)
-            {
-                try
-                {
-                    casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
-                }
-                catch (ErrorException ex)
-                {
-                    ExceptionHandler.Handle(new Exception(ex.Message, ex), TraceEventType.Information);
-                }
-            }
-        }
-
         private string GetSecurityCode(int custId, int subAccountId)
         {
             if (subAccountId.Equals(0))
@@ -309,11 +287,6 @@
             if (result.Code == 200)
             {
                 result.Code = 2; //// account is closed
-                // If account was closed, then close casino account also
-                if (subAccountId == 0)
-                {
-                    CloseCasinoAccount(custId, ip);
-                }
             }
             else if (result.IsFailed)
             {

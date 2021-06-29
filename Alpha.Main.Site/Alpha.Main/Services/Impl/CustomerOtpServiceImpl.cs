@@ -2,20 +2,16 @@
 {
     using System;
     using System.Diagnostics;
-    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using Alpha.Web.Models;
     using AppResources;
-    using CasinoLibrary.Model.UserException;
     using Criteria.Otp;
     using Fanex.Data.Repository;
     using Fanex.Logging.Extensions.Web;
     using Helpers;
-    using Models;
     using Models.Otp;
     using ONEbook.OTP.Services;
     using Params.Otp;
-    using Sunplus.Agent.Model.Casino;
     using CustomResult = Alpha.Main.Models.Result;
 
     public class CustomerOtpServiceImpl : CustomerOtpService
@@ -35,18 +31,15 @@
         private readonly IDynamicRepository dynamicRepository;
         private readonly OtpService otpService;
         private readonly JsonHelper jsonHelper;
-        private readonly CasinoService casinoService;
 
         public CustomerOtpServiceImpl(
             IDynamicRepository dynamicRepository,
             OtpService otpService,
-            JsonHelper jsonHelper,
-            CasinoService casinoService)
+            JsonHelper jsonHelper)
         {
             this.dynamicRepository = dynamicRepository;
             this.otpService = otpService;
             this.jsonHelper = jsonHelper;
-            this.casinoService = casinoService;
         }
 
         public virtual CustomResult ChangeOtpStatus(ChangeOtpStatusParam param)
@@ -201,30 +194,9 @@
                 && result.Code == DisabledAccountErrorCode)
             {
                 result.Message = Security.LockAccountOtpMessage;
-
-                if (param.SubAccId == 0)
-                {
-                    CloseCasinoAccount(param.CustId, param.Device.Info.IP);
-                }
             }
 
             return result;
-        }
-
-        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Reviewed")]
-        internal virtual void CloseCasinoAccount(int custId, string ip)
-        {
-            if (casinoService.Customer != null)
-            {
-                try
-                {
-                    casinoService.Customer.UpdateCustClosedFailSecurityCode(custId, true, ip);
-                }
-                catch (ErrorException ex)
-                {
-                    ExceptionHandler.Handle(new Exception(ex.Message, ex), TraceEventType.Information);
-                }
-            }
         }
 
         public virtual CustomerOtp GetCustomerOtp(int custId, int subAccId = 0)
