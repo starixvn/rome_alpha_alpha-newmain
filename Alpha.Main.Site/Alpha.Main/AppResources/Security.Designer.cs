@@ -342,6 +342,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account was locked due to multiple failed security check, so you&apos;re forced to logout. Please contact your upline to unlock..
+        /// </summary>
+        public static string lblConfirmLocked {
+            get {
+                return ResourceManager.GetString("lblConfirmLocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm Password.
         /// </summary>
         public static string lblConfirmPassword {

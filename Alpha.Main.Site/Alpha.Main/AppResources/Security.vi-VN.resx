@@ -429,4 +429,7 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="SkipForceChangePasswordWarning" xml:space="preserve">
     <value>Bạn có chắc rằng muốn giữ lại mật khẩu hiện tại? Bảo mật của bạn có thể gặp rủi ro nếu không thường xuyên thay đổi mật khẩu.</value>
   </data>
+  <data name="lblConfirmLocked" xml:space="preserve">
+    <value>Your account was locked due to multiple failed security check, so you're forced to logout. Please contact your upline to unlock.</value>
+  </data>
 </root>

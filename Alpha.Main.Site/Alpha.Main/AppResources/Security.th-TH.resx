@@ -429,4 +429,7 @@
   <data name="SkipForceChangePasswordWarning" xml:space="preserve">
     <value>คุณแน่ใจหรือไม่ว่าต้องการเก็บรหัสผ่านปัจจุบันของคุณ? ความปลอดภัยของคุณอาจมีความเสี่ยงหากคุณไม่เปลี่ยนรหัสผ่านบ่อยๆ</value>
   </data>
+  <data name="lblConfirmLocked" xml:space="preserve">
+    <value>Your account was locked due to multiple failed security check, so you're forced to logout. Please contact your upline to unlock.</value>
+  </data>
 </root>
