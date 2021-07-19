@@ -178,24 +178,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You haven&apos;t inputted the Captcha.
-        /// </summary>
-        public static string CaptchaIsEmptyErrorMessage {
-            get {
-                return ResourceManager.GetString("CaptchaIsEmptyErrorMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to System cannot validate the Catpcha due to an unexpected error.
-        /// </summary>
-        public static string CaptchaIsNullErrorMessage {
-            get {
-                return ResourceManager.GetString("CaptchaIsNullErrorMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cash.
         /// </summary>
         public static string cashBalance {

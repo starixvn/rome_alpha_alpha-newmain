@@ -652,10 +652,4 @@
   <data name="LiveMessage" xml:space="preserve">
     <value>Live Message</value>
   </data>
-  <data name="CaptchaIsEmptyErrorMessage" xml:space="preserve">
-    <value>You haven't inputted the Captcha</value>
-  </data>
-  <data name="CaptchaIsNullErrorMessage" xml:space="preserve">
-    <value>System cannot validate the Catpcha due to an unexpected error</value>
-  </data>
 </root>

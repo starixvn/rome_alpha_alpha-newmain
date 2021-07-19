@@ -6,8 +6,8 @@
     using System.Linq;
     using System.Web.Mvc;
     using Alpha.Captcha.Models;
+    using Alpha.Captcha.Mvc;
     using Alpha.Captcha.Services;
-    using Alpha.Main.AppResources;
     using Alpha.Main.Configurations;
     using Alpha.Main.Models;
     using Alpha.Web;
@@ -18,6 +18,8 @@
     {
         private readonly string CaptchaInputName = "c_v";
         private readonly string CaptchaFunctionName = "c_f";
+        private readonly int EmptyCaptchaErrorCode = 1;
+        private const string Separator = "; ";
 
         private readonly IUser user;
         private readonly IUserSession userSession;
@@ -36,11 +38,10 @@
             return View(GetCaptchaSetting(returnUrl));
         }
 
-        [HttpPost, ActionName("Index")]
+        [HttpPost, ActionName("Index"), CaptchaValidation]
         public ActionResult IndexPost(string returnUrl)
         {
-            var validateMessage = ValidateCaptcha();
-            if (string.IsNullOrEmpty(validateMessage))
+            if (ModelState.IsValid)
             {
                 user.RemoveNewCaptchaByCurrency();
 
@@ -49,34 +50,16 @@
                     : Redirect(returnUrl);
             }
 
-            TempData["ErrorMessage"] = validateMessage;
+            var key = ModelState.Keys.FirstOrDefault(k => k.StartsWith(CaptchaInputName));
+            var errorCode = Convert.ToInt32(key.Split('_').Last());
+            var errorMessage = string.Join(Separator, ModelState[key].Errors.Select(x => x.ErrorMessage));
+            if (errorCode != EmptyCaptchaErrorCode)
+            {
+                WriteLog(errorMessage);
+            }
+
+            TempData["ErrorMessage"] = errorMessage;
             return View("~/Views/NewCustomerCaptcha/Index.cshtml", GetCaptchaSetting(returnUrl));
-        }
-
-        private string ValidateCaptcha()
-        {
-            var inputCaptcha = Request.Form[CaptchaInputName];
-            if (string.IsNullOrEmpty(inputCaptcha))
-            {
-                return Resources.CaptchaIsEmptyErrorMessage;
-            }
-
-            var captchaSession = sessionService.Take();
-            if (captchaSession == null)
-            {
-                var message = Resources.CaptchaIsNullErrorMessage;
-                WriteLog(message);
-                return message;
-            }
-
-            if (!inputCaptcha.Equals(captchaSession.Text, StringComparison.OrdinalIgnoreCase))
-            {
-                var message = string.Format(Resources.invalidCaptcha, inputCaptcha.ToUpperInvariant(), captchaSession.Text);
-                WriteLog(message);
-                return message;
-            }
-
-            return null;
         }
 
         private void WriteLog(string message)
@@ -105,7 +88,7 @@
             return new CaptchaSetting
             {
                 FunctionName = "newcustomer",
-                CaptchaLevel = captchaLevel,
+                Level = captchaLevel,
                 ButtonClassname = "btn-submit",
                 HiddenProps = new Dictionary<string, string>
                 {
