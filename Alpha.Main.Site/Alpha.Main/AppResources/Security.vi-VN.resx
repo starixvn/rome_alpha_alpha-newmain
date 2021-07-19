@@ -191,7 +191,7 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Vui lòng điền Tên đăng nhập và Mật khẩu</value>
   </data>
   <data name="lblConfirmClosed" xml:space="preserve">
-    <value>Tài khoản của bạn đã bị khóa, bạn buộc phải đăng xuất .Vui lòng liên hệ với cấp trên của bạn để được hỗ trợ</value>
+    <value>Tài khoản của bạn đã bị đóng, bạn buộc phải đăng xuất .Vui lòng liên hệ với cấp trên của bạn để được hỗ trợ</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Đăng nhập</value>
@@ -430,6 +430,6 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
     <value>Bạn có chắc rằng muốn giữ lại mật khẩu hiện tại? Bảo mật của bạn có thể gặp rủi ro nếu không thường xuyên thay đổi mật khẩu.</value>
   </data>
   <data name="lblConfirmLocked" xml:space="preserve">
-    <value>Your account was locked due to multiple failed security check, so you're forced to logout. Please contact your upline to unlock.</value>
+    <value>Tài khoản của bạn bị khóa và đăng xuất do nhiều lần xác thực không thành công. Vui lòng liên hệ cấp trên của bạn để mở khóa.</value>
   </data>
 </root>

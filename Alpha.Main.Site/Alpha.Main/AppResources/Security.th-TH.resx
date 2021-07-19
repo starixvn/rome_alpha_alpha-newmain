@@ -430,6 +430,6 @@
     <value>คุณแน่ใจหรือไม่ว่าต้องการเก็บรหัสผ่านปัจจุบันของคุณ? ความปลอดภัยของคุณอาจมีความเสี่ยงหากคุณไม่เปลี่ยนรหัสผ่านบ่อยๆ</value>
   </data>
   <data name="lblConfirmLocked" xml:space="preserve">
-    <value>Your account was locked due to multiple failed security check, so you're forced to logout. Please contact your upline to unlock.</value>
+    <value>บัญชีของคุณถูกล็อคและจะถูกบังคับให้ออกจากระบบ เนื่องจากการตรวจสอบความปลอดภัยล้มเหลวหลายครั้ง โปรดติดต่ออัพไลน์ของคุณเพื่อปลดล็อค</value>
   </data>
 </root>
