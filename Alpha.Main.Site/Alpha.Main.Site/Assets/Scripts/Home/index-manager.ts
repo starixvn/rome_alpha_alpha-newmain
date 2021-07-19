@@ -127,13 +127,20 @@ var indexManager = {
     },
 
     cacheCurrentUrl: function () {
-        var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href;
-
-        $.cookie(indexManager.currentUrlCookieName, currentUrl, { expires: 1, path: '/' });
+        if ($("#isInternal").val() === "0") {
+            var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href;
+            localStorage.setItem(indexManager.currentUrlCookieName, currentUrl);
+        }
     },
 
     setCurrentUrl: function () {
-        var currentUrl = indexManager.domElements.content.data('default-url');
+        var isInternal = $("#isInternal").val() === "1";
+        var currentUrl = isInternal ? indexManager.domElements.content.data('default-url') :
+            localStorage.getItem(indexManager.currentUrlCookieName) || indexManager.domElements.content.data('default-url');
+
+        if (currentUrl.indexOf(headerNav.urls.home) !== -1) {
+            currentUrl = currentUrl.replace("Index2", "Index");
+        }
 
         if (indexManager.domElements.mainFrame
             && indexManager.domElements.mainFrame.length > 0) {
@@ -190,7 +197,7 @@ var indexManager = {
     },
 
     closeAllPopup: function () {
-        var prevUrl = $.cookie(indexManager.currentUrlCookieName) || "";
+        var prevUrl = localStorage.getItem(indexManager.currentUrlCookieName) || "";
         var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href || "";
 
         var prevUrlWithoutQueryString = prevUrl.split("?")[0];
