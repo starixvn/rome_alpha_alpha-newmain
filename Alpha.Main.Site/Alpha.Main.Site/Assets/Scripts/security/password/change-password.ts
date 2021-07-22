@@ -108,7 +108,7 @@ var changePassword = {
                     return;
                 }
 
-                if (data.Code === 2) { // account is closed
+                if (data.Code === 104) { // account is locked
                     alert(data.Message);
                     securityHelper.signOut();
 

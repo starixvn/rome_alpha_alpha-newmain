@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="close" xml:space="preserve">
-    <value>Khóa</value>
+    <value>Đóng</value>
   </data>
   <data name="ProfileClickTootip" xml:space="preserve">
     <value>Nhấn vào đây để sửa hình đại diện</value>
@@ -241,10 +241,10 @@
     <value>Thêm</value>
   </data>
   <data name="totalActiveClosedSuspended" xml:space="preserve">
-    <value>Tổng số tài khoản đang Hoạt Động/Khóa/Đình Chỉ</value>
+    <value>Tổng số tài khoản đang Hoạt Động/Đóng/Đình Chỉ</value>
   </data>
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
-    <value>Số tài khoản Agent hiện đang: Kích hoạt/Khóa/Đình chỉ</value>
+    <value>Số tài khoản Agent hiện đang: Kích hoạt/Đóng/Đình chỉ</value>
   </data>
   <data name="totalCSTransferOutstanding" xml:space="preserve">
     <value>Tổng tiền chuyển khoản/chưa xử lý của Casino</value>
@@ -436,7 +436,7 @@
     <value>Hoạt Động</value>
   </data>
   <data name="closed" xml:space="preserve">
-    <value>Khóa</value>
+    <value>Đóng</value>
   </data>
   <data name="suspended" xml:space="preserve">
     <value>Đình Chỉ</value>

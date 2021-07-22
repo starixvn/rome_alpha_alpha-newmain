@@ -12,7 +12,6 @@
     using Fanex.Data.Repository;
     using Fanex.RemotingRef;
     using Handlers;
-    using Helpers;
     using Main.Helpers;
     using Main.Helpers.Impl;
     using Main.Models;
@@ -115,8 +114,7 @@
             new CustomerOtpServiceImpl(
                 container.GetInstance<IDynamicRepository>(),
                 container.GetInstance<OtpService>(),
-                container.GetInstance<JsonHelper>(),
-                container.GetInstance<CasinoService>()));
+                container.GetInstance<JsonHelper>()));
 
             container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
 

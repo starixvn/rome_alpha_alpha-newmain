@@ -66,7 +66,7 @@ var alpha = {
             isInternal = isInternal || "0";
             var signOutUrl = alpha.urls.oldMainRootPath + '_Authorization/Handlers/SignOut.ashx';
 
-            if (isInternal.toString() !== "0") {
+            if (isInternal && isInternal.toString() !== "0") {
                 $.ajax(signOutUrl, {
                     success: function () {
                         index.close();

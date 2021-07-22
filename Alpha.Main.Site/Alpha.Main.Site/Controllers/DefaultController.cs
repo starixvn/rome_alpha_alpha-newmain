@@ -101,6 +101,10 @@ namespace Alpha.Main.Site.Controllers
                 {
                     message = Security.lblConfirmClosed;
                 }
+                else if (reason == "AccountLocked")
+                {
+                    message = Security.lblConfirmLocked;
+                }
                 else if (reason == "KickoutByForceChangePassword")
                 {
                     message = Security.KickoutMessageByForceChangePassword;

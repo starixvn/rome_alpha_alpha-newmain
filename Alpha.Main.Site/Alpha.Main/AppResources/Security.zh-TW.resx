@@ -406,8 +406,8 @@
   <data name="OtpHiMessage" xml:space="preserve">
     <value>您好 {0} ， 您使用的設備 / 瀏覽器 是與上次使用的不同。請輸入OTP以繼續。</value>
   </data>
-  <data name="CloseAccountOtpMessage" xml:space="preserve">
-    <value>由於使用OTP的5次失敗嘗試，您的帳戶已關閉。 請聯繫您的上線或客服部。</value>
+  <data name="LockAccountOtpMessage" xml:space="preserve">
+    <value>由於檢測多次失敗，導致此賬號已被鎖定。請聯繫您的上線以解鎖。</value>
   </data>
   <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
     <value>OTP無效或過期。 請嘗試另一個OTP或聯繫您的上線以重置您的OTP。</value>
@@ -426,5 +426,8 @@
   </data>
   <data name="SkipForceChangePasswordWarning" xml:space="preserve">
     <value>您確定要保留當前密碼？如果您選擇不更换密碼，您的賬號防護措施將會有風險。</value>
+  </data>
+  <data name="lblConfirmLocked" xml:space="preserve">
+    <value>由於安全檢測多次失敗，您的帳戶已被鎖並強迫登出。請聯繫您的上線開啟賬戶。</value>
   </data>
 </root>

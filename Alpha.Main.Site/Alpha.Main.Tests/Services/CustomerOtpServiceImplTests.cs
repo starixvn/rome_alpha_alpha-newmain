@@ -1,12 +1,13 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
+    using System;
+    using System.Collections.Generic;
     using Alpha.Web.Models;
     using AppResources;
     using Fanex.Data.Repository;
     using KellermanSoftware.CompareNetObjects;
     using Main.Criteria.Otp;
     using Main.Helpers;
-    using Main.Models;
     using Main.Models.Otp;
     using Main.Services.Impl;
     using NSubstitute;
@@ -14,8 +15,6 @@
     using ONEbook.OTP.Services;
     using Params.Otp;
     using Sunplus.Agent.Model.Casino;
-    using System;
-    using System.Collections.Generic;
     using CustomResult = Alpha.Main.Models.Result;
 
     [TestFixture]
@@ -654,43 +653,6 @@
             // Assert
             dynamicRepository.Received().Execute(Arg.Is<UpdateCustomerStatusAfterVerifyOtpCommand>(
                     command => compareLogic.Compare(command, changeStatusCommand).AreEqual));
-        }
-
-        [Test]
-        public void VerifyOtp_OtpIsNotCorrectAndAccountIsClosed_CloseCasinoAccount()
-        {
-            // Arrange
-            var actualCustomerOtp = new CustomerOtp
-            {
-                CustId = 1,
-                SubAccId = 0,
-                Otp = "OTP",
-                Device = new Device
-                {
-                    Info = new DeviceInfo
-                    {
-                        IP = "IP"
-                    }
-                },
-                Language = "E"
-            };
-            customerOtpService.GetCustomerOtp(Arg.Any<int>(), Arg.Any<int>()).Returns(new CustomerOtp());
-            var incorrect = false;
-            otpService.VerifyOtp(Arg.Any<string>(), Arg.Any<string>()).Returns(incorrect);
-            var closedErrorCode = 200;
-            dynamicRepository
-               .When(repo => repo.Execute(Arg.Any<UpdateCustomerStatusAfterVerifyOtpCommand>()))
-               .Do((callInfo) =>
-               {
-                   var command = callInfo[0] as UpdateCustomerStatusAfterVerifyOtpCommand;
-                   command.ErrCode = closedErrorCode;
-               });
-
-            // Act
-            customerOtpService.VerifyOtp(actualCustomerOtp);
-
-            // Assert
-            customerOtpService.Received().CloseCasinoAccount(actualCustomerOtp.CustId, actualCustomerOtp.Device.Info.IP);
         }
 
         [Test]

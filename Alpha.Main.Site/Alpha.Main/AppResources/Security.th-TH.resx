@@ -407,8 +407,8 @@
   <data name="OtpHiMessage" xml:space="preserve">
     <value>สวัสดีค่ะ {0}, คุณเข้าใช้งานในระบบโดยใช้อุปกรณ์หรือ เบราว์เซอร์ ที่แตกต่างจากการใช้ก่อนหน้านี้ กรุณากรอก OTP เพื่อดำเนินการต่อค่ะ</value>
   </data>
-  <data name="CloseAccountOtpMessage" xml:space="preserve">
-    <value>บัญชีของคุณถูกปิดเนื่องจากใส่รหัสOTP ผิด5ครั้ง รบกวนติดต่อกลับเอเจนต์ของคุณหรือฝ่ายบริการลูกค้า</value>
+  <data name="LockAccountOtpMessage" xml:space="preserve">
+    <value>บัญชีนี้ถูกล็อก เนื่องจากการตรวจสอบความปลอดภัยล้มเหลวหลายครั้ง กรุณาติดต่ออัพไลน์ของคุณเพื่อปลดล็อก</value>
   </data>
   <data name="OtpInvalidOrExpiredAndContactUpline" xml:space="preserve">
     <value>รหัสผ่านครั้งเดียวไม่ถูกต้องหรือหมดอายุแล้ว ลองรหัสผ่านครั้งเดียวอีกครั้งหรือติดต่อต้นสายของคุณเพื่อรีเซ็ตรหัสผ่านครั้งเดียวของคุณ</value>
@@ -428,5 +428,8 @@
   </data>
   <data name="SkipForceChangePasswordWarning" xml:space="preserve">
     <value>คุณแน่ใจหรือไม่ว่าต้องการเก็บรหัสผ่านปัจจุบันของคุณ? ความปลอดภัยของคุณอาจมีความเสี่ยงหากคุณไม่เปลี่ยนรหัสผ่านบ่อยๆ</value>
+  </data>
+  <data name="lblConfirmLocked" xml:space="preserve">
+    <value>บัญชีของคุณถูกล็อคและจะถูกบังคับให้ออกจากระบบ เนื่องจากการตรวจสอบความปลอดภัยล้มเหลวหลายครั้ง โปรดติดต่ออัพไลน์ของคุณเพื่อปลดล็อค</value>
   </data>
 </root>

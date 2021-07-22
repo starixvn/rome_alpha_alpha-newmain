@@ -319,4 +319,7 @@ Please use the form below to change your password now.</value>
   <data name="SkipForceChangePasswordWarning" xml:space="preserve">
     <value>Are you sure you want to keep your current password? Your security may be at risk if you don't change your password frequently.</value>
   </data>
+  <data name="lblConfirmLocked" xml:space="preserve">
+    <value>Your account is locked and forced to log out due to multiple failed security checks. Please contact your upline to unlock.</value>
+  </data>
 </root>
