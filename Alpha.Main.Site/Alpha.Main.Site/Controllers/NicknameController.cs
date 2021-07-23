@@ -25,6 +25,7 @@
         [AllowProtectedMode]
         public ActionResult Index()
         {
+            AssignDarkModeViewData(userSession);
             var viewModel = new CreateNicknameViewModel(userSession);
 
             return viewModel.IsValid() ? View(viewModel) : ToDefaultPage();
@@ -33,6 +34,7 @@
         [HttpPost, ValidateAntiForgeryToken, AllowProtectedMode]
         public ActionResult Index(string nickname)
         {
+            AssignDarkModeViewData(userSession);
             var message = new CreateNicknameCommand(userSession)
             {
                 Nickname = nickname

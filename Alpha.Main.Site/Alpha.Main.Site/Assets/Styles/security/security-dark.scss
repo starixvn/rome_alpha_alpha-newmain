@@ -1,0 +1,124 @@
+﻿@import '../Home/_variables-dark.scss';
+@import '../Home/_mixins.scss';
+
+// To remove the 300-350ms tap delay
+html {
+    touch-action: manipulation;
+}
+
+
+%alphaIcon {
+    font: {
+        family: 'Iconalpha';
+        style: normal;
+    }
+}
+
+.block {
+    max-width: 350px;
+    padding-top: 22px;
+    width: 350px;
+    clear: both;
+
+    label {
+        font-weight: normal;
+        margin-bottom: 4px;
+    }
+
+    .txt {
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%;       
+    }
+
+    &.has-popup {
+        .form-group {
+            margin-left: 2px;
+        }
+
+        .txt {
+            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+        }
+    }
+}
+
+.block .form-SC-before .txt {
+    font-family: 'password';
+
+    &.show-hint {
+        font-family: inherit;
+    }
+}
+
+// Rules
+.rules {
+    color: #888;
+    padding-top: 12px;
+
+    .note-red {
+        color: #ff0101;
+        padding-right: 6px;
+    }
+
+    ul {
+        list-style: initial;
+        padding-left: 32px;
+
+        li {
+            list-style-type: disc;
+            line-height: 24px;
+        }
+    }
+}
+
+// Messages
+.msg-content {
+    float: left;
+    min-width: 350px;
+    padding-top: 12px;
+
+    .msg {
+        line-height: 20px;
+        margin: 0;
+    }
+}
+
+.learn-more {
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: none;
+    }
+}
+
+// It's not necessary at the moment
+@media only screen and (max-device-width: $conent-device-lower768) {
+    .msg-content {
+        float: none;
+
+        .msg {
+            width: 100%;
+            max-width: initial;
+        }
+    }
+
+    .block {
+        max-width: initial;
+        width: 100%;
+        padding: 22px 2px 0;
+
+        .txt {
+            height: $height-mobile;
+            @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+            font-size: calculateScale(16px);
+        }
+
+        .btn-submit, input[type=reset] {
+            height: $height-mobile;
+            width: 100%;
+            margin-bottom: 12px;
+            margin-right: 0;
+        }
+    }
+}

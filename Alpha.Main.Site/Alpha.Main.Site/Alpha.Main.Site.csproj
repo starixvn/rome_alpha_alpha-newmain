@@ -89,8 +89,8 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.8.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.8.7\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="Alpha.Web, Version=1.0.8.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.8.6-dark05\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -336,8 +336,8 @@
     <Reference Include="Sunplus.Agent.Model.Auth, Version=3.0.1.6, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.1.6\lib\net461\Sunplus.Agent.Model.Auth.dll</HintPath>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.8\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.6-dark02\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
@@ -640,29 +640,45 @@
     <Content Include="Assets\bundles\captcha\captcha.min.js">
       <DependentUpon>captcha.js</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\chatbot\chatbot-guide.js" />
-    <Content Include="Assets\bundles\chatbot\chatbot-guide.min.js">
-      <DependentUpon>chatbot-guide.js</DependentUpon>
+    <Content Include="Assets\bundles\chatbot\chatbot-dark.css" />
+    <Content Include="Assets\bundles\chatbot\chatbot-dark.min.css">
+      <DependentUpon>chatbot-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\chatbot\chatbot-setting-dark.css" />
+    <Content Include="Assets\bundles\chatbot\chatbot-setting-dark.min.css">
+      <DependentUpon>chatbot-setting-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\chatbot\chatbot-setting.css" />
-    <Content Include="Assets\bundles\chatbot\chatbot-setting.js" />
     <Content Include="Assets\bundles\chatbot\chatbot-setting.min.css">
       <DependentUpon>chatbot-setting.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\chatbot\chatbot-setting.min.js">
-      <DependentUpon>chatbot-setting.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\chatbot\chatbot.css" />
-    <Content Include="Assets\bundles\chatbot\chatbot.min.css">
-      <DependentUpon>chatbot.css</DependentUpon>
+    <Content Include="Assets\bundles\chatbot\register-account-dark.css" />
+    <Content Include="Assets\bundles\chatbot\register-account-dark.min.css">
+      <DependentUpon>register-account-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\chatbot\register-account.css" />
-    <Content Include="Assets\bundles\chatbot\register-account.js" />
     <Content Include="Assets\bundles\chatbot\register-account.min.css">
       <DependentUpon>register-account.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\chatbot\register-account.min.js">
-      <DependentUpon>register-account.js</DependentUpon>
+    <Content Include="Assets\bundles\default-dashboard.js" />
+    <Content Include="Assets\bundles\default-dashboard.min.js">
+      <DependentUpon>default-dashboard.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-home-dark.css" />
+    <Content Include="Assets\bundles\default-home-dark.min.css">
+      <DependentUpon>default-home-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-index-dark.css" />
+    <Content Include="Assets\bundles\default-index-dark.min.css">
+      <DependentUpon>default-index-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\default-index.css" />
+    <Content Include="Assets\bundles\default-index.min.css">
+      <DependentUpon>default-index.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\error-dark.css" />
+    <Content Include="Assets\bundles\error-dark.min.css">
+      <DependentUpon>error-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\error.css" />
     <Content Include="Assets\bundles\error.min.css">
@@ -676,21 +692,22 @@
     <Content Include="Assets\bundles\home\le-mtagconfig.min.js">
       <DependentUpon>le-mtagconfig.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\newcustomer-captcha\captcha-dark.css" />
+    <Content Include="Assets\bundles\newcustomer-captcha\captcha-dark.min.css">
+      <DependentUpon>captcha-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\newcustomer-captcha\captcha.css" />
-    <Content Include="Assets\bundles\newcustomer-captcha\captcha.js" />
     <Content Include="Assets\bundles\newcustomer-captcha\captcha.min.css">
       <DependentUpon>captcha.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\newcustomer-captcha\captcha.min.js">
-      <DependentUpon>captcha.js</DependentUpon>
+    <Content Include="Assets\bundles\otp\otp-dark.css" />
+    <Content Include="Assets\bundles\otp\otp.css" />
+    <Content Include="Assets\bundles\otp\otp.min.css">
+      <DependentUpon>otp.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\nickname\create-nickname.js" />
-    <Content Include="Assets\bundles\nickname\create-nickname.min.js">
-      <DependentUpon>create-nickname.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\nickname\nickname.css" />
-    <Content Include="Assets\bundles\nickname\nickname.min.css">
-      <DependentUpon>nickname.css</DependentUpon>
+    <Content Include="Assets\bundles\page-mobile-calculate-07-dark.css" />
+    <Content Include="Assets\bundles\page-mobile-calculate-07-dark.min.css">
+      <DependentUpon>page-mobile-calculate-07-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\page-mobile-calculate-07.css" />
     <Content Include="Assets\bundles\page-mobile-calculate-07.min.css">
@@ -708,6 +725,18 @@
     <Content Include="Assets\bundles\protection-code\protection.min.js">
       <DependentUpon>protection.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\security\security-code\reset-securitycode.js" />
+    <Content Include="Assets\bundles\security\security-code\reset-securitycode.min.js">
+      <DependentUpon>reset-securitycode.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security\security-dark.css" />
+    <Content Include="Assets\bundles\security\security-dark.min.css">
+      <DependentUpon>security-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\security\security.css" />
+    <Content Include="Assets\bundles\security\security.min.css">
+      <DependentUpon>security.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security\verify-security-code.css" />
     <Content Include="Assets\bundles\security\verify-security-code.min.css">
       <DependentUpon>verify-security-code.css</DependentUpon>
@@ -721,6 +750,18 @@
     </Content>
     <Content Include="Assets\styles\captcha\captcha.min.css">
       <DependentUpon>captcha.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\chatbot-dark.css">
+      <DependentUpon>chatbot-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\chatbot-dark.min.css">
+      <DependentUpon>chatbot-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\chatbot-setting-dark.css">
+      <DependentUpon>chatbot-setting-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\chatbot-setting-dark.min.css">
+      <DependentUpon>chatbot-setting-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\chatbot\chatbot-setting.css">
       <DependentUpon>chatbot-setting.scss</DependentUpon>
@@ -741,11 +782,23 @@
     <Content Include="Assets\styles\chatbot\images\chatbot-avatar.png" />
     <Content Include="Assets\styles\chatbot\images\qrcode.png" />
     <Content Include="Assets\styles\chatbot\images\toogle.png" />
+    <Content Include="Assets\styles\chatbot\register-account-dark.css">
+      <DependentUpon>register-account-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\chatbot\register-account-dark.min.css">
+      <DependentUpon>register-account-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\chatbot\register-account.css">
       <DependentUpon>register-account.scss</DependentUpon>
     </Content>
     <Content Include="Assets\styles\chatbot\register-account.min.css">
       <DependentUpon>register-account.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\error\error-dark.css">
+      <DependentUpon>error-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\error\error-dark.min.css">
+      <DependentUpon>error-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\error\error.css">
       <DependentUpon>error.scss</DependentUpon>
@@ -754,7 +807,38 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\error\images\error-bg.png" />
+    <Content Include="Assets\styles\error\images\error-bg-dark.png" />
+    <Content Include="Assets\styles\home\home-dark.css">
+      <DependentUpon>home-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\home-dark.min.css">
+      <DependentUpon>home-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\home-mobile-calculate-07-dark.css">
+      <DependentUpon>home-mobile-calculate-07-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\home-mobile-calculate-07-dark.min.css">
+      <DependentUpon>home-mobile-calculate-07-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\images\chatbot-intro.svg" />
+    <Content Include="Assets\styles\home\page-dark.css">
+      <DependentUpon>page-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\page-dark.min.css">
+      <DependentUpon>page-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\page-mobile-calculate-07-dark.css">
+      <DependentUpon>page-mobile-calculate-07-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\page-mobile-calculate-07-dark.min.css">
+      <DependentUpon>page-mobile-calculate-07-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\popup-announcement-dark.css">
+      <DependentUpon>popup-announcement-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\popup-announcement-dark.min.css">
+      <DependentUpon>popup-announcement-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\popup-announcement.css">
       <DependentUpon>popup-announcement.scss</DependentUpon>
     </Content>
@@ -774,14 +858,30 @@
       <DependentUpon>page-mobile-calculate-07.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\home\_mixins2.scss" />
+    <Content Include="Assets\styles\newcustomer-captcha\captcha-dark.css">
+      <DependentUpon>captcha-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\newcustomer-captcha\captcha-dark.min.css">
+      <DependentUpon>captcha-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\newcustomer-captcha\captcha.css">
       <DependentUpon>captcha.scss</DependentUpon>
     </Content>
     <Content Include="Assets\styles\newcustomer-captcha\captcha.min.css">
       <DependentUpon>captcha.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\nickname\nickname.css" />
-    <Content Include="Assets\styles\nickname\nickname.min.css" />
+    <Content Include="Assets\styles\nickname\nickname.css">
+      <DependentUpon>nickname.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\nickname\nickname.min.css">
+      <DependentUpon>nickname.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\otp\otp.css">
+      <DependentUpon>otp.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\otp\otp.min.css">
+      <DependentUpon>otp.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\partial-um\partial-um.css">
       <DependentUpon>partial-um.scss</DependentUpon>
     </Content>
@@ -793,6 +893,24 @@
     </Content>
     <Content Include="Assets\styles\protection-code\protection.min.css">
       <DependentUpon>protection.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security\security-dark.css">
+      <DependentUpon>security-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security\security-dark.min.css">
+      <DependentUpon>security-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security\security.css">
+      <DependentUpon>security.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security\security.min.css">
+      <DependentUpon>security.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security\verify-security-code-dark.css">
+      <DependentUpon>verify-security-code-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\security\verify-security-code-dark.min.css">
+      <DependentUpon>verify-security-code-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\security\verify-security-code.css">
       <DependentUpon>verify-security-code.scss</DependentUpon>
@@ -995,10 +1113,6 @@
     <Content Include="Web.proi1.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\kick-out.js" />
-    <Content Include="Assets\bundles\kick-out.min.js">
-      <DependentUpon>kick-out.js</DependentUpon>
-    </Content>
     <Content Include="Web.sit.config">
       <DependentUpon>Web.uati1.config</DependentUpon>
     </Content>
@@ -1088,30 +1202,6 @@
     <TypeScriptCompile Include="Assets\scripts\security\security-code\verify-securitycode.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\security-helper.ts" />
     <TypeScriptCompile Include="Assets\scripts\customer-profiles\brief-profile.ts" />
-    <Content Include="Assets\bundles\default-dashboard.js" />
-    <Content Include="Assets\bundles\default-dashboard.min.js">
-      <DependentUpon>default-dashboard.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-home.css" />
-    <Content Include="Assets\bundles\default-home.min.css">
-      <DependentUpon>default-home.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-index.css" />
-    <Content Include="Assets\bundles\default-index.js" />
-    <Content Include="Assets\bundles\default-index.min.css">
-      <DependentUpon>default-index.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\default-index.min.js">
-      <DependentUpon>default-index.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\otp\otp.css" />
-    <Content Include="Assets\bundles\otp\otp.min.css">
-      <DependentUpon>otp.css</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\otp\reset-otp.js" />
-    <Content Include="Assets\bundles\security\otp\reset-otp.min.js">
-      <DependentUpon>reset-otp.js</DependentUpon>
-    </Content>
     <Content Include="Assets\scripts\tests\libs\bootstrap-datetimepicker.js" />
     <Content Include="Assets\scripts\tests\libs\bootstrap-modal.js" />
     <Content Include="Assets\scripts\tests\libs\datepicker.js" />
@@ -1128,78 +1218,22 @@
     <Content Include="Assets\styles\home\home.min.css">
       <DependentUpon>home.css</DependentUpon>
     </Content>
-    <Content Include="Assets\bundles\security\otp\setup-otp.js" />
-    <Content Include="Assets\bundles\security\otp\setup-otp.min.js">
-      <DependentUpon>setup-otp.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\otp\verify-otp-difference-device.js" />
-    <Content Include="Assets\bundles\security\otp\verify-otp-difference-device.min.js">
-      <DependentUpon>verify-otp-difference-device.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\otp\verify-otp.js" />
-    <Content Include="Assets\bundles\security\otp\verify-otp.min.js">
-      <DependentUpon>verify-otp.js</DependentUpon>
-    </Content>
     <Content Include="typings\globals\hammerjs\typings.json" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\dashboard.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\notice.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\statistics.ts" />
-    <Content Include="Assets\bundles\security\password\change-password.js" />
-    <Content Include="Assets\bundles\security\password\change-password.min.js">
-      <DependentUpon>change-password.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\password\force-change-password.js" />
-    <Content Include="Assets\bundles\security\password\force-change-password.min.js">
-      <DependentUpon>force-change-password.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\password\reset-main-account-password.js" />
-    <Content Include="Assets\bundles\security\password\reset-main-account-password.min.js">
-      <DependentUpon>reset-main-account-password.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\password\reset-sub-account-password.js" />
-    <Content Include="Assets\bundles\security\password\reset-sub-account-password.min.js">
-      <DependentUpon>reset-sub-account-password.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\security-code\change-securitycode-by-forcing.js" />
-    <Content Include="Assets\bundles\security\security-code\change-securitycode-by-forcing.min.js">
-      <DependentUpon>change-securitycode-by-forcing.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\security-code\change-securitycode-firstlogin.js" />
-    <Content Include="Assets\bundles\security\security-code\change-securitycode-firstlogin.min.js">
-      <DependentUpon>change-securitycode-firstlogin.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\security-code\change-user-own-securitycode.js" />
-    <Content Include="Assets\bundles\security\security-code\change-user-own-securitycode.min.js">
-      <DependentUpon>change-user-own-securitycode.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\security-code\reset-securitycode.js" />
-    <Content Include="Assets\bundles\security\security-code\reset-securitycode.min.js">
-      <DependentUpon>reset-securitycode.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\security-code\verify-securitycode.js" />
-    <Content Include="Assets\bundles\security\security-code\verify-securitycode.min.js">
-      <DependentUpon>verify-securitycode.js</DependentUpon>
-    </Content>
-    <Content Include="Assets\bundles\security\security.css" />
-    <Content Include="Assets\bundles\security\security.min.css">
-      <DependentUpon>security.css</DependentUpon>
-    </Content>
     <Content Include="Assets\styles\otp\images\apple.png" />
     <Content Include="Assets\styles\otp\images\google.png" />
     <Content Include="Assets\styles\otp\images\logo.png" />
     <Content Include="Assets\styles\otp\images\manual-android.png" />
     <Content Include="Assets\styles\otp\images\manual-ios.png" />
     <Content Include="Assets\styles\otp\images\qr.png" />
-    <Content Include="Assets\styles\otp\otp.css" />
-    <Content Include="Assets\styles\otp\otp.min.css" />
     <Content Include="Assets\styles\security\lean-more.css">
       <DependentUpon>lean-more.scss</DependentUpon>
     </Content>
     <Content Include="Assets\styles\security\lean-more.min.css">
       <DependentUpon>lean-more.css</DependentUpon>
     </Content>
-    <Content Include="Assets\styles\security\security.css" />
-    <Content Include="Assets\styles\security\security.min.css" />
     <Content Include="Assets\scripts\old-main.js" />
     <Content Include="Assets\styles\customer-profiles\customer-profile.css">
       <DependentUpon>customer-profile.scss</DependentUpon>
@@ -1318,6 +1352,20 @@
     <Content Include="Assets\styles\partial-um\partial-um.scss" />
     <Content Include="Assets\styles\home\customizedLiveChat.scss" />
     <Content Include="Assets\styles\protection-code\protection.scss" />
+    <Content Include="Assets\styles\home\_variables-dark.scss" />
+    <Content Include="Assets\styles\home\page-dark.scss" />
+    <Content Include="Assets\styles\home\popup-announcement-dark.scss" />
+    <Content Include="Assets\styles\home\home-mobile-calculate-07-dark.scss" />
+    <Content Include="Assets\styles\home\home-dark.scss" />
+    <Content Include="Assets\styles\home\page-mobile-calculate-07-dark.scss" />
+    <Content Include="Assets\styles\chatbot\chatbot-dark.scss" />
+    <Content Include="Assets\styles\chatbot\chatbot-setting-dark.scss" />
+    <Content Include="Assets\styles\chatbot\register-account-dark.scss" />
+    <Content Include="Assets\styles\error\error-dark.scss" />
+    <Content Include="Assets\styles\newcustomer-captcha\captcha-dark.scss" />
+    <Content Include="Assets\styles\otp\otp-dark.scss" />
+    <Content Include="Assets\styles\security\security-dark.scss" />
+    <Content Include="Assets\styles\security\verify-security-code-dark.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1436,6 +1484,7 @@
     <Compile Include="Controllers\OtpController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
+    <Compile Include="Controllers\ThemeController.cs" />
     <Compile Include="Controllers\UMMessageController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\BannerHandler.cs" />

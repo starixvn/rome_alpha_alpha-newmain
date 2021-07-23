@@ -1,4 +1,5 @@
 ﻿@model ResetOtpViewModel
+﻿@{ var darkModeName = ViewData["DarkModeName"]; }
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +8,11 @@
     <title>@Model.ResetTitle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.RenderStyles("~/assets/bundles/otp/otp")
+    @StaticResources.AssetStyles.RenderCommon($"/bundles/common/common{darkModeName}")
+    @StaticResources.RenderStyles($"~/assets/bundles/otp/otp{darkModeName}")
 </head>
 <body>
-    <h1 id="title_header" class="page-title">@Model.ResetTitle</h1>
+    <h1 id="title_header" class="page-title title-@ViewData["TitleLevel"]">@Model.ResetTitle</h1>
     @if (Model.Result != null)
     {
         <div class="msg @(Model.Result.IsSuccessful ? "msg-success" : "msg-error")">@Model.Result.Message</div>

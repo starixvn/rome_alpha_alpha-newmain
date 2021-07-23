@@ -28,6 +28,7 @@ var headerNav = {
         profileImage: null,
         headerNavElement: null,
         liveChat: null
+        switchMode: null
     },
     messageType: {
         Normal: 0,
@@ -56,6 +57,7 @@ var headerNav = {
         qrCodeTop: alpha.urls.memberInfoRootPath + "QRCodeMemberSignIn",
         messages: alpha.urls.messageRootPath + "MessageHistory/Index",
         announcements: alpha.urls.messageRootPath + "Announcement/Index",
+        changeTheme: alpha.urls.mainRootPath + "Theme/Change",
         changeLanguage: alpha.urls.mainRootPath + "Language/Change",
         queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx",
         checkNewMessage: alpha.urls.messageRootPath + "NewMessage/GetNumberOfNewAnnouncement",
@@ -199,6 +201,7 @@ var headerNav = {
 
         headerNav.domElements.headerNavElement = $("#header-nav");
         headerNav.domElements.liveChat = $("#liveChat");
+        headerNav.domElements.switchMode = $(".switch-mode");
     },
 
     initLanguage: function () {
@@ -303,6 +306,8 @@ var headerNav = {
             indexManager.changeMenu(headerNav.urls.qrCodeTop);
         });
 
+        headerNav.domElements.switchMode.on('click', headerNav.changeTheme);
+
         headerNav.domElements.changeLanguageLink.on('click touchend', (event) => {
             headerNav.changeLanguage($(event.target).data("value"));
         });
@@ -394,6 +399,18 @@ var headerNav = {
                     $.cookie("LANGUAGE", lang, { expires: 30, path: domain });
                     headerNav.reloadPage();
                 }
+            }
+        });
+    },
+
+    changeTheme: function () {
+        const isDarkMode = $(this).hasClass("dark-mode");
+        $.ajax({
+            type: "POST",
+            url: headerNav.urls.changeTheme,
+            data: { isDarkMode: !isDarkMode },
+            success: function (result) {
+                result && headerNav.reloadPage();
             }
         });
     },

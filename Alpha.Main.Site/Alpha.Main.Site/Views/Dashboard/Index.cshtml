@@ -6,7 +6,7 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderCommon($"/bundles/common/common{ViewData["DarkModeName"]}")
     <style>
         body { background: transparent; }
         .icon-home { margin-right: 0; }

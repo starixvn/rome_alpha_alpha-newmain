@@ -1,12 +1,13 @@
 ﻿@model ChatBotSettingViewModel
 @{
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
+    var darkModeName = ViewData["DarkModeName"];
 }
 @section Styles {
-    @StaticResources.AssetStyles.RenderCommon("/bundles/site-main/chatbot/chatbot-default")
-    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot-setting")
+    @StaticResources.AssetStyles.RenderCommon($"/bundles/site-main/chatbot/chatbot-default{darkModeName}")
+    @StaticResources.RenderStyles($"~/assets/bundles/chatbot/chatbot-setting{darkModeName}")
 }
-<div class="page-title">
+<div class="page-title title-@ViewData["TitleLevel"]">
     <span class="pull-left">@Model.Title</span>
 </div>
 <div class="tab-content">

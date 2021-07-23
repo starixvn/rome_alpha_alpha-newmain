@@ -4,11 +4,15 @@
     var mainFrameName = "main";
     var viewProfileUrl = $"{Model.AccountInfoRootPath}ProfilePicture";
     var profileImageSrc = Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage;
+    var darkModeName = (string)ViewData["DarkModeName"];
 }
 
 <section class="navbar header-nav" id="header-nav">
     <span class="icon-collapse icon-hamburger withripple" id="hamburger-icon"></span>
     <ul class="nav navbar-nav list-top">
+        <li class="switch-mode-box">
+            <span class="switch-mode @(string.IsNullOrEmpty(darkModeName) ? string.Empty : "dark-mode")"></span>
+        </li>
         <li class="maintenance-box hide" id="um-message-box" title="@Resources.UMAnnouncementTitle">
             <span class="icon-under-maintenance"></span>
         </li>

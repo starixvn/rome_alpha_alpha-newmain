@@ -310,5 +310,84 @@
       "Assets/scripts/security/security-helper.js",
       "Assets/scripts/protection-code/protection.js"
     ]
+  },
+  /************************** Dark Mode ************************/
+  {
+    "outputFileName": "Assets/bundles/default-index-dark.css",
+    "inputFiles": [
+      "Assets/Styles/home/page-dark.css",
+      "Assets/Styles/customer-profiles/customer-profile.css",
+      "Assets/Styles/home/popup-announcement-dark.css",
+      "Assets/Styles/home/tooltip.css",
+      "Assets/Styles/home/popup-message.css",
+      "Assets/Styles/home/old-main.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/default-home-dark.css",
+    "inputFiles": [
+      "Assets/Styles/home/home-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/page-mobile-calculate-07-dark.css",
+    "inputFiles": [
+      "Assets/styles/home/page-mobile-calculate-07-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/home-mobile-calculate-07-dark.css",
+    "inputFiles": [
+      "Assets/styles/home/home-mobile-calculate-07-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/verify-security-code-dark.css",
+    "inputFiles": [
+      "Assets/styles/security/verify-security-code-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/security/security-dark.css",
+    "inputFiles": [
+      "Assets/styles/security/security-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/otp/otp-dark.css",
+    "inputFiles": [
+      "Assets/styles/otp/otp-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot-dark.css",
+    "inputFiles": [
+      "Assets/styles/chatbot/chatbot-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/chatbot-setting-dark.css",
+    "inputFiles": [
+      "Assets/styles/chatbot/chatbot-setting-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/chatbot/register-account-dark.css",
+    "inputFiles": [
+      "Assets/styles/chatbot/chatbot-setting-dark.css",
+      "Assets/styles/chatbot/register-account-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/newcustomer-captcha/captcha-dark.css",
+    "inputFiles": [
+      "Assets/styles/newcustomer-captcha/captcha-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/error-dark.css",
+    "inputFiles": [
+      "Assets/styles/error/error-dark.css"
+    ]
   }
 ]

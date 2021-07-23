@@ -37,6 +37,7 @@ namespace Alpha.Main.Site.Controllers
 
             if (AppSettings.IsShowEmptyDashboard)
             {
+                AssignDarkModeViewData(userSession);
                 return View();
             }
 
@@ -46,6 +47,7 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult Index2()
         {
+            AssignDarkModeViewData(userSession);
             var viewModel = new DashboardViewModel(userSession.RoleId);
 
             return View(viewModel);

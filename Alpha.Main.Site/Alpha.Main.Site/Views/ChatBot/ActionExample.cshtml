@@ -4,7 +4,7 @@
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
 }
 @section Styles {
-    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot-setting")
+    @StaticResources.RenderStyles($"~/assets/bundles/chatbot/chatbot-setting{ViewData["DarkModeName"]}")
 }
 <div class="chatbot-layout -report" id="chatbotLayout">
     <div class="chatbot-header">

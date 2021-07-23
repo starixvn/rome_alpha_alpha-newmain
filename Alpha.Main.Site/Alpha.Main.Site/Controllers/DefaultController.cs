@@ -55,6 +55,7 @@ namespace Alpha.Main.Site.Controllers
                 return Redirect(OtpVerifyDifferenceDevicePath);
             }
 
+            AssignDarkModeViewData(userSession);
             var browser = mediator.Send(new BrowserQuery(userSession));
 
             if (browser.IsUnsupportedBrowser)
@@ -72,6 +73,7 @@ namespace Alpha.Main.Site.Controllers
         [AllowProtectedMode]
         public ActionResult MenuBar()
         {
+            AssignDarkModeViewData(userSession);
             var viewModel = mediator.Send(new MenuBarQuery(userSession.RoleId, Request.UserAgent));
 
             return PartialView(viewModel);

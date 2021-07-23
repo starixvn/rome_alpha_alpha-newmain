@@ -1,0 +1,504 @@
+﻿@import '../Home/_variables-dark.scss';
+@import '../Home/_mixins.scss';
+
+// To remove the 300-350ms tap delay
+html {
+  touch-action: manipulation;
+}
+
+body {
+    background-color: transparent;
+}
+
+label {
+    font-weight: normal;
+}
+
+[class^='btn'] {
+    height: auto;
+    min-height: $height-normal;
+}
+
+.msg {
+    float: left;
+    min-width: 350px;
+}
+
+// Messages
+.msg-content {      
+    padding-top: 12px;
+
+    .msg {
+        margin: 0;
+    }
+}
+
+.block {
+    clear: both;
+    max-width: 350px;
+    padding-top: 22px;
+    width: 350px;
+
+    .txt {
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%;
+        border: 1px solid $border-color;
+    }
+}
+
+.note {
+    color: #666;
+    margin-top: 20px;
+
+    &-red {
+        color: #ff0101;
+        padding-right: 6px;
+    }
+}
+
+// OTP reset
+.otp-reset {
+    clear: both;
+    padding: 12px 0;
+
+    .note {
+        color: #666;
+        margin: 10px 0;
+    }
+}
+
+
+// OTP Steps
+.otp-config {
+    padding: 20px 0;
+
+    .panel-group {
+        &.panel-table {
+            .panel-heading .panel-title a {
+                color: #fff;
+                border: none;
+                background-color: #3A3A3A;
+            }
+
+            .panel-body {
+                background-color: #171717;
+            }
+
+            .panel-heading + .panel-collapse > .panel-body {
+                padding: 16px 0;
+            }
+
+            .panel {
+                border-color: #484848;
+                @include border-radius(0);
+                @include box-shadow-multiple(none);
+            }
+        }
+
+        .success {
+            .panel-heading .panel-title a {
+                color: #03b224;
+            }
+
+            .icon-check-circle {
+                color: #03b224;
+                font-size: 18px;
+                display: inline-block;
+                margin-left: 10px;
+                position: relative;
+                top: 4px;
+            }
+        }
+
+        &.manualQRCode {
+            .panel {
+                border: none;
+            }
+
+            .panel-heading .panel-title a {
+                background-color: transparent;
+                color: $link-color;
+                padding: 0;
+                &:hover {
+                    color: $link-hover-color;
+                }
+            }
+
+            .panel-heading + .panel-collapse > .panel-body {
+                border-top: none;
+                padding-top: 8px;
+            }
+
+            .icon-content-copy {
+                cursor: pointer;
+                color: #038dee;
+                display: inline-block;
+                font-size: 18px;
+                margin-left: 6px;
+                position: relative;
+                top: 2px;
+
+                &:hover {
+                    color: $icon-hover-color;
+                }
+            }
+
+            .example {
+                .col-left, .col-right {
+                    float: left;
+                }
+
+                .col-right {
+                    margin-left: 40px;
+                }
+            }
+        }
+
+        .username-form {
+            display: none;
+
+            .form-group {
+                clear: both;
+                display: block;
+            }
+        }
+    }
+
+    .list-requirements {
+        margin-bottom: 0;
+        padding-left: 30px;
+
+        li {
+            list-style-type: decimal;
+        }
+
+        .download-content, .manualQRCode, .block, .note {
+            margin-left: -12px;
+        }
+
+        .additional-information {
+            padding-bottom: 16px;
+            margin-left: -12px;
+
+            p {
+                margin-bottom: 5px;
+            }
+        }
+        // Download Sophos
+        .download-content {
+            display: table;
+            padding: 12px 0 16px;
+
+            .logo-sophos {
+                float: left;
+            }
+
+            .list-download {
+                float: right;
+                margin-left: 16px;
+                padding-top: 4px;
+
+                h2 {
+                    font-size: 20px;
+                    font-weight: normal;
+                    margin: 0;
+                }
+
+                p {
+                    color: #666;
+                    font-size: 14px;
+                    margin: 4px 0 8px;
+                }
+            }
+        }
+
+        .qr-code {
+            margin-left: -27px;
+        }
+
+        .block, .username-customize {
+            .txt {
+                @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+            }
+        }
+
+        .username-customize {
+            margin-left: -12px;
+
+            .btn-change-username {
+                color: $link-color;
+                font-weight: bold;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $link-hover-color;
+                    text-decoration: none;
+                }
+            }
+
+            .form-inline {
+                padding-bottom: 12px;
+
+                * {
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .block {
+            padding-top: 12px;
+
+            &.username-form {
+                margin-left: 2px;
+                padding-top: 0;
+            }
+        }
+    }
+
+    .list-enableDisable {
+        clear: both;
+        padding-left: 18px;
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        .btn-submit {
+            margin-top: 4px;
+        }
+    }
+
+    .register-succeess {
+        clear: both;
+        padding: 0 16px;
+    }
+}
+
+.verify-otp {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-left: 5px;
+
+    .profile-avatar {
+        height: 240px;
+        width: 240px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+        margin-right: 24px;
+    }
+
+    .wrapper-right {
+        position: relative;
+        bottom: -16px;
+
+        .form-validation .txt.error ~ .validation,
+        .form-validation .txt.valid ~ .validation {
+            top: 80px !important;
+        }
+
+        .block {
+            max-width: 350px;
+            padding-top: 22px;
+            width: 350px;
+            clear: both;
+
+            label {
+                font-weight: normal;
+                display:  block;
+
+                &.otp-title {
+                    padding-top: 10px;
+                }
+            }
+
+            .txt {
+                padding-top: 0;
+                padding-bottom: 0;
+                width: 100%;
+            }
+
+            &.has-popup {
+                .form-group {
+                    margin-left: 2px;
+                }
+
+                .txt {
+                    @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+                }
+            }
+        }
+        // Rules
+        .rules {
+            color: #666;
+            padding-top: 12px;
+
+            .note-red {
+                color: #ff0101;
+                padding-right: 6px;
+            }
+
+            ul {
+                list-style: initial;
+                padding-left: 32px;
+
+                li {
+                    list-style-type: disc;
+                    line-height: 24px;
+                }
+            }
+        }
+        // Messages
+        .msg-content {
+            float: left;
+            min-width: 350px;
+            padding-top: 12px;
+
+            .msg {
+                line-height: 20px;
+                margin: 0;
+            }
+        }
+
+        .learn-more {
+            color: $link-color;
+
+            &:hover {
+                color: $link-hover-color;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#change-status-message {
+    float: left;
+    margin-left: 20px;
+    min-width: 350px;
+}
+
+#remove-otp-message {
+    clear: both;
+    padding: 0 16px;
+}
+
+#setup-otp-message {
+    margin-left: -12px;
+
+    .msg {
+        margin-bottom: 0;
+    }
+}
+
+#username-message, #change-status-message, #remove-otp-message {
+    .msg {
+        margin-top: 0;
+    }
+}
+
+// Modals
+.bootbox-confirm .modal-dialog {
+    margin: 100px auto 0;
+}
+
+@media only screen and (max-device-width : $conent-device-lower768) {
+    body {
+        font-size: $font-size-mobile;
+    }
+
+    %btn {
+        height: auto;
+        min-height: $height-mobile;
+        margin-right: 0;
+    }
+
+    .nav-tabs {
+        display: table;
+        width: 100%;
+
+        li {
+            display: table-cell;
+            float: none;
+
+            a {
+                text-align: center;
+            }
+        }
+    }
+
+    .otp-config {
+        [class^='btn'] {
+            @extend %btn;
+            width: 100%;
+        }
+
+        .msg {
+            float: none;
+        }
+
+        .panel-group {
+            &.panel-table {
+                .panel {
+                    border: none;
+                }
+
+                .panel-heading .panel-title a {
+                    border: 1px solid #dcdcdc;                    
+                }
+
+                .panel-heading + .panel-collapse > .panel-body {
+                    border-top: none;
+                }
+            }
+
+            &.manualQRCode {
+                .panel-heading .panel-title a {
+                    border: none;
+                }
+
+                .example {
+                    margin-top: 20px;
+
+                    .col-left, .col-right {
+                        float: none;
+                        text-align: center;
+                    }
+
+                    .col-right {
+                        margin-left: 0;
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+
+        .block {
+            max-width: initial;
+            width: 100%;
+        }
+
+        .list-requirements {
+            padding-left: 18px;
+        }
+
+        .list-enableDisable {
+            padding-left: 0;
+        }
+    }
+
+    .otp-reset .btn-remove {
+        @extend %btn;
+        width: 100%;
+    }
+
+    .bootbox-confirm .modal-dialog {
+        margin: 100px auto 0;
+    }
+}
+
+.tab-content  {
+    padding-top: 10px;
+}
+

@@ -35,6 +35,7 @@
                 return Redirect("~/");
             }
 
+            AssignDarkModeViewData(userSession);
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -65,6 +66,7 @@
                 return Redirect("~/");
             }
 
+            AssignDarkModeViewData(userSession);
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -89,6 +91,7 @@
         [HttpGet]
         public ActionResult ChangeUserOwnSecurityCode(SecurityCodeQuery query)
         {
+            AssignDarkModeViewData(userSession);
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -108,6 +111,7 @@
         [HttpGet, CheckBelongingFilter, AllowProtectedMode]
         public ActionResult ResetSecurityCode(SecurityCodeQuery query)
         {
+            AssignDarkModeViewData(userSession);
             if (IsNotProtectedModeInternal())
             {
                 return UnauthorizedAction(HttpContext);
@@ -142,6 +146,7 @@
                 return Redirect("~/Otp/VerifyOtp");
             }
 
+            AssignDarkModeViewData(userSession);
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -172,6 +177,7 @@
 
         public ActionResult LearnMore()
         {
+            AssignDarkModeViewData(userSession);
             return View($"~/Views/SecurityCode/LearnMore/SecurityCode_{this.userSession.Language}.cshtml");
         }
 

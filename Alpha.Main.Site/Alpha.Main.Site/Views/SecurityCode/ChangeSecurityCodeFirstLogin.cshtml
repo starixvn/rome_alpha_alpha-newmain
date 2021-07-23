@@ -1,10 +1,11 @@
 ﻿@model ForceChangeSecurityCodeViewModel
 @{
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
+    var darkModeName = ViewData["DarkModeName"];
 }
 @section css {
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
+    @StaticResources.AssetStyles.RenderCommon($"/bundles/common/common{darkModeName}")
+    @StaticResources.AssetStyles.Render($"/bundles/site-main/security/before-home-page{darkModeName}")
 }
 <div class="block">
     <form class="form-SC form-SC-before form-validation">

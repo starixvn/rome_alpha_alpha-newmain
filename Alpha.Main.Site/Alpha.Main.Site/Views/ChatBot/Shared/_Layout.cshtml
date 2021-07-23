@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿@{ var darkModeName = ViewData["DarkModeName"]; }
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,8 +7,8 @@
     <title>SMA Chat Bot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot")
+    @StaticResources.AssetStyles.RenderCommon($"/bundles/common/common{darkModeName}")
+    @StaticResources.RenderStyles($"~/assets/bundles/chatbot/chatbot{darkModeName}")
     @RenderSection("Styles", required: false)
 </head>
 <body>

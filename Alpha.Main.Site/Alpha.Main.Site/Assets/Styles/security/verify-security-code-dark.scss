@@ -1,0 +1,202 @@
+﻿@import '../Home/_variables-dark.scss';
+@import '../Home/_mixins.scss';
+
+// To remove the 300-350ms tap delay
+html {
+  //touch-action: manipulation;
+}
+
+body {
+    background: none;
+}
+
+%alphaIcon {
+    font:{
+        family: 'Iconalpha';
+        style: normal;
+    }
+}
+.verify-security-code {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 5px;
+    -webkit-overflow-scrolling: touch !important;
+    width: 360px;
+
+    &.has-popup {
+        padding-top: 10px;
+        margin: 0 auto;
+    }
+
+    .profile-avatar {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
+        margin-right: 24px;
+        align-self: center;
+        display: block;
+    }
+}
+
+.wrapper-right {
+    position: relative;
+    bottom: -16px;
+
+    .form-validation .txt.error ~ .validation,
+    .form-validation .txt.valid ~ .validation {
+        top: 81px !important;
+    }
+
+    .block {
+        max-width: 350px;
+        width: 350px;
+        clear: both;
+
+        label {
+            font-weight: normal;
+            display: block;
+
+            &.security-code-title {
+                padding-top: 10px;
+            }
+        }
+
+        .txt {
+            padding-top: 0;
+            padding-bottom: 0;
+            width: 100%;
+            font-family: 'password';
+            &.show-hint {
+                font-family: inherit;
+            }
+        }
+
+        &.has-popup {
+            .form-group {
+                margin-left: 2px;
+                margin-bottom: 6px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .txt {
+                @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+            }
+
+            label {
+                margin-bottom: 2px;
+
+                &.security-code-title {
+                    padding-top: 4px;
+                }
+            }
+
+            .form-validation .txt.error ~ .validation,
+            .form-validation .txt.valid ~ .validation {
+                top: 66px !important;
+            }
+
+            .msg {
+                margin-top: 0;
+            }
+        }
+    }
+    // Rules
+    .rules {
+        color: #666;
+        padding-top: 12px;
+
+        .note-red {
+            color: #ff0101;
+            padding-right: 6px;
+        }
+
+        ul {
+            list-style: initial;
+            padding-left: 32px;
+
+            li {
+                list-style-type: disc;
+                line-height: 24px;
+            }
+        }
+    }
+    // Messages
+    .msg-content {
+        float: left;
+        min-width: 350px;
+        padding-top: 12px;
+
+        .msg {
+            line-height: 20px;
+            margin: 0;
+        }
+    }
+
+    .learn-more {
+        color: $link-color;
+
+        &:hover {
+            color: $link-hover-color;
+            text-decoration: none;
+        }
+    }
+}
+
+
+@media only screen and (max-device-width: 767px) {
+    .verify-security-code {
+        flex-direction: column;
+        width: 100%;
+
+        &.has-popup .wrapper-right {
+            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
+                top: 98px !important;
+            }
+        }
+
+        .profile-avatar {
+            align-self: center;
+        }
+
+        .wrapper-right {
+            width: 100%;
+
+            .block {
+                width: 100%;
+                max-width: unset;
+                font-size: calculateScale(13px);
+            }
+
+            .txt {
+                height: calculateScale(28px);
+                @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
+            }
+
+            .form-validation .txt.error ~ .validation, .form-validation .txt.valid ~ .validation {
+                top: 110px !important;
+            }
+
+            .btn-submit, input[type=reset] {
+                height: calculateScale(28px);
+            }
+        }
+
+        #txtSecCode {
+            font-size: calculateScale(16px);
+        }
+    }
+
+    #title_header {
+        font-size: calculateScale(13px);
+        line-height: calculateScale(39px);
+    }
+}
+
+
+
