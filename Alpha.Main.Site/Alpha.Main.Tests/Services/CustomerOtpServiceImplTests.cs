@@ -25,7 +25,6 @@
         private IDynamicRepository dynamicRepository;
         private OtpService otpService;
         private JsonHelper jsonHelper;
-        private CasinoService casinoService;
 
         [SetUp]
         public void SetUp()
@@ -33,9 +32,8 @@
             dynamicRepository = Substitute.For<IDynamicRepository>();
             otpService = Substitute.For<OtpService>();
             jsonHelper = Substitute.For<JsonHelper>();
-            casinoService = Substitute.For<CasinoService>();
 
-            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, casinoService);
+            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper);
             compareLogic = new CompareLogic();
         }
 

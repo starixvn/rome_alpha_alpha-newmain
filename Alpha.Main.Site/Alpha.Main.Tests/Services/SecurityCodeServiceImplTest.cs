@@ -19,7 +19,6 @@
     {
         private SecurityCodeServiceImpl securityCodeService;
         private SecurityCodeDataAccess securityCodeDataAccess;
-        private CasinoService casinoService;
         private Encryptor encryptor;
         private CompareLogic compareLogic;
 
@@ -28,11 +27,9 @@
         {
             securityCodeDataAccess = Substitute.For<SecurityCodeDataAccess>();
             encryptor = Substitute.For<Encryptor>();
-            casinoService = Substitute.For<CasinoService>();
 
             securityCodeService = Substitute.ForPartsOf<SecurityCodeServiceImpl>(
                 securityCodeDataAccess,
-                casinoService,
                 encryptor);
 
             compareLogic = new CompareLogic();
