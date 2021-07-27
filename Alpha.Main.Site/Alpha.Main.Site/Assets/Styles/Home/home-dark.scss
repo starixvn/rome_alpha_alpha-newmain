@@ -279,15 +279,16 @@ body {
 
 // Customize tooltip
 .tooltip {
+
     &.in {
         opacity: 1;
     }
 
     .tooltip-inner {
-        border: 1px solid #ccc;
+        border: 1px solid #999999;
         color: $text-color;
         font-weight: bold;
-        background-color: #f2f2f2;
+        background-color: #3e3e3e;
         text-align: left;
         @include border-radius(2px);
     }
@@ -310,7 +311,7 @@ body {
 
             &:after {
                 border-color: transparent;
-                border-top-color: #f2f2f2;
+                border-top-color: #3e3e3e;
                 border-width: 8px;
                 margin-left: -8px;
                 margin-bottom: -10px;
@@ -318,7 +319,7 @@ body {
 
             &:before {
                 border-color: transparent;
-                border-top-color: #ccc;
+                border-top-color: #999999;
                 border-width: 10px;
                 margin-left: -10px;
                 margin-bottom: -14px;
