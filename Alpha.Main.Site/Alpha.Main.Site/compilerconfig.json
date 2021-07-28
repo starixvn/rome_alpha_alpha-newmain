@@ -146,5 +146,9 @@
   {
     "outputFile": "Assets/styles/security/verify-security-code-dark.css",
     "inputFile": "Assets/styles/security/verify-security-code-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/otp/otp-dark.css",
+    "inputFile": "Assets/styles/otp/otp-dark.scss"
   }
 ]

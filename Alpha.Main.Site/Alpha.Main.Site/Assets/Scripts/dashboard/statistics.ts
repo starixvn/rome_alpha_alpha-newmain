@@ -31,7 +31,7 @@
     }
 
     private registerTooltip = () => {
-        this.$('[data-toggle="tooltip"]').tooltip({ html: true, delay: { "hide": 100000000 } });
+        this.$('[data-toggle="tooltip"]').tooltip({ html: true });
 
         this.hideTooltipOnTouchOutInMobile();
     }
