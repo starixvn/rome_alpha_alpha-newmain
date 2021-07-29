@@ -297,12 +297,12 @@ html * {
     .extra-box {
         position: relative;
         display: none;
-        background: #fff;
+        background: #212223;
 
         &:before {
             content: "";
             height: 1px;
-            background-color: #d7d7d7;
+            background-color: #767A85;
             position: absolute;
             left: 6px;
             right: 6px;
