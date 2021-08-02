@@ -358,7 +358,7 @@
     <value>投注产品输赢</value>
   </data>
   <data name="superWinLossDetailByPT" xml:space="preserve">
-    <value>Super Win Loss Detail By PT</value>
+    <value>超级总代理的输赢细节根据占成数</value>
   </data>
   <data name="LastBets" xml:space="preserve">
     <value>最后投注</value>
