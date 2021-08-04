@@ -151,6 +151,7 @@ window.age = window.age || {
             });
         }
         else {
+            localStorage.removeItem(indexManager.currentUrlCookieName);
             index.location = signOutUrl;
         }
     },

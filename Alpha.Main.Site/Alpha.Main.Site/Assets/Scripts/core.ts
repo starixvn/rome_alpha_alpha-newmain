@@ -74,6 +74,7 @@ var alpha = {
                 });
             }
             else {
+                localStorage.removeItem(indexManager.currentUrlCookieName);
                 index.location = signOutUrl;
             }
         },
