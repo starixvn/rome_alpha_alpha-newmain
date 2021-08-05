@@ -84,26 +84,12 @@ var indexManager = {
                     if (errCode !== 0) {
                         if (errMsg) {
                             alert(errMsg);
-                        } else {
-                            alert('Oops... you are here because of a system error, please notify the administrators.');
                         }
 
                         alpha.core.signOut();
                     }
                 }
                 catch (e) {
-                    if (typeof (result) === "string"
-                        && result.indexOf("Oops... you are here because of a system error") > 0) {
-                        alpha.core.signOut();
-                        alert('Oops... you are here because of a system error, please notify the administrators.');
-                    }
-                }
-            },
-            error: (xhr) => {
-                // If internal server error
-                if (xhr.status === 500) {
-                    alpha.core.signOut();
-                    alert('Oops... you are here because of a system error, please notify the administrators.');
                 }
             },
             complete: () => {

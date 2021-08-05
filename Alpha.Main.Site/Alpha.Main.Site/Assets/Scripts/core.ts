@@ -74,6 +74,7 @@ var alpha = {
                 });
             }
             else {
+                localStorage.removeItem(indexManager.currentUrlCookieName);
                 index.location = signOutUrl;
             }
         },
@@ -176,9 +177,8 @@ $(() => {
                 xhr.setRequestHeader("__RequestVerificationToken", (<HTMLInputElement>antiXSRFToken[0]).value);
             }
         },
-        error: function (xhr, textStatus, errorThrown) {
+        error: function (xhr) {
             if (xhr.status === 401) {
-                alert('Oops... you are here because of a system error, please notify the administrators.');
                 alpha.core.signOut();
             }
         }
