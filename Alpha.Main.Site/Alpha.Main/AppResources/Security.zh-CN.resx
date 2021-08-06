@@ -428,4 +428,43 @@
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>由于安全检测多次失败，您的帐户已被锁并强迫登出。请联系您的上线开启账户。</value>
   </data>
+  <data name="SwitchLabelOff" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="SwitchLabelOn" xml:space="preserve">
+    <value>开启</value>
+  </data>
+  <data name="AccessToBetLists" xml:space="preserve">
+    <value>访问投注历史</value>
+  </data>
+  <data name="AccessToStatementReport" xml:space="preserve">
+    <value>访问账目报告</value>
+  </data>
+  <data name="CreateNewDownline" xml:space="preserve">
+    <value>创建新下线</value>
+  </data>
+  <data name="MandatoryActions" xml:space="preserve">
+    <value>强制措施</value>
+  </data>
+  <data name="OptionalAction" xml:space="preserve">
+    <value>可选动作</value>
+  </data>
+  <data name="SCAskedOncePerSession" xml:space="preserve">
+    <value>在执行以下操作之前，每个阶段将询问一次保安码</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>转账</value>
+  </data>
+  <data name="UpdateDownlineCreditAndSettings" xml:space="preserve">
+    <value>更新下线的信用额和设置</value>
+  </data>
+  <data name="UpdateSecurityInformation" xml:space="preserve">
+    <value>更新安全信息（密码, 安全码, OTP 等等）</value>
+  </data>
+  <data name="UpdateSubAccInformation" xml:space="preserve">
+    <value>更新您的子账号资料</value>
+  </data>
+  <data name="NewSecurityCode" xml:space="preserve">
+    <value>新保安码</value>
+  </data>
 </root>

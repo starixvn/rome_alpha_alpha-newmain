@@ -28,7 +28,7 @@
                     <input type="text"  inputmode="numeric" pattern="[0-9]*" autocomplete="off" class="txt form-control" name="oldSC" id="txtOldSecCode" maxlength="6" />
                 </div>
                 <div class="form-group">
-                    <label>@Security.SecurityCode</label>
+                    <label>@Security.NewSecurityCode</label>
                     <input type="text"  inputmode="numeric" pattern="[0-9]*" autocomplete="off" class="txt form-control" name="SC" id="txtSecCode" maxlength="6" />
                     <i class="validation"></i>
                 </div>
@@ -52,6 +52,32 @@
                 <li>@Security.SecurityCodeRules02</li>
             </ul>
             <a href="@($"{Model.MainRootPath}SecurityCode/LearnMore")" target="_blank" class="learn-more">@Security.LearnMore</a>
+        </div>
+        <div class="sc-control-list">
+            <p class="bold">@Security.SCAskedOncePerSession</p>
+            <p class="bold actions">-&nbsp;&nbsp;&nbsp;@Security.MandatoryActions</p>
+            <ul>
+                <li>@Security.CreateNewDownline</li>
+                <li>@Security.Transfer</li>
+                <li>@Security.UpdateDownlineCreditAndSettings</li>
+                <li>@Security.UpdateSecurityInformation</li>
+                <li>@Security.UpdateSubAccInformation</li>
+            </ul>
+            <p class="bold actions">-&nbsp;&nbsp;&nbsp;@Security.OptionalAction</p>
+            <div class="switch-buttons">
+                <div>
+                    <span class="switch-on @(Model.IsEnabledBetLists ? string.Empty : "switch-off")" data-function="BetList">
+                        @(Model.IsEnabledBetLists ? Security.SwitchLabelOn : Security.SwitchLabelOff)
+                    </span>
+                    <span>@Security.AccessToBetLists</span>
+                </div>
+                <div>
+                    <span class="switch-on @(Model.IsEnabledStatement ? string.Empty : "switch-off")" data-function="Statement">
+                        @(Model.IsEnabledStatement ? Security.SwitchLabelOn : Security.SwitchLabelOff)
+                    </span>
+                    <span>@Security.AccessToStatementReport</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -432,4 +432,43 @@
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>บัญชีของคุณถูกล็อคและจะถูกบังคับให้ออกจากระบบ เนื่องจากการตรวจสอบความปลอดภัยล้มเหลวหลายครั้ง โปรดติดต่ออัพไลน์ของคุณเพื่อปลดล็อค</value>
   </data>
+  <data name="SwitchLabelOff" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="SwitchLabelOn" xml:space="preserve">
+    <value>เปิด</value>
+  </data>
+  <data name="AccessToBetLists" xml:space="preserve">
+    <value>เข้าถึงประวัติรายการเดิมพัน</value>
+  </data>
+  <data name="AccessToStatementReport" xml:space="preserve">
+    <value>เข้าถึงรายงานเดินบัญชี</value>
+  </data>
+  <data name="CreateNewDownline" xml:space="preserve">
+    <value>+ สร้างดาวน์ไลน์ใหม่</value>
+  </data>
+  <data name="MandatoryActions" xml:space="preserve">
+    <value>มาตรการบังคับ</value>
+  </data>
+  <data name="OptionalAction" xml:space="preserve">
+    <value>ตัวเลือกการกระทำ</value>
+  </data>
+  <data name="SCAskedOncePerSession" xml:space="preserve">
+    <value>ระบบจะถามรหัสรักษาความปลอดภัยหนึ่งครั้งก่อนการดำเนินการในแต่ละขั้นตอนต่อไปนี้</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>โอน</value>
+  </data>
+  <data name="UpdateDownlineCreditAndSettings" xml:space="preserve">
+    <value>อัปเดตวงเงินเครดิตดาวน์ไลน์และการตั้งค่า</value>
+  </data>
+  <data name="UpdateSecurityInformation" xml:space="preserve">
+    <value>อัปเดตข้อมูลความปลอดภัย (รหัสผ่าน รหัสความปลอดภัย OTP ฯลฯ)</value>
+  </data>
+  <data name="UpdateSubAccInformation" xml:space="preserve">
+    <value>อัปเดตข้อมูลบัญชีย่อยของคุณ</value>
+  </data>
+  <data name="NewSecurityCode" xml:space="preserve">
+    <value>รหัสรักษาความปลอดภัย</value>
+  </data>
 </root>

@@ -430,4 +430,43 @@
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>由於安全檢測多次失敗，您的帳戶已被鎖並強迫登出。請聯繫您的上線開啟賬戶。</value>
   </data>
+  <data name="SwitchLabelOff" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="SwitchLabelOn" xml:space="preserve">
+    <value>開啟</value>
+  </data>
+  <data name="AccessToBetLists" xml:space="preserve">
+    <value>訪問投注歷史</value>
+  </data>
+  <data name="AccessToStatementReport" xml:space="preserve">
+    <value>訪問賬目報告</value>
+  </data>
+  <data name="CreateNewDownline" xml:space="preserve">
+    <value>創建新下線</value>
+  </data>
+  <data name="MandatoryActions" xml:space="preserve">
+    <value>強制措施</value>
+  </data>
+  <data name="OptionalAction" xml:space="preserve">
+    <value>可選動作</value>
+  </data>
+  <data name="SCAskedOncePerSession" xml:space="preserve">
+    <value>在執行以下操作之前，每個階段將詢問一次保安碼</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>轉賬</value>
+  </data>
+  <data name="UpdateDownlineCreditAndSettings" xml:space="preserve">
+    <value>更新下線的信用額和設置</value>
+  </data>
+  <data name="UpdateSecurityInformation" xml:space="preserve">
+    <value>更新安全信息（密碼, 安全碼, OTP 等等）</value>
+  </data>
+  <data name="UpdateSubAccInformation" xml:space="preserve">
+    <value>更新您的子賬號資料</value>
+  </data>
+  <data name="NewSecurityCode" xml:space="preserve">
+    <value>新保安碼</value>
+  </data>
 </root>

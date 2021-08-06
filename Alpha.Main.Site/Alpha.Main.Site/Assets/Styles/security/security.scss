@@ -31,7 +31,7 @@ body {
     .txt {
         padding-top: 0;
         padding-bottom: 0;
-        width: 100%;       
+        width: 100%;
     }
 
     &.has-popup {
@@ -56,7 +56,7 @@ body {
 // Rules
 .rules {
     color: #666;
-    padding-top: 12px;
+    padding: 12px 0;
 
     .note-red {
         color: #ff0101;
@@ -95,6 +95,55 @@ body {
     }
 }
 
+.sc-control-list {
+    padding: 10px 0;
+
+    p {
+        margin-bottom: 4px;
+    }
+
+    p.actions {
+        margin-left: 18px;
+    }
+
+    ul {
+        margin-left: 42px;
+
+        > li {
+            &:before {
+                content: '+';
+                margin-right: 6px;
+            }
+
+            padding: 2px 0;
+        }
+    }
+
+    .switch-buttons {
+        margin: 5px 0 0 42px;
+
+        div {
+            margin-bottom: 6px;
+        }
+
+        .switch-on {
+            background: url("../../Images/switch.png") no-repeat;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 6px;
+            text-indent: 6px;
+            height: 22px;
+            width: 54px;
+        }
+
+        .switch-off {
+            background-position: 0 -25px;
+            color: #666;
+            text-indent: 23px;
+        }
+    }
+}
 // It's not necessary at the moment
 @media only screen and (max-device-width: $conent-device-lower768) {
     .msg-content {

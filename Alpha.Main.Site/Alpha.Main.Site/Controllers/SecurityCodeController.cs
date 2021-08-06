@@ -3,8 +3,8 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Auth.Filters;
     using AppResources;
-    using Auth.Filters;
     using Configurations;
     using Main.Models;
     using MediatR;
@@ -164,5 +164,10 @@
         {
             return View($"~/Views/SecurityCode/LearnMore/SecurityCode_{this.userSession.Language}.cshtml");
         }
+
+        [HttpPost]
+        [AntiXsrfFilter]
+        public JsonResult UpdateSecurityCodeFunction(UpdateSecurityCodeFunctionCommand query)
+            => Json(mediator.Send(query));
     }
 }

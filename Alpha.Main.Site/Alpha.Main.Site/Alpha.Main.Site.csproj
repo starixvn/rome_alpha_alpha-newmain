@@ -338,8 +338,8 @@
     <Reference Include="Sunplus.Agent.Model.Auth, Version=3.0.1.6, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.1.6\lib\net461\Sunplus.Agent.Model.Auth.dll</HintPath>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.1\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.7\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
@@ -707,6 +707,7 @@
       <DependentUpon>verify-security-code.css</DependentUpon>
     </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
+    <Content Include="Assets\Images\switch.png" />
     <Content Include="Assets\scripts\aes.js" />
     <Content Include="Assets\scripts\home\le-mtagconfig.js" />
     <Content Include="Assets\styles\captcha\captcha.css">
@@ -1484,6 +1485,7 @@
     <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\UpdateSecurityCodeFunctionCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
     <Compile Include="Requests\UMMessage\UMMessageQuery.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />

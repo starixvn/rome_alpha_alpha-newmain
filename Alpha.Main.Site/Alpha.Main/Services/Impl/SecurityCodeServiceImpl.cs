@@ -311,5 +311,8 @@
 
             return result;
         }
+
+        public Result UpdateSecurityCodeFunction(UpdateSecurityCodeFunctionParam param)
+            => securityCodeDataAccess.UpdateSecurityCode(new UpdateSecurityCodeFunctionCriteria(param));
     }
 }

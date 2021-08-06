@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Handlers.SecurityCode
 {
+    using System;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Models;
@@ -12,7 +13,6 @@
     using Services;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using System;
     using ViewModels.Security;
     using Web.Helpers;
     using CustomResult = Alpha.Main.Models.Result;
@@ -24,7 +24,8 @@
         IRequestHandler<ChangeSecurityCodeByForcingCommand, CustomResult>,
         IRequestHandler<ChangeUserOwnSecurityCodeCommand, CustomResult>,
         IRequestHandler<ResetSecurityCodeCommand, CustomResult>,
-        IRequestHandler<VerifySecurityCodeCommand, CustomResult>
+        IRequestHandler<VerifySecurityCodeCommand, CustomResult>,
+        IRequestHandler<UpdateSecurityCodeFunctionCommand, CustomResult>
     {
         private const string HashKeySessionKey = "ph";
         private const string SecurityCodeTokenSessionKey = "SECURITYCODETOKEN";
@@ -88,7 +89,6 @@
             }
 
             string securityCodeToken = securityCodeService.GenerateSecurityToken();
-
             sessionManager.Add(SecurityCodeTokenSessionKey, securityCodeToken);
 
             return new SecurityCodeViewModel
@@ -98,7 +98,9 @@
                 HashKey = HashKey,
                 CustRoleId = message.RoleId,
                 Title = BuildSecurityCodeTitle(message.Username),
-                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.Username)
+                UsernameShower = BuildUsernameShower(message.IsSubAcc, message.SubUserName, message.NickName, message.Username),
+                IsEnabledBetLists = message.IsEnabledSecurityCodeInBetLists,
+                IsEnabledStatement = message.IsEnabledSecurityCodeInStatement
             };
         }
 
@@ -423,6 +425,41 @@
             }
 
             return $"{Security.titleResetSecCode} - {username}";
+        }
+
+        public CustomResult Handle(UpdateSecurityCodeFunctionCommand message)
+        {
+            var result = HasUpdatePermission();
+
+            if (result.IsOk)
+            {
+                result = securityCodeService.UpdateSecurityCodeFunction(new UpdateSecurityCodeFunctionParam(
+                   message.IsOn,
+                   message.Function,
+                   message.CustId,
+                   message.SubAccId,
+                   message.LangKey,
+                   message.IP));
+
+                if (result.IsOk)
+                {
+                    UpdateSecurityCodeFunctionSession(message.IsOn, message.Function);
+                }
+            }
+
+            return result;
+        }
+
+        private void UpdateSecurityCodeFunctionSession(bool isOn, string function)
+        {
+            if ("BetList" == function)
+            {
+                userSession.IsEnabledSecurityCodeInBetLists = isOn;
+            }
+            else if ("Statement" == function)
+            {
+                userSession.IsEnabledSecurityCodeInStatement = isOn;
+            }
         }
     }
 }

@@ -26,5 +26,9 @@
         public bool IsDefaultAvatar { get; set; }
 
         public string EmbedImage { get; set; }
+
+        public bool IsEnabledBetLists { get; set; }
+
+        public bool IsEnabledStatement { get; set; }
     }
 }

@@ -432,4 +432,43 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>Tài khoản của bạn bị khóa và đăng xuất do nhiều lần xác thực không thành công. Vui lòng liên hệ cấp trên của bạn để mở khóa.</value>
   </data>
+  <data name="SwitchLabelOff" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="SwitchLabelOn" xml:space="preserve">
+    <value>Mở</value>
+  </data>
+  <data name="AccessToBetLists" xml:space="preserve">
+    <value>Truy cập vào danh sách cược</value>
+  </data>
+  <data name="AccessToStatementReport" xml:space="preserve">
+    <value>Truy cập vào sao kê</value>
+  </data>
+  <data name="CreateNewDownline" xml:space="preserve">
+    <value>Tạo cấp dưới mới</value>
+  </data>
+  <data name="MandatoryActions" xml:space="preserve">
+    <value>Các hành động bắt buộc</value>
+  </data>
+  <data name="OptionalAction" xml:space="preserve">
+    <value>Hành động tùy chọn</value>
+  </data>
+  <data name="SCAskedOncePerSession" xml:space="preserve">
+    <value>Mã bảo mật sẽ được yêu cầu một lần ở mỗi phiên giao dịch trước khi thực hiện các hành động sau</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Chuyển khoản</value>
+  </data>
+  <data name="UpdateDownlineCreditAndSettings" xml:space="preserve">
+    <value>Cập nhật hạn mức được cấp và thiết lập của cấp dưới</value>
+  </data>
+  <data name="UpdateSecurityInformation" xml:space="preserve">
+    <value>Cập nhật thông tin bảo mật (mật khẩu, mã bảo mật, mã OTP, v.v.)</value>
+  </data>
+  <data name="UpdateSubAccInformation" xml:space="preserve">
+    <value>Cập nhật thông tin tài khoản phụ của bạn</value>
+  </data>
+  <data name="NewSecurityCode" xml:space="preserve">
+    <value>Mã bảo mật mới</value>
+  </data>
 </root>

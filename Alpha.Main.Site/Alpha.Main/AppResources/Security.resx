@@ -433,4 +433,43 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>Your account is locked and forced to log out due to multiple failed security checks. Please contact your upline to unlock.</value>
   </data>
+  <data name="SwitchLabelOff" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="SwitchLabelOn" xml:space="preserve">
+    <value>ON</value>
+  </data>
+  <data name="AccessToBetLists" xml:space="preserve">
+    <value>Access to bet lists</value>
+  </data>
+  <data name="AccessToStatementReport" xml:space="preserve">
+    <value>Access to statement report</value>
+  </data>
+  <data name="CreateNewDownline" xml:space="preserve">
+    <value>Create New Downline</value>
+  </data>
+  <data name="MandatoryActions" xml:space="preserve">
+    <value>Mandatory actions</value>
+  </data>
+  <data name="OptionalAction" xml:space="preserve">
+    <value>Optional action</value>
+  </data>
+  <data name="SCAskedOncePerSession" xml:space="preserve">
+    <value>Security Code will be asked once per session before performing the following actions</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Transfer</value>
+  </data>
+  <data name="UpdateDownlineCreditAndSettings" xml:space="preserve">
+    <value>Update downline's given credit and settings</value>
+  </data>
+  <data name="UpdateSecurityInformation" xml:space="preserve">
+    <value>Update security information (password, security code, OTP, etc.)</value>
+  </data>
+  <data name="UpdateSubAccInformation" xml:space="preserve">
+    <value>Update your sub account's information</value>
+  </data>
+  <data name="NewSecurityCode" xml:space="preserve">
+    <value>New Security Code</value>
+  </data>
 </root>

@@ -7,5 +7,7 @@ var securityCodeResources = {
     securityCodeWrongRule: (<HTMLInputElement>document.getElementById('alert-securitycode-wrong-rule')).value,
     errorSecurityCodeConfirm: (<HTMLInputElement>document.getElementById('alert-error-securitycode-confirm')).value,
     sameSecurityCode: (<HTMLInputElement>document.getElementById('alert-same-securitycode')).value,
-    securityCodeChangeSucessfully: (<HTMLInputElement>document.getElementById('alert-securitycode-change-ok')).value
+    securityCodeChangeSucessfully: (<HTMLInputElement>document.getElementById('alert-securitycode-change-ok')).value,
+    switchLableOn: (<HTMLInputElement>document.getElementById('text-securitycode-switch-label-on')).value,
+    switchLableOff: (<HTMLInputElement>document.getElementById('text-securitycode-switch-label-off')).value
 };
