@@ -628,6 +628,10 @@
     <Content Include="Assets\bundles\home-mobile-calculate-07.min.css">
       <DependentUpon>home-mobile-calculate-07.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\home\le-mtagconfig.js" />
+    <Content Include="Assets\bundles\home\le-mtagconfig.min.js">
+      <DependentUpon>le-mtagconfig.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\newcustomer-captcha\captcha.css" />
     <Content Include="Assets\bundles\newcustomer-captcha\captcha.js" />
     <Content Include="Assets\bundles\newcustomer-captcha\captcha.min.css">
@@ -658,6 +662,7 @@
     </Content>
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\scripts\aes.js" />
+    <Content Include="Assets\scripts\home\le-mtagconfig.js" />
     <Content Include="Assets\styles\captcha\captcha.css">
       <DependentUpon>captcha.scss</DependentUpon>
     </Content>

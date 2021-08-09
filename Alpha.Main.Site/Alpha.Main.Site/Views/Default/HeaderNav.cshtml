@@ -21,9 +21,6 @@
         {
             <li class="visible-mobile"><span class="icon icon-account-search"></span></li>
         }
-        <li class="hidden-mobile">
-           <a href="#" onclick="onLiveChatClick();">Live Chat</a>
-        </li>
         <li class="hidden-mobile datetime">
             <span class="icon icon-time"></span>
             <span class="txt-top" id="clock"
@@ -112,6 +109,12 @@
                         {
                             <li>
                                 <a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
+                            </li>
+                        }
+                        @if (Model.ShowLiveChat)
+                        {
+                            <li>
+                                <a href="javascript:;" id="liveChat"><span class="icon icon-Live-chat"></span>@Resources.LiveMessage</a>
                             </li>
                         }
                         <li class="visible-mobile"><a class="link-logout"><span class="icon icon-logout"></span>@Resources.LogOut</a></li>

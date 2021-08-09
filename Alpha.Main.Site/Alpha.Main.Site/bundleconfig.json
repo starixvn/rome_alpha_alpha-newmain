@@ -288,5 +288,11 @@
     "inputFiles": [
       "Assets/scripts/newcustomer-captcha/captcha.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/home/le-mtagconfig.js",
+    "inputFiles": [
+      "Assets/scripts/home/le-mtagconfig.js"
+    ]
   }
 ]

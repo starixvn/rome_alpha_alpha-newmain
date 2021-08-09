@@ -548,6 +548,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Live Message.
+        /// </summary>
+        public static string LiveMessage {
+            get {
+                return ResourceManager.GetString("LiveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading.
         /// </summary>
         public static string loading {

@@ -280,5 +280,7 @@
 
         public static bool IsViva88Domain
             => DomainsWithViva88ContactInfo.Any(domain => domain.Equals(HttpContext.Current.Request.Headers["Host"], StringComparison.OrdinalIgnoreCase));
+
+        public static string LivePersonAccountNumber => Settings["LivePersonAccountNumber"];
     }
 }

@@ -143,5 +143,9 @@
 
             return HttpUtility.HtmlEncode(message.NickName);
         }
+
+        public string LivePersonAccountNumber { get; } = AppSettings.LivePersonAccountNumber;
+
+        public bool ShowLiveChat { get; } = !string.IsNullOrWhiteSpace(AppSettings.LivePersonAccountNumber);
     }
 }
