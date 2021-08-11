@@ -365,6 +365,8 @@ var AgeWnd = function () {
         },
 
         copyTargetForm: function (popUp) {
+            popUp.find('.modal-body').find("#target").remove();
+
             var oldTarget = top.main.document.getElementById("target");
             var newTarget = $.clone(oldTarget);
 

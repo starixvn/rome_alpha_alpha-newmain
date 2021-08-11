@@ -197,8 +197,8 @@ var indexManager = {
     },
 
     isSameUrl: function (url1, url2) {
-        url1 = url1.toLowerCase();
-        url2 = url2.toLowerCase();
+        url1 = this.removeHashFromTheEndOfURL(url1.toLowerCase());
+        url2 = this.removeHashFromTheEndOfURL(url2.toLowerCase());
         if (url1 === url2) {
             return true;
         }
@@ -214,6 +214,14 @@ var indexManager = {
         diff2 = diff2 || "index";
 
         return url1.substring(0, minLength) == url2.substring(0, minLength) && diff1 === "index" && diff2 === "index";
+    },
+
+    removeHashFromTheEndOfURL: function (url: string) {
+        const indexOfHash = url.length - 1;
+
+        return url[indexOfHash] === "#"
+            ? url.substring(0, indexOfHash)
+            : url;
     },
 
     calculateUserConnectionSpeed: function () {
