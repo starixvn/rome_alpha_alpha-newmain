@@ -702,6 +702,14 @@
     <Content Include="Assets\bundles\partial-um\partial-um.min.css">
       <DependentUpon>partial-um.css</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\protection-code\protection.css" />
+    <Content Include="Assets\bundles\protection-code\protection.js" />
+    <Content Include="Assets\bundles\protection-code\protection.min.css">
+      <DependentUpon>protection.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\protection-code\protection.min.js">
+      <DependentUpon>protection.js</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\security\verify-security-code.css" />
     <Content Include="Assets\bundles\security\verify-security-code.min.css">
       <DependentUpon>verify-security-code.css</DependentUpon>
@@ -781,6 +789,12 @@
     </Content>
     <Content Include="Assets\styles\partial-um\partial-um.min.css">
       <DependentUpon>partial-um.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\protection-code\protection.css">
+      <DependentUpon>protection.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\protection-code\protection.min.css">
+      <DependentUpon>protection.css</DependentUpon>
     </Content>
     <Content Include="Assets\styles\security\verify-security-code.css">
       <DependentUpon>verify-security-code.scss</DependentUpon>
@@ -1038,6 +1052,8 @@
     <Content Include="Views\Error\Blocked.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\PartialUM\Index.cshtml" />
+    <Content Include="Views\ProtectionCode\Index.cshtml" />
+    <Content Include="Views\ProtectionCode\_LearnMorePopup.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -1051,6 +1067,7 @@
     <TypeScriptCompile Include="Assets\scripts\home\um-message.ts" />
     <TypeScriptCompile Include="Assets\scripts\newcustomer-captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\nickname\create-nickname.ts" />
+    <TypeScriptCompile Include="Assets\scripts\protection-code\protection.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\reset-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\setup-otp.ts" />
     <TypeScriptCompile Include="Assets\scripts\security\otp\verify-otp-difference-device.ts" />
@@ -1297,6 +1314,7 @@
     <Content Include="App_Data\activitytracking.json" />
     <Content Include="Assets\styles\partial-um\partial-um.scss" />
     <Content Include="Assets\styles\home\customizedLiveChat.scss" />
+    <Content Include="Assets\styles\protection-code\protection.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1408,6 +1426,7 @@
     <Compile Include="Controllers\MemberRequestsController.cs" />
     <Compile Include="Controllers\NetworkSpeedController.cs" />
     <Compile Include="Controllers\PartialUMController.cs" />
+    <Compile Include="Controllers\ProtectionCodeController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\OtpController.cs" />
@@ -1423,6 +1442,7 @@
     <Compile Include="Handlers\MemberRequestsHandler.cs" />
     <Compile Include="Handlers\NetworkSpeedHandler.cs" />
     <Compile Include="Handlers\NicknameHandler.cs" />
+    <Compile Include="Handlers\ProtectionCodeHandler.cs" />
     <Compile Include="Handlers\StatisticsHandler.cs" />
     <Compile Include="Handlers\BalanceInfoHandler.cs" />
     <Compile Include="Handlers\MenuBarHandler.cs" />
@@ -1479,6 +1499,8 @@
     <Compile Include="Requests\Password\ResetMainAccountPasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetSubAccountPasswordCommand.cs" />
     <Compile Include="Requests\Password\ResetSubAccountPasswordQuery.cs" />
+    <Compile Include="Requests\ProtectionCode\UpdateProtectionCodeCommand.cs" />
+    <Compile Include="Requests\ProtectionCode\ProtectionCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\SecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
@@ -1513,6 +1535,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\NetworkSpeed\NetworkSpeedViewModel.cs" />
     <Compile Include="ViewModels\Nickname\CreateNicknameViewModel.cs" />
+    <Compile Include="ViewModels\ProtectionCode\ProtectionCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Security\OtpViewModel.cs" />
     <Compile Include="ViewModels\Security\PasswordViewModel.cs" />

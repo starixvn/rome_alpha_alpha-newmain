@@ -701,6 +701,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Protection Code.
+        /// </summary>
+        public static string NewProtectionCode {
+            get {
+                return ResourceManager.GetString("NewProtectionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         public static string Next {
@@ -1012,6 +1021,15 @@ namespace Alpha.Main.AppResources {
         public static string ProfileLoginTip1 {
             get {
                 return ResourceManager.GetString("ProfileLoginTip1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protection Code.
+        /// </summary>
+        public static string ProtectionCode {
+            get {
+                return ResourceManager.GetString("ProtectionCode", resourceCulture);
             }
         }
         

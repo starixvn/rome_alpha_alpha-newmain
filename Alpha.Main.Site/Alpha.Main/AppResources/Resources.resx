@@ -652,4 +652,10 @@
   <data name="LiveMessage" xml:space="preserve">
     <value>Live Message</value>
   </data>
+  <data name="NewProtectionCode" xml:space="preserve">
+    <value>New Protection Code</value>
+  </data>
+  <data name="ProtectionCode" xml:space="preserve">
+    <value>Protection Code</value>
+  </data>
 </root>

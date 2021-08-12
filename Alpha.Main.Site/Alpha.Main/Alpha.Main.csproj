@@ -338,6 +338,7 @@
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureStandbyServerCommand.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureMainServerCommand.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureCommandBase.cs" />
+    <Compile Include="Criteria\ProtectionCode\UpdateProtectionCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSecurityCodeFunctionCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetNewMembersCriteria.cs" />
@@ -415,6 +416,7 @@
     <Compile Include="Params\Password\ResetSubAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ChangeMainAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ChangeSubAccountPasswordParam.cs" />
+    <Compile Include="Params\ProtectionCode\UpdateProtectionCodeParam.cs" />
     <Compile Include="Params\SecurityCode\UpdateSecurityCodeFunctionParam.cs" />
     <Compile Include="Params\SecurityCode\ChangeSecurityCodeParam.cs" />
     <Compile Include="Params\SecurityCode\ResetSecurityCodeParam.cs" />
@@ -441,11 +443,13 @@
     </Compile>
     <Compile Include="Services\Impl\NicknameServiceImpl.cs" />
     <Compile Include="Services\Impl\ProfilePictureServices.cs" />
+    <Compile Include="Services\Impl\ProtectionCodeServiceImpl.cs" />
     <Compile Include="Services\Impl\UMMessageServiceImpl.cs" />
     <Compile Include="Services\KickoutCustomerService.cs" />
     <Compile Include="Services\LogoutService.cs" />
     <Compile Include="Services\MemberRequestsService.cs" />
     <Compile Include="Services\NicknameService.cs" />
+    <Compile Include="Services\ProtectionCodeService.cs" />
     <Compile Include="Services\SimpleServiceLocator.cs" />
     <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\CachingManager.cs" />
