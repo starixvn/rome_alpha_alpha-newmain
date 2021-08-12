@@ -111,7 +111,7 @@
                                 <a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
                             </li>
                         }
-                        @if (Model.ShowLiveChat)
+                        @if (Model.IsOfferLiveChat)
                         {
                             <li>
                                 <a href="javascript:;" id="liveChat"><span class="icon icon-Live-chat"></span>@Resources.LiveMessage</a>

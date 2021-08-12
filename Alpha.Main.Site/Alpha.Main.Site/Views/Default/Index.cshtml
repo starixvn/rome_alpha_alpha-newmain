@@ -51,11 +51,8 @@
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     @StaticResources.RenderScripts("~/assets/bundles/default-index")
-    @if (Model.ShowLiveChat)
+    @if (Model.IsOfferLiveChat)
     {
-        <script type="text/javascript">
-            var site = '@Model.LivePersonAccountNumber';
-        </script>
         @StaticResources.RenderScripts("~/assets/bundles/home/le-mtagconfig")
     }
     @GoogleAnalyticHepler.Render()

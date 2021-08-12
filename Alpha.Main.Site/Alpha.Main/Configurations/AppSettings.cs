@@ -275,12 +275,12 @@
 
         public static bool IsShowEmptyDashboard => "1" == Settings["IsShowEmptyDashboard"];
 
-        public static string[] DomainsWithViva88ContactInfo => 
+        public static string[] DomainsWithViva88ContactInfo =>
             (string.Empty + Settings["newdomains"]).Split(new[] { ",", ";" }, StringSplitOptions.RemoveEmptyEntries);
 
         public static bool IsViva88Domain
             => DomainsWithViva88ContactInfo.Any(domain => domain.Equals(HttpContext.Current.Request.Headers["Host"], StringComparison.OrdinalIgnoreCase));
 
-        public static string LivePersonAccountNumber => Settings["LivePersonAccountNumber"];
+        public static bool IsOfferLiveChat => "1" == Settings["IsOfferLiveChat"];
     }
 }

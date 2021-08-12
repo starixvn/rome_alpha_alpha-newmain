@@ -63,6 +63,6 @@
 
         public bool ShowCreateMemberByQRCode { get; }
 
-        public bool ShowLiveChat { get; } = !string.IsNullOrWhiteSpace(AppSettings.LivePersonAccountNumber);
+        public bool IsOfferLiveChat { get; } = AppSettings.IsOfferLiveChat;
     }
 }

@@ -33,7 +33,8 @@
       "Assets/Styles/home/popup-announcement.css",
       "Assets/Styles/home/tooltip.css",
       "Assets/Styles/home/popup-message.css",
-      "Assets/Styles/home/old-main.css"
+      "Assets/Styles/home/old-main.css",
+      "Assets/Styles/home/customizedLiveChat.css"
     ]
   },
   {

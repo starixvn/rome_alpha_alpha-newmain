@@ -90,5 +90,9 @@
   {
     "outputFile": "Assets/styles/newcustomer-captcha/captcha.css",
     "inputFile": "Assets/styles/newcustomer-captcha/captcha.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/customizedLiveChat.css",
+    "inputFile": "Assets/styles/home/customizedLiveChat.scss"
   }
 ]

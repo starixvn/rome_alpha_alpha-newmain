@@ -1,7 +1,7 @@
 ﻿window.lpTag = window.lpTag || {}, 'undefined' == typeof window.lpTag._tagCount ? (window.lpTag = {
     wl: lpTag.wl || null,
     scp: lpTag.scp || null,
-    site: window.site || '',
+    site: '44279307',
     section: lpTag.section || '',
     tagletSection: lpTag.tagletSection || null,
     autoStart: lpTag.autoStart !== !1,
@@ -68,7 +68,7 @@ var engagementId;
 
 function _onEvent(data, eventInfo) {
     engagementId = data.engagementId;
-    $("div[id^='LPMcontainer-']").first().remove();
+    $("div[id^='LPMcontainer-']").first().hide();
 }
 
 if (window.lpTag) {
