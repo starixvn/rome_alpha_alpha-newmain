@@ -65,6 +65,9 @@ var changeSecurityCodeByForcing = {
             },
             complete: function (jqXHR, textStatus) {
                 $.unblockUI();
+            },
+            error: function (jqXHR) {
+                jqXHR.status === 403 && securityHelper.redirectToHomePage(100);
             }
         })
     },

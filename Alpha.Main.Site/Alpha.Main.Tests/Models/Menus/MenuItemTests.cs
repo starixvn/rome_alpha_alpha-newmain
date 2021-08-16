@@ -35,8 +35,8 @@
             {
                 SubMenus = new List<IMenuItem>
                 {
-                    new MenuItem(getMenuStatusFunc, authorizedUrlFunction),
-                    new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction)
+                    new MenuItem(getMenuStatusFunc, authorizedUrlFunction, null, () => false, () => false),
+                    new MenuItem(getMenuStatusFunc, unauthorizedUrlFunction, null, () => false, () => false)
                 }
             };
 
@@ -54,7 +54,7 @@
             };
 
             // Act
-            var actualMenuItem = new MenuItem(null, authorizedUrlFunction);
+            var actualMenuItem = new MenuItem(null, authorizedUrlFunction, null, () => false, () => false);
 
             // Assert
             Assert.IsFalse(actualMenuItem.Status.Visible);
@@ -75,7 +75,7 @@
             };
 
             // Act
-            var actualMenuItemStatus = new MenuItem(getMenuStatusFunc, authorizedUrlFunction).Status;
+            var actualMenuItemStatus = new MenuItem(getMenuStatusFunc, authorizedUrlFunction, null, () => false, () => false).Status;
 
             // Assert
             Assert.AreEqual(expectedMenuStatus, actualMenuItemStatus);
@@ -91,7 +91,7 @@
             };
 
             // Act
-            var actualMenuItem = new MenuItem(null, null, getDisplayName);
+            var actualMenuItem = new MenuItem(null, null, getDisplayName, () => false, () => false);
 
             // Assert
             Assert.IsTrue(actualMenuItem.DisplayName.Equals("DisplayName"));

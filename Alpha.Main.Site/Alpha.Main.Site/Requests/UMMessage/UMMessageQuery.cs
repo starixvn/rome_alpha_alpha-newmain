@@ -29,6 +29,7 @@
 
         public int SuperId => userSession.SRecommendId;
 
-        public bool EnableUMAnnouncementPopup => AppSettings.EnableUMAnnouncementPopup;
+        public bool EnableUMAnnouncementPopup
+            => AppSettings.EnableUMAnnouncementPopup && !userSession.IsProtectedMode;
     }
 }

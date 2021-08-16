@@ -27,5 +27,9 @@
         public string LangKey => userSession.LangKey;
 
         public string IP => userSession.UserLoginIp;
+
+        public bool IsInternal => userSession.IsInternal;
+
+        public bool IsNotOfferProtectedMode => !userSession.IsOfferProtectedMode;
     }
 }

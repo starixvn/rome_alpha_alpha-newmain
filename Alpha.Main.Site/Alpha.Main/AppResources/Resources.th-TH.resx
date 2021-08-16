@@ -586,4 +586,43 @@
   <data name="LiveMessage" xml:space="preserve">
     <value>Live Message</value>
   </data>
+  <data name="NewProtectionCode" xml:space="preserve">
+    <value>รหัสป้องกันใหม่</value>
+  </data>
+  <data name="ProtectionCode" xml:space="preserve">
+    <value>รหัสป้องกัน</value>
+  </data>
+  <data name="ConfirmProtectionCode" xml:space="preserve">
+    <value>ยืนยันรหัสป้องกัน</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>สร้าง</value>
+  </data>
+  <data name="NotMatchedConfirmProtectionCode" xml:space="preserve">
+    <value>รหัสป้องกันเหล่านี้ไม่ตรงกัน</value>
+  </data>
+  <data name="ProtectionCodeRule" xml:space="preserve">
+    <value>รหัสป้องกันต้องมีอักษรอย่างน้อย 6 ตัว โดยสามารถตรงกับรหัสความปลอดภัยของคุณได้ แต่ไม่สามารถตรงกับรหัสผ่านของคุณ</value>
+  </data>
+  <data name="RequiredNewProtectionCode" xml:space="preserve">
+    <value>จำเป็นต้องมีรหัสป้องกันใหม่</value>
+  </data>
+  <data name="ShowProtectionCode" xml:space="preserve">
+    <value>แสดงรหัสป้องกัน</value>
+  </data>
+  <data name="MinLengthNewProtectionCodeError" xml:space="preserve">
+    <value>รหัสป้องกันต้องมีความยาวอย่างน้อย 6 ตัวอักษร</value>
+  </data>
+  <data name="RequiredConfirmProtectionCode" xml:space="preserve">
+    <value>จำเป็นต้องยืนยันรหัสป้องกัน</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>ล่าสุด</value>
+  </data>
+  <data name="UpdateProtectionCodeSuccessfully" xml:space="preserve">
+    <value>รหัสป้องกันของคุณอัปเดตสำเร็จแล้ว</value>
+  </data>
+  <data name="ContainsSpaceOrUnicodeCharacterError" xml:space="preserve">
+    <value>รหัสป้องกันต้องไม่มีสัญลักษณ์พิเศษหรือช่องว่าง</value>
+  </data>
 </root>

@@ -14,7 +14,7 @@
             ProtectionCode = protectionCode;
             CustId = custId;
             SubAccId = subAccId;
-            LangKey = langKey;
+            Language = langKey;
             IP = ip;
         }
 
@@ -24,7 +24,7 @@
 
         public int SubAccId { get; }
 
-        public string LangKey { get; }
+        public string Language { get; }
 
         public string IP { get; }
 
@@ -33,9 +33,11 @@
         public string ErrMsg { get; set; }
 
         public override string GetSettingKey()
-            => "";
+            => "Age_CustomerUpdProtectionCode";
 
         public override bool IsValid()
-            => CustId > 0 && SubAccId >= 0;
+            => !string.IsNullOrWhiteSpace(ProtectionCode)
+            && CustId > 0
+            && SubAccId >= 0;
     }
 }

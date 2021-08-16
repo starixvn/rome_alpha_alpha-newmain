@@ -589,4 +589,43 @@
   <data name="LiveMessage" xml:space="preserve">
     <value>在線客服</value>
   </data>
+  <data name="NewProtectionCode" xml:space="preserve">
+    <value>新保護碼</value>
+  </data>
+  <data name="ProtectionCode" xml:space="preserve">
+    <value>保護碼</value>
+  </data>
+  <data name="ConfirmProtectionCode" xml:space="preserve">
+    <value>確認保護碼</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>創建</value>
+  </data>
+  <data name="NotMatchedConfirmProtectionCode" xml:space="preserve">
+    <value>這些保護碼不符合。</value>
+  </data>
+  <data name="ProtectionCodeRule" xml:space="preserve">
+    <value>保護碼必須至少為 6 個字符，可以與您的保安碼相同，但不能與您的密碼相同。</value>
+  </data>
+  <data name="RequiredNewProtectionCode" xml:space="preserve">
+    <value>新保護碼是必需的。</value>
+  </data>
+  <data name="ShowProtectionCode" xml:space="preserve">
+    <value>顯示保護碼</value>
+  </data>
+  <data name="MinLengthNewProtectionCodeError" xml:space="preserve">
+    <value>保護碼必須至少為 6 個字符。</value>
+  </data>
+  <data name="RequiredConfirmProtectionCode" xml:space="preserve">
+    <value>確認保護碼是必需的。</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>更改</value>
+  </data>
+  <data name="UpdateProtectionCodeSuccessfully" xml:space="preserve">
+    <value>您的保護碼已成功更新。</value>
+  </data>
+  <data name="ContainsSpaceOrUnicodeCharacterError" xml:space="preserve">
+    <value>保護碼不得包含任何統一碼字符或空格。</value>
+  </data>
 </root>

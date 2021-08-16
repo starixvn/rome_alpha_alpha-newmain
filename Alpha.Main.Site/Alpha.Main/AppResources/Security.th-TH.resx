@@ -432,6 +432,9 @@
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>บัญชีของคุณถูกล็อคและจะถูกบังคับให้ออกจากระบบ เนื่องจากการตรวจสอบความปลอดภัยล้มเหลวหลายครั้ง โปรดติดต่ออัพไลน์ของคุณเพื่อปลดล็อค</value>
   </data>
+  <data name="KickoutMessageByProtectedMode" xml:space="preserve">
+    <value>บัญชีของคุณเพิ่งถูกบังคับให้ออกจากระบบ โปรดติดต่ออัพไลน์ของคุณเพื่อขอความช่วยเหลือเพิ่มเติม</value>
+  </data>
   <data name="SwitchLabelOff" xml:space="preserve">
     <value>ปิด</value>
   </data>

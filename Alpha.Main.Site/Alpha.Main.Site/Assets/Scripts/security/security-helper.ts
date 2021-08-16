@@ -100,6 +100,9 @@ var securityHelper = {
         $container.removeClass('valid');
         $container.addClass('error');
     },
+    removeValidationIcon: function ($container) {
+        $container.removeClass('error valid');
+    },
     showSuccessfullyMessage: function ($messageContainer, successfullyMessage) {
         $messageContainer.removeClass('msg-error');
         $messageContainer.addClass('msg-success').empty().html(successfullyMessage);

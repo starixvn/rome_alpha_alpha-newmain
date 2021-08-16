@@ -1,4 +1,4 @@
-﻿'use strict'; 
+﻿'use strict';
 
 var resetMainAccountPassword = {
     isChangeMemberPassword: false,
@@ -26,7 +26,7 @@ var resetMainAccountPassword = {
             isChecked ? securityHelper.showHint() : securityHelper.hideHint();
         });
 
-        if (top.hasPopupOpen()){
+        if (top.hasPopupOpen()) {
             $("#container").addClass("has-popup");
         }
 
@@ -62,8 +62,7 @@ var resetMainAccountPassword = {
                     securityHelper.showFailMessage($messageContainer, data.Message);
                     $txtSecurityCode.focus();
                 }
-                else
-                {
+                else {
                     securityHelper.showSuccessfullyMessage($messageContainer, passwordResources.changePasswordSuccessfully);
                 }
             },
@@ -92,10 +91,10 @@ var resetMainAccountPassword = {
 
         return '';
     },
-    resetInputValue: function()
-    {
-        $("#password").empty();
-        $("#confirmPassword").empty();
+    resetInputValue: function () {
+        securityHelper.hideHint();
+        securityHelper.removeValidationIcon($("#password"));
+        securityHelper.removeValidationIcon($("#confirmPassword"));
     }
 }
 

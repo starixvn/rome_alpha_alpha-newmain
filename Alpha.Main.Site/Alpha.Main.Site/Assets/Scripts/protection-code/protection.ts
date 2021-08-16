@@ -1,4 +1,9 @@
 ﻿"use strict";
+interface ValidationResult {
+    isValid: boolean;
+    error: string;
+}
+
 class ProtectionCode {
     $: JQueryStatic;
     msg: JQuery;
@@ -19,11 +24,14 @@ class ProtectionCode {
     private cacheElements() {
         this.msg = $("#msg");
         this.txtNewProtectionCode = $("#txt-newProtectionCode");
-        this.txtConfirmProtectionCode = $("#txtConfirmProtectionCode");
+        this.txtConfirmProtectionCode = $("#txt-confirmProtectionCode");
 
         this.resources = {
             requiredNewProtectionCode: this.$("#requiredNewProtectionCode").val(),
-            notMatchedConfirmProtectionCode: this.$("#notMatchedConfirmProtectionCode").val()
+            minLengthNewProtectionCodeError: this.$("#minLengthNewProtectionCodeError").val(),
+            requiredConfirmProtectionCode: this.$("#requiredConfirmProtectionCode").val(),
+            notMatchedConfirmProtectionCode: this.$("#notMatchedConfirmProtectionCode").val(),
+            containsSpaceOrUnicodeCharacterError: this.$("#containsSpaceOrUnicodeCharacterError").val()
         };
     }
 
@@ -32,24 +40,55 @@ class ProtectionCode {
 
         this.txtConfirmProtectionCode.keyup(_ => this.validateProtectionCode(this.txtConfirmProtectionCode));
 
-        const chkShowProtectionCode = $("#chkShowProtectionCode");
+        const chkShowProtectionCode = $("#chk-showProtectionCode");
         chkShowProtectionCode.change(_ => this.showHideProtectionCode(chkShowProtectionCode.is(":checked")));
 
-        const frmProtectionCode = $("#frmProtectionCode");
+        const frmProtectionCode = $("#frm-protectionCode");
         frmProtectionCode.submit(e => {
             e.preventDefault();
             this.updateProtectionCode(frmProtectionCode.attr("action"));
         });
+
+        this.$("#btn-reset").click(_ => {
+            this.showHideProtectionCode(false);
+            securityHelper.removeValidationIcon(this.txtNewProtectionCode);
+            securityHelper.removeValidationIcon(this.txtConfirmProtectionCode);
+        });
     }
 
     private validateProtectionCode($textbox: JQuery) {
-        this.isValidProtectionCode($textbox.val())
+        this.checkValidProtectionCode($textbox.val()).isValid
             ? securityHelper.showSuccessfullyIcon($textbox)
             : securityHelper.showFailIcon($textbox);
     }
 
-    private isValidProtectionCode(protectionCode: string) {
-        return protectionCode.length >= 6;
+    private checkValidProtectionCode(protectionCode: string): ValidationResult {
+        if (protectionCode.length < 6) {
+            return {
+                isValid: false,
+                error: this.resources.minLengthNewProtectionCodeError
+            };
+        }
+
+        const Space = 32;
+        const MaxAnsiCode = 127;
+        let charCode;
+
+        for (let i = 0, max = protectionCode.length; i < max; i++) {
+            charCode = protectionCode.charCodeAt(i);
+
+            if (charCode === Space || charCode > 127) {
+                return {
+                    isValid: false,
+                    error: this.resources.containsSpaceOrUnicodeCharacterError
+                };
+            }
+        }
+
+        return {
+            isValid: true,
+            error: undefined
+        };
     }
 
     private showHideProtectionCode(isShow: boolean) {
@@ -73,23 +112,37 @@ class ProtectionCode {
                     this.txtNewProtectionCode.focus();
                 } else {
                     securityHelper.showSuccessfullyMessage(this.msg, result.Message);
+                    this.msg.parent().removeClass("hidden");
                     setTimeout(function () {
                         window.location.href = window.location.href;
                     }, 5000);
                 }
-            }).done(this.$.unblockUI);
+            }).always(this.$.unblockUI);
         }
     }
 
     private validateFormData() {
         const newProtectionCode = this.txtNewProtectionCode.val();
-        if (!this.isValidProtectionCode(newProtectionCode)) {
+        if (!newProtectionCode.length) {
             this.txtNewProtectionCode.focus();
             securityHelper.showFailMessage(this.msg, this.resources.requiredNewProtectionCode);
             return;
         }
 
+        const validationResult = this.checkValidProtectionCode(newProtectionCode);
+        if (!validationResult.isValid) {
+            this.txtNewProtectionCode.focus();
+            securityHelper.showFailMessage(this.msg, validationResult.error);
+            return;
+        }
+
         const confirmProtectionCode = this.txtConfirmProtectionCode.val();
+        if (!confirmProtectionCode.length) {
+            this.txtConfirmProtectionCode.focus();
+            securityHelper.showFailMessage(this.msg, this.resources.requiredConfirmProtectionCode);
+            return;
+        }
+
         if (confirmProtectionCode !== newProtectionCode) {
             this.txtConfirmProtectionCode.focus();
             securityHelper.showFailMessage(this.msg, this.resources.notMatchedConfirmProtectionCode);

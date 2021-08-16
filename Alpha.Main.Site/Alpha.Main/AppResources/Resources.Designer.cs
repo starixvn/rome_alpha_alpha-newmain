@@ -277,11 +277,38 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm Protection Code.
+        /// </summary>
+        public static string ConfirmProtectionCode {
+            get {
+                return ResourceManager.GetString("ConfirmProtectionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Us.
         /// </summary>
         public static string ContactUs {
             get {
                 return ResourceManager.GetString("ContactUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The protection code must not contain any Unicode characters or spaces..
+        /// </summary>
+        public static string ContainsSpaceOrUnicodeCharacterError {
+            get {
+                return ResourceManager.GetString("ContainsSpaceOrUnicodeCharacterError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
             }
         }
         
@@ -683,6 +710,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The protection code must be at least 6 characters long..
+        /// </summary>
+        public static string MinLengthNewProtectionCodeError {
+            get {
+                return ResourceManager.GetString("MinLengthNewProtectionCodeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to More.
         /// </summary>
         public static string more {
@@ -890,6 +926,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Those protection codes do not match..
+        /// </summary>
+        public static string NotMatchedConfirmProtectionCode {
+            get {
+                return ResourceManager.GetString("NotMatchedConfirmProtectionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not now.
         /// </summary>
         public static string NotNow {
@@ -1034,6 +1079,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Protection Code must be at least 6 characters, CAN be the same as your Security Code but CANNOT be the same as your Password..
+        /// </summary>
+        public static string ProtectionCodeRule {
+            get {
+                return ResourceManager.GetString("ProtectionCodeRule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quick Menu.
         /// </summary>
         public static string QuickMenu {
@@ -1115,6 +1169,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm Protection Code is required..
+        /// </summary>
+        public static string RequiredConfirmProtectionCode {
+            get {
+                return ResourceManager.GetString("RequiredConfirmProtectionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Protection Code is required..
+        /// </summary>
+        public static string RequiredNewProtectionCode {
+            get {
+                return ResourceManager.GetString("RequiredNewProtectionCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search Account.
         /// </summary>
         public static string searchAccount {
@@ -1147,6 +1219,15 @@ namespace Alpha.Main.AppResources {
         public static string ShowMainMenu {
             get {
                 return ResourceManager.GetString("ShowMainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Protection Code.
+        /// </summary>
+        public static string ShowProtectionCode {
+            get {
+                return ResourceManager.GetString("ShowProtectionCode", resourceCulture);
             }
         }
         
@@ -1196,7 +1277,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to public string GivenCreditLabel { get; private set; } = Resources.agentGivenCredit;.
+        ///   Looks up a localized string similar to Sorry, You don&apos;t have permission to access this page..
         /// </summary>
         public static string strNotAccessPage {
             get {
@@ -1538,11 +1619,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string Update {
+            get {
+                return ResourceManager.GetString("Update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Successfully updated..
         /// </summary>
         public static string UpdatedSuccessfully {
             get {
                 return ResourceManager.GetString("UpdatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Protection Code has been updated successfully..
+        /// </summary>
+        public static string UpdateProtectionCodeSuccessfully {
+            get {
+                return ResourceManager.GetString("UpdateProtectionCodeSuccessfully", resourceCulture);
             }
         }
         

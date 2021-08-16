@@ -116,7 +116,7 @@ namespace Alpha.Main
 
         private static Func<bool> showAccountInfo = () =>
         {
-            return Current == null ? false : Current.SubPageAccess.ViewMemberInfo;
+            return Current == null ? false : Current.SubPageAccess.ViewMemberInfo && !Current.IsProtectedMode;
         };
 
         private static Func<string> getDefaultUrl = () =>
@@ -189,5 +189,9 @@ namespace Alpha.Main
         {
             ["ng2"] = () => { return ProductManager.GetProductName(ProductIdConstants.NG2); }
         };
+
+        public static Func<bool> IsProtectedModeFunc => () => Current.IsProtectedMode;
+
+        public static Func<bool> IsInternalFunc => () => Current.IsInternal;
     }
 }

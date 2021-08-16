@@ -430,6 +430,9 @@
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>由於安全檢測多次失敗，您的帳戶已被鎖並強迫登出。請聯繫您的上線開啟賬戶。</value>
   </data>
+  <data name="KickoutMessageByProtectedMode" xml:space="preserve">
+    <value>您的賬戶剛剛被強制註銷。請聯繫您的上線以獲得進一步協助。</value>
+  </data>
   <data name="SwitchLabelOff" xml:space="preserve">
     <value>關閉</value>
   </data>

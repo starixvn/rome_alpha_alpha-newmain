@@ -87,8 +87,9 @@ var resetSubAccountPassword = {
         return '';
     },
     resetInputValue: function () {
-        $("#txtNewPwd").empty();
-        $("#txtConfirmPwd").empty();
+        securityHelper.hideHint();
+        securityHelper.removeValidationIcon($("#txtNewPwd"));
+        securityHelper.removeValidationIcon($("#txtConfirmPwd"));
     }
 }
 

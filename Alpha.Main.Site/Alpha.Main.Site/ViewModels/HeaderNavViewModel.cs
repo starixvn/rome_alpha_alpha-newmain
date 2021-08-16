@@ -10,16 +10,18 @@
             string username,
             string nickname,
             bool enableSecurityCode, 
-            bool isViewedMemberInfo,
+            bool showSearchAccount,
             bool isEnabledOtp,
             bool isDefaultAvatar,
             string embedImage,
             bool showNicknameMenu,
-            bool showCreateMemberByQRCode)
+            bool showCreateMemberByQRCode,
+            bool isProtectedMode,
+            bool isOfferProtectedMode)
         {
             CustId = custId;
             EnableSecurityCode = enableSecurityCode;
-            IsViewedMemberInfo = isViewedMemberInfo;
+            ShowSearchAccount = showSearchAccount;
             Username = username;
             NickName = nickname;
             IsEnabledOtp = isEnabledOtp;
@@ -27,6 +29,8 @@
             EmbedImage = embedImage;
             ShowNicknameMenu = showNicknameMenu;
             ShowCreateMemberByQRCode = showCreateMemberByQRCode;
+            IsProtectedMode = isProtectedMode;
+            IsOfferProtectedMode = isOfferProtectedMode;
         }
 
         public int CustId { get; }
@@ -43,7 +47,7 @@
 
         public string HowToUseRootPath => UrlHelper.MapHowToUsePath("~/");
 
-        public bool IsViewedMemberInfo { get; }
+        public bool ShowSearchAccount { get; }
 
         public string MainRootPath { get; } = UrlHelper.MapMainPath("~/");
 
@@ -64,5 +68,9 @@
         public bool ShowCreateMemberByQRCode { get; }
 
         public bool IsOfferLiveChat { get; } = AppSettings.IsOfferLiveChat;
+        
+        public bool IsProtectedMode { get; }
+
+        public bool IsOfferProtectedMode { get; }
     }
 }

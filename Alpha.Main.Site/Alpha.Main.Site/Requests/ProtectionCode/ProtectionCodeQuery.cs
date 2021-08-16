@@ -5,25 +5,30 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
 
-    public class ProtectionCodeQuery : IRequest<ProtectionCodeViewModel>
+    public class ProtectionCodeQuery : IAsyncRequest<ProtectionCodeViewModel>
     {
-        private readonly IUserSession userSession;
-
         public ProtectionCodeQuery() : this(null)
         {
         }
 
         public ProtectionCodeQuery(IUserSession userSession)
         {
-            this.userSession = userSession ?? new UserSessionExt();
+            userSession = userSession ?? new UserSessionExt();
+            CustId = userSession.CustId;
+            SubAccId = userSession.SubAccId;
+            RoleId = userSession.RoleId;
+            Language = userSession.Language;
+            IsOfferProtectedMode = userSession.IsOfferProtectedMode;
         }
 
-        public int CustId => userSession.CustId;
+        public int CustId { get; }
 
-        public int SubAccId => userSession.SubAccId;
+        public int SubAccId { get; }
 
-        public byte RoleId => userSession.RoleId;
+        public byte RoleId { get; }
 
-        public string Language => userSession.Language;
+        public string Language { get; }
+
+        public bool IsOfferProtectedMode { get; }
     }
 }

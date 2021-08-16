@@ -120,9 +120,14 @@ var indexManager = {
     },
 
     setCurrentUrl: function () {
-        var isInternal = $("#isInternal").val() === "1";
-        var currentUrl = isInternal ? indexManager.domElements.content.data('default-url') :
-            localStorage.getItem(indexManager.currentUrlCookieName) || indexManager.domElements.content.data('default-url');
+        const defaultUrl = indexManager.domElements.content.data('default-url');
+        let currentUrl = $("#isInternal").val() === "1"
+            ? defaultUrl
+            : localStorage.getItem(indexManager.currentUrlCookieName) || defaultUrl;
+
+        if (indexManager.isIgnoreRedirectUrl(currentUrl)) {
+            currentUrl = defaultUrl;
+        }
 
         if (currentUrl.indexOf(headerNav.urls.home) !== -1) {
             currentUrl = currentUrl.replace("Index2", "Index");
@@ -235,6 +240,20 @@ var indexManager = {
             iframe.src = alpha.urls.mainRootPath + "NetworkSpeed/Index";
             document.body.appendChild(iframe);
         }
+    },
+
+    isIgnoreRedirectUrl: function (currentUrl: string): boolean {
+        const ignoreUrls = ['error.aspx', 'signin.aspx', 'securitycode', 'dashboard', 'partialum'];
+        const ignoreUrlsLength = ignoreUrls.length;
+        const lowerCurrentUrl = currentUrl.toLowerCase();
+
+        for (let i = 0; i < ignoreUrlsLength; i++) {
+            if (lowerCurrentUrl.indexOf(ignoreUrls[i]) > -1) {
+                return true;
+            }
+        }
+
+        return false;
     }
 };
 

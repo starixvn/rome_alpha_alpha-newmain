@@ -14,22 +14,31 @@
         private Func<MenuStatus> getMenuStatusFunc;
         private Predicate<string> authorizeUrlFunc;
         private Func<string> getDisplayName;
+        private readonly Func<bool> isProtectedModeFunc;
+        private readonly Func<bool> isInternalFunc;
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
-            : this(getMenuStatusFunc, null, null)
+            : this(getMenuStatusFunc, null, null, null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc)
-            : this(getMenuStatusFunc, authorizeUrlFunc, null)
+            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null)
         {
         }
 
-        public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc, Func<string> getDisplayName)
+        public MenuItem(
+            Func<MenuStatus> getMenuStatusFunc,
+            Predicate<string> authorizeUrlFunc,
+            Func<string> getDisplayName,
+            Func<bool> isProtectedModeFunc,
+            Func<bool> isInternalFunc)
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
             this.authorizeUrlFunc = authorizeUrlFunc;
             this.getDisplayName = getDisplayName;
+            this.isProtectedModeFunc = isProtectedModeFunc;
+            this.isInternalFunc = isInternalFunc;
         }
 
         public string Key { get; set; }
@@ -39,6 +48,10 @@
         public string AppPath { get; set; }
 
         public bool ByPassAuthorization { get; set; }
+
+        public bool ByPassProtectedMode { get; set; }
+
+        public bool ByPassProtectedModeInternal { get; set; }
 
         public bool IsBeta { get; set; }
 
@@ -75,6 +88,16 @@
             get
             {
                 var isAuthorized = ByPassAuthorization || authorizeUrlFunc(Link);
+
+                if (isProtectedModeFunc())
+                {
+                    isAuthorized &= ByPassProtectedMode;
+
+                    if (isInternalFunc())
+                    {
+                        isAuthorized |= ByPassProtectedModeInternal;
+                    }
+                }
 
                 return isAuthorized
                     ? getMenuStatusFunc()

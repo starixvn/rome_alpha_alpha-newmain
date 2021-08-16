@@ -49,4 +49,9 @@
   <Function Name="UM Message">
     <Setting Key="Acc_CheckUM" SpName="Acc_CheckUM" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
   </Function>
+
+  <Function Name="Protection Code">
+    <Setting Key="Age_CustomerSelProtectionCode" SpName="Age_CustomerSelProtectionCode_uat1" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+    <Setting Key="Age_CustomerUpdProtectionCode" SpName="Age_CustomerUpdProtectionCode_uat1" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+  </Function>
 </Functions>

@@ -26,6 +26,8 @@ namespace Alpha.Main.Site.Models.Requests
             this.isEnableSecurityCode = isEnableSecurityCode;
             this.disableMessages = disableMessages ?? AppSettings.DisableMessages;
             this.nicknameChecker = nicknameChecker;
+            IsProtectedMode = userSession.IsProtectedMode;
+            IsOfferProtectedMode = userSession.IsOfferProtectedMode;
         }
 
         public int CustId => userSession.CustId;
@@ -62,7 +64,8 @@ namespace Alpha.Main.Site.Models.Requests
                     !userSession.IsPasswordExpired &&
                     this.isEnableSecurityCode;
 
-        public bool IsViewedMemberInfo => userSession.SubPageAccess.ViewMemberInfo;
+        public bool ShowSearchAccount
+            => userSession.SubPageAccess.ViewMemberInfo && !IsProtectedMode;
 
         public bool DisableMessages => disableMessages;
 
@@ -71,8 +74,13 @@ namespace Alpha.Main.Site.Models.Requests
 
         public bool ShowCreateMemberByQRCode =>
             userSession.SubPageAccess.CreateAccount 
-            && Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel();
+            && Enumeration.FromValue<UserLevel>(userSession.RoleId).IsAgentLevel()
+            && !IsProtectedMode;
 
         public bool IsIndirectLoggedIn => userSession.IsIndirectLoggedIn;
+
+        public bool IsProtectedMode { get; }
+
+        public bool IsOfferProtectedMode { get; }
     }
 }

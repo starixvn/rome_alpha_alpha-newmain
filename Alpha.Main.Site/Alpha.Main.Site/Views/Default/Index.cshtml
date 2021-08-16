@@ -33,7 +33,7 @@
         @Html.Partial("SearchBar")
         <header class="header" id="header">
             @Html.Partial("HeaderNav", Model.HeaderNavViewModel)
-            @Html.Partial("HeaderMarquee")
+            @Html.Partial("HeaderMarquee", Model.IsProtectedMode)
         </header>
         <main class="content" id="content" data-default-url="@Model.DefaultPath">
         </main>

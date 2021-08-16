@@ -8,6 +8,8 @@
     {
         string GenerateHashKey();
 
+        Task<string> GetAsync(int custId, int subAccId);
+
         Task<Result> UpdateAsync(UpdateProtectionCodeParam param);
     }
 }

@@ -2,6 +2,8 @@
 {
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using Alpha.Main.AppResources;
+    using Alpha.Main.Models;
     using Alpha.Main.Site.Requests.ProtectionCode;
     using Alpha.Web;
     using Alpha.Web.Filters;
@@ -19,12 +21,25 @@
             this.userSession = userSession;
         }
 
-        public ActionResult Index(ProtectionCodeQuery query)
-            => View(mediator.Send(query));
+        public async Task <ActionResult> Setup(ProtectionCodeQuery query)
+        {
+            if (query.IsOfferProtectedMode)
+            {
+                return View(await mediator.SendAsync(query));
+            }
+
+            return RedirectToAction("Index", "Default");
+        }
 
         [HttpPost]
         [AntiXsrfFilter]
-        public async Task<ActionResult> Update(UpdateProtectionCodeCommand query)
-            => Json(await mediator.SendAsync(query));
+        public async Task<ActionResult> Setup(UpdateProtectionCodeCommand query)
+        {
+            var result = query.IsInternal || query.IsNotOfferProtectedMode
+                ? Result.CreateErrorResult(Security.NotAuthorized)
+                : await mediator.SendAsync(query);
+
+            return Json(result, JsonRequestBehavior.DenyGet);
+        }
     }
 }

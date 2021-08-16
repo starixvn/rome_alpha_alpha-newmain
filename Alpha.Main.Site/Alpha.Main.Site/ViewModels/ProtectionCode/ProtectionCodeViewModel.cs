@@ -9,13 +9,15 @@
             string userLevel,
             string language,
             string hashKey,
-            bool isShowNicknameLink)
+            bool isShowNicknameLink,
+            bool isExistedProtectionCode)
         {
             CustId = custId;
             UserLevel = userLevel;
             Language = language;
             HashKey = hashKey;
             IsShowNicknameLink = isShowNicknameLink;
+            IsExistedProtectionCode = isExistedProtectionCode;
         }
 
         public int CustId { get; }
@@ -28,7 +30,9 @@
 
         public bool IsShowNicknameLink { get; }
 
+        public bool IsExistedProtectionCode { get; }
+
         public string GetLearnMoreViewLang()
-            => new[] { "th-TH", "vi-VN", "zh-CN", "zh-TW" }.FirstOrDefault(l => l.Equals(Language)) ?? string.Empty;
+            => new[] { "th-TH", "vi-VN", "zh-CN", "zh-TW" }.FirstOrDefault(l => l.Equals(Language)) ?? "en-US";
     }
 }

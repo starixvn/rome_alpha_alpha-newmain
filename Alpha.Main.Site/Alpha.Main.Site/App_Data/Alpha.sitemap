@@ -2,7 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true">
   <siteMapNode title="Alpha Site">
     <!--Report-->
-    <siteMapNode  resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]">
+    <siteMapNode resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]" byPassProtectedMode="true">
       <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="outstanding/membernew" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="outstanding/agentnew" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="outstanding/masternew" roles="Super"></siteMapNode>
@@ -15,9 +15,9 @@
       <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/agentnew" roles="Master"></siteMapNode>
       <siteMapNode menuItemType="NewReportsMenuItem" resourceKey="masterwinloss" appPath="ReportsAppPath" url="enteredresult/masternew" roles="Super"></siteMapNode>
 
-      <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="winlossdetail/member" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/agent" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/master" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="memberwinlossdetail" appPath="ReportsAppPath" url="winlossdetail/member" roles="Agent" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="agentwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/agent" roles="Master" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="masterwinlostdetail" appPath="ReportsAppPath" url="winlossdetail/master" roles="Super" byPassProtectedMode="true"></siteMapNode>
 
       <siteMapNode resourceKey="matchWinLostDetail" appPath="ReportsAppPath" url="matchwinlossdetail/index"></siteMapNode>
 
@@ -29,20 +29,20 @@
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="winLossAnalysisChart" appPath="ReportsAppPath" url="winlossanalysischart/master" roles="Super"></siteMapNode>
 
-      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/member" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/agent" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/master" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/member" roles="Agent" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/agent" roles="Master" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="winLossByProduct" appPath="ReportsAppPath" url="WinLossByProduct/master" roles="Super" byPassProtectedMode="true"></siteMapNode>
       
       <siteMapNode resourceKey="superWinLossDetailByPT" appPath="ReportsAppPath" url="SuperWinLossDetailByPT/Index" roles="Super"></siteMapNode>
 
-      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/member" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/agent" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/master" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/member" roles="Agent" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/agent" roles="Master" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="commissionByBettype" appPath="ReportsAppPath" url="commissionbybettype/master" roles="Super" byPassProtectedMode="true"></siteMapNode>
 
       <siteMapNode menuItemType="ConsolidatedReportMenuItem" resourceKey="consolidatedreport" appPath="ReportsAppPath" url="consolidation/consolidationbyusername"></siteMapNode>
       <siteMapNode resourceKey="statement" appPath="ReportsAppPath" url="Statement/SMAStatement"></siteMapNode>
 
-      <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath"></siteMapNode>
+      <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath" byPassProtectedMode="true"></siteMapNode>
 
       <!--<siteMapNode resourceKey="PlayForFunDetail" appPath="ReportsAppPath" url="playforfun/member" roles="Agent"></siteMapNode>-->
       <!--<siteMapNode resourceKey="PlayForFunDetail" appPath="ReportsAppPath" url="playforfun/masteroragent" roles="Super,Master"></siteMapNode>-->
@@ -53,11 +53,11 @@
     </siteMapNode>
     <!--/Report-->
     <!--MemberInfo-->
-    <siteMapNode resourceKey="memberInfo" menuItemType="MemberInfoMenuItem" functionType="[H]">
+    <siteMapNode resourceKey="memberInfo" menuItemType="MemberInfoMenuItem" functionType="[H]" byPassProtectedModeInternal="true">
       <siteMapNode resourceKey="newMaster" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=4" menuItemType="CreateAccountMenuItem" roles="Super"></siteMapNode>
       <siteMapNode resourceKey="newAgent" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=3" menuItemType="CreateAccountMenuItem" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="newMember" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=2" menuItemType="CreateAccountMenuItem" roles="Agent"></siteMapNode>
-      <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx"></siteMapNode>
+      <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx" byPassProtectedModeInternal="true"></siteMapNode>
 
       <siteMapNode resourceKey="customerlist" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
       <siteMapNode resourceKey="agentList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master"></siteMapNode>
@@ -155,10 +155,10 @@
       <siteMapNode resourceKey="credit" appPath="ViewLogsAppPath" url="Credit"></siteMapNode>
       <siteMapNode resourceKey="login" appPath="ViewLogsAppPath" url="Login"></siteMapNode>
     </siteMapNode>
-    <siteMapNode resourceKey="announcements">
-      <siteMapNode resourceKey="normal" appPath="MessageAppPath" url="MessageHistory/Index?messagetype=0" byPassAuthorization="true"></siteMapNode>
-      <siteMapNode resourceKey="special"  appPath="MessageAppPath" url="MessageHistory/Index?messagetype=2" byPassAuthorization="true"></siteMapNode>
-      <siteMapNode resourceKey="systemUpdate"  appPath="MessageAppPath" url="Announcement/Index" byPassAuthorization="true"></siteMapNode>
+    <siteMapNode resourceKey="announcements" byPassProtectedMode="true">
+      <siteMapNode resourceKey="normal" appPath="MessageAppPath" url="MessageHistory/Index?messagetype=0" byPassAuthorization="true" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="special"  appPath="MessageAppPath" url="MessageHistory/Index?messagetype=2" byPassAuthorization="true" byPassProtectedMode="true"></siteMapNode>
+      <siteMapNode resourceKey="systemUpdate"  appPath="MessageAppPath" url="Announcement/Index" byPassAuthorization="true" byPassProtectedMode="true"></siteMapNode>
       <siteMapNode resourceKey="personalMessage" appPath="MessageAppPath"  url="MessageHistory/Index?messagetype=1" byPassAuthorization="true"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" menuItemType="ChatBotMenuItem" url="ChatBot/Index"></siteMapNode>

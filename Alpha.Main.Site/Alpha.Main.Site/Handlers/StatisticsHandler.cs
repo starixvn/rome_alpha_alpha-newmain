@@ -28,7 +28,10 @@
 
             var statistics = statisticsService.GetStatistics(message.CustId, message.UserLevel);
 
-            var viewModel = new StatisticsViewModel(statistics, message.UserLevel, message.UserSession.SubPageAccess.ViewReports);
+            var viewModel = new StatisticsViewModel(
+                statistics,
+                message.UserLevel,
+                message.UserSession.SubPageAccess.ViewReports);
 
             return viewModel;
         }

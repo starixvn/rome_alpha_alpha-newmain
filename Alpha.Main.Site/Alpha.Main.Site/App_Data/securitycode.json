@@ -9,7 +9,8 @@
     "Password/ResetSubAccountPassword",
     "Otp/SetUpOtp",
     "Otp/ResetOtp",
-    "ChatBot/Index"
+    "ChatBot/Index",
+    "ProtectionCode/Setup"
   ],
   "sites": [
   ],

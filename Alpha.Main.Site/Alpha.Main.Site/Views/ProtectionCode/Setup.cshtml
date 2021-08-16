@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@Resources.ProtectionCode</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Resources.ProtectionCode</title>
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.AssetStyles.Render($"/bundles/site-main/security/security-{Model.UserLevel}")
     @StaticResources.RenderStyles("~/Assets/bundles/protection-code/protection")
@@ -33,7 +33,7 @@
             <div id="msg-content" class="msg-content hidden">
                 <div id="msg" class="msg"></div>
             </div>
-            @using (Html.BeginForm("Update", "ProtectionCode", FormMethod.Post, new { @class = "form-validation", id = "frmProtectionCode" }))
+            @using (Html.BeginForm("Setup", "ProtectionCode", FormMethod.Post, new { @class = "form-validation", id = "frm-protectionCode" }))
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group">
@@ -42,23 +42,20 @@
                     <i class="validation"></i>
                 </div>
                 <div class="form-group">
-                    <label for="txtConfirmProtectionCode">Confirm Protection Code</label>
-                    <input type="text" autocomplete="off" maxlength="30" class="txt form-control" name="ConfirmProtectionCode" id="txtConfirmProtectionCode" />
+                    <label for="txtConfirmProtectionCode">@Resources.ConfirmProtectionCode</label>
+                    <input type="text" autocomplete="off" maxlength="30" class="txt form-control" id="txt-confirmProtectionCode" />
                     <i class="validation"></i>
                 </div>
                 <div class="form-group">
-                    <label><input type="checkbox" id="chkShowProtectionCode" /> Show Protection Code</label>
+                    <label><input type="checkbox" id="chk-showProtectionCode" /> @Resources.ShowProtectionCode</label>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn-submit" />
-                    <input type="reset" value="@Security.Reset" />
+                    <input type="submit" value="@(Model.IsExistedProtectionCode ? Resources.Update : Resources.Create)" class="btn-submit" />
+                    <input type="reset" value="@Security.Reset" id="btn-reset" />
                 </div>
             }
             <div class="rules">
-                <p>
-                    <span class="note-red">*</span>
-                    Protection Code must be at least 6 characters, CAN bet the same as your Security Code but CANNOT be the same as your password.
-                </p>
+                <p><span class="note-red">*</span> @Resources.ProtectionCodeRule</p>
                 <a href="#" class="learn-more" data-toggle="modal" data-target="#learn-more-popup">@Security.LearnMore</a>
             </div>
         </div>
@@ -68,17 +65,20 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="icon icon-close close" data-dismiss="modal" aria-label="@Resources.close"><span aria-hidden="true"></span></button>
-                    <h4 class="modal-title">Protection Code</h4>
+                    <h4 class="modal-title">@Resources.ProtectionCode</h4>
                 </div>
                 <div class="modal-body">
-                    @{ Html.RenderPartial($"_LearnMorePopup{Model.GetLearnMoreViewLang()}"); }
+                    @{ Html.RenderPartial($"_LearnMorePopup_{Model.GetLearnMoreViewLang()}"); }
                 </div>
             </div>
         </div>
     </div>
     @Html.Hidden("hashkey", Model.HashKey)
-    @Html.Hidden("requiredNewProtectionCode", "Please enter New Protection Code.")
-    @Html.Hidden("notMatchedConfirmProtectionCode", "The protection code is not correctly confirmed.")
+    @Html.Hidden("requiredNewProtectionCode", Resources.RequiredNewProtectionCode)
+    @Html.Hidden("minLengthNewProtectionCodeError", Resources.MinLengthNewProtectionCodeError)
+    @Html.Hidden("requiredConfirmProtectionCode", Resources.RequiredConfirmProtectionCode)
+    @Html.Hidden("notMatchedConfirmProtectionCode", Resources.NotMatchedConfirmProtectionCode)
+    @Html.Hidden("containsSpaceOrUnicodeCharacterError", Resources.ContainsSpaceOrUnicodeCharacterError)
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/security/before-home-page")
     @StaticResources.RenderScripts("~/assets/bundles/protection-code/protection")

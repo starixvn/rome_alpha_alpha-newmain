@@ -1,7 +1,6 @@
 ﻿namespace Alpha.Main.Site.Requests.Otp
 {
     using Alpha.Main.Site.ViewModels.Security;
-    using Main.Models.Otp;
     using MediatR;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
@@ -39,5 +38,7 @@
         {
             get; set;
         }
+
+        public bool IsOfferProtectedMode => userSession.IsOfferProtectedMode;
     }
 }

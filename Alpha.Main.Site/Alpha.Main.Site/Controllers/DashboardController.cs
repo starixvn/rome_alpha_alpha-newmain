@@ -5,6 +5,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Main.Configurations;
+    using Alpha.Web.Filters;
     using MediatR;
     using Requests.Dashboard.BalanceInfo;
     using Sunplus.Agent.Model.Entities;
@@ -25,8 +26,14 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [HttpGet]
+        [AllowProtectedMode]
         public ActionResult Index()
         {
+            if (userSession.IsProtectedMode)
+            {
+                return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
+            }
+
             if (AppSettings.IsShowEmptyDashboard)
             {
                 return View();

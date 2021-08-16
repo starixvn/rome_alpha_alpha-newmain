@@ -31,5 +31,7 @@
         public string SubAccountTooltip { get; set; }
 
         public bool IsShowProfilePictureTooltip { get; set; }
+
+        public bool IsProtectedMode { get; set; }
     }
 }

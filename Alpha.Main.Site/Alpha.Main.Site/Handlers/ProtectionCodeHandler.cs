@@ -11,7 +11,7 @@
     using ResultModel = Main.Models.Result;
 
     public class ProtectionCodeHandler :
-        IRequestHandler<ProtectionCodeQuery, ProtectionCodeViewModel>,
+        IAsyncRequestHandler<ProtectionCodeQuery, ProtectionCodeViewModel>,
         IAsyncRequestHandler<UpdateProtectionCodeCommand, ResultModel>
     {
         private const string HashKeySessionKey = "Alpha.Main.ProtectionCodeHandler.ProtectionCodeHash";
@@ -30,13 +30,28 @@
             this.protectionCodeService = protectionCodeService;
         }
 
-        public ProtectionCodeViewModel Handle(ProtectionCodeQuery message)
-            => new ProtectionCodeViewModel(
+        public async Task<ProtectionCodeViewModel> Handle(ProtectionCodeQuery message)
+        {
+            var isShowNicknameLink = !nicknameChecker.IsOfferForceLoginAndOverDueDate;
+            var protectionCode = await protectionCodeService.GetAsync(message.CustId, message.SubAccId);
+
+            return new ProtectionCodeViewModel(
                 message.CustId,
                 Enumeration.FromValue<UserLevel>(message.RoleId).DisplayName.ToLowerInvariant(),
                 message.Language,
                 HashKey,
-                !nicknameChecker.IsOfferForceLoginAndOverDueDate);
+                isShowNicknameLink,
+                !string.IsNullOrWhiteSpace(protectionCode));
+        }
+        
+        public async Task<ResultModel> Handle(UpdateProtectionCodeCommand message)
+            => await protectionCodeService.UpdateAsync(new UpdateProtectionCodeParam(
+                message.ProtectionCode,
+                HashKey,
+                message.CustId,
+                message.SubAccId,
+                message.LangKey,
+                message.IP));
 
         private string HashKey
         {
@@ -53,14 +68,5 @@
                 return hashKey;
             }
         }
-
-        public async Task<ResultModel> Handle(UpdateProtectionCodeCommand message)
-            => await protectionCodeService.UpdateAsync(new UpdateProtectionCodeParam(
-                message.ProtectionCode,
-                HashKey,
-                message.CustId,
-                message.SubAccId,
-                message.LangKey,
-                message.IP));
     }
 }
