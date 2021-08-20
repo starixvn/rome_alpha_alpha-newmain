@@ -1,3 +1,27 @@
-﻿.lpc_desktop.lpc_maximized-header__minimize-button {
-    display: none !important;
+﻿.lpc_desktop {
+    .lpc_maximized-header {
+        background: linear-gradient(#444B66, #555E80) !important;
+    }
+
+    .lpc_maximized-header__text {
+        color: #fff !important;
+    }
+
+    .lpc_maximized-header__minimize-button {
+        display: none !important;
+    }
+
+    .lpc_message_agent {
+        background: #555E80 !important;
+        border-color: #555E80 !important;
+    }
+
+    .lp_confirm_button,
+    .lp_submit_button {
+        background-color: #555E80 !important;
+
+        &:hover {
+            background-color: #555E80 !important;
+        }
+    }
 }
