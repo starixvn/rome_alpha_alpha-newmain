@@ -84,3 +84,7 @@ function onLiveChatClick() {
         window["lpTag"].taglets.rendererStub.click(window.engagementId);
     }
 }
+
+$(function () {
+    onLiveChatClick();
+});
