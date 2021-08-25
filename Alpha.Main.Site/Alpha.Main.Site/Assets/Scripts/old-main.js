@@ -151,8 +151,12 @@ window.age = window.age || {
             });
         }
         else {
-            localStorage.removeItem(indexManager.currentUrlCookieName);
-            index.location = signOutUrl;
+            try {
+                localStorage.removeItem(indexManager.currentUrlCookieName);
+            }
+            finally {
+                index.location = signOutUrl;
+            }
         }
     },
     updatePopupTitleAfterLoad: function (popUp, iframe) {
