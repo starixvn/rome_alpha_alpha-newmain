@@ -65,7 +65,8 @@
         private void WriteLog(string message)
         {
             var captchaFunction = Request.QueryString[CaptchaFunctionName] ?? Request.Form[CaptchaFunctionName];
-            if (AppSettings.NewCaptchaLogCurrencies.Any(c => c == userSession.Currency))
+            var writeLogEnabled = AppSettings.NewCaptchaLogCurrencies.Any(c => c == userSession.Currency || c == "*");
+            if (writeLogEnabled)
             {
                 var username = string.IsNullOrEmpty(userSession.SubUserName) ? userSession.UserName : userSession.SubUserName;
                 ExceptionHandler.Handle(new Exception($"Captcha validate result: customer={username}, function={captchaFunction}, message={message}"), TraceEventType.Warning);
