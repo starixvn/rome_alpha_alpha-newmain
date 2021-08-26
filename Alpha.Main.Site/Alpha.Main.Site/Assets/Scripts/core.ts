@@ -74,8 +74,12 @@ var alpha = {
                 });
             }
             else {
-                localStorage.removeItem(indexManager.currentUrlCookieName);
-                index.location = signOutUrl;
+                try {
+                    localStorage.removeItem(indexManager.currentUrlCookieName);
+                }
+                finally {
+                    index.location = signOutUrl;
+                }
             }
         },
         isIe: function () {

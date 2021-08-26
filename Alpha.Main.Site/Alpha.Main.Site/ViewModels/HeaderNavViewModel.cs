@@ -62,5 +62,7 @@
         public bool ShowNicknameMenu { get; }
 
         public bool ShowCreateMemberByQRCode { get; }
+
+        public bool IsOfferLiveChat { get; } = AppSettings.IsOfferLiveChat;
     }
 }

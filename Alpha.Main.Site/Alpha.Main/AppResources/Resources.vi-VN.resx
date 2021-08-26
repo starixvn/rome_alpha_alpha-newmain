@@ -648,4 +648,7 @@
   <data name="PartialUMAnnouncement" xml:space="preserve">
     <value>Hệ thống hiện đang bận nên chức năng này tạm thời bị gián đoạn {0} - {1} (GMT+8). Xin vui lòng thử lại sau. Chúng tôi rất xin lỗi vì sự bất tiện này.</value>
   </data>
+  <data name="LiveMessage" xml:space="preserve">
+    <value>Live Message</value>
+  </data>
 </root>

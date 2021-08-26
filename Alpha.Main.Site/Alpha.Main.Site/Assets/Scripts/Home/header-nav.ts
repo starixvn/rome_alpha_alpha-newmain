@@ -26,7 +26,8 @@ var headerNav = {
         sideBar: null,
         sideBarContent: null,
         profileImage: null,
-        headerNavElement: null
+        headerNavElement: null,
+        liveChat: null
     },
     messageType: {
         Normal: 0,
@@ -181,6 +182,7 @@ var headerNav = {
         headerNav.domElements.profileImage = $("#logoProfileImg");
 
         headerNav.domElements.headerNavElement = $("#header-nav");
+        headerNav.domElements.liveChat = $("#liveChat");
     },
 
     initLanguage: function () {
@@ -360,6 +362,8 @@ var headerNav = {
         headerNav.domElements.numberNewMessage.on("click", headerNav.buildIconNewMessage);
 
         headerNav.checkNewMessage();
+
+        headerNav.domElements.liveChat.on("click", window["onLiveChatClick"]);
     },
 
     changeLanguage: function (lang) {

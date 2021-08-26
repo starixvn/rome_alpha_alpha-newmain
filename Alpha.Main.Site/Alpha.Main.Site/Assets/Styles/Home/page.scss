@@ -81,6 +81,10 @@ html * {
 .bg-light {
     border-top: 1px solid #d3d3d3;
     background-color: #f7f7f9;
+
+    :hover {
+        background-color: #fff;
+    }
 }
 
 /********************************** Customer profile ******************************************/
@@ -275,6 +279,7 @@ html * {
             from {
                 top: 0;
             }
+
             to {
                 top: -8px;
             }
@@ -480,7 +485,7 @@ html * {
     position: fixed;
     z-index: 100;
     bottom: 15px;
-    right: 16px;    
+    right: 16px;
 }
 
 // Data Processing Notification

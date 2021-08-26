@@ -586,4 +586,7 @@
   <data name="PartialUMAnnouncement" xml:space="preserve">
     <value>由於目前服務器繁忙所以此功能暫時關閉 從 {0} 至 {1} (GMT+8), 請稍後再試。 不便之處 敬請見諒！</value>
   </data>
+  <data name="LiveMessage" xml:space="preserve">
+    <value>在線客服</value>
+  </data>
 </root>

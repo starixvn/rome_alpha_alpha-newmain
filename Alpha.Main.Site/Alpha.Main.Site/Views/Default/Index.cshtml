@@ -51,6 +51,10 @@
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/default")
     @StaticResources.RenderScripts("~/assets/bundles/default-index")
+    @if (Model.IsOfferLiveChat)
+    {
+        @StaticResources.RenderScripts("~/assets/bundles/home/le-mtagconfig")
+    }
     @GoogleAnalyticHepler.Render()
 </body>
 </html>
