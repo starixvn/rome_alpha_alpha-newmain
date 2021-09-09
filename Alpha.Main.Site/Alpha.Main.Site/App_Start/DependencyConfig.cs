@@ -16,6 +16,7 @@
     using DataAccesses;
     using DataAccesses.Impl;
     using Fanex.Caching;
+    using Fanex.Caching.Redis;
     using Fanex.Cryptography.Aes;
     using Fanex.Data.Repository;
     using Fanex.RemotingRef;

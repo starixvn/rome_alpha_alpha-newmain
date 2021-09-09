@@ -32,7 +32,6 @@
             this.cacheRefService = cacheRefService;
             this.cacheService = cacheService;
             settingTypeResource = new ResourceManager(typeof(SettingType));
-            CacheService = cacheService;
         }
 
         public async Task<IEnumerable<UMMessageDTO>> GetMessagesAsync(UMMessageParam param)

@@ -28,7 +28,7 @@
 
                 balanceUpDayInfo = dynamicRepository.Get<BalanceUpDayInfo>(criteria);
 
-                CacheService.Set(BalanceUpDayKey, balanceUpDayInfo, new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(2)));
+                cacheService.Set(BalanceUpDayKey, balanceUpDayInfo, new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(2)));
             }
 
             return balanceUpDayInfo;
