@@ -602,7 +602,7 @@
     <value>to pick up a new one. Thank you.</value>
   </data>
   <data name="invalidCaptcha" xml:space="preserve">
-    <value>You input an invalid code</value>
+    <value>You input an invalid code "{0}" (comparing with "{1}")</value>
   </data>
   <data name="IamNotARobot" xml:space="preserve">
     <value>I'm not a robot</value>

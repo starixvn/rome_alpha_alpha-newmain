@@ -264,6 +264,10 @@
 
         public static bool ShowOldCustomerList => Settings["ShowOldCustomerList"] == "1";
 
+        public static IEnumerable<string> NewCaptchaLogCurrencies => string.IsNullOrWhiteSpace(Settings["NewCaptcha:LogCurrencies"])
+            ? Enumerable.Empty<string>()
+            : Settings["NewCaptcha:LogCurrencies"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+
         public static IEnumerable<string> TransferToDownlineHistoryOfferSites
             => Settings["TransferToDownlineHistory.OfferSites"]
             .Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)

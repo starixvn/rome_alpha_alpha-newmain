@@ -5,6 +5,7 @@
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
     using System.Web.Mvc;
+    using Alpha.Captcha.Services;
     using Alpha.Main.ProfilePicture.Services;
     using Chatbot.Client.Services;
     using DataAccesses;
@@ -131,6 +132,7 @@
             container.RegisterPerWebRequest<KickoutCustomerService, KickoutCustomerServiceImpl>();
             container.RegisterPerWebRequest<BannerService, BannerServiceImpl>();
             container.RegisterPerWebRequest<UMMessageService, UMMessageServiceImpl>();
+            container.RegisterPerWebRequest<ISessionService, SessionService>();
         }
 
         private static void RegisterDataAccesses(Container container)
