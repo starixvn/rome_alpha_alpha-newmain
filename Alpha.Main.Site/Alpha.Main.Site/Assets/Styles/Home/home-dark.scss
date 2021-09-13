@@ -55,12 +55,10 @@ body {
         text-align: right;
 
         .btn-link {
-            @include border-radius(2px);
             background: #ffffff; /* Old browsers */
-            background: linear-gradient(to bottom, #ffffff 0%,#e1e1e1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            border: 1px solid #9d9d9d;
-            color: #068200;
-            padding: 2px 8px;
+            background: linear-gradient(to bottom, #FEFEFE 0%,#E2E2E2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            color: #06822D;
+            padding: 3px 8px;
             font-weight: bold;
 
             &:hover {
@@ -70,10 +68,10 @@ body {
         }
 
         &.text-red {
-            color: #fe0002;
+            color: #E54748;
 
             .btn-link {
-                color: #ff0000;
+                color: #E54748;
             }
         }
     }
@@ -97,7 +95,7 @@ body {
     }
 
     .panel-title {
-        color: #fff;
+        color: #EDEDED;
     }
 
     .group-title {
@@ -117,15 +115,15 @@ body {
         }
 
         .active {
-            color: #045ace;
+            color: #41A4FF;
         }
 
         .closed {
-            color: #ff4f50;
+            color: #E54748;
         }
 
         .suspended {
-            color: #fc6b00;
+            color: #E57B2D;
         }
 
         .dropdown.open .icon-plus:before {
@@ -175,6 +173,7 @@ body {
         .msg-contents {
             padding-bottom: 4px;
             padding-top: 4px;
+            background-color: #1A1B1C;
 
             .message {
                 padding: 0 16px;
@@ -286,7 +285,7 @@ body {
 
     .tooltip-inner {
         border: 1px solid #9F9F9F;
-        color: $text-color;
+        color: #EDEDED;
         font-weight: bold;
         background-color: #2E2E2E;
         text-align: left;
