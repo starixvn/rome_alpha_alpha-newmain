@@ -151,7 +151,7 @@ html * {
             position: relative;
             left: 1px;
             top: 1px;
-            color: $menu-color-icon;
+            color: $color-slidebar;
 
             &.icon-totalbets {
                 font-size: 14px;
@@ -233,7 +233,7 @@ html * {
 
         > a {
             cursor: pointer;
-            color: $menu-color-text;
+            color: $color-slidebar;
             display: table;
             white-space: nowrap;
             text-decoration: none;
@@ -282,10 +282,16 @@ html * {
         padding: 9px 15px 9px 44px;
 
         a {
-            color: $menu-color-text; // lightmode #555
+            color: $color-slidebar; // lightmode #555
             display: table;
             text-decoration: none;
             font-weight: 600;
+        }
+
+        &:hover {
+            a {
+                color: $menu-color-text;
+            }
         }
 
         &.disabled-menu a {

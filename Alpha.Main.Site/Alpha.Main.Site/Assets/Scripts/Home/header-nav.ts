@@ -27,7 +27,7 @@ var headerNav = {
         sideBarContent: null,
         profileImage: null,
         headerNavElement: null,
-        liveChat: null
+        liveChat: null,
         switchMode: null
     },
     messageType: {
