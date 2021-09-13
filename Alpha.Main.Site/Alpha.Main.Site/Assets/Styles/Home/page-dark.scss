@@ -245,6 +245,7 @@ html * {
 
             &.active {
                 background: #3A3A3A;
+                color: $menu-color-text;
 
                 .icon-arrow-right {
                     @include transform(rotate(90deg));
@@ -280,6 +281,12 @@ html * {
 
     .sub-menu .sub-menu-item {
         padding: 9px 15px 9px 44px;
+
+        &.active {
+            a {
+                color: $menu-color-text;
+            }
+        }
 
         a {
             color: $color-slidebar; // lightmode #555
