@@ -347,6 +347,21 @@ html * {
             display: none;
         }
     }
+
+    .main-tab {
+        li {
+            &.active {
+                a {
+                    color: $menu-color-text;
+                    font-weight: bold;
+                }
+            }
+
+            a {
+                font-weight: inherit;
+            }
+        }
+    }
 }
 
 #main-menu-items {
