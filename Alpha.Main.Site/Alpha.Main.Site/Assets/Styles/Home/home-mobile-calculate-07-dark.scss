@@ -153,12 +153,12 @@ body {
             margin-top: calculateScale(12px);
             padding-top: calculateScale(2px);
             line-height: calculateScale(30px);
-            background-color: #e3e3e3;
-            
+            background-color: #212223;
+
             .icon-more {
                 top: calculateScale(2px);
                 margin-left: calculateScale(4px);
-            }      
+            }
         }
 
         .icon-plus, .icon-minus {
@@ -169,8 +169,8 @@ body {
     }
 
     &.statistic {
-        .active, 
-        .closed, 
+        .active,
+        .closed,
         .suspended {
             padding: 0 calculateScale(4px);
         }

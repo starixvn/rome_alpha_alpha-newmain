@@ -151,7 +151,7 @@ body {
     &.notice {
 
         .notice-container {
-            background-color: $panel-background-color;
+            background-color: #171717;
         }
 
         %group {
@@ -228,7 +228,7 @@ body {
         }
 
         .more-info {
-            background-color: #1A1B1C;
+            background-color: #212223;
             cursor: pointer;
             font-weight: bold;
             text-align: center;
