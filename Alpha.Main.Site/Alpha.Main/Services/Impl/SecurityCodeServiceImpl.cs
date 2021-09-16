@@ -21,13 +21,16 @@
 
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
         private readonly Encryptor encryptor;
+        private readonly INetThrottlingService netThrottlingService;
 
         public SecurityCodeServiceImpl(
             SecurityCodeDataAccess securityCodeDataAccess,
-            Encryptor encryptor)
+            Encryptor encryptor,
+            INetThrottlingService netThrottlingService)
         {
             this.securityCodeDataAccess = securityCodeDataAccess;
             this.encryptor = encryptor;
+            this.netThrottlingService = netThrottlingService;
         }
 
         public Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param)
@@ -87,6 +90,11 @@
                 throw new ArgumentNullException(nameof(param), "Param cannot be null");
             }
 
+            if (netThrottlingService.IsBlacklist())
+            {
+                return Result.CreateErrorResult("Too many requests");
+            }
+
             var validateResult = Validate(param.NewSecurityCode);
             if (!validateResult.IsOk)
             {
@@ -103,7 +111,14 @@
                 Language = param.Language
             };
 
-            return securityCodeDataAccess.UpdateSecurityCode(command);
+            var result = securityCodeDataAccess.UpdateSecurityCode(command);
+
+            if (result != null && result.IsSuccessful)
+            {
+                netThrottlingService.Throttle();
+            }
+
+            return result;
         }
 
         private string HashSecurityCode(int custId, string securityCode, bool isResetMember = false)

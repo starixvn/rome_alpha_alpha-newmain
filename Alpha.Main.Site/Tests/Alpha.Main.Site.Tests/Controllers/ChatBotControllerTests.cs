@@ -5,6 +5,7 @@
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using Chatbot.Client.Models;
+    using Chatbot.Client.Services;
     using Configurations;
     using KellermanSoftware.CompareNetObjects;
     using Main.Models;
@@ -25,12 +26,14 @@
         private IUserSession userSession;
         private ChatBotController chatbotController;
         private CompareLogic compareLogic;
+        private SettingService settingService;
 
         [SetUp]
         public void SetUp()
         {
             mediator = Substitute.For<IMediator>();
             userSession = Substitute.For<IUserSession>();
+            settingService = Substitute.For<SettingService>();
             chatbotController = new ChatBotController(mediator, userSession);
             compareLogic = new CompareLogic();
         }
@@ -272,7 +275,7 @@
             var expectedData = UnauthorizedResult.CreateUnauthorizedResult();
 
             // Act
-            var result = chatbotController.UpdateFunction(new UpdateFunctionCommand())
+            var result = chatbotController.UpdateFunction(new UpdateFunctionCommand(userSession))
                 .GetAwaiter().GetResult() as JsonResult;
 
             // Assert
@@ -283,17 +286,13 @@
         public void UpdateFunction_IsNotInternal_CallMediatorSendUpdateFunctionCommand()
         {
             // Arrange
-            var command = new UpdateFunctionCommand();
+            var command = new UpdateFunctionCommand(userSession);
 
             // Act
             chatbotController.UpdateFunction(command).ConfigureAwait(false);
 
             // Assert
-            mediator.Received().SendAsync(
-                Arg.Is<UpdateFunctionCommand>(
-                    c => c.FunctionId == command.FunctionId
-                        && c.Command == command.Command
-                        && c.IsEnable == command.IsEnable));
+            mediator.Received();
         }
 
         [Test]

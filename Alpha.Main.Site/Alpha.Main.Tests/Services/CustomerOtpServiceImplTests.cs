@@ -25,6 +25,7 @@
         private IDynamicRepository dynamicRepository;
         private OtpService otpService;
         private JsonHelper jsonHelper;
+        private INetThrottlingService netThrottlingService;
 
         [SetUp]
         public void SetUp()
@@ -32,8 +33,9 @@
             dynamicRepository = Substitute.For<IDynamicRepository>();
             otpService = Substitute.For<OtpService>();
             jsonHelper = Substitute.For<JsonHelper>();
+            netThrottlingService = Substitute.For<INetThrottlingService>();
 
-            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper);
+            customerOtpService = Substitute.ForPartsOf<CustomerOtpServiceImpl>(dynamicRepository, otpService, jsonHelper, netThrottlingService);
             compareLogic = new CompareLogic();
         }
 

@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using System;
+    using Alpha.NetThrottling;
     using AppResources;
     using Fanex.Data.Repository;
     using KellermanSoftware.CompareNetObjects;
@@ -21,16 +22,19 @@
         private SecurityCodeDataAccess securityCodeDataAccess;
         private Encryptor encryptor;
         private CompareLogic compareLogic;
+        private INetThrottlingService netThrottlingService;
 
         [SetUp]
         public void Setup()
         {
             securityCodeDataAccess = Substitute.For<SecurityCodeDataAccess>();
             encryptor = Substitute.For<Encryptor>();
+            netThrottlingService = Substitute.For<INetThrottlingService>();
 
             securityCodeService = Substitute.ForPartsOf<SecurityCodeServiceImpl>(
                 securityCodeDataAccess,
-                encryptor);
+                encryptor,
+                netThrottlingService);
 
             compareLogic = new CompareLogic();
         }

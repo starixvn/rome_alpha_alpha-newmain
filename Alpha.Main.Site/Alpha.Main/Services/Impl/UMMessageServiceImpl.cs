@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Resources;
     using System.Text;
     using System.Threading;
@@ -23,11 +24,13 @@
         private readonly IDynamicRepository dynamicRepository;
         private readonly CacheRefService cacheRefService;
         private readonly ResourceManager settingTypeResource;
+        private readonly ICacheService cacheService;
 
-        public UMMessageServiceImpl(IDynamicRepository dynamicRepository, CacheRefService cacheRefService)
+        public UMMessageServiceImpl(IDynamicRepository dynamicRepository, CacheRefService cacheRefService, ICacheService cacheService)
         {
             this.dynamicRepository = dynamicRepository;
             this.cacheRefService = cacheRefService;
+            this.cacheService = cacheService;
             settingTypeResource = new ResourceManager(typeof(SettingType));
         }
 
@@ -37,7 +40,7 @@
         private async Task<IEnumerable<UMMessageItem>> GetUMMessageItemAsync(UMMessageParam param)
         {
             var cacheKey = $"{UMMessageCacheKey}_{param.Site}_{param.CurrencyId}_{param.SuperId}";
-            var messages = CacheService.Get<IEnumerable<UMMessageItem>>(cacheKey);
+            var messages = cacheService.Get<IEnumerable<UMMessageItem>>(cacheKey);
 
             if (messages == null)
             {
@@ -49,7 +52,7 @@
                     {
                         messages = await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param.CustId));
 
-                        CacheService.Set(
+                        cacheService.Set(
                             cacheKey,
                             messages,
                             new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(CacheInSeconds)));

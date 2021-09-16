@@ -2,14 +2,22 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
     using System.Web.Mvc;
     using Alpha.Captcha.Services;
     using Alpha.Main.ProfilePicture.Services;
+    using Alpha.NetThrottling;
+    using Alpha.NetThrottling.Models;
+    using Alpha.NetThrottling.Resolvers;
+    using Alpha.NetThrottling.Utils;
     using Chatbot.Client.Services;
     using DataAccesses;
     using DataAccesses.Impl;
+    using Fanex.Caching;
+    using Fanex.Caching.Redis;
+    using Fanex.Cryptography.Aes;
     using Fanex.Data.Repository;
     using Fanex.RemotingRef;
     using Handlers;
@@ -26,6 +34,7 @@
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
+    using StackExchange.Redis;
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Model.Entities;
@@ -48,6 +57,8 @@
             RegisterDataAccesses(container);
 
             RegisterServices(container);
+
+            RegisterNetThrottling(container);
 
             // This is an extension method from the integration package.
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
@@ -115,12 +126,13 @@
             new CustomerOtpServiceImpl(
                 container.GetInstance<IDynamicRepository>(),
                 container.GetInstance<OtpService>(),
-                container.GetInstance<JsonHelper>()));
+                container.GetInstance<JsonHelper>(),
+                container.GetInstance<INetThrottlingService>()));
 
             container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
 
             container.RegisterPerWebRequest<IUser, User>();
-            container.RegisterSingleton<AesService, AesServiceImpl>();
+            container.RegisterSingleton(() => AesService.Default);
 
             container.RegisterPerWebRequest<LogoutService, LogoutServiceImpl>();
 
@@ -148,6 +160,33 @@
             SimpleServiceLocator
               .Instance
               .Register<Func<int>>(AppSettingsHelper.GetInsertProfilePictureSiteMode);
+        }
+
+        private static void RegisterNetThrottling(Container container)
+        {
+            container.Register<INetThrottler, NetThrottler>(Lifestyle.Scoped);
+            container.Register<IThrottleSetting, ThrottleSetting>(Lifestyle.Scoped);
+            container.Register<IClock, Clock>(Lifestyle.Scoped);
+            container.Register<ILogger, NetThrottling.Utils.Logger>(Lifestyle.Scoped);
+            container.Register<ICacheServiceFactory, CacheServiceFactory>(Lifestyle.Scoped);
+            container.Register<IResolver, BaseResolver>(Lifestyle.Scoped);
+            container.Register<INetThrottlingService, NetThrottlingService>(Lifestyle.Scoped);
+
+            container.RegisterSingleton<ICache>(() => CreateRedisCache());
+            container.RegisterSingleton<ICacheService, CacheService>();
+        }
+
+        private static RedisCache CreateRedisCache()
+        {
+            var redisConfigurationString = ConfigurationManager.AppSettings["RedisConfigurationOptions:Alpha.NetThrottling"];
+            var configurationOptions = ConfigurationOptions.Parse(redisConfigurationString);
+            var redisCacheOptions = new RedisCacheOptions
+            {
+                ApplicationName = configurationOptions.ClientName,
+                ConnectionOptions = configurationOptions
+            };
+
+            return new RedisCache(redisCacheOptions);
         }
     }
 }

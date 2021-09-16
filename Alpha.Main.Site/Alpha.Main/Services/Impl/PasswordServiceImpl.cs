@@ -8,6 +8,7 @@
     using CasinoLibrary.Model.UserException;
     using Criteria.Password;
     using DataAccesses;
+    using Fanex.Cryptography.Aes;
     using Fanex.Data.Repository;
     using Fanex.Logging.Extensions.Web;
     using Models;
@@ -29,17 +30,19 @@
         private readonly Encryptor encryptor;
         private readonly PasswordDataAccess passwordDataAccess;
         private readonly CasinoService casinoService;
-        private readonly AesService aes;
+        private readonly IAesService aes;
         private readonly KickoutCustomerService kickoutCustomerService;
         private readonly IDynamicRepository dynamicRepository;
+        private readonly INetThrottlingService netThrottlingService;
 
         public PasswordServiceImpl(
             Encryptor encryptor,
             PasswordDataAccess passwordDataAccess,
             CasinoService casinoService,
-            AesService aes,
+            IAesService aes,
             KickoutCustomerService kickoutCustomerService,
-            IDynamicRepository dynamicRepository)
+            IDynamicRepository dynamicRepository,
+            INetThrottlingService netThrottlingService)
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
@@ -47,6 +50,7 @@
             this.aes = aes;
             this.kickoutCustomerService = kickoutCustomerService;
             this.dynamicRepository = dynamicRepository;
+            this.netThrottlingService = netThrottlingService;
         }
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
@@ -278,6 +282,11 @@
                 throw new ArgumentNullException(nameof(param), "Param cannot be null");
             }
 
+            if (netThrottlingService.IsBlacklist())
+            {
+                return Result.CreateErrorResult("Too many requests");
+            }
+
             var rawNewPassword = Decrypt(param.NewPassword, param.HashKey);
             var validateResult = Validate(
                 true,
@@ -308,6 +317,8 @@
 
             if (updateResult.IsSuccessful)
             {
+                netThrottlingService.Throttle();
+
                 KickoutCustomer(new KickoutCustomerParam(
                     param.CustId,
                     param.CustLevel,

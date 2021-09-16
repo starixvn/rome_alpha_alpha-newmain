@@ -31,15 +31,18 @@
         private readonly IDynamicRepository dynamicRepository;
         private readonly OtpService otpService;
         private readonly JsonHelper jsonHelper;
+        private readonly INetThrottlingService netThrottlingService;
 
         public CustomerOtpServiceImpl(
             IDynamicRepository dynamicRepository,
             OtpService otpService,
-            JsonHelper jsonHelper)
+            JsonHelper jsonHelper,
+            INetThrottlingService netThrottlingService)
         {
             this.dynamicRepository = dynamicRepository;
             this.otpService = otpService;
             this.jsonHelper = jsonHelper;
+            this.netThrottlingService = netThrottlingService;
         }
 
         public virtual CustomResult ChangeOtpStatus(ChangeOtpStatusParam param)
@@ -47,6 +50,11 @@
             if (param == null)
             {
                 throw new ArgumentNullException(nameof(param), "Change Otp Status Parameters cannot be null");
+            }
+
+            if (netThrottlingService.IsBlacklist())
+            {
+                return CustomResult.CreateErrorResult("Too many requests");
             }
 
             var command = new UpdateCustomerOtpStatusCommand
@@ -62,6 +70,11 @@
             };
 
             dynamicRepository.Execute(command);
+
+            if (command.ErrCode == 0)
+            {
+                netThrottlingService.Throttle();
+            }
 
             return new CustomResult
             {

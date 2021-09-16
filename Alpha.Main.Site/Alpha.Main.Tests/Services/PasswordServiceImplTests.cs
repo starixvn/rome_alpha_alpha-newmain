@@ -3,6 +3,7 @@
     using Alpha.Web.Models;
     using AppResources;
     using Constants;
+    using Fanex.Cryptography.Aes;
     using Fanex.Data.Repository;
     using KellermanSoftware.CompareNetObjects;
     using Main.Criteria.Password;
@@ -27,9 +28,10 @@
         private Encryptor encryptor;
         private PasswordDataAccess passwordDataAccess;
         private CasinoService casinoService;
-        private AesService aes;
+        private IAesService aes;
         private KickoutCustomerService kickoutCustomerService;
         private IDynamicRepository repository;
+        private INetThrottlingService netThrottlingService;
 
         [SetUp]
         public void SetUp()
@@ -39,9 +41,10 @@
             encryptor = Substitute.For<Encryptor>();
             passwordDataAccess = Substitute.For<PasswordDataAccess>();
             casinoService = Substitute.For<CasinoService>();
-            aes = Substitute.For<AesService>();
+            aes = Substitute.For<IAesService>();
             kickoutCustomerService= Substitute.For<KickoutCustomerService>();
             repository = Substitute.For<IDynamicRepository>();
+            netThrottlingService = Substitute.For<INetThrottlingService>();
 
             passwordService = Substitute.ForPartsOf<PasswordServiceImpl>(
                 encryptor,
@@ -49,7 +52,8 @@
                 casinoService,
                 aes,
                 kickoutCustomerService,
-                repository);
+                repository,
+                netThrottlingService);
         }
 
         #region Change Main Account Passowrd

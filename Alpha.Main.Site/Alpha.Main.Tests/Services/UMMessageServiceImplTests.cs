@@ -20,16 +20,48 @@
     {
         private IDynamicRepository dynamicRepository;
         private CacheRefService cacheRefService;
+        private ICacheService cacheService;
         private UMMessageService umMessageService;
         private static readonly UMMessageParam ParamTest = new UMMessageParam(1, "Sitename", 2, 3);
+        private string CacheKey;
 
         [SetUp]
         public void SetUp()
         {
+            var cacheKey = $"Alpha.Main.Services.Impl.UMMessageService_{ParamTest.Site}_{ParamTest.CurrencyId}_{ParamTest.SuperId}";
             dynamicRepository = Substitute.For<IDynamicRepository>();
             cacheRefService = Substitute.For<CacheRefService>();
-            umMessageService = new UMMessageServiceImpl(dynamicRepository, cacheRefService);
-            CacheService.Remove($"Alpha.Main.Services.Impl.UMMessageService_{ParamTest.Site}_{ParamTest.CurrencyId}_{ParamTest.SuperId}");
+            cacheService = Substitute.For<ICacheService>();
+            umMessageService = new UMMessageServiceImpl(dynamicRepository, cacheRefService, cacheService);
+
+            IEnumerable<UMMessageItem> cachedMessages = null;
+            CacheKey = $"Alpha.Main.Services.Impl.UMMessageService_{ParamTest.Site}_{ParamTest.CurrencyId}_{ParamTest.SuperId}";
+            cacheService.Get<IEnumerable<UMMessageItem>>(CacheKey).Returns(cachedMessages);
+        }
+
+        [Test]
+        public async Task GetMessagesAsync_CachedIsNull_CallsFetchAsync()
+        {
+            // Arrange & Act
+            await umMessageService.GetMessagesAsync(ParamTest);
+
+            // Assert
+            await dynamicRepository.Received().FetchAsync<UMMessageItem>(Arg.Any<GetUMMessageCriteria>());
+        }
+
+        [Test]
+        public async Task GetMessagesAsync_CachedIsNotNull_NotCallsFetchAsync()
+        {
+            // Arrange
+            cacheService
+                .Get<IEnumerable<UMMessageItem>>(CacheKey)
+                .Returns(Enumerable.Empty<UMMessageItem>());
+
+            // Act
+            await umMessageService.GetMessagesAsync(ParamTest);
+
+            // Assert
+            await dynamicRepository.DidNotReceive().FetchAsync<UMMessageItem>(Arg.Any<GetUMMessageCriteria>());
         }
 
         [Test]

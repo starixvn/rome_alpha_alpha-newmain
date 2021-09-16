@@ -23,5 +23,9 @@
         public string Command { get; set; }
 
         public bool IsEnable { get; set; }
+
+        public string Language => userSession.Language;
+
+        public bool IsValid() => !userSession.IsInternal;
     }
 }
