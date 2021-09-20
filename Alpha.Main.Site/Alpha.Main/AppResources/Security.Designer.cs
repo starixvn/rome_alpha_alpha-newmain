@@ -61,6 +61,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Access to bet lists.
+        /// </summary>
+        public static string AccessToBetLists {
+            get {
+                return ResourceManager.GetString("AccessToBetLists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access to statement report.
+        /// </summary>
+        public static string AccessToStatementReport {
+            get {
+                return ResourceManager.GetString("AccessToStatementReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account name.
         /// </summary>
         public static string AccountName {
@@ -212,6 +230,15 @@ namespace Alpha.Main.AppResources {
         public static string Copied {
             get {
                 return ResourceManager.GetString("Copied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create New Downline.
+        /// </summary>
+        public static string CreateNewDownline {
+            get {
+                return ResourceManager.GetString("CreateNewDownline", resourceCulture);
             }
         }
         
@@ -495,6 +522,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mandatory actions.
+        /// </summary>
+        public static string MandatoryActions {
+            get {
+                return ResourceManager.GetString("MandatoryActions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please input the key below to the Manual Add page in Sophos then click Done (IOS) or Add (Android).
         /// </summary>
         public static string ManualInputOtpKey {
@@ -509,6 +545,15 @@ namespace Alpha.Main.AppResources {
         public static string NewPassword {
             get {
                 return ResourceManager.GetString("NewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Security Code.
+        /// </summary>
+        public static string NewSecurityCode {
+            get {
+                return ResourceManager.GetString("NewSecurityCode", resourceCulture);
             }
         }
         
@@ -536,6 +581,15 @@ namespace Alpha.Main.AppResources {
         public static string oldSecCode {
             get {
                 return ResourceManager.GetString("oldSecCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Optional action.
+        /// </summary>
+        public static string OptionalAction {
+            get {
+                return ResourceManager.GetString("OptionalAction", resourceCulture);
             }
         }
         
@@ -779,6 +833,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Security Code will be asked once per session before performing the following actions.
+        /// </summary>
+        public static string SCAskedOncePerSession {
+            get {
+                return ResourceManager.GetString("SCAskedOncePerSession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Security Code.
         /// </summary>
         public static string SecurityCode {
@@ -905,6 +968,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OFF.
+        /// </summary>
+        public static string SwitchLabelOff {
+            get {
+                return ResourceManager.GetString("SwitchLabelOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ON.
+        /// </summary>
+        public static string SwitchLabelOn {
+            get {
+                return ResourceManager.GetString("SwitchLabelOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset Security Code.
         /// </summary>
         public static string titleResetSecCode {
@@ -919,6 +1000,15 @@ namespace Alpha.Main.AppResources {
         public static string titleVerifySecurityCode {
             get {
                 return ResourceManager.GetString("titleVerifySecurityCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transfer.
+        /// </summary>
+        public static string Transfer {
+            get {
+                return ResourceManager.GetString("Transfer", resourceCulture);
             }
         }
         
@@ -941,11 +1031,38 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update downline&apos;s given credit and settings.
+        /// </summary>
+        public static string UpdateDownlineCreditAndSettings {
+            get {
+                return ResourceManager.GetString("UpdateDownlineCreditAndSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update OTP status successfully.
         /// </summary>
         public static string UpdateOtpStatusSuccess {
             get {
                 return ResourceManager.GetString("UpdateOtpStatusSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update security information (password, security code, OTP, etc.).
+        /// </summary>
+        public static string UpdateSecurityInformation {
+            get {
+                return ResourceManager.GetString("UpdateSecurityInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update your sub account&apos;s information.
+        /// </summary>
+        public static string UpdateSubAccInformation {
+            get {
+                return ResourceManager.GetString("UpdateSubAccInformation", resourceCulture);
             }
         }
         

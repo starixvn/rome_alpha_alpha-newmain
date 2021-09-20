@@ -179,8 +179,8 @@
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <HintPath>..\packages\StackExchange.Redis.2.0.519\lib\net461\StackExchange.Redis.dll</HintPath>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.1\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.7\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
@@ -338,6 +338,7 @@
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureStandbyServerCommand.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureMainServerCommand.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureCommandBase.cs" />
+    <Compile Include="Criteria\SecurityCode\UpdateSecurityCodeFunctionCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\UpdateSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetNewMembersCriteria.cs" />
     <Compile Include="Criteria\Statistics\GetStatisticsCriteria.cs" />
@@ -414,6 +415,7 @@
     <Compile Include="Params\Password\ResetSubAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ChangeMainAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ChangeSubAccountPasswordParam.cs" />
+    <Compile Include="Params\SecurityCode\UpdateSecurityCodeFunctionParam.cs" />
     <Compile Include="Params\SecurityCode\ChangeSecurityCodeParam.cs" />
     <Compile Include="Params\SecurityCode\ResetSecurityCodeParam.cs" />
     <Compile Include="Params\SecurityCode\VerifySecurityCodeParam.cs" />

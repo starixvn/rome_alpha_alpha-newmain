@@ -67,5 +67,9 @@
         }
 
         public string Username { get; set; }
+
+        public bool IsEnabledSecurityCodeInBetLists => userSession.IsEnabledSecurityCodeInBetLists;
+
+        public bool IsEnabledSecurityCodeInStatement => userSession.IsEnabledSecurityCodeInStatement;
     }
 }

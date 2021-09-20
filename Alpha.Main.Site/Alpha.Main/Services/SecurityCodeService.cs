@@ -16,5 +16,7 @@
         string GenerateSalt(int custId);
 
         Result VerifySecurityCode(VerifySecurityCodeParam param);
+
+        Result UpdateSecurityCodeFunction(UpdateSecurityCodeFunctionParam param);
     }
 }

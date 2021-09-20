@@ -12,7 +12,6 @@
     using NSubstitute;
     using NUnit.Framework;
     using Params.SecurityCode;
-    using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
 
     [TestFixture]
@@ -487,5 +486,25 @@
         }
 
         #endregion
+
+        [Test]
+        public void UpdateSecurityCodeFunction_Always_CallUpdateSecurityCode()
+        {
+            // Arrange
+            var param = new UpdateSecurityCodeFunctionParam(true, "BetList", 1, 0, "E", "::1");
+
+            // Act
+            var result = securityCodeService.UpdateSecurityCodeFunction(param);
+
+            // Assert
+            securityCodeDataAccess.Received().UpdateSecurityCode(
+                Arg.Is<UpdateSecurityCodeFunctionCriteria>(
+                    p => p.IsOn == param.IsOn
+                    && p.Function == param.Function
+                    && p.CustId == param.CustId
+                    && p.SubAccId == param.SubAccId
+                    && p.IP == param.IP
+                    && p.Language == param.LangKey));
+        }
     }
 }
