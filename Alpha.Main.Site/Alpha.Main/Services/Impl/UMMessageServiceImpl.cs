@@ -50,7 +50,13 @@
 
                     try
                     {
-                        messages = await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param.CustId));
+                        messages = (await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param.CustId))).ToList();
+
+                        foreach (var item in messages)
+                        {
+                            item.BeginTimeString = item.BeginTime.ToLongDateWithSlash();
+                            item.EndTimeString = item.EndTime.ToLongDateWithSlash();
+                        }
 
                         cacheService.Set(
                             cacheKey,
@@ -94,7 +100,7 @@
         private UMMessageDTO BuildCustomerSettingsMessage(UMMessageItem message)
         {
             var builder = new StringBuilder(
-                string.Format(Resources.UMCustomerSettingsPattern, message.BeginTime.ToLongDateWithSlash(), message.EndTime.ToLongDateWithSlash()));
+                string.Format(Resources.UMCustomerSettingsPattern, message.BeginTimeString, message.EndTimeString));
             builder
                 .Replace("_SettingType_", settingTypeResource.GetString($"_{message.SettingType}"))
                 .Replace("_Product_", GetProductOrSportType(message.ProductId, message.SportType));
@@ -117,7 +123,7 @@
                 BitConverter.ToInt64(message.Time_Stamp, 0),
                 string.Format(
                     pattern,
-                    message.BeginTime.ToLongDateWithSlash(),
-                    message.EndTime.ToLongDateWithSlash()));
+                    message.BeginTimeString,
+                    message.EndTimeString));
     }
 }
