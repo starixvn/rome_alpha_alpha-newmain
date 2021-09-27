@@ -36,7 +36,11 @@
 
         public DateTime BeginTime { get; set; }
 
+        public string BeginTimeString { get; set; }
+
         public DateTime EndTime { get; set; }
+
+        public string EndTimeString { get; set; }
 
         public byte[] Time_Stamp { get; set; }
     }
