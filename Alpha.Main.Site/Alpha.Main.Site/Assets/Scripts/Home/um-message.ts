@@ -29,23 +29,7 @@
     }
 
     private registerEvents() {
-        let startPosition: JQueryCoordinates;
-
-        this.$umMessageBox.on("mousedown touchstart", () => {
-            startPosition = this.$umMessageBox.position();
-        });
-
-        this.$umMessageBox.on("mouseup touchend", (event) => {
-            event.preventDefault();
-            const endPosition = this.$umMessageBox.position();
-
-            if (Math.abs(startPosition.top - endPosition.top) < 3
-                && Math.abs(startPosition.left - endPosition.left) < 3) {
-                this.$umMessagePopup.modal("show");
-            }
-        });
-
-        this.$umMessageBox.draggable({ disabled: false, containment: "body" });
+        this.$umMessageBox.on("click", _ => this.$umMessagePopup.modal("show"));
 
         const chkDontShowAgain = this.$umMessagePopup.find("#chb-um");
         chkDontShowAgain.change(() => {
