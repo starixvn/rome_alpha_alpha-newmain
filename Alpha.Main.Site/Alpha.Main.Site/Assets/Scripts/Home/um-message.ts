@@ -4,7 +4,7 @@
     $umMessagePopup: JQuery;
     $umMessagePopupBody: JQuery;
     umMessageData: Array<number> = [];
-    getUMMessagesTimeout = 1000 * 60; // 1 minute
+    getUMMessagesTimeout = 1000 * 60 * 60; // 1 hour
     getUMMessagesUrl = alpha.urls.mainRootPath + "UMMessage/Get";
     doNotShowAgainKey = "UMMessageDoNotShowAgain_";
     userId = "";
