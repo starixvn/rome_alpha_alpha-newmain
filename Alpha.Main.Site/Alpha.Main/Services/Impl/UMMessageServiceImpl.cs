@@ -2,10 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Resources;
     using System.Text;
-    using System.Threading;
     using System.Threading.Tasks;
     using Alpha.Main.AppResources;
     using Alpha.Main.Constants;
@@ -26,7 +24,12 @@
         private readonly ResourceManager settingTypeResource;
         private readonly ICacheService cacheService;
 
-        public UMMessageServiceImpl(IDynamicRepository dynamicRepository, CacheRefService cacheRefService, ICacheService cacheService)
+        public UMMessageServiceImpl(IDynamicRepository dynamicRepository, CacheRefService cacheRefService)
+            : this(dynamicRepository, cacheRefService, new CacheService())
+        {
+        }
+
+        internal UMMessageServiceImpl(IDynamicRepository dynamicRepository, CacheRefService cacheRefService, ICacheService cacheService)
         {
             this.dynamicRepository = dynamicRepository;
             this.cacheRefService = cacheRefService;
@@ -44,30 +47,12 @@
 
             if (messages == null)
             {
-                using (var semaphoreSlim = new SemaphoreSlim(1, 1))
-                {
-                    await semaphoreSlim.WaitAsync();
+                messages = await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param.CustId));
 
-                    try
-                    {
-                        messages = (await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param.CustId))).ToList();
-
-                        foreach (var item in messages)
-                        {
-                            item.BeginTimeString = item.BeginTime.ToLongDateWithSlash();
-                            item.EndTimeString = item.EndTime.ToLongDateWithSlash();
-                        }
-
-                        cacheService.Set(
-                            cacheKey,
-                            messages,
-                            new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(CacheInSeconds)));
-                    }
-                    finally
-                    {
-                        semaphoreSlim.Release();
-                    }
-                }
+                cacheService.Set(
+                    cacheKey,
+                    messages,
+                    new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(CacheInSeconds)));
             }
 
             return messages;
@@ -100,7 +85,7 @@
         private UMMessageDTO BuildCustomerSettingsMessage(UMMessageItem message)
         {
             var builder = new StringBuilder(
-                string.Format(Resources.UMCustomerSettingsPattern, message.BeginTimeString, message.EndTimeString));
+                string.Format(Resources.UMCustomerSettingsPattern, message.BeginTime.ToLongDateWithSlash(), message.EndTime.ToLongDateWithSlash()));
             builder
                 .Replace("_SettingType_", settingTypeResource.GetString($"_{message.SettingType}"))
                 .Replace("_Product_", GetProductOrSportType(message.ProductId, message.SportType));
@@ -123,7 +108,7 @@
                 BitConverter.ToInt64(message.Time_Stamp, 0),
                 string.Format(
                     pattern,
-                    message.BeginTimeString,
-                    message.EndTimeString));
+                    message.BeginTime.ToLongDateWithSlash(),
+                    message.EndTime.ToLongDateWithSlash()));
     }
 }
