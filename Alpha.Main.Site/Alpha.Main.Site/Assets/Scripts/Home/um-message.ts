@@ -4,7 +4,7 @@
     $umMessagePopup: JQuery;
     $umMessagePopupBody: JQuery;
     umMessageData: Array<number> = [];
-    getUMMessagesTimeout = 1000 * 60; // 1 minute
+    getUMMessagesTimeout = 1000 * 60 * 60; // 1 hour
     getUMMessagesUrl = alpha.urls.mainRootPath + "UMMessage/Get";
     doNotShowAgainKey = "UMMessageDoNotShowAgain_";
     userId = "";
@@ -26,6 +26,11 @@
 
         const subUserId = this.$("#subUserId").val();
         this.userId = subUserId === "0" ? this.$("#userId").val() : subUserId;
+
+        const $umClientInterval = this.$("#UMAnnouncementPopupClientIntervalInMinutes");
+        if ($umClientInterval.length) {
+            this.getUMMessagesTimeout = 1000 * 60 * parseInt($umClientInterval.val())
+        }
     }
 
     private registerEvents() {

@@ -6,6 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using Alpha.Main.AppResources;
+    using Alpha.Main.Configurations;
     using Alpha.Main.Constants;
     using Alpha.Main.Criteria.UMMessage;
     using Alpha.Main.Extensions;
@@ -16,7 +17,6 @@
 
     public class UMMessageServiceImpl : UMMessageService
     {
-        private const int CacheInSeconds = 60 * 10; // 10 minutes.
         private const string UMMessageCacheKey = "Alpha.Main.Services.Impl.UMMessageService";
 
         private readonly IDynamicRepository dynamicRepository;
@@ -49,10 +49,10 @@
             {
                 messages = await dynamicRepository.FetchAsync<UMMessageItem>(new GetUMMessageCriteria(param.CustId));
 
-                cacheService.Set(
+                 cacheService.Set(
                     cacheKey,
                     messages,
-                    new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromSeconds(CacheInSeconds)));
+                    new CacheItemOptions().SetAbsoluteExpiration(TimeSpan.FromMinutes(AppSettings.UMAnnouncementPopupServerCacheInMinutes)));
             }
 
             return messages;
