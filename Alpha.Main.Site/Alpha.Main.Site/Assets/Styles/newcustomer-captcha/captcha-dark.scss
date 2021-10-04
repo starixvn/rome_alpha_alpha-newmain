@@ -91,6 +91,14 @@ body {
         border: 1px solid #474747 !important;
     }
 }
+.captcha-row.row-hint {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px !important;
+    .captcha-icon-check-circle {
+        margin-right: 6px;
+    }
+}
 
 .row-image {
     height: 50px;
@@ -110,4 +118,15 @@ body {
     cursor: pointer;
     width: 16px;
     height: 16px;
+}
+.captcha-icon-refresh {
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+CjxwYXRoIGQ9Ik03LjkwMDEgMTZDNC42MDAxIDE2IDEuNzAwMSAxMy45IDAuNzAwMDk4IDEwLjdMMC42MDAwOTggMTAuNUgyLjUwMDFWMTAuNkMzLjQwMDEgMTIuOCA1LjUwMDEgMTQuMiA3LjgwMDEgMTQuMkM5LjgwMDEgMTQuMiAxMS41MDAxIDEzLjIgMTIuNjAwMSAxMS42TDEwLjgwMDEgMTAuM0wxNS40MDAxIDguODAwMDVMMTUuOTAwMSAxMy43TDE0LjIwMDEgMTIuNUMxMi45MDAxIDE0LjcgMTAuNTAwMSAxNiA3LjkwMDEgMTZaIiBmaWxsPSIjRURFREVEIi8+CjxwYXRoIGQ9Ik0wIDIuMkwxLjggMy41QzMuMiAxLjMgNS41IDAgOC4xIDBDMTEuNCAwIDE0LjMgMi4xIDE1LjMgNS4zTDE1LjQgNS41SDEzLjVWNS40QzEyLjYgMy4yIDEwLjUgMS44IDguMiAxLjhDNi4zIDEuOCA0LjUgMi44IDMuNCA0LjRMNS4yIDUuNkwwLjUgNy4yTDAgMi4ySDBaIiBmaWxsPSIjRURFREVEIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDAiPgo8cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+") !important;
+}
+.captcha-icon-check-circle {
+    width: 20px !important;
+    height: 20px !important;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9u ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjAwMDIg MC4wMDAyNDQxNDFDMTUuNTIzMiAwLjAwMDI0NDE0MSAyMCA0LjQ3Nzc0IDIwIDkuOTk5OTlDMjAg MTUuNTIyMiAxNS41MjI1IDE5Ljk5OTcgMTAuMDAwMiAxOS45OTk3QzQuNDc3MjQgMTkuOTk5NyAw LjAwMDQ4ODI4MSAxNS41MjIyIDAuMDAwNDg4MjgxIDkuOTk5OTlDMC4wMDA0ODgyODEgNC40Nzc3 NCA0LjQ3Nzk5IDAuMDAwMjQ0MTQxIDEwLjAwMDIgMC4wMDAyNDQxNDFaTTkuMDAwNDkgMTQuNUwx Ni4wMDAyIDcuNTAwMjRMMTQuNTkwMiA2LjA5MDI0TDkuMDAwNDkgMTEuNjcwMkw1LjkxMDQ5IDgu NTg5OTlMNC41MDA0OSA5Ljk5OTk5TDkuMDAwNDkgMTQuNVoiIGZpbGw9IiMyRkNENzUiLz4KPC9z dmc+Cg==") !important;
+}
+.captcha-hint{
+    line-height : 1 !important;
 }
