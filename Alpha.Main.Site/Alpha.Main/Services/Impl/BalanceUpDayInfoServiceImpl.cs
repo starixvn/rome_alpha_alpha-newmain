@@ -12,7 +12,12 @@
         private readonly IDynamicRepository dynamicRepository;
         private readonly ICacheService cacheService;
 
-        public BalanceUpDayInfoServiceImpl(IDynamicRepository dynamicRepository, ICacheService cacheService)
+        public BalanceUpDayInfoServiceImpl(IDynamicRepository dynamicRepository)
+            : this(dynamicRepository, new CacheService())
+        {
+        }
+
+        internal BalanceUpDayInfoServiceImpl(IDynamicRepository dynamicRepository, ICacheService cacheService)
         {
             this.dynamicRepository = dynamicRepository;
             this.cacheService = cacheService;

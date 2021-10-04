@@ -219,6 +219,12 @@
 
         public static bool EnableUMAnnouncementPopup => "1" == Settings["EnableUMAnnouncementPopup"];
 
+        public static int UMAnnouncementPopupServerCacheInMinutes
+            => int.Parse(Settings["UMAnnouncementPopup:ServerCacheInMinutes"]);
+
+        public static int UMAnnouncementPopupClientIntervalInMinutes
+            => int.Parse(Settings["UMAnnouncementPopup:ClientIntervalInMinutes"]);
+
         private static string[] allowedSitesToViewBonusDetail;
         public static string[] AllowedSitesToViewBonusDetail
         {

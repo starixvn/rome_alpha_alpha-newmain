@@ -26,6 +26,11 @@
 
         const subUserId = this.$("#subUserId").val();
         this.userId = subUserId === "0" ? this.$("#userId").val() : subUserId;
+
+        const $umClientInterval = this.$("#UMAnnouncementPopupClientIntervalInMinutes");
+        if ($umClientInterval.length) {
+            this.getUMMessagesTimeout = 1000 * 60 * parseInt($umClientInterval.val())
+        }
     }
 
     private registerEvents() {
