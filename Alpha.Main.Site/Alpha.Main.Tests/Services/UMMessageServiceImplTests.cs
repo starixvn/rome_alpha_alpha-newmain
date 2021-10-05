@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using Alpha.Main.Configurations;
     using Alpha.Main.Constants;
     using Alpha.Main.Criteria.UMMessage;
     using Alpha.Main.Models.UMMessage;
@@ -28,7 +29,8 @@
         [SetUp]
         public void SetUp()
         {
-            var cacheKey = $"Alpha.Main.Services.Impl.UMMessageService_{ParamTest.Site}_{ParamTest.CurrencyId}_{ParamTest.SuperId}";
+            AppSettings.Settings["UMAnnouncementPopup:ServerCacheInMinutes"] = "10";
+             var cacheKey = $"Alpha.Main.Services.Impl.UMMessageService_{ParamTest.Site}_{ParamTest.CurrencyId}_{ParamTest.SuperId}";
             dynamicRepository = Substitute.For<IDynamicRepository>();
             cacheRefService = Substitute.For<CacheRefService>();
             cacheService = Substitute.For<ICacheService>();

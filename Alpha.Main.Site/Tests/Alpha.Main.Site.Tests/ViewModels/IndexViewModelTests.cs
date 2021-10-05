@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.ViewModels
 {
+    using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.SecurityCode.Web;
     using Alpha.Web.Models;
@@ -23,7 +24,7 @@
         [SetUp]
         public void SetUp()
         {
-          
+            AppSettings.Settings["UMAnnouncementPopup:ClientIntervalInMinutes"] = "60";
             userSession = Substitute.For<IUserSession>();
             userSession.SubPageAccess.Returns(new PageAccess());
             nicknameChecker= Substitute.For<NicknameChecker>();

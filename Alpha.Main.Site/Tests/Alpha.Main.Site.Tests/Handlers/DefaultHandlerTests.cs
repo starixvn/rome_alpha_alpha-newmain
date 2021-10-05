@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.Handlers
 {
+    using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Models;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.Main.Services;
@@ -38,6 +39,7 @@
         [SetUp]
         public void SetUp()
         {
+            AppSettings.Settings["UMAnnouncementPopup:ClientIntervalInMinutes"] = "60";
             browserHelper = Substitute.For<BrowserHelper>();
             sessionManager = Substitute.For<SessionManager>();
             customerProfileService = Substitute.For<ProfilePictureServices>();
