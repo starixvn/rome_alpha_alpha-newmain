@@ -145,5 +145,7 @@
         }
 
         public bool IsOfferLiveChat { get; } = AppSettings.IsOfferLiveChat;
+
+        public int UMAnnouncementPopupClientIntervalInMinutes { get; } = AppSettings.UMAnnouncementPopupClientIntervalInMinutes;
     }
 }

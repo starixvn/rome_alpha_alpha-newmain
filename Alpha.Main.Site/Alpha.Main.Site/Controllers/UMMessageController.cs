@@ -3,11 +3,13 @@
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using System.Web.SessionState;
     using Alpha.Main.Models.UMMessage;
     using Alpha.Main.Site.Requests.UMMessage;
     using Alpha.Web;
     using MediatR;
 
+    [SessionState(SessionStateBehavior.ReadOnly)]
     public class UMMessageController : BaseController
     {
         private readonly IMediator mediator;

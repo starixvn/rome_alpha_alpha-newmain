@@ -745,7 +745,6 @@ html * {
     top: 20%;
 }
 
-
 .maintenance-box .icon-under-maintenance {
     position: relative;
     top: 3px;
@@ -759,4 +758,8 @@ html * {
     .icon-under-maintenance {
         vertical-align: unset;
     }
+}
+
+.white-space-nowrap {
+    white-space: nowrap;
 }
