@@ -43,7 +43,8 @@ label {
         padding-top: 0;
         padding-bottom: 0;
         width: 100%;
-        border: 1px solid $border-color;
+        background: #313131;
+        border: 1px solid #474747;
     }
 }
 
@@ -120,6 +121,7 @@ label {
                 background-color: transparent;
                 color: $link-color;
                 padding: 0;
+
                 &:hover {
                     color: $link-hover-color;
                 }
@@ -214,7 +216,7 @@ label {
         }
 
         .qr-code {
-            margin-left: -27px;
+            margin: 12px -12px;
         }
 
         .block, .username-customize {
