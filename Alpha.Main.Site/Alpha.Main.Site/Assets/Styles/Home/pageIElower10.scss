@@ -11,7 +11,7 @@ body {
     color: #fff;
     line-height: 20px;
     position: absolute;
-    padding: 15px;
+    padding: 32px 36px;
     margin: 150px auto 0;
     top: 90px;
     left: 0;
@@ -19,30 +19,35 @@ body {
     z-index: 1040;
     background: #fe9b1c;
     width: 820px;
+
     .title {
         text-align: center;
         font-size: 24px;
         font-weight: bold;
         position: relative;
-        top: -6px;
+        margin-bottom: 30px;
+        margin-top: 0;
     }
+
     .content-msg {
         padding: 0 15px;
     }
+
     a {
         white-space: nowrap;
         font-weight: bold;
         color: #fff;
     }
+
     .icon-close {
         cursor: pointer;
         font-size: 24px;
-        font-weight: bold;
         position: absolute;
         right: 5px;
         top: 5px;
         text-decoration: none;
     }
+
     .icon-alert {
         color: #fff;
         margin-right: 10px;
