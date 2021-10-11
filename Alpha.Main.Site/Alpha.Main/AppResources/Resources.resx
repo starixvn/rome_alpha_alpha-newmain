@@ -517,9 +517,6 @@
   <data name="lastName" xml:space="preserve">
     <value>Last Name</value>
   </data>
-  <data name="DefaultErrorMessage" xml:space="preserve">
-    <value>Oops... you are here because of a system error, please notify the administrators</value>
-  </data>
   <data name="NoPermissionAccessPage" xml:space="preserve">
     <value>Sorry, You don't have permission to access this page.</value>
   </data>

@@ -454,9 +454,6 @@
   <data name="outstanding" xml:space="preserve">
     <value>未完成交易 </value>
   </data>
-  <data name="DefaultErrorMessage" xml:space="preserve">
-    <value>哎喲..因為系統故障所以您會身在此處，請向管理層聯繫吧</value>
-  </data>
   <data name="NoPermissionAccessPage" xml:space="preserve">
     <value>對不起, 您不被允許進入此網頁.</value>
   </data>
