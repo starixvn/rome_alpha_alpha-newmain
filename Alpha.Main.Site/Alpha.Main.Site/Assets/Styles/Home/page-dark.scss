@@ -250,6 +250,12 @@ html * {
                 .icon-arrow-right {
                     @include transform(rotate(90deg));
                 }
+
+                .txt-item {
+                    .icon {
+                        color: $menu-color-text;
+                    }
+                }
             }
 
             &:hover {
