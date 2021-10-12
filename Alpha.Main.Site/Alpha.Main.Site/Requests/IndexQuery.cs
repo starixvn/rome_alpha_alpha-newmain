@@ -79,6 +79,8 @@ namespace Alpha.Main.Site.Models.Requests
 
         public bool IsIndirectLoggedIn => userSession.IsIndirectLoggedIn;
 
+        public string DarkModeName => userSession.DarkModeName;
+        
         public bool IsProtectedMode { get; }
 
         public bool IsOfferProtectedMode { get; }

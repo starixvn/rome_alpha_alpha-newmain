@@ -21,7 +21,6 @@
 
         public ActionResult SetUpOtp(SetUpOtpQuery query)
         {
-            AssignDarkModeViewData(userSession);
             var customerOtp = mediator.Send(query);
 
             return View(customerOtp);
@@ -35,7 +34,6 @@
                 return Redirect("~/SecurityCode/VerifySecurityCode");
             }
 
-            AssignDarkModeViewData(userSession);
             var verifyOtp = mediator.Send(query);
 
             return View(verifyOtp);
@@ -57,7 +55,6 @@
         [HttpGet]
         public ActionResult VerifyOtpDifferenceDevice()
         {
-            AssignDarkModeViewData(userSession);
             var viewModel = mediator.Send(new VerifyOtpDifferentDeviceQuery(userSession));
 
             return View(viewModel);
@@ -74,7 +71,6 @@
         [HttpGet, AllowProtectedMode]
         public ActionResult ResetOtp(ResetOtpQuery query)
         {
-            AssignDarkModeViewData(userSession);
             if (IsNotProtectedModeInternal())
             {
                 return UnauthorizedAction(HttpContext);

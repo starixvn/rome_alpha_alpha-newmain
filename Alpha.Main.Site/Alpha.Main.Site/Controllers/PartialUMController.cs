@@ -7,10 +7,6 @@
     public class PartialUMController : BaseController
     {
         [AllowProtectedMode]
-        public ActionResult Index()
-        {
-            AssignDarkModeViewData();
-            return View();
-        }
+        public ActionResult Index() => View();
     }
 }

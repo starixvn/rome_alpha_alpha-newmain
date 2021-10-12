@@ -16,6 +16,7 @@
             string embedImage,
             bool showNicknameMenu,
             bool showCreateMemberByQRCode,
+            bool isDarkMode,
             bool isProtectedMode,
             bool isOfferProtectedMode)
         {
@@ -29,6 +30,7 @@
             EmbedImage = embedImage;
             ShowNicknameMenu = showNicknameMenu;
             ShowCreateMemberByQRCode = showCreateMemberByQRCode;
+            IsDarkMode = isDarkMode;
             IsProtectedMode = isProtectedMode;
             IsOfferProtectedMode = isOfferProtectedMode;
         }
@@ -68,6 +70,10 @@
         public bool ShowCreateMemberByQRCode { get; }
 
         public bool IsOfferLiveChat { get; } = AppSettings.IsOfferLiveChat;
+
+        public bool IsOfferDarkMode { get; } = AppSettings.IsMBCSite;
+
+        public bool IsDarkMode { get; }
         
         public bool IsProtectedMode { get; }
 

@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
+    using Alpha.Main.Configurations;
     using Alpha.Web;
     using Sunplus.Agent.Model.Entities;
 
@@ -16,7 +17,10 @@
         [HttpPost]
         public JsonResult Change(bool isDarkMode)
         {
-            userSession.DarkModeName = isDarkMode ? "-dark" : string.Empty;
+            if (AppSettings.IsMBCSite)
+            {
+                userSession.DarkModeName = isDarkMode ? "-dark" : string.Empty;
+            }
 
             return Json(true);
         }

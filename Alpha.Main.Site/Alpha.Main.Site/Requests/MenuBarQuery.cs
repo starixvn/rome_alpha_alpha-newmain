@@ -14,11 +14,13 @@
         public MenuBarQuery(
             byte roleId,
             string userAgent,
-            List<string> devicesUseCustomScrollbar = null)
+            List<string> devicesUseCustomScrollbar = null,
+            string darkModeName = null)
         {
             UserLevel = Enumeration.FromValue<UserLevel>(roleId);
             UserAgent = userAgent;
             this.devicesUseCustomScrollbar = devicesUseCustomScrollbar ?? AppSettings.DevicesUseCustomScrollbar;
+            DarkModeName = darkModeName;
         }
 
         public UserLevel UserLevel { get; }
@@ -35,5 +37,7 @@
         }
 
         public bool IsCookieLess => HttpContext.Current != null ? HttpContext.Current.Session.IsCookieless : false;
+
+        public string DarkModeName { get; }
     }
 }

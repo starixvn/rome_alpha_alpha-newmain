@@ -29,7 +29,6 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet]
         public ActionResult Guidelines()
         {
-            AssignDarkModeViewData(userSession);
             var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
 
             return View($"~/Views/MemberRequests/Guidelines/{userSession.Language.ToLowerInvariant()}/{custLevel.DisplayName}/Index.cshtml");

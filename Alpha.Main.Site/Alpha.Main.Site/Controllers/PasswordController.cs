@@ -26,7 +26,6 @@
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         public ActionResult ChangePassword(ChangePasswordQuery query)
         {
-            AssignDarkModeViewData(userSession);
             var viewModel = this.mediator.Send(query);
             return View(viewModel);
         }
@@ -37,7 +36,6 @@
         {
             if (userSession.IsPasswordExpired || !userSession.IsLogged)
             {
-                AssignDarkModeViewData(userSession);
                 var viewModel = this.mediator.Send(query);
                 return View(viewModel);
             }
@@ -54,7 +52,6 @@
                 return RedirectToAction("Index", "Error");
             }
 
-            AssignDarkModeViewData(userSession);
             var viewModel = this.mediator.Send(query);
             return View(viewModel);
         }
@@ -63,7 +60,6 @@
         [CheckBelongingFilter, AllowProtectedMode]
         public ActionResult ResetSubAccountPassword(ResetSubAccountPasswordQuery query)
         {
-            AssignDarkModeViewData(userSession);
             if (IsNotProtectedModeInternal())
             {
                 return UnauthorizedAction(HttpContext);

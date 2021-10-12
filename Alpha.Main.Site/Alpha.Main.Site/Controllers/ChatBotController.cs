@@ -29,7 +29,6 @@
 
         public async Task<ActionResult> Index()
         {
-            AssignDarkModeViewData(userSession);
             var language = userSession.Language;
             var model = await mediator.SendAsync(new SetUpChatBotQuery(userSession));
 
@@ -147,24 +146,15 @@
 
         [HttpGet]
         public ActionResult ReportExample(string language)
-        {
-            AssignDarkModeViewData(userSession);
-            return View((object)language);
-        }
+            => View((object)language);
 
         [HttpGet]
         public ActionResult NotificationExample(string language)
-        {
-            AssignDarkModeViewData(userSession);
-            return View((object)language);
-        }
+            => View((object)language);
 
         [HttpGet]
         public ActionResult ActionExample(string language)
-        {
-            AssignDarkModeViewData(userSession);
-            return View((object)language);
-        }
+            => View((object)language);
 
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {

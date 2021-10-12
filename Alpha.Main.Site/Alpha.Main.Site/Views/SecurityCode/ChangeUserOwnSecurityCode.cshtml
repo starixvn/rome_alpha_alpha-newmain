@@ -2,12 +2,11 @@
 @{
     ViewBag.Title = @Security.SecurityCode;
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
-    var darkModeName = ViewData["DarkModeName"];
 }
 @section css {
-    @StaticResources.AssetStyles.RenderCommon($"/bundles/common/common{darkModeName}")
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/security/security-{Model.UserLevel}{darkModeName}")
-    @StaticResources.RenderStyles($"~/Assets/bundles/security/security{darkModeName}")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderWithDarkMode($"/bundles/site-main/security/security-{Model.UserLevel}")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/security/security")
 }
 <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" id="passwordNav">

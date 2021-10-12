@@ -1,5 +1,4 @@
 ﻿@model MenuBarViewModel
-@{ var darkModeName = (string)ViewData["DarkModeName"]; }
 <ul class="main-tab">
 	<li id="main-menu-header" class="mainmenu active @(Model.IsAccountInfoVisible ? "withripple" : "disabledViewAccInfo")" data-target-container="mainmenu-container">
 		<a>@Resources.mainMenu</a>
@@ -15,7 +14,7 @@
 		<span class='icon-close icon-close-left-panel' id="closeIconOnMobile"></span>
 	</li>
 </ul>
-<section id="main-menu-tab" class="mainmenu-container mCustomScrollbar @(Model.IsAccountInfoVisible ? string.Empty : "disabledViewAccInfo")" data-mcs-theme="minimal@(string.IsNullOrWhiteSpace(darkModeName) ? "-dark" : string.Empty)" role="tablist" aria-multiselectable="true">
+<section id="main-menu-tab" class="mainmenu-container mCustomScrollbar @(Model.IsAccountInfoVisible ? string.Empty : "disabledViewAccInfo")" data-mcs-theme="minimal@(Model.IsDarkMode ? string.Empty : "-dark")" role="tablist" aria-multiselectable="true">
 	<ul class="list-menu" id="main-menu-items">
 		@foreach (var menuItem in Model.MenuItems)
 		{
@@ -62,7 +61,7 @@
 	</div>
 </section>
 
-@Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommon($"/bundles/common/common{darkModeName}"))
+@Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common"))
 
 @if (Model.IsAccountInfoVisible)
 {

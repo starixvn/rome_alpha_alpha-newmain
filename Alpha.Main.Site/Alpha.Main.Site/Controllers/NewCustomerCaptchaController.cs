@@ -34,10 +34,7 @@
 
         [HttpGet]
         public ActionResult Index(string returnUrl)
-        {
-            AssignDarkModeViewData(userSession);
-            return View(GetCaptchaSetting(returnUrl));
-        }
+            => View(GetCaptchaSetting(returnUrl));
 
         [HttpPost, ActionName("Index"), CaptchaValidation]
         public ActionResult IndexPost(string returnUrl)
@@ -59,7 +56,6 @@
                 WriteLog(errorMessage);
             }
 
-            AssignDarkModeViewData(userSession);
             TempData["ErrorMessage"] = errorMessage;
             return View("~/Views/NewCustomerCaptcha/Index.cshtml", GetCaptchaSetting(returnUrl));
         }

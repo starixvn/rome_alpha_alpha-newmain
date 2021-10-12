@@ -18,15 +18,9 @@
         }
 
         public ActionResult Index()
-        {
-            ViewData["DarkModeName"] = userSession.DarkModeName;
-            return View();
-        }
+            => View((object)userSession.DarkModeName);
 
         public ActionResult Blocked()
-        {
-            ViewData["DarkModeName"] = userSession.DarkModeName;
-            return View();
-        }
+            => View((object)userSession.DarkModeName);
     }
 }

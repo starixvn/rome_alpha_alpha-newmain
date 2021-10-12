@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>保安碼常見問題</title>
-    <link href="/assets/bundles/common/common@(ViewData["DarkModeName"]).min.css" rel="stylesheet" type="text/css" />
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     <link href="~/assets/styles/security/lean-more.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1 class="page-title title-@ViewData["TitleLevel"]">保安碼常見問題</h1>
+    <h1 class="page-title">保安碼常見問題</h1>
     <div class="content">
         <ol class="list-faqs">
             <li>

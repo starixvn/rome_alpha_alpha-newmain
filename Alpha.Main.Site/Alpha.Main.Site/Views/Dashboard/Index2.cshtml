@@ -1,6 +1,5 @@
 ﻿@using Alpha.Main.Site.ViewModels.Dashboard
 @model DashboardViewModel
-@{ var darkModeName = ViewData["DarkModeName"]; }
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +8,10 @@
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
-    @StaticResources.AssetStyles.RenderCommon($"/bundles/common/common{darkModeName}")
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/dashboard/dashboard-{Model.UserLevelName}{darkModeName}")
-    @StaticResources.RenderStyles($"~/assets/bundles/default-home{darkModeName}")
-    @StaticResources.RenderStylesWithMedia(767, $"~/assets/bundles/home-mobile-calculate-07{darkModeName}")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderWithDarkMode($"/bundles/site-main/dashboard/dashboard-{Model.UserLevelName}")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/default-home")
+    @StaticResources.RenderStylesWithMediaDarkMode(767, "~/assets/bundles/home-mobile-calculate-07")
 </head>
 <body>
     <div class="scroll-tabs">

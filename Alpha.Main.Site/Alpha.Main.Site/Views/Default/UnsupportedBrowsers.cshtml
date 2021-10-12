@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/unsupport-browser/{ViewData["TitleLevel"]}{ViewData["DarkModeName"]}")
+    @StaticResources.AssetStyles.RenderWithRoleAndDarkMode("/bundles/site-main/unsupport-browser/")
     @StaticResources.RenderStyles("~/assets/styles/home/pageIElower10")
     <title>Your browser is out of date</title>
 </head>
