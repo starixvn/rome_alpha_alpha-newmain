@@ -150,5 +150,9 @@
   {
     "outputFile": "Assets/styles/otp/otp-dark.css",
     "inputFile": "Assets/styles/otp/otp-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/customizedLiveChat-dark.css",
+    "inputFile": "Assets/styles/home/customizedLiveChat-dark.scss"
   }
 ]
