@@ -190,6 +190,10 @@ body {
             height: calculateScale(52px);
             line-height: calculateScale(52px);
         }
+
+        &.active {
+            background-color: #212223 !important;
+        }
     }
 
     .icon-close-left-panel {
