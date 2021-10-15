@@ -443,7 +443,7 @@
 .list-actions {
     position: absolute;
     left: 0;
-    bottom: 0; 
+    bottom: 0;
     width: 100%;
 
     .btn-play {
@@ -452,19 +452,19 @@
         padding: 0 20px;
         margin: auto;
         line-height: 36px;
-        background-color: #147be4;
+        background-color: #36587D;
         text-align: center;
         color: #fff;
         cursor: pointer;
 
         &:hover {
-            background-color: darken(#147be4, 5%);
+            background-color: darken(#36587D, 5%);
         }
 
         &.disabled {
             opacity: .4;
         }
-    }    
+    }
 
     [class^=icon] {
         position: relative;
