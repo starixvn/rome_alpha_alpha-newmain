@@ -8,17 +8,17 @@
 }
 
 .filter {
-   padding-top: 0;
+    padding-top: 0;
 
-   .chatbot-name {
-       color: #54B948;
-       font-weight: bold;
-       font-size: $font-size + 1;
-   }
+    .chatbot-name {
+        color: #54B948;
+        font-weight: bold;
+        font-size: $font-size + 1;
+    }
 
-   .form-group.only-text {
-       margin-top: 4px;
-   }
+    .form-group.only-text {
+        margin-top: 4px;
+    }
 }
 
 @mixin dropdown-style {
@@ -28,14 +28,18 @@
     padding: 4px;
     border: 1px solid $border-color;
 
-    &:hover { cursor: pointer; }
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .language {
     @include dropdown-style;
     width: 160px;
 
-    .dropdown-toggle { padding-left: 12px; }
+    .dropdown-toggle {
+        padding-left: 12px;
+    }
 
     .icon-flag {
         margin-right: 8px;
@@ -43,7 +47,9 @@
         top: 1px;
     }
 
-    .list-language {  width: 160px; }
+    .list-language {
+        width: 160px;
+    }
 }
 
 .reload-time {
@@ -63,7 +69,7 @@
     width: 100%;
 
     @media (min-device-width: $screen-device-lower768) {
-       width: 420px;
+        width: 420px;
     }
 
     thead th, tbody td {
@@ -162,7 +168,7 @@
     position: relative;
     padding-left: 23px;
     color: #038dee;
-    font-weight: bold;    
+    font-weight: bold;
     text-transform: capitalize;
     cursor: pointer;
 
@@ -172,18 +178,17 @@
 
     [class^='icon'] {
         position: absolute;
-               
     }
 
     .icon-play-button {
         top: 0;
-        left: 1px; 
+        left: 1px;
         font-size: 15px;
     }
 
     .icon-close-circle {
         top: -1px;
-        left: 0; 
+        left: 0;
         font-size: 18px;
     }
 
@@ -195,12 +200,13 @@
 .data-input {
     @include border-radius(0 0 2px 2px);
     border-width: 0 1px 1px 1px;
-    background-color: #fff;
+    background-color: #383838;
     color: #4b4b4b;
 
     [class^='icon'] {
         position: absolute;
         top: 12px;
+        color: #EDEDED;
     }
 
     .icon-chatbot-plus {
@@ -227,12 +233,12 @@
         top: 10px;
         width: 226px;
         line-height: 28px;
-        border: 1px solid #d8d8d8;
         padding-left: 12px;
-        background-color: #fff;
-        color: #666;
+        color: #919191;
         opacity: 1;
         cursor: default;
+        background: #1F1F1F;
+        border: 1px solid #3E3F41;
     }
 }
 
@@ -242,7 +248,7 @@
     position: absolute;
     left: 0;
     width: 100%;
-    border-color: #c8c8c8;
+    border-color: #3E3F41;
     border-style: solid;
 }
 
@@ -315,8 +321,9 @@
         width: 218px;
         line-height: 18px;
         margin-left: 58px;
-        background-color: #fff;
-        color: #333;
+        background-color: #37393B;
+        color: #EDEDED;
+        font-weight: normal;
 
         &:after {
             content: '';
@@ -332,7 +339,7 @@
         &:before {
             left: -7px;
             border-width: 31px 20px 0 0;
-            border-color: transparent #fff #fff transparent;
+            border-color: transparent #37393B #37393B transparent;
             transform: rotateX(155deg);
         }
     }
@@ -340,14 +347,14 @@
     .user-input {
         @extend %msg;
         float: right;
-        background-color: #a7e879;
+        background-color: #5A7D41;
         margin-right: 10px;
-        color: #000;
+        color: #FFFFFF;
 
         &:before {
             right: -7px;
             border-width: 31px 0 0 20px;
-            border-color: transparent #a7e879;
+            border-color: transparent #5A7D41;
             transform: rotateX(184deg);
         }
     }
@@ -402,26 +409,27 @@
             height: 245px;
             max-height: 245px;
         }
-    }   
-       
+    }
 }
 
 .chatbot-header {
     @include border-radius(4px 4px 0 0);
     top: 0;
     height: 40px;
-    background-color: #4b4b4b;
+    background-color: #383838;
     border-width: 1px 1px 0 1px;
     color: #fff;
     text-align: center;
-    [class^='icon'] {        
+
+    [class^='icon'] {
         position: absolute;
         top: 10px;
         font-size: 16px;
+        color: #ededed;
     }
 
     .icon-chatbot-back {
-        left: 16px;        
+        left: 16px;
     }
 
     .icon-chatbot-call {
@@ -436,6 +444,7 @@
         font-size: 16px;
         font-weight: bold;
         line-height: 40px;
+        color: #ededed;
     }
 }
 
@@ -484,4 +493,3 @@
         color: $link-hover-color;
     }
 }
-
