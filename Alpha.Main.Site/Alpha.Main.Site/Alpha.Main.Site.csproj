@@ -1449,6 +1449,7 @@
     <Content Include="Assets\styles\partial-um\partial-um.scss" />
     <Content Include="Assets\styles\home\customizedLiveChat.scss" />
     <Content Include="Assets\styles\protection-code\protection.scss" />
+	<Content Include="Assets\styles\home\customizedLiveChat-dark.scss" />
     <Content Include="Assets\styles\home\_variables-dark.scss" />
     <Content Include="Assets\styles\home\page-dark.scss" />
     <Content Include="Assets\styles\home\popup-announcement-dark.scss" />

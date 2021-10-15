@@ -59,11 +59,16 @@
 
     .lp_confirm_button,
     .lp_submit_button {
-        background-color: #555E80 !important;
+        background: linear-gradient(#476474, #5E7B8B) !important;
+        color: #ffffff !important;
 
         &:hover {
-            background-color: #555E80 !important;
+            background: linear-gradient(#476474, #5E7B8B) !important;
         }
+    }
+
+    .lp_cancel_button:hover {
+        color: #212223 !important;
     }
 
     .lp_location_bottom {
@@ -74,5 +79,36 @@
     .lp_bottom_area {
         background-color: #1A1B1C !important;
         border-top: 1px solid #424242 !important;
+    }
+    // screen 2 live chat
+    .lp_survey_container {
+        margin: 0 !important;
+        background-color: #212223 !important;
+    }
+
+    .lp_survey_view_container {
+        background-color: #212223 !important;
+
+        * {
+            color: #EDEDED !important;
+        }
+    }
+
+    .lp_survey_area {
+        background-color: #212223 !important;
+
+        .lp_survey_bottom_spacer {
+            background-color: #212223 !important;
+            box-shadow: none !important;
+        }
+
+        .lp_question_label {
+            color: #EDEDED !important;
+        }
+
+        .lp_csat_rater_star {
+            color: #6E90A3 !important;
+            outline: none !important;
+        }
     }
 }
