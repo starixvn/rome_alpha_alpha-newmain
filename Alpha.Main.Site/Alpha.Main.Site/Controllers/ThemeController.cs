@@ -1,28 +1,21 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
-    using Alpha.Main.Configurations;
+    using Alpha.Main.Site.Requests.Theme;
     using Alpha.Web;
-    using Sunplus.Agent.Model.Entities;
+    using MediatR;
 
     public class ThemeController : BaseController
     {
-        private readonly IUserSession userSession;
+        private readonly IMediator mediator;
 
-        public ThemeController(IUserSession userSession)
+        public ThemeController(IMediator mediator)
         {
-            this.userSession = userSession;
+            this.mediator = mediator;
         }
 
         [HttpPost]
-        public JsonResult Change(bool isDarkMode)
-        {
-            if (AppSettings.IsMBCSite)
-            {
-                userSession.DarkModeName = isDarkMode ? "-dark" : string.Empty;
-            }
-
-            return Json(true);
-        }
+        public JsonResult Change(ChangeThemeQuery query)
+            => Json(mediator.Send(query));
     }
 }

@@ -1449,7 +1449,7 @@
     <Content Include="Assets\styles\partial-um\partial-um.scss" />
     <Content Include="Assets\styles\home\customizedLiveChat.scss" />
     <Content Include="Assets\styles\protection-code\protection.scss" />
-	<Content Include="Assets\styles\home\customizedLiveChat-dark.scss" />
+    <Content Include="Assets\styles\home\customizedLiveChat-dark.scss" />
     <Content Include="Assets\styles\home\_variables-dark.scss" />
     <Content Include="Assets\styles\home\page-dark.scss" />
     <Content Include="Assets\styles\home\popup-announcement-dark.scss" />
@@ -1600,6 +1600,7 @@
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\PasswordHandler.cs" />
     <Compile Include="Handlers\SecurityCodeHandler.cs" />
+    <Compile Include="Handlers\ThemeHandler.cs" />
     <Compile Include="Handlers\UMMessageHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\HmacAuthenticator.cs" />
@@ -1660,6 +1661,7 @@
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\UpdateSecurityCodeFunctionCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
+    <Compile Include="Requests\Theme\ChangeThemeQuery.cs" />
     <Compile Include="Requests\UMMessage\UMMessageQuery.cs" />
     <Compile Include="Requests\UserMessages\HotMessagesQuery.cs" />
     <Compile Include="ViewModels\Banner\BannerViewModel.cs" />

@@ -58,4 +58,8 @@
     <Setting Key="Age_CustomerSelProtectionCode" SpName="Age_CustomerSelProtectionCode" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
     <Setting Key="Age_CustomerUpdProtectionCode" SpName="Age_CustomerUpdProtectionCode" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
   </Function>
+  
+  <Function Name="Write Log Change Theme Light/Dark">
+    <Setting Key="Age_SwitchDarkMode" SpName="Age_SwitchDarkMode" DbName="DBCust.CustDB.BODBDownlineNet" Plain="0" />
+  </Function>
 </Functions>

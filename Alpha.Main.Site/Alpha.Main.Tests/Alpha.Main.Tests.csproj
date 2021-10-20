@@ -351,6 +351,7 @@
     <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteriaTests.cs" />
+    <Compile Include="Criteria\Theme\LogChangeThemeCriteriaTests.cs" />
     <Compile Include="Criteria\UMMessage\GetUMMessageCriteriaTests.cs" />
     <Compile Include="DataAccesses\PasswordDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccessImplTests.cs" />
@@ -371,6 +372,7 @@
     <Compile Include="Services\PasswordServiceImplTests.cs" />
     <Compile Include="Services\ProtectionCodeServiceImplTests.cs" />
     <Compile Include="Services\SecurityCodeServiceImplTest.cs" />
+    <Compile Include="Services\ThemeServiceImplTests.cs" />
     <Compile Include="Services\UMMessageServiceImplTests.cs" />
     <Compile Include="TestData\Helper\ConstructorQuery\ParametersAmountConstructorQuery.cs" />
     <Compile Include="TestData\Helper\FakeDataHelper.cs" />

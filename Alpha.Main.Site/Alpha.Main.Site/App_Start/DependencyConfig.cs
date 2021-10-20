@@ -146,6 +146,7 @@
             container.RegisterPerWebRequest<UMMessageService, UMMessageServiceImpl>();
             container.RegisterPerWebRequest<ISessionService, SessionService>();
             container.RegisterPerWebRequest<ProtectionCodeService, ProtectionCodeServiceImpl>();
+            container.RegisterPerWebRequest<ThemeService, ThemeServiceImpl>();
         }
 
         private static void RegisterDataAccesses(Container container)
