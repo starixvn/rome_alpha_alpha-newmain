@@ -390,5 +390,11 @@
     "inputFiles": [
       "Assets/styles/error/error-dark.css"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/protection-code/protection-dark.css",
+    "inputFiles": [
+      "Assets/styles/protection-code/protection-dark.css"
+    ]
   }
 ]

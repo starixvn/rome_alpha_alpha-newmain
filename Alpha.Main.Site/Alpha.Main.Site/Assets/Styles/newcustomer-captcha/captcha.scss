@@ -12,7 +12,7 @@ $textbox-font-size: 16px;
 
 .block {
     display: table;
-    padding: 28px 40px;
+    padding: 20px;
     width: $block-width;
 
     .captcha-code img {
@@ -77,17 +77,9 @@ $textbox-font-size: 16px;
 
 .captcha-row {
     margin: 5px 0;
-
-    input {
-        margin: 11px 0;
-    }
 }
 
 .captcha-row.row-hint {
-    display: flex;
-    align-items: center;
-    margin-bottom: 18px !important;
-
     .captcha-icon-check-circle {
         margin-right: 6px;
     }

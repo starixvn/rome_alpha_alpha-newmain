@@ -76,6 +76,25 @@
                 && c.IP == param.IP));
         }
 
+        [Test]
+        public async Task UpdateAsync_Successfully_ReturnCorrectMessage()
+        {
+            // Arrange
+            var protectionCode = "qwerty";
+            var rawProtectionCode = "123457";
+            var encodedProtectionCode = "zxcvbn";
+            var param = new UpdateProtectionCodeParam(protectionCode, "1234", 1, 0, "E", "::1");
+            aes.Decrypt(param.ProtectionCode, param.HashKey).Returns(rawProtectionCode);
+            encryptor.CfsEnCode(rawProtectionCode).Returns(encodedProtectionCode);
+            dynamicRepository.ExecuteAsync(Arg.Any<ICriteria>()).Returns(Task.CompletedTask);
+
+            // Act
+            var result = await protectionCodeService.UpdateAsync(param);
+
+            // Assert
+            Assert.AreEqual("Your Protection Code has been updated successfully.", result.Message);
+        }
+
         [TestCase("    ")]
         [TestCase("")]
         [TestCase(null)]

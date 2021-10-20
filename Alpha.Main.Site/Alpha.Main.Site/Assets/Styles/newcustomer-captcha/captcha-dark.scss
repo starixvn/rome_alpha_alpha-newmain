@@ -18,7 +18,7 @@ body {
 
 .block {
     display: table;
-    padding: 28px 40px;
+    padding: 20px;
     width: $block-width;
     background: #1C1C1C;
 
@@ -86,15 +86,11 @@ body {
 .captcha-row {
     margin: 5px 0;
     input {
-        margin: 11px 0;
         background: #313131 !important;
         border: 1px solid #474747 !important;
     }
 }
 .captcha-row.row-hint {
-    display: flex;
-    align-items: center;
-    margin-bottom: 18px !important;
     .captcha-icon-check-circle {
         margin-right: 6px;
     }

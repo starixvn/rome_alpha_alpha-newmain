@@ -26,5 +26,7 @@
         public string IP => userSession.UserLoginIp;
 
         public string Location { get; } = "HeaderMenu";
+
+        public bool IsInternal => userSession.IsInternal;
     }
 }

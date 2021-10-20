@@ -23,12 +23,15 @@
             {
                 userSession.DarkModeName = message.IsDarkMode ? "-dark" : string.Empty;
 
-                themeService.WriteLog(
-                    message.CustId,
-                    message.SubAccId,
-                    message.IsDarkMode,
-                    message.IP,
-                    message.Location);
+                if (!message.IsInternal)
+                {
+                    themeService.WriteLog(
+                        message.CustId,
+                        message.SubAccId,
+                        message.IsDarkMode,
+                        message.IP,
+                        message.Location);
+                }
 
                 return true;
             }

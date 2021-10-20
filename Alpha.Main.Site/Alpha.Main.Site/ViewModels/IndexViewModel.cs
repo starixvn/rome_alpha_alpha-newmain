@@ -103,7 +103,7 @@
                 profilePicture.ImageBase64String,
                 message.ShowNicknameMenu,
                 message.ShowCreateMemberByQRCode,
-                !string.IsNullOrWhiteSpace(message.DarkModeName));
+                !string.IsNullOrWhiteSpace(message.DarkModeName),
                 IsProtectedMode,
                 message.IsOfferProtectedMode);
 

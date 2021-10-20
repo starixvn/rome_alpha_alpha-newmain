@@ -154,5 +154,9 @@
   {
     "outputFile": "Assets/styles/home/customizedLiveChat-dark.css",
     "inputFile": "Assets/styles/home/customizedLiveChat-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/protection-code/protection-dark.css",
+    "inputFile": "Assets/styles/protection-code/protection-dark.scss"
   }
 ]
