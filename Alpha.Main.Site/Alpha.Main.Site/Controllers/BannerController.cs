@@ -3,7 +3,9 @@
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using Alpha.Main.Site.Requests.Banner;
+    using Alpha.Main.Site.ViewModels.Banner;
     using Alpha.Web;
+    using Alpha.Web.Filters;
     using MediatR;
 
     public class BannerController : BaseController
@@ -15,7 +17,14 @@
             this.mediator = mediator;
         }
 
+        [AllowProtectedMode]
         public async Task<ActionResult> Get(BannerQuery request)
-            => Json(await mediator.SendAsync(request), JsonRequestBehavior.AllowGet);
+        {
+            var viewModel = request.IsProtectedMode
+                ? new BannerViewModel()
+                : await mediator.SendAsync(request);
+
+            return Json(viewModel, JsonRequestBehavior.AllowGet);
+        }
     }
 }

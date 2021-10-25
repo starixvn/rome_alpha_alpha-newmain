@@ -78,5 +78,7 @@ namespace Alpha.Main.Site.Models.Requests.CustomerProfile
                 return SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
             }
         }
+
+        public bool IsProtectedMode => userSession.IsProtectedMode;
     }
 }

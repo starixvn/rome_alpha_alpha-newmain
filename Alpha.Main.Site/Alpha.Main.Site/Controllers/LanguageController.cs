@@ -4,6 +4,7 @@ namespace Alpha.Main.Site.Controllers
 {
     using System;
     using System.Web.Mvc;
+    using Alpha.Web.Filters;
     using Configurations;
     using MediatR;
     using Models.Requests;
@@ -28,6 +29,7 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [ChildActionOnly]
+        [AllowProtectedMode]
         public ActionResult List()
         {
             var viewModel = mediator.Send(new AllLanguagesQuery(userSession.Language, AppSettings.DisabledVietnamese));
@@ -36,6 +38,7 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [HttpPost]
+        [AllowProtectedMode]
         public JsonResult Change(string languageCode)
         {
             var viewModel = mediator.Send(new ChangeLanguageCommand(userSession, languageCode, AppSettings.DisabledVietnamese));

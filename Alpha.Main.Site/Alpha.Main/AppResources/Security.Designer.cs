@@ -342,6 +342,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account has just been forced to logout. Please contact your upline for further assistance..
+        /// </summary>
+        public static string KickoutMessageByProtectedMode {
+            get {
+                return ResourceManager.GetString("KickoutMessageByProtectedMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string lblBack {

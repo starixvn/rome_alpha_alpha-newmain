@@ -428,6 +428,9 @@
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>由于安全检测多次失败，您的帐户已被锁并强迫登出。请联系您的上线开启账户。</value>
   </data>
+  <data name="KickoutMessageByProtectedMode" xml:space="preserve">
+    <value>您的账户刚刚被强制注销。 请联系您的上线以获得进一步协助。</value>
+  </data>
   <data name="SwitchLabelOff" xml:space="preserve">
     <value>关闭</value>
   </data>

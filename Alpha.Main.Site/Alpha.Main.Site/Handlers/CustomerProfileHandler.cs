@@ -47,10 +47,11 @@
                 NickName = BuildNickName(message),
                 IntroduceNickNameTooltipCookieName = Cryptography.CfsEnCode($"ToolTip_{message.CustId}"),
                 IsEnableOtp = message.IsEnabledOtp,
-                IsHideNicknameLink = nicknameChecker.IsOfferForceLoginAndOverDueDate,
+                IsHideNicknameLink = nicknameChecker.IsOfferForceLoginAndOverDueDate || message.IsProtectedMode,
                 SubAccountTooltip = message.IsSubAcc ? $"{Resources.subAcc} {HttpUtility.HtmlEncode(message.SubUserName)}" : string.Empty,
                 IsShowProfilePictureTooltip = !profile.Modified.HasValue,
-        };
+                IsProtectedMode = message.IsProtectedMode
+            };
 
             return viewModel;
         }

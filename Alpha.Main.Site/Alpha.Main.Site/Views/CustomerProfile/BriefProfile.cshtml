@@ -10,20 +10,27 @@
      data-is-default-avatar="@(Model.IsDefaultAvatar.ToString().ToLower())"
      data-is-show-profile-picture-tooltip="@(Model.IsShowProfilePictureTooltip.ToString().ToLower())"
      data-nick-name="@(Model.NickName)">
-
-    <a href="@(viewProfileUrl)" target="@mainFrameName" class="profile-avatar">
-        <img id="logoProfileImg" width="50" height="50"
-             profile-image-id="@Model.ProfileImageId"
-             default-avatar="@Model.IsDefaultAvatar.ToString().ToLower()"
-             src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)'
-             alt="" title="@Resources.ProfileClickTootip" />
-    </a>
-
+    @if (Model.IsProtectedMode)
+    {
+        <span class="profile-avatar">
+            <img src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)' />
+        </span>
+    }
+    else
+    {
+        <a href="@(viewProfileUrl)" target="@mainFrameName" class="profile-avatar">
+            <img id="logoProfileImg" width="50" height="50"
+                 profile-image-id="@Model.ProfileImageId"
+                 default-avatar="@Model.IsDefaultAvatar.ToString().ToLower()"
+                 src='@(Model.IsDefaultAvatar ? Url.Content("~/assets/images/icon_user_default.png") : Model.EmbedImage)'
+                 alt="" title="@Resources.ProfileClickTootip" />
+        </a>
+    }
     <div class="userinfo">
         <span class="userName">@Model.Username</span>
         @if (Sunplus.Agent.Model.Entities.UserSession.Current.IsIndirectLoggedIn)
         {
-        <span class="icon-account-circle">&nbsp;</span>
+            <span class="icon-account-circle">&nbsp;</span>
         }
         <br />
         @if (Model.IsHideNicknameLink)
@@ -48,7 +55,14 @@
                 }
             </div>
         }
-        <a class="otp" href="@(MicroSites.MainUrl("~/otp/SetUpOtp"))" target="@mainFrameName">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</a>
+        @if (Model.IsProtectedMode)
+        {
+            <span class="otp">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</span>
+        }
+        else
+        {
+            <a class="otp" href="@MicroSites.MainUrl("~/otp/SetUpOtp")" target="@mainFrameName">OTP: @(Model.IsEnableOtp ? Resources.Enabled : Resources.Disabled)</a>
+        }
     </div>
 
     @Html.HiddenFor(m => m.Username)
@@ -64,12 +78,14 @@
             </div>
         </div>
     }
-
-    <div id="profileTooltip" style="display:none;">
-        @Html.Raw(@Resources.ProfileLoginTip)
-        <a class="change-picture-link" href="@(viewProfileUrl)" target="main" id="changePictureLink">
-            @Resources.clickHere
-        </a>
-        @Resources.ProfileLoginTip1
-    </div>
+    if (!Model.IsProtectedMode)
+    {
+        <div id="profileTooltip" style="display:none;">
+            @Html.Raw(@Resources.ProfileLoginTip)
+            <a class="change-picture-link" href="@(viewProfileUrl)" target="@mainFrameName" id="changePictureLink">
+                @Resources.clickHere
+            </a>
+            @Resources.ProfileLoginTip1
+        </div>
+    }
 }

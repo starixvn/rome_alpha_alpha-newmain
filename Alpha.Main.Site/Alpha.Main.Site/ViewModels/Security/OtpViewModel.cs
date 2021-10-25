@@ -9,5 +9,7 @@
         public bool IsAlreadySetup { get; set; }
 
         public bool IsShowNicknameLink { get; set; }
+
+        public bool IsOfferProtectedMode { get; set; }
     }
 }

@@ -7,18 +7,16 @@
     using Requests.Otp;
     using SecurityCode.Web;
     using Sunplus.Agent.Model.Entities;
-    using Web;
     using Web.Filters;
 
-    public class OtpController : BaseController
+    public class OtpController : ManualCheckProtectedModeController
     {
         private readonly IMediator mediator;
-        private readonly IUserSession userSession;
 
         public OtpController(IMediator mediator, IUserSession userSession)
+            : base(userSession)
         {
             this.mediator = mediator;
-            this.userSession = userSession;
         }
 
         public ActionResult SetUpOtp(SetUpOtpQuery query)
@@ -70,17 +68,27 @@
             return Json(result);
         }
 
-        [HttpGet]
+        [HttpGet, AllowProtectedMode]
         public ActionResult ResetOtp(ResetOtpQuery query)
         {
+            if (IsNotProtectedModeInternal())
+            {
+                return UnauthorizedAction(HttpContext);
+            }
+
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
         }
 
-        [HttpPost, ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, AllowProtectedMode]
         public ActionResult ResetOtp(ResetOtpCommand command)
         {
+            if (IsNotProtectedModeInternal())
+            {
+                return UnauthorizedAction(HttpContext);
+            }
+
             var result = mediator.Send(command);
 
             return View(result);

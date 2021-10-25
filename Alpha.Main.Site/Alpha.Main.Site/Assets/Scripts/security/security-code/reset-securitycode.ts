@@ -82,9 +82,10 @@ var resetsecuritycode = {
 
 		return '';
 	},
-	resetInputValue: function () {
-		$("#txtSecCode").empty();
-		$("#txtConfirmSecCode").empty();
+    resetInputValue: function () {
+        securityHelper.hideHintSC();
+        securityHelper.removeValidationIcon($("#txtSecCode"));
+        securityHelper.removeValidationIcon($("#txtConfirmSecCode"));
 	}
 }
 

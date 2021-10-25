@@ -4,6 +4,7 @@ namespace Alpha.Main.Site.Controllers
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Web.Filters;
     using MediatR;
     using Models.Requests.CustomerProfile;
     using Sunplus.Agent.Model.Entities;
@@ -21,6 +22,7 @@ namespace Alpha.Main.Site.Controllers
             this.mediator = mediator;
         }
 
+        [AllowProtectedMode]
         public ActionResult BriefProfile()
         {
             var query = new BriefProfileQuery(userSession);

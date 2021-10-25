@@ -161,7 +161,7 @@ Vui lòng thiết lập mã bảo vệ theo biểu mẫu sau.</value>
     <value>Thay đổi Mã bảo mật</value>
   </data>
   <data name="Reset" xml:space="preserve">
-    <value>Reset</value>
+    <value>Nhập lại</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>Xác nhận</value>
@@ -431,6 +431,9 @@ Lưu ý:  Mật khẩu có phân biệt chữ hoa và chữ thường.</value>
   </data>
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>Tài khoản của bạn bị khóa và đăng xuất do nhiều lần xác thực không thành công. Vui lòng liên hệ cấp trên của bạn để mở khóa.</value>
+  </data>
+  <data name="KickoutMessageByProtectedMode" xml:space="preserve">
+    <value>Tài khoản của bạn vừa bị buộc đăng xuất. Vui lòng liên hệ với cấp trên để được hỗ trợ.</value>
   </data>
   <data name="SwitchLabelOff" xml:space="preserve">
     <value>Đóng</value>

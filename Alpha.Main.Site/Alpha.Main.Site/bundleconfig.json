@@ -295,5 +295,20 @@
     "inputFiles": [
       "Assets/scripts/home/le-mtagconfig.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/bundles/protection-code/protection.css",
+    "inputFiles": [
+      "Assets/styles/protection-code/protection.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/protection-code/protection.js",
+    "inputFiles": [
+      "Assets/scripts/aes.js",
+      "Assets/scripts/core.js",
+      "Assets/scripts/security/security-helper.js",
+      "Assets/scripts/protection-code/protection.js"
+    ]
   }
 ]

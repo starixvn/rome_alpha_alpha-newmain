@@ -105,9 +105,9 @@ var changeUserOwnSecurityCode = {
         return '';
     },
     resetOriginalInputStatus: function () {
-        $("#txtOldSecCode").empty();
-        $("#txtSecCode").empty();
-        $("#txtConfirmSecCode").empty();
+        securityHelper.hideHintSC();
+        securityHelper.removeValidationIcon($("#txtSecCode"));
+        securityHelper.removeValidationIcon($("#txtConfirmSecCode"));
     },
     gotoPasswordPage: function () {
         window.location.href = $("#mainRootPath").val() + 'Password/ChangePassword';

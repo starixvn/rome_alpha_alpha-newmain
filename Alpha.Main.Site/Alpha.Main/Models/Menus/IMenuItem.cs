@@ -16,6 +16,10 @@
 
         bool ByPassAuthorization { get; set; }
 
+        bool ByPassProtectedMode { get; set; }
+
+        bool ByPassProtectedModeInternal { get; set; }
+
         bool IsBeta { get; set; }
 
         bool IsNew { get; set; }

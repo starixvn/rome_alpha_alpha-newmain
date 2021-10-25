@@ -433,6 +433,9 @@ Notes: your password is cAsE sEnSiTiVe.</value>
   <data name="lblConfirmLocked" xml:space="preserve">
     <value>Your account is locked and forced to log out due to multiple failed security checks. Please contact your upline to unlock.</value>
   </data>
+  <data name="KickoutMessageByProtectedMode" xml:space="preserve">
+    <value>Your account has just been forced to logout. Please contact your upline for further assistance.</value>
+  </data>
   <data name="SwitchLabelOff" xml:space="preserve">
     <value>OFF</value>
   </data>

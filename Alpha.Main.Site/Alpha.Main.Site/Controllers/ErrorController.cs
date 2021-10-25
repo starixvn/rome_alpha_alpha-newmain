@@ -2,8 +2,10 @@
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Web.Filters;
 
     [AllowAnonymous]
+    [AllowProtectedMode]
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class ErrorController : Controller
     {

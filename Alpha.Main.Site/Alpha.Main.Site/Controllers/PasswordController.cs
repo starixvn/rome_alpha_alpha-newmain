@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Main.Site.Controllers
 {
-    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Web.Mvc;
     using System.Web.SessionState;
@@ -10,19 +9,17 @@
     using MediatR;
     using Requests.Password;
     using Sunplus.Agent.Model.Entities;
-    using Web;
     using Web.Filters;
 
     [SessionState(SessionStateBehavior.Default)]
-    public class PasswordController : BaseController
+    public class PasswordController : ManualCheckProtectedModeController
     {
         private readonly IMediator mediator;
-        private readonly IUserSession userSession;
 
         public PasswordController(IMediator mediator, IUserSession userSession)
+            : base(userSession)
         {
             this.mediator = mediator;
-            this.userSession = userSession;
         }
 
         // GET: Password
@@ -34,6 +31,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
+        [AllowProtectedMode]
         public ActionResult ForceChangePassword(ForceChangePasswordQuery query)
         {
             if (userSession.IsPasswordExpired || !userSession.IsLogged)
@@ -59,9 +57,14 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [CheckBelongingFilter]
+        [CheckBelongingFilter, AllowProtectedMode]
         public ActionResult ResetSubAccountPassword(ResetSubAccountPasswordQuery query)
         {
+            if (IsNotProtectedModeInternal())
+            {
+                return UnauthorizedAction(HttpContext);
+            }
+
             var viewModel = this.mediator.Send(query);
             return View(viewModel);
         }
@@ -75,7 +78,7 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpPost, AntiXsrfFilter]
+        [HttpPost, AntiXsrfFilter, AllowProtectedMode]
         public ActionResult ForceChangePassword(ChangePasswordCommand command)
         {
             if (userSession.IsPasswordExpired || !userSession.IsLogged)
@@ -111,9 +114,14 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpPost, AntiXsrfFilter, CheckBelongingFilter]
+        [HttpPost, AntiXsrfFilter, CheckBelongingFilter, AllowProtectedMode]
         public ActionResult ResetSubAccountPassword(ResetSubAccountPasswordCommand command)
         {
+            if (IsNotProtectedModeInternal())
+            {
+                return UnauthorizedAjaxAction(HttpContext, ControllerContext);
+            }
+
             var result = this.mediator.Send(command);
             return Json(result);
         }

@@ -12,23 +12,22 @@
     using Models.Requests;
     using SecurityCode.Web;
     using Sunplus.Agent.Model.Entities;
-    using Web;
     using Web.Filters;
 
     [SessionState(SessionStateBehavior.Default)]
-    public class SecurityCodeController : BaseController
+    public class SecurityCodeController : ManualCheckProtectedModeController
     {
         private readonly IMediator mediator;
-        private readonly IUserSession userSession;
 
         public SecurityCodeController(IMediator mediator, IUserSession userSession)
+            : base(userSession)
         {
             this.mediator = mediator;
-            this.userSession = userSession;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpGet]
+        [AllowProtectedMode]
         public ActionResult ChangeSecurityCodeFirstLogin(ForceChangeSecurityCodeQuery query)
         {
             if (!string.IsNullOrWhiteSpace(userSession.SecurityCode))
@@ -44,6 +43,7 @@
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost]
         [AntiXsrfFilter]
+        [AllowProtectedMode]
         public JsonResult ChangeSecurityCodeFirstLogin(ChangeSecurityCodeFirstLoginCommand query)
         {
             if (!string.IsNullOrWhiteSpace(userSession.SecurityCode))
@@ -105,9 +105,14 @@
         }
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
-        [HttpGet, CheckBelongingFilter]
+        [HttpGet, CheckBelongingFilter, AllowProtectedMode]
         public ActionResult ResetSecurityCode(SecurityCodeQuery query)
         {
+            if (IsNotProtectedModeInternal())
+            {
+                return UnauthorizedAction(HttpContext);
+            }
+
             var viewModel = mediator.Send(query);
 
             return View(viewModel);
@@ -115,9 +120,14 @@
 
         [SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters", Justification = "Reviewed!")]
         [HttpPost]
-        [AntiXsrfFilter, CheckBelongingFilter]
-        public JsonResult ResetSecurityCode(ResetSecurityCodeCommand query)
+        [AntiXsrfFilter, CheckBelongingFilter, AllowProtectedMode]
+        public ActionResult ResetSecurityCode(ResetSecurityCodeCommand query)
         {
+            if (IsNotProtectedModeInternal())
+            {
+                return UnauthorizedAjaxAction(HttpContext, ControllerContext);
+            }
+
             var viewModel = mediator.Send(query);
 
             return Json(viewModel);
@@ -152,7 +162,7 @@
             return Json(viewModel);
         }
 
-        [ChildActionOnly]
+        [ChildActionOnly, AllowProtectedMode]
         public ActionResult Languages()
         {
             var viewModel = mediator.Send(new AllLanguagesQuery(userSession.Language, AppSettings.DisabledVietnamese));

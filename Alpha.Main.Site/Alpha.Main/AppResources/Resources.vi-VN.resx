@@ -651,4 +651,43 @@
   <data name="LiveMessage" xml:space="preserve">
     <value>Live Message</value>
   </data>
+  <data name="NewProtectionCode" xml:space="preserve">
+    <value>Mã Bảo Vệ Mới</value>
+  </data>
+  <data name="ProtectionCode" xml:space="preserve">
+    <value>Mã Bảo Vệ</value>
+  </data>
+  <data name="ConfirmProtectionCode" xml:space="preserve">
+    <value>Xác Nhận Mã Bảo Vệ Mới</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Tạo Mã Bảo Vệ</value>
+  </data>
+  <data name="NotMatchedConfirmProtectionCode" xml:space="preserve">
+    <value>Mã bảo vệ không khớp.</value>
+  </data>
+  <data name="ProtectionCodeRule" xml:space="preserve">
+    <value>Mã Bảo Vệ phải có ít nhất 6 ký tự, CÓ THỂ giống với Mã Bảo Mật nhưng KHÔNG THỂ giống với Mật Khẩu.</value>
+  </data>
+  <data name="RequiredNewProtectionCode" xml:space="preserve">
+    <value>Mã Bảo Vệ Mới là bắt buộc.</value>
+  </data>
+  <data name="ShowProtectionCode" xml:space="preserve">
+    <value>Hiện Mã Bảo Vệ</value>
+  </data>
+  <data name="MinLengthNewProtectionCodeError" xml:space="preserve">
+    <value>Mã bảo vệ phải có ít nhất 6 ký tự.</value>
+  </data>
+  <data name="RequiredConfirmProtectionCode" xml:space="preserve">
+    <value>Xác Nhận Mã Bảo Vệ Mới là bắt buộc</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Cập nhật</value>
+  </data>
+  <data name="UpdateProtectionCodeSuccessfully" xml:space="preserve">
+    <value>Mã Bảo Vệ đã được cập nhật thành công.</value>
+  </data>
+  <data name="ContainsSpaceOrUnicodeCharacterError" xml:space="preserve">
+    <value>Mã bảo vệ không được chứa bất kỳ ký tự Unicode hoặc dấu cách nào.</value>
+  </data>
 </root>

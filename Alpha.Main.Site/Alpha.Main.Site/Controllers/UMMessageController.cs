@@ -7,6 +7,7 @@
     using Alpha.Main.Models.UMMessage;
     using Alpha.Main.Site.Requests.UMMessage;
     using Alpha.Web;
+    using Alpha.Web.Filters;
     using MediatR;
 
     [SessionState(SessionStateBehavior.ReadOnly)]
@@ -19,6 +20,7 @@
             this.mediator = mediator;
         }
 
+        [AllowProtectedMode]
         public async Task<ActionResult> Get(UMMessageQuery request)
         {
             var messages = request.EnableUMAnnouncementPopup

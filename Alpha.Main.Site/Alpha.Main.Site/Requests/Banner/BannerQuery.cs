@@ -21,5 +21,7 @@
         public string Language => userSession.Language;
 
         public byte Type { get; set; }
+
+        public bool IsProtectedMode => userSession.IsProtectedMode;
     }
 }

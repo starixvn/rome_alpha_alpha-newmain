@@ -157,9 +157,9 @@ var changePassword = {
     },
 
     resetOriginalInputStatus: function () {
-        changePassword.domElements.txtOldPwd.val("");
-        changePassword.domElements.txtNewPwd.val("");
-        changePassword.domElements.txtConfirmPwd.val("");
+        securityHelper.hideHint();
+        securityHelper.removeValidationIcon(changePassword.domElements.txtNewPwd);
+        securityHelper.removeValidationIcon(changePassword.domElements.txtConfirmPwd);
     },
 
     gotoSecurityCodePage: function () {

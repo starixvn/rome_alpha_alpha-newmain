@@ -15,6 +15,8 @@
         private IAuthorizationService authorizationService;
         private IDictionary<string, Func<MenuStatus>> menuItemTypeConfiguration;
         private IDictionary<string, Func<string>> menuItemDisplayName;
+        private Func<bool> isProtectedModeFunc;
+        private Func<bool> isInternalFunc;
 
         [SetUp]
         public void SetUp()
@@ -28,8 +30,10 @@
             {
                 { string.Empty, null }
             };
+            isProtectedModeFunc = () => false;
+            isInternalFunc = () => false;
 
-            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, menuItemDisplayName);
+            menuItemBuilderImpl = new MenuItemBuilderImpl(authorizationService, menuItemTypeConfiguration, menuItemDisplayName, isProtectedModeFunc, isInternalFunc);
         }
 
         [Test]

@@ -5,7 +5,7 @@ body {
     background-color: #fff;
 }
 
-.icon {
+.icon, .icon-pc {
     font-size: calculateScale(20px);
 }
 
@@ -410,7 +410,7 @@ body {
     }
 
     > li .list-setting > li a {
-        .icon {
+        .icon, .icon-pc {
             top: calculateScale(3px);
             margin-right: calculateScale(10px);
         }

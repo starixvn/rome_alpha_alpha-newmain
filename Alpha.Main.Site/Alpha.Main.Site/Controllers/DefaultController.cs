@@ -6,6 +6,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
+    using Alpha.Web.Filters;
     using AppResources;
     using Configurations;
     using Constants;
@@ -41,6 +42,7 @@ namespace Alpha.Main.Site.Controllers
             this.nicknameChecker = nicknameChecker;
         }
 
+        [AllowProtectedMode]
         public ActionResult Index(string action = null)
         {
             if (IsRedirectToNicknamePage(action))
@@ -67,6 +69,7 @@ namespace Alpha.Main.Site.Controllers
             return View(viewModel);
         }
 
+        [AllowProtectedMode]
         public ActionResult MenuBar()
         {
             var viewModel = mediator.Send(new MenuBarQuery(userSession.RoleId, Request.UserAgent));
@@ -74,6 +77,7 @@ namespace Alpha.Main.Site.Controllers
             return PartialView(viewModel);
         }
 
+        [AllowProtectedMode]
         public ActionResult HeaderHotMsg()
         {
             var query = new HotMessagesQuery
@@ -87,29 +91,10 @@ namespace Alpha.Main.Site.Controllers
             return View(viewModel);
         }
 
+        [AllowProtectedMode]
         public ActionResult Kickout(string reason)
         {
-            string message = Resources.NoPermissionAccessPage;
-
-            if (!string.IsNullOrEmpty(reason))
-            {
-                if (reason == "DuplicationLogin")
-                {
-                    message = Security.stringSessionLogged;
-                }
-                else if (reason == "AccountClosed")
-                {
-                    message = Security.lblConfirmClosed;
-                }
-                else if (reason == "AccountLocked")
-                {
-                    message = Security.lblConfirmLocked;
-                }
-                else if (reason == "KickoutByForceChangePassword")
-                {
-                    message = Security.KickoutMessageByForceChangePassword;
-                }
-            }
+            var message = MapKickoutReasonToUserMessage(reason);
 
             mediator.Send(new KickoutQuery(userSession));
             ClearSession();
@@ -151,6 +136,30 @@ namespace Alpha.Main.Site.Controllers
             }
 
             return false;
+        }
+
+        private static string MapKickoutReasonToUserMessage(string reason)
+        {
+            switch (reason)
+            {
+                case "DuplicationLogin":
+                    return Security.stringSessionLogged;
+
+                case "AccountClosed":
+                    return Security.lblConfirmClosed;
+
+                case "AccountLocked":
+                    return Security.lblConfirmLocked;
+
+                case "KickoutByForceChangePassword":
+                    return Security.KickoutMessageByForceChangePassword;
+
+                case "KickoutByProtectedMode":
+                    return Security.KickoutMessageByProtectedMode;
+
+                default:
+                    return Resources.NoPermissionAccessPage;
+            }
         }
     }
 }

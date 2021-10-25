@@ -149,7 +149,7 @@
     <value>to upload now!</value>
   </data>
   <data name="strNotAccessPage" xml:space="preserve">
-    <value>public string GivenCreditLabel { get; private set; } = Resources.agentGivenCredit;</value>
+    <value>Sorry, You don't have permission to access this page.</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
@@ -651,5 +651,44 @@
   </data>
   <data name="LiveMessage" xml:space="preserve">
     <value>Live Message</value>
+  </data>
+  <data name="NewProtectionCode" xml:space="preserve">
+    <value>New Protection Code</value>
+  </data>
+  <data name="ProtectionCode" xml:space="preserve">
+    <value>Protection Code</value>
+  </data>
+  <data name="ConfirmProtectionCode" xml:space="preserve">
+    <value>Confirm Protection Code</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="NotMatchedConfirmProtectionCode" xml:space="preserve">
+    <value>Those protection codes do not match.</value>
+  </data>
+  <data name="ProtectionCodeRule" xml:space="preserve">
+    <value>Protection Code must be at least 6 characters, CAN be the same as your Security Code but CANNOT be the same as your Password.</value>
+  </data>
+  <data name="RequiredNewProtectionCode" xml:space="preserve">
+    <value>New Protection Code is required.</value>
+  </data>
+  <data name="ShowProtectionCode" xml:space="preserve">
+    <value>Show Protection Code</value>
+  </data>
+  <data name="MinLengthNewProtectionCodeError" xml:space="preserve">
+    <value>The protection code must be at least 6 characters long.</value>
+  </data>
+  <data name="RequiredConfirmProtectionCode" xml:space="preserve">
+    <value>Confirm Protection Code is required.</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UpdateProtectionCodeSuccessfully" xml:space="preserve">
+    <value>Your Protection Code has been updated successfully.</value>
+  </data>
+  <data name="ContainsSpaceOrUnicodeCharacterError" xml:space="preserve">
+    <value>The protection code must not contain any Unicode characters or spaces.</value>
   </data>
 </root>

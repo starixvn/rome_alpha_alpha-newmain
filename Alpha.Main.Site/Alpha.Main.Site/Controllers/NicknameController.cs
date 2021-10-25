@@ -2,6 +2,7 @@
 {
     using System.Net;
     using System.Web.Mvc;
+    using Alpha.Web.Filters;
     using AppResources;
     using Main.Models;
     using MediatR;
@@ -21,6 +22,7 @@
             this.userSession = userSession;
         }
 
+        [AllowProtectedMode]
         public ActionResult Index()
         {
             var viewModel = new CreateNicknameViewModel(userSession);
@@ -28,7 +30,7 @@
             return viewModel.IsValid() ? View(viewModel) : ToDefaultPage();
         }
 
-        [HttpPost, ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken, AllowProtectedMode]
         public ActionResult Index(string nickname)
         {
             var message = new CreateNicknameCommand(userSession)

@@ -42,6 +42,7 @@
             DisableMessages = message.DisableMessages;
             this.profilePicture = profilePicture;
             this.ShowOldCustomerList = AppSettings.ShowOldCustomerList;
+            IsProtectedMode = message.IsProtectedMode;
         }
 
         public bool EnableSecurityCode => message.EnableSecurityCode;
@@ -96,12 +97,14 @@
                 message.UserName,
                 BuildNickName(message),
                 EnableSecurityCode,
-                message.IsViewedMemberInfo,
+                message.ShowSearchAccount,
                 IsEnabledOtp,
                 string.IsNullOrEmpty(profilePicture.ImageBase64String),
                 profilePicture.ImageBase64String,
                 message.ShowNicknameMenu,
-                message.ShowCreateMemberByQRCode);
+                message.ShowCreateMemberByQRCode,
+                IsProtectedMode,
+                message.IsOfferProtectedMode);
 
         public bool IsEnabledOtp => SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp;
 
@@ -128,6 +131,8 @@
         public bool RequiredNetworkSpeedCalculation { get; }
 
         public bool DisableMessages { get; }
+
+        public bool IsProtectedMode { get; }
 
         internal string BuildNickName(IndexQuery message)
         {

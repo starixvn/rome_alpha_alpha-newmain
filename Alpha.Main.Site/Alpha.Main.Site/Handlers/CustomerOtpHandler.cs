@@ -1,9 +1,8 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using Alpha.Main.ProfilePicture.Services;
+    using System;
     using Alpha.SecurityCode.Web;
     using AppResources;
-    using Helpers;
     using Main.Models;
     using Main.Models.Otp;
     using MediatR;
@@ -11,8 +10,8 @@
     using Requests.Otp;
     using Services;
     using Sunplus.Agent.Model.Entities;
-    using System;
     using ViewModels.Security;
+    using Web.Configurations;
     using Web.Helpers;
 
     public class CustomerOtpHandler :
@@ -254,7 +253,8 @@
             {
                 CustomerOtp = customerOtpService.GetCustomerOtp(message.CustId, message.SubAccountId),
                 IsAlreadySetup = true,
-                IsShowNicknameLink = !nicknameChecker.IsOfferForceLoginAndOverDueDate
+                IsShowNicknameLink = !nicknameChecker.IsOfferForceLoginAndOverDueDate,
+                IsOfferProtectedMode = message.IsOfferProtectedMode
             };
 
             if (!viewModel.CustomerOtp.Enabled
