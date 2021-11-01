@@ -6,7 +6,7 @@ class Kickout {
     init = () => {
         this.message = document.getElementById('message') != null
             ? (<HTMLInputElement>document.getElementById('message')).value
-            : "Oops... you are here because of a system error, please notify the administrators.";
+            : "Sorry, there was an unexpected issue on the server. Please seek help from our customer support. [5003]";
 
         alert(this.message);
         alpha.core.signOut();
