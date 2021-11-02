@@ -24,6 +24,12 @@
 
         bool IsNew { get; set; }
 
+        bool IsOld { get; set; }
+
+        bool IsMobileView { get; }
+
+        bool IsHiddenInMobile { get; set; }
+
         MenuStatus Status { get; }
 
         bool ShowSubMenus { get; set; }

@@ -59,13 +59,13 @@
       <siteMapNode resourceKey="newMember" appPath="OldMainAppPath" url="_MemberInfo/SearchAndCopy/MasterPage.aspx?lv=2" menuItemType="CreateAccountMenuItem" roles="Agent"></siteMapNode>
       <siteMapNode menuItemType="SubAccountMenuItem" resourceKey="subaccount" appPath="OldMainAppPath" url="_SubAcc/SubAccList.aspx" byPassProtectedModeInternal="true"></siteMapNode>
 
-      <siteMapNode resourceKey="customerlist" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Super/MasterList.aspx" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="customerlist" appPath="MemberInfoAppPath" url="CustomerList/member" roles="Agent"></siteMapNode>
+      <siteMapNode resourceKey="agentList" appPath="MemberInfoAppPath" url="CustomerList/agent" roles="Master"></siteMapNode>
+      <siteMapNode resourceKey="masterList" appPath="MemberInfoAppPath" url="CustomerList/master" roles="Super"></siteMapNode>
 
-      <siteMapNode resourceKey="customerlist" appPath="MemberInfoAppPath" url="CustomerList/member" roles="Agent" isNew="true"></siteMapNode>
-      <siteMapNode resourceKey="agentList" appPath="MemberInfoAppPath" url="CustomerList/agent" roles="Master" isNew="true"></siteMapNode>
-      <siteMapNode resourceKey="masterList" appPath="MemberInfoAppPath" url="CustomerList/master" roles="Super" isNew="true"></siteMapNode>
+      <siteMapNode resourceKey="customerlist" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent" isOld="true" isHiddenInMobile="true"></siteMapNode>
+      <siteMapNode resourceKey="agentList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master" isOld="true" isHiddenInMobile="true"></siteMapNode>
+      <siteMapNode resourceKey="masterList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Super/MasterList.aspx" roles="Super" isOld="true" isHiddenInMobile="true"></siteMapNode>
 
       <siteMapNode resourceKey="problemAccountList" appPath="MemberInfoAppPath" url="ProblemAccount"></siteMapNode>
 

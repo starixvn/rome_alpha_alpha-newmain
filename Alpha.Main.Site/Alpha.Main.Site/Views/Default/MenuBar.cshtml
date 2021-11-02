@@ -37,6 +37,7 @@
                                     @subMenuItem.DisplayName
                                     @Html.Raw(subMenuItem.IsBeta ? "<span class=\"beta-version\">" + Alpha_sitemap.Beta + "</span>" : string.Empty)
                                     @Html.Raw(subMenuItem.IsNew ? "<span class=\"beta-version\">" + Resources.lblNew + "</span>" : string.Empty)
+                                    @Html.Raw(subMenuItem.IsOld ? $"<span> ({Alpha_sitemap.Old})</span>" : string.Empty)
                                 </a>
 							</li>
 						}

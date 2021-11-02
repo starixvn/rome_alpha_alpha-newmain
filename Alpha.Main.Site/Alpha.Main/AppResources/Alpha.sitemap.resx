@@ -408,10 +408,10 @@
   <data name="memberOutstandingNew" xml:space="preserve">
     <value>Member Outstanding (New)</value>
   </data>
-   <data name="IndirectLoginAccount" xml:space="preserve">
+  <data name="IndirectLoginAccount" xml:space="preserve">
     <value>Indirect Login Account</value>
   </data>
-   <data name="DormantAccountList" xml:space="preserve">
+  <data name="DormantAccountList" xml:space="preserve">
     <value>Dormant Account List</value>
   </data>
   <data name="BonusDetail" xml:space="preserve">
@@ -419,5 +419,8 @@
   </data>
   <data name="TransferToDownlineHistory" xml:space="preserve">
     <value>Transfer To Downline History</value>
+  </data>
+  <data name="Old" xml:space="preserve">
+    <value>Old</value>
   </data>
 </root>

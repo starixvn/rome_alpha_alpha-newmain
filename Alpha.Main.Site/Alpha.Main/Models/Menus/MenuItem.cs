@@ -87,7 +87,9 @@
         {
             get
             {
-                var isAuthorized = ByPassAuthorization || authorizeUrlFunc(Link);
+                var isAuthorized = (ByPassAuthorization
+                    || authorizeUrlFunc(Link))
+                    && isVisibleForMobileOrDesktop();
 
                 if (isProtectedModeFunc())
                 {
@@ -118,5 +120,18 @@
         }
 
         public bool IsNew { get; set; }
+
+        public bool IsOld { get; set; }
+
+        public bool IsMobileView
+        {   
+            get { return HttpContext.Current.Request.Browser.IsMobileDevice; }
+        }
+
+        public bool IsHiddenInMobile { get; set; }
+
+        private bool isVisibleForMobileOrDesktop() => 
+            IsMobileView && !IsHiddenInMobile ||
+            !IsMobileView;
     }
 }
