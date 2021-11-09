@@ -420,4 +420,7 @@
   <data name="TransferToDownlineHistory" xml:space="preserve">
     <value>Transfer To Downline History</value>
   </data>
+  <data name="Old" xml:space="preserve">
+    <value>Cũ</value>
+  </data>
 </root>

@@ -414,4 +414,7 @@
   <data name="TransferToDownlineHistory" xml:space="preserve">
     <value>Transfer To Downline History</value>
   </data>
+  <data name="Old" xml:space="preserve">
+    <value>舊</value>
+  </data>
 </root>

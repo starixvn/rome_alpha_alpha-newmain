@@ -41,6 +41,8 @@
             menuItem.AppPath = node["AppPath"];
             menuItem.IsBeta = node["isBeta"] != null && bool.Parse(node["isBeta"]);
             menuItem.IsNew = node["isNew"] != null && bool.Parse(node["isNew"]);
+            menuItem.IsOld = node["isOld"] != null && bool.Parse(node["isOld"]);
+            menuItem.IsHiddenInMobile = node["isHiddenInMobile"] != null && bool.Parse(node["isHiddenInMobile"]);
             menuItem.ByPassAuthorization = node["byPassAuthorization"] == null ? false : bool.Parse(node["byPassAuthorization"]);
             menuItem.ByPassProtectedMode = node["byPassProtectedMode"] == null ? false : bool.Parse(node["byPassProtectedMode"]);
             menuItem.ByPassProtectedModeInternal = node["byPassProtectedModeInternal"] == null ? false : bool.Parse(node["byPassProtectedModeInternal"]);
