@@ -124,8 +124,8 @@
         public bool IsOld { get; set; }
 
         public bool IsMobileView
-        {   
-            get { return HttpContext.Current.Request.Browser.IsMobileDevice; }
+        {    
+            get { return HttpContext.Current != null && HttpContext.Current.Request.Browser.IsMobileDevice; }
         }
 
         public bool IsHiddenInMobile { get; set; }
