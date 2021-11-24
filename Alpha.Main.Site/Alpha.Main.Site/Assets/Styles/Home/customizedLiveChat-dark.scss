@@ -47,9 +47,9 @@
         color: #919191 !important;
     }
 
-    .lpc_composer__send-button {
+    .lpc_composer__send-button, .lp_actions-emoji-icon {
         path {
-            fill: #41A4FF !important;
+            fill: #919191 !important;
         }
     }
 
@@ -109,6 +109,47 @@
         .lp_csat_rater_star {
             color: #6E90A3 !important;
             outline: none !important;
+        }
+    }
+    //tool
+    .lp_action_placeholder_wrapper {
+        background: #1a1b1c !important;
+
+        .lp_action_item, .lp_action_placeholder {
+            border-color: #414141 !important;
+
+            .lp_action_wrapper {
+                .lp_mute-action-icon {
+                    img {
+                        top: -40px !important;
+                    }
+                }
+
+                .lp_title {
+                    color: #EDEDED !important;
+                }
+            }
+        }
+    }
+
+    .lp_action_items_wrapper {
+        .lp_action_item, .lp_action_placeholder {
+            .lp_action_wrapper {
+                .lp_add-attachment-action-icon {
+                    img {
+                    }
+                }
+
+                .lp_mute-action-icon, .lp_actions-forget-me-icon {
+                    img {
+                        top: -40px !important;
+                    }
+                }
+
+                .lp_title {
+                    color: #EDEDED !important;
+                }
+            }
         }
     }
 }
