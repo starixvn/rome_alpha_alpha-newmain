@@ -47,9 +47,22 @@
         color: #919191 !important;
     }
 
-    .lpc_composer__send-button, .lp_actions-emoji-icon {
+    .lp_actions-emoji-icon {
         path {
             fill: #919191 !important;
+        }
+    }
+
+    .lpc_composer__send-button {
+        &[disabled] {
+            path {
+                fill: #919191 !important;
+                opacity: 1;
+            }
+        }
+
+        path {
+            fill: #41A4FF !important;
         }
     }
 
@@ -140,7 +153,7 @@
                     }
                 }
 
-                .lp_mute-action-icon, .lp_actions-forget-me-icon {
+                .lp_mute-action-icon, .lp_actions-forget-me-icon, .lp_end-chat-action-icon, .lp_unmute-action-icon {
                     img {
                         top: -40px !important;
                     }
@@ -149,6 +162,37 @@
                 .lp_title {
                     color: #EDEDED !important;
                 }
+            }
+        }
+    }
+
+    .lp_actions_bar_container {
+        background-color: #1A1B1C !important;
+    }
+
+    .lp_bottom_logo_bar {
+        background: #1A1B1C !important;
+
+        .lp_bottom-logo-icon img {
+            top: -31px !important;
+        }
+    }
+    //
+    &.lpc_confirmation-dialog {
+        background-color: #212223 !important;
+        color: #ededed !important;
+
+        .lp_lpview_title.lp_subtitle {
+            color: #ededed !important;
+        }
+
+        .lp_buttons_area .lp_cancel_button {
+            color: #ffffff !important;
+
+            &:focus {
+                outline: none !important;
+                background: transparent !important;
+                color: #ffffff !important;
             }
         }
     }
