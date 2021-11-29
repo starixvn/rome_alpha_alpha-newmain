@@ -189,7 +189,7 @@
         .lp_buttons_area .lp_cancel_button {
             color: #ffffff !important;
 
-            &:focus {
+            &:focus, &:hover {
                 outline: none !important;
                 background: transparent !important;
                 color: #ffffff !important;
