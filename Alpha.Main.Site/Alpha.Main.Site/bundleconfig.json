@@ -311,6 +311,12 @@
       "Assets/scripts/protection-code/protection.js"
     ]
   },
+  {
+    "outputFileName": "Assets/bundles/contact-us/contact-us.css",
+    "inputFiles": [
+      "Assets/styles/contact-us/contact-us.css"
+    ]
+  },
   /************************** Dark Mode ************************/
   {
     "outputFileName": "Assets/bundles/default-index-dark.css",
@@ -395,6 +401,12 @@
     "outputFileName": "Assets/bundles/protection-code/protection-dark.css",
     "inputFiles": [
       "Assets/styles/protection-code/protection-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/contact-us/contact-us-dark.css",
+    "inputFiles": [
+      "Assets/styles/contact-us/contact-us-dark.css"
     ]
   }
 ]

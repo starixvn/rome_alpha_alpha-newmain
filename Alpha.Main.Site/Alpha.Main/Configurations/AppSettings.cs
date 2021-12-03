@@ -292,5 +292,17 @@
             => DomainsWithViva88ContactInfo.Any(domain => domain.Equals(HttpContext.Current.Request.Headers["Host"], StringComparison.OrdinalIgnoreCase));
 
         public static bool IsOfferLiveChat => "1" == Settings["IsOfferLiveChat"];
+
+        public static string ContactUsSkypeId => Settings["skypeId"];
+
+        public static string ContactUsLetstalkId => Settings["letstalkid"];
+
+        public static string ContactUsLetstalkIdNew => Settings["letstalkidNew"];
+
+        public static string ContactUsLetstalkUrl => Settings["letstalkurl"];
+
+        public static string ContactUsLetstalkUrlNew => Settings["letstalkurlNew"];
+
+        public static string ContactUsNewDomains => Settings["newdomains"];
     }
 }

@@ -676,6 +676,14 @@
     <Content Include="Assets\bundles\chatbot\register-account.min.js">
       <DependentUpon>register-account.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\contact-us\contact-us-dark.css" />
+    <Content Include="Assets\bundles\contact-us\contact-us-dark.min.css">
+      <DependentUpon>contact-us-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\contact-us\contact-us.css" />
+    <Content Include="Assets\bundles\contact-us\contact-us.min.css">
+      <DependentUpon>contact-us.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-dashboard.js" />
     <Content Include="Assets\bundles\default-dashboard.min.js">
       <DependentUpon>default-dashboard.js</DependentUpon>
@@ -836,6 +844,7 @@
     <Content Include="Assets\bundles\security\verify-security-code.min.css">
       <DependentUpon>verify-security-code.css</DependentUpon>
     </Content>
+    <Content Include="Assets\Images\letstalk.png" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />
     <Content Include="Assets\scripts\aes.js" />
@@ -889,6 +898,18 @@
     <Content Include="Assets\styles\chatbot\register-account.min.css">
       <DependentUpon>register-account.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\contact-us\contact-us-dark.css">
+      <DependentUpon>contact-us-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\contact-us\contact-us-dark.min.css">
+      <DependentUpon>contact-us-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\contact-us\contact-us.css">
+      <DependentUpon>contact-us.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\contact-us\contact-us.min.css">
+      <DependentUpon>contact-us.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\error\error-dark.css">
       <DependentUpon>error-dark.scss</DependentUpon>
     </Content>
@@ -903,6 +924,15 @@
     </Content>
     <Content Include="Assets\styles\error\images\error-bg.png" />
     <Content Include="Assets\styles\error\images\error-bg-dark.png" />
+    <Content Include="Assets\styles\home\customizedLiveChat-dark.css">
+      <DependentUpon>customizedLiveChat-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\customizedLiveChat-dark.min.css">
+      <DependentUpon>customizedLiveChat-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\home\customizedLiveChat.css">
+      <DependentUpon>customizedLiveChat.scss</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\home-dark.css">
       <DependentUpon>home-dark.scss</DependentUpon>
     </Content>
@@ -1278,6 +1308,7 @@
     <Content Include="Views\ProtectionCode\_LearnMorePopup_vi-VN.cshtml" />
     <Content Include="Views\ProtectionCode\_LearnMorePopup_zh-CN.cshtml" />
     <Content Include="Views\ProtectionCode\_LearnMorePopup_zh-TW.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -1475,6 +1506,8 @@
     <Content Include="Assets\styles\security\security-dark.scss" />
     <Content Include="Assets\styles\security\verify-security-code-dark.scss" />
     <Content Include="Assets\styles\protection-code\protection-dark.scss" />
+    <Content Include="Assets\styles\contact-us\contact-us.scss" />
+    <Content Include="Assets\styles\contact-us\contact-us-dark.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1576,6 +1609,7 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Controllers\BannerController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\NewCustomerCaptchaController.cs" />
     <Compile Include="Controllers\ChatBotController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -1680,6 +1714,7 @@
     <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs" />
     <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs" />
     <Compile Include="ViewModels\ChatBot\VerifyAccountViewModel.cs" />
+    <Compile Include="ViewModels\ContactUs\ContactUsViewModel.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModel.cs" />

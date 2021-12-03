@@ -1,0 +1,42 @@
+﻿@model Alpha.Main.Site.ViewModels.ContactUs.ContactUsViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Resources.ContactUs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    @*<link href="/assets/styles/fonts/Iconalpha/style.css?v=@version" rel="stylesheet" type="text/css" />*@
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/contact-us/contact-us")
+</head>
+<body>
+    <div class="group">
+        <h1>@Resources.ContactUs</h1>
+        <p>@Resources.ContactUs_Content</p>
+        @if (Model.IsShowSkypeId)
+        {
+            <div class="skype">
+                <div class="user-skype">
+                    <span class="icon-skype"></span>
+                    <strong>@Resources.SkypeID:</strong>
+                    <span class="skype-name">@Model.SkypeId</span>
+                </div>
+            </div>
+        }
+        <div class="letstalk">
+            <div class="user-letstalk">
+                <span class="icon-letstalk"></span>
+                <strong>@Resources.LetstalkIMID:</strong>
+                <span class="letstalk-name">@Model.LetstalkId</span>
+                <span class="letstalk-legend">@Resources.ContactUsLegend</span>
+            </div>
+            <div class="action">
+                <a href="@Model.LetstalkUrl" class="btn" target="_blank">
+                    <span class="icon-download"></span>@Resources.Download
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

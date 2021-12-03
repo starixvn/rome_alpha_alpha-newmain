@@ -625,4 +625,19 @@
   <data name="ContainsSpaceOrUnicodeCharacterError" xml:space="preserve">
     <value>保護碼不得包含任何統一碼字符或空格。</value>
   </data>
+  <data name="ContactUs_Content" xml:space="preserve">
+    <value>我們提供客服專員協助并解答您在代理網遇到的任何問題。</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="LetstalkIMID" xml:space="preserve">
+    <value>Letstalk IM ID</value>
+  </data>
+  <data name="SkypeID" xml:space="preserve">
+    <value>帳號</value>
+  </data>
+  <data name="ContactUsLegend" xml:space="preserve">
+    <value>For Better Security</value>
+  </data>
 </root>

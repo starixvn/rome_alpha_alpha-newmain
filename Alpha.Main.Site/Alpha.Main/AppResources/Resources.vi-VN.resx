@@ -687,4 +687,19 @@
   <data name="ContainsSpaceOrUnicodeCharacterError" xml:space="preserve">
     <value>Mã bảo vệ không được chứa bất kỳ ký tự Unicode hoặc dấu cách nào.</value>
   </data>
+  <data name="ContactUs_Content" xml:space="preserve">
+    <value>Các chuyên viên tư vấn luôn sẵn sàng giải đáp mọi thắc mắc từ khách hàng.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="LetstalkIMID" xml:space="preserve">
+    <value>Letstalk IM ID</value>
+  </data>
+  <data name="SkypeID" xml:space="preserve">
+    <value>Skype ID</value>
+  </data>
+  <data name="ContactUsLegend" xml:space="preserve">
+    <value>For Better Security</value>
+  </data>
 </root>

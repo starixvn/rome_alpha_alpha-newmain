@@ -158,5 +158,13 @@
   {
     "outputFile": "Assets/styles/protection-code/protection-dark.css",
     "inputFile": "Assets/styles/protection-code/protection-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/contact-us/contact-us.css",
+    "inputFile": "Assets/styles/contact-us/contact-us.scss"
+  },
+  {
+    "outputFile": "Assets/styles/contact-us/contact-us-dark.css",
+    "inputFile": "Assets/styles/contact-us/contact-us-dark.scss"
   }
 ]

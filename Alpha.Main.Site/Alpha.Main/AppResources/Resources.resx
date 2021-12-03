@@ -688,4 +688,19 @@
   <data name="ContainsSpaceOrUnicodeCharacterError" xml:space="preserve">
     <value>The protection code must not contain any Unicode characters or spaces.</value>
   </data>
+  <data name="ContactUs_Content" xml:space="preserve">
+    <value>Customer Service specialists are available to assist any of your question(s) encounter at agency site.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="LetstalkIMID" xml:space="preserve">
+    <value>Letstalk IM ID</value>
+  </data>
+  <data name="SkypeID" xml:space="preserve">
+    <value>Skype ID</value>
+  </data>
+  <data name="ContactUsLegend" xml:space="preserve">
+    <value>For Better Security</value>
+  </data>
 </root>
