@@ -7,7 +7,7 @@
 .lp-window-root div:focus {
     outline: none !important;
 }
-.lpc_desktop {
+.lpc_desktop, .lp_mobile {
     .lpc_maximized-header {
         background: linear-gradient(#476474, #5E7B8B) !important;
         border: 0 !important;
@@ -196,4 +196,29 @@
             }
         }
     }
+}
+
+//live chat mobile
+.lpc_mobile {
+    &.lpc_confirmation-dialog {
+        background-color: #212223 !important;
+        color: #ededed !important;
+
+        .lp_lpview_title.lp_subtitle {
+            color: #ededed !important;
+        }
+
+        .lp_buttons_area .lp_cancel_button {
+            color: #ffffff !important;
+
+            &:focus, &:hover {
+                outline: none !important;
+                background: transparent !important;
+                color: #ffffff !important;
+            }
+        }
+    }
+}
+.lp_mobile .lp-window-root > .lp_maximized{
+    opacity: 1!important
 }
