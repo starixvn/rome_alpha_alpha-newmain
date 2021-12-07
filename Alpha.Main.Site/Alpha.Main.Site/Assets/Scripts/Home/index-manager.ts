@@ -124,10 +124,9 @@ var indexManager = {
         let currentUrl = $("#isInternal").val() === "1"
             ? defaultUrl
             : localStorage.getItem(indexManager.currentUrlCookieName) || defaultUrl;
-
-        if (indexManager.isIgnoreRedirectUrl(currentUrl)) {
-            currentUrl = defaultUrl;
-        }
+        currentUrl = indexManager.isIgnoreRedirectUrl(currentUrl)
+            ? defaultUrl
+            : indexManager.replaceIsDarkModeQueryStringValue(currentUrl);
 
         if (currentUrl.indexOf(headerNav.urls.home) !== -1) {
             currentUrl = currentUrl.replace("Index2", "Index");
@@ -254,6 +253,16 @@ var indexManager = {
         }
 
         return false;
+    },
+
+    replaceIsDarkModeQueryStringValue: function (url: string) {
+        return indexManager.isDCSUrl(url)
+            ? url.replace(/(isdarkmode=)[^\&]+/i, '$1' + $('#isDarkMode').val())
+            : url;
+    },
+
+    isDCSUrl: function (url: string) {
+        return url.indexOf('dcs/viewcustomersetting') > -1;
     }
 };
 

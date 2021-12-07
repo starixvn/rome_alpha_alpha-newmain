@@ -410,10 +410,7 @@ var headerNav = {
             url: headerNav.urls.changeTheme,
             data: { isDarkMode: !isDarkMode },
             success: function (result) {
-                if (result) {
-                    localStorage.removeItem($("#currentURLCookieName").val());
-                    headerNav.reloadPage();
-                }
+                result && headerNav.reloadPage();
             }
         });
     },
