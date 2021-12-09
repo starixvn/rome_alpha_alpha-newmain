@@ -331,6 +331,7 @@
     <Compile Include="Criteria\Otp\UpdateCustomerStatusAfterVerifyOtpCommandTests.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteriaTests.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteriaTests.cs" />
+    <Compile Include="Criteria\Password\SkipForceChangePasswordCommandTests.cs" />
     <Compile Include="Criteria\Password\UpdateLastChangePasswordIndirectAccountCriteriaTests.cs" />
     <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteriaTests.cs" />
     <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteriaTests.cs" />
