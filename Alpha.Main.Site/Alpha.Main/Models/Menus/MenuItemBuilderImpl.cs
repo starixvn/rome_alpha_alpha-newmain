@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Linq;
     using System.Web;
     using Auth.Services;
@@ -48,6 +49,8 @@
             menuItem.ByPassAuthorization = node["byPassAuthorization"] == null ? false : bool.Parse(node["byPassAuthorization"]);
             menuItem.ByPassProtectedMode = node["byPassProtectedMode"] == null ? false : bool.Parse(node["byPassProtectedMode"]);
             menuItem.ByPassProtectedModeInternal = node["byPassProtectedModeInternal"] == null ? false : bool.Parse(node["byPassProtectedModeInternal"]);
+            menuItem.UseDomainConfig = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]];
+            menuItem.Url = node.Url;
             menuItem.SubMenus = new List<IMenuItem>();
         }
 

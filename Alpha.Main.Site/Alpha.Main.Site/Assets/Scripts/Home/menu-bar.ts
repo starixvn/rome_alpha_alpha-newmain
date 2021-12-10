@@ -251,13 +251,20 @@ var menuBar = {
 	activateSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');
 		subMenu.addClass('active');
+        try {
+            if (!alpha.core.isIe()) {
+                $('#main').contents().find("head").append($("#AssetCommonCssLink").val());
+                $('#main').contents().find('body').empty().block();
+            }
+        } catch(e) { }
 
-        if (!alpha.core.isIe()) {
-            $('#main').contents().find("head").append($("#AssetCommonCssLink").val());
-            $('#main').contents().find('body').empty().block();
+        if (subMenu.data("domain")) {
+            var appPath = subMenu.data("apppath") + $('#sessionId').val();
+            $('#main').attr('src', subMenu.data("domain") + appPath + subMenu.data("url")).attr("target", "main");
         }
-
-        $('#main').attr('src', subMenu.data("url")).attr("target", "main");
+        else {
+            $('#main').attr('src', subMenu.data("url")).attr("target", "main");
+        }
     },
 
     expandSideBar: function () {

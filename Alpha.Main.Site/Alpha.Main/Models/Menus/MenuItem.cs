@@ -87,6 +87,11 @@
             }
         }
 
+        public string Url
+        {
+            get; set;
+        }
+
         public virtual MenuStatus Status
         {
             get
@@ -134,6 +139,8 @@
         }
 
         public bool IsHiddenInMobile { get; set; }
+
+        public string UseDomainConfig { get; set; }
 
         private bool isVisibleForMobileOrDesktop() => 
             IsMobileView && !IsHiddenInMobile ||

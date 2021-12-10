@@ -3,9 +3,9 @@
   <siteMapNode title="Alpha Site">
     <!--Report-->
     <siteMapNode resourceKey="reports" expand="1" menuItemType="ReportMenuItem" functionType="[E]" byPassProtectedMode="true">
-      <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="outstanding/membernew" roles="Agent"></siteMapNode>
-      <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="outstanding/agentnew" roles="Master"></siteMapNode>
-      <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="outstanding/masternew" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="memberOutstanding" appPath="ReportsAppPath" url="/outstanding/membernew" roles="Agent" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="agentOutstanding" appPath="ReportsAppPath" url="/outstanding/agentnew" roles="Master" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="masterOutstanding" appPath="ReportsAppPath" url="/outstanding/masternew" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
 
       <siteMapNode menuItemType="ReportsMenuItem" resourceKey="memberWinLoss" appPath="ReportsAppPath" url="enteredresult/member" roles="Agent"></siteMapNode>
       <siteMapNode menuItemType="ReportsMenuItem" resourceKey="agentwinloss" appPath="ReportsAppPath" url="enteredresult/agent" roles="Master"></siteMapNode>

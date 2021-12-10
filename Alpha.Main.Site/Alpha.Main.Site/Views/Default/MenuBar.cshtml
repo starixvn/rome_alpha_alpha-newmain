@@ -28,19 +28,21 @@
 						</span>
 						<span class="pull-right icon-arrow-right"></span>
 					</a>
-					<ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
-						@foreach (var subMenuItem in menuItem.VisibileSubMenus)
-						{
-							<li data-url="@subMenuItem.Link" class="sub-menu-item @(subMenuItem.Status.Disabled?"disabled-menu":string.Empty)" id="sub-menu-@(subMenuItem.ResourceKey.ToUpper())">
+                    <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
+                        @foreach (var subMenuItem in menuItem.VisibileSubMenus)
+                        {
+                            var link = !string.IsNullOrWhiteSpace(subMenuItem.UseDomainConfig) ?
+                                            subMenuItem.Url : subMenuItem.Link;
+                            <li data-apppath="@AppSettings.GetAppPath(subMenuItem.AppPath)" data-domain="@subMenuItem.UseDomainConfig" data-url="@link" class="sub-menu-item @(subMenuItem.Status.Disabled ? "disabled-menu" : string.Empty)" id="sub-menu-@(subMenuItem.ResourceKey.ToUpper())">
                                 <a href="#" class="redirect-item">
                                     @subMenuItem.DisplayName
                                     @Html.Raw(subMenuItem.IsBeta ? "<span class=\"beta-version\">" + Alpha_sitemap.Beta + "</span>" : string.Empty)
                                     @Html.Raw(subMenuItem.IsNew ? "<span class=\"beta-version\">" + Resources.lblNew + "</span>" : string.Empty)
                                     @Html.Raw(subMenuItem.IsOld ? $"<span> ({Alpha_sitemap.Old})</span>" : string.Empty)
                                 </a>
-							</li>
-						}
-					</ul>
+                            </li>
+                        }
+                    </ul>
 				</li>
 			}
 			else
@@ -62,6 +64,7 @@
 </section>
 
 @Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common"))
+@Html.Hidden("sessionId", string.Empty)
 
 @if (Model.IsAccountInfoVisible)
 {

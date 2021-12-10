@@ -12,6 +12,8 @@
 
         string Link { get; set; }
 
+        string Url { get; set; }
+
         string AppPath { get; set; }
 
         bool ByPassAuthorization { get; set; }
@@ -29,6 +31,8 @@
         bool IsMobileView { get; }
 
         bool IsHiddenInMobile { get; set; }
+
+        string UseDomainConfig { get; set; }
 
         MenuStatus Status { get; }
 
