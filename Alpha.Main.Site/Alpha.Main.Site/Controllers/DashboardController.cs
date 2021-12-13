@@ -2,6 +2,7 @@
 
 namespace Alpha.Main.Site.Controllers
 {
+    using System;
     using System.Web.Mvc;
     using System.Web.SessionState;
     using Alpha.Main.Configurations;
@@ -57,6 +58,23 @@ namespace Alpha.Main.Site.Controllers
             var viewModel = mediator.Send(new BalanceInfoQuery(userSession, UserPermission.HasPermissionOnProduct));
 
             return PartialView(viewModel);
+        }
+
+        [HttpGet]
+        [AllowProtectedMode]
+        public ActionResult GetServerTime()
+        {
+            var currentTime = DateTime.Now;
+
+            return Json(new
+            {
+                currentTime.Year,
+                currentTime.Month,
+                currentTime.Day,
+                currentTime.Hour,
+                currentTime.Minute,
+                currentTime.Second
+            }, JsonRequestBehavior.AllowGet);
         }
     }
 }

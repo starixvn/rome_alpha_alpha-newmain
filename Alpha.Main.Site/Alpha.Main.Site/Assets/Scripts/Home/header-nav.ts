@@ -49,6 +49,7 @@ var headerNav = {
     languageCode: null,
     clockTime: null,
     hideHeaderDropdownMenuTimeout: null,
+    clockTimeInterval: null,
 
     urls: {
         home: alpha.urls.mainRootPath + "Dashboard/Index2",
@@ -58,7 +59,8 @@ var headerNav = {
         changeLanguage: alpha.urls.mainRootPath + "Language/Change",
         queryUserName: alpha.urls.oldMainRootPath + "_AccountInfo/Handlers/QueryUserName.ashx",
         checkNewMessage: alpha.urls.messageRootPath + "NewMessage/GetNumberOfNewAnnouncement",
-        banner: alpha.urls.mainRootPath + "Banner/Get?type="
+        banner: alpha.urls.mainRootPath + "Banner/Get?type=",
+        serverTime: alpha.urls.mainRootPath + "Dashboard/GetServerTime"
     },
 
     unreadMessage: {
@@ -72,6 +74,7 @@ var headerNav = {
     init: function () {
         headerNav.initClock();
         headerNav.runClock();
+        headerNav.clockTimeInterval = setInterval(headerNav.runClock, 1000);
 
         headerNav.cachedDomElements();
         headerNav.setBannerBackgroundImage();
@@ -137,7 +140,20 @@ var headerNav = {
 
         var strTime = headerNav.formatClockTime(headerNav.clockTime);
         headerNav.domElements.clock.html(strTime);
-        setTimeout(headerNav.runClock, 1000);
+    },
+    getServerTime: function () {
+        $.get(headerNav.urls.serverTime, function (data) {
+            headerNav.clockTimeInterval && clearInterval(headerNav.clockTimeInterval);
+            headerNav.clockTime = new Date(
+                data.Year,
+                data.Month - 1,
+                data.Day,
+                data.Hour,
+                data.Minute,
+                data.Second,
+                0);
+            headerNav.clockTimeInterval = setInterval(headerNav.runClock, 1000);
+        });
     },
 
     formatClockTime: function (clockTime) {
@@ -412,3 +428,10 @@ $(function () {
 $(window).on("orientationchange", function () {
     headerNav.setBannerBackgroundImage();
 });
+
+try {
+    document.addEventListener("visibilitychange", function () {
+        !document.hidden && headerNav.getServerTime();
+    });
+} catch (e) {
+}
