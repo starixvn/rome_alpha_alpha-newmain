@@ -247,9 +247,6 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>代理總 '活躍/關閉/暂停'</value>
   </data>
-  <data name="totalCSTransferOutstanding" xml:space="preserve">
-    <value>到娛樂城的總轉賬額|未完成交易額</value>
-  </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>總代理總數 '活躍/關閉/暂停'</value>
   </data>

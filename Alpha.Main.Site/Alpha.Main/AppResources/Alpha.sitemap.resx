@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>Both/One/Neither Team To Score</value>
   </data>
-  <data name="casinoPositionTaking" xml:space="preserve">
-    <value>Casino Position Taking (%)</value>
-  </data>
   <data name="charts" xml:space="preserve">
     <value>Charts</value>
   </data>
@@ -227,9 +224,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>Position Taking (%)</value>
-  </data>
-  <data name="realTimeCSWinloss" xml:space="preserve">
-    <value>Real Time Casino Win Loss</value>
   </data>
   <data name="scoreMap" xml:space="preserve">
     <value>Score Map</value>

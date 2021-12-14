@@ -317,35 +317,7 @@
             // Assert
             Assert.False(actualSetting);
         }
-
-        [Test]
-        public void ShowGoldDeluxeAnnouncement_IsMBCSiteIsFalse_ReturnsFalse()
-        {
-            // Arrange
-            AppSettings.Settings = new NameValueCollection();
-
-            // Act
-            var actualSetting = AppSettings.ShowGoldDeluxeAnnouncement;
-
-            // Assert
-            Assert.False(actualSetting);
-        }
-
-        [Test]
-        public void ShowGoldDeluxeAnnouncement_IsMBCSiteIsTrue_ReturnsTrue()
-        {
-            // Arrange
-            AppSettings.Settings = new NameValueCollection
-            {
-                ["SiteGroup"] = "IBCBET"
-            };
-
-            // Act
-            var actualSetting = AppSettings.ShowGoldDeluxeAnnouncement;
-
-            // Assert
-            Assert.True(actualSetting);
-        }
+       
 
         [Test]
         public void NoticeTypes_HasConfig_ReturnsCorrectSetting()

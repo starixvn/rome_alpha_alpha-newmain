@@ -150,11 +150,9 @@
                     CustId = message.CustId,
                     HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
                     IP = message.IP,
-                    IsCasinoDisabled = message.IsCasinoDisabled,
                     LanguageKey = message.LanguageKey,
                     NewPassword = message.NewPassword,
                     SubAccountId = message.SubAccountId,
-                    IsCasinoSync = message.IsCasinoSync,
                     IsResetMemberPassword = custLevel.IsMemberLevel(),
                     CustLevel = custLevel,
                     ServerId = message.ServerId,
@@ -228,9 +226,7 @@
                 CurrentPassword = message.CurrentPassword,
                 CustId = message.CustId,
                 HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
-                IP = message.IP,
-                IsCasinoDisabled = message.IsCasinoDisabled,
-                IsCasinoSync = message.IsCasinoSync,
+                IP = message.IP,              
                 LanguageKey = message.LanguageKey,
                 NewPassword = message.NewPassword,
                 NickName = message.NickName,
@@ -309,7 +305,6 @@
 
             viewModel.CustId = message.CustId;
             viewModel.CustRoleId = message.CustRoleId;
-            viewModel.IsCasinoSync = message.IsCasinoSync;
             viewModel.Title = BuildResetPasswordTitle(message.Username);
 
             return viewModel;

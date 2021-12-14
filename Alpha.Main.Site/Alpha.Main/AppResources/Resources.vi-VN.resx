@@ -246,9 +246,6 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>Số tài khoản Agent hiện đang: Kích hoạt/Đóng/Đình chỉ</value>
   </data>
-  <data name="totalCSTransferOutstanding" xml:space="preserve">
-    <value>Tổng tiền chuyển khoản/chưa xử lý của Casino</value>
-  </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>Số tài khoản Master hiện đang: Kích hoạt/Khóa/Đình chỉ</value>
   </data>

@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>양 팀 득점/한 팀 득점/득점 없음</value>
   </data>
-  <data name="casinoPositionTaking" xml:space="preserve">
-    <value>카지노 포지션(%)</value>
-  </data>
   <data name="charts" xml:space="preserve">
     <value>차트</value>
   </data>
@@ -227,9 +224,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>포지션 테이킹(%)</value>
-  </data>
-  <data name="realTimeCSWinloss" xml:space="preserve">
-    <value>실시간 카지노 승패</value>
   </data>
   <data name="scoreMap" xml:space="preserve">
     <value>라이브스코어</value>

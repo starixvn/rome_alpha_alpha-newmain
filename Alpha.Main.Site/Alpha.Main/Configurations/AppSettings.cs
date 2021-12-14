@@ -149,8 +149,7 @@
             && !Settings["SiteGroup"].Equals("789y", StringComparison.OrdinalIgnoreCase);
 
         public static bool DisabledVietnamese => IsMBCSite;
-
-        public static bool ShowGoldDeluxeAnnouncement => IsMBCSite;
+     
 
         public static bool ShowHelpLink => IsMBCSite;
 

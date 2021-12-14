@@ -191,7 +191,7 @@
             userSession.IsSubAcc.Returns(true);
             userSession.SubPageAccess.Returns(new PageAccess());
 
-            var message = new ResetMainAccountPasswordCommand(userSession, true);
+            var message = new ResetMainAccountPasswordCommand(userSession);
 
             // Act
             var result = passwordHandler.Handle(message);
@@ -205,7 +205,7 @@
         public void HandleResetMainAccountPasswordCommand_GetHashKeyFromSession_CallSessionManagerGet()
         {
             // Arrange
-            var message = new ResetMainAccountPasswordCommand(userSession, true);
+            var message = new ResetMainAccountPasswordCommand(userSession);
             message.CustRoleId = RoleId.Agent;
 
             // Act
@@ -219,7 +219,7 @@
         public void HandleResetMainAccountPasswordCommand_MessageIsNotNullAndHasUpdatePermission_CallsResetMainAccountPassword()
         {
             // Arrange
-            var message = new ResetMainAccountPasswordCommand(userSession, true);
+            var message = new ResetMainAccountPasswordCommand(userSession);
             message.CustRoleId = RoleId.Agent;
             var expectedHashKey = "expectedHashKey";
             sessionManager.Get<string>(Arg.Any<string>()).Returns(expectedHashKey);
@@ -234,12 +234,10 @@
                     && param.ActorName == message.ActorName
                     && param.CustId == message.CustId
                     && param.HashKey == expectedHashKey
-                    && param.IP == message.IP
-                    && param.IsCasinoDisabled == message.IsCasinoDisabled
+                    && param.IP == message.IP                   
                     && param.LanguageKey == message.LanguageKey
                     && param.NewPassword == message.NewPassword
                     && param.SubAccountId == message.SubAccountId
-                    && param.IsCasinoSync == message.IsCasinoSync
                     && param.IsResetMemberPassword == false));
         }
 
@@ -263,7 +261,7 @@
             // Arrange
             userSession.IsInternal.Returns(true);
 
-            var message = new ChangePasswordCommand(userSession, true);
+            var message = new ChangePasswordCommand(userSession);
 
             // Act
             var result = passwordHandler.Handle(message);
@@ -279,7 +277,7 @@
         {
             // Arrange
             userSession.IsSubAcc.Returns(isSubAccount);
-            var message = new ChangePasswordCommand(userSession, true);
+            var message = new ChangePasswordCommand(userSession);
 
             passwordService.ChangeSubAccountPassword(Arg.Any<ChangeSubAccountPasswordParam>())
                 .Returns(new Result
@@ -305,7 +303,7 @@
         {
             // Arrange
             userSession.IsSubAcc.Returns(true);
-            var message = new ChangePasswordCommand(userSession, true);
+            var message = new ChangePasswordCommand(userSession);
 
             var expectedHashKey = "expectedHashKey";
             sessionManager.Get<string>(Arg.Any<string>()).Returns(expectedHashKey);
@@ -339,7 +337,7 @@
         {
             // Arrange
             userSession.IsSubAcc.Returns(false);
-            var message = new ChangePasswordCommand(userSession, true);
+            var message = new ChangePasswordCommand(userSession);
 
             var expectedHashKey = "expectedHashKey";
             sessionManager.Get<string>(Arg.Any<string>()).Returns(expectedHashKey);
@@ -361,9 +359,7 @@
                     && param.CurrentPassword == message.CurrentPassword
                     && param.CustId == message.CustId
                     && param.HashKey == expectedHashKey
-                    && param.IP == message.IP
-                    && param.IsCasinoDisabled == message.IsCasinoDisabled
-                    && param.IsCasinoSync == message.IsCasinoSync
+                    && param.IP == message.IP                 
                     && param.LanguageKey == message.LanguageKey
                     && param.CurrentPassword == message.CurrentPassword
                     && param.NewPassword == message.NewPassword
@@ -376,7 +372,7 @@
         {
             // Arrange
             userSession.IsSubAcc.Returns(isSubAccount);
-            var message = new ChangePasswordCommand(userSession, true);
+            var message = new ChangePasswordCommand(userSession);
 
             passwordService.ChangeSubAccountPassword(Arg.Any<ChangeSubAccountPasswordParam>())
                 .Returns(new Result
@@ -403,7 +399,7 @@
         {
             // Arrange
             userSession.IsSubAcc.Returns(isSubAccount);
-            var message = new ChangePasswordCommand(userSession, true);
+            var message = new ChangePasswordCommand(userSession);
 
             passwordService.ChangeSubAccountPassword(Arg.Any<ChangeSubAccountPasswordParam>())
                 .Returns(new Result
@@ -559,7 +555,6 @@
                 HashKey = hashKey,
                 EnableSecurityCode = true,
                 CustId = message.CustId,
-                IsCasinoSync = message.IsCasinoSync,
                 Title = "Reset Password"
             };
 

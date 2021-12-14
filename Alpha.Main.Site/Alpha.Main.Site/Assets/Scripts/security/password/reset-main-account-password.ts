@@ -39,7 +39,6 @@ var resetMainAccountPassword = {
         $container.removeClass('display-none');
         var $txtSecurityCode = $('#password');
         var $txtConfirmSecurityCode = $('#confirmPassword');
-        var isCasinoSync = $('#isCasinoSync').val() === 'True';
         var message = resetMainAccountPassword.checkInputParameters($txtSecurityCode, $txtConfirmSecurityCode);
         if (message.length !== 0) {
             securityHelper.showFailMessage($messageContainer, message);
@@ -55,7 +54,7 @@ var resetMainAccountPassword = {
         $.ajax({
             type: 'POST',
             url: 'ResetMainAccountPassword',
-            data: { custId: $('#custId').val(), custRoleId: $('#custRoleId').val(), newPassword: password, isCasinoSync: isCasinoSync },
+            data: { custId: $('#custId').val(), custRoleId: $('#custRoleId').val(), newPassword: password},
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
                 if (data.Code !== 0) {

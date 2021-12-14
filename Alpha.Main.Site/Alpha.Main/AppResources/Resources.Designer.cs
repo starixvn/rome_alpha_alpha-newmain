@@ -1502,15 +1502,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total Casino Transfer|Outstanding.
-        /// </summary>
-        public static string totalCSTransferOutstanding {
-            get {
-                return ResourceManager.GetString("totalCSTransferOutstanding", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Total Master active/closed/suspended.
         /// </summary>
         public static string totalMasterACS {

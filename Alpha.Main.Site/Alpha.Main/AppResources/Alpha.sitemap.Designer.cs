@@ -232,15 +232,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Casino Position Taking (%).
-        /// </summary>
-        public static string casinoPositionTaking {
-            get {
-                return ResourceManager.GetString("casinoPositionTaking", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Charts.
         /// </summary>
         public static string charts {
@@ -759,15 +750,6 @@ namespace Alpha.Main.AppResources {
         public static string ProgressiveJackpotGames {
             get {
                 return ResourceManager.GetString("ProgressiveJackpotGames", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Real Time Casino Win Loss.
-        /// </summary>
-        public static string realTimeCSWinloss {
-            get {
-                return ResourceManager.GetString("realTimeCSWinloss", resourceCulture);
             }
         }
         

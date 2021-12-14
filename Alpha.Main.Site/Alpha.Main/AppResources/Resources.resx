@@ -247,9 +247,6 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>Total Agent active/closed/suspended</value>
   </data>
-  <data name="totalCSTransferOutstanding" xml:space="preserve">
-    <value>Total Casino Transfer|Outstanding</value>
-  </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>Total Master active/closed/suspended</value>
   </data>

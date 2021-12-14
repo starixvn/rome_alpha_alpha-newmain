@@ -43,10 +43,8 @@ namespace Alpha.Main
             ["BetListsMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.GetPermission(PageAccessType.ViewBetLists)),
             ["ViewLogMenuItem"] = () => new MenuStatus(!Current.IsSubAcc || Current.SubPageAccess.ViewLog),
             ["SubAccountMenuItem"] = () => new MenuStatus(!Current.IsSubAcc),
-            ["CasinoMenuItem"] = () => new MenuStatus(IsShowCasino),
             ["NumberGameMenuItem"] = () => new MenuStatus(IsShowNumberGame),
             ["ConsolidatedReportMenuItem"] = () => new MenuStatus(Current.IsShowConsolidatedReport),
-            ["MemberWinLimitMenuItem"] = () => new MenuStatus(!Current.IsHideGoldDeluxe),
             ["LastBetMonitorMenuItem"] = () => new MenuStatus(
                 null,
                 () =>

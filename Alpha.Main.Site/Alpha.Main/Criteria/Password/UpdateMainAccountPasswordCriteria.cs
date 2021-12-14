@@ -6,8 +6,6 @@
     {
         public int CustId { get; set; }
 
-        public bool DisCasino { get; set; }
-
         public string UserPwd { get; set; }
 
         public string OldPwd { get; set; }

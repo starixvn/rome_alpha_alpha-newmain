@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>双方/一方/两者皆不得分</value>
   </data>
-  <data name="casinoPositionTaking" xml:space="preserve">
-    <value>娱乐城占成数(%)</value>
-  </data>
   <data name="charts" xml:space="preserve">
     <value>图表</value>
   </data>
@@ -227,9 +224,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>占成数%</value>
-  </data>
-  <data name="realTimeCSWinloss" xml:space="preserve">
-    <value>即时娱乐场赢输</value>
   </data>
   <data name="scoreMap" xml:space="preserve">
     <value>盈利预测图</value>

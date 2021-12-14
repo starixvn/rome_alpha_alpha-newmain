@@ -59,7 +59,6 @@
             {
                 CustId = 1,
                 CustRoleId = RoleId.Agent,
-                IsCasinoSync = true,
                 Username = "UserName"
             };
 
@@ -78,7 +77,6 @@
             {
                 CustId = 1,
                 CustRoleId = 0,
-                IsCasinoSync = true,
                 Username = "UserName"
             };
 
@@ -111,7 +109,7 @@
         public void ChangePassword_Always_CallsMediatorSendChangePasswordCommand()
         {
             // Arrange
-            var command = new ChangePasswordCommand(userSession, true);
+            var command = new ChangePasswordCommand(userSession);
 
             // Act
             passwordController.ChangePassword(command);
@@ -124,7 +122,7 @@
         public void ForceChangePassword_Always_CallsMediatorSendChangePasswordCommand()
         {
             // Arrange
-            var command = new ChangePasswordCommand(userSession, true);
+            var command = new ChangePasswordCommand(userSession);
 
             // Act
             passwordController.ForceChangePassword(command);
@@ -137,7 +135,7 @@
         public void ResetMainAccountPassword_ValidParamter_CallsMediatorSendResetMainAccountPasswordCommand()
         {
             // Arrange
-            var command = new ResetMainAccountPasswordCommand(userSession, true);
+            var command = new ResetMainAccountPasswordCommand(userSession);
             command.CustRoleId = 2;
             // Act
             passwordController.ResetMainAccountPassword(command);
@@ -150,7 +148,7 @@
         public void ResetMainAccountPassword_InvalidParamter_NotCallsMediatorSendResetMainAccountPasswordCommand()
         {
             // Arrange
-            var command = new ResetMainAccountPasswordCommand(userSession, true);
+            var command = new ResetMainAccountPasswordCommand(userSession);
             command.CustRoleId = 0;
             // Act
             passwordController.ResetMainAccountPassword(command);

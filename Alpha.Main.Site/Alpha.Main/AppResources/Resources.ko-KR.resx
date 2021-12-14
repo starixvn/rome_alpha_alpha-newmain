@@ -247,9 +247,6 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>총 에이전트 접속/중지/보류됨</value>
   </data>
-  <data name="totalCSTransferOutstanding" xml:space="preserve">
-    <value>총 카지노 전송 |  대기중인 금액</value>
-  </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>총 마스터 접속/중지/보류됨</value>
   </data>

@@ -247,9 +247,6 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>สถานะของAgent ทั้งหมด/ถูกระงับ</value>
   </data>
-  <data name="totalCSTransferOutstanding" xml:space="preserve">
-    <value>คาซิโน ยอดรวม โอน/คงค้าง</value>
-  </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>จำนวนรวมในบัญชีของตัวแทนหลัก ยังคงใช้อยู่ / ปิดแล้ว/ ถูกระงับ</value>
   </data>
