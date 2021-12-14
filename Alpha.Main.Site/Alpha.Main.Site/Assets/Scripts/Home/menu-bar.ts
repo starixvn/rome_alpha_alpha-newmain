@@ -33,6 +33,7 @@ var menuBar = {
         menuBar.storeElements();
         menuBar.bindEvents();
         menuBar.initSideBar();
+        menuBar.authReport();
     },
 
     storeElements: function () {
@@ -259,7 +260,9 @@ var menuBar = {
         } catch(e) { }
 
         if (subMenu.data("domain")) {
-            var appPath = subMenu.data("apppath") + $('#sessionId').val();
+            var sessionId = $('#sessionId').val();
+            var cookieless = sessionId !== '' ? '/(S(' + sessionId + '))' : '';
+            var appPath = subMenu.data("apppath") + cookieless;
             $('#main').attr('src', subMenu.data("domain") + appPath + subMenu.data("url")).attr("target", "main");
         }
         else {
@@ -365,6 +368,16 @@ var menuBar = {
                 tabPT.css('left', tabPTLeft);
             }
         }, 400);
+    },
+
+    authReport: function () {
+        var sessionId = $('#sessionId').val();
+        var authUrl = sessionId !== '' ? 'site-reports/(S(' + sessionId + '))/Auth' : 'site-reports/Auth';
+        $.get(authUrl, { param: '' })
+            .done(function (result) {
+                $('#sessionId').val(result);
+                setTimeout(menuBar.authReport, 60 * 1000);
+            });
     }
 };
 
