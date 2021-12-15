@@ -7,6 +7,7 @@
     using System.Web;
     using AppResources;
     using Configurations;
+    using Sunplus.Agent.Model.Entities;
 
     public class MenuItem : IMenuItem
     {
@@ -16,14 +17,15 @@
         private Func<string> getDisplayName;
         private readonly Func<bool> isProtectedModeFunc;
         private readonly Func<bool> isInternalFunc;
+        private readonly Func<bool> isHideForSite;
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc = null)
-            : this(getMenuStatusFunc, null, null, null, null)
+            : this(getMenuStatusFunc, null, null, null, null, null)
         {
         }
 
         public MenuItem(Func<MenuStatus> getMenuStatusFunc, Predicate<string> authorizeUrlFunc)
-            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null)
+            : this(getMenuStatusFunc, authorizeUrlFunc, null, null, null, null)
         {
         }
 
@@ -32,13 +34,15 @@
             Predicate<string> authorizeUrlFunc,
             Func<string> getDisplayName,
             Func<bool> isProtectedModeFunc,
-            Func<bool> isInternalFunc)
+            Func<bool> isInternalFunc,
+            Func<bool> isHideForSite)
         {
             this.getMenuStatusFunc = getMenuStatusFunc ?? (() => new MenuStatus(true, false));
             this.authorizeUrlFunc = authorizeUrlFunc;
             this.getDisplayName = getDisplayName;
             this.isProtectedModeFunc = isProtectedModeFunc;
             this.isInternalFunc = isInternalFunc;
+            this.isHideForSite = isHideForSite;
         }
 
         public string Key { get; set; }
@@ -89,7 +93,8 @@
             {
                 var isAuthorized = (ByPassAuthorization
                     || authorizeUrlFunc(Link))
-                    && isVisibleForMobileOrDesktop();
+                    && isVisibleForMobileOrDesktop()
+                    && !isHideForSite();
 
                 if (isProtectedModeFunc())
                 {
