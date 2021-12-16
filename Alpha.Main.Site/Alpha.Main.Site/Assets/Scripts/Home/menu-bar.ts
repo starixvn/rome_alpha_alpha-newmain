@@ -22,7 +22,9 @@ var menuBar = {
         hamburgerIcon: null,
         profileImage: null,
         announcementItems: null,
-        closeIconOnMobile: null
+        closeIconOnMobile: null,
+        param: null,
+        reportDomain: null
     },
 
     urls: {
@@ -57,6 +59,8 @@ var menuBar = {
         menuBar.domElements.profileImage = $('#logoProfileImg');
         menuBar.domElements.announcementItems = $("#menu-ANNOUNCEMENTS li a");
         menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
+        menuBar.domElements.param = $('#param').val();
+        menuBar.domElements.reportDomain = $('#ReportDomain').val();
     },
 
     initSideBar: function () {
@@ -260,10 +264,11 @@ var menuBar = {
         } catch(e) { }
 
         if (subMenu.data("domain")) {
-            var sessionId = $('#sessionId').val();
-            var cookieless = sessionId !== '' ? '/(S(' + sessionId + '))' : '';
+            var sessionId = localStorage.getItem('sessionId');
+            var cookieless = sessionId ? '/(S(' + sessionId + '))' : '';
             var appPath = subMenu.data("apppath") + cookieless;
             $('#main').attr('src', subMenu.data("domain") + appPath + subMenu.data("url")).attr("target", "main");
+            //window.open(subMenu.data("domain") + appPath + subMenu.data("url"), '_blank');
         }
         else {
             $('#main').attr('src', subMenu.data("url")).attr("target", "main");
@@ -371,11 +376,12 @@ var menuBar = {
     },
 
     authReport: function () {
-        var sessionId = $('#sessionId').val();
-        var authUrl = sessionId !== '' ? 'site-reports/(S(' + sessionId + '))/Auth' : 'site-reports/Auth';
-        $.get(authUrl, { param: '' })
+        var sessionId = localStorage.getItem('sessionId');
+        var domain = menuBar.domElements.reportDomain;
+        var authUrl = sessionId ? domain + '/site-reports/(S(' + sessionId + '))/Auth' : domain + '/site-reports/Auth';
+        $.get(authUrl, { param: menuBar.domElements.param })
             .done(function (result) {
-                $('#sessionId').val(result);
+                localStorage.setItem('sessionId', result);
                 setTimeout(menuBar.authReport, 60 * 1000);
             });
     }
