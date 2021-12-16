@@ -31,6 +31,11 @@ body {
 
 .tab-content > .tab-pane {
     padding: 8px 0;
+    color: #CBCBCB;
+
+    .group-date {
+        color: #ECECEC;
+    }
 
     .pointer {
         cursor: pointer;
@@ -96,7 +101,6 @@ body {
 
     .panel-title {
         color: #EDEDED;
-        
     }
 
     .group-title {
@@ -163,7 +167,8 @@ body {
 
         .group-date {
             @extend %group;
-            background-color: #2B2C2E;
+            background-color: #353738;
+            color: #ECECEC;
         }
 
         .group-highlight {
@@ -175,6 +180,7 @@ body {
             padding-bottom: 4px;
             padding-top: 4px;
             background-color: #1A1B1C;
+            color: #ECECEC;
 
             .message {
                 padding: 0 16px;
