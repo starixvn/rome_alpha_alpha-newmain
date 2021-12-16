@@ -5,7 +5,7 @@ body {
     background-color: #171717;
 }
 
-.icon {
+.icon, .icon-pc {
     font-size: calculateScale(20px);
 }
 
@@ -413,7 +413,7 @@ body {
     }
 
     > li .list-setting > li a {
-        .icon {
+        .icon, .icon-pc {
             top: calculateScale(3px);
             margin-right: calculateScale(10px);
         }
@@ -442,7 +442,7 @@ body {
 
     > li.dropdown.setting {
         display: block;
-        top: 5px;
+        top: 8px;
 
         > a {
             display: inline-block;
