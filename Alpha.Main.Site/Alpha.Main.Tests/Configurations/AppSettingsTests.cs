@@ -10,24 +10,6 @@
     public class AppSettingsTests
     {
         [Test]
-        public void AssetAppPath_HasConfig_ReturnsCorrectSetting()
-        {
-            // Arrange
-            AppSettings.Settings = new NameValueCollection
-            {
-                ["AssetAppPath"] = "/assets"
-            };
-
-            var expectedSetting = "/assets";
-
-            // Act
-            var actualSetting = AppSettings.AssetAppPath;
-
-            // Assert
-            Assert.AreEqual(expectedSetting, actualSetting);
-        }
-
-        [Test]
         public void OldMainAppPath_HasConfig_ReturnsCorrectSetting()
         {
             // Arrange

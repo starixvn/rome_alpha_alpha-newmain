@@ -23,14 +23,6 @@
             set { settings = value; }
         }
 
-        public static string AssetAppPath
-        {
-            get
-            {
-                return Settings["AssetAppPath"];
-            }
-        }
-
         public static string OldMainAppPath
         {
             get
