@@ -44,7 +44,7 @@
             var statistics = statisticsService.GetStatistics(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
-            Assert.AreEqual(statistics, null);
+            Assert.IsNull(statistics);
         }
 
         [Test]
@@ -69,7 +69,7 @@
             var topWinningMembers = statisticsService.GetTopWinningMembers(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
-            Assert.AreEqual(topWinningMembers, null);
+            Assert.IsNull(topWinningMembers);
         }
 
         [Test]
@@ -94,7 +94,7 @@
             var topTurnoverMembers = statisticsService.GetTopTurnoverMembers(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
-            Assert.AreEqual(topTurnoverMembers, null);
+            Assert.IsNull(topTurnoverMembers);
         }
 
         [Test]

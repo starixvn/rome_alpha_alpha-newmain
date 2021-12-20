@@ -356,6 +356,7 @@
     <Compile Include="DataAccesses\SecurityCodeDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\StatisticsDataAccessImplTests.cs" />
     <Compile Include="Database\Statistics\StatisticsDatabase.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\CookieHelperTests.cs" />
     <Compile Include="Helpers\CustomSiteMapProvider.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
