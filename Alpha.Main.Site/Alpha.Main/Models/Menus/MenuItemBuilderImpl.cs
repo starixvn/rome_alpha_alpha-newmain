@@ -2,10 +2,12 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Web;
     using Auth.Services;
     using Auth.Services.Impl;
     using Fanex.Common.Helper;
+    using Sunplus.Agent.Model.Entities;
 
     public class MenuItemBuilderImpl : MenuItemBuilder
     {
@@ -52,17 +54,27 @@
         public IMenuItem BuildMenuItem(SiteMapNode node)
         {
             Check.Argument.IsNotNull(node, nameof(node));
+            Func<bool> isHideForSite = IsHideForSite(node);
 
             var menuItem = new MenuItem(
                 menuItemTypeConfiguration[node["menuItemType"] ?? string.Empty],
                 authorizationService.IsAuthorized,
                 menuItemDisplayName.ContainsKey(node.ResourceKey) ? menuItemDisplayName[node.ResourceKey] : null,
                 isProtectedModeFunc,
-                isInternalFunc);
+                isInternalFunc,
+                isHideForSite);
 
             SetDataForMenuItem(menuItem, node);
 
             return menuItem;
         }
+
+        private static Func<bool> IsHideForSite(SiteMapNode node) => () =>
+        {
+            var hideForSites = node["hideForSites"] == null ? Enumerable.Empty<string>() :
+                node["hideForSites"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+            return hideForSites
+                .Any(site => string.Equals(site, UserSession.Current?.Site, StringComparison.OrdinalIgnoreCase));
+        };
     }
 }

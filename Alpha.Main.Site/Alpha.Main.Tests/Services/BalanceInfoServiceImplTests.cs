@@ -36,7 +36,7 @@
             var balanceInfo = balanceInfoService.GetBalanceInfo(CustId.InvalidId, UserLevel.Agent);
 
             // Assert
-            Assert.AreEqual(balanceInfo, null);
+            Assert.IsNull(balanceInfo);
         }
 
         [Test]

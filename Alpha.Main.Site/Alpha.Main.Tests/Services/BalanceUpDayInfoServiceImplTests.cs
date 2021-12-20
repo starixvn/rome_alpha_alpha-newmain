@@ -15,7 +15,9 @@
         private IDynamicRepository dynamicRepository;
         private ICacheService cacheService;
         private BalanceUpDayInfoServiceImpl balanceUpDayInfoService;
+#pragma warning disable CS0169 // The field 'BalanceUpDayInfoServiceImplTests.CacheService' is never used
         private ICacheService CacheService;
+#pragma warning restore CS0169 // The field 'BalanceUpDayInfoServiceImplTests.CacheService' is never used
 
         [SetUp]
         public void SetUp()

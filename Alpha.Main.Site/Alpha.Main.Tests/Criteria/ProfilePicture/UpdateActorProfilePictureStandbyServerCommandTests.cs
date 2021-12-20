@@ -19,8 +19,8 @@
 
             // Assert
             Assert.AreEqual(command.ActorId, 1);
-            Assert.AreEqual(command.IsDefault, true);
-            Assert.AreEqual(command.IsMainServer, false);
+            Assert.IsTrue(command.IsDefault);
+            Assert.IsFalse(command.IsMainServer);
             Assert.AreEqual(command.Mode, 1);
             Assert.AreEqual(command.IP, ip);
             Assert.AreEqual(expectedSettingKey, actualSettingKey);

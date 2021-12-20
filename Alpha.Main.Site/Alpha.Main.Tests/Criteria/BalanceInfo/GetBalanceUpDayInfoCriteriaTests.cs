@@ -29,7 +29,7 @@
             var actual = criteria.IsValid();
 
             // Assert
-            Assert.AreEqual(true, actual);
+            Assert.IsTrue(actual);
         }
     }
 }

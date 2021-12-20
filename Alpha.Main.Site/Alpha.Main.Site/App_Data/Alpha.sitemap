@@ -63,9 +63,9 @@
       <siteMapNode resourceKey="agentList" appPath="MemberInfoAppPath" url="CustomerList/agent" roles="Master"></siteMapNode>
       <siteMapNode resourceKey="masterList" appPath="MemberInfoAppPath" url="CustomerList/master" roles="Super"></siteMapNode>
 
-      <siteMapNode resourceKey="customerlist" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent" isOld="true" isHiddenInMobile="true"></siteMapNode>
-      <siteMapNode resourceKey="agentList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master" isOld="true" isHiddenInMobile="true"></siteMapNode>
-      <siteMapNode resourceKey="masterList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Super/MasterList.aspx" roles="Super" isOld="true" isHiddenInMobile="true"></siteMapNode>
+      <siteMapNode resourceKey="customerlist" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Agent/MemberList.aspx" roles="Agent" isOld="true" isHiddenInMobile="true" hideForSites="789y"></siteMapNode>
+      <siteMapNode resourceKey="agentList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Master/AgentList.aspx" roles="Master" isOld="true" isHiddenInMobile="true" hideForSites="789y"></siteMapNode>
+      <siteMapNode resourceKey="masterList" appPath="OldMainAppPath" url="_MemberInfo/CustomerList/Super/MasterList.aspx" roles="Super" isOld="true" isHiddenInMobile="true" hideForSites="789y"></siteMapNode>
 
       <siteMapNode resourceKey="problemAccountList" appPath="MemberInfoAppPath" url="ProblemAccount"></siteMapNode>
 
