@@ -369,9 +369,6 @@
   <data name="ProgressiveGamesContribution" xml:space="preserve">
     <value>Tích Lũy Trò Chơi Lũy Tiến</value>
   </data>
-  <data name="ProgressiveJackpotGames" xml:space="preserve">
-    <value>Trò chơi Jackpot lũy tiến</value>
-  </data>
   <data name="customerSetting" xml:space="preserve">
     <value>Thiết lập của Khách hàng</value>
   </data>

@@ -363,9 +363,6 @@
   <data name="BetLists" xml:space="preserve">
     <value>投注历史</value>
   </data>
-  <data name="ProgressiveJackpotGames" xml:space="preserve">
-    <value>積寶遊戲</value>
-  </data>
   <data name="ProgressiveGamesContribution" xml:space="preserve">
     <value>積寶遊戲貢獻</value>
   </data>

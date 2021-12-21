@@ -363,9 +363,6 @@
   <data name="BetLists" xml:space="preserve">
     <value>รายการวางเดิมพันที่เล่นไปแล้ว</value>
   </data>
-  <data name="ProgressiveJackpotGames" xml:space="preserve">
-    <value>เกมส์แจ๊คพ็อต</value>
-  </data>
   <data name="ProgressiveGamesContribution" xml:space="preserve">
     <value>กองทุนรวมสำหรับเกมส์แจ๊คพ็อต</value>
   </data>
