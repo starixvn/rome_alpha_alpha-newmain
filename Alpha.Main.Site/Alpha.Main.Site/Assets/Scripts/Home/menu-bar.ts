@@ -1,6 +1,8 @@
 ﻿/// <reference path="../core.ts" />
 
 var menuBar = {
+    getAuthTimeout: null,
+    loadAuthTimeout: null,
     domElements: {
         subMenuItems: null,
         menuOpeners: null,
@@ -36,6 +38,7 @@ var menuBar = {
         menuBar.bindEvents();
         menuBar.initSideBar();
         menuBar.authReport();
+        menuBar.registerVisibleChange();
     },
 
     storeElements: function () {
@@ -376,14 +379,42 @@ var menuBar = {
     },
 
     authReport: function () {
+        menuBar.getAuthSessionId();
+    },
+
+    getAuthSessionId: function () {
         var sessionId = localStorage.getItem('sessionId');
         var domain = menuBar.domElements.reportDomain;
         var authUrl = sessionId ? domain + '/site-reports/(S(' + sessionId + '))/Auth' : domain + '/site-reports/Auth';
+
         $.get(authUrl, { param: menuBar.domElements.param })
             .done(function (result) {
                 localStorage.setItem('sessionId', result);
-                setTimeout(menuBar.authReport, 60 * 1000);
+                if (result && result !== '') {
+                    menuBar.loadAuthFrame();
+                }
+                else {
+                    clearTimeout(menuBar.getAuthTimeout);
+                    menuBar.getAuthTimeout = setTimeout(menuBar.getAuthSessionId, 1000);
+                }
             });
+    },
+
+    loadAuthFrame: function () {
+        var sessionId = localStorage.getItem('sessionId');
+        var domain = menuBar.domElements.reportDomain;
+        var authUrl = sessionId ? domain + '/site-reports/(S(' + sessionId + '))/Auth' : domain + '/site-reports/Auth';
+        var url = authUrl + '?param=' + menuBar.domElements.param;
+
+        $('#reportFrame').attr('src', url);
+        clearTimeout(menuBar.loadAuthTimeout);
+        menuBar.loadAuthTimeout = setTimeout(menuBar.loadAuthFrame, 60 * 1000);
+    },
+
+    registerVisibleChange: function () {
+        document.addEventListener('visibilitychange', function () {
+            !document.hidden && menuBar.authReport();
+        });
     }
 };
 
