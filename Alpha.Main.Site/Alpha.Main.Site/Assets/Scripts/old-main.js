@@ -255,7 +255,7 @@ var AgeWnd = function () {
             }
 
             var headerHeight = 40;
-            var contentBorder = 2;
+            var contentBorder = 10;
             var bodyHeightPadding = 18;
             popUp.find(".modal-content .modal-body").css("height", isAutoHeight ? 'auto' : (popH - headerHeight - contentBorder) + "px");
 
@@ -317,7 +317,7 @@ var AgeWnd = function () {
                         popUp.find(".ex-modal").css("height", size.height + "px");
 
                         var headerHeight = 40;
-                        var contentBorder = 2;
+                        var contentBorder = 10;
                         var bodyHeightPadding = 18;
                         popUp.find(".modal-content .modal-body").css("height", (size.height - headerHeight - contentBorder) + "px");
                     },
