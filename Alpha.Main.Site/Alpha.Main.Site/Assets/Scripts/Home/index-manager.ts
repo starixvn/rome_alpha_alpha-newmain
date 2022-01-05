@@ -115,7 +115,7 @@ var indexManager = {
     cacheCurrentUrl: function () {
         try {
             if ($("#isInternal").val() === "0") {
-                var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).contentWindow.location.href;
+                var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).src;
                 localStorage.setItem(indexManager.currentUrlCookieName, currentUrl);
             }
         } catch (e) { }

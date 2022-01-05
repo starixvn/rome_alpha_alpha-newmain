@@ -413,6 +413,7 @@ var menuBar = {
 
     registerVisibleChange: function () {
         document.addEventListener('visibilitychange', function () {
+            clearTimeout(menuBar.getAuthTimeout);
             !document.hidden && menuBar.authReport();
         });
     }
