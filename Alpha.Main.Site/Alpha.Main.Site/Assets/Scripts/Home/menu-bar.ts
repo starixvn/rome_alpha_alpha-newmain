@@ -1,7 +1,6 @@
 ﻿/// <reference path="../core.ts" />
 
 var menuBar = {
-    getAuthTimeout: null,
     loadAuthTimeout: null,
     domElements: {
         subMenuItems: null,
@@ -267,7 +266,7 @@ var menuBar = {
         } catch(e) { }
 
         if (subMenu.data("domain")) {
-            var sessionId = localStorage.getItem('sessionId');
+            var sessionId = $('#sessionId').val();
             var cookieless = sessionId ? '/(S(' + sessionId + '))' : '';
             var appPath = subMenu.data("apppath") + cookieless;
             $('#main').attr('src', subMenu.data("domain") + appPath + subMenu.data("url")).attr("target", "main");
@@ -379,29 +378,11 @@ var menuBar = {
     },
 
     authReport: function () {
-        menuBar.getAuthSessionId();
-    },
-
-    getAuthSessionId: function () {
-        var sessionId = localStorage.getItem('sessionId');
-        var domain = menuBar.domElements.reportDomain;
-        var authUrl = sessionId ? domain + '/site-reports/(S(' + sessionId + '))/Auth' : domain + '/site-reports/Auth';
-
-        $.get(authUrl, { param: menuBar.domElements.param })
-            .done(function (result) {
-                localStorage.setItem('sessionId', result);
-                if (result && result !== '') {
-                    menuBar.loadAuthFrame();
-                }
-                else {
-                    clearTimeout(menuBar.getAuthTimeout);
-                    menuBar.getAuthTimeout = setTimeout(menuBar.getAuthSessionId, 1000);
-                }
-            });
+        menuBar.loadAuthFrame();
     },
 
     loadAuthFrame: function () {
-        var sessionId = localStorage.getItem('sessionId');
+        var sessionId = $('#sessionId').val();
         var domain = menuBar.domElements.reportDomain;
         var authUrl = sessionId ? domain + '/site-reports/(S(' + sessionId + '))/Auth' : domain + '/site-reports/Auth';
         var url = authUrl + '?param=' + menuBar.domElements.param;
@@ -413,7 +394,6 @@ var menuBar = {
 
     registerVisibleChange: function () {
         document.addEventListener('visibilitychange', function () {
-            clearTimeout(menuBar.getAuthTimeout);
             !document.hidden && menuBar.authReport();
         });
     }
