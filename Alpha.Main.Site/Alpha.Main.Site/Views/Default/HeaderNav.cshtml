@@ -162,12 +162,12 @@
                                     <a href="@($"{Model.MainRootPath}ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
                                 </li>
                             }
-                        @if (Model.IsOfferLiveChat)
-                        {
-                            <li>
-                                <a href="javascript:;" id="liveChat" class="white-space-nowrap"><span class="icon icon-Live-chat"></span>@Resources.LiveMessage</a>
-                            </li>
-                        }
+                            @if (Model.IsOfferLiveChat)
+                            {
+                                <li>
+                                    <a href="javascript:;" id="liveChat" class="white-space-nowrap"><span class="icon icon-Live-chat"></span>@Resources.LiveMessage</a>
+                                </li>
+                            }
                             <li class="visible-mobile"><a class="link-logout"><span class="icon icon-logout"></span>@Resources.LogOut</a></li>
                         </ul>
                     </li>
@@ -176,4 +176,5 @@
         }
         <li class="hidden-mobile logout"><a class="icon icon-logout withripple" data-toggle="tooltip" data-placement="bottom" title="@Resources.LogOut"></a></li>
     </ul>
+    <iframe style="display:none;width:0px;height:0px" id="reportFrame" width="0" height="0"></iframe>
 </section>

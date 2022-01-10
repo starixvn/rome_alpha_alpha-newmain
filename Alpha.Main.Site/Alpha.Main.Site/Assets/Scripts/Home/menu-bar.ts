@@ -267,10 +267,9 @@ var menuBar = {
 
         if (subMenu.data("domain")) {
             var sessionId = $('#sessionId').val();
-            var cookieless = sessionId ? '/(S(' + sessionId + '))' : '';
+            var cookieless = '/(S(' + sessionId + '))';
             var appPath = subMenu.data("apppath") + cookieless;
             $('#main').attr('src', subMenu.data("domain") + appPath + subMenu.data("url")).attr("target", "main");
-            //window.open(subMenu.data("domain") + appPath + subMenu.data("url"), '_blank');
         }
         else {
             $('#main').attr('src', subMenu.data("url")).attr("target", "main");
@@ -379,17 +378,17 @@ var menuBar = {
 
     authReport: function () {
         menuBar.loadAuthFrame();
+        clearInterval(menuBar.loadAuthTimeout);
+        menuBar.loadAuthTimeout = setInterval(menuBar.loadAuthFrame, 60 * 1000);
     },
 
     loadAuthFrame: function () {
         var sessionId = $('#sessionId').val();
         var domain = menuBar.domElements.reportDomain;
-        var authUrl = sessionId ? domain + '/site-reports/(S(' + sessionId + '))/Auth' : domain + '/site-reports/Auth';
+        var authUrl = domain + '/site-reports/(S(' + sessionId + '))/Auth';
         var url = authUrl + '?param=' + menuBar.domElements.param;
 
-        $('#reportFrame').attr('src', url);
-        clearTimeout(menuBar.loadAuthTimeout);
-        menuBar.loadAuthTimeout = setTimeout(menuBar.loadAuthFrame, 60 * 1000);
+        menuBar.domElements.header.find('iframe#reportFrame')[0].src = url;
     },
 
     registerVisibleChange: function () {
