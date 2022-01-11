@@ -36,8 +36,7 @@ var menuBar = {
         menuBar.storeElements();
         menuBar.bindEvents();
         menuBar.initSideBar();
-        menuBar.authReport();
-        menuBar.registerVisibleChange();
+        menuBar.loadAuthFrame();
     },
 
     storeElements: function () {
@@ -376,12 +375,6 @@ var menuBar = {
         }, 400);
     },
 
-    authReport: function () {
-        menuBar.loadAuthFrame();
-        clearInterval(menuBar.loadAuthTimeout);
-        menuBar.loadAuthTimeout = setInterval(menuBar.loadAuthFrame, 60 * 1000);
-    },
-
     loadAuthFrame: function () {
         var sessionId = $('#sessionId').val();
         var domain = menuBar.domElements.reportDomain;
@@ -389,12 +382,6 @@ var menuBar = {
         var url = authUrl + '?param=' + menuBar.domElements.param;
 
         menuBar.domElements.header.find('iframe#reportFrame')[0].src = url;
-    },
-
-    registerVisibleChange: function () {
-        document.addEventListener('visibilitychange', function () {
-            !document.hidden && menuBar.authReport();
-        });
     }
 };
 
