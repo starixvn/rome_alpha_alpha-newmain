@@ -134,6 +134,16 @@ var indexManager = {
             currentUrl = currentUrl.replace("Index2", "Index");
         }
 
+        if (currentUrl.indexOf('/(S(') !== -1) {
+            var indexOfCookieless = currentUrl.indexOf('/(S(');
+            var correctCookieless = (<HTMLInputElement>document.getElementById('sessionId')).value;
+            var previousCookieless = currentUrl.substring(indexOfCookieless + 4, indexOfCookieless + 28);
+
+            if (previousCookieless !== correctCookieless) {
+                currentUrl = currentUrl.replace(previousCookieless, correctCookieless);
+            }
+        }
+
         if (indexManager.domElements.mainFrame
             && indexManager.domElements.mainFrame.length > 0) {
             indexManager.domElements.mainFrame.attr('src', currentUrl);
