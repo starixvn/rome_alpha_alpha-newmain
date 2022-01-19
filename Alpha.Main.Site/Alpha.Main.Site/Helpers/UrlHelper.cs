@@ -2,6 +2,7 @@
 {
     using System;
     using System.Web;
+    using Alpha.Main.Configurations;
     using Web.Helpers;
 
     public static class UrlHelper
@@ -18,7 +19,7 @@
         [ThreadStatic]
         private static Func<string, string> mapHowToUsePath;
 
-        [ThreadStatic]
+        //[ThreadStatic]
         private static Func<string, string> mapReportsPath;
 
         [ThreadStatic]
@@ -133,5 +134,8 @@
                 mapMainPath = value;
             }
         }
+
+        internal static string MapReportsDomain(string virtualPath = "~/")
+            => $"{AppSettings.ReportDomain}{AppSettings.ReportAppPath}/(S({HttpContext.Current.Session.SessionID}))";
     }
 }

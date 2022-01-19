@@ -282,8 +282,12 @@
 
         public static bool IsOfferLiveChat => "1" == Settings["IsOfferLiveChat"];
 
-        public static string ContactUsSkypeId => Settings["skypeId"];
+        public static string ReportDomain => Settings["Report:Domain"];        
 
+        public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(ReportDomain);
+        
+        public static string ContactUsSkypeId => Settings["skypeId"];
+        
         public static string ContactUsLetstalkId => Settings["letstalkid"];
 
         public static string ContactUsLetstalkIdNew => Settings["letstalkidNew"];
