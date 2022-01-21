@@ -196,6 +196,19 @@
             }
         }
     }
+
+    .lp_centralizer {
+        .lp_rotator {
+            background-image: url('./Images/loading.gif');
+            background-size: 79%;
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            > img {
+                opacity: 0;
+            }
+        }
+    }
 }
 
 //live chat mobile

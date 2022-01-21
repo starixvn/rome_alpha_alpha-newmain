@@ -1414,6 +1414,7 @@
     <Content Include="Assets\styles\home\images\flag_sprite.png" />
     <Content Include="Assets\Images\icon_user_default.png" />
     <Content Include="Assets\styles\home\images\icon_close.jpg" />
+	<Content Include="Assets\styles\home\images\loading.gif" />
     <Content Include="Assets\styles\home\images\minptarrow.png" />
     <Content Include="Assets\styles\home\images\minptbg.png" />
     <Content Include="Assets\styles\home\images\minptclose.png" />
