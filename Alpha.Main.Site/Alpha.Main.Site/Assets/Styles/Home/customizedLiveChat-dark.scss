@@ -7,6 +7,9 @@
 .lp-window-root div:focus {
     outline: none !important;
 }
+.lp_mobile .lp-window-root > .lp_maximized, .lp_tablet .lp-window-root > .lp_maximized, .lp_desktop .lp-window-root > .lp_maximized {
+    border: 0!important;
+}
 .lpc_desktop, .lp_mobile {
     .lpc_maximized-header {
         background: linear-gradient(#476474, #5E7B8B) !important;
