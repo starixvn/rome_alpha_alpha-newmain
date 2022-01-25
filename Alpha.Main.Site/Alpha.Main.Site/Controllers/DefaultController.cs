@@ -67,6 +67,15 @@ namespace Alpha.Main.Site.Controllers
 
             var viewModel = mediator.Send(query);
 
+            var fpsScript = this.userSession.GetProperty<string>("fpsScript");
+
+            if (!string.IsNullOrWhiteSpace(fpsScript))
+            {
+                TempData["fpsScript"] = fpsScript;
+
+                this.userSession.SetProperty("fpsScript", string.Empty);
+            }
+
             return View(viewModel);
         }
 
