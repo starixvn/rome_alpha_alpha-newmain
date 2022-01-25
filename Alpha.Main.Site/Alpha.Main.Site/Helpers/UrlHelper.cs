@@ -136,6 +136,6 @@
         }
 
         internal static string MapReportsDomain(string virtualPath = "~/")
-            => $"{AppSettings.ReportDomain}{AppSettings.ReportAppPath}/(S({HttpContext.Current.Session.SessionID}))";
+            => $"{AppSettings.ReportDomain}/(S({HttpContext.Current.Session.SessionID}))";
     }
 }

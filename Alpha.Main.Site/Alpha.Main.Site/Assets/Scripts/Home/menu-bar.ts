@@ -1,7 +1,6 @@
 ﻿/// <reference path="../core.ts" />
 
 var menuBar = {
-    loadAuthTimeout: null,
     domElements: {
         subMenuItems: null,
         menuOpeners: null,
@@ -231,11 +230,11 @@ var menuBar = {
             accountInfoUrl = accInfoContent.attr('src');
 
         if (!accountInfoUrl) {
-			accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768);
+            accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768);
         }
 
         if (userName !== '' || typeof userName === 'undefined') {
-			accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768 + '&SearchAccountName=' + userName);
+            accInfoContent.attr('src', menuBar.urls.accountInfo + '?mobileView=' + alpha.isScreenLower768 + '&SearchAccountName=' + userName);
         }
 
         // To work on IE, use plain-old javascript onload event
@@ -254,21 +253,20 @@ var menuBar = {
         };
     },
 
-	activateSubMenuItem: function (subMenu) {
+    activateSubMenuItem: function (subMenu) {
         menuBar.domElements.subMenuItems.removeClass('active');
-		subMenu.addClass('active');
+        subMenu.addClass('active');
         try {
             if (!alpha.core.isIe()) {
                 $('#main').contents().find("head").append($("#AssetCommonCssLink").val());
                 $('#main').contents().find('body').empty().block();
             }
-        } catch(e) { }
+        } catch (e) { }
 
         if (subMenu.data("domain")) {
             var sessionId = $('#sessionId').val();
             var cookieless = '/(S(' + sessionId + '))';
-            var appPath = subMenu.data("apppath") + cookieless;
-            $('#main').attr('src', subMenu.data("domain") + appPath + subMenu.data("url")).attr("target", "main");
+            $('#main').attr('src', subMenu.data("domain") + cookieless + subMenu.data("url")).attr("target", "main");
         }
         else {
             $('#main').attr('src', subMenu.data("url")).attr("target", "main");
@@ -378,7 +376,7 @@ var menuBar = {
     loadAuthFrame: function () {
         var sessionId = $('#sessionId').val();
         var domain = menuBar.domElements.reportDomain;
-        var authUrl = domain + '/site-reports/(S(' + sessionId + '))/Auth';
+        var authUrl = domain + '/(S(' + sessionId + '))/Auth';
         var url = authUrl + '?param=' + menuBar.domElements.param;
 
         menuBar.domElements.header.find('iframe#reportFrame')[0].src = url;
