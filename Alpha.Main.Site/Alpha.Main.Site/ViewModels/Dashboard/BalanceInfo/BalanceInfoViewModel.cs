@@ -80,7 +80,7 @@
             var dateReport = isToday ? DateTime.Now.ToShortDateString() : DateTime.Now.AddDays(-1).ToShortDateString();
             var userSelectedDateRangeOption = isToday ? 0 : 1;
             var queryString = $"IsFilterVisible=true&SortPropertyName=CustName&IsDescendingSort=False";
-            var path = $@"{ReportSiteAppPath}/Winloss/Index?{queryString}&UserSelectedDateRangeOption={userSelectedDateRangeOption}&FromDate={dateReport}&ToDate={dateReport}";
+            var path = $@"{ReportSiteAppPath}Winloss/Index?{queryString}&UserSelectedDateRangeOption={userSelectedDateRangeOption}&FromDate={dateReport}&ToDate={dateReport}";
 
             return path;
         }
