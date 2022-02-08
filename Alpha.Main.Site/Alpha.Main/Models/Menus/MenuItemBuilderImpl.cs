@@ -49,9 +49,14 @@
             menuItem.ByPassAuthorization = node["byPassAuthorization"] == null ? false : bool.Parse(node["byPassAuthorization"]);
             menuItem.ByPassProtectedMode = node["byPassProtectedMode"] == null ? false : bool.Parse(node["byPassProtectedMode"]);
             menuItem.ByPassProtectedModeInternal = node["byPassProtectedModeInternal"] == null ? false : bool.Parse(node["byPassProtectedModeInternal"]);
-            menuItem.UseDomainConfig = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]];
-            menuItem.Url = node.Url;
             menuItem.SubMenus = new List<IMenuItem>();
+            menuItem.Url = node.Url;
+
+            var useDomainConfigValue = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]] + string.Empty;
+            var mainDomain = HttpContext.Current.Request.Headers["Host"].Replace("mb.", string.Empty).Replace("mb2.", string.Empty);
+
+            useDomainConfigValue = useDomainConfigValue.IndexOf("{0}") != -1 ? string.Format(useDomainConfigValue, mainDomain) : useDomainConfigValue;
+            menuItem.UseDomainConfig = useDomainConfigValue;
         }
 
         public IMenuItem BuildMenuItem(SiteMapNode node)

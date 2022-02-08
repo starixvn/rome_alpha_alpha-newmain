@@ -71,13 +71,6 @@
         {
             get
             {
-                var appVirtualPath = AppSettings.GetAppPath(AppPath);
-
-                if (!string.IsNullOrWhiteSpace(appVirtualPath))
-                {
-                    return Regex.Replace(link, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath);
-                }
-
                 return link;
             }
 

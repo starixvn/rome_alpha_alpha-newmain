@@ -35,7 +35,10 @@ var menuBar = {
         menuBar.storeElements();
         menuBar.bindEvents();
         menuBar.initSideBar();
-        menuBar.loadAuthFrame();
+
+        if (menuBar.domElements.reportDomain) {
+            menuBar.loadAuthFrame();
+        }
     },
 
     storeElements: function () {
@@ -269,7 +272,7 @@ var menuBar = {
             $('#main').attr('src', subMenu.data("domain") + cookieless + subMenu.data("url")).attr("target", "main");
         }
         else {
-            $('#main').attr('src', subMenu.data("url")).attr("target", "main");
+            $('#main').attr('src', subMenu.data("apppath") + subMenu.data("url")).attr("target", "main");
         }
     },
 
