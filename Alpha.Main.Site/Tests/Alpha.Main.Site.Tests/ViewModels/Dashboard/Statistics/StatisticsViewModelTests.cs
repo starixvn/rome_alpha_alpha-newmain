@@ -26,9 +26,9 @@
             Assert.AreEqual(expectedLabel, viewModel.OutstandingLabel);
         }
 
-        [TestCase(RoleId.Super, "master")]
-        [TestCase(RoleId.Master, "agent")]
-        [TestCase(RoleId.Agent, "member")]
+        [TestCase(RoleId.Super, "masternew")]
+        [TestCase(RoleId.Master, "agentnew")]
+        [TestCase(RoleId.Agent, "membernew")]
         public void GetOutstandingDefaultReportLevel_ByViewerLevel_ReturnCorrectLevel(byte roleId, string expectedDefaultLevel)
         {
             // Arrange

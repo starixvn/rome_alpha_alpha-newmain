@@ -15,7 +15,7 @@
             UrlHelper.MapMainPath(Arg.Any<string>()).Returns("MainPath");
 
             UrlHelper.MapReportsPath = Substitute.For<Func<string, string>>();
-            UrlHelper.MapReportsPath(Arg.Any<string>()).Returns("ReportsPath");
+            UrlHelper.MapReportsPath(Arg.Any<string>()).Returns("ReportsPath/");
 
             UrlHelper.MapHowToUsePath = Substitute.For<Func<string, string>>();
             UrlHelper.MapHowToUsePath(Arg.Any<string>()).Returns("HowToUsePath");
@@ -27,7 +27,7 @@
             UrlHelper.MapMessagesPath(Arg.Any<string>()).Returns("MessagesPath");
 
             UrlHelper.MapMemberInfoPath = Substitute.For<Func<string, string>>();
-            UrlHelper.MapMemberInfoPath(Arg.Any<string>()).Returns("MemberInfoPath");
+            UrlHelper.MapMemberInfoPath(Arg.Any<string>()).Returns("MemberInfoPath/");
         }
     }
 }

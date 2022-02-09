@@ -53,7 +53,7 @@
             menuItem.Url = node.Url;
 
             var useDomainConfigValue = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]] + string.Empty;
-            var mainDomain = HttpContext.Current.Request.Headers["Host"].Replace("mb.", string.Empty).Replace("mb2.", string.Empty);
+            var mainDomain = HttpContext.Current?.Request?.Headers["Host"]?.Replace("mb.", string.Empty).Replace("mb2.", string.Empty);
 
             useDomainConfigValue = useDomainConfigValue.IndexOf("{0}") != -1 ? string.Format(useDomainConfigValue, mainDomain) : useDomainConfigValue;
             menuItem.UseDomainConfig = useDomainConfigValue;
