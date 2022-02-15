@@ -983,6 +983,9 @@
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.css">
       <DependentUpon>ChatBotBanneri1-dark.scss</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\home\ChatBotBanneri1-dark.min.css">
+      <DependentUpon>ChatBotBanneri1-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\styles\home\ChatBotBanneri1.css">
       <DependentUpon>ChatBotBanneri1.scss</DependentUpon>
     </Content>
@@ -1789,6 +1792,12 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CFG.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.8.22.0.31243\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
