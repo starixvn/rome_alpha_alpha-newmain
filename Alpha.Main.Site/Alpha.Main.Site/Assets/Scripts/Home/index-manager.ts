@@ -18,6 +18,7 @@ var indexManager = {
     currentUrlCookieName: 'DFFKDHFJKLDHFJDH',
     requiredNetworkSpeedCalculation: false,
     showOldCustomerList: false,
+    reportDomain: "",
 
     domElements: {
         mainFrame: null,
@@ -51,6 +52,21 @@ var indexManager = {
     registerEvents: function () {
         indexManager.domElements.pagePopup.tinyDraggable();
         setTimeout(indexManager.reCheckin, 30000);
+
+        if (indexManager.reportDomain) {
+            const eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+            const eventer = window[eventMethod];
+            const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+            eventer(messageEvent, function (e) {
+                if (e.origin.indexOf(indexManager.reportDomain) === -1 || !e.data) {
+                    return;
+                }
+
+                if (e.data.event_id === "daily-statement") {
+                    popupManager.open(e.data.url, e.data.title, 900);
+                }
+            }, false);
+        }
     },
 
     cachedDomElements: function () {
@@ -62,6 +78,7 @@ var indexManager = {
         indexManager.currentUrlCookieName = indexManager.domElements.currentURLCookieName.val();
         indexManager.requiredNetworkSpeedCalculation = $('#requiredNetworkSpeedCalculation').val() == '1';
         indexManager.showOldCustomerList = $('#showOldCustomerList').val() == '1';
+        indexManager.reportDomain = $('#reportDomain').val();
     },
 
     changeMenu: function (url) {
@@ -167,7 +184,7 @@ var indexManager = {
                         if (alpha.isMobile) {
                             $(iframeWindow.document).find(':focus').blur();
                         }
-                    } catch(e) { }
+                    } catch (e) { }
                 });
 
             indexManager.domElements.accountInfoContent.load(function () {
