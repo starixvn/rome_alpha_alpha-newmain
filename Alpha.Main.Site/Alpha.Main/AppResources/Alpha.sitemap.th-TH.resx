@@ -399,4 +399,7 @@
   <data name="Old" xml:space="preserve">
     <value>เก่า</value>
   </data>
+  <data name="BetCreditTracking" xml:space="preserve">
+    <value>Bet Credit Tracking</value>
+  </data>
 </root>

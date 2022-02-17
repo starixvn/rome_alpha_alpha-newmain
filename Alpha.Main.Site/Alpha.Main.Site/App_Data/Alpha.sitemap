@@ -47,6 +47,7 @@
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
       <siteMapNode menuItemType="ProgressiveContributionMenuItem" resourceKey="ProgressiveGamesContribution" appPath="ReportsAppPath" url="progressivecontribution/index"></siteMapNode>
       <siteMapNode menuItemType="BonusDetailMenuItem" resourceKey="BonusDetail" appPath="ReportsAppPath" url="bonusdetail/index" isNew="true"></siteMapNode>
+      <siteMapNode resourceKey="BetCreditTracking" appPath="ReportsAppPath" url="betcredittracking/index"></siteMapNode>
     </siteMapNode>
     <!--/Report-->
     <!--MemberInfo-->
