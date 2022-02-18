@@ -44,9 +44,6 @@
 
       <siteMapNode resourceKey="result" url="~/Normal" appPath="ResultSiteVirtualPath" byPassProtectedMode="true"></siteMapNode>
 
-      <!--<siteMapNode resourceKey="PlayForFunDetail" appPath="ReportsAppPath" url="playforfun/member" roles="Agent"></siteMapNode>-->
-      <!--<siteMapNode resourceKey="PlayForFunDetail" appPath="ReportsAppPath" url="playforfun/masteroragent" roles="Super,Master"></siteMapNode>-->
-
       <siteMapNode menuItemType="NG2MenuItem" resourceKey="schedule" appPath="NG2SiteVirtualPath" url="~/Schedule"></siteMapNode>
       <siteMapNode menuItemType="ProgressiveContributionMenuItem" resourceKey="ProgressiveGamesContribution" appPath="ReportsAppPath" url="progressivecontribution/index"></siteMapNode>
       <siteMapNode menuItemType="BonusDetailMenuItem" resourceKey="BonusDetail" appPath="ReportsAppPath" url="bonusdetail/index" isNew="true"></siteMapNode>
@@ -75,7 +72,6 @@
       <siteMapNode resourceKey="memberCommission" appPath="OldMainAppPath" url="_MemberInfo/Commission/MemberCommissionSportbook.aspx"></siteMapNode>
       <!--<siteMapNode resourceKey="MemberWinLimit" appPath="OldMainAppPath" url="MemberInformation/WinLimit/Index"></siteMapNode>-->
       <siteMapNode resourceKey="MemberWinLimit" appPath="MemberInfoAppPath" url="WinLossLimit/Index"></siteMapNode>
-      <!--<siteMapNode resourceKey="playForFunMemberRequest" appPath="MemberInfoAppPath" url="memberrequests/index" roles="Agent"></siteMapNode>-->
       <siteMapNode resourceKey="BetChoiceLimit" menuItemType="BetChoiceLimitMenuItem" appPath="OldMainAppPath" url="MemberInformation/BetChoiceLimit/Index"></siteMapNode>      
       <siteMapNode resourceKey="IndirectLoginAccount" menuItemType="IndirectLoginAccountMenuItem" appPath="MemberInfoAppPath" url="IndirectLoginAccount/Index"></siteMapNode>
       <siteMapNode resourceKey="DormantAccountList" menuItemType="DormantAccountListMenuItem" appPath="MemberInfoAppPath" url="DormantAccount/Index"></siteMapNode>

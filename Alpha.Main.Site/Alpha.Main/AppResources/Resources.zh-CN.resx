@@ -457,20 +457,11 @@
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>没资料显示</value>
   </data>
-  <data name="playForFun" xml:space="preserve">
-    <value>免费试玩</value>
-  </data>
   <data name="lblNew" xml:space="preserve">
     <value>新增</value>
   </data>
   <data name="UpdatedSuccessfully" xml:space="preserve">
     <value>更新成功!</value>
-  </data>
-  <data name="memberRequest" xml:space="preserve">
-    <value>会员要求</value>
-  </data>
-  <data name="PlayForFunGuidelines" xml:space="preserve">
-    <value>免费试玩-指南</value>
   </data>
   <data name="Notice_3" xml:space="preserve">
     <value>您的上线已开启“捕鱼天下”予您的下线。请到您的设定页面进行配置</value>

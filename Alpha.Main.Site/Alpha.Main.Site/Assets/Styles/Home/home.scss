@@ -238,29 +238,6 @@ body {
             }
         }
     }
-
-    &.member-requests {
-        .panel-body {
-            padding-top: 5px;
-            padding-bottom: 0;
-        }
-
-        .product-item {
-            text-transform: uppercase;
-        }
-
-        .link-color {
-            color: #045ace;
-        }
-
-        .disabled {
-            color: #848484;
-
-            &:hover, &:focus, &:active {
-                text-decoration: none;
-            }
-        }
-    }
 }
 
 .nowrap {
@@ -350,7 +327,7 @@ body {
             }
         }
 
-        &.balance-info, &.statistic, &.member-requests {
+        &.balance-info, &.statistic {
             float: left;
             width: 50%;
             @include box-sizing;
@@ -393,36 +370,6 @@ body {
                 background-color: #fff;
                 padding: 6px 16px;
                 line-height: 20px;
-            }
-        }
-
-        &.member-requests {
-            padding-left: 8px;
-
-            .container {
-                padding-left: 0;
-                padding-right: 0;
-            }
-
-            .panel-title {
-                background: #666;
-                color: #fff;
-                padding: 5px 16px;
-
-                .badge-title {
-                    float: right;
-                    margin-top: 6px;
-                }
-
-                .icon-information-outline {
-                    float: right;
-                    margin-right: 0;
-                    margin-left: 10px;
-                    font-weight: normal;
-                    color: #fff;
-                    font-size: 18px;
-                    margin-top: 2px;
-                }
             }
         }
 

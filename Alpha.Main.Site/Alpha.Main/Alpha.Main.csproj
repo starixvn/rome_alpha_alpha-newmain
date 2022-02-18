@@ -284,7 +284,6 @@
     <Compile Include="Criteria\Banner\GetBannerCriteria.cs" />
     <Compile Include="Criteria\KickoutCustomerCriteria.cs" />
     <Compile Include="Criteria\LogoutCommand.cs" />
-    <Compile Include="Criteria\MemberRequests\ProductRequestCriteria.cs" />
     <Compile Include="Criteria\Nickname\CreateNicknameCommand.cs" />
     <Compile Include="Criteria\Nickname\CreateSubAccountNicknameCommand.cs" />
     <Compile Include="Criteria\Nickname\NicknameNonQueryCommand.cs" />
@@ -360,7 +359,6 @@
     <Compile Include="Models\User.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
-    <Compile Include="Models\MemberRequests\ProductRequest.cs" />
     <Compile Include="Models\Statistics\NewMember.cs" />
     <Compile Include="Models\Statistics\Statistics.cs" />
     <Compile Include="Models\Menus\IMenuItem.cs" />
@@ -405,7 +403,6 @@
     <Compile Include="Services\Impl\CacheRefServiceImpl.cs" />
     <Compile Include="Services\Impl\KickoutCustomerServiceImpl.cs" />
     <Compile Include="Services\Impl\LogoutServiceImpl.cs" />
-    <Compile Include="Services\Impl\MemberRequestsServiceImpl.cs" />
     <Compile Include="Services\BalanceUpDayInfoService.cs" />
     <Compile Include="Services\Impl\BalanceUpDayInfoServiceImpl.cs" />
     <Compile Include="Services\Impl\NetThrottlingService.cs">
@@ -418,7 +415,6 @@
     <Compile Include="Services\Impl\UMMessageServiceImpl.cs" />
     <Compile Include="Services\KickoutCustomerService.cs" />
     <Compile Include="Services\LogoutService.cs" />
-    <Compile Include="Services\MemberRequestsService.cs" />
     <Compile Include="Services\NicknameService.cs" />
     <Compile Include="Services\ProtectionCodeService.cs" />
     <Compile Include="Services\SimpleServiceLocator.cs" />

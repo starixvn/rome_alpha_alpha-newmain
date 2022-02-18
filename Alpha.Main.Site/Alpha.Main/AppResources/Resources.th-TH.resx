@@ -454,20 +454,11 @@
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>ไม่มีข้อมูล</value>
   </data>
-  <data name="playForFun" xml:space="preserve">
-    <value>ทดลองเล่นฟรี</value>
-  </data>
   <data name="lblNew" xml:space="preserve">
     <value>บใหม่</value>
   </data>
   <data name="UpdatedSuccessfully" xml:space="preserve">
     <value>ปรับปรุงเรียบร้อยแล้ว!</value>
-  </data>
-  <data name="memberRequest" xml:space="preserve">
-    <value>คำขอสมาชิก</value>
-  </data>
-  <data name="PlayForFunGuidelines" xml:space="preserve">
-    <value>ทดลองเล่นฟรี-คู่มือ</value>
   </data>
   <data name="Notice_3" xml:space="preserve">
     <value>อัพไลน์ของคุณได้เปิดใช้งานเกมส์ยิงปลาให้ดาวน์ไลน์ของคุณ. โปรดไปที่หน้าการตั้งค่าเพือกำหนดค่าการตั้งค่าส่วนแบ่งของคุณเอง</value>

@@ -261,7 +261,6 @@
     <Compile Include="Controllers\DefaultControllerTests.cs" />
     <Compile Include="Controllers\ErrorControllerTests.cs" />
     <Compile Include="Controllers\LanguageControllerTests.cs" />
-    <Compile Include="Controllers\MemberRequestsControllerTests.cs" />
     <Compile Include="Controllers\NetworkSpeedControllerTests.cs" />
     <Compile Include="Controllers\OtpControllerTests.cs" />
     <Compile Include="Controllers\PasswordControllerTests.cs" />
@@ -272,7 +271,6 @@
     <Compile Include="Handlers\ChatBotHandlerTests.cs" />
     <Compile Include="Handlers\CustomerProfileHandlerTests.cs" />
     <Compile Include="Handlers\DefaultHandlerTests.cs" />
-    <Compile Include="Handlers\MemberRequestsHandlerTests.cs" />
     <Compile Include="Handlers\MenuBarHandlerTests.cs" />
     <Compile Include="Handlers\LanguageHandlerTests.cs" />
     <Compile Include="Handlers\CustomerOtpHandlerTests.cs" />
@@ -301,7 +299,6 @@
     <Compile Include="Requests\SecurityCode\SecurityCodeQueryTests.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommandTests.cs" />
     <Compile Include="ViewModels\Dashboard\BalanceInfo\BalanceInfoViewModelTests.cs" />
-    <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModelTests.cs" />
     <Compile Include="ViewModels\Dashboard\Statistics\StatisticsViewModelTests.cs" />
     <Compile Include="ViewModels\IndexViewModelTests.cs" />
     <Compile Include="ViewModels\MenuBarViewModelTests.cs" />

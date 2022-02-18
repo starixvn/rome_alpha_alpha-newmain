@@ -112,7 +112,6 @@
             container.RegisterPerWebRequest<BalanceInfoService, BalanceInfoServiceImpl>();
             container.RegisterPerWebRequest<StatisticsService, StatisticsServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
-            container.RegisterPerWebRequest<MemberRequestsService, MemberRequestsServiceImpl>();
 
             container.RegisterPerWebRequest<OtpService, OtpServiceImpl>();
             container.RegisterPerWebRequest<OtpAdapter, OtpAdapterImpl>();

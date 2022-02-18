@@ -282,7 +282,6 @@
     <Compile Include="Criteria\Banner\GetBannerCriteriaTests.cs" />
     <Compile Include="Criteria\KickoutCustomerCriteriaTests.cs" />
     <Compile Include="Criteria\LogoutCommandTests.cs" />
-    <Compile Include="Criteria\MemberRequests\ProductRequestCriteriaTests.cs" />
     <Compile Include="Criteria\Nickname\CreateNicknameCommandTests.cs" />
     <Compile Include="Criteria\Nickname\CreateSubAccountNicknameCommandTests.cs" />
     <Compile Include="Criteria\Nickname\UpdateNicknameLoginOnlyCommand Tests.cs" />
@@ -335,7 +334,6 @@
     <Compile Include="Services\CacheRefServiceImplTests.cs" />
     <Compile Include="Services\ProfilePictureServicesTests.cs" />
     <Compile Include="Services\KickoutCustomerServiceImplTests.cs" />
-    <Compile Include="Services\MemberRequestsServiceImplTest.cs" />
     <Compile Include="Services\NicknameServiceImplTests.cs" />
     <Compile Include="Services\PasswordServiceImplTests.cs" />
     <Compile Include="Services\ProtectionCodeServiceImplTests.cs" />

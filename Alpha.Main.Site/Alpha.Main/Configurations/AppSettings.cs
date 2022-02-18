@@ -138,8 +138,6 @@
 
         public static bool IsDisabledContactUsLink => Settings["IsDisabledContactUsLink"] == "1";
 
-        public static bool EnablePlayForFun => Settings["EnablePlayForFun"] == "true";
-
         public static string GoogleAnalyticId => Settings["GoogleAnalyticId"];
 
         public static bool DisableMessages => Settings["DisableMessages"] == "1";

@@ -13,8 +13,6 @@
 
         public string UserLevelName { get; }
 
-        public bool EnablePlayForFun => AppSettings.EnablePlayForFun;
-
         public string OldMainRootPath => UrlHelper.MapOldMainPath("~/");
 
         public string MainRootPath => UrlHelper.MapMainPath("~/");

@@ -339,15 +339,6 @@
   <data name="schedule" xml:space="preserve">
     <value>ตารางเวลา</value>
   </data>
-  <data name="PlayForFun" xml:space="preserve">
-    <value>ทดลองเล่นฟรี</value>
-  </data>
-  <data name="playForFunMemberRequest" xml:space="preserve">
-    <value>ทดลองเล่นฟรี - คำขอสมาชิก</value>
-  </data>
-  <data name="PlayForFunDetail" xml:space="preserve">
-    <value>การทดลองเล่นฟรี</value>
-  </data>
   <data name="winLossByProduct" xml:space="preserve">
     <value>ยอดได้เสียตามโปรดักส์</value>
   </data>
