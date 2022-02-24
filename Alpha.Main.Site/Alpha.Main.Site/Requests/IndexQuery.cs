@@ -2,6 +2,7 @@
 
 namespace Alpha.Main.Site.Models.Requests
 {
+    using Alpha.Main.Site.Helpers;
     using Alpha.Web.Models;
     using Configurations;
     using MediatR;
@@ -79,7 +80,7 @@ namespace Alpha.Main.Site.Models.Requests
 
         public bool IsIndirectLoggedIn => userSession.IsIndirectLoggedIn;
 
-        public string DarkModeName => userSession.DarkModeName;
+        public string DarkModeName => DarkModeHelper.GetDarkModeName(userSession);
         
         public bool IsProtectedMode { get; }
 

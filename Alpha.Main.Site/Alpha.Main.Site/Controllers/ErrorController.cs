@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Main.Site.Helpers;
     using Alpha.Web.Filters;
     using Sunplus.Agent.Model.Entities;
 
@@ -18,9 +19,9 @@
         }
 
         public ActionResult Index()
-            => View((object)userSession.DarkModeName);
+            => View((object)DarkModeHelper.GetDarkModeName(userSession));
 
         public ActionResult Blocked()
-            => View((object)userSession.DarkModeName);
+            => View((object)DarkModeHelper.GetDarkModeName(userSession));
     }
 }

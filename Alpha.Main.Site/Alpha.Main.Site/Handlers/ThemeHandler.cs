@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using Alpha.Main.Configurations;
     using Alpha.Main.Services;
     using Alpha.Main.Site.Requests.Theme;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
+    using Web.Configurations;
 
     public class ThemeHandler : IRequestHandler<ChangeThemeQuery, bool>
     {
@@ -19,7 +19,7 @@
 
         public bool Handle(ChangeThemeQuery message)
         {
-            if (AppSettings.IsMBCSite)
+            if (AppSettings.IsOfferDarkMode)
             {
                 userSession.DarkModeName = message.IsDarkMode ? "-dark" : string.Empty;
 
