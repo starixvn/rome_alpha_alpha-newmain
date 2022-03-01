@@ -74,7 +74,7 @@
             var hideForSites = node["hideForSites"] == null ? Enumerable.Empty<string>() :
                 node["hideForSites"].Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
             return hideForSites
-                .Any(site => string.Equals(site, UserSession.Current?.Site, StringComparison.OrdinalIgnoreCase));
+                .Any(site => string.Equals(site, "*", StringComparison.OrdinalIgnoreCase) || string.Equals(site, UserSession.Current?.Site, StringComparison.OrdinalIgnoreCase));
         };
     }
 }
