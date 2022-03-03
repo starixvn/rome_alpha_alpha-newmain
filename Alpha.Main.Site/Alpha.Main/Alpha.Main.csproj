@@ -51,8 +51,8 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.8.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.8.7\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="Alpha.Web, Version=1.0.8.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.8.8\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="Base32, Version=1.0.0.26, Culture=neutral, PublicKeyToken=3427d4dc8cee30c6, processorArchitecture=MSIL">
       <HintPath>..\packages\Base32.1.0.0.26\lib\portable-net40+sl40+win+wp80\Base32.dll</HintPath>
@@ -177,8 +177,8 @@
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <HintPath>..\packages\StackExchange.Redis.2.0.519\lib\net461\StackExchange.Redis.dll</HintPath>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.8\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.9\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
@@ -355,6 +355,7 @@
     <Compile Include="Criteria\SecurityCode\UpdateMainAccountSecurityCodeCounterCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\GetSubAccountSecurityCodeCriteria.cs" />
     <Compile Include="Criteria\SecurityCode\GetMainAccountSecurityCodeCriteria.cs" />
+    <Compile Include="Criteria\Theme\LogChangeThemeCriteria.cs" />
     <Compile Include="Criteria\UMMessage\GetUMMessageCriteria.cs" />
     <Compile Include="DataAccesses\Impl\BaseDataAccessImpl.cs" />
     <Compile Include="DataAccesses\Impl\PasswordDataAccessImpl.cs" />
@@ -443,6 +444,7 @@
     <Compile Include="Services\Impl\NicknameServiceImpl.cs" />
     <Compile Include="Services\Impl\ProfilePictureServices.cs" />
     <Compile Include="Services\Impl\ProtectionCodeServiceImpl.cs" />
+    <Compile Include="Services\Impl\ThemeServiceImpl.cs" />
     <Compile Include="Services\Impl\UMMessageServiceImpl.cs" />
     <Compile Include="Services\KickoutCustomerService.cs" />
     <Compile Include="Services\LogoutService.cs" />
@@ -465,6 +467,7 @@
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
     <Compile Include="Services\UMMessageService.cs" />
+    <Compile Include="Services\ThemeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Alpha.Main.Debug.ruleset" />

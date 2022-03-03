@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@Resources.ProtectionCode</title>
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/security/security-{Model.UserLevel}")
-    @StaticResources.RenderStyles("~/Assets/bundles/protection-code/protection")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderWithDarkMode($"/bundles/site-main/security/security-{Model.UserLevel}")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/protection-code/protection")
 </head>
 <body>
     <ul class="nav nav-tabs" role="tablist">

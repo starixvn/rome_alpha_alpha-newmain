@@ -43,8 +43,8 @@
       <HintPath>..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.8.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Web.1.0.8.7\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="Alpha.Web, Version=1.0.8.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Web.1.0.8.8\lib\net461\Alpha.Web.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.GoldDeluxe.CoreSetting.1.0.0.2\lib\net40\AutoMapper.dll</HintPath>
@@ -202,8 +202,8 @@
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <HintPath>..\packages\StackExchange.Redis.2.0.519\lib\net461\StackExchange.Redis.dll</HintPath>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.8\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.9\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
@@ -331,6 +331,8 @@
     <Compile Include="Criteria\Otp\UpdateCustomerStatusAfterVerifyOtpCommandTests.cs" />
     <Compile Include="Criteria\Password\ResetMainAccountPasswordCriteriaTests.cs" />
     <Compile Include="Criteria\Password\ResetSubAccountPasswordCriteriaTests.cs" />
+    <Compile Include="Criteria\Password\SkipForceChangePasswordCommandTests.cs" />
+    <Compile Include="Criteria\Password\UpdateLastChangePasswordIndirectAccountCriteriaTests.cs" />
     <Compile Include="Criteria\Password\UpdateMainAccountPasswordCriteriaTests.cs" />
     <Compile Include="Criteria\Password\UpdateSubAccountPasswordCriteriaTests.cs" />
     <Compile Include="Criteria\ProfilePicture\UpdateActorProfilePictureCommandBaseTests.cs" />
@@ -351,6 +353,7 @@
     <Compile Include="Criteria\Statistics\GetStatisticsCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopTurnoverMembersCriteriaTests.cs" />
     <Compile Include="Criteria\Statistics\GetTopWinningMembersCriteriaTests.cs" />
+    <Compile Include="Criteria\Theme\LogChangeThemeCriteriaTests.cs" />
     <Compile Include="Criteria\UMMessage\GetUMMessageCriteriaTests.cs" />
     <Compile Include="DataAccesses\PasswordDataAccessImplTests.cs" />
     <Compile Include="DataAccesses\SecurityCodeDataAccessImplTests.cs" />
@@ -371,6 +374,7 @@
     <Compile Include="Services\PasswordServiceImplTests.cs" />
     <Compile Include="Services\ProtectionCodeServiceImplTests.cs" />
     <Compile Include="Services\SecurityCodeServiceImplTest.cs" />
+    <Compile Include="Services\ThemeServiceImplTests.cs" />
     <Compile Include="Services\UMMessageServiceImplTests.cs" />
     <Compile Include="TestData\Helper\ConstructorQuery\ParametersAmountConstructorQuery.cs" />
     <Compile Include="TestData\Helper\FakeDataHelper.cs" />

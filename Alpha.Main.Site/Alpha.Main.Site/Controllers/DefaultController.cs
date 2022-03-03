@@ -6,6 +6,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
+    using Alpha.Main.Site.Helpers;
     using Alpha.Web.Filters;
     using AppResources;
     using Configurations;
@@ -72,7 +73,8 @@ namespace Alpha.Main.Site.Controllers
         [AllowProtectedMode]
         public ActionResult MenuBar()
         {
-            var viewModel = mediator.Send(new MenuBarQuery(userSession.RoleId, Request.UserAgent));
+            var viewModel = mediator.Send(
+                new MenuBarQuery(userSession.RoleId, Request.UserAgent, darkModeName: DarkModeHelper.GetDarkModeName(userSession)));
 
             return PartialView(viewModel);
         }

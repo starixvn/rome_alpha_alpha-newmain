@@ -26,7 +26,10 @@
 
             var menuItems = siteMenuService.GetMenuByUserLevel(message.UserLevel, message.IsCookieLess);
 
-            var viewModel = new MenuBarViewModel(menuItems, message.IsSmallDevice);
+            var viewModel = new MenuBarViewModel(
+                menuItems,
+                message.IsSmallDevice,
+                isDarkMode: !string.IsNullOrWhiteSpace(message.DarkModeName));
 
             return viewModel;
         }

@@ -622,4 +622,19 @@
   <data name="ContainsSpaceOrUnicodeCharacterError" xml:space="preserve">
     <value>รหัสป้องกันต้องไม่มีสัญลักษณ์พิเศษหรือช่องว่าง</value>
   </data>
+  <data name="ContactUs_Content" xml:space="preserve">
+    <value>เรามีเจ้าหน้าที่บริการลูกค้าคอยให้ความช่วยเหลือเกี่ยวกับปัญหาการใช้งานของเว็บเอเย่นต์</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="LetstalkIMID" xml:space="preserve">
+    <value>Letstalk IM ID</value>
+  </data>
+  <data name="SkypeID" xml:space="preserve">
+    <value>ติดต่อ Skype</value>
+  </data>
+  <data name="ContactUsLegend" xml:space="preserve">
+    <value>For Better Security</value>
+  </data>
 </root>

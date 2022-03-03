@@ -1,0 +1,128 @@
+﻿@import '../Home/_variables-dark.scss';
+
+$block-padding: 20px;
+$block-width: 380px;
+$captcha-img-width: 120px;
+$captcha-img-height: 60px;
+$icon-refresh-color: #6a6a6a;
+$button-height: 30px;
+$margin: 7px;
+$textbox-width: 90px;
+$textbox-font-size: 16px;
+$bg-body-captcha : #171717;
+
+body {
+    background-color: $bg-body-captcha;
+}
+
+
+.block {
+    display: table;
+    padding: 20px;
+    width: $block-width;
+    background: #1C1C1C;
+
+    .captcha-code img {
+        width: $captcha-img-width;
+        height: $captcha-img-height;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .captcha-code, .action-refresh, .form-captcha {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+
+    .icon-refresh {
+        color: $icon-refresh-color;
+        font-size: $textbox-font-size;
+        font-weight: normal;
+        margin-left: $margin;
+
+        &:hover {
+            cursor: pointer
+        }
+
+        &:hover:after {
+            width: $button-height;
+            height: $button-height
+        }
+    }
+
+    .txt {
+        font-size: $textbox-font-size;
+        margin: 0 $margin;
+        padding: 0 10px;
+        width: $textbox-width;
+    }
+
+    .btn-submit {
+        font-size: $font-size;
+        height: $button-height;
+        line-height: $button-height;
+        text-transform: none;
+        width: auto;
+    }
+
+    .hint-text {
+        position: relative;
+
+        .icon-check-circle {
+            color: #32cd32;
+            font-size: 1.9rem;
+            position: absolute;
+        }
+
+        .text {
+            padding-left: 25px;
+        }
+    }
+}
+
+.captcha-row {
+    margin: 5px 0;
+    input {
+        background: #313131 !important;
+        border: 1px solid #474747 !important;
+    }
+}
+.captcha-row.row-hint {
+    .captcha-icon-check-circle {
+        margin-right: 6px;
+    }
+}
+
+.row-image {
+    height: 50px;
+}
+
+.captcha-input {
+    width: 220px;
+    background-color: $component-bg;
+    color: $component-color;
+    border: 1px solid $component-border-color;
+}
+
+.refresh-icon {
+    margin-left: 5px;
+    margin-top: 15px;
+    vertical-align: top;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+.captcha-icon-refresh {
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+CjxwYXRoIGQ9Ik03LjkwMDEgMTZDNC42MDAxIDE2IDEuNzAwMSAxMy45IDAuNzAwMDk4IDEwLjdMMC42MDAwOTggMTAuNUgyLjUwMDFWMTAuNkMzLjQwMDEgMTIuOCA1LjUwMDEgMTQuMiA3LjgwMDEgMTQuMkM5LjgwMDEgMTQuMiAxMS41MDAxIDEzLjIgMTIuNjAwMSAxMS42TDEwLjgwMDEgMTAuM0wxNS40MDAxIDguODAwMDVMMTUuOTAwMSAxMy43TDE0LjIwMDEgMTIuNUMxMi45MDAxIDE0LjcgMTAuNTAwMSAxNiA3LjkwMDEgMTZaIiBmaWxsPSIjRURFREVEIi8+CjxwYXRoIGQ9Ik0wIDIuMkwxLjggMy41QzMuMiAxLjMgNS41IDAgOC4xIDBDMTEuNCAwIDE0LjMgMi4xIDE1LjMgNS4zTDE1LjQgNS41SDEzLjVWNS40QzEyLjYgMy4yIDEwLjUgMS44IDguMiAxLjhDNi4zIDEuOCA0LjUgMi44IDMuNCA0LjRMNS4yIDUuNkwwLjUgNy4yTDAgMi4ySDBaIiBmaWxsPSIjRURFREVEIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDAiPgo8cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+") !important;
+}
+.captcha-icon-check-circle {
+    width: 20px !important;
+    height: 20px !important;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9u ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjAwMDIg MC4wMDAyNDQxNDFDMTUuNTIzMiAwLjAwMDI0NDE0MSAyMCA0LjQ3Nzc0IDIwIDkuOTk5OTlDMjAg MTUuNTIyMiAxNS41MjI1IDE5Ljk5OTcgMTAuMDAwMiAxOS45OTk3QzQuNDc3MjQgMTkuOTk5NyAw LjAwMDQ4ODI4MSAxNS41MjIyIDAuMDAwNDg4MjgxIDkuOTk5OTlDMC4wMDA0ODgyODEgNC40Nzc3 NCA0LjQ3Nzk5IDAuMDAwMjQ0MTQxIDEwLjAwMDIgMC4wMDAyNDQxNDFaTTkuMDAwNDkgMTQuNUwx Ni4wMDAyIDcuNTAwMjRMMTQuNTkwMiA2LjA5MDI0TDkuMDAwNDkgMTEuNjcwMkw1LjkxMDQ5IDgu NTg5OTlMNC41MDA0OSA5Ljk5OTk5TDkuMDAwNDkgMTQuNVoiIGZpbGw9IiMyRkNENzUiLz4KPC9z dmc+Cg==") !important;
+}
+.captcha-hint{
+    line-height : 1 !important;
+}

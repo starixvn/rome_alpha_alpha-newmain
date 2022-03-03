@@ -12,11 +12,13 @@
         public MenuBarViewModel(
             IEnumerable<IMenuItem> menuItems,
             bool isSmallDevice = false,
-            Func<bool> accountInfoVisibleFunc = null)
+            Func<bool> accountInfoVisibleFunc = null,
+            bool isDarkMode = false)
         {
             MenuItems = menuItems.Where(menuItem => menuItem.Status.Visible);
             IsSmallDevice = isSmallDevice;
             this.accountInfoVisibleFunc = accountInfoVisibleFunc ?? FunctionRegistry.ShowAccountInfo;
+            IsDarkMode = isDarkMode;
         }
 
         public bool IsAccountInfoVisible
@@ -27,5 +29,7 @@
         public IEnumerable<IMenuItem> MenuItems { get; }
 
         public bool IsSmallDevice { get; }
+
+        public bool IsDarkMode { get; }
     }
 }

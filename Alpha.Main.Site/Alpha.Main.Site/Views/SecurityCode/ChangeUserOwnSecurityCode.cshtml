@@ -4,9 +4,9 @@
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
 @section css {
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetStyles.Render($"/bundles/site-main/security/security-{Model.UserLevel}")
-    @StaticResources.RenderStyles("~/Assets/bundles/security/security")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderWithDarkMode($"/bundles/site-main/security/security-{Model.UserLevel}")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/security/security")
 }
 <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" id="passwordNav">

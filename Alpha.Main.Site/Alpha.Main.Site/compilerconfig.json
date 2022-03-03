@@ -98,5 +98,73 @@
   {
     "outputFile": "Assets/styles/protection-code/protection.css",
     "inputFile": "Assets/styles/protection-code/protection.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/page-dark.css",
+    "inputFile": "Assets/styles/home/page-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/popup-announcement-dark.css",
+    "inputFile": "Assets/styles/home/popup-announcement-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/home-dark.css",
+    "inputFile": "Assets/styles/home/home-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/home-mobile-calculate-07-dark.css",
+    "inputFile": "Assets/styles/home/home-mobile-calculate-07-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/page-mobile-calculate-07-dark.css",
+    "inputFile": "Assets/styles/home/page-mobile-calculate-07-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/chatbot/chatbot-dark.css",
+    "inputFile": "Assets/styles/chatbot/chatbot-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/chatbot/chatbot-setting-dark.css",
+    "inputFile": "Assets/styles/chatbot/chatbot-setting-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/chatbot/register-account-dark.css",
+    "inputFile": "Assets/styles/chatbot/register-account-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/error/error-dark.css",
+    "inputFile": "Assets/styles/error/error-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/newcustomer-captcha/captcha-dark.css",
+    "inputFile": "Assets/styles/newcustomer-captcha/captcha-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/security/security-dark.css",
+    "inputFile": "Assets/styles/security/security-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/security/verify-security-code-dark.css",
+    "inputFile": "Assets/styles/security/verify-security-code-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/otp/otp-dark.css",
+    "inputFile": "Assets/styles/otp/otp-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/customizedLiveChat-dark.css",
+    "inputFile": "Assets/styles/home/customizedLiveChat-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/protection-code/protection-dark.css",
+    "inputFile": "Assets/styles/protection-code/protection-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/contact-us/contact-us.css",
+    "inputFile": "Assets/styles/contact-us/contact-us.scss"
+  },
+  {
+    "outputFile": "Assets/styles/contact-us/contact-us-dark.css",
+    "inputFile": "Assets/styles/contact-us/contact-us-dark.scss"
   }
 ]

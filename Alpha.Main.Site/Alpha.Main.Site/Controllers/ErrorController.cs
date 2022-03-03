@@ -2,21 +2,26 @@
 {
     using System.Web.Mvc;
     using System.Web.SessionState;
+    using Alpha.Main.Site.Helpers;
     using Alpha.Web.Filters;
+    using Sunplus.Agent.Model.Entities;
 
     [AllowAnonymous]
     [AllowProtectedMode]
     [SessionState(SessionStateBehavior.ReadOnly)]
     public class ErrorController : Controller
     {
-        public ActionResult Index()
+        private readonly IUserSession userSession;
+
+        public ErrorController(IUserSession userSession)
         {
-            return View();
+            this.userSession = userSession;
         }
 
+        public ActionResult Index()
+            => View((object)DarkModeHelper.GetDarkModeName(userSession));
+
         public ActionResult Blocked()
-        {
-            return View();
-        }
+            => View((object)DarkModeHelper.GetDarkModeName(userSession));
     }
 }

@@ -3,8 +3,8 @@
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
 }
 @section Styles {
-    @StaticResources.AssetStyles.RenderCommon("/bundles/site-main/chatbot/chatbot-default")
-    @StaticResources.RenderStyles("~/assets/bundles/chatbot/chatbot-setting")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/chatbot/chatbot-setting")
 }
 <div class="page-title">
     <span class="pull-left">@Model.Title</span>

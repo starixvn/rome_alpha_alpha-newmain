@@ -4,8 +4,8 @@
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
 @section css {
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.RenderStyles("~/Assets/bundles/security/security")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/security/security")
 }
 <h1 id="title_header" class="page-title">@Model.Title</h1>
 <div id="status-message" class="msg-content display-none">

@@ -12,6 +12,12 @@
         <li class="maintenance-box hide" id="um-message-box" title="@Resources.UMAnnouncementTitle">
             <span class="icon-under-maintenance"></span>
         </li>
+        @if (Model.IsOfferDarkMode)
+        {
+            <li class="switch-mode-box">
+                <span class="switch-mode @(Model.IsDarkMode ? "dark-mode" : string.Empty)"></span>
+            </li>
+        }
         @if (Model.ShowCreateMemberByQRCode)
         {
             <li class="visible-mobile"><span class="icon icon-qr-code-top" title="@Resources.CreateMemberWithQRCode"></span></li>
@@ -153,7 +159,7 @@
                             @if (!Model.IsDisabledContactUsLink)
                             {
                                 <li>
-                                    <a href="@($"{Model.OldMainRootPath}Company/ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
+                                    <a href="@($"{Model.MainRootPath}ContactUs/Index")" target="main"><span class="icon icon-contactus"></span>@Resources.ContactUs</a>
                                 </li>
                             }
                         @if (Model.IsOfferLiveChat)

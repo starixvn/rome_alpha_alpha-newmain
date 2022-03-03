@@ -4,8 +4,8 @@
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
 @section css {
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.RenderStyles("~/Assets/bundles/security/verify-security-code")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.RenderStylesWithDarkMode("~/Assets/bundles/security/verify-security-code")
 }
 <h1 id="title_header" class="page-title">@Security.SecurityCodeValidation</h1>
 <div class="verify-security-code" id="verify-security-code-container">

@@ -3,8 +3,8 @@
     Layout = "~/Views/SecurityCode/Shared/_Layout.cshtml";
 }
 @section css {
-    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetStyles.Render("/bundles/site-main/security/before-home-page")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.AssetStyles.RenderWithDarkMode("/bundles/site-main/security/before-home-page")
 }
 <div class="block">
     <form class="form-SC form-validation" id="otp-form">

@@ -295,6 +295,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Service specialists are available to assist any of your question(s) encounter at agency site..
+        /// </summary>
+        public static string ContactUs_Content {
+            get {
+                return ResourceManager.GetString("ContactUs_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For Better Security.
+        /// </summary>
+        public static string ContactUsLegend {
+            get {
+                return ResourceManager.GetString("ContactUsLegend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The protection code must not contain any Unicode characters or spaces..
         /// </summary>
         public static string ContainsSpaceOrUnicodeCharacterError {
@@ -390,6 +408,15 @@ namespace Alpha.Main.AppResources {
         public static string doNotShowAgain {
             get {
                 return ResourceManager.GetString("doNotShowAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download.
+        /// </summary>
+        public static string Download {
+            get {
+                return ResourceManager.GetString("Download", resourceCulture);
             }
         }
         
@@ -562,6 +589,15 @@ namespace Alpha.Main.AppResources {
         public static string less {
             get {
                 return ResourceManager.GetString("less", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Letstalk IM ID.
+        /// </summary>
+        public static string LetstalkIMID {
+            get {
+                return ResourceManager.GetString("LetstalkIMID", resourceCulture);
             }
         }
         
@@ -1228,6 +1264,15 @@ namespace Alpha.Main.AppResources {
         public static string Skip {
             get {
                 return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skype ID.
+        /// </summary>
+        public static string SkypeID {
+            get {
+                return ResourceManager.GetString("SkypeID", resourceCulture);
             }
         }
         

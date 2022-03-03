@@ -34,9 +34,7 @@
 
         [HttpGet]
         public ActionResult Index(string returnUrl)
-        {
-            return View(GetCaptchaSetting(returnUrl));
-        }
+            => View(GetCaptchaSetting(returnUrl));
 
         [HttpPost, ActionName("Index"), CaptchaValidation]
         public ActionResult IndexPost(string returnUrl)

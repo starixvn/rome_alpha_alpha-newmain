@@ -19,6 +19,7 @@
 @Html.Hidden("exTotalBetsForecastRootPath", Model.ExTotalBetsForecastRootPath)
 @Html.Hidden("isInternal", (Model.IsInternal ? 1 : 0))
 @Html.Hidden("requiredNetworkSpeedCalculation", (Model.RequiredNetworkSpeedCalculation ? 1 : 0))
-@Html.Hidden("disableMessages", (Model.DisableMessages ? 1 : 0))
+@Html.Hidden("disableMessages", (Model.DisableMessages || Model.IsProtectedMode ? 1 : 0))
 @Html.Hidden("showOldCustomerList", (Model.ShowOldCustomerList ? 1 : 0))
 @Html.Hidden("UMAnnouncementPopupClientIntervalInMinutes", Model.UMAnnouncementPopupClientIntervalInMinutes)
+@Html.Hidden("isDarkMode", Model.IsDarkMode.ToString().ToLowerInvariant())

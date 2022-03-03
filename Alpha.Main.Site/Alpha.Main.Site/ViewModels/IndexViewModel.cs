@@ -103,6 +103,7 @@
                 profilePicture.ImageBase64String,
                 message.ShowNicknameMenu,
                 message.ShowCreateMemberByQRCode,
+                !string.IsNullOrWhiteSpace(message.DarkModeName),
                 IsProtectedMode,
                 message.IsOfferProtectedMode);
 
@@ -152,5 +153,7 @@
         public bool IsOfferLiveChat { get; } = AppSettings.IsOfferLiveChat;
 
         public int UMAnnouncementPopupClientIntervalInMinutes { get; } = AppSettings.UMAnnouncementPopupClientIntervalInMinutes;
+
+        public bool IsDarkMode => !string.IsNullOrWhiteSpace(message.DarkModeName);
     }
 }
