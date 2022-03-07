@@ -6,7 +6,9 @@
     using Sunplus.Agent.Model.Entities;
     using Web.Configurations;
 
-    public class ThemeHandler : IRequestHandler<ChangeThemeQuery, bool>
+    public class ThemeHandler :
+        IRequestHandler<ChangeThemeQuery, bool>,
+        IRequestHandler<ResetAssetAppPathQuery, bool>
     {
         private readonly IUserSession userSession;
         private readonly ThemeService themeService;
@@ -37,6 +39,13 @@
             }
 
             return false;
+        }
+
+        public bool Handle(ResetAssetAppPathQuery message)
+        {
+            userSession.AssetAppPath = AppSettings.AssetAppPath;
+
+            return true;
         }
     }
 }

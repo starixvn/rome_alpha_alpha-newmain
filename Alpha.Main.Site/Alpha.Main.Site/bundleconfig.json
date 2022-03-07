@@ -2,6 +2,7 @@
   {
     "outputFileName": "Assets/bundles/default-index.js",
     "inputFiles": [
+      "Assets/scripts/home/assetsCDNHealthcheck.js",
       "Assets/scripts/core.js",
       "Assets/scripts/home/index-manager.js",
       "Assets/scripts/old-main.js",

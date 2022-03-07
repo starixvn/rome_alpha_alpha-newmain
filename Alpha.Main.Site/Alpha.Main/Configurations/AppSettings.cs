@@ -296,5 +296,8 @@
         public static string ContactUsLetstalkUrlNew => Settings["letstalkurlNew"];
 
         public static string ContactUsNewDomains => Settings["newdomains"];
+
+        public static int CDNReCheckinIntervalInSeconds
+            => int.Parse(Settings["CDNReCheckin:IntervalInSeconds"] ?? "60");
     }
 }

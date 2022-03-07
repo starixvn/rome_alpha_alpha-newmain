@@ -85,5 +85,7 @@ namespace Alpha.Main.Site.Models.Requests
         public bool IsProtectedMode { get; }
 
         public bool IsOfferProtectedMode { get; }
+
+        public string AssetAppPath => userSession.AssetAppPath;
     }
 }
