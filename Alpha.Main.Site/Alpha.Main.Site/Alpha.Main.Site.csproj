@@ -69,8 +69,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Auth, Version=3.0.3.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.3.2-beta1\lib\net461\Alpha.Auth.dll</HintPath>
+    <Reference Include="Alpha.Auth, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Auth.3.0.3.1-Beta01\lib\net461\Alpha.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Alpha.Captcha, Version=1.1.1.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Alpha.Captcha.1.1.1.3\lib\net461\Alpha.Captcha.dll</HintPath>
@@ -317,10 +317,10 @@
       <HintPath>..\packages\StackExchange.Redis.2.0.519\lib\net461\StackExchange.Redis.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Auth, Version=3.0.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.2.2-Beta05\lib\net461\Sunplus.Agent.Model.Auth.dll</HintPath>
+      <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.2.3-OneRNGDCS01\lib\net461\Sunplus.Agent.Model.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.6-Beta02\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.6.2-OneRNGDCS01\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.DataAccessLibrary, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.DataAccessLibrary.3.0.0.2\lib\net40\Sunplus.Agent.Model.DataAccessLibrary.dll</HintPath>
@@ -654,7 +654,9 @@
       <DependentUpon>default-home-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\default-home.css" />
-    <Content Include="Assets\bundles\default-home.min.css" />
+    <Content Include="Assets\bundles\default-home.min.css">
+      <DependentUpon>default-home.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-index-dark.css" />
     <Content Include="Assets\bundles\default-index-dark.min.css">
       <DependentUpon>default-index-dark.css</DependentUpon>
@@ -676,7 +678,9 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\home-mobile-calculate-07-dark.css" />
-    <Content Include="Assets\bundles\home-mobile-calculate-07-dark.min.css" />
+    <Content Include="Assets\bundles\home-mobile-calculate-07-dark.min.css">
+      <DependentUpon>home-mobile-calculate-07-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\home-mobile-calculate-07.css" />
     <Content Include="Assets\bundles\home-mobile-calculate-07.min.css">
       <DependentUpon>home-mobile-calculate-07.css</DependentUpon>
