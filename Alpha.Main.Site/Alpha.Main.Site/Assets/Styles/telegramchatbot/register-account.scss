@@ -1,0 +1,174 @@
+﻿@import '../Home/_variables.scss';
+@import '../Home/_mixins.scss';
+
+// Register Telegram
+
+.list-requirements {
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-left: 12px;
+
+    > li {
+        padding-bottom: 30px;
+        list-style-type: decimal;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    .msg {
+        display: inline-block;
+    }
+
+    .btn-gen-qr-code {
+        padding: 10px 40px;
+    }
+
+    .btn-verify {
+        width: 120px;
+    }
+}
+
+.download-content {
+    display: table;
+
+    .logo-telegram {
+        float: left;
+    }
+
+    .qr-code-link {
+        display: block;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .list-download {
+        float: right;
+        margin-left: 16px;
+        padding-top: 4px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+            margin: 4px 0 8px;
+        }
+    }
+}
+
+.list-qr-code {
+    display: flex;
+    align-items: flex-end;
+    
+    margin-bottom: 10px;
+
+    .private-qr-code-link {
+        margin-left: 6px;
+    }
+}
+
+.verification-form {
+    display: table;
+    width: 100%;
+    clear: both;
+
+    .form-group {
+        // check Iphone 5
+        @media (min-device-width: 330px) {
+            float: left;
+
+            &.list-button {
+                padding-top: 24px;
+                margin-left: 10px;
+
+                .msg-expired {
+                    margin-left: 10px;
+                    color: red;
+                }
+            }
+        }
+    }
+
+    label {
+        display: block;
+        width: 100%;
+    }
+
+    .verify-text {
+        width: 130px;
+    }
+
+    .btn-refresh {
+        margin-right: 0;
+    }
+
+    .captcha-container {
+        display: table;
+        margin-left: 0;
+        padding-right: 32px;
+        // check Iphone 5
+        @media (min-device-width: 330px) {
+            margin-left: 16px;
+        }
+    }
+
+    .group-captcha {
+        position: relative;
+    }
+
+    .captcha-code {
+        float: left;
+
+        img {
+            width: 80px;
+            height: 28px;
+        }
+    }
+
+    .captcha-text {
+        float: left;
+        position: relative;
+        width: 130px;
+        margin-right: 10px;
+    }
+
+    .icon-refresh {
+        position: absolute;
+        right: -30px;
+        top: 7px;
+        font-size: 16px;
+        color: #6a6a6a;
+        font-weight: normal;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:hover:after {
+            top: -2px;
+            left: 0;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.resend-code {
+    background: none;
+    border: none;
+    color: $link-color;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.resend-code[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+    color: $link-color;
+}

@@ -1,0 +1,89 @@
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.RegisterAccountViewModel
+@{
+    Layout = "~/Views/TelegramChatBot/Shared/_Layout.cshtml";
+}
+@section Styles {
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/chatbot/tab-{Model.CustLevel}")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/register-account")
+}
+
+<div class="page-title">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#telegramchatbot" aria-controls="home" role="tab" data-toggle="tab">Telegram</a>
+        </li>
+        <li role="presentation">
+            @Html.ActionLink("Letstalk", "Index", "ChatBot")
+        </li>
+    </ul>
+</div>
+<div class="tab-content">
+    <div class="panel" id="register-panel">
+        <div class="panel-heading" role="tab" id="headingRegister">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#registerTelegram" aria-expanded="false" aria-controls="registerTelegram">
+                    Account
+                </a>
+            </h4>
+        </div>
+        <div id="registerTelegram" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingRegister">
+            <div class="panel-body has-padding">
+                @*<p>@Html.Raw(ChatBot.IntroChatbot)</p>*@
+                <p>
+                    <strong>"Chatbot"</strong> function integrated with this <strong>Telegram IM</strong> allows you to receive <strong>up-to-date significant information of your business conveniently and securely without the need to access to this site.</strong>
+                    <br /> To start setting up Chatbot, please follow below steps:
+                </p>
+                <ul id="registerTelegramPanel" class="list-requirements">
+                    <li>
+                        @*<p class="bold">@ChatBot.InstallLetstalk</p>*@
+                        <p class="bold">Install Telegram and create a free account</p>
+                        <p>
+                            <a class="link" href="https://www.telegram.org/" target="_blank"><strong>Telegram</strong></a>  is one of the <strong>world's top 10 most downloaded app</strong> .It's  <strong>free</strong>, <strong>cross-platform</strong> and <strong>cloud-based</strong> instant message service.
+                            <br /> Conversations in Telegram are <strong>encrypted</strong> and no one else can access the data
+                        </p>
+                        <div class="download-content">
+                            <div class="logo-telegram">
+                                <img id="logoTelegram" src="~/Assets/Styles/telegramchatbot/images/telegram.png" />
+                                <img class="qr-code hide" id="imgQRCode" src="~/Assets/styles/chatbot/images/qrcode.png" />
+                                <a href="#" class="link qr-code-link" id="showQRCode">Show QR Code</a>
+                                <a href="#" class="link qr-code-link hide" id="hideQRCode">Hide QR Code</a>
+                            </div>
+                            <div class="list-download">
+                                <h2>Telegram</h2>
+                                <p><strong>Telegram Messenger Inc.</strong></p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="https://apps.apple.com/app/telegram-messenger/id686449807" class="btn-download-ios" target="_blank">
+                                            <img src="~/Assets/Styles/telegramchatbot/images/apple.png" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank" class="btn-download-android">
+                                            <img src="~/Assets/Styles/telegramchatbot/images/google.png" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="bold">Start setting up your Telegram Chatbot by clicking on this button and follow the instructions</p>
+                        <button class="btn-chatbot btn-gen-qr-code" id="btnGenQRCode" @(Model.IsVerifying ? "disabled" : string.Empty)>Generate private QR Code</button>
+                    </li>
+                    @if (Model.IsVerifying)
+                    {
+                        Html.RenderPartial("VerifyAccount", Model.VerifyAccountViewModel);
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    @*@{ Html.RenderPartial("LetstalkFunction", Model.ChatBotViewModel); }*@
+</div>
+@Html.Hidden("IsVerifying", Model.IsVerifying)
+@Html.Hidden("Language", Model.Language)
+
+@section Scripts{
+    @StaticResources.RenderScripts("~/assets/bundles/telegramchatbot/register-account")
+}

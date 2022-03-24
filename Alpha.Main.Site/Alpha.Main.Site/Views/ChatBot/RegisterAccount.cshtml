@@ -1,13 +1,21 @@
-﻿@model RegisterAccountViewModel
+﻿@model Alpha.Main.Site.ViewModels.ChatBot.RegisterAccountViewModel
 @{
     Layout = "~/Views/ChatBot/Shared/_Layout.cshtml";
 }
 @section Styles {
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/chatbot/tab-{Model.CustLevel}")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/chatbot/register-account")
 }
 <div class="page-title">
-    <span class="pull-left">@Model.Title</span>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation">
+            @Html.ActionLink("Telegram", "Index", "TelegramChatBot")
+        </li>
+        <li role="presentation" class="active">
+            <a href="#chatbot" aria-controls="home" role="tab" data-toggle="tab">Letstalk</a>
+        </li>
+    </ul>
 </div>
 <div class="tab-content">
     <div class="panel" id="register-panel">

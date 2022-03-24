@@ -1,0 +1,199 @@
+﻿@import '../Home/_variables.scss';
+@import '../Home/_mixins.scss';
+
+// panel
+
+.panel-heading + .panel-collapse > .panel-body.account-info {
+    padding: 12px 16px 0 !important;
+}
+
+.filter {
+    padding-top: 0;
+
+    .chatbot-name {
+        color: #54B948;
+        font-weight: bold;
+        font-size: $font-size + 1;
+    }
+
+    .form-group.only-text {
+        margin-top: 4px;
+    }
+}
+
+@mixin dropdown-style {
+    @include border-radius(1px);
+    @include box-shadow(0px, 1px, 1px, rgba(0, 0, 0, 0.3));
+    height: 28px;
+    padding: 4px;
+    border: 1px solid $border-color;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.language {
+    @include dropdown-style;
+    width: 160px;
+
+    .dropdown-toggle {
+        padding-left: 12px;
+    }
+
+    .icon-flag {
+        margin-right: 8px;
+        position: relative;
+        top: 1px;
+    }
+
+    .list-language {
+        width: 160px;
+    }
+}
+
+.reload-time {
+    @include dropdown-style;
+    width: 110px;
+
+    .li {
+        padding: 8px;
+    }
+
+    .list-time {
+        width: 110px;
+    }
+}
+
+.tbl-reports {
+    width: 100%;
+
+    @media (min-device-width: $screen-device-lower768) {
+        width: 660px;
+    }
+
+    thead th, tbody td {
+        padding-top: 9px;
+        padding-bottom: 9px;
+
+        @media (min-device-width: $screen-device-greater1024) {
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+    }
+
+    tbody td {
+        white-space: initial;
+    }
+
+    .col-report {
+        width: 140px;
+    }
+
+    .col-how-it-works {
+        width: 160px;
+    }
+
+    .btn-how-it-works {
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+.tbl-notifications {
+    width: 100%;
+    margin-bottom: 20px;
+
+    @media (min-device-width: $screen-device-lower768) {
+        width: 760px;
+    }
+
+    thead th, tbody td {
+        padding-top: 9px;
+        padding-bottom: 9px;
+
+        @media (min-device-width: $screen-device-greater1024) {
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+    }
+
+    tbody td {
+        white-space: initial;
+    }
+
+    .col-notification {
+        width: 220px;
+    }
+
+    .col-enable {
+        width: 100px;
+    }
+}
+
+// Switch Button
+
+.switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 18px;
+    margin: auto;
+
+    input {
+        display: none;
+    }
+
+    .slider {
+        @include border-radius(8px);
+        @include transition(.4s);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 30px;
+        height: 16px;
+        background-color: #8a8a8a;
+        cursor: pointer;
+
+        &:before {
+            @include border-radius(50%);
+            @include transition(.4s);
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            height: 14px;
+            width: 14px;
+            background-color: #fff;
+            content: "";
+        }
+    }
+
+    &.disabled {
+        opacity: .4;
+
+        .slider {
+            cursor: not-allowed;
+        }
+    }
+
+    input:checked + .slider {
+        background-color: #558b11;
+    }
+
+    input:checked + .slider:before {
+        @include transform(translateX(14px));
+    }
+}
+
+.link {
+    color: #038dee;
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+}

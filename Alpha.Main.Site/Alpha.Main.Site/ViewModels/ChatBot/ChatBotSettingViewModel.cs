@@ -10,9 +10,10 @@
     {
         private readonly Messenger lestalkAccount;
 
-        public ChatBotSettingViewModel(ChatBotViewModel chatbotViewModel)
+        public ChatBotSettingViewModel(ChatBotViewModel chatbotViewModel, string custLevel)
         {
             ChatBotViewModel = chatbotViewModel;
+            CustLevel = custLevel;
             lestalkAccount = chatbotViewModel.User.MessengerAccounts?.FirstOrDefault(m => m.Type == MessengerType.Letstalk && m.Enabled);
             Language = chatbotViewModel.User.Language;
 
@@ -30,6 +31,8 @@
         }
 
         public ChatBotViewModel ChatBotViewModel { get; }
+
+        public string CustLevel { get; }
 
         public string Language { get; }
 

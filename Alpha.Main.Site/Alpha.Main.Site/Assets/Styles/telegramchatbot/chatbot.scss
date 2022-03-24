@@ -1,0 +1,124 @@
+﻿@import '../Home/_variables.scss';
+@import '../Home/_mixins.scss';
+
+// To remove the 300-350ms tap delay
+html {
+    touch-action: manipulation;
+}
+
+body {
+    background-color: transparent;
+}
+
+.page-title {
+    margin-bottom: 12px;
+}
+
+label {
+    font-weight: normal;
+}
+
+.m-b-0 {
+    margin-bottom: 0;
+}
+
+[class^='btn'] {
+    height: auto;
+    min-height: $height-normal;
+}
+
+.container-msg {
+    display: table;
+    width: 100%;
+
+    .msg {
+        float: left;
+        min-width: 240px;
+    }
+}
+
+.panel {
+    @include border-radius(0);
+    @include box-shadow-multiple(none);
+    margin-bottom: 5px;
+    background: none;
+    border-color: #dcdcdc;
+
+    input[type='text'],
+    input[type='tel'] {
+        border: 1px solid $border-color;
+    }
+}
+
+.panel-heading {
+    padding: 0;
+    border-bottom: 0;
+    @include border-radius(0);
+
+    .panel-title a {
+        @include box-sizing;
+        display: block;
+        height: 36px;
+        line-height: 30px;
+        padding: 0 6px;
+        border: none;
+        background-color: #f9f9f9;
+        color: #666;
+        font-weight: bold;
+        font-size: 13px;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:before {
+            font-family: 'Iconalpha', sans-serif;
+            font-size: 16px;
+            margin-right: 2px;
+            position: relative;
+            top: 2px;
+        }
+
+        &.collapsed:before {
+            content: '\e929';
+        }
+
+        &:not(.collapsed) {
+            border-color: #b3b3b3;
+
+            &:before {
+                content: '\e928';
+            }
+        }
+
+        &:hover, &:focus {
+            border-color: #b3b3b3;
+            text-decoration: none;
+        }
+    }
+}
+
+.panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #dcdcdc;
+    padding: 16px 0;
+    background-color: #fff;
+
+
+    &.has-padding {
+        padding: 16px !important;
+    }
+}
+
+.info-list {
+    li {
+        list-style: disc;
+    }
+}
+
+.btn-chatbot {
+    background: #40B3E0;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+}

@@ -1,0 +1,56 @@
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.ChatBotSettingViewModel
+@{
+    Layout = "~/Views/TelegramChatBot/Shared/_Layout.cshtml";
+}
+@section Styles {
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/site-main/chatbot/chatbot-default")
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode($"/bundles/site-main/chatbot/tab-{Model.CustLevel}")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/chatbot-setting")
+}
+
+<div class="page-title">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#telegramchatbot" aria-controls="home" role="tab" data-toggle="tab">Telegram</a>
+        </li>
+        <li role="presentation">
+            @Html.ActionLink("Letstalk", "Index", "ChatBot")
+        </li>
+    </ul>
+</div>
+<div class="tab-content">
+    <div class="panel">
+        <div class="panel-heading" role="tab" id="headingAccount">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
+                    Account
+                </a>
+            </h4>
+        </div>
+        <div id="account" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAccount">
+            <div class="panel-body account-info">
+                <div id="account-message" class="container-msg"></div>
+                <form class="filter">
+                    <div class="form-group">
+                        <label>Your Telegram ID: <span class="chatbot-name">@Model.TelegramId</span></label>
+                        <button class="btn-remove" id="btnUnsubscribe">Unlink</button>
+                    </div>
+                    <div class="form-group only-text">
+                        <label>Chatbot's name: <span class="chatbot-name">ABC_Bot</span></label>
+                    </div>
+                    <div class="form-group">
+                        <label>Chatbot's Language:</label>
+                        <div class="dropdown language">
+                            @Html.Action("Language", new { langCode = Model.Language })
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @{ Html.RenderPartial("Reports"); }
+    @{ Html.RenderPartial("NotificationsAndSettings"); }
+</div>
+@section Scripts{
+    @StaticResources.RenderScripts("~/assets/bundles/telegramchatbot/telegram-chatbot-setting")
+}

@@ -471,6 +471,12 @@
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.8.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.8\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.Infrastructure">
@@ -832,6 +838,38 @@
     <Content Include="Assets\Images\icon-chatbot-3.svg" />
     <Content Include="Assets\Images\icon-chatbot-4.svg" />
     <Content Include="Assets\Images\icon-telegram.png" />
+    <Content Include="Assets\bundles\telegramchatbot\chatbot-dark.css" />
+    <Content Include="Assets\bundles\telegramchatbot\chatbot-dark.min.css">
+      <DependentUpon>chatbot-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\telegramchatbot\chatbot-setting-dark.css" />
+    <Content Include="Assets\bundles\telegramchatbot\chatbot-setting-dark.min.css">
+      <DependentUpon>chatbot-setting-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\telegramchatbot\chatbot-setting.css" />
+    <Content Include="Assets\bundles\telegramchatbot\chatbot-setting.min.css">
+      <DependentUpon>chatbot-setting.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\telegramchatbot\chatbot.css" />
+    <Content Include="Assets\bundles\telegramchatbot\chatbot.min.css">
+      <DependentUpon>chatbot.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\telegramchatbot\register-account-dark.css" />
+    <Content Include="Assets\bundles\telegramchatbot\register-account-dark.min.css">
+      <DependentUpon>register-account-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\telegramchatbot\register-account.css" />
+    <Content Include="Assets\bundles\telegramchatbot\register-account.js" />
+    <Content Include="Assets\bundles\telegramchatbot\register-account.min.css">
+      <DependentUpon>register-account.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\telegramchatbot\register-account.min.js">
+      <DependentUpon>register-account.js</DependentUpon>
+    </Content>
+    <Content Include="Assets\bundles\telegramchatbot\telegram-chatbot-setting.js" />
+    <Content Include="Assets\bundles\telegramchatbot\telegram-chatbot-setting.min.js">
+      <DependentUpon>telegram-chatbot-setting.js</DependentUpon>
+    </Content>
     <Content Include="Assets\Images\letstalk.png" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />
@@ -1068,6 +1106,52 @@
     <Content Include="Assets\styles\security\verify-security-code.min.css">
       <DependentUpon>verify-security-code.css</DependentUpon>
     </Content>
+    <Content Include="Assets\styles\telegramchatbot\chatbot-dark.css">
+      <DependentUpon>chatbot-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\chatbot-dark.min.css">
+      <DependentUpon>chatbot-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\chatbot-setting-dark.css">
+      <DependentUpon>chatbot-setting-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\chatbot-setting-dark.min.css">
+      <DependentUpon>chatbot-setting-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\chatbot-setting.css">
+      <DependentUpon>chatbot-setting.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\chatbot-setting.min.css">
+      <DependentUpon>chatbot-setting.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\chatbot.css">
+      <DependentUpon>chatbot.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\chatbot.min.css">
+      <DependentUpon>chatbot.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\images\apple.png" />
+    <Content Include="Assets\styles\telegramchatbot\images\google.png" />
+    <Content Include="Assets\styles\telegramchatbot\images\telegram-sm.png" />
+    <Content Include="Assets\styles\telegramchatbot\images\telegram.png" />
+    <Content Include="Assets\styles\telegramchatbot\register-account-dark.css">
+      <DependentUpon>register-account-dark.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\register-account-dark.min.css">
+      <DependentUpon>register-account-dark.css</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\register-account.css">
+      <DependentUpon>register-account.scss</DependentUpon>
+    </Content>
+    <Content Include="Assets\styles\telegramchatbot\register-account.min.css">
+      <DependentUpon>register-account.css</DependentUpon>
+    </Content>
+    <Content Include="bundles\site-main\chatbot\tab-agent-dark.css" />
+    <Content Include="bundles\site-main\chatbot\tab-agent.css" />
+    <Content Include="bundles\site-main\chatbot\tab-master-dark.css" />
+    <Content Include="bundles\site-main\chatbot\tab-master.css" />
+    <Content Include="bundles\site-main\chatbot\tab-super-dark.css" />
+    <Content Include="bundles\site-main\chatbot\tab-super.css" />
     <Content Include="Scripts\aes.js" />
     <Content Include="Alpha.Main.Site.Debug.ruleset" />
     <Content Include="Alpha.Main.Site.ruleset" />
@@ -1168,6 +1252,15 @@
     <Content Include="Views\ContactUs\Index.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri1.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri7.cshtml" />
+    <Content Include="Views\TelegramChatBot\ChatBotSetting.cshtml" />
+    <Content Include="Views\TelegramChatBot\Shared\_Layout.cshtml" />
+    <Content Include="Views\TelegramChatBot\RegisterAccount.cshtml" />
+    <Content Include="Views\TelegramChatBot\VerifyAccount.cshtml" />
+    <Content Include="Views\TelegramChatBot\CaptchaTemplate.cshtml" />
+    <Content Include="Views\TelegramChatBot\Captcha.cshtml" />
+    <Content Include="Views\TelegramChatBot\Language.cshtml" />
+    <Content Include="Views\TelegramChatBot\Reports.cshtml" />
+    <Content Include="Views\TelegramChatBot\NotificationsAndSettings.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -1371,6 +1464,12 @@
     <Content Include="Assets\styles\home\ChatBotBanneri1-dark.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri7.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri7-dark.scss" />
+    <Content Include="Assets\styles\telegramchatbot\chatbot-setting.scss" />
+    <Content Include="Assets\styles\telegramchatbot\chatbot-setting-dark.scss" />
+    <Content Include="Assets\styles\telegramchatbot\register-account.scss" />
+    <Content Include="Assets\styles\telegramchatbot\register-account-dark.scss" />
+    <Content Include="Assets\styles\telegramchatbot\chatbot.scss" />
+    <Content Include="Assets\styles\telegramchatbot\chatbot-dark.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
@@ -1449,6 +1548,10 @@
     <Content Include="Web.Configuration\AuthorizationSection.config">
       <SubType>Designer</SubType>
     </Content>
+    <TypeScriptCompile Include="Assets\scripts\telegramchatbot\add-account-telegram-chatbot.ts" />
+    <TypeScriptCompile Include="Assets\scripts\telegramchatbot\base-telegram-chatbot.ts" />
+    <TypeScriptCompile Include="Assets\scripts\telegramchatbot\telegram-chatbot-setting.ts" />
+    <TypeScriptCompile Include="Assets\scripts\telegramchatbot\verify-account-telegram-chatbot.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\dashboard-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\notice-tests.ts" />
     <TypeScriptCompile Include="Assets\scripts\tests\app\dashboard\statistics-tests.ts" />
@@ -1489,6 +1592,7 @@
     <Compile Include="Controllers\OtpController.cs" />
     <Compile Include="Controllers\PasswordController.cs" />
     <Compile Include="Controllers\SecurityCodeController.cs" />
+    <Compile Include="Controllers\TelegramChatBotController.cs" />
     <Compile Include="Controllers\ThemeController.cs" />
     <Compile Include="Controllers\UMMessageController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -1506,11 +1610,13 @@
     <Compile Include="Handlers\LanguageHandler.cs" />
     <Compile Include="Handlers\PasswordHandler.cs" />
     <Compile Include="Handlers\SecurityCodeHandler.cs" />
+    <Compile Include="Handlers\TelegramChatBotHandler.cs" />
     <Compile Include="Handlers\ThemeHandler.cs" />
     <Compile Include="Handlers\UMMessageHandler.cs" />
     <Compile Include="Handlers\UserMessageHandler.cs" />
     <Compile Include="Helpers\DarkModeHelper.cs" />
     <Compile Include="Helpers\HmacAuthenticator.cs" />
+    <Compile Include="Helpers\QRCodeAdapter.cs" />
     <Compile Include="Helpers\ResourceHelper.cs" />
     <Compile Include="Helpers\RestClientHelper.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
@@ -1567,6 +1673,10 @@
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\UpdateSecurityCodeFunctionCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
+    <Compile Include="Requests\TelegramChatBot\GenerateQRCodeCommand.cs" />
+    <Compile Include="Requests\TelegramChatBot\ResendOTPCommand.cs" />
+    <Compile Include="Requests\TelegramChatBot\UpdateLanguageCommand.cs" />
+    <Compile Include="Requests\TelegramChatBot\VerifyOTPCommand.cs" />
     <Compile Include="Requests\Theme\ChangeThemeQuery.cs" />
     <Compile Include="Requests\Theme\ResetAssetAppPathQuery.cs" />
     <Compile Include="Requests\UMMessage\UMMessageQuery.cs" />
@@ -1604,6 +1714,10 @@
     <Compile Include="ViewModels\Security\SecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\ForceChangeSecurityCodeViewModel.cs" />
     <Compile Include="ViewModels\Security\VerifyOtpDifferenceDeviceViewModel.cs" />
+    <Compile Include="ViewModels\TelegramChatBot\ChatBotSettingViewModel.cs" />
+    <Compile Include="ViewModels\TelegramChatBot\ChatBotViewModel.cs" />
+    <Compile Include="ViewModels\TelegramChatBot\RegisterAccountViewModel.cs" />
+    <Compile Include="ViewModels\TelegramChatBot\VerifyAccountViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
@@ -1629,6 +1743,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

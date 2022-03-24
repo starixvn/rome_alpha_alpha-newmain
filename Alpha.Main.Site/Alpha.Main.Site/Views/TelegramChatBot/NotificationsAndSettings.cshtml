@@ -1,0 +1,96 @@
+﻿<div class="panel chatbot-setting">
+    <div class="panel-heading" role="tab" id="headingNotification">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification">
+                Notifications and Settings
+            </a>
+        </h4>
+    </div>
+    <div id="notification" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNotification">
+        <div class="panel-body has-padding">
+            <p>Telegram Chatbot can automatically push following notifications to your Telegram: </p>
+            <table class="tblRpt tblRpt-bordered tbl-notifications">
+                <thead>
+                    <tr>
+                        <th class="col-notification">Notification</th>
+                        <th>Description</th>
+                        <th class="col-enable">Enable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center bold">Yesterday Win Loss</td>
+                        <td>Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4)</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" class="function" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center bold">Personal Message</td>
+                        <td>Push Alpha's Personal Message to your Telegram</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" class="function" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center bold">Abnormal Login Alert</td>
+                        <td>Alert to your Telegram when there's unrecognized login activity using your account on Alpha Site</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" class="function" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center bold">Change Password Alert</td>
+                        <td>Alert to your Telegram when your Alpha Site's Account's Password is changed	</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" class="function" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center bold">Change Security Code Alert</td>
+                        <td>Alert to your Telegram when your Security Code is changed </td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" class="function" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center bold">Problem Account</td>
+                        <td>Alert to your Telegram when there's new downline that's marked as Problem Account</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" class="function" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center bold">Member Win Loss Limit</td>
+                        <td>Alert to your Telegram whenever a Member reached their Win Loss limit</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                <input type="checkbox" class="function" checked />
+                                <span class="slider"></span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>You can turn on/off each of these notifications using Settings action in Telegram Chatbot</div>
+        </div>
+    </div>
+</div>

@@ -317,6 +317,41 @@
       "Assets/styles/contact-us/contact-us.css"
     ]
   },
+  {
+    "outputFileName": "Assets/bundles/telegramchatbot/chatbot.css",
+    "inputFiles": [
+      "Assets/styles/telegramchatbot/chatbot.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/telegramchatbot/chatbot-setting.css",
+    "inputFiles": [
+      "Assets/styles/telegramchatbot/chatbot-setting.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/telegramchatbot/telegram-chatbot-setting.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/telegramchatbot/base-telegram-chatbot.js",
+      "Assets/scripts/telegramchatbot/telegram-chatbot-setting.js"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/telegramchatbot/register-account.css",
+    "inputFiles": [
+      "Assets/styles/telegramchatbot/register-account.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/telegramchatbot/register-account.js",
+    "inputFiles": [
+      "Assets/scripts/core.js",
+      "Assets/scripts/telegramchatbot/base-telegram-chatbot.js",
+      "Assets/scripts/telegramchatbot/verify-account-telegram-chatbot.js",
+      "Assets/scripts/telegramchatbot/add-account-telegram-chatbot.js"
+    ]
+  },
   /************************** Dark Mode ************************/
   {
     "outputFileName": "Assets/bundles/default-index-dark.css",
@@ -407,6 +442,24 @@
     "outputFileName": "Assets/bundles/contact-us/contact-us-dark.css",
     "inputFiles": [
       "Assets/styles/contact-us/contact-us-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/telegramchatbot/chatbot-dark.css",
+    "inputFiles": [
+      "Assets/styles/telegramchatbot/chatbot-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/telegramchatbot/chatbot-setting-dark.css",
+    "inputFiles": [
+      "Assets/styles/telegramchatbot/chatbot-setting-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/telegramchatbot/register-account-dark.css",
+    "inputFiles": [
+      "Assets/styles/telegramchatbot/register-account-dark.css"
     ]
   },
   {
