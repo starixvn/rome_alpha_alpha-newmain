@@ -2,14 +2,21 @@
 {
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using MediatR;
+    using Sunplus.Agent.Model.Base;
+    using Sunplus.Agent.Model.Entities;
 
     public class GenerateQRCodeCommand : IAsyncRequest<VerifyAccountViewModel>
     {
-        public GenerateQRCodeCommand(int customerLevel, int custId, int subAccId)
+        public GenerateQRCodeCommand() : this(null)
         {
-            CustomerLevel = customerLevel;
-            CustId = custId;
-            SubAccId = subAccId;
+        }
+
+        public GenerateQRCodeCommand(IUserSession userSession)
+        {
+            userSession = userSession ?? new UserSessionExt();
+            CustomerLevel = userSession.RoleId;
+            CustId = userSession.CustId;
+            SubAccId = userSession.SubAccId;
         }
 
         public int CustomerLevel { get; }
@@ -17,5 +24,6 @@
         public int CustId { get; }
 
         public int SubAccId { get; }
+
     }
 }

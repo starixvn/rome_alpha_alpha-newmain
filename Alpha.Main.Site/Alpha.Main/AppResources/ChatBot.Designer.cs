@@ -61,6 +61,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abnormal Login Alert.
+        /// </summary>
+        public static string AbnormalLoginAlert {
+            get {
+                return ResourceManager.GetString("AbnormalLoginAlert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alert to your Telegram when there&apos;s unrecognized login activity using your account on Alpha Site.
+        /// </summary>
+        public static string AbnormalLoginAlertDescription {
+            get {
+                return ResourceManager.GetString("AbnormalLoginAlertDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account.
         /// </summary>
         public static string Account {
@@ -124,11 +142,20 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Balance Info Report.
+        ///   Looks up a localized string similar to Get the Alpha Balance Info Report. You can also get downlines&apos; Balance Info report.
         /// </summary>
-        public static string BalanceInfoReport {
+        public static string BalanceDescription {
             get {
-                return ResourceManager.GetString("BalanceInfoReport", resourceCulture);
+                return ResourceManager.GetString("BalanceDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Balance Info.
+        /// </summary>
+        public static string BalanceInfo {
+            get {
+                return ResourceManager.GetString("BalanceInfo", resourceCulture);
             }
         }
         
@@ -138,6 +165,42 @@ namespace Alpha.Main.AppResources {
         public static string captchaIsRequired {
             get {
                 return ResourceManager.GetString("captchaIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Password Alert.
+        /// </summary>
+        public static string ChangePasswordAlert {
+            get {
+                return ResourceManager.GetString("ChangePasswordAlert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alert to your Telegram when your Alpha Site&apos;s Account&apos;s Password is changed.
+        /// </summary>
+        public static string ChangePasswordAlertDescription {
+            get {
+                return ResourceManager.GetString("ChangePasswordAlertDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Security Code Alert.
+        /// </summary>
+        public static string ChangeSecurityCodeAlert {
+            get {
+                return ResourceManager.GetString("ChangeSecurityCodeAlert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alert to your Telegram when your Security Code is changed.
+        /// </summary>
+        public static string ChangeSecurityCodeAlertDescription {
+            get {
+                return ResourceManager.GetString("ChangeSecurityCodeAlertDescription", resourceCulture);
             }
         }
         
@@ -214,6 +277,42 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Do not open the app without scanning this QR Code).
+        /// </summary>
+        public static string DoNotOpenWithoutScanningQRCode {
+            get {
+                return ResourceManager.GetString("DoNotOpenWithoutScanningQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string Enable {
+            get {
+                return ResourceManager.GetString("Enable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the generated OTP from Telegram Chatbot within 3 minutes to verify your account.
+        /// </summary>
+        public static string EnterOTP {
+            get {
+                return ResourceManager.GetString("EnterOTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Verify your Letstalk ID..
         /// </summary>
         public static string EnterVerificationCode {
@@ -277,6 +376,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate private QR Code.
+        /// </summary>
+        public static string GeneratePrivateQRCode {
+            get {
+                return ResourceManager.GetString("GeneratePrivateQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gross Comm.
         /// </summary>
         public static string grossComm {
@@ -313,6 +421,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How it works.
+        /// </summary>
+        public static string HowItWorks {
+            get {
+                return ResourceManager.GetString("HowItWorks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Input command.
         /// </summary>
         public static string inputCommand {
@@ -327,6 +444,15 @@ namespace Alpha.Main.AppResources {
         public static string InstallLetstalk {
             get {
                 return ResourceManager.GetString("InstallLetstalk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Install Telegram and create a free account.
+        /// </summary>
+        public static string InstallTelegram {
+            get {
+                return ResourceManager.GetString("InstallTelegram", resourceCulture);
             }
         }
         
@@ -403,6 +529,33 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to is one of the &lt;strong&gt;world&apos;s top 10 most downloaded app&lt;/strong&gt;. It&apos;s  &lt;strong&gt;free&lt;/strong&gt;, &lt;strong&gt;cross-platform&lt;/strong&gt; and &lt;strong&gt;cloud-based&lt;/strong&gt; instant message service. &lt;br /&gt; Conversations in Telegram are &lt;strong&gt;encrypted&lt;/strong&gt; and no one else can access the data.
+        /// </summary>
+        public static string IntroTelegram {
+            get {
+                return ResourceManager.GetString("IntroTelegram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt; function integrated with this &lt;strong&gt;Telegram IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt; &lt;br /&gt; To start setting up Chatbot, please follow below steps:.
+        /// </summary>
+        public static string IntroTelegramChatbot {
+            get {
+                return ResourceManager.GetString("IntroTelegramChatbot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Using Telegram Chatbot, you can get following reports right on Telegram without accessing to Alpha Site: &lt;br /&gt; Type &quot;/help&quot; on Chatbot for full list of commands.
+        /// </summary>
+        public static string IntroTelegramReports {
+            get {
+                return ResourceManager.GetString("IntroTelegramReports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A bot named &quot;&lt;strong&gt;Atom&lt;/strong&gt;&quot; has sent you a 6-digits verification code via Letstalk IM. To verify your Letstalk ID, please input the verification code..
         /// </summary>
         public static string IntroVerificationCode {
@@ -421,11 +574,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Latest Notifications.
+        ///   Looks up a localized string similar to OTP is incorrected, please try again.
         /// </summary>
-        public static string LatestNotifications {
+        public static string InvalidOTP {
             get {
-                return ResourceManager.GetString("LatestNotifications", resourceCulture);
+                return ResourceManager.GetString("InvalidOTP", resourceCulture);
             }
         }
         
@@ -444,6 +597,15 @@ namespace Alpha.Main.AppResources {
         public static string lblMessageSelfDestruct {
             get {
                 return ResourceManager.GetString("lblMessageSelfDestruct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OTP.
+        /// </summary>
+        public static string lblOTP {
+            get {
+                return ResourceManager.GetString("lblOTP", resourceCulture);
             }
         }
         
@@ -520,11 +682,56 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Member Win Loss Limit.
+        /// </summary>
+        public static string MemberWinLossLimit {
+            get {
+                return ResourceManager.GetString("MemberWinLossLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alert to your Telegram whenever a Member reached their Win Loss limit.
+        /// </summary>
+        public static string MemberWinLossLimitDescription {
+            get {
+                return ResourceManager.GetString("MemberWinLossLimitDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Attn:[E-Sports] a match has been cancelled, all bets taken are considered REFUNDED.Thank you!.
         /// </summary>
         public static string normalAnnouncementSample {
             get {
                 return ResourceManager.GetString("normalAnnouncementSample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notification.
+        /// </summary>
+        public static string Notification {
+            get {
+                return ResourceManager.GetString("Notification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notifications and Settings.
+        /// </summary>
+        public static string NotificationAndSettings {
+            get {
+                return ResourceManager.GetString("NotificationAndSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telegram Chatbot can automatically push following notifications to your Telegram.
+        /// </summary>
+        public static string NotificationAndSettingsIntro {
+            get {
+                return ResourceManager.GetString("NotificationAndSettingsIntro", resourceCulture);
             }
         }
         
@@ -552,6 +759,51 @@ namespace Alpha.Main.AppResources {
         public static string OneHour {
             get {
                 return ResourceManager.GetString("OneHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Or use this link:.
+        /// </summary>
+        public static string OrUseThisLink {
+            get {
+                return ResourceManager.GetString("OrUseThisLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OTP is expired, please &lt;span id=&quot;btnResend&quot; class=&quot;link resend-code&quot;&gt;click here&lt;/span&gt; to generate new OTP..
+        /// </summary>
+        public static string OTPIsExpiredMessage {
+            get {
+                return ResourceManager.GetString("OTPIsExpiredMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please input OTP..
+        /// </summary>
+        public static string OTPIsRequired {
+            get {
+                return ResourceManager.GetString("OTPIsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outstanding.
+        /// </summary>
+        public static string Outstanding {
+            get {
+                return ResourceManager.GetString("Outstanding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get the total row of Alpha Outstanding Report of current Date. You can also get downlines&apos; Outstanding report.
+        /// </summary>
+        public static string OutstandingDescription {
+            get {
+                return ResourceManager.GetString("OutstandingDescription", resourceCulture);
             }
         }
         
@@ -588,6 +840,24 @@ namespace Alpha.Main.AppResources {
         public static string OverMaxAddAccountTimes {
             get {
                 return ResourceManager.GetString("OverMaxAddAccountTimes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Message.
+        /// </summary>
+        public static string PersonalMessage {
+            get {
+                return ResourceManager.GetString("PersonalMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Push Alpha&apos;s Personal Message to your Telegram.
+        /// </summary>
+        public static string PersonalMessageDescription {
+            get {
+                return ResourceManager.GetString("PersonalMessageDescription", resourceCulture);
             }
         }
         
@@ -655,11 +925,38 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Problem Account.
+        /// </summary>
+        public static string ProblemAccount {
+            get {
+                return ResourceManager.GetString("ProblemAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alert to your Telegram when there&apos;s new downline that&apos;s marked as Problem Account.
+        /// </summary>
+        public static string ProblemAccountDescription {
+            get {
+                return ResourceManager.GetString("ProblemAccountDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Read.
         /// </summary>
         public static string Read {
             get {
                 return ResourceManager.GetString("Read", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report.
+        /// </summary>
+        public static string Report {
+            get {
+                return ResourceManager.GetString("Report", resourceCulture);
             }
         }
         
@@ -673,11 +970,56 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reports.
+        /// </summary>
+        public static string Reports {
+            get {
+                return ResourceManager.GetString("Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resend.
         /// </summary>
         public static string Resend {
             get {
                 return ResourceManager.GetString("Resend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resend OTP successfully..
+        /// </summary>
+        public static string ResendOTPSuccessfully {
+            get {
+                return ResourceManager.GetString("ResendOTPSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan this QR Code with your mobile to open Telegram Chatbot with your mobile.
+        /// </summary>
+        public static string ScanQRCode {
+            get {
+                return ResourceManager.GetString("ScanQRCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See how it works.
+        /// </summary>
+        public static string SeeHowItWorks {
+            get {
+                return ResourceManager.GetString("SeeHowItWorks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select START on Telegram Chatbot then proceed to next step.
+        /// </summary>
+        public static string SelectStartOnTelegramChatbot {
+            get {
+                return ResourceManager.GetString("SelectStartOnTelegramChatbot", resourceCulture);
             }
         }
         
@@ -718,6 +1060,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start setting up your Telegram Chatbot by clicking on this button and follow the instructions.
+        /// </summary>
+        public static string StartSettingUp {
+            get {
+                return ResourceManager.GetString("StartSettingUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to System Announcement.
         /// </summary>
         public static string systemAnnouncement {
@@ -732,6 +1083,24 @@ namespace Alpha.Main.AppResources {
         public static string systemAnnouncementSample {
             get {
                 return ResourceManager.GetString("systemAnnouncementSample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telegram.
+        /// </summary>
+        public static string Telegram {
+            get {
+                return ResourceManager.GetString("Telegram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telegram Messenger Inc..
+        /// </summary>
+        public static string TelegramMessengerInc {
+            get {
+                return ResourceManager.GetString("TelegramMessengerInc", resourceCulture);
             }
         }
         
@@ -781,6 +1150,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get the total row of Alpha Win Loss report of current date. You can also get downlines&apos; Win Loss of current date.
+        /// </summary>
+        public static string TodayWinLossDescription {
+            get {
+                return ResourceManager.GetString("TodayWinLossDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today Win Loss.
+        /// </summary>
+        public static string TodayWinLossNew {
+            get {
+                return ResourceManager.GetString("TodayWinLossNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 12 hours.
         /// </summary>
         public static string TwelveHours {
@@ -795,6 +1182,15 @@ namespace Alpha.Main.AppResources {
         public static string unLink {
             get {
                 return ResourceManager.GetString("unLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlink {0} will stop all of its features. Are you sure you want to proceed?.
+        /// </summary>
+        public static string UnsubscribeTelegramBotWarning {
+            get {
+                return ResourceManager.GetString("UnsubscribeTelegramBotWarning", resourceCulture);
             }
         }
         
@@ -853,6 +1249,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Verify OTP.
+        /// </summary>
+        public static string VerifyOTP {
+            get {
+                return ResourceManager.GetString("VerifyOTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please verify your Letstalk ID to use the below functions..
         /// </summary>
         public static string VerifyTooltip {
@@ -889,6 +1294,24 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get the total row of Alpha Win Loss report of yesterday. You can also get downlines&apos; Win Loss of yesterday.
+        /// </summary>
+        public static string YesterdayWinLossDescription {
+            get {
+                return ResourceManager.GetString("YesterdayWinLossDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4).
+        /// </summary>
+        public static string YesterdayWinLossNotificationDescription {
+            get {
+                return ResourceManager.GetString("YesterdayWinLossNotificationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yesterday WL.
         /// </summary>
         public static string YesterdayWL {
@@ -898,11 +1321,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can turn on/off each of these notifications using Settings action in Telegram Chatbot.
+        /// </summary>
+        public static string YouCanTurnOnOff {
+            get {
+                return ResourceManager.GetString("YouCanTurnOnOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your Letstalk ID.
         /// </summary>
         public static string YourLetstalkAccount {
             get {
                 return ResourceManager.GetString("YourLetstalkAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Telegram ID.
+        /// </summary>
+        public static string YourTelegramId {
+            get {
+                return ResourceManager.GetString("YourTelegramId", resourceCulture);
             }
         }
     }

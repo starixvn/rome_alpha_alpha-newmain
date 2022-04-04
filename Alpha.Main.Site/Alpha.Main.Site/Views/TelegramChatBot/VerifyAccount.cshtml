@@ -1,19 +1,19 @@
 ﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.VerifyAccountViewModel
 <li>
-    <p class="bold">Scan this QR Code with your mobile to open Telegram Chatbot with your mobile</p>
-    <p>(Do not open the app without scanning this QR Code)</p>
+    <p class="bold">@ChatBot.ScanQRCode</p>
+    <p>@ChatBot.DoNotOpenWithoutScanningQRCode</p>
     <div class="list-qr-code">
         <img class="private-qr-code-img" id="imgPrivateQRCode" src="@(Model.QRCodeDataUrl)" />
-        <div class="private-qr-code-link">Or use this link: <br /> <a class="link" href="@(Model.Url)">@(Model.Url)</a></div>
+        <div class="private-qr-code-link">@ChatBot.OrUseThisLink <br /> <a class="link" href="@(Model.Url)" target="_blank">@(Model.Url)</a></div>
     </div>
-    <div>Select START on Telegram Chatbot then proceed to next step</div>
+    <div>@ChatBot.SelectStartOnTelegramChatbot</div>
 </li>
 <li>
-    <p class="bold">Enter the generated OTP from Telegram Chatbot within 3 minutes to verify your account</p>
+    <p class="bold">@ChatBot.EnterOTP</p>
     <div id="verification-code-message"></div>
     <form class="verification-form" id="verification-form" action="@Url.Action("VerifyOTP")" method="post">
         <div class="form-group">
-            <label>OTP</label>
+            <label>@ChatBot.lblOTP</label>
             <input name="OTP" id="txtOTP" maxlength="6" type="tel" class="verify-text" />
         </div>
         <div id="captcha-container">
@@ -23,8 +23,8 @@
             }
         </div>
         <div class="form-group list-button">
-            <button id="btnVerify" class="btn-chatbot btn-verify" type="submit">Verify OTP</button>
-            <span class="msg-expired hide"><strong><em>OTP is expired, please <button id="btnResend" class="resend-code">click here</button> to generate new OTP.</em></strong></span>
+            <button id="btnVerify" class="btn-chatbot btn-verify" type="submit">@ChatBot.VerifyOTP</button>
+            <span class="msg-expired hide" id="msgExpired"><em>@Html.Raw(@ChatBot.OTPIsExpiredMessage)</em></span>
         </div>
     </form>
 </li>

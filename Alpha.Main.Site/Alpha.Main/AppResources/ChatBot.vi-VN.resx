@@ -363,28 +363,151 @@
   <data name="ChatBotTitle" xml:space="preserve">
     <value>Chatbot</value>
   </data>
-  <data name="BalanceInfoReport" xml:space="preserve">
-    <value>Báo Cáo Tài Khoản</value>
+  <data name="AbnormalLoginAlert" xml:space="preserve">
+    <value>Abnormal Login Alert</value>
   </data>
-  <data name="ComingSoon" xml:space="preserve">
-    <value>Sắp Ra Mắt vào 19 Tháng 7, 2022</value>
+  <data name="AbnormalLoginAlertDescription" xml:space="preserve">
+    <value>Alert to your Telegram when there's unrecognized login activity using your account on Alpha Site</value>
   </data>
-  <data name="Introducing" xml:space="preserve">
-    <value>Giới thiệu</value>
+  <data name="BalanceDescription" xml:space="preserve">
+    <value>Get the Alpha Balance Info Report. You can also get downlines' Balance Info report</value>
   </data>
-  <data name="IntroducingContent" xml:space="preserve">
-    <value>Trợ Lý Ảo 24/7 giúp quản lý việc kinh doanh của bạn dễ dàng hơn!</value>
+  <data name="BalanceInfo" xml:space="preserve">
+    <value>Balance Info</value>
   </data>
-  <data name="IntroducingTitle" xml:space="preserve">
-    <value>{0} Chatbot trên Telegram</value>
+  <data name="ChangePasswordAlert" xml:space="preserve">
+    <value>Change Password Alert</value>
   </data>
-  <data name="LatestNotifications" xml:space="preserve">
-    <value>Thông Báo Mới Nhất</value>
+  <data name="ChangePasswordAlertDescription" xml:space="preserve">
+    <value>Alert to your Telegram when your Alpha Site's Account's Password is changed</value>
   </data>
-  <data name="OutstandingReport" xml:space="preserve">
-    <value>Báo Cáo Tiền Chưa Xử Lý</value>
+  <data name="ChangeSecurityCodeAlert" xml:space="preserve">
+    <value>Change Security Code Alert</value>
   </data>
-  <data name="WinLossReport" xml:space="preserve">
-    <value>Báo Cáo Thắng Thua</value>
+  <data name="ChangeSecurityCodeAlertDescription" xml:space="preserve">
+    <value>Alert to your Telegram when your Security Code is changed</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DoNotOpenWithoutScanningQRCode" xml:space="preserve">
+    <value>(Do not open the app without scanning this QR Code)</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="EnterOTP" xml:space="preserve">
+    <value>Enter the generated OTP from Telegram Chatbot within 3 minutes to verify your account</value>
+  </data>
+  <data name="GeneratePrivateQRCode" xml:space="preserve">
+    <value>Generate private QR Code</value>
+  </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>How it works</value>
+  </data>
+  <data name="InstallTelegram" xml:space="preserve">
+    <value>Install Telegram and create a free account</value>
+  </data>
+  <data name="IntroTelegram" xml:space="preserve">
+    <value>is one of the &lt;strong&gt;world's top 10 most downloaded app&lt;/strong&gt; .It's  &lt;strong&gt;free&lt;/strong&gt;, &lt;strong&gt;cross-platform&lt;/strong&gt; and &lt;strong&gt;cloud-based&lt;/strong&gt; instant message service. &lt;br /&gt; Conversations in Telegram are &lt;strong&gt;encrypted&lt;/strong&gt; and no one else can access the data</value>
+  </data>
+  <data name="IntroTelegramChatbot" xml:space="preserve">
+    <value>&lt;strong&gt;"Chatbot"&lt;/strong&gt; function integrated with this &lt;strong&gt;Telegram IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt; &lt;br /&gt; To start setting up Chatbot, please follow below steps:</value>
+  </data>
+  <data name="IntroTelegramReports" xml:space="preserve">
+    <value>Using Telegram Chatbot, you can get following reports right on Telegram without accessing to Alpha Site: &lt;br /&gt; Type "/help" on Chatbot for full list of commands</value>
+  </data>
+  <data name="lblOTP" xml:space="preserve">
+    <value>OTP</value>
+  </data>
+  <data name="MemberWinLossLimit" xml:space="preserve">
+    <value>Member Win Loss Limit</value>
+  </data>
+  <data name="MemberWinLossLimitDescription" xml:space="preserve">
+    <value>Alert to your Telegram whenever a Member reached their Win Loss limit</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="NotificationAndSettings" xml:space="preserve">
+    <value>Notifications and Settings</value>
+  </data>
+  <data name="NotificationAndSettingsIntro" xml:space="preserve">
+    <value>Telegram Chatbot can automatically push following notifications to your Telegram</value>
+  </data>
+  <data name="OrUseThisLink" xml:space="preserve">
+    <value>Or use this link:</value>
+  </data>
+  <data name="OTPIsExpiredMessage" xml:space="preserve">
+    <value>OTP is expired, please &lt;span id="btnResend" class="link resend-code"&gt;click here&lt;/span&gt; to generate new OTP.</value>
+  </data>
+  <data name="Outstanding" xml:space="preserve">
+    <value>Outstanding</value>
+  </data>
+  <data name="OutstandingDescription" xml:space="preserve">
+    <value>Get the total row of Alpha Outstanding Report of current Date. You can also get downlines' Outstanding report</value>
+  </data>
+  <data name="PersonalMessage" xml:space="preserve">
+    <value>Personal Message</value>
+  </data>
+  <data name="PersonalMessageDescription" xml:space="preserve">
+    <value>Push Alpha's Personal Message to your Telegram</value>
+  </data>
+  <data name="ProblemAccount" xml:space="preserve">
+    <value>Problem Account</value>
+  </data>
+  <data name="ProblemAccountDescription" xml:space="preserve">
+    <value>Alert to your Telegram when there's new downline that's marked as Problem Account</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="ResendOTPSuccessfully" xml:space="preserve">
+    <value>Resend OTP successfully.</value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Scan this QR Code with your mobile to open Telegram Chatbot with your mobile</value>
+  </data>
+  <data name="SeeHowItWorks" xml:space="preserve">
+    <value>See how it works</value>
+  </data>
+  <data name="SelectStartOnTelegramChatbot" xml:space="preserve">
+    <value>Select START on Telegram Chatbot then proceed to next step</value>
+  </data>
+  <data name="StartSettingUp" xml:space="preserve">
+    <value>Start setting up your Telegram Chatbot by clicking on this button and follow the instructions</value>
+  </data>
+  <data name="Telegram" xml:space="preserve">
+    <value>Telegram</value>
+  </data>
+  <data name="TelegramMessengerInc" xml:space="preserve">
+    <value>Telegram Messenger Inc.</value>
+  </data>
+  <data name="TodayWinLossDescription" xml:space="preserve">
+    <value>Get the total row of Alpha Win Loss report of current date. You can also get downlines' Win Loss of current date</value>
+  </data>
+  <data name="TodayWinLossNew" xml:space="preserve">
+    <value>Today Win Loss</value>
+  </data>
+  <data name="UnsubscribeTelegramBotWarning" xml:space="preserve">
+    <value>Unlink {0} will stop all of its features. Are you sure you want to proceed?</value>
+  </data>
+  <data name="VerifyOTP" xml:space="preserve">
+    <value>Verify OTP</value>
+  </data>
+  <data name="YesterdayWinLossDescription" xml:space="preserve">
+    <value>Get the total row of Alpha Win Loss report of yesterday. You can also get downlines' Win Loss of yesterday</value>
+  </data>
+  <data name="YesterdayWinLossNotificationDescription" xml:space="preserve">
+    <value>Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4)</value>
+  </data>
+  <data name="YouCanTurnOnOff" xml:space="preserve">
+    <value>You can turn on/off each of these notifications using Settings action in Telegram Chatbot</value>
+  </data>
+  <data name="YourTelegramId" xml:space="preserve">
+    <value>Your Telegram ID</value>
   </data>
 </root>

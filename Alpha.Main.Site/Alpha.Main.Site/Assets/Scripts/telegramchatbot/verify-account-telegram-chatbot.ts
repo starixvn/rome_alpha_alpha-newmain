@@ -11,6 +11,7 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
     $verificationMessage: JQuery;
     $btnVerify: JQuery;
     $btnResend: JQuery;
+    $msgExpired: JQuery;
 
     // Captcha
     $captchaContainer: JQuery;
@@ -27,14 +28,10 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
     tokenElementId: string;
 
     resources = {
-        //verificationCodeIsInvalidOrExpired: (<HTMLInputElement>document.getElementById('VerificationCodeIsInvalidOrExpired')).value,
-        //verificationCodeIsRequired: (<HTMLInputElement>document.getElementById('VerificationCodeIsRequired')).value,
-        //captchaIsRequired: (<HTMLInputElement>document.getElementById('CaptchaIsRequired')).value,
-        //accountHasAlreadyBeenRegistered: (<HTMLInputElement>document.getElementById('AccountHasAlreadyBeenRegistered')).value
-        OTPIsInvalidOrExpired: "OTP is incorrected, please try again",
-        OTPIsRequired: "Please input OTP.",
-        captchaIsRequired: "Captcha is required",
-        accountHasAlreadyBeenRegistered: "test"
+        invalidOTP: (<HTMLInputElement>document.getElementById('InvalidOTP')).value,
+        otpIsRequired: (<HTMLInputElement>document.getElementById('OTPIsRequired')).value,
+        captchaIsRequired: (<HTMLInputElement>document.getElementById('CaptchaIsRequired')).value,
+        resendOTPSuccessfully: (<HTMLInputElement>document.getElementById('ResendOTPSuccessfully')).value,
     }
 
     init = () => {
@@ -57,6 +54,7 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
         this.$captchaContainer = this.$("#captcha-container");
         this.$btnVerify = this.$("#btnVerify");
         this.$btnResend = this.$("#btnResend");
+        this.$msgExpired = this.$("#msgExpired");
     }
 
     registerEvents = () => {
@@ -107,7 +105,7 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
         var OTP = this.$txtOTP.val();
         if (OTP.length === 0) {
             this.$txtOTP.focus();
-            alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.OTPIsRequired }));
+            alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.otpIsRequired }));
             return;
         } else {
             this.$verificationMessage.html("");
@@ -151,10 +149,10 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
                     this.reloadCaptcha();
                 }
 
-                if (result.IsVerificationCodeExpired || result.IsWrongVerificationCode) {
-                    alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.OTPIsInvalidOrExpired }));
-                } else if (result.IsMessengerAccountHasBeenRegisteredByAnotherCustomer) {
-                    alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.accountHasAlreadyBeenRegistered }));
+                if (result.Code == -1) {
+                    this.$msgExpired.removeClass("hide");
+                } else if (result.Code == -2) {
+                    alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.invalidOTP }));
                 } else {
                     alpha.showMessage(this.$verificationMessage, new Result({ Code: result.Code, Message: result.Message }));
                 }
@@ -165,7 +163,7 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
 
         this.$captchaContainer.html(data);
         this.initCaptcha();
-        alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.OTPIsInvalidOrExpired }))
+        alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.invalidOTP }))
     }
 
     resendEvent = (e: any) => {
@@ -189,11 +187,8 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
             }
 
             if (data.IsOk) {
-                this.$btnResend.attr("disabled", "disabled");
-                var interval = setInterval(() => {
-                    clearInterval(interval);
-                    this.$btnResend.removeAttr("disabled");
-                }, 2000)
+                alpha.showMessage(this.$verificationMessage, new Result({ Code: 0, Message: this.resources.resendOTPSuccessfully }));
+                this.$msgExpired.addClass("hide");
             }
         }
     }

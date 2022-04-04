@@ -1,5 +1,12 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Net.Http;
+    using System.Reflection;
+    using System.Web.Mvc;
     using Alpha.Captcha.Services;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.NetThrottling;
@@ -32,12 +39,8 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Collections.Generic;
-    using System.Configuration;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Reflection;
-    using System.Web.Mvc;
+    using TelegramBot.Client.Constants;
+    using TelegramBot.Client.Services;
     using Web.Helpers;
     using Web.Helpers.Impl;
 
@@ -126,7 +129,9 @@
                 container.GetInstance<JsonHelper>(),
                 container.GetInstance<INetThrottlingService>()));
 
-            container.RegisterPerWebRequest<SettingService, SettingServiceImpl>();
+            container.RegisterPerWebRequest<Chatbot.Client.Services.SettingService, SettingServiceImpl>();
+            container.RegisterPerWebRequest<ISettingService>(() => new TelegramBot.Client.Services.SettingService(CreateTelegramBotHttpClient()));
+            container.RegisterPerWebRequest<IBotService>(() => new BotService(CreateTelegramBotHttpClient()));
 
             container.RegisterPerWebRequest<IUser, User>();
             container.RegisterSingleton(() => AesService.Default);
@@ -186,6 +191,17 @@
             };
 
             return new RedisCache(redisCacheOptions);
+        }
+
+        private static HttpClient CreateTelegramBotHttpClient()
+        {
+            var telegramApiUri = ConfigurationManager.AppSettings["TelegramBotClientUri"];
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(telegramApiUri)
+            };
+            client.DefaultRequestHeaders.Add("Accept-Language", LanguageCodes.Taiwan);
+            return client;
         }
     }
 }

@@ -25,6 +25,10 @@
         padding: 10px 40px;
     }
 
+    .btn-gen-qr-code:disabled {
+        cursor: not-allowed;
+    }
+
     .btn-verify {
         width: 120px;
     }
@@ -160,15 +164,7 @@
 }
 
 .resend-code {
-    background: none;
-    border: none;
-    color: $link-color;
     text-decoration: underline;
     font-weight: bold;
-}
-
-.resend-code[disabled] {
-    cursor: not-allowed;
-    opacity: 0.5;
-    color: $link-color;
+    cursor: pointer;
 }

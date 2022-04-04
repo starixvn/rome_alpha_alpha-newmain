@@ -14,7 +14,7 @@
         {
             var barcodeWriter = new BarcodeWriter();
             var encodingOptions = new EncodingOptions { Width = 100, Height = 100, Margin = 0, PureBarcode = false };
-            encodingOptions.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M);
+            encodingOptions.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
             barcodeWriter.Options = encodingOptions;
             barcodeWriter.Format = BarcodeFormat.QR_CODE;
             

@@ -7,11 +7,15 @@
             ChatBotViewModel = chatBotViewModel;
             Language = language;
             CustLevel = custLevel;
+            TelegramId = chatBotViewModel.CustBotMessenger.MessengerName;
+            ChatBotName = chatBotViewModel.CustBotMessenger.BotName;
         }
 
         public ChatBotViewModel ChatBotViewModel { get; }
 
-        public string TelegramId => "Test";
+        public string TelegramId { get; }
+
+        public string ChatBotName { get; }
 
         public string Language { get; }
 

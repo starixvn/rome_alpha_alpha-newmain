@@ -11,7 +11,7 @@
 <div class="page-title">
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
-            <a href="#telegramchatbot" aria-controls="home" role="tab" data-toggle="tab">Telegram</a>
+            <a href="#telegramchatbot" aria-controls="home" role="tab" data-toggle="tab">@ChatBot.Telegram</a>
         </li>
         <li role="presentation">
             @Html.ActionLink("Letstalk", "Index", "ChatBot")
@@ -23,7 +23,7 @@
         <div class="panel-heading" role="tab" id="headingAccount">
             <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" href="#account" aria-expanded="false" aria-controls="account">
-                    Account
+                    @ChatBot.Account
                 </a>
             </h4>
         </div>
@@ -32,14 +32,14 @@
                 <div id="account-message" class="container-msg"></div>
                 <form class="filter">
                     <div class="form-group">
-                        <label>Your Telegram ID: <span class="chatbot-name">@Model.TelegramId</span></label>
-                        <button class="btn-remove" id="btnUnsubscribe">Unlink</button>
+                        <label>@ChatBot.YourTelegramId: <span class="chatbot-name">@Model.TelegramId</span></label>
+                        <button class="btn-remove" id="btnUnsubscribe">@ChatBot.unLink</button>
                     </div>
                     <div class="form-group only-text">
-                        <label>Chatbot's name: <span class="chatbot-name">ABC_Bot</span></label>
+                        <label>@ChatBot.ChatbotName: <span class="chatbot-name">@Model.ChatBotName</span></label>
                     </div>
                     <div class="form-group">
-                        <label>Chatbot's Language:</label>
+                        <label>@ChatBot.ChatBotLanguage:</label>
                         <div class="dropdown language">
                             @Html.Action("Language", new { langCode = Model.Language })
                         </div>
@@ -51,6 +51,8 @@
     @{ Html.RenderPartial("Reports"); }
     @{ Html.RenderPartial("NotificationsAndSettings"); }
 </div>
+@Html.Hidden("UnsubscribeWarning", string.Format(ChatBot.UnsubscribeTelegramBotWarning, Model.ChatBotName))
+@Html.Hidden("UpdateLanguageFailed", ChatBot.updateLanguageFailed)
 @section Scripts{
     @StaticResources.RenderScripts("~/assets/bundles/telegramchatbot/telegram-chatbot-setting")
 }

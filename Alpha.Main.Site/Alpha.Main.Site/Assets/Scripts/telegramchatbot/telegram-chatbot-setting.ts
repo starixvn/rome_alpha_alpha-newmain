@@ -15,12 +15,8 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
     }
 
     resources = {
-        //unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
-        //updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value,
-        //updateMessageSelfDestructMessageFailedMessage: (<HTMLInputElement>document.getElementById('UpdateMessageSelfDestructMessageFailedMessage')).value
-        unsubscribeWarning: "test",
-        updateLanguageFailed: "test",
-        updateMessageSelfDestructMessageFailedMessage: "test"
+        unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
+        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value
     }
 
     init = () => {

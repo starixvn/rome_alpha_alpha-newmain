@@ -2,41 +2,41 @@
     <div class="panel-heading" role="tab" id="headingReport">
         <h4 class="panel-title">
             <a role="button" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report">
-                Reports
+                @ChatBot.Reports
             </a>
         </h4>
     </div>
     <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
         <div class="panel-body has-padding">
-            <p>Using Telegram Chatbot, you can get following reports right on Telegram without accessing to Alpha Site: <br /> Type "/help" on Chatbot for full list of commands</p>
+            <p>@Html.Raw(ChatBot.IntroTelegramReports)</p>
             <table class="tblRpt tblRpt-bordered tbl-reports">
                 <thead>
                     <tr>
-                       <th class="col-report">Report</th>
-                       <th>Description</th>
-                       <th class="col-how-it-works">How it works</th>
+                       <th class="col-report">@ChatBot.Report</th>
+                       <th>@ChatBot.Description</th>
+                       <th class="col-how-it-works">@ChatBot.HowItWorks</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="text-center bold">Outstanding</td>
-                        <td>Get the total row of Alpha Outstanding Report of current Date. You can also get downlines' Outstanding report</td>
-                        <td><button class="btn-chatbot btn-how-it-works">See how it works</button></td>
+                        <td class="text-center bold">@ChatBot.Outstanding</td>
+                        <td>@ChatBot.OutstandingDescription</td>
+                        <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
                     </tr>
                     <tr>
-                        <td class="text-center bold">Balance Info</td>
-                        <td>Get the Alpha Balance Info Report. You can also get downlines' Balance Info report</td>
-                        <td><button class="btn-chatbot btn-how-it-works">See how it works</button></td>
+                        <td class="text-center bold">@ChatBot.BalanceInfo</td>
+                        <td>@ChatBot.BalanceDescription</td>
+                        <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
                     </tr>
                     <tr>
-                        <td class="text-center bold">Today Win Loss</td>
-                        <td>Get the total row of Alpha Win Loss report of current date. You can also get downlines' Win Loss of current date</td>
-                        <td><button class="btn-chatbot btn-how-it-works">See how it works</button></td>
+                        <td class="text-center bold">@ChatBot.TodayWinLossNew</td>
+                        <td>@ChatBot.TodayWinLossDescription</td>
+                        <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
                     </tr>
                     <tr>
-                        <td class="text-center bold">Yesterday Win Loss</td>
-                        <td>Get the total row of Alpha Win Loss report of yesterday. You can also get downlines' Win Loss of yesterday</td>
-                        <td><button class="btn-chatbot btn-how-it-works">See how it works</button></td>
+                        <td class="text-center bold">@ChatBot.yesterdayWinLoss</td>
+                        <td>@ChatBot.YesterdayWinLossDescription</td>
+                        <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
                     </tr>
                 </tbody>
             </table>

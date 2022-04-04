@@ -1,24 +1,29 @@
 ﻿namespace Alpha.Main.Site.Requests.TelegramChatBot
 {
-    using Alpha.Main.Models;
-    using Alpha.Main.Site.Requests.ChatBot;
+    using TelegramBot.Client.Models;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Model.Base;
 
-    public class VerifyOTPCommand : WriteLogCommandBase, IAsyncRequest<Result>
+    public class VerifyOTPCommand : IAsyncRequest<Result>
     {
-        public VerifyOTPCommand()
-           : this(null)
+        public VerifyOTPCommand() : this(null)
         {
         }
 
-        internal VerifyOTPCommand(IUserSession userSession)
-                : base(userSession)
+        public VerifyOTPCommand(IUserSession userSession)
         {
+            userSession = userSession ?? new UserSessionExt();
+            CustId = userSession.CustId;
+            SubAccId = userSession.SubAccId;
         }
 
         public string OTP { get; set; }
 
         public bool IsShowCaptcha { get; set; }
+
+        public int CustId { get; }
+
+        public int SubAccId { get; }
     }
 }

@@ -1,12 +1,16 @@
 ﻿namespace Alpha.Main.Site.ViewModels.TelegramChatBot
 {
+    using TelegramBot.Client.Models;
+
     public class ChatBotViewModel
     {
-        public ChatBotViewModel(string user)
+        public ChatBotViewModel(CustBotMessenger custBotMessenger)
         {
-            User = user;
+            CustBotMessenger = custBotMessenger;
         }
 
-        public string User { get; }
+        public CustBotMessenger CustBotMessenger { get; }
+
+        public bool IsAlreadySetup => CustBotMessenger != null && CustBotMessenger.IsVerifyOTP && CustBotMessenger.Status;
     }
 }

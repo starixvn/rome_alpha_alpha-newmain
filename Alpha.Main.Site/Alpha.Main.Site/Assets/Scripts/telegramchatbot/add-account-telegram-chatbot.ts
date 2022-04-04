@@ -19,16 +19,6 @@ class AddAccountTelegramChatBot extends BaseTelegramChatBot {
     }
 
     resources = {
-        //accountDoesNotExist: (<HTMLInputElement>document.getElementById('AccountDoesNotExist')).value,
-        //unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
-        //overMaxAddAccountTimes: (<HTMLInputElement>document.getElementById('OverMaxAddAccountTimes')).value,
-        //accountHasAlreadyBeenRegistered: (<HTMLInputElement>document.getElementById('AccountHasAlreadyBeenRegistered')).value,
-        //accountIsRequired: (<HTMLInputElement>document.getElementById('AccountIsRequired')).value,
-        accountDoesNotExist: "test",
-        unsubscribeWarning: "test",
-        overMaxAddAccountTimes: "test",
-        accountHasAlreadyBeenRegistered: "test",
-        accountIsRequired: "test",
         language: (<HTMLInputElement>document.getElementById('Language')).value
     }
 
@@ -79,7 +69,7 @@ class AddAccountTelegramChatBot extends BaseTelegramChatBot {
         // Call API get QR Code Image and url link
         this.$.blockUI();
         this.$.ajax({
-            type: "GET",
+            type: "POST",
             url: alpha.urls.mainRootPath + "TelegramChatBot/GenerateQRCode",
             dataType: "text",
             success: this.onGenQRCodeSuccess,
