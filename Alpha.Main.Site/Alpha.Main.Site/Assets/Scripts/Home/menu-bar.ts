@@ -382,7 +382,7 @@ var menuBar = {
         var authUrl = domain + '/(S(' + sessionId + '))/Auth';
         var url = authUrl + '?param=' + menuBar.domElements.param;
 
-        menuBar.domElements.header.find('iframe#reportFrame')[0].src = url;
+        menuBar.domElements.header.find('iframe#reportFrame')[0].src = 'Default/Auth';
     }
 };
 

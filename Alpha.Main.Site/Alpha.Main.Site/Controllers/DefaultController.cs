@@ -44,6 +44,21 @@ namespace Alpha.Main.Site.Controllers
             this.nicknameChecker = nicknameChecker;
         }
 
+        [HttpGet]
+        public void Auth()
+        {
+            var cookieAuth = FormsAuthentication.GetAuthCookie(userSession.UserName, false);
+            var host = Request.Headers["Host"];
+            var indexOfSubDomain = host.IndexOf(".");
+
+            cookieAuth.Domain = $".{host.Substring(indexOfSubDomain)}";
+
+            var returnUrl = $"{AppSettings.ReportDomain}/(S({Session.SessionID}))/Auth?param={Session["LoginParams"]}";
+
+            Response.AppendCookie(cookieAuth);
+            Response.Redirect(returnUrl);
+        }
+
         [AllowProtectedMode]
         public ActionResult Index(string action = null)
         {
