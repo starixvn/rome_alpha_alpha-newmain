@@ -43,6 +43,7 @@
             this.profilePicture = profilePicture;
             this.ShowOldCustomerList = AppSettings.ShowOldCustomerList;
             IsProtectedMode = message.IsProtectedMode;
+            AssetAppPath = message.AssetAppPath;
         }
 
         public bool EnableSecurityCode => message.EnableSecurityCode;
@@ -155,5 +156,13 @@
         public int UMAnnouncementPopupClientIntervalInMinutes { get; } = AppSettings.UMAnnouncementPopupClientIntervalInMinutes;
 
         public bool IsDarkMode => !string.IsNullOrWhiteSpace(message.DarkModeName);
+
+        public string AssetAppPath { get; }
+
+        public bool IsEnabledCDNReCheckin
+            => !string.IsNullOrWhiteSpace(AssetAppPath)
+            && !Web.Configurations.AppSettings.AssetAppPath.Equals(AssetAppPath, StringComparison.OrdinalIgnoreCase);
+
+        public int CDNReCheckinIntervalInSeconds { get; } = AppSettings.CDNReCheckinIntervalInSeconds;
     }
 }

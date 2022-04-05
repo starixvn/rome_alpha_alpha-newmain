@@ -19,5 +19,10 @@
         [AllowProtectedMode]
         public JsonResult Change(ChangeThemeQuery query)
             => Json(mediator.Send(query));
+
+        [HttpPost]
+        [AllowProtectedMode]
+        public JsonResult ResetAssetAppPath(ResetAssetAppPathQuery query)
+            => Json(mediator.Send(query));
     }
 }
