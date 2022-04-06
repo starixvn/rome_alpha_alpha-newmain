@@ -23,7 +23,6 @@ var menuBar = {
         profileImage: null,
         announcementItems: null,
         closeIconOnMobile: null,
-        param: null,
         reportDomain: null
     },
 
@@ -62,7 +61,6 @@ var menuBar = {
         menuBar.domElements.profileImage = $('#logoProfileImg');
         menuBar.domElements.announcementItems = $("#menu-ANNOUNCEMENTS li a");
         menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
-        menuBar.domElements.param = $('#param').val();
         menuBar.domElements.reportDomain = $('#ReportDomain').val();
     },
 
@@ -267,9 +265,7 @@ var menuBar = {
         } catch (e) { }
 
         if (subMenu.data("domain")) {
-            var sessionId = $('#sessionId').val();
-            var cookieless = '/(S(' + sessionId + '))';
-            $('#main').attr('src', subMenu.data("domain") + cookieless + subMenu.data("url")).attr("target", "main");
+            $('#main').attr('src', subMenu.data("domain") + subMenu.data("url")).attr("target", "main");
         }
         else {
             $('#main').attr('src', subMenu.data("apppath") + subMenu.data("url")).attr("target", "main");
@@ -377,11 +373,6 @@ var menuBar = {
     },
 
     loadAuthFrame: function () {
-        var sessionId = $('#sessionId').val();
-        var domain = menuBar.domElements.reportDomain;
-        var authUrl = domain + '/(S(' + sessionId + '))/Auth';
-        var url = authUrl + '?param=' + menuBar.domElements.param;
-
         menuBar.domElements.header.find('iframe#reportFrame')[0].src = 'Default/Auth';
     }
 };

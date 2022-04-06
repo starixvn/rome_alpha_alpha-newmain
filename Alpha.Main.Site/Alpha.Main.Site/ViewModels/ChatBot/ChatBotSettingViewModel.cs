@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
+    using Alpha.Main.Constants;
     using AppResources;
     using Chatbot.Client.Models;
 
@@ -19,9 +20,9 @@
 
             var selfdestructionPeriod = chatbotViewModel.User.SelfdestructionPeriod.HasValue
                 ? chatbotViewModel.User.SelfdestructionPeriod.Value
-                : Constants.SelfdestructionPeriod.ThreeHours;
+                : SelfdestructionPeriod.ThreeHours;
 
-            SelfdestructionPeriodOptions = Constants.SelfdestructionPeriod.Options
+            SelfdestructionPeriodOptions = SelfdestructionPeriod.Options
                 .Select(o => new SelectListItem
                 {
                     Text = ChatBot.ResourceManager.GetString(o.Value),

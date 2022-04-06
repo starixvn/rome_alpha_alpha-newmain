@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Site.ViewModels
 {
     using System.Collections.Generic;
-    using Constants;
+    using Alpha.Main.Constants;
 
     public class LanguageViewModel
     {

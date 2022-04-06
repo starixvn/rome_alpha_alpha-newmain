@@ -3,9 +3,11 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
+    using Alpha.Main.Constants;
     using Alpha.Main.Site.Helpers;
     using Alpha.Web.Filters;
     using AppResources;
@@ -16,6 +18,7 @@ namespace Alpha.Main.Site.Controllers
     using Models.Requests.UserMessages;
     using Requests;
     using Requests.Otp;
+    using RSACryptoPad;
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
     using Web;
@@ -44,18 +47,19 @@ namespace Alpha.Main.Site.Controllers
             this.nicknameChecker = nicknameChecker;
         }
 
-        [HttpGet]
+        [HttpGet, AllowProtectedMode]
         public void Auth()
         {
-            var cookieAuth = FormsAuthentication.GetAuthCookie(userSession.UserName, false);
-            var host = Request.Headers["Host"];
-            var indexOfSubDomain = host.IndexOf(".");
+            var param = string.Empty;
+            const int dwKeySize = 1024;
+            var keyPath = Server.MapPath("~/IbcKeys/ibckey.snk");
+            var encryption = new EncryptionThread();
 
-            cookieAuth.Domain = $".{host.Substring(indexOfSubDomain)}";
+            param = $"{GetLoginUsername()}&{GetSessionKeyValue()}";
+            param = encryption.EncryptString(param, dwKeySize, keyPath);
 
-            var returnUrl = $"{AppSettings.ReportDomain}/(S({Session.SessionID}))/Auth?param={Session["LoginParams"]}";
+            var returnUrl = $"{AppSettings.ReportDomain}/(S({Session.SessionID}))/Auth?param={param}";
 
-            Response.AppendCookie(cookieAuth);
             Response.Redirect(returnUrl);
         }
 
@@ -191,6 +195,46 @@ namespace Alpha.Main.Site.Controllers
                 default:
                     return Resources.NoPermissionAccessPage;
             }
+        }
+
+        private string GetSessionKeyValue()
+        {
+            var sessionKeyValue = string.Empty;
+            var sessions = new List<object>()
+            {
+                userSession.CustId,
+                userSession.UserName,
+                userSession.Site,
+                userSession.Language,
+                userSession.LangKey,
+                userSession.RoleId,
+                userSession.Currency,
+                userSession.CurrencyId,
+                userSession.IsShowConsolidatedReport,
+                userSession.GetProperty<DateTime>(SessionConstants.CustomerDatelimit),
+                userSession.IsAdminCanViewVNIP,
+                userSession.SubAccId,
+                userSession.UserLoginIp,
+                userSession.IsProtectedMode,
+                userSession.DarkModeName,
+                userSession.GetProperty<string>(SessionConstants.MainDomainSessionKey),
+                userSession.GetProperty<string>(SessionConstants.LoginIP_Browser),
+                userSession.AssetAppPath
+            };
+
+            foreach (var item in sessions)
+            {
+                sessionKeyValue += $"{item},";
+            }
+
+            return sessionKeyValue.Substring(0, sessionKeyValue.Length - 1);
+        }
+
+        private string GetLoginUsername()
+        {
+            return userSession.IsInternal ? userSession.AdminName :
+                userSession.IsIndirectLoggedIn ? userSession.IndirectUsername :
+                userSession.UserName;
         }
     }
 }

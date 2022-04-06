@@ -3,7 +3,7 @@
 namespace Alpha.Main.Site.Requests
 {
     using System.Diagnostics.CodeAnalysis;
-    using Constants;
+    using Alpha.Main.Constants;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
 

@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using Alpha.Main.Constants;
     using Chatbot.Client.Models;
     using Chatbot.Client.Services;
     using MediatR;
@@ -182,7 +183,7 @@
 
         public async Task<Result> Handle(UpdateSelfdestructionPeriodCommand message)
         {
-            if (!Constants.SelfdestructionPeriod.Options.ContainsKey(message.Minutes))
+            if (!SelfdestructionPeriod.Options.ContainsKey(message.Minutes))
             {
                 return new Result { Code = 1 };
             }

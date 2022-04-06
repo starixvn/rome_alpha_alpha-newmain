@@ -64,9 +64,7 @@
 </section>
 
 @Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common"))
-@Html.Hidden("param", Session["LoginParams"])
 @Html.Hidden("ReportDomain", System.Configuration.ConfigurationManager.AppSettings["Report:Domain"])
-@Html.Hidden("sessionId", Session.SessionID)
 @if (Model.IsAccountInfoVisible)
 {
     <!--[if (gt IE 8)|!(IE)]><!-->
