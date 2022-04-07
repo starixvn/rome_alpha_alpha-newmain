@@ -37,6 +37,8 @@ var menuBar = {
 
         if (menuBar.domElements.reportDomain) {
             menuBar.loadAuthFrame();
+
+            setInterval(function () { menuBar.loadAuthFrame() }, 60 * 1000);
         }
     },
 

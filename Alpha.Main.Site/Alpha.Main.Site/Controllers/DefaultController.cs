@@ -58,7 +58,7 @@ namespace Alpha.Main.Site.Controllers
             param = $"{GetLoginUsername()}&{GetSessionKeyValue()}";
             param = encryption.EncryptString(param, dwKeySize, keyPath);
 
-            var returnUrl = $"{AppSettings.ReportDomain}/(S({Session.SessionID}))/Auth?param={param}";
+            var returnUrl = $"{AppSettings.ReportDomain}/Auth?param={param}";
 
             Response.Redirect(returnUrl);
         }
