@@ -523,7 +523,7 @@
     <value>Your Telegram ID</value>
   </data>
   <data name="UnsubscribeTelegramBotWarning" xml:space="preserve">
-    <value>Unlink {0} will stop all of its features. Are you sure you want to proceed?</value>
+    <value>Are you sure you want to unlink?</value>
   </data>
   <data name="OTPIsExpiredMessage" xml:space="preserve">
     <value>OTP is expired, please &lt;span id="btnResend" class="link resend-code"&gt;click here&lt;/span&gt; to generate new OTP.</value>

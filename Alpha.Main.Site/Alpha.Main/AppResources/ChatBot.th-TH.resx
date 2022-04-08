@@ -484,7 +484,7 @@
     <value>Today Win Loss</value>
   </data>
   <data name="UnsubscribeTelegramBotWarning" xml:space="preserve">
-    <value>Unlink {0} will stop all of its features. Are you sure you want to proceed?</value>
+    <value>Are you sure you want to unlink?</value>
   </data>
   <data name="VerifyOTP" xml:space="preserve">
     <value>Verify OTP</value>

@@ -31,11 +31,19 @@
         {
             var language = userSession.Language;
             var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
+            var isViewReports = userSession.SubPageAccess.ViewReports;
+            var isViewMemberInfo = userSession.SubPageAccess.ViewMemberInfo;
 
             var model = await mediator.SendAsync(query);
 
             return model.IsAlreadySetup
-                ? View("ChatBotSetting", new ChatBotSettingViewModel(model, language, custLevel.DisplayName))
+                ? View("ChatBotSetting", new ChatBotSettingViewModel(
+                    model, 
+                    language, 
+                    custLevel.DisplayName, 
+                    isViewReports,
+                    isViewMemberInfo)
+                )
                 : View("RegisterAccount", new RegisterAccountViewModel(model, language, custLevel.DisplayName));
         }
 

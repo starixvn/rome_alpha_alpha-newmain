@@ -60,21 +60,21 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         var isEnable = checkbox.is(":checked");
         var self = this;
         this.$.blockUI();
-        this.$.ajax({
-            type: "POST",
-            url: alpha.urls.mainRootPath + "ChatBot/UpdateFunction",
-            data: { command: { functionId: functionId, functionName: functionName, command: command, isEnable: isEnable } },
-            dataType: "json",
-            success: (result) => {
-                if (result && result.IsNotOk) {
-                    if (result.IsNotAuthorized) {
-                        self.topWindow.bootboxAlert(result.Message);
-                    }
-                    checkbox.prop("checked", !isEnable);
-                }
-            },
-            complete: this.onComplete,
-        });
+        //this.$.ajax({
+        //    type: "POST",
+        //    url: alpha.urls.mainRootPath + "TelegramChatBot/UpdateFunction",
+        //    data: { command: { functionId: functionId, functionName: functionName, command: command, isEnable: isEnable } },
+        //    dataType: "json",
+        //    success: (result) => {
+        //        if (result && result.IsNotOk) {
+        //            if (result.IsNotAuthorized) {
+        //                self.topWindow.bootboxAlert(result.Message);
+        //            }
+        //            checkbox.prop("checked", !isEnable);
+        //        }
+        //    },
+        //    complete: this.onComplete,
+        //});
     }
 
     unsubscribeEvent = (e: any) => {

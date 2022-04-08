@@ -1,4 +1,6 @@
-﻿<div class="panel chatbot-setting">
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.ChatBotSettingViewModel
+
+<div class="panel chatbot-setting">
     <div class="panel-heading" role="tab" id="headingNotification">
         <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification" aria-expanded="false" aria-controls="notification">
@@ -18,16 +20,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.yesterdayWinLoss</td>
-                        <td>@ChatBot.YesterdayWinLossNotificationDescription</td>
-                        <td class="text-center">
-                            <label class="switch">
-                                <input type="checkbox" class="function" checked />
-                                <span class="slider"></span>
-                            </label>
-                        </td>
-                    </tr>
+                    @if (Model.IsViewReports)
+                    {
+                        <tr>
+                            <td class="text-center bold">@ChatBot.yesterdayWinLoss</td>
+                            <td>@ChatBot.YesterdayWinLossNotificationDescription</td>
+                            <td class="text-center">
+                                <label class="switch">
+                                    <input type="checkbox" class="function" checked />
+                                    <span class="slider"></span>
+                                </label>
+                            </td>
+                        </tr>
+                    }
                     <tr>
                         <td class="text-center bold">@ChatBot.PersonalMessage</td>
                         <td>@ChatBot.PersonalMessageDescription</td>
@@ -68,26 +73,29 @@
                             </label>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.ProblemAccount</td>
-                        <td>@ChatBot.ProblemAccountDescription</td>
-                        <td class="text-center">
-                            <label class="switch">
-                                <input type="checkbox" class="function" checked />
-                                <span class="slider"></span>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.MemberWinLossLimit</td>
-                        <td>@ChatBot.MemberWinLossLimitDescription</td>
-                        <td class="text-center">
-                            <label class="switch">
-                                <input type="checkbox" class="function" checked />
-                                <span class="slider"></span>
-                            </label>
-                        </td>
-                    </tr>
+                    @if (Model.IsViewMemberInfo)
+                    {
+                        <tr>
+                            <td class="text-center bold">@ChatBot.ProblemAccount</td>
+                            <td>@ChatBot.ProblemAccountDescription</td>
+                            <td class="text-center">
+                                <label class="switch">
+                                    <input type="checkbox" class="function" checked />
+                                    <span class="slider"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center bold">@ChatBot.MemberWinLossLimit</td>
+                            <td>@ChatBot.MemberWinLossLimitDescription</td>
+                            <td class="text-center">
+                                <label class="switch">
+                                    <input type="checkbox" class="function" checked />
+                                    <span class="slider"></span>
+                                </label>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
             <div>@ChatBot.YouCanTurnOnOff</div>
