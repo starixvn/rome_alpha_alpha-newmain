@@ -200,7 +200,13 @@ namespace Alpha.Main.Site.Controllers
         private string GetSessionKeyValue()
         {
             var sessionKeyValue = string.Empty;
-            var sessions = new List<object>()
+            var enableJackpotGameIds = userSession.GetProperty<IList<int>>(SessionConstants.GameEnable + SessionConstants.Jackpot);
+            var enableJackpotGames = $"{string.Join(",", enableJackpotGameIds)}";
+            var pageAccess = userSession.SubPageAccess;
+            var pageAccessPermissions = $"{pageAccess.CreateAccount}${pageAccess.Transfer}${pageAccess.UpdateAccount}$" +
+                $"{pageAccess.ViewLog}${pageAccess.ViewMemberInfo}${pageAccess.ViewReports}${pageAccess.ViewTotalBets}${pageAccess.GetPermission("[L]")}";
+
+            var sessions = new List<object>
             {
                 userSession.CustId,
                 userSession.UserName,
@@ -219,12 +225,15 @@ namespace Alpha.Main.Site.Controllers
                 userSession.DarkModeName,
                 userSession.GetProperty<string>(SessionConstants.MainDomainSessionKey),
                 userSession.GetProperty<string>(SessionConstants.LoginIP_Browser),
-                userSession.AssetAppPath
+                userSession.AssetAppPath,
+                enableJackpotGames,
+                userSession.IsCasinoSync,
+                pageAccessPermissions
             };
 
             foreach (var item in sessions)
             {
-                sessionKeyValue += $"{item},";
+                sessionKeyValue += $"{item};";
             }
 
             return sessionKeyValue.Substring(0, sessionKeyValue.Length - 1);
