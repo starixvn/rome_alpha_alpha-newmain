@@ -108,8 +108,8 @@
     </siteMapNode>
 
     <siteMapNode resourceKey="BetStatistics" menuItemType="BetStatisticsMenuItem" functionType="[E]" roles="Super">
-      <siteMapNode resourceKey="IPMatching" appPath="ReportsAppPath" url="~/RiskAnalysisIPMatching" roles="Super"></siteMapNode>
-      <siteMapNode resourceKey="BetChoiceMatching" appPath="ReportsAppPath" url="~/BetChoiceMatching" roles="Super"></siteMapNode>
+      <siteMapNode resourceKey="IPMatching" appPath="ReportsAppPath" url="/RiskAnalysisIPMatching" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
+      <siteMapNode resourceKey="BetChoiceMatching" appPath="ReportsAppPath" url="/BetChoiceMatching" roles="Super" useDomainConfig="Report:Domain"></siteMapNode>
     </siteMapNode>
 
     <siteMapNode resourceKey="transfer" appPath="OldMainAppPath" menuItemType="TransferMenuItem" url="_Transfer/Master/AgentList.aspx" functionType="[C]" roles="Master"></siteMapNode>
