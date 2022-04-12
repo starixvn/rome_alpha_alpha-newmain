@@ -228,7 +228,8 @@ namespace Alpha.Main.Site.Controllers
                 userSession.AssetAppPath,
                 enableJackpotGames,
                 userSession.IsCasinoSync,
-                pageAccessPermissions
+                pageAccessPermissions,
+                userSession.IsEnabledSecurityCodeInStatement
             };
 
             foreach (var item in sessions)
