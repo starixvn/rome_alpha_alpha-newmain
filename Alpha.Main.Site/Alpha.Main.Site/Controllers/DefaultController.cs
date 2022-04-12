@@ -229,7 +229,8 @@ namespace Alpha.Main.Site.Controllers
                 enableJackpotGames,
                 userSession.IsCasinoSync,
                 pageAccessPermissions,
-                userSession.IsEnabledSecurityCodeInStatement
+                userSession.IsEnabledSecurityCodeInStatement,
+                userSession.SecurityCode
             };
 
             foreach (var item in sessions)
