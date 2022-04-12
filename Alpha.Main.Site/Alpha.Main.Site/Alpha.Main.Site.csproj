@@ -1154,12 +1154,6 @@
     <Content Include="Assets\styles\telegramchatbot\register-account.min.css">
       <DependentUpon>register-account.css</DependentUpon>
     </Content>
-    <Content Include="bundles\site-main\chatbot\tab-agent-dark.css" />
-    <Content Include="bundles\site-main\chatbot\tab-agent.css" />
-    <Content Include="bundles\site-main\chatbot\tab-master-dark.css" />
-    <Content Include="bundles\site-main\chatbot\tab-master.css" />
-    <Content Include="bundles\site-main\chatbot\tab-super-dark.css" />
-    <Content Include="bundles\site-main\chatbot\tab-super.css" />
     <Content Include="Scripts\aes.js" />
     <Content Include="Alpha.Main.Site.Debug.ruleset" />
     <Content Include="Alpha.Main.Site.ruleset" />
