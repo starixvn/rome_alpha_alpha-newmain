@@ -122,15 +122,19 @@ var changeUserOwnSecurityCode = {
         const functionName = $element.data("function");
         $.post("UpdateSecurityCodeFunction", { function: functionName, isOn: isOff }, function (data) {
             if (data.IsOk) {
-                if (isOff) {
-                    $element
-                        .removeClass("switch-off")
-                        .text(securityCodeResources.switchLableOn);
-                } else {
-                    $element
-                        .addClass("switch-off")
-                        .text(securityCodeResources.switchLableOff);
-                }
+                (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = 'Default/SecurityCode' + functionName + '?s=' + isOff;
+
+                setTimeout(() => {
+                    if (isOff) {
+                        $element
+                            .removeClass("switch-off")
+                            .text(securityCodeResources.switchLableOn);
+                    } else {
+                        $element
+                            .addClass("switch-off")
+                            .text(securityCodeResources.switchLableOff);
+                    }
+                }, 2000);
             } else {
                 $("#status-message").removeClass("display-none");
                 securityHelper.showFailMessage($("#status-message-content"), data.Message);

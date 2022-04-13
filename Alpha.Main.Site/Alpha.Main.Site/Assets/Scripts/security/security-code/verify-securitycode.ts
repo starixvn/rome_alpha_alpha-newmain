@@ -68,7 +68,11 @@ var verifySecurityCode = {
                         top.revertSecurityCodePopupTitle();
                     }
 
-                    securityHelper.afterVerifed();
+                    (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = 'Default/SecurityCode?s=' + secCode;
+
+                    setTimeout(() => {
+                        securityHelper.afterVerifed();
+                    }, 2000);
                 }
                 else if (code === 2) { // account is closed 
                     alert(data.Message);

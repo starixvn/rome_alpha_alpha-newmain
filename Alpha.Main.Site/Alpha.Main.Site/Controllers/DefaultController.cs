@@ -9,6 +9,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Web.Security;
     using Alpha.Main.Constants;
     using Alpha.Main.Site.Helpers;
+    using Alpha.SecurityCode.Web;
     using Alpha.Web.Filters;
     using AppResources;
     using Configurations;
@@ -61,6 +62,30 @@ namespace Alpha.Main.Site.Controllers
             var returnUrl = $"{AppSettings.ReportDomain}/Auth?param={param}";
 
             Response.Redirect(returnUrl);
+        }
+
+        [HttpGet, AllowProtectedMode]
+        public void Otp()
+        {
+            Response.Redirect($"{AppSettings.ReportDomain}/Auth/Otp");
+        }
+
+        [HttpGet, AllowProtectedMode]
+        public void SecurityCode(string s)
+        {
+            Response.Redirect($"{AppSettings.ReportDomain}/Auth/SecurityCode?s={s}");
+        }
+
+        [HttpGet, AllowProtectedMode]
+        public void SecurityCodeBetlist(bool s)
+        {
+            Response.Redirect($"{AppSettings.ReportDomain}/Auth/SecurityCodeBetlist?s={s}");
+        }
+
+        [HttpGet, AllowProtectedMode]
+        public void SecurityCodeStatement(bool s)
+        {
+            Response.Redirect($"{AppSettings.ReportDomain}/Auth/SecurityCodeStatement?s={s}");
         }
 
         [AllowProtectedMode]
@@ -230,7 +255,9 @@ namespace Alpha.Main.Site.Controllers
                 userSession.IsCasinoSync,
                 pageAccessPermissions,
                 userSession.IsEnabledSecurityCodeInStatement,
-                userSession.SecurityCode
+                userSession.SecurityCode,
+                SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp,
+                SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode
             };
 
             foreach (var item in sessions)

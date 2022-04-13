@@ -66,9 +66,13 @@ class VerifyOtp {
         var result = new Result(data);
 
         if (result.isSuccessful) {
-            securityHelper.afterVerifed();
-            this.$txtOtp.attr("disabled", "disabled");
-            this.$btnSubmit.attr("disabled", "disabled").remove();
+            (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = 'Default/Otp';
+
+            setTimeout(() => {
+                securityHelper.afterVerifed();
+                this.$txtOtp.attr("disabled", "disabled");
+                this.$btnSubmit.attr("disabled", "disabled").remove();
+            }, 2000);
         }
         else {
             this.$(this.$otpMessage).removeClass('hidden');
