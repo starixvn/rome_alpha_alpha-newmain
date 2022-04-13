@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Configuration;
     using System.Diagnostics.CodeAnalysis;
+    using System.Net;
     using System.Net.Http;
     using System.Reflection;
     using System.Web.Mvc;
@@ -195,12 +196,15 @@
 
         private static HttpClient CreateTelegramBotHttpClient()
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             var telegramApiUri = ConfigurationManager.AppSettings["TelegramBotClientUri"];
             var client = new HttpClient
             {
                 BaseAddress = new Uri(telegramApiUri)
             };
             client.DefaultRequestHeaders.Add("Accept-Language", LanguageCodes.Taiwan);
+            
             return client;
         }
     }
