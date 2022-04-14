@@ -8,7 +8,6 @@
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using Alpha.Web;
     using Alpha.Web.Filters;
-    using Alpha.Web.Models;
     using CaptchaMvc.HtmlHelpers;
     using MediatR;
     using Sunplus.Agent.Model.Entities;
@@ -29,22 +28,11 @@
 
         public async Task<ActionResult> Index(SetUpChatBotQuery query)
         {
-            var language = userSession.Language;
-            var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
-            var isViewReports = userSession.SubPageAccess.ViewReports;
-            var isViewMemberInfo = userSession.SubPageAccess.ViewMemberInfo;
-
             var model = await mediator.SendAsync(query);
 
-            return model.IsAlreadySetup
-                ? View("ChatBotSetting", new ChatBotSettingViewModel(
-                    model, 
-                    language, 
-                    custLevel.DisplayName, 
-                    isViewReports,
-                    isViewMemberInfo)
-                )
-                : View("RegisterAccount", new RegisterAccountViewModel(model, language, custLevel.DisplayName));
+            return model.IsLinked
+                ? View("ChatBotSetting", new ChatBotSettingViewModel(model, query))
+                : View("RegisterAccount", new RegisterAccountViewModel(model, query));
         }
 
         [HttpPost, AntiXsrfFilter]
@@ -86,10 +74,10 @@
             }
 
             var result = await mediator.SendAsync(command);
-            //if (result.IsNotOk && result.FailedTimes >= 3 && !isCaptchaValid)
-            //{
-            //    return PartialView("Captcha");
-            //}
+            if (result.IsNotOk && result.Code == -3 && !isCaptchaValid)
+            {
+                return PartialView("Captcha");
+            }
 
             return Json(result);
         }

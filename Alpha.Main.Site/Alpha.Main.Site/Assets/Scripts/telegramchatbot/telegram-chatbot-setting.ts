@@ -24,7 +24,6 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.cachedDOMElements();
         this.initLanguage();
         this.registerEvents();
-        //this.cacheDOMAndRegisterFunctionExample(() => this.$language.data("currentlanguage"));
     }
 
     cachedDOMElements = () => {

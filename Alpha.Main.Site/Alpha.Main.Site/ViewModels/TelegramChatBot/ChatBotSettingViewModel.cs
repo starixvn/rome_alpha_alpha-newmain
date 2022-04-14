@@ -1,18 +1,20 @@
 ﻿namespace Alpha.Main.Site.ViewModels.TelegramChatBot
 {
+    using Alpha.Main.Site.Requests.TelegramChatBot;
+
     public class ChatBotSettingViewModel
     {
-        public ChatBotSettingViewModel(ChatBotViewModel chatBotViewModel, string language, string custLevel, bool isViewReports, bool isViewMemberInfo)
+        public ChatBotSettingViewModel(ChatBotViewModel chatBotViewModel, SetUpChatBotQuery query)
         {
             ChatBotViewModel = chatBotViewModel;
 
             TelegramId = chatBotViewModel.CustBotMessenger.MessengerName;
             ChatBotName = chatBotViewModel.CustBotMessenger.BotName;
-            Language = language;
-            CustLevel = custLevel;
+            Language = query.Language;
+            CustLevel = query.CustLevel.DisplayName;
 
-            IsViewReports = isViewReports;
-            IsViewMemberInfo = isViewMemberInfo;
+            IsViewReports = query.IsViewReports;
+            IsViewMemberInfo = query.IsViewMemberInfo;
         }
 
         public ChatBotViewModel ChatBotViewModel { get; }

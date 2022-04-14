@@ -12,6 +12,6 @@
 
         public CustBotMessenger CustBotMessenger { get; }
 
-        public bool IsAlreadySetup => CustBotMessenger != null && CustBotMessenger.IsVerifyOTP && CustBotMessenger.Status;
+        public bool IsLinked => CustBotMessenger != null && CustBotMessenger.IsVerifyOTP && CustBotMessenger.Status;
     }
 }

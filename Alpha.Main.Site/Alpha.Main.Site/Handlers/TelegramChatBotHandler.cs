@@ -48,7 +48,7 @@
         {
             var url = await settingService.GenerateStartUriAsync(message.CustId, message.SubAccId, AppSettings.SiteGroup, AppSettings.LocalTest);
 
-            var logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Assets/styles/telegramchatbot/images/telegram-sm.png");
+            var logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Assets/styles/telegramchatbot/images/telegram-logo.png");
             var qrCodeDataUrl = QRCodeAdapter.Generate(url, logoPath);
 
             return new VerifyAccountViewModel(url, qrCodeDataUrl);
@@ -57,7 +57,7 @@
         public async Task<Result> Handle(VerifyOTPCommand message)
         {
             var bot = await GetTelegramBotAsync();
-            return await settingService.LinkAsync(bot.BotId, message.CustId, message.SubAccId, message.OTP);
+            return await settingService.LinkAsync(bot.BotId, message.CustId, message.SubAccId, message.OTP, message.IP);
         }
 
         public async Task<Result> Handle(ResendOTPCommand message)
@@ -69,7 +69,7 @@
         public async Task<Result> Handle(UnsubscribeCommand message)
         {
             var bot = await GetTelegramBotAsync();
-            return await settingService.UnlinkAsync(bot.BotId, message.CustId, message.SubAccId);
+            return await settingService.UnlinkAsync(bot.BotId, message.CustId, message.SubAccId, message.IP);
         }
 
         private async Task<BotEntity> GetTelegramBotAsync()

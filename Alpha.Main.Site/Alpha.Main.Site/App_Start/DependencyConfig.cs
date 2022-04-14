@@ -7,6 +7,7 @@
     using System.Net;
     using System.Net.Http;
     using System.Reflection;
+    using System.Threading;
     using System.Web.Mvc;
     using Alpha.Captcha.Services;
     using Alpha.Main.ProfilePicture.Services;
@@ -40,13 +41,17 @@
     using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
-    using TelegramBot.Client.Constants;
     using TelegramBot.Client.Services;
     using Web.Helpers;
     using Web.Helpers.Impl;
 
     public static class DependencyConfig
     {
+        private static readonly HttpClient telegramClient = new HttpClient
+        {
+            BaseAddress = new Uri(ConfigurationManager.AppSettings["TelegramBotClientUri"])
+        };
+
         public static void Init()
         {
             RegisterProductConfiguration();
@@ -198,14 +203,9 @@
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            var telegramApiUri = ConfigurationManager.AppSettings["TelegramBotClientUri"];
-            var client = new HttpClient
-            {
-                BaseAddress = new Uri(telegramApiUri)
-            };
-            client.DefaultRequestHeaders.Add("Accept-Language", LanguageCodes.Taiwan);
-            
-            return client;
+            telegramClient.DefaultRequestHeaders.Add("Accept-Language", Thread.CurrentThread.CurrentCulture.Name);
+
+            return telegramClient;
         }
     }
 }

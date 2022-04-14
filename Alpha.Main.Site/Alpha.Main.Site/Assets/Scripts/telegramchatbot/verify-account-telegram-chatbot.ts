@@ -151,7 +151,7 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
 
                 if (result.Code == -1) {
                     this.$msgExpired.removeClass("hide");
-                } else if (result.Code == -2) {
+                } else if (result.Code == -2 || result.Code == -3) {
                     alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.invalidOTP }));
                 } else {
                     alpha.showMessage(this.$verificationMessage, new Result({ Code: result.Code, Message: result.Message }));
@@ -189,6 +189,9 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
             if (data.IsOk) {
                 alpha.showMessage(this.$verificationMessage, new Result({ Code: 0, Message: this.resources.resendOTPSuccessfully }));
                 this.$msgExpired.addClass("hide");
+
+                this.$txtOTP.val("");
+                this.$txtOTP.focus();
             }
         }
     }

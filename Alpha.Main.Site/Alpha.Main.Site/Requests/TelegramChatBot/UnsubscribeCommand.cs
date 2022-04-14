@@ -16,11 +16,13 @@
             userSession = userSession ?? new UserSessionExt();
             CustId = userSession.CustId;
             SubAccId = userSession.SubAccId;
+            IP = userSession.UserLoginIp;
         }
 
         public int CustId { get; }
 
         public int SubAccId { get; }
 
+        public string IP { get; }
     }
 }

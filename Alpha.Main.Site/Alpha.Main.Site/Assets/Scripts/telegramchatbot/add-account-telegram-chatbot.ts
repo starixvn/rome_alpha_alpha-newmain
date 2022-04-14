@@ -25,13 +25,6 @@ class AddAccountTelegramChatBot extends BaseTelegramChatBot {
     init = () => {
         this.cachedDOMElements();
         this.registerEvents();
-
-        var isVerifying = this.convertAttributeToBool(this.$("#IsVerifying").val());
-        if (isVerifying) {
-            this.verifyAccountTelegramChatbot.init();
-        }
-
-        //this.cacheDOMAndRegisterFunctionExample(() => this.resources.language);
     }
 
     cachedDOMElements = () => {
@@ -66,7 +59,6 @@ class AddAccountTelegramChatBot extends BaseTelegramChatBot {
     genQRCodeEvent = (e: any) => {
         e.preventDefault();
 
-        // Call API get QR Code Image and url link
         this.$.blockUI();
         this.$.ajax({
             type: "POST",

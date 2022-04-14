@@ -1139,8 +1139,8 @@
     </Content>
     <Content Include="Assets\styles\telegramchatbot\images\apple.png" />
     <Content Include="Assets\styles\telegramchatbot\images\google.png" />
+    <Content Include="Assets\styles\telegramchatbot\images\telegram-logo.png" />
     <Content Include="Assets\styles\telegramchatbot\images\telegram-qr-code.jpg" />
-    <Content Include="Assets\styles\telegramchatbot\images\telegram-sm.png" />
     <Content Include="Assets\styles\telegramchatbot\images\telegram.png" />
     <Content Include="Assets\styles\telegramchatbot\register-account-dark.css">
       <DependentUpon>register-account-dark.scss</DependentUpon>
