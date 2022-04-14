@@ -66,7 +66,10 @@ class VerifyOtp {
         var result = new Result(data);
 
         if (result.isSuccessful) {
-            (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = 'Default/Otp';
+            var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
+            if (reportDomain != '') {
+                (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/Otp';
+            }
 
             setTimeout(() => {
                 securityHelper.afterVerifed();

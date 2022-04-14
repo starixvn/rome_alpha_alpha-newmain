@@ -122,7 +122,10 @@ var changeUserOwnSecurityCode = {
         const functionName = $element.data("function");
         $.post("UpdateSecurityCodeFunction", { function: functionName, isOn: isOff }, function (data) {
             if (data.IsOk) {
-                (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = 'Default/SecurityCode' + functionName + '?s=' + isOff;
+                var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
+                if (reportDomain != '') {
+                    (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
+                }
 
                 setTimeout(() => {
                     if (isOff) {

@@ -68,7 +68,10 @@ var verifySecurityCode = {
                         top.revertSecurityCodePopupTitle();
                     }
 
-                    (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = 'Default/SecurityCode?s=' + secCode;
+                    var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
+                    if (reportDomain != '') {
+                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode?s=' + secCode;
+                    }
 
                     setTimeout(() => {
                         securityHelper.afterVerifed();

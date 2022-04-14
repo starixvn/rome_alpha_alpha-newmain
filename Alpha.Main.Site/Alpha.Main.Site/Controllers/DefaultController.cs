@@ -64,30 +64,6 @@ namespace Alpha.Main.Site.Controllers
             Response.Redirect(returnUrl);
         }
 
-        [HttpGet, AllowProtectedMode]
-        public void Otp()
-        {
-            Response.Redirect($"{AppSettings.ReportDomain}/Auth/Otp");
-        }
-
-        [HttpGet, AllowProtectedMode]
-        public void SecurityCode(string s)
-        {
-            Response.Redirect($"{AppSettings.ReportDomain}/Auth/SecurityCode?s={s}");
-        }
-
-        [HttpGet, AllowProtectedMode]
-        public void SecurityCodeBetlist(bool s)
-        {
-            Response.Redirect($"{AppSettings.ReportDomain}/Auth/SecurityCodeBetlist?s={s}");
-        }
-
-        [HttpGet, AllowProtectedMode]
-        public void SecurityCodeStatement(bool s)
-        {
-            Response.Redirect($"{AppSettings.ReportDomain}/Auth/SecurityCodeStatement?s={s}");
-        }
-
         [AllowProtectedMode]
         public ActionResult Index(string action = null)
         {
@@ -188,7 +164,8 @@ namespace Alpha.Main.Site.Controllers
 
         private bool IsRedirectToNicknamePage(string action)
         {
-            if (nicknameChecker.IsRecommendLoginByNickname) {
+            if (nicknameChecker.IsRecommendLoginByNickname)
+            {
                 return Request.UrlReferrer?.AbsolutePath != null
                     && Request.UrlReferrer?.AbsolutePath.IndexOf("nickname", StringComparison.OrdinalIgnoreCase) == -1
                     && Request.UrlReferrer?.AbsolutePath.IndexOf("default", StringComparison.OrdinalIgnoreCase) == -1
