@@ -282,7 +282,17 @@
 
         public static bool IsOfferLiveChat => "1" == Settings["IsOfferLiveChat"];
 
-        public static string ReportDomain => Settings["Report:Domain"];
+        public static string ReportDomain
+        {
+            get
+            {
+                var reportDomain = string.Empty + Settings["Report:Domain"];
+                reportDomain = reportDomain.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ? 
+                    string.Format(reportDomain, HttpContext.Current?.Request?.Headers?["Host"] ?? string.Empty) : reportDomain;
+
+                return reportDomain;
+            }
+        }
 
         public static string ReportRouting => Settings["Report:Routing"];
 
