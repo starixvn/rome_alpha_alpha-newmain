@@ -234,7 +234,8 @@ namespace Alpha.Main.Site.Controllers
                 userSession.IsEnabledSecurityCodeInStatement,
                 userSession.SecurityCode,
                 SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp,
-                SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode
+                SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode,
+                AppSettings.ReportRouting
             };
 
             foreach (var item in sessions)

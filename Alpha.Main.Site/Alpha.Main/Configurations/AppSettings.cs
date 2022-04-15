@@ -282,7 +282,9 @@
 
         public static bool IsOfferLiveChat => "1" == Settings["IsOfferLiveChat"];
 
-        public static string ReportDomain => Settings["Report:Domain"];        
+        public static string ReportDomain => Settings["Report:Domain"];
+
+        public static string ReportRouting => Settings["Report:Routing"];
 
         public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(ReportDomain);
         
