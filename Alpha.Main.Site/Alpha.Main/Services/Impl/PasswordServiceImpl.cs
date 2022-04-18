@@ -1,5 +1,10 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
     using AppResources;
     using Criteria.Password;
     using DataAccesses;
@@ -10,9 +15,7 @@
     using Params;
     using Params.Password;
     using Sunplus.Agent.Utilities;
-    using System;
-    using System.Collections.Generic;
-    using System.Text.RegularExpressions;
+    using TelegramBot.Client.Services;
 
     public class PasswordServiceImpl : PasswordService
     {
@@ -29,6 +32,7 @@
         private readonly KickoutCustomerService kickoutCustomerService;
         private readonly IDynamicRepository dynamicRepository;
         private readonly INetThrottlingService netThrottlingService;
+        private readonly INotificationService notificationService;
 
         public PasswordServiceImpl(
             Encryptor encryptor,
@@ -36,7 +40,8 @@
             IAesService aes,
             KickoutCustomerService kickoutCustomerService,
             IDynamicRepository dynamicRepository,
-            INetThrottlingService netThrottlingService)
+            INetThrottlingService netThrottlingService,
+            INotificationService notificationService)
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
@@ -44,6 +49,7 @@
             this.kickoutCustomerService = kickoutCustomerService;
             this.dynamicRepository = dynamicRepository;
             this.netThrottlingService = netThrottlingService;
+            this.notificationService = notificationService;
         }
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
@@ -195,11 +201,24 @@
 
             if (updateResult.IsSuccessful)
             {
-                KickoutCustomer(new KickoutCustomerParam(
-                    param.CustId,
-                    param.CustLevel,
-                    param.ServerId,
-                    param.IP));
+                if (param.IsCasinoSync)
+                {
+                    ChangeCasinoAccountPassword(param.CustId, encodedPassword, param.ActorId, param.ActorName, param.IP);
+                }
+
+                Task.Run(() =>
+                {
+                    KickoutCustomer(new KickoutCustomerParam(
+                        param.CustId,
+                        param.CustLevel,
+                        param.ServerId,
+                        param.IP));
+
+                    if (!param.IsResetMemberPassword)
+                    {
+                        ResetPasswordAlert(param.CustId, param.IP);
+                    }
+                });
             }
 
             return updateResult;
@@ -273,12 +292,17 @@
             {
                 netThrottlingService.Throttle();
 
-                KickoutCustomer(new KickoutCustomerParam(
-                    param.CustId,
-                    param.CustLevel,
-                    param.ServerId,
-                    param.IP,
-                    param.SubAccountId));
+                Task.Run(() =>
+                {
+                    KickoutCustomer(new KickoutCustomerParam(
+                        param.CustId,
+                        param.CustLevel,
+                        param.ServerId,
+                        param.IP,
+                        param.SubAccountId));
+
+                    ResetPasswordAlert(param.CustId, param.IP, param.SubAccountId);
+                });
             }
 
             return updateResult;
@@ -292,6 +316,18 @@
                 {
                     kickoutCustomerService.Kickout(param);
                 }
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.Handle(ex);
+            }
+        }
+
+        internal void ResetPasswordAlert(int custId, string ip, int subAccId = 0)
+        {
+            try
+            {
+                notificationService.NotifyChangePassword(custId, subAccId, ip).GetAwaiter().GetResult();
             }
             catch (Exception ex)
             {

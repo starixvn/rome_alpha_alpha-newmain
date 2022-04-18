@@ -294,6 +294,8 @@
 
         public static string ContactUsNewDomains => Settings["newdomains"];
 
+        public static Uri TelegramBotClientUri => new Uri(Settings["TelegramBotClientUri"]);
+
         public static int CDNReCheckinIntervalInSeconds
             => int.Parse(Settings["CDNReCheckin:IntervalInSeconds"] ?? "60");
     }

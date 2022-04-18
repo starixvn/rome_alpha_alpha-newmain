@@ -10,6 +10,7 @@
     using System.Threading;
     using System.Web.Mvc;
     using Alpha.Captcha.Services;
+    using Alpha.Main.Configurations;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.NetThrottling;
     using Alpha.NetThrottling.Models;
@@ -47,11 +48,6 @@
 
     public static class DependencyConfig
     {
-        private static readonly HttpClient telegramClient = new HttpClient
-        {
-            BaseAddress = new Uri(ConfigurationManager.AppSettings["TelegramBotClientUri"])
-        };
-
         public static void Init()
         {
             RegisterProductConfiguration();
@@ -138,6 +134,7 @@
             container.RegisterPerWebRequest<Chatbot.Client.Services.SettingService, SettingServiceImpl>();
             container.RegisterPerWebRequest<ISettingService>(() => new TelegramBot.Client.Services.SettingService(CreateTelegramBotHttpClient()));
             container.RegisterPerWebRequest<IBotService>(() => new BotService(CreateTelegramBotHttpClient()));
+            container.RegisterPerWebRequest<INotificationService>(() => new NotificationService(CreateTelegramBotHttpClient()));
 
             container.RegisterPerWebRequest<IUser, User>();
             container.RegisterSingleton(() => AesService.Default);
@@ -203,6 +200,8 @@
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
+            var telegramClient = HttpClientFactory.Create();
+            telegramClient.BaseAddress = AppSettings.TelegramBotClientUri;
             telegramClient.DefaultRequestHeaders.Add("Accept-Language", Thread.CurrentThread.CurrentCulture.Name);
 
             return telegramClient;

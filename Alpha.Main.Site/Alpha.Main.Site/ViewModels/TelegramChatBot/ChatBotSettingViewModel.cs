@@ -8,7 +8,7 @@
         {
             ChatBotViewModel = chatBotViewModel;
 
-            TelegramId = chatBotViewModel.CustBotMessenger.MessengerName;
+            TelegramId = chatBotViewModel.CustBotMessenger.ChatId;
             ChatBotName = chatBotViewModel.CustBotMessenger.BotName;
             Language = query.Language;
             CustLevel = query.CustLevel.DisplayName;
@@ -19,7 +19,7 @@
 
         public ChatBotViewModel ChatBotViewModel { get; }
 
-        public string TelegramId { get; }
+        public long TelegramId { get; }
 
         public string ChatBotName { get; }
 

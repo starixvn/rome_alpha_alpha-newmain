@@ -1,17 +1,17 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using Alpha.Main.Configurations;
-    using Alpha.Main.Site.Helpers;
-    using Alpha.Main.Site.Requests.TelegramChatBot;
-    using Alpha.Main.Site.ViewModels.TelegramChatBot;
-    using MediatR;
     using System;
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
-    using TelegramBot.Client.Services;
-    using TelegramBot.Client.Models;
+    using Alpha.Main.Configurations;
+    using Alpha.Main.Site.Helpers;
+    using Alpha.Main.Site.Requests.TelegramChatBot;
+    using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using Fanex.Caching;
+    using MediatR;
+    using TelegramBot.Client.Models;
+    using TelegramBot.Client.Services;
 
     public class TelegramChatBotHandler :
         IAsyncRequestHandler<SetUpChatBotQuery, ChatBotViewModel>,
@@ -34,7 +34,7 @@
 
         public async Task<ChatBotViewModel> Handle(SetUpChatBotQuery message)
         {
-            var custBotMessenger = await settingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId, AppSettings.LocalTest);
+            var custBotMessenger = await settingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId);
 
             if (custBotMessenger == null)
             {
@@ -46,7 +46,7 @@
 
         public async Task<VerifyAccountViewModel> Handle(GenerateQRCodeCommand message)
         {
-            var url = await settingService.GenerateStartUriAsync(message.CustId, message.SubAccId, AppSettings.SiteGroup, AppSettings.LocalTest);
+            var url = await settingService.GenerateStartUriAsync(message.CustId, message.SubAccId, AppSettings.SiteGroup);
 
             var logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Assets/styles/telegramchatbot/images/telegram-logo.png");
             var qrCodeDataUrl = QRCodeAdapter.Generate(url, logoPath);
@@ -63,7 +63,7 @@
         public async Task<Result> Handle(ResendOTPCommand message)
         {
             var bot = await GetTelegramBotAsync();
-            return await settingService.ResendOtpAsync(bot.BotId, message.CustId, message.SubAccId, AppSettings.LocalTest);
+            return await settingService.ResendOtpAsync(bot.BotId, message.CustId, message.SubAccId);
         }
 
         public async Task<Result> Handle(UnsubscribeCommand message)
@@ -79,7 +79,7 @@
             if (telegramBot == null)
             {
                 var allBots = await botService.GetAllAsync();
-                telegramBot = allBots.FirstOrDefault(b => b.IsTest == AppSettings.LocalTest && b.System == AppSettings.SiteGroup);
+                telegramBot = allBots.FirstOrDefault(b => b.System == AppSettings.SiteGroup);
                 cacheService.Set(TelegramBotKey, telegramBot);
             }
 

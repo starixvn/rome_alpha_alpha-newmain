@@ -2,13 +2,16 @@
 {
     using System;
     using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
     using Alpha.Main.Services;
     using AppResources;
     using Criteria.SecurityCode;
     using DataAccesses;
+    using Fanex.Logging.Extensions.Web;
     using Models;
     using Params.SecurityCode;
     using Sunplus.Agent.Utilities;
+    using TelegramBot.Client.Services;
 
     public class SecurityCodeServiceImpl : SecurityCodeService
     {
@@ -22,15 +25,18 @@
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
         private readonly Encryptor encryptor;
         private readonly INetThrottlingService netThrottlingService;
+        private readonly INotificationService notificationService;
 
         public SecurityCodeServiceImpl(
             SecurityCodeDataAccess securityCodeDataAccess,
             Encryptor encryptor,
-            INetThrottlingService netThrottlingService)
+            INetThrottlingService netThrottlingService,
+            INotificationService notificationService)
         {
             this.securityCodeDataAccess = securityCodeDataAccess;
             this.encryptor = encryptor;
             this.netThrottlingService = netThrottlingService;
+            this.notificationService = notificationService;
         }
 
         public Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param)
@@ -46,7 +52,7 @@
                 return validateResult;
             }
 
-            return securityCodeDataAccess.UpdateSecurityCode(
+            var result = securityCodeDataAccess.UpdateSecurityCode(
                  new UpdateMainAccountSecurityCodeCriteria
                  {
                      CustId = param.CustId,
@@ -56,6 +62,14 @@
                      IP = param.IP,
                      Language = param.Language
                  });
+
+            // Reset downline's password (downline is not Member).
+            if (result.IsOk && param.CustId != param.UserId && !param.IsResetMember)
+            {
+                Task.Run(() => { ResetSecurityCodeAlert(param.CustId, param.IP); });
+            }
+
+            return result;
         }
 
         public Result ChangeSubAccountSecurityCode(ChangeSecurityCodeParam param)
@@ -116,6 +130,8 @@
             if (result != null && result.IsSuccessful)
             {
                 netThrottlingService.Throttle();
+
+                Task.Run(() => ResetSecurityCodeAlert(param.CustId, param.IP, param.SubAccId));
             }
 
             return result;
@@ -314,5 +330,17 @@
 
         public Result UpdateSecurityCodeFunction(UpdateSecurityCodeFunctionParam param)
             => securityCodeDataAccess.UpdateSecurityCode(new UpdateSecurityCodeFunctionCriteria(param));
+
+        internal void ResetSecurityCodeAlert(int custId, string ip, int subAccId = 0)
+        {
+            try
+            {
+                notificationService.NotifyChangeSecurityCode(custId, subAccId, ip).GetAwaiter().GetResult();
+            }
+            catch (Exception ex)
+            {
+                ExceptionHandler.Handle(ex);
+            }
+        }
     }
 }
