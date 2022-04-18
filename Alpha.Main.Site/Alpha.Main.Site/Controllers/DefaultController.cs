@@ -235,7 +235,12 @@ namespace Alpha.Main.Site.Controllers
                 userSession.SecurityCode,
                 SecurityCodeSessionManager.SecurityCodeSession.IsEnabledOtp,
                 SecurityCodeSessionManager.SecurityCodeSession.IsAlreadyInputSecurityCode,
-                AppSettings.ReportRouting
+                AppSettings.ReportRouting,
+                userSession.AdminId,
+                userSession.AdminName,
+                userSession.IndirectCustId,
+                userSession.IndirectSubAccId,
+                userSession.IndirectUsername
             };
 
             foreach (var item in sessions)
