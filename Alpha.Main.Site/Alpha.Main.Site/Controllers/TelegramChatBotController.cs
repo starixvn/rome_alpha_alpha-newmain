@@ -13,7 +13,7 @@
     using Sunplus.Agent.Model.Entities;
     using System.Threading.Tasks;
     using System.Web.Mvc;
-    using Result = TelegramBot.Client.Models.Result;
+    using Result = Main.Models.Result;
 
     public class TelegramChatBotController : BaseController
     {

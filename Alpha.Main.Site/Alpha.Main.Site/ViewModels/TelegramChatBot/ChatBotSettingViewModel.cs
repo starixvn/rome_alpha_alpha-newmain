@@ -8,18 +8,19 @@
         {
             ChatBotViewModel = chatBotViewModel;
 
-            TelegramId = chatBotViewModel.CustBotMessenger.ChatId;
+            ChatId = chatBotViewModel.CustBotMessenger.ChatId;
             ChatBotName = chatBotViewModel.CustBotMessenger.BotName;
             Language = query.Language;
             CustLevel = query.CustLevel.DisplayName;
 
             IsViewReports = query.IsViewReports;
             IsViewMemberInfo = query.IsViewMemberInfo;
+            IsShowLetstalkChatBot = query.IsShowLetstalkChatBot;
         }
 
         public ChatBotViewModel ChatBotViewModel { get; }
 
-        public long TelegramId { get; }
+        public long ChatId { get; }
 
         public string ChatBotName { get; }
 
@@ -30,5 +31,7 @@
         public bool IsViewReports { get; }
 
         public bool IsViewMemberInfo { get; }
+
+        public bool IsShowLetstalkChatBot { get; }
     }
 }

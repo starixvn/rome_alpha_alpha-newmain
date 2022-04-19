@@ -241,6 +241,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ChatID.
+        /// </summary>
+        public static string ChatID {
+            get {
+                return ResourceManager.GetString("ChatID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your request is being processed now, please wait....
         /// </summary>
         public static string cloneAccountNotification {
@@ -1335,15 +1344,6 @@ namespace Alpha.Main.AppResources {
         public static string YourLetstalkAccount {
             get {
                 return ResourceManager.GetString("YourLetstalkAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Your Telegram ID.
-        /// </summary>
-        public static string YourTelegramId {
-            get {
-                return ResourceManager.GetString("YourTelegramId", resourceCulture);
             }
         }
     }

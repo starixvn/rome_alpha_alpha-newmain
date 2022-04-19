@@ -504,7 +504,7 @@
   <data name="YouCanTurnOnOff" xml:space="preserve">
     <value>You can turn on/off each of these notifications using Settings action in Telegram Chatbot</value>
   </data>
-  <data name="YourTelegramId" xml:space="preserve">
-    <value>Your Telegram ID</value>
+  <data name="ChatID" xml:space="preserve">
+    <value>ChatID</value>
   </data>
 </root>

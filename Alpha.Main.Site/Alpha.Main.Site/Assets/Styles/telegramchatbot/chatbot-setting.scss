@@ -19,6 +19,20 @@
     .form-group.only-text {
         margin-top: 4px;
     }
+
+    .icon-content-copy {
+        cursor: pointer;
+        color: #038dee;
+        display: inline-block;
+        font-size: 18px;
+        margin-right: 6px;
+        position: relative;
+        top: 2px;
+
+        &:hover {
+            color: $icon-hover-color;
+        }
+    }
 }
 
 @mixin dropdown-style {

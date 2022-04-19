@@ -1,4 +1,6 @@
-﻿<div class="panel chatbot-setting">
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.ChatBotSettingViewModel
+
+<div class="panel chatbot-setting">
     <div class="panel-heading" role="tab" id="headingReport">
         <h4 class="panel-title">
             <a role="button" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report">
@@ -12,9 +14,9 @@
             <table class="tblRpt tblRpt-bordered tbl-reports">
                 <thead>
                     <tr>
-                       <th class="col-report">@ChatBot.Report</th>
-                       <th>@ChatBot.Description</th>
-                       <th class="col-how-it-works">@ChatBot.HowItWorks</th>
+                        <th class="col-report">@ChatBot.Report</th>
+                        <th>@ChatBot.Description</th>
+                        <th class="col-how-it-works">@ChatBot.HowItWorks</th>
                     </tr>
                 </thead>
                 <tbody>

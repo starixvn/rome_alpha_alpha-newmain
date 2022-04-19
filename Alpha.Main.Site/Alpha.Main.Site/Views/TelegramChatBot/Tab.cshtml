@@ -1,0 +1,15 @@
+﻿@model Boolean 
+
+<div class="page-title">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#telegramchatbot" aria-controls="home" role="tab" data-toggle="tab">@ChatBot.Telegram</a>
+        </li>
+        @if (Model)
+        {
+            <li role="presentation">
+                @Html.ActionLink("Letstalk", "Index", "ChatBot")
+            </li>
+        }
+    </ul>
+</div>

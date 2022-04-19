@@ -9,6 +9,7 @@
             ChatBotViewModel = chatBotViewModel;
             Language = query.Language;
             CustLevel = query.CustLevel.DisplayName;
+            IsShowLetstalkChatBot = query.IsShowLetstalkChatBot;
         }
 
         public ChatBotViewModel ChatBotViewModel { get; }
@@ -16,5 +17,7 @@
         public string Language { get; }
 
         public string CustLevel { get; }
+
+        public bool IsShowLetstalkChatBot { get; }
     }
 }

@@ -1,17 +1,22 @@
 ﻿/// <reference path="../core.ts" />
-
 "use strict";
 
+declare var Clipboard: any;
+
 class TelegramChatBotSetting extends BaseTelegramChatBot {
+    clipboard: any;
+
     // Language
     $language: JQuery;
     $languageSelectorContainer: JQuery;
     $changeLanguageLink: JQuery;
     $btnUnsubscribe: JQuery;
     $accountMessage: JQuery;
+    $copyIcon: JQuery;
 
-    constructor($: JQueryStatic, topWindow: any) {
-        super($, topWindow)
+    constructor($: JQueryStatic, topWindow: any, clipboard: any) {
+        super($, topWindow);
+        this.clipboard = clipboard;
     }
 
     resources = {
@@ -32,6 +37,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.$languageSelectorContainer = this.$(".language-selector-container");
         this.$changeLanguageLink = this.$(".changelanguage-link");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
+        this.$copyIcon = this.$("#copy-icon");
     }
 
     registerEvents = () => {
@@ -42,6 +48,22 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.$changeLanguageLink.on('click touchend', (e) => {
             self.changeLanguage(self.$(e.target).data("value"));
         });
+
+        if (window.document.queryCommandSupported
+            && window.document.queryCommandSupported("copy")) {
+            this.clipboard
+                .on("success", function (e) {
+                    self.$(e.trigger).tooltip("show");
+                })
+                .on("error", function (e) {
+                    self.$(e.trigger).remove();
+                    window.console.error("Action:", e.action);
+                    window.console.error("Trigger:", e.trigger);
+                });
+        }
+        else {
+            this.$copyIcon.remove();
+        }
     }
 
     initLanguage = () => {
@@ -141,6 +163,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 }
 
 $(function () {
-    var telegramChatBotSetting = new TelegramChatBotSetting($, window.top);
+    var telegramChatBotSetting = new TelegramChatBotSetting($, window.top, new Clipboard('.icon-content-copy'));
+    //var telegramChatBotSetting = new TelegramChatBotSetting($, window.top);
     telegramChatBotSetting.init();
 });

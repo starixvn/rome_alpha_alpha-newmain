@@ -1,17 +1,16 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
-    using System;
-    using System.IO;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using Alpha.Main.Configurations;
     using Alpha.Main.Site.Helpers;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
-    using Fanex.Caching;
     using MediatR;
+    using System;
+    using System.IO;
+    using System.Threading.Tasks;
     using TelegramBot.Client.Models;
+    using Fanex.Caching;
     using TelegramBot.Client.Services;
+    using Alpha.Main.Configurations;
 
     public class TelegramChatBotHandler :
         IAsyncRequestHandler<SetUpChatBotQuery, ChatBotViewModel>,
@@ -77,9 +76,8 @@
             var telegramBot = cacheService.Get<BotEntity>(TelegramBotKey);
 
             if (telegramBot == null)
-            {
-                var allBots = await botService.GetAllAsync();
-                telegramBot = allBots.FirstOrDefault(b => b.System == AppSettings.SiteGroup);
+            { 
+                telegramBot = await botService.GetBySystem(AppSettings.SiteGroup);
                 cacheService.Set(TelegramBotKey, telegramBot);
             }
 

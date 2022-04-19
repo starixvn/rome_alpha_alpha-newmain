@@ -8,16 +8,8 @@
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/telegramchatbot/register-account")
 }
 
-<div class="page-title">
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active">
-            <a href="#telegramchatbot" aria-controls="home" role="tab" data-toggle="tab">@ChatBot.Telegram</a>
-        </li>
-        <li role="presentation">
-            @Html.ActionLink("Letstalk", "Index", "ChatBot")
-        </li>
-    </ul>
-</div>
+@{ Html.RenderPartial("Tab", Model.IsShowLetstalkChatBot); }
+
 <div class="tab-content">
     <div class="panel" id="register-panel">
         <div class="panel-heading" role="tab" id="headingRegister">
