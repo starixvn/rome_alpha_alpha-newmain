@@ -15,13 +15,13 @@ namespace Alpha.Main.Site.Controllers
     using AppResources;
     using Configurations;
     using Constants;
+    using Fanex.Cryptography.Aes;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
     using Newtonsoft.Json;
     using Requests;
     using Requests.Otp;
-    using RSACryptoPad;
     using SecurityCode.Services;
     using Sunplus.Agent.Model.Entities;
     using Web;
@@ -54,12 +54,9 @@ namespace Alpha.Main.Site.Controllers
         public void Auth()
         {
             var param = string.Empty;
-            const int dwKeySize = 1024;
-            var keyPath = Server.MapPath("~/IbcKeys/ibckey.snk");
-            var encryption = new EncryptionThread();
 
             param = $"{GetLoginUsername()}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}";
-            param = encryption.EncryptString(param, dwKeySize, keyPath);
+            param = AesService.Default.Encrypt(param, "!@#$");
 
             var returnUrl = $"{AppSettings.ReportDomain}/Auth?param={param}";
 

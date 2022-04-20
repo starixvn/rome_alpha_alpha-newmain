@@ -289,9 +289,6 @@
       <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RSACryptoPad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RSACryptoPad.1.0.0.0\lib\net40\RSACryptoPad.dll</HintPath>
-    </Reference>
     <Reference Include="Sentry, Version=1.1.2.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
       <HintPath>..\packages\Sentry.1.1.2\lib\net461\Sentry.dll</HintPath>
     </Reference>
@@ -1528,9 +1525,6 @@
     <Content Include="Views\Default\HeaderNav.cshtml" />
     <Content Include="Views\Language\List.cshtml" />
     <Content Include="deployment.ignore" />
-    <Content Include="IbcKeys\ibckey.snk" />
-    <Content Include="IbcKeys\ibcpkey.snk" />
-    <Content Include="IbcKeys\Web.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Default\UnsupportedBrowsers.cshtml" />
     <Content Include="Views\Default\HeaderMarquee.cshtml" />
