@@ -3,6 +3,7 @@
 namespace Alpha.Main.Site.Controllers
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Web.Mvc;
     using System.Web.Routing;
@@ -17,6 +18,7 @@ namespace Alpha.Main.Site.Controllers
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
+    using Newtonsoft.Json;
     using Requests;
     using Requests.Otp;
     using RSACryptoPad;
@@ -56,7 +58,7 @@ namespace Alpha.Main.Site.Controllers
             var keyPath = Server.MapPath("~/IbcKeys/ibckey.snk");
             var encryption = new EncryptionThread();
 
-            param = $"{GetLoginUsername()}&{GetSessionKeyValue()}";
+            param = $"{GetLoginUsername()}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}";
             param = encryption.EncryptString(param, dwKeySize, keyPath);
 
             var returnUrl = $"{AppSettings.ReportDomain}/Auth?param={param}";
@@ -256,6 +258,11 @@ namespace Alpha.Main.Site.Controllers
             return userSession.IsInternal ? userSession.AdminName :
                 userSession.IsIndirectLoggedIn ? userSession.IndirectUsername :
                 userSession.UserName;
+        }
+
+        private string GetOutputValuesAfterLogin()
+        {
+            return JsonConvert.SerializeObject(userSession.GetProperty<Hashtable>("outputs"));
         }
     }
 }
