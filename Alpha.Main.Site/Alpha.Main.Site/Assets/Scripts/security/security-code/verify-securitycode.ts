@@ -70,7 +70,7 @@ var verifySecurityCode = {
 
                     var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
                     if (reportDomain != '') {
-                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode?s=' + secCode;
+                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode';
                     }
 
                     setTimeout(() => {
