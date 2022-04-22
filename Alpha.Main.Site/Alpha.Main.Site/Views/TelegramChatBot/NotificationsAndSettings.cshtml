@@ -20,77 +20,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.IsViewReports)
+                    @foreach (var function in Model.Functions)
                     {
+                        if ((function.FunctionId == 9 || function.FunctionId == 11) && !Model.IsViewMemberInfo)
+                        {
+                            return;
+                        }
+
+                        //TODO: Check Yesterday Win Loss Sub Acc Permission
+
                         <tr>
-                            <td class="text-center bold">@ChatBot.yesterdayWinLoss</td>
-                            <td>@ChatBot.YesterdayWinLossNotificationDescription</td>
+                            <td class="text-center bold">@function.FunctionName</td>
+                            <td></td>
                             <td class="text-center">
                                 <label class="switch">
-                                    <input type="checkbox" class="function" checked />
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                        </tr>
-                    }
-                    <tr>
-                        <td class="text-center bold">@ChatBot.PersonalMessage</td>
-                        <td>@ChatBot.PersonalMessageDescription</td>
-                        <td class="text-center">
-                            <label class="switch">
-                                <input type="checkbox" class="function" checked />
-                                <span class="slider"></span>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.AbnormalLoginAlert</td>
-                        <td>@ChatBot.AbnormalLoginAlertDescription</td>
-                        <td class="text-center">
-                            <label class="switch">
-                                <input type="checkbox" class="function" checked />
-                                <span class="slider"></span>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.ChangePasswordAlert</td>
-                        <td>@ChatBot.ChangePasswordAlertDescription</td>
-                        <td class="text-center">
-                            <label class="switch">
-                                <input type="checkbox" class="function" checked />
-                                <span class="slider"></span>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.ChangeSecurityCodeAlert</td>
-                        <td>@ChatBot.ChangeSecurityCodeAlertDescription</td>
-                        <td class="text-center">
-                            <label class="switch">
-                                <input type="checkbox" class="function" checked />
-                                <span class="slider"></span>
-                            </label>
-                        </td>
-                    </tr>
-                    @if (Model.IsViewMemberInfo)
-                    {
-                        <tr>
-                            <td class="text-center bold">@ChatBot.ProblemAccount</td>
-                            <td>@ChatBot.ProblemAccountDescription</td>
-                            <td class="text-center">
-                                <label class="switch">
-                                    <input type="checkbox" class="function" checked />
-                                    <span class="slider"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center bold">@ChatBot.MemberWinLossLimit</td>
-                            <td>@ChatBot.MemberWinLossLimitDescription</td>
-                            <td class="text-center">
-                                <label class="switch">
-                                    <input type="checkbox" class="function" checked />
+                                    <input data-functionId="@function.FunctionId" 
+                                           data-functionName="@function.FunctionName"
+                                           data-type="@function.Type"
+                                           type="checkbox" 
+                                           class="function"
+                                           @(function.Status ? "checked" : string.Empty)
+                                           />
                                     <span class="slider"></span>
                                 </label>
                             </td>

@@ -43,12 +43,13 @@
     </div>
     @if (Model.IsViewReports)
     {
-        Html.RenderPartial("Reports", Model);
+        Html.RenderPartial("Reports");
     }
     @{ Html.RenderPartial("NotificationsAndSettings", Model); }
 </div>
 @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeTelegramBotWarning)
 @Html.Hidden("UpdateLanguageFailed", ChatBot.updateLanguageFailed)
+@Html.Hidden("UserId", Model.UserId)
 @section Scripts{
     @StaticResources.RenderScripts("~/assets/bundles/telegramchatbot/telegram-chatbot-setting")
 }

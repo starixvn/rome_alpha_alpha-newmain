@@ -464,7 +464,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="TelegramBot.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TelegramBot.Client.1.0.0-beta5\lib\netstandard2.0\TelegramBot.Client.dll</HintPath>
+      <HintPath>..\packages\TelegramBot.Client.1.0.0-beta7\lib\netstandard2.0\TelegramBot.Client.dll</HintPath>
     </Reference>
     <Reference Include="TplCore, Version=1.0.4854.17253, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\TplCore.1.0.4854.17254\lib\net40\TplCore.dll</HintPath>
@@ -1680,6 +1680,7 @@
     <Compile Include="Requests\TelegramChatBot\ResendOTPCommand.cs" />
     <Compile Include="Requests\TelegramChatBot\SetUpChatBotQuery.cs" />
     <Compile Include="Requests\TelegramChatBot\UnsubscribeCommand.cs" />
+    <Compile Include="Requests\TelegramChatBot\UpdateFunctionCommand.cs" />
     <Compile Include="Requests\TelegramChatBot\UpdateLanguageCommand.cs" />
     <Compile Include="Requests\TelegramChatBot\VerifyOTPCommand.cs" />
     <Compile Include="Requests\Theme\ChangeThemeQuery.cs" />

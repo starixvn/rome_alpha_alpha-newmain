@@ -105,14 +105,25 @@
         }
 
         [HttpPost, AntiXsrfFilter]
-        public ActionResult ChangeLanguage(UpdateLanguageCommand command)
+        public async Task<ActionResult> UpdateFunction(UpdateFunctionCommand command)
         {
             if (userSession.IsInternal)
             {
                 return Json(UnauthorizedResult.CreateUnauthorizedResult());
             }
 
-            return Json(new { IsOk = true });
+            return Json(await mediator.SendAsync(command));
+        }
+
+        [HttpPost, AntiXsrfFilter]
+        public async Task<ActionResult> UpdateLanguage(UpdateLanguageCommand command)
+        {
+            if (userSession.IsInternal)
+            {
+                return Json(UnauthorizedResult.CreateUnauthorizedResult());
+            }
+
+            return Json(await mediator.SendAsync(command));
         }
     }
 }

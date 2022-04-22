@@ -17,7 +17,9 @@
         IAsyncRequestHandler<GenerateQRCodeCommand, VerifyAccountViewModel>,
         IAsyncRequestHandler<VerifyOTPCommand, Result>,
         IAsyncRequestHandler<ResendOTPCommand, Result>,
-        IAsyncRequestHandler<UnsubscribeCommand, Result>
+        IAsyncRequestHandler<UnsubscribeCommand, Result>,
+        IAsyncRequestHandler<UpdateFunctionCommand, Result>,
+        IAsyncRequestHandler<UpdateLanguageCommand, Result>
     {
         private const string TelegramBotKey = "Alpha.Main.Site.Handlers.TelegramChatBotHandler.TelegramBot";
         private readonly ICacheService cacheService;
@@ -70,6 +72,21 @@
             var bot = await GetTelegramBotAsync();
             return await settingService.UnlinkAsync(bot.BotId, message.CustId, message.SubAccId, message.IP);
         }
+
+        public async Task<Result> Handle(UpdateFunctionCommand message)
+        {
+            var function = new Function
+            {
+                FunctionId = message.FunctionId,
+                FunctionName = message.FunctionName,
+                Status = message.Status,
+                Type = message.Type
+            };
+            return await settingService.UpdateUserFunction(message.UserId, function, message.CustId, message.IP);
+        }
+
+        public async Task<Result> Handle(UpdateLanguageCommand message)
+            => await settingService.UpdateLanguage(message.UserId, message.Language, message.IP);
 
         private async Task<BotEntity> GetTelegramBotAsync()
         {

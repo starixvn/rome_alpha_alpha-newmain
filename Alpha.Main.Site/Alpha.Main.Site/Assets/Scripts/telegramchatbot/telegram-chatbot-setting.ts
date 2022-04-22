@@ -14,6 +14,8 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
     $accountMessage: JQuery;
     $copyIcon: JQuery;
 
+    $userId: JQuery;
+
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         super($, topWindow);
         this.clipboard = clipboard;
@@ -38,6 +40,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.$changeLanguageLink = this.$(".changelanguage-link");
         this.$btnUnsubscribe = this.$("#btnUnsubscribe");
         this.$copyIcon = this.$("#copy-icon");
+        this.$userId = this.$("#UserId");
     }
 
     registerEvents = () => {
@@ -77,25 +80,28 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         var checkbox = this.$(e.target);
         var functionId = checkbox.attr("data-functionId");
         var functionName = checkbox.attr("data-functionName");
-        var command = checkbox.attr("data-command");
-        var isEnable = checkbox.is(":checked");
+        var type = checkbox.attr("data-type");
+        var userId = this.$userId.val();
+        var status = checkbox.is(":checked");
+
         var self = this;
         this.$.blockUI();
-        //this.$.ajax({
-        //    type: "POST",
-        //    url: alpha.urls.mainRootPath + "TelegramChatBot/UpdateFunction",
-        //    data: { command: { functionId: functionId, functionName: functionName, command: command, isEnable: isEnable } },
-        //    dataType: "json",
-        //    success: (result) => {
-        //        if (result && result.IsNotOk) {
-        //            if (result.IsNotAuthorized) {
-        //                self.topWindow.bootboxAlert(result.Message);
-        //            }
-        //            checkbox.prop("checked", !isEnable);
-        //        }
-        //    },
-        //    complete: this.onComplete,
-        //});
+
+        this.$.ajax({
+            type: "POST",
+            url: alpha.urls.mainRootPath + "TelegramChatBot/UpdateFunction",
+            data: { userId, functionId, functionName, type, status },
+            dataType: "json",
+            success: (result) => {
+                if (result && result.IsNotOk) {
+                    if (result.IsNotAuthorized) {
+                        self.topWindow.bootboxAlert(result.Message);
+                    }
+                    checkbox.prop("checked", !status);
+                }
+            },
+            complete: this.onComplete,
+        });
     }
 
     unsubscribeEvent = (e: any) => {
@@ -139,8 +145,8 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
         this.$.ajax({
             type: "POST",
-            url: alpha.urls.mainRootPath + "TelegramChatBot/ChangeLanguage",
-            data: { language: lang },
+            url: alpha.urls.mainRootPath + "TelegramChatBot/UpdateLanguage",
+            data: { language: lang, userId: this.$userId.val() },
             success: this.onChangeLanguageSuccess,
             complete: this.onComplete
         });
@@ -164,6 +170,5 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
 $(function () {
     var telegramChatBotSetting = new TelegramChatBotSetting($, window.top, new Clipboard('.icon-content-copy'));
-    //var telegramChatBotSetting = new TelegramChatBotSetting($, window.top);
     telegramChatBotSetting.init();
 });
