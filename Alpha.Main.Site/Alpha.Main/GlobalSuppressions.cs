@@ -156,3 +156,6 @@
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0044:Add readonly modifier", Justification = "<Pending>", Scope = "member", Target = "~F:Alpha.Main.FunctionRegistry.showAccountInfo")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0044:Add readonly modifier", Justification = "<Pending>", Scope = "member", Target = "~F:Alpha.Main.FunctionRegistry.getDefaultUrl")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3358:Ternary operators should not be nested", Justification = "<Pending>", Scope = "member", Target = "~M:Alpha.Main.Models.Menus.MenuItemBuilderImpl.SetDataForMenuItem(Alpha.Main.Models.Menus.IMenuItem,System.Web.SiteMapNode)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S3358:Ternary operators should not be nested", Justification = "<Pending>", Scope = "member", Target = "~P:Alpha.Main.Models.Menus.MenuItem.Link")]
+

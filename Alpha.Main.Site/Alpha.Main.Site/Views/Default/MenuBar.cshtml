@@ -31,9 +31,7 @@
                     <ul class="sub-menu" style="display: @(menuItem.ShowSubMenus ? "block" : "none");">
                         @foreach (var subMenuItem in menuItem.VisibileSubMenus)
                         {
-                            var link = !string.IsNullOrWhiteSpace(subMenuItem.UseDomainConfig) ?
-                                            subMenuItem.Url : subMenuItem.Link.Replace("/site-main", string.Empty);
-                            <li data-apppath="@AppSettings.GetAppPath(subMenuItem.AppPath)" data-domain="@subMenuItem.UseDomainConfig" data-url="@link" class="sub-menu-item @(subMenuItem.Status.Disabled ? "disabled-menu" : string.Empty)" id="sub-menu-@(subMenuItem.ResourceKey.ToUpper())">
+                            <li data-domain="@subMenuItem.UseDomainConfig" data-url="@subMenuItem.Link" class="sub-menu-item @(subMenuItem.Status.Disabled ? "disabled-menu" : string.Empty)" id="sub-menu-@(subMenuItem.ResourceKey.ToUpper())">
                                 <a href="#" class="redirect-item">
                                     @subMenuItem.DisplayName
                                     @Html.Raw(subMenuItem.IsBeta ? "<span class=\"beta-version\">" + Alpha_sitemap.Beta + "</span>" : string.Empty)

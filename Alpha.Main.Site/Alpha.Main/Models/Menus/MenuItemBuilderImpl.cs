@@ -38,6 +38,11 @@
 
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
         {
+            var useDomainConfigValue = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]] + string.Empty;
+            var mainDomain = HttpContext.Current?.Request?.Headers["Host"] ?? string.Empty;
+            useDomainConfigValue = useDomainConfigValue.IndexOf("{0}") != -1 ? string.Format(useDomainConfigValue, mainDomain) : useDomainConfigValue;
+
+            menuItem.UseDomainConfig = useDomainConfigValue;
             menuItem.Key = node.Key;
             menuItem.ResourceKey = node.ResourceKey;
             menuItem.Link = node.Url;
@@ -50,13 +55,6 @@
             menuItem.ByPassProtectedMode = node["byPassProtectedMode"] == null ? false : bool.Parse(node["byPassProtectedMode"]);
             menuItem.ByPassProtectedModeInternal = node["byPassProtectedModeInternal"] == null ? false : bool.Parse(node["byPassProtectedModeInternal"]);
             menuItem.SubMenus = new List<IMenuItem>();
-            menuItem.Url = node.Url;
-
-            var useDomainConfigValue = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]] + string.Empty;
-            var mainDomain = HttpContext.Current?.Request?.Headers["Host"] ?? string.Empty;
-
-            useDomainConfigValue = useDomainConfigValue.IndexOf("{0}") != -1 ? string.Format(useDomainConfigValue, mainDomain) : useDomainConfigValue;
-            menuItem.UseDomainConfig = useDomainConfigValue;
         }
 
         public IMenuItem BuildMenuItem(SiteMapNode node)

@@ -12,8 +12,6 @@
 
         string Link { get; set; }
 
-        string Url { get; set; }
-
         string AppPath { get; set; }
 
         bool ByPassAuthorization { get; set; }

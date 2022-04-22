@@ -266,12 +266,7 @@ var menuBar = {
             }
         } catch (e) { }
 
-        if (subMenu.data("domain")) {
-            $('#main').attr('src', subMenu.data("domain") + subMenu.data("url")).attr("target", "main");
-        }
-        else {
-            $('#main').attr('src', subMenu.data("apppath") + subMenu.data("url")).attr("target", "main");
-        }
+        $('#main').attr('src', subMenu.data("url")).attr("target", "main");
     },
 
     expandSideBar: function () {

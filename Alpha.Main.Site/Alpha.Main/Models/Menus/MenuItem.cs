@@ -71,18 +71,15 @@
         {
             get
             {
-                return link;
+                var appVirtualPath = AppSettings.GetAppPath(AppPath);
+                return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{link}" :
+                    !string.IsNullOrWhiteSpace(appVirtualPath) ? Regex.Replace(link, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath) : link;
             }
 
             set
             {
                 link = value;
             }
-        }
-
-        public string Url
-        {
-            get; set;
         }
 
         public virtual MenuStatus Status
