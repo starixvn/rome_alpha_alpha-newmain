@@ -82,7 +82,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         var functionName = checkbox.attr("data-functionName");
         var type = checkbox.attr("data-type");
         var userId = this.$userId.val();
-        var status = checkbox.is(":checked");
+        var enabled = checkbox.is(":checked");
 
         var self = this;
         this.$.blockUI();
@@ -90,14 +90,14 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "TelegramChatBot/UpdateFunction",
-            data: { userId, functionId, functionName, type, status },
+            data: { userId, functionId, functionName, type, enabled },
             dataType: "json",
             success: (result) => {
                 if (result && result.IsNotOk) {
                     if (result.IsNotAuthorized) {
                         self.topWindow.bootboxAlert(result.Message);
                     }
-                    checkbox.prop("checked", !status);
+                    checkbox.prop("checked", !enabled);
                 }
             },
             complete: this.onComplete,

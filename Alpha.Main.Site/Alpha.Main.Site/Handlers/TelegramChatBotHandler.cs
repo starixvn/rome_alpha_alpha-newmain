@@ -36,12 +36,6 @@
         public async Task<ChatBotViewModel> Handle(SetUpChatBotQuery message)
         {
             var custBotMessenger = await settingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId);
-
-            if (custBotMessenger == null)
-            {
-                return new ChatBotViewModel(null);
-            }
-
             return new ChatBotViewModel(custBotMessenger); 
         }
 
@@ -79,7 +73,7 @@
             {
                 FunctionId = message.FunctionId,
                 FunctionName = message.FunctionName,
-                Status = message.Status,
+                Enabled = message.Enabled,
                 Type = message.Type
             };
             return await settingService.UpdateUserFunction(message.UserId, function, message.CustId, message.IP);

@@ -26,7 +26,7 @@
 
         public byte Type { get; set; }
 
-        public bool Status { get; set; }
+        public bool Enabled { get; set; }
 
         public int CustId { get; }
 

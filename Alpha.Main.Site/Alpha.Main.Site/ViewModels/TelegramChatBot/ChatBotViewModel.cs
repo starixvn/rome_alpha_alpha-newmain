@@ -11,6 +11,6 @@
 
         public CustBotMessenger CustBotMessenger { get; }
 
-        public bool IsLinked => CustBotMessenger != null && CustBotMessenger.IsVerifyOTP && CustBotMessenger.Status;
+        public bool IsLinked => CustBotMessenger != null && CustBotMessenger.IsVerifyOTP && CustBotMessenger.Enabled;
     }
 }
