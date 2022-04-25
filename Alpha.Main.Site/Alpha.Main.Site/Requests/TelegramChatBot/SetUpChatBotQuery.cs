@@ -22,8 +22,6 @@
             CustLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);
             SubAccId = userSession.SubAccId;
             Language = userSession.Language;
-            IsViewReports = userSession.SubPageAccess.ViewReports;
-            IsViewMemberInfo = userSession.SubPageAccess.ViewMemberInfo;
             IsShowLetstalkChatBot = !userSession.IsSubAcc
                 && (AppSettings.OfferChatbotSites.Contains("*")
                     || AppSettings.OfferChatbotSites.Contains(userSession.Site, StringComparer.OrdinalIgnoreCase));
@@ -36,10 +34,6 @@
         public int SubAccId { get; }
 
         public string Language { get; }
-
-        public bool IsViewReports { get; }
-
-        public bool IsViewMemberInfo { get; }
 
         public bool IsShowLetstalkChatBot { get; }
     }

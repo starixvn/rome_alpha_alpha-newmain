@@ -71,10 +71,15 @@ class AddAccountTelegramChatBot extends BaseTelegramChatBot {
     }
 
     onGenQRCodeSuccess = (data: any) => {
+        var result = this.safelyParseJSON(data);
+
+        if (result && result.IsNotAuthorized) {
+            this.topWindow.bootboxAlert(result.Message);
+            return;
+        }
+
         this.$btnGenQRCode.attr("disabled", "disabled");
-
         this.$registerTelegramPanel.append(data);
-
         this.verifyAccountTelegramChatbot.init();
     }
 }

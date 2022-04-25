@@ -20,15 +20,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var function in Model.Functions)
+                    @foreach (var function in Model.NotificationFunctions)
                     {
-                        if ((function.FunctionId == 9 || function.FunctionId == 11) && !Model.IsViewMemberInfo)
-                        {
-                            return;
-                        }
-
-                        //TODO: Check Yesterday Win Loss Sub Acc Permission
-
                         <tr>
                             <td class="text-center bold">@function.FunctionName</td>
                             <td></td>

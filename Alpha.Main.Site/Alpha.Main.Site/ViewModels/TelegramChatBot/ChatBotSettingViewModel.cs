@@ -2,6 +2,7 @@
 {
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using System.Collections.Generic;
+    using System.Linq;
     using TelegramBot.Client.Models;
 
     public class ChatBotSettingViewModel
@@ -13,12 +14,11 @@
             UserId = chatBotViewModel.CustBotMessenger.UserId;
             ChatId = chatBotViewModel.CustBotMessenger.ChatId;
             ChatBotName = chatBotViewModel.CustBotMessenger.BotName;
-            Functions = chatBotViewModel.CustBotMessenger.Functions;
+            ReportFunctions = chatBotViewModel.CustBotMessenger.Functions.Where(function => function.Type == 1);
+            NotificationFunctions = chatBotViewModel.CustBotMessenger.Functions.Where(function => function.Type == 2);
             Language = chatBotViewModel.CustBotMessenger.Language;
 
             CustLevel = query.CustLevel.DisplayName;
-            IsViewReports = query.IsViewReports;
-            IsViewMemberInfo = query.IsViewMemberInfo;
             IsShowLetstalkChatBot = query.IsShowLetstalkChatBot;
         }
 
@@ -30,15 +30,13 @@
 
         public string ChatBotName { get; }
 
-        public IEnumerable<Function> Functions { get; }
+        public IEnumerable<Function> ReportFunctions { get; }
+
+        public IEnumerable<Function> NotificationFunctions { get; }
 
         public string Language { get; }
 
         public string CustLevel { get; }
-
-        public bool IsViewReports { get; }
-
-        public bool IsViewMemberInfo { get; }
 
         public bool IsShowLetstalkChatBot { get; }
     }

@@ -1,45 +1,38 @@
-﻿<div class="panel chatbot-setting">
-    <div class="panel-heading" role="tab" id="headingReport">
-        <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report">
-                @ChatBot.Reports
-            </a>
-        </h4>
-    </div>
-    <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
-        <div class="panel-body has-padding">
-            <p>@Html.Raw(ChatBot.IntroTelegramReports)</p>
-            <table class="tblRpt tblRpt-bordered tbl-reports">
-                <thead>
-                    <tr>
-                        <th class="col-report">@ChatBot.Report</th>
-                        <th>@ChatBot.Description</th>
-                        <th class="col-how-it-works">@ChatBot.HowItWorks</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.Outstanding</td>
-                        <td>@ChatBot.OutstandingDescription</td>
-                        <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.BalanceInfo</td>
-                        <td>@ChatBot.BalanceDescription</td>
-                        <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.TodayWinLossNew</td>
-                        <td>@ChatBot.TodayWinLossDescription</td>
-                        <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center bold">@ChatBot.yesterdayWinLoss</td>
-                        <td>@ChatBot.YesterdayWinLossDescription</td>
-                        <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
-                    </tr>
-                </tbody>
-            </table>
+﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.ChatBotSettingViewModel
+
+@if (Model.ReportFunctions.Any())
+{
+    <div class="panel chatbot-setting">
+        <div class="panel-heading" role="tab" id="headingReport">
+            <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" href="#report" aria-expanded="false" aria-controls="report">
+                    @ChatBot.Reports
+                </a>
+            </h4>
+        </div>
+        <div id="report" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingReport">
+            <div class="panel-body has-padding">
+                <p>@Html.Raw(ChatBot.IntroTelegramReports)</p>
+                <table class="tblRpt tblRpt-bordered tbl-reports">
+                    <thead>
+                        <tr>
+                            <th class="col-report">@ChatBot.Report</th>
+                            <th>@ChatBot.Description</th>
+                            <th class="col-how-it-works">@ChatBot.HowItWorks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var function in Model.ReportFunctions)
+                        {
+                            <tr>
+                                <td class="text-center bold">@function.FunctionName</td>
+                                <td></td>
+                                <td><button class="btn-chatbot btn-how-it-works">@ChatBot.SeeHowItWorks</button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
+}

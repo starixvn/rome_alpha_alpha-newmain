@@ -13,7 +13,8 @@
         public static string Generate (string url, string logoPath)
         {
             var barcodeWriter = new BarcodeWriter();
-            var encodingOptions = new EncodingOptions { Width = 100, Height = 100, Margin = 0, PureBarcode = false };
+            var width = url.Length > 78 ? 115 : 100;
+            var encodingOptions = new EncodingOptions { Width = width, Height = width, Margin = 0, PureBarcode = false };
             encodingOptions.Hints.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
             barcodeWriter.Options = encodingOptions;
             barcodeWriter.Format = BarcodeFormat.QR_CODE;

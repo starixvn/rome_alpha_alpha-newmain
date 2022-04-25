@@ -41,11 +41,10 @@
             </div>
         </div>
     </div>
-    @if (Model.IsViewReports)
-    {
-        Html.RenderPartial("Reports");
-    }
-    @{ Html.RenderPartial("NotificationsAndSettings", Model); }
+    @{
+        Html.RenderPartial("Reports", Model);
+        Html.RenderPartial("NotificationsAndSettings", Model);
+     }
 </div>
 @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeTelegramBotWarning)
 @Html.Hidden("UpdateLanguageFailed", ChatBot.updateLanguageFailed)
