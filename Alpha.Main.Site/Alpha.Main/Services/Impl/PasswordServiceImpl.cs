@@ -15,7 +15,6 @@
     using Params;
     using Params.Password;
     using Sunplus.Agent.Utilities;
-    using TelegramBot.Client.Services;
 
     public class PasswordServiceImpl : PasswordService
     {
@@ -32,7 +31,7 @@
         private readonly KickoutCustomerService kickoutCustomerService;
         private readonly IDynamicRepository dynamicRepository;
         private readonly INetThrottlingService netThrottlingService;
-        private readonly INotificationService notificationService;
+        private readonly TelegramBotService telegramBotService;
 
         public PasswordServiceImpl(
             Encryptor encryptor,
@@ -41,7 +40,7 @@
             KickoutCustomerService kickoutCustomerService,
             IDynamicRepository dynamicRepository,
             INetThrottlingService netThrottlingService,
-            INotificationService notificationService)
+            TelegramBotService telegramBotService)
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
@@ -49,7 +48,7 @@
             this.kickoutCustomerService = kickoutCustomerService;
             this.dynamicRepository = dynamicRepository;
             this.netThrottlingService = netThrottlingService;
-            this.notificationService = notificationService;
+            this.telegramBotService = telegramBotService;
         }
 
         public Result ChangeMainAccountPassword(ChangeMainAccountPasswordParam param)
@@ -208,7 +207,7 @@
 
                 Task.Run(() =>
                 {
-                    KickoutCustomer(new KickoutCustomerParam(
+                    kickoutCustomerService.Kickout(new KickoutCustomerParam(
                         param.CustId,
                         param.CustLevel,
                         param.ServerId,
@@ -216,7 +215,7 @@
 
                     if (!param.IsResetMemberPassword)
                     {
-                        ResetPasswordAlert(param.CustId, param.IP);
+                        telegramBotService.NotifyChangePassword(param.CustId, 0, param.IP);
                     }
                 });
             }
@@ -294,45 +293,18 @@
 
                 Task.Run(() =>
                 {
-                    KickoutCustomer(new KickoutCustomerParam(
+                    kickoutCustomerService.Kickout(new KickoutCustomerParam(
                         param.CustId,
                         param.CustLevel,
                         param.ServerId,
                         param.IP,
                         param.SubAccountId));
 
-                    ResetPasswordAlert(param.CustId, param.IP, param.SubAccountId);
+                    telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId, param.IP);
                 });
             }
 
             return updateResult;
-        }
-
-        internal void KickoutCustomer(KickoutCustomerParam param)
-        {
-            try
-            {
-                if (!param.IsDisabledRecheckin)
-                {
-                    kickoutCustomerService.Kickout(param);
-                }
-            }
-            catch (Exception ex)
-            {
-                ExceptionHandler.Handle(ex);
-            }
-        }
-
-        internal void ResetPasswordAlert(int custId, string ip, int subAccId = 0)
-        {
-            try
-            {
-                notificationService.NotifyChangePassword(custId, subAccId, ip).GetAwaiter().GetResult();
-            }
-            catch (Exception ex)
-            {
-                ExceptionHandler.Handle(ex);
-            }
         }
 
         private Result Validate(

@@ -418,6 +418,7 @@
     <Compile Include="Services\Impl\NicknameServiceImpl.cs" />
     <Compile Include="Services\Impl\ProfilePictureServices.cs" />
     <Compile Include="Services\Impl\ProtectionCodeServiceImpl.cs" />
+    <Compile Include="Services\Impl\TelegramBotServiceImpl.cs" />
     <Compile Include="Services\Impl\ThemeServiceImpl.cs" />
     <Compile Include="Services\Impl\UMMessageServiceImpl.cs" />
     <Compile Include="Services\KickoutCustomerService.cs" />
@@ -439,6 +440,7 @@
     <Compile Include="Services\PasswordService.cs" />
     <Compile Include="Services\SecurityCodeService.cs" />
     <Compile Include="Services\SiteMenuService.cs" />
+    <Compile Include="Services\TelegramBotService.cs" />
     <Compile Include="Services\UMMessageService.cs" />
     <Compile Include="Services\ThemeService.cs" />
   </ItemGroup>

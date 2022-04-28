@@ -7,11 +7,9 @@
     using AppResources;
     using Criteria.SecurityCode;
     using DataAccesses;
-    using Fanex.Logging.Extensions.Web;
     using Models;
     using Params.SecurityCode;
     using Sunplus.Agent.Utilities;
-    using TelegramBot.Client.Services;
 
     public class SecurityCodeServiceImpl : SecurityCodeService
     {
@@ -25,18 +23,18 @@
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
         private readonly Encryptor encryptor;
         private readonly INetThrottlingService netThrottlingService;
-        private readonly INotificationService notificationService;
+        private readonly TelegramBotService telegramBotService;
 
         public SecurityCodeServiceImpl(
             SecurityCodeDataAccess securityCodeDataAccess,
             Encryptor encryptor,
             INetThrottlingService netThrottlingService,
-            INotificationService notificationService)
+            TelegramBotService telegramBotService)
         {
             this.securityCodeDataAccess = securityCodeDataAccess;
             this.encryptor = encryptor;
             this.netThrottlingService = netThrottlingService;
-            this.notificationService = notificationService;
+            this.telegramBotService = telegramBotService;
         }
 
         public Result ChangeMainAccountSecurityCode(ChangeSecurityCodeParam param)
@@ -66,7 +64,7 @@
             // Reset downline's password (downline is not Member).
             if (result.IsOk && param.CustId != param.UserId && !param.IsResetMember)
             {
-                Task.Run(() => { ResetSecurityCodeAlert(param.CustId, param.IP); });
+                Task.Run(() => { telegramBotService.NotifyChangeSecurityCode(param.CustId, 0, param.IP); });
             }
 
             return result;
@@ -131,7 +129,7 @@
             {
                 netThrottlingService.Throttle();
 
-                Task.Run(() => ResetSecurityCodeAlert(param.CustId, param.IP, param.SubAccId));
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId, param.IP));
             }
 
             return result;
@@ -330,17 +328,5 @@
 
         public Result UpdateSecurityCodeFunction(UpdateSecurityCodeFunctionParam param)
             => securityCodeDataAccess.UpdateSecurityCode(new UpdateSecurityCodeFunctionCriteria(param));
-
-        internal void ResetSecurityCodeAlert(int custId, string ip, int subAccId = 0)
-        {
-            try
-            {
-                notificationService.NotifyChangeSecurityCode(custId, subAccId, ip).GetAwaiter().GetResult();
-            }
-            catch (Exception ex)
-            {
-                ExceptionHandler.Handle(ex);
-            }
-        }
     }
 }
