@@ -73,7 +73,8 @@
             {
                 var appVirtualPath = AppSettings.GetAppPath(AppPath);
                 return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{link}" :
-                    !string.IsNullOrWhiteSpace(appVirtualPath) ? Regex.Replace(link, HttpRuntime.AppDomainAppVirtualPath, appVirtualPath) : link;
+                    link.StartsWith("/") ? $"{appVirtualPath}{link.Replace(HttpRuntime.AppDomainAppVirtualPath, string.Empty)}" : 
+                    link.Replace(HttpRuntime.AppDomainAppVirtualPath, appVirtualPath);
             }
 
             set
