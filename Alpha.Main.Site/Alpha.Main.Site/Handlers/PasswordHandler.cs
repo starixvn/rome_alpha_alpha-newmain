@@ -225,6 +225,7 @@
                 ActorName = message.Username,
                 CurrentPassword = message.CurrentPassword,
                 CustId = message.CustId,
+                CustLevel = Enumeration.FromValue<UserLevel>(message.RoleId),
                 HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
                 IP = message.IP,              
                 LanguageKey = message.LanguageKey,
@@ -243,6 +244,7 @@
             new ChangeSubAccountPasswordParam
             {
                 CustId = message.CustId,
+                CustLevel = Enumeration.FromValue<UserLevel>(message.RoleId),
                 HashKey = this.sessionManager.Get<string>(HashKeySessionKey),
                 IP = message.IP,
                 LanguageKey = message.LanguageKey,

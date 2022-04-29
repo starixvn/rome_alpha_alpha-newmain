@@ -61,10 +61,9 @@
                      Language = param.Language
                  });
 
-            // Reset downline's password (downline is not Member).
-            if (result.IsOk && param.CustId != param.UserId && !param.IsResetMember)
+            if (result != null && result.IsSuccessful && !param.IsMemberLevel)
             {
-                Task.Run(() => { telegramBotService.NotifyChangeSecurityCode(param.CustId, 0, param.IP); });
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, 0, param.IP));
             }
 
             return result;
@@ -92,7 +91,14 @@
                 Language = param.Language
             };
 
-            return securityCodeDataAccess.UpdateSecurityCode(command);
+            var result = securityCodeDataAccess.UpdateSecurityCode(command);
+
+            if (result != null && result.IsSuccessful && !param.IsMemberLevel)
+            {
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId, param.IP));
+            }
+
+            return result;
         }
 
         public Result ResetSubAccountSecurityCode(ResetSecurityCodeParam param)
@@ -125,7 +131,7 @@
 
             var result = securityCodeDataAccess.UpdateSecurityCode(command);
 
-            if (result != null && result.IsSuccessful)
+            if (result != null && result.IsSuccessful && !param.IsMemberLevel)
             {
                 netThrottlingService.Throttle();
 

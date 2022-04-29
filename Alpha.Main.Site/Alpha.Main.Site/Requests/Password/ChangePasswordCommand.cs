@@ -34,6 +34,14 @@
             }
         }
 
+        public byte RoleId
+        {
+            get
+            {
+                return userSession.RoleId;
+            }
+        }
+
         public int ActorId
         {
             get

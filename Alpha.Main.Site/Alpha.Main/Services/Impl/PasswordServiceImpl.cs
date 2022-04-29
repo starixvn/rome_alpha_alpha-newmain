@@ -89,19 +89,27 @@
 
             var updateResult = passwordDataAccess.UpdatePassword(criteria);
 
-            if (updateResult.IsSuccessful && param.IsIndirectLoggedIn)
+            if (updateResult.IsSuccessful)
             {
-                UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                if (param.IsIndirectLoggedIn)
                 {
-                    CustId = param.IndirectCustId,
-                    CustIdIndirect = param.CustId,
-                    DownlineUsername = param.ActorName,
-                    IP = param.IP,
-                    Language = param.LanguageKey,
-                    SubAccId = param.IndirectSubAccId,
-                    SubAccIdIndirect = param.SubAccountId,
-                    UplineUsername = param.IndirectUsername
-                });
+                    UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                    {
+                        CustId = param.IndirectCustId,
+                        CustIdIndirect = param.CustId,
+                        DownlineUsername = param.ActorName,
+                        IP = param.IP,
+                        Language = param.LanguageKey,
+                        SubAccId = param.IndirectSubAccId,
+                        SubAccIdIndirect = param.SubAccountId,
+                        UplineUsername = param.IndirectUsername
+                    });
+                }
+
+                if (!param.CustLevel.IsMemberLevel())
+                {
+                    Task.Run(() => telegramBotService.NotifyChangePassword(param.CustId, 0, param.IP));
+                }
             }
 
             return updateResult;
@@ -144,19 +152,28 @@
             };
 
             var updateResult = passwordDataAccess.UpdatePassword(criteria);
-            if (updateResult.IsSuccessful && param.IsIndirectLoggedIn)
+
+            if (updateResult.IsSuccessful)
             {
-                UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                if (param.IsIndirectLoggedIn)
                 {
-                    CustId = param.IndirectCustId,
-                    CustIdIndirect = param.CustId,
-                    DownlineUsername = param.ActorName,
-                    IP = param.IP,
-                    Language = param.LanguageKey,
-                    SubAccId = param.IndirectSubAccId,
-                    SubAccIdIndirect = param.SubAccountId,
-                    UplineUsername = param.IndirectUsername
-                });
+                    UpdateLastChangePasswordIndirectAccount(new UpdateLastChangePasswordIndirectAccountParam
+                    {
+                        CustId = param.IndirectCustId,
+                        CustIdIndirect = param.CustId,
+                        DownlineUsername = param.ActorName,
+                        IP = param.IP,
+                        Language = param.LanguageKey,
+                        SubAccId = param.IndirectSubAccId,
+                        SubAccIdIndirect = param.SubAccountId,
+                        UplineUsername = param.IndirectUsername
+                    });
+                }
+
+                if (!param.CustLevel.IsMemberLevel())
+                {
+                    Task.Run(() => telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId, param.IP));
+                }
             }
 
             return updateResult;
@@ -213,7 +230,7 @@
                         param.ServerId,
                         param.IP));
 
-                    if (!param.IsResetMemberPassword)
+                    if (!param.CustLevel.IsMemberLevel())
                     {
                         telegramBotService.NotifyChangePassword(param.CustId, 0, param.IP);
                     }
@@ -300,7 +317,10 @@
                         param.IP,
                         param.SubAccountId));
 
-                    telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId, param.IP);
+                    if (!param.CustLevel.IsMemberLevel())
+                    {
+                        telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId, param.IP);
+                    }
                 });
             }
 
