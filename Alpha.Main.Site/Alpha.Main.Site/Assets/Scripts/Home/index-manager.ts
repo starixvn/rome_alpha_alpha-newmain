@@ -273,7 +273,7 @@ var indexManager = {
     },
 
     isIgnoreRedirectUrl: function (currentUrl: string): boolean {
-        const ignoreUrls = ['error.aspx', 'signin.aspx', 'securitycode', 'dashboard', 'partialum', 'auth', '/reports/'];
+        const ignoreUrls = ['error.aspx', 'signin.aspx', 'securitycode', 'dashboard', 'partialum', 'auth'];
         const ignoreUrlsLength = ignoreUrls.length;
         const lowerCurrentUrl = currentUrl.toLowerCase();
 

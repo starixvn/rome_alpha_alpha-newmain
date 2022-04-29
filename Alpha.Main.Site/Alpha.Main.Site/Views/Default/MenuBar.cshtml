@@ -60,12 +60,7 @@
         }
     </div>
 </section>
-@{ 
-    var reportDomain = System.Configuration.ConfigurationManager.AppSettings["Report:Domain"];
-    reportDomain = reportDomain.IndexOf("{0}") != -1 ? string.Format(reportDomain, Request.Headers["Host"]) : reportDomain;
-}
 @Html.Hidden("AssetCommonCssLink", StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common"))
-@Html.Hidden("ReportDomain", reportDomain)
 @if (Model.IsAccountInfoVisible)
 {
     <!--[if (gt IE 8)|!(IE)]><!-->

@@ -16,6 +16,7 @@ namespace Alpha.Main.Site.Controllers
     using Configurations;
     using Constants;
     using Fanex.Cryptography.Aes;
+    using Fanex.Logging.Extensions.Web;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;

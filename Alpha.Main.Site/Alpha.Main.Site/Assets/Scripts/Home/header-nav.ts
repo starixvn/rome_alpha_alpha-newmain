@@ -28,7 +28,8 @@ var headerNav = {
         profileImage: null,
         headerNavElement: null,
         liveChat: null,
-        switchMode: null
+        switchMode: null,
+        reportDomain: null
     },
     messageType: {
         Normal: 0,
@@ -202,6 +203,8 @@ var headerNav = {
         headerNav.domElements.headerNavElement = $("#header-nav");
         headerNav.domElements.liveChat = $("#liveChat");
         headerNav.domElements.switchMode = $(".switch-mode");
+
+        headerNav.domElements.reportDomain = $('#reportDomain').val();
     },
 
     initLanguage: function () {
@@ -394,10 +397,17 @@ var headerNav = {
             data: { languageCode: lang },
             success: function (result) {
                 if (result !== undefined) {
-                    // Remove www so that subdomain can override LANGUAGE value
                     var domain = window.location.hostname.replace(/([a-zA-Z0-9]+.)/, '').replace("www.", '');
                     $.cookie("LANGUAGE", lang, { expires: 30, path: domain });
-                    headerNav.reloadPage();
+
+                    if (headerNav.domElements.reportDomain) {
+                        $.get(headerNav.domElements.reportDomain + '/Auth/ChangeLang?langCode=' + lang, () => {
+                            headerNav.reloadPage();
+                        });
+                    }
+                    else {
+                        headerNav.reloadPage();
+                    }
                 }
             }
         });
@@ -410,7 +420,14 @@ var headerNav = {
             url: headerNav.urls.changeTheme,
             data: { isDarkMode: !isDarkMode },
             success: function (result) {
-                result && headerNav.reloadPage();
+                if (result && headerNav.domElements.reportDomain) {
+                    $.get(headerNav.domElements.reportDomain + '/Auth/ChangeTheme?isDarkMode=' + !isDarkMode, () => {
+                        result && headerNav.reloadPage();
+                    });
+                }
+                else {
+                    result && headerNav.reloadPage();
+                }
             }
         });
     },

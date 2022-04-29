@@ -63,7 +63,7 @@ var menuBar = {
         menuBar.domElements.profileImage = $('#logoProfileImg');
         menuBar.domElements.announcementItems = $("#menu-ANNOUNCEMENTS li a");
         menuBar.domElements.closeIconOnMobile = $('#closeIconOnMobile');
-        menuBar.domElements.reportDomain = $('#ReportDomain').val();
+        menuBar.domElements.reportDomain = $('#reportDomain').val();
     },
 
     initSideBar: function () {
