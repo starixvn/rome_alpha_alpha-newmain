@@ -128,7 +128,9 @@ var indexManager = {
     cacheCurrentUrl: function () {
         try {
             if ($("#isInternal").val() === "0") {
-                var currentUrl = (<HTMLIFrameElement>document.getElementById("main")).src;
+                var mainFrame = <HTMLIFrameElement>document.getElementById("main");
+                var mainFrameDocument = mainFrame.contentWindow || mainFrame.contentDocument;
+                var currentUrl = mainFrameDocument && mainFrameDocument.location.href || mainFrame.src;
                 localStorage.setItem(indexManager.currentUrlCookieName, currentUrl);
             }
         } catch (e) { }
@@ -145,16 +147,6 @@ var indexManager = {
 
         if (currentUrl.indexOf(headerNav.urls.home) !== -1) {
             currentUrl = currentUrl.replace("Index2", "Index");
-        }
-
-        if (currentUrl.indexOf('/(S(') !== -1) {
-            var indexOfCookieless = currentUrl.indexOf('/(S(');
-            var correctCookieless = (<HTMLInputElement>document.getElementById('sessionId')).value;
-            var previousCookieless = currentUrl.substring(indexOfCookieless + 4, indexOfCookieless + 28);
-
-            if (previousCookieless !== correctCookieless) {
-                currentUrl = currentUrl.replace(previousCookieless, correctCookieless);
-            }
         }
 
         if (indexManager.domElements.mainFrame
