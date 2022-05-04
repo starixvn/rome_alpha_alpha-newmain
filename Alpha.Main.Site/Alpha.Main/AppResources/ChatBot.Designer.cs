@@ -583,7 +583,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OTP is incorrected, please try again.
+        ///   Looks up a localized string similar to OTP is incorrect, please try again.
         /// </summary>
         public static string InvalidOTP {
             get {

@@ -57,8 +57,7 @@
 
         public async Task<Result> Handle(ResendOTPCommand message)
         {
-            var bot = await GetTelegramBotAsync();
-            return await settingService.ResendOtpAsync(bot.BotId, message.CustId, message.SubAccId);
+            return await settingService.ResendOtpAsync(message.CustId, message.SubAccId);
         }
 
         public async Task<Result> Handle(UnsubscribeCommand message)

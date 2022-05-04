@@ -430,7 +430,7 @@
     <value>Using Telegram Chatbot, you can get following reports right on Telegram without accessing to Alpha Site: &lt;br /&gt; Type "/help" on Chatbot for full list of commands</value>
   </data>
   <data name="InvalidOTP" xml:space="preserve">
-    <value>OTP is incorrected, please try again</value>
+    <value>OTP is incorrect, please try again</value>
   </data>
   <data name="lblOTP" xml:space="preserve">
     <value>OTP</value>

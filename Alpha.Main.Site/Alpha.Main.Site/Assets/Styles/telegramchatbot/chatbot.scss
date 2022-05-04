@@ -122,3 +122,7 @@ label {
     font-weight: bold;
     border: none;
 }
+
+.btn-chatbot:disabled {
+    opacity: .65;
+}
