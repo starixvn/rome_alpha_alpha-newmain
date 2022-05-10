@@ -217,11 +217,6 @@
 
             if (updateResult.IsSuccessful)
             {
-                if (param.IsCasinoSync)
-                {
-                    ChangeCasinoAccountPassword(param.CustId, encodedPassword, param.ActorId, param.ActorName, param.IP);
-                }
-
                 Task.Run(() =>
                 {
                     kickoutCustomerService.Kickout(new KickoutCustomerParam(
