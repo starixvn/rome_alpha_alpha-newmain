@@ -247,9 +247,6 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>Total Agent active/closed/suspended</value>
   </data>
-  <data name="totalCSTransferOutstanding" xml:space="preserve">
-    <value>Total Casino Transfer|Outstanding</value>
-  </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>Total Master active/closed/suspended</value>
   </data>
@@ -523,20 +520,11 @@
   <data name="Request" xml:space="preserve">
     <value>Request</value>
   </data>
-  <data name="memberRequest" xml:space="preserve">
-    <value>Member Request</value>
-  </data>
-  <data name="playForFun" xml:space="preserve">
-    <value>Play For Fun</value>
-  </data>
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>No information is available</value>
   </data>
   <data name="lblNew" xml:space="preserve">
     <value>New</value>
-  </data>
-  <data name="PlayForFunGuidelines" xml:space="preserve">
-    <value>Play For Fun - Guidelines</value>
   </data>
   <data name="Notice_3" xml:space="preserve">
     <value>Your upline has enabled Fishing World for your downlines. Please go to setting page to configure your own PT settings.</value>

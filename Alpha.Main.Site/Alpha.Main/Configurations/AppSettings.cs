@@ -138,8 +138,6 @@
 
         public static bool IsDisabledContactUsLink => Settings["IsDisabledContactUsLink"] == "1";
 
-        public static bool EnablePlayForFun => Settings["EnablePlayForFun"] == "true";
-
         public static string GoogleAnalyticId => Settings["GoogleAnalyticId"];
 
         public static bool DisableMessages => Settings["DisableMessages"] == "1";
@@ -149,8 +147,7 @@
             && !Settings["SiteGroup"].Equals("789y", StringComparison.OrdinalIgnoreCase);
 
         public static bool DisabledVietnamese => IsMBCSite;
-
-        public static bool ShowGoldDeluxeAnnouncement => IsMBCSite;
+     
 
         public static bool ShowHelpLink => IsMBCSite;
 

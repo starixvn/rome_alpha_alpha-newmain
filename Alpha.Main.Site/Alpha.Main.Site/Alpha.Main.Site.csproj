@@ -69,8 +69,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Auth, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Alpha.Auth.3.0.3\lib\net461\Alpha.Auth.dll</HintPath>
+    <Reference Include="Alpha.Auth, Version=3.0.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Alpha.Auth.3.0.4.1\lib\net461\Alpha.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Alpha.Captcha, Version=1.1.1.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Alpha.Captcha.1.1.1.3\lib\net461\Alpha.Captcha.dll</HintPath>
@@ -104,15 +104,6 @@
       <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CasinoLibrary, Version=2.1.0.18354, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CasinoLibrary.2.1.0.18354\lib\net40\CasinoLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="CasinoSetting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CasinoLibrary.2.1.0.18354\lib\net40\CasinoSetting.dll</HintPath>
-    </Reference>
-    <Reference Include="CasinoUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CasinoLibrary.2.1.0.18354\lib\net40\CasinoUtility.dll</HintPath>
-    </Reference>
     <Reference Include="Chatbot.Client, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Chatbot.Client.1.0.5\lib\net461\Chatbot.Client.dll</HintPath>
     </Reference>
@@ -125,9 +116,8 @@
     <Reference Include="Fanex.ActivityTracking.Web, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.ActivityTracking.Web.1.0.0.3\lib\net40\Fanex.ActivityTracking.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Fanex.Age.UI, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Fanex.Age.UI.3.0.3.0\lib\net461\Fanex.Age.UI.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Fanex.Age.UI, Version=3.0.3.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fanex.Age.UI.3.0.3.6\lib\net461\Fanex.Age.UI.dll</HintPath>
     </Reference>
     <Reference Include="Fanex.Caching, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Fanex.Caching.2.2.1\lib\net461\Fanex.Caching.dll</HintPath>
@@ -187,9 +177,6 @@
     <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="HandHistoryLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CasinoLibrary.2.1.0.18354\lib\net40\HandHistoryLibrary.dll</HintPath>
     </Reference>
     <Reference Include="ILogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ILogger.1.0.0.0\lib\net40\ILogger.dll</HintPath>
@@ -265,10 +252,6 @@
       <HintPath>..\packages\MvcPager.1.5.0.28157\lib\net40\MvcPager.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NetUtility, Version=4.5.6325.30210, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NetUtility.4.5.6325.30210\lib\net40\NetUtility.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -333,30 +316,21 @@
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <HintPath>..\packages\StackExchange.Redis.2.0.519\lib\net461\StackExchange.Redis.dll</HintPath>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Auth, Version=3.0.1.6, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.1.6\lib\net461\Sunplus.Agent.Model.Auth.dll</HintPath>
+    <Reference Include="Sunplus.Agent.Model.Auth, Version=3.0.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Auth.3.0.2.3\lib\net461\Sunplus.Agent.Model.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.Base, Version=3.0.5.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.5.9\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Sunplus.Agent.Model.Casino, Version=3.0.0.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Casino.3.0.0.5\lib\net461\Sunplus.Agent.Model.Casino.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Sunplus.Agent.Model.Base.3.0.6.2\lib\net461\Sunplus.Agent.Model.Base.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.DataAccessLibrary, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.DataAccessLibrary.3.0.0.2\lib\net40\Sunplus.Agent.Model.DataAccessLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sunplus.Agent.Model.Definitions, Version=3.0.2.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.Definitions.3.0.2.8\lib\net40\Sunplus.Agent.Model.Definitions.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sunplus.Agent.Model.Definitions, Version=3.0.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sunplus.Agent.Model.Definitions.3.0.3.5\lib\net40\Sunplus.Agent.Model.Definitions.dll</HintPath>
     </Reference>
     <Reference Include="Sunplus.Agent.Model.IpFormatter, Version=3.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Agent.Model.IpFormatter.3.0.0.2\lib\net461\Sunplus.Agent.Model.IpFormatter.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Sunplus.Agent.Model.SecurityCode, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Agent.Model.SecurityCode.3.0.0.1\lib\net40\Sunplus.Agent.Model.SecurityCode.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Agent.Utilities, Version=3.0.0.6, Culture=neutral, processorArchitecture=MSIL">
@@ -365,14 +339,6 @@
     </Reference>
     <Reference Include="Sunplus.Core.Common, Version=1.1.4505.19054, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sunplus.Core.Common.1.1.4505.19054\lib\net40\Sunplus.Core.Common.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Sunplus.Libraries.AOP, Version=1.0.4218.28561, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Sunplus.Libraries.AOP.1.0.4218.28561\lib\net40\Sunplus.Libraries.AOP.dll</HintPath>
-    </Reference>
-    <Reference Include="Sunplus.Libraries.APILogger, Version=2.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sunplus.Libraries.APILogger.2.0.0.1\lib\net40\Sunplus.Libraries.APILogger.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sunplus.Libraries.ThirdPartyTestData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -534,7 +500,6 @@
       <DependentUpon>activitytracking.json</DependentUpon>
     </Content>
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DB053_DB054.bodb02.xml" />
-    <Content Include="App_Data\SPNames\INTERNAL.MNL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\INTERNAL.MNL\DBAGE_STANDBY.bodb_AGE.xml">
@@ -547,7 +512,6 @@
     <Content Include="App_Data\SPNames\INTERNAL\DB053_DB054.bodb02.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\SPNames\INTERNAL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBAGE.bodb02.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -560,7 +524,6 @@
     <Content Include="App_Data\SPNames\INTERNAL\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DB053_DB054.bodb02.xml" />
-    <Content Include="App_Data\SPNames\LOCAL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBAGE_STANDBY.bodb_AGE.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -579,7 +542,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Data\SPNames\MNL\DB053_DB054.bodb02.xml" />
-    <Content Include="App_Data\SPNames\MNL\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\MNL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\MNL\DBAGE.bodb_AGE.xml" />
     <Content Include="App_Data\SPNames\MNL\DBAGE_STANDBY.bodb_AGE.xml">
@@ -591,7 +553,6 @@
     <Content Include="App_Data\SPNames\MNL\DBONUSER.ON_USER.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\SPNames\PRO\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\PRO\DB053_DB054.bodb02.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -606,7 +567,6 @@
     <Content Include="App_Data\SPNames\PRO\DBONUSER.ON_USER.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\SPNames\SIT\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\SIT\DBAGE.bodb_AGE.xml">
       <SubType>Designer</SubType>
@@ -619,7 +579,6 @@
     <Content Include="App_Data\SPNames\SIT\DBMSG.bodb_Message.xml" />
     <Content Include="App_Data\SPNames\SIT\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\UAT\DB053_DB054.bodb02.xml" />
-    <Content Include="App_Data\SPNames\UAT\DBACC.bodb02.BODBDownlineNet.xml" />
     <Content Include="App_Data\SPNames\UAT\DBAGE.bodb02.xml">
       <SubType>
       </SubType>
@@ -695,7 +654,9 @@
       <DependentUpon>default-home-dark.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\default-home.css" />
-    <Content Include="Assets\bundles\default-home.min.css" />
+    <Content Include="Assets\bundles\default-home.min.css">
+      <DependentUpon>default-home.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\default-index-dark.css" />
     <Content Include="Assets\bundles\default-index-dark.min.css">
       <DependentUpon>default-index-dark.css</DependentUpon>
@@ -717,7 +678,9 @@
       <DependentUpon>error.css</DependentUpon>
     </Content>
     <Content Include="Assets\bundles\home-mobile-calculate-07-dark.css" />
-    <Content Include="Assets\bundles\home-mobile-calculate-07-dark.min.css" />
+    <Content Include="Assets\bundles\home-mobile-calculate-07-dark.min.css">
+      <DependentUpon>home-mobile-calculate-07-dark.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\home-mobile-calculate-07.css" />
     <Content Include="Assets\bundles\home-mobile-calculate-07.min.css">
       <DependentUpon>home-mobile-calculate-07.css</DependentUpon>
@@ -1059,150 +1022,6 @@
       <DependentUpon>verify-security-code.css</DependentUpon>
     </Content>
     <Content Include="Scripts\aes.js" />
-    <Content Include="Views\MemberRequests\Guidelines\Style\page.css">
-      <DependentUpon>page.scss</DependentUpon>
-    </Content>
-    <Content Include="Views\MemberRequests\Guidelines\Style\page.min.css">
-      <DependentUpon>page.css</DependentUpon>
-    </Content>
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f1.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f2.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f3.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f4.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f5.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f6.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f7.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\f8.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\pencil.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\Images\sync.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\page.css" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\Images\f11.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\Images\f12.png" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f1.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f2.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f3.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f4.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f5.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f6.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f7.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\f8.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\pencil.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\Images\sync.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\page.css" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\Images\f11.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\Images\f12.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f1.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f2.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f3.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f4.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f5.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f6.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f7.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\f8.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\pencil.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\Images\sync.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Styles\page.css" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\Images\f11.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\Images\f12.png" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f1.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f2.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f3.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f4.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f5.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f6.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f7.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\f8.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\pencil.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Styles\Images\sync.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\Images\f11.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\Images\f12.png" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f1.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f2.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f3.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f4.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f5.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f6.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f7.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\f8.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\pencil.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\Images\sync.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Styles\page.css" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\Images\f11.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\Images\f12.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Agent\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Master\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-cn\Super\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Agent\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Master\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\ja-jp\Super\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Agent\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Master\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\th-th\Super\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Master\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Super\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Master\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Super\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f1.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f2.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f3.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f4.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f5.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f6.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f7.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\f8.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\pencil.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\Images\sync.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Agent\Styles\page.css" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\Images\f11.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\Images\f12.png" />
-    <Content Include="Views\MemberRequests\Guidelines\zh-tw\Super\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f1.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f2.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f3.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f4.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f5.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f6.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f7.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\f8.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\pencil.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Agent\Styles\Images\sync.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\Images\f11.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Master\Styles\Images\f9.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f10.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f12.png" />
-    <Content Include="Views\MemberRequests\Guidelines\en-us\Super\Styles\Images\f9.png" />
     <Content Include="Alpha.Main.Site.Debug.ruleset" />
     <Content Include="Alpha.Main.Site.ruleset" />
     <Content Include="Views\Default\HeaderHotMsg.cshtml" />
@@ -1268,18 +1087,6 @@
     </Content>
     <Content Include="Views\Default\Kickout.cshtml" />
     <Content Include="typings.json" />
-    <Content Include="Views\MemberRequests\Index.cshtml" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Italic.ttf" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Medium.woff" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Medium.woff2" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Regular.woff" />
-    <Content Include="Views\MemberRequests\Guidelines\ko-kr\Agent\Styles\roboto\Roboto-Regular.woff2" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Italic.ttf" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Medium.woff" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Medium.woff2" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Regular.woff" />
-    <Content Include="Views\MemberRequests\Guidelines\vi-vn\Agent\Styles\roboto\Roboto-Regular.woff2" />
-    <Content Include="Views\MemberRequests\Guidelines\Style\page.scss" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Default\AnnouncementPopup.cshtml" />
     <Content Include="Views\NetworkSpeed\Index.cshtml" />
@@ -1318,7 +1125,6 @@
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-guide.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\chatbot-setting.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\verify-account.ts" />
-    <TypeScriptCompile Include="Assets\scripts\dashboard\member-requests.ts" />
     <TypeScriptCompile Include="Assets\scripts\dashboard\popup-announcement.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\data-proccessing-notification.ts" />
     <TypeScriptCompile Include="Assets\scripts\home\kick-out.ts" />
@@ -1621,7 +1427,6 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\NicknameController.cs" />
-    <Compile Include="Controllers\MemberRequestsController.cs" />
     <Compile Include="Controllers\NetworkSpeedController.cs" />
     <Compile Include="Controllers\PartialUMController.cs" />
     <Compile Include="Controllers\ManualCheckProtectedModeController.cs" />
@@ -1639,7 +1444,6 @@
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
     <Compile Include="Handlers\DefaultHandler.cs" />
-    <Compile Include="Handlers\MemberRequestsHandler.cs" />
     <Compile Include="Handlers\NetworkSpeedHandler.cs" />
     <Compile Include="Handlers\NicknameHandler.cs" />
     <Compile Include="Handlers\ProtectionCodeHandler.cs" />
@@ -1672,7 +1476,6 @@
     <Compile Include="Requests\ChatBot\WriteLogCommandBase.cs" />
     <Compile Include="Requests\CustomerProfile\BriefProfileQuery.cs" />
     <Compile Include="Requests\Dashboard\BalanceInfo\BalanceInfoQuery.cs" />
-    <Compile Include="Requests\Dashboard\MemberRequests\MemberRequestQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\NewMembersQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\StatisticsQuery.cs" />
     <Compile Include="Requests\Dashboard\Statistics\TopTurnoverMembersQuery.cs" />
@@ -1723,7 +1526,6 @@
     <Compile Include="ViewModels\ContactUs\ContactUsViewModel.cs" />
     <Compile Include="ViewModels\CustomerProfile\BriefProfileViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\DashboardViewModel.cs" />
-    <Compile Include="ViewModels\Dashboard\MemberRequests\MemberRequestsViewModel.cs" />
     <Compile Include="ViewModels\HeaderNavViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\Dashboard\BalanceInfo\BalanceInfoViewModel.cs" />

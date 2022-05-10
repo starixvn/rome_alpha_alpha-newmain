@@ -25,28 +25,9 @@
         private const string GameEnableSessionKey = "_GameEnable_";
         private const string IsAdminCanUpdateSubAccountSessionKey = "IsAdminCanUpdateSubAccount";
 
-        public bool ShowProgressiveJackpotGames
-        {
-            get
-            {
-                var products = GetEnableProductsByGameName(Jackpot);
-                var newProducts = products.Where(i => i != ProductId.Pragmatic);
-                return newProducts.Count() == 1 && newProducts.Contains(ProductId.RNGCasino)
-                    ? UserSession.Current.IsCasinoSync
-                    : newProducts.Any();
-            }
-        }
+        public bool ShowProgressiveJackpotGames => GetEnableProductsByGameName(Jackpot).Any(i => i != ProductId.Pragmatic);
 
-        public bool IsEnabledJackpot
-        {
-            get
-            {
-                var products = GetEnableProductsByGameName(Jackpot);
-                return products.Count == 1 && products.Contains(ProductId.RNGCasino)
-                    ? UserSession.Current.IsCasinoSync
-                    : products.Any();
-            }
-        }
+        public bool IsEnabledJackpot => GetEnableProductsByGameName(Jackpot).Any();
 
         private static IList<int> GetEnableProductsByGameName(string gameName)
             => (IList<int>)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + GameEnableSessionKey + gameName];

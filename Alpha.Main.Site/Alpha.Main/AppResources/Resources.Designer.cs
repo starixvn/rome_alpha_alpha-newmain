@@ -719,15 +719,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Member Request.
-        /// </summary>
-        public static string memberRequest {
-            get {
-                return ResourceManager.GetString("memberRequest", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Message.
         /// </summary>
         public static string message {
@@ -1021,24 +1012,6 @@ namespace Alpha.Main.AppResources {
         public static string personalMessage {
             get {
                 return ResourceManager.GetString("personalMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Play For Fun.
-        /// </summary>
-        public static string playForFun {
-            get {
-                return ResourceManager.GetString("playForFun", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Play For Fun - Guidelines.
-        /// </summary>
-        public static string PlayForFunGuidelines {
-            get {
-                return ResourceManager.GetString("PlayForFunGuidelines", resourceCulture);
             }
         }
         
@@ -1498,15 +1471,6 @@ namespace Alpha.Main.AppResources {
         public static string totalBalance {
             get {
                 return ResourceManager.GetString("totalBalance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total Casino Transfer|Outstanding.
-        /// </summary>
-        public static string totalCSTransferOutstanding {
-            get {
-                return ResourceManager.GetString("totalCSTransferOutstanding", resourceCulture);
             }
         }
         

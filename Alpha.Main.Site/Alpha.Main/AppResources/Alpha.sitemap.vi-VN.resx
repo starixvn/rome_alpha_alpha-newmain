@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>Cả Hai/Một/Không Đội Ghi Bàn</value>
   </data>
-  <data name="casinoPositionTaking" xml:space="preserve">
-    <value>PT (%) của Casino</value>
-  </data>
   <data name="charts" xml:space="preserve">
     <value>Biểu đồ</value>
   </data>
@@ -227,9 +224,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>Position Taking (%)</value>
-  </data>
-  <data name="realTimeCSWinloss" xml:space="preserve">
-    <value>Thắng thua hiện tại của Casino</value>
   </data>
   <data name="scoreMap" xml:space="preserve">
     <value>Score Map</value>
@@ -345,15 +339,6 @@
   <data name="schedule" xml:space="preserve">
     <value>Lịch Mở Thưởng</value>
   </data>
-  <data name="PlayForFun" xml:space="preserve">
-    <value>Chơi Thử</value>
-  </data>
-  <data name="playForFunMemberRequest" xml:space="preserve">
-    <value>Chơi Thử - Yêu cầu kích hoạt</value>
-  </data>
-  <data name="PlayForFunDetail" xml:space="preserve">
-    <value>Chi tiết 'Chơi Thử'</value>
-  </data>
   <data name="LastBets" xml:space="preserve">
     <value>Cược mới nhất</value>
   </data>
@@ -374,9 +359,6 @@
   </data>
   <data name="ProgressiveGamesContribution" xml:space="preserve">
     <value>Tích Lũy Trò Chơi Lũy Tiến</value>
-  </data>
-  <data name="ProgressiveJackpotGames" xml:space="preserve">
-    <value>Trò chơi Jackpot lũy tiến</value>
   </data>
   <data name="customerSetting" xml:space="preserve">
     <value>Thiết lập của Khách hàng</value>

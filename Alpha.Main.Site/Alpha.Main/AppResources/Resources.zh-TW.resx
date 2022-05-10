@@ -247,9 +247,6 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>代理總 '活躍/關閉/暂停'</value>
   </data>
-  <data name="totalCSTransferOutstanding" xml:space="preserve">
-    <value>到娛樂城的總轉賬額|未完成交易額</value>
-  </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>總代理總數 '活躍/關閉/暂停'</value>
   </data>
@@ -460,20 +457,11 @@
   <data name="NoInformationIsAvailable" xml:space="preserve">
     <value>沒資料顯示</value>
   </data>
-  <data name="playForFun" xml:space="preserve">
-    <value>免費試玩</value>
-  </data>
   <data name="lblNew" xml:space="preserve">
     <value>新增</value>
   </data>
   <data name="UpdatedSuccessfully" xml:space="preserve">
     <value>更新成功!</value>
-  </data>
-  <data name="memberRequest" xml:space="preserve">
-    <value>會員要求</value>
-  </data>
-  <data name="PlayForFunGuidelines" xml:space="preserve">
-    <value>免費試玩-指南</value>
   </data>
   <data name="Notice_3" xml:space="preserve">
     <value>您的上線已開啟“捕魚天下”予您的下線。請到您的設定頁面進行配置</value>

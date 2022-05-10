@@ -1,11 +1,6 @@
 ﻿namespace Alpha.Main.Services.Impl
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Text.RegularExpressions;
     using AppResources;
-    using CasinoLibrary.Model.UserException;
     using Criteria.Password;
     using DataAccesses;
     using Fanex.Cryptography.Aes;
@@ -14,12 +9,13 @@
     using Models;
     using Params;
     using Params.Password;
-    using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
+    using System;
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
 
     public class PasswordServiceImpl : PasswordService
     {
-        private const int AgentSystem = 2;
         private static readonly Regex PasswordRule1 = new Regex(@"^(?=.*\d).{8,100}$");
         private static readonly Regex PasswordRule2 = new Regex(@"^(?=.*[a-z]).{8,100}$");
         private static readonly Regex PasswordRule3 = new Regex(@"^(?=.*[A-Z]).{8,100}$");
@@ -29,7 +25,6 @@
 
         private readonly Encryptor encryptor;
         private readonly PasswordDataAccess passwordDataAccess;
-        private readonly CasinoService casinoService;
         private readonly IAesService aes;
         private readonly KickoutCustomerService kickoutCustomerService;
         private readonly IDynamicRepository dynamicRepository;
@@ -38,7 +33,6 @@
         public PasswordServiceImpl(
             Encryptor encryptor,
             PasswordDataAccess passwordDataAccess,
-            CasinoService casinoService,
             IAesService aes,
             KickoutCustomerService kickoutCustomerService,
             IDynamicRepository dynamicRepository,
@@ -46,7 +40,6 @@
         {
             this.encryptor = encryptor;
             this.passwordDataAccess = passwordDataAccess;
-            this.casinoService = casinoService;
             this.aes = aes;
             this.kickoutCustomerService = kickoutCustomerService;
             this.dynamicRepository = dynamicRepository;
@@ -82,7 +75,6 @@
             var criteria = new UpdateMainAccountPasswordCriteria
             {
                 CustId = param.CustId,
-                DisCasino = param.IsCasinoDisabled,
                 Language = param.LanguageKey,
                 LoginIP = param.IP,
                 OldPwd = Encode(rawCurrentPassword),
@@ -107,39 +99,7 @@
                 });
             }
 
-            if (updateResult.IsSuccessful
-                && param.IsCasinoSync)
-            {
-                ChangeCasinoAccountPassword(param.CustId, encodedPassword, param.ActorId, param.ActorName, param.IP);
-            }
-
             return updateResult;
-        }
-
-        internal void ChangeCasinoAccountPassword(
-            int custId,
-            string encodedPassword,
-            int actorId,
-            string actorName,
-            string ip)
-        {
-            if (casinoService.Customer != null)
-            {
-                try
-                {
-                    casinoService.Customer.UpdateCustPwd(
-                        custId,
-                        encodedPassword,
-                        ip,
-                        actorId,
-                        actorName,
-                        AgentSystem);
-                }
-                catch (ErrorException ex)
-                {
-                    ExceptionHandler.Handle(new Exception(ex.Message, ex), TraceEventType.Information);
-                }
-            }
         }
 
         public Result ChangeSubAccountPassword(ChangeSubAccountPasswordParam param)
@@ -228,7 +188,6 @@
                 LoginIP = param.IP,
                 UserPwd = encodedPassword,
                 SubAccId = param.SubAccountId,
-                DisCasino = param.IsCasinoDisabled,
                 UserId = param.ActorId
             };
 
@@ -236,11 +195,6 @@
 
             if (updateResult.IsSuccessful)
             {
-                if (param.IsCasinoSync)
-                {
-                    ChangeCasinoAccountPassword(param.CustId, encodedPassword, param.ActorId, param.ActorName, param.IP);
-                }
-
                 KickoutCustomer(new KickoutCustomerParam(
                     param.CustId,
                     param.CustLevel,

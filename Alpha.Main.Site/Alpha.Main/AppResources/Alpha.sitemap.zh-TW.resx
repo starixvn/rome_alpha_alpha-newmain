@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>雙方/一方/兩者皆不得分</value>
   </data>
-  <data name="casinoPositionTaking" xml:space="preserve">
-    <value>娛樂城佔成數(%)</value>
-  </data>
   <data name="charts" xml:space="preserve">
     <value>圖表</value>
   </data>
@@ -227,9 +224,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>佔成數%</value>
-  </data>
-  <data name="realTimeCSWinloss" xml:space="preserve">
-    <value>即時娛樂場贏輸</value>
   </data>
   <data name="scoreMap" xml:space="preserve">
     <value>盈利預測圖</value>
@@ -345,15 +339,6 @@
   <data name="schedule" xml:space="preserve">
     <value>時間表</value>
   </data>
-  <data name="PlayForFun" xml:space="preserve">
-    <value>免費試玩</value>
-  </data>
-  <data name="playForFunMemberRequest" xml:space="preserve">
-    <value>免費試玩 - 會員要求</value>
-  </data>
-  <data name="PlayForFunDetail" xml:space="preserve">
-    <value>免費試玩資料</value>
-  </data>
   <data name="winLossByProduct" xml:space="preserve">
     <value> 投注產品輸贏</value>
   </data>
@@ -368,9 +353,6 @@
   </data>
   <data name="BetLists" xml:space="preserve">
     <value>投注历史</value>
-  </data>
-  <data name="ProgressiveJackpotGames" xml:space="preserve">
-    <value>積寶遊戲</value>
   </data>
   <data name="ProgressiveGamesContribution" xml:space="preserve">
     <value>積寶遊戲貢獻</value>

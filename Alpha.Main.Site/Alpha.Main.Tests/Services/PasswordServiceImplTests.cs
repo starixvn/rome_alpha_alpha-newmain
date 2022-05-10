@@ -8,14 +8,12 @@
     using KellermanSoftware.CompareNetObjects;
     using Main.Criteria.Password;
     using Main.DataAccesses;
-    using Main.Models;
     using Main.Services;
     using Main.Services.Impl;
     using NSubstitute;
     using NUnit.Framework;
     using Params;
     using Params.Password;
-    using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Utilities;
     using System;
     using CustomResult = Alpha.Main.Models.Result;
@@ -27,7 +25,6 @@
         private PasswordServiceImpl passwordService;
         private Encryptor encryptor;
         private PasswordDataAccess passwordDataAccess;
-        private CasinoService casinoService;
         private IAesService aes;
         private KickoutCustomerService kickoutCustomerService;
         private IDynamicRepository repository;
@@ -40,7 +37,6 @@
 
             encryptor = Substitute.For<Encryptor>();
             passwordDataAccess = Substitute.For<PasswordDataAccess>();
-            casinoService = Substitute.For<CasinoService>();
             aes = Substitute.For<IAesService>();
             kickoutCustomerService= Substitute.For<KickoutCustomerService>();
             repository = Substitute.For<IDynamicRepository>();
@@ -49,7 +45,6 @@
             passwordService = Substitute.ForPartsOf<PasswordServiceImpl>(
                 encryptor,
                 passwordDataAccess,
-                casinoService,
                 aes,
                 kickoutCustomerService,
                 repository,
@@ -120,7 +115,6 @@
                 CustId = CustId.ValidId,
                 NewPassword = newPassword,
                 CurrentPassword = currentPassword,
-                IsCasinoDisabled = true,
                 LanguageKey = "en",
                 IP = "127.0.0.1",
                 ActorId = 1,
@@ -145,52 +139,12 @@
             passwordDataAccess.Received().UpdatePassword(
                 Arg.Is<UpdateMainAccountPasswordCriteria>(
                     p => p.CustId == param.CustId
-                        && p.DisCasino == param.IsCasinoDisabled
                         && p.Language == param.LanguageKey
                         && p.LoginIP == param.IP
                         && p.OldPwd == "OldPassword"
                         && p.UserPwd == "UserPassword"
                         && p.UserId == param.ActorId));
-        }
-
-        [Test]
-        public void ChangeMainAccountPassword_UpdatePasswordSuccessfulAndIsCasinoSync_CallsChangeCasionAccountPassword()
-        {
-            // Arrange
-            var newPassword = "1234aaAA";
-            var currentPassword = "1234aa";
-            var param = new ChangeMainAccountPasswordParam
-            {
-                NewPassword = newPassword,
-                CurrentPassword = currentPassword,
-                IsCasinoSync = true,
-                ActorId = 1,
-                ActorName = "ActorName",
-                IP = "127.0.0.1"
-            };
-
-            encryptor.HexDecode(Arg.Is(param.CurrentPassword)).Returns("CurrentPassword");
-            encryptor.HexDecode(Arg.Is(param.NewPassword)).Returns("NewPassword");
-
-            aes.Decrypt(Arg.Any<string>(), Arg.Is("CurrentPassword")).Returns(currentPassword);
-            aes.Decrypt(Arg.Any<string>(), Arg.Is("NewPassword")).Returns(newPassword);
-
-            encryptor.CfsEnCode(Arg.Is(currentPassword)).Returns("OldPassword");
-            encryptor.CfsEnCode(Arg.Is(newPassword)).Returns("UserPassword");
-
-            passwordDataAccess.UpdatePassword(Arg.Any<UpdateMainAccountPasswordCriteria>()).Returns(new CustomResult { Code = 0 });
-
-            // Act
-            passwordService.ChangeMainAccountPassword(param);
-
-            // Assert
-            passwordService.Received().ChangeCasinoAccountPassword(
-                param.CustId,
-                "UserPassword",
-                param.ActorId,
-                param.ActorName,
-                param.IP);
-        }
+        }      
 
         #endregion Change Main Account Passowrd
 
@@ -302,7 +256,6 @@
                 LanguageKey = "en",
                 IP = "127.0.0.1",
                 SubAccountId = 0,
-                IsCasinoDisabled = true,
                 ActorId = 1
             };
             aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
@@ -315,7 +268,6 @@
                 LoginIP = param.IP,
                 UserPwd = "EncodedPassword",
                 SubAccId = param.SubAccountId,
-                DisCasino = param.IsCasinoDisabled,
                 UserId = param.ActorId
             };
 
@@ -329,51 +281,6 @@
                 Arg.Is<ResetMainAccountPasswordCriteria>(
                     c => compareLogic.Compare(c, criteria).AreEqual));
         }
-
-        [Test]
-        public void ResetMainAccountPassword_UpdatePasswordSuccessfulAndIsCasinoSync_CallsChangeCasionAccountPassword()
-        {
-            // Arrange
-            var param = new ResetMainAccountPasswordParam
-            {
-                IsResetMemberPassword = true,
-                CustId = 1,
-                LanguageKey = "en",
-                IP = "127.0.0.1",
-                SubAccountId = 0,
-                IsCasinoDisabled = true,
-                ActorId = 1,
-                ActorName = "ActorName",
-                IsCasinoSync = true
-            };
-            aes.Decrypt(Arg.Any<string>(), Arg.Any<string>()).Returns("1234aaAA");
-            encryptor.CfsEnCode(Arg.Is("1234aaAA")).Returns("EncodedPassword");
-
-            var criteria = new ResetMainAccountPasswordCriteria
-            {
-                CustId = param.CustId,
-                Language = param.LanguageKey,
-                LoginIP = param.IP,
-                UserPwd = "EncodedPassword",
-                SubAccId = param.SubAccountId,
-                DisCasino = param.IsCasinoDisabled,
-                UserId = param.ActorId
-            };
-
-            passwordDataAccess.UpdatePassword(Arg.Any<ResetMainAccountPasswordCriteria>()).Returns(new CustomResult { Code = 0 });
-
-            // Act
-            passwordService.ResetMainAccountPassword(param);
-
-            // Assert
-            passwordService.Received().ChangeCasinoAccountPassword(
-                param.CustId,
-                "EncodedPassword",
-                param.ActorId,
-                param.ActorName,
-                param.IP);
-        }
-
         #endregion Reset Main Account Password
 
         #region Reset Sub Account Password

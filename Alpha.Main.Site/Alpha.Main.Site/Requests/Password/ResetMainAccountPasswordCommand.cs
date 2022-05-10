@@ -9,18 +9,14 @@
     public class ResetMainAccountPasswordCommand : IRequest<CustomResult>
     {
         private readonly IUserSession userSession;
-        private readonly bool isCasinoDisabled;
 
-        public ResetMainAccountPasswordCommand() : this(null, null)
+        public ResetMainAccountPasswordCommand() : this(null)
         {
         }
 
-        internal ResetMainAccountPasswordCommand(IUserSession userSession, bool? isCasinoDisabled)
+        internal ResetMainAccountPasswordCommand(IUserSession userSession)
         {
             this.userSession = userSession ?? new UserSessionExt();
-
-            // Line below follow old business, please do not modify.
-            this.isCasinoDisabled = isCasinoDisabled.HasValue ? isCasinoDisabled.Value : Sunplus.Agent.Model.BL.Definitions.AppSettings.DisabledCasino;
         }
 
         public int CustId { get; set; }
@@ -41,14 +37,6 @@
             }
         }
 
-        public bool IsCasinoDisabled
-        {
-            get
-            {
-                return isCasinoDisabled;
-            }
-        }
-
         public string NewPassword { get; set; }
 
         public string LanguageKey
@@ -66,9 +54,7 @@
                 return this.userSession.UserLoginIp;
             }
         }
-
-        public bool IsCasinoSync { get; set; }
-
+     
         public string ActorName
         {
             get

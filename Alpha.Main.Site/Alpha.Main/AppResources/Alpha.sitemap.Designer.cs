@@ -232,15 +232,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Casino Position Taking (%).
-        /// </summary>
-        public static string casinoPositionTaking {
-            get {
-                return ResourceManager.GetString("casinoPositionTaking", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Charts.
         /// </summary>
         public static string charts {
@@ -700,33 +691,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Play For Fun.
-        /// </summary>
-        public static string PlayForFun {
-            get {
-                return ResourceManager.GetString("PlayForFun", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Play For Fun Detail.
-        /// </summary>
-        public static string PlayForFunDetail {
-            get {
-                return ResourceManager.GetString("PlayForFunDetail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Play For Fun - Member Request.
-        /// </summary>
-        public static string playForFunMemberRequest {
-            get {
-                return ResourceManager.GetString("playForFunMemberRequest", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Position Taking (%).
         /// </summary>
         public static string positionTaking {
@@ -750,24 +714,6 @@ namespace Alpha.Main.AppResources {
         public static string ProgressiveGamesContribution {
             get {
                 return ResourceManager.GetString("ProgressiveGamesContribution", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Progressive Jackpot Games.
-        /// </summary>
-        public static string ProgressiveJackpotGames {
-            get {
-                return ResourceManager.GetString("ProgressiveJackpotGames", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Real Time Casino Win Loss.
-        /// </summary>
-        public static string realTimeCSWinloss {
-            get {
-                return ResourceManager.GetString("realTimeCSWinloss", resourceCulture);
             }
         }
         

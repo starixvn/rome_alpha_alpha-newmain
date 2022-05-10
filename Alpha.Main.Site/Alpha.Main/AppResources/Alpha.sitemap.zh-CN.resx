@@ -129,9 +129,6 @@
   <data name="BetType26" xml:space="preserve">
     <value>双方/一方/两者皆不得分</value>
   </data>
-  <data name="casinoPositionTaking" xml:space="preserve">
-    <value>娱乐城占成数(%)</value>
-  </data>
   <data name="charts" xml:space="preserve">
     <value>图表</value>
   </data>
@@ -227,9 +224,6 @@
   </data>
   <data name="positionTaking" xml:space="preserve">
     <value>占成数%</value>
-  </data>
-  <data name="realTimeCSWinloss" xml:space="preserve">
-    <value>即时娱乐场赢输</value>
   </data>
   <data name="scoreMap" xml:space="preserve">
     <value>盈利预测图</value>
@@ -345,15 +339,6 @@
   <data name="schedule" xml:space="preserve">
     <value>时间表</value>
   </data>
-  <data name="PlayForFun" xml:space="preserve">
-    <value>免费试玩</value>
-  </data>
-  <data name="playForFunMemberRequest" xml:space="preserve">
-    <value>免费试玩 - 会员要求</value>
-  </data>
-  <data name="PlayForFunDetail" xml:space="preserve">
-    <value>免费试玩资料</value>
-  </data>
   <data name="winLossByProduct" xml:space="preserve">
     <value>投注产品输赢</value>
   </data>
@@ -368,9 +353,6 @@
   </data>
   <data name="BetLists" xml:space="preserve">
     <value>投注历史</value>
-  </data>
-  <data name="ProgressiveJackpotGames" xml:space="preserve">
-    <value>积宝游戏</value>
   </data>
   <data name="ProgressiveGamesContribution" xml:space="preserve">
     <value>积宝游戏贡献</value>

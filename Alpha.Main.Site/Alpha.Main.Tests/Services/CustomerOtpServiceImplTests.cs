@@ -1,7 +1,5 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
-    using System;
-    using System.Collections.Generic;
     using Alpha.Web.Models;
     using AppResources;
     using Fanex.Data.Repository;
@@ -14,7 +12,8 @@
     using NUnit.Framework;
     using ONEbook.OTP.Services;
     using Params.Otp;
-    using Sunplus.Agent.Model.Casino;
+    using System;
+    using System.Collections.Generic;
     using CustomResult = Alpha.Main.Models.Result;
 
     [TestFixture]

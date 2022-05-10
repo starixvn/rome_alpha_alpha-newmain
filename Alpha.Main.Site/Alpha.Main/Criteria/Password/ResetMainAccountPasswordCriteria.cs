@@ -10,8 +10,6 @@
 
         public int UserId { get; set; }
 
-        public bool DisCasino { get; set; }
-
         public string Language { get; set; }
 
         public int SubAccId { get; set; }

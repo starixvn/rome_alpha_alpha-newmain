@@ -1,11 +1,5 @@
 ﻿namespace Alpha.Main.Site.App_Start
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Configuration;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Reflection;
-    using System.Web.Mvc;
     using Alpha.Captcha.Services;
     using Alpha.Main.ProfilePicture.Services;
     using Alpha.NetThrottling;
@@ -36,9 +30,14 @@
     using SimpleInjector.Integration.Web.Mvc;
     using StackExchange.Redis;
     using Sunplus.Agent.Model.Base;
-    using Sunplus.Agent.Model.Casino;
     using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Utilities;
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Reflection;
+    using System.Web.Mvc;
     using Web.Helpers;
     using Web.Helpers.Impl;
 
@@ -112,9 +111,7 @@
             container.RegisterPerWebRequest<BalanceUpDayInfoService, BalanceUpDayInfoServiceImpl>();
             container.RegisterPerWebRequest<BalanceInfoService, BalanceInfoServiceImpl>();
             container.RegisterPerWebRequest<StatisticsService, StatisticsServiceImpl>();
-            container.RegisterPerWebRequest<CasinoService, CasinoServiceImpl>();
             container.RegisterPerWebRequest<SecurityCodeChecker, SecurityCodeCheckerImpl>();
-            container.RegisterPerWebRequest<MemberRequestsService, MemberRequestsServiceImpl>();
 
             container.RegisterPerWebRequest<OtpService, OtpServiceImpl>();
             container.RegisterPerWebRequest<OtpAdapter, OtpAdapterImpl>();

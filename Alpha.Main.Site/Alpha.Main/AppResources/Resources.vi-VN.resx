@@ -246,9 +246,6 @@
   <data name="totalAgentActiveClosedSuspended" xml:space="preserve">
     <value>Số tài khoản Agent hiện đang: Kích hoạt/Đóng/Đình chỉ</value>
   </data>
-  <data name="totalCSTransferOutstanding" xml:space="preserve">
-    <value>Tổng tiền chuyển khoản/chưa xử lý của Casino</value>
-  </data>
   <data name="totalMasterACS" xml:space="preserve">
     <value>Số tài khoản Master hiện đang: Kích hoạt/Khóa/Đình chỉ</value>
   </data>
@@ -462,17 +459,8 @@
   <data name="lblNew" xml:space="preserve">
     <value>Mới</value>
   </data>
-  <data name="memberRequest" xml:space="preserve">
-    <value>Yêu cầu kích hoạt</value>
-  </data>
   <data name="UpdatedSuccessfully" xml:space="preserve">
     <value>Cập nhật thành công.</value>
-  </data>
-  <data name="playForFun" xml:space="preserve">
-    <value>Chơi Thử</value>
-  </data>
-  <data name="PlayForFunGuidelines" xml:space="preserve">
-    <value>Chơi thử - Hướng dẫn</value>
   </data>
   <data name="Notice_3" xml:space="preserve">
     <value>Cấp dưới của bạn đã được kích hoạt sản phẩm Fishing World. Vui lòng thiết lập thông số Position Taking của bản thân.</value>
