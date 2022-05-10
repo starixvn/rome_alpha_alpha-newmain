@@ -229,7 +229,7 @@ namespace Alpha.Main.Site.Controllers
                 userSession.GetProperty<string>(SessionConstants.LoginIP_Browser),
                 userSession.AssetAppPath,
                 enableJackpotGames,
-                userSession.IsCasinoSync,
+                true,
                 pageAccessPermissions,
                 userSession.IsEnabledSecurityCodeInStatement,
                 userSession.SecurityCode,
