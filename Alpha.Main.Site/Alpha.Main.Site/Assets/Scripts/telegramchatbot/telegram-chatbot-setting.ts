@@ -131,7 +131,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
             return;
         }
 
-        parent.window.location.href = parent.window.location.href;
+        this.reloadPage();
     }
 
     changeLanguage = (lang) => {
@@ -155,7 +155,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
     onChangeLanguageSuccess = (result: any) => {
         if (result) {
             if (result.IsOk) {
-                parent.window.location.href = parent.window.location.href;
+                this.reloadPage();
             } else {
                 if (result.IsNotAuthorized) {
                     this.topWindow.bootboxAlert(result.Message);

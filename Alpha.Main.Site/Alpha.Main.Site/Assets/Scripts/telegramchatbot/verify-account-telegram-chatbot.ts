@@ -137,7 +137,7 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
 
         if (result) {
             if (result.IsOk) {
-                parent.window.location.href = parent.window.location.href;
+                this.reloadPage();
             } else {
                 if (result.IsNotAuthorized) {
                     this.topWindow.bootboxAlert(result.Message);
