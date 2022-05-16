@@ -18,8 +18,10 @@
     <!--[if lt IE 9]>
       @StaticResources.AssetScripts.RenderCommon("/bundles/common/support-IE8")
     <![endif]-->
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
 </head>
 <body>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
     <div class="block">
         <p class="hint-text">
             <span class="icon-check-circle"></span>
@@ -29,6 +31,5 @@
     </div>
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.RenderScripts("~/assets/bundles/captcha/captcha")
-    @GoogleAnalyticHepler.Render()
 </body>
 </html>

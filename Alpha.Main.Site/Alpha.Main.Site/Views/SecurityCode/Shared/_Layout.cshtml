@@ -12,8 +12,10 @@
     <!--[if lt IE 9]>
       @StaticResources.AssetScripts.RenderCommon("/bundles/common/support-IE8")
     <![endif]-->
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
 </head>
 <body>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
     @RenderBody()
     @Html.AntiForgeryToken()
     @Html.Hidden("alert-old-securitycode-empty", Security.alertOldSecCodeEmpty)
@@ -25,6 +27,5 @@
     @Html.Hidden("text-securitycode-switch-label-on", Security.SwitchLabelOn)
     @Html.Hidden("text-securitycode-switch-label-off", Security.SwitchLabelOff)
     @RenderSection("js", required: false)
-    @GoogleAnalyticHepler.Render()
 </body>
 </html>

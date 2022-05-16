@@ -9,14 +9,15 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/chatbot/chatbot")
     @RenderSection("Styles", required: false)
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
 </head>
 <body>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
     @RenderBody()
     @Html.AntiForgeryToken()
     @Html.Hidden("mainRootPath", MicroSites.MainUrl())
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/chatbot/chatbot-default")
     @RenderSection("Scripts", required: false)
-    @GoogleAnalyticHepler.Render()
 </body>
 </html>

@@ -19,8 +19,10 @@
     <!--[if lt IE 9]>
       @StaticResources.AssetScripts.RenderCommon("/bundles/common/support-IE8")
     <![endif]-->
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
 </head>
 <body>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
     <div class="block nickname">
         @using (Html.BeginForm("Index", "Nickname", FormMethod.Post, new { id = "frmNickname", @class = "form-SC form-validation", novalidate = "novalidate" }))
         {
@@ -90,12 +92,11 @@
             </div>
         </div>
     </div>
-    
+
     @Html.Hidden("mainRootPath", CreateNicknameViewModel.MainRootPath)
     @Html.Hidden("oldMainRootPath", CreateNicknameViewModel.OldMainRootPath)
     @Html.Hidden("nicknameRule", Resources.NicknameRule)
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.RenderScripts("~/Assets/bundles/nickname/create-nickname")
-    @GoogleAnalyticHepler.Render()
 </body>
 </html>

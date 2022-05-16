@@ -10,8 +10,10 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     @StaticResources.AssetStyles.RenderWithDarkMode("/bundles/site-main/otp/otp-super")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/otp/otp")
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
 </head>
 <body>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation">
             <a id="profilePicture" href="@MicroSites.AccountInfoUrl($"~/ProfilePicture/")">@Resources.EditProfilePicture</a>
@@ -68,6 +70,5 @@
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/otp/otp-default")
     @StaticResources.RenderScripts("~/assets/bundles/security/otp/setup-otp")
-    @GoogleAnalyticHepler.Render()
 </body>
 </html>

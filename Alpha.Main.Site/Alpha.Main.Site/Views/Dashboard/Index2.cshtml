@@ -12,8 +12,10 @@
     @StaticResources.AssetStyles.RenderWithDarkMode($"/bundles/site-main/dashboard/dashboard-{Model.UserLevelName}")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/default-home")
     @StaticResources.RenderStylesWithMediaDarkMode(767, "~/assets/bundles/home-mobile-calculate-07")
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
 </head>
 <body>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
     <div class="scroll-tabs">
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active" id="balance-tab">
@@ -51,6 +53,5 @@
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/dashboard/dashboard-default")
     @StaticResources.RenderScripts("~/assets/bundles/default-dashboard")
-    @GoogleAnalyticHepler.Render()
 </body>
 </html>

@@ -9,8 +9,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/otp/otp")
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
 </head>
 <body>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
     <h1 id="title_header" class="page-title">@Security.OtpValidation</h1>
     <div class="verify-otp">
         <img alt="Avatar" src='' class='profile-avatar' />
@@ -42,6 +44,5 @@
     @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
     @StaticResources.AssetScripts.Render("/bundles/site-main/otp/otp-default")
     @StaticResources.RenderScripts("~/assets/bundles/security/otp/verify-otp")
-    @GoogleAnalyticHepler.Render()
 </body>
 </html>

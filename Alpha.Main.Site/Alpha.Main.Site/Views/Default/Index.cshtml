@@ -19,8 +19,10 @@
     <!--[if lt IE 9]>
       @StaticResources.AssetScripts.RenderCommon("/bundles/common/support-IE8")
     <![endif]-->
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagScript()
 </head>
 <body>
+    @Alpha.Web.Helpers.GoogleAnalyticHepler.GtagNoScript()
     @Html.Partial("Popup")
     @Html.Action("HeaderHotMsg")
     <aside class="sidebar" id="side-bar">
@@ -55,6 +57,5 @@
     {
         @StaticResources.RenderScripts("~/assets/bundles/home/le-mtagconfig")
     }
-    @GoogleAnalyticHepler.Render()
 </body>
 </html>
