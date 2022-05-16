@@ -58,7 +58,8 @@ var indexManager = {
             const eventer = window[eventMethod];
             const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
             eventer(messageEvent, function (e) {
-                if (e.data.event_id === "daily-statement") {
+                if (e.data.event_id === "daily-statement"
+                    || e.data.event_id === "detail-statement") {
                     popupManager.open(e.data.url, e.data.title, 900);
                 }
             }, false);
