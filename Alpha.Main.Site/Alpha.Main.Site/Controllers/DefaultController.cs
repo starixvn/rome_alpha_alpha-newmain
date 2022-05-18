@@ -52,7 +52,7 @@ namespace Alpha.Main.Site.Controllers
         }
 
         [HttpGet, AllowProtectedMode]
-        public void Auth()
+        public string Auth()
         {
             var param = string.Empty;
 
@@ -61,7 +61,7 @@ namespace Alpha.Main.Site.Controllers
 
             var returnUrl = $"{AppSettings.ReportDomain}/Auth?param={param}";
 
-            Response.Redirect(returnUrl);
+            return returnUrl;
         }
 
         [AllowProtectedMode]
