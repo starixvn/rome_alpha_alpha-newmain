@@ -16,7 +16,6 @@ namespace Alpha.Main.Site.Controllers
     using Configurations;
     using Constants;
     using Fanex.Cryptography.Aes;
-    using Fanex.Logging.Extensions.Web;
     using MediatR;
     using Models.Requests;
     using Models.Requests.UserMessages;
@@ -54,14 +53,21 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet, AllowProtectedMode]
         public string Auth()
         {
-            var param = string.Empty;
+            var param = userSession.GetProperty<string>(SessionConstants.ReportAuth);
+            if (!string.IsNullOrWhiteSpace(param))
+            {
+                return GetAuthParams(param);
+            }
 
-            param = $"{GetLoginUsername()}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}";
-            param = AesService.Default.Encrypt(param, "!@#$");
+            param = AesService.Default.Encrypt($"{GetLoginUsername()}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}", "!@#$");
+            userSession.SetProperty(SessionConstants.ReportAuth, param);
 
-            var returnUrl = $"{AppSettings.ReportDomain}/Auth?param={param}";
+            return GetAuthParams(param);
+        }
 
-            return returnUrl;
+        private static string GetAuthParams(string param)
+        {
+            return $"{AppSettings.ReportDomain}/Auth?param={param}";
         }
 
         [AllowProtectedMode]
@@ -260,7 +266,7 @@ namespace Alpha.Main.Site.Controllers
 
         private string GetOutputValuesAfterLogin()
         {
-            return JsonConvert.SerializeObject(userSession.GetProperty<Hashtable>("outputs"));
+            return JsonConvert.SerializeObject(userSession.GetProperty<Hashtable>(SessionConstants.Outputs));
         }
     }
 }
