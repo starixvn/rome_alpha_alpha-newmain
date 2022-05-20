@@ -401,14 +401,23 @@ var headerNav = {
                     $.cookie("LANGUAGE", lang, { expires: 30, path: domain });
 
                     if (headerNav.domElements.reportDomain) {
-                        $.get(headerNav.domElements.reportDomain + '/Auth/ChangeLang?langCode=' + lang, () => {
-                            headerNav.reloadPage();
-                        });
+                        headerNav.syncLang(result);
                     }
                     else {
                         headerNav.reloadPage();
                     }
                 }
+            }
+        });
+    },
+
+    syncLang: function (lang: string) {
+        $.get(headerNav.domElements.reportDomain + '/Auth/ChangeLang?langCode=' + lang, (result) => {
+            if (result !== 'OK') {
+                headerNav.syncLang(lang);
+            }
+            else {
+                headerNav.reloadPage();
             }
         });
     },
@@ -421,13 +430,21 @@ var headerNav = {
             data: { isDarkMode: !isDarkMode },
             success: function (result) {
                 if (result && headerNav.domElements.reportDomain) {
-                    $.get(headerNav.domElements.reportDomain + '/Auth/ChangeTheme?isDarkMode=' + !isDarkMode, () => {
-                        result && headerNav.reloadPage();
-                    });
+                    headerNav.syncTheme(!isDarkMode);
                 }
                 else {
                     result && headerNav.reloadPage();
                 }
+            }
+        });
+    },
+
+    syncTheme: function (isDarkMode: boolean) {
+        $.get(headerNav.domElements.reportDomain + '/Auth/ChangeTheme?isDarkMode=' + isDarkMode, (result) => {
+            if (result !== 'OK') {
+                headerNav.syncTheme(isDarkMode);
+            } else {
+                headerNav.reloadPage();
             }
         });
     },
