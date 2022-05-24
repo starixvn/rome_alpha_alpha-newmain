@@ -41,7 +41,7 @@
 
         public async Task<VerifyAccountViewModel> Handle(GenerateQRCodeCommand message)
         {
-            var url = await settingService.GenerateStartUriAsync(message.CustId, message.SubAccId, AppSettings.SiteGroup);
+            var url = await settingService.GenerateStartUriAsync(message.CustId, message.SubAccId, AppSettings.SiteGroup, message.Language);
 
             var logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Assets/styles/telegramchatbot/images/telegram-logo.png");
             var qrCodeDataUrl = QRCodeAdapter.Generate(url, logoPath);

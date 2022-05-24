@@ -17,6 +17,7 @@
             CustomerLevel = userSession.RoleId;
             CustId = userSession.CustId;
             SubAccId = userSession.SubAccId;
+            Language = userSession.Language;
         }
 
         public int CustomerLevel { get; }
@@ -25,5 +26,6 @@
 
         public int SubAccId { get; }
 
+        public string Language { get; }
     }
 }
