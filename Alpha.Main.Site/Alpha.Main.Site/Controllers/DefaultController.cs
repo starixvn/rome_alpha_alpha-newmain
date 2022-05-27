@@ -5,6 +5,7 @@ namespace Alpha.Main.Site.Controllers
     using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
@@ -209,7 +210,7 @@ namespace Alpha.Main.Site.Controllers
         {
             var sessionKeyValue = string.Empty;
             var enableJackpotGameIds = userSession.GetProperty<IList<int>>(SessionConstants.GameEnable + SessionConstants.Jackpot);
-            var enableJackpotGames = $"{string.Join(",", enableJackpotGameIds)}";
+            var enableJackpotGames = $"{string.Join(",", enableJackpotGameIds ?? Enumerable.Empty<int>())}";
             var pageAccess = userSession.SubPageAccess;
             var pageAccessPermissions = $"{pageAccess.CreateAccount}${pageAccess.Transfer}${pageAccess.UpdateAccount}$" +
                 $"{pageAccess.ViewLog}${pageAccess.ViewMemberInfo}${pageAccess.ViewReports}${pageAccess.ViewTotalBets}${pageAccess.GetPermission("[L]")}";
