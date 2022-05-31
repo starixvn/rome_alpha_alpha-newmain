@@ -399,4 +399,7 @@
   <data name="Old" xml:space="preserve">
     <value>旧</value>
   </data>
+  <data name="BetCreditTracking" xml:space="preserve">
+    <value>追踪投注额度</value>
+  </data>
 </root>

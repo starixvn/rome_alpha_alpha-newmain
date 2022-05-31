@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -404,5 +404,8 @@
   </data>
   <data name="Old" xml:space="preserve">
     <value>Cũ</value>
+  </data>
+  <data name="BetCreditTracking" xml:space="preserve">
+    <value>Theo dõi Hạn mức khả dụng</value>
   </data>
 </root>
