@@ -19,7 +19,11 @@
         private const string SECURITYCODEPADDING = "1qaw3+{:P)";
         private const int AllowSecurityCodeLength = 6;
         private const string SecurityCodeRule = @"^([0-9])(?!\1+$)[0-9]+$";
-
+        private const string Message = "Param cannot be null";
+        private const int Length = 6;
+        private const int AccountClosed = 200;
+        private const int AccountClosedStatus = 2;
+        private const int WrongSecurityCode = 9009;
         private readonly SecurityCodeDataAccess securityCodeDataAccess;
         private readonly Encryptor encryptor;
         private readonly INetThrottlingService netThrottlingService;
@@ -41,7 +45,7 @@
         {
             if (param == null)
             {
-                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+                throw new ArgumentNullException(nameof(param), Message);
             }
 
             var validateResult = Validate(param.NewSecurityCode, param);
@@ -73,7 +77,7 @@
         {
             if (param == null)
             {
-                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+                throw new ArgumentNullException(nameof(param), Message);
             }
 
             var validateResult = Validate(param.NewSecurityCode, param);
@@ -105,7 +109,7 @@
         {
             if (param == null)
             {
-                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+                throw new ArgumentNullException(nameof(param), Message);
             }
 
             if (netThrottlingService.IsBlacklist())
@@ -243,7 +247,7 @@
         {
             if (param == null)
             {
-                throw new ArgumentNullException(nameof(param), "Param cannot be null");
+                throw new ArgumentNullException(nameof(param), Message);
             }
 
             if (string.IsNullOrEmpty(param.SecurityCode))
@@ -271,7 +275,7 @@
 
         public string GenerateSecurityToken()
         {
-            return this.encryptor.RandomString(6);
+            return this.encryptor.RandomString(Length);
         }
 
         private string GetSecurityCode(int custId, int subAccountId)
@@ -319,13 +323,13 @@
                         Language = language
                     });
 
-            if (result.Code == 200)
+            if (result.Code == AccountClosed)
             {
-                result.Code = 2; //// account is closed
+                result.Code = AccountClosedStatus; //// account is closed
             }
             else if (result.IsFailed)
             {
-                result.Code = 9009; //// wrong SC
+                result.Code = WrongSecurityCode; //// wrong SC
                 result.Message = Security.alertInputWrongSecCode;
             }
 

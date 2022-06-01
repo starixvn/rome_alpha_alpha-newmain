@@ -12,6 +12,7 @@
 
     public class ProtectionCodeServiceImpl : ProtectionCodeService
     {
+        private const int Length = 4;
         private readonly IAesService aes;
         private readonly Encryptor encryptor;
         private readonly IDynamicRepository repository;
@@ -27,7 +28,7 @@
         }
 
         public string GenerateHashKey()
-            => encryptor.RandomString(4);
+            => encryptor.RandomString(Length);
 
         public Task<string> GetAsync(int custId, int subAccId)
             => repository.GetAsync<string>(new GetProtectionCodeCriteria(custId, subAccId));

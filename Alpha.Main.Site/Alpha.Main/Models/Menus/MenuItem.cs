@@ -11,7 +11,7 @@
 
     public class MenuItem : IMenuItem
     {
-        private string link;
+        private string link = string.Empty;
         private Func<MenuStatus> getMenuStatusFunc;
         private Predicate<string> authorizeUrlFunc;
         private Func<string> getDisplayName;
@@ -71,10 +71,13 @@
         {
             get
             {
-                var appVirtualPath = AppSettings.GetAppPath(AppPath);
+                var appVirtualPath = AppSettings.GetAppPath(AppPath) ?? string.Empty;
+                var runtimeAppPath = HttpRuntime.AppDomainAppVirtualPath ?? string.Empty;
+
                 return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{link}" :
-                    link.StartsWith("/") ? $"{appVirtualPath}{link.Replace(HttpRuntime.AppDomainAppVirtualPath, string.Empty)}" : 
-                    link.Replace(HttpRuntime.AppDomainAppVirtualPath, appVirtualPath);
+                    link.StartsWith("/") ? $"{appVirtualPath}{link.Replace(runtimeAppPath, string.Empty)}" : 
+                    !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ? 
+                    link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;
             }
 
             set

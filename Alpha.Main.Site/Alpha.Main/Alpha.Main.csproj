@@ -385,8 +385,12 @@
     <Compile Include="Params\Nickname\UpdateNicknameLoginOnlyParam.cs" />
     <Compile Include="Params\Otp\ChangeOtpStatusParam.cs" />
     <Compile Include="Params\Otp\RemoveSecretKeyParam.cs" />
-    <Compile Include="Params\Password\UpdateLastChangePasswordIndirectAccountParam.cs" />
-    <Compile Include="Params\Password\SkipForceChangePasswordParam.cs" />
+    <Compile Include="Params\Password\UpdateLastChangePasswordIndirectAccountParam.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Params\Password\SkipForceChangePasswordParam.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Params\Password\ResetMainAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ResetSubAccountPasswordParam.cs" />
     <Compile Include="Params\Password\ChangeMainAccountPasswordParam.cs" />

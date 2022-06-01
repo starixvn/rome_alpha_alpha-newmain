@@ -39,8 +39,8 @@
         private static void SetDataForMenuItem(IMenuItem menuItem, SiteMapNode node)
         {
             var useDomainConfigValue = ConfigurationManager.AppSettings[string.Empty + node["UseDomainConfig"]] + string.Empty;
-            var mainDomain = HttpContext.Current?.Request?.Headers["Host"] ?? string.Empty;
-            useDomainConfigValue = useDomainConfigValue.IndexOf("{0}") != -1 ? string.Format(useDomainConfigValue, mainDomain) : useDomainConfigValue;
+            var mainDomain = HttpContext.Current == null ? string.Empty : HttpContext.Current.Request.Headers["Host"];
+            useDomainConfigValue = useDomainConfigValue.IndexOf("{0}", StringComparison.OrdinalIgnoreCase) != -1 ? string.Format(useDomainConfigValue, mainDomain) : useDomainConfigValue;
 
             menuItem.UseDomainConfig = useDomainConfigValue;
             menuItem.Key = node.Key;
