@@ -52,7 +52,8 @@
         public async Task<Result> Handle(VerifyOTPCommand message)
         {
             var bot = await GetTelegramBotAsync();
-            return await settingService.LinkAsync(bot.BotId, message.CustId, message.SubAccId, message.OTP, message.Username, message.IP);
+            var username = message.IsSubAcc ? message.SubUserName : message.Username;
+            return await settingService.LinkAsync(bot.BotId, message.CustId, message.SubAccId, message.OTP, username, message.IP);
         }
 
         public async Task<Result> Handle(ResendOTPCommand message)
