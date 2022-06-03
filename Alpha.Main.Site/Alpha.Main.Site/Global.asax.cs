@@ -92,14 +92,6 @@
             defaultCaptchaManager.RefreshUrlFactory = RefreshUrlFactory;
         }
 
-        protected void Application_AcquireRequestState()
-        {
-            if (AppSettings.IsStandaloneReports)
-            {
-                Helpers.UrlHelper.MapReportsPath = Helpers.UrlHelper.MapReportsDomain;
-            }
-        }
-
         /// <summary>
         /// Application error event handler.
         /// </summary>

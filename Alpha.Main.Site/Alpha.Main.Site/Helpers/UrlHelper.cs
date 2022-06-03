@@ -87,7 +87,21 @@
         {
             get
             {
-                return mapReportsPath ?? MicroSites.ReportsUrl;
+                if (mapReportsPath != null)
+                {
+                    return mapReportsPath;
+                }
+
+                if (AppSettings.IsStandaloneReports)
+                {
+                    mapReportsPath = MapReportsDomain;
+                }
+                else
+                {
+                    mapReportsPath = MicroSites.ReportsUrl;
+                }
+
+                return mapReportsPath;
             }
 
             internal set
