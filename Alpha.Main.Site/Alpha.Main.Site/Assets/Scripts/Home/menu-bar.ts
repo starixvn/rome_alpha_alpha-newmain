@@ -386,10 +386,3 @@ var menuBar = {
 $(function () {
     menuBar.init();
 });
-
-try {
-    document.addEventListener("visibilitychange", function () {
-        !document.hidden && menuBar.domElements.reportDomain && menuBar.loadAuthFrame();
-    });
-} catch (e) {
-}

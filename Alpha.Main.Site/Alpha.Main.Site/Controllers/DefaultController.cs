@@ -60,7 +60,7 @@ namespace Alpha.Main.Site.Controllers
                 return GetAuthParams(param);
             }
 
-            param = AesService.Default.Encrypt($"{GetLoginUsername()}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}", "!@#$");
+            param = AesService.Default.Encrypt($"{userSession.UserName}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}", "!@#$");
             userSession.SetProperty(SessionConstants.ReportAuth, param);
 
             return GetAuthParams(param);
@@ -257,13 +257,6 @@ namespace Alpha.Main.Site.Controllers
             }
 
             return sessionKeyValue.Substring(0, sessionKeyValue.Length - 1);
-        }
-
-        private string GetLoginUsername()
-        {
-            return userSession.IsInternal ? userSession.AdminName :
-                userSession.IsIndirectLoggedIn ? userSession.IndirectUsername :
-                userSession.UserName;
         }
 
         private string GetOutputValuesAfterLogin()
