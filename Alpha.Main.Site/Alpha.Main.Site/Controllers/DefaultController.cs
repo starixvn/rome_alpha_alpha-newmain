@@ -25,6 +25,7 @@ namespace Alpha.Main.Site.Controllers
     {
         private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
         private const string UnSupportedBrowsers = "UnsupportedBrowsers";
+        private const string fpsScriptKey = "fpsScript";
 
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
@@ -66,6 +67,19 @@ namespace Alpha.Main.Site.Controllers
             var query = new IndexQuery(userSession, this.securityCodeChecker.IsEnableSecurityCode(), null, nicknameChecker);
 
             var viewModel = mediator.Send(query);
+
+            // FPS Scritp ==================
+
+            var fpsScript = this.userSession.GetProperty<string>(fpsScriptKey);
+
+            if (!string.IsNullOrWhiteSpace(fpsScript))
+            {
+                TempData[fpsScriptKey] = fpsScript;
+
+                this.userSession.SetProperty(fpsScriptKey, string.Empty);
+            }
+
+            //================
 
             return View(viewModel);
         }
