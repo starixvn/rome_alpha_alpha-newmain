@@ -59,7 +59,6 @@ namespace Alpha.Main.Site.Controllers
             var loginUsername = AesService.Default.Encrypt($"{userSession.UserName}", SecretKey);
             var sessionKeyValue = AesService.Default.Encrypt($"{GetSessionKeyValue()}", SecretKey);
             var outputValue= AesService.Default.Encrypt($"{GetOutputValuesAfterLogin()}", SecretKey);
-
             Response.Cookies.Add(new HttpCookie("auth_1", loginUsername));
             Response.Cookies.Add(new HttpCookie("auth_2", sessionKeyValue));
             Response.Cookies.Add(new HttpCookie("auth_3", outputValue));
