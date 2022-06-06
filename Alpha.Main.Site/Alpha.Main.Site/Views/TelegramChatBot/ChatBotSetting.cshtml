@@ -48,6 +48,7 @@
 </div>
 @Html.Hidden("UnsubscribeWarning", ChatBot.UnsubscribeTelegramBotWarning)
 @Html.Hidden("UpdateLanguageFailed", ChatBot.updateLanguageFailed)
+@Html.Hidden("HasUnlinkedMessage", string.Format(ChatBot.HasUnlinkedMessage, Model.ChatBotName))
 @Html.Hidden("UserId", Model.UserId)
 @section Scripts{
     @StaticResources.RenderScripts("~/assets/bundles/telegramchatbot/telegram-chatbot-setting")

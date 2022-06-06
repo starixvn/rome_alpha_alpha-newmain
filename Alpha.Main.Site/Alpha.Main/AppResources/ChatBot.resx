@@ -528,4 +528,7 @@
   <data name="OTPIsExpiredMessage" xml:space="preserve">
     <value>OTP is expired, please &lt;span id="btnResend" class="link resend-code"&gt;click here&lt;/span&gt; to generate new OTP.</value>
   </data>
+  <data name="HasUnlinkedMessage" xml:space="preserve">
+    <value>Your telegram has been unlinked with {0}.</value>
+  </data>
 </root>

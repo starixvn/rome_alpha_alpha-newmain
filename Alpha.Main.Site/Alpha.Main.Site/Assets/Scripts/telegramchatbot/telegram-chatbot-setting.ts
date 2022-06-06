@@ -16,6 +16,8 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     $userId: JQuery;
 
+    HAS_UNLINKED_ERR_CODE = 102;
+
     constructor($: JQueryStatic, topWindow: any, clipboard: any) {
         super($, topWindow);
         this.clipboard = clipboard;
@@ -23,7 +25,8 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
 
     resources = {
         unsubscribeWarning: (<HTMLInputElement>document.getElementById('UnsubscribeWarning')).value,
-        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value
+        updateLanguageFailed: (<HTMLInputElement>document.getElementById('UpdateLanguageFailed')).value,
+        hasUnlinkedMessage: (<HTMLInputElement>document.getElementById('HasUnlinkedMessage')).value
     }
 
     init = () => {
@@ -96,7 +99,14 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
                 if (result && result.IsNotOk) {
                     if (result.IsNotAuthorized) {
                         self.topWindow.bootboxAlert(result.Message);
+                        return;
                     }
+
+                    if (result.Code == this.HAS_UNLINKED_ERR_CODE) {
+                        this.showHasUnlinkedMessage();
+                        return;
+                    }
+
                     checkbox.prop("checked", !enabled);
                 }
             },
@@ -119,15 +129,20 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         });
     }
 
-    onUnSubscribeSuccess = (data: any) => {
-        if (data && data.IsNotOk) {
-            if (data.IsNotAuthorized) {
-                this.topWindow.bootboxAlert(data.Message);
+    onUnSubscribeSuccess = (result: any) => {
+        if (result && result.IsNotOk) {
+            if (result.IsNotAuthorized) {
+                this.topWindow.bootboxAlert(result.Message);
                 return;
             }
 
-            var result = new Result(data);
-            alpha.showMessage(this.$accountMessage, result);
+            if (result.Code == this.HAS_UNLINKED_ERR_CODE) {
+                this.showHasUnlinkedMessage();
+                return;
+            }
+
+            alpha.showMessage(this.$accountMessage, new Result(result));
+
             return;
         }
 
@@ -162,9 +177,18 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
                     return;
                 }
 
+                if (result.Code == this.HAS_UNLINKED_ERR_CODE) {
+                    this.showHasUnlinkedMessage();
+                    return;
+                }
+
                 alpha.showMessage(this.$accountMessage, new Result({ Code: 1, Message: this.resources.updateLanguageFailed }));
             }
         }
+    }
+
+    showHasUnlinkedMessage = () => {
+        this.topWindow.bootboxAlert(this.resources.hasUnlinkedMessage, undefined, () => this.reloadPage());
     }
 }
 

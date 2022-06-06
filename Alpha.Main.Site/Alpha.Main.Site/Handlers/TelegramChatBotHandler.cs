@@ -69,6 +69,7 @@
 
         public async Task<Result> Handle(UpdateFunctionCommand message)
         {
+            var bot = await GetTelegramBotAsync();
             var function = new Function
             {
                 FunctionId = message.FunctionId,
@@ -76,11 +77,14 @@
                 Enabled = message.Enabled,
                 Type = message.Type
             };
-            return await settingService.UpdateUserFunction(message.UserId, function, message.CustId, message.IP);
+            return await settingService.UpdateUserFunction(message.UserId, bot.BotId, function, message.CustId, message.IP);
         }
 
         public async Task<Result> Handle(UpdateLanguageCommand message)
-            => await settingService.UpdateLanguage(message.UserId, message.Language, message.IP);
+        {
+            var bot = await GetTelegramBotAsync();
+            return await settingService.UpdateLanguage(message.UserId, bot.BotId, message.Language, message.IP);
+        }
 
         private async Task<BotEntity> GetTelegramBotAsync()
         {

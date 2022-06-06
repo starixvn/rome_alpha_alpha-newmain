@@ -508,4 +508,7 @@
   <data name="ChatID" xml:space="preserve">
     <value>ChatID</value>
   </data>
+  <data name="HasUnlinkedMessage" xml:space="preserve">
+    <value>Your telegram has been unlinked with {0}.</value>
+  </data>
 </root>

@@ -403,6 +403,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your telegram has been unlinked with {0}..
+        /// </summary>
+        public static string HasUnlinkedMessage {
+            get {
+                return ResourceManager.GetString("HasUnlinkedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hide QR code.
         /// </summary>
         public static string hideQRCode {
