@@ -7,7 +7,6 @@
         public const string LoginIP_Browser = "LoginIP_Browser";
         public const string GameEnable = "GameEnable_";
         public const string Jackpot = "Jackpot";
-        public const string ReportAuth = "Report_Auth";
         public const string Outputs = "outputs";
     }
 }

@@ -54,20 +54,8 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet, AllowProtectedMode]
         public string Auth()
         {
-            var param = userSession.GetProperty<string>(SessionConstants.ReportAuth);
-            if (!string.IsNullOrWhiteSpace(param))
-            {
-                return GetAuthParams(param);
-            }
+            var param = AesService.Default.Encrypt($"{userSession.UserName}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}&{DateTime.Now}", "!@#$");
 
-            param = AesService.Default.Encrypt($"{userSession.UserName}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}", "!@#$");
-            userSession.SetProperty(SessionConstants.ReportAuth, param);
-
-            return GetAuthParams(param);
-        }
-
-        private static string GetAuthParams(string param)
-        {
             return $"{AppSettings.ReportDomain}/Auth?param={param}";
         }
 

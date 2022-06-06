@@ -1627,11 +1627,19 @@
     <Compile Include="Controllers\NewCustomerCaptchaController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
-    <Compile Include="Controllers\ChatBotController.cs" />
-    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\ChatBotController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\DashboardController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Controllers\CustomerProfileController.cs" />
-    <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ErrorController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\DefaultController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Controllers\NicknameController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1639,16 +1647,24 @@
     <Compile Include="Controllers\PartialUMController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
-    <Compile Include="Controllers\ManualCheckProtectedModeController.cs" />
+    <Compile Include="Controllers\ManualCheckProtectedModeController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Controllers\ProtectionCodeController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
-    <Compile Include="Controllers\OtpController.cs" />
-    <Compile Include="Controllers\PasswordController.cs" />
-    <Compile Include="Controllers\SecurityCodeController.cs" />
+    <Compile Include="Controllers\OtpController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Controllers\TelegramChatBotController.cs" />
+    <Compile Include="Controllers\PasswordController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Controllers\SecurityCodeController.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Controllers\ThemeController.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1659,10 +1675,14 @@
     <Compile Include="Handlers\BannerHandler.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
-    <Compile Include="Handlers\ChatBotHandler.cs" />
+    <Compile Include="Handlers\ChatBotHandler.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Handlers\CustomerOtpHandler.cs" />
     <Compile Include="Handlers\CustomerProfileHandler.cs" />
-    <Compile Include="Handlers\DefaultHandler.cs" />
+    <Compile Include="Handlers\DefaultHandler.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Handlers\NetworkSpeedHandler.cs" />
     <Compile Include="Handlers\NicknameHandler.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
@@ -1684,8 +1704,10 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Handlers\UserMessageHandler.cs" />
-    <Compile Include="Helpers\DarkModeHelper.cs" />
     <Compile Include="Helpers\QRCodeAdapter.cs" />
+    <Compile Include="Helpers\DarkModeHelper.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Helpers\HmacAuthenticator.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
@@ -1695,7 +1717,9 @@
     <Compile Include="Helpers\RestClientHelper.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
-    <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="Helpers\UrlHelper.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\AllLanguagesQuery.cs" />
     <Compile Include="Requests\Banner\BannerQuery.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
@@ -1706,7 +1730,9 @@
     <Compile Include="Requests\ChatBot\ResendVerificationCodeCommand.cs" />
     <Compile Include="Requests\ChatBot\SetUpChatBotQuery.cs" />
     <Compile Include="Requests\ChatBot\UnsubscribeCommand.cs" />
-    <Compile Include="Requests\ChatBot\UpdateFunctionCommand.cs" />
+    <Compile Include="Requests\ChatBot\UpdateFunctionCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\ChatBot\UpdateLanguageCommand.cs" />
     <Compile Include="Requests\ChatBot\UpdateSelfdestructionPeriodCommand.cs" />
     <Compile Include="Requests\ChatBot\VerifyVerificationCodeCommand.cs" />
@@ -1728,22 +1754,32 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Requests\Otp\ChangeOtpStatusCommand.cs" />
-    <Compile Include="Requests\Otp\CheckDifferenceDeviceCommand.cs" />
+    <Compile Include="Requests\Otp\CheckDifferenceDeviceCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Otp\RemoveOtpCommand.cs" />
-    <Compile Include="Requests\Otp\ResetOtpCommand.cs" />
+    <Compile Include="Requests\Otp\ResetOtpCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Otp\ResetOtpQuery.cs" />
     <Compile Include="Requests\Otp\SetUpOtpCommand.cs" />
     <Compile Include="Requests\Otp\VerifyOtpQuery.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
-    <Compile Include="Requests\Otp\SetUpOtpQuery.cs" />
-    <Compile Include="Requests\Otp\VerifyOtpCommand.cs" />
+    <Compile Include="Requests\Otp\SetUpOtpQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="Requests\Otp\VerifyOtpCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Otp\VerifyOtpDifferentDeviceQuery.cs" />
     <Compile Include="Requests\Password\SkipForceChangePasswordCommand.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="Requests\Password\ChangePasswordCommand.cs" />
-    <Compile Include="Requests\Password\ChangePasswordQuery.cs" />
+    <Compile Include="Requests\Password\ChangePasswordQuery.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\Password\ForceChangePasswordQuery.cs" />
     <Compile Include="Requests\Password\ResetMainAccountPasswordCommand.cs" />
     <Compile Include="Requests\Password\ResetMainAccountPasswordQuery.cs" />
@@ -1758,7 +1794,9 @@
     <Compile Include="Requests\SecurityCode\SecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeByForcingCommand.cs" />
     <Compile Include="Requests\SecurityCode\ChangeSecurityCodeFirstLoginCommand.cs" />
-    <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs" />
+    <Compile Include="Requests\SecurityCode\ChangeUserOwnSecurityCodeCommand.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="Requests\SecurityCode\ForceChangeSecurityCodeQuery.cs" />
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\UpdateSecurityCodeFunctionCommand.cs">
@@ -1785,8 +1823,12 @@
       <SonarQubeExclude>true</SonarQubeExclude>
     </Compile>
     <Compile Include="ViewModels\ChatBot\ChatBotSettingViewModel.cs" />
-    <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs" />
-    <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs" />
+    <Compile Include="ViewModels\ChatBot\ChatBotViewModel.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
+    <Compile Include="ViewModels\ChatBot\RegisterAccountViewModel.cs">
+      <SonarQubeExclude>true</SonarQubeExclude>
+    </Compile>
     <Compile Include="ViewModels\ChatBot\VerifyAccountViewModel.cs" />
     <Compile Include="ViewModels\ContactUs\ContactUsViewModel.cs">
       <SonarQubeExclude>true</SonarQubeExclude>
