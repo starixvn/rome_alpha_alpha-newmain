@@ -62,10 +62,7 @@
         }
 
         public async Task<Result> Handle(UnsubscribeCommand message)
-        {
-            var bot = await GetTelegramBotAsync();
-            return await settingService.UnlinkAsync(bot.BotId, message.CustId, message.SubAccId, message.IP);
-        }
+            => await settingService.UnlinkAsync(message.CustId, message.SubAccId, message.IP);
 
         public async Task<Result> Handle(UpdateFunctionCommand message)
         {
