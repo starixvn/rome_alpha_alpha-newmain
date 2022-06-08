@@ -3,6 +3,7 @@
     using System;
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
+    using Alpha.Main.Helpers;
     using Alpha.Main.Services;
     using AppResources;
     using Criteria.SecurityCode;
@@ -135,7 +136,8 @@
             {
                 netThrottlingService.Throttle();
 
-                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId, param.IP));
+                string ip = string.IsNullOrWhiteSpace(param.IP) ? IPHelper.CustomerIp() : param.IP;
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId, ip));
             }
 
             return result;
