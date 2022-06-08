@@ -4,6 +4,7 @@
     using Alpha.Main.Configurations;
     using Alpha.Main.Models;
     using Alpha.Main.Site.Models.Requests;
+    using Alpha.Main.Site.Requests;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using Alpha.Web;
@@ -99,7 +100,7 @@
         [ChildActionOnly]
         public ActionResult Language(string langCode)
         {
-            var viewModel = mediator.Send(new AllLanguagesQuery(langCode, AppSettings.DisabledVietnamese));
+            var viewModel = mediator.Send(new TelegramBotLanguageQuery(langCode));
 
             return PartialView(viewModel);
         }

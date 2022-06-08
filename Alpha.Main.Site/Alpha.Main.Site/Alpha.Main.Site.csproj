@@ -1676,6 +1676,7 @@
     <Compile Include="Requests\SecurityCode\ResetSecurityCodeCommand.cs" />
     <Compile Include="Requests\SecurityCode\UpdateSecurityCodeFunctionCommand.cs" />
     <Compile Include="Requests\SecurityCode\VerifySecurityCodeCommand.cs" />
+    <Compile Include="Requests\TelegramBotLanguageQuery.cs" />
     <Compile Include="Requests\TelegramChatBot\GenerateQRCodeCommand.cs" />
     <Compile Include="Requests\TelegramChatBot\ResendOTPCommand.cs" />
     <Compile Include="Requests\TelegramChatBot\SetUpChatBotQuery.cs" />

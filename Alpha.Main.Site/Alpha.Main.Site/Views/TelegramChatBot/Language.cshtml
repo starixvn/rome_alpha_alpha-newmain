@@ -5,13 +5,22 @@
 <ul class="dropdown-menu list-language" id="language" data-currentlanguage="@Model.CurrentLanguage">
     @foreach (var languageItem in Model.Data)
     {
-        if (languageItem.Key != "ja-JP" && languageItem.Key != "ko-KR")
+        var langCodeClass = languageItem.Key.ToLowerInvariant();
+
+        if (languageItem.Key.Equals("zh-Hant"))
         {
-            <li class="@languageItem.Key">
-                <a class="changelanguage-link" data-value="@languageItem.Key">
-                    <span class="icon-flag langFlag-@languageItem.Key.ToLowerInvariant()"></span>@languageItem.Value
-                </a>
-            </li>
+            langCodeClass = "zh-tw";
         }
+
+        if (languageItem.Key.Equals("zh-Hans"))
+        {
+            langCodeClass = "zh-cn";
+        }
+
+        <li class="@languageItem.Key">
+            <a class="changelanguage-link" data-value="@languageItem.Key">
+                <span class="icon-flag langFlag-@langCodeClass"></span>@languageItem.Value
+            </a>
+        </li>
     }
 </ul>

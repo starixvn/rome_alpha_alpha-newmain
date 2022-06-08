@@ -13,6 +13,9 @@
         public const string Korean = "ko-KR";
         public const string Vietnamese = "vi-VN";
 
+        public const string NewChineseTraditional = "zh-Hant";
+        public const string NewChineseSimplified = "zh-Hans";
+
         public const string Default = English;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
@@ -37,6 +40,14 @@
             [Thai] = "ภาษาไทย",
             [Korean] = "한국어",
             [Vietnamese] = "Tiếng Việt"
+        };
+
+        public static readonly Dictionary<string, string> TelegramChatBotCodeNames = new Dictionary<string, string>
+        {
+            [English] = "English",
+            [NewChineseTraditional] = "繁體中文",
+            [NewChineseSimplified] = "简体中文",
+            [Thai] = "ภาษาไทย",
         };
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]
