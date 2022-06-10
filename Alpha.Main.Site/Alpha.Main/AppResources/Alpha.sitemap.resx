@@ -408,4 +408,7 @@
   <data name="BetCreditTracking" xml:space="preserve">
     <value>Bet Credit Tracking</value>
   </data>
+  <data name="MyMonitorAccounts" xml:space="preserve">
+    <value>My Monitor Accounts</value>
+  </data>
 </root>

@@ -155,5 +155,6 @@
       <siteMapNode resourceKey="personalMessage" appPath="MessageAppPath"  url="MessageHistory/Index?messagetype=1" byPassAuthorization="true"></siteMapNode>
     </siteMapNode>
     <siteMapNode resourceKey="chatbot" appPath="MainAppPath" url="TelegramChatBot/Setup"></siteMapNode>
+    <siteMapNode resourceKey="MyMonitorAccounts" appPath="MemberInfoAppPath" url="MyWatchListAccounts/Index"></siteMapNode>
   </siteMapNode>
 </siteMap>

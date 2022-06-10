@@ -610,6 +610,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Monitor Accounts.
+        /// </summary>
+        public static string MyMonitorAccounts {
+            get {
+                return ResourceManager.GetString("MyMonitorAccounts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Agent.
         /// </summary>
         public static string newAgent {
