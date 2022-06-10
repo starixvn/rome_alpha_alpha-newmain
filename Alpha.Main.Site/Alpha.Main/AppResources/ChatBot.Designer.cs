@@ -1078,6 +1078,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select &quot;Start&quot; on Telegram Chatbot before you input the OTP..
+        /// </summary>
+        public static string StartBeforeInputOTP {
+            get {
+                return ResourceManager.GetString("StartBeforeInputOTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start setting up your Telegram Chatbot by clicking on this button and follow the instructions.
         /// </summary>
         public static string StartSettingUp {

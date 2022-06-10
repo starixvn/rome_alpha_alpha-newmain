@@ -531,4 +531,7 @@
   <data name="HasUnlinkedMessage" xml:space="preserve">
     <value>Your telegram has been unlinked with {0}.</value>
   </data>
+  <data name="StartBeforeInputOTP" xml:space="preserve">
+    <value>Please select "Start" on Telegram Chatbot before you input the OTP.</value>
+  </data>
 </root>

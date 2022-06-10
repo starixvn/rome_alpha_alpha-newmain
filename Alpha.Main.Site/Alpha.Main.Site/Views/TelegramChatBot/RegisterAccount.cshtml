@@ -68,6 +68,7 @@
 @Html.Hidden("OTPIsRequired", ChatBot.OTPIsRequired)
 @Html.Hidden("ResendOTPSuccessfully", ChatBot.ResendOTPSuccessfully)
 @Html.Hidden("CaptchaIsRequired", ChatBot.captchaIsRequired)
+@Html.Hidden("StartBeforeInputOTP", ChatBot.StartBeforeInputOTP)
 @Html.Hidden("Language", Model.Language)
 @section Scripts{
     @StaticResources.RenderScripts("~/assets/bundles/telegramchatbot/register-account")

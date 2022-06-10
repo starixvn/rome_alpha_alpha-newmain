@@ -13,7 +13,7 @@
     <div id="verification-code-message"></div>
     <form class="verification-form" id="verification-form" action="@Url.Action("VerifyOTP")" method="post">
         <div class="form-group">
-            <input name="OTP" id="txtOTP" maxlength="6" class="verify-text" placeholder="OTP" type="text" />
+            <input name="OTP" id="txtOTP" maxlength="6" class="verify-text" placeholder="OTP" type="number" oninput="this.value=this.value.slice(0,this.maxLength)"/>
         </div>
         <div id="captcha-container">
             @if (Model.IsShowCaptcha)

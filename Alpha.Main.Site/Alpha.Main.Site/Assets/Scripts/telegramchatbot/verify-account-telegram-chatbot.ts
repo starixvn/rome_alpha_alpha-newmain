@@ -27,11 +27,14 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
     imageElementId: string;
     tokenElementId: string;
 
+    NOT_START_ERROR_CODE = 102;
+
     resources = {
         invalidOTP: (<HTMLInputElement>document.getElementById('InvalidOTP')).value,
         otpIsRequired: (<HTMLInputElement>document.getElementById('OTPIsRequired')).value,
         captchaIsRequired: (<HTMLInputElement>document.getElementById('CaptchaIsRequired')).value,
         resendOTPSuccessfully: (<HTMLInputElement>document.getElementById('ResendOTPSuccessfully')).value,
+        startBeforeInputOTP: (<HTMLInputElement>document.getElementById("StartBeforeInputOTP")).value
     }
 
     init = () => {
@@ -153,6 +156,8 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
                     this.$msgExpired.removeClass("hide");
                 } else if (result.Code == -2 || result.Code == -3) {
                     alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.invalidOTP }));
+                } else if (result.Code == this.NOT_START_ERROR_CODE) {
+                    alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.startBeforeInputOTP}));
                 } else {
                     alpha.showMessage(this.$verificationMessage, new Result({ Code: result.Code, Message: result.Message }));
                 }
@@ -186,12 +191,22 @@ class VerifyAccountTelegramChatbot extends BaseTelegramChatBot {
                 return;
             }
 
+            if (data.Code == this.NOT_START_ERROR_CODE) {
+                alpha.showMessage(this.$verificationMessage, new Result({ Code: 1, Message: this.resources.startBeforeInputOTP }));
+                this.$msgExpired.addClass("hide");
+                return;
+            }
+
             if (data.IsOk) {
                 alpha.showMessage(this.$verificationMessage, new Result({ Code: 0, Message: this.resources.resendOTPSuccessfully }));
                 this.$msgExpired.addClass("hide");
 
                 this.$txtOTP.val("");
                 this.$txtOTP.focus();
+
+                setTimeout(() => {
+                    this.$verificationMessage.html("");
+                }, 3000);
             }
         }
     }
