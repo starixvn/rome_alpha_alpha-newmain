@@ -35,7 +35,7 @@
 
         public async Task<ChatBotViewModel> Handle(SetUpChatBotQuery message)
         {
-            var custBotMessenger = await settingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId);
+            var custBotMessenger = await settingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId, message.Language);
             return new ChatBotViewModel(custBotMessenger); 
         }
 

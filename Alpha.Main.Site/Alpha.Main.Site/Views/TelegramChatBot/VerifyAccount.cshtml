@@ -13,8 +13,7 @@
     <div id="verification-code-message"></div>
     <form class="verification-form" id="verification-form" action="@Url.Action("VerifyOTP")" method="post">
         <div class="form-group">
-            <label>@ChatBot.lblOTP</label>
-            <input name="OTP" id="txtOTP" maxlength="6" type="tel" class="verify-text" />
+            <input name="OTP" id="txtOTP" maxlength="6" class="verify-text" placeholder="OTP" type="text" />
         </div>
         <div id="captcha-container">
             @if (Model.IsShowCaptcha)

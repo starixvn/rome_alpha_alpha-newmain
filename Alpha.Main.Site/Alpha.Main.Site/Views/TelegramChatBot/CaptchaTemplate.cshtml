@@ -12,7 +12,6 @@
 @Html.Hidden("ModelImageElementId", Model.ImageElementId)
 @Html.Hidden("ReloadCaptchaFunctionName", reloadCaptchaFunctionName)
 <div class="form-group captcha-container">
-    <label>@ChatBot.lblCaptcha</label>
     <div class="group-captcha">
         @if (Model.IsRequired)
         {
@@ -28,7 +27,7 @@
         }
         else
         {
-            @Html.TextBox(Model.InputElementId, null, new { @id = "txtCaptcha", @class = "captcha-text", @tabindex = "4" })
+            @Html.TextBox(Model.InputElementId, null, new { @id = "txtCaptcha", @class = "captcha-text", @tabindex = "4", @placeholder= @ChatBot.lblCaptcha })
         }
         <div class="captcha-code">
             <img alt="" id="@Model.ImageElementId" src="@Model.ImageUrl" width="100px" height="30px" />
