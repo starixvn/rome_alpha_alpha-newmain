@@ -14,8 +14,11 @@
         public UpdateLanguageCommand(IUserSession userSession)
         {
             userSession = userSession ?? new UserSessionExt();
+            CustId = userSession.CustId;
             IP = userSession.UserLoginIp;
         }
+
+        public int CustId { get; set; }
 
         public int UserId { get; set; }
 

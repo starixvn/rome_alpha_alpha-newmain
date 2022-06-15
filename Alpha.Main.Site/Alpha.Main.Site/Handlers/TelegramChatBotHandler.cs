@@ -80,7 +80,7 @@
         public async Task<Result> Handle(UpdateLanguageCommand message)
         {
             var bot = await GetTelegramBotAsync();
-            return await settingService.UpdateLanguage(message.UserId, bot.BotId, message.Language, message.IP);
+            return await settingService.UpdateLanguage(message.UserId, bot.BotId, message.Language, message.CustId, message.IP);
         }
 
         private async Task<BotEntity> GetTelegramBotAsync()
