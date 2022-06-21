@@ -26,8 +26,7 @@
                 </p>
                 <ul id="registerTelegramPanel" class="list-requirements">
                     <li>
-                        <p class="bold">@ChatBot.InstallTelegram</p>
-                        <p><a class="link" href="https://www.telegram.org/" target="_blank"><strong>@ChatBot.Telegram</strong></a> @Html.Raw(@ChatBot.IntroTelegram)</p>
+                        <p class="bold">@Html.Raw(ChatBot.InstallTelegram)</p>
                         <div class="download-content">
                             <div class="logo-telegram">
                                 <img id="logoTelegram" src="~/Assets/Styles/telegramchatbot/images/telegram.png" />
@@ -54,7 +53,7 @@
                         </div>
                     </li>
                     <li>
-                        <p class="bold">@ChatBot.StartSettingUp</p>
+                        <p class="bold">@Html.Raw(ChatBot.StartSettingUp)</p>
                         <button class="btn-chatbot btn-gen-qr-code" id="btnGenQRCode">@ChatBot.GeneratePrivateQRCode</button>
                     </li>
                 </ul>

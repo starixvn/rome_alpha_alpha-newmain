@@ -402,32 +402,27 @@
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
-  <data name="DoNotOpenWithoutScanningQRCode" xml:space="preserve">
-    <value>(Do not open the app without scanning this QR Code)</value>
-  </data>
-  <data name="Enable" xml:space="preserve">
-    <value>Enable</value>
+  <data name="EnableDisable" xml:space="preserve">
+    <value>Enable/Disable</value>
   </data>
   <data name="EnterOTP" xml:space="preserve">
-    <value>Enter the generated OTP from Telegram Chatbot within 3 minutes to verify your account</value>
+    <value>Enter the OTP sent from Telegram Chatbot to verify your account (OTP will expire within 3 minutes):</value>
   </data>
   <data name="GeneratePrivateQRCode" xml:space="preserve">
-    <value>Generate private QR Code</value>
+    <value>Generate QR Code</value>
   </data>
   <data name="HowItWorks" xml:space="preserve">
     <value>How it works</value>
   </data>
   <data name="InstallTelegram" xml:space="preserve">
-    <value>Install Telegram and create a free account</value>
-  </data>
-  <data name="IntroTelegram" xml:space="preserve">
-    <value>is one of the &lt;strong&gt;world's top 10 most downloaded app&lt;/strong&gt;. It's  &lt;strong&gt;free&lt;/strong&gt;, &lt;strong&gt;cross-platform&lt;/strong&gt; and &lt;strong&gt;cloud-based&lt;/strong&gt; instant message service. &lt;br /&gt; Conversations in Telegram are &lt;strong&gt;encrypted&lt;/strong&gt; and no one else can access the data</value>
+    <value>Download the application on Google Play/App Store, or click &lt;strong&gt;Show QR Code&lt;/strong&gt; and scan the QR code using your phone:</value>
   </data>
   <data name="IntroTelegramChatbot" xml:space="preserve">
-    <value>&lt;strong&gt;"Chatbot"&lt;/strong&gt; function integrated with this &lt;strong&gt;Telegram IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt; &lt;br /&gt; To start setting up Chatbot, please follow below steps:</value>
+    <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.
+&lt;br /&gt;To setup the chatbot, please follow the instructions below:</value>
   </data>
   <data name="IntroTelegramReports" xml:space="preserve">
-    <value>Using Telegram Chatbot, you can get following reports right on Telegram without accessing to Alpha Site: &lt;br /&gt; Type "/help" on Chatbot for full list of commands</value>
+    <value>Using Telegram Chatbot, you can get the following reports right on Telegram without accessing to the Agency Site: &lt;br /&gt; Type "/help" on the chatbot for the full commands list.</value>
   </data>
   <data name="InvalidOTP" xml:space="preserve">
     <value>OTP is incorrect, please try again</value>
@@ -448,13 +443,13 @@
     <value>Notifications and Settings</value>
   </data>
   <data name="NotificationAndSettingsIntro" xml:space="preserve">
-    <value>Telegram Chatbot can automatically push following notifications to your Telegram</value>
+    <value>Choose which reports you want Telegram Chatbot to notify you:</value>
   </data>
   <data name="OrUseThisLink" xml:space="preserve">
-    <value>Or use this link:</value>
+    <value>Or click this link:</value>
   </data>
   <data name="OTPIsRequired" xml:space="preserve">
-    <value>Please input OTP.</value>
+    <value>Please enter OTP.</value>
   </data>
   <data name="Outstanding" xml:space="preserve">
     <value>Outstanding</value>
@@ -481,19 +476,19 @@
     <value>Reports</value>
   </data>
   <data name="ResendOTPSuccessfully" xml:space="preserve">
-    <value>Resend OTP successfully.</value>
+    <value>Resent OTP.</value>
   </data>
   <data name="ScanQRCode" xml:space="preserve">
-    <value>Scan this QR Code with your mobile to open Telegram Chatbot with your mobile</value>
+    <value>Scan this QR Code using your mobile device to open Telegram Chatbot</value>
   </data>
   <data name="SeeHowItWorks" xml:space="preserve">
     <value>See how it works</value>
   </data>
   <data name="SelectStartOnTelegramChatbot" xml:space="preserve">
-    <value>Select START on Telegram Chatbot then proceed to next step</value>
+    <value>Click &lt;strong&gt;START&lt;/strong&gt; on Telegram Chatbot then proceed to the next step</value>
   </data>
   <data name="StartSettingUp" xml:space="preserve">
-    <value>Start setting up your Telegram Chatbot by clicking on this button and follow the instructions</value>
+    <value>Sign up on Telegram using your phone number, and click &lt;strong&gt;Generate QR Code&lt;/strong&gt;</value>
   </data>
   <data name="Telegram" xml:space="preserve">
     <value>Telegram</value>
@@ -517,10 +512,10 @@
     <value>Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4)</value>
   </data>
   <data name="YouCanTurnOnOff" xml:space="preserve">
-    <value>You can turn on/off each of these notifications using Settings action in Telegram Chatbot</value>
+    <value>You can turn on/off any of the above notifications right here, or via Settings in Telegram Chatbot.</value>
   </data>
   <data name="ChatID" xml:space="preserve">
-    <value>ChatID</value>
+    <value>Chat ID</value>
   </data>
   <data name="UnsubscribeTelegramBotWarning" xml:space="preserve">
     <value>Are you sure you want to unlink?</value>
@@ -529,9 +524,9 @@
     <value>OTP is expired, please &lt;span id="btnResend" class="link resend-code"&gt;click here&lt;/span&gt; to generate new OTP.</value>
   </data>
   <data name="HasUnlinkedMessage" xml:space="preserve">
-    <value>Your telegram has been unlinked with {0}.</value>
+    <value>Your Telegram has been unlinked with {0}.</value>
   </data>
   <data name="StartBeforeInputOTP" xml:space="preserve">
-    <value>Please select "Start" on Telegram Chatbot before you input the OTP.</value>
+    <value>Please click &lt;strong&gt;START&lt;/strong&gt; on Telegram Chatbot before you input the OTP.</value>
   </data>
 </root>

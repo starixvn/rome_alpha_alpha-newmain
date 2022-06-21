@@ -10,13 +10,13 @@
     </div>
     <div id="notification" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingNotification">
         <div class="panel-body has-padding">
-            <p>@ChatBot.NotificationAndSettingsIntro: </p>
+            <p>@ChatBot.NotificationAndSettingsIntro</p>
             <table class="tblRpt tblRpt-bordered tbl-notifications">
                 <thead>
                     <tr>
                         <th class="col-notification">@ChatBot.Notification</th>
                         <th>@ChatBot.Description</th>
-                        <th class="col-enable">@ChatBot.Enable</th>
+                        <th class="col-enable">@ChatBot.EnableDisable</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,7 +24,7 @@
                     {
                         <tr>
                             <td class="text-center bold">@function.FunctionName</td>
-                            <td>@function.Description</td>
+                            <td>@Html.Raw(function.Description)</td>
                             <td class="text-center">
                                 <label class="switch">
                                     <input data-functionId="@function.FunctionId" 

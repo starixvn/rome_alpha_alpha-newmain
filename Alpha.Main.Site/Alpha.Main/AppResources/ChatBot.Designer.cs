@@ -241,7 +241,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ChatID.
+        ///   Looks up a localized string similar to Chat ID.
         /// </summary>
         public static string ChatID {
             get {
@@ -295,25 +295,16 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Do not open the app without scanning this QR Code).
+        ///   Looks up a localized string similar to Enable/Disable.
         /// </summary>
-        public static string DoNotOpenWithoutScanningQRCode {
+        public static string EnableDisable {
             get {
-                return ResourceManager.GetString("DoNotOpenWithoutScanningQRCode", resourceCulture);
+                return ResourceManager.GetString("EnableDisable", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable.
-        /// </summary>
-        public static string Enable {
-            get {
-                return ResourceManager.GetString("Enable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enter the generated OTP from Telegram Chatbot within 3 minutes to verify your account.
+        ///   Looks up a localized string similar to Enter the OTP sent from Telegram Chatbot to verify your account (OTP will expire within 3 minutes):.
         /// </summary>
         public static string EnterOTP {
             get {
@@ -385,7 +376,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generate private QR Code.
+        ///   Looks up a localized string similar to Generate QR Code.
         /// </summary>
         public static string GeneratePrivateQRCode {
             get {
@@ -403,7 +394,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your telegram has been unlinked with {0}..
+        ///   Looks up a localized string similar to Your Telegram has been unlinked with {0}..
         /// </summary>
         public static string HasUnlinkedMessage {
             get {
@@ -466,7 +457,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Install Telegram and create a free account.
+        ///   Looks up a localized string similar to Download the application on Google Play/App Store, or click &lt;strong&gt;Show QR Code&lt;/strong&gt; and scan the QR code using your phone:.
         /// </summary>
         public static string InstallTelegram {
             get {
@@ -547,16 +538,8 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to is one of the &lt;strong&gt;world&apos;s top 10 most downloaded app&lt;/strong&gt;. It&apos;s  &lt;strong&gt;free&lt;/strong&gt;, &lt;strong&gt;cross-platform&lt;/strong&gt; and &lt;strong&gt;cloud-based&lt;/strong&gt; instant message service. &lt;br /&gt; Conversations in Telegram are &lt;strong&gt;encrypted&lt;/strong&gt; and no one else can access the data.
-        /// </summary>
-        public static string IntroTelegram {
-            get {
-                return ResourceManager.GetString("IntroTelegram", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;strong&gt;&quot;Chatbot&quot;&lt;/strong&gt; function integrated with this &lt;strong&gt;Telegram IM&lt;/strong&gt; allows you to receive &lt;strong&gt;up-to-date significant information of your business conveniently and securely without the need to access to this site.&lt;/strong&gt; &lt;br /&gt; To start setting up Chatbot, please follow below steps:.
+        ///   Looks up a localized string similar to &lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.
+        ///&lt;br /&gt;To setup the chatbot, please follow the instructions below:.
         /// </summary>
         public static string IntroTelegramChatbot {
             get {
@@ -565,7 +548,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Using Telegram Chatbot, you can get following reports right on Telegram without accessing to Alpha Site: &lt;br /&gt; Type &quot;/help&quot; on Chatbot for full list of commands.
+        ///   Looks up a localized string similar to Using Telegram Chatbot, you can get the following reports right on Telegram without accessing to the Agency Site: &lt;br /&gt; Type &quot;/help&quot; on the chatbot for the full commands list..
         /// </summary>
         public static string IntroTelegramReports {
             get {
@@ -745,7 +728,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telegram Chatbot can automatically push following notifications to your Telegram.
+        ///   Looks up a localized string similar to Choose which reports you want Telegram Chatbot to notify you:.
         /// </summary>
         public static string NotificationAndSettingsIntro {
             get {
@@ -781,7 +764,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Or use this link:.
+        ///   Looks up a localized string similar to Or click this link:.
         /// </summary>
         public static string OrUseThisLink {
             get {
@@ -799,7 +782,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please input OTP..
+        ///   Looks up a localized string similar to Please enter OTP..
         /// </summary>
         public static string OTPIsRequired {
             get {
@@ -1006,7 +989,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Resend OTP successfully..
+        ///   Looks up a localized string similar to Resent OTP..
         /// </summary>
         public static string ResendOTPSuccessfully {
             get {
@@ -1015,7 +998,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scan this QR Code with your mobile to open Telegram Chatbot with your mobile.
+        ///   Looks up a localized string similar to Scan this QR Code using your mobile device to open Telegram Chatbot.
         /// </summary>
         public static string ScanQRCode {
             get {
@@ -1033,7 +1016,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select START on Telegram Chatbot then proceed to next step.
+        ///   Looks up a localized string similar to Click &lt;strong&gt;START&lt;/strong&gt; on Telegram Chatbot then proceed to the next step.
         /// </summary>
         public static string SelectStartOnTelegramChatbot {
             get {
@@ -1078,7 +1061,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select &quot;Start&quot; on Telegram Chatbot before you input the OTP..
+        ///   Looks up a localized string similar to Please click &lt;strong&gt;START&lt;/strong&gt; on Telegram Chatbot before you input the OTP..
         /// </summary>
         public static string StartBeforeInputOTP {
             get {
@@ -1087,7 +1070,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start setting up your Telegram Chatbot by clicking on this button and follow the instructions.
+        ///   Looks up a localized string similar to Sign up on Telegram using your phone number, and click &lt;strong&gt;Generate QR Code&lt;/strong&gt;.
         /// </summary>
         public static string StartSettingUp {
             get {
@@ -1348,7 +1331,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can turn on/off each of these notifications using Settings action in Telegram Chatbot.
+        ///   Looks up a localized string similar to You can turn on/off any of the above notifications right here, or via Settings in Telegram Chatbot..
         /// </summary>
         public static string YouCanTurnOnOff {
             get {

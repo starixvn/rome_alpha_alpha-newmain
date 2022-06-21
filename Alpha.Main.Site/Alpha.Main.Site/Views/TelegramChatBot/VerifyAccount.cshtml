@@ -1,12 +1,11 @@
 ﻿@model Alpha.Main.Site.ViewModels.TelegramChatBot.VerifyAccountViewModel
 <li>
     <p class="bold">@ChatBot.ScanQRCode</p>
-    <p>@ChatBot.DoNotOpenWithoutScanningQRCode</p>
     <div class="list-qr-code">
         <img class="private-qr-code-img" id="imgPrivateQRCode" src="@(Model.QRCodeDataUrl)" />
         <div class="private-qr-code-link">@ChatBot.OrUseThisLink <br /> <a class="link" href="@(Model.Url)" target="_blank">@(Model.Url)</a></div>
     </div>
-    <div>@ChatBot.SelectStartOnTelegramChatbot</div>
+    <div>@Html.Raw(ChatBot.SelectStartOnTelegramChatbot)</div>
 </li>
 <li>
     <p class="bold">@ChatBot.EnterOTP</p>
