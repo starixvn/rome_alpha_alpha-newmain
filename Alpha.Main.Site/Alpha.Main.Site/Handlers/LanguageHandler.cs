@@ -49,7 +49,7 @@
             }
 
             var viewModel = new LanguageViewModel(
-                Language.TelegramChatBotCodeNames,
+                message.DisabledVietnamese ? Language.TelegramChatBotCodeNamesWithoutVietNamese :  Language.TelegramChatBotCodeNames,
                 StandardizeTelegramBotCodeNames(message.LanguageCode));
 
             return viewModel;
