@@ -471,4 +471,7 @@
   <data name="OTPIsRequired" xml:space="preserve">
     <value>Vui lòng nhập OTP.</value>
   </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>OTP không đúng, vui lòng thử lại.</value>
+  </data>
 </root>
