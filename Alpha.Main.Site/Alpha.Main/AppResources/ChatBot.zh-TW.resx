@@ -404,7 +404,7 @@
     <value>或者點擊此鏈接：</value>
   </data>
   <data name="OTPIsExpiredMessage" xml:space="preserve">
-    <value>OTP 已過期，請&lt;strong&gt;點擊此處&lt;/strong&gt;產生新的 OTP。</value>
+    <value>OTP 已過期，請&lt;span id="btnResend" class="link resend-code"&gt;點擊此處&lt;/span&gt;產生新的 OTP。</value>
   </data>
   <data name="Outstanding" xml:space="preserve">
     <value>Outstanding</value>
@@ -468,5 +468,8 @@
   </data>
   <data name="OTPIsRequired" xml:space="preserve">
     <value>請輸入一次性密碼</value>
+  </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>一次性密碼不正確，請再次嘗試</value>
   </data>
 </root>

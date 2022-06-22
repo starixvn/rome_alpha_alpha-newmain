@@ -406,7 +406,7 @@
     <value>Hoặc nhấn liên kết này:</value>
   </data>
   <data name="OTPIsExpiredMessage" xml:space="preserve">
-    <value>OTP đã hết hạn, vui lòng &lt;strong&gt;nhấn vào đây&lt;/strong&gt; để tạo OTP mới.</value>
+    <value>OTP đã hết hạn, vui lòng &lt;span id="btnResend" class="link resend-code"&gt;nhấn vào đây&lt;/span&gt; để tạo OTP mới.</value>
   </data>
   <data name="Outstanding" xml:space="preserve">
     <value>Outstanding</value>

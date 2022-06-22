@@ -397,7 +397,7 @@
     <value>หรือคลิกที่ลิงค์นี้</value>
   </data>
   <data name="OTPIsExpiredMessage" xml:space="preserve">
-    <value>OTP หมดอายุ โปรด &lt;strong&gt;คลิกที่นี่&lt;/strong&gt; เพื่อรับ OTP ใหม่</value>
+    <value>OTP หมดอายุ โปรด &lt;span id="btnResend" class="link resend-code"&gt;คลิกที่นี่&lt;/span&gt; เพื่อรับ OTP ใหม่</value>
   </data>
   <data name="Outstanding" xml:space="preserve">
     <value>Outstanding</value>
@@ -461,5 +461,8 @@
   </data>
   <data name="OTPIsRequired" xml:space="preserve">
     <value>โปรดป้อนรหัส OTP</value>
+  </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>รหัส OTP ไม่ถูกต้อง โปรดลองใหม่อีกครั้ง</value>
   </data>
 </root>
