@@ -397,7 +397,7 @@
     <value>Thông báo</value>
   </data>
   <data name="NotificationAndSettings" xml:space="preserve">
-    <value>Thông Báo và Thiết Lập</value>
+    <value>Thông Báo và Cài Đặt</value>
   </data>
   <data name="NotificationAndSettingsIntro" xml:space="preserve">
     <value>Chọn báo cáo mà bạn muốn Telegram Chatbot gửi cho bạn:</value>
@@ -457,7 +457,7 @@
     <value>Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4)</value>
   </data>
   <data name="YouCanTurnOnOff" xml:space="preserve">
-    <value>Bạn có thể bật/tắt bất kỳ thông báo nào ở trên ngay tại đây, hoặc thông qua Thiết Lập trên Telegram Chatbot.</value>
+    <value>Bạn có thể bật/tắt bất kỳ thông báo nào ở trên ngay tại đây, hoặc thông qua Cài Đặt trên Telegram Chatbot.</value>
   </data>
   <data name="ChatID" xml:space="preserve">
     <value>ID trò chuyện</value>
