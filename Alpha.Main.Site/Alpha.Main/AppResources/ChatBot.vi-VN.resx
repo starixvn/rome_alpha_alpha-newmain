@@ -363,117 +363,80 @@
   <data name="ChatBotTitle" xml:space="preserve">
     <value>Chatbot</value>
   </data>
-  <data name="AbnormalLoginAlert" xml:space="preserve">
-    <value>Abnormal Login Alert</value>
-  </data>
-  <data name="AbnormalLoginAlertDescription" xml:space="preserve">
-    <value>Alert to your Telegram when there's unrecognized login activity using your account on Alpha Site</value>
-  </data>
-  <data name="BalanceDescription" xml:space="preserve">
-    <value>Get the Alpha Balance Info Report. You can also get downlines' Balance Info report</value>
-  </data>
   <data name="BalanceInfo" xml:space="preserve">
     <value>Balance Info</value>
   </data>
-  <data name="ChangePasswordAlert" xml:space="preserve">
-    <value>Change Password Alert</value>
-  </data>
-  <data name="ChangePasswordAlertDescription" xml:space="preserve">
-    <value>Alert to your Telegram when your Alpha Site's Account's Password is changed</value>
-  </data>
-  <data name="ChangeSecurityCodeAlert" xml:space="preserve">
-    <value>Change Security Code Alert</value>
-  </data>
-  <data name="ChangeSecurityCodeAlertDescription" xml:space="preserve">
-    <value>Alert to your Telegram when your Security Code is changed</value>
-  </data>
   <data name="Description" xml:space="preserve">
-    <value>Description</value>
+    <value>Mô tả</value>
   </data>
   <data name="EnableDisable" xml:space="preserve">
-    <value>Enable/Disable</value>
+    <value>Bật/Tắt</value>
   </data>
   <data name="EnterOTP" xml:space="preserve">
-    <value>Enter the OTP sent from Telegram Chatbot to verify your account (OTP will expire within 3 minutes):</value>
+    <value>Nhập OTP gửi từ Telegram Chatbot để xác nhận tài khoản của bạn (OTP sẽ hết hạn trong 3 phút):</value>
   </data>
   <data name="GeneratePrivateQRCode" xml:space="preserve">
-    <value>Generate QR Code</value>
+    <value>Tạo mã QR</value>
   </data>
   <data name="HowItWorks" xml:space="preserve">
-    <value>How it works</value>
+    <value>Hướng dẫn</value>
   </data>
   <data name="InstallTelegram" xml:space="preserve">
-    <value>Download the application on Google Play/App Store, or click &lt;strong&gt;Show QR Code&lt;/strong&gt; and scan the QR code using your phone:</value>
+    <value>Tải ứng dụng trên Google Play/App Store, hoặc nhấn &lt;strong&gt;Hiển thị mã QR&lt;/strong&gt; và quét mã QR bằng điện thoại của bạn:</value>
   </data>
   <data name="IntroTelegramChatbot" xml:space="preserve">
-    <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.
-&lt;br /&gt;To setup the chatbot, please follow the instructions below:</value>
+    <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; giúp bạn cập nhật thông tin bằng cách tương tác với Chatbot mà không cần truy cập vào trang Agency. Chatbot chạy trên Telegram - một ứng dụng nhắn tin miễn phí, an toàn, được mã hóa, và đa nền tảng.&lt;br /&gt; Để cài đặt Chatbot, vui lòng làm theo hướng dẫn sau:</value>
   </data>
   <data name="IntroTelegramReports" xml:space="preserve">
-    <value>Using Telegram Chatbot, you can get the following reports right on Telegram without accessing to the Agency Site: &lt;br /&gt; Type "/help" on the chatbot for the full commands list.</value>
+    <value>Khi dùng Telegram Chatbot, bạn có thể nhận được các thông báo sau ngay trên Telegram mà không cần truy cập trang Agency: &lt;br /&gt; Gõ "/help" trên Chatbot để xem danh sách lệnh đầy đủ.</value>
   </data>
   <data name="lblOTP" xml:space="preserve">
     <value>OTP</value>
   </data>
-  <data name="MemberWinLossLimit" xml:space="preserve">
-    <value>Member Win Loss Limit</value>
-  </data>
-  <data name="MemberWinLossLimitDescription" xml:space="preserve">
-    <value>Alert to your Telegram whenever a Member reached their Win Loss limit</value>
-  </data>
   <data name="Notification" xml:space="preserve">
-    <value>Notification</value>
+    <value>Thông báo</value>
   </data>
   <data name="NotificationAndSettings" xml:space="preserve">
-    <value>Notifications and Settings</value>
+    <value>Thông Báo và Thiết Lập</value>
   </data>
   <data name="NotificationAndSettingsIntro" xml:space="preserve">
-    <value>Choose which reports you want Telegram Chatbot to notify you:</value>
+    <value>Chọn báo cáo mà bạn muốn Telegram Chatbot gửi cho bạn:</value>
   </data>
   <data name="OrUseThisLink" xml:space="preserve">
-    <value>Or click this link:</value>
+    <value>Hoặc nhấn liên kết này:</value>
   </data>
   <data name="OTPIsExpiredMessage" xml:space="preserve">
-    <value>OTP is expired, please &lt;span id="btnResend" class="link resend-code"&gt;click here&lt;/span&gt; to generate new OTP.</value>
+    <value>OTP đã hết hạn, vui lòng &lt;strong&gt;nhấn vào đây&lt;/strong&gt; để tạo OTP mới.</value>
   </data>
   <data name="Outstanding" xml:space="preserve">
     <value>Outstanding</value>
   </data>
-  <data name="OutstandingDescription" xml:space="preserve">
-    <value>Get the total row of Alpha Outstanding Report of current Date. You can also get downlines' Outstanding report</value>
-  </data>
   <data name="PersonalMessage" xml:space="preserve">
     <value>Personal Message</value>
-  </data>
-  <data name="PersonalMessageDescription" xml:space="preserve">
-    <value>Push Alpha's Personal Message to your Telegram</value>
   </data>
   <data name="ProblemAccount" xml:space="preserve">
     <value>Problem Account</value>
   </data>
-  <data name="ProblemAccountDescription" xml:space="preserve">
-    <value>Alert to your Telegram when there's new downline that's marked as Problem Account</value>
-  </data>
   <data name="Report" xml:space="preserve">
-    <value>Report</value>
+    <value>Báo cáo</value>
   </data>
   <data name="Reports" xml:space="preserve">
-    <value>Reports</value>
+    <value>Báo cáo</value>
   </data>
   <data name="ResendOTPSuccessfully" xml:space="preserve">
-    <value>Resent OTP.</value>
+    <value>Đã gửi OTP.</value>
   </data>
   <data name="ScanQRCode" xml:space="preserve">
-    <value>Scan this QR Code using your mobile device to open Telegram Chatbot</value>
+    <value>Quét mã QR này trên thiết bị di động của bạn để mở Telegram Chatbot</value>
   </data>
   <data name="SeeHowItWorks" xml:space="preserve">
-    <value>See how it works</value>
+    <value>Xem hướng dẫn</value>
   </data>
   <data name="SelectStartOnTelegramChatbot" xml:space="preserve">
-    <value>Click &lt;strong&gt;START&lt;/strong&gt; on Telegram Chatbot then proceed to the next step</value>
+    <value>Nhấn &lt;strong&gt;BẮT ĐẦU&lt;/strong&gt; trên Telegram Chatbot để đi đến bước tiếp theo</value>
   </data>
   <data name="StartSettingUp" xml:space="preserve">
-    <value>Sign up on Telegram using your phone number, and click &lt;strong&gt;Generate QR Code&lt;/strong&gt;</value>
+    <value>Đăng ký tài khoản Telegram bằng số điện thoại của bạn, và nhấn &lt;strong&gt;Tạo mã QR&lt;/strong&gt;</value>
   </data>
   <data name="Telegram" xml:space="preserve">
     <value>Telegram</value>
@@ -481,37 +444,31 @@
   <data name="TelegramMessengerInc" xml:space="preserve">
     <value>Telegram Messenger Inc.</value>
   </data>
-  <data name="TodayWinLossDescription" xml:space="preserve">
-    <value>Get the total row of Alpha Win Loss report of current date. You can also get downlines' Win Loss of current date</value>
-  </data>
   <data name="TodayWinLossNew" xml:space="preserve">
     <value>Today Win Loss</value>
   </data>
   <data name="UnsubscribeTelegramBotWarning" xml:space="preserve">
-    <value>Are you sure you want to unlink?</value>
+    <value>Bạn có chắc muốn hủy liên kết?</value>
   </data>
   <data name="VerifyOTP" xml:space="preserve">
-    <value>Verify OTP</value>
-  </data>
-  <data name="YesterdayWinLossDescription" xml:space="preserve">
-    <value>Get the total row of Alpha Win Loss report of yesterday. You can also get downlines' Win Loss of yesterday</value>
+    <value>Xác nhận OTP</value>
   </data>
   <data name="YesterdayWinLossNotificationDescription" xml:space="preserve">
     <value>Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4)</value>
   </data>
   <data name="YouCanTurnOnOff" xml:space="preserve">
-    <value>You can turn on/off any of the above notifications right here, or via Settings in Telegram Chatbot.</value>
+    <value>Bạn có thể bật/tắt bất kỳ thông báo nào ở trên ngay tại đây, hoặc thông qua Thiết Lập trên Telegram Chatbot.</value>
   </data>
   <data name="ChatID" xml:space="preserve">
-    <value>Chat ID</value>
+    <value>ID trò chuyện</value>
   </data>
   <data name="HasUnlinkedMessage" xml:space="preserve">
-    <value>Your Telegram has been unlinked with {0}.</value>
+    <value>Telegram của bạn đã hủy liên kết với {0}</value>
   </data>
   <data name="StartBeforeInputOTP" xml:space="preserve">
-    <value>Please click &lt;strong&gt;START&lt;/strong&gt; on Telegram Chatbot before you input the OTP.</value>
+    <value>Vui lòng nhấn &lt;strong&gt;BẮT ĐẦU&lt;/strong&gt; trên Telegram Chatbot trước khi nhập OTP.</value>
   </data>
   <data name="OTPIsRequired" xml:space="preserve">
-    <value>Please enter OTP.</value>
+    <value>Vui lòng nhập OTP.</value>
   </data>
 </root>

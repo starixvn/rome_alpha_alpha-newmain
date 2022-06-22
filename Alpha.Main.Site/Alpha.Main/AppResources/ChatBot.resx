@@ -375,29 +375,8 @@
   <data name="actionExample" xml:space="preserve">
     <value>Action Example</value>
   </data>
-  <data name="AbnormalLoginAlert" xml:space="preserve">
-    <value>Abnormal Login Alert</value>
-  </data>
-  <data name="AbnormalLoginAlertDescription" xml:space="preserve">
-    <value>Alert to your Telegram when there's unrecognized login activity using your account on Alpha Site</value>
-  </data>
-  <data name="BalanceDescription" xml:space="preserve">
-    <value>Get the Alpha Balance Info Report. You can also get downlines' Balance Info report</value>
-  </data>
   <data name="BalanceInfo" xml:space="preserve">
     <value>Balance Info</value>
-  </data>
-  <data name="ChangePasswordAlert" xml:space="preserve">
-    <value>Change Password Alert</value>
-  </data>
-  <data name="ChangePasswordAlertDescription" xml:space="preserve">
-    <value>Alert to your Telegram when your Alpha Site's Account's Password is changed</value>
-  </data>
-  <data name="ChangeSecurityCodeAlert" xml:space="preserve">
-    <value>Change Security Code Alert</value>
-  </data>
-  <data name="ChangeSecurityCodeAlertDescription" xml:space="preserve">
-    <value>Alert to your Telegram when your Security Code is changed</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Description</value>
@@ -418,8 +397,7 @@
     <value>Download the application on Google Play/App Store, or click &lt;strong&gt;Show QR Code&lt;/strong&gt; and scan the QR code using your phone:</value>
   </data>
   <data name="IntroTelegramChatbot" xml:space="preserve">
-    <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.
-&lt;br /&gt;To setup the chatbot, please follow the instructions below:</value>
+    <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.&lt;br /&gt;To setup the chatbot, please follow the instructions below:</value>
   </data>
   <data name="IntroTelegramReports" xml:space="preserve">
     <value>Using Telegram Chatbot, you can get the following reports right on Telegram without accessing to the Agency Site: &lt;br /&gt; Type "/help" on the chatbot for the full commands list.</value>
@@ -429,12 +407,6 @@
   </data>
   <data name="lblOTP" xml:space="preserve">
     <value>OTP</value>
-  </data>
-  <data name="MemberWinLossLimit" xml:space="preserve">
-    <value>Member Win Loss Limit</value>
-  </data>
-  <data name="MemberWinLossLimitDescription" xml:space="preserve">
-    <value>Alert to your Telegram whenever a Member reached their Win Loss limit</value>
   </data>
   <data name="Notification" xml:space="preserve">
     <value>Notification</value>
@@ -454,20 +426,11 @@
   <data name="Outstanding" xml:space="preserve">
     <value>Outstanding</value>
   </data>
-  <data name="OutstandingDescription" xml:space="preserve">
-    <value>Get the total row of Alpha Outstanding Report of current Date. You can also get downlines' Outstanding report</value>
-  </data>
   <data name="PersonalMessage" xml:space="preserve">
     <value>Personal Message</value>
   </data>
-  <data name="PersonalMessageDescription" xml:space="preserve">
-    <value>Push Alpha's Personal Message to your Telegram</value>
-  </data>
   <data name="ProblemAccount" xml:space="preserve">
     <value>Problem Account</value>
-  </data>
-  <data name="ProblemAccountDescription" xml:space="preserve">
-    <value>Alert to your Telegram when there's new downline that's marked as Problem Account</value>
   </data>
   <data name="Report" xml:space="preserve">
     <value>Report</value>
@@ -496,17 +459,11 @@
   <data name="TelegramMessengerInc" xml:space="preserve">
     <value>Telegram Messenger Inc.</value>
   </data>
-  <data name="TodayWinLossDescription" xml:space="preserve">
-    <value>Get the total row of Alpha Win Loss report of current date. You can also get downlines' Win Loss of current date</value>
-  </data>
   <data name="TodayWinLossNew" xml:space="preserve">
     <value>Today Win Loss</value>
   </data>
   <data name="VerifyOTP" xml:space="preserve">
     <value>Verify OTP</value>
-  </data>
-  <data name="YesterdayWinLossDescription" xml:space="preserve">
-    <value>Get the total row of Alpha Win Loss report of yesterday. You can also get downlines' Win Loss of yesterday</value>
   </data>
   <data name="YesterdayWinLossNotificationDescription" xml:space="preserve">
     <value>Daily send the total row of Alpha Win Loss report of yesterday at 3:00PM (GMT-4)</value>

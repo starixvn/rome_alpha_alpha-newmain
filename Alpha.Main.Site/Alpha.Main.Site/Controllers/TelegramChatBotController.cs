@@ -100,7 +100,7 @@
         [ChildActionOnly]
         public ActionResult Language(string langCode)
         {
-            var viewModel = mediator.Send(new TelegramBotLanguageQuery(langCode));
+            var viewModel = mediator.Send(new TelegramBotLanguageQuery(langCode, AppSettings.DisabledVietnamese));
 
             return PartialView(viewModel);
         }

@@ -52,7 +52,7 @@
         };
 
         public static readonly Dictionary<string, string> TelegramChatBotCodeNamesWithoutVietNamese = TelegramChatBotCodeNames
-.Where(langauge => langauge.Key != Vietnamese)
+            .Where(langauge => langauge.Key != Vietnamese)
             .ToDictionary(language => language.Key, language => language.Value);
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = "Reviewed!")]

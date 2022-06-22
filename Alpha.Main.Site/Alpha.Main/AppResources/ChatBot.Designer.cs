@@ -61,24 +61,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Abnormal Login Alert.
-        /// </summary>
-        public static string AbnormalLoginAlert {
-            get {
-                return ResourceManager.GetString("AbnormalLoginAlert", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alert to your Telegram when there&apos;s unrecognized login activity using your account on Alpha Site.
-        /// </summary>
-        public static string AbnormalLoginAlertDescription {
-            get {
-                return ResourceManager.GetString("AbnormalLoginAlertDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Account.
         /// </summary>
         public static string Account {
@@ -142,15 +124,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get the Alpha Balance Info Report. You can also get downlines&apos; Balance Info report.
-        /// </summary>
-        public static string BalanceDescription {
-            get {
-                return ResourceManager.GetString("BalanceDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Balance Info.
         /// </summary>
         public static string BalanceInfo {
@@ -165,42 +138,6 @@ namespace Alpha.Main.AppResources {
         public static string captchaIsRequired {
             get {
                 return ResourceManager.GetString("captchaIsRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change Password Alert.
-        /// </summary>
-        public static string ChangePasswordAlert {
-            get {
-                return ResourceManager.GetString("ChangePasswordAlert", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alert to your Telegram when your Alpha Site&apos;s Account&apos;s Password is changed.
-        /// </summary>
-        public static string ChangePasswordAlertDescription {
-            get {
-                return ResourceManager.GetString("ChangePasswordAlertDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change Security Code Alert.
-        /// </summary>
-        public static string ChangeSecurityCodeAlert {
-            get {
-                return ResourceManager.GetString("ChangeSecurityCodeAlert", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alert to your Telegram when your Security Code is changed.
-        /// </summary>
-        public static string ChangeSecurityCodeAlertDescription {
-            get {
-                return ResourceManager.GetString("ChangeSecurityCodeAlertDescription", resourceCulture);
             }
         }
         
@@ -538,8 +475,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.
-        ///&lt;br /&gt;To setup the chatbot, please follow the instructions below:.
+        ///   Looks up a localized string similar to &lt;strong&gt;Telegram Chatbot&lt;/strong&gt; enables you to get up-to-date business information by communicating with the chatbot without accessing to the Agency Site. The chatbot runs on Telegram – a free, secured, encrypted, and cross-platform instant message application.&lt;br /&gt;To setup the chatbot, please follow the instructions below:.
         /// </summary>
         public static string IntroTelegramChatbot {
             get {
@@ -683,24 +619,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Member Win Loss Limit.
-        /// </summary>
-        public static string MemberWinLossLimit {
-            get {
-                return ResourceManager.GetString("MemberWinLossLimit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alert to your Telegram whenever a Member reached their Win Loss limit.
-        /// </summary>
-        public static string MemberWinLossLimitDescription {
-            get {
-                return ResourceManager.GetString("MemberWinLossLimitDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Attn:[E-Sports] a match has been cancelled, all bets taken are considered REFUNDED.Thank you!.
         /// </summary>
         public static string normalAnnouncementSample {
@@ -800,15 +718,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get the total row of Alpha Outstanding Report of current Date. You can also get downlines&apos; Outstanding report.
-        /// </summary>
-        public static string OutstandingDescription {
-            get {
-                return ResourceManager.GetString("OutstandingDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to 97 more members are not shown..
         /// </summary>
         public static string OutstandingHiddenDownlinesCount {
@@ -850,15 +759,6 @@ namespace Alpha.Main.AppResources {
         public static string PersonalMessage {
             get {
                 return ResourceManager.GetString("PersonalMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Push Alpha&apos;s Personal Message to your Telegram.
-        /// </summary>
-        public static string PersonalMessageDescription {
-            get {
-                return ResourceManager.GetString("PersonalMessageDescription", resourceCulture);
             }
         }
         
@@ -931,15 +831,6 @@ namespace Alpha.Main.AppResources {
         public static string ProblemAccount {
             get {
                 return ResourceManager.GetString("ProblemAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alert to your Telegram when there&apos;s new downline that&apos;s marked as Problem Account.
-        /// </summary>
-        public static string ProblemAccountDescription {
-            get {
-                return ResourceManager.GetString("ProblemAccountDescription", resourceCulture);
             }
         }
         
@@ -1160,15 +1051,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get the total row of Alpha Win Loss report of current date. You can also get downlines&apos; Win Loss of current date.
-        /// </summary>
-        public static string TodayWinLossDescription {
-            get {
-                return ResourceManager.GetString("TodayWinLossDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Today Win Loss.
         /// </summary>
         public static string TodayWinLossNew {
@@ -1300,15 +1182,6 @@ namespace Alpha.Main.AppResources {
         public static string yesterdayWinLoss {
             get {
                 return ResourceManager.GetString("yesterdayWinLoss", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Get the total row of Alpha Win Loss report of yesterday. You can also get downlines&apos; Win Loss of yesterday.
-        /// </summary>
-        public static string YesterdayWinLossDescription {
-            get {
-                return ResourceManager.GetString("YesterdayWinLossDescription", resourceCulture);
             }
         }
         
