@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/default-home")
+    @StaticResources.RenderStylesWithMediaDarkMode(767, "~/assets/bundles/home-mobile-calculate-07")
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         body { background: transparent; }
         .icon-home { margin-right: 0; }
@@ -18,6 +21,22 @@
     </style>
 </head>
 <body>
-    <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
+    <div class="outer-elsabot">
+        <div class="elsabot">
+            <div class="inner-chatbot">
+                <img class="image-elsa" src="~/assets/images/chatbot.svg" alt="Elsabot chatbot" />
+                <div class="text-chatbot text-top-left"><a href="#">View Ballance Info</a></div>
+                <div class="text-chatbot text-bottom-left"><a href="#">View Outstanding Report</a></div>
+                <div class="text-chatbot text-top-right"><a href="#">Receive latest notifications</a></div>
+                <div class="text-chatbot text-bottom-right"><a href="#">View Win Loss Report</a></div>
+            </div>
+            <div class="bottom-chatbot">
+                <p class="line1">Introducing</p>
+                <p class="line2">ELSA chatbot on Telegram <img class="icn-telegram" src="~/assets/images/icon-telegram.png" alt="Telegram" /></p>
+                <p class="line3">Virtual assistant 24/7 will help to run your business at ease!</p>
+                <p><a class="link-setup" href="#">Set up now</a></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

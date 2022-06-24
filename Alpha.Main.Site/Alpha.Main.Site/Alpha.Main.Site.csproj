@@ -877,6 +877,8 @@
     <Content Include="Assets\bundles\telegramchatbot\telegram-chatbot-setting.min.js">
       <DependentUpon>telegram-chatbot-setting.js</DependentUpon>
     </Content>
+    <Content Include="Assets\Images\chatbot.svg" />
+    <Content Include="Assets\Images\icon-telegram.png" />
     <Content Include="Assets\Images\letstalk.png" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
     <Content Include="Assets\Images\switch.png" />
