@@ -133,6 +133,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Balance Info Report.
+        /// </summary>
+        public static string BalanceInfoReport {
+            get {
+                return ResourceManager.GetString("BalanceInfoReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please input captcha..
         /// </summary>
         public static string captchaIsRequired {
@@ -430,7 +439,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Virtual assistant 24/7 will help to run your business at ease!.
+        ///   Looks up a localized string similar to 24/7 Virtual Assistant helps you run your business at ease!.
         /// </summary>
         public static string IntroducingContent {
             get {
@@ -439,7 +448,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ELSA chatbot on Telegram.
+        ///   Looks up a localized string similar to {0} Chatbot on Telegram.
         /// </summary>
         public static string IntroducingTitle {
             get {
@@ -516,6 +525,15 @@ namespace Alpha.Main.AppResources {
         public static string InvalidOTP {
             get {
                 return ResourceManager.GetString("InvalidOTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest Notifications.
+        /// </summary>
+        public static string LatestNotifications {
+            get {
+                return ResourceManager.GetString("LatestNotifications", resourceCulture);
             }
         }
         
@@ -844,15 +862,6 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Receive latest notifications.
-        /// </summary>
-        public static string ReceiveLatestNotifications {
-            get {
-                return ResourceManager.GetString("ReceiveLatestNotifications", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Report.
         /// </summary>
         public static string Report {
@@ -925,7 +934,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set up now.
+        ///   Looks up a localized string similar to Set Up Now.
         /// </summary>
         public static string SetupNow {
             get {
@@ -1177,29 +1186,11 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View Balance Info.
+        ///   Looks up a localized string similar to Win Loss Report.
         /// </summary>
-        public static string ViewBalanceInfo {
+        public static string WinLossReport {
             get {
-                return ResourceManager.GetString("ViewBalanceInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to View Outstanding Report.
-        /// </summary>
-        public static string ViewOutstandingReport {
-            get {
-                return ResourceManager.GetString("ViewOutstandingReport", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to View Win Loss Report.
-        /// </summary>
-        public static string ViewWinLossReport {
-            get {
-                return ResourceManager.GetString("ViewWinLossReport", resourceCulture);
+                return ResourceManager.GetString("WinLossReport", resourceCulture);
             }
         }
         

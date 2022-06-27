@@ -208,18 +208,18 @@ body {
     padding: calculateScale(4px) calculateScale(8px);
 }
 
-.outer-elsabot {
+.outer-chatbot {
     padding: 0 10px;
     overflow: hidden;
     height: 100%;
 }
 
-.elsabot {
+.chatbot {
     width: 100%;
     padding: 72px 0 13px;
     margin-top: 31px;
 
-    .image-elsa {
+    .image-chatbot {
         width: 255px;
     }
 
@@ -239,8 +239,7 @@ body {
             top: 24px;
             right: 70px;
             width: 18px;
-            height: 21px;
-            //background: red;
+            height: 21px; 
             border: 0;
             border-bottom: 1px solid #44515F;
             border-left: 1px solid #44515F;

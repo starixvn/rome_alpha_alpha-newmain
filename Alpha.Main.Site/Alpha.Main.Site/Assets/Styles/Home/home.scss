@@ -541,7 +541,7 @@ body {
             text-decoration: none;
             transition: 0.2s;
             padding: 5px 15px 6px 15px;
-            font-weight: 700;
+            font-family: 'Roboto Bold';
             font-size: 20px;
             display: block;
 
@@ -695,7 +695,7 @@ body {
     }
 
     .line1 {
-        font-weight: 500;
+        font-weight: bold;
         font-size: 28px;
         line-height: 33px;
         color: #C7DDEA;
@@ -703,7 +703,7 @@ body {
     }
 
     .line2 {
-        font-weight: 700;
+        font-family: 'Roboto Bold';
         font-size: 36px;
         line-height: 42px;
         color: #F05742;
@@ -720,7 +720,7 @@ body {
     }
 
     .line3 {
-        font-weight: 500;
+        font-weight: bold;
         font-size: 24px;
         line-height: 28px;
         color: #C7DDEA;
@@ -732,7 +732,7 @@ body {
         background: #F05742;
         border-radius: 5px;
         color: #EDEDED;
-        font-weight: 700;
+        font-family: 'Roboto Bold';
         font-size: 24px;
         padding: 5px 24px 5px;
         text-decoration: none;

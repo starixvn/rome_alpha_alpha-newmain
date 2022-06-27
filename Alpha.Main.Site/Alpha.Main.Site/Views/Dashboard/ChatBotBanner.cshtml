@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model string
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,21 +10,30 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/default-home")
     @StaticResources.RenderStylesWithMediaDarkMode(767, "~/assets/bundles/home-mobile-calculate-07")
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { background: transparent; }
+        .icon-home { margin-right: 0; }
+        .icon-home:after { content: none; }
+        .text { padding: 10px 0; margin: 0; font-size: 15px; }
+    </style>
+    <style media="screen and (max-device-width: 768px)">
+        .text { font-size: 20px; }
+    </style>
 </head>
 <body>
+    <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
     <div class="outer-chatbot">
         <div class="chatbot">
             <div class="inner-chatbot">
                 <img class="image-chatbot" src="~/assets/images/chatbot.svg" alt="Elsabot chatbot" />
-                <div class="text-chatbot text-top-left"><a href="javascript:;">@ChatBot.ViewBalanceInfo</a></div>
-                <div class="text-chatbot text-bottom-left"><a href="javascript:;">@ChatBot.ViewOutstandingReport</a></div>
-                <div class="text-chatbot text-top-right"><a href="javascript:;">@ChatBot.ReceiveLatestNotifications</a></div>
-                <div class="text-chatbot text-bottom-right"><a href="javascript:;">@ChatBot.ViewWinLossReport</a></div>
+                <div class="text-chatbot text-top-left"><a href="javascript:;">@ChatBot.BalanceInfoReport</a></div>
+                <div class="text-chatbot text-bottom-left"><a href="javascript:;">@ChatBot.OutstandingReport</a></div>
+                <div class="text-chatbot text-top-right"><a href="javascript:;">@ChatBot.LatestNotifications</a></div>
+                <div class="text-chatbot text-bottom-right"><a href="javascript:;">@ChatBot.WinLossReport</a></div>
             </div>
             <div class="bottom-chatbot">
                 <p class="line1">@ChatBot.Introducing</p>
-                <p class="line2">@ChatBot.IntroducingTitle <img class="icn-telegram" src="~/assets/images/icon-telegram.png" alt="Telegram" /></p>
+                <p class="line2">@string.Format(ChatBot.IntroducingTitle, Model) <img class="icn-telegram" src="~/assets/images/icon-telegram.png" alt="Telegram" /></p>
                 <p class="line3">@ChatBot.IntroducingContent</p>
                 <p><a class="link-setup" href="@Url.Action("Index", "TelegramChatBot")">@ChatBot.SetupNow</a></p>
             </div>

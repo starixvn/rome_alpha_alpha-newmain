@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using Alpha.Web.Models;
     using Chatbot.Client.Models;
     using Chatbot.Client.Services;
     using Configurations;
@@ -65,11 +66,12 @@
                 MessengerAccounts = new List<Messenger>
                 {
                     new Messenger {
-                        Type= MessengerType.Letstalk,
-                        Enabled=true
+                        Type = MessengerType.Letstalk,
+                        Enabled = true
                     }
                 }
             };
+            userSession.RoleId.Returns((byte)4);
 
             var viewModel = new ChatBotViewModel(user, Enumerable.Empty<Function>());
 
@@ -80,7 +82,7 @@
 
             // Assert
             Assert.True(result.ViewName.Equals("ChatBotSetting")
-                && compareLogic.Compare(new ChatBotSettingViewModel(viewModel), result.Model).AreEqual);
+                && compareLogic.Compare(new ChatBotSettingViewModel(viewModel, Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName), result.Model).AreEqual);
         }
 
         [Test]
@@ -92,6 +94,7 @@
                 CustId = 1,
                 MessengerAccounts = new List<Messenger>()
             };
+            userSession.RoleId.Returns((byte)4);
 
             var viewModel = new ChatBotViewModel(user, Enumerable.Empty<Function>());
 
@@ -102,7 +105,7 @@
 
             // Assert
             Assert.True(result.ViewName.Equals("RegisterAccount")
-                && compareLogic.Compare(new RegisterAccountViewModel(viewModel, string.Empty), result.Model).AreEqual);
+                && compareLogic.Compare(new RegisterAccountViewModel(viewModel, string.Empty, Enumeration.FromValue<UserLevel>(userSession.RoleId).DisplayName), result.Model).AreEqual);
         }
 
         [Test]

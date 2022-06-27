@@ -475,24 +475,24 @@
     <value>Introducing</value>
   </data>
   <data name="IntroducingContent" xml:space="preserve">
-    <value>Virtual assistant 24/7 will help to run your business at ease!</value>
+    <value>24/7 Virtual Assistant helps you run your business at ease!</value>
   </data>
   <data name="IntroducingTitle" xml:space="preserve">
-    <value>ELSA chatbot on Telegram</value>
+    <value>{0} Chatbot on Telegram</value>
   </data>
-  <data name="ReceiveLatestNotifications" xml:space="preserve">
-    <value>Receive latest notifications</value>
+  <data name="LatestNotifications" xml:space="preserve">
+    <value>Latest Notifications</value>
   </data>
   <data name="SetupNow" xml:space="preserve">
-    <value>Set up now</value>
+    <value>Set Up Now</value>
   </data>
-  <data name="ViewBalanceInfo" xml:space="preserve">
-    <value>View Balance Info</value>
+  <data name="BalanceInfoReport" xml:space="preserve">
+    <value>Balance Info Report</value>
   </data>
-  <data name="ViewOutstandingReport" xml:space="preserve">
-    <value>View Outstanding Report</value>
+  <data name="OutstandingReport" xml:space="preserve">
+    <value>Outstanding Report</value>
   </data>
-  <data name="ViewWinLossReport" xml:space="preserve">
-    <value>View Win Loss Report</value>
+  <data name="WinLossReport" xml:space="preserve">
+    <value>Win Loss Report</value>
   </data>
 </root>

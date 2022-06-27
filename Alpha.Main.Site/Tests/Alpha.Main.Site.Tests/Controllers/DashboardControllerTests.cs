@@ -1,5 +1,6 @@
 ﻿namespace Alpha.Main.Site.Tests.Controllers
 {
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using Alpha.Main.Configurations;
     using Alpha.Main.Constants;
@@ -12,6 +13,7 @@
     using NSubstitute;
     using NUnit.Framework;
     using Sunplus.Agent.Model.Entities;
+    using TelegramBot.Client.Services;
 
     [TestFixture]
     public class DashboardControllerTests
@@ -19,6 +21,7 @@
         private DashboardController dashboardController;
         private IMediator mediator;
         private IUserSession userSession;
+        private IBotService botService;
 
         [SetUp]
         public void SetUp()
@@ -27,12 +30,13 @@
             userSession = Substitute.For<IUserSession>();
             userSession.RoleId.Returns(RoleId.Agent);
             userSession.SubPageAccess.Returns(new PageAccess());
+            botService = Substitute.For<IBotService>();
 
-            dashboardController = new DashboardController(mediator, userSession);
+            dashboardController = new DashboardController(mediator, userSession, botService);
         }
 
         [Test]
-        public void Index_Always_ReturnsViewWithDashboardViewModel()
+        public async Task Index_Always_ReturnsViewWithDashboardViewModel()
         {
             // Arrange
             var compareLogic = new CompareLogic();
@@ -42,7 +46,7 @@
             var expectedViewModel = new DashboardViewModel(userSession.RoleId);
 
             // Act
-            var actualView = dashboardController.Index() as ViewResult;
+            var actualView = (await dashboardController.Index()) as ViewResult;
 
             // Assert
             Assert.True(compareLogic.Compare(expectedViewModel, actualView.Model).AreEqual);
