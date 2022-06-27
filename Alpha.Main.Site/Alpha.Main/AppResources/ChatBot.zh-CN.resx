@@ -471,4 +471,28 @@
   <data name="InvalidOTP" xml:space="preserve">
     <value>一次性密码不正确，请再次尝试</value>
   </data>
+  <data name="Introducing" xml:space="preserve">
+    <value>Introducing</value>
+  </data>
+  <data name="IntroducingContent" xml:space="preserve">
+    <value>Virtual assistant 24/7 will help to run your business at ease!</value>
+  </data>
+  <data name="IntroducingTitle" xml:space="preserve">
+    <value>ELSA chatbot on Telegram</value>
+  </data>
+  <data name="ReceiveLatestNotifications" xml:space="preserve">
+    <value>Receive latest notifications</value>
+  </data>
+  <data name="SetupNow" xml:space="preserve">
+    <value>Set up now</value>
+  </data>
+  <data name="ViewBalanceInfo" xml:space="preserve">
+    <value>View Balance Info</value>
+  </data>
+  <data name="ViewOutstandingReport" xml:space="preserve">
+    <value>View Outstanding Report</value>
+  </data>
+  <data name="ViewWinLossReport" xml:space="preserve">
+    <value>View Win Loss Report</value>
+  </data>
 </root>

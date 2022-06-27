@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/default-home")
+    @StaticResources.RenderStylesWithMediaDarkMode(767, "~/assets/bundles/home-mobile-calculate-07")
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="outer-chatbot">
+        <div class="chatbot">
+            <div class="inner-chatbot">
+                <img class="image-chatbot" src="~/assets/images/chatbot.svg" alt="Elsabot chatbot" />
+                <div class="text-chatbot text-top-left"><a href="javascript:;">@ChatBot.ViewBalanceInfo</a></div>
+                <div class="text-chatbot text-bottom-left"><a href="javascript:;">@ChatBot.ViewOutstandingReport</a></div>
+                <div class="text-chatbot text-top-right"><a href="javascript:;">@ChatBot.ReceiveLatestNotifications</a></div>
+                <div class="text-chatbot text-bottom-right"><a href="javascript:;">@ChatBot.ViewWinLossReport</a></div>
+            </div>
+            <div class="bottom-chatbot">
+                <p class="line1">@ChatBot.Introducing</p>
+                <p class="line2">@ChatBot.IntroducingTitle <img class="icn-telegram" src="~/assets/images/icon-telegram.png" alt="Telegram" /></p>
+                <p class="line3">@ChatBot.IntroducingContent</p>
+                <p><a class="link-setup" href="@Url.Action("Index", "TelegramChatBot")">@ChatBot.SetupNow</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

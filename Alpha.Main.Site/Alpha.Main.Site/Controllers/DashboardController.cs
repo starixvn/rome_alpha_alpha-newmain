@@ -35,6 +35,11 @@ namespace Alpha.Main.Site.Controllers
                 return View("~/Views/Dashboard/IndexProtectedMode.cshtml");
             }
 
+            if (AppSettings.TelegramBotIsShowBanner)
+            {
+                return View("~/Views/Dashboard/ChatBotBanner.cshtml");
+            }
+
             if (AppSettings.IsShowEmptyDashboard)
             {
                 string botName;

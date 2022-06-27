@@ -430,7 +430,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 24/7 Virtual Assistant helps you run your business at ease!.
+        ///   Looks up a localized string similar to Virtual assistant 24/7 will help to run your business at ease!.
         /// </summary>
         public static string IntroducingContent {
             get {
@@ -439,7 +439,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} Chatbot on Telegram.
+        ///   Looks up a localized string similar to ELSA chatbot on Telegram.
         /// </summary>
         public static string IntroducingTitle {
             get {
@@ -844,6 +844,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Receive latest notifications.
+        /// </summary>
+        public static string ReceiveLatestNotifications {
+            get {
+                return ResourceManager.GetString("ReceiveLatestNotifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Report.
         /// </summary>
         public static string Report {
@@ -912,6 +921,15 @@ namespace Alpha.Main.AppResources {
         public static string SelectStartOnTelegramChatbot {
             get {
                 return ResourceManager.GetString("SelectStartOnTelegramChatbot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set up now.
+        /// </summary>
+        public static string SetupNow {
+            get {
+                return ResourceManager.GetString("SetupNow", resourceCulture);
             }
         }
         
@@ -1159,11 +1177,29 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Win Loss Report.
+        ///   Looks up a localized string similar to View Balance Info.
         /// </summary>
-        public static string WinLossReport {
+        public static string ViewBalanceInfo {
             get {
-                return ResourceManager.GetString("WinLossReport", resourceCulture);
+                return ResourceManager.GetString("ViewBalanceInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Outstanding Report.
+        /// </summary>
+        public static string ViewOutstandingReport {
+            get {
+                return ResourceManager.GetString("ViewOutstandingReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Win Loss Report.
+        /// </summary>
+        public static string ViewWinLossReport {
+            get {
+                return ResourceManager.GetString("ViewWinLossReport", resourceCulture);
             }
         }
         
