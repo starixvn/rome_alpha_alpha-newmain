@@ -541,9 +541,10 @@ body {
             text-decoration: none;
             transition: 0.2s;
             padding: 5px 15px 6px 15px;
-            font-family: 'Roboto Bold';
             font-size: 20px;
             display: block;
+            font-family: 'Roboto Bold';
+            white-space: nowrap;
 
             &:hover {
                 color: #D4E9F6;
@@ -553,7 +554,7 @@ body {
 
     .text-top-left {
         top: -28px;
-        left: -237px;
+        right: 428px;
 
         &:after {
             content: "";
@@ -582,7 +583,7 @@ body {
 
     .text-bottom-left {
         top: 68px;
-        left: -314px;
+        right: 442px;
 
         a {
             padding: 5px 21px 6px 15px;
@@ -616,7 +617,7 @@ body {
 
     .text-top-right {
         top: -26px;
-        right: -313px;
+        left: 424px;
 
         a {
             padding: 5px 16px 6px 15px;
@@ -650,7 +651,7 @@ body {
 
     .text-bottom-right {
         top: 159px;
-        right: -284px;
+        left: 443px;
 
         a {
             padding: 5px 16px 6px 15px;

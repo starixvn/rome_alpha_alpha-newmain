@@ -214,6 +214,7 @@ body {
     overflow: hidden;
     height: 100%;
 }
+
 .chatbot {
     width: 100%;
     padding: 72px 0 13px;
@@ -233,13 +234,13 @@ body {
 
     .text-top-left {
         top: -42px;
-        left: -31px;
+        right: 170px;
 
         &:after {
             top: 24px;
             right: 70px;
             width: 18px;
-            height: 21px; 
+            height: 21px;
             border: 0;
             border-bottom: 1px solid #44515F;
             border-left: 1px solid #44515F;
@@ -256,7 +257,7 @@ body {
 
     .text-bottom-left {
         top: 197px;
-        left: -35px;
+        right: 136px;
 
         a {
             padding: 3px 10px 3px 7px;
@@ -283,7 +284,7 @@ body {
 
     .text-top-right {
         top: -43px;
-        right: -29px;
+        left: 121px;
 
         a {
             padding: 3px 7px 3px 7px;
@@ -310,7 +311,7 @@ body {
 
     .text-bottom-right {
         top: 197px;
-        right: -29px;
+        left: 150px;
 
         a {
             padding: 3px 7px 3px 7px;
