@@ -2,16 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
-    using Alpha.Main.Helpers;
     using AppResources;
     using Criteria.Password;
     using DataAccesses;
     using Fanex.Cryptography.Aes;
     using Fanex.Data.Repository;
-    using Fanex.Logging.Extensions.Web;
     using Models;
     using Params;
     using Params.Password;
@@ -109,7 +106,7 @@
 
                 if (!param.CustLevel.IsMemberLevel())
                 {
-                    Task.Run(() => telegramBotService.NotifyChangePassword(param.CustId, 0, param.IP));
+                    Task.Run(() => telegramBotService.NotifyChangePassword(param.CustId, 0));
                 }
             }
 
@@ -173,7 +170,7 @@
 
                 if (!param.CustLevel.IsMemberLevel())
                 {
-                    Task.Run(() => telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId, param.IP));
+                    Task.Run(() => telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId));
                 }
             }
 
@@ -228,7 +225,7 @@
 
                     if (!param.CustLevel.IsMemberLevel())
                     {
-                        telegramBotService.NotifyChangePassword(param.CustId, 0, param.IP);
+                        telegramBotService.NotifyChangePassword(param.CustId, 0);
                     }
                 });
             }
@@ -304,7 +301,6 @@
             {
                 netThrottlingService.Throttle();
 
-                string ip = string.IsNullOrWhiteSpace(param.IP) ? IPHelper.CustomerIp() : param.IP;
                 Task.Run(() =>
                 {
                     kickoutCustomerService.Kickout(new KickoutCustomerParam(
@@ -316,7 +312,7 @@
 
                     if (!param.CustLevel.IsMemberLevel())
                     {
-                        telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId, ip);
+                        telegramBotService.NotifyChangePassword(param.CustId, param.SubAccountId);
                     }
                 });
             }

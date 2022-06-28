@@ -464,7 +464,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="TelegramBot.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TelegramBot.Client.1.0.0-beta20\lib\netstandard2.0\TelegramBot.Client.dll</HintPath>
+      <HintPath>..\packages\TelegramBot.Client.1.0.0-beta21\lib\netstandard2.0\TelegramBot.Client.dll</HintPath>
     </Reference>
     <Reference Include="TplCore, Version=1.0.4854.17253, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\TplCore.1.0.4854.17254\lib\net40\TplCore.dll</HintPath>

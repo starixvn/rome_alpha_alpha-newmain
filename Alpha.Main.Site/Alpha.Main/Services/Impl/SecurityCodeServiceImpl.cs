@@ -3,7 +3,6 @@
     using System;
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
-    using Alpha.Main.Helpers;
     using Alpha.Main.Services;
     using AppResources;
     using Criteria.SecurityCode;
@@ -64,7 +63,7 @@
 
             if (result != null && result.IsSuccessful && !param.IsMemberLevel)
             {
-                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, 0, param.IP));
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, 0));
             }
 
             return result;
@@ -96,7 +95,7 @@
 
             if (result != null && result.IsSuccessful && !param.IsMemberLevel)
             {
-                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId, param.IP));
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId));
             }
 
             return result;
@@ -136,8 +135,7 @@
             {
                 netThrottlingService.Throttle();
 
-                string ip = string.IsNullOrWhiteSpace(param.IP) ? IPHelper.CustomerIp() : param.IP;
-                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId, ip));
+                Task.Run(() => telegramBotService.NotifyChangeSecurityCode(param.CustId, param.SubAccId));
             }
 
             return result;
