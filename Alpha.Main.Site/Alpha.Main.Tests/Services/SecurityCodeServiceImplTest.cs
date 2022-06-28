@@ -1,7 +1,7 @@
 ﻿namespace Alpha.Main.Tests.Services
 {
     using System;
-    using Alpha.NetThrottling;
+    using Alpha.Main.Services;
     using AppResources;
     using Fanex.Data.Repository;
     using KellermanSoftware.CompareNetObjects;
@@ -22,6 +22,7 @@
         private Encryptor encryptor;
         private CompareLogic compareLogic;
         private INetThrottlingService netThrottlingService;
+        private TelegramBotService telegramBotService;
 
         [SetUp]
         public void Setup()
@@ -29,11 +30,13 @@
             securityCodeDataAccess = Substitute.For<SecurityCodeDataAccess>();
             encryptor = Substitute.For<Encryptor>();
             netThrottlingService = Substitute.For<INetThrottlingService>();
+            telegramBotService = Substitute.For<TelegramBotService>();
 
             securityCodeService = Substitute.ForPartsOf<SecurityCodeServiceImpl>(
                 securityCodeDataAccess,
                 encryptor,
-                netThrottlingService);
+                netThrottlingService,
+                telegramBotService);
 
             compareLogic = new CompareLogic();
         }
