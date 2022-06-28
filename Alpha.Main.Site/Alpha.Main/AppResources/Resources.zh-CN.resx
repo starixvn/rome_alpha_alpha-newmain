@@ -569,7 +569,7 @@
     <value>请点击 {0} 以查看整体资料。</value>
   </data>
   <data name="PartialUMAnnouncement" xml:space="preserve">
-    <value>由于目前服务器繁忙所以此功能暂时关闭 从 {0} 至 {1} (GMT+8), 请稍后再试。 不便之处 敬请见谅！</value>
+    <value>我们正在更新此功能以获得更好的体验。 因此，此功能将暂时关闭（{0} - {1} (GMT+8)）。 请稍后再试，给您带来不便,敬请谅解。</value>
   </data>
   <data name="LiveMessage" xml:space="preserve">
     <value>在线客服</value>

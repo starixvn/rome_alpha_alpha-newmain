@@ -632,7 +632,7 @@
     <value>Please click on the {0} to view overall information.</value>
   </data>
   <data name="PartialUMAnnouncement" xml:space="preserve">
-    <value>Our server is too busy at the moment so this function is turned off temporarily {0} - {1} (GMT+8). Please try again later and sorry for the inconvenience.</value>
+    <value>We're updating this function for a better experience. Thus, this function is turned off temporarily ({0} - {1} (GMT+8)). Please try again later and sorry for the inconvenience.</value>
   </data>
   <data name="LiveMessage" xml:space="preserve">
     <value>Live Message</value>
