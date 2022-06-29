@@ -3,11 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text.RegularExpressions;
     using System.Web;
     using AppResources;
     using Configurations;
-    using Sunplus.Agent.Model.Entities;
 
     public class MenuItem : IMenuItem
     {
@@ -73,9 +71,10 @@
             {
                 var appVirtualPath = AppSettings.GetAppPath(AppPath) ?? string.Empty;
                 var runtimeAppPath = HttpRuntime.AppDomainAppVirtualPath ?? string.Empty;
+                var reportUrl = $"{appVirtualPath}{HttpContext.Current.Response.ApplyAppPathModifier(runtimeAppPath)}{link.TrimStart('/')}".Replace(runtimeAppPath, string.Empty);
 
                 return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{link}" :
-                    link.StartsWith("/") ? $"{appVirtualPath}{link.Replace(runtimeAppPath, string.Empty)}" : 
+                    appVirtualPath.Equals("/site-reports") ? reportUrl : 
                     !string.IsNullOrWhiteSpace(link) && !string.IsNullOrWhiteSpace(runtimeAppPath) ? 
                     link.Replace(runtimeAppPath, appVirtualPath) : string.Empty;
             }
