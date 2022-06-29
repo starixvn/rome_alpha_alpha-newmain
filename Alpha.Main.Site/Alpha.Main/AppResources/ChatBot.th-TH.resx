@@ -466,27 +466,27 @@
     <value>รหัส OTP ไม่ถูกต้อง โปรดลองใหม่อีกครั้ง</value>
   </data>
   <data name="Introducing" xml:space="preserve">
-    <value>Introducing</value>
+    <value>แนะนำ</value>
   </data>
   <data name="IntroducingContent" xml:space="preserve">
-    <value>24/7 Virtual Assistant helps you run your business at ease!</value>
+    <value>24/7 ผู้ช่วยเสมือนจริงที่ช่วยให้คุณดำเนินธุรกิจได้อย่างสะดวกยิ่งขึ้น</value>
   </data>
   <data name="IntroducingTitle" xml:space="preserve">
-    <value>{0} Chatbot on Telegram</value>
+    <value>{0}แชทบอทบนเทเลแกรม</value>
   </data>
   <data name="LatestNotifications" xml:space="preserve">
-    <value>Latest Notifications</value>
+    <value>การแจ้งเตือนล่าสุด</value>
   </data>
   <data name="SetupNow" xml:space="preserve">
-    <value>Set Up Now</value>
+    <value>ตั้งค่าตอนนี้</value>
   </data>
   <data name="BalanceInfoReport" xml:space="preserve">
-    <value>Balance Info Report</value>
+    <value>รายงานข้อมูลยอดเงินคงเหลือ</value>
   </data>
   <data name="OutstandingReport" xml:space="preserve">
-    <value>Outstanding Report</value>
+    <value>รายงานการเดิมพันที่ยังไม่สิ้นสุด</value>
   </data>
   <data name="WinLossReport" xml:space="preserve">
-    <value>Win Loss Report</value>
+    <value>รายงานยอดได้เสีย</value>
   </data>
 </root>

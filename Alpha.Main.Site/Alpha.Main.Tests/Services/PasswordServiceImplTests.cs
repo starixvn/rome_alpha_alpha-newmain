@@ -191,7 +191,8 @@
             {
                 NewPassword = newPassword,
                 CurrentPassword = currentPassword,
-                HashKey = "HashKey"
+                HashKey = "HashKey",
+                CustLevel = UserLevel.Member
             };
 
             encryptor.HexDecode(Arg.Is(param.CurrentPassword)).Returns("CurrentPassword");

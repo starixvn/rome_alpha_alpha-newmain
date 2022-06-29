@@ -42,7 +42,7 @@ namespace Alpha.Main.Site.Controllers
             if (AppSettings.TelegramBotIsShowBanner)
             {
                 var bot = await botService.GetBySystem(AppSettings.SiteGroup);
-                return View("~/Views/Dashboard/ChatBotBanner.cshtml", (object)bot?.DisplayName);
+                return View($"~/Views/Dashboard/ChatBotBanner{(AppSettings.IsMBCSite ? "i1" : "i7")}.cshtml", (object)bot?.DisplayName);
             }
 
             if (AppSettings.IsShowEmptyDashboard)

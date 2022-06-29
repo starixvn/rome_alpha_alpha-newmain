@@ -472,27 +472,27 @@
     <value>一次性密码不正确，请再次尝试</value>
   </data>
   <data name="Introducing" xml:space="preserve">
-    <value>Introducing</value>
+    <value>简介</value>
   </data>
   <data name="IntroducingContent" xml:space="preserve">
-    <value>24/7 Virtual Assistant helps you run your business at ease!</value>
+    <value>24/7 全天候虚拟助理协助您轻松经营业务！</value>
   </data>
   <data name="IntroducingTitle" xml:space="preserve">
-    <value>{0} Chatbot on Telegram</value>
+    <value>{0} Telegram 聊天机器人</value>
   </data>
   <data name="LatestNotifications" xml:space="preserve">
-    <value>Latest Notifications</value>
+    <value>最新通知</value>
   </data>
   <data name="SetupNow" xml:space="preserve">
-    <value>Set Up Now</value>
+    <value>立即设置</value>
   </data>
   <data name="BalanceInfoReport" xml:space="preserve">
-    <value>Balance Info Report</value>
+    <value>余额资料报告</value>
   </data>
   <data name="OutstandingReport" xml:space="preserve">
-    <value>Outstanding Report</value>
+    <value>未结束交易报告</value>
   </data>
   <data name="WinLossReport" xml:space="preserve">
-    <value>Win Loss Report</value>
+    <value>输赢报告</value>
   </data>
 </root>

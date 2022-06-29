@@ -43,6 +43,7 @@
         public void Index_Always_CallsMediatorSendSetupChatBotQuery()
         {
             // Arrange
+            userSession.RoleId.Returns((byte)4);
             var query = new SetUpChatBotQuery(userSession);
 
             // Act
