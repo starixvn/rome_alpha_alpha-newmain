@@ -294,7 +294,7 @@
             }
         }
 
-        public static string ReportRouting => Settings["Report:Routing"];
+        public static string ReportRouting => Settings["Report:Routing"] ?? string.Empty;
 
         public static bool IsStandaloneReports => !string.IsNullOrWhiteSpace(ReportDomain);
         
