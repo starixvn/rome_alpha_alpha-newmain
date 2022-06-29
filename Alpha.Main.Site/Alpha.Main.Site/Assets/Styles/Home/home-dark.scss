@@ -575,7 +575,7 @@ body {
 
 .chatbot {
     max-width: 1197px;
-    margin: 90px auto 0;
+    margin: 40px auto 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     background: linear-gradient(100.23deg, #001524 0%, #082C45 51.56%, #001727 100%);
     border-radius: 20px;
@@ -604,22 +604,11 @@ body {
         border: 1px solid #44515F;
         border-radius: 5px;
         position: absolute;
-
-
-        a {
-            color: #8EC9F0;
-            text-decoration: none;
-            transition: 0.2s;
-            padding: 5px 15px 6px 15px;
-            font-size: 20px;
-            display: block;
-            font-family: 'Roboto Bold';
-            white-space: nowrap;
-
-            &:hover {
-                color: #D4E9F6;
-            }
-        }
+        color: #8EC9F0;
+        padding: 5px 15px 6px 15px;
+        font-size: 20px;
+        font-family: 'Roboto Bold';
+        white-space: nowrap;       
     }
 
     .text-top-left {
@@ -655,11 +644,6 @@ body {
         top: 68px;
         right: 442px;
 
-        a {
-            padding: 5px 21px 6px 15px;
-        }
-
-
         &:after {
             content: "";
             position: absolute;
@@ -689,11 +673,6 @@ body {
         top: -26px;
         left: 424px;
 
-        a {
-            padding: 5px 16px 6px 15px;
-        }
-
-
         &:after {
             content: "";
             position: absolute;
@@ -722,11 +701,6 @@ body {
     .text-bottom-right {
         top: 159px;
         left: 443px;
-
-        a {
-            padding: 5px 16px 6px 15px;
-        }
-
 
         &:after {
             content: "";

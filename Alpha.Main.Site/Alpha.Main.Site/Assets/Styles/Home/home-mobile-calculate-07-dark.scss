@@ -225,20 +225,20 @@ body {
     }
 
     .text-chatbot {
-        a {
-            font-size: 12px;
-            line-height: 14px;
-            padding: 3px 7px 3px 7px;
-        }
+        font-size: 12px;
+        line-height: 14px;
+        padding: 3px 7px 3px 7px;
     }
 
     .text-top-left {
         top: -42px;
-        right: 170px;
+        right: auto;
+        left: -31px;
 
         &:after {
             top: 24px;
-            right: 70px;
+            right: auto;
+            left: 25px;
             width: 18px;
             height: 21px;
             border: 0;
@@ -251,21 +251,20 @@ body {
             width: 4px;
             height: 4px;
             top: 47px;
+            right: auto;
             left: 41px;
         }
     }
 
     .text-bottom-left {
         top: 197px;
-        right: 136px;
-
-        a {
-            padding: 3px 10px 3px 7px;
-        }
+        right: auto;
+        left: -35px;
 
         &:after {
             top: -47px;
-            right: 113px;
+            right: auto;
+            left: 20px;
             width: 19px;
             height: 31px;
             border: 0;
@@ -279,20 +278,19 @@ body {
             height: 4px;
             top: -63px;
             left: 36px;
+            right: auto;
         }
     }
 
     .text-top-right {
         top: -43px;
-        left: 121px;
-
-        a {
-            padding: 3px 7px 3px 7px;
-        }
+        left: auto;
+        right: -29px;
 
         &:after {
             top: 25px;
-            left: 104px;
+            left: auto;
+            right: 38px;
             width: 19px;
             height: 22px;
             border: 0;
@@ -305,21 +303,20 @@ body {
             width: 4px;
             height: 4px;
             top: 48px;
-            left: 104px;
+            left: auto;
+            right: 53px;
         }
     }
 
     .text-bottom-right {
         top: 197px;
-        left: 150px;
-
-        a {
-            padding: 3px 7px 3px 7px;
-        }
+        left: auto;
+        right: -29px;
 
         &:after {
             top: -47px;
-            left: 98px;
+            left: auto;
+            right: 16px;
             width: 18px;
             height: 31px;
             border: 0;
@@ -332,7 +329,8 @@ body {
             width: 4px;
             height: 4px;
             top: -63px;
-            left: 97px;
+            left: auto;
+            right: 31px;
         }
     }
 
