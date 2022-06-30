@@ -6,6 +6,7 @@ namespace Alpha.Main.Site.Controllers
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
     using System.Web.Security;
@@ -33,7 +34,7 @@ namespace Alpha.Main.Site.Controllers
         private const string OtpVerifyDifferenceDevicePath = "~/otp/VerifyOtpDifferenceDevice";
         private const string UnSupportedBrowsers = "UnsupportedBrowsers";
         private const string fpsScriptKey = "fpsScript";
-
+        private const string SecretKey = "!@#$";
         private readonly IUserSession userSession;
         private readonly IMediator mediator;
         private readonly SecurityCodeChecker securityCodeChecker;
@@ -54,7 +55,14 @@ namespace Alpha.Main.Site.Controllers
         [HttpGet, AllowProtectedMode]
         public string Auth()
         {
-            var param = AesService.Default.Encrypt($"{userSession.UserName}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}&{DateTime.Now}", "!@#$");
+            var param = AesService.Default.Encrypt($"{userSession.UserName}&{GetSessionKeyValue()}&{GetOutputValuesAfterLogin()}&{DateTime.Now}", SecretKey);
+            var loginUsername = AesService.Default.Encrypt($"{userSession.UserName}", SecretKey);
+            var sessionKeyValue = AesService.Default.Encrypt($"{GetSessionKeyValue()}", SecretKey);
+            var outputValue= AesService.Default.Encrypt($"{GetOutputValuesAfterLogin()}", SecretKey);
+
+            Response.Cookies.Add(new HttpCookie("auth_1", loginUsername));
+            Response.Cookies.Add(new HttpCookie("auth_2", sessionKeyValue));
+            Response.Cookies.Add(new HttpCookie("auth_3", outputValue));
 
             return $"{AppSettings.ReportDomain}/Auth?param={param}";
         }

@@ -2,6 +2,7 @@
 /// <reference path="../security-helper.ts" />
 
 class VerifyOtp {
+    topWindow: any;
     $otpForm: any;
     $txtOtp: any;
     $btnSubmit: any;
@@ -12,7 +13,8 @@ class VerifyOtp {
         requiredFieldMessage: (<HTMLInputElement>document.getElementById('requiredFieldMessage')).value
     }
 
-    constructor(public $) {
+    constructor(public $, topWindow: any) {
+        this.topWindow = topWindow
     }
 
     init = () => {
@@ -68,14 +70,17 @@ class VerifyOtp {
         if (result.isSuccessful) {
             var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
             if (reportDomain != '') {
-                (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/Otp';
+                this.topWindow.menuBar.loadAuthFrame();
+                setTimeout(() => {
+                    (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/Otp';
+                }, 2000);
             }
 
             setTimeout(() => {
                 securityHelper.afterVerifed();
                 this.$txtOtp.attr("disabled", "disabled");
                 this.$btnSubmit.attr("disabled", "disabled").remove();
-            }, 2000);
+            }, 3000);
         }
         else {
             this.$(this.$otpMessage).removeClass('hidden');
@@ -94,7 +99,7 @@ class VerifyOtp {
     }
 }
 
-var verifyOtp = new VerifyOtp($);
+var verifyOtp = new VerifyOtp($, window.top);
 
 $(function () {
     verifyOtp.init();

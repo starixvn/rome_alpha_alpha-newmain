@@ -1,7 +1,9 @@
 ﻿'use strict';
 
 var changeUserOwnSecurityCode = {
+    topWindow: null,
     initialize: function () {
+        changeUserOwnSecurityCode.topWindow = window.top;
         var $form = $('.form-SC');
         $form.submit(function (e) {
             changeUserOwnSecurityCode.change();
@@ -124,7 +126,10 @@ var changeUserOwnSecurityCode = {
             if (data.IsOk) {
                 var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
                 if (reportDomain != '') {
-                    (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
+                    changeUserOwnSecurityCode.topWindow.menuBar.loadAuthFrame();
+                    setTimeout(() => {
+                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode' + functionName + '?s=' + isOff;
+                    }, 2000);
                 }
 
                 setTimeout(() => {
@@ -137,7 +142,7 @@ var changeUserOwnSecurityCode = {
                             .addClass("switch-off")
                             .text(securityCodeResources.switchLableOff);
                     }
-                }, 2000);
+                }, 3000);
             } else {
                 $("#status-message").removeClass("display-none");
                 securityHelper.showFailMessage($("#status-message-content"), data.Message);

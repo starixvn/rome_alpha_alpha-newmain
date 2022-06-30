@@ -4,7 +4,9 @@
 
 'use strict';
 var verifySecurityCode = {
+    topWindow: null,
     initialize: function () {
+        verifySecurityCode.topWindow = window.top;
         const actorProfilePicture = JSON.parse(localStorage.getItem('actorProfilePicture'));
         $('.profile-avatar').attr("src", actorProfilePicture.Image);
 
@@ -70,12 +72,15 @@ var verifySecurityCode = {
 
                     var reportDomain = (<HTMLInputElement>top.document.getElementById('reportDomain')).value;
                     if (reportDomain != '') {
-                        (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode';
+                        verifySecurityCode.topWindow.menuBar.loadAuthFrame();
+                        setTimeout(() => {
+                            (<HTMLIFrameElement>top.document.getElementById('reportFrame')).src = reportDomain + '/Auth/SecurityCode';
+                        }, 2000);
                     }
 
                     setTimeout(() => {
                         securityHelper.afterVerifed();
-                    }, 2000);
+                    }, 3000);
                 }
                 else if (code === 2) { // account is closed 
                     alert(data.Message);
