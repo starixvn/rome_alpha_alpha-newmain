@@ -63,8 +63,8 @@
                     }
 
                     &-4 {
+                        bottom: -54px;
                         left: 183px;
-                        top: 228px;
                     }
                 }
             }
@@ -124,6 +124,14 @@
                     padding: 12px 24px;
                 }
             }
+
+            .comming-soon {
+                font-weight: bold;
+                font-size: 24px;
+                color: #71EDF4;
+                line-height: 28px;
+                margin-top: 15px;
+            }
         }
     }
 }
@@ -136,13 +144,13 @@
 @media only screen and (max-device-width : $screen-device-lower768) {
     .chatbot {
         width: auto;
-        margin: 40px 10px 0 10px;
-        padding: 73px 26px 42px;
+        margin: calculateScale(40px) calculateScale(10px) calculateScale(0) calculateScale(10px);
+        padding: calculateScale(57px) calculateScale(20px) calculateScale(19px);
         display: inherit;
 
         .column {
             .image-chatbot {
-                width: 180px;
+                width: calculateScale(118px);
             }
 
 
@@ -156,33 +164,33 @@
 
 
                         span {
-                            font-size: 16px;
-                            margin-left: 15px;
+                            font-size: calculateScale(12px);
+                            margin-left: calculateScale(6px);
                         }
 
                         &-1 {
-                            top: -35px;
-                            left: 158px;
+                            top: calculateScale(-30px);
+                            left: calculateScale(120px);
                         }
 
                         &-2 {
-                            top: 40px;
-                            left: 201px;
+                            top: calculateScale(20px);
+                            left: calculateScale(135px);
                         }
 
                         &-3 {
-                            top: 114px;
-                            left: 201px;
+                            top: calculateScale( 70px);
+                            left: calculateScale(135px);
                         }
 
                         &-4 {
-                            top: 190px;
-                            left: 156px;
+                            top: calculateScale(120px);
+                            left: calculateScale(120px);
                         }
 
                         img {
-                            width: 42px;
-                            height: 42px;
+                            width: calculateScale(32px);
+                            height: calculateScale(32px);
                         }
                     }
                 }
@@ -190,47 +198,53 @@
 
             &-right {
                 text-align: center;
-                margin-top: 63px;
+                margin-top: calculateScale(43px);
                 margin-left: 0;
 
                 .intro-txt {
                     font-weight: bold;
-                    font-size: 23px;
-                    line-height: 19px;
+                    font-size: calculateScale(16px);
+                    line-height: calculateScale(19px);
                 }
 
                 h2 {
                     font-family: 'Roboto Bold';
-                    font-size: 25px;
-                    line-height: 23px;
-                    margin-top: 18px;
+                    font-size: calculateScale(20px);
+                    line-height: calculateScale(23px);
+                    margin-top: calculateScale(6px);
 
                     img {
-                        right: 0;
-                        top: 2px;
-                        width: 30px;
+                        right: calculateScale(calculateScale);
+                        top: calculateScale(2px);
+                        width: calculateScale(25px);
                         display: inline-block;
                         position: relative;
                     }
                 }
 
                 .description-txt {
-                    font-size: 16px;
-                    line-height: 19px;
-                    margin-top: 20px;
-                    padding: 0px 50px;
+                    font-size: calculateScale(16px);
+                    line-height: calculateScale(19px);
+                    margin-top: calculateScale(-4px);
+                    padding: calculateScale(0) calculateScale(25px);
                 }
 
                 .btn-setup {
                     text-align: center;
-                    margin: 36px auto 0;
+                    margin: calculateScale(21px) auto calculateScale(0);
 
                     a {
                         font-family: 'Roboto Bold';
-                        padding: 13px 18px;
-                        font-size: 22px;
-                        line-height: 16px;
+                        padding: calculateScale(6px) calculateScale(12px);
+                        font-size: calculateScale(16px);
+                        line-height: calculateScale(16px);
                     }
+                }
+
+                .comming-soon {
+                    font-size: calculateScale(16px);
+                    line-height: calculateScale(19px);
+                    margin-top: calculateScale(-4px);
                 }
             }
         }
