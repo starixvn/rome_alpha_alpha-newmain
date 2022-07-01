@@ -1,2 +1,240 @@
-﻿body {
+﻿@import '../Home/_variables-dark.scss';
+@import '../Home/_mixins.scss';
+
+.outer-chatbot {
+    padding: 1px;
+}
+
+.chatbot {
+    max-width: 1197px;
+    margin: 40px auto 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(73.89deg, #113436 0%, #141A3C 51.34%, #0E3032 100%);
+    border-radius: 20px;
+    text-align: center;
+    padding: 135px 86px 140px;
+    position: relative;
+    display: grid;
+    grid-template: "comlumnLeft comlumnRight" auto/56%;
+    width: 1200px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        margin: -1px;
+        background: linear-gradient(180deg, #77D1D6 0%, black 50%, #77D1D6 100%);
+        border-radius: inherit;
+    }
+
+    .column {
+        &-left {
+            grid-area: "comlumnLeft";
+            position: relative;
+            display: flex;
+
+            .group-list {
+                .group-list-icon {
+                    position: absolute;
+
+                    span {
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #71EDF4;
+                        margin-left: 20px;
+                    }
+
+                    &-1 {
+                        top: -27%;
+                        left: 31%;
+                    }
+
+                    &-2 {
+                        top: 10%;
+                        left: 38%;
+                    }
+
+                    &-3 {
+                        top: 53%;
+                        left: 38%;
+                    }
+
+                    &-4 {
+                        bottom: -23%;
+                        left: 31%;
+                    }
+                }
+            }
+        }
+
+        &-right {
+            grid-area: "comlumnRight";
+            text-align: left;
+            margin-left: 2px;
+            margin-top: 21px;
+
+            .intro-txt {
+                color: #C7DDEA;
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 33px;
+                margin-bottom: 0;
+            }
+
+            h2 {
+                color: #71EDF4;
+                font-family: 'Roboto Bold';
+                font-size: 36px;
+                line-height: 42px;
+                margin-top: 3px;
+                position: relative;
+
+                img {
+                    width: 40px;
+                    position: absolute;
+                    right: -5px;
+                    top: 7px;
+                }
+            }
+
+            .description-txt {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 28px;
+                color: #C7DDEA;
+                margin-top: 15px;
+            }
+
+            .btn-setup {
+                width: 168px;
+                text-align: center;
+                margin-top: 15px;
+
+                a {
+                    text-decoration: none;
+                    background: #FDDB5C;
+                    border-radius: 5px;
+                    display: block;
+                    color: #131A3B;
+                    font-family: 'Roboto Bold';
+                    font-size: 24px;
+                    line-height: 16px;
+                    padding: 12px 24px;
+                }
+            }
+        }
+    }
+}
+
+.img-res{
+    max-width : 100%;
+    height : auto;
+}
+
+@media only screen and (max-device-width : $screen-device-lower768) {
+    .chatbot {
+        width: auto;
+        margin: 40px 10px 0 10px;
+        padding: 57px 20px 30px;
+        display: inherit;
+
+        .column {
+            .image-chatbot {
+                width: 118px;
+            }
+
+
+            &-left {
+                grid-area: "comlumnLeft";
+                position: relative;
+                display: flex;
+
+                .group-list {
+                    .group-list-icon {
+
+
+                        span {
+                            font-size: 12px;
+                            margin-left: 6px;
+                        }
+
+                        &-1 {
+                            top: -22%;
+                            left: 34%;
+                        }
+
+                        &-2 {
+                            top: 13%;
+                            left: 43%;
+                        }
+
+                        &-3 {
+                            top: 49%;
+                            left: 43%;
+                        }
+
+                        &-4 {
+                            bottom: -9%;
+                            left: 34%;
+                        }
+
+                        img {
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+                }
+            }
+
+            &-right {
+                text-align: center;
+                margin-top: 43px;
+                margin-left: 0;
+
+                .intro-txt {
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+
+                h2 {
+                    font-family: 'Roboto Bold';
+                    font-size: 20px;
+                    line-height: 23px;
+                    margin-top: 6px;
+
+                    img {
+                        right: 0;
+                        top: 2px;
+                        width: 25px;
+                        display: inline-block;
+                        position: relative;
+                    }
+                }
+
+                .description-txt {
+                    font-size: 16px;
+                    line-height: 19px;
+                    margin-top: -4px;
+                    padding: 0 25px;
+                }
+
+                .btn-setup {
+                    width: 104px;
+                    text-align: center;
+                    margin: 21px auto 0;
+
+                    a {
+                        font-family: 'Roboto Bold';
+                        padding: 6px 12px;
+                        font-size: 16px;
+                        line-height: 16px;
+                    }
+                }
+            }
+        }
+    }
+    
 }
