@@ -360,4 +360,28 @@
   <data name="actionExample" xml:space="preserve">
     <value>动作示例</value>
   </data>
+  <data name="BalanceInfoReport" xml:space="preserve">
+    <value>余额资料报告</value>
+  </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>Coming Soon</value>
+  </data>
+  <data name="Introducing" xml:space="preserve">
+    <value>简介</value>
+  </data>
+  <data name="IntroducingContent" xml:space="preserve">
+    <value>24/7 全天候虚拟助理协助您轻松经营业务！</value>
+  </data>
+  <data name="IntroducingTitle" xml:space="preserve">
+    <value>{0} Telegram 聊天机器人</value>
+  </data>
+  <data name="LatestNotifications" xml:space="preserve">
+    <value>最新通知</value>
+  </data>
+  <data name="OutstandingReport" xml:space="preserve">
+    <value>未结束交易报告</value>
+  </data>
+  <data name="WinLossReport" xml:space="preserve">
+    <value>输赢报告</value>
+  </data>
 </root>

@@ -361,4 +361,28 @@
   <data name="actionExample" xml:space="preserve">
     <value>動作示例</value>
   </data>
+  <data name="BalanceInfoReport" xml:space="preserve">
+    <value>餘額資料報告</value>
+  </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>Coming Soon</value>
+  </data>
+  <data name="Introducing" xml:space="preserve">
+    <value>簡介</value>
+  </data>
+  <data name="IntroducingContent" xml:space="preserve">
+    <value>24/7 全天候虛擬助理協助您輕鬆經營業務！</value>
+  </data>
+  <data name="IntroducingTitle" xml:space="preserve">
+    <value>{0} Telegram 聊天機器人</value>
+  </data>
+  <data name="LatestNotifications" xml:space="preserve">
+    <value>最新通知</value>
+  </data>
+  <data name="OutstandingReport" xml:space="preserve">
+    <value>未結束交易報告</value>
+  </data>
+  <data name="WinLossReport" xml:space="preserve">
+    <value>輸贏報告</value>
+  </data>
 </root>
