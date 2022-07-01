@@ -162,5 +162,21 @@
   {
     "outputFile": "Assets/styles/contact-us/contact-us-dark.css",
     "inputFile": "Assets/styles/contact-us/contact-us-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/ChatBotBanneri7-dark.css",
+    "inputFile": "Assets/styles/home/ChatBotBanneri7-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/ChatBotBanneri7.css",
+    "inputFile": "Assets/styles/home/ChatBotBanneri7.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/ChatBotBanneri1-dark.css",
+    "inputFile": "Assets/styles/home/ChatBotBanneri1-dark.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/ChatBotBanneri1.css",
+    "inputFile": "Assets/styles/home/ChatBotBanneri1.scss"
   }
 ]

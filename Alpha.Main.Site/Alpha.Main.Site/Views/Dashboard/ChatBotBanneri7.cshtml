@@ -1,0 +1,58 @@
+﻿@model string
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
+    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/ChatBotBanneri7")
+    <style>
+        body {
+            background: transparent;
+        }
+
+        .icon-home {
+            margin-right: 0;
+        }
+
+            .icon-home:after {
+                content: none;
+            }
+
+        .text {
+            padding: 10px 0;
+            margin: 0;
+            font-size: 15px;
+        }
+    </style>
+    <style media="screen and (max-device-width: 768px)">
+        .text {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
+    <div class="outer-chatbot">
+        <div class="chatbot">
+            <div class="inner-chatbot">
+                <img class="image-chatbot" src="~/assets/images/chatbot-i7.svg" alt="Elsa chatbot" />
+                <div class="text-chatbot text-top-left">@ChatBot.BalanceInfoReport</div>
+                <div class="text-chatbot text-bottom-left">@ChatBot.OutstandingReport</div>
+                <div class="text-chatbot text-top-right">@ChatBot.LatestNotifications</div>
+                <div class="text-chatbot text-bottom-right">@ChatBot.WinLossReport</div>
+            </div>
+            <div class="bottom-chatbot">
+                <p class="line1">@ChatBot.Introducing</p>
+                <p class="line2">@string.Format(ChatBot.IntroducingTitle, Model) <img class="icn-telegram" src="~/assets/images/icon-telegram.png" alt="Telegram" /></p>
+                <p class="line3">@ChatBot.IntroducingContent</p>
+                <p class="line4">Comming Soon</p>
+                <p>@Html.ActionLink(ChatBot.SetupNow, "Index", "TelegramChatBot", null, new { @class = "link-setup" })</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
