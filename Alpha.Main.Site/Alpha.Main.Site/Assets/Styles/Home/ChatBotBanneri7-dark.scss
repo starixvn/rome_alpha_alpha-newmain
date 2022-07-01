@@ -238,30 +238,30 @@
 
     .chatbot {
         width: 100%;
-        padding: 72px 0 45px;
-        margin-top: 31px;
+        padding: calculateScale(72px) 0 calculateScale(20px);
+        margin-top: calculateScale(31px);
 
         .image-chatbot {
-            width: 255px;
+            width: calculateScale(255px);
         }
 
         .text-chatbot {
-            font-size: 12px;
-            line-height: 14px;
-            padding: 3px 7px 3px 7px;
+            font-size: calculateScale(12px);
+            line-height: calculateScale(14px);
+            padding: calculateScale(3px) calculateScale(7px) calculateScale(3px) calculateScale(7px);
         }
 
         .text-top-left {
-            top: -42px;
+            top: calculateScale(-42px);
             right: auto;
-            left: -31px;
+            left: calculateScale(-31px);
 
             &:after {
-                top: 24px;
+                top: calculateScale(24px);
                 right: auto;
-                left: 25px;
-                width: 18px;
-                height: 21px;
+                left: calculateScale(25px);
+                width: calculateScale(18px);
+                height: calculateScale(21px);
                 border: 0;
                 border-bottom: 1px solid #44515F;
                 border-left: 1px solid #44515F;
@@ -269,25 +269,25 @@
             }
 
             &:before {
-                width: 4px;
-                height: 4px;
-                top: 47px;
+                width: calculateScale(4px);
+                height: calculateScale(4px);
+                top: calculateScale(47px);
                 right: auto;
-                left: 41px;
+                left: calculateScale(41px);
             }
         }
 
         .text-bottom-left {
-            top: 197px;
+            top: calculateScale(197px);
             right: auto;
-            left: -35px;
+            left: calculateScale(-35px);
 
             &:after {
-                top: -47px;
+                top: calculateScale(-47px);
                 right: auto;
-                left: 20px;
-                width: 19px;
-                height: 31px;
+                left: calculateScale(20px);
+                width: calculateScale(19px);
+                height: calculateScale(31px);
                 border: 0;
                 border-top: 2px solid #44515F;
                 border-left: 1px solid #44515F;
@@ -295,25 +295,25 @@
             }
 
             &:before {
-                width: 4px;
-                height: 4px;
-                top: -63px;
-                left: 36px;
+                width: calculateScale(4px);
+                height: calculateScale(4px);
+                top: calculateScale(-63px);
+                left: calculateScale(36px);
                 right: auto;
             }
         }
 
         .text-top-right {
-            top: -43px;
+            top: calculateScale(-43px);
             left: auto;
-            right: -29px;
+            right: calculateScale(-29px);
 
             &:after {
-                top: 25px;
+                top: calculateScale(25px);
                 left: auto;
-                right: 38px;
-                width: 19px;
-                height: 22px;
+                right: calculateScale(38px);
+                width: calculateScale(19px);
+                height: calculateScale(22px);
                 border: 0;
                 border-bottom: 1px solid #44515F;
                 border-right: 1px solid #44515F;
@@ -321,25 +321,25 @@
             }
 
             &:before {
-                width: 4px;
-                height: 4px;
-                top: 48px;
+                width: calculateScale(4px);
+                height: calculateScale(4px);
+                top: calculateScale(48px);
                 left: auto;
-                right: 53px;
+                right: calculateScale(53px);
             }
         }
 
         .text-bottom-right {
-            top: 197px;
+            top: calculateScale(197px);
             left: auto;
-            right: -29px;
+            right: calculateScale(-29px);
 
             &:after {
-                top: -47px;
+                top: calculateScale(-47px);
                 left: auto;
-                right: 16px;
-                width: 18px;
-                height: 31px;
+                right: calculateScale(16px);
+                width: calculateScale(18px);
+                height: calculateScale(31px);
                 border: 0;
                 border-right: 1px solid #44515F;
                 border-top: 2px solid #44515F;
@@ -347,59 +347,59 @@
             }
 
             &:before {
-                width: 4px;
-                height: 4px;
-                top: -63px;
+                width: calculateScale(4px);
+                height: calculateScale(4px);
+                top: calculateScale(-63px);
                 left: auto;
-                right: 31px;
+                right: calculateScale(31px);
             }
         }
 
         p {
-            margin-bottom: 7px;
+            margin-bottom: calculateScale(7px);
         }
 
         .bottom-chatbot {
-            padding-top: 48px;
+            padding-top: calculateScale(48px);
         }
 
         .line1 {
-            font-size: 16px;
-            line-height: 19px;
-            margin-bottom: 6px;
+            font-size: calculateScale(16px);
+            line-height: calculateScale(19px);
+            margin-bottom: calculateScale(6px);
         }
 
         .line2 {
-            font-size: 20px;
-            line-height: 23px;
-            margin-bottom: 2px;
+            font-size: calculateScale(20px);
+            line-height: calculateScale(23px);
+            margin-bottom: calculateScale(2px);
 
             .icn-telegram {
-                width: 28px;
+                width: calculateScale(28px);
                 display: inline-block;
-                margin: 0 -3px 0 -4px;
+                margin: 0 calculateScale(-3px) 0 calculateScale(-4px);
                 position: relative;
-                top: 1px;
+                top: calculateScale(1px);
                 left: 0;
             }
         }
 
         .line3 {
-            font-size: 16px;
-            line-height: 19px;
-            margin-bottom: 6px;
+            font-size: calculateScale(16px);
+            line-height: calculateScale(19px);
+            margin-bottom: calculateScale(19px);
             padding: 0 19%;
         }
 
         .line4 {
-            font-size: 16px;
-            line-height: 19px;
+            font-size: calculateScale(16px);
+            line-height: calculateScale(19px);
         }
 
         .link-setup {
-            font-size: 16px;
-            line-height: 16px;
-            padding: 5px 12px 7px;
+            font-size: calculateScale(16px);
+            line-height: calculateScale(16px);
+            padding: calculateScale(5px) calculateScale(12px) calculateScale(7px);
         }
     }
 }
