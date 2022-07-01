@@ -37,7 +37,7 @@ namespace Alpha.Main.Site.Controllers
 
             if (AppSettings.IsShowEmptyDashboard)
             {
-                return View();
+                return View($"~/Views/Dashboard/ChatBotBanner{(AppSettings.IsMBCSite ? "i1" : "i7")}.cshtml");
             }
 
             return Index2();
