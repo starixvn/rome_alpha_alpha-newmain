@@ -196,7 +196,7 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Coming Soon.
+        ///   Looks up a localized string similar to Coming Soon on Jul 19th, 2022.
         /// </summary>
         public static string ComingSoon {
             get {
