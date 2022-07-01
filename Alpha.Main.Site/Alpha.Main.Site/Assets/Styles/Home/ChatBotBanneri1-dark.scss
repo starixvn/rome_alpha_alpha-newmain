@@ -17,6 +17,7 @@
     display: grid;
     grid-template: "comlumnLeft comlumnRight" 245px/50%;
     width: 1200px;
+    align-items: center;
 
     &:before {
         content: "";
@@ -122,6 +123,14 @@
                     line-height: 16px;
                     padding: 12px 24px;
                 }
+            }
+
+            .comming-soon {
+                font-weight: bold;
+                font-size: 24px;
+                color: #71EDF4;
+                line-height: 28px;
+                margin-top: 15px;
             }
         }
     }
@@ -230,6 +239,12 @@
                         font-size: 16px;
                         line-height: 16px;
                     }
+                }
+
+                .comming-soon {
+                    font-size: 16px;
+                    line-height: 19px;
+                    margin-top: -4px;
                 }
             }
         }

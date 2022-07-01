@@ -17,7 +17,7 @@
     display: grid;
     grid-template: "comlumnLeft comlumnRight" 245px/50%;
     width: 1200px;
-
+    align-items : center;
 
     .column {
         &-left {
