@@ -614,6 +614,22 @@
     <Content Include="Assets\bundles\captcha\captcha.min.js">
       <DependentUpon>captcha.js</DependentUpon>
     </Content>
+    <Content Include="Assets\bundles\ChatBotBanneri7-dark.css" />
+    <Content Include="Assets\bundles\ChatBotBanneri7-dark.min.css">
+      <DependentUpon>ChatBotBanneri7-dark.css</DependentUpon>
+    </Content>
+	<Content Include="Assets\bundles\ChatBotBanneri7.css" />
+    <Content Include="Assets\bundles\ChatBotBanneri7.min.css">
+      <DependentUpon>ChatBotBanneri7.css</DependentUpon>
+    </Content>
+	<Content Include="Assets\bundles\ChatBotBanneri1-dark.css" />
+    <Content Include="Assets\bundles\ChatBotBanneri1-dark.min.css">
+      <DependentUpon>ChatBotBanneri1-dark.css</DependentUpon>
+    </Content>
+	<Content Include="Assets\bundles\ChatBotBanneri1.css" />
+    <Content Include="Assets\bundles\ChatBotBanneri1.min.css">
+      <DependentUpon>ChatBotBanneri1.css</DependentUpon>
+    </Content>
     <Content Include="Assets\bundles\ChatBotBanneri1-dark.css" />
     <Content Include="Assets\bundles\ChatBotBanneri1-dark.min.css">
       <DependentUpon>ChatBotBanneri1-dark.css</DependentUpon>
@@ -877,7 +893,12 @@
     <Content Include="Assets\bundles\telegramchatbot\telegram-chatbot-setting.min.js">
       <DependentUpon>telegram-chatbot-setting.js</DependentUpon>
     </Content>
-    <Content Include="Assets\Images\chatbot.svg" />
+    <Content Include="Assets\Images\chatbot-i1.svg" />
+	<Content Include="Assets\Images\chatbot-i7.svg" />
+	<Content Include="Assets\Images\icon-chatbot-1.svg" />
+	<Content Include="Assets\Images\icon-chatbot-2.svg" />
+	<Content Include="Assets\Images\icon-chatbot-3.svg" />
+	<Content Include="Assets\Images\icon-chatbot-4.svg" />
     <Content Include="Assets\Images\icon-telegram.png" />
     <Content Include="Assets\Images\letstalk.png" />
     <Content Include="Assets\Images\sample_test_network_speed_1.jpg" />
@@ -1478,6 +1499,8 @@
     <Content Include="Assets\styles\telegramchatbot\chatbot-dark.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri7.scss" />
     <Content Include="Assets\styles\home\ChatBotBanneri7-dark.scss" />
+	<Content Include="Assets\styles\home\ChatBotBanneri1.scss" />
+    <Content Include="Assets\styles\home\ChatBotBanneri1-dark.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>

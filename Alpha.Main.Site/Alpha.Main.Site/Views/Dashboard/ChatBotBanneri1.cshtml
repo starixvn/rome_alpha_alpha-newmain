@@ -1,71 +1,13 @@
-﻿@model string
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
-    @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
-    @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/ChatBotBanneri1")
-    <style>
-        body {
-            background: transparent;
-        }
-
-        .icon-home {
-            margin-right: 0;
-        }
-
-            .icon-home:after {
-                content: none;
-            }
-
-        .text {
-            padding: 10px 0;
-            margin: 0;
-            font-size: 15px;
-        }
-    </style>
-    <style media="screen and (max-device-width: 768px)">
-        .text {
-            font-size: 20px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-    <p class="text">@Html.Raw(string.Format(Resources.DashboardViewOverallInformation, "<span onclick=\"location.href=top.headerNav.urls.home;\" class=\"icon icon-home\"></span>"))</p>
-    <div class="outer-chatbot">
-        <div class="chatbot">
-            <div class="column column-left">
-                <div class="group-list">
-                    <img class="image-chatbot" src="~/assets/images/chatbot-i1.svg" alt="Eva chatbot" />
-                    <div class="group-list-icon group-list-icon-1">
-                        <img class="img-res" src="~/assets/images/icon-chatbot-1.svg" alt="@ChatBot.BalanceInfoReport" />
-                        <span>@ChatBot.BalanceInfoReport</span>
-                    </div>
-                    <div class="group-list-icon group-list-icon-2">
-                        <img class="img-res" src="~/assets/images/icon-chatbot-2.svg" alt="@ChatBot.OutstandingReport" />
-                        <span>@ChatBot.OutstandingReport</span>
-                    </div>
-                    <div class="group-list-icon group-list-icon-3">
-                        <img class="img-res" src="~/assets/images/icon-chatbot-3.svg" alt="@ChatBot.WinLossReport" />
-                        <span>@ChatBot.WinLossReport</span>
-                    </div>
-                    <div class="group-list-icon group-list-icon-4">
-                        <img class="img-res" src="~/assets/images/icon-chatbot-4.svg" alt="@ChatBot.LatestNotifications" />
-                        <span>@ChatBot.LatestNotifications</span>
-                    </div>
-                </div>
-            </div>
-            <div class="column column-right">
-                <p class="intro-txt">@ChatBot.Introducing</p>
-                <h2 class="heading-txt"><span>@string.Format(ChatBot.IntroducingTitle, Model)</span> <img src="~/assets/images/icon-telegram.png" alt="Alternate Text" class="icon-tele img-res" /></h2>
-                <p class="description-txt">@ChatBot.IntroducingContent</p>
-                <p class="comming-soon">@ChatBot.ComingSoon</p>
-            </div>
-        </div>
+    <div>
+        @RenderBody()
     </div>
 </body>
 </html>
