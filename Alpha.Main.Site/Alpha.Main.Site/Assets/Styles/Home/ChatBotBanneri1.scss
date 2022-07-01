@@ -17,7 +17,7 @@
     display: grid;
     grid-template: "comlumnLeft comlumnRight" 245px/50%;
     width: 1200px;
-
+    align-items: center;
 
     .column {
         &-left {
@@ -53,8 +53,8 @@
                     }
 
                     &-4 {
-                        bottom: -54px;
                         left: 183px;
+                        top: 228px;
                     }
                 }
             }
@@ -127,12 +127,12 @@
     .chatbot {
         width: auto;
         margin: 40px 10px 0 10px;
-        padding: 57px 20px 30px;
+        padding: 73px 26px 42px;
         display: inherit;
 
         .column {
             .image-chatbot {
-                width: 118px;
+                width: 180px;
             }
 
 
@@ -146,33 +146,33 @@
 
 
                         span {
-                            font-size: 12px;
-                            margin-left: 6px;
+                            font-size: 16px;
+                            margin-left: 15px;
                         }
 
                         &-1 {
-                            top: -32px;
-                            left: 105px;
+                            top: -35px;
+                            left: 158px;
                         }
 
                         &-2 {
-                            top: 20px;
-                            left: 135px;
+                            top: 40px;
+                            left: 201px;
                         }
 
                         &-3 {
-                            top: 71px;
-                            left: 134px;
+                            top: 114px;
+                            left: 201px;
                         }
 
                         &-4 {
-                            top: 123px;
-                            left: 105px;
+                            top: 190px;
+                            left: 156px;
                         }
 
                         img {
-                            width: 32px;
-                            height: 32px;
+                            width: 42px;
+                            height: 42px;
                         }
                     }
                 }
@@ -180,25 +180,25 @@
 
             &-right {
                 text-align: center;
-                margin-top: 43px;
+                margin-top: 63px;
                 margin-left: 0;
 
                 .intro-txt {
                     font-weight: bold;
-                    font-size: 16px;
+                    font-size: 23px;
                     line-height: 19px;
                 }
 
                 h2 {
                     font-family: 'Roboto Bold';
-                    font-size: 20px;
+                    font-size: 25px;
                     line-height: 23px;
-                    margin-top: 6px;
+                    margin-top: 18px;
 
                     img {
                         right: 0;
                         top: 2px;
-                        width: 25px;
+                        width: 30px;
                         display: inline-block;
                         position: relative;
                     }
@@ -207,18 +207,18 @@
                 .description-txt {
                     font-size: 16px;
                     line-height: 19px;
-                    margin-top: -4px;
-                    padding: 0 25px;
+                    margin-top: 20px;
+                    padding: 0px 50px;
                 }
 
                 .btn-setup {
                     text-align: center;
-                    margin: 21px auto 0;
+                    margin: 36px auto 0;
 
                     a {
                         font-family: 'Roboto Bold';
-                        padding: 6px 12px;
-                        font-size: 16px;
+                        padding: 13px 18px;
+                        font-size: 22px;
                         line-height: 16px;
                     }
                 }
