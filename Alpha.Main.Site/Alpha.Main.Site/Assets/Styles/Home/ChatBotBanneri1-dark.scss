@@ -17,6 +17,7 @@
     display: grid;
     grid-template: "comlumnLeft comlumnRight" 245px/50%;
     width: 1200px;
+    align-items: center;
 
     &:before {
         content: "";
@@ -62,8 +63,8 @@
                     }
 
                     &-4 {
-                        bottom: -54px;
                         left: 183px;
+                        top: 228px;
                     }
                 }
             }
