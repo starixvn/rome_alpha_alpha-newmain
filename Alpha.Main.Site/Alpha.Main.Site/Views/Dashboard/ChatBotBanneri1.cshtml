@@ -10,28 +10,13 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/ChatBotBanneri1")
     <style>
-        body {
-            background: transparent;
-        }
-
-        .icon-home {
-            margin-right: 0;
-        }
-
-            .icon-home:after {
-                content: none;
-            }
-
-        .text {
-            padding: 10px 0;
-            margin: 0;
-            font-size: 15px;
-        }
+        body { background: transparent; }
+        .icon-home { margin-right: 0; }
+        .icon-home:after { content: none; }
+        .text { padding: 10px 0; margin: 0; font-size: 15px; }
     </style>
     <style media="screen and (max-device-width: 768px)">
-        .text {
-            font-size: 20px;
-        }
+        .text { font-size: 20px; }
     </style>
 </head>
 <body>
@@ -40,36 +25,30 @@
         <div class="chatbot">
             <div class="column column-left">
                 <div class="group-list">
-                    <img class="image-chatbot" src="~/assets/images/chatbot-i1.svg" alt="Elsabot chatbot" />
-
+                    <img class="image-chatbot" src="~/assets/images/chatbot-i1.svg" alt="Eva chatbot" />\
                     <div class="group-list-icon group-list-icon-1">
-                        <img class="img-res" src="~/assets/images/icon-chatbot-1.svg" alt="View Ballance Info" />
-                        <span>View Ballance Info</span>
+                        <img class="img-res" src="~/assets/images/icon-chatbot-1.svg" alt="@ChatBot.BalanceInfoReport" />
+                        <span>@ChatBot.BalanceInfoReport</span>
                     </div>
                     <div class="group-list-icon group-list-icon-2">
-                        <img class="img-res" src="~/assets/images/icon-chatbot-2.svg" alt="View Outstanding Report" />
-                        <span>
-                            View Outstanding Report
-                        </span>
+                        <img class="img-res" src="~/assets/images/icon-chatbot-2.svg" alt="@ChatBot.OutstandingReport" />
+                        <span>@ChatBot.OutstandingReport</span>
                     </div>
                     <div class="group-list-icon group-list-icon-3">
-                        <img class="img-res" src="~/assets/images/icon-chatbot-3.svg" alt="View Win Loss Report" />
-                        <span>View Win Loss Report</span>
+                        <img class="img-res" src="~/assets/images/icon-chatbot-3.svg" alt="@ChatBot.WinLossReport" />
+                        <span>@ChatBot.WinLossReport</span>
                     </div>
                     <div class="group-list-icon group-list-icon-4">
-                        <img class="img-res" src="~/assets/images/icon-chatbot-4.svg" alt="Receive latest notifications" />
-                        <span>Receive latest notifications</span>
+                        <img class="img-res" src="~/assets/images/icon-chatbot-4.svg" alt="@ChatBot.LatestNotifications" />
+                        <span>@ChatBot.LatestNotifications</span>
                     </div>
                 </div>
             </div>
             <div class="column column-right">
-                <p class="intro-txt">Introducing</p>
-                <h2 class="heading-txt"><span>EVA chatbot on Telegram</span> <img src="~/assets/images/icon-telegram.png" alt="Alternate Text" class="icon-tele img-res" /> </h2>
-                <p class="description-txt">
-                    Virtual assistant 24/7 will help to run your
-                    business at ease!
-                </p>
-                <p class="btn-setup"><a href="#">Set up now</a></p>
+                <p class="intro-txt">@ChatBot.Introducing</p>
+                <h2 class="heading-txt"><span>@string.Format(ChatBot.IntroducingTitle, Model)</span> <img src="~/assets/images/icon-telegram.png" alt="Alternate Text" class="icon-tele img-res" /></h2>
+                <p class="description-txt">@ChatBot.IntroducingContent</p>
+                <p class="btn-setup">@Html.ActionLink(ChatBot.SetupNow, "Index", "TelegramChatBot")</p>
             </div>
         </div>
     </div>

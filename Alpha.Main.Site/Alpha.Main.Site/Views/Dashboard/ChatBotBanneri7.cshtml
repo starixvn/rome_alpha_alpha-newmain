@@ -24,7 +24,7 @@
     <div class="outer-chatbot">
         <div class="chatbot">
             <div class="inner-chatbot">
-                <img class="image-chatbot" src="~/assets/images/chatbot-i7.svg" alt="Elsabot chatbot" />
+                <img class="image-chatbot" src="~/assets/images/chatbot-i7.svg" alt="Elsa chatbot" />
                 <div class="text-chatbot text-top-left">@ChatBot.BalanceInfoReport</div>
                 <div class="text-chatbot text-bottom-left">@ChatBot.OutstandingReport</div>
                 <div class="text-chatbot text-top-right">@ChatBot.LatestNotifications</div>
@@ -34,7 +34,7 @@
                 <p class="line1">@ChatBot.Introducing</p>
                 <p class="line2">@string.Format(ChatBot.IntroducingTitle, Model) <img class="icn-telegram" src="~/assets/images/icon-telegram.png" alt="Telegram" /></p>
                 <p class="line3">@ChatBot.IntroducingContent</p>
-                <p><a class="link-setup" href="@Url.Action("Index", "TelegramChatBot")">@ChatBot.SetupNow</a></p>
+                <p>@Html.ActionLink(ChatBot.SetupNow, "Index", "TelegramChatBot", null, new { @class = "link-setup" })</p>
             </div>
         </div>
     </div>

@@ -198,5 +198,9 @@
   {
     "outputFile": "Assets/styles/home/ChatBotBanneri1.css",
     "inputFile": "Assets/styles/home/ChatBotBanneri1.scss"
+  },
+  {
+    "outputFile": "Assets/styles/home/home-dark.css",
+    "inputFile": "Assets/styles/home/home-dark.scss"
   }
 ]
