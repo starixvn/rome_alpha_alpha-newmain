@@ -12,10 +12,10 @@
     background: linear-gradient(73.89deg, #113436 0%, #141A3C 51.34%, #0E3032 100%);
     border-radius: 20px;
     text-align: center;
-    padding: 135px 86px 140px;
+    padding: 135px 63px 140px 84px;
     position: relative;
     display: grid;
-    grid-template: "comlumnLeft comlumnRight" auto/56%;
+    grid-template: "comlumnLeft comlumnRight" 245px/55%;
     width: 1200px;
 
 
@@ -38,23 +38,23 @@
                     }
 
                     &-1 {
-                        top: -27%;
-                        left: 31%;
+                        top: -69px;
+                        left: 183px;
                     }
 
                     &-2 {
-                        top: 10%;
-                        left: 38%;
+                        top: 24px;
+                        left: 224px;
                     }
 
                     &-3 {
-                        top: 53%;
-                        left: 38%;
+                        top: 129px;
+                        left: 224px;
                     }
 
                     &-4 {
-                        bottom: -23%;
-                        left: 31%;
+                        bottom: -54px;
+                        left: 183px;
                     }
                 }
             }
@@ -80,13 +80,13 @@
                 font-size: 36px;
                 line-height: 42px;
                 margin-top: 3px;
-                position: relative;
 
                 img {
                     width: 40px;
-                    position: absolute;
-                    right: -5px;
-                    top: 7px;
+                    right: 6px;
+                    top: 3px;
+                    display: inline-block;
+                    position: relative;
                 }
             }
 
@@ -99,15 +99,14 @@
             }
 
             .btn-setup {
-                width: 168px;
-                text-align: center;
+                text-align: left;
                 margin-top: 15px;
 
                 a {
                     text-decoration: none;
                     background: #FDDB5C;
                     border-radius: 5px;
-                    display: block;
+                    display: inline-block;
                     color: #131A3B;
                     font-family: 'Roboto Bold';
                     font-size: 24px;
@@ -213,7 +212,6 @@
                 }
 
                 .btn-setup {
-                    width: 104px;
                     text-align: center;
                     margin: 21px auto 0;
 
