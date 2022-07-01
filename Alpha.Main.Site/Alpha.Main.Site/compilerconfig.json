@@ -104,10 +104,6 @@
     "inputFile": "Assets/styles/home/popup-announcement-dark.scss"
   },
   {
-    "outputFile": "Assets/styles/home/home-dark.css",
-    "inputFile": "Assets/styles/home/home-dark.scss"
-  },
-  {
     "outputFile": "Assets/styles/home/home-mobile-calculate-07-dark.css",
     "inputFile": "Assets/styles/home/home-mobile-calculate-07-dark.scss"
   },

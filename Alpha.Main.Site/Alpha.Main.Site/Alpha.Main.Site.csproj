@@ -1266,7 +1266,7 @@
     <Content Include="Views\TelegramChatBot\Reports.cshtml" />
     <Content Include="Views\TelegramChatBot\NotificationsAndSettings.cshtml" />
     <Content Include="Views\TelegramChatBot\Tab.cshtml" />
-    <Content Include="Views\Dashboard\ChatBotBanner.cshtml" />
+    <Content Include="Views\Dashboard\ChatBotBanneri7.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
@@ -1476,6 +1476,8 @@
     <Content Include="Assets\styles\telegramchatbot\register-account-dark.scss" />
     <Content Include="Assets\styles\telegramchatbot\chatbot.scss" />
     <Content Include="Assets\styles\telegramchatbot\chatbot-dark.scss" />
+    <Content Include="Assets\styles\home\ChatBotBanneri7.scss" />
+    <Content Include="Assets\styles\home\ChatBotBanneri7-dark.scss" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>

@@ -10,28 +10,13 @@
     @StaticResources.AssetStyles.RenderCommonWithDarkMode("/bundles/common/common")
     @StaticResources.RenderStylesWithDarkMode("~/assets/bundles/ChatBotBanneri7")
     <style>
-        body {
-            background: transparent;
-        }
-
-        .icon-home {
-            margin-right: 0;
-        }
-
-            .icon-home:after {
-                content: none;
-            }
-
-        .text {
-            padding: 10px 0;
-            margin: 0;
-            font-size: 15px;
-        }
+        body { background: transparent; }
+        .icon-home { margin-right: 0; }
+        .icon-home:after { content: none; }
+        .text { padding: 10px 0; margin: 0; font-size: 15px; }
     </style>
     <style media="screen and (max-device-width: 768px)">
-        .text {
-            font-size: 20px;
-        }
+        .text { font-size: 20px; }
     </style>
 </head>
 <body>
@@ -39,7 +24,7 @@
     <div class="outer-chatbot">
         <div class="chatbot">
             <div class="inner-chatbot">
-                <img class="image-chatbot" src="~/assets/images/chatbot-i7.svg" alt="Elsa chatbot" />
+                <img class="image-chatbot" src="~/assets/images/chatbot.svg" alt="Elsabot chatbot" />
                 <div class="text-chatbot text-top-left">@ChatBot.BalanceInfoReport</div>
                 <div class="text-chatbot text-bottom-left">@ChatBot.OutstandingReport</div>
                 <div class="text-chatbot text-top-right">@ChatBot.LatestNotifications</div>
@@ -49,8 +34,7 @@
                 <p class="line1">@ChatBot.Introducing</p>
                 <p class="line2">@string.Format(ChatBot.IntroducingTitle, Model) <img class="icn-telegram" src="~/assets/images/icon-telegram.png" alt="Telegram" /></p>
                 <p class="line3">@ChatBot.IntroducingContent</p>
-                <p class="line4">@ChatBot.ComingSoon</p>
-                
+                <p><a class="link-setup" href="@Url.Action("Index", "TelegramChatBot")">@ChatBot.SetupNow</a></p>
             </div>
         </div>
     </div>
