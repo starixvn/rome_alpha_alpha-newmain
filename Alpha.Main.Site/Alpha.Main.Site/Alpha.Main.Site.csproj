@@ -1288,6 +1288,7 @@
     <Content Include="Views\TelegramChatBot\NotificationsAndSettings.cshtml" />
     <Content Include="Views\TelegramChatBot\Tab.cshtml" />
     <Content Include="Views\Dashboard\ChatBotBanneri7.cshtml" />
+	<Content Include="Views\Dashboard\ChatBotBanneri1.cshtml" />
     <TypeScriptCompile Include="Assets\scripts\captcha\captcha.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\add-account.ts" />
     <TypeScriptCompile Include="Assets\scripts\chatbot\base-chatbot.ts" />
