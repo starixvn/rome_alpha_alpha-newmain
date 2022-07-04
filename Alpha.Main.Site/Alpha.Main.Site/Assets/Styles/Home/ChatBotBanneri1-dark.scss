@@ -140,7 +140,6 @@
     max-width: 100%;
     height: auto;
 }
-
 @media only screen and (max-device-width : $screen-device-lower768) {
     .chatbot {
         width: auto;
@@ -160,8 +159,14 @@
                 display: flex;
 
                 .group-list {
-                    .group-list-icon {
+                    display: block;
+                    margin: calculateScale(0) auto;
+                    position: relative;
+                    left: calculateScale(-90px);
 
+
+                    .group-list-icon {
+                        white-space: nowrap;
 
                         span {
                             font-size: calculateScale(12px);
