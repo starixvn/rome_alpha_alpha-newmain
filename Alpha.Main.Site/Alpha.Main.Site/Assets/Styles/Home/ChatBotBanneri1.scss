@@ -17,7 +17,7 @@
     display: grid;
     grid-template: "comlumnLeft comlumnRight" 245px/50%;
     width: 1200px;
-    align-items : center;
+    align-items: center;
 
     .column {
         &-left {
@@ -114,6 +114,7 @@
                     padding: 12px 24px;
                 }
             }
+
             .comming-soon {
                 font-weight: bold;
                 font-size: 24px;
@@ -149,8 +150,14 @@
                 display: flex;
 
                 .group-list {
-                    .group-list-icon {
+                    display: block;
+                    margin: calculateScale(0) auto;
+                    position: relative;
+                    left: calculateScale(-90px);
 
+
+                    .group-list-icon {
+                        white-space: nowrap;
 
                         span {
                             font-size: calculateScale(12px);
