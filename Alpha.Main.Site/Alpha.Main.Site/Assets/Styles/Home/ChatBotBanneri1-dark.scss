@@ -38,6 +38,10 @@
             .group-list {
                 .group-list-icon {
                     position: absolute;
+                    text-align: left;
+                    align-items: center;
+                    padding-right: 15px;
+                    display: flex;
 
                     span {
                         font-weight: 700;
@@ -63,7 +67,7 @@
                     }
 
                     &-4 {
-                        bottom: -54px;
+                        top: 230px;
                         left: 183px;
                     }
                 }
@@ -166,11 +170,13 @@
 
 
                     .group-list-icon {
-                        white-space: nowrap;
+                        white-space: unset;
+                        display: flex;
 
                         span {
                             font-size: calculateScale(12px);
                             margin-left: calculateScale(6px);
+                            width: calculateScale(180px)
                         }
 
                         &-1 {
