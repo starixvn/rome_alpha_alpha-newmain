@@ -11,6 +11,7 @@
     using Fanex.Caching;
     using TelegramBot.Client.Services;
     using Alpha.Main.Configurations;
+    using Alpha.Main.Constants;
 
     public class TelegramChatBotHandler :
         IAsyncRequestHandler<SetUpChatBotQuery, ChatBotViewModel>,
@@ -35,13 +36,21 @@
 
         public async Task<ChatBotViewModel> Handle(SetUpChatBotQuery message)
         {
-            var custBotMessenger = await settingService.GetCustBotMessengerAsync(message.CustId, message.SubAccId, message.Language);
+            var custBotMessenger = await settingService.GetCustBotMessengerAsync(
+                message.CustId,
+                message.SubAccId,
+                Language.MapNewChineseLanguageCode(message.Language));
+
             return new ChatBotViewModel(custBotMessenger); 
         }
 
         public async Task<VerifyAccountViewModel> Handle(GenerateQRCodeCommand message)
         {
-            var url = await settingService.GenerateStartUriAsync(message.CustId, message.SubAccId, AppSettings.SiteGroup, message.Language);
+            var url = await settingService.GenerateStartUriAsync(
+                message.CustId,
+                message.SubAccId,
+                AppSettings.SiteGroup,
+                Language.MapNewChineseLanguageCode(message.Language));
 
             var logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Assets/styles/telegramchatbot/images/telegram-logo.png");
             var qrCodeDataUrl = QRCodeAdapter.Generate(url, logoPath);
@@ -80,7 +89,13 @@
         public async Task<Result> Handle(UpdateLanguageCommand message)
         {
             var bot = await GetTelegramBotAsync();
-            return await settingService.UpdateLanguage(message.UserId, bot.BotId, message.Language, message.CustId, message.IP);
+
+            return await settingService.UpdateLanguage(
+                message.UserId,
+                bot.BotId,
+                Language.MapNewChineseLanguageCode(message.Language),
+                message.CustId,
+                message.IP);
         }
 
         private async Task<BotEntity> GetTelegramBotAsync()

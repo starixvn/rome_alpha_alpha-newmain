@@ -59,5 +59,20 @@
         public static readonly Dictionary<string, string> CodeNamesWithoutVietNamese = CodeNames
             .Where(langauge => langauge.Key != Vietnamese)
             .ToDictionary(language => language.Key, language => language.Value);
+
+        public static string MapNewChineseLanguageCode(string languageCode)
+        {
+            switch (languageCode)
+            {
+                case ChineseTraditional:
+                    return NewChineseTraditional;
+
+                case ChineseSimplified:
+                    return NewChineseSimplified;
+
+                default:
+                    return languageCode;
+            }
+        }
     }
 }
