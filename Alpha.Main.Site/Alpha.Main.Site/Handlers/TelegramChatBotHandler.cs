@@ -22,14 +22,12 @@
         IAsyncRequestHandler<UpdateFunctionCommand, Result>,
         IAsyncRequestHandler<UpdateLanguageCommand, Result>
     {
-        private const string TelegramBotKey = "Alpha.Main.Site.Handlers.TelegramChatBotHandler.TelegramBot";
-        private readonly ICacheService cacheService;
         private readonly ISettingService settingService;
         private readonly IBotService botService;
 
-        public TelegramChatBotHandler(ICacheService cacheService, ISettingService settingService, IBotService botService)
+        public TelegramChatBotHandler(ISettingService settingService, IBotService botService)
         {
-            this.cacheService = cacheService;
+
             this.settingService = settingService;
             this.botService = botService;
         }
@@ -100,15 +98,7 @@
 
         private async Task<BotEntity> GetTelegramBotAsync()
         {
-            var telegramBot = cacheService.Get<BotEntity>(TelegramBotKey);
-
-            if (telegramBot == null)
-            { 
-                telegramBot = await botService.GetBySystem(AppSettings.SiteGroup);
-                cacheService.Set(TelegramBotKey, telegramBot);
-            }
-
-            return telegramBot;
+            return await botService.GetBySystem(AppSettings.SiteGroup);
         }
     }
 }
