@@ -29,7 +29,7 @@
             this.userSession = userSession;
         }
 
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Setup()
         {
             var language = userSession.Language;
             var custLevel = Enumeration.FromValue<UserLevel>(userSession.RoleId);

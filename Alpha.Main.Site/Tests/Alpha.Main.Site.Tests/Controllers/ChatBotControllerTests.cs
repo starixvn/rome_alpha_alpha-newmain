@@ -47,7 +47,7 @@
             var query = new SetUpChatBotQuery(userSession);
 
             // Act
-            chatbotController.Index().ConfigureAwait(false);
+            chatbotController.Setup().ConfigureAwait(false);
 
             // Assert
             mediator.Received().SendAsync(
@@ -79,7 +79,7 @@
             mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
 
             // Act
-            var result = chatbotController.Index().GetAwaiter().GetResult() as ViewResult;
+            var result = chatbotController.Setup().GetAwaiter().GetResult() as ViewResult;
 
             // Assert
             Assert.True(result.ViewName.Equals("ChatBotSetting")
@@ -102,7 +102,7 @@
             mediator.SendAsync(Arg.Any<SetUpChatBotQuery>()).Returns(Task.FromResult(viewModel));
 
             // Act
-            var result = chatbotController.Index().GetAwaiter().GetResult() as ViewResult;
+            var result = chatbotController.Setup().GetAwaiter().GetResult() as ViewResult;
 
             // Assert
             Assert.True(result.ViewName.Equals("RegisterAccount")

@@ -27,7 +27,7 @@
             this.userSession = userSession;
         }
 
-        public async Task<ActionResult> Index(SetUpChatBotQuery query)
+        public async Task<ActionResult> Setup(SetUpChatBotQuery query)
         {
             var model = await mediator.SendAsync(query);
 
