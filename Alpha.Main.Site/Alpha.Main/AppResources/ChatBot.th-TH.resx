@@ -376,7 +376,7 @@
     <value>ดาวน์โหลดแอปพลิเคชันบน Google Play/App Store หรือคลิก &lt;strong&gt;แสดงรหัสคิวอาร์&lt;/strong&gt; และสแกนรหัสคิวอาร์โดยใช้โทรศัพท์ของคุณ:</value>
   </data>
   <data name="IntroTelegramChatbot" xml:space="preserve">
-    <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; ช่วยให้คุณรับข้อมูลทางธุรกิจปัจจุบันโดยสื่อสารกับChatbotโดยไม่จำเป็นต้องเข้าถึงเว็บไซต์ตัวแทน Chatbotทำงานบนelegramซึ่งเป็นแอปพลิเคชั่นข้อความโต้ตอบอัตโนมัติได้ฟรี ปลอดภัย สะดวก และใช้งานได้หลากหลายแพลตฟอร์ม&lt;br /&gt;ในการตั้งค่าChatbot โปรดปฏิบัติตามคำแนะนำด้านล่าง:</value>
+    <value>&lt;strong&gt;Telegram Chatbot&lt;/strong&gt; ช่วยให้คุณรับข้อมูลทางธุรกิจปัจจุบันโดยสื่อสารกับChatbotโดยไม่จำเป็นต้องเข้าถึงเว็บไซต์ตัวแทน ChatbotทำงานบนTelegramซึ่งเป็นแอปพลิเคชั่นข้อความโต้ตอบอัตโนมัติได้ฟรี ปลอดภัย สะดวก และใช้งานได้หลากหลายแพลตฟอร์ม&lt;br /&gt;ในการตั้งค่าChatbot โปรดปฏิบัติตามคำแนะนำด้านล่าง:</value>
   </data>
   <data name="IntroTelegramReports" xml:space="preserve">
     <value>เมื่อใช้Telegram Chatbot คุณจะได้รับรายงานต่อไปนี้ผ่านTelegram โดยไม่ต้องเข้าถึงเว็บไซต์ตัวแทน: &lt;br /&gt; พิมพ์ "/ช่วยเหลือ" บนChatbotเพื่อดูรายการคำสั่งทั้งหมด</value>
