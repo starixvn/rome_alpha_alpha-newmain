@@ -19,7 +19,7 @@ namespace Alpha.Main.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ChatBot {
@@ -124,6 +124,15 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Balance Info Report.
+        /// </summary>
+        public static string BalanceInfoReport {
+            get {
+                return ResourceManager.GetString("BalanceInfoReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please input captcha..
         /// </summary>
         public static string captchaIsRequired {
@@ -183,6 +192,15 @@ namespace Alpha.Main.AppResources {
         public static string cloneAccountSuccessMsg {
             get {
                 return ResourceManager.GetString("cloneAccountSuccessMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coming Soon on Jul 19th, 2022.
+        /// </summary>
+        public static string ComingSoon {
+            get {
+                return ResourceManager.GetString("ComingSoon", resourceCulture);
             }
         }
         
@@ -331,6 +349,33 @@ namespace Alpha.Main.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Introducing.
+        /// </summary>
+        public static string Introducing {
+            get {
+                return ResourceManager.GetString("Introducing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 24/7 Virtual Assistant helps you run your business at ease!.
+        /// </summary>
+        public static string IntroducingContent {
+            get {
+                return ResourceManager.GetString("IntroducingContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Chatbot on Telegram.
+        /// </summary>
+        public static string IntroducingTitle {
+            get {
+                return ResourceManager.GetString("IntroducingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to is the most &lt;strong&gt;secured messenger&lt;/strong&gt; which heavily &lt;strong&gt;encrypts&lt;/strong&gt; your conversations. .
         /// </summary>
         public static string IntroLetstalk {
@@ -372,6 +417,15 @@ namespace Alpha.Main.AppResources {
         public static string InvalidCaptcha {
             get {
                 return ResourceManager.GetString("InvalidCaptcha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest Notifications.
+        /// </summary>
+        public static string LatestNotifications {
+            get {
+                return ResourceManager.GetString("LatestNotifications", resourceCulture);
             }
         }
         
@@ -516,6 +570,15 @@ namespace Alpha.Main.AppResources {
         public static string OutstandingHint {
             get {
                 return ResourceManager.GetString("OutstandingHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outstanding Report.
+        /// </summary>
+        public static string OutstandingReport {
+            get {
+                return ResourceManager.GetString("OutstandingReport", resourceCulture);
             }
         }
         
@@ -795,6 +858,15 @@ namespace Alpha.Main.AppResources {
         public static string VerifyTooltip {
             get {
                 return ResourceManager.GetString("VerifyTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win Loss Report.
+        /// </summary>
+        public static string WinLossReport {
+            get {
+                return ResourceManager.GetString("WinLossReport", resourceCulture);
             }
         }
         

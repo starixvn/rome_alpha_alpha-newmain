@@ -354,4 +354,28 @@
   <data name="actionExample" xml:space="preserve">
     <value>ตัวอย่างการกระทำ</value>
   </data>
+  <data name="BalanceInfoReport" xml:space="preserve">
+    <value>รายงานข้อมูลยอดเงินคงเหลือ</value>
+  </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>พร้อมใช้งาน 19 ก.ค. นี้</value>
+  </data>
+  <data name="Introducing" xml:space="preserve">
+    <value>แนะนำ</value>
+  </data>
+  <data name="IntroducingContent" xml:space="preserve">
+    <value>24/7 ผู้ช่วยเสมือนจริงที่ช่วยให้คุณดำเนินธุรกิจได้อย่างสะดวกยิ่งขึ้น</value>
+  </data>
+  <data name="IntroducingTitle" xml:space="preserve">
+    <value>{0}แชทบอทบนเทเลแกรม</value>
+  </data>
+  <data name="LatestNotifications" xml:space="preserve">
+    <value>การแจ้งเตือนล่าสุด</value>
+  </data>
+  <data name="OutstandingReport" xml:space="preserve">
+    <value>รายงานการเดิมพันที่ยังไม่สิ้นสุด</value>
+  </data>
+  <data name="WinLossReport" xml:space="preserve">
+    <value>รายงานยอดได้เสีย</value>
+  </data>
 </root>

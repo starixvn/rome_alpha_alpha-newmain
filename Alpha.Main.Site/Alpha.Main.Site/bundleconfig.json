@@ -21,7 +21,8 @@
       "Assets/scripts/core.js",
       "Assets/scripts/dashboard/dashboard.js",
       "Assets/scripts/dashboard/statistics.js",
-      "Assets/scripts/dashboard/notice.js"    ]
+      "Assets/scripts/dashboard/notice.js"
+    ]
   },
   {
     "outputFileName": "Assets/bundles/default-index.css",
@@ -406,6 +407,30 @@
     "outputFileName": "Assets/bundles/contact-us/contact-us-dark.css",
     "inputFiles": [
       "Assets/styles/contact-us/contact-us-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/ChatBotBanneri7-dark.css",
+    "inputFiles": [
+      "Assets/Styles/home/ChatBotBanneri7-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/ChatBotBanneri7.css",
+    "inputFiles": [
+      "Assets/Styles/home/ChatBotBanneri7.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/ChatBotBanneri1-dark.css",
+    "inputFiles": [
+      "Assets/Styles/home/ChatBotBanneri1-dark.css"
+    ]
+  },
+  {
+    "outputFileName": "Assets/bundles/ChatBotBanneri1.css",
+    "inputFiles": [
+      "Assets/Styles/home/ChatBotBanneri1.css"
     ]
   }
 ]

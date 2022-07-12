@@ -37,7 +37,22 @@ namespace Alpha.Main.Site.Controllers
 
             if (AppSettings.IsShowEmptyDashboard)
             {
-                return View();
+                string botName;
+
+                if (AppSettings.SiteGroup.Equals("IBCBET", StringComparison.OrdinalIgnoreCase))
+                {
+                    botName = "Eva";
+                }
+                else if (AppSettings.SiteGroup.Equals("IBCIndo", StringComparison.OrdinalIgnoreCase))
+                {
+                    botName = "Eden";
+                }
+                else
+                {
+                    botName = "Elsa";
+                }
+
+                return View($"~/Views/Dashboard/ChatBotBanner{(AppSettings.IsMBCSite ? "i1" : "i7")}.cshtml", (object)botName);
             }
 
             return Index2();
