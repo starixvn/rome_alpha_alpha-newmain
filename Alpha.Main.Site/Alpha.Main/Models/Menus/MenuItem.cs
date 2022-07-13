@@ -71,7 +71,8 @@
             {
                 var appVirtualPath = AppSettings.GetAppPath(AppPath) ?? string.Empty;
                 var runtimeAppPath = HttpRuntime.AppDomainAppVirtualPath ?? string.Empty;
-                var reportUrl = $"{appVirtualPath}{HttpContext.Current.Response.ApplyAppPathModifier(runtimeAppPath)}{link.TrimStart('/')}".Replace(runtimeAppPath, string.Empty);
+                var reportUrl = $"{appVirtualPath}{HttpContext.Current?.Response?.ApplyAppPathModifier(runtimeAppPath)}{link}";
+                reportUrl = !string.IsNullOrWhiteSpace(runtimeAppPath) ? reportUrl.Replace(runtimeAppPath, string.Empty) : reportUrl;
 
                 return !string.IsNullOrWhiteSpace(UseDomainConfig) ? $"{UseDomainConfig}{link}" :
                     appVirtualPath.Equals("/site-reports") ? reportUrl : 
