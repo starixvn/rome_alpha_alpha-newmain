@@ -1,17 +1,16 @@
 ﻿namespace Alpha.Main.Site.Handlers
 {
+    using System;
+    using System.IO;
+    using System.Threading.Tasks;
+    using Alpha.Main.Configurations;
+    using Alpha.Main.Constants;
     using Alpha.Main.Site.Helpers;
     using Alpha.Main.Site.Requests.TelegramChatBot;
     using Alpha.Main.Site.ViewModels.TelegramChatBot;
     using MediatR;
-    using System;
-    using System.IO;
-    using System.Threading.Tasks;
     using TelegramBot.Client.Models;
-    using Fanex.Caching;
     using TelegramBot.Client.Services;
-    using Alpha.Main.Configurations;
-    using Alpha.Main.Constants;
 
     public class TelegramChatBotHandler :
         IAsyncRequestHandler<SetUpChatBotQuery, ChatBotViewModel>,
@@ -73,7 +72,16 @@
 
         public async Task<Result> Handle(UpdateFunctionCommand message)
         {
-            var bot = await GetTelegramBotAsync();
+            var botTask = GetTelegramBotAsync();
+            var custBotMessengerTask = settingService.GetCustBotMessengerAsync(
+                message.CustId,
+                message.SubAccId,
+                Language.MapNewChineseLanguageCode(message.Language));
+            await Task.WhenAll(botTask, custBotMessengerTask);
+
+            var bot = await botTask;
+            var custBotMessenger = await custBotMessengerTask;
+
             var function = new Function
             {
                 FunctionId = message.FunctionId,
@@ -81,15 +89,23 @@
                 Enabled = message.Enabled,
                 Type = message.Type
             };
-            return await settingService.UpdateUserFunction(message.UserId, bot.BotId, function, message.CustId, message.IP);
+            return await settingService.UpdateUserFunction(custBotMessenger.UserId, bot.BotId, function, message.CustId, message.IP);
         }
 
         public async Task<Result> Handle(UpdateLanguageCommand message)
         {
-            var bot = await GetTelegramBotAsync();
+            var botTask = GetTelegramBotAsync();
+            var custBotMessengerTask = settingService.GetCustBotMessengerAsync(
+                message.CustId,
+                message.SubAccId,
+                Language.MapNewChineseLanguageCode(message.UserLanguage));
+            await Task.WhenAll(botTask, custBotMessengerTask);
+
+            var bot = await botTask;
+            var custBotMessenger = await custBotMessengerTask;
 
             return await settingService.UpdateLanguage(
-                message.UserId,
+                custBotMessenger.UserId,
                 bot.BotId,
                 Language.MapNewChineseLanguageCode(message.Language),
                 message.CustId,

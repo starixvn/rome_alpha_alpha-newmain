@@ -84,7 +84,6 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         var functionId = checkbox.attr("data-functionId");
         var functionName = checkbox.attr("data-functionName");
         var type = checkbox.attr("data-type");
-        var userId = this.$userId.val();
         var enabled = checkbox.is(":checked");
 
         var self = this;
@@ -93,7 +92,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "TelegramChatBot/UpdateFunction",
-            data: { userId, functionId, functionName, type, enabled },
+            data: { functionId, functionName, type, enabled },
             dataType: "json",
             success: (result) => {
                 if (result && result.IsNotOk) {
@@ -161,7 +160,7 @@ class TelegramChatBotSetting extends BaseTelegramChatBot {
         this.$.ajax({
             type: "POST",
             url: alpha.urls.mainRootPath + "TelegramChatBot/UpdateLanguage",
-            data: { language: lang, userId: this.$userId.val() },
+            data: { language: lang },
             success: this.onChangeLanguageSuccess,
             complete: this.onComplete
         });

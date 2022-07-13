@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Site.Requests.TelegramChatBot
 {
-    using TelegramBot.Client.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Base;
+    using Sunplus.Agent.Model.Entities;
+    using TelegramBot.Client.Models;
 
     public class UpdateLanguageCommand : IAsyncRequest<Result>
     {
@@ -15,12 +15,16 @@
         {
             userSession = userSession ?? new UserSessionExt();
             CustId = userSession.CustId;
+            SubAccId = userSession.SubAccId;
+            UserLanguage = userSession.Language;
             IP = userSession.UserLoginIp;
         }
 
-        public int CustId { get; set; }
+        public int CustId { get; }
 
-        public int UserId { get; set; }
+        public int SubAccId { get; }
+
+        public string UserLanguage { get; }
 
         public string Language { get; set; }
 

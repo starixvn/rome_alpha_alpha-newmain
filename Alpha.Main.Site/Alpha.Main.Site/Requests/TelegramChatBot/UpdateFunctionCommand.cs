@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Main.Site.Requests.TelegramChatBot
 {
-    using TelegramBot.Client.Models;
     using MediatR;
-    using Sunplus.Agent.Model.Entities;
     using Sunplus.Agent.Model.Base;
+    using Sunplus.Agent.Model.Entities;
+    using TelegramBot.Client.Models;
 
     public class UpdateFunctionCommand : IAsyncRequest<Result>
     {
@@ -15,10 +15,10 @@
         {
             userSession = userSession ?? new UserSessionExt();
             CustId = userSession.CustId;
+            SubAccId = userSession.SubAccId;
+            Language = userSession.Language;
             IP = userSession.UserLoginIp;
         }
-
-        public int UserId { get; set; }
 
         public short FunctionId { get; set; }
 
@@ -29,6 +29,10 @@
         public bool Enabled { get; set; }
 
         public int CustId { get; }
+
+        public int SubAccId { get; }
+
+        public string Language { get; }
 
         public string IP { get; }
     }
