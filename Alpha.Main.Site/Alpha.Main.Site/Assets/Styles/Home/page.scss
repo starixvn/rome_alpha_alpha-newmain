@@ -120,9 +120,13 @@ html * {
     overflow-y: auto;
     position: absolute;
     left: 0;
-    top: 48px;
+    top: 59px;
     right: 0;
     bottom: 0;
+
+    .list-menu {
+        padding: 0 10px;
+    }
 
     &.disabledViewAccInfo {
         top: 40px;
@@ -147,44 +151,40 @@ html * {
         color: #222;
         font-weight: 600;
         padding: 0;
+        margin: 0 0 9px 0;
 
         &#menu-CHATBOT .txt-item {
             color: #0776c1;
         }
 
         .icon {
-            line-height: 0;
-            margin-right: 14px;
-            width: 16px;
-            position: relative;
-            left: 1px;
-            top: 1px;
-            color: #333;
+            line-height: 24px;
+            text-align: center;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: 8px;
+            color: $color-slidebar;
+            background: #ededed;
+            border-radius: 5px;
+            font-size: 17px;
+            margin: 0;
 
-            &.icon-totalbets {
-                font-size: 14px;
+            &:not(.icon-chatbot) {
+                transform: translate(0, -50%);
+                top: 50%;
             }
 
-            &.icon-betlists {
-                font-size: 17px;
-                top: 3px;
-                margin-right: 13px;
-            }
 
-            &.icon-announcements {
-                top: 4px;
-                margin-right: 10px;
-                line-height: 0;
-                font-size: 20px;
-            }
 
             &.icon-chatbot {
                 background: url(Images/chatbot-intro.svg) no-repeat;
                 height: 18px;
                 width: 18px;
                 float: left;
-                top: -2px;
+                top: 9px;
                 animation: bounce 1s infinite;
+                position: absolute;
 
 
                 &:before, &:after {
@@ -235,13 +235,14 @@ html * {
             @include transform(rotate(0));
             font-size: 16px;
             position: relative;
-            top: 2px;
+            top: 1px;
+            right: -4px;
             @include transition(transform 0.3s ease-out);
         }
 
         > a {
             cursor: pointer;
-            color: #222;
+            color: $color-slidebar;
             display: table;
             white-space: nowrap;
             text-decoration: none;
@@ -249,18 +250,100 @@ html * {
             width: 100%;
             min-height: 3rem;
             background: transparent;
-            padding: 14px 8px 14px 12px;
+            padding: 8px 8px 8px 40px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 5px;
 
             &.active {
-                background: #e5e5e5;
+                background: #e5e5e5; 
+
+                .icon {
+                    background: #fafafa;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                }
 
                 .icon-arrow-right {
                     @include transform(rotate(90deg));
                 }
+ 
             }
 
             &:hover {
                 background: #e5e5e5;
+
+                .icon {
+
+                    &:not(.icon-chatbot) {
+                        background: #fafafa;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                    }
+                }
+            }
+        }
+
+        &#menu-MYMONITORACCOUNTS {
+            padding: 11px 0 11px;
+
+            &:after {
+                content: "";
+                height: 1px;
+                background-color: #bdbdbd;
+                position: absolute;
+                left: -10px;
+                right: -10px;
+                top: 0;
+                z-index: -1;
+            }
+
+            a {
+                background: #F5F5F5;
+                border: 1px solid #E3E3E3;
+                border-radius: 5px;
+                padding-top: 7px;
+                padding-bottom: 7px;
+
+                .icon {
+                    background-color: transparent;
+
+                    &:before {
+                        color: #333333;
+                    }
+                }
+
+                &:hover {
+                    background: #e5e5e5;
+
+                    .icon {
+                        background: #fafafa;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                    }
+                }
+            }
+        }
+
+        .new-version {
+            font-family: 'Roboto Bold';
+            font-size: 10px;
+            position: absolute;
+            top: 10px;
+            right: 17px;
+            display: inline-block;
+            color: #000000;
+            z-index: 1;
+
+            &:after {
+                background: #FFEC44;
+                border-radius: 3px;
+                top: -1px;
+                bottom: -1px;
+                left: -5px;
+                right: -5px;
+                position: absolute;
+                content: "";
+                z-index: -1;
+                transform: skew(-19deg);
+                border: 1px solid #000000;
             }
         }
 
@@ -290,7 +373,7 @@ html * {
         padding: 9px 15px 9px 44px;
 
         a {
-            color: #555;
+            color: #575757;
             display: table;
             text-decoration: none;
             font-weight: 600;
