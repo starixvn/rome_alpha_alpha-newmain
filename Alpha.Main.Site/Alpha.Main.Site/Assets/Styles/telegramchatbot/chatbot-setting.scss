@@ -109,8 +109,16 @@
     }
 
     .btn-how-it-works {
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
         width: 100%;
         border-radius: 5px;
+        padding: 6px;
+
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
     }
 }
 
